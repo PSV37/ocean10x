@@ -1,0 +1,7 @@
+[22-Nov-2016 09:46:37 UTC] PHP Parse error:  syntax error, unexpected '$user_id' (T_VARIABLE) in /home/venusitl/public_html/business/application/controllers/Login.php on line 14
+[22-Nov-2016 10:04:53 UTC] PHP Fatal error:  Call to a member function logout() on null in /home/venusitl/public_html/business/application/controllers/admin/Dashboard.php on line 26
+[22-Nov-2016 10:43:34 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/venusitl/public_html/business/application/controllers/Employer_register.php on line 90
+[22-Nov-2016 10:44:22 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/venusitl/public_html/business/application/controllers/Employer_register.php on line 76
+[23-Nov-2016 09:16:13 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/venusitl/public_html/business/application/controllers/Register.php on line 100
+[23-Nov-2016 09:19:39 UTC] PHP Fatal error:  Call to a member function sendEmail() on null in /home/venusitl/public_html/business/application/controllers/Register.php on line 41
+[30-Nov-2016 06:29:55 UTC] PHP Fatal error:  Call to undefined method Job_seeker_model::sendEmail() in /home/venusitl/public_html/business/application/controllers/Register.php on line 58

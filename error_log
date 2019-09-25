@@ -1,0 +1,12 @@
+[24-Sep-2019 10:38:11 Etc/GMT] PHP Fatal error:  Can't use function return value in write context in /home/consultnhire/public_html/application/models/Job_posting_model.php on line 477
+[24-Sep-2019 10:38:14 Etc/GMT] PHP Fatal error:  Can't use function return value in write context in /home/consultnhire/public_html/application/models/Job_posting_model.php on line 477
+[24-Sep-2019 10:38:36 Etc/GMT] PHP Fatal error:  Can't use function return value in write context in /home/consultnhire/public_html/application/models/Job_posting_model.php on line 477
+[24-Sep-2019 10:57:33 Etc/GMT] PHP Fatal error:  Can't use function return value in write context in /home/consultnhire/public_html/application/models/Job_posting_model.php on line 477
+[24-Sep-2019 11:44:50 Etc/GMT] PHP Parse error:  syntax error, unexpected '@' in /home/consultnhire/public_html/application/models/Job_seeker_model.php on line 72
+[24-Sep-2019 11:44:55 Etc/GMT] PHP Parse error:  syntax error, unexpected '@' in /home/consultnhire/public_html/application/models/Job_seeker_model.php on line 72
+[24-Sep-2019 11:44:58 Etc/GMT] PHP Parse error:  syntax error, unexpected '@' in /home/consultnhire/public_html/application/models/Job_seeker_model.php on line 72
+[24-Sep-2019 11:45:01 Etc/GMT] PHP Parse error:  syntax error, unexpected '@' in /home/consultnhire/public_html/application/models/Job_seeker_model.php on line 72
+[24-Sep-2019 11:45:05 Etc/GMT] PHP Parse error:  syntax error, unexpected '@' in /home/consultnhire/public_html/application/models/Job_seeker_model.php on line 72
+[24-Sep-2019 11:45:10 Etc/GMT] PHP Parse error:  syntax error, unexpected '@' in /home/consultnhire/public_html/application/models/Job_seeker_model.php on line 72
+[24-Sep-2019 11:45:16 Etc/GMT] PHP Parse error:  syntax error, unexpected '@' in /home/consultnhire/public_html/application/models/Job_seeker_model.php on line 72
+[24-Sep-2019 11:45:19 Etc/GMT] PHP Parse error:  syntax error, unexpected '@' in /home/consultnhire/public_html/application/models/Job_seeker_model.php on line 72

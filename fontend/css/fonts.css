@@ -1,0 +1,32 @@
+
+
+@font-face {
+	font-family: 'Conv_Gotham Bold Regular';
+	src: url('../fonts/Gotham Bold Regular.eot');
+	src: local('☺'), url('../fonts/Gotham Bold Regular.woff') format('woff'), 
+	url('../fonts/Gotham Bold Regular.ttf') format('truetype'), 
+	url('../fonts/Gotham Bold Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'gothammedium';
+    src: url('../fonts/gothammedium-webfont.woff2') format('woff2'),
+         url('../fonts/gothammedium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+	font-family: 'Conv_Gotham Light Regular';
+	src: url('../fonts/Gotham Light Regular.eot');
+	src: local('☺'), url('../fonts/Gotham Light Regular.woff') format('woff'), 
+	url('../fonts/Gotham Light Regular.ttf') format('truetype'), 
+	url('../fonts/Gotham Light Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
