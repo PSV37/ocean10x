@@ -23,6 +23,7 @@ class Education_level extends MY_Controller
 
 
         public function save_educaiton($id = null){
+            // var_dump($id); die;
             $education_level=array(
                 'education_level_name' => $this->input->post('education_level_name'),
                 );
