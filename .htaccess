@@ -9,8 +9,8 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php?/$1 [L]
 
 RewriteEngine On
-RewriteCond %{HTTP_HOST} ^atarman.com [NC]
-RewriteRule ^(.*)$ https://www.atarman.com/$1 [L,R=301]
+RewriteCond %{HTTP_HOST} ^consultnhire.com [NC]
+RewriteRule ^(.*)$ https://www.consultnhire.com/$1 [L,R=301]
 
 <IfModule mod_deflate.c>
 AddOutputFilterByType DEFLATE image/svg+xml
