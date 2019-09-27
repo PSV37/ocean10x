@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<?php //echo get_metas();?>
+<?php echo get_metas();?>
 
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/font-awesome.css">
