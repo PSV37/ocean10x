@@ -209,7 +209,7 @@
                     <label class="control-label">Vacancy Deadline</label>
                     
                     <div class="row">
-                    <div class="col-md-6 col-sm-12">
+                    <div class="col-md-12 col-sm-12">
 					<input type="date" name="job_deadline_day" class="form-control" id="job_deadline_day" required value="<?php echo $job_info->job_deadline?>">
                    <!-- <select name="job_deadline_day" class="form-control" id="job_deadline_day" required>
                       <option value="" selected>Day</option>
