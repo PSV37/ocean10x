@@ -6,7 +6,7 @@
 
                         <div class="content col-md-9">
                              <div class="userccount">
-                            
+                             <?php $this->load->view('fontend/layout/seeker_resumemenu.php'); ?>
 <?php $key = 1 ?>
                                     <hr>
                             <h5>
