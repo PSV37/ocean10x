@@ -396,13 +396,13 @@
               
               <div class="input-group">
                   <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd"> Mobile:</label></span>
-                  <input name="mobile" type="tel"  class="form-control"  pattern="[1-9]{1}[0-9]{10}" id="mobile" placeholder="Home/Emargency Contact"
+                  <input name="mobile" type="text"  class="form-control"  pattern="[1-9]{1}[0-9]{10}" id="number" placeholder="Home/Emargency Contact"
 
                value="<?php
                          if (!empty($js_personal_info->mobile)) {
                            echo $js_personal_info->mobile;
                            }
-                       ?>">
+                       ?>">&nbsp;<span id="errmsg"></span>
               </div>
               
               <div class="input-group">
@@ -1037,6 +1037,18 @@
 		
 	
 </script>
+
+<script>$(document).ready(function () {
+  //called when key is pressed in textbox
+  $("#number").keypress(function (e) {
+     //if the letter is not digit then display error and don't type anything
+     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+        //display error message
+        $("#errmsg").html("Digits Only").show().fadeOut("slow");
+               return false;
+    }
+   });
+});</script>
             
             
       
