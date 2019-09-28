@@ -397,7 +397,7 @@
               </div>
               
               <div class="input-group">
-                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd"> Voice:</label></span>
+                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd"> Mobile:</label></span>
                   <input name="mobile" type="text"  class="form-control" id="mobile" placeholder="Home/Emargency Contact"
 
                value="<?php
