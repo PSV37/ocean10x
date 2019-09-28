@@ -122,24 +122,27 @@ class Settings extends MY_Controller {
        public function add_phone(){
         $data['msg'] = '';
        
-        $this->form_validation->set_rules('phone', 'Phone', 'trim');
+        $this->form_validation->set_rules('phone', 'Phone', 'trim|required');
        
         $this->form_validation->set_error_delimiters('<span class="err" style="padding-left:2px;">', '</span>');
         if ($this->form_validation->run() === FALSE) {
-            $this->index();
-            return;
+            // $this->index();
+            // return;
+            $errors = validation_errors();
+            echo json_encode(['error'=>$errors]);
+        }else{
+            $post_phone = array(
+                'phone' => $this->input->post('phone'),
+            ); 
+            $this->settings_model->update_phone($post_phone);
+            echo json_encode(['success'=>'Phone Number Updated Successfully!']);
+        // $this->session->set_flashdata('added_action', true);
+        // redirect(base_url('admin/settings/index'));
+
         }
 
 
-        $post_phone = array(
-            'phone' => $this->input->post('phone'),
-        ); 
-
-        
        
-        $this->settings_model->update_phone($post_phone);
-        $this->session->set_flashdata('added_action', true);
-        redirect(base_url('admin/settings/index'));
     }
        public function add_address(){
         $data['msg'] = '';
