@@ -74,7 +74,7 @@
             
             <section>                
                 <div class="settingbox">                    
-                    <form  enctype="multipart/form-data" role="form" method="post" action="<?php echo base_url('admin/settings/add_metas'); ?>">
+                    <form id='metas_frm' enctype="multipart/form-data" role="form" method="post" action="">
                     
                     <h2>Add Metas</h2>
                     <label>Add Meta Title</label>
@@ -84,7 +84,9 @@
                     <input id="meta_keywords" class="form-control" name="meta_keywords" placeholder="Add Meta Keywords" type="text">
                     
                     <label>Add Meta Description</label>
-                    <input id="meta_description" class="form-control" name="meta_description" placeholder="Add Meta Description" type="text">                    <input type="submit" value="Add " class="btn-content"/>
+                    <input id="meta_description" class="form-control" name="meta_description" placeholder="Add Meta Description" type="text">    
+                    <div id="meta_result"></div>                
+                    <input type="submit" value="Add " class="btn-content"/>
                     </form>
                   
                 </div>
@@ -202,5 +204,39 @@ $('form#phn_frm').submit(function(e)
        
   }); 
 
+//Metas form submit
+$('form#metas_frm').submit(function(e)
+  {
+      e.preventDefault();
+    
+      $.ajax({
+                url: "<?php echo base_url('admin/settings/add_metas'); ?>",
+                type: "POST",
+                data: new FormData(this),
+                contentType:false,
+                processData:false,
+                 dataType: "json",
+                success: function(data)
+                {
+                    if($.isEmptyObject(data.error)){
+
+                        $("#meta_result").html('<div class="alert alert-success"><button type="button" class="close">×</button>'+data.success+'</div>');
+                            window.setTimeout(function() {
+                            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                                $(this).remove(); 
+                            });
+                            location.reload();
+                            }, 1500);
+                          $('.alert .close').on("click", function(e){
+                                $(this).parent().fadeTo(500, 0).slideUp(500);
+                          });
+
+                        }else{
+                            $("#meta_result").html('<div class="alert alert-danger"><button type="button" class="close">×</button>'+data.error+'</div>');
+                        }
+                }
+          });
+       
+  });
 </script>
 
