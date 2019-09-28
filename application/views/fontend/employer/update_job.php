@@ -127,7 +127,7 @@
 					  					
 										for($i=20;$i<=60;$i++){
 											$selected='';
-											if($job_info->preferred_age_from==$i){
+											if($job_info->preferred_age==$i){
 												$selected='selected';
 											}
 											echo '<option value="'.$i.'" '.$selected.'>'.$i.'</option>';	
