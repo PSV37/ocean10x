@@ -84,9 +84,9 @@
         <div class="widget clearfix">
           <div class="post-padding item-price">
             
-             <!-- <div class="content-title">
+              <div class="content-title">
                 <h4><i class="fa fa-file-text" aria-hidden="true"></i> Upload Your Resume</h4>
-              </div>-->
+              </div>
               <!-- end widget-title -->
               
               <form id="sdt" action="<?php echo base_url('Home/fast_upload_resume');?>" method="post" class="submit-form" enctype='multipart/form-data'>
