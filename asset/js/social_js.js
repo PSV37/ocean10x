@@ -20,7 +20,7 @@ document.getElementById('social').style.display = "block";
 }
 //Function to Hide Popup
 function social_hide(){
-document.getElementById('social').style.display = "none";
+//document.getElementById('social').style.display = "none";
 }
 function social_hide_edit(){
 document.getElementById('edit_social').style.display = "none";
