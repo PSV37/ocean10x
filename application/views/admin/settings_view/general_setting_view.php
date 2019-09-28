@@ -15,7 +15,7 @@
         <!-- /.sidebar -->
       </aside>
           
-<div class="right-side">
+        <div class="right-side">
             <!-- Content Header (Page header) -->
             <section>                
                 <div class="settingbox">                    
@@ -35,11 +35,12 @@
                 <div class="settingbox">
                     
                     
-                    <form  enctype="multipart/form-data" role="form" method="post" action="<?php echo base_url('admin/settings/add_email'); ?>">
+                    <form id="email_frm" enctype="multipart/form-data" role="form" method="post" action="">
                     
                     <h2>Add Email</h2>
 
                     <input id="email" class="form-control" name="email" placeholder="Add Email" type="email">
+                    <div id="email_result"></div>
                     
                     <input type="submit" value="Add Email" class="btn-content"/>
                     </form>
@@ -94,5 +95,41 @@
 
 </div>
     <?php $this->load->view('admin/components/footer'); ?>
+<script>
+    // Basic form update
+$('form#email_frm').submit(function(e)
+  {
+      e.preventDefault();
+    
+      $.ajax({
+                url: "<?php echo base_url('admin/settings/add_email'); ?>",
+                type: "POST",
+                data: new FormData(this),
+                contentType:false,
+                processData:false,
+                 dataType: "json",
+                success: function(data)
+                {
+                    if($.isEmptyObject(data.error)){
 
+                        $("#email_result").html('<div class="alert alert-success"><button type="button" class="close">×</button>Information Updated Successfully!</div>');
+                            window.setTimeout(function() {
+                            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                                $(this).remove(); 
+                            });
+                            location.reload();
+                            }, 1500);
+                          $('.alert .close').on("click", function(e){
+                                $(this).parent().fadeTo(500, 0).slideUp(500);
+                          });
+
+                        }else{
+                            $("#email_result").html('<div class="alert alert-danger"><button type="button" class="close">×</button>'+data.error+'</div>');
+                        }
+                }
+          });
+       
+  }); 
+
+</script>
 

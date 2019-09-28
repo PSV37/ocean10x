@@ -64,24 +64,33 @@ class Settings extends MY_Controller {
        public function add_email(){
         $data['msg'] = '';
        
-        $this->form_validation->set_rules('email', 'Email', 'trim');
+        // $this->form_validation->set_rules('email', 'Email', 'trim');
+        $this->form_validation->set_rules('email_id', 'Email Id Required', 'required|valid_email|trim');
        
         $this->form_validation->set_error_delimiters('<span class="err" style="padding-left:2px;">', '</span>');
-        if ($this->form_validation->run() === FALSE) {
-            $this->index();
-            return;
+        // if ($this->form_validation->run() === FALSE) {
+        //     $this->index();
+        //     return;
+        // }
+        if ($this->form_validation->run() == FALSE)
+        {
+            $errors = validation_errors();
+            echo json_encode(['error'=>$errors]);
+        }
+        else
+        {
+            $post_email = array(
+                'email' => $this->input->post('email'),
+            ); 
+
+            $this->settings_model->update_email($post_email);
+            echo json_encode(['success'=>'Email Updated Successfully!']);
+            // $this->session->set_flashdata('added_action', true);
+            // redirect(base_url('admin/settings/index'));
         }
 
 
-        $post_email = array(
-            'email' => $this->input->post('email'),
-        ); 
-
-        
        
-        $this->settings_model->update_email($post_email);
-        $this->session->set_flashdata('added_action', true);
-        redirect(base_url('admin/settings/index'));
     }
        public function add_metas(){
         $data['msg'] = '';
