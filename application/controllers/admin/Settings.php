@@ -95,51 +95,54 @@ class Settings extends MY_Controller {
        public function add_metas(){
         $data['msg'] = '';
        
-        $this->form_validation->set_rules('meta_title', 'Meta Title', 'trim');
-        $this->form_validation->set_rules('meta_keywords', 'Add Meta Keywords', 'trim');
-        $this->form_validation->set_rules('meta_description', 'Add Meta Description', 'trim');
+        $this->form_validation->set_rules('meta_title', 'Meta Title', 'trim|required');
+        $this->form_validation->set_rules('meta_keywords', 'Add Meta Keywords', 'trim|required');
+        $this->form_validation->set_rules('meta_description', 'Add Meta Description', 'trim|required');
        
         $this->form_validation->set_error_delimiters('<span class="err" style="padding-left:2px;">', '</span>');
         if ($this->form_validation->run() === FALSE) {
-            $this->index();
-            return;
-            // $errors = validation_errors();
-            // echo json_encode(['error'=>$errors]);
+            $errors = validation_errors();
+            echo json_encode(['error'=>$errors]);
+        }else{
+            $post_metas = array(
+                'meta_title' => $this->input->post('meta_title'),
+                'meta_keywords' => $this->input->post('meta_keywords'),
+                'meta_description' => $this->input->post('meta_description'),
+            ); 
 
+            $this->settings_model->update_metas($post_metas);
+             echo json_encode(['success'=>'Metas Updated Successfully!']);
+            // $this->session->set_flashdata('added_action', true);
+            // redirect(base_url('admin/settings/index'));
         }
 
-        $post_metas = array(
-            'meta_title' => $this->input->post('meta_title'),
-            'meta_keywords' => $this->input->post('meta_keywords'),
-            'meta_description' => $this->input->post('meta_description'),
-        ); 
-
-        $this->settings_model->update_metas($post_metas);
-        $this->session->set_flashdata('added_action', true);
-        redirect(base_url('admin/settings/index'));
+        
     }
       
        public function add_phone(){
         $data['msg'] = '';
        
-        $this->form_validation->set_rules('phone', 'Phone', 'trim');
+        $this->form_validation->set_rules('phone', 'Phone', 'trim|required');
        
         $this->form_validation->set_error_delimiters('<span class="err" style="padding-left:2px;">', '</span>');
         if ($this->form_validation->run() === FALSE) {
-            $this->index();
-            return;
+            // $this->index();
+            // return;
+            $errors = validation_errors();
+            echo json_encode(['error'=>$errors]);
+        }else{
+            $post_phone = array(
+                'phone' => $this->input->post('phone'),
+            ); 
+            $this->settings_model->update_phone($post_phone);
+            echo json_encode(['success'=>'Phone Number Updated Successfully!']);
+        // $this->session->set_flashdata('added_action', true);
+        // redirect(base_url('admin/settings/index'));
+
         }
 
 
-        $post_phone = array(
-            'phone' => $this->input->post('phone'),
-        ); 
-
-        
        
-        $this->settings_model->update_phone($post_phone);
-        $this->session->set_flashdata('added_action', true);
-        redirect(base_url('admin/settings/index'));
     }
        public function add_address(){
         $data['msg'] = '';
@@ -147,10 +150,7 @@ class Settings extends MY_Controller {
         $this->form_validation->set_rules('address', 'address', 'required|trim');
        
         $this->form_validation->set_error_delimiters('<span class="err" style="padding-left:2px;">', '</span>');
-        // if ($this->form_validation->run() === FALSE) {
-        //     $this->index();
-        //     return;
-        // }
+    
         if ($this->form_validation->run() == FALSE)
         {
             $errors = validation_errors();
@@ -163,8 +163,6 @@ class Settings extends MY_Controller {
             ); 
             $this->settings_model->update_address($post_addr);
             echo json_encode(['success'=>'Address Updated Successfully!']);
-        // $this->session->set_flashdata('added_action', true);
-        // redirect(base_url('admin/settings/index'));
         }
     }
       
