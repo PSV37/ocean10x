@@ -136,8 +136,8 @@ class Settings extends MY_Controller {
             ); 
             $this->settings_model->update_phone($post_phone);
             echo json_encode(['success'=>'Phone Number Updated Successfully!']);
-        // $this->session->set_flashdata('added_action', true);
-        // redirect(base_url('admin/settings/index'));
+            // $this->session->set_flashdata('added_action', true);
+            // redirect(base_url('admin/settings/index'));
 
         }
 
