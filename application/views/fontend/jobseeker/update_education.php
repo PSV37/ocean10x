@@ -110,7 +110,7 @@
               </div>
 
               <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Major/Group:</label>
+                <label class="control-label col-sm-3" for="email">Specialization:</label>
                 <div class="col-sm-9">
                   <input type="text" name="js_group" class="form-control" id="js_group" placeholder="Enter Major/Group Name"
                    value="<?php
