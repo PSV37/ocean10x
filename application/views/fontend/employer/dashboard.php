@@ -102,7 +102,7 @@
                                             	 if(!empty($company_info->contact_name)){
                                             	 	echo $company_info->contact_name;
                                             	 }
-                                            ?>" class="form-control" placeholder="Contact Name">
+                                            ?>" class="form-control" id="name" placeholder="Contact Name">
                                             </div>
                                         </div>
                                    
@@ -234,6 +234,18 @@ echo $company_info->company_career_link;
     }
    });
 });</script>
+
+<script>
+$(document).ready(function(){
+    $("#name").keypress(function(event){
+        var inputValue = event.charCode;
+        if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
+            event.preventDefault();
+        }
+    });
+});
+
+</script>
 
   
  <?php $this->load->view("fontend/layout/footer.php"); ?>
