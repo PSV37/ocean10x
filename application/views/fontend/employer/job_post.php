@@ -164,14 +164,6 @@
 						 if(!empty($job_info->job_deadline)){
 							echo $job_info->job_deadline;
 						 }
-					?>" class="form-control" >/<input class="datepicker form-control" data-date-format="dd/mm/yyyy" required name="job_deadline_month" value="<?php 
-						 if(!empty($job_info->job_deadline_month)){
-							echo $job_info->job_deadline_month;
-						 }
-					?>" class="form-control" >/<input class="datepicker form-control" data-date-format="dd/mm/yyyy" required name="job_deadline_year" value="<?php 
-						 if(!empty($job_info->job_deadline_year)){
-							echo $job_info->job_deadline_year;
-						 }
 					?>" class="form-control" >
                     
                     <?php /*?><div class="row">
