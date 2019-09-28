@@ -396,7 +396,7 @@
               
               <div class="input-group">
                   <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd"> Mobile:</label></span>
-                  <input name="mobile" type="text"  class="form-control" pattern="[0-9]{10}" id="mobile" placeholder="Home/Emargency Contact"
+                  <input name="mobile" type="tel"  class="form-control" pattern="[0-9]{10}" id="mobile" placeholder="Home/Emargency Contact"
 
                value="<?php
                          if (!empty($js_personal_info->mobile)) {
@@ -466,7 +466,7 @@
 
                     mobile: {
                         required: true,
-                        minlength:11,
+                        minlength:10,
                     },
 
                     present_address: {
