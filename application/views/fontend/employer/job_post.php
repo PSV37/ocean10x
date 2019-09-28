@@ -164,6 +164,14 @@
 						 if(!empty($job_info->job_deadline)){
 							echo $job_info->job_deadline;
 						 }
+					?><?php 
+						 if(!empty($job_info->job_deadline_month)){
+							echo $job_info->job_deadline_month;
+						 }
+					?><?php 
+						 if(!empty($job_info->job_deadline_year)){
+							echo $job_info->job_deadline_year;
+						 }
 					?>" class="form-control" >
                     
                     <?php /*?><div class="row">
