@@ -209,8 +209,9 @@
                     <label class="control-label">Vacancy Deadline</label>
                     
                     <div class="row">
-                    <div class="col-md-4">
-                    <select name="job_deadline_day" class="form-control" id="job_deadline_day" required>
+                    <div class="col-md-12 col-sm-12">
+					<input type="date" name="job_deadline_day" class="form-control" id="job_deadline_day" required value="<?php echo $job_info->job_deadline?>">
+                   <!-- <select name="job_deadline_day" class="form-control" id="job_deadline_day" required>
                       <option value="" selected>Day</option>
                       <?php
 					  
@@ -223,9 +224,9 @@
 											echo '<option value="'.$i.'" '.$selected.'>'.$i.'</option>';	
 										}
 									?>
-                    </select>
+                    </select>-->
                     </div>
-                    <div class="col-md-4">
+                    <!--<div class="col-md-4">
                     <select name="job_deadline_month" class="form-control" id="job_deadline_month" required>
                       <option value="" selected>Month</option>
                       <?php
@@ -254,7 +255,7 @@
 										}
 									?>
                     </select>
-                    </div>
+                    </div>-->
                     </div>
                     
                   </div>
@@ -262,7 +263,7 @@
                 <div class="col-md-6 col-sm-12">
                   <div class="formrow">
                     <label class="control-label mandatory">Vacancy Types *</label>
-                    <select name="job_types" required class="form-control" data-style="btn-default" data-live-search="true">
+                    <select name="job_types" required class="form-control" data-style="btn-default" data-live-search="true" style="height:58px;">
                       <?php if(!empty($job_info->job_types)) {echo $this->job_types_model->selected_types($job_info->job_types);}else {echo $this->job_types_model->selected_types();} ?>
                     </select>
                   </div>

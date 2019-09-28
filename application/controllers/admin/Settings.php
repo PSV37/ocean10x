@@ -86,7 +86,7 @@ class Settings extends MY_Controller {
             $this->settings_model->update_email($post_email);
             echo json_encode(['success'=>'Email Updated Successfully!']);
             // $this->session->set_flashdata('added_action', true);
-            // redirect(base_url('admin/settings/index'));
+            redirect(base_url('admin/settings/index'));
         }
 
 
