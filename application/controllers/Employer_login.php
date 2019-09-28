@@ -80,7 +80,7 @@ class Employer_Login extends CI_Controller
 	 return;
 	 }
 	
-	  $pass    = $this->input->post('password');
+	  $pass    = md5($this->input->post('password'));
    
          
         if ($this->employer_login_model->reset_account($hash,$pass)) {
