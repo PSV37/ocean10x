@@ -105,9 +105,8 @@
               <div class="row">
               <div class="col-md-8 col-md-offset-2">
               <div class="input-group">
-                  <span class="input-group-addon"><label class="control-label col-sm-3" for="email">Father Name:</label></span>
-                  <input type="text" name="father_name" class="form-control" id="father_name" onkeypress="return (event.charCode > 64 && 
-	event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" placeholder="Enter Father Name"
+                  <span class="input-group-addon"><label class="control-label col-sm-3" for="email" onkeypress="onlyLetter(this)">Father Name:</label></span>
+                  <input type="text" name="father_name" class="form-control" id="father_name"  placeholder="Enter Father Name"
                    value="<?php
                          if (!empty($js_personal_info->father_name)) {
                            echo $js_personal_info->father_name;
@@ -116,9 +115,8 @@
                 </div>              
               
               <div class="input-group">
-                  <span class="input-group-addon"><label class="control-label col-sm-3" for="email">Mother Name:</label></span>
-                  <input type="text" name="mother_name" class="form-control" id="mother_name" onkeypress="return (event.charCode > 64 && 
-	event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" placeholder="Enter Mother Title"
+                  <span class="input-group-addon"><label class="control-label col-sm-3" for="email" onkeypress="onlyLetter(this)">Mother Name:</label></span>
+                  <input type="text" name="mother_name" class="form-control" id="mother_name" placeholder="Enter Mother Title"
                    value="<?php
                          if (!empty($js_personal_info->mother_name)) {
                            echo $js_personal_info->mother_name;
@@ -1051,6 +1049,15 @@
     }
    });
 });</script>
+<script>
+function onlyLetter(input){
+    $(input).keypress(function(ev) {
+   var keyCode = window.event ? ev.keyCode : ev.which;
+  //  code
+
+    });
+}
+</script>
             
             
       
