@@ -112,7 +112,7 @@ $('form#email_frm').submit(function(e)
                 {
                     if($.isEmptyObject(data.error)){
 
-                        $("#email_result").html('<div class="alert alert-success"><button type="button" class="close">×</button>Information Updated Successfully!</div>');
+                        $("#email_result").html('<div class="alert alert-success"><button type="button" class="close">×</button>'+data.success+'</div>');
                             window.setTimeout(function() {
                             $(".alert").fadeTo(500, 0).slideUp(500, function(){
                                 $(this).remove(); 
