@@ -216,7 +216,7 @@
 					  
 										for($i=1;$i<=31;$i++){
 											$selected='';
-											if($job_info->job_deadline_day==$i){
+											if($job_info->job_deadline==$i){
 												$selected='selected';
 											}
 												
