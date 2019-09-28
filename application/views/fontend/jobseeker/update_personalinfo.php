@@ -105,8 +105,8 @@
               <div class="row">
               <div class="col-md-8 col-md-offset-2">
               <div class="input-group">
-                  <span class="input-group-addon"><label class="control-label col-sm-3" for="email" id="fathername">Father Name:</label></span>
-                  <input type="text" name="father_name" class="form-control" id="father_name"  placeholder="Enter Father Name"
+                  <span class="input-group-addon"><label class="control-label col-sm-3" for="email">Father Name:</label></span>
+                  <input type="text" name="father_name" class="form-control" id="father_name" id="fathername" placeholder="Enter Father Name"
                    value="<?php
                          if (!empty($js_personal_info->father_name)) {
                            echo $js_personal_info->father_name;
@@ -115,8 +115,8 @@
                 </div>              
               
               <div class="input-group">
-                  <span class="input-group-addon"><label class="control-label col-sm-3" for="email" id="mothername">Mother Name:</label></span>
-                  <input type="text" name="mother_name" class="form-control" id="mother_name" placeholder="Enter Mother Title"
+                  <span class="input-group-addon"><label class="control-label col-sm-3" for="email">Mother Name:</label></span>
+                  <input type="text" name="mother_name" class="form-control" id="mother_name" id="mothername" placeholder="Enter Mother Title"
                    value="<?php
                          if (!empty($js_personal_info->mother_name)) {
                            echo $js_personal_info->mother_name;
@@ -1052,25 +1052,24 @@
 <script>
 $(document).ready(function(){
     $("#fathername").keypress(function(event){
-        var inputValue = event.which;
-        // allow letters and whitespaces only.
-        if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)) { 
-            event.preventDefault(); 
+        var inputValue = event.charCode;
+        if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
+            event.preventDefault();
         }
     });
 });
-</script>
 
+</script>
 <script>
 $(document).ready(function(){
     $("#mothername").keypress(function(event){
-        var inputValue = event.which;
-        // allow letters and whitespaces only.
-        if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)) { 
-            event.preventDefault(); 
+        var inputValue = event.charCode;
+        if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
+            event.preventDefault();
         }
     });
 });
+
 </script>
             
             
