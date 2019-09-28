@@ -41,6 +41,7 @@ class Employer extends MY_Employer_Controller
                 'company_phone'    => $this->input->post('company_phone'),
                 'company_category' => $this->input->post('company_category'),
                 'contact_name'     => $this->input->post('contact_name'),
+				'company_career_link'     => $this->input->post('company_career_link'),
                 'company_service'  => $this->input->post('company_service'),
                 'company_address'  => $this->input->post('company_address'),
             );
