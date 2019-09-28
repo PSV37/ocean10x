@@ -263,7 +263,7 @@
                 <div class="col-md-6 col-sm-12">
                   <div class="formrow">
                     <label class="control-label mandatory">Vacancy Types *</label>
-                    <select name="job_types" required class="form-control" data-style="btn-default" data-live-search="true" style="height:70px;">
+                    <select name="job_types" required class="form-control" data-style="btn-default" data-live-search="true" style="height:50px;">
                       <?php if(!empty($job_info->job_types)) {echo $this->job_types_model->selected_types($job_info->job_types);}else {echo $this->job_types_model->selected_types();} ?>
                     </select>
                   </div>
