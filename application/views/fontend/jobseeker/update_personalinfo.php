@@ -106,7 +106,7 @@
               <div class="col-md-8 col-md-offset-2">
               <div class="input-group">
                   <span class="input-group-addon"><label class="control-label col-sm-3" for="email">Father Name:</label></span>
-                  <input type="text" name="father_name" class="form-control" id="father_name" id="fathername" placeholder="Enter Father Name"
+                  <input type="text" name="father_name" class="form-control" id="father_name"  placeholder="Enter Father Name"
                    value="<?php
                          if (!empty($js_personal_info->father_name)) {
                            echo $js_personal_info->father_name;
@@ -116,7 +116,7 @@
               
               <div class="input-group">
                   <span class="input-group-addon"><label class="control-label col-sm-3" for="email">Mother Name:</label></span>
-                  <input type="text" name="mother_name" class="form-control" id="mother_name" id="mothername" placeholder="Enter Mother Title"
+                  <input type="text" name="mother_name" class="form-control" id="mother_name"  placeholder="Enter Mother Title"
                    value="<?php
                          if (!empty($js_personal_info->mother_name)) {
                            echo $js_personal_info->mother_name;
@@ -1051,7 +1051,7 @@
 });</script>
 <script>
 $(document).ready(function(){
-    $("#fathername").keypress(function(event){
+    $("#father_name").keypress(function(event){
         var inputValue = event.charCode;
         if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
             event.preventDefault();
@@ -1062,7 +1062,7 @@ $(document).ready(function(){
 </script>
 <script>
 $(document).ready(function(){
-    $("#mothername").keypress(function(event){
+    $("#mother_name").keypress(function(event){
         var inputValue = event.charCode;
         if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
             event.preventDefault();
