@@ -210,7 +210,7 @@
                     
                     <div class="row">
                     <div class="col-md-4">
-                    <select name="job_deadline_day" class="form-control" id="job_deadline_day" required>
+                   <!-- <select name="job_deadline_day" class="form-control" id="job_deadline_day" required>
                       <option value="" selected>Day</option>
                       <?php
 					  
@@ -223,9 +223,9 @@
 											echo '<option value="'.$i.'" '.$selected.'>'.$i.'</option>';	
 										}
 									?>
-                    </select>
+                    </select>-->
                     </div>
-                    <div class="col-md-4">
+                    <!--<div class="col-md-4">
                     <select name="job_deadline_month" class="form-control" id="job_deadline_month" required>
                       <option value="" selected>Month</option>
                       <?php
@@ -254,7 +254,7 @@
 										}
 									?>
                     </select>
-                    </div>
+                    </div>-->
                     </div>
                     
                   </div>
