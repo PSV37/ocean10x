@@ -34,7 +34,6 @@
                 
                 <div class="settingbox">
                     
-                    
                     <form id="email_frm" enctype="multipart/form-data" role="form" method="post" action="">
                     
                     <h2>Add Email</h2>
