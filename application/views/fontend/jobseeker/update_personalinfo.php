@@ -54,8 +54,8 @@
                                     <td><?php echo $js_personal_info->nationality; ?></td>
                                     </tr>
                                      <tr>
-                                      <td>Voice:</td>
-                                    <td>+88<?php echo $js_personal_info->mobile; ?></td>
+                                      <td>Mobile:</td>
+                                    <td>+91<?php echo $js_personal_info->mobile; ?></td>
                                     </tr>
                                     <tr>
                                       <td>Present Address:</td>
