@@ -50,9 +50,10 @@
             
             <section>                
                 <div class="settingbox">
-                    <form  enctype="multipart/form-data" role="form" method="post" action="<?php echo base_url('admin/settings/add_address'); ?>">                    
+                    <form id="addr_frm" enctype="multipart/form-data" role="form" method="post" action="">                    
                     <h2>Add Address</h2>
-                    <input id="address" class="form-control" name="address" placeholder="Add Address" type="text">                    
+                    <input id="address" class="form-control" name="address" placeholder="Add Address" type="text">
+                    <div id="addr_result"></div>                   
                     <input type="submit" value="Add Address" class="btn-content"/>
                     </form>
                   
@@ -112,7 +113,7 @@ $('form#email_frm').submit(function(e)
                 {
                     if($.isEmptyObject(data.error)){
 
-                        $("#email_result").html('<div class="alert alert-success"><button type="button" class="close">×</button>Information Updated Successfully!</div>');
+                        $("#email_result").html('<div class="alert alert-success"><button type="button" class="close">×</button>'+data.success+'</div>');
                             window.setTimeout(function() {
                             $(".alert").fadeTo(500, 0).slideUp(500, function(){
                                 $(this).remove(); 
@@ -125,6 +126,40 @@ $('form#email_frm').submit(function(e)
 
                         }else{
                             $("#email_result").html('<div class="alert alert-danger"><button type="button" class="close">×</button>'+data.error+'</div>');
+                        }
+                }
+          });
+       
+  }); 
+
+$('form#addr_frm').submit(function(e)
+  {
+      e.preventDefault();
+    
+      $.ajax({
+                url: "<?php echo base_url('admin/settings/add_address'); ?>",
+                type: "POST",
+                data: new FormData(this),
+                contentType:false,
+                processData:false,
+                 dataType: "json",
+                success: function(data)
+                {
+                    if($.isEmptyObject(data.error)){
+
+                        $("#addr_result").html('<div class="alert alert-success"><button type="button" class="close">×</button>'+data.success+'</div>');
+                            window.setTimeout(function() {
+                            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                                $(this).remove(); 
+                            });
+                            location.reload();
+                            }, 1500);
+                          $('.alert .close').on("click", function(e){
+                                $(this).parent().fadeTo(500, 0).slideUp(500);
+                          });
+
+                        }else{
+                            $("#addr_result").html('<div class="alert alert-danger"><button type="button" class="close">×</button>'+data.error+'</div>');
                         }
                 }
           });
