@@ -40,8 +40,8 @@
                 <form role="form" enctype="multipart/form-data"
 
                       action="<?php echo base_url(); ?>admin/education_level/save_educaiton/<?php
-                      if (!empty($category_info->education_level_id)) {
-                          echo $category_info->education_level_id;
+                      if (!empty($educaiton_level_info->education_level_id)) {
+                        echo $educaiton_level_info->education_level_id;
                       }
                       ?>" method="post">
 

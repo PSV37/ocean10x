@@ -10,37 +10,26 @@ class Settings extends MY_Controller {
         $this->load->model('settings_model');
         $this->load->library(array('pagination', 'form_validation', 'session','upload', 'image_lib'));
 
-
         $this->load->helper(array('form', 'url','admin_helper'));
-               
-        
         $this->load->helper(array('form', 'url', 'text', 'inflector'));
-
-
         //$this->load->helper(array('text','inflector','download'));
-
-
-  
     }
 
     public function index() {
-//        $data['contact_email_result'] = $this->settings_model->get_single_records();
-
+        // $data['contact_email_result'] = $this->settings_model->get_single_records();
         $this->load->view('admin/settings_view/general_setting_view');
     }
     
     public function do_upload() { 
         $id=2;
-    if (!empty($_FILES['post_img']['name'])) {
+        if (!empty($_FILES['post_img']['name'])) {
             // file rename here...
             $file_name = $_FILES['post_img']['name'];
             $new_file_name = date('vs') . '_' . underscore($file_name);
             
             chmod('files/', 0777);
-           
             
             chmod('files/thumb', 0777);
-
 
             $config['upload_path'] = 'files/';
             $config['allowed_types'] = 'gif|jpg|png|jpeg';
@@ -65,11 +54,8 @@ class Settings extends MY_Controller {
                 $ministers_arrays = array();
                 $post_img['filename'] = $new_file_name;
             }
-
-                $this->settings_model->update($id,$post_img);
             
-            
-            
+            $this->settings_model->update($id,$post_img);
         }
             redirect(base_url('admin/settings/index'));
           
@@ -108,8 +94,10 @@ class Settings extends MY_Controller {
         if ($this->form_validation->run() === FALSE) {
             $this->index();
             return;
-        }
+            // $errors = validation_errors();
+            // echo json_encode(['error'=>$errors]);
 
+        }
 
         $post_metas = array(
             'meta_title' => $this->input->post('meta_title'),
@@ -117,8 +105,6 @@ class Settings extends MY_Controller {
             'meta_description' => $this->input->post('meta_description'),
         ); 
 
-        
-       
         $this->settings_model->update_metas($post_metas);
         $this->session->set_flashdata('added_action', true);
         redirect(base_url('admin/settings/index'));

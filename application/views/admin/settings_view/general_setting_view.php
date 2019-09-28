@@ -34,6 +34,7 @@
                 
                 <div class="settingbox">
                     
+                    
                     <form  enctype="multipart/form-data" role="form" method="post" action="<?php echo base_url('admin/settings/add_email'); ?>">
                     
                     <h2>Add Email</h2>
