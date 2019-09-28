@@ -396,7 +396,7 @@
               
               <div class="input-group">
                   <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd"> Mobile:</label></span>
-                  <input name="mobile" type="tel"  class="form-control" pattern="([+]?\d{1,2}[.-\s]?)?(\d{3}[.-]?){2}\d{4}" id="mobile" placeholder="Home/Emargency Contact"
+                  <input name="mobile" type="number"  class="form-control"  pattern="[1-9]{1}[0-9]{10}" id="mobile" placeholder="Home/Emargency Contact"
 
                value="<?php
                          if (!empty($js_personal_info->mobile)) {
