@@ -45,6 +45,7 @@ class Employer extends MY_Employer_Controller
 				'company_career_link'     => $this->input->post('company_career_link'),
                 'company_service'  => $this->input->post('company_service'),
                 'company_address'  => $this->input->post('company_address'),
+				'company_aboutus'  => $this->input->post('company_aboutus'),
             );
 
             $company_logo = isset($_FILES['company_logo']['name']) ? $_FILES['company_logo']['name'] : null;
