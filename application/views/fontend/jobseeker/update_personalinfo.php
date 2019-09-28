@@ -46,7 +46,7 @@
                                     </tr>
     
                                     <tr>
-                                      <td>National ID:</td>
+                                      <td>Adhar No:</td>
                                     <td><?php if($js_personal_info->national_id=="0") { echo "";} else { echo $js_personal_info->national_id;} ?></td>
                                     </tr>
                                     <tr>
@@ -126,7 +126,7 @@
               
               <div class="input-group">
                   <span class="input-group-addon"><label class="control-label col-sm-3" for="email">Date of Birth:</label></span>
-                  <input class="datepicker form-control"  required name="date_of_birth" value="<?php
+                  <input type="date" class="datepicker form-control"  required name="date_of_birth" value="<?php
                          if  (!empty($js_personal_info->date_of_birth=="0000-00-00")) {
                            echo ""; } else { echo  date('d/m/Y',strtotime($js_personal_info->date_of_birth));}
                        ?>" class="form-control" >
@@ -135,6 +135,7 @@
               <div class="input-group">
                   <span class="input-group-addon"><label class="control-label col-sm-3" for="email">Nationality:</label></span>
                   <select name="nationality" class="form-control" id="national_id">
+				  <option value="<?php echo $js_personal_info->nationality; ?>"><?php echo $js_personal_info->nationality; ?></option>
 <option value="Afganistan">Afghanistan</option>
 <option value="Albania">Albania</option>
 <option value="Algeria">Algeria</option>
