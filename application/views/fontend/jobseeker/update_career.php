@@ -8,7 +8,10 @@
                              <div class="userccount">
                             <?php $this->load->view('fontend/layout/seeker_resumemenu.php'); ?>
 
-                                    <hr>
+                                    <div class="tab-content">
+                             
+                                 <!-- Career Information -->
+                                 <div id="vspinfo" class="tab-pane fade in active">
                             <h5>
                                   Career Information
                                  
@@ -78,7 +81,8 @@
                     </div><!-- end row -->  
                 </div><!-- end container -->
             </div><!-- end section -->
-
+</div>
+</div>
 <script>
 function delete_Career(id) {
     if (confirm('Are you sure you want to Delete Career ?')) {
