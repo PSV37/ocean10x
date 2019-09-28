@@ -65,7 +65,7 @@ class Settings extends MY_Controller {
         $data['msg'] = '';
        
         // $this->form_validation->set_rules('email', 'Email', 'trim');
-        $this->form_validation->set_rules('email_id', 'Email Id Required', 'required|valid_email|trim');
+        $this->form_validation->set_rules('email_id', 'Email', 'required|valid_email|trim');
        
         $this->form_validation->set_error_delimiters('<span class="err" style="padding-left:2px;">', '</span>');
         // if ($this->form_validation->run() === FALSE) {
