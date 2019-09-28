@@ -13,7 +13,7 @@
                             <h5>
                       Your Training No: <?php echo $key; ?>  
 
-                                   <a href="#" data-toggle="modal" data-target="#UdpateTraining<?php  echo $v_training->js_training_id; ?>" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="glyphicon"><img class="edit-icon" height="25px" src="<?php echo base_url() ?>fontend/images/editicon.png"></i></a>                    
+                                   <a href="#" data-toggle="modal" data-target="#UdpateTraining<?php  echo $v_training->js_training_id; ?>" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil"></i></a>                    
                                     <a href="<?php echo base_url() ?>/job_seeker/delete_training/<?php echo $v_training->js_training_id ?>" class="pull-right btn  btn-xs" title="Delete" data-toggle="tooltip" data-placement="top" onclick="return confirm('Are you sure want to delete this record ?');"><i class="fa fa-trash-o"></i></a>                   
                             </h5>
                               <div class="table-responsive">          
