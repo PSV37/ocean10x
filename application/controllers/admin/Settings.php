@@ -144,24 +144,28 @@ class Settings extends MY_Controller {
        public function add_address(){
         $data['msg'] = '';
        
-        $this->form_validation->set_rules('address', 'address', 'trim');
+        $this->form_validation->set_rules('address', 'address', 'required|trim');
        
         $this->form_validation->set_error_delimiters('<span class="err" style="padding-left:2px;">', '</span>');
-        if ($this->form_validation->run() === FALSE) {
-            $this->index();
-            return;
+        // if ($this->form_validation->run() === FALSE) {
+        //     $this->index();
+        //     return;
+        // }
+        if ($this->form_validation->run() == FALSE)
+        {
+            $errors = validation_errors();
+            echo json_encode(['error'=>$errors]);
         }
+        else{
 
-
-        $post_phone = array(
-            'address' => $this->input->post('address'),
-        ); 
-
-        
-       
-        $this->settings_model->update_address($post_phone);
-        $this->session->set_flashdata('added_action', true);
-        redirect(base_url('admin/settings/index'));
+            $post_addr = array(
+                'address' => addslashes($this->input->post('address')),
+            ); 
+            $this->settings_model->update_address($post_addr);
+            echo json_encode(['success'=>'Address Updated Successfully!']);
+        // $this->session->set_flashdata('added_action', true);
+        // redirect(base_url('admin/settings/index'));
+        }
     }
       
       
