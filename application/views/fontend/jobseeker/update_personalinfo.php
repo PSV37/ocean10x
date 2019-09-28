@@ -106,7 +106,7 @@
               <div class="col-md-8 col-md-offset-2">
               <div class="input-group">
                   <span class="input-group-addon"><label class="control-label col-sm-3" for="email">Father Name:</label></span>
-                  <input type="text" name="father_name" class="form-control" id="father_name" placeholder="Enter Father Name"
+                  <input type="text" name="father_name" class="form-control" id="father_name" pattern="[A-Za-z]" placeholder="Enter Father Name"
                    value="<?php
                          if (!empty($js_personal_info->father_name)) {
                            echo $js_personal_info->father_name;
