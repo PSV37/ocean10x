@@ -386,8 +386,8 @@
               </div>
               
               <div class="input-group">
-                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">NID NO:</label></span>
-                  <input name="national_id" type="text"  class="form-control" id="national_id" placeholder="Enter NID "
+                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">Adhar NO:</label></span>
+                  <input name="national_id" type="text"  class="form-control" id="national_id" placeholder="Enter Adhar No "
 
                value="<?php
                          if (!empty($js_personal_info->national_id)) {
