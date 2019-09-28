@@ -126,10 +126,7 @@
               
               <div class="input-group">
                   <span class="input-group-addon"><label class="control-label col-sm-3" for="email">Date of Birth:</label></span>
-                  <input type="date" class="datepicker form-control"  required name="date_of_birth" value="<?php
-                         if  (!empty($js_personal_info->date_of_birth=="0000-00-00")) {
-                           echo ""; } else { echo  date('d/m/Y',strtotime($js_personal_info->date_of_birth));}
-                       ?>" class="form-control" >
+                  <input type="date" class="datepicker form-control"  required name="date_of_birth" value="<?php echo $js_personal_info->date_of_birth; ?>" class="form-control" >
               </div>
               
               <div class="input-group">
