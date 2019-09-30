@@ -689,7 +689,7 @@
                 <select  name="country1_id" class="form-control" onchange="getStatess(this.value)">
 					<option value="">Select Country</option>
 					<?php foreach($country as $keys){?>
-					<option value="<?php echo $keys['country_id']; ?>"><?php echo $keys['country_name']; ?></option>
+					<option value="<?php echo $keys['country_id']; ?>"<?php if($js_personal_info->country1_id==$keys['country_id']){ echo "selected"; }?>><?php echo $keys['country_name']; ?></option>
 					<?php } ?>
 				  </select>
               </div>
@@ -698,7 +698,7 @@
                  <select  name="state1_id" id="state1_id" class="form-control" onchange="getCityss(this.value)">
 				 <option value="">Select Country First</option>
 				 <?php foreach($state as $value){?>
-					<option value="<?php echo $value['state_id']; ?>"><?php echo $value['state_name']; ?></option>
+					<option value="<?php echo $value['state_id']; ?>"<?php if($js_personal_info->state1_id==$value['state_id']){ echo "selected"; }?>><?php echo $value['state_name']; ?></option>
 					<?php } ?>
 				 </select>
               </div>
@@ -707,7 +707,7 @@
                  <select  name="city1_id" id="city1_id" class="form-control">
 				 <option value="">Select State First</option>
 				 <?php foreach($city as $valuee){?>
-					<option value="<?php echo $valuee['id']; ?>"><?php echo $valuee['city_name']; ?></option>
+					<option value="<?php echo $valuee['id']; ?>"<?php if($js_personal_info->city1_id==$valuee['id']){ echo "selected"; }?>><?php echo $valuee['city_name']; ?></option>
 					<?php } ?>
 				 </select>
               </div>
