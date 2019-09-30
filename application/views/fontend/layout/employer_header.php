@@ -15,22 +15,14 @@
     
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/responsive.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/main.css">
-	
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/intlTelInput.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/demo.css">
     
     <link href="<?php echo base_url(); ?>asset/css/jquery-ui.css" rel="stylesheet" type="text/css" />
     <script src="<?php echo base_url() ?>fontend/js/jquery.js "></script> 
         <link href="<?php echo base_url(); ?>asset/css/plugins/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
-		<style>
-		.iti__flag{
-		height:15px;
-		box-shadow:0 0 1px 0 #888;
-		background-image:<?php echo base_url(); ?>fontend/img/flags.png);
-		background-repeat:no-repeat;
-		background-color:#dbdbdb;
-		background-position:20px 0
-		}
-     </style>
+		
+
     <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 </head>
 
