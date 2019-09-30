@@ -72,9 +72,9 @@
                                             ?>" class="form-control" placeholder="Company Website">
                                             </div>
                                         </div>
-                                        <div class="col-md-6 col-sm-12">
+                                        <div class="col-md-2 col-sm-12">
                                         	<div class="formrow">
-											<select id="country" name="country">
+											<select id="country" name="country" class="form-control">
 	<option value="AD">AD - Andorra (+376)</option>
 	<option value="AE">AE - United Arab Emirates (+971)</option>
 	<option value="AF">AF - Afghanistan (+93)</option>
@@ -306,6 +306,9 @@
 	<option value="ZM">ZM - Zambia (+260)</option>
 	<option value="ZW">ZW - Zimbabwe (+263)</option>
 </select>
+</div>
+ <div class="col-md-4 col-sm-12">
+                                        	<div class="formrow">
                                             <input type="tel" name="company_phone" value="<?php 
                                             	 if(!empty($company_info->company_phone)){
                                             	 	echo $company_info->company_phone;
