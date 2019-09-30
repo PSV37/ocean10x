@@ -53,9 +53,13 @@
                                       <td>Nationality:</td>
                                     <td><?php echo $js_personal_info->nationality; ?></td>
                                     </tr>
+									<tr>
+                                      <td>Country Code:</td>
+                                    <td><?php echo $js_personal_info->country_code; ?></td>
+                                    </tr>
                                      <tr>
                                       <td>Mobile:</td>
-                                    <td>+91<?php echo $js_personal_info->mobile; ?></td>
+                                    <td><?php echo $js_personal_info->mobile; ?></td>
                                     </tr>
                                     <tr>
                                       <td>Present Address:</td>
@@ -396,7 +400,7 @@
               <div class="input-group">
                   <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd"> Country Code:</label></span>
 											<select id="country" name="country_code" class="form-control">
-												<option><?php echo $company_info->country_code?></option>
+												<option><?php echo $js_personal_info->country_code?></option>
 												<option value="AD - Andorra (+376)">AD - Andorra (+376)</option>
 												<option value="AE - United Arab Emirates (+971)">AE - United Arab Emirates (+971)</option>
 												<option value="AF - Afghanistan (+93)">AF - Afghanistan (+93)</option>
