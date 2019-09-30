@@ -83,7 +83,7 @@
                                             	 if(!empty($company_info->company_phone)){
                                             	 	echo $company_info->company_phone;
                                             	 }
-                                            ?>" class="form-control" maxlength="10" style="width:100px;">
+                                            ?>" class="form-control" maxlength="10" style="width:400px;">
                                             </div>
                                         </div>
                                     </div><!-- end row -->
