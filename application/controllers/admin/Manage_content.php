@@ -38,25 +38,30 @@ class Manage_content extends MY_Controller
         $this->form_validation->set_rules('meta_description', 'meta Description', 'trim');
         $this->form_validation->set_error_delimiters('<span class="err" style="padding-left:2px;">', '</span>');
         if ($this->form_validation->run() === FALSE) {
-            $this->index();
-            return;
+            // $this->index();
+            // return;
+            $errors = validation_errors();
+            echo json_encode(['error'=>$errors]);
+        }else{
+            $slug = $this->input->post('slug');
+            $slugs = create_unique_slug($slug, 'content_management', $field = 'slug', $key = NULL, $value = NULL);
+            // $category_Ids=implode(",",$this->input->post('blog_cat'));
+            $post = array(
+                'heading' => $this->input->post('heading'),
+                'slug' => $this->input->post('slug'),
+                'description' => $this->input->post('content_ck'),
+               
+                'meta_title' => $this->input->post('meta_title'),
+                'meta_keywords' => $this->input->post('meta_keywords'),
+                'meta_description' => $this->input->post('meta_description'),
+            ); 
+            
+            $this->manage_content_model->add($post);
+             echo json_encode(['success'=>'Content Added Successfully!']);
+            // $this->session->set_flashdata('added_action', true);
+            // redirect(base_url('admin/manage_content'));
         }
-        $slug = $this->input->post('slug');
-        $slugs = create_unique_slug($slug, 'content_management', $field = 'slug', $key = NULL, $value = NULL);
-        // $category_Ids=implode(",",$this->input->post('blog_cat'));
-        $post = array(
-            'heading' => $this->input->post('heading'),
-            'slug' => $this->input->post('slug'),
-            'description' => $this->input->post('content_ck'),
-           
-            'meta_title' => $this->input->post('meta_title'),
-            'meta_keywords' => $this->input->post('meta_keywords'),
-            'meta_description' => $this->input->post('meta_description'),
-        ); 
         
-        $this->manage_content_model->add($post);
-        $this->session->set_flashdata('added_action', true);
-        redirect(base_url('admin/manage_content'));
     }
     
     
