@@ -74,11 +74,12 @@
                                         </div>
                                         <div class="col-md-6 col-sm-12">
                                         	<div class="formrow">
-                                            <input type="text" name="company_phone" value="<?php 
+                                            <!--<input type="text" name="company_phone" value="<?php 
                                             	 if(!empty($company_info->company_phone)){
                                             	 	echo $company_info->company_phone;
                                             	 }
-                                            ?>" class="form-control" maxlength="10" id="phone" placeholder="Phone Number">
+                                            ?>" class="form-control" maxlength="10" id="phone" placeholder="Phone Number">-->
+											 <input id="phone" name="phone" type="tel">
                                             </div>
                                         </div>
                                     </div><!-- end row -->
