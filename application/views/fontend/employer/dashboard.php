@@ -313,7 +313,7 @@
                                             	 if(!empty($company_info->company_phone)){
                                             	 	echo $company_info->company_phone;
                                             	 }
-                                            ?>" class="form-control" maxlength="10" id=""  style="width:380px;">
+                                            ?>" class="form-control" maxlength="10" id="">
                                             </div>
                                         </div>
                                     </div><!-- end row -->
