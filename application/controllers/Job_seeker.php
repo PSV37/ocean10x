@@ -44,22 +44,21 @@ class Job_seeker extends MY_Seeker_Controller
             );
             if (empty($personal_info_id)) {
                 $this->job_seeker_personal_model->insert($personal_info);
-				$data['city'] = $this->Master_model->getMaster('city',$where=false);
-				$data['country'] = $this->Master_model->getMaster('country',$where=false);
-				$data['state'] = $this->Master_model->getMaster('state',$where=false);
+				
                 redirect('job_seeker/seeker_info',$data);
             } else {
                 $this->job_seeker_personal_model->update($personal_info, $personal_info_id);
-				$data['city'] = $this->Master_model->getMaster('city',$where=false);
-				$data['country'] = $this->Master_model->getMaster('country',$where=false);
-				$data['state'] = $this->Master_model->getMaster('state',$where=false);
                 redirect('job_seeker/seeker_info',$data);
             }
         } else {
 			echo "dddd";
             $jobseeker_id     = $this->session->userdata('job_seeker_id');
             $js_personal_info = $this->job_seeker_personal_model->personalinfo_list_by_id($jobseeker_id);
-            echo $this->load->view('fontend/jobseeker/update_personalinfo', compact('jobseeker_id', 'js_personal_info'),true);
+			$city = $this->Master_model->getMaster('city',$where=false);
+			$country = $this->Master_model->getMaster('country',$where=false);
+			$state = $this->Master_model->getMaster('state',$where=false);
+			
+            echo $this->load->view('fontend/jobseeker/update_personalinfo', compact('jobseeker_id', 'js_personal_info', 'city', 'country', 'state'),true);
         }
     }
 
