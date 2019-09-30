@@ -44,9 +44,15 @@ class Job_seeker extends MY_Seeker_Controller
             );
             if (empty($personal_info_id)) {
                 $this->job_seeker_personal_model->insert($personal_info);
+				$data['city'] = $this->Master_model->getMaster('city',$where=false);
+				$data['country'] = $this->Master_model->getMaster('country',$where=false);
+				$data['state'] = $this->Master_model->getMaster('state',$where=false);
                 redirect('job_seeker/seeker_info');
             } else {
                 $this->job_seeker_personal_model->update($personal_info, $personal_info_id);
+				$data['city'] = $this->Master_model->getMaster('city',$where=false);
+				$data['country'] = $this->Master_model->getMaster('country',$where=false);
+				$data['state'] = $this->Master_model->getMaster('state',$where=false);
                 redirect('job_seeker/seeker_info');
             }
         } else {
@@ -490,5 +496,47 @@ exit;*/
         $this->Job_seeker_education_model->delete_cv($jobseeker_id);
         redirect('job_seeker/seeker_info');
     }
+	
+	
+	
+	
+	function getstate(){
+	$country_id = $this->input->post('id');
+	$where['country_id'] = $country_id;
+	$states = $this->Master_model->getMaster('state',$where);
+	$result = '';
+	if(!empty($states)){ 
+		$result .='<option value="">Select State</option>';
+		foreach($states as $key){
+		  $result .='<option value="'.$key['state_id'].'">'.$key['state_name'].'</option>';
+		}
+	}else{
+	
+		$result .='<option value="">State not available</option>';
+	}
+	 echo $result;
+}
+
+
+ function getcity(){
+	$state_id = $this->input->post('id');
+	$where['state_id'] = $state_id;
+	$citys = $this->Master_model->getMaster('city',$where);
+	$result = '';
+	if(!empty($citys)){ 
+		$result .='<option value="">Select City</option>';
+		foreach($citys as $key){
+		  $result .='<option value="'.$key['id'].'">'.$key['city_name'].'</option>';
+		}
+	}else{
+	
+		$result .='<option value="">State not available</option>';
+	}
+	 echo $result;
+}
+
+
+}
+	
 
 }
