@@ -51,7 +51,7 @@ class Company_Profile_Model extends MY_Model
         $config['protocol']    = 'smtp';
 		$config['smtp_host']    = 'mail.consultnhire.com';
 		$config['smtp_port']    = '465';
-		$config['smtp_timeout'] = '7'; 
+		$config['smtp_timeout'] = '7'; 	
 		$config['smtp_user'] = "info@consultnhire.com";
 		$config['smtp_pass'] = "yQB;H[V&o64I";
 		$config['charset']    = 'utf-8';

@@ -31,59 +31,6 @@ class Employer extends MY_Employer_Controller
     public function profile_setting()
     {
 
-        $employer_id = $this->session->userdata('company_profile_id');
-
-        if ($_POST) {
-
-            $company_profile = array(
-                'company_name'     => $this->input->post('company_name'),
-                'company_url'      => $this->input->post('company_url'),
-                'company_phone'    => $this->input->post('company_phone'),
-                'company_category' => $this->input->post('company_category'),
-                'contact_name'     => $this->input->post('contact_name'),
-				'hot_jobs'     => $this->input->post('hot_jobs'),
-				'company_career_link'     => $this->input->post('company_career_link'),
-                'company_service'  => $this->input->post('company_service'),
-                'company_address'  => $this->input->post('company_address'),
-				'company_aboutus'  => $this->input->post('company_aboutus'),
-            );
-
-            $company_logo = isset($_FILES['company_logo']['name']) ? $_FILES['company_logo']['name'] : null;
-
-            if (!empty($employer_id) || !empty($company_logo)) {
-                if (!empty($company_logo)) {
-
-                    $config['upload_path']   = 'upload/';
-                    $config['allowed_types'] = 'gif|jpg|png';
-                    $config['encrypt_name']  = true;
-                    $config['max_size']      = 1000;
-                    $config['max_width']     = 300;
-                    $config['max_height']    = 300;
-
-                    $this->load->library('upload', $config);
-                    $result_upload                   = $this->upload->do_upload('company_logo');
-                    $upload_data                     = $this->upload->data();
-                    $company_logo                    = $upload_data['file_name'];
-                    $company_profile['company_logo'] = $company_logo;
-
-                    if (!$result_upload == true) {
-                        $error = array('error' => $this->upload->display_errors());
-                        $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">Please Upload a Valid Logo Size Max size 300*300</div>');
-                        redirect('employer/profile-setting');
-                    } 
-                }
-            }
-
-                if(!empty($employer_id)) {
-                    $this->company_profile_model->update($company_profile, $employer_id);
-                     $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Successfully Update Your Profile</div>');
-                     redirect('employer/profile-setting');
-                }
-
-                } else {
-                    $company_info = $this->company_profile_model->get($employer_id);
-                    $this->load->view('fontend/employer/dashboard', compact('company_info'));
-                }
             }
 
             public function job_post()
