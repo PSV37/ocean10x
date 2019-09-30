@@ -78,7 +78,7 @@
                                             	 if(!empty($company_info->company_phone)){
                                             	 	echo $company_info->company_phone;
                                             	 }
-                                            ?>" class="form-control" maxlength="10" id="number" placeholder="Phone Number">
+                                            ?>" class="form-control" maxlength="10" id="phone" placeholder="Phone Number">
                                             </div>
                                         </div>
                                     </div><!-- end row -->
@@ -223,17 +223,7 @@ echo $company_info->company_career_link;
     })
 
 </script>
-<script>$(document).ready(function () {
-  //called when key is pressed in textbox
-  $("#number").keypress(function (e) {
-     //if the letter is not digit then display error and don't type anything
-     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-        //display error message
-        $("#errmsg").html("Digits Only").show().fadeOut("slow");
-               return false;
-    }
-   });
-});</script>
+
 
 <script>
 $(document).ready(function(){
@@ -246,6 +236,12 @@ $(document).ready(function(){
 });
 
 </script>
-
+  <script src="<?php echo base_url(); ?>asset/js/intlTelInput.js"></script>
+  <script>
+    var input = document.querySelector("#phone");
+    window.intlTelInput(input, {
+      utilsScript: "asset/js/utils.js",
+    });
+  </script>
   
  <?php $this->load->view("fontend/layout/footer.php"); ?>
