@@ -694,7 +694,7 @@
 			  
 			   <div class="input-group">
                   <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">Country</label></span>
-                <select  name="country1_id" class="form-control" onchange="getStates(this.value)">
+                <select  name="country1_id" class="form-control" onchange="getStatess(this.value)">
 					<option value="">Select Country</option>
 					<?php foreach($country as $keys){?>
 					<option value="<?php echo $keys['country_id']; ?>"><?php echo $keys['country_name']; ?></option>
@@ -703,7 +703,7 @@
               </div>
 			  <div class="input-group">
                   <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">State</label></span>
-                 <select  name="state1_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+                 <select  name="state1_id" id="state1_id" class="form-control" onchange="getCityss(this.value)">
 				 <option value="">Select Country First</option>
 				 <?php foreach($state as $value){?>
 					<option value="<?php echo $value['state_id']; ?>"><?php echo $value['state_name']; ?></option>
@@ -712,7 +712,7 @@
               </div>
 			  <div class="input-group">
                   <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">City</label></span>
-                 <select  name="city1_id" id="city_id" class="form-control">
+                 <select  name="city1_id" id="city1_id" class="form-control">
 				 <option value="">Select State First</option>
 				 <?php foreach($city as $valuee){?>
 					<option value="<?php echo $valuee['id']; ?>"><?php echo $valuee['city_name']; ?></option>
@@ -1404,6 +1404,43 @@ function FillBilling(f) {
                 data:{id:id},
                 success:function(res){
                     $('#city_id').html(res);
+                }
+				
+            }); 
+          }
+   
+	   }
+	   
+	   </script>        
+	   
+	   
+	   <script>
+	  function getStatess(id){
+		if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Job_seeker/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state1_id').html(res);
+                }
+				
+            }); 
+          }
+   
+	   }
+	   
+	   </script>
+	   
+	   <script>
+	  function getCityss(id){
+		if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Job_seeker/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city1_id').html(res);
                 }
 				
             }); 
