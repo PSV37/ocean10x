@@ -132,7 +132,7 @@ $('form#frm_blog_post').submit(function(e)
 
 // Social Icon Edit form submit
 $('form#edit_frm_post').submit(function(e)
-  {
+  { 
       e.preventDefault();
     
       $.ajax({
