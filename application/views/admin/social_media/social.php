@@ -57,13 +57,14 @@
       <!-- Popup Div Starts Here -->
       <div id="popupContact"> 
         <!-- Contact Us Form -->
-        <form name="frm_blog_post" id="frm_blog_post" enctype="multipart/form-data" role="form" method="post" action="<?php echo base_url('admin/social_media/add_social'); ?>">
+        <form name="frm_blog_post" id="frm_blog_post" enctype="multipart/form-data" role="form" method="post" action="">
           <img id="close" src="<?php echo base_url();?>asset/img/3.png" onclick ="social_hide()">
           <h2>Add New Social Media Icon</h2>
           <hr>
           <input id="title" class="form-control" name="title" placeholder="Title" type="text">
           <input id="class" class="form-control" name="class" placeholder="Icon Class" type="text">
           <input id="link" class="form-control" name="link" placeholder="Link" type="text">
+          <div id="social_add_result"></div>
           <input type="submit" value="Submit" class="btn-content"/>
         </form>
       </div>
@@ -73,7 +74,7 @@
       <!-- Popup Div Starts Here -->
       <div id="popupContact"> 
         <!-- Contact Us Form -->
-        <form name="frm_post" id="edit_frm_post" enctype="multipart/form-data" role="form" method="post" action="<?php echo base_url('admin/social_media/edit_social'); ?>">
+        <form name="frm_post" id="edit_frm_post" enctype="multipart/form-data" role="form" method="post" action="">
           <img id="close" src="<?php echo base_url();?>asset/img/3.png" onclick ="social_hide_edit()">
           <h2>Social Media Icon</h2>
           <hr>
@@ -81,6 +82,7 @@
           <input id="social_id" class="form-control" name="social_id" placeholder="Meta Title" type="hidden">
           <input id="edit_class" class="form-control" name="edit_class" placeholder="Edit Social Class" type="text">
           <input id="edit_link" class="form-control" name="edit_link" placeholder="Edit Social Link" type="text">
+          <div id="social_edit_result"></div>
           <input type="submit" value="Submit" class="btn-content"/>
         </form>
       </div>
@@ -92,3 +94,74 @@
 <!-- Display Popup Button -->
 
 <?php $this->load->view('admin/components/footer'); ?>
+<script>
+// Social Icon Add form submit
+$('form#frm_blog_post').submit(function(e)
+  {
+      e.preventDefault();
+    
+      $.ajax({
+                url: "<?php echo base_url('admin/social_media/add_social'); ?>",
+                type: "POST",
+                data: new FormData(this),
+                contentType:false,
+                processData:false,
+                dataType: "json",
+                success: function(data)
+                {
+                    if($.isEmptyObject(data.error)){
+
+                        $("#social_add_result").html('<div class="alert alert-success"><button type="button" class="close">×</button>'+data.success+'</div>');
+                            window.setTimeout(function() {
+                            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                                $(this).remove(); 
+                            });
+                            location.reload();
+                            }, 1500);
+                          $('.alert .close').on("click", function(e){
+                                $(this).parent().fadeTo(500, 0).slideUp(500);
+                          });
+
+                        }else{
+                            $("#social_add_result").html('<div class="alert alert-danger"><button type="button" class="close">×</button>'+data.error+'</div>');
+                        }
+                }
+          });
+       
+  }); 
+
+// Social Icon Edit form submit
+$('form#edit_frm_post').submit(function(e)
+  { 
+      e.preventDefault();
+    
+      $.ajax({
+                url: "<?php echo base_url('admin/social_media/edit_social'); ?>",
+                type: "POST",
+                data: new FormData(this),
+                contentType:false,
+                processData:false,
+                dataType: "json",
+                success: function(data)
+                {
+                    if($.isEmptyObject(data.error)){
+
+                        $("#social_edit_result").html('<div class="alert alert-success"><button type="button" class="close">×</button>'+data.success+'</div>');
+                            window.setTimeout(function() {
+                            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                                $(this).remove(); 
+                            });
+                            location.reload();
+                            }, 1500);
+                          $('.alert .close').on("click", function(e){
+                                $(this).parent().fadeTo(500, 0).slideUp(500);
+                          });
+
+                        }else{
+                            $("#social_edit_result").html('<div class="alert alert-danger"><button type="button" class="close">×</button>'+data.error+'</div>');
+                        }
+                }
+          });
+       
+  }); 
+</script>

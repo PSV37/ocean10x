@@ -34,21 +34,24 @@ class Social_media extends MY_Controller
      
         $this->form_validation->set_error_delimiters('<span class="err" style="padding-left:2px;">', '</span>');
         if ($this->form_validation->run() === FALSE) {
-            $this->index();
-            return;
+            // $this->index();
+            // return;
+            $errors = validation_errors();
+            echo json_encode(['error'=>$errors]);
         }
-       
-        $post = array(
-            'title' => $this->input->post('title'),
-            'class' => $this->input->post('class'),
-            'link' => $this->input->post('link'),
-
-          
-        ); 
+       else{
+             $post = array(
+                'title' => $this->input->post('title'),
+                'class' => $this->input->post('class'),
+                'link' => $this->input->post('link'),
+            ); 
         
-        $this->social_media_model->add($post);
-        $this->session->set_flashdata('added_action', true);
-        redirect(base_url('admin/social_media'));
+            $this->social_media_model->add($post);
+            echo json_encode(['success'=>'Social Media Icon Added Successfully!']);
+       }
+       
+        // $this->session->set_flashdata('added_action', true);
+        // redirect(base_url('admin/social_media'));
     }
     
     
@@ -75,24 +78,26 @@ class Social_media extends MY_Controller
 
         $this->form_validation->set_error_delimiters('<span class="err" style="padding-left:2px;">', '</span>');
         if ($this->form_validation->run() === FALSE) {
-            $this->index();
-            return;
+            // $this->index();
+            // return;
+            $errors = validation_errors();
+            echo json_encode(['error'=>$errors]);
         }
-
+        else{
+            
+            $post = array(
+                'title' => $this->input->post('edit_title'),
+                'class' => $this->input->post('edit_class'),
+                'link' => $this->input->post('edit_link'),
+            );
+            $this->social_media_model->update($id, $post);
+            echo json_encode(['success'=>'Social Media Icon Added Successfully!']);
+            // $this->session->set_flashdata('update_action', true);
+            // redirect(base_url('admin/social_media'));
+            // return;
+        }
         
 
-        $post = array(
-            'title' => $this->input->post('edit_title'),
-            'class' => $this->input->post('edit_class'),
-            'link' => $this->input->post('edit_link'),
-           
-        );
-
-        
-        $this->social_media_model->update($id, $post);
-        $this->session->set_flashdata('update_action', true);
-        redirect(base_url('admin/social_media'));
-        return;
     }
     
       public function delete_social($id = '') {
