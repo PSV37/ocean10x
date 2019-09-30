@@ -654,6 +654,7 @@
                        ?></textarea>
               </div>
               <input type="checkbox" name="billingtoo" onclick="FillBilling(this.form)">
+			  <br/>
 			 <em>Check this box if Present Address and Parmanent &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Address are the same.</em>
               <div class="input-group">
                   <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">Parmanent Address</label></span>
