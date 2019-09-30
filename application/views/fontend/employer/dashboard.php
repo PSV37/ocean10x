@@ -74,7 +74,7 @@
                                         </div>
                                         <div class="col-md-2 col-sm-12">
                                         	<div class="formrow">
-											<select id="country" name="country" class="form-control">
+											<select id="country" name="country" class="form-control" style="height:42px;">
 	<option value="AD">AD - Andorra (+376)</option>
 	<option value="AE">AE - United Arab Emirates (+971)</option>
 	<option value="AF">AF - Afghanistan (+93)</option>
@@ -308,13 +308,13 @@
 </select>
 </div>
 </div>
- <div class="col-md-4 col-sm-12">
+											<div class="col-md-4 col-sm-12">
                                         	<div class="formrow">
                                             <input type="tel" name="company_phone" value="<?php 
                                             	 if(!empty($company_info->company_phone)){
                                             	 	echo $company_info->company_phone;
                                             	 }
-                                            ?>" class="form-control" maxlength="10" id="">
+                                            ?>" class="form-control" maxlength="10" id="tbNumbers" onkeypress="javascript:return isNumber(event)" style="margin-left:-32px; width:203px;">
                                             </div>
                                         </div>
                                     </div><!-- end row -->
@@ -449,6 +449,17 @@ echo $company_info->company_career_link;
 </div>
   </div>
 </div>
+<script>
+    // WRITE THE VALIDATION SCRIPT.
+    function isNumber(evt) {
+        var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+        if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+            return false;
+
+        return true;
+    }    
+</script>
+
 
 <script type="text/javascript">
     
