@@ -684,7 +684,7 @@
 			  
 			 <em>Check this box if Present Address and Parmanent &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Address are the same.</em>
 			
-			 <div class="input-group">
+			 <br/><br/><div class="input-group">
                   <br/> <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">Country</label></span>
                 <select  name="country1_id" class="form-control" onchange="getStatess(this.value)">
 					<option value="">Select Country</option>
