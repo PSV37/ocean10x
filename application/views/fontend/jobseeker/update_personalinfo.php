@@ -648,9 +648,8 @@
                   <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">Country</label></span>
                 <select  name="country_id" class="form-control" onchange="getStates(this.value)">
 					<option value="">Select Country</option>
-					<option value="<?php echo $js_personal_info->country_id ?>"><?php echo $js_personal_info->country_id ?></option>
 					<?php foreach($country as $key){?>
-					<option value="<?php echo $key['country_id']; ?>"><?php echo $key['country_name']; ?></option>
+					<option value="<?php echo $key['country_id']; ?>"<?php if($js_personal_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
 					<?php } ?>
 				  </select>
               </div>
