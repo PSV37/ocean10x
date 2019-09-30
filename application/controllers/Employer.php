@@ -38,6 +38,7 @@ class Employer extends MY_Employer_Controller
             $company_profile = array(
                 'company_name'     => $this->input->post('company_name'),
                 'company_url'      => $this->input->post('company_url'),
+				'country_code'    => $this->input->post('country_code'),
                 'company_phone'    => $this->input->post('company_phone'),
                 'company_category' => $this->input->post('company_category'),
                 'contact_name'     => $this->input->post('contact_name'),

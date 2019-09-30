@@ -74,7 +74,8 @@
                                         </div>
                                         <div class="col-md-3 col-sm-12">
                                         	<div class="formrow">
-											<select id="country" name="country" class="form-control" style="height:42px;">
+											<select id="country" name="country_code" class="form-control" style="height:42px;">
+												<option><?php echo $company_info->country_code?></option>
 												<option value="AD">AD - Andorra (+376)</option>
 												<option value="AE">AE - United Arab Emirates (+971)</option>
 												<option value="AF">AF - Afghanistan (+93)</option>
