@@ -394,7 +394,7 @@
                        ?>">
               </div>
               <div class="input-group">
-                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd"> country Code:</label></span>
+                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd"> Country Code:</label></span>
 											<select id="country" name="country_code" class="form-control">
 												<option><?php echo $company_info->country_code?></option>
 												<option value="AD - Andorra (+376)">AD - Andorra (+376)</option>
