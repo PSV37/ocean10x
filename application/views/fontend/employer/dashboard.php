@@ -78,7 +78,7 @@
                                             	 if(!empty($company_info->company_phone)){
                                             	 	echo $company_info->company_phone;
                                             	 }
-                                            ?>" class="form-control" maxlength="10" id="phone" placeholder="Phone Number" cols="40">
+                                            ?>" class="form-control" maxlength="10" id="phone"  style="width:380px;">
                                             </div>
                                         </div>
                                     </div><!-- end row -->
