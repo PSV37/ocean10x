@@ -654,7 +654,7 @@
                        ?></textarea>
               </div>
               <input type="checkbox" name="billingtoo" onclick="FillBilling(this.form)">
-			 <em>Present and Permanent Address are same Please Checked this box.</em>
+			 <em>Check this box if Present Address and Parmanent Address are the same.</em>
               <div class="input-group">
                   <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">Parmanent Address</label></span>
                   <textarea name="parmanent_address" class="form-control" rows="5" id="comment"><?php 
