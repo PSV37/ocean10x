@@ -236,8 +236,8 @@ $(document).ready(function(){
 });
 
 </script>
-  <script src="<?php echo base_url(); ?>fontend/js/intlTelInput.js"></script>
-  <script src="<?php echo base_url(); ?>fontend/js/utils.js"></script>
+  <script src="<?php echo base_url(); ?>asset/js/intlTelInput.js"></script>
+  <script src="<?php echo base_url(); ?>asset/js/utils.js"></script>
   <script>
     var input = document.querySelector("#phone");
     window.intlTelInput(input, {
