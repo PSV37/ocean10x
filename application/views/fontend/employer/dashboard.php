@@ -307,6 +307,7 @@
 	<option value="ZW">ZW - Zimbabwe (+263)</option>
 </select>
 </div>
+</div>
  <div class="col-md-4 col-sm-12">
                                         	<div class="formrow">
                                             <input type="tel" name="company_phone" value="<?php 
