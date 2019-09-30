@@ -653,7 +653,8 @@
                            }
                        ?></textarea>
               </div>
-              
+              <input type="checkbox" name="billingtoo" onclick="FillBilling(this.form)">
+			 <em>Present and Permanent Address are same Please Checked this box.</em>
               <div class="input-group">
                   <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">Parmanent Address</label></span>
                   <textarea name="parmanent_address" class="form-control" rows="5" id="comment"><?php 
@@ -1312,5 +1313,11 @@ $(document).ready(function(){
 
 </script>
             
-            
+<script>
+function FillBilling(f) {
+  if(f.billingtoo.checked == true) {
+    f.parmanent_address.value = f.present_address.value;
+  }
+}
+</script>            
       
