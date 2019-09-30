@@ -47,13 +47,13 @@ class Job_seeker extends MY_Seeker_Controller
 				$data['city'] = $this->Master_model->getMaster('city',$where=false);
 				$data['country'] = $this->Master_model->getMaster('country',$where=false);
 				$data['state'] = $this->Master_model->getMaster('state',$where=false);
-                redirect('job_seeker/seeker_info');
+                redirect('job_seeker/seeker_info',$data);
             } else {
                 $this->job_seeker_personal_model->update($personal_info, $personal_info_id);
 				$data['city'] = $this->Master_model->getMaster('city',$where=false);
 				$data['country'] = $this->Master_model->getMaster('country',$where=false);
 				$data['state'] = $this->Master_model->getMaster('state',$where=false);
-                redirect('job_seeker/seeker_info');
+                redirect('job_seeker/seeker_info',$data);
             }
         } else {
             $jobseeker_id     = $this->session->userdata('job_seeker_id');
