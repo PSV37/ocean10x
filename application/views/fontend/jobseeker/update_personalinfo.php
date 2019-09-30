@@ -683,9 +683,9 @@
               <input type="checkbox" name="billingtoo" onclick="FillBilling(this.form)">
 			  
 			 <em>Check this box if Present Address and Parmanent &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Address are the same.</em>
-			 <br/>
+			
 			 <div class="input-group">
-                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">Country</label></span>
+                  <br/> <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">Country</label></span>
                 <select  name="country1_id" class="form-control" onchange="getStatess(this.value)">
 					<option value="">Select Country</option>
 					<?php foreach($country as $keys){?>
