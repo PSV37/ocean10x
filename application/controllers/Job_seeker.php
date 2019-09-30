@@ -51,7 +51,6 @@ class Job_seeker extends MY_Seeker_Controller
                 redirect('job_seeker/seeker_info',$data);
             }
         } else {
-			echo "dddd";
             $jobseeker_id     = $this->session->userdata('job_seeker_id');
             $js_personal_info = $this->job_seeker_personal_model->personalinfo_list_by_id($jobseeker_id);
 			$city = $this->Master_model->getMaster('city',$where=false);

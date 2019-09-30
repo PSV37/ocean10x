@@ -691,6 +691,34 @@
                            }
                        ?></textarea>
               </div>
+			  
+			   <div class="input-group">
+                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">Country</label></span>
+                <select  name="country1_id" class="form-control" onchange="getStates(this.value)">
+					<option value="">Select Country</option>
+					<?php foreach($country as $keys){?>
+					<option value="<?php echo $keys['country_id']; ?>"><?php echo $keys['country_name']; ?></option>
+					<?php } ?>
+				  </select>
+              </div>
+			  <div class="input-group">
+                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">State</label></span>
+                 <select  name="state1_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+				 <option value="">Select Country First</option>
+				 <?php foreach($state as $value){?>
+					<option value="<?php echo $value['state_id']; ?>"><?php echo $value['state_name']; ?></option>
+					<?php } ?>
+				 </select>
+              </div>
+			  <div class="input-group">
+                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">City</label></span>
+                 <select  name="city1_id" id="city_id" class="form-control">
+				 <option value="">Select State First</option>
+				 <?php foreach($city as $valuee){?>
+					<option value="<?php echo $valuee['id']; ?>"><?php echo $valuee['city_name']; ?></option>
+					<?php } ?>
+				 </select>
+              </div>
               
               <button type="submit" class="btn btn-default">Submit</button>
               </div>
