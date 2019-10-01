@@ -37,7 +37,7 @@
                 <!-- /.box-header -->
                 <div class="box-background">
                 <!-- form start -->
-                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/education_level/save_educaiton/" method="post">
+                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/education_specialization/save_education_specializaton/" method="post">
 
                     <div class="row">
 
@@ -67,6 +67,18 @@
                                     </div>
                                 </div>
 
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Course Type <span class="required">*</span></label>
+                                        <select id="course_type"  name="course_type" class="form-control" >
+                                           <option value="">Select Type</option> 
+                                           <option value="Full Time">Full Time</option> 
+                                           <option value="Part Time">Part Time</option> 
+                                        
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="panel-body"></div>
                                 <button type="submit" class="btn bg-navy" type="submit">Save Education Specialization
                                 </button><br/><br/>
                             </div>
@@ -80,7 +92,7 @@
                 <div class="box-footer">
 
                 </div>
-            <!--     <div class="row">
+                <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                 <table class="table table-bordered table-striped" id="dataTables-example">
                     <thead>
@@ -92,15 +104,17 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <?php $key = 1 ?>
-                    <?php if (!empty($all_educationlevels)): foreach ($all_educationlevels as $v_level) : ?>
+                    <?php $key = 1 ;
+                        print_r($edu_spectial_info);
+                    ?>
+                    <?php if (!empty($edu_spectial_info)): foreach ($edu_spectial_info as $edu_spec) : ?>
                         <tr>
                             <td><?php echo $key ?></td>
                         
-                            <td><?php echo $v_level->education_level_name ?></td>
+                            <td><?php echo $edu_spec['education_specialization'] ?></td>
                             <td>
-                                <?php echo btn_edit('admin/education_level/edit_education_level/' . $v_level->education_level_id); ?>
-                                <?php echo btn_delete('admin/education_level/delete_education_level/' . $v_level->education_level_id); ?>
+                                <?php echo btn_edit('admin/education_level/edit_education_level/' . $edu_spec['id']); ?>
+                                <?php echo btn_delete('admin/education_level/delete_education_level/' . $edu_spec['edu_level_id']); ?>
                             </td>
 
                         </tr>
@@ -118,7 +132,7 @@
                 </table>
 
                     </div>
-                </div> -->
+                </div>
             </div>
             <!-- /.box -->
         </div>
