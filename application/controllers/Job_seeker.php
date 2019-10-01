@@ -19,9 +19,9 @@ class Job_seeker extends MY_Seeker_Controller
 	public function seeker_info()
     {
 			$join = array(
-						'country' => 'country.country_id = org.country_id|INNER',
-						'state' => 'state.state_id = org.state_id|INNER',
-						'city' => 'city.id = org.city_id|INNER'
+						'country' => 'country.country_id = js_personal_info.country_id|INNER',
+						'state' => 'state.state_id = js_personal_info.state_id|INNER',
+						'city' => 'city.id = js_personal_info.city_id|INNER'
 	);
 			$res = $this->Master_model->getMaster('js_personal_info',$where=false,$join);
             $this->load->view('fontend/jobseeker/seeker_info', compact('res'));
