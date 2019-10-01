@@ -24,8 +24,7 @@ class Job_seeker extends MY_Seeker_Controller
 						'city' => 'city.id = js_personal_info.city_id|INNER'
 	);
 			$res = $this->Master_model->getMaster('js_personal_info',$where=false,$join);
-			$js_personal_info = $this->job_seeker_personal_model->personalinfo_list_by_id($jobseeker_id);
-            $this->load->view('fontend/jobseeker/seeker_info', compact('res', 'js_personal_info'));
+            $this->load->view('fontend/jobseeker/seeker_info', compact('res'));
     }
 	
 

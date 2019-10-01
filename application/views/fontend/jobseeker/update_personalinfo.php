@@ -67,7 +67,7 @@
                                     </tr>
 									<tr>
                                       <td>City:</td>
-                                    <td><?php echo $js_personal_info->city_name; ?></td>
+                                    <td><?php echo $js_personal_info->city_id; ?></td>
                                     </tr>
                                      <tr>
                                       <td>Parmanent Address:</td>
