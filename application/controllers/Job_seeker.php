@@ -36,22 +36,34 @@ class Job_seeker extends MY_Seeker_Controller
                 "date_of_birth"     => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('date_of_birth')))),
                 'nationality'       => $this->input->post('nationality'),
                 'national_id'       => $this->input->post('national_id'),
+				'country_code'            => $this->input->post('country_code'),
                 'mobile'            => $this->input->post('mobile'),
+				'country_id'   => $this->input->post('country_id'),
+				'state_id'   => $this->input->post('state_id'),
+				'city_id'   => $this->input->post('city_id'),
                 'present_address'   => $this->input->post('present_address'),
+				'country1_id'   => $this->input->post('country1_id'),
+				'state1_id'   => $this->input->post('state1_id'),
+				'city1_id'   => $this->input->post('city1_id'),
                 'parmanent_address' => $this->input->post('parmanent_address'),
 
             );
             if (empty($personal_info_id)) {
                 $this->job_seeker_personal_model->insert($personal_info);
-                redirect('job_seeker/seeker_info');
+				
+                redirect('job_seeker/seeker_info',$data);
             } else {
                 $this->job_seeker_personal_model->update($personal_info, $personal_info_id);
-                redirect('job_seeker/seeker_info');
+                redirect('job_seeker/seeker_info',$data);
             }
         } else {
             $jobseeker_id     = $this->session->userdata('job_seeker_id');
             $js_personal_info = $this->job_seeker_personal_model->personalinfo_list_by_id($jobseeker_id);
-            echo $this->load->view('fontend/jobseeker/update_personalinfo', compact('jobseeker_id', 'js_personal_info'),true);
+			$city = $this->Master_model->getMaster('city',$where=false);
+			$country = $this->Master_model->getMaster('country',$where=false);
+			$state = $this->Master_model->getMaster('state',$where=false);
+			
+            echo $this->load->view('fontend/jobseeker/update_personalinfo', compact('jobseeker_id', 'js_personal_info', 'city', 'country', 'state'),true);
         }
     }
 
@@ -489,5 +501,47 @@ exit;*/
         $this->Job_seeker_education_model->delete_cv($jobseeker_id);
         redirect('job_seeker/seeker_info');
     }
+	
+	
+	
+	
+	function getstate(){
+	$country_id = $this->input->post('id');
+	$where['country_id'] = $country_id;
+	$states = $this->Master_model->getMaster('state',$where);
+	$result = '';
+	if(!empty($states)){ 
+		$result .='<option value="">Select State</option>';
+		foreach($states as $key){
+		  $result .='<option value="'.$key['state_id'].'">'.$key['state_name'].'</option>';
+		}
+	}else{
+	
+		$result .='<option value="">State not available</option>';
+	}
+	 echo $result;
+}
+
+
+ function getcity(){
+	$state_id = $this->input->post('id');
+	$where['state_id'] = $state_id;
+	$citys = $this->Master_model->getMaster('city',$where);
+	$result = '';
+	if(!empty($citys)){ 
+		$result .='<option value="">Select City</option>';
+		foreach($citys as $key){
+		  $result .='<option value="'.$key['id'].'">'.$key['city_name'].'</option>';
+		}
+	}else{
+	
+		$result .='<option value="">State not available</option>';
+	}
+	 echo $result;
+}
+
+
+
+	
 
 }
