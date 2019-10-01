@@ -213,7 +213,11 @@
               <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Passing Year:</label>
                 <div class="col-sm-9">
-                  <input name="js_year_of_passing" type="text"  class="form-control" id="js_year_of_passing" placeholder="Enter Passing Year">
+                  <select  name="js_year_of_passing" id="js_year_of_passing" class="form-control">
+				 <?php foreach($passingyear as $pass){?>
+					<option value="<?php echo $pass['passing_id']; ?>"><?php echo $pass['passing_year']; ?></option>
+					<?php } ?>
+				 </select>
                 </div>
               </div>
                 <button type="submit" class="btn btn-default">Submit</button>
