@@ -60,14 +60,14 @@ class Education_specialization extends MY_Controller
             }
         }
 
-    public function delete_education_level($id) {
+    public function delete_education_specialzation($id) {
         $this->education_level_model->delete($id);
         $education_level_status = array(
             'status'=>0,
         );
         $where_del['id']=$id;
         $this->Master_model->master_update($education_level_status,'education_specialization',$where_del);
-        redirect('admin/education_level');
+        redirect('admin/education_specialization');
     }
 
     public function edit_education_specialzation($id){
