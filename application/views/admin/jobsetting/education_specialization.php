@@ -98,23 +98,27 @@
                     <thead>
                     <tr>
                         <th class="active">SL</th>
-                        <th class="active">Education Level Name</th>
+                        <th class="active">Education Level</th>
+                        <th class="active">Education Specialization</th>
+                        <th class="active">Course Type</th>
                         <th class=" active col-sm-2">Action</th>
 
                     </tr>
                     </thead>
                     <tbody>
                     <?php $key = 1 ;
-                        print_r($edu_spectial_info);
+                        //print_r($edu_spectial_info);
                     ?>
                     <?php if (!empty($edu_spectial_info)): foreach ($edu_spectial_info as $edu_spec) : ?>
                         <tr>
                             <td><?php echo $key ?></td>
+                            <td><?php echo $edu_spec['education_level_name'] ?></td>
                         
                             <td><?php echo $edu_spec['education_specialization'] ?></td>
+                            <td><?php echo $edu_spec['course_type'] ?></td>s
                             <td>
-                                <?php echo btn_edit('admin/education_level/edit_education_level/' . $edu_spec['id']); ?>
-                                <?php echo btn_delete('admin/education_level/delete_education_level/' . $edu_spec['edu_level_id']); ?>
+                                <?php echo btn_edit('admin/education_specialization/edit_education_specialzation/' . $edu_spec['id']); ?>
+                                <?php echo btn_delete('admin/education_specialization/delete_education_specialzation/' . $edu_spec['edu_level_id']); ?>
                             </td>
 
                         </tr>
