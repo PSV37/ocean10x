@@ -63,7 +63,7 @@ class Education_specialization extends MY_Controller
     public function delete_education_level($id) {
         $this->education_level_model->delete($id);
         $education_level_status = array(
-            'status'=>0;
+            'status'=>0,
         );
         $where_del['id']=$id;
         $this->Master_model->master_update($education_level_status,'education_specialization',$where_del);
