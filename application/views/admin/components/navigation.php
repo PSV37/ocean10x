@@ -151,8 +151,11 @@
                      <li <?php echo $this->company_profile_model->User_status_check(); ?> >
                         <a href='<?php echo base_url(); ?>admin/salary-range'> <i class='glyphicon glyphicon-plus'></i><span>Job Salary Range</span></a>
                      </li>
-                      <li <?php echo $this->company_profile_model->User_status_check(); ?> >
+                     <li <?php echo $this->company_profile_model->User_status_check(); ?> >
                         <a href='<?php echo base_url(); ?>admin/education-level'> <i class='glyphicon glyphicon-plus'></i><span>Education Level</span></a>
+                     </li>
+                      <li <?php echo $this->company_profile_model->User_status_check(); ?> >
+                        <a href='<?php echo base_url(); ?>admin/education-specialization'> <i class='glyphicon glyphicon-plus'></i><span>Education Specialization</span></a>
                      </li>
                       
                   </ul>
