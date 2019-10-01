@@ -81,7 +81,10 @@
                                       <td>Parmanent Address:</td>
                                     <td><?php echo $js_personal_info->parmanent_address; ?></td>
                                     </tr>
-         
+									<tr>
+                                      <td>City:</td>
+                                    <td><?php echo $result['city_name']; ?></td>
+                                    </tr>
                                   </tbody>
                                 </table>
                                 </div>
