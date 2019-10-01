@@ -38,10 +38,8 @@ class Employer_register extends CI_Controller
         
         // Send captcha image to view
         $captcha_images = $captcha['image'];
-		$city = $this->Master_model->getMaster('city',$where=false);
-		$country = $this->Master_model->getMaster('country',$where=false);
-		$state = $this->Master_model->getMaster('state',$where=false);
-        $this->load->view('fontend/employer/employer_register.php',compact('captcha_images','city', 'country', 'state'),true);
+		
+        $this->load->view('fontend/employer/employer_register.php',compact('captcha_images'));
 
     }
 
