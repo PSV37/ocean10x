@@ -17,7 +17,7 @@ class Education_specialization extends MY_Controller
     public function index()
     {   
 
-        $title['title'] = 'Add Education Specialization';
+        $data['title'] = 'Add Education Specialization';
 
         $data['educaiton_level_info'] = $this->Master_model->getMaster('education_level',$where=false);
 

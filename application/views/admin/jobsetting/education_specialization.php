@@ -48,23 +48,22 @@
                                 <!-- /.Company Name -->
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Education Level <span class="required">*</span></label>
-                                    <input type="text" required name="education_level_name" placeholder="Category Name"
-                                           value="<?php
-                                           if (!empty($educaiton_level_info->education_level_name)) {
-                                               echo $educaiton_level_info->education_level_name;
-                                           }
-                                           ?>"
-                                           class="form-control">
                                         <select id="education_level_name"  name="education_level_name" class="form-control" >
                                            <option value="">Select Level</option> 
-                                           <?php if (!empty($educaiton_level_info->education_level_name)) {
-                                               echo $educaiton_level_info->education_level_name;
-                                           } ?>   
-
+                                        <?php if (!empty($educaiton_level_info))
+                                           foreach($educaiton_level_info as $edu_row) 
+                                           {
+                                        ?>   
+                                            <option value="<?php echo $edu_row['education_level_id']; ?>"><?php echo $edu_row['education_level_name']; ?></option> 
+                                        <?php } ?>
                                         </select>
                                 </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Education Specialization <span class="required">*</span></label>
+                                      <input type="text" name="specialization" class="form-control">
+                                </div>
 
-                                <button type="submit" class="btn bg-navy" type="submit">Save Education Level
+                                <button type="submit" class="btn bg-navy" type="submit">Save Education Specialization
                                 </button><br/><br/>
                             </div>
                             <!-- /.box-body -->
@@ -77,7 +76,7 @@
                 <div class="box-footer">
 
                 </div>
-                <div class="row">
+            <!--     <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                 <table class="table table-bordered table-striped" id="dataTables-example">
                     <thead>
@@ -90,10 +89,10 @@
                     </thead>
                     <tbody>
                     <?php $key = 1 ?>
-                    <?php if (!empty($all_educationlevels)): foreach ($all_educationlevels as $v_level) : ?><!--get all category if not this empty-->
+                    <?php if (!empty($all_educationlevels)): foreach ($all_educationlevels as $v_level) : ?>
                         <tr>
                             <td><?php echo $key ?></td>
-                            <!--Serial No> -->
+                        
                             <td><?php echo $v_level->education_level_name ?></td>
                             <td>
                                 <?php echo btn_edit('admin/education_level/edit_education_level/' . $v_level->education_level_id); ?>
@@ -104,18 +103,18 @@
                     <?php
                     $key++;
                     endforeach;
-                    ?><!--get all category if not this empty-->
-                    <?php else : ?> <!--get error message if this empty-->
+                    ?>
+                    <?php else : ?> 
                         <td colspan="3">
                             <strong>There is no record for display</strong>
-                        </td><!--/ get error message if this empty-->
+                        </td>
                     <?php
                     endif; ?>
                     </tbody>
                 </table>
 
                     </div>
-                </div>
+                </div> -->
             </div>
             <!-- /.box -->
         </div>
