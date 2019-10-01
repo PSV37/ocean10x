@@ -38,8 +38,10 @@ class Employer_register extends CI_Controller
         
         // Send captcha image to view
         $captcha_images = $captcha['image'];
-		
-        $this->load->view('fontend/employer/employer_register.php',compact('captcha_images'));
+		$city = $this->Master_model->getMaster('city',$where=false);
+		$country = $this->Master_model->getMaster('country',$where=false);
+		$state = $this->Master_model->getMaster('state',$where=false);
+        $this->load->view('fontend/employer/employer_register.php',compact('captcha_images', 'js_personal_info', 'city', 'country', 'state'),true);
 
     }
 
@@ -160,6 +162,43 @@ $this->session->set_userdata('reg_in', $company_profile );
         header('Content-Type: application/json');
         echo json_encode($this->session->userdata('captchaCode'));
     }
+	
+	
+	
+		function getstate(){
+	$country_id = $this->input->post('id');
+	$where['country_id'] = $country_id;
+	$states = $this->Master_model->getMaster('state',$where);
+	$result = '';
+	if(!empty($states)){ 
+		$result .='<option value="">Select State</option>';
+		foreach($states as $key){
+		  $result .='<option value="'.$key['state_id'].'">'.$key['state_name'].'</option>';
+		}
+	}else{
+	
+		$result .='<option value="">State not available</option>';
+	}
+	 echo $result;
+}
+
+
+ function getcity(){
+	$state_id = $this->input->post('id');
+	$where['state_id'] = $state_id;
+	$citys = $this->Master_model->getMaster('city',$where);
+	$result = '';
+	if(!empty($citys)){ 
+		$result .='<option value="">Select City</option>';
+		foreach($citys as $key){
+		  $result .='<option value="'.$key['id'].'">'.$key['city_name'].'</option>';
+		}
+	}else{
+	
+		$result .='<option value="">State not available</option>';
+	}
+	 echo $result;
+}
 
 }
 

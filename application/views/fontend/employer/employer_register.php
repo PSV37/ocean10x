@@ -70,15 +70,30 @@
 									 <div class="formrow">
                                     <div class="row">
                                         <div class="col-md-4 col-sm-4">
-                                            <textarea name="company_service" class="form-control" placeholder="Company Service"><?php echo isset($this->session->userdata['reg_in']['company_service'])?$this->session->userdata['reg_in']['company_service']:''; ?></textarea>
+									  <select  name="country_id" class="form-control" onchange="getStates(this.value)">
+										<option value="">Select Country</option>
+										<?php foreach($country as $key){?>
+										<option value="<?php echo $key['country_id']; ?>"<?php if($js_personal_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
+										<?php } ?>
+									  </select>
                                         </div>
-
-                                         <div class="col-md-4 col-sm-4">
-                                            <textarea name="company_address" class="form-control" placeholder="Company Address"><?php echo isset($this->session->userdata['reg_in']['company_service'])?$this->session->userdata['reg_in']['company_address']:''; ?></textarea>
+									
+										<div class="col-md-4 col-sm-4">
+										<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+										 <option value="">Select Country First</option>
+									     <?php foreach($state as $val){?>
+										<option value="<?php echo $val['state_id']; ?>"<?php if($js_personal_info->state_id==$val['state_id']){ echo "selected"; }?>><?php echo $val['state_name']; ?></option>
+											<?php } ?>
+										</select>
                                         </div>
 										
-										<div class="col-md-4 col-sm-4">
-                                            <textarea name="company_service" class="form-control" placeholder="Company Service"><?php echo isset($this->session->userdata['reg_in']['company_service'])?$this->session->userdata['reg_in']['company_service']:''; ?></textarea>
+										 <div class="col-md-4 col-sm-4">
+										 <select  name="city_id" id="city_id" class="form-control">
+										 <option value="">Select State First</option>
+										 <?php foreach($city as $valu){?>
+										<option value="<?php echo $valu['id']; ?>"<?php if($js_personal_info->city_id==$valu['id']){ echo "selected"; }?>><?php echo $valu['city_name']; ?></option>
+										<?php } ?>
+										</select>
                                         </div>
                                     </div><!-- end row -->
                                     </div>
@@ -222,4 +237,42 @@
 
 
   </script>
+  
+  
+<script>
+	  function getStates(id){
+		if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Employer_register/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state_id').html(res);
+                }
+				
+            }); 
+          }
+   
+	   }
+	   
+	   </script>
+	   
+	   <script>
+	  function getCitys(id){
+		if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Employer_register/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city_id').html(res);
+                }
+				
+            }); 
+          }
+   
+	   }
+	   
+	   </script>  
+  
  <?php $this->load->view("fontend/layout/footer.php"); ?>
