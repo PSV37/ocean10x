@@ -192,7 +192,7 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Working Hours <span
                                             class="required">*</span></label>
-                                    <input type="text" placeholder="Working Hours" name="working_hours" required
+                                    <input type="number" placeholder="Working Hours" name="working_hours" required
                                            value="<?php if(!empty($job_info)) echo $job_info->working_hours; ?>"
                                            class="form-control">
                                     </div>
