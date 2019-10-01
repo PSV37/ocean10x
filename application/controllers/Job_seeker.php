@@ -1,4 +1,7 @@
 <?php
+if (!defined('BASEPATH')) {
+    exit('No direct script access allowed');
+}
 
 class Job_seeker extends MY_Seeker_Controller
 {
@@ -20,7 +23,7 @@ class Job_seeker extends MY_Seeker_Controller
 						'state' => 'state.state_id = js_personal_info.state_id|INNER',
 						'city' => 'city.id = js_personal_info.city_id|INNER'
 	);
-			$res = $this->Master_model->get_master_row('js_personal_info',$where=false,$join);
+			$res = $this->Master_model->getMaster('js_personal_info',$where=false,$join);
             $this->load->view('fontend/jobseeker/seeker_info', compact('res'));
     }
 	
