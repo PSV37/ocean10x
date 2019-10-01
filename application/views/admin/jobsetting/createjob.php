@@ -286,7 +286,7 @@
                                       
                                        <div class="col-md-4 col-sm-12"> 
                                        	<div class="formrow">   
-                                            <label class="control-label mandatory">Vacancy Description *</label>
+                                            <label class="control-label mandatory">Vacancy Description <span class="required">*</span></label>
                                                <textarea name="job_desc" required class="form-control" required><?php if(!empty($job_info)) echo $job_info->job_desc; ?></textarea>
 </div>
                                         </div>
