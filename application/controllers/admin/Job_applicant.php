@@ -28,9 +28,7 @@ class Job_applicant extends MY_Controller
         $this->job_apply_model->update_finallist($apply_id);
         $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Done</div>');
            redirect_back();
-       //	echo "sucess";    
-        // echo '<div class="alert alert-success"><button type="button" class="close">×</button>Sucess</div>';
-        // return;
+       
     }
 
 
