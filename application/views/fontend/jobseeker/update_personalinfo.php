@@ -1368,9 +1368,9 @@ $(document).ready(function(){
 function FillBilling(f) {
   if(f.billingtoo.checked == true) {
     f.parmanent_address.value = f.present_address.value;
-	f.country_id.value = f.country1_id.value;
-    f.state_id.value = f.state1_id.value;
-	f.city_id.value = f.city1_id.value;
+	f.country1_id.value = f.country_id.value;
+    f.state1_id.value = f.state_id.value;
+	f.city1_id.value = f.city_id.value;
   }
 }
 </script>    
