@@ -40,13 +40,12 @@
                     <?php  echo $this->session->flashdata('msg');?>
                 <!-- form start -->
                 <form role="form" enctype="multipart/form-data" id="addJobForm"
-                      action="<?php echo base_url(); ?>admin/job_posting/save_job/<?php if(!empty($job_info)){
-                          echo $job_info->job_post_id;
-                      }?>"
+                      action=""
                       method="post">
 
                     <div class="row">
-
+                      <input type="text" name="job_id" id="job_id" value="<?php if(!empty($job_info)){
+                          echo $job_info->job_post_id;}?>">
                         <div class="col-md-12 col-sm-12 col-xs-12">
 
                             <div class="box-body">
@@ -86,8 +85,8 @@
                                <div class="col-md-6">
                                      <!-- /. Job Salary Range -->
                                         <div class="form-group">
-                                            <label>Job Salary Range<span class="required">*</span></label>
-                                            <input type="text" name="salary_range" id="salary_range" onKeyUp="javascript:changeSalary();" class="form-control col-sm-5"  value="<?php if(!empty($job_info)) echo $job_info->salary_range; ?>">       
+                                            <label>Salary Offered<span class="required">*</span></label>
+                                            <input type="number" name="salary_range" id="salary_range" onKeyUp="javascript:changeSalary();" class="form-control col-sm-5"  value="<?php if(!empty($job_info)) echo $job_info->salary_range; ?>">       
                                             
                                         </div>
                                         </div>
@@ -110,12 +109,12 @@
                                         </div>
                                     </div>
 
-<div class="row">
+                            <div class="row">
                                      
                                           <div class="col-md-4 col-sm-12"> 
                                           	<div class="formrow">  
                                             <label class="control-label ">Number of Vacancy </label>
-                                            <input class="form-control"  name="no_jobs" value="<?php 
+                                            <input type="number" class="form-control"  name="no_jobs" value="<?php 
                                                  if(!empty($job_info->no_jobs)){
                                                     echo $job_info->no_jobs;
                                                  }
@@ -124,7 +123,7 @@
                                        <div class="col-md-4 col-sm-12"> 
                                           	<div class="formrow">  
                                             <label class="control-label ">Years of Experience  </label>
-                                            <input class="form-control"  name="experience" value="<?php 
+                                            <input type="number" class="form-control"  name="experience" value="<?php 
                                                  if(!empty($job_info->experience)){
                                                     echo $job_info->experience;
                                                  }
@@ -192,7 +191,7 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Working Hours <span
                                             class="required">*</span></label>
-                                    <input type="text" placeholder="Working Hours" name="working_hours" required
+                                    <input type="number" placeholder="Working Hours" name="working_hours" required
                                            value="<?php if(!empty($job_info)) echo $job_info->working_hours; ?>"
                                            class="form-control">
                                     </div>
@@ -241,7 +240,7 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Preferred Age <span
                                             class="required">*</span></label>
-                                    <input type="text" placeholder="Preferred Age" name="preferred_age" required
+                                    <input type="number" placeholder="Preferred Age" name="preferred_age" required
                                            value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>"
                                            class="form-control">
                                     </div>
@@ -312,8 +311,9 @@
                     </div>
 
 
-					<div class="col-md-12 col-sm-12 col-xs-12">
+					        <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="box-footer">
+                      <div id="job_result"></div>
                     <?php if(!empty($job_info)): ?> 
                         <button type="submit" id="submitjobs" class="btn btn-content">Update Job
                         </button>
@@ -322,7 +322,7 @@
                         </button>
                        <?php endif; ?>
                     </div>
-                    </div>
+                  </div>
                 
             </div>
             <!-- /.box -->
@@ -370,3 +370,40 @@
 </script>
 
         <?php $this->load->view('admin/components/footer'); ?>
+<script>
+  $('form#addJobForm').submit(function(e)
+  {
+      e.preventDefault();
+      alert(<?php if(!empty($job_info)){
+            echo $job_info->job_post_id;
+        }?>);
+      // $.ajax({
+      //           url: "<?php echo base_url(); ?>admin/job_posting/save_job/",
+      //           type: "POST",
+      //           data: new FormData(this),
+      //           contentType:false,
+      //           processData:false,
+      //            dataType: "json",
+      //           success: function(data)
+      //           {
+      //               if($.isEmptyObject(data.error)){
+
+      //                   $("#email_result").html('<div class="alert alert-success"><button type="button" class="close">×</button>'+data.success+'</div>');
+      //                       window.setTimeout(function() {
+      //                       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+      //                           $(this).remove(); 
+      //                       });
+      //                       location.reload();
+      //                       }, 1500);
+      //                     $('.alert .close').on("click", function(e){
+      //                           $(this).parent().fadeTo(500, 0).slideUp(500);
+      //                     });
+
+      //                   }else{
+      //                       $("#email_result").html('<div class="alert alert-danger"><button type="button" class="close">×</button>'+data.error+'</div>');
+      //                   }
+      //           }
+      //     });
+       
+  }); 
+</script>

@@ -91,7 +91,7 @@ class Social_media extends MY_Controller
                 'link' => $this->input->post('edit_link'),
             );
             $this->social_media_model->update($id, $post);
-            echo json_encode(['success'=>'Social Media Icon Added Successfully!']);
+            echo json_encode(['success'=>'Social Media Icon Updated Successfully!']);
             // $this->session->set_flashdata('update_action', true);
             // redirect(base_url('admin/social_media'));
             // return;
