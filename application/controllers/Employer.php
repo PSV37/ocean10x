@@ -46,6 +46,9 @@ class Employer extends MY_Employer_Controller
 				'company_career_link'     => $this->input->post('company_career_link'),
                 'company_service'  => $this->input->post('company_service'),
                 'company_address'  => $this->input->post('company_address'),
+				'country_id'  => $this->input->post('country_id'),
+				'state_id'  => $this->input->post('state_id'),
+				'city_id'  => $this->input->post('city_id'),
 				'company_aboutus'  => $this->input->post('company_aboutus'),
             );
 
@@ -83,7 +86,10 @@ class Employer extends MY_Employer_Controller
 
                 } else {
                     $company_info = $this->company_profile_model->get($employer_id);
-                    $this->load->view('fontend/employer/dashboard', compact('company_info'));
+					$city = $this->Master_model->getMaster('city',$where=false);
+					$country = $this->Master_model->getMaster('country',$where=false);
+					$state = $this->Master_model->getMaster('state',$where=false);
+                    $this->load->view('fontend/employer/dashboard', compact('company_info', 'city', 'country', 'state'));
                 }
             }
 

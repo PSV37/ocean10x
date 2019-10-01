@@ -390,9 +390,38 @@ echo $company_info->company_career_link;
                                                  </div>
                                         </div>
                                     </div><!-- end row -->
+										<div class="formrow">
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-4">
+									  <select  name="country_id" class="form-control" onchange="getStates(this.value)">
+										<option value="">Select Country</option>
+										<?php foreach($country as $key){?>
+										<option value="<?php echo $key['country_id']; ?>"<?php if($company_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
+										<?php } ?>
+									  </select>
+                                        </div>
+									
+										<div class="col-md-4 col-sm-4">
+										<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+										 <option value="">Select Country First</option>
+									     <?php foreach($state as $val){?>
+										<option value="<?php echo $val['state_id']; ?>"<?php if($company_info->state_id==$val['state_id']){ echo "selected"; }?>><?php echo $val['state_name']; ?></option>
+											<?php } ?>
+										</select>
+                                        </div>
+										
+										 <div class="col-md-4 col-sm-4">
+										 <select  name="city_id" id="city_id" class="form-control">
+										 <option value="">Select State First</option>
+										 <?php foreach($city as $valu){?>
+										<option value="<?php echo $valu['id']; ?>"<?php if($company_info->city_id==$valu['id']){ echo "selected"; }?>><?php echo $valu['city_name']; ?></option>
+										<?php } ?>
+										</select>
+                                        </div>
+                                    </div><!-- end row -->
+                                    </div>
 
-
-<div class="row">
+										<div class="row">
                                         <div class="col-md-12 col-sm-12">
                                          <div class="formrow">
                                            <label class="control-label">Special Features:</label>
