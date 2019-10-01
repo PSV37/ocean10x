@@ -73,7 +73,7 @@
                                       <td>Parmanent Address:</td>
                                     <td><?php echo $js_personal_info->parmanent_address; ?></td>
                                     </tr>
-         thtr
+         
                                   </tbody>
                                 </table>
                                 </div>
