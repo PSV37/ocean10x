@@ -157,6 +157,8 @@ $route['admin/job-level']="admin/job_level";
 $route['admin/job-nature']="admin/job_nature";
 $route['admin/salary-range']="admin/salary_range";
 $route['admin/education-level']="admin/education_level";
+$route['admin/education-specialization']="admin/education_specialization";
+
 
 // User Create 
 $route['admin/create-users']="admin/admin_user";
