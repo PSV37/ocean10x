@@ -44,8 +44,7 @@
                       method="post">
 
                     <div class="row">
-                      <input type="text" name="job_id" id="job_id" value="<?php if(!empty($job_info)){
-                          echo $job_info->job_post_id;}?>">
+                      
                         <div class="col-md-12 col-sm-12 col-xs-12">
 
                             <div class="box-body">
@@ -369,41 +368,41 @@
 
 </script>
 
-        <?php $this->load->view('admin/components/footer'); ?>
+<?php $this->load->view('admin/components/footer'); ?>
+
 <script>
-  $('form#addJobForm').submit(function(e)
+$('form#addJobForm').submit(function(e)
   {
       e.preventDefault();
-      alert(<?php if(!empty($job_info)){
-            echo $job_info->job_post_id;
-        }?>);
-      // $.ajax({
-      //           url: "<?php echo base_url(); ?>admin/job_posting/save_job/",
-      //           type: "POST",
-      //           data: new FormData(this),
-      //           contentType:false,
-      //           processData:false,
-      //            dataType: "json",
-      //           success: function(data)
-      //           {
-      //               if($.isEmptyObject(data.error)){
+    
+      $.ajax({
+                url: "<?php echo base_url(); ?>admin/job_posting/save_job/<?php if(!empty($job_info)){
+                          echo $job_info->job_post_id;}?>",
+                type: "POST",
+                data: new FormData(this),
+                contentType:false,
+                processData:false,
+                 dataType: "json",
+                success: function(data)
+                {
+                    if($.isEmptyObject(data.error)){
 
-      //                   $("#email_result").html('<div class="alert alert-success"><button type="button" class="close">×</button>'+data.success+'</div>');
-      //                       window.setTimeout(function() {
-      //                       $(".alert").fadeTo(500, 0).slideUp(500, function(){
-      //                           $(this).remove(); 
-      //                       });
-      //                       location.reload();
-      //                       }, 1500);
-      //                     $('.alert .close').on("click", function(e){
-      //                           $(this).parent().fadeTo(500, 0).slideUp(500);
-      //                     });
+                        $("#job_result").html('<div class="alert alert-success"><button type="button" class="close">×</button>'+data.success+'</div>');
+                            window.setTimeout(function() {
+                            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                                $(this).remove(); 
+                            });
+                            location.reload();
+                            }, 1500);
+                          $('.alert .close').on("click", function(e){
+                                $(this).parent().fadeTo(500, 0).slideUp(500);
+                          });
 
-      //                   }else{
-      //                       $("#email_result").html('<div class="alert alert-danger"><button type="button" class="close">×</button>'+data.error+'</div>');
-      //                   }
-      //           }
-      //     });
+                        }else{
+                            $("#job_result").html('<div class="alert alert-danger"><button type="button" class="close">×</button>'+data.error+'</div>');
+                        }
+                }
+          });
        
   }); 
 </script>
