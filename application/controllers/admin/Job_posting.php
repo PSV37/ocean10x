@@ -32,10 +32,10 @@ class Job_posting extends MY_Controller
             'company_profile_id' => $this->input->post('company_profile_id'),
             'job_desc'           => $this->input->post('job_desc'),
             'education'          => $this->input->post('education'),
-           'benefits'           => $this->input->post('benefits'),
-             'experience'           => $this->input->post('experience'),
-'job_edu'            => $this->input->post('job_edu'),
-                        'no_jobs'            => $this->input->post('no_jobs'),
+            'benefits'           => $this->input->post('benefits'),
+            'experience'         => $this->input->post('experience'),
+            'job_edu'            => $this->input->post('job_edu'),
+            'no_jobs'            => $this->input->post('no_jobs'),
                        
                                    
             'job_category'       => $this->input->post('job_category'),

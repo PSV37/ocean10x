@@ -86,7 +86,7 @@
                                <div class="col-md-6">
                                      <!-- /. Job Salary Range -->
                                         <div class="form-group">
-                                            <label>Job Salary Range<span class="required">*</span></label>
+                                            <label>Salary Offered<span class="required">*</span></label>
                                             <input type="text" name="salary_range" id="salary_range" onKeyUp="javascript:changeSalary();" class="form-control col-sm-5"  value="<?php if(!empty($job_info)) echo $job_info->salary_range; ?>">       
                                             
                                         </div>
@@ -110,7 +110,7 @@
                                         </div>
                                     </div>
 
-<div class="row">
+                            <div class="row">
                                      
                                           <div class="col-md-4 col-sm-12"> 
                                           	<div class="formrow">  
