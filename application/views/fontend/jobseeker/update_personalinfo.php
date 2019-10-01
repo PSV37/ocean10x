@@ -697,14 +697,18 @@
                   <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">State</label></span>
                  <select  name="state1_id" id="state1_id" class="form-control" onchange="getCityss(this.value)">
 				 <option value="">Select Country First</option>
-				
+				 <?php foreach($state as $value){?>
+					<option value="<?php echo $value['state_id']; ?>"<?php if($js_personal_info->state1_id==$value['state_id']){ echo "selected"; }?>><?php echo $value['state_name']; ?></option>
+					<?php } ?>
 				 </select>
               </div>
 			  <div class="input-group">
                   <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">City</label></span>
                  <select  name="city1_id" id="city1_id" class="form-control">
 				 <option value="">Select State First</option>
-				 
+				 <?php foreach($city as $valuee){?>
+					<option value="<?php echo $valuee['id']; ?>"<?php if($js_personal_info->city1_id==$valuee['id']){ echo "selected"; }?>><?php echo $valuee['city_name']; ?></option>
+					<?php } ?>
 				 </select>
               </div>
               <div class="input-group">
@@ -1368,9 +1372,9 @@ $(document).ready(function(){
 function FillBilling(f) {
   if(f.billingtoo.checked == true) {
     f.parmanent_address.value = f.present_address.value;
-	f.country1_id.value = f.country_id.value;
-    f.state1_id.value = f.state_id.value;
-	f.city1_id.value = f.city_id.value;
+	f.country_id.value = f.country1_id.value;
+    f.state_id.value = f.state1_id.value;
+	f.city_id.value = f.city1_id.value;
   }
 }
 </script>    
