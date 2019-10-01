@@ -181,15 +181,13 @@
                  <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Training Years:</label>
                 <div class="col-sm-9">
-                  <input name="training_year" type="text"  class="form-control" id="training_year" placeholder="Training Years"    
-                  value="<?php
-                         if (!empty($training_list->training_year)) {
-                           echo $training_list->training_year;
-                           }
-                       ?>">
+					    <select  name="training_year" id="training_year" class="form-control">
+				 <?php foreach($passingyear as $traning){?>
+					<option value="<?php echo $traning['passing_id']; ?>"<?php if($training_list->training_year==$traning['passing_id']){ echo "selected"; }?>><?php echo $traning['passing_year']; ?></option>
+					<?php } ?>
+				 </select>
                 </div>
               </div>
-
 
 
                      <button type="submit" class="btn btn-default">Submit</button>
@@ -260,10 +258,14 @@
                 </div>
               </div>
 
-              <div class="form-group">
+               <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Training Years:</label>
                 <div class="col-sm-9">
-                  <input name="training_year" type="text"  class="form-control" id="training_year" placeholder="Training Years">
+                  <select  name="training_year" id="training_year" class="form-control">
+				 <?php foreach($passingyear as $traning){?>
+					<option value="<?php echo $traning['passing_id']; ?>"><?php echo $traning['passing_year']; ?></option>
+					<?php } ?>
+				 </select>
                 </div>
               </div>
 

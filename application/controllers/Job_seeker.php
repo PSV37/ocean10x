@@ -454,7 +454,8 @@ exit;*/
         } else {
             $jobseeker_id  = $this->session->userdata('job_seeker_id');
             $training_list = $this->Job_training_model->training_list_by_id($jobseeker_id);
-            echo $this->load->view('fontend/jobseeker/update_training', compact('training_list'),true);
+			$passingyear = $this->Master_model->getMaster('passingyear',$where=false);
+            echo $this->load->view('fontend/jobseeker/update_training', compact('training_list', 'passingyear'),true);
         }
     }
 
