@@ -435,5 +435,42 @@ class Employer extends MY_Employer_Controller
                 }
 
             }   
+			
+			
+			
+					function getstate(){
+	$country_id = $this->input->post('id');
+	$where['country_id'] = $country_id;
+	$states = $this->Master_model->getMaster('state',$where);
+	$result = '';
+	if(!empty($states)){ 
+		$result .='<option value="">Select State</option>';
+		foreach($states as $key){
+		  $result .='<option value="'.$key['state_id'].'">'.$key['state_name'].'</option>';
+		}
+	}else{
+	
+		$result .='<option value="">State not available</option>';
+	}
+	 echo $result;
+}
+
+
+ function getcity(){
+	$state_id = $this->input->post('id');
+	$where['state_id'] = $state_id;
+	$citys = $this->Master_model->getMaster('city',$where);
+	$result = '';
+	if(!empty($citys)){ 
+		$result .='<option value="">Select City</option>';
+		foreach($citys as $key){
+		  $result .='<option value="'.$key['id'].'">'.$key['city_name'].'</option>';
+		}
+	}else{
+	
+		$result .='<option value="">State not available</option>';
+	}
+	 echo $result;
+}
 
         }
