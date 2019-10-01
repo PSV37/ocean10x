@@ -98,9 +98,9 @@
                                     <td class="vertical-td">
                                     <?php echo btn_edit('admin/job_posting/edit_jobs/' . $v_companyjobs->job_post_id); ?>
                                     <?php if($v_companyjobs->job_status == 2){?>
-                                    <?php echo btn_deactive('admin/jobs/deactive_btn/' . $v_companyjobs->job_post_id); ?>
-                                    <?php }else{?>
                                         <?php echo btn_approve('admin/jobs/approve_btn/' . $v_companyjobs->job_post_id); ?>
+                                    <?php }else{?>
+                                        <?php echo btn_deactive('admin/jobs/deactive_btn/' . $v_companyjobs->job_post_id); ?>
                                     <?php } ?>
                                     <?php echo btn_delete('admin/jobs/delete_job/' . $v_companyjobs->job_post_id); ?>
                                     </td>
