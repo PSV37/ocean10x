@@ -45,10 +45,9 @@
 
                             <div class="box-body">
 
-                                <!-- /.Company Name -->
-                                <div class="form-group">
-                                    <div class="col-md-6">
-                                    <label for="exampleInputEmail1">Education Level <span class="required">*</span></label>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Education Level <span class="required">*</span></label>
                                         <select id="education_level_name"  name="education_level_name" class="form-control" >
                                            <option value="">Select Level</option> 
                                         <?php if (!empty($educaiton_level_info))
@@ -59,11 +58,12 @@
                                         <?php } ?>
                                         </select>
                                     </div>
-                                <!-- </div>
-                                <div class="form-group"> -->
-                                    <div class="col-md-6">
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="form-group">
                                         <label for="exampleInputEmail1">Education Specialization <span class="required">*</span></label>
-                                          <input type="text" name="specialization" class="form-control">
+                                      <input type="text" name="specialization" class="form-control">
                                     </div>
                                 </div>
 
