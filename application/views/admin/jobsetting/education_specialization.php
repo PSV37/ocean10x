@@ -104,7 +104,9 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <?php $key = 1 ?>
+                    <?php $key = 1 
+                        print_r($edu_spectial_info);
+                    ?>
                     <?php if (!empty($edu_spectial_info)): foreach ($edu_spectial_info as $edu_spec) : ?>
                         <tr>
                             <td><?php echo $key ?></td>
