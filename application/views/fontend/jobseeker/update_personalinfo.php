@@ -64,7 +64,11 @@
                                     <tr>
                                       <td>Present Address:</td>
                                     <td><?php echo $js_personal_info->present_address; ?></td>
-                                    </tr>               
+                                    </tr>
+									<tr>
+                                      <td>City:</td>
+                                    <td><?php echo $js_personal_info->city_name; ?></td>
+                                    </tr>
                                      <tr>
                                       <td>Parmanent Address:</td>
                                     <td><?php echo $js_personal_info->parmanent_address; ?></td>
