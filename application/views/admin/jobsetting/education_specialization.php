@@ -117,8 +117,8 @@
                             <td><?php echo $edu_spec['education_specialization'] ?></td>
                             <td><?php echo $edu_spec['course_type'] ?></td>
                             <td>
-                                <?php echo btn_edit('admin/education_specialzation/edit_education_specialzation/' . $edu_spec['id']); ?>
-                                <?php echo btn_delete('admin/education_specialzation/delete_education_specialzation/' . $edu_spec['edu_level_id']); ?>
+                                <?php echo btn_edit('admin/education_specialization/edit_education_specialzation/' . $edu_spec['id']); ?>
+                                <?php echo btn_delete('admin/education_specialization/delete_education_specialzation/' . $edu_spec['edu_level_id']); ?>
                             </td>
 
                         </tr>
