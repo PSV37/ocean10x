@@ -72,16 +72,13 @@
                                         <label for="exampleInputEmail1">Course Type <span class="required">*</span></label>
                                         <select id="course_type"  name="course_type" class="form-control" >
                                            <option value="">Select Type</option> 
-                                        <?php if (!empty($educaiton_level_info))
-                                           foreach($educaiton_level_info as $edu_row) 
-                                           {
-                                        ?>   
-                                            <option value="<?php echo $edu_row['education_level_id']; ?>"><?php echo $edu_row['education_level_name']; ?></option> 
-                                        <?php } ?>
+                                           <option value="Full Time">Full Time</option> 
+                                           <option value="Part Time">Part Time</option> 
+                                        
                                         </select>
                                     </div>
                                 </div>
-
+                                <div class="panel-body"></div>
                                 <button type="submit" class="btn bg-navy" type="submit">Save Education Specialization
                                 </button><br/><br/>
                             </div>
