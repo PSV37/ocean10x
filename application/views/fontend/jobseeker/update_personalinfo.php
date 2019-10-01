@@ -66,7 +66,7 @@
                                     <td><?php echo $js_personal_info->present_address; ?></td>
                                     </tr>
 									<tr>
-                                      <td>City:</td>
+                                      <td>City:sss</td>
                                     <td><?php echo $result->city_name; ?></td>
                                     </tr>
                                      <tr>
