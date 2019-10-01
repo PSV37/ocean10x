@@ -40,7 +40,8 @@
                     <?php  echo $this->session->flashdata('msg');?>
                 <!-- form start -->
                 <form role="form" enctype="multipart/form-data" id="addJobForm"
-                      action=""
+                      action="<?php echo base_url(); ?>admin/job_posting/save_job/<?php if(!empty($job_info)){
+                          echo $job_info->job_post_id;}?>"
                       method="post">
 
                     <div class="row">
@@ -286,7 +287,7 @@
                                       
                                        <div class="col-md-4 col-sm-12"> 
                                        	<div class="formrow">   
-                                            <label class="control-label mandatory">Vacancy Description *</label>
+                                            <label class="control-label mandatory">Vacancy Description <span class="required">*</span></label>
                                                <textarea name="job_desc" required class="form-control" required><?php if(!empty($job_info)) echo $job_info->job_desc; ?></textarea>
 </div>
                                         </div>
@@ -369,40 +370,3 @@
 </script>
 
 <?php $this->load->view('admin/components/footer'); ?>
-
-<script>
-$('form#addJobForm').submit(function(e)
-  {
-      e.preventDefault();
-    
-      $.ajax({
-                url: "<?php echo base_url(); ?>admin/job_posting/save_job/<?php if(!empty($job_info)){
-                          echo $job_info->job_post_id;}?>",
-                type: "POST",
-                data: new FormData(this),
-                contentType:false,
-                processData:false,
-                 dataType: "json",
-                success: function(data)
-                {
-                    if($.isEmptyObject(data.error)){
-
-                        $("#job_result").html('<div class="alert alert-success"><button type="button" class="close">×</button>'+data.success+'</div>');
-                            window.setTimeout(function() {
-                            $(".alert").fadeTo(500, 0).slideUp(500, function(){
-                                $(this).remove(); 
-                            });
-                            location.reload();
-                            }, 1500);
-                          $('.alert .close').on("click", function(e){
-                                $(this).parent().fadeTo(500, 0).slideUp(500);
-                          });
-
-                        }else{
-                            $("#job_result").html('<div class="alert alert-danger"><button type="button" class="close">×</button>'+data.error+'</div>');
-                        }
-                }
-          });
-       
-  }); 
-</script>

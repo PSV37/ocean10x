@@ -26,11 +26,21 @@ class Job_posting extends MY_Controller
 
     public function save_job($id = null)
     {
-        $this->form_validation->set_rules('job_title', 'Job Title', 'trim|required');
-        $this->form_validation->set_rules('meta_keywords', 'Add Meta Keywords', 'trim|required');
-        $this->form_validation->set_rules('meta_description', 'Add Meta Description', 'trim|required');
-       
-        $this->form_validation->set_error_delimiters('<span class="err" style="padding-left:2px;">', '</span>');
+        // $this->form_validation->set_rules('job_title', 'Job Title', 'trim|required');
+        // $this->form_validation->set_rules('job_category', 'Job Category', 'trim|required');
+        // $this->form_validation->set_rules('salary_range', 'Salary Offered', 'trim|required');
+        // $this->form_validation->set_rules('job_level', 'Job Level', 'trim|required');
+        // $this->form_validation->set_rules('job_nature', 'Job Nature', 'trim|required');
+        // $this->form_validation->set_rules('job_location', 'Job Location', 'trim|required');
+        // $this->form_validation->set_rules('working_hours', 'Working Hours', 'trim|required');
+        // $this->form_validation->set_rules('company_profile_id', 'Select Compnay', 'trim|required');
+        // $this->form_validation->set_rules('preferred_age', 'Preferred Age', 'trim|required');
+
+        // $this->form_validation->set_rules('job_status', 'Job Status', 'trim|required');
+        // $this->form_validation->set_rules('job_types', 'Job Types', 'trim|required');
+        // $this->form_validation->set_rules('preferred_age', 'Preferred Age', 'trim|required');
+
+        // $this->form_validation->set_error_delimiters('<span class="err" style="padding-left:2px;">', '</span>');
 
         $job_info = array(
             'job_title'          => $this->input->post('job_title'),
