@@ -69,6 +69,14 @@
                                       <td>City:</td>
                                     <td><?php echo $result['city_name']; ?></td>
                                     </tr>
+									<tr>
+                                      <td>State:</td>
+                                    <td><?php echo $result['state_name']; ?></td>
+                                    </tr>
+									<tr>
+                                      <td>country:</td>
+                                    <td><?php echo $result['country_name']; ?></td>
+                                    </tr>
                                      <tr>
                                       <td>Parmanent Address:</td>
                                     <td><?php echo $js_personal_info->parmanent_address; ?></td>
