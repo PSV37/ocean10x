@@ -67,7 +67,7 @@ class Job_seeker extends MY_Seeker_Controller
 			$city = $this->Master_model->getMaster('city',$where=false);
 			$country = $this->Master_model->getMaster('country',$where=false);
 			$state = $this->Master_model->getMaster('state',$where=false);
-			
+			echo"sdd";
             echo $this->load->view('fontend/jobseeker/update_personalinfo', compact('jobseeker_id', 'js_personal_info', 'city', 'country', 'state'),true);
         }
     }
