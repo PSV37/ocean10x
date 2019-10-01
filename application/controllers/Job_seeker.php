@@ -22,8 +22,9 @@ class Job_seeker extends MY_Seeker_Controller
 						'country' => 'country.country_id = js_personal_info.country_id|INNER',
 						'state' => 'state.state_id = js_personal_info.state_id|INNER',
 						'city' => 'city.id = js_personal_info.city_id|INNER'
-	);die();
+	);
 	        $result = $this->Master_model->get_master_row("js_personal_info", $select = false, $where=false, $join);
+			echo $this->db->last_query();
             $this->load->view('fontend/jobseeker/seeker_info', compact('result'));
     }
 	
