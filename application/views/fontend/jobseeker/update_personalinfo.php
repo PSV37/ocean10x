@@ -66,8 +66,8 @@
                                     <td><?php echo $js_personal_info->present_address; ?></td>
                                     </tr>
 									<tr>
-                                      <td>City:<?php var_dump($result); ?></td>
-                                    <td><?php echo $result->city_name; ?></td>
+                                      <td>City:</td>
+                                    <td><?php echo $result['city_name']; ?></td>
                                     </tr>
                                      <tr>
                                       <td>Parmanent Address:</td>
