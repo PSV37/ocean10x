@@ -87,10 +87,9 @@
          <div class="col-md-12">
 
             <div class="box box-primary">
+               <?php echo $this->session->flashdata('msg');?>
                 <div class="box-header box-header-background with-border">
-
-                        <h3 class="box-title ">All Applicant Cv </h3>
-
+                    <h3 class="box-title ">All Applicant Cv </h3>
                 </div>
 
 
