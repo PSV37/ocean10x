@@ -68,7 +68,6 @@ class Education_specialization extends MY_Controller
     public function edit_education_specialzation($id){
         $data['title']="education_level Edit";
        
-        //$data['edu_spectial_info'] = $this->Master_model->getMaster('education_specialization',$where=false);
         $join_emp = array(
                 'education_level' => 'education_level.education_level_id=education_specialization.edu_level_id |INNER',
             );

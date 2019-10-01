@@ -107,7 +107,6 @@
                     </thead>
                     <tbody>
                     <?php $key = 1 ;
-                        //print_r($edu_spectial_info);
                     ?>
                     <?php if (!empty($edu_spectial_info)): foreach ($edu_spectial_info as $edu_spec) : ?>
                         <tr>
@@ -117,8 +116,8 @@
                             <td><?php echo $edu_spec['education_specialization'] ?></td>
                             <td><?php echo $edu_spec['course_type'] ?></td>s
                             <td>
-                                <?php echo btn_edit('admin/education_specialization/edit_education_specialzation/' . $edu_spec['id']); ?>
-                                <?php echo btn_delete('admin/education_specialization/delete_education_specialzation/' . $edu_spec['edu_level_id']); ?>
+                                <?php echo btn_edit('admin/education_specialzation/edit_education_specialzation/' . $edu_spec['id']); ?>
+                                <?php echo btn_delete('admin/education_specialzation/delete_education_specialzation/' . $edu_spec['edu_level_id']); ?>
                             </td>
 
                         </tr>
