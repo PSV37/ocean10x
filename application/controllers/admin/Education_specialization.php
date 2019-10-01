@@ -17,9 +17,12 @@ class Education_specialization extends MY_Controller
     public function index()
     {   
 
-        $title = 'Add Education Specialization';
-        $all_educationlevels=$this->education_level_model->get();
-        $this->load->view('admin/jobsetting/education_specialization', compact('all_educationlevels','title'));
+        $title['title'] = 'Add Education Specialization';
+
+        $data['educaiton_level_info'] = $this->Master_model->getMaster('education_level',$where=false);
+
+        // $all_educationlevels=$this->education_level_model->get();
+        $this->load->view('admin/jobsetting/education_specialization', $data);
     }
 
 

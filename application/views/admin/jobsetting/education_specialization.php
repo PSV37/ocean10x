@@ -31,19 +31,13 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">Education Level</h3>
+                        <h3 class="box-title ">Education Specialization</h3>
                     </div>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-background">
                 <!-- form start -->
-                <form role="form" enctype="multipart/form-data"
-
-                      action="<?php echo base_url(); ?>admin/education_level/save_educaiton/<?php
-                      if (!empty($educaiton_level_info->education_level_id)) {
-                        echo $educaiton_level_info->education_level_id;
-                      }
-                      ?>" method="post">
+                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/education_level/save_educaiton/" method="post">
 
                     <div class="row">
 
@@ -61,6 +55,13 @@
                                            }
                                            ?>"
                                            class="form-control">
+                                        <select id="education_level_name"  name="education_level_name" class="form-control" >
+                                           <option value="">Select Level</option> 
+                                           <?php if (!empty($educaiton_level_info->education_level_name)) {
+                                               echo $educaiton_level_info->education_level_name;
+                                           } ?>   
+
+                                        </select>
                                 </div>
 
                                 <button type="submit" class="btn bg-navy" type="submit">Save Education Level
