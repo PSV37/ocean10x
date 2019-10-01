@@ -106,7 +106,7 @@ $this->session->set_userdata('reg_in', $company_profile );
 
             $this->session->unset_userdata($company_profile);
  $this->session->unset_userdata('reg_in');
-
+				echo"ffff";
 
             // successfully sent mail
             $this->load->view('fontend/employer/register_success');
@@ -117,7 +117,7 @@ $this->session->set_userdata('reg_in', $company_profile );
 
         } 
        }
-	   echo"ffff";
+	   
     }
 
 
