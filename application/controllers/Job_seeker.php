@@ -110,7 +110,8 @@ class Job_seeker extends MY_Seeker_Controller
         } else {
             $jobseeker_id   = $this->session->userdata('job_seeker_id');
             $edcuaiton_list = $this->Job_seeker_education_model->education_list_by_id($jobseeker_id);
-           echo $this->load->view('fontend/jobseeker/update_education.php', compact('edcuaiton_list'),true);
+			$passingyear = $this->Master_model->getMaster('passingyear',$where=false);
+           echo $this->load->view('fontend/jobseeker/update_education.php', compact('edcuaiton_list', 'passingyear'),true);
         }
     }
 

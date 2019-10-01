@@ -156,6 +156,11 @@
                            echo $edcuaiton_list->js_year_of_passing;
                            }
                        ?>">
+					   <select  name="js_year_of_passing" id="js_year_of_passing" class="form-control">
+				 <?php foreach($passingyear as $passing){?>
+					<option value="<?php echo $passing['passing_id']; ?>"<?php if($edcuaiton_list->js_year_of_passing==$passing['passing_id']){ echo "selected"; }?>><?php echo $passing['passing_year']; ?></option>
+					<?php } ?>
+				 </select>
                 </div>
               </div>
             <button type="submit" class="btn btn-default">Submit</button>
