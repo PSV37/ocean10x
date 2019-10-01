@@ -149,13 +149,6 @@
               <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Passing Year:</label>
                 <div class="col-sm-9">
-                  <input name="js_year_of_passing" type="text"  class="form-control" id="js_year_of_passing" placeholder="Enter Year of Passing"
-
-               value="<?php
-                         if (!empty($edcuaiton_list->js_year_of_passing)) {
-                           echo $edcuaiton_list->js_year_of_passing;
-                           }
-                       ?>">
 					   <select  name="js_year_of_passing" id="js_year_of_passing" class="form-control">
 				 <?php foreach($passingyear as $passing){?>
 					<option value="<?php echo $passing['passing_id']; ?>"<?php if($edcuaiton_list->js_year_of_passing==$passing['passing_id']){ echo "selected"; }?>><?php echo $passing['passing_year']; ?></option>
