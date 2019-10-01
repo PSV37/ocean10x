@@ -75,6 +75,7 @@ class Education_specialization extends MY_Controller
 
         $where_edu = "id='$id'";
         $data['edit_spectial_info'] = $this->Master_model->getMaster('education_specialization',$where_edu);
+        $data['educaiton_level_info'] = $this->Master_model->getMaster('education_level',$where=false);
 
         $this->load->view('admin/jobsetting/education_specialization',$data);
     }
