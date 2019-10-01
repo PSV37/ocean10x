@@ -20,7 +20,7 @@ class Education_specialization extends MY_Controller
         $data['title'] = 'Add Education Specialization';
 
         $data['educaiton_level_info'] = $this->Master_model->getMaster('education_level',$where=false);
-
+        $data['edu_spectial_info'] = $this->Master_model->getMaster('education_specialization',$where=false);
         // $all_educationlevels=$this->education_level_model->get();
         $this->load->view('admin/jobsetting/education_specialization', $data);
     }
@@ -66,7 +66,7 @@ class Education_specialization extends MY_Controller
        // $all_educationlevels=$this->education_level_model->get();
       //  $educaiton_level_info=$this->education_level_model->get($id);
         $data['edu_spectial_info'] = $this->Master_model->getMaster('education_specialization',$where=false);
-        
+
         $where_edu = "id='$id'";
         $data['edit_spectial_info'] = $this->Master_model->getMaster('education_specialization',$where_edu);
 
