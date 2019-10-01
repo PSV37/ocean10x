@@ -54,7 +54,7 @@ class Education_specialization extends MY_Controller
                 $education_level['updated_by']=$user_id;
 
                 $where['id']=$id;
-                $this->Master_model->master_update($data,'education_specialization',$where);
+                $this->Master_model->master_update($education_level,'education_specialization',$where);
                
                 redirect('admin/education_specialization');
             }
