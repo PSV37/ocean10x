@@ -51,7 +51,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Education Level <span class="required">*</span></label>
-                                        <select id="education_level_name"  name="education_level_name" class="form-control" >
+                                        <select id="education_level_name"  name="education_level_name" class="form-control" required>
                                            <option value="">Select Level</option> 
                                         <?php if (!empty($educaiton_level_info))
                                            foreach($educaiton_level_info as $edu_row) 
@@ -66,14 +66,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Education Specialization <span class="required">*</span></label>
-                                      <input type="text" name="specialization" class="form-control" value="<?php if (!empty($edit_spectial_info)) echo $row['education_specialization'];?>">
+                                      <input type="text" name="specialization" class="form-control" value="<?php if (!empty($edit_spectial_info)) echo $row['education_specialization'];?>" required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Course Type <span class="required">*</span></label>
-                                        <select id="course_type"  name="course_type" class="form-control" >
+                                        <select id="course_type"  name="course_type" class="form-control" required>
                                            <option value="">Select Type</option> 
                                            <option value="Full Time"<?php if (!empty($edit_spectial_info)) if($row['course_type']=='Full Time')echo "selected";?>>Full Time</option> 
                                            <option value="Part Time"<?php if (!empty($edit_spectial_info)) if($row['course_type']=='Part Time')echo "selected";?>>Part Time</option> 
