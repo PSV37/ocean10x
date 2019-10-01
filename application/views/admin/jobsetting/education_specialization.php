@@ -37,7 +37,7 @@
                 <!-- /.box-header -->
                 <div class="box-background">
                 <!-- form start -->
-                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/education_level/save_educaiton/" method="post">
+                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/education_specialization/save_education_specializaton/" method="post">
 
                     <div class="row">
 
@@ -64,6 +64,21 @@
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Education Specialization <span class="required">*</span></label>
                                       <input type="text" name="specialization" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Course Type <span class="required">*</span></label>
+                                        <select id="course_type"  name="course_type" class="form-control" >
+                                           <option value="">Select Type</option> 
+                                        <?php if (!empty($educaiton_level_info))
+                                           foreach($educaiton_level_info as $edu_row) 
+                                           {
+                                        ?>   
+                                            <option value="<?php echo $edu_row['education_level_id']; ?>"><?php echo $edu_row['education_level_name']; ?></option> 
+                                        <?php } ?>
+                                        </select>
                                     </div>
                                 </div>
 
