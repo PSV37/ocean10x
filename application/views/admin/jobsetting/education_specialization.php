@@ -47,6 +47,7 @@
 
                                 <!-- /.Company Name -->
                                 <div class="form-group">
+                                    <div class="col-md-6">
                                     <label for="exampleInputEmail1">Education Level <span class="required">*</span></label>
                                         <select id="education_level_name"  name="education_level_name" class="form-control" >
                                            <option value="">Select Level</option> 
@@ -57,10 +58,13 @@
                                             <option value="<?php echo $edu_row['education_level_id']; ?>"><?php echo $edu_row['education_level_name']; ?></option> 
                                         <?php } ?>
                                         </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Education Specialization <span class="required">*</span></label>
-                                      <input type="text" name="specialization" class="form-control">
+                                    </div>
+                                <!-- </div>
+                                <div class="form-group"> -->
+                                    <div class="col-md-6">
+                                        <label for="exampleInputEmail1">Education Specialization <span class="required">*</span></label>
+                                          <input type="text" name="specialization" class="form-control">
+                                    </div>
                                 </div>
 
                                 <button type="submit" class="btn bg-navy" type="submit">Save Education Specialization
