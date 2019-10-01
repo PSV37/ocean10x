@@ -109,10 +109,10 @@
                         <tr>
                             <td><?php echo $key ?></td>
                         
-                            <td><?php echo $edu_spec->education_specialization ?></td>
+                            <td><?php echo $edu_spec['education_specialization'] ?></td>
                             <td>
-                                <?php echo btn_edit('admin/education_level/edit_education_level/' . $edu_spec->id); ?>
-                                <?php echo btn_delete('admin/education_level/delete_education_level/' . $edu_spec->edu_level_id); ?>
+                                <?php echo btn_edit('admin/education_level/edit_education_level/' . $edu_spec['id']); ?>
+                                <?php echo btn_delete('admin/education_level/delete_education_level/' . $edu_spec['edu_level_id']); ?>
                             </td>
 
                         </tr>
