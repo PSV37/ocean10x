@@ -20,11 +20,11 @@ class Education_specialization extends MY_Controller
         $data['title'] = 'Add Education Specialization';
 
         $data['educaiton_level_info'] = $this->Master_model->getMaster('education_level',$where=false);
-
+          $where_all = "education_specialization.status='1'";
         $join_emp = array(
                 'education_level' => 'education_level.education_level_id=education_specialization.edu_level_id |INNER',
             );
-        $data['edu_spectial_info'] = $this->Master_model->getMaster('education_specialization',$where=false,$join_emp);
+        $data['edu_spectial_info'] = $this->Master_model->getMaster('education_specialization',$where_all,$join_emp);
         // $all_educationlevels=$this->education_level_model->get();
         $this->load->view('admin/jobsetting/education_specialization', $data);
     }
@@ -60,18 +60,23 @@ class Education_specialization extends MY_Controller
             }
         }
 
-    // public function delete_education_level($id) {
-    //     $this->education_level_model->delete($id);
-    //     redirect('admin/education_level');
-    // }
+    public function delete_education_level($id) {
+        $this->education_level_model->delete($id);
+        $education_level_status = array(
+            'status'=>0;
+        );
+        $where_del['id']=$id;
+        $this->Master_model->master_update($education_level_status,'education_specialization',$where_del);
+        redirect('admin/education_level');
+    }
 
     public function edit_education_specialzation($id){
         $data['title']="education_level Edit";
-       
+        $where_all = "education_specialization.status='1'";
         $join_emp = array(
                 'education_level' => 'education_level.education_level_id=education_specialization.edu_level_id |INNER',
             );
-        $data['edu_spectial_info'] = $this->Master_model->getMaster('education_specialization',$where=false,$join_emp);
+        $data['edu_spectial_info'] = $this->Master_model->getMaster('education_specialization',$where_all,$join_emp);
 
         $where_edu = "id='$id'";
         $data['edit_spectial_info'] = $this->Master_model->getMaster('education_specialization',$where_edu);
