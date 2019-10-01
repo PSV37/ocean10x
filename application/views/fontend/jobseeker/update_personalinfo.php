@@ -67,7 +67,7 @@
                                     </tr>
 									<tr>
                                       <td>City:</td>
-                                    <td><?php echo $valuee->city_name; ?></td>
+                                    <td><?php echo $res->city_name; ?></td>
                                     </tr>
                                      <tr>
                                       <td>Parmanent Address:</td>
