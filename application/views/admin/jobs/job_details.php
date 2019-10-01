@@ -19,7 +19,7 @@
             <section class="content-header">
 
                 <ol class="breadcrumb">
-                   <?php  echo $user_id=$this->session->userdata('name');?>;
+                   <!-- <?php  echo $user_id=$this->session->userdata('name');?> -->
                 </ol>
             </section>
 
