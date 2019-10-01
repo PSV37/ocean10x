@@ -117,7 +117,8 @@ class Jobs extends MY_Controller
 
     public function deactive_btn($job_posting_id){
         $this->job_posting_model->deactive_job($job_posting_id);
-        redirect('admin/jobs/deactive_selected_job');
+        // redirect('admin/jobs/deactive_selected_job');
+        redirect_back();
     }   
 
     public function delete_job($id){
