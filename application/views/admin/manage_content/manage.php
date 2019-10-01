@@ -91,7 +91,7 @@
 <!-- Popup Div Starts Here -->
 <div id="popupContact">
 <!-- Contact Us Form -->
-<form name="frm_post" id="edit_frm_post" enctype="multipart/form-data" role="form" method="post" action="<?php echo base_url('admin/manage_content/edit_content'); ?>">
+<form name="frm_post" id="edit_frm_post" enctype="multipart/form-data" role="form" method="post" action="">
 <img id="close" src="<?php echo base_url();?>asset/img/3.png" onclick ="div_hide_edit()">
 <h2>Edit Page</h2>
 <hr>
@@ -104,6 +104,7 @@
 <input id="edit_meta_description_cms" class="form-control" name="edit_meta_description" placeholder="Meta dicription" type="text">
 <br>
 <textarea id="edit_content_ck" class="form-control" name="edit_content_ck" placeholder="Content"></textarea>
+<div id="edit_cont_result"></div>
 <input type="submit" value="Submit" class="btn-content"/>
 </form>
 </div>
@@ -155,37 +156,37 @@ $('form#frm_blog_post').submit(function(e)
        
   }); 
 //Edit form function
-// $('form#frm_blog_post').submit(function(e)
-//   {
-//       e.preventDefault();
+$('form#edit_frm_post').submit(function(e)
+  {
+      e.preventDefault();
     
-//       $.ajax({
-//                 url: "<?php echo base_url('admin/manage_content/add_content'); ?>",
-//                 type: "POST",
-//                 data: new FormData(this),
-//                 contentType:false,
-//                 processData:false,
-//                  dataType: "json",
-//                 success: function(data)
-//                 {
-//                     if($.isEmptyObject(data.error)){
+      $.ajax({
+                url: "<?php echo base_url('admin/manage_content/edit_content'); ?>",
+                type: "POST",
+                data: new FormData(this),
+                contentType:false,
+                processData:false,
+                 dataType: "json",
+                success: function(data)
+                {
+                    if($.isEmptyObject(data.error)){
 
-//                         $("#cont_result").html('<div class="alert alert-success"><button type="button" class="close">×</button>'+data.success+'</div>');
-//                             window.setTimeout(function() {
-//                             $(".alert").fadeTo(500, 0).slideUp(500, function(){
-//                                 $(this).remove(); 
-//                             });
-//                             location.reload();
-//                             }, 1500);
-//                           $('.alert .close').on("click", function(e){
-//                                 $(this).parent().fadeTo(500, 0).slideUp(500);
-//                           });
+                        $("#edit_cont_result").html('<div class="alert alert-success"><button type="button" class="close">×</button>'+data.success+'</div>');
+                            window.setTimeout(function() {
+                            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                                $(this).remove(); 
+                            });
+                                location.reload();
+                            }, 1500);
+                                $('.alert .close').on("click", function(e){
+                                $(this).parent().fadeTo(500, 0).slideUp(500);
+                          });
 
-//                         }else{
-//                             $("#cont_result").html('<div class="alert alert-danger"><button type="button" class="close">×</button>'+data.error+'</div>');
-//                         }
-//                 }
-//           });
+                        }else{
+                            $("#edit_cont_result").html('<div class="alert alert-danger"><button type="button" class="close">×</button>'+data.error+'</div>');
+                        }
+                }
+          });
        
-//   }); 
+  }); 
 </script>

@@ -57,7 +57,7 @@ class Manage_content extends MY_Controller
             ); 
             
             $this->manage_content_model->add($post);
-             echo json_encode(['success'=>'Content Added Successfully!']);
+            echo json_encode(['success'=>'Content Added Successfully!']);
             // $this->session->set_flashdata('added_action', true);
             // redirect(base_url('admin/manage_content'));
         }
@@ -76,9 +76,7 @@ class Manage_content extends MY_Controller
     }
     
     public function edit_content() {
-//        echo'<pre>';
-//        print_r($_POST);
-//        exit;
+
         $id = $this->input->post('cms_id');
         $data['title'] = SITE_NAME . ': Edit Page';
         $data['msg'] = '';
@@ -92,29 +90,31 @@ class Manage_content extends MY_Controller
 
         $this->form_validation->set_error_delimiters('<span class="err" style="padding-left:2px;">', '</span>');
         if ($this->form_validation->run() === FALSE) {
-            $this->index();
-            return;
+            $errors = validation_errors();
+            echo json_encode(['error'=>$errors]);
+        }else{
+               $slug = $this->input->post('edit_slug');
+               $slugs = create_unique_slug($slug, 'content_management', $field = 'slug', 'ID', $id);
+                
+
+                $post = array(
+                    'heading' => $this->input->post('edit_heading'),
+                    'slug' => $this->input->post('edit_slug'),
+                    'description' => $this->input->post('edit_content_ck'),
+                   
+                    'meta_title' => $this->input->post('edit_meta_title'),
+                    'meta_keywords' => $this->input->post('edit_meta_keywords'),
+                    'meta_description' => $this->input->post('edit_meta_description'),
+                );
+        
+            $this->manage_content_model->update($id, $post);
+            echo json_encode(['success'=>'Content Updated Successfully!']);
+            // $this->session->set_flashdata('update_action', true);
+            // redirect(base_url('admin/manage_content'));
+            // return;
         }
 
-        $slug = $this->input->post('edit_slug');
-        $slugs = create_unique_slug($slug, 'content_management', $field = 'slug', 'ID', $id);
-        
-
-        $post = array(
-            'heading' => $this->input->post('edit_heading'),
-            'slug' => $this->input->post('edit_slug'),
-            'description' => $this->input->post('edit_content_ck'),
-           
-            'meta_title' => $this->input->post('edit_meta_title'),
-            'meta_keywords' => $this->input->post('edit_meta_keywords'),
-            'meta_description' => $this->input->post('edit_meta_description'),
-        );
-
-        
-        $this->manage_content_model->update($id, $post);
-        $this->session->set_flashdata('update_action', true);
-        redirect(base_url('admin/manage_content'));
-        return;
+     
     }
     
       public function delete_post($id = '') {
