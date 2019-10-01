@@ -92,7 +92,7 @@
                 <div class="box-footer">
 
                 </div>
-            <!--     <div class="row">
+                <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                 <table class="table table-bordered table-striped" id="dataTables-example">
                     <thead>
@@ -105,14 +105,14 @@
                     </thead>
                     <tbody>
                     <?php $key = 1 ?>
-                    <?php if (!empty($all_educationlevels)): foreach ($all_educationlevels as $v_level) : ?>
+                    <?php if (!empty($edu_spectial_info)): foreach ($edu_spectial_info as $edu_spec) : ?>
                         <tr>
                             <td><?php echo $key ?></td>
                         
-                            <td><?php echo $v_level->education_level_name ?></td>
+                            <td><?php echo $edu_spec->education_specialization ?></td>
                             <td>
-                                <?php echo btn_edit('admin/education_level/edit_education_level/' . $v_level->education_level_id); ?>
-                                <?php echo btn_delete('admin/education_level/delete_education_level/' . $v_level->education_level_id); ?>
+                                <?php echo btn_edit('admin/education_level/edit_education_level/' . $edu_spec->id); ?>
+                                <?php echo btn_delete('admin/education_level/delete_education_level/' . $edu_spec->edu_level_id); ?>
                             </td>
 
                         </tr>
@@ -130,7 +130,7 @@
                 </table>
 
                     </div>
-                </div> -->
+                </div>
             </div>
             <!-- /.box -->
         </div>

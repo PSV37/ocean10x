@@ -61,12 +61,17 @@ class Education_specialization extends MY_Controller
     //     redirect('admin/education_level');
     // }
 
-    // public function edit_education_level($id){
-    //     $title="education_level Edit";
-    //     $all_educationlevels=$this->education_level_model->get();
-    //     $educaiton_level_info=$this->education_level_model->get($id);
-    //     $this->load->view('admin/jobsetting/education_level',compact('all_educationlevels','educaiton_level_info','title'));
-    // }
+    public function edit_education_level($id){
+        $data['title']="education_level Edit";
+       // $all_educationlevels=$this->education_level_model->get();
+      //  $educaiton_level_info=$this->education_level_model->get($id);
+        $data['edu_spectial_info'] = $this->Master_model->getMaster('education_specialization',$where=false);
+        
+        $where_edu = "id='$id'";
+        $data['edit_spectial_info'] = $this->Master_model->getMaster('education_specialization',$where_edu);
+
+        $this->load->view('admin/jobsetting/education_specialization',$data);
+    }
 
 
 
