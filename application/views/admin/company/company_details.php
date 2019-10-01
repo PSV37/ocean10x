@@ -169,8 +169,8 @@
                                     </td>
                                     <td class="vertical-td">
                                       <?php echo btn_edit('admin/job_posting/edit_jobs/' . $v_companyjobs->job_post_id); ?>
-                                        <?php echo btn_view_modal('admin/company_profile/jobs_view/' . $v_companyjobs->job_post_id); ?>
-                                        <?php echo btn_delete('admin/company_profile/jobs_delete/' . $v_companyjobs->job_post_id); ?>
+                                      <!-- <?php echo btn_view_modal('admin/company/jobs_view/' . $v_companyjobs->job_post_id); ?> -->
+                                      <?php echo btn_delete('admin/company/jobs_delete/' . $v_companyjobs->job_post_id); ?>
                                     </td>
 
                                 </tr>
