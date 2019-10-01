@@ -117,6 +117,7 @@ $this->session->set_userdata('reg_in', $company_profile );
 
         } 
        }
+	   echo"ffff";
     }
 
 
