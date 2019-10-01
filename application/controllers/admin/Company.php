@@ -150,7 +150,8 @@ class Company extends MY_Controller
     public function jobs_delete($id)
     {
         $this->job_posting_model->delete($id);
-        redirect('admin/company/companylist');
+       // redirect('admin/company/companylist');
+        redirect_back();
     }
 
     public function delete_company($companyid = null)
