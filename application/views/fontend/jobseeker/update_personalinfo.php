@@ -85,6 +85,14 @@
                                       <td>City:</td>
                                     <td><?php echo $result['city_name']; ?></td>
                                     </tr>
+									<tr>
+                                      <td>State:</td>
+                                    <td><?php echo $result['state_name']; ?></td>
+                                    </tr>
+									<tr>
+                                      <td>Country:</td>
+                                    <td><?php echo $result['country_name']; ?></td>
+                                    </tr>
                                   </tbody>
                                 </table>
                                 </div>
