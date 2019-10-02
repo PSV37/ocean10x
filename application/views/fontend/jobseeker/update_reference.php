@@ -219,7 +219,7 @@
               </div>
 
               <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Voice:</label>
+                <label class="control-label col-sm-3" for="email">Mobile:</label>
                 <div class="col-sm-9">
                   <input type="text" name="mobile" class="form-control" id="mobile" placeholder="+88"
               >
