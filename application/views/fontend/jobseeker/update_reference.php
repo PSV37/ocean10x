@@ -136,7 +136,7 @@
                 <label class="control-label col-sm-3" for="email">Country Code:</label>
                 <div class="col-sm-9">
 											<select id="country" name="country_code" class="form-control" style="height:42px;">
-												<option><?php echo $company_info->country_code?></option>
+												<option><?php echo $reference_list->country_code?></option>
 												<option value="AD - Andorra (+376)">AD - Andorra (+376)</option>
 												<option value="AE - United Arab Emirates (+971)">AE - United Arab Emirates (+971)</option>
 												<option value="AF - Afghanistan (+93)">AF - Afghanistan (+93)</option>
