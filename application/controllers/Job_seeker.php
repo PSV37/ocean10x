@@ -406,6 +406,7 @@ exit;*/
                 'org_name'      => $this->input->post('org_name'),
                 'designation'   => $this->input->post('designation'),
                 'email'         => $this->input->post('email'),
+				'country_code'        => $this->input->post('country_code'),
                 'mobile'        => $this->input->post('mobile'),
                 'relation'      => $this->input->post('relation'),
             );
