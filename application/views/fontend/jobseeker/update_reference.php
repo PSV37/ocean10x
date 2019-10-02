@@ -36,7 +36,7 @@
                                 </tr>
 
                                 <tr>
-                                  <td>Voice:</td>
+                                  <td>Mobile:</td>
                                 <td><?php echo $v_reference->mobile; ?></td>
                                 </tr>
 
