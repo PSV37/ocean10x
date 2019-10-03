@@ -211,7 +211,7 @@
                 </header>
                 <div class="col-md-9">
 				<input type="text" name="cid" id="cid" value="<?php echo $traningresult['job_seeker_id'];?>">
-                  <?php if (!empty($training_list)): foreach ($training_list as $v_training) : ?>
+                  <?php print_r($traningresult); if (!empty($training_list)): foreach ($training_list as $v_training) : ?>
                	
                 
                 <div class="table-responsive">
