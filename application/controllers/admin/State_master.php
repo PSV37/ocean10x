@@ -63,7 +63,7 @@ class State_master extends MY_Controller
         
       //  $this->education_level_model->delete($id);
         $state_status = array(
-            'status'=>0,
+            'state_status'=>0,
         );
         $where_del['state_id']=$id;
         $this->Master_model->master_update($state_status,'state',$where_del);
