@@ -439,8 +439,9 @@ exit;*/
                 'training_title' => $this->input->post('training_title'),
                 'training_topic' => $this->input->post('training_topic'),
                 'institute'      => $this->input->post('institute'),
-                'country'        => $this->input->post('country'),
-                'location'       => $this->input->post('location'),
+                'country_id'        => $this->input->post('country_id'),
+                'state_id'       => $this->input->post('state_id'),
+				'city_id'       => $this->input->post('city_id'),
                 'duration'       => $this->input->post('duration'),
                 'training_year'       => $this->input->post('training_year'),
             );
@@ -455,7 +456,15 @@ exit;*/
             $jobseeker_id  = $this->session->userdata('job_seeker_id');
             $training_list = $this->Job_training_model->training_list_by_id($jobseeker_id);
 			$passingyear = $this->Master_model->getMaster('passingyear',$where=false);
-            echo $this->load->view('fontend/jobseeker/update_training', compact('training_list', 'passingyear'),true);
+			$city = $this->Master_model->getMaster('city',$where=false);
+			$country = $this->Master_model->getMaster('country',$where=false);
+			$state = $this->Master_model->getMaster('state',$where=false);
+			$join = array(
+						'country' => 'country.country_id = js_personal_info.country_id|INNER',
+						'state' => 'state.state_id = js_personal_info.state_id|INNER',
+						'city' => 'city.id = js_personal_info.city_id|INNER'
+			);
+            echo $this->load->view('fontend/jobseeker/update_training', compact('training_list', 'passingyear', 'country', 'state', 'city', 'join'),true);
         }
     }
 

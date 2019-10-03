@@ -38,7 +38,7 @@
                               <td><?php echo $v_training->institute; ?></td>
                                 </tr>
 
-                                <tr>
+                               <!-- <tr>
                                   <td>Country:</td>
                                 <td><?php echo $v_training->country; ?></td>
                                 </tr>
@@ -46,8 +46,19 @@
                                 <tr>
                                   <td>Location:</td>
                                 <td><?php echo $v_training->location; ?></td>
-                                </tr>
-
+                                </tr>-->
+								<tr>
+                                      <td>country:</td>
+                                    <td><?php echo $result['country_name']; ?></td>
+                                    </tr>
+									<tr>
+                                      <td>State:</td>
+                                    <td><?php echo $result['state_name']; ?></td>
+                                    </tr>
+									<tr>
+                                      <td>City:</td>
+                                    <td><?php echo $result['city_name']; ?></td>
+                                    </tr>
                                 <tr>
                                   <td>Duration:</td>
                                 <td><?php echo $v_training->duration; ?></td>
@@ -139,7 +150,7 @@
                 </div>
               </div>
 
-              <div class="form-group">
+              <!--<div class="form-group">
                 <label class="control-label col-sm-3" for="email">Country:</label>
                 <div class="col-sm-9">
                   <input type="text" name="country" class="form-control" id="country" placeholder="Country Name"
@@ -163,6 +174,34 @@
                            }
                        ?>">
                 </div>
+              </div>-->
+			  
+			  <div class="input-group">
+                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">Country</label></span>
+                <select  name="country_id" class="form-control" onchange="getStates(this.value)">
+					<option value="">Select Country</option>
+					<?php foreach($country as $key){?>
+					<option value="<?php echo $key['country_id']; ?>"<?php if($training_list->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
+					<?php } ?>
+				  </select>
+              </div>
+			  <div class="input-group">
+                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">State</label></span>
+                 <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+				 <option value="">Select Country First</option>
+				 <?php foreach($state as $val){?>
+					<option value="<?php echo $val['state_id']; ?>"<?php if($training_list->state_id==$val['state_id']){ echo "selected"; }?>><?php echo $val['state_name']; ?></option>
+					<?php } ?>
+				 </select>
+              </div>
+			  <div class="input-group">
+                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">City</label></span>
+                 <select  name="city_id" id="city_id" class="form-control">
+				 <option value="">Select State First</option>
+				 <?php foreach($city as $valu){?>
+					<option value="<?php echo $valu['id']; ?>"<?php if($training_list->city_id==$valu['id']){ echo "selected"; }?>><?php echo $valu['city_name']; ?></option>
+					<?php } ?>
+				 </select>
               </div>
 
               <div class="form-group">
@@ -235,11 +274,10 @@
                 </div>
               </div>
 
-              <div class="form-group">
+              <!--<div class="form-group">
                 <label class="control-label col-sm-3" for="email">Country:</label>
                 <div class="col-sm-9">
-                  <input type="text" name="country" class="form-control" id="country" placeholder="Country Name "
-              >
+                  <input type="text" name="country" class="form-control" id="country" placeholder="Country Name ">
                 </div>
               </div>
 
@@ -249,6 +287,33 @@
                 <div class="col-sm-9">
                   <input name="location" type="text"  class="form-control" id="location" placeholder="Location">
                 </div>
+              </div>-->
+			  <div class="input-group">
+                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">Country</label></span>
+                <select  name="country_id" class="form-control" onchange="getStates(this.value)">
+					<option value="">Select Country</option>
+					<?php foreach($country as $key){?>
+					<option value="<?php echo $key['country_id']; ?>"><?php echo $key['country_name']; ?></option>
+					<?php } ?>
+				  </select>
+              </div>
+			  <div class="input-group">
+                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">State</label></span>
+                 <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+				 <option value="">Select Country First</option>
+				 <?php foreach($state as $val){?>
+					<option value="<?php echo $val['state_id']; ?>"><?php echo $val['state_name']; ?></option>
+					<?php } ?>
+				 </select>
+              </div>
+			  <div class="input-group">
+                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">City</label></span>
+                 <select  name="city_id" id="city_id" class="form-control">
+				 <option value="">Select State First</option>
+				 <?php foreach($city as $valu){?>
+					<option value="<?php echo $valu['id']; ?>"><?php echo $valu['city_name']; ?></option>
+					<?php } ?>
+				 </select>
               </div>
 
               <div class="form-group">
@@ -396,3 +461,38 @@
         });
             </script>
 
+<script>
+	  function getStates(id){
+		if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Job_seeker/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state_id').html(res);
+                }
+				
+            }); 
+          }
+   
+	   }
+	   
+	   </script>
+	   
+	   <script>
+	  function getCitys(id){
+		if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Job_seeker/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city_id').html(res);
+                }
+				
+            }); 
+          }
+   
+	   }
+	   
+	   </script>        
