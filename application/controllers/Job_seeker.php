@@ -421,7 +421,7 @@ exit;*/
             $reference_list = $this->Job_reference_model->reference_list_by_id($jobseeker_id);
 			$designation = $this->Master_model->getMaster('designation',$where=false);
 			$company_profile = $this->Master_model->getMaster('company_profile',$where=false);
-			echo $this->db->last_query();
+			
            echo $this->load->view('fontend/jobseeker/update_reference', compact('reference_list', 'designation', 'company_profile'),true);
         }
     }
