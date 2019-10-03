@@ -481,7 +481,7 @@ exit;*/
 		$country = $this->Master_model->getMaster('country',$where=false);
 		$state = $this->Master_model->getMaster('state',$where=false);
 		$c_id = $this->input->get('id');
-		$where = "js_training='$c_id'";
+		$where = "job_apply_id='$c_id'";
 		$join = array(
 						'country' => 'country.country_id = js_training.country_id|INNER',
 						'state' => 'state.state_id = js_training.state_id|INNER',
