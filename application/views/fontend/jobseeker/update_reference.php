@@ -127,12 +127,12 @@
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Designation:</label>
                 <div class="col-sm-9">
-                  <input type="text" name="designation" class="form-control" id="designation" placeholder="Enter Designation"
-                   value="<?php
-                         if (!empty($reference_list->designation)) {
-                           echo $reference_list->designation;
-                           }
-                       ?>">
+                  				    <select  name="designation_id" class="form-control">
+					<option value="">Select Desigantion</option>
+					<?php foreach($designation as $keys){?>
+					<option value="<?php echo $keys['designation_id']; ?>"<?php if($reference_list->designation_id==$keys['designation_id']){ echo "selected"; }?>><?php echo $keys['designation_name']; ?></option>
+					<?php } ?>
+				  </select>
                 </div>
               </div>
 			  <div class="form-group">
@@ -453,7 +453,13 @@
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Designation Name:</label>
                 <div class="col-sm-9">
-                  <input type="text" name="designation" class="form-control" id="designation" placeholder="Enter Designation Name">
+				    <select  name="designation_id" class="form-control">
+					<option value="">Select Designation</option>
+					<?php foreach($designation as $keys){?>
+					<option value="<?php echo $keys['designation_id']; ?>"><?php echo $keys['designation_name']; ?></option>
+					<?php } ?>
+				  </select>
+
                 </div>
               </div>
 			  

@@ -404,7 +404,7 @@ exit;*/
                 'job_seeker_id' => $jobseeker_id,
                 'name'          => $this->input->post('name'),
                 'org_name'      => $this->input->post('org_name'),
-                'designation'   => $this->input->post('designation'),
+                'designation_id'   => $this->input->post('designation_id'),
                 'email'         => $this->input->post('email'),
                 'mobile'        => $this->input->post('mobile'),
                 'relation'      => $this->input->post('relation'),
@@ -419,7 +419,8 @@ exit;*/
         } else {
             $jobseeker_id   = $this->session->userdata('job_seeker_id');
             $reference_list = $this->Job_reference_model->reference_list_by_id($jobseeker_id);
-           echo $this->load->view('fontend/jobseeker/update_reference', compact('reference_list'),true);
+			$designation = $this->Master_model->getMaster('designation',$where=false);
+           echo $this->load->view('fontend/jobseeker/update_reference', compact('reference_list', 'designation'),true);
         }
     }
 
