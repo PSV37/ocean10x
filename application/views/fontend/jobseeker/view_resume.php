@@ -228,14 +228,7 @@
                     <td width="30%"><span class="highlight_text">Institute:</span></td>
                     <td><?php echo $v_training->institute; ?></td>
                   </tr>
-                  <tr>
-                    <td width="30%"><span class="highlight_text">Country:</span></td>
-                    <td><?php echo $traningresult['country_name']; ?></td>
-                  </tr>
-                  <tr>
-                    <td width="30%"><span class="highlight_text">Location:</span></td>
-                    <td><?php echo $traningresult['city_name']; ?></td>
-                  </tr>
+                  
                   <tr>
                     <td width="30%"><span class="highlight_text">Duration:</span></td>
                     <td><?php echo $v_training->duration; ?></td>
@@ -251,6 +244,14 @@
                <?php
                     endforeach;
                     ?>
+					<tr>
+                    <td width="30%"><span class="highlight_text">Country:</span></td>
+                    <td><?php echo $traningresult['country_name']; ?></td>
+                  </tr>
+                  <tr>
+                    <td width="30%"><span class="highlight_text">Location:</span></td>
+                    <td><?php echo $traningresult['city_name']; ?></td>
+                  </tr>
                     <?php else : ?> 
                         <p>
                             <strong>There is no record for display</strong>
