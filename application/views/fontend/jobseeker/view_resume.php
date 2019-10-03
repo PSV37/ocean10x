@@ -231,8 +231,12 @@
                     <td width="30%"><span class="highlight_text">Country:</span></td>
                     <td><?php echo $v_training->country_name; ?></td>
                   </tr>
+				   <tr>
+                    <td width="30%"><span class="highlight_text">State:</span></td>
+                    <td><?php echo $v_training->state_name; ?></td>
+                  </tr>
                   <tr>
-                    <td width="30%"><span class="highlight_text">Location:</span></td>
+                    <td width="30%"><span class="highlight_text">City:</span></td>
                     <td><?php echo $v_training->city_name; ?></td>
                   </tr>
                   <tr>
