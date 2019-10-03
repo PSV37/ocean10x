@@ -9,17 +9,14 @@
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
           <!-- Sidebar user panel -->
-        <?php $this->load->view('admin/components/navigation'); ?>
-        
-                  </section>
+            <?php $this->load->view('admin/components/navigation'); ?>
+        </section>
         <!-- /.sidebar -->
       </aside>
 
         <div class="right-side">
             <!-- Content Header (Page header) -->
             <section class="content-header">
-
-                
             </section>
 
             <br/>
@@ -104,7 +101,7 @@
                         <th class="active">Education Level</th>
                         <th class="active">Education Specialization</th>
                         <th class="active">Course Type</th>
-                        <th class=" active col-sm-2">Action</th>
+                        <th class="active col-sm-2">Action</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -113,14 +110,12 @@
                         <tr>
                             <td><?php echo $key ?></td>
                             <td><?php echo $edu_spec['education_level_name'] ?></td>
-                        
                             <td><?php echo $edu_spec['education_specialization'] ?></td>
                             <td><?php echo $edu_spec['course_type'] ?></td>
                             <td>
                                 <?php echo btn_edit('admin/education_specialization/edit_education_specialzation/' . $edu_spec['id']); ?>
                                 <?php echo btn_delete('admin/education_specialization/delete_education_specialzation/' . $edu_spec['id']); ?>
                             </td>
-
                         </tr>
                     <?php
                     $key++;
@@ -144,13 +139,12 @@
     </div>
     <!-- /.row -->
 </section>
-            </div>
+</div>
 
-            <br />
-            
+<br />
 
-        </div><!-- /.right-side -->
 
-        <?php ///$this->load->view('admin/_layout_modal'); ?>
-        <?php //$this->load->view('admin/_layout_modal_small'); ?>
-        <?php $this->load->view('admin/components/footer'); ?>
+</div><!-- /.right-side -->
+
+       
+<?php $this->load->view('admin/components/footer'); ?>
