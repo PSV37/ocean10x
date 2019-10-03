@@ -211,7 +211,7 @@
                 </header>
                 <div class="col-md-9">
 				<input type="text" name="cid" id="cid" value="<?php echo $traningresult['job_seeker_id'];?>">
-                  <?php print_r($traningresult); if (!empty($training_list)): foreach ($training_list as $v_training) : ?>
+                  <?php if (!empty($training_list)): foreach ($training_list as $v_training) : ?>
                	
                 
                 <div class="table-responsive">
@@ -251,7 +251,7 @@
                         </p>
                     <?php
                     endif; ?>   
-<?php foreach($traningresult as $result) { ?>		
+<?php print_r($traningresult); if (!empty($traningresult)): foreach ($traningresult as $result) : ?>		
 <tr>
                     <td width="30%"><span class="highlight_text">Country:</span></td>
                     <td><?php echo $result['country_name']; ?></td>
@@ -260,7 +260,7 @@
                     <td width="30%"><span class="highlight_text">Location:</span></td>
                     <td><?php echo $result['city_name']; ?></td>
                   </tr>
-<?php } ?>				  
+<?php endforeach; ?>				  
                 </div>
             </article>
             </div>
