@@ -38,15 +38,6 @@
                               <td><?php echo $v_training->institute; ?></td>
                                 </tr>
 
-                               <!-- <tr>
-                                  <td>Country:</td>
-                                <td><?php echo $v_training->country; ?></td>
-                                </tr>
-
-                                <tr>
-                                  <td>Location:</td>
-                                <td><?php echo $v_training->location; ?></td>
-                                </tr>-->
 								<tr>
                                       <td>country:</td>
                                     <td><?php echo $result['country_name']; ?></td>
