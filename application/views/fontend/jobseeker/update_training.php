@@ -37,6 +37,18 @@
                                   <td>Training Institute:</td>
                               <td><?php echo $v_training->institute; ?></td>
                                 </tr>
+								<tr>
+                                  <td>Country:</td>
+                              <td><?php echo $v_training->country_name; ?></td>
+                                </tr>
+								<tr>
+                                  <td>State:</td>
+                              <td><?php echo $v_training->state_name; ?></td>
+                                </tr>
+								<tr>
+                                  <td>City:</td>
+                              <td><?php echo $v_training->city_name; ?></td>
+                                </tr>
                                 <tr>
                                   <td>Duration:</td>
                                 <td><?php echo $v_training->duration; ?></td>
