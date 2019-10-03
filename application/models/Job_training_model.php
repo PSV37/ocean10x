@@ -22,7 +22,7 @@ class Job_training_model extends MY_Model {
             $this->db->from($this->_table_name);
 			$this->db->join('country', 'country.country_id = js_training.country_id');
 			$this->db->join('state', 'state.state_id = js_training.state_id');
-			$this->db->join('city', 'city.city_id = js_training.city_id');
+			$this->db->join('city', 'city.id = js_training.city_id');
             $this->db->where('job_seeker_id',$job_seeker_id);
             $this->db->order_by("js_training_id","desc");
             $query = $this->db->get();        
