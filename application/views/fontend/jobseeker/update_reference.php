@@ -115,12 +115,6 @@
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Orgnization:</label>
                 <div class="col-sm-9">
-                  <input type="text" name="org_name" class="form-control" id="org_name" placeholder="Enter Orgnization Name"
-                   value="<?php
-                         if (!empty($reference_list->org_name)) {
-                           echo $reference_list->org_name;
-                           }
-                       ?>">
 					   <select  name="company_profile_id" class="form-control">
 					<option value="">Select Organization</option>
 					<?php foreach($company_profile as $key){?>
