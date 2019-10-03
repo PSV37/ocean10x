@@ -234,7 +234,7 @@
 			  <div class="form-group">
                    <label class="control-label col-sm-3" for="email">Country:</label>
 				  <div class="col-sm-9">
-                <select  name="country_id" class="form-control" onchange="getStates(this.value)">
+                <select  name="country_id" class="form-control" onchange="getStatess(this.value)">
 					<option value="">Select Country</option>
 					<?php foreach($country as $keys){?>
 					<option value="<?php echo $keys['country_id']; ?>"><?php echo $keys['country_name']; ?></option>
@@ -245,7 +245,7 @@
 				<div class="form-group">
 				  <label class="control-label col-sm-3" for="email">State:</label>
 				  <div class="col-sm-9">
-                 <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+                 <select  name="state_id" id="state1_id" class="form-control" onchange="getCityss(this.value)">
 				 <option value="">Select Country First</option>
 				 </select>
 				 </div>
@@ -253,7 +253,7 @@
 			  <div class="form-group">
                   <label class="control-label col-sm-3" for="email">City:</label>
 				  <div class="col-sm-9">
-                 <select  name="city_id" id="city_id" class="form-control">
+                 <select  name="city_id" id="city1_id" class="form-control">
 				 <option value="">Select State First</option>
 				 </select>
               </div>
