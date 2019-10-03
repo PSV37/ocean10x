@@ -140,33 +140,7 @@
                        ?>">
                 </div>
               </div>
-
-              <!--<div class="form-group">
-                <label class="control-label col-sm-3" for="email">Country:</label>
-                <div class="col-sm-9">
-                  <input type="text" name="country" class="form-control" id="country" placeholder="Country Name"
-               value="<?php
-                         if (!empty($training_list->country)) {
-                           echo $training_list->country;
-                           }
-                       ?>">
-                </div>
-              </div>
-
-
-              <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">Location:</label>
-                <div class="col-sm-9">
-                  <input name="location" type="text"  class="form-control" id="location" placeholder="Location"
-
-               value="<?php
-                         if (!empty($training_list->location)) {
-                           echo $training_list->location;
-                           }
-                       ?>">
-                </div>
-              </div>-->
-			  
+		  
 				<div class="form-group">
 				  <label class="control-label col-sm-3" for="email">Country:</label>
 				  <div class="col-sm-9">
@@ -270,24 +244,10 @@
                 </div>
               </div>
 
-              <!--<div class="form-group">
-                <label class="control-label col-sm-3" for="email">Country:</label>
-                <div class="col-sm-9">
-                  <input type="text" name="country" class="form-control" id="country" placeholder="Country Name ">
-                </div>
-              </div>
-
-
-              <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">Location:</label>
-                <div class="col-sm-9">
-                  <input name="location" type="text"  class="form-control" id="location" placeholder="Location">
-                </div>
-              </div>-->
 			  <div class="form-group">
                    <label class="control-label col-sm-3" for="email">Country:</label>
 				  <div class="col-sm-9">
-                <select  name="country_id" class="form-control" onchange="getStatess(this.value)">
+                <select  name="country_id" class="form-control" onchange="getStates(this.value)">
 					<option value="">Select Country</option>
 					<?php foreach($country as $keys){?>
 					<option value="<?php echo $keys['country_id']; ?>"><?php echo $keys['country_name']; ?></option>
@@ -298,7 +258,7 @@
 				<div class="form-group">
 				  <label class="control-label col-sm-3" for="email">State:</label>
 				  <div class="col-sm-9">
-                 <select  name="state_id" id="state1_id" class="form-control" onchange="getCityss(this.value)">
+                 <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
 				 <option value="">Select Country First</option>
 				 </select>
 				 </div>
@@ -306,7 +266,7 @@
 			  <div class="form-group">
                   <label class="control-label col-sm-3" for="email">City:</label>
 				  <div class="col-sm-9">
-                 <select  name="city_id" id="city1_id" class="form-control">
+                 <select  name="city_id" id="city_id" class="form-control">
 				 <option value="">Select State First</option>
 				 </select>
               </div>
