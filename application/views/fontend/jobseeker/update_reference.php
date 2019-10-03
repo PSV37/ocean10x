@@ -35,8 +35,8 @@
                               <td><?php echo $v_reference->designation_name; ?></td>
                                 </tr>
 								<tr>
-                                  <td>Country Code:</td>
-                                <td><?php echo $v_reference->country_code; ?></td>
+                                  <td>Mobile:</td>
+                                <td><?php echo $v_reference->mobile; ?></td>
                                 </tr>
                                 <tr>
                                   <td>Mobile:</td>
