@@ -145,7 +145,7 @@
                  <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
 				 <option value="">Select Country First</option>
 				 <?php foreach($state as $val){?>
-					<option value="<?php echo $val['state_id']; ?>"<?php if($training_list->state_id==$val['state_id']){ echo "selected"; }?>><?php echo $val['state_name']; ?></option>
+					<option value="<?php echo $val['state_id']; ?>"><?php echo $val['state_name']; ?></option>
 					<?php } ?>
 				 </select>
               </div>
@@ -156,7 +156,7 @@
                  <select  name="city_id" id="city_id" class="form-control">
 				 <option value="">Select State First</option>
 				 <?php foreach($city as $valu){?>
-					<option value="<?php echo $valu['id']; ?>"<?php if($training_list->city_id==$valu['id']){ echo "selected"; }?>><?php echo $valu['city_name']; ?></option>
+					<option value="<?php echo $valu['id']; ?>"><?php echo $valu['city_name']; ?></option>
 					<?php } ?>
 				 </select>
               </div>
