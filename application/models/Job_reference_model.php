@@ -20,7 +20,7 @@ class Job_reference_model extends MY_Model {
     public function reference_list_by_id($job_seeker_id) {
             $this->db->select("*");
             $this->db->from($this->_table_name);
-			$this->db->join('designation', 'designation.designation_id = js_reference.js_reference_id');
+			$this->db->join('designation', 'designation.designation_id = js_reference.designation_id');
             $this->db->where('job_seeker_id',$job_seeker_id);
             $this->db->order_by("js_reference_id","desc");
             $query = $this->db->get();        
