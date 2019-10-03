@@ -229,11 +229,11 @@
                   </tr>
                   <tr>
                     <td width="30%"><span class="highlight_text">Country:</span></td>
-                    <td><?php echo $v_training->country; ?></td>
+                    <td><?php echo $result['country_name']; ?></td>
                   </tr>
                   <tr>
                     <td width="30%"><span class="highlight_text">Location:</span></td>
-                    <td><?php echo $v_training->location; ?></td>
+                    <td><?php echo $result['city_name']; ?></td>
                   </tr>
                   <tr>
                     <td width="30%"><span class="highlight_text">Duration:</span></td>
