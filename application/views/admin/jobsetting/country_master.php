@@ -37,7 +37,10 @@
                 <!-- /.box-header -->
                 <div class="box-background">
                 <!-- form start -->
-                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/country_master/save_country/<?php if (!empty($location_info->job_location_id)) { echo $location_info->job_location_id; } ?>" method="post">
+                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/country_master/save_country/<?php  if (!empty($edit_country_data)) { foreach($edit_country_data as $erow)
+                        echo $erow['country_id'];
+                      }
+                     ?>" method="post">
 
                     <div class="row">
 
@@ -49,7 +52,8 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Country <span class="required">*</span></label>
                                     <input type="text" required name="country_name" placeholder="Country Name"
-                                    value="<?php if (!empty($location_info->job_location_name)) { echo $location_info->job_location_name; } ?>" class="form-control">
+                                    value="<?php  if (!empty($edit_country_data)) { foreach($edit_country_data as $erow)
+                        echo $erow['country_name']; } ?>" class="form-control">
                                 </div>
 
                                 <button type="submit" class="btn bg-navy" type="submit">Save Country
@@ -83,8 +87,8 @@
                             <!--Serial No> -->
                             <td><?php echo $row['country_name']; ?></td>
                             <td>
-                                <?php echo btn_edit('admin/job_location/edit_location/' . $row['country_id']); ?>
-                                <?php echo btn_delete('admin/job_location/delete_location/' . $row['country_id']); ?>
+                                <?php echo btn_edit('admin/job_location/edit_country/' . $row['country_id']); ?>
+                                <?php echo btn_delete('admin/job_location/delete_country/' . $row['country_id']); ?>
                             </td>
 
                         </tr>

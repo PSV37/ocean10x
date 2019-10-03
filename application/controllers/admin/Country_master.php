@@ -5,7 +5,6 @@ if (!defined('BASEPATH')) {
 }
 
 
-
 class Country_master extends MY_Controller
 {
     public function __construct()
@@ -49,17 +48,26 @@ class Country_master extends MY_Controller
             }
         }
 
-    public function delete_location($id) {
-        $this->job_location_model->delete($id);
+    public function delete_country($id) {
+
+        $country_status = array(
+            'status'=>0,
+        );
+        $where_del['country_id']=$id;
+        $this->Master_model->master_update($country_status,'country',$where_del);
         redirect('admin/country_master');
     }
 
-    public function edit_location($id){
-        $title="Location Edit";
-        $all_locations=$this->job_location_model->get();
-        $location_info=$this->job_location_model->get($id);
+    public function edit_country($id){
+        $data['title']="Country Edit";
+        
+        $where_con= "status=1";
+        $data['country_data'] = $this->Master_model->getMaster('country',$where_con);
 
-        $this->load->view('admin/jobsetting/country_master',compact('all_locations','location_info','title'));
+        $where_edit= "country_id='$id'";
+        $data['edit_country_data'] = $this->Master_model->getMaster('country',$where_edit);
+
+        $this->load->view('admin/jobsetting/country_master',$data);
     }
 
 
