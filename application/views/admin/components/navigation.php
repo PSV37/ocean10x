@@ -164,6 +164,9 @@
                      <li <?php echo $this->company_profile_model->User_status_check(); ?> >
                         <a href='<?php echo base_url(); ?>admin/state-master'> <i class='glyphicon glyphicon-plus'></i><span>State Master</span></a>
                      </li>
+                     <li <?php echo $this->company_profile_model->User_status_check(); ?> >
+                        <a href='<?php echo base_url(); ?>admin/city-master'> <i class='glyphicon glyphicon-plus'></i><span>City Master</span></a>
+                     </li>
                       
                   </ul>
                </li>
