@@ -460,9 +460,9 @@ exit;*/
 			$country = $this->Master_model->getMaster('country',$where=false);
 			$state = $this->Master_model->getMaster('state',$where=false);
 			$join = array(
-						'country' => 'country.country_id = js_personal_info.country_id|INNER',
-						'state' => 'state.state_id = js_personal_info.state_id|INNER',
-						'city' => 'city.id = js_personal_info.city_id|INNER'
+						'country' => 'country.country_id = js_training.country_id|INNER',
+						'state' => 'state.state_id = js_training.state_id|INNER',
+						'city' => 'city.id = js_training.city_id|INNER'
 			);
             echo $this->load->view('fontend/jobseeker/update_training', compact('training_list', 'passingyear', 'country', 'state', 'city', 'join'),true);
         }

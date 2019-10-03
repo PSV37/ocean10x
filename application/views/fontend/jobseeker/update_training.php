@@ -298,8 +298,8 @@
 				  <div class="col-sm-9">
                 <select  name="country_id" class="form-control" onchange="getStates(this.value)">
 					<option value="">Select Country</option>
-					<?php foreach($country as $key){?>
-					<option value="<?php echo $key['country_id']; ?>"><?php echo $key['country_name']; ?></option>
+					<?php foreach($country as $keys){?>
+					<option value="<?php echo $keys['country_id']; ?>"><?php echo $keys['country_name']; ?></option>
 					<?php } ?>
 				  </select>
 				  </div>
@@ -309,8 +309,8 @@
 				  <div class="col-sm-9">
                  <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
 				 <option value="">Select Country First</option>
-				 <?php foreach($state as $val){?>
-					<option value="<?php echo $val['state_id']; ?>"><?php echo $val['state_name']; ?></option>
+				 <?php foreach($state as $value){?>
+					<option value="<?php echo $value['state_id']; ?>"><?php echo $value['state_name']; ?></option>
 					<?php } ?>
 				 </select>
 				 </div>
@@ -320,8 +320,8 @@
 				  <div class="col-sm-9">
                  <select  name="city_id" id="city_id" class="form-control">
 				 <option value="">Select State First</option>
-				 <?php foreach($city as $valu){?>
-					<option value="<?php echo $valu['id']; ?>"><?php echo $valu['city_name']; ?></option>
+				 <?php foreach($city as $values){?>
+					<option value="<?php echo $values['id']; ?>"><?php echo $values['city_name']; ?></option>
 					<?php } ?>
 				 </select>
               </div>
