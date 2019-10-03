@@ -171,6 +171,10 @@
                      <li <?php echo $this->company_profile_model->User_status_check(); ?> >
                         <a href='<?php echo base_url(); ?>admin/department-master'> <i class='glyphicon glyphicon-plus'></i><span>Department Master</span></a>
                      </li>
+
+                     <li <?php echo $this->company_profile_model->User_status_check(); ?> >
+                        <a href='<?php echo base_url(); ?>admin/designation-master'> <i class='glyphicon glyphicon-plus'></i><span>Designtion Master</span></a>
+                     </li>
                       
                   </ul>
                </li>

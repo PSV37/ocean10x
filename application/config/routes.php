@@ -162,6 +162,10 @@ $route['admin/country-master']="admin/country_master";
 $route['admin/state-master']="admin/state_master";
 $route['admin/city-master']="admin/city_master";
 $route['admin/department-master']="admin/department_master";
+$route['admin/designation-master']="admin/designation_master";
+
+
+
 
 
 
