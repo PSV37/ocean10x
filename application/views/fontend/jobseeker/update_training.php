@@ -176,8 +176,9 @@
                 </div>
               </div>-->
 			  
-			  <div class="input-group">
-                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">Country</label></span>
+				<div class="form-group">
+				  <label class="control-label col-sm-3" for="email">Country:</label>
+				  <div class="col-sm-9">
                 <select  name="country_id" class="form-control" onchange="getStates(this.value)">
 					<option value="">Select Country</option>
 					<?php foreach($country as $key){?>
@@ -185,8 +186,9 @@
 					<?php } ?>
 				  </select>
               </div>
-			  <div class="input-group">
-                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">State</label></span>
+			  </div>
+			  <div class="form-group">
+				  <label class="control-label col-sm-3" for="email">State:</label>
                  <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
 				 <option value="">Select Country First</option>
 				 <?php foreach($state as $val){?>
@@ -194,8 +196,9 @@
 					<?php } ?>
 				 </select>
               </div>
-			  <div class="input-group">
-                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">City</label></span>
+			  </div>
+			  <div class="form-group">
+				  <label class="control-label col-sm-3" for="email">City:</label>
                  <select  name="city_id" id="city_id" class="form-control">
 				 <option value="">Select State First</option>
 				 <?php foreach($city as $valu){?>
@@ -203,7 +206,7 @@
 					<?php } ?>
 				 </select>
               </div>
-
+			 </div>
               <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Duration:</label>
                 <div class="col-sm-9">
@@ -288,26 +291,31 @@
                   <input name="location" type="text"  class="form-control" id="location" placeholder="Location">
                 </div>
               </div>-->
-			  <div class="input-group">
-                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">Country</label></span>
+			  <div class="form-group">
+                   <label class="control-label col-sm-3" for="email">Country:</label>
+				  <div class="col-sm-9">
                 <select  name="country_id" class="form-control" onchange="getStates(this.value)">
 					<option value="">Select Country</option>
 					<?php foreach($country as $key){?>
 					<option value="<?php echo $key['country_id']; ?>"><?php echo $key['country_name']; ?></option>
 					<?php } ?>
 				  </select>
+				  </div>
               </div>
-			  <div class="input-group">
-                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">State</label></span>
+				<div class="form-group">
+				  <label class="control-label col-sm-3" for="email">State:</label>
+				  <div class="col-sm-9">
                  <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
 				 <option value="">Select Country First</option>
 				 <?php foreach($state as $val){?>
 					<option value="<?php echo $val['state_id']; ?>"><?php echo $val['state_name']; ?></option>
 					<?php } ?>
 				 </select>
+				 </div>
               </div>
-			  <div class="input-group">
-                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">City</label></span>
+			  <div class="form-group">
+                  <label class="control-label col-sm-3" for="email">City:</label>
+				  <div class="col-sm-9">
                  <select  name="city_id" id="city_id" class="form-control">
 				 <option value="">Select State First</option>
 				 <?php foreach($city as $valu){?>
@@ -315,7 +323,7 @@
 					<?php } ?>
 				 </select>
               </div>
-
+			  </div>
               <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Duration:</label>
                 <div class="col-sm-9">
