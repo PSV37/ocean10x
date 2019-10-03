@@ -71,7 +71,7 @@ class State_master extends MY_Controller
     }
 
     public function edit_state($id){
-        $data['title']="education_level Edit";
+        $data['title']="State Master Edit";
 
         $where_all = "state.state_status='1'";
         $join_emp = array(
