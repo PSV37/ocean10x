@@ -32,7 +32,7 @@
 
                                 <tr>
                                   <td>Desigantion:</td>
-                              <td><?php echo $v_reference->designation; ?></td>
+                              <td><?php echo $v_reference->designation_name; ?></td>
                                 </tr>
 								<tr>
                                   <td>Country Code:</td>
