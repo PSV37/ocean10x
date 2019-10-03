@@ -27,7 +27,7 @@
 
                                 <tr>
                                   <td>Orgranization:</td>
-                                    <td><?php echo $v_reference->org_name; ?></td>
+                                    <td><?php echo $v_reference->company_name; ?></td>
                                 </tr>
 
                                 <tr>
@@ -121,13 +121,19 @@
                            echo $reference_list->org_name;
                            }
                        ?>">
+					   <select  name="company_profile_id" class="form-control">
+					<option value="">Select Organization</option>
+					<?php foreach($company_profile as $key){?>
+					<option value="<?php echo $key['company_profile_id']; ?>"<?php if($reference_list->company_profile_id==$key['company_profile_id']){ echo "selected"; }?>><?php echo $key['company_name']; ?></option>
+					<?php } ?>
+				  </select>
                 </div>
               </div>
 
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Designation:</label>
                 <div class="col-sm-9">
-                  				    <select  name="designation_id" class="form-control">
+                    <select  name="designation_id" class="form-control">
 					<option value="">Select Desigantion</option>
 					<?php foreach($designation as $keys){?>
 					<option value="<?php echo $keys['designation_id']; ?>"<?php if($reference_list->designation_id==$keys['designation_id']){ echo "selected"; }?>><?php echo $keys['designation_name']; ?></option>
@@ -446,7 +452,12 @@
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Orgnization:</label>
                 <div class="col-sm-9">
-                  <input type="text" name="org_name" class="form-control" id="org_name" placeholder="Enter Organization Name">
+                  <select  name="company_profile_id" class="form-control">
+					<option value="">Select Organization</option>
+					<?php foreach($company_profile as $key){?>
+					<option value="<?php echo $key['company_profile_id']; ?>"><?php echo $key['company_name']; ?></option>
+					<?php } ?>
+				  </select>
                 </div>
               </div>
 
