@@ -561,6 +561,42 @@ exit;*/
 }
 
 
+function getstates(){
+	$country1_id = $this->input->post('id');
+	$where['country_id'] = $country1_id;
+	$states1 = $this->Master_model->getMaster('state',$where);
+	$result1 = '';
+	if(!empty($states1)){ 
+		$result1 .='<option value="">Select State</option>';
+		foreach($states as $keys){
+		  $result .='<option value="'.$keys['state_id'].'">'.$keys['state_name'].'</option>';
+		}
+	}else{
+	
+		$result1 .='<option value="">State not available</option>';
+	}
+	 echo $result1;
+}
+
+
+ function getcitys(){
+	$state1_id = $this->input->post('id');
+	$where['state_id'] = $state1_id;
+	$citys1 = $this->Master_model->getMaster('city',$where);
+	$result2 = '';
+	if(!empty($citys1)){ 
+		$result2 .='<option value="">Select City</option>';
+		foreach($citys as $keyss){
+		  $result2 .='<option value="'.$keyss['id'].'">'.$keyss['city_name'].'</option>';
+		}
+	}else{
+	
+		$result2 .='<option value="">State not available</option>';
+	}
+	 echo $result2;
+}
+
+
 
 	
 
