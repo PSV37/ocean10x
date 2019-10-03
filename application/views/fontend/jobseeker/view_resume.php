@@ -211,7 +211,7 @@
                 </header>
                 <div class="col-md-9">
 				<input type="text" name="cid" id="cid" value="<?php echo $traningresult['job_seeker_id'];?>">
-                  <?php if (!empty($training_list)): foreach ($training_list as $v_training) : ?>
+                  <?php print_r($traningresult); if (!empty($training_list)): foreach ($training_list as $v_training) : ?>
                	
                 
                 <div class="table-responsive">
@@ -228,7 +228,14 @@
                     <td width="30%"><span class="highlight_text">Institute:</span></td>
                     <td><?php echo $v_training->institute; ?></td>
                   </tr>
-                  
+                  <tr>
+                    <td width="30%"><span class="highlight_text">Country:</span></td>
+                    <td><?php echo $traningresult['country_name']; ?></td>
+                  </tr>
+                  <tr>
+                    <td width="30%"><span class="highlight_text">Location:</span></td>
+                    <td><?php echo $traningresult['city_name']; ?></td>
+                  </tr>
                   <tr>
                     <td width="30%"><span class="highlight_text">Duration:</span></td>
                     <td><?php echo $v_training->duration; ?></td>
@@ -244,23 +251,12 @@
                <?php
                     endforeach;
                     ?>
-					
                     <?php else : ?> 
                         <p>
                             <strong>There is no record for display</strong>
                         </p>
                     <?php
-                    endif; ?>   
-<?php print_r($traningresult); if (!empty($traningresult)): foreach ($traningresult as $result) : ?>		
-<tr>
-                    <td width="30%"><span class="highlight_text">Country:</span></td>
-                    <td><?php echo $result['country_name']; ?></td>
-                  </tr>
-                  <tr>
-                    <td width="30%"><span class="highlight_text">Location:</span></td>
-                    <td><?php echo $result['city_name']; ?></td>
-                  </tr>
-<?php endforeach; ?>				  
+                    endif; ?>                 
                 </div>
             </article>
             </div>
