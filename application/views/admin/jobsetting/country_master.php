@@ -31,19 +31,13 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">Jobs Locations</h3>
+                        <h3 class="box-title ">Country Master</h3>
                     </div>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-background">
                 <!-- form start -->
-                <form role="form" enctype="multipart/form-data"
-
-                      action="<?php echo base_url(); ?>admin/job_location/save_locaiton/<?php
-                      if (!empty($location_info->job_location_id)) {
-                          echo $location_info->job_location_id;
-                      }
-                      ?>" method="post">
+                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/country_master/save_country/<?php if (!empty($location_info->job_location_id)) { echo $location_info->job_location_id; } ?>" method="post">
 
                     <div class="row">
 
@@ -53,17 +47,12 @@
 
                                 <!-- /.Company Name -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Jobs Locations <span class="required">*</span></label>
-                                    <input type="text" required name="location_name" placeholder="Locations Name"
-                                           value="<?php
-                                           if (!empty($location_info->job_location_name)) {
-                                               echo $location_info->job_location_name;
-                                           }
-                                           ?>"
-                                           class="form-control">
+                                    <label for="exampleInputEmail1">Country <span class="required">*</span></label>
+                                    <input type="text" required name="country_name" placeholder="Country Name"
+                                    value="<?php if (!empty($location_info->job_location_name)) { echo $location_info->job_location_name; } ?>" class="form-control">
                                 </div>
 
-                                <button type="submit" class="btn bg-navy" type="submit">Save Jobs Locations
+                                <button type="submit" class="btn bg-navy" type="submit">Save Country
                                 </button><br/><br/>
                             </div>
                             <!-- /.box-body -->
@@ -81,21 +70,21 @@
                     <thead>
                     <tr>
                         <th class="active">SL</th>
-                        <th class="active">Locations Name</th>
+                        <th class="active">Country Name</th>
                         <th class=" active col-sm-2">Action</th>
 
                     </tr>
                     </thead>
                     <tbody>
                     <?php $key = 1 ?>
-                    <?php if (!empty($all_locations)): foreach ($all_locations as $v_locations) : ?><!--get all Locations if not this empty-->
+                    <?php if (!empty($country_data)): foreach ($country_data as $row) : ?><!--get all Locations if not this empty-->
                         <tr>
                             <td><?php echo $key; ?></td>
                             <!--Serial No> -->
-                            <td><?php echo $v_locations->job_location_name; ?></td>
+                            <td><?php echo $row['country_name']; ?></td>
                             <td>
-                                <?php echo btn_edit('admin/job_location/edit_location/' . $v_locations->job_location_id); ?>
-                                <?php echo btn_delete('admin/job_location/delete_location/' . $v_locations->job_location_id); ?>
+                                <?php echo btn_edit('admin/job_location/edit_location/' . $row['country_id']); ?>
+                                <?php echo btn_delete('admin/job_location/delete_location/' . $row['country_id']); ?>
                             </td>
 
                         </tr>
