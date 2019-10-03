@@ -211,7 +211,7 @@
                 </header>
                 <div class="col-md-9">
                   <?php if (!empty($training_list)): foreach ($training_list as $v_training) : ?>
-               	<input type="hidden" name="cid" id="cid" value="<?php echo $result['job_apply_id'];?>">
+               	<input type="text" name="cid" id="cid" value="<?php echo $result['job_apply_id'];?>">
                 
                 <div class="table-responsive">
                  <table class="table">
