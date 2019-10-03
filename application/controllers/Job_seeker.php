@@ -406,6 +406,7 @@ exit;*/
                 'company_profile_id'      => $this->input->post('company_profile_id'),
                 'designation_id'   => $this->input->post('designation_id'),
                 'email'         => $this->input->post('email'),
+				'country_code'         => $this->input->post('country_code'),
                 'mobile'        => $this->input->post('mobile'),
                 'relation'      => $this->input->post('relation'),
             );
