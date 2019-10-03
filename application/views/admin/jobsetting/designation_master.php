@@ -35,7 +35,7 @@
                 <div class="box-background">
                 <!-- form start -->
                 <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/designation_master/save_designation/<?php  if (!empty($edit_desig_info)) { foreach($edit_desig_info as $row)
-                        echo $row['dept_id'];
+                        echo $row['designation_id'];
                       }
                      ?>" method="post">
 
