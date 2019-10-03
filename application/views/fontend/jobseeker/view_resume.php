@@ -244,22 +244,23 @@
                <?php
                     endforeach;
                     ?>
-					<?php print_r($traningresult); if (!empty($traningresult)): foreach ($traningresult as $traningresults) : ?>
-					<tr>
-                    <td width="30%"><span class="highlight_text">Country:</span></td>
-                    <td><?php echo $traningresults['country_name']; ?></td>
-                  </tr>
-                  <tr>
-                    <td width="30%"><span class="highlight_text">Location:</span></td>
-                    <td><?php echo $traningresults['city_name']; ?></td>
-                  </tr>
-				  <?php endforeach; ?>
+					
                     <?php else : ?> 
                         <p>
                             <strong>There is no record for display</strong>
                         </p>
                     <?php
-                    endif; ?>                 
+                    endif; ?>   
+<?php foreach($traningresult as $result) { ?>		
+<tr>
+                    <td width="30%"><span class="highlight_text">Country:</span></td>
+                    <td><?php echo $result['country_name']; ?></td>
+                  </tr>
+                  <tr>
+                    <td width="30%"><span class="highlight_text">Location:</span></td>
+                    <td><?php echo $result['city_name']; ?></td>
+                  </tr>
+<?php } ?>				  
                 </div>
             </article>
             </div>
