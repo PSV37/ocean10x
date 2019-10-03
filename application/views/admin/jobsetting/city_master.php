@@ -152,7 +152,7 @@
        
 <?php $this->load->view('admin/components/footer'); ?>
 <script>
-      function getStates(id){
+    function getStates(id){
         if(id){
             $.ajax({
                 type:'POST',
@@ -166,5 +166,28 @@
           }
    
        }
+
+    $(document).ready(function(){
+
+
+
+    function getStates_load(){
+        var id = $('#country_name').val();
+
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/city_master/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state_name').html(res);
+                }
+                
+            }); 
+          }
+   
+       }
+       getStates_load();
+    });
        
 </script>
