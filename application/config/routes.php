@@ -159,6 +159,7 @@ $route['admin/salary-range']="admin/salary_range";
 $route['admin/education-level']="admin/education_level";
 $route['admin/education-specialization']="admin/education_specialization";
 $route['admin/country-master']="admin/country_master";
+$route['admin/state-master']="admin/state_master";
 
 
 

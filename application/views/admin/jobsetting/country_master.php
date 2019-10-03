@@ -50,7 +50,7 @@
 
                                 <!-- /.Company Name -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Country <span class="required">*</span></label>
+                                    <label for="exampleInputEmail1">Country Name<span class="required">*</span></label>
                                     <input type="text" required name="country_name" placeholder="Country Name"
                                     value="<?php  if (!empty($edit_country_data)) { foreach($edit_country_data as $erow)
                         echo $erow['country_name']; } ?>" class="form-control">
