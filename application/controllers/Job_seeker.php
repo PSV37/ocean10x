@@ -146,8 +146,8 @@ class Job_seeker extends MY_Seeker_Controller
         } else {
             $jobseeker_id    = $this->session->userdata('job_seeker_id');
             $experinece_list = $this->Job_seeker_experience_model->experience_list_by_id($jobseeker_id);
-			$company_profile   => $this->input->post('company_profile');
-			$designation   => $this->input->post('designation');
+			$company_profile = $this->Master_model->getMaster('company_profile',$where=false);
+			$designation = $this->Master_model->getMaster('designation',$where=false);
            echo $this->load->view('fontend/jobseeker/update_experience.php', compact('experinece_list', 'company_profile', 'designation'),true);
         }
     }
