@@ -28,7 +28,7 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">Education Specialization</h3>
+                        <h3 class="box-title ">City Master</h3>
                     </div>
                 </div>
                 <!-- /.box-header -->
@@ -181,9 +181,7 @@
                 data:{id:id},
                 success:function(res){
                     $('#state_name').html(res);
-
                     $('#state_name').val(<?php echo $row['state_id']; ?>);
-
                 }
                 
             }); 
