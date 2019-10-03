@@ -20,8 +20,8 @@ class Job_seeker_experience_model extends MY_Model
     {
         $this->db->select("*");
         $this->db->from($this->_table_name);
-		$this->db->join('designation', 'designation.designation_id = js_reference.designation_id');
-		$this->db->join('company_profile', 'company_profile.company_profile_id = js_reference.company_profile_id');
+		$this->db->join('designation', 'designation.designation_id = js_experience.designation_id');
+		$this->db->join('company_profile', 'company_profile.company_profile_id = js_experience.company_profile_id');
         $this->db->where('job_seeker_id', $job_seeker_id);
         $this->db->order_by('start_date', "desc");
         $query = $this->db->get();
