@@ -210,8 +210,7 @@
                     <h5>Training </h5>
                 </header>
                 <div class="col-md-9">
-				<input type="text" name="cid" id="cid" value="<?php echo $traningresult['job_seeker_id'];?>">
-                  <?php echo "<pre>"; print_r($traningresult); if (!empty($training_list)): foreach ($training_list as $v_training) : ?>
+			<?php if (!empty($training_list)): foreach ($training_list as $v_training) : ?>
                	
                 
                 <div class="table-responsive">
@@ -230,11 +229,11 @@
                   </tr>
                   <tr>
                     <td width="30%"><span class="highlight_text">Country:</span></td>
-                    <td><?php echo $traningresult['country_name']; ?></td>
+                    <td><?php echo $v_training->country_name; ?></td>
                   </tr>
                   <tr>
                     <td width="30%"><span class="highlight_text">Location:</span></td>
-                    <td><?php echo $traningresult['city_name']; ?></td>
+                    <td><?php echo $v_training->city_name; ?></td>
                   </tr>
                   <tr>
                     <td width="30%"><span class="highlight_text">Duration:</span></td>
