@@ -26,7 +26,7 @@
 
                                   <tr>
                                     <td>Designation:</td>
-                                      <td><?php echo $v_experience->designation; ?></td>
+                                      <td><?php echo $v_experience->designation_name; ?></td>
                                   </tr>
 
                                   <tr>
@@ -102,22 +102,24 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Company Name:</label>
                 <div class="col-sm-9">
-                  <input type="text" name="company_name" class="form-control" id="company_name"  value="<?php
-if (!empty($experinece->company_name)) {
-    echo $experinece->company_name;
-}
-?>" >
+				<select  name="company_profile_id" class="form-control">
+					<option value="">Select Organization</option>
+					<?php foreach($company_profile as $key){?>
+					<option value="<?php echo $key['company_profile_id']; ?>"<?php if($reference_list->company_profile_id==$key['company_profile_id']){ echo "selected"; }?>><?php echo $key['company_name']; ?></option>
+					<?php } ?>
+				  </select>
                 </div>
               </div>
 
         <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Designation:</label>
                 <div class="col-sm-9">
-                  <input type="text" name="designation" class="form-control" id="designation" value="<?php
-if (!empty($experinece->designation)) {
-    echo $experinece->designation;
-}
-?>"  >
+                  <select  name="designation_id" class="form-control">
+					<option value="">Select Desigantion</option>
+					<?php foreach($designation as $keys){?>
+					<option value="<?php echo $keys['designation_id']; ?>"<?php if($reference_list->designation_id==$keys['designation_id']){ echo "selected"; }?>><?php echo $keys['designation_name']; ?></option>
+					<?php } ?>
+				  </select>
 
                 </div>
               </div>
@@ -237,15 +239,24 @@ if (!empty($experinece->start_date)) {
             <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Company Name:</label>
                 <div class="col-sm-9">
-                  <input type="text" name="company_name" class="form-control" id="company_name" placeholder="Company Name">
+                 <select  name="company_profile_id" class="form-control">
+					<option value="">Select Organization</option>
+					<?php foreach($company_profile as $key){?>
+					<option value="<?php echo $key['company_profile_id']; ?>"><?php echo $key['company_name']; ?></option>
+					<?php } ?>
+				  </select>
                 </div>
               </div>
 
-              <div class="form-group">
+        <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Designation:</label>
                 <div class="col-sm-9">
-                  <input type="text" placeholder="Designation Name" name="designation" class="form-control" id="designation" >
-
+                  <select  name="designation_id" class="form-control">
+					<option value="">Select Desigantion</option>
+					<?php foreach($designation as $keys){?>
+					<option value="<?php echo $keys['designation_id']; ?>"><?php echo $keys['designation_name']; ?></option>
+					<?php } ?>
+				  </select>
                 </div>
               </div>
 

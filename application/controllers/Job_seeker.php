@@ -124,8 +124,8 @@ class Job_seeker extends MY_Seeker_Controller
             $experience_info_id = $this->input->post('js_experience_id');
             $experience_info    = array(
                 'job_seeker_id'    => $jobseeker_id,
-                'company_name'     => $this->input->post('company_name'),
-                'designation'      => $this->input->post('designation'),
+                'company_profile_id'     => $this->input->post('company_profile_id'),
+                'designation_id'      => $this->input->post('designation_id'),
                 'job_level'        => $this->input->post('job_level'),
                 'department'       => $this->input->post('department'),
                 'start_date'       => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('start_date')))),
@@ -146,7 +146,9 @@ class Job_seeker extends MY_Seeker_Controller
         } else {
             $jobseeker_id    = $this->session->userdata('job_seeker_id');
             $experinece_list = $this->Job_seeker_experience_model->experience_list_by_id($jobseeker_id);
-           echo $this->load->view('fontend/jobseeker/update_experience.php', compact('experinece_list'),true);
+			$company_profile   => $this->input->post('company_profile');
+			$designation   => $this->input->post('designation');
+           echo $this->load->view('fontend/jobseeker/update_experience.php', compact('experinece_list', 'company_profile', 'designation'),true);
         }
     }
 
