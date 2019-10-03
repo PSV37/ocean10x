@@ -438,7 +438,7 @@ class Employer extends MY_Employer_Controller
 			
 			
 			
-					function getstate(){
+function getstate(){
 	$country_id = $this->input->post('id');
 	$where['country_id'] = $country_id;
 	$states = $this->Master_model->getMaster('state',$where);

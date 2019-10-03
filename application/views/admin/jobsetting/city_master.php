@@ -48,7 +48,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Country <span class="required">*</span></label>
-                                        <select id="country_name"  name="country_name" class="form-control" required>
+                                        <select id="country_name" name="country_name" class="form-control" required onchange="getStates(this.value)">
                                            <option value="">Select Country</option> 
                                         <?php if (!empty($country_data))
                                            foreach($country_data as $cnt_row) 
@@ -151,3 +151,20 @@
 
        
 <?php $this->load->view('admin/components/footer'); ?>
+<script>
+      function getStates(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/city_master/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state_name').html(res);
+                }
+                
+            }); 
+          }
+   
+       }
+       
+</script>
