@@ -70,7 +70,7 @@ class Designation_master extends MY_Controller
         $where_st = "designation_id='$id'";
         $data['edit_desig_info'] = $this->Master_model->getMaster('designation',$where_st);
         
-        $where_cn= "dept_status=1";
+        $where_cn= "status=1";
         $data['designation_data'] = $this->Master_model->getMaster('designation',$where_cn);
         
         $this->load->view('admin/jobsetting/designation_master',$data);
