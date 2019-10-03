@@ -189,6 +189,7 @@
 			  </div>
 			  <div class="form-group">
 				  <label class="control-label col-sm-3" for="email">State:</label>
+				  <div class="col-sm-9">
                  <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
 				 <option value="">Select Country First</option>
 				 <?php foreach($state as $val){?>
@@ -199,6 +200,7 @@
 			  </div>
 			  <div class="form-group">
 				  <label class="control-label col-sm-3" for="email">City:</label>
+				  <div class="col-sm-9">
                  <select  name="city_id" id="city_id" class="form-control">
 				 <option value="">Select State First</option>
 				 <?php foreach($city as $valu){?>
