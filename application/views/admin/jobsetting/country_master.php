@@ -87,8 +87,8 @@
                             <!--Serial No> -->
                             <td><?php echo $row['country_name']; ?></td>
                             <td>
-                                <?php echo btn_edit('admin/job_location/edit_country/' . $row['country_id']); ?>
-                                <?php echo btn_delete('admin/job_location/delete_country/' . $row['country_id']); ?>
+                                <?php echo btn_edit('admin/country_master/edit_country/' . $row['country_id']); ?>
+                                <?php echo btn_delete('admin/country_master/delete_country/' . $row['country_id']); ?>
                             </td>
 
                         </tr>
