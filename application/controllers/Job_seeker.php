@@ -464,7 +464,7 @@ exit;*/
 						'state' => 'state.state_id = js_training.state_id|INNER',
 						'city' => 'city.id = js_training.city_id|INNER'
 			);
-			$result = $this->Master_model->get_master_row("js_personal_info", $select = false, $where=false, $join);
+			$result = $this->Master_model->get_master_row("js_training", $select = false, $where=false, $join);
             echo $this->load->view('fontend/jobseeker/update_training', compact('training_list', 'passingyear', 'country', 'state', 'city', 'result'),true);
         }
     }
