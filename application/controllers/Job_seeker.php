@@ -480,7 +480,7 @@ exit;*/
 		$city = $this->Master_model->getMaster('city',$where=false);
 		$country = $this->Master_model->getMaster('country',$where=false);
 		$state = $this->Master_model->getMaster('state',$where=false);
-		$where = "job_seeker_id='$jobseeker_id'";
+		$where = "js_traning_id='$jobseeker_id'";
 		$join = array(
 						'country' => 'country.country_id = js_training.country_id|INNER',
 						'state' => 'state.state_id = js_training.state_id|INNER',
