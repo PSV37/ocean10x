@@ -36,10 +36,6 @@
                                 </tr>
 								<tr>
                                   <td>Mobile:</td>
-                                <td><?php echo $v_reference->country_code; ?></td>
-                                </tr>
-                                <tr>
-                                  <td>Mobile:</td>
                                 <td><?php echo $v_reference->mobile; ?></td>
                                 </tr>
 
