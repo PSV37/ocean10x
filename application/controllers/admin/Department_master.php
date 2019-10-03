@@ -30,8 +30,8 @@ class Department_master extends MY_Controller
             $user_id = $this->session->userdata('admin_user_id');
             
             $state_dt=array(
-                'department_name' => $this->input->post('country_name'),
-                'description' => addslashes($this->input->post('state_name')),
+                'department_name' => $this->input->post('department_name'),
+                'description' => addslashes($this->input->post('dept_desc')),
             );
 
             if(empty($id)){
@@ -57,7 +57,7 @@ class Department_master extends MY_Controller
         
       //  $this->education_level_model->delete($id);
         $state_status = array(
-            'state_status'=>0,
+            'dept_status'=>0,
         );
         $where_del['dept_id']=$id;
         $this->Master_model->master_update($state_status,'department',$where_del);
