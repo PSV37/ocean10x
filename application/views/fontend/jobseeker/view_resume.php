@@ -333,11 +333,11 @@
                   </tr>
                   <tr>
                     <td width="30%"><span class="highlight_text">Organization Name:</span></td>
-                    <td><?php echo $v_reference->org_name; ?></td>
+                    <td><?php echo $v_reference->company_name; ?></td>
                   </tr>
                   <tr>
                     <td width="30%"><span class="highlight_text">Designation:</span></td>
-                    <td><?php echo $v_reference->designation; ?></td>
+                    <td><?php echo $v_reference->designation_name; ?></td>
                   </tr>
                   <tr>
                     <td width="30%"><span class="highlight_text">Email:</span></td>
