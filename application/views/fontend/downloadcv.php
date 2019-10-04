@@ -81,7 +81,7 @@ header("Content-Disposition: attachment;Filename={$Filename}.doc");
 </style>
 
 <div id="resume"> 
-         
+         <center><h4>Resume</h4></center>
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="630">
       <tbody><tr>
       <td colspan="6">
@@ -90,7 +90,7 @@ header("Content-Disposition: attachment;Filename={$Filename}.doc");
          <td class="resume-header" align="center" height="" valign="bottom" width="73%">
          <!--Applicant's Name:-->
          <br>
-          &nbsp Resume <br>of <br><?php echo $resume->full_name; ?> <br>
+          <?php echo $resume->full_name; ?> <br>
          </td>
 
          <td rowspan="2" align="right" valign="bottom" width="27%">
@@ -99,7 +99,7 @@ header("Content-Disposition: attachment;Filename={$Filename}.doc");
             <table align="center" border="0" cellpadding="0" cellspacing="7" height="140" width="140">
                <tbody><tr> 
                <td align="center" height="135" valign="middle" width="126"> 
-               <img src="<?php echo base_url() ?>/upload/<?php echo $resume->photo_path; ?>" height="120" width="124">
+               <img src="<?php echo base_url() ?>upload/<?php if(!empty($job_seeker_photo->photo_path)) { echo $job_seeker_photo->photo_path;} else { echo "image-notfound.png";} ?>" alt="Photo" height="120" width="124">
                </td>
                </tr>
             </tbody></table>
