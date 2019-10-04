@@ -672,9 +672,12 @@ PERSONAL DETAILS:
          <td align="left">       
          <?php echo $js_personal_info->present_address; ?>   
          </td>
-		 <br/>
-		 <td align="left">       
-         <?php echo $js_personal_info->city_name; ?>   
+         </tr>
+		 <tr class="resume-textthree">
+         <td style="padding-left:10px;" align="left">State</td>
+         <td align="center">:</td>
+         <td align="left">       
+         <?php echo $js_personal_info->country_name; ?>   
          </td>
          </tr>
       <?php endif; ?>
