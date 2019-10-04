@@ -95,11 +95,7 @@ header("Content-Disposition: attachment;Filename={$Filename}.doc");
          <!--Photograph:-->
          
             <table align="center" border="0" cellpadding="0" cellspacing="7" height="140" width="140">
-               <tbody><tr> 
-               <td align="center" height="135" valign="middle" width="126"> 
-               <img src="<?php echo base_url() ?>upload/<?php if(!empty($job_seeker_photo->photo_path)) { echo $job_seeker_photo->photo_path;} else { echo "image-notfound.png";} ?>" alt="Photo" height="120" width="124">
-               </td>
-               </tr>
+               <tbody>
             </tbody></table>
          
          </td>
@@ -114,13 +110,19 @@ header("Content-Disposition: attachment;Filename={$Filename}.doc");
       <td colspan="6">
          <tr>
            <td colspan="6" style="padding-left:20px;" class="resume-textone" align="left">
-			<?php if(!empty($resume->full_name)) {echo "Name " . $resume->full_name;} ?><br/>
-            <?php if(!empty($resume->present_address)) {echo "Address " . $resume->present_address;} ?> <br/>       
+			<?php if(!empty($resume->full_name)) {echo "Name: " . $resume->full_name;} ?><br/>
+            <?php if(!empty($resume->present_address)) {echo "Address: " . $resume->present_address;} ?> <br/>       
             <?php if(!empty($resume->mobile)) {echo "Mobile:" . $resume->mobile;} ?> <br/>       
             <?php if(!empty($resume->email)) {echo "E-mail: " . $resume->email;} ?>        
 
             </td>
          </tr>
+		 
+		 <tr> 
+               <td align="center" height="135" valign="middle" width="126" colspan="6"> 
+               <img src="<?php echo base_url() ?>upload/<?php if(!empty($job_seeker_photo->photo_path)) { echo $job_seeker_photo->photo_path;} else { echo "image-notfound.png";} ?>" alt="Photo" height="120" width="124">
+               </td>
+               </tr>
          
          </td>
          </tr>
