@@ -31,7 +31,7 @@
 
                                   <tr>
                                     <td>Department:</td>
-                                <td><?php echo $v_experience->department; ?></td>
+                                <td><?php echo $v_experience->department_name; ?></td>
                                   </tr>
 
                                   <tr>
@@ -105,7 +105,7 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
 				<select  name="company_profile_id" class="form-control">
 					<option value="">Select Organization</option>
 					<?php foreach($company_profile as $key){?>
-					<option value="<?php echo $key['company_profile_id']; ?>"<?php if($reference_list->company_profile_id==$key['company_profile_id']){ echo "selected"; }?>><?php echo $key['company_name']; ?></option>
+					<option value="<?php echo $key['company_profile_id']; ?>"<?php if($experinece->company_profile_id==$key['company_profile_id']){ echo "selected"; }?>><?php echo $key['company_name']; ?></option>
 					<?php } ?>
 				  </select>
                 </div>
@@ -117,7 +117,7 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
                   <select  name="designation_id" class="form-control">
 					<option value="">Select Desigantion</option>
 					<?php foreach($designation as $keys){?>
-					<option value="<?php echo $keys['designation_id']; ?>"<?php if($reference_list->designation_id==$keys['designation_id']){ echo "selected"; }?>><?php echo $keys['designation_name']; ?></option>
+					<option value="<?php echo $keys['designation_id']; ?>"<?php if($experinece->designation_id==$keys['designation_id']){ echo "selected"; }?>><?php echo $keys['designation_name']; ?></option>
 					<?php } ?>
 				  </select>
 
@@ -138,11 +138,12 @@ echo $this->job_level_model->selected($experinece->job_level);
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Department:</label>
                 <div class="col-sm-9">
-                  <input type="text" name="department" class="form-control" id="department" value="<?php
-if (!empty($experinece->department)) {
-    echo $experinece->department;
-}
-?>"  >
+				 <select  name="department_id" class="form-control">
+					<option value="">Select Department</option>
+					<?php foreach($department as $dept){?>
+					<option value="<?php echo $dept['department_id']; ?>"<?php if($experinece->department_id==$dept['department_id']){ echo "selected"; }?>><?php echo $dept['department_name']; ?></option>
+					<?php } ?>
+				  </select>
                 </div>
               </div>
 
@@ -273,7 +274,12 @@ if (!empty($experinece->start_date)) {
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Department:</label>
                 <div class="col-sm-9">
-                  <input type="text" placeholder="Department Name" name="department" class="form-control" id="department" >
+                 	<select  name="department_id" class="form-control">
+					<option value="">Select Department</option>
+					<?php foreach($department as $dept){?>
+					<option value="<?php echo $dept['department_id']; ?>"><?php echo $dept['department_name']; ?></option>
+					<?php } ?>
+				  </select>
 
                 </div>
               </div>
