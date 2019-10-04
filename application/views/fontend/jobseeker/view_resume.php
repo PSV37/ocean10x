@@ -165,11 +165,11 @@
                              <table class="table">
                               <tr>
                                 <td width="30%"><span class="highlight_text">Degree:</span></td>
-                                <td><?php echo $v_education->js_degree ; ?></td>
+                                <td><?php echo $v_education->education_level_name ; ?></td>
                               </tr>
                               <tr>
-                                <td><span class="highlight_text">Major Group/Subject:</span></td>
-                                <td><?php echo $v_education->js_group ; ?></td>
+                                <td><span class="highlight_text">Specialization:</span></td>
+                                <td><?php echo $v_education->education_specialization ; ?></td>
                               </tr>
                               <tr>
                                 <td><span class="highlight_text">Institute Name/Board:</span></td>
