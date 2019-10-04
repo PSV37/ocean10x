@@ -313,21 +313,21 @@
                     <?php endif; ?>
                   </tr> 
                   <tr>
-                  	<?php if(!empty($personal->city_name)): ?>
+                  	<?php if(!empty($js_personal_info->city_name)): ?>
                     <td width="30%"><span class="highlight_text">City:</span></td>
-                    <td><?php echo $personal->city_name; ?></td>
+                    <td><?php echo $js_personal_info->city_name; ?></td>
                     <?php endif; ?>
                   </tr>
 				   <tr>
-                  	<?php if(!empty($personal->state_name)): ?>
+                  	<?php if(!empty($js_personal_info->state_name)): ?>
                     <td width="30%"><span class="highlight_text">State:</span></td>
-                    <td><?php echo $personal->state_name; ?></td>
+                    <td><?php echo $js_personal_info->state_name; ?></td>
                     <?php endif; ?>
                   </tr> 
 				    <tr>
-                  	<?php if(!empty($personal->city_name)): ?>
+                  	<?php if(!empty($js_personal_info->city_name)): ?>
                     <td width="30%"><span class="highlight_text">City:</span></td>
-                    <td><?php echo $personal->city_name; ?></td>
+                    <td><?php echo $js_personal_info->city_name; ?></td>
                     <?php endif; ?>
                   </tr> 
                 </table>

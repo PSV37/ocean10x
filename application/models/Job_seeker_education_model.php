@@ -22,6 +22,9 @@ class Job_seeker_education_model extends MY_Model {
             $this->db->from($this->_table_name);
 			$this->db->join('education_level', 'education_level.education_level_id = js_education.education_level_id');
 			$this->db->join('education_specialization', 'education_specialization.id = js_education.specialization_id');
+			$this->db->join('country', 'country.country_id = js_personal_info.country_id');
+			$this->db->join('state', 'state.state_id = js_personal_info.state_id');
+			$this->db->join('city', 'city.id = js_personal_info.city_id');
             $this->db->where('job_seeker_id',$job_seeker_id);
             $this->db->order_by("js_year_of_passing","desc");
             $query = $this->db->get();        
