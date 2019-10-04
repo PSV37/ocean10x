@@ -661,6 +661,7 @@ PERSONAL DETAILS:
              </tr>
          
           <?php endif; ?>
+        
          
 
          <!--Current Location:-->
@@ -669,10 +670,11 @@ PERSONAL DETAILS:
          <td style="padding-left:10px;" align="left">Current  Location</td>
          <td align="center">:</td>
          <td align="left">       
-         <?php echo $resume->present_address; ?><br/>
-		 <?php echo $resume->city_name; ?><br/>		
-		 <?php echo $resume->state_name; ?><br/>
-		 <?php echo $resume->country_name; ?>
+         <?php echo $js_personal_info->present_address; ?>   
+         </td>
+		 <br/>
+		 <td align="left">       
+         <?php echo $js_personal_info->city_name; ?>   
          </td>
          </tr>
       <?php endif; ?>
