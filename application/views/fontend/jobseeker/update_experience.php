@@ -29,7 +29,10 @@
                                       <td><?php echo $v_experience->designation_name; ?></td>
                                   </tr>
 
-                                  
+                                  <tr>
+                                    <td>Department:</td>
+                                <td><?php echo $v_experience->department_name; ?></td>
+                                  </tr>
 
                                   <tr>
                                     <td>Job Level:</td>
