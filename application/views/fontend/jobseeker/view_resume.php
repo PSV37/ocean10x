@@ -25,7 +25,7 @@
                             <div class="job-header">
                             <div class="contentbox">
                                         <!-- Header -->
-										<center><h4>Resume</h4></center><br/>
+										<center><h4 style="color:#b6bc00;">Resume</h4></center><br/>
                                 <header class="row cv-box">
                                         <div class="title col-md-9">
                                             <h3><?php echo $resume->full_name; ?> </h3>
