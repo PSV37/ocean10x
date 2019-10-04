@@ -62,16 +62,9 @@ class Job_seeker extends MY_Seeker_Controller
             $js_personal_info = $this->job_seeker_personal_model->personalinfo_list_by_id($jobseeker_id);
 			$city = $this->Master_model->getMaster('city',$where=false);
 			$country = $this->Master_model->getMaster('country',$where=false);
-			$state = $this->Master_model->getMaster('state',$where=false);
-			$join1 = array(
-						'country' => 'country.country_id = js_personal_info.country1_id|INNER',
-						'state' => 'state.state_id = js_personal_info.state1_id|INNER',
-						'city' => 'city.id = js_personal_info.city1_id|INNER'
-			);
-	       
-			$results = $this->Master_model->get_master_row("js_personal_info", $select = false, $where=false, $join1);
+			$state = $this->Master_model->getMaster('state',$where=false);			
 			//echo $this->db->last_query();
-            echo $this->load->view('fontend/jobseeker/update_personalinfo', compact('jobseeker_id', 'js_personal_info', 'city', 'country', 'state', 'results'),true);
+            echo $this->load->view('fontend/jobseeker/update_personalinfo', compact('jobseeker_id', 'js_personal_info', 'city', 'country', 'state'),true);
         }
     }
 
