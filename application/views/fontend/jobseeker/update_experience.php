@@ -276,8 +276,8 @@ if (!empty($experinece->start_date)) {
                 <div class="col-sm-9">
                  	<select  name="department_id" class="form-control">
 					<option value="">Select Department</option>
-					<?php foreach($department as $dept){?>
-					<option value="<?php echo $dept['department_id']; ?>"><?php echo $dept['department_name']; ?></option>
+					<?php foreach($department as $depts){?>
+					<option value="<?php echo $depts['department_id']; ?>"><?php echo $depts['department_name']; ?></option>
 					<?php } ?>
 				  </select>
 
