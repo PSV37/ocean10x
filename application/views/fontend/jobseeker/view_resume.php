@@ -326,7 +326,7 @@
                   </tr> 
 				    <tr>
                   	<?php if(!empty($js_personal_info->country_name)): ?>
-                    <td width="30%"><span class="highlight_text">City:</span></td>
+                    <td width="30%"><span class="highlight_text">Country:</span></td>
                     <td><?php echo $js_personal_info->country_name; ?></td>
                     <?php endif; ?>
                   </tr> 
