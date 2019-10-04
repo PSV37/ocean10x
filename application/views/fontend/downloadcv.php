@@ -405,9 +405,10 @@ Skills:
            <td style="border-right:1px solid #EAE7E7" align="center" width="20%"><strong>Title</strong></td>
            <td style="border-right:1px solid #EAE7E7" align="center" width="12%"><strong>Topic</strong></td>
            <td style="border-right:1px solid #EAE7E7" align="center" width="12%"><strong>Institute</strong></td>
+		   <td style="border-right:1px solid #EAE7E7" align="center" width="12%"><strong>Location</strong></td>
            <td style="border-right:1px solid #EAE7E7" align="center" width="12%"><strong>Country</strong></td>
+		   <td style="border-right:1px solid #EAE7E7" align="center" width="12%"><strong>State</strong></td>
            <td style="border-right:1px solid #EAE7E7" align="center" width="12%"><strong>Year</strong></td>
-            <td style="border-right:1px solid #EAE7E7" align="center" width="12%"><strong>Location</strong></td>
            
                 <td  align="center" width="12%"><strong>Duration</strong></td>              
 
@@ -431,8 +432,16 @@ Skills:
                &nbsp;            
                </td>
                 <!--Result:-->
+				<td style=" border-right:1px solid #EAE7E7; border-top:1px solid #EAE7E7; border-top:1px solid #EAE7E7;" align="center" width="12.5%">
+                <?php echo $v_training->city_name; ?>
+                   &nbsp;
+                </td>
+			    <td style=" border-right:1px solid #EAE7E7; border-top:1px solid #EAE7E7; border-top:1px solid #EAE7E7;" align="center" width="12.5%">
+                 <?php echo $v_training->state_name; ?>
+                   &nbsp;
+                </td>
                <td style="border-right:1px solid #EAE7E7;border-top:1px solid #EAE7E7;" align="center" width="12.5%">
-              <?php echo $v_training->country  ; ?>
+              <?php echo $v_training->country_name  ; ?>
                &nbsp;               
                </td>
 
@@ -443,10 +452,7 @@ Skills:
                </td>
                 <!--Passing Year:-->
                
-                   <td style=" border-right:1px solid #EAE7E7; border-top:1px solid #EAE7E7; border-top:1px solid #EAE7E7;" align="center" width="12.5%">
-                    <?php echo $v_training->location; ?>
-                   &nbsp;
-                    </td>
+                   
 
                      <td style="border-top:1px solid #EAE7E7;" align="center" width="12.5%">
                     <?php echo $v_training->duration  ; ?>
