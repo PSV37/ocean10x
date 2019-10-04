@@ -127,7 +127,7 @@ class Job_seeker extends MY_Seeker_Controller
                 'company_profile_id'     => $this->input->post('company_profile_id'),
                 'designation_id'      => $this->input->post('designation_id'),
                 'job_level'        => $this->input->post('job_level'),
-                'department_id'       => $this->input->post('department_id'),
+                'dept_id'       => $this->input->post('dept_id'),
                 'start_date'       => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('start_date')))),
                 'end_date'         => (empty($enddate)) ? null : date('Y-m-d', strtotime(str_replace('/', '-', $enddate))),
                 'address'          => $this->input->post('address'),
