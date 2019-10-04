@@ -41,7 +41,7 @@
                                              
                                         </div>
                                     <div class="social col-md-3">
-                                       <img src="<?php echo base_url() ?>upload/<?php if(!empty($resume->photo_path)) { echo $resume->photo_path;} else { echo "image-notfound.png";} ?>" style="width: 160px"  class="seeker-profile-title" title="That`s me!" alt="My Profile"/>
+                                       <img src="<?php echo base_url() ?>job_seeker/save_photo/<?php if(!empty($resume->photo_path)) { echo $resume->photo_path;} else { echo "image-notfound.png";} ?>" style="width: 160px"  class="seeker-profile-title" title="That`s me!" alt="My Profile"/>
                                     </div>
                                     
                                 </header>
