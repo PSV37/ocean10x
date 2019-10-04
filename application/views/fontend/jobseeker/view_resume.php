@@ -25,9 +25,10 @@
                             <div class="job-header">
                             <div class="contentbox">
                                         <!-- Header -->
+										<center><h4>Resume</h4></center>
                                 <header class="row cv-box">
                                         <div class="title col-md-9">
-                                            <h3>Resume of <?php echo $resume->full_name; ?> </h3>
+                                            <h3><?php echo $resume->full_name; ?> </h3>
                                             <h4> <?php echo $resume->resume_title; ?></h4>
                                            	<div class="resumetxt">e-mail : <?php echo $resume->email; ?></div>
                                              
