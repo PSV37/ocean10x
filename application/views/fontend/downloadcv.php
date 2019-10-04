@@ -212,9 +212,9 @@ CAREER OBJECTIVE:
                 <!--Department:-->
                   Address: <?php echo $v_experience->address ;?>
                     <br> 
-                      Designation: <?php echo $v_experience->designation ;?>
+                      Designation: <?php echo $v_experience->designation_name ;?>
                     <br> 
-                      Department: <?php echo $v_experience->department ;?>
+                      Department: <?php echo $v_experience->department_name ;?>
                     <br>  
                      Job Level: <?php echo $this->job_level_model->get_job_level_by_id($v_experience->job_level) ;?>
                        <br>  
@@ -406,8 +406,8 @@ Skills:
            <td style="border-right:1px solid #EAE7E7" align="center" width="12%"><strong>Topic</strong></td>
            <td style="border-right:1px solid #EAE7E7" align="center" width="12%"><strong>Institute</strong></td>
 		   <td style="border-right:1px solid #EAE7E7" align="center" width="12%"><strong>Location</strong></td>
-           <td style="border-right:1px solid #EAE7E7" align="center" width="12%"><strong>Country</strong></td>
 		   <td style="border-right:1px solid #EAE7E7" align="center" width="12%"><strong>State</strong></td>
+           <td style="border-right:1px solid #EAE7E7" align="center" width="12%"><strong>Country</strong></td>
            <td style="border-right:1px solid #EAE7E7" align="center" width="12%"><strong>Year</strong></td>
            
                 <td  align="center" width="12%"><strong>Duration</strong></td>              
