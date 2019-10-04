@@ -72,8 +72,6 @@ class Designation_master extends MY_Controller
         $selectedit = "designation_name, description, designation_id";
         $data['edit_desig_info'] = $this->Master_model->getMaster('designation',$where_st,$join = FALSE, $order = false, $field = false, $selectedit,$limit=false,$start=false, $search=false);
         
-        // $where_cn= "status=1";
-        // $data['designation_data'] = $this->Master_model->getMaster('designation',$where_cn);
         $where_cn= "status=1";
         $select = "designation_name, description, designation_id";
         $data['designation_data'] = $this->Master_model->getMaster('designation',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);

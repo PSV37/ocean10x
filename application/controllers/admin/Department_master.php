@@ -20,8 +20,9 @@ class Department_master extends MY_Controller
         $data['title'] = 'Add Department';
 
         $where_cn= "dept_status=1";
-        $data['department_data'] = $this->Master_model->getMaster('department',$where_cn);
-        
+        $select = "department_name, description, dept_id";
+        $data['department_data'] = $this->Master_model->getMaster('department',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
+
         $this->load->view('admin/jobsetting/department_master', $data);
     }
 
@@ -68,10 +69,13 @@ class Department_master extends MY_Controller
         $data['title']="Department Master Edit";
 
         $where_st = "dept_id='$id'";
+        $select = "department_name, description, dept_id";
         $data['edit_dept_info'] = $this->Master_model->getMaster('department',$where_st);
         
         $where_cn= "dept_status=1";
-        $data['department_data'] = $this->Master_model->getMaster('department',$where_cn);
+        $select = "department_name, description, dept_id";
+        $data['department_data'] = $this->Master_model->getMaster('department',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
+
         
         $this->load->view('admin/jobsetting/department_master',$data);
     }
