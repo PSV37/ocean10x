@@ -83,15 +83,15 @@
                                     </tr>
 									<tr>
                                       <td>City:</td>
-                                    <td><?php echo $js_personal_info->city1_name; ?></td>
+                                    <td><?php echo $js_personal_info->city_name; ?></td>
                                     </tr>
 									<tr>
                                       <td>State:</td>
-                                    <td><?php echo $js_personal_info->state1_name; ?></td>
+                                    <td><?php echo $js_personal_info->state_name; ?></td>
                                     </tr>
 									<tr>
                                       <td>country:</td>
-                                    <td><?php echo $js_personal_info->country1_name; ?></td>
+                                    <td><?php echo $js_personal_info->country_name; ?></td>
                                     </tr>
                                   </tbody>
                                 </table>

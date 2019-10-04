@@ -22,6 +22,9 @@ class Job_seeker_personal_model extends MY_Model {
 			$this->db->join('country', 'country.country_id = js_personal_info.country_id');
 			$this->db->join('state', 'state.state_id = js_personal_info.state_id');
 			$this->db->join('city', 'city.id = js_personal_info.city_id');
+			$this->db->join('country', 'country.country_id = js_personal_info.country1_id');
+			$this->db->join('state', 'state.state_id = js_personal_info.state1_id');
+			$this->db->join('city', 'city.id = js_personal_info.city1_id');
             $this->db->where('job_seeker_id',$job_seeker_id);
             $this->db->order_by($this->_primary_key,"desc");
             $query = $this->db->get();        
