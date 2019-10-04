@@ -116,13 +116,10 @@ header("Content-Disposition: attachment;Filename={$Filename}.doc");
             <?php if(!empty($resume->email)) {echo "E-mail: " . $resume->email;} ?>        
 
             </td>
-         </tr>
-		 
-		 <tr> 
-               <td align="center" height="135" width="126" colspan="6" style="padding-left:20px;" class="resume-textone" align="right"> 
+			<td align="center" height="135" width="126" colspan="6" style="padding-left:20px;" class="resume-textone" align="right"> 
                <img src="<?php echo base_url() ?>upload/<?php if(!empty($job_seeker_photo->photo_path)) { echo $job_seeker_photo->photo_path;} else { echo "image-notfound.png";} ?>" alt="Photo" height="120" width="124">
                </td>
-               </tr>
+         </tr>
          
          </td>
          </tr>
