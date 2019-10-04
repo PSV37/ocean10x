@@ -111,9 +111,9 @@
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Specialization:</label>
                 <div class="col-sm-9">
-                  <select  name="specilization_id" id="specilization_id" class="form-control">
+                  <select  name="specialization_id" id="specialization_id" class="form-control">
 				 <?php foreach($education_specialization as $specialization){?>
-					<option value="<?php echo $specilization['id']; ?>"<?php if($edcuaiton_list->specilization_id==$specialization['id']){ echo "selected"; }?>><?php echo $specialization['education_specialization']; ?></option>
+					<option value="<?php echo $specialization['id']; ?>"<?php if($edcuaiton_list->specialization_id==$specialization['id']){ echo "selected"; }?>><?php echo $specialization['education_specialization']; ?></option>
 					<?php } ?>
 				 </select>
                 </div>
@@ -192,7 +192,7 @@
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Specialization:</label>
                 <div class="col-sm-9">
-				<select  name="specilization_id" id="specilization_id" class="form-control">
+				<select  name="specialization_id" id="specialization_id" class="form-control">
 				 <?php foreach($education_specialization as $specialization){?>
 					<option value="<?php echo $specialization['id']; ?>"><?php echo $specialization['education_specialization']; ?></option>
 					<?php } ?>
