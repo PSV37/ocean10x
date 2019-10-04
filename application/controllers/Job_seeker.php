@@ -94,8 +94,8 @@ class Job_seeker extends MY_Seeker_Controller
             $education_info_id = $this->input->post('js_education_id');
             $education_info    = array(
                 'job_seeker_id'      => $jobseeker_id,
-                'specilization_id'          => $this->input->post('education_level_id'),
-                'js_group'           => $this->input->post('specilization_id'),
+                'education_level_id'          => $this->input->post('education_level_id'),
+                'specilization_id'           => $this->input->post('specilization_id'),
                 'js_institute_name'  => $this->input->post('js_institute_name'),
                 'js_resut'           => $this->input->post('js_resut'),
                 'js_year_of_passing' => $this->input->post('js_year_of_passing'),
