@@ -99,11 +99,11 @@
                   </tr>
                   <tr>
                     <td><span class="highlight_text">Designation:</span></td>
-                    <td><?php echo $v_experience->designation ;?></td>
+                    <td><?php echo $v_experience->designation_name ;?></td>
                   </tr>
                   <tr>
                     <td><span class="highlight_text">Department:</span></td>
-                    <td><?php echo $v_experience->department ;?></td>
+                    <td><?php echo $v_experience->department_name ;?></td>
                   </tr>
                   <tr>
                     <td><span class="highlight_text">Job Level:</span></td>
