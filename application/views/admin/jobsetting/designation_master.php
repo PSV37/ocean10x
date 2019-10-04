@@ -54,9 +54,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Designation Description </label>
-                                      <textarea name="desig_desc" class="form-control">
-                                        <?php if (!empty($edit_desig_info)) echo $row['description'];?>
-                                      </textarea>
+                                      <textarea name="desig_desc" class="form-control"><?php if (!empty($edit_desig_info)) echo $row['description'];?></textarea>
                                     </div>
                                 </div>
                             
