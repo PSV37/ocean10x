@@ -30,7 +30,7 @@
                                         <div class="title col-md-9">
                                             <h3><?php echo $resume->full_name; ?> </h3>
                                             <h4> <?php echo $resume->resume_title; ?></h4>
-                                           	<div class="resumetxt">e-mail : <?php echo $resume->email; ?></div>
+                                           	<div class="resumetxt">E-mail : <?php echo $resume->email; ?></div>
                                              
                                              <?php if(!empty($resume->present_address)): ?>                                             
                                              <div class="resumetxt">Address: <?php echo $resume->present_address; ?> </div>
