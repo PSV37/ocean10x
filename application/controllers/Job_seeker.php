@@ -149,7 +149,7 @@ class Job_seeker extends MY_Seeker_Controller
 			$company_profile = $this->Master_model->getMaster('company_profile',$where=false);
 			$designation = $this->Master_model->getMaster('designation',$where=false);
 			$department = $this->Master_model->getMaster('department',$where=false);
-			echo $this->db->last_query();
+			//echo $this->db->last_query();
            echo $this->load->view('fontend/jobseeker/update_experience.php', compact('experinece_list', 'company_profile', 'designation', 'department'),true);
         }
     }
