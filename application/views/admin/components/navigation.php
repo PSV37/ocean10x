@@ -139,9 +139,9 @@
                      <li <?php echo $this->company_profile_model->User_status_check(); ?> >
                         <a href='<?php echo base_url(); ?>admin/job-category'> <i class='glyphicon glyphicon-plus'></i><span>Job Category</span></a>
                      </li>
-                     <li <?php echo $this->company_profile_model->User_status_check(); ?> >
+                  <!--    <li <?php echo $this->company_profile_model->User_status_check(); ?> >
                         <a href='<?php echo base_url(); ?>admin/job-location'> <i class='glyphicon glyphicon-plus'></i><span>Job Location</span></a>
-                     </li>
+                     </li> -->
                      <li <?php echo $this->company_profile_model->User_status_check(); ?> >
                         <a href='<?php echo base_url(); ?>admin/job-level'> <i class='glyphicon glyphicon-plus'></i><span>Job Level</span></a>
                      </li>
@@ -151,6 +151,12 @@
                      <li <?php echo $this->company_profile_model->User_status_check(); ?> >
                         <a href='<?php echo base_url(); ?>admin/salary-range'> <i class='glyphicon glyphicon-plus'></i><span>Job Salary Range</span></a>
                      </li>
+
+                     <li <?php echo $this->company_profile_model->User_status_check(); ?> >
+                        <a href='<?php echo base_url(); ?>admin/skill-master'> <i class='glyphicon glyphicon-plus'></i><span>Skills Master</span></a>
+                     </li>
+
+
                      <li <?php echo $this->company_profile_model->User_status_check(); ?> >
                         <a href='<?php echo base_url(); ?>admin/education-level'> <i class='glyphicon glyphicon-plus'></i><span>Education Level</span></a>
                      </li>
@@ -176,7 +182,7 @@
                         <a href='<?php echo base_url(); ?>admin/designation-master'> <i class='glyphicon glyphicon-plus'></i><span>Designtion Master</span></a>
                      </li>
 
-                      <li <?php echo $this->company_profile_model->User_status_check(); ?> >
+                     <li <?php echo $this->company_profile_model->User_status_check(); ?> >
                         <a href='<?php echo base_url(); ?>admin/industry-master'> <i class='glyphicon glyphicon-plus'></i><span>Industry Master</span></a>
                      </li>
                       

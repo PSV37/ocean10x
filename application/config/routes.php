@@ -164,6 +164,8 @@ $route['admin/city-master']="admin/city_master";
 $route['admin/department-master']="admin/department_master";
 $route['admin/designation-master']="admin/designation_master";
 $route['admin/industry-master']="admin/industry_master";
+$route['admin/skill-master']="admin/skill_master";
+
 
 
 
