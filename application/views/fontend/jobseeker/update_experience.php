@@ -138,7 +138,7 @@ echo $this->job_level_model->selected($experinece->job_level);
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Department:</label>
                 <div class="col-sm-9">
-				 <select  name="department_id" class="form-control">
+				 <select  name="dept_id" class="form-control">
 					<option value="">Select Department</option>
 					<?php foreach($department as $dept){?>
 					<option value="<?php echo $dept['dept_id']; ?>"<?php if($experinece->dept_id==$dept['dept_id']){ echo "selected"; }?>><?php echo $dept['department_name']; ?></option>
