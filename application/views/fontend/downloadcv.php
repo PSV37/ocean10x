@@ -89,9 +89,6 @@ header("Content-Disposition: attachment;Filename={$Filename}.doc");
          <tbody><tr>
          <td class="resume-header" align="center" height="" valign="bottom" width="73%">
          <!--Applicant's Name:-->
-         <br>
-         
- <br>
          </td>
 
          <td rowspan="2" align="right" valign="bottom" width="27%">
@@ -117,9 +114,9 @@ header("Content-Disposition: attachment;Filename={$Filename}.doc");
       <td colspan="6">
          <tr>
            <td colspan="6" style="padding-left:20px;" class="resume-textone" align="left">
-		    <?php echo $resume->full_name; ?>
+			<?php if(!empty($resume->full_name)) {echo "Address " . $resume->full_name;} ?>
             <?php if(!empty($resume->present_address)) {echo "Address " . $resume->present_address;} ?>        
-            <?php if(!empty($resume->mobile)) {echo "Voice: +88" . $resume->mobile;} ?>        
+            <?php if(!empty($resume->mobile)) {echo "Mobile:" . $resume->mobile;} ?>        
             <?php if(!empty($resume->email)) {echo "E-mail: " . $resume->email;} ?>        
 
             </td>
