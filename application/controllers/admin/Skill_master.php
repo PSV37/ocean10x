@@ -26,7 +26,7 @@ class Skill_master extends MY_Controller
         $this->load->view('admin/jobsetting/skill_master', $data);
     }
 
-        public function save_industry($id = null){
+        public function save_skill($id = null){
           
             $user_id = $this->session->userdata('admin_user_id');
             
@@ -53,7 +53,7 @@ class Skill_master extends MY_Controller
             }
         }
 
-    public function delete_industry($id) {
+    public function delete_skill($id) {
         
         $state_status = array(
             'status'=>0,
@@ -63,7 +63,7 @@ class Skill_master extends MY_Controller
         redirect('admin/skill_master');
     }
 
-    public function edit_industry($id){
+    public function edit_skill($id){
         $data['title']="Skills Master Edit";
 
         $where_st = "id='$id'";
