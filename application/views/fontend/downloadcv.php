@@ -339,8 +339,8 @@ Skills:
        <td colspan="6" style="padding-left:20px;" class="resume-textone" align="left">
        <table style="border:1px solid #EAE7E7" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
            <tbody><tr class="resume-texttwo">
-           <td style="border-right:1px solid #EAE7E7" align="center" width="20%"><strong>Exam Title</strong></td>
-           <td style="border-right:1px solid #EAE7E7" align="center" width="15%"><strong>Concentration/Major</strong></td>
+           <td style="border-right:1px solid #EAE7E7" align="center" width="20%"><strong>Degree</strong></td>
+           <td style="border-right:1px solid #EAE7E7" align="center" width="15%"><strong>Specialization</strong></td>
            <td style="border-right:1px solid #EAE7E7" align="center" width="20%"><strong>Institute</strong></td>
            <td style="border-right:1px solid #EAE7E7" align="center" width="15%"><strong>Result</strong></td>
            
@@ -352,12 +352,12 @@ Skills:
                  <tr class="resume-texttwo">
                <!--Exam Title:-->
                 <td style="border-right:1px solid #EAE7E7;border-top:1px solid #EAE7E7;" align="center" width="20%">
-               <?php echo $v_education->js_degree ; ?>
+               <?php echo $v_education->education_level_name ; ?>
                &nbsp;
                </td>
                 <!--Concentration/Major:-->
                <td style="border-right:1px solid #EAE7E7;border-top:1px solid #EAE7E7;" align="center" width="15%">
-              <?php echo $v_education->js_group ; ?>
+              <?php echo $v_education->education_specialization ; ?>
                &nbsp;
                </td>
                 <!--Institute:-->
