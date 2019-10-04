@@ -718,7 +718,7 @@ REFERENCE:
                       <td style="padding-left:10px;" align="left" width="22%">Full Name </td>
                       <td align="center" width="2%">:</td>
                       <td align="left" width="70%">
-                      <?php echo $v_reference->name;; ?>
+                      <?php echo $v_reference->name; ?>
                       &nbsp;
                       </td>
 
@@ -732,7 +732,7 @@ REFERENCE:
               <td style="padding-left:10px;" align="left" width="22%">Organization</td>
               <td align="center" width="2%">:</td>
               <td align="left" width="70%">
-              <?php echo $v_reference->org_name; ?>
+              <?php echo $v_reference->company_name; ?>
               &nbsp;
               </td>
                   
@@ -746,7 +746,7 @@ REFERENCE:
                       <td style="padding-left:10px;" align="left" width="22%">Designation</td>
                       <td align="center" width="2%">:</td>
                       <td align="left" width="70%">
-                      <?php echo $v_reference->designation; ?>
+                      <?php echo $v_reference->designation_name; ?>
                       &nbsp;
                       </td>
                         
@@ -761,7 +761,7 @@ REFERENCE:
                    
                       <tr class="resume-textthree">
                      
-                      <td style="padding-left:10px;" align="left">Voice</td>
+                      <td style="padding-left:10px;" align="left">Mobile</td>
                       <td align="center">:</td>
                       <td align="left">
                      <?php echo $v_reference->mobile; ?>
