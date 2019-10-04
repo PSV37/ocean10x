@@ -307,27 +307,27 @@
                     <?php endif; ?>
                   </tr> 
                   <tr>
-                  	<?php if(!empty($resume->present_address)): ?>
+                  	<?php if(!empty($personal->present_address)): ?>
                     <td width="30%"><span class="highlight_text">Address:</span></td>
-                    <td><?php echo $resume->presene_address; ?></td>
+                    <td><?php echo $personal->presene_address; ?></td>
                     <?php endif; ?>
                   </tr> 
                   <tr>
-                  	<?php if(!empty($resume->city_name)): ?>
+                  	<?php if(!empty($personal->city_name)): ?>
                     <td width="30%"><span class="highlight_text">City:</span></td>
-                    <td><?php echo $resume->city_name; ?></td>
+                    <td><?php echo $personal->city_name; ?></td>
                     <?php endif; ?>
                   </tr>
 				   <tr>
-                  	<?php if(!empty($resume->state_name)): ?>
+                  	<?php if(!empty($personal->state_name)): ?>
                     <td width="30%"><span class="highlight_text">State:</span></td>
-                    <td><?php echo $resume->state_name; ?></td>
+                    <td><?php echo $personal->state_name; ?></td>
                     <?php endif; ?>
                   </tr> 
 				    <tr>
-                  	<?php if(!empty($resume->city_name)): ?>
+                  	<?php if(!empty($personal->city_name)): ?>
                     <td width="30%"><span class="highlight_text">City:</span></td>
-                    <td><?php echo $resume->city_name; ?></td>
+                    <td><?php echo $personal->city_name; ?></td>
                     <?php endif; ?>
                   </tr> 
                 </table>
