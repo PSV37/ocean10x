@@ -644,7 +644,7 @@ PERSONAL DETAILS:
          <td style="padding-left:10px;" align="left">Nationality</td>
          <td align="center">:</td>
          <td align="left">
-         Bangladeshi
+          <?php echo $resume->nationality; ?> 
          </td>
          </tr>
             
@@ -653,7 +653,7 @@ PERSONAL DETAILS:
 <?php if(!empty($resume->national_id) && $resume->national_id!="0"): ?>
 
              <tr class="resume-textthree">
-             <td style="padding-left:10px;" align="left">NID</td>
+             <td style="padding-left:10px;" align="left">Adhar No</td>
              <td align="center">:</td>
              <td align="left">
              <?php if($resume->national_id=="0") { echo "";} else { echo $resume->national_id;} ?>
