@@ -26,12 +26,12 @@
                               <tbody>
                               <tr>
                                   <td width="30%">Degree:</td>
-                                  <td><?php echo $v_education->js_degree; ?></td>
+                                  <td><?php echo $v_education->education_level_name; ?></td>
                                 </tr>
 
                                 <tr>
-                                  <td>Group:</td>
-                                    <td><?php echo $v_education->js_group; ?></td>
+                                  <td>Specialization:</td>
+                                    <td><?php echo $v_education->education_specialization; ?></td>
                                 </tr>
 
                                 <tr>
@@ -100,24 +100,22 @@
               <input type="hidden" name="js_education_id" value="<?php echo $v_education->js_education_id; ?>">
                 <label class="control-label col-sm-3" for="email">Degree:</label>
                 <div class="col-sm-9">
-                 <input type="text" name="js_degree" class="form-control" id="js_degree" placeholder="Enter Your Degree"
-                   value="<?php
-                         if (!empty($edcuaiton_list->js_degree)) {
-                           echo $edcuaiton_list->js_degree;
-                           }
-                       ?>">
+                  <select  name="education_level_id" id="education_level_id" class="form-control">
+				 <?php foreach($education_level as $education){?>
+					<option value="<?php echo $education['education_level_id']; ?>"<?php if($edcuaiton_list->education_level_id==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
+					<?php } ?>
+				 </select>
                 </div>
               </div>
 
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Specialization:</label>
                 <div class="col-sm-9">
-                  <input type="text" name="js_group" class="form-control" id="js_group" placeholder="Enter Major/Group Name"
-                   value="<?php
-                         if (!empty($edcuaiton_list->js_group)) {
-                           echo $edcuaiton_list->js_group;
-                           }
-                       ?>">
+                  <select  name="specilization_id" id="specilization_id" class="form-control">
+				 <?php foreach($education_specialization as $specialization){?>
+					<option value="<?php echo $specilization['id']; ?>"<?php if($edcuaiton_list->specilization_id==$specialization['id']){ echo "selected"; }?>><?php echo $specialization['education_level_name']; ?></option>
+					<?php } ?>
+				 </select>
                 </div>
               </div>
 
@@ -183,15 +181,23 @@
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Degree:</label>
                 <div class="col-sm-9">
-                <input type="text" name="js_degree" class="form-control" id="js_degree" placeholder="Enter Your Degree">
+               <select  name="education_level_id" id="education_level_id" class="form-control">
+				 <?php foreach($education_level as $education){?>
+					<option value="<?php echo $education['education_level_id']; ?>"><?php echo $education['education_level_name']; ?></option>
+					<?php } ?>
+				 </select>
                 </div>
               </div>
 
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Specialization:</label>
                 <div class="col-sm-9">
-                  <input type="text" name="js_group" class="form-control" id="js_group" placeholder="Enter Major/Group Name">
-                </div>
+				<select  name="specilization_id" id="specilization_id" class="form-control">
+				 <?php foreach($education_specialization as $specialization){?>
+					<option value="<?php echo $specialization['id']; ?>"><?php echo $specialization['education_level_name']; ?></option>
+					<?php } ?>
+				 </select>
+				</div>
               </div>
 
               <div class="form-group">
