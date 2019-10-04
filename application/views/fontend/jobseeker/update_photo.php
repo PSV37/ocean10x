@@ -23,7 +23,7 @@
 
     <!-- Current avatar -->
     <div class="avatar-view" title="Change the Photo">
-      <img src="<?php echo base_url() ?>upload/<?php if(!empty($job_seeker_photo->photo_path)) { echo $job_seeker_photo->photo_path;} else { echo "image-notfound.png";} ?>" alt="Photo" style="margin-top:-20px;">
+      <img src="<?php echo base_url() ?>upload/<?php if(!empty($job_seeker_photo->photo_path)) { echo $job_seeker_photo->photo_path;} else { echo "image-notfound.png";} ?>" alt="Photo" style="margin-top:-50px;">
     </div>
 
     <!-- Cropping modal -->
