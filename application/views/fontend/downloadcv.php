@@ -661,16 +661,7 @@ PERSONAL DETAILS:
              </tr>
          
           <?php endif; ?>
-         <!--Permanent Address:-->
-           <?php if(!empty($resume->parmanent_address)): ?>
-             <tr class="resume-textthree">
-             <td style="padding-left:10px;" align="left">Permanent  Address</td>
-             <td align="center">:</td>
-             <td align="left">
-             <?php echo $resume->parmanent_address; ?>
-             </td>
-             </tr>
-         <?php endif; ?>
+         
 
          <!--Current Location:-->
  <?php if(!empty($resume->present_address)): ?>
@@ -678,7 +669,10 @@ PERSONAL DETAILS:
          <td style="padding-left:10px;" align="left">Current  Location</td>
          <td align="center">:</td>
          <td align="left">       
-         <?php echo $resume->present_address; ?>   
+         <?php echo $resume->present_address; ?><br/>
+		 <?php echo $resume->city_name; ?><br/>		
+		 <?php echo $resume->state_name; ?><br/>
+		 <?php echo $resume->country_name; ?>
          </td>
          </tr>
       <?php endif; ?>
