@@ -114,9 +114,9 @@ header("Content-Disposition: attachment;Filename={$Filename}.doc");
       <td colspan="6">
          <tr>
            <td colspan="6" style="padding-left:20px;" class="resume-textone" align="left">
-			<?php if(!empty($resume->full_name)) {echo "Address " . $resume->full_name;} ?>
-            <?php if(!empty($resume->present_address)) {echo "Address " . $resume->present_address;} ?>        
-            <?php if(!empty($resume->mobile)) {echo "Mobile:" . $resume->mobile;} ?>        
+			<?php if(!empty($resume->full_name)) {echo "Name " . $resume->full_name;} ?><br/>
+            <?php if(!empty($resume->present_address)) {echo "Address " . $resume->present_address;} ?> <br/>       
+            <?php if(!empty($resume->mobile)) {echo "Mobile:" . $resume->mobile;} ?> <br/>       
             <?php if(!empty($resume->email)) {echo "E-mail: " . $resume->email;} ?>        
 
             </td>
