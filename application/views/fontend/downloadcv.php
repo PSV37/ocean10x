@@ -81,7 +81,7 @@ header("Content-Disposition: attachment;Filename={$Filename}.doc");
 </style>
 
 <div id="resume"> 
-         <center><h4>Resume</h4></center>
+         <center><h4 style="color:#b6bc00;">Resume</h4></center>
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="630">
       <tbody><tr>
       <td colspan="6">
