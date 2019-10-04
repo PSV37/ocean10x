@@ -394,9 +394,9 @@
             </article>
             </div>
             
-            <div class="row">
+           <!-- <div class="row">
             	<div class="col-md-5"><?php echo get_logo();?></div>
-            </div>
+            </div>-->
 </div>
                             </div><!-- end post-padding -->
                             

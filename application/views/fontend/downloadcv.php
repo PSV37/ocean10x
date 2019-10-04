@@ -373,7 +373,7 @@ Skills:
                 <!--Passing Year:-->
                
                    <td style="border-top:1px solid #EAE7E7;" align="center" width="12.5%">
-                    <?php echo $v_education->js_year_of_passing ; ?>
+                    <?php echo $v_education->passing_year ; ?>
                    &nbsp;
                     </td>
                   </tr>
@@ -847,7 +847,7 @@ REFERENCE:
 
           </td>
 
-           <td style="margin-left:300px;" align="right" width="40%"><?php echo get_logo();?> </td>
+           <!--<td style="margin-left:300px;" align="right" width="40%"><?php echo get_logo();?> </td-->
           </tr>
 
 
