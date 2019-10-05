@@ -112,7 +112,7 @@
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label">Salary Range</label>
-                    <input type="number" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" >
+                    <input type="number" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1">
                   </div>
                 </div>
               </div>
@@ -168,7 +168,7 @@
                 <div class="col-md-6 col-sm-12">
                   <div class="formrow">
                     <label class="control-label mandatory">Vacancy Deadline *</label>
-                    <input class="datepicker form-control"  required name="job_deadline" value="<?php 
+                    <input class="datepicker form-control" data-date-format="dd/mm/yyyy" required name="job_deadline" value="<?php 
 						 if(!empty($job_info->job_deadline)){
 							echo $job_info->job_deadline;
 						 }
@@ -219,7 +219,7 @@
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Number of Vacancy </label>
-                    <input class="form-control" type="number"  name="no_jobs" value="<?php 
+                    <input class="form-control" min="1" type="number"  name="no_jobs" value="<?php 
                                                  if(!empty($job_info->no_jobs)){
                                                     echo $job_info->no_jobs;
                                                  }
@@ -229,7 +229,7 @@
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Years of Experience </label>
-                    <input class="form-control" type="number"  name="experience" value="<?php 
+                    <input class="form-control" type="text"  name="experience" value="<?php 
                                                  if(!empty($job_info->experience)){
                                                     echo $job_info->experience;
                                                  }

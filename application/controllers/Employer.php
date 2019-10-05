@@ -122,7 +122,6 @@ class Employer extends MY_Employer_Controller
                         "job_deadline"       => $this->input->post('job_deadline'),
                         'preferred_age'      => $this->input->post('preferred_age_from'),
 						'preferred_age_to'      => $this->input->post('preferred_age_to'),
-						'job_deadline'      => $this->input->post('job_deadline_day'),
                         'working_hours'      => $this->input->post('working_hours'),
                     );
                     if (empty($job_post_id)) {
