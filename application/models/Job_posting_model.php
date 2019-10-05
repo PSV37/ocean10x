@@ -67,7 +67,7 @@ class Job_Posting_Model extends MY_Model
         $query = $this->db->query("select t1.*, t2.company_name, t2.company_logo, t2.company_slug,t3.job_location_name, t4.job_nature_name
 from job_posting t1
 left join company_profile t2 on t1.company_profile_id=t2.company_profile_id
-inner join country_id t3 on t3.job_location_id=t1.country_id
+inner join job_location t3 on t3.job_location_id=t1.job_location
 inner join job_nature t4 on t1.job_nature=t4.job_nature_id 
 where job_status=1
 order by job_post_id desc limit 10");
