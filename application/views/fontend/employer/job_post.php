@@ -124,7 +124,7 @@
                 <div class="col-md-6 col-sm-12">
                   <div class="formrow">
                     <label class="control-label">Preferred Age</label>
-               		<input class="form-control" required name="preferred_age" placeholder="e.g. 25years" value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>" type="number" >
+               		<input class="form-control" required name="preferred_age" placeholder="e.g. 25years" value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>" type="text" >
                     
                     
                     
@@ -153,7 +153,7 @@
                 <div class="col-md-6 col-sm-12">
                   <div class="formrow">
                     <label class="control-label">Working Hours</label>
-                    <input type="time"  name="working_hours" value="<?php 
+                    <input type="text"  name="working_hours" value="<?php 
 						 if(!empty($job_info->working_hours)){
 							echo $job_info->working_hours;
 						 }
