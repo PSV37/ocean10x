@@ -179,8 +179,10 @@ class Employer extends MY_Employer_Controller
                     $company_id = $this->session->userdata('company_profile_id');
                     if ($this->job_posting_model->check_jobid_and_post_id($job_id, $company_id) == true) {
                         $job_info = $this->job_posting_model->get($job_id);
-						echo"hi";
-                        $this->load->view('fontend/employer/update_job', compact('job_info'));
+						$city = $this->Master_model->getMaster('city',$where=false);
+						$country = $this->Master_model->getMaster('country',$where=false);
+						$state = $this->Master_model->getMaster('state',$where=false);
+                        $this->load->view('fontend/employer/update_job', compact('job_info', 'city', 'state', 'country'));
                     } else {
                         echo "error";
                     }
