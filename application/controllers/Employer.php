@@ -119,7 +119,7 @@ class Employer extends MY_Employer_Controller
                          'job_level'          => $this->input->post('job_level'),
                         'salary_range'       => $this->input->post('salary_range'),
                         'job_types'          => $this->input->post('job_types'),
-                        "job_deadline"       => (empty($job_deadline)) ? null : date('Y-m-d', strtotime(str_replace('/', '-', $job_deadline))),
+                        "job_deadline"       => $this->input->post('job_deadline'),
                         'preferred_age'      => $this->input->post('preferred_age_from'),
 						'preferred_age_to'      => $this->input->post('preferred_age_to'),
 						'job_deadline'      => $this->input->post('job_deadline_day'),
