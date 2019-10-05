@@ -98,10 +98,10 @@
                 <ul class="jobinfolist">
                   <li>
                     <h4>Salary Range:</h4>
-                    <strong><?php echo $singlejob->salary_range; ?></strong></li>
+                    <strong>Rs.<?php echo $singlejob->salary_range; ?></strong></li>
                   <li>
                     <h4>Job Location:</h4>
-                    <strong><?php echo $singlejob->job_location_name; ?></strong></li>
+                    <strong><?php echo $singlejob->country_name; ?></strong></li>
                   <li>
                     <h4>Preferred Age:</h4> 
                     <strong><?php echo $singlejob->preferred_age; ?> (years)</strong></li>
