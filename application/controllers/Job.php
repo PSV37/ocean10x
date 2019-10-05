@@ -28,7 +28,11 @@ class Job extends MY_Fontend_Controller
             get_all_job($selectedcategory, $selectedlocation, $selectedcompany, $selectednature, $limit, $offset);
         $totalrow = $alljobs['total_row'];
         $alljobs  = $alljobs['result']; 
-        $this->load->view('fontend/job/all_jobbackup', compact('category', 'joblevel', 'totalrow', 'offset', 'limit', 'alljobs', 'all_category', 'all_locaiton', 'company_list', 'jobtype_list', 'selectedcategory', 'selectedlocation', 'selectedcompany', 'selectednature'));
+		'country_id'  => $this->input->post('country_id'),
+		'state_id'  => $this->input->post('state_id'),
+		'city_id'  => $this->input->post('city_id'),
+
+        $this->load->view('fontend/job/all_jobbackup', compact('category', 'joblevel', 'totalrow', 'offset', 'limit', 'alljobs', 'all_category', 'all_locaiton', 'company_list', 'jobtype_list', 'selectedcategory', 'selectedlocation', 'selectedcompany', 'selectednature', 'country', 'state', 'city'));
 
     }
 
