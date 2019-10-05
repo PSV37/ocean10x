@@ -80,7 +80,7 @@
 										 <select  name="city_id" id="city_id" class="form-control">
 										 <option value="">Select State First</option>
 										 <?php foreach($city as $keyss){?>
-										 <option value="<?php echo $keyss['id']; ?>"<?php if($job_info->city_id==$keyss['id']){ echo "selected"; }?>><?php echo $keyss['state_name']; ?></option>
+										 <option value="<?php echo $keyss['id']; ?>"<?php if($job_info->city_id==$keyss['id']){ echo "selected"; }?>><?php echo $keyss['city_name']; ?></option>
 										 <?php } ?>
 										</select>
                                         </div>
