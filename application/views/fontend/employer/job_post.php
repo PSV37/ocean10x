@@ -174,7 +174,7 @@
                 <div class="col-md-6 col-sm-12">
                   <div class="formrow">
                     <label class="control-label mandatory">Vacancy Deadline *</label>
-                    <input class="datepicker form-control"  required name="job_deadline" value="<?php 
+                    <input class="datepicker form-control" data-date-format="dd/mm/yyyy" required name="job_deadline" value="<?php 
 						 if(!empty($job_info->job_deadline)){
 							echo $job_info->job_deadline;
 						 }
