@@ -219,7 +219,7 @@
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Number of Vacancy </label>
-                    <input class="form-control" type="text"  name="no_jobs" value="<?php 
+                    <input class="form-control" type="number"  name="no_jobs" value="<?php 
                                                  if(!empty($job_info->no_jobs)){
                                                     echo $job_info->no_jobs;
                                                  }
@@ -229,7 +229,7 @@
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Years of Experience </label>
-                    <input class="form-control" type="text"  name="experience" value="<?php 
+                    <input class="form-control" type="number"  name="experience" value="<?php 
                                                  if(!empty($job_info->experience)){
                                                     echo $job_info->experience;
                                                  }
@@ -240,13 +240,10 @@
                   <div class="formrow">
                     <label class="control-label ">Required Education </label>
                     <select name="job_edu" class="form-control" data-style="btn-default" data-live-search="true">
-                      <option value="">Select Education </option>
-                      <?php if(!empty($job_info->job_edu)) {
-                                                echo $this->education_level_model->selected($job_info->job_edu);
-                                                } else {
-                                                   echo $this->education_level_model->selected();
-                                                }
-                                                 ?>
+                      <option value="">Select Education</option>
+										<?php foreach($education_level as $education){?>
+										<option value="<?php echo $education['education_level_id']; ?>"<?php if($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
+										<?php } ?>
                     </select>
                   </div>
                 </div>
