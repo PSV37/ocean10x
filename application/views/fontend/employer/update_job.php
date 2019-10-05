@@ -69,6 +69,9 @@
 										<div class="formrow">
 										<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
 										 <option value="">Select Country First</option>
+										 <?php foreach($state as $keys){?>
+										 <option value="<?php echo $keys['state_id']; ?>"<?php if($job_info->state_id==$keys['state_id']){ echo "selected"; }?>><?php echo $keys['state_name']; ?></option>
+										 <?php } ?>
 										</select>
                                         </div>
 										</div>
@@ -76,6 +79,9 @@
 										 <div class="formrow">
 										 <select  name="city_id" id="city_id" class="form-control">
 										 <option value="">Select State First</option>
+										 <?php foreach($city as $keyss){?>
+										 <option value="<?php echo $keyss['id']; ?>"<?php if($job_info->city_id==$keyss['id']){ echo "selected"; }?>><?php echo $keyss['state_name']; ?></option>
+										 <?php } ?>
 										</select>
                                         </div>
 										</div>
