@@ -56,6 +56,7 @@ class Job_Posting_Model extends MY_Model
     {
         $this->db->select('*');
         $this->db->from('job_posting');
+		$this->db->join('country', 'country.country_id = job_posting.job_location');
         $this->db->where('job_status', "1")->order_by($this->_order_by);
         $this->db->limit(5);
         $query = $this->db->get()->result();
