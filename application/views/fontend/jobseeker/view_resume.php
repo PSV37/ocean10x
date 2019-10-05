@@ -182,7 +182,7 @@
                               </tr>
                               <tr>
                                 <td><span class="highlight_text">Passing Year:</span></td>
-                                <td><?php echo $v_education->js_year_of_passing ; ?>   </td>
+                                <td><?php echo $v_education->passing_year ; ?>   </td>
                               </tr>
                             </table>
                             </div>
