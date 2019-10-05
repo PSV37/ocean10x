@@ -69,7 +69,37 @@
                     </select>
                   </div>
                 </div>
-                <div class="col-md-6 col-sm-12">
+									<div class="col-md-4 col-sm-12">
+									<div class="formrow">
+									  <select  name="country_id" class="form-control" onchange="getStates(this.value)">
+										<option value="">Select Country</option>
+										<?php foreach($country as $key){?>
+										<option value="<?php echo $key['country_id']; ?>"<?php if($company_info->job_location==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
+										<?php } ?>
+									  </select>
+                                        </div>
+									</div>
+										<div class="col-md-4 col-sm-12">
+										<div class="formrow">
+										<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+										 <option value="">Select Country First</option>
+										</select>
+                                        </div>
+										</div>
+										 <div class="col-md-4 col-sm-12">
+										 <div class="formrow">
+										 <select  name="city_id" id="city_id" class="form-control">
+										 <option value="">Select State First</option>
+										</select>
+                                        </div>
+										</div>
+                
+              </div>
+              <!-- end row -->
+              
+              <hr class="invis">
+              <div class="row">
+			  <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label mandatory">Vacancy Level *</label>
                     <select name="job_level" required class="form-control" data-style="btn-default" data-live-search="true">
@@ -83,12 +113,7 @@
                     </select>
                   </div>
                 </div>
-              </div>
-              <!-- end row -->
-              
-              <hr class="invis">
-              <div class="row">
-                <div class="col-md-6 col-sm-12">
+                <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label">Vacancy Nature</label>
                     <select name="job_nature"  class="form-control" data-style="btn-default" data-live-search="true">
@@ -102,7 +127,7 @@
                     </select>
                   </div>
                 </div>
-                <div class="col-md-6 col-sm-12">
+                <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label">Salary Range</label>
                     <input type="text" name="salary_range" value="<?php 
