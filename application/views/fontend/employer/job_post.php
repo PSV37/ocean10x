@@ -123,8 +123,8 @@
               <div class="row">
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label">Preferred Age</label>
-               		<input class="form-control" required name="preferred_age" placeholder="e.g. 25years" value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>" type="text" >
+                    <label class="control-label">Preferred Age(From)</label>
+               		<input class="form-control" required name="preferred_age_from" placeholder="e.g. 25years" value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>" type="text" >
                     
                     
                     
@@ -152,8 +152,8 @@
                 </div>
 				<div class="col-md-4 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label">Preferred Age</label>
-               		<input class="form-control" required name="preferred_age" placeholder="e.g. 25years" value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>" type="text" >
+                    <label class="control-label">Preferred Age(To)</label>
+               		<input class="form-control" required name="preferred_age_to" placeholder="e.g. 35years" value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>" type="text" >
                 </div>
 				</div>
                 <div class="col-md-4 col-sm-12">
