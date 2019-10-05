@@ -121,7 +121,7 @@
               
               <hr class="invis">
               <div class="row">
-                <div class="col-md-6 col-sm-12">
+                <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label">Preferred Age</label>
                		<input class="form-control" required name="preferred_age" placeholder="e.g. 25years" value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>" type="text" >
@@ -150,7 +150,13 @@
                     
                   </div>
                 </div>
-                <div class="col-md-6 col-sm-12">
+				<div class="col-md-4 col-sm-12">
+                  <div class="formrow">
+                    <label class="control-label">Preferred Age</label>
+               		<input class="form-control" required name="preferred_age" placeholder="e.g. 25years" value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>" type="text" >
+                </div>
+				</div>
+                <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label">Working Hours</label>
                     <input type="text"  name="working_hours" value="<?php 
