@@ -46,7 +46,7 @@
 
                                 <tr>
                                   <td>Passing Year:</td>
-                                <td><?php echo $v_education->js_year_of_passing; ?></td>
+                                <td><?php echo $v_education->passing_year; ?></td>
                                 </tr>
      
                               </tbody>
