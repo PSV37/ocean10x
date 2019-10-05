@@ -125,8 +125,8 @@
                 </div>
                 <?php $career = ($this->job_career_model->js_careerinfo_by_seeker($v_applicant->job_seeker_id));?>
                 <div class="col-md-2">
-                  <div class="moreinfo"><i class="fa fa-briefcase" aria-hidden="true"></i><?=(!empty($career[0]->js_career_exp)?$career[0]->js_career_exp:'');?> Years</div>
-                        <div class="moreinfo"><i>$</i> 
+                  <div class="moreinfo"><i class="fa fa-briefcase" aria-hidden="true"></i><?=(!empty($career[0]->js_career_exp)?$career[0]->js_career_exp:'');?></div>
+                        <div class="moreinfo"><i>Rs.</i> 
  <?php echo $this->job_apply_model->expedited_salary($v_applicant->job_seeker_id,$job_id)[0]->expected_salary; ?> 
         </div>
                   <div class="sorted">
