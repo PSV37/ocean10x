@@ -153,7 +153,7 @@
                 <div class="col-md-6 col-sm-12">
                   <div class="formrow">
                     <label class="control-label">Working Hours</label>
-                    <input type="text"  name="working_hours" value="<?php 
+                    <input type="time"  name="working_hours" value="<?php 
 						 if(!empty($job_info->working_hours)){
 							echo $job_info->working_hours;
 						 }
