@@ -141,7 +141,10 @@ class Employer extends MY_Employer_Controller
                         redirect('job/show/'.$job_info['job_slugs']);
                     }
                 } else {
-                    $this->load->view('fontend/employer/job_post');
+					$city = $this->Master_model->getMaster('city',$where=false);
+					$country = $this->Master_model->getMaster('country',$where=false);
+					$state = $this->Master_model->getMaster('state',$where=false);
+                    $this->load->view('fontend/employer/job_post', compact('company_info', 'city', 'country', 'state'));
                 }
             }
 

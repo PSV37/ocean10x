@@ -53,22 +53,39 @@
                   </div>
                 </div>
               </div>
+			  <hr class="invis">
+									<div class="formrow">
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-4">
+									  <select  name="country_id" class="form-control" onchange="getStates(this.value)">
+										<option value="">Select Country</option>
+										<?php foreach($country as $key){?>
+										<option value="<?php echo $key['country_id']; ?>"<?php if($company_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
+										<?php } ?>
+									  </select>
+                                        </div>
+									
+										<div class="col-md-4 col-sm-4">
+										<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+										 <option value="">Select Country First</option>
+									     <?php foreach($state as $val){?>
+										<option value="<?php echo $val['state_id']; ?>"<?php if($company_info->state_id==$val['state_id']){ echo "selected"; }?>><?php echo $val['state_name']; ?></option>
+											<?php } ?>
+										</select>
+                                        </div>
+										
+										 <div class="col-md-4 col-sm-4">
+										 <select  name="city_id" id="city_id" class="form-control">
+										 <option value="">Select State First</option>
+										 <?php foreach($city as $valu){?>
+										<option value="<?php echo $valu['id']; ?>"<?php if($company_info->city_id==$valu['id']){ echo "selected"; }?>><?php echo $valu['city_name']; ?></option>
+										<?php } ?>
+										</select>
+                                        </div>
+                                    </div><!-- end row -->
+                                    </div>
               <hr class="invis">
               <div class="row">
-                <div class="col-md-6 col-sm-12">
-                  <div class="formrow">
-                    <label class="control-label mandatory">Vacancy Location *</label>
-                    <select name="job_location" required class="form-control" data-style="btn-default" data-live-search="true">
-                      <option value="">Select Location</option>
-                      <?php if(!empty($job_info->job_location)) {
-                                                echo $this->job_location_model->selected($job_info->job_location);
-                                                } else {
-                                                   echo $this->job_location_model->selected();
-                                                }
-                                                 ?>
-                    </select>
-                  </div>
-                </div>
                 <div class="col-md-6 col-sm-12">
                   <div class="formrow">
                     <label class="control-label mandatory">Vacancy Level *</label>
