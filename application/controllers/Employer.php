@@ -110,7 +110,9 @@ class Employer extends MY_Employer_Controller
                         'benefits'           => $this->input->post('benefits'),
                         'experience'           => $this->input->post('experience'),
                         
-                        'job_location'       => $this->input->post('job_location'),
+                        'country_id'       => $this->input->post('country_id'),
+						'state_id'       => $this->input->post('state_id'),
+						'city_id'       => $this->input->post('city_id'),
                         'job_nature'         => $this->input->post('job_nature'),
                         'job_edu'            => $this->input->post('job_edu'),
                         'no_jobs'            => $this->input->post('no_jobs'),
