@@ -322,3 +322,41 @@
 document.getElementsByClassName('form-control').innerHTML+="<br />";
 </script>
 <?php $this->load->view("fontend/layout/footer.php"); ?>
+
+
+
+<script>
+	  function getStates(id){
+		if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Employer/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state_id').html(res);
+                }
+				
+            }); 
+          }
+   
+	   }
+	   
+	   </script>
+	   
+	   <script>
+	  function getCitys(id){
+		if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Employer/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city_id').html(res);
+                }
+				
+            }); 
+          }
+   
+	   }
+	   
+	   </script> 
