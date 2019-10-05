@@ -55,20 +55,6 @@
               </div>
               <hr class="invis">
               <div class="row">
-                <div class="col-md-6 col-sm-12">
-                  <div class="formrow">
-                    <label class="control-label mandatory">Vacancy Location *</label>
-                    <select name="job_location" required class="form-control" data-style="btn-default" data-live-search="true">
-                      <option value="">Select Location</option>
-                      <?php if(!empty($job_info->job_location)) {
-                                                echo $this->job_location_model->selected($job_info->job_location);
-                                                } else {
-                                                   echo $this->job_location_model->selected();
-                                                }
-                                                 ?>
-                    </select>
-                  </div>
-                </div>
 									<div class="col-md-4 col-sm-12">
 									<div class="formrow">
 									  <select  name="country_id" class="form-control" onchange="getStates(this.value)">
