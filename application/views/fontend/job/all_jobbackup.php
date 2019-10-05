@@ -99,7 +99,7 @@ h4.panel-title > .small, .panel-title > .small > a, .panel-title > a, .panel-tit
                         <p><?php echo strip_tags(substr($v_job->job_desc,0,120)); ?></p>
                         
                         <div class="greybox">
-          	<div class="infobox"><i class="fa fa-map-marker" aria-hidden="true"></i> <span><?php $v_job->job_location; ?></span></div>
+          	<div class="infobox"><i class="fa fa-map-marker" aria-hidden="true"></i> <span><?php $joblocation=$this->job_location_model->get($v_job->job_location); echo $joblocation->country_name;  ?></span></div>
             <div class="infobox"><i class="fa fa-file-text" aria-hidden="true"></i> <?php echo $v_job->experience;?> year(s)</div>
             <div class="infobox"><i class="fa fa-calendar" aria-hidden="true"></i> <?php // echo $v_job->created_at; ?>
             
