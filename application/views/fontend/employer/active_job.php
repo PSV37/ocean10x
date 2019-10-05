@@ -34,7 +34,7 @@
                                    
                                    <div class="posted"><strong>Published:</strong> <?php if(!is_null($v_companyjobs->created_at)) { echo date('F j Y',strtotime($v_companyjobs->created_at)); } ?></div>
                                    <div class="posted"><strong>Deadline:</strong> 
-								   <?php echo ($v_companyjobs->job_deadline; ?>
+								   <?php echo $v_companyjobs->job_deadline; ?>
                                </div>
                                     
                                 </div>
