@@ -122,7 +122,7 @@
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label">Salary Range</label>
-                    <input type="text" name="salary_range" value="<?php 
+                    <input type="number" name="salary_range" value="<?php 
                                                  if(!empty($job_info->salary_range)){
                                                     echo $job_info->salary_range;
                                                  }
@@ -136,7 +136,7 @@
               <div class="row">
                 <div class="col-md-6 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label">Preferred Age</label>
+                    <label class="control-label">Preferred Age(From)</label>
                     <div class="row">
                     	<div class="col-md-6"><select name="preferred_age_from" class="form-control" id="preferred_age_from" required>
                       <option value="" selected>Age From</option>
@@ -152,6 +152,7 @@
 									?>
                     </select></div>
                         <div class="col-md-6"><select name="preferred_age_to" class="form-control" id="preferred_age_to" required>
+						<label class="control-label">Preferred Age(To)</label>
                       <option value="" selected>Age To</option>
                       <?php
 					  
