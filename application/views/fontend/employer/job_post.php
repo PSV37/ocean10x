@@ -174,11 +174,18 @@
                 <div class="col-md-6 col-sm-12">
                   <div class="formrow">
                     <label class="control-label mandatory">Vacancy Deadline *</label>
-                    <input class="datepicker form-control" data-date-format="dd/mm/yyyy" required name="job_deadline" value="<?php 
-						 if(!empty($job_info->job_deadline)){
-							echo $job_info->job_deadline;
-						 }
-					?>" class="form-control" >
+                    <input type="date" name="job_deadline" class="form-control" id="job_deadline_day" required value="">
+                      <?php
+					  
+										for($i=1;$i<=31;$i++){
+											$selected='';
+											if($job_info->job_deadline==$i){
+												$selected='selected';
+											}
+												
+											echo '<option value="'.$i.'" '.$selected.'>'.$i.'</option>';	
+										}
+									?>
                     
                     <?php /*?><div class="row">
                     	<div class="col-md-4"><select name="job_deadline_day" class="form-control" id="job_deadline_day" required>
