@@ -197,7 +197,7 @@
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Years of Experience</label>
-                    <input class="form-control" type="text"  name="experience" value="<?php 
+                    <input class="form-control"  name="experience" value="<?php 
                                                  if(!empty($job_info->experience)){
                                                     echo $job_info->experience;
                                                  }
