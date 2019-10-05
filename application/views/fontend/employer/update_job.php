@@ -126,7 +126,7 @@
                                                  if(!empty($job_info->salary_range)){
                                                     echo $job_info->salary_range;
                                                  }
-                                            ?>" class="form-control" >
+                                            ?>" class="form-control" min="1">
                   </div>
                 </div>
               </div>
@@ -191,7 +191,7 @@
                                                  if(!empty($job_info->no_jobs)){
                                                     echo $job_info->no_jobs;
                                                  }
-                                            ?>" />
+                                            ?>" type="number" min="1"/>
                   </div>
                 </div>
                 <div class="col-md-4 col-sm-12">
@@ -201,7 +201,7 @@
                                                  if(!empty($job_info->experience)){
                                                     echo $job_info->experience;
                                                  }
-                                            ?>" />
+                                            ?>"  type="number" min="1"/>
                   </div>
                 </div>
                 <div class="col-md-4 col-sm-12">
