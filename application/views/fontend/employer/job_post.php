@@ -80,7 +80,7 @@
                                     </div>
               <hr class="invis">
               <div class="row">
-                <div class="col-md-6 col-sm-12">
+                <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label mandatory">Vacancy Level *</label>
                     <select name="job_level" required class="form-control" data-style="btn-default" data-live-search="true">
@@ -94,12 +94,8 @@
                     </select>
                   </div>
                 </div>
-              </div>
-              <!-- end row -->
-              
-              <hr class="invis">
-              <div class="row">
-                <div class="col-md-8 col-sm-12">
+				
+				<div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label">Vacancy Nature </label>
                     <select name="job_nature" class="form-control" data-style="btn-default" data-live-search="true">
@@ -120,6 +116,7 @@
                   </div>
                 </div>
               </div>
+              <!-- end row -->
               <!-- end row -->
               
               <hr class="invis">
