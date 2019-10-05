@@ -42,7 +42,7 @@ h4.panel-title > .small, .panel-title > .small > a, .panel-title > a, .panel-tit
             
             <div class="pageSearch">
       <div class="row">
-        <div class="col-md-3"><!--<a href="#lookingjob" role="button" data-toggle="modal" class="btn"><i class="fa fa-file-text" aria-hidden="true"></i> Upload Your Resume</a>--></div>
+        <!--<div class="col-md-3"><a href="#lookingjob" role="button" data-toggle="modal" class="btn"><i class="fa fa-file-text" aria-hidden="true"></i> Upload Your Resume</a></div>-->
         <div class="col-md-9">
           <div class="searchform">
             <div class="row">
