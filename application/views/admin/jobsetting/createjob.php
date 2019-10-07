@@ -451,6 +451,50 @@
           }
    
     }
+
+ $(document).ready(function(){
+
+    function getStates_load(){
+        var id = $('#country_id').val();
+
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/Job_posting/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state_id').html(res);
+                    $('#state_id').val(<?php echo $job_info['state_id']; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+    function getCitys_load(){
+        var id = $('#state_id').val();
+
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/Job_posting/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city_id').html(res);
+                    $('#city_id').val(<?php echo $job_info['city_id']; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+
+
+       getStates_load();
+       getCitys_load();
+    });
+
+
 // To get education specialization  by Level
     function getEducationSpecial(id){
      
