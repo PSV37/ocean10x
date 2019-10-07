@@ -134,11 +134,6 @@
                                     <div class="row">
                                       <div class="col-md-12 col-sm-12"> 
                                         <label class="control-label ">Skill Set<span class="required">*</span></label><br>
-                                        <!-- <?php 
-                                          if(!empty($skills_data)) foreach ($skills_data as $skill_value) {
-                                        ?> 
-                                        <input type="checkbox" name="skill_set[]" id="skill_set<?php echo $skill_value['id'];?>" value="<?php echo $skill_value['id'];?>"> <?php echo $skill_value['skill_name'];?>
-                                        <?php } ?> -->
                                         <p id="skills_result"></p>
                                       </div>
                                     </div>
