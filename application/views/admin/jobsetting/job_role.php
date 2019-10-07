@@ -109,11 +109,11 @@
                             <td><?php
                                 if(!empty($skills_data)) foreach ($skills_data as $skill_value) {
 
-                                  $skills="";
+                                  $skills=array();
                                   for($i=0;$i<sizeof($skill);$i++){
 
                                     if($skill_value['id']==$skill[$i]){
-                                      $skills = $skill_value['skill_name'];
+                                      $skills[] = $skill_value['skill_name'];
                                       break;
                                     }
                                 }
