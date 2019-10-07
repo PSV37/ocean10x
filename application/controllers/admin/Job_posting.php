@@ -142,9 +142,9 @@ function getSkillsByRole() {
     $whereres = "id='$id'";
     $role_data= $this->Master_model->get_master_row('job_role',$select = FALSE,$whereres);
 
-    $sk = $data['skill_set'];
+    echo $sk = $data['skill_set'];
     echo "tt";
-   //
+   var_dump($sk);
    // explode(',', string)
     $where_sk= "id IN (".$sk.") AND status=1";
     $select_sk = "skill_name ,id";
