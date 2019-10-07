@@ -21,7 +21,9 @@ class Job_posting extends MY_Controller
     public function index()
     {
         $title = "Create New Job";
-        $this->load->view('admin/jobsetting/createjob', compact('title'));
+        $country = $this->Master_model->getMaster('country');
+
+        $this->load->view('admin/jobsetting/createjob', compact('country','title'));
     }
 
     public function save_job($id = null)
