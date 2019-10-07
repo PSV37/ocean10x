@@ -114,7 +114,7 @@
                                   break;
                                 }
                             }
-
+                        }
                         ?>
                         <tr>
                             <td><?php echo $key; ?></td>
