@@ -64,9 +64,9 @@
                                    <div class="col-md-6">
                                         <!-- / Job Category -->
                                         <div class="form-group">
-                                            <label>Job Category <span class="required">*</span></label>
+                                            <label>Job Industry <span class="required">*</span></label>
                                             <select name="job_category" class="form-control col-sm-5">
-                                                <option value="">Select Job Category</option>
+                                                <option value="">Select Job Industry</option>
                                                 <?php if(!empty($job_info)) {
                                                 echo $this->job_category_model->selected($job_info->job_category);
                                                 } else {
@@ -82,7 +82,7 @@
 
 
                             <div class="row">
-                               <div class="col-md-6">
+                               <div class="col-md-4">
                                      <!-- /. Job Salary Range -->
                                         <div class="form-group">
                                             <label>Salary Offered<span class="required">*</span></label>
@@ -91,7 +91,7 @@
                                         </div>
                                         </div>
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                      <!-- /. Job level -->
                                         <div class="form-group">
                                             <label>Job Level <span class="required">*</span></label>
@@ -106,72 +106,72 @@
                                              
                                             </select>
                                         </div>
-                                        </div>
                                     </div>
 
-                            <div class="row">
-                                     
-                                          <div class="col-md-4 col-sm-12"> 
-                                          	<div class="formrow">  
+                                         <div class="col-md-4 col-sm-12"> 
+                                            <div class="formrow">  
                                             <label class="control-label ">Number of Vacancy </label>
                                             <input type="number" class="form-control"  name="no_jobs" value="<?php 
                                                  if(!empty($job_info->no_jobs)){
                                                     echo $job_info->no_jobs;
                                                  }
                                             ?>" />
-                                            </div></div>
-                                       <div class="col-md-4 col-sm-12"> 
-                                          	<div class="formrow">  
+                                          </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                         
+                                        <div class="col-md-4 col-sm-12"> 
+                                          <div class="formrow">  
                                             <label class="control-label ">Years of Experience  </label>
                                             <input type="number" class="form-control"  name="experience" value="<?php 
                                                  if(!empty($job_info->experience)){
                                                     echo $job_info->experience;
                                                  }
                                             ?>" />
-                                            </div></div>
+                                          </div>
+                                        </div>
                                       
                                             
                                           <div class="col-md-4 col-sm-12"> 
                                           	<div class="formrow">  
-                                            <label class="control-label ">Required Education   </label>
+                                              <label class="control-label ">Required Education   </label>
 
-                                         <select name="job_edu" class="form-control"  data-style="btn-default" data-live-search="true">
-                                             <option value="">Select Education </option>
-                                                <?php if(!empty($job_info->job_edu)) {
-                                                echo $this->education_level_model->selected($job_info->job_edu);
-                                                } else {
-                                                   echo $this->education_level_model->selected();
-                                                }
-                                                 ?>
-                                            </select> 
-
-                                            
-                                            </div></div></div>
-</hr>
-
-
-
-
-                                    <div class="row">
-                                    <div class="col-md-6">
+                                              <select name="job_edu" class="form-control"  data-style="btn-default" data-live-search="true">
+                                               <option value="">Select Education </option>
+                                                  <?php if(!empty($job_info->job_edu)) {
+                                                  echo $this->education_level_model->selected($job_info->job_edu);
+                                                  } else {
+                                                     echo $this->education_level_model->selected();
+                                                  }
+                                                   ?>
+                                              </select> 
+                                            </div>
+                                          </div>
+                                          <div class="col-md-4">
                                      <!-- /. Job Natuere -->
-                                        <div class="form-group">
-                                            <label>Job Nature <span class="required">*</span></label>
-                                            <select name="job_nature" class="form-control col-sm-5">
+                                            <div class="form-group">
+                                              <label>Job Nature <span class="required">*</span></label>
+                                              <select name="job_nature" class="form-control col-sm-5">
                                                 <option value="">Select Job Nature</option>
-                                               <?php if(!empty($job_info)) {
-                                                echo $this->job_nature_model->selected($job_info->job_nature);
-                                                } else {
-                                                   echo $this->job_nature_model->selected();
-                                                }
-                                                 ?>                                             
-                                            </select>
-                                        </div>
+                                                   <?php if(!empty($job_info)) {
+                                                    echo $this->job_nature_model->selected($job_info->job_nature);
+                                                    } else {
+                                                       echo $this->job_nature_model->selected();
+                                                    }
+                                                     ?>                                             
+                                                </select>
+                                            </div>
+                                          </div>
                                     </div>
-                                    <div class="col-md-6">
-                                     <!-- /. Job Location -->
+                                    </hr>
+                                  <div class="row">
+                                
+                                      <div class="col-md-4">
+                                        <!-- /. Job Location -->
                                         <div class="form-group">
-                                            <label>Job Location <span class="required">*</span></label>
+                                            <label>Job Country <span class="required">*</span></label>
                                             <select name="job_location" class="form-control col-sm-5">
                                                 <option value="">Select Job Location</option>
                                               <?php if(!empty($job_info)) {
@@ -182,10 +182,41 @@
                                                  ?>                                             
                                             </select>
                                         </div>
-                                       </div>
-                                       </div>
-                                       <div class="row">
-                              <div class="col-md-6">
+                                      </div>
+                                      <div class="col-md-4">
+                                        <!-- /. Job Location -->
+                                        <div class="form-group">
+                                            <label>Job State <span class="required">*</span></label>
+                                            <select name="job_location" class="form-control col-sm-5">
+                                                <option value="">Select Job Location</option>
+                                              <?php if(!empty($job_info)) {
+                                                echo $this->job_location_model->selected($job_info->job_location);
+                                                } else {
+                                                   echo $this->job_location_model->selected();
+                                                }
+                                                 ?>                                             
+                                            </select>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4">
+                                        <!-- /. Job Location -->
+                                        <div class="form-group">
+                                            <label>Job City <span class="required">*</span></label>
+                                            <select name="job_location" class="form-control col-sm-5">
+                                                <option value="">Select Job Location</option>
+                                              <?php if(!empty($job_info)) {
+                                                echo $this->job_location_model->selected($job_info->job_location);
+                                                } else {
+                                                   echo $this->job_location_model->selected();
+                                                }
+                                                 ?>                                             
+                                            </select>
+                                        </div>
+                                      </div>
+
+                                  </div>
+                                <div class="row">
+                                  <div class="col-md-6">
 
                                  <!-- /.Working Hours-->
                                 <div class="form-group">

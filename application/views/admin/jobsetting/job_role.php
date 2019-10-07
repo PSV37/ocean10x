@@ -101,8 +101,8 @@
                     <tbody>
                     <?php $key = 1 ;?>
                     <?php if (!empty($job_role_data)): foreach ($job_role_data as $st_row) : 
-                            $skill =  explode(',',  $st_row['skill_set']);
-                        ?>
+                        $skill =  explode(',',  $st_row['skill_set']);
+                    ?>
                         <tr>
                             <td><?php echo $key; ?></td>
                             <td><?php echo $st_row['job_role_title']; ?></td>
