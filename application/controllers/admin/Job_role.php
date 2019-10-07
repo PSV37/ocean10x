@@ -33,7 +33,7 @@ class Job_role extends MY_Controller
         public function save_role($id = null){
           
             $user_id = $this->session->userdata('admin_user_id');
-            $skill_set = $this->input->post('job_role');
+            $skill_set = $this->input->post('skill_set');
 
             $role_array=array(
                 'job_role_title' => $this->input->post('job_role_title'),

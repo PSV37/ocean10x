@@ -34,7 +34,7 @@
                 <!-- /.box-header -->
                 <div class="box-background">
                 <!-- form start -->
-                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/job_role/save_role/<?php  if (!empty($selectedit)) { foreach($selectedit as $row)
+                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/job_role/save_role/<?php  if (!empty($edit_role_info)) { foreach($edit_role_info as $row)
                         echo $row['id'];
                       }
                      ?>" method="post">
@@ -48,16 +48,30 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Role Title <span class="required">*</span></label>
-                                      <input type="text" name="job_role_title" class="form-control" value="<?php if (!empty($selectedit)) echo $row['job_role_title'];?>" placeholder='Role Title' required>
+                                      <input type="text" name="job_role_title" class="form-control" value="<?php if (!empty($edit_role_info)) echo $row['job_role_title'];?>" placeholder='Role Title' required>
                                     </div>
                                 </div>
                                 <div class="panel-body"></div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Skill Set <span class="required">*</span></label> <br>
-                                        <?php if(!empty($skills_data)) foreach ($skills_data as $skill_value) { ?> 
+                                        <?php 
+                                            if (!empty($edit_role_info)) 
+                                            $aa =  explode(',',  $row['skill_set']);
+
+                                            if(!empty($skills_data)) foreach ($skills_data as $skill_value) {
+
+                                              $checked="";
+                                              for($i=0;$i<sizeof($aa);$i++){
+
+                                                if($skill_value['skill_name']==$aa[$i]){
+                                                  $checked ="checked";
+                                                  break;
+                                                }
+                                            }
+                                        ?> 
                                             
-                                        <input type="checkbox" name="skill_set[]" id="skill_set[]" value="<?php if (!empty($selectedit)) echo $row['skill_set'];?>" required> <?php echo $skill_value['skill_name'];?>
+                                        <input type="checkbox"  <?php echo $checked; ?> name="skill_set[]" id="skill_set[]" value="<?php echo $skill_value['skill_name'];?>"> <?php echo $skill_value['skill_name'];?>
                                         <?php } ?>
                                     </div>
                                 </div>
