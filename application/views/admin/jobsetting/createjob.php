@@ -464,7 +464,7 @@
                 data:{id:id},
                 success:function(res){
                     $('#state_id').html(res);
-                    $('#state_id').val(<?php echo $job_info['state_id']; ?>);
+                    $('#state_id').val(<?php echo $job_info->state_id; ?>);
                 }
                 
             }); 
@@ -481,7 +481,7 @@
                 data:{id:id},
                 success:function(res){
                     $('#city_id').html(res);
-                    $('#city_id').val(<?php echo $job_info['city_id']; ?>);
+                    $('#city_id').val(<?php echo $job_info->city_id; ?>);
                 }
                 
             }); 
