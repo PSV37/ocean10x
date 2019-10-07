@@ -134,7 +134,7 @@
                                     <div class="row">
                                       <div class="col-md-12 col-sm-12"> 
                                         <label class="control-label ">Skill Set<span class="required">*</span></label><br>
-                                        <p id="skills_result"></p>
+                                        <div id="skills_result"></div>
                                       </div>
                                     </div>
                                     <div class="panel-body"></div>
@@ -484,6 +484,15 @@
                       
                    } 
             });
+        $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/Job_posting/getSkillsByRole',
+                data:{id:id},
+                success:function(res){
+                  $('#skills_result').html(res);
+                }
+        
+            }); 
       }
 }
 
