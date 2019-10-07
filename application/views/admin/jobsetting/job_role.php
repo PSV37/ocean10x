@@ -64,14 +64,14 @@
                                               $checked="";
                                               for($i=0;$i<sizeof($aa);$i++){
 
-                                                if($skill_value['skill_name']==$aa[$i]){
+                                                if($skill_value['id']==$aa[$i]){
                                                   $checked ="checked";
                                                   break;
                                                 }
                                             }
                                         ?> 
                                             
-                                        <input type="checkbox"  <?php echo $checked; ?> name="skill_set[]" id="skill_set[]" value="<?php echo $skill_value['skill_name'];?>"> <?php echo $skill_value['skill_name'];?>
+                                        <input type="checkbox"  <?php echo $checked; ?> name="skill_set[]" id="skill_set[]" value="<?php echo $skill_value['id'];?>"> <?php echo $skill_value['skill_name'];?>
                                         <?php } ?>
                                     </div>
                                 </div>
