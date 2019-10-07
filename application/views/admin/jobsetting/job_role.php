@@ -114,7 +114,7 @@
 
                                     if($skill_value['id']==$skill[$i]){
                                       $skills[] = $skill_value['skill_name'];
-                                     $view_skill = implode(',', $skills)
+                                     $view_skill = implode(',', $skills);
                                       break;
                                     }
                                 }
