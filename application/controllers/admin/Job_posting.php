@@ -161,7 +161,7 @@ function getSkillsByRole() {
                                     
     }
     else{
-        $result .='Skills Not Foundasdsaads ';
+        $result .='Skills Not Found ';
     }
      echo $result;    
   //  echo json_encode($data); 
