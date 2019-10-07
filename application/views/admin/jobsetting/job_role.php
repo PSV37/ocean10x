@@ -117,7 +117,7 @@
                                       break;
                                     }
                                 }
-                                echo implode(',', $skills); } ?>
+                                echo implode(',', $skills); echo 'asdad';} ?>
                                     
                                 </td>
                             <td>
