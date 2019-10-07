@@ -385,7 +385,7 @@
     if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>Job_posting/getstate',
+                url:'<?php echo base_url();?>admin/Job_posting/getstate',
                 data:{id:id},
                 success:function(res){
                   $('#state_id').html(res);
@@ -399,7 +399,7 @@
     if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>Job_posting/getcity',
+                url:'<?php echo base_url();?>admin/Job_posting/getcity',
                 data:{id:id},
                 success:function(res){
                     $('#city_id').html(res);
