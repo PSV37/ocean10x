@@ -104,22 +104,25 @@
 
                             $skill =  explode(',',  $st_row['skill_set']);
 
-                            if(!empty($skills_data)) foreach ($skills_data as $skill_value) {
-
-                              $skills="";
-                              for($i=0;$i<sizeof($skill);$i++){
-
-                                if($skill_value['id']==$skill[$i]){
-                                  $skills = $skill_value['skill_name'];
-                                  break;
-                                }
-                            }
-                        }
+                            
                         ?>
                         <tr>
                             <td><?php echo $key; ?></td>
                             <td><?php echo $st_row['job_role_title']; ?></td>
-                            <td><?php echo $skills; ?></td>
+                            <td><?php
+                                if(!empty($skills_data)) foreach ($skills_data as $skill_value) {
+
+                                  $skills=array();
+                                  for($i=0;$i<sizeof($skill);$i++){
+
+                                    if($skill_value['id']==$skill[$i]){
+                                      $skills = $skill_value['skill_name'];
+                                      break;
+                                    }
+                                }
+                                echo $skills; } ?>
+                                    
+                                </td>
                             <td>
                                 <?php echo btn_edit('admin/job_role/edit_role/' . $st_row['id']); ?>
                                 <?php echo btn_delete('admin/job_role/delete_role/' . $st_row['id']); ?>
