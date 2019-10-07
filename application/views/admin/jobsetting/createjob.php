@@ -330,27 +330,32 @@
                             <!-- /.JOb Descption -->
                                  <div class="row">
                                       
-                                    <div class="col-md-4 col-sm-12"> 
+                                    <div class="col-md-12 col-sm-12"> 
                                    	  <div class="formrow">   
                                         <label class="control-label mandatory">Vacancy Description <span class="required">*</span></label>
                                           <textarea name="job_desc" required class="form-control ckeditor" required><?php if(!empty($job_info)) echo $job_info->job_desc; ?></textarea>
                                       </div>
                                     </div>
-                                    <div class="col-md-4 col-sm-12"> 
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-md-12 col-sm-12"> 
                                       <div class="formrow">   
                                         <label class="control-label mandatory">Other Skills Description </label>
                                         <textarea name="education" required class="form-control ckeditor" ><?php if(!empty($job_info)) echo $job_info->education; ?></textarea>
+                                      </div>
                                     </div>
-                                        </div>
- <div class="col-md-4 col-sm-12"> 
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-md-12 col-sm-12"> 
                                        	<div class="formrow">   
                                             <label class="control-label mandatory">Benefits</label>
-                                               <textarea name="benefits" required class="form-control" ><?php if(!empty($job_info)) echo $job_info->benefits; ?></textarea>
-</div>
-                                        </div>
+                                               <textarea name="benefits" class="form-control ckeditor" ><?php if(!empty($job_info)) echo $job_info->benefits; ?></textarea>
+                                      </div>
+                                    </div>
+                                  </div>
                                       
 
-                            </div>
+                            
                             <!-- /.box-body -->
                         </div>
                     </div>
