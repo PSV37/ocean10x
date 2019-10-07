@@ -45,8 +45,10 @@ class Job_posting extends MY_Controller
 
             'job_edu'            => $this->input->post('job_edu'),
             'edu_specialization' => $this->input->post('job_edu_special'),   //new added field
-
             'job_category'       => $this->input->post('job_category'),
+
+            'job_role'           => $this->input->post('job_role'),   //new added field
+            'skills_required'    => implode(',', $this->input->post('skill_set')), //new added field
            
             'job_location'       => $this->input->post('country_id'),
             'state_id'           => $this->input->post('state_id'),

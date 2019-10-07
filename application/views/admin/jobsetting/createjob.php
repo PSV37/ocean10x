@@ -123,7 +123,7 @@
                                               <option value="">Select Role</option>
                                               <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
                                                  ?> 
-                                                <option value="<?php echo $role_value['id']; ?>"<?php if(!empty($job_info)) if($job_info->job_level==$role_value['id']) echo 'selected'; ?>><?php echo $role_value['job_role_title']; ?></option>
+                                                <option value="<?php echo $role_value['id']; ?>"<?php if(!empty($job_info)) if($job_info->job_role==$role_value['id']) echo 'selected'; ?>><?php echo $role_value['job_role_title']; ?></option>
                                               <?php } ?>       
                                             </select>
                                         </div>
