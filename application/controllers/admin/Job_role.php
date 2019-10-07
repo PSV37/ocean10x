@@ -33,25 +33,27 @@ class Job_role extends MY_Controller
         public function save_role($id = null){
           
             $user_id = $this->session->userdata('admin_user_id');
-            
-            $state_dt=array(
-                'skill_name' => $this->input->post('job_role'),
+            $skill_set = $this->input->post('job_role');
+
+            $role_array=array(
+                'job_role_title' => $this->input->post('job_role_title'),
+                'skill_set' => implode(',', $skill_set),
             );
 
             if(empty($id)){
-                $state_dt['created_date']=date('Y-m-d H:i:s');
-                $state_dt['created_by']=$user_id;
+                $role_array['created_on']=date('Y-m-d H:i:s');
+                $role_array['created_by']=$user_id;
 
-                $this->Master_model->master_insert($state_dt,'job_role');
+                $this->Master_model->master_insert($role_array,'job_role');
                
                 redirect('admin/job_role');
             }
             else {
-                $state_dt['updated_date']=date('Y-m-d H:i:s');
-                $state_dt['updated_by']=$user_id;
+                $role_array['updated_on']=date('Y-m-d H:i:s');
+                $role_array['updated_by']=$user_id;
 
                 $where['id']=$id;
-                $this->Master_model->master_update($state_dt,'job_role',$where);
+                $this->Master_model->master_update($role_array,'job_role',$where);
                
                 redirect('admin/job_role');
             }
@@ -59,24 +61,28 @@ class Job_role extends MY_Controller
 
     public function delete_role($id) {
         
-        $state_status = array(
+        $role_status = array(
             'status'=>0,
         );
         $where_del['id']=$id;
-        $this->Master_model->master_update($state_status,'job_role',$where_del);
+        $this->Master_model->master_update($role_status,'job_role',$where_del);
         redirect('admin/job_role');
     }
 
     public function edit_role($id){
-        $data['title']="Skills Master Edit";
+        $data['title']="Role Master Edit";
 
         $where_st = "id='$id'";
-        $selectedit = "skill_name, id";
-        $data['edit_skill_info'] = $this->Master_model->getMaster('job_role',$where_st,$join = FALSE, $order = false, $field = false, $selectedit,$limit=false,$start=false, $search=false);
+        $selectedit = "job_role_title, skill_set, id";
+        $data['edit_role_info'] = $this->Master_model->getMaster('job_role',$where_st,$join = FALSE, $order = false, $field = false, $selectedit,$limit=false,$start=false, $search=false);
         
         $where_cn= "status=1";
-        $select = "skill_name, id";
-        $data['skills_data'] = $this->Master_model->getMaster('job_role',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
+        $select = "job_role_title, skill_set ,id";
+        $data['job_role_data'] = $this->Master_model->getMaster('job_role',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
+
+        $where_sk= "status=1";
+        $select_sk = "skill_name ,id";
+        $data['skills_data'] = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=false,$start=false, $search=false);
         
         $this->load->view('admin/jobsetting/job_role',$data);
     }
