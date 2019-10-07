@@ -101,10 +101,7 @@
                     <tbody>
                     <?php $key = 1 ;?>
                     <?php if (!empty($job_role_data)): foreach ($job_role_data as $st_row) : 
-
                             $skill =  explode(',',  $st_row['skill_set']);
-
-                            
                         ?>
                         <tr>
                             <td><?php echo $key; ?></td>
@@ -112,7 +109,7 @@
                             <td><?php
                                 if(!empty($skills_data)) foreach ($skills_data as $skill_value) {
 
-                                  $skills=array();
+                                  $skills="";
                                   for($i=0;$i<sizeof($skill);$i++){
 
                                     if($skill_value['id']==$skill[$i]){
@@ -120,7 +117,7 @@
                                       break;
                                     }
                                 }
-                                echo $skills; } ?>
+                                echo implode(',', $skills); } ?>
                                     
                                 </td>
                             <td>
