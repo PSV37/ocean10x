@@ -144,7 +144,7 @@ function getSkillsByRole() {
 
     $sk = $data['skill_set'];
    // explode(',', string)
-    $where_sk= "id IN ($sk) AND status=1";
+    $where_sk= "id IN (".$data['skill_set'].") AND status=1";
     $select_sk = "skill_name ,id";
     $skills = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=false,$start=false, $search=false);
        echo $this->db->last_query();
