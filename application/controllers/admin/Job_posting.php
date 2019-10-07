@@ -148,7 +148,7 @@ function getSkillsByRole() {
         $where_sk= "id IN (".$sk.") AND status=1";
         $select_sk = "skill_name ,id";
         $skills = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=false,$start=false, $search=false);
-          // echo $this->db->last_query();
+          
            $result = '';
             if(!empty($skills)){ 
                 foreach($skills as $skill_row){
@@ -164,7 +164,6 @@ function getSkillsByRole() {
         $result .='Skills Not Found ';
     }
      echo $result;    
-  //  echo json_encode($data); 
 } 
 
 

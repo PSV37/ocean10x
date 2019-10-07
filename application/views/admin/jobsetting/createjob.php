@@ -212,9 +212,9 @@
 
                                     <div class="col-md-4 col-sm-12"> 
                                       <div class="formrow">  
-                                        <label class="control-label">Required Education Level  </label>
+                                        <label class="control-label">Required Education Level  <span class="required">*</span></label>
 
-                                        <select name="job_edu" class="form-control"  data-style="btn-default" data-live-search="true" onchange="getEducationSpecial(this.value)">
+                                        <select name="job_edu" class="form-control"  data-style="btn-default" data-live-search="true" onchange="getEducationSpecial(this.value)" required="">
                                          <option value="">Select Level </option>
                                             <?php if(!empty($job_info->job_edu)) {
                                             echo $this->education_level_model->selected($job_info->job_edu);
@@ -228,9 +228,9 @@
 
                                     <div class="col-md-4 col-sm-12"> 
                                       <div class="formrow">  
-                                        <label class="control-label ">Required Education  </label>
+                                        <label class="control-label ">Required Education <span class="required">*</span></label>
 
-                                        <select name="job_edu_special" id="job_edu_special" class="form-control"  data-style="btn-default" data-live-search="true">
+                                        <select name="job_edu_special" id="job_edu_special" class="form-control"  data-style="btn-default" data-live-search="true" required="">
                                          <option value="">Select Education </option>
                                        
                                         </select> 
@@ -265,9 +265,8 @@
                                     <div class="col-md-4">
                                    <!-- /.Prefere Age -->
                                   <div class="form-group">
-                                      <label for="exampleInputEmail1">Preferred Age <span
-                                              class="required">*</span></label>
-                                      <input type="number" placeholder="Preferred Age" name="preferred_age" required
+                                      <label for="exampleInputEmail1">Preferred Age </label>
+                                      <input type="number" placeholder="Preferred Age" name="preferred_age"
                                              value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>"
                                              class="form-control">
                                       </div>
@@ -339,7 +338,7 @@
                                         </div>
  <div class="col-md-4 col-sm-12"> 
                                        	<div class="formrow">   
-                                            <label class="control-label mandatory">Education </label>
+                                            <label class="control-label mandatory">Other Skills Description </label>
                                                <textarea name="education" required class="form-control" ><?php if(!empty($job_info)) echo $job_info->education; ?></textarea>
 </div>
                                         </div>

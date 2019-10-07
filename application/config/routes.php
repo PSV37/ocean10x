@@ -151,7 +151,8 @@ $route['admin/public-demand/delete-demand/(:num)']="admin/Public_demand/delete_d
 
 
 //admin Job Setting Route 
-$route['admin/job-category']="admin/job_category";
+// $route['admin/job-category']="admin/job_category";
+$route['admin/industry-master']="admin/job_category";
 $route['admin/job-location']="admin/job_location";
 $route['admin/job-level']="admin/job_level";
 $route['admin/job-nature']="admin/job_nature";
@@ -163,7 +164,7 @@ $route['admin/state-master']="admin/state_master";
 $route['admin/city-master']="admin/city_master";
 $route['admin/department-master']="admin/department_master";
 $route['admin/designation-master']="admin/designation_master";
-$route['admin/industry-master']="admin/industry_master";
+// $route['admin/industry-master']="admin/industry_master";
 $route['admin/skill-master']="admin/skill_master";
 $route['admin/job-role']="admin/job_role";
 

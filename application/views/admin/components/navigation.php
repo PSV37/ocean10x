@@ -137,8 +137,11 @@
                   <a href='<?php echo base_url(); ?>/#'> <i class='glyphicon glyphicon-cog'></i><span>Job Settings</span> <i class='fa fa-angle-left pull-right'></i> </a>
                   <ul class='treeview-menu'>
                      <li <?php echo $this->company_profile_model->User_status_check(); ?> >
-                        <a href='<?php echo base_url(); ?>admin/job-category'> <i class='glyphicon glyphicon-plus'></i><span>Job Category</span></a>
+                        <a href='<?php echo base_url(); ?>admin/industry-master'> <i class='glyphicon glyphicon-plus'></i><span>Industry Master</span></a>
                      </li>
+                   <!--    <li <?php echo $this->company_profile_model->User_status_check(); ?> >
+                        <a href='<?php echo base_url(); ?>admin/job-category'> <i class='glyphicon glyphicon-plus'></i><span>Job Category</span></a>
+                     </li> -->
                   <!--    <li <?php echo $this->company_profile_model->User_status_check(); ?> >
                         <a href='<?php echo base_url(); ?>admin/job-location'> <i class='glyphicon glyphicon-plus'></i><span>Job Location</span></a>
                      </li> -->
@@ -186,9 +189,9 @@
                         <a href='<?php echo base_url(); ?>admin/designation-master'> <i class='glyphicon glyphicon-plus'></i><span>Designtion Master</span></a>
                      </li>
 
-                     <li <?php echo $this->company_profile_model->User_status_check(); ?> >
+                    <!--  <li <?php echo $this->company_profile_model->User_status_check(); ?> >
                         <a href='<?php echo base_url(); ?>admin/industry-master'> <i class='glyphicon glyphicon-plus'></i><span>Industry Master</span></a>
-                     </li>
+                     </li> -->
                       
                   </ul>
                </li>
