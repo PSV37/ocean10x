@@ -229,7 +229,6 @@
                                     <div class="col-md-4 col-sm-12"> 
                                       <div class="formrow">  
                                         <label class="control-label ">Required Education <span class="required">*</span></label>
-
                                         <select name="job_edu_special" id="job_edu_special" class="form-control"  data-style="btn-default" data-live-search="true" required="">
                                          <option value="">Select Education </option>
                                        
@@ -309,18 +308,18 @@
                                       </div>
                                     </div>
                           
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                     <label for="exampleInputEmail1">Job Types <span class="required">*</span></label>
-                                     <select required name="job_types" class="form-control col-sm-5">
-                                     <option value="">Select Job Types</option>
-                                               <?php if(!empty($job_info)) {
-                                                echo $this->job_types_model->selected($job_info->job_types);
-                                                } else {
-                                                   echo $this->job_types_model->selected();
-                                                }
-                                                 ?>           
-                                            </select>
+                                      <select required name="job_types" class="form-control col-sm-5">
+                                          <option value="">Select Job Types</option>
+                                         <?php if(!empty($job_info)) {
+                                          echo $this->job_types_model->selected($job_info->job_types);
+                                          } else {
+                                             echo $this->job_types_model->selected();
+                                          }
+                                           ?>           
+                                      </select>
                                     </div>
                                 </div>
 

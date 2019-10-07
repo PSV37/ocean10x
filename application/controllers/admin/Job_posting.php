@@ -29,10 +29,6 @@ class Job_posting extends MY_Controller
         $select = "job_role_title, skill_set ,id";
         $data['job_role_data'] = $this->Master_model->getMaster('job_role',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
 
-        $where_sk= "status=1";
-        $select_sk = "skill_name ,id";
-        $data['skills_data'] = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=false,$start=false, $search=false);
-
         $this->load->view('admin/jobsetting/createjob', $data);
     }
 
@@ -82,8 +78,13 @@ class Job_posting extends MY_Controller
     public function edit_jobs($id)
     {
         $title    = "Jobs Edit";
-        $job_info = $this->job_posting_model->get($id);
-        $this->load->view('admin/jobsetting/createjob', compact('job_info', 'title'));
+        $data['job_info'] = $this->job_posting_model->get($id);
+
+        $where_cn= "status=1";
+        $select = "job_role_title, skill_set ,id";
+        $data['job_role_data'] = $this->Master_model->getMaster('job_role',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
+
+        $this->load->view('admin/jobsetting/createjob', $data);
     }
 
     function getstate(){
