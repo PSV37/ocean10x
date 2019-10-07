@@ -475,7 +475,7 @@
                    // dataType: "html",  
                    success: function(data)
                    {
-                      $('#skills_result').html(res);
+                      $('#skills_result').html(data);
                   //   var a =data.skill_set.split(',');
                   //   var i;
                   //   for(i=0;i<a.length;i++){

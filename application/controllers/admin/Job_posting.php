@@ -144,7 +144,7 @@ function getSkillsByRole() {
 
     $sk = $role_data['skill_set'];
     
-    // if ($sk) {
+    if ($sk) {
         $where_sk= "id IN (".$sk.") AND status=1";
         $select_sk = "skill_name ,id";
         $skills = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=false,$start=false, $search=false);
@@ -153,16 +153,16 @@ function getSkillsByRole() {
             if(!empty($skills)){ 
                 foreach($skills as $skill_row){
                   $result .="<input type='checkbox' name='skill_set[]' id='skill_set' value=".$skill_row['id'].">".$skill_row['skill_name']."";
-                  break;
+                 
                 }
             }else{
                 $result .='Skills Not Found ';
             }
                                     
-    // }
-    // else{
-    //     $result .='Skills Not Foundasdsaads ';
-    // }
+    }
+    else{
+        $result .='Skills Not Foundasdsaads ';
+    }
      echo $result;    
   //  echo json_encode($data); 
 } 
