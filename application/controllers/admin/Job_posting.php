@@ -142,7 +142,7 @@ function getSkillsByRole() {
     $whereres = "id='$id'";
     echo $data= $this->Master_model->get_master_row('job_role',$select = FALSE,$whereres);
 
-    echo $data->skill_set;
+    print_r($data->skill_set);
     die;
 
     echo json_encode($data); 
