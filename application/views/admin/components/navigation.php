@@ -156,6 +156,10 @@
                         <a href='<?php echo base_url(); ?>admin/skill-master'> <i class='glyphicon glyphicon-plus'></i><span>Skills Master</span></a>
                      </li>
 
+                     <li <?php echo $this->company_profile_model->User_status_check(); ?> >
+                        <a href='<?php echo base_url(); ?>admin/job-role'> <i class='glyphicon glyphicon-plus'></i><span>Job Role</span></a>
+                     </li>
+
 
                      <li <?php echo $this->company_profile_model->User_status_check(); ?> >
                         <a href='<?php echo base_url(); ?>admin/education-level'> <i class='glyphicon glyphicon-plus'></i><span>Education Level</span></a>
