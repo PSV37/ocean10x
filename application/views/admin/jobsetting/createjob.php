@@ -476,23 +476,9 @@
                    success: function(data)
                    {
                       $('#skills_result').html(data);
-                  //   var a =data.skill_set.split(',');
-                  //   var i;
-                  //   for(i=0;i<a.length;i++){
-                  //     $('#skill_set'+a[i]).prop('checked', true);
-                  // }
-                      
                    } 
             });
-        $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>admin/Job_posting/getSkillsByRole',
-                data:{id:id},
-                success:function(res){
-                  $('#skills_result').html(res);
-                }
-        
-            }); 
+
       }
 }
 
