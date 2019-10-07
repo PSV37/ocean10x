@@ -143,13 +143,13 @@ function getSkillsByRole() {
     $role_data= $this->Master_model->get_master_row('job_role',$select = FALSE,$whereres);
 
     $sk = $role_data['skill_set'];
-    $result = '';
+    
     // if ($sk) {
         $where_sk= "id IN (".$sk.") AND status=1";
         $select_sk = "skill_name ,id";
         $skills = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=false,$start=false, $search=false);
           // echo $this->db->last_query();
-           
+           $result = '';
             if(!empty($skills)){ 
                 foreach($skills as $skill_row){
                   $result .="<input type='checkbox' name='skill_set[]' id='skill_set' value=".$skill_row['id'].">".$skill_row['skill_name']."";
