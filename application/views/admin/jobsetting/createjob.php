@@ -134,11 +134,12 @@
                                     <div class="row">
                                       <div class="col-md-12 col-sm-12"> 
                                         <label class="control-label ">Skill Set<span class="required">*</span></label><br>
-                                        <?php 
+                                        <!-- <?php 
                                           if(!empty($skills_data)) foreach ($skills_data as $skill_value) {
                                         ?> 
                                         <input type="checkbox" name="skill_set[]" id="skill_set<?php echo $skill_value['id'];?>" value="<?php echo $skill_value['id'];?>"> <?php echo $skill_value['skill_name'];?>
-                                        <?php } ?>
+                                        <?php } ?> -->
+                                        <p id="skills_result"></p>
                                       </div>
                                     </div>
                                     <div class="panel-body"></div>
@@ -476,15 +477,15 @@
                   data:{
                         role_id:id
                   },
-                   dataType: "JSON",  
+                   // dataType: "JSON",  
                    success: function(data)
                    {
-
-                    var a =data.skill_set.split(',');
-                    var i;
-                    for(i=0;i<a.length;i++){
-                      $('#skill_set'+a[i]).prop('checked', true);
-                  }
+                      $('#skills_result').html(res);
+                  //   var a =data.skill_set.split(',');
+                  //   var i;
+                  //   for(i=0;i<a.length;i++){
+                  //     $('#skill_set'+a[i]).prop('checked', true);
+                  // }
                       
                    } 
             });
