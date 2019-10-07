@@ -54,8 +54,8 @@
                                 <div class="panel-body"></div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Skill Set <span class="required">*</span></label>
-                                        <?php if(!empty($skills_data)) foreach ($skills_data as $skill_value) { ?>
+                                        <label for="exampleInputEmail1">Skill Set <span class="required">*</span></label> <br><br>
+                                        <?php if(!empty($skills_data)) foreach ($skills_data as $skill_value) { ?> 
                                             
                                         <input type="checkbox" name="skill_set[]" id="skill_set[]" value="<?php if (!empty($edit_skill_info)) echo $row['skill_set'];?>" required> <?php echo $skill_value['skill_name'];?>
                                         <?php } ?>
