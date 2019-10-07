@@ -168,51 +168,29 @@
                                     </hr>
                                   <div class="row">
                                 
-                                      <div class="col-md-4">
-                                        <!-- /. Job Location -->
-                                        <div class="form-group">
-                                            <label>Job Country <span class="required">*</span></label>
-                                            <select name="job_location" class="form-control col-sm-5">
-                                                <option value="">Select Job Location</option>
-                                              <?php if(!empty($job_info)) {
-                                                echo $this->job_location_model->selected($job_info->job_location);
-                                                } else {
-                                                   echo $this->job_location_model->selected();
-                                                }
-                                                 ?>                                             
-                                            </select>
-                                        </div>
-                                      </div>
-                                      <div class="col-md-4">
-                                        <!-- /. Job Location -->
-                                        <div class="form-group">
-                                            <label>Job State <span class="required">*</span></label>
-                                            <select name="job_location" class="form-control col-sm-5">
-                                                <option value="">Select Job Location</option>
-                                              <?php if(!empty($job_info)) {
-                                                echo $this->job_location_model->selected($job_info->job_location);
-                                                } else {
-                                                   echo $this->job_location_model->selected();
-                                                }
-                                                 ?>                                             
-                                            </select>
-                                        </div>
-                                      </div>
-                                      <div class="col-md-4">
-                                        <!-- /. Job Location -->
-                                        <div class="form-group">
-                                            <label>Job City <span class="required">*</span></label>
-                                            <select name="job_location" class="form-control col-sm-5">
-                                                <option value="">Select Job Location</option>
-                                              <?php if(!empty($job_info)) {
-                                                echo $this->job_location_model->selected($job_info->job_location);
-                                                } else {
-                                                   echo $this->job_location_model->selected();
-                                                }
-                                                 ?>                                             
-                                            </select>
-                                        </div>
-                                      </div>
+                                    <div class="col-md-4 col-sm-4">
+                                      <label>Job Country <span class="required">*</span></label>
+                                      <select  name="country_id" class="form-control" onchange="getStates(this.value)">
+                                        <option value="">Select Country</option>
+                                        <?php foreach($country as $key){?>
+                                        <option value="<?php echo $key['country_id']; ?>"<?php if($job_info->job_location==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
+                                        <?php } ?>
+                                      </select>
+                                    </div>
+                                  
+                                    <div class="col-md-4 col-sm-4">
+                                      <label>Job State <span class="required">*</span></label>
+                                      <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+                                       <option value="">Select State</option>
+                                      </select>
+                                    </div>
+                                    
+                                    <div class="col-md-4 col-sm-4">
+                                      <label>Job City <span class="required">*</span></label>
+                                      <select  name="city_id" id="city_id" class="form-control">
+                                        <option value="">Select City</option>
+                                      </select>
+                                    </div>
 
                                   </div>
                                 <div class="row">
@@ -401,3 +379,35 @@
 </script>
 
 <?php $this->load->view('admin/components/footer'); ?>
+
+<script>
+  function getStates(id){
+    if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Job_posting/getstate',
+                data:{id:id},
+                success:function(res){
+                  $('#state_id').html(res);
+                }
+        
+            }); 
+        }
+    }
+     
+  function getCitys(id){
+    if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Job_posting/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city_id').html(res);
+                }
+        
+            }); 
+          }
+   
+     }
+     
+</script> 

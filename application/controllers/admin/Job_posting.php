@@ -37,7 +37,12 @@ class Job_posting extends MY_Controller
             'no_jobs'            => $this->input->post('no_jobs'),
                        
             'job_category'       => $this->input->post('job_category'),
-            'job_location'       => $this->input->post('job_location'),
+            //'job_location'       => $this->input->post('job_location'),
+
+            'job_location'       => $this->input->post('country_id'),
+            'state_id'           => $this->input->post('state_id'),
+            'city_id'            => $this->input->post('city_id'),
+
             'job_nature'         => $this->input->post('job_nature'),
             'job_slugs'          => $this->slug->create_uri($this->input->post('job_title')),
             'job_status'         => $this->input->post('job_status'),
@@ -68,4 +73,39 @@ class Job_posting extends MY_Controller
         $this->load->view('admin/jobsetting/createjob', compact('job_info', 'title'));
     }
 
-}
+    function getstate(){
+        $country_id = $this->input->post('id');
+        $where['country_id'] = $country_id;
+        $states = $this->Master_model->getMaster('state',$where);
+        $result = '';
+        if(!empty($states)){ 
+            $result .='<option value="">Select State</option>';
+            foreach($states as $st_row){
+              $result .='<option value="'.$st_row['state_id'].'">'.$st_row['state_name'].'</option>';
+            }
+        }else{
+            $result .='<option value="">States Not Found</option>';
+        }
+        echo $result;
+    }
+
+
+    function getcity(){
+        $state_id = $this->input->post('id');
+        $where['state_id'] = $state_id;
+        $citys = $this->Master_model->getMaster('city',$where);
+        $result = '';
+        if(!empty($citys)){ 
+            $result .='<option value="">Select City</option>';
+            foreach($citys as $city_row){
+              $result .='<option value="'.$city_row['id'].'">'.$city_row['city_name'].'</option>';
+            }
+        }else{
+            $result .='<option value="">Cities Not Found</option>';
+        }
+         echo $result;
+    }
+
+
+
+} // end class
