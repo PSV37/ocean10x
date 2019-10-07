@@ -152,7 +152,7 @@ function getSkillsByRole() {
         if(!empty($skills)){ 
             //$result .='<option value="">Select Specilazation</option>';
             foreach($skills as $skill_row){
-              $result .="<input type='checkbox' name='skill_set[]' id='skill_set' value='<?php echo $skill_row['id'];?>'> <?php echo $skill_row['skill_name'];?>";
+              $result .="<input type='checkbox' name='skill_set[]' id='skill_set' value=".$skill_row['id'].">".$skill_row['skill_name']."";
             }
         }else{
             $result .='Skills Not Found ';
