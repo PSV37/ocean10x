@@ -199,7 +199,7 @@
                                       <label>Job City <span class="required">*</span></label>
                                       <select  name="city_id" id="city_id" class="form-control">
                                         <option value="">Select City</option>
-                                         <?php echo $job_info->city_id;?>
+                                       
                                       </select>
                                     </div>
 
@@ -473,7 +473,13 @@
           }
    
        }
-    function getCitys_load(){
+    
+
+       getStates_load();
+      }); 
+ $(document).ready(function(){
+
+function getCitys_load(){
         var id = $('#state_id').val();
 
         if(id){
@@ -490,13 +496,8 @@
           }
    
        }
-
-
-       getStates_load();
-       getCitys_load();
+ getCitys_load();
     });
-
-
 // To get education specialization  by Level
     function getEducationSpecial(id){
      
