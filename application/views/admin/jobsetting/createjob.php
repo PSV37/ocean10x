@@ -472,7 +472,7 @@
                   data:{
                         role_id:id
                   },
-                   dataType: "html",  
+                   // dataType: "html",  
                    success: function(data)
                    {
                       $('#skills_result').html(res);
