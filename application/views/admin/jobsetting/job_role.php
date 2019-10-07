@@ -117,9 +117,9 @@
 
                         ?>
                         <tr>
-                            <td><?php echo $key ?></td>
-                            <td><?php echo $st_row['job_role_title'] ?></td>
-                            <td><?php echo $skills ?></td>
+                            <td><?php echo $key; ?></td>
+                            <td><?php echo $st_row['job_role_title']; ?></td>
+                            <td><?php echo $skills; ?></td>
                             <td>
                                 <?php echo btn_edit('admin/job_role/edit_role/' . $st_row['id']); ?>
                                 <?php echo btn_delete('admin/job_role/delete_role/' . $st_row['id']); ?>
