@@ -471,7 +471,6 @@
     {
       if(id){
         $.ajax({
-                
                   url:'<?php echo base_url();?>admin/Job_posting/getSkillsByRole',
                   type:'POST',
                   data:{
@@ -480,6 +479,7 @@
                    dataType: "JSON",  
                    success: function(data)
                    {
+
                     var a =data.skill_set.split(',');
                     var i;
                     for(i=0;i<a.length;i++){
