@@ -142,7 +142,7 @@ function getSkillsByRole() {
     $whereres = "id='$id'";
     $role_data= $this->Master_model->get_master_row('job_role',$select = FALSE,$whereres);
 
-    echo $sk = $data['skill_set'];
+    echo $sk = $role_data['skill_set'];
     echo "tt";
    var_dump($sk);
    // explode(',', string)
@@ -162,7 +162,7 @@ function getSkillsByRole() {
          echo $result;                                 
     die;
 
-    echo json_encode($data); 
+  //  echo json_encode($data); 
 } 
 
 
