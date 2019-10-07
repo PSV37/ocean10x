@@ -153,6 +153,7 @@ function getSkillsByRole() {
             if(!empty($skills)){ 
                 foreach($skills as $skill_row){
                   $result .="<input type='checkbox' name='skill_set[]' id='skill_set' value=".$skill_row['id'].">".$skill_row['skill_name']."";
+                  break;
                 }
             }else{
                 $result .='Skills Not Found ';
