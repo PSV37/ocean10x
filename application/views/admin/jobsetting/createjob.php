@@ -134,7 +134,7 @@
                                     <div class="row">
                                       <div class="col-md-12 col-sm-12"> 
                                         <label class="control-label ">Skill Set<span class="required">*</span></label><br>
-                                        <div id="skills_result"></div>
+                                        <div id="skills_result">Please Select Job Role.</div>
                                       </div>
                                     </div>
                                     <div class="panel-body"></div>
