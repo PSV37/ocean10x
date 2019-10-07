@@ -426,6 +426,7 @@
     }
 // To get education specialization  by Level
     function getEducationSpecial(id){
+      alert('sdasd');
       if(id){
             $.ajax({
                 type:'POST',
