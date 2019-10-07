@@ -70,7 +70,6 @@
                                                 }
                                             }
                                         ?> 
-                                            
                                         <input type="checkbox"  <?php echo $checked; ?> name="skill_set[]" id="skill_set[]" value="<?php echo $skill_value['id'];?>"> <?php echo $skill_value['skill_name'];?>
                                         <?php } ?>
                                     </div>
@@ -101,11 +100,26 @@
                     </thead>
                     <tbody>
                     <?php $key = 1 ;?>
-                    <?php if (!empty($job_role_data)): foreach ($job_role_data as $st_row) : ?>
+                    <?php if (!empty($job_role_data)): foreach ($job_role_data as $st_row) : 
+
+                            $skill =  explode(',',  $st_row['skill_set']);
+
+                            if(!empty($skills_data)) foreach ($skills_data as $skill_value) {
+
+                              $skills="";
+                              for($i=0;$i<sizeof($skill);$i++){
+
+                                if($skill_value['id']==$skill[$i]){
+                                  $skills = $skill_value['skill_name'];
+                                  break;
+                                }
+                            }
+
+                        ?>
                         <tr>
                             <td><?php echo $key ?></td>
                             <td><?php echo $st_row['job_role_title'] ?></td>
-                            <td><?php echo $st_row['skill_set'] ?></td>
+                            <td><?php echo $skills ?></td>
                             <td>
                                 <?php echo btn_edit('admin/job_role/edit_role/' . $st_row['id']); ?>
                                 <?php echo btn_delete('admin/job_role/delete_role/' . $st_row['id']); ?>
