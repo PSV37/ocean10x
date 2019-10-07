@@ -82,7 +82,7 @@
 
 
                             <div class="row">
-                               <div class="col-md-4">
+                                    <div class="col-md-4">
                                      <!-- /. Job Salary Range -->
                                         <div class="form-group">
                                             <label>Select Compnay<span class="required">*</span></label>
@@ -97,15 +97,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                      <div class="col-md-4">
-                                     <!-- /. Job Salary Range -->
-                                        <div class="form-group">
-                                            <label>Salary Offered<span class="required">*</span></label>
-                                            <input type="number" name="salary_range" id="salary_range" onKeyUp="javascript:changeSalary();" class="form-control col-sm-5"  value="<?php if(!empty($job_info)) echo $job_info->salary_range; ?>">       
-                                            
-                                        </div>
-                                      </div>
-
+                                   
                                     <div class="col-md-4">
                                      <!-- /. Job level -->
                                         <div class="form-group">
@@ -122,10 +114,50 @@
                                             </select>
                                         </div>
                                     </div>
+
+                                     <div class="col-md-4">
+                                     <!-- /. Job Salary Range -->
+                                        <div class="form-group">
+                                            <label>Job Role<span class="required">*</span></label>
+                                            <select name="job_role" id="job_role" class="form-control col-sm-5">
+                                              <option value="">Select Role</option>
+                                              <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
+                                                 ?> 
+                                                <option value="<?php echo $role_value['id']; ?>"><?php echo $role_value['job_role_title']; ?></option>
+                                              <?php } ?>       
+                                            </select>
+                                        </div>
+                                    </div>
                                         
                                     </div>
 
                                     <div class="row">
+                                      <div class="col-md-12 col-sm-12"> 
+                                        <label class="control-label ">Skill Set</label>
+                                        <?php 
+                                            // if (!empty($job_role_data)) 
+
+                                            // $aa =  explode(',',  $row['skill_set']);
+
+                                            if(!empty($skills_data)) foreach ($skills_data as $skill_value) {
+
+                                            //   $checked="";
+                                            //   for($i=0;$i<sizeof($aa);$i++){
+
+                                            //     if($skill_value['id']==$aa[$i]){
+                                            //       $checked ="checked";
+                                            //       break;
+                                            //     }
+                                            // }
+                                        ?> 
+                                        <input type="checkbox" name="skill_set[]" id="skill_set[]" value="<?php echo $skill_value['id'];?>"> <?php echo $skill_value['skill_name'];?>
+                                        <?php } ?>
+                                      </div>
+                                    </div>
+
+
+                                    <div class="row">
+
                                          
                                         <div class="col-md-4 col-sm-12"> 
                                             <div class="formrow">  
@@ -148,23 +180,16 @@
                                             ?>" />
                                           </div>
                                         </div>
-                                            
-                                     
-                                          <div class="col-md-4">
-                                     <!-- /. Job Natuere -->
-                                            <div class="form-group">
-                                              <label>Job Nature <span class="required">*</span></label>
-                                              <select name="job_nature" class="form-control col-sm-5">
-                                                <option value="">Select Job Nature</option>
-                                                   <?php if(!empty($job_info)) {
-                                                    echo $this->job_nature_model->selected($job_info->job_nature);
-                                                    } else {
-                                                       echo $this->job_nature_model->selected();
-                                                    }
-                                                     ?>                                             
-                                                </select>
-                                            </div>
+
+                                        <div class="col-md-4">
+                                       <!-- /. Job Salary Range -->
+                                          <div class="form-group">
+                                              <label>Salary Offered<span class="required">*</span></label>
+                                              <input type="number" name="salary_range" id="salary_range" onKeyUp="javascript:changeSalary();" class="form-control col-sm-5"  value="<?php if(!empty($job_info)) echo $job_info->salary_range; ?>">       
+                                              
                                           </div>
+                                        </div>
+                                  
                                     </div>
                                     </hr>
                                   <div class="row">
@@ -233,7 +258,7 @@
                                   </div>
 
                                   <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
 
                                       <!-- /.Job Daeadeline -->
                                         <div class="form-group form-group-bottom">
@@ -254,7 +279,7 @@
 
                                     </div>
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                    <!-- /.Prefere Age -->
                                   <div class="form-group">
                                       <label for="exampleInputEmail1">Preferred Age <span
@@ -264,10 +289,8 @@
                                              class="form-control">
                                       </div>
                                   </div>
-                                </div>
 
-                                <div class="row">
-                                <div class="col-md-6">
+                                  <div class="col-md-4">
                                     <div class="form-group">
                                     <label for="exampleInputEmail1">Job Status <span
                                             class="required">*</span></label>
@@ -283,6 +306,27 @@
                                             </select>
                                     </div>
                                 </div>
+
+                                </div>
+
+                                <div class="row">
+
+                                  <div class="col-md-4">
+                               <!-- /. Job Natuere -->
+                                      <div class="form-group">
+                                        <label>Job Nature <span class="required">*</span></label>
+                                        <select name="job_nature" class="form-control col-sm-5">
+                                          <option value="">Select Job Nature</option>
+                                             <?php if(!empty($job_info)) {
+                                              echo $this->job_nature_model->selected($job_info->job_nature);
+                                              } else {
+                                                 echo $this->job_nature_model->selected();
+                                              }
+                                               ?>                                             
+                                          </select>
+                                      </div>
+                                    </div>
+                          
                                 <div class="col-md-6">
                                     <div class="form-group">
                                     <label for="exampleInputEmail1">Job Types <span class="required">*</span></label>

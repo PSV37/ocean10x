@@ -20,11 +20,20 @@ class Job_posting extends MY_Controller
 
     public function index()
     {
-        $title = "Create New Job";
+        $data['title'] = "Create New Job";
+        
         $where_cnty = "status=1";
-        $country = $this->Master_model->getMaster('country',$where_cnty);
+        $data['country'] = $this->Master_model->getMaster('country',$where_cnty);
+       
+        $where_cn= "status=1";
+        $select = "job_role_title, skill_set ,id";
+        $data['job_role_data'] = $this->Master_model->getMaster('job_role',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
 
-        $this->load->view('admin/jobsetting/createjob', compact('country','title'));
+        $where_sk= "status=1";
+        $select_sk = "skill_name ,id";
+        $data['skills_data'] = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=false,$start=false, $search=false);
+
+        $this->load->view('admin/jobsetting/createjob', $data);
     }
 
     public function save_job($id = null)
