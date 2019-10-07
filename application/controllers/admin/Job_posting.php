@@ -82,6 +82,9 @@ class Job_posting extends MY_Controller
         $title    = "Jobs Edit";
         $data['job_info'] = $this->job_posting_model->get($id);
 
+        $where_cnty = "status=1";
+        $data['country'] = $this->Master_model->getMaster('country',$where_cnty);
+
         $where_cn= "status=1";
         $select = "job_role_title, skill_set ,id";
         $data['job_role_data'] = $this->Master_model->getMaster('job_role',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
