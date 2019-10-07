@@ -140,9 +140,9 @@ class Job_posting extends MY_Controller
 function getSkillsByRole() {
     $id=$this->input->post('role_id');
     $whereres = "id='$id'";
-    echo $data= $this->Master_model->get_master_row('job_role',$select = FALSE,$whereres);
+     $data= $this->Master_model->get_master_row('job_role',$select = FALSE,$whereres);
 
-    print_r($data->skill_set);
+    print_r($data['skill_set']);
     die;
 
     echo json_encode($data); 
