@@ -31,7 +31,7 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">Jobs Category</h3>
+                        <h3 class="box-title ">Industry Master</h3>
                     </div>
                 </div>
                 <!-- /.box-header -->
@@ -53,8 +53,8 @@
 
                                 <!-- /.Company Name -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Jobs Category <span class="required">*</span></label>
-                                    <input type="text" required name="category_name" placeholder="Category Name"
+                                    <label for="exampleInputEmail1">Industry Name <span class="required">*</span></label>
+                                    <input type="text" required name="category_name" placeholder="Industry Name"
                                            value="<?php
                                            if (!empty($category_info->job_category_name)) {
                                                echo $category_info->job_category_name;
@@ -63,7 +63,7 @@
                                            class="form-control">
                                 </div>
 
-                                <button type="submit" class="btn bg-navy" type="submit">Save Jobs Category
+                                <button type="submit" class="btn bg-navy" type="submit">Save Industry
                                 </button><br/><br/>
                             </div>
                             <!-- /.box-body -->
@@ -82,7 +82,7 @@
                     <thead>
                     <tr>
                         <th class="active">SL</th>
-                        <th class="active">Category Name</th>
+                        <th class="active">Industry Name</th>
                         <th class=" active col-sm-2">Action</th>
 
                     </tr>
