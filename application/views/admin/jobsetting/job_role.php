@@ -114,10 +114,11 @@
 
                                     if($skill_value['id']==$skill[$i]){
                                       $skills[] = $skill_value['skill_name'];
+                                     $view_skill = implode(',', $skills)
                                       break;
                                     }
                                 }
-                                echo implode(',', $skills); echo 'asdad';} ?>
+                                echo $view_skill; } ?>
                                     
                                 </td>
                             <td>
