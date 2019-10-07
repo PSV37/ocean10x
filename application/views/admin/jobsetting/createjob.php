@@ -130,10 +130,10 @@
                                     </div>
                                         
                                     </div>
-
+                                    <div class="panel-body"></div>
                                     <div class="row">
                                       <div class="col-md-12 col-sm-12"> 
-                                        <label class="control-label ">Skill Set</label>
+                                        <label class="control-label ">Skill Set<span class="required">*</span></label><br>
                                         <?php 
                                             // if (!empty($job_role_data)) 
 
@@ -154,7 +154,7 @@
                                         <?php } ?>
                                       </div>
                                     </div>
-
+                                    <div class="panel-body"></div>
 
                                     <div class="row">
 
