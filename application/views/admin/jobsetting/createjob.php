@@ -330,17 +330,17 @@
                             <!-- /.JOb Descption -->
                                  <div class="row">
                                       
-                                       <div class="col-md-4 col-sm-12"> 
-                                       	<div class="formrow">   
-                                            <label class="control-label mandatory">Vacancy Description <span class="required">*</span></label>
-                                               <textarea name="job_desc" required class="form-control" required><?php if(!empty($job_info)) echo $job_info->job_desc; ?></textarea>
-</div>
-                                        </div>
- <div class="col-md-4 col-sm-12"> 
-                                       	<div class="formrow">   
-                                            <label class="control-label mandatory">Other Skills Description </label>
-                                               <textarea name="education" required class="form-control" ><?php if(!empty($job_info)) echo $job_info->education; ?></textarea>
-</div>
+                                    <div class="col-md-4 col-sm-12"> 
+                                   	  <div class="formrow">   
+                                        <label class="control-label mandatory">Vacancy Description <span class="required">*</span></label>
+                                          <textarea name="job_desc" required class="form-control ckeditor" required><?php if(!empty($job_info)) echo $job_info->job_desc; ?></textarea>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12"> 
+                                      <div class="formrow">   
+                                        <label class="control-label mandatory">Other Skills Description </label>
+                                        <textarea name="education" required class="form-control ckeditor" ><?php if(!empty($job_info)) echo $job_info->education; ?></textarea>
+                                    </div>
                                         </div>
  <div class="col-md-4 col-sm-12"> 
                                        	<div class="formrow">   
