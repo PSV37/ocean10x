@@ -119,7 +119,7 @@
                                      <!-- /. Job Salary Range -->
                                         <div class="form-group">
                                             <label>Job Role<span class="required">*</span></label>
-                                            <select name="job_role" id="job_role" class="form-control col-sm-5">
+                                            <select name="job_role" id="job_role" class="form-control col-sm-5" onchange="getSkillsdetails(this.value)">
                                               <option value="">Select Role</option>
                                               <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
                                                  ?> 
@@ -135,22 +135,9 @@
                                       <div class="col-md-12 col-sm-12"> 
                                         <label class="control-label ">Skill Set<span class="required">*</span></label><br>
                                         <?php 
-                                            // if (!empty($job_role_data)) 
-
-                                            // $aa =  explode(',',  $row['skill_set']);
-
-                                            if(!empty($skills_data)) foreach ($skills_data as $skill_value) {
-
-                                            //   $checked="";
-                                            //   for($i=0;$i<sizeof($aa);$i++){
-
-                                            //     if($skill_value['id']==$aa[$i]){
-                                            //       $checked ="checked";
-                                            //       break;
-                                            //     }
-                                            // }
+                                          if(!empty($skills_data)) foreach ($skills_data as $skill_value) {
                                         ?> 
-                                        <input type="checkbox" name="skill_set[]" id="skill_set[]" value="<?php echo $skill_value['id'];?>"> <?php echo $skill_value['skill_name'];?>
+                                        <input type="checkbox" name="skill_set[]" id="skill_set<?php echo $skill_value['id'];?>" value="<?php echo $skill_value['id'];?>"> <?php echo $skill_value['skill_name'];?>
                                         <?php } ?>
                                       </div>
                                     </div>
@@ -465,7 +452,7 @@
     }
 // To get education specialization  by Level
     function getEducationSpecial(id){
-      alert('sdasd');
+     
       if(id){
             $.ajax({
                 type:'POST',
@@ -480,6 +467,29 @@
    
     }
 
-    
+  function getSkillsdetails(id)
+    {
+      if(id){
+        $.ajax({
+                
+                  url:'<?php echo base_url();?>admin/Job_posting/getSkillsByRole',
+                  type:'POST',
+                  data:{
+                        role_id:id
+                  },
+                   dataType: "JSON",  
+                   success: function(data)
+                   {
+                    var a =data.skill_set.split(',');
+                    var i;
+                    for(i=0;i<a.length;i++){
+                      $('#skill_set'+a[i]).prop('checked', true);
+                  }
+                      
+                   } 
+            });
+      }
+}
+
      
 </script> 

@@ -21,7 +21,7 @@ class Job_posting extends MY_Controller
     public function index()
     {
         $data['title'] = "Create New Job";
-        
+
         $where_cnty = "status=1";
         $data['country'] = $this->Master_model->getMaster('country',$where_cnty);
        
@@ -135,6 +135,14 @@ class Job_posting extends MY_Controller
          echo $result;
     }
     
+
+    // To fetch getProfssionalSkillsDetails details
+function getSkillsByRole() {
+    $id=$this->input->post('role_id');
+    $whereres = "id='$id'";
+    $data= $this->Master_model->get_master_row('job_role',$select = FALSE,$whereres);
+    echo json_encode($data); 
+} 
 
 
 
