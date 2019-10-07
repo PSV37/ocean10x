@@ -222,7 +222,7 @@
                                       <div class="formrow">  
                                         <label class="control-label ">Required Education  </label>
 
-                                        <select name="job_edu_special" class="form-control"  data-style="btn-default" data-live-search="true">
+                                        <select name="job_edu_special" id="job_edu_special" class="form-control"  data-style="btn-default" data-live-search="true">
                                          <option value="">Select Education </option>
                                          <!--    <?php if(!empty($job_info->edu_specialization)) {
                                             echo $this->education_level_model->selected_special($job_info->edu_specialization);
