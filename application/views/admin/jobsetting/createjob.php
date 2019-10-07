@@ -52,7 +52,7 @@
 
 
                             <div class="row">
-                            <div class="col-md-6">
+                              <div class="col-md-6">
                                 <!-- /.Job title Name -->
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Job Title <span class="required">*</span></label>
@@ -85,11 +85,26 @@
                                <div class="col-md-4">
                                      <!-- /. Job Salary Range -->
                                         <div class="form-group">
+                                            <label>Select Compnay<span class="required">*</span></label>
+                                            <select name="company_profile_id" class="form-control col-sm-5">
+                                                <option value="">Select Company</option>
+                                               <?php if(!empty($job_info)) {
+                                                echo $this->company_profile_model->selected($job_info->company_profile_id);
+                                                } else {
+                                                   echo $this->company_profile_model->selected();
+                                                }
+                                                 ?>        
+                                            </select>
+                                        </div>
+                                    </div>
+                                      <div class="col-md-4">
+                                     <!-- /. Job Salary Range -->
+                                        <div class="form-group">
                                             <label>Salary Offered<span class="required">*</span></label>
                                             <input type="number" name="salary_range" id="salary_range" onKeyUp="javascript:changeSalary();" class="form-control col-sm-5"  value="<?php if(!empty($job_info)) echo $job_info->salary_range; ?>">       
                                             
                                         </div>
-                                        </div>
+                                      </div>
 
                                     <div class="col-md-4">
                                      <!-- /. Job level -->
@@ -107,8 +122,12 @@
                                             </select>
                                         </div>
                                     </div>
+                                        
+                                    </div>
 
-                                         <div class="col-md-4 col-sm-12"> 
+                                    <div class="row">
+                                         
+                                        <div class="col-md-4 col-sm-12"> 
                                             <div class="formrow">  
                                             <label class="control-label ">Number of Vacancy </label>
                                             <input type="number" class="form-control"  name="no_jobs" value="<?php 
@@ -118,10 +137,7 @@
                                             ?>" />
                                           </div>
                                         </div>
-                                    </div>
 
-                                    <div class="row">
-                                         
                                         <div class="col-md-4 col-sm-12"> 
                                           <div class="formrow">  
                                             <label class="control-label ">Years of Experience  </label>
@@ -132,23 +148,8 @@
                                             ?>" />
                                           </div>
                                         </div>
-                                      
                                             
-                                          <div class="col-md-4 col-sm-12"> 
-                                          	<div class="formrow">  
-                                              <label class="control-label ">Required Education   </label>
-
-                                              <select name="job_edu" class="form-control"  data-style="btn-default" data-live-search="true">
-                                               <option value="">Select Education </option>
-                                                  <?php if(!empty($job_info->job_edu)) {
-                                                  echo $this->education_level_model->selected($job_info->job_edu);
-                                                  } else {
-                                                     echo $this->education_level_model->selected();
-                                                  }
-                                                   ?>
-                                              </select> 
-                                            </div>
-                                          </div>
+                                     
                                           <div class="col-md-4">
                                      <!-- /. Job Natuere -->
                                             <div class="form-group">
@@ -194,66 +195,80 @@
 
                                   </div>
                                 <div class="row">
-                                  <div class="col-md-6">
-
-                                 <!-- /.Working Hours-->
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Working Hours <span
-                                            class="required">*</span></label>
-                                    <input type="number" placeholder="Working Hours" name="working_hours" required
-                                           value="<?php if(!empty($job_info)) echo $job_info->working_hours; ?>"
-                                           class="form-control">
+                                  <div class="col-md-4">
+                                    <div class="form-group">
+                                      <label for="exampleInputEmail1">Working Hours <span class="required">*</span></label>
+                                      <input type="number" placeholder="Working Hours" name="working_hours" required value="<?php if(!empty($job_info)) echo $job_info->working_hours; ?>" class="form-control">
                                     </div>
-                                </div>
+                                  </div>
+
+                                    <div class="col-md-4 col-sm-12"> 
+                                      <div class="formrow">  
+                                        <label class="control-label">Required Education Level  </label>
+
+                                        <select name="job_edu" class="form-control"  data-style="btn-default" data-live-search="true" onchange="getEducationSpecial(this.value)">
+                                         <option value="">Select Level </option>
+                                            <?php if(!empty($job_info->job_edu)) {
+                                            echo $this->education_level_model->selected($job_info->job_edu);
+                                            } else {
+                                              echo $this->education_level_model->selected();
+                                            }
+                                             ?>
+                                        </select> 
+                                      </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-sm-12"> 
+                                      <div class="formrow">  
+                                        <label class="control-label ">Required Education  </label>
+
+                                        <select name="job_edu_special" class="form-control"  data-style="btn-default" data-live-search="true">
+                                         <option value="">Select Education </option>
+                                         <!--    <?php if(!empty($job_info->edu_specialization)) {
+                                            echo $this->education_level_model->selected_special($job_info->edu_specialization);
+                                            } else {
+                                               echo $this->education_level_model->selected_special();
+                                            }
+                                             ?> -->
+                                        </select> 
+                                      </div>
+                                    </div>
+
+
+                                  </div>
+
+                                  <div class="row">
                                     <div class="col-md-6">
-                                     <!-- /. Job Salary Range -->
-                                        <div class="form-group">
-                                            <label>Select Compnay<span class="required">*</span></label>
-                                            <select name="company_profile_id" class="form-control col-sm-5">
-                                                <option value="">Select Company</option>
-                                               <?php if(!empty($job_info)) {
-                                                echo $this->company_profile_model->selected($job_info->company_profile_id);
-                                                } else {
-                                                   echo $this->company_profile_model->selected();
-                                                }
-                                                 ?>        
-                                            </select>
-                                        </div>
-                                        </div>
-                                        </div>
 
-                                        <div class="row">
-                                            <div class="col-md-6">
+                                      <!-- /.Job Daeadeline -->
+                                        <div class="form-group form-group-bottom">
+                                            <label>Job Deadline</label>
+                                        </div>
+                                        <div class="input-group">
+                                            <input type="text" value="<?php
+                                            if (!empty($job_info)) {
+                                                $job_deadline = date('m/d/Y', strtotime($job_info->job_deadline));
+                                                echo $job_deadline;
+                                            }
+                                            ?>" class="form-control datepicker" id="job_deadline" name="job_deadline">
 
-                                        <!-- /.Job Daeadeline -->
-                                            <div class="form-group form-group-bottom">
-                                                <label>Job Deadline</label>
+                                            <div class="input-group-addon">
+                                                <a href="#"><i class="entypo-calendar"></i></a>
                                             </div>
-                                            <div class="input-group">
-                                                <input type="text" value="<?php
-                                                if (!empty($job_info)) {
-                                                    $job_deadline = date('m/d/Y', strtotime($job_info->job_deadline));
-                                                    echo $job_deadline;
-                                                }
-                                                ?>" class="form-control datepicker" id="job_deadline" name="job_deadline">
-
-                                                <div class="input-group-addon">
-                                                    <a href="#"><i class="entypo-calendar"></i></a>
-                                                </div>
-                                    </div>
+                                        </div>
 
                                     </div>
 
                                     <div class="col-md-6">
-                                 <!-- /.Prefere Age -->
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Preferred Age <span
-                                            class="required">*</span></label>
-                                    <input type="number" placeholder="Preferred Age" name="preferred_age" required
-                                           value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>"
-                                           class="form-control">
-                                    </div>
-                                </div>
+                                   <!-- /.Prefere Age -->
+                                  <div class="form-group">
+                                      <label for="exampleInputEmail1">Preferred Age <span
+                                              class="required">*</span></label>
+                                      <input type="number" placeholder="Preferred Age" name="preferred_age" required
+                                             value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>"
+                                             class="form-control">
+                                      </div>
+                                  </div>
                                 </div>
 
                                 <div class="row">
@@ -408,6 +423,23 @@
             }); 
           }
    
-     }
+    }
+// To get education specialization  by Level
+    function getEducationSpecial(id){
+      if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/Job_posting/getEducation_specialization',
+                data:{id:id},
+                success:function(res){
+                  $('#job_edu_special').html(res);
+                }
+        
+            }); 
+          }
+   
+    }
+
+    
      
 </script> 

@@ -17,7 +17,7 @@ class Education_level_model extends MY_Model{
         parent::__construct();
     }
 
-        public function selected($id=null)
+    public function selected($id=null)
     {
         $education_levellist=$this->get();
         $output='';
@@ -29,14 +29,14 @@ class Education_level_model extends MY_Model{
         return $output;
     }
 
-            public function get_education_level_name_by_id($id)
-            {
-                $this->db->select("education_level_name");
-                $this->db->where($this->_primary_key,$id);
-                $result=$this->db->get($this->_table_name)->result();
-                return $result[0]->education_level_name;
-            }
-
-
+    public function get_education_level_name_by_id($id)
+    {
+        $this->db->select("education_level_name");
+        $this->db->where($this->_primary_key,$id);
+        $result=$this->db->get($this->_table_name)->result();
+        return $result[0]->education_level_name;
     }
+
+
+}
 

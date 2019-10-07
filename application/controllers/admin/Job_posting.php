@@ -21,7 +21,8 @@ class Job_posting extends MY_Controller
     public function index()
     {
         $title = "Create New Job";
-        $country = $this->Master_model->getMaster('country');
+        $where_cnty = "status=1";
+        $country = $this->Master_model->getMaster('country',$where_cnty);
 
         $this->load->view('admin/jobsetting/createjob', compact('country','title'));
     }
@@ -35,12 +36,13 @@ class Job_posting extends MY_Controller
             'education'          => $this->input->post('education'),
             'benefits'           => $this->input->post('benefits'),
             'experience'         => $this->input->post('experience'),
-            'job_edu'            => $this->input->post('job_edu'),
             'no_jobs'            => $this->input->post('no_jobs'),
-                       
-            'job_category'       => $this->input->post('job_category'),
-            //'job_location'       => $this->input->post('job_location'),
 
+            'job_edu'            => $this->input->post('job_edu'),
+            'edu_specialization' => $this->input->post('job_edu_special'),   //new added field
+
+            'job_category'       => $this->input->post('job_category'),
+           
             'job_location'       => $this->input->post('country_id'),
             'state_id'           => $this->input->post('state_id'),
             'city_id'            => $this->input->post('city_id'),
@@ -107,6 +109,23 @@ class Job_posting extends MY_Controller
         }
          echo $result;
     }
+
+   function getEducation_specialization(){
+        $level_id = $this->input->post('id');
+        $where['edu_level_id'] = $level_id;
+        $special = $this->Master_model->getMaster('education_specialization',$where);
+        $result = '';
+        if(!empty($special)){ 
+            $result .='<option value="">Select Specilazation</option>';
+            foreach($special as $spec_row){
+              $result .='<option value="'.$spec_row['id'].'">'.$spec_row['education_specialization'].'</option>';
+            }
+        }else{
+            $result .='<option value="">Specilazation Not Found </option>';
+        }
+         echo $result;
+    }
+    
 
 
 
