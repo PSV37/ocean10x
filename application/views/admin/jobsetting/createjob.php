@@ -266,8 +266,8 @@
                                     <div class="col-md-4">
                                    <!-- /.Prefere Age -->
                                   <div class="form-group">
-                                      <label for="exampleInputEmail1">Preferred Age </label>
-                                      <input type="number" placeholder="Preferred Age" name="preferred_age"
+                                      <label for="exampleInputEmail1">Preferred Age<span class="required">*</span> </label>
+                                      <input type="number" required placeholder="Preferred Age" name="preferred_age"
                                              value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>"
                                              class="form-control">
                                       </div>
