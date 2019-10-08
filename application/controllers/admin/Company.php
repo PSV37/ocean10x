@@ -268,6 +268,22 @@ class Company extends MY_Controller
         }
     }
 
+    function getstate(){
+        $country_id = $this->input->post('id');
+        $where['country_id'] = $country_id;
+        $states = $this->Master_model->getMaster('state',$where);
+        $result = '';
+        if(!empty($states)){ 
+            $result .='<option value="">Select State</option>';
+            foreach($states as $st_row){
+              $result .='<option value="'.$st_row['state_id'].'">'.$st_row['state_name'].'</option>';
+            }
+        }else{
+            $result .='<option value="">States Not Found</option>';
+        }
+        echo $result;
+    }
+
     function getcity(){
         $state_id = $this->input->post('id');
         $where['state_id'] = $state_id;
@@ -284,21 +300,5 @@ class Company extends MY_Controller
          echo $result;
     }
 
-   function getEducation_specialization(){
-        $level_id = $this->input->post('id');
-        $where['edu_level_id'] = $level_id;
-        $special = $this->Master_model->getMaster('education_specialization',$where);
-        $result = '';
-        if(!empty($special)){ 
-            $result .='<option value="">Select Specilazation</option>';
-            foreach($special as $spec_row){
-              $result .='<option value="'.$spec_row['id'].'">'.$spec_row['education_specialization'].'</option>';
-            }
-        }else{
-            $result .='<option value="">Specilazation Not Found </option>';
-        }
-         echo $result;
-    }
-    
-
+  
 } // class end here
