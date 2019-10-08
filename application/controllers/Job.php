@@ -108,17 +108,17 @@ class Job extends MY_Fontend_Controller
           $employer_id = $this->session->userdata('company_profile_id');
 
            if(!empty($employer_id)){
-
-            $singlejob    = $this->job_posting_model->get_job_details_employer($job_id);}
-            else{  $singlejob    = $this->job_posting_model->get_job_details($job_id);
-            $totalview=$singlejob->search_view+1;
-            $this->job_posting_model->update_Searchview($job_id,$totalview);
-
+                $singlejob    = $this->job_posting_model->get_job_details_employer($job_id);
+            }
+            else{ 
+                $singlejob    = $this->job_posting_model->get_job_details($job_id);
+                $totalview=$singlejob->search_view+1;
+                $this->job_posting_model->update_Searchview($job_id,$totalview);
            }
 
        //  print_r($singlejob);
 
-                        $this->load->view('fontend/job/job_details.php', compact('singlejob', 'jobseeker_id','radom_jobs'));
+            $this->load->view('fontend/job/job_details.php', compact('singlejob', 'jobseeker_id','radom_jobs'));
         } else {
             echo "Not Found";
         }
