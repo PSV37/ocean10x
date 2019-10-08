@@ -147,9 +147,11 @@ class Company extends MY_Controller
     public function edit_company($company_id = null)
     {
         if (!empty($company_id)) {
-            $title           = "Comapany Edit";
-            $company_profile = $this->company_profile_model->get($company_id);
-            $this->load->view('admin/company/update_company', compact('company_profile', 'title'));
+            $data['title']           = "Comapany Edit";
+            $data['company_profile'] = $this->company_profile_model->get($company_id);
+            $where_cnty = "status=1";
+            $data['country'] = $this->Master_model->getMaster('country',$where_cnty);
+            $this->load->view('admin/company/update_company', $data);
         } else {
             echo "not Found";
         }
