@@ -477,7 +477,7 @@
     
     function getCitys_load(id){
       //var id = $('#state_id').val();
-      alert(id);
+      // alert(id);
         if(id){
             $.ajax({
                 type:'POST',
