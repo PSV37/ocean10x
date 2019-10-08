@@ -142,29 +142,34 @@
 
                     <div class="row">
                       <div class="col-md-4 col-sm-4">
-                        <label>Job Country <span class="required">*</span></label>
-                        <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
-                          <option value="">Select Country</option>
-                          <?php foreach($country as $key){?>
-                          <option value="<?php echo $key['country_id']; ?>"<?php if($job_info->job_location==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
-                          <?php } ?>
-                        </select>
+                        <div class="form-group">
+                          <label>Job Country <span class="required">*</span></label>
+                          <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
+                            <option value="">Select Country</option>
+                            <?php foreach($country as $key){?>
+                            <option value="<?php echo $key['country_id']; ?>"<?php if($job_info->job_location==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
+                            <?php } ?>
+                          </select>
+                        </div>
                       </div>
                     
                       <div class="col-md-4 col-sm-4">
-                        <label>Job State <span class="required">*</span></label>
-                        <select name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
-                         <option value="">Select State</option>
-                         <?php echo $job_info->state_id;?>
-                        </select>
+                        <div class="form-group">
+                          <label>Job State <span class="required">*</span></label>
+                          <select name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+                           <option value="">Select State</option>
+                           <?php echo $job_info->state_id;?>
+                          </select>
+                        </div>
                       </div>
                       
                       <div class="col-md-4 col-sm-4">
-                        <label>Job City <span class="required">*</span></label>
-                        <select  name="city_id" id="city_id" class="form-control">
-                          <option value="">Select City</option>
-                         
-                        </select>
+                        <div class="form-group">
+                          <label>Job City <span class="required">*</span></label>
+                          <select  name="city_id" id="city_id" class="form-control">
+                            <option value="">Select City</option>
+                          </select>
+                        </div>
                       </div>
 
                     </div>
