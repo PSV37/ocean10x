@@ -216,7 +216,7 @@
                                       <div class="formrow">  
                                         <label class="control-label">Required Education Level  <span class="required">*</span></label>
 
-                                        <select name="job_edu" class="form-control"  data-style="btn-default" data-live-search="true" onchange="getEducationSpecial(this.value)" required="">
+                                        <select name="job_edu" id="job_edu" class="form-control"  data-style="btn-default" data-live-search="true" onchange="getEducationSpecial(this.value)" required="">
                                          <option value="">Select Level </option>
                                             <?php if(!empty($job_info->job_edu)) {
                                             echo $this->education_level_model->selected($job_info->job_edu);
@@ -334,7 +334,7 @@
                                     <div class="col-md-12 col-sm-12"> 
                                    	  <div class="formrow">   
                                         <label class="control-label mandatory">Vacancy Description <span class="required">*</span></label>
-                                          <textarea name="job_desc" required class="form-control" required><?php if(!empty($job_info)) echo $job_info->job_desc; ?></textarea>
+                                          <textarea name="job_desc" class="form-control ckeditor" required><?php if(!empty($job_info)) echo $job_info->job_desc; ?></textarea>
                                       </div>
                                     </div>
                                   </div>
@@ -343,7 +343,7 @@
                                     <div class="col-md-12 col-sm-12"> 
                                       <div class="formrow">   
                                         <label class="control-label mandatory">Other Skills Description </label>
-                                        <textarea name="education" required class="form-control" ><?php if(!empty($job_info)) echo $job_info->education; ?></textarea>
+                                        <textarea name="education" class="form-control ckeditor" ><?php if(!empty($job_info)) echo $job_info->education; ?></textarea>
                                       </div>
                                     </div>
                                   </div>
@@ -351,8 +351,8 @@
                                   <div class="row">
                                     <div class="col-md-12 col-sm-12"> 
                                        	<div class="formrow">   
-                                            <label class="control-label mandatory">Benefits</label>
-                                               <textarea name="benefits" class="form-control" ><?php if(!empty($job_info)) echo $job_info->benefits; ?></textarea>
+                                          <label class="control-label mandatory">Benefits</label>
+                                          <textarea name="benefits" class="form-control ckeditor" ><?php if(!empty($job_info)) echo $job_info->benefits; ?></textarea>
                                       </div>
                                     </div>
                                   </div>
@@ -388,15 +388,15 @@
     
 </section>
 
-     <script type="text/javascript">  
-       function changeSalary(){
-        var salary = $("#salary_range").val();
-        var job_post_format = $("#job_desc").text();
-        
-        job_post_format = job_post_format.replace("<h3>Salary Range:</h3>", "<h3>Salary Range: "+salary+"</h3>");
-        tinyMCE.get('job_desc').setContent(job_post_format);
-        //$("#job_desc").html(job_post_format);
-    }
+<script type="text/javascript">  
+ function changeSalary(){
+  var salary = $("#salary_range").val();
+  var job_post_format = $("#job_desc").text();
+  
+  job_post_format = job_post_format.replace("<h3>Salary Range:</h3>", "<h3>Salary Range: "+salary+"</h3>");
+  tinyMCE.get('job_desc').setContent(job_post_format);
+  //$("#job_desc").html(job_post_format);
+}
 
 </script>
 
@@ -454,6 +454,44 @@
    
     }
 
+
+// To get education specialization  by Level
+    function getEducationSpecial(id){
+     
+      if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/Job_posting/getEducation_specialization',
+                data:{id:id},
+                success:function(res){
+                  $('#job_edu_special').html(res);
+                }
+        
+            }); 
+          }
+   
+    }
+
+  function getSkillsdetails(id)
+    {
+      if(id){
+        $.ajax({
+                  url:'<?php echo base_url();?>admin/Job_posting/getSkillsByRole',
+                  type:'POST',
+                  data:{
+                        role_id:id
+                  },
+                   dataType: "html",  
+                   success: function(data)
+                   {
+                      $('#skills_result').html(data);
+                   } 
+            });
+
+      }
+}
+
+
  $(document).ready(function(){
 
     function getStates_load(){
@@ -492,12 +530,10 @@
           }
    
        }
-  getCitys_load();
-  getStates_load();
-});
-// To get education specialization  by Level
-    function getEducationSpecial(id){
-     
+
+
+ function getEducationSpecial_load(id){
+    var id = $('#job_edu').val();
       if(id){
             $.ajax({
                 type:'POST',
@@ -505,6 +541,7 @@
                 data:{id:id},
                 success:function(res){
                   $('#job_edu_special').html(res);
+                  $('#job_edu_special').val(<?php echo $job_info->job_edu; ?>);
                 }
         
             }); 
@@ -512,8 +549,9 @@
    
     }
 
-  function getSkillsdetails(id)
+  function getSkillsdetails_load()
     {
+      var id = $('#job_role').val();
       if(id){
         $.ajax({
                   url:'<?php echo base_url();?>admin/Job_posting/getSkillsByRole',
@@ -525,11 +563,15 @@
                    success: function(data)
                    {
                       $('#skills_result').html(data);
+                      $('#skills_result').val(<?php echo $job_info->job_role; ?>);
                    } 
             });
 
       }
 }
 
+  getCitys_load();
+  getStates_load();
+});
      
 </script> 
