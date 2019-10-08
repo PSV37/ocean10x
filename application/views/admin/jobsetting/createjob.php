@@ -532,7 +532,7 @@
        }
 
 
- function getEducationSpecial_load(id){
+ function getEducationSpecial_load(){
     var id = $('#job_edu').val();
       if(id){
             $.ajax({
