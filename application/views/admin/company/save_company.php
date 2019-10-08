@@ -158,7 +158,7 @@
                           <label>Company State <span class="required">*</span></label>
                           <select name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
                            <option value="">Select State</option>
-                           <?php echo $job_info->state_id;?>
+                           
                           </select>
                         </div>
                       </div>

@@ -156,9 +156,115 @@
                             </div>
                         </div><!-- end row -->
 
+                    <div class="row">
+                      <div class="col-md-4 col-sm-4">
+                        <div class="form-group">
+                         <label class="control-label">Contact Person: <span class="required">*</span></label>
+                          <input type="text" name="contact_person" id="contact_person" class="form-control" value="<?php 
+                                     if(!empty($company_profile->contact_person_name)){
+                                        echo $company_profile->contact_person_name;
+                                     }
+                                ?>">
+                          </div>
+                      </div>
+                      <div class="col-md-4 col-sm-4">
+                       <div class="form-group">
+                             <label class="control-label">Contact Person Email: <span class="required">*</span></label>
+                            <input type="text" name="cont_person_email" id="cont_person_email"  class="form-control" value="<?php 
+                                     if(!empty($company_profile->cont_person_email)){
+                                        echo $company_profile->cont_person_email;
+                                     }
+                                ?>" >
+                        </div>
+                      </div>
+
+                       <div class="col-md-4 col-sm-4">
+                       <div class="form-group">
+                             <label class="control-label">Contact Person Mobile: <span class="required">*</span></label>
+                            <input type="text" name="cont_person_mobile" id="cont_person_mobile"  class="form-control" value="<?php 
+                                     if(!empty($company_profile->cont_person_mobile)){
+                                        echo $company_profile->cont_person_mobile;
+                                     }
+                                ?>">
+                        </div>
+                      </div>
+
+                    </div><!-- end row -->
+
+                    <div class="row">
+                      <div class="col-md-4 col-sm-4">
+                        <div class="form-group">
+                         <label class="control-label">Password: <span class="required">*</span></label>
+                          <input type="password" name="comp_password" id="comp_password" class="form-control" value="<?php 
+                                     if(!empty($company_profile->cont_person_email)){
+                                        echo $company_profile->cont_person_email;
+                                     }
+                                ?>">
+                          </div>
+                      </div>
+                      <div class="col-md-4 col-sm-4">
+                       <div class="form-group">
+                             <label class="control-label">GSTN No:</label>
+                            <input type="text" name="comp_gst_no" id="comp_gst_no"  class="form-control" value="<?php 
+                                     if(!empty($company_profile->comp_gstn_no)){
+                                        echo $company_profile->comp_gstn_no;
+                                     }
+                                ?>">
+                        </div>
+                      </div>
+
+                       <div class="col-md-4 col-sm-4">
+                       <div class="form-group">
+                            <label class="control-label">PAN No:</label>
+                            <input type="text" name="comp_pan_no" id="comp_pan_no"  class="form-control" value="<?php 
+                                     if(!empty($company_profile->comp_pan_no)){
+                                        echo $company_profile->comp_pan_no;
+                                     }
+                                ?>">
+                        </div>
+                      </div>
+
+                    </div><!-- end row -->
+
+                    <div class="row">
+                      <div class="col-md-4 col-sm-4">
+                        <div class="form-group">
+                          <label>Company Country <span class="required">*</span></label>
+                          <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
+                            <option value="">Select Country</option>
+                            <?php foreach($country as $key){?>
+                            <option value="<?php echo $key['country_id']; ?>" <?php if($company_profile->company_status == $key['country_id']) echo "selected"; ?>><?php echo $key['country_name']; ?></option>
+                            <?php } ?>
+                          </select>
+                        </div>
+                      </div>
+                    
+                      <div class="col-md-4 col-sm-4">
+                        <div class="form-group">
+                          <label>Company State <span class="required">*</span></label>
+                          <select name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+                           <option value="">Select State</option>
+                           
+                          </select>
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-4 col-sm-4">
+                        <div class="form-group">
+                          <label>Company City <span class="required">*</span></label>
+                          <select  name="city_id" id="city_id" class="form-control">
+                            <option value="">Select City</option>
+                          </select>
+                        </div>
+                      </div>
+
+                    </div>
+
+
+
                       <div class="row">
 
-                         <div class="col-md-4 col-sm-4">
+                        <div class="col-md-4 col-sm-4">
                             <div class="form-group">
                                 <label class="control-label">Head Office Address: <span class="required">*</span></label>
                                 <textarea  name="company_address"  id="company_address" class="form-control ckeditor" rows="8" id="comment"><?php if(!empty($company_profile->company_address)){
@@ -227,3 +333,78 @@
         <?php ///$this->load->view('admin/_layout_modal'); ?>
         <?php //$this->load->view('admin/_layout_modal_small'); ?>
         <?php $this->load->view('admin/components/footer'); ?>
+<script>
+    
+ function getStates(id){
+    if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/company/getstate',
+                data:{id:id},
+                success:function(res){
+                  $('#state_id').html(res);
+                }
+        
+            }); 
+        }
+    }
+     
+  function getCitys(id){
+    if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/company/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city_id').html(res);
+                }
+        
+            }); 
+          }
+   
+    }
+
+$(document).ready(function(){
+
+    function getStates_load(){
+        var id = $('#country_id').val();
+
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/company/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state_id').html(res);
+                    $('#state_id').val(<?php echo $company_profile->state_id; ?>);
+                     getCitys_load(<?php echo $company_profile->state_id; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+    
+    function getCitys_load(id){
+      //var id = $('#state_id').val();
+      // alert(id);
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/company/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city_id').html(res);
+                    $('#city_id').val(<?php echo $company_profile->city_id; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+
+  getCitys_load();
+  getStates_load();
+ 
+});
+</script>
