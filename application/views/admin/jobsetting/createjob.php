@@ -474,14 +474,9 @@
    
        }
     
-
-       getStates_load();
-      }); 
- $(document).ready(function(){
-
-function getCitys_load(){
-        var id = $('#state_id').val();
-
+    function getCitys_load(){
+      var id = $('#state_id').val();
+      alert(id);
         if(id){
             $.ajax({
                 type:'POST',
@@ -496,8 +491,9 @@ function getCitys_load(){
           }
    
        }
- getCitys_load();
-    });
+  getCitys_load();
+  getStates_load();
+});
 // To get education specialization  by Level
     function getEducationSpecial(id){
      
