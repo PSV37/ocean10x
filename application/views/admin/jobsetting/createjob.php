@@ -189,7 +189,7 @@
                                   
                                     <div class="col-md-4 col-sm-4">
                                       <label>Job State <span class="required">*</span></label>
-                                      <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+                                      <select name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
                                        <option value="">Select State</option>
                                        <?php echo $job_info->state_id;?>
                                       </select>
@@ -467,6 +467,7 @@
                 success:function(res){
                     $('#state_id').html(res);
                     $('#state_id').val(<?php echo $job_info->state_id; ?>);
+                     getCitys_load(<?php echo $job_info->state_id; ?>);
                 }
                 
             }); 
@@ -474,8 +475,8 @@
    
        }
     
-    function getCitys_load(){
-      var id = $('#state_id').val();
+    function getCitys_load(id){
+      //var id = $('#state_id').val();
       alert(id);
         if(id){
             $.ajax({
