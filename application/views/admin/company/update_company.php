@@ -142,7 +142,7 @@
                     </div><!-- end row -->
 
                     <div class="row">
-                      <div class="col-md-4 col-sm-4">
+                      <!-- <div class="col-md-4 col-sm-4">
                         <div class="form-group">
                          <label class="control-label">Password: <span class="required">*</span></label>
                           <input type="password" name="comp_password" id="comp_password" class="form-control" value="<?php 
@@ -151,7 +151,15 @@
                                      }
                                 ?>">
                           </div>
-                      </div>
+                      </div> -->
+                        <div class="col-md-4 col-sm-4">
+                            <div class="form-group">
+                            <label class="control-label">Company Career Link: <span class="required">*</span></label>
+                            <input type="text" name="company_career_link"  id="company_career_link" value="<?php  if(!empty($company_profile->company_career_link)){
+                                    echo $company_profile->company_career_link;
+                                 } ?>" class="form-control">
+                            </div>
+                        </div>
                       <div class="col-md-4 col-sm-4">
                        <div class="form-group">
                              <label class="control-label">GSTN No:</label>
@@ -177,36 +185,36 @@
                     </div><!-- end row -->
 
                     <div class="row">
-                      <div class="col-md-4 col-sm-4">
-                        <div class="form-group">
-                          <label>Company Country <span class="required">*</span></label>
-                          <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
-                            <option value="">Select Country</option>
-                            <?php foreach($country as $key){?>
-                            <option value="<?php echo $key['country_id']; ?>" <?php if($company_profile->company_status == $key['country_id']) echo "selected"; ?>><?php echo $key['country_name']; ?></option>
-                            <?php } ?>
-                          </select>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="form-group">
+                              <label>Company Country <span class="required">*</span></label>
+                              <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
+                                <option value="">Select Country</option>
+                                <?php foreach($country as $key){?>
+                                <option value="<?php echo $key['country_id']; ?>" <?php if($company_profile->company_status == $key['country_id']) echo "selected"; ?>><?php echo $key['country_name']; ?></option>
+                                <?php } ?>
+                              </select>
+                            </div>
                         </div>
-                      </div>
-                    
-                      <div class="col-md-4 col-sm-4">
-                        <div class="form-group">
-                          <label>Company State <span class="required">*</span></label>
-                          <select name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
-                           <option value="">Select State</option>
-                           
-                          </select>
+                        
+                        <div class="col-md-4 col-sm-4">
+                            <div class="form-group">
+                              <label>Company State <span class="required">*</span></label>
+                              <select name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+                               <option value="">Select State</option>
+                               
+                              </select>
+                            </div>
                         </div>
-                      </div>
-                      
-                      <div class="col-md-4 col-sm-4">
-                        <div class="form-group">
-                          <label>Company City <span class="required">*</span></label>
-                          <select  name="city_id" id="city_id" class="form-control">
-                            <option value="">Select City</option>
-                          </select>
+                          
+                        <div class="col-md-4 col-sm-4">
+                            <div class="form-group">
+                              <label>Company City <span class="required">*</span></label>
+                              <select  name="city_id" id="city_id" class="form-control">
+                                <option value="">Select City</option>
+                              </select>
+                            </div>
                         </div>
-                      </div>
 
                     </div>
 
@@ -226,10 +234,14 @@
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 <div class="form-group">
-                                <label class="control-label">Company Career Link: <span class="required">*</span></label>
-                                <input type="text" name="company_career_link"  id="company_career_link" value="<?php  if(!empty($company_profile->company_career_link)){
-                                        echo $company_profile->company_career_link;
-                                     } ?>" class="form-control">
+                                    <label class="control-label">Select Type:<span class="required">*</span></label>
+                                    <select name="hot_jobs" required id="hot_jobs" class="form-control" id="sel1">
+                                        <option value="">Select One</option> 
+                                        <option value="1" <?php echo $company_profile->hot_jobs=='1' ? 'selected="selected"' : ''; ?> >Selected Resume</option>
+                                        <option value="2" <?php echo $company_profile->hot_jobs=='2' ? 'selected="selected"' : ''; ?> >University</option>
+                                        <option value="3" <?php echo $company_profile->hot_jobs=='3' ? 'selected="selected"' : ''; ?> >Bank Books</option>
+
+                                    </select>
                                 </div>
                             </div>
 
@@ -292,19 +304,7 @@
                                  } ?></textarea>
                             </div>
                         </div>
-                        <div class="panel-body"></div>
-                        <div class="col-md-4 col-sm-4">
-                            <div class="form-group">
-                                <label class="control-label">Select Type:<span class="required">*</span></label>
-                                <select name="hot_jobs" required id="hot_jobs" class="form-control" id="sel1">
-                                    <option value="">Select One</option> 
-                                    <option value="1" <?php echo $company_profile->hot_jobs=='1' ? 'selected="selected"' : ''; ?> >Selected Resume</option>
-                                    <option value="2" <?php echo $company_profile->hot_jobs=='2' ? 'selected="selected"' : ''; ?> >University</option>
-                                    <option value="3" <?php echo $company_profile->hot_jobs=='3' ? 'selected="selected"' : ''; ?> >Bank Books</option>
-
-                                </select>
-                            </div>
-                        </div>
+                       
 
                       
                     </div><!-- end row -->

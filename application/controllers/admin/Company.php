@@ -57,7 +57,7 @@ class Company extends MY_Controller
                     'hot_jobs'         => '1',
                     'company_aboutus'  => $this->input->post('company_aboutus'),
                     'company_career_link'  => $this->input->post('company_career_link'),
-                    
+
                     //newly added fields
                     'comp_type'            => $this->input->post('company_type'),
                     'contact_person_name'  => $this->input->post('contact_person'),
@@ -112,6 +112,21 @@ class Company extends MY_Controller
                 'hot_jobs'  => $this->input->post('hot_jobs'),
                 'company_aboutus'  => $this->input->post('company_aboutus'),
                 'company_career_link'  => $this->input->post('company_career_link'),
+                
+                //newly added fields
+                    'comp_type'            => $this->input->post('company_type'),
+                    'contact_person_name'  => $this->input->post('contact_person'),
+                    'cont_person_email'    => $this->input->post('cont_person_email'),
+                    'cont_person_mobile'   => $this->input->post('cont_person_mobile'),
+                    'comp_gstn_no'         => $this->input->post('comp_gst_no'),
+                    'comp_pan_no'          => $this->input->post('comp_pan_no'),
+                    // 'company_password'     => md5($this->input->post('comp_password')),
+                    'country_id'           => $this->input->post('country_id'),
+                    'state_id'             => $this->input->post('state_id'),
+                    'city_id'              => $this->input->post('city_id'),
+                    'token'                => md5($this->input->post('company_email')),
+
+
             );
 
 
