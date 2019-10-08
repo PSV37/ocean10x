@@ -541,7 +541,7 @@
                 data:{id:id},
                 success:function(res){
                   $('#job_edu_special').html(res);
-                  $('#job_edu_special').val(<?php echo $job_info->job_edu; ?>);
+                  $('#job_edu_special').val(<?php echo $job_info->edu_specialization; ?>);
                 }
         
             }); 
