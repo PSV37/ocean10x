@@ -572,6 +572,8 @@
 
   getCitys_load();
   getStates_load();
+  getSkillsdetails_load();
+  getEducationSpecial_load();
 });
      
 </script> 
