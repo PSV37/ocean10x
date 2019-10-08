@@ -104,57 +104,7 @@
                             
                         </div><!-- end row -->
 
-                        <div class="row">
-                            <div class="col-md-4 col-sm-4">
-                                <label class="control-label">Company Status:</label>
-                                <select name="company_status" class="form-control" id="sel1">
-                                <?php if(!empty($company_profile->company_status)): ?>
-                                    <option value="1" <?php if($company_profile->company_status == "1") echo "selected"; ?>>Active</option>
-                                    <option value="0" <?php if($company_profile->company_status == "0") echo "selected"; ?>>Deactive</option>
-                                     <?php else: ?>
-                                    <option value="">Select One</option> 
-                                    <option value="1">Active</option> 
-                                    <option value="0">Deactive</option> 
-                                 <?php endif; ?>
-                                </select>
-                            </div>
-                            <div class="col-md-4 col-sm-4">
-                                <div class="form-group">
-                                <label class="control-label">Company Career Link: <span class="required">*</span></label>
-                                <input type="text" name="company_career_link"  id="company_career_link" value="<?php  if(!empty($company_profile->company_career_link)){
-                                        echo $company_profile->company_career_link;
-                                     } ?>" class="form-control">
-                                </div>
-                            </div>
-
-                           
-                            <div class="col-md-4 col-sm-4">
-                                <div class="form-group">
-                                   <label class="control-label">Company Logo:<small>Upload logo 200*200 pixel</small></label> <br>
-                                   <div class="fileinput fileinput-new"  data-provides="fileinput">
-                                    <div class="fileinput-new thumbnail g-logo-img" >
-                                    <?php if(!empty($company_profile->company_logo)) echo '  <img src="'.base_url().'/upload/'.$company_profile->company_logo.'" alt="Product Image">';
-                                        else {
-                                            echo '<img src="http://venusitltd.com/venusit/images/logo.png" alt="Product Image">';          
-                                        }
-                                     ?>
-                                    </div>
-                                      <div class="fileinput-preview fileinput-exists thumbnail g-logo-img"  ></div>
-                                      <div>
-                                         <span class="btn btn-default btn-file">
-                                         <span class="fileinput-new">
-                                         <input type="file" name="company_logo" value="<?php  if(!empty($company_profile->company_logo)){
-                                                    echo $company_profile->company_logo;
-                                                 } ?>" /></span>
-                                         <span class="fileinput-exists">Change</span>
-                                         </span>
-                                         <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
-                                      </div>
-                                      <div id="valid_msg" class="required"></div>
-                                   </div>
-                                </div>
-                            </div>
-                        </div><!-- end row -->
+                       
 
                     <div class="row">
                       <div class="col-md-4 col-sm-4">
@@ -260,11 +210,61 @@
 
                     </div>
 
+                     <div class="row">
+                            <div class="col-md-4 col-sm-4">
+                                <label class="control-label">Company Status:</label>
+                                <select name="company_status" class="form-control" id="sel1">
+                                <?php if(!empty($company_profile->company_status)): ?>
+                                    <option value="1" <?php if($company_profile->company_status == "1") echo "selected"; ?>>Active</option>
+                                    <option value="0" <?php if($company_profile->company_status == "0") echo "selected"; ?>>Deactive</option>
+                                     <?php else: ?>
+                                    <option value="">Select One</option> 
+                                    <option value="1">Active</option> 
+                                    <option value="0">Deactive</option> 
+                                 <?php endif; ?>
+                                </select>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                <div class="form-group">
+                                <label class="control-label">Company Career Link: <span class="required">*</span></label>
+                                <input type="text" name="company_career_link"  id="company_career_link" value="<?php  if(!empty($company_profile->company_career_link)){
+                                        echo $company_profile->company_career_link;
+                                     } ?>" class="form-control">
+                                </div>
+                            </div>
 
+                           
+                            <div class="col-md-4 col-sm-4">
+                                <div class="form-group">
+                                   <label class="control-label">Company Logo:<small>Upload logo 200*200 pixel</small></label> <br>
+                                   <div class="fileinput fileinput-new"  data-provides="fileinput">
+                                    <div class="fileinput-new thumbnail g-logo-img" >
+                                    <?php if(!empty($company_profile->company_logo)) echo '  <img src="'.base_url().'/upload/'.$company_profile->company_logo.'" alt="Product Image">';
+                                        else {
+                                            echo '<img src="http://venusitltd.com/venusit/images/logo.png" alt="Product Image">';          
+                                        }
+                                     ?>
+                                    </div>
+                                      <div class="fileinput-preview fileinput-exists thumbnail g-logo-img"  ></div>
+                                      <div>
+                                         <span class="btn btn-default btn-file">
+                                         <span class="fileinput-new">
+                                         <input type="file" name="company_logo" value="<?php  if(!empty($company_profile->company_logo)){
+                                                    echo $company_profile->company_logo;
+                                                 } ?>" /></span>
+                                         <span class="fileinput-exists">Change</span>
+                                         </span>
+                                         <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                                      </div>
+                                      <div id="valid_msg" class="required"></div>
+                                   </div>
+                                </div>
+                            </div>
+                        </div><!-- end row -->
 
                       <div class="row">
 
-                        <div class="col-md-4 col-sm-4">
+                        <div class="col-md-12 col-sm-12">
                             <div class="form-group">
                                 <label class="control-label">Head Office Address: <span class="required">*</span></label>
                                 <textarea  name="company_address"  id="company_address" class="form-control ckeditor" rows="8" id="comment"><?php if(!empty($company_profile->company_address)){
@@ -273,7 +273,8 @@
                                 ?></textarea>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-4">
+                        <div class="panel-body"></div>
+                        <div class="col-md-12 col-sm-12">
                             <div class="form-group">
                                 <label class="control-label">Attractive Offers: <span class="required">*</span></label>
                              <textarea  name="company_service" id="company_service" class="form-control ckeditor" rows="8" id="comment"><?php if(!empty($company_profile->company_service)){
@@ -282,8 +283,8 @@
                                 ?></textarea>
                             </div>
                         </div>
-
-                        <div class="col-md-4 col-sm-4">
+                        <div class="panel-body"></div>
+                        <div class="col-md-12 col-sm-12">
                          <div class="form-group">
                            <label class="control-label">Special Features: <span class="required">*</span></label>
                             <textarea  name="company_aboutus"  id="company_aboutus" class="form-control ckeditor" rows="8"><?php  if(!empty($company_profile->company_aboutus)){
@@ -291,7 +292,7 @@
                                  } ?></textarea>
                             </div>
                         </div>
-
+                        <div class="panel-body"></div>
                         <div class="col-md-4 col-sm-4">
                             <div class="form-group">
                                 <label class="control-label">Select Type:<span class="required">*</span></label>
