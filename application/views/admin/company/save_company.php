@@ -33,109 +33,123 @@
 
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
-                        <h3 class="box-title ">Add New Company</h3>
+                  <h3 class="box-title ">Add New Company</h3>
                 </div>
                 <div class="box-body">
-                        <?php echo $this->session->flashdata('msg'); ?>
-                            <form 
-                       action="" id="add_company" method="POST" enctype="multipart/form-data">
+                <?php echo $this->session->flashdata('msg'); ?>
+                  <form action="" id="add_company" method="POST" enctype="multipart/form-data">
+                        
+                    <div class="row">
 
-                             <div class="row">
-                                        <div class="col-md-4 col-sm-4">
-                                          <div class="form-group">
-                                           <label class="control-label">Company Name <span class="required">*</span></label>
-                                            <input type="text" name="company_name" id="company_name"  class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-sm-4">
-                                          <div class="form-group">
-                                             <label class="control-label">Company Email: <span class="required">*</span></label>
-                                            <input type="email" name="company_email" id="company_email"  class="form-control" >
-                                            </div>
-                                        </div>
-                                     <div class="col-md-4 col-sm-4">
-                                       <div class="form-group">
-                                             <label class="control-label">Company Website: <span class="required">*</span></label>
-                                            <input type="text" name="company_url" id="company_url"  class="form-control" >
-                                        </div>
-                                        </div>
-                                    </div><!-- end row -->
+                      <div class="col-md-4 col-sm-4">
+                        <div class="form-group">
+                          <label class="control-label">Company Type: <span class="required">*</span></label>
+                          <select name="company_type" id="company_type"  class="form-control">
+                            <option value="">Select Type</option> 
+                            <option value="Company">Company</option> 
+                            <option value="HR Consultant">HR Consultant</option> 
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 col-sm-4">
+                        <div class="form-group">
+                         <label class="control-label">Company Name <span class="required">*</span></label>
+                          <input type="text" name="company_name" id="company_name"  class="form-control">
+                          </div>
+                      </div>
+                      <div class="col-md-4 col-sm-4">
+                        <div class="form-group">
+                           <label class="control-label">Company Email: <span class="required">*</span></label>
+                          <input type="email" name="company_email" id="company_email"  class="form-control" >
+                          </div>
+                      </div>
+                      
+                    </div><!-- end row -->
                     
-                                    <div class="row">
-                                        <div class="col-md-4 col-sm-4">
-                                          <div class="form-group">
-                                           <label class="control-label">Phone Number: <span class="required">*</span></label>
-                                            <input type="text" name="company_phone" id="company_phone" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-sm-4">
-                                          <div class="form-group">
-                                             <label class="control-label">Company Category: <span class="required">*</span></label>
-                                             <select id="company_category" name="company_category"  class="form-control" id="category">
-                                             <option value="">Select One</option>
-                                             <?php 
-                                               echo $this->job_category_model->selected(); ?>
-                                              </select>
-                                              </div>
-                                        </div>
+                    <div class="row">
+                      <div class="col-md-4 col-sm-4">
+                        <div class="form-group">
+                         <label class="control-label">Phone Number: <span class="required">*</span></label>
+                          <input type="text" name="company_phone" id="company_phone" class="form-control">
+                          </div>
+                      </div>
+                      <div class="col-md-4 col-sm-4">
+                       <div class="form-group">
+                             <label class="control-label">Company Website: <span class="required">*</span></label>
+                            <input type="text" name="company_url" id="company_url"  class="form-control" >
+                        </div>
+                      </div>
 
-                                 <div class="col-md-4 col-sm-4">
-                                   <div class="form-group">
-                                             <label class="control-label">Company Status: <span class="required">*</span></label>
-                                        <select name="company_status" id="company_status"  class="form-control" id="sel1">
-                                             <option value="">Select One</option> 
-                                             <option value="1">Active</option> 
-                                             <option value="0">Deactive</option> 
-                                            </select>
-                                        </div>
-                                        </div>
-                                    </div><!-- end row -->
+                      <div class="col-md-4 col-sm-4">
+                        <div class="form-group">
+                          <label class="control-label">Company Industry: <span class="required">*</span></label>
+                          <select id="company_category" name="company_category"  class="form-control" id="category">
+                            <option value="">Select One</option>
+                           <?php 
+                             echo $this->job_category_model->selected(); ?>
+                          </select>
+                        </div>
+                      </div>
 
-                                    <div class="row">
-                                        <div class="col-md-4 col-sm-4">
-                                         <div class="form-group">
-                                           <label class="control-label">Head Office:</label>
-                                            <textarea  name="company_address"  id="company_address" class="form-control" rows="8" id="comment"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-sm-4">
-                                         <div class="form-group">
-                                             <label class="control-label">Attractive Offers:</label>
-                                         <textarea  name="company_service" id="company_service" class="form-control" rows="8" id="comment"></textarea>
-                                         </div>
-                                        </div>
-                                        <div class="col-md-4 col-sm-4">
-                                         <div class="form-group">
-                                       <label class="control-label">Company Logo:<small>Upload logo 300*300 pixel</small></label> <br>
-                                  
-                                         <input type="file" name="company_logo" id="company_logo" /></span>
-                                         <div id="imgContainer">
-                                           
-                                         </div>
-                                        
-                                   </div>
-                                        </div>
-                                    </div><!-- end row -->
-                                    <div class="row">
-                                        <div class="col-md-4 col-sm-4">
-                                         <div class="form-group">
-                                           <label class="control-label">Special Features:</label>
-                                            <textarea  name="company_aboutus"  id="company_aboutus" class="form-control" rows="8"></textarea>
-                                            </div>
-                                        </div>
+                      
+                    </div><!-- end row -->
 
-                                      
+                    <div class="row">
 
-                                       <div class="col-md-4 col-sm-4">
-                                         <div class="form-group">
-                                           <label class="control-label">Company Career Link: <span class="required">*</span></label>
-                                            <input type="text" name="company_career_link"  id="company_career_link" class="form-control">
-                                            </div>
-                                        </div>
-                                    </div><!-- end row -->
+                      <div class="col-md-4 col-sm-4">
+                        <div class="form-group">
+                          <label class="control-label">Company Status: <span class="required">*</span></label>
+                          <select name="company_status" id="company_status"  class="form-control" id="sel1">
+                            <option value="">Select One</option> 
+                            <option value="1">Active</option> 
+                            <option value="0">Deactive</option> 
+                          </select>
+                        </div>
+                      </div>
 
-                     <button type="submit" id="submitCompany" class="btn bg-navy" type="submit">Save Company
-                                </button>
+                      <div class="col-md-4 col-sm-4">
+                        <div class="form-group">
+                          <label class="control-label">Company Logo:<small>Upload logo 300*300 pixel</small></label> <br>
+                          <input type="file" name="company_logo" id="company_logo" />
+                          <div id="imgContainer"> </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 col-sm-4">
+                        <div class="form-group">
+                          <label class="control-label">Company Career Link: <span class="required">*</span></label>
+                          <input type="text" name="company_career_link"  id="company_career_link" class="form-control">
+                        </div>
+                      </div>
+
+                    </div><!-- end row -->
+                    <div class="row">
+                       <div class="col-md-12 col-sm-12">
+                        <div class="form-group">
+                          <label class="control-label">Head Office:</label>
+                          <textarea  name="company_address"  id="company_address" class="form-control ckeditor" rows="8" id="comment"></textarea>
+                        </div>
+                      </div>
+                      <div class="panel-body"></div>
+                      <div class="col-md-12 col-sm-12">
+                        <div class="form-group">
+                          <label class="control-label">Attractive Offers:</label>
+                          <textarea  name="company_service" id="company_service" class="form-control ckeditor" rows="8" id="comment"></textarea>
+                        </div>
+                      </div>
+                      <div class="panel-body"></div>
+                      <div class="col-md-12 col-sm-12">
+                        <div class="form-group">
+                          <label class="control-label">Special Features:</label>
+                          <textarea  name="company_aboutus"  id="company_aboutus" class="form-control ckeditor" rows="8"></textarea>
+                        </div>
+                      </div>
+                      
+                      
+                    </div><!-- end row -->
+
+                    <button type="submit" id="submitCompany" class="btn bg-navy" type="submit">Save Company</button>
                 </form>
 
                 </div><!-- /.box-body -->
@@ -144,7 +158,7 @@
         </div>
         <!--/.col end -->
     </div>
-        </div>
+  </div>
 
 <!-- <form class="some_form" enctype="multipart/form-data" method="post" action="">
   <div class="form-group">
