@@ -70,8 +70,11 @@ class Company extends MY_Controller
                     $this->session->set_flashdata('msg', '<div class="alert alert-success text-center"> Company Added Sucessfully</div>');
                     redirect('admin/company/save_company');}
             }} else {
-            $title = "Company Added";
-            $this->load->view('admin/company/save_company', compact('title'));
+            $data['title'] = "Company Added";
+            $where_cnty = "status=1";
+            $data['country'] = $this->Master_model->getMaster('country',$where_cnty);
+
+            $this->load->view('admin/company/save_company', $data);
         }
     }
 
@@ -265,4 +268,37 @@ class Company extends MY_Controller
         }
     }
 
-}
+    function getcity(){
+        $state_id = $this->input->post('id');
+        $where['state_id'] = $state_id;
+        $citys = $this->Master_model->getMaster('city',$where);
+        $result = '';
+        if(!empty($citys)){ 
+            $result .='<option value="">Select City</option>';
+            foreach($citys as $city_row){
+              $result .='<option value="'.$city_row['id'].'">'.$city_row['city_name'].'</option>';
+            }
+        }else{
+            $result .='<option value="">Cities Not Found</option>';
+        }
+         echo $result;
+    }
+
+   function getEducation_specialization(){
+        $level_id = $this->input->post('id');
+        $where['edu_level_id'] = $level_id;
+        $special = $this->Master_model->getMaster('education_specialization',$where);
+        $result = '';
+        if(!empty($special)){ 
+            $result .='<option value="">Select Specilazation</option>';
+            foreach($special as $spec_row){
+              $result .='<option value="'.$spec_row['id'].'">'.$spec_row['education_specialization'].'</option>';
+            }
+        }else{
+            $result .='<option value="">Specilazation Not Found </option>';
+        }
+         echo $result;
+    }
+    
+
+} // class end here

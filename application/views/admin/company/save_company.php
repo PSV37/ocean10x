@@ -70,7 +70,7 @@
                     <div class="row">
                       <div class="col-md-4 col-sm-4">
                         <div class="form-group">
-                         <label class="control-label">Phone Number: <span class="required">*</span></label>
+                         <label class="control-label">Company Phone Number: <span class="required">*</span></label>
                           <input type="text" name="company_phone" id="company_phone" class="form-control">
                           </div>
                       </div>
@@ -92,8 +92,82 @@
                         </div>
                       </div>
 
-                      
                     </div><!-- end row -->
+
+                    <div class="row">
+                      <div class="col-md-4 col-sm-4">
+                        <div class="form-group">
+                         <label class="control-label">Contact Person: <span class="required">*</span></label>
+                          <input type="text" name="contact_person" id="contact_person" class="form-control">
+                          </div>
+                      </div>
+                      <div class="col-md-4 col-sm-4">
+                       <div class="form-group">
+                             <label class="control-label">Contact Person Email: <span class="required">*</span></label>
+                            <input type="text" name="cont_person_email" id="cont_person_email"  class="form-control" >
+                        </div>
+                      </div>
+
+                       <div class="col-md-4 col-sm-4">
+                       <div class="form-group">
+                             <label class="control-label">Contact Person Mobile: <span class="required">*</span></label>
+                            <input type="text" name="cont_person_mobile" id="cont_person_mobile"  class="form-control" >
+                        </div>
+                      </div>
+
+                    </div><!-- end row -->
+
+                    <div class="row">
+                      <div class="col-md-4 col-sm-4">
+                        <div class="form-group">
+                         <label class="control-label">Password: <span class="required">*</span></label>
+                          <input type="password" name="comp_password" id="comp_password" class="form-control">
+                          </div>
+                      </div>
+                      <div class="col-md-4 col-sm-4">
+                       <div class="form-group">
+                             <label class="control-label">GSTN No:</label>
+                            <input type="text" name="comp_gst_no" id="comp_gst_no"  class="form-control" >
+                        </div>
+                      </div>
+
+                       <div class="col-md-4 col-sm-4">
+                       <div class="form-group">
+                             <label class="control-label">PAN No:</label>
+                            <input type="text" name="comp_pan_no" id="comp_pan_no"  class="form-control" >
+                        </div>
+                      </div>
+
+                    </div><!-- end row -->
+
+                    <div class="row">
+                      <div class="col-md-4 col-sm-4">
+                        <label>Job Country <span class="required">*</span></label>
+                        <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
+                          <option value="">Select Country</option>
+                          <?php foreach($country as $key){?>
+                          <option value="<?php echo $key['country_id']; ?>"<?php if($job_info->job_location==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
+                          <?php } ?>
+                        </select>
+                      </div>
+                    
+                      <div class="col-md-4 col-sm-4">
+                        <label>Job State <span class="required">*</span></label>
+                        <select name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+                         <option value="">Select State</option>
+                         <?php echo $job_info->state_id;?>
+                        </select>
+                      </div>
+                      
+                      <div class="col-md-4 col-sm-4">
+                        <label>Job City <span class="required">*</span></label>
+                        <select  name="city_id" id="city_id" class="form-control">
+                          <option value="">Select City</option>
+                         
+                        </select>
+                      </div>
+
+                    </div>
 
                     <div class="row">
 
@@ -107,7 +181,12 @@
                           </select>
                         </div>
                       </div>
-
+                      <div class="col-md-4 col-sm-4">
+                        <div class="form-group">
+                          <label class="control-label">Company Career Link: <span class="required">*</span></label>
+                          <input type="text" name="company_career_link"  id="company_career_link" class="form-control">
+                        </div>
+                      </div>
                       <div class="col-md-4 col-sm-4">
                         <div class="form-group">
                           <label class="control-label">Company Logo:<small>Upload logo 300*300 pixel</small></label> <br>
@@ -116,18 +195,12 @@
                         </div>
                       </div>
 
-                      <div class="col-md-4 col-sm-4">
-                        <div class="form-group">
-                          <label class="control-label">Company Career Link: <span class="required">*</span></label>
-                          <input type="text" name="company_career_link"  id="company_career_link" class="form-control">
-                        </div>
-                      </div>
-
                     </div><!-- end row -->
+
                     <div class="row">
                        <div class="col-md-12 col-sm-12">
                         <div class="form-group">
-                          <label class="control-label">Head Office:</label>
+                          <label class="control-label">Head Office Address:</label>
                           <textarea  name="company_address"  id="company_address" class="form-control ckeditor" rows="8" id="comment"></textarea>
                         </div>
                       </div>
@@ -291,6 +364,35 @@ $('#company_logo').change(function() {
         });
 });
 
+
+ function getStates(id){
+    if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/company/getstate',
+                data:{id:id},
+                success:function(res){
+                  $('#state_id').html(res);
+                }
+        
+            }); 
+        }
+    }
+     
+  function getCitys(id){
+    if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/company/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city_id').html(res);
+                }
+        
+            }); 
+          }
+   
+    }
 
 </script>
  
