@@ -113,24 +113,15 @@
                                         </div><!-- end row -->
                                     </div>
                                     
-									
-									
-                                   
-                                        
-                                        
                                     <div class="formrow">
                                         <div class="captchacode">Captcha is cause sensitive</div>
                                 		<div class="row">
-
                                             <div class="col-md-6 col-sm-12">
                                                 <input type="text" id="inputchapcha" required name="captcha" value="" class="form-control" placeholder="Captcha Code">
                                             </div>
-
                                             <div class="col-md-4 col-sm-4"><p id="captImg"><?php echo $captcha_images; ?></p>
                                             <a href="javascript:void(0);" class="refreshCaptcha" ><img src="<?php echo base_url().'fontend/images/refresh-button.png'; ?>"/></a>
                                             </div>
-                                        
-                                        
                                         </div><!-- end row -->
                                     </div>
 
@@ -184,7 +175,6 @@
 
                 company_type: {
                         required: true,
-                       //minlength: 5
                     },
                 company_name: {
                         required: true,
@@ -208,6 +198,17 @@
                     company_address: {
                         required: true,
                     },
+
+                    country_id: {
+                        required: true,
+                    },
+                    state_id: {
+                        required: true,
+                    },
+                    city_id: {
+                        required: true,
+                    },
+
 
                     captcha: {
                         required:true,
