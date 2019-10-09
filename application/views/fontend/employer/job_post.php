@@ -111,7 +111,7 @@
                 </div>
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label">Salary Range</label>
+                    <label class="control-label">Salary Offered</label>
                     <input type="number" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1">
                   </div>
                 </div>
@@ -174,8 +174,19 @@
                 <div class="col-md-6 col-sm-12">
                   <div class="formrow">
                     <label class="control-label mandatory">Vacancy Deadline *</label>
-                    <input type="date" name="job_deadline" class="form-control" id="job_deadline_day" required value="">
-                      
+                      <!-- <input type="date" name="job_deadline" class="form-control" id="job_deadline_day" required value=""> -->
+                      <div class="input-group">
+                        <input type="text" value="<?php
+                        if (!empty($job_info)) {
+                            $job_deadline = date('m/d/Y', strtotime($job_info->job_deadline));
+                            echo $job_deadline;
+                        }
+                        ?>" class="form-control datepicker" id="job_deadline" name="job_deadline">
+
+                        <div class="input-group-addon">
+                            <a href="#"><i class="entypo-calendar"></i></a>
+                        </div>
+                    </div>
                     <?php /*?><div class="row">
                     	<div class="col-md-4"><select name="job_deadline_day" class="form-control" id="job_deadline_day" required>
                       <option value="" selected>Day</option>
