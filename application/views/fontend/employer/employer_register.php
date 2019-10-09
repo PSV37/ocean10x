@@ -34,8 +34,17 @@
                                 <form id="EmpRegistation" action="<?php echo base_url(); ?>employer_register/create" method="post" enctype="multipart/form-data" class="submit-form">
                                     <div class="formrow">
                                     <div class="row">
+                                        <div class="col-md-4 col-sm-4">
+                                            <select name="company_type" id="company_type" class="form-control" >
+                                                <option value="">Select Type</option> 
+                                                <option value="Company"<?php echo (isset($this->session->userdata['reg_in']['comp_type'])?$this->session->userdata['reg_in']['comp_type']:''); ?>>Company</option> 
+                                                <option value="HR Consultant"<?php echo (isset($this->session->userdata['reg_in']['comp_type'])?$this->session->userdata['reg_in']['comp_type']:''); ?>>HR Consultant</option> 
+                                            </select>
+                                           
+                                        </div>
+
                                         <div class="col-md-6 col-sm-12">
-                <input type="text" name="company_name" class="form-control"  value="<?php echo (isset($this->session->userdata['reg_in']['company_name'])?$this->session->userdata['reg_in']['company_name']:''); ?>" placeholder="Company Name">
+                                            <input type="text" name="company_name" class="form-control"  value="<?php echo (isset($this->session->userdata['reg_in']['company_name'])?$this->session->userdata['reg_in']['company_name']:''); ?>" placeholder="Company Name">
                                         </div>
                                         <div class="col-md-6 col-sm-12">
                                             <input type="email" name="company_email" value="<?php echo isset($this->session->userdata['reg_in']['company_email'])?$this->session->userdata['reg_in']['company_email']:''; ?>" class="form-control" placeholder="Email">
@@ -175,6 +184,11 @@
             var sessionCaptcha = '<?php echo $this->session->userdata('captchaCode'); ?>';
                $( "#EmpRegistation" ).validate( {
                 rules: {
+
+                company_type: {
+                        required: true,
+                       //minlength: 5
+                    },
                 company_name: {
                         required: true,
                         minlength: 5
