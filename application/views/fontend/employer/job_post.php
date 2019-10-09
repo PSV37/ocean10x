@@ -166,14 +166,14 @@
               
               <!-- <hr class="invis"> -->
               <div class="row">
-                <div class="col-md-6 col-sm-12">
+                <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Job Deadline<span class="required">*</span></label>
                       <input type="text" name="job_deadline" class="form-control datepicker" id="job_deadline_day" required value="">
                   </div>
                 </div>
 
-                <div class="col-md-6 col-sm-12">
+                <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Job Types<span class="required">*</span></label>
                     <select name="job_types" required class="form-control" data-style="btn-default" data-live-search="true">
@@ -183,7 +183,7 @@
                 </div>
               </div>
               <!-- end row -->
-              <hr class="invis">
+              <!-- <hr class="invis"> -->
               <div class="row">
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
@@ -222,7 +222,7 @@
               <div class="row">
                 <div class="col-md-12 col-sm-12">
                   <div class="formrow">
-                    <label>Vacancy Description<span class="required">*</span></label>
+                    <label>Job Description<span class="required">*</span></label>
                     <textarea name="job_desc" required class="form-control ckeditor" required><?php if(!empty($job_info)) echo $job_info->job_desc; ?></textarea>
                   </div>
                 </div>
@@ -240,7 +240,7 @@
                 </div>
               </div>
               <hr class="invis">
-              <button class="btn btn-primary" type="submit">Post a Vacancy</button>
+              <button class="btn btn-primary" type="submit">Post Job</button>
             </form>
           </div>
         </div>
