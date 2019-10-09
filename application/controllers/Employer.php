@@ -116,7 +116,11 @@ class Employer extends MY_Employer_Controller
                         'job_nature'         => $this->input->post('job_nature'),
                         'job_edu'            => $this->input->post('job_edu'),
                         'no_jobs'            => $this->input->post('no_jobs'),
-                         'job_level'         => $this->input->post('job_level'),
+                        'edu_specialization' => $this->input->post('job_edu_special'),   //new added field
+                        'job_role'           => $this->input->post('job_role'),   //new added field
+                        'skills_required'    => implode(',', $this->input->post('skill_set')), //new added field
+
+                        'job_level'         => $this->input->post('job_level'),
                         'salary_range'       => $this->input->post('salary_range'),
                         'job_types'          => $this->input->post('job_types'),
                         "job_deadline"       => $this->input->post('job_deadline'),
