@@ -15,8 +15,8 @@
     
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/responsive.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/main.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/intlTelInput.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/demo.css">
+	  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/intlTelInput.css">
+	  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/demo.css">
     
     <link href="<?php echo base_url(); ?>asset/css/jquery-ui.css" rel="stylesheet" type="text/css" />
     <script src="<?php echo base_url() ?>fontend/js/jquery.js "></script> 
@@ -25,7 +25,14 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>asset/ckeditor/ckeditor.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>asset/ckfinder/ckfinder.js"></script>
         
-
+    <style>
+      label {
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+    </style>
     <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 </head>
 
