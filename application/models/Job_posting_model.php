@@ -109,19 +109,39 @@ order by RAND() limit 3");
         return $query->row();
     }
     
+//Old Function
+// public function get_job_details_employer($jobid)
+//     {
+//        $query = $this->db->query("select t1.*, t2.company_name, t2.company_logo, t2.company_slug,t3.country_name, t4.job_nature_name, t5.job_category_name, t6.job_level_name, t7.job_types_name, t8.education_level_name
+//             from job_posting t1
+//             left join company_profile t2 on t1.company_profile_id=t2.company_profile_id
+//             left join country t3 on t3.country_id=t1.job_location
+//             left join job_nature t4 on t1.job_nature=t4.job_nature_id 
+//             left join job_category t5 on t1.job_category=t5.job_category_id
+//             left join job_level t6 on t1.job_level=t6.job_level_id
+//             left join job_types t7 on t1.job_types=t7.job_types_id
+//             left join education_level t8 on t1.job_edu=t8.education_level_id
+//             where  t1.job_post_id='$jobid'");
+    
+//         return $query->row();
+//     }
 
  public function get_job_details_employer($jobid)
     {
-       $query = $this->db->query("select t1.*, t2.company_name, t2.company_logo, t2.company_slug,t3.country_name, t4.job_nature_name, t5.job_category_name, t6.job_level_name, t7.job_types_name, t8.education_level_name
+       $query = $this->db->query("select t1.*, t2.company_name, t2.company_logo, t2.company_slug,t3.country_name, t4.job_nature_name, t5.job_category_name, t6.job_level_name, t7.job_types_name, t8.education_level_name,t9.state_name,t10.city_name,t11.education_specialization
             from job_posting t1
             left join company_profile t2 on t1.company_profile_id=t2.company_profile_id
             left join country t3 on t3.country_id=t1.job_location
+            left join state t9 on t9.state_id=t1.state_id
+            left join city t10 on t10.id=t1.city_id
             left join job_nature t4 on t1.job_nature=t4.job_nature_id 
             left join job_category t5 on t1.job_category=t5.job_category_id
             left join job_level t6 on t1.job_level=t6.job_level_id
             left join job_types t7 on t1.job_types=t7.job_types_id
             left join education_level t8 on t1.job_edu=t8.education_level_id
-            where  t1.job_post_id='$jobid'");
+            left join education_specialization t11 on t1.edu_specialization=t11.id
+            where job_status=1
+            AND t1.job_post_id='$jobid'");
   	
         return $query->row();
     }
