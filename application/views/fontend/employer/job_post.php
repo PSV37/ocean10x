@@ -93,16 +93,31 @@
                     </select>
                   </div>
                 </div>
-
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label ">Salary Offered<span class="required">*</span></label>
-                    <input type="number" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1">
+                    <label>Job Role<span class="required">*</span></label>
+                      <select name="job_role" id="job_role" class="form-control col-sm-5" onchange="getSkillsdetails(this.value)">
+                        <option value="">Select Role</option>
+                        <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
+                           ?> 
+                          <option value="<?php echo $role_value['id']; ?>"<?php if(!empty($job_info)) if($job_info->job_role==$role_value['id']) echo 'selected'; ?>><?php echo $role_value['job_role_title']; ?></option>
+                        <?php } ?>       
+                      </select>
                   </div>
                 </div>
-
+              
               </div>
               <!-- end row -->
+
+              <div class="row">
+                <div class="formrow">
+                  <div class="col-md-12 col-sm-12"> 
+                    <label class="control-label ">Skill Set<span class="required">*</span></label><br>
+                    <div id="skills_result">Please Select Job Role.</div>
+                  </div>
+                </div>
+              </div>
+
                <div class="row">
                 <div class="formrow">
                   <div class="col-md-4 col-sm-4">
@@ -137,35 +152,18 @@
                 </div><!-- end row -->
               </div>
               <!-- <hr class="invis"> -->
-              <div class="row">
 
-                <div class="col-md-4 col-sm-12">
-                  <div class="formrow">
-                    <label class="control-label ">Preferred Age(From)</label>
-               		   <input class="form-control" required name="preferred_age_from"  value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>" type="number" >
-                  </div>
-                </div>
-        				<div class="col-md-4 col-sm-12">
-                  <div class="formrow">
-                    <label class="control-label ">Preferred Age(To)</label>
-               		  <input class="form-control" required name="preferred_age_to" value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>" type="number" >
-                  </div>
-        				</div>
+              <div class="row">
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Working Hours<span class="required">*</span></label>
                     <input type="number"  name="working_hours" value="<?php 
-            						 if(!empty($job_info->working_hours)){
-            							echo $job_info->working_hours;
-            						 }
-            					?>" class="form-control" >
+                         if(!empty($job_info->working_hours)){
+                          echo $job_info->working_hours;
+                         }
+                      ?>" class="form-control" >
                   </div>
                 </div>
-              </div>
-              <!-- end row -->
-              
-              <!-- <hr class="invis"> -->
-              <div class="row">
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Job Deadline<span class="required">*</span></label>
@@ -183,6 +181,33 @@
                 </div>
               </div>
               <!-- end row -->
+
+              <div class="row">
+                <div class="col-md-4 col-sm-12">
+                  <div class="formrow">
+                    <label class="control-label ">Salary Offered<span class="required">*</span></label>
+                    <input type="number" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1">
+                  </div>
+                </div>
+
+                <div class="col-md-4 col-sm-12">
+                  <div class="formrow">
+                    <label class="control-label ">Preferred Age(From)</label>
+               		   <input class="form-control" required name="preferred_age_from"  value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>" type="number" >
+                  </div>
+                </div>
+        				<div class="col-md-4 col-sm-12">
+                  <div class="formrow">
+                    <label class="control-label ">Preferred Age(To)</label>
+               		  <input class="form-control" required name="preferred_age_to" value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>" type="number" >
+                  </div>
+        				</div>
+               
+              </div>
+              <!-- end row -->
+              
+              <!-- <hr class="invis"> -->
+
               <!-- <hr class="invis"> -->
               <div class="row">
                 <div class="col-md-4 col-sm-12">
@@ -205,7 +230,7 @@
                     ?>" />
                   </div>
                 </div>
-                <div class="col-md-4 col-sm-12">
+               <!--  <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Required Education </label>
                     <select name="job_edu" class="form-control" data-style="btn-default" data-live-search="true">
@@ -215,9 +240,35 @@
 										<?php } ?>
                     </select>
                   </div>
+                </div> -->
+
+                 <div class="col-md-4 col-sm-12"> 
+                  <div class="formrow">  
+                    <label class="control-label">Required Education Level  <span class="required">*</span></label>
+
+                    <select name="job_edu" id="job_edu" class="form-control"  data-style="btn-default" data-live-search="true" onchange="getEducationSpecial(this.value)" required="">
+                     <option value="">Select Level </option>
+                      <?php foreach($education_level as $education){?>
+                        <option value="<?php echo $education['education_level_id']; ?>"<?php if($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
+                      <?php } ?>
+                    </select> 
+                  </div>
                 </div>
+
+                <div class="col-md-4 col-sm-12"> 
+                  <div class="formrow">  
+                    <label class="control-label ">Required Education <span class="required">*</span></label>
+                    <select name="job_edu_special" id="job_edu_special" class="form-control"  data-style="btn-default" data-live-search="true" required="">
+                     <option value="">Select Education </option>
+                   
+                    </select> 
+                  </div>
+                </div>
+
+
+
               </div>
-              </hr>
+             
             
               <div class="row">
                 <div class="col-md-12 col-sm-12">
@@ -293,5 +344,125 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
             }); 
           }
 	   }
+
+  function getSkillsdetails(id)
+    {
+      if(id){
+        $.ajax({
+                  url:'<?php echo base_url();?>Employer/getSkillsByRole',
+                  type:'POST',
+                  data:{
+                      role_id:id
+                  },
+                   dataType: "html",  
+                   success: function(data)
+                   {
+                      $('#skills_result').html(data);
+                   } 
+            });
+
+        }
+    }
+
+  function getEducationSpecial(id){
+     
+    if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Employer/getEducation_specialization',
+                data:{id:id},
+                success:function(res){
+                  $('#job_edu_special').html(res);
+                }
+        
+            }); 
+          }
+   
+    }
+
+
+  $(document).ready(function(){
+
+    function getStates_load(){
+        var id = $('#country_id').val();
+
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/Job_posting/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state_id').html(res);
+                    $('#state_id').val(<?php echo $job_info->state_id; ?>);
+                     getCitys_load(<?php echo $job_info->state_id; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+    
+    function getCitys_load(id){
+      //var id = $('#state_id').val();
+      // alert(id);
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/Job_posting/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city_id').html(res);
+                    $('#city_id').val(<?php echo $job_info->city_id; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+
+
+ function getEducationSpecial_load(){
+    var id = $('#job_edu').val();
+      if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/Job_posting/getEducation_specialization',
+                data:{id:id},
+                success:function(res){
+                  $('#job_edu_special').html(res);
+                  $('#job_edu_special').val(<?php echo $job_info->edu_specialization; ?>);
+                }
+        
+            }); 
+          }
+   
+    }
+
+  function getSkillsdetails_load()
+    {
+      var id = $('#job_role').val();
+      if(id){
+        $.ajax({
+                  url:'<?php echo base_url();?>admin/Job_posting/getSkillsByRole',
+                  type:'POST',
+                  data:{
+                        role_id:id
+                  },
+                   dataType: "html",  
+                   success: function(data)
+                   {
+                      $('#skills_result').html(data);
+                      $('#skills_result').val(<?php echo $job_info->job_role; ?>);
+                   } 
+            });
+
+      }
+}
+
+  getCitys_load();
+  getStates_load();
+  getSkillsdetails_load();
+  getEducationSpecial_load();
+});
 	   
 </script> 

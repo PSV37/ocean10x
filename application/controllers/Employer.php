@@ -142,11 +142,18 @@ class Employer extends MY_Employer_Controller
                         redirect('job/show/'.$job_info['job_slugs']);
                     }
                 } else {
-					$city = $this->Master_model->getMaster('city',$where=false);
-					$country = $this->Master_model->getMaster('country',$where=false);
-					$state = $this->Master_model->getMaster('state',$where=false);
-					$education_level = $this->Master_model->getMaster('education_level',$where=false);
-                    $this->load->view('fontend/employer/job_post', compact('company_info', 'city', 'country', 'state', 'education_level'));
+					$data['city'] = $this->Master_model->getMaster('city',$where=false);
+					$data['country'] = $this->Master_model->getMaster('country',$where=false);
+					$data['state'] = $this->Master_model->getMaster('state',$where=false);
+					$data['education_level'] = $this->Master_model->getMaster('education_level',$where=false);
+
+                    $where_cn= "status=1";
+                    $select = "job_role_title, skill_set ,id";
+                    $data['job_role_data'] = $this->Master_model->getMaster('job_role',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
+
+
+
+                    $this->load->view('fontend/employer/job_post', $data);
                 }
             }
 
@@ -480,5 +487,53 @@ function getstate(){
 	}
 	 echo $result;
 }
+    
+     // To fetch getProfssionalSkillsDetails details
+    function getSkillsByRole() {
+        $id=$this->input->post('role_id');
+        $whereres = "id='$id'";
+        $role_data= $this->Master_model->get_master_row('job_role',$select = FALSE,$whereres);
 
+        $sk = $role_data['skill_set'];
+        
+        if ($sk) {
+            $where_sk= "id IN (".$sk.") AND status=1";
+            $select_sk = "skill_name ,id";
+            $skills = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=false,$start=false, $search=false);
+              
+               $result = '';
+                if(!empty($skills)){ 
+                    foreach($skills as $skill_row){
+                      $result .="<input type='checkbox' name='skill_set[]' id='skill_set' value=".$skill_row['id']." checked> ".$skill_row['skill_name']."";
+
+                    }
+                }else{
+                    $result .='Skills Not Found ';
+                }
+                                        
         }
+        else{
+            $result .='Skills Not Found ';
+        }
+         echo $result;    
+    } 
+
+    function getEducation_specialization(){
+        $level_id = $this->input->post('id');
+        $where['edu_level_id'] = $level_id;
+        $special = $this->Master_model->getMaster('education_specialization',$where);
+        $result = '';
+        if(!empty($special)){ 
+            $result .='<option value="">Select Specilazation</option>';
+            foreach($special as $spec_row){
+              $result .='<option value="'.$spec_row['id'].'">'.$spec_row['education_specialization'].'</option>';
+            }
+        }else{
+            $result .='<option value="">Specilazation Not Found </option>';
+        }
+         echo $result;
+    }
+    
+
+
+}
