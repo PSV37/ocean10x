@@ -61,12 +61,41 @@
                                           
                                         </div><!-- end row -->
                                     </div>
-                                     <div class="formrow">
+                                     
+                                    <div class="formrow">
                                         <div class="row">
+                                            <div class="col-md-6 col-sm-12">
+                                              <select  name="country_id" class="form-control" onchange="getStates(this.value)">
+                                                <option value="">Select Country</option>
+                                                <?php foreach($country as $key){?>
+                                                <option value="<?php echo $key['country_id']; ?>"><?php echo $key['country_name']; ?></option>
+                                                <?php } ?>
+                                              </select>
+                                            </div>
+                                        
+                                            <div class="col-md-6 col-sm-12">
+                                                <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+                                                    <option value="">Select State</option>
+                                                </select>
+                                            </div>
+                                        </div><!-- end row -->
+                                    </div>
+
+                                    <div class="formrow">
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-12">
+                                                <select  name="city_id" id="city_id" class="form-control">
+                                                    <option value="">Select City</option>
+                                                </select>
+                                            </div>
                                             <div class="col-md-6 col-sm-12">
                                                 <input type="Password" name="company_password" class="form-control" placeholder="Password">
                                             </div>
-                                            <div class="col-md-6 col-sm-12">
+                                        </div><!-- end row -->
+                                    </div>
+                                    <div class="formrow">
+                                        <div class="row">
+                                            <div class="col-md-12 col-sm-12">
                                                 <label class="control-label">Company Logo<small> company logo measures 300 x 300 pixels </small></label>
                                                 <input type="file" name="company_logo"  class="form-control" />
                                             </div>
@@ -85,34 +114,7 @@
                                     </div>
                                     
 									
-									<div class="formrow">
-                                        <div class="row">
-                                            <div class="col-md-6 col-sm-12">
-        									  <select  name="country_id" class="form-control" onchange="getStates(this.value)">
-        										<option value="">Select Country</option>
-        										<?php foreach($country as $key){?>
-        										<option value="<?php echo $key['country_id']; ?>"><?php echo $key['country_name']; ?></option>
-        										<?php } ?>
-        									  </select>
-                                            </div>
-    									
-    										<div class="col-md-6 col-sm-12">
-        										<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
-                                                    <option value="">Select State</option>
-        										</select>
-                                            </div>
-                                        </div><!-- end row -->
-                                    </div>
-
-                                    <div class="formrow">
-                                        <div class="row">
-                                            <div class="col-md-4 col-sm-4">
-                                                <select  name="city_id" id="city_id" class="form-control">
-                                                    <option value="">Select City</option>
-                                                </select>
-                                            </div>
-                                        </div><!-- end row -->
-                                    </div>
+									
                                    
                                         
                                         
