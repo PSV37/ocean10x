@@ -53,15 +53,16 @@ class Employer_register extends CI_Controller
         $company_name    = $this->input->post('company_name');
         $company_slug    = slugify($company_name);
         $company_profile = array(
+            'comp_type'        => $this->input->post('company_type'),
             'company_name'     => $this->input->post('company_name'),
             'company_slug'     => $this->slug->create_uri($this->input->post('company_name')),
             'company_email'    => $this->input->post('company_email'),
             'company_username' => $this->input->post('company_username'),
             'company_service'  => $this->input->post('company_service'),
             'company_address'  => $this->input->post('company_address'),
-			'country_id'  => $this->input->post('country_id'),
-			'state_id'  => $this->input->post('state_id'),
-			'city_id'  => $this->input->post('city_id'),
+			'country_id'       => $this->input->post('country_id'),
+			'state_id'         => $this->input->post('state_id'),
+			'city_id'          => $this->input->post('city_id'),
             'company_password' => md5($this->input->post('company_password')),
             'token'            => md5($this->input->post('company_email')),
         );
