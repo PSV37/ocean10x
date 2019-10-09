@@ -108,18 +108,18 @@
               
               </div>
               <!-- end row -->
-
+              <div class="panel-body"></div>
               <div class="row">
                 <div class="formrow">
                   <div class="col-md-12 col-sm-12"> 
-                    <label class="control-label ">Skill Set<span class="required">*</span></label><br>
+                    <label>Skill Set<span class="required">*</span></label><br>
                     <div id="skills_result">Please Select Job Role.</div>
                   </div>
                 </div>
               </div>
-
+              <div class="panel-body"></div>
+              
                <div class="row">
-                <div class="formrow">
                   <div class="col-md-4 col-sm-4">
                     <div class="formrow">
                       <label class="control-label ">Job Country<span class="required">*</span> </label>
@@ -150,7 +150,6 @@
                     </div>
                   </div>
                 </div><!-- end row -->
-              </div>
               <!-- <hr class="invis"> -->
 
               <div class="row">
@@ -230,19 +229,8 @@
                     ?>" />
                   </div>
                 </div>
-               <!--  <div class="col-md-4 col-sm-12">
-                  <div class="formrow">
-                    <label class="control-label ">Required Education </label>
-                    <select name="job_edu" class="form-control" data-style="btn-default" data-live-search="true">
-                      <option value="">Select Education</option>
-										<?php foreach($education_level as $education){?>
-										<option value="<?php echo $education['education_level_id']; ?>"<?php if($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
-										<?php } ?>
-                    </select>
-                  </div>
-                </div> -->
-
-                 <div class="col-md-4 col-sm-12"> 
+             
+                <div class="col-md-4 col-sm-12"> 
                   <div class="formrow">  
                     <label class="control-label">Required Education Level  <span class="required">*</span></label>
 
