@@ -54,33 +54,7 @@
                 </div>
               </div>
 			  <!-- <hr class="invis"> -->
-							<div class="formrow">
-                <div class="row">
-                  <div class="col-md-4 col-sm-4">
-                    <label class="control-label ">Job Country<span class="required">*</span> </label>
-									  <select  name="country_id" class="form-control" onchange="getStates(this.value)">
-  										<option value="">Select Country</option>
-    										<?php foreach($country as $key){?>
-    										  <option value="<?php echo $key['country_id']; ?>"<?php if($company_info->job_location==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
-    										<?php } ?>
-  									  </select>
-                  </div>
-									
-									<div class="col-md-4 col-sm-4">
-                    <label class="control-label ">Job State<span class="required">*</span> </label>
-										<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
-										  <option value="">Select State</option>
-										</select>
-                  </div>
-										
-									<div class="col-md-4 col-sm-4">
-                    <label class="control-label ">Job City<span class="required">*</span> </label>
-										<select  name="city_id" id="city_id" class="form-control">
-										  <option value="">Select City</option>
-										</select>
-                  </div>
-                </div><!-- end row -->
-              </div>
+            
               <!-- <hr class="invis"> -->
               <div class="row">
                 <div class="col-md-4 col-sm-12">
@@ -122,24 +96,51 @@
 
               </div>
               <!-- end row -->
+               <div class="row">
+                <div class="formrow">
+                  <div class="col-md-4 col-sm-4">
+                    <label class="control-label ">Job Country<span class="required">*</span> </label>
+                    <select  name="country_id" class="form-control" onchange="getStates(this.value)">
+                      <option value="">Select Country</option>
+                        <?php foreach($country as $key){?>
+                          <option value="<?php echo $key['country_id']; ?>"<?php if($company_info->job_location==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
+                        <?php } ?>
+                      </select>
+                  </div>
+                  
+                  <div class="col-md-4 col-sm-4">
+                    <label class="control-label ">Job State<span class="required">*</span> </label>
+                    <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+                      <option value="">Select State</option>
+                    </select>
+                  </div>
+                    
+                  <div class="col-md-4 col-sm-4">
+                    <label class="control-label ">Job City<span class="required">*</span> </label>
+                    <select  name="city_id" id="city_id" class="form-control">
+                      <option value="">Select City</option>
+                    </select>
+                  </div>
+                </div><!-- end row -->
+              </div>
               <!-- <hr class="invis"> -->
               <div class="row">
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Preferred Age(From)</label>
-               		   <input class="form-control" required name="preferred_age_from" placeholder="e.g. 25years" value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>" type="text" >
+               		   <input class="form-control" required name="preferred_age_from"  value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>" type="number" >
                   </div>
                 </div>
         				<div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Preferred Age(To)</label>
-               		  <input class="form-control" required name="preferred_age_to" placeholder="e.g. 35years" value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>" type="text" >
+               		  <input class="form-control" required name="preferred_age_to" value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>" type="number" >
                   </div>
         				</div>
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Working Hours<span class="required">*</span></label>
-                    <input type="text"  name="working_hours" value="<?php 
+                    <input type="number"  name="working_hours" value="<?php 
             						 if(!empty($job_info->working_hours)){
             							echo $job_info->working_hours;
             						 }
@@ -154,9 +155,10 @@
                 <div class="col-md-6 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Job Deadline<span class="required">*</span></label>
-                      <input type="date" name="job_deadline" class="form-control" id="job_deadline_day" required value="">
+                      <input type="text" name="job_deadline" class="form-control datepicker" id="job_deadline_day" required value="">
                   </div>
                 </div>
+
                 <div class="col-md-6 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Job Types<span class="required">*</span></label>
