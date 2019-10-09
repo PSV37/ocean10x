@@ -29,76 +29,46 @@
             <!-- /.box-header -->
             <div class="box-background"> <?php echo $this->session->flashdata('msg'); ?> 
               <!-- form start -->
-              <form role="form" id="userCreate" enctype="multipart/form-data"
-
-                      action="<?php echo base_url(); ?>admin/admin_user/save_admin/<?php
-                      if (!empty($user_info->job_category_id)) {
-                          echo $user_info->job_category_id;
-                      }
-                      ?>" method="post">
+            <form role="form" id="userCreate" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/admin_user/save_admin/<?php if (!empty($user_info->job_category_id)) { echo $user_info->job_category_id;}
+              ?>" method="post">
                 <div class="row">
                   <div class="col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
                     <div class="box-body"> 
                        <!-- /.Full  Name -->
-                     <input type="hidden"  id="id" name="id" 
-                                           value="<?php
-                                           
-                                               if(is_numeric(end($this->uri->segment_array()))){
-												 echo   end($this->uri->segment_array());
-											   }
-                                           
-                                           ?>" >
- <div class="form-group">
+                      <input type="hidden"  id="id" name="id" value="<?php if(is_numeric(end($this->uri->segment_array()))){
+												 echo   end($this->uri->segment_array()); } ?>" >
+                      <div class="form-group">
                         <label for="exampleInputEmail1">Full Name <span class="required">*</span></label>
-                        <input type="text"  id="name" name="name" placeholder="Name"
-                                           value="<?php
-                                           if (!empty($user_info->name)) {
-                                               echo $user_info->name;
-                                           }
-                                           ?>"
-                                           class="form-control">
+                        <input type="text"  id="name" name="name" placeholder="Name" value="<?php if (!empty($user_info->name)) { echo $user_info->name; } ?>" class="form-control">
                       </div>
                       
                       <!-- /.User Name -->
                       <div class="form-group">
                         <label for="exampleInputEmail1">User Name <span class="required">*</span></label>
-                        <input type="text" id="user_name"  name="user_name" placeholder="User Name"
-                                           value="<?php
-                                           if (!empty($user_info->user_name)) {
-                                               echo $user_info->user_name;
-                                           }
-                                           ?>"
-                                           class="form-control">
+                        <input type="text" id="user_name"  name="user_name" placeholder="User Name" value="<?php if (!empty($user_info->user_name)) { echo $user_info->user_name; } ?>" class="form-control">
                       </div>
                       
                       <!-- /.Email -->
                       <div class="form-group">
                         <label >Email <span class="required">*</span></label>
-                        <input type="email" id="email1"  name="email" placeholder="Email Name"
-                                           value="<?php
-                                           if (!empty($user_info->email)) {
-                                               echo $user_info->email;
-                                           }
-                                           ?>"
-                                           class="form-control">
+                        <input type="email" id="email1"  name="email" placeholder="Email Name" value="<?php if (!empty($user_info->email)) { echo $user_info->email; } ?>" class="form-control">
                       </div>
                        <!-- /.User Type -->
                       <div class="form-group">
-					  
                         <label >User Type <span class="required">*</span></label>
-						<select id="user_type"  name="user_type" class="form-control" >
-                       <option value="super" <?php
+						            <select id="user_type"  name="user_type" class="form-control" >
+                          <option value="super" <?php
                                            if ($user_info->user_type=='super') {
                                                echo 'selected="selected"';
                                            }
                                            ?>>Super Admin</option>
-					   <option value="admin" <?php
+					                <option value="admin" <?php
                                            if ($user_info->user_type=='admin') {
                                                echo 'selected="selected"';
                                            }
                                            ?>>Admin User</option>
 					   
-					   </select>
+					             </select>
                       </div>
                       <!-- /.Password -->
                       <div class="form-group">
@@ -112,8 +82,8 @@
                                            class="form-control">
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Password <span class="required">*</span></label>
-                        <input type="password"  id="retypepassword" name="retypepassword" placeholder="password"
+                        <label for="exampleInputEmail1">Confirm Password <span class="required">*</span></label>
+                        <input type="password"  id="retypepassword" name="retypepassword" placeholder="Confirm Password"
                                            value="<?php
                                            if (!empty($user_info->password)) {
                                                echo $user_info->password;
@@ -140,7 +110,7 @@
                       <th class="active">SL</th>
                       <th class="active">Full Name</th>
                       <th class="active">Email </th>
-					   <th class="active">User Type </th>
+					            <th class="active">User Type </th>
                       <th class=" active col-sm-2">Action</th>
                     </tr>
                   </thead>
