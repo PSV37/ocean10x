@@ -21,7 +21,8 @@
     <link href="<?php echo base_url(); ?>asset/css/jquery-ui.css" rel="stylesheet" type="text/css" />
     <script src="<?php echo base_url() ?>fontend/js/jquery.js "></script> 
     <link href="<?php echo base_url(); ?>asset/css/plugins/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
-		<script type="text/javascript" src="<?php echo base_url(); ?>asset/ckeditor/ckeditor.js"></script>
+		<script>var base_url = '<?php echo base_url();?>';</script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>asset/ckeditor/ckeditor.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>asset/ckfinder/ckfinder.js"></script>
         
 
