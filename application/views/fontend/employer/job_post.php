@@ -1,7 +1,14 @@
 <?php 
     $this->load->view('fontend/layout/employer_header.php');
 ?>
-
+<style type="text/css">
+  label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+</style>
 <!-- Page Title start -->
 
 <div class="pageTitle">
