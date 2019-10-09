@@ -33,108 +33,103 @@
                                 
                                 <form id="EmpRegistation" action="<?php echo base_url(); ?>employer_register/create" method="post" enctype="multipart/form-data" class="submit-form">
                                     <div class="formrow">
-                                    <div class="row">
-                                        <div class="col-md-4 col-sm-4">
-                                            <select name="company_type" id="company_type" class="form-control" >
-                                                <option value="">Select Type</option> 
-                                                <option value="Company"<?php echo (isset($this->session->userdata['reg_in']['comp_type'])?$this->session->userdata['reg_in']['comp_type']:''); ?>>Company</option> 
-                                                <option value="HR Consultant"<?php echo (isset($this->session->userdata['reg_in']['comp_type'])?$this->session->userdata['reg_in']['comp_type']:''); ?>>HR Consultant</option> 
-                                            </select>
-                                           
-                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-12">
+                                                <select name="company_type" id="company_type" class="form-control" >
+                                                    <option value="">Select Type</option> 
+                                                    <option value="Company"<?php echo (isset($this->session->userdata['reg_in']['comp_type'])?$this->session->userdata['reg_in']['comp_type']:''); ?>>Company</option> 
+                                                    <option value="HR Consultant"<?php echo (isset($this->session->userdata['reg_in']['comp_type'])?$this->session->userdata['reg_in']['comp_type']:''); ?>>HR Consultant</option> 
+                                                </select>
+                                               
+                                            </div>
 
-                                        <div class="col-md-6 col-sm-12">
-                                            <input type="text" name="company_name" class="form-control"  value="<?php echo (isset($this->session->userdata['reg_in']['company_name'])?$this->session->userdata['reg_in']['company_name']:''); ?>" placeholder="Company Name">
-                                        </div>
-                                        <div class="col-md-6 col-sm-12">
-                                            <input type="email" name="company_email" value="<?php echo isset($this->session->userdata['reg_in']['company_email'])?$this->session->userdata['reg_in']['company_email']:''; ?>" class="form-control" placeholder="Email">
-                                        </div>
-                                    </div><!-- end row -->
+                                            <div class="col-md-6 col-sm-12">
+                                                <input type="text" name="company_name" class="form-control"  value="<?php echo (isset($this->session->userdata['reg_in']['company_name'])?$this->session->userdata['reg_in']['company_name']:''); ?>" placeholder="Company Name">
+                                            </div>
+                                            
+                                        </div><!-- end row -->
                                     </div>
                                     
                                     <div class="formrow">
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-12">
-                                            <input type="text" name="company_username" value="<?php echo isset($this->session->userdata['reg_in']['company_username'])?$this->session->userdata['reg_in']['company_username']:''; ?>" class="form-control" placeholder="Company User Name">
-                                        </div>
-                                        <div class="col-md-6 col-sm-12">
-                                            <input type="Password" name="company_password" class="form-control" placeholder="Password">
-                                        </div>
-                                    </div><!-- end row -->
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-12">
+                                                <input type="email" name="company_email" value="<?php echo isset($this->session->userdata['reg_in']['company_email'])?$this->session->userdata['reg_in']['company_email']:''; ?>" class="form-control" placeholder="Email">
+                                            </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <input type="text" name="company_username" value="<?php echo isset($this->session->userdata['reg_in']['company_username'])?$this->session->userdata['reg_in']['company_username']:''; ?>" class="form-control" placeholder="Company User Name">
+                                            </div>
+                                          
+                                        </div><!-- end row -->
                                     </div>
-                                     	
-                                    <div class="formrow">
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-6">
-                                            <textarea name="company_service" class="form-control" placeholder="Company Service"><?php echo isset($this->session->userdata['reg_in']['company_service'])?$this->session->userdata['reg_in']['company_service']:''; ?></textarea>
-                                        </div>
-
-                                         <div class="col-md-6 col-sm-6">
-                                            <textarea name="company_address" class="form-control" placeholder="Company Address"><?php echo isset($this->session->userdata['reg_in']['company_service'])?$this->session->userdata['reg_in']['company_address']:''; ?></textarea>
-                                        </div>
-                                    </div><!-- end row -->
-                                    </div>
-                                    
-									
-									 <div class="formrow">
-                                    <div class="row">
-                                        <div class="col-md-4 col-sm-4">
-									  <select  name="country_id" class="form-control" onchange="getStates(this.value)">
-										<option value="">Select Country</option>
-										<?php foreach($country as $key){?>
-										<option value="<?php echo $key['country_id']; ?>"><?php echo $key['country_name']; ?></option>
-										<?php } ?>
-									  </select>
-                                        </div>
-									
-										<div class="col-md-4 col-sm-4">
-										<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
-										 <option value="">Select Country First</option>
-									     <?php foreach($state as $val){?>
-										<option value="<?php echo $val['state_id']; ?>"><?php echo $val['state_name']; ?></option>
-											<?php } ?>
-										</select>
-                                        </div>
-										
-										 <div class="col-md-4 col-sm-4">
-										 <select  name="city_id" id="city_id" class="form-control">
-										 <option value="">Select State First</option>
-										 <?php foreach($city as $valu){?>
-										<option value="<?php echo $valu['id']; ?>"><?php echo $valu['city_name']; ?></option>
-										<?php } ?>
-										</select>
-                                        </div>
-                                    </div><!-- end row -->
-                                    </div>
-
-                                    <div class="formrow">
- 										<div class="row">
-                                        <div class="col-md-12 col-sm-12">
-                                       
-                                            <label class="control-label">Company Logo<small> company logo measures 300 x 300 pixels </small></label>
-                                            <input type="file" name="company_logo"  class="form-control" />
+                                     <div class="formrow">
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-12">
+                                                <input type="Password" name="company_password" class="form-control" placeholder="Password">
+                                            </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <label class="control-label">Company Logo<small> company logo measures 300 x 300 pixels </small></label>
+                                                <input type="file" name="company_logo"  class="form-control" />
                                             </div>
                                         </div>
-                                        </div>
+                                    </div>
+                                    <div class="formrow">
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-6">
+                                                <textarea name="company_service" class="form-control" placeholder="Company Service"><?php echo isset($this->session->userdata['reg_in']['company_service'])?$this->session->userdata['reg_in']['company_service']:''; ?></textarea>
+                                            </div>
+
+                                             <div class="col-md-6 col-sm-6">
+                                                <textarea name="company_address" class="form-control" placeholder="Company Address"><?php echo isset($this->session->userdata['reg_in']['company_service'])?$this->session->userdata['reg_in']['company_address']:''; ?></textarea>
+                                            </div>
+                                        </div><!-- end row -->
+                                    </div>
+                                    
+									
+									<div class="formrow">
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-12">
+        									  <select  name="country_id" class="form-control" onchange="getStates(this.value)">
+        										<option value="">Select Country</option>
+        										<?php foreach($country as $key){?>
+        										<option value="<?php echo $key['country_id']; ?>"><?php echo $key['country_name']; ?></option>
+        										<?php } ?>
+        									  </select>
+                                            </div>
+    									
+    										<div class="col-md-6 col-sm-12">
+        										<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+                                                    <option value="">Select State</option>
+        										</select>
+                                            </div>
+                                        </div><!-- end row -->
+                                    </div>
+
+                                    <div class="formrow">
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-4">
+                                                <select  name="city_id" id="city_id" class="form-control">
+                                                    <option value="">Select City</option>
+                                                </select>
+                                            </div>
+                                        </div><!-- end row -->
+                                    </div>
+                                   
                                         
                                         
                                     <div class="formrow">
-                                   
-                <div class="captchacode">Captcha is cause sensitive</div>
-               
-                                    
-                            		<div class="row">
+                                        <div class="captchacode">Captcha is cause sensitive</div>
+                                		<div class="row">
 
-                                   <div class="col-md-6 col-sm-12">
-                                            <input type="text" id="inputchapcha" required name="captcha" value="" class="form-control" placeholder="Captcha Code">
-                                        </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <input type="text" id="inputchapcha" required name="captcha" value="" class="form-control" placeholder="Captcha Code">
+                                            </div>
 
-<div class="col-md-4 col-sm-4"><p id="captImg"><?php echo $captcha_images; ?></p>
-<a href="javascript:void(0);" class="refreshCaptcha" ><img src="<?php echo base_url().'fontend/images/refresh-button.png'; ?>"/></a>
-</div>
-                                    
-                                    
-                                    </div><!-- end row -->
+                                            <div class="col-md-4 col-sm-4"><p id="captImg"><?php echo $captcha_images; ?></p>
+                                            <a href="javascript:void(0);" class="refreshCaptcha" ><img src="<?php echo base_url().'fontend/images/refresh-button.png'; ?>"/></a>
+                                            </div>
+                                        
+                                        
+                                        </div><!-- end row -->
                                     </div>
 
                                     <button id="submitButton" class="btn">Create Account</button>
