@@ -29,9 +29,9 @@ class Admin_user extends MY_Controller
             'user_name' => $this->input->post('user_name'),
             'email' => $this->input->post('email'),
 			'user_type' => $this->input->post('user_type'),
-            'password' => md5($this->input->post('password')),
             );
         if(empty($id)){
+            $user_info['password'] = md5($this->input->post('password'));
             $this->admin_model->insert($user_info);
              $this->session->set_flashdata('msg', '<div class="alert alert-success text-center"> Admin Add Sucessfully </div>');
             redirect('admin/admin_user');

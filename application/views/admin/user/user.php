@@ -71,26 +71,28 @@
 					             </select>
                       </div>
                       <!-- /.Password -->
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Password <span class="required">*</span></label>
-                        <input type="password"  name="password" id="password" placeholder="password"
-                                           value="<?php
-                                           if (!empty($user_info->password)) {
-                                               echo $user_info->password;
-                                           }
-                                           ?>"
-                                           class="form-control">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Confirm Password <span class="required">*</span></label>
-                        <input type="password"  id="retypepassword" name="retypepassword" placeholder="Confirm Password"
-                                           value="<?php
-                                           if (!empty($user_info->password)) {
-                                               echo $user_info->password;
-                                           }
-                                           ?>"
-                                           class="form-control">
-                      </div>
+                      <?php  if (!empty($user_info->password)) { }else{?>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Password <span class="required">*</span></label>
+                          <input type="password"  name="password" id="password" placeholder="password"
+                                             value="<?php
+                                             if (!empty($user_info->password)) {
+                                                 echo $user_info->password;
+                                             }
+                                             ?>"
+                                             class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Confirm Password <span class="required">*</span></label>
+                          <input type="password"  id="retypepassword" name="retypepassword" placeholder="Confirm Password"
+                                             value="<?php
+                                             if (!empty($user_info->password)) {
+                                                 echo $user_info->password;
+                                             }
+                                             ?>"
+                                             class="form-control">
+                        </div>
+                      <?php } ?>
                       <button class="btn bg-navy" type="submit">Save User </button>
                       <br/>
                       <br/>
