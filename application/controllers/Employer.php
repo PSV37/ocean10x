@@ -547,6 +547,26 @@ function getstate(){
     
     public function forword_job($job_id = null)
         {
+<<<<<<< HEAD
+            // if (!empty($job_id)) {
+            //     $company_id = $this->session->userdata('company_profile_id');
+            //     if ($this->job_posting_model->check_jobid_and_post_id($job_id, $company_id) == true) {
+            //         $data['job_info'] = $this->job_posting_model->get($job_id);
+            //         $data['city'] = $this->Master_model->getMaster('city',$where=false);
+            //         $data['country'] = $this->Master_model->getMaster('country',$where=false);
+            //         $data['state'] = $this->Master_model->getMaster('state',$where=false);
+                    $this->load->view('fontend/employer/forword_job');
+            //     } else {
+            //         echo "error";
+            //     }
+            // } else {
+            //     echo "Not Found";
+            // }
+
+        }
+
+}
+=======
             if (!empty($job_id)) {
                  $job_id; 
                  $company_id = $this->session->userdata('company_profile_id');
@@ -618,3 +638,4 @@ function getstate(){
 
 } // end class
 
+>>>>>>> 1659d42ca0b39692e32c29f3d073b0ee290f35d0
