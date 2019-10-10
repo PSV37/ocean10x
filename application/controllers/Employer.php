@@ -542,7 +542,7 @@ function getstate(){
         if ($sk) {
             $where_sk= "id IN (".$sk.") AND status=1";
             $select_sk = "skill_name ,id";
-            $skills = $this->Master_model->getMaster('job_posting',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=false,$start=false, $search=false);
+            $skills = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=false,$start=false, $search=false);
               
                $result = '';
                 if(!empty($job_posting)){ 
