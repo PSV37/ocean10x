@@ -37,8 +37,9 @@
               <div class="row">
                 <div class="col-md-6 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label ">Candiate Email<span class="required">*</span> </label><span>*Note: Please Insert Email Ids By Comma (,) Seperated.</span>   
-                    <input type="text" name="candiate_email" placeholder="Candiate Email" required value="" class="form-control">
+                    <label class="control-label ">Candiate Email<span class="required">*</span> </label><span>Note: Please Insert Email Ids By Comma (,) Seperated.</span>   
+                    <!-- <input type="text" name="candiate_email" placeholder="Candiate Email" required value="" class="form-control"> -->
+                    <textarea name="candiate_email" placeholder="Candiate Email" required class="form-control"></textarea>
                   </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
