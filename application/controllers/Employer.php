@@ -548,18 +548,19 @@ function getstate(){
     public function forword_job($job_id = null)
         {
             if (!empty($job_id)) {
-                echo $job_id; 
-                echo $company_id = $this->session->userdata('company_profile_id');
-               echo $this->job_posting_model->check_jobid_and_post_id($job_id, $company_id);
-                die;
-                if ($this->job_posting_model->check_jobid_and_post_id($job_id, $company_id) == true) {
+                 $job_id; 
+                 $company_id = $this->session->userdata('company_profile_id');
+                 $avail = $this->job_posting_model->check_jobid_and_post_id($job_id, $company_id);
+              // echo $this->db->last_query();
+              //   die;
+                if ($avail) {
                     // $data['job_info'] = $this->job_posting_model->get($job_id);
                     $this->load->view('fontend/employer/forword_job');
                 } else {
-
-                    $employer_id = $this->session->userdata('company_profile_id');
-                    $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
-                    $this->load->view('fontend/employer/active_job.php', compact('company_active_jobs', 'employer_id'));
+                        redirect_back();
+                    // $employer_id = $this->session->userdata('company_profile_id');
+                    // $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
+                    // $this->load->view('fontend/employer/active_job.php', compact('company_active_jobs', 'employer_id'));
                 }
             } else {
                 $employer_id = $this->session->userdata('company_profile_id');
