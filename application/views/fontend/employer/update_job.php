@@ -256,8 +256,9 @@
 					</div>
                         <div class="col-sm-4">
 						<div class="formrow">
-						<select name="preferred_age_to" class="form-control" id="preferred_age_to" required>
 						<label class="control-label">Preferred Age(To)</label>
+						<select name="preferred_age_to" class="form-control" id="preferred_age_to" required>
+						
                       <option value="" selected>Age To</option>
                       <?php
 					  
