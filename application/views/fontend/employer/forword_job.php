@@ -37,13 +37,13 @@
               <div class="row">
                 <div class="col-md-6 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label ">Candiate Email<span class="required">*</span> </label>
+                    <label class="control-label ">Candiate Email<span class="required">*</span> </label><span>*Note: Please Insert Email Ids By Comma (,) Seperated.</span>   
                     <input type="text" name="candiate_email" placeholder="Candiate Email" required value="" class="form-control">
                   </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
                   <div class="formrow">
-                    <span>*Note: Please Insert Email Ids By Comma (,) Seperated.</span>                   
+                                    
                   </div>
                 </div>
                 <div class="col-md-12 col-sm-12">
