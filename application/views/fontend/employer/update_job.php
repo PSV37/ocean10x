@@ -334,19 +334,26 @@
               <!-- end row -->
               <hr class="invis">
               <div class="row">
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-12 col-sm-12">
                   <div class="formrow">
                     <label class="control-label mandatory">Vacancy Description *</label>
                     <textarea name="job_desc" class="form-control" required><?php if(!empty($job_info)) echo $job_info->job_desc; ?></textarea>
                   </div>
                 </div>
-                <div class="col-md-4 col-sm-12">	
+              </div>
+			  <hr class="invis">
+              <div class="row">
+                <div class="col-md-12 col-sm-12">	
                   <div class="formrow">
                     <label class="control-label mandatory">Work/Educational Requirements </label>
                     <textarea name="education" required class="form-control" ><?php if(!empty($job_info)) echo $job_info->education; ?></textarea>
                   </div>
                 </div>
-                <div class="col-md-4 col-sm-12">
+              </div>
+			  
+			  <hr class="invis">
+              <div class="row">
+                <div class="col-md-12 col-sm-12">
                   <div class="formrow">
                     <label class="control-label mandatory">Benefits</label>
                     <textarea name="benefits" required class="form-control" ><?php if(!empty($job_info)) echo $job_info->benefits; ?></textarea>
