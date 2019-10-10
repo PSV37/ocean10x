@@ -69,6 +69,7 @@
                                     <span data-placement="top" data-toggle="tooltip" title="Update">
                                     <a href="<?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs->job_post_id ?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit</a></span>
                                     <span data-placement="top" data-toggle="tooltip" title="Remove"><a href="<?php echo base_url() ?>employer/delete_job/<?php echo $v_companyjobs->job_post_id ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a></span>
+                                    <span data-placement="top" data-toggle="tooltip" title="Remove"><a href="<?php echo base_url() ?>employer/forword_job/<?php echo $v_companyjobs->job_post_id ?>" class="btn btn-primary btn-xs"><i class="fa fa-paper-plane"></i> Forword</a></span>
                                     </div>
                                 </div>
                             </div>
