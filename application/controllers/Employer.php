@@ -587,8 +587,8 @@ function getstate(){
                  $avail = $this->job_posting_model->check_jobid_and_post_id($job_id, $company_id);
              
                 if ($avail) {
-                    $data['job_id'] = $job_id; 
-                    $this->load->view('fontend/employer/forword_job',$data);
+                    //$data['job_id'] = $job_id; 
+                    $this->load->view('fontend/employer/forword_job',$job_id);
                 } else {
                     redirect('employer/active_job');
                 }
