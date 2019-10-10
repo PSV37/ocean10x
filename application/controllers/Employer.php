@@ -547,17 +547,6 @@ function getstate(){
     
     public function forword_job($job_id = null)
         {
-<<<<<<< HEAD
-=======
-
-                    $this->load->view('fontend/employer/forword_job');
-           
-
-        }
-
-}
-
->>>>>>> d079f8a57278ea6cac6982e6a7dc2e4f8828a0a0
             if (!empty($job_id)) {
                  $job_id; 
                  $company_id = $this->session->userdata('company_profile_id');
@@ -583,43 +572,15 @@ function getstate(){
              $employer_id = $this->session->userdata('company_profile_id');
                 if ($_POST) {
                     $employer_id  = $this->session->userdata('company_profile_id');
-                    $job_deadline = strtolower($this->input->post('job_deadline'));
-                    $job_post_id  = $this->input->post('job_post_id');
+                    // $job_deadline = strtolower($this->input->post('job_deadline'));
+                    // $job_post_id  = $this->input->post('job_post_id');
 
-                    $candiate_email  = $this->input->post('candiate_email');
-                    $where_can = "email IN ('".$candiate_email."')";
-                    $can_data = $this->Master_model->getMaster('js_info',$where_can);
+                    // $candiate_email  = $this->input->post('candiate_email');
+                    // $where_can = "email IN ('".$candiate_email."')";
+                    // $can_data = $this->Master_model->getMaster('js_info',$where_can);
                     //print_r($can_data);
-                    // foreach($can_data as $cand_row)
-                    // {
-                    //   echo 'Emails: - '.$email = $cand_row['email']; echo "<br><br>";
-                    //    echo 'Ids: - '. $job_seeker_id = $cand_row['job_seeker_id'];
-                    // }
-
-
-                  //   $job_info     = array(
-                  //       'company_profile_id' => $employer_id,
-                  //       'job_title'          => $this->input->post('candiate_email'),
-                  //       'job_desc'           => $this->input->post('job_desc'),
+                    redirect('employer/active_job');
                     
-                  //   );
-                  //   if (empty($job_post_id)) {
-                  //       $this->job_posting_model->insert($job_info);
-                  //       $this->session->set_flashdata('success',
-                  //           '<div class="alert alert-success alert-dismissable">
-                  //   <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                  // Vacancy post is sucessfully created  
-                  // </div>');
-                  //    redirect('employer/active_job');
-                  //   } else {
-                  //       $this->job_posting_model->update($job_info, $job_post_id);
-                  //       $this->session->set_flashdata('update',
-                  //           '<div class="alert alert-success alert-dismissable">
-                  //   <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                  //  Vacancy post is sucessfully Update;
-                  // </div>');
-                  //       redirect('employer/active_job');
-                  //   }
                 } else {
 
                     redirect('employer/active_job');
