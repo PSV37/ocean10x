@@ -605,6 +605,8 @@ function getstate(){
                 if ($_POST) {
                     $employer_id  = $this->session->userdata('company_profile_id');
                     $candiate_email  = $this->input->post('candiate_email');
+                    $job_post_id  = $this->input->post('job_post_id');
+                    
                     $email = explode(',', $candiate_email);
                    
                     for($i=0;$i<sizeof($email);$i++)
@@ -625,27 +627,28 @@ function getstate(){
 
                             $seeker_id = $this->Master_model->master_insert($new_JS_array,'js_info');
                         }
-
-                        // echo $seeker_id; echo "<br><br>";
-
-                        // $apply_array = array(
-                        //     'job_seeker_id' => $seeker_id,
-                        //     'company_id'    => $employer_id,
-                        //     'job_post_id'   => $
-                        // );
-
+                       
+                        $apply_array = array(
+                            'job_seeker_id' => $seeker_id,
+                            'company_id'    => $employer_id,
+                            'job_post_id'   => $job_post_id,
+                            // 'apply_date'    => date('Y-m-d H:i:s'),
+                            'apply_status' => 0,
+                        );
+                        $apply = $this->Master_model->master_insert($apply_array,'js_info');
+                        if($apply)
+                        {
+                            sendEmail_JobRequest($candiate_email);
                          //send job requirement to user's email id
+                        }else{
+                            echo "error";
+                        }
 
-                     
-    
-                      
                     }
                    
                    
                 }
-                // else{
-                //     redirect('employer/active_job');
-                // }
+               
         }
 
 } // end class
