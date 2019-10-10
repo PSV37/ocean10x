@@ -199,12 +199,7 @@ class Employer extends MY_Employer_Controller
                     $where_cn= "status=1";
                     $select = "job_role_title, skill_set ,id";
                     $data['job_role_data'] = $this->Master_model->getMaster('job_role',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
-<<<<<<< HEAD
 
-=======
-					$where['edu_level_id'] = $level_id;
-					$data['special'] = $this->Master_model->getMaster('education_specialization',$where);
->>>>>>> bdf9c9b5dc80fb00df2f239c5ea8e4635baca1d6
                         $this->load->view('fontend/employer/update_job', $data);
                     } else {
                         echo "error";
@@ -553,10 +548,12 @@ function getstate(){
     public function forword_job($job_id = null)
         {
             if (!empty($job_id)) {
-                $company_id = $this->session->userdata('company_profile_id');
-                $avail = $this->job_posting_model->check_jobid_and_post_id($job_id, $company_id);
+                 $job_id; 
+                 $company_id = $this->session->userdata('company_profile_id');
+                 $avail = $this->job_posting_model->check_jobid_and_post_id($job_id, $company_id);
+             
                 if ($avail) {
-                  
+                    // $data['job_info'] = $this->job_posting_model->get($job_id);
                     $this->load->view('fontend/employer/forword_job');
                 } else {
                     redirect('employer/active_job');
@@ -575,26 +572,19 @@ function getstate(){
              $employer_id = $this->session->userdata('company_profile_id');
                 if ($_POST) {
                     $employer_id  = $this->session->userdata('company_profile_id');
-                    // $job_deadline = strtolower($this->input->post('job_deadline'));
-                    // $job_post_id  = $this->input->post('job_post_id');
+                    $job_deadline = strtolower($this->input->post('job_deadline'));
+                    $job_post_id  = $this->input->post('job_post_id');
 
                     $candiate_email  = $this->input->post('candiate_email');
                     $where_can = "email IN (".$candiate_email.")";
                     $can_data = $this->Master_model->getMaster('js_info',$where_can);
-                    echo $this->db->last_query();echo "<br><br>";
-                    if($can_data)
-                    {
-                        foreach($can_data as $cand_row)
-                        {
-                          echo 'matched Emails: - '.$email = $cand_row['email']; echo "<br><br>";
-                           echo 'Ids: - '. $job_seeker_id = $cand_row['job_seeker_id'];
-                        }
+                    print_r($can_data);
+                    // foreach($can_data as $cand_row)
+                    // {
+                    //   echo 'Emails: - '.$email = $cand_row['email']; echo "<br><br>";
+                    //    echo 'Ids: - '. $job_seeker_id = $cand_row['job_seeker_id'];
+                    // }
 
-                    }
-                    else{
-                        echo 'Not matched candidate email -'.$candiate_email;
-                    }
-                    
 
                   //   $job_info     = array(
                   //       'company_profile_id' => $employer_id,
