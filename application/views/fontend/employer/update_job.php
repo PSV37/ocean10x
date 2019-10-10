@@ -102,7 +102,7 @@
                 <div class="formrow">
                   <div class="col-md-12 col-sm-12"> 
                     <label><b>Skill Set</b> <span class="required">*</span></label><br>
-                    <div id="jobs">Please Select Job Role.</div>
+                    <div id="skills_result">Please Select Job Role.</div>
                   </div>
                 </div>
               </div>
@@ -446,7 +446,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
     {
       if(id){
         $.ajax({
-                  url:'<?php echo base_url();?>Employer/getSkill',
+                  url:'<?php echo base_url();?>Employer/getSkillsByRole',
                   type:'POST',
                   data:{
                       role_id:id
@@ -454,7 +454,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                    dataType: "html",  
                    success: function(data)
                    {
-                      $('#jobs').html(data);
+                      $('#skills_result').html(data);
                    } 
             });
 
