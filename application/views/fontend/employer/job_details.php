@@ -135,7 +135,7 @@
                       <?php if (!empty($seeker_info->photo_path)):  ?>
                       <img src="<?php echo base_url(); ?>upload/<?php echo $seeker_info->photo_path; ?>" />
                       <?php else:?>
-                      <img src="<?php echo base_url() ?>upload/compnay/company.png" alt="company Image">
+                      <img src="<?php echo base_url() ?>/upload/compnay/company.png" alt="company Image">
                       <?php endif; ?>
                     </div>
                     <div class="col-md-3">
