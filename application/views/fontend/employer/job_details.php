@@ -132,6 +132,8 @@
           	<li>
             	<div class="row">
                 	<div class="col-md-2">
+					<img src="<?php echo base_url() ?>upload/<?php if(!empty($seeker_info->photo_path)) { echo $seeker_info->photo_path;} else { echo "image-notfound.png";} ?>" alt="Photo" style="margin-top:-50px;">
+
                       <?php if (!empty($seeker_info->photo_path)):  ?>
                       <img src="<?php echo base_url(); ?>upload/<?php echo $seeker_info->photo_path; ?>" />
                       <?php else:?>
