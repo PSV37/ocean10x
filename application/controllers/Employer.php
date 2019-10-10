@@ -199,7 +199,12 @@ class Employer extends MY_Employer_Controller
                     $where_cn= "status=1";
                     $select = "job_role_title, skill_set ,id";
                     $data['job_role_data'] = $this->Master_model->getMaster('job_role',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
+<<<<<<< HEAD
 
+=======
+					$where['edu_level_id'] = $level_id;
+					$data['special'] = $this->Master_model->getMaster('education_specialization',$where);
+>>>>>>> bdf9c9b5dc80fb00df2f239c5ea8e4635baca1d6
                         $this->load->view('fontend/employer/update_job', $data);
                     } else {
                         echo "error";
