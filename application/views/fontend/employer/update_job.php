@@ -104,7 +104,7 @@
                     <label><b>Skill Set</b> <span class="required">*</span></label><br>
                     <div id="skills_result">Please Select Job Role.
 					<?php foreach($skill_master as $skill_row) { ?>
-					  <input type='checkbox' name='skill_set[]' style='height:15px; width:20px;' id='skill_set' value="<?php echo $skill_row['id'];??>"<?php if(!empty($job_info)) if($job_info->skills_required==$skill_row['id']) echo 'checked'; ?> > <?php echo $skill_row['skill_name'];?>
+					  <input type='checkbox' name='skill_set[]' style='height:15px; width:20px;' id='skill_set' value="<?php echo $skill_row['id']; ?>"<?php if(!empty($job_info)) if($job_info->skills_required==$skill_row['id']) echo 'checked'; ?> > <?php echo $skill_row['skill_name'];?>
 					<?php } ?>
 					</div>
                   </div>
