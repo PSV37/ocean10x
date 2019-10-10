@@ -580,12 +580,21 @@ function getstate(){
 
                         if($can_data)
                         {
-                            echo 'Matched emails -  <br><br>'.$email[$i]; echo "<br><br>";
-                            echo 'JS id -  <br><br>'.$can_data[0]['job_seeker_id']; echo "<br><br>";
+                            // echo 'Matched emails -  <br><br>'.$email[$i]; echo "<br><br>";
+                            $seeker_id = $can_data[0]['job_seeker_id'];
                         }
                         else{
-                            echo 'Not Matched emails -  <br> <br>'.$email[$i];echo "<br><br>";
+                         
+                           $new_JS_array = array(
+                                'email' => $email[$i],
+                                'js_token' => md5($email[$i]),
+                                'create_at' => date('Y-m-d H:i:s'),
+                            );
+
+                            $seeker_id = $this->Master_model->master_insert($new_JS_array,'js_info');
                         }
+
+                        echo $seeker_id; echo "<br><br>";
                       
                     }
                    
