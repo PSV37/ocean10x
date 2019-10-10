@@ -582,12 +582,13 @@ function getstate(){
     public function forword_job($job_id = null)
         {
             if (!empty($job_id)) {
-                 $job_id; 
+                 
                  $company_id = $this->session->userdata('company_profile_id');
                  $avail = $this->job_posting_model->check_jobid_and_post_id($job_id, $company_id);
              
                 if ($avail) {
-                    $this->load->view('fontend/employer/forword_job');
+                    //$data['job_id'] = $job_id; 
+                    $this->load->view('fontend/employer/forword_job',$job_id);
                 } else {
                     redirect('employer/active_job');
                 }
@@ -613,11 +614,9 @@ function getstate(){
 
                         if($can_data)
                         {
-                            // echo 'Matched emails -  <br><br>'.$email[$i]; echo "<br><br>";
                             $seeker_id = $can_data[0]['job_seeker_id'];
                         }
                         else{
-                         
                            $new_JS_array = array(
                                 'email' => $email[$i],
                                 'js_token' => md5($email[$i]),
@@ -627,7 +626,18 @@ function getstate(){
                             $seeker_id = $this->Master_model->master_insert($new_JS_array,'js_info');
                         }
 
-                        echo $seeker_id; echo "<br><br>";
+                        // echo $seeker_id; echo "<br><br>";
+
+                        // $apply_array = array(
+                        //     'job_seeker_id' => $seeker_id,
+                        //     'company_id'    => $employer_id,
+                        //     'job_post_id'   => $
+                        // );
+
+                         //send job requirement to user's email id
+
+                     
+    
                       
                     }
                    
