@@ -588,7 +588,7 @@ function getstate(){
                            $new_JS_array = array(
                                 'email' => $email[$i],
                                 'js_token' => md5($email[$i]),
-                                'created_at' => date('Y-m-d H:i:s'),
+                                'create_at' => date('Y-m-d H:i:s'),
                             );
 
                             $seeker_id = $this->Master_model->master_insert($new_JS_array,'js_info');
