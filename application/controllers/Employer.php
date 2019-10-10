@@ -574,10 +574,10 @@ function getstate(){
                    
                     for($i=0;$i<sizeof($email);$i++)
                     {
-                        $where_can = "js_status=1";
-                        $data['can_data'] = $this->Master_model->getMaster('js_info',$where_can);
+                        $where_can = "email='$email[$i]'";
+                        $can_data = $this->Master_model->getMaster('js_info',$where_can);
 
-                        if($data['can_data']['email']==$email[$i])
+                        if($can_data)
                         {
                             echo 'Matched emails -  <br><br>'.$email[$i]; echo "<br><br>";
                         }
