@@ -199,8 +199,7 @@ class Employer extends MY_Employer_Controller
                     $where_cn= "status=1";
                     $select = "job_role_title, skill_set ,id";
                     $data['job_role_data'] = $this->Master_model->getMaster('job_role',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
-					$where['edu_level_id'] = $level_id;
-					$special = $this->Master_model->getMaster('education_specialization',$where);
+
                         $this->load->view('fontend/employer/update_job', $data);
                     } else {
                         echo "error";
@@ -548,14 +547,11 @@ function getstate(){
     
     public function forword_job($job_id = null)
         {
-<<<<<<< HEAD
             if (!empty($job_id)) {
-                 $job_id; 
-                 $company_id = $this->session->userdata('company_profile_id');
-                 $avail = $this->job_posting_model->check_jobid_and_post_id($job_id, $company_id);
-             
+                $company_id = $this->session->userdata('company_profile_id');
+                $avail = $this->job_posting_model->check_jobid_and_post_id($job_id, $company_id);
                 if ($avail) {
-                    // $data['job_info'] = $this->job_posting_model->get($job_id);
+                  
                     $this->load->view('fontend/employer/forword_job');
                 } else {
                     redirect('employer/active_job');
@@ -626,23 +622,3 @@ function getstate(){
 
 } // end class
 
-=======
-            // if (!empty($job_id)) {
-            //     $company_id = $this->session->userdata('company_profile_id');
-            //     if ($this->job_posting_model->check_jobid_and_post_id($job_id, $company_id) == true) {
-            //         $data['job_info'] = $this->job_posting_model->get($job_id);
-            //         $data['city'] = $this->Master_model->getMaster('city',$where=false);
-            //         $data['country'] = $this->Master_model->getMaster('country',$where=false);
-            //         $data['state'] = $this->Master_model->getMaster('state',$where=false);
-                    $this->load->view('fontend/employer/forword_job');
-            //     } else {
-            //         echo "error";
-            //     }
-            // } else {
-            //     echo "Not Found";
-            // }
-
-        }
-
-}
->>>>>>> a6cc8c759a1c68fdb654a33c770d26ac78f42fd6
