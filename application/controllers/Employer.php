@@ -591,7 +591,7 @@ function getstate(){
                                 'created_at' => date('Y-m-d H:i:s'),
                             );
 
-                            $seeker_id = $this->Master_model->insert('js_info',$new_JS_array);
+                            $seeker_id = $this->Master_model->master_insert($new_JS_array,'js_info');
                         }
 
                         echo $seeker_id; echo "<br><br>";
