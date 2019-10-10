@@ -199,8 +199,7 @@ class Employer extends MY_Employer_Controller
                     $where_cn= "status=1";
                     $select = "job_role_title, skill_set ,id";
                     $data['job_role_data'] = $this->Master_model->getMaster('job_role',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
-					$where['edu_level_id'] = $level_id;
-					$data['special'] = $this->Master_model->getMaster('education_specialization',$where);
+
                         $this->load->view('fontend/employer/update_job', $data);
                     } else {
                         echo "error";
@@ -548,6 +547,7 @@ function getstate(){
     
     public function forword_job($job_id = null)
         {
+<<<<<<< HEAD
             // if (!empty($job_id)) {
             //     $company_id = $this->session->userdata('company_profile_id');
             //     if ($this->job_posting_model->check_jobid_and_post_id($job_id, $company_id) == true) {
@@ -566,3 +566,76 @@ function getstate(){
         }
 
 }
+=======
+            if (!empty($job_id)) {
+                 $job_id; 
+                 $company_id = $this->session->userdata('company_profile_id');
+                 $avail = $this->job_posting_model->check_jobid_and_post_id($job_id, $company_id);
+             
+                if ($avail) {
+                    // $data['job_info'] = $this->job_posting_model->get($job_id);
+                    $this->load->view('fontend/employer/forword_job');
+                } else {
+                    redirect('employer/active_job');
+                }
+            } else {
+                // $employer_id = $this->session->userdata('company_profile_id');
+                // $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
+                // $this->load->view('fontend/employer/active_job.php', compact('company_active_jobs', 'employer_id'));
+                redirect('employer/active_job');
+            }
+
+        }
+
+        public function forword_job_post()
+        {
+             $employer_id = $this->session->userdata('company_profile_id');
+                if ($_POST) {
+                    $employer_id  = $this->session->userdata('company_profile_id');
+                    // $job_deadline = strtolower($this->input->post('job_deadline'));
+                    // $job_post_id  = $this->input->post('job_post_id');
+
+                    $candiate_email  = $this->input->post('candiate_email');
+                    $where_can = "email IN ('".$candiate_email."')";
+                    $data['can_data'] = $this->Master_model->getMaster('js_info',$where_can);
+                    echo $this->db->last_query();
+                    print_r($data['can_data']);
+                    // foreach($can_data as $cand_row)
+                    // {
+                    //   echo 'Emails: - '.$email = $cand_row['email']; echo "<br><br>";
+                    //    echo 'Ids: - '. $job_seeker_id = $cand_row['job_seeker_id'];
+                    // }
+
+
+                  //   $job_info     = array(
+                  //       'company_profile_id' => $employer_id,
+                  //       'job_title'          => $this->input->post('candiate_email'),
+                  //       'job_desc'           => $this->input->post('job_desc'),
+                    
+                  //   );
+                  //   if (empty($job_post_id)) {
+                  //       $this->job_posting_model->insert($job_info);
+                  //       $this->session->set_flashdata('success',
+                  //           '<div class="alert alert-success alert-dismissable">
+                  //   <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                  // Vacancy post is sucessfully created  
+                  // </div>');
+                  //    redirect('employer/active_job');
+                  //   } else {
+                  //       $this->job_posting_model->update($job_info, $job_post_id);
+                  //       $this->session->set_flashdata('update',
+                  //           '<div class="alert alert-success alert-dismissable">
+                  //   <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                  //  Vacancy post is sucessfully Update;
+                  // </div>');
+                  //       redirect('employer/active_job');
+                  //   }
+                } else {
+
+                    redirect('employer/active_job');
+                }
+        }
+
+} // end class
+
+>>>>>>> 1659d42ca0b39692e32c29f3d073b0ee290f35d0
