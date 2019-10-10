@@ -235,7 +235,7 @@
                     <input type="number" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1">
                   </div>
                 </div>
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-6 col-sm-12">
                   <div class="formrow">
                     <label class="control-label">Preferred Age(From)</label>
                     <div class="row">
