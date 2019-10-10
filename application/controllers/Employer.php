@@ -604,7 +604,7 @@ function getstate(){
                             // 'apply_date'    => date('Y-m-d H:i:s'),
                             'apply_status' => 0,
                         );
-                        $apply = $this->Master_model->master_insert($apply_array,'js_info');
+                        $apply = $this->Master_model->master_insert($apply_array,'job_apply');
                         if($apply)
                         {
                             sendEmail_JobRequest($candiate_email);
