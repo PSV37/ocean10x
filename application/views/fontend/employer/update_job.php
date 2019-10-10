@@ -113,6 +113,7 @@
 									<div class="col-md-4 col-sm-12">
 									<div class="formrow">
 									  <select  name="country_id" class="form-control" onchange="getStates(this.value)">
+									  <label class="control-label "><b>Job Country</b> <span class="required">*</span> </label>
 										<option value="">Select Country</option>
 										<?php foreach($country as $key){?>
 										<option value="<?php echo $key['country_id']; ?>"<?php if($job_info->job_location==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
@@ -122,6 +123,7 @@
 									</div>
 										<div class="col-md-4 col-sm-12">
 										<div class="formrow">
+										<label class="control-label "><b>Job State</b> <span class="required">*</span> </label>
 										<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
 										 <option value="">Select Country First</option>
 										 <?php foreach($state as $keys){?>
@@ -132,6 +134,7 @@
 										</div>
 										 <div class="col-md-4 col-sm-12">
 										 <div class="formrow">
+										 <label class="control-label "><b>Job City</b> <span class="required">*</span> </label>
 										 <select  name="city_id" id="city_id" class="form-control">
 										 <option value="">Select State First</option>
 										 <?php foreach($city as $keyss){?>
