@@ -547,6 +547,17 @@ function getstate(){
     
     public function forword_job($job_id = null)
         {
+<<<<<<< HEAD
+=======
+
+                    $this->load->view('fontend/employer/forword_job');
+           
+
+        }
+
+}
+
+>>>>>>> d079f8a57278ea6cac6982e6a7dc2e4f8828a0a0
             if (!empty($job_id)) {
                  $job_id; 
                  $company_id = $this->session->userdata('company_profile_id');
