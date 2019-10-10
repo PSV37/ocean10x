@@ -566,7 +566,6 @@ function getstate(){
         public function forword_job_post()
         {
             $employer_id = $this->session->userdata('company_profile_id');
-                redirect('employer/active_job');
 
                 if ($_POST) {
                     $employer_id  = $this->session->userdata('company_profile_id');
@@ -590,9 +589,9 @@ function getstate(){
                    
                    
                 }
-                else{
-                    redirect('employer/active_job');
-                }
+                // else{
+                //     redirect('employer/active_job');
+                // }
         }
 
 } // end class
