@@ -235,7 +235,7 @@
                     <input type="number" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1">
                   </div>
                 </div>
-                <div class="col-md-6 col-sm-12">
+                <div class="col-sm-4 col-md-12">
                   <div class="formrow">
                     <label class="control-label">Preferred Age(From)</label>
                     <div class="row">
@@ -251,8 +251,9 @@
 											echo '<option value="'.$i.'" '.$selected.'>'.$i.'</option>';	
 										}
 									?>
-                    </select>
-                        <select name="preferred_age_to" class="form-control" id="preferred_age_to" required>
+                    </select
+					</div>
+                        <div class="col-sm-4 col-md-12"><select name="preferred_age_to" class="form-control" id="preferred_age_to" required>
 						<label class="control-label">Preferred Age(To)</label>
                       <option value="" selected>Age To</option>
                       <?php
@@ -266,6 +267,7 @@
 										}
 									?>
                     </select>
+					</div>
                     </div>
                     
                   </div>
