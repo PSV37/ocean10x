@@ -192,10 +192,10 @@ class Employer extends MY_Employer_Controller
                     if ($this->job_posting_model->check_jobid_and_post_id($job_id, $company_id) == true) {
                         $data['job_info'] = $this->job_posting_model->get($job_id);
 						$data['city'] = $this->Master_model->getMaster('city',$where=false);
-					$data['country'] = $this->Master_model->getMaster('country',$where=false);
-					$data['state'] = $this->Master_model->getMaster('state',$where=false);
-					$data['education_level'] = $this->Master_model->getMaster('education_level',$where=false);
-					$data['skill_master'] = $this->Master_model->getMaster('skill_master',$where=false);
+						$data['country'] = $this->Master_model->getMaster('country',$where=false);
+						$data['state'] = $this->Master_model->getMaster('state',$where=false);
+						$data['education_level'] = $this->Master_model->getMaster('education_level',$where=false);
+						$data['skill_master'] = $this->Master_model->getMaster('skill_master',$where=false);
 
                     $where_cn= "status=1";
                     $select = "job_role_title, skill_set ,id";
