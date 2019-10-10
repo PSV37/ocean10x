@@ -113,7 +113,7 @@ function get_metas() {
         $ci->email->to($to_email);
         $ci->email->bcc('careerportal02@gmail.com');
        
-        $this->email->reply_to('info@consultnhire.com', 'ConsultnHire');
+        $ci->email->reply_to('info@consultnhire.com', 'ConsultnHire');
         $ci->email->subject('Career Support Information');
         $ci->email->message($message);
         $ci->email->send();
