@@ -572,12 +572,13 @@ function getstate(){
              $employer_id = $this->session->userdata('company_profile_id');
                 if ($_POST) {
                     $employer_id  = $this->session->userdata('company_profile_id');
-                    $job_deadline = strtolower($this->input->post('job_deadline'));
-                    $job_post_id  = $this->input->post('job_post_id');
+                    // $job_deadline = strtolower($this->input->post('job_deadline'));
+                    // $job_post_id  = $this->input->post('job_post_id');
 
                     $candiate_email  = $this->input->post('candiate_email');
                     $where_can = "email IN ('".$candiate_email."')";
                     $data['can_data'] = $this->Master_model->getMaster('js_info',$where_can);
+                    echo $this->db->last_query();
                     print_r($data['can_data']);
                     // foreach($can_data as $cand_row)
                     // {
