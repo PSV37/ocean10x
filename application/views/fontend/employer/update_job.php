@@ -232,7 +232,11 @@
 			  <div class="col-md-4">
                   <div class="formrow">
                     <label class="control-label "><b>Salary Offered</b> <span class="required">*</span></label>
-                    <input type="number" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1" value="<?php $job_info->salary_range; ?>">
+                    <input type="number" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1" value="="<?php 
+                                                 if(!empty($job_info->salary_range)){
+                                                    echo $job_info->salary_range;
+                                                 }
+                                            ?>"">
                   </div>
                 </div>
                 <div class="col-sm-4">
