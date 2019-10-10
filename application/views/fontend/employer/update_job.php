@@ -30,7 +30,7 @@
               <div class="row">
                 <div class="col-md-6 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label mandatory">Job Title <span class="required">*</span></label>
+                    <label class="control-label mandatory"><b>Job Title</b> <span class="required">*</span></label>
                     <input type="text" readonly name="job_title" required value="<?php 
                                             	 if(!empty($job_info->job_title)){
                                             	 	echo $job_info->job_title;
@@ -40,7 +40,7 @@
                 </div>
                 <div class="col-md-6 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label mandatory">Job Industry <span class="required">*</span></label>
+                    <label class="control-label mandatory"><b>Job Industry</b> <span class="required">*</span></label>
                     <select name="job_category" required class="form-control" data-style="btn-default" data-live-search="true">
                       <option value="">Select Industry</option>
                       <?php if(!empty($job_info->job_category)) {
@@ -53,6 +53,61 @@
                   </div>
                 </div>
               </div>
+			  <hr class="invis">
+              <div class="row">
+			  <div class="col-md-4 col-sm-12">
+                  <div class="formrow">
+                    <label class="control-label mandatory">Job Level <span class="required">*</span></label>
+                    <select name="job_level" required class="form-control" data-style="btn-default" data-live-search="true">
+                      <option value="">Select Job Level</option>
+                      <?php if(!empty($job_info->job_level)) {
+                                                echo $this->job_level_model->selected($job_info->job_level);
+                                                } else {
+                                                   echo $this->job_level_model->selected();
+                                                }
+                                                 ?>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                  <div class="formrow">
+                    <label class="control-label">Job Nature<span class="required">*</span></label>
+                    <select name="job_nature"  class="form-control" data-style="btn-default" data-live-search="true">
+                      <option value="">Select Job Nature</option>
+                      <?php if(!empty($job_info->job_nature)) {
+                                                echo $this->job_nature_model->selected($job_info->job_nature);
+                                                } else {
+                                                   echo $this->job_nature_model->selected();
+                                                }
+                                                 ?>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                  <div class="formrow">
+                    <label>Job Role<span class="required">*</span></label>
+                      <select name="job_role" id="job_role" class="form-control col-sm-5" onchange="getSkillsdetails(this.value)">
+                        <option value="">Select Role</option>
+                        <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
+                           ?> 
+                          <option value="<?php echo $role_value['id']; ?>"<?php if(!empty($job_info)) if($job_info->job_role==$role_value['id']) echo 'selected'; ?>><?php echo $role_value['job_role_title']; ?></option>
+                        <?php } ?>       
+                      </select>
+                  </div>
+                </div>
+              </div>
+			   <!-- end row -->
+              <div class="panel-body"></div>
+              <div class="row">
+                <div class="formrow">
+                  <div class="col-md-12 col-sm-12"> 
+                    <label>Skill Set<span class="required">*</span></label><br>
+                    <div id="skills_result">Please Select Job Role.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel-body"></div>
+			  
               <hr class="invis">
               <div class="row">
 									<div class="col-md-4 col-sm-12">
@@ -89,47 +144,7 @@
               </div>
               <!-- end row -->
               
-              <hr class="invis">
-              <div class="row">
-			  <div class="col-md-4 col-sm-12">
-                  <div class="formrow">
-                    <label class="control-label mandatory">Vacancy Level *</label>
-                    <select name="job_level" required class="form-control" data-style="btn-default" data-live-search="true">
-                      <option value="">Select Job Level</option>
-                      <?php if(!empty($job_info->job_level)) {
-                                                echo $this->job_level_model->selected($job_info->job_level);
-                                                } else {
-                                                   echo $this->job_level_model->selected();
-                                                }
-                                                 ?>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                  <div class="formrow">
-                    <label class="control-label">Vacancy Nature</label>
-                    <select name="job_nature"  class="form-control" data-style="btn-default" data-live-search="true">
-                      <option value="">Select Job Nature</option>
-                      <?php if(!empty($job_info->job_nature)) {
-                                                echo $this->job_nature_model->selected($job_info->job_nature);
-                                                } else {
-                                                   echo $this->job_nature_model->selected();
-                                                }
-                                                 ?>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                  <div class="formrow">
-                    <label class="control-label">Salary Range</label>
-                    <input type="number" name="salary_range" value="<?php 
-                                                 if(!empty($job_info->salary_range)){
-                                                    echo $job_info->salary_range;
-                                                 }
-                                            ?>" class="form-control" min="1">
-                  </div>
-                </div>
-              </div>
+              
               <!-- end row -->
               
               <hr class="invis">
@@ -367,3 +382,24 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 	   }
 	   
 	   </script> 
+	   
+	   <script>
+	   function getSkillsdetails(id)
+    {
+      if(id){
+        $.ajax({
+                  url:'<?php echo base_url();?>Employer/getSkillsByRole',
+                  type:'POST',
+                  data:{
+                      role_id:id
+                  },
+                   dataType: "html",  
+                   success: function(data)
+                   {
+                      $('#skills_result').html(data);
+                   } 
+            });
+
+        }
+    }
+	   </script>
