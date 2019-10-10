@@ -251,7 +251,7 @@
 											echo '<option value="'.$i.'" '.$selected.'>'.$i.'</option>';	
 										}
 									?>
-                    </select
+                    </select>
 					</div>
                         <div class="col-sm-4 col-md-12"><select name="preferred_age_to" class="form-control" id="preferred_age_to" required>
 						<label class="control-label">Preferred Age(To)</label>
