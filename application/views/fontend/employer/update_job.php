@@ -30,7 +30,7 @@
               <div class="row">
                 <div class="col-md-6 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label mandatory">Vacancy Title *</label>
+                    <label class="control-label mandatory">Job Title <span class="required">*</span></label>
                     <input type="text" readonly name="job_title" required value="<?php 
                                             	 if(!empty($job_info->job_title)){
                                             	 	echo $job_info->job_title;
@@ -40,9 +40,9 @@
                 </div>
                 <div class="col-md-6 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label mandatory">Vacancy Category *</label>
+                    <label class="control-label mandatory">Job Industry <span class="required">*</span></label>
                     <select name="job_category" required class="form-control" data-style="btn-default" data-live-search="true">
-                      <option value="">Select Vacancy Category</option>
+                      <option value="">Select Industry</option>
                       <?php if(!empty($job_info->job_category)) {
                                                 echo $this->job_category_model->selected($job_info->job_category);
                                                 } else {
