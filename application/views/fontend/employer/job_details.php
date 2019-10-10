@@ -138,14 +138,14 @@
                       <img src="<?php echo base_url() ?>upload/compnay/company.png" alt="company Image">
                       <?php endif; ?>
                     </div>-->
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                     	<h3><a target="_blank" href="<?php echo base_url() ?>employer/view_resume/<?php echo $v_applicant->job_seeker_id."/".$job_id; ?>"><?php echo $seeker_info->full_name; ?></a></h3>
                         <div class="uniname"><?= $this->Job_seeker_education_model->education_list_by_id($v_applicant->job_seeker_id)[0]->js_institute_name;?></div>
                         <div class="uniname"><i class="fa fa-phone" aria-hidden="true"></i> <?php echo $seeker_info->mobile; ?></div>
                         <div class="uniname"><i class="fa fa-envelope" aria-hidden="true"></i> <?php echo $seeker_info->email; ?> </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-4">
 <?php $exp=($this->Job_seeker_experience_model->experience_list_by_id($v_applicant->job_seeker_id));
 
 ?>
