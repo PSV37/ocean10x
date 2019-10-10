@@ -329,7 +329,7 @@
                     <select name="job_edu_special" id="job_edu_special" class="form-control"  data-style="btn-default" data-live-search="true" required="">
                      <option value="">Select Education </option>
 					 <?php
-                    foreach($special as $spec_row){
+                    foreach($education_specialization as $spec_row){
 						?>
 			 <option value="<?php echo $spec_row['id']; ?>"<?php if($job_info->job_edu==$spec_row['id']){ echo "selected"; }?>><?php echo $spec_row['education_specialization']; ?></option>
 										 <?php } ?>
