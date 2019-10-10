@@ -190,7 +190,7 @@ class Employer extends MY_Employer_Controller
                 if (!empty($job_id)) {
                     $company_id = $this->session->userdata('company_profile_id');
                     if ($this->job_posting_model->check_jobid_and_post_id($job_id, $company_id) == true) {
-                        $job_info = $this->job_posting_model->get($job_id);
+                        $data['job_info'] = $this->job_posting_model->get($job_id);
 						$data['city'] = $this->Master_model->getMaster('city',$where=false);
 					$data['country'] = $this->Master_model->getMaster('country',$where=false);
 					$data['state'] = $this->Master_model->getMaster('state',$where=false);
