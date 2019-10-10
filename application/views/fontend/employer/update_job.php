@@ -86,7 +86,7 @@
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label><b>Job Role</b> <span class="required">*</span></label>
-                      <select name="job_role" id="job_role" class="form-control col-sm-5" onchange="getSkills(this.value)">
+                      <select name="job_role" id="job_role" class="form-control col-sm-5" onchange="getSkillsdetails(this.value)">
                         <option value="">Select Role</option>
                         <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
                            ?> 
@@ -102,7 +102,7 @@
                 <div class="formrow">
                   <div class="col-md-12 col-sm-12"> 
                     <label><b>Skill Set</b> <span class="required">*</span></label><br>
-                    <div id="jobs">Please Select Job Role.</div>
+                    <div id="skills_result">Please Select Job Role.</div>
                   </div>
                 </div>
               </div>
@@ -441,25 +441,6 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
         }
     }
 	
-	
-	function getSkills(id)
-    {
-      if(id){
-        $.ajax({
-                  url:'<?php echo base_url();?>Employer/getSkill',
-                  type:'POST',
-                  data:{
-                      role_id:id
-                  },
-                   dataType: "html",  
-                   success: function(data)
-                   {
-                      $('#jobs').html(data);
-                   } 
-            });
-
-        }
-    }
 
   function getEducationSpecial(id){
      
