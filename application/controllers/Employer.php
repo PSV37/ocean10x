@@ -120,13 +120,13 @@ class Employer extends MY_Employer_Controller
                         'job_role'           => $this->input->post('job_role'),   //new added field
                         'skills_required'    => implode(',', $this->input->post('skill_set')), //new added field
 
-                        'job_level'          => $this->input->post('job_level'),
+                        'job_level'         => $this->input->post('job_level'),
                         'salary_range'       => $this->input->post('salary_range'),
                         'job_types'          => $this->input->post('job_types'),
                         "job_deadline"       => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('job_deadline')))),
 
                         'preferred_age'      => $this->input->post('preferred_age_from'),
-						'preferred_age_to'   => $this->input->post('preferred_age_to'),
+						'preferred_age_to'      => $this->input->post('preferred_age_to'),
                         'working_hours'      => $this->input->post('working_hours'),
                     );
                     if (empty($job_post_id)) {
@@ -309,7 +309,7 @@ class Employer extends MY_Employer_Controller
                 $company_id = $this->session->userdata('company_profile_id');
                 if (!empty($job_id) && $this->job_posting_model->check_jobid_and_post_id($job_id, $company_id) == true) {
                     $total_applicantlist = $this->job_apply_model->only_job_applicants($job_id, $company_id);
-                    $totalrow = $total_applicantlist['total_row'];
+        $totalrow = $total_applicantlist['total_row'];
                     $job_details         = $this->job_posting_model->get_job_details($job_id);
 
                     $this->load->view('fontend/employer/job_details', compact('job_id', 'company_id', 'job_details', 'total_applicantlist'));
@@ -545,23 +545,6 @@ function getstate(){
          echo $result;
     }
     
-    public function forword_job($job_id = null)
-        {
-            // if (!empty($job_id)) {
-            //     $company_id = $this->session->userdata('company_profile_id');
-            //     if ($this->job_posting_model->check_jobid_and_post_id($job_id, $company_id) == true) {
-            //         $data['job_info'] = $this->job_posting_model->get($job_id);
-            //         $data['city'] = $this->Master_model->getMaster('city',$where=false);
-            //         $data['country'] = $this->Master_model->getMaster('country',$where=false);
-            //         $data['state'] = $this->Master_model->getMaster('state',$where=false);
-                    $this->load->view('fontend/employer/forword_job');
-            //     } else {
-            //         echo "error";
-            //     }
-            // } else {
-            //     echo "Not Found";
-            // }
 
-        }
 
 }
