@@ -533,11 +533,11 @@ function getstate(){
 	
 	
 	function getSkill() {
-        $id=$this->input->post('role_id');
-        $whereres = "id='$id'";
-        $role_data= $this->Master_model->get_master_row('job_role',$select = FALSE,$whereres);
+        $id=$this->input->post('job_post_id');
+        $whereres = "job_post_id='$id'";
+        $role_data= $this->Master_model->get_master_row('job_posting',$select = FALSE,$whereres);
 
-        $sk = $role_data['skill_set'];
+        $sk = $role_data['skills_required'];
         
         if ($sk) {
             $where_sk= "id IN (".$sk.") AND status=1";
