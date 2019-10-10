@@ -548,22 +548,26 @@ function getstate(){
     public function forword_job($job_id = null)
         {
             if (!empty($job_id)) {
-            //     $company_id = $this->session->userdata('company_profile_id');
-            //     if ($this->job_posting_model->check_jobid_and_post_id($job_id, $company_id) == true) {
-            //         $data['job_info'] = $this->job_posting_model->get($job_id);
-            //         $data['city'] = $this->Master_model->getMaster('city',$where=false);
-            //         $data['country'] = $this->Master_model->getMaster('country',$where=false);
-            //         $data['state'] = $this->Master_model->getMaster('state',$where=false);
+                echo $job_id; 
+                echo $company_id = $this->session->userdata('company_profile_id');
+               echo $this->job_posting_model->check_jobid_and_post_id($job_id, $company_id);
+                die;
+                if ($this->job_posting_model->check_jobid_and_post_id($job_id, $company_id) == true) {
+                    // $data['job_info'] = $this->job_posting_model->get($job_id);
                     $this->load->view('fontend/employer/forword_job');
-            //     } else {
-            //         echo "error";
-            //     }
+                } else {
+
+                    $employer_id = $this->session->userdata('company_profile_id');
+                    $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
+                    $this->load->view('fontend/employer/active_job.php', compact('company_active_jobs', 'employer_id'));
+                }
             } else {
-                $employer_id         = $this->session->userdata('company_profile_id');
+                $employer_id = $this->session->userdata('company_profile_id');
                 $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
                 $this->load->view('fontend/employer/active_job.php', compact('company_active_jobs', 'employer_id'));
             }
 
         }
 
-}
+} // end class
+
