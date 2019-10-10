@@ -331,7 +331,7 @@
 					 <?php
                     foreach($education_specialization as $spec_row){
 						?>
-			 <option value="<?php echo $spec_row['id']; ?>"<?php if($job_info->job_edu==$spec_row['id']){ echo "selected"; }?>><?php echo $spec_row['education_specialization']; ?></option>
+			 <option value="<?php echo $spec_row['id']; ?>"<?php if($job_info->edu_specialization==$spec_row['id']){ echo "selected"; }?>><?php echo $spec_row['education_specialization']; ?></option>
 										 <?php } ?>
 		
                     </select> 
