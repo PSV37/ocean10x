@@ -232,7 +232,11 @@
 			  <div class="col-md-4">
                   <div class="formrow">
                     <label class="control-label "><b>Salary Offered</b> <span class="required">*</span></label>
-                    <input type="number" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1">
+                    <input type="text" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control"  value="<?php 
+                                                 if(!empty($job_info->salary_range)){
+                                                    echo $job_info->salary_range;
+                                                 }
+                                            ?>">
                   </div>
                 </div>
                 <div class="col-sm-4">
@@ -324,7 +328,13 @@
                     <label class="control-label "><b>Required Education</b> <span class="required">*</span></label>
                     <select name="job_edu_special" id="job_edu_special" class="form-control"  data-style="btn-default" data-live-search="true" required="">
                      <option value="">Select Education </option>
-                   
+					 <?php
+                    foreach($special as $spec_row){
+						?>
+              <option value="<?php echo $spec_row['id'] ?>"><?php echo $spec_row['education_specialization'] ?></option>
+			  <?php
+            }
+			?>
                     </select> 
                   </div>
 				  </div>
