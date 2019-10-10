@@ -57,7 +57,7 @@
               <div class="row">
 			  <div class="col-md-4 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label mandatory">Job Level <span class="required">*</span></label>
+                    <label class="control-label mandatory"><b>Job Level</b> <span class="required">*</span></label>
                     <select name="job_level" required class="form-control" data-style="btn-default" data-live-search="true">
                       <option value="">Select Job Level</option>
                       <?php if(!empty($job_info->job_level)) {
@@ -71,7 +71,7 @@
                 </div>
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label">Job Nature<span class="required">*</span></label>
+                    <label class="control-label"><b>Job Nature</b> <span class="required">*</span></label>
                     <select name="job_nature"  class="form-control" data-style="btn-default" data-live-search="true">
                       <option value="">Select Job Nature</option>
                       <?php if(!empty($job_info->job_nature)) {
@@ -85,7 +85,7 @@
                 </div>
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
-                    <label>Job Role<span class="required">*</span></label>
+                    <label><b>Job Role</b> <span class="required">*</span></label>
                       <select name="job_role" id="job_role" class="form-control col-sm-5" onchange="getSkillsdetails(this.value)">
                         <option value="">Select Role</option>
                         <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
@@ -101,7 +101,7 @@
               <div class="row">
                 <div class="formrow">
                   <div class="col-md-12 col-sm-12"> 
-                    <label>Skill Set<span class="required">*</span></label><br>
+                    <label><b>Skill Set</b> <span class="required">*</span></label><br>
                     <div id="skills_result">Please Select Job Role.</div>
                   </div>
                 </div>
