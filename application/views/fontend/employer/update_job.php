@@ -239,7 +239,7 @@
                   <div class="formrow">
                     <label class="control-label">Preferred Age(From)</label>
                     <div class="row">
-                    	<div class="col-md-4"><select name="preferred_age_from" class="form-control" id="preferred_age_from" required>
+                    	<div class="col-md-6"><select name="preferred_age_from" class="form-control" id="preferred_age_from" required>
                       <option value="" selected>Age From</option>
                       <?php
 					  					
@@ -252,7 +252,7 @@
 										}
 									?>
                     </select></div>
-                        <div class="col-md-4"><select name="preferred_age_to" class="form-control" id="preferred_age_to" required>
+                        <div class="col-md-6"><select name="preferred_age_to" class="form-control" id="preferred_age_to" required>
 						<label class="control-label">Preferred Age(To)</label>
                       <option value="" selected>Age To</option>
                       <?php
