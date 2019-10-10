@@ -607,14 +607,15 @@ function getstate(){
                         $apply = $this->Master_model->master_insert($apply_array,'job_apply');
                         if($apply)
                         {
-                           $send = sendEmail_JobRequest($candiate_email);
+                           $send = sendEmail_JobRequest($email[$i]);
+                           echo $send;
                            if ($send) {
                             $this->session->set_flashdata('success',
                             '<div class="alert alert-success alert-dismissable">
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                           Job post is sucessfully Send To Candidates  
                           </div>');
-                            redirect('employer/active_job');
+                            //redirect('employer/active_job');
                            }
                         }
                         // else{
