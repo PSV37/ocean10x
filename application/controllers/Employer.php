@@ -578,8 +578,8 @@ function getstate(){
                     $candiate_email  = $this->input->post('candiate_email');
                     $where_can = "email IN ('".$candiate_email."')";
                     $data['can_data'] = $this->Master_model->getMaster('js_info',$where_can);
-                    echo $this->db->last_query();
-                    print_r($data['can_data']);
+                    //echo $this->db->last_query();
+                    //print_r($data['can_data']);
                     // foreach($can_data as $cand_row)
                     // {
                     //   echo 'Emails: - '.$email = $cand_row['email']; echo "<br><br>";
