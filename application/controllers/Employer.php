@@ -580,6 +580,7 @@ function getstate(){
                         if($can_data)
                         {
                             echo 'Matched emails -  <br><br>'.$email[$i]; echo "<br><br>";
+                            echo 'Matched emails -  <br><br>'.$can_data['job_seeker_id'][$i]; echo "<br><br>";
                         }
                         else{
                             echo 'Not Matched emails -  <br> <br>'.$email[$i];echo "<br><br>";
