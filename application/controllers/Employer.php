@@ -547,7 +547,7 @@ function getstate(){
     
     public function forword_job($job_id = null)
         {
-            // if (!empty($job_id)) {
+            if (!empty($job_id)) {
             //     $company_id = $this->session->userdata('company_profile_id');
             //     if ($this->job_posting_model->check_jobid_and_post_id($job_id, $company_id) == true) {
             //         $data['job_info'] = $this->job_posting_model->get($job_id);
@@ -558,9 +558,11 @@ function getstate(){
             //     } else {
             //         echo "error";
             //     }
-            // } else {
-            //     echo "Not Found";
-            // }
+            } else {
+                $employer_id         = $this->session->userdata('company_profile_id');
+                $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
+                $this->load->view('fontend/employer/active_job.php', compact('company_active_jobs', 'employer_id'));
+            }
 
         }
 
