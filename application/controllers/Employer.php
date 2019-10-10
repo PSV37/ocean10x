@@ -528,7 +528,40 @@ function getstate(){
             $result .='Skills Not Found ';
         }
          echo $result;    
+    }
+	
+	
+	
+	function getSkill() {
+        $id=$this->input->post('role_id');
+        $whereres = "id='$id'";
+        $role_data= $this->Master_model->get_master_row('job_role',$select = FALSE,$whereres);
+
+        $sk = $role_data['skill_set'];
+        
+        if ($sk) {
+            $where_sk= "id IN (".$sk.") AND status=1";
+            $select_sk = "skill_name ,id";
+            $skills = $this->Master_model->getMaster('job_posting',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=false,$start=false, $search=false);
+              
+               $result = '';
+                if(!empty($job_posting)){ 
+                    foreach($job_posting as $jobs){
+                      $result .="<input type='checkbox' name='skill_set[]' style='height:15px; width:20px;' id='jobs' value=".$jobs['id']." checked> ".$jobs['skill_name']."";
+
+                    }
+                }else{
+                    $result .='Skills Not Found ';
+                }
+                                        
+        }
+        else{
+            $result .='Skills Not Found ';
+        }
+         echo $result;    
     } 
+
+	
 
     function getEducation_specialization(){
         $level_id = $this->input->post('id');
