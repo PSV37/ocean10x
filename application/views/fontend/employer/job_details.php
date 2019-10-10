@@ -134,9 +134,7 @@
                 	<div class="col-md-2">
                       <?php if (!empty($seeker_info->photo_path)):  ?>
                       <img src="<?php echo base_url(); ?>upload/<?php echo $seeker_info->photo_path; ?>" />
-                      <?php else:?>
-                      <img src="<?php echo base_url() ?>/upload/compnay/company.png" alt="company Image">
-                      <?php endif; ?>
+
                     </div>
                     <div class="col-md-3">
                     	<h3><a target="_blank" href="<?php echo base_url() ?>employer/view_resume/<?php echo $v_applicant->job_seeker_id."/".$job_id; ?>"><?php echo $seeker_info->full_name; ?></a></h3>
