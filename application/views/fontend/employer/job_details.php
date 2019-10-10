@@ -131,11 +131,13 @@
           	<?php $i=1; if (!empty($total_applicantlist)): foreach ($total_applicantlist as $v_applicant) : $seeker_info=$this->job_seeker_model->applicant_job_seeker($v_applicant->job_seeker_id);?>
           	<li>
             	<div class="row">
-                	<div class="col-md-2">
+                	<!--<div class="col-md-2">
                       <?php if (!empty($seeker_info->photo_path)):  ?>
                       <img src="<?php echo base_url(); ?>upload/<?php echo $seeker_info->photo_path; ?>" />
-
-                    </div>
+                      <?php else:?>
+                      <img src="<?php echo base_url() ?>upload/compnay/company.png" alt="company Image">
+                      <?php endif; ?>
+                    </div>-->
                     <div class="col-md-3">
                     	<h3><a target="_blank" href="<?php echo base_url() ?>employer/view_resume/<?php echo $v_applicant->job_seeker_id."/".$job_id; ?>"><?php echo $seeker_info->full_name; ?></a></h3>
                         <div class="uniname"><?= $this->Job_seeker_education_model->education_list_by_id($v_applicant->job_seeker_id)[0]->js_institute_name;?></div>
