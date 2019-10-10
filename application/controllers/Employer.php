@@ -557,10 +557,10 @@ function getstate(){
                     // $data['job_info'] = $this->job_posting_model->get($job_id);
                     $this->load->view('fontend/employer/forword_job');
                 } else {
-
-                    $employer_id = $this->session->userdata('company_profile_id');
-                    $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
-                    $this->load->view('fontend/employer/active_job.php', compact('company_active_jobs', 'employer_id'));
+                        redirect_back();
+                    // $employer_id = $this->session->userdata('company_profile_id');
+                    // $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
+                    // $this->load->view('fontend/employer/active_job.php', compact('company_active_jobs', 'employer_id'));
                 }
             } else {
                 $employer_id = $this->session->userdata('company_profile_id');
