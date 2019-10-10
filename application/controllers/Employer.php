@@ -554,15 +554,11 @@ function getstate(){
                  $avail = $this->job_posting_model->check_jobid_and_post_id($job_id, $company_id);
              
                 if ($avail) {
-                    // $data['job_info'] = $this->job_posting_model->get($job_id);
                     $this->load->view('fontend/employer/forword_job');
                 } else {
                     redirect('employer/active_job');
                 }
             } else {
-                // $employer_id = $this->session->userdata('company_profile_id');
-                // $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
-                // $this->load->view('fontend/employer/active_job.php', compact('company_active_jobs', 'employer_id'));
                 redirect('employer/active_job');
             }
 
@@ -570,22 +566,33 @@ function getstate(){
 
         public function forword_job_post()
         {
-             $employer_id = $this->session->userdata('company_profile_id');
+            $employer_id = $this->session->userdata('company_profile_id');
+
                 if ($_POST) {
                     $employer_id  = $this->session->userdata('company_profile_id');
-                    // $job_deadline = strtolower($this->input->post('job_deadline'));
-                    // $job_post_id  = $this->input->post('job_post_id');
+                    $candiate_email  = $this->input->post('candiate_email');
+                    $email = explode(',', $candiate_email);
+                   
+                    for($i=0;$i<sizeof($email);$i++)
+                    {
+                        $where_can = "email='$email[$i]'";
+                        $can_data = $this->Master_model->getMaster('js_info',$where_can);
 
-                    // $candiate_email  = $this->input->post('candiate_email');
-                    // $where_can = "email IN ('".$candiate_email."')";
-                    // $can_data = $this->Master_model->getMaster('js_info',$where_can);
-                    //print_r($can_data);
-                    redirect('employer/active_job');
-                    
-                } else {
-
-                    redirect('employer/active_job');
+                        if($can_data)
+                        {
+                            echo 'Matched emails -  <br><br>'.$email[$i]; echo "<br><br>";
+                        }
+                        else{
+                            echo 'Not Matched emails -  <br> <br>'.$email[$i];echo "<br><br>";
+                        }
+                      
+                    }
+                   
+                   
                 }
+                // else{
+                //     redirect('employer/active_job');
+                // }
         }
 
 } // end class
