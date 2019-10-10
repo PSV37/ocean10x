@@ -86,7 +86,7 @@
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label><b>Job Role</b> <span class="required">*</span></label>
-                      <select name="job_role" id="job_role" class="form-control col-sm-5" onchange="getSkillsdetails(this.value)">
+                      <select name="job_role" id="job_role" class="form-control col-sm-5" onchange="getSkills(this.value)">
                         <option value="">Select Role</option>
                         <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
                            ?> 
@@ -101,12 +101,8 @@
               <div class="row">
                 <div class="formrow">
                   <div class="col-md-12 col-sm-12"> 
-				  <div id="skills_result">
                     <label><b>Skill Set</b> <span class="required">*</span></label><br>
-					<?php foreach($skill_master as $skill_row) { ?>
-					  <input type='checkbox' name='skill_set[]' style='height:15px; width:20px;' id='skill_set' value="<?php echo $skill_row['id']; ?>"<?php if(!empty($job_info)) if($job_info->skills_required==$skill_row['id']) echo 'checked'; ?> > <?php echo $skill_row['skill_name'];?>
-					<?php } ?>
-					</div>
+                    <div id="jobs">Please Select Job Role.</div>
                   </div>
                 </div>
               </div>
@@ -439,6 +435,26 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                    success: function(data)
                    {
                       $('#skills_result').html(data);
+                   } 
+            });
+
+        }
+    }
+	
+	
+	function getSkills(id)
+    {
+      if(id){
+        $.ajax({
+                  url:'<?php echo base_url();?>Employer/getSkill',
+                  type:'POST',
+                  data:{
+                      role_id:id
+                  },
+                   dataType: "html",  
+                   success: function(data)
+                   {
+                      $('#jobs').html(data);
                    } 
             });
 
