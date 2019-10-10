@@ -548,9 +548,10 @@ function getstate(){
     public function forword_job($job_id = null)
         {
             if (!empty($job_id)) {
-                echo $job_id; 
-                echo $company_id = $this->session->userdata('company_profile_id');
-               echo $this->job_posting_model->check_jobid_and_post_id($job_id, $company_id);
+                 $job_id; 
+                 $company_id = $this->session->userdata('company_profile_id');
+              $this->job_posting_model->check_jobid_and_post_id($job_id, $company_id);
+              echo $this->db->last_query();
                 die;
                 if ($this->job_posting_model->check_jobid_and_post_id($job_id, $company_id) == true) {
                     // $data['job_info'] = $this->job_posting_model->get($job_id);
