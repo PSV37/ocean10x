@@ -551,23 +551,75 @@ function getstate(){
                  $job_id; 
                  $company_id = $this->session->userdata('company_profile_id');
                  $avail = $this->job_posting_model->check_jobid_and_post_id($job_id, $company_id);
-              // echo $this->db->last_query();
-              //   die;
+             
                 if ($avail) {
                     // $data['job_info'] = $this->job_posting_model->get($job_id);
                     $this->load->view('fontend/employer/forword_job');
                 } else {
-                        redirect_back();
-                    // $employer_id = $this->session->userdata('company_profile_id');
-                    // $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
-                    // $this->load->view('fontend/employer/active_job.php', compact('company_active_jobs', 'employer_id'));
+                    redirect('employer/active_job');
                 }
             } else {
-                $employer_id = $this->session->userdata('company_profile_id');
-                $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
-                $this->load->view('fontend/employer/active_job.php', compact('company_active_jobs', 'employer_id'));
+                // $employer_id = $this->session->userdata('company_profile_id');
+                // $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
+                // $this->load->view('fontend/employer/active_job.php', compact('company_active_jobs', 'employer_id'));
+                redirect('employer/active_job');
             }
 
+        }
+
+        public function forword_job_post()
+        {
+             $employer_id = $this->session->userdata('company_profile_id');
+                if ($_POST) {
+                    $employer_id  = $this->session->userdata('company_profile_id');
+                    // $job_deadline = strtolower($this->input->post('job_deadline'));
+                    // $job_post_id  = $this->input->post('job_post_id');
+
+                    $candiate_email  = $this->input->post('candiate_email');
+                    $where_can = "email IN (".$candiate_email.")";
+                    $can_data = $this->Master_model->getMaster('js_info',$where_can);
+                    echo $this->db->last_query();echo "<br><br>";
+                    if($can_data)
+                    {
+                        foreach($can_data as $cand_row)
+                        {
+                          echo 'matched Emails: - '.$email = $cand_row['email']; echo "<br><br>";
+                           echo 'Ids: - '. $job_seeker_id = $cand_row['job_seeker_id'];
+                        }
+
+                    }
+                    else{
+                        echo 'Not matched candidate email -'.$candiate_email;
+                    }
+                    
+
+                  //   $job_info     = array(
+                  //       'company_profile_id' => $employer_id,
+                  //       'job_title'          => $this->input->post('candiate_email'),
+                  //       'job_desc'           => $this->input->post('job_desc'),
+                    
+                  //   );
+                  //   if (empty($job_post_id)) {
+                  //       $this->job_posting_model->insert($job_info);
+                  //       $this->session->set_flashdata('success',
+                  //           '<div class="alert alert-success alert-dismissable">
+                  //   <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                  // Vacancy post is sucessfully created  
+                  // </div>');
+                  //    redirect('employer/active_job');
+                  //   } else {
+                  //       $this->job_posting_model->update($job_info, $job_post_id);
+                  //       $this->session->set_flashdata('update',
+                  //           '<div class="alert alert-success alert-dismissable">
+                  //   <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                  //  Vacancy post is sucessfully Update;
+                  // </div>');
+                  //       redirect('employer/active_job');
+                  //   }
+                } else {
+
+                    redirect('employer/active_job');
+                }
         }
 
 } // end class
