@@ -226,6 +226,7 @@ exit;*/
             } else {
             	$this->Job_seeker_photo_model->update($job_seeker_photo, $id);
             }
+			echo $this->db->last_query(); die;
             $this->save_cropped_photo($data->x,$data->y,$data->width,$data->height,$file_name);
            // redirect('job_seeker/seeker_info');
         }
