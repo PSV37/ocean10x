@@ -517,6 +517,7 @@ exit;*/
 		$city = $this->Master_model->getMaster('city',$where=false);
 		$country = $this->Master_model->getMaster('country',$where=false);
 		$state = $this->Master_model->getMaster('state',$where=false);
+		echo $this->db->last_query();
         $this->load->view('fontend/downloadcv', compact('resume', 'edcuaiton_list', 'experinece_list', 'training_list', 'reference_list', 'language_list', 'js_personal_info', 'job_seeker_photo', 'country', 'state', 'city'));
     }
 
