@@ -584,7 +584,7 @@ public function apply_forworded_job()
     $email_id = base64_decode($this->input->get('apply_id'));
     $job_id =base64_decode($this->input->get('job_id'));
     
-    $wherecan="email= '$email_id'";
+        $wherecan="email= '$email_id'";
         $check_candidate = $this->Master_model->getMaster('js_info', $wherecan);
         if($check_candidate)
         {
