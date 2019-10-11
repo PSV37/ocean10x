@@ -432,8 +432,8 @@ class Employer extends MY_Employer_Controller
                         $data['training_list']   = $this->Job_training_model->training_list_by_id($jobseeker_id);
                         $data['reference_list']  = $this->Job_reference_model->reference_list_by_id($jobseeker_id);
 						//$data['js_personal_info'] = $this->job_seeker_personal_model->personalinfo_list_by_id($jobseeker_id);
-						echo $this->db->last_query();
-						//$data['job_seeker_photo'] = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id);
+						//echo $this->db->last_query();
+						$data['js_photo'] = $this->Job_seeker_photo_model->js_photo_id($jobseeker_id);
 						//$data['city'] = $this->Master_model->getMaster('city',$where=false);
 						//$data['country'] = $this->Master_model->getMaster('country',$where=false);
 						//$data['state'] = $this->Master_model->getMaster('state',$where=false);
