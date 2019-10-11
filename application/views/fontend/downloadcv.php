@@ -118,7 +118,9 @@ header("Content-Disposition: attachment;Filename={$Filename}.doc");
             </td>
 			<td align="center" height="135" width="126" colspan="6" style="padding-left:20px;" class="resume-textone" align="right"> 
 			<?php
-			echo base_url().$resume->photo_path; 
+			echo "<pre>";
+print_r($resume);	
+echo base_url()."upload/".$resume->photo_path;		
 			?>
                <img src="<?php echo base_url() ?>upload/<?php if(!empty($resume->photo_path)) { echo $resume->photo_path;} else { echo "image-notfound.png";} ?>" alt="Photo" height="120" width="124">
                </td>
