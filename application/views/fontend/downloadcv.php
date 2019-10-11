@@ -676,7 +676,7 @@ PERSONAL DETAILS:
          <td style="padding-left:10px;" align="left">Current  Location</td>
          <td align="center">:</td>
          <td align="left">       
-         <?php echo $js_personal_info->present_address; ?>   
+         <?php echo $resume->present_address; ?>   
          </td>
          </tr>
 		 <tr class="resume-textthree">
