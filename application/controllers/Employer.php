@@ -575,6 +575,7 @@ function getstate(){
                     $employer_id  = $this->session->userdata('company_profile_id');
                     $candiate_email  = $this->input->post('candiate_email');
                     $job_post_id  = $this->input->post('job_post_id');
+                    $job_desc  = $this->input->post('job_desc');
                     
                     $email = explode(',', $candiate_email);
                    
@@ -601,22 +602,28 @@ function getstate(){
                             'job_seeker_id' => $seeker_id,
                             'company_id'    => $employer_id,
                             'job_post_id'   => $job_post_id,
-                            // 'apply_date'    => date('Y-m-d H:i:s'),
                             'apply_status' => 0,
                         );
                         $apply = $this->Master_model->master_insert($apply_array,'job_apply');
                         if($apply)
                         {
+
+                            $message = '<div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+<table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+<br><br>Hi Dear'.$email[$i].',<br>Thank you for being a part of ConsultnHire leading jobs site.'.$job_desc.'<br><br><br>You should receive an update form the employer very soon. If you have any queries please feel free to contact<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+
+
+
                            $send = sendEmail_JobRequest($email[$i]);
-                         //  echo $send;
-                           if ($send) {
-                            $this->session->set_flashdata('success',
-                            '<div class="alert alert-success alert-dismissable">
-                            <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                          Job post is sucessfully Send To Candidates  
-                          </div>');
-                            redirect('employer/active_job');
-                           }
+                          echo $message;
+                          //  if ($send) {
+                          //   $this->session->set_flashdata('success',
+                          //   '<div class="alert alert-success alert-dismissable">
+                          //   <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                          // Job post is sucessfully Send To Candidates  
+                          // </div>');
+                          //   redirect('employer/active_job');
+                          //  }
                         }
                         // else{
                         //     redirect('employer/active_job');
