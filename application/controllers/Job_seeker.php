@@ -196,7 +196,8 @@ $data = $this->input->post('avatar_data');
 $data =json_decode($data);
 print_r($data);
 exit;*/
-var_dump($id);
+        $id     = $this->session->userdata('job_seeker_id');
+
 	$job_seeker_photo_row = $this->Job_seeker_photo_model->photo_by_seeker($id);
 	echo $this->db->last_query();
 	var_dump($job_seeker_photo_row); die;
