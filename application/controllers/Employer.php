@@ -610,21 +610,13 @@ function getstate(){
                 );
                 $select_job = "job_role.job_role_title,education_specialization.education_specialization,education_level.education_level_name,job_level.job_level_name,job_nature.job_nature_name,job_category.job_category_name,state.state_name,country.country_name,city.city_name,company_profile.company_name,company_profile.company_logo,job_types.job_types_name,job_posting.job_title,job_posting.job_position,job_posting.job_desc,job_posting.job_tags,job_posting.salary_range,job_posting.job_deadline,job_posting.preferred_age,job_posting.preferred_age_to,job_posting.working_hours,job_posting.no_jobs,job_posting.benefits,job_posting.experience,";
                 $req_details = $this->Master_model->getMaster('job_posting', $where_req, $join_req, $order = false, $field = false, $select_job,$limit=false,$start=false, $search=false);
-                // echo $this->db->last_query();
+              
                 if($req_details)
                 {
                     foreach($req_details as $require){
                     }
                     
                 }
-            
-                // $where_req_skill="requirement_id= '$req_id'";
-                // $join_req_skill = array(
-                //     'technical' => 'technical.technical_id = requirement_skills.skillP_id|INNER'
-                // );
-                // $req_skill_details = $this->Master_model->getMaster('requirement_skills', $where_req_skill, $join_req_skill);
-
-
                    
                     for($i=0;$i<sizeof($email);$i++)
                     {
@@ -673,7 +665,7 @@ function getstate(){
                                 </style>
                             <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
 <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
-<br><br>Hi '.$email_name[0].',<br>'.$job_desc.'<br/><br/><em><b>Now Hiring!!</b></em> <br/><br/><b>Company Name:</b>' .$require['company_name'].' <b>Job Profile/Description:</b><br/> <b>Job Title: </b> '.$require['job_title'].'<br/> <b>Job Position: </b> '.$require['job_posting'].'(Experience:- '.$require['experience'].')'.'<b>Salary Offered: </b> '.$require['salary_range'].' <br><br><a href="'.base_url().'job_forword_seeker/apply_forworded_job?apply_id='.base64_encode($email[$i]).'&job_id='.base64_encode($apply).'" class="btn btn-primary" value="Apply Now" align="center">Apply Now</a> <br><br><br>You should receive an update form the employer very soon. If you have any queries please feel free to contact<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+<br><br>Hi '.$email_name[0].',<br>'.$job_desc.'<br/><br/><em><b>Now Hiring!!</b></em> <br/><br/><b>Company Name:</b>' .$require['company_name'].'<br/><br/> <b>Job Profile/Description:</b><br/> <b>Job Title: </b> '.$require['job_title'].'<br/> <b>Job Position: </b> '.$require['job_posting'].'(Experience:- '.$require['experience'].')'.'<br/><b>Salary Offered: </b> '.$require['salary_range'].' <br><br><a href="'.base_url().'job_forword_seeker/apply_forworded_job?apply_id='.base64_encode($email[$i]).'&job_id='.base64_encode($apply).'" class="btn btn-primary" value="Apply Now" align="center">Apply Now</a> <br><br><br>You should receive an update form the employer very soon. If you have any queries please feel free to contact<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
 
 
 

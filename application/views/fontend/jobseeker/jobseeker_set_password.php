@@ -31,8 +31,9 @@
            <?php echo $this->session->flashdata('verify_msg'); ?>
            <?php echo $this->session->flashdata('invalid'); ?>
           <div class="formpanel">
+            <p>Please set your password for login</p>
             <div class="formrow">
-              <input type="text" class="form-control" name="seeker_id" placeholder="seeker_id" value="<?php echo $job_seeker_id; ?>" readonly>
+              <input type="hidden" class="form-control" name="seeker_id" placeholder="seeker_id" value="<?php echo $job_seeker_id; ?>" readonly>
               <input type="text" class="form-control" name="email" placeholder="Email" value="<?php echo $email_id; ?>" readonly>
             </div>
             <div class="formrow">
