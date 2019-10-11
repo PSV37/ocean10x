@@ -117,28 +117,30 @@
         <?php $i=1; if (!empty($not_view_resumelist)): foreach ($not_view_resumelist as $v_applicant) : $seeker_info=$this->job_seeker_model->applicant_job_seeker($v_applicant->job_seeker_id);?>
             <li>
             	<div class="row">
-                	<div class="col-md-2">
+                	<!--<div class="col-md-3">
                       <?php if (!empty($seeker_info->photo_path)):  ?>
                       <img src="<?php echo base_url(); ?>upload/<?php echo $seeker_info->photo_path; ?>" />
                       <?php else:?>
                       <img src="<?php echo base_url() ?>upload/compnay/company.png" alt="company Image">
                       <?php endif; ?>
-                    </div>
-                    <div class="col-md-3">
+                    </div>-->
+                    <div class="col-md-4">
                     	<h3><a target="_blank" href="<?php echo base_url() ?>employer/view_resume/<?php echo $v_applicant->job_seeker_id."/".$job_id; ?>"><?php echo $seeker_info->full_name; ?></a></h3>
                         <div class="uniname"><?= $this->Job_seeker_education_model->education_list_by_id($v_applicant->job_seeker_id)[0]->js_institute_name;?></div>
                         <div class="uniname"><i class="fa fa-phone" aria-hidden="true"></i> <?php echo $seeker_info->mobile; ?></div>
                         <div class="uniname"><i class="fa fa-envelope" aria-hidden="true"></i> <?php echo $seeker_info->email; ?> </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
 <?php $exp=($this->Job_seeker_experience_model->experience_list_by_id($v_applicant->job_seeker_id));
 
 ?>
 
                     	<div class="exp">
+						<label>Company Name</label>
                         	<?=(!empty($exp[0]->company_name)?'<strong>'.$exp[0]->company_name.'</strong>':'');?></strong>
+							<!--<div>
                             <?=(!empty($exp[0]->company_name)?''.$exp[0]->designation.'('.$exp[0]->duration.')':'');?></strong>
-                            
+                            </div>-->
                         </div>
                         <div class="exp">
                         	<?=(!empty($exp[1]->company_name)?'<strong>'.$exp[1]->company_name.'</strong>':'');?></strong>
@@ -147,8 +149,8 @@
                     </div>
                      <?php $career = ($this->job_career_model->js_careerinfo_by_seeker($v_applicant->job_seeker_id));?>
                     <div class="col-md-2">
-                    	<div class="moreinfo"><i class="fa fa-briefcase" aria-hidden="true"></i><?=(!empty($career[0]->js_career_exp)?$career[0]->js_career_exp:'');?> Years</div>
-                        <div class="moreinfo"><i>$</i> 
+                    	<div class="moreinfo"><i class="fa fa-briefcase" aria-hidden="true"></i><?=(!empty($career[0]->js_career_exp)?$career[0]->js_career_exp:'');?></div>
+                        <div class="moreinfo"><i>Rs.</i> 
  <?php echo $this->job_apply_model->expedited_salary($v_applicant->job_seeker_id,$job_id)[0]->expected_salary; ?> 
         </div>
                         <div class="sorted">

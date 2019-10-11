@@ -420,25 +420,31 @@ class Employer extends MY_Employer_Controller
                 redirect_back();
             }
 
+	
+
             public function downloadcv($jobseeker_id = null)
             {
                 if (!empty($jobseeker_id)) {
                     $company_id = $this->session->userdata('company_profile_id');
                     if ($this->job_apply_model->check_resume_by_id($jobseeker_id, $company_id) == true) {
 
-                        $data['resume']          = $this->job_seeker_model->resume_view_by_id($jobseeker_id);
+                        $data['resume'] = $this->job_seeker_model->resume_view_by_id($jobseeker_id);
+						echo "222";
+						echo $this->db->last_query();
+						echo "4444";
                         $data['edcuaiton_list']  = $this->Job_seeker_education_model->education_list_by_id($jobseeker_id);
                         $data['experinece_list'] = $this->Job_seeker_experience_model->experience_list_by_id($jobseeker_id);
                         $data['training_list']   = $this->Job_training_model->training_list_by_id($jobseeker_id);
                         $data['reference_list']  = $this->Job_reference_model->reference_list_by_id($jobseeker_id);
 						//$data['js_personal_info'] = $this->job_seeker_personal_model->personalinfo_list_by_id($jobseeker_id);
+						
+						//$data['js_info'] = $this->job_seeker_model->resume_view_by_id($jobseeker_id);
 						//echo $this->db->last_query();
-						//$data['js_photo'] = $this->Job_seeker_photo_model->js_photo_id($jobseeker_id);
 						//$data['city'] = $this->Master_model->getMaster('city',$where=false);
 						//$data['country'] = $this->Master_model->getMaster('country',$where=false);
 						//$data['state'] = $this->Master_model->getMaster('state',$where=false);
 						
-                        $this->load->view('fontend/downloadcv', $data);
+                        echo $this->load->view('fontend/downloadcv', $data,true); die;
 						
                     } else {
                         echo "not found";
