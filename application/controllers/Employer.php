@@ -431,11 +431,12 @@ class Employer extends MY_Employer_Controller
                         $experinece_list = $this->Job_seeker_experience_model->experience_list_by_id($jobseeker_id);
                         $training_list   = $this->Job_training_model->training_list_by_id($jobseeker_id);
                         $reference_list  = $this->Job_reference_model->reference_list_by_id($jobseeker_id);
-						
+						$js_personal_info = $this->job_seeker_personal_model->personalinfo_list_by_id($jobseeker_id);
+						$job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id);
 						$city = $this->Master_model->getMaster('city',$where=false);
 						$country = $this->Master_model->getMaster('country',$where=false);
 						$state = $this->Master_model->getMaster('state',$where=false);
-                        $this->load->view('fontend/downloadcv', compact('resume', 'edcuaiton_list', 'experinece_list', 'training_list', 'reference_list', 'language_list', 'city', 'state', 'country'));
+                        $this->load->view('fontend/downloadcv', compact('resume', 'edcuaiton_list', 'experinece_list', 'training_list', 'reference_list', 'js_personal_info', 'job_seeker_photo', 'language_list', 'city', 'state', 'country'));
                     } else {
                         echo "not found";
                     }
