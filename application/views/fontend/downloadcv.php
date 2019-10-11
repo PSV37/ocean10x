@@ -690,14 +690,14 @@ PERSONAL DETAILS:
          <td style="padding-left:10px;" align="left">State</td>
          <td align="center">:</td>
          <td align="left">       
-         <?php echo $company_profile->state_name; ?>   
+         <?php echo $js_personal_info->state_name; ?>   
          </td>
          </tr>
 		 <tr class="resume-textthree">
          <td style="padding-left:10px;" align="left">Country</td>
          <td align="center">:</td>
          <td align="left">       
-         <?php echo $company_profile->country_name; ?>   
+         <?php echo $js_personal_info->country_name; ?>   
          </td>
          </tr>
       <?php endif; ?>
