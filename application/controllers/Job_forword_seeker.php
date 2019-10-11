@@ -25,26 +25,17 @@ class Job_forword_seeker extends CI_Controller {
 	                $email_id = $row['email'];
 	                $pass = $row['password'];
 	            }
-	           // echo $pass;
-	           var_dump($check_candidate);
-
+	         
 	            if($pass!='')
 	            {
-	                echo "1";
-	                //var_dump($pass);
 	              redirect('register/jobseeker_login', 'refresh');
 	            }else{
-	                echo "2";
-	                var_dump($check_candidate);
-
 	                    $data['job_seeker_id'] = $job_seeker_id;
-	                    $this->load->view('jobseeker/jobseeker_set_password',$data);
+	                    $this->load->view('fontend/jobseeker/jobseeker_set_password',$data);
 	                }
 	        } // verify password empty cond else
 	          
 	       else{
-	            echo "3";
-	            var_dump($check_candidate); 
 	                redirect('register/jobseeker_login', 'refresh');
 	            }
 	}
