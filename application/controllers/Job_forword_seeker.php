@@ -31,6 +31,7 @@ class Job_forword_seeker extends CI_Controller {
 	              redirect('register/jobseeker_login', 'refresh');
 	            }else{
 	                    $data['job_seeker_id'] = $job_seeker_id;
+	                    $data['email_id'] = $email_id;
 	                    $this->load->view('fontend/jobseeker/jobseeker_set_password',$data);
 	                }
 	        } // verify password empty cond else

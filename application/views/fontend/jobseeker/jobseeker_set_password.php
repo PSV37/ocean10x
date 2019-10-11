@@ -32,7 +32,8 @@
            <?php echo $this->session->flashdata('invalid'); ?>
           <div class="formpanel">
             <div class="formrow">
-              <input type="text" class="form-control" name="email" placeholder="Email">
+              <input type="text" class="form-control" name="seeker_id" placeholder="seeker_id" value="<?php echo $job_seeker_id; ?>" readonly>
+              <input type="text" class="form-control" name="email" placeholder="Email" value="<?php echo $email_id; ?>" readonly>
             </div>
             <div class="formrow">
               <input name="password" type="password" class="form-control" placeholder="Password">
