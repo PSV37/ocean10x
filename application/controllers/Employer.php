@@ -436,8 +436,9 @@ class Employer extends MY_Employer_Controller
 						$data['city'] = $this->Master_model->getMaster('city',$where=false);
 						$data['country'] = $this->Master_model->getMaster('country',$where=false);
 						$data['state'] = $this->Master_model->getMaster('state',$where=false);
+						echo $this->db->last_query();
                         $this->load->view('fontend/downloadcv', $data);
-						print_r($this->db->last_query());
+						
                     } else {
                         echo "not found";
                     }
