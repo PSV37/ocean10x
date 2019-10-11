@@ -683,21 +683,21 @@ PERSONAL DETAILS:
          <td style="padding-left:10px;" align="left">city</td>
          <td align="center">:</td>
          <td align="left">       
-         <?php echo $js_personal_info->city_name; ?>   
+         <?php echo $resume->city_id; ?>   
          </td>
          </tr>
 		 <tr class="resume-textthree">
          <td style="padding-left:10px;" align="left">State</td>
          <td align="center">:</td>
          <td align="left">       
-         <?php echo $js_personal_info->state_name; ?>   
+         <?php echo $resume->state_id; ?>   
          </td>
          </tr>
 		 <tr class="resume-textthree">
          <td style="padding-left:10px;" align="left">Country</td>
          <td align="center">:</td>
          <td align="left">       
-         <?php echo $js_personal_info->country_name; ?>   
+         <?php echo $resume->country_id; ?>   
          </td>
          </tr>
       <?php endif; ?>
