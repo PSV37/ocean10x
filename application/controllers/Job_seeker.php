@@ -196,7 +196,10 @@ $data = $this->input->post('avatar_data');
 $data =json_decode($data);
 print_r($data);
 exit;*/
+var_dump($id);
 	$job_seeker_photo_row = $this->Job_seeker_photo_model->photo_by_seeker($id);
+	echo $this->db->last_query();
+	var_dump($job_seeker_photo_row); die;
         $config['upload_path']   = 'upload/';
         $config['allowed_types'] = 'gif|jpg|png';
         $config['encrypt_name']  = true;
@@ -219,7 +222,7 @@ exit;*/
                 'photo_path'    => $file_name,
             );
             
-             if (!$job_seeker_photo_row) {
+            if (!$job_seeker_photo_row) {
                 	$this->Job_seeker_photo_model->insert($job_seeker_photo);
             } else {
             	$this->Job_seeker_photo_model->update($job_seeker_photo, $id);
