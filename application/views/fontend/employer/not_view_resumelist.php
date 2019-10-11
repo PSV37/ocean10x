@@ -136,6 +136,7 @@
 ?>
 
                     	<div class="exp">
+						<label>Company Name</label>
                         	<?=(!empty($exp[0]->company_name)?'<strong>'.$exp[0]->company_name.'</strong>':'');?></strong>
 							<!--<div>
                             <?=(!empty($exp[0]->company_name)?''.$exp[0]->designation.'('.$exp[0]->duration.')':'');?></strong>
