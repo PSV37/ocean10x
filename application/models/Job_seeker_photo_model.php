@@ -20,6 +20,7 @@ class Job_seeker_photo_model extends MY_Model {
    public function photo_by_seeker($job_seeker_id) {
             $this->db->select("*");
             $this->db->from($this->_table_name);
+			$this->db->join('js_photo', 'js_photo.job_seeker_id = js_info.job_seeker_id');
             $this->db->where('job_seeker_id',$job_seeker_id);
             $this->db->order_by($this->_primary_key,"desc");
             $query = $this->db->get();        
