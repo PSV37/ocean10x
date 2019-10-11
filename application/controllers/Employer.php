@@ -435,13 +435,13 @@ class Employer extends MY_Employer_Controller
                         $data['reference_list']  = $this->Job_reference_model->reference_list_by_id($jobseeker_id);
 						//$data['js_personal_info'] = $this->job_seeker_personal_model->personalinfo_list_by_id($jobseeker_id);
 						
-						$data['js_info'] = $this->job_seeker_model->resume_view_by_id($jobseeker_id);
+						//$data['js_info'] = $this->job_seeker_model->resume_view_by_id($jobseeker_id);
 						echo $this->db->last_query();
 						//$data['city'] = $this->Master_model->getMaster('city',$where=false);
 						//$data['country'] = $this->Master_model->getMaster('country',$where=false);
 						//$data['state'] = $this->Master_model->getMaster('state',$where=false);
 						
-                        $this->load->view('fontend/downloadcv', $data);
+                        echo $this->load->view('fontend/downloadcv', $data,true); die;
 						
                     } else {
                         echo "not found";
