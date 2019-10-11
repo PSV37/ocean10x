@@ -609,15 +609,16 @@ function getstate(){
                             'job_seeker_id' => $seeker_id,
                             'company_id'    => $employer_id,
                             'job_post_id'   => $job_post_id,
-                            'apply_status' => 0,
+                            'forword_job_status' => 0,
                         );
                         $apply = $this->Master_model->master_insert($apply_array,'job_apply');
                         if($apply)
                         {
+                            $email_name = explode('@', $email[$i]);
 
                             $message = '<div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
 <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
-<br><br>Hi Dear'.$email[$i].',<br>Thank you for being a part of ConsultnHire leading jobs site.'.$job_desc.'<br><br><br>You should receive an update form the employer very soon. If you have any queries please feel free to contact<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+<br><br>Hi Dear'.$email_name.',<br>Thank you for being a part of ConsultnHire leading jobs site.'.$job_desc.'<br><br><br>You should receive an update form the employer very soon. If you have any queries please feel free to contact<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
 
 
 
