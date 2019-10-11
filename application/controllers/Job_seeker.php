@@ -599,7 +599,7 @@ public function apply_forworded_job()
             {
               redirect('register/jobseeker_login', 'refresh');
             }else{
-                    $data['job_seeker_id'] = $job_seeker_id
+                    $data['job_seeker_id'] = $job_seeker_id;
                     $this->load->view('jobseeker/jobseeker_set_password',$data);
                 }
         } // verify password empty cond else
