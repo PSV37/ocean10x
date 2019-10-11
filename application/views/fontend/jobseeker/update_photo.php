@@ -129,7 +129,7 @@
       	<div class="row">
         	<div class="col-md-8">
             <div class="previewbox">
-            <form class="form-inline" action="<?php echo base_url(); ?>job_seeker/save_photo/<?php if(!empty($job_seeker_photo->js_photo_id)){echo $job_seeker_photo->js_photo_id;} ?>" method="post" enctype="multipart/form-data" onsubmit="return checkCoords();">
+            <form class="form-inline" action="<?php echo base_url(); ?>job_seeker/save_photo/<?php echo $this->session->userdata('job_seeker_id'); ?>" method="post" enctype="multipart/form-data" onsubmit="return checkCoords();">
                           <div class="formrow">
                             <label class="" for="email">Upload Image:
                             <input type="file" class="form-control" id="photo_path"  name="photo_path" value="<?php if(!empty($job_seeker_photo->photo_path)){
