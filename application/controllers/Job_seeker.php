@@ -224,7 +224,7 @@ exit;*/
             if (!$job_seeker_photo_row) {
                 	$this->Job_seeker_photo_model->insert($job_seeker_photo);
             } else {
-            	$this->Job_seeker_photo_model->update($job_seeker_photo, $id);
+            	$this->Job_seeker_photo_model->update_photo_new($job_seeker_photo, $id);
             }
 			echo $this->db->last_query(); die;
             $this->save_cropped_photo($data->x,$data->y,$data->width,$data->height,$file_name);

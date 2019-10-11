@@ -35,6 +35,13 @@ class Job_seeker_photo_model extends MY_Model {
         $result = $this->db->get($this->_table_name)->result();
        return $result[0]->photo_path;
     }
+	
+	public function update_photo_new($data, $id = null)
+    {
+        $this->db->set($data);
+        $this->db->where('job_seeker_id', $id);
+        $this->db->update($this->_table_name);
+    }
 
 
   }
