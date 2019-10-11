@@ -37,7 +37,7 @@
               <div class="row">
                 <div class="col-md-12 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label ">Candiate Emails<span class="required">*</span> </label><span>Note: Please Insert Email Ids By Comma (,) Seperated.</span>   
+                    <label class="control-label ">Candiate Emails<span class="required">*</span> </label><samll><b>Note: Please Insert Email Ids By Comma (,) Seperated.</b></samll>   
                       <textarea name="candiate_email" placeholder="Candiate Emails" required class="form-control" rows="3"></textarea>
                   </div>
                 </div>
