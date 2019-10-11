@@ -603,9 +603,8 @@ public function apply_forworded_job()
                     $this->load->view('jobseeker/jobseeker_set_password',$data);
                 }
         } // verify password empty cond else
-            
-            
-        }else{
+          
+       else{
                 redirect('register/jobseeker_login', 'refresh');
             }
 }
