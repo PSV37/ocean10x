@@ -109,7 +109,7 @@
                     </div>
                 <div class="col-md-4">
         		<?php $exp=($this->Job_seeker_experience_model->experience_list_by_id($v_applicant->job_seeker_id)); ?>
-
+						<div class="uniname"><i class="fa fa-phone" aria-hidden="true"></i> <?php echo $seeker_info->company_name; ?></div>
                     	<!--<div class="exp">
                         	<?=(!empty($exp[0]->company_name)?'<strong>'.$exp[0]->company_name.'</strong>':'');?></strong>
                             <?=(!empty($exp[0]->company_name)?''.$exp[0]->designation.'('.$exp[0]->duration.')':'');?></strong>
