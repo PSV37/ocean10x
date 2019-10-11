@@ -579,4 +579,34 @@ exit;*/
 
 
 
+public function apply_forworded_job()
+{
+    $email_id = base64_decode($this->input->get('apply_id'));
+    $job_id =base64_decode($this->input->get('job_id'));
+    
+    $wherecan="email= '$email_id'";
+        $check_candidate = $this->Master_model->getMaster('js_info', $wherecan);
+        if($check_candidate)
+        {
+            foreach($check_candidate as $row)
+            {
+                $job_seeker_id = $row['job_seeker_id'];
+                $email_id = $row['email'];
+                $pass = $row['password'];
+            }
+
+            if($pass!='')
+            {
+              redirect('register/jobseeker_login', 'refresh');
+            }else{
+                    $data['job_seeker_id'] = $job_seeker_id;
+                    $this->load->view('jobseeker/jobseeker_set_password',$data);
+                }
+        } // verify password empty cond else
+          
+       else{
+                redirect('register/jobseeker_login', 'refresh');
+            }
 }
+
+} //end function

@@ -114,7 +114,7 @@ function get_metas() {
         $ci->email->bcc('careerportal02@gmail.com');
        
         $ci->email->reply_to('info@consultnhire.com', 'ConsultnHire');
-        $ci->email->subject('Career Support Information');
+        $ci->email->subject('Job | Urgent requirement');
         $ci->email->message($message);
         $ci->email->send();
    
