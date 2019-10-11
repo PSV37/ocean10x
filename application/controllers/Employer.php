@@ -420,31 +420,21 @@ class Employer extends MY_Employer_Controller
                 redirect_back();
             }
 
-            public function downloadcv($jobseeker_id = null)
-            {
-                if (!empty($jobseeker_id)) {
-                    $company_id = $this->session->userdata('company_profile_id');
-                    if ($this->job_apply_model->check_resume_by_id($jobseeker_id, $company_id) == true) {
-
-                        $resume          = $this->job_seeker_model->resume_view_by_id($jobseeker_id);
-                        $edcuaiton_list  = $this->Job_seeker_education_model->education_list_by_id($jobseeker_id);
-                        $experinece_list = $this->Job_seeker_experience_model->experience_list_by_id($jobseeker_id);
-                        $training_list   = $this->Job_training_model->training_list_by_id($jobseeker_id);
-                        $reference_list  = $this->Job_reference_model->reference_list_by_id($jobseeker_id);
-						$js_personal_info = $this->job_seeker_personal_model->personalinfo_list_by_id($jobseeker_id);
-						$job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id);
-						$city = $this->Master_model->getMaster('city',$where=false);
-						$country = $this->Master_model->getMaster('country',$where=false);
-						$state = $this->Master_model->getMaster('state',$where=false);
-                        $this->load->view('fontend/downloadcv', compact('resume', 'edcuaiton_list', 'experinece_list', 'training_list', 'reference_list', 'js_personal_info', 'job_seeker_photo', 'city', 'state', 'country'));
-                    } else {
-                        echo "not found";
-                    }
-                } else {
-                    echo "not found";
-                }
-
-            }
+            public function downloadcv()
+    {
+        $jobseeker_id    = $this->session->userdata('job_seeker_id');
+        $resume          = $this->Job_seeker_model->resume_view_by_id($jobseeker_id);
+        $edcuaiton_list  = $this->Job_seeker_education_model->education_list_by_id($jobseeker_id);
+        $experinece_list = $this->Job_seeker_experience_model->experience_list_by_id($jobseeker_id);
+        $training_list   = $this->Job_training_model->training_list_by_id($jobseeker_id);
+        $reference_list  = $this->Job_reference_model->reference_list_by_id($jobseeker_id);
+		$js_personal_info = $this->job_seeker_personal_model->personalinfo_list_by_id($jobseeker_id);
+		$job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id);
+		$city = $this->Master_model->getMaster('city',$where=false);
+		$country = $this->Master_model->getMaster('country',$where=false);
+		$state = $this->Master_model->getMaster('state',$where=false);
+        $this->load->view('fontend/downloadcv', compact('resume', 'edcuaiton_list', 'experinece_list', 'training_list', 'reference_list', 'language_list', 'js_personal_info', 'job_seeker_photo', 'country', 'state', 'city'));
+    }
 
             public function view_resume($jobseeker_id = null, $job_id = null)
             {
