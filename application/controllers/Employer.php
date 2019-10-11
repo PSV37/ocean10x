@@ -429,9 +429,9 @@ class Employer extends MY_Employer_Controller
                     if ($this->job_apply_model->check_resume_by_id($jobseeker_id, $company_id) == true) {
 
                         $data['resume'] = $this->job_seeker_model->resume_view_by_id($jobseeker_id);
-						echo "222";
-						echo $this->db->last_query();
-						echo "4444";
+						//echo "222";
+						//echo $this->db->last_query();
+						//echo "4444";
                         $data['edcuaiton_list']  = $this->Job_seeker_education_model->education_list_by_id($jobseeker_id);
                         $data['experinece_list'] = $this->Job_seeker_experience_model->experience_list_by_id($jobseeker_id);
                         $data['training_list']   = $this->Job_training_model->training_list_by_id($jobseeker_id);
