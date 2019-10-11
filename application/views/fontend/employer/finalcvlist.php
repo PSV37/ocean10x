@@ -111,9 +111,11 @@
         		<?php $exp=($this->Job_seeker_experience_model->experience_list_by_id($v_applicant->job_seeker_id)); ?>
 
                     	<div class="exp">
+						<label>Company Name:</label>
                         	<?=(!empty($exp[0]->company_name)?'<strong>'.$exp[0]->company_name.'</strong>':'');?></strong>
-                            
-                            
+							<!--<div>
+                            <?=(!empty($exp[0]->company_name)?''.$exp[0]->designation.'('.$exp[0]->duration.')':'');?></strong>
+                            </div>-->
                         </div>
                         <div class="exp">
                         	<?=(!empty($exp[1]->company_name)?'<strong>'.$exp[1]->company_name.'</strong>':'');?></strong>
