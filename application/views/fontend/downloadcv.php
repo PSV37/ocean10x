@@ -683,7 +683,7 @@ PERSONAL DETAILS:
          <td style="padding-left:10px;" align="left">city</td>
          <td align="center">:</td>
          <td align="left">       
-         <?php echo $js_personal_info->city_name; ?>   
+         <?php echo $js_personal_info->city_id; ?>   
          </td>
          </tr>
 		 <tr class="resume-textthree">
