@@ -131,7 +131,7 @@
             <div class="previewbox">
             <form class="form-inline" action="<?php echo base_url(); ?>job_seeker/save_photo/<?php echo $this->session->userdata('job_seeker_id'); ?>" method="post" enctype="multipart/form-data" onsubmit="return checkCoords();">
                           <div class="formrow">
-                            <label class="" for="email">Upload Image:
+                            <label class="" for="email">Upload Image:<?php echo $this->session->userdata('job_seeker_id'); ?>
                             <input type="file" class="form-control" id="photo_path"  name="photo_path" value="<?php if(!empty($job_seeker_photo->photo_path)){
                               echo $job_seeker_photo->photo_path;
                               } ?>">
