@@ -14,7 +14,7 @@ class Topic extends MY_Controller
     }
 
     /*** Dashboard ***/
-    public function index()
+    public function index($topic_id=0)
     {   
 
         $data['title'] = 'Add Topic';
@@ -25,6 +25,11 @@ class Topic extends MY_Controller
                 'skill_master' => 'skill_master.id=topic.technical_id |INNER',
             );
         $data['edu_topic_info'] = $this->Master_model->getMaster('topic',$where_all,$join_emp);
+		
+		if($id!=0){
+			$where_edu = "topic_id='$id'";
+			$data['edit_topic_info'] = $this->Master_model->getMaster('topic',$where_edu);
+		}
         // $all_educationlevels=$this->education_level_model->get();
         $this->load->view('admin/jobsetting/topic_master', $data);
     }
