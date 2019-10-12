@@ -8,6 +8,16 @@ class Job_forword_seeker extends CI_Controller {
 		$this->load->helper('form');
 	}
 
+	public function index()
+	{
+		$job_seeker_id = $this->session->userdata('job_seeker_id');
+        if ($job_seeker_id != null) {
+            redirect('job_seeker/seeker_info');
+   		}
+
+        $this->load->view('fontend/jobseeker/login');
+		
+	}	
 
 	public function apply_forworded_job()
 	{
@@ -28,12 +38,41 @@ class Job_forword_seeker extends CI_Controller {
 	         
 	            if($pass!='')
 	            {
-	              redirect('register/jobseeker_login', 'refresh');
+	              	$data_ck = array(
+						'job_seeker_id' => "'".$job_seeker_id."'",
+					);
+					$validate = $this->Master_model->getMaster("js_info",$data_ck);
+			        if(!empty($validate))
+			        {
+						foreach($validate as $row)
+						{
+							$data['email'] =>$row['email'],
+							$data['job_seeker_id'] =>$row['job_seeker_id'],
+						}
+						// print_r($LoginAdmin); die();
+			            $this->session->set_userdata($data);
+			            redirect('register/jobseeker_login', 'refresh');
+
+					}else{
+						//$Message = array('Message' => 'Invalid User...!');
+						$this->session->set_flashdata('type', 'danger');
+						$this->session->set_flashdata('Message', 'Invalid User...!');
+						$this->session->set_userdata($data);
+      					redirect('Job_forword_seeker/index');
+					}  
 	            }else{
 	                    $data['job_seeker_id'] = $job_seeker_id;
 	                    $data['email_id'] = $email_id;
 	                    $this->load->view('fontend/jobseeker/jobseeker_set_password',$data);
 	                }
+		             // To update job status
+					$data_status=array( 
+		            	'forword_job_status' => 2,
+			        );
+					$where_update1['job_apply_id'] = $job_id;
+					$this->Master_model->master_update($data_status, 'job_apply', $where_update1);
+
+
 	        } // verify password empty cond else
 	          
 	       else{
