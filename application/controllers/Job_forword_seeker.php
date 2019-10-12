@@ -110,7 +110,7 @@ class Job_forword_seeker extends CI_Controller {
                 if ($inputCaptcha === $sessCaptcha) {
                     
 				$where_up['job_seeker_id'] = $seeker_id;
-				$this->Master_model->master_update($data_status, 'js_info', $where_update1); 
+				$this->Master_model->master_update($data_status, 'js_info', $where_up); 
             
                 // Last Id Add Personal Info Table
                 $js_personal = array(
