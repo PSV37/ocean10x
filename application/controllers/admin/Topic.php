@@ -77,6 +77,21 @@ class Topic extends MY_Controller
         redirect('admin/topic');
     }
 
-   
+    public function edit_topic($id){
+        $data['title']="Topic Edit";
+        $where_all = "topic.topic_status='1'";
+        $join_emp = array(
+                'skill_master' => 'skill_master.id=topic.technical_id |INNER',
+            );
+        $data['edu_topic_info'] = $this->Master_model->getMaster('topic',$where_all,$join_emp);
+
+        $where_edu = "topic_id='$id'";
+        $data['edit_topic_info'] = $this->Master_model->getMaster('topic',$where_edu);
+        $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where=false);
+
+        $this->load->view('admin/jobsetting/topic_master',$data);
+    }
+
+
 
 }
