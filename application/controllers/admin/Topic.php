@@ -20,7 +20,7 @@ class Topic extends MY_Controller
         $data['title'] = 'Add Topic';
 
         $where_cn= "status=1";
-        $select = "topic_name, topic_description, topic_id";
+        $select = "topic_name, topic_desc, topic_id";
         $data['topic_data'] = $this->Master_model->getMaster('topic',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
         
         $this->load->view('admin/jobsetting/topic_master', $data);
