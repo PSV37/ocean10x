@@ -79,7 +79,7 @@ class Topic extends MY_Controller
             );
         $data['edu_topic_info'] = $this->Master_model->getMaster('topic',$where_all,$join_emp);
 
-        $where_edu = "id='$id'";
+        $where_edu = "topic_id='$id'";
         $data['edit_topic_info'] = $this->Master_model->getMaster('topic',$where_edu);
         $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where=false);
 
