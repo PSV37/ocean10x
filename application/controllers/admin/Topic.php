@@ -49,7 +49,7 @@ class Topic extends MY_Controller
 
                 $where['id']=$id;
                 $this->Master_model->master_update($state_dt,'industry_master',$where);
-               
+               echo "hi---";
                 redirect('admin/topic_master');
             }
         }
