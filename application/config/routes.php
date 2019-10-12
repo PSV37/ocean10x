@@ -167,7 +167,7 @@ $route['admin/designation-master']="admin/designation_master";
 // $route['admin/industry-master']="admin/industry_master";
 $route['admin/skill-master']="admin/skill_master";
 $route['admin/job-role']="admin/job_role";
-$route['admin/topic/(:num)']="admin/topic/$1";
+$route['admin/topic/(:any)']="admin/topic/index/(:any)/$1";
 
 
 
