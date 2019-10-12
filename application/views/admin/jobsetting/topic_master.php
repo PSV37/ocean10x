@@ -28,13 +28,13 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">Industry Master</h3>
+                        <h3 class="box-title ">Topic Master</h3>
                     </div>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-background">
                 <!-- form start -->
-                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/industry_master/save_industry/<?php  if (!empty($edit_industry_info)) { foreach($edit_industry_info as $row)
+                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/topic_master/save_industry/<?php  if (!empty($edit_industry_info)) { foreach($edit_industry_info as $row)
                         echo $row['id'];
                       }
                      ?>" method="post">

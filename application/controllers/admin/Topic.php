@@ -41,7 +41,7 @@ class Topic extends MY_Controller
 
                 $this->Master_model->master_insert($state_dt,'industry_master');
                
-                redirect('admin/industry_master');
+                redirect('admin/topic_master');
             }
             else {
                 $state_dt['updated_on']=date('Y-m-d H:i:s');
@@ -50,7 +50,7 @@ class Topic extends MY_Controller
                 $where['id']=$id;
                 $this->Master_model->master_update($state_dt,'industry_master',$where);
                
-                redirect('admin/industry_master');
+                redirect('admin/topic_master');
             }
         }
 
