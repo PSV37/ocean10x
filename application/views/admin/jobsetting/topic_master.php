@@ -109,8 +109,9 @@
                             <td><?php echo $st_row['topic_name'] ?></td>
                             <td><?php echo $st_row['topic_desc'] ?></td>
                             <td>
-                                <?php echo btn_edit('admin/topic/edit_topic/' . $st_row['topic_id']); ?>
+                                <?php echo btn_edit('admin/topic/save_topic/' . $st_row['topic_id']); ?>
                                 <?php echo btn_delete('admin/topic/delete_topic/' . $st_row['topic_id']); ?>
+								<td>123</td>
                             </td>
                         </tr>
 
