@@ -195,6 +195,25 @@
                       
                   </ul>
                </li>
+			   
+			   
+			   
+			   <li class=' treeview' <?php echo $this->company_profile_model->User_status_check(); ?>>
+                  <a href='<?php echo base_url(); ?>/#'> <i class='glyphicon glyphicon-cog'></i><span>Job Settings</span> <i class='fa fa-angle-left pull-right'></i> </a>
+                  <ul class='treeview-menu'>
+                     <li <?php echo $this->company_profile_model->User_status_check(); ?> >
+                        <a href='<?php echo base_url(); ?>admin/industry-master'> <i class='glyphicon glyphicon-plus'></i><span>Industry Master</span></a>
+                     </li>
+                   
+                     <li <?php echo $this->company_profile_model->User_status_check(); ?> >
+                        <a href='<?php echo base_url(); ?>admin/job-level'> <i class='glyphicon glyphicon-plus'></i><span>Job Level</span></a>
+                     </li>
+                     <li <?php echo $this->company_profile_model->User_status_check(); ?>>
+                        <a href='<?php echo base_url(); ?>admin/job-nature'> <i class='glyphicon glyphicon-plus'></i><span>Job Nature</span></a>
+                     </li>
+                      
+                  </ul>
+               </li>
 
                
             </ul>
