@@ -102,7 +102,7 @@
                     </thead>
                     <tbody>
                     <?php $key = 1 ;?>
-                    <?php if (!empty($skill_master)): foreach ($skill_master as $st_row) : ?>
+                    <?php if (!empty($topic)): foreach ($topic as $st_row) : ?>
                         <tr>
                             <td><?php echo $key ?></td>
                             <td><?php echo $st_row['skill_name'] ?></td>
