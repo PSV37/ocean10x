@@ -28,7 +28,7 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">Topic Master</h3>
+                        <h3 class="box-title ">Topic Masters</h3>
                     </div>
                 </div>
                 <!-- /.box-header -->
