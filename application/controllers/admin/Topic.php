@@ -58,6 +58,7 @@ class Topic extends MY_Controller
                
                 redirect('admin/topic');
             }
+			
         }
 
     public function delete_topic($id) {
