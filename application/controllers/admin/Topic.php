@@ -19,7 +19,7 @@ class Topic extends MY_Controller
 
         $data['title'] = 'Add Topic';
 
-        $data['topic'] = $this->Master_model->getMaster('topic',$where=false);
+        $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where=false);
           $where_all = "topic.topic_status='1'";
         $join_emp = array(
                 'skill_master' => 'skill_master.id=topic.technical_id |INNER',
