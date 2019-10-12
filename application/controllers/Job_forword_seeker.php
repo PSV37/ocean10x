@@ -44,12 +44,11 @@ class Job_forword_seeker extends CI_Controller {
 					$validate = $this->Master_model->getMaster("js_info",$data_ck);
 			        if(!empty($validate))
 			        {
-						foreach($validate as $row)
+						foreach($validate as $rows)
 						{
-							$data['email'] =>$row['email'],
-							$data['job_seeker_id'] =>$row['job_seeker_id'],
+							$data['email'] = $rows['email'];
+							$data['job_seeker_id'] = $rows['job_seeker_id'];
 						}
-						// print_r($LoginAdmin); die();
 			            $this->session->set_userdata($data);
 			            redirect('register/jobseeker_login', 'refresh');
 
