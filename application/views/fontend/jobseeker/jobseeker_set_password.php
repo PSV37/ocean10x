@@ -27,9 +27,9 @@
           	
           <h5>Jobseeker Set Password</h5>
           <!-- login form -->
-           <form class="submit-form customform loginform" action="<?php echo base_url() ?>register/check_login" method="post">
-           <?php echo $this->session->flashdata('verify_msg'); ?>
-           <?php echo $this->session->flashdata('invalid'); ?>
+          <form class="submit-form customform loginform" action="<?php echo base_url() ?>register/check_login" method="post">
+          <?php echo $this->session->flashdata('verify_msg'); ?>
+          <?php echo $this->session->flashdata('invalid'); ?>
           <div class="formpanel">
             <p>Please set your password for login</p>
             <div class="formrow">
@@ -42,7 +42,7 @@
             
             <input type="submit" class="btn" value="Set Password">
           </div>
-           </form>
+          </form>
           <!-- login form  end--> 
           
          <!-- sign up form -->
@@ -54,11 +54,7 @@
     </div>
   </div>
 </div>
+              
+<!-- end section -->
 
-
-
-
-               
-              <!-- end section -->
-
- <?php $this->load->view("fontend/layout/footer.php"); ?>
+<?php $this->load->view("fontend/layout/footer.php"); ?>
