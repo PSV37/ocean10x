@@ -71,6 +71,7 @@
                             
                                 <div class="col-md-12">
                                     <div class="form-group">
+									<label for="exampleInputEmail1">Description</label>
                                          <textarea name="topic_desc" class="form-control"><?php if (!empty($edit_topic_info)) echo $row['topic_desc'];?></textarea>
                                     </div>
                                 </div>                            
@@ -109,7 +110,7 @@
                             <td><?php echo $st_row['topic_name'] ?></td>
                             <td><?php echo $st_row['topic_desc'] ?></td>
                             <td>
-                                <?php echo btn_edit('admin/save_topic/' . $st_row['topic_id']); ?>
+                                <?php echo btn_edit('admin/topic/' . $st_row['topic_id']); ?>
                                 <?php echo btn_delete('admin/topic/delete_topic/' . $st_row['topic_id']); ?>
 								<td>123</td>
                             </td>
