@@ -24,9 +24,7 @@ class Topic extends MY_Controller
         $join_emp = array(
                 'skill_master' => 'skill_master.id=topic.technical_id |INNER',
             );
-        $where_edu = "topic_id='$id'";
-        $data['edit_topic_info'] = $this->Master_model->getMaster('topic',$where_edu);
-        $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where=false);
+        $data['edu_topic_info'] = $this->Master_model->getMaster('topic',$where_all,$join_emp);
         // $all_educationlevels=$this->education_level_model->get();
         $this->load->view('admin/jobsetting/topic_master', $data);
     }
@@ -73,5 +71,22 @@ class Topic extends MY_Controller
         $this->Master_model->master_update($education_level_status,'topic',$where_del);
         redirect('admin/topic');
     }
+
+    public function edit_topic($id){
+        $data['title']="Topic Edit";
+        $where_all = "topic.topic_status='1'";
+        $join_emp = array(
+                'skill_master' => 'skill_master.id=topic.technical_id |INNER',
+            );
+        $data['edu_topic_info'] = $this->Master_model->getMaster('topic',$where_all,$join_emp);
+
+        $where_edu = "topic_id='$id'";
+        $data['edit_topic_info'] = $this->Master_model->getMaster('topic',$where_edu);
+        $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where=false);
+
+        $this->load->view('admin/jobsetting/topic_master',$data);
+    }
+
+
 
 }
