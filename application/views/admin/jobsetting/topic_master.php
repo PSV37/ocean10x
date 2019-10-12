@@ -48,13 +48,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Subject<span class="required">*</span></label>
-                                        <select id="subject" class="form-control" name="technical_id" required>
+                                        <select id="subject"  name="technical_id" class="form-control" required>
                                            <option value="">Select Level</option> 
                                         <?php if (!empty($skill_master))
                                            foreach($skill_master as $skill) 
                                            {
                                         ?>   
-                                            <option value="<?php echo $skill['technical_id']; ?>"<?php if (!empty($technical_id)) if($row['technical_id']==$skill['technical_id'])echo "selected";?>><?php echo $skill['technical_skill']; ?></option> 
+                                            <option value="<?php echo $skill['id']; ?>"<?php if (!empty($edit_spectial_info)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option> 
                                         <?php } ?>
                                         </select>
                                     </div>
@@ -134,9 +134,3 @@
 
        
 <?php $this->load->view('admin/components/footer'); ?>
-<script>
-$("#subject").select2( {
-	placeholder: "Select Subject",
-	allowClear: true
-	} );
-</script>
