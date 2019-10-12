@@ -31,7 +31,7 @@
                             <h5>Jobseeker Account</h5>
                             <div class="formpanel">
                                   
-                                <form id="submit" action="" method="post" class="submit-form">
+                                <form id="submit" action="<?php echo base_url().'job_forword_seeker/create_seeker_account'; ?>" method="post" class="submit-form">
                                     <div class="formrow">
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12">
