@@ -18,64 +18,72 @@ class Topic extends MY_Controller
     {   
 
         $data['title'] = 'Add Topic';
-		$data['educaiton_level_info'] = $this->Master_model->getMaster('education_level',$where=false);
-        $where_cn= "topic_status=1";
-        $select = "topic_name, topic_desc, topic_id";
-        $data['topic_data'] = $this->Master_model->getMaster('topic',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
-        
+
+        $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where=false);
+          $where_all = "topic.status='1'";
+        $join_emp = array(
+                'skill_master' => 'skill_master.id=topic.technical_id |INNER',
+            );
+        $data['edu_topic_info'] = $this->Master_model->getMaster('topic',$where_all,$join_emp);
+        // $all_educationlevels=$this->education_level_model->get();
         $this->load->view('admin/jobsetting/topic_master', $data);
     }
 
-        public function save_industry($id = null){
-          
+
+        public function save_education_specializaton($id = null){
+            // var_dump($id); die;
             $user_id = $this->session->userdata('admin_user_id');
             
-            $state_dt=array(
-                'industry_name' => $this->input->post('industry_name'),
-                'description' => addslashes($this->input->post('industry_desc')),
+
+            $education_level=array(
+                'edu_level_id   ' => $this->input->post('education_level_name'),
+                'education_specialization' => $this->input->post('specialization'),
+                'course_type   ' => $this->input->post('course_type'),
             );
 
             if(empty($id)){
-                $state_dt['created_on']=date('Y-m-d H:i:s');
-                $state_dt['created_by']=$user_id;
+                $education_level['created_on']=date('Y-m-d H:i:s');
+                $education_level['created_by']=$user_id;
 
-                $this->Master_model->master_insert($state_dt,'industry_master');
+                $this->Master_model->master_insert($education_level,'education_specialization');
                
-                redirect('admin/topic_master');
+                redirect('admin/education_specialization');
             }
             else {
-                $state_dt['updated_on']=date('Y-m-d H:i:s');
-                $state_dt['updated_by']=$user_id;
+                $education_level['updated_on']=date('Y-m-d H:i:s');
+                $education_level['updated_by']=$user_id;
 
                 $where['id']=$id;
-                $this->Master_model->master_update($state_dt,'industry_master',$where);
+                $this->Master_model->master_update($education_level,'education_specialization',$where);
                
-                redirect('admin/topic_master');
+                redirect('admin/education_specialization');
             }
         }
 
-    public function delete_industry($id) {
+    public function delete_education_specialzation($id) {
         
-        $state_status = array(
+      //  $this->education_level_model->delete($id);
+        $education_level_status = array(
             'status'=>0,
         );
         $where_del['id']=$id;
-        $this->Master_model->master_update($state_status,'industry_master',$where_del);
-        redirect('admin/industry_master');
+        $this->Master_model->master_update($education_level_status,'education_specialization',$where_del);
+        redirect('admin/education_specialization');
     }
 
-    public function edit_industry($id){
-        $data['title']="Industry Master Edit";
+    public function edit_education_specialzation($id){
+        $data['title']="education_level Edit";
+        $where_all = "education_specialization.status='1'";
+        $join_emp = array(
+                'education_level' => 'education_level.education_level_id=education_specialization.edu_level_id |INNER',
+            );
+        $data['edu_spectial_info'] = $this->Master_model->getMaster('education_specialization',$where_all,$join_emp);
 
-        $where_st = "id='$id'";
-        $selectedit = "industry_name, description, id";
-        $data['edit_industry_info'] = $this->Master_model->getMaster('industry_master',$where_st,$join = FALSE, $order = false, $field = false, $selectedit,$limit=false,$start=false, $search=false);
-        
-        $where_cn= "status=1";
-        $select = "industry_name, description, id";
-        $data['industry_data'] = $this->Master_model->getMaster('industry_master',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
-        
-        $this->load->view('admin/jobsetting/industry_master',$data);
+        $where_edu = "id='$id'";
+        $data['edit_spectial_info'] = $this->Master_model->getMaster('education_specialization',$where_edu);
+        $data['educaiton_level_info'] = $this->Master_model->getMaster('education_level',$where=false);
+
+        $this->load->view('admin/jobsetting/education_specialization',$data);
     }
 
 
