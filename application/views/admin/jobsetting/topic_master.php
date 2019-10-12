@@ -47,8 +47,16 @@
                             
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Industry Name <span class="required">*</span></label>
-                                      <input type="text" name="industry_name" class="form-control" value="<?php if (!empty($edit_industry_info)) echo $row['industry_name'];?>" placeholder='Industry Name' required>
+                                        <label for="exampleInputEmail1">Education Level <span class="required">*</span></label>
+                                        <select id="education_level_name"  name="education_level_name" class="form-control" required>
+                                           <option value="">Select Level</option> 
+                                        <?php if (!empty($educaiton_level_info))
+                                           foreach($educaiton_level_info as $edu_row) 
+                                           {
+                                        ?>   
+                                            <option value="<?php echo $edu_row['education_level_id']; ?>"<?php if (!empty($edit_spectial_info)) if($row['edu_level_id']==$edu_row['education_level_id'])echo "selected";?>><?php echo $edu_row['education_level_name']; ?></option> 
+                                        <?php } ?>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">

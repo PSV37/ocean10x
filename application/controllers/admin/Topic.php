@@ -18,7 +18,7 @@ class Topic extends MY_Controller
     {   
 
         $data['title'] = 'Add Topic';
-		echo "hi---";
+		$data['educaiton_level_info'] = $this->Master_model->getMaster('education_level',$where=false);
         $where_cn= "topic_status=1";
         $select = "topic_name, topic_desc, topic_id";
         $data['topic_data'] = $this->Master_model->getMaster('topic',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
