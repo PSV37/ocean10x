@@ -46,7 +46,7 @@
           <!-- login form  end--> 
           
          <!-- sign up form -->
-          <div class="newuser"><i class="fa fa-user" aria-hidden="true"></i> New User? <a href="<?php echo base_url() . 'register' ?>">Register Here</a></div>
+          <!-- /<div class="newuser"><i class="fa fa-user" aria-hidden="true"></i> New User? <a href="<?php echo base_url() . 'register' ?>">Register Here</a></div> -->
           <!-- sign up form end--> 
           
         </div>
