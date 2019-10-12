@@ -47,8 +47,8 @@
                             
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Education Level <span class="required">*</span></label>
-                                        <select id="education_level_name"  name="education_level_name" class="form-control" required>
+                                        <label for="exampleInputEmail1">Subject<span class="required">*</span></label>
+                                        <select id="subject" class="form-control" name="technical_id" required>
                                            <option value="">Select Level</option> 
                                         <?php if (!empty($educaiton_level_info))
                                            foreach($educaiton_level_info as $edu_row) 
@@ -134,3 +134,9 @@
 
        
 <?php $this->load->view('admin/components/footer'); ?>
+<script>
+$("#subject").select2( {
+	placeholder: "Select Subject",
+	allowClear: true
+	} );
+</script>
