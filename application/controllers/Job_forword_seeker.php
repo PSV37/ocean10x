@@ -96,7 +96,7 @@ class Job_forword_seeker extends CI_Controller {
                 'gender'    => $this->input->post('gender'),
                 'user_name' => $this->input->post('user_name'),
                 'password'  => md5($this->input->post('password')),
-                'js_token'  => md5($this->input->post('email')),
+                // 'js_token'  => md5($this->input->post('email')),
                 'js_status' => 0,
                 'cv_type'   => 1,
             );
@@ -110,7 +110,7 @@ class Job_forword_seeker extends CI_Controller {
                 if ($inputCaptcha === $sessCaptcha) {
                     
 				$where_up['job_seeker_id'] = $seeker_id;
-				$this->Master_model->master_update($data_status, 'js_info', $where_up); 
+				$this->Master_model->master_update($js_info, 'js_info', $where_up); 
             
                 // Last Id Add Personal Info Table
                 $js_personal = array(
