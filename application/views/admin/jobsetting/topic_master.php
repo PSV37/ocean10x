@@ -105,12 +105,12 @@
                     <?php if (!empty($edu_topic_info)): foreach ($edu_topic_info as $st_row) : ?>
                         <tr>
                             <td><?php echo $key ?></td>
-                            <td><?php echo $edu_spec['skill_name'] ?></td>
-                            <td><?php echo $edu_spec['topic_name'] ?></td>
-                            <td><?php echo $edu_spec['topic_desc'] ?></td>
+                            <td><?php echo $st_row['skill_name'] ?></td>
+                            <td><?php echo $st_row['topic_name'] ?></td>
+                            <td><?php echo $st_row['topic_desc'] ?></td>
                             <td>
-                                <?php echo btn_edit('admin/topic/edit_topic/' . $edu_spec['topic_id']); ?>
-                                <?php echo btn_delete('admin/topic/delete_topic/' . $edu_spec['topic_id']); ?>
+                                <?php echo btn_edit('admin/topic/edit_topic/' . $st_row['topic_id']); ?>
+                                <?php echo btn_delete('admin/topic/delete_topic/' . $st_row['topic_id']); ?>
                             </td>
                         </tr>
 
