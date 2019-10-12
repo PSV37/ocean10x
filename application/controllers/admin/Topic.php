@@ -18,7 +18,7 @@ class Topic extends MY_Controller
     {   
 
         $data['title'] = 'Add Topic';
-
+		echo "hi---";
         $where_cn= "topic_status=1";
         $select = "topic_name, topic_desc, topic_id";
         $data['topic_data'] = $this->Master_model->getMaster('topic',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
@@ -40,7 +40,7 @@ class Topic extends MY_Controller
                 $state_dt['created_by']=$user_id;
 
                 $this->Master_model->master_insert($state_dt,'industry_master');
-               echo "hi---";
+               
                 redirect('admin/topic_master');
             }
             else {
