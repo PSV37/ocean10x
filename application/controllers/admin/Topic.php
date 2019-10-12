@@ -30,60 +30,60 @@ class Topic extends MY_Controller
     }
 
 
-        public function save_education_specializaton($id = null){
+        public function save_topic($id = null){
             // var_dump($id); die;
             $user_id = $this->session->userdata('admin_user_id');
             
 
             $education_level=array(
-                'edu_level_id   ' => $this->input->post('education_level_name'),
-                'education_specialization' => $this->input->post('specialization'),
-                'course_type   ' => $this->input->post('course_type'),
+                'technical_id   ' => $this->input->post('technical_id'),
+                'topic_name' => $this->input->post('topic_name'),
+                'topic_desc   ' => $this->input->post('topic_desc'),
             );
 
             if(empty($id)){
-                $education_level['created_on']=date('Y-m-d H:i:s');
-                $education_level['created_by']=$user_id;
+                $education_level['topic_created_date']=date('Y-m-d H:i:s');
+                $education_level['topic_created_by']=$user_id;
 
-                $this->Master_model->master_insert($education_level,'education_specialization');
+                $this->Master_model->master_insert($education_level,'topic');
                
-                redirect('admin/education_specialization');
+                redirect('admin/topic');
             }
             else {
-                $education_level['updated_on']=date('Y-m-d H:i:s');
-                $education_level['updated_by']=$user_id;
+                $education_level['topic_updated_date']=date('Y-m-d H:i:s');
+                $education_level['topic_updated_by']=$user_id;
 
-                $where['id']=$id;
-                $this->Master_model->master_update($education_level,'education_specialization',$where);
+                $where['topic_id']=$id;
+                $this->Master_model->master_update($education_level,'topic',$where);
                
-                redirect('admin/education_specialization');
+                redirect('admin/topic');
             }
         }
 
-    public function delete_education_specialzation($id) {
+    public function delete_topic($id) {
         
       //  $this->education_level_model->delete($id);
         $education_level_status = array(
-            'status'=>0,
+            'topic_status'=>0,
         );
-        $where_del['id']=$id;
-        $this->Master_model->master_update($education_level_status,'education_specialization',$where_del);
-        redirect('admin/education_specialization');
+        $where_del['topic_id']=$id;
+        $this->Master_model->master_update($education_level_status,'topic',$where_del);
+        redirect('admin/topic');
     }
 
-    public function edit_education_specialzation($id){
-        $data['title']="education_level Edit";
-        $where_all = "education_specialization.status='1'";
+    public function edit_topic($id){
+        $data['title']="topic Edit";
+        $where_all = "topic.topic_status='1'";
         $join_emp = array(
-                'education_level' => 'education_level.education_level_id=education_specialization.edu_level_id |INNER',
+                'skill_master' => 'skill_master.id=topic.technical_id |INNER',
             );
-        $data['edu_spectial_info'] = $this->Master_model->getMaster('education_specialization',$where_all,$join_emp);
+        $data['edu_topic_info'] = $this->Master_model->getMaster('topic',$where_all,$join_emp);
 
         $where_edu = "id='$id'";
-        $data['edit_spectial_info'] = $this->Master_model->getMaster('education_specialization',$where_edu);
-        $data['educaiton_level_info'] = $this->Master_model->getMaster('education_level',$where=false);
+        $data['edit_topic_info'] = $this->Master_model->getMaster('topic',$where_edu);
+        $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where=false);
 
-        $this->load->view('admin/jobsetting/education_specialization',$data);
+        $this->load->view('admin/jobsetting/topic_master',$data);
     }
 
 

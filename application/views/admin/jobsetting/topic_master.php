@@ -34,7 +34,7 @@
                 <!-- /.box-header -->
                 <div class="box-background">
                 <!-- form start -->
-                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/topic_master/save_industry/<?php  if (!empty($edit_industry_info)) { foreach($edit_industry_info as $row)
+                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/topic/save_topic/<?php  if (!empty($edit_topic_info)) { foreach($edit_topic_info as $row)
                         echo $row['id'];
                       }
                      ?>" method="post">
@@ -61,13 +61,21 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Industry Description </label>
-                                      <textarea name="industry_desc" class="form-control"><?php if (!empty($edit_industry_info)) echo $row['description'];?></textarea>
+                                        <label for="exampleInputEmail1">Topic</label>
+                                     <input type="text" name="topic_name" class="form-control" value="<?php if (!empty($edit_topic_info)) echo $row['topic_name'];?>" placeholder='Topic Name' required>
                                     </div>
                                 </div>
-                            
+                            </div>
                                 <div class="panel-body"></div>
-                                <button type="submit" class="btn bg-navy" type="submit">Save Industry
+								<div class="box-body">
+                            
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                         <textarea name="topic_desc" class="form-control"><?php if (!empty($edit_topic_info)) echo $row['topic_desc'];?></textarea>
+                                    </div>
+                                </div>                            
+
+                                <button type="submit" class="btn bg-navy" type="submit">Save Topic
                                 </button><br/><br/>
                             </div>
                             <!-- /.box-body -->
@@ -86,23 +94,26 @@
                     <thead>
                     <tr>
                         <th class="active">SL</th>
-                        <th class="active">Industry Name</th>
+                        <th class="active">Subject Name</th>
+						<th class="active">Topic Name</th>
                         <th class="active">Description</th>
                         <th class="active col-sm-2">Action</th>
                     </tr>
                     </thead>
                     <tbody>
                     <?php $key = 1 ;?>
-                    <?php if (!empty($industry_data)): foreach ($industry_data as $st_row) : ?>
+                    <?php if (!empty($edu_topic_info)): foreach ($edu_topic_info as $st_row) : ?>
                         <tr>
                             <td><?php echo $key ?></td>
-                            <td><?php echo $st_row['industry_name'] ?></td>
-                            <td><?php echo $st_row['description'] ?></td>
+                            <td><?php echo $edu_spec['skill_name'] ?></td>
+                            <td><?php echo $edu_spec['topic_name'] ?></td>
+                            <td><?php echo $edu_spec['topic_desc'] ?></td>
                             <td>
-                                <?php echo btn_edit('admin/industry_master/edit_industry/' . $st_row['id']); ?>
-                                <?php echo btn_delete('admin/industry_master/delete_industry/' . $st_row['id']); ?>
+                                <?php echo btn_edit('admin/topic/edit_topic/' . $edu_spec['topic_id']); ?>
+                                <?php echo btn_delete('admin/topic/delete_topic/' . $edu_spec['topic_id']); ?>
                             </td>
                         </tr>
+
                     <?php
                     $key++;
                     endforeach;
