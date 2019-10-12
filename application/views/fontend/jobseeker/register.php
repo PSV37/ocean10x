@@ -43,36 +43,36 @@
                                     </div><!-- end row -->
                                     </div>
 
-<div class="formrow">
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-12">
+                                    <div class="formrow">
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-12">
 
-<?php $str_m="";
-if((isset($this->session->userdata['reg_jobseeker']['gender'])) && $this->session->userdata['reg_jobseeker']['gender']=='1'){
+                                        <?php $str_m="";
+                                            if((isset($this->session->userdata['reg_jobseeker']['gender'])) && $this->session->userdata['reg_jobseeker']['gender']=='1'){
 
-$str_m="selected";
-$str_f="";
-}
-if((isset($this->session->userdata['reg_jobseeker']['gender'])) && $this->session->userdata['reg_jobseeker']['gender']=='2'){
-$str_m="";
-$str_f="selected";
-} 
-?>
+                                            $str_m="selected";
+                                            $str_f="";
+                                            }
+                                            if((isset($this->session->userdata['reg_jobseeker']['gender'])) && $this->session->userdata['reg_jobseeker']['gender']=='2'){
+                                            $str_m="";
+                                            $str_f="selected";
+                                            } 
+                                        ?>
 
 
 
-                                            <select name="gender" class="form-control" id="gender">
+                                                <select name="gender" class="form-control" id="gender">
 
-                                                <option value="">Select One</option>
-                                                <option value="1" <?php echo $str_m ; ?>>Male</option>
-                                                <option value="2" <?php echo $str_f ; ?>>Female</option>
-                                              </select>
-                                        </div>
-                                        <div class="col-md-6 col-sm-12">
-                                            <input type="text" name="user_name"  value="<?php echo isset($this->session->userdata['reg_jobseeker']['user_name'])?$this->session->userdata['reg_jobseeker']['user_name']:''; ?>"class="form-control" placeholder="User Name">
-                                        </div>
-                                    </div><!-- end row -->
-</div>
+                                                    <option value="">Select One</option>
+                                                    <option value="1" <?php echo $str_m ; ?>>Male</option>
+                                                    <option value="2" <?php echo $str_f ; ?>>Female</option>
+                                                  </select>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <input type="text" name="user_name"  value="<?php echo isset($this->session->userdata['reg_jobseeker']['user_name'])?$this->session->userdata['reg_jobseeker']['user_name']:''; ?>"class="form-control" placeholder="User Name">
+                                            </div>
+                                        </div><!-- end row -->
+                                    </div>
 
                                <div class="formrow">
                                <div class="row">
