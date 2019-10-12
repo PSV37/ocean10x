@@ -621,7 +621,7 @@ function getstate(){
 
                 $where_req_skill="skill_master.id IN ('".$skill_id."')";
                 $select_skill = "skill_master.skill_name";
-                $req_skill_details = $this->Master_model->getMaster('skill_master', $where_req_skill, $join_req, $order = false, $field = false, $select_skill,$limit=false,$start=false, $search=false);
+                $req_skill_details = $this->Master_model->getMaster('skill_master', $where_req_skill, $join=false, $order = false, $field = false, $select_skill,$limit=false,$start=false, $search=false);
                    
                     for($i=0;$i<sizeof($email);$i++)
                     {
