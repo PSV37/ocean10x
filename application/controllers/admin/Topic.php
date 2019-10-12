@@ -26,8 +26,8 @@ class Topic extends MY_Controller
             );
         $data['edu_topic_info'] = $this->Master_model->getMaster('topic',$where_all,$join_emp);
 		
-		if($id!=0){
-			$where_edu = "topic_id='$id'";
+		if($topic_id!=0){
+			$where_edu = "topic_id='$topic_id'";
 			$data['edit_topic_info'] = $this->Master_model->getMaster('topic',$where_edu);
 		}
         // $all_educationlevels=$this->education_level_model->get();
