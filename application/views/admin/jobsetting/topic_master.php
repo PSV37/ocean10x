@@ -50,11 +50,11 @@
                                         <label for="exampleInputEmail1">Subject<span class="required">*</span></label>
                                         <select id="subject" class="form-control" name="technical_id" required>
                                            <option value="">Select Level</option> 
-                                        <?php if (!empty($educaiton_level_info))
-                                           foreach($educaiton_level_info as $edu_row) 
+                                        <?php if (!empty($skill_master))
+                                           foreach($skill_master as $skill) 
                                            {
                                         ?>   
-                                            <option value="<?php echo $edu_row['education_level_id']; ?>"<?php if (!empty($edit_spectial_info)) if($row['edu_level_id']==$edu_row['education_level_id'])echo "selected";?>><?php echo $edu_row['education_level_name']; ?></option> 
+                                            <option value="<?php echo $skill['technical_id']; ?>"<?php if (!empty($technical_id)) if($row['technical_id']==$skill['technical_id'])echo "selected";?>><?php echo $skill['technical_skill']; ?></option> 
                                         <?php } ?>
                                         </select>
                                     </div>
