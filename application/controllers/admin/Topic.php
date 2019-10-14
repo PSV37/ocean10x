@@ -17,6 +17,20 @@ class Topic extends MY_Controller
     public function index($topic_id=0)
     {   
 
+
+
+
+        $this->load->helper(array('form', 'url'));
+        $this->load->library('form_validation');
+		if ($this->form_validation->run() = FALSE){
+			
+			print_r($_POST);exit;
+			
+		}
+		
+		
+		
+		
         $data['title'] = 'Add Topic';
 
         $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where=false);
@@ -30,6 +44,9 @@ class Topic extends MY_Controller
 			$where_edu = "topic_id='$topic_id'";
 			$data['edit_topic_info'] = $this->Master_model->getMaster('topic',$where_edu);
 		}
+		
+		
+		
         // $all_educationlevels=$this->education_level_model->get();
         $this->load->view('admin/jobsetting/admin_topic_master', $data);
     }
@@ -43,11 +60,7 @@ class Topic extends MY_Controller
             $user_id = $this->session->userdata('admin_user_id');
             
 
-            $education_level=array(
-                'technical_id   ' => $this->input->post('technical_id'),
-                'topic_name' => $this->input->post('topic_name'),
-                'topic_desc   ' => $this->input->post('topic_desc'),
-            );
+            
 
             if($id){
                 $education_level['topic_created_date']=date('Y-m-d H:i:s');
