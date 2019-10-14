@@ -105,34 +105,30 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <!-- <?php $key = 1 ;?>
-                    <?php if (!empty($city_info)): foreach ($city_info as $ct_row) : ?> -->
+                    <?php $key = 1 ;?>
+                    <?php if (!empty($city_info)): foreach ($city_info as $ct_row) : ?>
                         <tr>
-                            <td>s</td>
-                            <td></td>
-                             <td></td>
-                              <td></td>
-                              <td></td>
-                            <!-- <td><?php echo $ct_row['state_name'] ?></td>
-                            <td><?php echo $ct_row['city_name'] ?></td> -->
-                            <!-- <td>
+                            <td><?php echo $key ?></td>
+                            <td><?php echo $ct_row['country_name'] ?></td>
+                            <td><?php echo $ct_row['state_name'] ?></td>
+                            <td><?php echo $ct_row['city_name'] ?></td>
+                            <td>
                                 <?php echo btn_edit('admin/city_master/edit_city/' . $ct_row['id']); ?>
                                 <?php echo btn_delete('admin/city_master/delete_city/' . $ct_row['id']); ?>
-                            </td> -->
+                            </td>
                         </tr>
                     <?php
-                    // $key++;
-                    // endforeach;
+                    $key++;
+                    endforeach;
                     ?>
                     <?php else : ?> 
                         <td colspan="3">
                             <strong>There is no record for display</strong>
                         </td>
                     <?php
-                    // endif; ?>
+                    endif; ?>
                     </tbody>
                 </table>
-
                     </div>
                 </div>
             </div>
