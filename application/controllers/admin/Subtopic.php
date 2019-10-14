@@ -25,11 +25,7 @@ class Subtopic extends MY_Controller
         $where_state= "topic_status=1";
         $data['topic'] = $this->Master_model->getMaster('topic',$where_state);
         
-       // $where_all = "subtopic.subtopic_status='1'";
-        //$join_emp = array(
-              //  'skill_master' => 'skill_master.id=topic.technical_id |INNER',
-              //  'topic' => 'topic.technical_id=subtopic.technical_id |INNER',
-           // );
+      
         $data['subtopic'] = $this->Master_model->getMaster('subtopic', $join_emp);
 
         $this->load->view('admin/jobsetting/subtopic_master', $data);
@@ -78,12 +74,7 @@ class Subtopic extends MY_Controller
     public function edit_subtopic($id){
         $data['title']="Edit subtopic";
 
-        //$where_all = "subtopic.subtopic_status='1'";
-        //$join_emp = array(
-            //   'skill_master' => 'skill_master.id=topic.technical_id |INNER',
-               // 'topic' => 'topic.technical_id=subtopic.technical_id |INNER',
-
-           // );
+       
         $data['subtopic'] = $this->Master_model->getMaster('subtopic'$join_emp);
 
         $where_ct = "subtopic_id='$id'";
