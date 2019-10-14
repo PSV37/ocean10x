@@ -76,8 +76,8 @@
                                     </div>
                                 </div>                            
 
-                                <button type="submit" class="btn bg-navy" type="submit">Save Topic
-                                </button><br/><br/>
+                                <input type="submit" class="btn bg-navy" type="submit">Save Topic
+                                <br/><br/>
                             </div>
                             <!-- /.box-body -->
 
