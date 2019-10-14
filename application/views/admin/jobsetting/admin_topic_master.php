@@ -40,7 +40,7 @@
 				var_dump($edit_topic_info);
 				
 				?>
-                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/topic/<?= (isset($edit_topic_info))?$edit_topic_info['topic_id']:0; ?> method="post">
+                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/topic/<?= (isset($edit_topic_info))?$edit_topic_info[0]['topic_id']:0; ?> method="post">
 
                     <div class="row">
 
