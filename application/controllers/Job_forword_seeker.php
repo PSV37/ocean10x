@@ -145,11 +145,11 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                   // $this->job_seeker_model->sendEmail($email_to);
 
                    $send = sendEmail_JobRequest($email_to,$message,$subject);
-                    echo $message;
+                   // echo $message;
                     $this->session->unset_userdata('reg_jobseeker');
   
 
-                    $this->load->view('fontend/jobseeker/register_success');
+                    $this->load->view('fontend/jobseeker/forward_register_success');
                 } else {
                     $this->session->set_flashdata('captcha_msg', '<div class="alert alert-warning text-center">Captcha Code Does not Match Please Try Again</div>');
                     redirect_back();
