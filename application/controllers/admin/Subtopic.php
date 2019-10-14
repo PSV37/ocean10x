@@ -21,10 +21,10 @@ class Subtopic extends MY_Controller
 
 		$data['skill_master'] = $this->Master_model->getMaster('skill_master',$where=false);
           $where_all = "subtopic.subtopic_status='1'";
-        $join_emp = array(
-                'skill_master' => 'skill_master.id=subtopic.technical_id |INNER',
-            );
-        $data['edu_spectial_info'] = $this->Master_model->getMaster('subtopic',$where_all,$join_emp);
+       // $join_emp = array(
+                //'skill_master' => 'skill_master.id=subtopic.technical_id |INNER',
+         //   );
+        $data['edu_spectial_info'] = $this->Master_model->getMaster('subtopic',$where_all);
         // $all_educationlevels=$this->education_level_model->get();
         $this->load->view('admin/jobsetting/subtopic_master', $data);
     }
@@ -75,10 +75,10 @@ class Subtopic extends MY_Controller
     public function edit_subtopic($id){
         $data['title']="Subtopic Edit";
         $where_all = "subtopic.subtopic_status='1'";
-        $join_emp = array(
-		'skill_master' => 'skill_master.id=subtopic.technical_id |INNER',
-            );
-        $data['edu_spectial_info'] = $this->Master_model->getMaster('subtopic',$where_all,$join_emp);
+        //$join_emp = array(
+		//'skill_master' => 'skill_master.id=subtopic.technical_id |INNER',
+           // );
+       // $data['edu_spectial_info'] = $this->Master_model->getMaster('subtopic',$where_all,$join_emp);
 
         $where_edu = "subtopic_id='$id'";
         $data['edit_spectial_info'] = $this->Master_model->getMaster('subtopic',$where_edu);
