@@ -86,8 +86,8 @@ class Topic extends MY_Controller
 			
 
             if($id){
-                $education_level['topic_created_date']=date('Y-m-d H:i:s');
-                $education_level['topic_created_by']=$user_id;
+               // $education_level['topic_created_date']=date('Y-m-d H:i:s');
+                //$education_level['topic_created_by']=$user_id;
 				
 
                 $this->Master_model->master_insert($education_level,'topic');
@@ -95,8 +95,8 @@ class Topic extends MY_Controller
                 redirect('admin/topic');
             }
             else {
-                $education_level['topic_updated_date']=date('Y-m-d H:i:s');
-                $education_level['topic_updated_by']=$user_id;
+               // $education_level['topic_updated_date']=date('Y-m-d H:i:s');
+               // $education_level['topic_updated_by']=$user_id;
 
                 $where['topic_id']=$id;
                 $this->Master_model->master_update($education_level,'topic',$where);
