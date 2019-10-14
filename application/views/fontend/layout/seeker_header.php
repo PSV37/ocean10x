@@ -48,7 +48,7 @@
                                         <?php if(!empty($this->Job_seeker_photo_model->get_jobseeker_photo($job_seeker))):?>
                                         <img src="<?php echo base_url() ?>upload/<?php echo  $this->Job_seeker_photo_model->get_jobseeker_photo($job_seeker);?>" alt="" class="img-circle"> <strong>Welcome <?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></strong></a>
                                         <?php else: ?>
-                                        <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" alt="" class="img-circle"></a>
+                                        <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" alt="" class="img-circle"><strong>Welcome <?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></strong></a>
                                         <?php endif; ?>
                                         <ul class="dropdown-menu start-right">                                            
                                             <li><a href="<?php echo base_url(); ?>job_seeker/seeker_info"><span class="glyphicon glyphicon-user"></span>Dashboard</a></li>
