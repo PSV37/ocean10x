@@ -16,7 +16,7 @@ class Topic_master extends MY_Controller
     /*** Dashboard ***/
     public function index()
     {   
-		echo "<<<<<<<";
+		
         $data['title'] = 'Add Topic Master';
 
         $data['topic_level_info'] = $this->Master_model->getMaster('topic',$where=false);
