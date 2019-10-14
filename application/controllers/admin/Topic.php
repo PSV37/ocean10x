@@ -30,7 +30,7 @@ class Topic extends MY_Controller
 		if ($this->form_validation->run() != FALSE){
 			 
 			 
-			 if($topic_id){
+			 if(!$topic_id){
                 $education_level['topic_created_date']=date('Y-m-d H:i:s');
                 $education_level['topic_created_by']=$user_id;
 
