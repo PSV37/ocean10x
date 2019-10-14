@@ -71,11 +71,11 @@ class Job_forword_seeker extends CI_Controller {
 	                    $this->load->view('fontend/jobseeker/jobseeker_set_password',$data);
 	                }
 		             // To update job status
-					$data_status=array( 
-		            	'forword_job_status' => 2,
-			        );
-					$where_update1['job_apply_id'] = $job_id;
-					$this->Master_model->master_update($data_status, 'job_apply', $where_update1);
+					// $data_status=array( 
+		   //          	'forword_job_status' => 2,
+			  //       );
+					// $where_update1['job_apply_id'] = $job_id;
+					// $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
 
 
 	        } // verify password empty cond else

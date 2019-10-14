@@ -114,11 +114,15 @@ class Job extends MY_Fontend_Controller
                 $singlejob    = $this->job_posting_model->get_job_details($job_id);
                 $totalview=$singlejob->search_view+1;
                 $this->job_posting_model->update_Searchview($job_id,$totalview);
+
+                $where_apply = "job_apply.job_seeker_id='$jobseeker_id' AND job_apply.job_post_id='$job_id'";
+                $select_status ="job_apply.forword_job_status,job_apply.job_apply_id";
+                $forward_staus = $this->Master_model->getMaster('job_apply',$where_apply, $join=false, $order = false, $field = false, $select_status,$limit=false,$start=false, $search=false)
            }
 
        //  print_r($singlejob);
 
-            $this->load->view('fontend/job/job_details.php', compact('singlejob', 'jobseeker_id','radom_jobs'));
+            $this->load->view('fontend/job/job_details.php', compact('singlejob', 'jobseeker_id','radom_jobs','forward_staus'));
         } else {
             echo "Not Found";
         }
