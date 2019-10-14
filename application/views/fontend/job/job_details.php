@@ -224,8 +224,9 @@
       </div>
       <div class="modal-body">
         <form  class="form-horizontal" action="<?php echo base_url() ?>/job/apply_job" method="post" style="padding: 30px;">
-          <?php print_r($forward_status); ?>
-          <input type="text" name="expected_salary" class="form-control" id="forward_status" value="<?php if(!empty($forward_status)){ echo $forward_status->forword_job_status;} ?>" placeholder="">
+          <input type="text" name="expected_salary" class="form-control" id="forward_status" value="<?php if(!empty($forward_status)){ foreach($forward_status as $frow){
+            echo $frow['forword_job_status'];
+          } }?>" placeholder="">
 
                    
           <div class="form-group">
