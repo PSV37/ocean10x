@@ -202,14 +202,14 @@
                   <a href='<?php echo base_url(); ?>/#'> <i class='glyphicon glyphicon-book'></i><span>Question Bank</span> <i class='fa fa-angle-left pull-right'></i> </a>
                   <ul class='treeview-menu'>
                      <li <?php echo $this->company_profile_model->User_status_check(); ?> >
-                        <a href='<?php echo base_url(); ?>admin/topic_master'> <i class='glyphicon glyphicon-plus'></i><span>Topic</span></a>
+                        <a href='<?php echo base_url(); ?>admin/topic-master'> <i class='glyphicon glyphicon-plus'></i><span>Topic</span></a>
                      </li>
                    
                      <li <?php echo $this->company_profile_model->User_status_check(); ?> >
-                        <a href='<?php echo base_url(); ?>admin/subtopic'> <i class='glyphicon glyphicon-plus'></i><span>Subtopic</span></a>
+                        <a href='<?php echo base_url(); ?>admin/subtopic-master'> <i class='glyphicon glyphicon-plus'></i><span>Subtopic</span></a>
                      </li>
                      <li <?php echo $this->company_profile_model->User_status_check(); ?>>
-                        <a href='<?php echo base_url(); ?>admin/questionbank'> <i class='glyphicon glyphicon-plus'></i><span>Question Bank</span></a>
+                        <a href='<?php echo base_url(); ?>admin/questionbank-master'> <i class='glyphicon glyphicon-plus'></i><span>Question Bank</span></a>
                      </li>
                       
                   </ul>
