@@ -86,10 +86,6 @@ class Topic extends MY_Controller
 			
 
             if($id){
-				$user_id = $this->session->userdata('admin_user_id');
-				$education_level['technical_id']=$this->input->post('technical_id');
-				$education_level['topic_name']=$this->input->post('topic_name');
-				$education_level['topic_desc']=$this->input->post('topic_desc');
                 $education_level['topic_created_date']=date('Y-m-d H:i:s');
                 $education_level['topic_created_by']=$user_id;
 				
@@ -99,10 +95,6 @@ class Topic extends MY_Controller
                 redirect('admin/topic');
             }
             else {
-				$user_id = $this->session->userdata('admin_user_id');
-				$education_level['technical_id']=$this->input->post('technical_id');
-				$education_level['topic_name']=$this->input->post('topic_name');
-				$education_level['topic_desc']=$this->input->post('topic_desc');
                 $education_level['topic_updated_date']=date('Y-m-d H:i:s');
                 $education_level['topic_updated_by']=$user_id;
 
