@@ -31,7 +31,7 @@ class Topic extends MY_Controller
 			$data['edit_topic_info'] = $this->Master_model->getMaster('topic',$where_edu);
 		}
         // $all_educationlevels=$this->education_level_model->get();
-        $this->load->view('admin/jobsetting/topic_master', $data);
+        $this->load->view('admin/jobsetting/admin_topic_master', $data);
     }
 
 
@@ -89,7 +89,7 @@ class Topic extends MY_Controller
         $data['edit_topic_info'] = $this->Master_model->getMaster('topic',$where_edu);
         $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where=false);
 
-        $this->load->view('admin/jobsetting/topic_master',$data);
+        $this->load->view('admin/jobsetting/admin_topic_master',$data);
     }
 
 
