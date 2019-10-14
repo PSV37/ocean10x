@@ -170,7 +170,7 @@ $route['admin/job-role']="admin/job_role";
 //$route['admin/topic/(:any)']="admin/topic/index/$1";
 $route['admin/topic']="admin/topic";
 
-$route['admin/topic_master/(:any)']="admin/topic_master/index/$1";
+//$route['admin/topic_master/(:any)']="admin/topic_master/index/$1";
 
 
 
