@@ -14,7 +14,7 @@ class Topic extends MY_Controller
     }
 
     /*** Dashboard ***/
-    public function index($topic_id = FALSE)
+    public function index($topic_id)
     {   
 
 
