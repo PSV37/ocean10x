@@ -14,68 +14,23 @@ class Topic extends MY_Controller
     }
 
     /*** Dashboard ***/
-    public function index($topic_id = FALSE)
+    public function index()
     {   
+        $data['title'] = 'Add Topic Master';
 
-
-
-
-		$this->form_validation->set_rules('topic_name', 'Topic name', 'required');
-        $this->load->helper(array('form', 'url'));
-        $this->load->library('form_validation');
-		
-		if ($this->form_validation->run() != FALSE){
-			 
-			 
-			 if($topic_id){
-                $education_level['topic_created_date']=date('Y-m-d H:i:s');
-                $education_level['topic_created_by']=$user_id;
-
-                $this->Master_model->master_insert($education_level,'topic');
-               
-                redirect('admin/topic');
-            }
-            else {
-                $education_level['topic_updated_date']=date('Y-m-d H:i:s');
-                $education_level['topic_updated_by']=$user_id;
-
-                $where['topic_id']=$topic_id;
-                $this->Master_model->master_update($education_level,'topic',$where);
-               
-                redirect('admin/topic');
-            }
-			
-		}
-		
-		
-		
-		
-        $data['title'] = 'Add Topic';
-
-        $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where=false);
+        $data['topic_level_info'] = $this->Master_model->getMaster('topic',$where=false);
           $where_all = "topic.topic_status='1'";
         $join_emp = array(
                 'skill_master' => 'skill_master.id=topic.technical_id |INNER',
             );
-        $data['edu_topic_info'] = $this->Master_model->getMaster('topic',$where_all,$join_emp);
-		
-		if($topic_id){
-			$where_edu = "topic_id='$topic_id'";
-			$data['edit_topic_info'] = $this->Master_model->getMaster('topic',$where_edu);
-		}
-		
-		
-		
+        $data['edu_special_info'] = $this->Master_model->getMaster('topic',$where_all,$join_emp);
         // $all_educationlevels=$this->education_level_model->get();
-        $this->load->view('admin/jobsetting/admin_topic_master', $data);
+        $this->load->view('admin/jobsetting/topic_master', $data);
     }
 
 
-        public function save_topic($id){
-			
-			
-			
-				
+        public function save_topic($id = null){
+            // var_dump($id); die;
             $user_id = $this->session->userdata('admin_user_id');
             
 
@@ -85,13 +40,13 @@ class Topic extends MY_Controller
                 'topic_desc   ' => $this->input->post('topic_desc'),
             );
 
-            if($topic_id){
+            if(empty($id)){
                 $education_level['topic_created_date']=date('Y-m-d H:i:s');
                 $education_level['topic_created_by']=$user_id;
 
                 $this->Master_model->master_insert($education_level,'topic');
                
-                redirect('admin/topic');
+                redirect('admin/topic_master');
             }
             else {
                 $education_level['topic_updated_date']=date('Y-m-d H:i:s');
@@ -102,7 +57,6 @@ class Topic extends MY_Controller
                
                 redirect('admin/topic');
             }
-			
         }
 
     public function delete_topic($id) {
@@ -122,13 +76,13 @@ class Topic extends MY_Controller
         $join_emp = array(
                 'skill_master' => 'skill_master.id=topic.technical_id |INNER',
             );
-        $data['edu_topic_info'] = $this->Master_model->getMaster('topic',$where_all,$join_emp);
+        $data['topic_spectial_info'] = $this->Master_model->getMaster('topic',$where_all,$join_emp);
 
         $where_edu = "topic_id='$id'";
-        $data['edit_topic_info'] = $this->Master_model->getMaster('topic',$where_edu);
-        $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where=false);
+        $data['edit_special_info'] = $this->Master_model->getMaster('topic',$where_edu);
+        $data['topic_level_info'] = $this->Master_model->getMaster('education_level',$where=false);
 
-        $this->load->view('admin/jobsetting/admin_topic_master',$data);
+        $this->load->view('admin/jobsetting/topic_master',$data);
     }
 
 
