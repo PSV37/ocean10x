@@ -22,7 +22,7 @@ class Topic extends MY_Controller
 
         $this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
-		if ($this->form_validation->run() = FALSE){
+		if ($this->form_validation->run() != FALSE){
 			
 			print_r($_POST);exit;
 			
