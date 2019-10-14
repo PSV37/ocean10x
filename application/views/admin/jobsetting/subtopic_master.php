@@ -94,7 +94,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
-                <table class="table table-bordered table-striped" id="dataTables-example">
+               <!-- <table class="table table-bordered table-striped" id="dataTables-example">
                     <thead>
                     <tr>
                         <th class="active">SL</th>
@@ -129,7 +129,7 @@
                     <?php
                     endif; ?>
                     </tbody>
-                </table>
+                </table>-->
                     </div>
                 </div>
             </div>
