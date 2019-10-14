@@ -30,7 +30,7 @@ class Topic extends MY_Controller
     }
 
 
-        public function save_education_topic($id = null){
+        public function save_topic($id = null){
             // var_dump($id); die;
             $user_id = $this->session->userdata('admin_user_id');
             
