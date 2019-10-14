@@ -80,13 +80,15 @@ class Topic extends MY_Controller
 			
 				
             $user_id = $this->session->userdata('admin_user_id');
-            
-
-            
+            $education_level['technical_id']=$this->input->post('technical_id');
+			$education_level['topic_name']=$this->input->post('topic_name');
+            $education_level['topic_desc']=$this->input->post('topic_name');
+			
 
             if($id){
                 $education_level['topic_created_date']=date('Y-m-d H:i:s');
                 $education_level['topic_created_by']=$user_id;
+				
 
                 $this->Master_model->master_insert($education_level,'topic');
                
