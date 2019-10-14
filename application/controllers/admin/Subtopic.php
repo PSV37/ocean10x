@@ -19,7 +19,7 @@ class Subtopic extends MY_Controller
 
         $data['title'] = 'Add Subtopic';
 
-        $where_cn= "status=1";
+        
         $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where=false);
 
         $where_state= "topic_status=1";
