@@ -20,7 +20,7 @@ class Topic extends MY_Controller
 
 
 
-		$this->form_validation->set_rules('topic_name', 'Topic name', 'required')
+		$this->form_validation->set_rules('topic_name', 'Topic name', 'required');
         $this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
 		
