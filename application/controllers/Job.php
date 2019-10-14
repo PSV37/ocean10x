@@ -160,23 +160,11 @@ class Job extends MY_Fontend_Controller
                  'forword_job_status' => 2,
                 );
                 $where_update1['job_apply_id'] = $job_apply_id;
-                $last = $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
-                if($last)
-                {
-                    $apply_info   = array(
-                        'job_seeker_id'   => $jobseeker_id,
-                        'company_id'      => $company_id,
-                        'job_post_id'     => $job_post_id,
-                        'expected_salary' => $this->input->post('expected_salary'),
-                    );
-
-                    if ($this->job_apply_model->check_apply_job($jobseeker_id, $company_id, $job_post_id)) {
-                        $this->load->view('fontend/alreadyapply');
-                    } else {
-                            $this->job_apply_model->insert($apply_info);
-                        $this->load->view('fontend/applysucess');
-                    }
-                }
+                $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
+               
+                $this->load->view('fontend/applysucess');
+                   
+            
             }else{
 
                     $apply_info   = array(
