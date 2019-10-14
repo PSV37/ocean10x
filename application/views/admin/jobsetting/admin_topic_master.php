@@ -34,7 +34,7 @@
                 <!-- /.box-header -->
                 <div class="box-background">
                 <!-- form start -->
-                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/topic/save_topic<?php  if (!empty($edit_topic_info)) { foreach($edit_topic_info as $row)
+                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/topic/edit_topic/<?php  if (!empty($edit_topic_info)) { foreach($edit_topic_info as $row)
                         echo $row['topic_id'];
                       }
                      ?>" method="post">
