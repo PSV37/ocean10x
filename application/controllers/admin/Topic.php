@@ -32,7 +32,7 @@ class Topic extends MY_Controller
                 $education_level['topic_created_by']=$user_id;
 
                 $this->Master_model->master_insert($education_level,'topic');
-               
+               echo $this->db->last_query(); exit;
                 redirect('admin/topic', refresh);
             }
             else {
@@ -41,10 +41,10 @@ class Topic extends MY_Controller
 
                 $where['topic_id']=$topic_id;
                 $this->Master_model->master_update($education_level,'topic',$where);
-               
+               echo $this->db->last_query(); exit;
                 redirect('admin/topic',refresh);
             }
-			echo $this->db->last_query();
+			
 		}
 		
 		
