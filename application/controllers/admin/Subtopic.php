@@ -26,7 +26,7 @@ class Subtopic extends MY_Controller
         $data['topic'] = $this->Master_model->getMaster('topic',$where_state);
         
       
-        $data['subtopic'] = $this->Master_model->getMaster('subtopic', $join_emp);
+        $data['subtopic'] = $this->Master_model->getMaster('subtopic');
 
         $this->load->view('admin/jobsetting/subtopic_master', $data);
     }
@@ -75,7 +75,7 @@ class Subtopic extends MY_Controller
         $data['title']="Edit subtopic";
 
        
-        $data['subtopic'] = $this->Master_model->getMaster('subtopic'$join_emp);
+        $data['subtopic'] = $this->Master_model->getMaster('subtopic');
 
         $where_ct = "subtopic_id='$id'";
         $data['edit_subtopic_info'] = $this->Master_model->getMaster('subtopic',$where_ct=);
