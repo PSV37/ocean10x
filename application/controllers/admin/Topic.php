@@ -71,7 +71,7 @@ class Topic extends MY_Controller
     }
 
 
-        public function save_topic($id){
+        public function save_topic($topic_id){
 			
 			
 			
@@ -85,7 +85,7 @@ class Topic extends MY_Controller
                 'topic_desc   ' => $this->input->post('topic_desc'),
             );
 
-            if($id){
+            if($topic_id){
                 $education_level['topic_created_date']=date('Y-m-d H:i:s');
                 $education_level['topic_created_by']=$user_id;
 
@@ -97,7 +97,7 @@ class Topic extends MY_Controller
                 $education_level['topic_updated_date']=date('Y-m-d H:i:s');
                 $education_level['topic_updated_by']=$user_id;
 
-                $where['topic_id']=$id;
+                $where['topic_id']=$topic_id;
                 $this->Master_model->master_update($education_level,'topic',$where);
                
                 redirect('admin/topic');
