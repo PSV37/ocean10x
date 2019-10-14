@@ -14,7 +14,7 @@ class Topic extends MY_Controller
     }
 
     /*** Dashboard ***/
-    public function index($topic_id=0)
+    public function index($topic_id = FALSE)
     {   
 
 
@@ -27,7 +27,7 @@ class Topic extends MY_Controller
 		if ($this->form_validation->run() != FALSE){
 			 
 			 
-			 if($id){
+			 if($topic_id){
                 $education_level['topic_created_date']=date('Y-m-d H:i:s');
                 $education_level['topic_created_by']=$user_id;
 
@@ -39,7 +39,7 @@ class Topic extends MY_Controller
                 $education_level['topic_updated_date']=date('Y-m-d H:i:s');
                 $education_level['topic_updated_by']=$user_id;
 
-                $where['topic_id']=$id;
+                $where['topic_id']=$topic_id;
                 $this->Master_model->master_update($education_level,'topic',$where);
                
                 redirect('admin/topic',refresh);
@@ -59,7 +59,7 @@ class Topic extends MY_Controller
             );
         $data['edu_topic_info'] = $this->Master_model->getMaster('topic',$where_all,$join_emp);
 		
-		if($topic_id!=0){
+		if($topic_id){
 			$where_edu = "topic_id='$topic_id'";
 			$data['edit_topic_info'] = $this->Master_model->getMaster('topic',$where_edu);
 		}
