@@ -6,7 +6,7 @@ if (!defined('BASEPATH')) {
 
 
 
-class City_master extends MY_Controller
+class Subtopic extends MY_Controller
 {
     public function __construct()
     {
