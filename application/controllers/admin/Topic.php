@@ -82,7 +82,7 @@ class Topic extends MY_Controller
             $user_id = $this->session->userdata('admin_user_id');
             $education_level['technical_id']=$this->input->post('technical_id');
 			$education_level['topic_name']=$this->input->post('topic_name');
-            $education_level['topic_desc']=$this->input->post('topic_name');
+            $education_level['topic_desc']=$this->input->post('topic_desc');
 			
 
             if($id){
