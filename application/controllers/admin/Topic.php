@@ -35,7 +35,7 @@ class Topic extends MY_Controller
     }
 
 
-        public function save_topic($id = null){
+        public function save_topic($id){
 			
 			
 			
@@ -49,7 +49,7 @@ class Topic extends MY_Controller
                 'topic_desc   ' => $this->input->post('topic_desc'),
             );
 
-            if(empty($id)){
+            if($id){
                 $education_level['topic_created_date']=date('Y-m-d H:i:s');
                 $education_level['topic_created_by']=$user_id;
 
