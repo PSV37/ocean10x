@@ -37,7 +37,7 @@
                 <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/topic/save_topic/<?php  if (!empty($edit_topic_info)) { foreach($edit_topic_info as $row)
                         echo $row['id'];
                       }
-                     ?>" method="post">
+                     ?>" method="get">
 
                     <div class="row">
 
