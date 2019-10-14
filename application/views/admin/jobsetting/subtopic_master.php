@@ -98,9 +98,10 @@
                     <thead>
                     <tr>
                         <th class="active">SL</th>
-                        <th class="active">Country Name</th>
-                        <th class="active">State Name</th>
-                        <th class="active">City Name</th>
+                        <th class="active">Subject Name</th>
+                        <th class="active">Topic Name</th>
+                        <th class="active">Subtopic Name</th>
+						<th class="active">Subtopic Description</th>
                         <th class="active col-sm-2">Action</th>
                     </tr>
                     </thead>
