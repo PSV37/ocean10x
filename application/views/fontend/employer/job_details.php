@@ -96,7 +96,7 @@
                 	<div class="countcirc"><a href="<?php echo base_url() ?>employer/sortlist-cv/<?php echo $job_id; ?>">
                     <?php echo $this->job_apply_model->count_job_apply_sortedlist($job_id,$company_id);?>
                   </a> </div>
-                    <h6>Sort List</h6>
+                    <h6>Short Listed</h6>
                 </li>
                 <li class="col-md-2 col-sm-4 col-xs-6">
                 	<div class="countcirc"><a href="<?php echo base_url() ?>employer/interview-cv/<?php echo $job_id; ?>">
@@ -171,11 +171,11 @@
               							if($v_applicant->apply_status == 0)
               							{ ?>
                           <span class="label label-warning">
-                            <?php echo 'Not Sorted' ?>
+                            <?php echo 'Not Shorted' ?>
                           </span>
                           <?php } elseif($v_applicant->apply_status == 1) { ?>
                           <span class="label label-primary">
-                            <?php echo 'Sorted' ?>
+                            <?php echo 'Shorted' ?>
                           </span>
                           <?php } elseif($v_applicant->apply_status == 2) { ?>
                           <span class="label label-primary">
