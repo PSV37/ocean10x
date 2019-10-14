@@ -14,7 +14,7 @@ class Topic extends MY_Controller
     }
 
     /*** Dashboard ***/
-    public function index($topic_id)
+    public function index($topic_id = FALSE)
     {   
 
 
@@ -33,7 +33,7 @@ class Topic extends MY_Controller
 
                 $this->Master_model->master_insert($education_level,'topic');
                
-                redirect('admin/topic', refresh);
+                redirect('admin/topic');
             }
             else {
                 $education_level['topic_updated_date']=date('Y-m-d H:i:s');
@@ -42,7 +42,7 @@ class Topic extends MY_Controller
                 $where['topic_id']=$topic_id;
                 $this->Master_model->master_update($education_level,'topic',$where);
                
-                redirect('admin/topic',refresh);
+                redirect('admin/topic');
             }
 			
 		}
