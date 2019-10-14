@@ -23,14 +23,11 @@ class Topic extends MY_Controller
 		$this->form_validation->set_rules('topic_name', 'Topic name', 'required');
         $this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
-		
+		print_r($_POST);
 		if ($this->form_validation->run() != FALSE){
 			
-			print_r($_POST);exit;
+			echo " validated";exit;
 			
-		}else{
-			
-			echo "not validated";exit;
 		}
 		
 		
