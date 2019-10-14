@@ -227,7 +227,7 @@
           <input type="text" name="forward_status" class="form-control" id="forward_status" value="<?php if(!empty($forward_status)){ foreach($forward_status as $frow){
             echo $frow['forword_job_status'];
           } }?>" placeholder="">
-        <input type="text" name="job_apply_id" class="form-control" id="job_apply_id" value="<?php if(!empty($forward_status)){ foreach($forward_status as $frow){
+          <input type="text" name="job_apply_id" class="form-control" id="job_apply_id" value="<?php if(!empty($forward_status)){ foreach($forward_status as $frow){
             echo $frow['job_apply_id'];
           } }?>" placeholder="">
                    

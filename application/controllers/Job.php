@@ -152,24 +152,41 @@ class Job extends MY_Fontend_Controller
             $forward_status  = $this->input->post('forward_status');
             $job_apply_id  = $this->input->post('job_apply_id');
            
-            $apply_info   = array(
-                'job_seeker_id'   => $jobseeker_id,
-                'company_id'      => $company_id,
-                'job_post_id'     => $job_post_id,
-                'expected_salary' => $this->input->post('expected_salary'),
-            );
-
-            if($forward_status)
+        
+            if($forward_status==1)
             {
-                 // To update job status
+                // To update job status
                 $data_status=array( 
                  'forword_job_status' => 2,
                 );
                 $where_update1['job_apply_id'] = $job_apply_id;
-                $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
+                $last = $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
+                if($last)
+                {
+                    $apply_info   = array(
+                        'job_seeker_id'   => $jobseeker_id,
+                        'company_id'      => $company_id,
+                        'job_post_id'     => $job_post_id,
+                        'expected_salary' => $this->input->post('expected_salary'),
+                    );
+
+                    if ($this->job_apply_model->check_apply_job($jobseeker_id, $company_id, $job_post_id)) {
+                        $this->load->view('fontend/alreadyapply');
+                    } else {
+                            $this->job_apply_model->insert($apply_info);
+                        $this->load->view('fontend/applysucess');
+                    }
+                }
             }else{
+
+                    $apply_info   = array(
+                        'job_seeker_id'   => $jobseeker_id,
+                        'company_id'      => $company_id,
+                        'job_post_id'     => $job_post_id,
+                        'expected_salary' => $this->input->post('expected_salary'),
+                    );
                 if ($this->job_apply_model->check_apply_job($jobseeker_id, $company_id, $job_post_id)) {
-                $this->load->view('fontend/alreadyapply');
+                    $this->load->view('fontend/alreadyapply');
                 } else {
                         $this->job_apply_model->insert($apply_info);
                         $this->load->view('fontend/applysucess');
