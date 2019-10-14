@@ -39,7 +39,7 @@ class Topic extends MY_Controller
 			
 			
 			
-				var_dump($id); exit;
+				
             $user_id = $this->session->userdata('admin_user_id');
             
 
