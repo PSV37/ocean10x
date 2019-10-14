@@ -252,7 +252,7 @@
                        ?>">
             </div>
           </div>
-          <input type="text" name="company_id" value="<?php echo $company_id; ?>">
+          <input type="hidden" name="company_id" value="<?php echo $company_id; ?>">
           <div class="form-group">
             <label class="control-label col-sm-4" for="email"> Expected Salary:</label>
             <div class="col-sm-8">
