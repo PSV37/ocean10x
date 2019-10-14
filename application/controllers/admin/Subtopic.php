@@ -37,38 +37,39 @@ class Subtopic extends MY_Controller
 
             $education_level=array(
                 'technical_id   ' => $this->input->post('technical_id'),
-                'topic_name' => $this->input->post('topic_name'),
-                'topic_desc   ' => $this->input->post('topic_desc'),
+                'topic_id' => $this->input->post('topic_id'),
+				'subtopic_name' => $this->input->post('subtopic_name'),
+                'subtopic_desc   ' => $this->input->post('topic_desc'),
             );
 
             if(empty($id)){
-                $education_level['topic_created_date']=date('Y-m-d H:i:s');
-                $education_level['topic_created_by']=$user_id;
+                $education_level['subtopic_created_date']=date('Y-m-d H:i:s');
+                $education_level['subtopic_created_by']=$user_id;
 
-                $this->Master_model->master_insert($education_level,'topic');
+                $this->Master_model->master_insert($education_level,'subtopic');
                
-                redirect('admin/topic');
+                redirect('admin/subtopic');
             }
             else {
-                $education_level['topic_updated_date']=date('Y-m-d H:i:s');
-                $education_level['topic_updated_by']=$user_id;
+                $education_level['subtopic_updated_date']=date('Y-m-d H:i:s');
+                $education_level['subtopic_updated_by']=$user_id;
 
-                $where['topic_id']=$id;
-                $this->Master_model->master_update($education_level,'topic',$where);
+                $where['subtopic_id']=$id;
+                $this->Master_model->master_update($education_level,'subtopic',$where);
                
-                redirect('admin/topic');
+                redirect('admin/subtopic');
             }
         }
 
-    public function delete_topic($id) {
+    public function delete_subtopic($id) {
         
       //  $this->education_level_model->delete($id);
         $education_level_status = array(
-            'status'=>0,
+            'subtopic_status'=>0,
         );
-        $where_del['topic_id']=$id;
-        $this->Master_model->master_update($education_level_status,'topic',$where_del);
-        redirect('admin/topic');
+        $where_del['subtopic_id']=$id;
+        $this->Master_model->master_update($education_level_status,'subtopic',$where_del);
+        redirect('admin/subtopic');
     }
 
     public function edit_subtopic($id){
@@ -79,7 +80,7 @@ class Subtopic extends MY_Controller
             );
         $data['edu_spectial_info'] = $this->Master_model->getMaster('subtopic',$where_all,$join_emp);
 
-        $where_edu = "topic_id='$id'";
+        $where_edu = "subtopic_id='$id'";
         $data['edit_spectial_info'] = $this->Master_model->getMaster('subtopic',$where_edu);
 		$data['skill_master'] = $this->Master_model->getMaster('skill_master',$where=false);
 
