@@ -34,7 +34,7 @@
                 <!-- /.box-header -->
                 <div class="box-background">
                 <!-- form start -->
-                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/topic/save_topic/<?php  if (!empty($edit_topic_info)) { foreach($edit_special_info as $row)
+                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/topic/save_topic/<?php  if (!empty($edit_spectial_info)) { foreach($edit_spectial_info as $row)
                         echo $row['topic_id'];
                       }
                      ?>" method="post">
@@ -102,7 +102,7 @@
                     </thead>
                     <tbody>
                     <?php $key = 1 ;?>
-                    <?php if (!empty($edu_special_info)): foreach ($edu_special_info as $edu_spec) : ?>
+                    <?php if (!empty($edu_spectial_info)): foreach ($edu_spectial_info as $edu_spec) : ?>
                         <tr>
                             <td><?php echo $key ?></td>
                             <td><?php echo $edu_spec['skill_name'] ?></td>

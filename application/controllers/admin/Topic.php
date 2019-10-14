@@ -16,27 +16,27 @@ class Topic extends MY_Controller
     /*** Dashboard ***/
     public function index()
     {   
-        $data['title'] = 'Add Topic Master';
 
-         $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where=false);
+        $data['title'] = 'Add Topic';
 
-          $where_all = "topic.topic_status='1'";
+		$data['topic_level_info'] = $this->Master_model->getMaster('topic',$where=false);
+          $where_all = "education_specialization.status='1'";
         $join_emp = array(
                 'skill_master' => 'skill_master.id=topic.technical_id |INNER',
             );
-        $data['edu_special_info'] = $this->Master_model->getMaster('topic',$where_all,$join_emp);
+        $data['topic_spectial_info'] = $this->Master_model->getMaster('topic',$where_all,$join_emp);
         // $all_educationlevels=$this->education_level_model->get();
         $this->load->view('admin/jobsetting/topic_master', $data);
     }
 
 
-        public function save_topic($id = null){
+        public function save_education_topic($id = null){
             // var_dump($id); die;
             $user_id = $this->session->userdata('admin_user_id');
             
 
             $education_level=array(
-                'technical_id' => $this->input->post('technical_id'),
+                'technical_id   ' => $this->input->post('technical_id'),
                 'topic_name' => $this->input->post('topic_name'),
                 'topic_desc   ' => $this->input->post('topic_desc'),
             );
@@ -47,7 +47,7 @@ class Topic extends MY_Controller
 
                 $this->Master_model->master_insert($education_level,'topic');
                
-                redirect('admin/topic_master');
+                redirect('admin/topic');
             }
             else {
                 $education_level['topic_updated_date']=date('Y-m-d H:i:s');
@@ -64,27 +64,26 @@ class Topic extends MY_Controller
         
       //  $this->education_level_model->delete($id);
         $education_level_status = array(
-            'topic_status'=>0,
+            'status'=>0,
         );
         $where_del['topic_id']=$id;
         $this->Master_model->master_update($education_level_status,'topic',$where_del);
-        redirect('admin/topic');
+        redirect('admin/education_specialization');
     }
 
     public function edit_topic($id){
         $data['title']="Topic Edit";
         $where_all = "topic.topic_status='1'";
         $join_emp = array(
-                'skill_master' => 'skill_master.id=topic.technical_id |INNER',
+		'skill_master' => 'skill_master.id=topic.technical_id |INNER',
             );
-        $data['topic_spectial_info'] = $this->Master_model->getMaster('topic',$where_all,$join_emp);
+        $data['edu_spectial_info'] = $this->Master_model->getMaster('topic',$where_all,$join_emp);
 
         $where_edu = "topic_id='$id'";
-        $data['edit_special_info'] = $this->Master_model->getMaster('topic',$where_edu);
-         $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where=false);
+        $data['edit_spectial_info'] = $this->Master_model->getMaster('topic',$where_edu);
+		$data['topic_level_info'] = $this->Master_model->getMaster('topic',$where=false);
 
-
-        $this->load->view('admin/jobsetting/topic_master',$data);
+        $this->load->view('admin/jobsetting/education_specialization',$data);
     }
 
 
