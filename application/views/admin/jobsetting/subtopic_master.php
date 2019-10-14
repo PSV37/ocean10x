@@ -28,13 +28,16 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">Subtopic Master</h3>
+                        <h3 class="box-title ">City Master</h3>
                     </div>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-background">
                 <!-- form start -->
-                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/subtopic/save_subtopic/" method="post">
+                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/city_master/save_city/<?php  if (!empty($edit_city_info)) { foreach($edit_city_info as $row)
+                        echo $row['id'];
+                      }
+                     ?>" method="post">
 
                     <div class="row">
 
@@ -44,14 +47,14 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
-                                         <select id="technical_id"  name="technical_id" class="form-control" required onchange="getTopic(this.value)">
-                                           <option value="">Select Subject</option> 
-                                        <?php if (!empty($skill_master))
-                                           foreach($skill_master as $skill) 
+                                        <label for="exampleInputEmail1">Country <span class="required">*</span></label>
+                                        <select id="country_name" name="country_name" class="form-control" required onchange="getStates(this.value)">
+                                           <option value="">Select Country</option> 
+                                        <?php if (!empty($country_data))
+                                           foreach($country_data as $cnt_row) 
                                            {
                                         ?>   
-                                            <option value="<?php echo $skill['id']; ?>"><?php echo $skill['skill_name']; ?></option> 
+                                            <option value="<?php echo $cnt_row['country_id']; ?>"<?php if (!empty($edit_city_info)) if($row['country_id']==$cnt_row['country_id'])echo "selected";?>><?php echo $cnt_row['country_name']; ?></option> 
                                         <?php } ?>
                                         </select>
                                     </div>
@@ -59,27 +62,27 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Topic <span class="required">*</span></label>
-                                        <select id="topic_id"  name="topic_id" class="form-control" required>
-                                           <option value="">Select Topic</option> 
-                                        <!-- <?php if (!empty($state_data))
+                                        <label for="exampleInputEmail1">State <span class="required">*</span></label>
+                                        <select id="state_name"  name="state_name" class="form-control" required>
+                                           <option value="">Select State</option> 
+                                        <?php if (!empty($state_data))
                                            foreach($state_data as $st_row) 
                                            {
                                         ?>   
                                             <option value="<?php echo $st_row['state_id']; ?>"<?php if (!empty($edit_city_info)) if($row['state_id']==$st_row['state_id'])echo "selected";?>><?php echo $st_row['state_name']; ?></option> 
-                                        <?php } ?> -->
+                                        <?php } ?>
                                         </select>
                                     </div>
                                 </div>
 
                                  <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Subtopic Name <span class="required">*</span></label>
+                                        <label for="exampleInputEmail1">City Name <span class="required">*</span></label>
                                       <input type="text" name="city_name" class="form-control" value="<?php if (!empty($edit_city_info)) echo $row['city_name'];?>" required>
                                     </div>
                                 </div>
                                 <div class="panel-body"></div>
-                                <button type="submit" class="btn bg-navy" type="submit">Save Subtopic
+                                <button type="submit" class="btn bg-navy" type="submit">Save City
                                 </button><br/><br/>
                             </div>
                             <!-- /.box-body -->
@@ -94,14 +97,13 @@
                 </div>
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
-               <!-- <table class="table table-bordered table-striped" id="dataTables-example">
+                <table class="table table-bordered table-striped" id="dataTables-example">
                     <thead>
                     <tr>
                         <th class="active">SL</th>
-                        <th class="active">Subject Name</th>
-                        <th class="active">Topic Name</th>
-                        <th class="active">Subtopic Name</th>
-						<th class="active">Subtopic Description</th>
+                        <th class="active">Country Name</th>
+                        <th class="active">State Name</th>
+                        <th class="active">City Name</th>
                         <th class="active col-sm-2">Action</th>
                     </tr>
                     </thead>
@@ -129,7 +131,8 @@
                     <?php
                     endif; ?>
                     </tbody>
-                </table>-->
+                </table>
+
                     </div>
                 </div>
             </div>
@@ -149,43 +152,43 @@
        
 <?php $this->load->view('admin/components/footer'); ?>
 <script>
-    // function getTopic(id){
-    //     if(id){
-    //         $.ajax({
-    //             type:'POST',
-    //             url:'<?php echo base_url();?>admin/subtopic/gettopic',
-    //             data:{id:id},
-    //             success:function(res){
-    //                 $('#topic_id').html(res);
-    //             }
+    function getStates(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/city_master/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state_name').html(res);
+                }
                 
-    //         }); 
-    //       }
+            }); 
+          }
    
-    //    }
+       }
 
-    // $(document).ready(function(){
+    $(document).ready(function(){
 
 
 
-    // function getTopic_load(){
-    //     var id = $('#technical_id').val();
+    function getStates_load(){
+        var id = $('#country_name').val();
 
-    //     if(id){
-    //         $.ajax({
-    //             type:'POST',
-    //             url:'<?php echo base_url();?>admin/subtopic/gettopic',
-    //             data:{id:id},
-    //             success:function(res){
-    //                 $('#topic_id').html(res);
-    //                 $('#topic_id').val(<?php echo $row['topic_id']; ?>);
-    //             }
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/city_master/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state_name').html(res);
+                    $('#state_name').val(<?php echo $row['state_id']; ?>);
+                }
                 
-    //         }); 
-    //       }
+            }); 
+          }
    
-    //    }
-    //    getTopic_load();
-    // });
+       }
+       getStates_load();
+    });
        
 </script>
