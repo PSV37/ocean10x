@@ -17,7 +17,10 @@ class Topic extends MY_Controller
     public function index($topic_id = FALSE)
     {   
 
-
+        if($topic_id == 0){
+			
+			$topic_id = FALSE;
+		}
 
 
 		$this->form_validation->set_rules('topic_name', 'Topic name', 'required');
