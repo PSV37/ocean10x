@@ -74,37 +74,7 @@ class Topic extends MY_Controller
     }
 
 
-        public function save_topic($id){
-			
-			
-			
-				
-            $user_id = $this->session->userdata('admin_user_id');
-            $education_level['technical_id']=$this->input->post('technical_id');
-			$education_level['topic_name']=$this->input->post('topic_name');
-            $education_level['topic_desc']=$this->input->post('topic_desc');
-			
-
-            if($id){
-               // $education_level['topic_created_date']=date('Y-m-d H:i:s');
-                //$education_level['topic_created_by']=$user_id;
-				
-
-                $this->Master_model->master_insert($education_level,'topic');
-               
-                redirect('admin/topic');
-            }
-            else {
-               // $education_level['topic_updated_date']=date('Y-m-d H:i:s');
-               // $education_level['topic_updated_by']=$user_id;
-
-                $where['topic_id']=$id;
-                $this->Master_model->master_update($education_level,'topic',$where);
-               
-                redirect('admin/topic');
-            }
-			
-        }
+        
 
     public function delete_topic($id) {
         
