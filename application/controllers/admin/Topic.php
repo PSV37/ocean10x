@@ -18,7 +18,8 @@ class Topic extends MY_Controller
     {   
         $data['title'] = 'Add Topic Master';
 
-        $data['topic_level_info'] = $this->Master_model->getMaster('topic',$where=false);
+         $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where=false);
+
           $where_all = "topic.topic_status='1'";
         $join_emp = array(
                 'skill_master' => 'skill_master.id=topic.technical_id |INNER',
@@ -80,7 +81,8 @@ class Topic extends MY_Controller
 
         $where_edu = "topic_id='$id'";
         $data['edit_special_info'] = $this->Master_model->getMaster('topic',$where_edu);
-        $data['topic_level_info'] = $this->Master_model->getMaster('education_level',$where=false);
+         $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where=false);
+
 
         $this->load->view('admin/jobsetting/topic_master',$data);
     }
