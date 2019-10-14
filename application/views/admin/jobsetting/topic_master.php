@@ -54,7 +54,7 @@
                                            foreach($skill_master as $skill) 
                                            {
                                         ?>   
-                                            <option value="<?php echo $skill['id']; ?>"<?php if (!empty($edit_topic_info)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option> 
+                                            <option value="<?php echo $skill['id']; ?>"<?php if (!empty($edit_spectial_info)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option> 
                                         <?php } ?>
                                         </select>
                                     </div>
@@ -62,7 +62,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Topic</label>
-                                     <input type="text" name="topic_name" class="form-control" value="<?php if (!empty($edit_topic_info)) echo $row['topic_name'];?>" placeholder='Topic Name' required>
+                                     <input type="text" name="topic_name" class="form-control" value="<?php if (!empty($edit_spectial_info)) echo $row['topic_name'];?>" placeholder='Topic Name' required>
                                     </div>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
 									<label for="exampleInputEmail1">Description</label>
-                                         <textarea name="topic_desc" class="form-control"><?php if (!empty($edit_topic_info)) echo $row['topic_desc'];?></textarea>
+                                         <textarea name="topic_desc" class="form-control"><?php if (!empty($edit_spectial_info)) echo $row['topic_desc'];?></textarea>
                                     </div>
                                 </div>                            
 
