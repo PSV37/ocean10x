@@ -71,20 +71,7 @@ class Subopic extends MY_Controller
         redirect('admin/topic');
     }
 
-    public function edit_subtopic($id){
-        $data['title']="Topic Edit";
-        $where_all = "subtopic.subtopic_status='1'";
-        $join_emp = array(
-		'skill_master' => 'skill_master.id=subtopic.technical_id |INNER',
-            );
-        $data['edu_spectial_info'] = $this->Master_model->getMaster('subtopic',$where_all,$join_emp);
-
-        $where_edu = "topic_id='$id'";
-        $data['edit_spectial_info'] = $this->Master_model->getMaster('subtopic',$where_edu);
-		$data['skill_master'] = $this->Master_model->getMaster('skill_master',$where=false);
-
-        $this->load->view('admin/jobsetting/subtopic_master',$data);
-    }
+    
 
 
 
