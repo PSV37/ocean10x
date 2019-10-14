@@ -101,7 +101,7 @@ class Subtopic extends MY_Controller
 
 
 function gettopic(){
-    $topic_id = $this->input->post('id');
+    $skill_id = $this->input->post('id');
     $where['id'] = $skill_id;
     $topics = $this->Master_model->getMaster('topic',$where);
     $result = '';
