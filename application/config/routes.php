@@ -169,6 +169,7 @@ $route['admin/skill-master']="admin/skill_master";
 $route['admin/job-role']="admin/job_role";
 //$route['admin/topic/(:any)']="admin/topic/index/$1";
 $route['admin/topic-master']="admin/topic";
+$route['admin/subtopic-master']="admin/subtopic";
 
 //$route['admin/topic-master/(:any)']="admin/topic/edit_topic/$1";
 
