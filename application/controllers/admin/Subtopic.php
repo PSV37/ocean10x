@@ -6,7 +6,7 @@ if (!defined('BASEPATH')) {
 
 
 
-class Subtopic extends MY_Controller
+class Subopic extends MY_Controller
 {
     public function __construct()
     {
@@ -19,103 +19,73 @@ class Subtopic extends MY_Controller
 
         $data['title'] = 'Add Subtopic';
 
-        $where_cn= "status=1";
-        $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where=false);
-
-        $where_state= "topic_status=1";
-        $data['topic'] = $this->Master_model->getMaster('topic',$where_state);
-        
-        //$where_all = "subtopic.subtopic_status='1'";
+		$data['skill_master'] = $this->Master_model->getMaster('skill_master',$where=false);
+          $where_all = "subtopic.subtopic_status='1'";
         $join_emp = array(
                 'skill_master' => 'skill_master.id=subtopic.technical_id |INNER',
-                'topic' => 'topic.topic_id=subtopic.topic_id |INNER',
             );
-        $data['subtopic'] = $this->Master_model->getMaster('subtopic',$join_emp);
-
+        $data['edu_spectial_info'] = $this->Master_model->getMaster('subtopic',$where_all,$join_emp);
+        // $all_educationlevels=$this->education_level_model->get();
         $this->load->view('admin/jobsetting/subtopic_master', $data);
     }
 
+
         public function save_subtopic($id = null){
-          
+            // var_dump($id); die;
             $user_id = $this->session->userdata('admin_user_id');
             
-            $state_dt=array(
-                'technical_id' => $this->input->post('technical_id'),
-                'topic_id' => $this->input->post('topic_id'),
-                'subtopic_name' => $this->input->post('subtopic_name'),
-				'subtopic_desc' => $this->input->post('subtopic_desc'),
+
+            $education_level=array(
+                'technical_id   ' => $this->input->post('technical_id'),
+                'topic_name' => $this->input->post('topic_name'),
+                'topic_desc   ' => $this->input->post('topic_desc'),
             );
 
             if(empty($id)){
-                $state_dt['subtopic_created_date']=date('Y-m-d H:i:s');
-                $state_dt['subtopic_created_by']=$user_id;
+                $education_level['topic_created_date']=date('Y-m-d H:i:s');
+                $education_level['topic_created_by']=$user_id;
 
-                $this->Master_model->master_insert($state_dt,'subtopic');
+                $this->Master_model->master_insert($education_level,'topic');
                
-                redirect('admin/subtopic_master');
+                redirect('admin/topic');
             }
             else {
-                $state_dt['subtopic_updated_date']=date('Y-m-d H:i:s');
-                $state_dt['subtopic_updated_by']=$user_id;
+                $education_level['topic_updated_date']=date('Y-m-d H:i:s');
+                $education_level['topic_updated_by']=$user_id;
 
-                $where['subtopic_id']=$id;
-                $this->Master_model->master_update($state_dt,'subtopic',$where);
+                $where['topic_id']=$id;
+                $this->Master_model->master_update($education_level,'topic',$where);
                
-                redirect('admin/subtopic_master');
+                redirect('admin/topic');
             }
         }
 
-    public function delete_subtopic($id) {
+    public function delete_topic($id) {
         
-        $state_status = array(
-            'subtopic_status'=>0,
+      //  $this->education_level_model->delete($id);
+        $education_level_status = array(
+            'status'=>0,
         );
-        $where_del['subtopic_id']=$id;
-        $this->Master_model->master_update($state_status,'subtopic',$where_del);
-        redirect('admin/subtopic_master');
+        $where_del['topic_id']=$id;
+        $this->Master_model->master_update($education_level_status,'topic',$where_del);
+        redirect('admin/topic');
     }
 
     public function edit_subtopic($id){
-        $data['title']="Edit subtopic";
-
-       // $where_all = "subtopic.subtopic_status='1'";
+        $data['title']="Topic Edit";
+        $where_all = "subtopic.subtopic_status='1'";
         $join_emp = array(
-               'skill_master' => 'skill_master.id=subtopic.technical_id |INNER',
-                'topic' => 'topic.topic_id=subtopic.topic_id |INNER',
-
+		'skill_master' => 'skill_master.id=subtopic.technical_id |INNER',
             );
-        $data['subtopic'] = $this->Master_model->getMaster('subtopic',$join_emp);
+        $data['edu_spectial_info'] = $this->Master_model->getMaster('subtopic',$where_all,$join_emp);
 
-        $where_ct = "subtopic_id='$id'";
-        $data['edit_subtopic_info'] = $this->Master_model->getMaster('subtopic',$where_ct);
-        
-        $where_cn= "status=1";
-         $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where=false);
+        $where_edu = "topic_id='$id'";
+        $data['edit_spectial_info'] = $this->Master_model->getMaster('subtopic',$where_edu);
+		$data['skill_master'] = $this->Master_model->getMaster('skill_master',$where=false);
 
-        $where_state= "topic_status=1";
-         $data['topic'] = $this->Master_model->getMaster('topic',$where=false);
-        
         $this->load->view('admin/jobsetting/subtopic_master',$data);
     }
 
-
-
-function gettopic(){
-    $topic_id = $this->input->post('id');
-    $where['id'] = $skill_id;
-    $topics = $this->Master_model->getMaster('topic',$where);
-    $result = '';
-    if(!empty($topics)){ 
-        $result .='<option value="">Select Topic</option>';
-        foreach($topics as $key){
-          $result .='<option value="'.$key['topic_id'].'">'.$key['topic_name'].'</option>';
-        }
-    }else{
-    
-        $result .='<option value="">Topic not available</option>';
-    }
-     echo $result;
-}
 
 
 }
