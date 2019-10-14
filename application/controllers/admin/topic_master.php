@@ -1,128 +1,91 @@
-<?php $this->load->view('admin/components/header'); ?>
-<body class="skin-blue" data-baseurl="<?php echo base_url(); ?>">
-    <div class="wrapper">
+<?php
+
+if (!defined('BASEPATH')) {
+    exit('No direct script access allowed');
+}
+
+
+
+class Topic_master extends MY_Controller
+{
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /*** Dashboard ***/
+    public function index()
+    {   
+
+        $data['title'] = 'Add Topic Master';
+
+        $data['topic_level_info'] = $this->Master_model->getMaster('topic',$where=false);
+          $where_all = "topic.topic_status='1'";
+        $join_emp = array(
+                'skill_master' => 'skill_master.id=topic.technical_id |INNER',
+            );
+        $data['edu_special_info'] = $this->Master_model->getMaster('topic',$where_all,$join_emp);
+        // $all_educationlevels=$this->education_level_model->get();
+        $this->load->view('admin/jobsetting/topic_master', $data);
+    }
+
+
+        public function save_topic($id = null){
+            // var_dump($id); die;
+            $user_id = $this->session->userdata('admin_user_id');
+            
+
+            $education_level=array(
+                'technical_id   ' => $this->input->post('technical_id'),
+                'topic_name' => $this->input->post('topic_name'),
+                'topic_desc   ' => $this->input->post('topic_desc'),
+            );
+
+            if(empty($id)){
+                $education_level['topic_created_date']=date('Y-m-d H:i:s');
+                $education_level['topic_created_by']=$user_id;
+
+                $this->Master_model->master_insert($education_level,'topic');
+               
+                redirect('admin/topic_master');
+            }
+            else {
+                $education_level['topic_updated_date']=date('Y-m-d H:i:s');
+                $education_level['topic_updated_by']=$user_id;
+
+                $where['topic_id']=$id;
+                $this->Master_model->master_update($education_level,'topic',$where);
+               
+                redirect('admin/topic_master');
+            }
+        }
+
+    public function delete_topic($id) {
         
-    <?php $this->load->view('admin/components/user_profile'); ?>
-       
-        <!-- Left side column. contains the logo and sidebar -->
-      <aside class="main-sidebar">
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
-          <!-- Sidebar user panel -->
-            <?php $this->load->view('admin/components/navigation'); ?>
-        </section>
-        <!-- /.sidebar -->
-      </aside>
+      //  $this->education_level_model->delete($id);
+        $education_level_status = array(
+            'topic_status'=>0,
+        );
+        $where_del['topic_id']=$id;
+        $this->Master_model->master_update($education_level_status,'topic',$where_del);
+        redirect('admin/topic_master');
+    }
 
-        <div class="right-side">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-            </section>
+    public function edit_topic($id){
+        $data['title']="Topic Edit";
+        $where_all = "topic.topic_status='1'";
+        $join_emp = array(
+                'skill_master' => 'skill_master.id=topic.technical_id |INNER',
+            );
+        $data['topic_spectial_info'] = $this->Master_model->getMaster('topic',$where_all,$join_emp);
 
-            <br/>
-            <div class="container-fluid">
-               <section class="content">
-    <div class="row">
-        <div class="col-md-12">
+        $where_edu = "topic_id='$id'";
+        $data['edit_special_info'] = $this->Master_model->getMaster('topic',$where_edu);
+        $data['topic_level_info'] = $this->Master_model->getMaster('education_level',$where=false);
 
-            <div class="box box-primary">
-                <div class="box-header box-header-background with-border">
-                    <div class="col-md-offset-3">
-                        <h3 class="box-title ">Industry Master</h3>
-                    </div>
-                </div>
-                <!-- /.box-header -->
-                <div class="box-background">
-                <!-- form start -->
-                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/industry_master/save_industry/<?php  if (!empty($edit_industry_info)) { foreach($edit_industry_info as $row)
-                        echo $row['id'];
-                      }
-                     ?>" method="post">
-
-                    <div class="row">
-
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-
-                            <div class="box-body">
-                            
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Industry Name <span class="required">*</span></label>
-                                      <input type="text" name="industry_name" class="form-control" value="<?php if (!empty($edit_industry_info)) echo $row['industry_name'];?>" placeholder='Industry Name' required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Industry Description </label>
-                                      <textarea name="industry_desc" class="form-control"><?php if (!empty($edit_industry_info)) echo $row['description'];?></textarea>
-                                    </div>
-                                </div>
-                            
-                                <div class="panel-body"></div>
-                                <button type="submit" class="btn bg-navy" type="submit">Save Industry
-                                </button><br/><br/>
-                            </div>
-                            <!-- /.box-body -->
-
-                        </div>
-                    </div>
-
-                </form>
-                    </div>
-                <div class="box-footer">
-
-                </div>
-                <div class="row">
-                    <div class="col-md-10 col-md-offset-1">
-                <table class="table table-bordered table-striped" id="dataTables-example">
-                    <thead>
-                    <tr>
-                        <th class="active">SL</th>
-                        <th class="active">Industry Name</th>
-                        <th class="active">Description</th>
-                        <th class="active col-sm-2">Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php $key = 1 ;?>
-                    <?php if (!empty($industry_data)): foreach ($industry_data as $st_row) : ?>
-                        <tr>
-                            <td><?php echo $key ?></td>
-                            <td><?php echo $st_row['industry_name'] ?></td>
-                            <td><?php echo $st_row['description'] ?></td>
-                            <td>
-                                <?php echo btn_edit('admin/industry_master/edit_industry/' . $st_row['id']); ?>
-                                <?php echo btn_delete('admin/industry_master/delete_industry/' . $st_row['id']); ?>
-                            </td>
-                        </tr>
-                    <?php
-                    $key++;
-                    endforeach;
-                    ?>
-                    <?php else : ?> 
-                        <td colspan="3">
-                            <strong>There is no record for display</strong>
-                        </td>
-                    <?php
-                    endif; ?>
-                    </tbody>
-                </table>
-
-                    </div>
-                </div>
-            </div>
-            <!-- /.box -->
-        </div>
-        <!--/.col end -->
-    </div>
-    <!-- /.row -->
-</section>
-</div>
-
-<br />
+        $this->load->view('admin/jobsetting/topic_master',$data);
+    }
 
 
-</div><!-- /.right-side -->
 
-       
-<?php $this->load->view('admin/components/footer'); ?>
+}
