@@ -617,7 +617,7 @@ function getstate(){
                     }
                     
                 }
-                $skill_id = $require['skills_required'];
+                echo $skill_id = $require['skills_required'];
 
                 $where_req_skill="skill_master.id IN (".$skill_id.")";
                 $select_skill = "skill_master.skill_name";
