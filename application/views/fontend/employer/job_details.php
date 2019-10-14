@@ -199,7 +199,7 @@
                       <div class="action">
                         <?php 
             							if($v_applicant->apply_status==0){
-            							echo btn_sorted('employer/update_sortlist/' . $v_applicant->job_apply_id.'/'. base64_encode($seeker_info->email)).'<br> sorted list'; }
+            							echo btn_sorted('employer/update_sortlist/' . $v_applicant->job_apply_id.'/'. base64_encode($seeker_info->email)).'<br> short listed '; }
             							else if($v_applicant->apply_status==1) {
             							echo btn_interview('employer/update_interviewlist/' . $v_applicant->job_apply_id.'/'. base64_encode($seeker_info->email)).'<br> interview list';
             							} 
