@@ -117,7 +117,7 @@ class Job extends MY_Fontend_Controller
 
                 $where_apply = "job_apply.job_seeker_id='$jobseeker_id' AND job_apply.job_post_id='$job_id'";
                 $select_status ="job_apply.forword_job_status,job_apply.job_apply_id";
-                $forward_staus = $this->Master_model->getMaster('job_apply',$where_apply, $join=false, $order = false, $field = false, $select_status,$limit=false,$start=false, $search=false);
+                $forward_status = $this->Master_model->getMaster('job_apply',$where_apply, $join=false, $order = false, $field = false, $select_status,$limit=false,$start=false, $search=false);
            }
 
        //  print_r($singlejob);
