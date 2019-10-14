@@ -108,8 +108,8 @@
 
 
 
-                                    <button type="submit" id="submitButton" class="btn btn-primary btn-block">Create Account</button>
-                                </form>
+                                <button type="submit" id="submitButton" class="btn btn-primary btn-block">Create Account</button>
+                            </form>
 
                                  <?php //echo $this->session->flashdata('msg'); ?>
                             </div><!-- end post-padding -->

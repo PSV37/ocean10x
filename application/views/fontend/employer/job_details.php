@@ -146,32 +146,30 @@
                     </div>
 
                     <div class="col-md-4">
-<?php $exp=($this->Job_seeker_experience_model->experience_list_by_id($v_applicant->job_seeker_id));
-
-?>
+                      <?php $exp=($this->Job_seeker_experience_model->experience_list_by_id($v_applicant->job_seeker_id));?>
 
                     	<div class="exp">
-						<label>Company Name</label>
-                        	<?=(!empty($exp[0]->company_name)?'<strong>'.$exp[0]->company_name.'</strong>':'');?></strong>
-							<!--<div>
+						            <label>Company Name</label>
+                        <?=(!empty($exp[0]->company_name)?'<strong>'.$exp[0]->company_name.'</strong>':'');?></strong>
+							         <!--<div>
                             <?=(!empty($exp[0]->company_name)?''.$exp[0]->designation.'('.$exp[0]->duration.')':'');?></strong>
                             </div>-->
                         </div>
                         <div class="exp">
                         	<?=(!empty($exp[1]->company_name)?'<strong>'.$exp[1]->company_name.'</strong>':'');?></strong>
-                            <?=(!empty($exp[1]->company_name)?''.$exp[1]->designation.'('.$exp[1]->duration.')':'');?></strong>
-                               </div>
+                          <?=(!empty($exp[1]->company_name)?''.$exp[1]->designation.'('.$exp[1]->duration.')':'');?></strong>
+                        </div>
                     </div>
-                     <?php $career = ($this->job_career_model->js_careerinfo_by_seeker($v_applicant->job_seeker_id));?>
+                    <?php $career = ($this->job_career_model->js_careerinfo_by_seeker($v_applicant->job_seeker_id));?>
                     <div class="col-md-2">
                     	<div class="moreinfo"><i class="fa fa-briefcase" aria-hidden="true"></i><?=(!empty($career[0]->js_career_exp)?$career[0]->js_career_exp:'');?></div>
                         <div class="moreinfo"><i>Rs.</i> 
- <?php echo $this->job_apply_model->expedited_salary($v_applicant->job_seeker_id,$job_id)[0]->expected_salary; ?> 
-        </div>
+                          <?php echo $this->job_apply_model->expedited_salary($v_applicant->job_seeker_id,$job_id)[0]->expected_salary; ?> 
+                        </div>
                         <div class="sorted">
-						<?php
-							if($v_applicant->apply_status == 0)
-							{ ?>
+              						<?php
+              							if($v_applicant->apply_status == 0)
+              							{ ?>
                           <span class="label label-warning">
                             <?php echo 'Not Sorted' ?>
                           </span>
@@ -188,7 +186,7 @@
                             <?php echo 'Final' ?>
                           </span>
                           <?php } ?>
-                          </div>
+                        </div>
                           
                         <a href="<?php echo base_url() ?>employer/downloadcv/<?php echo $v_applicant->job_seeker_id; ?>" class="downcv" title="Download CV">
                         	<i class="fa fa-download" aria-hidden="true"></i> Download
@@ -199,24 +197,32 @@
                     <div class="col-md-2">
                     	
                       <div class="action">
-                          	<?php 
-							if($v_applicant->apply_status==0){
-							echo btn_sorted('employer/update_sortlist/' . $v_applicant->job_apply_id.'/'. base64_encode($seeker_info->email)).'<br> sorted list'; }
-							else if($v_applicant->apply_status==1) {
-							echo btn_interview('employer/update_interviewlist/' . $v_applicant->job_apply_id.'/'. base64_encode($seeker_info->email)).'<br> interview list';
-							} 
-							else if($v_applicant->apply_status==2) {
-							echo btn_final('employer/update_finallist/' . $v_applicant->job_apply_id.'/'. base64_encode($seeker_info->email)).'<br> final list';
-							} 
-							else if($v_applicant->apply_status==3) {
-							echo '<span class="label label-primary"><i class="fa fa-check" aria-hidden="true"></i> Selected</span>';
-							} 
-							?>
-							</div>
-                      <a href="<?php echo base_url() ?>employer/reject-resume/<?php echo $v_applicant->job_seeker_id; ?>" class="reject">
-                        <i class="fa fa-times" aria-hidden="true"></i> <strong>Reject</strong> 
+                        <?php 
+            							if($v_applicant->apply_status==0){
+            							echo btn_sorted('employer/update_sortlist/' . $v_applicant->job_apply_id.'/'. base64_encode($seeker_info->email)).'<br> sorted list'; }
+            							else if($v_applicant->apply_status==1) {
+            							echo btn_interview('employer/update_interviewlist/' . $v_applicant->job_apply_id.'/'. base64_encode($seeker_info->email)).'<br> interview list';
+            							} 
+            							else if($v_applicant->apply_status==2) {
+            							echo btn_final('employer/update_finallist/' . $v_applicant->job_apply_id.'/'. base64_encode($seeker_info->email)).'<br> final list';
+            							} 
+            							else if($v_applicant->apply_status==3) {
+            							echo '<span class="label label-primary"><i class="fa fa-check" aria-hidden="true"></i> Selected</span>';
+            							} 
+							          ?>
+							        </div>
+                      <a href="<?php echo base_url() ?>employer/reject-resume/<?php echo $v_applicant->job_seeker_id; ?>" class="reject"><i class="fa fa-times" aria-hidden="true"></i> <strong>Reject</strong> 
                       </a>
                       
+                    </div>
+                    <div class="col-md-12">
+                      <?php if($v_applicant->forword_job_status==1){ ?>
+                       <a class="btn btn-info btn-xs">Forwared</a>
+                      <?php }else if($v_applicant->forword_job_status==2){ ?>
+                        <a class="btn btn-success btn-xs">Forwared And Applied</a>
+                      <?php } else{?>
+                        <a class="btn btn-primary btn-xs">Normal Applied</a>
+                      <?php } ?>
                     </div>
                 </div>
             </li>

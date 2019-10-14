@@ -56,7 +56,7 @@
               </div>
 
               <hr class="invis">
-              <button class="btn btn-primary" type="submit">Forword Job</button>
+              <button class="btn btn-primary" type="submit">Forward Job</button>
             </form>
           </div>
         </div>
