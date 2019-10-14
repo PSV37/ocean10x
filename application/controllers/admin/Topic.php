@@ -25,7 +25,7 @@ class Topic extends MY_Controller
         $this->load->library('form_validation');
 		
 		if ($this->form_validation->run() != FALSE){
-			print_r($_post);exit;
+			print_r($_post);
 			echo " validated";exit;
 			
 		}
