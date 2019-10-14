@@ -36,7 +36,7 @@ class Topic extends MY_Controller
             
 
             $education_level=array(
-                'technical_id   ' => $this->input->post('technical_id'),
+                'technical_id' => $this->input->post('technical_id'),
                 'topic_name' => $this->input->post('topic_name'),
                 'topic_desc   ' => $this->input->post('topic_desc'),
             );
