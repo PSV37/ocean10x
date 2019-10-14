@@ -17,10 +17,7 @@ class Topic extends MY_Controller
     public function index($topic_id = FALSE)
     {   
 
-        if($topic_id == 0){
-			
-			$topic_id = FALSE;
-		}
+
 
 
 		$this->form_validation->set_rules('topic_name', 'Topic name', 'required');
@@ -30,17 +27,12 @@ class Topic extends MY_Controller
 		if ($this->form_validation->run() != FALSE){
 			 
 			 
-			 if(!$topic_id){
-				 $user_id = $this->session->userdata('admin_user_id');
-            $education_level['technical_id']=$this->input->post('technical_id');
-			$education_level['topic_name']=$this->input->post('topic_name');
-            $education_level['topic_desc']=$this->input->post('topic_desc');
-
+			 if($topic_id){
                 $education_level['topic_created_date']=date('Y-m-d H:i:s');
                 $education_level['topic_created_by']=$user_id;
 
                 $this->Master_model->master_insert($education_level,'topic');
-               echo $this->db->last_query(); exit;
+               
                 redirect('admin/topic', refresh);
             }
             else {
@@ -49,7 +41,7 @@ class Topic extends MY_Controller
 
                 $where['topic_id']=$topic_id;
                 $this->Master_model->master_update($education_level,'topic',$where);
-               echo $this->db->last_query(); exit;
+               
                 redirect('admin/topic',refresh);
             }
 			
@@ -85,23 +77,25 @@ class Topic extends MY_Controller
 			
 				
             $user_id = $this->session->userdata('admin_user_id');
-            $education_level['technical_id']=$this->input->post('technical_id');
-			$education_level['topic_name']=$this->input->post('topic_name');
-            $education_level['topic_desc']=$this->input->post('topic_desc');
-			
+            
+
+            $education_level=array(
+                'technical_id   ' => $this->input->post('technical_id'),
+                'topic_name' => $this->input->post('topic_name'),
+                'topic_desc   ' => $this->input->post('topic_desc'),
+            );
 
             if($id){
-               // $education_level['topic_created_date']=date('Y-m-d H:i:s');
-                //$education_level['topic_created_by']=$user_id;
-				
+                $education_level['topic_created_date']=date('Y-m-d H:i:s');
+                $education_level['topic_created_by']=$user_id;
 
                 $this->Master_model->master_insert($education_level,'topic');
                
                 redirect('admin/topic');
             }
             else {
-               // $education_level['topic_updated_date']=date('Y-m-d H:i:s');
-               // $education_level['topic_updated_by']=$user_id;
+                $education_level['topic_updated_date']=date('Y-m-d H:i:s');
+                $education_level['topic_updated_by']=$user_id;
 
                 $where['topic_id']=$id;
                 $this->Master_model->master_update($education_level,'topic',$where);
