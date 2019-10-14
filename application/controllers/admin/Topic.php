@@ -20,7 +20,7 @@ class Topic extends MY_Controller
         $data['title'] = 'Add Topic';
 
 		$data['topic_level_info'] = $this->Master_model->getMaster('topic',$where=false);
-          $where_all = "education_specialization.status='1'";
+          $where_all = "topic.topic_status='1'";
         $join_emp = array(
                 'skill_master' => 'skill_master.id=topic.technical_id |INNER',
             );
@@ -68,7 +68,7 @@ class Topic extends MY_Controller
         );
         $where_del['topic_id']=$id;
         $this->Master_model->master_update($education_level_status,'topic',$where_del);
-        redirect('admin/education_specialization');
+        redirect('admin/topic');
     }
 
     public function edit_topic($id){
@@ -83,7 +83,7 @@ class Topic extends MY_Controller
         $data['edit_spectial_info'] = $this->Master_model->getMaster('topic',$where_edu);
 		$data['topic_level_info'] = $this->Master_model->getMaster('topic',$where=false);
 
-        $this->load->view('admin/jobsetting/education_specialization',$data);
+        $this->load->view('admin/jobsetting/topic_master',$data);
     }
 
 
