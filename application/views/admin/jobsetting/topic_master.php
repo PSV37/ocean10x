@@ -110,7 +110,7 @@
                             <td><?php echo $edu_spec['topic_desc'] ?></td>
                             <td>
                                 <?php echo btn_edit('admin/topic/edit_topic/' . $edu_spec['topic_id']); ?>
-                                <?php echo btn_delete('admin/topic/delete_topic/' . $edu_spec['topic_id']); ?>
+                                <?php echo btn_delete('admin/topic/delete_topic/' .$edu_spec['topic_id']); ?>
                             </td>
                         </tr>
                     <?php
