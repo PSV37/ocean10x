@@ -124,7 +124,7 @@
             <div class="jobButtons">
 			      <?php if ($singlejob->job_deadline > date('Y-m-d')): ?>
             <?php  if(!$this->session->userdata('company_profile_id')):?>
-            <?php  $jobseeker_id;print_r($forward_staus);
+            <?php  $jobseeker_id;
                 if($jobseeker_id==null): ?>
               <a href="<?php echo base_url(); ?>job-apply/<?php echo $singlejob->job_slugs; ?>" class="btn apply">Apply For This Vacancy</a>
               <?php else: ?>
