@@ -149,6 +149,9 @@ class Job extends MY_Fontend_Controller
             $jobseeker_id = $this->input->post('job_seeker_id');
             $company_id   = $this->input->post('company_id');
             $job_post_id  = $this->input->post('job_post_id');
+            $forward_status  = $this->input->post('forward_status');
+            $job_apply_id  = $this->input->post('job_apply_id');
+           
             $apply_info   = array(
                 'job_seeker_id'   => $jobseeker_id,
                 'company_id'      => $company_id,
@@ -156,12 +159,25 @@ class Job extends MY_Fontend_Controller
                 'expected_salary' => $this->input->post('expected_salary'),
             );
 
-            if ($this->job_apply_model->check_apply_job($jobseeker_id, $company_id, $job_post_id)) {
+            if($forward_status)
+            {
+                 // To update job status
+                $data_status=array( 
+                 'forword_job_status' => 2,
+                );
+                $where_update1['job_apply_id'] = $job_apply_id;
+                $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
+            }else{
+                if ($this->job_apply_model->check_apply_job($jobseeker_id, $company_id, $job_post_id)) {
                 $this->load->view('fontend/alreadyapply');
-            } else {
-                $this->job_apply_model->insert($apply_info);
-                $this->load->view('fontend/applysucess');
+                } else {
+                        $this->job_apply_model->insert($apply_info);
+                        $this->load->view('fontend/applysucess');
+                    }
             }
+            
+
+            
         } else {
             redirect('job');
         }
