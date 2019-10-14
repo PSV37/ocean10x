@@ -77,11 +77,11 @@ class Education_specialization extends MY_Controller
         $join_emp = array(
                 'education_level' => 'education_level.education_level_id=education_specialization.edu_level_id |INNER',
             );
-        $data['edu_spectial_info'] = $this->Master_model->getMaster('education_specialization',$where_all,$join_emp);
+        $data['edu_spectial_info'] = $this->Master_model->getMaster('topic',$where_all,$join_emp);
 
         $where_edu = "id='$id'";
-        $data['edit_spectial_info'] = $this->Master_model->getMaster('education_specialization',$where_edu);
-        $data['educaiton_level_info'] = $this->Master_model->getMaster('education_level',$where=false);
+        $data['edit_spectial_info'] = $this->Master_model->getMaster('topic',$where_edu);
+        $data['topic_level_info'] = $this->Master_model->getMaster('topic',$where=false);
 
         $this->load->view('admin/jobsetting/education_specialization',$data);
     }
