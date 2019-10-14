@@ -128,8 +128,9 @@
                 if($jobseeker_id==null): ?>
               <a href="<?php echo base_url(); ?>job-apply/<?php echo $singlejob->job_slugs; ?>" class="btn apply">Apply For This Vacancy</a>
               <?php else: ?>
-            <?php print_r($forward_staus); ?>
+          
               <a href="#" data-toggle="modal" data-target="#ApplyJob"  class="btn apply">  Apply For This Vacancy</a>
+
               <?php endif; ?>
               <?php endif; ?>
 			  <div class="deadlinie">Job Deadline : <?php echo $singlejob->job_deadline; ?></div>
@@ -223,6 +224,10 @@
       </div>
       <div class="modal-body">
         <form  class="form-horizontal" action="<?php echo base_url() ?>/job/apply_job" method="post" style="padding: 30px;">
+        
+          <input type="text" name="expected_salary" class="form-control" id="forward_status" value="<?php if(!empty($forward_status)){ echo $forward_status->forword_job_status;} ?>" placeholder="">
+
+                   
           <div class="form-group">
             <label class="control-label col-sm-4" for="email">User Name:</label>
             <div class="col-sm-8">
@@ -247,7 +252,7 @@
                        ?>">
             </div>
           </div>
-          <input type="hidden" name="company_id" value="<?php echo $company_id; ?>">
+          <input type="text" name="company_id" value="<?php echo $company_id; ?>">
           <div class="form-group">
             <label class="control-label col-sm-4" for="email"> Expected Salary:</label>
             <div class="col-sm-8">
