@@ -58,7 +58,7 @@ class Subtopic extends MY_Controller
                 $state_dt['subtopic_updated_date']=date('Y-m-d H:i:s');
                 $state_dt['subtopic_updated_by']=$user_id;
 
-                $where['id']=$id;
+                $where['subtopic_id']=$id;
                 $this->Master_model->master_update($state_dt,'subtopic',$where);
                
                 redirect('admin/subtopic_master');
