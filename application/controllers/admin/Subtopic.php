@@ -50,7 +50,7 @@ class Subtopic extends MY_Controller
                 $state_dt['subtopic_created_date']=date('Y-m-d H:i:s');
                 $state_dt['subtopic_created_by']=$user_id;
 
-                $this->Master_model->master_insert($state_dt,'city');
+                $this->Master_model->master_insert($state_dt,'subtopic');
                
                 redirect('admin/subtopic_master');
             }
