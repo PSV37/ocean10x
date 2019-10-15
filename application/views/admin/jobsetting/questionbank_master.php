@@ -28,13 +28,13 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">Subtopic Master</h3>
+                        <h3 class="box-title ">Question Bank Master</h3>
                     </div>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-background">
                 <!-- form start -->
-                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/subtopic/save_subtopic/<?php  if (!empty($edit_subtopic_info)) { foreach($edit_subtopic_info as $row)
+                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/questionbank/save_subtopic/<?php  if (!empty($edit_subtopic_info)) { foreach($edit_subtopic_info as $row)
                         echo $row['subtopic_id'];
                       }
                      ?>" method="post">
@@ -126,8 +126,8 @@
                             <td><?php echo $ct_row['subtopic_name'] ?></td>
 							<td><?php echo $ct_row['subtopic_desc'] ?></td>
                             <td>
-                                <?php echo btn_edit('admin/subtopic/edit_subtopic/' . $ct_row['subtopic_id']); ?>
-                                <?php echo btn_delete('admin/subtopic/delete_subtopic/' . $ct_row['subtopic_id']); ?>
+                                <?php echo btn_edit('admin/questionbank/edit_subtopic/' . $ct_row['subtopic_id']); ?>
+                                <?php echo btn_delete('admin/questionbank/delete_subtopic/' . $ct_row['subtopic_id']); ?>
                             </td>
                         </tr>
                     <?php
@@ -167,7 +167,7 @@
 		if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>admin/subtopic/gettopic',
+                url:'<?php echo base_url();?>admin/questionbank/gettopic',
                 data:{id:id},
                 success:function(res){
                     $('#topic_id').html(res);
