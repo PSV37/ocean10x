@@ -28,7 +28,7 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">Question Bank</h3>
+                        <h3 class="box-title ">QuestionBank Master</h3>
                     </div>
                 </div>
                 <!-- /.box-header -->
@@ -118,7 +118,7 @@
 									<div class="col-md-12">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Question<span class="required">*</span></label>
-									 <textarea name="question" id="question" class="form-control" style="height:100px;"><?php if (!empty($edit_questionbank_info)) echo $row['question'];?></textarea>
+									 <textarea name="question" id="question" class="form-control" style="height:100px;" required><?php if (!empty($edit_questionbank_info)) echo $row['question'];?></textarea>
 								   </div>
 								   </div>
                                 </div>
@@ -171,7 +171,7 @@
 				  <div class="form-group" id="comp_name" style="display:none;">
                  
 				  <label>Answer:</label>
-                    <textarea name="sub_answer" id="sub_answer" class="form-control" style="height:100px;"><?php if (!empty($edit_questionbank_info)) echo $row['sub_answer'];?></textarea>
+                    <textarea name="sub_answer" id="sub_answer" class="form-control" style="height:100px;" required><?php if (!empty($edit_questionbank_info)) echo $row['sub_answer'];?></textarea>
                   </div>
 				  
                 </div>	
