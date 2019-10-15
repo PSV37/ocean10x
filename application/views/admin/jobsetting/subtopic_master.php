@@ -35,7 +35,7 @@
                 <div class="box-background">
                 <!-- form start -->
                 <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/subtopic/save_subtopic/<?php  if (!empty($edit_subtopic_info)) { foreach($edit_subtopic_info as $row)
-                        echo $row['id'];
+                        echo $row['subtopic_id'];
                       }
                      ?>" method="post">
 
