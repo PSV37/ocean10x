@@ -145,7 +145,8 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                   // $this->job_seeker_model->sendEmail($email_to);
 
                    $send = sendEmail_JobRequest($email_to,$message,$subject);
-                   // echo $message;
+                   // echo $message;);
+
                     $this->session->unset_userdata('reg_jobseeker');
   
 

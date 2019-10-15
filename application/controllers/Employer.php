@@ -78,20 +78,20 @@ class Employer extends MY_Employer_Controller
                 }
             }
 
-                if(!empty($employer_id)) {
-                    $this->company_profile_model->update($company_profile, $employer_id);
-                     $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Successfully Update Your Profile</div>');
-                     redirect('employer/profile-setting');
-                }
-
-                } else {
-                    $company_info = $this->company_profile_model->get($employer_id);
-					$city = $this->Master_model->getMaster('city',$where=false);
-					$country = $this->Master_model->getMaster('country',$where=false);
-					$state = $this->Master_model->getMaster('state',$where=false);
-                    $this->load->view('fontend/employer/dashboard', compact('company_info', 'city', 'country', 'state'));
-                }
+            if(!empty($employer_id)) {
+                $this->company_profile_model->update($company_profile, $employer_id);
+                $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Successfully Update Your Profile</div>');
+                 redirect('employer/profile-setting');
             }
+
+            } else {
+                $company_info = $this->company_profile_model->get($employer_id);
+				$city = $this->Master_model->getMaster('city',$where=false);
+				$country = $this->Master_model->getMaster('country',$where=false);
+				$state = $this->Master_model->getMaster('state',$where=false);
+                $this->load->view('fontend/employer/dashboard', compact('company_info', 'city', 'country', 'state'));
+            }
+    }
 
             public function job_post()
             {
@@ -155,7 +155,6 @@ class Employer extends MY_Employer_Controller
                     $where_cn= "status=1";
                     $select = "job_role_title, skill_set ,id";
                     $data['job_role_data'] = $this->Master_model->getMaster('job_role',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
-
 
 
                     $this->load->view('fontend/employer/job_post', $data);
