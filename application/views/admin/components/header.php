@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/font-icons/entypo/css/entypo.css" >
         <!-- Data Table  CSS -->
         <link href="<?php echo base_url(); ?>asset/css/plugins/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
-
+		<link href="<?php echo base_url() ?>asset/css/select2.min.css" rel="stylesheet" type="text/css"/>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -32,6 +32,7 @@
         <script>var base_url = '<?php echo base_url();?>';</script>
 		<script type="text/javascript" src="<?php echo base_url(); ?>asset/ckeditor/ckeditor.js"></script>
 		<script type="text/javascript" src="<?php echo base_url(); ?>asset/ckfinder/ckfinder.js"></script>
+		
         
 
     </head>
