@@ -226,7 +226,7 @@
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label mandatory"><b>Job Types</b> <span class="required">*</span></label>
-                    <select name="job_types" required class="form-control" data-style="btn-default" data-live-search="true" style="height:58px;">
+                    <select name="job_types" required class="form-control" data-style="btn-default" data-live-search="true"
                       <?php if(!empty($job_info->job_types)) {echo $this->job_types_model->selected_types($job_info->job_types);}else {echo $this->job_types_model->selected_types();} ?>
                     </select>
                   </div>
@@ -316,7 +316,7 @@
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label "><b>Required Education Level</b> <span class="required">*</span></label>
-                    <select name="job_edu" class="form-control" data-style="btn-default" data-live-search="true" onchange="getEducationSpecial(this.value)">
+                    <select name="job_edu" id="job_edu" class="form-control" data-style="btn-default" data-live-search="true" onchange="getEducationSpecial(this.value)">
                       <option value="">Select Education </option>
                       <?php if(!empty($job_info->job_edu)) {
                                                 echo $this->education_level_model->selected($job_info->job_edu);
@@ -511,7 +511,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
       if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>admin/Job_posting/getEducation_specialization',
+                url:'<?php echo base_url();?>Employer/getEducation_specialization',
                 data:{id:id},
                 success:function(res){
                   $('#job_edu_special').html(res);
