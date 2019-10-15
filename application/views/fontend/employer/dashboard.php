@@ -354,7 +354,7 @@
 
  									 <div class="row">
                                         <div class="col-md-6 col-sm-12">
-					                       <div class="form-group">
+					                       <div class="formrow">
 					                             <label class="control-label">Contact Person Email: <span class="required">*</span></label>
 					                            <input type="text" name="cont_person_email" id="cont_person_email"  class="form-control" value="<?php 
                                             	 if(!empty($company_info->cont_person_email)){
@@ -364,8 +364,9 @@
 					                        </div>
 					                      </div>
 
-					                      <div class="form-group">
+					                      
 					                       <div class="col-md-6 col-sm-12">
+					                       	<div class="formrow">
 					                          <label class="control-label">Contact Person Mobile: <span class="required">*</span></label>
 					                           <input type="text" name="cont_person_mobile" id="cont_person_mobile"  class="form-control" value="<?php 
 				                                     if(!empty($company_info->cont_person_mobile)){
@@ -404,8 +405,9 @@
 
 									
 	                                    <div class="row">
-	                                    	<div class="formrow">
+	                                    	
 	                                        <div class="col-md-4 col-sm-4">
+	                                        	<div class="formrow">
 	                                        <label class="control-label">Company Country:</label>
 										  <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
 											<option value="">Select Country</option>
@@ -416,9 +418,9 @@
 	                                        </div>
 	                                    </div>
 
-										<div class="formrow">
+										
 										<div class="col-md-4 col-sm-4">
-											
+											<div class="formrow">
 											<label class="control-label">Company State:</label>
 											<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
 											<option value="">Select State</option>
@@ -428,9 +430,9 @@
 											</select>
 										</div>
 	                                    </div>
-										<div class="formrow">
+										
 										<div class="col-md-4 col-sm-4">
-											
+											<div class="formrow">
 											<label class="control-label">Company City:</label>
 											<select  name="city_id" id="city_id" class="form-control">
 											<option value="">Select City</option>
@@ -444,7 +446,7 @@
                                     </div>
 					 				<div class="row">
 					 				 	<div class="col-md-4 col-sm-4">
-					                       <div class="form-group">
+					                       <div class="formrow">
 					                             <label class="control-label">GSTN No:</label>
 					                            <input type="text" name="comp_gst_no" id="comp_gst_no"  class="form-control" value="<?php 
 					                                     if(!empty($company_info->comp_gstn_no)){
@@ -455,7 +457,7 @@
 					                     </div>
 
 					                    <div class="col-md-4 col-sm-4">
-					                       <div class="form-group">
+					                      <div class="formrow">
 					                            <label class="control-label">PAN No:</label>
 					                            <input type="text" name="comp_pan_no" id="comp_pan_no"  class="form-control" value="<?php 
 					                                     if(!empty($company_info->comp_pan_no)){
