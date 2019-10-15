@@ -197,7 +197,8 @@
                         <th class="active">Subject</th>
                         <th class="active">Topic</th>
                         <th class="active">Subtopic</th>
-						<th class="active">Description</th>
+						<th class="active">Question Type</th>
+						<th class="active">Question</th>
                         <th class="active col-sm-2">Action</th>
                     </tr>
                     </thead>
@@ -209,10 +210,12 @@
                             <td><?php echo $ct_row['skill_name'] ?></td>
                             <td><?php echo $ct_row['topic_name'] ?></td>
                             <td><?php echo $ct_row['subtopic_name'] ?></td>
-							<td><?php echo $ct_row['subtopic_desc'] ?></td>
+							<td><?php echo $ct_row['ques_type'] ?></td>
+							<td><?php echo $ct_row['question'] ?></td>
+							<td><?php echo $ct_row['question'] ?></td>
                             <td>
-                                <?php echo btn_edit('admin/questionbank/edit_questionbank/' . $ct_row['questionbank_id']); ?>
-                                <?php echo btn_delete('admin/questionbank/delete_questionbank/' . $ct_row['questionbank_id']); ?>
+                                <?php echo btn_edit('admin/questionbank/edit_questionbank/' . $ct_row['ques_id']); ?>
+                                <?php echo btn_delete('admin/questionbank/delete_questionbank/' . $ct_row['ques_id']); ?>
                             </td>
                         </tr>
                     <?php
