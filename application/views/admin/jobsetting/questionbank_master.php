@@ -94,10 +94,16 @@
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Level<span class="required">*</span></label>
                                       <select  name="level" class="form-control">
-									  
-                                            <option value="<?php echo $edit_questionbank_info['level']; ?>"><?php echo $edit_questionbank_info['level']; ?></option> 
-                                      
-										
+									  <?php if (!empty($questionbank))
+                                           foreach($questionbank as $ques) 
+                                           {
+                                        ?>   
+                                            <option value="<?php echo $ques['level']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['level']==$ques['level'])echo "selected";?>><?php echo $ques['level']; ?></option> 
+                                        
+                                        <?php } ?>
+										<option value="Expert">Expert</option>
+										<option value="Medium">Medium</option>
+										<option value="Beginner">Beginner</option>
 									 </select>
 									 </div>
                                 </div>
