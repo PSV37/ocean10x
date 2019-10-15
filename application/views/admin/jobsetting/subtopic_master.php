@@ -48,7 +48,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
-                                        <select name="technical_id" class="form-control" required id="myInput" onkeyup="filterFunction()" onchange="getTopic(this.value)">
+                                        <select id="subject"  name="technical_id" class="form-control" required onchange="getTopic(this.value)">
                                            <option value="">Select Subject</option> 
                                         <?php if (!empty($skill_master))
                                            foreach($skill_master as $skill) 
@@ -182,26 +182,10 @@
        
 </script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.11/css/select2.min.css" rel="stylesheet" />
-<script src="https://www.consultnhire.com/assets/js/select2.min.js"></script>
+<script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
 <script>
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-function filterFunction() {
-  var input, filter, ul, li, a, i;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  a = div.getElementsByTagName("a");
-  for (i = 0; i < a.length; i++) {
-    txtValue = a[i].textContent || a[i].innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      a[i].style.display = "";
-    } else {
-      a[i].style.display = "none";
-    }
-  }
-}
+$("#subject").select2( {
+	placeholder: "Select Subject",
+	allowClear: true
+	} );
 </script>
