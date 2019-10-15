@@ -1,5 +1,5 @@
 <?php $this->load->view('admin/components/header'); ?>
-<link href="<?php echo base_url();?>asset/css/select2.min.css" rel="stylesheet"/>
+<link href="<?php echo base_url(); ?>asset/css/select2.min.css" rel="stylesheet" type="text/css" />
 <body class="skin-blue" data-baseurl="<?php echo base_url(); ?>">
     <div class="wrapper">
         
