@@ -398,7 +398,7 @@
 											</select>
 	                                    </div>
 											
-											<div class="col-md-4 col-sm-4">
+										<div class="col-md-4 col-sm-4">
 											<label class="control-label">Company City:</label>
 											<select  name="city_id" id="city_id" class="form-control">
 											<option value="">Select City</option>
@@ -406,7 +406,7 @@
 											<option value="<?php echo $valu['id']; ?>"<?php if($company_info->city_id==$valu['id']){ echo "selected"; }?>><?php echo $valu['city_name']; ?></option>
 											<?php } ?>
 											</select>
-	                                        </div>
+	                                    </div>
 	                                    </div><!-- end row -->
                                     </div>
  

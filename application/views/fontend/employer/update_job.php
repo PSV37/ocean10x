@@ -113,7 +113,7 @@
 									<div class="col-md-4 col-sm-12">
 									<div class="formrow">
 									<label class="control-label"><b>Job Country</b> <span class="required">*</span> </label>
-									  <select  name="country_id" class="form-control" onchange="getStates(this.value)">
+									  <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
 									  
 										<option value="">Select Country</option>
 										<?php foreach($country as $key){?>
@@ -166,52 +166,7 @@
                     
                     <div class="row">
                     <div class="col-md-12 col-sm-12">
-					<input type="text" name="job_deadline" class="form-control datepicker" id="job_deadline_day" required value="<?php echo $job_info->job_deadline?>">
-                   <!-- <select name="job_deadline_day" class="form-control" id="job_deadline_day" required>
-                      <option value="" selected>Day</option>
-                      <?php
-					  
-										for($i=1;$i<=31;$i++){
-											$selected='';
-											if($job_info->job_deadline==$i){
-												$selected='selected';
-											}
-												
-											echo '<option value="'.$i.'" '.$selected.'>'.$i.'</option>';	
-										}
-									?>
-                    </select>-->
-                    </div>
-                    <!--<div class="col-md-4">
-                    <select name="job_deadline_month" class="form-control" id="job_deadline_month" required>
-                      <option value="" selected>Month</option>
-                      <?php
-					   
-										for($i=1;$i<=12;$i++){
-											$selected='';
-											if($job_info->job_deadline_month==$i){
-												$selected='selected';
-											}
-											echo '<option value="'.$i.'" '.$selected.'>'.$i.'</option>';	
-										}
-									?>
-                    </select>
-                    </div>
-                    <div class="col-md-4">
-                    <select name="job_deadline_year" class="form-control" id="job_deadline_year" required>
-                      <option value="" selected>Year</option>
-                      <?php
-					   
-										for($i=date('Y')+1;$i>date('Y')-1;$i--){
-											$selected='';
-											if($job_info->job_deadline_year==$i){
-												$selected='selected';
-											}
-											echo '<option value="'.$i.'" '.$selected.'>'.$i.'</option>';	
-										}
-									?>
-                    </select>
-                    </div>-->
+					           <input type="text" name="job_deadline" class="form-control datepicker" id="job_deadline_day" required value="<?php echo $job_info->job_deadline?>">
                     </div>
                     
                   </div>
@@ -345,7 +300,7 @@
               <div class="row">
                 <div class="col-md-12 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label mandatory">Vacancy Description *</label>
+                    <label class="control-label mandatory">Vacancy Description <span class="required">*</span></label>
                     <textarea name="job_desc" class="form-control ckeditor" required><?php if(!empty($job_info)) echo $job_info->job_desc; ?></textarea>
                   </div>
                 </div>
