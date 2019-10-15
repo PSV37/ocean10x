@@ -164,7 +164,7 @@
 				  
 				 </div>
 								</div>
-				  <div class="box-body>">
+				  <div class="box-body">
 				   <div class="col-sm-12">
 				  <div class="form-group" id="comp_name" style="display:none;">
                  
