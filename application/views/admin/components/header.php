@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/font-icons/entypo/css/entypo.css" >
         <!-- Data Table  CSS -->
         <link href="<?php echo base_url(); ?>asset/css/plugins/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
-		<link href="<?php echo base_url() ?>asset/css/select2.min.css" rel="stylesheet" type="text/css"/>
+		<link rel="stylesheet" href="<?php echo base_url();?>asset/css/select2.min.css" rel="stylesheet"/>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
