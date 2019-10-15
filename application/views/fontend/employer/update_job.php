@@ -113,7 +113,7 @@
 									<div class="col-md-4 col-sm-12">
 									<div class="formrow">
 									<label class="control-label"><b>Job Country</b> <span class="required">*</span> </label>
-									  <select  name="country_id" class="form-control" onchange="getStates(this.value)">
+									  <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
 									  
 										<option value="">Select Country</option>
 										<?php foreach($country as $key){?>
@@ -467,7 +467,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>admin/Job_posting/getstate',
+                url:'<?php echo base_url();?>Employer/getstate',
                 data:{id:id},
                 success:function(res){
                     $('#state_id').html(res);
@@ -486,7 +486,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>admin/Job_posting/getcity',
+                url:'<?php echo base_url();?>Employer/getcity',
                 data:{id:id},
                 success:function(res){
                     $('#city_id').html(res);
