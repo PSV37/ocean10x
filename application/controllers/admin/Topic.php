@@ -64,7 +64,7 @@ class Topic extends MY_Controller
         
       //  $this->education_level_model->delete($id);
         $education_level_status = array(
-            'status'=>0,
+            'topic_status'=>0,
         );
         $where_del['topic_id']=$id;
         $this->Master_model->master_update($education_level_status,'topic',$where_del);
