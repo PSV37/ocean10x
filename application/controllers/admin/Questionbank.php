@@ -108,7 +108,7 @@ class Questionbank extends MY_Controller
 		$where_subtopic = "subtopic.subtopic_status='1'";
 		$data['subtopic'] = $this->Master_model->getMaster('subtopic',$where_subtopic);
 		
-        $this->load->view('admin/jobsetting/subtopic_master',$data);
+        $this->load->view('admin/jobsetting/questionbank',$data);
     }
 
 
