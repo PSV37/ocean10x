@@ -528,7 +528,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
       var id = $('#job_role').val();
       if(id){
         $.ajax({
-                  url:'<?php echo base_url();?>admin/Job_posting/getSkillsByRole',
+                  url:'<?php echo base_url();?>Employer/getSkillsByRole',
                   type:'POST',
                   data:{
                         role_id:id
