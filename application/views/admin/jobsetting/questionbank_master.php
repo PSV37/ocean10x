@@ -90,11 +90,26 @@
 									</div>
 									</div>
 									 <div class="box-body">
-
+									 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Subtopic Description<span class="required">*</span></label>
-                                      <textarea name="subtopic_desc" class="form-control"><?php if (!empty($edit_questionbank_info)) echo $row['subtopic_desc'];?></textarea>
-                                    </div>
+                                        <label for="exampleInputEmail1">Level<span class="required">*</span></label>
+                                      <select  name="level" class="form-control">
+										<option value=""></option>
+										<option value="Expert">Expert</option>
+										<option value="Medium">Medium</option>
+										<option value="Beginner">Beginner</option>
+									 </select>
+									 </div>
+                                </div>
+								 <div class="col-md-4">
+                                    <div class="form-group">
+                             <label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
+							<select  name="ques_type" class="form-control" onchange='hideshowfun()' id="category">
+							<option value="MCQ">MCQ</option>
+							<option value="Subjective">Subjective</option>
+							<option value="Practical">Practical</option>
+						  </select>
+									 </div>
                                 </div>
                                 <div class="panel-body"></div>
                                 <button type="submit" class="btn bg-navy" type="submit">Save Subtopic
@@ -165,6 +180,44 @@
 
 
 </div><!-- /.right-side -->
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	  
+	  <script>
+  $(function () {
+    $('input').iCheck({
+      checkboxClass: 'icheckbox_square-blue',
+      radioClass: 'iradio_square-blue',
+      increaseArea: '20%' // optional
+    });
+  });
+  
+  
+  function hideshowfun()
+  {
+      var a = $('#category').val();
+   
+      
+      if(a=='MCQ')
+      {
+          $('#comp_name').hide();
+      }
+     else{
+         $('#comp_name').show();
+     } 
+     
+     if(a=='Subjective' || a=='Practical')
+      {
+          $('#name').hide();
+      }
+     else{
+         $('#name').show();
+     } 
+     
+      
+  }
+</script>
+	  
 
        
 <?php $this->load->view('admin/components/footer'); ?>
