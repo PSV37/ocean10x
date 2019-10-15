@@ -181,3 +181,10 @@
 	   </script>
        
 </script>
+<script src="http://localhost/newoceanproject/assets/js/select2.min.js"></script>
+<script>
+$("#technical_id").select2( {
+	placeholder: "Select Subject",
+	allowClear: true
+	} );
+</script>
