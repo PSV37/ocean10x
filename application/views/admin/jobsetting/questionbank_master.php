@@ -101,18 +101,25 @@
 									 </select>
 									 </div>
                                 </div>
-								 <div class="col-md-4">
-                                    <div class="form-group">
-                             <label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
-							<select  name="ques_type" class="form-control" onchange='hideshowfun()' id="category">
-							<option value="MCQ">MCQ</option>
-							<option value="Subjective">Subjective</option>
-							<option value="Practical">Practical</option>
-						  </select>
-									 </div>
-                                </div>
-								</div>
-								<div class="form-group">
+						<div id="name">
+			  <br/><div class="form-group">
+			  
+				  
+				 <div class="col-sm-4">
+				   <label>Option 1:</label>
+                    <textarea name="option1" id="option1" class="form-control"></textarea>
+                  </div>
+                  <div class="col-sm-4">
+				   <label>Option 2:</label>
+                    <textarea name="option2" id="option2" class="form-control"></textarea>
+                  </div>
+                  <div class="col-sm-4">
+				   <label>Option 3:</label>
+                    <textarea name="option3" id="option3" class="form-control"></textarea>
+                  </div>
+                </div>
+				<br/><hr/>
+				<br/><div class="form-group">
 				
 				  <div class="col-sm-4">
 				   <label>Option 4:</label>
@@ -134,6 +141,8 @@
 				   </select>
 				   </div>
 				  </div>
+				  
+				 </div>
 				  
 				 </div>
 				  <br/><hr/>
