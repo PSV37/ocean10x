@@ -101,8 +101,20 @@
 									 </select>
 									 </div>
                                 </div>
-						<div id="name">
-			  <br/><div class="form-group">
+								 <div class="col-md-4">
+                                    <div class="form-group">
+									<label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
+									<select  name="ques_type" class="form-control" onchange='hideshowfun()' id="category">
+									<option value="MCQ">MCQ</option>
+									<option value="Subjective">Subjective</option>
+									<option value="Practical">Practical</option>
+									</select>
+									 </div>
+                                </div>
+								</div>
+								<div class="box-body">
+								<div id="name">
+			  <div class="form-group">
 			  
 				  
 				 <div class="col-sm-4">
@@ -143,9 +155,8 @@
 				  </div>
 				  
 				 </div>
+								</div>
 				  
-				 </div>
-				  <br/><hr/>
 				  <br/><div class="form-group" id="comp_name" style="display:none;">
                   <div class="col-sm-12">
 				  <label>Answer:</label>
