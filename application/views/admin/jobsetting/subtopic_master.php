@@ -163,7 +163,7 @@
 <?php $this->load->view('admin/components/footer'); ?>
 <script>
 	  function getTopic(id){
-		  alert(id);
+		
 		if(id){
             $.ajax({
                 type:'POST',
