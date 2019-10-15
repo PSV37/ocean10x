@@ -364,14 +364,14 @@
 					                        </div>
 					                      </div>
 
+					                      <div class="form-group">
 					                       <div class="col-md-6 col-sm-12">
-					                       <div class="form-group">
-					                             <label class="control-label">Contact Person Mobile: <span class="required">*</span></label>
-					                            <input type="text" name="cont_person_mobile" id="cont_person_mobile"  class="form-control" value="<?php 
-                                     if(!empty($company_info->cont_person_mobile)){
-                                        echo $company_info->cont_person_mobile;
-                                     }
-                                ?>">
+					                          <label class="control-label">Contact Person Mobile: <span class="required">*</span></label>
+					                           <input type="text" name="cont_person_mobile" id="cont_person_mobile"  class="form-control" value="<?php 
+				                                     if(!empty($company_info->cont_person_mobile)){
+				                                        echo $company_info->cont_person_mobile;
+				                                     }
+				                                ?>">
 					                        </div>
 					                      </div>
 					                                   
@@ -415,9 +415,10 @@
 										  </select>
 	                                        </div>
 	                                    </div>
-										
+
+										<div class="formrow">
 										<div class="col-md-4 col-sm-4">
-											<div class="formrow">
+											
 											<label class="control-label">Company State:</label>
 											<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
 											<option value="">Select State</option>
@@ -427,9 +428,9 @@
 											</select>
 										</div>
 	                                    </div>
-											
+										<div class="formrow">
 										<div class="col-md-4 col-sm-4">
-											<div class="formrow">
+											
 											<label class="control-label">Company City:</label>
 											<select  name="city_id" id="city_id" class="form-control">
 											<option value="">Select City</option>
