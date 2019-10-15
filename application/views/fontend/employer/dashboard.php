@@ -40,7 +40,7 @@
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12">   
                                            <div class="formrow">
-                                           	<label class="control-label">Company Name:</label>
+                                           	<label class="control-label">Company Name: <span class="required">*</span></label>
                                             <input type="text" name="company_name" value="<?php 
                                             	 if(!empty($company_info->company_name)){
                                             	 	echo $company_info->company_name;
@@ -51,7 +51,7 @@
 
                                         <div class="col-md-6 col-sm-12">
                                         	<div class="formrow">
-                                        		<label class="control-label">Company Email:</label>
+                                        		<label class="control-label">Company Email: <span class="required">*</span></label>
                                             <input type="text" readonly name="company_email" value="<?php 
                                             	 if(!empty($company_info->company_email)){
                                             	 	echo $company_info->company_email;
@@ -314,7 +314,7 @@
 											</div>
 											<div class="col-md-3 col-sm-12">
                                         	<div class="formrow">
-                                        	<label class="control-label">Company Phone:</label>
+                                        	<label class="control-label">Company Phone: <span class="required">*</span></label>
                                             <input type="tel" name="company_phone" value="<?php 
                                             	 if(!empty($company_info->company_phone)){
                                             	 	echo $company_info->company_phone;
@@ -327,7 +327,7 @@
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12">
                                         <div class="formrow">
-                                        	<label class="control-label">Company Industry:</label>
+                                        	<label class="control-label">Company Industry: <span class="required">*</span></label>
                                             <select name="company_category" class="form-control" data-style="btn-default" data-live-search="true">
                                             	<option value="">Select Industry</option> 
                                                 <?php if(!empty($company_info->company_category)) {
@@ -341,7 +341,7 @@
                                         </div>
                                         <div class="col-md-6 col-sm-12">
                                         	<div class="formrow">
-                                        	<label class="control-label">Company Contact Person:</label>	
+                                        	<label class="control-label">Company Contact Person: <span class="required">*</span></label>	
                                             <input type="text" name="contact_name"  value="<?php 
                                             	 if(!empty($company_info->contact_name)){
                                             	 	echo $company_info->contact_name;
@@ -408,7 +408,7 @@
 	                                    	
 	                                        <div class="col-md-4 col-sm-4">
 	                                        	<div class="formrow">
-	                                        <label class="control-label">Company Country:</label>
+	                                        <label class="control-label">Company Country: <span class="required">*</span></label>
 										  <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
 											<option value="">Select Country</option>
 											<?php foreach($country as $key){?>
@@ -421,7 +421,7 @@
 										
 										<div class="col-md-4 col-sm-4">
 											<div class="formrow">
-											<label class="control-label">Company State:</label>
+											<label class="control-label">Company State: <span class="required">*</span></label>
 											<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
 											<option value="">Select State</option>
 										     <?php foreach($state as $val){?>
@@ -433,7 +433,7 @@
 										
 										<div class="col-md-4 col-sm-4">
 											<div class="formrow">
-											<label class="control-label">Company City:</label>
+											<label class="control-label">Company City: <span class="required">*</span></label>
 											<select  name="city_id" id="city_id" class="form-control">
 											<option value="">Select City</option>
 											 <?php foreach($city as $valu){?>
@@ -458,7 +458,7 @@
 
 					                    <div class="col-md-6 col-sm-6">
 					                      <div class="formrow">
-					                            <label class="control-label">PAN No:</label>
+					                            <label class="control-label">PAN No: </label>
 					                            <input type="text" name="comp_pan_no" id="comp_pan_no"  class="form-control" value="<?php 
 					                                     if(!empty($company_info->comp_pan_no)){
 					                                        echo $company_info->comp_pan_no;
@@ -470,6 +470,17 @@
                                     <!-- end row -->
                                     <div class="panel-body"></div>
  									<div class="row">
+
+ 										<div class="col-md-12 col-sm-12">
+                                         <div class="formrow">
+                                         	<label class="control-label">Company Address: <span class="required">*</span></label>
+                                            <textarea name="company_address" class="form-control ckeditor" placeholder="Company Address"><?php if(!empty($company_info->company_address)){
+                                            	 	echo $company_info->company_address;
+                                            	 } ?></textarea>
+                                                 </div>
+                                        </div>
+  										<div class="panel-body"></div>
+
                                         <div class="col-md-12 col-sm-12">
                                         	<div class="formrow">
                                         	<label class="control-label">Company Services:</label>
@@ -480,18 +491,10 @@
                                              ?></textarea>
                                              </div>
                                         </div>
-
-                                        <div class="col-md-12 col-sm-12">
-                                         <div class="formrow">
-                                         	<label class="control-label">Company Address:</label>
-                                            <textarea name="company_address" class="form-control ckeditor" placeholder="Company Address"><?php if(!empty($company_info->company_address)){
-                                            	 	echo $company_info->company_address;
-                                            	 } ?></textarea>
-                                                 </div>
-                                        </div>
+                                       
                                     </div><!-- end row -->
 									
-
+                                      <div class="panel-body"></div>
 									<div class="row">
                                         <div class="col-md-12 col-sm-12">
                                          <div class="formrow">
@@ -506,7 +509,7 @@
 
                                       
                                     </div>
-
+  									<div class="panel-body"></div>
                                     <div class="row">
                                         <div class="col-md-6 col-sm-6">
                                         	<div class="formrow">
