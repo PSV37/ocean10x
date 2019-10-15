@@ -94,13 +94,7 @@
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Level<span class="required">*</span></label>
                                       <select  name="level" class="form-control">
-									  <?php if (!empty($questionbank))
-                                           foreach($questionbank as $ques) 
-                                           {
-                                        ?>   
-                                            <option value="<?php echo $ques['level']; ?>"><?php echo $ques['level']; ?></option> 
-                                        
-                                        <?php } ?>
+									                                          
 										<option value="Expert">Expert</option>
 										<option value="Medium">Medium</option>
 										<option value="Beginner">Beginner</option>
@@ -111,14 +105,8 @@
                                     <div class="form-group">
 									<label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
 									<select  name="ques_type" class="form-control" onchange='hideshowfun()' id="category">
-									
-									<?php if (!empty($questionbank))
-                                           foreach($questionbank as $question) 
-                                           {
-                                        ?>   
-                                            <option value="<?php echo $question['ques_type']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']==$question['ques_type'])echo "selected";?>><?php echo $question['ques_type']; ?></option> 
+									                                      
                                         
-                                        <?php } ?>
 										<option value="MCQ">MCQ</option>
 										<option value="Subjective">Subjective</option>
 										<option value="Practical">Practical</option>
@@ -141,15 +129,15 @@
 				  
 				 <div class="col-sm-4">
 				   <label>Option 1:</label>
-                    <textarea name="option1" id="option1" class="form-control"></textarea>
+                    <textarea name="option1" id="option1" class="form-control"><?php if (!empty($edit_questionbank_info)) echo $row['option1'];?></textarea>
                   </div>
                   <div class="col-sm-4">
 				   <label>Option 2:</label>
-                    <textarea name="option2" id="option2" class="form-control"></textarea>
+                    <textarea name="option2" id="option2" class="form-control"><?php if (!empty($edit_questionbank_info)) echo $row['option2'];?></textarea>
                   </div>
                   <div class="col-sm-4">
 				   <label>Option 3:</label>
-                    <textarea name="option3" id="option3" class="form-control"></textarea>
+                    <textarea name="option3" id="option3" class="form-control"><?php if (!empty($edit_questionbank_info)) echo $row['option3'];?></textarea>
                   </div>
                 </div>
 				<br/><hr/>
@@ -157,11 +145,11 @@
 				
 				  <div class="col-sm-4">
 				   <label>Option 4:</label>
-                    <textarea name="option4" id="option4" class="form-control"></textarea>
+                    <textarea name="option4" id="option4" class="form-control"><?php if (!empty($edit_questionbank_info)) echo $row['option4'];?></textarea>
                   </div>
                   <div class="col-sm-4">
 				   <label>Option 5:</label>
-                    <textarea name="option5" id="option5" class="form-control"></textarea>
+                    <textarea name="option5" id="option5" class="form-control"><?php if (!empty($edit_questionbank_info)) echo $row['option5'];?></textarea>
                   </div>
 				  <div class="col-sm-4">
 				   <label>Correct Answer:</label>
