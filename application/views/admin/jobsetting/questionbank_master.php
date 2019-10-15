@@ -165,7 +165,7 @@
                   </div>
 				  <div class="col-sm-4">
 				   <label>Correct Answer:</label>
-				   <select name="correct_answer" class="form-control" style="height:56px;">
+				   <select name="correct_answer" class="form-control" style="height:100px;">
 				   <option></option>
 				   <option value="Option1">Option1</option>
 				   <option value="Option2">Option2</option>
