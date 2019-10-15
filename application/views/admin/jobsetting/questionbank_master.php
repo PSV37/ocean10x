@@ -153,14 +153,7 @@
                   </div>
 				  <div class="col-sm-4">
 				   <label>Correct Answer:</label>
-				   <select name="correct_answer" class="form-control" style="height:100px;">
-				   <option></option>
-				   <option value="Option1">Option1</option>
-				   <option value="Option2">Option2</option>
-				   <option value="Option3">Option3</option>
-				   <option value="Option4">Option4</option>
-				   <option value="Option5">Option5</option>
-				   
+				   <select name="correct_answer" class="form-control" style="height:100px;">				   
 				   <option value="Option1"<?php if (!empty($edit_questionbank_info)) if($row['correct_answer']=='Option1')echo "selected";?>>Option1</option>
 				  <option value="Option2"<?php if (!empty($edit_questionbank_info)) if($row['correct_answer']=='Option2')echo "selected";?>>Option2</option>
 				  <option value="Option3"<?php if (!empty($edit_questionbank_info)) if($row['correct_answer']=='Option3')echo "selected";?>>Option3</option>
