@@ -445,7 +445,7 @@
 	                                    </div><!-- end row -->
                                     </div>
 					 				<div class="row">
-					 				 	<div class="col-md-4 col-sm-4">
+					 				 	<div class="col-md-6 col-sm-6">
 					                       <div class="formrow">
 					                             <label class="control-label">GSTN No:</label>
 					                            <input type="text" name="comp_gst_no" id="comp_gst_no"  class="form-control" value="<?php 
@@ -456,7 +456,7 @@
 					                        </div>
 					                     </div>
 
-					                    <div class="col-md-4 col-sm-4">
+					                    <div class="col-md-6 col-sm-6">
 					                      <div class="formrow">
 					                            <label class="control-label">PAN No:</label>
 					                            <input type="text" name="comp_pan_no" id="comp_pan_no"  class="form-control" value="<?php 
@@ -468,7 +468,7 @@
 					                    </div>
 					                </div>
                                     <!-- end row -->
-
+                                    <div class="panel-body"></div>
  									<div class="row">
                                         <div class="col-md-12 col-sm-12">
                                         	<div class="formrow">
