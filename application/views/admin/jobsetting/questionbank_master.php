@@ -94,7 +94,7 @@
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Level<span class="required">*</span></label>
                                       <select  name="level" class="form-control">
-										<?php if (!empty($subtopic))
+										<?php if (!empty($questionbank))
                                            foreach($questionbank as $question) 
                                            {
                                         ?>   
