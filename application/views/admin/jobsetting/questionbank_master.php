@@ -165,8 +165,9 @@
 				 </div>
 								</div>
 				  <div class="box-body>">
+				   <div class="col-sm-12">
 				  <div class="form-group" id="comp_name" style="display:none;">
-                  <div class="col-sm-12">
+                 
 				  <label>Answer:</label>
                     <textarea name="sub_answer" id="sub_answer" class="form-control" style="height:100px;"></textarea>
                   </div>
