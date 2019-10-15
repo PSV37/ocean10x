@@ -72,7 +72,7 @@ class Subtopic extends MY_Controller
         );
         $where_del['subtopic_id']=$id;
         $this->Master_model->master_update($state_status,'subtopic',$where_del);
-        redirect('admin/subtopic_master');
+        redirect('admin/subtopic');
     }
 
     public function edit_subtopic($id){
