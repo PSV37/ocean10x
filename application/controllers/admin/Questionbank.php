@@ -42,7 +42,7 @@ class Questionbank extends MY_Controller
             $state_dt=array(
                 'technical_id' => $this->input->post('technical_id'),
                 'topic_id' => $this->input->post('topic_id'),
-                'subtopic_name' => $this->input->post('subtopic_name'),
+                'subtopic_id' => $this->input->post('subtopic_id'),
 				'subtopic_desc' => $this->input->post('subtopic_desc'),
             );
 
