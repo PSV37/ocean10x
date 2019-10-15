@@ -329,6 +329,7 @@
                                         <div class="formrow">
                                         	<label class="control-label">Company Industry:</label>
                                             <select name="company_category" class="form-control" data-style="btn-default" data-live-search="true">
+                                            	<option value="">Select Industry</option> 
                                                 <?php if(!empty($company_info->company_category)) {
                                                 echo $this->job_category_model->selected($company_info->company_category);
                                                 } else {
