@@ -1,6 +1,14 @@
 <?php 
     $this->load->view('fontend/layout/employer_header.php');
-?>                
+?>   
+<style type="text/css">
+  label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+</style>             
 <!-- Page Title start -->
 <div class="pageTitle">
   <div class="container">
@@ -320,7 +328,7 @@
                                         <div class="col-md-6 col-sm-12">
                                         <div class="formrow">
                                         	<label class="control-label">Company Industry:</label>
-                                            <select name="company_category" class="selectpicker" data-style="btn-default" data-live-search="true">
+                                            <select name="company_category" class="form-control selectpicker" data-style="btn-default" data-live-search="true">
                                                 <?php if(!empty($company_info->company_category)) {
                                                 echo $this->job_category_model->selected($company_info->company_category);
                                                 } else {
@@ -347,7 +355,7 @@
 										<div class="col-md-6 col-sm-6">
 											<div class="formrow">
 												<label class="control-label">Company Type:</label>
-												<select name="hot_jobs" required id="hot_jobs" class="selectpicker">
+												<select name="hot_jobs" required id="hot_jobs" class="form-control selectpicker">
 													<option value="">Select Type</option> 
 													<option value="1" <?php echo ( ($company_info->hot_jobs =='1')?'selected':''); ?>>Selected Resume</option> 
 													<option value="2" <?php echo ( ($company_info->hot_jobs=='2')?'selected':''); ?>>University</option> 
@@ -379,7 +387,7 @@
 										  </select>
 	                                        </div>
 										
-											<div class="col-md-4 col-sm-4">
+										<div class="col-md-4 col-sm-4">
 											<label class="control-label">Company State:</label>
 											<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
 											<option value="">Select State</option>
@@ -387,7 +395,7 @@
 											<option value="<?php echo $val['state_id']; ?>"<?php if($company_info->state_id==$val['state_id']){ echo "selected"; }?>><?php echo $val['state_name']; ?></option>
 												<?php } ?>
 											</select>
-	                                        </div>
+	                                    </div>
 											
 											<div class="col-md-4 col-sm-4">
 											<label class="control-label">Company City:</label>
@@ -401,9 +409,7 @@
 	                                    </div><!-- end row -->
                                     </div>
  
- 
                                     <!-- end row -->
-
 
  									<div class="row">
                                         <div class="col-md-12 col-sm-12">
