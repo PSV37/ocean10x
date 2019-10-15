@@ -45,7 +45,15 @@ class Questionbank extends MY_Controller
                 'technical_id' => $this->input->post('technical_id'),
                 'topic_id' => $this->input->post('topic_id'),
                 'subtopic_id' => $this->input->post('subtopic_id'),
-				'subtopic_desc' => $this->input->post('subtopic_desc'),
+				'ques_type' => $this->input->post('ques_type'),
+				'question' => $this->input->post('question'),
+				'option1' => $this->input->post('option1'),
+				'option2' => $this->input->post('option2'),
+				'option3' => $this->input->post('option3'),
+				'option4' => $this->input->post('option4'),
+				'option5' => $this->input->post('option5'),
+				'correct_answer' => $this->input->post('correct_answer'),
+				'sub_answer' => $this->input->post('sub_answer'),
             );
 
             if(empty($id)){
