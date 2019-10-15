@@ -113,8 +113,15 @@
                                 </div>
 								</div>
 								<div class="box-body">
+
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Question<span class="required">*</span></label>
+									 <textarea name="question" id="question" class="form-control" style="height:100px;"><?php if (!empty($edit_questionbank_info)) echo $row['question'];?></textarea>
+								   </div>
+                                </div>
+								<div class="box-body">
 								<div id="name">
-			  <div class="form-group">
+					<div class="form-group">
 			  
 				  
 				 <div class="col-sm-4">
