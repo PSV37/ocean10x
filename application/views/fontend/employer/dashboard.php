@@ -40,16 +40,6 @@
                                             </div>
                                         </div>
 
-
-
-
-
-
-
-
-
-
-
                                         <div class="col-md-6 col-sm-12">
                                         	<div class="formrow">
                                             <input type="text" readonly name="company_email" value="<?php 
@@ -343,29 +333,29 @@
                                             </div>
                                         </div>
                                    
- </div><!-- end row -->
+ 									</div><!-- end row -->
  
- <div class="row">
- <div class="col-md-6 col-sm-6">
-<div class="formrow">
-<select name="hot_jobs" required id="hot_jobs" class="selectpicker">
-<option value="">Select Type</option> 
-<option value="1" <?php echo ( ($company_info->hot_jobs =='1')?'selected':''); ?>>Selected Resume</option> 
-<option value="2" <?php echo ( ($company_info->hot_jobs=='2')?'selected':''); ?>>University</option> 
-<option value="3" <?php echo ( ($company_info->hot_jobs=='3')?'selected':''); ?>>Bank Books</option> 
-</select>
-</div>
-</div>
- <div class="col-md-6 col-sm-6">
-<div class="formrow">
-<input type="text" name="company_career_link"  id="company_career_link" class="form-control" value="<?php 
-if(!empty($company_info->company_career_link)){
-echo $company_info->company_career_link;
-}
-?>" placeholder="Company Career Link">
-</div>
-</div>
- </div>
+									<div class="row">
+										<div class="col-md-6 col-sm-6">
+											<div class="formrow">
+												<select name="hot_jobs" required id="hot_jobs" class="selectpicker">
+													<option value="">Select Type</option> 
+													<option value="1" <?php echo ( ($company_info->hot_jobs =='1')?'selected':''); ?>>Selected Resume</option> 
+													<option value="2" <?php echo ( ($company_info->hot_jobs=='2')?'selected':''); ?>>University</option> 
+													<option value="3" <?php echo ( ($company_info->hot_jobs=='3')?'selected':''); ?>>Bank Books</option> 
+												</select>
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-6">
+											<div class="formrow">
+												<input type="text" name="company_career_link"  id="company_career_link" class="form-control" value="<?php 
+												if(!empty($company_info->company_career_link)){
+												echo $company_info->company_career_link;
+												}
+												?>" placeholder="Company Career Link">
+											</div>
+										</div>
+									</div>
  
  
                                     <!-- end row -->
@@ -374,7 +364,7 @@ echo $company_info->company_career_link;
  									<div class="row">
                                         <div class="col-md-6 col-sm-6">
                                         	<div class="formrow">
-                                            <textarea name="company_service" class="form-control" placeholder="Company Service"><?php
+                                            <textarea name="company_service" class="form-control ckeditor" placeholder="Company Service"><?php
                                             	if(!empty($company_info->company_service)){
                                             	 	echo $company_info->company_service;
                                             	 }
@@ -384,7 +374,7 @@ echo $company_info->company_career_link;
 
                                          <div class="col-md-6 col-sm-6">
                                          <div class="formrow">
-                                            <textarea name="company_address" class="form-control" placeholder="Company Address"><?php if(!empty($company_info->company_address)){
+                                            <textarea name="company_address" class="form-control ckeditor" placeholder="Company Address"><?php if(!empty($company_info->company_address)){
                                             	 	echo $company_info->company_address;
                                             	 } ?></textarea>
                                                  </div>
@@ -425,11 +415,11 @@ echo $company_info->company_career_link;
                                         <div class="col-md-12 col-sm-12">
                                          <div class="formrow">
                                            <label class="control-label">Special Features:</label>
-                                            <textarea  name="company_aboutus"  id="company_aboutus" class="form-control" rows="8"><?php
+                                            <textarea  name="company_aboutus"  id="company_aboutus" class="form-control ckeditor" rows="8"><?php
                                             	if(!empty($company_info->company_aboutus)){
                                             	 	echo $company_info->company_aboutus;
                                             	 }
-                                             ?></textarea></textarea>
+                                             ?></textarea>
                                             </div>
                                         </div>
 
