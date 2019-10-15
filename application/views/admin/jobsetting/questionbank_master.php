@@ -164,8 +164,8 @@
 				  
 				 </div>
 								</div>
-				  
-				  <br/><div class="form-group" id="comp_name" style="display:none;">
+				  <div class="box-body>">
+				  <div class="form-group" id="comp_name" style="display:none;">
                   <div class="col-sm-12">
 				  <label>Answer:</label>
                     <textarea name="sub_answer" id="sub_answer" class="form-control" style="height:100px;"></textarea>
@@ -174,7 +174,7 @@
                 </div>	
 				</div>
                                 <div class="panel-body"></div>
-                                <button type="submit" class="btn bg-navy" type="submit">Save Subtopic
+                                <button type="submit" class="btn bg-navy" type="submit">Save Question
                                 </button><br/><br/>
                             
                             <!-- /.box-body -->
