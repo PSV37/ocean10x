@@ -187,13 +187,12 @@
 	   
 	   </script>
 	   
-	   <script>
+	    <script>
 	  function getSubtopic(id){
-		
 		if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>admin/questionbank/getsubtopic',
+                url:'<?php echo base_url();?>questionbank/getsubtopic',
                 data:{id:id},
                 success:function(res){
                     $('#subtopic_id').html(res);
