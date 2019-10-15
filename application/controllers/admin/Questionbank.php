@@ -17,7 +17,7 @@ class Questionbank extends MY_Controller
     public function index()
     {   
 
-        $data['title'] = 'Add Subtopic';
+        $data['title'] = 'Add Questionbank';
 
         $where_cn= "status=1";
         $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where_cn);
@@ -25,17 +25,19 @@ class Questionbank extends MY_Controller
         $where_state= "topic.topic_status=1";
         $data['topic'] = $this->Master_model->getMaster('topic',$where_state);
         
-        $where_all = "subtopic.subtopic_status='1'";
+        $where_subtopic = "subtopic.subtopic_status='1'";
+		$data['subtopic'] = $this->Master_model->getMaster('subtopic',$where_subtopic);
         $join_emp = array(
-                'skill_master' => 'skill_master.id=subtopic.technical_id |INNER',
-                'topic' => 'topic.topic_id=subtopic.topic_id |INNER',
+                'skill_master' => 'skill_master.id=questionbank.technical_id |INNER',
+                'topic' => 'topic.topic_id=questionbank.topic_id |INNER',
+				'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |INNER',
             );
-        $data['subtopic'] = $this->Master_model->getMaster('subtopic',$where_all,$join_emp);
+        $data['questionbank'] = $this->Master_model->getMaster('questionbank',$where_all,$join_emp);
 
-        $this->load->view('admin/jobsetting/subtopic_master', $data);
+        $this->load->view('admin/jobsetting/questionbank_master', $data);
     }
 
-        public function save_subtopic($id = null){
+        public function save_questionbank($id = null){
           
             $user_id = $this->session->userdata('admin_user_id');
             
@@ -47,46 +49,47 @@ class Questionbank extends MY_Controller
             );
 
             if(empty($id)){
-                $state_dt['subtopic_created_date']=date('Y-m-d H:i:s');
-                $state_dt['subtopic_created_by']=$user_id;
+                $state_dt['ques_created_date']=date('Y-m-d H:i:s');
+                $state_dt['ques_created_by']=$user_id;
 
-                $this->Master_model->master_insert($state_dt,'subtopic');
+                $this->Master_model->master_insert($state_dt,'questionbank');
                
-                redirect('admin/subtopic');
+                redirect('admin/questionbank');
             }
             else {
-                $state_dt['subtopic_updated_date']=date('Y-m-d H:i:s');
-                $state_dt['subtopic_updated_by']=$user_id;
+                $state_dt['ques_updated_date']=date('Y-m-d H:i:s');
+                $state_dt['ques_updated_by']=$user_id;
 
-                $where['subtopic_id']=$id;
-                $this->Master_model->master_update($state_dt,'subtopic',$where);
+                $where['ques_id']=$id;
+                $this->Master_model->master_update($state_dt,'questionbank',$where);
                
-                redirect('admin/subtopic');
+                redirect('admin/questionbank');
             }
         }
 
-    public function delete_subtopic($id) {
+    public function delete_questionbank($id) {
         
         $state_status = array(
-            'subtopic_status'=>0,
+            'ques_status'=>0,
         );
-        $where_del['subtopic_id']=$id;
-        $this->Master_model->master_update($state_status,'subtopic',$where_del);
-        redirect('admin/subtopic');
+        $where_del['ques_id']=$id;
+        $this->Master_model->master_update($state_status,'questionbank',$where_del);
+        redirect('admin/questionbank');
     }
 
-    public function edit_subtopic($id){
-        $data['title']="Edit Subtopic";
+    public function edit_questionbank($id){
+        $data['title']="Edit Questionbank";
 
-        $where_all = "subtopic.subtopic_status='1'";
+        $where_all = "questionbank.ques_status='1'";
         $join_emp = array(
-                'skill_master' => 'skill_master.id=subtopic.technical_id |INNER',
-                'topic' => 'topic.topic_id=subtopic.topic_id |INNER',
+                 'skill_master' => 'skill_master.id=questionbank.technical_id |INNER',
+                'topic' => 'topic.topic_id=questionbank.topic_id |INNER',
+				'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |INNER',
             );
-        $data['subtopic'] = $this->Master_model->getMaster('subtopic',$where_all,$join_emp);
-
-        $where_ct = "subtopic_id='$id'";
-        $data['edit_subtopic_info'] = $this->Master_model->getMaster('subtopic',$where_ct);
+        $data['questionbank'] = $this->Master_model->getMaster('questionbank',$where_all,$join_emp);
+		
+        $where_ct = "ques_id='$id'";
+        $data['edit_questionbank_info'] = $this->Master_model->getMaster('questionbank',$where_ct);
         
         $where_cn= "status=1";
         $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where_cn);
@@ -94,6 +97,9 @@ class Questionbank extends MY_Controller
         $where_state= "topic_status=1";
         $data['topic'] = $this->Master_model->getMaster('topic',$where_state);
         
+		$where_subtopic = "subtopic.subtopic_status='1'";
+		$data['subtopic'] = $this->Master_model->getMaster('subtopic',$where_subtopic);
+		
         $this->load->view('admin/jobsetting/subtopic_master',$data);
     }
 

@@ -34,8 +34,8 @@
                 <!-- /.box-header -->
                 <div class="box-background">
                 <!-- form start -->
-                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/questionbank/save_subtopic/<?php  if (!empty($edit_subtopic_info)) { foreach($edit_subtopic_info as $row)
-                        echo $row['subtopic_id'];
+                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/questionbank/save_questionbank/<?php  if (!empty($edit_questionbank_info)) { foreach($edit_questionbank_info as $row)
+                        echo $row['ques_id'];
                       }
                      ?>" method="post">
 
@@ -54,7 +54,7 @@
                                            foreach($skill_master as $skill) 
                                            {
                                         ?>   
-                                            <option value="<?php echo $skill['id']; ?>"<?php if (!empty($edit_subtopic_info)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option> 
+                                            <option value="<?php echo $skill['id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option> 
                                         <?php } ?>
                                         </select>
 										</div>
@@ -69,7 +69,7 @@
                                            foreach($topic as $st_row) 
                                            {
                                         ?>   
-                                            <option value="<?php echo $st_row['topic_id']; ?>"<?php if (!empty($edit_subtopic_info)) if($row['topic_id']==$st_row['topic_id'])echo "selected";?>><?php echo $st_row['topic_name']; ?></option> 
+                                            <option value="<?php echo $st_row['topic_id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['topic_id']==$st_row['topic_id'])echo "selected";?>><?php echo $st_row['topic_name']; ?></option> 
                                         <?php } ?>
                                         </select>
                                     </div>
@@ -84,7 +84,7 @@
                                            foreach($subtopic as $stt_row) 
                                            {
                                         ?>   
-                                            <option value="<?php echo $stt_row['subtopic_id']; ?>"<?php if (!empty($edit_subtopic_info)) if($row['subtopic_id']==$stt_row['subtopic_id'])echo "selected";?>><?php echo $stt_row['subtopic_name']; ?></option> 
+                                            <option value="<?php echo $stt_row['subtopic_id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['subtopic_id']==$stt_row['subtopic_id'])echo "selected";?>><?php echo $stt_row['subtopic_name']; ?></option> 
                                         <?php } ?>
                                         </select> </div>
 									</div>
@@ -93,7 +93,7 @@
 
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Subtopic Description<span class="required">*</span></label>
-                                      <textarea name="subtopic_desc" class="form-control"><?php if (!empty($edit_subtopic_info)) echo $row['subtopic_desc'];?></textarea>
+                                      <textarea name="subtopic_desc" class="form-control"><?php if (!empty($edit_questionbank_info)) echo $row['subtopic_desc'];?></textarea>
                                     </div>
                                 </div>
                                 <div class="panel-body"></div>
@@ -125,7 +125,7 @@
                     </thead>
                     <tbody>
                     <?php $key = 1 ;?>
-                    <?php if (!empty($subtopic)): foreach ($subtopic as $ct_row) : ?>
+                    <?php if (!empty($questionbank)): foreach ($questionbank as $ct_row) : ?>
                         <tr>
                             <td><?php echo $key ?></td>
                             <td><?php echo $ct_row['skill_name'] ?></td>
@@ -133,8 +133,8 @@
                             <td><?php echo $ct_row['subtopic_name'] ?></td>
 							<td><?php echo $ct_row['subtopic_desc'] ?></td>
                             <td>
-                                <?php echo btn_edit('admin/questionbank/edit_subtopic/' . $ct_row['subtopic_id']); ?>
-                                <?php echo btn_delete('admin/questionbank/delete_subtopic/' . $ct_row['subtopic_id']); ?>
+                                <?php echo btn_edit('admin/questionbank/edit_questionbank/' . $ct_row['questionbank_id']); ?>
+                                <?php echo btn_delete('admin/questionbank/delete_questionbank/' . $ct_row['questionbank_id']); ?>
                             </td>
                         </tr>
                     <?php
