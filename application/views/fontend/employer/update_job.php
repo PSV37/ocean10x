@@ -1,7 +1,14 @@
 <?php 
     $this->load->view('fontend/layout/employer_header.php');
 ?>
-
+<style type="text/css">
+  label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+</style>
 <!-- Page Title start -->
 
 <div class="pageTitle">
@@ -345,7 +352,7 @@
               <div class="row">
                 <div class="col-md-12 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label mandatory">Vacancy Description *</label>
+                    <label class="control-label mandatory">Vacancy Description <span class="required">*</span></label>
                     <textarea name="job_desc" class="form-control ckeditor" required><?php if(!empty($job_info)) echo $job_info->job_desc; ?></textarea>
                   </div>
                 </div>
