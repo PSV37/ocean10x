@@ -62,7 +62,7 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Topic <span class="required">*</span></label>
+                                        <label for="exampleInputEmail1">Topic <span class="required" onchange="getSubtopic(this.value)">*</span></label>
                                         <select id="topic_id"  name="topic_id" class="form-control" required>
                                            <option value="">Select Topic</option> 
                                         <?php if (!empty($topic))
@@ -178,6 +178,25 @@
                 data:{id:id},
                 success:function(res){
                     $('#topic_id').html(res);
+                }
+				
+            }); 
+          }
+   
+	   }
+	   
+	   </script>
+	   
+	   <script>
+	  function getSubtopic(id){
+		
+		if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/questionbank/getsubtopic',
+                data:{id:id},
+                success:function(res){
+                    $('#subtopic_id').html(res);
                 }
 				
             }); 
