@@ -32,6 +32,7 @@
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12">   
                                            <div class="formrow">
+                                           	<label class="control-label">Company Name:</label>
                                             <input type="text" name="company_name" value="<?php 
                                             	 if(!empty($company_info->company_name)){
                                             	 	echo $company_info->company_name;
@@ -42,6 +43,7 @@
 
                                         <div class="col-md-6 col-sm-12">
                                         	<div class="formrow">
+                                        		<label class="control-label">Company Email:</label>
                                             <input type="text" readonly name="company_email" value="<?php 
                                             	 if(!empty($company_info->company_email)){
                                             	 	echo $company_info->company_email;
@@ -55,6 +57,7 @@
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12">
                                         	<div class="formrow">
+                                        	<label class="control-label">Company URL:</label>
                                             <input type="text" name="company_url" value="<?php 
                                             	 if(!empty($company_info->company_url)){
                                             	 	echo $company_info->company_url;
@@ -64,7 +67,9 @@
                                         </div>
                                         <div class="col-md-3 col-sm-12">
                                         	<div class="formrow">
+											<label class="control-label">Country Code:</label>
 											<select id="country" name="country_code" class="form-control" style="height:42px;">
+												<option value="">Select Country Code</option>
 												<option><?php echo $company_info->country_code?></option>
 												<option value="AD - Andorra (+376)">AD - Andorra (+376)</option>
 												<option value="AE - United Arab Emirates (+971)">AE - United Arab Emirates (+971)</option>
@@ -301,6 +306,7 @@
 											</div>
 											<div class="col-md-3 col-sm-12">
                                         	<div class="formrow">
+                                        	<label class="control-label">Company Phone:</label>
                                             <input type="tel" name="company_phone" value="<?php 
                                             	 if(!empty($company_info->company_phone)){
                                             	 	echo $company_info->company_phone;
@@ -313,6 +319,7 @@
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12">
                                         <div class="formrow">
+                                        	<label class="control-label">Company Industry:</label>
                                             <select name="company_category" class="selectpicker" data-style="btn-default" data-live-search="true">
                                                 <?php if(!empty($company_info->company_category)) {
                                                 echo $this->job_category_model->selected($company_info->company_category);
@@ -325,6 +332,7 @@
                                         </div>
                                         <div class="col-md-6 col-sm-12">
                                         	<div class="formrow">
+                                        	<label class="control-label">Company Contact Person:</label>	
                                             <input type="text" name="contact_name"  value="<?php 
                                             	 if(!empty($company_info->contact_name)){
                                             	 	echo $company_info->contact_name;
@@ -338,6 +346,7 @@
 									<div class="row">
 										<div class="col-md-6 col-sm-6">
 											<div class="formrow">
+												<label class="control-label">Company Type:</label>
 												<select name="hot_jobs" required id="hot_jobs" class="selectpicker">
 													<option value="">Select Type</option> 
 													<option value="1" <?php echo ( ($company_info->hot_jobs =='1')?'selected':''); ?>>Selected Resume</option> 
@@ -348,6 +357,7 @@
 										</div>
 										<div class="col-md-6 col-sm-6">
 											<div class="formrow">
+												<label class="control-label">Company Career Link:</label>
 												<input type="text" name="company_career_link"  id="company_career_link" class="form-control" value="<?php 
 												if(!empty($company_info->company_career_link)){
 												echo $company_info->company_career_link;
@@ -356,14 +366,49 @@
 											</div>
 										</div>
 									</div>
+
+									<div class="formrow">
+	                                    <div class="row">
+	                                        <div class="col-md-4 col-sm-4">
+	                                        <label class="control-label">Company Country:</label>
+										  <select  name="country_id" class="form-control" onchange="getStates(this.value)">
+											<option value="">Select Country</option>
+											<?php foreach($country as $key){?>
+											<option value="<?php echo $key['country_id']; ?>"<?php if($company_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
+											<?php } ?>
+										  </select>
+	                                        </div>
+										
+											<div class="col-md-4 col-sm-4">
+											<label class="control-label">Company State:</label>
+											<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+											<option value="">Select State</option>
+										     <?php foreach($state as $val){?>
+											<option value="<?php echo $val['state_id']; ?>"<?php if($company_info->state_id==$val['state_id']){ echo "selected"; }?>><?php echo $val['state_name']; ?></option>
+												<?php } ?>
+											</select>
+	                                        </div>
+											
+											<div class="col-md-4 col-sm-4">
+											<label class="control-label">Company City:</label>
+											<select  name="city_id" id="city_id" class="form-control">
+											<option value="">Select City</option>
+											 <?php foreach($city as $valu){?>
+											<option value="<?php echo $valu['id']; ?>"<?php if($company_info->city_id==$valu['id']){ echo "selected"; }?>><?php echo $valu['city_name']; ?></option>
+											<?php } ?>
+											</select>
+	                                        </div>
+	                                    </div><!-- end row -->
+                                    </div>
  
  
                                     <!-- end row -->
 
 
  									<div class="row">
-                                        <div class="col-md-6 col-sm-6">
+                                        <div class="col-md-12 col-sm-12">
                                         	<div class="formrow">
+                                        	<label class="control-label">Company Services:</label>
                                             <textarea name="company_service" class="form-control ckeditor" placeholder="Company Service"><?php
                                             	if(!empty($company_info->company_service)){
                                             	 	echo $company_info->company_service;
@@ -372,46 +417,18 @@
                                              </div>
                                         </div>
 
-                                         <div class="col-md-6 col-sm-6">
+                                        <div class="col-md-12 col-sm-12">
                                          <div class="formrow">
+                                         	<label class="control-label">Company Address:</label>
                                             <textarea name="company_address" class="form-control ckeditor" placeholder="Company Address"><?php if(!empty($company_info->company_address)){
                                             	 	echo $company_info->company_address;
                                             	 } ?></textarea>
                                                  </div>
                                         </div>
                                     </div><!-- end row -->
-										<div class="formrow">
-                                    <div class="row">
-                                        <div class="col-md-4 col-sm-4">
-									  <select  name="country_id" class="form-control" onchange="getStates(this.value)">
-										<option value="">Select Country</option>
-										<?php foreach($country as $key){?>
-										<option value="<?php echo $key['country_id']; ?>"<?php if($company_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
-										<?php } ?>
-									  </select>
-                                        </div>
 									
-										<div class="col-md-4 col-sm-4">
-										<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
-										 <option value="">Select Country First</option>
-									     <?php foreach($state as $val){?>
-										<option value="<?php echo $val['state_id']; ?>"<?php if($company_info->state_id==$val['state_id']){ echo "selected"; }?>><?php echo $val['state_name']; ?></option>
-											<?php } ?>
-										</select>
-                                        </div>
-										
-										 <div class="col-md-4 col-sm-4">
-										 <select  name="city_id" id="city_id" class="form-control">
-										 <option value="">Select State First</option>
-										 <?php foreach($city as $valu){?>
-										<option value="<?php echo $valu['id']; ?>"<?php if($company_info->city_id==$valu['id']){ echo "selected"; }?>><?php echo $valu['city_name']; ?></option>
-										<?php } ?>
-										</select>
-                                        </div>
-                                    </div><!-- end row -->
-                                    </div>
 
-										<div class="row">
+									<div class="row">
                                         <div class="col-md-12 col-sm-12">
                                          <div class="formrow">
                                            <label class="control-label">Special Features:</label>
@@ -425,8 +442,6 @@
 
                                       
                                     </div>
-
-
 
                                     <div class="row">
                                         <div class="col-md-6 col-sm-6">
