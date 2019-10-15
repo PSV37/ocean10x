@@ -467,7 +467,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>admin/Job_posting/getstate',
+                url:'<?php echo base_url();?>Employer/getstate',
                 data:{id:id},
                 success:function(res){
                     $('#state_id').html(res);
@@ -486,7 +486,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>admin/Job_posting/getcity',
+                url:'<?php echo base_url();?>Employer/getcity',
                 data:{id:id},
                 success:function(res){
                     $('#city_id').html(res);
