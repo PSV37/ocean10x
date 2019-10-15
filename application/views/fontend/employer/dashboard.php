@@ -67,7 +67,7 @@
                                         </div>
                                         <div class="col-md-3 col-sm-12">
                                         	<div class="formrow">
-											<label class="control-label">Company Phone:</label>
+											<label class="control-label">Country Code:</label>
 											<select id="country" name="country_code" class="form-control" style="height:42px;">
 												<option value="">Select Country Code</option>
 												<option><?php echo $company_info->country_code?></option>
@@ -306,7 +306,7 @@
 											</div>
 											<div class="col-md-3 col-sm-12">
                                         	<div class="formrow">
-                                        	
+                                        	<label class="control-label">Company Phone:</label>
                                             <input type="tel" name="company_phone" value="<?php 
                                             	 if(!empty($company_info->company_phone)){
                                             	 	echo $company_info->company_phone;
