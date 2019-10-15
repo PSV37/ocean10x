@@ -167,7 +167,7 @@
 		if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>subtopic/gettopic',
+                url:'<?php echo base_url();?>admin/subtopic/gettopic',
                 data:{id:id},
                 success:function(res){
                     $('#topic_id').html(res);
