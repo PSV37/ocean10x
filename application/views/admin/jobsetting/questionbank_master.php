@@ -28,7 +28,7 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">Question Bank Master</h3>
+                        <h3 class="box-title ">Question Bank</h3>
                     </div>
                 </div>
                 <!-- /.box-header -->
@@ -187,6 +187,7 @@
 
                 </form>
                     </div>
+					</div>
                 <div class="box-footer">
 
                 </div>
