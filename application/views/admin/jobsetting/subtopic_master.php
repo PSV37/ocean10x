@@ -48,7 +48,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
-                                        <select id="subject"  name="technical_id" class="form-control" required onchange="getTopic(this.value)" style="height:80px;">
+                                        <select id="subject"  name="technical_id" class="form-control" required onchange="getTopic(this.value)">
                                            <option value="">Select Subject</option> 
                                         <?php if (!empty($skill_master))
                                            foreach($skill_master as $skill) 
@@ -63,7 +63,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Topic <span class="required">*</span></label>
-                                        <select id="topic_id"  name="topic_id" class="form-control" required>
+                                        <select id="topic_id"  name="topic_id" class="form-control" required style="height:80px;">
                                            <option value="">Select Topic</option> 
                                         <?php if (!empty($topic))
                                            foreach($topic as $st_row) 
