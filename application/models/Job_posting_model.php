@@ -203,7 +203,7 @@ order by RAND() limit 3");
         $this->db->select('*');
         $this->db->from('job_posting');
         $this->db->where('company_profile_id', $company_id);
-        $this->db->where('job_status',"1");
+        $this->db->where('job_status',"1")->order_by($this->_order_by);
         // $job_types = array('1', '3', '4','5','6');
         // $this->db->where_in('job_types',$job_types);
         $query = $this->db->get()->result();
