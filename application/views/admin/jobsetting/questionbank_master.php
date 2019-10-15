@@ -78,8 +78,15 @@
                                  <div class="col-md-4">
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
-                                     <input type="text" name="subtopic_name" id="subtopic_name"  class="form-control" value="<?php if (!empty($edit_subtopic_info)) echo $row['subtopic_name'];?>" required/>
-                                    </div>
+                                     <select id="subtopic_id"  name="subtopic_id" class="form-control" required>
+                                           <option value="">Select Topic</option> 
+                                        <?php if (!empty($subtopic))
+                                           foreach($subtopic as $stt_row) 
+                                           {
+                                        ?>   
+                                            <option value="<?php echo $stt_row['subtopic_id']; ?>"<?php if (!empty($edit_subtopic_info)) if($row['subtopic_id']==$stt_row['subtopic_id'])echo "selected";?>><?php echo $stt_row['subtopic_name']; ?></option> 
+                                        <?php } ?>
+                                        </select> </div>
 									</div>
 									</div>
 									 <div class="box-body">
