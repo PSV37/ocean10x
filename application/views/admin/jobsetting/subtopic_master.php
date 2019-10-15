@@ -48,7 +48,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
-                                        <select id="technical_id"  name="technical_id" class="form-control" required onchange="getTopic(this.value)">
+                                        <select id="subject"  name="technical_id" class="form-control" required onchange="getTopic(this.value)">
                                            <option value="">Select Subject</option> 
                                         <?php if (!empty($skill_master))
                                            foreach($skill_master as $skill) 
@@ -184,7 +184,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.11/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.11/js/select2.min.js"></script>
 <script>
-$("#technical_id").select2( {
+$("#subject").select2( {
 	placeholder: "Select Subject",
 	allowClear: true
 	} );
