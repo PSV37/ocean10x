@@ -157,6 +157,15 @@
 							?>
                   </div>
                   <a href="<?php echo base_url() ?>employer/reject-resume/<?php echo $v_applicant->job_seeker_id; ?>" class="reject"> <i class="fa fa-times" aria-hidden="true"></i> <strong>Reject</strong> </a> </div>
+                  <div class="col-md-12">
+                      <?php if($v_applicant->forword_job_status==1){ ?>
+                       <a class="btn btn-info btn-xs">Forwared</a>
+                      <?php }else if($v_applicant->forword_job_status==2){ ?>
+                        <a class="btn btn-success btn-xs">Forwared And Applied</a>
+                      <?php } else{?>
+                        <a class="btn btn-primary btn-xs">Normal Applied</a>
+                      <?php } ?>
+                    </div>
               </div>
             </li>
             <?php
