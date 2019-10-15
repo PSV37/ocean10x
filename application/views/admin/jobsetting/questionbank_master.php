@@ -81,11 +81,11 @@
                                      <select id="subtopic_id"  name="subtopic_id" class="form-control" required>
                                            <option value="">Select Subopic</option> 
                                         <?php if (!empty($subtopic))
-                                           foreach($subtopic as $stt_row) 
+                                           foreach($subtopic as $st_rows) 
                                            {
                                         ?>   
-                                            <option value="<?php echo $stt_row['subtopic_id']; ?>"><?php echo $stt_row['subtopic_name']; ?></option> 
-                                        <?php } ?>
+                                             <option value="<?php echo $st_rows['subtopic_id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['subtopic_id']==$st_rows['subtopic_id'])echo "selected";?>><?php echo $st_rows['subtopic_name']; ?></option> 
+                                       <?php } ?>
                                         </select> </div>
 									</div>
 									</div>
