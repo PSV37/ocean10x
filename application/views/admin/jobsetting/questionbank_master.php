@@ -98,7 +98,7 @@
                                            foreach($questionbank as $ques) 
                                            {
                                         ?>   
-                                            <option value="<?php echo $ques['level']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['level']==$ques['level'])echo "selected";?>><?php echo $ques['level']; ?></option> 
+                                            <option value="<?php echo $row['level']; ?>"><?php echo $row['level']; ?></option> 
                                         
                                         <?php } ?>
 										<option value="Expert">Expert</option>
