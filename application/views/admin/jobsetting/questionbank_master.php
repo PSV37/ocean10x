@@ -111,13 +111,47 @@
 						  </select>
 									 </div>
                                 </div>
+								</div>
+								<div class="form-group">
+				
+				  <div class="col-sm-4">
+				   <label>Option 4:</label>
+                    <textarea name="option4" id="option4" class="form-control"></textarea>
+                  </div>
+                  <div class="col-sm-4">
+				   <label>Option 5:</label>
+                    <textarea name="option5" id="option5" class="form-control"></textarea>
+                  </div>
+				  <div class="col-sm-4">
+				   <label>Correct Answer:</label>
+				   <select name="correct_answer" class="form-control" style="height:56px;">
+				   <option></option>
+				   <option value="Option1">Option1</option>
+				   <option value="Option2">Option2</option>
+				   <option value="Option3">Option3</option>
+				   <option value="Option4">Option4</option>
+				   <option value="Option5">Option5</option>
+				   </select>
+				   </div>
+				  </div>
+				  
+				 </div>
+				  <br/><hr/>
+				  <br/><div class="form-group" id="comp_name" style="display:none;">
+                  <div class="col-sm-12">
+				  <label>Answer:</label>
+                    <textarea name="sub_answer" id="sub_answer" class="form-control" style="height:100px;"></textarea>
+                  </div>
+				  
+                </div>	
+				</div>
                                 <div class="panel-body"></div>
                                 <button type="submit" class="btn bg-navy" type="submit">Save Subtopic
                                 </button><br/><br/>
                             
                             <!-- /.box-body -->
 
-                        </div>
+                        
                     </div>
 
                 </form>
