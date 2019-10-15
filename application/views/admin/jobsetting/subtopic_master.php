@@ -121,7 +121,7 @@
                     <?php if (!empty($subtopic)): foreach ($subtopic as $ct_row) : ?>
                         <tr>
                             <td><?php echo $key ?></td>
-                            <td><?php echo $ct_row['subject_name'] ?></td>
+                            <td><?php echo $ct_row['skill_name'] ?></td>
                             <td><?php echo $ct_row['topic_name'] ?></td>
                             <td><?php echo $ct_row['subtopic_name'] ?></td>
 							<td><?php echo $ct_row['subtopic_desc'] ?></td>
