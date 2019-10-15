@@ -95,9 +95,9 @@
                                         <label for="exampleInputEmail1">Level<span class="required">*</span></label>
                                       <select  name="level" class="form-control">
 									                                          
-										<option value="Expert"<?php if (!empty($edit_questionbank_info)) if($row['subtopic_id']=='Expert')echo "selected";?>>Expert</option>
-										<option value="Medium"<?php if (!empty($edit_questionbank_info)) if($row['subtopic_id']=='Medium')echo "selected";?>>Medium</option>
-										<option value="Beginner"<?php if (!empty($edit_questionbank_info)) if($row['subtopic_id']=='Beginner')echo "selected";?>>Beginner</option>
+										<option value="Expert"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Expert')echo "selected";?>>Expert</option>
+										<option value="Medium"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Medium')echo "selected";?>>Medium</option>
+										<option value="Beginner"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Beginner')echo "selected";?>>Beginner</option>
 									 </select>
 									 </div>
                                 </div>
