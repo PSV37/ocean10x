@@ -100,21 +100,24 @@ class Subtopic extends MY_Controller
 
 
 function gettopic(){
-    $skill_id = $this->input->post('id');
-    $where['id'] = $skill_id;
-    $topics = $this->Master_model->getMaster('topic',$where);
-    $result = '';
-    if(!empty($topics)){ 
-        $result .='<option value="">Select Topic</option>';
-        foreach($topics as $key){
-          $result .='<option value="'.$key['topic_id'].'">'.$key['topic_name'].'</option>';
-        }
-    }else{
-    
-        $result .='<option value="">Topic not available</option>';
-    }
-     echo $result;
+	$topic_id = $this->input->post('id');
+	$where['technical_id'] = $topic_id;
+	$topics = $this->Master_model->getMaster('topic',$where);
+	
+	
+	$result = '';
+	if(!empty($topics)){ 
+		$result .='<option value="">Select Topic</option>';
+		foreach($topics as $key){
+		  $result .='<option value="'.$key['topic_id'].'">'.$key['topic_name'].'</option>';
+		}
+	}else{
+	
+		$result .='<option value="">Topic not available</option>';
+	}
+	 echo $result;
 }
+
 
 
 //  function getcity(){
