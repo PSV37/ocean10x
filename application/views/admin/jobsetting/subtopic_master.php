@@ -181,7 +181,7 @@
 	   </script>
        
 </script>
-<script src="http://localhost/newoceanproject/assets/js/select2.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/select2.min.js"></script>
 <script>
 $("#technical_id").select2( {
 	placeholder: "Select Subject",
