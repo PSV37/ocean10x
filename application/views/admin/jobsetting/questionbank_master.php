@@ -95,9 +95,9 @@
                                         <label for="exampleInputEmail1">Level<span class="required">*</span></label>
                                       <select  name="level" class="form-control">
 									                                          
-										<option value="Expert"<?php if (!empty($edit_questionbank_info)) if($row['subtopic_id']=='Expert')echo "selected";?>>Expert</option>
-										<option value="Medium"<?php if (!empty($edit_questionbank_info)) if($row['subtopic_id']=='Medium')echo "selected";?>>Medium</option>
-										<option value="Beginner"<?php if (!empty($edit_questionbank_info)) if($row['subtopic_id']=='Beginner')echo "selected";?>>Beginner</option>
+										<option value="Expert"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Expert')echo "selected";?>>Expert</option>
+										<option value="Medium"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Medium')echo "selected";?>>Medium</option>
+										<option value="Beginner"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Beginner')echo "selected";?>>Beginner</option>
 									 </select>
 									 </div>
                                 </div>
@@ -106,10 +106,10 @@
 									<label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
 									<select  name="ques_type" class="form-control" onchange='hideshowfun()' id="category">
 									                                      
-                                        
-										<option value="MCQ">MCQ</option>
-										<option value="Subjective">Subjective</option>
-										<option value="Practical">Practical</option>
+                                        <option value="MCQ"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ')echo "selected";?>>Expert</option>
+										<option value="Subjective"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Subjective')echo "selected";?>>Medium</option>
+										<option value="Practical"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Practical')echo "selected";?>>Beginner</option>
+								
 									</select>
 									 </div>
                                 </div>
