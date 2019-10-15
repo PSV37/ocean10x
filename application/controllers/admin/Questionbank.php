@@ -126,22 +126,25 @@ function gettopic(){
 
 
 
-//  function getcity(){
-//     $state_id = $this->input->post('id');
-//     $where['state_id'] = $state_id;
-//     $citys = $this->Master_model->getMaster('city',$where);
-//     $result = '';
-//     if(!empty($citys)){ 
-//         $result .='<option value="">Select City</option>';
-//         foreach($citys as $key){
-//           $result .='<option value="'.$key['id'].'">'.$key['city_name'].'</option>';
-//         }
-//     }else{
-    
-//         $result .='<option value="">State not available</option>';
-//     }
-//      echo $result;
-// }
+ function getsubtopic(){
+	$subtopic_id = $this->input->post('id');
+	$where['topic_id'] = $subtopic_id;
+	$subtopics = $this->Master_model->getMaster('subtopic',$where);
+	$result = '';
+	
+	if(!empty($subtopics)){ 
+		$result .='<option value="">Select Subtopics</option>';
+		foreach($subtopics as $key){
+		  $result .='<option value="'.$key['subtopic_id'].'">'.$key['subtopic_name'].'</option>';
+		}
+	}else{
+	
+		$result .='<option value="">Subtopic not available</option>';
+	}
+	 echo $result;
+}
 
+
+}
 
 }
