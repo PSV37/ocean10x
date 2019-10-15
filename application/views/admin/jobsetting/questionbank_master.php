@@ -109,8 +109,12 @@
                                            foreach($questionbank as $question) 
                                            {
                                         ?>   
-                                            <option value="<?php echo $question['ques_type']; ?>"><?php echo $question['ques_type']; ?></option> 
+                                            <option value="<?php echo $question['ques_type']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']==$question['ques_type'])echo "selected";?>><?php echo $question['ques_type']; ?></option> 
+                                        
                                         <?php } ?>
+										<option value="MCQ">MCQ</option>
+										<option value="Subjective">Subjective</option>
+										<option value="Practical">Practical</option>
 									</select>
 									 </div>
                                 </div>
