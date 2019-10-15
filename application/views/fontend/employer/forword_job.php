@@ -15,7 +15,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-6">
-        <h1 class="page-heading">Post a New Job</h1>
+        <h1 class="page-heading">Forward Job</h1>
       </div>
       <div class="col-md-6 col-sm-6">
         <div class="breadCrumb"><a href="#.">Home</a> / <span>Vacancy Post</span></div>
