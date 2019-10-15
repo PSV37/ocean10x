@@ -94,14 +94,9 @@
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Level<span class="required">*</span></label>
                                       <select  name="level" class="form-control">
-										
-                                        <?php if (!empty($questionbank))
-                                           foreach($questionbank as $question) 
-                                           {
-                                        ?>   
-                                            <option value="<?php echo $question['level']; ?>"><?php echo $question['level']; ?></option> 
-                                        <?php } ?>
-										
+										<option value="Expert">Expert</option>
+										<option value="Medium">Medium</option>
+										<option value="Beginner">Beginner</option>
 									 </select>
 									 </div>
                                 </div>
@@ -109,9 +104,13 @@
                                     <div class="form-group">
 									<label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
 									<select  name="ques_type" class="form-control" onchange='hideshowfun()' id="category">
-									<option value="MCQ">MCQ</option>
-									<option value="Subjective">Subjective</option>
-									<option value="Practical">Practical</option>
+									
+									<?php if (!empty($questionbank))
+                                           foreach($questionbank as $question) 
+                                           {
+                                        ?>   
+                                            <option value="<?php echo $question['ques_type']; ?>"><?php echo $question['ques_type']; ?></option> 
+                                        <?php } ?>
 									</select>
 									 </div>
                                 </div>
@@ -251,7 +250,7 @@
 
 </div><!-- /.right-side -->
 
-
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	  
 	  <script>
   $(function () {
