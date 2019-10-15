@@ -17,100 +17,101 @@ class Subtopic extends MY_Controller
     public function index()
     {   
 
-        $data['title'] = 'Add City';
+        $data['title'] = 'Add Subtopic';
 
         $where_cn= "status=1";
-        $data['country_data'] = $this->Master_model->getMaster('country',$where_cn);
+        $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where_cn);
 
-        $where_state= "state_status=1";
-        $data['state_data'] = $this->Master_model->getMaster('state',$where_state);
+        $where_state= "topic.topic_status=1";
+        $data['topic'] = $this->Master_model->getMaster('topic',$where_state);
         
-        $where_all = "city.city_status='1'";
+        $where_all = "subtopic.subtopic_status='1'";
         $join_emp = array(
-                'country' => 'country.country_id=city.country_id |INNER',
-                'state' => 'state.state_id=city.state_id |INNER',
+                'skill_master' => 'skill_master.id=topic.technical_id |INNER',
+                'topic' => 'topic.topic_id=subtopic.topic_id |INNER',
             );
-        $data['city_info'] = $this->Master_model->getMaster('city',$where_all,$join_emp);
+        $data['subtopic'] = $this->Master_model->getMaster('subtopic',$where_all,$join_emp);
 
-        $this->load->view('admin/jobsetting/city_master', $data);
+        $this->load->view('admin/jobsetting/subtopic_master', $data);
     }
 
-        public function save_city($id = null){
+        public function save_subtopic($id = null){
           
             $user_id = $this->session->userdata('admin_user_id');
             
             $state_dt=array(
-                'country_id' => $this->input->post('country_name'),
-                'state_id' => $this->input->post('state_name'),
-                'city_name' => $this->input->post('city_name'),
+                'technical_id' => $this->input->post('technical_id'),
+                'topic_id' => $this->input->post('topic_id'),
+                'subtopic_name' => $this->input->post('subtopic_name'),
+				'subtopic_desc' => $this->input->post('subtopic_desc'),
             );
 
             if(empty($id)){
-                $state_dt['created_date']=date('Y-m-d H:i:s');
-                $state_dt['created_by']=$user_id;
+                $state_dt['subtopic_created_date']=date('Y-m-d H:i:s');
+                $state_dt['subtopic_created_by']=$user_id;
 
                 $this->Master_model->master_insert($state_dt,'city');
                
-                redirect('admin/city_master');
+                redirect('admin/subtopic_master');
             }
             else {
-                $state_dt['city_updated_date']=date('Y-m-d H:i:s');
-                $state_dt['updated_by']=$user_id;
+                $state_dt['subtopic_updated_date']=date('Y-m-d H:i:s');
+                $state_dt['subtopic_updated_by']=$user_id;
 
                 $where['id']=$id;
-                $this->Master_model->master_update($state_dt,'city',$where);
+                $this->Master_model->master_update($state_dt,'subtopic',$where);
                
-                redirect('admin/city_master');
+                redirect('admin/subtopic_master');
             }
         }
 
-    public function delete_city($id) {
+    public function delete_subtopic($id) {
         
         $state_status = array(
-            'city_status'=>0,
+            'subtopic_status'=>0,
         );
-        $where_del['id']=$id;
-        $this->Master_model->master_update($state_status,'city',$where_del);
-        redirect('admin/city_master');
+        $where_del['subtopic_id']=$id;
+        $this->Master_model->master_update($state_status,'subtopic',$where_del);
+        redirect('admin/subtopic_master');
     }
 
-    public function edit_city($id){
-        $data['title']="City Edit";
+    public function edit_subtopic($id){
+        $data['title']="Edit Subtopic";
 
-        $where_all = "city.city_status='1'";
+        $where_all = "subtopic.subtopic_status='1'";
         $join_emp = array(
-                'country' => 'country.country_id=city.country_id |INNER',
-                'state' => 'state.state_id=city.state_id |INNER',
+                'skill_master' => 'skill_master.id=topic.technical_id |INNER',
+                'topic' => 'topic.topic_id=subtopic.topic_id |INNER',
             );
-        $data['city_info'] = $this->Master_model->getMaster('city',$where_all,$join_emp);
+        $data['subtopic'] = $this->Master_model->getMaster('subtopic',$where_all,$join_emp);
 
-        $where_ct = "id='$id'";
-        $data['edit_city_info'] = $this->Master_model->getMaster('city',$where_ct);
+        $where_ct = "subtopic_id='$id'";
+        $data['edit_subtopic_info'] = $this->Master_model->getMaster('subtopic',$where_ct);
         
         $where_cn= "status=1";
-        $data['country_data'] = $this->Master_model->getMaster('country',$where_cn);
+        $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where_cn);
 
-        $where_state= "state_status=1";
-        $data['state_data'] = $this->Master_model->getMaster('state',$where_state);
+        $where_state= "topic_status=1";
+        $data['topic'] = $this->Master_model->getMaster('topic',$where_state);
         
-        $this->load->view('admin/jobsetting/city_master',$data);
+        $this->load->view('admin/jobsetting/subtopic_master',$data);
     }
 
 
 
-function getstate(){
-    $country_id = $this->input->post('id');
-    $where['country_id'] = $country_id;
-    $states = $this->Master_model->getMaster('state',$where);
+function gettopic(){
+    $skill_id = $this->input->post('id');
+    $where['id'] = $skill_id;
+    $topics = $this->Master_model->getMaster('topic',$where);
     $result = '';
-    if(!empty($states)){ 
-        $result .='<option value="">Select State</option>';
-        foreach($states as $key){
-          $result .='<option value="'.$key['state_id'].'">'.$key['state_name'].'</option>';
+    if(!empty($topics)){ 
+        $result .='<option value="">Select Topic</option>';
+        foreach($topics as $key){
+          $result .='<option value="'.$key['topic_id'].'">'.$key['topic_name'].'</option>';
         }
     }else{
     
-        $result .='<option value="">State not available</option>';
+        $result .='<option value="">Topic not available</option>';
     }
      echo $result;
 }

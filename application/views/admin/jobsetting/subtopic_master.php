@@ -28,13 +28,13 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">City Master</h3>
+                        <h3 class="box-title ">Subtopic Master</h3>
                     </div>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-background">
                 <!-- form start -->
-                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/city_master/save_city/<?php  if (!empty($edit_city_info)) { foreach($edit_city_info as $row)
+                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/subtopic/save_subtopic/<?php  if (!empty($edit_subtopic_info)) { foreach($edit_subtopic_info as $row)
                         echo $row['id'];
                       }
                      ?>" method="post">
@@ -45,44 +45,44 @@
 
                             <div class="box-body">
 
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Country <span class="required">*</span></label>
-                                        <select id="country_name" name="country_name" class="form-control" required onchange="getStates(this.value)">
-                                           <option value="">Select Country</option> 
-                                        <?php if (!empty($country_data))
-                                           foreach($country_data as $cnt_row) 
+                                        <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
+                                        <select id="technical_id"  name="technical_id" class="form-control" required onchange="getTopic(this.value)">
+                                           <option value="">Select Subject</option> 
+                                        <?php if (!empty($skill_master))
+                                           foreach($skill_master as $skill) 
                                            {
                                         ?>   
-                                            <option value="<?php echo $cnt_row['country_id']; ?>"<?php if (!empty($edit_city_info)) if($row['country_id']==$cnt_row['country_id'])echo "selected";?>><?php echo $cnt_row['country_name']; ?></option> 
+                                            <option value="<?php echo $skill['id']; ?>"<?php if (!empty($edit_subtopic_info)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option> 
+                                        <?php } ?>
+                                        </select>
+										</div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Topic <span class="required">*</span></label>
+                                        <select id="topic_id"  name="topic_id" class="form-control" required>
+                                           <option value="">Select Topic</option> 
+                                        <?php if (!empty($topic))
+                                           foreach($topic as $st_row) 
+                                           {
+                                        ?>   
+                                            <option value="<?php echo $st_row['topic_id']; ?>"<?php if (!empty($edit_subtopic_info)) if($row['topic_id']==$st_row['topic_id'])echo "selected";?>><?php echo $st_row['topic_name']; ?></option> 
                                         <?php } ?>
                                         </select>
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
+                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">State <span class="required">*</span></label>
-                                        <select id="state_name"  name="state_name" class="form-control" required>
-                                           <option value="">Select State</option> 
-                                        <?php if (!empty($state_data))
-                                           foreach($state_data as $st_row) 
-                                           {
-                                        ?>   
-                                            <option value="<?php echo $st_row['state_id']; ?>"<?php if (!empty($edit_city_info)) if($row['state_id']==$st_row['state_id'])echo "selected";?>><?php echo $st_row['state_name']; ?></option> 
-                                        <?php } ?>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">City Name <span class="required">*</span></label>
-                                      <input type="text" name="city_name" class="form-control" value="<?php if (!empty($edit_city_info)) echo $row['city_name'];?>" required>
+                                        <label for="exampleInputEmail1">Subtopic <span class="required">*</span></label>
+                                      <input type="text" name="subtopic_name" class="form-control" value="<?php if (!empty($edit_subtopic_info)) echo $row['subtopic_name'];?>" required>
                                     </div>
                                 </div>
                                 <div class="panel-body"></div>
-                                <button type="submit" class="btn bg-navy" type="submit">Save City
+                                <button type="submit" class="btn bg-navy" type="submit">Save Subtopic
                                 </button><br/><br/>
                             </div>
                             <!-- /.box-body -->
@@ -101,23 +101,25 @@
                     <thead>
                     <tr>
                         <th class="active">SL</th>
-                        <th class="active">Country Name</th>
-                        <th class="active">State Name</th>
-                        <th class="active">City Name</th>
+                        <th class="active">Subject</th>
+                        <th class="active">Topic</th>
+                        <th class="active">Subtopic</th>
+						<th class="active">Description</th>
                         <th class="active col-sm-2">Action</th>
                     </tr>
                     </thead>
                     <tbody>
                     <?php $key = 1 ;?>
-                    <?php if (!empty($city_info)): foreach ($city_info as $ct_row) : ?>
+                    <?php if (!empty($subtopic)): foreach ($subtopic as $ct_row) : ?>
                         <tr>
                             <td><?php echo $key ?></td>
-                            <td><?php echo $ct_row['country_name'] ?></td>
-                            <td><?php echo $ct_row['state_name'] ?></td>
-                            <td><?php echo $ct_row['city_name'] ?></td>
+                            <td><?php echo $ct_row['subject_name'] ?></td>
+                            <td><?php echo $ct_row['topic_name'] ?></td>
+                            <td><?php echo $ct_row['subtopic_name'] ?></td>
+							<td><?php echo $ct_row['subtopic_desc'] ?></td>
                             <td>
-                                <?php echo btn_edit('admin/city_master/edit_city/' . $ct_row['id']); ?>
-                                <?php echo btn_delete('admin/city_master/delete_city/' . $ct_row['id']); ?>
+                                <?php echo btn_edit('admin/subtopic/edit_subtopic/' . $ct_row['subtopic_id']); ?>
+                                <?php echo btn_delete('admin/subtopic/delete_subtopic/' . $ct_row['subtopic_id']); ?>
                             </td>
                         </tr>
                     <?php
@@ -152,14 +154,14 @@
        
 <?php $this->load->view('admin/components/footer'); ?>
 <script>
-    function getStates(id){
+    function getTopic(id){
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>admin/city_master/getstate',
+                url:'<?php echo base_url();?>admin/subtopic/gettopic',
                 data:{id:id},
                 success:function(res){
-                    $('#state_name').html(res);
+                    $('#topic_id').html(res);
                 }
                 
             }); 
@@ -171,24 +173,24 @@
 
 
 
-    function getStates_load(){
-        var id = $('#country_name').val();
+    function getTopic_load(){
+        var id = $('#technical_id').val();
 
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>admin/city_master/getstate',
+                url:'<?php echo base_url();?>admin/subtopic/gettopic',
                 data:{id:id},
                 success:function(res){
-                    $('#state_name').html(res);
-                    $('#state_name').val(<?php echo $row['state_id']; ?>);
+                    $('#topic_id').html(res);
+                    $('#topic_id').val(<?php echo $row['topic_id']; ?>);
                 }
                 
             }); 
           }
    
        }
-       getStates_load();
+       getTopic_load();
     });
        
 </script>
