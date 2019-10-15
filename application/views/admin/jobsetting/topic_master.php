@@ -48,7 +48,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Subject<span class="required">*</span></label>
-                                        <select id="subject"  name="technical_id" class="form-control" required style="height:150px;">
+                                        <select id="subject"  name="technical_id" class="form-control" required style="height:80px;">
                                            <option value="">Select Subject</option> 
                                         <?php if (!empty($skill_master))
                                            foreach($skill_master as $skill) 
