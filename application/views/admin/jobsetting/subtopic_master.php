@@ -77,8 +77,8 @@
 
                                  <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Subtopic <span class="required">*</span></label>
-                                      <input type="text" name="subtopic_name" class="form-control" value="<?php if (!empty($edit_subtopic_info)) echo $row['subtopic_name'];?>" required>
+                                        <label for="exampleInputEmail1">Subtopic Description<span class="required">*</span></label>
+                                      <textarea name="subtopic_desc" class="form-control"><?php if (!empty($edit_subtopic_info)) echo $row['subtopic_desc'];?></textarea>
                                     </div>
                                 </div>
                                 <div class="panel-body"></div>
