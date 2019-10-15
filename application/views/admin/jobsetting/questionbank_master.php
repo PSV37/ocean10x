@@ -94,7 +94,12 @@
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Level<span class="required">*</span></label>
                                       <select  name="level" class="form-control">
-										<option value=""></option>
+										<?php if (!empty($subtopic))
+                                           foreach($questionbank as $question) 
+                                           {
+                                        ?>   
+                                            <option value="<?php echo $question['level']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['level']==$question['level'])echo "selected";?>><?php echo $question['level']; ?></option> 
+                                        <?php } ?>
 										<option value="Expert">Expert</option>
 										<option value="Medium">Medium</option>
 										<option value="Beginner">Beginner</option>
@@ -169,7 +174,7 @@
 				  <div class="form-group" id="comp_name" style="display:none;">
                  
 				  <label>Answer:</label>
-                    <textarea name="sub_answer" id="sub_answer" class="form-control" style="height:100px;"><?php if (!empty($edit_questionbank_info)) echo $row['answer'];?></textarea>
+                    <textarea name="sub_answer" id="sub_answer" class="form-control" style="height:100px;"><?php if (!empty($edit_questionbank_info)) echo $row['sub_answer'];?></textarea>
                   </div>
 				  
                 </div>	
