@@ -52,7 +52,7 @@ class Subtopic extends MY_Controller
 
                 $this->Master_model->master_insert($state_dt,'subtopic');
                
-                redirect('admin/subtopic_master');
+                redirect('admin/subtopic');
             }
             else {
                 $state_dt['subtopic_updated_date']=date('Y-m-d H:i:s');
@@ -61,7 +61,7 @@ class Subtopic extends MY_Controller
                 $where['subtopic_id']=$id;
                 $this->Master_model->master_update($state_dt,'subtopic',$where);
                
-                redirect('admin/subtopic_master');
+                redirect('admin/subtopic');
             }
         }
 
