@@ -28,7 +28,7 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">Question Bank Master</h3>
+                        <h3 class="box-title ">Question Bank</h3>
                     </div>
                 </div>
                 <!-- /.box-header -->
@@ -84,7 +84,7 @@
                                            foreach($subtopic as $stt_row) 
                                            {
                                         ?>   
-                                            <option value="<?php echo $stt_row['subtopic_id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['subtopic_id']==$stt_row['subtopic_id'])echo "selected";?>><?php echo $stt_row['subtopic_name']; ?></option> 
+                                            <option value="<?php echo $stt_row['subtopic_id']; ?>"><?php echo $stt_row['subtopic_name']; ?></option> 
                                         <?php } ?>
                                         </select> </div>
 									</div>
@@ -98,7 +98,7 @@
                                            foreach($questionbank as $ques) 
                                            {
                                         ?>   
-                                            <option value="<?php echo $ques['level']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['level']==$ques['level'])echo "selected";?>><?php echo $ques['level']; ?></option> 
+                                            <option value="<?php echo $ques['level']; ?>"><?php echo $ques['level']; ?></option> 
                                         
                                         <?php } ?>
 										<option value="Expert">Expert</option>
