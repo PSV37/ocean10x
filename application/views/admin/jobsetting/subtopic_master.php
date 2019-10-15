@@ -181,7 +181,7 @@
 	   </script>
        
 </script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.11/css/select2.min.css" rel="stylesheet" />
+<link href="<?php echo base_url() ?>asset/css/select2.min.css" rel="stylesheet" />
 <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
 <script>
 $("#subject").select2( {
