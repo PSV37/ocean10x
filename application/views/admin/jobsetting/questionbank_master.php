@@ -79,7 +79,7 @@
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
                                      <select id="subtopic_id"  name="subtopic_id" class="form-control" required>
-                                           <option value="">Select Topic</option> 
+                                           <option value="">Select Subopic</option> 
                                         <?php if (!empty($subtopic))
                                            foreach($subtopic as $stt_row) 
                                            {
