@@ -134,7 +134,7 @@
               	<div class="col-md-6 col-sm-12">
 	              	<div class="input-group">
 	                  <label class="control-label" for="email">Father Name:</label>
-	                  <input type="text" name="father_name" class="form-control" id="father_name"  placeholder="Enter Father Name"
+	                  <input type="text" name="father_name" class="form-control" id="father_name"
 	                   value="<?php
 	                         if (!empty($js_personal_info->father_name)) {
 	                           echo $js_personal_info->father_name;
@@ -145,7 +145,7 @@
                 <div class="col-md-6 col-sm-12">         
 	              <div class="input-group">
 	                  <label class="control-label" for="email">Mother Name:</label>
-	                  <input type="text" name="mother_name" class="form-control" id="mother_name"  placeholder="Enter Mother Title"
+	                  <input type="text" name="mother_name" class="form-control" id="mother_name"
 	                   value="<?php
 	                         if (!empty($js_personal_info->mother_name)) {
 	                           echo $js_personal_info->mother_name;
@@ -418,7 +418,7 @@
             <div class="col-md-6 col-sm-12">
               <div class="input-group">
                   <label class="control-label" for="pwd">Adhar NO:</label>
-                  <input name="national_id" type="text"  class="form-control" id="national_id" placeholder="Enter Adhar No "
+                  <input name="national_id" type="text"  class="form-control" id="national_id" 
 
                value="<?php
                          if (!empty($js_personal_info->national_id)) {
@@ -669,8 +669,7 @@
           	<div class="col-md-6 col-sm-12">
               <div class="input-group">
                   <label class="control-label" for="pwd"> Mobile:</label>
-                  <input name="mobile" type="text"  class="form-control"  maxlength="10" id="number" placeholder="Home/Emargency Contact"
-
+                  <input name="mobile" type="text"  class="form-control"  maxlength="10" id="number" 
                value="<?php
                          if (!empty($js_personal_info->mobile)) {
                            echo $js_personal_info->mobile;
@@ -711,7 +710,8 @@
 				 </select>
               </div>
             </div>
-            <div class="col-md-6 col-sm-12">  
+            <!-- <div></div> -->
+            <div class="col-md-12 col-sm-12">  
               	<div class="input-group">
                   	<label class="control-label" for="pwd">Present Address</label>
                   	<textarea name="present_address" class="form-control" rows="5" id="comment"><?php 
@@ -759,7 +759,7 @@
 					 </select>
 	            </div>
           	</div>
-          	<div class="col-md-6 col-sm-12">
+          	<div class="col-md-12 col-sm-12">
               <div class="input-group">
                 <label class="control-label" for="pwd">Parmanent Address</label>
                 <textarea name="parmanent_address" class="form-control" rows="5" id="comment"><?php 
