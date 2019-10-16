@@ -163,7 +163,7 @@
               	<div class="col-md-6 col-sm-12">
 	              	<div class="input-group">
 	                 <label class="control-label" for="email">Date of Birth:</label>
-	                  <input type="date" class="datepicker form-control"  required name="date_of_birth" value="<?php echo $js_personal_info->date_of_birth; ?>">
+	                  <input type="text" class="form-control datepicker" name="date_of_birth" value="<?php echo $js_personal_info->date_of_birth; ?>">
 	             
 	              	</div>
           		</div>
@@ -422,7 +422,7 @@
                   </select>
               </div>
           </div>
-
+          <br>
             <div class="col-md-6 col-sm-12">
               <div class="input-group">
                   <label class="control-label" for="pwd">Adhar NO:</label>
