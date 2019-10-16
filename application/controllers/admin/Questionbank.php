@@ -123,11 +123,11 @@ class Questionbank extends MY_Controller
     public function delete_questionbank($id) {
         
       //  $this->education_level_model->delete($id);
-        $education_level_status = array(
-            'ques_status'=>0,
-        );
+        //$education_level_status = array(
+           // 'ques_status'=>0,
+       // );
         $where_del['ques_id']=$id;
-        $this->Master_model->master_update($education_level_status,'questionbank',$where_del);
+        $this->Master_model->master_delete('questionbank',$where_del);
         redirect('admin/questionbank');
     }
 
