@@ -202,7 +202,7 @@
 				  </div>
 				  <div class="container-fluid">
 				  <div class="form-group">
-				  <div class="col-sm-4">
+				  <div class="col-sm-8">
 				  <div class="multiselect">
 				  <div class="selectBox" onclick="showCheckboxes()">
 				  
