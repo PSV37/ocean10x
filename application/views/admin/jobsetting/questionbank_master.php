@@ -132,7 +132,7 @@
 									 </select>
 									 </div>
                                 </div>
-								<div onload="myFunction()"></div>
+								
 								 <div class="col-md-4">
                                     <div class="form-group">
 									<label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
@@ -364,15 +364,7 @@ function showCheckboxes() {
      
       
   }
-</script>
-<script>
-function myFunction()
-{
-	
-	alert("successfully...");
-}
-</script>
-	
+</script>	
 <script>
 	  function getTopic(id){
 		
