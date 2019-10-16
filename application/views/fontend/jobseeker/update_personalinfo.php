@@ -123,7 +123,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Personal Information sdasda</h4>
+        <h4 class="modal-title">Personal Information</h4>
       </div>
       <div class="modal-body">
          <form id="Personal-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_personalinfo');?>"  method="post" autocomplete="off">
@@ -131,25 +131,28 @@
               
               <div class="row">
               <div class="col-md-8 col-md-offset-2">
-              <div class="input-group">
-                  <span class="input-group-addon"><label class="control-label col-sm-3" for="email">Father Name:</label></span>
-                  <input type="text" name="father_name" class="form-control" id="father_name"  placeholder="Enter Father Name"
-                   value="<?php
-                         if (!empty($js_personal_info->father_name)) {
-                           echo $js_personal_info->father_name;
-                           }
-                       ?>">
-                </div>              
-              
-              <div class="input-group">
-                  <span class="input-group-addon"><label class="control-label col-sm-3" for="email">Mother Name:</label></span>
-                  <input type="text" name="mother_name" class="form-control" id="mother_name"  placeholder="Enter Mother Title"
-                   value="<?php
-                         if (!empty($js_personal_info->mother_name)) {
-                           echo $js_personal_info->mother_name;
-                           }
-                       ?>">
-              </div>
+              	<div class="col-md-6 col-sm-12">
+	              	<div class="input-group">
+	                  <label class="control-label col-sm-3" for="email">Father Name:</label>
+	                  <input type="text" name="father_name" class="form-control" id="father_name"  placeholder="Enter Father Name"
+	                   value="<?php
+	                         if (!empty($js_personal_info->father_name)) {
+	                           echo $js_personal_info->father_name;
+	                           }
+	                       ?>">
+	                </div>     
+	            </div>
+                <div class="col-md-6 col-sm-12">         
+	              <div class="input-group">
+	                  <label class="control-label col-sm-3" for="email">Mother Name:</label>
+	                  <input type="text" name="mother_name" class="form-control" id="mother_name"  placeholder="Enter Mother Title"
+	                   value="<?php
+	                         if (!empty($js_personal_info->mother_name)) {
+	                           echo $js_personal_info->mother_name;
+	                           }
+	                       ?>">
+	              </div>
+	          	</div>
               
               <div class="input-group">
                   <span class="input-group-addon"><label class="control-label col-sm-3" for="email">Date of Birth:</label></span>
@@ -412,14 +415,16 @@
               
               <div class="input-group">
                   <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">Adhar NO:</label></span>
-                  <input name="national_id" type="text"  class="form-control" id="national_id" placeholder="Enter Adhar No " value="<?php
+                  <input name="national_id" type="text"  class="form-control" id="national_id" placeholder="Enter Adhar No "
+
+               value="<?php
                          if (!empty($js_personal_info->national_id)) {
                            echo $js_personal_info->national_id;
                            }
                        ?>">
               </div>
               <div class="input-group">
-                <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd"> Country Code:</label></span>
+                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd"> Country Code:</label></span>
 				<select id="country" name="country_code" class="form-control">
 					<option><?php echo $js_personal_info->country_code?></option>
 					<option value="AD - Andorra (+376)">AD - Andorra (+376)</option>
