@@ -52,17 +52,26 @@ class Questionbank extends MY_Controller
 				'option2' => $this->input->post('option2'),
 				'option3' => $this->input->post('option3'),
 				'option4' => $this->input->post('option4'),
-				'option5' => $this->input->post('option5'),
-				'correct_answer' => implode(',',$this->input->post('correct_answer')),
-				'sub_answer' => $this->input->post('sub_answer'),
+				'option5' => $this->input->post('option5')
             );
 
             if(empty($id)){
                 $state_dt['ques_created_date']=date('Y-m-d H:i:s');
                 $state_dt['ques_created_by']=$user_id;
 
-                $this->Master_model->master_insert($state_dt,'questionbank');
-               
+                $q_id=$this->Master_model->master_insert($state_dt,'questionbank');
+                if($this->input->post('ques_type')=='MCQ'){
+					$tablename='questionbank_answer';
+					$where_delete['question_id']=$q_id;
+					$this->Master_model->master_delete($tablename, $where_delete);
+					$c_answer=$_POST['correct_answer'];
+					for($i=0;$i<sizeof($c_answer);$i++){
+						$data_answer=array();
+						$data_answer['question_id']=$q_id;
+						$data_answer['answer_id']=$c_answer[$i];
+						 $this->Master_model->master_insert($data_answer,'questionbank_answer');
+					}
+				}
                 redirect('admin/questionbank');
             }
             else {
@@ -71,7 +80,18 @@ class Questionbank extends MY_Controller
 
                 $where['ques_id']=$id;
                 $this->Master_model->master_update($state_dt,'questionbank',$where);
-               
+                if($this->input->post('ques_type')=='MCQ'){
+					$tablename='questionbank_answer';
+					$where_delete['question_id']=$id;
+					$this->Master_model->master_delete($tablename, $where_delete);
+					$c_answer=$_POST['correct_answer'];
+					for($i=0;$i<sizeof($c_answer);$i++){
+						$data_answer=array();
+						$data_answer['question_id']=$id;
+						$data_answer['answer_id']=$c_answer[$i];
+						 $this->Master_model->master_insert($data_answer,'questionbank_answer');
+					}
+				}
                 redirect('admin/questionbank');
             }
         }
