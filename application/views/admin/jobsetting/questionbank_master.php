@@ -320,6 +320,7 @@ function showCheckboxes() {
   
   function hideshowfun()
   {
+	   window.onload = function()
       var a = $('#category').val();
    
       
