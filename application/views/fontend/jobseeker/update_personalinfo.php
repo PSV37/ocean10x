@@ -721,7 +721,7 @@
                        ?></textarea>
               	</div>
           	</div>
-              
+              <div class="panel-body"></div>
              <input type="checkbox" name="billingtoo" onclick="FillBilling(this.form)">
 			  
 			 <em>Check this box if Present Address and Parmanent Address are the same.</em>
@@ -768,7 +768,8 @@
                         }
                     ?></textarea>
               </div>
-            </div>              
+            </div>    
+            <div class="panel-body"></div>          
               <button type="submit" class="btn btn-default">Submit</button>
               </div>
               </div>
