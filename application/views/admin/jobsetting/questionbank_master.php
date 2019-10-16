@@ -153,6 +153,7 @@
 								   </div>
 								   </div>
                                 </div>
+								<br/>
 								<div class="box-body">
 								<div id="name">
 					<div class="form-group">
