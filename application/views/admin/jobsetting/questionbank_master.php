@@ -191,15 +191,17 @@
 				  <div class="col-sm-4">
 				   <label>Correct Answer:</label>
 				   <select name="correct_answer" class="form-control" style="height:100px;">				   
-				    <div id="checkboxes">
+				   <option>Select an option</option>	
+				   </select>
+				   <div id="checkboxes">
       <label for="one">
         <input type="checkbox" id="one" />First checkbox</label>
       <label for="two">
         <input type="checkbox" id="two" />Second checkbox</label>
       <label for="three">
         <input type="checkbox" id="three" />Third checkbox</label>
-    </div>	
-				   </select>
+    </div>
+  </div>
 				   </div>
 				   </div>
 				   </div>
