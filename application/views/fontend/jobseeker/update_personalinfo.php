@@ -133,7 +133,7 @@
               <div class="col-md-12">
               	<div class="col-md-6 col-sm-12">
 	              	<div class="input-group">
-	                  <label class="control-label col-sm-3" for="email">Father Name:</label>
+	                  <label class="control-label" for="email">Father Name:</label>
 	                  <input type="text" name="father_name" class="form-control" id="father_name"  placeholder="Enter Father Name"
 	                   value="<?php
 	                         if (!empty($js_personal_info->father_name)) {
@@ -144,7 +144,7 @@
 	            </div>
                 <div class="col-md-6 col-sm-12">         
 	              <div class="input-group">
-	                  <label class="control-label col-sm-3" for="email">Mother Name:</label>
+	                  <label class="control-label" for="email">Mother Name:</label>
 	                  <input type="text" name="mother_name" class="form-control" id="mother_name"  placeholder="Enter Mother Title"
 	                   value="<?php
 	                         if (!empty($js_personal_info->mother_name)) {
@@ -153,14 +153,15 @@
 	                       ?>">
 	              </div>
 	          	</div>
-              
+              	<div class="col-md-6 col-sm-12">
+	              	<div class="input-group">
+	                 <label class="control-label" for="email">Date of Birth:</label>
+	                  <input type="date" class="datepicker form-control"  required name="date_of_birth" value="<?php echo $js_personal_info->date_of_birth; ?>" class="form-control" >
+	              	</div>
+          		</div>
+              <div class="col-md-6 col-sm-12">
               <div class="input-group">
-                  <span class="input-group-addon"><label class="control-label col-sm-3" for="email">Date of Birth:</label></span>
-                  <input type="date" class="datepicker form-control"  required name="date_of_birth" value="<?php echo $js_personal_info->date_of_birth; ?>" class="form-control" >
-              </div>
-              
-              <div class="input-group">
-                  <span class="input-group-addon"><label class="control-label col-sm-3" for="email">Nationality:</label></span>
+                  <label class="control-label" for="email">Nationality:</label>
                   <select name="nationality" class="form-control" id="national_id">
 					<option value="<?php echo $js_personal_info->nationality; ?>"><?php echo $js_personal_info->nationality; ?></option>
 					<option value="Afganistan">Afghanistan</option>
@@ -412,9 +413,11 @@
 					<option value="Zimbabwe">Zimbabwe</option>
                   </select>
               </div>
-              
+          </div>
+
+            <div class="col-md-6 col-sm-12">
               <div class="input-group">
-                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">Adhar NO:</label></span>
+                  <label class="control-label" for="pwd">Adhar NO:</label>
                   <input name="national_id" type="text"  class="form-control" id="national_id" placeholder="Enter Adhar No "
 
                value="<?php
@@ -423,8 +426,10 @@
                            }
                        ?>">
               </div>
+          	</div>
+          	<div class="col-md-6 col-sm-12">
               <div class="input-group">
-                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd"> Country Code:</label></span>
+                <label class="control-label" for="pwd"> Country Code:</label>
 				<select id="country" name="country_code" class="form-control">
 					<option><?php echo $js_personal_info->country_code?></option>
 					<option value="AD - Andorra (+376)">AD - Andorra (+376)</option>
@@ -660,8 +665,10 @@
 				</select>
 
               </div>
+          	</div>
+          	<div class="col-md-6 col-sm-12">
               <div class="input-group">
-                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd"> Mobile:</label></span>
+                  <label class="control-label" for="pwd"> Mobile:</label>
                   <input name="mobile" type="text"  class="form-control"  maxlength="10" id="number" placeholder="Home/Emargency Contact"
 
                value="<?php
@@ -670,17 +677,21 @@
                            }
                        ?>">&nbsp;<span id="errmsg"></span>
               </div>
-			  <div class="input-group">
-                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">Country</label></span>
-                <select  name="country_id" class="form-control" onchange="getStates(this.value)">
+            </div>
+            <div class="col-md-6 col-sm-12">
+			    <div class="input-group">
+                  <label class="control-label" for="pwd">Country</label>
+                  <select  name="country_id" class="form-control" onchange="getStates(this.value)">
 					<option value="">Select Country</option>
 					<?php foreach($country as $key){?>
 					<option value="<?php echo $key['country_id']; ?>"<?php if($js_personal_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
 					<?php } ?>
 				  </select>
-              </div>
+                </div>
+         	</div>
+            <div class="col-md-6 col-sm-12">
 			  <div class="input-group">
-                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">State</label></span>
+                  <label class="control-label" for="pwd">State</label>
                  <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
 				 <option value="">Select Country First</option>
 				 <?php foreach($state as $val){?>
@@ -688,8 +699,10 @@
 					<?php } ?>
 				 </select>
               </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
 			  <div class="input-group">
-                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">City</label></span>
+                 <label class="control-label" for="pwd">City</label>
                  <select  name="city_id" id="city_id" class="form-control">
 				 <option value="">Select State First</option>
 				 <?php foreach($city as $valu){?>
@@ -697,30 +710,36 @@
 					<?php } ?>
 				 </select>
               </div>
-              
-              <div class="input-group">
-                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">Present Address</label></span>
-                  <textarea name="present_address" class="form-control" rows="5" id="comment"><?php 
+            </div>
+            <div class="col-md-6 col-sm-12">  
+              	<div class="input-group">
+                  	<label class="control-label" for="pwd">Present Address</label>
+                  	<textarea name="present_address" class="form-control" rows="5" id="comment"><?php 
                          if (!empty($js_personal_info->present_address)) {
                            echo $js_personal_info->present_address;
                            }
                        ?></textarea>
-              </div>
-              <input type="checkbox" name="billingtoo" onclick="FillBilling(this.form)">
+              	</div>
+          	</div>
+              
+             <input type="checkbox" name="billingtoo" onclick="FillBilling(this.form)">
 			  
-			 <em>Check this box if Present Address and Parmanent &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Address are the same.</em>
-			
-			 <br/><br/><div class="input-group">
-                  <br/> <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">Country</label></span>
-                <select  name="country1_id" class="form-control" onchange="getStatess(this.value)">
-					<option value="">Select Country</option>
-					<?php foreach($country as $keys){?>
-					<option value="<?php echo $keys['country_id']; ?>"<?php if($js_personal_info->country1_id==$keys['country_id']){ echo "selected"; }?>><?php echo $keys['country_name']; ?></option>
-					<?php } ?>
-				  </select>
-              </div>
+			 <em>Check this box if Present Address and Parmanent Address are the same.</em>
+			<div class="panel-body"></div>
+			<div class="col-md-6 col-sm-12">
+				<div class="input-group">
+	                <label class="control-label" for="pwd">Country</label>
+	                <select  name="country1_id" class="form-control" onchange="getStatess(this.value)">
+						<option value="">Select Country</option>
+						<?php foreach($country as $keys){?>
+						<option value="<?php echo $keys['country_id']; ?>"<?php if($js_personal_info->country1_id==$keys['country_id']){ echo "selected"; }?>><?php echo $keys['country_name']; ?></option>
+						<?php } ?>
+					</select>
+	            </div>
+          	</div>
+          	<div class="col-md-6 col-sm-12">
 			  <div class="input-group">
-                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">State</label></span>
+                 <label class="control-label" for="pwd">State</label>
                  <select  name="state1_id" id="state1_id" class="form-control" onchange="getCityss(this.value)">
 				 <option value="">Select Country First</option>
 				 <?php foreach($state as $value){?>
@@ -728,23 +747,28 @@
 					<?php } ?>
 				 </select>
               </div>
-			  <div class="input-group">
-                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">City</label></span>
-                 <select  name="city1_id" id="city1_id" class="form-control">
-				 <option value="">Select State First</option>
-				 <?php foreach($city as $valuee){?>
-					<option value="<?php echo $valuee['id']; ?>"<?php if($js_personal_info->city1_id==$valuee['id']){ echo "selected"; }?>><?php echo $valuee['city_name']; ?></option>
-					<?php } ?>
-				 </select>
-              </div>
+          	</div>
+            <div class="col-md-6 col-sm-12">
+				<div class="input-group">
+	                <label class="control-label" for="pwd">City</label>
+	                <select  name="city1_id" id="city1_id" class="form-control">
+					 <option value="">Select State First</option>
+					 	<?php foreach($city as $valuee){?>
+						<option value="<?php echo $valuee['id']; ?>"<?php if($js_personal_info->city1_id==$valuee['id']){ echo "selected"; }?>><?php echo $valuee['city_name']; ?></option>
+						<?php } ?>
+					 </select>
+	            </div>
+          	</div>
+          	<div class="col-md-6 col-sm-12">
               <div class="input-group">
-                  <span class="input-group-addon"><label class="control-label col-sm-3" for="pwd">Parmanent Address</label></span>
-                  <br/><textarea name="parmanent_address" class="form-control" rows="5" id="comment"><?php 
-                         if (!empty($js_personal_info->parmanent_address)) {
+                <label class="control-label" for="pwd">Parmanent Address</label>
+                <textarea name="parmanent_address" class="form-control" rows="5" id="comment"><?php 
+                    if (!empty($js_personal_info->parmanent_address)) {
                            echo $js_personal_info->parmanent_address;
-                           }
-                       ?></textarea>
-              </div>              
+                        }
+                    ?></textarea>
+              </div>
+            </div>              
               <button type="submit" class="btn btn-default">Submit</button>
               </div>
               </div>
