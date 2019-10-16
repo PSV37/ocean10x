@@ -135,7 +135,7 @@
 								 <div class="col-md-4">
                                     <div class="form-group">
 									<label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
-									<select  name="ques_type" class="form-control ckeditor" onchange='hideshowfun()' id="category">
+									<select  name="ques_type" class="form-control" onchange='hideshowfun()' id="category">
 									                                      
                                         <option value="MCQ"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ')echo "selected";?>>MCQ</option>
 										<option value="Subjective"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Subjective')echo "selected";?>>Subjective</option>
@@ -149,7 +149,7 @@
 									<div class="col-md-12">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Question<span class="required">*</span></label>
-									 <textarea name="question" id="question" class="form-control" style="height:100px;" required><?php if (!empty($edit_questionbank_info)) echo $row['question'];?></textarea>
+									 <textarea name="question" id="question" class="form-control ckeditor" style="height:100px;" required><?php if (!empty($edit_questionbank_info)) echo $row['question'];?></textarea>
 								   </div>
 								   </div>
                                 </div>
