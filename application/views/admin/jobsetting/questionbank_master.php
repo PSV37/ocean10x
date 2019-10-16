@@ -1,4 +1,39 @@
 <?php $this->load->view('admin/components/header'); ?>
+<style>
+.multiselect {
+  width: 100%;
+}
+
+.selectBox {
+  position: relative;
+}
+
+.selectBox select {
+  width: 100%;
+  font-weight: bold;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#checkboxes {
+  display: none;
+  border: 1px #dadada solid;
+}
+
+#checkboxes label {
+  display: block;
+}
+
+#checkboxes label:hover {
+  background-color: #1e90ff;
+}
+</style>
 <body class="skin-blue" data-baseurl="<?php echo base_url(); ?>">
     <div class="wrapper">
         
@@ -152,7 +187,8 @@
 				   <label>Option 5:</label>
                     <textarea name="option5" id="option5" class="form-control"><?php if (!empty($edit_questionbank_info)) echo $row['option5'];?></textarea>
                   </div>
-				  <div id="name1">
+				  <div class="multiselect">
+				  <div class="selectBox" onclick="showCheckboxes()">
 				  <div class="col-sm-4">
 				   <label>Correct Answer:</label>
 				   <select name="correct_answer" class="form-control" style="height:100px;">				   
@@ -164,33 +200,22 @@
 								
 				   </select>
 				   </div>
+				   </div>
+				   </div>
 				  </div>
-				  </div>
+				  
 				 </div>
-				 <div id="comp_name" style="display:none;">
- 				 <div class="col-sm-4">
-				   <label>Answer:</label>
-				   <select name="correct_answer" class="form-control" style="height:100px;">				   
-				   <option value="Option1"<?php if (!empty($edit_questionbank_info)) if($row['correct_answer']=='Option1')echo "selected";?>>Option1</option>
-				  <option value="Option2"<?php if (!empty($edit_questionbank_info)) if($row['correct_answer']=='Option2')echo "selected";?>>Option2</option>
-				  <option value="Option3"<?php if (!empty($edit_questionbank_info)) if($row['correct_answer']=='Option3')echo "selected";?>>Option3</option>
-				  <option value="Option4"<?php if (!empty($edit_questionbank_info)) if($row['correct_answer']=='Option4')echo "selected";?>>Option4</option>
-				  <option value="Option5"<?php if (!empty($edit_questionbank_info)) if($row['correct_answer']=='Option5')echo "selected";?>>Option5</option>
-								
-				   </select>
 		 
 								</div>
-								
 				  <div class="box-body">
 				   <div class="col-sm-12">
-				  <div class="form-group">
+				  <div class="form-group" id="comp_name" style="display:none;">
                  
 				  <label>Answer:</label>
                     <textarea name="sub_answer" id="sub_answer" class="form-control" style="height:100px;"><?php if (!empty($edit_questionbank_info)) echo $row['sub_answer'];?></textarea>
                   </div>
 				  
                 </div>	
-				</div>
 				</div>
                                 <div class="panel-body"></div>
                                 <button type="submit" class="btn bg-navy" type="submit">Save Question
@@ -264,7 +289,22 @@
 
 
 </div><!-- /.right-side -->
+<script>
+var expanded = false;
 
+function showCheckboxes() {
+  var checkboxes = document.getElementById("checkboxes");
+  if (!expanded) {
+    checkboxes.style.display = "block";
+    expanded = true;
+  } else {
+    checkboxes.style.display = "none";
+    expanded = false;
+  }
+}
+</script>
+	  
+	  
 	  
 	  <script>
   
@@ -274,7 +314,7 @@
       var a = $('#category').val();
    
       
-      if(a=='MCQ Single' | 'MCQ Multiple')
+      if(a=='MCQ Single')
       {
           $('#comp_name').hide();
       }
@@ -289,7 +329,7 @@
      else{
          $('#name').show();
      } 
-	    
+     
       
   }
 </script>
