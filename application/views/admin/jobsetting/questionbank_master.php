@@ -187,7 +187,7 @@
 				  <div class="selectBox" onclick="showCheckboxes()">
 				  
 				   <label>Correct Answer:</label>
-				  <!-- <select  class="form-control" style="height:100px;">				   
+				   <select  class="form-control" style="height:100px;">				   
 				    <option>Select an option</option>
 					</select>
 					<div class="overSelect"></div>
@@ -203,7 +203,7 @@
         <input type="checkbox" id="four" name="correct_answer[]" value="Option4"<?php if (!empty($edit_questionbank_info)) if($row['correct_answer']=='Option4')echo "checked";?>/>&nbsp;Option4</label>
 	  <label for="five">
         <input type="checkbox" id="three" name="correct_answer[]" value="Option5"<?php if (!empty($edit_questionbank_info)) if($row['correct_answer']=='Option5')echo "checked";?>/>&nbsp;Option5</label>
-		  </div>-->
+		  </div>
 				   </div>
 				  </div>
 				  </div>
