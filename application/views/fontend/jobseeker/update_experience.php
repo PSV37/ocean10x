@@ -240,13 +240,9 @@ if (!empty($experinece->start_date)) {
             <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Company Name:</label>
                 <div class="col-sm-9">
-                  <input  name="company_profile_id" id="demo-input" class="form-control">
+                  <input  id="demo-input-facebook-theme" name="blah2" class="form-control">
                 </div>
                 <div>
-
-
-             
-      
     </div>
 
             </div>
@@ -341,11 +337,16 @@ if (!empty($experinece->start_date)) {
 
   </div>
 </div>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $("#demo-input").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocomplete");
-    });
-    </script>
+
+     <!-- <input type="text" id="demo-input-facebook-theme" name="blah2" /> -->
+       
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $("#demo-input-facebook-theme").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocomplete", {
+                theme: "facebook"
+            });
+        });
+        </script>
 
 
   <script type="text/javascript">
