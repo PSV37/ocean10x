@@ -680,7 +680,7 @@
             <div class="col-md-6 col-sm-12">
 			    <div class="input-group">
                   <label class="control-label" for="pwd">Country</label>
-                  <select  name="country_id" class="form-control" onchange="getStates(this.value)">
+                  <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
 					<option value="">Select Country</option>
 					<?php foreach($country as $key){?>
 					<option value="<?php echo $key['country_id']; ?>"<?php if($js_personal_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
@@ -729,7 +729,7 @@
 			<div class="col-md-6 col-sm-12">
 				<div class="input-group">
 	                <label class="control-label" for="pwd">Country</label>
-	                <select  name="country1_id" class="form-control" onchange="getStatess(this.value)">
+	                <select  name="country1_id" id="country1_id" class="form-control" onchange="getStatess(this.value)">
 						<option value="">Select Country</option>
 						<?php foreach($country as $keys){?>
 						<option value="<?php echo $keys['country_id']; ?>"<?php if($js_personal_info->country1_id==$keys['country_id']){ echo "selected"; }?>><?php echo $keys['country_name']; ?></option>
@@ -1447,10 +1447,7 @@ function FillBilling(f) {
           }
    
 	   }
-	   
-	   </script>
-	   
-	   <script>
+	  
 	  function getCitys(id){
 		if(id){
             $.ajax({
@@ -1466,10 +1463,6 @@ function FillBilling(f) {
    
 	   }
 	   
-	   </script>        
-	   
-	   
-	   <script>
 	  function getStatess(id){
 		if(id){
             $.ajax({
@@ -1485,9 +1478,6 @@ function FillBilling(f) {
    
 	   }
 	   
-	   </script>
-	   
-	   <script>
 	  function getCityss(id){
 		if(id){
             $.ajax({
@@ -1503,5 +1493,90 @@ function FillBilling(f) {
    
 	   }
 	   
-	   </script>        
+$(document).ready(function(){
+
+    function getStates_load(){
+        var id = $('#country_id').val();
+
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Job_seeker/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state_id').html(res);
+                    $('#state_id').val(<?php echo $js_personal_info->state_id; ?>);
+                     getCitys_load(<?php echo $js_personal_info->state_id; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+    
+    function getCitys_load(id){
+      //var id = $('#state_id').val();
+      // alert(id);
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Job_seeker/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city_id').html(res);
+                    $('#city_id').val(<?php echo $js_personal_info->city_id; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+
+    function getStates_load_permant(){
+        var id = $('#country1_id').val();
+
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Job_seeker/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state1_id').html(res);
+                    $('#state1_id').val(<?php echo $js_personal_info->state_id; ?>);
+                     getCitys_load_permant(<?php echo $js_personal_info->state_id; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+    
+    function getCitys_load_permant(id){
+      //var id = $('#state_id').val();
+      // alert(id);
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Job_seeker/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city1_id').html(res);
+                    $('#city1_id').val(<?php echo $js_personal_info->city_id; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+
+
+ 
+
+
+  getCitys_load();
+  getStates_load();
+  getCitys_load_permant();
+  getStates_load_permant();
+});
+</script>        
       
