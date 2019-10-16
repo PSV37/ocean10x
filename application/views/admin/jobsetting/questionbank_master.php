@@ -30,7 +30,7 @@
 }
 
 </style>
-<body class="skin-blue" data-baseurl="<?php echo base_url(); ?>" onload="hideshowfun()">
+<body class="skin-blue" data-baseurl="<?php echo base_url(); ?>">
     <div class="wrapper">
         
     <?php $this->load->view('admin/components/user_profile'); ?>
