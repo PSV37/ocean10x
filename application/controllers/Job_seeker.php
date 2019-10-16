@@ -603,7 +603,7 @@ exit;*/
         $where="company_name like '%$query%'";
         $select="company_name as 'name'";
         $result= $this->Master_model->getMaster('company_profile',$where,false,false,false,$select);
-        echo $this->db->last_query();
+        // echo $this->db->last_query();
         echo json_encode($result); 
     }
 
