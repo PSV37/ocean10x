@@ -240,14 +240,19 @@ if (!empty($experinece->start_date)) {
             <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Company Name:</label>
                 <div class="col-sm-9">
-                 <select  name="company_profile_id" class="form-control">
-					<option value="">Select Organization</option>
-					<?php foreach($company_profile as $key){?>
-					<option value="<?php echo $key['company_profile_id']; ?>"><?php echo $key['company_name']; ?></option>
-					<?php } ?>
-				  </select>
+                  <!-- <input  name="company_profile_id" id="demo-input" class="form-control"> -->
                 </div>
-              </div>
+                <div>
+        <input type="text" id="demo-input" name="blah" />
+        <input type="button" value="Submit" />
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $("#demo-input").tokenInput("search.php");
+        });
+        </script>
+    </div>
+
+            </div>
 
         <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Designation:</label>
