@@ -84,7 +84,7 @@ class Questionbank extends MY_Controller
         );
         $where_del['ques_id']=$id;
         $this->Master_model->master_update($education_level_status,'questionbank',$where_del);
-        redirect('admin/questionbank');
+        redirect('admin/questionbank_master');
     }
 
     public function edit_questionbank($id){
