@@ -152,6 +152,7 @@
 				   <label>Option 5:</label>
                     <textarea name="option5" id="option5" class="form-control"><?php if (!empty($edit_questionbank_info)) echo $row['option5'];?></textarea>
                   </div>
+				  <div id="name1">
 				  <div class="col-sm-4">
 				   <label>Correct Answer:</label>
 				   <select name="correct_answer" class="form-control" style="height:100px;">				   
@@ -164,9 +165,9 @@
 				   </select>
 				   </div>
 				  </div>
-				  
+				  </div>
 				 </div>
-				 <div id="name1">
+				 
  				 <div class="col-sm-4">
 				   <label>Answer:</label>
 				   <select name="correct_answer" class="form-control" style="height:100px;">				   
@@ -179,7 +180,7 @@
 				   </select>
 		 
 								</div>
-								</div>
+								
 				  <div class="box-body">
 				   <div class="col-sm-12">
 				  <div class="form-group" id="comp_name" style="display:none;">
