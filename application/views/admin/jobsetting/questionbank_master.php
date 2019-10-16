@@ -340,9 +340,9 @@ function showCheckboxes() {
 	  <script>
   
   
-  
-	   window.onload = hideshowfun()
-	   {
+  function hideshowfun()
+  {
+	   
 	  
       var a = $('#category').val();
       
@@ -362,8 +362,9 @@ function showCheckboxes() {
          $('#name').show();
      } 
      
-	   }
-  
+	   
+  }
+  window.onload=hideshowfun;
 </script>
 	
 <script>
