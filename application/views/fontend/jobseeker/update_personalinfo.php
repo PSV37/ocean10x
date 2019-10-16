@@ -130,7 +130,7 @@
               <input type="hidden" value="<?php echo $js_personal_info->job_personal_info_id; ?>" name="js_personal_info_id">
               
               <div class="row">
-              <div class="col-md-8 col-md-offset-2">
+              <div class="col-md-12">
               	<div class="col-md-6 col-sm-12">
 	              	<div class="input-group">
 	                  <label class="control-label col-sm-3" for="email">Father Name:</label>
