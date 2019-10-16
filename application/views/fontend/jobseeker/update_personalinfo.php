@@ -163,8 +163,8 @@
               	<div class="col-md-6 col-sm-12">
 	              	<div class="input-group">
 	                 <label class="control-label" for="email">Date of Birth:</label>
-	                  <!-- <input type="date" class="datepicker form-control"  required name="date_of_birth" value="<?php echo $js_personal_info->date_of_birth; ?>" class="form-control" > -->
-	                  <input type="text" name="date_of_birth" class="form-control datepickers" id="date_of_birth" required value="<?php echo date('d-m-Y',strtotime($js_personal_info->date_of_birth))?>">
+	                  <input type="date" class="datepicker form-control"  required name="date_of_birth" value="<?php echo $js_personal_info->date_of_birth; ?>">
+	             
 	              	</div>
           		</div>
               <div class="col-md-6 col-sm-12">
@@ -1591,23 +1591,6 @@ $(document).ready(function(){
   getStates_load();
   getCitys_load_permant();
   getStates_load_permant();
-
-
-   
-
-             $( ".datepickers" ).datepicker({
-
-              changeMonth: true,
-
-              changeYear: true,
-
-              dateFormat: 'dd-mm-yy',
-
-              yearRange: '2017:2020',
-
-          });
-
 });
-
 </script>        
       
