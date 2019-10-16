@@ -1,4 +1,11 @@
-
+<style type="text/css">
+  label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+</style>  
 
 
           <div class="section lb">
@@ -1428,6 +1435,12 @@ function FillBilling(f) {
 	f.country1_id.value = f.country_id.value;
     f.state1_id.value = f.state_id.value;
 	f.city1_id.value = f.city_id.value;
+  }else{
+  	
+  	f.parmanent_address.value = '';
+	f.country1_id.value = '';
+    f.state1_id.value ='';
+	f.city1_id.value = '';
   }
 }
 </script>    
