@@ -53,7 +53,7 @@ class Questionbank extends MY_Controller
 				'option3' => $this->input->post('option3'),
 				'option4' => $this->input->post('option4'),
 				'option5' => $this->input->post('option5'),
-				'correct_answer' => $this->input->post('correct_answer'),
+				'correct_answer' => import(",",$this->input->post('correct_answer')),
 				'sub_answer' => $this->input->post('sub_answer'),
             );
 
