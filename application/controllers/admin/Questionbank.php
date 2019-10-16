@@ -53,9 +53,11 @@ class Questionbank extends MY_Controller
 				'option3' => $this->input->post('option3'),
 				'option4' => $this->input->post('option4'),
 				'option5' => $this->input->post('option5')
+				'is_admin' => $this->input->post('is_admin')
             );
 
             if(empty($id)){
+				
                 $state_dt['ques_created_date']=date('Y-m-d H:i:s');
                 $state_dt['ques_created_by']=$user_id;
 

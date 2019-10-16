@@ -210,6 +210,9 @@
 				 </div>
 		 
 								</div>
+								<div class="box-body">
+								<input type="hidden" name="is_admin" value="1" class="form-control"> 
+								</div>
 				  <div class="box-body">
 				   <div class="col-sm-12">
 				  <div class="form-group" id="comp_name" style="display:none;">
