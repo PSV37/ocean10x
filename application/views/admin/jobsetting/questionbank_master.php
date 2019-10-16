@@ -292,6 +292,9 @@
 
 
 </div><!-- /.right-side -->
+
+<?php $this->load->view('admin/components/footer'); ?>
+
 <script>
 var expanded = false;
 
@@ -336,10 +339,7 @@ function showCheckboxes() {
       
   }
 </script>
-	  
-
-       
-<?php $this->load->view('admin/components/footer'); ?>
+	
 <script>
 	  function getTopic(id){
 		
