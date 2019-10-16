@@ -153,9 +153,9 @@
 								   </div>
 								   </div>
                                 </div>
-								
-								<div class="container-fluid">
 								<div id="name">
+								<div class="container-fluid">
+								
 					<div class="form-group">
 			  
 				  
