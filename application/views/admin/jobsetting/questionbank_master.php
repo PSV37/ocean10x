@@ -320,9 +320,9 @@ function showCheckboxes() {
   
   function hideshowfun()
   {
-	   window.onload = function()
+	  
       var a = $('#category').val();
-   
+   window.onload = hideshowfun(); 
       
       if(a=='MCQ')
       {
