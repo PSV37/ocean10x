@@ -191,19 +191,23 @@
 				  <div class="selectBox" onclick="showCheckboxes()">
 				  
 				   <label>Correct Answer:</label>
-				   <select name="correct_answer" class="form-control" style="height:100px;">				   
+				   <select  class="form-control" style="height:100px;">				   
 				    <option>Select an option</option>
 					</select>
 					<div class="overSelect"></div>
 				   </div>
 				   <div id="checkboxes">
       <label for="one">
-        <input type="checkbox" id="one" />First checkbox</label>
+        <input type="checkbox" id="one" name="correct_answer" />Option1</label>
       <label for="two">
-        <input type="checkbox" id="two" />Second checkbox</label>
+        <input type="checkbox" id="two" name="correct_answer" />Option2</label>
       <label for="three">
-        <input type="checkbox" id="three" />Third checkbox</label>
-    </div>
+        <input type="checkbox" id="three" name="correct_answer" />Option3</label>
+	  <label for="four">
+        <input type="checkbox" id="four" name="correct_answer" />Option3</label>
+	  <label for="five">
+        <input type="checkbox" id="three" name="correct_answer" />Option3</label>
+		  </div>
 				   </div>
 				  </div>
 				  </div>
