@@ -37,21 +37,20 @@ class Job_seeker extends MY_Seeker_Controller
                 "date_of_birth"     => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('date_of_birth')))),
                 'nationality'       => $this->input->post('nationality'),
                 'national_id'       => $this->input->post('national_id'),
-				'country_code'            => $this->input->post('country_code'),
+				'country_code'      => $this->input->post('country_code'),
                 'mobile'            => $this->input->post('mobile'),
-				'country_id'   => $this->input->post('country_id'),
-				'state_id'   => $this->input->post('state_id'),
-				'city_id'   => $this->input->post('city_id'),
+				'country_id'        => $this->input->post('country_id'),
+				'state_id'          => $this->input->post('state_id'),
+				'city_id'           => $this->input->post('city_id'),
                 'present_address'   => $this->input->post('present_address'),
-				'country1_id'   => $this->input->post('country1_id'),
-				'state1_id'   => $this->input->post('state1_id'),
-				'city1_id'   => $this->input->post('city1_id'),
+				'country1_id'       => $this->input->post('country1_id'),
+				'state1_id'         => $this->input->post('state1_id'),
+				'city1_id'          => $this->input->post('city1_id'),
                 'parmanent_address' => $this->input->post('parmanent_address'),
 
             );
             if (empty($personal_info_id)) {
                 $this->job_seeker_personal_model->insert($personal_info);
-				
                 redirect('job_seeker/seeker_info',$data);
             } else {
                 $this->job_seeker_personal_model->update($personal_info, $personal_info_id);
@@ -63,13 +62,14 @@ class Job_seeker extends MY_Seeker_Controller
 			$city = $this->Master_model->getMaster('city',$where=false);
 			$country = $this->Master_model->getMaster('country',$where=false);
 			$state = $this->Master_model->getMaster('state',$where=false);
-			$join1 = array(
-						'country' => 'country.country_id = js_personal_info.country1_id|INNER',
-						'state' => 'state.state_id = js_personal_info.state1_id|INNER',
-						'city' => 'city.id = js_personal_info.city1_id|INNER'
+			$where_sek['job_seeker_id'] = $jobseeker_id;
+            $join1 = array(
+				'country' => 'country.country_id = js_personal_info.country1_id|INNER',
+				'state' => 'state.state_id = js_personal_info.state1_id|INNER',
+				'city' => 'city.id = js_personal_info.city1_id|INNER'
 			);
 	       
-			$results = $this->Master_model->get_master_row("js_personal_info", $select = false, $where=false, $join1);
+			$results = $this->Master_model->get_master_row("js_personal_info", $select = false, $where_sek, $join1);
 			//echo $this->db->last_query();
             echo $this->load->view('fontend/jobseeker/update_personalinfo', compact('jobseeker_id', 'js_personal_info', 'city', 'country', 'state', 'results'),true);
         }
