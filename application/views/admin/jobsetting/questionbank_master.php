@@ -342,7 +342,8 @@ function showCheckboxes() {
   
   function hideshowfun()
   {
-	  
+	  alert("Successfully");
+  
       var a = $('#category').val();
       
       if(a=='MCQ')
