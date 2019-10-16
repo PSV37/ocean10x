@@ -1592,5 +1592,20 @@ $(document).ready(function(){
   getCitys_load_permant();
   getStates_load_permant();
 });
+
+
+   $(document).ready(function() {
+
+             $( ".datepicker" ).datepicker({
+
+              changeMonth: true,
+
+              changeYear: true,
+
+              dateFormat: 'dd-mm-yy',
+
+              yearRange: '2017:2020',
+
+          });
 </script>        
       

@@ -177,19 +177,19 @@ function readURL2(input) {
 <script src="<?php echo base_url() ?>asset/js/jquery-ui.js"></script> 
 <script>
 
-                $(document).ready(function() {
+      $(document).ready(function() {
 
-                       $( ".datepicker" ).datepicker({
+             $( ".datepicker" ).datepicker({
 
-                        changeMonth: true,
+              changeMonth: true,
 
-                        changeYear: true,
+              changeYear: true,
 
-                        dateFormat: 'dd-mm-yy',
+              dateFormat: 'dd-mm-yy',
 
-                        yearRange: '2017:2020',
+              yearRange: '2017:2020',
 
-                    });
+          });
 
 
 
