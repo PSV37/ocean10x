@@ -82,7 +82,7 @@ class Questionbank extends MY_Controller
 					$where_update_sub_answer=array();
 					$ans_update['sub_answer']=$this->input->post('sub_answer');
 					$where_update_sub_answer['ques_id']=$q_id;
-					$this->Master_model->master_update($where_update_sub_answer,'questionbank',$where_update_sub_answer);
+					$this->Master_model->master_update($ans_update,'questionbank',$where_update_sub_answer);
 				}
                 redirect('admin/questionbank');
             }
@@ -112,7 +112,7 @@ class Questionbank extends MY_Controller
 					$where_update_sub_answer=array();
 					$ans_update['sub_answer']=$this->input->post('sub_answer');
 					$where_update_sub_answer['ques_id']=$id;
-					$this->Master_model->master_update($where_update_sub_answer,'questionbank',$where_update_sub_answer);
+					$this->Master_model->master_update($ans_update,'questionbank',$where_update_sub_answer);
 				}
                 redirect('admin/questionbank');
             }
