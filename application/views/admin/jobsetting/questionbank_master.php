@@ -186,13 +186,16 @@
 				   <label>Option 5:</label>
                     <textarea name="option5" id="option5" class="form-control"><?php if (!empty($edit_questionbank_info)) echo $row['option5'];?></textarea>
                   </div>
+				  <div class="col-sm-4">
 				  <div class="multiselect">
 				  <div class="selectBox" onclick="showCheckboxes()">
-				  <div class="col-sm-4">
+				  
 				   <label>Correct Answer:</label>
 				   <select name="correct_answer" class="form-control" style="height:100px;">				   
-				   <option>Select an option</option>	
-				   </select>
+				    <option>Select an option</option>
+					</select>
+					<div class="overSelect"></div>
+				   </div>
 				   <div id="checkboxes">
       <label for="one">
         <input type="checkbox" id="one" />First checkbox</label>
@@ -201,12 +204,9 @@
       <label for="three">
         <input type="checkbox" id="three" />Third checkbox</label>
     </div>
-  </div>
-				   </div>
-				   </div>
 				   </div>
 				  </div>
-				  
+				  </div>
 				 </div>
 		 
 								</div>
