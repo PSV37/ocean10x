@@ -107,6 +107,7 @@
 									<select  name="ques_type" class="form-control" onchange='hideshowfun()' id="category">
 									                                      
                                         <option value="MCQ Single"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ Single')echo "selected";?>>MCQ Single</option>
+										<option value="MCQ Multiple"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ Multiple')echo "selected";?>>MCQ Multiple</option>
 										<option value="Subjective"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Subjective')echo "selected";?>>Subjective</option>
 										<option value="Practical"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Practical')echo "selected";?>>Practical</option>
 								
@@ -165,6 +166,18 @@
 				  </div>
 				  
 				 </div>
+				 
+				 <div class="col-sm-4">
+				   <label>Answer:</label>
+				   <select name="correct_answer" class="form-control" style="height:100px;">				   
+				   <option value="Option1"<?php if (!empty($edit_questionbank_info)) if($row['correct_answer']=='Option1')echo "selected";?>>Option1</option>
+				  <option value="Option2"<?php if (!empty($edit_questionbank_info)) if($row['correct_answer']=='Option2')echo "selected";?>>Option2</option>
+				  <option value="Option3"<?php if (!empty($edit_questionbank_info)) if($row['correct_answer']=='Option3')echo "selected";?>>Option3</option>
+				  <option value="Option4"<?php if (!empty($edit_questionbank_info)) if($row['correct_answer']=='Option4')echo "selected";?>>Option4</option>
+				  <option value="Option5"<?php if (!empty($edit_questionbank_info)) if($row['correct_answer']=='Option5')echo "selected";?>>Option5</option>
+								
+				   </select>
+		 
 								</div>
 				  <div class="box-body">
 				   <div class="col-sm-12">
@@ -272,6 +285,15 @@
       }
      else{
          $('#name').show();
+     } 
+	 
+	 
+	  if(a=='MCQ Single')
+      {
+          $('#name1').hide();
+      }
+     else{
+         $('#name1').show();
      } 
      
       
