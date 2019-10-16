@@ -167,7 +167,7 @@
 				  </div>
 				  </div>
 				 </div>
-				 
+				 <div id="comp_name" style="display:none;">
  				 <div class="col-sm-4">
 				   <label>Answer:</label>
 				   <select name="correct_answer" class="form-control" style="height:100px;">				   
@@ -183,13 +183,14 @@
 								
 				  <div class="box-body">
 				   <div class="col-sm-12">
-				  <div class="form-group" id="comp_name" style="display:none;">
+				  <div class="form-group">
                  
 				  <label>Answer:</label>
                     <textarea name="sub_answer" id="sub_answer" class="form-control" style="height:100px;"><?php if (!empty($edit_questionbank_info)) echo $row['sub_answer'];?></textarea>
                   </div>
 				  
                 </div>	
+				</div>
 				</div>
                                 <div class="panel-body"></div>
                                 <button type="submit" class="btn bg-navy" type="submit">Save Question
@@ -273,7 +274,7 @@
       var a = $('#category').val();
    
       
-      if(a=='MCQ Single')
+      if(a=='MCQ Single' | 'MCQ Single')
       {
           $('#comp_name').hide();
       }
@@ -288,16 +289,7 @@
      else{
          $('#name').show();
      } 
-	 
-	 
-	  if(a=='MCQ Single')
-      {
-          $('.name1').hide();
-      }
-     else{
-         $('.name1').show();
-     } 
-     
+	    
       
   }
 </script>
