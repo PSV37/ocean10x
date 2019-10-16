@@ -183,17 +183,25 @@
                   </div>
                 </div>
 				</div>
-			
-				<br/><div class="form-group">
+				<div class="container-fluid">
+				<div class="form-group">
 				
-				  <div class="col-sm-4">
+				  <div class="col-sm-12">
 				   <label>Option 4:</label>
-                    <textarea name="option4" id="option4" class="form-control"><?php if (!empty($edit_questionbank_info)) echo $row['option4'];?></textarea>
+                    <textarea name="option4" id="option4" class="form-control ckeditor"><?php if (!empty($edit_questionbank_info)) echo $row['option4'];?></textarea>
                   </div>
-                  <div class="col-sm-4">
+				  </div>
+				  </div>
+				  <div class="container-fluid">
+				  <div class="form-group">
+                  <div class="col-sm-12">
 				   <label>Option 5:</label>
-                    <textarea name="option5" id="option5" class="form-control"><?php if (!empty($edit_questionbank_info)) echo $row['option5'];?></textarea>
+                    <textarea name="option5" id="option5" class="form-control ckeditor"><?php if (!empty($edit_questionbank_info)) echo $row['option5'];?></textarea>
                   </div>
+				  </div>
+				  </div>
+				  <div class="container-fluid">
+				  <div class="form-group">
 				  <div class="col-sm-4">
 				  <div class="multiselect">
 				  <div class="selectBox" onclick="showCheckboxes()">
@@ -219,18 +227,20 @@
 				   </div>
 				  </div>
 				  </div>
-				 </div>
+				  </div>
+				  </div>
+				 
 		 
 								
 								<div class="box-body">
 								<input type="hidden" name="is_admin" value="1" class="form-control"> 
 								</div>
-				  <div class="box-body">
+				  <div class="container-fluid">
 				   <div class="col-sm-12">
 				  <div class="form-group" id="comp_name" style="display:none;">
                  
 				  <label>Answer:</label>
-                    <textarea name="sub_answer" id="sub_answer" class="form-control" style="height:100px;"><?php if (!empty($edit_questionbank_info)) echo $row['sub_answer'];?></textarea>
+                    <textarea name="sub_answer" id="sub_answer" class="form-control ckeditor" style="height:100px;"><?php if (!empty($edit_questionbank_info)) echo $row['sub_answer'];?></textarea>
                   </div>
 				  
                 </div>	
