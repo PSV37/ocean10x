@@ -317,7 +317,7 @@ function showCheckboxes() {
       var a = $('#category').val();
    
       
-      if(a=='MCQ Single')
+      if(a=='MCQ')
       {
           $('#comp_name').hide();
       }
