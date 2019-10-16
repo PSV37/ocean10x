@@ -135,7 +135,7 @@
 								 <div class="col-md-4">
                                     <div class="form-group">
 									<label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
-									<select  name="ques_type" class="form-control" onload="hideshowfun()" id="category">
+									<select  name="ques_type" class="form-control" onload="myFunction()" id="category">
 									                                      
                                         <option value="MCQ"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ')echo "selected";?>>MCQ</option>
 										<option value="Subjective"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Subjective')echo "selected";?>>Subjective</option>
@@ -342,7 +342,6 @@ function showCheckboxes() {
   
   function hideshowfun()
   {
-	  alert("Successfully");
   
       var a = $('#category').val();
       
@@ -364,6 +363,13 @@ function showCheckboxes() {
      
       
   }
+</script>
+<script>
+function myFunction()
+{
+	
+	alert("successfully...");
+}
 </script>
 	
 <script>
