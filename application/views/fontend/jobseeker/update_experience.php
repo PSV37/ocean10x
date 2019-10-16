@@ -242,8 +242,6 @@ if (!empty($experinece->start_date)) {
                 <div class="col-sm-9">
                   <input  id="demo-input-facebook-theme" name="company_profile_id" class="form-control">
                 </div>
-                <div>
-    </div>
 
             </div>
 
