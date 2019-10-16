@@ -598,13 +598,13 @@ exit;*/
 
     // this function is for search side bar menus in header
     function get_autocomplete(){
-        
+
         $query=$this->input->get('query');
         $where="company_name like '%$query%'";
         $select="company_name as 'name'";
         $result= $this->Master_model->getMaster('company_profile',$where,false,false,false,$select);
         //echo $this->db->last_query();
-        echo json_encode($result); die;
+        echo json_encode($result); 
     }
 
 
