@@ -206,7 +206,7 @@
 				  <div class="multiselect">
 				  <div class="selectBox" onclick="showCheckboxes()">
 				  
-				   <label>Correct Answer:</label>
+				   <label>Correct Answer: <span class="required">*</span></label>
 				   <select  class="form-control" style="height:100px;">				   
 				    <option>Select an option</option>
 					</select>
