@@ -64,7 +64,8 @@ class Questionbank extends MY_Controller
 					$tablename='questionbank_answer';
 					$where_delete['question_id']=$q_id;
 					$this->Master_model->master_delete($tablename, $where_delete);
-					$c_answer=$_POST['correct_answer'];
+					$c_answer=$this->input->post('correct_answer');
+					var_dump($c_answer); die;
 					for($i=0;$i<sizeof($c_answer);$i++){
 						$data_answer=array();
 						$data_answer['question_id']=$q_id;
@@ -84,7 +85,7 @@ class Questionbank extends MY_Controller
 					$tablename='questionbank_answer';
 					$where_delete['question_id']=$id;
 					$this->Master_model->master_delete($tablename, $where_delete);
-					$c_answer=$_POST['correct_answer'];
+					$c_answer=$this->input->post('correct_answer');
 					for($i=0;$i<sizeof($c_answer);$i++){
 						$data_answer=array();
 						$data_answer['question_id']=$id;
