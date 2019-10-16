@@ -64,9 +64,9 @@ class Job_seeker extends MY_Seeker_Controller
 			$state = $this->Master_model->getMaster('state',$where=false);
 			$where_sek['job_seeker_id'] = $jobseeker_id;
             $join1 = array(
-						'country' => 'country.country_id = js_personal_info.country1_id|INNER',
-						'state' => 'state.state_id = js_personal_info.state1_id|INNER',
-						'city' => 'city.id = js_personal_info.city1_id|INNER'
+				'country' => 'country.country_id = js_personal_info.country1_id|INNER',
+				'state' => 'state.state_id = js_personal_info.state1_id|INNER',
+				'city' => 'city.id = js_personal_info.city1_id|INNER'
 			);
 	       
 			$results = $this->Master_model->get_master_row("js_personal_info", $select = false, $where_sek, $join1);
