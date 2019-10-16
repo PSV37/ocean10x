@@ -183,7 +183,7 @@
 								
 				  <div class="box-body">
 				   <div class="col-sm-12">
-				  <div class="form-group" id="comp_name name1" style="display:none;">
+				  <div class="form-group" id="comp_name" style="display:none;">
                  
 				  <label>Answer:</label>
                     <textarea name="sub_answer" id="sub_answer" class="form-control" style="height:100px;"><?php if (!empty($edit_questionbank_info)) echo $row['sub_answer'];?></textarea>
@@ -292,10 +292,10 @@
 	 
 	  if(a=='MCQ Single')
       {
-          $('#name1').hide();
+          $('.name1').hide();
       }
      else{
-         $('#name1').show();
+         $('.name1').show();
      } 
      
       
