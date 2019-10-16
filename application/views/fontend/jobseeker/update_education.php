@@ -352,6 +352,7 @@
                       data:{id:id},
                       success:function(res){
                         $('#job_edu_special').html(res);
+                        $('#specialization_id').html(res);
                       }
               
                   }); 
