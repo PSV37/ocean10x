@@ -120,7 +120,7 @@
                                         </select> </div>
 									</div>
 									</div>
-									 <div class="box-body">
+									 <div class="container-fluid">
 									 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Level<span class="required">*</span></label>
@@ -145,11 +145,11 @@
 									 </div>
                                 </div>
 								</div>
-								<div class="box-body">
+								<div class="container-fluid">
 									<div class="col-md-12">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Question<span class="required">*</span></label>
-									 <textarea name="question" id="question" class="form-control ckeditor" style="height:100px;" required><?php if (!empty($edit_questionbank_info)) echo $row['question'];?></textarea>
+									 <textarea name="question" id="question" class="form-control ckeditor"  required><?php if (!empty($edit_questionbank_info)) echo $row['question'];?></textarea>
 								   </div>
 								   </div>
                                 </div>
