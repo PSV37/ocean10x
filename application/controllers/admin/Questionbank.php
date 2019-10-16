@@ -73,6 +73,17 @@ class Questionbank extends MY_Controller
 						 $this->Master_model->master_insert($data_answer,'questionbank_answer');
 					}
 				}
+				
+				if($this->input->post('ques_type')=='Subjective'){
+					$tablename='questionbank_answer';
+					$where_delete['question_id']=$q_id;
+					$this->Master_model->master_delete($tablename, $where_delete);
+					
+					$where_update_sub_answer=array();
+					$ans_update['sub_answer']=$this->input->post('sub_answer');
+					$where_update_sub_answer['ques_id']=$q_id;
+					$this->Master_model->master_update($where_update_sub_answer,'questionbank',$where_update_sub_answer);
+				}
                 redirect('admin/questionbank');
             }
             else {
@@ -92,6 +103,16 @@ class Questionbank extends MY_Controller
 						$data_answer['answer_id']=$c_answer[$i];
 						 $this->Master_model->master_insert($data_answer,'questionbank_answer');
 					}
+				}
+				if($this->input->post('ques_type')=='Subjective'){
+					$tablename='questionbank_answer';
+					$where_delete['question_id']=$id;
+					$this->Master_model->master_delete($tablename, $where_delete);
+					
+					$where_update_sub_answer=array();
+					$ans_update['sub_answer']=$this->input->post('sub_answer');
+					$where_update_sub_answer['ques_id']=$id;
+					$this->Master_model->master_update($where_update_sub_answer,'questionbank',$where_update_sub_answer);
 				}
                 redirect('admin/questionbank');
             }
