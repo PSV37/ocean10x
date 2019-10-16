@@ -164,18 +164,20 @@
                     <textarea name="option1" id="option1" class="form-control ckeditor"><?php if (!empty($edit_questionbank_info)) echo $row['option1'];?></textarea>
                   </div>
 				  </div>
-				  <br/>
+				  </div>
 				  <div class="container-fluid">
+				  <div class="col-sm-12">
 				  <div class="form-group">
-                  <div class="col-sm-12">
+                  
 				   <label>Option 2:</label>
                     <textarea name="option2" id="option2" class="form-control ckeditor"><?php if (!empty($edit_questionbank_info)) echo $row['option2'];?></textarea>
                   </div>
 				  </div>
 				  </div>
 				  <div class="container-fluid">
+				   <div class="col-sm-12">
 				  <div class="form-group">
-                  <div class="col-sm-12">
+                 
 				   <label>Option 3:</label>
                     <textarea name="option3" id="option3" class="form-control ckeditor"><?php if (!empty($edit_questionbank_info)) echo $row['option3'];?></textarea>
                   </div>
