@@ -166,8 +166,8 @@
 				  </div>
 				  
 				 </div>
-				 
-				 <div class="col-sm-4">
+				 <div id="name1">
+ 				 <div class="col-sm-4">
 				   <label>Answer:</label>
 				   <select name="correct_answer" class="form-control" style="height:100px;">				   
 				   <option value="Option1"<?php if (!empty($edit_questionbank_info)) if($row['correct_answer']=='Option1')echo "selected";?>>Option1</option>
@@ -178,6 +178,7 @@
 								
 				   </select>
 		 
+								</div>
 								</div>
 				  <div class="box-body">
 				   <div class="col-sm-12">
