@@ -274,7 +274,7 @@
       var a = $('#category').val();
    
       
-      if(a=='MCQ Single' | 'MCQ Single')
+      if(a=='MCQ Single' | 'MCQ Multiple')
       {
           $('#comp_name').hide();
       }
