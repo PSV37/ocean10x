@@ -163,7 +163,8 @@
               	<div class="col-md-6 col-sm-12">
 	              	<div class="input-group">
 	                 <label class="control-label" for="email">Date of Birth:</label>
-	                  <input type="date" class="datepicker form-control"  required name="date_of_birth" value="<?php echo $js_personal_info->date_of_birth; ?>" class="form-control" >
+	                  <!-- <input type="date" class="datepicker form-control"  required name="date_of_birth" value="<?php echo $js_personal_info->date_of_birth; ?>" class="form-control" > -->
+	                  <input type="text" name="date_of_birth" class="form-control datepicker" id="job_deadline_day" required value="<?php echo date('d-m-Y',strtotime($js_personal_info->date_of_birth))?>">
 	              	</div>
           		</div>
               <div class="col-md-6 col-sm-12">
@@ -1436,7 +1437,7 @@ function FillBilling(f) {
     f.state1_id.value = f.state_id.value;
 	f.city1_id.value = f.city_id.value;
   }else{
-  	
+
   	f.parmanent_address.value = '';
 	f.country1_id.value = '';
     f.state1_id.value ='';
