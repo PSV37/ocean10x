@@ -74,7 +74,7 @@ class Questionbank extends MY_Controller
 					}
 				}
 				
-				if($this->inwhere_update_sub_answerput->post('ques_type')=='Subjective'){
+				if($this->input->post('ques_type')=='Subjective'){
 					$tablename='questionbank_answer';
 					$where_delete['question_id']=$q_id;
 					$this->Master_model->master_delete($tablename, $where_delete);
@@ -104,7 +104,7 @@ class Questionbank extends MY_Controller
 						 $this->Master_model->master_insert($data_answer,'questionbank_answer');
 					}
 				}
-				if($this->inwhere_update_sub_answerput->post('ques_type')=='Subjective'){
+				if($this->input->post('ques_type')=='Subjective'){
 					$tablename='questionbank_answer';
 					$where_delete['question_id']=$id;
 					$this->Master_model->master_delete($tablename, $where_delete);
