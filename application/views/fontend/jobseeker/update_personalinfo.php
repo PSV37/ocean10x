@@ -770,14 +770,16 @@
               </div>
             </div>    
             <div class="panel-body"></div>          
-              <button type="submit" class="btn btn-default">Submit</button>
+             
               </div>
               </div>
+               <div class="modal-footer">
+               	 <button type="submit" class="btn btn-default">Submit</button>
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      </div>
             </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
+     
     </div>
 
   </div>
