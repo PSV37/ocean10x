@@ -191,12 +191,14 @@
 				  <div class="col-sm-4">
 				   <label>Correct Answer:</label>
 				   <select name="correct_answer" class="form-control" style="height:100px;">				   
-				   <option value="Option1"<?php if (!empty($edit_questionbank_info)) if($row['correct_answer']=='Option1')echo "selected";?>>Option1</option>
-				  <option value="Option2"<?php if (!empty($edit_questionbank_info)) if($row['correct_answer']=='Option2')echo "selected";?>>Option2</option>
-				  <option value="Option3"<?php if (!empty($edit_questionbank_info)) if($row['correct_answer']=='Option3')echo "selected";?>>Option3</option>
-				  <option value="Option4"<?php if (!empty($edit_questionbank_info)) if($row['correct_answer']=='Option4')echo "selected";?>>Option4</option>
-				  <option value="Option5"<?php if (!empty($edit_questionbank_info)) if($row['correct_answer']=='Option5')echo "selected";?>>Option5</option>
-								
+				    <div id="checkboxes">
+      <label for="one">
+        <input type="checkbox" id="one" />First checkbox</label>
+      <label for="two">
+        <input type="checkbox" id="two" />Second checkbox</label>
+      <label for="three">
+        <input type="checkbox" id="three" />Third checkbox</label>
+    </div>	
 				   </select>
 				   </div>
 				   </div>
