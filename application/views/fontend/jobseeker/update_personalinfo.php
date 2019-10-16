@@ -1591,10 +1591,9 @@ $(document).ready(function(){
   getStates_load();
   getCitys_load_permant();
   getStates_load_permant();
-});
 
 
-   $(document).ready(function() {
+   
 
              $( ".datepicker" ).datepicker({
 
@@ -1607,5 +1606,8 @@ $(document).ready(function(){
               yearRange: '2017:2020',
 
           });
+
+});
+
 </script>        
       
