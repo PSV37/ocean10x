@@ -154,7 +154,7 @@
 								   </div>
                                 </div>
 								<br/>
-								<div class="box-body">
+								<div class="container-fluid">
 								<div id="name">
 					<div class="form-group">
 			  
