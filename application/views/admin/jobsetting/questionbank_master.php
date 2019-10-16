@@ -153,7 +153,7 @@
 								   </div>
 								   </div>
                                 </div>
-								<br/>
+								
 								<div class="container-fluid">
 								<div id="name">
 					<div class="form-group">
@@ -167,7 +167,7 @@
 				  <br/>
 				  <div class="container-fluid">
 				  <div class="form-group">
-                  <div class="col-md-12">
+                  <div class="col-sm-12">
 				   <label>Option 2:</label>
                     <textarea name="option2" id="option2" class="form-control ckeditor"><?php if (!empty($edit_questionbank_info)) echo $row['option2'];?></textarea>
                   </div>
@@ -175,13 +175,13 @@
 				  </div>
 				  <div class="container-fluid">
 				  <div class="form-group">
-                  <div class="col-md-12">
+                  <div class="col-sm-12">
 				   <label>Option 3:</label>
                     <textarea name="option3" id="option3" class="form-control ckeditor"><?php if (!empty($edit_questionbank_info)) echo $row['option3'];?></textarea>
                   </div>
                 </div>
 				</div>
-				<br/>
+			
 				<br/><div class="form-group">
 				
 				  <div class="col-sm-4">
