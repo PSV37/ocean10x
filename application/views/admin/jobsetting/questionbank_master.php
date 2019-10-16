@@ -159,19 +159,27 @@
 					<div class="form-group">
 			  
 				  
-				 <div class="col-sm-4">
+				 <div class="col-sm-12">
 				   <label>Option 1:</label>
-                    <textarea name="option1" id="option1" class="form-control"><?php if (!empty($edit_questionbank_info)) echo $row['option1'];?></textarea>
+                    <textarea name="option1" id="option1" class="form-control ckeditor"><?php if (!empty($edit_questionbank_info)) echo $row['option1'];?></textarea>
                   </div>
-                  <div class="col-sm-4">
+				  </div>
+				  <div class="container-fluid">
+				  <div class="form-group">
+                  <div class="col-sm-12">
 				   <label>Option 2:</label>
-                    <textarea name="option2" id="option2" class="form-control"><?php if (!empty($edit_questionbank_info)) echo $row['option2'];?></textarea>
+                    <textarea name="option2" id="option2" class="form-control ckeditor"><?php if (!empty($edit_questionbank_info)) echo $row['option2'];?></textarea>
                   </div>
-                  <div class="col-sm-4">
+				  </div>
+				  </div>
+				  <div class="container-fluid">
+				  <div class="form-group">
+                  <div class="col-sm-12">
 				   <label>Option 3:</label>
-                    <textarea name="option3" id="option3" class="form-control"><?php if (!empty($edit_questionbank_info)) echo $row['option3'];?></textarea>
+                    <textarea name="option3" id="option3" class="form-control ckeditor"><?php if (!empty($edit_questionbank_info)) echo $row['option3'];?></textarea>
                   </div>
                 </div>
+				</div>
 				<br/><hr/>
 				<br/><div class="form-group">
 				
@@ -210,7 +218,7 @@
 				  </div>
 				 </div>
 		 
-								</div>
+								
 								<div class="box-body">
 								<input type="hidden" name="is_admin" value="1" class="form-control"> 
 								</div>
