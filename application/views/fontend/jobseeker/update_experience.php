@@ -343,7 +343,7 @@ if (!empty($experinece->start_date)) {
 </div>
 <script type="text/javascript">
     $(document).ready(function() {
-        $("#demo-input").tokenInput("<?php echo base_url(); ?>admin/get_autocomplete");
+        $("#demo-input").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocomplete");
     });
     </script>
 
