@@ -596,4 +596,20 @@ exit;*/
          echo $result;
     }
 
+    // this function is for search side bar menus in header
+    function get_autocomplete(){
+
+       $jsondata = $this->Master_model->getMaster('company_profile');
+            
+        foreach ($jsondata as $row)
+        {
+            $hasil[] = $row;
+            // $hasil[] = $row->url;
+        }
+        echo json_encode($hasil);
+    }
+
+
+
+
 } //end function

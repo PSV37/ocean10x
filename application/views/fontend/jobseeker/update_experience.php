@@ -244,12 +244,8 @@ if (!empty($experinece->start_date)) {
                 </div>
                 <div>
 
-                    <script type="text/javascript">
-        $(document).ready(function() {
-            $("#demo-input").tokenInput("search.php");
-        });
-        </script>
-       
+
+             
       
     </div>
 
@@ -345,7 +341,11 @@ if (!empty($experinece->start_date)) {
 
   </div>
 </div>
-
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#demo-input").tokenInput("<?php echo base_url(); ?>admin/get_autocomplete");
+    });
+    </script>
 
 
   <script type="text/javascript">
