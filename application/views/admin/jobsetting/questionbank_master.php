@@ -132,7 +132,7 @@
 									 </select>
 									 </div>
                                 </div>
-								<div onload="myFunction()"></div>
+								<input type="text" onload="myFunction()">
 								 <div class="col-md-4">
                                     <div class="form-group">
 									<label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
