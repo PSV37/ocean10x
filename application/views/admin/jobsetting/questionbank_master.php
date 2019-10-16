@@ -194,15 +194,15 @@
 				   </div>
 				   <div id="checkboxes">
       <label for="one">
-        <input type="checkbox" id="one" name="correct_answer[]" />Option1</label>
+        <input type="checkbox" id="one" name="correct_answer[]" value="Option1"/>Option1</label>
       <label for="two">
-        <input type="checkbox" id="two" name="correct_answer[]" />Option2</label>
+        <input type="checkbox" id="two" name="correct_answer[]" value="Option2"/>Option2</label>
       <label for="three">
-        <input type="checkbox" id="three" name="correct_answer[]" />Option3</label>
+        <input type="checkbox" id="three" name="correct_answer[]" value="Option3"/>Option3</label>
 	  <label for="four">
-        <input type="checkbox" id="four" name="correct_answer[]" />Option4</label>
+        <input type="checkbox" id="four" name="correct_answer[]" value="Option4"/>Option4</label>
 	  <label for="five">
-        <input type="checkbox" id="three" name="correct_answer[]" />Option5</label>
+        <input type="checkbox" id="three" name="correct_answer[]" value="Option5"/>Option5</label>
 		  </div>
 				   </div>
 				  </div>
