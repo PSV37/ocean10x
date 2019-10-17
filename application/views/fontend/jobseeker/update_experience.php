@@ -340,15 +340,15 @@ if (!empty($experinece->start_date)) {
 
      <!-- <input type="text" id="demo-input-facebook-theme" name="blah2" /> -->
        
-        <script type="text/javascript">
-        $(document).ready(function() {
-            $("#demo-input-facebook-theme").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocomplete", {
-                theme: "facebook"
-            });
-        });
-        </script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#demo-input-facebook-theme").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocomplete", {
+        theme: "facebook"
+    });
+});
+</script>
 <style>
-  ul.ui-autocomplete {
+  ul.ui-tokenInput {
       z-index: 1100;
   }
 </style>
