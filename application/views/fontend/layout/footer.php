@@ -168,7 +168,7 @@ function readURL2(input) {
 </script> 
 <script src="<?php echo base_url() ?>fontend/js/bootstrap.min.js "></script> 
 <!-- token input js -->
-<!-- <script src="<?php echo base_url(); ?>asset/src/jquery.tokeninput.js"></script> -->
+<script src="<?php echo base_url(); ?>asset/src/jquery.tokeninput.js"></script>
 
 <script src="<?php echo base_url() ?>fontend/js/owl.carousel.min.js "></script> 
 <script src="<?php echo base_url() ?>fontend/js/all.js "></script> 

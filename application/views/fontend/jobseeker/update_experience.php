@@ -272,11 +272,11 @@ if (!empty($experinece->start_date)) {
                 <label class="control-label col-sm-3" for="email">Department:</label>
                 <div class="col-sm-9">
                  	<select  name="dept_id" class="form-control">
-					<option value="">Select Department</option>
-					<?php foreach($department as $depts){?>
-					<option value="<?php echo $depts['dept_id']; ?>"><?php echo $depts['department_name']; ?></option>
-					<?php } ?>
-				  </select>
+          					<option value="">Select Department</option>
+          					<?php foreach($department as $depts){?>
+          					<option value="<?php echo $depts['dept_id']; ?>"><?php echo $depts['department_name']; ?></option>
+          					<?php } ?>
+        				  </select>
 
                 </div>
               </div>
