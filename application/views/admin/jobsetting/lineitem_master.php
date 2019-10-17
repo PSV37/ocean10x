@@ -94,7 +94,7 @@
                                     <div class="form-group">
 									<div class="col-md-12">
                                         <label for="exampleInputEmail1">Lineitem(Level-1)<span class="required">*</span></label>
-                                      <textarea name="lineitem1" class="form-control" required><?php if (!empty($edit_lineitem_info)) echo $row['lineitem1'];?></textarea>
+                                      <textarea name="lineitem1" class="form-control ckeditor" required><?php if (!empty($edit_lineitem_info)) echo $row['lineitem1'];?></textarea>
                                     </div>
 									</div>
                                 </div>
@@ -103,7 +103,7 @@
                                     <div class="form-group">
 									<div class="col-md-12">
                                         <label for="exampleInputEmail1">Lineitem(Level-2)<span class="required">*</span></label>
-                                      <textarea name="lineitem2" class="form-control" required><?php if (!empty($edit_lineitem_info)) echo $row['lineitem2'];?></textarea>
+                                      <textarea name="lineitem2" class="form-control ckeditor" required><?php if (!empty($edit_lineitem_info)) echo $row['lineitem2'];?></textarea>
                                     </div>
 									</div>
                                 </div>
