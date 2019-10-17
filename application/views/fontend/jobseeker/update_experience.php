@@ -348,7 +348,7 @@ $(document).ready(function() {
 });
 </script>
 <style>
-  ul.ui-tokenInput {
+  ul.tokenInput {
       z-index: 1100;
   }
 </style>
