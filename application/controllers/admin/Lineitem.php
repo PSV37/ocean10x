@@ -48,12 +48,12 @@ class Lineitem extends MY_Controller
           
             $user_id = $this->session->userdata('admin_user_id');
 			 $where_subtopics= "subtopic.subtopic_status=1";
-             $subtopic= $this->Master_model->getMaster('subtopic',$where_subtopics);
+             $sub=['subtopic'] = $this->Master_model->getMaster('subtopic',$where_subtopics);
             $state_dt=array(
 				
 				'title' => $this->input->post('title'),
 				'lineitem_desc' => $this->input->post('lineitem_desc'),
-				'subtopic_id'=$subtopic;
+				'subtopic_id'=$sub;
             );
 
             if(empty($id)){
