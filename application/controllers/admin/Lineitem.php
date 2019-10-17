@@ -58,7 +58,7 @@ class Lineitem extends MY_Controller
             $state_dt=array(
 				'technical_id' => $this->input->post('technical_id'),
 				'topic_id' => $this->input->post('topic_id'),
-				'subtopic' => $this->input->post('subtopic'),
+				'subtopic_id' => $this->input->post('subtopic_id'),
 				'title' => $this->input->post('title'),
 				'lineitem_desc' => $this->input->post('lineitem_desc'),
 				//'subtopic_id'=$subtopic;
