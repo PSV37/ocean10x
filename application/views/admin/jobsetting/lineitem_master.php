@@ -77,7 +77,7 @@
 
                                 <!-- <div class="col-md-4">
 								  <div class="form-group">
-                                        <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>-->
+                                        <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
                                      <select id="subtopic_id"  name="subtopic_id" class="form-control" hidden>
                                            <option value="">Select Subopic</option> 
                                         <?php if (!empty($subtopic))
@@ -87,7 +87,7 @@
                                              <option value="<?php echo $st_rows['subtopic_id']; ?>"<?php if (!empty($subtopic)) if($row['subtopic_id']==$st_rows['subtopic_id'])echo "selected";?>><?php echo $st_rows['subtopic_name']; ?></option> 
                                        <?php } ?>
                                         </select>
-										<!--</div>
+										</div>
 									</div>
 									</div>-->
 									 <div class="box-body">
