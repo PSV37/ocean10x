@@ -214,17 +214,35 @@
 					<div class="overSelect"></div>
 				   </div>
 				   <div id="checkboxes">
-      <label for="one">
-        <input type="checkbox" id="one" name="correct_answer[]" value="1" <?php if (!empty($edit_questionbank_info)) if(in_array['correct_answer']=='1')  echo "checked"; ?>/>&nbsp;Option1</label>
+      <!--<label for="one">
+        <input type="checkbox" id="one" name="correct_answer[]" value="1" <?php if (!empty($edit_questionbank_info)) if($row['correct_answer']=='1')echo "checked";?>/>&nbsp;Option1</label>
       <label for="two">
-        <input type="checkbox" id="two" name="correct_answer[]" value="2" <?php if (!empty($edit_questionbank_info)) if(in_array['correct_answer']=='2')   echo "checked";  ?>/>&nbsp;Option2</label>
+        <input type="checkbox" id="two" name="correct_answer[]" value="2" <?php if (!empty($edit_questionbank_info)) if($row['correct_answer']=='2')echo "checked";?>/>&nbsp;Option2</label>
       <label for="three">
-       <input type="checkbox" id="three" name="correct_answer[]" value="3" <?php if (!empty($edit_questionbank_info)) if(in_array['correct_answer']=='3')  echo "checked";  ?>/>&nbsp;Option3</label>
+        <input type="checkbox" id="three" name="correct_answer[]" value="3" <?php if (!empty($edit_questionbank_info)) if($row['correct_answer']=='3')echo "checked";?>/>&nbsp;Option3</label>
 	  <label for="four">
-       <input type="checkbox" id="four" name="correct_answer[]" value="4" <?php if (!empty($edit_questionbank_info)) if(in_array['correct_answer']=='4')   echo "checked";  ?>/>&nbsp;Option4</label>
+        <input type="checkbox" id="four" name="correct_answer[]" value="4" <?php if (!empty($edit_questionbank_info)) if($row['correct_answer']=='4')echo "checked";?>/>&nbsp;Option4</label>
 	  <label for="five">
-       <input type="checkbox" id="three" name="correct_answer[]" value="5" <?php if (!empty($edit_questionbank_info)) if(in_array['correct_answer']=='5')  echo "checked"; ?>/>&nbsp;Option5</label>
-		  </div>
+        <input type="checkbox" id="three" name="correct_answer[]" value="5" <?php if (!empty($edit_questionbank_info)) if($row['correct_answer']=='5')echo "checked";?>/>&nbsp;Option5</label>-->
+		 
+			<?php 
+				  if(!empty($options))
+					foreach($options as $key){
+						$checked="";
+						for($i=0;$i<sizeof($questionbank_answer);$i++){
+							if($key['options_id']==$questionbank_answer[$i]['answer_id']){
+								$checked ="checked";
+								break;
+							}
+						}
+						 
+					?>
+                    <input type="checkbox" <?php echo $checked; ?> name="correct_answer[]" id="correct_answer[]" value="<?php echo $key['options_id'];?>">&nbsp;&nbsp;<?php echo $key['options_type']; ?>&nbsp;
+				<?php
+					}
+				?>
+			
+		 </div>
 				   </div>
 				  </div>
 				  </div>
