@@ -22,8 +22,8 @@ class Questionbank extends MY_Controller
         $where_cn= "status=1";
         $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where_cn);
 		
-		$where_opt= "options.status=1";
-        $data['options'] = $this->Master_model->getMaster('options',$where_opt);
+		//$where_opt= "options.status=1";
+        $data['options'] = $this->Master_model->getMaster('options');
 		
         $where_state= "topic.topic_status=1";
         $data['topic'] = $this->Master_model->getMaster('topic',$where_state);
@@ -137,7 +137,7 @@ class Questionbank extends MY_Controller
 
     public function edit_questionbank($id){
         $data['title']="Edit Questionbank";
-		$where_opt= "options.status=1";
+		//$where_opt= "options.status=1";
         $data['options'] = $this->Master_model->getMaster('options',$where_opt);
         $where_all = "questionbank.ques_status='1'";
         $join_emp = array(
