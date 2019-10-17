@@ -104,7 +104,8 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Company Name:</label>
                 <div class="col-sm-9">
-                <input type="text" class="form-control"  required name="company_profile_id" value="<?php if (!empty($experinece->company_profile_id)) { echo $experinece->company_profile_id;} ?>">
+                <input type="text" class="form-control"  id="edit_company_profile_id" required name="company_profile_id" value="<?php if (!empty($experinece->company_profile_id)) { echo $experinece->company_profile_id;} ?>">
+
                 </div>
               </div>
 
@@ -238,8 +239,8 @@ if (!empty($experinece->start_date)) {
             <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Company Name:</label>
                 <div class="col-sm-9">
-                  <!-- <input type="text" id="" name="company_profile_id" class="form-control"> -->
-                   <input type="text" id="demo-input-onadd-ondelete" name="company_profile_id" class="form-control">
+                  <input type="text" id="company_profile_id" name="company_profile_id" class="form-control">
+                   <!-- <input type="text" id="demo-input-onadd-ondelete" name="company_profile_id" class="form-control"> -->
                 </div>
 
             </div>
@@ -340,15 +341,16 @@ if (!empty($experinece->start_date)) {
 
   </div>
 </div>
+
+
 <!--  <div class="form-group pull-left">
               <input type="text" id="demo-input-onadd-ondelete" >
             </div>  -->
 
   <script type="text/javascript">
-  $(document).ready(function() {
-      $("#demo-input-onadd-ondelete").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocomplete", {
-       // theme: "facebook",
-        zindex: 9999
+  // $(document).ready(function() {
+  //     $("#demo-input-onadd-ondelete").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocomplete", {
+  //       zindex: 9999
        
           // onAdd: function (item) {
             //alert(item.name);
@@ -357,15 +359,29 @@ if (!empty($experinece->start_date)) {
           //     alert("Deleted " + item.name);
           // }
 
-      });
-  }); 
-  </script>
+  //     });
+  // }); 
+    $(function() {
+      $("#company_profile_id").autocomplete({
+          source: "<?php echo base_url('job_seeker/get_autocomplete'); ?>",
+          select: function(a,b)
+            {
+              $(this).val(b.item.value); //grabed the selected value
+            }
+        });
+    });
 
-<!-- <style>
-ul.tokenInput {
-      z-index: 9999;
-  }
-</style> -->
+    $(function() {
+      $("#edit_company_profile_id").autocomplete({
+          source: "<?php echo base_url('job_seeker/get_autocomplete'); ?>",
+          select: function(a,b)
+            {
+              $(this).val(b.item.value); //grabed the selected value
+            }
+        });
+    });
+
+  </script>
 
   <script type="text/javascript">
 
@@ -530,4 +546,10 @@ for(var i =1; i < max_experience; i++){
    }
 }
 
-           </script>
+</script>
+
+<style>
+  ul.ui-autocomplete {
+      z-index: 1100;
+  }
+</style>
