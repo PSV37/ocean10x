@@ -1,6 +1,6 @@
 <footer class="main-footer">
       
-        <strong>Copyright &copy; <?php echo date("Y") ?> Jobcareers.</strong> All rights reserved.
+        <strong>Copyright &copy; <?php echo date("Y") ?> ConsultnHire.</strong> All rights reserved.
       </footer>
       
  </div><!-- ./wrapper -->
