@@ -61,7 +61,7 @@ class Lineitem extends MY_Controller
             }
             else {
                 $state_dt['lineitem_updated_date']=date('Y-m-d H:i:s');
-                $state_dt['line_updated_by']=$user_id;
+                $state_dt['lineitem_updated_by']=$user_id;
 
                 $where['lineitem_id']=$id;
                 $this->Master_model->master_update($state_dt,'lineitem',$where);
