@@ -368,11 +368,11 @@ $(document).ready(function() {
     });
 });
 </script>
-<style>
+<!-- <style>
   ul.ui.tokenInput {
       z-index: 9999;
   }
-</style>
+</style> -->
 
   <script type="text/javascript">
 
