@@ -101,7 +101,7 @@ class Lineitem extends MY_Controller
         $data['edit_lineitem_info'] = $this->Master_model->getMaster('lineitem',$where_ct);
         
 		$where_sub = "subtopic_id='$id'";
-		$data['edit_questionbank_info'] = $this->Master_model->getMaster('lineitem',$where_sub);
+		$data['edit_subtopic_info'] = $this->Master_model->getMaster('subtopic',$where_sub);
 		
         $where_cn= "status=1";
         $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where_cn);
