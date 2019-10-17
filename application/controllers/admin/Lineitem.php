@@ -58,12 +58,12 @@ class Lineitem extends MY_Controller
             $state_dt=array(
 				'technical_id' => $this->input->post('technical_id'),
 				'topic_id' => $this->input->post('topic_id'),
-				
+				'subtopic_id' => $subtopic,
 				'title' => $this->input->post('title'),
 				'lineitem_desc' => $this->input->post('lineitem_desc'),
 				//'subtopic_id'=$subtopic;
             );
-			'subtopic_id'=$subtopic;
+
             if(empty($id)){
                 $state_dt['lineitem_created_date']=date('Y-m-d H:i:s');
                 $state_dt['lineitem_created_by']=$user_id;
