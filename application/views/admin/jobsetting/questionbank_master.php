@@ -209,7 +209,7 @@
 				  
 				   <label>Correct Answer: <span class="required">*</span></label>
 				   <select  class="form-control" style="height:100px;">				   
-				  <option>Select Option</option>
+				  <option>Select option</option>
 					</select>
 					<div class="overSelect"></div>
 				   </div>
