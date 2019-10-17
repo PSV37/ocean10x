@@ -541,4 +541,10 @@ for(var i =1; i < max_experience; i++){
    }
 }
 
-           </script>
+</script>
+
+<style>
+  ul.ui-autocomplete {
+      z-index: 1100;
+  }
+</style>
