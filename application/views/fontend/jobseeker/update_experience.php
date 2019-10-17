@@ -361,7 +361,7 @@ if (!empty($experinece->start_date)) {
   </script>
 
 <style>
-.tokenInput {
+ul.tokenInput {
       z-index: 9999;
   }
 </style>
