@@ -242,13 +242,11 @@ if (!empty($experinece->start_date)) {
             <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Company Name:</label>
                 <div class="col-sm-9">
-                  <input  id="demo-input-facebook-theme" name="company_profile_id" class="form-control">
+                  <input type="text" id="demo-input-facebook-theme" name="company_profile_id" class="form-control">
                 </div>
 
             </div>
-            <div class="form-group pull-left">
-              <input type="text" id="demo-input-onadd-ondelete" >
-            </div> 
+           
 
 
         <div class="form-group">
@@ -341,7 +339,9 @@ if (!empty($experinece->start_date)) {
 
   </div>
 </div>
-
+ <div class="form-group pull-left">
+              <input type="text" id="demo-input-onadd-ondelete" >
+            </div> 
 
 <!-- <script src="<?php echo base_url() ?>asset/jc/js/jquery.min.js"></script>  -->
   <script type="text/javascript">
@@ -359,7 +359,7 @@ if (!empty($experinece->start_date)) {
   }); 
   </script>
 
-     <input type="text" id="demo-input-facebook-theme" name="blah2" />
+     <!-- <input type="text" id="demo-input-facebook-theme" name="blah2" /> -->
        
 <script type="text/javascript">
 $(document).ready(function() {
@@ -368,11 +368,11 @@ $(document).ready(function() {
     });
 });
 </script>
-<!-- <style>
+<style>
   ul.ui.tokenInput {
       z-index: 9999;
   }
-</style> -->
+</style>
 
   <script type="text/javascript">
 
