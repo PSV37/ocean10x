@@ -104,12 +104,7 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Company Name:</label>
                 <div class="col-sm-9">
-				<select  name="company_profile_id" class="form-control">
-					<option value="">Select Organization</option>
-					<?php foreach($company_profile as $key){?>
-					<option value="<?php echo $key['company_profile_id']; ?>"<?php if($experinece->company_profile_id==$key['company_profile_id']){ echo "selected"; }?>><?php echo $key['company_name']; ?></option>
-					<?php } ?>
-				  </select>
+                <input type="text" class="form-control"  required name="company_profile_id" value="<?php if (!empty($experinece->company_profile_id)) { echo $experinece->company_profile_id);} ?>">
                 </div>
               </div>
 
