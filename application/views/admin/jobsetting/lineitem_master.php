@@ -45,10 +45,10 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
 									<div class="box-body">
 
-                                <div class="col-md-4">
+                               <!-- <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
-                                        <select id="subject"  name="technical_id" class="form-control" required onchange="getTopic(this.value)">
+                                        <label for="exampleInputEmail1">Subject <span class="required">*</span></label>-->
+                                        <select id="subject"  name="technical_id" class="form-control" required onchange="getTopic(this.value)" hidden>
                                            <option value="">Select Subject</option> 
                                         <?php if (!empty($skill_master))
                                            foreach($skill_master as $skill) 
@@ -57,13 +57,13 @@
                                             <option value="<?php echo $skill['id']; ?>"<?php if (!empty($subtopic)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option> 
                                         <?php } ?>
                                         </select>
-										</div>
-                                </div>
+										<!--</div>
+                                </div>--
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Topic <span class="required">*</span></label>
-                                        <select id="topic_id"  name="topic_id" class="form-control" required onchange="getSubtopic(this.value)">
+                                        <label for="exampleInputEmail1">Topic <span class="required">*</span></label>-->
+                                        <select id="topic_id"  name="topic_id" class="form-control" required onchange="getSubtopic(this.value)" hidden>
                                            <option value="">Select Topic</option> 
                                         <?php if (!empty($topic))
                                            foreach($topic as $st_row) 
@@ -72,13 +72,13 @@
                                             <option value="<?php echo $st_row['topic_id']; ?>"<?php if (!empty($subtopic)) if($row['topic_id']==$st_row['topic_id'])echo "selected";?>><?php echo $st_row['topic_name']; ?></option> 
                                         <?php } ?>
                                         </select>
-                                    </div>
+                                   <!-- </div>
                                 </div>
 
                                  <div class="col-md-4">
 								  <div class="form-group">
-                                        <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
-                                     <select id="subtopic_id"  name="subtopic_id" class="form-control" required>
+                                        <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>-->
+                                     <select id="subtopic_id"  name="subtopic_id" class="form-control" hidden>
                                            <option value="">Select Subopic</option> 
                                         <?php if (!empty($subtopic))
                                            foreach($subtopic as $st_rows) 
@@ -86,9 +86,10 @@
                                         ?>   
                                              <option value="<?php echo $st_rows['subtopic_id']; ?>"<?php if (!empty($subtopic)) if($row['subtopic_id']==$st_rows['subtopic_id'])echo "selected";?>><?php echo $st_rows['subtopic_name']; ?></option> 
                                        <?php } ?>
-                                        </select> </div>
+                                        </select>
+										<!--</div>
 									</div>
-									</div>
+									</div>-->
 									 <div class="box-body">
 
                                     <div class="form-group">
