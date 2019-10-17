@@ -21,7 +21,7 @@
                                 <tbody>
                                   <tr>
                                     <td width="30%">Compnay Name:</td>
-                                    <td><?php echo $v_experience->company_name; ?></td>
+                                    <td><?php echo $v_experience->company_profile_id; ?></td>
                                   </tr>
 
                                   <tr>
