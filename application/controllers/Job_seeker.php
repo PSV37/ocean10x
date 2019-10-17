@@ -597,31 +597,27 @@ exit;*/
     }
 
     // this function is for search side bar menus in header
-    function get_autocomplete(){
+    // function get_autocomplete(){
 
-        $query=$this->input->get('term');
-        $whereauto="company_name like '%$query%'";
-        $selectauto="company_profile_id as id, company_name as name";
-        $result= $this->Master_model->getMaster('company_profile',$whereauto,false,false,false,$selectauto);
-        // echo $this->db->last_query();
-        echo json_encode($result); 
-    }
-
-    // function searchCity(){
-    //     if (isset($_GET['term'])) {
-
-    //         $whereauto="company_name like '%$query%'";
-    //         $selectauto="company_profile_id as id, company_name as name";
-    //         $result= $this->Master_model->getMaster('company_profile',$whereauto,false,false,false,$selectauto);
-            
-    //         $result = $this->Admin_model->search_city($_GET['term']);
-    //         if (count($result) > 0) {
-    //         foreach ($result as $row)
-    //             $arr_result[] = $row->city;
-    //             echo json_encode($arr_result);
-    //         }
-    //     }
+    //     $query=$this->input->get('term');
+    //     $whereauto="company_name like '%$query%'";
+    //     $selectauto="company_profile_id as id, company_name as name";
+    //     $result= $this->Master_model->getMaster('company_profile',$whereauto,false,false,false,$selectauto);
+    //     // echo $this->db->last_query();
+    //     echo json_encode($result); 
     // }
+
+    function get_autocomplete(){
+        if (isset($_GET['term'])) {
+
+            $result = $this->Admin_model->search_country($_GET['term']);
+            if (count($result) > 0) {
+            foreach ($result as $row)
+                $arr_result[] = $row->company_name;
+                echo json_encode($arr_result);
+            }
+        }
+    }
 
 
 
