@@ -30,13 +30,8 @@ class Lineitem extends MY_Controller
             $where_subtopic= "subtopic.subtopic_status=1";
             $data['subtopic'] = $this->Master_model->getMaster('subtopic',$where_subtopic);
             
-            $where_all = "lineitem.lineitem_status='1'";
-            $join_emp = array(
-                    'skill_master' => 'skill_master.id=lineitem.technical_id |INNER',
-                    'topic' => 'topic.topic_id=lineitem.topic_id |INNER',
-                    'subtopic' => 'subtopic.subtopic_id=lineitem.subtopic_id |INNER',
-                );
-            $data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_all,$join_emp);
+            
+            $data['lineitem'] = $this->Master_model->getMaster('lineitem');
 
             $this->load->view('admin/jobsetting/lineitem_master', $data);
                 
@@ -66,11 +61,9 @@ class Lineitem extends MY_Controller
             $user_id = $this->session->userdata('admin_user_id');
             
             $state_dt=array(
-                'technical_id' => $this->input->post('technical_id'),
-                'topic_id' => $this->input->post('topic_id'),
                 'subtopic_id' => $this->input->post('subtopic_id'),
-				'lineitem1' => $this->input->post('lineitem1'),
-				'lineitem2' => $this->input->post('lineitem2'),
+				'title' => $this->input->post('title'),
+				'lineitem_desc' => $this->input->post('lineitem_desc'),
             );
 
             if(empty($id)){
@@ -105,13 +98,8 @@ class Lineitem extends MY_Controller
    $data['title']="Edit Lineitem";
 		
         
-        $where_all = "lineitem.lineitem_status='1'";
-        $join_emp = array(
-                'skill_master' => 'skill_master.id=lineitem.technical_id |INNER',
-                'topic' => 'topic.topic_id=lineitem.topic_id |INNER',
-				'subtopic' => 'subtopic.subtopic_id=lineitem.subtopic_id |INNER',
-            );
-        $data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_all,$join_emp);
+        
+        $data['lineitem'] = $this->Master_model->getMaster('lineitem');
 		
         $where_ct = "lineitem_id='$id'";
         $data['edit_lineitem_info'] = $this->Master_model->getMaster('lineitem',$where_ct);

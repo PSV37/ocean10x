@@ -43,67 +43,21 @@
 
                         <div class="col-md-12 col-sm-12 col-xs-12">
 
-                          <div class="box-body">
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
-                                        <select id="subject"  name="technical_id" class="form-control" required onchange="getTopic(this.value)">
-                                           <option value="">Select Subject</option> 
-                                        <?php if (!empty($skill_master))
-                                           foreach($skill_master as $skill) 
-                                           {
-                                        ?>   
-                                            <option value="<?php echo $skill['id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option> 
-                                        <?php } ?>
-                                        </select>
-										</div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Topic <span class="required">*</span></label>
-                                        <select id="topic_id"  name="topic_id" class="form-control" required onchange="getSubtopic(this.value)">
-                                           <option value="">Select Topic</option> 
-                                        <?php if (!empty($topic))
-                                           foreach($topic as $st_row) 
-                                           {
-                                        ?>   
-                                            <option value="<?php echo $st_row['topic_id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['topic_id']==$st_row['topic_id'])echo "selected";?>><?php echo $st_row['topic_name']; ?></option> 
-                                        <?php } ?>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                 <div class="col-md-4">
-								  <div class="form-group">
-                                        <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
-                                     <select id="subtopic_id"  name="subtopic_id" class="form-control" required>
-                                           <option value="">Select Subopic</option> 
-                                        <?php if (!empty($subtopic))
-                                           foreach($subtopic as $st_rows) 
-                                           {
-                                        ?>   
-                                             <option value="<?php echo $st_rows['subtopic_id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['subtopic_id']==$st_rows['subtopic_id'])echo "selected";?>><?php echo $st_rows['subtopic_name']; ?></option> 
-                                       <?php } ?>
-                                        </select> </div>
-									</div>
-									</div>
 									 <div class="box-body">
 
                                     <div class="form-group">
 									<div class="col-md-12">
-                                        <label for="exampleInputEmail1">Lineitem(Level-1)<span class="required">*</span></label>
-                                      <textarea name="lineitem1" class="form-control ckeditor" required><?php if (!empty($edit_lineitem_info)) echo $row['lineitem1'];?></textarea>
-                                    </div>
+                                        <label for="exampleInputEmail1">Title<span class="required">*</span></label>
+                                      <input type="text" name="title" id="title"  class="form-control" value="<?php if (!empty($edit_subtopic_info)) echo $row['title'];?>" required/>
+                                     </div>
 									</div>
                                 </div>
 								 <div class="box-body">
 
                                     <div class="form-group">
 									<div class="col-md-12">
-                                        <label for="exampleInputEmail1">Lineitem(Level-2)<span class="required">*</span></label>
-                                      <textarea name="lineitem2" class="form-control ckeditor" required><?php if (!empty($edit_lineitem_info)) echo $row['lineitem2'];?></textarea>
+                                        <label for="exampleInputEmail1">Description<span class="required">*</span></label>
+                                      <textarea name="lineitem_desc" id="lineitem_desc" class="form-control ckeditor" required><?php if (!empty($edit_lineitem_info)) echo $row['lineitem2'];?></textarea>
                                     </div>
 									</div>
                                 </div>
@@ -181,108 +135,7 @@
 
        
 <?php $this->load->view('admin/components/footer'); ?>
-	   <script>
-    function getTopic(id){
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>admin/questionbank/gettopic',
-                data:{id:id},
-                success:function(res){
-                    $('#topic_id').html(res);
-                }
-                
-            }); 
-          }
-   
-       }
 
-    $(document).ready(function(){
-
-
-
-    function getTopic_load(){
-        var id = $('#subject').val();
-
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>admin/questionbank/gettopic',
-                data:{id:id},
-                success:function(res){
-                    $('#topic_id').html(res);
-                    $('#topic_id').val(<?php echo $row['topic_id']; ?>);
-                }
-                
-            }); 
-          }
-   
-       }
-       getTopic_load();
-    });
-       
-</script>
-	   
-	    <!--<script>
-	  function getSubtopic(id){
-		if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>admin/questionbank/getsubtopic',
-                data:{id:id},
-                success:function(res){
-                    $('#subtopic_id').html(res);
-                }
-				
-            }); 
-          }
-   
-	   }
-	   
-	   </script>-->
-	   
-	   
-	   <script>
-    function getSubtopic(id){
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>admin/lineitem/getsubtopic',
-                data:{id:id},
-                success:function(res){
-                    $('#subtopic_id').html(res);
-                }
-                
-            }); 
-          }
-   
-       }
-
-    $(document).ready(function(){
-
-
-
-    function getSubtopic_load(){
-        var id = $('#topic_id').val();
-
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>admin/lineitem/getsubtopic',
-                data:{id:id},
-                success:function(res){
-                    $('#subtopic_id').html(res);
-                    $('#subtopic_id').val(<?php echo $row['subtopic_id']; ?>);
-                }
-                
-            }); 
-          }
-   
-       }
-       getSubtopic_load();
-    });
-       
-</script>
 <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
 <script>
 $("#subject").select2( {
