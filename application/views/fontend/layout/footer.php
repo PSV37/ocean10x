@@ -6,7 +6,7 @@
       <div class="row"> 
         <div class="col-md-3 col-sm-3">
         	
-        	<h5>About Career Portal</h5>
+        	<h5>About ConsultnHire</h5>
             <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
         </div>
         <!--Quick Links-->
@@ -44,7 +44,7 @@
 <!--Copyright-->
 
 <div class="copyright">
-  <div class="bttxt">Copyright <span>&copy;</span> <?php echo date("Y"); ?> Career Portal. All rights reserved.</div>
+  <div class="bttxt">Copyright <span>&copy;</span> <?php echo date("Y"); ?> ConsultnHire. All rights reserved.</div>
 </div>
 
 <!--<div class="dmtop "><i class="fa fa-angle-up "></i></div>-->
