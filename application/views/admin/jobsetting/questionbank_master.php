@@ -427,7 +427,7 @@ function showCheckboxes() {
        
 </script>
 	   
-	    <script>
+	    <!--<script>
 	  function getSubtopic(id){
 		if(id){
             $.ajax({
@@ -443,7 +443,7 @@ function showCheckboxes() {
    
 	   }
 	   
-	   </script>
+	   </script>-->
        
 </script>
 <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
