@@ -599,7 +599,7 @@ exit;*/
     // this function is for search side bar menus in header
     function get_autocomplete(){
 
-        $query=$this->input->get('q');
+        $query=$this->input->get('term');
         $whereauto="company_name like '%$query%'";
         $selectauto="company_profile_id as id, company_name as name";
         $result= $this->Master_model->getMaster('company_profile',$whereauto,false,false,false,$selectauto);
