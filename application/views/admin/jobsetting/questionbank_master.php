@@ -213,7 +213,7 @@
 					</select>
 					<div class="overSelect"></div>
 				   </div>
-				   <div id="checkboxes">
+				  <!-- <div id="checkboxes">
       <!--<label for="one">
         <input type="checkbox" id="one" name="correct_answer[]" value="1" <?php if (!empty($edit_questionbank_info)) if($row['correct_answer']=='1')echo "checked";?>/>&nbsp;Option1</label>
       <label for="two">
@@ -242,7 +242,7 @@
 					}
 				?>
 			
-		 </div>
+		<!-- </div>-->
 				   </div>
 				  </div>
 				  </div>
