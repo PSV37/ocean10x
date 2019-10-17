@@ -76,7 +76,7 @@ class Lineitem extends MY_Controller
             'lineitem_status'=>0,
         );
         $where_del['lineitem_id']=$id;
-        $this->Master_model->master_update($state_status,'lineitem',$where_del);
+        $this->Master_model->master_update($lineitem_status,'lineitem',$where_del);
         redirect('admin/lineitem');
     }
   public function edit_lineitem($id){
