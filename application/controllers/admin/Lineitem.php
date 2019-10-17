@@ -27,7 +27,7 @@ class Lineitem extends MY_Controller
             $where_topic= "topic.topic_status=1";
             $data['topic'] = $this->Master_model->getMaster('topic',$where_topic);
             
-            $where_subtopic= "subtopic.subtopic_status=1";
+            $where_subtopic= "subtopic.subtopic_status=1 AND subtopic.subtopic_id ='$id'";
             $data['subtopic'] = $this->Master_model->getMaster('subtopic',$where_subtopic);
             
             
@@ -50,9 +50,9 @@ class Lineitem extends MY_Controller
 			 // $where_subtopics= "subtopic.subtopic_status=1";
     //          $subtopic = $this->Master_model->getMaster('subtopic',$where_subtopics);
 
-             //$where_req_skill="subtopic.subtopic_id ='$id'";
-               // $select_skill = "skill_master.skill_name";
-            //$req_skill_details = $this->Master_model->getMaster('subtopic', $where_req_skill, $join=false, $order = false, $field = false, $select_skill=false,$limit=false,$start=false, $search=false);
+            //  $where_req_skill="subtopic.subtopic_id ='$id'";
+            //    $select_skill = "skill_master.skill_name";
+            // $req_skill_details = $this->Master_model->getMaster('subtopic', $where_req_skill, $join=false, $order = false, $field = false, $select_skill=false,$limit=false,$start=false, $search=false);
 
             //print_r($req_skill_details); die;
             $state_dt=array(
