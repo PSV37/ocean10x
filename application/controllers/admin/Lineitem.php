@@ -36,7 +36,7 @@ class Lineitem extends MY_Controller
             $this->load->view('admin/jobsetting/lineitem_master', $data);
                 
             } else {
-                redirect('admin/lineitem');
+                redirect('admin/subtopic');
             }
 
        
@@ -77,7 +77,7 @@ class Lineitem extends MY_Controller
                 $where['lineitem_id']=$id;
                 $this->Master_model->master_update($state_dt,'lineitem',$where);
                
-                redirect('admin/lineitem');
+                redirect('admin/subtopic');
             }
         }
 
