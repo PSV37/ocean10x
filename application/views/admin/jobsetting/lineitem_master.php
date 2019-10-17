@@ -35,7 +35,7 @@
                 <!-- /.box-header -->
                 <div class="box-background">
                 <!-- form start -->
-                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/lineitem/save_lineitem/<?php  if (!empty($edit_subtopic_info)) { foreach($edit_subtopic_info as $row)
+                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/lineitem/save_lineitem/<?php  if (!empty($subtopic)) { foreach($subtopic as $row)
                         echo $row['subtopic_id'];
                       }
                      ?>" method="post">
@@ -54,7 +54,7 @@
                                            foreach($skill_master as $skill) 
                                            {
                                         ?>   
-                                            <option value="<?php echo $skill['id']; ?>"<?php if (!empty($edit_subtopic_info)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option> 
+                                            <option value="<?php echo $skill['id']; ?>"<?php if (!empty($subtopic)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option> 
                                         <?php } ?>
                                         </select>
 										</div>
@@ -69,7 +69,7 @@
                                            foreach($topic as $st_row) 
                                            {
                                         ?>   
-                                            <option value="<?php echo $st_row['topic_id']; ?>"<?php if (!empty($edit_subtopic_info)) if($row['topic_id']==$st_row['topic_id'])echo "selected";?>><?php echo $st_row['topic_name']; ?></option> 
+                                            <option value="<?php echo $st_row['topic_id']; ?>"<?php if (!empty($subtopic)) if($row['topic_id']==$st_row['topic_id'])echo "selected";?>><?php echo $st_row['topic_name']; ?></option> 
                                         <?php } ?>
                                         </select>
                                     </div>
@@ -84,7 +84,7 @@
                                            foreach($subtopic as $st_rows) 
                                            {
                                         ?>   
-                                             <option value="<?php echo $st_rows['subtopic_id']; ?>"<?php if (!empty($edit_subtopic_info)) if($row['subtopic_id']==$st_rows['subtopic_id'])echo "selected";?>><?php echo $st_rows['subtopic_name']; ?></option> 
+                                             <option value="<?php echo $st_rows['subtopic_id']; ?>"<?php if (!empty($subtopic)) if($row['subtopic_id']==$st_rows['subtopic_id'])echo "selected";?>><?php echo $st_rows['subtopic_name']; ?></option> 
                                        <?php } ?>
                                         </select> </div>
 									</div>
@@ -94,7 +94,7 @@
                                     <div class="form-group">
 									<div class="col-md-12">
                                         <label for="exampleInputEmail1">Title<span class="required">*</span></label>
-                                      <input type="text" name="title" id="title"  class="form-control" value="<?php if (!empty($edit_subtopic_info)) echo $row['title'];?>" required/>
+                                      <input type="text" name="title" id="title"  class="form-control" value="<?php if (!empty($subtopic)) echo $row['title'];?>" required/>
                                      </div>
 									</div>
                                 </div>

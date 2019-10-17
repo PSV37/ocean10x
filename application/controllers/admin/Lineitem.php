@@ -100,8 +100,8 @@ class Lineitem extends MY_Controller
         $where_ct = "lineitem_id='$id'";
         $data['edit_lineitem_info'] = $this->Master_model->getMaster('lineitem',$where_ct);
         
-		$where_sub = "subtopic_id='$id'";
-		$data['edit_subtopic_info'] = $this->Master_model->getMaster('subtopic',$where_sub);
+		//$where_sub = "subtopic_id='$id'";
+		//$data['edit_subtopic_info'] = $this->Master_model->getMaster('subtopic',$where_sub);
 		
         $where_cn= "status=1";
         $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where_cn);
@@ -109,7 +109,7 @@ class Lineitem extends MY_Controller
         $where_state= "topic_status=1";
         $data['topic'] = $this->Master_model->getMaster('topic',$where_state);
         
-		$where_subtopic = "subtopic.subtopic_status='1'";
+		$where_subtopic = "subtopic.subtopic_status='1' AND subtopic.subtopic_id ='$id'";
 		$data['subtopic'] = $this->Master_model->getMaster('subtopic',$where_subtopic);
 		
 		
