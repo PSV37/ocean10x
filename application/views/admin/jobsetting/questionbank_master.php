@@ -444,6 +444,49 @@ function showCheckboxes() {
 	   }
 	   
 	   </script>-->
+	   
+	   
+	   <script>
+    function getSubtopic(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/questionbank/getsubtopic',
+                data:{id:id},
+                success:function(res){
+                    $('#subtopic_id').html(res);
+                }
+                
+            }); 
+          }
+   
+       }
+
+    $(document).ready(function(){
+
+
+
+    function getSubtopic_load(){
+        var id = $('#topic_id').val();
+
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/questionbank/getsubtopic',
+                data:{id:id},
+                success:function(res){
+                    $('#subtopic_id').html(res);
+                    $('#subtopic_id').val(<?php echo $row['subtopic_id']; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+       getSubtopic_load();
+    });
+       
+</script>
        
 </script>
 <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
