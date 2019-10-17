@@ -238,8 +238,8 @@ if (!empty($experinece->start_date)) {
             <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Company Name:</label>
                 <div class="col-sm-9">
-                  <!-- <input type="text" id="" name="company_profile_id" class="form-control"> -->
-                   <input type="text" id="demo-input-onadd-ondelete" name="company_profile_id" class="form-control">
+                  <input type="text" id="company_profile_id" name="company_profile_id" class="form-control">
+                   <!-- <input type="text" id="demo-input-onadd-ondelete" name="company_profile_id" class="form-control"> -->
                 </div>
 
             </div>
@@ -340,15 +340,16 @@ if (!empty($experinece->start_date)) {
 
   </div>
 </div>
+
+
 <!--  <div class="form-group pull-left">
               <input type="text" id="demo-input-onadd-ondelete" >
             </div>  -->
 
   <script type="text/javascript">
-  $(document).ready(function() {
-      $("#demo-input-onadd-ondelete").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocomplete", {
-       // theme: "facebook",
-        zindex: 9999
+  // $(document).ready(function() {
+  //     $("#demo-input-onadd-ondelete").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocomplete", {
+  //       zindex: 9999
        
           // onAdd: function (item) {
             //alert(item.name);
@@ -357,8 +358,18 @@ if (!empty($experinece->start_date)) {
           //     alert("Deleted " + item.name);
           // }
 
-      });
-  }); 
+  //     });
+  // }); 
+    $(function() {
+      $("#company_profile_id").autocomplete({
+           source: "<?php echo base_url('job_seeker/get_autocomplete'); ?>",
+          select: function(a,b)
+            {
+                $(this).val(b.item.value); //grabed the selected value
+                // getCityInfo(b.item.value);//passed that selected value
+            }
+        });
+    });
   </script>
 
 <!-- <style>
