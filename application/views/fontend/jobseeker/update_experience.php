@@ -347,11 +347,11 @@ $(document).ready(function() {
     });
 });
 </script>
-<style>
+<!-- <style>
   ul.tokenInput {
       z-index: 1100;
   }
-</style>
+</style> -->
 
   <script type="text/javascript">
 
