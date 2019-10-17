@@ -134,7 +134,7 @@
 
 
 </div><!-- /.right-side -->
-<br/><br/><br/>
+<br/><br/><br/><br/>
        
 <?php $this->load->view('admin/components/footer'); ?>
 
