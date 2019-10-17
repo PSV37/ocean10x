@@ -347,9 +347,9 @@ if (!empty($experinece->start_date)) {
   <script type="text/javascript">
   $(document).ready(function() {
       $("#demo-input-onadd-ondelete").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocomplete", {
-          // tokenLimit: 1,
+       
           onAdd: function (item) {
-            window.location.href='<?php echo base_url(); ?>'+ item.url;
+           alert(item.name);
           },
           onDelete: function (item) {
               alert("Deleted " + item.name);
@@ -359,7 +359,7 @@ if (!empty($experinece->start_date)) {
   }); 
   </script>
 
-     <!-- <input type="text" id="demo-input-facebook-theme" name="blah2" /> -->
+     <input type="text" id="demo-input-facebook-theme" name="blah2" />
        
 <script type="text/javascript">
 $(document).ready(function() {
