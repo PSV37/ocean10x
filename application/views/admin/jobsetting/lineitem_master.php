@@ -24,7 +24,7 @@
                <section class="content">
     <div class="row">
         <div class="col-md-12">
-             <?php print_r($subtopic); ?> 
+            
 
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
@@ -36,7 +36,7 @@
                 <div class="box-background">
                 <!-- form start -->
                 <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/lineitem/save_lineitem/<?php  if (!empty($subtopic)) { foreach($subtopic as $row)
-                        echo $row['subtopic_id'];
+                        echo $row['lineitem_id'];
                       }
                      ?>" method="post">
 
