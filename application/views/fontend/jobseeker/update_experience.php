@@ -353,7 +353,11 @@ if (!empty($experinece->start_date)) {
           },
           onDelete: function (item) {
               alert("Deleted " + item.name);
-          }
+          },
+preventDuplicates: true, 
+hintText: "Add friends",
+z-index: 9999
+
       });
   }); 
   </script>
@@ -363,7 +367,9 @@ if (!empty($experinece->start_date)) {
 <script type="text/javascript">
 $(document).ready(function() {
     $("#demo-input-facebook-theme").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocomplete", {
-        theme: "facebook"
+        theme: "facebook",preventDuplicates: true, 
+hintText: "Add friends",
+z-index: 9999
     });
 });
 </script>
