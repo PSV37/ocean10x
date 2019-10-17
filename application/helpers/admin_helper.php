@@ -229,4 +229,9 @@ if (!function_exists('redirect_back')) {
         }
 
         }
+		
+$this->load->helper('checkbox');
+
+// set post values to zero for unchecked boxes
+fix_unchecked(['is_active', 'is_enabled', 'is_verified']);
 }
