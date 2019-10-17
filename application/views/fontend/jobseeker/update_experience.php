@@ -340,13 +340,13 @@ if (!empty($experinece->start_date)) {
   </div>
 </div>
  <div class="form-group pull-left">
-              <input type="text" id="demo-input-onadd-ondelete" >
+              <input type="text" id="demo-input-facebook-theme" >
             </div> 
 
 <!-- <script src="<?php echo base_url() ?>asset/jc/js/jquery.min.js"></script>  -->
   <script type="text/javascript">
   $(document).ready(function() {
-      $("#demo-input-onadd-ondelete").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocomplete", {
+      $("#demo-input-facebook-theme").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocomplete", {
         theme: "facebook",
        
           // onAdd: function (item) {
