@@ -342,7 +342,7 @@ if (!empty($experinece->start_date)) {
   <input type="text" id="demo-input-onadd-ondelete" >
 </div> 
 
-<script src="<?php echo base_url() ?>asset/jc/js/jquery.min.js"></script> 
+<!-- <script src="<?php echo base_url() ?>asset/jc/js/jquery.min.js"></script>  -->
   <script type="text/javascript">
   $(document).ready(function() {
       $("#demo-input-onadd-ondelete").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocomplete", {
