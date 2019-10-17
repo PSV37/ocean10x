@@ -47,7 +47,7 @@
 
                                <!-- <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Subject <span class="required">*</span></label>-->
+                                        <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
                                         <select id="subject"  name="technical_id" class="form-control" required onchange="getTopic(this.value)">
                                            <option value="">Select Subject</option> 
                                         <?php if (!empty($skill_master))
@@ -57,12 +57,12 @@
                                             <option value="<?php echo $skill['id']; ?>"<?php if (!empty($subtopic)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option> 
                                         <?php } ?>
                                         </select>
-										<!--</div>
-                                </div>--
+										</div>
+                                </div>-->
 
-                                <div class="col-md-4">
+                               <!-- <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Topic <span class="required">*</span></label>-->
+                                        <label for="exampleInputEmail1">Topic <span class="required">*</span></label>
                                         <select id="topic_id"  name="topic_id" class="form-control" required onchange="getSubtopic(this.value)" hidden>
                                            <option value="">Select Topic</option> 
                                         <?php if (!empty($topic))
@@ -72,10 +72,10 @@
                                             <option value="<?php echo $st_row['topic_id']; ?>"<?php if (!empty($subtopic)) if($row['topic_id']==$st_row['topic_id'])echo "selected";?>><?php echo $st_row['topic_name']; ?></option> 
                                         <?php } ?>
                                         </select>
-                                   <!-- </div>
-                                </div>
+                                    </div>
+                                </div>-->
 
-                                 <div class="col-md-4">
+                                <!-- <div class="col-md-4">
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>-->
                                      <select id="subtopic_id"  name="subtopic_id" class="form-control" hidden>
