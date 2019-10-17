@@ -14,7 +14,7 @@ class Lineitem extends MY_Controller
     }
 
     /*** Dashboard ***/
-    public function index($id = null)
+    public function index()
     {   
 
         $data['title'] = 'Add Lineitems';
@@ -35,17 +35,8 @@ class Lineitem extends MY_Controller
 				'subtopic' => 'subtopic.subtopic_id=lineitem.subtopic_id |INNER',
             );
         $data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_all,$join_emp);
-        if(empty($id))
-        {
-             $this->load->view('admin/jobsetting/lineitem_master', $data);
-        }else{
-             $this->load->view('admin/jobsetting/lineitem_master/'.$id, $data);
-             // redirect('admin/add_leadremark?lead_id='.$leadId); 
 
-
-
-        }
-       
+        $this->load->view('admin/jobsetting/lineitem_master', $data);
     }
 
         public function save_lineitem($id = null){
@@ -75,7 +66,8 @@ class Lineitem extends MY_Controller
                 $where['lineitem_id']=$id;
                 $this->Master_model->master_update($state_dt,'lineitem',$where);
                
-                redirect('admin/lineitem');
+                // redirect('admin/lineitem');
+                redirect('admin/lineitem'.$id);
             }
         }
 
