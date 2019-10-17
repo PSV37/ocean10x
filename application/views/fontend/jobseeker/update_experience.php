@@ -287,8 +287,9 @@ if (!empty($experinece->start_date)) {
 
             <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Joining Date</label>
-                <div class="col-sm-9"><input class="datepicker form-control"  required id="start_date" name="start_date" value="" class="form-control" >
-                <label><input type="checkbox" id="chkDisable" onclick="disableAddDP()">  Continue</label>
+                <div class="col-sm-9">
+                  <input type="text" class="datepicker form-control"  required id="start_date" name="start_date" value="">
+                  <label><input type="checkbox" id="chkDisable" onclick="disableAddDP()">  Continue</label>
                 </div>
               </div>
 
