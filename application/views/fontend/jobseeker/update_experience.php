@@ -242,8 +242,8 @@ if (!empty($experinece->start_date)) {
             <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Company Name:</label>
                 <div class="col-sm-9">
-                  <!-- <input type="text" id="demo-input-facebook-theme" name="company_profile_id" class="form-control"> -->
-                   <input type="text" id="demo-input-onadd-ondelete" name="company_profile_id" class="form-control">
+                  <input type="text" id="" name="company_profile_id" class="form-control">
+                   <!-- <input type="text" id="demo-input-onadd-ondelete" name="company_profile_id" class="form-control"> -->
                 </div>
 
             </div>
@@ -288,7 +288,7 @@ if (!empty($experinece->start_date)) {
             <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Joining Date</label>
                 <div class="col-sm-9">
-                  <input type="text" class="datepicker form-control"  required id="start_date" name="start_date" value="">
+                  <input type="text" class="form-control datepicker"  required id="start_date" name="start_date">
                   <label><input type="checkbox" id="chkDisable" onclick="disableAddDP()">  Continue</label>
                 </div>
               </div>
@@ -296,7 +296,7 @@ if (!empty($experinece->start_date)) {
 
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Resignation Date</label>
-                <div  class="col-sm-9"><input class="datepicker form-control"  required id="end_date" name="end_date" value="" class="form-control" >
+                <div  class="col-sm-9"><input type="text" class="form-control datepicker"  required id="end_date" name="end_date">
                 </div>
               </div>
 

@@ -182,7 +182,7 @@ function readURL2(input) {
 
       $(document).ready(function() {
 
-             $( ".datepicker" ).datepicker({
+             $(".datepicker" ).datepicker({
 
               changeMonth: true,
 
