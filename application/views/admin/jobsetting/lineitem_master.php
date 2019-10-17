@@ -54,7 +54,7 @@
                                            foreach($skill_master as $skill) 
                                            {
                                         ?>   
-                                            <option value="<?php echo $skill['id']; ?>"<?php if (!empty($subtopic)) if($row['technical_id']==$skill['id'])echo "selected";?> style="visibility: hidden;"><?php echo $skill['skill_name']; ?></option> 
+                                            <option value="<?php echo $skill['id']; ?>"<?php if (!empty($subtopic)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option> 
                                         <?php } ?>
                                         </select>
 										<!--</div>
