@@ -104,7 +104,7 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Company Name:</label>
                 <div class="col-sm-9">
-                <input type="text" class="form-control"  required name="company_profile_id" value="<?php if (!empty($experinece->company_profile_id)) { echo $experinece->company_profile_id);} ?>">
+                <input type="text" class="form-control"  required name="company_profile_id" value="<?php if (!empty($experinece->company_profile_id)) { echo $experinece->company_profile_id;} ?>">
                 </div>
               </div>
 
