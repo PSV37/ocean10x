@@ -19,7 +19,7 @@
                               <table class="table">
 
                                 <tbody>
-                                <tr>
+                                  <tr>
                                     <td width="30%">Compnay Name:</td>
                                     <td><?php echo $v_experience->company_name; ?></td>
                                   </tr>
@@ -31,19 +31,21 @@
 
                                   <tr>
                                     <td>Department:</td>
-                                <td><?php echo $v_experience->department_name; ?></td>
+                                    <td><?php echo $v_experience->department_name; ?></td>
                                   </tr>
 
                                   <tr>
                                     <td>Job Level:</td>
-                                  <td><?php echo $this->job_level_model->get_job_level_by_id( $v_experience->job_level); ?></td>
+                                    <td><?php echo $this->job_level_model->get_job_level_by_id( $v_experience->job_level); ?></td>
                                   </tr>
 
                                   <tr>
                                     <td>Duration:</td>
                                      <td><?php $today=date("Y-m-d"); if($v_experience->end_date=="2017-08-30") {
-                      echo date_calculate($v_experience->start_date,$today);
-                    }else { echo date_calculate($v_experience->start_date,$v_experience->end_date); }?></td>
+                                    echo date_calculate($v_experience->start_date,$today);
+                                  }else { echo date_calculate($v_experience->start_date,$v_experience->end_date); }?>
+                                    
+                                  </td>
                                   </tr>
                                   <tr>
                                     <td>Address:</td>
@@ -54,23 +56,23 @@
                               </table>
                               </div>
                        <?php
-    $key++;
-endforeach;
-?><!--get all category if not this empty-->
+                            $key++;
+                            endforeach;
+                        ?><!--get all category if not this empty-->
                     <?php else: ?> <!--get error message if this empty-->
                         <td colspan="3">
                             <strong>There is no Experience to show!</strong>
                         </td><!--/ get error message if this empty-->
                     <?php
-endif;?>
+                      endif;?>
 
                    <hr class="invis">
 
-                <?php if (!empty($v_experience)) : ?> 
-                                    <div class="menu text-right"><button class="btn radius-button btn-primary" data-toggle="modal" data-target="#addExperience">Add More Experience</a></div>
+                      <?php if (!empty($v_experience)) : ?> 
+                        <div class="menu text-right"><button class="btn radius-button btn-primary" data-toggle="modal" data-target="#addExperience">Add More Experience</a></div>
                       <?php else : ?>
 
-                          <div class="menu text-right"><button class="btn radius-button btn-primary" data-toggle="modal" radius-button data-target="#addExperience">Add Experience</a></div>
+                      <div class="menu text-right"><button class="btn radius-button btn-primary" data-toggle="modal" radius-button data-target="#addExperience">Add Experience</a></div>
 
                         <?php endif; ?>
                                    
@@ -345,7 +347,11 @@ if (!empty($experinece->start_date)) {
             });
         });
         </script>
-
+<style>
+  ul.ui-autocomplete {
+      z-index: 1100;
+  }
+</style>
 
   <script type="text/javascript">
 
