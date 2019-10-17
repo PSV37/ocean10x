@@ -347,6 +347,7 @@ if (!empty($experinece->start_date)) {
   <script type="text/javascript">
   $(document).ready(function() {
       $("#demo-input-onadd-ondelete").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocomplete", {
+        theme: "facebook",
        
           onAdd: function (item) {
            alert(item.name);
