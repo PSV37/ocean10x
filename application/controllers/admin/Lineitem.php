@@ -100,6 +100,8 @@ class Lineitem extends MY_Controller
         $where_ct = "lineitem_id='$id'";
         $data['edit_lineitem_info'] = $this->Master_model->getMaster('lineitem',$where_ct);
         
+		$data['edit_questionbank_info'] = $this->Master_model->getMaster('lineitem');
+		
         $where_cn= "status=1";
         $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where_cn);
 
