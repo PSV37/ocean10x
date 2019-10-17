@@ -59,7 +59,7 @@ class Lineitem extends MY_Controller
 				
 				'title' => $this->input->post('title'),
 				'lineitem_desc' => $this->input->post('lineitem_desc'),
-				// 'subtopic_id'=$subtopic;
+				'subtopic_id'=$where_subtopic;
             );
 
             if(empty($id)){
