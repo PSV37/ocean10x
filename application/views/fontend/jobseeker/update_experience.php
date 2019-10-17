@@ -246,6 +246,10 @@ if (!empty($experinece->start_date)) {
                 </div>
 
             </div>
+            <div class="form-group pull-left">
+              <input type="text" id="demo-input-onadd-ondelete" >
+            </div> 
+
 
         <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Designation:</label>
@@ -338,9 +342,6 @@ if (!empty($experinece->start_date)) {
   </div>
 </div>
 
-<div class="form-group pull-left" style="margin: 13px -12px;">
-  <input type="text" id="demo-input-onadd-ondelete" >
-</div> 
 
 <!-- <script src="<?php echo base_url() ?>asset/jc/js/jquery.min.js"></script>  -->
   <script type="text/javascript">
