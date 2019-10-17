@@ -338,6 +338,25 @@ if (!empty($experinece->start_date)) {
   </div>
 </div>
 
+<div class="form-group pull-left" style="margin: 13px -12px;">
+  <input type="text" id="demo-input-onadd-ondelete" >
+</div> 
+
+<script src="<?php echo base_url() ?>asset/jc/js/jquery.min.js"></script> 
+  <script type="text/javascript">
+  $(document).ready(function() {
+      $("#demo-input-onadd-ondelete").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocomplete", {
+          // tokenLimit: 1,
+          onAdd: function (item) {
+            window.location.href='<?php echo base_url(); ?>'+ item.url;
+          },
+          onDelete: function (item) {
+              alert("Deleted " + item.name);
+          }
+      });
+  }); 
+  </script>
+
      <!-- <input type="text" id="demo-input-facebook-theme" name="blah2" /> -->
        
 <script type="text/javascript">
