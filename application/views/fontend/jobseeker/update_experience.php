@@ -353,10 +353,7 @@ if (!empty($experinece->start_date)) {
           },
           onDelete: function (item) {
               alert("Deleted " + item.name);
-          },
-preventDuplicates: true, 
-hintText: "Add friends",
-z-index: 9999
+          }
 
       });
   }); 
@@ -367,17 +364,15 @@ z-index: 9999
 <script type="text/javascript">
 $(document).ready(function() {
     $("#demo-input-facebook-theme").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocomplete", {
-        theme: "facebook",preventDuplicates: true, 
-hintText: "Add friends",
-z-index: 9999
+        theme: "facebook"
     });
 });
 </script>
-<!-- <style>
-  ul.tokenInput {
-      z-index: 1100;
+<style>
+  ul.ui.tokenInput {
+      z-index: 9999;
   }
-</style> -->
+</style>
 
   <script type="text/javascript">
 
