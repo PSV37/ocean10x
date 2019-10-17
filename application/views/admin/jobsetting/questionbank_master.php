@@ -22,7 +22,7 @@
 
 #checkboxes {
   display: none;
-  border: 1px #dadada solid;
+ 
 }
 
 #checkboxes label {
