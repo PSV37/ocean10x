@@ -242,7 +242,8 @@ if (!empty($experinece->start_date)) {
             <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Company Name:</label>
                 <div class="col-sm-9">
-                  <input type="text" id="demo-input-facebook-theme" name="company_profile_id" class="form-control">
+                  <!-- <input type="text" id="demo-input-facebook-theme" name="company_profile_id" class="form-control"> -->
+                   <input type="text" id="demo-input-onadd-ondelete" >
                 </div>
 
             </div>
@@ -339,14 +340,13 @@ if (!empty($experinece->start_date)) {
 
   </div>
 </div>
- <div class="form-group pull-left">
-              <input type="text" id="demo-input-facebook-theme" >
-            </div> 
+<!--  <div class="form-group pull-left">
+              <input type="text" id="demo-input-onadd-ondelete" >
+            </div>  -->
 
-<!-- <script src="<?php echo base_url() ?>asset/jc/js/jquery.min.js"></script>  -->
   <script type="text/javascript">
   $(document).ready(function() {
-      $("#demo-input-facebook-theme").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocomplete", {
+      $("#demo-input-onadd-ondelete").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocomplete", {
         theme: "facebook",
        
           // onAdd: function (item) {
@@ -360,15 +360,6 @@ if (!empty($experinece->start_date)) {
   }); 
   </script>
 
-     <!-- <input type="text" id="demo-input-facebook-theme" name="blah2" /> -->
-       
-<script type="text/javascript">
-$(document).ready(function() {
-    $("#demo-input-facebook-theme").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocomplete", {
-        theme: "facebook"
-    });
-});
-</script>
 <style>
   ul.ui.tokenInput {
       z-index: 9999;
