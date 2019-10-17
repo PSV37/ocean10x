@@ -600,9 +600,9 @@ exit;*/
     function get_autocomplete(){
 
         $query=$this->input->get('q');
-        $where="company_name like '%$query%'";
-        $select="company_profile_id as id, company_name as name";
-        $result= $this->Master_model->getMaster('company_profile',$where,false,false,false,$select);
+        $whereauto="company_name like '%$query%'";
+        $selectauto="company_profile_id as id, company_name as name";
+        $result= $this->Master_model->getMaster('company_profile',$whereauto,false,false,false,$selectauto);
         // echo $this->db->last_query();
         echo json_encode($result); 
     }
