@@ -78,7 +78,7 @@
                                  <div class="col-md-4">
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
-                                     <input type="text" name="subtopic_name" id="subtopic_name"  class="form-control" value="<?php if (!empty($edit_lineitem_info)) echo $row['subtopic_name'];?>" required/>
+                                     <input type="text" name="subtopic_id" id="subtopic_id"  class="form-control" value="<?php if (!empty($edit_lineitem_info)) echo $row['subtopic_id'];?>" required/>
                                     </div>
 									</div>
 									</div>
