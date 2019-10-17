@@ -128,7 +128,7 @@
                             <td>
                                 <?php echo btn_edit('admin/subtopic/edit_subtopic/' . $ct_row['subtopic_id']); ?>
                                 <?php echo btn_delete('admin/subtopic/delete_subtopic/' . $ct_row['subtopic_id']); ?>
-								<?php echo btn_add('admin/lineitem/'. $ct_row['subtopic_id']); ?>
+								<?php echo btn_add('admin/lineitem-master/'. $ct_row['subtopic_id']); ?>
                             </td>
                         </tr>
                     <?php

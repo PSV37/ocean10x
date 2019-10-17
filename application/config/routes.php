@@ -171,7 +171,7 @@ $route['admin/job-role']="admin/job_role";
 $route['admin/topic-master']="admin/topic";
 $route['admin/subtopic-master']="admin/subtopic";
 $route['admin/questionbank-master']="admin/questionbank";
-$route['admin/lineitem']="admin/lineitem";
+$route['admin/lineitem-master']="admin/lineitem";
 
 //$route['admin/topic-master/(:any)']="admin/topic/edit_topic/$1";
 

@@ -14,7 +14,7 @@ class Lineitem extends MY_Controller
     }
 
     /*** Dashboard ***/
-    public function index($id = null)
+    public function index()
     {   
 
         $data['title'] = 'Add Lineitems';
