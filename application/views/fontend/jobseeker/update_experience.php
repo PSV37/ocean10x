@@ -349,12 +349,12 @@ if (!empty($experinece->start_date)) {
       $("#demo-input-onadd-ondelete").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocomplete", {
         theme: "facebook",
        
-          onAdd: function (item) {
-           alert(item.name);
-          },
-          onDelete: function (item) {
-              alert("Deleted " + item.name);
-          }
+          // onAdd: function (item) {
+            //alert(item.name);
+          // },
+          // onDelete: function (item) {
+          //     alert("Deleted " + item.name);
+          // }
 
       });
   }); 
