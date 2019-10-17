@@ -56,9 +56,9 @@ class Lineitem extends MY_Controller
 
             //print_r($req_skill_details); die;
             $state_dt=array(
-				'technical_id' => $subtopic,
-				'topic_id' => $subtopic,
-				'subtopic_id' => $subtopic,
+				'technical_id' => $this->input->post('technical_id'),
+				'topic_id' => $this->input->post('topic_id'),
+				'subtopic_id' => $this->input->post('subtopic_id'),
 				'title' => $this->input->post('title'),
 				'lineitem_desc' => $this->input->post('lineitem_desc'),
 				//'subtopic_id'=$subtopic;
