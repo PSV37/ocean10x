@@ -39,6 +39,20 @@ class Lineitem extends MY_Controller
         $this->load->view('admin/jobsetting/lineitem_master', $data);
     }
 
+
+
+ public function ss($id = null)
+        {
+            if (!empty($id)) {
+                 
+                $this->load->view('admin/jobsetting/lineitem_master');
+                
+            } else {
+                redirect('admin/lineitem');
+            }
+
+        }
+
         public function save_lineitem($id = null){
           
             $user_id = $this->session->userdata('admin_user_id');
@@ -66,8 +80,7 @@ class Lineitem extends MY_Controller
                 $where['lineitem_id']=$id;
                 $this->Master_model->master_update($state_dt,'lineitem',$where);
                
-                // redirect('admin/lineitem');
-                redirect('admin/lineitem'.$id);
+                redirect('admin/lineitem');
             }
         }
 
