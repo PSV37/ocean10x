@@ -365,7 +365,7 @@ function showCheckboxes() {
       
   }
 </script>	
-<script>
+<!--<script>
 	  function getTopic(id){
 		
 		if(id){
@@ -382,7 +382,50 @@ function showCheckboxes() {
    
 	   }
 	   
-	   </script>
+	   </script>-->
+	   
+	   
+	   <script>
+    function getTopic(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/questionbank/gettopic',
+                data:{id:id},
+                success:function(res){
+                    $('#topic_id').html(res);
+                }
+                
+            }); 
+          }
+   
+       }
+
+    $(document).ready(function(){
+
+
+
+    function getTopic_load(){
+        var id = $('#subject').val();
+
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/questionbank/gettopic',
+                data:{id:id},
+                success:function(res){
+                    $('#topic_id').html(res);
+                    $('#topic_id').val(<?php echo $row['topic_id']; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+       getTopic_load();
+    });
+       
+</script>
 	   
 	    <script>
 	  function getSubtopic(id){
