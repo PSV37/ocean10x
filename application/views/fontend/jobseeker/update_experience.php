@@ -104,7 +104,8 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Company Name:</label>
                 <div class="col-sm-9">
-                <input type="text" class="form-control"  required name="company_profile_id" value="<?php if (!empty($experinece->company_profile_id)) { echo $experinece->company_profile_id;} ?>">
+                <input type="text" class="form-control"  id="edit_company_profile_id" required name="company_profile_id" value="<?php if (!empty($experinece->company_profile_id)) { echo $experinece->company_profile_id;} ?>">
+
                 </div>
               </div>
 
@@ -362,21 +363,25 @@ if (!empty($experinece->start_date)) {
   // }); 
     $(function() {
       $("#company_profile_id").autocomplete({
-           source: "<?php echo base_url('job_seeker/get_autocomplete'); ?>",
+          source: "<?php echo base_url('job_seeker/get_autocomplete'); ?>",
           select: function(a,b)
             {
-                $(this).val(b.item.value); //grabed the selected value
-                // getCityInfo(b.item.value);//passed that selected value
+              $(this).val(b.item.value); //grabed the selected value
             }
         });
     });
-  </script>
 
-<!-- <style>
-ul.tokenInput {
-      z-index: 9999;
-  }
-</style> -->
+    $(function() {
+      $("#edit_company_profile_id").autocomplete({
+          source: "<?php echo base_url('job_seeker/get_autocomplete'); ?>",
+          select: function(a,b)
+            {
+              $(this).val(b.item.value); //grabed the selected value
+            }
+        });
+    });
+
+  </script>
 
   <script type="text/javascript">
 
