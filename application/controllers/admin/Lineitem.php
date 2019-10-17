@@ -49,7 +49,7 @@ class Lineitem extends MY_Controller
             $user_id = $this->session->userdata('admin_user_id');
 			
 			$where_cnn= "status=1";
-            $skill= $this->Master_model->getMaster('skill_master',$where_cnn);
+            $skills= $this->Master_model->getMaster('skill_master',$where_cnn);
 			
 			$where_topics= "topic.topic_status=1";
             $topics = $this->Master_model->getMaster('topic',$where_topic);
@@ -57,7 +57,7 @@ class Lineitem extends MY_Controller
 			 $where_subtopics= "subtopic.subtopic_status=1";
              $subtopics = $this->Master_model->getMaster('subtopic',$where_subtopics);
             $state_dt=array(
-				'technical_id'=$skill;
+				'technical_id'=$skills;
 				'topic_id'=$topics;
 				'subtopic_id'=$subtopics;
 				'title' => $this->input->post('title'),
