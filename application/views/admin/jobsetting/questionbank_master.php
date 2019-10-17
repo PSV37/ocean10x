@@ -227,7 +227,7 @@
 						}
 						 
 					?>
-                    <br/><input type="checkbox" <?php echo $checked; ?> name="correct_answer[]" id="correct_answer[]" value="<?php echo $key['options_id'];?>">&nbsp;&nbsp;<?php echo $key['options_type']; ?>
+                    <span style="margin-top:15px;"><input type="checkbox" <?php echo $checked; ?> name="correct_answer[]" id="correct_answer[]" value="<?php echo $key['options_id'];?>"></span>&nbsp;&nbsp;<?php echo $key['options_type']; ?>
 				<?php
 					}
 				?>
