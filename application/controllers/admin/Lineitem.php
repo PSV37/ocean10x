@@ -52,14 +52,14 @@ class Lineitem extends MY_Controller
 
              $where_req_skill="subtopic.subtopic_id ='$id'";
                // $select_skill = "skill_master.skill_name";
-            $req_skill_details = $this->Master_model->getMaster('subtopic', $where_req_skill, $join=false, $order = false, $field = false, $select_skill,$limit=false,$start=false, $search=false);
+            $req_skill_details = $this->Master_model->getMaster('subtopic', $where_req_skill, $join=false, $order = false, $field = false, $select_skill=false,$limit=false,$start=false, $search=false);
 
             print_r($req_skill_details); die;
             $state_dt=array(
 				
 				'title' => $this->input->post('title'),
 				'lineitem_desc' => $this->input->post('lineitem_desc'),
-				'subtopic_id'=$subtopic;
+				// 'subtopic_id'=$subtopic;
             );
 
             if(empty($id)){
