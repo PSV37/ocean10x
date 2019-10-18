@@ -175,8 +175,9 @@ $route['admin/questions-master']="admin/questionbank";
 $route['admin/lineitem']="admin/lineitem/index";
 $route['admin/lineitems']="admin/lineitems/index";
 $route['admin/lineitems']="admin/lineitems/index";
-$route['admin/lineitemlevel]="admin/lineitemlevel/index";
-
+//$route['admin/topic-master/(:any)']="admin/topic/edit_topic/$1";
+$route['admin/lineitemlevel']="admin/lineitemlevel/index";
+lineitemlevel
 
 
 // User Create 
