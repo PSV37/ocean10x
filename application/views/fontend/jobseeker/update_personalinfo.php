@@ -1623,5 +1623,10 @@ $(document).ready(function(){
   getCitys_load_permant();
   getStates_load_permant();
 });
+$(function() {
+    $("body").delegate(".datepicker", "focusin", function(){
+        $(this).datepicker();
+    });
+});
 </script>        
       
