@@ -267,7 +267,7 @@ function delete_Career(id) {
                   delay: 100
                 },
                 showAutocompleteOnFocus: true,
-                z-index: 999999
+              
               })
 
         });
