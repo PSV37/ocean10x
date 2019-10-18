@@ -240,6 +240,7 @@ if (!empty($experinece->start_date)) {
                 <label class="control-label col-sm-3" for="email">Company Name:</label>
                 <div class="col-sm-9">
                   <input type="text" id="company_profile_id" name="company_profile_id" class="form-control">
+                 
                 </div>
 
             </div>
