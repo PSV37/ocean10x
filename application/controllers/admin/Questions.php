@@ -126,7 +126,7 @@ class Questions extends MY_Controller
 					$where_update_sub_answer['ques_id']=$id;
 					$this->Master_model->master_update($ans_update,'questionbank',$where_update_sub_answer);
 				}
-                redirect('admin/questionbank');
+                redirect('admin/questions');
             }
         }
 
@@ -138,7 +138,7 @@ class Questions extends MY_Controller
         );
         $where_del['ques_id']=$id;
         $this->Master_model->master_update($education_level_status,'questionbank',$where_del);
-        redirect('admin/questionbank');
+        redirect('admin/questions');
     }
 
     public function edit_questionbank($id){
