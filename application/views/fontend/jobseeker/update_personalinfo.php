@@ -132,6 +132,13 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Personal Information</h4>
       </div>
+      <script>
+      $(document).on("click", ".modal-body", function () {
+       $(".datepicker").datepicker({
+         dateFormat: 'dd-mm-yy'                                    
+         });
+          });  
+    </script> 
       <div class="modal-body">
          <form id="Personal-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_personalinfo');?>"  method="post" autocomplete="off">
               <input type="hidden" value="<?php echo $js_personal_info->job_personal_info_id; ?>" name="js_personal_info_id">
