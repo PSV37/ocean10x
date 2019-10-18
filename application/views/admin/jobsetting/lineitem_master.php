@@ -66,7 +66,7 @@
                             <td><?php echo $ct_row['subtopic_name'] ?></td>
 							<td><?php echo $ct_row['title'] ?></td>
                             <td>
-                                <?php echo btn_edit('admin/lineitem/edit_lineitem/' . $ct_row['lineitem_id']); ?>
+                                <?php echo btn_edit('admin/edit_lineitem/edit_lineitem/' . $ct_row['lineitem_id']); ?>
                                 <?php echo btn_delete('admin/lineitem/delete_lineitem/' . $ct_row['lineitem_id']); ?>
                             </td>
                         </tr>
