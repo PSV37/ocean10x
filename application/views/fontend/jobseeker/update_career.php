@@ -154,16 +154,7 @@ function delete_Career(id) {
  <input type="text" id="demo-input-onadd-ondelete" >
                 </div>
               </div>
-        <script>
-          $('#tokenfield').tokenfield({
-              autocomplete: {
-                source: ['red','blue','green','yellow','violet','brown','purple','black','white'],
-                delay: 100
-              },
-              showAutocompleteOnFocus: true,
-
-            })
-      </script>
+      
 
                <div class="form-group">
                 <label class="control-label col-sm-3" for="email"> Expected Salary:</label>
@@ -285,10 +276,10 @@ function delete_Career(id) {
 
         });
 
-        
+
 $(document).ready(function() {
       $("#demo-input-onadd-ondelete").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocomplete", {
-        zindex: 9999
+        // zindex: 9999
        
           onAdd: function (item) {
             alert(item.name);
