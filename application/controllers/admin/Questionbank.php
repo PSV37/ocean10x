@@ -39,6 +39,7 @@ class Questionbank extends MY_Controller
                 'skill_master' => 'skill_master.id=questionbank.technical_id |INNER',
                 'topic' => 'topic.topic_id=questionbank.topic_id |INNER',
 				'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |INNER',
+				'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |INNER',
             );
         $data['questionbank'] = $this->Master_model->getMaster('questionbank',$where_all,$join_emp);
 
@@ -149,6 +150,7 @@ class Questionbank extends MY_Controller
                  'skill_master' => 'skill_master.id=questionbank.technical_id |INNER',
                 'topic' => 'topic.topic_id=questionbank.topic_id |INNER',
 				'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |INNER',
+				'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |INNER',
             );
         $data['questionbank'] = $this->Master_model->getMaster('questionbank',$where_all,$join_emp);
 		
