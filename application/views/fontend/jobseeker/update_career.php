@@ -128,9 +128,6 @@ function delete_Career(id) {
                 </div>
               </div>
 
-
-
-
                <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Extra Curricular Activities:</label>
                 <div class="col-sm-9">
@@ -141,7 +138,7 @@ function delete_Career(id) {
                 </div>
               </div>
 
-         <div class="form-group">
+              <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Skills:</label>
                 <div class="col-sm-9">
                   <input type="text" name="skills" class="form-control" id="tokenfield" placeholder="Enter Your Skills"
@@ -150,7 +147,7 @@ function delete_Career(id) {
                            echo $job_career_info[0]->skills;
                            }
                        ?>">
-                     
+                  
                 </div>
               </div>
       
@@ -267,22 +264,18 @@ function delete_Career(id) {
               $('#tokenfield').tokenfield({
                 autocomplete: {
                   source: "<?php echo base_url('job_seeker/get_skills_autocomplete'); ?>",
-                  // select: function(a,b)
-                  //   {
-                  //     $(this).val(b.item.value); //grabed the selected value
-                  //   }
-                  // source: ['red','blue','green','yellow','violet','brown','purple','black','white'],
                   delay: 100
                 },
                 showAutocompleteOnFocus: true,
 
               });
-
+              // to avoid duplications
             $('#tokenfield').on('tokenfield:createtoken', function (event) {
                 var existingTokens = $(this).tokenfield('getTokens');
                 $.each(existingTokens, function(index, token) {
                     if (token.value === event.attrs.value)
                         event.preventDefault();
+
                 });
             });
 
