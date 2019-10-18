@@ -117,7 +117,7 @@ class Lineitemlevels extends MY_Controller
 		$where_lineitem= "lineitem.lineitem_status=1 AND lineitem.lineitem_id ='$id'";
         $data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_subtopic);
 		
-        $this->load->view('admin/jobsetting/edit_lineitemlevel',$data);
+        $this->load->view('admin/jobsetting/edit_lineitemlevels',$data);
     }
 
 	
