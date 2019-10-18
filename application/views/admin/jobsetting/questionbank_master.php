@@ -125,14 +125,15 @@
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Title<span class="required">*</span></label>
                                      <select id="lineitem_id"  name="lineitem_id" class="form-control" required>
-                                           <option value="">Select Subopic</option> 
+                                           <option value="">Select Title</option> 
                                         <?php if (!empty($lineitem))
-                                           foreach($lineitem as $lineitem) 
+                                           foreach($lineitem as $st_rowss) 
                                            {
                                         ?>   
-                                             <option value="<?php echo $st_rows['lineitem_id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['lineitem_id']==$st_rows['lineitem_id'])echo "selected";?>><?php echo $st_rows['title']; ?></option> 
+                                             <option value="<?php echo $st_rowss['lineitem_id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['lineitem_id']==$st_rowss['lineitem_id'])echo "selected";?>><?php echo $st_rowss['title']; ?></option> 
                                        <?php } ?>
-                                        </select> </div>
+                                        </select> 
+										</div>
 									</div>
 								
 									 
