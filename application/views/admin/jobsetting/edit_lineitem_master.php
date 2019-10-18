@@ -36,7 +36,7 @@
                <div class="box-background">
               
                 <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/lineitem/save_lineitem/<?php  if (!empty($lineitemlevel)) { foreach($lineitemlevel as $row)
-                        echo $row['lineitem_id'];
+                        echo $row['lineitemlevel_id'];
                       }
                      ?>" method="post">
 
@@ -52,7 +52,7 @@
                                     <div class="form-group">
 									<div class="col-md-12">
                                         <label for="exampleInputEmail1">Title<span class="required">*</span></label>
-                                      <input type="text" name="title" id="title"  class="form-control" value="<?php if (!empty($lineitemlevel)) echo $row['titles'];?>" required/>
+                                      <input type="text" name="titles" id="titles"  class="form-control" value="<?php if (!empty($lineitemlevel)) echo $row['titles'];?>" required/>
                                      </div>
 									</div>
                                 </div>
