@@ -82,19 +82,7 @@
             </article>
             </div>
           <?php endif; ?>
- 		<?php if(!empty($resume->extracurricular)): ?>
-              <div class="cvdisplay">
-              <article class="row cv-box">
-                <header class="col-md-3">
-                    <h5>Extra Curricular  Activities</h5>
-                </header>
-                <div class="col-md-9 ">
-                   <p class="welcome"><?php echo $resume->extracurricular; ?> <br>
-                </div>
-            </article>
-            </div>
-  <?php endif; ?>
-          
+ 		
             <!-- Work -->
             <div class="cvdisplay">
             <article class="row cv-box">
@@ -276,6 +264,19 @@
                 </div>
             </article>
             </div>
+            <?php if(!empty($resume->extracurricular)): ?>
+              <div class="cvdisplay">
+              <article class="row cv-box">
+                <header class="col-md-3">
+                    <h5>Extra Curricular  Activities</h5>
+                </header>
+                <div class="col-md-9 ">
+                   <p class="welcome"><?php echo $resume->extracurricular; ?> <br>
+                </div>
+            </article>
+            </div>
+          <?php endif; ?>
+          
 
          	<!-- Personal Information -->
             <div class="cvdisplay">
