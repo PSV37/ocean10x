@@ -85,10 +85,7 @@ function delete_Career(id) {
 
 }
    
-} else {
-    // Do nothing!
-}
-}
+} 
 </script>
 
 
