@@ -266,11 +266,12 @@ function delete_Career(id) {
                   source: ['red','blue','green','yellow','violet','brown','purple','black','white'],
                   delay: 100
                 },
-                //z-index: true,
                 showAutocompleteOnFocus: true,
 
               
               })
+              $('#UpdateCareer').modal('show');
+              $( ".tokenfield" ).autocomplete( "option", "appendTo", ".form-horizontal" );
 
         });
             </script>
