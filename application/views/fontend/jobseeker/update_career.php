@@ -307,7 +307,7 @@ function delete_Career(id) {
     font-family: Arial !important;
     display: inline-block !important;
     line-height: 100% !important;
-    font-size: 1.1em;
+    font-size: 1.1em !important;
     line-height: 1.49em !important;
     margin-left: 5px !important;
     float: none !important;
@@ -315,8 +315,8 @@ function delete_Career(id) {
     vertical-align: top !important;
     padding-right: 4px !important;
 
-   /* color: #5B9703; 
-    font-size: 24px !important; 
-    opacity: unset !important; */
-}
+    color: #dddd; 
+    /*font-size: 24px !important; 
+    opacity: unset !important; 
+}*/
 </style>
