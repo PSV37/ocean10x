@@ -44,7 +44,7 @@
                     <div class="row">
 
                         <div class="col-md-12 col-sm-12 col-xs-12">
-									 <input type="hidden" name="technical_id" id="technical_id"  class="form-control" value="<?php if (!empty($subtopic)) echo $row['technical_id'];?>" required/>
+									 <input type="text" name="technical_id" id="technical_id"  class="form-control" value="<?php if (!empty($subtopic)) echo $row['technical_id'];?>" required/>
                                     <input type="hidden" name="topic_id" id="topic_id"  class="form-control" value="<?php if (!empty($subtopic)) echo $row['topic_id'];?>" required/>
                                     <input type="hidden" name="subtopic_id" id="subtopic_id"  class="form-control" value="<?php if (!empty($subtopic)) echo $row['subtopic_id'];?>" required/>
                                    
@@ -62,7 +62,7 @@
                                     <div class="form-group">
 									<div class="col-md-12">
                                         <label for="exampleInputEmail1">Description<span class="required">*</span></label>
-                                      <textarea name="lineitem_desc" id="lineitem_desc" class="form-control ckeditor" required><?php if (!empty($edit_lineitem_info)) echo $row['lineitem2'];?></textarea>
+                                      <textarea name="lineitem_desc" id="lineitem_desc" class="form-control ckeditor" required><?php if (!empty($edit_lineitem_info)) echo $row['lineitem_desc'];?></textarea>
                                     </div>
 									</div>
                                 </div>
