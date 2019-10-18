@@ -53,7 +53,7 @@ class Lineitems extends MY_Controller
         public function save_lineitems($id = null){
           
             $user_id = $this->session->userdata('admin_user_id');
-
+			$where['lineitem_id']=$id;
             $state_dt=array(
 				'technical_id' => $this->input->post('technical_id'),
 				'topic_id' => $this->input->post('topic_id'),
@@ -67,8 +67,8 @@ class Lineitems extends MY_Controller
                 $state_dt['lineitem_created_date']=date('Y-m-d H:i:s');
                 $state_dt['lineitem_created_by']=$user_id;
 				
-				$where_add['lineitem_id']=$id;
-                $this->Master_model->master_insert($state_dt,'lineitem',$where_add);
+				
+                $this->Master_model->master_insert($state_dt,'lineitem',$where);
                
                 redirect('admin/lineitem/index/'.$id);
             }
@@ -76,7 +76,7 @@ class Lineitems extends MY_Controller
                 $state_dt['lineitem_updated_date']=date('Y-m-d H:i:s');
                 $state_dt['lineitem_updated_by']=$user_id;
 
-                $where['lineitem_id']=$id;
+                //$where['lineitem_id']=$id;
                 $this->Master_model->master_update($state_dt,'lineitem',$where);
                
                 redirect('admin/lineitem/index/'.$id);
