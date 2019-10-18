@@ -33,9 +33,9 @@
                         <h3 class="box-title ">Line Item Master</h3>
                     </div>
                 </div>
-                <!-- /.box-header -->
-                <div class="box-background">
-                <!-- form start -->
+               
+                <!--<div class="box-background">
+              
                 <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/lineitem/save_lineitem/<?php  if (!empty($edit_lineitem_info)) { foreach($edit_lineitem_info as $row)
                         echo $row['lineitem_id'];
                       }
@@ -70,13 +70,13 @@
                                 <button type="submit" class="btn bg-navy" type="submit">Save Lineitem
                                 </button><br/><br/>
                             
-                            <!-- /.box-body -->
+                          
 
                         </div>
                     </div>
 
                 </form>
-                    </div>
+                    </div>-->
 
                <div class="row">
                     <div class="col-md-10 col-md-offset-1">
