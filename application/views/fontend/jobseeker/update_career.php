@@ -220,14 +220,7 @@ function delete_Career(id) {
 
   <script type="text/javascript">
 
-    $('#tokenfield').tokenfield({
-      autocomplete: {
-        source: ['red','blue','green','yellow','violet','brown','purple','black','white'],
-        delay: 100
-      },
-      showAutocompleteOnFocus: true
-    })
-
+  
 
         $( document ).ready( function () {
             $( "#Career-info" ).validate( {
@@ -271,6 +264,13 @@ function delete_Career(id) {
                 }
             } );
 
+              $('#tokenfield').tokenfield({
+                autocomplete: {
+                  source: ['red','blue','green','yellow','violet','brown','purple','black','white'],
+                  delay: 100
+                },
+                showAutocompleteOnFocus: true
+              })
 
         });
             </script>
