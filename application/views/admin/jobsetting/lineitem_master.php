@@ -38,8 +38,8 @@
 					<div class="row">
 					<div class="col-md-10"></div>
 					<div class="col-md-2">
-				<?php var_dump($subtopic)?>
-					<br/><?php echo btn_add('admin/lineitems/index/'. $subtopic['subtopic_id']); ?>
+				
+					<br/><?php echo btn_add('admin/lineitems/index/'. $subtopic[0]['subtopic_id']); ?>
 					
 					</div>
 					</div>
