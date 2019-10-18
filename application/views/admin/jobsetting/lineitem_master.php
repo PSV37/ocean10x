@@ -26,7 +26,7 @@
         <div class="col-md-12">
             
              <?php /* print_r($subtopic); */ ?> 
-			 <?php echo $subtopic['subtopic_id'];?>
+			 <?php print_r $subtopic['subtopic_id'];?>
 
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
