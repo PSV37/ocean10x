@@ -213,7 +213,7 @@ function gettopic(){
 
 function getlineitem(){
 	$lineitem_id = $this->input->post('id');
-	$where['subtopictopic_id'] = $lineitem_id;
+	$where['subtopic_id'] = $lineitem_id;
 	$lineitems = $this->Master_model->getMaster('lineitem',$where);
 	$result = '';
 	
