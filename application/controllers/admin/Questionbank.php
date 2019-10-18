@@ -147,7 +147,7 @@ class Questionbank extends MY_Controller
         $data['options'] = $this->Master_model->getMaster('options',$where_opt);
         $where_all = "questionbank.ques_status='1'";
         $join_emp = array(
-                 'skill_master' => 'skill_master.id=questionbank.technical_id |INNER',
+                'skill_master' => 'skill_master.id=questionbank.technical_id |INNER',
                 'topic' => 'topic.topic_id=questionbank.topic_id |INNER',
 				'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |INNER',
 				'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |INNER',
