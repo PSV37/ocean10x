@@ -265,12 +265,12 @@ function delete_Career(id) {
                 autocomplete: {
                   source: ['red','blue','green','yellow','violet','brown','purple','black','white'],
                   delay: 100
+                  z-index: 9999
                 },
-                //z-index: true,
                 showAutocompleteOnFocus: true,
 
-              
               })
+           
 
         });
             </script>
