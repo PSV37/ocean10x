@@ -30,7 +30,7 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">Add Line Item</h3>
+                        <h3 class="box-title ">Add LineItem</h3>
                     </div>
                 </div>
                <div class="box-background">
