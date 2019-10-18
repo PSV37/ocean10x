@@ -88,7 +88,7 @@ function delete_Career(id) {
 } else {
     // Do nothing!
 }
-
+}
 </script>
 
 
@@ -220,7 +220,7 @@ function delete_Career(id) {
 
   <script type="text/javascript">
 
-  
+
 
         $( document ).ready( function () {
             $( "#Career-info" ).validate( {
