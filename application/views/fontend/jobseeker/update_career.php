@@ -266,8 +266,9 @@ function delete_Career(id) {
                   source: ['red','blue','green','yellow','violet','brown','purple','black','white'],
                   delay: 100
                 },
+                z-index: 9999,
                 showAutocompleteOnFocus: true,
-                z-index: 9999 !important,
+
               
               })
 
