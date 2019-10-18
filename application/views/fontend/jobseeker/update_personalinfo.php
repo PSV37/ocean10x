@@ -136,7 +136,7 @@
          <form id="Personal-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_personalinfo');?>"  method="post" autocomplete="off">
               <input type="hidden" value="<?php echo $js_personal_info->job_personal_info_id; ?>" name="js_personal_info_id">
               
-              <div class="row">
+            <div class="row">
               <div class="col-md-12">
               	<div class="col-md-6 col-sm-12">
 	              	<div class="input-group">
@@ -160,6 +160,11 @@
 	                       ?>">
 	              </div>
 	          	</div>
+		        </div>
+		    </div>
+		    <div class="row">
+              <div class="col-md-12">
+
               	<div class="col-md-6 col-sm-12">
 	              	<div class="input-group">
 	                 <label class="control-label" for="email">Date of Birth:</label>
@@ -404,8 +409,13 @@
 					<option value="ZW - Zimbabwe (+263)">ZW - Zimbabwe (+263)</option>
 				</select>
 
-              </div>
-          	</div>
+	              </div>
+	          	</div>
+	          </div>
+	      </div>
+	      <div class="row">
+              <div class="col-md-12">
+
           	<div class="col-md-6 col-sm-12">
               <div class="input-group">
                   <label class="control-label" for="pwd"> Mobile:</label>
@@ -431,7 +441,11 @@
                        ?>">
               </div>
           	</div>
-          	          <div class="col-md-6 col-sm-12">
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          	<div class="col-md-6 col-sm-12">
               <div class="input-group">
                   <label class="control-label" for="email">Nationality:</label>
                   <select name="nationality" class="form-control" id="national_id">
@@ -697,6 +711,10 @@
 				  </select>
                 </div>
          	</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
             <div class="col-md-6 col-sm-12">
 			  <div class="input-group">
                   <label class="control-label" for="pwd">State</label>
@@ -719,7 +737,10 @@
 				 </select>
               </div>
             </div>
-            <!-- <div></div> -->
+
+            <div></div>
+            <div class="row">
+              <div class="col-md-12">
             <div class="col-md-12 col-sm-12">  
               	<div class="input-group">
                   	<label class="control-label" for="pwd">Present Address</label>
@@ -746,6 +767,10 @@
 					</select>
 	            </div>
           	</div>
+          </div>
+      </div>
+      <div class="row">
+              <div class="col-md-12">
           	<div class="col-md-6 col-sm-12">
 			  <div class="input-group">
                  <label class="control-label" for="pwd">State</label>
@@ -768,6 +793,10 @@
 					 </select>
 	            </div>
           	</div>
+          </div>
+      </div>
+      <div class="row">
+              <div class="col-md-12">
           	<div class="col-md-12 col-sm-12">
               <div class="input-group">
                 <label class="control-label" for="pwd">Parmanent Address</label>
@@ -780,8 +809,8 @@
             </div>    
             <div class="panel-body"></div>          
              
-              </div>
-              </div>
+      </div>
+      </div>
                <div class="modal-footer">
                	 
 		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
