@@ -75,10 +75,10 @@
                    <hr class="invis">
                       <?php if(!empty($v_training)): ?>
                     
-                                    <div class="menu text-right"><button class="btn radius-button btn-primary" data-toggle="modal" data-target="#addTraining">Add More Training</button></div>
+                      ddddddddddddddd<div class="menu text-right"><button class="btn radius-button btn-primary" data-toggle="modal" data-target="#addTraining">Add More Training</button></div>
 
                       <?php else: ?>
- <div class="menu text-right"><button class="btn radius-button btn-primary" data-toggle="modal" data-target="#addTraining">Add Training</button></div>
+                        <div class="menu text-right"><button class="btn radius-button btn-primary" data-toggle="modal" data-target="#addTraining">Add Training</button></div>
                       <?php  endif;?>
                             </div><!-- end post-padding -->
                         </div><!-- end col -->
@@ -139,7 +139,43 @@
                        ?>">
                 </div>
               </div>
-		  
+
+               <div class="form-group">
+                <label class="control-label col-sm-3" for="email">Country:</label>
+                <div class="col-sm-9">
+                  <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
+                    <option value="">Select Country</option>
+                    <?php foreach($country as $key){?>
+                      <option value="<?php echo $key['country_id']; ?>"<?php if($training_list->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
+                    <?php } ?>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-3" for="email">State:</label>
+                <div class="col-sm-9">
+                 <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+                    <option value="">Select Country First</option>
+                     <?php foreach($state as $val){?>
+                      <option value="<?php echo $val['state_id']; ?>"<?php if($training_list->state_id==$val['state_id']){ echo "selected"; }?>><?php echo $val['state_name']; ?></option>
+                      <?php } ?>
+                  </select>
+                </div>
+              </div>
+
+               <div class="form-group">
+                <label class="control-label col-sm-3" for="email">City:</label>
+                <div class="col-sm-9">
+                 <select  name="city_id" id="city_id" class="form-control">
+                   <option value="">Select State First</option>
+                   <?php foreach($city as $valu){?>
+                    <option value="<?php echo $valu['id']; ?>"<?php if($training_list->city_id==$valu['id']){ echo "selected"; }?>><?php echo $valu['city_name']; ?></option>
+                    <?php } ?>
+                  </select>
+                </div>
+              </div>
+
               <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Duration:</label>
                 <div class="col-sm-9">
@@ -164,13 +200,15 @@
                 </div>
               </div>
 
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                 <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
 
-                     <button type="submit" class="btn btn-default">Submit</button>
+                    
             </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
+    
     </div>
 </div>
 </div>
@@ -213,7 +251,7 @@
 			  <div class="form-group">
                    <label class="control-label col-sm-3" for="email">Country:</label>
 				  <div class="col-sm-9">
-                <select  name="country_id" class="form-control" onchange="getStates(this.value)">
+                <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
 					<option value="">Select Country</option>
 					<?php foreach($country as $keys){?>
 					<option value="<?php echo $keys['country_id']; ?>"><?php echo $keys['country_name']; ?></option>
@@ -224,9 +262,9 @@
 				<div class="form-group">
 				  <label class="control-label col-sm-3" for="email">State:</label>
 				  <div class="col-sm-9">
-                 <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
-				 <option value="">Select Country First</option>
-				 </select>
+            <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+    				 <option value="">Select Country First</option>
+    				 </select>
 				 </div>
               </div>
 			  <div class="form-group">
@@ -256,14 +294,15 @@
               </div>
 
 
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
 
-
-                     <button type="submit" class="btn btn-default">Submit</button>
+                     
             </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
+   
     </div>
 
   </div>
@@ -397,10 +436,7 @@
           }
    
 	   }
-	   
-	   </script>
-	   
-	   <script>
+
 	  function getCitys(id){
 		if(id){
             $.ajax({
@@ -415,5 +451,52 @@
           }
    
 	   }
-	   
+	     
+       $(document).ready(function(){
+
+    function getStates_load(){
+        var id = $('#country_id').val();
+
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Job_seeker/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state_id').html(res);
+                    $('#state_id').val(<?php echo $training_list->state_id; ?>);
+                     getCitys_load(<?php echo $training_list->state_id; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+    
+    function getCitys_load(id){
+      //var id = $('#state_id').val();
+      // alert(id);
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Job_seeker/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city_id').html(res);
+                    $('#city_id').val(<?php echo $training_list->city_id; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+
+    
+
+
+  getCitys_load();
+  getStates_load();
+});
+
+
 	   </script>              
