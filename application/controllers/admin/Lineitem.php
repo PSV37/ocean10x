@@ -30,12 +30,12 @@ class Lineitem extends MY_Controller
             $where_subtopic= "subtopic.subtopic_status=1 AND subtopic.subtopic_id ='$id'";
             $data['subtopic'] = $this->Master_model->getMaster('subtopic',$where_subtopic);
             
-            $where_all = "lineitem.lineitem_status='1'";
+            $where_all = "lineitemlevel.lineitemlevel_status='1'";
 			$join_emp = array(
-                'skill_master' => 'skill_master.id=lineitem_level.technical_id |INNER',
-                'topic' => 'topic.topic_id=lineitem_level.topic_id |INNER',
-				'subtopic' => 'subtopic.subtopic_id=lineitem_level.subtopic_id |INNER',
-				'lineitem' => 'lineitem.subtopic_id=linelineitem_levelitem.lineitem |INNER',
+                'skill_master' => 'skill_master.id=lineitemlevel.technical_id |INNER',
+                'topic' => 'topic.topic_id=lineitemlevel.topic_id |INNER',
+				'subtopic' => 'subtopic.subtopic_id=lineitemlevel.subtopic_id |INNER',
+				'lineitem' => 'lineitem.subtopic_id=lineitemlevel.lineitem |INNER',
             );
         $data['lineitem_level'] = $this->Master_model->getMaster('lineitemlevel',$where_all,$join_emp);
             
@@ -89,10 +89,10 @@ class Lineitem extends MY_Controller
 		
         $where_all = "lineitemlevel.lineitemlevel_status='1'";
         $join_emp = array(
-                 'skill_master' => 'skill_master.id=lineitem_level.technical_id |INNER',
-                'topic' => 'topic.topic_id=lineitem_level.topic_id |INNER',
-				'subtopic' => 'subtopic.subtopic_id=lineitem_level.subtopic_id |INNER',
-				'lineitem' => 'lineitem.subtopic_id=linelineitem_levelitem.lineitem |INNER',
+                 'skill_master' => 'skill_master.id=lineitemlevel.technical_id |INNER',
+                'topic' => 'topic.topic_id=lineitemlevel.topic_id |INNER',
+				'subtopic' => 'subtopic.subtopic_id=lineitemlevel.subtopic_id |INNER',
+				'lineitem' => 'lineitem.subtopic_id=lineitemlevel.lineitem |INNER',
             );
         $data['lineitem'] = $this->Master_model->getMaster('lineitemlevel',$where_all,$join_emp);
         	
