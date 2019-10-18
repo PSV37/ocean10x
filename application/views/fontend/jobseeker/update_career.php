@@ -264,8 +264,8 @@ function delete_Career(id) {
               $('#tokenfield').tokenfield({
                 autocomplete: {
                   source: ['red','blue','green','yellow','violet','brown','purple','black','white'],
-                  delay: 100,
-                  z-index: 1511
+                  delay: 100
+                  z-index: 9999
                 },
                 showAutocompleteOnFocus: true,
 
