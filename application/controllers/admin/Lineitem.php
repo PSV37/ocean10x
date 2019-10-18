@@ -37,7 +37,7 @@ class Lineitem extends MY_Controller
 				'subtopic' => 'subtopic.subtopic_id=lineitemlevel.subtopic_id |INNER',
 				'lineitem' => 'lineitem.lineitem_id=lineitemlevel.lineitem_id |INNER',
             );
-        $data['lineitem_level'] = $this->Master_model->getMaster('lineitemlevel',$where_all,$join_emp);
+        $data['lineitemlevel'] = $this->Master_model->getMaster('lineitemlevel',$where_all,$join_emp);
             
 
             $this->load->view('admin/jobsetting/lineitem_master', $data);
