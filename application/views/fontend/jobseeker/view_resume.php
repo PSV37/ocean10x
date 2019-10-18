@@ -70,6 +70,18 @@
             </article>
             </div>
           <?php endif; ?>
+          <?php if(!empty($resume->skills)): ?>
+            <div class="cvdisplay">
+               <article class="row cv-box">
+                <header class="col-md-3">
+                    <h5>Technical Skills</h5>
+                </header>
+                <div class="col-md-9 ">
+                   <p class="welcome"><?php echo $resume->skills; ?> <br>
+                </div>
+            </article>
+            </div>
+          <?php endif; ?>
  		<?php if(!empty($resume->extracurricular)): ?>
               <div class="cvdisplay">
               <article class="row cv-box">

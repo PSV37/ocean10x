@@ -126,9 +126,9 @@ class Job_seeker_model extends MY_Model
         $this->db->join('js_personal_info', 'js_personal_info.job_seeker_id = js_info.job_seeker_id');
         $this->db->join('js_career_info', 'js_career_info.job_seeker_id = js_info.job_seeker_id');
         $this->db->join('js_photo', 'js_photo.job_seeker_id = js_info.job_seeker_id');
-		$this->db->join('country', 'country.country_id = js_personal_info.country_id');
-		$this->db->join('state', 'state.state_id = js_personal_info.state_id');
-		$this->db->join('city', 'city.id = js_personal_info.city_id');
+    		$this->db->join('country', 'country.country_id = js_personal_info.country_id');
+    		$this->db->join('state', 'state.state_id = js_personal_info.state_id');
+    		$this->db->join('city', 'city.id = js_personal_info.city_id');
         $query = $this->db->get();
         return $query->row();
     }
