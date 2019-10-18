@@ -45,7 +45,7 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
 									 <input type="hidden" name="technical_id" id="technical_id"  class="form-control" value="<?php if (!empty($lineitem)) echo $row['technical_id'];?>" required/>
                                     <input type="hidden" name="topic_id" id="topic_id"  class="form-control" value="<?php if (!empty($lineitem)) echo $row['topic_id'];?>" required/>
-                                    <input type="text" name="subtopic_id" id="subtopic_id"  class="form-control" value="<?php if (!empty($lineitem)) echo $row['subtopic_id'];?>" required/>
+                                    <input type="hidden" name="subtopic_id" id="subtopic_id"  class="form-control" value="<?php if (!empty($lineitem)) echo $row['subtopic_id'];?>" required/>
 									<input type="hidden" name="lineitem_id" id="lineitem_id"  class="form-control" value="<?php if (!empty($lineitem)) echo $row['lineitem_id'];?>" required/>
                                    
 									 <div class="box-body">
