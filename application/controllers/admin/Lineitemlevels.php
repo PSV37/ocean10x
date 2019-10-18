@@ -128,7 +128,7 @@ class Lineitemlevels extends MY_Controller
         );
         $where_del['lineitemlevel_id']=$id;
         $this->Master_model->master_update($lineitemlevel_status,'lineitemlevel',$where_del);
-         redirect('admin/lineitem/index/'.$id);
+         redirect('admin/lineitemlevels/index/'.$id);
     }
   
 }
