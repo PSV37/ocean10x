@@ -53,7 +53,7 @@
                                     <div class="form-group">
 									<div class="col-md-12">
                                         <label for="exampleInputEmail1">Title<span class="required">*</span></label>
-                                      <input type="text" name="lineitem_level" id="lineitem_level"  class="form-control" value="<?php if (!empty($lineitem)) echo $row['lineitem_level'];?>" required/>
+                                      <input type="text" name="lineitemlevel" id="lineitemlevel"  class="form-control" value="<?php if (!empty($lineitem)) echo $row['lineitemlevel'];?>" required/>
                                      </div>
 									</div>
                                 </div>
