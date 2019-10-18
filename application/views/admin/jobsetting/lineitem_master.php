@@ -26,7 +26,6 @@
         <div class="col-md-12">
             
              <?php /* print_r($subtopic); */ ?> 
-			 <?php echo $subtopic['subtopic_id'];?>
 
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
@@ -35,11 +34,12 @@
                     </div>
                 </div>
                
+            
 					<div class="row">
 					<div class="col-md-10"></div>
 					<div class="col-md-2">
 				
-					<br/><?php echo btn_add('admin/lineitems/index/'. $subtopic['subtopic_id']); ?>
+					<br/><?php echo btn_add('admin/lineitems/index/'. $subtopic[0]['subtopic_id']); ?>
 					
 					</div>
 					</div>
