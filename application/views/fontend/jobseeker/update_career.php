@@ -266,11 +266,11 @@ function delete_Career(id) {
 
               $('#tokenfield').tokenfield({
                 autocomplete: {
-                   source: "<?php echo base_url('job_seeker/get_skills_autocomplete'); ?>",
-                  select: function(a,b)
-                    {
-                      $(this).val(b.item.value); //grabed the selected value
-                    }
+                  source: "<?php echo base_url('job_seeker/get_skills_autocomplete'); ?>",
+                  // select: function(a,b)
+                  //   {
+                  //     $(this).val(b.item.value); //grabed the selected value
+                  //   }
                   // source: ['red','blue','green','yellow','violet','brown','purple','black','white'],
                   delay: 100
                 },
