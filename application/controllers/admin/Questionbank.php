@@ -53,6 +53,7 @@ class Questionbank extends MY_Controller
                 'technical_id' => $this->input->post('technical_id'),
                 'topic_id' => $this->input->post('topic_id'),
                 'subtopic_id' => $this->input->post('subtopic_id'),
+				'lineitem_id' => $this->input->post('lineitem_id'),
 				'level' => $this->input->post('level'),
 				'ques_type' => $this->input->post('ques_type'),
 				'question' => $this->input->post('question'),
@@ -199,7 +200,7 @@ function gettopic(){
 	$result = '';
 	
 	if(!empty($subtopics)){ 
-		$result .='<option value="">Select Subtopics</option>';
+		$result .='<option value="">Select Subtopic</option>';
 		foreach($subtopics as $key){
 		  $result .='<option value="'.$key['subtopic_id'].'">'.$key['subtopic_name'].'</option>';
 		}
@@ -218,7 +219,7 @@ function getlineitem(){
 	$result = '';
 	
 	if(!empty($lineitems)){ 
-		$result .='<option value="">Select Subtopics</option>';
+		$result .='<option value="">Select Lineitem</option>';
 		foreach($lineitems as $key){
 		  $result .='<option value="'.$key['lineitem_id'].'">'.$key['title'].'</option>';
 		}
