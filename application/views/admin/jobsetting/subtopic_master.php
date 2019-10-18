@@ -32,8 +32,8 @@
                     </div>
                 </div>
                 <!-- /.box-header -->
-                <div class="box-background">
-                <!-- form start -->
+                <!--<div class="box-background">
+                
                 <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/subtopic/save_subtopic/<?php  if (!empty($edit_subtopic_info)) { foreach($edit_subtopic_info as $row)
                         echo $row['subtopic_id'];
                       }
@@ -99,7 +99,7 @@
                     </div>
 
                 </form>
-                    </div>
+                    </div>-->
                 <div class="box-footer">
 
                 </div>
