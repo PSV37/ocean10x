@@ -77,7 +77,7 @@
                     </div><!-- end row -->  
                 </div><!-- end container -->
             </div><!-- end section -->
- <input type="text" class="form-control" id="tokenfield" value="red,green,blue" />
+ 
 <script>
 function delete_Career(id) {
     if (confirm('Are you sure you want to Delete Career ?')) {
@@ -141,13 +141,13 @@ function delete_Career(id) {
          <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Skills:</label>
                 <div class="col-sm-9">
-                  <input type="text" name="skills" class="form-control" id="skills" placeholder="Your Skills"
+                  <input type="text" name="skills" class="form-control" id="tokenfield" placeholder="Enter Your Skills"
                    value="<?php
                          if (!empty($job_career_info[0]->skills)) {
                            echo $job_career_info[0]->skills;
                            }
                        ?>">
-                      
+                      <!-- <input type="text" class="form-control" id="tokenfield" value="red,green,blue" /> -->
 
                 </div>
               </div>
