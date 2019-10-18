@@ -80,7 +80,7 @@
 					<div class="row">
 					<div class="col-md-10"></div>
 					<div class="col-md-2">
-					<?php echo btn_add('admin/lineitem/index/'. $ct_row['subtopic_id']); ?>
+					<br/><?php echo btn_add('admin/lineitem/index/'. $subtopic['subtopic_id']); ?>
 					</div>
 					</div>
                <div class="row">
