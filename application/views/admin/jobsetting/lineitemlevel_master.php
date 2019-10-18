@@ -53,7 +53,7 @@
                                     <div class="form-group">
 									<div class="col-md-12">
                                         <label for="exampleInputEmail1">Title<span class="required">*</span></label>
-                                      <input type="text" name="lineitemlevel" id="lineitemlevel"  class="form-control" value="<?php if (!empty($lineitem)) echo $row['lineitemlevel'];?>" required/>
+                                      <input type="text" name="titles" id="titles"  class="form-control" value="<?php if (!empty($lineitem)) echo $row['title'];?>" required/>
                                      </div>
 									</div>
                                 </div>
@@ -62,7 +62,7 @@
                                     <div class="form-group">
 									<div class="col-md-12">
                                         <label for="exampleInputEmail1">Description<span class="required">*</span></label>
-                                      <textarea name="lineitemlevel_desc" id="lineitemlevel_desc" class="form-control ckeditor" required><?php if (!empty($lineitem)) echo $row['lineitemlevel_desc'];?></textarea>
+                                      <textarea name="lineitemlevel_desc" id="lineitemlevel_desc" class="form-control ckeditor" required><?php if (!empty($lineitem)) echo $row['lineitem_desc'];?></textarea>
                                     </div>
 									</div>
                                 </div>
