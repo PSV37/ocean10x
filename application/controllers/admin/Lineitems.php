@@ -113,44 +113,4 @@ class Lineitems extends MY_Controller
         $this->load->view('admin/jobsetting/lineitems_master',$data);
     }
 
-
-function gettopic(){
-	$topic_id = $this->input->post('id');
-	$where['technical_id'] = $topic_id;
-	$topics = $this->Master_model->getMaster('topic',$where);
-	
-	
-	$result = '';
-	if(!empty($topics)){ 
-		$result .='<option value="">Select Topic</option>';
-		foreach($topics as $key){
-		  $result .='<option value="'.$key['topic_id'].'">'.$key['topic_name'].'</option>';
-		}
-	}else{
-	
-		$result .='<option value="">Topic not available</option>';
-	}
-	 echo $result;
-}
-
-
-
- function getsubtopic(){
-	$subtopic_id = $this->input->post('id');
-	$where['topic_id'] = $subtopic_id;
-	$subtopics = $this->Master_model->getMaster('subtopic',$where);
-	$result = '';
-	
-	if(!empty($subtopics)){ 
-		$result .='<option value="">Select Subtopics</option>';
-		foreach($subtopics as $key){
-		  $result .='<option value="'.$key['subtopic_id'].'">'.$key['subtopic_name'].'</option>';
-		}
-	}else{
-	
-		$result .='<option value="">Subtopic not available</option>';
-	}
-	 echo $result;
-}
-
 }
