@@ -136,9 +136,9 @@
       $(document).on("click", ".modal-body", function () {
        $(".datepicker").datepicker({
          // dateFormat: 'dd-mm-yy'     
-         	changeMonth: true,
+         	//changeMonth: true,
 
-          changeYear: true,
+          //changeYear: true,
 
           dateFormat: 'dd-mm-yy',
 
