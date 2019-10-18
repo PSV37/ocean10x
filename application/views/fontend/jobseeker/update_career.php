@@ -288,7 +288,7 @@ function delete_Career(id) {
         });
             </script>
 <style>
-  ul.ui-autocomplete-input {
+  ul.ui-autocomplete {
       z-index: 1100;
   }
 </style>
