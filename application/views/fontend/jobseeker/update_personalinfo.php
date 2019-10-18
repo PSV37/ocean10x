@@ -142,7 +142,7 @@
 
           dateFormat: 'dd-mm-yy',
 
-          yearRange: '1980:2010',                               
+         // yearRange: '1980:2010',                               
          });
        });  
     </script> 
