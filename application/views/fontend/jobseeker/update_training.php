@@ -55,7 +55,7 @@
                                 </tr>
                                  <tr>
                                   <td>Year:</td>
-                                <td><?php echo $v_training->training_year; ?></td>
+                                <td><?php echo $v_training->passing_year; ?></td>
                                 </tr>
      
                               </tbody>
@@ -74,8 +74,7 @@
 
                    <hr class="invis">
                       <?php if(!empty($v_training)): ?>
-                    
-                      ddddddddddddddd<div class="menu text-right"><button class="btn radius-button btn-primary" data-toggle="modal" data-target="#addTraining">Add More Training</button></div>
+                    <div class="menu text-right"><button class="btn radius-button btn-primary" data-toggle="modal" data-target="#addTraining">Add More Training</button></div>
 
                       <?php else: ?>
                         <div class="menu text-right"><button class="btn radius-button btn-primary" data-toggle="modal" data-target="#addTraining">Add Training</button></div>
