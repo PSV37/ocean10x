@@ -5,15 +5,14 @@
 
 
                         <div class="content col-md-9">
-                             <div class="userccount">
-                             <?php $this->load->view('fontend/layout/seeker_resumemenu.php'); ?>
-<?php $key = 1 ?>
+                            <div class="userccount">
+                            <?php $this->load->view('fontend/layout/seeker_resumemenu.php'); ?>
+                            <?php $key = 1 ?>
                                     <hr>
                             <h5>
-                                  Career Information
-                                 
- <a href="#" data-toggle="modal" data-target="#UpdateCareer" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>   
-  <a href="<?php echo site_url('job_seeker/delete_career/'.$job_career_info[0]->job_seeker_id.''); ?>" onclick="return confirm('Are you sure?');"  class="btn pull-right bg-red btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash" aria-hidden="true"></i></a>               
+                              Career Information
+                             <a href="#" data-toggle="modal" data-target="#UpdateCareer" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>   
+                              <a href="<?php echo site_url('job_seeker/delete_career/'.$job_career_info[0]->job_seeker_id.''); ?>" onclick="return confirm('Are you sure?');"  class="btn pull-right bg-red btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash" aria-hidden="true"></i></a>               
                             </h5>
                               <div class="table-responsive">          
                             <table class="table">
@@ -89,7 +88,7 @@ function delete_Career(id) {
 } else {
     // Do nothing!
 }
-}
+
 </script>
 
 
@@ -151,6 +150,8 @@ function delete_Career(id) {
                            echo $job_career_info[0]->skills;
                            }
                        ?>">
+                       <input type="text" class="form-control" id="tokenfield" value="red,green,blue" />
+
                 </div>
               </div>
 
@@ -165,7 +166,7 @@ function delete_Career(id) {
                        ?>">
                 </div>
               </div>
- <div class="form-group">
+              <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Year of Experience:</label>
                 <div class="col-sm-9">
                   <input type="text" name="js_career_exp" class="form-control" id="js_career_exp" placeholder="Total Career Number of Experience"
@@ -219,6 +220,8 @@ function delete_Career(id) {
 
   <script type="text/javascript">
 
+  
+
         $( document ).ready( function () {
             $( "#Career-info" ).validate( {
                 rules: {
@@ -261,6 +264,13 @@ function delete_Career(id) {
                 }
             } );
 
+              $('#tokenfield').tokenfield({
+                autocomplete: {
+                  source: ['red','blue','green','yellow','violet','brown','purple','black','white'],
+                  delay: 100
+                },
+                showAutocompleteOnFocus: true
+              })
 
         });
             </script>
