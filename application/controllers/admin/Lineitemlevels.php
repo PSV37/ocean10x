@@ -82,7 +82,7 @@ class Lineitemlevels extends MY_Controller
                 $where['lineitemlevel_id']=$id;
                 $this->Master_model->master_update($state_dt,'lineitemlevel',$where);
                
-                redirect('admin/lineitem/index/'.$id);
+                redirect('admin/lineitemlevels/index/'.$id);
             }
         }
 
