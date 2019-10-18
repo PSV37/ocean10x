@@ -27,7 +27,7 @@
 
                                 <tr>
                                   <td>Orgranization:</td>
-                                    <td><?php echo $v_reference->company_name; ?></td>
+                                    <td><?php echo $v_reference->company_profile_id; ?></td>
                                 </tr>
 
                                 <tr>
