@@ -151,7 +151,6 @@ function delete_Career(id) {
                            }
                        ?>">
                      
- <input type="text" id="demo-input-onadd-ondelete" >
                 </div>
               </div>
       
@@ -276,21 +275,7 @@ function delete_Career(id) {
 
         });
 
-
-// $(document).ready(function() {
-      $("#demo-input-onadd-ondelete").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocompletes", {
-        // zindex: 9999
-       
-          onAdd: function (item) {
-            alert(item.name);
-          },
-          onDelete: function (item) {
-              alert("Deleted " + item.name);
-          }
-
-      });
-  // }); 
-            </script>
+    </script>
 <style>
   ul.ui-autocomplete {
       z-index: 1100;
