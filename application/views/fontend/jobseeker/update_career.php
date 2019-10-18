@@ -264,14 +264,13 @@ function delete_Career(id) {
               $('#tokenfield').tokenfield({
                 autocomplete: {
                   source: ['red','blue','green','yellow','violet','brown','purple','black','white'],
-                  delay: 100
+                  delay: 100,
+                  z-index: 1511
                 },
                 showAutocompleteOnFocus: true,
 
-              
               })
-              $('#UpdateCareer').modal('show');
-              $( ".tokenfield" ).autocomplete( "option", "appendTo", ".form-horizontal" );
+           
 
         });
             </script>
