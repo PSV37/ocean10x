@@ -164,7 +164,7 @@ echo $this->job_level_model->selected($experinece->job_level);
                 <label class="control-label col-sm-3" for="email">Joining Date:</label>
                 <div class="col-sm-9"><input class="datepicker form-control"  required name="start_date" value="<?php
 if (!empty($experinece->start_date)) {
-    echo date('d/m/Y',strtotime($experinece->start_date));
+    echo date('d-m-Y',strtotime($experinece->start_date));
 }
 ?>" class="form-control" >
  <label><input type="checkbox" id="upChkDisable_<?php echo $count?>" onclick="disableUpperDP('<?php echo $count?>')">  Continue</label>
