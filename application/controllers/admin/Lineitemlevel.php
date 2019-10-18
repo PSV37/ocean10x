@@ -61,8 +61,8 @@ class Lineitemlevel extends MY_Controller
 				'technical_id' => $this->input->post('technical_id'),
 				'topic_id' => $this->input->post('topic_id'),
 				'subtopic_id' => $this->input->post('subtopic_id'),
+				'titles' => $this->input->post('titles'),
 				'lineitem_id' => $this->input->post('lineitem_id'),
-				'lineitemlevel' => $this->input->post('lineitemlevel'),
 				'lineitemlevel_desc' => $this->input->post('lineitemlevel_desc'),
 				//'subtopic_id'=$subtopic;
             );
@@ -71,7 +71,7 @@ class Lineitemlevel extends MY_Controller
                 $state_dt['lineitemlevel_created_date']=date('Y-m-d H:i:s');
                 $state_dt['lineitemlevel_created_by']=$user_id;
 
-                $this->Master_model->master_insert($state_dt,'lineitem');
+                $this->Master_model->master_insert($state_dt,'lineitemlevel');
                
                 redirect('admin/lineitem/index/'.$id);
             }
