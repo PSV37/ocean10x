@@ -282,9 +282,7 @@
                 </form>
                     </div>
 					</div>
-                <div class="box-footer">
-
-                </div>
+               
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                 <table class="table table-bordered table-striped" id="dataTables-example">
