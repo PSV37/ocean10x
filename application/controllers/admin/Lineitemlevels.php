@@ -71,7 +71,8 @@ class Lineitemlevels extends MY_Controller
                 $state_dt['lineitemlevel_created_date']=date('Y-m-d H:i:s');
                 $state_dt['lineitemlevel_created_by']=$user_id;
 
-                $this->Master_model->master_insert($state_dt,'lineitemlevel');
+				$where_add['lineitemlevel_id']=$id;
+                $this->Master_model->master_insert($state_dt,'lineitemlevel',$where_add);
                
                 redirect('admin/lineitem/index/'.$id);
             }
