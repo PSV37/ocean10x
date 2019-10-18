@@ -68,7 +68,7 @@ class Lineitems extends MY_Controller
                 $state_dt['lineitem_created_by']=$user_id;
 				
 				
-                $this->Master_model->master_insert($state_dt,'lineitem',$id);
+                $this->Master_model->master_insert($state_dt,'lineitem',$where);
                
                 redirect('admin/lineitem/index/'.$id);
             }
