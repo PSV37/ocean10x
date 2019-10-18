@@ -71,7 +71,8 @@ class Lineitemlevels extends MY_Controller
                 $state_dt['lineitemlevel_created_date']=date('Y-m-d H:i:s');
                 $state_dt['lineitemlevel_created_by']=$user_id;
 
-                $this->Master_model->master_insert($state_dt,'lineitemlevel');
+				$where_add['lineitemlevel_id']=$id;
+                $this->Master_model->master_insert($state_dt,'lineitemlevel',$where_add);
                
                 redirect('admin/lineitem/index/'.$id);
             }
@@ -82,7 +83,7 @@ class Lineitemlevels extends MY_Controller
                 $where['lineitemlevel_id']=$id;
                 $this->Master_model->master_update($state_dt,'lineitemlevel',$where);
                
-                redirect('admin/lineitem/index/'.$id);
+                redirect('admin/lineitemlevels/index/'.$id);
             }
         }
 
@@ -117,7 +118,7 @@ class Lineitemlevels extends MY_Controller
 		$where_lineitem= "lineitem.lineitem_status=1 AND lineitem.lineitem_id ='$id'";
         $data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_subtopic);
 		
-        $this->load->view('admin/jobsetting/lineitemlevel',$data);
+        $this->load->view('admin/jobsetting/edit_lineitemlevels',$data);
     }
 
 	

@@ -177,6 +177,8 @@ $route['admin/lineitems']="admin/lineitems/index";
 $route['admin/lineitems']="admin/lineitems/index";
 //$route['admin/topic-master/(:any)']="admin/topic/edit_topic/$1";
 $route['admin/lineitemlevel']="admin/lineitemlevel/index";
+$route['admin/lineitemlevels']="admin/lineitemlevels/index";
+
 
 
 

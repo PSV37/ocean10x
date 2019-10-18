@@ -65,8 +65,9 @@ class Lineitem extends MY_Controller
             if(empty($id)){
                 $state_dt['lineitem_created_date']=date('Y-m-d H:i:s');
                 $state_dt['lineitem_created_by']=$user_id;
-
-                $this->Master_model->master_insert($state_dt,'lineitem');
+				
+				$where_add['lineitem_id']=$id;
+                $this->Master_model->master_insert($state_dt,'lineitem',$where_add);
                
                 redirect('admin/lineitem/index/'.$id);
             }
