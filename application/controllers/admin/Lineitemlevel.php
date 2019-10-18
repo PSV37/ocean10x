@@ -40,10 +40,10 @@ class Lineitemlevel extends MY_Controller
 				'subtopic' => 'subtopic.subtopic_id=lineitemlevel.subtopic_id |INNER',
 				'lineitem' => 'lineitem.lineitem_id=lineitemlevel.lineitem_id |INNER',
             );
-        $data['lineitem_level'] = $this->Master_model->getMaster('lineitemlevel',$where_all,$join_emp);
+        $data['lineitemlevel'] = $this->Master_model->getMaster('lineitemlevel',$where_all,$join_emp);
             
 
-            $this->load->view('admin/jobsetting/lineitemlevel_master', $data);
+            $this->load->view('admin/jobsetting/lineitemlevel', $data);
                 
             } else {
                 redirect('admin/lineitemlevel');
@@ -117,7 +117,7 @@ class Lineitemlevel extends MY_Controller
 		$where_lineitem= "lineitem.lineitem_status=1 AND lineitem.lineitem_id ='$id'";
         $data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_subtopic);
 		
-        $this->load->view('admin/jobsetting/lineitemlevel_master',$data);
+        $this->load->view('admin/jobsetting/lineitemlevel',$data);
     }
 
 	

@@ -52,23 +52,25 @@
                         <th class="active">Subject</th>
                         <th class="active">Topic</th>
                         <th class="active">Subtopic</th>
-						<th class="active">Lineitem(Level 1)</th>
+						<th class="active">Line Item(Level 1)</th>
+						<th class="active">Line Item(Level 2)</th>
                         <th class="active col-sm-2">Action</th>
                     </tr>
                     </thead>
                     <tbody>
                     <?php $key = 1 ;?>
-                    <?php if (!empty($lineitem)): foreach ($lineitem as $ct_row) : ?>
+                    <?php if (!empty($lineitemlevel)): foreach ($lineitemlevel as $ct_row) : ?>
                         <tr>
                             <td><?php echo $key ?></td>
                             <td><?php echo $ct_row['skill_name'] ?></td>
                             <td><?php echo $ct_row['topic_name'] ?></td>
                             <td><?php echo $ct_row['subtopic_name'] ?></td>
 							<td><?php echo $ct_row['title'] ?></td>
+							<td><?php echo $ct_row['titles'] ?></td>
+							
                             <td>
-                                <?php echo btn_edit('admin/lineitem/edit_lineitem/' . $ct_row['lineitem_id']); ?>
-                                <?php echo btn_delete('admin/lineitem/delete_lineitem/' . $ct_row['lineitem_id']); ?>
-							    <?php echo btn_add('admin/lineitemlevel/index/' . $ct_row['lineitem_id']); ?>
+                                <?php echo btn_edit('admin/subtopic/edit_subtopic/' . $ct_row['subtopic_id']); ?>
+                                <?php echo btn_delete('admin/subtopic/delete_subtopic/' . $ct_row['subtopic_id']); ?>
                             </td>
                         </tr>
                     <?php
