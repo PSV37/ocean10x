@@ -135,9 +135,16 @@
       <script>
       $(document).on("click", ".modal-body", function () {
        $(".datepicker").datepicker({
-         dateFormat: 'dd-mm-yy'                                    
+         // dateFormat: 'dd-mm-yy'     
+         	changeMonth: true,
+
+          changeYear: true,
+
+          dateFormat: 'dd-mm-yy',
+
+          yearRange: '2017:2020',                               
          });
-          });  
+       });  
     </script> 
       <div class="modal-body">
          <form id="Personal-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_personalinfo');?>"  method="post" autocomplete="off">
@@ -175,7 +182,7 @@
               	<div class="col-md-6 col-sm-12">
 	              	<div class="input-group">
 	                 <label class="control-label" for="email">Date of Birth:</label>
-	                  <input type="text" class="form-control datepicker" name="date_of_birth" value="<?php echo $js_personal_info->date_of_birth; ?>">
+	                  <input type="text" class="form-control datepicker" name="date_of_birth" value="<?php echo date('d-m-Y', strtotime($js_personal_info->date_of_birth)); ?>">
 	             
 	              	</div>
           		</div>
