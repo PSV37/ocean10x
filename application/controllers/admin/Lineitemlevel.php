@@ -27,8 +27,8 @@ class Lineitemlevel extends MY_Controller
             $where_topic= "topic.topic_status=1";
             $data['topic'] = $this->Master_model->getMaster('topic',$where_topic);
             
-            $where_subtopic= "subtopic_status=1";
-            $data['subtopic'] = $this->Master_model->getMaster('subtopic',$where_subtopic);
+           // $where_subtopic= "subtopic.subtopic_status=1";
+            //$data['subtopic'] = $this->Master_model->getMaster('subtopic',$where_subtopic);
 			
 			$where_lineitem= "lineitem.lineitem_status=1 AND lineitem.lineitem_id ='$id'";
             $data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_subtopic);
@@ -61,8 +61,8 @@ class Lineitemlevel extends MY_Controller
 				'technical_id' => $this->input->post('technical_id'),
 				'topic_id' => $this->input->post('topic_id'),
 				'subtopic_id' => $this->input->post('subtopic_id'),
-				'title' => $this->input->post('title'),
 				'lineitem_id' => $this->input->post('lineitem_id'),
+				'lineitem_level' => $this->input->post('lineitem_level'),
 				'lineitemlevel_desc' => $this->input->post('lineitemlevel_desc'),
 				//'subtopic_id'=$subtopic;
             );
@@ -111,8 +111,8 @@ class Lineitemlevel extends MY_Controller
         $where_state= "topic_status=1";
         $data['topic'] = $this->Master_model->getMaster('topic',$where_state);
         
-		$where_subtopic = "subtopic_status='1'";
-		$data['subtopic'] = $this->Master_model->getMaster('subtopic',$where_subtopic);
+		//$where_subtopic = "subtopic_status='1'";
+		//$data['subtopic'] = $this->Master_model->getMaster('subtopic',$where_subtopic);
 		
 		$where_lineitem= "lineitem.lineitem_status=1 AND lineitem.lineitem_id ='$id'";
         $data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_subtopic);
