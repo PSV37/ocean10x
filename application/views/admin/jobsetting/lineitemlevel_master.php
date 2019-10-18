@@ -88,6 +88,54 @@
 </section>
 </div>
 
+
+<div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                <table class="table table-bordered table-striped" id="dataTables-example">
+                    <thead>
+                    <tr>
+                        <th class="active">SL</th>
+                        <th class="active">Subject</th>
+                        <th class="active">Topic</th>
+                        <th class="active">Subtopic</th>
+						<th class="active">Line Item(Level 1))</th>
+						<th class="active">Line Item(Level 2))</th>
+                        <th class="active col-sm-2">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php $key = 1 ;?>
+                    <?php if (!empty($lineitemlevel)): foreach ($lineitemlevel as $ct_row) : ?>
+                        <tr>
+                            <td><?php echo $key ?></td>
+                            <td><?php echo $ct_row['skill_name'] ?></td>
+                            <td><?php echo $ct_row['topic_name'] ?></td>
+                            <td><?php echo $ct_row['subtopic_name'] ?></td>
+							<td><?php echo $ct_row['title'] ?></td>
+							<td><?php echo $ct_row['titles'] ?></td>
+							<td><?php echo $ct_row['titles'] ?></td>
+                            <td>
+                                <?php echo btn_edit('admin/subtopic/edit_subtopic/' . $ct_row['subtopic_id']); ?>
+                                <?php echo btn_delete('admin/subtopic/delete_subtopic/' . $ct_row['subtopic_id']); ?>
+								<?php echo btn_add('admin/lineitem/index/'. $ct_row['subtopic_id']); ?>
+                            </td>
+                        </tr>
+                    <?php
+                    $key++;
+                    endforeach;
+                    ?>
+                    <?php else : ?> 
+                        <td colspan="3">
+                            <strong>There is no record for display</strong>
+                        </td>
+                    <?php
+                    endif; ?>
+                    </tbody>
+                </table>
+
+                    </div>
+                </div>
+
 <br />
 
 
