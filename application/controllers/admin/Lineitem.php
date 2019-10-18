@@ -36,7 +36,7 @@ class Lineitem extends MY_Controller
             $this->load->view('admin/jobsetting/lineitem_master', $data);
                 
             } else {
-                redirect('admin/lineitem');
+                redirect('admin/subtopic');
             }
 
        
@@ -49,10 +49,12 @@ class Lineitem extends MY_Controller
             $user_id = $this->session->userdata('admin_user_id');
 
             $state_dt=array(
-				
+				'technical_id' => $this->input->post('technical_id'),
+				'topic_id' => $this->input->post('topic_id'),
+				'subtopic_id' => $this->input->post('subtopic_id'),
 				'title' => $this->input->post('title'),
 				'lineitem_desc' => $this->input->post('lineitem_desc'),
-				// 'subtopic_id'=$subtopic;
+				//'subtopic_id'=$subtopic;
             );
 
             if(empty($id)){
@@ -70,7 +72,7 @@ class Lineitem extends MY_Controller
                 $where['lineitem_id']=$id;
                 $this->Master_model->master_update($state_dt,'lineitem',$where);
                
-                redirect('admin/lineitem');
+                redirect('admin/subtopic');
             }
         }
 
@@ -93,13 +95,16 @@ class Lineitem extends MY_Controller
         $where_ct = "lineitem_id='$id'";
         $data['edit_lineitem_info'] = $this->Master_model->getMaster('lineitem',$where_ct);
         
+		//$where_sub = "subtopic_id='$id'";
+		//$data['edit_subtopic_info'] = $this->Master_model->getMaster('subtopic',$where_sub);
+		
         $where_cn= "status=1";
         $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where_cn);
 
         $where_state= "topic_status=1";
         $data['topic'] = $this->Master_model->getMaster('topic',$where_state);
         
-		$where_subtopic = "subtopic.subtopic_status='1'";
+		$where_subtopic = "subtopic.subtopic_status='1' AND subtopic.subtopic_id ='$id'";
 		$data['subtopic'] = $this->Master_model->getMaster('subtopic',$where_subtopic);
 		
 		

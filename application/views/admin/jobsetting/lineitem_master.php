@@ -24,7 +24,11 @@
                <section class="content">
     <div class="row">
         <div class="col-md-12">
-            <!-- <?php print_r($subtopic); ?> -->
+<<<<<<< HEAD
+             <?php print_r($subtopic); ?> 
+=======
+             <?php /* print_r($subtopic); */ ?> 
+>>>>>>> 8a811c8d798560862654edc7a57ba92129b40fd7
 
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
@@ -35,7 +39,7 @@
                 <!-- /.box-header -->
                 <div class="box-background">
                 <!-- form start -->
-                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/lineitem/save_lineitem/<?php  if (!empty($edit_lineitem_info)) { foreach($edit_lineitem_info as $row)
+                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/lineitem/save_lineitem/<?php  if (!empty($subtopic)) { foreach($subtopic as $row)
                         echo $row['lineitem_id'];
                       }
                      ?>" method="post">
@@ -43,13 +47,16 @@
                     <div class="row">
 
                         <div class="col-md-12 col-sm-12 col-xs-12">
-
+									 <input type="hidden" name="technical_id" id="technical_id"  class="form-control" value="<?php if (!empty($subtopic)) echo $row['technical_id'];?>" required/>
+                                    <input type="hidden" name="topic_id" id="topic_id"  class="form-control" value="<?php if (!empty($subtopic)) echo $row['topic_id'];?>" required/>
+                                    <input type="hidden" name="subtopic_id" id="subtopic_id"  class="form-control" value="<?php if (!empty($subtopic)) echo $row['subtopic_id'];?>" required/>
+                                   
 									 <div class="box-body">
 
                                     <div class="form-group">
 									<div class="col-md-12">
                                         <label for="exampleInputEmail1">Title<span class="required">*</span></label>
-                                      <input type="text" name="title" id="title"  class="form-control" value="<?php if (!empty($edit_subtopic_info)) echo $row['title'];?>" required/>
+                                      <input type="text" name="title" id="title"  class="form-control" value="<?php if (!empty($subtopic)) echo $row['title'];?>" required/>
                                      </div>
 									</div>
                                 </div>
@@ -58,7 +65,7 @@
                                     <div class="form-group">
 									<div class="col-md-12">
                                         <label for="exampleInputEmail1">Description<span class="required">*</span></label>
-                                      <textarea name="lineitem_desc" id="lineitem_desc" class="form-control ckeditor" required><?php if (!empty($edit_lineitem_info)) echo $row['lineitem2'];?></textarea>
+                                      <textarea name="lineitem_desc" id="lineitem_desc" class="form-control ckeditor" required><?php if (!empty($edit_subtopic_info)) echo $row['lineitem2'];?></textarea>
                                     </div>
 									</div>
                                 </div>
@@ -73,10 +80,8 @@
 
                 </form>
                     </div>
-                <div class="box-footer">
 
-                </div>
-                <div class="row">
+               <!-- <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                 <table class="table table-bordered table-striped" id="dataTables-example">
                     <thead>
@@ -119,7 +124,7 @@
                 </table>
 
                     </div>
-                </div>
+                </div>-->
             </div>
             <!-- /.box -->
         </div>
@@ -133,7 +138,7 @@
 
 
 </div><!-- /.right-side -->
-
+<br/><br/><br/><br/>
        
 <?php $this->load->view('admin/components/footer'); ?>
 

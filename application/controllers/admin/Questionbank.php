@@ -30,6 +30,10 @@ class Questionbank extends MY_Controller
         
         $where_subtopic = "subtopic.subtopic_status='1'";
 		$data['subtopic'] = $this->Master_model->getMaster('subtopic',$where_subtopic);
+		
+		$where_lineitem = "lineitem.lineitem_status='1'";
+		$data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_lineitem);
+		
 		$where_all = "questionbank.ques_status='1'";
         $join_emp = array(
                 'skill_master' => 'skill_master.id=questionbank.technical_id |INNER',
@@ -159,6 +163,8 @@ class Questionbank extends MY_Controller
 		$where_subtopic = "subtopic.subtopic_status='1'";
 		$data['subtopic'] = $this->Master_model->getMaster('subtopic',$where_subtopic);
 		
+		$where_lineitem = "lineitem.lineitem_status='1'";
+		$data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_lineitem);
 		
         $this->load->view('admin/jobsetting/questionbank_master',$data);
     }
@@ -200,6 +206,25 @@ function gettopic(){
 	}else{
 	
 		$result .='<option value="">Subtopic not available</option>';
+	}
+	 echo $result;
+}
+
+
+function getlineitem(){
+	$lineitem_id = $this->input->post('id');
+	$where['subtopictopic_id'] = $lineitem_id;
+	$lineitems = $this->Master_model->getMaster('lineitem',$where);
+	$result = '';
+	
+	if(!empty($lineitems)){ 
+		$result .='<option value="">Select Subtopics</option>';
+		foreach($subtopics as $key){
+		  $result .='<option value="'.$key['lineitem_id'].'">'.$key['title'].'</option>';
+		}
+	}else{
+	
+		$result .='<option value="">Lineitem not available</option>';
 	}
 	 echo $result;
 }

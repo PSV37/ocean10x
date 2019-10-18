@@ -75,7 +75,7 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
 
                             <div class="box-body">
-
+							<div class="container-fluid">
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
@@ -105,11 +105,10 @@
                                         </select>
                                     </div>
                                 </div>
-
-                                 <div class="col-md-4">
+									 <div class="col-md-4">
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
-                                     <select id="subtopic_id"  name="subtopic_id" class="form-control" required>
+                                     <select id="subtopic_id"  name="subtopic_id" class="form-control" required onchange="getLineitem(this.value)">
                                            <option value="">Select Subopic</option> 
                                         <?php if (!empty($subtopic))
                                            foreach($subtopic as $st_rows) 
@@ -117,10 +116,27 @@
                                         ?>   
                                              <option value="<?php echo $st_rows['subtopic_id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['subtopic_id']==$st_rows['subtopic_id'])echo "selected";?>><?php echo $st_rows['subtopic_name']; ?></option> 
                                        <?php } ?>
-                                        </select> </div>
+                                        </select>
+										</div>
 									</div>
-									</div>
+                                </div>
 									 <div class="container-fluid">
+									 <div class="col-md-4">
+								  <div class="form-group">
+                                        <label for="exampleInputEmail1">Title<span class="required">*</span></label>
+                                     <select id="lineitem_id"  name="lineitem_id" class="form-control" required>
+                                           <option value="">Select Title</option> 
+                                        <?php if (!empty($lineitem))
+                                           foreach($lineitem as $st_rowss) 
+                                           {
+                                        ?>   
+                                             <option value="<?php echo $st_rowss['lineitem_id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['lineitem_id']==$st_rowss['lineitem_id'])echo "selected";?>><?php echo $st_rowss['title']; ?></option> 
+                                       <?php } ?>
+                                        </select> 
+										</div>
+									</div>
+								
+									 
 									 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Level<span class="required">*</span></label>
@@ -492,6 +508,50 @@ function showCheckboxes() {
    
        }
        getSubtopic_load();
+    });
+       
+</script>
+
+
+
+ <script>
+    function getLineitem(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/questionbank/getlineitem',
+                data:{id:id},
+                success:function(res){
+                    $('#lineitem_id').html(res);
+                }
+                
+            }); 
+          }
+   
+       }
+
+    $(document).ready(function(){
+
+
+
+    function getLineitem_load(){
+        var id = $('#subtopic_id').val();
+
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/questionbank/getlineitem',
+                data:{id:id},
+                success:function(res){
+                    $('#lineitem_id').html(res);
+                    $('#lineitem_id').val(<?php echo $row['lineitem_id']; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+       getLineitem_load();
     });
        
 </script>
