@@ -315,8 +315,7 @@ function delete_Career(id) {
     vertical-align: top !important;
     padding-right: 4px !important;
 
-    color: #dddd; 
-    /*font-size: 24px !important; 
-    opacity: unset !important; 
-}*/
+    color: #989090f2; 
+
+}
 </style>
