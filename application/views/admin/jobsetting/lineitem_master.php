@@ -77,7 +77,12 @@
 
                 </form>
                     </div>-->
-
+					<div class="row">
+					<div class="col-md-10"></div>
+					<div class="col-md-2">
+					<?php echo btn_add('admin/lineitem/index/'. $ct_row['subtopic_id']); ?>
+					</div>
+					</div>
                <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                 <table class="table table-bordered table-striped" id="dataTables-example">
