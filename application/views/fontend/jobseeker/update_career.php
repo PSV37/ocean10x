@@ -277,7 +277,7 @@ function delete_Career(id) {
         });
 
 
-$(document).ready(function() {
+// $(document).ready(function() {
       $("#demo-input-onadd-ondelete").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocompletes", {
         // zindex: 9999
        
@@ -289,7 +289,7 @@ $(document).ready(function() {
           }
 
       });
-  }); 
+  // }); 
             </script>
 <style>
   ul.ui-autocomplete {
