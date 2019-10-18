@@ -278,7 +278,7 @@ function delete_Career(id) {
 
               });
 
-            $('.tokenfield').on('tokenfield:createtoken', function (event) {
+            $('#tokenfield').on('tokenfield:createtoken', function (event) {
                 var existingTokens = $(this).tokenfield('getTokens');
                 alert(existingTokens);
                 $.each(existingTokens, function(index, token) {
