@@ -41,10 +41,10 @@
                       }
                      ?>" method="post">
 
-                   <!-- <div class="row">
+                    <div class="row">
 
                         <div class="col-md-12 col-sm-12 col-xs-12">
-									 <input type="text" name="technical_id" id="technical_id"  class="form-control" value="<?php if (!empty($subtopic)) echo $row['technical_id'];?>" required/>
+									 <input type="hidden" name="technical_id" id="technical_id"  class="form-control" value="<?php if (!empty($subtopic)) echo $row['technical_id'];?>" required/>
                                     <input type="hidden" name="topic_id" id="topic_id"  class="form-control" value="<?php if (!empty($subtopic)) echo $row['topic_id'];?>" required/>
                                     <input type="hidden" name="subtopic_id" id="subtopic_id"  class="form-control" value="<?php if (!empty($subtopic)) echo $row['subtopic_id'];?>" required/>
                                    
@@ -70,10 +70,10 @@
                                 <button type="submit" class="btn bg-navy" type="submit">Save Lineitem
                                 </button><br/><br/>
                             
-                          
+                            <!-- /.box-body -->
 
                         </div>
-                    </div>-->
+                    </div>
 
                 </form>
                     </div>
