@@ -35,14 +35,7 @@
                 </div>
                
             
-					<div class="row">
-					<div class="col-md-10"></div>
-					<div class="col-md-2">
-				
-					<br/><?php echo btn_add('admin/lineitems/index/'. $subtopic[0]['subtopic_id']); ?>
 					
-					</div>
-					</div>
                <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                 <table class="table table-bordered table-striped" id="dataTables-example">
