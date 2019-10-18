@@ -391,13 +391,14 @@ exit;*/
             	$this->Job_career_model->update($career_info, $js_career_id);
             }
             
-            if(!empty($js_skills)) {
+            $where_del = "job_seeker_id='$jobseeker_id'";
+            $del = $this->Master_model->master_delete('job_seeker_skills',$where_del);
+            if($del==true)
+            {
+                if(!empty($js_skills)) {
                 $skill = explode(',', $js_skills);
-                $where_del = "job_seeker_id='$jobseeker_id'";
-                $del = $this->Master_model->master_delete('job_seeker_skills',$where_del);
-                if($del==true)
-                {
-                    for($k=0; $k<sizeof($skill); $k++)
+                
+                for($k=0; $k<sizeof($skill); $k++)
                     {
                         $skill_array= array(
                             'job_seeker_id' => $jobseeker_id,
