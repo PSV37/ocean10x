@@ -2,7 +2,7 @@
                 <div class="container">
                     <div class="row">
                         <?php $this->load->view('fontend/layout/seeker_left.php'); ?>
-                         <input type="text" class="form-control" id="tokenfield" value="red,green,blue" />
+                         <!-- <input type="text" class="form-control" id="tokenfield" value="red,green,blue" /> -->
 
                         <div class="content col-md-9">
                             <div class="userccount">
