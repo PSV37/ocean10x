@@ -61,8 +61,8 @@ class Lineitemlevel extends MY_Controller
 				'technical_id' => $this->input->post('technical_id'),
 				'topic_id' => $this->input->post('topic_id'),
 				'subtopic_id' => $this->input->post('subtopic_id'),
-				'title' => $this->input->post('title'),
 				'lineitem_id' => $this->input->post('lineitem_id'),
+				'lineitem_level' => $this->input->post('lineitem_level'),
 				'lineitemlevel_desc' => $this->input->post('lineitemlevel_desc'),
 				//'subtopic_id'=$subtopic;
             );
