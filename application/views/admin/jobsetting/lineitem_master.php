@@ -81,7 +81,7 @@
 					<div class="col-md-10"></div>
 					<div class="col-md-2">
 				
-					<br/><?php echo btn_add('admin/lineitems/index/'. $subtopic['subtopic_id']); ?>
+					<br/><?php echo btn_add('admin/lineitems/index/'. $lineitem['lineitem_id']); ?>
 					
 					</div>
 					</div>
