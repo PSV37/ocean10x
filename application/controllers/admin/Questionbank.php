@@ -219,7 +219,7 @@ function getlineitem(){
 	
 	if(!empty($lineitems)){ 
 		$result .='<option value="">Select Subtopics</option>';
-		foreach($subtopics as $key){
+		foreach($lineitems as $key){
 		  $result .='<option value="'.$key['lineitem_id'].'">'.$key['title'].'</option>';
 		}
 	}else{
