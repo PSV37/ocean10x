@@ -35,7 +35,7 @@
                 </div>
                <div class="box-background">
               
-                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/lineitem/save_lineitem/<?php  if (!empty($subtopic)) { foreach($subtopic as $row)
+                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/lineitem/save_lineitem/<?php  if (!empty($edit_lineitem_info)) { foreach($edit_lineitem_info as $row)
                         echo $row['lineitem_id'];
                       }
                      ?>" method="post">
@@ -43,9 +43,9 @@
                     <div class="row">
 
                         <div class="col-md-12 col-sm-12 col-xs-12">
-									 <input type="text" name="technical_id" id="technical_id"  class="form-control" value="<?php if (!empty($subtopic)) echo $row['technical_id'];?>" required/>
-                                    <input type="hidden" name="topic_id" id="topic_id"  class="form-control" value="<?php if (!empty($subtopic)) echo $row['topic_id'];?>" required/>
-                                    <input type="hidden" name="subtopic_id" id="subtopic_id"  class="form-control" value="<?php if (!empty($subtopic)) echo $row['subtopic_id'];?>" required/>
+									 <input type="text" name="technical_id" id="technical_id"  class="form-control" value="<?php if (!empty($edit_lineitem_info)) echo $row['technical_id'];?>" required/>
+                                    <input type="hidden" name="topic_id" id="topic_id"  class="form-control" value="<?php if (!empty($edit_lineitem_info)) echo $row['topic_id'];?>" required/>
+                                    <input type="hidden" name="subtopic_id" id="subtopic_id"  class="form-control" value="<?php if (!empty($edit_lineitem_info)) echo $row['subtopic_id'];?>" required/>
                                    
 									 <div class="box-body">
 
