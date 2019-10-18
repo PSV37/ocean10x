@@ -369,6 +369,8 @@ exit;*/
         if ($_POST) {
             $jobseeker_id = $this->session->userdata('job_seeker_id');
             $js_career_id = $this->input->post('js_career_id');
+            $js_skills = $this->input->post('skills');
+
             $career_info  = array(
                 'job_seeker_id'        => $jobseeker_id,
                 'js_career_sum'        => $this->input->post('js_career_sum'),
@@ -378,16 +380,37 @@ exit;*/
                 'avaliable'            => $this->input->post('avaliable'),
                 'skills'               => $this->input->post('skills'),
                 'job_area'             => $this->input->post('job_area'),
-                'js_career_exp'             => $this->input->post('js_career_exp'),
+                'js_career_exp'        => $this->input->post('js_career_exp'),
             );
             
             if (empty($js_career_id)) {
-                $this->Job_career_model->insert($career_info);
+                $ins_id = $this->Job_career_model->insert($career_info);
+               
                 redirect('job_seeker/seeker_info');
             } else {
             	$this->Job_career_model->update($career_info, $js_career_id);
             }
             
+            $where_del = "job_seeker_id='$jobseeker_id'";
+            $del = $this->Master_model->master_delete('job_seeker_skills',$where_del);
+            if($del==true)
+            {
+                if(!empty($js_skills)) {
+                $skill = explode(',', $js_skills);
+                
+                for($k=0; $k<sizeof($skill); $k++)
+                    {
+                        $skill_array= array(
+                            'job_seeker_id' => $jobseeker_id,
+                            'skills'        => $skill[$k],
+                            'created_by'    => $jobseeker_id,
+                            'created_on'    => date('Y-m-d H:i:s'),
+                        );
+                        $this->Master_model->master_insert($skill_array,'job_seeker_skills');
+                    }
+                }
+                   
+            }
      
             redirect('job_seeker/seeker_info');
         } else {
@@ -596,17 +619,18 @@ exit;*/
          echo $result;
     }
 
-    // this function is for search side bar menus in header
-    function get_autocompletes(){
+    // // this function is for search side bar menus in header
+    // function get_autocompletes(){
 
-        $query=$this->input->get('q');
-        $whereauto="company_name like '%$query%'";
-        $selectauto="company_profile_id as id, company_name as name";
-        $result= $this->Master_model->getMaster('company_profile',$whereauto,false,false,false,$selectauto);
-        // echo $this->db->last_query();
-        echo json_encode($result); 
-    }
+    //     $query=$this->input->get('q');
+    //     $whereauto="company_name like '%$query%'";
+    //     $selectauto="company_profile_id as id, company_name as name";
+    //     $result= $this->Master_model->getMaster('company_profile',$whereauto,false,false,false,$selectauto);
+    //     // echo $this->db->last_query();
+    //     echo json_encode($result); 
+    // }
 
+// to get companies
     function get_autocomplete(){
         if (isset($_GET['term'])) {
 
@@ -619,6 +643,7 @@ exit;*/
         }
     }
 
+// to get skill master for autocomplete
 function get_skills_autocomplete(){
         if (isset($_GET['term'])) {
 
