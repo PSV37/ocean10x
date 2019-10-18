@@ -261,7 +261,7 @@ function delete_Career(id) {
                 }
             } );
 
-              $('#tokenfield').tokenfield({
+              $('#tokenfield').typeahead({
                 autocomplete: {
                   source: ['red','blue','green','yellow','violet','brown','purple','black','white'],
                   delay: 100
