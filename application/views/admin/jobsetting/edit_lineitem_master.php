@@ -35,7 +35,7 @@
                 </div>
                <div class="box-background">
               
-                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/lineitem/save_lineitem/<?php  if (!empty($edit_lineitem_info)) { foreach($edit_lineitem_info as $row)
+                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/lineitem/save_lineitem/<?php  if (!empty($lineitem)) { foreach($lineitem as $row)
                         echo $row['lineitem_id'];
                       }
                      ?>" method="post">
@@ -43,16 +43,16 @@
                     <div class="row">
 
                         <div class="col-md-12 col-sm-12 col-xs-12">
-									 <input type="text" name="technical_id" id="technical_id"  class="form-control" value="<?php if (!empty($edit_lineitem_info)) echo $row['technical_id'];?>" required/>
-                                    <input type="hidden" name="topic_id" id="topic_id"  class="form-control" value="<?php if (!empty($edit_lineitem_info)) echo $row['topic_id'];?>" required/>
-                                    <input type="hidden" name="subtopic_id" id="subtopic_id"  class="form-control" value="<?php if (!empty($edit_lineitem_info)) echo $row['subtopic_id'];?>" required/>
+									 <input type="text" name="technical_id" id="technical_id"  class="form-control" value="<?php if (!empty($lineitem)) echo $row['technical_id'];?>" required/>
+                                    <input type="hidden" name="topic_id" id="topic_id"  class="form-control" value="<?php if (!empty($lineitem)) echo $row['topic_id'];?>" required/>
+                                    <input type="hidden" name="subtopic_id" id="subtopic_id"  class="form-control" value="<?php if (!empty($lineitem)) echo $row['subtopic_id'];?>" required/>
                                    
 									 <div class="box-body">
 
                                     <div class="form-group">
 									<div class="col-md-12">
                                         <label for="exampleInputEmail1">Title<span class="required">*</span></label>
-                                      <input type="text" name="title" id="title"  class="form-control" value="<?php if (!empty($edit_lineitem_info)) echo $row['title'];?>" required/>
+                                      <input type="text" name="title" id="title"  class="form-control" value="<?php if (!empty($lineitem)) echo $row['title'];?>" required/>
                                      </div>
 									</div>
                                 </div>
@@ -61,7 +61,7 @@
                                     <div class="form-group">
 									<div class="col-md-12">
                                         <label for="exampleInputEmail1">Description<span class="required">*</span></label>
-                                      <textarea name="lineitem_desc" id="lineitem_desc" class="form-control ckeditor" required><?php if (!empty($edit_lineitem_info)) echo $row['lineitem_desc'];?></textarea>
+                                      <textarea name="lineitem_desc" id="lineitem_desc" class="form-control ckeditor" required><?php if (!empty($lineitem)) echo $row['lineitem_desc'];?></textarea>
                                     </div>
 									</div>
                                 </div>
