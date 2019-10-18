@@ -82,7 +82,7 @@
 					<div class="col-md-2">
 					<?php if (!empty($subtopic)): foreach ($subtopic as $ct_rows) : ?>
 					<br/><?php echo btn_add('admin/lineitems/index/'. $ct_rows['subtopic_id']); ?>
-					endforeach
+					<?php endforeach ?>
 					</div>
 					</div>
                <div class="row">
