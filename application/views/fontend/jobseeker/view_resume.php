@@ -96,7 +96,7 @@
                  <table class="table">
                   <tr>
                     <td width="30%"><span class="highlight_text">Company Name:</span></td>
-                    <td><?php echo $v_experience->company_name ;?></td>
+                    <td><?php echo $v_experience->company_profile_id ;?></td>
                   </tr>
                   <tr>
                     <td><span class="highlight_text">Designation:</span></td>
