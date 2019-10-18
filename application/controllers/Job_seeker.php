@@ -397,7 +397,7 @@ exit;*/
             {
                 if(!empty($js_skills)) {
                 $skill = explode(',', $js_skills);
-                
+
                 for($k=0; $k<sizeof($skill); $k++)
                     {
                         $skill_array= array(
@@ -447,9 +447,9 @@ exit;*/
             $jobseeker_id   = $this->session->userdata('job_seeker_id');
             $reference_list = $this->Job_reference_model->reference_list_by_id($jobseeker_id);
 			$designation = $this->Master_model->getMaster('designation',$where=false);
-			$company_profile = $this->Master_model->getMaster('company_profile',$where=false);
+			//$company_profile = $this->Master_model->getMaster('company_profile',$where=false);
 			
-           echo $this->load->view('fontend/jobseeker/update_reference', compact('reference_list', 'designation', 'company_profile'),true);
+           echo $this->load->view('fontend/jobseeker/update_reference', compact('reference_list', 'designation'),true);
         }
     }
 

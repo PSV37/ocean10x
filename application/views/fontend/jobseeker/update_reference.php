@@ -111,12 +111,7 @@
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Orgnization:</label>
                 <div class="col-sm-9">
-					   <select  name="company_profile_id" class="form-control">
-					<option value="">Select Organization</option>
-					<?php foreach($company_profile as $key){?>
-					<option value="<?php echo $key['company_profile_id']; ?>"<?php if($reference_list->company_profile_id==$key['company_profile_id']){ echo "selected"; }?>><?php echo $key['company_name']; ?></option>
-					<?php } ?>
-				  </select>
+				    <input type="text" class="form-control"  id="edit_company_profile_id" required name="company_profile_id" value="<?php if (!empty($reference_list->company_profile_id)) { echo $reference_list->company_profile_id;} ?>">
                 </div>
               </div>
 
@@ -442,12 +437,7 @@
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Orgnization:</label>
                 <div class="col-sm-9">
-                  <select  name="company_profile_id" class="form-control">
-					<option value="">Select Organization</option>
-					<?php foreach($company_profile as $key){?>
-					<option value="<?php echo $key['company_profile_id']; ?>"><?php echo $key['company_name']; ?></option>
-					<?php } ?>
-				  </select>
+                <input type="text" id="company_profile_id" name="company_profile_id" class="form-control">
                 </div>
               </div>
 
@@ -848,6 +838,29 @@
 
 
         });
+
+    $(function() {
+      $("#company_profile_id").autocomplete({
+          source: "<?php echo base_url('job_seeker/get_autocomplete'); ?>",
+          select: function(a,b)
+            {
+              $(this).val(b.item.value); //grabed the selected value
+            }
+        });
+    });
+    $(function() {
+      $("#edit_company_profile_id").autocomplete({
+          source: "<?php echo base_url('job_seeker/get_autocomplete'); ?>",
+          select: function(a,b)
+            {
+              $(this).val(b.item.value); //grabed the selected value
+            }
+        });
+    });
             </script>
 
- 
+ <style>
+  ul.ui-autocomplete {
+      z-index: 1100;
+  }
+</style>
