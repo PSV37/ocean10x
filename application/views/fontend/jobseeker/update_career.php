@@ -77,7 +77,7 @@
                     </div><!-- end row -->  
                 </div><!-- end container -->
             </div><!-- end section -->
-
+ <input type="text" class="form-control" id="tokenfield" value="red,green,blue" />
 <script>
 function delete_Career(id) {
     if (confirm('Are you sure you want to Delete Career ?')) {
@@ -88,7 +88,7 @@ function delete_Career(id) {
 } else {
     // Do nothing!
 }
-
+}
 </script>
 
 
@@ -150,7 +150,7 @@ function delete_Career(id) {
                            echo $job_career_info[0]->skills;
                            }
                        ?>">
-                       <input type="text" class="form-control" id="tokenfield" value="red,green,blue" />
+                      
 
                 </div>
               </div>
@@ -220,7 +220,7 @@ function delete_Career(id) {
 
   <script type="text/javascript">
 
-  
+
 
         $( document ).ready( function () {
             $( "#Career-info" ).validate( {
