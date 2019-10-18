@@ -24,11 +24,8 @@
                <section class="content">
     <div class="row">
         <div class="col-md-12">
-<<<<<<< HEAD
-             <?php print_r($subtopic); ?> 
-=======
+            
              <?php /* print_r($subtopic); */ ?> 
->>>>>>> 8a811c8d798560862654edc7a57ba92129b40fd7
 
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
