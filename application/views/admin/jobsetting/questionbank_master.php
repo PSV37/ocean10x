@@ -108,7 +108,7 @@
 									 <div class="col-md-4">
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
-                                     <select id="subtopic_id"  name="subtopic_id" class="form-control" required>
+                                     <select id="subtopic_id"  name="subtopic_id" class="form-control" required onchange="getLineitem(this.value)">
                                            <option value="">Select Subopic</option> 
                                         <?php if (!empty($subtopic))
                                            foreach($subtopic as $st_rows) 
