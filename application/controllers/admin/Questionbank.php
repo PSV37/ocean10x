@@ -90,7 +90,7 @@ class Questionbank extends MY_Controller
 					$where_update_sub_answer['ques_id']=$q_id;
 					$this->Master_model->master_update($ans_update,'questionbank',$where_update_sub_answer);
 				}
-                redirect('admin/questionbank');
+                redirect('admin/questions');
             }
             else {
                 $state_dt['ques_updated_date']=date('Y-m-d H:i:s');
@@ -120,7 +120,7 @@ class Questionbank extends MY_Controller
 					$where_update_sub_answer['ques_id']=$id;
 					$this->Master_model->master_update($ans_update,'questionbank',$where_update_sub_answer);
 				}
-                redirect('admin/questionbank');
+                redirect('admin/questions');
             }
         }
 
