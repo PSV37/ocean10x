@@ -59,7 +59,7 @@ class Lineitem extends MY_Controller
         );
         $where_del['lineitem_id']=$id;
         $this->Master_model->master_update($lineitem_status,'lineitem',$where_del);
-        redirect('admin/lineitem/index/$id');
+        redirect('admin/lineitem/index/'.$id);
     }
 
 }
