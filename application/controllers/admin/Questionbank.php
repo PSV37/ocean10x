@@ -211,4 +211,23 @@ function gettopic(){
 }
 
 
+function getlineitem(){
+	$lineitem_id = $this->input->post('id');
+	$where['subtopictopic_id'] = $lineitem_id;
+	$lineitems = $this->Master_model->getMaster('lineitem',$where);
+	$result = '';
+	
+	if(!empty($lineitems)){ 
+		$result .='<option value="">Select Subtopics</option>';
+		foreach($subtopics as $key){
+		  $result .='<option value="'.$key['lineitem_id'].'">'.$key['title'].'</option>';
+		}
+	}else{
+	
+		$result .='<option value="">Lineitem not available</option>';
+	}
+	 echo $result;
+}
+
+
 }

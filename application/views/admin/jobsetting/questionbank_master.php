@@ -509,6 +509,50 @@ function showCheckboxes() {
     });
        
 </script>
+
+
+
+ <script>
+    function getLineitem(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/questionbank/getlineitem',
+                data:{id:id},
+                success:function(res){
+                    $('#lineitem_id').html(res);
+                }
+                
+            }); 
+          }
+   
+       }
+
+    $(document).ready(function(){
+
+
+
+    function getLineitem_load(){
+        var id = $('#subtopic_id').val();
+
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/questionbank/getlineitem',
+                data:{id:id},
+                success:function(res){
+                    $('#lineitem_id').html(res);
+                    $('#lineitem_id').val(<?php echo $row['lineitem_id']; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+       getLineitem_load();
+    });
+       
+</script>
        
 
 <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
