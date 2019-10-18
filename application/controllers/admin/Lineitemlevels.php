@@ -6,7 +6,7 @@ if (!defined('BASEPATH')) {
 
 
 
-class Lineitemlevel extends MY_Controller
+class Lineitemlevels extends MY_Controller
 {
     public function __construct()
     {
@@ -43,17 +43,17 @@ class Lineitemlevel extends MY_Controller
         $data['lineitemlevel'] = $this->Master_model->getMaster('lineitemlevel',$where_all,$join_emp);
             
 
-            $this->load->view('admin/jobsetting/lineitemlevel_master', $data);
+            $this->load->view('admin/jobsetting/lineitemlevel', $data);
                 
             } else {
-                redirect('admin/lineitemlevel');
+                redirect('admin/lineitemlevels');
             }
 
        
     }
 	
 	
-	 public function save_lineitemlevel($id = null){
+	 public function save_lineitemlevels($id = null){
           
             $user_id = $this->session->userdata('admin_user_id');
 
@@ -87,7 +87,7 @@ class Lineitemlevel extends MY_Controller
         }
 
     
-  public function edit_lineitemlevel($id){
+  public function edit_lineitemlevels($id){
    $data['title']="Edit Lineitem";
 		
         $where_all = "lineitemlevel.lineitemlevel_status='1'";
@@ -117,8 +117,18 @@ class Lineitemlevel extends MY_Controller
 		$where_lineitem= "lineitem.lineitem_status=1 AND lineitem.lineitem_id ='$id'";
         $data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_subtopic);
 		
-        $this->load->view('admin/jobsetting/lineitemlevel_master',$data);
+        $this->load->view('admin/jobsetting/lineitemlevel',$data);
     }
 
+	
+    public function delete_lineitemlevels($id) {
+        
+        $lineitemlevel_status = array(
+            'lineitemlevel_status'=>0,
+        );
+        $where_del['lineitemlevel_id']=$id;
+        $this->Master_model->master_update($lineitemlevel_status,'lineitemlevel',$where_del);
+         redirect('admin/lineitem/index/'.$id);
+    }
   
 }
