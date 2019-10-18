@@ -75,7 +75,7 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
 
                             <div class="box-body">
-
+							<div class="container-fluid">
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
@@ -105,9 +105,6 @@
                                         </select>
                                     </div>
                                 </div>
-
-                                
-									 <div class="container-fluid">
 									 <div class="col-md-4">
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
@@ -119,7 +116,24 @@
                                         ?>   
                                              <option value="<?php echo $st_rows['subtopic_id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['subtopic_id']==$st_rows['subtopic_id'])echo "selected";?>><?php echo $st_rows['subtopic_name']; ?></option> 
                                        <?php } ?>
+                                        </select>
+										</div>
+									</div>
+                                </div>
+									 <div class="container-fluid">
+									 <div class="col-md-4">
+								  <div class="form-group">
+                                        <label for="exampleInputEmail1">Title<span class="required">*</span></label>
+                                     <select id="lineitem_id"  name="lineitem_id" class="form-control" required>
+                                           <option value="">Select Subopic</option> 
+                                        <?php if (!empty($lineitem))
+                                           foreach($lineitem as $lineitem) 
+                                           {
+                                        ?>   
+                                             <option value="<?php echo $st_rows['lineitem_id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['lineitem_id']==$st_rows['lineitem_id'])echo "selected";?>><?php echo $st_rows['title']; ?></option> 
+                                       <?php } ?>
                                         </select> </div>
+									</div>
 									</div>
 									 
 									 <div class="col-md-4">
