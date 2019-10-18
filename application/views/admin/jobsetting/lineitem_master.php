@@ -25,7 +25,7 @@
     <div class="row">
         <div class="col-md-12">
             
-             <?php /* print_r($subtopic); */ ?> 
+             <?php  print_r($subtopic); ?> 
 
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
@@ -39,7 +39,7 @@
 					<div class="col-md-2">
 				
 					<br/><?php echo btn_add('admin/lineitems/index/'. $subtopic['subtopic_id']); ?>
-					<?php Print_r $subtopic; ?>
+					
 					</div>
 					</div>
                <div class="row">
