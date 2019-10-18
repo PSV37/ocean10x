@@ -284,11 +284,39 @@ function delete_Career(id) {
               })
            // $(".tokenfield").css("z-index","9999")
 
+// $(document).ready(function() {
+  //     $("#demo-input-onadd-ondelete").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocomplete", {
+  //       zindex: 9999
+       
+          // onAdd: function (item) {
+            //alert(item.name);
+          // },
+          // onDelete: function (item) {
+          //     alert("Deleted " + item.name);
+          // }
 
+  //     });
+  // }); 
         });
             </script>
 <style>
   ul.ui-autocomplete {
       z-index: 1100;
   }
+  .tokenfield .token .close {
+    font-family: Arial !important;
+    display: inline-block !important;
+    line-height: 100% !important;
+    font-size: 1.1em;
+    line-height: 1.49em !important;
+    margin-left: 5px !important;
+    float: none !important;
+    height: 100% !important;
+    vertical-align: top !important;
+    padding-right: 4px !important;
+
+   /* color: #5B9703; 
+    font-size: 24px !important; 
+    opacity: unset !important; */
+}
 </style>
