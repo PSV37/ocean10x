@@ -36,7 +36,7 @@
                 <!-- /.box-header -->
                 <div class="box-background">
                 <!-- form start -->
-                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/lineitem/save_lineitem/<?php  if (!empty($subtopic)) { foreach($subtopic as $row)
+                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/lineitem/save_lineitem/<?php  if (!empty($edit_lineitem_info)) { foreach($edit_lineitem_info as $row)
                         echo $row['lineitem_id'];
                       }
                      ?>" method="post">
@@ -53,7 +53,7 @@
                                     <div class="form-group">
 									<div class="col-md-12">
                                         <label for="exampleInputEmail1">Title<span class="required">*</span></label>
-                                      <input type="text" name="title" id="title"  class="form-control" value="<?php if (!empty($subtopic)) echo $row['title'];?>" required/>
+                                      <input type="text" name="title" id="title"  class="form-control" value="<?php if (!empty($edit_lineitem_info)) echo $row['title'];?>" required/>
                                      </div>
 									</div>
                                 </div>
@@ -62,7 +62,7 @@
                                     <div class="form-group">
 									<div class="col-md-12">
                                         <label for="exampleInputEmail1">Description<span class="required">*</span></label>
-                                      <textarea name="lineitem_desc" id="lineitem_desc" class="form-control ckeditor" required><?php if (!empty($edit_subtopic_info)) echo $row['lineitem2'];?></textarea>
+                                      <textarea name="lineitem_desc" id="lineitem_desc" class="form-control ckeditor" required><?php if (!empty($edit_lineitem_info)) echo $row['lineitem_desc'];?></textarea>
                                     </div>
 									</div>
                                 </div>
