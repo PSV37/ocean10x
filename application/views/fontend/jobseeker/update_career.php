@@ -14,7 +14,7 @@
                              <a href="#" data-toggle="modal" data-target="#UpdateCareer" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>   
                               <a href="<?php echo site_url('job_seeker/delete_career/'.$job_career_info[0]->job_seeker_id.''); ?>" onclick="return confirm('Are you sure?');"  class="btn pull-right bg-red btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash" aria-hidden="true"></i></a>               
                             </h5>
-                              <div class="table-responsive">          
+                            <div class="table-responsive">          
                             <table class="table">
 
                               <tbody>
@@ -72,6 +72,9 @@
                               </tbody>
                             </table>
                             </div>
+
+
+
                             </div><!-- end post-padding -->
                         </div><!-- end col -->
                     </div><!-- end row -->  
@@ -151,6 +154,16 @@ function delete_Career(id) {
 
                 </div>
               </div>
+        <script>
+          $('#tokenfield').tokenfield({
+              autocomplete: {
+                source: ['red','blue','green','yellow','violet','brown','purple','black','white'],
+                delay: 100
+              },
+              showAutocompleteOnFocus: true,
+
+            })
+      </script>
 
                <div class="form-group">
                 <label class="control-label col-sm-3" for="email"> Expected Salary:</label>
@@ -209,7 +222,7 @@ function delete_Career(id) {
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
-
+  
   </div>
 </div>
 
@@ -269,7 +282,7 @@ function delete_Career(id) {
                 showAutocompleteOnFocus: true,
 
               })
-           $(".tokenfield").css("z-index","9999")
+           // $(".tokenfield").css("z-index","9999")
 
 
         });
