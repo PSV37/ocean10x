@@ -30,20 +30,12 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">Line Item Master</h3>
+                        <h3 class="box-title ">Question's Bank</h3>
                     </div>
                 </div>
                
             
-					<div class="row">
-					<div class="col-md-10"></div>
-					<div class="col-md-2">
-				
-					<br/><?php echo btn_add('admin/lineitems/index/'. $subtopic[0]['subtopic_id']); ?>
-					
-					</div>
-					</div>
-               <div class="row">
+					      <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                 <table class="table table-bordered table-striped" id="dataTables-example">
                     <thead>
@@ -52,23 +44,26 @@
                         <th class="active">Subject</th>
                         <th class="active">Topic</th>
                         <th class="active">Subtopic</th>
-						<th class="active">Lineitem(Level 1)</th>
+					    <th class="active">Title</th>
+						<th class="active">Question Type</th>
+						<th class="active">Question</th>
                         <th class="active col-sm-2">Action</th>
                     </tr>
                     </thead>
                     <tbody>
                     <?php $key = 1 ;?>
-                    <?php if (!empty($lineitem)): foreach ($lineitem as $ct_row) : ?>
+                    <?php if (!empty($questionbank)): foreach ($questionbank as $ct_row) : ?>
                         <tr>
                             <td><?php echo $key ?></td>
                             <td><?php echo $ct_row['skill_name'] ?></td>
                             <td><?php echo $ct_row['topic_name'] ?></td>
                             <td><?php echo $ct_row['subtopic_name'] ?></td>
 							<td><?php echo $ct_row['title'] ?></td>
+							<td><?php echo $ct_row['ques_type'] ?></td>
+							<td><?php echo $ct_row['question'] ?></td>
                             <td>
-                                <?php echo btn_edit('admin/lineitem/edit_lineitem/' . $ct_row['lineitem_id']); ?>
-                                <?php echo btn_delete('admin/lineitem/delete_lineitem/' . $ct_row['lineitem_id']); ?>
-							    <?php echo btn_add('admin/lineitemlevel/index/' . $ct_row['lineitem_id']); ?>
+                                <?php echo btn_edit('admin/questionbank/edit_questionbank/' . $ct_row['ques_id']); ?>
+                                <?php echo btn_delete('admin/questionbank/delete_questionbank/' . $ct_row['ques_id']); ?>
                             </td>
                         </tr>
                     <?php
