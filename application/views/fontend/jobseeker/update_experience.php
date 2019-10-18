@@ -342,12 +342,7 @@ if (!empty($experinece->start_date)) {
   </div>
 </div>
 
-
-<!--  <div class="form-group pull-left">
-              <input type="text" id="demo-input-onadd-ondelete" >
-            </div>  -->
-
-  <script type="text/javascript">
+<script type="text/javascript">
   // $(document).ready(function() {
   //     $("#demo-input-onadd-ondelete").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocomplete", {
   //       zindex: 9999
@@ -498,12 +493,12 @@ if (!empty($experinece->start_date)) {
 
       $(function() {
 
-  $('#date').datepicker({
-    dateFormat: 'dd-mm-yy',
-    altField: '#thealtdate',
-    altFormat: 'dd-mm-yyyy',
-    defaultDate: null
-  });
+  // $('#date').datepicker({
+  //   dateFormat: 'dd-mm-yy',
+  //   altField: '#thealtdate',
+  //   altFormat: 'dd-mm-yyyy',
+  //   defaultDate: null
+  // });
 /*var max_experience = $("#max_experience").val();
 
 for(var i =1; i < max_experience; i++){
