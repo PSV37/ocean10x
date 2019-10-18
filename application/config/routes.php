@@ -174,7 +174,6 @@ $route['admin/questionbank-master']="admin/questionbank";
 $route['admin/questions-master']="admin/questionbank";
 $route['admin/lineitem']="admin/lineitem/index";
 $route['admin/lineitems']="admin/lineitems/index";
-$route['admin/edit_lineitem']="admin/edit_lineitem/index";
 
 //$route['admin/topic-master/(:any)']="admin/topic/edit_topic/$1";
 
