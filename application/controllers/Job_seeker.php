@@ -397,7 +397,7 @@ exit;*/
                 $del = $this->Master_model->master_delete('job_seeker_skills',$where_del);
                 if($del==true)
                 {
-                    for($k=0; $k<sizeof($skll); $k++)
+                    for($k=0; $k<sizeof($skill); $k++)
                     {
                         $skill_array= array(
                             'job_seeker_id' => $jobseeker_id,
