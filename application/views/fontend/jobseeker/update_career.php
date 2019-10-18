@@ -151,7 +151,7 @@ function delete_Career(id) {
                            }
                        ?>">
                      
-
+ <input type="text" id="demo-input-onadd-ondelete" >
                 </div>
               </div>
         <script>
@@ -282,22 +282,23 @@ function delete_Career(id) {
                 showAutocompleteOnFocus: true,
 
               })
-           // $(".tokenfield").css("z-index","9999")
 
-// $(document).ready(function() {
-  //     $("#demo-input-onadd-ondelete").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocomplete", {
-  //       zindex: 9999
-       
-          // onAdd: function (item) {
-            //alert(item.name);
-          // },
-          // onDelete: function (item) {
-          //     alert("Deleted " + item.name);
-          // }
-
-  //     });
-  // }); 
         });
+
+        
+$(document).ready(function() {
+      $("#demo-input-onadd-ondelete").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocomplete", {
+        zindex: 9999
+       
+          onAdd: function (item) {
+            alert(item.name);
+          },
+          onDelete: function (item) {
+              alert("Deleted " + item.name);
+          }
+
+      });
+  }); 
             </script>
 <style>
   ul.ui-autocomplete {
