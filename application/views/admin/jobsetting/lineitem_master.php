@@ -78,7 +78,7 @@
                 </form>
                     </div>
 
-               <!-- <div class="row">
+               <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                 <table class="table table-bordered table-striped" id="dataTables-example">
                     <thead>
@@ -88,7 +88,6 @@
                         <th class="active">Topic</th>
                         <th class="active">Subtopic</th>
 						<th class="active">Lineitem(Level 1)</th>
-						<th class="active">Lineitem(Level 2)</th>
                         <th class="active col-sm-2">Action</th>
                     </tr>
                     </thead>
@@ -100,8 +99,7 @@
                             <td><?php echo $ct_row['skill_name'] ?></td>
                             <td><?php echo $ct_row['topic_name'] ?></td>
                             <td><?php echo $ct_row['subtopic_name'] ?></td>
-							<td><?php echo $ct_row['lineitem1'] ?></td>
-							<td><?php echo $ct_row['lineitem2'] ?></td>
+							<td><?php echo $ct_row['title'] ?></td>
                             <td>
                                 <?php echo btn_edit('admin/lineitem/edit_lineitem/' . $ct_row['lineitem_id']); ?>
                                 <?php echo btn_delete('admin/lineitem/delete_lineitem/' . $ct_row['lineitem_id']); ?>
@@ -121,7 +119,7 @@
                 </table>
 
                     </div>
-                </div>-->
+                </div>
             </div>
             <!-- /.box -->
         </div>
