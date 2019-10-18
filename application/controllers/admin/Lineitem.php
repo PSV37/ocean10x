@@ -47,14 +47,7 @@ class Lineitem extends MY_Controller
         public function save_lineitem($id = null){
           
             $user_id = $this->session->userdata('admin_user_id');
-			 // $where_subtopics= "subtopic.subtopic_status=1";
-    //          $subtopic = $this->Master_model->getMaster('subtopic',$where_subtopics);
 
-            //  $where_req_skill="subtopic.subtopic_id ='$id'";
-            //    $select_skill = "skill_master.skill_name";
-            // $req_skill_details = $this->Master_model->getMaster('subtopic', $where_req_skill, $join=false, $order = false, $field = false, $select_skill=false,$limit=false,$start=false, $search=false);
-
-            //print_r($req_skill_details); die;
             $state_dt=array(
 				
 				'title' => $this->input->post('title'),
