@@ -1614,19 +1614,13 @@ $(document).ready(function(){
    
        }
 
-
- 
-
-
   getCitys_load();
   getStates_load();
   getCitys_load_permant();
   getStates_load_permant();
 });
-$(function() {
-    $("body").delegate(".datepicker", "focusin", function(){
-        $(this).datepicker();
-    });
-});
+
 </script>        
-      
+<style>
+  .datepicker{z-index:1151 !important;}
+</style> 
