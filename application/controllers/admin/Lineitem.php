@@ -35,7 +35,7 @@ class Lineitem extends MY_Controller
                 'skill_master' => 'skill_master.id=lineitemlevel.technical_id |INNER',
                 'topic' => 'topic.topic_id=lineitemlevel.topic_id |INNER',
 				'subtopic' => 'subtopic.subtopic_id=lineitemlevel.subtopic_id |INNER',
-				'lineitem' => 'lineitem.subtopic_id=lineitemlevel.lineitem |INNER',
+				'lineitem' => 'lineitem.lineitem_id=lineitemlevel.lineitem_id |INNER',
             );
         $data['lineitem_level'] = $this->Master_model->getMaster('lineitemlevel',$where_all,$join_emp);
             
@@ -92,7 +92,7 @@ class Lineitem extends MY_Controller
                  'skill_master' => 'skill_master.id=lineitemlevel.technical_id |INNER',
                 'topic' => 'topic.topic_id=lineitemlevel.topic_id |INNER',
 				'subtopic' => 'subtopic.subtopic_id=lineitemlevel.subtopic_id |INNER',
-				'lineitem' => 'lineitem.subtopic_id=lineitemlevel.lineitem |INNER',
+				'lineitem' => 'lineitem.lineitem_id=lineitemlevel.lineitem_id |INNER',
             );
         $data['lineitem'] = $this->Master_model->getMaster('lineitemlevel',$where_all,$join_emp);
         	
