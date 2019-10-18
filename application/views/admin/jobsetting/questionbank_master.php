@@ -283,52 +283,7 @@
                     </div>
 					</div>
                
-                <div class="row">
-                    <div class="col-md-10 col-md-offset-1">
-                <table class="table table-bordered table-striped" id="dataTables-example">
-                    <thead>
-                    <tr>
-                        <th class="active">SL</th>
-                        <th class="active">Subject</th>
-                        <th class="active">Topic</th>
-                        <th class="active">Subtopic</th>
-					    <th class="active">Title</th>
-						<th class="active">Question Type</th>
-						<th class="active">Question</th>
-                        <th class="active col-sm-2">Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php $key = 1 ;?>
-                    <?php if (!empty($questionbank)): foreach ($questionbank as $ct_row) : ?>
-                        <tr>
-                            <td><?php echo $key ?></td>
-                            <td><?php echo $ct_row['skill_name'] ?></td>
-                            <td><?php echo $ct_row['topic_name'] ?></td>
-                            <td><?php echo $ct_row['subtopic_name'] ?></td>
-							<td><?php echo $ct_row['title'] ?></td>
-							<td><?php echo $ct_row['ques_type'] ?></td>
-							<td><?php echo $ct_row['question'] ?></td>
-                            <td>
-                                <?php echo btn_edit('admin/questionbank/edit_questionbank/' . $ct_row['ques_id']); ?>
-                                <?php echo btn_delete('admin/questionbank/delete_questionbank/' . $ct_row['ques_id']); ?>
-                            </td>
-                        </tr>
-                    <?php
-                    $key++;
-                    endforeach;
-                    ?>
-                    <?php else : ?> 
-                        <td colspan="3">
-                            <strong>There is no record for display</strong>
-                        </td>
-                    <?php
-                    endif; ?>
-                    </tbody>
-                </table>
-
-                    </div>
-                </div>
+          
             </div>
             <!-- /.box -->
         </div>

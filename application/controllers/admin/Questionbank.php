@@ -34,14 +34,8 @@ class Questionbank extends MY_Controller
 		$where_lineitem = "lineitem.lineitem_status='1'";
 		$data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_lineitem);
 		
-		$where_all = "questionbank.ques_status='1'";
-        $join_emp = array(
-                'skill_master' => 'skill_master.id=questionbank.technical_id |INNER',
-                'topic' => 'topic.topic_id=questionbank.topic_id |INNER',
-				'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |INNER',
-				'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |INNER',
-            );
-        $data['questionbank'] = $this->Master_model->getMaster('questionbank',$where_all,$join_emp);
+		
+        $data['questionbank'] = $this->Master_model->getMaster('questionbank');
 
         $this->load->view('admin/jobsetting/questionbank_master', $data);
     }
@@ -130,35 +124,18 @@ class Questionbank extends MY_Controller
             }
         }
 
-    public function delete_questionbank($id) {
-        
-      //  $this->education_level_model->delete($id);
-        $education_level_status = array(
-            'questionbank.ques_status'=>0,
-        );
-        $where_del['ques_id']=$id;
-        $this->Master_model->master_update($education_level_status,'questionbank',$where_del);
-        redirect('admin/questionbank');
-    }
-
     public function edit_questionbank($id){
         $data['title']="Edit Questionbank";
 		//$where_opt= "options.status=1";
         $data['options'] = $this->Master_model->getMaster('options',$where_opt);
-        $where_all = "questionbank.ques_status='1'";
-        $join_emp = array(
-                'skill_master' => 'skill_master.id=questionbank.technical_id |INNER',
-                'topic' => 'topic.topic_id=questionbank.topic_id |INNER',
-				'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |INNER',
-				'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |INNER',
-            );
+        
         $data['questionbank'] = $this->Master_model->getMaster('questionbank',$where_all,$join_emp);
 		
         $where_ct = "ques_id='$id'";
         $data['edit_questionbank_info'] = $this->Master_model->getMaster('questionbank',$where_ct);
         
         $where_cn= "status=1";
-        $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where_cn);
+        $data['skill_master'] = $this->Master_model->getMaster('skill_master');
 
         $where_state= "topic_status=1";
         $data['topic'] = $this->Master_model->getMaster('topic',$where_state);
