@@ -278,6 +278,14 @@ function delete_Career(id) {
 
               })
 
+            $('.tokenfield').on('tokenfield:createtoken', function (event) {
+                var existingTokens = $(this).tokenfield('getTokens');
+                $.each(existingTokens, function(index, token) {
+                    if (token.value === event.attrs.value)
+                        event.preventDefault();
+                });
+            });
+
         });
 
     </script>
