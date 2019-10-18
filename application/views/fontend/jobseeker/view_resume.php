@@ -371,7 +371,7 @@
                   </tr>
                   <tr>
                     <td width="30%"><span class="highlight_text">Organization Name:</span></td>
-                    <td><?php echo $v_reference->company_name; ?></td>
+                    <td><?php echo $v_reference->company_profile_id; ?></td>
                   </tr>
                   <tr>
                     <td width="30%"><span class="highlight_text">Designation:</span></td>
