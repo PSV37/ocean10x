@@ -88,7 +88,6 @@
                         <th class="active">Topic</th>
                         <th class="active">Subtopic</th>
 						<th class="active">Lineitem(Level 1)</th>
-						<th class="active">Lineitem(Level 2)</th>
                         <th class="active col-sm-2">Action</th>
                     </tr>
                     </thead>
