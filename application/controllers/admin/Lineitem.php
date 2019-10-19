@@ -54,6 +54,7 @@ class Lineitem extends MY_Controller
           
             $user_id = $this->session->userdata('admin_user_id');
 			$where['lineitem_id']=$id;
+			$this->load->view('admin/jobsetting/lineitem_master');
             $state_dt=array(
 				'technical_id' => $this->input->post('technical_id'),
 				'topic_id' => $this->input->post('topic_id'),
@@ -69,7 +70,7 @@ class Lineitem extends MY_Controller
 				
 				//$where_add['lineitem_id']=$id;
                 $this->Master_model->master_insert($state_dt,'lineitem');
-                $this->load->view('admin/jobsetting/lineitem_master');
+                
                 redirect('admin/lineitem/index/'.$id);
             }
             else {
