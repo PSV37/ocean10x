@@ -48,12 +48,24 @@
                             </thead>
                             <tbody>
                            
-                            <?php if (!empty($topic_master)): foreach ($topic_master as $st_row) : ?>
+                            <?php if (!empty($topic_master)): foreach ($topic_master as $st_row) : 
+                                 $checked="";
+                                 $no_ques = '';
+                                  for($i=0;$i<sizeof($test_topic_master);$i++){
+
+                                    if($st_row['topic_id']==$test_topic_master[$i]['test_topic']){
+                                      $checked ="checked";
+                                      $no_ques = $test_topic_master[$i]['no_questions'];
+                                      break;
+                                    }
+
+                                }
+                            ?>
                                 <tr>
-                                    <td><input type="checkbox" name="topic_chk[]" id="topic_chk" value="<?php echo $st_row['topic_id']; ?>"></td>
+                                    <td><input type="checkbox" <?php echo $checked; ?> name="topic_chk[]" id="topic_chk" value="<?php echo $st_row['topic_id']; ?>" ></td>
                                     <td><?php echo $st_row['topic_name']; ?></td>
                                     <td>
-                                        <input type="number" name="no_questions[]" id="no_questions">
+                                        <input type="number" name="no_questions[]" id="no_questions" value="<?php echo $no_ques; ?>">
                                     </td>
                                 </tr>
                             <?php
