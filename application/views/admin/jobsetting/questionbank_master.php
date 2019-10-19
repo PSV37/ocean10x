@@ -59,7 +59,7 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">Add QuestionBank</h3>
+                        <h3 class="box-title ">Add Question Bank</h3>
                     </div>
                 </div>
                 <!-- /.box-header -->
@@ -79,7 +79,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
-                                        <select id="subject"  name="technical_id" class="form-control" required onchange="getTopic(this.value)">
+                                        <select id="subject"  name="technical_id" class="form-control" required onchange="getTopic_load(this.value)">
                                            <option value="">Select Subject</option> 
                                         <?php if (!empty($skill_master))
                                            foreach($skill_master as $skill) 
@@ -403,7 +403,7 @@ function showCheckboxes() {
 
 
     function getTopic_load(){
-        var id = $('#topic_id').val();
+        var id = $('#subject').val();
 
         if(id){
             $.ajax({
