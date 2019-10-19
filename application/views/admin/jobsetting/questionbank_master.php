@@ -390,6 +390,7 @@ function showCheckboxes() {
                 success:function(res){
                     $('#topic_id').html(res);
                     $('#topic_id').val(<?php echo $row['topic_id']; ?>);
+					getSubtopic_load();
                 }
                 
             }); 
@@ -400,26 +401,6 @@ function showCheckboxes() {
     });
        
 </script>
-	   
-	    <!--<script>
-	  function getSubtopic(id){
-		if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>admin/questionbank/getsubtopic',
-                data:{id:id},
-                success:function(res){
-                    $('#subtopic_id').html(res);
-                }
-				
-            }); 
-          }
-   
-	   }
-	   
-	   </script>-->
-	   
-	   
 	   <script>
     function getSubtopic(id){
         if(id){
@@ -448,13 +429,14 @@ function showCheckboxes() {
                 success:function(res){
                     $('#subtopic_id').html(res);
                     $('#subtopic_id').val(<?php echo $row['subtopic_id']; ?>);
+					getLineitem_load();
                 }
                 
             }); 
           }
    
        }
-       getSubtopic_load();
+       
     });
        
 </script>
@@ -492,13 +474,14 @@ function showCheckboxes() {
                 success:function(res){
                     $('#lineitem_id').html(res);
                     $('#lineitem_id').val(<?php echo $row['lineitem_id']; ?>);
+					 getLineitemlevel_load();
                 }
                 
             }); 
           }
    
        }
-       getLineitem_load();
+       
     });
        
 </script>
@@ -542,7 +525,7 @@ function showCheckboxes() {
           }
    
        }
-       getLineitemlevel_load();
+      
     });
        
 </script>
