@@ -62,7 +62,7 @@
                                 }
                             ?>
                                 <tr>
-                                    <td><input type="checkbox" <?php echo $checked; ?> name="topic_chk[]" id="topic_chk" value="<?php echo $st_row['topic_id']; ?>" ></td>
+                                    <td><input type="checkbox" <?php echo $checked; ?> name="topic_chk[]" id="topic_chk" value="<?php echo $st_row['topic_id']; ?>" class="testchk"></td>
                                     <td><?php echo $st_row['topic_name']; ?></td>
                                     <td>
                                         <input type="number" name="no_questions<?php echo $st_row['topic_id']; ?>" id="no_questions" value="<?php echo $no_ques; ?>">
@@ -102,38 +102,17 @@
        
 <?php $this->load->view('admin/components/footer'); ?>
 <script>
-    // Basic form update
-// $('form#test_topicfrm').submit(function(e)
-//   {
-//       e.preventDefault();
-    
-//       $.ajax({
-//                 url: "<?php echo base_url(); ?>admin/job_posting/topics_for_test/<?php if (!empty($test_job_id)) { echo $test_job_id;} ?>",
-//                 type: "POST",
-//                 data: new FormData(this),
-//                 contentType:false,
-//                 processData:false,
-//                  dataType: "json",
-//                 success: function(data)
-//                 {
-//                     if($.isEmptyObject(data.error)){
+$(document).ready(function(){
 
-//                         $("#rees").html('<div class="alert alert-success"><button type="button" class="close">×</button>Information Updated Successfully!</div>');
-//                             window.setTimeout(function() {
-//                             $(".alert").fadeTo(500, 0).slideUp(500, function(){
-//                                 $(this).remove(); 
-//                             });
-//                                 location.reload();
-//                             }, 1500);
-//                           $('.alert .close').on("click", function(e){
-//                                 $(this).parent().fadeTo(500, 0).slideUp(500);
-//                           });
+    $('.testchk').change(function() {
 
-//                         }else{
-//                             $("#rees").html('<div class="alert alert-danger"><button type="button" class="close">×</button>'+data.error+'</div>');
-//                         }
-//                 }
-//           });
-       
-//   }); 
+    var checkboxINstance = $(this);
+    if (!checkboxINstance.is(":checked"))
+    {
+      checkboxINstance.closest('td').find("input[type=number]")[0].value = '';
+     }       
+        
+
+    });
+});
 </script>

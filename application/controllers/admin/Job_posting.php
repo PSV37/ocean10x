@@ -181,6 +181,9 @@ function getSkillsByRole() {
         if($_POST)
         {
             $topic_chk = $this->input->post('topic_chk');
+            // $no_questions = $this->input->post('no_questions');
+            $post_data=$this->input->post();
+            
             if(empty($topic_chk))
             {
                 $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Please Check Minimum One Checkbox</div>');
@@ -196,16 +199,13 @@ function getSkillsByRole() {
                 $data['topic_master'] = $this->Master_model->getMaster('topic',$where_top,$join = FALSE, $order = false, $field = false, $select_topic,$limit=false,$start=false, $search=false);
 
                 $this->load->view('admin/jobsetting/create_topics_fortest', $data);
+
             }else{
 
                 $where_del = "job_id='$id'";
                 $del = $this->Master_model->master_delete('job_test_questions',$where_del);
                 if($del==true)
                 {
-                    
-                    $no_questions = $this->input->post('no_questions');
-                    $post_data=$this->input->post();
-
                     for($k=0; $k<sizeof($topic_chk);$k++)
                     {
                         $ques_array = array(
