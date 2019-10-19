@@ -360,42 +360,90 @@ function showCheckboxes() {
 	   
 	   
 	   <script>
-    function getTopic(id){
+			function getTopic(id){
+				if(id){
+					$.ajax({
+						type:'POST',
+						url:'<?php echo base_url();?>admin/questionbank/gettopic',
+						data:{id:id},
+						success:function(res){
+							$('#topic_id').html(res);
+						}
+						
+					}); 
+				  }
+		   }
+
+    $(document).ready(function(){
+		
+		function getLineitemlevel_load(){
+			var id = $('#lineitem_id').val();
+			if(id){
+				$.ajax({
+					type:'POST',
+					url:'<?php echo base_url();?>admin/questionbank/getlineitemlevel',
+					data:{id:id},
+					success:function(res){
+						$('#lineitemlevel_id').html(res);
+						$('#lineitemlevel_id').val(<?php echo $row['lineitemlevel_id']; ?>);
+					}
+				}); 
+			  }
+        }
+		
+		function getLineitem_load(){
+			var id = $('#subtopic_id').val();
+
+			if(id){
+				$.ajax({
+					type:'POST',
+					url:'<?php echo base_url();?>admin/questionbank/getlineitem',
+					data:{id:id},
+					success:function(res){
+						$('#lineitem_id').html(res);
+						$('#lineitem_id').val(<?php echo $row['lineitem_id']; ?>);
+						 getLineitemlevel_load();
+					}
+					
+				}); 
+			  }
+   
+        }
+		
+		function getSubtopic_load(){
+        var id = $('#topic_id').val();
+
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>admin/questionbank/gettopic',
+                url:'<?php echo base_url();?>admin/questionbank/getsubtopic',
                 data:{id:id},
                 success:function(res){
-                    $('#topic_id').html(res);
+                    $('#subtopic_id').html(res);
+                    $('#subtopic_id').val(<?php echo $row['subtopic_id']; ?>);
+					getLineitem_load();
                 }
                 
             }); 
           }
    
        }
-
-    $(document).ready(function(){
-
-
-
-    function getTopic_load(){
-        var id = $('#subject').val();
-
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>admin/questionbank/gettopic',
-                data:{id:id},
-                success:function(res){
-                    $('#topic_id').html(res);
-                    $('#topic_id').val(<?php echo $row['topic_id']; ?>);
-					getSubtopic_load();
-                }
-                
-            }); 
-          }
-   
+		
+		function getTopic_load(){
+			var id = $('#subject').val();
+			if(id){
+				$.ajax({
+					type:'POST',
+					url:'<?php echo base_url();?>admin/questionbank/gettopic',
+					data:{id:id},
+					success:function(res){
+						$('#topic_id').html(res);
+						$('#topic_id').val(<?php echo $row['topic_id']; ?>);
+						getSubtopic_load();
+					}
+					
+				}); 
+			}
        }
        getTopic_load();
     });
@@ -415,30 +463,7 @@ function showCheckboxes() {
             }); 
           }
    
-       }
-
-    $(document).ready(function(){
-    function getSubtopic_load(){
-        var id = $('#topic_id').val();
-
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>admin/questionbank/getsubtopic',
-                data:{id:id},
-                success:function(res){
-                    $('#subtopic_id').html(res);
-                    $('#subtopic_id').val(<?php echo $row['subtopic_id']; ?>);
-					getLineitem_load();
-                }
-                
-            }); 
-          }
-   
-       }
-       
-    });
-       
+    }
 </script>
 
 
@@ -457,33 +482,7 @@ function showCheckboxes() {
             }); 
           }
    
-       }
-
-    $(document).ready(function(){
-
-
-
-    function getLineitem_load(){
-        var id = $('#subtopic_id').val();
-
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>admin/questionbank/getlineitem',
-                data:{id:id},
-                success:function(res){
-                    $('#lineitem_id').html(res);
-                    $('#lineitem_id').val(<?php echo $row['lineitem_id']; ?>);
-					 getLineitemlevel_load();
-                }
-                
-            }); 
-          }
-   
-       }
-       
-    });
-       
+    }
 </script>
 
 
@@ -503,48 +502,7 @@ function showCheckboxes() {
           }
    
        }
-
-    $(document).ready(function(){
-
-
-
-    function getLineitemlevel_load(){
-        var id = $('#lineitem_id').val();
-
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>admin/questionbank/getlineitemlevel',
-                data:{id:id},
-                success:function(res){
-                    $('#lineitemlevel_id').html(res);
-                    $('#lineitemlevel_id').val(<?php echo $row['lineitemlevel_id']; ?>);
-                }
-                
-            }); 
-          }
-   
-       }
-      
-    });
-       
-</script>
-    <script>
-	var activeLanguage = "de"
-
-function sortUL(selector) {
-  var $ul = $(selector);
-  $ul.find('li').sort(function(a, b) {
-    var upA = $(a).text().toUpperCase();
-    var upB = $(b).text().toUpperCase();
-    return (upA < upB) ? -1 : (upA > upB) ? 1 : 0;
-  }).appendTo(selector);
-};
-
-$(document).ready(function() {
-  sortUL("#WoodList");
-});
-	</script>   
+</script>   
 
 <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
 <script>
