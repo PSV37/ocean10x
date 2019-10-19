@@ -142,11 +142,10 @@ class Lineitem extends MY_Controller
             $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where_cn);
 
             $data['topic'] = $this->Master_model->getMaster('topic');
-            
-            $where_subtopic= "subtopic.subtopic_status=1 AND subtopic.subtopic_id ='$id'";
+			
             $data['subtopic'] = $this->Master_model->getMaster('subtopic',$where_subtopic);
 			
-        $data['lineitem'] = $this->Master_model->getMaster('lineitem');
+			$data['lineitem'] = $this->Master_model->getMaster('lineitem');
             
 
             $this->load->view('admin/jobsetting/lineitems_master', $data);
