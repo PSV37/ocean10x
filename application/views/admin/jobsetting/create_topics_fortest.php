@@ -106,7 +106,7 @@ $(document).ready(function(){
 
     $('.testchk').change(function() {
 
-    var checkboxINstance = $(this);
+    var checkboxINstance = $(this).val();
     alert(checkboxINstance);
     // if (!checkboxINstance.is(":checked"))
     // {
