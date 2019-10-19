@@ -19,7 +19,7 @@ class Questionbank extends MY_Controller
 
         $data['title'] = 'Add Questionbank';
 
-        $where_question= "questionbank.questionbank_status='1' and questionbank.questionbank_id='".$id."'";
+        $where_question= "questionbank.ques_status='1' and questionbank.ques_id='".$id."'";
         	
         $data['questionbank'] = $this->Master_model->getMaster('questionbank', $where_question);
 
