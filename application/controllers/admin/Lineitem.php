@@ -161,7 +161,7 @@ class Lineitem extends MY_Controller
 		$where['lineitemlevel_id']=$id;
 		$data['lineitemlevel_status']=0;
 		$this->Master_model->master_update($data,'lineitemlevel',$where);	   
-		redirect('admin/lineitem/index/'.$line_item_id);
+		redirect('admin/lineitem/select/'.$line_item_id);
 	}
 	
 	
