@@ -104,7 +104,7 @@
                                     <?php } ?>
                                     <?php echo btn_delete('admin/jobs/delete_job/' . $v_companyjobs->job_post_id); ?>
 
-                                    <?php echo btn_add('admin/job_posting/edit_jobs/' . $v_companyjobs->job_post_id); ?>
+                                    <?php echo btn_questionsadd('admin/job_posting/question_add/' . $v_companyjobs->job_post_id); ?>
                                     </td>
 
                                 </tr>

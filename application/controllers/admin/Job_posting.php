@@ -172,6 +172,20 @@ function getSkillsByRole() {
      echo $result;    
 } 
 
+// Add questions tabs
+ public function question_add($id)
+    {
+        $title    = "Add Questions";
+        $data['job_info'] = $this->job_posting_model->get($id);
+
+        $where_all = "topic.topic_status='1'";
+        $join_emp = array(
+                'skill_master' => 'skill_master.id=topic.technical_id |INNER',
+            );
+        $data['topic_master'] = $this->Master_model->getMaster('topic',$where_all,$join_emp);
+
+        $this->load->view('admin/jobsetting/createjob_questions', $data);
+    }
 
 
 } // end class
