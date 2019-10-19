@@ -35,7 +35,7 @@
                 </div>
                <div class="box-background">
               
-                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/lineitemlevel/save_lineitemlevel/<?php  if (!empty($lineitem)) { foreach($lineitem as $row)
+                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/lineitem/save_lineitemlevel/<?php  if (!empty($lineitem)) { foreach($lineitem as $row)
                         echo $row['lineitemlevel_id'];
                       }
                      ?>" method="post">
