@@ -181,13 +181,8 @@ function getSkillsByRole() {
         {
             $topic_chk = $this->input->post('topic_chk');
             $no_questions = $this->input->post('no_questions');
-            echo "<pre>";
-            print_r($topic_chk);
-// $data = $this->input->post('avatar_data');
-// $data =json_decode($data);
+          
             for($k=0; $k<sizeof($topic_chk);$k++)
-              // foreach($topic_chk as $topic)
-
             {
                 $ques_array = array(
                     'job_id'          => $id,
@@ -198,11 +193,10 @@ function getSkillsByRole() {
                     
                 );
                 $this->Master_model->master_insert($ques_array,'job_test_questions');
-                $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Job Test Questions Sucessfully Inserted</div>');
-                echo 'topic'.$topic_chk[$k]; echo "<br>";
-                echo 'ques' .$no_questions[$k];
-                // redirect('admin/job_posting');
+               
             }
+            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Job Test Questions Sucessfully Inserted</div>');
+            redirect('admin/jobs');
 
         }else{
             $data['title']    = "Add Questions";
