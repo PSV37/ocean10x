@@ -48,6 +48,9 @@ class Lineitem extends MY_Controller
        
     }
 	
+	
+	
+	
 		
 	
 	 public function save_lineitem($id = null){
@@ -81,13 +84,6 @@ class Lineitem extends MY_Controller
                 $this->Master_model->master_update($state_dt,'lineitem',$where);
                
                 redirect('admin/lineitem/index/'.$id);
-            }
-			else
-			{
-		       
-
-            $this->load->view('admin/jobsetting/lineitem_master');
-                
             }
 			
         }
@@ -135,3 +131,38 @@ class Lineitem extends MY_Controller
     }
   
 }
+
+
+public function add($id = null)
+    {   
+
+        if (!empty($id)) {
+                 
+            $data['title'] = 'Add Lineitems';
+
+            $where_cn= "status=1";
+            $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where_cn);
+
+            $where_topic= "topic.topic_status=1";
+            $data['topic'] = $this->Master_model->getMaster('topic',$where_topic);
+            
+            $where_subtopic= "subtopic.subtopic_status=1 AND subtopic.subtopic_id ='$id'";
+            $data['subtopic'] = $this->Master_model->getMaster('subtopic',$where_subtopic);
+            
+            $where_all = "lineitem.lineitem_status='1'";
+			$join_emp = array(
+                'skill_master' => 'skill_master.id=lineitem.technical_id |INNER',
+                'topic' => 'topic.topic_id=lineitem.topic_id |INNER',
+				'subtopic' => 'subtopic.subtopic_id=lineitem.subtopic_id |INNER',
+            );
+        $data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_all,$join_emp);
+            
+
+            $this->load->view('admin/jobsetting/lineitems_master', $data);
+                
+            } else {
+                redirect('admin/lineitem');
+            }
+
+       
+    }
