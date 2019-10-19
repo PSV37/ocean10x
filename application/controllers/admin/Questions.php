@@ -177,7 +177,7 @@ class Questions extends MY_Controller
 		$where_lineitemlevel = "lineitemlevel.lineitemlevel_status='1'";
 		$data['lineitemlevel'] = $this->Master_model->getMaster('lineitemlevel',$where_lineitemlevel);
 		
-        $this->load->view('admin/jobsetting/questions_master',$data);
+        $this->load->view('admin/jobsetting/questionbank_master',$data);
     }
 
 
