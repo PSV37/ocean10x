@@ -187,10 +187,12 @@ function getSkillsByRole() {
                     'topic_id'        => $topic_chk[$k],
                     'no_questions'    => $this->input->post('no_questions'),
                     'created_by'      => $user_id,
-                    'created_date'    => date('Y-m-d H:i:s');
+                    'created_date'    => date('Y-m-d H:i:s'),
                     
                 );
                 $this->Master_model->master_insert($ques_array,'job_test_questions');
+                $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Job Test Questions Sucessfully Inserted</div>');
+                redirect('admin/job_posting');
             }
 
         }else{
