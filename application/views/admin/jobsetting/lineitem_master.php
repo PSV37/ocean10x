@@ -39,7 +39,7 @@
 					<div class="col-md-10"></div>
 					<div class="col-md-2">
 				
-					<br/><?php echo btn_add('admin/lineitem/add/'. $sub_topic_id); ?>
+					<br/><?php echo btn_add('admin/lineitem/save_lineitem/'. $sub_topic_id); ?>
 					
 					</div>
 					</div>
@@ -66,8 +66,8 @@
                             <td><?php echo $ct_row['subtopic_name'] ?></td>
 							<td><?php echo $ct_row['title'] ?></td>
                             <td>
-                                <?php echo btn_edit('admin/lineitem/edit_lineitem/' . $ct_row['lineitem_id']); ?>
-                                <?php echo btn_delete('admin/lineitem/delete_lineitem/' . $ct_row['lineitem_id']); ?>
+                                <?php echo btn_edit('admin/lineitem/save_lineitem/'.$sub_topic_id.'/'.$ct_row['lineitem_id']); ?>
+                                <?php echo btn_delete('admin/lineitem/delete_lineitem/'.$sub_topic_id.'/'.$ct_row['lineitem_id']); ?>
 							    <?php echo btn_add('admin/lineitem/select/' . $ct_row['lineitem_id']); ?>
                             </td>
                         </tr>
