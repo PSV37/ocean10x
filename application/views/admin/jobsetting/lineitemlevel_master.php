@@ -41,7 +41,7 @@
 									 <input type="hidden" name="technical_id" id="technical_id"  class="form-control" value="<?php if (!empty($lineitem_data)) echo $lineitem_data[0]['technical_id'];?>" required/>
                                     <input type="hidden" name="topic_id" id="topic_id"  class="form-control" value="<?php if (!empty($lineitem_data)) echo $lineitem_data[0]['topic_id'];?>" required/>
                                     <input type="hidden" name="subtopic_id" id="subtopic_id"  class="form-control" value="<?php if (!empty($lineitem_data)) echo $lineitem_data[0]['subtopic_id'];?>" required/>
-									 <input type="hidden" name="subtopic_id" id="subtopic_id"  class="form-control" value="<?php if (!empty($lineitem_data)) echo $lineitem_data[0]['lineitem_id'];?>" required/>
+									 <input type="hidden" name="lineitem_id" id="lineitem_id"  class="form-control" value="<?php if (!empty($lineitem_data)) echo $lineitem_data[0]['lineitem_id'];?>" required/>
                                    
 									 <div class="box-body">
 
