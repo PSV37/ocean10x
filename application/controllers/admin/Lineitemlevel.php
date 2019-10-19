@@ -43,7 +43,7 @@ class Lineitemlevel extends MY_Controller
         $data['lineitemlevel'] = $this->Master_model->getMaster('lineitemlevel',$where_all,$join_emp);
             
 
-            $this->load->view('admin/jobsetting/lineitemlevel_master', $data);
+            $this->load->view('admin/jobsetting/lineitemlevel', $data);
                 
             } else {
                 redirect('admin/lineitemlevel');

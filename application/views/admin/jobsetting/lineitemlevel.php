@@ -34,7 +34,14 @@
                     </div>
                 </div>
                
-            
+            <div class="row">
+					<div class="col-md-10"></div>
+					<div class="col-md-2">
+				
+					<br/><?php echo btn_add('admin/lineitem/addlevel/'. $lineitem[0]['lineitem_id']); ?>
+					
+					</div>
+					</div>
 					
                <div class="row">
                     <div class="col-md-10 col-md-offset-1">
@@ -62,7 +69,7 @@
 							<td><?php echo $ct_row['titles'] ?></td>
 							
                             <td>
-                                <?php echo btn_edit('admin/lineitemlevels/edit_lineitemlevels/' . $ct_row['lineitemlevel_id']); ?>
+                                <?php echo btn_edit('admin/lineitem/edit_lineitemlevels/' . $ct_row['lineitemlevel_id']); ?>
                                 <?php echo btn_delete('admin/lineitemlevels/delete_lineitemlevels/' . $ct_row['lineitemlevel_id']); ?>
                             </td>
                         </tr>
