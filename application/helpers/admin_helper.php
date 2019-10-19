@@ -130,7 +130,7 @@ function btn_unpublish($uri)
 
 function btn_questionsadd($uri)
 {
-    return anchor($uri, '<span <i class="fa fa-plus-square"></i></span>', array('class' => "btn btn-success btn-xs", 'title' => 'Add Questions', 'data-toggle' => 'tooltip', 'data-placement' => 'top'));
+    return anchor($uri, '<span <i class="fa fa-plus-square"></i></span>', array('class' => "btn btn-success btn-xs", 'title' => 'Add Test Questions', 'data-toggle' => 'tooltip', 'data-placement' => 'top'));
 }
 
 function slugify($text)
