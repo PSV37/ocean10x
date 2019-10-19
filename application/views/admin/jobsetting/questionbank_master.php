@@ -145,7 +145,7 @@
                                            foreach($lineitemlevel as $st_r) 
                                            {
                                         ?>   
-                                             <option value="<?php echo $st_r['lineitemlevel_id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['lineitemlevel_id']==$st_rowss['lineitemlevel_id'])echo "selected";?>><?php echo $st_rowss['titles']; ?></option> 
+                                             <option value="<?php echo $st_r['lineitemlevel_id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['lineitemlevel_id']==$st_r['lineitemlevel_id'])echo "selected";?>><?php echo $st_r['titles']; ?></option> 
                                        <?php } ?>
                                         </select> 
 										</div>
