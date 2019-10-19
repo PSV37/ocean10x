@@ -178,7 +178,7 @@ $route['admin/lineitem']="admin/lineitem/add";
 //$route['admin/lineitems']="admin/lineitems/index";
 //$route['admin/topic-master/(:any)']="admin/topic/edit_topic/$1";
 $route['admin/lineitem']="admin/lineitem/select";
-$route['admin/lineitemlevels']="admin/lineitemlevels/index";
+$route['admin/lineitem']="admin/lineitem/addlevel";
 
 
 
