@@ -107,19 +107,19 @@ $(document).ready(function(){
     var checkboxINstance = $(this);
     var chkval = $(this).val();
     
-    if (checkboxINstance.is(":checked"))
-    {
-        alert('asdad');
-    }else{
+    // if (checkboxINstance.is(":checked"))
+    // {
+    //     alert('asdad');
+    // }else{
         $('#no_questions'+chkval).val('');
-    }       
+    // }       
         
 
     });
     function validate_val()
     {
         var chk_val = $('#topic_chk').val();
-       var s  = $('#topic_chk').is(':checked'); 
+       var s  = $('.testchk').is(':checked'); 
 
        alert(s);
        alert(chk_val);
