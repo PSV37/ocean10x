@@ -57,7 +57,6 @@
                                         if($st_row['topic_id']==$test_topic_master[$i]['test_topic']){
                                           $checked ="checked";
                                           $no_ques = $test_topic_master[$i]['no_questions'];
-                                          // break;
                                         }
 
                                     }
