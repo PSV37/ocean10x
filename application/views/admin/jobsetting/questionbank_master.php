@@ -411,8 +411,8 @@ function showCheckboxes() {
                 url:'<?php echo base_url();?>admin/questionbank/gettopic',
                 data:{id:id},
                 success:function(res){
-                    $('#topic_id').html(res);
-                    $('#topic_id').val(<?php echo $row['topic_id']; ?>);
+                    $('#skills_id').html(res);
+                    $('#skills_id').val(<?php echo $row['skills_id']; ?>);
                 }
                 
             }); 
