@@ -20,21 +20,21 @@
             </section>
 
             <br/>
-            <div class="container-fluid">
-               <section class="content">
+<div class="container-fluid">
+   <section class="content">
     <div class="row">
         <div class="col-md-12">
 
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
-                    <div class="col-md-offset-3">
+                  <!--   <div class="col-md-offset-3"> -->
                         <h3 class="box-title ">Question Master For Test</h3>
-                    </div>
+                    <!-- </div> -->
                 </div>
                 <!-- /.box-header -->
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
-                        <table class="table table-bordered table-striped" id="dataTables-example">
+                        <table class="table table-bordered table-striped" id="">
                             <thead>
                                 <tr>
                                     <th class="active">SL</th>
