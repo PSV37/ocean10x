@@ -96,13 +96,7 @@
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Topic <span class="required">*</span></label>
                                         <select id="topic_id"  name="topic_id" class="form-control" required onchange="getSubtopic(this.value)">
-                                           <option value="">Select Topic</option> 
-                                        <?php if (!empty($topic))
-                                           foreach($topic as $st_row) 
-                                           {
-                                        ?>   
-                                            <option value="<?php echo $st_row['topic_id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['topic_id']==$st_row['topic_id'])echo "selected";?>><?php echo $st_row['topic_name']; ?></option> 
-                                        <?php } ?>
+                                          
                                         </select>
                                     </div>
                                 </div>
@@ -110,13 +104,7 @@
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
                                      <select id="subtopic_id"  name="subtopic_id" class="form-control" required onchange="getLineitem(this.value)">
-                                           <option value="">Select Subopic</option> 
-                                        <?php if (!empty($subtopic))
-                                           foreach($subtopic as $st_rows) 
-                                           {
-                                        ?>   
-                                             <option value="<?php echo $st_rows['subtopic_id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['subtopic_id']==$st_rows['subtopic_id'])echo "selected";?>><?php echo $st_rows['subtopic_name']; ?></option> 
-                                       <?php } ?>
+                                          
                                         </select>
 										</div>
 									</div>
@@ -126,13 +114,7 @@
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Line Item(Level 1)<span class="required">*</span></label>
                                      <select id="lineitem_id"  name="lineitem_id" class="form-control" required onchange="getLineitemlevel(this.value)">
-                                           <option value="">Select Line Item(Level 1)</option> 
-                                        <?php if (!empty($lineitem))
-                                           foreach($lineitem as $st_rowss) 
-                                           {
-                                        ?>   
-                                             <option value="<?php echo $st_rowss['lineitem_id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['lineitem_id']==$st_rowss['lineitem_id'])echo "selected";?>><?php echo $st_rowss['title']; ?></option> 
-                                       <?php } ?>
+                                          
                                         </select> 
 										</div>
 									</div>
@@ -141,13 +123,7 @@
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Line Item(Level 2)<span class="required">*</span></label>
                                      <select id="lineitemlevel_id"  name="lineitemlevel_id" class="form-control" required>
-                                           <option value="">Select Line Item(Level 2)</option> 
-                                        <?php if (!empty($lineitemlevel))
-                                           foreach($lineitemlevel as $st_r) 
-                                           {
-                                        ?>   
-                                             <option value="<?php echo $st_r['lineitemlevel_id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['lineitemlevel_id']==$st_r['lineitemlevel_id'])echo "selected";?>><?php echo $st_r['titles']; ?></option> 
-                                       <?php } ?>
+                                           
                                         </select> 
 										</div>
 									</div>
