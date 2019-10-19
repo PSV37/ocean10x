@@ -79,11 +79,92 @@
                                 </div><!-- end row -->
                             </div><!-- end post-padding -->
                             
-                        </div>
+                        <!-- </div> -->
 
-                </div> <!--end row -->
-                </div><!-- end container -->
-            </div><!-- end section -->
+              <!-- <div class="col-md-12 col-sm-12 col-xs-12"> -->
+                <div class="x_panel">
+                  <ul class="nav nav-tabs">
+                    <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="false">Send Applicaitons</a>
+                    </li>
+                    <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Forwarded Applicaitons</a>
+                    </li>
+                  </ul>
+                <div class="x_content">
+                  <div class="" role="tabpanel" data-example-id="togglable-tabs">
+
+                    <div id="myTabContent" class="tab-content">
+                      <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+                        <div class="x_title">
+                          <h2>Recent Applied Job Applicaiton List</h2>
+                          <div class="clearfix"></div>
+                        </div>
+                      <table id="datatable" class="table table-striped table-bordered">
+                          <thead>
+                            <tr>
+                              <th>Sr.No</th>
+                              <th>Send By</th>
+                              <th>Message</th>
+                              <th>Attachment</th>
+                              <th>Date And Time</th>
+                              <th>Actions</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                           
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <small>*Note: Applications in this tab only appeas when you apply for any job from site. </small>
+                      </div>
+
+                      <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
+                        <div class="x_title">
+                          <h2>Recent Received Job Applicaiton List</h2>
+                          <div class="clearfix"></div>
+                        </div>
+                        <table id="myTable" class="table table-striped table-bordered">
+                          <thead>
+                            <tr>
+                              <th>Sr.No</th>
+                              <th>Send By</th>
+                              <th>Message</th>
+                              <th>Attachment</th>
+                              <th>Date And Time</th>
+                              <th>Actions</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                           
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <small>*Note: All these applications send by Company or HR Consultant to you. </small>
+                      </div>
+                     
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+
+    </div> <!--end row -->
+    </div><!-- end container -->
+</div><!-- end section -->
 
 
   
