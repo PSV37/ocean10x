@@ -34,7 +34,7 @@ class Lineitem extends MY_Controller
     }
 	
 	public function save_lineitem($sub_topic_id=0,$id = 0){
-            if(isset($_POST)){
+            if(isset($_POST['save_line_item'])){
 				$user_id = $this->session->userdata('admin_user_id');
 				
 				$state_dt=array(
