@@ -39,7 +39,7 @@
 					<div class="col-md-10"></div>
 					<div class="col-md-2">
 				
-					<br/><?php echo btn_add('admin/lineitem/add/'. $sub_topic_id); ?>
+					<br/><?php echo btn_add('admin/lineitem/save_lineitem/'. $sub_topic_id); ?>
 					
 					</div>
 					</div>
