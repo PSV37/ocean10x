@@ -181,6 +181,9 @@ function getSkillsByRole() {
         {
             $topic_chk = $this->input->post('topic_chk');
             for($k=0; $k<sizeof($topic_chk);$k++)
+                // foreach ($variable as $key => $value) {
+                //     # code...
+                // }
             {
                 $ques_array = array(
                     'job_id'          => $id,
