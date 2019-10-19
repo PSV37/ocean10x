@@ -41,16 +41,16 @@
                         <table class="table table-bordered table-striped" id="dataTables-example">
                             <thead>
                                 <tr>
-                                    <th class="active">SL</th>
+                                    <th class="active">#</th>
                                     <th class="active">Topic Name</th>
-                                    <th class="active col-sm-2">No Questions</th>
+                                    <th class="active col-sm-2">No of Questions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                            <?php $key = 1 ;?>
+                           
                             <?php if (!empty($topic_master)): foreach ($topic_master as $st_row) : ?>
                                 <tr>
-                                    <td><input type="checkbox" name="chk[]" id="chk[]<?php echo $st_row['topic_id']; ?>" class="form-control"></td>
+                                    <td><input type="checkbox" name="chk[]" id="chk[]<?php echo $st_row['topic_id']; ?>"></td>
                                     <td><?php echo $st_row['topic_name']; ?></td>
                                     <td>
                                         <input type="number" name="no_questions[]" id="no_questions" class="form-control">
