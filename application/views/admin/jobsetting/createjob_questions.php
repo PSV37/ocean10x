@@ -35,8 +35,7 @@
                 <div class="row">
                     <!-- <?php print_r($job_info); ?> -->
                     <div class="col-md-10 col-md-offset-1">
-                    <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/subtopic/save_subtopic/<?php  if (!empty($job_info)) { foreach($job_info as $row)
-                        echo $row['job_post_id'];
+                    <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/subtopic/save_subtopic/<?php  if (!empty($job_info)) { echo $job_info->job_post_id
                       }
                      ?>" method="post">
                         <table class="table table-bordered table-striped" id="">
