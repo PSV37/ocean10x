@@ -124,7 +124,7 @@
 									 <div class="col-md-4">
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Line Item(Level 1)<span class="required">*</span></label>
-                                     <select id="lineitem_id"  name="lineitem_id" class="form-control" required>
+                                     <select id="lineitem_id"  name="lineitem_id" class="form-control" required onchange="getLineitemlevel(this.value)">
                                            <option value="">Select Title</option> 
                                         <?php if (!empty($lineitem))
                                            foreach($lineitem as $st_rowss) 
@@ -139,7 +139,7 @@
 										 <div class="col-md-4">
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Line Item(Level 2)<span class="required">*</span></label>
-                                     <select id="lineitem_id"  name="lineitem_id" class="form-control" required>
+                                     <select id="lineitemlevel_id"  name="lineitemlevel_id" class="form-control" required>
                                            <option value="">Select Title</option> 
                                         <?php if (!empty($lineitem))
                                            foreach($lineitem as $st_rowss) 
@@ -518,6 +518,50 @@ function showCheckboxes() {
                 success:function(res){
                     $('#lineitem_id').html(res);
                     $('#lineitem_id').val(<?php echo $row['lineitem_id']; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+       getLineitem_load();
+    });
+       
+</script>
+
+
+
+<script>
+    function getLineitemlevel(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/questionbank/getlineitemlevel',
+                data:{id:id},
+                success:function(res){
+                    $('#lineitemlevel_id').html(res);
+                }
+                
+            }); 
+          }
+   
+       }
+
+    $(document).ready(function(){
+
+
+
+    function getLineitemlevel_load(){
+        var id = $('#lineitem_id').val();
+
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/questionbank/getlineitemlevel',
+                data:{id:id},
+                success:function(res){
+                    $('#lineitemlevel_id').html(res);
+                    $('#lineitemlevel_id').val(<?php echo $row['lineitemlevel_id']; ?>);
                 }
                 
             }); 
