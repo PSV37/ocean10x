@@ -65,7 +65,7 @@
                                     <td><input type="checkbox" <?php echo $checked; ?> name="topic_chk[]" id="topic_chk" value="<?php echo $st_row['topic_id']; ?>" class="testchk"></td>
                                     <td><?php echo $st_row['topic_name']; ?></td>
                                     <td>
-                                        <input type="number" name="no_questions<?php echo $st_row['topic_id']; ?>" id="no_questions<?php echo $no_ques; ?>" value="<?php echo $no_ques; ?>">
+                                        <input type="number" name="no_questions<?php echo $st_row['topic_id']; ?>" id="no_questions<?php echo $st_row['topic_id']; ?>" value="<?php echo $no_ques; ?>">
                                     </td>
                                 </tr>
                             <?php
@@ -108,7 +108,7 @@ $(document).ready(function(){
 
     var checkboxINstance = $(this).val();
     var c = $('#no_questions'+checkboxINstance).val('');
-    alert('#no_questions'+checkboxINstance);
+    alert(c);
     // if (!checkboxINstance.is(":checked"))
     // {
     //   checkboxINstance.closest('td').find("input[type=number]")[0].value = '';
