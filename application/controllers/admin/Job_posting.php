@@ -183,7 +183,7 @@ function getSkillsByRole() {
             $topic_chk = $this->input->post('topic_chk');
             // $no_questions = $this->input->post('no_questions');
             $post_data=$this->input->post();
-            
+
             if(empty($topic_chk))
             {
                 $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Please Check Minimum One Checkbox</div>');
@@ -223,6 +223,7 @@ function getSkillsByRole() {
                 }
                 redirect('admin/jobs');
             }
+
         }else{
             $data['title']    = "Topic's For Test";
             $data['test_job_id'] = $id;

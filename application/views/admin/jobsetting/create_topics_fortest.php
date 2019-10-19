@@ -36,7 +36,7 @@
                
                     <div class="col-md-10 col-md-offset-1">
                     <?php echo $this->session->flashdata('msg');?> 
-                    <form role="form" id="test_topicfrm"  enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/job_posting/topics_for_test/<?php if (!empty($test_job_id)) { echo $test_job_id;} ?>" method="post">
+                    <form role="form" id="test_topicfrm"  enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/job_posting/topics_for_test/<?php if (!empty($test_job_id)) { echo $test_job_id;} ?>" method="post" onsubmit="return validate_val();">
                         <table class="table table-bordered table-striped" id="dataTables-example">
                             <thead>
                                 <tr>
@@ -103,11 +103,9 @@
 <?php $this->load->view('admin/components/footer'); ?>
 <script>
 $(document).ready(function(){
-
     $('.testchk').change(function() {
-        var checkboxINstance = $(this);
+    var checkboxINstance = $(this);
     var chkval = $(this).val();
-    // var c = 
     
     if (checkboxINstance.is(":checked"))
     {
@@ -118,5 +116,13 @@ $(document).ready(function(){
         
 
     });
+    function validate_val()
+    {
+        var chk_val = $('#topic_chk').val();
+       var s  = $('#topic_chk').is(':checked'); 
+
+       alert(s);
+       alert(chk_val);
+    }
 });
 </script>
