@@ -69,7 +69,7 @@ class Lineitem extends MY_Controller
 				
 				//$where_add['lineitem_id']=$id;
                 $this->Master_model->master_insert($state_dt,'lineitem');
-               
+                $this->load->view('admin/jobsetting/lineitem_master');
                 redirect('admin/lineitem/index/'.$id);
             }
             else {
@@ -81,7 +81,7 @@ class Lineitem extends MY_Controller
                
                 redirect('admin/lineitem/index/'.$id);
             }
-			 $this->load->view('admin/jobsetting/lineitem_master', $data);
+			
         }
 
     
