@@ -53,7 +53,7 @@
                                     <td><input type="checkbox" name="topic_chk[]" id="topic_chk<?php echo $st_row['topic_id']; ?>" value="<?php echo $st_row['topic_id']; ?>"></td>
                                     <td><?php echo $st_row['topic_name']; ?></td>
                                     <td>
-                                        <input type="number" name="no_questions" id="no_questions">
+                                        <input type="number" name="no_questions[]" id="no_questions">
                                     </td>
                                 </tr>
                             <?php
