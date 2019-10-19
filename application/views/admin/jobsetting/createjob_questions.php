@@ -14,10 +14,10 @@
         <!-- /.sidebar -->
       </aside>
 
-        <div class="right-side">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-            </section>
+<div class="right-side">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+    </section>
 
             <br/>
 <div class="container-fluid">
@@ -67,8 +67,9 @@
                             <?php endif; ?>
                             </tbody>
                         </table>
-                        <button type="submit" class="btn bg-navy" type="submit">Submit</button>
-                               
+
+                        <button type="submit" class="btn bg-navy pull-right" type="submit">Submit</button>
+                        <div class="panel-body"></div>                               
                     </form>
 
                     </div>
