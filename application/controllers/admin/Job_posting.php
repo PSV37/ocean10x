@@ -181,12 +181,12 @@ function getSkillsByRole() {
         if($_POST)
         {
             $topic_chk = $this->input->post('topic_chk');
-            if(empty($topic_chk))
+            $this->form_validation->set_rules('topic_chk', 'Please Check Minimum One Checkbox', 'required');
+          //  $this->form_validation->set_rules('gender', 'Gender field is required', 'required');
+            if ($this->form_validation->run() == FALSE)
             {
-                //$this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Job Test Questions Sucessfully Inserted</div>');
-                echo json_encode(['error'=>'Jczzxc']);
-                //redirect('admin/job_posting/topics_for_test/'.$id);
-
+                $errors = validation_errors();
+                echo json_encode(['error'=>$errors]);
             }else{
 
                 $where_del = "job_id='$id'";
@@ -210,9 +210,10 @@ function getSkillsByRole() {
                         $this->Master_model->master_insert($ques_array,'job_test_questions');
                        
                     }
-                    $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Job Test Questions Sucessfully Inserted</div>');
+                    // $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Job Test Questions Sucessfully Inserted</div>');
+                    echo json_encode(['success'=>'Information Updated Successfully!']);
                 }
-                redirect('admin/jobs');
+                //redirect('admin/jobs');
             }
         }else{
             $data['title']    = "Topic's For Test";

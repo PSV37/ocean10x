@@ -122,7 +122,8 @@ $('form#test_topicfrm').submit(function(e)
                             $(".alert").fadeTo(500, 0).slideUp(500, function(){
                                 $(this).remove(); 
                             });
-                            location.reload();
+                                // location.reload();
+                                window.location.href="admin/jobs";
                             }, 1500);
                           $('.alert .close').on("click", function(e){
                                 $(this).parent().fadeTo(500, 0).slideUp(500);
