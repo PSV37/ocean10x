@@ -129,11 +129,10 @@ class Lineitem extends MY_Controller
         $this->Master_model->master_update($lineitem_status,'lineitem',$where_del);
          redirect('admin/lineitem/index/'.$id);
     }
-  
-}
-
-
-public function add($id = null)
+	
+	
+	
+	public function add($id = null)
     {   
 
         if (!empty($id)) {
@@ -158,7 +157,7 @@ public function add($id = null)
         $data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_all,$join_emp);
             
 
-            $this->load->view('admin/jobsetting/lineitems_master', $data);
+            $this->load->view('admin/jobsetting/lineitem_master', $data);
                 
             } else {
                 redirect('admin/lineitem');
@@ -166,3 +165,12 @@ public function add($id = null)
 
        
     }
+	
+	
+	
+	
+  
+}
+
+
+
