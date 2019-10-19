@@ -19,15 +19,15 @@ class Questionbank extends MY_Controller
 
         $data['title'] = 'Add Questionbank';
 
-        $where_cn= "status=1";
+        $where_skill= "status=1";
 		
-        $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where_cn);
+        $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where_skill);
 		
 		//$where_opt= "options.status=1";
         $data['options'] = $this->Master_model->getMaster('options');
 		
-        $where_state= "topic.topic_status=1";
-        $data['topic'] = $this->Master_model->getMaster('topic',$where_state);
+        $where_topic= "topic.topic_status=1";
+        $data['topic'] = $this->Master_model->getMaster('topic',$where_topic);
         
         $where_subtopic = "subtopic.subtopic_status='1'";
 		$data['subtopic'] = $this->Master_model->getMaster('subtopic',$where_subtopic);
