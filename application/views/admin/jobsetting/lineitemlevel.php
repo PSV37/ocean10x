@@ -69,7 +69,7 @@
 							<td><?php echo $ct_row['titles'] ?></td>
 							
                             <td>
-                                <?php echo btn_edit('admin/lineitem/edit_lineitemlevels/' . $ct_row['lineitemlevel_id']); ?>
+                                <?php echo btn_edit('admin/lineitem/edit_lineitemlevel/' . $ct_row['lineitemlevel_id']); ?>
                                 <?php echo btn_delete('admin/lineitemlevels/delete_lineitemlevels/' . $ct_row['lineitemlevel_id']); ?>
                             </td>
                         </tr>
