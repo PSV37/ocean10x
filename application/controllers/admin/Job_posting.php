@@ -184,8 +184,18 @@ function getSkillsByRole() {
             if(empty($topic_chk))
             {
                 $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Please Check Minimum One Checkbox</div>');
-                // echo json_encode(['error'=>'Please Check Minimum One Checkbox']);
-               
+                $data['title']    = "Topic's For Test";
+                $data['test_job_id'] = $id;
+
+                $where_test_top = "job_test_questions.job_id='$id'";
+                $select_test_topic = "job_test_questions.topic_id as test_topic,job_test_questions.no_questions";
+                $data['test_topic_master'] = $this->Master_model->getMaster('job_test_questions',$where_test_top,$join = FALSE, $order = false, $field = false, $select_test_topic,$limit=false,$start=false, $search=false);
+
+                $where_top = "topic.topic_status='1'";
+                $select_topic = "topic_name,topic_id";
+                $data['topic_master'] = $this->Master_model->getMaster('topic',$where_top,$join = FALSE, $order = false, $field = false, $select_topic,$limit=false,$start=false, $search=false);
+
+                $this->load->view('admin/jobsetting/create_topics_fortest', $data);
             }else{
 
                 $where_del = "job_id='$id'";
