@@ -181,13 +181,13 @@ function getSkillsByRole() {
         {
             $topic_chk = $this->input->post('topic_chk');
             $no_questions = $this->input->post('no_questions');
-            for($k=0; $k<sizeof($topic_chk);$k++)
-              
+            // for($k=0; $k<sizeof($topic_chk);$k++)
+              foreach($topic_chk as $topic)
             {
                 $ques_array = array(
                     'job_id'          => $id,
-                    'topic_id'        => $topic_chk[$k],
-                    'no_questions'    => $no_questions[$k],
+                    'topic_id'        => $topic,
+                    'no_questions'    => $no_questions,
                     'created_by'      => $user_id,
                     'created_date'    => date('Y-m-d H:i:s'),
                     

@@ -41,7 +41,7 @@
                         <table class="table table-bordered table-striped" id="dataTables-example">
                             <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th class="active">#</th>
                                     <th class="active">Topic Name</th>
                                     <th class="active">No of Questions</th>
                                 </tr>
@@ -50,7 +50,7 @@
                            
                             <?php if (!empty($topic_master)): foreach ($topic_master as $st_row) : ?>
                                 <tr>
-                                    <td><input type="checkbox" name="topic_chk[]" id="topic_chk<?php echo $st_row['topic_id']; ?>" value="<?php echo $st_row['topic_id']; ?>"></td>
+                                    <td><input type="checkbox" name="topic_chk[]" id="topic_chk" value="<?php echo $st_row['topic_id']; ?>"></td>
                                     <td><?php echo $st_row['topic_name']; ?></td>
                                     <td>
                                         <input type="number" name="no_questions[]" id="no_questions">
