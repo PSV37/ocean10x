@@ -113,7 +113,7 @@
 									 <div class="col-md-4">
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Line Item(Level 1)<span class="required">*</span></label>
-                                     <select id="lineitem_id"  name="lineitem_id" class="form-control" required onchange="getLineitemlevel(this.value)">
+                                     <select id="lineitem_id"  name="lineitem_id" class="form-control"  onchange="getLineitemlevel(this.value)">
                                           
                                         </select> 
 										</div>
@@ -122,7 +122,7 @@
 										 <div class="col-md-4">
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Line Item(Level 2)<span class="required">*</span></label>
-                                     <select id="lineitemlevel_id"  name="lineitemlevel_id" class="form-control" required>
+                                     <select id="lineitemlevel_id"  name="lineitemlevel_id" class="form-control">
                                            
                                         </select> 
 										</div>
@@ -220,7 +220,6 @@
 				  
 				   <label>Correct Answer: <span class="required">*</span></label>
 				   <select  class="form-control" style="height:100px;">				   
-				  <option>Select option</option>
 					</select>
 					<div class="overSelect"></div>
 				   </div>
