@@ -79,7 +79,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">                                       
 									   <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
-                                        <div id="WoodList">
+                                        
 										<select id="subject"  name="technical_id" class="form-control" required onchange="getTopic(this.value)">
                                            <option value="">Select Subject</option> 
                                         <?php if (!empty($skill_master))
@@ -89,7 +89,6 @@
                                             <option value="<?php echo $skill['id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option> 
                                         <?php } ?>
                                         </select>
-										</div>
 										</div>
                                 </div>
 
