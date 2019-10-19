@@ -195,6 +195,13 @@ class Job_apply_model extends MY_Model
         $query = $this->db->get($this->_table_name); 
         return $query->result();
     }
+    // public function seeker_all_application_send($job_seeker_id){
+    //     $this->db->select("*");
+    //     $this->db->where('job_seeker_id', $job_seeker_id);
+    //     $this->db->where('job_seeker_id', $job_seeker_id);
+    //     $query = $this->db->get($this->_table_name); 
+    //     return $query->result();
+    // }
  public function expedited_salary($job_seeker_id,$job_id){
         $this->db->select("*");
         $this->db->where('job_seeker_id', $job_seeker_id);
