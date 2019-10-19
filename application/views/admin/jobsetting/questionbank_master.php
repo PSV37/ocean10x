@@ -125,7 +125,7 @@
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Line Item(Level 1)<span class="required">*</span></label>
                                      <select id="lineitem_id"  name="lineitem_id" class="form-control" required onchange="getLineitemlevel(this.value)">
-                                           <option value="">Select Title</option> 
+                                           <option value="">Select Line Item(Level 1)</option> 
                                         <?php if (!empty($lineitem))
                                            foreach($lineitem as $st_rowss) 
                                            {
@@ -140,12 +140,12 @@
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Line Item(Level 2)<span class="required">*</span></label>
                                      <select id="lineitemlevel_id"  name="lineitemlevel_id" class="form-control" required>
-                                           <option value="">Select Title</option> 
-                                        <?php if (!empty($lineitem))
-                                           foreach($lineitem as $st_rowss) 
+                                           <option value="">Select Line Item(Level 2)</option> 
+                                        <?php if (!empty($lineitemlevel))
+                                           foreach($lineitemlevel as $st_r) 
                                            {
                                         ?>   
-                                             <option value="<?php echo $st_rowss['lineitem_id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['lineitem_id']==$st_rowss['lineitem_id'])echo "selected";?>><?php echo $st_rowss['title']; ?></option> 
+                                             <option value="<?php echo $st_r['lineitemlevel_id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['lineitemlevel_id']==$st_rowss['lineitemlevel_id'])echo "selected";?>><?php echo $st_rowss['titles']; ?></option> 
                                        <?php } ?>
                                         </select> 
 										</div>

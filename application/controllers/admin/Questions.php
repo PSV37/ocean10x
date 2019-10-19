@@ -34,6 +34,9 @@ class Questions extends MY_Controller
 		$where_lineitem = "lineitem.lineitem_status='1'";
 		$data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_lineitem);
 		
+		$where_lineitemlevel = "lineitemlevel.lineitemlevel_status='1'";
+		$data['lineitemlevel'] = $this->Master_model->getMaster('lineitemlevel',$where_lineitemlevel);
+		
 		$where_all = "questionbank.ques_status='1'";
         $join_emp = array(
                 'skill_master' => 'skill_master.id=questionbank.technical_id |INNER',
@@ -171,6 +174,9 @@ class Questions extends MY_Controller
 		$where_lineitem = "lineitem.lineitem_status='1'";
 		$data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_lineitem);
 		
+		$where_lineitemlevel = "lineitemlevel.lineitemlevel_status='1'";
+		$data['lineitemlevel'] = $this->Master_model->getMaster('lineitemlevel',$where_lineitemlevel);
+		
         $this->load->view('admin/jobsetting/questions_master',$data);
     }
 
@@ -236,7 +242,7 @@ function getlineitem(){
 
 
 
-function getlineitemlevel(){
+function getLineitemlevel(){
 	$lineitemlevel_id = $this->input->post('id');
 	$where['subtopic_id'] = $lineitemlevel_id;
 	$lineitems = $this->Master_model->getMaster('lineitemlevel',$where);
