@@ -71,7 +71,7 @@ class Lineitem extends MY_Controller
 				$where_all="subtopic.subtopic_id='".$sub_topic_id."'";
 				$data['subtopic_data'] = $this->Master_model->getMaster('subtopic',$where_all,$join_emp);
 				if($id!=0){
-					$where_lineitem="lineitem.lineitem_id='".$id."'"
+					$where_lineitem="lineitem.lineitem_id='".$id."'";
 					$data['line_item_data'] = $this->Master_model->getMaster('lineitem',$where_lineitem);
 				}
 				$this->load->view('admin/jobsetting/lineitems_master', $data);
