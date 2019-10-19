@@ -35,9 +35,7 @@
                 <div class="row">
                 
                     <div class="col-md-10 col-md-offset-1">
-                    <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/job_posting/topics_for_test/<?php  if (!empty($test_job_id)) { echo $test_job_id;
-                      }
-                     ?>" method="post">
+                    <form role="form" id="test_topicfrm"  enctype="multipart/form-data" action="#" method="post">
                         <table class="table table-bordered table-striped" id="dataTables-example">
                             <thead>
                                 <tr>
@@ -84,7 +82,7 @@
                         <button type="submit" class="btn bg-navy pull-right" name="submit">Submit</button>
                         <div class="panel-body"></div>                               
                     </form>
-
+                    <div id="rees"></div>
                     </div>
                 </div>
             </div>
@@ -98,8 +96,43 @@
 
 <br />
 
-
 </div><!-- /.right-side -->
 
        
 <?php $this->load->view('admin/components/footer'); ?>
+<script>
+    // Basic form update
+$('form#test_topicfrm').submit(function(e)
+  {
+      e.preventDefault();
+    
+      $.ajax({
+                url: "<?php echo base_url(); ?>admin/job_posting/topics_for_test/<?php if (!empty($test_job_id)) { echo $test_job_id;} ?>",
+                type: "POST",
+                data: new FormData(this),
+                contentType:false,
+                processData:false,
+                 dataType: "json",
+                success: function(data)
+                {
+                    if($.isEmptyObject(data.error)){
+
+                        $("#rees").html('<div class="alert alert-success"><button type="button" class="close">×</button>Information Updated Successfully!</div>');
+                            window.setTimeout(function() {
+                            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                                $(this).remove(); 
+                            });
+                            location.reload();
+                            }, 1500);
+                          $('.alert .close').on("click", function(e){
+                                $(this).parent().fadeTo(500, 0).slideUp(500);
+                          });
+
+                        }else{
+                            $("#rees").html('<div class="alert alert-danger"><button type="button" class="close">×</button>'+data.error+'</div>');
+                        }
+                }
+          });
+       
+  }); 
+</script>

@@ -183,8 +183,9 @@ function getSkillsByRole() {
             $topic_chk = $this->input->post('topic_chk');
             if(empty($topic_chk))
             {
-                $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Job Test Questions Sucessfully Inserted</div>');
-                redirect('admin/job_posting/topics_for_test/'.$id);
+                //$this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Job Test Questions Sucessfully Inserted</div>');
+                echo json_encode(['error'=>'Jczzxc']);
+                //redirect('admin/job_posting/topics_for_test/'.$id);
 
             }else{
 
