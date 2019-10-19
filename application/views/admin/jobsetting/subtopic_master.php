@@ -63,7 +63,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Topic <span class="required">*</span></label>
-                                        <select id="topic_id"  name="topic_id" class="form-control" required>
+                                        <select id="topic_id"  name="topic_id" class="form-control ckeditor" required>
                                            <option value="">Select Topic</option> 
                                         <?php if (!empty($topic))
                                            foreach($topic as $st_row) 
