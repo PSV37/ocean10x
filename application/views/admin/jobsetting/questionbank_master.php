@@ -77,9 +77,10 @@
                             <div class="box-body">
 							<div class="container-fluid">
                                 <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
-                                        <select id="subject"  name="technical_id" class="form-control" required onchange="getTopic(this.value)">
+                                    <div class="form-group">                                       
+									   <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
+                                        <div id="WoodList">
+										<select id="subject"  name="technical_id" class="form-control" required onchange="getTopic(this.value)">
                                            <option value="">Select Subject</option> 
                                         <?php if (!empty($skill_master))
                                            foreach($skill_master as $skill) 
@@ -88,6 +89,7 @@
                                             <option value="<?php echo $skill['id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option> 
                                         <?php } ?>
                                         </select>
+										</div>
 										</div>
                                 </div>
 
@@ -572,7 +574,22 @@ function showCheckboxes() {
     });
        
 </script>
-       
+    <script>
+	var activeLanguage = "de"
+
+function sortUL(selector) {
+  var $ul = $(selector);
+  $ul.find('li').sort(function(a, b) {
+    var upA = $(a).text().toUpperCase();
+    var upB = $(b).text().toUpperCase();
+    return (upA < upB) ? -1 : (upA > upB) ? 1 : 0;
+  }).appendTo(selector);
+};
+
+$(document).ready(function() {
+  sortUL("#WoodList");
+});
+	</script>   
 
 <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
 <script>
