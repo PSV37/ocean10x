@@ -33,7 +33,12 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="row">
+                    <?php print_r($job_info); ?>
                     <div class="col-md-10 col-md-offset-1">
+                    <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/subtopic/save_subtopic/<?php  if (!empty($edit_subtopic_info)) { foreach($edit_subtopic_info as $row)
+                        echo $row['subtopic_id'];
+                      }
+                     ?>" method="post">
                         <table class="table table-bordered table-striped" id="">
                             <thead>
                                 <tr>
@@ -49,7 +54,7 @@
                                     <td><?php echo $key ?></td>
                                     <td><?php echo $st_row['topic_name'] ?></td>
                                     <td>
-                                        <input type="number" name="no_questions" id="no_questions">
+                                        <input type="number" name="no_questions" id="no_questions" class="form-control">
                                     </td>
                                 </tr>
                             <?php
@@ -63,6 +68,9 @@
                             <?php endif; ?>
                             </tbody>
                         </table>
+                        <button type="submit" class="btn bg-navy" type="submit">Submit</button>
+                               
+                    </form>
 
                     </div>
                 </div>
