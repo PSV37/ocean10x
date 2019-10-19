@@ -85,6 +85,88 @@ class Lineitem extends MY_Controller
 		redirect('admin/lineitem/index/'.$sub_topic_id);
 	}
 	
+	
+	
+	
+	public function select($id = null)
+    {   
+        if (!empty($id)) {
+                 
+            $data['title'] = 'Select Lineitems';
+            $where_all = "lineitemlevel.lineitemlevel_status!='0' and lineitemlevel.lineitem_id='".$id."'";
+			$join_emp = array(
+                'skill_master' => 'skill_master.id=lineitemlevel.technical_id |INNER',
+                'topic' => 'topic.topic_id=lineitemlevel.topic_id |INNER',
+				'subtopic' => 'subtopic.subtopic_id=lineitemlevel.subtopic_id |INNER',
+				'subtopic' => 'subtopic.subtopic_id=lineitemlevel.subtopic_id |INNER',
+				'lineitem' => 'lineitem.lineitem_id=lineitemlevel.lineitem_id |INNER',
+            );
+			$data['lineitemlevel'] = $this->Master_model->getMaster('lineitemlevel',$where_all,$join_emp);
+            $data['line_item_id']=$id;
+
+            $this->load->view('admin/jobsetting/lineitemlevel', $data);
+                
+        } else {
+                redirect('admin/lineitem');
+        }
+    }
+	
+	public function save_lineitemlevel($line_item_id=0,$id = 0){
+            if(isset($_POST['save_line_itemlevel'])){
+				$user_id = $this->session->userdata('admin_user_id');
+				
+				$state_dt=array(
+					'technical_id' => $this->input->post('technical_id'),
+					'topic_id' => $this->input->post('topic_id'),
+					'subtopic_id' => $this->input->post('subtopic_id'),
+					'lineitem_id' => $this->input->post('lineitem_id'),
+					'titles' => $this->input->post('titles'),
+				);
+
+				if($id==0){
+					$state_dt['lineitemlevel_created_date']=date('Y-m-d H:i:s');
+					$state_dt['lineitemlevel_created_by']=$user_id;
+					
+					//$where_add['lineitem_id']=$id;
+					$this->Master_model->master_insert($state_dt,'lineitemlevel');
+					
+					redirect('admin/lineitem/index/'.$line_item_id);
+				}
+				else {
+					$state_dt['lineitemlevel_updated_date']=date('Y-m-d H:i:s');
+					$state_dt['lineitemlevel_updated_by']=$user_id;
+
+					$where['lineitemlevel_id']=$id;
+					$this->Master_model->master_update($state_dt,'lineitemlevel',$where);
+				   
+					redirect('admin/lineitem/index/'.$line_item_id);
+				}
+			}else{
+				$join_emp = array(
+					'skill_master' => 'skill_master.id=lineitem.technical_id |INNER',
+					'topic' => 'topic.topic_id=lineitem.topic_id |INNER',
+					'subtopic' => 'subtopic.subtopic_id=lineitem.subtopic_id |INNER',
+				);
+				$where_all="lineitem.lineitem_id='".$line_item_id."'";
+				$data['lineitem_data'] = $this->Master_model->getMaster('lineitem',$where_all,$join_emp);
+				if($id!=0){
+					$where_lineitemlevel="lineitemlevel.lineitemlevel_id='".$id."'";
+					$data['line_itemlevel_data'] = $this->Master_model->getMaster('lineitemlevel',$where_lineitemlevel);
+				}
+				$this->load->view('admin/jobsetting/lineitemlevel_master', $data);
+			}
+    }
+	
+	public function delete_lineitemlevel($line_item_id=0,$id = 0){
+		$where['lineitemlevel_id']=$id;
+		$data['lineitemlevel_status']=0;
+		$this->Master_model->master_update($data,'lineitemlevel',$where);	   
+		redirect('admin/lineitem/select/'.$line_item_id);
+	}
+	
+	
+	
+	
 }
 
 
