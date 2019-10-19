@@ -33,11 +33,10 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="row">
-                
+               
                     <div class="col-md-10 col-md-offset-1">
-                    <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/job_posting/topics_for_test/<?php  if (!empty($test_job_id)) { echo $test_job_id;
-                      }
-                     ?>" method="post">
+                    <?php echo $this->session->flashdata('msg');?> 
+                    <form role="form" id="test_topicfrm"  enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/job_posting/topics_for_test/<?php if (!empty($test_job_id)) { echo $test_job_id;} ?>" method="post">
                         <table class="table table-bordered table-striped" id="dataTables-example">
                             <thead>
                                 <tr>
@@ -63,7 +62,7 @@
                                 }
                             ?>
                                 <tr>
-                                    <td><input type="checkbox" <?php echo $checked; ?> name="topic_chk[]" id="topic_chk" value="<?php echo $st_row['topic_id']; ?>" ></td>
+                                    <td><input type="checkbox" <?php echo $checked; ?> name="topic_chk[]" id="topic_chk" value="<?php echo $st_row['topic_id']; ?>" class="testchk"></td>
                                     <td><?php echo $st_row['topic_name']; ?></td>
                                     <td>
                                         <input type="number" name="no_questions<?php echo $st_row['topic_id']; ?>" id="no_questions" value="<?php echo $no_ques; ?>">
@@ -84,7 +83,7 @@
                         <button type="submit" class="btn bg-navy pull-right" name="submit">Submit</button>
                         <div class="panel-body"></div>                               
                     </form>
-
+                   
                     </div>
                 </div>
             </div>
@@ -98,8 +97,22 @@
 
 <br />
 
-
 </div><!-- /.right-side -->
 
        
 <?php $this->load->view('admin/components/footer'); ?>
+<script>
+$(document).ready(function(){
+
+    $('.testchk').change(function() {
+
+    var checkboxINstance = $(this);
+    if (!checkboxINstance.is(":checked"))
+    {
+      checkboxINstance.closest('td').find("input[type=number]")[0].value = '';
+     }       
+        
+
+    });
+});
+</script>

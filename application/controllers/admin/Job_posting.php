@@ -181,10 +181,24 @@ function getSkillsByRole() {
         if($_POST)
         {
             $topic_chk = $this->input->post('topic_chk');
+            // $no_questions = $this->input->post('no_questions');
+            $post_data=$this->input->post();
+            
             if(empty($topic_chk))
             {
-                $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Job Test Questions Sucessfully Inserted</div>');
-                redirect('admin/job_posting/topics_for_test/'.$id);
+                $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Please Check Minimum One Checkbox</div>');
+                $data['title']    = "Topic's For Test";
+                $data['test_job_id'] = $id;
+
+                $where_test_top = "job_test_questions.job_id='$id'";
+                $select_test_topic = "job_test_questions.topic_id as test_topic,job_test_questions.no_questions";
+                $data['test_topic_master'] = $this->Master_model->getMaster('job_test_questions',$where_test_top,$join = FALSE, $order = false, $field = false, $select_test_topic,$limit=false,$start=false, $search=false);
+
+                $where_top = "topic.topic_status='1'";
+                $select_topic = "topic_name,topic_id";
+                $data['topic_master'] = $this->Master_model->getMaster('topic',$where_top,$join = FALSE, $order = false, $field = false, $select_topic,$limit=false,$start=false, $search=false);
+
+                $this->load->view('admin/jobsetting/create_topics_fortest', $data);
 
             }else{
 
@@ -192,10 +206,6 @@ function getSkillsByRole() {
                 $del = $this->Master_model->master_delete('job_test_questions',$where_del);
                 if($del==true)
                 {
-                    
-                    $no_questions = $this->input->post('no_questions');
-                    $post_data=$this->input->post();
-
                     for($k=0; $k<sizeof($topic_chk);$k++)
                     {
                         $ques_array = array(
@@ -209,7 +219,7 @@ function getSkillsByRole() {
                         $this->Master_model->master_insert($ques_array,'job_test_questions');
                        
                     }
-                    $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Job Test Questions Sucessfully Inserted</div>');
+                    $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Job Test Topic Sucessfully Inserted</div>');
                 }
                 redirect('admin/jobs');
             }
