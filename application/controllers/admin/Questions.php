@@ -40,6 +40,7 @@ class Questions extends MY_Controller
                 'topic' => 'topic.topic_id=questionbank.topic_id |INNER',
 				'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |INNER',
 				'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |INNER',
+				'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |INNER',
             );
         $data['questionbank'] = $this->Master_model->getMaster('questionbank',$where_all,$join_emp);
 
@@ -55,7 +56,7 @@ class Questions extends MY_Controller
                 'topic_id' => $this->input->post('topic_id'),
                 'subtopic_id' => $this->input->post('subtopic_id'),
 				'lineitem_id' => $this->input->post('lineitem_id'),
-				'level' => $this->input->post('level'),
+				'lineitemlevel_id' => $this->input->post('lineitemlevel_id'),
 				'ques_type' => $this->input->post('ques_type'),
 				'question' => $this->input->post('question'),
 				'option1' => $this->input->post('option1'),
@@ -151,6 +152,7 @@ class Questions extends MY_Controller
                 'topic' => 'topic.topic_id=questionbank.topic_id |INNER',
 				'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |INNER',
 				'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |INNER',
+				'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |INNER',
             );
         $data['questionbank'] = $this->Master_model->getMaster('questionbank',$where_all,$join_emp);
 		
@@ -221,9 +223,29 @@ function getlineitem(){
 	$result = '';
 	
 	if(!empty($lineitems)){ 
-		$result .='<option value="">Select Lineitem</option>';
+		$result .='<option value="">Select Lineitem 1</option>';
 		foreach($lineitems as $key){
 		  $result .='<option value="'.$key['lineitem_id'].'">'.$key['title'].'</option>';
+		}
+	}else{
+	
+		$result .='<option value="">Lineitem not available</option>';
+	}
+	 echo $result;
+}
+
+
+
+function getlineitemlevel(){
+	$lineitemlevel_id = $this->input->post('id');
+	$where['subtopic_id'] = $lineitemlevel_id;
+	$lineitems = $this->Master_model->getMaster('lineitemlevel',$where);
+	$result = '';
+	
+	if(!empty($lineitemlevels)){ 
+		$result .='<option value="">Select Lineitem Level 2</option>';
+		foreach($lineitemlevelss as $key){
+		  $result .='<option value="'.$key['lineitemlevel_id'].'">'.$key['titles'].'</option>';
 		}
 	}else{
 	
