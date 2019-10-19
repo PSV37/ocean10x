@@ -437,9 +437,6 @@ function showCheckboxes() {
        }
 
     $(document).ready(function(){
-
-
-
     function getSubtopic_load(){
         var id = $('#topic_id').val();
 
@@ -545,7 +542,7 @@ function showCheckboxes() {
           }
    
        }
-       getLineitem_load();
+       getLineitemlevel_load();
     });
        
 </script>
