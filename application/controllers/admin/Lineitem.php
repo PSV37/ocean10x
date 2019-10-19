@@ -19,7 +19,7 @@ class Lineitem extends MY_Controller
         if (!empty($id)) {
                  
             $data['title'] = 'Select Lineitems';
-            $where_all = "lineitem.lineitem_status='1' and subtopic_id='".$id."'";
+            $where_all = "lineitem.lineitem_status='1' and lineitem.subtopic_id='".$id."'";
 			$join_emp = array(
                 'skill_master' => 'skill_master.id=lineitem.technical_id |INNER',
                 'topic' => 'topic.topic_id=lineitem.topic_id |INNER',
