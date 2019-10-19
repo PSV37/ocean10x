@@ -44,8 +44,8 @@
                         <th class="active">Subject</th>
                         <th class="active">Topic</th>
                         <th class="active">Subtopic</th>
-					    <th class="active">Line Item(Level-1)</th>
-						 <th class="active">Line Item(Level-2)</th>
+					    <th class="active">Line Item 1</th>
+						 <th class="active">Line Item 2</th>
 						<th class="active">Question Type</th>
 						<th class="active">Question</th>
                         <th class="active col-sm-2">Action</th>
