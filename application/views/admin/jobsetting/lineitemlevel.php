@@ -34,7 +34,14 @@
                     </div>
                 </div>
                
-            
+            <div class="row">
+					<div class="col-md-10"></div>
+					<div class="col-md-2">
+				
+					<br/><?php echo btn_add('admin/lineitem/addlevel/'. $lineitem[0]['lineitem_id']); ?>
+					
+					</div>
+					</div>
 					
                <div class="row">
                     <div class="col-md-10 col-md-offset-1">
