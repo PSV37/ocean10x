@@ -255,7 +255,7 @@ class Lineitem extends MY_Controller
                 $where['lineitemlevel_id']=$id;
                 $this->Master_model->master_update($state_dt,'lineitemlevel',$where);
                
-                redirect('admin/lineitem/index/'.$id);
+                redirect('admin/lineitem/select/'.$id);
             }
         }
 
@@ -303,7 +303,7 @@ class Lineitem extends MY_Controller
         );
         $where_delete['lineitemlevel_id']=$id;
         $this->Master_model->master_update($lineitemlevel_status,'lineitemlevel',$where_delete);
-         redirect('admin/lineitem/index/'.$id);
+         redirect('admin/lineitem/select/'.$id);
     }
 	
 	
