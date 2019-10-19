@@ -19,7 +19,7 @@ class Lineitem extends MY_Controller
 
         if (!empty($id)) {
                  
-            $data['title'] = 'Add Lineitems';
+            $data['title'] = 'Select Lineitems';
 
             $where_cn= "status=1";
             $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where_cn);
@@ -152,6 +152,46 @@ class Lineitem extends MY_Controller
                 
             } else {
                 redirect('admin/lineitem/index/'.$id);
+            }
+
+       
+    }
+	
+	/*Lineitem Level-2 Fetch Data */
+	
+	public function select($id = null)
+    {   
+
+        if (!empty($id)) {
+                 
+            $data['title'] = 'Add Lineitems';
+
+            $where_cn= "status=1";
+            $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where_cn);
+
+            $where_topic= "topic.topic_status=1";
+            $data['topic'] = $this->Master_model->getMaster('topic',$where_topic);
+            
+           // $where_subtopic= "subtopic.subtopic_status=1";
+            //$data['subtopic'] = $this->Master_model->getMaster('subtopic',$where_subtopic);
+			
+			$where_lineitem= "lineitem.lineitem_status=1 AND lineitem.lineitem_id ='$id'";
+            $data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_subtopic);
+            
+            $where_all = "lineitemlevel.lineitemlevel_status='1'";
+			$join_emp = array(
+                'skill_master' => 'skill_master.id=lineitemlevel.technical_id |INNER',
+                'topic' => 'topic.topic_id=lineitemlevel.topic_id |INNER',
+				'subtopic' => 'subtopic.subtopic_id=lineitemlevel.subtopic_id |INNER',
+				'lineitem' => 'lineitem.lineitem_id=lineitemlevel.lineitem_id |INNER',
+            );
+        $data['lineitemlevel'] = $this->Master_model->getMaster('lineitemlevel',$where_all,$join_emp);
+            
+
+            $this->load->view('admin/jobsetting/lineitemlevel', $data);
+                
+            } else {
+                redirect('admin/lineitemlevel');
             }
 
        
