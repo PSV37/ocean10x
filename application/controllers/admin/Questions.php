@@ -34,8 +34,8 @@ class Questions extends MY_Controller
 		$where_lineitem = "lineitem.lineitem_status='1'";
 		$data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_lineitem);
 		
-		$where_lineitemlevel = "lineitemlevel.lineitemlevel_status='1'";
-		$data['lineitemlevel'] = $this->Master_model->getMaster('lineitemlevel',$where_lineitemlevel);
+		
+		$data['lineitemlevel'] = $this->Master_model->getMaster('lineitemlevel');
 		
 		$where_all = "questionbank.ques_status='1'";
         $join_emp = array(
