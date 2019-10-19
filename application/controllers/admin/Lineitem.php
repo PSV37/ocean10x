@@ -68,6 +68,7 @@ class Lineitem extends MY_Controller
             );
 
             if(empty($id)){
+				$this->load->view('admin/jobsetting/lineitems_master', $data);
                 $state_dt['lineitem_created_date']=date('Y-m-d H:i:s');
                 $state_dt['lineitem_created_by']=$user_id;
 				
@@ -134,21 +135,16 @@ class Lineitem extends MY_Controller
 	
 	public function add($id = null)
     {   
-
         if (!empty($id)) {
                        
             
      $this->load->view('admin/jobsetting/lineitems_master', $data);
                 
             } 
-
-       
+      
     }
 	
 	
-	
-	
-  
 }
 
 
