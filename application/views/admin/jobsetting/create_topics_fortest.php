@@ -108,7 +108,7 @@ $(document).ready(function(){
 
     var checkboxINstance = $(this).val();
     var c = $('#no_questions'+checkboxINstance).val('');
-    alert(c);
+    alert('#no_questions'+checkboxINstance);
     // if (!checkboxINstance.is(":checked"))
     // {
     //   checkboxINstance.closest('td').find("input[type=number]")[0].value = '';
