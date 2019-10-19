@@ -14,14 +14,31 @@ class Questionbank extends MY_Controller
     }
 
     /*** Dashboard ***/
-    public function index($id = null)
+    public function index()
     {   
 
         $data['title'] = 'Add Questionbank';
 
-        $where_question= "questionbank.ques_status='1' and questionbank.ques_id='".$id."'";
-        	
-        $data['questionbank'] = $this->Master_model->getMaster('questionbank', $where_question);
+        $where_cn= "status=1";
+        $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where_cn);
+		
+		//$where_opt= "options.status=1";
+        $data['options'] = $this->Master_model->getMaster('options');
+		
+        $where_state= "topic.topic_status=1";
+        $data['topic'] = $this->Master_model->getMaster('topic',$where_state);
+        
+        $where_subtopic = "subtopic.subtopic_status='1'";
+		$data['subtopic'] = $this->Master_model->getMaster('subtopic',$where_subtopic);
+		
+		$where_lineitem = "lineitem.lineitem_status='1'";
+		$data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_lineitem);
+		
+		$where_lineitemlevel = "lineitemlevel.lineitemlevel_status='1'";
+		$data['lineitemlevel'] = $this->Master_model->getMaster('lineitemlevel',$where_lineitemlevel);
+		
+		
+        $data['questionbank'] = $this->Master_model->getMaster('questionbank');
 
         $this->load->view('admin/jobsetting/questionbank_master', $data);
     }
