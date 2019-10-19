@@ -48,20 +48,20 @@
             <li>
             	<?php $job_seeker=$this->session->userdata('job_seeker_id'); ?>                             
                 <ul class="nav navbar-nav navbar-right">
-                                        <li class="dropdown yamm-half membermenu hasmenu">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <?php if(!empty($this->Job_seeker_photo_model->get_jobseeker_photo($job_seeker))):?>
-                                        <img src="<?php echo base_url() ?>upload/<?php echo  $this->Job_seeker_photo_model->get_jobseeker_photo($job_seeker);?>" alt="" class="img-circle"> <strong>Welcome <?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></strong></a>
-                                        <?php else: ?>
-                                        <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" alt="" class="img-circle"><strong>Welcome <?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></strong></a>
-                                        <?php endif; ?>
-                                        <ul class="dropdown-menu start-right">                                            
-                                            <li><a href="<?php echo base_url(); ?>job_seeker/seeker_info"><span class="glyphicon glyphicon-user"></span>Dashboard</a></li>
-                                            <li><a href="<?php echo base_url(); ?>job_seeker/view_resume"><span class="glyphicon glyphicon-edit"></span> View Resume</a></li>
-                                            <li><a href="<?php echo base_url(); ?>seeker/logout"><span class="glyphicon glyphicon-lock"></span> Logout</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                  <li class="dropdown yamm-half membermenu hasmenu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                      <?php if(!empty($this->Job_seeker_photo_model->get_jobseeker_photo($job_seeker))):?>
+                      <img src="<?php echo base_url() ?>upload/<?php echo  $this->Job_seeker_photo_model->get_jobseeker_photo($job_seeker);?>" alt="" class="img-circle"> <strong>Welcome <?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></strong></a>
+                      <?php else: ?>
+                      <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" alt="" class="img-circle"><strong>Welcome <?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></strong></a>
+                      <?php endif; ?>
+                      <ul class="dropdown-menu start-right">                                            
+                        <li><a href="<?php echo base_url(); ?>job_seeker/seeker_info"><span class="glyphicon glyphicon-user"></span>Dashboard</a></li>
+                        <li><a href="<?php echo base_url(); ?>job_seeker/view_resume"><span class="glyphicon glyphicon-edit"></span> View Resume</a></li>
+                        <li><a href="<?php echo base_url(); ?>seeker/logout"><span class="glyphicon glyphicon-lock"></span> Logout</a></li>
+                      </ul>
+                  </li>
+              </ul>
             </li>
                     
             </ul>
