@@ -294,7 +294,17 @@ class Lineitem extends MY_Controller
         $this->load->view('admin/jobsetting/edit_lineitemlevels',$data);
     }
 
+/*Lineitem Level-2(Delete Data)*/
 
+ public function delete_lineitemlevel($id) {
+        
+        $lineitemlevel_status = array(
+            'lineitemlevel_status'=>0,
+        );
+        $where_delete['lineitemlevel_id']=$id;
+        $this->Master_model->master_update($lineitemlevel_status,'lineitemlevel',$where_delete);
+         redirect('admin/lineitem/index/'.$id);
+    }
 	
 	
 }
