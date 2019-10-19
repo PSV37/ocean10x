@@ -20,6 +20,7 @@ class Questionbank extends MY_Controller
         $data['title'] = 'Add Questionbank';
 
         $where_cn= "status=1";
+		
         $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where_cn);
 		
 		//$where_opt= "options.status=1";
@@ -157,16 +158,7 @@ class Questionbank extends MY_Controller
     }
 
 
- public function delete_questionbank($id) {
-        
-      //  $this->education_level_model->delete($id);
-        $education_level_status = array(
-            'questionbank.ques_status'=>0,
-        );
-        $where_del['ques_id']=$id;
-        $this->Master_model->master_update($education_level_status,'questionbank',$where_del);
-        redirect('admin/questions');
-    }
+
 
 
 function gettopic(){
