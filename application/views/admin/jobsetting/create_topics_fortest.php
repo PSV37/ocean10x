@@ -49,16 +49,18 @@
                             <tbody>
                            
                             <?php if (!empty($topic_master)): foreach ($topic_master as $st_row) : 
-                                 $checked="";
-                                 $no_ques = '';
-                                  for($i=0;$i<sizeof($test_topic_master);$i++){
+                                $checked="";
+                                $no_ques = "";
+                                if(!empty($test_topic_master)){
+                                    for($i=0;$i<sizeof($test_topic_master);$i++){
 
-                                    if($st_row['topic_id']==$test_topic_master[$i]['test_topic']){
-                                      $checked ="checked";
-                                      $no_ques = $test_topic_master[$i]['no_questions'];
-                                      break;
+                                        if($st_row['topic_id']==$test_topic_master[$i]['test_topic']){
+                                          $checked ="checked";
+                                          $no_ques = $test_topic_master[$i]['no_questions'];
+                                          // break;
+                                        }
+
                                     }
-
                                 }
                             ?>
                                 <tr>
