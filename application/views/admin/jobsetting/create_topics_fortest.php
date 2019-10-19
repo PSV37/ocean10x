@@ -107,10 +107,11 @@ $(document).ready(function(){
     $('.testchk').change(function() {
 
     var checkboxINstance = $(this);
-    if (!checkboxINstance.is(":checked"))
-    {
-      checkboxINstance.closest('td').find("input[type=number]")[0].value = '';
-     }       
+    alert(checkboxINstance);
+    // if (!checkboxINstance.is(":checked"))
+    // {
+    //   checkboxINstance.closest('td').find("input[type=number]")[0].value = '';
+    //  }       
         
 
     });
