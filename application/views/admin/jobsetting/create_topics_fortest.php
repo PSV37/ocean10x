@@ -120,9 +120,13 @@ $(document).ready(function(){
     {
         var chk_val = $('#topic_chk').val();
        var s  = $('.testchk').is(':checked'); 
-
-       alert(s);
-       alert(chk_val);
+       if(s==true)
+       {
+            alert(s);
+            alert(chk_val);
+            return false;
+       }
+      
     }
 });
 </script>
