@@ -14,10 +14,10 @@
         <!-- /.sidebar -->
       </aside>
 
-        <div class="right-side">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-            </section>
+<div class="right-side">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+    </section>
 
             <br/>
 <div class="container-fluid">
@@ -38,22 +38,22 @@
                     <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/subtopic/save_subtopic/<?php  if (!empty($job_info)) { echo $job_info->job_post_id;
                       }
                      ?>" method="post">
-                        <table class="table table-bordered table-striped" id="">
+                        <table class="table table-bordered table-striped" id="dataTables-example">
                             <thead>
                                 <tr>
-                                    <th class="active">SL</th>
+                                    <th class="active">#</th>
                                     <th class="active">Topic Name</th>
-                                    <th class="active col-sm-2">No Questions</th>
+                                    <th class="active">No of Questions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                            <?php $key = 1 ;?>
+                           
                             <?php if (!empty($topic_master)): foreach ($topic_master as $st_row) : ?>
                                 <tr>
-                                    <td><?php echo $key ?></td>
-                                    <td><?php echo $st_row['topic_name'] ?></td>
+                                    <td><input type="checkbox" name="chk[]" id="chk[]<?php echo $st_row['topic_id']; ?>"></td>
+                                    <td><?php echo $st_row['topic_name']; ?></td>
                                     <td>
-                                        <input type="number" name="no_questions" id="no_questions" class="form-control">
+                                        <input type="number" name="no_questions[]" id="no_questions" class="form-control">
                                     </td>
                                 </tr>
                             <?php
@@ -67,8 +67,9 @@
                             <?php endif; ?>
                             </tbody>
                         </table>
-                        <button type="submit" class="btn bg-navy" type="submit">Submit</button>
-                               
+
+                        <button type="submit" class="btn bg-navy pull-right" type="submit">Submit</button>
+                        <div class="panel-body"></div>                               
                     </form>
 
                     </div>
