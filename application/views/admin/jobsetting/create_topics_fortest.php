@@ -116,25 +116,25 @@ $(document).ready(function(){
         
 
     });
-    function validate_val()
-    {
+    // function validate_val()
+    // {
        
-        var checkBox = document.querySelector('input[type="checkbox"]');
-        var textInput = document.querySelector('input[type="number"]');
+    //     var checkBox = document.querySelector('input[type="checkbox"]');
+    //     var textInput = document.querySelector('input[type="number"]');
 
-        function toggleRequired() {
+    //     function toggleRequired() {
 
-            if (textInput.hasAttribute('required') !== true) {
-                textInput.setAttribute('required','required');
-            }
+    //         if (textInput.hasAttribute('required') !== true) {
+    //             textInput.setAttribute('required','required');
+    //         }
 
-            else {
-                textInput.removeAttribute('required');  
-            }
-        }
+    //         else {
+    //             textInput.removeAttribute('required');  
+    //         }
+    //     }
 
-        checkBox.addEventListener('change',toggleRequired,false);
+    //     checkBox.addEventListener('change',toggleRequired,false);
       
-    }
+    // }
 });
 </script>
