@@ -180,36 +180,39 @@ function getSkillsByRole() {
         
         if($_POST)
         {
-            $where_del = "job_id='$id'";
-            $del = $this->Master_model->master_delete('job_test_questions',$where_del);
-            if($del==true)
+            $topic_chk = $this->input->post('topic_chk');
+            if(empty($topic_chk))
             {
-                $topic_chk = $this->input->post('topic_chk');
-                $no_questions = $this->input->post('no_questions');
-                $post_data=$this->input->post();
-                // echo "<pre>";
-                // echo "Topics-<br>";
-                // print_r($topic_chk);
-                // echo "Questions-<br>";
-                // print_r($no_questions); die;
-
-                for($k=0; $k<sizeof($topic_chk);$k++)
-                {
-                    $ques_array = array(
-                        'job_id'          => $id,
-                        'topic_id'        => $topic_chk[$k],
-                        'no_questions'    => $post_data['no_questions'.$topic_chk[$k]],
-                        'created_by'      => $user_id,
-                        'created_date'    => date('Y-m-d H:i:s'),
-                        
-                    );
-                    $this->Master_model->master_insert($ques_array,'job_test_questions');
-                   
-                }
                 $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Job Test Questions Sucessfully Inserted</div>');
-            }
-                redirect('admin/jobs');
+                redirect('admin/topics_for_test'.$id);
 
+            }else{
+
+                $where_del = "job_id='$id'";
+                $del = $this->Master_model->master_delete('job_test_questions',$where_del);
+                if($del==true)
+                {
+                    
+                    $no_questions = $this->input->post('no_questions');
+                    $post_data=$this->input->post();
+
+                    for($k=0; $k<sizeof($topic_chk);$k++)
+                    {
+                        $ques_array = array(
+                            'job_id'          => $id,
+                            'topic_id'        => $topic_chk[$k],
+                            'no_questions'    => $post_data['no_questions'.$topic_chk[$k]],
+                            'created_by'      => $user_id,
+                            'created_date'    => date('Y-m-d H:i:s'),
+                            
+                        );
+                        $this->Master_model->master_insert($ques_array,'job_test_questions');
+                       
+                    }
+                    $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Job Test Questions Sucessfully Inserted</div>');
+                }
+                redirect('admin/jobs');
+            }
         }else{
             $data['title']    = "Topic's For Test";
             $data['test_job_id'] = $id;
