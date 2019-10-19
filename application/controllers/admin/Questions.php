@@ -35,7 +35,7 @@ class Questions extends MY_Controller
 		$data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_lineitem);
 		
 		$where_lineitemlevel = "lineitemlevel.lineitemlevel_status='1'";
-		$data['lineitemlevel'] = $this->Master_model->getMaster('lineitemlevel',$where_lineitem);
+		$data['lineitemlevel'] = $this->Master_model->getMaster('lineitemlevel',$where_lineitemlevel);
 		
 		$where_all = "questionbank.ques_status='1'";
         $join_emp = array(
@@ -242,7 +242,7 @@ function getlineitem(){
 
 
 
-function getlineitemlevel(){
+function getLineitemlevel(){
 	$lineitemlevel_id = $this->input->post('id');
 	$where['subtopic_id'] = $lineitemlevel_id;
 	$lineitems = $this->Master_model->getMaster('lineitemlevel',$where);
