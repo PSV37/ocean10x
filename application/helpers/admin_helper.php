@@ -133,6 +133,12 @@ function btn_questionsadd($uri)
     return anchor($uri, '<span <i class="fa fa-plus-square"></i></span>', array('class' => "btn btn-success btn-xs", 'title' => 'Add Questions', 'data-toggle' => 'tooltip', 'data-placement' => 'top'));
 }
 
+function btn_addbutton($uri)
+{
+    return anchor($uri, '<span <i class="fa fa-plus-square"></i></span>', array('class' => "btn btn-success btn-xs", 'title' => 'Add line item', 'data-toggle' => 'tooltip', 'data-placement' => 'top'));
+}
+
+
 function slugify($text)
 {
     // replace non letter or digits by -
