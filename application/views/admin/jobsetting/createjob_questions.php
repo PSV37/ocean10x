@@ -43,7 +43,7 @@
                                 <tr>
                                     <th class="active">#</th>
                                     <th class="active">Topic Name</th>
-                                    <th class="active col-sm-2">No of Questions</th>
+                                    <th class="active">No of Questions</th>
                                 </tr>
                             </thead>
                             <tbody>
