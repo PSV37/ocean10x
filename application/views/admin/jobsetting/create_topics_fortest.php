@@ -33,8 +33,9 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="row">
-                <?php echo $this->session->flashdata('msg');?> 
+               
                     <div class="col-md-10 col-md-offset-1">
+                    <?php echo $this->session->flashdata('msg');?> 
                     <form role="form" id="test_topicfrm"  enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/job_posting/topics_for_test/<?php if (!empty($test_job_id)) { echo $test_job_id;} ?>" method="post">
                         <table class="table table-bordered table-striped" id="dataTables-example">
                             <thead>
@@ -82,7 +83,7 @@
                         <button type="submit" class="btn bg-navy pull-right" name="submit">Submit</button>
                         <div class="panel-body"></div>                               
                     </form>
-                    <div id="rees"></div>
+                   
                     </div>
                 </div>
             </div>
