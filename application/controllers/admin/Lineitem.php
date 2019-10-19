@@ -143,8 +143,8 @@ class Lineitem extends MY_Controller
 				}
 			}else{
 				$join_emp = array(
-					'skill_master' => 'skill_master.id=topic.technical_id |INNER',
-					'topic' => 'topic.topic_id=subtopic.topic_id |INNER',
+					'skill_master' => 'skill_master.id=lineitem.technical_id |INNER',
+					'topic' => 'topic.topic_id=lineitem.topic_id |INNER',
 					'subtopic' => 'subtopic.subtopic_id=lineitem.subtopic_id |INNER',
 				);
 				$where_all="lineitem.lineitem_id='".$line_item_id."'";
