@@ -72,7 +72,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
 									<label for="exampleInputEmail1">Description</label>
-                                         <textarea name="topic_desc" class="form-control" required><?php if (!empty($edit_spectial_info)) echo $row['topic_desc'];?></textarea>
+                                         <textarea name="topic_desc" class="form-control ckeditor" required><?php if (!empty($edit_spectial_info)) echo $row['topic_desc'];?></textarea>
                                     </div>
                                 </div>                            
 
