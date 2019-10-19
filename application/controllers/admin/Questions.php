@@ -244,18 +244,18 @@ function getlineitem(){
 
 function getLineitemlevel(){
 	$lineitemlevel_id = $this->input->post('id');
-	$where['subtopic_id'] = $lineitemlevel_id;
-	$lineitems = $this->Master_model->getMaster('lineitemlevel',$where);
+	$where['lineitem_id'] = $lineitemlevel_id;
+	$lineitemlevels = $this->Master_model->getMaster('lineitemlevel',$where);
 	$result = '';
 	
 	if(!empty($lineitemlevels)){ 
 		$result .='<option value="">Select Lineitem Level 2</option>';
-		foreach($lineitemlevelss as $key){
-		  $result .='<option value="'.$key['lineitemlevel_id'].'">'.$key['titles'].'</option>';
+		foreach($lineitemlevels as $keys){
+		  $result .='<option value="'.$keys['lineitemlevel_id'].'">'.$keys['titles'].'</option>';
 		}
 	}else{
 	
-		$result .='<option value="">Lineitem not available</option>';
+		$result .='<option value="">Lineitem Level not available</option>';
 	}
 	 echo $result;
 }
