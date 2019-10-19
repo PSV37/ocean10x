@@ -79,7 +79,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">                                       
 									   <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
-                                        <div id="WoodList">
+                                        
 										<select id="subject"  name="technical_id" class="form-control" required onchange="getTopic(this.value)">
                                            <option value="">Select Subject</option> 
                                         <?php if (!empty($skill_master))
@@ -90,20 +90,13 @@
                                         <?php } ?>
                                         </select>
 										</div>
-										</div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Topic <span class="required">*</span></label>
                                         <select id="topic_id"  name="topic_id" class="form-control" required onchange="getSubtopic(this.value)">
-                                           <option value="">Select Topic</option> 
-                                        <?php if (!empty($topic))
-                                           foreach($topic as $st_row) 
-                                           {
-                                        ?>   
-                                            <option value="<?php echo $st_row['topic_id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['topic_id']==$st_row['topic_id'])echo "selected";?>><?php echo $st_row['topic_name']; ?></option> 
-                                        <?php } ?>
+                                          
                                         </select>
                                     </div>
                                 </div>
@@ -111,13 +104,7 @@
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
                                      <select id="subtopic_id"  name="subtopic_id" class="form-control" required onchange="getLineitem(this.value)">
-                                           <option value="">Select Subopic</option> 
-                                        <?php if (!empty($subtopic))
-                                           foreach($subtopic as $st_rows) 
-                                           {
-                                        ?>   
-                                             <option value="<?php echo $st_rows['subtopic_id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['subtopic_id']==$st_rows['subtopic_id'])echo "selected";?>><?php echo $st_rows['subtopic_name']; ?></option> 
-                                       <?php } ?>
+                                          
                                         </select>
 										</div>
 									</div>
@@ -127,13 +114,7 @@
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Line Item(Level 1)<span class="required">*</span></label>
                                      <select id="lineitem_id"  name="lineitem_id" class="form-control" required onchange="getLineitemlevel(this.value)">
-                                           <option value="">Select Line Item(Level 1)</option> 
-                                        <?php if (!empty($lineitem))
-                                           foreach($lineitem as $st_rowss) 
-                                           {
-                                        ?>   
-                                             <option value="<?php echo $st_rowss['lineitem_id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['lineitem_id']==$st_rowss['lineitem_id'])echo "selected";?>><?php echo $st_rowss['title']; ?></option> 
-                                       <?php } ?>
+                                          
                                         </select> 
 										</div>
 									</div>
@@ -142,13 +123,7 @@
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Line Item(Level 2)<span class="required">*</span></label>
                                      <select id="lineitemlevel_id"  name="lineitemlevel_id" class="form-control" required>
-                                           <option value="">Select Line Item(Level 2)</option> 
-                                        <?php if (!empty($lineitemlevel))
-                                           foreach($lineitemlevel as $st_r) 
-                                           {
-                                        ?>   
-                                             <option value="<?php echo $st_r['lineitemlevel_id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['lineitemlevel_id']==$st_r['lineitemlevel_id'])echo "selected";?>><?php echo $st_r['titles']; ?></option> 
-                                       <?php } ?>
+                                           
                                         </select> 
 										</div>
 									</div>
@@ -415,6 +390,7 @@ function showCheckboxes() {
                 success:function(res){
                     $('#topic_id').html(res);
                     $('#topic_id').val(<?php echo $row['topic_id']; ?>);
+					getSubtopic_load();
                 }
                 
             }); 
@@ -425,26 +401,6 @@ function showCheckboxes() {
     });
        
 </script>
-	   
-	    <!--<script>
-	  function getSubtopic(id){
-		if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>admin/questionbank/getsubtopic',
-                data:{id:id},
-                success:function(res){
-                    $('#subtopic_id').html(res);
-                }
-				
-            }); 
-          }
-   
-	   }
-	   
-	   </script>-->
-	   
-	   
 	   <script>
     function getSubtopic(id){
         if(id){
@@ -462,9 +418,6 @@ function showCheckboxes() {
        }
 
     $(document).ready(function(){
-
-
-
     function getSubtopic_load(){
         var id = $('#topic_id').val();
 
@@ -476,13 +429,14 @@ function showCheckboxes() {
                 success:function(res){
                     $('#subtopic_id').html(res);
                     $('#subtopic_id').val(<?php echo $row['subtopic_id']; ?>);
+					getLineitem_load();
                 }
                 
             }); 
           }
    
        }
-       getSubtopic_load();
+       
     });
        
 </script>
@@ -520,13 +474,14 @@ function showCheckboxes() {
                 success:function(res){
                     $('#lineitem_id').html(res);
                     $('#lineitem_id').val(<?php echo $row['lineitem_id']; ?>);
+					 getLineitemlevel_load();
                 }
                 
             }); 
           }
    
        }
-       getLineitem_load();
+       
     });
        
 </script>
@@ -570,7 +525,7 @@ function showCheckboxes() {
           }
    
        }
-       getLineitem_load();
+      
     });
        
 </script>
