@@ -69,8 +69,8 @@
 							<td><?php echo $ct_row['titles'] ?></td>
 							
                             <td>
-                                <?php echo btn_edit('admin/lineitem/edit_lineitemlevel/' . $ct_row['lineitemlevel_id']); ?>
-                                <?php echo btn_delete('admin/lineitem/delete_lineitemlevel/' . $ct_row['lineitemlevel_id']); ?>
+                                <?php echo btn_edit('admin/lineitem/save_lineitemlevel/'.$line_item_id.'/'.$ct_row['lineitemlevel_id']); ?>
+                                <?php echo btn_delete('admin/lineitem/delete_lineitemlevel/'.$line_item_id.'/'.$ct_row['lineitemlevel_id']); ?>
                             </td>
                         </tr>
                     <?php
