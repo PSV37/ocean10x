@@ -118,14 +118,22 @@ $(document).ready(function(){
     });
     function validate_val()
     {
-        var chk_val = $('#topic_chk').val();
-       var s  = $('.testchk').is(':checked'); 
-       if(s==true)
-       {
-            alert(s);
-            alert(chk_val);
-            return false;
-       }
+       
+        var checkBox = document.querySelector('input[type="checkbox"]');
+        var textInput = document.querySelector('input[type="number"]');
+
+        function toggleRequired() {
+
+            if (textInput.hasAttribute('required') !== true) {
+                textInput.setAttribute('required','required');
+            }
+
+            else {
+                textInput.removeAttribute('required');  
+            }
+        }
+
+        checkBox.addEventListener('change',toggleRequired,false);
       
     }
 });
