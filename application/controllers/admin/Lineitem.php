@@ -17,7 +17,7 @@ class Lineitem extends MY_Controller
         if (!empty($id)) {
                  
             $data['title'] = 'Select Lineitems';
-            $where_all = "lineitem.lineitem_status='1' and lineitem.subtopic_id='".$id."'";
+            $where_all = "lineitem.lineitem_status!='0' and lineitem.subtopic_id='".$id."'";
 			$join_emp = array(
                 'skill_master' => 'skill_master.id=lineitem.technical_id |INNER',
                 'topic' => 'topic.topic_id=lineitem.topic_id |INNER',
@@ -76,8 +76,14 @@ class Lineitem extends MY_Controller
 				}
 				$this->load->view('admin/jobsetting/lineitems_master', $data);
 			}
-			
     }
+	
+	public function delete_lineitem($sub_topic_id=0,$id = 0){
+		$where['lineitem_id']=$id;
+		$data['lineitem_status']=0;
+		$this->Master_model->master_update($data,'lineitem',$where);	   
+		redirect('admin/lineitem/index/'.$sub_topic_id);
+	}
 	
 }
 

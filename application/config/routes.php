@@ -174,6 +174,7 @@ $route['admin/questionbank-master']="admin/questionbank";
 $route['admin/questions-master']="admin/questions";
 $route['admin/lineitem']="admin/lineitem/index";
 $route['admin/lineitem/save_lineitem']="admin/lineitem/save_lineitem";
+$route['admin/lineitem/delete_lineitem']="admin/lineitem/delete_lineitem";
 $route['admin/lineitem']="admin/lineitem/select";
 $route['admin/lineitem']="admin/lineitem/addlevel";
 //$route['admin/lineitems']="admin/lineitems/index";
