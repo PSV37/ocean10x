@@ -184,7 +184,7 @@ function getSkillsByRole() {
             if(empty($topic_chk))
             {
                 $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Job Test Questions Sucessfully Inserted</div>');
-                redirect('admin/topics_for_test'.$id);
+                redirect('admin/topics_for_test/'.$id);
 
             }else{
 
