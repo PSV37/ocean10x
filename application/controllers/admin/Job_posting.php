@@ -187,11 +187,11 @@ function getSkillsByRole() {
                 $topic_chk = $this->input->post('topic_chk');
                 $no_questions = $this->input->post('no_questions');
                 $post_data=$this->input->post();
-                echo "<pre>";
-                echo "Topics-<br>";
-                print_r($topic_chk);
-                echo "Questions-<br>";
-                print_r($no_questions); die;
+                // echo "<pre>";
+                // echo "Topics-<br>";
+                // print_r($topic_chk);
+                // echo "Questions-<br>";
+                // print_r($no_questions); die;
 
                 for($k=0; $k<sizeof($topic_chk);$k++)
                 {
