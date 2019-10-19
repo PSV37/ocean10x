@@ -121,6 +121,7 @@ class Lineitem extends MY_Controller
 					'subtopic_id' => $this->input->post('subtopic_id'),
 					'lineitem_id' => $this->input->post('lineitem_id'),
 					'titles' => $this->input->post('titles'),
+					'lineitemlevel_desc' => $this->input->post('lineitemlevel_desc'),
 				);
 
 				if($id==0){
