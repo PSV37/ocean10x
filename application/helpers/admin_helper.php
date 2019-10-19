@@ -128,9 +128,9 @@ function btn_unpublish($uri)
     ));
 }
 
-function btn_questionsadd($uri)
+function btn_test_topic_add($uri)
 {
-    return anchor($uri, '<span <i class="fa fa-plus-square"></i></span>', array('class' => "btn btn-success btn-xs", 'title' => 'Add Test Questions', 'data-toggle' => 'tooltip', 'data-placement' => 'top'));
+    return anchor($uri, '<span <i class="fa fa-plus-square"></i></span>', array('class' => "btn btn-success btn-xs", 'title' => 'Add Topics For Test', 'data-toggle' => 'tooltip', 'data-placement' => 'top'));
 }
 
 function btn_addbutton($uri)

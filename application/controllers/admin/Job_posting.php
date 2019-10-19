@@ -221,10 +221,4 @@ function getSkillsByRole() {
     }
 
 
-    // public function save_test_topics($id ==null)
-    // {
-
-    // }
-
-
 } // end class
