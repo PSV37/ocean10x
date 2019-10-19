@@ -68,7 +68,7 @@ class Lineitem extends MY_Controller
 					'skill_master' => 'skill_master.id=subtopic.technical_id |INNER',
 					'topic' => 'topic.topic_id=subtopic.topic_id |INNER',
 				);
-				$where_all="subtopic.subtopic_id='".$sub_topic_id."'"
+				$where_all="subtopic.subtopic_id='".$sub_topic_id."'";
 				$data['subtopic_data'] = $this->Master_model->getMaster('subtopic',$where_all,$join_emp);
 				if($id!=0){
 					$where_lineitem="lineitem.lineitem_id='".$id."'"
