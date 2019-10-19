@@ -36,8 +36,8 @@
                         <table class="table table-bordered table-striped" id="dataTables-example">
                             <thead ><!-- Table head -->
                             <tr>
-                                <th class="active"> SL.  </th>
-                                <th class="active"> Job Title  </th>
+                                <th class="active">SL.  </th>
+                                <th class="active">Job Title  </th>
                                 <th class="active">Company</th>
                                 <th class="active">Job Types</th>
                                 <th class="active">Applied </th>
@@ -103,6 +103,8 @@
                                         <?php echo btn_deactive('admin/jobs/deactive_btn/' . $v_companyjobs->job_post_id); ?>
                                     <?php } ?>
                                     <?php echo btn_delete('admin/jobs/delete_job/' . $v_companyjobs->job_post_id); ?>
+
+                                    <?php echo btn_add('admin/job_posting/edit_jobs/' . $v_companyjobs->job_post_id); ?>
                                     </td>
 
                                 </tr>

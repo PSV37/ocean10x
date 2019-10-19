@@ -186,9 +186,6 @@ class Job_apply_model extends MY_Model
         return $this->db->affected_rows();
     }
 
-
-
-
     public function seeker_all_application($job_seeker_id){
         $this->db->select("*");
         $this->db->where('job_seeker_id', $job_seeker_id);
@@ -196,6 +193,7 @@ class Job_apply_model extends MY_Model
         $query = $this->db->get($this->_table_name); 
         return $query->result();
     }
+    // forwarded  jobs
     public function seeker_all_application_send($job_seeker_id){
         $this->db->select("*");
         $this->db->where('job_seeker_id', $job_seeker_id);
