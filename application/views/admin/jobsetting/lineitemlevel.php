@@ -38,7 +38,7 @@
 					<div class="col-md-10"></div>
 					<div class="col-md-2">
 				
-					<br/><?php echo btn_add('admin/lineitem/save_lineitemlevel/'. $line_item_id); ?>
+					<br/><?php echo btn_addbutton('admin/lineitem/save_lineitemlevel/'. $line_item_id); ?>
 					
 					</div>
 					</div>

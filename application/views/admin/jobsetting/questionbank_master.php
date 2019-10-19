@@ -123,7 +123,22 @@
 									 <div class="container-fluid">
 									 <div class="col-md-4">
 								  <div class="form-group">
-                                        <label for="exampleInputEmail1">Title<span class="required">*</span></label>
+                                        <label for="exampleInputEmail1">Line Item(Level 1)<span class="required">*</span></label>
+                                     <select id="lineitem_id"  name="lineitem_id" class="form-control" required>
+                                           <option value="">Select Title</option> 
+                                        <?php if (!empty($lineitem))
+                                           foreach($lineitem as $st_rowss) 
+                                           {
+                                        ?>   
+                                             <option value="<?php echo $st_rowss['lineitem_id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['lineitem_id']==$st_rowss['lineitem_id'])echo "selected";?>><?php echo $st_rowss['title']; ?></option> 
+                                       <?php } ?>
+                                        </select> 
+										</div>
+									</div>
+									
+										 <div class="col-md-4">
+								  <div class="form-group">
+                                        <label for="exampleInputEmail1">Line Item(Level 2)<span class="required">*</span></label>
                                      <select id="lineitem_id"  name="lineitem_id" class="form-control" required>
                                            <option value="">Select Title</option> 
                                         <?php if (!empty($lineitem))
@@ -149,7 +164,10 @@
 									 </div>
                                 </div>
 								
-								 <div class="col-md-4">
+								
+								</div>
+								<div class="container-fluid">
+								<div class="col-md-4">
                                     <div class="form-group">
 									<label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
 									<select  name="ques_type" class="form-control" onchange="hideshowfun()" id="category">
