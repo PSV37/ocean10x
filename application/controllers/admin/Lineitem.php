@@ -121,6 +121,7 @@ class Lineitem extends MY_Controller
 					'subtopic_id' => $this->input->post('subtopic_id'),
 					'lineitem_id' => $this->input->post('lineitem_id'),
 					'titles' => $this->input->post('titles'),
+					'lineitemlevel_desc' => $this->input->post('lineitemlevel_desc'),
 				);
 
 				if($id==0){
@@ -130,7 +131,7 @@ class Lineitem extends MY_Controller
 					//$where_add['lineitem_id']=$id;
 					$this->Master_model->master_insert($state_dt,'lineitemlevel');
 					
-					redirect('admin/lineitem/index/'.$line_item_id);
+					redirect('admin/lineitem/select/'.$line_item_id);
 				}
 				else {
 					$state_dt['lineitemlevel_updated_date']=date('Y-m-d H:i:s');
@@ -139,7 +140,7 @@ class Lineitem extends MY_Controller
 					$where['lineitemlevel_id']=$id;
 					$this->Master_model->master_update($state_dt,'lineitemlevel',$where);
 				   
-					redirect('admin/lineitem/index/'.$line_item_id);
+					redirect('admin/lineitem/select/'.$line_item_id);
 				}
 			}else{
 				$join_emp = array(
