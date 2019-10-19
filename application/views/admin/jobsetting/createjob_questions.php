@@ -35,13 +35,13 @@
                 <div class="row">
                     <!-- <?php print_r($job_info); ?> -->
                     <div class="col-md-10 col-md-offset-1">
-                    <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/subtopic/save_subtopic/<?php  if (!empty($job_info)) { echo $job_info->job_post_id;
+                    <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/job_posting/question_add/<?php  if (!empty($job_info)) { echo $job_info->job_post_id;
                       }
                      ?>" method="post">
                         <table class="table table-bordered table-striped" id="dataTables-example">
                             <thead>
                                 <tr>
-                                    <th class="active">#</th>
+                                    <th>#</th>
                                     <th class="active">Topic Name</th>
                                     <th class="active">No of Questions</th>
                                 </tr>
@@ -50,10 +50,10 @@
                            
                             <?php if (!empty($topic_master)): foreach ($topic_master as $st_row) : ?>
                                 <tr>
-                                    <td><input type="checkbox" name="chk[]" id="chk[]<?php echo $st_row['topic_id']; ?>"></td>
+                                    <td><input type="checkbox" name="topic_chk[]" id="topic_chk<?php echo $st_row['topic_id']; ?>" value="<?php echo $st_row['topic_id']; ?>"></td>
                                     <td><?php echo $st_row['topic_name']; ?></td>
                                     <td>
-                                        <input type="number" name="no_questions[]" id="no_questions" class="form-control">
+                                        <input type="number" name="no_questions" id="no_questions">
                                     </td>
                                 </tr>
                             <?php
