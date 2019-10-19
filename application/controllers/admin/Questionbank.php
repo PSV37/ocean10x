@@ -34,6 +34,9 @@ class Questionbank extends MY_Controller
 		$where_lineitem = "lineitem.lineitem_status='1'";
 		$data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_lineitem);
 		
+		$where_lineitemlevel = "lineitemlevel.lineitemlevel_status='1'";
+		$data['lineitemlevel'] = $this->Master_model->getMaster('lineitemlevel',$where_lineitemlevel);
+		
 		
         $data['questionbank'] = $this->Master_model->getMaster('questionbank');
 
@@ -49,6 +52,7 @@ class Questionbank extends MY_Controller
                 'topic_id' => $this->input->post('topic_id'),
                 'subtopic_id' => $this->input->post('subtopic_id'),
 				'lineitem_id' => $this->input->post('lineitem_id'),
+				'lineitemlevel_id' => $this->input->post('lineitemlevel_id'),
 				'level' => $this->input->post('level'),
 				'ques_type' => $this->input->post('ques_type'),
 				'question' => $this->input->post('question'),
@@ -146,6 +150,9 @@ class Questionbank extends MY_Controller
 		$where_lineitem = "lineitem.lineitem_status='1'";
 		$data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_lineitem);
 		
+		$where_lineitemlevel = "lineitemlevel.lineitemlevel_status='1'";
+		$data['lineitemlevel'] = $this->Master_model->getMaster('lineitemlevel',$where_lineitemlevel);
+		
         $this->load->view('admin/jobsetting/questionbank_master',$data);
     }
 
@@ -209,5 +216,23 @@ function getlineitem(){
 	 echo $result;
 }
 
+
+function getLineitemlevel(){
+	$lineitemlevel_id = $this->input->post('id');
+	$where['lineitem_id'] = $lineitemlevel_id;
+	$lineitemlevels = $this->Master_model->getMaster('lineitemlevel',$where);
+	$result = '';
+	
+	if(!empty($lineitemlevels)){ 
+		$result .='<option value="">Select Lineitem Level 2</option>';
+		foreach($lineitemlevels as $keys){
+		  $result .='<option value="'.$keys['lineitemlevel_id'].'">'.$keys['titles'].'</option>';
+		}
+	}else{
+	
+		$result .='<option value="">Lineitem Level not available</option>';
+	}
+	 echo $result;
+}
 
 }
