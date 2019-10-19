@@ -255,7 +255,7 @@ function getLineitemlevel(){
 		}
 	}else{
 	
-		$result .='<option value="">Lineitem not available</option>';
+		$result .='<option value="">Lineitem Level not available</option>';
 	}
 	 echo $result;
 }
