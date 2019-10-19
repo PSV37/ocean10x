@@ -181,13 +181,12 @@ function getSkillsByRole() {
         if($_POST)
         {
             $topic_chk = $this->input->post('topic_chk');
-            // $this->form_validation->set_rules('topic_chk', 'Please Check Minimum One Checkbox', 'required');
-          //  $this->form_validation->set_rules('gender', 'Gender field is required', 'required');
-            // if ($this->form_validation->run() == FALSE)
-            // {
-            //     $errors = validation_errors();
-            //     echo json_encode(['error'=>$errors]);
-            // }else{
+            if(empty($topic_chk))
+            {
+                $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Please Check Minimum One Checkbox</div>');
+                // echo json_encode(['error'=>'Please Check Minimum One Checkbox']);
+               
+            }else{
 
                 $where_del = "job_id='$id'";
                 $del = $this->Master_model->master_delete('job_test_questions',$where_del);
@@ -211,10 +210,9 @@ function getSkillsByRole() {
                        
                     }
                     $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Job Test Questions Sucessfully Inserted</div>');
-                    // echo json_encode(['success'=>'Information Updated Successfully!']);
                 }
                 redirect('admin/jobs');
-            // }
+            }
         }else{
             $data['title']    = "Topic's For Test";
             $data['test_job_id'] = $id;
