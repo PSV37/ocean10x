@@ -48,6 +48,7 @@ class Lineitem extends MY_Controller
        
     }
 	
+		
 	
 	 public function save_lineitem($id = null){
           
@@ -67,7 +68,7 @@ class Lineitem extends MY_Controller
                 $state_dt['lineitem_created_by']=$user_id;
 				
 				//$where_add['lineitem_id']=$id;
-                $this->Master_model->master_insert($state_dt,'lineitem',$where);
+                $this->Master_model->master_insert($state_dt,'lineitem');
                
                 redirect('admin/lineitem/index/'.$id);
             }
@@ -80,6 +81,7 @@ class Lineitem extends MY_Controller
                
                 redirect('admin/lineitem/index/'.$id);
             }
+			 $this->load->view('admin/jobsetting/lineitem_master', $data);
         }
 
     

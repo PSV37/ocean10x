@@ -30,12 +30,12 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">Add LineItem</h3>
+                        <h3 class="box-title ">Add Line Item</h3>
                     </div>
                 </div>
                <div class="box-background">
               
-                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/lineitems/save_lineitems/<?php  if (!empty($subtopic)) { foreach($subtopic as $row)
+                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/lineitem/save_lineitem/<?php  if (!empty($subtopic)) { foreach($subtopic as $row)
                         echo $row['lineitem_id'];
                       }
                      ?>" method="post">
