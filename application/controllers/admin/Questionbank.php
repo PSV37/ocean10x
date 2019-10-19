@@ -132,18 +132,18 @@ class Questionbank extends MY_Controller
     public function edit_questionbank($id){
         $data['title']="Edit Questionbank";
 		//$where_opt= "options.status=1";
-        $data['options'] = $this->Master_model->getMaster('options',$where_opt);
+        $data['options'] = $this->Master_model->getMaster('options');
         
         $data['questionbank'] = $this->Master_model->getMaster('questionbank',$where_all,$join_emp);
 		
-        $where_ct = "ques_id='$id'";
-        $data['edit_questionbank_info'] = $this->Master_model->getMaster('questionbank',$where_ct);
+        $where_questionbank = "ques_id='$id'";
+        $data['edit_questionbank_info'] = $this->Master_model->getMaster('questionbank',$where_questionbank);
 		
 		$where_answer = "question_id='$id'";
         $data['questionbank_answer'] = $this->Master_model->getMaster('questionbank_answer',$where_answer);
         
-        $where_cn= "status=1";
-        $data['skill_master'] = $this->Master_model->getMaster('skill_master');
+        $where_skill= "status=1";
+        $data['skill_master'] = $this->Master_model->getMaster('skill_master', $where_skill);
 		
         $this->load->view('admin/jobsetting/questionbank_master',$data);
     }
