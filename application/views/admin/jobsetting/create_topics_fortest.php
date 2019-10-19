@@ -28,14 +28,14 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                   <!--   <div class="col-md-offset-3"> -->
-                        <h3 class="box-title ">Question Master For Test</h3>
+                        <h3 class="box-title ">Topic's For Test</h3>
                     <!-- </div> -->
                 </div>
                 <!-- /.box-header -->
                 <div class="row">
-                    <!-- <?php print_r($job_info); ?> -->
+                    <?php print_r($test_topic_master); ?>
                     <div class="col-md-10 col-md-offset-1">
-                    <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/job_posting/question_add/<?php  if (!empty($job_info)) { echo $job_info->job_post_id;
+                    <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/job_posting/topics_for_test/<?php  if (!empty($test_job_id)) { echo $test_job_id;
                       }
                      ?>" method="post">
                         <table class="table table-bordered table-striped" id="dataTables-example">
