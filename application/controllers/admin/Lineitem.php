@@ -16,36 +16,23 @@ class Lineitem extends MY_Controller
     /*** Dashboard ***/
     public function index($id = null)
     {   
-
         if (!empty($id)) {
                  
             $data['title'] = 'Select Lineitems';
-
-            $where_cn= "status=1";
-            $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where_cn);
-
-            $where_topic= "topic.topic_status=1";
-            $data['topic'] = $this->Master_model->getMaster('topic',$where_topic);
-            
-            $where_subtopic= "subtopic.subtopic_status=1 AND subtopic.subtopic_id ='$id'";
-            $data['subtopic'] = $this->Master_model->getMaster('subtopic',$where_subtopic);
-            
-            $where_all = "lineitem.lineitem_status='1'";
+            $where_all = "lineitem.lineitem_status='1' and subtopic_id='".$id."'";
 			$join_emp = array(
                 'skill_master' => 'skill_master.id=lineitem.technical_id |INNER',
                 'topic' => 'topic.topic_id=lineitem.topic_id |INNER',
 				'subtopic' => 'subtopic.subtopic_id=lineitem.subtopic_id |INNER',
             );
-        $data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_all,$join_emp);
+			$data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_all,$join_emp);
             
 
             $this->load->view('admin/jobsetting/lineitem_master', $data);
                 
-            } else {
+        } else {
                 redirect('admin/lineitem');
-            }
-
-       
+        }
     }
 	
 	
@@ -53,7 +40,7 @@ class Lineitem extends MY_Controller
 	
 		
 	
-	 public function save_lineitem($id = null){
+	 public function save_lineitem($sub_topic_id=0,$id = null){
           
             $user_id = $this->session->userdata('admin_user_id');
 			$where['lineitem_id']=$id;
