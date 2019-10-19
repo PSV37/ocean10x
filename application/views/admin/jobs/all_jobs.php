@@ -132,12 +132,12 @@
 <!-- Modal -->
 
 
-            </div>
+    </div>
 
-            <br />
-            
+    <br />
 
-        </div><!-- /.right-side -->
 
-       
-        <?php $this->load->view('admin/components/footer'); ?>
+</div><!-- /.right-side -->
+
+
+<?php $this->load->view('admin/components/footer'); ?>

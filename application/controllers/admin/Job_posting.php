@@ -175,16 +175,37 @@ function getSkillsByRole() {
 // Add questions tabs
  public function question_add($id)
     {
-        $title    = "Add Questions";
         $data['job_info'] = $this->job_posting_model->get($id);
+        $user_id = $this->session->userdata('admin_user_id');
+        if($_POST)
+        {
+            $topic_chk = $this->input->post('topic_chk');
+            for($k=0; $k<sizeof($topic_chk);$k++)
+            {
+                $ques_array = array(
+                    'job_id'          => $id,
+                    'topic_id'        => $topic_chk[$k],
+                    'no_questions'    => $this->input->post('no_questions'),
+                    'created_by'      => $user_id,
+                    'created_date'    => date('Y-m-d H:i:s'),
+                    
+                );
+                $this->Master_model->master_insert($ques_array,'job_test_questions');
+                $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Job Test Questions Sucessfully Inserted</div>');
+                redirect('admin/job_posting');
+            }
 
-        $where_all = "topic.topic_status='1'";
-        $join_emp = array(
-                'skill_master' => 'skill_master.id=topic.technical_id |INNER',
-            );
-        $data['topic_master'] = $this->Master_model->getMaster('topic',$where_all,$join_emp);
+        }else{
+            $data['title']    = "Add Questions";
+            $data['job_info'] = $this->job_posting_model->get($id);
 
-        $this->load->view('admin/jobsetting/createjob_questions', $data);
+            $where_top = "topic.topic_status='1'";
+            $select_topic = "topic_name,topic_id";
+            $data['topic_master'] = $this->Master_model->getMaster('topic',$where_top,$join = FALSE, $order = false, $field = false, $select_topic,$limit=false,$start=false, $search=false);
+
+            $this->load->view('admin/jobsetting/createjob_questions', $data);
+        }
+        
     }
 
 
