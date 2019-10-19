@@ -88,7 +88,7 @@
                                 <?php endif; ?>
                               </tbody>
                             </table>
-                            <small>*Note: Applications in this tab only appeas when you apply for any job from site.</small>
+                            <small>*Note: Applications in this tab only appears when you apply for any job from site.</small>
                           </div>
 
                           <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
@@ -146,7 +146,7 @@
                                 <?php endif; ?>
                               </tbody>
                             </table>
-                            <small>*Note: All these applications send by Company or HR Consultant to you. </small>
+                            <small>*Note: Applications in this tab only appears when Company or HR Consultant forward to you.</small>
                           </div>
                          
                         </div>
