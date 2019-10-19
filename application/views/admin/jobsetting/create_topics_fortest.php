@@ -105,14 +105,16 @@
 $(document).ready(function(){
 
     $('.testchk').change(function() {
-
-    var checkboxINstance = $(this).val();
-    var c = $('#no_questions'+checkboxINstance).val('');
-    alert(c);
-    // if (!checkboxINstance.is(":checked"))
-    // {
-    //   checkboxINstance.closest('td').find("input[type=number]")[0].value = '';
-    //  }       
+        var checkboxINstance = $(this);
+    var chkval = $(this).val();
+    // var c = 
+    
+    if (checkboxINstance.is(":checked"))
+    {
+        alert('asdad');
+    }else{
+        $('#no_questions'+chkval).val('');
+    }       
         
 
     });

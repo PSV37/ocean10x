@@ -59,7 +59,7 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">Add Question Bank</h3>
+                        <h3 class="box-title ">Add QuestionBank</h3>
                     </div>
                 </div>
                 <!-- /.box-header -->
@@ -403,7 +403,7 @@ function showCheckboxes() {
 
 
     function getTopic_load(){
-        var id = $('#subject').val();
+        var id = $('#topic_id').val();
 
         if(id){
             $.ajax({
@@ -411,8 +411,8 @@ function showCheckboxes() {
                 url:'<?php echo base_url();?>admin/questionbank/gettopic',
                 data:{id:id},
                 success:function(res){
-                    $('#skills_id').html(res);
-                    $('#skills_id').val(<?php echo $row['skills_id']; ?>);
+                    $('#topic_id').html(res);
+                    $('#topic_id').val(<?php echo $row['topic_id']; ?>);
                 }
                 
             }); 
