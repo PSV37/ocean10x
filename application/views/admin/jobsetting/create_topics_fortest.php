@@ -33,7 +33,7 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="row">
-                    <?php print_r($test_topic_master); ?>
+                
                     <div class="col-md-10 col-md-offset-1">
                     <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/job_posting/topics_for_test/<?php  if (!empty($test_job_id)) { echo $test_job_id;
                       }
