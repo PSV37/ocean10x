@@ -182,7 +182,7 @@ class Job_apply_model extends MY_Model
     public function update_finallist($apply_id){
         $this->db->set('apply_status', '3');
         $this->db->where('job_apply_id', $apply_id);
-         $this->db->update($this->_table_name);
+        $this->db->update($this->_table_name);
         return $this->db->affected_rows();
     }
 
@@ -192,16 +192,17 @@ class Job_apply_model extends MY_Model
     public function seeker_all_application($job_seeker_id){
         $this->db->select("*");
         $this->db->where('job_seeker_id', $job_seeker_id);
+        $this->db->where('forword_job_status', '0');
         $query = $this->db->get($this->_table_name); 
         return $query->result();
     }
-    // public function seeker_all_application_send($job_seeker_id){
-    //     $this->db->select("*");
-    //     $this->db->where('job_seeker_id', $job_seeker_id);
-    //     $this->db->where('job_seeker_id', $job_seeker_id);
-    //     $query = $this->db->get($this->_table_name); 
-    //     return $query->result();
-    // }
+    public function seeker_all_application_send($job_seeker_id){
+        $this->db->select("*");
+        $this->db->where('job_seeker_id', $job_seeker_id);
+        $this->db->where('forword_job_status!=', '0');
+        $query = $this->db->get($this->_table_name); 
+        return $query->result();
+    }
  public function expedited_salary($job_seeker_id,$job_id){
         $this->db->select("*");
         $this->db->where('job_seeker_id', $job_seeker_id);

@@ -110,28 +110,28 @@
                               <tbody>
                               <?php
                                 $sr_no=0;
-                               if (!empty($applicationlist)): foreach ($applicationlist as $applicaiton) : $sr_no++; ?>
+                               if (!empty($forward_applicationlist)): foreach ($forward_applicationlist as $forward_applicaiton) : $sr_no++; ?>
                                 <tr>
                                   <td><?php echo $sr_no; ?></td>
                                   <td>
                                     <h4>
-                                      <a href="<?php  echo base_url();?>job/show/<?php echo $this->job_posting_model->get_slug_nameby_id($applicaiton->job_post_id) ?>"><?php echo $this->job_posting_model->job_title_by_name($applicaiton->job_post_id); ?></a><br>
+                                      <a href="<?php  echo base_url();?>job/show/<?php echo $this->job_posting_model->get_slug_nameby_id($forward_applicaiton->job_post_id) ?>"><?php echo $this->job_posting_model->job_title_by_name($forward_applicaiton->job_post_id); ?></a><br>
                                     </h4>
                                   </td>
-                                  <td><?php echo $this->company_profile_model->company_name($applicaiton->company_id); ?></td>
-                                  <td><?php echo $applicaiton->expected_salary; ?></td>
-                                  <td><?php echo date('F j, Y',strtotime($applicaiton->apply_date));  ?></td>
+                                  <td><?php echo $this->company_profile_model->company_name($forward_applicaiton->company_id); ?></td>
+                                  <td><?php echo $forward_applicaiton->expected_salary; ?></td>
+                                  <td><?php echo date('F j, Y',strtotime($forward_applicaiton->apply_date));  ?></td>
                                   <td>
                                     <?php
-                                      if($applicaiton->apply_status == 0)
+                                      if($forward_applicaiton->apply_status == 0)
                                         { 
                                     ?>
                                         <span class="label label-warning"><?php echo 'Not Sorted' ?></span>
-                                      <?php } elseif($applicaiton->apply_status == 1) { ?>
+                                      <?php } elseif($forward_applicaiton->apply_status == 1) { ?>
                                         <span class="label label-primary"><?php echo 'Sorted' ?></span>
-                                      <?php } elseif($applicaiton->apply_status == 2) { ?>
+                                      <?php } elseif($forward_applicaiton->apply_status == 2) { ?>
                                         <span class="label label-primary"><?php echo 'Interview' ?></span>
-                                      <?php } elseif($applicaiton->apply_status == 3) { ?>
+                                      <?php } elseif($forward_applicaiton->apply_status == 3) { ?>
                                         <span class="label label-primary"><?php echo 'Final' ?></span>
                                     <?php } ?>
                                   </td>
