@@ -193,11 +193,10 @@ function getSkillsByRole() {
                     
                 );
                 $this->Master_model->master_insert($ques_array,'job_test_questions');
-                $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Job Test Questions Sucessfully Inserted</div>');
-                // echo 'topic'.$topic_chk[$k]; echo "<br>";
-                // echo 'ques' .$no_questions[$k];
-                redirect('admin/jobs');
+               
             }
+            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Job Test Questions Sucessfully Inserted</div>');
+            redirect('admin/jobs');
 
         }else{
             $data['title']    = "Add Questions";
