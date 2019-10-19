@@ -186,6 +186,7 @@ function getSkillsByRole() {
             {
                 $topic_chk = $this->input->post('topic_chk');
                 $no_questions = $this->input->post('no_questions');
+                $post_data=$this->input->post();
                 echo "<pre>";
                 echo "Topics-<br>";
                 print_r($topic_chk);
@@ -197,7 +198,7 @@ function getSkillsByRole() {
                     $ques_array = array(
                         'job_id'          => $id,
                         'topic_id'        => $topic_chk[$k],
-                        'no_questions'    => $no_questions[$k],
+                        'no_questions'    => $post_data['no_questions'.$topic_chk[$k]],
                         'created_by'      => $user_id,
                         'created_date'    => date('Y-m-d H:i:s'),
                         
