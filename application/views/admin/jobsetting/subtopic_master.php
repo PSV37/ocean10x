@@ -156,23 +156,7 @@
 
        
 <?php $this->load->view('admin/components/footer'); ?>
-<script>
-	  function getTopic(id){
-		
-		if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>admin/subtopic/gettopic',
-                data:{id:id},
-                success:function(res){
-                    $('#topic_id').html(res);
-                }
-				
-            }); 
-          }
-   
-	   }
-	   
+<script>	   
 	   $(document).ready(function(){
 		   
 		   function getTopic_load(){
@@ -195,8 +179,23 @@
 	   }
 	   
 	   </script>
-       
-</script>
+	   <script>
+         function getTopic(id){
+		
+		if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/subtopic/gettopic',
+                data:{id:id},
+                success:function(res){
+                    $('#topic_id').html(res);
+                }
+				
+            }); 
+          }
+   
+	   }
+	   </script>
 <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
 <script>
 $("#subject").select2( {
