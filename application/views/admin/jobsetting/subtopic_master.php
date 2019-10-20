@@ -64,13 +64,7 @@
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Topic <span class="required">*</span></label>
                                         <select id="topic_id"  name="topic_id" class="form-control" required>
-                                           <option value="">Select Topic</option> 
-                                        <?php if (!empty($topic))
-                                           foreach($topic as $st_row) 
-                                           {
-                                        ?>   
-                                            <option value="<?php echo $st_row['topic_id']; ?>"<?php if (!empty($edit_subtopic_info)) if($row['topic_id']==$st_row['topic_id'])echo "selected";?>><?php echo $st_row['topic_name']; ?></option> 
-                                        <?php } ?>
+                                           
                                         </select>
                                     </div>
                                 </div>
@@ -177,6 +171,27 @@
             }); 
           }
    
+	   }
+	   
+	   $(document).ready(function(){
+		   
+		   function getTopic_load(){
+			var id = $('#subject').val();
+			if(id){
+				$.ajax({
+					type:'POST',
+					url:'<?php echo base_url();?>admin/subtopic/gettopic',
+					data:{id:id},
+					success:function(res){
+						$('#topic_id').html(res);
+						$('#topic_id').val(<?php echo $row['topic_id']; ?>);
+						getSubtopic_load();
+					}
+					
+				}); 
+			}
+       }
+       getTopic_load();
 	   }
 	   
 	   </script>
