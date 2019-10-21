@@ -802,7 +802,7 @@ REFERENCE:
 
           </td>
 
-          <td style="padding-right:50px;" align="right" width="70%"><?php echo get_logo();?> </td>
+          <!--<td style="padding-right:50px;" align="right" width="70%"><?php echo get_logo();?> </td>-->
 
 
     </table>     
