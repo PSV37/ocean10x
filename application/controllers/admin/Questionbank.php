@@ -142,9 +142,9 @@ class Questionbank extends MY_Controller
 		$where_answer = "question_id='$id'";
         $data['questionbank_answer'] = $this->Master_model->getMaster('questionbank_answer',$where_answer);
         
-		$where_subtopic = "subtopic.subtopic_status!='0' and subtopic.subtopic_id='".$id."'";
-		$data['subtopic'] = $this->Master_model->getMaster('subtopic',$where_subtopic);
-		
+		$where_lineitem = "lineitem.lineitem_status!='0' and lineitem.subtopic_id='".$id."'";
+		$data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_lineitem);
+		 
         $where_skill= "status=1";
         $data['skill_master'] = $this->Master_model->getMaster('skill_master', $where_skill);
 		
