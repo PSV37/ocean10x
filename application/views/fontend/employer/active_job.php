@@ -74,7 +74,7 @@
                                     <span data-placement="top" data-toggle="tooltip" title="Forward Job"><a href="<?php echo base_url() ?>employer/forword_job/<?php echo $v_companyjobs->job_post_id ?>" class="btn btn-primary btn-xs"><i class="fa fa-paper-plane"></i> Forward</a></span>
                                     <?php }else{} ?>
                                     
-                                    <span data-placement="top" data-toggle="tooltip" title="Add Topics For Test"><a href="<?php echo base_url() ?>employer/job_posting/topics_for_test/<?php echo $v_companyjobs->job_post_id ?>" class="btn btn-warning btn-xs"><i class="fa fa-plus"></i> Add Test Topic's</a></span>
+                                    <span data-placement="top" data-toggle="tooltip" title="Add Topics For Test"><a href="<?php echo base_url() ?>employer/topics_for_test/<?php echo $v_companyjobs->job_post_id ?>" class="btn btn-warning btn-xs"><i class="fa fa-plus"></i> Test Topic's</a></span>
                                     </div>
                                 </div>
                             </div>
