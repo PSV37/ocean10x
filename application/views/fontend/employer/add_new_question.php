@@ -33,7 +33,7 @@
         <div class="userccount empdash">
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
            
-    		<form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/questionbank/save_questionbank/<?php  if (!empty($edit_questionbank_info)) { foreach($edit_questionbank_info as $row)
+    		<form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>questionbank/save_questionbank/<?php  if (!empty($edit_questionbank_info)) { foreach($edit_questionbank_info as $row)
                         echo $row['ques_id'];
                       }
                      ?>" method="post">
@@ -309,24 +309,7 @@ function showCheckboxes() {
       
   }
 </script>	
-<!--<script>
-	  function getTopic(id){
-		
-		if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>admin/questionbank/gettopic',
-                data:{id:id},
-                success:function(res){
-                    $('#topic_id').html(res);
-                }
-				
-            }); 
-          }
-   
-	   }
-	   
-	   </script>-->
+
 	   
 	   
 	   <script>
@@ -334,7 +317,7 @@ function showCheckboxes() {
 				if(id){
 					$.ajax({
 						type:'POST',
-						url:'<?php echo base_url();?>admin/questionbank/gettopic',
+						url:'<?php echo base_url();?>questionbank/gettopic',
 						data:{id:id},
 						success:function(res){
 							$('#topic_id').html(res);
@@ -351,7 +334,7 @@ function showCheckboxes() {
 			if(id){
 				$.ajax({
 					type:'POST',
-					url:'<?php echo base_url();?>admin/questionbank/getlineitemlevel',
+					url:'<?php echo base_url();?>questionbank/getlineitemlevel',
 					data:{id:id},
 					success:function(res){
 						$('#lineitemlevel_id').html(res);
@@ -367,7 +350,7 @@ function showCheckboxes() {
 			if(id){
 				$.ajax({
 					type:'POST',
-					url:'<?php echo base_url();?>admin/questionbank/getlineitem',
+					url:'<?php echo base_url();?>questionbank/getlineitem',
 					data:{id:id},
 					success:function(res){
 						$('#lineitem_id').html(res);
@@ -386,7 +369,7 @@ function showCheckboxes() {
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>admin/questionbank/getsubtopic',
+                url:'<?php echo base_url();?>questionbank/getsubtopic',
                 data:{id:id},
                 success:function(res){
                     $('#subtopic_id').html(res);
@@ -404,7 +387,7 @@ function showCheckboxes() {
 			if(id){
 				$.ajax({
 					type:'POST',
-					url:'<?php echo base_url();?>admin/questionbank/gettopic',
+					url:'<?php echo base_url();?>questionbank/gettopic',
 					data:{id:id},
 					success:function(res){
 						$('#topic_id').html(res);
@@ -424,7 +407,7 @@ function showCheckboxes() {
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>admin/questionbank/getsubtopic',
+                url:'<?php echo base_url();?>questionbank/getsubtopic',
                 data:{id:id},
                 success:function(res){
                     $('#subtopic_id').html(res);
@@ -443,7 +426,7 @@ function showCheckboxes() {
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>admin/questionbank/getlineitem',
+                url:'<?php echo base_url();?>questionbank/getlineitem',
                 data:{id:id},
                 success:function(res){
                     $('#lineitem_id').html(res);
@@ -462,7 +445,7 @@ function showCheckboxes() {
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>admin/questionbank/getlineitemlevel',
+                url:'<?php echo base_url();?>questionbank/getlineitemlevel',
                 data:{id:id},
                 success:function(res){
                     $('#lineitemlevel_id').html(res);
