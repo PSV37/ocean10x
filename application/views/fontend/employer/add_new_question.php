@@ -348,7 +348,7 @@ function showCheckboxes() {
 				if(id){
 					$.ajax({
 						type:'POST',
-						url:'<?php echo base_url();?>questionbank/gettopic',
+						url:'<?php echo base_url();?>employer/gettopic',
 						data:{id:id},
 						success:function(res){
 							$('#topic_id').html(res);
@@ -365,7 +365,7 @@ function showCheckboxes() {
 			if(id){
 				$.ajax({
 					type:'POST',
-					url:'<?php echo base_url();?>questionbank/getlineitemlevel',
+					url:'<?php echo base_url();?>employer/getlineitemlevel',
 					data:{id:id},
 					success:function(res){
 						$('#lineitemlevel_id').html(res);
@@ -381,7 +381,7 @@ function showCheckboxes() {
 			if(id){
 				$.ajax({
 					type:'POST',
-					url:'<?php echo base_url();?>questionbank/getlineitem',
+					url:'<?php echo base_url();?>employer/getlineitem',
 					data:{id:id},
 					success:function(res){
 						$('#lineitem_id').html(res);
@@ -400,7 +400,7 @@ function showCheckboxes() {
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>questionbank/getsubtopic',
+                url:'<?php echo base_url();?>employer/getsubtopic',
                 data:{id:id},
                 success:function(res){
                     $('#subtopic_id').html(res);
@@ -418,7 +418,7 @@ function showCheckboxes() {
 			if(id){
 				$.ajax({
 					type:'POST',
-					url:'<?php echo base_url();?>questionbank/gettopic',
+					url:'<?php echo base_url();?>employer/gettopic',
 					data:{id:id},
 					success:function(res){
 						$('#topic_id').html(res);
@@ -438,7 +438,7 @@ function showCheckboxes() {
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>questionbank/getsubtopic',
+                url:'<?php echo base_url();?>employer/getsubtopic',
                 data:{id:id},
                 success:function(res){
                     $('#subtopic_id').html(res);
@@ -457,7 +457,7 @@ function showCheckboxes() {
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>questionbank/getlineitem',
+                url:'<?php echo base_url();?>employer/getlineitem',
                 data:{id:id},
                 success:function(res){
                     $('#lineitem_id').html(res);
@@ -476,7 +476,7 @@ function showCheckboxes() {
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>questionbank/getlineitemlevel',
+                url:'<?php echo base_url();?>employer/getlineitemlevel',
                 data:{id:id},
                 success:function(res){
                     $('#lineitemlevel_id').html(res);
