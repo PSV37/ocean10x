@@ -61,7 +61,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Topic</label>
+                                        <label for="exampleInputEmail1">Main Topic<span class="required">*</span></label>
                                      <input type="text" name="topic_name" class="form-control" value="<?php if (!empty($edit_spectial_info)) echo $row['topic_name'];?>" placeholder='Topic Name' required>
                                     </div>
                                 </div>
@@ -72,7 +72,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
 									<label for="exampleInputEmail1">Description</label>
-                                         <textarea name="topic_desc" class="form-control ckeditor" required><?php if (!empty($edit_spectial_info)) echo $row['topic_desc'];?></textarea>
+                                         <textarea name="topic_desc" class="form-control ckeditor"><?php if (!empty($edit_spectial_info)) echo $row['topic_desc'];?></textarea>
                                     </div>
                                 </div>                            
 

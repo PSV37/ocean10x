@@ -65,16 +65,11 @@
                                         <label for="exampleInputEmail1">State <span class="required">*</span></label>
                                         <select id="state_name"  name="state_name" class="form-control" required>
                                            <option value="">Select State</option> 
-                                        <?php if (!empty($state_data))
-                                           foreach($state_data as $st_row) 
-                                           {
-                                        ?>   
-                                            <option value="<?php echo $st_row['state_id']; ?>"<?php if (!empty($edit_city_info)) if($row['state_id']==$st_row['state_id'])echo "selected";?>><?php echo $st_row['state_name']; ?></option> 
-                                        <?php } ?>
                                         </select>
                                     </div>
                                 </div>
-
+								 </div>
+								 <div class="box-body">
                                  <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">City Name <span class="required">*</span></label>
@@ -84,7 +79,7 @@
                                 <div class="panel-body"></div>
                                 <button type="submit" class="btn bg-navy" type="submit">Save City
                                 </button><br/><br/>
-                            </div>
+								</div>
                             <!-- /.box-body -->
 
                         </div>
@@ -152,6 +147,32 @@
        
 <?php $this->load->view('admin/components/footer'); ?>
 <script>
+  $(document).ready(function(){
+
+
+
+    function getStates_load(){
+        var id = $('#country_name').val();
+
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/city_master/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state_name').html(res);
+                    $('#state_name').val(<?php echo $row['state_id']; ?>);
+					getStates_load();
+                }
+                
+            }); 
+          }
+   
+       }
+       getStates_load();
+    });
+</script>
+<script>
     function getStates(id){
         if(id){
             $.ajax({
@@ -167,28 +188,5 @@
    
        }
 
-    $(document).ready(function(){
-
-
-
-    function getStates_load(){
-        var id = $('#country_name').val();
-
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>admin/city_master/getstate',
-                data:{id:id},
-                success:function(res){
-                    $('#state_name').html(res);
-                    $('#state_name').val(<?php echo $row['state_id']; ?>);
-                }
-                
-            }); 
-          }
-   
-       }
-       getStates_load();
-    });
        
 </script>

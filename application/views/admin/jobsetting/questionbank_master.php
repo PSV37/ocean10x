@@ -94,7 +94,7 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Topic <span class="required">*</span></label>
+                                        <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
                                         <select id="topic_id"  name="topic_id" class="form-control" required onchange="getSubtopic(this.value)">
                                           
                                         </select>
@@ -219,7 +219,8 @@
 				  <div class="selectBox" onclick="showCheckboxes()">
 				  
 				   <label>Correct Answer: <span class="required">*</span></label>
-				   <select  class="form-control" style="height:100px;">				   
+				   <select  class="form-control" style="height:100px;">	
+					<option>Select Answer</option>
 					</select>
 					<div class="overSelect"></div>
 				   </div>
