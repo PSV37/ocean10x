@@ -95,7 +95,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
-                                        <select id="topic_id"  name="topic_id" class="form-control" required onchange="getSubtopic(this.value)">
+                                        <select id="topic_id"  name="topic_id" class="form-control"  onchange="getSubtopic(this.value)">
                                           
                                         </select>
                                     </div>
@@ -103,7 +103,7 @@
 									 <div class="col-md-4">
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
-                                     <select id="subtopic_id"  name="subtopic_id" class="form-control" required onchange="getLineitem(this.value)">
+                                     <select id="subtopic_id"  name="subtopic_id" class="form-control"  onchange="getLineitem(this.value)">
                                           
                                         </select>
 										</div>
