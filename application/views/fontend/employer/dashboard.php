@@ -586,7 +586,7 @@
                 success:function(res){
                     $('#state_id').html(res);
                     $('#state_id').val(<?php echo $row['state_id']; ?>);
-					getStates_load();
+					
                 }
                 
             }); 
@@ -605,7 +605,7 @@
                 success:function(res){
                     $('#city_id').html(res);
                     $('#city_id').val(<?php echo $row['city_id']; ?>);
-					getCitys_load();
+					getStates_load();
                 }
                 
             }); 
