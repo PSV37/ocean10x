@@ -726,6 +726,8 @@ function getstate(){
                 $data['title']    = "Topic's For Test";
                 $data['test_job_id'] = $id;
 
+                $data['test_level'] = $this->Master_model->getMaster('job_level',$where = FALSE,$join = FALSE, $order = false, $field = false, $select = FALSEc,$limit=false,$start=false, $search=false);
+
                 $where_test_top = "job_test_topics.job_id='$id'";
                 $select_test_topic = "job_test_topics.topic_id as test_topic,job_test_topics.no_questions";
                 $data['test_topic_master'] = $this->Master_model->getMaster('job_test_topics',$where_test_top,$join = FALSE, $order = false, $field = false, $select_test_topic,$limit=false,$start=false, $search=false);
