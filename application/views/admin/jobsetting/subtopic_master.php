@@ -176,7 +176,7 @@
 			}
        }
        getTopic_load();
-	   }
+	   });
 	   
 	   </script>
 	   <script>
