@@ -752,7 +752,7 @@ REFERENCE:
               <td style="padding-left:10px;" align="left" width="22%">Organization</td>
               <td align="center" width="2%">:</td>
               <td align="left" width="70%">
-              <?php echo $v_reference->company_name; ?>
+              <?php echo $v_reference->company_profile_id; ?>
               &nbsp;
               </td>
                   
