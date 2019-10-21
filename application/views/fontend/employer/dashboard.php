@@ -576,7 +576,7 @@
 
 
     function getStates_load(){
-        var id = $('#country_name').val();
+        var id = $('#country_id').val();
 
         if(id){
             $.ajax({
@@ -584,8 +584,8 @@
                 url:'<?php echo base_url();?>Employer/getstate',
                 data:{id:id},
                 success:function(res){
-                    $('#state_name').html(res);
-                    $('#state_name').val(<?php echo $row['state_id']; ?>);
+                    $('#state_id').html(res);
+                    $('#state_id').val(<?php echo $row['state_id']; ?>);
 					getStates_load();
                 }
                 
@@ -623,7 +623,7 @@
                 url:'<?php echo base_url();?>Employer/getstate',
                 data:{id:id},
                 success:function(res){
-                    $('#state_name').html(res);
+                    $('#state_id').html(res);
                 }
                 
             }); 
