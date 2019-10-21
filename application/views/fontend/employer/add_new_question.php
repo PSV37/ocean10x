@@ -1,71 +1,39 @@
-<?php $this->load->view('admin/components/header'); ?>
-<style>
-.multiselect {
-  width: 100%;
+<?php 
+    $this->load->view('fontend/layout/employer_header.php');
+?>
+<style type="text/css">
+  label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
-
-.selectBox {
-  position: relative;
-}
-
-.selectBox select {
-  width: 100%;
-}
-
-.overSelect {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-}
-
-#checkboxes {
-  display: none;
- 
-}
-
-#checkboxes label {
-  display: block;
-}
-
 </style>
-<body class="skin-blue" data-baseurl="<?php echo base_url(); ?>">
-    <div class="wrapper">
-        
-    <?php $this->load->view('admin/components/user_profile'); ?>
-       
-        <!-- Left side column. contains the logo and sidebar -->
-      <aside class="main-sidebar">
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
-          <!-- Sidebar user panel -->
-            <?php $this->load->view('admin/components/navigation'); ?>
-        </section>
-        <!-- /.sidebar -->
-      </aside>
+<!-- Page Title start -->
 
-        <div class="right-side">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-            </section>
-
-            <br/>
-            <div class="container-fluid">
-               <section class="content">
+<div class="pageTitle">
+  <div class="container">
     <div class="row">
-        <div class="col-md-12">
+      <div class="col-md-6 col-sm-6">
+        <h1 class="page-heading">All Question's </h1>
+      </div>
+      <div class="col-md-6 col-sm-6">
+        <div class="breadCrumb"><a href="#.">Home</a> / <span>All Question's</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Page Title End -->
 
-            <div class="box box-primary">
-                <div class="box-header box-header-background with-border">
-                    <div class="col-md-offset-3">
-                        <h3 class="box-title ">Add Question Bank</h3>
-                    </div>
-                </div>
-                <!-- /.box-header -->
-                <div class="box-background">
-                <!-- form start -->
-                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/questionbank/save_questionbank/<?php  if (!empty($edit_questionbank_info)) { foreach($edit_questionbank_info as $row)
+<div class="section lb">
+  <div class="container">
+    <div class="row">
+      <?php $this->load->view('fontend/layout/employer_left.php'); ?>
+      <div class="content col-md-9">
+        <div class="userccount empdash">
+          <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
+           
+    		<form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/questionbank/save_questionbank/<?php  if (!empty($edit_questionbank_info)) { foreach($edit_questionbank_info as $row)
                         echo $row['ques_id'];
                       }
                      ?>" method="post">
@@ -243,7 +211,7 @@
 					}
 				?>
 			
-		 </div>
+		 		</div>
 				   </div>
 				  </div>
 				  </div>
@@ -275,25 +243,27 @@
                     </div>
 
                 </form>
-                    </div>
-					</div>
-               
-          
-            </div>
-            <!-- /.box -->
+
+
+
+          </div>
         </div>
-        <!--/.col end -->
+        <!-- end post-padding --> 
+      </div>
+      <!-- end col --> 
     </div>
-    <!-- /.row -->
-</section>
+    <!-- end row --> 
+  </div>
+  <!-- end container --> 
 </div>
+<!-- end section --> 
 
-<br />
+<script type="text/javascript" src="<?php echo base_url(); ?>asset/js/tinymce/tinymce.min.js"></script> 
+<script type="text/javascript">
+document.getElementsByClassName('form-control').innerHTML+="<br />";
+</script>
+<?php $this->load->view("fontend/layout/footer.php"); ?>
 
-
-</div><!-- /.right-side -->
-
-<?php $this->load->view('admin/components/footer'); ?>
 
 <script>
 var expanded = false;
