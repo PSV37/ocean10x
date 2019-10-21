@@ -225,22 +225,22 @@
 				   </div>
 				  <div id="checkboxes">
      
-			<?php 
-				  if(!empty($options))
-					foreach($options as $key){
-						$checked="";
-						for($i=0;$i<sizeof($questionbank_answer);$i++){
-							if($key['options_id']==$questionbank_answer[$i]['answer_id']){
-								$checked ="checked";
-								break;
+				<?php 
+					  if(!empty($options))
+						foreach($options as $key){
+							$checked="";
+							for($i=0;$i<sizeof($questionbank_answer);$i++){
+								if($key['options_id']==$questionbank_answer[$i]['answer_id']){
+									$checked ="checked";
+									break;
+								}
 							}
+							 
+						?>
+	                    <input type="checkbox" <?php echo $checked; ?> name="correct_answer[]" id="correct_answer[]" value="<?php echo $key['options_id'];?>">&nbsp;&nbsp;<?php echo $key['options_type']; ?>&nbsp;&nbsp;
+					<?php
 						}
-						 
 					?>
-                    <input type="checkbox" <?php echo $checked; ?> name="correct_answer[]" id="correct_answer[]" value="<?php echo $key['options_id'];?>">&nbsp;&nbsp;<?php echo $key['options_type']; ?>&nbsp;&nbsp;
-				<?php
-					}
-				?>
 			
 		 		</div>
 				   </div>
@@ -488,10 +488,10 @@ function showCheckboxes() {
        }
 </script>   
 
-<script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
-<script>
+<!-- <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script> -->
+<!-- <script>
 $("#subject").select2( {
 	placeholder: "Select Subject",
 	allowClear: true
 	} );
-</script>
+</script> -->
