@@ -65,31 +65,30 @@
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
            
     		<form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>employer/save_questionbank/<?php  if (!empty($edit_questionbank_info)) { foreach($edit_questionbank_info as $row)
-                        echo $row['ques_id'];
-                      }
-                     ?>" method="post">
+                    echo $row['ques_id'];
+            	}
+            ?>" method="post">
 
-                    <div class="row">
+            	<div class="row">
 
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-
-                            <div class="box-body">
-							<div class="container-fluid">
-                                <div class="col-md-4">
-                                    <div class="form-group">                                       
-									   <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
-                                        
-										<select id="subject"  name="technical_id" class="form-control" required onchange="getTopic(this.value)">
-                                           <option value="">Select Subject</option> 
-                                        <?php if (!empty($skill_master))
-                                           foreach($skill_master as $skill) 
-                                           {
-                                        ?>   
-                                            <option value="<?php echo $skill['id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option> 
-                                        <?php } ?>
-                                        </select>
-										</div>
-                                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="box-body">
+					<div class="container-fluid">
+                        <div class="col-md-4">
+                            <div class="form-group">                                       
+							   <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
+                                
+								<select id="subject"  name="technical_id" class="form-control" required onchange="getTopic(this.value)">
+                                   <option value="">Select Subject</option> 
+                                <?php if (!empty($skill_master))
+                                   foreach($skill_master as $skill) 
+                                   {
+                                ?>   
+                                    <option value="<?php echo $skill['id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option> 
+                                <?php } ?>
+                                </select>
+								</div>
+                        </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">

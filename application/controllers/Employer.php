@@ -811,6 +811,7 @@ function getstate(){
                 'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |INNER',
                 'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |INNER',
             );
+        
         $data['questionbank'] = $this->Master_model->getMaster('questionbank',$where_all,$join_emp);
 
 
