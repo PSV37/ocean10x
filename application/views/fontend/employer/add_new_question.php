@@ -9,6 +9,37 @@
     font-weight: bold;
 }
 </style>
+<style>
+.multiselect {
+  width: 100%;
+}
+
+.selectBox {
+  position: relative;
+}
+
+.selectBox select {
+  width: 100%;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#checkboxes {
+  display: none;
+ 
+}
+
+#checkboxes label {
+  display: block;
+}
+
+</style>
 <!-- Page Title start -->
 
 <div class="pageTitle">
@@ -33,7 +64,7 @@
         <div class="userccount empdash">
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
            
-    		<form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>questionbank/save_questionbank/<?php  if (!empty($edit_questionbank_info)) { foreach($edit_questionbank_info as $row)
+  <!--   		<form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>questionbank/save_questionbank/<?php  if (!empty($edit_questionbank_info)) { foreach($edit_questionbank_info as $row)
                         echo $row['ques_id'];
                       }
                      ?>" method="post">
@@ -237,12 +268,12 @@
                                 <button type="submit" class="btn bg-navy" type="submit">Save Question
                                 </button><br/><br/>
                             
-                            <!-- /.box-body -->
+                        
 
                         
                     </div>
 
-                </form>
+                </form> -->
 
 
 
