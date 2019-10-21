@@ -786,7 +786,7 @@ function getstate(){
 
   public function all_questions()
     {
-        $data['employer_id']         = $this->session->userdata('company_profile_id');
+        $employer_id         = $this->session->userdata('company_profile_id');
 
         $where_cn= "status=1";
         $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where_cn);
@@ -803,7 +803,7 @@ function getstate(){
         $where_lineitem = "lineitem.lineitem_status='1'";
         $data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_lineitem);
         
-        $where_all = "questionbank.ques_status='1'";
+        $where_all = "questionbank.ques_status='1' AND ques_created_by='$employer_id'";
         $join_emp = array(
                 'skill_master' => 'skill_master.id=questionbank.technical_id |INNER',
                 'topic' => 'topic.topic_id=questionbank.topic_id |INNER',
