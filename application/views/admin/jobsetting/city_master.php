@@ -152,6 +152,32 @@
        
 <?php $this->load->view('admin/components/footer'); ?>
 <script>
+  $(document).ready(function(){
+
+
+
+    function getStates_load(){
+        var id = $('#country_name').val();
+
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>admin/city_master/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state_name').html(res);
+                    $('#state_name').val(<?php echo $row['state_id']; ?>);
+					getStates_load();
+                }
+                
+            }); 
+          }
+   
+       }
+       getStates_load();
+    });
+</script>
+<script>
     function getStates(id){
         if(id){
             $.ajax({
@@ -167,28 +193,5 @@
    
        }
 
-    $(document).ready(function(){
-
-
-
-    function getStates_load(){
-        var id = $('#country_name').val();
-
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>admin/city_master/getstate',
-                data:{id:id},
-                success:function(res){
-                    $('#state_name').html(res);
-                    $('#state_name').val(<?php echo $row['state_id']; ?>);
-                }
-                
-            }); 
-          }
-   
-       }
-       getStates_load();
-    });
        
 </script>
