@@ -219,7 +219,7 @@
 				  <div class="selectBox" onclick="showCheckboxes()">
 				  
 				   <label>Correct Answer: <span class="required">*</span></label>
-				   <select  class="form-control" style="height:100px;">	
+				   <!--<select  class="form-control" style="height:100px;">	
 					<option>Select Answer</option>
 					</select>
 					<div class="overSelect"></div>
@@ -243,7 +243,26 @@
 					}
 				?>
 			
-		 </div>
+		 </div>-->
+		 
+					<select id="framework"  multiple class="form-control" >
+					 <?php 
+				  if(!empty($options))
+					foreach($options as $key){
+						$checked="";
+						for($i=0;$i<sizeof($questionbank_answer);$i++){
+							if($key['options_id']==$questionbank_answer[$i]['answer_id']){
+								$checked ="checked";
+								break;
+							}
+						}
+						 
+					?>
+                    <input type="checkbox" <?php echo $checked; ?> name="correct_answer[]" id="correct_answer[]" value="<?php echo $key['options_id'];?>">&nbsp;&nbsp;<?php echo $key['options_type']; ?>&nbsp;&nbsp;
+				<?php
+					}
+				?>
+				    </select>
 				   </div>
 				  </div>
 				  </div>
@@ -510,4 +529,36 @@ $("#subject").select2( {
 	placeholder: "Select Subject",
 	allowClear: true
 	} );
+</script>
+
+
+<script>
+$(document).ready(function(){
+ $('#framework').multiselect({
+  nonSelectedText: 'Select Framework',
+  enableFiltering: true,
+  enableCaseInsensitiveFiltering: true,
+  buttonWidth:'400px'
+ });
+ 
+ $('#framework_form').on('submit', function(event){
+  event.preventDefault();
+  var form_data = $(this).serialize();
+  $.ajax({
+   url:"insert.php",
+   method:"POST",
+   data:form_data,
+   success:function(data)
+   {
+    $('#framework option:selected').each(function(){
+     $(this).prop('selected', false);
+    });
+    $('#framework').multiselect('refresh');
+    alert(data);
+   }
+  });
+ });
+ 
+ 
+});
 </script>
