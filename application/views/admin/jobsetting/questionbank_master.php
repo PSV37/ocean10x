@@ -219,11 +219,8 @@
 				  <div class="selectBox" onclick="showCheckboxes()">
 				  
 				   <label>Correct Answer: <span class="required">*</span></label>
-				   <select  class="form-control" style="height:100px;">				   
-					</select>
-					<div class="overSelect"></div>
-				   </div>
-				  <div id="checkboxes">
+				   <select  class="form-control" style="height:100px;">	
+					<div id="checkboxes">
      
 			<?php 
 				  if(!empty($options))
@@ -243,6 +240,10 @@
 				?>
 			
 		 </div>
+					</select>
+					<div class="overSelect"></div>
+				   </div>
+				  
 				   </div>
 				  </div>
 				  </div>
