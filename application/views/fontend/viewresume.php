@@ -326,7 +326,7 @@ Skills:
        <table width="100%">
            <tbody><tr class="resume-texttwo">
            <td width="20%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Exam Title</strong></td>
-           <td width="15%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Concentration/Major</strong></td>
+           <td width="15%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Specialization</strong></td>
            <td width="20%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Institute</strong></td>
            <td width="15%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Result</strong></td>
            
@@ -338,12 +338,12 @@ Skills:
                  <tr class="resume-texttwo">
                <!--Exam Title:-->
                 <td style="border-right:1px solid #EAE7E7;border-top:1px solid #EAE7E7;" align="center" width="20%">
-               <?php echo $v_education->js_degree ; ?>
+               <?php echo $v_education->education_level_name ; ?>
                &nbsp;
                </td>
                 <!--Concentration/Major:-->
                <td style="border-right:1px solid #EAE7E7;border-top:1px solid #EAE7E7;" align="center" width="15%">
-              <?php echo $v_education->js_group ; ?>
+              <?php echo $v_education->education_specialization ; ?>
                &nbsp;
                </td>
                 <!--Institute:-->
@@ -393,7 +393,9 @@ Skills:
            <td width="20%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Title</strong></td>
            <td width="15%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Topic</strong></td>
            <td width="20%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Institute</strong></td>
-           <td width="15%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Country</strong></td>
+           <td style="border-right:1px solid #EAE7E7" align="center" width="12%"><strong>Location</strong></td>
+		   <td style="border-right:1px solid #EAE7E7" align="center" width="12%"><strong>State</strong></td>
+           <td style="border-right:1px solid #EAE7E7" align="center" width="12%"><strong>Country</strong></td>
            <td width="15%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Year</strong></td>
            
                 <td width="15%"  align="center" bgcolor="#f4f4f4"><strong>Duration</strong></td>              
@@ -417,9 +419,19 @@ Skills:
                <?php echo $v_training->institute ; ?>
                &nbsp;            
                </td>
-                <!--Result:-->
+                <!--city:-->
                <td style="border-right:1px solid #EAE7E7;border-top:1px solid #EAE7E7;" align="center" width="12.5%">
-              <?php echo $v_training->country  ; ?>
+              <?php echo $v_training->city_name  ; ?>
+               &nbsp;               
+               </td>
+			    <!--state:-->
+               <td style="border-right:1px solid #EAE7E7;border-top:1px solid #EAE7E7;" align="center" width="12.5%">
+              <?php echo $v_training->state_name  ; ?>
+               &nbsp;               
+               </td>
+			    <!--country:-->
+               <td style="border-right:1px solid #EAE7E7;border-top:1px solid #EAE7E7;" align="center" width="12.5%">
+              <?php echo $v_training->country_name  ; ?>
                &nbsp;               
                </td>
 
