@@ -784,5 +784,14 @@ function getstate(){
         
     }
 
+  public function all_questions()
+    {
+        $employer_id         = $this->session->userdata('company_profile_id');
+        $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
+        $this->load->view('fontend/employer/all_questions.php', compact('company_active_jobs', 'employer_id'));
+    }
+
+
+
 } // end class
 

@@ -116,8 +116,13 @@ $route['employer/pending-job']="employer/pending_job";
 $route['employer/selected-job']="employer/selected_job";
 $route['employer/non-selected-job']="employer/non_selected_job";
 $route['employer/profile-setting']="employer/profile_setting";
+$route['employer/all-questions']="employer/all_questions";
+$route['employer/add-question']="employer/profile_setting";
+
 
 $route['employer/reject-resume/(:num)']="employer/reject_resume/$1";
+
+
 
 
 
