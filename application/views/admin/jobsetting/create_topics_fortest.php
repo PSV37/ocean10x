@@ -42,6 +42,7 @@
                                 <tr>
                                     <th class="active">#</th>
                                     <th class="active">Topic Name</th>
+                                    <th class="active">Level of Test</th>
                                     <th class="active">No of Questions</th>
                                 </tr>
                             </thead>
@@ -50,12 +51,14 @@
                             <?php if (!empty($topic_master)): foreach ($topic_master as $st_row) : 
                                 $checked="";
                                 $no_ques = "";
+                                $level_of_test = "";
                                 if(!empty($test_topic_master)){
                                     for($i=0;$i<sizeof($test_topic_master);$i++){
 
                                         if($st_row['topic_id']==$test_topic_master[$i]['test_topic']){
                                           $checked ="checked";
                                           $no_ques = $test_topic_master[$i]['no_questions'];
+                                          $level_of_test = $test_topic_master[$i]['test_level'];
                                         }
 
                                     }
@@ -64,6 +67,14 @@
                                 <tr>
                                     <td><input type="checkbox" <?php echo $checked; ?> name="topic_chk[]" id="topic_chk" value="<?php echo $st_row['topic_id']; ?>" class="testchk"></td>
                                     <td><?php echo $st_row['topic_name']; ?></td>
+                                    <td>
+                                        <select name="test_level<?php echo $st_row['topic_id']; ?>" class="form-control" data-style="btn-default" data-live-search="true">
+                                            <option value="">Select Level</option>
+                                            <?php if(!empty($test_level)) foreach($test_level as $level){ ?>
+                                                <option value="<?php echo $level['job_level_name']; ?>"<?php if($level_of_test==$level['job_level_name']){echo "selected";} ?>><?php echo $level['job_level_name']; ?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </td>
                                     <td>
                                         <input type="number" name="no_questions<?php echo $st_row['topic_id']; ?>" id="no_questions<?php echo $st_row['topic_id']; ?>" value="<?php echo $no_ques; ?>">
                                     </td>
