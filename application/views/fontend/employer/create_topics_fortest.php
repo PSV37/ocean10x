@@ -64,7 +64,8 @@
                             <td><?php echo $st_row['topic_name']; ?></td>
                             <td>
                                
-                                <select name="test_level<?php echo $st_row['topic_id']; ?>" id="test_level">
+                                <!-- <select name="test_level<?php echo $st_row['topic_id']; ?>" id="test_level"> -->
+                                <select name="test_level<?php echo $st_row['topic_id']; ?>" class="form-control" data-style="btn-default" data-live-search="true">
                                     <option value="">Select Level</option>
                                     <?php if(!empty($test_level)) foreach($test_level as $level){ ?>
                                         <option value="<?php echo $level['job_level_name']; ?>"><?php echo $level['job_level_name']; ?></option>
