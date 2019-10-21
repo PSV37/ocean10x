@@ -612,7 +612,7 @@ PERSONAL DETAILS:
          <td style="padding-left:10px;" align="left">Nationality</td>
          <td align="center">:</td>
          <td align="left">
-         Bangladeshi
+         <?php echo $resume->nationality; ?> 
          </td>
          </tr>
             
