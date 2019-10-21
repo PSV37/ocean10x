@@ -64,7 +64,7 @@
         <div class="userccount empdash">
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
            
-  <!--   		<form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>questionbank/save_questionbank/<?php  if (!empty($edit_questionbank_info)) { foreach($edit_questionbank_info as $row)
+    		<form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>employer/save_questionbank/<?php  if (!empty($edit_questionbank_info)) { foreach($edit_questionbank_info as $row)
                         echo $row['ques_id'];
                       }
                      ?>" method="post">
@@ -273,7 +273,7 @@
                         
                     </div>
 
-                </form> -->
+                </form>
 
 
 
