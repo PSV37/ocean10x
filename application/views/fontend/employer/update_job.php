@@ -329,22 +329,32 @@
                 </div>
               </div>
               <hr class="invis">
-			  <div class="row">
-			  <div class="col-md-4 col-sm-12"> 
+      			  <div class="row">
+        			  <div class="col-md-4 col-sm-12"> 
                   <div class="formrow">  
                     <label class="control-label "><b>Required Education</b> <span class="required">*</span></label>
                     <select name="job_edu_special" id="job_edu_special" class="form-control"  data-style="btn-default" data-live-search="true" required="">
                      <option value="">Select Education </option>
-					 <?php
-                    foreach($education_specialization as $spec_row){
-						?>
-			 <option value="<?php echo $spec_row['id']; ?>"<?php if($job_info->edu_specialization==$spec_row['id']){ echo "selected"; }?>><?php echo $spec_row['education_specialization']; ?></option>
+            					<?php
+                        foreach($education_specialization as $spec_row){
+            					?>
+            			      <option value="<?php echo $spec_row['id']; ?>"<?php if($job_info->edu_specialization==$spec_row['id']){ echo "selected"; }?>><?php echo $spec_row['education_specialization']; ?></option>
 										 <?php } ?>
 		
                     </select> 
                   </div>
-				  </div>
+        				</div>
+                 <div class="col-md-4 col-sm-12"> 
+                  <div class="formrow">  
+                    <label class="control-label ">Is Test Required <span class="required">*</span></label>
+                    <select name="job_test_requirment" id="job_test_requirment" class="form-control"  data-style="btn-default" data-live-search="true" required="">
+                     <option value="">Select One </option>
+                     <option value="Yes"<?php if($job_info->is_test_required=="Yes"){ echo "selected"; }?>>Yes </option>
+                     <option value="No"<?php if($job_info->is_test_required=="No"){ echo "selected"; }?>>No </option>
+                    </select> 
+                  </div>
                 </div>
+              </div>
               </hr>
               
               <!-- end row -->
