@@ -15,10 +15,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-6">
-        <h1 class="page-heading">Forward Job</h1>
+        <h1 class="page-heading">All Question's </h1>
       </div>
       <div class="col-md-6 col-sm-6">
-        <div class="breadCrumb"><a href="#.">Home</a> / <span>Vacancy Post</span></div>
+        <div class="breadCrumb"><a href="#.">Home</a> / <span>All Question's</span></div>
       </div>
     </div>
   </div>
@@ -32,32 +32,52 @@
       <div class="content col-md-9">
         <div class="userccount empdash">
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
-            <form id="submit" action="<?php echo base_url() ?>employer/forword_job_post" method="post" class="submit-form">
-              <input type="hidden" name="job_post_id" value="<?php echo $job_id; ?>">
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <div class="formrow">
-                    <label class="control-label ">Candiate Emails<span class="required">*</span> </label><small><b>Note: Please Enter Emails By Comma (,) Seperated.</b></small>   
-                      <textarea name="candiate_email" placeholder="Candiate Emails" required class="form-control" rows="3"></textarea>
-                  </div>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                  <div class="formrow">
-                                    
-                  </div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                  <div class="formrow">
-                    <label>Job Description<span class="required">*</span></label>
-                    <textarea name="job_desc" required class="form-control ckeditor"></textarea>
-                  </div>
-                </div>
-                
-              </div>
+           
+            <table class="table table-bordered table-striped" id="dataTables-example">
+              <thead>
+                <tr>
+                  <th class="active">SL</th>
+                  <th class="active">Subject</th>
+                  <th class="active">Topic</th>
+                  <th class="active">Subtopic</th>
+                  <th class="active">Line Item 1</th>
+                  <th class="active">Line Item 2</th>
+                  <th class="active">Question Type</th>
+                  <th class="active">Question</th>
+                  <th class="active col-sm-2">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php $key = 1; if (!empty($questionbank)): foreach ($questionbank as $ct_row) : ?>
+                    <tr>
+                      <td><?php echo $key ?></td>
+                      <td><?php echo $ct_row['skill_name'] ?></td>
+                      <td><?php echo $ct_row['topic_name'] ?></td>
+                      <td><?php echo $ct_row['subtopic_name'] ?></td>
+                      <td><?php echo $ct_row['title'] ?></td>
+                      <td><?php echo $ct_row['titles'] ?></td>
+                      <td><?php echo $ct_row['ques_type'] ?></td>
+                      <td><?php echo $ct_row['question'] ?></td>
+                      <td>
+                          <?php echo btn_edit('admin/questionbank/edit_questionbank/' . $ct_row['ques_id']); ?>
+                          <?php echo btn_delete('admin/questionbank/delete_questionbank/' . $ct_row['ques_id']); ?>
+                      </td>
+                  </tr>
+                  <?php
+                      $key++;
+                      endforeach;
+                  ?>
+                  <?php else : ?> 
+                      <td colspan="3">
+                          <strong>There is no record for display</strong>
+                      </td>
+                  <?php
+                    endif; ?>
+              </tbody>
+          </table>
 
-              <hr class="invis">
-              <button class="btn btn-primary" type="submit">Forward Job</button>
-            </form>
+
+
           </div>
         </div>
         <!-- end post-padding --> 

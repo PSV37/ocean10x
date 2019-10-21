@@ -786,9 +786,36 @@ function getstate(){
 
   public function all_questions()
     {
-        $employer_id         = $this->session->userdata('company_profile_id');
-        $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
-        $this->load->view('fontend/employer/all_questions.php', compact('company_active_jobs', 'employer_id'));
+        $data['employer_id']         = $this->session->userdata('company_profile_id');
+
+        $where_cn= "status=1";
+        $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where_cn);
+        
+        //$where_opt= "options.status=1";
+        $data['options'] = $this->Master_model->getMaster('options');
+        
+        $where_state= "topic.topic_status=1";
+        $data['topic'] = $this->Master_model->getMaster('topic',$where_state);
+        
+        $where_subtopic = "subtopic.subtopic_status='1'";
+        $data['subtopic'] = $this->Master_model->getMaster('subtopic',$where_subtopic);
+        
+        $where_lineitem = "lineitem.lineitem_status='1'";
+        $data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_lineitem);
+        
+        $where_all = "questionbank.ques_status='1'";
+        $join_emp = array(
+                'skill_master' => 'skill_master.id=questionbank.technical_id |INNER',
+                'topic' => 'topic.topic_id=questionbank.topic_id |INNER',
+                'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |INNER',
+                'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |INNER',
+                'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |INNER',
+            );
+        $data['questionbank'] = $this->Master_model->getMaster('questionbank',$where_all,$join_emp);
+
+
+
+        $this->load->view('fontend/employer/all_questions.php', $data);
     }
 
 
