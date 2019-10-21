@@ -593,7 +593,26 @@
           }
    
        }
-       getStates_load();
+	   
+	   function getCitys_load(){
+        var id = $('#state_id').val();
+
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Employer/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city_id').html(res);
+                    $('#city_id').val(<?php echo $row['city_id']; ?>);
+					getCitys_load();
+                }
+                
+            }); 
+          }
+   
+       }
+       getCitys_load();
     });
 </script>
 <script>
@@ -605,6 +624,21 @@
                 data:{id:id},
                 success:function(res){
                     $('#state_name').html(res);
+                }
+                
+            }); 
+          }
+   
+       }
+	   
+	   function getCitys(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Employer/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city_id').html(res);
                 }
                 
             }); 
