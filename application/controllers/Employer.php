@@ -133,6 +133,8 @@ class Employer extends MY_Employer_Controller
                         'preferred_age'      => $this->input->post('preferred_age_from'),
 						'preferred_age_to'   => $this->input->post('preferred_age_to'),
                         'working_hours'      => $this->input->post('working_hours'),
+                        'is_test_required'      => $this->input->post('job_test_requirment'),
+                        
                     );
                     if (empty($job_post_id)) {
                         $this->job_posting_model->insert($job_info);
@@ -201,10 +203,10 @@ class Employer extends MY_Employer_Controller
 						$data['education_level'] = $this->Master_model->getMaster('education_level',$where=false);
 						$data['skill_master'] = $this->Master_model->getMaster('skill_master',$where=false);
 
-                    $where_cn= "status=1";
-                    $select = "job_role_title, skill_set ,id";
-                    $data['job_role_data'] = $this->Master_model->getMaster('job_role',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
-					$data['education_specialization'] = $this->Master_model->getMaster('education_specialization',$where=false);
+                        $where_cn= "status=1";
+                        $select = "job_role_title, skill_set ,id";
+                        $data['job_role_data'] = $this->Master_model->getMaster('job_role',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
+    					$data['education_specialization'] = $this->Master_model->getMaster('education_specialization',$where=false);
                         $this->load->view('fontend/employer/update_job', $data);
                     } else {
                         echo "error";
