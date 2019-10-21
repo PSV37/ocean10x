@@ -726,9 +726,9 @@ function getstate(){
                 $data['title']    = "Topic's For Test";
                 $data['test_job_id'] = $id;
 
-                $where_test_top = "job_test_questions.job_id='$id'";
-                $select_test_topic = "job_test_questions.topic_id as test_topic,job_test_questions.no_questions";
-                $data['test_topic_master'] = $this->Master_model->getMaster('job_test_questions',$where_test_top,$join = FALSE, $order = false, $field = false, $select_test_topic,$limit=false,$start=false, $search=false);
+                $where_test_top = "job_test_topics.job_id='$id'";
+                $select_test_topic = "job_test_topics.topic_id as test_topic,job_test_topics.no_questions";
+                $data['test_topic_master'] = $this->Master_model->getMaster('job_test_topics',$where_test_top,$join = FALSE, $order = false, $field = false, $select_test_topic,$limit=false,$start=false, $search=false);
 
                 $where_top = "topic.topic_status='1'";
                 $select_topic = "topic_name,topic_id";
@@ -739,7 +739,7 @@ function getstate(){
             }else{
 
                 $where_del = "job_id='$id'";
-                $del = $this->Master_model->master_delete('job_test_questions',$where_del);
+                $del = $this->Master_model->master_delete('job_test_topics',$where_del);
                 if($del==true)
                 {
                     for($k=0; $k<sizeof($topic_chk);$k++)
@@ -752,7 +752,7 @@ function getstate(){
                             'created_date'    => date('Y-m-d H:i:s'),
                             
                         );
-                        $this->Master_model->master_insert($ques_array,'job_test_questions');
+                        $this->Master_model->master_insert($ques_array,'job_test_topics');
                        
                     }
                     $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Job Test Topic Sucessfully Inserted</div>');
@@ -764,9 +764,9 @@ function getstate(){
             $data['title']    = "Topic's For Test";
             $data['test_job_id'] = $id;
 
-            $where_test_top = "job_test_questions.job_id='$id'";
-            $select_test_topic = "job_test_questions.topic_id as test_topic,job_test_questions.no_questions";
-            $data['test_topic_master'] = $this->Master_model->getMaster('job_test_questions',$where_test_top,$join = FALSE, $order = false, $field = false, $select_test_topic,$limit=false,$start=false, $search=false);
+            $where_test_top = "job_test_topics.job_id='$id'";
+            $select_test_topic = "job_test_topics.topic_id as test_topic,job_test_topics.no_questions";
+            $data['test_topic_master'] = $this->Master_model->getMaster('job_test_topics',$where_test_top,$join = FALSE, $order = false, $field = false, $select_test_topic,$limit=false,$start=false, $search=false);
 
             $where_top = "topic.topic_status='1'";
             $select_topic = "topic_name,topic_id";
