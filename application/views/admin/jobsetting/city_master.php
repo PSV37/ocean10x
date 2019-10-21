@@ -68,7 +68,8 @@
                                         
                                     </div>
                                 </div>
-
+								 </div>
+								 <div class="box-body">
                                  <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">City Name <span class="required">*</span></label>
@@ -78,7 +79,7 @@
                                 <div class="panel-body"></div>
                                 <button type="submit" class="btn bg-navy" type="submit">Save City
                                 </button><br/><br/>
-                            </div>
+								</div>
                             <!-- /.box-body -->
 
                         </div>
