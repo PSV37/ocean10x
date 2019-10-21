@@ -729,7 +729,7 @@ function getstate(){
                 $data['test_level'] = $this->Master_model->getMaster('job_level',$where = FALSE,$join = FALSE, $order = false, $field = false, $select = FALSE ,$limit=false,$start=false, $search=false);
 
                 $where_test_top = "job_test_topics.job_id='$id'";
-                $select_test_topic = "job_test_topics.topic_id as test_topic,job_test_topics.no_questions";
+                $select_test_topic = "job_test_topics.topic_id as test_topic,job_test_topics.no_questions,job_test_topics.test_level";
                 $data['test_topic_master'] = $this->Master_model->getMaster('job_test_topics',$where_test_top,$join = FALSE, $order = false, $field = false, $select_test_topic,$limit=false,$start=false, $search=false);
 
                 $where_top = "topic.topic_status='1'";
@@ -770,7 +770,7 @@ function getstate(){
              $data['test_level'] = $this->Master_model->getMaster('job_level',$where = FALSE,$join = FALSE, $order = false, $field = false, $select = FALSE ,$limit=false,$start=false, $search=false);
 
             $where_test_top = "job_test_topics.job_id='$id'";
-            $select_test_topic = "job_test_topics.topic_id as test_topic,job_test_topics.no_questions";
+            $select_test_topic = "job_test_topics.topic_id as test_topic,job_test_topics.no_questions,job_test_topics.test_level";
             $data['test_topic_master'] = $this->Master_model->getMaster('job_test_topics',$where_test_top,$join = FALSE, $order = false, $field = false, $select_test_topic,$limit=false,$start=false, $search=false);
 
             $where_top = "topic.topic_status='1'";
