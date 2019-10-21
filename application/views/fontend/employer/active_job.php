@@ -73,8 +73,9 @@
                                     <?php   if ($v_companyjobs->job_deadline > date('Y-m-d')){ ?>
                                     <span data-placement="top" data-toggle="tooltip" title="Forward Job"><a href="<?php echo base_url() ?>employer/forword_job/<?php echo $v_companyjobs->job_post_id ?>" class="btn btn-primary btn-xs"><i class="fa fa-paper-plane"></i> Forward</a></span>
                                     <?php }else{} ?>
-                                    
+                                    <?php   if ($v_companyjobs->is_test_required =="Yes"){ ?>
                                     <span data-placement="top" data-toggle="tooltip" title="Add Topics For Test"><a href="<?php echo base_url() ?>employer/topics_for_test/<?php echo $v_companyjobs->job_post_id ?>" class="btn btn-warning btn-xs"><i class="fa fa-plus"></i> Test Topic's</a></span>
+                                    <?php }else{} ?>
                                     </div>
                                 </div>
                             </div>
