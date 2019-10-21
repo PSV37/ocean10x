@@ -581,30 +581,11 @@
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>Employer/getstate',
+                url:'<?php echo base_url();?>employer/getstate',
                 data:{id:id},
                 success:function(res){
                     $('#state_id').html(res);
                     $('#state_id').val(<?php echo $row['state_id']; ?>);
-					
-                }
-                
-            }); 
-          }
-   
-       }
-	   
-	   function getCitys_load(){
-        var id = $('#state_id').val();
-
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>Employer/getcity',
-                data:{id:id},
-                success:function(res){
-                    $('#city_id').html(res);
-                    $('#city_id').val(<?php echo $row['city_id']; ?>);
 					getStates_load();
                 }
                 
@@ -612,7 +593,7 @@
           }
    
        }
-       getCitys_load();
+       getStates_load();
     });
 </script>
 <script>
@@ -620,25 +601,10 @@
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>Employer/getstate',
+                url:'<?php echo base_url();?>employer/getstate',
                 data:{id:id},
                 success:function(res){
                     $('#state_id').html(res);
-                }
-                
-            }); 
-          }
-   
-       }
-	   
-	   function getCitys(id){
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>Employer/getcity',
-                data:{id:id},
-                success:function(res){
-                    $('#city_id').html(res);
                 }
                 
             }); 
