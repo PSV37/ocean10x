@@ -72,7 +72,8 @@
                                     <span data-placement="top" data-toggle="tooltip" title="Remove"><a href="<?php echo base_url() ?>employer/delete_job/<?php echo $v_companyjobs->job_post_id ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a></span>
                                     <?php   if ($v_companyjobs->job_deadline > date('Y-m-d')){ ?>
                                     <span data-placement="top" data-toggle="tooltip" title="Forward Job"><a href="<?php echo base_url() ?>employer/forword_job/<?php echo $v_companyjobs->job_post_id ?>" class="btn btn-primary btn-xs"><i class="fa fa-paper-plane"></i> Forward</a></span>
-                                <?php }else{} ?>
+                                    <?php }else{} ?>
+                                    <?php echo btn_test_topic_add('admin/job_posting/topics_for_test/' . $v_companyjobs->job_post_id); ?>
                                     </div>
                                 </div>
                             </div>
