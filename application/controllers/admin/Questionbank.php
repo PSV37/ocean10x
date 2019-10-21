@@ -142,7 +142,7 @@ class Questionbank extends MY_Controller
 		$where_answer = "question_id='$id'";
         $data['questionbank_answer'] = $this->Master_model->getMaster('questionbank_answer',$where_answer);
         
-		$where_lineitem = "lineitem.lineitem_status!='0' and lineitem.lineitem_id='".$id."'";
+		$where_lineitem = "lineitem.lineitem_status='1'";
 		$data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_lineitem);
 		 
         $where_skill= "status=1";
@@ -152,6 +152,16 @@ class Questionbank extends MY_Controller
     }
 
 
+
+ public function delete_questionbank($id) {
+        
+        $ques_status = array(
+            'ques_status'=>0,
+        );
+        $where_del['ques_id']=$id;
+        $this->Master_model->master_update($ques_status,'questionbank',$where_del);
+        redirect('admin/questions');
+    }
 
 
 
