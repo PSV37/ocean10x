@@ -62,7 +62,7 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Topic <span class="required">*</span></label>
+                                        <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
                                         <select id="topic_id"  name="topic_id" class="form-control" required>
                                            
                                         </select>
@@ -79,8 +79,8 @@
 									 <div class="box-body">
 
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Subtopic Description<span class="required">*</span></label>
-                                      <textarea name="subtopic_desc" class="form-control ckeditor" required><?php if (!empty($edit_subtopic_info)) echo $row['subtopic_desc'];?></textarea>
+                                        <label for="exampleInputEmail1">Subtopic Description</label>
+                                      <textarea name="subtopic_desc" class="form-control ckeditor"><?php if (!empty($edit_subtopic_info)) echo $row['subtopic_desc'];?></textarea>
                                     </div>
                                 </div>
                                 <div class="panel-body"></div>
