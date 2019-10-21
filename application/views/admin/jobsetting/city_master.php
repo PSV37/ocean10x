@@ -65,13 +65,7 @@
                                         <label for="exampleInputEmail1">State <span class="required">*</span></label>
                                         <select id="state_name"  name="state_name" class="form-control" required>
                                            <option value="">Select State</option> 
-                                        <?php if (!empty($state_data))
-                                           foreach($state_data as $st_row) 
-                                           {
-                                        ?>   
-                                            <option value="<?php echo $st_row['state_id']; ?>"<?php if (!empty($edit_city_info)) if($row['state_id']==$st_row['state_id'])echo "selected";?>><?php echo $st_row['state_name']; ?></option> 
-                                        <?php } ?>
-                                        </select>
+                                        
                                     </div>
                                 </div>
 
