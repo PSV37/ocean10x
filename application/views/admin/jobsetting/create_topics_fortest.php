@@ -76,7 +76,7 @@
                                         </select>
                                     </td>
                                     <td>
-                                        <input type="number" name="no_questions<?php echo $st_row['topic_id']; ?>" id="no_questions<?php echo $st_row['topic_id']; ?>" value="<?php echo $no_ques; ?>">
+                                        <input type="number" name="no_questions<?php echo $st_row['topic_id']; ?>" id="no_questions<?php echo $st_row['topic_id']; ?>" value="<?php echo $no_ques; ?>" >
                                     </td>
                                 </tr>
                             <?php

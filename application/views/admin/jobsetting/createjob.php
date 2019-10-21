@@ -278,15 +278,15 @@
                                     <label for="exampleInputEmail1">Job Status <span
                                             class="required">*</span></label>
                                     <select required name="job_status" class="form-control col-sm-5">
-                                                <option value="">Select Job Status</option>
-                                                <?php  if(!empty($job_info)): ?>
-                                                   <option value="1" <?php if($job_info->job_status == "1"){?> selected="selected" <?php }?>>Active</option>
-                                                   <option value="2" <?php if($job_info->job_status == "2"){?> selected="selected" <?php }?>>Deactive</option>
-                                                 <?php else: ?>
-                                                  <option value="1">Active</option>
-                                                  <option value="2">Deactive</option>
-                                                <?php endif; ?>
-                                            </select>
+                                      <option value="">Select Job Status</option>
+                                      <?php  if(!empty($job_info)): ?>
+                                         <option value="1" <?php if($job_info->job_status == "1"){?> selected="selected" <?php }?>>Active</option>
+                                         <option value="2" <?php if($job_info->job_status == "2"){?> selected="selected" <?php }?>>Deactive</option>
+                                       <?php else: ?>
+                                        <option value="1">Active</option>
+                                        <option value="2">Deactive</option>
+                                      <?php endif; ?>
+                                  </select>
                                     </div>
                                 </div>
 
@@ -324,6 +324,18 @@
                                       </select>
                                     </div>
                                 </div>
+
+                                <div class="col-md-4 col-sm-12"> 
+                                  <div class="formrow">  
+                                    <label class="control-label ">Is Test Required <span class="required">*</span></label>
+                                    <select name="job_test_requirment" id="job_test_requirment" class="form-control"  data-style="btn-default" data-live-search="true" required="">
+                                     <option value="">Select One </option>
+                                     <option value="Yes"<?php if($job_info->is_test_required=="Yes"){ echo "selected"; }?>>Yes </option>
+                                     <option value="No"<?php if($job_info->is_test_required=="No"){ echo "selected"; }?>>No </option>
+                                    </select> 
+                                  </div>
+                                </div>
+
 
                                 </div>
 

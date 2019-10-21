@@ -63,6 +63,7 @@ class Job_posting extends MY_Controller
             "job_deadline"       => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('job_deadline')))),
             'preferred_age'      => $this->input->post('preferred_age'),
             'working_hours'      => $this->input->post('working_hours'),
+            'is_test_required'      => $this->input->post('job_test_requirment'),
         );
         // var_dump($job_info);
         //  exit();
@@ -230,7 +231,7 @@ function getSkillsByRole() {
         }else{
             $data['title']    = "Topic's For Test";
             $data['test_job_id'] = $id;
-            
+
             $data['test_level'] = $this->Master_model->getMaster('job_level',$where = FALSE,$join = FALSE, $order = false, $field = false, $select = FALSE ,$limit=false,$start=false, $search=false);
 
             $where_test_top = "job_test_topics.job_id='$id'";
