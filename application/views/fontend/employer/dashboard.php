@@ -571,51 +571,6 @@
 
 
 <script>
-  $(document).ready(function(){
-
-
-
-    function getStates_load(){
-        var id = $('#country_id').val();
-
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>employer/getstate',
-                data:{id:id},
-                success:function(res){
-                    $('#state_id').html(res);
-                    $('#state_id').val(<?php echo $row['state_id']; ?>);
-					getStates_load();
-                }
-                
-            }); 
-          }
-   
-       }
-       getStates_load();
-    });
-</script>
-<script>
-    function getStates(id){
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>employer/getstate',
-                data:{id:id},
-                success:function(res){
-                    $('#state_id').html(res);
-                }
-                
-            }); 
-          }
-   
-       }
-
-       
-</script>
-
-<script>
 $(document).ready(function(){
     $("#name").keypress(function(event){
         var inputValue = event.charCode;
@@ -637,5 +592,82 @@ $(document).ready(function(){
   
   
     
+<script>
+	function getStates(id){
+		if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Employer/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state_id').html(res);
+                }
+				
+            }); 
+        }
+   
+	}
+	   
+	  
+	  function getCitys(id){
+		if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Employer/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city_id').html(res);
+                }
+				
+            }); 
+          }
+   
+	   }
+	   
+	  $(document).ready(function(){
+
+    function getStates_load(){
+        var id = $('#country_id').val();
+
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Employer/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state_id').html(res);
+                    $('#state_id').val(<?php echo $company_info->state_id; ?>);
+                     getCitys_load(<?php echo $company_info->state_id; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+    
+    function getCitys_load(id){
+      //var id = $('#state_id').val();
+      // alert(id);
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Employer/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city_id').html(res);
+                    $('#city_id').val(<?php echo $company_info->city_id; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+
+  getCitys_load();
+  getStates_load();
+ 
+});
+
+</script>  
   
  <?php $this->load->view("fontend/layout/footer.php"); ?>
