@@ -424,9 +424,7 @@
 											<label class="control-label">Company State: <span class="required">*</span></label>
 											<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
 											<option value="">Select State</option>
-										     <?php foreach($state as $val){?>
-											<option value="<?php echo $val['state_id']; ?>"<?php if($company_info->state_id==$val['state_id']){ echo "selected"; }?>><?php echo $val['state_name']; ?></option>
-												<?php } ?>
+										     
 											</select>
 										</div>
 	                                    </div>
@@ -436,9 +434,7 @@
 											<label class="control-label">Company City: <span class="required">*</span></label>
 											<select  name="city_id" id="city_id" class="form-control">
 											<option value="">Select City</option>
-											 <?php foreach($city as $valu){?>
-											<option value="<?php echo $valu['id']; ?>"<?php if($company_info->city_id==$valu['id']){ echo "selected"; }?>><?php echo $valu['city_name']; ?></option>
-											<?php } ?>
+											 
 											</select>
 	                                    </div>
 	                                </div>
@@ -575,6 +571,51 @@
 
 
 <script>
+  $(document).ready(function(){
+
+
+
+    function getStates_load(){
+        var id = $('#country_name').val();
+
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Employer/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state_name').html(res);
+                    $('#state_name').val(<?php echo $row['state_id']; ?>);
+					getStates_load();
+                }
+                
+            }); 
+          }
+   
+       }
+       getStates_load();
+    });
+</script>
+<script>
+    function getStates(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Employer/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state_name').html(res);
+                }
+                
+            }); 
+          }
+   
+       }
+
+       
+</script>
+
+<script>
 $(document).ready(function(){
     $("#name").keypress(function(event){
         var inputValue = event.charCode;
@@ -596,82 +637,5 @@ $(document).ready(function(){
   
   
     
-<script>
-	function getStates(id){
-		if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>Employer/getstate',
-                data:{id:id},
-                success:function(res){
-                    $('#state_id').html(res);
-                }
-				
-            }); 
-        }
-   
-	}
-	   
-	  
-	  function getCitys(id){
-		if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>Employer/getcity',
-                data:{id:id},
-                success:function(res){
-                    $('#city_id').html(res);
-                }
-				
-            }); 
-          }
-   
-	   }
-	   
-	  $(document).ready(function(){
-
-    function getStates_load(){
-        var id = $('#country_id').val();
-
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>Employer/getstate',
-                data:{id:id},
-                success:function(res){
-                    $('#state_id').html(res);
-                    $('#state_id').val(<?php echo $company_info->state_id; ?>);
-                     getCitys_load(<?php echo $company_info->state_id; ?>);
-                }
-                
-            }); 
-          }
-   
-       }
-    
-    function getCitys_load(id){
-      //var id = $('#state_id').val();
-      // alert(id);
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>Employer/getcity',
-                data:{id:id},
-                success:function(res){
-                    $('#city_id').html(res);
-                    $('#city_id').val(<?php echo $company_info->city_id; ?>);
-                }
-                
-            }); 
-          }
-   
-       }
-
-  getCitys_load();
-  getStates_load();
- 
-});
-
-</script>  
   
  <?php $this->load->view("fontend/layout/footer.php"); ?>
