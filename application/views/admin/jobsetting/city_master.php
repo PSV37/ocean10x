@@ -65,7 +65,7 @@
                                         <label for="exampleInputEmail1">State <span class="required">*</span></label>
                                         <select id="state_name"  name="state_name" class="form-control" required>
                                            <option value="">Select State</option> 
-                                        
+                                        </select>
                                     </div>
                                 </div>
 								 </div>
