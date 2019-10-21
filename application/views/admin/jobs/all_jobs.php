@@ -104,7 +104,12 @@
                                     <?php } ?>
                                     <?php echo btn_delete('admin/jobs/delete_job/' . $v_companyjobs->job_post_id); ?>
 
-                                    <?php echo btn_test_topic_add('admin/job_posting/topics_for_test/' . $v_companyjobs->job_post_id); ?>
+                                    <?php
+                                    if ($v_companyjobs->is_test_required =="Yes"){
+                                     echo btn_test_topic_add('admin/job_posting/topics_for_test/' . $v_companyjobs->job_post_id); 
+                                    }else{}
+                                     ?>
+                                    
                                     </td>
 
                                 </tr>
