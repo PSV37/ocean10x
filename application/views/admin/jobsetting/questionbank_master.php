@@ -219,7 +219,7 @@
 				  <div class="selectBox" onclick="showCheckboxes()">
 				  
 				   <label>Correct Answer: <span class="required">*</span></label>
-				   <select  class="form-control" style="height:100px;">	
+				   <!--<select  class="form-control" style="height:100px;">	
 					<option>Select Answer</option>
 					</select>
 					<div class="overSelect"></div>
@@ -243,7 +243,7 @@
 					}
 				?>
 			
-		 </div>
+		 </div>-->
 				   </div>
 				  </div>
 				  </div>
