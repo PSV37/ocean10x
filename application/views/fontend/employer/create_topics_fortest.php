@@ -59,7 +59,7 @@
                         }
                     ?>
                         <tr>
-                            <td><input type="checkbox" <?php echo $checked; ?> name="topic_chk[]" id="topic_chk" value="<?php echo $st_row['topic_id']; ?>" class="testchk"></td>
+                            <td><input type="checkbox" <?php echo $checked; ?> name="topic_chk[]" id="topic_chk" value="<?php echo $st_row['topic_id']; ?>" class="testchk" style='height:15px; width:20px;'></td>
                             <td><?php echo $st_row['topic_name']; ?></td>
                             <td>
                                 <input type="number" name="no_questions<?php echo $st_row['topic_id']; ?>" id="no_questions<?php echo $st_row['topic_id']; ?>" value="<?php echo $no_ques; ?>">
