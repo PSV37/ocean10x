@@ -39,6 +39,7 @@
                         <tr>
                             <th class="active">#</th>
                             <th class="active">Topic Name</th>
+                            <th class="active">Level Of Test</th>
                             <th class="active">No of Questions</th>
                         </tr>
                     </thead>
@@ -61,6 +62,15 @@
                         <tr>
                             <td><input type="checkbox" <?php echo $checked; ?> name="topic_chk[]" id="topic_chk" value="<?php echo $st_row['topic_id']; ?>" class="testchk" style='height:15px; width:20px;'></td>
                             <td><?php echo $st_row['topic_name']; ?></td>
+                            <td>
+                                <input type="number" name="no_questions<?php echo $st_row['topic_id']; ?>" id="no_questions<?php echo $st_row['topic_id']; ?>" value="<?php echo $no_ques; ?>">
+                                <select name="test_level<?php echo $st_row['topic_id']; ?>" id="test_level">
+                                    <option value="">Select Level</option>
+                                    <?php if(!empty($test_level)) foreach($test_level as $level){ ?>
+                                        <option value="<?php echo $level['test_level']; ?>"><?php echo $level['test_level']; ?></option>
+                                    <?php } ?>
+                                </select>
+                            </td>
                             <td>
                                 <input type="number" name="no_questions<?php echo $st_row['topic_id']; ?>" id="no_questions<?php echo $st_row['topic_id']; ?>" value="<?php echo $no_ques; ?>">
                             </td>
