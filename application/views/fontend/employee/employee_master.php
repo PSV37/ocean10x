@@ -95,6 +95,73 @@
 <script type="text/javascript">
 document.getElementsByClassName('form-control').innerHTML+="<br />";
 </script>
+<!-- delete model -->
+  <div id="deleteModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" align="center">Delete Details</h4>
+        </div>
+        <form  id="del" autocomplete="off" enctype="multipart/formdata" method="POST">
+          <div class="modal-body" id="deleteContent">
+            <input type="hidden" name="del_id" id="del_id">
+            <div class="form-group">
+              <p><b>Are you sure want to delete ?</b></p>
+            </div>
+          </div>
+          <center><div id='res'></div></center>
+          <div class="modal-footer">
+            <button class="btn btn-success submit" id="delete_btn" name="submit">Confirm</button>
+            <button type="button" class="btn btn-primary btn-md" data-dismiss="modal">Cancel</button>      
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  </section>
+<!-- /.content -->
+</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+$("#delete_btn").click(function(e)
+   { 
+      var id=$('#del_id').val();
+
+      e.preventDefault();
+
+         $.ajax({ 
+                
+                    url: "<?php echo site_url('employer/deleteemployee')?>",
+                    type: "POST",
+                    data: {
+                           id:id  
+                    },
+                    success: function(data)
+                    {
+
+                    // $("button#del_id").button('reset');
+                       $("#res").html('<div class="alert alert-danger"><button type="button" class="close">×</button>Record Successfully Deleted!</div>');
+                          window.setTimeout(function() {
+                                $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                                    $(this).remove(); 
+                                });
+                                location.reload();
+                            }, 1500);
+                          $('.alert .close').on("click", function(e){
+                                $(this).parent().fadeTo(500, 0).slideUp(500);
+                          });
+
+                    }
+            });
+
+
+
+    })
+</script>
 <?php $this->load->view("fontend/layout/footer.php"); ?>
 
 
