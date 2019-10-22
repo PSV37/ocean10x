@@ -16,7 +16,7 @@
   </div>
 </div>
 <!-- Page Title End -->
-<?php print_r $result;?>
+
 <div class="section lb">
   <div class="container">
     <div class="row">
@@ -24,7 +24,6 @@
       <div class="content col-md-9">
         <div class="userccount empdash">
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
-           
     		<form method="post" action="<?php echo base_url();?>employer/postEditData" enctype="multipart/form-data">
 			 <input type="hidden" name="cid" id="cid" value="<?php echo $result['emp_id'];?>">
             	<div class="row">
@@ -100,7 +99,9 @@
 											<label class="control-label">State: <span class="required">*</span></label>
 											<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
 											<option value="">Select State</option>
-										     
+										     <?php foreach($state as $keys){?>
+											<option value="<?php echo $keys['state_id']; ?>"<?php if($result['state_id']==$keys['state_id']){ echo "selected"; }?>><?php echo $keys['state_name']; ?></option>
+											<?php } ?>
 											</select>
 										</div>
 	                                    </div>
@@ -230,7 +231,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 	   
 	  $(document).ready(function(){
 
-    function getStates_load(){
+    function getStates_load(id){
         var id = $('#country_id').val();
 
         if(id){
