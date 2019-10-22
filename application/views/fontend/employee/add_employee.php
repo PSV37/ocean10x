@@ -149,7 +149,7 @@
 								</div>-->
 								 <div class="panel-body"></div>
                                 <button type="submit" class="btn bg-navy" type="submit" name="submit_employee" id="submit_employee">Add Employe
-                                </button><br/><br/>
+                                </button>
 
             </form>
 
