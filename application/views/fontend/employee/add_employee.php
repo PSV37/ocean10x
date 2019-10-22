@@ -170,7 +170,7 @@
 </div>
 </div>
 <!-- end section --> 
-
+</div>
 <script type="text/javascript" src="<?php echo base_url(); ?>asset/js/tinymce/tinymce.min.js"></script> 
 <script type="text/javascript">
 document.getElementsByClassName('form-control').innerHTML+="<br />";
