@@ -1165,7 +1165,9 @@ $this->form_validation->set_rules('emp_no', 'Employee No.', 'required');
 	$where = "emp_id='$c_id'";
 	$data['result'] = $this->Master_model->get_master_row('employee',$select = FALSE,$where);
 	$data['department'] = $this->Master_model->getMaster('department',$where=false);
-	
+	$data['country'] = $this->Master_model->getMaster('country',$where=false);
+	$data['state'] = $this->Master_model->getMaster('state',$where=false);
+	$data['city'] = $this->Master_model->getMaster('city',$where=false);
 	//echo $this->db->last_query(); die;
 	$this->load->view('fontend/employee/edit_employee',$data);	
                 }

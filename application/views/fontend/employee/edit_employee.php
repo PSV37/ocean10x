@@ -16,7 +16,7 @@
   </div>
 </div>
 <!-- Page Title End -->
-
+<?php print_r $result;?>
 <div class="section lb">
   <div class="container">
     <div class="row">
@@ -240,8 +240,8 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                 data:{id:id},
                 success:function(res){
                     $('#state_id').html(res);
-                    $('#state_id').val(<?php echo $company_info->state_id; ?>);
-                     getCitys_load(<?php echo $company_info->state_id; ?>);
+                    $('#state_id').val(<?php echo $result->state_id; ?>);
+                     getCitys_load(<?php echo $result->state_id; ?>);
                 }
                 
             }); 
@@ -259,7 +259,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                 data:{id:id},
                 success:function(res){
                     $('#city_id').html(res);
-                    $('#city_id').val(<?php echo $company_info->city_id; ?>);
+                    $('#city_id').val(<?php echo $result->city_id; ?>);
                 }
                 
             }); 
