@@ -257,7 +257,7 @@ $jobseeker_id = $this->session->userdata('job_seeker_id');
           <?php $test=$singlejob->is_test_required;
             if ($test=='Yes') {
           ?>
-          <div><b>Note: This job has a online test required. After submit test will open</b></div>
+          <div><b>Note: This job has a Online Test.</b></div>
           <div class="panel-body"></div>
         <?php }else{} ?>
           <div class="modal-footer">
