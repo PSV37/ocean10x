@@ -26,7 +26,7 @@
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
            
     		<form method="post" action="<?php echo base_url();?>employer/postEditData" enctype="multipart/form-data">
-
+			 <input type="text" name="cid" id="cid" value="<?php echo $result['emp_id'];?>">
             	<div class="row">
 
                 <div class="col-md-12 col-sm-12 col-xs-12">
