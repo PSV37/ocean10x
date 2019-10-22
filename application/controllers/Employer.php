@@ -1066,9 +1066,9 @@ $data['state'] = $this->Master_model->getMaster('state',$where=false);
 		/*Employee Listing */
 
   public function allemployee(){
-	$employer_id = $this->session->userdata('company_profile_id');
-	$company_profile_id=$employer_id['company_profile_id'];
-	$where='employee.org_id="'.$company_profile_id.'" and employee.emp_status!= 0';
+	$employer = $this->session->userdata('company_profile_id');
+	$company=$employer['company_profile_id'];
+	$where='employee.org_id="'.$company.'" and employee.emp_status!= 0';
 	//$data['result'] = $this->Master_model->getMaster('industry',$where=FALSE);
 	$join = array(
 		'department' => 'department.dept_id = employee.dept_id|INNER'
