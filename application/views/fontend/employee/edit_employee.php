@@ -43,7 +43,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Name <span class="required">*</span></label>
-                                         <input type="text" name="emp_name" id="emp_name" class="form-control" value="<?php echo $result['emp_no']; ?>">
+                                         <input type="text" name="emp_name" id="emp_name" class="form-control" value="<?php echo $result['emp_name']; ?>">
                                     </div>
                                 </div>
 									<div class="col-md-4">
@@ -52,8 +52,8 @@
 									<select  name="dept_id" id="dept_id" class="form-control">
 										<option value="">Select Department</option>
 										<?php foreach($department as $key){?>
-					<option value="<?php echo $key['dept_id']; ?>"<?php if($result['dept_id'] == $key['dept_id']){ echo "selected"; }?>><?php echo $key['department_name']; ?></option>
-					<?php } ?>
+										<option value="<?php echo $key['dept_id']; ?>"<?php if($result['dept_id'] == $key['dept_id']){ echo "selected"; }?>><?php echo $key['department_name']; ?></option>
+										<?php } ?>
 								    </select>
 									 </div>
                                 </div>
@@ -84,7 +84,7 @@
 	                                    	
 	                                        <div class="col-md-4 col-sm-4">
 	                                        	<div class="formrow">
-	                                        <label class="control-label">Company Country: <span class="required">*</span></label>
+	                                        <label class="control-label">Country: <span class="required">*</span></label>
 										  <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
 											<option value="">Select Country</option>
 											<?php foreach($country as $key){?>
@@ -97,7 +97,7 @@
 										
 										<div class="col-md-4 col-sm-4">
 											<div class="formrow">
-											<label class="control-label">Company State: <span class="required">*</span></label>
+											<label class="control-label">State: <span class="required">*</span></label>
 											<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
 											<option value="">Select State</option>
 										     
@@ -107,7 +107,7 @@
 										
 										<div class="col-md-4 col-sm-4">
 											<div class="formrow">
-											<label class="control-label">Company City: <span class="required">*</span></label>
+											<label class="control-label">City: <span class="required">*</span></label>
 											<select  name="city_id" id="city_id" class="form-control">
 											<option value="">Select City</option>
 											 
