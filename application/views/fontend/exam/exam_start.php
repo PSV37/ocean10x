@@ -37,6 +37,8 @@
                             if(!empty($questions)) foreach($questions as $row){ 
                               $sr_no++;
                         ?>
+                        
+                        <input type="text" name="job_id" id="job_id" value="<?php if(!empty($job_id))echo base64_encode($job_id); ?>">
                         <input type="text" name="question_id" id="question_id" value="<?php echo $row['ques_id']; ?>">
                         <label><?php echo "Q.No.-". $sr_no.':'.$row['question']; ?></label> 
                           <ul>
@@ -70,7 +72,7 @@
       e.preventDefault();
     
     $.ajax({
-              url: "<?php echo base_url();?>exam/insert_data/<?php if(!empty($job_id))echo base64_encode($job_id); ?>'",
+              url: "<?php echo base_url();?>exam/insert_data'",
               type: "POST",
               data: new FormData(this),
               contentType:false,
