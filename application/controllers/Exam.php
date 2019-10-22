@@ -47,9 +47,9 @@ class Exam extends MY_Seeker_Controller
             
                 $skill_id = $skill_row['skills_required'];
                 $where_req_skill="technical_id IN (".$skill_id.")";
-              
-                $data['questions'] = $this->Master_model->getMaster('questionbank',$where_req_skill);
-                 
+                
+               // $data['questions'] = $this->Master_model->getMaster('questionbank',$where_req_skill);
+                $data['questions'] = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit='1',$start=false, $search=false);
             // $wherechk = "job_id='$job_id'";
             // $data['topics'] = $this->Master_model->getMaster('job_test_topics',$wherechk);
 

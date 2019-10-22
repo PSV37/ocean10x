@@ -46,7 +46,7 @@
                             <li><input type="checkbox" name=""><?php echo $row['option5'];   ?></li>
                           </ul>
                         <?php } ?>
-                          <button type="submit" class="btn btn-primary pull-right">Submit Test</button>
+                          <button type="submit" class="btn btn-primary pull-right">Next</button>
                       </div>
                     </div>
                   </form>
