@@ -39,9 +39,9 @@ class Exam extends MY_Seeker_Controller
         if (!empty($job_id)) {
                  
             $data['title'] = 'Exam Start';
+            $data['job_id'] = $job_id;
 
             $whereskill = "job_seeker_id='$jobseeker_id'";
-
             $data['skills'] = $this->Master_model->getMaster('job_posting`',$wherechk);
             foreach($data['skills'] as $skill_row){}
             
@@ -59,7 +59,15 @@ class Exam extends MY_Seeker_Controller
         }
        
     }
-	
+	 
+     public function insert_data($id=null)
+     {
+
+        $jobseeker_id = $this->session->userdata('job_seeker_id');
+        echo $job_id = base64_decode($job_id);
+       echo "ques:" .$this->input->post('question_id');
+
+     }
 	
   
 }
