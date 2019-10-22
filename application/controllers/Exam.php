@@ -66,6 +66,8 @@ class Exam extends MY_Seeker_Controller
         $jobseeker_id = $this->session->userdata('job_seeker_id');
         echo $job_id = base64_decode($job_id);
        echo "ques:" .$this->input->post('question_id');
+        echo "option2:" .$this->input->post('option2');
+       
 
      }
 	
