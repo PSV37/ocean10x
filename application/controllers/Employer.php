@@ -1067,8 +1067,8 @@ $data['state'] = $this->Master_model->getMaster('state',$where=false);
 
   public function allemployee(){
 	$employer = $this->session->userdata('company_profile_id');
-	$company=$employer['company_profile_id'];
-	$where='employee.org_id="'.$company.'" and employee.emp_status!= 0';
+	//$company=$employer['company_profile_id'];
+	$where='employee.org_id="'.$employer.'" and employee.emp_status!= 0';
 	//$data['result'] = $this->Master_model->getMaster('industry',$where=FALSE);
 	$join = array(
 		'department' => 'department.dept_id = employee.dept_id|INNER'
@@ -1107,9 +1107,8 @@ $data['state'] = $this->Master_model->getMaster('state',$where=false);
         $this->pagination->initialize($config);
 
        $data["links"] = $this->pagination->create_links();
-	   //$where1='employee.emp_status!= 0';
+	   
        $data["result"] = $this->Master_model->getMaster("employee", $where, $join, $order = "ASC", $field = "employee.emp_id", $select = false,$config["per_page"],$page, $search=false, $group_by = FALSE);
-	//$data['result'] = $this->Admin_model->getIndustryInfo();
 	$this->load->view('fontend/employee/employee_master',$data);
 }
 
