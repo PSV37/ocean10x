@@ -32,7 +32,7 @@
                   <form id="submit" class="submit-form" action="<?php echo base_url(); ?>exam/exam_start/<?php echo $this->input->get() ?>" method="post">
                     <div class="row">
                       <div class="col-md-12 col-sm-12">
-                        <?php print_r($questions); foreach($questions as $row){?>
+                        <?php if(!empty($questions)) foreach($questions as $row){?>
                         <label><?php echo $row['question']; ?>:</label> 
                           <ul>
                             <li><?php echo $row['option1'];   ?></li>
