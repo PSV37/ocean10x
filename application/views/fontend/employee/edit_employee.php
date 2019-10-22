@@ -228,25 +228,8 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 	   }
 	   
 	  $(document).ready(function(){
-    
-    function getCitys_load(){
-      //var id = $('#state_id').val();
-      // alert(id);
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>Employer/getcity',
-                data:{id:id},
-                success:function(res){
-                    $('#city_id').html(res);
-                    $('#city_id').val(<?php echo $result->city_id; ?>);
-                }
-                
-            }); 
-          }
-   
-       }
-	   function getStates_load(){
+
+    function getStates_load(){
         var id = $('#country_id').val();
 
         if(id){
@@ -256,8 +239,26 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                 data:{id:id},
                 success:function(res){
                     $('#state_id').html(res);
-                    $('#state_id').val(<?php echo $result->state_id; ?>);
-                    getCitys_load();
+                    $('#state_id').val(<?php echo $company_info->state_id; ?>);
+                     getCitys_load(<?php echo $company_info->state_id; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+    
+    function getCitys_load(id){
+      //var id = $('#state_id').val();
+      // alert(id);
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Employer/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city_id').html(res);
+                    $('#city_id').val(<?php echo $company_info->city_id; ?>);
                 }
                 
             }); 
@@ -265,12 +266,12 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
    
        }
 
-  
+  getCitys_load();
   getStates_load();
  
 });
 
-</script>  
+</script>    
 
 <!-- <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script> -->
 <!-- <script>
