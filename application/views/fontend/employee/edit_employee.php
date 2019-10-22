@@ -7,10 +7,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-6">
-        <h1 class="page-heading">All Question's </h1>
+        <h1 class="page-heading">Edit Employee </h1>
       </div>
       <div class="col-md-6 col-sm-6">
-        <div class="breadCrumb"><a href="#.">Home</a> / <span>Add Employee</span></div>
+        <div class="breadCrumb"><a href="#.">Home</a> / <span>Edit Employee</span></div>
       </div>
     </div>
   </div>
@@ -250,7 +250,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
    
        }
     
-    function getCitys_load(id){
+    function getCitys_load(){
       //var id = $('#state_id').val();
       // alert(id);
         if(id){
