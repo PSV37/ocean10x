@@ -35,9 +35,10 @@ class Employer_Login extends CI_Controller
         if (!empty($result)) {
             $data['company_profile_id'] = $result->company_profile_id;
             $data['company_name']       = $result->company_name;
+            $data['comp_type']          = $result->comp_type;
             $this->session->set_userdata($data);
                 redirect('employer');
-                   } else {
+        } else {
             $this->session->set_flashdata('emp_msg',
                 '<div class="alert alert-danger alert-dismissable">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
@@ -49,13 +50,12 @@ class Employer_Login extends CI_Controller
     }
     
     
-    
-     public function forgot_pass()
+    public function forgot_pass()
     {
     	if($this->input->post('email')==''){
-	 $this->load->view('fontend/employer/forgot');
-	 return;
-	 }
+    	 $this->load->view('fontend/employer/forgot');
+    	 return;
+	    }
 	 
         $jobseeker_email    = $this->input->post('email');
         $result             = $this->employer_login_model->check_forgot_user_info($jobseeker_email);
@@ -63,8 +63,8 @@ class Employer_Login extends CI_Controller
             $data['job_seeker_id'] = $result->job_seeker_id;
             $data['user_name']     = $result->user_name;
             $this->session->set_userdata($data);
-             $this->session->set_flashdata('invalid', '<div class="alert alert-success text-center">An email has been sent to you to reset password.</div>');
-             redirect('employer_login');
+            $this->session->set_flashdata('invalid', '<div class="alert alert-success text-center">An email has been sent to you to reset password.</div>');
+            redirect('employer_login');
         } else {
             $this->session->set_flashdata('invalid', '<div class="alert alert-danger text-center">Sorry! Invalid email address provided!</div>');
             redirect('employer_login/forgot_pass');
@@ -74,15 +74,13 @@ class Employer_Login extends CI_Controller
      public function reset_password($hash = '')
     {
     
- 
     	if(!$this->input->post('password')){
-	 $this->load->view('fontend/employer/reset_password');
-	 return;
-	 }
+    	 $this->load->view('fontend/employer/reset_password');
+    	 return;
+    	}
 	
-	  $pass    = md5($this->input->post('password'));
+	    $pass    = md5($this->input->post('password'));
    
-         
         if ($this->employer_login_model->reset_account($hash,$pass)) {
             $this->session->set_flashdata('verify_msg', '<div class="alert alert-success text-center">Your password is successfully reset! Please login to access your account!</div>');
             redirect('employer_login');
