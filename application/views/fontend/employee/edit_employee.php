@@ -25,8 +25,8 @@
         <div class="userccount empdash">
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
            
-    		<form method="post" action="<?php echo base_url();?>employer/editemployee" enctype="multipart/form-data">
-
+    		<form method="post" action="<?php echo base_url();?>employer/postEditData" enctype="multipart/form-data">
+			 <input type="hidden" name="cid" id="cid" value="<?php echo $result['emp_id'];?>">
             	<div class="row">
 
                 <div class="col-md-12 col-sm-12 col-xs-12">
@@ -36,7 +36,7 @@
                             <div class="form-group">                                       
 							   <label for="exampleInputEmail1">Employee No <span class="required">*</span></label>
                                 
-								<input type="number" min="1" name="emp_no" id="emp_no" class="form-control">
+								<input type="number" min="1" name="emp_no" id="emp_no" class="form-control" value="<?php echo $result['emp_no']; ?>">
 								</div>
                         </div>
 

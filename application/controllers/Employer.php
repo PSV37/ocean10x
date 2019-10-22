@@ -1144,7 +1144,7 @@ public function deleteemployee()
 	$data['department'] = $this->Master_model->getMaster('department',$where=false);
 	
 	//echo $this->db->last_query(); die;
-	$this->load->view('fontend/employer/edit_employee',$data);
+	$this->load->view('fontend/employee/edit_employee',$data);
 	
 }
 public function postEditData(){
@@ -1165,7 +1165,7 @@ $this->form_validation->set_rules('emp_no', 'Employee No.', 'required');
 	$data['department'] = $this->Master_model->getMaster('department',$where=false);
 	
 	//echo $this->db->last_query(); die;
-	$this->load->view('fontend/employer/edit_employee',$data);	
+	$this->load->view('fontend/employee/edit_employee',$data);	
                 }
                 else
 				{
