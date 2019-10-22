@@ -198,69 +198,40 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 	   
 	   
 <script>
-	function getStates(id){
-		if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>Employer/getstate',
-                data:{id:id},
-                success:function(res){
-                    $('#state_id').html(res);
-                }
-				
-            }); 
-        }
-   
-	}
-	   
-	  
-	  function getCitys(id){
-		if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>Employer/getcity',
-                data:{id:id},
-                success:function(res){
-                    $('#city_id').html(res);
-                }
-				
-            }); 
-          }
-   
-	   }
-	   
-	  $(document).ready(function(){
+  $(document).ready(function(){
+
+
 
     function getStates_load(){
-        var id = $('#country_id').val();
+        var id = $('#country_name').val();
 
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>Employer/getstate',
+                url:'<?php echo base_url();?>admin/city_master/getstate',
                 data:{id:id},
                 success:function(res){
-                    $('#state_id').html(res);
-                    $('#state_id').val(<?php echo $result->state_id; ?>);
-                    
+                    $('#state_name').html(res);
+                    $('#state_name').val(<?php echo $result['state_id']; ?>);
+					getStates_load();
                 }
                 
             }); 
           }
    
        }
-    
-    function getCitys_load(){
-      //var id = $('#state_id').val();
-      // alert(id);
+       getStates_load();
+    });
+</script>
+<script>
+    function getStates(id){
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>Employer/getcity',
+                url:'<?php echo base_url();?>admin/city_master/getstate',
                 data:{id:id},
                 success:function(res){
-                    $('#city_id').html(res);
-                    $('#city_id').val(<?php echo $result->city_id; ?>);
+                    $('#state_name').html(res);
                 }
                 
             }); 
@@ -268,12 +239,8 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
    
        }
 
-  
-  getStates_load();
- 
-});
-
-</script>  
+       
+</script>
 
 <!-- <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script> -->
 <!-- <script>
