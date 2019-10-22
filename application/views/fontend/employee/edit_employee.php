@@ -7,7 +7,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-6">
-        <h1 class="page-heading">Edit Employee </h1>
+        <h1 class="page-heading">Edit Question's </h1>
       </div>
       <div class="col-md-6 col-sm-6">
         <div class="breadCrumb"><a href="#.">Home</a> / <span>Edit Employee</span></div>
@@ -242,7 +242,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                 success:function(res){
                     $('#state_id').html(res);
                     $('#state_id').val(<?php echo $result->state_id; ?>);
-                    
+                    getStates_load();
                 }
                 
             }); 
