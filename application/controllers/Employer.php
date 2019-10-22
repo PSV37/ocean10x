@@ -972,6 +972,7 @@ function getstate(){
 /*Add Employee*/
 
 public function addemployee(){
+	  $user_id = $this->session->userdata('company_profile_id');
 	if(isset($_POST['submit_employee'])){
 		$this->form_validation->set_rules('emp_no', 'Employee No.', 'required|min_length[3]|max_length[6]|alpha_numeric');
 		$this->form_validation->set_rules('emp_name', 'organization Name', 'required');
@@ -1003,7 +1004,7 @@ public function addemployee(){
 	                $NewFileName = $_FILES['photo']['name']; 
 	                
 	                
-					$config['upload_path'] = './employeephoto/';
+					$config['upload_path'] = 'employeephoto/';
 	                $config['allowed_types'] = 'gif|jpg|jpeg|png|pdf|doc|docx|odt|xlsm|xls|xlm|xla|xlsx|bmp|docm|dotx|dotm|docb|gif';
 	                $config['max_size']    = '1000000';
 	                //$config['max_width']  = '1024';
@@ -1040,6 +1041,7 @@ public function addemployee(){
 		$data['dept_id'] = $this->input->post('dept_id');
 		$data['address'] = $this->input->post('address');
 		$data['emp_created_date'] = $this->input->post('emp_created_date');
+		$data['emp_created_by'] = $user_id;
 		$data['photo'] =$NewFileName;
 		
 				
