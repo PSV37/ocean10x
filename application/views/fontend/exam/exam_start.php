@@ -38,9 +38,9 @@
                               $sr_no++;
                         ?>
                         
-                        <input type="text" name="job_id" id="job_id" value="<?php if(!empty($job_id))echo base64_encode($job_id); ?>">
-                        <input type="text" name="question_id" id="question_id" value="<?php echo $row['ques_id']; ?>">
-                        <label><?php echo "Q.No.-". $sr_no.':'.$row['question']; ?></label> 
+                        <input type="hidden" name="job_id" id="job_id" value="<?php if(!empty($job_id))echo base64_encode($job_id); ?>">
+                        <input type="hidden" name="question_id" id="question_id" value="<?php echo $row['ques_id']; ?>">
+                        <label><?php echo "Q.No-". $sr_no.':'.$row['question']; ?></label> 
                           <ul>
                             <li><input type="checkbox" name="option1" id="option1" value="<?php echo $row['option1']; ?>"><?php echo $row['option1'];?></li>
                             <li><input type="checkbox" name="option2" id="option2" value="<?php echo $row['option2'];   ?>"><?php echo $row['option2'];?></li>
