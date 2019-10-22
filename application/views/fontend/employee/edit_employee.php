@@ -59,38 +59,26 @@
                                 </div>
                                 </div>
 									 <div class="container-fluid">
-									 <div class="col-md-4">
+									 <div class="col-md-6">
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Email-Id<span class="required">*</span></label>
-                                    <input type="email" name="email" id="email" class="form-control">
+                                    <input type="email" name="email" id="email" class="form-control" value="<?php echo $result['email']; ?>">
 										</div>
 									</div>
 									
-										 <div class="col-md-4">
-								  <div class="form-group">
-                                        <label for="exampleInputEmail1">Password<span class="required">*</span></label>
-                                         <input type="password" name="password" id="password" class="form-control">
-										</div>
-									</div>
+										 
 								
 									 
-									 <div class="col-md-4">
+									 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Contact No.<span class="required">*</span></label>
-                                       <input type="tel" name="mobile" id="mobile" class="form-control">
+                                       <input type="tel" name="mobile" id="mobile" class="form-control" value="<?php echo $result['mobile']; ?>">
 									 </div>
                                 </div>
 								
 								
 								</div>
-								<div class="container-fluid">
-								<div class="col-md-8">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Photo<span class="required">*</span></label>
-                                       <input type="file" name="photo" id="photo" class="form-control">
-									 </div>
-                                </div>
-								</div>
+								
 										<div class="container-fluid">
 				    
 	                                    	
@@ -132,7 +120,8 @@
 									<div class="col-md-12">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Address<span class="required">*</span></label>
-									<textarea class="form-control ckeditor" name="address"></textarea> </div>
+									<textarea class="form-control ckeditor" name="address"><?php echo $result['emp_no']; ?></textarea>
+									</div>
 								   </div>
                                 </div>		 
 									 <div class="panel-body"></div>
