@@ -32,14 +32,18 @@
                   <form id="submit" class="submit-form" action="<?php echo base_url(); ?>exam/exam_start/<?php echo $this->input->get() ?>" method="post">
                     <div class="row">
                       <div class="col-md-12 col-sm-12">
-                        <?php if(!empty($questions)) foreach($questions as $row){?>
-                        <label><?php echo $row['question']; ?>:</label> 
+                        <?php 
+                          $sr_no=0;
+                            if(!empty($questions)) foreach($questions as $row){ 
+                              $sr_no++;
+                        ?>
+                        <label><?php echo $sr_no.':-'.$row['question']; ?>:</label> 
                           <ul>
-                            <li><?php echo $row['option1'];   ?></li>
-                            <li><?php echo $row['option2'];   ?></li>
-                            <li><?php echo $row['option3'];   ?></li>
-                            <li><?php echo $row['option4'];   ?></li>
-                            <li><?php echo $row['option5'];   ?></li>
+                            <li><input type="checkbox" name=""><?php echo $row['option1'];   ?></li>
+                            <li><input type="checkbox" name=""><?php echo $row['option2'];   ?></li>
+                            <li><input type="checkbox" name=""><?php echo $row['option3'];   ?></li>
+                            <li><input type="checkbox" name=""><?php echo $row['option4'];   ?></li>
+                            <li><input type="checkbox" name=""><?php echo $row['option5'];   ?></li>
                           </ul>
                         <?php } ?>
                           <button type="submit" class="btn btn-primary pull-right">Submit Test</button>
