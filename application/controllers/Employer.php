@@ -1055,6 +1055,9 @@ public function addemployee(){
 	}
 	}
 $data['result'] = $this->Master_model->getMaster('department' ,$select=false);
+$data['city'] = $this->Master_model->getMaster('city',$where=false);
+$data['country'] = $this->Master_model->getMaster('country',$where=false);
+$data['state'] = $this->Master_model->getMaster('state',$where=false);
 	$this->load->view('fontend/employee/add_employee',$data);		
 }
 
