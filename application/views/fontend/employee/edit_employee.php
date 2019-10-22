@@ -36,7 +36,7 @@
                             <div class="form-group">                                       
 							   <label for="exampleInputEmail1">Employee No <span class="required">*</span></label>
                                 
-								<input type="number" min="1" name="emp_no" id="emp_no" class="form-control">
+								<input type="number" min="1" name="emp_no" id="emp_no" class="form-control" value="<?php echo $result['emp_no']; ?>">
 								</div>
                         </div>
 
