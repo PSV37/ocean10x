@@ -54,7 +54,7 @@ class Exam extends MY_Seeker_Controller
 
                 $wherechks = "question_id='$question_id'";
                 $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
-
+                echo $this->db->last_query(); echo "<br><br>";
             $this->load->view('fontend/exam/exam_start',$data);
         } else {
             redirect('Exam');
