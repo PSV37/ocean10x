@@ -1039,6 +1039,9 @@ public function addemployee(){
 		$data['mobile'] = $this->input->post('mobile');
 		$data['password'] = $this->input->post('password');
 		$data['dept_id'] = $this->input->post('dept_id');
+		$data['country_id'] = $this->input->post('country_id');
+		$data['state_id'] = $this->input->post('state_id');
+		$data['city_id'] = $this->input->post('city_id');
 		$data['address'] = $this->input->post('address');
 		$data['emp_created_date'] = $this->input->post('emp_created_date');
 		$data['emp_created_by'] = $user_id;
