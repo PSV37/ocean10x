@@ -83,14 +83,13 @@
 								<div class="container-fluid">
 								<div class="col-md-4">
                                     <div class="form-group">
-									<label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
-									<select  name="ques_type" class="form-control" onchange="hideshowfun()" id="category">
-									                                      
-                                        <option value="MCQ"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ')echo "selected";?>>MCQ</option>
-										<option value="Subjective"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Subjective')echo "selected";?>>Subjective</option>
-										<option value="Practical"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Practical')echo "selected";?>>Practical</option>
-								
-									</select>
+									<label for="exampleInputEmail1">Department<span class="required">*</span></label>
+									<select  name="dept_id" id="dept_id" class="form-control">
+										<option value="">Select Department</option>
+										<?php foreach($result as $key){?>
+										<option value="<?php echo $key['dept_id']; ?>"><?php echo $key['department_name']; ?></option>
+										<?php } ?>
+								    </select>
 									 </div>
                                 </div>
 								</div>
