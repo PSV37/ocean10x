@@ -43,8 +43,19 @@ class Exam extends MY_Seeker_Controller
             $whereskill = "job_seeker_id='$jobseeker_id'";
             $data['skills'] = $this->Master_model->getMaster('job_seeker_skills`',$wherechk);
 
-            $wherechk = "job_id='$job_id'";
-            $data['topics'] = $this->Master_model->getMaster('job_test_topics',$wherechk);
+            foreach($data['skills'] as $skill_row)
+            {
+                $skill_row['skills'];
+                
+                $wherechk = "skill_name='".$skill_row['skills']."'";
+                $can_skill = $this->Master_model->getMaster('skill_master',$wherechk);
+
+                $wherechks = "technical_id='".$can_skill->id."'";
+                $data['questions'] = $this->Master_model->getMaster('questionbank',$wherechks);
+
+            }
+            // $wherechk = "job_id='$job_id'";
+            // $data['topics'] = $this->Master_model->getMaster('job_test_topics',$wherechk);
 
             $this->load->view('fontend/exam/exam_start',$data);
         } else {
