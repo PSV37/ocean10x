@@ -179,7 +179,7 @@ class Job extends MY_Fontend_Controller
                         $select_test = "is_test_required,job_post_id,company_profile_id";
                         // $data['job_test']= $this->Master_model->getMaster('job_posting', $select_test, $wherejob, $join = FALSE); 
                          $data['job_test'] = $this->Master_model->getMaster('job_posting',$wherejob,$join = FALSE, $order = false, $field = false, $select_test,$limit=false,$start=false, $search=false);
-                            echo  $this->last_query();
+                            echo  $this->db->last_query();
                             print_r($data['job_test']);die;
                         $this->load->view('fontend/alreadyapply');
                     } else {
@@ -189,7 +189,7 @@ class Job extends MY_Fontend_Controller
                         $select_test = "is_test_required,job_post_id,company_profile_id";
                         // $data['job_test']= $this->Master_model->getMaster('job_posting', $select_test, $wherejob, $join = FALSE); 
                          $data['job_test'] = $this->Master_model->getMaster('job_posting',$wherejob,$join = FALSE, $order = false, $field = false, $select_test,$limit=false,$start=false, $search=false);
-                            echo  $this->last_query();
+                            echo  $this->db->last_query();
                             print_r($data['job_test']);die;
                         $this->load->view('fontend/applysucess',$data);
                     }
