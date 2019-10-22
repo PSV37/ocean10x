@@ -32,7 +32,7 @@
       <div class="content col-md-9">
         <div class="userccount empdash">
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
-           
+           <div class="table-responsive">
             <table class="table table-bordered table-striped" id="dataTables-example">
               <thead>
 			  <th>Employee No.</th>
@@ -69,7 +69,7 @@
               
             </tbody>
           </table>
-          </table>
+          </div>
 
 
 
