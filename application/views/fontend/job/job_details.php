@@ -258,6 +258,7 @@ $jobseeker_id = $this->session->userdata('job_seeker_id');
             if ($test=='Yes') {
           ?>
           <div><b>Note: This job has a online test required. After submit test will open</b></div>
+          <div class="panel-body"></div>
         <?php }else{} ?>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
