@@ -248,7 +248,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
    
        }
     
-    function getCitys_load(id){
+    function getCitys_load(){
       //var id = $('#state_id').val();
       // alert(id);
         if(id){
