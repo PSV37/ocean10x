@@ -1068,13 +1068,13 @@ $data['state'] = $this->Master_model->getMaster('state',$where=false);
   public function allemployee(){
 	// $employer_id = $this->session->userdata('company_profile_id');
 	//$company_profile_id=$employer_id['company_profile_id'];
-	$where='employee.org_id="'.$company_profile_id.'" and employee.emp_status!= 0';
+	//$where='employee.org_id="'.$company_profile_id.'" and employee.emp_status!= 0';
 	//$data['result'] = $this->Master_model->getMaster('industry',$where=FALSE);
 	$join = array(
 		'department' => 'department.dept_id = employee.dept_id|INNER'
 	);
 	
-	$res = $this->Master_model->getMaster('employee',$where, $join);
+	$res = $this->Master_model->getMaster('employee',$where=false, $join);
 	$config = array();
 		$config["base_url"] = base_url('emp/index');
 		$config["total_rows"] = count($res);
