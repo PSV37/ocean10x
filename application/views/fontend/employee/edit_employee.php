@@ -231,7 +231,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 	   
 	  $(document).ready(function(){
 
-    function getStates_load(id){
+    function getStates_load(){
         var id = $('#country_id').val();
 
         if(id){
@@ -242,7 +242,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                 success:function(res){
                     $('#state_id').html(res);
                     $('#state_id').val(<?php echo $result->state_id; ?>);
-                     getCitys_load(<?php echo $result->state_id; ?>);
+                    
                 }
                 
             }); 
