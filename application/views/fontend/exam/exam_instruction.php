@@ -26,7 +26,7 @@
                   <?php echo $this->session->flashdata('change_password'); ?>
                   <form id="submit" class="submit-form" action="<?php echo base_url(); ?>job_seeker/change_password" method="post">
                     <div class="row">
-                      <div class="col-md-6 col-sm-12">
+                      <div class="col-md-12 col-sm-12">
                         <label>Instruction:</label> 
                           <ul>
                             <li>This is a FREE online test. DO NOT pay money to anyone to attend this test.</li>
@@ -37,8 +37,9 @@
                             <li>DO NOT refresh the page.</li>
                             <li>All the best.</li>
                           </ul>
+                          <button type="submit" class="btn btn-primary pull-right">Start Test</button>
                       </div>
-                      <button type="submit" class="btn btn-primary pull-right">Start Test</button>
+                      
                     </div>
                   </form>
                 </div>
