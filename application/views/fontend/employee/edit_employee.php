@@ -25,7 +25,7 @@
         <div class="userccount empdash">
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
            
-    		<form method="post" action="<?php echo base_url();?>employer/editemployee" enctype="multipart/form-data">
+    		<form method="post" action="<?php echo base_url();?>employer/postEditData" enctype="multipart/form-data">
 
             	<div class="row">
 
