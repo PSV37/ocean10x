@@ -99,7 +99,9 @@
 											<label class="control-label">State: <span class="required">*</span></label>
 											<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
 											<option value="">Select State</option>
-										     
+										     <?php foreach($state as $keys){?>
+											<option value="<?php echo $keys['state_id']; ?>"<?php if($result['state_id']==$keys['state_id']){ echo "selected"; }?>><?php echo $keys['state_name']; ?></option>
+											<?php } ?>
 											</select>
 										</div>
 	                                    </div>
