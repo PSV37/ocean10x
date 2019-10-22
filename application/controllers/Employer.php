@@ -1041,7 +1041,7 @@ public function addemployee(){
 		$data['dept_id'] = $this->input->post('dept_id');
 		$data['address'] = $this->input->post('address');
 		$data['emp_created_date'] = $this->input->post('emp_created_date');
-		$data['emp_created_date'] = $user_id;
+		$data['emp_created_by'] = $user_id;
 		$data['photo'] =$NewFileName;
 		
 				
