@@ -1033,6 +1033,7 @@ public function addemployee(){
 					
 		//$data['org_id'] = $this->input->post('org_id');		
 		$data['emp_no'] = $this->input->post('emp_no');
+		$data['org_id'] = $user_id;
 		$data['emp_name'] = $this->input->post('emp_name');
 		$data['email'] = $this->input->post('email');
 		$data['mobile'] = $this->input->post('mobile');
