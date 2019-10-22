@@ -25,7 +25,7 @@
        
         <div class="userccount empdash">
           <?php $employer_id=$this->session->userdata('company_profile_id'); 
-         echo $this->session->userdata('comp_type');
+                $type=$this->session->userdata('comp_type');
           ?>
           <h2>Welcome Back: <strong><?php echo $this->company_profile_model->company_name($employer_id); ?></strong></h2>
           

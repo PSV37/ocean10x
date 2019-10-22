@@ -1,10 +1,7 @@
 <?php 
+$company_profile_id = $this->session->userdata('company_profile_id');
 
-
-
-  $company_profile_id = $this->session->userdata('company_profile_id');
-
- $jobseeker_id = $this->session->userdata('job_seeker_id');
+$jobseeker_id = $this->session->userdata('job_seeker_id');
 
         if ($company_profile_id != null) {
 
@@ -244,15 +241,8 @@
           <div class="form-group">
             <label class="control-label col-sm-4" for="email">Company Name:</label>
             <div class="col-sm-8">
-              <input type="text" name="js_career_salary" disabled="" class="form-control" id="js_career_salary" placeholder=""
-
-                   value="<?php
-
-                   $company_id=$singlejob->company_profile_id;
-
-                         echo $this->company_profile_model->company_name($company_id);
-
-                       ?>">
+              <input type="text" name="js_career_salary" disabled="" class="form-control" id="js_career_salary" placeholder="" value="<?php $company_id=$singlejob->company_profile_id;
+                         echo $this->company_profile_model->company_name($company_id);?>">
             </div>
           </div>
           <input type="hidden" name="company_id" value="<?php echo $company_id; ?>">
@@ -264,12 +254,18 @@
                    >
             </div>
           </div>
-          <button type="submit" class="btn btn-default">Submit</button>
+          <?php $test=$singlejob->is_test_required;
+            if ($test=='Yes') {
+          ?>
+          <div><b>Note: This job has a online test required. After submit test will open</b></div>
+        <?php }else{} ?>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
         </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
+    
     </div>
   </div>
 </div>
