@@ -48,7 +48,6 @@ class Exam extends MY_Seeker_Controller
                 $skill_id = $skill_row['skills_required'];
                 $where_req_skill="technical_id IN (".$skill_id.")";
                 
-               // $data['questions'] = $this->Master_model->getMaster('questionbank',$where_req_skill);
                 $data['questions'] = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit='1',$start=false, $search=false);
             // $wherechk = "job_id='$job_id'";
             // $data['topics'] = $this->Master_model->getMaster('job_test_topics',$wherechk);
@@ -60,17 +59,30 @@ class Exam extends MY_Seeker_Controller
        
     }
 	 
-     public function insert_data()
-     {
+    public function insert_data()
+    {
 
         $jobseeker_id = $this->session->userdata('job_seeker_id');
-       // echo $job_id = base64_decode($job_id);
-        echo $this->input->post('job_id');
-       echo "ques:" .$this->input->post('question_id');
-        echo "option2:" .$this->input->post('option2');
+       
+        $jid= $this->input->post('job_id');
+        $job_id = base64_decode($jid);
+
+        $question_id = $this->input->post('question_id');
+        $option1 = $this->input->post('option1');
+        $option2 = $this->input->post('option2');
+        $option3 = $this->input->post('option3');
+        $option4 = $this->input->post('option4');
+        $option5 = $this->input->post('option5');
+
+        $wherechk = "job_id='$job_id' AND question_id='$question_id' AND js_id='$jobseeker_id'";
+        $testdata= $this->Master_model->getMaster('js_test_info',$wherechk);
+        echo $this->db->last_query(); echo "<br><br>";
+        print_r($testdata) ;die;
+
+
        
 
-     }
+    }
 	
   
 }
