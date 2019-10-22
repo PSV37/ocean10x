@@ -105,97 +105,11 @@
                                         <label for="exampleInputEmail1">Address<span class="required">*</span></label>
 									<textarea class="form-control ckeditor" name="address"></textarea> </div>
 								   </div>
-                                </div>
-								<div id="name">
-								<div class="container-fluid">
-								
-					<div class="form-group">
-			  
-				  
-				 <div class="col-sm-12">
-				   <label>Option 1:</label>
-                    <textarea name="option1" id="option1" class="form-control ckeditor"><?php if (!empty($edit_questionbank_info)) echo $row['option1'];?></textarea>
-                  </div>
-				  </div>
-				  </div>
-				  <div class="container-fluid">
-				  <div class="col-sm-12">
-				  <div class="form-group">
-                  
-				   <label>Option 2:</label>
-                    <textarea name="option2" id="option2" class="form-control ckeditor"><?php if (!empty($edit_questionbank_info)) echo $row['option2'];?></textarea>
-                  </div>
-				  </div>
-				  </div>
-				  <div class="container-fluid">
-				   <div class="col-sm-12">
-				  <div class="form-group">
-                 
-				   <label>Option 3:</label>
-                    <textarea name="option3" id="option3" class="form-control ckeditor"><?php if (!empty($edit_questionbank_info)) echo $row['option3'];?></textarea>
-                  </div>
-                </div>
-				</div>
-				<div class="container-fluid">
-				<div class="form-group">
-				
-				  <div class="col-sm-12">
-				   <label>Option 4:</label>
-                    <textarea name="option4" id="option4" class="form-control ckeditor"><?php if (!empty($edit_questionbank_info)) echo $row['option4'];?></textarea>
-                  </div>
-				  </div>
-				  </div>
-				  <div class="container-fluid">
-				  <div class="form-group">
-                  <div class="col-sm-12">
-				   <label>Option 5:</label>
-                    <textarea name="option5" id="option5" class="form-control ckeditor"><?php if (!empty($edit_questionbank_info)) echo $row['option5'];?></textarea>
-                  </div>
-				  </div>
-				  </div>
-				  <div class="container-fluid">
-				  <div class="form-group">
-				  <div class="col-sm-8">
-				  <div class="multiselect">
-				  <div class="selectBox" onclick="showCheckboxes()">
-				  
-				   <label>Correct Answer: <span class="required">*</span></label>
-				   <select  class="form-control" style="height:100px;">	
-					<option>Select Answer</option>
-					</select>
-					<div class="overSelect"></div>
-				   </div>
-				  <div id="checkboxes">
-     
-				<?php 
-					  if(!empty($options))
-						foreach($options as $key){
-							$checked="";
-							for($i=0;$i<sizeof($questionbank_answer);$i++){
-								if($key['options_id']==$questionbank_answer[$i]['answer_id']){
-									$checked ="checked";
-									break;
-								}
-							}
-							 
-						?>
-	                    <input type="checkbox" <?php echo $checked; ?> name="correct_answer[]" id="correct_answer[]" value="<?php echo $key['options_id'];?>">&nbsp;&nbsp;<?php echo $key['options_type']; ?>&nbsp;&nbsp;
-					<?php
-						}
-					?>
-			
-		 		</div>
-				   </div>
-				  </div>
-				  </div>
-				  </div>
-				  </div>
-				 
-		 
-								
-								<div class="box-body">
+                                </div>		 
+		 							
+								<!--<div class="box-body">
 								<input type="hidden" name="is_admin" value="1" class="form-control"> 
-								</div>
+								</div>-->
 				  <div class="container-fluid">
 				   <div class="col-sm-12">
 				  <div class="form-group" id="comp_name" style="display:none;">
@@ -206,8 +120,9 @@
 				  
                 </div>	
 				</div>
+				<span class="text-danger"><?php echo validation_errors(); ?></span>
                                 <div class="panel-body"></div>
-                                <button type="submit" class="btn bg-navy" type="submit">Save Question
+                                <button type="submit" class="btn bg-navy" type="submit" name="submit_employee" id="submit_employee">Add Employe
                                 </button><br/><br/>
                             
                         
@@ -215,7 +130,7 @@
                         
                     </div>
 
-                </form>
+            </form>
 
 
 
