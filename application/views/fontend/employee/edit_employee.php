@@ -51,9 +51,9 @@
 									<label for="exampleInputEmail1">Department<span class="required">*</span></label>
 									<select  name="dept_id" id="dept_id" class="form-control">
 										<option value="">Select Department</option>
-										<?php foreach($result as $key){?>
-										<option value="<?php echo $key['dept_id']; ?>"><?php echo $key['department_name']; ?></option>
-										<?php } ?>
+										<?php foreach($department as $key){?>
+					<option value="<?php echo $key['dept_id']; ?>"<?php if($result['dept_id'] == $key['dept_id']){ echo "selected"; }?>><?php echo $key['department_name']; ?></option>
+					<?php } ?>
 								    </select>
 									 </div>
                                 </div>
