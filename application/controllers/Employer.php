@@ -38,17 +38,17 @@ class Employer extends MY_Employer_Controller
             $company_profile = array(
                 'company_name'     => $this->input->post('company_name'),
                 'company_url'      => $this->input->post('company_url'),
-				'country_code'    => $this->input->post('country_code'),
+				'country_code'     => $this->input->post('country_code'),
                 'company_phone'    => $this->input->post('company_phone'),
                 'company_category' => $this->input->post('company_category'),
                 'contact_name'     => $this->input->post('contact_name'),
-				'hot_jobs'     => $this->input->post('hot_jobs'),
+				'hot_jobs'         => $this->input->post('hot_jobs'),
 				'company_career_link'     => $this->input->post('company_career_link'),
                 'company_service'  => $this->input->post('company_service'),
                 'company_address'  => $this->input->post('company_address'),
-				'country_id'  => $this->input->post('country_id'),
-				'state_id'  => $this->input->post('state_id'),
-				'city_id'  => $this->input->post('city_id'),
+				'country_id'       => $this->input->post('country_id'),
+				'state_id'         => $this->input->post('state_id'),
+				'city_id'          => $this->input->post('city_id'),
 				'company_aboutus'  => $this->input->post('company_aboutus'),
 
                 'cont_person_email'    => $this->input->post('cont_person_email'),
@@ -845,10 +845,8 @@ function getstate(){
         $where_lineitemlevel = "lineitemlevel.lineitemlevel_status='1'";
         $data['lineitemlevel'] = $this->Master_model->getMaster('lineitemlevel',$where_lineitemlevel);
         
-        
         $data['questionbank'] = $this->Master_model->getMaster('questionbank');
 
-        //$this->load->view('admin/jobsetting/questionbank_master', $data);
         $this->load->view('fontend/employer/add_new_question', $data);
     }
 
@@ -857,20 +855,20 @@ function getstate(){
             $user_id = $this->session->userdata('company_profile_id');
             
             $state_dt=array(
-                'technical_id' => $this->input->post('technical_id'),
-                'topic_id' => $this->input->post('topic_id'),
-                'subtopic_id' => $this->input->post('subtopic_id'),
-                'lineitem_id' => $this->input->post('lineitem_id'),
-                'lineitemlevel_id' => $this->input->post('lineitemlevel_id'),
-                'level' => $this->input->post('level'),
-                'ques_type' => $this->input->post('ques_type'),
-                'question' => $this->input->post('question'),
-                'option1' => $this->input->post('option1'),
-                'option2' => $this->input->post('option2'),
-                'option3' => $this->input->post('option3'),
-                'option4' => $this->input->post('option4'),
-                'option5' => $this->input->post('option5'),
-                'is_admin' => $this->input->post('is_admin')
+                'technical_id'      => $this->input->post('technical_id'),
+                'topic_id'          => $this->input->post('topic_id'),
+                'subtopic_id'       => $this->input->post('subtopic_id'),
+                'lineitem_id'       => $this->input->post('lineitem_id'),
+                'lineitemlevel_id'  => $this->input->post('lineitemlevel_id'),
+                'level'             => $this->input->post('level'),
+                'ques_type'         => $this->input->post('ques_type'),
+                'question'          => $this->input->post('question'),
+                'option1'           => $this->input->post('option1'),
+                'option2'           => $this->input->post('option2'),
+                'option3'           => $this->input->post('option3'),
+                'option4'           => $this->input->post('option4'),
+                'option5'           => $this->input->post('option5'),
+                'is_admin'          => $this->input->post('is_admin')
             );
 
             if(empty($id)){
@@ -939,7 +937,7 @@ function getstate(){
 
     public function edit_questionbank($id){
         $data['title']="Edit Questionbank";
-        //$where_opt= "options.status=1";
+
         $data['options'] = $this->Master_model->getMaster('options');
         
         $data['questionbank'] = $this->Master_model->getMaster('questionbank',$where_all,$join_emp);
@@ -956,7 +954,6 @@ function getstate(){
         $where_skill= "status=1";
         $data['skill_master'] = $this->Master_model->getMaster('skill_master', $where_skill);
         
-        // $this->load->view('admin/jobsetting/questionbank_master',$data);
         $this->load->view('fontend/employer/add_new_question', $data);
     }
 
