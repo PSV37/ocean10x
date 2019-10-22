@@ -1076,7 +1076,7 @@ $data['state'] = $this->Master_model->getMaster('state',$where=false);
 	
 	$res = $this->Master_model->getMaster('employee',$where, $join);
 	$config = array();
-		$config["base_url"] = base_url('emp/index');
+		$config["base_url"] = base_url('employer/index');
 		$config["total_rows"] = count($res);
 		$config['per_page'] =5;
 		$config['uri_segment'] = 3;
