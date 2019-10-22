@@ -19,9 +19,10 @@ $jobseeker_id = $this->session->userdata('job_seeker_id');
         	 <h2 align="center">Success <span>!</span></h2> 
             <p>Sucessfully apply this job . <br>
               <?php if(!empty($job_test)){
-                echo 'status - '.$job_test->is_test_required;
-                echo "job id -" .$job_test->job_post_id;
-                $job_test->company_profile_id;
+                foreach ($job_test as $value) {}
+                echo 'status - '.$value['is_test_required'];
+                echo "job id -" .$value['job_post_id'];
+                // $job_test->company_profile_id;
                 
               } ?>
 
