@@ -99,19 +99,8 @@
 									 </div>
                                 </div>
 								</div>
-								<div class="container-fluid">
-									<div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Address<span class="required">*</span></label>
-									<textarea class="form-control ckeditor" name="address"></textarea> </div>
-								   </div>
-                                </div>		 
-		 							
-								<!--<div class="box-body">
-								<input type="hidden" name="is_admin" value="1" class="form-control"> 
-								</div>-->
-				  <div class="container-fluid">
-				    <div class="row">
+										<div class="container-fluid">
+				    
 	                                    	
 	                                        <div class="col-md-4 col-sm-4">
 	                                        	<div class="formrow">
@@ -143,17 +132,24 @@
 											<option value="">Select City</option>
 											 
 											</select>
-	                                    </div>
-				</div>
-				<span class="text-danger"><?php echo validation_errors(); ?></span>
-                                <div class="panel-body"></div>
+											</div>
+										</div>
+				                                             
+										</div>
+								<div class="container-fluid">
+									<div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Address<span class="required">*</span></label>
+									<textarea class="form-control ckeditor" name="address"></textarea> </div>
+								   </div>
+                                </div>		 
+		 							<span class="text-danger"><?php echo validation_errors(); ?></span>
+								<!--<div class="box-body">
+								<input type="hidden" name="is_admin" value="1" class="form-control"> 
+								</div>-->
+								 <div class="panel-body"></div>
                                 <button type="submit" class="btn bg-navy" type="submit" name="submit_employee" id="submit_employee">Add Employe
                                 </button><br/><br/>
-                            
-                        
-
-                        
-                    </div>
 
             </form>
 
