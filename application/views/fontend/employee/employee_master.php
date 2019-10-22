@@ -32,49 +32,44 @@
       <div class="content col-md-9">
         <div class="userccount empdash">
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
-           
+           <div class="table-responsive">
             <table class="table table-bordered table-striped" id="dataTables-example">
               <thead>
-                <tr>
-                  <th class="active">SL</th>
-                  <th class="active">Subject</th>
-                  <th class="active">Topic</th>
-                  <th class="active">Subtopic</th>
-                  <th class="active">Line Item 1</th>
-                  <th class="active">Line Item 2</th>
-                  <th class="active">Question Type</th>
-                  <th class="active">Question</th>
-                  <th class="active col-sm-2">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php $key = 1; if (!empty($questionbank)): foreach ($questionbank as $ct_row) : ?>
-                    <tr>
-                      <td><?php echo $key ?></td>
-                      <td><?php echo $ct_row['skill_name'] ?></td>
-                      <td><?php echo $ct_row['topic_name'] ?></td>
-                      <td><?php echo $ct_row['subtopic_name'] ?></td>
-                      <td><?php echo $ct_row['title'] ?></td>
-                      <td><?php echo $ct_row['titles'] ?></td>
-                      <td><?php echo $ct_row['ques_type'] ?></td>
-                      <td><?php echo $ct_row['question'] ?></td>
-                      <td>
-                          <?php echo btn_edit('employer/edit_questionbank/' . $ct_row['ques_id']); ?>
-                          <?php echo btn_delete('employer/delete_questionbank/' . $ct_row['ques_id']); ?>
-                      </td>
-                  </tr>
-                  <?php
-                      $key++;
-                      endforeach;
-                  ?>
-                  <?php else : ?> 
-                      <td colspan="3">
-                          <strong>There is no record for display</strong>
-                      </td>
-                  <?php
-                    endif; ?>
-              </tbody>
+			  <th>Employee No.</th>
+			  <th>Name</th>
+			  <th>Email Id</th>
+			  <th>Mobile No.</th>
+			  <th>Department</th>
+			  <th>Address</th>
+			  <th>Created Date</th>
+			  <th>Updated Date</th>
+			  <!--<th>Status</th>-->
+			  <th>Actions</th>
+            </thead>
+            <tbody>
+			<?php foreach($result as $key){
+				?>
+              <tr>
+				<td><?php echo $key['emp_no']; ?></td>
+				<td><?php echo $key['emp_name']; ?></td>
+				<td><?php echo $key['email']; ?></td>
+				<td><?php echo $key['mobile']; ?></td>	
+				<td><?php echo $key['department_name']; ?></td>				
+				<td><?php echo $key['address']; ?></td>
+				<td><?php echo $key['emp_created_date']; ?></td>
+				<td><?php echo $key['emp_updated_date']; ?></td>
+				<!--<td><?php if($key['emp_status']=='1'){ echo "Active"; }else{ echo "Inactive"; } ?></td>-->
+                <td>
+                 &nbsp;&nbsp; <a href="<?php echo base_url();?>emp/editemployee?id=<?php echo $key['emp_id']; ?>"><i class="fa fa-pencil"></i></a>
+                 &nbsp;&nbsp; <!--<a href="<?php echo base_url();?>emp/deletestatus?id=<?php echo $key['emp_id']; ?>"> <i class="fa fa-toggle-on"></i></a>-->
+                &nbsp;&nbsp; <a href='#' "title='Delete Record' data-toggle="modal" data-target="#deleteModal"  onclick="$('#del_id').val('<?php echo $key['emp_id'];?>');"><i class="fa fa-trash-o"></i></a>
+				</td>
+              </tr>
+			<?php } ?>
+              
+            </tbody>
           </table>
+          </div>
 
 
 
