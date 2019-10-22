@@ -32,7 +32,7 @@
                   <form id="submit" class="submit-form" action="<?php echo base_url(); ?>exam/exam_start/<?php echo $this->input->get() ?>" method="post">
                     <div class="row">
                       <div class="col-md-12 col-sm-12">
-
+                        <?php print_r($skills); ?>
                         <label>Instruction:</label> 
                           <ul>
                             <li>This is a FREE online test. DO NOT pay money to anyone to attend this test.</li>

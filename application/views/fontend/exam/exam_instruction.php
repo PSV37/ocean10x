@@ -25,7 +25,7 @@
               <div class="contentbox">
                 <div class="formpanel">
                   <!-- <?php echo $this->session->flashdata('change_password'); ?> -->
-                  <form id="submit" class="submit-form" action="<?php echo base_url(); ?>exam/exam_start/<?php if(!empty($job_id))echo $job_id; ?>" method="post">
+                  <form id="submit" class="submit-form" action="<?php echo base_url(); ?>exam/exam_start/<?php if(!empty($job_id))echo base64_encode($job_id); ?>" method="post">
                     <div class="row">
                       <div class="col-md-12 col-sm-12">
                         <label>Instruction:</label> 
