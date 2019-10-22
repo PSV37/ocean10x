@@ -1177,13 +1177,13 @@ $this->form_validation->set_rules('emp_no', 'Employee No.', 'required');
 		$data['mobile'] = $this->input->post('mobile');
 		$data['dept_id'] = $this->input->post('dept_id');
 		$data['address'] = $this->input->post('address');
-	$data['emp_status'] = $this->input->post('emp_status');
-	$data['emp_updated_date'] = date('Y-m-d H:i:s');
-	$data['emp_updated_by'] = $user_id;
-	$id = $this->input->post('cid');
-	$where['emp_id']=$id;
-	$this->Master_model->master_update($data,'employee',$where);
-	redirect(base_url().'employer/allemployee');
+		$data['emp_status'] = $this->input->post('emp_status');
+		$data['emp_updated_date'] = date('Y-m-d H:i:s');
+		$data['emp_updated_by'] = $user_id;
+		$id = $this->input->post('cid');
+		$where['emp_id']=$id;
+		$this->Master_model->master_update($data,'employee',$where);
+		redirect(base_url().'employer/allemployee');
 					}
 }
 
