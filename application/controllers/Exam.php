@@ -30,7 +30,7 @@ class Exam extends MY_Seeker_Controller
         }
        
     }
-	public function index()
+	public function exam_start()
     {   
        //$job_id = base64_decode($id);
         // if (!empty($job_id)) {
