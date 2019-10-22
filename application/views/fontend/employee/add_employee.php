@@ -135,13 +135,10 @@
 									<textarea class="form-control ckeditor" name="address"></textarea> </div>
 								   </div>
                                 </div>		 
-		 							<span class="text-danger"><?php echo validation_errors(); ?></span>
-								<!--<div class="box-body">
-								<input type="hidden" name="is_admin" value="1" class="form-control"> 
-								</div>-->
-								 <div class="panel-body"></div>
+									 <div class="panel-body"></div>
                                 <button type="submit" class="btn bg-navy" type="submit" name="submit_employee" id="submit_employee">Add Employe
                                 </button>
+								<span class="text-danger" style="color:red;"><?php echo validation_errors(); ?></span>
 
             </form>
 
