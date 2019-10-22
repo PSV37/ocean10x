@@ -32,18 +32,17 @@
                   <form id="submit" class="submit-form" action="<?php echo base_url(); ?>exam/exam_start/<?php echo $this->input->get() ?>" method="post">
                     <div class="row">
                       <div class="col-md-12 col-sm-12">
-                        <?php print_r($questions); ?>
-                        <label>Instruction:</label> 
+                        <?php print_r($questions); foreach($questions as $row){?>
+                        <label><?php echo $row['question']; ?>:</label> 
                           <ul>
-                            <li>This is a FREE online test. DO NOT pay money to anyone to attend this test.</li>
-                            <li>All Questions are compulsory.</li>
-                            <li>Total number of questions : 20.</li>
-                            <li>Time alloted : 30 minutes.</li>
-                            <li>Each question carry 1 mark, no negative marks.</li>
-                            <li>DO NOT refresh the page.</li>
-                            <li>All the best.</li>
+                            <li><?php echo $row['option1'];   ?></li>
+                            <li><?php echo $row['option2'];   ?></li>
+                            <li><?php echo $row['option3'];   ?></li>
+                            <li><?php echo $row['option4'];   ?></li>
+                            <li><?php echo $row['option5'];   ?></li>
                           </ul>
-                          <button type="submit" class="btn btn-primary pull-right">Start Test</button>
+                        <?php } ?>
+                          <button type="submit" class="btn btn-primary pull-right">Submit Test</button>
                       </div>
                     </div>
                   </form>
