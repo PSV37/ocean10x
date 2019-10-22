@@ -1141,7 +1141,6 @@ public function deleteemployee()
 	$c_id = $this->input->get('id');
 	$where = "emp_id='$c_id'";
 	$data['result'] = $this->Master_model->get_master_row('employee',$select = FALSE,$where);
-	$data['employee'] = $this->Master_model->getMaster('employee',$select = FALSE,$where);
 	$data['department'] = $this->Master_model->getMaster('department',$where=false);
 	$data['country'] = $this->Master_model->getMaster('country',$where=false);
 	$data['state'] = $this->Master_model->getMaster('state',$where=false);
@@ -1165,7 +1164,6 @@ $this->form_validation->set_rules('emp_no', 'Employee No.', 'required');
                         $c_id = $this->input->get('id');
 	$where = "emp_id='$c_id'";
 	$data['result'] = $this->Master_model->get_master_row('employee',$select = FALSE,$where);
-	$data['employee'] = $this->Master_model->getMaster('employee',$select = FALSE,$where);
 	$data['department'] = $this->Master_model->getMaster('department',$where=false);
 	$data['country'] = $this->Master_model->getMaster('country',$where=false);
 	$data['state'] = $this->Master_model->getMaster('state',$where=false);
