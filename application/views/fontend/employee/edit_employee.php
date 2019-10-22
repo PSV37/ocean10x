@@ -269,7 +269,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
        }
 
   
-  getStates_load();
+  getCitys_load();
  
 });
 
