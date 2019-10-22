@@ -229,7 +229,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 	   
 	  $(document).ready(function(){
 
-    function getStates_load(){
+    function getStates_load(id){
         var id = $('#country_id').val();
 
         if(id){
@@ -248,7 +248,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
    
        }
     
-    function getCitys_load(){
+    function getCitys_load(id){
       //var id = $('#state_id').val();
       // alert(id);
         if(id){
