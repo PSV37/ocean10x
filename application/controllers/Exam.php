@@ -49,9 +49,9 @@ class Exam extends MY_Seeker_Controller
                 
                 $wherechk = "skill_name='".$skill_row['skills']."'";
                // $select ="skill_master.id";
-                $can_skill = $this->Master_model->getMaster('skill_master',$wherechk,$join = FALSE, $order = false, $field = false, $select=false,$limit=false,$start=false, $search=false);
+                $data['can_skill'] = $this->Master_model->getMaster('skill_master',$wherechk,$join = FALSE, $order = false, $field = false, $select=false,$limit=false,$start=false, $search=false);
                //echo $this->db->last_query(); echo "<br><br>";
-               foreach($can_skill as $skill_id)
+               foreach($data['can_skill'] as $skill_id)
           
                {
                     $wherechks = "technical_id='".$skill_id['id']."'";
