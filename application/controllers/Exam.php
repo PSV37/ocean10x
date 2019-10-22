@@ -24,13 +24,15 @@ class Exam extends MY_Seeker_Controller
         if (!empty($job_id)) {
                  
             $data['title'] = 'Exam Instructions';
-            $this->load->view('fontend/exam/exam_instruction');
+
+            $data['job_id'] = $job_id;
+            $this->load->view('fontend/exam/exam_instruction',$data);
         } else {
             redirect('/');
         }
        
     }
-	public function exam_start()
+	public function exam_start($job_id=null)
     {   
        //$job_id = base64_decode($id);
         // if (!empty($job_id)) {

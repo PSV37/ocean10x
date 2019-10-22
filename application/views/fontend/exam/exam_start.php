@@ -29,7 +29,7 @@
                     Time Left : <span id='timer'></span>
                   </h3>
 
-                  <form id="submit" class="submit-form" action="<?php echo base_url(); ?>exam/exam_start" method="post">
+                  <form id="submit" class="submit-form" action="<?php echo base_url(); ?>exam/exam_start/<?php echo $this->input->get() ?>" method="post">
                     <div class="row">
                       <div class="col-md-12 col-sm-12">
 
