@@ -16,7 +16,7 @@
   </div>
 </div>
 <!-- Page Title End -->
-<?php print_r $result;?>
+
 <div class="section lb">
   <div class="container">
     <div class="row">
@@ -24,7 +24,6 @@
       <div class="content col-md-9">
         <div class="userccount empdash">
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
-           
     		<form method="post" action="<?php echo base_url();?>employer/postEditData" enctype="multipart/form-data">
 			 <input type="hidden" name="cid" id="cid" value="<?php echo $result['emp_id'];?>">
             	<div class="row">
