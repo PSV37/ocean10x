@@ -165,7 +165,6 @@ class Job extends MY_Fontend_Controller
                
                 $this->load->view('fontend/applysucess');
                    
-            
             }else{
 
                     $apply_info   = array(
@@ -174,15 +173,18 @@ class Job extends MY_Fontend_Controller
                         'job_post_id'     => $job_post_id,
                         'expected_salary' => $this->input->post('expected_salary'),
                     );
-                if ($this->job_apply_model->check_apply_job($jobseeker_id, $company_id, $job_post_id)) {
-                    $this->load->view('fontend/alreadyapply');
-                } else {
+
+                    if ($this->job_apply_model->check_apply_job($jobseeker_id, $company_id, $job_post_id)) {
+                        $this->load->view('fontend/alreadyapply');
+                    } else {
                         $this->job_apply_model->insert($apply_info);
-                        $this->load->view('fontend/applysucess');
+
+                        $wherejob = "job_post_id='$job_post_id' AND company_profile_id='$company_id'";
+                        $select_test = "is_test_required,job_post_id,company_profile_id";
+                        $data['job_test']=$this->Master_model->get_master_row('job_posting', $select_test, $wherejob, $join = FALSE) 
+                        $this->load->view('fontend/applysucess',$data);
                     }
             }
-            
-
             
         } else {
             redirect('job');
