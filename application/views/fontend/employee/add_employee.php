@@ -69,9 +69,7 @@
 										 <div class="col-md-4">
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Password<span class="required">*</span></label>
-                                     <select id="lineitemlevel_id"  name="lineitemlevel_id" class="form-control">
-                                           
-                                        </select> 
+                                         <input type="password" name="password" id="password" class="form-control">
 										</div>
 									</div>
 								
