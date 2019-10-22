@@ -1067,7 +1067,7 @@ $data['state'] = $this->Master_model->getMaster('state',$where=false);
 
   public function allemployee(){
 	$employer = $this->session->userdata('company_profile_id');
-	$company=$employer['org_id'];
+	$company=$employer['company_profile_id'];
 	$where='employee.org_id="'.$company.'" and employee.emp_status!= 0';
 	//$data['result'] = $this->Master_model->getMaster('industry',$where=FALSE);
 	$join = array(
