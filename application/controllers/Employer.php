@@ -1173,7 +1173,6 @@ $this->form_validation->set_rules('emp_no', 'Employee No.', 'required');
 					
 		$data['emp_no'] = $this->input->post('emp_no');
 		$data['emp_name'] = $this->input->post('emp_name');
-		$data['emp_salary'] = $this->input->post('emp_salary');
 		$data['email'] = $this->input->post('email');
 		$data['mobile'] = $this->input->post('mobile');
 		$data['dept_id'] = $this->input->post('dept_id');
