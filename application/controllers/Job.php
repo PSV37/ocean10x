@@ -181,7 +181,8 @@ class Job extends MY_Fontend_Controller
 
                         $wherejob = "job_post_id='$job_post_id' AND company_profile_id='$company_id'";
                         $select_test = "is_test_required,job_post_id,company_profile_id";
-                        $data['job_test']= $this->Master_model->get_master_row('job_posting', $select_test, $wherejob, $join = FALSE); 
+                        // $data['job_test']= $this->Master_model->getMaster('job_posting', $select_test, $wherejob, $join = FALSE); 
+                         $data['job_test'] = $this->Master_model->getMaster('job_posting',$wherejob,$join = FALSE, $order = false, $field = false, $select_test,$limit=false,$start=false, $search=false);
                         $this->load->view('fontend/applysucess',$data);
                     }
             }
