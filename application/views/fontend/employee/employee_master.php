@@ -70,7 +70,13 @@
             </tbody>
           </table>
           </div>
-
+		 <div class="container-fluid">
+       <div class="col-md-10"></div>
+		  <div class="col-md-2">
+			<span><?php echo $links; ?></span>
+		  </div>
+         
+      </div>
 
 
           </div>
