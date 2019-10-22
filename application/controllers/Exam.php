@@ -50,7 +50,7 @@ class Exam extends MY_Seeker_Controller
                 
                 $data['questions'] = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit='1',$start=false, $search=false);
                 foreach($data['questions'] as $qrow){}
-                $question_id = $qrow['question_id'];
+                $question_id = $qrow['ques_id'];
 
                 $wherechks = "question_id='$question_id'";
                 $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
