@@ -16,7 +16,7 @@
   </div>
 </div>
 <!-- Page Title End -->
-<?php echo print_r $result;?>
+<?php print_r $result;?>
 <div class="section lb">
   <div class="container">
     <div class="row">
