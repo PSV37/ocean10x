@@ -34,14 +34,22 @@ class Exam extends MY_Seeker_Controller
     }
 	public function exam_start($job_id=null)
     {   
-       //$job_id = base64_decode($id);
-        // if (!empty($job_id)) {
+        $jobseeker_id = $this->session->userdata('job_seeker_id');
+       $job_id = base64_decode($job_id);
+        if (!empty($job_id)) {
                  
-            $data['title'] = 'Exam Instructions';
-            $this->load->view('fontend/exam/exam_start');
-        // } else {
-        //     redirect('/');
-        // }
+            $data['title'] = 'Exam Start';
+
+            $whereskill = "job_seeker_id='$jobseeker_id'";
+            $data['skills'] = $this->Master_model->getMaster('job_seeker_skills`',$wherechk);
+
+            $wherechk = "job_id='$job_id'";
+            $data['topics'] = $this->Master_model->getMaster('job_test_topics',$wherechk);
+
+            $this->load->view('fontend/exam/exam_start',$data);
+        } else {
+            redirect('Exam');
+        }
        
     }
 	
