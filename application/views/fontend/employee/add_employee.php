@@ -2,7 +2,7 @@
     $this->load->view('fontend/layout/employer_header.php');
 ?>
 <style>
-.text-danger{
+.one{
 	
 	color:#ff0000;
 			}
@@ -147,7 +147,7 @@
 								
             </form>
 
-			<span class="text-danger"><?php echo validation_errors(); ?></span>
+			<span class="one"><?php echo validation_errors(); ?></span>
 
 
 
