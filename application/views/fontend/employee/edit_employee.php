@@ -125,7 +125,7 @@
 								   </div>
                                 </div>		 
 									 <div class="panel-body"></div>
-                                <button type="submit" class="btn bg-navy" type="submit" name="submit_employee" id="submit_employee">Add Employe
+                                <button type="submit" class="btn bg-navy" type="submit">Edit Employe
                                 </button>
 								
 
