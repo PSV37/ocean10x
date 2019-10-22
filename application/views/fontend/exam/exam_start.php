@@ -72,7 +72,7 @@
       e.preventDefault();
     
     $.ajax({
-              url: "<?php echo base_url();?>exam/insert_data'",
+              url: "<?php echo base_url();?>exam/insert_data",
               type: "POST",
               data: new FormData(this),
               contentType:false,
