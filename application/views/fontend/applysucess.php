@@ -26,7 +26,7 @@ $jobseeker_id = $this->session->userdata('job_seeker_id');
                 if($status=='Yes')
                 {
               ?>
-                <br>If you want's to increase your chance for this job please go through online test. <br><a href="<?php echo base_url(); ?>/exam/<?php echo $job_id; ?>" class="btn btn-primary">Go Now </a>&nbsp;&nbsp; <a href="<?php echo base_url(); ?>" class="btn btn-primary">Go Later </a>.</p>
+                <br>If you want's to increase your chance for this job please go through online test. <br><a href="<?php echo base_url(); ?>/exam/index/<?php echo base64_encode($job_id); ?>" class="btn btn-primary">Go Now </a>&nbsp;&nbsp; <a href="<?php echo base_url(); ?>" class="btn btn-primary">Go Later </a>.</p>
             
             <?php }else{ ?>
                 <br>Please go to <a href="<?php echo base_url(); ?>">Home </a> or search something from search form.</p>
