@@ -60,11 +60,12 @@ class Exam extends MY_Seeker_Controller
        
     }
 	 
-     public function insert_data($id=null)
+     public function insert_data()
      {
 
         $jobseeker_id = $this->session->userdata('job_seeker_id');
-        echo $job_id = base64_decode($job_id);
+       // echo $job_id = base64_decode($job_id);
+        echo $this->input->post('job_id');
        echo "ques:" .$this->input->post('question_id');
         echo "option2:" .$this->input->post('option2');
        
