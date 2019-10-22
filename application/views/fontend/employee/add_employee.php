@@ -46,12 +46,17 @@
                                          <input type="text" name="emp_name" id="emp_name" class="form-control">
                                     </div>
                                 </div>
-									 <div class="col-md-4">
-								  <div class="form-group">
-                                        <label for="exampleInputEmail1">Salary<span class="required">*</span></label>
-                                    <input type="text" name="emp_salary" id="emp_salary" class="form-control">
-										</div>
-									</div>
+									<div class="col-md-4">
+                                    <div class="form-group">
+									<label for="exampleInputEmail1">Department<span class="required">*</span></label>
+									<select  name="dept_id" id="dept_id" class="form-control">
+										<option value="">Select Department</option>
+										<?php foreach($result as $key){?>
+										<option value="<?php echo $key['dept_id']; ?>"><?php echo $key['department_name']; ?></option>
+										<?php } ?>
+								    </select>
+									 </div>
+                                </div>
                                 </div>
 									 <div class="container-fluid">
 									 <div class="col-md-4">
@@ -81,17 +86,6 @@
 								
 								</div>
 								<div class="container-fluid">
-								<div class="col-md-4">
-                                    <div class="form-group">
-									<label for="exampleInputEmail1">Department<span class="required">*</span></label>
-									<select  name="dept_id" id="dept_id" class="form-control">
-										<option value="">Select Department</option>
-										<?php foreach($result as $key){?>
-										<option value="<?php echo $key['dept_id']; ?>"><?php echo $key['department_name']; ?></option>
-										<?php } ?>
-								    </select>
-									 </div>
-                                </div>
 								<div class="col-md-8">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Photo<span class="required">*</span></label>
