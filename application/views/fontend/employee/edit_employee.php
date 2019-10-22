@@ -43,7 +43,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Name <span class="required">*</span></label>
-                                         <input type="text" name="emp_name" id="emp_name" class="form-control">
+                                         <input type="text" name="emp_name" id="emp_name" class="form-control" value="<?php echo $result['emp_no']; ?>">
                                     </div>
                                 </div>
 									<div class="col-md-4">
