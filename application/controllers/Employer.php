@@ -1132,6 +1132,60 @@ public function deleteemployee()
 
         
     }
+	
+	
+	/*Edit Employee*/
+	
+	
+	public function editemployee(){
+	$c_id = $this->input->get('id');
+	$where = "emp_id='$c_id'";
+	$data['result'] = $this->Master_model->get_master_row('employee',$select = FALSE,$where);
+	$data['department'] = $this->Master_model->getMaster('department',$where=false);
+	
+	//echo $this->db->last_query(); die;
+	$this->load->view('employer/edit_employee',$data);
+	
+}
+public function postEditData(){
+$this->form_validation->set_rules('emp_no', 'Employee No.', 'required');
+		$this->form_validation->set_rules('emp_name', 'organization Name', 'required');
+		$this->form_validation->set_rules('email', 'Email Id', 'required');
+		$this->form_validation->set_rules('mobile', ' Contact No.', 'required');
+		$this->form_validation->set_rules('dept_id', 'Department', 'required');
+		$this->form_validation->set_rules('address', 'Address', 'required');
+	
+                        array('required' => 'You must provide a %s.');
+
+                if ($this->form_validation->run() == FALSE)
+                {
+                        $c_id = $this->input->get('id');
+	$where = "emp_id='$c_id'";
+	$data['result'] = $this->Master_model->get_master_row('employee',$select = FALSE,$where);
+	$data['department'] = $this->Master_model->getMaster('department',$where=false);
+	
+	//echo $this->db->last_query(); die;
+	$this->load->view('employer/edit_employee',$data);	
+                }
+                else
+				{
+					
+		$data['emp_no'] = $this->input->post('emp_no');
+		$data['emp_name'] = $this->input->post('emp_name');
+		$data['emp_salary'] = $this->input->post('emp_salary');
+		$data['email'] = $this->input->post('email');
+		$data['mobile'] = $this->input->post('mobile');
+		$data['dept_id'] = $this->input->post('dept_id');
+		$data['address'] = $this->input->post('address');
+	$data['emp_status'] = $this->input->post('emp_status');
+	$data['emp_updated_date'] = date('Y-m-d H:i:s');
+	$id = $this->input->post('cid');
+	$where['emp_id']=$id;
+	$this->Master_model->master_update($data,'employee',$where);
+	redirect(base_url().'employer');
+					}
+}
+
 
 
 function gettopic(){
