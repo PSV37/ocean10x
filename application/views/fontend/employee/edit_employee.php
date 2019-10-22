@@ -231,7 +231,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 	   
 	  $(document).ready(function(){
 
-    function getStates_load(id){
+    function getStates_load(){
         var id = $('#country_id').val();
 
         if(id){
