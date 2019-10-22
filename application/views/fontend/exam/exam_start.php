@@ -34,6 +34,7 @@
                       <div class="col-md-12 col-sm-12">
                         <?php 
                           $sr_no=0;
+                           if(!empty($ans)) $anss = count($ans);
                             if(!empty($questions)) foreach($questions as $row){ 
                               $sr_no++;
                         ?>
@@ -41,13 +42,23 @@
                         <input type="hidden" name="job_id" id="job_id" value="<?php if(!empty($job_id))echo base64_encode($job_id); ?>">
                         <input type="hidden" name="question_id" id="question_id" value="<?php echo $row['ques_id']; ?>">
                         <label><?php echo "Q.No-". $sr_no.':'.$row['question']; ?></label> 
+                          <?php if($anss >1){ ?>
                           <ul>
-                            <li><input type="checkbox" name="option1" id="option1" value="<?php echo $row['option1']; ?>"><?php echo $row['option1'];?></li>
-                            <li><input type="checkbox" name="option2" id="option2" value="<?php echo $row['option2'];   ?>"><?php echo $row['option2'];?></li>
-                            <li><input type="checkbox" name="option3" id="option3" value="<?php echo $row['option3'];   ?>"><?php echo $row['option3'];?></li>
-                            <li><input type="checkbox" name="option4" id="option4" value="<?php echo $row['option4'];   ?>"><?php echo $row['option4'];?></li>
-                            <li><input type="checkbox" name="option5" id="option5" value="<?php echo $row['option5'];   ?>"><?php echo $row['option5'];?></li>
+                            <li><input type="checkbox" name="option[]" id="option1" value="<?php echo $row['option1']; ?>"><?php echo $row['option1'];?></li>
+                            <li><input type="checkbox" name="option[]" id="option2" value="<?php echo $row['option2'];   ?>"><?php echo $row['option2'];?></li>
+                            <li><input type="checkbox" name="option[]" id="option3" value="<?php echo $row['option3'];   ?>"><?php echo $row['option3'];?></li>
+                            <li><input type="checkbox" name="option[]" id="option4" value="<?php echo $row['option4'];   ?>"><?php echo $row['option4'];?></li>
+                            <li><input type="checkbox" name="option[]" id="option5" value="<?php echo $row['option5'];   ?>"><?php echo $row['option5'];?></li>
                           </ul>
+                        <?php }else{ ?>
+                          <ul>
+                            <li><input type="redio" name="option[]" id="option1" value="<?php echo $row['option1']; ?>"><?php echo $row['option1'];?></li>
+                            <li><input type="redio" name="option[]" id="option2" value="<?php echo $row['option2'];   ?>"><?php echo $row['option2'];?></li>
+                            <li><input type="redio" name="option[]" id="option3" value="<?php echo $row['option3'];   ?>"><?php echo $row['option3'];?></li>
+                            <li><input type="redio" name="option[]" id="option4" value="<?php echo $row['option4'];   ?>"><?php echo $row['option4'];?></li>
+                            <li><input type="redio" name="option[]" id="option5" value="<?php echo $row['option5'];   ?>"><?php echo $row['option5'];?></li>
+                          </ul>
+                        <?php } ?>
                            <button id="next" type="submit" class="btn btn-primary pull-right">Next</button>
                         <?php } ?>
                          

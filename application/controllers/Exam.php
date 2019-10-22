@@ -49,8 +49,11 @@ class Exam extends MY_Seeker_Controller
                 $where_req_skill="technical_id IN (".$skill_id.")";
                 
                 $data['questions'] = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit='1',$start=false, $search=false);
-            // $wherechk = "job_id='$job_id'";
-            // $data['topics'] = $this->Master_model->getMaster('job_test_topics',$wherechk);
+                foreach($data['questions'] as $qrow){}
+                $question_id = $qrow['question_id'];
+
+                $wherechks = "job_id='$question_id'";
+                $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
 
             $this->load->view('fontend/exam/exam_start',$data);
         } else {
@@ -77,8 +80,7 @@ class Exam extends MY_Seeker_Controller
         $wherechk = "job_id='$job_id' AND question_id='$question_id' AND js_id='$jobseeker_id'";
         $testdata= $this->Master_model->getMaster('js_test_info',$wherechk);
         echo $this->db->last_query(); echo "<br><br>";
-        print_r($testdata) ;die;
-
+        if()
 
        
 
