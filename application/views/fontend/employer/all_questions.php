@@ -18,7 +18,7 @@
         <h1 class="page-heading">All Question's </h1>
       </div>
       <div class="col-md-6 col-sm-6">
-        <div class="breadCrumb"><a href="#.">Home</a> / <span>All Question's</span></div>
+        <div class="breadCrumb"><a href="#.">Home</a> / <span>Employe's</span></div>
       </div>
     </div>
   </div>
@@ -37,7 +37,7 @@
               <thead>
                 <tr>
                   <th class="active">SL</th>
-                  <th class="active">Subject</th>
+                  <th class="active">Employee No</th>
                   <th class="active">Topic</th>
                   <th class="active">Subtopic</th>
                   <th class="active">Line Item 1</th>
@@ -51,7 +51,7 @@
                 <?php $key = 1; if (!empty($questionbank)): foreach ($questionbank as $ct_row) : ?>
                     <tr>
                       <td><?php echo $key ?></td>
-                      <td><?php echo $ct_row['skill_name'] ?></td>
+                      <td><?php echo $ct_row['emp_no'] ?></td>
                       <td><?php echo $ct_row['topic_name'] ?></td>
                       <td><?php echo $ct_row['subtopic_name'] ?></td>
                       <td><?php echo $ct_row['title'] ?></td>
