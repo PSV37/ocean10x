@@ -92,13 +92,18 @@
 								    </select>
 									 </div>
                                 </div>
+								<div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Photo<span class="required">*</span></label>
+                                       <input type="file" name="photo" id="photo" class="form-control">
+									 </div>
+                                </div>
 								</div>
 								<div class="container-fluid">
 									<div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Question<span class="required">*</span></label>
-									 <textarea name="question" id="question" class="form-control ckeditor"  required><?php if (!empty($edit_questionbank_info)) echo $row['question'];?></textarea>
-								   </div>
+                                        <label for="exampleInputEmail1">Address<span class="required">*</span></label>
+									<textarea class="form-control ckeditor" name="address"></textarea> </div>
 								   </div>
                                 </div>
 								<div id="name">
