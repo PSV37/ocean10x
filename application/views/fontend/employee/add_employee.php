@@ -56,16 +56,14 @@
 									 <div class="container-fluid">
 									 <div class="col-md-4">
 								  <div class="form-group">
-                                        <label for="exampleInputEmail1">Line Item(Level 1)<span class="required">*</span></label>
-                                     <select id="lineitem_id"  name="lineitem_id" class="form-control"  onchange="getLineitemlevel(this.value)">
-                                          
-                                        </select> 
+                                        <label for="exampleInputEmail1">Email-Id<span class="required">*</span></label>
+                                    <input type="email" name="email" id="email" class="form-control">
 										</div>
 									</div>
 									
 										 <div class="col-md-4">
 								  <div class="form-group">
-                                        <label for="exampleInputEmail1">Line Item(Level 2)<span class="required">*</span></label>
+                                        <label for="exampleInputEmail1">Password<span class="required">*</span></label>
                                      <select id="lineitemlevel_id"  name="lineitemlevel_id" class="form-control">
                                            
                                         </select> 
@@ -75,13 +73,8 @@
 									 
 									 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Level<span class="required">*</span></label>
-                                      <select  name="level" class="form-control">
-									                                          
-										<option value="Expert"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Expert')echo "selected";?>>Expert</option>
-										<option value="Medium"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Medium')echo "selected";?>>Medium</option>
-										<option value="Beginner"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Beginner')echo "selected";?>>Beginner</option>
-									 </select>
+                                        <label for="exampleInputEmail1">Contact No.<span class="required">*</span></label>
+                                       <input type="tel" name="mobile" id="mobile" class="form-control">
 									 </div>
                                 </div>
 								
