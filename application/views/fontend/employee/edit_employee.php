@@ -203,7 +203,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 
 
     function getStates_load(){
-        var id = $('#country_name').val();
+        var id = $('#country_id').val();
 
         if(id){
             $.ajax({
@@ -211,9 +211,9 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                 url:'<?php echo base_url();?>admin/city_master/getstate',
                 data:{id:id},
                 success:function(res){
-                    $('#state_name').html(res);
-                    $('#state_name').val(<?php echo $result['state_id']; ?>);
-					getStates_load();
+                    $('#state_id').html(res);
+                    $('#state_id').val(<?php echo $result['state_id']; ?>);
+					getCitys_load();
                 }
                 
             }); 
@@ -231,7 +231,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                 url:'<?php echo base_url();?>admin/city_master/getstate',
                 data:{id:id},
                 success:function(res){
-                    $('#state_name').html(res);
+                    $('#state_id').html(res);
                 }
                 
             }); 
