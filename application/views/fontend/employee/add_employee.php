@@ -138,7 +138,7 @@
 									 <div class="panel-body"></div>
                                 <button type="submit" class="btn bg-navy" type="submit" name="submit_employee" id="submit_employee">Add Employe
                                 </button>
-								<span class="text-danger" style="color:red;"><?php echo validation_errors(); ?></span>
+								<span style="color:red;"><?php echo validation_errors(); ?></span>
 
             </form>
 
