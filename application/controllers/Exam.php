@@ -56,7 +56,7 @@ class Exam extends MY_Seeker_Controller
                {
                     $wherechks = "technical_id='".$skill_id['id']."'";
                     $data['questions'] = $this->Master_model->getMaster('questionbank',$wherechks);
-                     //echo $this->db->last_query();
+                     echo $this->db->last_query();
                }
                 
 
