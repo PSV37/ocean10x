@@ -37,7 +37,7 @@
                             if(!empty($questions)) foreach($questions as $row){ 
                               $sr_no++;
                         ?>
-                        <input type="text" name="question_id" id="question_id" value="?php echo $row['ques_id']; ?>">
+                        <input type="text" name="question_id" id="question_id" value="<?php echo $row['ques_id']; ?>">
                         <label><?php echo "Q.No.-". $sr_no.':'.$row['question']; ?></label> 
                           <ul>
                             <li><input type="checkbox" name="option1" id="option1" value="<?php echo $row['option1']; ?>"><?php echo $row['option1'];?></li>
