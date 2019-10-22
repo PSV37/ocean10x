@@ -46,12 +46,17 @@
                                          <input type="text" name="emp_name" id="emp_name" class="form-control">
                                     </div>
                                 </div>
-									 <div class="col-md-4">
-								  <div class="form-group">
-                                        <label for="exampleInputEmail1">Salary<span class="required">*</span></label>
-                                    <input type="text" name="emp_salary" id="emp_salary" class="form-control">
-										</div>
-									</div>
+									<div class="col-md-4">
+                                    <div class="form-group">
+									<label for="exampleInputEmail1">Department<span class="required">*</span></label>
+									<select  name="dept_id" id="dept_id" class="form-control">
+										<option value="">Select Department</option>
+										<?php foreach($result as $key){?>
+										<option value="<?php echo $key['dept_id']; ?>"><?php echo $key['department_name']; ?></option>
+										<?php } ?>
+								    </select>
+									 </div>
+                                </div>
                                 </div>
 									 <div class="container-fluid">
 									 <div class="col-md-4">
@@ -64,9 +69,7 @@
 										 <div class="col-md-4">
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Password<span class="required">*</span></label>
-                                     <select id="lineitemlevel_id"  name="lineitemlevel_id" class="form-control">
-                                           
-                                        </select> 
+                                         <input type="password" name="password" id="password" class="form-control">
 										</div>
 									</div>
 								
@@ -81,17 +84,6 @@
 								
 								</div>
 								<div class="container-fluid">
-								<div class="col-md-4">
-                                    <div class="form-group">
-									<label for="exampleInputEmail1">Department<span class="required">*</span></label>
-									<select  name="dept_id" id="dept_id" class="form-control">
-										<option value="">Select Department</option>
-										<?php foreach($result as $key){?>
-										<option value="<?php echo $key['dept_id']; ?>"><?php echo $key['department_name']; ?></option>
-										<?php } ?>
-								    </select>
-									 </div>
-                                </div>
 								<div class="col-md-8">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Photo<span class="required">*</span></label>
@@ -99,6 +91,43 @@
 									 </div>
                                 </div>
 								</div>
+										<div class="container-fluid">
+				    
+	                                    	
+	                                        <div class="col-md-4 col-sm-4">
+	                                        	<div class="formrow">
+	                                        <label class="control-label">Company Country: <span class="required">*</span></label>
+										  <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
+											<option value="">Select Country</option>
+											<?php foreach($country as $key){?>
+											<option value="<?php echo $key['country_id']; ?>"<?php if($company_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
+											<?php } ?>
+										  </select>
+	                                        </div>
+	                                    </div>
+
+										
+										<div class="col-md-4 col-sm-4">
+											<div class="formrow">
+											<label class="control-label">Company State: <span class="required">*</span></label>
+											<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+											<option value="">Select State</option>
+										     
+											</select>
+										</div>
+	                                    </div>
+										
+										<div class="col-md-4 col-sm-4">
+											<div class="formrow">
+											<label class="control-label">Company City: <span class="required">*</span></label>
+											<select  name="city_id" id="city_id" class="form-control">
+											<option value="">Select City</option>
+											 
+											</select>
+											</div>
+										</div>
+				                                             
+										</div>
 								<div class="container-fluid">
 									<div class="col-md-12">
                                     <div class="form-group">
@@ -106,29 +135,13 @@
 									<textarea class="form-control ckeditor" name="address"></textarea> </div>
 								   </div>
                                 </div>		 
-		 							
+		 							<span class="text-danger"><?php echo validation_errors(); ?></span>
 								<!--<div class="box-body">
 								<input type="hidden" name="is_admin" value="1" class="form-control"> 
 								</div>-->
-				  <div class="container-fluid">
-				   <div class="col-sm-12">
-				  <div class="form-group" id="comp_name" style="display:none;">
-                 
-				  <label>Answer: <span class="required">*</span></label>
-                    <textarea name="sub_answer" id="sub_answer" class="form-control ckeditor" style="height:100px;"><?php if (!empty($edit_questionbank_info)) echo $row['sub_answer'];?></textarea>
-                  </div>
-				  
-                </div>	
-				</div>
-				<span class="text-danger"><?php echo validation_errors(); ?></span>
-                                <div class="panel-body"></div>
+								 <div class="panel-body"></div>
                                 <button type="submit" class="btn bg-navy" type="submit" name="submit_employee" id="submit_employee">Add Employe
-                                </button><br/><br/>
-                            
-                        
-
-                        
-                    </div>
+                                </button>
 
             </form>
 
@@ -149,7 +162,7 @@
 </div>
 </div>
 <!-- end section --> 
-
+</div>
 <script type="text/javascript" src="<?php echo base_url(); ?>asset/js/tinymce/tinymce.min.js"></script> 
 <script type="text/javascript">
 document.getElementsByClassName('form-control').innerHTML+="<br />";
@@ -157,22 +170,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 <?php $this->load->view("fontend/layout/footer.php"); ?>
 
 
-<script>
-var expanded = false;
-
-function showCheckboxes() {
-  var checkboxes = document.getElementById("checkboxes");
-  if (!expanded) {
-    checkboxes.style.display = "block";
-    expanded = true;
-  } else {
-    checkboxes.style.display = "none";
-    expanded = false;
-  }
-}
-</script>
-	  
-	  
+ 
 	  
 	  <script>
   
@@ -204,150 +202,83 @@ function showCheckboxes() {
 
 	   
 	   
-	   <script>
-			function getTopic(id){
-				if(id){
-					$.ajax({
-						type:'POST',
-						url:'<?php echo base_url();?>employer/gettopic',
-						data:{id:id},
-						success:function(res){
-							$('#topic_id').html(res);
-						}
-						
-					}); 
-				  }
-		   }
-
-    $(document).ready(function(){
-		
-		function getLineitemlevel_load(){
-			var id = $('#lineitem_id').val();
-			if(id){
-				$.ajax({
-					type:'POST',
-					url:'<?php echo base_url();?>employer/getlineitemlevel',
-					data:{id:id},
-					success:function(res){
-						$('#lineitemlevel_id').html(res);
-						$('#lineitemlevel_id').val(<?php echo $row['lineitemlevel_id']; ?>);
-					}
-				}); 
-			  }
-        }
-		
-		function getLineitem_load(){
-			var id = $('#subtopic_id').val();
-
-			if(id){
-				$.ajax({
-					type:'POST',
-					url:'<?php echo base_url();?>employer/getlineitem',
-					data:{id:id},
-					success:function(res){
-						$('#lineitem_id').html(res);
-						$('#lineitem_id').val(<?php echo $row['lineitem_id']; ?>);
-						 getLineitemlevel_load();
-					}
-					
-				}); 
-			  }
-   
-        }
-		
-		function getSubtopic_load(){
-        var id = $('#topic_id').val();
-
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>employer/getsubtopic',
-                data:{id:id},
-                success:function(res){
-                    $('#subtopic_id').html(res);
-                    $('#subtopic_id').val(<?php echo $row['subtopic_id']; ?>);
-					getLineitem_load();
-                }
-                
-            }); 
-          }
-   
-       }
-		
-		function getTopic_load(){
-			var id = $('#subject').val();
-			if(id){
-				$.ajax({
-					type:'POST',
-					url:'<?php echo base_url();?>employer/gettopic',
-					data:{id:id},
-					success:function(res){
-						$('#topic_id').html(res);
-						$('#topic_id').val(<?php echo $row['topic_id']; ?>);
-						getSubtopic_load();
-					}
-					
-				}); 
-			}
-       }
-       getTopic_load();
-    });
-       
-</script>
-	   <script>
-    function getSubtopic(id){
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>employer/getsubtopic',
-                data:{id:id},
-                success:function(res){
-                    $('#subtopic_id').html(res);
-                }
-                
-            }); 
-          }
-   
-    }
-</script>
-
-
-
- <script>
-    function getLineitem(id){
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>employer/getlineitem',
-                data:{id:id},
-                success:function(res){
-                    $('#lineitem_id').html(res);
-                }
-                
-            }); 
-          }
-   
-    }
-</script>
-
-
-
 <script>
-    function getLineitemlevel(id){
+	function getStates(id){
+		if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Employer/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state_id').html(res);
+                }
+				
+            }); 
+        }
+   
+	}
+	   
+	  
+	  function getCitys(id){
+		if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Employer/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city_id').html(res);
+                }
+				
+            }); 
+          }
+   
+	   }
+	   
+	  $(document).ready(function(){
+
+    function getStates_load(){
+        var id = $('#country_id').val();
+
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>employer/getlineitemlevel',
+                url:'<?php echo base_url();?>Employer/getstate',
                 data:{id:id},
                 success:function(res){
-                    $('#lineitemlevel_id').html(res);
+                    $('#state_id').html(res);
+                    $('#state_id').val(<?php echo $company_info->state_id; ?>);
+                     getCitys_load(<?php echo $company_info->state_id; ?>);
                 }
                 
             }); 
           }
    
        }
-</script>   
+    
+    function getCitys_load(id){
+      //var id = $('#state_id').val();
+      // alert(id);
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Employer/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city_id').html(res);
+                    $('#city_id').val(<?php echo $company_info->city_id; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+
+  getCitys_load();
+  getStates_load();
+ 
+});
+
+</script>  
 
 <!-- <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script> -->
 <!-- <script>

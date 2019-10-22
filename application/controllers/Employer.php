@@ -1034,11 +1034,13 @@ public function addemployee(){
 		//$data['org_id'] = $this->input->post('org_id');		
 		$data['emp_no'] = $this->input->post('emp_no');
 		$data['emp_name'] = $this->input->post('emp_name');
-		$data['emp_salary'] = $this->input->post('emp_salary');
 		$data['email'] = $this->input->post('email');
 		$data['mobile'] = $this->input->post('mobile');
-		$data['password'] = $this->input->post('password');
+		$data['password'] = md5($this->input->post('password'));
 		$data['dept_id'] = $this->input->post('dept_id');
+		$data['country_id'] = $this->input->post('country_id');
+		$data['state_id'] = $this->input->post('state_id');
+		$data['city_id'] = $this->input->post('city_id');
 		$data['address'] = $this->input->post('address');
 		$data['emp_created_date'] = $this->input->post('emp_created_date');
 		$data['emp_created_by'] = $user_id;
@@ -1055,6 +1057,9 @@ public function addemployee(){
 	}
 	}
 $data['result'] = $this->Master_model->getMaster('department' ,$select=false);
+$data['city'] = $this->Master_model->getMaster('city',$where=false);
+$data['country'] = $this->Master_model->getMaster('country',$where=false);
+$data['state'] = $this->Master_model->getMaster('state',$where=false);
 	$this->load->view('fontend/employee/add_employee',$data);		
 }
 
