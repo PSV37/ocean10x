@@ -286,6 +286,8 @@
   </div>
   <!-- end container --> 
 </div>
+</div>
+</div>
 <!-- end section --> 
 
 <script type="text/javascript" src="<?php echo base_url(); ?>asset/js/tinymce/tinymce.min.js"></script> 

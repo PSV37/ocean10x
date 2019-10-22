@@ -969,6 +969,93 @@ function getstate(){
         redirect('employer/all_questions');
     }
 
+/*Add Employee*/
+
+public function addemployee(){
+	if(isset($_POST['submit_employee'])){
+		$this->form_validation->set_rules('emp_no', 'Employee No.', 'required|min_length[3]|max_length[6]|alpha_numeric');
+		$this->form_validation->set_rules('emp_name', 'organization Name', 'required');
+		$this->form_validation->set_rules('email', 'Email Id', 'required');
+		$this->form_validation->set_rules('mobile', ' Contact No.', 'required|regex_match[/^[0-9]{10}$/]');
+		$this->form_validation->set_rules('password', 'password', 'required|max_length[15]|min_length[6]|alpha_numeric');
+		$this->form_validation->set_rules('dept_id', 'Department', 'required');
+		$this->form_validation->set_rules('address', 'Address', 'required');
+		
+                        array('required' => 'You must provide a %s.');
+
+						
+						
+						
+						
+                if ($this->form_validation->run() == FALSE)
+                {
+                      $data['result'] = $this->Master_model->getMaster('department' ,$select=false);
+	//$this->load->view('organization/add_employee',$data);		
+                }
+                else
+                {
+					
+					$NewFileName;
+	            if($_FILES['photo']['name']!='')
+	            {
+	                $this->load->helper('string'); 
+
+	                $NewFileName = $_FILES['photo']['name']; 
+	                
+	                
+					$config['upload_path'] = './employeephoto/';
+	                $config['allowed_types'] = 'gif|jpg|jpeg|png|pdf|doc|docx|odt|xlsm|xls|xlm|xla|xlsx|bmp|docm|dotx|dotm|docb|gif';
+	                $config['max_size']    = '1000000';
+	                //$config['max_width']  = '1024';
+	                //$config['max_height']  = '768';
+	                $config['file_name'] = $NewFileName;
+	            
+	                 $this->load->library('upload', $config);      
+	                 $field_name = "photo";
+	                        // print_r($config);die();
+	                 if (! $this->upload->do_upload($field_name))
+	                 {
+	                    $error = array('error' => $this->upload->display_errors());
+
+	                   	$this->session->set_flashdata('type', 'success');
+						//$this->session->set_flashdata('Message', 'Profile Added Successfully');
+	                 }
+	                 else {
+	                    // Success of file 
+	                }
+
+	            }//END of file checking if loop
+	            else
+                {     
+                  $NewFileName = '';
+                }    
+					
+		//$data['org_id'] = $this->input->post('org_id');		
+		$data['emp_no'] = $this->input->post('emp_no');
+		$data['emp_name'] = $this->input->post('emp_name');
+		$data['emp_salary'] = $this->input->post('emp_salary');
+		$data['email'] = $this->input->post('email');
+		$data['mobile'] = $this->input->post('mobile');
+		$data['password'] = $this->input->post('password');
+		$data['dept_id'] = $this->input->post('dept_id');
+		$data['address'] = $this->input->post('address');
+		$data['emp_created_date'] = $this->input->post('emp_created_date');
+		$data['photo'] =$NewFileName;
+		
+				
+			//$data=array('logo' => $NewFileName,
+					
+               // );
+		
+		$data['emp_created_date'] = date('Y-m-d H:i:s');
+		$this->Master_model->master_insert($data,'employee');
+		redirect(base_url().'employer');
+	}
+	}
+$data['result'] = $this->Master_model->getMaster('department' ,$select=false);
+	$this->load->view('fontend/employee/add_employee',$data);		
+}
+
 
 
 function gettopic(){
