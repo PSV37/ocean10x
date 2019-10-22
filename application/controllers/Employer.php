@@ -1113,6 +1113,26 @@ $data['state'] = $this->Master_model->getMaster('state',$where=false);
 }
 
 
+     /*Delete Employee*/
+
+public function deleteemployee()
+    {
+        
+           $id = $this->input->post('id');
+	
+	//$data['status']= '0';
+	$del = array(
+		'emp_status' =>'0',
+	);
+	$where11['emp_id']=$id;
+	$this->Master_model->master_update($del,'employee',$where11);
+	
+	//redirect(base_url().'state');
+             
+
+        
+    }
+
 
 function gettopic(){
     $topic_id = $this->input->post('id');
