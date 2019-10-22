@@ -1036,7 +1036,7 @@ public function addemployee(){
 		$data['emp_name'] = $this->input->post('emp_name');
 		$data['email'] = $this->input->post('email');
 		$data['mobile'] = $this->input->post('mobile');
-		$data['password'] = $this->input->post('password');
+		$data['password'] = md5($this->input->post('password'));
 		$data['dept_id'] = $this->input->post('dept_id');
 		$data['country_id'] = $this->input->post('country_id');
 		$data['state_id'] = $this->input->post('state_id');
