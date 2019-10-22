@@ -29,7 +29,7 @@
                     Time Left : <span id='timer'></span>
                   </h3>
 
-                  <form id="submit" class="submit-form" action="<?php echo base_url(); ?>exam/exam_start/<?php echo $this->input->get() ?>" method="post">
+                  <form id="nextques" class="submit-form" action="#" method="post">
                     <div class="row">
                       <div class="col-md-12 col-sm-12">
                         <?php 
@@ -37,16 +37,18 @@
                             if(!empty($questions)) foreach($questions as $row){ 
                               $sr_no++;
                         ?>
+                        <input type="text" name="question_id" id="question_id" value="?php echo $row['ques_id']; ?>">
                         <label><?php echo "Q.No.-". $sr_no.':'.$row['question']; ?></label> 
                           <ul>
-                            <li><input type="checkbox" name=""><?php echo $row['option1'];   ?></li>
-                            <li><input type="checkbox" name=""><?php echo $row['option2'];   ?></li>
-                            <li><input type="checkbox" name=""><?php echo $row['option3'];   ?></li>
-                            <li><input type="checkbox" name=""><?php echo $row['option4'];   ?></li>
-                            <li><input type="checkbox" name=""><?php echo $row['option5'];   ?></li>
+                            <li><input type="checkbox" name="option1" id="option1" value="<?php echo $row['option1']; ?>"><?php echo $row['option1'];?></li>
+                            <li><input type="checkbox" name="option2" id="option2" value="<?php echo $row['option2'];   ?>"><?php echo $row['option2'];?></li>
+                            <li><input type="checkbox" name="option3" id="option3" value="<?php echo $row['option3'];   ?>"><?php echo $row['option3'];?></li>
+                            <li><input type="checkbox" name="option4" id="option4" value="<?php echo $row['option4'];   ?>"><?php echo $row['option4'];?></li>
+                            <li><input type="checkbox" name="option5" id="option5" value="<?php echo $row['option5'];   ?>"><?php echo $row['option5'];?></li>
                           </ul>
+                           <button id="next" type="submit" class="btn btn-primary pull-right">Next</button>
                         <?php } ?>
-                          <button type="submit" class="btn btn-primary pull-right">Next</button>
+                         
                       </div>
                     </div>
                   </form>
@@ -62,6 +64,27 @@
 
  <?php $this->load->view("fontend/layout/footer.php"); ?>
  <script>
+
+  $('form#nextques').submit(function(e)
+  {
+      e.preventDefault();
+    
+    $.ajax({
+              url: "<?php echo base_url();?>exam/insert_data/<?php if(!empty($job_id))echo base64_encode($job_id); ?>'",
+              type: "POST",
+              data: new FormData(this),
+              contentType:false,
+              processData:false,
+               // dataType: "json",
+              success: function(data)
+              {
+                alert(data);
+              }
+        });
+       
+  }); 
+
+
   //define your time in second
     var c=1800;
     var t;
@@ -91,4 +114,6 @@
       },
       1000);
     }
+
+     
   </script>
