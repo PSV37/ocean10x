@@ -1,12 +1,6 @@
 <?php 
     $this->load->view('fontend/layout/employer_header.php');
 ?>
-<style>
-.one{
-	
-	color:#ff0000;
-			}
-</style>
 <!-- Page Title start -->
 
 <div class="pageTitle">
@@ -145,12 +139,11 @@
                                 <button type="submit" class="btn bg-navy" type="submit" name="submit_employee" id="submit_employee">Add Employe
                                 </button>
 								
+
             </form>
 
-			<span class="one"><?php echo validation_errors(); ?></span>
-
-
-
+							<span class="text-danger"><?php echo validation_errors(); ?></span>
+							
           </div>
         </div>
         <!-- end post-padding --> 
