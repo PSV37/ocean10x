@@ -1155,7 +1155,7 @@ $this->form_validation->set_rules('emp_no', 'Employee No.', 'required');
 		$this->form_validation->set_rules('mobile', ' Contact No.', 'required');
 		$this->form_validation->set_rules('dept_id', 'Department', 'required');
 		$this->form_validation->set_rules('address', 'Address', 'required');
-	
+		
                         array('required' => 'You must provide a %s.');
 
                 if ($this->form_validation->run() == FALSE)
@@ -1177,6 +1177,9 @@ $this->form_validation->set_rules('emp_no', 'Employee No.', 'required');
 		$data['mobile'] = $this->input->post('mobile');
 		$data['dept_id'] = $this->input->post('dept_id');
 		$data['address'] = $this->input->post('address');
+		$data['country_id'] = $this->input->post('country_id');
+		$data['state_id'] = $this->input->post('state_id');
+		$data['city_id'] = $this->input->post('city_id');
 		$data['emp_status'] = $this->input->post('emp_status');
 		$data['emp_updated_date'] = date('Y-m-d H:i:s');
 		$data['emp_updated_by'] = $user_id;
