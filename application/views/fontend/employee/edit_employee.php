@@ -120,7 +120,7 @@
 									<div class="col-md-12">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Address<span class="required">*</span></label>
-									<textarea class="form-control ckeditor" name="address"><?php echo $result['emp_no']; ?></textarea>
+									<textarea class="form-control ckeditor" name="address"><?php echo $result['address']; ?></textarea>
 									</div>
 								   </div>
                                 </div>		 
