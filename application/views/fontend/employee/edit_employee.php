@@ -7,7 +7,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-6">
-        <h1 class="page-heading">Edit Employee </h1>
+        <h1 class="page-heading">Edit Question's </h1>
       </div>
       <div class="col-md-6 col-sm-6">
         <div class="breadCrumb"><a href="#.">Home</a> / <span>Edit Employee</span></div>
@@ -198,9 +198,38 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 	   
 	   
 <script>
-  $(document).ready(function(){
-
-
+	function getStates(id){
+		if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Employer/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state_id').html(res);
+                }
+				
+            }); 
+        }
+   
+	}
+	   
+	  
+	  function getCitys(id){
+		if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Employer/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city_id').html(res);
+                }
+				
+            }); 
+          }
+   
+	   }
+	   
+	  $(document).ready(function(){
 
     function getStates_load(){
         var id = $('#country_id').val();
@@ -208,30 +237,30 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>admin/city_master/getstate',
+                url:'<?php echo base_url();?>Employer/getstate',
                 data:{id:id},
                 success:function(res){
                     $('#state_id').html(res);
-                    $('#state_id').val(<?php echo $result['state_id']; ?>);
-					getStates_load();
+                    $('#state_id').val(<?php echo $result->state_id; ?>);
+                    
                 }
                 
             }); 
           }
    
        }
-       getStates_load();
-    });
-</script>
-<script>
-    function getStates(id){
+    
+    function getCitys_load(){
+      //var id = $('#state_id').val();
+      // alert(id);
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>admin/city_master/getstate',
+                url:'<?php echo base_url();?>Employer/getcity',
                 data:{id:id},
                 success:function(res){
-                    $('#state_id').html(res);
+                    $('#city_id').html(res);
+                    $('#city_id').val(<?php echo $result->city_id; ?>);
                 }
                 
             }); 
@@ -239,8 +268,12 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
    
        }
 
-       
-</script>
+  
+  getStates_load();
+ 
+});
+
+</script>  
 
 <!-- <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script> -->
 <!-- <script>
