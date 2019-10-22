@@ -124,6 +124,16 @@
 									</div>
 								   </div>
                                 </div>		 
+								<div class="container-fluid">
+								<div class="col-sm-4">
+								   <label>Status:</label>
+									<select name="emp_status" class="form-control">
+										<option value="">Select</option>
+										<option value="1"<?php if($result['emp_status']=='1'){ echo "selected"; } ?>>Active</option>
+										<option value="2"<?php if($result['emp_status']=='2'){ echo "selected"; } ?>>Inactive</option>
+									 </select>
+								  </div>
+								</div>
 									 <div class="panel-body"></div>
                                 <button type="submit" class="btn bg-navy" type="submit">Edit Employe
                                 </button>
