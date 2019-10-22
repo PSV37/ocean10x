@@ -19,7 +19,8 @@
   <div class="section lb">
     <div class="container">
       <div class="row">
-          <div class="content col-md-9">
+        <div class="content col-md-2"></div>
+          <div class="content col-md-8">
             <div class="job-header">
               <div class="contentbox">
                 <div class="formpanel">
@@ -39,16 +40,15 @@
                           </ul>
                           <button type="submit" class="btn btn-primary pull-right">Start Test</button>
                       </div>
-                      
                     </div>
                   </form>
                 </div>
               </div>
             </div><!-- end post-padding -->
-
-            </div><!-- end col -->
-          </div><!-- end row -->  
-      </div><!-- end container -->
+            <div class="content col-md-2"></div>
+          </div><!-- end col -->
+        </div><!-- end row -->  
+    </div><!-- end container -->
   </div><!-- end section -->
 
 
