@@ -20,7 +20,7 @@ $jobseeker_id = $this->session->userdata('job_seeker_id');
             <p>Sucessfully apply this job . <br>
               <?php if(!empty($job_test)){
                 echo 'status - '.$job_test->is_test_required;
-                echo "job id -" $job_test->job_post_id;
+                echo "job id -" .$job_test->job_post_id;
                 $job_test->company_profile_id;
                 
               } ?>
