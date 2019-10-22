@@ -25,10 +25,7 @@
         <div class="userccount empdash">
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
            
-    		 <form method="post" action="<?php echo base_url();?>emp/addemployee" enctype="multipart/form-data">
-		    <?php  $org = $this->session->userdata('OrgLogged_In');
-									 
-			  ?>
+    		 <form method="post" action="<?php echo base_url();?>employer/addemployee" enctype="multipart/form-data">
               <div class="panel-body">
 			 <div class="form-group">
                  <input type="hidden" name="org_id" id="org_id" class="form-control" value="<?php echo $org['org_id']; ?>">
