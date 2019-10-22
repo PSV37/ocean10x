@@ -1,6 +1,12 @@
 <?php 
     $this->load->view('fontend/layout/employer_header.php');
 ?>
+<style>
+.text-danger{
+	
+	color:#ff0000;
+			}
+</style>
 <!-- Page Title start -->
 
 <div class="pageTitle">
