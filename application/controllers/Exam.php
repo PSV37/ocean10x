@@ -5,8 +5,7 @@ if (!defined('BASEPATH')) {
 }
 
 
-
-class Exam extends MY_Controller
+class Exam extends MY_Seeker_Controller
 {
     public function __construct()
     {
