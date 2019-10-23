@@ -683,5 +683,19 @@ $(document).ready(function(){
 });
 
 </script>  
+
+
+<script>
+$("#country_id").select2( {
+	placeholder: "Select Country",
+	allowClear: true
+	} );
+</script>
+<script>
+$("#company_category").select2( {
+	placeholder: "Select Industry",
+	allowClear: true
+	} );
+</script>
   
  <?php $this->load->view("fontend/layout/footer.php"); ?>
