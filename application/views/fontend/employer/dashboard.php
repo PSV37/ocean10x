@@ -76,8 +76,9 @@
                                         <div class="col-md-3 col-sm-12">
                                         	<div class="formrow">
 											<label class="control-label">Country Code:</label>
-											<select id="country" name="country_code" class="form-control" style="height:42px;">
+											<select id="country" name="country_code" class="form-control">
 												<!-- <option value="">Select Country Code</option> -->
+												<br/>
 												<option><?php echo $company_info->country_code?></option>
 												<option value="AD - Andorra (+376)">AD - Andorra (+376)</option>
 												<option value="AE - United Arab Emirates (+971)">AE - United Arab Emirates (+971)</option>
@@ -327,9 +328,9 @@
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12">
                                         <div class="formrow">
-                                        	<label class="control-label">Company Industry: <span class="required">*</span></label>
+                                        	<label class="control-label">Company Services: <span class="required">*</span></label>
                                             <select name="company_category" id="company_category" class="form-control" data-style="btn-default" data-live-search="true">
-                                            	<option value="">Select Industry</option> 
+                                            	<option value="">Select Services</option> 
                                                 <?php if(!empty($company_info->company_category)) {
                                                 echo $this->job_category_model->selected($company_info->company_category);
                                                 } else {
@@ -698,7 +699,7 @@ $("#company_category").select2( {
 	} );
 </script>
 <script>
-$("#company").select2( {
+$("#country").select2( {
 	placeholder: "Select Country Code",
 	allowClear: true
 	} );
