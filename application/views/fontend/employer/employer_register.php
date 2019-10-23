@@ -63,9 +63,16 @@
                                     </div>
 									<div class="formrow">
                                         <div class="row">
-                                            <div class="col-md-12 col-sm-12">
+                                            <div class="col-md-6 col-sm-12">
                                               <input type="Password" name="company_password" class="form-control" placeholder="Password">
                                            </div>
+										   <div class="col-md-6 col-sm-12">
+                                              <select  name="country_id" class="form-control" onchange="getStates(this.value)">
+                                                <option value="">Select Country</option>
+                                                <?php foreach($country as $key){?>
+                                                <option value="<?php echo $key['country_id']; ?>"><?php echo $key['country_name']; ?></option>
+                                                <?php } ?>
+                                              </select> </div>
                                           </div><!-- end row -->
                                     </div>
                                      <div class="formrow">
@@ -110,7 +117,9 @@
                                                     <option value="">Select City</option>
                                                 </select>
                                             </div>
-                                            
+											 <div class="col-md-6 col-sm-12">
+                                            <input type="text" name="company_pincode" class="form-control"  value="<?php echo (isset($this->session->userdata['reg_in']['company_pincode'])?$this->session->userdata['reg_in']['company_pincode']:''); ?>" placeholder="Pincode">
+                                           </div>
                                         </div><!-- end row -->
                                     </div>
                                     <div class="formrow">
