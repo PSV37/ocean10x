@@ -160,7 +160,7 @@
                                             <div class="col-md-6 col-sm-12">
 											<br/><p>For Any Query:</p>
 											<p>Contact Us: +91 99999 99999 or +91 88888 88888</p>
-											<p>Email us: onlinebuy@ocean.com</p>											
+											<p>Email us: <a href="mail:onlinebuy@ocean.com">onlinebuy@ocean.com</a></p>											
 											</div>
                                            </div><!-- end row -->
 										</div><!-- end container -->
