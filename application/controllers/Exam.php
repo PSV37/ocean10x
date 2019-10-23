@@ -57,7 +57,7 @@ class Exam extends MY_Seeker_Controller
             //echo $this->db->last_query(); echo "<br><br>";
             $this->load->view('fontend/exam/exam_start',$data);
         } else {
-            redirect('Exam');
+            redirect('exam');
         }
        
     }
@@ -89,7 +89,7 @@ class Exam extends MY_Seeker_Controller
 
             $wherechks = "question_id='$question_id'";
             $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
-            
+
             echo $this->load->view('fontend/exam/exam_next_question',$data);
 
         }else{

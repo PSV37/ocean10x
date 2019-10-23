@@ -28,8 +28,6 @@
                   <h3 style="color:#FF0000" align="center">
                     Time Left : <span id='timer'></span>
                   </h3>
-                  
-                <div id="nextshow">
 
                   <form id="nextques" class="submit-form" action="#" method="post">
                     <div class="row">
@@ -68,8 +66,6 @@
                     </div>
                   </form>
                 </div>
-
-                </div>
               </div>
             </div><!-- end post-padding -->
             <div class="content col-md-2"></div>
@@ -95,7 +91,7 @@
                // dataType: "json",
               success: function(data)
               {
-                $('#nextshow').html(data);
+                alert(data);
               }
         });
        
