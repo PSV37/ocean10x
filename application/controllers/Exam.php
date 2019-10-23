@@ -104,9 +104,12 @@ class Exam extends MY_Seeker_Controller
             }
             // check for next questions
             $whereskill = "job_post_id='$job_post_id'";
-            $data['skills'] = $this->Master_model->getMaster('job_posting`',$whereskill);
-            foreach($data['skills'] as $skill_row){}
-            $skill_id = $skill_row['skills_required'];
+            // $data['skills'] = $this->Master_model->getMaster('job_posting',$whereskill);
+            $data['skills'] = $this->Master_model->get_master_row('job_posting', $select ='skills_required' , $whereskill, $join = FALSE);
+            // foreach($data['skills'] as $skill_row){}
+            $skill_id = $data['skills']['skills_required'];
+
+            // $skill_id = $skill_row['skills_required'];
 
             $where_que = "job_id='$job_post_id' AND js_id='$jobseeker_id' ";
             $test_data= $this->Master_model->getMaster('js_test_info', $where_que, $like = false, $join=false, $select = false);
@@ -120,11 +123,10 @@ class Exam extends MY_Seeker_Controller
             $where_req_skill="technical_id IN (".$skill_id.") AND ques_id not in(".implode(',',$tested_question).")";
             $data['questions'] = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit='1',$start=false, $search=false);
             $question_id = $data['questions'][0]['ques_id'];
-
+            echo count($data['questions']);
             $wherechks = "question_id='$question_id'";
             $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);    
                 
-
 
             $this->load->view('fontend/exam/exam_next_question',$data);
 
