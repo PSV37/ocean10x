@@ -6,10 +6,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-6">
-        <h1 class="page-heading">Exam Instruction</h1>
+        <h1 class="page-heading">Exam Started</h1>
       </div>
       <div class="col-md-6 col-sm-6">
-        <div class="breadCrumb"><a href="#">Home</a> / <span>Exam Instruction</span></div>
+        <div class="breadCrumb"><a href="#">Home</a> / <span>Exam Started</span></div>
       </div>
     </div>
   </div>
