@@ -61,7 +61,22 @@
                                           
                                         </div><!-- end row -->
                                     </div>
-                                     
+                                     <div class="formrow">
+                                        <div class="row">
+                                            <div class="col-md-12 col-sm-12">
+                                              <textarea name="company_address" class="form-control" placeholder="Address-1"><?php echo isset($this->session->userdata['reg_in']['company_address'])?$this->session->userdata['reg_in']['company_address']:''; ?></textarea>
+                                           </div>
+                                          </div><!-- end row -->
+                                    </div>
+									 
+									  <div class="formrow">
+                                        <div class="row">
+                                            <div class="col-md-12 col-sm-12">
+                                              <textarea name="company_address2" class="form-control" placeholder="Address-1"><?php echo isset($this->session->userdata['reg_in']['company_address2'])?$this->session->userdata['reg_in']['company_address2']:''; ?></textarea>
+                                           </div>
+                                          </div><!-- end row -->
+                                    </div>
+									 
                                     <div class="formrow">
                                         <div class="row">
                                             <div class="col-md-6 col-sm-12">
@@ -105,10 +120,6 @@
                                         <div class="row">
                                             <div class="col-md-6 col-sm-6">
                                                 <textarea name="company_service" class="form-control" placeholder="Company Service"><?php echo isset($this->session->userdata['reg_in']['company_service'])?$this->session->userdata['reg_in']['company_service']:''; ?></textarea>
-                                            </div>
-
-                                             <div class="col-md-6 col-sm-6">
-                                                <textarea name="company_address" class="form-control" placeholder="Company Address"><?php echo isset($this->session->userdata['reg_in']['company_service'])?$this->session->userdata['reg_in']['company_address']:''; ?></textarea>
                                             </div>
                                         </div><!-- end row -->
                                     </div>
