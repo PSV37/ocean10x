@@ -152,19 +152,20 @@
 
                         <!-- end col -->
                     </div><!-- end row -->  
-                </div><!-- end container -->
-            </div><!-- end section -->
+                </div>
 										<div class="formrow">
                                        
                                 		<div class="container-fluid">
-										<div class="col-md-2 col-sm-12"></div>
+										<div class="col-md-3 col-sm-12"></div>
                                             <div class="col-md-6 col-sm-12">
 											<br/><p>For Any Query:</p>
 											<p>Contact Us: +91 99999 99999 or +91 88888 88888</p>
-											<p>Email us: onlinebuy@ocean.com</p>											
+											<p>Email us: <a href="mailto:onlinebuy@ocean.com">onlinebuy@ocean.com</a></p>											
 											</div>
                                            </div><!-- end row -->
-										</div>
+										</div><!-- end container -->
+            </div><!-- end section -->
+										
 <input type="hidden" id="sessionCaptcha1" name="sessionCaptcha1" value="<?php echo $this->session->userdata('captchaCode'); ?>">
 
     <script type="text/javascript">
@@ -314,5 +315,18 @@
 	   }
 	   
 	   </script>  
+	   <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
+<script>
+$("#country_id").select2( {
+	placeholder: "Select Country",
+	allowClear: true
+	} );
+</script>
+<script>
+$("#company_category").select2( {
+	placeholder: "Select Industry",
+	allowClear: true
+	} );
+</script>
   
  <?php $this->load->view("fontend/layout/footer.php"); ?>
