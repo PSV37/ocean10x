@@ -35,7 +35,7 @@ class Exam extends MY_Seeker_Controller
 	public function exam_start($job_id=null)
     {   
         $jobseeker_id = $this->session->userdata('job_seeker_id');
-       $job_id = base64_decode($job_id);
+        $job_id = base64_decode($job_id);
         if (!empty($job_id)) {
                  
             $data['title'] = 'Exam Start';
@@ -45,16 +45,16 @@ class Exam extends MY_Seeker_Controller
             $data['skills'] = $this->Master_model->getMaster('job_posting`',$wherechk);
             foreach($data['skills'] as $skill_row){}
             
-                $skill_id = $skill_row['skills_required'];
-                $where_req_skill="technical_id IN (".$skill_id.")";
-                
-                $data['questions'] = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit='1',$start=false, $search=false);
-                foreach($data['questions'] as $qrow){}
-                $question_id = $qrow['ques_id'];
+            $skill_id = $skill_row['skills_required'];
+            $where_req_skill="technical_id IN (".$skill_id.")";
+            
+            $data['questions'] = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit='1',$start=false, $search=false);
+            foreach($data['questions'] as $qrow){}
+            $question_id = $qrow['ques_id'];
 
-                $wherechks = "question_id='$question_id'";
-                $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
-                echo $this->db->last_query(); echo "<br><br>";
+            $wherechks = "question_id='$question_id'";
+            $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
+            //echo $this->db->last_query(); echo "<br><br>";
             $this->load->view('fontend/exam/exam_start',$data);
         } else {
             redirect('Exam');
@@ -71,15 +71,12 @@ class Exam extends MY_Seeker_Controller
         $job_id = base64_decode($jid);
 
         $question_id = $this->input->post('question_id');
-        $option1 = $this->input->post('option1');
-        $option2 = $this->input->post('option2');
-        $option3 = $this->input->post('option3');
-        $option4 = $this->input->post('option4');
-        $option5 = $this->input->post('option5');
-
+        $option = $this->input->post('option');
+      
         $wherechk = "job_id='$job_id' AND question_id='$question_id' AND js_id='$jobseeker_id'";
-        $testdata= $this->Master_model->getMaster('js_test_info',$wherechk);
-        echo $this->db->last_query(); echo "<br><br>";
+        $testdata= $this->Master_model->master_get_num_rows('$js_test_info', $wherechk, $like = false, $join=false, $select = false);
+       echo $this->db->last_query(); echo "<br><br>";
+       echo $testdata;
         
 
        
