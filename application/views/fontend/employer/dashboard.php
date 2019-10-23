@@ -697,5 +697,11 @@ $("#company_category").select2( {
 	allowClear: true
 	} );
 </script>
+<script>
+$("#company").select2( {
+	placeholder: "Select Country Code",
+	allowClear: true
+	} );
+</script>
   
  <?php $this->load->view("fontend/layout/footer.php"); ?>
