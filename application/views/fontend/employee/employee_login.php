@@ -7,10 +7,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-6">
-        <h1 class="page-heading">Employer Login</h1>
+        <h1 class="page-heading">Employee Login</h1>
       </div>
       <div class="col-md-6 col-sm-6">
-        <div class="breadCrumb"><a href="#.">Home</a> / <span>Employer Login</span></div>
+        <div class="breadCrumb"><a href="#.">Home</a> / <span>Employee Login</span></div>
       </div>
     </div>
   </div>
