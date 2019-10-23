@@ -24,25 +24,26 @@
       <div class="col-md-6 col-md-offset-3">
         <div class="userccount">
           	
-          <h5>Employee Login</h5>
+          <h5>Employer Login</h5>
           <!-- login form -->
-           <form method="post" name="organization" action="">
-           <p style="color:red;"><?php  $this->load->view('alert_message'); ?></p>	
+           <form class="submit-form customform loginform" action="<?php echo base_url() ?>employee_login/check_login?redirect=<?php echo $this->input->get('redirect'); ?>" method="post">
+           <?php echo $this->session->flashdata('emp_msg');; ?>
           <div class="formpanel">
             <div class="formrow">
-              <input type="email" name="txtUserName" id="txtUserName" class="form-control" placeholder="Enter your email">
+              <input type="text" class="form-control" name="email" placeholder="Email Address">
             </div>
             <div class="formrow">
-             <input type="password"  name="txtPassword" id="txtPassword" class="form-control" placeholder="Password">
+              <input name="password" type="password" class="form-control" placeholder="Password">
             </div>
-           
-            <input type="submit" value="SignIn" name="submit" id="submit" class="btn btn-success btn-block"/>
+            <div class="formrow">                          	
+              <a href="<?php echo base_url() . 'employee_login/forgot_pass' ?>">Forgot Password?</a>              
+            </div>
+            <input type="submit" class="btn" value="Login Account">
           </div>
            </form>
           <!-- login form  end--> 
           
-          
-          
+                  
         </div>
       </div>
     </div>
