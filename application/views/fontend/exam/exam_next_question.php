@@ -5,7 +5,7 @@
       <?php 
         $sr_no=1;
         if(!empty($last_count)) echo $ques_cnt = count($last_count); echo "<br>";
-      //  echo NUMBER_QUESTIONS;
+          $const = NUMBER_QUESTIONS -1;
          if(!empty($ans))  $anss = count($ans);
           if(!empty($questions)) foreach($questions as $row){ 
             $sr_no++;
@@ -31,7 +31,7 @@
           <li><input type="radio" name="option[]" id="option5" value="5"><?php echo $row['option5'];?></li>
         </ul>
       <?php } ?>
-      <?php if($ques_cnt <= 2)  {?>
+      <?php if($ques_cnt < $const)  {?>
          <button id="next" type="submit" class="btn btn-primary pull-right">Next</button>
        <?php }else{ ?>
         <button id="next" type="submit" class="btn btn-primary pull-right">Submit</button>
