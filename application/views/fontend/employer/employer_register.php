@@ -130,13 +130,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="formrow">
-                                        <div class="row">
-                                            <div class="col-md-6 col-sm-6">
-                                                <textarea name="company_service" class="form-control" placeholder="Company Service"><?php echo isset($this->session->userdata['reg_in']['company_service'])?$this->session->userdata['reg_in']['company_service']:''; ?></textarea>
-                                            </div>
-                                        </div><!-- end row -->
-                                    </div>
                                     
                                     <div class="formrow">
                                         <div class="captchacode">Captcha is cause sensitive</div>
