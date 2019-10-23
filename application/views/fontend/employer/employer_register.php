@@ -152,8 +152,7 @@
 
                         <!-- end col -->
                     </div><!-- end row -->  
-                </div><!-- end container -->
-            </div><!-- end section -->
+                </div>
 										<div class="formrow">
                                        
                                 		<div class="container-fluid">
@@ -164,7 +163,9 @@
 											<p>Email us: onlinebuy@ocean.com</p>											
 											</div>
                                            </div><!-- end row -->
-										</div><br/>
+										</div><!-- end container -->
+            </div><!-- end section -->
+										
 <input type="hidden" id="sessionCaptcha1" name="sessionCaptcha1" value="<?php echo $this->session->userdata('captchaCode'); ?>">
 
     <script type="text/javascript">
