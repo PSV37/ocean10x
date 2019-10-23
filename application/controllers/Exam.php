@@ -84,7 +84,6 @@ class Exam extends MY_Seeker_Controller
             {
                 $where_queans = "question_id='$question_id' AND answer_id='$option[$i]'";
                 $test_ans_data= $this->Master_model->getMaster('questionbank_answer', $where_queans, $like = false, $join=false, $select = false);
-
                 if($test_ans_data == true)
                 {
                     $status = 'Yes';
@@ -109,20 +108,24 @@ class Exam extends MY_Seeker_Controller
             foreach($data['skills'] as $skill_row){}
             $skill_id = $skill_row['skills_required'];
 
-            $where_que = "job_id='$job_post_id' AND js_id='$jobseeker_id'";
+            $where_que = "job_id='$job_post_id' AND js_id='$jobseeker_id' ";
             $test_data= $this->Master_model->getMaster('js_test_info', $where_que, $like = false, $join=false, $select = false);
+            $tested_question=array();
             foreach($test_data as $row_test)
             {
                 $qus = $row_test['question_id'];
-
-                $where_req_skill="technical_id IN (".$skill_id.") AND ques_id !='$qus'";
-                $data['questions'] = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit='1',$start=false, $search=false);
-                foreach($data['questions'] as $qrow){}
-                $question_id = $qrow['ques_id'];
-
-                $wherechks = "question_id='$question_id'";
-                $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
+                array_push($qus,$tested_question);
             }
+
+            $where_req_skill="technical_id IN (".$skill_id.") AND ques_id not in(".implode(',',$tested_question).")";
+            $data['questions'] = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit='1',$start=false, $search=false);
+            $question_id = $data['questions'][0]['ques_id'];
+
+            $wherechks = "question_id='$question_id'";
+            $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);    
+                
+
+
             $this->load->view('fontend/exam/exam_next_question',$data);
 
         }else{
