@@ -68,7 +68,7 @@
                                            </div>
 										   <div class="col-md-6 col-sm-12">
                                               <select  name="company_category" id="company_category" class="form-control">
-                                                <option value="">Select Industry</option>
+                                                <option value="">Company Services</option>
                                                 <?php foreach($job_category as $dept){?>
                                                 <option value="<?php echo $dept['job_category_id']; ?>"><?php echo $dept['job_category_name']; ?></option>
                                                 <?php } ?>

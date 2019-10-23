@@ -328,9 +328,9 @@
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12">
                                         <div class="formrow">
-                                        	<label class="control-label">Company Industry: <span class="required">*</span></label>
+                                        	<label class="control-label">Company Services: <span class="required">*</span></label>
                                             <select name="company_category" id="company_category" class="form-control" data-style="btn-default" data-live-search="true">
-                                            	<option value="">Select Industry</option> 
+                                            	<option value="">Select Services</option> 
                                                 <?php if(!empty($company_info->company_category)) {
                                                 echo $this->job_category_model->selected($company_info->company_category);
                                                 } else {
