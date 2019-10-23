@@ -46,7 +46,8 @@ class Exam extends MY_Seeker_Controller
             $whereskill = "job_post_id='$job_id'";
             $data['skills'] = $this->Master_model->getMaster('job_posting`',$whereskill);
             foreach($data['skills'] as $skill_row){}
-            
+            echo "<pre>";
+            var_dump($data['skills']);
             $skill_id = $skill_row['skills_required'];
             $where_req_skill="technical_id IN (".$skill_id.")";
             
@@ -78,7 +79,7 @@ class Exam extends MY_Seeker_Controller
         $wherechk = "job_id='$job_id' AND question_id='$question_id' AND js_id='$jobseeker_id'";
         $testdata= $this->Master_model->master_get_num_rows('js_test_info', $wherechk, $like = false, $join=false, $select = false);
         if($testdata == 0){
-            
+
             // check for next questions
             $whereskill = "job_post_id='$job_id'";
             $data['skills'] = $this->Master_model->getMaster('job_posting`',$whereskill);
