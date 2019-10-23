@@ -79,11 +79,24 @@ class Exam extends MY_Seeker_Controller
         $testdata= $this->Master_model->master_get_num_rows('js_test_info', $wherechk, $like = false, $join=false, $select = false);
         if($testdata == 0){
 
+            $exam_array = array(
+                'job_id'            => $job_post_id,
+                'js_id'             => $jobseeker_id,  
+                'question_id'       => $question_id,
+                'answer_selected'   => $option,
+                'correct_status'    =>'0',
+                'date_time'         => date('Y-m-d H:i:s'),
+
+            );
+
+            $last_id = $this->Master_model->master_insert($exam_array, 'js_test_info');
+            
+
             // check for next questions
             $whereskill = "job_post_id='$job_post_id'";
             $data['skills'] = $this->Master_model->getMaster('job_posting`',$whereskill);
             foreach($data['skills'] as $skill_row){}
-            echo $skill_id = $skill_row['skills_required'];
+            $skill_id = $skill_row['skills_required'];
 
             $where_req_skill="technical_id IN (".$skill_id.")";
             $data['questions'] = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit='1',$start=false, $search=false);
