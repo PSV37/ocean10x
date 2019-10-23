@@ -79,14 +79,23 @@ class Exam extends MY_Seeker_Controller
         $wherechk = "job_id='$job_post_id' AND question_id='$question_id' AND js_id='$jobseeker_id'";
         $testdata= $this->Master_model->master_get_num_rows('js_test_info', $wherechk, $like = false, $join=false, $select = false);
         if($testdata == 0){
+
             for($i=0;$i<sizeof($option);$i++)
             {
+                $where_queans = "question_id='$question_id'";
+                $test_ans_data= $this->Master_model->getMaster('questionbank_answer', $where_queans, $like = false, $join=false, $select = false);
+                if($test_ans_data == $option[$i])
+                {
+                    $status = 'Yes'
+                }else{
+                    $status = 'No'
+                }
                 $exam_array = array(
                     'job_id'            => $job_post_id,
                     'js_id'             => $jobseeker_id,  
                     'question_id'       => $question_id,
                     'answer_selected'   => $option[$i],
-                    'correct_status'    =>'0',
+                    'correct_status'    => $status,
                     'date_time'         => date('Y-m-d H:i:s'),
 
                 );
@@ -99,14 +108,20 @@ class Exam extends MY_Seeker_Controller
             foreach($data['skills'] as $skill_row){}
             $skill_id = $skill_row['skills_required'];
 
-            $where_req_skill="technical_id IN (".$skill_id.") AND ques_id !='$question_id'";
-            $data['questions'] = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit='1',$start=false, $search=false);
-            foreach($data['questions'] as $qrow){}
-            $question_id = $qrow['ques_id'];
+            $where_que = "job_id='$job_post_id' AND js_id='$jobseeker_id'";
+            $test_data= $this->Master_model->getMaster('js_test_info', $where_que, $like = false, $join=false, $select = false);
+            foreach($test_data as $row_test)
+            {
+                $qus = $row_test['question_id'];
 
-            $wherechks = "question_id='$question_id'";
-            $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
+                $where_req_skill="technical_id IN (".$skill_id.") AND ques_id !='$qus'";
+                $data['questions'] = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit='1',$start=false, $search=false);
+                foreach($data['questions'] as $qrow){}
+                $question_id = $qrow['ques_id'];
 
+                $wherechks = "question_id='$question_id'";
+                $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
+            }
             $this->load->view('fontend/exam/exam_next_question',$data);
 
         }else{
