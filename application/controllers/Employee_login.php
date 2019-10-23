@@ -37,7 +37,7 @@ class Employee_Login extends CI_Controller
             $data['name']       = $result->name;
            
             $this->session->set_userdata($data);
-                redirect('employee');
+                redirect('employee_dashboard');
         } else {
             $this->session->set_flashdata('emp_msg',
                 '<div class="alert alert-danger alert-dismissable">
