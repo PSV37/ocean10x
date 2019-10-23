@@ -2,7 +2,7 @@
 <div id="nextshow">
   
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-12">
         <div class="userccount">
            <h2 align="center">Thank You <span>!</span></h2> 
             <p>Your test completed successfully this job . <br>
