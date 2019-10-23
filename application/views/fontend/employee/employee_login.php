@@ -35,17 +35,13 @@
             <div class="formrow">
              <input type="password"  name="txtPassword" id="txtPassword" class="form-control" placeholder="Password">
             </div>
-           <!-- <div class="formrow">                          	
-              <a href="<?php echo base_url() . 'employer_login/forgot_pass' ?>">Forgot Password?</a>              
-            </div>-->
+           
             <input type="submit" value="SignIn" name="submit" id="submit" class="btn btn-success btn-block"/>
           </div>
            </form>
           <!-- login form  end--> 
           
-          <!-- sign up form -->
-          <!--<div class="newuser"><i class="fa fa-user" aria-hidden="true"></i> New User? <a href="<?php echo base_url(); ?>employer_register">Register Here</a></div>-->
-          <!-- sign up form end--> 
+          
           
         </div>
       </div>
