@@ -47,9 +47,8 @@ public function index()
 				}                 
 			}		
 		}
-			$data['inner_page'] =  "fontend/employee/employee_login";
-			$data['page_title'] = "Employee Login";
-		    $this->load->view('fontend/employee/employee_login',$data); 
+			
+		    $this->load->view('fontend/employee/employee_login'); 
 }
 //function for logout 
 public function logout()
