@@ -86,9 +86,9 @@ class Exam extends MY_Seeker_Controller
                 $test_ans_data= $this->Master_model->getMaster('questionbank_answer', $where_queans, $like = false, $join=false, $select = false);
                 if($test_ans_data == $option[$i])
                 {
-                    $status = 'Yes'
+                    $status = 'Yes';
                 }else{
-                    $status = 'No'
+                    $status = 'No';
                 }
                 $exam_array = array(
                     'job_id'            => $job_post_id,
