@@ -83,7 +83,7 @@ class Exam extends MY_Seeker_Controller
             $whereskill = "job_post_id='$job_post_id'";
             $data['skills'] = $this->Master_model->getMaster('job_posting`',$whereskill);
             foreach($data['skills'] as $skill_row){}
-            $skill_id = $skill_row['skills_required'];
+            echo $skill_id = $skill_row['skills_required'];
 
             $where_req_skill="technical_id IN (".$skill_id.")";
             $data['questions'] = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit='1',$start=false, $search=false);
