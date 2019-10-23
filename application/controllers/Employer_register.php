@@ -65,7 +65,7 @@ class Employer_register extends CI_Controller
 			'country_id'       => $this->input->post('country_id'),
 			'state_id'         => $this->input->post('state_id'),
 			'city_id'          => $this->input->post('city_id'),
-			'pincode'          => $this->input->post('pincode'),
+			'company_pincode'          => $this->input->post('company_pincode'),
             'company_password' => md5($this->input->post('company_password')),
             'token'            => md5($this->input->post('company_email')),
         );
