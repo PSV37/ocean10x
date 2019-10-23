@@ -123,11 +123,10 @@ class Exam extends MY_Seeker_Controller
             $where_req_skill="technical_id IN (".$skill_id.") AND ques_id not in(".implode(',',$tested_question).")";
             $data['questions'] = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit='1',$start=false, $search=false);
             $question_id = $data['questions'][0]['ques_id'];
-
+            echo count($data['questions']);
             $wherechks = "question_id='$question_id'";
             $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);    
                 
-
 
             $this->load->view('fontend/exam/exam_next_question',$data);
 
