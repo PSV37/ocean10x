@@ -67,10 +67,10 @@
                                               <input type="Password" name="company_password" class="form-control" placeholder="Password">
                                            </div>
 										   <div class="col-md-6 col-sm-12">
-                                              <select  name="country_id" class="form-control" onchange="getStates(this.value)">
-                                                <option value="">Select Country</option>
-                                                <?php foreach($country as $key){?>
-                                                <option value="<?php echo $key['country_id']; ?>"><?php echo $key['country_name']; ?></option>
+                                              <select  name="dept_id" id="dept_id" class="form-control">
+                                                <option value="">Select Industry</option>
+                                                <?php foreach($department as $dept){?>
+                                                <option value="<?php echo $dept['dept_id']; ?>"><?php echo $dept['departmrnt_name']; ?></option>
                                                 <?php } ?>
                                               </select> </div>
                                           </div><!-- end row -->
