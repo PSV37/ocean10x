@@ -25,7 +25,9 @@ class Exam extends MY_Seeker_Controller
                  
             $data['title'] = 'Exam Instructions';
 
-            $data['job_id'] = $job_id;
+            $data['job_id'] = $job_id; 
+
+            
             $this->load->view('fontend/exam/exam_instruction',$data);
         } else {
             redirect('/');

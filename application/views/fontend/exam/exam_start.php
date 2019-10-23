@@ -28,7 +28,7 @@
                   <h3 style="color:#FF0000" align="center">
                     Time Left : <span id='timer'></span>
                   </h3>
-                <div id="nextshow">
+                <div id="nextshow" >
                   <form id="nextques" class="submit-form" action="#" method="post">
                     <div class="row">
                       <div class="col-md-12 col-sm-12">
