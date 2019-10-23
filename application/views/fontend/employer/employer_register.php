@@ -86,7 +86,7 @@
 									  <div class="formrow">
                                         <div class="row">
                                             <div class="col-md-12 col-sm-12">
-                                              <textarea name="company_address2" class="form-control" placeholder="Address-2"><?php echo isset($this->session->userdata['reg_in']['company_address2'])?$this->session->userdata['reg_in']['company_address2']:''; ?></textarea>
+                                              <textarea name="company_address2" id="company_address2" class="form-control" placeholder="Address-2"><?php echo isset($this->session->userdata['reg_in']['company_address2'])?$this->session->userdata['reg_in']['company_address2']:''; ?></textarea>
                                            </div>
                                           </div><!-- end row -->
                                     </div>
