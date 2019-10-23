@@ -74,7 +74,7 @@ class Exam extends MY_Seeker_Controller
         $option = $this->input->post('option');
       
         $wherechk = "job_id='$job_id' AND question_id='$question_id' AND js_id='$jobseeker_id'";
-        $testdata= $this->Master_model->master_get_num_rows('$js_test_info', $wherechk, $like = false, $join=false, $select = false);
+        $testdata= $this->Master_model->master_get_num_rows('js_test_info', $wherechk, $like = false, $join=false, $select = false);
        echo $this->db->last_query(); echo "<br><br>";
        echo $testdata;
         
