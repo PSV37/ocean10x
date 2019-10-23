@@ -145,16 +145,7 @@
 
                                     <button id="submitButton" class="btn">Create Account</button>
                                 </form>
-									<div class="formrow">
-                                       
-                                		<div class="row">
-                                            <div class="col-md-6 col-sm-12">
-											<p>For Any Query:</p>
-											<p>Contact Us: +91 99999 99999 or +91 88888 88888</p>
-											<p>Email us: onlinebuy@ocean.com</p>											
-											</div>
-                                           </div><!-- end row -->
-                                    </div>
+									
                              </div>   
                             </div><!-- end post-padding -->
                         </div><!-- end col -->
@@ -163,7 +154,16 @@
                     </div><!-- end row -->  
                 </div><!-- end container -->
             </div><!-- end section -->
-
+										<div class="formrow">
+                                       
+                                		<div class="row">
+                                            <div class="col-md-6 col-sm-12">
+											<br/><p>For Any Query:</p>
+											<p>Contact Us: +91 99999 99999 or +91 88888 88888</p>
+											<p>Email us: onlinebuy@ocean.com</p>											
+											</div>
+                                           </div><!-- end row -->
+										</div>
 <input type="hidden" id="sessionCaptcha1" name="sessionCaptcha1" value="<?php echo $this->session->userdata('captchaCode'); ?>">
 
     <script type="text/javascript">
