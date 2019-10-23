@@ -41,8 +41,8 @@ class Employer_register extends CI_Controller
 		$city = $this->Master_model->getMaster('city',$where=false);
 		$country = $this->Master_model->getMaster('country',$where=false);
 		$state = $this->Master_model->getMaster('state',$where=false);
-		$department = $this->Master_model->getMaster('department',$where=false);
-        $this->load->view('fontend/employer/employer_register.php',compact('captcha_images', 'js_personal_info', 'city', 'country', 'state', 'department'));
+		$job_category = $this->Master_model->getMaster('job_category',$where=false);
+        $this->load->view('fontend/employer/employer_register.php',compact('captcha_images', 'js_personal_info', 'city', 'country', 'state', 'job_category'));
 
     }
 
