@@ -466,12 +466,12 @@
 									<div class="row">
 					 				 	<div class="col-md-6 col-sm-6">
 					                       <div class="formrow">
-					                             <label class="control-label">Pincode:</label>
+					                             <label class="control-label">Pincode: <span class="required">*</span></label>
 					                            <input type="text" name="company_pincode" id="company_pincode"  class="form-control" value="<?php 
 					                                     if(!empty($company_info->company_pincode)){
 					                                        echo $company_info->company_pincode;
 					                                     }
-					                                ?>">
+					                                ?>" required>
 					                        </div>
 					                     </div>
 					                </div>
