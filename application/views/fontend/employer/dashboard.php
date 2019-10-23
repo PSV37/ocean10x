@@ -416,7 +416,7 @@
 
                                         <div class="col-md-12 col-sm-12">
                                         	<div class="formrow">
-                                        	<label class="control-label">Company Services-2:</label>
+                                        	<label class="control-label">Company Address-2:</label>
                                             <textarea name="company_address2" class="form-control ckeditor" placeholder="Company Address-2"><?php if(!empty($company_info->company_address)){
                                             	 	echo $company_info->company_address2;
                                             	 } ?></textarea>
@@ -459,28 +459,7 @@
 											</select>
 	                                    </div>
 										
-										<div class="row">
-					 				 	<div class="col-md-6 col-sm-6">
-					                       <div class="formrow">
-					                             <label class="control-label">Pincode:</label>
-					                            <input type="text" name="company_pincode" id="company_pincode"  class="form-control" value="<?php 
-					                                     if(!empty($company_info->company_pincode)){
-					                                        echo $company_info->company_pincode;
-					                                     }
-					                                ?>">
-					                        </div>
-					                     </div>
 
-					                    <div class="col-md-6 col-sm-6">
-					                      <div class="formrow">
-					                            <label class="control-label">Industry: </label>
-												<select  name="dept_id" id="dept_id" class="form-control">
-					                            <?php foreach($department as $dept){?>
-											<option value="<?php echo $dept['dept_id']; ?>"<?php if($company_info->dept_id==$key['dept_id']){ echo "selected"; }?>><?php echo $key['department_name']; ?></option>
-											<?php } ?>
-					                        </div>
-					                    </div>
-					                </div>
 	                                </div>
 	                                    </div><!-- end row -->
                                     </div>
