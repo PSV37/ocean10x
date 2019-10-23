@@ -402,7 +402,28 @@
 											</div>
 										</div>
 									</div>
+										<div class="row">
 
+ 										<div class="col-md-12 col-sm-12">
+                                         <div class="formrow">
+                                         	<label class="control-label">Company Address-1: <span class="required">*</span></label>
+                                            <textarea name="company_address" class="form-control ckeditor" placeholder="Company Address"><?php if(!empty($company_info->company_address)){
+                                            	 	echo $company_info->company_address;
+                                            	 } ?></textarea>
+                                                 </div>
+                                        </div>
+  										<div class="panel-body"></div>
+
+                                        <div class="col-md-12 col-sm-12">
+                                        	<div class="formrow">
+                                        	<label class="control-label">Company Address-2:</label>
+                                            <textarea name="company_address2" class="form-control ckeditor" placeholder="Company Address-2"><?php if(!empty($company_info->company_address)){
+                                            	 	echo $company_info->company_address2;
+                                            	 } ?></textarea>
+                                             </div>
+                                        </div>
+                                       
+                                    </div>
 									
 	                                    <div class="row">
 	                                    	
@@ -437,6 +458,8 @@
 											 
 											</select>
 	                                    </div>
+										
+
 	                                </div>
 	                                    </div><!-- end row -->
                                     </div>
@@ -463,32 +486,11 @@
 					                        </div>
 					                    </div>
 					                </div>
+									
+									
                                     <!-- end row -->
                                     <div class="panel-body"></div>
- 									<div class="row">
-
- 										<div class="col-md-12 col-sm-12">
-                                         <div class="formrow">
-                                         	<label class="control-label">Company Address: <span class="required">*</span></label>
-                                            <textarea name="company_address" class="form-control ckeditor" placeholder="Company Address"><?php if(!empty($company_info->company_address)){
-                                            	 	echo $company_info->company_address;
-                                            	 } ?></textarea>
-                                                 </div>
-                                        </div>
-  										<div class="panel-body"></div>
-
-                                        <div class="col-md-12 col-sm-12">
-                                        	<div class="formrow">
-                                        	<label class="control-label">Company Services:</label>
-                                            <textarea name="company_service" class="form-control ckeditor" placeholder="Company Service"><?php
-                                            	if(!empty($company_info->company_service)){
-                                            	 	echo $company_info->company_service;
-                                            	 }
-                                             ?></textarea>
-                                             </div>
-                                        </div>
-                                       
-                                    </div><!-- end row -->
+ 									<!-- end row -->
 									
                                       <div class="panel-body"></div>
 									<div class="row">
