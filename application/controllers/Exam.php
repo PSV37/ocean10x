@@ -95,7 +95,7 @@ class Exam extends MY_Seeker_Controller
                     'js_id'             => $jobseeker_id,  
                     'question_id'       => $question_id,
                     'answer_selected'   => $option[$i],
-                    'correct_status'    => $status[$i],
+                    'correct_status'    => $status,
                     'date_time'         => date('Y-m-d H:i:s'),
 
                 );
