@@ -254,7 +254,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                 success:function(res){
                     $('#city_id').html(res);
                     $('#city_id').val(<?php echo $result['city_id']; ?>);
-					getStates_load();
+					getCitys_load();
                 }
                 
             }); 
