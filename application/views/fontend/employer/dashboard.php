@@ -73,7 +73,7 @@
                                             ?>" class="form-control" placeholder="Company Website">
                                             </div>
                                         </div>
-                                        <div class="col-md-3 col-sm-12">
+                                        <div class="col-md-2 col-sm-12">
                                         	<div class="formrow">
 											<label class="control-label">Country Code:</label>
 											<select id="country" name="country_code" class="form-control">
@@ -313,7 +313,7 @@
 											</select>
 											</div>
 											</div>
-											<div class="col-md-3 col-sm-12">
+											<div class="col-md-4 col-sm-12">
                                         	<div class="formrow">
                                         	<label class="control-label">Company Phone: <span class="required">*</span></label>
                                             <input type="tel" name="company_phone" value="<?php 
