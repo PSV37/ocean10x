@@ -11,7 +11,7 @@
       
       <input type="hidden" name="job_id" id="job_id" value="<?php if(!empty($job_id))echo base64_encode($job_id); ?>">
       <input type="hidden" name="question_id" id="question_id" value="<?php echo $row['ques_id']; ?>">
-      <label><?php echo $row['question']; ?></label> 
+      <label><?php echo "Question:-".$row['question']; ?></label> 
         <?php if($anss > 1){ ?>
         <ul>
           <li><input type="checkbox" name="option[]" id="option1" value="1"><?php echo $row['option1'];?></li>
