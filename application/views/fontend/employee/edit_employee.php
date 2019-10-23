@@ -208,7 +208,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                 data:{id:id},
                 success:function(res){
                     $('#state_id').html(res);
-                    $('#state_id').val(<?php echo $row['state_id']; ?>);
+                    $('#state_id').val(<?php echo $result['state_id']; ?>);
 					getStates_load();
                 }
                 
