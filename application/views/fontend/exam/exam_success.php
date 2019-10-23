@@ -3,7 +3,7 @@
                   <div class="listpgWraper">
                     <div class="container">
                       <div class="row">
-                        <div class="col-md-6 col-md-offset-3">
+                        <div class="col-md-6">
                           <div class="userccount">
                           	 <h2 align="center">Thank You <span>!</span></h2> 
                               <p>Your test completed successfully this job . <br>
