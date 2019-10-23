@@ -7,10 +7,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-6">
-        <h1 class="page-heading">Employer Login</h1>
+        <h1 class="page-heading">Employee Login</h1>
       </div>
       <div class="col-md-6 col-sm-6">
-        <div class="breadCrumb"><a href="#.">Home</a> / <span>Employer Login</span></div>
+        <div class="breadCrumb"><a href="#.">Home</a> / <span>Employee Login</span></div>
       </div>
     </div>
   </div>
@@ -35,17 +35,13 @@
             <div class="formrow">
              <input type="password"  name="txtPassword" id="txtPassword" class="form-control" placeholder="Password">
             </div>
-           <!-- <div class="formrow">                          	
-              <a href="<?php echo base_url() . 'employer_login/forgot_pass' ?>">Forgot Password?</a>              
-            </div>-->
+           
             <input type="submit" value="SignIn" name="submit" id="submit" class="btn btn-success btn-block"/>
           </div>
            </form>
           <!-- login form  end--> 
           
-          <!-- sign up form -->
-          <!--<div class="newuser"><i class="fa fa-user" aria-hidden="true"></i> New User? <a href="<?php echo base_url(); ?>employer_register">Register Here</a></div>-->
-          <!-- sign up form end--> 
+          
           
         </div>
       </div>
