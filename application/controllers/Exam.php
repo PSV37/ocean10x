@@ -105,7 +105,7 @@ class Exam extends MY_Seeker_Controller
             // check for next questions
             $whereskill = "job_post_id='$job_post_id'";
             // $data['skills'] = $this->Master_model->getMaster('job_posting',$whereskill);
-            $data['skills'] = $this->Master_model->get_master_row('job_posting', $select ='skills_required' , $whereskill, $join = FALSE)
+            $data['skills'] = $this->Master_model->get_master_row('job_posting', $select ='skills_required' , $whereskill, $join = FALSE);
             // foreach($data['skills'] as $skill_row){}
             $skill_id = $data['skills']['skills_required'];
 
