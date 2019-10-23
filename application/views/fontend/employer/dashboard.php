@@ -76,7 +76,7 @@
                                         <div class="col-md-3 col-sm-12">
                                         	<div class="formrow">
 											<label class="control-label">Country Code:</label>
-											<select id="country" name="country_code" class="form-control" style="height:55px;">
+											<select id="country" name="country_code" class="form-control">
 												<!-- <option value="">Select Country Code</option> -->
 												<br/>
 												<option><?php echo $company_info->country_code?></option>
