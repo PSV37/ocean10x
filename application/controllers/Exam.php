@@ -41,8 +41,8 @@ class Exam extends MY_Seeker_Controller
             $data['title'] = 'Exam Start';
             $data['job_id'] = $job_id;
 
-            $whereskill = "job_seeker_id='$jobseeker_id'";
-            $data['skills'] = $this->Master_model->getMaster('job_posting`',$wherechk);
+            $whereskill = "job_post_id='$job_id'";
+            $data['skills'] = $this->Master_model->getMaster('job_posting`',$whereskill);
             foreach($data['skills'] as $skill_row){}
             
             $skill_id = $skill_row['skills_required'];
@@ -77,8 +77,8 @@ class Exam extends MY_Seeker_Controller
         $testdata= $this->Master_model->master_get_num_rows('js_test_info', $wherechk, $like = false, $join=false, $select = false);
         if($testdata == 0){
             // check for next questions
-            $whereskill = "job_seeker_id='$jobseeker_id'";
-            $data['skills'] = $this->Master_model->getMaster('job_posting`',$wherechk);
+            $whereskill = "job_post_id='$job_id'";
+            $data['skills'] = $this->Master_model->getMaster('job_posting`',$whereskill);
             foreach($data['skills'] as $skill_row){}
             $skill_id = $skill_row['skills_required'];
 
