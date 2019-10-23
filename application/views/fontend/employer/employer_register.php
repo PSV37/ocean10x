@@ -61,6 +61,13 @@
                                           
                                         </div><!-- end row -->
                                     </div>
+									<div class="formrow">
+                                        <div class="row">
+                                            <div class="col-md-12 col-sm-12">
+                                              <input type="Password" name="company_password" class="form-control" placeholder="Password">
+                                           </div>
+                                          </div><!-- end row -->
+                                    </div>
                                      <div class="formrow">
                                         <div class="row">
                                             <div class="col-md-12 col-sm-12">
@@ -72,7 +79,7 @@
 									  <div class="formrow">
                                         <div class="row">
                                             <div class="col-md-12 col-sm-12">
-                                              <textarea name="company_address2" class="form-control" placeholder="Address-1"><?php echo isset($this->session->userdata['reg_in']['company_address2'])?$this->session->userdata['reg_in']['company_address2']:''; ?></textarea>
+                                              <textarea name="company_address2" class="form-control" placeholder="Address-2"><?php echo isset($this->session->userdata['reg_in']['company_address2'])?$this->session->userdata['reg_in']['company_address2']:''; ?></textarea>
                                            </div>
                                           </div><!-- end row -->
                                     </div>
@@ -103,9 +110,7 @@
                                                     <option value="">Select City</option>
                                                 </select>
                                             </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <input type="Password" name="company_password" class="form-control" placeholder="Password">
-                                            </div>
+                                            
                                         </div><!-- end row -->
                                     </div>
                                     <div class="formrow">
