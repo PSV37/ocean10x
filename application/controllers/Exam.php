@@ -124,12 +124,18 @@ class Exam extends MY_Seeker_Controller
             $wherechks = "question_id='$ques_id'";
             $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);    
                 
-            if(!empty($ques_id))
-            {
+            $where_last = "job_id='$job_post_id' AND js_id='$jobseeker_id'";
+            $count= $this->Master_model->getList($condition, $field_by, $order_by, $offset, $perpage, 'js_test_info', $search, $join = FALSE, $where_last, $select = FALSE, $distinct = FALSE, $group_by = 'question_id');
+
+           echo $this->db->last_query();
+
+           echo NUMBER_QUESTIONS;
+            // if(!empty($ques_id))
+            // {
                  $this->load->view('fontend/exam/exam_next_question',$data);
-            }else{
-                 $this->load->view('fontend/exam/exam_success');
-            }
+            // }else{
+            //      $this->load->view('fontend/exam/exam_success');
+            // }
            
 
         }else{
