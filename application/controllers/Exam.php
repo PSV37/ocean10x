@@ -114,7 +114,7 @@ class Exam extends MY_Seeker_Controller
             foreach($test_data as $row_test)
             {
                 $qus = $row_test['question_id'];
-                array_push($qus,$tested_question);
+                array_push($tested_question,$qus);
             }
 
             $where_req_skill="technical_id IN (".$skill_id.") AND ques_id not in(".implode(',',$tested_question).")";
