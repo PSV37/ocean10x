@@ -42,7 +42,7 @@ class Employer_register extends CI_Controller
 		$country = $this->Master_model->getMaster('country',$where=false);
 		$state = $this->Master_model->getMaster('state',$where=false);
 		$job_category = $this->Master_model->getMaster('job_category',$where=false);
-        $this->load->view('fontend/employer/employer_register.php',compact('captcha_images', 'js_personal_info', 'city', 'country', 'state', 'company_info'));
+        $this->load->view('fontend/employer/employer_register.php',compact('captcha_images', 'js_personal_info', 'city', 'country', 'state', 'job_category'));
 
     }
 
