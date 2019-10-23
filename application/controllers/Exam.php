@@ -27,7 +27,7 @@ class Exam extends MY_Seeker_Controller
 
             $data['job_id'] = $job_id; 
 
-            
+
             $this->load->view('fontend/exam/exam_instruction',$data);
         } else {
             redirect('/');
@@ -92,7 +92,7 @@ class Exam extends MY_Seeker_Controller
             $wherechks = "question_id='$question_id'";
             $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
 
-            echo $this->load->view('fontend/exam/exam_next_question',$data);
+            $this->load->view('fontend/exam/exam_next_question',$data);
 
         }else{
             echo "attempted Question";

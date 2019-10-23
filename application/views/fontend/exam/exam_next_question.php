@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-md-12 col-sm-12">
       <?php 
-        $sr_no=0;
+        $sr_no=1;
          if(!empty($ans))  $anss = count($ans);
           if(!empty($questions)) foreach($questions as $row){ 
             $sr_no++;
