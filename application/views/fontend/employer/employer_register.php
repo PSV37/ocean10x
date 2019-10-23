@@ -94,7 +94,7 @@
                                     <div class="formrow">
                                         <div class="row">
                                             <div class="col-md-6 col-sm-12">
-                                              <select  name="country_id" class="form-control" onchange="getStates(this.value)">
+                                              <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
                                                 <option value="">Select Country</option>
                                                 <?php foreach($country as $key){?>
                                                 <option value="<?php echo $key['country_id']; ?>"><?php echo $key['country_name']; ?></option>
