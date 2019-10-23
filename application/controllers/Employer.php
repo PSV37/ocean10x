@@ -1136,62 +1136,62 @@ public function deleteemployee()
 	
 	/*Edit Employee*/
 	
-	
-	public function editemployee(){
-	$c_id = $this->input->get('id');
-	$where = "emp_id='$c_id'";
-	$data['result'] = $this->Master_model->get_master_row('employee',$select = FALSE,$where);
-	$data['department'] = $this->Master_model->getMaster('department',$where=false);
-	$data['country'] = $this->Master_model->getMaster('country',$where=false);
-	$data['state'] = $this->Master_model->getMaster('state',$where=false);
-	$data['city'] = $this->Master_model->getMaster('city',$where=false);
-	//echo $this->db->last_query(); die;
-	$this->load->view('fontend/employee/edit_employee',$data);
-	
-}
-public function postEditData(){
-$this->form_validation->set_rules('emp_no', 'Employee No.', 'required');
-		$this->form_validation->set_rules('emp_name', 'organization Name', 'required');
-		$this->form_validation->set_rules('email', 'Email Id', 'required');
-		$this->form_validation->set_rules('mobile', ' Contact No.', 'required');
-		$this->form_validation->set_rules('dept_id', 'Department', 'required');
-		$this->form_validation->set_rules('address', 'Address', 'required');
-		
-                        array('required' => 'You must provide a %s.');
+	     public function save_city($id = null){
+          
+             $employer_id = $this->session->userdata('company_profile_id');
+            
+            $state_dt=array(
+                'country_id' => $this->input->post('country_name'),
+                'state_id' => $this->input->post('state_name'),
+                'city_id' => $this->input->post('city_id'),
+            );
 
-                if ($this->form_validation->run() == FALSE)
-                {
-                        $c_id = $this->input->get('id');
-	$where = "emp_id='$c_id'";
-	$data['result'] = $this->Master_model->get_master_row('employee',$select = FALSE,$where);
-	$data['department'] = $this->Master_model->getMaster('department',$where=false);
-	$data['country'] = $this->Master_model->getMaster('country',$where=false);
-	$data['state'] = $this->Master_model->getMaster('state',$where=false);
-	$data['city'] = $this->Master_model->getMaster('city',$where=false);
-	//echo $this->db->last_query(); die;
-	$this->load->view('fontend/employee/edit_employee',$data);	
-                }
-                else
-				{
-					
-		$data['emp_no'] = $this->input->post('emp_no');
-		$data['emp_name'] = $this->input->post('emp_name');
-		$data['email'] = $this->input->post('email');
-		$data['mobile'] = $this->input->post('mobile');
-		$data['dept_id'] = $this->input->post('dept_id');
-		$data['address'] = $this->input->post('address');
-		$data['country_id'] = $this->input->post('country_id');
-		$data['state_id'] = $this->input->post('state_id');
-		$data['city_id'] = $this->input->post('city_id');
-		$data['emp_status'] = $this->input->post('emp_status');
-		$data['emp_updated_date'] = date('Y-m-d H:i:s');
-		$data['emp_updated_by'] = $user_id;
-		$id = $this->input->post('cid');
-		$where['emp_id']=$id;
-		$this->Master_model->master_update($data,'employee',$where);
-		redirect(base_url().'employer/allemployee');
-					}
-}
+            if(empty($id)){
+                $state_dt['emp_created_date']=date('Y-m-d H:i:s');
+                $state_dt['emp_created_by']=$employer_id;
+
+                $this->Master_model->master_insert($state_dt,'employee');
+               
+                redirect('employer/allemployee');
+            }
+            else {
+                $state_dt['emp_updated_date']=date('Y-m-d H:i:s');
+                $state_dt['emp_updated_by']=$employer_id;
+
+                $where['emp_id']=$id;
+                $this->Master_model->master_update($state_dt,'employee',$where);
+               
+                redirect('employer/allemployee');
+            }
+        }
+
+    
+    public function edit_city($id){
+        $data['title']="City Edit";
+
+        $where_all = "employee.emp_status='1'";
+        $join_emp = array(
+                'country' => 'country.country_id=employee.country_id |INNER',
+                'state' => 'state.state_id=employee.state_id |INNER',
+				'city' => 'city.city_id=employee.city_id |INNER',
+            );
+        $data['city_info'] = $this->Master_model->getMaster('employee',$where_all,$join_emp);
+
+        $where_ct = "emp_id='$id'";
+        $data['edit_emp_info'] = $this->Master_model->getMaster('employee',$where_ct);
+        
+        $where_cn= "status=1";
+        $data['country_data'] = $this->Master_model->getMaster('country',$where_cn);
+
+        $where_state= "state_status=1";
+        $data['state_data'] = $this->Master_model->getMaster('state',$where_state);
+		
+		 $where_city= "city_status=1";
+        $data['city_data'] = $this->Master_model->getMaster('city',$where_city);
+        
+        $this->load->view('fontend/employee/edit_employee',$data);
+    }
+
 
 
 
