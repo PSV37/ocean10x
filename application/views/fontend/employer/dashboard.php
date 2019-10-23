@@ -698,7 +698,7 @@ $("#company_category").select2( {
 	} );
 </script>
 <script>
-$("#company").select2( {
+$("#country").select2( {
 	placeholder: "Select Country Code",
 	allowClear: true
 	} );
