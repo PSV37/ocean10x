@@ -67,7 +67,7 @@
                                               <input type="Password" name="company_password" class="form-control" placeholder="Password">
                                            </div>
 										   <div class="col-md-6 col-sm-12">
-                                              <select  name="dept_id" id="dept_id" class="form-control">
+                                              <select  name="company_category" id="company_category" class="form-control">
                                                 <option value="">Select Industry</option>
                                                 <?php foreach($job_category as $dept){?>
                                                 <option value="<?php echo $dept['job_category_id']; ?>"><?php echo $dept['job_category_name']; ?></option>
