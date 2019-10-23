@@ -82,9 +82,10 @@ class Exam extends MY_Seeker_Controller
 
             for($i=0;$i<sizeof($option);$i++)
             {
-                $where_queans = "question_id='$question_id'";
+                $where_queans = "question_id='$question_id' AND answer-id='$option[$i]'";
                 $test_ans_data= $this->Master_model->getMaster('questionbank_answer', $where_queans, $like = false, $join=false, $select = false);
-                if($test_ans_data == $option[$i])
+
+                if($test_ans_data == true)
                 {
                     $status = 'Yes';
                 }else{
