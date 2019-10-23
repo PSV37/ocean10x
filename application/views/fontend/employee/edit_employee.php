@@ -236,6 +236,51 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
        }
 
        
+</script>	  
+
+<script>
+  $(document).ready(function(){
+
+
+
+    function getCitys_load(){
+        var id = $('#state_id').val();
+
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>employer/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city_id').html(res);
+                    $('#city_id').val(<?php echo $result['city_id']; ?>);
+					getStates_load();
+                }
+                
+            }); 
+          }
+   
+       }
+       getCitys_load();
+    });
+</script>
+<script>
+    function getCitys(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>employer/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city_id').html(res);
+                }
+                
+            }); 
+          }
+   
+       }
+
+       
 </script>	   
 	   
 <!-- <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script> -->
