@@ -1005,7 +1005,7 @@ public function addemployee(){
 	                
 	                
 					$config['upload_path'] = '/asset/photo/';
-	                $config['allowed_types'] = 'gif|jpg|jpeg|png|pdf|doc|docx|odt|xlsm|xls|xlm|xla|xlsx|bmp|docm|dotx|dotm|docb|gif';
+	                $config['allowed_types'] = 'gif|jpg|jpeg|png';
 	                $config['max_size']    = '3000000';
 	                //$config['max_width']  = '1024';
 	                //$config['max_height']  = '768';
