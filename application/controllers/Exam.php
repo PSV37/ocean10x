@@ -98,7 +98,7 @@ class Exam extends MY_Seeker_Controller
             foreach($data['skills'] as $skill_row){}
             $skill_id = $skill_row['skills_required'];
 
-            $where_req_skill="technical_id IN (".$skill_id.")";
+            $where_req_skill="technical_id IN (".$skill_id.") AND ques_id !='$question_id'";
             $data['questions'] = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit='1',$start=false, $search=false);
             foreach($data['questions'] as $qrow){}
             $question_id = $qrow['ques_id'];
