@@ -231,7 +231,7 @@
 endforeach;
 ?>
 
- <?php else : ?> 
+<?php else : ?> 
 <!--get error message if this empty-->
 <li>
 <strong>There is no data to display</strong>
