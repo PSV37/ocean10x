@@ -37,7 +37,7 @@
                 <!-- /.box-header -->
                 <div class="box-background">
                 <!-- form start -->
-                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/country_master/save_country/<?php  if (!empty($edit_country_data)) { foreach($edit_country_data as $erow)
+                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/country_master/save_country/<?php  if (!empty($country)) { foreach($country as $erow)
                         echo $erow['country_id'];
                       }
                      ?>" method="post">
@@ -81,7 +81,7 @@
                     </thead>
                     <tbody>
                     <?php $key = 1 ?>
-                    <?php if (!empty($country_data)): foreach ($country_data as $row) : ?><!--get all Locations if not this empty-->
+                    <?php if (!empty($country)): foreach ($country as $row) : ?><!--get all Locations if not this empty-->
                         <tr>
                             <td><?php echo $key; ?></td>
                             <!--Serial No> -->
