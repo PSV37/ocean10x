@@ -180,6 +180,9 @@
                      <li <?php echo $this->company_profile_model->User_status_check(); ?> >
                         <a href='<?php echo base_url(); ?>admin/city-master'> <i class='glyphicon glyphicon-plus'></i><span>City Master</span></a>
                      </li>
+					 <li <?php echo $this->company_profile_model->User_status_check(); ?> >
+                        <a href='<?php echo base_url(); ?>admin/pincode-master'> <i class='glyphicon glyphicon-plus'></i><span>Pincode Master</span></a>
+                     </li>
 
                      <li <?php echo $this->company_profile_model->User_status_check(); ?> >
                         <a href='<?php echo base_url(); ?>admin/department-master'> <i class='glyphicon glyphicon-plus'></i><span>Department Master</span></a>
