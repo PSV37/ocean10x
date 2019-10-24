@@ -983,7 +983,6 @@ public function addemployee(){
 		$this->form_validation->set_rules('password', 'password', 'required|max_length[15]|min_length[6]|alpha_numeric');
 		$this->form_validation->set_rules('dept_id', 'Department', 'required');
 		$this->form_validation->set_rules('address', 'Address', 'required');
-		$this->form_validation->set_rules('pincode', 'Pincode', 'required');
 		
                         array('required' => 'You must provide a %s.');
 
@@ -1007,7 +1006,7 @@ public function addemployee(){
 	                $NewFileName = $_FILES['photo']['name']; 
 	                
 	                
-					$config['upload_path'] = '/asset/photo/';
+					$config['upload_path'] = './asset/photo/';
 	                $config['allowed_types'] = 'gif|jpg|jpeg|png';
 	                $config['max_size']    = '3000000';
 	                //$config['max_width']  = '1024';
@@ -1046,7 +1045,6 @@ public function addemployee(){
 		$data['state_id'] = $this->input->post('state_id');
 		$data['city_id'] = $this->input->post('city_id');
 		$data['address'] = $this->input->post('address');
-		$data['pincode'] = $this->input->post('pincode');
 		$data['emp_created_date'] = $this->input->post('emp_created_date');
 		$data['emp_created_by'] = $user_id;
 		$data['photo'] =$NewFileName;
@@ -1075,12 +1073,8 @@ $data['state'] = $this->Master_model->getMaster('state',$where=false);
 	$where='employee.org_id="'.$employer.'" and employee.emp_status!= 0';
 	//$data['result'] = $this->Master_model->getMaster('industry',$where=FALSE);
 	$join = array(
-		'department' => 'department.dept_id = employee.dept_id|INNER',
-		'country' => 'country.country_id = employee.country_id|INNER',
-		'state' => 'state.state_id = employee.state_id|INNER',
-		'city' => 'city.id = employee.city_id|INNER',
+		'department' => 'department.dept_id = employee.dept_id|INNER'
 	);
-	
 	
 	$res = $this->Master_model->getMaster('employee',$where, $join);
 	$config = array();
@@ -1164,7 +1158,6 @@ $this->form_validation->set_rules('emp_no', 'Employee No.', 'required');
 		$this->form_validation->set_rules('mobile', ' Contact No.', 'required');
 		$this->form_validation->set_rules('dept_id', 'Department', 'required');
 		$this->form_validation->set_rules('address', 'Address', 'required');
-		$this->form_validation->set_rules('pincode', 'Pincode', 'required');
 		
                         array('required' => 'You must provide a %s.');
 
@@ -1192,7 +1185,6 @@ $this->form_validation->set_rules('emp_no', 'Employee No.', 'required');
 		$data['country_id'] = $this->input->post('country_id');
 		$data['state_id'] = $this->input->post('state_id');
 		$data['city_id'] = $this->input->post('city_id');
-		$data['pincode'] = $this->input->post('pincode');
 		$data['emp_status'] = $this->input->post('emp_status');
 		$data['emp_updated_date'] = date('Y-m-d H:i:s');
 		$data['emp_updated_by'] = $user_id;
@@ -1203,16 +1195,6 @@ $this->form_validation->set_rules('emp_no', 'Employee No.', 'required');
 					}
 }
 
-
- function get_autocomplete(){
-        if (isset($_GET['term'])) {
-            $result = $this->pincode_model->search_blog($_GET['term']);
-            if (count($result) > 0) {
-            foreach ($result as $row)
-                $arr_result[] = $row->pincode;
-                echo json_encode($arr_result);
-            }
-        }
 
 
 function gettopic(){
@@ -1293,21 +1275,19 @@ function getLineitemlevel(){
 }
 
 
+ public function all_exam_result($job_id = null)
+    {
+        $company_id = $this->session->userdata('company_profile_id');
+        if (!empty($job_id) && $this->job_posting_model->check_jobid_and_post_id($job_id, $company_id) == true) {
+            $total_applicantlist = $this->job_apply_model->only_job_applicants($job_id, $company_id);
+            $totalrow = $total_applicantlist['total_row'];
+            $job_details         = $this->job_posting_model->get_job_details($job_id);
 
-public function all_exam_result($job_id = null)
-{
-    $company_id = $this->session->userdata('company_profile_id');
-    if (!empty($job_id) && $this->job_posting_model->check_jobid_and_post_id($job_id, $company_id) == true) {
-        $total_applicantlist = $this->job_apply_model->only_job_applicants($job_id, $company_id);
-        $totalrow = $total_applicantlist['total_row'];
-        $job_details         = $this->job_posting_model->get_job_details($job_id);
-
-        $this->load->view('fontend/employer/job_details', compact('job_id', 'company_id', 'job_details', 'total_applicantlist'));
-    } else {
-        echo "not found";
+            $this->load->view('fontend/employer/job_details', compact('job_id', 'company_id', 'job_details', 'total_applicantlist'));
+        } else {
+            echo "not found";
+        }
     }
-}
-
 
 
 } // end class
