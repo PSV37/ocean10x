@@ -67,7 +67,7 @@ class Country_master extends MY_Controller
         $data['edu_spectial_info'] = $this->Master_model->getMaster('country',$where_all,$join_emp);
 
         $where_edu = "country_id='$id'";
-        $data['edit_spectial_info'] = $this->Master_model->getMaster('country',$where_edu);
+        $data['country'] = $this->Master_model->getMaster('country',$where_edu);
 		
 
         $this->load->view('admin/jobsetting/country_master',$data);
