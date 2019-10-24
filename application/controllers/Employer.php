@@ -983,6 +983,7 @@ public function addemployee(){
 		$this->form_validation->set_rules('password', 'password', 'required|max_length[15]|min_length[6]|alpha_numeric');
 		$this->form_validation->set_rules('dept_id', 'Department', 'required');
 		$this->form_validation->set_rules('address', 'Address', 'required');
+		$this->form_validation->set_rules('pincode', 'Pincode', 'required');
 		
                         array('required' => 'You must provide a %s.');
 
@@ -1074,8 +1075,12 @@ $data['state'] = $this->Master_model->getMaster('state',$where=false);
 	$where='employee.org_id="'.$employer.'" and employee.emp_status!= 0';
 	//$data['result'] = $this->Master_model->getMaster('industry',$where=FALSE);
 	$join = array(
-		'department' => 'department.dept_id = employee.dept_id|INNER'
+		'department' => 'department.dept_id = employee.dept_id|INNER',
+		'country' => 'country.country_id = employee.country_id|INNER',
+		'state' => 'state.state_id = employee.state_id|INNER',
+		'city' => 'city.id = employee.city_id|INNER',
 	);
+	
 	
 	$res = $this->Master_model->getMaster('employee',$where, $join);
 	$config = array();
@@ -1159,6 +1164,7 @@ $this->form_validation->set_rules('emp_no', 'Employee No.', 'required');
 		$this->form_validation->set_rules('mobile', ' Contact No.', 'required');
 		$this->form_validation->set_rules('dept_id', 'Department', 'required');
 		$this->form_validation->set_rules('address', 'Address', 'required');
+		$this->form_validation->set_rules('pincode', 'Pincode', 'required');
 		
                         array('required' => 'You must provide a %s.');
 
@@ -1186,6 +1192,7 @@ $this->form_validation->set_rules('emp_no', 'Employee No.', 'required');
 		$data['country_id'] = $this->input->post('country_id');
 		$data['state_id'] = $this->input->post('state_id');
 		$data['city_id'] = $this->input->post('city_id');
+		$data['pincode'] = $this->input->post('pincode');
 		$data['emp_status'] = $this->input->post('emp_status');
 		$data['emp_updated_date'] = date('Y-m-d H:i:s');
 		$data['emp_updated_by'] = $user_id;
