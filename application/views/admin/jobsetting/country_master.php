@@ -37,7 +37,7 @@
                 <!-- /.box-header -->
                 <div class="box-background">
                 <!-- form start -->
-                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/country_master/save_country/<?php  if (!empty($edit_spectial_info)) { foreach($edit_spectial_info as $erow)
+                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/country_master/save_country/<?php  if (!empty($country)) { foreach($country as $erow)
                         echo $erow['country_id'];
                       }
                      ?>" method="post">
@@ -52,7 +52,7 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Country Name<span class="required">*</span></label>
                                     <input type="text" required name="country_name" placeholder="Country Name"
-                                    value="<?php  if (!empty($edit_spectial_info)) { foreach($edit_spectial_info as $erow)
+                                    value="<?php  if (!empty($country)) { foreach($country as $erow)
                         echo $erow['country_name']; } ?>" class="form-control">
                                 </div>
 
