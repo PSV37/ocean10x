@@ -18,13 +18,12 @@ class Country_master extends MY_Controller
 
         $data['title'] = 'Add Country';
 
-		$data['country'] = $this->Master_model->getMaster('country',$where=false);
-          $where_all = "country.status='1'";
-        $data['country'] = $this->Master_model->getMaster('country',$where_all);
-        // $all_educationlevels=$this->education_level_model->get();
-        $this->load->view('admin/jobsetting/country_master', $data);
-    }
+        $where_cn= "status=1";
+        $select = "country_name, country_id";
+        $data['country_data'] = $this->Master_model->getMaster('country',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
 
+        $this->load->view('admin/jobsetting/country', $data);
+    }
 
         public function save_country($id = null){
             $user_id = $this->session->userdata('admin_user_id');
@@ -61,15 +60,18 @@ class Country_master extends MY_Controller
         redirect('admin/country_master');
     }
 
-    public function edit_country($id){
-        $data['title']="Edit Country";
-        $where_all = "country.status='1'";
-        $data['country'] = $this->Master_model->getMaster('country',$where_all);
+     public function edit_country($id){
+        $data['title']="Country Master Edit";
 
-        $where_edu = "country_id='$id'";
-        $data['country'] = $this->Master_model->getMaster('country',$where_edu);
-		
+        $where_st = "country_id='$id'";
+        $select = "country_name, country_id";
+        $data['edit_country_info'] = $this->Master_model->getMaster('country',$where_st);
+        
+        $where_cn= "status=1";
+        $select = "country_name, dept_id";
+        $data['country_data'] = $this->Master_model->getMaster('country',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
 
+        
         $this->load->view('admin/jobsetting/country_master',$data);
     }
 
