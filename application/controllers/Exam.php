@@ -135,8 +135,9 @@ class Exam extends MY_Seeker_Controller
                 $attend_array = array(
                     'is_test_done' => '1',
                 );
-                $up_where = "job_seeker_id = '$jobseeker_id' AND job_post_id ='$job_post_id'";
-                $this->Master_model->master_update($attend_array,'job_apply',$up_where);
+                $where['job_seeker_id'] = $jobseeker_id;
+                $where['job_post_id'] = $job_post_id;
+                $this->Master_model->master_update($attend_array,'job_apply',$where);
                 echo $this->db->last_query(); die;
                 $this->load->view('fontend/exam/exam_success');
             }
