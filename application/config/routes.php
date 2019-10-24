@@ -170,6 +170,7 @@ $route['admin/education-specialization']="admin/education_specialization";
 $route['admin/country-master']="admin/country_master";
 $route['admin/state-master']="admin/state_master";
 $route['admin/city-master']="admin/city_master";
+$route['admin/pincode-master']="admin/pincode_master";
 $route['admin/department-master']="admin/department_master";
 $route['admin/designation-master']="admin/designation_master";
 // $route['admin/industry-master']="admin/industry_master";
