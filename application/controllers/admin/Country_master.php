@@ -70,7 +70,7 @@ class Country_master extends MY_Controller
         $data['edit_spectial_info'] = $this->Master_model->getMaster('country',$where_edu);
 		
 
-        $this->load->view('admin/jobsetting/topic_master',$data);
+        $this->load->view('admin/jobsetting/country_master',$data);
     }
 
 
