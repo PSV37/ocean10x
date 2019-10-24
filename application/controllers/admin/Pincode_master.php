@@ -19,8 +19,8 @@ class Pincode_master extends MY_Controller
 
         $data['title'] = 'Add Pincode';
 
-       $where_all = "pincode_status='1'";
-        $data['pincode_data'] = $this->Master_model->getMaster('pincode', $where_all);
+       $where_con = "pincode_status='1'";
+        $data['pincode_data'] = $this->Master_model->getMaster('pincode', $where_con);
 
         $this->load->view('admin/jobsetting/pincode_master', $data);
     }
