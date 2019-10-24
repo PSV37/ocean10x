@@ -41,6 +41,10 @@
 			  <th>Mobile No.</th>
 			  <th>Department</th>
 			  <th>Address</th>
+			  <th>City</th>
+			  <th>State</th>
+			  <th>Country</th>
+			  <th>Pincode</th>
 			  <th>Created Date</th>
 			  <th>Updated Date</th>
 			  <!--<th>Status</th>-->
@@ -56,6 +60,10 @@
 				<td><?php echo $key['mobile']; ?></td>	
 				<td><?php echo $key['department_name']; ?></td>				
 				<td><?php echo $key['address']; ?></td>
+				<td><?php echo $key['city_name']; ?></td>
+				<td><?php echo $key['state_name']; ?></td>
+				<td><?php echo $key['country']; ?></td>
+				<td><?php echo $key['pincode']; ?></td>
 				<td><?php echo $key['emp_created_date']; ?></td>
 				<td><?php echo $key['emp_updated_date']; ?></td>
 				<!--<td><?php if($key['emp_status']=='1'){ echo "Active"; }else{ echo "Inactive"; } ?></td>-->
