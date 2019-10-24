@@ -9,17 +9,14 @@
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
           <!-- Sidebar user panel -->
-        <?php $this->load->view('admin/components/navigation'); ?>
-        
-                  </section>
+            <?php $this->load->view('admin/components/navigation'); ?>
+        </section>
         <!-- /.sidebar -->
       </aside>
 
         <div class="right-side">
             <!-- Content Header (Page header) -->
             <section class="content-header">
-
-                
             </section>
 
             <br/>
@@ -31,38 +28,36 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">Country Master</h3>
+                        <h3 class="box-title ">Pincode Master</h3>
                     </div>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-background">
                 <!-- form start -->
-                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/country_master/save_country/<?php  if (!empty($edit_country_info)) { foreach($edit_country_info as $erow)
-                        echo $erow['country_id'];
+                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/pincode_master/save_pincode/<?php  if (!empty($pincode)) { foreach($pincode as $row)
+                        echo $row['pincode_id'];
                       }
                      ?>" method="post">
 
                     <div class="row">
 
-                        <div class="col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
-
-                            <div class="box-body">
-
-                                <!-- /.Company Name -->
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Country Name<span class="required">*</span></label>
-                                    <input type="text" required name="country_name" placeholder="Country Name"
-                                    value="<?php  if (!empty($edit_country_info)) { foreach($edit_country_info as $erow)
-                        echo $erow['country_name']; } ?>" class="form-control">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+								 <div class="box-body">
+                                 <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Pincode <span class="required">*</span></label>
+                                      <input type="text" name="pincode" id="pincode" class="form-control" value="<?php if (!empty($pincode)) echo $row['pincode'];?>" required>
+                                    </div>
                                 </div>
-
-                                <button type="submit" class="btn bg-navy" type="submit">Save Country
+                                <div class="panel-body"></div>
+                                <button type="submit" class="btn bg-navy" type="submit">Save Pincode
                                 </button><br/><br/>
-                            </div>
+								</div>
                             <!-- /.box-body -->
 
                         </div>
                     </div>
+
                 </form>
                     </div>
                 <div class="box-footer">
@@ -74,32 +69,33 @@
                     <thead>
                     <tr>
                         <th class="active">SL</th>
-                        <th class="active">Country Name</th>
-                        <th class=" active col-sm-2">Action</th>
-
+                        <th class="active">PinCode</th>
+						<th class="active">Created Date</th>
+						<th class="active">Updated Date</th>
+                        <th class="active col-sm-2">Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <?php $key = 1 ?>
-                    <?php if (!empty($country_data)): foreach ($country_data as $row) : ?><!--get all Locations if not this empty-->
+                    <?php $key = 1 ;?>
+                    <?php if (!empty($pincode)): foreach ($pincode as $ct_row) : ?>
                         <tr>
-                            <td><?php echo $key; ?></td>
-                            <!--Serial No> -->
-                            <td><?php echo $row['country_name']; ?></td>
+							<td><?php echo $key; ?></td>
+                            <td><?php echo $ct_row['pincode'] ?></td>
+							<td><?php echo $ct_row['pincode_created_date'] ?></td>
+							<td><?php echo $ct_row['pincode_updated_date'] ?></td>
                             <td>
-                                <?php echo btn_edit('admin/country_master/edit_country/' . $row['country_id']); ?>
-                                <?php echo btn_delete('admin/country_master/delete_country/' . $row['country_id']); ?>
+                                <?php echo btn_edit('admin/pincode_master/edit_pincode/' . $ct_row['pincode_id']); ?>
+                                <?php echo btn_delete('admin/pincode_master/delete_pincode/' . $ct_row['pincode_id']); ?>
                             </td>
-
                         </tr>
                     <?php
                     $key++;
                     endforeach;
-                    ?><!--get all Locations if not this empty-->
-                    <?php else : ?> <!--get error message if this empty-->
+                    ?>
+                    <?php else : ?> 
                         <td colspan="3">
                             <strong>There is no record for display</strong>
-                        </td><!--/ get error message if this empty-->
+                        </td>
                     <?php
                     endif; ?>
                     </tbody>
@@ -114,13 +110,12 @@
     </div>
     <!-- /.row -->
 </section>
-            </div>
+</div>
 
-            <br />
-            
+<br />
 
-        </div><!-- /.right-side -->
 
-        <?php ///$this->load->view('admin/_layout_modal'); ?>
-        <?php //$this->load->view('admin/_layout_modal_small'); ?>
-        <?php $this->load->view('admin/components/footer'); ?>
+</div><!-- /.right-side -->
+
+       
+<?php $this->load->view('admin/components/footer'); ?>
