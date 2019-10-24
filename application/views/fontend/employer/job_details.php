@@ -22,12 +22,12 @@
                     	<div class="jbinfo">
                         	<strong>Job Status</strong><br>
                          
-                           <?php if($job_details->job_status=="1"){
-                                        echo '    <span class="label label-success">Live</span>';}
-                                        else {
-                                        echo '<span class="label label-danger">Expired</span>';
-                                        }
-                                    ?>
+                          <?php if($job_details->job_status=="1"){
+                              echo '    <span class="label label-success">Live</span>';}
+                            else {
+                              echo '<span class="label label-danger">Expired</span>';
+                            }
+                          ?>
                           
                         </div>
                         <div class="jbinfo">
@@ -211,6 +211,17 @@
                        <a class="btn btn-info btn-xs">Forwared</a>
                       <?php }else if($v_applicant->forword_job_status==2){ ?>
                         <a class="btn btn-success btn-xs">Forwared And Applied</a>
+                      <?php } else{?>
+                        <a class="btn btn-success btn-xs">Normal Applied</a>
+                      <?php } ?>
+                    </div>
+                    <div class="col-md-6">
+                      <?php if($v_applicant->is_test_required=='Yes'){ ?>
+                        <?php if($v_applicant->is_test_done==1){ ?>
+                          <a class="btn btn-info btn-xs">Test Done</a>
+                        <?php } else{?>
+                           <a class="btn btn-danger btn-xs">Test Not Done</a>
+                        <?php } ?>
                       <?php } else{?>
                         <a class="btn btn-success btn-xs">Normal Applied</a>
                       <?php } ?>
