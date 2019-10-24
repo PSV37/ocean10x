@@ -67,7 +67,7 @@ class Pincode_master extends MY_Controller
 
         $where_all = "pincode.pincode_status='1'";
         
-        $data['pincode_info'] = $this->Master_model->getMaster('pincode');
+        $data['pincode_info'] = $this->Master_model->getMaster('pincode',$where_all);
 
         $where_pincode = "pincode_id='$id'";
         $data['edit_pincode_info'] = $this->Master_model->getMaster('pincode',$where_ct);
