@@ -32,7 +32,7 @@
                           <ul>
                             <li>This is a FREE online test. DO NOT pay money to anyone to attend this test.</li>
                             <li>All Questions are compulsory.</li>
-                            <li>Total number of questions : 20.</li>
+                            <li>Total number of questions : 10.</li>
                             <li>Time alloted : 30 minutes.</li>
                             <li>Each question carry 1 mark, no negative marks.</li>
                             <li>DO NOT refresh the page.</li>
