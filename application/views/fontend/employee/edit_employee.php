@@ -124,7 +124,13 @@
 								   </div>
                                 </div>		 
 								<div class="container-fluid">
-								<div class="col-sm-4">
+								<div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Pincode<span class="required">*</span></label>
+									<input type="text" name="pincode" id="pincode" class="form-control" autocomplete="off" value="<?php echo $result['pincode']; ?>"></textarea>
+									</div>
+								   </div>
+								<div class="col-sm-6">
 								   <label>Status:</label>
 									<select name="emp_status" class="form-control">
 										<option value="">Select</option>
