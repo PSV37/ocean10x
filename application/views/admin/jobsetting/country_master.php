@@ -81,7 +81,7 @@
                     </thead>
                     <tbody>
                     <?php $key = 1 ?>
-                    <?php if (!empty($edit_spectial_info)): foreach ($edit_spectial_info as $row) : ?><!--get all Locations if not this empty-->
+                    <?php if (!empty($country)): foreach ($country as $row) : ?><!--get all Locations if not this empty-->
                         <tr>
                             <td><?php echo $key; ?></td>
                             <!--Serial No> -->
