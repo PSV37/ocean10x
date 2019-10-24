@@ -299,7 +299,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
             dataType: "json",
             success: function(data){
                var resp = $.map(data,function(obj){
-                    return obj.name;
+                    return obj.pincode;
                }); 
  
                response(resp);
