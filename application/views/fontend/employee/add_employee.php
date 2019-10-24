@@ -282,6 +282,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 });
 
 </script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.js"></script>
 <script>
 <script type="text/javascript">
         $(document).ready(function(){
