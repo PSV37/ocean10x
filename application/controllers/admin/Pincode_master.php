@@ -19,7 +19,7 @@ class Pincode_master extends MY_Controller
 
         $data['title'] = 'Add Pincode';
 
-       $where_all = "pincode.pincode_status='1'";
+       $where_all = "pincode_status='1'";
         $data['pincode'] = $this->Master_model->getMaster('pincode', $where_all);
 
         $this->load->view('admin/jobsetting/pincode_master', $data);
@@ -65,12 +65,12 @@ class Pincode_master extends MY_Controller
     public function edit_pincode($id){
         $data['title']="Pincode Edit";
 
-        $where_all = "pincode.pincode_status='1'";
+        $where_all = "pincode_status='1'";
         
         $data['pincode_info'] = $this->Master_model->getMaster('pincode',$where_all);
 
         $where_pincode = "pincode_id='$id'";
-        $data['edit_pincode_info'] = $this->Master_model->getMaster('pincode',$data,$where_pincode);
+        $data['pincode'] = $this->Master_model->getMaster('pincode',$data,$where_pincode);
         
         
         $this->load->view('admin/jobsetting/pincode_master',$data);
