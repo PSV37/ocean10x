@@ -70,6 +70,8 @@
                     <tr>
                         <th class="active">SL</th>
                         <th class="active">PinCode</th>
+						<th class="active">Created Date</th>
+						<th class="active">Updated Date</th>
                         <th class="active col-sm-2">Action</th>
                     </tr>
                     </thead>
@@ -79,6 +81,8 @@
                         <tr>
 							<td><?php echo $key; ?></td>
                             <td><?php echo $ct_row['pincode'] ?></td>
+							<td><?php echo $ct_row['pincode_created_date'] ?></td>
+							<td><?php echo $ct_row['pincode_updated_date'] ?></td>
                             <td>
                                 <?php echo btn_edit('admin/pincode_master/edit_pincode/' . $ct_row['pincode_id']); ?>
                                 <?php echo btn_delete('admin/pincode_master/delete_pincode/' . $ct_row['pincode_id']); ?>
