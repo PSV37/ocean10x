@@ -172,6 +172,19 @@ $this->session->set_userdata('reg_in', $company_profile );
 	
 	
 	
+	
+	public function search(){
+ 
+        $term = $this->input->get('term');
+ 
+        $this->db->like('pincode', $term);
+ 
+        $data = $this->db->get("pincode")->result();
+ 
+        echo json_encode( $data);
+    }
+	
+	
 		function getstate(){
 	$country_id = $this->input->post('id');
 	$where['country_id'] = $country_id;
