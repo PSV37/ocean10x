@@ -64,15 +64,13 @@ class Pincode_master extends MY_Controller
 
     public function edit_pincode($id){
         $data['title']="Pincode Edit";
+        
+        $where_con= "pincode_status=1";
+        $data['pincode_data'] = $this->Master_model->getMaster('pincode',$where_con);
 
-        $where_all = "pincode_status='1'";
-        
-        $data['pincode_info'] = $this->Master_model->getMaster('pincode',$where_all);
+        $where_edit= "pincode_id='$id'";
+        $data['edit_pincode_data'] = $this->Master_model->getMaster('pincode',$data,$where_edit);
 
-        $where_pincode = "pincode_id='$id'";
-        $data['pincode'] = $this->Master_model->getMaster('pincode',$data,$where_pincode);
-        
-        
         $this->load->view('admin/jobsetting/pincode_master',$data);
     }
 
