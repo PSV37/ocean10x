@@ -19,8 +19,9 @@ class Pincode_master extends MY_Controller
 
         $data['title'] = 'Add Pincode';
 
-       $where_con = "pincode_status='1'";
-        $data['pincode'] = $this->Master_model->getMaster('pincode', $where_con);
+        $where_cn= "pincode_status=1";
+        $select = "pincode, pincode_id";
+        $data['pincode_data'] = $this->Master_model->getMaster('pincode',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
 
         $this->load->view('admin/jobsetting/pincode_master', $data);
     }
@@ -63,13 +64,17 @@ class Pincode_master extends MY_Controller
     }
 
     public function edit_pincode($id){
-        $data['title']="Pincode Edit";
+        $data['title']="Pincode Master Edit";
+
+        $where_st = "pincode_id='$id'";
+        $select = "pincode, pincode_id";
+        $data['edit_pincode_info'] = $this->Master_model->getMaster('pincode',$where_st);
         
-        $where_con= "pincode_status=1";
-        $data['pincode'] = $this->Master_model->getMaster('pincode',$where_con);
+        $where_cn= "pincode_status=1";
+        $select = "pincode, pincode_id";
+        $data['pincode_data'] = $this->Master_model->getMaster('pincode',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
 
         
-
         $this->load->view('admin/jobsetting/pincode_master',$data);
     }
 
