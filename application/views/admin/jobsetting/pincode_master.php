@@ -75,7 +75,7 @@
                     </thead>
                     <tbody>
                     <?php $key = 1 ;?>
-                    <?php if (!empty($pincode_info)): foreach ($pincode_info as $ct_row) : ?>
+                    <?php if (!empty($pincode)): foreach ($pincode as $ct_row) : ?>
                         <tr>
                             <td><?php echo $ct_row['pincode'] ?></td>
                             <td>
