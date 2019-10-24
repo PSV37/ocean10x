@@ -1204,6 +1204,16 @@ $this->form_validation->set_rules('emp_no', 'Employee No.', 'required');
 }
 
 
+ function get_autocomplete(){
+        if (isset($_GET['term'])) {
+            $result = $this->pincode_model->search_blog($_GET['term']);
+            if (count($result) > 0) {
+            foreach ($result as $row)
+                $arr_result[] = $row->pincode;
+                echo json_encode($arr_result);
+            }
+        }
+
 
 function gettopic(){
     $topic_id = $this->input->post('id');
