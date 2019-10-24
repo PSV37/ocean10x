@@ -139,7 +139,7 @@
 									<div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Pincode<span class="required">*</span></label>
-									<input type="text" name="pincode" id="pincode" class="form-control" autocomplete="off"></textarea>
+									<input type="text" name="pincode" id="pincode" class="form-control"></textarea>
 									</div>
 								   </div>
                                 </div>										
