@@ -20,7 +20,7 @@ class Country_master extends MY_Controller
 
 		$data['country'] = $this->Master_model->getMaster('country',$where=false);
           $where_all = "country.status='1'";
-        $data['edu_spectial_info'] = $this->Master_model->getMaster('country',$where_all);
+        $data['country'] = $this->Master_model->getMaster('country',$where_all);
         // $all_educationlevels=$this->education_level_model->get();
         $this->load->view('admin/jobsetting/country_master', $data);
     }
@@ -64,7 +64,7 @@ class Country_master extends MY_Controller
     public function edit_country($id){
         $data['title']="Edit Country";
         $where_all = "country.status='1'";
-        $data['edu_spectial_info'] = $this->Master_model->getMaster('country',$where_all,$join_emp);
+        $data['country'] = $this->Master_model->getMaster('country',$where_all,$join_emp);
 
         $where_edu = "country_id='$id'";
         $data['country'] = $this->Master_model->getMaster('country',$where_edu);
