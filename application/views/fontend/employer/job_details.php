@@ -22,12 +22,12 @@
                     	<div class="jbinfo">
                         	<strong>Job Status</strong><br>
                          
-                           <?php if($job_details->job_status=="1"){
-                                        echo '    <span class="label label-success">Live</span>';}
-                                        else {
-                                        echo '<span class="label label-danger">Expired</span>';
-                                        }
-                                    ?>
+                          <?php if($job_details->job_status=="1"){
+                              echo '    <span class="label label-success">Live</span>';}
+                            else {
+                              echo '<span class="label label-danger">Expired</span>';
+                            }
+                          ?>
                           
                         </div>
                         <div class="jbinfo">
@@ -43,19 +43,19 @@
                     </div>
                     <div class="col-md-5 col-sm-6">
                     	<div class="moreint">
-                        		<div class="row">
+                        <div class="row">
                 					<div class="col-md-6 col-sm-6">
-                                    	<i class="fa fa-search" aria-hidden="true"></i>
-                                        <span>Search Views</span>
-                                        <strong><?=$job_details->search_view;?></strong>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6">                                    	
-                                    	<i class="fa fa-file-o" aria-hidden="true"></i>
-                                        <span>Applicants</span>
-                                        <strong> <?php echo $this->job_apply_model->count_job_apply($job_id,$company_id);?></strong>
-                                    </div>
-                                </div>
+                          	<i class="fa fa-search" aria-hidden="true"></i>
+                              <span>Search Views</span>
+                              <strong><?=$job_details->search_view;?></strong>
+                          </div>
+                          <div class="col-md-6 col-sm-6">                                    	
+                          	<i class="fa fa-file-o" aria-hidden="true"></i>
+                              <span>Applicants</span>
+                              <strong> <?php echo $this->job_apply_model->count_job_apply($job_id,$company_id);?></strong>
+                          </div>
                         </div>
+                      </div>
                     </div>
                 </div>
             </div>
@@ -206,7 +206,7 @@
                       </a>
                       
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                       <?php if($v_applicant->forword_job_status==1){ ?>
                        <a class="btn btn-info btn-xs">Forwared</a>
                       <?php }else if($v_applicant->forword_job_status==2){ ?>
@@ -214,6 +214,16 @@
                       <?php } else{?>
                         <a class="btn btn-success btn-xs">Normal Applied</a>
                       <?php } ?>
+                    </div>
+                    <div class="col-md-6">
+                      <?php if($job_details->is_test_required=='Yes'){ ?>
+                        <?php if($v_applicant->is_test_done==1){ ?>
+                          <a class="btn btn-info btn-xs">Test Completed</a>
+                        <?php } else{?>
+                           <a class="btn btn-danger btn-xs">Test Not Completed</a>
+                        <?php } ?>
+                      <?php } ?>
+                        
                     </div>
                 </div>
             </li>
