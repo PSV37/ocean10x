@@ -130,7 +130,7 @@ class Exam extends MY_Seeker_Controller
           
 
            
-            if(count($data['last_count']) <= NUMBER_QUESTIONS )
+            if(count($data['last_count']) < NUMBER_QUESTIONS )
             {
                 $this->load->view('fontend/exam/exam_next_question',$data);
             }else{
