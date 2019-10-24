@@ -127,7 +127,7 @@ class Exam extends MY_Seeker_Controller
             $where_last = "job_id='$job_post_id' AND js_id='$jobseeker_id'";
             $data['last_count']= $this->Master_model->getList($condition, $field_by, $order_by, $offset, $perpage, 'js_test_info', $search, $join = FALSE, $where_last, $select = FALSE, $distinct = FALSE, $group_by = 'question_id');
 
-           //echo $this->db->last_query();
+          
 
            
             // if(!empty($ques_id))
