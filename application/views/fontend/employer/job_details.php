@@ -1,22 +1,12 @@
 <?php 
-    $this->load->view('fontend/layout/employer_header.php');
+  $this->load->view('fontend/layout/employer_header.php');
   foreach ($total_applicantlist as $v_applicant)
-{
- $array_id[]= $v_applicant->job_seeker_id;
-}
+  {
+   $array_id[]= $v_applicant->job_seeker_id;
+  }
 
 ?>
-
-
-
-
-
-
-
-
-
-          
-          <div class="section lb">
+<div class="section lb">
   <div class="container">
     <div class="row">
       <?php $this->load->view('fontend/layout/employer_left.php'); ?>
@@ -222,7 +212,7 @@
                       <?php }else if($v_applicant->forword_job_status==2){ ?>
                         <a class="btn btn-success btn-xs">Forwared And Applied</a>
                       <?php } else{?>
-                        <a class="btn btn-primary btn-xs">Normal Applied</a>
+                        <a class="btn btn-success btn-xs">Normal Applied</a>
                       <?php } ?>
                     </div>
                 </div>
