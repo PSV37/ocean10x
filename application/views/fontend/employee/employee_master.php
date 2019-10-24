@@ -62,7 +62,7 @@
 				<td><?php echo $key['address']; ?></td>
 				<td><?php echo $key['city_name']; ?></td>
 				<td><?php echo $key['state_name']; ?></td>
-				<td><?php echo $key['country']; ?></td>
+				<td><?php echo $key['country_name']; ?></td>
 				<td><?php echo $key['pincode']; ?></td>
 				<td><?php echo $key['emp_created_date']; ?></td>
 				<td><?php echo $key['emp_updated_date']; ?></td>
