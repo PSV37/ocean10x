@@ -64,7 +64,7 @@ class Country_master extends MY_Controller
     public function edit_country($id){
         $data['title']="Edit Country";
         $where_all = "country.status='1'";
-        $data['country'] = $this->Master_model->getMaster('country',$where_all,$join_emp);
+        $data['country'] = $this->Master_model->getMaster('country',$where_all);
 
         $where_edu = "country_id='$id'";
         $data['country'] = $this->Master_model->getMaster('country',$where_edu);
