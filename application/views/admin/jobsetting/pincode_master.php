@@ -34,7 +34,7 @@
                 <!-- /.box-header -->
                 <div class="box-background">
                 <!-- form start -->
-                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/pincode_master/save_pincode/<?php  if (!empty($edit_pincode_data)) { foreach($edit_pincode_data as $row)
+                <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>admin/pincode_master/save_pincode/<?php  if (!empty($pincode)) { foreach($pincode as $row)
                         echo $row['pincode_id'];
                       }
                      ?>" method="post">
@@ -46,7 +46,7 @@
                                  <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Pincode <span class="required">*</span></label>
-                                      <input type="text" name="pincode" id="pincode" class="form-control" value="<?php if (!empty($edit_pincode_data)) echo $row['pincode'];?>" required>
+                                      <input type="text" name="pincode" id="pincode" class="form-control" value="<?php if (!empty($pincode)) echo $row['pincode'];?>" required>
                                     </div>
                                 </div>
                                 <div class="panel-body"></div>
@@ -77,7 +77,7 @@
                     </thead>
                     <tbody>
                     <?php $key = 1 ;?>
-                    <?php if (!empty($pincode_data)): foreach ($pincode_data as $ct_row) : ?>
+                    <?php if (!empty($pincode)): foreach ($pincode as $ct_row) : ?>
                         <tr>
 							<td><?php echo $key; ?></td>
                             <td><?php echo $ct_row['pincode'] ?></td>
