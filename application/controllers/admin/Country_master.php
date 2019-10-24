@@ -68,7 +68,7 @@ class Country_master extends MY_Controller
         $data['edit_country_info'] = $this->Master_model->getMaster('country',$where_st);
         
         $where_cn= "status=1";
-        $select = "country_name, dept_id";
+        $select = "country_name, country_id";
         $data['country_data'] = $this->Master_model->getMaster('country',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
 
         
