@@ -134,7 +134,15 @@
                                         <label for="exampleInputEmail1">Address<span class="required">*</span></label>
 									<textarea class="form-control ckeditor" name="address" autocomplete="off"></textarea> </div>
 								   </div>
-                                </div>		 
+                                </div>	
+								<div class="container-fluid">
+									<div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Pincode<span class="required">*</span></label>
+									<input type="text" name="pincode" id="pincode" class="form-control" autocomplete="off"></textarea>
+									</div>
+								   </div>
+                                </div>										
 									 <div class="panel-body"></div>
                                 <button type="submit" class="btn bg-navy" type="submit" name="submit_employee" id="submit_employee">Add Employe
                                 </button>

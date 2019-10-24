@@ -1045,6 +1045,7 @@ public function addemployee(){
 		$data['state_id'] = $this->input->post('state_id');
 		$data['city_id'] = $this->input->post('city_id');
 		$data['address'] = $this->input->post('address');
+		$data['pincode'] = $this->input->post('pincode');
 		$data['emp_created_date'] = $this->input->post('emp_created_date');
 		$data['emp_created_by'] = $user_id;
 		$data['photo'] =$NewFileName;
