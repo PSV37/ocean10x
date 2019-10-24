@@ -281,7 +281,16 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
  
 });
 
-</script>  
+</script> 
+<script>
+<script type="text/javascript">
+        $(document).ready(function(){
+            $( "#pincode" ).autocomplete({
+              source: "<?php echo site_url('employer/get_autocomplete/?');?>"
+            });
+        });
+    </script>
+</script> 
 
 <!-- <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script> -->
 <!-- <script>
