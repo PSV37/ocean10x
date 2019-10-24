@@ -4,7 +4,7 @@
     <div class="col-md-12 col-sm-12">
       <?php 
         $sr_no=1;
-        if(!empty($last_count)) echo $ques_cnt = count($last_count); echo "<br>";
+        if(!empty($last_count))  $ques_cnt = count($last_count); 
           $const = NUMBER_QUESTIONS -1;
          if(!empty($ans))  $anss = count($ans);
           if(!empty($questions)) foreach($questions as $row){ 

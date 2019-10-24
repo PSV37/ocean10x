@@ -130,12 +130,12 @@ class Exam extends MY_Seeker_Controller
           
 
            
-            // if(!empty($ques_id))
-            // {
-                 $this->load->view('fontend/exam/exam_next_question',$data);
-            // }else{
-            //      $this->load->view('fontend/exam/exam_success');
-            // }
+            if(count($data['last_count']) <= NUMBER_QUESTIONS )
+            {
+                $this->load->view('fontend/exam/exam_next_question',$data);
+            }else{
+                $this->load->view('fontend/exam/exam_success');
+            }
            
 
         }else{
