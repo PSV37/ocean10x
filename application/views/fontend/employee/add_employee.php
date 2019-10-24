@@ -282,19 +282,35 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 });
 
 </script> 
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
-<script type="text/javascript">
-        $(document).ready(function(){
-            $( "#pincode" ).autocomplete({
-              source: "<?php echo site_url('employer/get_autocomplete/?');?>"
-            });
+  var BASE_URL = "<?php echo base_url(); ?>";
+ 
+ $(document).ready(function() {
+    $( "#pincode" ).autocomplete({
+ 
+        source: function(request, response) {
+            $.ajax({
+            url: BASE_URL + "employer/search",
+            data: {
+                    term : request.term
+             },
+            dataType: "json",
+            success: function(data){
+               var resp = $.map(data,function(obj){
+                    return obj.name;
+               }); 
+ 
+               response(resp);
+            }
         });
-    </script>
-</script> 
+    },
+    minLength: 1
+ });
+});
+ 
+</script>   
 
 <!-- <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script> -->
 <!-- <script>

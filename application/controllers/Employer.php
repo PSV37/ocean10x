@@ -1196,6 +1196,20 @@ $this->form_validation->set_rules('emp_no', 'Employee No.', 'required');
 }
 
 
+public function search(){
+ 
+        $term = $this->input->get('term');
+ 
+        $this->db->like('pincode', $term);
+ 
+        $data = $this->db->get("pincode")->result();
+ 
+        echo json_encode( $data);
+    }
+     
+
+
+
 
 function gettopic(){
     $topic_id = $this->input->post('id');
