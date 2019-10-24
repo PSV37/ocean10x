@@ -36,14 +36,14 @@
                             <div class="form-group">                                       
 							   <label for="exampleInputEmail1">Employee No <span class="required">*</span></label>
                                 
-								<input type="number" min="1" name="emp_no" id="emp_no" class="form-control">
+								<input type="number" min="1" name="emp_no" id="emp_no" class="form-control" autocomplete="off">
 								</div>
                         </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Name <span class="required">*</span></label>
-                                         <input type="text" name="emp_name" id="emp_name" class="form-control">
+                                         <input type="text" name="emp_name" id="emp_name" class="form-control" autocomplete="off">
                                     </div>
                                 </div>
 									<div class="col-md-4">
@@ -62,7 +62,7 @@
 									 <div class="col-md-4">
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Email-Id<span class="required">*</span></label>
-                                    <input type="email" name="email" id="email" class="form-control">
+                                    <input type="email" name="email" id="email" class="form-control" autocomplete="off">
 										</div>
 									</div>
 									
@@ -77,7 +77,7 @@
 									 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Contact No.<span class="required">*</span></label>
-                                       <input type="tel" name="mobile" id="mobile" class="form-control">
+                                       <input type="tel" name="mobile" id="mobile" class="form-control" autocomplete="off">
 									 </div>
                                 </div>
 								
@@ -132,7 +132,7 @@
 									<div class="col-md-12">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Address<span class="required">*</span></label>
-									<textarea class="form-control ckeditor" name="address"></textarea> </div>
+									<textarea class="form-control ckeditor" name="address" autocomplete="off"></textarea> </div>
 								   </div>
                                 </div>		 
 									 <div class="panel-body"></div>
