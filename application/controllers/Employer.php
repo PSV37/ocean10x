@@ -1006,7 +1006,7 @@ public function addemployee(){
 	                $NewFileName = $_FILES['photo']['name']; 
 	                
 	                
-					$config['upload_path'] = '/asset/photo/';
+					$config['upload_path'] = './asset/photo/';
 	                $config['allowed_types'] = 'gif|jpg|jpeg|png';
 	                $config['max_size']    = '3000000';
 	                //$config['max_width']  = '1024';
