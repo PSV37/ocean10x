@@ -1284,6 +1284,20 @@ function getLineitemlevel(){
 
 
 
+public function all_exam_result($job_id = null)
+{
+    $company_id = $this->session->userdata('company_profile_id');
+    if (!empty($job_id) && $this->job_posting_model->check_jobid_and_post_id($job_id, $company_id) == true) {
+        $total_applicantlist = $this->job_apply_model->only_job_applicants($job_id, $company_id);
+        $totalrow = $total_applicantlist['total_row'];
+        $job_details         = $this->job_posting_model->get_job_details($job_id);
+
+        $this->load->view('fontend/employer/job_details', compact('job_id', 'company_id', 'job_details', 'total_applicantlist'));
+    } else {
+        echo "not found";
+    }
+}
+
 
 
 } // end class

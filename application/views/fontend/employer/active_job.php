@@ -34,13 +34,10 @@
                                    
                                    <div class="posted"><strong>Published:</strong> <?php if(!is_null($v_companyjobs->created_at)) { echo date('F j Y',strtotime($v_companyjobs->created_at)); } ?></div>
                                    <div class="posted"><strong>Deadline:</strong> 
-								   <?php echo $v_companyjobs->job_deadline; ?>
-                               </div>
-                                    
-                                </div>
-                                <div class="col-md-2">
-                                	<div class="jobpt">
-                                	<div class="status">Job Status</div>
+								    <?php echo $v_companyjobs->job_deadline; ?>
+                                   </div>
+
+                                   <div class="posted"><strong>Job Status:</strong> 
                                     <?php 
                                           if ($v_companyjobs->job_deadline > date('Y-m-d')){
                                         echo '<button class="btn btn-success btn-xs">Live <i class="fa fa-check-circle" aria-hidden="true"></i></button>';}
@@ -48,8 +45,10 @@
                                         echo'<button class="btn btn-danger btn-xs">Expired <i class="fa fa-times" aria-hidden="true"></i></button> ';
                                         }
                                     ?>
-                                    </div>
+                                   </div>
+                                    
                                 </div>
+                               
                                 <div class="col-md-2">
                                 	<div class="jobpt">
                                     <div class="status">Applications</div>
@@ -59,9 +58,15 @@
                                     </div>
                                 </div>
                                 <div class="col-md-2">
-                                <div class="jobpt">
-                                <div class="status">View Job</div>
-                                <a href="<?php echo base_url(); ?>job/show/<?php echo $v_companyjobs->job_slugs; ?>">Link</a></div>
+                                    <div class="jobpt">
+                                        <div class="status">Test Exam Results</div>
+                                        <div class="viewapp"><a href="<?php echo base_url(); ?>employer/all-results/<?php echo $v_companyjobs->job_post_id; ?>" class="btn">View List</a></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="jobpt">
+                                    <div class="status">View Job</div>
+                                    <a href="<?php echo base_url(); ?>job/show/<?php echo $v_companyjobs->job_slugs; ?>">Link</a></div>
                                 </div>
                                 
                                 <div class="col-md-2">
