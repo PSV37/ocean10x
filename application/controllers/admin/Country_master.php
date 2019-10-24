@@ -22,7 +22,7 @@ class Country_master extends MY_Controller
         $select = "country_name, country_id";
         $data['country_data'] = $this->Master_model->getMaster('country',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
 
-        $this->load->view('admin/jobsetting/country', $data);
+        $this->load->view('admin/jobsetting/country_master', $data);
     }
 
         public function save_country($id = null){
