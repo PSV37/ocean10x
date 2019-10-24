@@ -17,7 +17,7 @@ class Country_master extends MY_Controller
     {   
        $data['title'] = 'Add Job Location';
        $where_con= "status=1";
-       $data['country'] = $this->Master_model->getMaster('country',$where_con);
+       $data['country_data'] = $this->Master_model->getMaster('country',$where_con);
 
         $this->load->view('admin/jobsetting/country_master', $data);
     }
@@ -62,9 +62,10 @@ class Country_master extends MY_Controller
         $data['title']="Country Edit";
         
         $where_con= "status=1";
-        $data['country'] = $this->Master_model->getMaster('country',$where_con);
+        $data['country_data'] = $this->Master_model->getMaster('country',$where_con);
 
-       
+        $where_edit= "country_id='$id'";
+        $data['edit_country_data'] = $this->Master_model->getMaster('country',$data,$where_edit);
 
         $this->load->view('admin/jobsetting/country_master',$data);
     }
