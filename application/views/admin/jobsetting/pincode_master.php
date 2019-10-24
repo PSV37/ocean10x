@@ -77,6 +77,7 @@
                     <?php $key = 1 ;?>
                     <?php if (!empty($pincode)): foreach ($pincode as $ct_row) : ?>
                         <tr>
+							<td><?php echo $key; ?></td>
                             <td><?php echo $ct_row['pincode'] ?></td>
                             <td>
                                 <?php echo btn_edit('admin/pincode_master/edit_pincode/' . $ct_row['pincode_id']); ?>
