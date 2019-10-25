@@ -97,11 +97,17 @@ class Exam extends MY_Seeker_Controller
                 // 
             }
 // print_r($status);
-            if(array_sum($status) == count($status)) {
-                echo 'all true';
-            } else {
+            if (count(array_unique($status)) === 1 && end($status) === 'Yes') {
+
+               echo 'all true';
+            }else {
                 echo 'some false';
             } 
+            // if(array_sum($status) == count($status)) {
+            //     echo 'all true';
+            // } else {
+            //     echo 'some false';
+            // } 
            die; 
             echo $mark; 
                 $exam_array = array(
