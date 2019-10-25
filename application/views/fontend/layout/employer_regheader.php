@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/custom.css"><?php */?>
     <link href="<?php echo base_url(); ?>asset/css/datepicker.css" rel="stylesheet" type="text/css" />
     <script src="<?php echo base_url() ?>fontend/js/jquery.js "></script> 
-	
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/demo.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/main.css">
     
     <link rel="shortcut icon" href="<?php echo base_url() ?>fontend/images/favicon.png" type="image/x-icon">

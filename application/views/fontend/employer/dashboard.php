@@ -8,7 +8,9 @@
     margin-bottom: 5px;
     font-weight: bold;
 }
-</style>             
+</style>  
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>           
 <!-- Page Title start -->
 <div class="pageTitle">
   <div class="container">
@@ -703,6 +705,34 @@ $("#country").select2( {
 	placeholder: "Select Country Code",
 	allowClear: true
 	} );
+</script>
+
+
+<script>
+  var BASE_URL = "<?php echo base_url(); ?>";
+ 
+ $(document).ready(function() {
+    $( "#company_pincode" ).autocomplete({
+ 
+        source: function(request, response) {
+            $.ajax({
+            url: BASE_URL + "employer/search",
+            data: {
+                    term : request.term
+             },
+            dataType: "json",
+            success: function(data){
+               var resp = $.map(data,function(obj){
+                    return obj.pincode;
+               }); 
+ 
+               response(resp);
+            }
+        });
+    },
+    minLength: 1
+ });
+});
 </script>
   
  <?php $this->load->view("fontend/layout/footer.php"); ?>

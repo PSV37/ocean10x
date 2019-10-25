@@ -170,6 +170,8 @@ $("#delete_btn").click(function(e)
 
     })
 </script>
+
+
 <?php $this->load->view("fontend/layout/footer.php"); ?>
 
 
