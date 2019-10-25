@@ -90,10 +90,10 @@ class Exam extends MY_Seeker_Controller
                    
                 }else{
                     $status = 'No';
-                    $mark =0;
+                    
                 }
             }
-            if ($status = 'Yes') {
+            if ($status == 'Yes') {
                 $mark =1;
             }else{
                 $mark =0;
