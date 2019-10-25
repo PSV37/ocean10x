@@ -1299,7 +1299,7 @@ function getLineitemlevel(){
             $select_result = "SUM(marks) as total_marks,COUNT(test_id) as total_questions,js_info.full_name,js_test_info.js_id";
             $data['exam_attended_candidates'] = $this->Master_model->getMaster('js_test_info', $where_test,$join_arr , $order = false, $field = false, $select_result,$limit=false,$start=false, $search=false);
             // $total_applicantlist = $this->job_apply_model->only_job_applicants($job_id, $company_id);
-
+            echo $this->db->last_query(); die;
 
 
             // $totalrow = $total_applicantlist['total_row'];
