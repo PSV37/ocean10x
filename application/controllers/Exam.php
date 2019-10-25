@@ -106,7 +106,7 @@ class Exam extends MY_Seeker_Controller
                     'js_id'             => $jobseeker_id,  
                     'question_id'       => $question_id,
                     //'answer_selected'   => $option[$i],
-                    'mark'              => $mark,
+                    'marks'              => $mark,
                     'correct_status'    => $cstatus,
 
                     'date_time'         => date('Y-m-d H:i:s'),
