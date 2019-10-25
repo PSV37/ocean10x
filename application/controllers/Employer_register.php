@@ -12,9 +12,7 @@ class Employer_register extends CI_Controller
         $config = array(
             'field' => 'company_slug',
             'table' => 'company_profile',
-			 $this->load->helper('url_helper');
-			 $this->load->helper('form');
-			 $this->load->database();
+			 
         );
 
 
