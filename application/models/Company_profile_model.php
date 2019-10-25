@@ -118,7 +118,20 @@ public function get_slug_name($company_id)
         return isset($result->company_logo) ? $result->company_logo : '';
     }
 
-    public function email_check($email)
+    public function exist_companyname($companyname)
+    {
+        $this->db->select("*");
+        $this->db->where('companyname', $companyname);
+        $query = $this->db->get($this->_table_name);
+        if ($query->num_rows() > 0) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+	
+	
+	public function email_check($email)
     {
         $this->db->select("*");
         $this->db->where('company_email', $email);
