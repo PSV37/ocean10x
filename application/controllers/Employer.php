@@ -1120,19 +1120,16 @@ $data['state'] = $this->Master_model->getMaster('state',$where=false);
 public function deleteemployee()
     {
         
-           $id = $this->input->post('id');
+        $id = $this->input->post('id');
 	
-	//$data['status']= '0';
-	$del = array(
-		'emp_status' =>'0',
-	);
-	$where11['emp_id']=$id;
-	$this->Master_model->master_update($del,'employee',$where11);
-	
-	//redirect(base_url().'state');
-             
-
-        
+    	//$data['status']= '0';
+    	$del = array(
+    		'emp_status' =>'0',
+    	);
+    	$where11['emp_id']=$id;
+    	$this->Master_model->master_update($del,'employee',$where11);
+    	
+    	//redirect(base_url().'state');
     }
 	
 	
@@ -1140,59 +1137,59 @@ public function deleteemployee()
 	
 	
 	public function editemployee(){
-	$c_id = $this->input->get('id');
-	$where = "emp_id='$c_id'";
-	$data['result'] = $this->Master_model->get_master_row('employee',$select = FALSE,$where);
-	$data['department'] = $this->Master_model->getMaster('department',$where=false);
-	$data['country'] = $this->Master_model->getMaster('country',$where=false);
-	$data['state'] = $this->Master_model->getMaster('state',$where=false);
-	$data['city'] = $this->Master_model->getMaster('city',$where=false);
-	//echo $this->db->last_query(); die;
-	$this->load->view('fontend/employee/edit_employee',$data);
+    	$c_id = $this->input->get('id');
+    	$where = "emp_id='$c_id'";
+    	$data['result'] = $this->Master_model->get_master_row('employee',$select = FALSE,$where);
+    	$data['department'] = $this->Master_model->getMaster('department',$where=false);
+    	$data['country'] = $this->Master_model->getMaster('country',$where=false);
+    	$data['state'] = $this->Master_model->getMaster('state',$where=false);
+    	$data['city'] = $this->Master_model->getMaster('city',$where=false);
+    	//echo $this->db->last_query(); die;
+    	$this->load->view('fontend/employee/edit_employee',$data);
 	
-}
+    }
 public function postEditData(){
-$this->form_validation->set_rules('emp_no', 'Employee No.', 'required');
-		$this->form_validation->set_rules('emp_name', 'organization Name', 'required');
-		$this->form_validation->set_rules('email', 'Email Id', 'required');
-		$this->form_validation->set_rules('mobile', ' Contact No.', 'required');
-		$this->form_validation->set_rules('dept_id', 'Department', 'required');
-		$this->form_validation->set_rules('address', 'Address', 'required');
+    $this->form_validation->set_rules('emp_no', 'Employee No.', 'required');
+	$this->form_validation->set_rules('emp_name', 'organization Name', 'required');
+	$this->form_validation->set_rules('email', 'Email Id', 'required');
+	$this->form_validation->set_rules('mobile', ' Contact No.', 'required');
+	$this->form_validation->set_rules('dept_id', 'Department', 'required');
+	$this->form_validation->set_rules('address', 'Address', 'required');
 		
-                        array('required' => 'You must provide a %s.');
+    array('required' => 'You must provide a %s.');
 
-                if ($this->form_validation->run() == FALSE)
-                {
-                        $c_id = $this->input->get('id');
-	$where = "emp_id='$c_id'";
-	$data['result'] = $this->Master_model->get_master_row('employee',$select = FALSE,$where);
-	$data['department'] = $this->Master_model->getMaster('department',$where=false);
-	$data['country'] = $this->Master_model->getMaster('country',$where=false);
-	$data['state'] = $this->Master_model->getMaster('state',$where=false);
-	$data['city'] = $this->Master_model->getMaster('city',$where=false);
-	//echo $this->db->last_query(); die;
-	$this->load->view('fontend/employee/edit_employee',$data);	
-                }
-                else
-				{
+        if ($this->form_validation->run() == FALSE)
+        {
+            $c_id = $this->input->get('id');
+        	$where = "emp_id='$c_id'";
+        	$data['result'] = $this->Master_model->get_master_row('employee',$select = FALSE,$where);
+        	$data['department'] = $this->Master_model->getMaster('department',$where=false);
+        	$data['country'] = $this->Master_model->getMaster('country',$where=false);
+        	$data['state'] = $this->Master_model->getMaster('state',$where=false);
+        	$data['city'] = $this->Master_model->getMaster('city',$where=false);
+        	//echo $this->db->last_query(); die;
+        	$this->load->view('fontend/employee/edit_employee',$data);	
+        }
+        else
+		{
 					
-		$data['emp_no'] = $this->input->post('emp_no');
-		$data['emp_name'] = $this->input->post('emp_name');
-		$data['email'] = $this->input->post('email');
-		$data['mobile'] = $this->input->post('mobile');
-		$data['dept_id'] = $this->input->post('dept_id');
-		$data['address'] = $this->input->post('address');
-		$data['country_id'] = $this->input->post('country_id');
-		$data['state_id'] = $this->input->post('state_id');
-		$data['city_id'] = $this->input->post('city_id');
-		$data['emp_status'] = $this->input->post('emp_status');
-		$data['emp_updated_date'] = date('Y-m-d H:i:s');
-		$data['emp_updated_by'] = $user_id;
-		$id = $this->input->post('cid');
-		$where['emp_id']=$id;
-		$this->Master_model->master_update($data,'employee',$where);
-		redirect(base_url().'employer/allemployee');
-					}
+    		$data['emp_no'] = $this->input->post('emp_no');
+    		$data['emp_name'] = $this->input->post('emp_name');
+    		$data['email'] = $this->input->post('email');
+    		$data['mobile'] = $this->input->post('mobile');
+    		$data['dept_id'] = $this->input->post('dept_id');
+    		$data['address'] = $this->input->post('address');
+    		$data['country_id'] = $this->input->post('country_id');
+    		$data['state_id'] = $this->input->post('state_id');
+    		$data['city_id'] = $this->input->post('city_id');
+    		$data['emp_status'] = $this->input->post('emp_status');
+    		$data['emp_updated_date'] = date('Y-m-d H:i:s');
+    		$data['emp_updated_by'] = $user_id;
+    		$id = $this->input->post('cid');
+    		$where['emp_id']=$id;
+    		$this->Master_model->master_update($data,'employee',$where);
+    		redirect(base_url().'employer/allemployee');
+		}
 }
 
 
@@ -1293,15 +1290,23 @@ function getLineitemlevel(){
     {
         $company_id = $this->session->userdata('company_profile_id');
         if (!empty($job_id) && $this->job_posting_model->check_jobid_and_post_id($job_id, $company_id) == true) {
-            $total_applicantlist = $this->job_apply_model->only_job_applicants($job_id, $company_id);
-            $totalrow = $total_applicantlist['total_row'];
-            $job_details         = $this->job_posting_model->get_job_details($job_id);
+            
+            // $data['exam_attended_candidates'] = $this->Master_model->getMaster('')
 
-            $this->load->view('fontend/employer/job_details', compact('job_id', 'company_id', 'job_details', 'total_applicantlist'));
+            // $total_applicantlist = $this->job_apply_model->only_job_applicants($job_id, $company_id);
+
+
+
+            // $totalrow = $total_applicantlist['total_row'];
+            // $job_details         = $this->job_posting_model->get_job_details($job_id);
+
+            $this->load->view('fontend/employer/result_details');
         } else {
             echo "not found";
         }
     }
+
+   
 
 
 } // end class
