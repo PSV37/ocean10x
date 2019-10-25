@@ -369,7 +369,7 @@ $("#company_category").select2( {
  });
 });
 </script>
-  <script type="text/javascript">
+ <!-- <script type="text/javascript">
  $(document).ready(function(){
   $('#company_username').change(function(){
    var company_username = $('#company_username').val();
@@ -385,7 +385,7 @@ $("#company_category").select2( {
    }
   });
  });
-</script>
+</script>-->
   
   
  <?php $this->load->view("fontend/layout/footer.php"); ?>
