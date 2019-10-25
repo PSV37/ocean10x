@@ -716,7 +716,7 @@ $("#country").select2( {
  
         source: function(request, response) {
             $.ajax({
-            url: BASE_URL + "employer_register/search",
+            url: BASE_URL + "employer/search",
             data: {
                     term : request.term
              },
