@@ -9,7 +9,7 @@ class Company_Profile_Model extends MY_Model
 
     protected $_table_name  = 'company_profile';
     protected $_primary_key = 'company_profile_id';
-    protected $_order_by    = "company_profile_id desc";
+    protected $_order_by    = "country_id ASC";
 
     public function __construct()
     {
@@ -21,7 +21,6 @@ class Company_Profile_Model extends MY_Model
             $this->db->select('*');
             $this->db->from('settings');
                     $this->db->where('id', 2);
-					$this->db->order_by('country_id ASC');
             $Q = $this->db->get();
             if ($Q->num_rows() > 0) {
                 $return = $Q->row_array();
