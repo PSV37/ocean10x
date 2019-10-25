@@ -1,5 +1,5 @@
 <?php 
-    $this->load->view('fontend/layout/employer_regheader.php');
+    $this->load->view('fontend/layout/employer_header.php');
 ?>
 
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -121,9 +121,9 @@
                                                 </select>
                                             </div>
 											 <div class="col-md-6 col-sm-12">
-											 <fieldset>
+											
                                             <input type="text" name="company_pincode" id="company_pincode" class="form-control"  value="<?php echo (isset($this->session->userdata['reg_in']['company_pincode'])?$this->session->userdata['reg_in']['company_pincode']:''); ?>" placeholder="Pincode" autocomplete="off" >
-											</fieldset>
+											
 										  </div>
                                         </div><!-- end row -->
                                     </div>
