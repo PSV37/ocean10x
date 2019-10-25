@@ -170,10 +170,9 @@ $this->session->set_userdata('reg_in', $company_profile );
         echo json_encode($this->session->userdata('captchaCode'));
     }
 	
-	
-	
-	
-	public function search(){
+
+   
+    public function search(){
  
         $term = $this->input->get('term');
  
@@ -183,6 +182,8 @@ $this->session->set_userdata('reg_in', $company_profile );
  
         echo json_encode( $data);
     }
+     
+}
 	
 	
 		function getstate(){
