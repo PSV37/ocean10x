@@ -336,12 +336,7 @@ $("#company_category").select2( {
 	} );
 </script>
 
-<script>
-$("#company_category").select2( {
-	placeholder: "Select Industry",
-	allowClear: true
-	} );
-</script>
+
 
 <script>
   var BASE_URL = "<?php echo base_url(); ?>";
