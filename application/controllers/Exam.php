@@ -89,14 +89,16 @@ class Exam extends MY_Seeker_Controller
                 if($test_ans_data == true)
                 {
                     $status.= 'Yes';
-                }else{
-                    $status.= 'No';
-                }
-                if ($status == 'Yes') {
                     $mark .=1;
                 }else{
+                    $status.= 'No';
                     $mark .=0;
                 }
+                // if ($status == 'Yes') {
+                    
+                // }else{
+                    
+                // }
             }
 // print_r($status);
            
