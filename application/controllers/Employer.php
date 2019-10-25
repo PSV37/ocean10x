@@ -1290,9 +1290,9 @@ function getLineitemlevel(){
     {
         $company_id = $this->session->userdata('company_profile_id');
         if (!empty($job_id) && $this->job_posting_model->check_jobid_and_post_id($job_id, $company_id) == true) {
-            
+                
+            $data['job_id'] = $job_id;
             $where_test = "js_test_info.job_id='$job_id'";
-            
             $join_arr = array(
                 'js_info' => 'js_info.job_seeker_id=js_test_info.js_id |INNER',
             );
