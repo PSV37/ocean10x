@@ -60,7 +60,7 @@ class Employer_register extends CI_Controller
             'company_slug'     => $this->slug->create_uri($this->input->post('company_name')),
             'company_email'    => $this->input->post('company_email'),
             'company_username' => $this->input->post('company_username'),
-            'dept_id'  => $this->input->post('dept_id'),
+            //'dept_id'  => $this->input->post('dept_id'),
             'company_address'  => $this->input->post('company_address'),
 			'company_address2'  => $this->input->post('company_address2'),
 			'country_id'       => $this->input->post('country_id'),
