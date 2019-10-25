@@ -96,20 +96,15 @@ class Exam extends MY_Seeker_Controller
                 }
                 // 
             }
-// print_r($status);
             if (count(array_unique($status)) === 1 && end($status) === 'Yes') {
-
-               echo 'all true';
+                $mark=1;
             }else {
-                echo 'some false';
+                $mark =0;
             } 
-            // if(array_sum($status) == count($status)) {
-            //     echo 'all true';
-            // } else {
-            //     echo 'some false';
-            // } 
-           die; 
+            
             echo $mark; 
+           die; 
+            
                 $exam_array = array(
                     'job_id'            => $job_post_id,
                     'js_id'             => $jobseeker_id,  
