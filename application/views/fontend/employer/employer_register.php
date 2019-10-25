@@ -72,7 +72,7 @@
                                               <input type="Password" name="company_password" class="form-control" placeholder="Password">
                                            </div>
 										   <div class="col-md-6 col-sm-12">
-                                              <select  name="company_category" id="company_category" class="form-control">
+                                              <select  name="company_category" id="company_category" class="form-control one">
                                                 <option value="">Company Services</option>
                                                 <?php foreach($job_category as $dept){?>
                                                 <option value="<?php echo $dept['job_category_id']; ?>"><?php echo $dept['job_category_name']; ?></option>
@@ -384,7 +384,7 @@ $("#company_category").select2( {
 <script>
 $(function() {
   // choose target dropdown
-  var select = $('select');
+  var select = $('.one');
   select.html(select.find('option').sort(function(x, y) {
     // to change to descending order switch "<" for ">"
     return $(x).text() > $(y).text() ? 1 : -1;
