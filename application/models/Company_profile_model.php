@@ -129,6 +129,7 @@ public function get_slug_name($company_id)
             return 0;
         }
     }
+	
 
 	
 	public function User_status_check(){
