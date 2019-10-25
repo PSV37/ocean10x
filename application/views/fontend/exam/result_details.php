@@ -57,7 +57,7 @@
                       <td><?php echo NUMBER_QUESTIONS; ?></td>
                       <td><?php echo $ct_row['total_questions'] ?></td>
                       <td><?php echo $ct_row['total_marks'] ?></td>
-                      <td><?php echo $per.'%'; ?></td>
+                      <td><?php echo round($per, 2).'%'; ?></td>
                      
                   </tr>
                   <?php
