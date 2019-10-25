@@ -40,30 +40,25 @@
                   <th class="active">Name</th>
                   <th class="active">Total Question</th>
                   <th class="active">Attended Question</th>
-                  <th class="active">Correct Question</th>
-                  <th class="active">Wrong Question</th>
                   <th class="active">Total Marks</th>
-                  <th class="active">Obtained Marks</th>
-                  <th class="active col-sm-2">Action</th>
+                  <th class="active">Percenage</th>
                 </tr>
               </thead>
               <tbody>
-                <?php $key = 1; if (!empty($exam_attended_candidates)): foreach ($exam_attended_candidates as $ct_row) : 
-                print_r($exam_attended_candidates); die;
+                <?php $key = 1; if (!empty($exam_attended_candidates)): foreach ($exam_attended_candidates as $ct_row) :
+
+                  $marks = $ct_row['total_marks']; 
+                  $per = ($marks *10)/100;
+                // print_r($exam_attended_candidates); die;
                 ?>
                     <tr>
                       <td><?php echo $key ?></td>
-                      <td><?php echo $ct_row['skill_name'] ?></td>
-                      <td><?php echo $ct_row['topic_name'] ?></td>
-                      <td><?php echo $ct_row['subtopic_name'] ?></td>
-                      <td><?php echo $ct_row['title'] ?></td>
-                      <td><?php echo $ct_row['titles'] ?></td>
-                      <td><?php echo $ct_row['ques_type'] ?></td>
-                      <td><?php echo $ct_row['question'] ?></td>
-                      <td>
-                          <?php echo btn_edit('employer/edit_questionbank/' . $ct_row['ques_id']); ?>
-                          <?php echo btn_delete('employer/delete_questionbank/' . $ct_row['ques_id']); ?>
-                      </td>
+                      <td><?php echo $ct_row['full_name'] ?></td>
+                      <td><?php echo NUMBER_QUESTIONS; ?></td>
+                      <td><?php echo $ct_row['total_questions'] ?></td>
+                      <td><?php echo $ct_row['total_marks'] ?></td>
+                      <td><?php echo $per ?></td>
+                     
                   </tr>
                   <?php
                       $key++;
