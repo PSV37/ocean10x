@@ -121,7 +121,7 @@
                                                 </select>
                                             </div>
 											 <div class="col-md-6 col-sm-12">
-                                            <input type="text" name="company_pincode" id="company_pincode" class="form-control"  value="<?php echo (isset($this->session->userdata['reg_in']['company_pincode'])?$this->session->userdata['reg_in']['company_pincode']:''); ?>" placeholder="Pincode" autocomplete="off">
+                                            <input type="text" name="company_pincode" id="company_pincode" class="form-control"  value="<?php echo (isset($this->session->userdata['reg_in']['company_pincode'])?$this->session->userdata['reg_in']['company_pincode']:''); ?>" placeholder="Pincode" autocomplete="off" style="width: 560px; margin: auto;">
                                            </div>
                                         </div><!-- end row -->
                                     </div>
