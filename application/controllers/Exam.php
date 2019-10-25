@@ -81,7 +81,7 @@ class Exam extends MY_Seeker_Controller
         if($testdata == 0){
          
             $status = '';
-            $mark ='';
+            //$mark ='';
             for($i=0;$i<sizeof($option);$i++)
             {
                 $where_queans = "question_id='$question_id' AND answer_id='$option[$i]'";
@@ -89,10 +89,10 @@ class Exam extends MY_Seeker_Controller
                 if($test_ans_data == true)
                 {
                     $status.= 'Yes';
-                    $mark .=1;
+                    $mark =1;
                 }else{
                     $status.= 'No';
-                    $mark .=0;
+                    $mark =0;
                 }
                 // if ($status == 'Yes') {
                     
