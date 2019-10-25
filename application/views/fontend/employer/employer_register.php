@@ -4,6 +4,13 @@
 
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <style>
+  .autosuggest {
+  padding:4px;
+  border:1px solid #000;
+}
+
+  </style>
 <!-- Page Title start -->
 <div class="pageTitle">
   <div class="container">
@@ -120,7 +127,7 @@
                                                 </select>
                                             </div>
 											 <div class="col-md-6 col-sm-12">
-                                            <input type="text" name="company_pincode" id="company_pincode" class="form-control"  value="<?php echo (isset($this->session->userdata['reg_in']['company_pincode'])?$this->session->userdata['reg_in']['company_pincode']:''); ?>" placeholder="Pincode" autocomplete="off">
+                                            <input type="text" name="company_pincode autosuggest" id="company_pincode" class="form-control"  value="<?php echo (isset($this->session->userdata['reg_in']['company_pincode'])?$this->session->userdata['reg_in']['company_pincode']:''); ?>" placeholder="Pincode" autocomplete="off">
                                            </div>
                                         </div><!-- end row -->
                                     </div>
