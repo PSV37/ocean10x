@@ -185,7 +185,7 @@ $this->session->set_userdata('reg_in', $company_profile );
     }
      
 	/*Username Checked */
-	public function checkUsername()
+	/* public function checkUsername()
  {
   $this->load->model('Search_model');
   if($this->Search_model->getUsername($_POST['username'])){
@@ -195,7 +195,7 @@ $this->session->set_userdata('reg_in', $company_profile );
   else {
    echo '<label class="text-success"><span><i class="fa fa-check-circle-o" aria-hidden="true"></i> Username is available</span></label>';
   }
- }
+ } */
  
 	
 	
