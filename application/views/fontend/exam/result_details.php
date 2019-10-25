@@ -46,14 +46,14 @@
               </thead>
               <tbody>
                 <?php $key = 1; if (!empty($exam_attended_candidates)): foreach ($exam_attended_candidates as $ct_row) :
-
                   $marks = $ct_row['total_marks']; 
                   $per = ($marks * 100)/NUMBER_QUESTIONS;
-                // print_r($exam_attended_candidates); die;
                 ?>
                     <tr>
                       <td><?php echo $key ?></td>
-                      <td><?php echo $ct_row['full_name'] ?></td>
+                      <td>
+                        <h3><a target="_blank" href="<?php echo base_url() ?>employer/view_resume/<?php echo $ct_row['js_id'] ."/".$job_id; ?>"><?php echo $ct_row['full_name'] ?></a></h3>
+                      </td>
                       <td><?php echo NUMBER_QUESTIONS; ?></td>
                       <td><?php echo $ct_row['total_questions'] ?></td>
                       <td><?php echo $ct_row['total_marks'] ?></td>
