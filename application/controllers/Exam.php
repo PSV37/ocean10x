@@ -98,7 +98,7 @@ class Exam extends MY_Seeker_Controller
                     $mark .=0;
                 }
             }
-print_r($status);
+// print_r($status);
            
             echo $mark; die; 
                 $exam_array = array(
