@@ -35,7 +35,13 @@ class Register extends CI_Controller
             $exist_username = $this->job_seeker_model->username_check($this->input->post('user_name'));
                  $this->session->set_userdata('reg_jobseeker', $js_info );
 
-            if ($exist_email || $exist_username) {
+			if ($exist_username) {
+                // all Ready Account Message
+                $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your username Or Account Already Use This!</div>');
+                redirect('register');
+            }
+
+            if ($exist_email) {
                 // all Ready Account Message
                 $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Email Or Account Already Use This!</div>');
                 redirect('register');
