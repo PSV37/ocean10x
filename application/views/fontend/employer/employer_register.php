@@ -72,7 +72,7 @@
                                               <input type="Password" name="company_password" class="form-control" placeholder="Password">
                                            </div>
 										   <div class="col-md-6 col-sm-12">
-                                              <select  name="company_category" id="company_category" class="form-control one">
+                                              <select  name="company_category" id="company_category" class="form-control services">
                                                 <option value="">Company Services</option>
                                                 <?php foreach($job_category as $dept){?>
                                                 <option value="<?php echo $dept['job_category_id']; ?>"><?php echo $dept['job_category_name']; ?></option>
@@ -99,7 +99,7 @@
                                     <div class="formrow">
                                         <div class="row">
                                             <div class="col-md-6 col-sm-12">
-                                              <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
+                                              <select  name="country_id" id="country_id" class="form-control country" onchange="getStates(this.value)">
                                                 <option value="">Select Country</option>
                                                 <?php foreach($country as $key){?>
                                                 <option value="<?php echo $key['country_id']; ?>"><?php echo $key['country_name']; ?></option>
@@ -384,7 +384,22 @@ $("#company_category").select2( {
 <script>
 $(function() {
   // choose target dropdown
-  var select = $('.one');
+  var select = $('.services');
+  select.html(select.find('option').sort(function(x, y) {
+    // to change to descending order switch "<" for ">"
+    return $(x).text() > $(y).text() ? 1 : -1;
+  }));
+
+  // select default item after sorting (first item)
+  // $('select').get(0).selectedIndex = 0;
+});
+</script>
+  
+  
+  <script>
+$(function() {
+  // choose target dropdown
+  var select = $('.country');
   select.html(select.find('option').sort(function(x, y) {
     // to change to descending order switch "<" for ">"
     return $(x).text() > $(y).text() ? 1 : -1;
