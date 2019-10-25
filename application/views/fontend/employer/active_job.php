@@ -60,6 +60,7 @@
                                 <div class="col-md-2">
                                     <div class="jobpt">
                                         <div class="status">Test Exam Results</div>
+                                        <strong><?php echo  $this->job_apply_model->count_job_apply($v_companyjobs->job_post_id,$employer_id); ?></strong>
                                         <div class="viewapp"><a href="<?php echo base_url(); ?>employer/all-results/<?php echo $v_companyjobs->job_post_id; ?>" class="btn">View List</a></div>
                                     </div>
                                 </div>
