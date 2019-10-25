@@ -332,13 +332,13 @@ $("#company_category").select2( {
 </script>
 
 <script>
-$("#company_pincode").select2( {
-	placeholder: "Company Pincode",
+$("#company_category").select2( {
+	placeholder: "Select Industry",
 	allowClear: true
 	} );
 </script>
 
-<!--<script>
+<script>
   var BASE_URL = "<?php echo base_url(); ?>";
  
  $(document).ready(function() {
@@ -363,6 +363,6 @@ $("#company_pincode").select2( {
     minLength: 1
  });
 });
-
- <script>--> 
+</script>
+  
  <?php $this->load->view("fontend/layout/footer.php"); ?>
