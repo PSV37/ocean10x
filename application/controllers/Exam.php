@@ -87,22 +87,32 @@ class Exam extends MY_Seeker_Controller
                 if($test_ans_data == true)
                 {
                     $status = 'Yes';
+                   
                 }else{
                     $status = 'No';
+                    $mark =0;
                 }
-
+            }
+            if ($status = 'Yes') {
+                $mark =1;
+            }else{
+                $mark =0;
+            }
+            echo $mark; die; 
                 $exam_array = array(
                     'job_id'            => $job_post_id,
                     'js_id'             => $jobseeker_id,  
                     'question_id'       => $question_id,
-                    'answer_selected'   => $option[$i],
+                    //'answer_selected'   => $option[$i],
+                    'mark'              => $mark,
                     'correct_status'    => $status,
+
                     'date_time'         => date('Y-m-d H:i:s'),
 
                 );
 
                 $last_id = $this->Master_model->master_insert($exam_array, 'js_test_info');
-            }
+            
             // check for next questions
             $whereskill = "job_post_id='$job_post_id'";
             $data['skills'] = $this->Master_model->get_master_row('job_posting', $select ='skills_required' , $whereskill, $join = FALSE);

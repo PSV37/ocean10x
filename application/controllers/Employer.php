@@ -1300,7 +1300,7 @@ function getLineitemlevel(){
             // $totalrow = $total_applicantlist['total_row'];
             // $job_details         = $this->job_posting_model->get_job_details($job_id);
 
-            $this->load->view('fontend/employer/result_details');
+            $this->load->view('fontend/exam/result_details');
         } else {
             echo "not found";
         }
