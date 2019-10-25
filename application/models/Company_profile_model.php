@@ -21,7 +21,7 @@ class Company_Profile_Model extends MY_Model
             $this->db->select('*');
             $this->db->from('settings');
                     $this->db->where('id', 2);
-					$this->db->order_by('id DESC, country_id ASC');
+					$this->db->order_by('country_id ASC');
             $Q = $this->db->get();
             if ($Q->num_rows() > 0) {
                 $return = $Q->row_array();
