@@ -89,21 +89,15 @@ class Exam extends MY_Seeker_Controller
                 if($test_ans_data == true)
                 {
                     $status[]= 'Yes';
-                   // $mark .=1;
                 }else{
                     $status[]= 'No';
-                  //  $mark .=0;
                 }
-                // 
             }
             if (count(array_unique($status)) === 1 && end($status) === 'Yes') {
                 $mark=1;
             }else {
                 $mark =0;
             } 
-            
-            echo $mark; 
-           die; 
             
                 $exam_array = array(
                     'job_id'            => $job_post_id,
