@@ -1291,8 +1291,9 @@ function getLineitemlevel(){
         $company_id = $this->session->userdata('company_profile_id');
         if (!empty($job_id) && $this->job_posting_model->check_jobid_and_post_id($job_id, $company_id) == true) {
             
-            // $data['exam_attended_candidates'] = $this->Master_model->getMaster('')
-
+            $where_test = "job_id='$job_id'";
+            $select_result = "SUM(marks) as per,COUNT(test_id) as test";
+            $data['exam_attended_candidates'] = $this->Master_model->getMaster('js_test_info', $where_test,$join = FALSE, $order = false, $field = false, $select_result,$limit=false,$start=false, $search=false);
             // $total_applicantlist = $this->job_apply_model->only_job_applicants($job_id, $company_id);
 
 
@@ -1300,7 +1301,7 @@ function getLineitemlevel(){
             // $totalrow = $total_applicantlist['total_row'];
             // $job_details         = $this->job_posting_model->get_job_details($job_id);
 
-            $this->load->view('fontend/exam/result_details');
+            $this->load->view('fontend/exam/result_details',$data);
         } else {
             echo "not found";
         }
