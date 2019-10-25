@@ -59,11 +59,13 @@
                                                 <input type="email" name="company_email" value="<?php echo isset($this->session->userdata['reg_in']['company_email'])?$this->session->userdata['reg_in']['company_email']:''; ?>" class="form-control" placeholder="Email" autocomplete="off">
                                             </div>
                                             <div class="col-md-6 col-sm-12">
-                                                <input type="text" name="company_username" value="<?php echo isset($this->session->userdata['reg_in']['company_username'])?$this->session->userdata['reg_in']['company_username']:''; ?>" class="form-control" placeholder="Company User Name" autocomplete="off">
+                                                <input type="text" name="company_username" id="company_username" value="<?php echo isset($this->session->userdata['reg_in']['company_username'])?$this->session->userdata['reg_in']['company_username']:''; ?>" class="form-control" placeholder="Company User Name" autocomplete="off">
                                             </div>
                                           
                                         </div><!-- end row -->
                                     </div>
+									<span id="username_result"></span>
+									<br><br>
 									<div class="formrow">
                                         <div class="row">
                                             <div class="col-md-6 col-sm-12">
@@ -367,5 +369,23 @@ $("#company_category").select2( {
  });
 });
 </script>
+  <script type="text/javascript">
+ $(document).ready(function(){
+  $('#company_username').change(function(){
+   var company_username = $('#company_username').val();
+   if(company_username != ''){
+    $.ajax({
+     url: "<?php echo base_url(); ?>Search/checkUsername",
+     method: "POST",
+     data: {company_username:company_username},
+     success: function(data){
+      $('#username_result').html(data);
+     }
+    });
+   }
+  });
+ });
+</script>
+  
   
  <?php $this->load->view("fontend/layout/footer.php"); ?>

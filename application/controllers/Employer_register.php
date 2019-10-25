@@ -172,7 +172,7 @@ $this->session->set_userdata('reg_in', $company_profile );
     }
 	
 
-   
+   /* Autosearch Pincode */
     public function search(){
  
         $term = $this->input->get('term');
@@ -184,7 +184,19 @@ $this->session->set_userdata('reg_in', $company_profile );
         echo json_encode( $data);
     }
      
-
+	/*Username Checked */
+	public function checkUsername()
+ {
+  $this->load->model('Search_model');
+  if($this->Search_model->getUsername($_POST['username'])){
+   echo '<label class="text-danger"><span><i class="fa fa-times" aria-hidden="true">
+   </i> This user is already registered</span></label>';
+  }
+  else {
+   echo '<label class="text-success"><span><i class="fa fa-check-circle-o" aria-hidden="true"></i> Username is available</span></label>';
+  }
+ }
+ 
 	
 	
 		function getstate(){
