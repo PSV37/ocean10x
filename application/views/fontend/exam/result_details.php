@@ -48,7 +48,7 @@
                 <?php $key = 1; if (!empty($exam_attended_candidates)): foreach ($exam_attended_candidates as $ct_row) :
 
                   $marks = $ct_row['total_marks']; 
-                  $per = ($marks *10)/100;
+                  $per = ($marks * NUMBER_QUESTIONS)/100;
                 // print_r($exam_attended_candidates); die;
                 ?>
                     <tr>
@@ -57,7 +57,7 @@
                       <td><?php echo NUMBER_QUESTIONS; ?></td>
                       <td><?php echo $ct_row['total_questions'] ?></td>
                       <td><?php echo $ct_row['total_marks'] ?></td>
-                      <td><?php echo $per ?></td>
+                      <td><?php echo $per.'%'; ?></td>
                      
                   </tr>
                   <?php
