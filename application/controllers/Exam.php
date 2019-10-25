@@ -79,17 +79,16 @@ class Exam extends MY_Seeker_Controller
         $wherechk = "job_id='$job_post_id' AND question_id='$question_id' AND js_id='$jobseeker_id'";
         $testdata= $this->Master_model->master_get_num_rows('js_test_info', $wherechk, $like = false, $join=false, $select = false);
         if($testdata == 0){
-
+            $status ='';
             for($i=0;$i<sizeof($option);$i++)
             {
                 $where_queans = "question_id='$question_id' AND answer_id='$option[$i]'";
                 $test_ans_data= $this->Master_model->getMaster('questionbank_answer', $where_queans, $like = false, $join=false, $select = false);
                 if($test_ans_data == true)
                 {
-                    $status = 'Yes';
-                   
+                    $status .= 'Yes';
                 }else{
-                    $status = 'No';
+                    $status .= 'No';
                     
                 }
             }
