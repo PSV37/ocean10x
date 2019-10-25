@@ -1,5 +1,5 @@
 <?php 
-    $this->load->view('fontend/layout/employer_header.php');
+    $this->load->view('fontend/layout/employer_regheader.php');
 ?>
 
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
