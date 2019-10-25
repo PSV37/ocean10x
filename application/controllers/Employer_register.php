@@ -106,7 +106,13 @@ $this->session->set_userdata('reg_in', $company_profile );
             // all Ready Account Message
             $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Email Or Account Already Use This!</div>');
             redirect('employer_register');
-        } else {
+        }
+		if ($exist_username) {
+            // all Ready Account Message
+            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Username Or Account Already Use This!</div>');
+            redirect('employer_register');
+        } 
+		else {
               $inputCaptcha = $this->input->post('captcha');
             $sessCaptcha = $this->session->userdata('captchaCode');
             if($inputCaptcha === $sessCaptcha){
@@ -163,6 +169,8 @@ $this->session->set_userdata('reg_in', $company_profile );
         }
 
     }
+	
+	
 
 
      public function getCaptcha(){
