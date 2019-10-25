@@ -121,8 +121,10 @@
                                                 </select>
                                             </div>
 											 <div class="col-md-6 col-sm-12">
+											 <fieldset>
                                             <input type="text" name="company_pincode" id="company_pincode" class="form-control"  value="<?php echo (isset($this->session->userdata['reg_in']['company_pincode'])?$this->session->userdata['reg_in']['company_pincode']:''); ?>" placeholder="Pincode" autocomplete="off" >
-                                           </div>
+											</fieldset>
+										  </div>
                                         </div><!-- end row -->
                                     </div>
                                     <div class="formrow">
