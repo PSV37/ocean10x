@@ -95,8 +95,10 @@ class Exam extends MY_Seeker_Controller
             }
             if (count(array_unique($status)) === 1 && end($status) === 'Yes') {
                 $mark=1;
+                $cstatus = 'Yes';
             }else {
                 $mark =0;
+                $cstatus = 'No';
             } 
             
                 $exam_array = array(
@@ -104,8 +106,8 @@ class Exam extends MY_Seeker_Controller
                     'js_id'             => $jobseeker_id,  
                     'question_id'       => $question_id,
                     //'answer_selected'   => $option[$i],
-                    'mark'              => $mark,
-                    'correct_status'    => $status,
+                    'marks'              => $mark,
+                    'correct_status'    => $cstatus,
 
                     'date_time'         => date('Y-m-d H:i:s'),
 
