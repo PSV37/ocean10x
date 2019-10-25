@@ -74,6 +74,7 @@ class Employer_register extends CI_Controller
         $to_email=$this->input->post('company_email');
         $exist_email    = $this->company_profile_model->email_check($this->input->post('company_email'));
         $exist_username = $this->company_profile_model->username_check($this->input->post('company_username'));
+		$exist_companyname = $this->company_profile_model->companyname_check($this->input->post('company_name'));
 $this->session->set_userdata('reg_in', $company_profile );
   $company_logo = isset($_FILES['company_logo']['name']) ? $_FILES['company_logo']['name'] : null;
 
@@ -110,6 +111,11 @@ $this->session->set_userdata('reg_in', $company_profile );
 		if ($exist_username) {
             // all Ready Account Message
             $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Username Or Account Already Use This!</div>');
+            redirect('employer_register');
+        } 
+		if ($exist_companyname) {
+            // all Ready Account Message
+            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Company Name Or Account Already Use This!</div>');
             redirect('employer_register');
         } 
 		else {
