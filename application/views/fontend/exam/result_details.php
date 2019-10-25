@@ -48,7 +48,9 @@
                 </tr>
               </thead>
               <tbody>
-                <?php $key = 1; if (!empty($questionbank)): foreach ($questionbank as $ct_row) : ?>
+                <?php $key = 1; if (!empty($exam_attended_candidates)): foreach ($exam_attended_candidates as $ct_row) : 
+                print_r($exam_attended_candidates); die;
+                ?>
                     <tr>
                       <td><?php echo $key ?></td>
                       <td><?php echo $ct_row['skill_name'] ?></td>
