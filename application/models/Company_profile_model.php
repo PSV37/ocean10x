@@ -166,9 +166,9 @@ public function get_slug_name($company_id)
         $this->db->where('company_username', $user_name);
         $query = $this->db->get($this->_table_name);
         if ($query->num_rows() > 0) {
-            return true;
+            return 1;
         } else {
-            return false;
+            return 0;
         }
     }
 
