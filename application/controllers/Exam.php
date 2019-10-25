@@ -80,29 +80,30 @@ class Exam extends MY_Seeker_Controller
         $testdata= $this->Master_model->master_get_num_rows('js_test_info', $wherechk, $like = false, $join=false, $select = false);
         if($testdata == 0){
          
-            $status = '';
-            //$mark ='';
+            $status = array();
+           // $mark ='';
             for($i=0;$i<sizeof($option);$i++)
             {
                 $where_queans = "question_id='$question_id' AND answer_id='$option[$i]'";
                 $test_ans_data= $this->Master_model->getMaster('questionbank_answer', $where_queans, $like = false, $join=false, $select = false);
                 if($test_ans_data == true)
                 {
-                    $status.= 'Yes';
-                    $mark =1;
+                    $status[]= 'Yes';
+                   // $mark .=1;
                 }else{
-                    $status.= 'No';
-                    $mark =0;
+                    $status[]= 'No';
+                  //  $mark .=0;
                 }
-                // if ($status == 'Yes') {
-                    
-                // }else{
-                    
-                // }
+                // 
             }
 // print_r($status);
-           
-            echo $mark; die; 
+            if(array_sum($status) == count($status)) {
+                echo 'all true';
+            } else {
+                echo 'some false';
+            } 
+           die; 
+            echo $mark; 
                 $exam_array = array(
                     'job_id'            => $job_post_id,
                     'js_id'             => $jobseeker_id,  
