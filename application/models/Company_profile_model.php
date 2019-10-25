@@ -9,7 +9,7 @@ class Company_Profile_Model extends MY_Model
 
     protected $_table_name  = 'company_profile';
     protected $_primary_key = 'company_profile_id';
-    protected $_order_by    = "company_profile_id desc";
+    protected $_order_by    = "company_profile_id ASC";
 
     public function __construct()
     {
