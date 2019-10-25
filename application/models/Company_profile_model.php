@@ -118,10 +118,10 @@ public function get_slug_name($company_id)
         return isset($result->company_logo) ? $result->company_logo : '';
     }
 
-    public function exist_companyname($companyname)
+    public function companyname_check($company_name)
     {
         $this->db->select("*");
-        $this->db->where('companyname', $companyname);
+        $this->db->where('company_name', $company_name);
         $query = $this->db->get($this->_table_name);
         if ($query->num_rows() > 0) {
             return 1;
