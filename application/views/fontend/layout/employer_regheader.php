@@ -27,7 +27,7 @@
 
 		</style>
 		<style>
-  .autosuggest {
+  #company_pincode {
   padding:4px;
   border:1px solid #000;
   background-color:#000;
