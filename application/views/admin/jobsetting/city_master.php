@@ -63,7 +63,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">State <span class="required">*</span></label>
-                                        <select id="state_name"  name="state_name" class="form-control state" required>
+                                        <select id="state_name"  name="state_name" class="form-control" required>
                                            <option value="">Select State</option> 
                                         </select>
                                     </div>
@@ -208,21 +208,6 @@ $(function() {
   }));
 
   // select default item after sorting (first item)
-  $('select').get(0).selectedIndex = 0;
-});
-</script>
-
-
-<script>
-$(function() {
-  // choose target dropdown
-  var select = $('.state');
-  select.html(select.find('option').sort(function(x, y) {
-    // to change to descending order switch "<" for ">"
-    return $(x).text() > $(y).text() ? 1 : -1;
-  }));
-
-  // select default item after sorting (first item)
-  $('select').get(0).selectedIndex = 0;
+  //$('select').get(0).selectedIndex = 0;
 });
 </script>
