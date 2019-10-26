@@ -61,8 +61,7 @@
 									 <div class="col-md-6">
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Email-Id<span class="required">*</span></label>
-                                    <input type="email" name="email" id="email" class="form-control" value="<?php echo $result['email']; ?><?php echo set_value('email'); ?>">
-										<?php echo form_error('email'); ?>
+                                    <input type="email" name="email" id="email" class="form-control" value="<?php echo $result['email']; ?>">
 										</div>
 									</div>
 									
@@ -72,7 +71,7 @@
 									 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Contact No.<span class="required">*</span></label>
-                                       <input type="tel" name="mobile" id="mobile" class="form-control" value="<?php echo $result['mobile']; ?>">
+                                       <input type="tel" name="mobile" id="mobile" class="form-control" value="<?php echo $result['mobile']; ?>" onkeypress="phoneno()" maxlength="10">
 									 </div>
                                 </div>
 								
@@ -330,7 +329,20 @@ $(function() {
   //$('select').get(0).selectedIndex = 0;
 });
 </script>
+<script>        
+           function phoneno(){          
+            $('#phone').keypress(function(e) {
+                var a = [];
+                var k = e.which;
 
+                for (i = 48; i < 58; i++)
+                    a.push(i);
+
+                if (!(a.indexOf(k)>=0))
+                    e.preventDefault();
+            });
+        }
+       </script>
 	   
 <!-- <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script> -->
 <!-- <script>
