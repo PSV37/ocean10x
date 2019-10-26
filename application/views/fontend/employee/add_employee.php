@@ -85,7 +85,7 @@ echo "</div>";
 									 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Contact No.<span class="required">*</span></label>
-                                       <input type="tel" name="mobile" id="mobile" class="form-control" autocomplete="off">
+                                       <input type="tel" name="mobile" id="mobile" class="form-control" autocomplete="off" onkeypress="phoneno()" maxlength="10">
 									 </div>
                                 </div>
 								
@@ -336,7 +336,20 @@ $(function() {
 });
 </script>
 
+<script>        
+           function phoneno(){          
+            $('#mobile').keypress(function(e) {
+                var a = [];
+                var k = e.which;
 
+                for (i = 48; i < 58; i++)
+                    a.push(i);
+
+                if (!(a.indexOf(k)>=0))
+                    e.preventDefault();
+            });
+        }
+       </script>
 
 <!-- <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script> -->
 <!-- <script>
