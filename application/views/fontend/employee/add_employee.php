@@ -70,7 +70,7 @@ echo "</div>";
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Email-Id<span class="required">*</span></label>
                                     <input type="email" name="email" id="email" class="form-control">
-									 <span id="email_result"></span>  
+									<?php echo form_error('email'); ?>
 										</div>
 									</div>
 									
