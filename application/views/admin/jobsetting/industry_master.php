@@ -47,10 +47,9 @@
                             
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Industry Name <span class="">*</span></label>
-                                      <input type="text" name="industry_name" class="form-control" value="<?php if (!empty($edit_industry_info)) echo $row['industry_name'];?><?php echo set_value('industry_name'); ?>" placeholder='Industry Name'>
-                                    <?php echo form_error('email'); ?>
-									</div>
+                                        <label for="exampleInputEmail1">Industry Name <span class="required">*</span></label>
+                                      <input type="text" name="industry_name" class="form-control" value="<?php if (!empty($edit_industry_info)) echo $row['industry_name'];?>" placeholder='Industry Name' required>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
