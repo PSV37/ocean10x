@@ -69,8 +69,8 @@ echo "</div>";
 									 <div class="col-md-4">
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Email-Id<span class="required">*</span></label>
-                                    <input type="email" name="email" id="email" class="form-control" value="<?php echo set_value('email'); ?>">
-									<?php echo form_error('email'); ?>
+                                    <input type="email" name="email" id="email" class="form-control">
+									
 										</div>
 									</div>
 									
