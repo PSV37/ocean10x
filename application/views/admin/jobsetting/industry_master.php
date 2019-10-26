@@ -88,7 +88,7 @@
                     <?php if (!empty($industry_data)): foreach ($industry_data as $st_row) : ?>
                         <tr>
                             <td><?php echo $key ?></td>
-                            <td class="industry"><?php echo $st_row['industry_name'] ?></td>
+                            <td><?php echo $st_row['industry_name'] ?></td>
                             <td><?php echo $st_row['description'] ?></td>
                             <td>
                                 <?php echo btn_edit('admin/industry_master/edit_industry/' . $st_row['id']); ?>
@@ -123,17 +123,5 @@
 
 
 </div><!-- /.right-side -->
-<script>
-$(function() {
-  // choose target dropdown
-  var select = $('.industry');
-  select.html(select.find('option').sort(function(x, y) {
-    // to change to descending order switch "<" for ">"
-    return $(x).text() > $(y).text() ? 1 : -1;
-  }));
-
-  // select default item after sorting (first item)
-  //$('select').get(0).selectedIndex = 0;
-});
-       
+      
 <?php $this->load->view('admin/components/footer'); ?>
