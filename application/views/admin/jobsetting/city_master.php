@@ -190,6 +190,13 @@
 
        
 </script>
+<script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
+<script>
+$("#subject").select2( {
+	placeholder: "Select Subject",
+	allowClear: true
+	} );
+</script>
 
 <script>
 $(function() {
