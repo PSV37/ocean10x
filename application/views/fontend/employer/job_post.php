@@ -48,7 +48,7 @@
                 <div class="col-md-6 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Job Industry<span class="required">*</span> </label>
-                    <select name="job_category" required class="form-control" data-style="btn-default" data-live-search="true">
+                    <select name="job_category" id="job_category" required class="form-control" data-style="btn-default" data-live-search="true">
                       <option value="">Select Industry</option>
                         <?php if(!empty($job_info->job_category)) {
                             echo $this->job_category_model->selected($job_info->job_category);
@@ -462,4 +462,13 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
   getEducationSpecial_load();
 });
 	   
+</script>
+
+
+
+<script>
+$("#job_category").select2( {
+	placeholder: "Select Industry",
+	allowClear: true
+	} );
 </script> 
