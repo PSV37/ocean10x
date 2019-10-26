@@ -331,7 +331,7 @@
                                         <div class="col-md-6 col-sm-12">
                                         <div class="formrow">
                                         	<label class="control-label">Company Services: <span class="required">*</span></label>
-                                            <select name="company_category" id="company_category" class="form-control" data-style="btn-default" data-live-search="true">
+                                            <select name="company_category" id="company_category" class="form-control services" data-style="btn-default" data-live-search="true">
                                             	<option value="">Select Services</option> 
                                                 <?php if(!empty($company_info->company_category)) {
                                                 echo $this->job_category_model->selected($company_info->company_category);
@@ -433,7 +433,7 @@
 	                                        <div class="col-md-4 col-sm-4">
 	                                        	<div class="formrow">
 	                                        <label class="control-label">Company Country: <span class="required">*</span></label>
-										  <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
+										  <select  name="country_id" id="country_id" class="form-control country" onchange="getStates(this.value)">
 											<option value="">Select Country</option>
 											<?php foreach($country as $key){?>
 											<option value="<?php echo $key['country_id']; ?>"<?php if($company_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
@@ -740,6 +740,49 @@ $("#country").select2( {
 $(function() {
   // choose target dropdown
   var select = $('.counrey_code');
+  select.html(select.find('option').sort(function(x, y) {
+    // to change to descending order switch "<" for ">"
+    return $(x).text() > $(y).text() ? 1 : -1;
+  }));
+
+  // select default item after sorting (first item)
+  //$('select').get(0).selectedIndex = 0;
+});
+</script>
+
+
+<script>
+$(function() {
+  // choose target dropdown
+  var select = $('.counrey_code');
+  select.html(select.find('option').sort(function(x, y) {
+    // to change to descending order switch "<" for ">"
+    return $(x).text() > $(y).text() ? 1 : -1;
+  }));
+
+  // select default item after sorting (first item)
+  //$('select').get(0).selectedIndex = 0;
+});
+</script>
+
+<script>
+$(function() {
+  // choose target dropdown
+  var select = $('.services');
+  select.html(select.find('option').sort(function(x, y) {
+    // to change to descending order switch "<" for ">"
+    return $(x).text() > $(y).text() ? 1 : -1;
+  }));
+
+  // select default item after sorting (first item)
+  //$('select').get(0).selectedIndex = 0;
+});
+</script>
+
+<script>
+$(function() {
+  // choose target dropdown
+  var select = $('.country');
   select.html(select.find('option').sort(function(x, y) {
     // to change to descending order switch "<" for ">"
     return $(x).text() > $(y).text() ? 1 : -1;
