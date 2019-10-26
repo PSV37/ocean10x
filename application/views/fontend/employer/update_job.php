@@ -48,7 +48,7 @@
                 <div class="col-md-6 col-sm-12">
                   <div class="formrow">
                     <label class="control-label mandatory"><b>Job Industry</b> <span class="required">*</span></label>
-                    <select name="job_category" required class="form-control" data-style="btn-default" data-live-search="true">
+                    <select name="job_category" required class="form-control industry" id="job_category" data-style="btn-default" data-live-search="true">
                       <option value="">Select Industry</option>
                       <?php if(!empty($job_info->job_category)) {
                                                 echo $this->job_category_model->selected($job_info->job_category);
@@ -120,7 +120,7 @@
 									<div class="col-md-4 col-sm-12">
 									<div class="formrow">
 									<label class="control-label"><b>Job Country</b> <span class="required">*</span> </label>
-									  <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
+									  <select  name="country_id" id="country_id" class="form-control country" onchange="getStates(this.value)">
 									  
 										<option value="">Select Country</option>
 										<?php foreach($country as $key){?>
@@ -562,3 +562,45 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 	   
 </script> 
 
+<script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
+
+<script>
+$("#job_category").select2( {
+	placeholder: "Select Industry",
+	allowClear: true
+	} );
+</script> 
+<script>
+$("#country_id").select2( {
+	placeholder: "Select Country",
+	allowClear: true
+	} );
+</script> 
+
+<script>
+$(function() {
+  // choose target dropdown
+  var select = $('.industry');
+  select.html(select.find('option').sort(function(x, y) {
+    // to change to descending order switch "<" for ">"
+    return $(x).text() > $(y).text() ? 1 : -1;
+  }));
+
+  // select default item after sorting (first item)
+  //$('select').get(0).selectedIndex = 0;
+});
+</script>
+
+<script>
+$(function() {
+  // choose target dropdown
+  var select = $('.country');
+  select.html(select.find('option').sort(function(x, y) {
+    // to change to descending order switch "<" for ">"
+    return $(x).text() > $(y).text() ? 1 : -1;
+  }));
+
+  // select default item after sorting (first item)
+  //$('select').get(0).selectedIndex = 0;
+});
+</script>
