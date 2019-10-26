@@ -42,7 +42,7 @@
                                             	 if(!empty($job_info->job_title)){
                                             	 	echo $job_info->job_title;
                                             	 }
-                                            ?>" class="form-control">
+                                            ?>" class="form-control" autocomplete="off">
                   </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
@@ -160,7 +160,7 @@
                          if(!empty($job_info->working_hours)){
                           echo $job_info->working_hours;
                          }
-                      ?>" class="form-control" >
+                      ?>" class="form-control" autocomplete="off">
                   </div>
                 </div>
                 <div class="col-md-4 col-sm-12">
@@ -185,20 +185,20 @@
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Salary Offered<span class="required">*</span></label>
-                    <input type="number" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1">
+                    <input type="number" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1" autocomplete="off">
                   </div>
                 </div>
 
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Preferred Age(From)</label>
-               		   <input class="form-control" required name="preferred_age_from"  value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>" type="number" >
+               		   <input class="form-control" required name="preferred_age_from"  value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>" type="number" autocomplete="off">
                   </div>
                 </div>
         				<div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Preferred Age(To)</label>
-               		  <input class="form-control" required name="preferred_age_to" value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>" type="number" >
+               		  <input class="form-control" required name="preferred_age_to" value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>" type="number" autocomplete="off">
                   </div>
         				</div>
                
