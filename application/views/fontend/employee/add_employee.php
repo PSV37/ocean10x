@@ -178,40 +178,7 @@ echo "</div>";
 <script type="text/javascript">
 document.getElementsByClassName('form-control').innerHTML+="<br />";
 </script>
-<?php $this->load->view("fontend/layout/footer.php"); ?>
-
-
- 
-	  
-	  <script>
-  
-  
-  function hideshowfun()
-  {
-  
-      var a = $('#category').val();
-      
-      if(a=='MCQ')
-      {
-          $('#comp_name').hide();
-      }
-     else{
-         $('#comp_name').show();
-     } 
-     
-     if(a=='Subjective' || a=='Practical')
-      {
-          $('#name').hide();
-      }
-     else{
-         $('#name').show();
-     } 
-     
-      
-  }
-</script>	
-
-	   
+<?php $this->load->view("fontend/layout/footer.php"); ?>   
 	   
 <script>
 	function getStates(id){
