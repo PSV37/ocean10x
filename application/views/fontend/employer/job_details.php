@@ -137,7 +137,7 @@
                     </div>
 
                     <div class="col-md-4">
-                      <?php =$this->Job_seeker_experience_model->experience_list_by_id($v_applicant->job_seeker_id)[0]->company_name;;?>
+                      <?= $this->Job_seeker_experience_model->experience_list_by_id($v_applicant->job_seeker_id)[0]->company_name;?>
 
                     	<div class="exp">
 						            <label>Company Name</label>
