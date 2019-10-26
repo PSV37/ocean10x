@@ -29,23 +29,7 @@ class Industry_master extends MY_Controller
         public function save_industry($id = null){
           
             $user_id = $this->session->userdata('admin_user_id');
-            if(isset($_POST['submit_industry'])){
-		$this->form_validation->set_rules('industry_name', 'Name', 'required|alpha');
-		$this->form_validation->set_rules('industry_desc', 'Description', 'required');
-		
-                        array('required' => 'You must provide a %s.');
-
-						
-						
-						
-						
-                if ($this->form_validation->run() == FALSE)
-                {
-                      //$data['result'] = $this->Master_model->getMaster('department' ,$select=false);
-	//$this->load->view('organization/add_employee',$data);		
-                }
-                else
-                {
+            
             $state_dt=array(
                 'industry_name' => $this->input->post('industry_name'),
                 'description' => addslashes($this->input->post('industry_desc')),
@@ -68,8 +52,6 @@ class Industry_master extends MY_Controller
                
                 redirect('admin/industry_master');
             }
-				}
-			}
         }
 
     public function delete_industry($id) {
