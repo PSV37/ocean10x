@@ -31,6 +31,13 @@
 
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="box-body">
+					<?php
+if (isset($message_display)) {
+echo "<div class='message'>";
+echo $message_display;
+echo "</div>";
+}
+?>
 					<div class="container-fluid">
                         <div class="col-md-4">
                             <div class="form-group">                                       

@@ -978,7 +978,7 @@ public function addemployee(){
 	if(isset($_POST['submit_employee'])){
 		$this->form_validation->set_rules('emp_no', 'Employee No.', 'required|min_length[3]|max_length[6]|alpha_numeric');
 		$this->form_validation->set_rules('emp_name', 'Name', 'required|alpha');
-		//$this->form_validation->set_rules('email', 'Email Id', 'required');
+		$this->form_validation->set_rules('email', 'Email Id', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('mobile', ' Contact No.', 'required|regex_match[/^[0-9]{10}$/]');
 		$this->form_validation->set_rules('password', 'password', 'required|max_length[15]|min_length[6]|alpha_numeric');
 		$this->form_validation->set_rules('dept_id', 'Department', 'required');
@@ -1056,8 +1056,15 @@ public function addemployee(){
                // );
 		
 		$data['emp_created_date'] = date('Y-m-d H:i:s');
-		$this->Master_model->master_insert($data,'employee');
-		redirect(base_url().'employer');
+		$result=$this->Master_model->master_insert($data,'employee');
+		if ($result == TRUE) {
+$data['message_display'] = 'Registration Successfully !';
+$this->load->view('fontend/employee/add_employee', $data);
+} else {
+$data['message_display'] = 'Username already exist!';
+$this->load->view('fontend/employee/add_employee', $data);
+}
+		//redirect(base_url().'employer');
 	}
 	}
 $data['result'] = $this->Master_model->getMaster('department' ,$select=false);
