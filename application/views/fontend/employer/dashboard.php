@@ -322,7 +322,7 @@
                                             	 if(!empty($company_info->company_phone)){
                                             	 	echo $company_info->company_phone;
                                             	 }
-                                            ?>" class="form-control" maxlength="15" id="tbNumbers" onkeypress="javascript:return isNumber(event)" style="margin-left:-32px; width:203px;">
+                                            ?>" class="form-control" maxlength="15" id="tbNumbers" onkeypress="javascript:return isNumber(event) phoneno()" style="margin-left:-32px; width:203px;" maxlength="10">
                                             </div>
                                         </div>
                                     </div><!-- end row -->
@@ -349,7 +349,7 @@
                                             	 if(!empty($company_info->contact_name)){
                                             	 	echo $company_info->contact_name;
                                             	 }
-                                            ?>" class="form-control" id="contact_name" placeholder="Contact Name">
+                                            ?>" class="form-control" id="contact_name" placeholder="Contact Name" onkeypress="phonenoo()" maxlength="10">
                                             </div>
                                         </div>
                                    
@@ -792,5 +792,35 @@ $(function() {
   //$('select').get(0).selectedIndex = 0;
 });
 </script>
-  
+
+		<script>        
+           function phoneno(){          
+            $('#tbNumbers').keypress(function(e) {
+                var a = [];
+                var k = e.which;
+
+                for (i = 48; i < 58; i++)
+                    a.push(i);
+
+                if (!(a.indexOf(k)>=0))
+                    e.preventDefault();
+            });
+        }
+       </script>
+	   
+	   <script>        
+           function phonenoo(){          
+            $('#cont_person_mobile').keypress(function(e) {
+                var a = [];
+                var k = e.which;
+
+                for (i = 48; i < 58; i++)
+                    a.push(i);
+
+                if (!(a.indexOf(k)>=0))
+                    e.preventDefault();
+            });
+        }
+       </script>
+		
  <?php $this->load->view("fontend/layout/footer.php"); ?>
