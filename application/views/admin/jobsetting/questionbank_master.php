@@ -80,7 +80,7 @@
                                     <div class="form-group">                                       
 									   <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
                                         
-										<select id="subject"  name="technical_id" class="form-control" required onchange="getTopic(this.value)">
+										<select id="subject"  name="technical_id" class="form-control subject" required onchange="getTopic(this.value)">
                                            <option value="">Select Subject</option> 
                                         <?php if (!empty($skill_master))
                                            foreach($skill_master as $skill) 
@@ -510,4 +510,17 @@ $("#subject").select2( {
 	placeholder: "Select Subject",
 	allowClear: true
 	} );
+</script>
+<script>
+$(function() {
+  // choose target dropdown
+  var select = $('.subject');
+  select.html(select.find('option').sort(function(x, y) {
+    // to change to descending order switch "<" for ">"
+    return $(x).text() > $(y).text() ? 1 : -1;
+  }));
+
+  // select default item after sorting (first item)
+  //$('select').get(0).selectedIndex = 0;
+});
 </script>
