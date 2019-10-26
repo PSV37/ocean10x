@@ -292,7 +292,7 @@ $("#dept_id").select2( {
 </script>
 
 <script>
-$("#Country_id").select2( {
+$("#country_id").select2( {
 	placeholder: "Select Country",
 	allowClear: true
 	} );
