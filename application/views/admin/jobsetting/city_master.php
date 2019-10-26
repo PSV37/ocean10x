@@ -193,7 +193,7 @@
 <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
 <script>
 $("#country_name").select2( {
-	placeholder: "Select Subject",
+	placeholder: "Select Country",
 	allowClear: true
 	} );
 </script>

@@ -132,7 +132,7 @@
 <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
 <script>
 $("#country_name").select2( {
-	placeholder: "Select Subject",
+	placeholder: "Select Country",
 	allowClear: true
 	} );
 </script>
@@ -146,7 +146,7 @@ $(function() {
   }));
 
   // select default item after sorting (first item)
-  $('select').get(0).selectedIndex = 0;
+  //$('select').get(0).selectedIndex = 0;
 });
 </script>
 </div><!-- /.right-side -->
