@@ -48,7 +48,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Industry Name <span class="required">*</span></label>
-                                      <input type="text" name="industry_name" class="form-control" value="<?php if (!empty($edit_industry_info)) echo $row['industry_name'];?>" placeholder='Industry Name' required>
+                                      <input type="text" name="industry_name" class="form-control" value="<?php if (!empty($edit_industry_info)) echo $row['industry_name'];?>" placeholder='Industry Name'>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -59,14 +59,14 @@
                                 </div>
                             
                                 <div class="panel-body"></div>
-                                <button type="submit" class="btn bg-navy" type="submit">Save Industry
+                                <button type="submit" name= "submit_industry" class="btn bg-navy" type="submit">Save Industry
                                 </button><br/><br/>
                             </div>
                             <!-- /.box-body -->
 
                         </div>
                     </div>
-
+				<span class="text-danger"><?php echo validation_errors(); ?></span>
                 </form>
                     </div>
                 <div class="box-footer">
