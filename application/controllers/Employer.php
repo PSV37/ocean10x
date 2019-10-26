@@ -1076,7 +1076,7 @@ $data['state'] = $this->Master_model->getMaster('state',$where=false);
 		'department' => 'department.dept_id = employee.dept_id|INNER',
 		'country' => 'country.country_id = employee.country_id|INNER',
 		'state' => 'state.state_id = employee.state_id|INNER',
-		'city' => 'city.city_id = employee.city_id|INNER',
+		'city' => 'city.id = employee.city_id|INNER',
 	);
 	
 	$res = $this->Master_model->getMaster('employee',$where, $join);
