@@ -123,7 +123,7 @@
                   <div class="col-md-4 col-sm-4">
                     <div class="formrow">
                       <label class="control-label ">Job Country<span class="required">*</span> </label>
-                      <select  name="country_id" class="form-control" onchange="getStates(this.value)">
+                      <select  name="country_id" class="form-control country" onchange="getStates(this.value)">
                         <option value="">Select Country</option>
                           <?php foreach($country as $key){?>
                             <option value="<?php echo $key['country_id']; ?>"<?php if($company_info->job_location==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
@@ -472,11 +472,31 @@ $("#job_category").select2( {
 	allowClear: true
 	} );
 </script> 
+<script>
+$("#country_id").select2( {
+	placeholder: "Select Country",
+	allowClear: true
+	} );
+</script> 
 
 <script>
 $(function() {
   // choose target dropdown
   var select = $('.industry');
+  select.html(select.find('option').sort(function(x, y) {
+    // to change to descending order switch "<" for ">"
+    return $(x).text() > $(y).text() ? 1 : -1;
+  }));
+
+  // select default item after sorting (first item)
+  //$('select').get(0).selectedIndex = 0;
+});
+</script>
+
+<script>
+$(function() {
+  // choose target dropdown
+  var select = $('.country');
   select.html(select.find('option').sort(function(x, y) {
     // to change to descending order switch "<" for ">"
     return $(x).text() > $(y).text() ? 1 : -1;
