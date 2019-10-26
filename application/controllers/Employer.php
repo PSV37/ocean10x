@@ -1045,6 +1045,7 @@ public function addemployee(){
 		$data['country_id'] = $this->input->post('country_id');
 		$data['state_id'] = $this->input->post('state_id');
 		$data['city_id'] = $this->input->post('city_id');
+		$data['pincode'] = $this->input->post('pincode');
 		$data['address'] = $this->input->post('address');
 		$data['emp_created_date'] = $this->input->post('emp_created_date');
 		$data['emp_created_by'] = $user_id;
@@ -1153,12 +1154,14 @@ public function deleteemployee()
 	
     }
 public function postEditData(){
-    $this->form_validation->set_rules('emp_no', 'Employee No.', 'required');
-	$this->form_validation->set_rules('emp_name', 'organization Name', 'required');
-	$this->form_validation->set_rules('email', 'Email Id', 'required');
-	$this->form_validation->set_rules('mobile', ' Contact No.', 'required');
-	$this->form_validation->set_rules('dept_id', 'Department', 'required');
-	$this->form_validation->set_rules('address', 'Address', 'required');
+   $this->form_validation->set_rules('emp_no', 'Employee No.', 'required|min_length[3]|max_length[6]|alpha_numeric');
+		$this->form_validation->set_rules('emp_name', 'Name', 'required');
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[employee.email]');
+		$this->form_validation->set_rules('mobile', ' Contact No.', 'required|regex_match[/^[0-9]{10}$/]');
+		$this->form_validation->set_rules('password', 'password', 'required|max_length[15]|min_length[6]|alpha_numeric');
+		$this->form_validation->set_rules('dept_id', 'Department', 'required');
+		$this->form_validation->set_rules('address', 'Address', 'required');
+		$this->form_validation->set_rules('pincode', 'Pincode', 'required|numeric');
 		
     array('required' => 'You must provide a %s.');
 
@@ -1186,6 +1189,7 @@ public function postEditData(){
     		$data['country_id'] = $this->input->post('country_id');
     		$data['state_id'] = $this->input->post('state_id');
     		$data['city_id'] = $this->input->post('city_id');
+			$data['pincode'] = $this->input->post('pincode');
     		$data['emp_status'] = $this->input->post('emp_status');
     		$data['emp_updated_date'] = date('Y-m-d H:i:s');
     		$data['emp_updated_by'] = $user_id;
