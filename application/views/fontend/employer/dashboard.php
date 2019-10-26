@@ -78,7 +78,7 @@
                                         <div class="col-md-3 col-sm-12">
                                         	<div class="formrow">
 											<label class="control-label">Country Code:</label>
-											<select id="country" name="country_code" class="form-control">
+											<select id="country" name="country_code" class="form-control country_code">
 												<!-- <option value="">Select Country Code</option> -->
 												<br/>
 												<option><?php echo $company_info->country_code?></option>
@@ -732,6 +732,21 @@ $("#country").select2( {
     },
     minLength: 1
  });
+});
+</script>
+
+
+<script>
+$(function() {
+  // choose target dropdown
+  var select = $('.counrey_code');
+  select.html(select.find('option').sort(function(x, y) {
+    // to change to descending order switch "<" for ">"
+    return $(x).text() > $(y).text() ? 1 : -1;
+  }));
+
+  // select default item after sorting (first item)
+  //$('select').get(0).selectedIndex = 0;
 });
 </script>
   
