@@ -1057,13 +1057,7 @@ public function addemployee(){
 		
 		$data['emp_created_date'] = date('Y-m-d H:i:s');
 		$this->Master_model->master_insert($data,'employee');
-		
-		 $exist_email    = $this->emp_model->email_check($this->input->post('email'));
-		  if ($exist_email) {
-                // all Ready Account Message
-                $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Email Or Account Already Use This!</div>');
-               redirect(base_url().'employer');
-            } 
+		redirect(base_url().'employer');
 	}
 	}
 $data['result'] = $this->Master_model->getMaster('department' ,$select=false);
@@ -1123,6 +1117,28 @@ $data['state'] = $this->Master_model->getMaster('state',$where=false);
        $data["result"] = $this->Master_model->getMaster("employee", $where, $join, $order = "ASC", $field = "employee.emp_id", $select = false,$config["per_page"],$page, $search=false, $group_by = FALSE);
 	$this->load->view('fontend/employee/employee_master',$data);
 }
+
+
+
+ function check_email_avalibility()  
+      {  
+           if(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL))  
+           {  
+                echo '<label class="text-danger"><span class="glyphicon glyphicon-remove"></span> Invalid Email</span></label>';  
+           }  
+           else  
+           {  
+                $this->load->model("main_model");  
+                if($this->main_model->is_email_available($_POST["email"]))  
+                {  
+                     echo '<label class="text-danger"><span class="glyphicon glyphicon-remove"></span> Email Already register</label>';  
+                }  
+                else  
+                {  
+                     echo '<label class="text-success"><span class="glyphicon glyphicon-ok"></span> Email Available</label>';  
+                }  
+           }  
+      } 
 
 
      /*Delete Employee*/
