@@ -1,5 +1,5 @@
 <?php  
- class Main_model extends CI_Model  
+ class Main_model extends MY_Model  
  {  
       function is_email_available($email)  
       {  
