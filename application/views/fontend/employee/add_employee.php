@@ -335,24 +335,7 @@ $(function() {
   //$('select').get(0).selectedIndex = 0;
 });
 </script>
-<script>  
- $(document).ready(function(){  
-      $('#email').change(function(){  
-           var email = $('#email').val();  
-           if(email != '')  
-           {  
-                $.ajax({  
-                     url:"<?php echo base_url(); ?>employer/check_email_avalibility",  
-                     method:"POST",  
-                     data:{email:email},  
-                     success:function(data){  
-                          $('#email_result').html(data);  
-                     }  
-                });  
-           }  
-      });  
- });  
- </script>  
+
 
 
 <!-- <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script> -->
