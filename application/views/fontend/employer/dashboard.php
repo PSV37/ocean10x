@@ -349,7 +349,7 @@
                                             	 if(!empty($company_info->contact_name)){
                                             	 	echo $company_info->contact_name;
                                             	 }
-                                            ?>" class="form-control" id="contact_name" placeholder="Contact Name" onkeypress="phonenoo()" maxlength="10">
+                                            ?>" class="form-control" id="contact_name" placeholder="Contact Name">
                                             </div>
                                         </div>
                                    
@@ -375,7 +375,7 @@
 				                                     if(!empty($company_info->cont_person_mobile)){
 				                                        echo $company_info->cont_person_mobile;
 				                                     }
-				                                ?>">
+				                                ?>" onkeypress="phonenoo()" maxlength="10">
 					                        </div>
 					                      </div>
 					                                   
