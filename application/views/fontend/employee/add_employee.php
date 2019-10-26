@@ -7,7 +7,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-6">
-        <h1 class="page-heading">All Question's </h1>
+        <h1 class="page-heading">Add Employee </h1>
       </div>
       <div class="col-md-6 col-sm-6">
         <div class="breadCrumb"><a href="#.">Home</a> / <span>Add Employee</span></div>
@@ -34,7 +34,7 @@
 					<div class="container-fluid">
                         <div class="col-md-4">
                             <div class="form-group">                                       
-							   <label for="exampleInputEmail1">Employee No <span class="required">*</span></label>
+							   <label for="exampleInputEmail1">Employee Number <span class="required">*</span></label>
                                 
 								<input type="number" min="1" name="emp_no" id="emp_no" class="form-control" autocomplete="off">
 								</div>
@@ -63,6 +63,7 @@
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Email-Id<span class="required">*</span></label>
                                     <input type="email" name="email" id="email" class="form-control" autocomplete="off">
+									 <span id="email_result"></span>  
 										</div>
 									</div>
 									
