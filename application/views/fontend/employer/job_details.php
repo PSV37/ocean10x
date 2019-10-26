@@ -141,7 +141,7 @@
 
                     	<div class="exp">
 						            <label>Company Name</label>
-                       <?php echo $v_applicant->job_seeker_id[0]->company_name ?></strong>
+                       <?php echo ($v_applicant->job_seeker_id)[0]->company_name ?></strong>
 							         <!--<div>
                             <?=(!empty($exp[0]->company_name)?''.$exp[0]->designation.'('.$exp[0]->duration.')':'');?></strong>
                             </div>-->
