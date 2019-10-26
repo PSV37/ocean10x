@@ -978,7 +978,7 @@ public function addemployee(){
 	if(isset($_POST['submit_employee'])){
 		$this->form_validation->set_rules('emp_no', 'Employee No.', 'required|min_length[3]|max_length[6]|alpha_numeric');
 		$this->form_validation->set_rules('emp_name', 'Name', 'required|alpha');
-		$this->form_validation->set_rules('email', 'Email Id', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('email', 'Email', 'required|is_unique[employee.email]');
 		$this->form_validation->set_rules('mobile', ' Contact No.', 'required|regex_match[/^[0-9]{10}$/]');
 		$this->form_validation->set_rules('password', 'password', 'required|max_length[15]|min_length[6]|alpha_numeric');
 		$this->form_validation->set_rules('dept_id', 'Department', 'required');
@@ -1056,15 +1056,8 @@ public function addemployee(){
                // );
 		
 		$data['emp_created_date'] = date('Y-m-d H:i:s');
-		$result=$this->Master_model->master_insert($data,'employee');
-		if ($result == TRUE) {
-$data['message_display'] = 'Registration Successfully !';
-$this->load->view('fontend/employee/add_employee', $data);
-} else {
-$data['message_display'] = 'Username already exist!';
-$this->load->view('fontend/employee/add_employee', $data);
-}
-		//redirect(base_url().'employer');
+		$this->Master_model->master_insert($data,'employee');
+		redirect(base_url().'employer');
 	}
 	}
 $data['result'] = $this->Master_model->getMaster('department' ,$select=false);
@@ -1124,28 +1117,6 @@ $data['state'] = $this->Master_model->getMaster('state',$where=false);
        $data["result"] = $this->Master_model->getMaster("employee", $where, $join, $order = "ASC", $field = "employee.emp_id", $select = false,$config["per_page"],$page, $search=false, $group_by = FALSE);
 	$this->load->view('fontend/employee/employee_master',$data);
 }
-
-
-
- function check_email_avalibility()  
-      {  
-           if(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL))  
-           {  
-                echo '<label class="text-danger"><span class="glyphicon glyphicon-remove"></span> Invalid Email</span></label>';  
-           }  
-           else  
-           {  
-                $this->load->model("main_model");  
-                if($this->main_model->is_email_available($_POST["email"]))  
-                {  
-                     echo '<label class="text-danger"><span class="glyphicon glyphicon-remove"></span> Email Already register</label>';  
-                }  
-                else  
-                {  
-                     echo '<label class="text-success"><span class="glyphicon glyphicon-ok"></span> Email Available</label>';  
-                }  
-           }  
-      } 
 
 
      /*Delete Employee*/
