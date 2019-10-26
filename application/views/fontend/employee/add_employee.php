@@ -49,7 +49,7 @@
 									<div class="col-md-4">
                                     <div class="form-group">
 									<label for="exampleInputEmail1">Department<span class="required">*</span></label>
-									<select  name="dept_id" id="dept_id" class="form-control">
+									<select  name="dept_id" id="dept_id" class="form-control department">
 										<option value="">Select Department</option>
 										<?php foreach($result as $key){?>
 										<option value="<?php echo $key['dept_id']; ?>"><?php echo $key['department_name']; ?></option>
@@ -282,6 +282,22 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 });
 
 </script> 
+
+<script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
+<script>
+$("#dept_id").select2( {
+	placeholder: "Select Department",
+	allowClear: true
+	} );
+</script>
+
+<script>
+$("#Country_id").select2( {
+	placeholder: "Select Country",
+	allowClear: true
+	} );
+</script>
+
   <script>
 $(function() {
   // choose target dropdown
@@ -296,6 +312,19 @@ $(function() {
 });
 </script>
 
+<script>
+$(function() {
+  // choose target dropdown
+  var select = $('.department');
+  select.html(select.find('option').sort(function(x, y) {
+    // to change to descending order switch "<" for ">"
+    return $(x).text() > $(y).text() ? 1 : -1;
+  }));
+
+  // select default item after sorting (first item)
+  //$('select').get(0).selectedIndex = 0;
+});
+</script>
 <!-- <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script> -->
 <!-- <script>
 $("#subject").select2( {
