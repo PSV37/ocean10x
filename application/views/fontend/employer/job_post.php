@@ -464,7 +464,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 	   
 </script>
 
-
+<script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
 
 <script>
 $("#job_category").select2( {
