@@ -983,6 +983,7 @@ public function addemployee(){
 		$this->form_validation->set_rules('password', 'password', 'required|max_length[15]|min_length[6]|alpha_numeric');
 		$this->form_validation->set_rules('dept_id', 'Department', 'required');
 		$this->form_validation->set_rules('address', 'Address', 'required');
+		$this->form_validation->set_rules('pincode', 'Pincode', 'required|alpha_numeric');
 		
                         array('required' => 'You must provide a %s.');
 
