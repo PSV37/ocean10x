@@ -978,7 +978,7 @@ public function addemployee(){
 	if(isset($_POST['submit_employee'])){
 		$this->form_validation->set_rules('emp_no', 'Employee No.', 'required|min_length[3]|max_length[6]|alpha_numeric');
 		$this->form_validation->set_rules('emp_name', 'Name', 'required|alpha');
-		$this->form_validation->set_rules('email', 'Email Id', 'required');
+		//$this->form_validation->set_rules('email', 'Email Id', 'required');
 		$this->form_validation->set_rules('mobile', ' Contact No.', 'required|regex_match[/^[0-9]{10}$/]');
 		$this->form_validation->set_rules('password', 'password', 'required|max_length[15]|min_length[6]|alpha_numeric');
 		$this->form_validation->set_rules('dept_id', 'Department', 'required');

@@ -62,7 +62,7 @@
 									 <div class="col-md-4">
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Email-Id<span class="required">*</span></label>
-                                    <input type="email" name="email" id="email" class="form-control" autocomplete="off">
+                                    <input type="email" name="email" id="email" class="form-control">
 									 <span id="email_result"></span>  
 										</div>
 									</div>
