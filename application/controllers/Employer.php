@@ -1057,7 +1057,13 @@ public function addemployee(){
 		
 		$data['emp_created_date'] = date('Y-m-d H:i:s');
 		$this->Master_model->master_insert($data,'employee');
-		redirect(base_url().'employer');
+		
+		 $exist_email    = $this->emp_model->email_check($this->input->post('email'));
+		  if ($exist_email) {
+                // all Ready Account Message
+                $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Email Or Account Already Use This!</div>');
+               redirect(base_url().'employer');
+            } 
 	}
 	}
 $data['result'] = $this->Master_model->getMaster('department' ,$select=false);
