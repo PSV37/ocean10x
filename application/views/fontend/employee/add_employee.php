@@ -97,7 +97,7 @@
 	                                        <div class="col-md-4 col-sm-4">
 	                                        	<div class="formrow">
 	                                        <label class="control-label">Company Country: <span class="required">*</span></label>
-										  <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
+										  <select  name="country_id" id="country_id" class="form-control country" onchange="getStates(this.value)">
 											<option value="">Select Country</option>
 											<?php foreach($country as $key){?>
 											<option value="<?php echo $key['country_id']; ?>"<?php if($company_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
@@ -282,7 +282,19 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 });
 
 </script> 
-  
+  <script>
+$(function() {
+  // choose target dropdown
+  var select = $('.country');
+  select.html(select.find('option').sort(function(x, y) {
+    // to change to descending order switch "<" for ">"
+    return $(x).text() > $(y).text() ? 1 : -1;
+  }));
+
+  // select default item after sorting (first item)
+  // $('select').get(0).selectedIndex = 0;
+});
+</script>
 
 <!-- <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script> -->
 <!-- <script>
