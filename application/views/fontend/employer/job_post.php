@@ -48,7 +48,7 @@
                 <div class="col-md-6 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Job Industry<span class="required">*</span> </label>
-                    <select name="job_category" id="job_category" required class="form-control" data-style="btn-default" data-live-search="true">
+                    <select name="job_category" id="job_category" required class="form-control industry" data-style="btn-default" data-live-search="true">
                       <option value="">Select Industry</option>
                         <?php if(!empty($job_info->job_category)) {
                             echo $this->job_category_model->selected($job_info->job_category);
@@ -472,3 +472,18 @@ $("#job_category").select2( {
 	allowClear: true
 	} );
 </script> 
+
+<script>
+$(function() {
+  // choose target dropdown
+  var select = $('.industry');
+  select.html(select.find('option').sort(function(x, y) {
+    // to change to descending order switch "<" for ">"
+    return $(x).text() > $(y).text() ? 1 : -1;
+  }));
+
+  // select default item after sorting (first item)
+  //$('select').get(0).selectedIndex = 0;
+});
+</script>
+
