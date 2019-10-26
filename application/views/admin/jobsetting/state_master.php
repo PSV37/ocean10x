@@ -140,7 +140,7 @@ $(function() {
   }));
 
   // select default item after sorting (first item)
-  // $('select').get(0).selectedIndex = 0;
+  $('select').get(0).selectedIndex = 0;
 });
 </script>
 </div><!-- /.right-side -->
