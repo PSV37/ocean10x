@@ -331,7 +331,7 @@ $(function() {
 </script>
 <script>        
            function phoneno(){          
-            $('#phone').keypress(function(e) {
+            $('#mobile').keypress(function(e) {
                 var a = [];
                 var k = e.which;
 
