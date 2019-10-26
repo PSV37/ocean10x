@@ -48,7 +48,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Country <span class="required">*</span></label>
-                                        <select id="country_name" name="country_name" class="form-control" required>
+                                        <select id="country_name" name="country_name" class="form-control country" required>
                                            <option value="">Select Country</option> 
                                         <?php if (!empty($country_data))
                                            foreach($country_data as $cnt_row) 
@@ -133,7 +133,7 @@
  <script>
 $(function() {
   // choose target dropdown
-  var select = $('#country_name');
+  var select = $('#country');
   select.html(select.find('option').sort(function(x, y) {
     // to change to descending order switch "<" for ">"
     return $(x).text() > $(y).text() ? 1 : -1;
