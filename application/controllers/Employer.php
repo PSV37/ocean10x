@@ -1073,7 +1073,10 @@ $data['state'] = $this->Master_model->getMaster('state',$where=false);
 	$where='employee.org_id="'.$employer.'" and employee.emp_status!= 0';
 	//$data['result'] = $this->Master_model->getMaster('industry',$where=FALSE);
 	$join = array(
-		'department' => 'department.dept_id = employee.dept_id|INNER'
+		'department' => 'department.dept_id = employee.dept_id|INNER',
+		'country' => 'country.country_id = employee.country_id|INNER',
+		'state' => 'state.state_id = employee.state_id|INNER',
+		'city' => 'city.city_id = employee.city_id|INNER',
 	);
 	
 	$res = $this->Master_model->getMaster('employee',$where, $join);
