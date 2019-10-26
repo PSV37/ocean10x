@@ -216,7 +216,7 @@
                            if(!empty($job_info->no_jobs)){
                               echo $job_info->no_jobs;
                            }
-                      ?>" />
+                      ?>" autocomplete="off"/>
                   </div>
                 </div>
                 <div class="col-md-4 col-sm-12">
@@ -226,7 +226,7 @@
                       if(!empty($job_info->experience)){
                           echo $job_info->experience;
                        }
-                    ?>" />
+                    ?>" autocomplete="off"/>
                   </div>
                 </div>
              
