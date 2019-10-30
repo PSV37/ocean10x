@@ -35,6 +35,8 @@ class Questionbank extends MY_Controller
 		$where_lineitemlevel = "lineitemlevel.lineitemlevel_status='1'";
 		$data['lineitemlevel'] = $this->Master_model->getMaster('lineitemlevel',$where_lineitemlevel);
 		
+		$where_opt= "options.status=1";
+        $data['options'] = $this->Master_model->getMaster('options',$where_opt);
 		
         $data['questionbank'] = $this->Master_model->getMaster('questionbank');
 
