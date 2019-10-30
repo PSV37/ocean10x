@@ -759,7 +759,7 @@
 			 <div class="col-md-6 col-sm-12">
 				<div class="input-group">
 	                <label class="control-label" for="pwd">Pincode</label>
-	               <input type="text" name="pincode" id="company_pincode" class="form-control" maxlength="6"  value="<?php
+	               <input type="text" name="pincode" id="pincode" class="form-control" maxlength="6"  value="<?php
 	                         if (!empty($js_personal_info->pincode)) {
 	                           echo $js_personal_info->pincode;
 	                           }
@@ -1672,11 +1672,11 @@ $(document).ready(function(){
   var BASE_URL = "<?php echo base_url(); ?>";
  
  $(document).ready(function() {
-    $( "#company_pincode" ).autocomplete({
+    $( "#pincode" ).autocomplete({
  
         source: function(request, response) {
             $.ajax({
-            url: BASE_URL + "employer/search",
+            url: BASE_URL + "Job_seeker/search",
             data: {
                     term : request.term
              },
