@@ -112,8 +112,6 @@ class Questionbank extends MY_Controller
         $data['title']="Edit Questionbank";
 		//$where_opt= "options.status=1";
         $data['options'] = $this->Master_model->getMaster('options');
-        
-        $data['questionbank'] = $this->Master_model->getMaster('questionbank',$where_all,$join_emp);
 		
         $where_questionbank = "ques_id='$id'";
         $data['edit_questionbank_info'] = $this->Master_model->getMaster('questionbank',$where_questionbank);
@@ -121,11 +119,6 @@ class Questionbank extends MY_Controller
 		$where_answer = "question_id='$id'";
         $data['questionbank_answer'] = $this->Master_model->getMaster('questionbank_answer',$where_answer);
         
-		$where_lineitem = "lineitem.lineitem_status='1'";
-		$data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_lineitem);
-		 
-        $where_skill= "status=1";
-        $data['skill_master'] = $this->Master_model->getMaster('skill_master', $where_skill);
 		
         $this->load->view('admin/jobsetting/questionbank_master',$data);
     }
