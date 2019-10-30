@@ -823,4 +823,3 @@ $(function() {
         }
        </script>
 		
- <?php $this->load->view("fontend/layout/footer.php"); ?>
