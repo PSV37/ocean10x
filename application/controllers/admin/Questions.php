@@ -28,10 +28,10 @@ class Questions extends MY_Controller
         $where_state= "topic.topic_status=1";
         $data['topic'] = $this->Master_model->getMaster('topic',$where_state);
         
-        $where_subtopic = "subtopic.subtopic_status='1'";
+        $where_subtopic = "subtopic.subtopic_status!='0'";
 		$data['subtopic'] = $this->Master_model->getMaster('subtopic',$where_subtopic);
 		
-		$where_lineitem = "lineitem.lineitem_status='1'";
+		$where_lineitem = "lineitem.lineitem_status!='0'";
 		$data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_lineitem);
 		
 		$where_all = "questionbank.ques_status!='0' and questionbank.ques_id='".$id."'";
