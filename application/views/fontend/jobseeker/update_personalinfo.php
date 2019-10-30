@@ -758,7 +758,7 @@
 			 <div class="col-md-6 col-sm-12">
 				<div class="input-group">
 	                <label class="control-label" for="pwd">Pincode</label>
-	               <input type="text" name="pincode" id="pincode" class="form-control" autocomplete="off" required>
+	               <input type="text" name="pincode" id="pincode" class="form-control" max="6" autocomplete="off" required>
 	            </div>
           	</div>
 			</div>
@@ -823,7 +823,7 @@
 			 <div class="col-md-6 col-sm-12">
 				<div class="input-group">
 	                <label class="control-label" for="pwd">Pincode</label>
-	               <input type="text" name="pincode" class="form-control pincode" autocomplete="off" required>
+	               <input type="text" name="pincode" id="pincode1" max="6" class="form-control" autocomplete="off" required>
 	            </div>
           	</div>
 	  </div>
@@ -1683,4 +1683,36 @@ $(document).ready(function(){
  });
 });
 </script>
+
+
+<script>        
+           function phoneno(){          
+            $('#pincode').keypress(function(e) {
+                var a = [];
+                var k = e.which;
+
+                for (i = 48; i < 58; i++)
+                    a.push(i);
+
+                if (!(a.indexOf(k)>=0))
+                    e.preventDefault();
+            });
+        }
+       </script>
+	   
+	   
+	   <script>        
+           function phoneno(){          
+            $('#pincode1').keypress(function(e) {
+                var a = [];
+                var k = e.which;
+
+                for (i = 48; i < 58; i++)
+                    a.push(i);
+
+                if (!(a.indexOf(k)>=0))
+                    e.preventDefault();
+            });
+        }
+       </script>
 
