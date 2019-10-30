@@ -62,7 +62,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Main Topic<span class="required">*</span></label>
-                                     <input type="text" name="topic_name" id="topic_name" class="form-control" value="<?php if (!empty($edit_spectial_info)) echo $row['topic_name'];?>" placeholder='Topic Name' required>
+                                     <input type="text" name="topic_name" id="topic_name" class="form-control" value="<?php if (!empty($edit_spectial_info)) echo $row['topic_name'];?>" placeholder='Topic Name' required autocomplete="off">
                                     
 									</div>
                                 </div>
