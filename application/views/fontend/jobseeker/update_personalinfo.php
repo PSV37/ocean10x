@@ -758,7 +758,7 @@
             <div class="col-md-12 col-sm-12">  
               	<div class="input-group">
                   	<label class="control-label" for="pwd">Present Address</label>
-                  	<textarea name="present_address" class="form-control" rows="5" id="comment"><?php 
+                  	<textarea name="present_address" class="form-control ckeditor" rows="5" id="comment"><?php 
                          if (!empty($js_personal_info->present_address)) {
                            echo $js_personal_info->present_address;
                            }
