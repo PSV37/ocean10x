@@ -322,7 +322,7 @@
                                             	 if(!empty($company_info->company_phone)){
                                             	 	echo $company_info->company_phone;
                                             	 }
-                                            ?>" class="form-control" maxlength="15" id="tbNumbers" onkeypress="phoneno()" style="margin-left:-32px; width:203px;" maxlength="10">
+                                            ?>" class="form-control" maxlength="15" id="company_phone" onkeypress="phoneno()" style="margin-left:-32px; width:203px;" maxlength="10">
                                             </div>
                                         </div>
                                     </div><!-- end row -->
@@ -795,7 +795,7 @@ $(function() {
 
 		<script>        
            function phoneno(){          
-            $('#tbNumbers').keypress(function(e) {
+            $('#company_phone').keypress(function(e) {
                 var a = [];
                 var k = e.which;
 
