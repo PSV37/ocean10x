@@ -50,7 +50,7 @@ echo "</div>";
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Name <span class="required">*</span></label>
-                                         <input type="text" name="emp_name" id="emp_name" class="form-control" autocomplete="off">
+                                         <input type="text" name="emp_name" id="emp_name" class="form-control" autocomplete="off" value="<?php echo set_value('emp_name'); ?>">
                                     </div>
                                 </div>
 									<div class="col-md-4">
@@ -154,7 +154,7 @@ echo "</div>";
 									 <div class="panel-body"></div>
                                 <button type="submit" class="btn bg-navy" type="submit" name="submit_employee" id="submit_employee">Add Employe
                                 </button>
-								<span class="text-danger"><?php echo validation_errors(); ?></span>
+								
 
             </form>
 
