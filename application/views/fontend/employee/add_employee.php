@@ -88,7 +88,8 @@ echo "</div>";
 									 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Contact No.<span class="required">*</span></label>
-                                       <input type="tel" name="mobile" id="mobile" class="form-control" autocomplete="off" onkeypress="phoneno()" maxlength="10">
+                                       <input type="tel" name="mobile" id="mobile" class="form-control" autocomplete="off" onkeypress="phoneno()" maxlength="10" value="<?php echo set_value('mobile'); ?>">
+									 <?php echo form_error('mobile'); ?>
 									 </div>
                                 </div>
 								
@@ -98,7 +99,8 @@ echo "</div>";
 								<div class="col-md-8">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Photo<span class="required">*</span></label>
-                                       <input type="file" name="photo" id="photo" class="form-control">
+                                       <input type="file" name="photo" id="photo" class="form-control" value="<?php echo form_error('photo'); ?>">
+									   <?php echo set_value('photo'); ?>
 									 </div>
                                 </div>
 								</div>
