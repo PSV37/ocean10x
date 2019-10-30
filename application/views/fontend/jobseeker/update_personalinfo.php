@@ -167,7 +167,7 @@
                 <div class="col-md-6 col-sm-12">         
 	              <div class="input-group">
 	                  <label class="control-label" for="email">Mother Name:</label>
-	                  <input type="text" name="mother_name" class="form-control" id="mother_name"
+	                  <input type="text" name="mother_name" class="form-control name-valid" id="mother_name"
 	                   value="<?php
 	                         if (!empty($js_personal_info->mother_name)) {
 	                           echo $js_personal_info->mother_name;
