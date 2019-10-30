@@ -758,7 +758,7 @@
 			 <div class="col-md-6 col-sm-12">
 				<div class="input-group">
 	                <label class="control-label" for="pwd">Pincode</label>
-	               <input type="text" name="pincode" id="pincode" class="form-control" maxlength="6" autocomplete="off" required>
+	               <input type="text" name="pincode" id="pincode" class="form-control" maxlength="6" autocomplete="off" value="<?php echo js_personal_info->pincode; ?>" required>
 	            </div>
           	</div>
 			</div>
@@ -823,7 +823,7 @@
 			 <div class="col-md-6 col-sm-12">
 				<div class="input-group">
 	                <label class="control-label" for="pwd">Pincode</label>
-	               <input type="text" name="pincode1" id="pincode1" maxlength="6" class="form-control" autocomplete="off" required>
+	               <input type="text" name="pincode1" id="pincode1" maxlength="6" class="form-control" autocomplete="off" value="<?php echo js_personal_info->pincode1; ?>" required>
 	            </div>
           	</div>
 	  </div>
