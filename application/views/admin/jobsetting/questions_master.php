@@ -20,6 +20,12 @@
             </section>
 
             <br/>
+			<div class="container-fluid">
+			<div class="col-md-10"></div>
+			<div class="col-md-2">
+			<a href="admin/questionbank-master"><button type="button" class="btn btn-info">Add Question</button></a>
+			</div>
+			</div>
             <div class="container-fluid">
                <section class="content">
     <div class="row">
