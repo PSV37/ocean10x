@@ -42,7 +42,7 @@
                                             	 if(!empty($job_info->job_title)){
                                             	 	echo $job_info->job_title;
                                             	 }
-                                            ?>" class="form-control" autocomplete="off">
+                                            ?><?php echo set_value('job_title'); ?>" class="form-control" autocomplete="off">
                   </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
