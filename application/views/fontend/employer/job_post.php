@@ -43,6 +43,7 @@
                                             	 	echo $job_info->job_title;
                                             	 }
                                             ?><?php echo set_value('job_title'); ?>" class="form-control" autocomplete="off">
+											<?php echo form_error('job_title'); ?>
                   </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
