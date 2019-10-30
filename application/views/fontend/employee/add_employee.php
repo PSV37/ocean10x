@@ -99,8 +99,7 @@ echo "</div>";
 								<div class="col-md-8">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Photo<span class="required">*</span></label>
-                                       <input type="file" name="photo" id="photo" class="form-control"><?php echo form_error('photo'); ?>
-									   <?php echo set_value('photo'); ?>
+                                       <input type="file" name="photo" id="photo" class="form-control">
 									 </div>
                                 </div>
 								</div>
