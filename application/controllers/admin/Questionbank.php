@@ -19,7 +19,8 @@ class Questionbank extends MY_Controller
 
         $data['title'] = 'Edit Questionbank';
 
-
+		 $where_questionbank = "ques_id='$id'";
+        $data['edit_questionbank_info'] = $this->Master_model->getMaster('questionbank',$where_questionbank);
         $this->load->view('admin/jobsetting/questionbank_master', $data);
     }
 
