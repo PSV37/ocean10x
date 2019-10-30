@@ -130,7 +130,7 @@ class Questionbank extends MY_Controller
 
     public function edit_questionbank($id){
         $data['title']="Edit Questionbank";
-        		
+         $data['options'] = $this->Master_model->getMaster('options');		
         $where_questionbank = "ques_id='$id'";
         $data['edit_questionbank_info'] = $this->Master_model->getMaster('questionbank',$where_questionbank);
 		
