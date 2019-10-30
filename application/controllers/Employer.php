@@ -1007,12 +1007,11 @@ public function addemployee(){
 	                $NewFileName = $_FILES['photo']['name']; 
 	                
 	                
-					$config['upload_path']   = 'upload/';
-                    $config['allowed_types'] = 'gif|jpg|png';
-                    $config['encrypt_name']  = true;
-                    $config['max_size']      = 1000;
-                    $config['max_width']     = 300;
-                    $config['max_height']    = 300;
+					$config['upload_path'] = './employe/';
+	                $config['allowed_types'] = 'gif|jpg|jpeg|png|pdf|doc|docx|odt|xlsm|xls|xlm|xla|xlsx|bmp|docm|dotx|dotm|docb|gif';
+	                $config['max_size']    = '1000000';
+	                //$config['max_width']  = '1024';
+	                //$config['max_height']  = '768';
 	                $config['file_name'] = $NewFileName;
 	            
 	                 $this->load->library('upload', $config);      
