@@ -156,12 +156,12 @@
               	<div class="col-md-6 col-sm-12">
 	              	<div class="input-group">
 	                  <label class="control-label" for="email">Father Name:</label>
-	                  <input type="text" name="father_name" class="form-control" id="father_name"
+	                  <input type="text" name="father_name" class="form-control name-valid" id="father_name"
 	                   value="<?php
 	                         if (!empty($js_personal_info->father_name)) {
 	                           echo $js_personal_info->father_name;
 	                           }
-	                       ?>" onkeypress="return checkNum()">
+	                       ?>">
 	                </div>     
 	            </div>
                 <div class="col-md-6 col-sm-12">         
@@ -1736,18 +1736,17 @@ function isNumber(evt) {
     return true;
 }
 </script>
-
-<script>
-function checkNum()
-{
-
-if ((event.keyCode > 64 && event.keyCode < 91) || (event.keyCode > 96 && event.keyCode < 123) || event.keyCode == 8)
-   return true;
-else
-   {
-       alert("Please enter only char");
-       return false;
-   }
-
-}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+         $('.name-valid').on('keypress', function(e) {
+          var regex = new RegExp("^[a-zA-Z ]*$");
+          var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+          if (regex.test(str)) {
+             return true;
+          }
+          e.preventDefault();
+          return false;
+         });
+        });
 </script>
