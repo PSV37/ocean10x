@@ -84,7 +84,7 @@
 	                                        <div class="col-md-4 col-sm-4">
 	                                        	<div class="formrow">
 	                                        <label class="control-label">Country: <span class="required">*</span></label>
-										  <select  name="country_id" id="country_id" class="form-control country" onchange="getStates(this.value)">
+										  <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
 											<option value="">Select Country</option>
 											<?php foreach($country as $key){?>
 											<option value="<?php echo $key['country_id']; ?>"<?php if($result['country_id']==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
@@ -301,17 +301,36 @@ $("#country_id").select2( {
 </script>
 
   <script>
-$(function() {
-  // choose target dropdown
-  var select = $('.country');
-  select.html(select.find('option').sort(function(x, y) {
-    // to change to descending order switch "<" for ">"
-    return $(x).text() > $(y).text() ? 1 : -1;
-  }));
-
-  // select default item after sorting (first item)
-  $('select').get(0).selectedIndex = 0;
-});
+<script>
+  // WARN: won't handle OPTGROUPs!
+  var sel = document.getElementById('country_id');
+  // convert OPTIONs NodeList to an Array
+  // - keep in mind that we're using the original OPTION objects
+  var ary = (function(nl) {
+    var a = [];
+    for (var i = 0, len = nl.length; i < len; i++)
+      a.push(nl.item(i));
+    return a;
+  })(sel.options);
+  // sort OPTIONs Array
+  ary.sort(function(a,b){
+    // sort by "value"? (numeric comparison)
+    // NOTE: please remember what ".value" means for OPTION objects
+    return a.value - b.value;
+    // or by "label"? (lexicographic comparison) - case sensitive
+    //return a.text < b.text ? -1 : a.text > b.text ? 1 : 0;
+    // or by "label"? (lexicographic comparison) - case insensitive
+    //var aText = a.text.toLowerCase();
+    //var bText = b.text.toLowerCase();
+    //return aText < bText ? -1 : aText > bText ? 1 : 0;
+  });
+  // remove all OPTIONs from SELECT (don't worry, the original
+  // OPTION objects are still referenced in "ary") ;-)
+  for (var i = 0, len = ary.length; i < len; i++)
+    sel.remove(ary[i].index);
+  // (re)add re-ordered OPTIONs to SELECT
+  for (var i = 0, len = ary.length; i < len; i++)
+    sel.add
 </script>
 
 
