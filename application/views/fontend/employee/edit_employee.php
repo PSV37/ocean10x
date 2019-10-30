@@ -304,9 +304,9 @@ $("#country_id").select2( {
 $(function() {
   // choose target dropdown
   var select = $('.country');
-  select.html(select.find('option').sort(function(x, y) {
+  select.html(select.find('').sort(function(x, y) {
     // to change to descending order switch "<" for ">"
-   // return $(x).text() > $(y).text() ? 1 : -1;
+    return $(x).text() > $(y).text() ? 1 : -1;
   }));
 
   // select default item after sorting (first item)
