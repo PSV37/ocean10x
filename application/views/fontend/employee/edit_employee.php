@@ -293,7 +293,7 @@ $("#dept_id").select2( {
 	} );
 </script>
 
-<script>
+<!--<script>
 $("#country_id").select2( {
 	placeholder: "Select Country",
 	allowClear: true
@@ -320,7 +320,7 @@ $(function() {
   // select default item after sorting (first item)
   $('select').get(0).selectedIndex = 0;
 });
-</script>
+</script>-->
 <script>        
            function phoneno(){          
             $('#mobile').keypress(function(e) {
