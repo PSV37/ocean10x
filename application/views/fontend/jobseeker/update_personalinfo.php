@@ -770,7 +770,12 @@
 			  
 			 <em>Check this box if Present Address and Parmanent Address are the same.</em>
 			<div class="panel-body"></div>
-			<div class="col-md-6 col-sm-12">
+			
+          </div>
+      </div>
+      <div class="row">
+              
+			  <div class="col-md-6 col-sm-12">
 				<div class="input-group">
 	                <label class="control-label" for="pwd">Country</label>
 	                <select  name="country1_id" id="country1_id" class="form-control" onchange="getStatess(this.value)">
@@ -781,10 +786,6 @@
 					</select>
 	            </div>
           	</div>
-          </div>
-      </div>
-      <div class="row">
-              <div class="col-md-12">
           	<div class="col-md-6 col-sm-12">
 			  <div class="input-group">
                  <label class="control-label" for="pwd">State</label>
@@ -795,8 +796,10 @@
 					<?php } ?>
 				 </select>
               </div>
-          	</div>
-            <div class="col-md-6 col-sm-12">
+          	</div>          
+      </div>
+	  <div class="row">
+	   <div class="col-md-6 col-sm-12">
 				<div class="input-group">
 	                <label class="control-label" for="pwd">City</label>
 	                <select  name="city1_id" id="city1_id" class="form-control">
@@ -807,8 +810,13 @@
 					 </select>
 	            </div>
           	</div>
-          </div>
-      </div>
+			 <div class="col-md-6 col-sm-12">
+				<div class="input-group">
+	                <label class="control-label" for="pwd">Pincode</label>
+	               <input type="text" name="pincode" class="form-control pincode" required>
+	            </div>
+          	</div>
+	  </div>
       <div class="row">
               <div class="col-md-12">
           	<div class="col-md-12 col-sm-12">
