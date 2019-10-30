@@ -1671,7 +1671,7 @@ $(document).ready(function(){
   var BASE_URL = "<?php echo base_url(); ?>";
  
  $(document).ready(function() {
-    $( ".pincode" ).autocomplete({
+    $( "#pincode" ).autocomplete({
  
         source: function(request, response) {
             $.ajax({
