@@ -82,8 +82,8 @@
                                         
 										<select id="subject"  name="technical_id" class="form-control subject" required onchange="getTopic(this.value)">
                                            <option value="">Select Subject</option> 
-                                        <?php if (!empty($questionbank))
-                                           foreach($questionbank as $skill) 
+                                        <?php if (!empty($skill_master))
+                                           foreach($skill_master as $skill) 
                                            {
                                         ?>   
                                             <option value="<?php echo $skill['id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option> 

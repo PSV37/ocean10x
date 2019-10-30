@@ -38,8 +38,8 @@ class Questionbank extends MY_Controller
 		$where_lineitemlevel = "lineitemlevel.lineitemlevel_status='1'";
 		$data['lineitemlevel'] = $this->Master_model->getMaster('lineitemlevel',$where_lineitemlevel);
 		
-		$where_all = "questionbank.ques_status='1'";
-        $data['questionbank'] = $this->Master_model->getMaster('questionbank',$where_all);
+		
+        $data['questionbank'] = $this->Master_model->getMaster('questionbank');
 
         $this->load->view('admin/jobsetting/questionbank_master', $data);
     }
@@ -137,7 +137,9 @@ class Questionbank extends MY_Controller
 		
 		$where_answer = "question_id='$id'";
         $data['questionbank_answer'] = $this->Master_model->getMaster('questionbank_answer',$where_answer);
-        		
+        
+		
+		
         $this->load->view('admin/jobsetting/questionbank_master',$data);
     }
 
