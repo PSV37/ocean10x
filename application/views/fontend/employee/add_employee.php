@@ -51,7 +51,7 @@ echo "</div>";
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Name <span class="required">*</span></label>
                                          <input type="text" name="emp_name" id="emp_name" class="form-control" autocomplete="off" value="<?php echo set_value('emp_name'); ?>">
-                                    <?php echo form_error('emp_name'); ?>
+                                    <span style="color:#ff0000;"><?php echo form_error('emp_name'); ?></span>
 									</div>
                                 </div>
 									<div class="col-md-4">
