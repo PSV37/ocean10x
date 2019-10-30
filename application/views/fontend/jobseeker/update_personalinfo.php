@@ -6,9 +6,6 @@
     font-weight: bold;
 }
 </style>  
-    <script type="text/javascript" src="<?php echo base_url(); ?>asset/ckeditor/ckeditor.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>asset/ckfinder/ckfinder.js"></script>
-
           <div class="section lb">
                 <div class="container">
                     <div class="row">
