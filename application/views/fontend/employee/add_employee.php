@@ -43,7 +43,8 @@ echo "</div>";
                             <div class="form-group">                                       
 							   <label for="exampleInputEmail1">Employee Number <span class="required">*</span></label>
                                 
-								<input type="number" min="1" name="emp_no" id="emp_no" class="form-control" autocomplete="off">
+								<input type="number" min="1" name="emp_no" id="emp_no" class="form-control" autocomplete="off" value="<?php echo set_value('emp_no'); ?>">
+								<span style="color:#ff0000;"><?php echo form_error('emp_no'); ?></span>
 								</div>
                         </div>
 
@@ -70,15 +71,16 @@ echo "</div>";
 									 <div class="col-md-4">
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Email-Id<span class="required">*</span></label>
-                                    <input type="email" name="email" id="email" class="form-control">
-									
+                                    <input type="email" name="email" id="email" class="form-control" value="<?php echo set_value('email'); ?>">
+									<?php echo form_error('email'); ?>
 										</div>
 									</div>
 									
 										 <div class="col-md-4">
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Password<span class="required">*</span></label>
-                                         <input type="password" name="password" id="password" class="form-control">
+                                         <input type="password" name="password" id="password" class="form-control" value="<?php echo set_value('password'); ?>">
+										<?php echo form_error('password'); ?>
 										</div>
 									</div>
 								
