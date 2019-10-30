@@ -728,7 +728,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12">
+      
             <div class="col-md-6 col-sm-12">
 			  <div class="input-group">
                   <label class="control-label" for="pwd">State</label>
@@ -750,7 +750,7 @@
 					<?php } ?>
 				 </select>
               </div>
-            </div>
+          
 			</div>
 			 </div>
             <div class="row">
