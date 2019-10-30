@@ -302,7 +302,7 @@ $("#country_id").select2( {
 
   <script>
 $("#country_id").html($("#country_id option").sort(function (a, b) {
-    return a.text == b.text ? 0 : a.text < b.text ? -1 : 1
+    //return a.text == b.text ? 0 : a.text < b.text ? -1 : 1
 }))
 </script>
 
