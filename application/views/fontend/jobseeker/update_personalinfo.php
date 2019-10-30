@@ -763,7 +763,7 @@
 	                         if (!empty($js_personal_info->pincode)) {
 	                           echo $js_personal_info->pincode;
 	                           }
-	                       ?>" required>
+	                       ?>" required onkeypress="return isNumber(event)">
 	            </div>
           	</div>
 			</div>
