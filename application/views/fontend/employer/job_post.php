@@ -124,7 +124,7 @@
                   <div class="col-md-4 col-sm-4">
                     <div class="formrow">
                       <label class="control-label ">Job Country<span class="required">*</span> </label>
-                      <select  name="country_id" id="country_id" class="form-control industry1" onchange="getStates(this.value)">
+                      <select  name="country_id" id="country_id" class="form-control industry1" onchange="getStates(this.value)" data-style="btn-default" data-live-search="true">
                         <option value="">Select Country</option>
                           <?php foreach($country as $key){?>
                             <option value="<?php echo $key['country_id']; ?>"<?php if($company_info->job_location==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
