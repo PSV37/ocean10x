@@ -20,7 +20,12 @@
             </section>
 
             <br/>
-			
+			<div class="container-fluid">
+			<div class="col-md-10"></div>
+			<div class="col-md-2">
+			<a href="questionbank-master"><button type="button" class="btn btn-info">Add Question</button></a>
+			</div>
+			</div>
             <div class="container-fluid">
                <section class="content">
     <div class="row">
@@ -34,12 +39,7 @@
                         <h3 class="box-title ">Question's Bank</h3>
                     </div>
                 </div>
-               <div class="container-fluid">
-			<div class="col-md-10"></div>
-			<div class="col-md-2">
-			<a href="questionbank-master"><button type="button" class="btn btn-info">Add Question <?php echo btn_delete ?></button></a>
-			</div>
-			</div>
+               
             
 					      <div class="row">
                     <div class="col-md-12 col-md-offset-1">
