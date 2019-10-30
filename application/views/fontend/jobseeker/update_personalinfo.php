@@ -751,7 +751,8 @@
 				 </select>
               </div>
             </div>
-
+			</div>
+			 </div>
             <div class="row">
 			 <div class="col-md-6 col-sm-12">
 				<div class="input-group">
@@ -846,7 +847,7 @@
 		        <button type="submit" class="btn btn-primary">Submit</button>
 		      </div>
             </form>
-      </div>
+     
      
     </div>
 
