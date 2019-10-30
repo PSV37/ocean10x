@@ -37,7 +37,7 @@
                <div class="container-fluid">
 			<div class="col-md-10"></div>
 			<div class="col-md-2">
-			<a href="questionbank-master"><button type="button" class="btn btn-info">Add Question</button></a>
+			<a href="questionbank-master"><button type="button" class="btn btn-info">Add Question <?php echo btn_delete ?></button></a>
 			</div>
 			</div>
             
