@@ -34,7 +34,7 @@ class Questions extends MY_Controller
 		$where_lineitem = "lineitem.lineitem_status='1'";
 		$data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_lineitem);
 		
-		$where_all = "questionbank.ques_status='1'";
+		$where_all = "questionbank.ques_status!='0' and questionbank.ques_id='".$id."'";
         $join_emp = array(
                 'skill_master' => 'skill_master.id=questionbank.technical_id |INNER',
                 'topic' => 'topic.topic_id=questionbank.topic_id |INNER',
@@ -42,7 +42,7 @@ class Questions extends MY_Controller
 				'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |INNER',
 				'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |INNER',
             );
-			$where_all = "questionbank.ques_status!='0' and questionbank.ques_id='".$id."'";
+			
         $data['questionbank'] = $this->Master_model->getMaster('questionbank',$where_all,$join_emp,$where_all);
 
         $this->load->view('admin/jobsetting/questions_master', $data);
