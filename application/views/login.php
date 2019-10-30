@@ -21,7 +21,7 @@ if (!empty($error)) {
       <?php //echo validation_errors(); ?>
       <?php //echo $this->session->flashdata('error'); ?>
       <div class="form-group has-feedback">
-        <input type="text" name="user_name" class="form-control" placeholder="Username" required />
+        <input type="text" name="user_name" class="form-control" placeholder="Username" required autocomplete="off" />
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span> </div>
       <div class="form-group has-feedback">
         <input type="password" name="password" class="form-control" placeholder="Password" required />
