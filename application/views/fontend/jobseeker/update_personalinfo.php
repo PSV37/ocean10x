@@ -1725,7 +1725,7 @@ $(document).ready(function(){
             });
         }
        </script>
-
+<!--Only Numbers are allowed validation-->
 <script>
 function isNumber(evt) {
     evt = (evt) ? evt : window.event;
@@ -1736,6 +1736,7 @@ function isNumber(evt) {
     return true;
 }
 </script>
+<!--Only Character and Space are allowed validation-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
