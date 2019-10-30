@@ -1,3 +1,6 @@
+<?php 
+    $this->load->view('fontend/layout/employer_header.php');
+?>  
 <style type="text/css">
   label {
     display: inline-block;
