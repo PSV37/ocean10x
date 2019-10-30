@@ -823,7 +823,7 @@
 			 <div class="col-md-6 col-sm-12">
 				<div class="input-group">
 	                <label class="control-label" for="pwd">Pincode</label>
-	               <input type="text" name="pincode" id="pincode" class="form-control" autocomplete="off" required>
+	               <input type="text" name="pincode" class="form-control pincode" autocomplete="off" required>
 	            </div>
           	</div>
 	  </div>
@@ -1661,7 +1661,7 @@ $(document).ready(function(){
   var BASE_URL = "<?php echo base_url(); ?>";
  
  $(document).ready(function() {
-    $( "#pincode" ).autocomplete({
+    $( ".pincode" ).autocomplete({
  
         source: function(request, response) {
             $.ajax({
