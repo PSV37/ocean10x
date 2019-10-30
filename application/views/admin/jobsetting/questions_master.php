@@ -43,9 +43,6 @@
                         <th class="active">SL</th>
                         <th class="active">Subject</th>
                         <th class="active">Topic</th>
-                        <th class="active">Subtopic</th>
-					    <th class="active">Line Item 1</th>
-						 <th class="active">Line Item 2</th>
 						<th class="active">Question Type</th>
 						<th class="active">Question</th>
                         <th class="active col-sm-2">Action</th>
@@ -58,9 +55,6 @@
                             <td><?php echo $key ?></td>
                             <td><?php echo $ct_row['skill_name'] ?></td>
                             <td><?php echo $ct_row['topic_name'] ?></td>
-                            <td><?php echo $ct_row['subtopic_name'] ?></td>
-							<td><?php echo $ct_row['title'] ?></td>
-							<td><?php echo $ct_row['titles'] ?></td>
 							<td><?php echo $ct_row['ques_type'] ?></td>
 							<td><?php echo $ct_row['question'] ?></td>
                             <td>
