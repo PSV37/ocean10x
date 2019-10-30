@@ -34,7 +34,7 @@ class Questions extends MY_Controller
 		$where_lineitem = "lineitem.lineitem_status!='0'";
 		$data['lineitem'] = $this->Master_model->getMaster('lineitem',$where_lineitem);
 		
-		$where_all = "questionbank.ques_status='1';
+		$where_all = "questionbank.ques_status='1'";
         $join_emp = array(
                 'skill_master' => 'skill_master.id=questionbank.technical_id |INNER',
                 'topic' => 'topic.topic_id=questionbank.topic_id |INNER',
