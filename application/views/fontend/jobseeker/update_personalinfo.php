@@ -813,7 +813,7 @@
 			 <div class="col-md-6 col-sm-12">
 				<div class="input-group">
 	                <label class="control-label" for="pwd">Pincode</label>
-	               <input type="text" name="pincode" class="form-control" id="pincode" required>
+	               <input type="text" name="pincode" id="pincode" class="form-control" autocomplete="off" required>
 	            </div>
           	</div>
 	  </div>
