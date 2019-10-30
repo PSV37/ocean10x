@@ -659,9 +659,6 @@ function get_skills_autocomplete(){
     }
 
 
-} //end function
-
-
 public function search(){
  
         $term = $this->input->get('term');
@@ -672,3 +669,7 @@ public function search(){
  
         echo json_encode( $data);
     }
+
+} //end function
+
+
