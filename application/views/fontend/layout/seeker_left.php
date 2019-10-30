@@ -19,8 +19,7 @@
     
     
 </div><?php */?>
-<link href="<?php echo base_url(); ?>asset/css/jquery-ui.css" rel="stylesheet" type="text/css" />
-    <script src="<?php echo base_url() ?>fontend/js/jquery.js "></script> 
+
 <nav class="side-menu hidden-sm hidden-xs">
   <ul>
     <li> <a href="<?php echo base_url(); ?>" class=""> <i class="fa fa-home" aria-hidden="true"></i>Home </a> </li>
