@@ -799,7 +799,7 @@ $(function() {
                 var a = [];
                 var k = e.which;
 
-                for (i = 50; i < 58; i++)
+                for (i = 51; i < 58; i++)
                     a.push(i);
 
                 if (!(a.indexOf(k)>=0))
