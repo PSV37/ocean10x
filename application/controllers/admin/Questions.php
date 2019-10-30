@@ -42,7 +42,8 @@ class Questions extends MY_Controller
 				'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |INNER',
 				'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |INNER',
             );
-        $data['questionbank'] = $this->Master_model->getMaster('questionbank',$where_all,$join_emp);
+			$where_all = "questionbank.ques_status!='0' and questionbank.ques_id='".$id."'";
+        $data['questionbank'] = $this->Master_model->getMaster('questionbank',$where_all,$join_emp,$where_all);
 
         $this->load->view('admin/jobsetting/questions_master', $data);
     }
