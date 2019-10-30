@@ -661,17 +661,6 @@ function get_skills_autocomplete(){
     }
 
 
-public function search(){
- 
-        $term = $this->input->get('term');
- 
-        $this->db->like('pincode', $term);
- 
-        $data = $this->db->get("pincode")->result();
- 
-        echo json_encode( $data);
-    }
-
 } //end function
 
 

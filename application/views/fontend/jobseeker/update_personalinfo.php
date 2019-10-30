@@ -1676,7 +1676,7 @@ $(document).ready(function(){
  
         source: function(request, response) {
             $.ajax({
-            url: BASE_URL + "Job_seeker/search",
+            url: BASE_URL + "employer/search",
             data: {
                     term : request.term
              },
