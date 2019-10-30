@@ -758,7 +758,7 @@
 			 <div class="col-md-6 col-sm-12">
 				<div class="input-group">
 	                <label class="control-label" for="pwd">Pincode</label>
-	               <input type="text" name="pincode" id="company_pincode" class="form-control" maxlength="6" autocomplete="off" value="<?php
+	               <input type="text" name="pincode" id="company_pincode" class="form-control" maxlength="6"  value="<?php
 	                         if (!empty($js_personal_info->pincode)) {
 	                           echo $js_personal_info->pincode;
 	                           }
