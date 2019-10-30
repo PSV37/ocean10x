@@ -304,7 +304,7 @@ $("#country_id").select2( {
 $(function() {
   // choose target dropdown
   var select = $('.country');
-  select.html(select.find('option').sort(function(x, y) {
+  //select.html(select.find('option').sort(function(x, y) {
     // to change to descending order switch "<" for ">"
     return $(x).text() > $(y).text() ? 1 : -1;
   }));
@@ -320,7 +320,7 @@ $(function() {
 $(function() {
   // choose target dropdown
   var select = $('.department');
-  select.html(select.find('option').sort(function(x, y) {
+  //select.html(select.find('option').sort(function(x, y) {
     // to change to descending order switch "<" for ">"
     return $(x).text() > $(y).text() ? 1 : -1;
   }));
