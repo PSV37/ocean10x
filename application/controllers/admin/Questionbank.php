@@ -22,10 +22,7 @@ class Questionbank extends MY_Controller
         $where_skill= "status=1";
 		
         $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where_skill);
-		
-		$where_opt= "options.status=1";
-        $data['options'] = $this->Master_model->getMaster('options',$where_opt);
-		
+				
         $where_topic= "topic.topic_status=1";
         $data['topic'] = $this->Master_model->getMaster('topic',$where_topic);
         
