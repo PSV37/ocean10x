@@ -7,10 +7,17 @@
 }
 </style>  
 
- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
- 
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/main.css">
+	  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/intlTelInput.css">
+	  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/demo.css">
+    
+    <link href="<?php echo base_url(); ?>asset/css/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script src="<?php echo base_url() ?>fontend/js/jquery.js "></script> 
+    <link href="<?php echo base_url(); ?>asset/css/plugins/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+		<script>var base_url = '<?php echo base_url();?>';</script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>asset/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>asset/ckfinder/ckfinder.js"></script>
 
           <div class="section lb">
                 <div class="container">
