@@ -161,7 +161,7 @@
 	                         if (!empty($js_personal_info->father_name)) {
 	                           echo $js_personal_info->father_name;
 	                           }
-	                       ?>">
+	                       ?>" onkeypress="return checkNum()">
 	                </div>     
 	            </div>
                 <div class="col-md-6 col-sm-12">         
@@ -1734,5 +1734,20 @@ function isNumber(evt) {
         return false;
     }
     return true;
+}
+</script>
+
+<script>
+function checkNum()
+{
+
+if ((event.keyCode > 64 && event.keyCode < 91) || (event.keyCode > 96 && event.keyCode < 123) || event.keyCode == 8)
+   return true;
+else
+   {
+       alert("Please enter only char");
+       return false;
+   }
+
 }
 </script>
