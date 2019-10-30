@@ -38,7 +38,7 @@ class Questionbank extends MY_Controller
 		$where_lineitemlevel = "lineitemlevel.lineitemlevel_status='1'";
 		$data['lineitemlevel'] = $this->Master_model->getMaster('lineitemlevel',$where_lineitemlevel);
 		
-		$where_all = "questionbank.ques_status='1'";
+		$where_all = "ques_status='1'";
         $data['questionbank'] = $this->Master_model->getMaster('questionbank',$where_all);
 
         $this->load->view('admin/jobsetting/questionbank_master', $data);
