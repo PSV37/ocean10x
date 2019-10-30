@@ -822,7 +822,7 @@
           	<div class="col-md-12 col-sm-12">
               <div class="input-group">
                 <label class="control-label" for="pwd">Parmanent Address</label>
-                <textarea name="parmanent_address" class="form-control" rows="5" id="comment"><?php 
+                <textarea name="parmanent_address" class="form-control ckeditor" rows="5" id="comment"><?php 
                     if (!empty($js_personal_info->parmanent_address)) {
                            echo $js_personal_info->parmanent_address;
                         }
@@ -1646,3 +1646,31 @@ $(document).ready(function(){
 <style>
   .datepicker{z-index:1151 !important;}
 </style> 
+
+<script>
+  var BASE_URL = "<?php echo base_url(); ?>";
+ 
+ $(document).ready(function() {
+    $( "#pincode" ).autocomplete({
+ 
+        source: function(request, response) {
+            $.ajax({
+            url: BASE_URL + "employer/search",
+            data: {
+                    term : request.term
+             },
+            dataType: "json",
+            success: function(data){
+               var resp = $.map(data,function(obj){
+                    return obj.pincode;
+               }); 
+ 
+               response(resp);
+            }
+        });
+    },
+    minLength: 1
+ });
+});
+</script>
+
