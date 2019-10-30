@@ -38,7 +38,7 @@
                 <div class="col-md-6 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Job Title<span class="required">*</span> </label>
-                    <input type="text" name="job_title" required value="<?php 
+                    <input type="text" name="job_title" value="<?php 
                                             	 if(!empty($job_info->job_title)){
                                             	 	echo $job_info->job_title;
                                             	 }
