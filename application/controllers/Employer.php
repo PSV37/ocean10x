@@ -1058,7 +1058,7 @@ public function addemployee(){
 		
 		$data['emp_created_date'] = date('Y-m-d H:i:s');
 		$this->Master_model->master_insert($data,'employee');
-		redirect(base_url().'employer');
+		redirect(base_url().'employer/allemployee');
 	}
 	}
 $data['result'] = $this->Master_model->getMaster('department' ,$select=false);
