@@ -159,7 +159,7 @@ $("#subject").select2( {
  <script>
 $(function() {
   // choose target dropdown
-  var select = $('.subject');
+  var select = $('#subject');
   select.html(select.find('option').sort(function(x, y) {
     // to change to descending order switch "<" for ">"
     return $(x).text() > $(y).text() ? 1 : -1;
