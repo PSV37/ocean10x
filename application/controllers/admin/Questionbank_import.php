@@ -21,7 +21,7 @@ class Questionbank_import extends CI_Controller {
    			$data = array(); 
    			if(!empty($_FILES['file']['name'])){ 
     			// Set preference 
-    			$config['upload_path'] = 'assets/files/'; 
+    			$config['upload_path'] = 'asset/files/'; 
     			$config['allowed_types'] = 'csv|xlsx'; 
     			$config['max_size'] = '1000'; // max_size in kb 
     			$config['file_name'] = $_FILES['file']['name']; 
@@ -36,7 +36,7 @@ class Questionbank_import extends CI_Controller {
      				$filename = $uploadData['file_name']; 
 
      				// Reading file
-                    $file = fopen("assets/files/".$filename,"r");
+                    $file = fopen("asset/files/".$filename,"r");
                     $i = 0;
 
                     $importData_arr = array();
