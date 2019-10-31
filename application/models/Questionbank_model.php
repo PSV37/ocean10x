@@ -9,7 +9,7 @@ class Questionbank_model extends MY_Model {
             // Check user
             $this->db->select('*');
             $this->db->where('technical_id', $record[0]);
-            $q = $this->db->get('questionbank');
+            $q = $this->db->get('questionsbank');
             $response = $q->result_array();
             
             // Insert record
