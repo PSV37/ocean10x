@@ -139,7 +139,7 @@ $("#country_name").select2( {
  <script>
 $(function() {
   // choose target dropdown
-  var select = $('.country');
+  var select = $('#country_name');
   select.html(select.find('option').sort(function(x, y) {
     // to change to descending order switch "<" for ">"
     return $(x).text() > $(y).text() ? 1 : -1;
