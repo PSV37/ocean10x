@@ -110,7 +110,7 @@
                                <div class="formrow">
                                <div class="row">
                                <div class="col-md-6 col-sm-12">
-                                    <input type="checkbox" value="" > <a  href="<?php echo base_url().'terms' ?>" target="_blank">  I agree to the Terms and Conditions</a></label>
+                                    <input type="checkbox" value="" > <a  href="<?php echo base_url().'terms' ?>" target="_blank" required>  I agree to the Terms and Conditions</a></label>
                                 </div>
                                </div>
 </div>
