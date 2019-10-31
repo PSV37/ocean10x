@@ -31,7 +31,7 @@ class Questionbank_model extends MY_Model {
 					"correct_answer" => trim($record[13]),
                 );
 
-                $this->db->insert('questionbank', $newquestionbank);
+                $this->db->insert('questionsbank', $newquestionbank);
             }
             
         }
