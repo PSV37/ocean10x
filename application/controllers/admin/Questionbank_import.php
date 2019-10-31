@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Questionbank_import extends CI_Controller {
+class Questionbank_import extends MY_Controller {
 
 	public function __construct(){
 
