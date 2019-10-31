@@ -51,7 +51,7 @@ echo "</div>";
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Name <span class="required">*</span></label>
-                                         <input type="text" name="emp_name" id="emp_name" class="form-control" autocomplete="off" value="<?php echo set_value('emp_name'); ?>">
+                                         <input type="text" name="emp_name" id="emp_name" class="form-control name-valid" autocomplete="off" value="<?php echo set_value('emp_name'); ?>">
                                     <span style="color:#ff0000;"><?php echo form_error('emp_name'); ?></span>
 									</div>
                                 </div>
@@ -349,7 +349,20 @@ $(function() {
  });
 });
 </script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+         $('.name-valid').on('keypress', function(e) {
+          var regex = new RegExp("^[a-zA-Z ]*$");
+          var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+          if (regex.test(str)) {
+             return true;
+          }
+          e.preventDefault();
+          return false;
+         });
+        });
+</script>
 <!-- <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script> -->
 <!-- <script>
 $("#subject").select2( {
