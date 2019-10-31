@@ -19,7 +19,7 @@ class Questionbank_import extends MY_Controller {
    			if(!empty($_FILES['file']['name'])){ 
     			// Set preference 
     			$config['upload_path'] = 'assets/files/'; 
-    			$config['allowed_types'] = 'csv|xlsx'; 
+    			$config['allowed_types'] = 'csv'; 
     			$config['max_size'] = '1000'; // max_size in kb 
     			$config['file_name'] = $_FILES['file']['name']; 
 
