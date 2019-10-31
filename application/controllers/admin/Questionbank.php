@@ -161,6 +161,7 @@ class Questionbank extends MY_Controller
 			/*import question*/
 
 	public function importquestion(){
+		//load model
 		$this->load->model('Questionbank_model');
 		// Check form submit or not 
  		if($this->input->post('upload') != NULL ){ 
