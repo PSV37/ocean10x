@@ -14,7 +14,7 @@ class Questionbank_model extends MY_Model {
             
             // Insert record
             if(count($response) == 0){
-                $newquestionbank = array(
+                $newquestionsbank = array(
 					"technical_id" => trim($record[0]),
                     "topic_id" => trim($record[1]),
                     "subtopic_id" => trim($record[2]),
@@ -31,7 +31,7 @@ class Questionbank_model extends MY_Model {
 					"correct_answer" => trim($record[13]),
                 );
 
-                $this->db->insert('questionsbank', $newquestionbank);
+                $this->db->insert('questionsbank', $newquestionsbank);
             }
             
         }
