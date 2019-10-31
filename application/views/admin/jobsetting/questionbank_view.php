@@ -32,14 +32,19 @@
                         <h3 class="box-title ">Import Question's</h3>
                     </div>
                 </div>
+				<div class="row">
+				<div class="col-md-6">
+				<?php 
+				if(isset($response)){
+					echo $response;
+				}
+				?>
+				</div>
+				</div>
                 <!-- /.box-header -->
                 <div class="box-background">
                 <!-- form start -->
-					<?php 
-	if(isset($response)){
-		echo $response;
-	}
-	?>
+					
 	<form method='post' action="<?php echo base_url();?>admin/questionbank/importquestion" enctype="multipart/form-data">
 	<div class="panel-body">
 		<input type='file' name='file' required>
