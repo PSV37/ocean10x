@@ -42,7 +42,7 @@
 	?>
 	<form method='post' action='' enctype="multipart/form-data">
 	<div class="panel-body">
-		<input type='file' name='file' >
+		<input type='file' name='file' required>
 		</div>
 		<div class="panel-body">
 		<input type='submit' value='Upload' name='upload' class="btn bg-navy">
