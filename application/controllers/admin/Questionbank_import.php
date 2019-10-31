@@ -6,7 +6,11 @@ class Questionbank_import extends MY_Controller {
 	public function __construct(){
 
 		parent::__construct();
-
+		 $config = array(
+            'field' => 'job_slugs',
+            'table' => 'job_posting',
+        );
+        $this->load->library('slug', $config);
 		// Load Model
 		$this->load->model('Questionbank_model');
 	}
