@@ -8,11 +8,11 @@ class Questionbank_import extends MY_Controller {
 		parent::__construct();
 
 		// Load Model
-		
+		$this->load->model('Questionbank_model');
 	}
 	
 	public function index(){
-	$this->load->model('Questionbank_model');
+
 		// Check form submit or not 
  		if($this->input->post('upload') != NULL ){ 
    			$data = array(); 
