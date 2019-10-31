@@ -42,6 +42,7 @@ class Questionbank extends MY_Controller
 
         $this->load->view('admin/jobsetting/questionbank_master', $data);
     }
+						/*Add/Edit Question */
 
         public function save_questionbank($id = null){
           
@@ -127,7 +128,9 @@ class Questionbank extends MY_Controller
                 redirect('admin/questions');
             }
         }
-
+					
+					/*Edit Question */
+					
     public function edit_questionbank($id){
         $data['title']="Edit Questionbank";
          $data['options'] = $this->Master_model->getMaster('options');		
@@ -146,7 +149,7 @@ class Questionbank extends MY_Controller
         $this->load->view('admin/jobsetting/questionbank_master',$data);
     }
 
-
+			/*Delete Question */
 
  public function delete_questionbank($id) {
         
