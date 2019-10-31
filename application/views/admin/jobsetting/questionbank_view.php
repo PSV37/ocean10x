@@ -1,35 +1,5 @@
 <?php $this->load->view('admin/components/header'); ?>
-<style>
-.multiselect {
-  width: 100%;
-}
 
-.selectBox {
-  position: relative;
-}
-
-.selectBox select {
-  width: 100%;
-}
-
-.overSelect {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-}
-
-#checkboxes {
-  display: none;
- 
-}
-
-#checkboxes label {
-  display: block;
-}
-
-</style>
 <body class="skin-blue" data-baseurl="<?php echo base_url(); ?>">
     <div class="wrapper">
         
