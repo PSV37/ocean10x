@@ -151,7 +151,7 @@ echo "</div>";
 									<div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Pincode<span class="required">*</span></label>
-									<input type="text" name="pincode" id="pincode" class="form-control" value="<?php echo set_value('pincode'); ?>">
+									<input type="text" name="pincode" id="pincode" class="form-control" value="<?php echo set_value('pincode'); ?>" autocomplete="off">
 									<?php echo form_error('pincode'); ?>
 									</div>
 								   </div>
