@@ -69,7 +69,7 @@
                                                   </select>
                                             </div>
                                             <div class="col-md-6 col-sm-12">
-                                                <input type="text" name="user_name"  value="<?php echo isset($this->session->userdata['reg_jobseeker']['user_name'])?$this->session->userdata['reg_jobseeker']['user_name']:''; ?>"class="form-control" placeholder="User Name">
+                                                <input type="text" name="user_name"  value="<?php echo isset($this->session->userdata['reg_jobseeker']['user_name'])?$this->session->userdata['reg_jobseeker']['user_name']:''; ?>"class="form-control" placeholder="User Name" autocomplete="off">
                                             </div>
                                         </div><!-- end row -->
                                     </div>
@@ -96,7 +96,7 @@
                                      <div class="row">
 
                                    <div class="col-md-6 col-sm-12">
-                                            <input id="inputchapcha" type="text"  name="captcha" value="" class="form-control" >
+                                            <input id="inputchapcha" type="text"  name="captcha" value="" class="form-control" autocomplete="off">
                                         </div>
 
                                     <div class="col-md-5 col-sm-5">
