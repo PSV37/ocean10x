@@ -35,10 +35,10 @@
                                     <div class="formrow">
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12">
-                                            <input type="text" name="full_name" value="<?php echo isset($this->session->userdata['reg_jobseeker']['full_name'])?$this->session->userdata['reg_jobseeker']['full_name']:''; ?>" class="form-control" placeholder="Full Name">
+                                            <input type="text" name="full_name" value="<?php echo isset($this->session->userdata['reg_jobseeker']['full_name'])?$this->session->userdata['reg_jobseeker']['full_name']:''; ?>" class="form-control" placeholder="Full Name" autocomplete="off">
                                         </div>
                                         <div class="col-md-6 col-sm-12">
-                                            <input type="email" name="email" value="<?php echo isset($this->session->userdata['reg_jobseeker']['email'])?$this->session->userdata['reg_jobseeker']['email']:''; ?>" class="form-control" placeholder="Email">
+                                            <input type="email" name="email" value="<?php echo isset($this->session->userdata['reg_jobseeker']['email'])?$this->session->userdata['reg_jobseeker']['email']:''; ?>" class="form-control" placeholder="Email" autocomplete="off">
                                         </div>
                                     </div><!-- end row -->
                                     </div>
