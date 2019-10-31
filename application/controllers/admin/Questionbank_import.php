@@ -33,7 +33,7 @@ class Questionbank_import extends MY_Controller {
      				$filename = $uploadData['file_name']; 
 
      				// Reading file
-                    $file = fopen("asset/files/".$filename,"r");
+                    $file = fopen("assets/files/".$filename,"r");
                     $i = 0;
 
                     $importData_arr = array();
