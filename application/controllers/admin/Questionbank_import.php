@@ -7,9 +7,6 @@ class Questionbank_import extends MY_Controller {
 
 		parent::__construct();
 
-		// load base_url
-		$this->load->helper('url');
-
 		// Load Model
 		$this->load->model('Questionbank_model');
 	}
