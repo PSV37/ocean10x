@@ -647,5 +647,18 @@ public function get_all_company_by_banksbook()
          $query=$this->db->delete($this->_table_name);
     }
 
+    public function check_jobid_and_js_id($job_id, $js_id)
+    {
+        $this->db->select("*");
+        $this->db->where('js_id', $js_id);
+        $this->db->where('job_id', $job_id);
+        $query = $this->db->get('js_test_info');
+        if ($query->num_rows() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
 }

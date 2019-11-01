@@ -215,4 +215,26 @@ class Job extends MY_Fontend_Controller
         $this->load->view('fontend/job/teste.php');
     }
 
+    public function all_exam_result($job_id = null)
+    {
+        $jobseeker_id = $this->session->userdata('job_seeker_id');
+        if (!empty($job_id) && $this->job_posting_model->check_jobid_and_js_id($job_id, $jobseeker_id) == true) {
+                
+            $data['job_id'] = $job_id;
+            
+            $where_test = "js_test_info.job_id='$job_id'";
+            $join_arr = array(
+                'js_info' => 'js_info.job_seeker_id=js_test_info.js_id |INNER',
+            );
+            $select_result = "js_test_info.marks,js_test_info.test_id,js_test_info.js_id, js_info.full_name";
+            $data['exam_attended_candidates']= $this->Master_model->getList($condition, $field_by, $order_by, $offset, $perpage, 'js_test_info', $search, $join_arr, $where_test, $select_result, $distinct = FALSE, $group_by = 'js_id');
+            //echo $this->db->last_query(); die;
+
+            $this->load->view('fontend/exam/seeker_result_details',$data);
+        } else {
+            echo "not found";  
+        }
+    }
+
+
 }
