@@ -206,6 +206,18 @@ class Questionbank extends MY_Controller
                     // insert import data
                     foreach($importData_arr as $userdata){
                         if($skip != 0){
+							echo "<pre>";
+							print_r($userdata); 
+							$tech_id=$userdata[0];
+							$where_skill="skill_name='".$tech_id."'";
+							$tech_data = $this->Master_model->getMaster('skill_master', $where_skill);
+							print_r($tech_data);
+							$userdata[0]=$tech_data[0]['id'];
+							
+							
+							
+							
+							
                             $this->Questionbank_model->insertRecord($userdata);
                         }
                         $skip ++;

@@ -9,7 +9,7 @@ class Questionbank_model extends MY_Model {
             // Check user
             $this->db->select('*');
             $this->db->where('technical_id', $record[0]);
-            $q = $this->db->get('questionsbank');
+            $q = $this->db->get('questionbank');
             $response = $q->result_array();
             
             // Insert record
@@ -20,18 +20,18 @@ class Questionbank_model extends MY_Model {
                     "subtopic_id" => trim($record[2]),
                     "lineitem_id" => trim($record[3]),
                     "lineitemlevel_id" => trim($record[4]),
-					"level" => trim($record[5]),
 					"ques_type" => trim($record[6]),
+					"level" => trim($record[5]),
 					"question" => trim($record[7]),
 					"option1" => trim($record[8]),
 					"option2" => trim($record[9]),
 					"option3" => trim($record[10]),
 					"option4" => trim($record[11]),
 					"option5" => trim($record[12]),
-					"correct_answer" => trim($record[13]),
+					"correct_answer" => trim($record[13])
                 );
 
-                $this->db->insert('questionsbank', $newquestionsbank);
+                $this->db->insert('questionbank', $newquestionsbank);
             }
             
         }
