@@ -35,7 +35,6 @@
                         <div id="myTabContent" class="tab-content">
                           <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
                             <div class="x_title">
-                              <h2>Recent Applied Job Applicaiton List</h2>
                               <div class="clearfix"></div>
                             </div>
                             <table id="mytable" class="table table-striped table-bordered">
@@ -93,7 +92,6 @@
 
                           <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
                             <div class="x_title">
-                              <h2>Recent Received Job Applicaiton List</h2>
                               <div class="clearfix"></div>
                             </div>
                             <table id="myTable" class="table table-striped table-bordered">
