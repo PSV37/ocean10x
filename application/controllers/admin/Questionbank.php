@@ -195,7 +195,6 @@ class Questionbank extends MY_Controller
                         $num = count($filedata);
 
                         for ($c=0; $c < $num; $c++) {
-							echo $filedata[$c]; die;
                             $importData_arr[$i][] = $filedata[$c];
                         }
                         $i++;
@@ -207,6 +206,8 @@ class Questionbank extends MY_Controller
                     // insert import data
                     foreach($importData_arr as $userdata){
                         if($skip != 0){
+							echo "<pre>";
+							print_r($userdata); die;
                             $this->Questionbank_model->insertRecord($userdata);
                         }
                         $skip ++;
