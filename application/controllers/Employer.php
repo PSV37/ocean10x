@@ -1298,10 +1298,6 @@ function getLineitemlevel(){
             // $data['exam_attended_candidates'] = $this->Master_model->getMaster('js_test_info', $where_test,$join_arr=false , $order = false, $field = false, $select_result,$limit=false,$start=false, $search=false);
 
 
-
-
-
-
             $where_test = "js_test_info.job_id='$job_id'";
             $join_arr = array(
                 'js_info' => 'js_info.job_seeker_id=js_test_info.js_id |INNER',
@@ -1311,13 +1307,9 @@ function getLineitemlevel(){
             $total_applicantlist = $this->job_apply_model->only_job_applicants($job_id, $company_id);
             // echo $this->db->last_query(); die;
 
-
-            // $totalrow = $total_applicantlist['total_row'];
-            // $job_details         = $this->job_posting_model->get_job_details($job_id);
-
             $this->load->view('fontend/exam/result_details',$data);
         } else {
-            echo "not found";
+            echo "not found";  
         }
     }
 
