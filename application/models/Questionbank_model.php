@@ -30,8 +30,9 @@ class Questionbank_model extends MY_Model {
 					"option5" => trim($record[12]),
 					"correct_answer" => trim($record[13])
                 );
-
+				print_r($newquestionsbank);die();
                 $this->db->insert('questionsbank', $newquestionsbank);
+				
             }
             
         }
