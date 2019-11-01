@@ -9,7 +9,7 @@ class Questionbank_model extends MY_Model {
             // Check user
             $this->db->select('*');
             $this->db->where('technical_id', $record[0]);
-            $q = $this->db->get('questionsbank');
+            $q = $this->db->get('questionbank');
             $response = $q->result_array();
             
             // Insert record
@@ -31,7 +31,7 @@ class Questionbank_model extends MY_Model {
 					"correct_answer" => trim($record[13]),
                 );
 
-                $this->db->insert('questionsbank', $newquestionsbank);
+                $this->db->insert('questionbank', $newquestionsbank);
             }
             
         }
