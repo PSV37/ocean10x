@@ -217,7 +217,7 @@ class Questionbank extends MY_Controller
 							$topic_id=$userdata[1];
 							$where_topic="topic_name='".$topic_id."'";
 							$topic_data = $this->Master_model->getMaster('topic', $where_topic);
-							print_r($topic_data);die(); 
+							//print_r($topic_data);
 							$userdata[1]=$topic_data[1]['topic_id'];
 							
 							$subtopic=$userdata[2];
@@ -236,7 +236,7 @@ class Questionbank extends MY_Controller
 							$lineitemlevel=$userdata[4];
 							$where_lineitemlevel="titles='".$lineitemlevel."'";
 							$lineitemlevel_data = $this->Master_model->getMaster('lineitemlevel', $where_lineitemlevel);
-							//print_r($lineitemlevel_data);
+							print_r($lineitemlevel_data);die(); 
 							$userdata[4]=$lineitemlevel_data[4]['lineitemlevel_id'];
 							
 							
