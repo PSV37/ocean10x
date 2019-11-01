@@ -241,11 +241,11 @@ class Questionbank extends MY_Controller
 							//$this->db->last_query();
 							
                             $this->Questionbank_model->insertRecord($userdata);
-							
+							echo $this->db->last_query();die();
                         }
                         $skip ++;
                     }
-					echo $this->db->last_query();
+					
      				$data['response'] = 'successfully uploaded '.$filename; 
 					// redirect('admin/questionbank-import',$data);
     			}else{ 
