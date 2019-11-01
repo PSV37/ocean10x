@@ -238,6 +238,13 @@ class Questionbank extends MY_Controller
 							$lineitemlevel_data = $this->Master_model->getMaster('lineitemlevel', $where_lineitemlevel);
 							//print_r($lineitemlevel_data);die(); 
 							$userdata[4]=$lineitemlevel_data[0]['lineitemlevel_id'];
+							
+							$options=$userdata[13];
+							$where_options="options_type='".$options."'";
+							$options_data = $this->Master_model->getMaster('options', $where_options);
+							//print_r($lineitemlevel_data);die(); 
+							$userdata[13]=$options_data[0]['options_id'];
+							
 							//$this->db->last_query();
 							
                            $this->Questionbank_model->insertRecord($userdata);
