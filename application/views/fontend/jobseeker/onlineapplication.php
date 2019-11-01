@@ -92,7 +92,9 @@
                                       { 
                                   ?>
                                     <a href="<?php echo base_url(); ?>exam/index/<?php echo base64_encode($applicaiton->job_post_id); ?>" class="btn btn-success btn-xs">Give Exam</a>
-                                  <?php } ?>
+                                  <?php } else{
+                                    echo "<span class='label label-primary'>Done</span>";
+                                  }?>
                                   </td>
                                   
                                 </tr>
@@ -169,7 +171,9 @@
                                       { 
                                   ?>
                                     <a href="<?php echo base_url(); ?>exam/index/<?php echo base64_encode($forward_applicaiton->job_post_id); ?>" class="btn btn-success btn-xs">Give Exam</a>
-                                  <?php } ?>
+                                  <?php }else{
+                                    echo "<span class='label label-primary'>Done</span>";
+                                  } ?>
                                   </td>
                                 
                                  
