@@ -22,7 +22,10 @@
                     	<div class="jbinfo">
                         	<strong>Job Status</strong><br>
                          
-                          <?php if($job_details->job_status=="1"){
+                          <?php 
+                          // if($job_details->job_status=="1")
+                          if ($job_details->job_deadline > date('Y-m-d')){
+                          {
                               echo '<span class="label label-success">Live</span>';}
                             else {
                               echo '<span class="label label-danger">Expired</span>';
