@@ -88,7 +88,7 @@
 
                                   <td>
                                   <?php
-                                    if($forward_applicaiton->is_test_done == 0)
+                                    if($applicaiton->is_test_done == 0)
                                       { 
                                   ?>
                                     <a href="<?php echo base_url(); ?>exam/index/<?php echo base64_encode($applicaiton->job_post_id); ?>" class="btn btn-success btn-xs">Give Exam</a>
