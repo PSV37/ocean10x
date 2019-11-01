@@ -1312,7 +1312,7 @@ function getLineitemlevel(){
             );
             $select_result = "js_test_info.marks,js_test_info.test_id,js_test_info.js_id, js_info.full_name";
             $data['exam_attended_candidates']= $this->Master_model->getList($condition, $field_by, $order_by, $offset, $perpage, 'js_test_info', $search, $join_arr, $where_test, $select_result, $distinct = FALSE, $group_by = 'js_id');
-             echo $this->db->last_query(); die;
+             //echo $this->db->last_query(); die;
 
             // $where_test = "js_test_info.job_id='$job_id'";
             // $join_arr = array(
