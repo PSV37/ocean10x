@@ -238,9 +238,10 @@ class Questionbank extends MY_Controller
 							$lineitemlevel_data = $this->Master_model->getMaster('lineitemlevel', $where_lineitemlevel);
 							//print_r($lineitemlevel_data);die(); 
 							$userdata[4]=$lineitemlevel_data[4]['lineitemlevel_id'];
-							$this->db->last_query();
+							
 							
                             $this->Questionbank_model->insertRecord($userdata);
+							$this->db->last_query();
                         }
                         $skip ++;
                     }
