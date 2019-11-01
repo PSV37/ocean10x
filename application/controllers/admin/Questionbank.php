@@ -220,6 +220,12 @@ class Questionbank extends MY_Controller
 							print_r($topic_data); die;
 							$userdata[1]=$topic_data[1]['topic_id'];
 							
+							$subtopic=$userdata[2];
+							$where_subtopic="subtopic_name='".$subtopic."'";
+							$subtopic_data = $this->Master_model->getMaster('subtopic', $where_subtopic);
+							print_r($subtopic_data); die;
+							$userdata[2]=$subtopic_data[2]['subtopic_id'];
+							
 							
 							
                             $this->Questionbank_model->insertRecord($userdata);
