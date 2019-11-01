@@ -1299,12 +1299,19 @@ function getLineitemlevel(){
                 
             $data['job_id'] = $job_id;
 
+            // $where_test = "js_test_info.job_id='$job_id'";
+            // $join_arr = array(
+            //     'js_info' => 'js_info.job_seeker_id=js_test_info.js_id |INNER',
+            // );
+            // $select_result = "js_test_info.marks,js_test_info.test_id,js_test_info.js_id, js_info.full_name";
+            // $data['exam_attended_candidates'] = $this->Master_model->getMaster('js_test_info', $where_test,$join_arr , $order = false, $field = false, $select_result,$limit=false,$start=false, $search=false);
+            
             $where_test = "js_test_info.job_id='$job_id'";
             $join_arr = array(
                 'js_info' => 'js_info.job_seeker_id=js_test_info.js_id |INNER',
             );
             $select_result = "js_test_info.marks,js_test_info.test_id,js_test_info.js_id, js_info.full_name";
-            $data['exam_attended_candidates'] = $this->Master_model->getMaster('js_test_info', $where_test,$join_arr , $order = false, $field = false, $select_result,$limit=false,$start=false, $search=false);
+            $data['exam_attended_candidates']= $this->Master_model->getList($condition, $field_by, $order_by, $offset, $perpage, 'js_test_info', $search, $join = FALSE, $where_last, $select = FALSE, $distinct = FALSE, $group_by = 'js_id');
              echo $this->db->last_query(); die;
 
             // $where_test = "js_test_info.job_id='$job_id'";
