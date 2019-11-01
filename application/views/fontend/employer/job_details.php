@@ -24,7 +24,7 @@
                          
                           <?php 
                           // if($job_details->job_status=="1")
-                          if ($job_details->job_deadline > date('Y-m-d')){
+                          if ($job_details->job_deadline > date('Y-m-d'))
                           {
                               echo '<span class="label label-success">Live</span>';}
                             else {
