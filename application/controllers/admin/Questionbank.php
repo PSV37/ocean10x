@@ -208,17 +208,17 @@ class Questionbank extends MY_Controller
                         if($skip != 0){
 							echo "<pre>";
 							print_r($userdata); 
-							$tech_id=$userdata[0];
-							$where_skill="skill_name='".$tech_id."'";
-							$tech_data = $this->Master_model->getMaster('skill_master', $where_skill);
-							print_r($tech_data);
-							$userdata[0]=$tech_data[0]['id'];
+							//$tech_id=$userdata[0];
+							//$where_skill="skill_name='".$tech_id."'";
+							//$tech_data = $this->Master_model->getMaster('skill_master', $where_skill);
+							//print_r($tech_data);
+							//$userdata[0]=$tech_data[0]['id'];
 							
 							$topic_id=$userdata[0];
 							$where_topic="topic_name='".$topic_id."'";
 							$topic_data = $this->Master_model->getMaster('topic', $where_topic);
 							print_r($topic_data); die;
-							$userdata[0]=$topic_data[1]['topic_id'];
+							$userdata[0]=$topic_data[0]['topic_id'];
 							
 							
 							
