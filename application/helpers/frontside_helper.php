@@ -122,7 +122,7 @@ function get_metas() {
         $where_res['job_id'] = $job_id;
         $where_res['js_id'] = $js_id;
         $exam_result = $CI->Master_model->getMaster($table, $where_res, false, false ,false, $select_result, $limit =false, $start =false, $search= false);
-        echo $this->db->last_query(); die;
+        echo $CI->db->last_query(); die;
 
         return $exam_result;
     } 
