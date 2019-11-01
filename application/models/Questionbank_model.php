@@ -23,7 +23,7 @@ class Questionbank_model extends MY_Model {
                 );
 				
                 $this->db->insert('questionbank', $newquestionsbank);
-            
+				
         }
         
     }
