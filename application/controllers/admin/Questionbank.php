@@ -228,14 +228,14 @@ class Questionbank extends MY_Controller
 							
 							$lineitem=$userdata[3];
 							$where_lineitem="title='".$lineitem."'";
-							$lineitem_data = $this->Master_model->getMaster('subtopic', $where_lineitem);
+							$lineitem_data = $this->Master_model->getMaster('lineitem', $where_lineitem);
 							print_r($lineitem_data); 
 							$userdata[3]=$lineitem_data[3]['lineitem_id'];
 							
 							
 							$lineitemlevel=$userdata[4];
 							$where_lineitemlevel="titles='".$lineitemlevel."'";
-							$lineitemlevel_data = $this->Master_model->getMaster('subtopic', $where_lineitem);
+							$lineitemlevel_data = $this->Master_model->getMaster('lineitemlevel', $where_lineitem);
 							print_r($lineitemlevel_data); die;
 							$userdata[4]=$lineitemlevel_data[3]['lineitemlevel_id'];
 							
