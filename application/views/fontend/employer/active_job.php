@@ -38,9 +38,12 @@
                                <div class="posted"><strong>Job Status:</strong> <br>
                                 <?php 
                                     if ($v_companyjobs->job_deadline > date('Y-m-d')){
-                                    echo '<button class="btn btn-success btn-xs">Live <i class="fa fa-check-circle" aria-hidden="true"></i></button>';}
+                                        // echo '<button class="btn btn-success btn-xs">Live <i class="fa fa-check-circle" aria-hidden="true"></i></button>';
+                                        echo '<span class="label label-success">Live</span>';
+                                    }
                                     else {
-                                    echo'<button class="btn btn-danger btn-xs">Expired <i class="fa fa-times" aria-hidden="true"></i></button> ';
+                                        // echo'<button class="btn btn-danger btn-xs">Expired <i class="fa fa-times" aria-hidden="true"></i></button> ';
+                                        echo '<span class="label label-danger">Expired</span>';
                                     }
                                 ?>
                                </div>
