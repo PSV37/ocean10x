@@ -46,6 +46,7 @@
                                   <th>Expected Salary</th>
                                   <th>Applied Date</th>
                                   <th>Employer Activity</th>
+                                  <th>Exam Result</th>
                                   
                                 </tr>
                               </thead>
@@ -76,9 +77,10 @@
                                       <?php } elseif($applicaiton->apply_status == 3) { ?>
                                         <span class="label label-primary"><?php echo 'Final' ?></span>
                                     <?php } ?>
-                                    <a href="<?php echo base_url(); ?>job/all-results/<?php echo $applicaiton->job_post_id; ?>" class="btn btn-xs">View Result</a>
+                                    
 
                                   </td>
+                                  <td><a href="<?php echo base_url(); ?>job/all-results/<?php echo $applicaiton->job_post_id; ?>" class="btn btn-success btn-xs">View Result</a></td>
                                 </tr>
                                 <?php
                                   endforeach;
@@ -106,6 +108,7 @@
                                   <th>Expected Salary</th>
                                   <th>Applied Date</th>
                                   <th>Employer Activity</th>
+                                  <th>Exam Result</th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -135,7 +138,10 @@
                                       <?php } elseif($forward_applicaiton->apply_status == 3) { ?>
                                         <span class="label label-primary"><?php echo 'Final' ?></span>
                                     <?php } ?>
-                                    <a href="<?php echo base_url(); ?>employer/all-results/<?php echo $forward_applicaiton->job_post_id; ?>" class="btn">View Result</a>
+                                   
+                                  </td>
+                                  <td>
+                                    <a href="<?php echo base_url(); ?>job/all-results/<?php echo $forward_applicaiton->job_post_id; ?>" class="btn btn-success btn-xs">View Result</a>
                                   </td>
                                 </tr>
                                 <?php
