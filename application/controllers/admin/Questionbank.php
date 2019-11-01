@@ -207,19 +207,37 @@ class Questionbank extends MY_Controller
                     foreach($importData_arr as $userdata){
                         if($skip != 0){
 							echo "<pre>";
-							print_r($userdata); 
+							//print_r($userdata); 
 							$tech_id=$userdata[0];
 							$where_skill="skill_name='".$tech_id."'";
 							$tech_data = $this->Master_model->getMaster('skill_master', $where_skill);
-							print_r($tech_data);
+							//print_r($tech_data);
 							$userdata[0]=$tech_data[0]['id'];
 							
 							$topic=$userdata[1];
 							$where_topic="topic_name='".$topic."'";
 							$topic_data = $this->Master_model->getMaster('topic', $where_topic);
-							print_r($topic_data); die;
+							//print_r($topic_data); 
 							$userdata[1]=$topic_data[1]['topic_id'];
 							
+							$subtopic=$userdata[2];
+							$where_subtopic="subtopic_name='".$subtopic."'";
+							$subtopic_data = $this->Master_model->getMaster('subtopic', $where_subtopic);
+							//print_r($subtopic_data);
+							$userdata[2]=$subtopic_data[2]['subtopic_id'];
+							
+							$lineitem=$userdata[3];
+							$where_lineitem="title='".$lineitem."'";
+							$lineitem_data = $this->Master_model->getMaster('lineitem', $where_lineitem);
+							//print_r($lineitem_data); 
+							$userdata[3]=$lineitem_data[3]['lineitem_id'];
+							
+							
+							$lineitemlevel=$userdata[4];
+							$where_lineitemlevel="titles='".$lineitemlevel."'";
+							$lineitemlevel_data = $this->Master_model->getMaster('lineitemlevel', $where_lineitemlevel);
+							//print_r($lineitemlevel_data);
+							$userdata[4]=$lineitemlevel_data[4]['lineitemlevel_id'];
 							
 							
                             $this->Questionbank_model->insertRecord($userdata);
