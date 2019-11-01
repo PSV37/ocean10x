@@ -240,8 +240,8 @@ class Questionbank extends MY_Controller
 							$userdata[4]=$lineitemlevel_data[0]['lineitemlevel_id'];
 							//$this->db->last_query();
 							
-                            $this->Questionbank_model->insertRecord($userdata);
-							echo $this->db->last_query();die();
+                           $this->Questionbank_model->insertRecord($userdata);
+							//echo $this->db->last_query();die();
                         }
                         $skip ++;
                     }
