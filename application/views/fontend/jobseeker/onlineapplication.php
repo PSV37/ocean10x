@@ -108,7 +108,9 @@
                                   <th>Expected Salary</th>
                                   <th>Applied Date</th>
                                   <th>Employer Activity</th>
-                                  <th>Exam Result</th>
+                                  <?php if(EXAM_RESULT_SHOW ==1){ ?>
+                                    <th>Exam Result</th>
+                                  <?php } ?>
                                 </tr>
                               </thead>
                               <tbody>
@@ -140,9 +142,11 @@
                                     <?php } ?>
                                    
                                   </td>
+                                  <?php if(EXAM_RESULT_SHOW ==1){ ?>
                                   <td>
                                     <a href="<?php echo base_url(); ?>job/all-results/<?php echo $forward_applicaiton->job_post_id; ?>" class="btn btn-success btn-xs">View Result</a>
                                   </td>
+                                  <?php } ?>
                                 </tr>
                                 <?php
                                   endforeach;

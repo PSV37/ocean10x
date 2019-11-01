@@ -86,3 +86,5 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 
 // defined('SITE_NAME')      OR define('SITE_NAME', 'consultnhire.com');
 defined('NUMBER_QUESTIONS')      OR define('NUMBER_QUESTIONS', 3);
+// constant to show result to candidate 1-show 0-Not show
+defined('EXAM_RESULT_SHOW')      OR define('EXAM_RESULT_SHOW', 0);
