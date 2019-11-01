@@ -807,11 +807,11 @@ function getstate(){
         
         $where_all = "questionbank.ques_status='1' AND ques_created_by='$employer_id'";
         $join_emp = array(
-                'skill_master' => 'skill_master.id=questionbank.technical_id |INNER',
-                'topic' => 'topic.topic_id=questionbank.topic_id |INNER',
-                'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |INNER',
-                'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |INNER',
-                'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |INNER',
+                'skill_master' => 'skill_master.id=questionbank.technical_id |OUTER',
+                'topic' => 'topic.topic_id=questionbank.topic_id |OUTER',
+                'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |OUTER',
+                'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |OUTER',
+                'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |OUTER',
             );
         
         $data['questionbank'] = $this->Master_model->getMaster('questionbank',$where_all,$join_emp);
