@@ -119,8 +119,12 @@
                                   <?php if(EXAM_RESULT_SHOW ==1){ ?>
                                     <th>Exam Result</th>
                                   <?php } ?>
+                                  <?php
+                                    if($forward_applicaiton->is_test_done == 0)
+                                      { 
+                                  ?>
                                   <th>Exam</th>
-                                  
+                                  <?php } ?>
                                 </tr>
                               </thead>
                               <tbody>
@@ -157,9 +161,14 @@
                                     <a href="<?php echo base_url(); ?>job/all-results/<?php echo $forward_applicaiton->job_post_id; ?>" class="btn btn-success btn-xs">View Result</a>
                                   </td>
                                   <?php }?>
+                                  <?php
+                                    if($forward_applicaiton->is_test_done == 0)
+                                      { 
+                                  ?>
                                   <td>
                                     <a href="<?php echo base_url(); ?>exam/index/<?php echo base64_encode($forward_applicaiton->job_post_id); ?>" class="btn btn-success btn-xs">Give Exam</a>
                                   </td>
+                                <?php } ?>
                                  
                                 </tr>
                                 <?php
