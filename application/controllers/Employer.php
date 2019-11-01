@@ -815,7 +815,7 @@ function getstate(){
             );
         
         $data['questionbank'] = $this->Master_model->getMaster('questionbank',$where_all,$join_emp);
-
+        echo  $this->db->last_query(); die;
 
 
         $this->load->view('fontend/employer/all_questions.php', $data);
