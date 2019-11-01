@@ -93,7 +93,7 @@
                                   ?>
                                     <a href="<?php echo base_url(); ?>exam/index/<?php echo base64_encode($applicaiton->job_post_id); ?>" class="btn btn-success btn-xs">Give Exam</a>
                                   <?php } else{
-                                    echo "<span class='label label-primary'>Done</span>"
+                                    echo "<span class='label label-primary'>Done</span>";
                                   }?>
                                   </td>
                                   
@@ -172,7 +172,7 @@
                                   ?>
                                     <a href="<?php echo base_url(); ?>exam/index/<?php echo base64_encode($forward_applicaiton->job_post_id); ?>" class="btn btn-success btn-xs">Give Exam</a>
                                   <?php }else{
-                                    echo "<span class='label label-primary'>Done</span>"
+                                    echo "<span class='label label-primary'>Done</span>";
                                   } ?>
                                   </td>
                                 
