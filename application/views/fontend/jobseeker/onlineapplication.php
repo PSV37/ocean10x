@@ -46,6 +46,9 @@
                                   <th>Expected Salary</th>
                                   <th>Applied Date</th>
                                   <th>Employer Activity</th>
+                                  <?php if(EXAM_RESULT_SHOW ==1){ ?>
+                                  <th>Exam Result</th>
+                                  <?php } ?>
                                   
                                 </tr>
                               </thead>
@@ -76,9 +79,12 @@
                                       <?php } elseif($applicaiton->apply_status == 3) { ?>
                                         <span class="label label-primary"><?php echo 'Final' ?></span>
                                     <?php } ?>
-                                    <a href="<?php echo base_url(); ?>job/all-results/<?php echo $applicaiton->job_post_id; ?>" class="btn btn-xs">View Result</a>
+                                    
 
                                   </td>
+                                  <?php if(EXAM_RESULT_SHOW ==1){ ?>
+                                    <td><a href="<?php echo base_url(); ?>job/all-results/<?php echo $applicaiton->job_post_id; ?>" class="btn btn-success btn-xs">View Result</a></td>
+                                  <?php } ?>
                                 </tr>
                                 <?php
                                   endforeach;
@@ -106,6 +112,9 @@
                                   <th>Expected Salary</th>
                                   <th>Applied Date</th>
                                   <th>Employer Activity</th>
+                                  <?php if(EXAM_RESULT_SHOW ==1){ ?>
+                                    <th>Exam Result</th>
+                                  <?php } ?>
                                 </tr>
                               </thead>
                               <tbody>
@@ -135,8 +144,13 @@
                                       <?php } elseif($forward_applicaiton->apply_status == 3) { ?>
                                         <span class="label label-primary"><?php echo 'Final' ?></span>
                                     <?php } ?>
-                                    <a href="<?php echo base_url(); ?>employer/all-results/<?php echo $forward_applicaiton->job_post_id; ?>" class="btn">View Result</a>
+                                   
                                   </td>
+                                  <?php if(EXAM_RESULT_SHOW ==1){ ?>
+                                  <td>
+                                    <a href="<?php echo base_url(); ?>job/all-results/<?php echo $forward_applicaiton->job_post_id; ?>" class="btn btn-success btn-xs">View Result</a>
+                                  </td>
+                                  <?php } ?>
                                 </tr>
                                 <?php
                                   endforeach;

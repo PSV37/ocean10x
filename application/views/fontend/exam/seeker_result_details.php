@@ -37,7 +37,6 @@
               <thead>
                 <tr>
                   <th class="active">SL</th>
-                  <th class="active">Name</th>
                   <th class="active">Total Question</th>
                   <th class="active">Attended Question</th>
                   <th class="active">Total Marks</th>
@@ -55,9 +54,6 @@
                 ?>
                     <tr>
                       <td><?php echo $key ?></td>
-                      <td>
-                        <h3><a target="_blank" href="<?php echo base_url() ?>employer/view_resume/<?php echo $ct_row['js_id'] ."/".$job_id; ?>"><?php echo $ct_row['full_name'] ?></a></h3>
-                      </td>
                       <td><?php echo NUMBER_QUESTIONS; ?></td>
                       <td><?php echo $res_row['total_questions'] ?></td>
                       <td><?php echo $res_row['total_marks'] ?></td>
