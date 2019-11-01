@@ -3,7 +3,7 @@
 class Questionbank_model extends MY_Model {
 
     function insertRecord($record){
-        
+        print_r($record);
         if(count($record) > 0){
                 $newquestionsbank = array(
 					"technical_id" => trim($record[0]),
