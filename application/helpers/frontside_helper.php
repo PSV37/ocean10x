@@ -113,8 +113,8 @@ function get_metas() {
 
         return true;
     }
+
     // to fetch exam result by job seeker ids
-    
     function getExamResultByID($js_id,$job_id){
         $CI = get_instance();
         $select_result = "SUM(marks) as total_marks,COUNT(test_id) as total_questions,js_test_info.js_id";
@@ -122,6 +122,8 @@ function get_metas() {
         $where_res['job_id'] = $job_id;
         $where_res['js_id'] = $js_id;
         $exam_result = $CI->Master_model->getMaster($table, $where_res, false, false ,false, $select_result, $limit =false, $start =false, $search= false);
+        echo $this->db->last_query(); die;
+
         return $exam_result;
     } 
     
