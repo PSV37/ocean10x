@@ -49,7 +49,7 @@
                                   <?php if(EXAM_RESULT_SHOW ==1){ ?>
                                   <th>Exam Result</th>
                                   <?php } ?>
-                                  
+                                  <th>Exam</th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -84,7 +84,11 @@
                                   </td>
                                   <?php if(EXAM_RESULT_SHOW ==1){ ?>
                                     <td><a href="<?php echo base_url(); ?>job/all-results/<?php echo $applicaiton->job_post_id; ?>" class="btn btn-success btn-xs">View Result</a></td>
-                                  <?php } ?>
+                                   <?php }?>
+                                  <td>
+                                    <a href="<?php echo base_url(); ?>job/all-results/<?php echo $applicaiton->job_post_id; ?>" class="btn btn-success btn-xs">Give Exam</a>
+                                  </td>
+                                  
                                 </tr>
                                 <?php
                                   endforeach;
@@ -115,6 +119,8 @@
                                   <?php if(EXAM_RESULT_SHOW ==1){ ?>
                                     <th>Exam Result</th>
                                   <?php } ?>
+                                  <th>Exam</th>
+                                  
                                 </tr>
                               </thead>
                               <tbody>
@@ -150,7 +156,11 @@
                                   <td>
                                     <a href="<?php echo base_url(); ?>job/all-results/<?php echo $forward_applicaiton->job_post_id; ?>" class="btn btn-success btn-xs">View Result</a>
                                   </td>
-                                  <?php } ?>
+                                  <?php }?>
+                                  <td>
+                                    <a href="<?php echo base_url(); ?>job/all-results/<?php echo $forward_applicaiton->job_post_id; ?>" class="btn btn-success btn-xs">Give Exam</a>
+                                  </td>
+                                 
                                 </tr>
                                 <?php
                                   endforeach;
