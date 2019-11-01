@@ -140,7 +140,7 @@ $route['jobs/type/(:any)/(:num)'] = "job/get_job_types_job/$1/$2";
 
 $route['jobs/(:any)/(:any)'] = "job/category_and_level_job/$1/$2";
 $route['jobs/(:num)/(:num)/(:num)'] = "job/category_and_level_job/$1/$2/$3";
-
+$route['job/all-results/(:num)']="job/all_exam_result/$1";
 
 // Admin Site route 
 
