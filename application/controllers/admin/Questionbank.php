@@ -223,9 +223,21 @@ class Questionbank extends MY_Controller
 							$subtopic=$userdata[2];
 							$where_subtopic="subtopic_name='".$subtopic."'";
 							$subtopic_data = $this->Master_model->getMaster('subtopic', $where_subtopic);
-							print_r($subtopic_data); die;
+							print_r($subtopic_data);
 							$userdata[2]=$subtopic_data[2]['subtopic_id'];
 							
+							$lineitem=$userdata[3];
+							$where_lineitem="title='".$lineitem."'";
+							$lineitem_data = $this->Master_model->getMaster('subtopic', $where_lineitem);
+							print_r($lineitem_data); 
+							$userdata[3]=$lineitem_data[3]['lineitem_id'];
+							
+							
+							$lineitemlevel=$userdata[4];
+							$where_lineitemlevel="titles='".$lineitemlevel."'";
+							$lineitemlevel_data = $this->Master_model->getMaster('subtopic', $where_lineitem);
+							print_r($lineitemlevel_data); die;
+							$userdata[4]=$lineitemlevel_data[3]['lineitemlevel_id'];
 							
 							
                             $this->Questionbank_model->insertRecord($userdata);
