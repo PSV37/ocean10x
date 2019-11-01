@@ -212,7 +212,7 @@
                         <a href='<?php echo base_url(); ?>admin/subtopic-master'> <i class='glyphicon glyphicon-plus'></i><span>Subtopic</span></a>
                      </li>
                      <li <?php echo $this->company_profile_model->User_status_check(); ?>>
-                        <a href='<?php echo base_url(); ?>admin/importquestion'> <i class='glyphicon glyphicon-plus'></i><span>Import Question</span></a>
+                        <a href='<?php echo base_url(); ?>admin/questionbank-import'> <i class='glyphicon glyphicon-plus'></i><span>Import Question</span></a>
                      </li>
 					 <li <?php echo $this->company_profile_model->User_status_check(); ?> >
                         <a href='<?php echo base_url(); ?>admin/questionbank-master'> <i class='glyphicon glyphicon-plus'></i><span>Add Question</span></a>

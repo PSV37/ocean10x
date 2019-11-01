@@ -45,7 +45,7 @@
 				?>
 				</div>
 				</div>
-	<form method='post' action="<?php echo base_url();?>admin/questionbank/importquestion" enctype="multipart/form-data">
+	<form method='post' action="<?php echo base_url();?>admin/questionbank-import" enctype="multipart/form-data">
 	<div class="panel-body">
 		<input type='file' name='file' required>
 		</div>
