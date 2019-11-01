@@ -1303,9 +1303,9 @@ function getLineitemlevel(){
             $join_arr = array(
                 'js_info' => 'js_info.job_seeker_id=js_test_info.js_id |INNER',
             );
-            $select_result = "js_test_info.marks,js_test_info.test_id,js_test_info.js_id,js_info.full_name";
+            $select_result = "js_test_info.marks,js_test_info.test_id,js_test_info.js_id, js_info.full_name";
             $data['exam_attended_candidates'] = $this->Master_model->getMaster('js_test_info', $where_test,$join_arr , $order = false, $field = false, $select_result,$limit=false,$start=false, $search=false);
-
+             echo $this->db->last_query(); die;
 
             // $where_test = "js_test_info.job_id='$job_id'";
             // $join_arr = array(
