@@ -18,14 +18,14 @@ class Questionbank_model extends MY_Model {
 					"option2" => trim($record[9]),
 					"option3" => trim($record[10]),
 					"option4" => trim($record[11]),
-					"option5" => trim($record[12])
+					"option5" => trim($record[12]),
 					
                 );
 				
                 $this->db->insert('questionbank', $newquestionsbank);
 				
 				$newquestionsbanks = array(
-					"ques_id" => $record['question_id'],
+					"ques_id" => trim($record[13]),
 					"answer_id" => trim($record[14])
                 );
 				
