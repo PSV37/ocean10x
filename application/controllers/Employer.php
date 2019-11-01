@@ -1299,18 +1299,21 @@ function getLineitemlevel(){
                 
             $data['job_id'] = $job_id;
 
-            // $where_test = "job_id='$job_id'";
-            // $select_result = "marks,test_id,js_id";
-            // $data['exam_attended_candidates'] = $this->Master_model->getMaster('js_test_info', $where_test,$join_arr=false , $order = false, $field = false, $select_result,$limit=false,$start=false, $search=false);
-
-
             $where_test = "js_test_info.job_id='$job_id'";
             $join_arr = array(
                 'js_info' => 'js_info.job_seeker_id=js_test_info.js_id |INNER',
             );
-            $select_result = "SUM(marks) as total_marks,COUNT(test_id) as total_questions,js_info.full_name,js_test_info.js_id";
-            $data['exam_attended_candidates'] = $this->Master_model->getMaster('js_test_info', $where_test,$join_arr , $order = false, $field = false, $select_result,$limit=false,$start=false, $search=false);
-            $total_applicantlist = $this->job_apply_model->only_job_applicants($job_id, $company_id);
+            $select_result = "js_test_info.marks,js_test_info.test_id,js_test_info.js_id,js_info.full_name";
+            $data['exam_attended_candidates'] = $this->Master_model->getMaster('js_test_info', $where_test,$join_arr=false , $order = false, $field = false, $select_result,$limit=false,$start=false, $search=false);
+
+
+            // $where_test = "js_test_info.job_id='$job_id'";
+            // $join_arr = array(
+            //     'js_info' => 'js_info.job_seeker_id=js_test_info.js_id |INNER',
+            // );
+            // $select_result = "SUM(marks) as total_marks,COUNT(test_id) as total_questions,js_info.full_name,js_test_info.js_id";
+            // $data['exam_attended_candidates'] = $this->Master_model->getMaster('js_test_info', $where_test,$join_arr , $order = false, $field = false, $select_result,$limit=false,$start=false, $search=false);
+            // $total_applicantlist = $this->job_apply_model->only_job_applicants($job_id, $company_id);
             // echo $this->db->last_query(); die;
 
             $this->load->view('fontend/exam/result_details',$data);
