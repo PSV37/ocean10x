@@ -28,7 +28,7 @@
 <div class="section lb">
   <div class="container">
     <div class="row">
-      <?php $this->load->view('fontend/layout/employer_left.php'); ?>
+     <?php $this->load->view('fontend/layout/seeker_left.php'); ?>
       <div class="content col-md-9">
         <div class="userccount empdash">
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>

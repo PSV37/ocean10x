@@ -222,7 +222,7 @@ class Job extends MY_Fontend_Controller
                 
             $data['job_id'] = $job_id;
             
-            $where_test = "js_test_info.job_id='$job_id'";
+            $where_test = "js_test_info.job_id='$job_id' AND js_test_info.js_id='$jobseeker_id'";
             $join_arr = array(
                 'js_info' => 'js_info.job_seeker_id=js_test_info.js_id |INNER',
             );
