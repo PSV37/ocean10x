@@ -46,6 +46,9 @@
               </thead>
               <tbody>
                 <?php $key = 1; if (!empty($exam_attended_candidates)): foreach ($exam_attended_candidates as $ct_row) :
+                  $js_id = $ct_row['js_id'];
+                  $exam_res = getExamResultByID($js_id,$job_id); 
+                  print_r($exam_res);
                   // $marks = $ct_row['total_marks']; 
                   // $per = ($marks * 100)/NUMBER_QUESTIONS;
                 ?>
