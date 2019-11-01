@@ -67,7 +67,7 @@
                   <?php
                       $key++;
                       endforeach;
-                      
+                      endif; 
                       endforeach;
                   ?>
                   <?php else : ?> 
