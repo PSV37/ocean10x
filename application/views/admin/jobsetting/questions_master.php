@@ -20,6 +20,12 @@
             </section>
 
             <br/>
+			<div class="container-fluid">
+			<div class="col-md-10"></div>
+			<div class="col-md-2">
+			<a href="questionbank-master"><button type="button" class="btn btn-info">Add Question</button></a>
+			</div>
+			</div>
             <div class="container-fluid">
                <section class="content">
     <div class="row">
@@ -36,16 +42,13 @@
                
             
 					      <div class="row">
-                    <div class="col-md-10 col-md-offset-1">
+                    <div class="col-md-12 col-md-offset-1">
                 <table class="table table-bordered table-striped" id="dataTables-example">
                     <thead>
                     <tr>
                         <th class="active">SL</th>
                         <th class="active">Subject</th>
                         <th class="active">Topic</th>
-                        <th class="active">Subtopic</th>
-					    <th class="active">Line Item 1</th>
-						 <th class="active">Line Item 2</th>
 						<th class="active">Question Type</th>
 						<th class="active">Question</th>
                         <th class="active col-sm-2">Action</th>
@@ -58,9 +61,6 @@
                             <td><?php echo $key ?></td>
                             <td><?php echo $ct_row['skill_name'] ?></td>
                             <td><?php echo $ct_row['topic_name'] ?></td>
-                            <td><?php echo $ct_row['subtopic_name'] ?></td>
-							<td><?php echo $ct_row['title'] ?></td>
-							<td><?php echo $ct_row['titles'] ?></td>
 							<td><?php echo $ct_row['ques_type'] ?></td>
 							<td><?php echo $ct_row['question'] ?></td>
                             <td>
@@ -106,4 +106,18 @@ $("#subject").select2( {
 	placeholder: "Select Subject",
 	allowClear: true
 	} );
+</script>
+
+ <script>
+$(function() {
+  // choose target dropdown
+  var select = $('.subject');
+  select.html(select.find('option').sort(function(x, y) {
+    // to change to descending order switch "<" for ">"
+    return $(x).text() > $(y).text() ? 1 : -1;
+  }));
+
+  // select default item after sorting (first item)
+  // $('select').get(0).selectedIndex = 0;
+});
 </script>

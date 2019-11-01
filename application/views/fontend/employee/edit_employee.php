@@ -48,7 +48,7 @@
 									<div class="col-md-4">
                                     <div class="form-group">
 									<label for="exampleInputEmail1">Department<span class="required">*</span></label>
-									<select  name="dept_id" id="dept_id" class="form-control">
+									<select  name="dept_id" id="dept_id" class="form-control department">
 										<option value="">Select Department</option>
 										<?php foreach($department as $key){?>
 										<option value="<?php echo $key['dept_id']; ?>"<?php if($result['dept_id'] == $key['dept_id']){ echo "selected"; }?>><?php echo $key['department_name']; ?></option>
@@ -71,7 +71,7 @@
 									 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Contact No.<span class="required">*</span></label>
-                                       <input type="tel" name="mobile" id="mobile" class="form-control" value="<?php echo $result['mobile']; ?>">
+                                       <input type="tel" name="mobile" id="mobile" class="form-control" value="<?php echo $result['mobile']; ?>" onkeypress="phoneno()" maxlength="10">
 									 </div>
                                 </div>
 								
@@ -127,7 +127,7 @@
 								<div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Pincode<span class="required">*</span></label>
-									<input type="text" name="pincode" id="pincode" class="form-control" autocomplete="off" value="<?php echo $result['pincode']; ?>"></textarea>
+									<input type="text" name="pincode" id="pincode" class="form-control" autocomplete="off" value="<?php echo $result['pincode']; ?>">
 									</div>
 								   </div>
 								<div class="col-sm-6">
@@ -283,6 +283,86 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 
        
 </script>	   
+
+
+<script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
+<script>
+$("#dept_id").select2( {
+	placeholder: "Select Department",
+	allowClear: true
+	} );
+</script>
+
+<!--<script>
+$("#country_id").select2( {
+	placeholder: "Select Country",
+	allowClear: true
+	} );
+</script>
+
+  <script>
+$("#country_id").html($("#country_id option").sort(function (a, b) {
+    return a.text == b.text ? 0 : a.text < b.text ? -1 : 1
+}))
+</script>
+
+
+
+<script>
+$(function() {
+  // choose target dropdown
+  var select = $('.department');
+  select.html(select.find('option').sort(function(x, y) {
+    // to change to descending order switch "<" for ">"
+    return $(x).text() > $(y).text() ? -1 : 1;
+  }));
+
+  // select default item after sorting (first item)
+  $('select').get(0).selectedIndex = 0;
+});
+</script>-->
+<script>        
+           function phoneno(){          
+            $('#mobile').keypress(function(e) {
+                var a = [];
+                var k = e.which;
+
+                for (i = 48; i < 58; i++)
+                    a.push(i);
+
+                if (!(a.indexOf(k)>=0))
+                    e.preventDefault();
+            });
+        }
+       </script>
+	   
+	   <script>
+  var BASE_URL = "<?php echo base_url(); ?>";
+ 
+ $(document).ready(function() {
+    $( "#pincode" ).autocomplete({
+ 
+        source: function(request, response) {
+            $.ajax({
+            url: BASE_URL + "employer/search",
+            data: {
+                    term : request.term
+             },
+            dataType: "json",
+            success: function(data){
+               var resp = $.map(data,function(obj){
+                    return obj.pincode;
+               }); 
+ 
+               response(resp);
+            }
+        });
+    },
+    minLength: 1
+ });
+});
+</script>
+	   
 	   
 <!-- <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script> -->
 <!-- <script>

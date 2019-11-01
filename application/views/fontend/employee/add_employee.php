@@ -7,7 +7,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-6">
-        <h1 class="page-heading">All Question's </h1>
+        <h1 class="page-heading">Add Employee </h1>
       </div>
       <div class="col-md-6 col-sm-6">
         <div class="breadCrumb"><a href="#.">Home</a> / <span>Add Employee</span></div>
@@ -31,25 +31,34 @@
 
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="box-body">
+					<?php
+if (isset($message_display)) {
+echo "<div class='message'>";
+echo $message_display;
+echo "</div>";
+}
+?>
 					<div class="container-fluid">
                         <div class="col-md-4">
                             <div class="form-group">                                       
-							   <label for="exampleInputEmail1">Employee No <span class="required">*</span></label>
+							   <label for="exampleInputEmail1">Employee Number <span class="required">*</span></label>
                                 
-								<input type="number" min="1" name="emp_no" id="emp_no" class="form-control" autocomplete="off">
+								<input type="number" min="1" name="emp_no" id="emp_no" class="form-control" autocomplete="off" value="<?php echo set_value('emp_no'); ?>">
+								<span style="color:#ff0000;"><?php echo form_error('emp_no'); ?></span>
 								</div>
                         </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Name <span class="required">*</span></label>
-                                         <input type="text" name="emp_name" id="emp_name" class="form-control" autocomplete="off">
-                                    </div>
+                                         <input type="text" name="emp_name" id="emp_name" class="form-control name-valid" autocomplete="off" value="<?php echo set_value('emp_name'); ?>">
+                                    <span style="color:#ff0000;"><?php echo form_error('emp_name'); ?></span>
+									</div>
                                 </div>
 									<div class="col-md-4">
                                     <div class="form-group">
 									<label for="exampleInputEmail1">Department<span class="required">*</span></label>
-									<select  name="dept_id" id="dept_id" class="form-control">
+									<select  name="dept_id" id="dept_id" class="form-control department">
 										<option value="">Select Department</option>
 										<?php foreach($result as $key){?>
 										<option value="<?php echo $key['dept_id']; ?>"><?php echo $key['department_name']; ?></option>
@@ -62,14 +71,16 @@
 									 <div class="col-md-4">
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Email-Id<span class="required">*</span></label>
-                                    <input type="email" name="email" id="email" class="form-control" autocomplete="off">
+                                    <input type="email" name="email" id="email" class="form-control" value="<?php echo set_value('email'); ?>">
+									<?php echo form_error('email'); ?>
 										</div>
 									</div>
 									
 										 <div class="col-md-4">
 								  <div class="form-group">
                                         <label for="exampleInputEmail1">Password<span class="required">*</span></label>
-                                         <input type="password" name="password" id="password" class="form-control">
+                                         <input type="password" name="password" id="password" class="form-control" value="<?php echo set_value('password'); ?>">
+										<?php echo form_error('password'); ?>
 										</div>
 									</div>
 								
@@ -77,7 +88,8 @@
 									 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Contact No.<span class="required">*</span></label>
-                                       <input type="tel" name="mobile" id="mobile" class="form-control" autocomplete="off">
+                                       <input type="tel" name="mobile" id="mobile" class="form-control" autocomplete="off" onkeypress="phoneno()" maxlength="10" value="<?php echo set_value('mobile'); ?>">
+									 <?php echo form_error('mobile'); ?>
 									 </div>
                                 </div>
 								
@@ -97,7 +109,7 @@
 	                                        <div class="col-md-4 col-sm-4">
 	                                        	<div class="formrow">
 	                                        <label class="control-label">Company Country: <span class="required">*</span></label>
-										  <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
+										  <select  name="country_id" id="country_id" class="form-control country" onchange="getStates(this.value)">
 											<option value="">Select Country</option>
 											<?php foreach($country as $key){?>
 											<option value="<?php echo $key['country_id']; ?>"<?php if($company_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
@@ -139,7 +151,8 @@
 									<div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Pincode<span class="required">*</span></label>
-									<input type="text" name="pincode" id="pincode" class="form-control"></textarea>
+									<input type="text" name="pincode" id="pincode" class="form-control" value="<?php echo set_value('pincode'); ?>">
+									<?php echo form_error('pincode'); ?>
 									</div>
 								   </div>
                                 </div>										
@@ -150,7 +163,7 @@
 
             </form>
 
-							<span class="text-danger"><?php echo validation_errors(); ?></span>
+							
 							
           </div>
         </div>
@@ -170,40 +183,7 @@
 <script type="text/javascript">
 document.getElementsByClassName('form-control').innerHTML+="<br />";
 </script>
-<?php $this->load->view("fontend/layout/footer.php"); ?>
-
-
- 
-	  
-	  <script>
-  
-  
-  function hideshowfun()
-  {
-  
-      var a = $('#category').val();
-      
-      if(a=='MCQ')
-      {
-          $('#comp_name').hide();
-      }
-     else{
-         $('#comp_name').show();
-     } 
-     
-     if(a=='Subjective' || a=='Practical')
-      {
-          $('#name').hide();
-      }
-     else{
-         $('#name').show();
-     } 
-     
-      
-  }
-</script>	
-
-	   
+<?php $this->load->view("fontend/layout/footer.php"); ?>   
 	   
 <script>
 	function getStates(id){
@@ -282,8 +262,107 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 });
 
 </script> 
-  
 
+<script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
+<script>
+$("#dept_id").select2( {
+	placeholder: "Select Department",
+	allowClear: true
+	} );
+</script>
+
+<script>
+$("#country_id").select2( {
+	placeholder: "Select Country",
+	allowClear: true
+	} );
+</script>
+
+  <script>
+$(function() {
+  // choose target dropdown
+  var select = $('.country');
+  select.html(select.find('option').sort(function(x, y) {
+    // to change to descending order switch "<" for ">"
+    return $(x).text() > $(y).text() ? 1 : -1;
+  }));
+
+  // select default item after sorting (first item)
+  // $('select').get(0).selectedIndex = 0;
+});
+</script>
+
+
+
+<script>
+$(function() {
+  // choose target dropdown
+  var select = $('.department');
+  select.html(select.find('option').sort(function(x, y) {
+    // to change to descending order switch "<" for ">"
+    return $(x).text() > $(y).text() ? 1 : -1;
+  }));
+
+  // select default item after sorting (first item)
+  //$('select').get(0).selectedIndex = 0;
+});
+</script>
+
+<script>        
+           function phoneno(){          
+            $('#mobile').keypress(function(e) {
+                var a = [];
+                var k = e.which;
+
+                for (i = 48; i < 58; i++)
+                    a.push(i);
+
+                if (!(a.indexOf(k)>=0))
+                    e.preventDefault();
+            });
+        }
+       </script>
+
+<script>
+  var BASE_URL = "<?php echo base_url(); ?>";
+ 
+ $(document).ready(function() {
+    $( "#pincode" ).autocomplete({
+ 
+        source: function(request, response) {
+            $.ajax({
+            url: BASE_URL + "employer/search",
+            data: {
+                    term : request.term
+             },
+            dataType: "json",
+            success: function(data){
+               var resp = $.map(data,function(obj){
+                    return obj.pincode;
+               }); 
+ 
+               response(resp);
+            }
+        });
+    },
+    minLength: 1
+ });
+});
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+         $('.name-valid').on('keypress', function(e) {
+          var regex = new RegExp("^[a-zA-Z ]*$");
+          var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+          if (regex.test(str)) {
+             return true;
+          }
+          e.preventDefault();
+          return false;
+         });
+        });
+</script>
 <!-- <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script> -->
 <!-- <script>
 $("#subject").select2( {

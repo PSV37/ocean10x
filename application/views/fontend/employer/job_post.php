@@ -38,17 +38,18 @@
                 <div class="col-md-6 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Job Title<span class="required">*</span> </label>
-                    <input type="text" name="job_title" required value="<?php 
+                    <input type="text" name="job_title" value="<?php 
                                             	 if(!empty($job_info->job_title)){
                                             	 	echo $job_info->job_title;
                                             	 }
-                                            ?>" class="form-control">
+                                            ?><?php echo set_value('job_title'); ?>" class="form-control" autocomplete="off">
+											<?php echo form_error('job_title'); ?>
                   </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Job Industry<span class="required">*</span> </label>
-                    <select name="job_category" required class="form-control" data-style="btn-default" data-live-search="true">
+                    <select name="job_category" id="job_category" required class="form-control industry" data-style="btn-default" data-live-search="true">
                       <option value="">Select Industry</option>
                         <?php if(!empty($job_info->job_category)) {
                             echo $this->job_category_model->selected($job_info->job_category);
@@ -123,7 +124,7 @@
                   <div class="col-md-4 col-sm-4">
                     <div class="formrow">
                       <label class="control-label ">Job Country<span class="required">*</span> </label>
-                      <select  name="country_id" class="form-control" onchange="getStates(this.value)">
+                      <select  name="country_id" id="country_id" class="form-control country" onchange="getStates(this.value)" data-style="btn-default" data-live-search="true">
                         <option value="">Select Country</option>
                           <?php foreach($country as $key){?>
                             <option value="<?php echo $key['country_id']; ?>"<?php if($company_info->job_location==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
@@ -160,13 +161,13 @@
                          if(!empty($job_info->working_hours)){
                           echo $job_info->working_hours;
                          }
-                      ?>" class="form-control" >
+                      ?>" class="form-control" autocomplete="off">
                   </div>
                 </div>
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Job Deadline<span class="required">*</span></label>
-                      <input type="text" name="job_deadline" class="form-control datepicker" id="job_deadline_day" required value="">
+                      <input type="text" name="job_deadline" class="form-control datepicker" id="job_deadline_day" required value="" autocomplete="off">
                   </div>
                 </div>
 
@@ -185,20 +186,20 @@
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Salary Offered<span class="required">*</span></label>
-                    <input type="number" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1">
+                    <input type="number" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1" autocomplete="off">
                   </div>
                 </div>
 
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Preferred Age(From)</label>
-               		   <input class="form-control" required name="preferred_age_from"  value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>" type="number" >
+               		   <input class="form-control" required name="preferred_age_from"  value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>" type="number" autocomplete="off">
                   </div>
                 </div>
         				<div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Preferred Age(To)</label>
-               		  <input class="form-control" required name="preferred_age_to" value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>" type="number" >
+               		  <input class="form-control" required name="preferred_age_to" value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>" type="number" autocomplete="off">
                   </div>
         				</div>
                
@@ -216,7 +217,7 @@
                            if(!empty($job_info->no_jobs)){
                               echo $job_info->no_jobs;
                            }
-                      ?>" />
+                      ?>" autocomplete="off"/>
                   </div>
                 </div>
                 <div class="col-md-4 col-sm-12">
@@ -226,7 +227,7 @@
                       if(!empty($job_info->experience)){
                           echo $job_info->experience;
                        }
-                    ?>" />
+                    ?>" autocomplete="off"/>
                   </div>
                 </div>
              
@@ -462,4 +463,48 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
   getEducationSpecial_load();
 });
 	   
+</script>
+
+<script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
+
+<script>
+$("#job_category").select2( {
+	placeholder: "Select Industry",
+	allowClear: true
+	} );
 </script> 
+<script>
+$("#country_id").select2( {
+	placeholder: "Select Country",
+	allowClear: true
+	} );
+</script> 
+
+<script>
+$(function() {
+  // choose target dropdown
+  var select = $('.industry');
+  select.html(select.find('option').sort(function(x, y) {
+    // to change to descending order switch "<" for ">"
+    return $(x).text() > $(y).text() ? 1 : -1;
+  }));
+
+  // select default item after sorting (first item)
+  //$('select').get(0).selectedIndex = 0;
+});
+</script>
+
+<script>
+$(function() {
+  // choose target dropdown
+  var select = $('.country');
+  select.html(select.find('option').sort(function(x, y) {
+    // to change to descending order switch "<" for ">"
+    return $(x).text() > $(y).text() ? 1 : -1;
+  }));
+
+  // select default item after sorting (first item)
+  //$('select').get(0).selectedIndex = 0;
+});
+</script>
+

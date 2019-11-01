@@ -136,20 +136,20 @@
                         <div class="uniname"><i class="fa fa-envelope" aria-hidden="true"></i> <?php echo $seeker_info->email; ?> </div>
                     </div>
 
-                    <div class="col-md-4">
+                   <div class="col-md-4">
                       <?php $exp=($this->Job_seeker_experience_model->experience_list_by_id($v_applicant->job_seeker_id));?>
 
-                    	<div class="exp">
+                    	 <!--<div class="exp">
 						            <label>Company Name</label>
                         <?=(!empty($exp[0]->company_name)?'<strong>'.$exp[0]->company_name.'</strong>':'');?></strong>
 							         <!--<div>
                             <?=(!empty($exp[0]->company_name)?''.$exp[0]->designation.'('.$exp[0]->duration.')':'');?></strong>
-                            </div>-->
+                            </div>
                         </div>
                         <div class="exp">
                         	<?=(!empty($exp[1]->company_name)?'<strong>'.$exp[1]->company_name.'</strong>':'');?></strong>
                           <?=(!empty($exp[1]->company_name)?''.$exp[1]->designation.'('.$exp[1]->duration.')':'');?></strong>
-                        </div>
+                        </div>-->
                     </div>
                     <?php $career = ($this->job_career_model->js_careerinfo_by_seeker($v_applicant->job_seeker_id));?>
                     <div class="col-md-2">

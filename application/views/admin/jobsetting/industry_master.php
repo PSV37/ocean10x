@@ -48,8 +48,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Industry Name <span class="required">*</span></label>
-                                      <input type="text" name="industry_name" class="form-control" value="<?php if (!empty($edit_industry_info)) echo $row['industry_name'];?>" placeholder='Industry Name' required>
-                                    </div>
+                                      <input type="text" name="industry_name" class="form-control" value="<?php if (!empty($edit_industry_info)) echo $row['industry_name'];?>" placeholder='Industry Name' required>                                 
+								   </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -123,6 +123,5 @@
 
 
 </div><!-- /.right-side -->
-
-       
+      
 <?php $this->load->view('admin/components/footer'); ?>

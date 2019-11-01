@@ -977,12 +977,13 @@ public function addemployee(){
 	  $user_id = $this->session->userdata('company_profile_id');
 	if(isset($_POST['submit_employee'])){
 		$this->form_validation->set_rules('emp_no', 'Employee No.', 'required|min_length[3]|max_length[6]|alpha_numeric');
-		$this->form_validation->set_rules('emp_name', 'organization Name', 'required');
-		$this->form_validation->set_rules('email', 'Email Id', 'required');
+		$this->form_validation->set_rules('emp_name', 'Name', 'required');
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[employee.email]');
 		$this->form_validation->set_rules('mobile', ' Contact No.', 'required|regex_match[/^[0-9]{10}$/]');
 		$this->form_validation->set_rules('password', 'password', 'required|max_length[15]|min_length[6]|alpha_numeric');
 		$this->form_validation->set_rules('dept_id', 'Department', 'required');
 		$this->form_validation->set_rules('address', 'Address', 'required');
+		$this->form_validation->set_rules('pincode', 'Pincode', 'required|numeric');
 		
                         array('required' => 'You must provide a %s.');
 
@@ -1006,9 +1007,9 @@ public function addemployee(){
 	                $NewFileName = $_FILES['photo']['name']; 
 	                
 	                
-					$config['upload_path'] = './asset/photo/';
-	                $config['allowed_types'] = 'gif|jpg|jpeg|png';
-	                $config['max_size']    = '3000000';
+					$config['upload_path'] = 'employee/';
+	                $config['allowed_types'] = 'gif|jpg|jpeg|png|pdf|doc|docx|odt|xlsm|xls|xlm|xla|xlsx|bmp|docm|dotx|dotm|docb|gif';
+	                $config['max_size']    = '10000';
 	                //$config['max_width']  = '1024';
 	                //$config['max_height']  = '768';
 	                $config['file_name'] = $NewFileName;
@@ -1044,6 +1045,7 @@ public function addemployee(){
 		$data['country_id'] = $this->input->post('country_id');
 		$data['state_id'] = $this->input->post('state_id');
 		$data['city_id'] = $this->input->post('city_id');
+		$data['pincode'] = $this->input->post('pincode');
 		$data['address'] = $this->input->post('address');
 		$data['emp_created_date'] = $this->input->post('emp_created_date');
 		$data['emp_created_by'] = $user_id;
@@ -1056,7 +1058,7 @@ public function addemployee(){
 		
 		$data['emp_created_date'] = date('Y-m-d H:i:s');
 		$this->Master_model->master_insert($data,'employee');
-		redirect(base_url().'employer');
+		redirect(base_url().'employer/allemployee');
 	}
 	}
 $data['result'] = $this->Master_model->getMaster('department' ,$select=false);
@@ -1073,7 +1075,10 @@ $data['state'] = $this->Master_model->getMaster('state',$where=false);
 	$where='employee.org_id="'.$employer.'" and employee.emp_status!= 0';
 	//$data['result'] = $this->Master_model->getMaster('industry',$where=FALSE);
 	$join = array(
-		'department' => 'department.dept_id = employee.dept_id|INNER'
+		'department' => 'department.dept_id = employee.dept_id|INNER',
+		'country' => 'country.country_id = employee.country_id|INNER',
+		'state' => 'state.state_id = employee.state_id|INNER',
+		'city' => 'city.id = employee.city_id|INNER',
 	);
 	
 	$res = $this->Master_model->getMaster('employee',$where, $join);
@@ -1149,12 +1154,12 @@ public function deleteemployee()
 	
     }
 public function postEditData(){
-    $this->form_validation->set_rules('emp_no', 'Employee No.', 'required');
-	$this->form_validation->set_rules('emp_name', 'organization Name', 'required');
-	$this->form_validation->set_rules('email', 'Email Id', 'required');
-	$this->form_validation->set_rules('mobile', ' Contact No.', 'required');
-	$this->form_validation->set_rules('dept_id', 'Department', 'required');
-	$this->form_validation->set_rules('address', 'Address', 'required');
+   $this->form_validation->set_rules('emp_no', 'Employee No.', 'required|min_length[3]|max_length[6]|alpha_numeric');
+		$this->form_validation->set_rules('emp_name', 'Name', 'required');
+		$this->form_validation->set_rules('mobile', ' Contact No.', 'required|regex_match[/^[0-9]{10}$/]');
+		$this->form_validation->set_rules('dept_id', 'Department', 'required');
+		$this->form_validation->set_rules('address', 'Address', 'required');
+		$this->form_validation->set_rules('pincode', 'Pincode', 'required|numeric');
 		
     array('required' => 'You must provide a %s.');
 
@@ -1182,6 +1187,7 @@ public function postEditData(){
     		$data['country_id'] = $this->input->post('country_id');
     		$data['state_id'] = $this->input->post('state_id');
     		$data['city_id'] = $this->input->post('city_id');
+			$data['pincode'] = $this->input->post('pincode');
     		$data['emp_status'] = $this->input->post('emp_status');
     		$data['emp_updated_date'] = date('Y-m-d H:i:s');
     		$data['emp_updated_by'] = $user_id;

@@ -20,7 +20,7 @@ class Login extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'User Login';
+        $data['title'] = 'Admin Login';
         $data['subview'] = $this->load->view('login', $data, true);
         $this->load->view('login', $data);
 

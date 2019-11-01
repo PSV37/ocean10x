@@ -9,8 +9,7 @@
     font-weight: bold;
 }
 </style>  
- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>           
+          
 <!-- Page Title start -->
 <div class="pageTitle">
   <div class="container">
@@ -78,7 +77,7 @@
                                         <div class="col-md-3 col-sm-12">
                                         	<div class="formrow">
 											<label class="control-label">Country Code:</label>
-											<select id="country" name="country_code" class="form-control">
+											<select id="country" name="country_code" class="form-control country_code">
 												<!-- <option value="">Select Country Code</option> -->
 												<br/>
 												<option><?php echo $company_info->country_code?></option>
@@ -322,7 +321,7 @@
                                             	 if(!empty($company_info->company_phone)){
                                             	 	echo $company_info->company_phone;
                                             	 }
-                                            ?>" class="form-control" maxlength="15" id="tbNumbers" onkeypress="javascript:return isNumber(event)" style="margin-left:-32px; width:203px;">
+                                            ?>" class="form-control" maxlength="10" id="company_phone" onkeypress="phoneno()" style="margin-left:-32px; width:203px;" maxlength="10">
                                             </div>
                                         </div>
                                     </div><!-- end row -->
@@ -331,7 +330,7 @@
                                         <div class="col-md-6 col-sm-12">
                                         <div class="formrow">
                                         	<label class="control-label">Company Services: <span class="required">*</span></label>
-                                            <select name="company_category" id="company_category" class="form-control" data-style="btn-default" data-live-search="true">
+                                            <select name="company_category" id="company_category" class="form-control services" data-style="btn-default" data-live-search="true">
                                             	<option value="">Select Services</option> 
                                                 <?php if(!empty($company_info->company_category)) {
                                                 echo $this->job_category_model->selected($company_info->company_category);
@@ -375,7 +374,7 @@
 				                                     if(!empty($company_info->cont_person_mobile)){
 				                                        echo $company_info->cont_person_mobile;
 				                                     }
-				                                ?>">
+				                                ?>" onkeypress="phonenoo()" maxlength="10">
 					                        </div>
 					                      </div>
 					                                   
@@ -433,7 +432,7 @@
 	                                        <div class="col-md-4 col-sm-4">
 	                                        	<div class="formrow">
 	                                        <label class="control-label">Company Country: <span class="required">*</span></label>
-										  <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
+										  <select  name="country_id" id="country_id" class="form-control country" onchange="getStates(this.value)">
 											<option value="">Select Country</option>
 											<?php foreach($country as $key){?>
 											<option value="<?php echo $key['country_id']; ?>"<?php if($company_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
@@ -734,5 +733,93 @@ $("#country").select2( {
  });
 });
 </script>
-  
+
+
+<script>
+$(function() {
+  // choose target dropdown
+  var select = $('.counrey_code');
+  select.html(select.find('option').sort(function(x, y) {
+    // to change to descending order switch "<" for ">"
+    return $(x).text() > $(y).text() ? 1 : -1;
+  }));
+
+  // select default item after sorting (first item)
+  //$('select').get(0).selectedIndex = 0;
+});
+</script>
+
+
+<script>
+$(function() {
+  // choose target dropdown
+  var select = $('.counrey_code');
+  select.html(select.find('option').sort(function(x, y) {
+    // to change to descending order switch "<" for ">"
+    return $(x).text() > $(y).text() ? 1 : -1;
+  }));
+
+  // select default item after sorting (first item)
+  //$('select').get(0).selectedIndex = 0;
+});
+</script>
+
+<script>
+$(function() {
+  // choose target dropdown
+  var select = $('.services');
+  select.html(select.find('option').sort(function(x, y) {
+    // to change to descending order switch "<" for ">"
+    return $(x).text() > $(y).text() ? 1 : -1;
+  }));
+
+  // select default item after sorting (first item)
+  //$('select').get(0).selectedIndex = 0;
+});
+</script>
+
+<script>
+$(function() {
+  // choose target dropdown
+  var select = $('.country');
+  select.html(select.find('option').sort(function(x, y) {
+    // to change to descending order switch "<" for ">"
+    return $(x).text() > $(y).text() ? 1 : -1;
+  }));
+
+  // select default item after sorting (first item)
+  //$('select').get(0).selectedIndex = 0;
+});
+</script>
+
+		<script>        
+           function phoneno(){          
+            $('#company_phone').keypress(function(e) {
+                var a = [];
+                var k = e.which;
+
+                for (i = 48; i < 58; i++)
+                    a.push(i);
+
+                if (!(a.indexOf(k)>=0))
+                    e.preventDefault();
+            });
+        }
+       </script>
+	   
+	   <script>        
+           function phonenoo(){          
+            $('#cont_person_mobile').keypress(function(e) {
+                var a = [];
+                var k = e.which;
+
+                for (i = 48; i < 58; i++)
+                    a.push(i);
+
+                if (!(a.indexOf(k)>=0))
+                    e.preventDefault();
+            });
+        }
+       </script>
+		
  <?php $this->load->view("fontend/layout/footer.php"); ?>

@@ -22,10 +22,7 @@ class Questionbank extends MY_Controller
         $where_skill= "status=1";
 		
         $data['skill_master'] = $this->Master_model->getMaster('skill_master',$where_skill);
-		
-		//$where_opt= "options.status=1";
-        $data['options'] = $this->Master_model->getMaster('options');
-		
+				
         $where_topic= "topic.topic_status=1";
         $data['topic'] = $this->Master_model->getMaster('topic',$where_topic);
         
@@ -39,10 +36,13 @@ class Questionbank extends MY_Controller
 		$data['lineitemlevel'] = $this->Master_model->getMaster('lineitemlevel',$where_lineitemlevel);
 		
 		
+        $data['options'] = $this->Master_model->getMaster('options');
+		
         $data['questionbank'] = $this->Master_model->getMaster('questionbank');
 
         $this->load->view('admin/jobsetting/questionbank_master', $data);
     }
+						/*Add /Edit Question */
 
         public function save_questionbank($id = null){
           
@@ -128,14 +128,12 @@ class Questionbank extends MY_Controller
                 redirect('admin/questions');
             }
         }
-
+					
+					/*Edit Question */
+					
     public function edit_questionbank($id){
         $data['title']="Edit Questionbank";
-		//$where_opt= "options.status=1";
-        $data['options'] = $this->Master_model->getMaster('options');
-        
-        $data['questionbank'] = $this->Master_model->getMaster('questionbank',$where_all,$join_emp);
-		
+         $data['options'] = $this->Master_model->getMaster('options');		
         $where_questionbank = "ques_id='$id'";
         $data['edit_questionbank_info'] = $this->Master_model->getMaster('questionbank',$where_questionbank);
 		
@@ -151,7 +149,7 @@ class Questionbank extends MY_Controller
         $this->load->view('admin/jobsetting/questionbank_master',$data);
     }
 
-
+			/*Delete Question */
 
  public function delete_questionbank($id) {
         
@@ -162,6 +160,73 @@ class Questionbank extends MY_Controller
         $this->Master_model->master_update($ques_status,'questionbank',$where_del);
         redirect('admin/questions');
     }
+
+			/*import question*/
+
+	public function importquestion(){
+		//load model
+		$this->load->model('Questionbank_model');
+		// Check form submit or not 
+ 		if($this->input->post('upload') != NULL ){ 
+   			$data = array(); 
+   			if(!empty($_FILES['file']['name'])){ 
+    			// Set preference 
+    			$config['upload_path'] = 'question_excel/files/'; 
+    			$config['allowed_types'] = 'csv'; 
+    			$config['max_size'] = '1000'; // max_size in kb 
+    			$config['file_name'] = $_FILES['file']['name']; 
+
+    			// Load upload library 
+    			$this->load->library('upload',$config); 
+   
+    			// File upload
+    			if($this->upload->do_upload('file')){ 
+     				// Get data about the file
+     				$uploadData = $this->upload->data(); 
+     				$filename = $uploadData['file_name']; 
+
+     				// Reading file
+                    $file = fopen("question_excel/files/".$filename,"r");
+                    $i = 0;
+
+                    $importData_arr = array();
+                       
+                    while (($filedata = fgetcsv($file, 1000, ",")) !== FALSE) {
+                        $num = count($filedata);
+
+                        for ($c=0; $c < $num; $c++) {
+                            $importData_arr[$i][] = $filedata[$c];
+                        }
+                        $i++;
+                    }
+                    fclose($file);
+
+                    $skip = 0;
+
+                    // insert import data
+                    foreach($importData_arr as $userdata){
+                        if($skip != 0){
+                            $this->Questionbank_model->insertRecord($userdata);
+                        }
+                        $skip ++;
+                    }
+     				$data['response'] = 'successfully uploaded '.$filename; 
+    			}else{ 
+     				$data['response'] = 'failed'; 
+    			} 
+   			}else{ 
+    			$data['response'] = 'failed'; 
+   			} 
+   			// load view 
+   			$this->load->view('admin/jobsetting/questionbank_view',$data); 
+  		}else{
+   			// load view 
+   			$this->load->view('admin/jobsetting/questionbank_view'); 
+  		} 
+
+	}
+
+
 
 
 
@@ -241,5 +306,8 @@ function getLineitemlevel(){
 	}
 	 echo $result;
 }
+
+
+	
 
 }

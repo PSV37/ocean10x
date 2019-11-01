@@ -35,10 +35,10 @@
                                     <div class="formrow">
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12">
-                                            <input type="text" name="full_name" value="<?php echo isset($this->session->userdata['reg_jobseeker']['full_name'])?$this->session->userdata['reg_jobseeker']['full_name']:''; ?>" class="form-control" placeholder="Full Name">
+                                            <input type="text" name="full_name" value="<?php echo isset($this->session->userdata['reg_jobseeker']['full_name'])?$this->session->userdata['reg_jobseeker']['full_name']:''; ?>" class="form-control name-valid" placeholder="Full Name" autocomplete="off">
                                         </div>
                                         <div class="col-md-6 col-sm-12">
-                                            <input type="email" name="email" value="<?php echo isset($this->session->userdata['reg_jobseeker']['email'])?$this->session->userdata['reg_jobseeker']['email']:''; ?>" class="form-control" placeholder="Email">
+                                            <input type="email" name="email" value="<?php echo isset($this->session->userdata['reg_jobseeker']['email'])?$this->session->userdata['reg_jobseeker']['email']:''; ?>" class="form-control" placeholder="Email" autocomplete="off">
                                         </div>
                                     </div><!-- end row -->
                                     </div>
@@ -69,7 +69,7 @@
                                                   </select>
                                             </div>
                                             <div class="col-md-6 col-sm-12">
-                                                <input type="text" name="user_name"  value="<?php echo isset($this->session->userdata['reg_jobseeker']['user_name'])?$this->session->userdata['reg_jobseeker']['user_name']:''; ?>"class="form-control" placeholder="User Name">
+                                                <input type="text" name="user_name"  value="<?php echo isset($this->session->userdata['reg_jobseeker']['user_name'])?$this->session->userdata['reg_jobseeker']['user_name']:''; ?>"class="form-control" placeholder="User Name" autocomplete="off">
                                             </div>
                                         </div><!-- end row -->
                                     </div>
@@ -96,7 +96,7 @@
                                      <div class="row">
 
                                    <div class="col-md-6 col-sm-12">
-                                            <input id="inputchapcha" type="text"  name="captcha" value="" class="form-control" >
+                                            <input id="inputchapcha" type="text"  name="captcha" value="" class="form-control" autocomplete="off">
                                         </div>
 
                                     <div class="col-md-5 col-sm-5">
@@ -110,7 +110,7 @@
                                <div class="formrow">
                                <div class="row">
                                <div class="col-md-6 col-sm-12">
-                                    <input type="checkbox" value="" > <a  href="<?php echo base_url().'terms' ?>" target="_blank">  I agree to the Terms and Conditions</a></label>
+                                    <input type="checkbox" value="" > <a  href="<?php echo base_url().'terms' ?>" target="_blank" required>  I agree to the Terms and Conditions</a></label>
                                 </div>
                                </div>
 </div>
@@ -243,6 +243,22 @@
 
 
   </script>
+  
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+         $('.name-valid').on('keypress', function(e) {
+          var regex = new RegExp("^[a-zA-Z ]*$");
+          var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+          if (regex.test(str)) {
+             return true;
+          }
+          e.preventDefault();
+          return false;
+         });
+        });
+</script>
 
  <?php $this->load->view("fontend/layout/footer.php"); ?>
 

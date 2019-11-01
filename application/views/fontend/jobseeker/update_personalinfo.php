@@ -8,6 +8,7 @@
 </style>  
 
 
+
           <div class="section lb">
                 <div class="container">
                     <div class="row">
@@ -155,7 +156,7 @@
               	<div class="col-md-6 col-sm-12">
 	              	<div class="input-group">
 	                  <label class="control-label" for="email">Father Name:</label>
-	                  <input type="text" name="father_name" class="form-control" id="father_name"
+	                  <input type="text" name="father_name" class="form-control name-valid" id="father_name"
 	                   value="<?php
 	                         if (!empty($js_personal_info->father_name)) {
 	                           echo $js_personal_info->father_name;
@@ -166,7 +167,7 @@
                 <div class="col-md-6 col-sm-12">         
 	              <div class="input-group">
 	                  <label class="control-label" for="email">Mother Name:</label>
-	                  <input type="text" name="mother_name" class="form-control" id="mother_name"
+	                  <input type="text" name="mother_name" class="form-control name-valid" id="mother_name"
 	                   value="<?php
 	                         if (!empty($js_personal_info->mother_name)) {
 	                           echo $js_personal_info->mother_name;
@@ -751,14 +752,28 @@
 				 </select>
               </div>
             </div>
-
-            <div></div>
+			</div>
+			 </div>
+            <div class="row">
+			 <div class="col-md-12">
+			 <div class="col-md-6 col-sm-12">
+				<div class="input-group">
+	                <label class="control-label" for="pwd">Pincode</label>
+	               <input type="text" name="pincode" id="seeker_pincode" class="form-control" maxlength="6"  value="<?php
+	                         if (!empty($js_personal_info->pincode)) {
+	                           echo $js_personal_info->pincode;
+	                           }
+	                       ?>" required onkeypress="return isNumber(event)">
+	            </div>
+          	</div>
+			</div>
+			</div>
             <div class="row">
               <div class="col-md-12">
             <div class="col-md-12 col-sm-12">  
               	<div class="input-group">
                   	<label class="control-label" for="pwd">Present Address</label>
-                  	<textarea name="present_address" class="form-control" rows="5" id="comment"><?php 
+                  	<textarea name="present_address" class="form-control ckeditor" rows="5" id="comment"><?php 
                          if (!empty($js_personal_info->present_address)) {
                            echo $js_personal_info->present_address;
                            }
@@ -770,7 +785,12 @@
 			  
 			 <em>Check this box if Present Address and Parmanent Address are the same.</em>
 			<div class="panel-body"></div>
-			<div class="col-md-6 col-sm-12">
+			
+          </div>
+      </div>
+      <div class="row">
+              
+			  <div class="col-md-6 col-sm-12">
 				<div class="input-group">
 	                <label class="control-label" for="pwd">Country</label>
 	                <select  name="country1_id" id="country1_id" class="form-control" onchange="getStatess(this.value)">
@@ -781,10 +801,6 @@
 					</select>
 	            </div>
           	</div>
-          </div>
-      </div>
-      <div class="row">
-              <div class="col-md-12">
           	<div class="col-md-6 col-sm-12">
 			  <div class="input-group">
                  <label class="control-label" for="pwd">State</label>
@@ -795,8 +811,10 @@
 					<?php } ?>
 				 </select>
               </div>
-          	</div>
-            <div class="col-md-6 col-sm-12">
+          	</div>          
+      </div>
+	  <div class="row">
+	   <div class="col-md-6 col-sm-12">
 				<div class="input-group">
 	                <label class="control-label" for="pwd">City</label>
 	                <select  name="city1_id" id="city1_id" class="form-control">
@@ -807,14 +825,23 @@
 					 </select>
 	            </div>
           	</div>
-          </div>
-      </div>
+			 <div class="col-md-6 col-sm-12">
+				<div class="input-group">
+	                <label class="control-label" for="pwd">Pincode</label>
+	               <input type="text" name="pincode1" id="pincode1" maxlength="6" class="form-control"  value="<?php
+	                         if (!empty($js_personal_info->pincode1)) {
+	                           echo $js_personal_info->pincode1;
+	                           }
+	                       ?>" required onkeypress="return isNumber(event)">
+	            </div>
+          	</div>
+	  </div>
       <div class="row">
               <div class="col-md-12">
           	<div class="col-md-12 col-sm-12">
               <div class="input-group">
                 <label class="control-label" for="pwd">Parmanent Address</label>
-                <textarea name="parmanent_address" class="form-control" rows="5" id="comment"><?php 
+                <textarea name="parmanent_address" class="form-control ckeditor" rows="5" id="comment"><?php 
                     if (!empty($js_personal_info->parmanent_address)) {
                            echo $js_personal_info->parmanent_address;
                         }
@@ -831,7 +858,7 @@
 		        <button type="submit" class="btn btn-primary">Submit</button>
 		      </div>
             </form>
-      </div>
+     
      
     </div>
 
@@ -1481,12 +1508,14 @@ function FillBilling(f) {
 	f.country1_id.value = f.country_id.value;
     f.state1_id.value = f.state_id.value;
 	f.city1_id.value = f.city_id.value;
+	f.pincode1.value = f.pincode.value;
   }else{
 
   	f.parmanent_address.value = '';
 	f.country1_id.value = '';
     f.state1_id.value ='';
 	f.city1_id.value = '';
+	f.pincode1.value = '';
   }
 }
 </script>    
@@ -1638,3 +1667,87 @@ $(document).ready(function(){
 <style>
   .datepicker{z-index:1151 !important;}
 </style> 
+
+<script>
+  var BASE_URL = "<?php echo base_url(); ?>";
+ 
+ $(document).ready(function() {
+    $( "#seeker_pincode" ).autocomplete({
+ 
+        source: function(request, response) {
+            $.ajax({
+            url: BASE_URL + "employer/search",
+            data: {
+                    term : request.term
+             },
+            dataType: "json",
+            success: function(data){
+               var resp = $.map(data,function(obj){
+                    return obj.pincode;
+               }); 
+ 
+               response(resp);
+            }
+        });
+    },
+    minLength: 1
+ });
+});
+</script>
+
+<script>        
+           function phoneno(){          
+            $('#pincode').keypress(function(e) {
+                var a = [];
+                var k = e.which;
+
+                for (i = 48; i < 58; i++)
+                    a.push(i);
+
+                if (!(a.indexOf(k)>=0))
+                    e.preventDefault();
+            });
+        }
+       </script>
+	   
+	   
+	   <script>        
+           function phoneno(){          
+            $('#pincode1').keypress(function(e) {
+                var a = [];
+                var k = e.which;
+
+                for (i = 48; i < 58; i++)
+                    a.push(i);
+
+                if (!(a.indexOf(k)>=0))
+                    e.preventDefault();
+            });
+        }
+       </script>
+<!--Only Numbers are allowed validation-->
+<script>
+function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+}
+</script>
+<!--Only Character and Space are allowed validation-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+         $('.name-valid').on('keypress', function(e) {
+          var regex = new RegExp("^[a-zA-Z ]*$");
+          var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+          if (regex.test(str)) {
+             return true;
+          }
+          e.preventDefault();
+          return false;
+         });
+        });
+</script>
