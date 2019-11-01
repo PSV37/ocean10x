@@ -22,7 +22,7 @@ class Questionbank_model extends MY_Model {
 					"correct_answer" => trim($record[13])
                 );
 				
-                $this->db->insert('questionsbank', $newquestionsbank);
+                $this->db->insert('questionbank', $newquestionsbank);
             
         }
         
