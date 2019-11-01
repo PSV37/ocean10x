@@ -214,11 +214,11 @@ class Questionbank extends MY_Controller
 							print_r($tech_data);
 							$userdata[0]=$tech_data[0]['id'];
 							
-							$topic_id=$userdata[0];
-							$where_topic="topic_name='".$topic_id."'";
+							$topic=$userdata[1];
+							$where_topic="topic_name='".$topic."'";
 							$topic_data = $this->Master_model->getMaster('topic', $where_topic);
 							print_r($topic_data); die;
-							$userdata[0]=$topic_data[1]['topic_id'];
+							$userdata[1]=$topic_data[1]['topic_id'];
 							
 							
 							
