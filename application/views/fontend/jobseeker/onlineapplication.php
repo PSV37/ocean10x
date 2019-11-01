@@ -86,7 +86,7 @@
                                     <td><a href="<?php echo base_url(); ?>job/all-results/<?php echo $applicaiton->job_post_id; ?>" class="btn btn-success btn-xs">View Result</a></td>
                                    <?php }?>
                                   <td>
-                                    <a href="<?php echo base_url(); ?>job/all-results/<?php echo $applicaiton->job_post_id; ?>" class="btn btn-success btn-xs">Give Exam</a>
+                                    <a href="<?php echo base_url(); ?>exam/index/<?php echo base64_encode($applicaiton->job_post_id); ?>" class="btn btn-success btn-xs">Give Exam</a>
                                   </td>
                                   
                                 </tr>
@@ -158,7 +158,7 @@
                                   </td>
                                   <?php }?>
                                   <td>
-                                    <a href="<?php echo base_url(); ?>job/all-results/<?php echo $forward_applicaiton->job_post_id; ?>" class="btn btn-success btn-xs">Give Exam</a>
+                                    <a href="<?php echo base_url(); ?>exam/index/<?php echo base64_encode($forward_applicaiton->job_post_id); ?>" class="btn btn-success btn-xs">Give Exam</a>
                                   </td>
                                  
                                 </tr>
