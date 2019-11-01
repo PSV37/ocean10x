@@ -217,7 +217,7 @@ class Questionbank extends MY_Controller
 							$topic_id=$userdata[1];
 							$where_topic="topic_name='".$topic_id."'";
 							$topic_data = $this->Master_model->getMaster('topic', $where_topic);
-							//print_r($topic_data); 
+							print_r($topic_data);die(); 
 							$userdata[1]=$topic_data[1]['topic_id'];
 							
 							$subtopic=$userdata[2];
