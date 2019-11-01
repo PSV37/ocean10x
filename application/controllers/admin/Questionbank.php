@@ -245,7 +245,7 @@ class Questionbank extends MY_Controller
                         $skip ++;
                     }
      				$data['response'] = 'successfully uploaded '.$filename; 
-					 redirect('admin/questionbank-import');
+					 redirect('admin/questionbank/importquestion');
     			}else{ 
      				$data['response'] = 'failed'; 
     			} 
