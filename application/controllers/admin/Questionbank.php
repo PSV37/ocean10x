@@ -241,7 +241,7 @@ class Questionbank extends MY_Controller
 							//$this->db->last_query();
 							
                             $this->Questionbank_model->insertRecord($userdata);
-							$this->db->last_query();
+							echo $this->db->last_query();
                         }
                         $skip ++;
                     }
