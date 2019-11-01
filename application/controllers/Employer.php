@@ -1298,13 +1298,6 @@ function getLineitemlevel(){
         if (!empty($job_id) && $this->job_posting_model->check_jobid_and_post_id($job_id, $company_id) == true) {
                 
             $data['job_id'] = $job_id;
-
-            // $where_test = "js_test_info.job_id='$job_id'";
-            // $join_arr = array(
-            //     'js_info' => 'js_info.job_seeker_id=js_test_info.js_id |INNER',
-            // );
-            // $select_result = "js_test_info.marks,js_test_info.test_id,js_test_info.js_id, js_info.full_name";
-            // $data['exam_attended_candidates'] = $this->Master_model->getMaster('js_test_info', $where_test,$join_arr , $order = false, $field = false, $select_result,$limit=false,$start=false, $search=false);
             
             $where_test = "js_test_info.job_id='$job_id'";
             $join_arr = array(
@@ -1313,15 +1306,6 @@ function getLineitemlevel(){
             $select_result = "js_test_info.marks,js_test_info.test_id,js_test_info.js_id, js_info.full_name";
             $data['exam_attended_candidates']= $this->Master_model->getList($condition, $field_by, $order_by, $offset, $perpage, 'js_test_info', $search, $join_arr, $where_test, $select_result, $distinct = FALSE, $group_by = 'js_id');
             //echo $this->db->last_query(); die;
-
-            // $where_test = "js_test_info.job_id='$job_id'";
-            // $join_arr = array(
-            //     'js_info' => 'js_info.job_seeker_id=js_test_info.js_id |INNER',
-            // );
-            // $select_result = "SUM(marks) as total_marks,COUNT(test_id) as total_questions,js_info.full_name,js_test_info.js_id";
-            // $data['exam_attended_candidates'] = $this->Master_model->getMaster('js_test_info', $where_test,$join_arr , $order = false, $field = false, $select_result,$limit=false,$start=false, $search=false);
-            // $total_applicantlist = $this->job_apply_model->only_job_applicants($job_id, $company_id);
-            // echo $this->db->last_query(); die;
 
             $this->load->view('fontend/exam/result_details',$data);
         } else {

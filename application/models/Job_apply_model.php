@@ -266,6 +266,12 @@ class Job_apply_model extends MY_Model
         return true;
     }
 
-	
+// to fetch total exam attended candidates
+	public function count_exam_attended($job_id){
+        $this->db->select("*");
+        $this->db->where('job_id', $job_id)->group_by('js_id');
+        $query = $this->db->get('js_test_info'); 
+        return $query->num_rows();
+    }
 
 }
