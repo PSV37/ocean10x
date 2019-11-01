@@ -6,14 +6,10 @@ class Questionbank_model extends MY_Model {
         
         if(count($record) > 0){
             
-            // Check user
-            $this->db->select('*');
-            $this->db->where('technical_id', $record[0]);
-            $q = $this->db->get('questionsbank');
-            $response = $q->result_array();
+            
             
             // Insert record
-            if(count($response) == 0){
+            if(count($record) == 0){
                 $newquestionsbank = array(
 					"technical_id" => trim($record[0]),
                     "topic_id" => trim($record[1]),
