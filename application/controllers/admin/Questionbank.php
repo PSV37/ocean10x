@@ -239,11 +239,11 @@ class Questionbank extends MY_Controller
 							//print_r($lineitemlevel_data);die(); 
 							$userdata[4]=$lineitemlevel_data[0]['lineitemlevel_id'];
 																					
-							$options=$userdata[14];
+							$options=$userdata[13];
 							$where_options="options_type='".$options."'";
 							$options_data = $this->Master_model->getMaster('options', $where_options);
 							//print_r($options_data);die(); 
-							$userdata[14]=$options_data[0]['options_id'];
+							$userdata[13]=$options_data[0]['options_id'];
 							
 							//$this->db->last_query();
 							
