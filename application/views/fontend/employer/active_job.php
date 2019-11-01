@@ -35,7 +35,7 @@
             				    <?php echo $v_companyjobs->job_deadline; ?>
                                </div>
 
-                               <div class="posted"><strong>Job Status:</strong> <br>
+                               <div class="posted"><strong>Job Status:</strong>
                                 <?php 
                                     if ($v_companyjobs->job_deadline > date('Y-m-d')){
                                         // echo '<button class="btn btn-success btn-xs">Live <i class="fa fa-check-circle" aria-hidden="true"></i></button>';
