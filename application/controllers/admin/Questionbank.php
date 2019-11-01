@@ -213,7 +213,7 @@ class Questionbank extends MY_Controller
 							$tech_data = $this->Master_model->getMaster('skill_master', $where_skill);
 							print_r($tech_data);
 							$userdata[0]=$tech_data[0]['id'];
-							print_r($userdata);
+							
 							$topic=$userdata[1];
 							$where_topic="topic_name='".$topic."'";
 							$topic_data = $this->Master_model->getMaster('topic', $where_topic);
