@@ -49,6 +49,9 @@
 	<div class="panel-body">
 		<input type='file' name='file' required>
 		</div>
+			<div class="panel-body">
+			<input type="hidden" name="is_admin" value="1" class="form-control">
+			</div>		
 		<div class="panel-body">
 		<input type='submit' value='Upload' name='upload' class="btn bg-navy">
 		</div>
