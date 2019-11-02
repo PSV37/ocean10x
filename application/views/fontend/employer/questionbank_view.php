@@ -35,7 +35,7 @@
 	  </div>
 		
 		<div class="col-md-1">
-		<input type='submit' value='Import' name='upload' class="btn btn-info">
+		<input type='submit' value='Import' name='upload' class="btn btn-info" style="width:100px;">
 		
 		</div>
 	</form>
