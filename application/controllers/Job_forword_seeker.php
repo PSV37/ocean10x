@@ -36,9 +36,9 @@ class Job_forword_seeker extends CI_Controller {
         $where_res['job_apply_id'] = $job_id;
         $apply_res = $this->Master_model->get_master_row($tablename, $select_result, $where_res, $join = FALSE);
 
-        $company_id = $apply_res['company_id'];
-        $job_post_id = $apply_res['job_post_id'];
-	    
+        echo "comp  ".$company_id = $apply_res['company_id'];
+        echo "job_post ".$job_post_id = $apply_res['job_post_id'];
+	    die;
 	        $wherecan="email= '$email_id'";
 	        $check_candidate = $this->Master_model->getMaster('js_info', $wherecan);
 	        // echo $this->db->last_query(); echo "<br><br>"; 
