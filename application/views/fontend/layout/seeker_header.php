@@ -10,13 +10,7 @@
     <meta name="author" content="">
     <meta name="keywords" content="">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/font-awesome.css"> 
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/responsive.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/main.css">
-<link href="<?php echo base_url(); ?>asset/css/jquery-ui.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>asset/jc/css/jquery.Jcrop.css">
-
-
+    
     <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 </head>
 
@@ -38,11 +32,13 @@
             <ul class="nav navbar-nav">              
              
             <li>
-            	<?php $job_seeker=$this->session->userdata('job_seeker_id'); ?>                             
+            	<?php  $job_seeker=$this->session->userdata('job_seeker_id'); ?>                             
                 <ul class="nav navbar-nav navbar-right">
                   <li class="dropdown yamm-half membermenu hasmenu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                      <?php if(!empty($this->Job_seeker_photo_model->get_jobseeker_photo($job_seeker))):?>
+                      <?php
+                     
+                       if(!empty($this->Job_seeker_photo_model->get_jobseeker_photo($job_seeker))):?>
                       <img src="<?php echo base_url() ?>upload/<?php echo  $this->Job_seeker_photo_model->get_jobseeker_photo($job_seeker);?>" alt="" class="img-circle"> <strong>Welcome <?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></strong></a>
                       <?php else: ?>
                       <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" alt="" class="img-circle"><strong>Welcome <?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></strong></a>
