@@ -236,7 +236,7 @@ class Questionbank extends MY_Controller
 							$lineitemlevel=$userdata[4];
 							$where_lineitemlevel="titles='".$lineitemlevel."'";
 							$lineitemlevel_data = $this->Master_model->getMaster('lineitemlevel', $where_lineitemlevel);
-							print_r($lineitemlevel_data);die(); 
+							//print_r($lineitemlevel_data);die(); 
 							$userdata[4]=$lineitemlevel_data[0]['lineitemlevel_id'];
 							
 																					
@@ -252,8 +252,9 @@ class Questionbank extends MY_Controller
                         $skip ++;
                     }
 					
-     				$data['response'] = 'successfully uploaded '.$filename; 
-					// redirect('admin/questionbank-import',$data);
+     				$data['response'] = 'successfully uploaded '.$filename;
+					
+				   redirect('admin/questionbank-import',$data);
     			}else{ 
      				$data['response'] = 'failed'; 
     			} 
