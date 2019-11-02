@@ -252,7 +252,7 @@ class Questionbank extends MY_Controller
 							$userdata[14]=$options_data[0]['options_id'];
 							
 							//$this->db->last_query();
-							
+							echo print_r($ques_id);die();
                            $this->Questionbank_model->insertRecord($userdata);
 							//echo $this->db->last_query();die();
                         }
