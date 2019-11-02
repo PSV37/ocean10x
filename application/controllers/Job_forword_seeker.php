@@ -58,11 +58,9 @@ class Job_forword_seeker extends CI_Controller {
                         $data_status=array( 
                             'forword_job_status' => 2,
                         );
-                        $where_update1['job_post_id'] = $job_id;
-                        $where_update1['job_seeker_id'] = $job_seeker_id;
+                        $where_update1['job_apply_id'] = $job_id;
                         $status = $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
-                         echo $this->db->last_query(); echo "reg contr";die;
-                        if($status)
+                        if($status==true)
                         {
                             redirect('register/jobseeker_login', 'refresh');
                         }
@@ -77,11 +75,9 @@ class Job_forword_seeker extends CI_Controller {
                         $data_status=array( 
                             'forword_job_status' => 2,
                         );
-                        $where_update1['job_post_id'] = $job_id;
-                        $where_update1['job_seeker_id'] = $job_seeker_id;
+                        $where_update1['job_apply_id'] = $job_id;
                         $status = $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
-                         echo $this->db->last_query(); echo "index";die;
-                        if($status)
+                        if($status==true)
                         {
                             redirect('Job_forword_seeker/index');
                         }
@@ -93,11 +89,9 @@ class Job_forword_seeker extends CI_Controller {
                         $data_status=array( 
                             'forword_job_status' => 2,
                         );
-                        $where_update1['job_post_id'] = $job_id;
-                        $where_update1['job_seeker_id'] = $job_seeker_id;
+                        $where_update1['job_apply_id'] = $job_id;
                         $status = $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
-                          echo $this->db->last_query(); echo "set pass";die;
-                        if($status)
+                        if($status==true)
                         {
     	                    $data['job_seeker_id'] = $job_seeker_id;
     	                    $data['email_id'] = $email_id;
