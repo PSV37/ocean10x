@@ -32,7 +32,7 @@
 			
 			<input type="hidden" name="org_id" value="1" class="form-control">
 					
-		<input type='submit' value='Import' name='upload' class="btn btn-info btn-sm" style="width:50px; margin-left:15px;">
+		<input type='submit' value='Import' name='upload' class="btn btn-info btn-sm" style="width:60px; margin-left:15px;">
 	</form>
 
 
