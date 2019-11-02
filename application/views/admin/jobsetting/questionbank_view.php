@@ -53,7 +53,7 @@
 			<input type="hidden" name="is_admin" value="1" class="form-control">
 			</div>		
 		<div class="panel-body">
-		<input type='submit' value='Upload' name='upload' class="btn bg-navy">
+		<input type='submit' value='Import' name='upload' class="btn bg-navy">
 		</div>
 	</form>
                     </div>
