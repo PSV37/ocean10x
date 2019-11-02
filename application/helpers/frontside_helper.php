@@ -132,7 +132,7 @@ function get_metas() {
         $select_result = "is_test_required";
         $tablename = "job_posting";
         $where_res['job_post_id'] = $job_id;
-        $exam_res = $CI->Master_model->get_master_row($tablename, $select_result, $where_res, $join = FALSE)
+        $exam_res = $CI->Master_model->get_master_row($tablename, $select_result, $where_res, $join = FALSE);
      //   echo $CI->db->last_query(); die;
 
         return $exam_res;
