@@ -25,8 +25,8 @@ class Questionbank_model extends MY_Model {
                 $this->db->insert('questionbank', $newquestionsbank);
 				
 				$newquestionsbanks = array(
-					
-					"answer_id" => trim($record[13])
+					"question_id" => trim($record[13]),
+					"answer_id" => trim($record[14])
                 );
 				
                 $this->db->insert('questionbank_answer', $newquestionsbanks);
