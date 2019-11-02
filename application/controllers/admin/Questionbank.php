@@ -206,7 +206,7 @@ class Questionbank extends MY_Controller
                     // insert import data
                     foreach($importData_arr as $userdata){
                         if($skip != 0){
-							//echo "<pre>";
+							echo "<pre>";
 							//print_r($userdata); 
 							$tech_id=$userdata[0];
 							$where_skill="skill_name='".$tech_id."'";
@@ -236,14 +236,14 @@ class Questionbank extends MY_Controller
 							$lineitemlevel=$userdata[4];
 							$where_lineitemlevel="titles='".$lineitemlevel."'";
 							$lineitemlevel_data = $this->Master_model->getMaster('lineitemlevel', $where_lineitemlevel);
-							//print_r($lineitemlevel_data);die(); 
+							print_r($lineitemlevel_data);die(); 
 							$userdata[4]=$lineitemlevel_data[0]['lineitemlevel_id'];
 							
 																					
 							$options=$userdata[13];
 							$where_options="options_type='".$options."'";
 							$options_data = $this->Master_model->getMaster('options', $where_options);
-							print_r($options_data);die(); 
+							//print_r($options_data);die(); 
 							$userdata[13]=$options_data[0]['options_id'];
 							
                            $this->Questionbank_model->insertRecord($userdata);
