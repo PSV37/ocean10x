@@ -21,7 +21,7 @@
   <div class="container">
     <div class="row">
       <?php $this->load->view('fontend/layout/employer_left.php'); ?>
-      
+      <div class="content col-md-12">
         <div class="userccount empdash">
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
            
@@ -46,7 +46,7 @@
           </div>
         </div>
         <!-- end post-padding --> 
-     
+      </div>
       <!-- end col --> 
     </div>
     <!-- end row --> 
