@@ -64,7 +64,7 @@
                <li class="<?=(current_url()==base_url('job')) ? 'active':''?>"><a title="" href="<?php echo base_url() ?>job">All Jobs</a></li>
                <li><a title="" href="<?php echo base_url() ?>contact">Contact Us</a></li>
             <li class="green"><a title="" href="<?php echo base_url(); ?>employer/job-post">Submit Vacancy</a></li>
-             <?php $employer_id=$this->session->userdata('company_profile_id'); ?>
+             
              <li>
                        <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown yamm-half membermenu hasmenu">
