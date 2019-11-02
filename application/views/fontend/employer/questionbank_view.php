@@ -27,7 +27,7 @@
            
     		<form method='post' action="<?php echo base_url();?>employer/questionbank-import" enctype="multipart/form-data">
 		<div class="container-fluid">
-		<div class="col-md-12">
+		<div class="col-md-9">
 		<div class="form-group">
 		<input type='file' name='file' required>
 		</div>
