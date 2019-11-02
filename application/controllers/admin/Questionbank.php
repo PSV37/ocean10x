@@ -264,7 +264,7 @@ class Questionbank extends MY_Controller
 								'ques_created_date'=date('Y-m-d H:i:s');
 								'ques_created_by'=$user_id;
 							);
-							$q_id=$this->Master_model->master_insert($question_dt,'questionbank');
+						$this->Master_model->master_insert($question_dt,'questionbank');
      				$data['response'] = 'successfully uploaded '.$filename; 
 					// redirect('admin/questionbank-import',$data);
     			}else{ 
