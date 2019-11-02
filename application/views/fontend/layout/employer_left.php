@@ -12,6 +12,7 @@
     <li> <a href="<?php echo base_url() ?>employer/all-questions" class=""><i class="fa fa-check-square-o" aria-hidden="true"></i> Question Bank</a> </li>
     <li> <a href="<?php echo base_url() ?>employer/add-question" class=""><i class="fa fa-pencil" aria-hidden="true"></i> Add New Question</a></li>
 	<li> <a href="<?php echo base_url() ?>employer/addemployee" class=""><i class="fa fa-plus" aria-hidden="true"></i> Add Employe</a></li> 
+	<li> <a href="<?php echo base_url() ?>employer/questionbank-import" class=""><i class="fa fa-plus" aria-hidden="true"></i>Import Question</a></li> 
 	<li> <a href="<?php echo base_url() ?>employer/allemployee" class=""><i class="fa fa-user" aria-hidden="true"></i> Employee</a></li> 	
 	<li> <a href="<?php echo base_url() ?>employer/change-password" class=""><i class="fa fa-lock" aria-hidden="true"></i> Change Password </a> </li>    
     <li> <a href="<?php echo base_url() ?>employer/logout" class=""> <i class="fa fa-sign-out" aria-hidden="true"></i> Sign Out </a> </li>
