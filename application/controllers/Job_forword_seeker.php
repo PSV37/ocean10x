@@ -80,8 +80,7 @@ class Job_forword_seeker extends CI_Controller {
                        
                                 $this->load->view('fontend/alreadyapply');
                             } else {
-                                $this->job_apply_model->insert($apply_info);
-
+                                
                                 $wherejob = "job_post_id='$job_post_id' AND company_profile_id='$company_id'";
                                 $select_test = "is_test_required,job_post_id,company_profile_id";
                               
@@ -114,7 +113,6 @@ class Job_forword_seeker extends CI_Controller {
                        
                                 $this->load->view('fontend/alreadyapply');
                             } else {
-                                $this->job_apply_model->insert($apply_info);
 
                                 $wherejob = "job_post_id='$job_post_id' AND company_profile_id='$company_id'";
                                 $select_test = "is_test_required,job_post_id,company_profile_id";
