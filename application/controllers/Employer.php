@@ -689,7 +689,7 @@ function getstate(){
 
 
                            $send = sendEmail_JobRequest($email[$i],$message,$subject);
-                           echo $send;
+                           //echo $send;
                             echo $message;
                           //  if ($send) {
                           //   $this->session->set_flashdata('success',

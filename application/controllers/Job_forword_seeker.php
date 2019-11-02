@@ -12,6 +12,8 @@ class Job_forword_seeker extends CI_Controller {
         $this->load->model('job_seeker_photo_model');
         $this->load->model('Job_career_model');
         $this->load->model('Job_specialization_model');
+        $this->load->model('job_apply_model');
+       
 	}
 
 	public function index()
@@ -27,6 +29,15 @@ class Job_forword_seeker extends CI_Controller {
 	{
 	    $email_id = base64_decode($this->input->get('apply_id'));
 	    $job_id =base64_decode($this->input->get('job_id'));
+
+        // to get details about apply job table 
+        $select_result = "job_post_id,company_id,";
+        $tablename = "job_apply";
+        $where_res['job_apply_id'] = $job_id;
+        $apply_res = $this->Master_model->get_master_row($tablename, $select_result, $where_res, $join = FALSE);
+
+        $company_id = $apply_res['company_id'];
+        $job_post_id = $apply_res['job_post_id'];
 	    
 	        $wherecan="email= '$email_id'";
 	        $check_candidate = $this->Master_model->getMaster('js_info', $wherecan);
@@ -53,7 +64,7 @@ class Job_forword_seeker extends CI_Controller {
 							$data['email'] = $rows['email'];
 							$data['job_seeker_id'] = $rows['job_seeker_id'];
 						}
-			            $this->session->set_userdata($data);
+			          
                          // To update forwarded job status
                         $data_status=array( 
                             'forword_job_status' => 2,
@@ -62,7 +73,26 @@ class Job_forword_seeker extends CI_Controller {
                         $status = $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
                         if($status==true)
                         {
-                            redirect('register/jobseeker_login', 'refresh');
+                            $this->session->set_userdata($data);
+                            // redirect('register/jobseeker_login', 'refresh');
+
+                            if ($this->job_apply_model->check_apply_job($job_seeker_id, $company_id, $job_post_id)) {
+                       
+                                $this->load->view('fontend/alreadyapply');
+                            } else {
+                                $this->job_apply_model->insert($apply_info);
+
+                                $wherejob = "job_post_id='$job_post_id' AND company_profile_id='$company_id'";
+                                $select_test = "is_test_required,job_post_id,company_profile_id";
+                              
+                                $data['job_test'] = $this->Master_model->getMaster('job_posting',$wherejob,$join = FALSE, $order = false, $field = false, $select_test,$limit=false,$start=false, $search=false);
+                                    
+                                $this->load->view('fontend/applysucess',$data);
+                            }
+
+
+
+
                         }
 			            
 
@@ -79,7 +109,20 @@ class Job_forword_seeker extends CI_Controller {
                         $status = $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
                         if($status==true)
                         {
-                            redirect('Job_forword_seeker/index');
+                            // redirect('Job_forword_seeker/index');
+                            if ($this->job_apply_model->check_apply_job($job_seeker_id, $company_id, $job_post_id)) {
+                       
+                                $this->load->view('fontend/alreadyapply');
+                            } else {
+                                $this->job_apply_model->insert($apply_info);
+
+                                $wherejob = "job_post_id='$job_post_id' AND company_profile_id='$company_id'";
+                                $select_test = "is_test_required,job_post_id,company_profile_id";
+                              
+                                $data['job_test'] = $this->Master_model->getMaster('job_posting',$wherejob,$join = FALSE, $order = false, $field = false, $select_test,$limit=false,$start=false, $search=false);
+                                    
+                                $this->load->view('fontend/applysucess',$data);
+                            }
                         }
                         
       					
