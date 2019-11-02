@@ -242,7 +242,7 @@ class Questionbank extends MY_Controller
 							$question=$userdata[13];
 							$where_question="ques_type='".$question."'";
 							$question_data = $this->Master_model->getMaster('questionbank', $where_question);
-							print_r($options_data);die(); 
+							print_r($question_data);die(); 
 							$userdata[13]=$question_data[0]['ques_id'];
 																					
 							$options=$userdata[14];
