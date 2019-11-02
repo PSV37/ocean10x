@@ -251,7 +251,13 @@ class Questionbank extends MY_Controller
 							//print_r($options_data);die(); 
 							$userdata[13]=$options_data[0]['options_id'];
 							
-							 $user_id = $this->session->userdata('admin_user_id');
+							
+                           $this->Questionbank_model->insertRecord($userdata,$q_id);
+							//echo $this->db->last_query();die();
+                        }
+                        $skip ++;
+						
+					 $user_id = $this->session->userdata('admin_user_id');
             
 							$question_dt=array(
 								'is_admin' => $this->input->post('is_admin');
@@ -259,12 +265,6 @@ class Questionbank extends MY_Controller
 								'ques_created_by'=$user_id;
 							);
 							$q_id=$this->Master_model->master_insert($question_dt,'questionbank');
-                           $this->Questionbank_model->insertRecord($userdata,$q_id);
-							//echo $this->db->last_query();die();
-                        }
-                        $skip ++;
-						
-					
      				$data['response'] = 'successfully uploaded '.$filename; 
 					// redirect('admin/questionbank-import',$data);
     			}else{ 
