@@ -18,8 +18,8 @@ class Questionbank_model extends MY_Model {
 					"option2" => trim($record[9]),
 					"option3" => trim($record[10]),
 					"option4" => trim($record[11]),
-					"option5" => trim($record[12])
-					
+					"option5" => trim($record[12]),
+					"is_admin" => $this->input->post('is_admin')
                 );
 				
                 $question_id=$this->db->insert('questionbank', $newquestionsbank);
