@@ -89,15 +89,21 @@
                                   <td>
                                   <?php
                                     $is_exam_required = getExamRequired($applicaiton->job_post_id);
-                                  //  print_r($is_exam_required);
-                                    echo $is_exam_required['is_test_required'];
-                                    if($applicaiton->is_test_done == 0)
+
+                                   if($is_exam_required['is_test_required'] =='Yes')
+                                    {
+                                      if($applicaiton->is_test_done == 0)
                                       { 
                                   ?>
-                                    <a href="<?php echo base_url(); ?>exam/index/<?php echo base64_encode($applicaiton->job_post_id); ?>" class="btn btn-success btn-xs">Give Exam</a>
+                                      <a href="<?php echo base_url(); ?>exam/index/<?php echo base64_encode($applicaiton->job_post_id); ?>" class="btn btn-success btn-xs">Give Exam</a>
                                   <?php } else{
-                                    echo "<span class='label label-primary'>Done</span>";
-                                  }?>
+                                          echo "<span class='label label-primary'>Done</span>";
+                                        } 
+                                    }else{
+                                      echo "<span class='label label-info'>Not Required</span>";
+                                    }
+
+                                  ?>
                                   </td>
                                   
                                 </tr>
