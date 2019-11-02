@@ -46,7 +46,7 @@
             <ul class="nav navbar-nav">              
              
             <li>
-            	<?php $job_seeker=$this->session->userdata('job_seeker_id'); ?>                             
+            	<?php echo $job_seeker=$this->session->userdata('job_seeker_id'); ?>                             
                 <ul class="nav navbar-nav navbar-right">
                   <li class="dropdown yamm-half membermenu hasmenu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
