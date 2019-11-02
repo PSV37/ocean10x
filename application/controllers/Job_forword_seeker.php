@@ -54,7 +54,19 @@ class Job_forword_seeker extends CI_Controller {
 							$data['job_seeker_id'] = $rows['job_seeker_id'];
 						}
 			            $this->session->set_userdata($data);
-			            redirect('register/jobseeker_login', 'refresh');
+                         // To update forwarded job status
+                        $data_status=array( 
+                            'forword_job_status' => 2,
+                        );
+                        $where_update1['job_post_id'] = $job_id;
+                        $where_update1['job_seeker_id'] = $job_seeker_id;
+                        $status = $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
+                         echo $this->db->last_query(); echo "reg contr";die;
+                        if($status)
+                        {
+                            redirect('register/jobseeker_login', 'refresh');
+                        }
+			            
 
 					}else{
 						$this->session->set_flashdata('type', 'danger');
@@ -62,23 +74,37 @@ class Job_forword_seeker extends CI_Controller {
 						$this->session->set_userdata($data);
 
                          // To update job status
-                       
-                        redirect('Job_forword_seeker/index');
+                        $data_status=array( 
+                            'forword_job_status' => 2,
+                        );
+                        $where_update1['job_post_id'] = $job_id;
+                        $where_update1['job_seeker_id'] = $job_seeker_id;
+                        $status = $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
+                         echo $this->db->last_query(); echo "index";die;
+                        if($status)
+                        {
+                            redirect('Job_forword_seeker/index');
+                        }
+                        
       					
 					}  
 	            }else{
-	                    $data['job_seeker_id'] = $job_seeker_id;
-	                    $data['email_id'] = $email_id;
-	                    $this->load->view('fontend/jobseeker/jobseeker_set_password',$data);
+                        // To update job status
+                        $data_status=array( 
+                            'forword_job_status' => 2,
+                        );
+                        $where_update1['job_post_id'] = $job_id;
+                        $where_update1['job_seeker_id'] = $job_seeker_id;
+                        $status = $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
+                          echo $this->db->last_query(); echo "set pass";die;
+                        if($status)
+                        {
+    	                    $data['job_seeker_id'] = $job_seeker_id;
+    	                    $data['email_id'] = $email_id;
+    	                    $this->load->view('fontend/jobseeker/jobseeker_set_password',$data);
+                        }
 	                }
 		         
-                    $data_status=array( 
-                        'forword_job_status' => 2,
-                    );
-                    $where_update1['job_post_id'] = $job_id;
-                    $where_update1['job_seeker_id'] = $job_seeker_id;
-                    $status = $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
-
 	        } // verify password empty cond else
 	          
 	       else{
