@@ -1277,6 +1277,117 @@ function getstate(){
         }
     }
 
+/*import question*/
+
+	public function importquestion(){
+		//load model
+		$this->load->model('Questionbank_model');
+		// Check form submit or not 
+ 		if($this->input->post('upload') != NULL ){ 
+   			$data = array(); 
+   			if(!empty($_FILES['file']['name'])){ 
+    			// Set preference 
+    			$config['upload_path'] = 'question_excel/files/'; 
+    			$config['allowed_types'] = 'csv'; 
+    			$config['max_size'] = '1000'; // max_size in kb 
+    			$config['file_name'] = $_FILES['file']['name']; 
+
+    			// Load upload library 
+    			$this->load->library('upload',$config); 
+   
+    			// File upload
+    			if($this->upload->do_upload('file')){ 
+     				// Get data about the file
+     				$uploadData = $this->upload->data(); 
+     				$filename = $uploadData['file_name']; 
+
+     				// Reading file
+                    $file = fopen("question_excel/files/".$filename,"r");
+                    $i = 0;
+
+                    $importData_arr = array();
+                       
+                    while (($filedata = fgetcsv($file, 1000, ",")) !== FALSE) {
+                        $num = count($filedata);
+
+                        for ($c=0; $c < $num; $c++) {
+                            $importData_arr[$i][] = $filedata[$c];
+                        }
+                        $i++;
+                    }
+                    fclose($file);
+
+                    $skip = 0;
+
+                    // insert import data
+                    foreach($importData_arr as $userdata){
+                        if($skip != 0){
+							echo "<pre>";
+							//print_r($userdata); 
+							$tech_id=$userdata[0];
+							$where_skill="skill_name='".$tech_id."'";
+							$tech_data = $this->Master_model->getMaster('skill_master', $where_skill);
+							//print_r($tech_data);
+							$userdata[0]=$tech_data[0]['id'];
+							
+							$topic_id=$userdata[1];
+							$where_topic="topic_name='".$topic_id."'";
+							$topic_data = $this->Master_model->getMaster('topic', $where_topic);
+							//print_r($topic_data);
+							$userdata[1]=$topic_data[0]['topic_id'];
+							
+							$subtopic=$userdata[2];
+							$where_subtopic="subtopic_name='".$subtopic."'";
+							$subtopic_data = $this->Master_model->getMaster('subtopic', $where_subtopic);
+							//print_r($subtopic_data);
+							$userdata[2]=$subtopic_data[0]['subtopic_id'];
+							
+							$lineitem=$userdata[3];
+							$where_lineitem="title='".$lineitem."'";
+							$lineitem_data = $this->Master_model->getMaster('lineitem', $where_lineitem);
+							//print_r($lineitem_data); 
+							$userdata[3]=$lineitem_data[0]['lineitem_id'];
+							
+							
+							$lineitemlevel=$userdata[4];
+							$where_lineitemlevel="titles='".$lineitemlevel."'";
+							$lineitemlevel_data = $this->Master_model->getMaster('lineitemlevel', $where_lineitemlevel);
+							//print_r($lineitemlevel_data);die(); 
+							$userdata[4]=$lineitemlevel_data[0]['lineitemlevel_id'];
+							
+																					
+							$options=$userdata[13];
+							$where_options="options_type='".$options."'";
+							$options_data = $this->Master_model->getMaster('options', $where_options);
+							//print_r($options_data);die(); 
+							$userdata[13]=$options_data[0]['options_id'];
+							
+                           $this->Questionbank_model->insertRecord($userdata);
+							//echo $this->db->last_query();die();
+                        }
+                        $skip ++;
+                    }
+					redirect('employer/questionbank-import');
+     				$data['response'] = 'successfully uploaded '.$filename;
+					
+				   
+    			}else{ 
+     				$data['response'] = 'failed'; 
+    			} 
+   			}else{ 
+    			$data['response'] = 'failed'; 
+   			} 
+   			// load view 
+   			$this->load->view('fontend/employer/questionbank_view',$data); 
+  		}else{
+   			// load view 
+   			$this->load->view('fontend/employer/questionbank_view'); 
+  		} 
+
+	}
+
+
+
 
 } // end class
 

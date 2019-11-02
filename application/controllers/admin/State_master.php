@@ -24,7 +24,7 @@ class State_master extends MY_Controller
         
         $where_all = "state.state_status='1'";
         $join_emp = array(
-                'country' => 'country.country_id=state.country_id |INNER',
+                'country' => 'country.country_id=state.country_id |OUTER JOIN',
             );
         $data['state_info'] = $this->Master_model->getMaster('state',$where_all,$join_emp);
 
