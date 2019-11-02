@@ -32,11 +32,7 @@
 			<div class="panel-body">
 			<input type="hidden" name="org_id" value="1" class="form-control">
 			</div>		
-		<div class="panel-body">
-		<div class="col-md-2">
 		<input type='submit' value='Import' name='upload' class="btn btn-info btn-sm" style="width:100px;">
-		</div>
-		</div>
 	</form>
 
 
