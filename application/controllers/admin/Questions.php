@@ -36,8 +36,9 @@ class Questions extends MY_Controller
 		
 		$where_all = "questionbank.ques_status='1'";
         $join_emp = array(
-                'skill_master' => 'skill_master.id=questionbank.technical_id |INNER',
-                'topic' => 'topic.topic_id=questionbank.topic_id |INNER',
+                'skill_master' => 'skill_master.id=questionbank.technical_id |LEFT OUTER',
+                'topic' => 'topic.topic_id=questionbank.topic_id |LEFT OUTER',
+				'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |LEFT OUTER',
 				
             );
 			
