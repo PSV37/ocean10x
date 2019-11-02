@@ -26,12 +26,8 @@
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
            
     		<form method='post' action="<?php echo base_url();?>employer/questionbank-import" enctype="multipart/form-data">
-		<div class="container-fluid">
-		<div class="col-md-9">
-		<div class="form-group">
+		<div class="panel-body">
 		<input type='file' name='file' required>
-		</div>
-		</div>
 		</div>
 			<div class="panel-body">
 			<input type="hidden" name="org_id" value="1" class="form-control">
