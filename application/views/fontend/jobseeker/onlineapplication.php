@@ -155,6 +155,7 @@
                                   <td><?php echo date('F j, Y',strtotime($forward_applicaiton->apply_date));  ?></td>
                                   <td>
                                     <?php
+
                                       if($forward_applicaiton->apply_status == 0)
                                         { 
                                     ?>
@@ -176,13 +177,21 @@
                                   
                                   <td>
                                   <?php
-                                    if($forward_applicaiton->is_test_done == 0)
-                                      { 
+                                   $is_exam_required = getExamRequired($forward_applicaiton->job_post_id);
+
+                                   if($is_exam_required['is_test_required'] =='Yes')
+                                    {
+                                      if($forward_applicaiton->is_test_done == 0)
+                                        { 
                                   ?>
                                     <a href="<?php echo base_url(); ?>exam/index/<?php echo base64_encode($forward_applicaiton->job_post_id); ?>" class="btn btn-success btn-xs">Give Exam</a>
                                   <?php }else{
-                                    echo "<span class='label label-primary'>Done</span>";
-                                  } ?>
+                                          echo "<span class='label label-primary'>Done</span>";
+                                        } 
+                                    }else{
+                                      echo "<span class='label label-info'>Not Required</span>";
+                                    }
+                                  ?>
                                   </td>
                                 
                                  
