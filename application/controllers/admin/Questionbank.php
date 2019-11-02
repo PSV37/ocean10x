@@ -239,11 +239,11 @@ class Questionbank extends MY_Controller
 							//print_r($lineitemlevel_data);die(); 
 							$userdata[4]=$lineitemlevel_data[0]['lineitemlevel_id'];
 							
-							/*$question=$userdata[13];
+							$question=$userdata[13];
 							$where_question="ques_id='".$question."'";
 							$question_data = $this->Master_model->getMaster('questionbank', $where_question);
-							//print_r($options_data);die(); 
-							$userdata[13]=$question_data[0]['ques_id'];*/
+							print_r($question_data);die(); 
+							$userdata[13]=$question_data[0]['ques_id'];
 																					
 							$options=$userdata[14];
 							$where_options="options_type='".$options."'";
@@ -252,7 +252,7 @@ class Questionbank extends MY_Controller
 							$userdata[14]=$options_data[0]['options_id'];
 							
 							//$this->db->last_query();
-							echo print_r($ques_id);die();
+							
                            $this->Questionbank_model->insertRecord($userdata);
 							//echo $this->db->last_query();die();
                         }
