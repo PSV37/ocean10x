@@ -30,8 +30,24 @@ class Job_apply_model extends MY_Model
             return false;
         }
     }
+ 
+    public function check_apply_forwarded_job($userId, $company_id,$job_post_id)
+    {
+        $this->db->select("*");
+        $this->db->where('job_seeker_id', $userId);
+        $this->db->where('company_id', $company_id);
+        $this->db->where('job_post_id', $job_post_id);
+        $this->db->where('forword_job_status',2);
+        $query = $this->db->get($this->_table_name);
+        if ($query->num_rows() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
-      public function check_resume_by_id($userId, $company_id)
+
+    public function check_resume_by_id($userId, $company_id)
     {
         $this->db->select("*");
         $this->db->where('job_seeker_id', $userId);

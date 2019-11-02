@@ -65,35 +65,28 @@ class Job_forword_seeker extends CI_Controller {
 							$data['email'] = $rows['email'];
 							$data['job_seeker_id'] = $rows['job_seeker_id'];
 						}
-			          
-                         // To update forwarded job status
-                        $data_status=array( 
-                            'forword_job_status' => 2,
-                        );
-                        $where_update1['job_apply_id'] = $job_id;
-                        $status = $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
-                        if($status==true)
-                        {
                             $this->session->set_userdata($data);
                             // redirect('register/jobseeker_login', 'refresh');
-
-                            // if ($this->job_apply_model->check_apply_job($job_seeker_id, $company_id, $job_post_id)) {
-                       
-                            //     $this->load->view('fontend/alreadyapply');
-                            // } else {
-                                
-                                $wherejob = "job_post_id='$job_post_id' AND company_profile_id='$company_id'";
-                                $select_test = "is_test_required,job_post_id,company_profile_id";
-                              
-                                $data1['job_test'] = $this->Master_model->getMaster('job_posting',$wherejob,$join = FALSE, $order = false, $field = false, $select_test,$limit=false,$start=false, $search=false);
-                                    
-                                $this->load->view('fontend/applysucess',$data1);
-                            // }
-
-
-
-
-                        }
+                            if($this->job_apply_model->check_apply_forwarded_job($job_seeker_id, $company_id, $job_post_id))
+                            {
+                                $this->load->view('fontend/alreadyapply');
+                            } else {
+                            // To update forwarded job status
+                                $data_status=array( 
+                                    'forword_job_status' => 2,
+                                );
+                                $where_update1['job_apply_id'] = $job_id;
+                                $status = $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
+                                if($status==true)
+                                {
+                                    $wherejob = "job_post_id='$job_post_id' AND company_profile_id='$company_id'";
+                                    $select_test = "is_test_required,job_post_id,company_profile_id";
+                                  
+                                    $data1['job_test'] = $this->Master_model->getMaster('job_posting',$wherejob,$join = FALSE, $order = false, $field = false, $select_test,$limit=false,$start=false, $search=false);
+                                        
+                                    $this->load->view('fontend/applysucess',$data1);
+                                }
+                            }
 			            
 
 					}else{
@@ -101,27 +94,26 @@ class Job_forword_seeker extends CI_Controller {
 						$this->session->set_flashdata('Message', 'Invalid User...!');
 						$this->session->set_userdata($data);
 
-                         // To update job status
-                        $data_status=array( 
-                            'forword_job_status' => 2,
-                        );
-                        $where_update1['job_apply_id'] = $job_id;
-                        $status = $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
-                        if($status==true)
+                        // redirect('Job_forword_seeker/index');
+                        if($this->job_apply_model->check_apply_forwarded_job($job_seeker_id, $company_id, $job_post_id))
                         {
-                            // redirect('Job_forword_seeker/index');
-                            // if ($this->job_apply_model->check_apply_job($job_seeker_id, $company_id, $job_post_id)) {
-                       
-                            //     $this->load->view('fontend/alreadyapply');
-                            // } else {
-
+                            $this->load->view('fontend/alreadyapply');
+                        } else {
+                            // To update job status
+                            $data_status=array( 
+                                'forword_job_status' => 2,
+                            );
+                            $where_update1['job_apply_id'] = $job_id;
+                            $status = $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
+                            if($status==true)
+                            {
                                 $wherejob = "job_post_id='$job_post_id' AND company_profile_id='$company_id'";
                                 $select_test = "is_test_required,job_post_id,company_profile_id";
                               
                                 $data1['job_test'] = $this->Master_model->getMaster('job_posting',$wherejob,$join = FALSE, $order = false, $field = false, $select_test,$limit=false,$start=false, $search=false);
                                     
                                 $this->load->view('fontend/applysucess',$data1);
-                            // }
+                            }
                         }
                         
       					
