@@ -239,32 +239,26 @@ class Questionbank extends MY_Controller
 							//print_r($lineitemlevel_data);die(); 
 							$userdata[4]=$lineitemlevel_data[0]['lineitemlevel_id'];
 							
-							/*$question=$userdata[13];
-							$where_question="ques_id='".$question."'";
+							$question=$userdata[13];
+							$where_question="ques_type='".$question."'";
 							$question_data = $this->Master_model->getMaster('questionbank', $where_question);
-							print_r($options_data);die(); 
-							$userdata[13]=$question_data[0]['ques_id'];*/
+							//print_r($options_data);die(); 
+							$userdata[13]=$question_data[0]['ques_id'];
 																					
-							$options=$userdata[13];
+							$options=$userdata[14];
 							$where_options="options_type='".$options."'";
 							$options_data = $this->Master_model->getMaster('options', $where_options);
-							//print_r($options_data);die(); 
-							$userdata[13]=$options_data[0]['options_id'];
+							print_r($options_data);die(); 
+							$userdata[14]=$options_data[0]['options_id'];
 							
 							
-                           $this->Questionbank_model->insertRecord($userdata,$q_id);
+							
+                           $this->Questionbank_model->insertRecord($userdata);
 							//echo $this->db->last_query();die();
                         }
                         $skip ++;
-						
-					 $user_id = $this->session->userdata('admin_user_id');
-            
-							$question_dt=array(
-								'is_admin' => $this->input->post('is_admin');
-								'ques_created_date'=date('Y-m-d H:i:s');
-								'ques_created_by'=$user_id;
-							);
-						$this->Master_model->master_insert($question_dt,'questionbank');
+                    }
+					
      				$data['response'] = 'successfully uploaded '.$filename; 
 					// redirect('admin/questionbank-import',$data);
     			}else{ 
