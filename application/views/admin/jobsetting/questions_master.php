@@ -49,7 +49,7 @@
                         <th class="active">SL</th>
                         <th class="active">Subject</th>
                         <th class="active">Topic</th>
-						<th class="active">Topic</th>
+						<th class="active">Sub Topic</th>
 						<th class="active">Question Type</th>
 						<th class="active">Question</th>
                         <th class="active col-sm-2">Action</th>
