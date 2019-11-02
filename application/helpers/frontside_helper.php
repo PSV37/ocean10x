@@ -88,16 +88,16 @@ function get_metas() {
         $ci = get_instance();
         $ci->load->library('email');
         
-        $config['protocol']    = 'smtp';
+        $config['protocol']     = 'smtp';
         $config['smtp_host']    = 'mail.consultnhire.com';
         $config['smtp_port']    = '465';
         $config['smtp_timeout'] = '7'; 
-        $config['smtp_user'] = "info@consultnhire.com";
-        $config['smtp_pass'] = "yQB;H[V&o64I";
-        $config['charset']    = 'utf-8';
-        $config['newline']    = "\r\n";
-        $config['mailtype'] = 'html'; // or html
-        $config['validation'] = TRUE;
+        $config['smtp_user']    = "info@consultnhire.com";
+        $config['smtp_pass']    = "yQB;H[V&o64I";
+        $config['charset']      = 'utf-8';
+        $config['newline']      = "\r\n";
+        $config['mailtype']     = 'html'; // or html
+        $config['validation']   = TRUE;
         $ci->email->initialize($config);        
                 
         $ci->email->from('info@consultnhire.com', 'ConsultnHire');
@@ -108,9 +108,7 @@ function get_metas() {
         $ci->email->subject($subject);
         $ci->email->message($message);
         $ci->email->send();
-   
         
-
         return true;
     }
 

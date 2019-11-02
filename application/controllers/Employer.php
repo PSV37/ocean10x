@@ -685,10 +685,11 @@ function getstate(){
                                     $message .= ' <br>'.$req_skill_details[$j]['skill_name'];
                                 }
 
-                            $message .='<br/><b>Job Description: </b> '.$require['job_desc'].'<br/><b>Job Benefits: </b> '.$require['benefits'].'<br/><b>Other Job Description: </b> '.$require['education'].'<br><br><a href="'.base_url().'job_forword_seeker/apply_forworded_job?apply_id='.base64_encode($email[$i]).'&job_id='.base64_encode($apply).'" class="btn btn-primary" value="Apply Now" align="center" target="_blank">Apply Now</a> <br><br><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Question? Check out how works and our support team are ready to help.<br><br>© 2017 ConsultnHire All Rights Reserved.<br><br>You have received this mail because your e-mail ID is registered with Consultnhire.com. This is a system-generated e-mail regarding your Consultnhire account preferences, please do not reply to this message. The jobs sent in this mail have been posted by the clients of Consultnhire.com. And we have enabled auto-login for your convenience, you are strongly advised not to forward this email to protect your account from unauthorized access. IEIL has taken all reasonable steps to ensure that the information in this mailer is authentic. Users are advised to research bonafides of advertisers independently. Please do not pay any money to anyone who promises to find you a job. IEIL shall not have any responsibility in this regard. We recommend that you visit our Terms & Conditions and the Security Advice for more comprehensive information.<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+                            $message .='<br/><b>Job Description: </b> '.$require['job_desc'].'<br/><b>Job Benefits: </b> '.$require['benefits'].'<br/><b>Other Job Description: </b> '.$require['education'].'<br><br><a href="'.base_url().'job_forword_seeker/apply_forworded_job?apply_id='.base64_encode($email[$i]).'&job_id='.base64_encode($apply).'" class="btn btn-primary" value="Apply Now" align="center" target="_blank">Apply Now</a> <br><br><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><small>Enjoy personalized job searching experience<br>Goa a Question? Check out how works and our support team are ready to help.<br><br>© 2017 ConsultnHire All Rights Reserved.<br><br>You have received this mail because your e-mail ID is registered with Consultnhire.com. This is a system-generated e-mail regarding your Consultnhire account preferences, please do not reply to this message. The jobs sent in this mail have been posted by the clients of Consultnhire.com. And we have enabled auto-login for your convenience, you are strongly advised not to forward this email to protect your account from unauthorized access. IEIL has taken all reasonable steps to ensure that the information in this mailer is authentic. Users are advised to research bonafides of advertisers independently. Please do not pay any money to anyone who promises to find you a job. IEIL shall not have any responsibility in this regard. We recommend that you visit our Terms & Conditions and the Security Advice for more comprehensive information.</small><br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
 
 
                            $send = sendEmail_JobRequest($email[$i],$message,$subject);
+                           echo $send;
                             echo $message;
                           //  if ($send) {
                           //   $this->session->set_flashdata('success',
@@ -961,7 +962,7 @@ function getstate(){
 
 
 
- public function delete_questionbank($id) {
+    public function delete_questionbank($id) {
         
         $ques_status = array(
             'ques_status'=>0,
@@ -973,174 +974,154 @@ function getstate(){
 
 /*Add Employee*/
 
-public function addemployee(){
-	  $user_id = $this->session->userdata('company_profile_id');
-	if(isset($_POST['submit_employee'])){
-		$this->form_validation->set_rules('emp_no', 'Employee No.', 'required|min_length[3]|max_length[6]|alpha_numeric');
-		$this->form_validation->set_rules('emp_name', 'Name', 'required');
-		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[employee.email]');
-		$this->form_validation->set_rules('mobile', ' Contact No.', 'required|regex_match[/^[0-9]{10}$/]');
-		$this->form_validation->set_rules('password', 'password', 'required|max_length[15]|min_length[6]|alpha_numeric');
-		$this->form_validation->set_rules('dept_id', 'Department', 'required');
-		$this->form_validation->set_rules('address', 'Address', 'required');
-		$this->form_validation->set_rules('pincode', 'Pincode', 'required|numeric');
-		
-                        array('required' => 'You must provide a %s.');
+    public function addemployee(){
+    	$user_id = $this->session->userdata('company_profile_id');
+    	if(isset($_POST['submit_employee'])){
+    		$this->form_validation->set_rules('emp_no', 'Employee No.', 'required|min_length[3]|max_length[6]|alpha_numeric');
+    		$this->form_validation->set_rules('emp_name', 'Name', 'required');
+    		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[employee.email]');
+    		$this->form_validation->set_rules('mobile', ' Contact No.', 'required|regex_match[/^[0-9]{10}$/]');
+    		$this->form_validation->set_rules('password', 'password', 'required|max_length[15]|min_length[6]|alpha_numeric');
+    		$this->form_validation->set_rules('dept_id', 'Department', 'required');
+    		$this->form_validation->set_rules('address', 'Address', 'required');
+    		$this->form_validation->set_rules('pincode', 'Pincode', 'required|numeric');
+    		
+            array('required' => 'You must provide a %s.');
+    		
+            if ($this->form_validation->run() == FALSE)
+            {
+                $data['result'] = $this->Master_model->getMaster('department' ,$select=false);
+    	       //$this->load->view('organization/add_employee',$data);		
+            }
+            else
+            {
+    					
+    			$NewFileName;
+    	        if($_FILES['photo']['name']!='')
+    	            {
+    	                $this->load->helper('string'); 
 
-						
-						
-						
-						
-                if ($this->form_validation->run() == FALSE)
-                {
-                      $data['result'] = $this->Master_model->getMaster('department' ,$select=false);
-	//$this->load->view('organization/add_employee',$data);		
-                }
-                else
-                {
-					
-					$NewFileName;
-	            if($_FILES['photo']['name']!='')
-	            {
-	                $this->load->helper('string'); 
+    	                $NewFileName = $_FILES['photo']['name']; 
+    	                
+    					$config['upload_path'] = 'employee/';
+    	                $config['allowed_types'] = 'gif|jpg|jpeg|png|pdf|doc|docx|odt|xlsm|xls|xlm|xla|xlsx|bmp|docm|dotx|dotm|docb|gif';
+    	                $config['max_size']    = '10000';
+    	                //$config['max_width']  = '1024';
+    	                //$config['max_height']  = '768';
+    	                $config['file_name'] = $NewFileName;
+    	            
+    	                 $this->load->library('upload', $config);      
+    	                 $field_name = "photo";
+    	                        // print_r($config);die();
+    	               if (! $this->upload->do_upload($field_name))
+    	                {
+    	                    $error = array('error' => $this->upload->display_errors());
+    	                   	$this->session->set_flashdata('type', 'success');
+    						//$this->session->set_flashdata('Message', 'Profile Added Successfully');
+    	                }
+    	               else {
+    	                    // Success of file 
+    	                }
 
-	                $NewFileName = $_FILES['photo']['name']; 
-	                
-	                
-					$config['upload_path'] = 'employee/';
-	                $config['allowed_types'] = 'gif|jpg|jpeg|png|pdf|doc|docx|odt|xlsm|xls|xlm|xla|xlsx|bmp|docm|dotx|dotm|docb|gif';
-	                $config['max_size']    = '10000';
-	                //$config['max_width']  = '1024';
-	                //$config['max_height']  = '768';
-	                $config['file_name'] = $NewFileName;
-	            
-	                 $this->load->library('upload', $config);      
-	                 $field_name = "photo";
-	                        // print_r($config);die();
-	                 if (! $this->upload->do_upload($field_name))
-	                 {
-	                    $error = array('error' => $this->upload->display_errors());
+    	            }//END of file checking if loop
+    	            else
+                    {     
+                      $NewFileName = '';
+                    }    
+    					
+        		//$data['org_id'] = $this->input->post('org_id');		
+        		$data['emp_no'] = $this->input->post('emp_no');
+        		$data['org_id'] = $user_id;
+        		$data['emp_name'] = $this->input->post('emp_name');
+        		$data['email'] = $this->input->post('email');
+        		$data['mobile'] = $this->input->post('mobile');
+        		$data['password'] = md5($this->input->post('password'));
+        		$data['dept_id'] = $this->input->post('dept_id');
+        		$data['country_id'] = $this->input->post('country_id');
+        		$data['state_id'] = $this->input->post('state_id');
+        		$data['city_id'] = $this->input->post('city_id');
+        		$data['pincode'] = $this->input->post('pincode');
+        		$data['address'] = $this->input->post('address');
+        		$data['emp_created_date'] = $this->input->post('emp_created_date');
+        		$data['emp_created_by'] = $user_id;
+        		$data['photo'] =$NewFileName;
+        		
+        		$data['emp_created_date'] = date('Y-m-d H:i:s');
+        		$this->Master_model->master_insert($data,'employee');
+        		redirect(base_url().'employer/allemployee');
+    	    }
+    	}
 
-	                   	$this->session->set_flashdata('type', 'success');
-						//$this->session->set_flashdata('Message', 'Profile Added Successfully');
-	                 }
-	                 else {
-	                    // Success of file 
-	                }
+        $data['result'] = $this->Master_model->getMaster('department' ,$select=false);
+        $data['city'] = $this->Master_model->getMaster('city',$where=false);
+        $data['country'] = $this->Master_model->getMaster('country',$where=false);
+        $data['state'] = $this->Master_model->getMaster('state',$where=false);
+    	$this->load->view('fontend/employee/add_employee',$data);		
+    }
 
-	            }//END of file checking if loop
-	            else
-                {     
-                  $NewFileName = '';
-                }    
-					
-		//$data['org_id'] = $this->input->post('org_id');		
-		$data['emp_no'] = $this->input->post('emp_no');
-		$data['org_id'] = $user_id;
-		$data['emp_name'] = $this->input->post('emp_name');
-		$data['email'] = $this->input->post('email');
-		$data['mobile'] = $this->input->post('mobile');
-		$data['password'] = md5($this->input->post('password'));
-		$data['dept_id'] = $this->input->post('dept_id');
-		$data['country_id'] = $this->input->post('country_id');
-		$data['state_id'] = $this->input->post('state_id');
-		$data['city_id'] = $this->input->post('city_id');
-		$data['pincode'] = $this->input->post('pincode');
-		$data['address'] = $this->input->post('address');
-		$data['emp_created_date'] = $this->input->post('emp_created_date');
-		$data['emp_created_by'] = $user_id;
-		$data['photo'] =$NewFileName;
-		
-				
-			//$data=array('logo' => $NewFileName,
-					
-               // );
-		
-		$data['emp_created_date'] = date('Y-m-d H:i:s');
-		$this->Master_model->master_insert($data,'employee');
-		redirect(base_url().'employer/allemployee');
-	}
-	}
-$data['result'] = $this->Master_model->getMaster('department' ,$select=false);
-$data['city'] = $this->Master_model->getMaster('city',$where=false);
-$data['country'] = $this->Master_model->getMaster('country',$where=false);
-$data['state'] = $this->Master_model->getMaster('state',$where=false);
-	$this->load->view('fontend/employee/add_employee',$data);		
-}
-		/*Employee Listing */
-
-  public function allemployee(){
-	$employer = $this->session->userdata('company_profile_id');
-	//$company=$employer['company_profile_id'];
-	$where='employee.org_id="'.$employer.'" and employee.emp_status!= 0';
-	//$data['result'] = $this->Master_model->getMaster('industry',$where=FALSE);
-	$join = array(
-		'department' => 'department.dept_id = employee.dept_id|INNER',
-		'country' => 'country.country_id = employee.country_id|INNER',
-		'state' => 'state.state_id = employee.state_id|INNER',
-		'city' => 'city.id = employee.city_id|INNER',
-	);
+/*Employee Listing */
+    public function allemployee(){
+    	$employer = $this->session->userdata('company_profile_id');
+    	//$company=$employer['company_profile_id'];
+    	$where='employee.org_id="'.$employer.'" and employee.emp_status!= 0';
+    	//$data['result'] = $this->Master_model->getMaster('industry',$where=FALSE);
+    	$join = array(
+    		'department' => 'department.dept_id = employee.dept_id|INNER',
+    		'country' => 'country.country_id = employee.country_id|INNER',
+    		'state' => 'state.state_id = employee.state_id|INNER',
+    		'city' => 'city.id = employee.city_id|INNER',
+    	);
 	
-	$res = $this->Master_model->getMaster('employee',$where, $join);
-	$config = array();
-		$config["base_url"] = base_url('employer/index');
-		$config["total_rows"] = count($res);
-		$config['per_page'] =5;
-		$config['uri_segment'] = 3;
-		  
-		$config['full_tag_open'] = '<div class="pagination">';
-		$config['full_tag_close'] = '</div>';
-			 
-		$config['first_link'] = '<button>First Page</button>';
-		$config['first_tag_open'] = '<span class="firstlink">';
-		$config['first_tag_close'] = '</span>';
-		$config['last_link'] = '<button style="">Last Page</button>';
-		$config['last_tag_open'] = '<span class="lastlink">';
-		$config['last_tag_close'] = '</span>';
-		$config['next_link'] = '<span style="margin-left:8px;"><button style="color:#FFF; background:#008000;">Next Page</button></span>';
-		$config['next_tag_open'] = '<span class="nextlink">';
-		$config['next_tag_close'] = '</span>';
-		$config['prev_link'] = '<button style="color:#FFF; background:#0000FF;">Prev Page</button>';
-		$config['prev_tag_open'] = '<span class="prevlink">';
-		$config['prev_tag_close'] = '</span>';
-		$config['cur_tag_open'] = '<span style="margin-left:8px;">';
-		$config['cur_tag_close'] = '</span>';
-		$config['num_tag_open'] = '<span style="margin-left:8px;">';
-		$config['num_tag_close'] = '</span>';
-		$this->pagination->initialize($config);
-        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+    	$res = $this->Master_model->getMaster('employee',$where, $join);
+    	$config = array();
+    		$config["base_url"] = base_url('employer/index');
+    		$config["total_rows"] = count($res);
+    		$config['per_page'] =5;
+    		$config['uri_segment'] = 3;
+    		  
+    		$config['full_tag_open'] = '<div class="pagination">';
+    		$config['full_tag_close'] = '</div>';
+    			 
+    		$config['first_link'] = '<button>First Page</button>';
+    		$config['first_tag_open'] = '<span class="firstlink">';
+    		$config['first_tag_close'] = '</span>';
+    		$config['last_link'] = '<button style="">Last Page</button>';
+    		$config['last_tag_open'] = '<span class="lastlink">';
+    		$config['last_tag_close'] = '</span>';
+    		$config['next_link'] = '<span style="margin-left:8px;"><button style="color:#FFF; background:#008000;">Next Page</button></span>';
+    		$config['next_tag_open'] = '<span class="nextlink">';
+    		$config['next_tag_close'] = '</span>';
+    		$config['prev_link'] = '<button style="color:#FFF; background:#0000FF;">Prev Page</button>';
+    		$config['prev_tag_open'] = '<span class="prevlink">';
+    		$config['prev_tag_close'] = '</span>';
+    		$config['cur_tag_open'] = '<span style="margin-left:8px;">';
+    		$config['cur_tag_close'] = '</span>';
+    		$config['num_tag_open'] = '<span style="margin-left:8px;">';
+    		$config['num_tag_close'] = '</span>';
+    		$this->pagination->initialize($config);
+            $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+          
+            $this->pagination->initialize($config);
 
-      
-        $this->pagination->initialize($config);
+           $data["links"] = $this->pagination->create_links();
+    	   
+           $data["result"] = $this->Master_model->getMaster("employee", $where, $join, $order = "ASC", $field = "employee.emp_id", $select = false,$config["per_page"],$page, $search=false, $group_by = FALSE);
+    	$this->load->view('fontend/employee/employee_master',$data);
+    }
 
-       $data["links"] = $this->pagination->create_links();
-	   
-       $data["result"] = $this->Master_model->getMaster("employee", $where, $join, $order = "ASC", $field = "employee.emp_id", $select = false,$config["per_page"],$page, $search=false, $group_by = FALSE);
-	$this->load->view('fontend/employee/employee_master',$data);
-}
+    /*Delete Employee*/
 
-
-     /*Delete Employee*/
-
-public function deleteemployee()
+    public function deleteemployee()
     {
-        
         $id = $this->input->post('id');
-	
-    	//$data['status']= '0';
     	$del = array(
     		'emp_status' =>'0',
     	);
     	$where11['emp_id']=$id;
     	$this->Master_model->master_update($del,'employee',$where11);
-    	
-    	//redirect(base_url().'state');
     }
 	
-	
 	/*Edit Employee*/
-	
-	
 	public function editemployee(){
     	$c_id = $this->input->get('id');
     	$where = "emp_id='$c_id'";
@@ -1151,17 +1132,17 @@ public function deleteemployee()
     	$data['city'] = $this->Master_model->getMaster('city',$where=false);
     	//echo $this->db->last_query(); die;
     	$this->load->view('fontend/employee/edit_employee',$data);
-	
     }
-public function postEditData(){
-   $this->form_validation->set_rules('emp_no', 'Employee No.', 'required|min_length[3]|max_length[6]|alpha_numeric');
+
+    public function postEditData(){
+        $this->form_validation->set_rules('emp_no', 'Employee No.', 'required|min_length[3]|max_length[6]|alpha_numeric');
 		$this->form_validation->set_rules('emp_name', 'Name', 'required');
 		$this->form_validation->set_rules('mobile', ' Contact No.', 'required|regex_match[/^[0-9]{10}$/]');
 		$this->form_validation->set_rules('dept_id', 'Department', 'required');
 		$this->form_validation->set_rules('address', 'Address', 'required');
 		$this->form_validation->set_rules('pincode', 'Pincode', 'required|numeric');
 		
-    array('required' => 'You must provide a %s.');
+        array('required' => 'You must provide a %s.');
 
         if ($this->form_validation->run() == FALSE)
         {
@@ -1196,107 +1177,90 @@ public function postEditData(){
     		$this->Master_model->master_update($data,'employee',$where);
     		redirect(base_url().'employer/allemployee');
 		}
-}
+    }
 
 
-public function search(){
- 
+    public function search(){
         $term = $this->input->get('term');
- 
         $this->db->like('pincode', $term);
- 
         $data = $this->db->get("pincode")->result();
- 
         echo json_encode( $data);
     }
      
-
-
-
-
-function gettopic(){
-    $topic_id = $this->input->post('id');
-    $where['technical_id'] = $topic_id;
-    $topics = $this->Master_model->getMaster('topic',$where);
-    
-    
-    $result = '';
-    if(!empty($topics)){ 
-        $result .='<option value="">Select Topic</option>';
-        foreach($topics as $key){
-          $result .='<option value="'.$key['topic_id'].'">'.$key['topic_name'].'</option>';
+    function gettopic(){
+        $topic_id = $this->input->post('id');
+        $where['technical_id'] = $topic_id;
+        $topics = $this->Master_model->getMaster('topic',$where);
+        $result = '';
+        if(!empty($topics)){ 
+            $result .='<option value="">Select Topic</option>';
+            foreach($topics as $key){
+              $result .='<option value="'.$key['topic_id'].'">'.$key['topic_name'].'</option>';
+            }
+        }else{
+            $result .='<option value="">Topic not available</option>';
         }
-    }else{
-    
-        $result .='<option value="">Topic not available</option>';
+        echo $result;
     }
-     echo $result;
-}
 
-
-
- function getsubtopic(){
-    $subtopic_id = $this->input->post('id');
-    $where['topic_id'] = $subtopic_id;
-    $subtopics = $this->Master_model->getMaster('subtopic',$where);
-    $result = '';
-    
-    if(!empty($subtopics)){ 
-        $result .='<option value="">Select Subtopic</option>';
-        foreach($subtopics as $key){
-          $result .='<option value="'.$key['subtopic_id'].'">'.$key['subtopic_name'].'</option>';
+    function getsubtopic(){
+        $subtopic_id = $this->input->post('id');
+        $where['topic_id'] = $subtopic_id;
+        $subtopics = $this->Master_model->getMaster('subtopic',$where);
+        $result = '';
+        
+        if(!empty($subtopics)){ 
+            $result .='<option value="">Select Subtopic</option>';
+            foreach($subtopics as $key){
+              $result .='<option value="'.$key['subtopic_id'].'">'.$key['subtopic_name'].'</option>';
+            }
+        }else{
+            $result .='<option value="">Subtopic not available</option>';
         }
-    }else{
-    
-        $result .='<option value="">Subtopic not available</option>';
+        echo $result;
     }
-     echo $result;
-}
 
-
-function getlineitem(){
-    $lineitem_id = $this->input->post('id');
-    $where['subtopic_id'] = $lineitem_id;
-    $lineitems = $this->Master_model->getMaster('lineitem',$where);
-    $result = '';
-    
-    if(!empty($lineitems)){ 
-        $result .='<option value="">Select Lineitem</option>';
-        foreach($lineitems as $key){
-          $result .='<option value="'.$key['lineitem_id'].'">'.$key['title'].'</option>';
+    function getlineitem(){
+        $lineitem_id = $this->input->post('id');
+        $where['subtopic_id'] = $lineitem_id;
+        $lineitems = $this->Master_model->getMaster('lineitem',$where);
+        $result = '';
+        
+        if(!empty($lineitems)){ 
+            $result .='<option value="">Select Lineitem</option>';
+            foreach($lineitems as $key){
+              $result .='<option value="'.$key['lineitem_id'].'">'.$key['title'].'</option>';
+            }
+        }else{
+            $result .='<option value="">Lineitem not available</option>';
         }
-    }else{
-    
-        $result .='<option value="">Lineitem not available</option>';
+         echo $result;
     }
-     echo $result;
-}
 
-
-function getLineitemlevel(){
-    $lineitemlevel_id = $this->input->post('id');
-    $where['lineitem_id'] = $lineitemlevel_id;
-    $lineitemlevels = $this->Master_model->getMaster('lineitemlevel',$where);
-    $result = '';
-    
-    if(!empty($lineitemlevels)){ 
-        $result .='<option value="">Select Lineitem Level 2</option>';
-        foreach($lineitemlevels as $keys){
-          $result .='<option value="'.$keys['lineitemlevel_id'].'">'.$keys['titles'].'</option>';
+    function getLineitemlevel(){
+        $lineitemlevel_id = $this->input->post('id');
+        $where['lineitem_id'] = $lineitemlevel_id;
+        $lineitemlevels = $this->Master_model->getMaster('lineitemlevel',$where);
+        $result = '';
+        
+        if(!empty($lineitemlevels)){ 
+            $result .='<option value="">Select Lineitem Level 2</option>';
+            foreach($lineitemlevels as $keys){
+              $result .='<option value="'.$keys['lineitemlevel_id'].'">'.$keys['titles'].'</option>';
+            }
+        }else{
+        
+            $result .='<option value="">Lineitem Level not available</option>';
         }
-    }else{
-    
-        $result .='<option value="">Lineitem Level not available</option>';
+         echo $result;
     }
-     echo $result;
-}
 
 
- public function all_exam_result($job_id = null)
+    public function all_exam_result($job_id = null)
     {
         $company_id = $this->session->userdata('company_profile_id');
         if (!empty($job_id) && $this->job_posting_model->check_jobid_and_post_id($job_id, $company_id) == true) {
-                
+                    
             $data['job_id'] = $job_id;
             
             $where_test = "js_test_info.job_id='$job_id'";
@@ -1312,8 +1276,6 @@ function getLineitemlevel(){
             echo "not found";  
         }
     }
-
-   
 
 
 } // end class
