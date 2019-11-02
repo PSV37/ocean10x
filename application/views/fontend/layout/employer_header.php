@@ -14,9 +14,7 @@
     
     
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/responsive.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/main.css">
-	  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/intlTelInput.css">
-	  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/demo.css">
+   
     
     
 	<style>
