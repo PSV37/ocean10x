@@ -22,8 +22,8 @@
     <div class="row">
       <?php $this->load->view('fontend/layout/employer_left.php'); ?>
       <div class="content col-md-9">
-       
-          
+        <div class="userccount empdash">
+          <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
            
     		<form method='post' action="<?php echo base_url();?>employer/questionbank-import" enctype="multipart/form-data">
 		<div class="panel-body">
@@ -31,21 +31,20 @@
 		</div>
 			<div class="panel-body">
 			<input type="hidden" name="org_id" value="1" class="form-control">
-			</div>	
-	  </div>
-		
-		<div class="col-md-1">
-		<input type='submit' value='Import' name='upload' class="btn btn-info" style="width:100px;">
-		
+			</div>		
+		<div class="panel-body">
+		<div class="col-md-2">
+		<input type='submit' value='Import' name='upload' class="btn btn-info btn-sm" style="width:100px;">
+		</div>
 		</div>
 	</form>
 
 
 
-          
-       
+          </div>
+        </div>
         <!-- end post-padding --> 
-      
+      </div>
       <!-- end col --> 
     </div>
     <!-- end row --> 
