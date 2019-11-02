@@ -246,13 +246,6 @@ class Questionbank extends MY_Controller
 							//print_r($options_data);die(); 
 							$userdata[13]=$options_data[0]['options_id'];
 							
-							$question='ques_id';
-							$where_question="ques_id='".$question."'";
-							$userdata = $this->Master_model->getMaster('questionbank', $where_question);
-							print_r($userdata);die(); 
-							
-							
-							
                            $this->Questionbank_model->insertRecord($userdata);
 							//echo $this->db->last_query();die();
                         }
