@@ -67,7 +67,7 @@ class Job_forword_seeker extends CI_Controller {
 						}
                             $this->session->set_userdata($data);
                             // redirect('register/jobseeker_login', 'refresh');
-                            if($this->job_apply_model->check_apply_forwarded_job($job_seeker_id, $company_id, $job_post_id))
+                            if($this->Job_apply_model->check_apply_forwarded_job($job_seeker_id, $company_id, $job_post_id))
                             {
                                 $this->load->view('fontend/alreadyapply');
                             } else {
@@ -95,7 +95,7 @@ class Job_forword_seeker extends CI_Controller {
 						$this->session->set_userdata($data);
 
                         // redirect('Job_forword_seeker/index');
-                        if($this->job_apply_model->check_apply_forwarded_job($job_seeker_id, $company_id, $job_post_id))
+                        if($this->Job_apply_model->check_apply_forwarded_job($job_seeker_id, $company_id, $job_post_id))
                         {
                             $this->load->view('fontend/alreadyapply');
                         } else {
