@@ -1281,7 +1281,7 @@ function getstate(){
 
 	public function importquestion(){
 		//load model
-		$this->load->model('Questionbank_model');
+		$this->load->model('Questionbank_employer_model');
 		// Check form submit or not 
  		if($this->input->post('upload') != NULL ){ 
    			$data = array(); 
@@ -1362,7 +1362,7 @@ function getstate(){
 							//print_r($options_data);die(); 
 							$userdata[13]=$options_data[0]['options_id'];
 							
-                           $this->Questionbank_model->insertRecord($userdata);
+                           $this->Questionbank_employer_model->insertRecord($userdata);
 							//echo $this->db->last_query();die();
                         }
                         $skip ++;
