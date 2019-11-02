@@ -129,7 +129,7 @@ $route['employer/reject-resume/(:num)']="employer/reject_resume/$1";
 
 $route['employer/employee-master']="employer/addemployee";
 $route['employer/employee']="employer/allemployee";
-$route['employer/importquestion']="employer/importquestion";
+$route['employer/questionbank-import']="employer/importquestion";
 
 
 
