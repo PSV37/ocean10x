@@ -89,7 +89,8 @@
                                   <td>
                                   <?php
                                     $is_exam_required = getExamRequired($applicaiton->job_post_id);
-                                    print_r($is_exam_required);
+                                  //  print_r($is_exam_required);
+                                    echo $is_exam_required->is_test_required;
                                     if($applicaiton->is_test_done == 0)
                                       { 
                                   ?>
