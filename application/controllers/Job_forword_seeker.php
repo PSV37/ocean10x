@@ -20,9 +20,7 @@ class Job_forword_seeker extends CI_Controller {
         if ($job_seeker_id != null) {
             redirect('job_seeker/seeker_info');
    		}
-
         $this->load->view('fontend/jobseeker/login');
-		
 	}	
 
 	public function apply_forworded_job()
@@ -59,7 +57,6 @@ class Job_forword_seeker extends CI_Controller {
 			            redirect('register/jobseeker_login', 'refresh');
 
 					}else{
-						//$Message = array('Message' => 'Invalid User...!');
 						$this->session->set_flashdata('type', 'danger');
 						$this->session->set_flashdata('Message', 'Invalid User...!');
 						$this->session->set_userdata($data);
@@ -71,11 +68,12 @@ class Job_forword_seeker extends CI_Controller {
 	                    $this->load->view('fontend/jobseeker/jobseeker_set_password',$data);
 	                }
 		             // To update job status
-					// $data_status=array( 
-		   //          	'forword_job_status' => 2,
-			  //       );
-					// $where_update1['job_apply_id'] = $job_id;
-					// $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
+					$data_status=array( 
+		            	'forword_job_status' => 2,
+			        );
+					$where_update1['job_apply_id'] = $job_id;
+                    $where_update1['job_seeker_id'] = $job_seeker_id;
+					$this->Master_model->master_update($data_status, 'job_apply', $where_update1);
 
 
 	        } // verify password empty cond else
@@ -169,11 +167,9 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
 
             );
             $captcha = create_captcha($config);
-
             // Unset previous captcha and store new captcha word
             $this->session->unset_userdata('captchaCode');
             $this->session->set_userdata('captchaCode', $captcha['word']);
-
             // Send captcha image to view
             $captcha_images = $captcha['image'];
             $this->load->view('fontend/jobseeker/jobseeker_set_password', compact('captcha_images'));

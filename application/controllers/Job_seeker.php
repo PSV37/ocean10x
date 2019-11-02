@@ -568,10 +568,7 @@ exit;*/
         $this->Job_seeker_education_model->delete_cv($jobseeker_id);
         redirect('job_seeker/seeker_info');
     }
-	
-	
-	
-	
+		
 	function getstate(){
     	$country_id = $this->input->post('id');
     	$where['country_id'] = $country_id;
@@ -590,22 +587,22 @@ exit;*/
     }
 
 
- function getcity(){
-	$state_id = $this->input->post('id');
-	$where['state_id'] = $state_id;
-	$citys = $this->Master_model->getMaster('city',$where);
-	$result = '';
-	if(!empty($citys)){ 
-		$result .='<option value="">Select City</option>';
-		foreach($citys as $key){
-		  $result .='<option value="'.$key['id'].'">'.$key['city_name'].'</option>';
-		}
-	}else{
-	
-		$result .='<option value="">State not available</option>';
-	}
-	 echo $result;
-}
+     function getcity(){
+    	$state_id = $this->input->post('id');
+    	$where['state_id'] = $state_id;
+    	$citys = $this->Master_model->getMaster('city',$where);
+    	$result = '';
+    	if(!empty($citys)){ 
+    		$result .='<option value="">Select City</option>';
+    		foreach($citys as $key){
+    		  $result .='<option value="'.$key['id'].'">'.$key['city_name'].'</option>';
+    		}
+    	}else{
+    	
+    		$result .='<option value="">State not available</option>';
+    	}
+    	 echo $result;
+    }
 
   function getEducation_specialization(){
         $level_id = $this->input->post('id');

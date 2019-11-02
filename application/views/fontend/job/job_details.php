@@ -220,7 +220,7 @@ $jobseeker_id = $this->session->userdata('job_seeker_id');
         <h4 class="modal-title">Apply Job</h4>
       </div>
       <div class="modal-body">
-        <form  class="form-horizontal" action="<?php echo base_url() ?>/job/apply_job" method="post" style="padding: 30px;">
+        <form  class="form-horizontal" action="<?php echo base_url() ?>job/apply_job" method="post" style="padding: 30px;">
           <input type="hidden" name="forward_status" class="form-control" id="forward_status" value="<?php if(!empty($forward_status)){ foreach($forward_status as $frow){
             echo $frow['forword_job_status'];
           } }?>" placeholder="">
