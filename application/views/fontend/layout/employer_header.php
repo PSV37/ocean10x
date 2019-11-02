@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/font-awesome.css"> 
     
     
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/responsive.css">
+   
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/main.css">
 	  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/intlTelInput.css">
 	  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/demo.css">
@@ -64,14 +64,14 @@
                <li class="<?=(current_url()==base_url('job')) ? 'active':''?>"><a title="" href="<?php echo base_url() ?>job">All Jobs</a></li>
                <li><a title="" href="<?php echo base_url() ?>contact">Contact Us</a></li>
             <li class="green"><a title="" href="<?php echo base_url(); ?>employer/job-post">Submit Vacancy</a></li>
-             <?php $employer_id=$this->session->userdata('company_profile_id'); ?>
+             
              <li>
                        <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown yamm-half membermenu hasmenu">
 
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 
-                       <?php if(!empty($this->company_profile_model->company_logoby_id($employer_id))): ?>
+                        <?php if(!empty($this->company_profile_model->company_logoby_id($employer_id))): ?>
                         <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($employer_id);?>" alt="" class="img-circle"></a>
                        <?php else: ?>
                         <img src="<?php echo base_url() ?>upload/notfound.gif" alt="" class="img-circle"></a>
