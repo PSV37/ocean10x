@@ -9,10 +9,11 @@ class Job_forword_seeker extends CI_Controller {
 		$this->load->helper("captcha");
 		$this->load->model('job_seeker_model');
         $this->load->model('job_seeker_personal_model');
-        $this->load->model('job_seeker_photo_model');
+        $this->load->model('Job_seeker_photo_model');
         $this->load->model('Job_career_model');
         $this->load->model('Job_specialization_model');
         $this->load->model('job_apply_model');
+        
        
 	}
 
