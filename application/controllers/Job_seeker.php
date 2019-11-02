@@ -620,16 +620,6 @@ exit;*/
          echo $result;
     }
 
-    // // this function is for search side bar menus in header
-    // function get_autocompletes(){
-
-    //     $query=$this->input->get('q');
-    //     $whereauto="company_name like '%$query%'";
-    //     $selectauto="company_profile_id as id, company_name as name";
-    //     $result= $this->Master_model->getMaster('company_profile',$whereauto,false,false,false,$selectauto);
-    //     // echo $this->db->last_query();
-    //     echo json_encode($result); 
-    // }
 
 // to get companies
     function get_autocomplete(){
