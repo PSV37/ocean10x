@@ -61,6 +61,7 @@ class Job_forword_seeker extends CI_Controller {
                         $where_update1['job_post_id'] = $job_id;
                         $where_update1['job_seeker_id'] = $job_seeker_id;
                         $status = $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
+                         echo $this->db->last_query(); echo "reg contr";die;
                         if($status)
                         {
                             redirect('register/jobseeker_login', 'refresh');
@@ -79,6 +80,7 @@ class Job_forword_seeker extends CI_Controller {
                         $where_update1['job_post_id'] = $job_id;
                         $where_update1['job_seeker_id'] = $job_seeker_id;
                         $status = $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
+                         echo $this->db->last_query(); echo "index";die;
                         if($status)
                         {
                             redirect('Job_forword_seeker/index');
@@ -94,6 +96,7 @@ class Job_forword_seeker extends CI_Controller {
                         $where_update1['job_post_id'] = $job_id;
                         $where_update1['job_seeker_id'] = $job_seeker_id;
                         $status = $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
+                          echo $this->db->last_query(); echo "set pass";die;
                         if($status)
                         {
     	                    $data['job_seeker_id'] = $job_seeker_id;
