@@ -76,10 +76,10 @@ class Job_forword_seeker extends CI_Controller {
                             $this->session->set_userdata($data);
                             // redirect('register/jobseeker_login', 'refresh');
 
-                            if ($this->job_apply_model->check_apply_job($job_seeker_id, $company_id, $job_post_id)) {
+                            // if ($this->job_apply_model->check_apply_job($job_seeker_id, $company_id, $job_post_id)) {
                        
-                                $this->load->view('fontend/alreadyapply');
-                            } else {
+                            //     $this->load->view('fontend/alreadyapply');
+                            // } else {
                                 
                                 $wherejob = "job_post_id='$job_post_id' AND company_profile_id='$company_id'";
                                 $select_test = "is_test_required,job_post_id,company_profile_id";
@@ -87,7 +87,7 @@ class Job_forword_seeker extends CI_Controller {
                                 $data1['job_test'] = $this->Master_model->getMaster('job_posting',$wherejob,$join = FALSE, $order = false, $field = false, $select_test,$limit=false,$start=false, $search=false);
                                     
                                 $this->load->view('fontend/applysucess',$data1);
-                            }
+                            // }
 
 
 
@@ -109,10 +109,10 @@ class Job_forword_seeker extends CI_Controller {
                         if($status==true)
                         {
                             // redirect('Job_forword_seeker/index');
-                            if ($this->job_apply_model->check_apply_job($job_seeker_id, $company_id, $job_post_id)) {
+                            // if ($this->job_apply_model->check_apply_job($job_seeker_id, $company_id, $job_post_id)) {
                        
-                                $this->load->view('fontend/alreadyapply');
-                            } else {
+                            //     $this->load->view('fontend/alreadyapply');
+                            // } else {
 
                                 $wherejob = "job_post_id='$job_post_id' AND company_profile_id='$company_id'";
                                 $select_test = "is_test_required,job_post_id,company_profile_id";
@@ -120,7 +120,7 @@ class Job_forword_seeker extends CI_Controller {
                                 $data1['job_test'] = $this->Master_model->getMaster('job_posting',$wherejob,$join = FALSE, $order = false, $field = false, $select_test,$limit=false,$start=false, $search=false);
                                     
                                 $this->load->view('fontend/applysucess',$data1);
-                            }
+                            // }
                         }
                         
       					

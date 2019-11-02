@@ -1,14 +1,14 @@
 <?php 
 $company_profile_id = $this->session->userdata('company_profile_id');
-echo $jobseeker_id = $this->session->userdata('job_seeker_id');
-  // if ($company_profile_id != null) {
-  //  $this->load->view('fontend/layout/employer_header.php');
-  // }
-  // elseif($jobseeker_id != null) {
-  //   $this->load->view('fontend/layout/seeker_header.php');
-  // } else {
-  //   $this->load->view('fontend/layout/header.php');
-  // }
+$jobseeker_id = $this->session->userdata('job_seeker_id');
+  if ($company_profile_id != null) {
+   $this->load->view('fontend/layout/employer_header.php');
+  }
+  elseif($jobseeker_id != null) {
+    $this->load->view('fontend/layout/seeker_header.php');
+  } else {
+    $this->load->view('fontend/layout/header.php');
+  }
 ?>                
  
 <div class="listpgWraper">
