@@ -27,8 +27,8 @@ class Subtopic extends MY_Controller
         
         $where_all = "subtopic.subtopic_status='1'";
         $join_emp = array(
-                'skill_master' => 'skill_master.id=subtopic.technical_id |INNER',
-                'topic' => 'topic.topic_id=subtopic.topic_id |INNER',
+                'skill_master' => 'skill_master.id=subtopic.technical_id |LEFT OUTER',
+                'topic' => 'topic.topic_id=subtopic.topic_id |LEFT OUTER',
             );
         $data['subtopic'] = $this->Master_model->getMaster('subtopic',$where_all,$join_emp);
 

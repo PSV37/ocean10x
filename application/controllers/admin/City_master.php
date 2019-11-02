@@ -27,8 +27,8 @@ class City_master extends MY_Controller
         
         $where_all = "city.city_status='1'";
         $join_emp = array(
-                'country' => 'country.country_id=city.country_id |INNER',
-                'state' => 'state.state_id=city.state_id |INNER',
+                'country' => 'country.country_id=city.country_id |LEFT OUTER',
+                'state' => 'state.state_id=city.state_id |LEFT OUTER',
             );
         $data['city_info'] = $this->Master_model->getMaster('city',$where_all,$join_emp);
 

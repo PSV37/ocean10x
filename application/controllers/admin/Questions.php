@@ -39,6 +39,8 @@ class Questions extends MY_Controller
                 'skill_master' => 'skill_master.id=questionbank.technical_id |LEFT OUTER',
                 'topic' => 'topic.topic_id=questionbank.topic_id |LEFT OUTER',
 				'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |LEFT OUTER',
+				'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |LEFT OUTER',
+				'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |LEFT OUTER',
 				
             );
 			
