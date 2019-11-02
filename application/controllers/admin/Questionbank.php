@@ -256,16 +256,17 @@ class Questionbank extends MY_Controller
 							$question_dt=array(
 								'is_admin' => $this->input->post('is_admin')
 							);
-							 if(empty($id)){
+							 
+                           $this->Questionbank_model->insertRecord($userdata);
+							//echo $this->db->last_query();die();
+                        }
+                        $skip ++;
+						if(empty($id)){
 							
 							$question_dt['ques_created_date']=date('Y-m-d H:i:s');
 							$question_dt['ques_created_by']=$user_id;
 
 							$q_id=$this->Master_model->master_insert($question_dt,'questionbank');
-                           $this->Questionbank_model->insertRecord($userdata);
-							//echo $this->db->last_query();die();
-                        }
-                        $skip ++;
                     }
 					
      				$data['response'] = 'successfully uploaded '.$filename; 
