@@ -32,7 +32,7 @@
            <?php echo $this->session->flashdata('invalid'); ?>
           <div class="formpanel">
             <div class="formrow">
-              <input type="text" class="form-control" name="email" placeholder="Email" autocomplete="off">
+              <input type="text" class="form-control" name="email" placeholder="Email/Mobile" autocomplete="off">
             </div>
             <div class="formrow">
               <input name="password" type="password" class="form-control" placeholder="Password" autocomplete="off">
