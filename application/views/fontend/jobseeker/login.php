@@ -53,9 +53,11 @@
             </div>
         
           </div>
-           </form>
+        </form>
           <!-- login form  end--> 
-          
+          <hr>
+            <p>Or login via socials <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-google" aria-hidden="true"></i></p>
+          <hr>
          <!-- sign up form -->
           <div class="newuser"><i class="fa fa-user" aria-hidden="true"></i> New User? <a href="<?php echo base_url() . 'register' ?>">Register My Account</a></div>
           <!-- sign up form end--> 
