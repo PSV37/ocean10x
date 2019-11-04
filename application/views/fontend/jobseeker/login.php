@@ -56,7 +56,14 @@
         </form>
           <!-- login form  end--> 
           <hr>
-            <div>Or login via socials <a href="#"><span class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></span></a> &nbsp;<a href="#"><span class="goog"><i class="fa fa-google" aria-hidden="true"></i></span></a></div>
+            <div class="row">
+              <div class="col-md-6">
+                Or login via socials
+              </div>
+              <div class="col-md-6" align="right"> 
+                <a href="#"><span class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></span></a><a href="#"><span class="goog"><i class="fa fa-google" aria-hidden="true"></i></span></a>
+              </div>
+            </div>
           <hr>
          <!-- sign up form -->
           <div class="newuser"><i class="fa fa-user" aria-hidden="true"></i> New User? <a href="<?php echo base_url() . 'register' ?>">Register My Account</a></div>
@@ -68,11 +75,8 @@
   </div>
 </div>
 
-
-
-
-               
-              <!-- end section -->
+             
+<!-- end section -->
 
  <?php $this->load->view("fontend/layout/footer.php"); ?>
  <style type="text/css">
