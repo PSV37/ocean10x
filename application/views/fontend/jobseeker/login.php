@@ -47,12 +47,12 @@
               </div>
               
             </div>
-            <div class="formrow">
+            <div class="form-controlow">
               <input type="submit" class="btn btn-lg" value="Login Account"> 
-              <div class="panel-body"></div>
+              <br>
                 <div class="newuser">Or</div>
-              <div class="panel-body"></div>
-                <div class="newuser">Login via OTP</div>
+              <br>
+                <div class="newuser"><a href="#">Login via OTP</a></div>
             </div>
           </div>
            </form>
