@@ -148,7 +148,7 @@
                       <option value="<?php echo $key['country_id']; ?>"<?php if($training_list->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
                     <?php } ?>
                   </select>
-                </div>
+                </div> 
               </div>
 
               <div class="form-group">
