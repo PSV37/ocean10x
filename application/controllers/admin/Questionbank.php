@@ -173,7 +173,7 @@ class Questionbank extends MY_Controller
     			// Set preference 
     			$config['upload_path'] = 'question_excel/files/'; 
     			$config['allowed_types'] = 'csv'; 
-    			$config['max_size'] = '1000'; // max_size in kb 
+    			$config['max_size'] = '3000'; // max_size in kb 
     			$config['file_name'] = $_FILES['file']['name']; 
 
     			// Load upload library 
@@ -191,7 +191,7 @@ class Questionbank extends MY_Controller
 
                     $importData_arr = array();
                        
-                    while (($filedata = fgetcsv($file, 1000, ",")) !== FALSE) {
+                    while (($filedata = fgetcsv($file, 3000, ",")) !== FALSE) {
                         $num = count($filedata);
 
                         for ($c=0; $c < $num; $c++) {
