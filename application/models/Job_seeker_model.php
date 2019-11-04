@@ -85,12 +85,12 @@ class Job_seeker_model extends MY_Model
         $ci = get_instance();
         $ci->load->library('email');
 
-		$config['protocol']    = 'smtp';
-		$config['smtp_host']    = 'mail.consultnhire.com';
-		$config['smtp_port']    = '465';
-		$config['smtp_timeout'] = '7'; 
-		$config['smtp_user'] = "info@consultnhire.com";
-		$config['smtp_pass'] = "yQB;H[V&o64I";
+		$config['protocol']    = 'mail';
+		// $config['smtp_host']    = 'mail.consultnhire.com';
+		// $config['smtp_port']    = '465';
+		// $config['smtp_timeout'] = '7'; 
+		// $config['smtp_user'] = "info@consultnhire.com";
+		// $config['smtp_pass'] = "yQB;H[V&o64I";
 		$config['charset']    = 'utf-8';
 		$config['newline']    = "\r\n";
 		$config['mailtype'] = 'html'; // or html
@@ -106,9 +106,10 @@ class Job_seeker_model extends MY_Model
         $this->email->reply_to('info@consultnhire.com', 'ConsultnHire');
         $ci->email->subject('verify email account');
         $ci->email->message($message);
-        $ci->email->send();
+        $ci->email->send(FALSE);
 
         return true;
+
     }
 
     //activate user account

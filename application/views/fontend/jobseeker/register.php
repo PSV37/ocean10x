@@ -69,7 +69,7 @@
                                                   </select>
                                             </div>
                                             <div class="col-md-6 col-sm-12">
-                                                <input type="text" name="user_name"  value="<?php echo isset($this->session->userdata['reg_jobseeker']['user_name'])?$this->session->userdata['reg_jobseeker']['user_name']:''; ?>"class="form-control" placeholder="User Name" autocomplete="off">
+                                                <input type="hidden" name="user_name"  value="<?php echo isset($this->session->userdata['reg_jobseeker']['user_name'])?$this->session->userdata['reg_jobseeker']['user_name']:''; ?>"class="form-control" placeholder="User Name" autocomplete="off">
                                             </div>
                                         </div><!-- end row -->
                                     </div>
@@ -110,7 +110,7 @@
                                <div class="formrow">
                                <div class="row">
                                <div class="col-md-6 col-sm-12">
-                                    <input type="checkbox" value="" > <a  href="<?php echo base_url().'terms' ?>" target="_blank" required>  I agree to the Terms and Conditions</a></label>
+                                    <input type="checkbox" value="" checked="" > <a  href="<?php echo base_url().'terms' ?>" target="_blank" required>  I agree to the Terms and Conditions</a></label>
                                 </div>
                                </div>
 </div>
@@ -172,10 +172,7 @@
 
                 rules: {
                     full_name: "required",
-                    user_name: {
-                        required: true,
-                        minlength: 2
-                    },
+                    
                  gender: {
                         required: true,
                     },
@@ -201,10 +198,7 @@
                 messages: {
                     full_name: "Please enter your firstname",
                     gender: "Please enter your Gender",
-                    username: {
-                        required: "Please enter a username",
-                        minlength: "Your username must consist of at least 2 characters"
-                    },
+                   
                     password: {
                         required: "Please provide a password",
                         minlength: "Your password must be at least 6 characters long"
