@@ -47,7 +47,13 @@
               </div>
               
             </div>
-            <input type="submit" class="btn btn-primary btn-lg" value="Login Account">
+            <div class="formrow">
+              <input type="submit" class="btn btn-lg" value="Login Account"> 
+              <div class="panel-body"></div>
+                <div class="newuser">Or</div>
+              <div class="panel-body"></div>
+                <div class="newuser">Login via OTP</div>
+            </div>
           </div>
            </form>
           <!-- login form  end--> 
