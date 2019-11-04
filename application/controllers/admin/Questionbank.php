@@ -238,7 +238,7 @@ class Questionbank extends MY_Controller
 							$lineitem=trim($userdata[3]);
 							$where_lineitem="title='".$lineitem."'";
 							$lineitem_data = $this->Master_model->getMaster('lineitem', $where_lineitem);
-							//print_r($lineitem_data); 
+							print_r($lineitem_data); 
 								if(!empty($lineitem_data)){
 									$userdata[3]=$lineitem_data[0]['lineitem_id'];
 								}else{
