@@ -85,32 +85,55 @@ function get_metas() {
 
  function sendEmail_JobRequest($to_email,$message,$subject)
     {
+        // $ci = get_instance();
+        // $ci->load->library('email');
+        
+        // $config['protocol']     = 'smtp';
+        // $config['smtp_host']    = 'mail.consultnhire.com';
+        // $config['smtp_port']    = '465';
+        // $config['smtp_timeout'] = '7'; 
+        // $config['smtp_user']    = "info@consultnhire.com";
+        // $config['smtp_pass']    = "yQB;H[V&o64I";
+        // $config['charset']      = 'utf-8';
+        // $config['newline']      = "\r\n";
+        // $config['mailtype']     = 'html'; // or html
+        // $config['validation']   = TRUE;
+        // $ci->email->initialize($config);        
+                
+        // $ci->email->from('info@consultnhire.com', 'ConsultnHire');
+        // $ci->email->to($to_email);
+        // $ci->email->bcc('careerportal02@gmail.com');
+       
+        // $ci->email->reply_to('info@consultnhire.com', 'ConsultnHire');
+        // $ci->email->subject($subject);
+        // $ci->email->message($message);
+        // $ci->email->send();
+        
+        // return true;
         $ci = get_instance();
         $ci->load->library('email');
-        
-        $config['protocol']     = 'smtp';
-        $config['smtp_host']    = 'mail.consultnhire.com';
-        $config['smtp_port']    = '465';
-        $config['smtp_timeout'] = '7'; 
-        $config['smtp_user']    = "info@consultnhire.com";
-        $config['smtp_pass']    = "yQB;H[V&o64I";
-        $config['charset']      = 'utf-8';
-        $config['newline']      = "\r\n";
-        $config['mailtype']     = 'html'; // or html
-        $config['validation']   = TRUE;
-        $ci->email->initialize($config);        
-                
-        $ci->email->from('info@consultnhire.com', 'ConsultnHire');
-        $ci->email->to($to_email);
-        $ci->email->bcc('careerportal02@gmail.com');
-       
-        $ci->email->reply_to('info@consultnhire.com', 'ConsultnHire');
-        $ci->email->subject($subject);
-        $ci->email->message($message);
-        $ci->email->send();
-        
-        return true;
-     
+            /*$config['protocol'] = "smtp";
+            $config['smtp_host'] = "ssl://smtp.gmail.com";
+            $config['smtp_port'] = "465";
+            $config['smtp_user'] = "notification@yourdomain.com"; 
+            $config['smtp_pass'] = "Romesh-shil1995";*/
+            
+            $config['protocol'] = "mail";
+            $config['charset'] = "utf-8";
+            $config['mailtype'] = "html";
+            $config['newline'] = "\r\n";
+
+
+            $ci->email->initialize($config);
+            $ci->email->from('info@consultnhire.com', 'ConsultnHire');
+            $ci->email->to($to_email);
+            $ci->email->reply_to('info@consultnhire.com', 'ConsultnHire');
+            $ci->email->subject($subject);
+            $ci->email->message($message);
+            $ci->email->send(FALSE);
+          //  $ci->email->print_debugger(array('headers'));
+          //  exit;
+            return true;
     }
 
     // to fetch exam result by job seeker ids
