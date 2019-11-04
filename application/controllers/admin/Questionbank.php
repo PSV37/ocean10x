@@ -233,25 +233,48 @@ class Questionbank extends MY_Controller
 								$userdata[2]=0;
 							}
 							
-							$lineitem=$userdata[3];
+							
+							if(isset($userdata[3]) and trim($userdata[3])!=""){
+							$lineitem=trim($userdata[3]);
 							$where_lineitem="title='".$lineitem."'";
 							$lineitem_data = $this->Master_model->getMaster('lineitem', $where_lineitem);
 							//print_r($lineitem_data); 
 							$userdata[3]=$lineitem_data[0]['lineitem_id'];
+							}else{
+									$userdata[3]=0;
+								}
+							}else{
+								$userdata[3]=0;
+							}
 							
 							
-							$lineitemlevel=$userdata[4];
+							if(isset($userdata[4]) and trim($userdata[4])!=""){
+							$lineitemlevel=trim($userdata[4]);
 							$where_lineitemlevel="titles='".$lineitemlevel."'";
 							$lineitemlevel_data = $this->Master_model->getMaster('lineitemlevel', $where_lineitemlevel);
 							//print_r($lineitemlevel_data);die(); 
 							$userdata[4]=$lineitemlevel_data[0]['lineitemlevel_id'];
+							}else{
+									$userdata[4]=0;
+								}
+							}else{
+								$userdata[4]=0;
+							}
 							
-																					
-							$options=$userdata[13];
+							
+							if(isset($userdata[13]) and trim($userdata[13])!=""){														
+							$options=trim($userdata[13]);
 							$where_options="options_type='".$options."'";
 							$options_data = $this->Master_model->getMaster('options', $where_options);
 							print_r($options_data);die(); 
 							$userdata[13]=$options_data[0]['options_id'];
+							}else{
+									$userdata[13]=0;
+								}
+							}else{
+								$userdata[13]=0;
+							}
+							
 							
                            $this->Questionbank_model->insertRecord($userdata);
 							//echo $this->db->last_query();die();
