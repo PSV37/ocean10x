@@ -24,7 +24,7 @@ class Register extends CI_Controller
                 'full_name' => $this->input->post('full_name'),
                 'email'     => $this->input->post('email'),
                 'gender'    => $this->input->post('gender'),
-                'user_name' => $this->input->post('user_name'),
+                // 'user_name' => $this->input->post('user_name'),
                 'password'  => md5($this->input->post('password')),
                 'js_token'  => md5($this->input->post('email')),
                 'js_status' => 0,
@@ -32,14 +32,14 @@ class Register extends CI_Controller
             );
             $email_to = $this->input->post('email');
             $exist_email    = $this->job_seeker_model->email_check($this->input->post('email'));
-            $exist_username = $this->job_seeker_model->username_check($this->input->post('user_name'));
+            // $exist_username = $this->job_seeker_model->username_check($this->input->post('user_name'));
                  $this->session->set_userdata('reg_jobseeker', $js_info );
 
-			if ($exist_username) {
-                // all Ready Account Message
-                $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your username Or Account Already Use This!</div>');
-                redirect('register');
-            }
+			// if ($exist_username) {
+   //              // all Ready Account Message
+   //              $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your username Or Account Already Use This!</div>');
+   //              redirect('register');
+   //          }
 
             if ($exist_email) {
                 // all Ready Account Message
