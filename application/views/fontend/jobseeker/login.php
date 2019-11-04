@@ -47,7 +47,7 @@
               </div>
               
             </div>
-            <input type="submit" class="btn" value="Login Account">
+            <input type="submit" class="btn btn-primary btn-lg" value="Login Account">
           </div>
            </form>
           <!-- login form  end--> 
