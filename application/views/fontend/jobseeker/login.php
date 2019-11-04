@@ -56,7 +56,7 @@
         </form>
           <!-- login form  end--> 
           <hr>
-            <p class="contactinfo">Or login via socials <a href="#"><span><i class="fa fa-facebook" aria-hidden="true"></i></span></a> &nbsp;<a href="#"><span><i class="fa fa-google" aria-hidden="true"></i></span></a></p>
+            <div class="contactinfo">Or login via socials <a href="#"><span><i class="fa fa-facebook" aria-hidden="true"></i></span></a> &nbsp;<a href="#"><span><i class="fa fa-google" aria-hidden="true"></i></span></a></div>
           <hr>
          <!-- sign up form -->
           <div class="newuser"><i class="fa fa-user" aria-hidden="true"></i> New User? <a href="<?php echo base_url() . 'register' ?>">Register My Account</a></div>
