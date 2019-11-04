@@ -268,7 +268,7 @@ class Questionbank extends MY_Controller
 							$options=trim($userdata[13]);
 							$where_options="options_type='".$options."'";
 							$options_data = $this->Master_model->getMaster('options', $where_options);
-							//print_r($options_data);die();
+							print_r($options_data);die();
 							if(!empty($options_data)){							
 							$userdata[13]=$options_data[0]['options_id'];
 							}else{
