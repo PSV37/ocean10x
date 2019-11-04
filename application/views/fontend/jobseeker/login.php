@@ -40,18 +40,24 @@
             <div class="formrow">
               <div class="row">
               	<div class="col-md-6">
-                <input id="checkbox_qu_01" type="checkbox" class="styled">
-              	<label for="checkbox_qu_01"><small>Remember me</small></label>
+              <!--   <input id="checkbox_qu_01" type="checkbox" class="styled">
+              	<label for="checkbox_qu_01"><small>Remember me</small></label> -->
                 </div>
                 <div class="col-md-6" align="right"><a href="<?php echo base_url() . 'register/forgot_pass' ?>">Forgot Password?</a></div>
               </div>
               
             </div>
-            <input type="submit" class="btn" value="Login Account">
+              <div class="newuser"> <input type="submit" class="btn" value="Login Account"> 
+                  Or
+                <a href="#">Login via OTP</a>
+            </div>
+        
           </div>
-           </form>
+        </form>
           <!-- login form  end--> 
-          
+          <hr>
+            <div class="contactinfo">Or login via socials <a href="#"><span><i class="fa fa-facebook" aria-hidden="true"></i></span></a> &nbsp;<a href="#"><span><i class="fa fa-google" aria-hidden="true"></i></span></a></div>
+          <hr>
          <!-- sign up form -->
           <div class="newuser"><i class="fa fa-user" aria-hidden="true"></i> New User? <a href="<?php echo base_url() . 'register' ?>">Register My Account</a></div>
           <!-- sign up form end--> 

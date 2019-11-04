@@ -148,11 +148,9 @@ $jobseeker_id = $this->session->userdata('job_seeker_id');
           <ul class="searchList">
             <?php 
 
-		  	if($radom_jobs): foreach($radom_jobs as $row_related):
+      		  	if($radom_jobs): foreach($radom_jobs as $row_related):
 
-			
-
-		  ?>
+      		  ?>
             
             <!-- Job start -->
             
