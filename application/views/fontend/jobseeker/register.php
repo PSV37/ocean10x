@@ -69,7 +69,7 @@
                                                   </select>
                                             </div>
                                             <div class="col-md-6 col-sm-12">
-                                                <input type="text" name="user_name"  value="<?php echo isset($this->session->userdata['reg_jobseeker']['user_name'])?$this->session->userdata['reg_jobseeker']['user_name']:''; ?>"class="form-control" placeholder="User Name" autocomplete="off">
+                                                <input type="hidden" name="user_name"  value="<?php echo isset($this->session->userdata['reg_jobseeker']['user_name'])?$this->session->userdata['reg_jobseeker']['user_name']:''; ?>"class="form-control" placeholder="User Name" autocomplete="off">
                                             </div>
                                         </div><!-- end row -->
                                     </div>
