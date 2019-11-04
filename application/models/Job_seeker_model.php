@@ -68,8 +68,7 @@ class Job_seeker_model extends MY_Model
         $this->db->select('*');
         $this->db->from($this->_table_name);
         // $this->db->where('email', $email);
-        $where = "email='$email' OR mobile='$email' AND password='$password' AND js_status='1'";
-
+        $where = "email='$email' OR mobile_no='$email' AND password='$password' AND js_status='1'";
         $this->db->where($where);
         // $this->db->where('password', $password);
         //$this->db->where('js_status', "1");
@@ -288,39 +287,39 @@ public function check_forgot_user_info($email)
             $config['newline'] = "\r\n";
 
             $message='<div style="max-width:600px!important;padding:4px">
-  <table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0">
-    <tbody>
-      <tr>
-        <td align="center"><table width="100%" cellspacing="0" border="0">
-            <tbody>
-              <tr>
-                <td style="font-size:0px;text-align:left" valign="top"><?php echo get_logo();?></td>
-              </tr>
-            </tbody>
-          </table>
-          <table width="100%" cellspacing="0" cellpadding="0" border="0">
-            <tbody>
-              <tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left">
-                <td><br>
-                  <br>
-                  Hello Dear,<br>
-                  Please click on link below to reset your password: <br>
-                  
-               <a style="border-radius:4px;font-size:15px;color:white;text-decoration:none;padding:14px 7px 14px 7px;width:210px;max-width:210px;font-family:&quot;Open Sans&quot;,&quot;Helvetica Neue&quot;,Arial;margin:0;display:block;background-color:#6caa4d;text-align:center" href="'.base_url().'register/reset_password/' . md5($to_email) . '">Reset Password</a>
-                  <br>
-                  <br>
-                  © 2017 ConsultnHire All Rights Reserved.</td>
-              </tr>
-              <tr>
-                <td height="40"></td>
-              </tr>
-            </tbody>
-          </table></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-';
+              <table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0">
+                <tbody>
+                  <tr>
+                    <td align="center"><table width="100%" cellspacing="0" border="0">
+                        <tbody>
+                          <tr>
+                            <td style="font-size:0px;text-align:left" valign="top"><?php echo get_logo();?></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                          <tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left">
+                            <td><br>
+                              <br>
+                              Hello Dear,<br>
+                              Please click on link below to reset your password: <br>
+                              
+                           <a style="border-radius:4px;font-size:15px;color:white;text-decoration:none;padding:14px 7px 14px 7px;width:210px;max-width:210px;font-family:&quot;Open Sans&quot;,&quot;Helvetica Neue&quot;,Arial;margin:0;display:block;background-color:#6caa4d;text-align:center" href="'.base_url().'register/reset_password/' . md5($to_email) . '">Reset Password</a>
+                              <br>
+                              <br>
+                              © 2017 ConsultnHire All Rights Reserved.</td>
+                          </tr>
+                          <tr>
+                            <td height="40"></td>
+                          </tr>
+                        </tbody>
+                      </table></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            ';
 
             $ci->email->initialize($config);
             $ci->email->from('info@consultnhire.com', 'ConsultnHire');
