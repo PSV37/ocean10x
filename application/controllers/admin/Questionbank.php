@@ -256,7 +256,7 @@ class Questionbank extends MY_Controller
 					
 				   
     			}else{ 
-     				$data['response'] = 'failed'; 
+     				$data['response'] = 'failed Successfully'; 
     			} 
    			}else{ 
     			$data['response'] = 'failed'; 
