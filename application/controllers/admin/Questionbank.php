@@ -172,7 +172,7 @@ class Questionbank extends MY_Controller
    			if(!empty($_FILES['file']['name'])){ 
     			// Set preference 
     			$config['upload_path'] = 'question_excel/files/'; 
-    			$config['allowed_types'] = 'csv/xlsx|xls'; 
+    			$config['allowed_types'] = 'csv'; 
     			$config['max_size'] = '3000'; // max_size in kb 
     			$config['file_name'] = $_FILES['file']['name']; 
 
@@ -242,10 +242,10 @@ class Questionbank extends MY_Controller
 									$userdata[3]=$lineitem_data[0]['lineitem_id'];
 								}else{
 									$userdata[3]=0;
-									 }
+								}
 							}else{
-								    $userdata[3]=0;
-								 }
+								$userdata[3]=0;
+							}
 							
 							
 							if(isset($userdata[4]) and trim($userdata[4])!=""){
