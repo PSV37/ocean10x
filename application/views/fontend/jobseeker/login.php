@@ -58,7 +58,7 @@
           <hr>
             <div class="row">
               <div class="col-md-6">
-                Or login via socials
+                <span> Or login via socials</span>
               </div>
               <div class="col-md-6" align="right"> 
                 <a href="#"><span class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></span></a><a href="#"><span class="goog"><i class="fa fa-google" aria-hidden="true"></i></span></a>
