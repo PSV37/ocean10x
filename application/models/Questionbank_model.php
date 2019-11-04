@@ -5,7 +5,6 @@ class Questionbank_model extends MY_Model {
     function insertRecord($record){
         //print_r($record);
 		$user_id = $this->session->userdata('admin_user_id');
-		$question_id = $this->db->select('ques_id');
         if(count($record) > 0){
                 $newquestionsbank = array(
 					"technical_id" => trim($record[0]),
@@ -26,7 +25,7 @@ class Questionbank_model extends MY_Model {
 					"ques_created_by" => $user_id
                 );
 				
-				$this->db->insert('questionbank', $newquestionsbank);
+                $question_id=$this->db->insert('questionbank', $newquestionsbank);
 				
 				$newquestionsbanks = array(
 					"question_id"=> $question_id,
