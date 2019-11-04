@@ -24,7 +24,7 @@ class Questionbank_model extends MY_Model {
 					"ques_created_date" => date('Y-m-d H:i:s'),
 					"ques_created_by" => $user_id
                 );
-				"ques_id" => $question_id;
+				"ques_id"=$question_id;
 				$this->db->insert('questionbank', $newquestionsbank);
 				
 				$newquestionsbanks = array(
