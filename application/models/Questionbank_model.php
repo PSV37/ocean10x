@@ -26,6 +26,7 @@ class Questionbank_model extends MY_Model {
                 );
 				
                 $question_id=$this->db->insert('questionbank', $newquestionsbank);
+				$question_id = $this->db->insert_id();
 				
 				$newquestionsbanks = array(
 					"question_id"=> $question_id,
