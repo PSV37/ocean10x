@@ -68,7 +68,7 @@ class Job_seeker_model extends MY_Model
         $this->db->select('*');
         $this->db->from($this->_table_name);
         // $this->db->where('email', $email);
-        $where = "email='$email' OR mobile='$email' AND password='$password' AND js_status='1'";
+        $where = "email='$email' OR mobile_no='$email' AND password='$password' AND js_status='1'";
         $this->db->where($where);
         // $this->db->where('password', $password);
         //$this->db->where('js_status', "1");
