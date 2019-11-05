@@ -609,37 +609,10 @@ function runit(){
           </div>
 				
 			  </div>
-            <div class="row">
-              <div class="col-md-12">
-              	<div class="col-md-6 col-sm-12">
-	              	<div class="input-group">
-	                  <label class="control-label" for="email">Father Name:</label>
-	                  <input type="text" name="father_name" class="form-control name-valid" id="father_name"
-	                   value="<?php
-	                         if (!empty($js_personal_info->father_name)) {
-	                           echo $js_personal_info->father_name;
-	                           }
-	                       ?>">
-	                </div>     
-	            </div>
-                <div class="col-md-6 col-sm-12">         
-	              <div class="input-group">
-	                  <label class="control-label" for="email">Mother Name:</label>
-	                  <input type="text" name="mother_name" class="form-control name-valid" id="mother_name"
-	                   value="<?php
-	                         if (!empty($js_personal_info->mother_name)) {
-	                           echo $js_personal_info->mother_name;
-	                           }
-	                       ?>">
-	              </div>
-	          	</div>
-		        </div>
-		    </div>
-		    <div class="row">
-              <div class="col-md-12">
-
-              	
-          		<div class="col-md-6 col-sm-12">
+			  
+			  <div class="row">
+			  <div class="col-md-12">
+			  <div class="col-md-6 col-sm-12">
               <div class="input-group">
                 <label class="control-label" for="pwd"> Country Code:</label>
 				<select id="country" name="country_code" class="form-control">
@@ -878,12 +851,8 @@ function runit(){
 
 	              </div>
 	          	</div>
-	          </div>
-	      </div>
-	      <div class="row">
-              <div class="col-md-12">
-
-          	<div class="col-md-6 col-sm-12">
+				
+				<div class="col-md-6 col-sm-12">
               <div class="input-group">
                   <label class="control-label" for="pwd"> Primary Phone No:</label>
                   <input name="mobile" type="text"  class="form-control"  maxlength="10" id="number" 
@@ -894,6 +863,40 @@ function runit(){
                        ?>">&nbsp;<span id="errmsg"></span>
               </div>
             </div>
+				
+			  </div>
+			  </div>
+            <div class="row">
+              <div class="col-md-12">
+              	<div class="col-md-6 col-sm-12">
+	              	<div class="input-group">
+	                  <label class="control-label" for="email">Father Name:</label>
+	                  <input type="text" name="father_name" class="form-control name-valid" id="father_name"
+	                   value="<?php
+	                         if (!empty($js_personal_info->father_name)) {
+	                           echo $js_personal_info->father_name;
+	                           }
+	                       ?>">
+	                </div>     
+	            </div>
+                <div class="col-md-6 col-sm-12">         
+	              <div class="input-group">
+	                  <label class="control-label" for="email">Mother Name:</label>
+	                  <input type="text" name="mother_name" class="form-control name-valid" id="mother_name"
+	                   value="<?php
+	                         if (!empty($js_personal_info->mother_name)) {
+	                           echo $js_personal_info->mother_name;
+	                           }
+	                       ?>">
+	              </div>
+	          	</div>
+		        </div>
+		    </div>
+		  
+	      <div class="row">
+              <div class="col-md-12">
+
+          	
 			<div class="row">
               <div class="col-md-12">
           		<div class="col-md-6 col-sm-12">
