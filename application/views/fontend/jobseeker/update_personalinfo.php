@@ -120,6 +120,11 @@
 								<span><a href="#" data-toggle="modal" data-target="#PersonalinfoUpdate" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top" style="font-size:18px;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> </span>
                                   <tbody>
 								  <tr>
+                                      <td>Name:</td>
+                                    <td><?php echo $js_info->full_name; ?></td>
+                                    </tr> 
+								  
+								  <tr>
                                       <td>Date of Birth:</td>
                                   <td><?php if($js_personal_info->date_of_birth=="0000-00-00") {
                                     echo "";
