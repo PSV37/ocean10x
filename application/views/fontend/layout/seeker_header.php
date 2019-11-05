@@ -78,7 +78,7 @@
   <!-- Header container end --> 
 </div>
 
-<?php echo $this->session->flashdata('emp_msg');; ?>
+<?php echo $this->session->flashdata('message');; ?>
 
 
 
