@@ -342,6 +342,7 @@ function runit(){
          <form id="Personal-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_personalinfo');?>"  method="post" autocomplete="off">
               <input type="hidden" value="<?php echo $js_personal_info->job_personal_info_id; ?>" name="js_personal_info_id">
               <div class="row">
+			  <div class="col-md-12">
 			  <div class="col-md-6 col-sm-12">
 	              	<div class="input-group">
 	                 <label class="control-label" for="email">Date of Birth:</label>
@@ -604,6 +605,7 @@ function runit(){
 					<option value="Zimbabwe">Zimbabwe</option>
                   </select>
               </div>
+			  </div>
           </div>
 				
 			  </div>
