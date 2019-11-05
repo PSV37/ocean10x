@@ -273,7 +273,7 @@ public function check_forgot_user_info($email)
 	
  //send forgot password email to user's email id
     public function forgot_pass_email($to_email)
-{
+    {
             $ci = get_instance();
             $ci->load->library('email');
             /*$config['protocol'] = "smtp";

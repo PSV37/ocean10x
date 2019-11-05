@@ -24,9 +24,9 @@
          
                     <div class="x_panel">
                       <ul class="nav nav-tabs">
-                        <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="false">Send Applicaitons</a>
+                        <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="false">My Applied Jobs</a>
                         </li>
-                        <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Forwarded Applicaitons</a>
+                        <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">My Job Invitation</a>
                         </li>
                       </ul>
                     <div class="x_content">
@@ -117,7 +117,7 @@
                                 <?php endif; ?>
                               </tbody>
                             </table>
-                            <small>*Note: Applications in this tab only appears when you apply for any job from site.</small>
+                            <small>*Note: Jobs in this tab only appears when you apply for any job from site.</small>
                           </div>
 
                           <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
@@ -206,7 +206,7 @@
                                 <?php endif; ?>
                               </tbody>
                             </table>
-                            <small>*Note: Applications in this tab only appears when Company or HR Consultant forward to you.</small>
+                            <small>*Note: Jobs in this tab only appears when Company or HR Consultant invite to you.</small>
                           </div>
                          
                         </div>
