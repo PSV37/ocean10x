@@ -166,7 +166,7 @@ class Job_seeker extends MY_Seeker_Controller
     {
         $jobseeker_id     = $this->session->userdata('job_seeker_id');
         $job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id);
-        $this->load->view('fontend/jobseeker/update_photo.php', compact('job_seeker_photo'));
+        $this->load->view('fontend/jobseeker/update_personalinfo.php', compact('job_seeker_photo'));
     }
     
 	public function save_photo2($id)
