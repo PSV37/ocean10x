@@ -1139,6 +1139,24 @@ function runit(){
               </div>
           	</div>-->
          
+		     <div class="row">
+              <div class="col-md-12">
+            <div class="col-md-12 col-sm-12">  
+              	<div class="input-group">
+                  	<label class="control-label" for="pwd">Present Address</label>
+                  	<textarea name="present_address" class="form-control ckeditor" rows="5" id="comment"><?php 
+                         if (!empty($js_personal_info->present_address)) {
+                           echo $js_personal_info->present_address;
+                           }
+                       ?></textarea>
+              	</div>
+          	</div>
+              <div class="panel-body"></div>
+             
+			
+          </div>
+      </div>
+		 
       <div class="row">
         <div class="col-md-12">
           	
@@ -1153,11 +1171,8 @@ function runit(){
 				  </select>
                 </div>
          	</div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="col-md-6 col-sm-12">
+			
+			<div class="col-md-6 col-sm-12">
 			  <div class="input-group">
                   <label class="control-label" for="pwd">State</label>
                  <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
@@ -1168,6 +1183,12 @@ function runit(){
 				 </select>
               </div>
             </div>
+			
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            
             <div class="col-md-6 col-sm-12">
 			  <div class="input-group">
                  <label class="control-label" for="pwd">City</label>
@@ -1179,9 +1200,7 @@ function runit(){
 				 </select>
               </div>
             </div>
-			</div>
-			 </div>
-            <div class="row">
+			
 			 <div class="col-md-12">
 			 <div class="col-md-6 col-sm-12">
 				<div class="input-group">
@@ -1194,27 +1213,31 @@ function runit(){
 	            </div>
           	</div>
 			</div>
+			
 			</div>
-            <div class="row">
-              <div class="col-md-12">
-            <div class="col-md-12 col-sm-12">  
-              	<div class="input-group">
-                  	<label class="control-label" for="pwd">Present Address</label>
-                  	<textarea name="present_address" class="form-control ckeditor" rows="5" id="comment"><?php 
-                         if (!empty($js_personal_info->present_address)) {
-                           echo $js_personal_info->present_address;
-                           }
-                       ?></textarea>
-              	</div>
-          	</div>
-              <div class="panel-body"></div>
-             <input type="checkbox" name="billingtoo" onclick="FillBilling(this.form)">
+			 </div>
+       <input type="checkbox" name="billingtoo" onclick="FillBilling(this.form)">
 			  
 			 <em>Check this box if Present Address and Parmanent Address are the same.</em>
 			<div class="panel-body"></div>
-			
-          </div>
+        
+		   <div class="row">
+              <div class="col-md-12">
+          	<div class="col-md-12 col-sm-12">
+              <div class="input-group">
+               <br/> <label class="control-label" for="pwd">Parmanent Address</label>
+                <textarea name="parmanent_address" class="form-control ckeditor" rows="5" id="comment"><?php 
+                    if (!empty($js_personal_info->parmanent_address)) {
+                           echo $js_personal_info->parmanent_address;
+                        }
+                    ?></textarea>
+              </div>
+            </div>    
+            <div class="panel-body"></div>          
+             
       </div>
+      </div>
+		
       <div class="row">
               
 			  <div class="col-md-6 col-sm-12">
@@ -1263,22 +1286,7 @@ function runit(){
 	            </div>
           	</div>
 	  </div>
-      <div class="row">
-              <div class="col-md-12">
-          	<div class="col-md-12 col-sm-12">
-              <div class="input-group">
-                <label class="control-label" for="pwd">Parmanent Address</label>
-                <textarea name="parmanent_address" class="form-control ckeditor" rows="5" id="comment"><?php 
-                    if (!empty($js_personal_info->parmanent_address)) {
-                           echo $js_personal_info->parmanent_address;
-                        }
-                    ?></textarea>
-              </div>
-            </div>    
-            <div class="panel-body"></div>          
-             
-      </div>
-      </div>
+   
 	  <div class="row">
               <div class="col-md-12">
               	<div class="col-md-6 col-sm-12">
