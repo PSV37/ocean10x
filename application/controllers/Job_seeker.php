@@ -540,6 +540,20 @@ exit;*/
 
     public function logout()
     {
+        $LogOutDateTime = date('Y-m-d H:i:s');
+        $jobseeker_id    = $this->session->userdata('job_seeker_id');
+
+        $where_sek['job_seeker_id'] = $jobseeker_id;
+        $results = $this->Master_model->get_master_row("js_info", $select = 'id', $where_sek, $join=FALSE);
+        $id = $results['id'];
+
+        $logs = array(
+            'logout'     =>$LogOutDateTime,
+        );
+
+        $where_update['id'] = $id;
+        $this->Master_model->master_update($logs, 'js_login_logs', $where_update);
+
         $this->session->sess_destroy();
         redirect('register/jobseeker_login');
     }
