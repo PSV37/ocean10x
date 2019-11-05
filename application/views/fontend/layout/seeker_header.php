@@ -78,10 +78,6 @@
   <!-- Header container end --> 
 </div>
 
-<?php echo $this->session->flashdata('message');; ?>
-
-
-
 
 <div class="modal fade" id="lookingjob" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-sm">

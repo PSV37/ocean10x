@@ -179,6 +179,8 @@ class Register extends CI_Controller
             $this->Master_model->insertData('js_login_logs',$logs);
 
             $this->session->set_userdata($data);
+            $this->session->set_flashdata('type', 'success');
+            $this->session->set_flashdata('Message', 'Welcome Back...!');
             redirect('job_seeker/seeker_info');
         } else {
             $this->session->set_flashdata('invalid', '<div class="alert alert-danger text-center">Sorry! There is error verifying your Email Address!</div>');
