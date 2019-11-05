@@ -60,7 +60,7 @@
                       <ul class="dropdown-menu start-right">                                            
                         <li><a href="<?php echo base_url(); ?>job_seeker/seeker_info"><span class="glyphicon glyphicon-user"></span>My Dashboard</a></li>
                         <!--<li><a href="<?php echo base_url(); ?>job_seeker/view_resume"><span class="glyphicon glyphicon-edit"></span> View Resume</a></li>-->
-                        <li><a href="<?php echo base_url(); ?>seeker/logout"><span class="glyphicon glyphicon-lock"></span> Logout</a></li>
+                        <li><a href="#" onclick="logout();"><span class="glyphicon glyphicon-lock"></span> Logout</a></li>
                       </ul>
                   </li>
               </ul>
@@ -124,4 +124,15 @@
   </div>
   <!-- /.modal-dialog --> 
   
-</div>
+</div>  
+
+<script>
+  function logout()
+  {
+    if(window.confirm('Are you sure want to logout?'))
+     {
+        window.location.href="<?php echo base_url(); ?>seeker/logout";  
+     }
+    
+  }
+</script>
