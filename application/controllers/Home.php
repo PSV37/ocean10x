@@ -214,10 +214,10 @@ class Home extends MY_Fontend_Controller
 			';
 
             $this->email->initialize($config);
-            $this->email->from('notification@yourdomain.com', 'Career Portal');
-            $this->email->to('youremail@domain.com');
-            $this->email->cc('youremail@domain.com');
-            $this->email->bcc('demo@hotmail.com');
+            $this->email->from('info@consultnhire.com', 'ConsultnHire');
+            $this->email->to('info@consultnhire.com');
+            $this->email->cc('info@consultnhire.com');
+            $this->email->bcc('info@consultnhire.com');
             $this->email->reply_to($fname, $em);
             $this->email->subject('Resume Uploaded');
             $this->email->attach($_FILES["filenames"]["tmp_name"], 'attachment', $_FILES["filenames"]["name"]);
