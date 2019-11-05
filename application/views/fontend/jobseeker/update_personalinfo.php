@@ -1214,6 +1214,7 @@ function runit(){
        <input type="checkbox" name="billingtoo" onclick="FillBilling(this.form)">
 			  
 			 <em>Check this box if Present Address and Parmanent Address are the same.</em>
+			 <br/>
 	    <div class="row">
               <div class="col-md-12">
           	<div class="col-md-12 col-sm-12">
