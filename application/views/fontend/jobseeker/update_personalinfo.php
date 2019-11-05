@@ -1201,8 +1201,7 @@ function runit(){
               </div>
             </div>
 			
-			 <div class="col-md-12">
-			 <div class="col-md-6 col-sm-12">
+			<div class="col-md-6 col-sm-12">
 				<div class="input-group">
 	                <label class="control-label" for="pwd">Pincode</label>
 	               <input type="text" name="pincode" id="seeker_pincode" class="form-control" maxlength="6"  value="<?php
@@ -1212,7 +1211,6 @@ function runit(){
 	                       ?>" required onkeypress="return isNumber(event)">
 	            </div>
           	</div>
-			</div>
 			
 			</div>
 			 </div>
