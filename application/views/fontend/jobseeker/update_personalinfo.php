@@ -1156,8 +1156,7 @@ function runit(){
 		  
       <div class="row">
         <div class="col-md-12">
-          	
-            <div class="col-md-6 col-sm-12">
+          	<div class="col-md-6 col-sm-12">
 			    <div class="input-group">
                   <label class="control-label" for="pwd">Country</label>
                   <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
@@ -1168,11 +1167,8 @@ function runit(){
 				  </select>
                 </div>
          	</div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="col-md-6 col-sm-12">
+			
+			         <div class="col-md-6 col-sm-12">
 			  <div class="input-group">
                   <label class="control-label" for="pwd">State</label>
                  <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
@@ -1183,7 +1179,15 @@ function runit(){
 				 </select>
               </div>
             </div>
-            <div class="col-md-6 col-sm-12">
+          
+			</div>
+			
+        </div>
+  
+  
+            <div class="row">
+			 <div class="col-md-12">
+			   <div class="col-md-6 col-sm-12">
 			  <div class="input-group">
                  <label class="control-label" for="pwd">City</label>
                  <select  name="city_id" id="city_id" class="form-control">
@@ -1194,10 +1198,7 @@ function runit(){
 				 </select>
               </div>
             </div>
-			</div>
-			 </div>
-            <div class="row">
-			 <div class="col-md-12">
+			 
 			 <div class="col-md-6 col-sm-12">
 				<div class="input-group">
 	                <label class="control-label" for="pwd">Pincode</label>
