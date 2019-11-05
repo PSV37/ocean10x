@@ -1148,15 +1148,11 @@ function runit(){
                        ?></textarea>
               	</div>
           	</div>
-              <div class="panel-body"></div>
-             <input type="checkbox" name="billingtoo" onclick="FillBilling(this.form)">
-			  
-			 <em>Check this box if Present Address and Parmanent Address are the same.</em>
-			<div class="panel-body"></div>
-			
+              
           </div>
       </div>
-		  
+	  <div class="panel-body"></div>
+		 
 		  
       <div class="row">
         <div class="col-md-12">
@@ -1214,7 +1210,9 @@ function runit(){
           	</div>
 			</div>
 			</div>
-       
+       <input type="checkbox" name="billingtoo" onclick="FillBilling(this.form)">
+			  
+			 <em>Check this box if Present Address and Parmanent Address are the same.</em>
 	    <div class="row">
               <div class="col-md-12">
           	<div class="col-md-12 col-sm-12">
