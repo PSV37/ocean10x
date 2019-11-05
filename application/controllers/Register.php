@@ -178,7 +178,7 @@ class Register extends CI_Controller
 
             $this->Master_model->insertData('js_login_logs',$logs);
 
-            $jobseeker_id    = $this->session->userdata('job_seeker_id');
+            $jobseeker_id    = $ID;
       
             $where_sek = "job_seeker_id='$jobseeker_id' ORDER BY id DESC limit 1,1";
             $data['results'] = $this->Master_model->get_master_row("js_login_logs", $select ='login', $where_sek, $join = false);
