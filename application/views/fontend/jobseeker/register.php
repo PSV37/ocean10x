@@ -58,9 +58,6 @@
                                             $str_f="selected";
                                             } 
                                         ?>
-
-
-
                                                 <select name="gender" class="form-control" id="gender">
 
                                                     <option value="">Select One</option>
