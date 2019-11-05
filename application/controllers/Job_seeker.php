@@ -36,7 +36,7 @@ class Job_seeker extends MY_Seeker_Controller
                 'mother_name'       => $this->input->post('mother_name'),
                 "date_of_birth"     => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('date_of_birth')))),
                 'nationality'       => $this->input->post('nationality'),
-                'national_id'       => $this->input->post('national_id'),
+               // 'national_id'       => $this->input->post('national_id'),
 				'country_code'      => $this->input->post('country_code'),
                 'mobile'            => $this->input->post('mobile'),
 				'alternatecountry_code'      => $this->input->post('alternatecountry_code'),
