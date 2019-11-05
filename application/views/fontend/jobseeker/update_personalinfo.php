@@ -1214,12 +1214,12 @@ function runit(){
        <input type="checkbox" name="billingtoo" onclick="FillBilling(this.form)">
 			  
 			 <em>Check this box if Present Address and Parmanent Address are the same.</em>
-			 <br/>
+			 
 	    <div class="row">
               <div class="col-md-12">
           	<div class="col-md-12 col-sm-12">
               <div class="input-group">
-                <label class="control-label" for="pwd">Parmanent Address</label>
+               <br/> <label class="control-label" for="pwd">Parmanent Address</label>
                 <textarea name="parmanent_address" class="form-control ckeditor" rows="5" id="comment"><?php 
                     if (!empty($js_personal_info->parmanent_address)) {
                            echo $js_personal_info->parmanent_address;
