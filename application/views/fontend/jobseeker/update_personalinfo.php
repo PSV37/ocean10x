@@ -1262,6 +1262,7 @@ function runit(){
           	</div>          
       </div>
 	  <div class="row">
+	  <div class="colmd-12">
 	   <div class="col-md-6 col-sm-12">
 				<div class="input-group">
 	                <label class="control-label" for="pwd">City</label>
@@ -1284,7 +1285,7 @@ function runit(){
 	            </div>
           	</div>
 	  </div>
-   
+   </div>
 	  <div class="row">
               <div class="col-md-12">
               	<div class="col-md-6 col-sm-12">
@@ -1311,7 +1312,7 @@ function runit(){
 	          	</div>
 		        </div>
 		    </div>
-			<div class="row">
+			
                <div class="modal-footer">
                	 
 		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -1320,11 +1321,11 @@ function runit(){
             </form>
      
      
-    </div>
+  
 
-  </div>
+ 
 </div>
-
+</div>
 <script type="text/javascript">
 	// Personal Info
   	$( document ).ready( function () {
