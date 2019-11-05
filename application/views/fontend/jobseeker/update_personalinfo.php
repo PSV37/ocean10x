@@ -1235,7 +1235,7 @@ function runit(){
       </div>
 		
       <div class="row">
-              
+              <div class="col-md-12">
 			  <div class="col-md-6 col-sm-12">
 				<div class="input-group">
 	                <label class="control-label" for="pwd">Country</label>
@@ -1257,7 +1257,8 @@ function runit(){
 					<?php } ?>
 				 </select>
               </div>
-          	</div>          
+          	</div> 
+		</div>			
       </div>
 	  <div class="row">
 	  <div class="colmd-12">
