@@ -342,32 +342,7 @@ function runit(){
          <form id="Personal-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_personalinfo');?>"  method="post" autocomplete="off">
               <input type="hidden" value="<?php echo $js_personal_info->job_personal_info_id; ?>" name="js_personal_info_id">
               
-            <div class="row">
-              <div class="col-md-12">
-              	<div class="col-md-6 col-sm-12">
-	              	<div class="input-group">
-	                  <label class="control-label" for="email">Father Name:</label>
-	                  <input type="text" name="father_name" class="form-control name-valid" id="father_name"
-	                   value="<?php
-	                         if (!empty($js_personal_info->father_name)) {
-	                           echo $js_personal_info->father_name;
-	                           }
-	                       ?>">
-	                </div>     
-	            </div>
-                <div class="col-md-6 col-sm-12">         
-	              <div class="input-group">
-	                  <label class="control-label" for="email">Mother Name:</label>
-	                  <input type="text" name="mother_name" class="form-control name-valid" id="mother_name"
-	                   value="<?php
-	                         if (!empty($js_personal_info->mother_name)) {
-	                           echo $js_personal_info->mother_name;
-	                           }
-	                       ?>">
-	              </div>
-	          	</div>
-		        </div>
-		    </div>
+            
 		    <div class="row">
               <div class="col-md-12">
 
@@ -1297,6 +1272,33 @@ function runit(){
              
       </div>
       </div>
+	  <div class="row">
+              <div class="col-md-12">
+              	<div class="col-md-6 col-sm-12">
+	              	<div class="input-group">
+	                  <label class="control-label" for="email">Father Name:</label>
+	                  <input type="text" name="father_name" class="form-control name-valid" id="father_name"
+	                   value="<?php
+	                         if (!empty($js_personal_info->father_name)) {
+	                           echo $js_personal_info->father_name;
+	                           }
+	                       ?>">
+	                </div>     
+	            </div>
+                <div class="col-md-6 col-sm-12">         
+	              <div class="input-group">
+	                  <label class="control-label" for="email">Mother Name:</label>
+	                  <input type="text" name="mother_name" class="form-control name-valid" id="mother_name"
+	                   value="<?php
+	                         if (!empty($js_personal_info->mother_name)) {
+	                           echo $js_personal_info->mother_name;
+	                           }
+	                       ?>">
+	              </div>
+	          	</div>
+		        </div>
+		    </div>
+	  
                <div class="modal-footer">
                	 
 		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
