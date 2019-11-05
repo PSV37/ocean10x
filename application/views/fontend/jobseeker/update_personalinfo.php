@@ -116,7 +116,7 @@
 								 
                                   <div class="table-responsive">          
                                 <table class="table">
-								<h5><a href="#" data-toggle="modal" data-target="#PersonalinfoUpdate" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> </h5>
+								<span style="font-size:14px;"><a href="#" data-toggle="modal" data-target="#PersonalinfoUpdate" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> </span>
                                   <tbody>
                                   <tr>
                                       <td width="30%">Father Name:</td>
