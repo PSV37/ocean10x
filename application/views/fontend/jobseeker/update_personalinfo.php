@@ -23,90 +23,10 @@
                                  <!-- Your Personal Information -->
                                  <div id="vspinfo" class="tab-pane fade in active">
                                 <h5>My Profile
-                                <a href="#" data-toggle="modal" data-target="#PersonalinfoUpdate" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>                
+                                              
                                 </h5>
-                                  <div class="table-responsive">          
-                                <table class="table">
-    
-                                  <tbody>
-                                  <tr>
-                                      <td width="30%">Father Name:</td>
-                                      <td><?php if(!empty($js_personal_info->father_name))
-                                              echo $js_personal_info->father_name;
-                                              else echo "";
-                                       ?></td>
-                                    </tr>
-    
-                                    <tr>
-                                      <td>Mother Name:</td>
-                                        <td><?php if(!empty($js_personal_info->mother_name))
-                                        echo $js_personal_info->mother_name; ?></td>
-                                    </tr>
-    
-                                    <tr>
-                                      <td>Date of Birth:</td>
-                                  <td><?php if($js_personal_info->date_of_birth=="0000-00-00") {
-                                    echo "";
-                                  } else {
-                                          echo date('j F Y',strtotime($js_personal_info->date_of_birth));
-                                    }
-                                   ?></td>
-                                    </tr>
-    
-                                    <tr>
-                                      <td>Adhar No:</td>
-                                    <td><?php if($js_personal_info->national_id=="0") { echo "";} else { echo $js_personal_info->national_id;} ?></td>
-                                    </tr>
-                                    <tr>
-                                      <td>Nationality:</td>
-                                    <td><?php echo $js_personal_info->nationality; ?></td>
-                                    </tr>
-									<tr>
-                                      <td>Country Code:</td>
-                                    <td><?php echo $js_personal_info->country_code; ?></td>
-                                    </tr>
-                                     <tr>
-                                      <td>Mobile:</td>
-                                    <td><?php echo $js_personal_info->mobile; ?></td>
-                                    </tr>
-                                    <tr>
-                                      <td>Present Address:</td>
-                                    <td><?php echo $js_personal_info->present_address; ?></td>
-                                    </tr>
-									<tr>
-                                      <td>City:</td>
-                                    <td><?php echo $js_personal_info->city_name; ?></td>
-                                    </tr>
-									<tr>
-                                      <td>State:</td>
-                                    <td><?php echo $js_personal_info->state_name; ?></td>
-                                    </tr>
-									<tr>
-                                      <td>country:</td>
-                                    <td><?php echo $js_personal_info->country_name; ?></td>
-                                    </tr>
-                                     <tr>
-                                      <td>Parmanent Address:</td>
-                                    <td><?php echo $js_personal_info->parmanent_address; ?></td>
-                                    </tr>
-									<tr>
-                                      <td>City:</td>
-                                    <td><?php echo $results['city_name']; ?></td>
-                                    </tr>
-									<tr>
-                                      <td>State:</td>
-                                    <td><?php echo $results['state_name']; ?></td>
-                                    </tr>
-									<tr>
-                                      <td>Country:</td>
-                                    <td><?php echo $results['country_name']; ?></td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                                </div>
-                                
-                                       <div id="vsphoto" class="tab-pane fade in">
-                                 	<h5>Your Profile Picture</h5>
+								 <div id="vsphoto" class="tab-pane fade in">
+                                 
                                     <?php echo $this->session->flashdata('msg'); ?>
                                     <div class="row">
                                           <div class="col-md-4">
@@ -142,11 +62,11 @@
                 <div class="row">
                   <div class="col-md-9">
                     <div class="avatar-wrapper"></div>
-                    <div class="dragtxt">Drag frame to adjust portrait.</div>
+                   <!-- <div class="dragtxt">Drag frame to adjust portrait.</div>-->
                   </div>
                   <div class="col-md-3">
                     <div class="avatar-preview preview-lg"></div>
-                    <p>Must be an actual picture of you! Logos, clip-art, group pictures, and digitally-altered images not allowed.</p>
+                   <!-- <p>Must be an actual picture of you! Logos, clip-art, group pictures, and digitally-altered images not allowed.</p>-->
                   </div>
                 </div>
 
@@ -181,7 +101,8 @@
                                 echo "Please Upload Your Photo ";
                             } ?>
                             <div class="formpanel">
-                            <h4>Please Upload Your Photo Max Size 300*300 pixel</h4><br>
+							<h6 style="font-size: 13px;font-family: 'Roboto', sans-serif;font-weight: 500;">Profiles with Photos get better attending from Recruiters / Employers !</h6><br/>
+                            <h6 style="font-size: 13px;font-family: 'Roboto', sans-serif;font-weight: 500;">Upload Max Size 300*300 pixel</h6><br>
                          	<a href="#." onClick="runit();" class="btn">Click here to Upload Photo</a>
                             
                             
@@ -192,6 +113,96 @@
                         </div>
                                         </div>
                                  </div>
+								 
+								 
+                                  <div class="table-responsive">          
+                                <table class="table">
+								<span><a href="#" data-toggle="modal" data-target="#PersonalinfoUpdate" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top" style="font-size:18px;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> </span>
+                                  <tbody>
+								  <tr>
+                                      <td>Name:</td>
+                                    <td><?php echo $js_info->full_name; ?></td>
+                                    </tr> 
+								  
+								  <tr>
+                                      <td>Date of Birth:</td>
+                                  <td><?php if($js_personal_info->date_of_birth=="0000-00-00") {
+                                    echo "";
+                                  } else {
+                                          echo date('j F Y',strtotime($js_personal_info->date_of_birth));
+                                    }
+                                   ?></td>
+                                    </tr>
+									
+									 <tr>
+                                      <td>Nationality:</td>
+                                    <td><?php echo $js_personal_info->nationality; ?></td>
+                                    </tr>  
+                                        
+                                    <!--<tr>
+                                      <td>Adhar No:</td>
+                                    <td><?php /*if($js_personal_info->national_id=="0") { echo "";} else { echo $js_personal_info->national_id;} */ ?></td>
+                                    </tr>-->
+                                   
+									<tr>
+                                      <td>Country Code:</td>
+                                    <td><?php echo $js_personal_info->country_code; ?></td>
+                                    </tr>
+                                     <tr>
+                                      <td>Primary Phone No:</td>
+                                    <td><?php echo $js_personal_info->mobile; ?></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Present Address:</td>
+                                    <td><?php echo $js_personal_info->present_address; ?></td>
+                                    </tr>
+									<tr>
+                                      <td>City:</td>
+                                    <td><?php echo $js_personal_info->city_name; ?></td>
+                                    </tr>
+									<tr>
+                                      <td>State:</td>
+                                    <td><?php echo $js_personal_info->state_name; ?></td>
+                                    </tr>
+									<tr>
+                                      <td>country:</td>
+                                    <td><?php echo $js_personal_info->country_name; ?></td>
+                                    </tr>
+                                     <tr>
+                                      <td>Parmanent Address:</td>
+                                    <td><?php echo $js_personal_info->parmanent_address; ?></td>
+                                    </tr>
+									<tr>
+                                      <td>City:</td>
+                                    <td><?php echo $results['city_name']; ?></td>
+                                    </tr>
+									<tr>
+                                      <td>State:</td>
+                                    <td><?php echo $results['state_name']; ?></td>
+                                    </tr>
+									<tr>
+                                      <td>Country:</td>
+                                    <td><?php echo $results['country_name']; ?></td>
+                                    </tr>
+									 <tr>
+                                      <td width="30%">Father Name:</td>
+                                      <td><?php if(!empty($js_personal_info->father_name))
+                                              echo $js_personal_info->father_name;
+                                              else echo "";
+                                       ?></td>
+                                    </tr>
+    
+                                    <tr>
+                                      <td>Mother Name:</td>
+                                        <td><?php if(!empty($js_personal_info->mother_name))
+                                        echo $js_personal_info->mother_name; ?></td>
+                                    </tr>
+									
+                                  </tbody>
+                                </table>
+                                </div>
+                                
+                                      
                             
                             
                             
