@@ -1285,7 +1285,7 @@ function runit(){
 	  </div>
    </div>
 	  <div class="row">
-              
+              <div class="col-md-12">
               	<div class="col-md-6 col-sm-12">
 	              	<div class="input-group">
 	                  <label class="control-label" for="email">Father Name:</label>
@@ -1308,7 +1308,7 @@ function runit(){
 	                       ?>">
 	              </div>
 	          	</div>
-		        
+		        </div>
 		    </div>
 			
                <div class="modal-footer">
