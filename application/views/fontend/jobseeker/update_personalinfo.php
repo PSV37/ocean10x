@@ -346,7 +346,7 @@ function runit(){
 			  <div class="col-md-6 col-sm-12">
 	              	<div class="input-group">
 	                 <label class="control-label" for="email">Date of Birth:</label>
-	                  <input type="text" class="form-control datepicker" name="date_of_birth" value="<?php echo date('d-m-Y', strtotime($js_personal_info->date_of_birth)); ?>">
+	                  <input type="text" class="form-control datepicker" name="date_of_birth" value="<?php echo date('d-m-Y', strtotime($js_personal_info->date_of_birth)); ?>" required>
 	             
 	              	</div>
           		</div>
@@ -354,7 +354,7 @@ function runit(){
 				<div class="col-md-6 col-sm-12">
               <div class="input-group">
                   <label class="control-label" for="email">Nationality:</label>
-                  <select name="nationality" class="form-control" id="national_id">
+                  <select name="nationality" class="form-control" id="national_id" required>
 					<option value="<?php echo $js_personal_info->nationality; ?>"><?php echo $js_personal_info->nationality; ?></option>
 					<option value="Afganistan">Afghanistan</option>
 					<option value="Albania">Albania</option>
@@ -615,7 +615,7 @@ function runit(){
 			  <div class="col-md-6 col-sm-12">
               <div class="input-group">
                 <label class="control-label" for="pwd"> Country Code:</label>
-				<select id="country" name="country_code" class="form-control">
+				<select id="country" name="country_code" class="form-control" required>
 					<option><?php echo $js_personal_info->country_code?></option>
 					<option value="AD - Andorra (+376)">AD - Andorra (+376)</option>
 					<option value="AE - United Arab Emirates (+971)">AE - United Arab Emirates (+971)</option>
@@ -860,7 +860,7 @@ function runit(){
                          if (!empty($js_personal_info->mobile)) {
                            echo $js_personal_info->mobile;
                            }
-                       ?>">&nbsp;<span id="errmsg"></span>
+                       ?>" required>&nbsp;<span id="errmsg"></span>
               </div>
             </div>
 				
