@@ -39,6 +39,8 @@ class Job_seeker extends MY_Seeker_Controller
                 'national_id'       => $this->input->post('national_id'),
 				'country_code'      => $this->input->post('country_code'),
                 'mobile'            => $this->input->post('mobile'),
+				'alternatecountry_code'      => $this->input->post('alternatecountry_code'),
+                'alternatemobile'            => $this->input->post('alternatemobile'),
 				'country_id'        => $this->input->post('country_id'),
 				'state_id'          => $this->input->post('state_id'),
 				'city_id'           => $this->input->post('city_id'),
