@@ -306,10 +306,8 @@ function runit(){
                   				</div>
                   				
                             </div>
-                        </div><!-- end col -->
-                    </div><!-- end row -->  
-                </div><!-- end container -->
-            </div><!-- end section -->
+                        <!-- end col -->
+                    <!-- end section -->
 
 
 
