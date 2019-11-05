@@ -121,7 +121,7 @@
                                   <tbody>
 								  <tr>
                                       <td>Name:</td>
-                                    <td><?php echo $js_info->full_name; ?></td>
+                                    <td><?php echo $name->full_name; ?></td>
                                     </tr> 
 								  
 								  <tr>
