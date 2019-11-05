@@ -165,6 +165,19 @@ class Register extends CI_Controller
         if (!empty($result)) {
             $data['job_seeker_id'] = $result->job_seeker_id;
             $data['user_name']     = $result->user_name;
+            
+            $LoginDateTime = date('Y-m-d H:i:s');
+            $ipAdd = $this->input->ip_address();
+            // record login details of user 
+            $logs = array(
+                'user_id'    =>$ID,
+                'tracedip'   =>$ipAdd,
+                'login'      =>$LoginDateTime,
+                'browser_info'=>$_SERVER['HTTP_USER_AGENT'],
+            );
+
+            $this->Master_model->insertData('js_login_logs',$logs);
+
             $this->session->set_userdata($data);
             redirect('job_seeker/seeker_info');
         } else {
