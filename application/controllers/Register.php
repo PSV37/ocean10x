@@ -178,17 +178,14 @@ class Register extends CI_Controller
 
             $this->Master_model->insertData('js_login_logs',$logs);
 
-            $jobseeker_id    = $ID;
-      
-            $where_sek = "job_seeker_id='$jobseeker_id' ORDER BY id DESC limit 1,1";
-            $data['results'] = $this->Master_model->get_master_row("js_login_logs", $select ='login', $where_sek, $join = false);
+            
         
             //$id = $results['login'];
 
             $this->session->set_userdata($data);
             $this->session->set_flashdata('type', 'success');
             $this->session->set_flashdata('Message', 'Welcome Back...!');
-            redirect('job_seeker/seeker_info',$data);
+            redirect('job_seeker/seeker_info');
         } else {
             $this->session->set_flashdata('invalid', '<div class="alert alert-danger text-center">Sorry! There is error verifying your Email Address!</div>');
             redirect('register/jobseeker_login');
