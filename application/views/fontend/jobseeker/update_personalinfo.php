@@ -1737,7 +1737,7 @@ function isNumber(evt) {
 }
 </script>
 <!--Only Character and Space are allowed validation-->
-
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
 <script type="text/javascript">
 $(document).ready(function() {
          $('.name-valid').on('keypress', function(e) {
