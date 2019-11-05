@@ -556,14 +556,14 @@ exit;*/
         $this->Master_model->master_update($logs, 'js_login_logs', $where_update);
 
         $this->session->sess_destroy();
-        redirect(base_url() . 'job_seeker/logout_message', 'refresh');
+        // redirect(base_url() . 'job_seeker/logout_message', 'refresh');
         // $this->session->set_flashdata('success', '<div class="alert alert-success text-center">You have  been sucessfully Logged Out !</div>');
-        // redirect('register/jobseeker_login');
+        redirect('register/jobseeker_login');
     }
-        public function logout_message() {
-            $this->session->set_flashdata('message', 'Successfully! Logged Out!');
-            redirect(base_url(), 'refresh');
-        }
+        // public function logout_message() {
+        //     $this->session->set_flashdata('message', 'Successfully! Logged Out!');
+        //     redirect(base_url(), 'refresh');
+        // }
     public function downloadcv()
     {
         $jobseeker_id    = $this->session->userdata('job_seeker_id');
