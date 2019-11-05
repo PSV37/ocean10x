@@ -167,13 +167,13 @@ class Register extends CI_Controller
             $data['user_name']     = $result->user_name;
             $ID= $result->job_seeker_id;
             $LoginDateTime = date('Y-m-d H:i:s');
-            $ipAdd = $this->input->ip_address();
+            $ipAddr = $this->input->ip_address();
             // record login details of user 
             $logs = array(
-                'user_id'    =>$ID,
-                'tracedip'   =>$ipAdd,
-                'login'      =>$LoginDateTime,
-                'browser_info'=>$_SERVER['HTTP_USER_AGENT'],
+                'job_seeker_id'     => $ID,
+                'tracedip'          => $ipAddr,
+                'login'             => $LoginDateTime,
+                'browser_info'      => $_SERVER['HTTP_USER_AGENT'],
             );
 
             $this->Master_model->insertData('js_login_logs',$logs);
