@@ -543,7 +543,7 @@ exit;*/
         $LogOutDateTime = date('Y-m-d H:i:s');
         $jobseeker_id    = $this->session->userdata('job_seeker_id');
       
-        $where_sek = "job_seeker_id='$jobseeker_id' ORDER_BY id DESC";
+        $where_sek = "job_seeker_id='$jobseeker_id' ORDER BY id DESC";
         $results = $this->Master_model->get_master_row("js_login_logs", $select ='id', $where_sek, $join = false);
     
         $id = $results['id'];
