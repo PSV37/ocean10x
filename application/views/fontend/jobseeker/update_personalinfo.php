@@ -639,7 +639,7 @@ function runit(){
               <div class="input-group">
                 <label class="control-label" for="pwd"> Country Code:</label>
 				<select id="country" name="alternatecountry_code" class="form-control">
-					<option><?php echo $js_personal_info->country_code?></option>
+					<option><?php echo $js_personal_info->alternatecountry_code?></option>
 					<option value="AD - Andorra (+376)">AD - Andorra (+376)</option>
 					<option value="AE - United Arab Emirates (+971)">AE - United Arab Emirates (+971)</option>
 					<option value="AF - Afghanistan (+93)">AF - Afghanistan (+93)</option>
