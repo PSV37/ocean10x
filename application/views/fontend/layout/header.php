@@ -54,7 +54,7 @@
               <li><a title="" href="<?php echo base_url() ?>contact">Contact Us</a></li>
               
               <li class="yellow"><a href="<?php echo site_url('employer_login') ?>">Employer Site</a></li>
-              <li class="green"><a href="<?php echo site_url('seeker-login') ?>">Sign In</a></li>
+              <!--<li class="green"><a href="<?php echo site_url('seeker-login') ?>">Sign In</a></li>-->
               <!-- <li class="green"><a href="<?php echo site_url('register') ?>">Register</a></li> -->
               
             </ul>
