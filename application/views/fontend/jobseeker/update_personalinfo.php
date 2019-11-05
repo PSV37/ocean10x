@@ -865,37 +865,8 @@ function runit(){
             </div>
 				
 			  </div>
-			  </div>
-            <div class="row">
-              <div class="col-md-12">
-              	<div class="col-md-6 col-sm-12">
-	              	<div class="input-group">
-	                  <label class="control-label" for="email">Father Name:</label>
-	                  <input type="text" name="father_name" class="form-control name-valid" id="father_name"
-	                   value="<?php
-	                         if (!empty($js_personal_info->father_name)) {
-	                           echo $js_personal_info->father_name;
-	                           }
-	                       ?>">
-	                </div>     
-	            </div>
-                <div class="col-md-6 col-sm-12">         
-	              <div class="input-group">
-	                  <label class="control-label" for="email">Mother Name:</label>
-	                  <input type="text" name="mother_name" class="form-control name-valid" id="mother_name"
-	                   value="<?php
-	                         if (!empty($js_personal_info->mother_name)) {
-	                           echo $js_personal_info->mother_name;
-	                           }
-	                       ?>">
-	              </div>
-	          	</div>
-		        </div>
-		    </div>
-		  
-	      <div class="row">
-              <div class="col-md-12">
-
+			  </div>  
+	      
           	
 			<div class="row">
               <div class="col-md-12">
@@ -1153,20 +1124,40 @@ function runit(){
 	          </div>
 	      </div>
          
-            <div class="col-md-6 col-sm-12">
+           <!-- <div class="col-md-6 col-sm-12">
               <div class="input-group">
                   <label class="control-label" for="pwd">Adhar NO:</label>
                   <input name="national_id" type="text"  class="form-control" id="national_id" 
 
                value="<?php
-                         if (!empty($js_personal_info->national_id)) {
+                         /*if (!empty($js_personal_info->national_id)) {
                            echo $js_personal_info->national_id;
                            }
-                       ?>">
+                       */ ?>">
               </div>
+          	</div>-->
+               <div class="row">
+              <div class="col-md-12">
+            <div class="col-md-12 col-sm-12">  
+              	<div class="input-group">
+                  	<label class="control-label" for="pwd">Present Address</label>
+                  	<textarea name="present_address" class="form-control ckeditor" rows="5" id="comment"><?php 
+                         if (!empty($js_personal_info->present_address)) {
+                           echo $js_personal_info->present_address;
+                           }
+                       ?></textarea>
+              	</div>
           	</div>
+              <div class="panel-body"></div>
+             <input type="checkbox" name="billingtoo" onclick="FillBilling(this.form)">
+			  
+			 <em>Check this box if Present Address and Parmanent Address are the same.</em>
+			<div class="panel-body"></div>
+			
           </div>
       </div>
+		  
+		  
       <div class="row">
         <div class="col-md-12">
           	
@@ -1223,26 +1214,25 @@ function runit(){
           	</div>
 			</div>
 			</div>
-            <div class="row">
+       
+	    <div class="row">
               <div class="col-md-12">
-            <div class="col-md-12 col-sm-12">  
-              	<div class="input-group">
-                  	<label class="control-label" for="pwd">Present Address</label>
-                  	<textarea name="present_address" class="form-control ckeditor" rows="5" id="comment"><?php 
-                         if (!empty($js_personal_info->present_address)) {
-                           echo $js_personal_info->present_address;
-                           }
-                       ?></textarea>
-              	</div>
-          	</div>
-              <div class="panel-body"></div>
-             <input type="checkbox" name="billingtoo" onclick="FillBilling(this.form)">
-			  
-			 <em>Check this box if Present Address and Parmanent Address are the same.</em>
-			<div class="panel-body"></div>
-			
-          </div>
+          	<div class="col-md-12 col-sm-12">
+              <div class="input-group">
+                <label class="control-label" for="pwd">Parmanent Address</label>
+                <textarea name="parmanent_address" class="form-control ckeditor" rows="5" id="comment"><?php 
+                    if (!empty($js_personal_info->parmanent_address)) {
+                           echo $js_personal_info->parmanent_address;
+                        }
+                    ?></textarea>
+              </div>
+            </div>    
+            <div class="panel-body"></div>          
+             
       </div>
+      </div>
+	   
+	   
       <div class="row">
               
 			  <div class="col-md-6 col-sm-12">
@@ -1291,22 +1281,34 @@ function runit(){
 	            </div>
           	</div>
 	  </div>
-      <div class="row">
+				<div class="row">
               <div class="col-md-12">
-          	<div class="col-md-12 col-sm-12">
-              <div class="input-group">
-                <label class="control-label" for="pwd">Parmanent Address</label>
-                <textarea name="parmanent_address" class="form-control ckeditor" rows="5" id="comment"><?php 
-                    if (!empty($js_personal_info->parmanent_address)) {
-                           echo $js_personal_info->parmanent_address;
-                        }
-                    ?></textarea>
-              </div>
-            </div>    
-            <div class="panel-body"></div>          
-             
-      </div>
-      </div>
+              	<div class="col-md-6 col-sm-12">
+	              	<div class="input-group">
+	                  <label class="control-label" for="email">Father Name:</label>
+	                  <input type="text" name="father_name" class="form-control name-valid" id="father_name"
+	                   value="<?php
+	                         if (!empty($js_personal_info->father_name)) {
+	                           echo $js_personal_info->father_name;
+	                           }
+	                       ?>">
+	                </div>     
+	            </div>
+                <div class="col-md-6 col-sm-12">         
+	              <div class="input-group">
+	                  <label class="control-label" for="email">Mother Name:</label>
+	                  <input type="text" name="mother_name" class="form-control name-valid" id="mother_name"
+	                   value="<?php
+	                         if (!empty($js_personal_info->mother_name)) {
+	                           echo $js_personal_info->mother_name;
+	                           }
+	                       ?>">
+	              </div>
+	          	</div>
+		        </div>
+		    </div>
+	  
+	  
                <div class="modal-footer">
                	 
 		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
