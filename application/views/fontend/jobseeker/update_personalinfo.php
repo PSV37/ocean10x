@@ -181,7 +181,7 @@
                                 echo "Please Upload Your Photo ";
                             } ?>
                             <div class="formpanel">
-                            <h4>Please Upload Your Photo Max Size 300*300 pixel</h4><br>
+                            <h5>Upload Max Size 300*300 pixel</h5><br>
                          	<a href="#." onClick="runit();" class="btn">Click here to Upload Photo</a>
                             
                             
