@@ -1311,7 +1311,7 @@ function runit(){
 	          	</div>
 		        </div>
 		    </div>
-	  
+			<div class="row">
                <div class="modal-footer">
                	 
 		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
