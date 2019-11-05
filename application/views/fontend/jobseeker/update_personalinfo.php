@@ -1279,6 +1279,7 @@ function runit(){
 	            </div>
           	</div>
 	  </div>
+	   </div>
 				<div class="row">
               <div class="col-md-12">
               	<div class="col-md-6 col-sm-12">
@@ -1317,7 +1318,7 @@ function runit(){
      
     </div>
 
-  </div>
+ 
 </div>
 
 <script type="text/javascript">
