@@ -21,7 +21,7 @@
                              <div class="tab-content">
                              
                                  <!-- Your Personal Information -->
-                                 <div id="vspinfo" class="tab-pane fade in">
+                                 <div id="vspinfo" class="tab-pane fade in active">
                                 <h5>My Profile
                                 <a href="#" data-toggle="modal" data-target="#PersonalinfoUpdate" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>                
                                 </h5>
