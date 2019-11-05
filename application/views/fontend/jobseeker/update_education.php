@@ -30,7 +30,7 @@
                                 </tr>
 
                                 <tr>
-                                  <td>Board:</td>
+                                  <td>Specialization:</td>
                                     <td><?php echo $v_education->education_specialization; ?></td>
                                 </tr>
 
@@ -109,11 +109,11 @@
               </div>
 
               <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Board:</label>
+                <label class="control-label col-sm-3" for="email">Specialization:</label>
                 <div class="col-sm-9">
                   <select  name="specialization_id" id="specialization_id" class="form-control">
-				 <?php foreach($board as $boards){?>
-					<option value="<?php echo $boards['board_id']; ?>"<?php if($edcuaiton_list->specialization_id==$boards['board_id']){ echo "selected"; }?>><?php echo $boards['board_name']; ?></option>
+				 <?php foreach($education_specialization as $specialization){?>
+					<option value="<?php echo $specialization['id']; ?>"<?php if($edcuaiton_list->specialization_id==$specialization['id']){ echo "selected"; }?>><?php echo $specialization['education_specialization']; ?></option>
 					<?php } ?>
 				 </select>
                 </div>
@@ -193,12 +193,12 @@
               </div>
 
               <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Board:</label>
+                <label class="control-label col-sm-3" for="email">Specialization:</label>
                 <div class="col-sm-9">
 				<select  name="specialization_id" id="job_edu_special" class="form-control">
-          <option value="">Select Board </option>
-				<!--  <?php foreach($board as $boardss){?>
-					<option value="<?php echo $boardss['board_id']; ?>"><?php echo $boardss['board_name']; ?></option>
+          <option value="">Select Specialization </option>
+				<!--  <?php foreach($education_specialization as $specialization){?>
+					<option value="<?php echo $specialization['id']; ?>"><?php echo $specialization['education_specialization']; ?></option>
 					<?php } ?> -->
 				 </select>
 				</div>
