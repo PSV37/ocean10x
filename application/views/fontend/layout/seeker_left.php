@@ -35,7 +35,7 @@
     <li><a href="<?php echo base_url(); ?>how-to-build-cv"> <i class="fa fa-star" aria-hidden="true"></i> How to creat Resume</a></li>
     <li class="divider"></li>
     <li> <a href="<?php echo base_url() ?>training" class=""> <i class="fa fa-television" aria-hidden="true"></i> Trainings </a> </li>
-    <li> <a href="<?php echo base_url() ?>job" class=""> <i class="fa fa-black-tie" aria-hidden="true"></i> All Jobs </a> </li>
+    <li> <a href="<?php echo base_url() ?>job" class=""> <i class="fa fa-black-tie" aria-hidden="true"></i>Search Jobs</a> </li>
     <!--<li> <a href="<?php echo base_url() ?>seeker/logout" class=""> <i class="fa fa-sign-out" aria-hidden="true"></i> Sign Out </a> </li>-->
     
        
