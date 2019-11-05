@@ -50,7 +50,7 @@
               <li class="<?=(current_url()==base_url('cms/cms_page/about-us')) ? 'active':''?>"><a title="" href="<?php echo base_url(); ?>cms/cms_page/about-us">About Us</a></li>
               <li><a title="" href="<?php echo base_url() ?>training">Training</a></li>
               <li><a title="" href="<?php echo base_url() ?>seeker-login">Post Resume</a></li>
-              <li class="<?=(current_url()==base_url('job')) ? 'active':''?>"><a title="" href="<?php echo base_url() ?>job">All Jobs</a></li>
+              <li class="<?=(current_url()==base_url('job')) ? 'active':''?>"><a title="" href="<?php echo base_url() ?>job">Search Jobs</a></li>
               <li><a title="" href="<?php echo base_url() ?>contact">Contact Us</a></li>
               
               <li class="yellow"><a href="<?php echo site_url('employer_login') ?>">Employer Site</a></li>
