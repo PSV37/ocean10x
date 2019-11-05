@@ -1185,7 +1185,7 @@ function runit(){
         </div>
     </div>
     <div class="row">
-        
+        <div class="col-md-12">
             
             <div class="col-md-6 col-sm-12">
 			  <div class="input-group">
@@ -1209,7 +1209,7 @@ function runit(){
 	                       ?>" required onkeypress="return isNumber(event)">
 	            </div>
           	</div>
-			
+			</div>
 			
 			 </div>
        <input type="checkbox" name="billingtoo" onclick="FillBilling(this.form)">
