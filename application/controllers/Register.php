@@ -165,7 +165,7 @@ class Register extends CI_Controller
         if (!empty($result)) {
             $data['job_seeker_id'] = $result->job_seeker_id;
             $data['user_name']     = $result->user_name;
-            
+            $ID= $result->job_seeker_id;
             $LoginDateTime = date('Y-m-d H:i:s');
             $ipAdd = $this->input->ip_address();
             // record login details of user 
