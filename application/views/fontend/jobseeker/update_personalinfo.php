@@ -101,6 +101,11 @@
                                       <td>Country:</td>
                                     <td><?php echo $results['country_name']; ?></td>
                                     </tr>
+									<tr>
+									 <div class="avatar-view" title="Change the Photo">
+      <img src="<?php echo base_url() ?>upload/<?php if(!empty($job_seeker_photo->photo_path)) { echo $job_seeker_photo->photo_path;} else { echo "image-notfound.png";} ?>" alt="Photo">
+    </div>
+									</tr/>
                                   </tbody>
                                 </table>
                                 </div>
@@ -1737,7 +1742,7 @@ function isNumber(evt) {
 }
 </script>
 <!--Only Character and Space are allowed validation-->
-
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
 <script type="text/javascript">
 $(document).ready(function() {
          $('.name-valid').on('keypress', function(e) {
