@@ -18,7 +18,7 @@ class Job_seeker extends MY_Seeker_Controller
 	
 	public function seeker_info()
     {
-        
+			
         $this->load->view('fontend/jobseeker/seeker_info');
     }
 	
@@ -118,10 +118,9 @@ class Job_seeker extends MY_Seeker_Controller
             $jobseeker_id   = $this->session->userdata('job_seeker_id');
             $edcuaiton_list = $this->Job_seeker_education_model->education_list_by_id($jobseeker_id);
 			$passingyear = $this->Master_model->getMaster('passingyear',$where=false);
-			$board = $this->Master_model->getMaster('board',$where=false);
 			$education_level = $this->Master_model->getMaster('education_level',$where=false);
 			$education_specialization = $this->Master_model->getMaster('education_specialization',$where=false);
-           echo $this->load->view('fontend/jobseeker/update_education.php', compact('edcuaiton_list', 'passingyear', 'board', 'education_level', 'education_specialization'),true);
+           echo $this->load->view('fontend/jobseeker/update_education.php', compact('edcuaiton_list', 'passingyear', 'education_level', 'education_specialization'),true);
         }
     }
 
@@ -558,14 +557,9 @@ exit;*/
         $this->Master_model->master_update($logs, 'js_login_logs', $where_update);
 
         $this->session->sess_destroy();
-        // redirect(base_url() . 'job_seeker/logout_message', 'refresh');
-        // $this->session->set_flashdata('success', '<div class="alert alert-success text-center">You have  been sucessfully Logged Out !</div>');
         redirect('register/jobseeker_login');
     }
-        // public function logout_message() {
-        //     $this->session->set_flashdata('message', 'Successfully! Logged Out!');
-        //     redirect(base_url(), 'refresh');
-        // }
+        
     public function downloadcv()
     {
         $jobseeker_id    = $this->session->userdata('job_seeker_id');
