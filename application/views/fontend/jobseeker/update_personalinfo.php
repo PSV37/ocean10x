@@ -101,7 +101,8 @@
                                 echo "Please Upload Your Photo ";
                             } ?>
                             <div class="formpanel">
-                            <h6>Upload Max Size 300*300 pixel</h6><br>
+							<h6 style="font-size: 13px;font-family: 'Roboto', sans-serif;font-weight: 500;">Profiles with Photos get better attending from Recruiters / Employers !</h6>
+                            <h6 style="font-size: 13px;font-family: 'Roboto', sans-serif;font-weight: 500;">Upload Max Size 300*300 pixel</h6><br>
                          	<a href="#." onClick="runit();" class="btn">Click here to Upload Photo</a>
                             
                             
