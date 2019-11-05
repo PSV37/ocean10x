@@ -556,6 +556,7 @@ exit;*/
         $this->Master_model->master_update($logs, 'js_login_logs', $where_update);
 
         $this->session->sess_destroy();
+        $this->session->set_flashdata('success', '<div class="alert alert-success text-center">You have  been sucessfully Logged Out !</div>');
         redirect('register/jobseeker_login');
     }
 
