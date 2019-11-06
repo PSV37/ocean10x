@@ -34,7 +34,9 @@
 
                         <input type="hidden" class="form-control" id="" name="oldresume" value="<?php if(!empty($job_seeker_resume['resume'])){echo $job_seeker_resume['resume'];} ?>">
                       </div>
+
                       <div class="panel-body"></div>
+                      <p>Supported Formats: doc, docx, rtf, pdf, upto 2 MB</p><br>
                       <div class="col-md-12">
                         <button type="submit" class="btn btn-success btn-block avatar-save2">Upload Resume</button>
                       </div>
