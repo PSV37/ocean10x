@@ -380,7 +380,7 @@
                 url:'<?php echo base_url();?>job_seeker/getspecilization',
                 data:{id:id},
                 success:function(res){
-                    $('#education_level_id').html(res);
+                    $('#specialization_id').html(res);
                 }
 				
             }); 
