@@ -20,15 +20,13 @@
                    
                       <div class="avatar-body">
                         <!-- Upload image and data -->
-                        <div class="avatar-upload">
+                        <div class="col-md-6">
                           <label for="avatarInput">Upload Resume</label>
                           <input type="file" class="form-control" id="resume_file" name="resume_file">
                         </div>
 
-                        <div class="row avatar-btns">
-                          <div class="col-md-9">
-                            <button type="submit" class="btn btn-primary btn-block avatar-save2">Upload Resume</button>
-                          </div>
+                        <div class="col-md-6">
+                          <button type="submit" class="btn btn-primary btn-block avatar-save2">Upload Resume</button>
                         </div>
                       </div>
                     
