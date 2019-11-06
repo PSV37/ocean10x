@@ -156,7 +156,7 @@
 			<div class="form-group">
                 <label class="control-label col-sm-3" for="email">Grading System:</label>
                 <div class="col-sm-9">
-                  <select  name="gradding"  class="form-control" id="category" onchange='hideshowfun()'>
+                  <select  name="gradding"  class="form-control" id="categorys" onchange='hideshowfuns()'>
 				  <option><?php echo $edcuaiton_list->gradding ; ?></option>
 					<option value="Scale 10 Grading System">Scale 10 Grading System</option>
 					<option value="Scale 4 Grading System">Scale 4 Grading System</option>
@@ -166,7 +166,7 @@
                 </div>
               </div>
 			
-			 <div class="form-group" id="comp_name" style="display:none;">
+			 <div class="form-group" id="comp_names" style="display:none;">
                 <label class="control-label col-sm-3" for="email">Marks:</label>
                 <div class="col-sm-9">
                  <input type="text" name="js_resut" class="form-control" placeholder="Enter Result GPA/GGPA" value="<?php
@@ -554,6 +554,34 @@
       }
      else{
          $('#name').show();
+     } 
+     
+      
+  }
+</script>
+
+
+
+<script>
+	 function hideshowfuns()
+  {
+      var a = $('#categorys').val();
+   
+      
+      if(a=='Course Requires a Pass')
+      {
+          $('#comp_names').hide();
+      }
+     else{
+         $('#comp_names').show();
+     } 
+     
+     if(a=='Scale 10 Grading System' || a=='Scale 4 Grading System' || a=='% Marks of 100 Maximum')
+      {
+          $('#names').hide();
+      }
+     else{
+         $('#names').show();
      } 
      
       
