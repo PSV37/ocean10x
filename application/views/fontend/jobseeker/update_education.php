@@ -231,7 +231,19 @@
                   <input type="text" name="js_institute_name" class="form-control" id="js_institute_name" placeholder="Enter Institute Title">
                 </div>
               </div>
-
+				
+				<div class="form-group">
+                <label class="control-label col-sm-3" for="email">Course Type:</label>
+                <div class="col-sm-9">
+                  <select  name="board_id" id="board_id" class="form-control">
+				  <option></option>
+				 <?php foreach($course as $courses){?>
+					<option value="<?php echo $courses['education_type_id']; ?>"><?php echo $courses['education']; ?></option>
+					<?php } ?>
+				 </select>
+                </div>
+              </div>
+				
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Result:</label>
                 <div class="col-sm-9">
