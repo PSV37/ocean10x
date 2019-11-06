@@ -11,19 +11,19 @@
           <?php echo $this->session->flashdata('msg'); ?>
           <div id="vsphoto" class="tab-pane fade in">
             <h5>Attach Your Resume</h5>
-            <small>Resume is the most important document recruiters look for. Recruiters generally do not look at profiles without resumes.</small>
+            
             <?php echo $this->session->flashdata('msg'); ?>
             <div class="row">
               <div class="col-md-12">
                 <div class="containe1r">
-  
+                    <?php print_r($job_seeker_resume); ?>
                   <form class="avatar-form" action="<?php echo base_url('Job_seeker/save_attached_resume');?>" enctype="multipart/form-data" method="post">
-                    <input type="text" name="resume_id" value="<?php if(!empty($job_seeker_resume->id)){echo $job_seeker_resume->id;} ?>">
+                    <input type="text" name="resume_id" value="<?php if(!empty($job_seeker_resume['id'])){echo $job_seeker_resume['id'];} ?>">
                       <!-- Upload image and data -->
                     <div class="col-md-6">
                       <div class="col-md-12">
                         <label for="avatarInput">Current Resume</label>
-                        <input type="text" class="form-control" id="" name="oldresume" value="<?php if(!empty($job_seeker_resume->resume)){echo $job_seeker_resume->resume;} ?>">
+                        <input type="text" class="form-control" id="" name="oldresume" value="<?php if(!empty($job_seeker_resume['resume'])){echo $job_seeker_resume['resume'];} ?>">
                       </div>
                       <div class="panel-body"></div>
                       <div class="col-md-12">
