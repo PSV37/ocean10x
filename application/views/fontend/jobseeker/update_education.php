@@ -136,7 +136,7 @@
                 <div class="col-sm-9">
                   <select  name="board_id" id="board_id" class="form-control">
 				 <?php foreach($schoolboard as $boards){?>
-					<option value="<?php echo $boards['board_id']; ?>"<?php if($edcuaiton_list->board_id==$boards['board_id']){ echo "selected"; }?>><?php echo $boards['board_name']; ?></option>
+					<option value="<?php echo $boards['schoolboard_id']; ?>"<?php if($edcuaiton_list->board_id==$boards['schoolboard_id']){ echo "selected"; }?>><?php echo $boards['schoolboard_name']; ?></option>
 					<?php } ?>
 				 </select>
                 </div>
@@ -243,7 +243,7 @@
                 <div class="col-sm-9">
                   <select  name="board_id" id="board_id" class="form-control">
 				 <?php foreach($schoolboard as $boards){?>
-					<option value="<?php echo $boards['board_id']; ?>"><?php echo $boards['board_name']; ?></option>
+					<option value="<?php echo $boards['schoolboard_id']; ?>"><?php echo $boards['schoolboard_name']; ?></option>
 					<?php } ?>
 				 </select>
                 </div>
