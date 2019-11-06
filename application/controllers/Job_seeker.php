@@ -633,7 +633,9 @@ exit;*/
                 
                 $config['upload_path'] = './upload/Resumes/';
                 $config['allowed_types'] = 'pdf|doc|rtf';
-                $config['max_size']    = '2000000';
+                // $config['max_size']    = '2000000';
+                $config['encrypt_name']  = true;
+                $config['max_size']      = 2000000; //2 mb
                 $config['file_name'] = $NewFileName;
             
                  $this->load->library('upload', $config);      

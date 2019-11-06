@@ -24,7 +24,7 @@
                     <div class="col-md-6">
                       <div class="col-md-12">
                         <label for="avatarInput">Current Resume</label><br><br>
-                        <span><a href="<?php echo  base_url(); ?>upload/Resumes/<?php if(!empty($job_seeker_resume['resume'])){echo $job_seeker_resume['resume'];} ?>" download><?php if(!empty($job_seeker_resume['resume'])){echo $job_seeker_resume['resume'];} ?></a></span>
+                        <span><a href="<?php echo  base_url(); ?>upload/Resumes/<?php if(!empty($job_seeker_resume['resume'])){echo $job_seeker_resume['resume'];} ?>" title='Download Your Attached Resume' download><?php if(!empty($job_seeker_resume['resume'])){echo $job_seeker_resume['resume'];} ?></a></span>
                       </div>
                       <div class="panel-body"></div>
                       <?php if(!empty($job_seeker_resume['id']) ){?>
@@ -35,7 +35,7 @@
                           echo date('d M Y', strtotime($job_seeker_resume['created_on']));
                         } 
                       ?></p><br>
-                    <?php }else{} ?>
+                    <?php }else{echo "<p style='text-align: left !important;color: #999;'>Please upload your resume</p>";} ?>
                     </div>
                     <div class="col-md-6">
                       <!-- Upload image and data -->
