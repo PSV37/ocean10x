@@ -91,7 +91,7 @@ $route['seeker/resume']="job_seeker/view_resume";
 $route['seeker/my-applicaiton']="job_seeker/my_application";
 $route['seeker/logout']="job_seeker/logout";
 $route['seeker/downloadcv']="job_seeker/downloadcv";
-
+$route['seeker/attach-resume']="job_seeker/upload_resume";
 
 
 $route['seeker-login']="register/jobseeker_login";

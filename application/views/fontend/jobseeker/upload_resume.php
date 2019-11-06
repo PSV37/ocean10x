@@ -13,7 +13,7 @@
                                     <hr>
                                      <?php echo $this->session->flashdata('msg'); ?>
                             
-                            <div id="vsuplresume" class="tab-pane fade in">
+                            <div id="vsphoto" class="tab-pane fade in">
                                  	<h5>Your Profile Picture</h5>
                                     <?php echo $this->session->flashdata('msg'); ?>
                                     <div class="row">
