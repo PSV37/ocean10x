@@ -391,43 +391,8 @@
 
         });
 
-        function getEducationSpecial(id){
-     
-          if(id){
-                  $.ajax({
-                      type:'POST',
-                      url:'<?php echo base_url();?>job_seeker/getEducation_specialization',
-                      data:{id:id},
-                      success:function(res){
-                        $('#job_edu_special').html(res);
-                        $('#specialization_id').html(res);
-                      }
-              
-                  }); 
-                }
-         
-          }
-
-
-$(document).ready(function(){
-   function getEducationSpecial_load(){
-    var id = $('#education_level').val();
-      if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>job_seeker/getEducation_specialization',
-                data:{id:id},
-                success:function(res){
-                  $('#specialization_id').html(res);
-                  $('#specialization_id').val(<?php echo $edcuaiton_list->specialization_id; ?>);
-                }
-        
-            }); 
-          }
-   
-    }
-    getEducationSpecial_load();
-
-});
+       
+	   
+	   
 
             </script>

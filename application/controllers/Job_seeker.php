@@ -637,7 +637,7 @@ exit;*/
     	 echo $result;
     }
 
-  function getEducation_specialization(){
+ /* function getEducation_specialization(){
         $level_id = $this->input->post('id');
         $where['edu_level_id'] = $level_id;
         $special = $this->Master_model->getMaster('education_specialization',$where);
@@ -651,7 +651,7 @@ exit;*/
             $result .='<option value="">Specilazation Not Found </option>';
         }
          echo $result;
-    }
+    }*/
 
 
 // to get companies
@@ -679,6 +679,11 @@ function get_skills_autocomplete(){
             }
         }
     }
+
+
+
+
+
 
 
 } //end function
