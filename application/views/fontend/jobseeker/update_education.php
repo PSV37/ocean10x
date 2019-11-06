@@ -214,12 +214,67 @@
               </div>
 					
 				<div class="form-group">
-                <label class="control-label col-sm-3" for="email">Institute Name:</label>
+                <label class="control-label col-sm-3" for="email">University/Institute Name:</label>
                 <div class="col-sm-9">
                   <input type="text" name="js_institute_name" class="form-control" id="js_institute_name" placeholder="Enter Institute Name">
                 </div>
               </div>
-							
+				
+					<div class="form-group">
+                <label class="control-label col-sm-3" for="email">Course Type:</label>
+                <div class="col-sm-9">
+                  <select  name="board_id" id="board_id" class="form-control">
+				  <option></option>
+				 <?php foreach($course as $courses){?>
+					<option value="<?php echo $courses['education_type_id']; ?>"><?php echo $courses['education_type']; ?></option>
+					<?php } ?>
+				 </select>
+                </div>
+              </div>
+			  
+			   <div class="form-group">
+                <label class="control-label col-sm-3" for="pwd">Passing Year:</label>
+                <div class="col-sm-9">
+                  <select  name="js_year_of_passing" id="js_year_of_passing" class="form-control">
+				 <?php foreach($passingyear as $pass){?>
+					<option value="<?php echo $pass['passing_id']; ?>"><?php echo $pass['passing_year']; ?></option>
+					<?php } ?>
+				 </select>
+                </div>
+              </div>
+			
+				<div class="form-group">
+                <label class="control-label col-sm-3" for="email">Grading System:</label>
+                <div class="col-sm-9">
+                  <select  name="gradding"  class="form-control" id="category" onchange='hideshowfun()'>
+				  <option></option>
+					<option value="Scale 10 Grading System">Scale 10 Grading System</option>
+					<option value="Scale 4 Grading System">Scale 4 Grading System</option>
+					<option value="% Marks of 100 Maximum">% Marks of 100 Maximum</option>
+					<option value="Course Requires a Pass">Course Requires a Pass</option>
+				 </select>
+                </div>
+              </div>
+			  
+			  <div class="form-group" id="comp_name" style="display:none;">
+                <label class="control-label col-sm-3" for="email">Marks:</label>
+                <div class="col-sm-9">
+                 <input type="text" name="js_resut" class="form-control" placeholder="Enter Result GPA/GGPA">
+                </div>
+              </div>
+				
+				<div class="form-group">
+                <label class="control-label col-sm-3" for="email">Board:</label>
+                <div class="col-sm-9">
+                  <select  name="board_id" id="board_id" class="form-control">
+				  <option></option>
+				 <?php foreach($schoolboard as $boards){?>
+					<option value="<?php echo $boards['schoolboard_id']; ?>"><?php echo $boards['schoolboard_name']; ?></option>
+					<?php } ?>
+				 </select>
+                </div>
+              </div>
+				
 				<div class="form-group">
                 <label class="control-label col-sm-3" for="email">Board:</label>
                 <div class="col-sm-9">
@@ -245,60 +300,9 @@
 				</div>
               
 				
-				<div class="form-group">
-                <label class="control-label col-sm-3" for="email">Course Type:</label>
-                <div class="col-sm-9">
-                  <select  name="board_id" id="board_id" class="form-control">
-				  <option></option>
-				 <?php foreach($course as $courses){?>
-					<option value="<?php echo $courses['education_type_id']; ?>"><?php echo $courses['education_type']; ?></option>
-					<?php } ?>
-				 </select>
-                </div>
-              </div>
-			  
-			   <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">Passing Year:</label>
-                <div class="col-sm-9">
-                  <select  name="js_year_of_passing" id="js_year_of_passing" class="form-control">
-				 <?php foreach($passingyear as $pass){?>
-					<option value="<?php echo $pass['passing_id']; ?>"><?php echo $pass['passing_year']; ?></option>
-					<?php } ?>
-				 </select>
-                </div>
-              </div>
-			
-			<div class="form-group">
-                <label class="control-label col-sm-3" for="email">Board:</label>
-                <div class="col-sm-9">
-                  <select  name="board_id" id="board_id" class="form-control">
-				  <option></option>
-				 <?php foreach($schoolboard as $boards){?>
-					<option value="<?php echo $boards['schoolboard_id']; ?>"><?php echo $boards['schoolboard_name']; ?></option>
-					<?php } ?>
-				 </select>
-                </div>
-              </div>
 				
-				<div class="form-group">
-                <label class="control-label col-sm-3" for="email">Grading System:</label>
-                <div class="col-sm-9">
-                  <select  name="gradding"  class="form-control" id="category" onchange='hideshowfun()'>
-				  <option></option>
-					<option value="Scale 10 Grading System">Scale 10 Grading System</option>
-					<option value="Scale 4 Grading System">Scale 4 Grading System</option>
-					<option value="% Marks of 100 Maximum">% Marks of 100 Maximum</option>
-					<option value="Course Requires a Pass">Course Requires a Pass</option>
-				 </select>
-                </div>
-              </div>
-			  
-			  <div class="form-group" id="comp_name" style="display:none;">
-                <label class="control-label col-sm-3" for="email">Marks:</label>
-                <div class="col-sm-9">
-                 <input type="text" name="js_resut" class="form-control" placeholder="Enter Result GPA/GGPA">
-                </div>
-              </div>
+			
+				
 			  
 			  
               <!--<div class="form-group">
