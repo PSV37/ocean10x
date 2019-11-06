@@ -520,7 +520,7 @@
 				}); 
 			}
        }
-     
+       getSpecial_load();
 	   });
 	   
 	   </script>
