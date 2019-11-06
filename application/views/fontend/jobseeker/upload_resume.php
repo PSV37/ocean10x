@@ -22,7 +22,7 @@
                       <!-- Upload image and data -->
                     <div class="col-md-6">
                       <div class="col-md-12">
-                        <label for="avatarInput">Current Resume</label>
+                        <label for="avatarInput">Current Resume</label><br><br>
                         <span><small><?php if(!empty($job_seeker_resume['resume'])){echo $job_seeker_resume['resume'];} ?></small></span>
                       </div>
                     </div>
