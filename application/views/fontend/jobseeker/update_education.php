@@ -146,9 +146,11 @@
                 <label class="control-label col-sm-3" for="pwd">Passing Year:</label>
                 <div class="col-sm-9">
 					   <select  name="js_year_of_passing" id="ddlYears" class="form-control">
-				 <?php foreach($passingyear as $passing){?>
+				 <?php /*foreach($passingyear as $passing){?>
 					<option value="<?php echo $passing['passing_id']; ?>"<?php if($edcuaiton_list->js_year_of_passing==$passing['passing_id']){ echo "selected"; }?>><?php echo $passing['passing_year']; ?></option>
-					<?php } ?>
+					<?php } */?>
+					
+					<option><?php echo $edcuaiton_list->js_year_of_passing; ?></option>
 				 </select>
                 </div>
               </div>
