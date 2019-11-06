@@ -681,8 +681,24 @@ function get_skills_autocomplete(){
     }
 
 
+//specilization ajax//
 
-
+function getspecilization(){
+    $education_level_id = $this->input->post('id');
+    $where['education_level_id'] = $education_level_id;
+    $educations = $this->Master_model->getMaster('education_specialization',$where);
+    $result = '';
+    if(!empty($educations)){ 
+        $result .='<option value="">Select Specilazation</option>';
+        foreach($educations as $key){
+          $result .='<option value="'.$key['edu_level_id'].'">'.$key['education_specialization'].'</option>';
+        }
+    }else{
+    
+        $result .='<option value="">Specilazation not available</option>';
+    }
+     echo $result;
+}
 
 
 
