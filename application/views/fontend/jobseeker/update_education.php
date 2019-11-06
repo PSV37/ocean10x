@@ -210,10 +210,8 @@
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Specialization:</label>
                 <div class="col-sm-9">
-				<select  name="specialization_id" id="job_edu_special" class="form-control">
-				 <?php foreach($education_specialization as $specialization){?>
-					<option value="<?php echo $specialization['id']; ?>"><?php echo $specialization['education_specialization']; ?></option>
-					<?php } ?> 
+				<select  name="specialization_id" id="specialization_id" class="form-control">
+				 
 				 </select>
 				</div>
               </div>
@@ -386,8 +384,8 @@
 					url:'<?php echo base_url();?>job_seeker/getspecilization',
 					data:{id:id},
 					success:function(res){
-						$('#edu_level_id').html(res);
-						$('#edu_level_id').val(<?php echo $row['edu_level_id']; ?>);
+						$('#specialization_id').html(res);
+						$('#specialization_id').val(<?php echo $row['specialization_id']; ?>);
 						//getSubtopic_load();
 					}
 					
