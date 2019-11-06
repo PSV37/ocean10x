@@ -658,7 +658,7 @@ exit;*/
             $result .='<option value="">Specilazation Not Found </option>';
         }
          echo $result;
-    
+    }
 
 
 // to get companies
@@ -709,6 +709,7 @@ function getspecilization(){
 	}
 	 echo $result;
 }
+
 
 } //end function
 
