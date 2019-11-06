@@ -625,7 +625,7 @@ exit;*/
                 $NewFileName = $_FILES['txt_resume']['name']; 
                 
                 $config['upload_path'] = './upload/Resumes/';
-                $config['allowed_types'] = 'pdf|xlsx|doc|docx|rtf';
+                $config['allowed_types'] = 'pdf|doc|rtf';
                 $config['max_size']    = '2000000';
                 $config['file_name'] = $NewFileName;
             
