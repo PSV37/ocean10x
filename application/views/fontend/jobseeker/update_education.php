@@ -195,7 +195,7 @@
                   <select  name="schoolmedium_id" id="schoolmedium_id" class="form-control">
 				  <option></option>
 				 <?php foreach($schoolmedium as $medium){?>
-					<option value="<?php echo $medium['schoolmedium_id']; ?>"><?php echo $medium['school_medium']; ?></option>
+					<option value="<?php echo $medium['schoolmedium_id']; ?>"<?php if($edcuaiton_list->schoolmedium_id==$medium['schoolmedium_id']){ echo "selected"; }?>><?php echo $medium['school_medium']; ?></option>
 					<?php } ?>
 				 </select>
                 </div>
@@ -208,7 +208,7 @@
 				<select name="totalmarks_id" id="search6" class="form-control">
 				<option></option>
 				<?php foreach($totalmarks as $total) { ?>
-				<option value="<?php echo $total['totalmarks_id'];?>"><?php echo $total['total_marks'];?></option>
+				<option value="<?php echo $total['totalmarks_id'];?>"<?php if($edcuaiton_list->totalmarks_id==$total['totalmarks_id']){ echo "selected"; }?>><?php echo $total['total_marks'];?></option>
 				<?php } ?>
 				</select>
 				</div>
