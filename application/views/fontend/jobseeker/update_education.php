@@ -112,7 +112,7 @@
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Specialization:</label>
                 <div class="col-sm-9">
-                  <select  name="specialization_id" id="specialization_id" class="form-control">
+                  <select  name="specialization_id" id="specializations_id" class="form-control">
 				 <?php foreach($education_specialization as $specialization){?>
 					<option value="<?php echo $specialization['id']; ?>"<?php if($edcuaiton_list->specialization_id==$specialization['id']){ echo "selected"; }?>><?php echo $specialization['education_specialization']; ?></option>
 					<?php } ?>
@@ -377,7 +377,7 @@
 		if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>Job_seeker/getspecilization',
+                url:'<?php echo base_url();?>job_seeker/getspecilization',
                 data:{id:id},
                 success:function(res){
                     $('#specialization_id').html(res);
