@@ -605,7 +605,7 @@ exit;*/
     {
         $jobseeker_id     = $this->session->userdata('job_seeker_id');
         // $job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id);
-        $job_seeker_resume = $this->Master_model->get_master_row('js_attached_resumes',$where="job_seeker_id='$jobseeker_id'");
+        $job_seeker_resume = $this->Master_model->get_master_row('js_attached_resumes', $select =FALSE ,$where="job_seeker_id='$jobseeker_id'",$join = false); 
         echo $this->db->last_query();
         $this->load->view('fontend/jobseeker/upload_resume.php', compact('job_seeker_resume'));
     }
@@ -662,7 +662,7 @@ exit;*/
                     redirect('job_seeker/seeker_info');
                 }
             }else{
-                $job_seeker_resume = $this->Master_model->get_master_row('js_attached_resumes',$where="job_seeker_id='$jobseeker_id'");
+                $job_seeker_resume = $this->Master_model->get_master_row('js_attached_resumes',$select =FALSE ,$where="job_seeker_id='$jobseeker_id'",$join = false);
                 $this->load->view('fontend/jobseeker/upload_resume.php', compact('job_seeker_resume'));
             }
 
