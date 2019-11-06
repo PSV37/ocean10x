@@ -100,7 +100,7 @@
               <input type="hidden" name="js_education_id" value="<?php echo $v_education->js_education_id; ?>">
                 <label class="control-label col-sm-3" for="email">Degree:</label>
                 <div class="col-sm-9">
-                  <select  name="education_level_id" id="education_level" class="form-control" onchange="getEducationSpecial(this.value)">
+                  <select  name="education_level_id" id="education_level" class="form-control">
 				 <?php  foreach($education_level as $education){?>
 					<option value="<?php echo $education['education_level_id']; ?>"<?php if($edcuaiton_list->education_level_id==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
 					<?php } ?>
@@ -108,6 +108,7 @@
 				 </select>
                 </div>
               </div>
+
 
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Specialization:</label>
@@ -120,16 +121,7 @@
                 </div>
               </div>
 			  
-			  <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Course:</label>
-                <div class="col-sm-9">
-                  <select  name="course_id" id="course_id" class="form-control">
-				 <?php foreach($course as $courses){?>
-					<option value="<?php echo $courses['education_type_id']; ?>"<?php if($edcuaiton_list->course_id==$courses['education_type_id']){ echo "selected"; }?>><?php echo $courses['education_type']; ?></option>
-					<?php } ?>
-				 </select>
-                </div>
-              </div>
+			 
 			  
 			   <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Board:</label>
@@ -206,7 +198,7 @@
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Degree:</label>
                 <div class="col-sm-9">
-               <select  name="education_level_id" id="education_level_id" class="form-control" onchange="getEducationSpecial(this.value)">
+               <select  name="education_level_id" id="education_level_id" class="form-control" onchange="">
                  <option value="">Select Degree </option>
 				 <?php foreach($education_level as $education){?>
 					<option value="<?php echo $education['education_level_id']; ?>"><?php echo $education['education_level_name']; ?></option>
@@ -226,16 +218,6 @@
 				</div>
               </div>
 				
-				<div class="form-group">
-                <label class="control-label col-sm-3" for="email">Course:</label>
-                <div class="col-sm-9">
-                  <select  name="course_id" id="course_id" class="form-control">
-				 <?php foreach($course as $courses){?>
-					<option value="<?php echo $courses['education_type_id']; ?>"><?php echo $courses['education_type']; ?></option>
-					<?php } ?>
-				 </select>
-                </div>
-              </div>
 				
 				<div class="form-group">
                 <label class="control-label col-sm-3" for="email">Board:</label>
@@ -392,7 +374,44 @@
         });
 
        
+     </script>
+	 <script>	   
+	   $(document).ready(function(){
+		   
+		   function getSpecilization_load(){
+			var id = $('#education_level_id').val();
+			if(id){
+				$.ajax({
+					type:'POST',
+					url:'<?php echo base_url();?>job_seeker/getspecilization',
+					data:{id:id},
+					success:function(res){
+						$('#edu_level_id').html(res);
+						$('#edu_level_id').val(<?php echo $row['edu_level_id']; ?>);
+						//getSubtopic_load();
+					}
+					
+				}); 
+			}
+       }
+       getSpecilization_load();
+	   });
 	   
-	   
-
-            </script>
+	   </script>
+	   <script>
+         function getSpecilization(id){
+		
+		if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>job_seeker/getspecilization',
+                data:{id:id},
+                success:function(res){
+                    $('#edu_level_id').html(res);
+                }
+				
+            }); 
+          }
+   
+	   }
+	   </script>
