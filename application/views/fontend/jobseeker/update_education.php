@@ -232,6 +232,17 @@
                 </div>
               </div>
 				
+				
+				<div class="form-group">
+				<div class="col-md-6">
+				<label>Total Marks</label>
+				<select name="totalmarks_id" id="search6" style="width:250px;" class="form-control">
+				<option></option>
+				<?php foreach($totalmarks as $total) { ?>
+				<option value="<?php echo $total['totalmarks_id'];?>"><?php echo $total['total_marks'];?></option>
+				<?php } ?>
+				</select>
+				</div>
               
 				
 				<div class="form-group">
