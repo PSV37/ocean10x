@@ -706,7 +706,7 @@ function getspecilization(){
 		$result .='<option value="">Specilazation not available</option>';
 	}
 	 echo $result;
-
+}
 
 } //end function
 
