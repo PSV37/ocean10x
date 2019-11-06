@@ -377,7 +377,7 @@
 		if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>job_seeker/getspecilization',
+                url:'<?php echo base_url();?>Job_seeker/getspecilization',
                 data:{id:id},
                 success:function(res){
                     $('#specialization_id').html(res);
