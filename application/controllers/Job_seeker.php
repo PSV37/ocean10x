@@ -610,7 +610,7 @@ exit;*/
 
 
     
-    public function save_attached_resume($js_resume_id==NULL)
+    public function save_attached_resume()
     {
         $jobseeker_id     = $this->session->userdata('job_seeker_id');
         if ($_POST) {
@@ -620,7 +620,7 @@ exit;*/
                 $this->load->helper('string'); 
                 $NewFileName = $_FILES['txt_resume']['name']; 
                 
-                $config['upload_path'] = './images/Resumes/';
+                $config['upload_path'] = './upload/Resumes/';
                 $config['allowed_types'] = 'pdf|doc|docx|odt|xlsm|xls|xlm|xla|xlsx|bmp|docm|dotx|dotm|docb';
                 $config['max_size']    = '1000000';
                
