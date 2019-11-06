@@ -668,7 +668,7 @@ exit;*/
     }
 
 // to get skill master for autocomplete
-function get_skills_autocomplete(){
+    function get_skills_autocomplete(){
         if (isset($_GET['term'])) {
 
             $result = $this->Job_seeker_experience_model->search_skills($_GET['term']);
@@ -680,26 +680,12 @@ function get_skills_autocomplete(){
         }
     }
 
-
-//specilization ajax//
-
-function getspecilization(){
-    $education_level_id = $this->input->post('id');
-    $where['education_level_id'] = $education_level_id;
-    $educations = $this->Master_model->getMaster('education_specialization',$where);
-    $result = '';
-    if(!empty($educations)){ 
-        $result .='<option value="">Select Specilazation</option>';
-        foreach($educations as $key){
-          $result .='<option value="'.$key['edu_level_id'].'">'.$key['education_specialization'].'</option>';
-        }
-    }else{
-    
-        $result .='<option value="">Specilazation not available</option>';
+    public function upload_resume()
+    {
+        $jobseeker_id     = $this->session->userdata('job_seeker_id');
+        $job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id);
+        $this->load->view('fontend/jobseeker/upload_resume.php', compact('job_seeker_photo'));
     }
-     echo $result;
-}
-
 
 
 } //end function
