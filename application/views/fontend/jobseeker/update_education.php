@@ -120,16 +120,6 @@
                 </div>
               </div>
 			  
-			  <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Course:</label>
-                <div class="col-sm-9">
-                  <select  name="course_id" id="course_id" class="form-control">
-				 <?php foreach($course as $courses){?>
-					<option value="<?php echo $courses['education_type_id']; ?>"<?php if($edcuaiton_list->course_id==$courses['education_type_id']){ echo "selected"; }?>><?php echo $courses['education_type']; ?></option>
-					<?php } ?>
-				 </select>
-                </div>
-              </div>
 			  
 			   <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Board:</label>
@@ -219,24 +209,11 @@
                 <label class="control-label col-sm-3" for="email">Specialization:</label>
                 <div class="col-sm-9">
 				<select  name="specialization_id" id="job_edu_special" class="form-control">
-				 <?php foreach($education_specialization as $specialization){?>
-					<option value="<?php echo $specialization['id']; ?>"><?php echo $specialization['education_specialization']; ?></option>
-					<?php } ?> 
+				 
 				 </select>
 				</div>
               </div>
-				
-				<div class="form-group">
-                <label class="control-label col-sm-3" for="email">Course:</label>
-                <div class="col-sm-9">
-                  <select  name="course_id" id="course_id" class="form-control">
-				 <?php foreach($course as $courses){?>
-					<option value="<?php echo $courses['education_type_id']; ?>"><?php echo $courses['education_type']; ?></option>
-					<?php } ?>
-				 </select>
-                </div>
-              </div>
-				
+								
 				<div class="form-group">
                 <label class="control-label col-sm-3" for="email">Board:</label>
                 <div class="col-sm-9">
@@ -391,8 +368,43 @@
 
         });
 
-       
-	   
-	   
+       <!-- function getEducationSpecial(id){
+     
+          if(id){
+                  $.ajax({
+                      type:'POST',
+                      url:'<?php echo base_url();?>job_seeker/getEducation_specialization',
+                      data:{id:id},
+                      success:function(res){
+                        $('#job_edu_special').html(res);
+                        $('#specialization_id').html(res);
+                      }
+              
+                  }); 
+                }
+         
+          }
+
+
+$(document).ready(function(){
+   function getEducationSpecial_load(){
+    var id = $('#education_level').val();
+      if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>job_seeker/getEducation_specialization',
+                data:{id:id},
+                success:function(res){
+                  $('#specialization_id').html(res);
+                  $('#specialization_id').val(<?php echo $edcuaiton_list->specialization_id; ?>);
+                }
+        
+            }); 
+          }
+   
+    }
+    getEducationSpecial_load();
+
+});
 
             </script>

@@ -637,7 +637,7 @@ exit;*/
     	 echo $result;
     }
 
- /* function getEducation_specialization(){
+  function getEducation_specialization(){
         $level_id = $this->input->post('id');
         $where['edu_level_id'] = $level_id;
         $special = $this->Master_model->getMaster('education_specialization',$where);
@@ -651,7 +651,7 @@ exit;*/
             $result .='<option value="">Specilazation Not Found </option>';
         }
          echo $result;
-    }*/
+    
 
 
 // to get companies
@@ -686,6 +686,9 @@ exit;*/
         $job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id);
         $this->load->view('fontend/jobseeker/upload_resume.php', compact('job_seeker_photo'));
     }
+
+
+
 
 
 } //end function
