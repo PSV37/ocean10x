@@ -236,6 +236,7 @@
                 <label class="control-label col-sm-3" for="pwd">Passing Year:</label>
                 <div class="col-sm-9">
                   <select  name="js_year_of_passing" id="js_year_of_passing" class="form-control">
+				  <option></option>
 				 <?php foreach($passingyear as $pass){?>
 					<option value="<?php echo $pass['passing_id']; ?>"><?php echo $pass['passing_year']; ?></option>
 					<?php } ?>
