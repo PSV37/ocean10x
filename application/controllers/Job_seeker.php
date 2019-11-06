@@ -693,7 +693,7 @@ exit;*/
 
 function getspecilization(){
 	$specilization_id = $this->input->post('id');
-	$where['edu_level_id'] = $specilization_id;
+	$where['education_level_id'] = $specilization_id;
 	$specialization = $this->Master_model->getMaster('education_specialization',$where);
 	
 	
@@ -701,7 +701,7 @@ function getspecilization(){
 	if(!empty($specialization)){ 
 		$result .='<option value="">Select Specilazation</option>';
 		foreach($specialization as $key){
-		  $result .='<option value="'.$key['edu_level_id'].'">'.$key['education_specialization'].'</option>';
+		  $result .='<option value="'.$key['id'].'">'.$key['education_specialization'].'</option>';
 		}
 	}else{
 	

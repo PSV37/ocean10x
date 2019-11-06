@@ -371,38 +371,13 @@
        
             </script>
 			
-			
-			
-			<script>	   
-	   $(document).ready(function(){
-		   
-		   function getSpecilization_load(){
-			var id = $('#education_level_id').val();
-			if(id){
-				$.ajax({
-					type:'POST',
-					url:'<?php echo base_url();?>job_seeker/getspecilization',
-					data:{id:id},
-					success:function(res){
-						$('#specialization_id').html(res);
-						$('#specialization_id').val(<?php echo $row['specialization_id']; ?>);
-						getBoard_load();
-					}
-					
-				}); 
-			}
-       }
-       getSpecilization_load();
-	   });
-	   
-	   </script>
 	   <script>
          function getSpecilization(id){
 		
 		if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>job_seeker/getspecilization',
+                url:'<?php echo base_url();?>Job_seeker/getspecilization',
                 data:{id:id},
                 success:function(res){
                     $('#specialization_id').html(res);
