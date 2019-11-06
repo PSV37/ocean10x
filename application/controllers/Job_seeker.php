@@ -602,7 +602,7 @@ exit;*/
         redirect('job_seeker/seeker_info');
     }
 		
- function upload_resume()
+    public function upload_resume()
     {
         $jobseeker_id     = $this->session->userdata('job_seeker_id');
         $job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id);
