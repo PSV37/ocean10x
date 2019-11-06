@@ -641,7 +641,7 @@ exit;*/
         $level_id = $this->input->post('id');
         $where['edu_level_id'] = $level_id;
         $special = $this->Master_model->getMaster('education_specialization',$where);
-        $result = '';
+        //$result = '';
         if(!empty($special)){ 
             $result .='<option value="">Select Specilazation</option>';
             foreach($special as $spec_row){
