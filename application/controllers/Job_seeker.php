@@ -106,10 +106,17 @@ class Job_seeker extends MY_Seeker_Controller
                 'job_seeker_id'      => $jobseeker_id,
                 'education_level_id'          => $this->input->post('education_level_id'),
                 'specialization_id'           => $this->input->post('specialization_id'),
-				'board_id'          => $this->input->post('board_id'),
-                'js_institute_name'  => $this->input->post('js_institute_name'),
-                'js_resut'           => $this->input->post('js_resut'),
-                'js_year_of_passing' => $this->input->post('js_year_of_passing'),
+				'js_institute_name'           => $this->input->post('js_institute_name'),
+				'education_type_id'           => $this->input->post('education_type_id'),
+				'js_year_of_passing' => $this->input->post('js_year_of_passing'),
+				'gradding' => $this->input->post('gradding'),
+				 'js_resut'           => $this->input->post('js_resut'),
+				 'board_id'          => $this->input->post('board_id'),
+				 'board_id'          => $this->input->post('board_id'),
+				 'totalmarks_id'          => $this->input->post('totalmarks_id'),
+				'schoolmedium_id'  => $this->input->post('schoolmedium_id'),
+				            
+                
             );
             if (empty($education_info_id)) {
                 $this->Job_seeker_education_model->insert($education_info);
