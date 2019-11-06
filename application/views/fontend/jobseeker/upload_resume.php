@@ -23,7 +23,7 @@
                     <div class="col-md-6">
                       <div class="col-md-12">
                         <label for="avatarInput">Current Resume</label><br><br>
-                        <span><small><?php if(!empty($job_seeker_resume['resume'])){echo $job_seeker_resume['resume'];} ?></small></span>
+                        <span><a href="<?php echo  base_url(); ?>upload/Resumes/<?php if(!empty($job_seeker_resume['resume'])){echo $job_seeker_resume['resume'];} ?>" download><?php if(!empty($job_seeker_resume['resume'])){echo $job_seeker_resume['resume'];} ?></a></span>
                       </div>
                     </div>
                     <div class="col-md-6">
