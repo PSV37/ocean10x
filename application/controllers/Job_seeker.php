@@ -692,8 +692,8 @@ exit;*/
 
 
 function getspecilization(){
-	$specilization_id = $this->input->post('id');
-	$where['education_level_id'] = $specilization_id;
+	$education_id = $this->input->post('id');
+	$where['education_level_id'] = $education_id;
 	$specialization = $this->Master_model->getMaster('education_specialization',$where);
 	
 	
