@@ -100,7 +100,7 @@
               <input type="hidden" name="js_education_id" value="<?php echo $v_education->js_education_id; ?>">
                 <label class="control-label col-sm-3" for="email">Degree:</label>
                 <div class="col-sm-9">
-                  <select  name="education_level_id" id="education_level" class="form-control" onchange="getEducationSpecial(this.value)">
+                  <select  name="education_level_id" id="education_level" class="form-control" onchange="getSpecial(this.value)">
 				 <?php  foreach($education_level as $education){?>
 					<option value="<?php echo $education['education_level_id']; ?>"<?php if($edcuaiton_list->education_level_id==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
 					<?php } ?>
@@ -113,9 +113,7 @@
                 <label class="control-label col-sm-3" for="email">Specialization:</label>
                 <div class="col-sm-9">
                   <select  name="specialization_id" id="specializations_id" class="form-control">
-				 <?php foreach($education_specialization as $specialization){?>
-					<option value="<?php echo $specialization['id']; ?>"<?php if($edcuaiton_list->specialization_id==$specialization['id']){ echo "selected"; }?>><?php echo $specialization['education_specialization']; ?></option>
-					<?php } ?>
+				
 				 </select>
                 </div>
               </div>
@@ -381,6 +379,49 @@
                 data:{id:id},
                 success:function(res){
                     $('#specialization_id').html(res);
+                }
+				
+            }); 
+          }
+   
+	   }
+	   </script>
+	   
+	   
+	   
+	   <script>	   
+	   $(document).ready(function(){
+		   
+		   function getSpecial_load(){
+			var id = $('#education_level').val();
+			if(id){
+				$.ajax({
+					type:'POST',
+					url:'<?php echo base_url();?>job_seeker/getspecilization',
+					data:{id:id},
+					success:function(res){
+						$('#specializations_id').html(res);
+						$('#specializations_id').val(<?php echo $row['id']; ?>);
+						getSubtopic_load();
+					}
+					
+				}); 
+			}
+       }
+       getSpecial_load();
+	   });
+	   
+	   </script>
+	   <script>
+         function getSpecial(id){
+		
+		if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>job_seeker/getspecilization',
+                data:{id:id},
+                success:function(res){
+                    $('#specializations_id').html(res);
                 }
 				
             }); 
