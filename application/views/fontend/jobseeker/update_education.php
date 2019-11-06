@@ -223,7 +223,7 @@
 					<div class="form-group">
                 <label class="control-label col-sm-3" for="email">Course Type:</label>
                 <div class="col-sm-9">
-                  <select  name="board_id" id="board_id" class="form-control">
+                  <select  name="education_type_id" id="education_type_id" class="form-control">
 				  <option></option>
 				 <?php foreach($course as $courses){?>
 					<option value="<?php echo $courses['education_type_id']; ?>"><?php echo $courses['education_type']; ?></option>
@@ -279,7 +279,7 @@
 				<div class="form-group">
                 <label class="control-label col-sm-3" for="email">School Medium:</label>
                 <div class="col-sm-9">
-                  <select  name="board_id" id="board_id" class="form-control">
+                  <select  name="schoolmedium_id" id="schoolmedium_id" class="form-control">
 				  <option></option>
 				 <?php foreach($schoolmedium as $medium){?>
 					<option value="<?php echo $medium['schoolmedium_id']; ?>"><?php echo $medium['school_medium']; ?></option>
