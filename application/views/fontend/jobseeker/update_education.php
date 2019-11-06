@@ -100,7 +100,7 @@
               <input type="hidden" name="js_education_id" value="<?php echo $v_education->js_education_id; ?>">
                 <label class="control-label col-sm-3" for="email">Degree:</label>
                 <div class="col-sm-9">
-                  <select  name="education_level_id" id="education_level" class="form-control">
+                  <select  name="education_level_id" id="education_level" class="form-control" onchange="getEducationSpecial(this.value)">
 				 <?php  foreach($education_level as $education){?>
 					<option value="<?php echo $education['education_level_id']; ?>"<?php if($edcuaiton_list->education_level_id==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
 					<?php } ?>
@@ -108,7 +108,6 @@
 				 </select>
                 </div>
               </div>
-
 
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Specialization:</label>
@@ -121,7 +120,6 @@
                 </div>
               </div>
 			  
-			 
 			  
 			   <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Board:</label>
@@ -198,7 +196,7 @@
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Degree:</label>
                 <div class="col-sm-9">
-               <select  name="education_level_id" id="education_level_id" class="form-control" onchange="getSpecilization(this.value)">
+               <select  name="education_level_id" id="education_level_id" class="form-control" onchange="getEducationSpecial(this.value)">
                  <option value="">Select Degree </option>
 				 <?php foreach($education_level as $education){?>
 					<option value="<?php echo $education['education_level_id']; ?>"><?php echo $education['education_level_name']; ?></option>
@@ -210,13 +208,12 @@
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Specialization:</label>
                 <div class="col-sm-9">
-				<select  name="specialization_id" id="specialization_id" class="form-control">
+				<select  name="specialization_id" id="job_edu_special" class="form-control">
 				 
 				 </select>
 				</div>
               </div>
-				
-				
+								
 				<div class="form-group">
                 <label class="control-label col-sm-3" for="email">Board:</label>
                 <div class="col-sm-9">
@@ -371,45 +368,43 @@
 
         });
 
-       
-     </script>
-	 <script>	   
-	   $(document).ready(function(){
-		   
-		   function getSpecilization_load(){
-			var id = $('#education_level_id').val();
-			if(id){
-				$.ajax({
-					type:'POST',
-					url:'<?php echo base_url();?>job_seeker/getEducation_specialization',
-					data:{id:id},
-					success:function(res){
-						$('#specialization_id').html(res);
-						$('#specialization_id').val(<?php echo $row['specialization_id']; ?>);
-						//getSubtopic_load();
-					}
-					
-				}); 
-			}
-       }
-       getSpecilization_load();
-	   });
-	   
-	   </script>
-	   <script>
-         function getSpecilization(id){
-		
-		if(id){
+       <!-- function getEducationSpecial(id){
+     
+          if(id){
+                  $.ajax({
+                      type:'POST',
+                      url:'<?php echo base_url();?>job_seeker/getEducation_specialization',
+                      data:{id:id},
+                      success:function(res){
+                        $('#job_edu_special').html(res);
+                        $('#specialization_id').html(res);
+                      }
+              
+                  }); 
+                }
+         
+          }
+
+
+$(document).ready(function(){
+   function getEducationSpecial_load(){
+    var id = $('#education_level').val();
+      if(id){
             $.ajax({
                 type:'POST',
                 url:'<?php echo base_url();?>job_seeker/getEducation_specialization',
                 data:{id:id},
                 success:function(res){
-                    $('#specialization_id').html(res);
+                  $('#specialization_id').html(res);
+                  $('#specialization_id').val(<?php echo $edcuaiton_list->specialization_id; ?>);
                 }
-				
+        
             }); 
           }
    
-	   }
-	   </script>
+    }
+    getEducationSpecial_load();
+
+});
+
+            </script>
