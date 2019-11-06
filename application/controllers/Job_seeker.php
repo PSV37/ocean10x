@@ -106,7 +106,6 @@ class Job_seeker extends MY_Seeker_Controller
                 'job_seeker_id'      => $jobseeker_id,
                 'education_level_id'          => $this->input->post('education_level_id'),
                 'specialization_id'           => $this->input->post('specialization_id'),
-				'course_id'          => $this->input->post('course_id'),
 				'board_id'          => $this->input->post('board_id'),
                 'js_institute_name'  => $this->input->post('js_institute_name'),
                 'js_resut'           => $this->input->post('js_resut'),
@@ -692,8 +691,8 @@ exit;*/
 
 
 function getspecilization(){
-	$specilization_id = $this->input->post('id');
-	$where['education_level_id'] = $specilization_id;
+	$education_id = $this->input->post('id');
+	$where['edu_level_id'] = $education_id;
 	$specialization = $this->Master_model->getMaster('education_specialization',$where);
 	
 	
