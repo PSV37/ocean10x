@@ -289,8 +289,8 @@
 				
 				
 				<div class="form-group">
-				<div class="col-md-12">
-				<label>Total Marks:</label>
+				<label class="control-label col-sm-3" for="email">Total Marks:</label>
+				<div class="col-md-9">
 				<select name="totalmarks_id" id="search6" style="width:250px;" class="form-control">
 				<option></option>
 				<?php foreach($totalmarks as $total) { ?>
