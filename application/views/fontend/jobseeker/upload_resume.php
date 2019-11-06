@@ -17,21 +17,29 @@
                 <div class="containe1r">
   
                   <form class="avatar-form" action="<?php echo base_url('Job_seeker/save_photo');?>/<?php if(!empty($job_seeker_photo->js_photo_id)){echo $job_seeker_photo->js_photo_id;} ?>" enctype="multipart/form-data" method="post">
-                   
-                      <div class="avatar-body">
-                        <!-- Upload image and data -->
-                        <div class="avatar-upload">
-                          <label for="avatarInput">Upload Resume</label>
-                          <input type="file" class="form-control" id="resume_file" name="resume_file">
-                        </div>
 
-                        <div class="row avatar-btns">
-                          <div class="col-md-9">
-                            <button type="submit" class="btn btn-primary btn-block avatar-save2">Upload Resume</button>
-                          </div>
-                        </div>
+                      <!-- Upload image and data -->
+                    <div class="col-md-6">
+                      <div class="col-md-12">
+                        <label for="avatarInput">Current Resume</label>
+                        <input type="tez" class="form-control" id="" name="">
                       </div>
-                    
+                      <div class="panel-body"></div>
+                      <div class="col-md-12">
+                        <button type="submit" class="btn btn-danger btn-block avatar-save2">Delete Resume</button>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <!-- Upload image and data -->
+                      <div class="col-md-12">
+                        <label for="avatarInput">Upload Resume</label>
+                        <input type="file" class="form-control" id="resume_file" name="resume_file">
+                      </div>
+                      <div class="panel-body"></div>
+                      <div class="col-md-12">
+                        <button type="submit" class="btn btn-success btn-block avatar-save2">Upload Resume</button>
+                      </div>
+                    </div>
                   </form>
 
                 </div>
