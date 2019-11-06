@@ -17,17 +17,25 @@
                 <div class="containe1r">
   
                   <form class="avatar-form" action="<?php echo base_url('Job_seeker/save_photo');?>/<?php if(!empty($job_seeker_photo->js_photo_id)){echo $job_seeker_photo->js_photo_id;} ?>" enctype="multipart/form-data" method="post">
-                   
-                      <div class="avatar-body">
-                        <!-- Upload image and data -->
-                        <div class="col-md-6">
-                          <label for="avatarInput">Upload Resume</label>
-                          <input type="file" class="form-control" id="resume_file" name="resume_file">
-                        </div>
 
-                        <div class="col-md-6">
-                          <button type="submit" class="btn btn-primary btn-block avatar-save2">Upload Resume</button>
-                        </div>
+                      <!-- Upload image and data -->
+                      <div class="col-md-6">
+                        <label for="avatarInput">Upload Resume</label>
+                        <input type="file" class="form-control" id="resume_file" name="resume_file">
+                      </div>
+                      <div class="panel-body"></div>
+                      <div class="col-md-6">
+                        <button type="submit" class="btn btn-primary btn-block avatar-save2">Upload Resume</button>
+                      </div>
+                      
+                      <!-- Upload image and data -->
+                      <div class="col-md-6">
+                        <label for="avatarInput">Upload Resume</label>
+                        <input type="file" class="form-control" id="resume_file" name="resume_file">
+                      </div>
+                      <div class="panel-body"></div>
+                      <div class="col-md-6">
+                        <button type="submit" class="btn btn-primary btn-block avatar-save2">Upload Resume</button>
                       </div>
                     
                   </form>
