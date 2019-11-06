@@ -26,7 +26,7 @@
                         <span><a href="<?php echo  base_url(); ?>upload/Resumes/<?php if(!empty($job_seeker_resume['resume'])){echo $job_seeker_resume['resume'];} ?>" download><?php if(!empty($job_seeker_resume['resume'])){echo $job_seeker_resume['resume'];} ?></a></span>
                       </div>
                       <div class="panel-body"></div>
-                      <p>Last Updated: <?php if(!empty($job_seeker_resume['updated_on'])){echo date('d-M-Y', strtotime($job_seeker_resume['updated_on']));}else{echo date('d-M-Y', strtotime($job_seeker_resume['created_on']));} ?></p><br>
+                      <p style="text-align: left !important;color: #999;">Last Updated: <?php if(!empty($job_seeker_resume['updated_on'])){echo date('d M Y', strtotime($job_seeker_resume['updated_on']));}else{echo date('d M Y', strtotime($job_seeker_resume['created_on']));} ?></p><br>
                     </div>
                     <div class="col-md-6">
                       <!-- Upload image and data -->
