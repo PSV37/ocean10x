@@ -502,7 +502,7 @@
           $('#comp_name').hide();
       }
      else{
-         $('#comp_name').show();
+         
      } 
      
      if(a=='Scale 10 Grading System' || a=='Scale 4 Grading System' || a=='% Marks of 100 Maximum')
