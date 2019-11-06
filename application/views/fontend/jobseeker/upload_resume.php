@@ -20,24 +20,24 @@
 
                       <!-- Upload image and data -->
                     <div class="col-md-6">
-                      <div class="col-md-6">
+                      <div class="col-md-12">
                         <label for="avatarInput">Current Resume</label>
-                        <input type="file" class="form-control" id="resume_file" name="resume_file">
+                        <input type="tez" class="form-control" id="" name="">
                       </div>
                       <div class="panel-body"></div>
-                      <div class="col-md-6">
+                      <div class="col-md-12">
                         <button type="submit" class="btn btn-danger btn-block avatar-save2">Delete Resume</button>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <!-- Upload image and data -->
-                      <div class="col-md-6">
+                      <div class="col-md-12">
                         <label for="avatarInput">Upload Resume</label>
                         <input type="file" class="form-control" id="resume_file" name="resume_file">
                       </div>
                       <div class="panel-body"></div>
-                      <div class="col-md-6">
-                        <button type="submit" class="btn btn-primary btn-block avatar-save2">Upload Resume</button>
+                      <div class="col-md-12">
+                        <button type="submit" class="btn btn-success btn-block avatar-save2">Upload Resume</button>
                       </div>
                     </div>
                   </form>
