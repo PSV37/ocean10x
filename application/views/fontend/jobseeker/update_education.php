@@ -282,11 +282,8 @@
 			   <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Passing Year:</label>
                 <div class="col-sm-9">
-                  <select  name="js_year_of_passing" id="js_year_of_passing" class="form-control">
-				  <option></option>
-				 <?php foreach($passingyear as $pass){?>
-					<option value="<?php echo $pass['passing_id']; ?>"><?php echo $pass['passing_year']; ?></option>
-					<?php } ?>
+                  <select  name="js_year_of_passing" id="ddlYears" class="form-control">
+				 
 				 </select>
                 </div>
               </div>
@@ -597,3 +594,22 @@
       
   }
 </script>
+
+
+ <script type="text/javascript">
+        $(function () {
+            //Reference the DropDownList.
+            var ddlYears = $("#ddlYears");
+
+            //Determine the Current Year.
+            var currentYear = (new Date()).getFullYear();
+
+            //Loop and add the Year values to DropDownList.
+            for (var i = 1940; i <= currentYear; i++) {
+                var option = $("<option />");
+                option.html(i);
+                option.val(i);
+                ddlYears.append(option);
+            }
+        });
+    </script>
