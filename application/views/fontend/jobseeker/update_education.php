@@ -291,7 +291,7 @@
 				<div class="form-group">
 				<label class="control-label col-sm-3" for="email">Total Marks:</label>
 				<div class="col-md-9">
-				<select name="totalmarks_id" id="search6" style="width:250px;" class="form-control">
+				<select name="totalmarks_id" id="search6" class="form-control">
 				<option></option>
 				<?php foreach($totalmarks as $total) { ?>
 				<option value="<?php echo $total['totalmarks_id'];?>"><?php echo $total['total_marks'];?></option>
