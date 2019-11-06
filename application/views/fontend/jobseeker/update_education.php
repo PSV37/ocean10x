@@ -245,17 +245,8 @@
 				 </select>
                 </div>
               </div>
-				
-              <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Result:</label>
-                <div class="col-sm-9">
-                  <input type="text" name="js_resut" class="form-control" id="js_resut" placeholder="Enter Result GPA/GGPA"
-             >
-                </div>
-              </div>
-
-
-              <div class="form-group">
+			  
+			   <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Passing Year:</label>
                 <div class="col-sm-9">
                   <select  name="js_year_of_passing" id="js_year_of_passing" class="form-control">
@@ -265,6 +256,16 @@
 				 </select>
                 </div>
               </div>
+				
+              <!--<div class="form-group">
+                <label class="control-label col-sm-3" for="email">Result:</label>
+                <div class="col-sm-9">
+                  <input type="text" name="js_resut" class="form-control" id="js_resut" placeholder="Enter Result GPA/GGPA">
+                </div>
+              </div>-->
+
+
+             
                
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
