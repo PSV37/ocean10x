@@ -281,7 +281,7 @@
                   <select  name="board_id" id="board_id" class="form-control">
 				  <option></option>
 				 <?php foreach($schoolmedium as $medium){?>
-					<option value="<?php echo $medium['schoolmedium_id']; ?>"><?php echo $medium['schoolboard_medium']; ?></option>
+					<option value="<?php echo $medium['schoolmedium_id']; ?>"><?php echo $medium['school_medium']; ?></option>
 					<?php } ?>
 				 </select>
                 </div>
