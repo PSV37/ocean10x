@@ -118,21 +118,8 @@
                 </div>
               </div>
 			  
-			  
 			   <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Board:</label>
-                <div class="col-sm-9">
-                  <select  name="board_id" id="board_id" class="form-control">
-				  <option></option>
-				 <?php foreach($schoolboard as $boards){?>
-					<option value="<?php echo $boards['schoolboard_id']; ?>"<?php if($edcuaiton_list->board_id==$boards['schoolboard_id']){ echo "selected"; }?>><?php echo $boards['schoolboard_name']; ?></option>
-					<?php } ?>
-				 </select>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Institute Name:</label>
+                <label class="control-label col-sm-3" for="email">University/InstituteInstitute Name:</label>
                 <div class="col-sm-9">
                   <input type="text" name="js_institute_name" class="form-control" id="js_institute_name" placeholder="Enter Institute Title"
                    value="<?php
@@ -142,6 +129,7 @@
                        ?>">
                 </div>
               </div>
+			              
 
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Result:</label>
@@ -154,7 +142,19 @@
                        ?>">
                 </div>
               </div>
-
+				
+				<div class="form-group">
+                <label class="control-label col-sm-3" for="email">Course Type:</label>
+                <div class="col-sm-9">
+                  <select  name="education_type_id" id="education_type_id" class="form-control">
+				  <option></option>
+				 <?php foreach($course as $courses){?>
+					<option value="<?php echo $courses['education_type_id']; ?>"><?php echo $courses['education_type']; ?></option>
+					<?php } ?>
+				 </select>
+                </div>
+              </div>
+				
 
               <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Passing Year:</label>
@@ -167,6 +167,63 @@
                 </div>
               </div>
             
+			<div class="form-group">
+                <label class="control-label col-sm-3" for="email">Grading System:</label>
+                <div class="col-sm-9">
+                  <select  name="gradding"  class="form-control" id="category" onchange='hideshowfun()'>
+				  <option></option>
+					<option value="Scale 10 Grading System">Scale 10 Grading System</option>
+					<option value="Scale 4 Grading System">Scale 4 Grading System</option>
+					<option value="% Marks of 100 Maximum">% Marks of 100 Maximum</option>
+					<option value="Course Requires a Pass">Course Requires a Pass</option>
+				 </select>
+                </div>
+              </div>
+			
+			 <div class="form-group" id="comp_name" style="display:none;">
+                <label class="control-label col-sm-3" for="email">Marks:</label>
+                <div class="col-sm-9">
+                 <input type="text" name="js_resut" class="form-control" placeholder="Enter Result GPA/GGPA">
+                </div>
+              </div>
+			
+			 <div class="form-group">
+                <label class="control-label col-sm-3" for="email">Board:</label>
+                <div class="col-sm-9">
+                  <select  name="board_id" id="board_id" class="form-control">
+				  <option></option>
+				 <?php foreach($schoolboard as $boards){?>
+					<option value="<?php echo $boards['schoolboard_id']; ?>"<?php if($edcuaiton_list->board_id==$boards['schoolboard_id']){ echo "selected"; }?>><?php echo $boards['schoolboard_name']; ?></option>
+					<?php } ?>
+				 </select>
+                </div>
+              </div>
+			
+			<div class="form-group">
+                <label class="control-label col-sm-3" for="email">School Medium:</label>
+                <div class="col-sm-9">
+                  <select  name="schoolmedium_id" id="schoolmedium_id" class="form-control">
+				  <option></option>
+				 <?php foreach($schoolmedium as $medium){?>
+					<option value="<?php echo $medium['schoolmedium_id']; ?>"><?php echo $medium['school_medium']; ?></option>
+					<?php } ?>
+				 </select>
+                </div>
+              </div>
+				
+				
+				<div class="form-group">
+				<label class="control-label col-sm-3" for="email">Total Marks:</label>
+				<div class="col-md-9">
+				<select name="totalmarks_id" id="search6" class="form-control">
+				<option></option>
+				<?php foreach($totalmarks as $total) { ?>
+				<option value="<?php echo $total['totalmarks_id'];?>"><?php echo $total['total_marks'];?></option>
+				<?php } ?>
+				</select>
+				</div>
+              </div>
+			
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               <button type="submit" class="btn btn-primary">Submit</button>
@@ -220,17 +277,7 @@
                 </div>
               </div>
 				
-					<div class="form-group">
-                <label class="control-label col-sm-3" for="email">Course Type:</label>
-                <div class="col-sm-9">
-                  <select  name="education_type_id" id="education_type_id" class="form-control">
-				  <option></option>
-				 <?php foreach($course as $courses){?>
-					<option value="<?php echo $courses['education_type_id']; ?>"><?php echo $courses['education_type']; ?></option>
-					<?php } ?>
-				 </select>
-                </div>
-              </div>
+					
 			  
 			   <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Passing Year:</label>
