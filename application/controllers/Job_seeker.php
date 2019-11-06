@@ -682,36 +682,36 @@ exit;*/
 
     public function upload_resume()
     {
-        if ($_POST) {
-            $jobseeker_id    = $this->session->userdata('job_seeker_id');
-            $job_training_id = $this->input->post('job_training_id');
-            $training_info   = array(
-                'job_seeker_id'  => $jobseeker_id,
-                'training_title' => $this->input->post('training_title'),
-                'training_topic' => $this->input->post('training_topic'),
-                'institute'      => $this->input->post('institute'),
-                'country_id'        => $this->input->post('country_id'),
-                'state_id'       => $this->input->post('state_id'),
-                'city_id'       => $this->input->post('city_id'),
-                'duration'       => $this->input->post('duration'),
-                'training_year'       => $this->input->post('training_year'),
-            );
-            if (empty($job_training_id)) {
-                $this->Job_training_model->insert($training_info);
-                redirect('job_seeker/seeker_info');
-            } else {
-                $this->Job_training_model->update($training_info, $job_training_id);
-                redirect('job_seeker/seeker_info');
-            }
-        } else {
+        // if ($_POST) {
+        //     $jobseeker_id    = $this->session->userdata('job_seeker_id');
+        //     $job_training_id = $this->input->post('job_training_id');
+        //     $training_info   = array(
+        //         'job_seeker_id'  => $jobseeker_id,
+        //         'training_title' => $this->input->post('training_title'),
+        //         'training_topic' => $this->input->post('training_topic'),
+        //         'institute'      => $this->input->post('institute'),
+        //         'country_id'        => $this->input->post('country_id'),
+        //         'state_id'       => $this->input->post('state_id'),
+        //         'city_id'       => $this->input->post('city_id'),
+        //         'duration'       => $this->input->post('duration'),
+        //         'training_year'       => $this->input->post('training_year'),
+        //     );
+        //     if (empty($job_training_id)) {
+        //         $this->Job_training_model->insert($training_info);
+        //         redirect('job_seeker/seeker_info');
+        //     } else {
+        //         $this->Job_training_model->update($training_info, $job_training_id);
+        //         redirect('job_seeker/seeker_info');
+        //     }
+        // } else {
             $jobseeker_id  = $this->session->userdata('job_seeker_id');
-            $training_list = $this->Job_training_model->training_list_by_id($jobseeker_id);
-            $passingyear = $this->Master_model->getMaster('passingyear',$where=false);
-            $city = $this->Master_model->getMaster('city',$where=false);
-            $country = $this->Master_model->getMaster('country',$where=false);
-            $state = $this->Master_model->getMaster('state',$where=false);
-            echo $this->load->view('fontend/jobseeker/upload_resume', compact('training_list', 'passingyear', 'country', 'state', 'city'),true);
-        }
+        //     $training_list = $this->Job_training_model->training_list_by_id($jobseeker_id);
+        //     $passingyear = $this->Master_model->getMaster('passingyear',$where=false);
+        //     $city = $this->Master_model->getMaster('city',$where=false);
+        //     $country = $this->Master_model->getMaster('country',$where=false);
+        //     $state = $this->Master_model->getMaster('state',$where=false);
+            echo $this->load->view('fontend/jobseeker/upload_resume');
+        // }
     }
 
 
