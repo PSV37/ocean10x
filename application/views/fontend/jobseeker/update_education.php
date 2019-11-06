@@ -385,7 +385,7 @@
 					data:{id:id},
 					success:function(res){
 						$('#specialization_id').html(res);
-						$('#specialization_id').val(<?php echo $row['specialization_id']; ?>);
+						$('#specialization_id').val(<?php echo $row['id']; ?>);
 						getBoard_load();
 					}
 					
