@@ -650,7 +650,7 @@ exit;*/
                     $data['updated_by']     = $jobseeker_id;
                     $data['updated_on']     = date('Y-m-d H:i:s');
 
-                    $where_cans['job_seeker_id']=$jobseeker_id;
+                    $where_cans['id']=$res;
                     $this->Master_model->master_update($data,'js_attached_resumes',$where_cans);
                     redirect('job_seeker/seeker_info');
                 }else{
