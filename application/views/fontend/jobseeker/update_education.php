@@ -129,20 +129,6 @@
                        ?>">
                 </div>
               </div>
-			              
-
-              <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Result:</label>
-                <div class="col-sm-9">
-                  <input type="text" name="js_resut" class="form-control" id="js_resut" placeholder="Enter Result"
-               value="<?php
-                         if (!empty($edcuaiton_list->js_resut)) {
-                           echo $edcuaiton_list->js_resut;
-                           }
-                       ?>">
-                </div>
-              </div>
-				
 				<div class="form-group">
                 <label class="control-label col-sm-3" for="email">Course Type:</label>
                 <div class="col-sm-9">
@@ -183,7 +169,11 @@
 			 <div class="form-group" id="comp_name" style="display:none;">
                 <label class="control-label col-sm-3" for="email">Marks:</label>
                 <div class="col-sm-9">
-                 <input type="text" name="js_resut" class="form-control" placeholder="Enter Result GPA/GGPA">
+                 <input type="text" name="js_resut" class="form-control" placeholder="Enter Result GPA/GGPA" value="<?php
+                         if (!empty($edcuaiton_list->js_resut)) {
+                           echo $edcuaiton_list->js_resut;
+                           }
+                       ?>"">
                 </div>
               </div>
 			
