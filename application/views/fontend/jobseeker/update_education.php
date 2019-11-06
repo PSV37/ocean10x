@@ -212,7 +212,14 @@
 				 </select>
 				</div>
               </div>
-								
+					
+				<div class="form-group">
+                <label class="control-label col-sm-3" for="email">Institute Name:</label>
+                <div class="col-sm-9">
+                  <input type="text" name="js_institute_name" class="form-control" id="js_institute_name" placeholder="Enter Institute Name">
+                </div>
+              </div>
+							
 				<div class="form-group">
                 <label class="control-label col-sm-3" for="email">Board:</label>
                 <div class="col-sm-9">
@@ -225,12 +232,7 @@
                 </div>
               </div>
 				
-              <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Institute Name:</label>
-                <div class="col-sm-9">
-                  <input type="text" name="js_institute_name" class="form-control" id="js_institute_name" placeholder="Enter Institute Title">
-                </div>
-              </div>
+              
 				
 				<div class="form-group">
                 <label class="control-label col-sm-3" for="email">Course Type:</label>
