@@ -238,7 +238,7 @@
                   <select  name="board_id" id="board_id" class="form-control">
 				  <option></option>
 				 <?php foreach($course as $courses){?>
-					<option value="<?php echo $courses['education_type_id']; ?>"><?php echo $courses['education']; ?></option>
+					<option value="<?php echo $courses['education_type_id']; ?>"><?php echo $courses['education_type']; ?></option>
 					<?php } ?>
 				 </select>
                 </div>
