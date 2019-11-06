@@ -293,7 +293,7 @@
                 </div>
               </div>
 			  <div id=""
-			  <div class="form-group" id="comp_name name" style="display:none;">
+			  <div class="form-group name" id="comp_name" style="display:none;">
                 <label class="control-label col-sm-3" for="email">Marks:</label>
                 <div class="col-sm-9">
                  <input type="text" name="js_resut" class="form-control" placeholder="Enter Result GPA/GGPA">
@@ -502,15 +502,15 @@
           $('#comp_name').hide();
       }
      else{
-         
+         $('#comp_name').show();
      } 
      
      if(a=='Scale 10 Grading System' || a=='Scale 4 Grading System' || a=='% Marks of 100 Maximum')
       {
-          $('#name').hide();
+          $('.name').hide();
       }
      else{
-         $('#name').show();
+         $('.name').show();
      } 
      
       
