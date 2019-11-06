@@ -691,6 +691,23 @@ exit;*/
 
 
 
+function getspecilization(){
+	$specilization_id = $this->input->post('id');
+	$where['edu_level_id'] = $specilization_id;
+	$specialization = $this->Master_model->getMaster('education_specialization',$where);
+	
+	
+	$result = '';
+	if(!empty($specialization)){ 
+		$result .='<option value="">Select Specilazation</option>';
+		foreach($specialization as $key){
+		  $result .='<option value="'.$key['edu_level_id'].'">'.$key['education_specialization'].'</option>';
+		}
+	}else{
+	
+		$result .='<option value="">Specilazation not available</option>';
+	}
+	 echo $result;
 
 
 } //end function
