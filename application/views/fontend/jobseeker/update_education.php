@@ -381,7 +381,7 @@
 			if(id){
 				$.ajax({
 					type:'POST',
-					url:'<?php echo base_url();?>job_seeker/getspecilization',
+					url:'<?php echo base_url();?>job_seeker/getEducation_specialization',
 					data:{id:id},
 					success:function(res){
 						$('#specialization_id').html(res);
@@ -402,7 +402,7 @@
 		if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>job_seeker/getspecilization',
+                url:'<?php echo base_url();?>job_seeker/getEducation_specialization',
                 data:{id:id},
                 success:function(res){
                     $('#specialization_id').html(res);

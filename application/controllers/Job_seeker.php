@@ -688,6 +688,23 @@ exit;*/
     }
 
 
+function getEducation_specialization(){
+        $level_id = $this->input->post('id');
+        $where['edu_level_id'] = $level_id;
+        $special = $this->Master_model->getMaster('education_specialization',$where);
+        //$result = '';
+        if(!empty($special)){ 
+            $result .='<option value="">Select Specilazation</option>';
+            foreach($special as $spec_row){
+              $result .='<option value="'.$spec_row['id'].'">'.$spec_row['education_specialization'].'</option>';
+            }
+        }else{
+            $result .='<option value="">Specilazation Not Found </option>';
+        }
+         echo $result;
+    }
+
+
 } //end function
 
 
