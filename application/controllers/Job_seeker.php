@@ -123,11 +123,12 @@ class Job_seeker extends MY_Seeker_Controller
             $edcuaiton_list = $this->Job_seeker_education_model->education_list_by_id($jobseeker_id);
 			$schoolboard = $this->Master_model->getMaster('schoolboard',$where=false);
 			$course = $this->Master_model->getMaster('course',$where=false);
+			$schoolmedium = $this->Master_model->getMaster('schoolmedium',$where=false);
 			$passingyear = $this->Master_model->getMaster('passingyear',$where=false);
 			$totalmarks = $this->Master_model->getMaster('totalmarks',$where=false);
 			$education_level = $this->Master_model->getMaster('education_level',$where=false);
 			$education_specialization = $this->Master_model->getMaster('education_specialization',$where=false);
-           echo $this->load->view('fontend/jobseeker/update_education.php', compact('edcuaiton_list', 'schoolboard', 'course', 'passingyear', 'totalmarks', 'education_level', 'education_specialization'),true);
+           echo $this->load->view('fontend/jobseeker/update_education.php', compact('edcuaiton_list', 'schoolboard', 'course', 'schoolmedium', 'passingyear', 'totalmarks', 'education_level', 'education_specialization'),true);
         }
     }
 

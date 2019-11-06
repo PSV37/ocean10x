@@ -214,38 +214,13 @@
               </div>
 					
 				<div class="form-group">
-                <label class="control-label col-sm-3" for="email">Institute Name:</label>
+                <label class="control-label col-sm-3" for="email">University/Institute Name:</label>
                 <div class="col-sm-9">
                   <input type="text" name="js_institute_name" class="form-control" id="js_institute_name" placeholder="Enter Institute Name">
                 </div>
               </div>
-							
-				<div class="form-group">
-                <label class="control-label col-sm-3" for="email">Board:</label>
-                <div class="col-sm-9">
-                  <select  name="board_id" id="board_id" class="form-control">
-				  <option></option>
-				 <?php foreach($schoolboard as $boards){?>
-					<option value="<?php echo $boards['schoolboard_id']; ?>"><?php echo $boards['schoolboard_name']; ?></option>
-					<?php } ?>
-				 </select>
-                </div>
-              </div>
 				
-				
-				<div class="form-group">
-				<div class="col-md-9">
-				<label>Total Marks:</label>
-				<select name="totalmarks_id" id="search6" style="width:250px;" class="form-control">
-				<option></option>
-				<?php foreach($totalmarks as $total) { ?>
-				<option value="<?php echo $total['totalmarks_id'];?>"><?php echo $total['total_marks'];?></option>
-				<?php } ?>
-				</select>
-				</div>
-              
-				
-				<div class="form-group">
+					<div class="form-group">
                 <label class="control-label col-sm-3" for="email">Course Type:</label>
                 <div class="col-sm-9">
                   <select  name="board_id" id="board_id" class="form-control">
@@ -268,18 +243,6 @@
                 </div>
               </div>
 			
-			<div class="form-group">
-                <label class="control-label col-sm-3" for="email">Board:</label>
-                <div class="col-sm-9">
-                  <select  name="board_id" id="board_id" class="form-control">
-				  <option></option>
-				 <?php foreach($schoolboard as $boards){?>
-					<option value="<?php echo $boards['schoolboard_id']; ?>"><?php echo $boards['schoolboard_name']; ?></option>
-					<?php } ?>
-				 </select>
-                </div>
-              </div>
-				
 				<div class="form-group">
                 <label class="control-label col-sm-3" for="email">Grading System:</label>
                 <div class="col-sm-9">
@@ -299,6 +262,46 @@
                  <input type="text" name="js_resut" class="form-control" placeholder="Enter Result GPA/GGPA">
                 </div>
               </div>
+				
+				<div class="form-group">
+                <label class="control-label col-sm-3" for="email">Board:</label>
+                <div class="col-sm-9">
+                  <select  name="board_id" id="board_id" class="form-control">
+				  <option></option>
+				 <?php foreach($schoolboard as $boards){?>
+					<option value="<?php echo $boards['schoolboard_id']; ?>"><?php echo $boards['schoolboard_name']; ?></option>
+					<?php } ?>
+				 </select>
+                </div>
+              </div>
+				
+				<div class="form-group">
+                <label class="control-label col-sm-3" for="email">School Medium:</label>
+                <div class="col-sm-9">
+                  <select  name="board_id" id="board_id" class="form-control">
+				  <option></option>
+				 <?php foreach($schoolmedium as $medium){?>
+					<option value="<?php echo $medium['schoolmedium_id']; ?>"><?php echo $medium['school_medium']; ?></option>
+					<?php } ?>
+				 </select>
+                </div>
+              </div>
+				
+				
+				<div class="form-group">
+				<div class="col-md-12">
+				<label>Total Marks:</label>
+				<select name="totalmarks_id" id="search6" style="width:250px;" class="form-control">
+				<option></option>
+				<?php foreach($totalmarks as $total) { ?>
+				<option value="<?php echo $total['totalmarks_id'];?>"><?php echo $total['total_marks'];?></option>
+				<?php } ?>
+				</select>
+				</div>
+              </div>
+				
+			
+				
 			  
 			  
               <!--<div class="form-group">
