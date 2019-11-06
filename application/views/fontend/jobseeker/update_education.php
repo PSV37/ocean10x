@@ -267,7 +267,17 @@
                 </div>
               </div>
 				
-					
+					<div class="form-group">
+                <label class="control-label col-sm-3" for="email">Course Type:</label>
+                <div class="col-sm-9">
+                  <select  name="education_type_id" id="education_type_id" class="form-control">
+				  <option></option>
+				 <?php foreach($course as $courses){?>
+					<option value="<?php echo $courses['education_type_id']; ?>"><?php echo $courses['education_type']; ?></option>
+					<?php } ?>
+				 </select>
+                </div>
+              </div>
 			  
 			   <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Passing Year:</label>
