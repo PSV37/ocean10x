@@ -149,7 +149,7 @@
                   <select  name="education_type_id" id="education_type_id" class="form-control">
 				  <option></option>
 				 <?php foreach($course as $courses){?>
-					<option value="<?php echo $courses['education_type_id']; ?>"><?php echo $courses['education_type']; ?></option>
+					<option value="<?php echo $courses['education_type_id']; ?>"<?php if($edcuaiton_list->education_type_id==$education['education_type_id']){ echo "selected"; }?>><?php echo $courses['education_type']; ?></option>
 					<?php } ?>
 				 </select>
                 </div>
