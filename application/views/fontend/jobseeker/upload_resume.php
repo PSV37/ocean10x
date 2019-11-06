@@ -28,7 +28,7 @@
                       </div>
                       <div class="panel-body"></div>
                       <?php if(!empty($job_seeker_resume['id']) ){?>
-                      <p style="text-align: left !important;color: #999;">Last Updated: <?php
+                      <p style="text-align: left !important;color: #999;">Last Updated Was: <?php
                         if(!empty($job_seeker_resume['updated_on']) && date('Y-m-d',strtotime($job_seeker_resume['updated_on'])!='0000-00-00')){
                           echo date('d M Y', strtotime($job_seeker_resume['updated_on']));
                         }else{
