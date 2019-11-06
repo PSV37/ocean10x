@@ -404,7 +404,7 @@
 					success:function(res){
 						$('#specializations_id').html(res);
 						$('#specializations_id').val(<?php echo $row['id']; ?>);
-						getSubtopic_load();
+						getSpecial_load();
 					}
 					
 				}); 
