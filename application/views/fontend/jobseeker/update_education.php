@@ -198,7 +198,7 @@
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Degree:</label>
                 <div class="col-sm-9">
-               <select  name="education_level_id" id="education_level_id" class="form-control" onchange="">
+               <select  name="education_level_id" id="education_level_id" class="form-control" onchange="getSpecilization(this.value)">
                  <option value="">Select Degree </option>
 				 <?php foreach($education_level as $education){?>
 					<option value="<?php echo $education['education_level_id']; ?>"><?php echo $education['education_level_name']; ?></option>
