@@ -13,6 +13,7 @@
             <h5>Attach Your Resume</h5>
             
             <?php echo $this->session->flashdata('msg'); ?>
+            <?php if(!empty($error)){echo $error;};?>
             <div class="row">
               <div class="col-md-12">
                 <div class="containe1r">
@@ -29,9 +30,9 @@
                       <?php if(!empty($job_seeker_resume['id']) ){?>
                       <p style="text-align: left !important;color: #999;">Last Updated: <?php
                         if(!empty($job_seeker_resume['updated_on']) && date('Y-m-d',strtotime($job_seeker_resume['updated_on'])!='0000-00-00')){
-                          echo 'u '.date('d M Y', strtotime($job_seeker_resume['updated_on']));
+                          echo date('d M Y', strtotime($job_seeker_resume['updated_on']));
                         }else{
-                          echo 'c '.date('d M Y', strtotime($job_seeker_resume['created_on']));
+                          echo date('d M Y', strtotime($job_seeker_resume['created_on']));
                         } 
                       ?></p><br>
                     <?php }else{} ?>
@@ -49,6 +50,7 @@
                       <p>Supported Formats: doc, docx, rtf, pdf, upto 2 MB</p><br>
                       <div class="col-md-12">
                         <button type="submit" class="btn btn-success btn-block avatar-save2">Upload Resume</button>
+
                       </div>
                     </div>
                   </form>

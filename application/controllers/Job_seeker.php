@@ -624,7 +624,7 @@ exit;*/
     {
         $jobseeker_id     = $this->session->userdata('job_seeker_id');
         if ($_POST) {
-            
+
             $NewFileName;
             if($_FILES['txt_resume']['name']!='')
             {
@@ -641,6 +641,8 @@ exit;*/
                  if (! $this->upload->do_upload($field_name))
                     {
                         $error = array('error' => $this->upload->display_errors());
+                        $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">'.$this->upload->display_errors().'</div>');
+                        redirect('job_seeker/seeker_info');
                     }
                     else {}
                 }//END of file checking if loop
