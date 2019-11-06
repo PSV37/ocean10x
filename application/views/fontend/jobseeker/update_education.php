@@ -157,7 +157,7 @@
                 <label class="control-label col-sm-3" for="email">Grading System:</label>
                 <div class="col-sm-9">
                   <select  name="gradding"  class="form-control" id="category" onchange='hideshowfun()'>
-				  <option><?php echo $education_list->gradding; ?></option>
+				  <option><?php echo $education_list['gradding']; ?></option>
 					<option value="Scale 10 Grading System">Scale 10 Grading System</option>
 					<option value="Scale 4 Grading System">Scale 4 Grading System</option>
 					<option value="% Marks of 100 Maximum">% Marks of 100 Maximum</option>
