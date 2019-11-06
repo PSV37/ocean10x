@@ -106,6 +106,8 @@ class Job_seeker extends MY_Seeker_Controller
                 'job_seeker_id'      => $jobseeker_id,
                 'education_level_id'          => $this->input->post('education_level_id'),
                 'specialization_id'           => $this->input->post('specialization_id'),
+				'course_id'          => $this->input->post('course_id'),
+				'board_id'          => $this->input->post('board_id'),
                 'js_institute_name'  => $this->input->post('js_institute_name'),
                 'js_resut'           => $this->input->post('js_resut'),
                 'js_year_of_passing' => $this->input->post('js_year_of_passing'),
@@ -120,10 +122,12 @@ class Job_seeker extends MY_Seeker_Controller
         } else {
             $jobseeker_id   = $this->session->userdata('job_seeker_id');
             $edcuaiton_list = $this->Job_seeker_education_model->education_list_by_id($jobseeker_id);
+			$schoolboard = $this->Master_model->getMaster('schoolboard',$where=false);
+			$course = $this->Master_model->getMaster('course',$where=false);
 			$passingyear = $this->Master_model->getMaster('passingyear',$where=false);
 			$education_level = $this->Master_model->getMaster('education_level',$where=false);
 			$education_specialization = $this->Master_model->getMaster('education_specialization',$where=false);
-           echo $this->load->view('fontend/jobseeker/update_education.php', compact('edcuaiton_list', 'passingyear', 'education_level', 'education_specialization'),true);
+           echo $this->load->view('fontend/jobseeker/update_education.php', compact('edcuaiton_list', 'schoolboard', 'course', 'passingyear', 'education_level', 'education_specialization'),true);
         }
     }
 
@@ -637,7 +641,7 @@ exit;*/
         $level_id = $this->input->post('id');
         $where['edu_level_id'] = $level_id;
         $special = $this->Master_model->getMaster('education_specialization',$where);
-        $result = '';
+        //$result = '';
         if(!empty($special)){ 
             $result .='<option value="">Select Specilazation</option>';
             foreach($special as $spec_row){

@@ -120,12 +120,23 @@
                 </div>
               </div>
 			  
+			  <div class="form-group">
+                <label class="control-label col-sm-3" for="email">Course:</label>
+                <div class="col-sm-9">
+                  <select  name="course_id" id="course_id" class="form-control">
+				 <?php foreach($course as $courses){?>
+					<option value="<?php echo $courses['education_type_id']; ?>"<?php if($edcuaiton_list->course_id==$courses['education_type_id']){ echo "selected"; }?>><?php echo $courses['education_type']; ?></option>
+					<?php } ?>
+				 </select>
+                </div>
+              </div>
+			  
 			   <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Board:</label>
                 <div class="col-sm-9">
                   <select  name="board_id" id="board_id" class="form-control">
-				 <?php foreach($board as $boards){?>
-					<option value="<?php echo $boards['board_id']; ?>"<?php if($edcuaiton_list->board_id==$specialization['board_id']){ echo "selected"; }?>><?php echo $boards['board_name']; ?></option>
+				 <?php foreach($schoolboard as $boards){?>
+					<option value="<?php echo $boards['schoolboard_id']; ?>"<?php if($edcuaiton_list->board_id==$boards['schoolboard_id']){ echo "selected"; }?>><?php echo $boards['schoolboard_name']; ?></option>
 					<?php } ?>
 				 </select>
                 </div>
@@ -208,7 +219,6 @@
                 <label class="control-label col-sm-3" for="email">Specialization:</label>
                 <div class="col-sm-9">
 				<select  name="specialization_id" id="job_edu_special" class="form-control">
-          <option value="">Select Specialization </option>
 				 <?php foreach($education_specialization as $specialization){?>
 					<option value="<?php echo $specialization['id']; ?>"><?php echo $specialization['education_specialization']; ?></option>
 					<?php } ?> 
@@ -217,11 +227,22 @@
               </div>
 				
 				<div class="form-group">
+                <label class="control-label col-sm-3" for="email">Course:</label>
+                <div class="col-sm-9">
+                  <select  name="course_id" id="course_id" class="form-control">
+				 <?php foreach($course as $courses){?>
+					<option value="<?php echo $courses['education_type_id']; ?>"><?php echo $courses['education_type']; ?></option>
+					<?php } ?>
+				 </select>
+                </div>
+              </div>
+				
+				<div class="form-group">
                 <label class="control-label col-sm-3" for="email">Board:</label>
                 <div class="col-sm-9">
                   <select  name="board_id" id="board_id" class="form-control">
-				 <?php foreach($board as $boards){?>
-					<option value="<?php echo $boards['board_id']; ?>"><?php echo $boards['board_name']; ?></option>
+				 <?php foreach($schoolboard as $boards){?>
+					<option value="<?php echo $boards['schoolboard_id']; ?>"><?php echo $boards['schoolboard_name']; ?></option>
 					<?php } ?>
 				 </select>
                 </div>
