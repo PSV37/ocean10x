@@ -625,9 +625,8 @@ exit;*/
                 $NewFileName = $_FILES['txt_resume']['name']; 
                 
                 $config['upload_path'] = './upload/Resumes/';
-                $config['allowed_types'] = 'pdf|doc|docx|odt|xlsm|xls|xlm|xla|xlsx|bmp|docm|dotx|dotm|docb';
-                $config['max_size']    = '1000000';
-               
+                $config['allowed_types'] = 'pdf|xlsx|doc|docx|rtf';
+                $config['max_size']    = '2000000';
                 $config['file_name'] = $NewFileName;
             
                  $this->load->library('upload', $config);      
