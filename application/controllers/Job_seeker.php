@@ -602,6 +602,13 @@ exit;*/
         redirect('job_seeker/seeker_info');
     }
 		
+    public function upload_resume()
+    {
+        $jobseeker_id     = $this->session->userdata('job_seeker_id');
+        $job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id);
+        $this->load->view('fontend/jobseeker/upload_resume.php', compact('job_seeker_photo'));
+    }
+        
 	function getstate(){
     	$country_id = $this->input->post('id');
     	$where['country_id'] = $country_id;
@@ -680,12 +687,7 @@ exit;*/
         }
     }
 
-    public function upload_resume()
-    {
-        $jobseeker_id     = $this->session->userdata('job_seeker_id');
-        $job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id);
-        $this->load->view('fontend/jobseeker/upload_resume.php', compact('job_seeker_photo'));
-    }
+    
 
 
 
