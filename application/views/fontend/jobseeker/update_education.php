@@ -276,12 +276,12 @@
               </div>
 				
 				<div class="form-group">
-                <label class="control-label col-sm-3" for="email">Board:</label>
+                <label class="control-label col-sm-3" for="email">School Medium:</label>
                 <div class="col-sm-9">
                   <select  name="board_id" id="board_id" class="form-control">
 				  <option></option>
-				 <?php foreach($schoolboard as $boards){?>
-					<option value="<?php echo $boards['schoolboard_id']; ?>"><?php echo $boards['schoolboard_name']; ?></option>
+				 <?php foreach($schoolmedium as $medium){?>
+					<option value="<?php echo $medium['schoolmedium_id']; ?>"><?php echo $medium['schoolboard_medium']; ?></option>
 					<?php } ?>
 				 </select>
                 </div>
