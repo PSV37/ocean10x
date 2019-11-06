@@ -642,8 +642,7 @@ exit;*/
                       $NewFileName = $this->input->post('oldresume'); 
                     }
                 $res = $this->input->post('resume_id');
-                // $where = "can_id=$user_id";
-                // $res=$this->Master_model->get_master_row('cand_resume_headline', $where);
+               
                 if($res)
                 {
                     $data['job_seeker_id']  = $jobseeker_id;
