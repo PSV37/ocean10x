@@ -283,7 +283,7 @@
 				<div class="form-group">
                 <label class="control-label col-sm-3" for="email">Grading System:</label>
                 <div class="col-sm-9">
-                  <select  name="gradding" id="board_id" class="form-control" id="category" onchange='hideshowfun()'>
+                  <select  name="gradding"  class="form-control" id="category" onchange='hideshowfun()'>
 				  <option></option>
 					<option value="Scale 10 Grading System">Scale 10 Grading System</option>
 					<option value="Scale 4 Grading System">Scale 4 Grading System</option>
@@ -293,12 +293,14 @@
                 </div>
               </div>
 			  
-			  <div class="form-group name" id="comp_name" style="display:none;">
+			  <div class="form-group" id="comp_name" style="display:none;">
                 <label class="control-label col-sm-3" for="email">Marks:</label>
                 <div class="col-sm-9">
                  <input type="text" name="js_resut" class="form-control" placeholder="Enter Result GPA/GGPA">
                 </div>
               </div>
+			  
+			  
               <!--<div class="form-group">
                 <label class="control-label col-sm-3" for="email">Result:</label>
                 <div class="col-sm-9">
@@ -502,15 +504,15 @@
           $('#comp_name').hide();
       }
      else{
-         //$('#comp_name').show();
+         $('#comp_name').show();
      } 
      
      if(a=='Scale 10 Grading System' || a=='Scale 4 Grading System' || a=='% Marks of 100 Maximum')
       {
-          $('.name').hide();
+          $('#name').hide();
       }
      else{
-         $('.name').show();
+         $('#name').show();
      } 
      
       
