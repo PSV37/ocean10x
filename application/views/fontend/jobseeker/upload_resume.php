@@ -30,7 +30,7 @@
                       <p style="text-align: left !important;color: #999;">Last Updated: <?php
                         if(!empty($job_seeker_resume['updated_on']) && strtotime($job_seeker_resume['updated_on'])!='0000-00-00'){
                           echo 'u '.date('d M Y', strtotime($job_seeker_resume['updated_on']));
-                        }else if(strtotime($job_seeker_resume['updated_on'])=='0000-00-00'){
+                        }else{
                           echo 'c '.date('d M Y', strtotime($job_seeker_resume['created_on']));
                         } 
                       ?></p><br>
