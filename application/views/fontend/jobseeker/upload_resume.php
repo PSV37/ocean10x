@@ -19,15 +19,17 @@
                   <form class="avatar-form" action="<?php echo base_url('Job_seeker/save_photo');?>/<?php if(!empty($job_seeker_photo->js_photo_id)){echo $job_seeker_photo->js_photo_id;} ?>" enctype="multipart/form-data" method="post">
 
                       <!-- Upload image and data -->
+                    <div class="col-md-6">
                       <div class="col-md-6">
-                        <label for="avatarInput">Upload Resume</label>
+                        <label for="avatarInput">Current Resume</label>
                         <input type="file" class="form-control" id="resume_file" name="resume_file">
                       </div>
                       <div class="panel-body"></div>
                       <div class="col-md-6">
-                        <button type="submit" class="btn btn-primary btn-block avatar-save2">Upload Resume</button>
+                        <button type="submit" class="btn btn-danger btn-block avatar-save2">Delete Resume</button>
                       </div>
-                      
+                    </div>
+                    <div class="col-md-6">
                       <!-- Upload image and data -->
                       <div class="col-md-6">
                         <label for="avatarInput">Upload Resume</label>
@@ -37,7 +39,7 @@
                       <div class="col-md-6">
                         <button type="submit" class="btn btn-primary btn-block avatar-save2">Upload Resume</button>
                       </div>
-                    
+                    </div>
                   </form>
 
                 </div>
