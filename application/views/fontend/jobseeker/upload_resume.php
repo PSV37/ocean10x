@@ -10,19 +10,20 @@
         <hr>
           <?php echo $this->session->flashdata('msg'); ?>
           <div id="vsphoto" class="tab-pane fade in">
-            <h5>Your Resume</h5>
+            <h5>Attach Your Resume</h5>
+            <small>Resume is the most important document recruiters look for. Recruiters generally do not look at profiles without resumes.</small>
             <?php echo $this->session->flashdata('msg'); ?>
             <div class="row">
               <div class="col-md-12">
                 <div class="containe1r">
   
-                  <form class="avatar-form" action="<?php echo base_url('Job_seeker/save_photo');?>/<?php if(!empty($job_seeker_photo->js_photo_id)){echo $job_seeker_photo->js_photo_id;} ?>" enctype="multipart/form-data" method="post">
-
+                  <form class="avatar-form" action="<?php echo base_url('Job_seeker/save_attached_resume');?>" enctype="multipart/form-data" method="post">
+                    <input type="text" name="resume_id" value="<?php if(!empty($job_seeker_resume->id)){echo $job_seeker_resume->id;} ?>">
                       <!-- Upload image and data -->
                     <div class="col-md-6">
                       <div class="col-md-12">
                         <label for="avatarInput">Current Resume</label>
-                        <input type="tez" class="form-control" id="" name="">
+                        <input type="text" class="form-control" id="" name="oldresume" value="<?php if(!empty($job_seeker_resume->resume)){echo $job_seeker_resume->resume;} ?>">
                       </div>
                       <div class="panel-body"></div>
                       <div class="col-md-12">
@@ -33,7 +34,7 @@
                       <!-- Upload image and data -->
                       <div class="col-md-12">
                         <label for="avatarInput">Upload Resume</label>
-                        <input type="file" class="form-control" id="resume_file" name="resume_file">
+                        <input type="file" class="form-control" id="txt_resume" name="txt_resume">
                       </div>
                       <div class="panel-body"></div>
                       <div class="col-md-12">

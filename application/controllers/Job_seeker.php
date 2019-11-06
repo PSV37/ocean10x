@@ -604,8 +604,67 @@ exit;*/
     public function upload_resume()
     {
         $jobseeker_id     = $this->session->userdata('job_seeker_id');
-        $job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id);
-        $this->load->view('fontend/jobseeker/upload_resume.php', compact('job_seeker_photo'));
+        // $job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id);
+        $job_seeker_resume = $this->Master_model->get_master_row('js_attached_resumes',$where="job_seeker_id='jobseeker_id'");
+        $this->load->view('fontend/jobseeker/upload_resume.php', compact('job_seeker_resume'));
+    }
+
+
+    
+    public function save_attached_resume($js_resume_id==NULL)
+    {
+        $jobseeker_id     = $this->session->userdata('job_seeker_id');
+        if ($_POST) {
+            $NewFileName;
+            if($_FILES['txt_resume']['name']!='')
+            {
+                $this->load->helper('string'); 
+                $NewFileName = $_FILES['txt_resume']['name']; 
+                
+                $config['upload_path'] = './images/Resumes/';
+                $config['allowed_types'] = 'pdf|doc|docx|odt|xlsm|xls|xlm|xla|xlsx|bmp|docm|dotx|dotm|docb';
+                $config['max_size']    = '1000000';
+               
+                $config['file_name'] = $NewFileName;
+            
+                 $this->load->library('upload', $config);      
+                 $field_name = "txt_resume";
+                 if (! $this->upload->do_upload($field_name))
+                    {
+                        $error = array('error' => $this->upload->display_errors());
+                    }
+                    else {}
+                }//END of file checking if loop
+                else
+                    {     
+                      $NewFileName = $this->input->post('oldresume'); 
+                    }
+                $res = $this->input->post('resume_id');
+                // $where = "can_id=$user_id";
+                // $res=$this->Master_model->get_master_row('cand_resume_headline', $where);
+                if($res)
+                {
+                    $data['job_seeker_id']  = $jobseeker_id;
+                    $data['resume']         = $NewFileName;
+                    $data['updated_by']     = $jobseeker_id;
+                    $data['updated_on']     = date('Y-m-d H:i:s');
+
+                    $where_cans['job_seeker_id']=$jobseeker_id;
+                    $this->Master_model->master_update($data,'js_attached_resumes',$where_cans);
+                    redirect('job_seeker/seeker_info');
+                }else{
+                    $data['job_seeker_id']  = $jobseeker_id;
+                    $data['resume']         = $NewFileName;
+                    $data['created_by']     = $jobseeker_id;
+                    $data['created_on']     = date('Y-m-d H:i:s');
+                    $this->Master_model->master_insert($data,'js_attached_resumes');
+                    redirect('job_seeker/seeker_info');
+                }
+            }else{
+                $job_seeker_resume = $this->Master_model->get_master_row('js_attached_resumes',$where="job_seeker_id='jobseeker_id'");
+                $this->load->view('fontend/jobseeker/upload_resume.php', compact('job_seeker_resume'));
+            }
+
     }
         
 	function getstate(){
