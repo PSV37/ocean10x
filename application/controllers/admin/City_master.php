@@ -104,7 +104,7 @@ function getstate(){
     $states = $this->Master_model->getMaster('state',$where);
     $result = '';
     if(!empty($states)){ 
-        $result .='<option value="">Select State</option>';
+       // $result .='<option value="">Select State</option>';
         foreach($states as $key){
           $result .='<option value="'.$key['state_id'].'">'.$key['state_name'].'</option>';
         }
