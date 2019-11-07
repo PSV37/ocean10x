@@ -103,17 +103,17 @@ class Job_seeker extends MY_Seeker_Controller
             $jobseeker_id      = $this->session->userdata('job_seeker_id');
             $education_info_id = $this->input->post('js_education_id');
             $education_info    = array(
-                'job_seeker_id'      => $jobseeker_id,
-                'education_level_id'          => $this->input->post('education_level_id'),
-                'specialization_id'           => $this->input->post('specialization_id'),
-				'js_institute_name'           => $this->input->post('js_institute_name'),
-				'education_type_id'           => $this->input->post('education_type_id'),
-				'js_year_of_passing' => $this->input->post('js_year_of_passing'),
-				'gradding' => $this->input->post('gradding'),
-				 'js_resut'           => $this->input->post('js_resut'),
-				 'board_id'          => $this->input->post('board_id'),
-				 'totalmarks_id'          => $this->input->post('totalmarks_id'),
-				'schoolmedium_id'  => $this->input->post('schoolmedium_id'),
+                'job_seeker_id'         => $jobseeker_id,
+                'education_level_id'    => $this->input->post('education_level_id'),
+                'specialization_id'     => $this->input->post('specialization_id'),
+				'js_institute_name'     => $this->input->post('js_institute_name'),
+				'education_type_id'     => $this->input->post('education_type_id'),
+				'js_year_of_passing'    => $this->input->post('js_year_of_passing'),
+				'gradding'              => $this->input->post('gradding'),
+				'js_resut'              => $this->input->post('js_resut'),
+				'board_id'              => $this->input->post('board_id'),
+				'totalmarks_id'         => $this->input->post('totalmarks_id'),
+				'schoolmedium_id'       => $this->input->post('schoolmedium_id'),
 				            
                 
             );
@@ -618,7 +618,6 @@ exit;*/
         $this->load->view('fontend/jobseeker/upload_resume.php', compact('job_seeker_resume'));
     }
 
-
     
     public function save_attached_resume()
     {
@@ -697,7 +696,7 @@ exit;*/
     }
 
 
-     function getcity(){
+    function getcity(){
     	$state_id = $this->input->post('id');
     	$where['state_id'] = $state_id;
     	$citys = $this->Master_model->getMaster('city',$where);
@@ -714,7 +713,7 @@ exit;*/
     	 echo $result;
     }
 
-  function getEducation_specialization(){
+    function getEducation_specialization(){
         $level_id = $this->input->post('id');
         $where['edu_level_id'] = $level_id;
         $special = $this->Master_model->getMaster('education_specialization',$where);
@@ -761,24 +760,23 @@ exit;*/
 
 
 
-function getspecilization(){
-	$education_id = $this->input->post('id');
-	$where['edu_level_id'] = $education_id;
-	$specialization = $this->Master_model->getMaster('education_specialization',$where);
-	
-	
-	$result = '';
-	if(!empty($specialization)){ 
-		$result .='<option value="">Select Specilazation</option>';
-		foreach($specialization as $key){
-		  $result .='<option value="'.$key['id'].'">'.$key['education_specialization'].'</option>';
-		}
-	}else{
-	
-		$result .='<option value="">Specilazation not available</option>';
-	}
-	 echo $result;
-}
+    function getspecilization(){
+    	$education_id = $this->input->post('id');
+    	$where['edu_level_id'] = $education_id;
+    	$specialization = $this->Master_model->getMaster('education_specialization',$where);
+    	
+    	$result = '';
+    	if(!empty($specialization)){ 
+    		$result .='<option value="">Select Specilazation</option>';
+    		foreach($specialization as $key){
+    		  $result .='<option value="'.$key['id'].'">'.$key['education_specialization'].'</option>';
+    		}
+    	}else{
+    	
+    		$result .='<option value="">Specilazation not available</option>';
+    	}
+    	echo $result;
+    }
 
 
 } //end function
