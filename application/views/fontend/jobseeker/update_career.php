@@ -144,7 +144,7 @@ function delete_Career(id) {
                <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Career Summary:</label>
                 <div class="col-sm-9">
-                  <textarea name="js_career_sum" class="form-control" rows="5" id="js_career_sum"><?php if (!empty($job_career_info[0]->js_career_sum)) {
+                  <textarea name="js_career_sum" class="form-control" rows="5"><?php if (!empty($job_career_info[0]->js_career_sum)) {
                            echo $job_career_info[0]->js_career_sum;
                            }
                        ?></textarea>
@@ -320,13 +320,7 @@ function delete_Career(id) {
             $( "#Career-info" ).validate( {
                 rules: {
 
-                    js_career_obj: {
-                        required: true,
-                    },
-
-                    js_career_sum: {
-                        required: true,
-                    },
+                    
 
                     js_career_salary: {
                         required: true,
