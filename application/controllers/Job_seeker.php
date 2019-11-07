@@ -407,7 +407,11 @@ exit;*/
                 'extracurricular'      => $this->input->post('extracurricular'),
                 'js_career_salary'     => $this->input->post('js_career_salary'),
                 'avaliable'            => $this->input->post('avaliable'),
-                'skills'               => $this->input->post('skills'),
+				'skills'               => $this->input->post('skills'),
+                'duration_year'               => $this->input->post('duration_year'),
+				'duration_month'               => $this->input->post('duration_month'),
+				'duration_to_year'               => $this->input->post('duration_to_year'),
+				'duration_to_month'               => $this->input->post('duration_to_month'),
                 'job_area'             => $this->input->post('job_area'),
                 'js_career_exp'        => $this->input->post('js_career_exp'),
             );
