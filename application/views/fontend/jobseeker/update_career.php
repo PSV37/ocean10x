@@ -106,7 +106,21 @@ function delete_Career(id) {
       </div>
       <div class="modal-body">
          <form id="Career-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_career');?>" method="post" style="padding: 30px;">
-
+				
+				 <div class="form-group">
+                <label class="control-label col-sm-3" for="pwd">Work Title:</label>
+                <div class="col-sm-9">
+                  <input type="text" name="worktitle" id="worktitle" class="form-control" required>
+                </div>
+              </div>
+			  
+			  <div class="form-group">
+                <label class="control-label col-sm-3" for="pwd">URL:</label>
+                <div class="col-sm-9">
+                  <input type="text" name="url1" id="url1" class="form-control" required>
+                </div>
+              </div>
+				
                <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Career Summary:</label>
                 <div class="col-sm-9">
