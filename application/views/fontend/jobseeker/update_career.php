@@ -224,13 +224,13 @@ function delete_Career(id) {
                 <label class="control-label col-sm-3" for="pwd">Duration To:</label>
                 <div class="col-sm-4">
                   <select name="duration_to_year" id="duration_years" class="form-control">
-				   <option>Year</option>
+				   <option value="">Year</option>
 				  
 				   </select>	
                 </div>
 				 <div class="col-sm-4">
                   <select name="duration_to_month" class="form-control" style="margin-top:5px;">
-				   <option>Month</option>
+				   <option value="">Month</option>
 				   <?php
 				   foreach($worktill as $workt){
 				   ?>
