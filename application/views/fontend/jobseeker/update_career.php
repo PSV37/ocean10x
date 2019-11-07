@@ -253,11 +253,11 @@ function delete_Career(id) {
                <label class="control-label col-sm-3" for="email">Year of Experience:</label>
                 <div class="col-sm-9">
                   <input type="text" name="js_career_exp" class="form-control" id="js_career_exp" placeholder="Total Career Number of Experience"
-                   value="<?php /*
+                   value="<?php 
                          if (!empty($job_career_info[0]->js_career_exp)) {
                            echo $job_career_info[0]->js_career_exp;
                            }
-                       ?> */">
+                       ?> ">
                 </div>
               </div>-->
          
