@@ -414,7 +414,7 @@ exit;*/
 				'duration_to_month'               => $this->input->post('duration_to_month'),
 				'currentlyworking'               => implode(",",$this->input->post('currentlyworking')),
                 'job_area'             => $this->input->post('job_area'),
-                'js_career_exp'        => $this->input->post('js_career_exp'),
+                //'js_career_exp'        => $this->input->post('js_career_exp'),
             );
             
             if (empty($js_career_id)) {
