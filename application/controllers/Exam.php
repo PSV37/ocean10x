@@ -155,7 +155,7 @@ class Exam extends MY_Seeker_Controller
                 array_push($tested_question,$qus);
             }
 
-            // to get next question based on tpoics 
+            // to get next question based on topics 
             $where_topic="job_id='$job_post_id'";
             $job_test_topics = $this->Master_model->getMaster('job_test_topics',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
             if($job_test_topics)
@@ -168,9 +168,15 @@ class Exam extends MY_Seeker_Controller
                    $topic_id = $topic_row['topic_id'];
                    $level = $topic_row['test_level'];
                    $no_ques = $topic_row['no_questions'];
-                    
-                    $where_topic="topic_id='$topic_id' AND level='$level' AND ques_id not in(".implode(',',$tested_question).") LIMIT $no_ques";
-                    $data['questions'] = $this->Master_model->getMaster('questionbank',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit =false ,$start=false, $search=false);
+                        
+                    for($q=0;$q<$no_ques;$q++)
+                    {
+                        echo $level[$q];
+                    }
+die;
+
+                    $where_topic="topic_id='$topic_id' AND level='$level' AND ques_id not in(".implode(',',$tested_question).")";
+                    $data['questions'] = $this->Master_model->getMaster('questionbank',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit ='1' ,$start=false, $search=false);
                     echo $this->db->last_query(); echo "<br><br>";
                     echo "<pre>";
                     print_r($data['questions']); 
