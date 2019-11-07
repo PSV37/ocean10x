@@ -55,10 +55,10 @@ class Exam extends MY_Seeker_Controller
                 
             $where_topic="topic_id='$topic_id' AND level='$level'";
             $topics_ques = $this->Master_model->getMaster('questionbank',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
-                
+                echo $this->db->last_query(); echo "<br><br>";
            }
            
-            echo $this->db->last_query(); echo "<br><br>";
+            
             echo "<pre>";
             print_r($topics_ques); die;
           // get all requried skills for this job post
