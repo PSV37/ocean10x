@@ -46,6 +46,7 @@ class Exam extends MY_Seeker_Controller
             $job_test_topics = $this->Master_model->getMaster('job_test_topics',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
             if($job_test_topics)
             {
+                echo "test topic";
                foreach($job_test_topics as $topic_row)
                {
                 
@@ -67,8 +68,9 @@ class Exam extends MY_Seeker_Controller
                     // print_r($data['ans']);
                     $this->load->view('fontend/exam/exam_start',$data);
                }
-               
+
             }else{
+                 echo "Skills";
                 // get all requried skills for this job post
                 $whereskill = "job_post_id='$job_id'";
                 $data['skills'] = $this->Master_model->get_master_row('job_posting', $select ='skills_required' , $whereskill, $join = FALSE);
