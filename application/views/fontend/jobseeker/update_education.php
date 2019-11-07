@@ -101,7 +101,10 @@
                 <label class="control-label col-sm-3" for="email">Degree:</label>
                 <div class="col-sm-9">
                   <select  name="education_level_id" id="education_level" class="form-control" onchange="getSpecials(this.value)">
-				 <?php  foreach($education_level as $education){?>
+				  <?php if (!empty($education_level))
+                                           foreach($education_level as $education) 
+                                           {
+                                        ?>   
 					<option value="<?php echo $education['education_level_id']; ?>"<?php if($edcuaiton_list->education_level_id==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
 					<?php } ?>
 				 
