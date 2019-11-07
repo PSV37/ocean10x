@@ -186,30 +186,33 @@ function delete_Career(id) {
               </div>
       
 
-               <!--<div class="form-group">
+               <div class="form-group">
                 <label class="control-label col-sm-3" for="email"> Expected Salary:</label>
                 <div class="col-sm-9">
                   <input type="text" name="js_career_salary" class="form-control" id="js_career_salary" placeholder="Expected Salary"
                    value="<?php
-                         /*if (!empty($job_career_info[0]->js_career_salary)) {
+                         if (!empty($job_career_info[0]->js_career_salary)) {
                            echo $job_career_info[0]->js_career_salary;
-                           } */
+                           } 
                        ?>">
                 </div>
-              </div>-->
+              </div>
 			  		  
 			  <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Duration From:</label>
                 <div class="col-sm-4">
                   <select name="duration_year" id="duration_year" class="form-control">
-					 <option>Year</option>
-				  
+					<option value="<?php if (!empty($job_career_info[0]->duration_year)) {
+                           echo $job_career_info[0]->duration_year;
+                           } ?>"><?php  if (!empty($job_career_info[0]->duration_year)) {
+                           echo $job_career_info[0]->duration_year;
+                           } ?>
+				   </option>
 				   </select>
                 </div>
 				
 				 <div class="col-sm-4">
                    <select name="duration_month" class="form-control" style="margin-top:5px;">
-				  <option>Month</option>
 				   <?php
 				   foreach($worktill as $workt){
 				   ?>
@@ -224,13 +227,16 @@ function delete_Career(id) {
                 <label class="control-label col-sm-3" for="pwd">Duration To:</label>
                 <div class="col-sm-4">
                   <select name="duration_to_year" id="duration_years" class="form-control">
-				   <option value="">Year</option>
-				  
+				   <option value="<?php if (!empty($job_career_info[0]->duration_to_year)) {
+                           echo $job_career_info[0]->duration_to_year;
+                           } ?>"><?php  if (!empty($job_career_info[0]->duration_to_year)) {
+                           echo $job_career_info[0]->duration_to_year;
+                           } ?>
+				   </option>
 				   </select>	
                 </div>
 				 <div class="col-sm-4">
                   <select name="duration_to_month" class="form-control" style="margin-top:5px;">
-				   <option value="">Month</option>
 				   <?php
 				   foreach($worktill as $workt){
 				   ?>
@@ -249,26 +255,30 @@ function delete_Career(id) {
                 </div>
               </div>
 			  
-             <!-- <div class="form-group">
+            <!-- <div class="form-group">
                <label class="control-label col-sm-3" for="email">Year of Experience:</label>
                 <div class="col-sm-9">
                   <input type="text" name="js_career_exp" class="form-control" id="js_career_exp" placeholder="Total Career Number of Experience"
-                   value="<?php
+                   value="<?php 
                          if (!empty($job_career_info[0]->js_career_exp)) {
                            echo $job_career_info[0]->js_career_exp;
                            }
-                       ?>">
+                       ?> ">
                 </div>
               </div>-->
          
          <div class="form-group">
-                <br/> <label class="control-label col-sm-3" for="email"> Job Type:</label>
+                <br/> <label class="control-label col-sm-3"> Job Type:</label>
                 <div class="col-sm-9">
-                  <select name="avaliable" class="form-control" required>
-				  <option>Select Job Type</option>
-				   <?php  foreach($employe_jobtype as $jobtype){?>
-					<option value="<?php echo $jobtype['employe_jobtype_id']; ?>"<?php if($job_career_info->avaliable==$jobtype['employe_jobtype_id']){ echo "selected"; }?>><?php echo $jobtype['employe_job_type']; ?></option>
-					<?php } ?>
+                  <select name="avaliable" class="form-control">
+				  <option value="<?php if (!empty($job_career_info[0]->avaliable)) {
+                           echo $job_career_info[0]->avaliable;
+                           } ?>"><?php  if (!empty($job_career_info[0]->avaliable)) {
+                           echo $job_career_info[0]->avaliable;
+                           } ?></option>
+					<option value="Full Time">Full Time</option>
+					<option value="Part Time">Part Time</option>
+					<option value="Contractual Time">Contractual</option>
 				  </select>
                 </div>
               </div>
@@ -322,9 +332,7 @@ function delete_Career(id) {
                         required: true,
                     },
 
-                    avaliable: {
-                        required: true,
-                    },
+                    
                },
                 messages: {
 
@@ -436,3 +444,19 @@ $(function() {
             }
         });
     </script>
+	
+	
+	<script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
+<script>
+$("#duration_year").select2( {
+	placeholder: "Select Year",
+	allowClear: true
+	} );
+</script>
+
+<script>
+$("#duration_years").select2( {
+	placeholder: "Select Year",
+	allowClear: true
+	} );
+</script>
