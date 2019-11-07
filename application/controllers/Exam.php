@@ -66,9 +66,9 @@ class Exam extends MY_Seeker_Controller
                     $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
 
                     
-                    $this->load->view('fontend/exam/exam_start',$data);
+                   
                }
-
+                $this->load->view('fontend/exam/exam_start',$data);
             }else{
                  echo "Skills";
                 // get all requried skills for this job post
