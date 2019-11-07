@@ -284,7 +284,7 @@ function delete_Career(id) {
               </div>
 
              <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Preferable Job Area:</label>
+                <label class="control-label col-sm-3" for="email">Preferable Job Location:</label>
                 <div class="col-sm-9">
                   <input type="text" name="job_area" class="form-control" id="job_area" placeholder="Preferable Job Area"
                    value="<?php
@@ -468,3 +468,30 @@ $("#duration_month").select2( {
 	allowClear: true
 	} );
 </script>
+<script>
+  var BASE_URL = "<?php echo base_url(); ?>";
+ 
+ $(document).ready(function() {
+    $( "#job_area" ).autocomplete({
+ 
+        source: function(request, response) {
+            $.ajax({
+            url: BASE_URL + "job_seeker/search",
+            data: {
+                    term : request.term
+             },
+            dataType: "json",
+            success: function(data){
+               var resp = $.map(data,function(obj){
+                    return obj.name;
+               }); 
+ 
+               response(resp);
+            }
+        });
+    },
+    minLength: 1
+ });
+});
+ 
+</script>   
