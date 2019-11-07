@@ -253,10 +253,7 @@ function delete_Career(id) {
 			  <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Career Summary:</label>
                 <div class="col-sm-9">
-                  <textarea name="js_career_sum" class="form-control" rows="5" id="js_career_sum"><?php if (!empty($job_career_info[0]->js_career_sum)) {
-                           echo $job_career_info[0]->js_career_sum;
-                           }
-                       ?></textarea>
+                 <input type="checkbox"  value="I am currently working on this" id="coupon_question">&nbsp;&nbsp;&nbsp;I am currently working on this
                 </div>
               </div>
 			  
