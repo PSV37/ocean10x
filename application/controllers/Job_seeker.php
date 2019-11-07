@@ -788,6 +788,19 @@ exit;*/
     }
 
 
+public function search(){
+ 
+        $term = $this->input->get('term');
+ 
+        $this->db->like('city_name', $term);
+ 
+        $data = $this->db->get("city")->result();
+ 
+        echo json_encode( $data);
+    }
+
+
+
 } //end function
 
 

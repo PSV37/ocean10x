@@ -77,12 +77,19 @@
                                 </tr>
                                
                               <tr>
-                                  <td width="30%">Avaliable:</td>
+                                  <td width="30%">Job Type:</td>
                                   <td><?php if(!empty($job_career_info[0]->avaliable))
                                           echo $job_career_info[0]->avaliable;
                                    ?></td>
                                 </tr>
-    
+								
+								<tr>
+                                  <td width="30%">Preferable Job Location:</td>
+                                  <td><?php if(!empty($job_career_info[0]->job_area))
+                                          echo $job_career_info[0]->job_area;
+                                   ?></td>
+                                </tr>
+								
                               </tbody>
                             </table>
                             </div>
@@ -212,11 +219,11 @@ function delete_Career(id) {
                 </div>
 				
 				 <div class="col-sm-4">
-                   <select name="duration_month" class="form-control" style="margin-top:5px;">
+                   <select name="duration_month" id="duration_month" class="form-control" style="margin-top:5px;">
 				   <?php
 				   foreach($worktill as $work){
 				   ?>
-				   <option value="<?php echo $work['work_id']; ?>"<?php if($job_career_info->duration_month==$work['work_id']){ echo "selected"; }?>><?php echo $work['work_month']; ?></option>
+				   <option value="<?php echo $work['work_id']; ?>"<?php if($job_career_info[0]->duration_month==$work['work_id']){ echo "selected"; }?>><?php echo $work['work_month']; ?></option>
 				   <?php } ?>
 				   
 				   </select>	
@@ -236,11 +243,11 @@ function delete_Career(id) {
 				   </select>	
                 </div>
 				 <div class="col-sm-4">
-                  <select name="duration_to_month" class="form-control" style="margin-top:5px;">
+                  <select name="duration_to_month" id="duration_to_month" class="form-control" style="margin-top:5px;">
 				   <?php
 				   foreach($worktill as $workt){
 				   ?>
-				   <option value="<?php echo $workt['work_id']; ?>"<?php if($job_career_info->duration_to_month==$workt['work_id']){ echo "selected"; }?>><?php echo $workt['work_month']; ?></option>
+				   <option value="<?php echo $workt['work_id']; ?>"<?php if($job_career_info[0]->duration_to_month==$workt['work_id']){ echo "selected"; }?>><?php echo $workt['work_month']; ?></option>
 				   <?php } ?>
 				   
 				   </select>	
@@ -284,7 +291,7 @@ function delete_Career(id) {
               </div>
 
              <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Preferable Job Area:</label>
+                <label class="control-label col-sm-3" for="email">Preferable Job Location:</label>
                 <div class="col-sm-9">
                   <input type="text" name="job_area" class="form-control" id="job_area" placeholder="Preferable Job Area"
                    value="<?php
@@ -454,3 +461,47 @@ $("#duration_years").select2( {
 	allowClear: true
 	} );
 </script>
+
+<script>
+$("#duration_to_month").select2( {
+	placeholder: "Select Month",
+	allowClear: true
+	} );
+</script>
+
+<script>
+$("#duration_month").select2( {
+	placeholder: "Select Month",
+	allowClear: true
+	} );
+</script>
+
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+  var BASE_URL = "<?php echo base_url(); ?>";
+ 
+ $(document).ready(function() {
+    $( "#job_area" ).autocomplete({
+ 
+        source: function(request, response) {
+            $.ajax({
+            url: BASE_URL + "job_seeker/search",
+            data: {
+                    term : request.term
+             },
+            dataType: "json",
+            success: function(data){
+               var resp = $.map(data,function(obj){
+                    return obj.city_name;
+               }); 
+ 
+               response(resp);
+            }
+        });
+    },
+    minLength: 1
+ });
+});
+ 
+</script>   
