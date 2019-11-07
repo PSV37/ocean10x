@@ -47,7 +47,7 @@ class Exam extends MY_Seeker_Controller
                     //echo $this->db->last_query(); echo "<br><br>";
                     //echo "<pre>";
                    //print_r($questions);
-                    echo $questions = json_encode($questions);
+                    //echo $questions = json_encode($questions);
                     array_push($exam_question,$questions);
                     
 
@@ -55,7 +55,7 @@ class Exam extends MY_Seeker_Controller
                     $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
                }
                $fp = fopen('./exam_questions/'.$job_id.'_'.$jobseeker_id.'.json', 'w');
-               fwrite($fp, json_encode($questions));
+               fwrite($fp, json_encode($exam_question));
 
             }else{
                 echo "skill";
