@@ -41,11 +41,13 @@ class Exam extends MY_Seeker_Controller
                    $no_ques = $topic_row['no_questions'];
                     
                     $where_topic="topic_id='$topic_id' AND level='$level' LIMIT $no_ques";
-                    $data['questions'] = $this->Master_model->getMaster('questionbank',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit =false ,$start=false, $search=false);
-                    $question_id = $data['questions'][0]['ques_id'];
+                    $questions = $this->Master_model->getMaster('questionbank',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit =false ,$start=false, $search=false);
+                    $question_id = $questions[0]['ques_id'];
                     echo $this->db->last_query(); echo "<br><br>";
-                    echo "<pre>";
-                    print_r($data['questions']);
+                    //echo "<pre>";
+                   //print_r($questions);
+                    echo $questions = json_encode($questions);
+
                     $wherechks = "question_id='$question_id'";
                     $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
                }
@@ -57,12 +59,14 @@ class Exam extends MY_Seeker_Controller
                 $skill_id = $data['skills']['skills_required'];
 
                 $where_req_skill="technical_id IN (".$skill_id.")";
-                $data['questions'] = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit=NUMBER_QUESTIONS,$start=false, $search=false);
-                foreach($data['questions'] as $qrow){}
+                $questions = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit=NUMBER_QUESTIONS,$start=false, $search=false);
+                foreach($questions as $qrow){}
                 $question_id = $qrow['ques_id'];
                     echo $this->db->last_query(); echo "<br><br>";
-                    echo "<pre>";
-                    print_r($data['questions']);
+                    // echo "<pre>";
+                    // print_r($data['questions']);
+                     echo $questions = json_encode($questions);
+
                     $wherechks = "question_id='$question_id'";
                 $wherechks = "question_id='$question_id'";
                 $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
