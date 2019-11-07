@@ -445,7 +445,8 @@ exit;*/
         } else {
             $jobseeker_id    = $this->session->userdata('job_seeker_id');
             $job_career_info = $this->Job_career_model->js_careerinfo_by_seeker($jobseeker_id);
-            $this->load->view('fontend/jobseeker/update_career', compact('job_career_info'));
+			$worktill = $this->Master_model->getMaster('worktill',$where=false);
+            $this->load->view('fontend/jobseeker/update_career', compact('job_career_info', 'worktill'));
         }
     }
 
