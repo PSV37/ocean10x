@@ -110,14 +110,20 @@ function delete_Career(id) {
 				 <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Work Title:</label>
                 <div class="col-sm-9">
-                  <input type="text" name="worktitle" id="worktitle" class="form-control" required>
+                  <input type="text" name="worktitle" id="worktitle" class="form-control" required value="<?php if (!empty($job_career_info[0]->worktitle)) {
+                           echo $job_career_info[0]->worktitle;
+                           }
+                       ?>">
                 </div>
               </div>
 			  
 			  <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">URL:</label>
                 <div class="col-sm-9">
-                  <input type="text" name="url" id="url" class="form-control" required>
+                  <input type="text" name="url" id="url" class="form-control" value="<?php if (!empty($job_career_info[0]->url)) {
+                           echo $job_career_info[0]->url;
+                           }
+                       ?>">
                 </div>
               </div>
 				
