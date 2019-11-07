@@ -401,6 +401,8 @@ exit;*/
             $career_info  = array(
                 'job_seeker_id'        => $jobseeker_id,
                 'js_career_sum'        => $this->input->post('js_career_sum'),
+				'worktitle'        => $this->input->post('worktitle'),
+				'url'        => $this->input->post('url'),
                 'field_sepicalization' => $this->input->post('field_sepicalization'),
                 'extracurricular'      => $this->input->post('extracurricular'),
                 'js_career_salary'     => $this->input->post('js_career_salary'),

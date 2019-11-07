@@ -117,7 +117,7 @@ function delete_Career(id) {
 			  <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">URL:</label>
                 <div class="col-sm-9">
-                  <input type="text" name="url1" id="url1" class="form-control" required>
+                  <input type="text" name="url" id="url" class="form-control" required>
                 </div>
               </div>
 				
