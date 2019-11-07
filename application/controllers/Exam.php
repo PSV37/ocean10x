@@ -170,9 +170,9 @@ class Exam extends MY_Seeker_Controller
                    $no_ques = $topic_row['no_questions'];
                     if($no_ques<2)
                     {
-                         $topic_id = $topic_row['topic_id'];
-                        $where_topic="topic_id='$topic_id' AND level='$level' AND ques_id not in(".implode(',',$tested_question).")";
-                        $data['questions'] = $this->Master_model->getMaster('questionbank',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit =false ,$start=false, $search=false);
+                        //  $topic_id = $topic_row['topic_id'];
+                        // $where_topic="topic_id='$topic_id' AND level='$level' AND ques_id not in(".implode(',',$tested_question).")";
+                        // $data['questions'] = $this->Master_model->getMaster('questionbank',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit =false ,$start=false, $search=false);
 
                     }else{
                          $topic_id1 = $topic_row['topic_id'];
