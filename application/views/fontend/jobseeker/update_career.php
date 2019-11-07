@@ -267,7 +267,7 @@ function delete_Career(id) {
                   <select name="avaliable" class="form-control" id="avaliable">
 				  <option>Select Job Type</option>
 				   <?php  foreach($employe_jobtype as $jobtype){?>
-					<option value="<?php echo $jobtype['employe_jobtype__id']; ?>"<?php if($job_career_info->avaliable==$jobtype['employe_jobtype__id']){ echo "selected"; }?>><?php echo $jobtype['employe_job_type']; ?></option>
+					<option value="<?php echo $jobtype['employe_jobtype_id']; ?>"<?php if($job_career_info->avaliable==$jobtype['employe_jobtype_id']){ echo "selected"; }?>><?php echo $jobtype['employe_job_type']; ?></option>
 					<?php } ?>
 				  </select>
                 </div>
