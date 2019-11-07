@@ -82,7 +82,14 @@
                                           echo $job_career_info[0]->avaliable;
                                    ?></td>
                                 </tr>
-    
+								
+								<tr>
+                                  <td width="30%">Preferable Job Location:</td>
+                                  <td><?php if(!empty($job_career_info[0]->job_area))
+                                          echo $job_career_info[0]->job_area;
+                                   ?></td>
+                                </tr>
+								
                               </tbody>
                             </table>
                             </div>
