@@ -18,6 +18,20 @@
                             <table class="table">
 
                               <tbody>
+							  <tr>
+                                  <td width="30%">Work Title:</td>
+                                  <td><?php if(!empty($job_career_info[0]->worktitle))
+                                          echo $job_career_info[0]->worktitle;
+                                   ?></td>
+                                </tr>
+								
+								<tr>
+                                  <td width="30%">URL:</td>
+                                  <td><?php if(!empty($job_career_info[0]->url))
+                                          echo $job_career_info[0]->url;
+                                   ?></td>
+                                </tr>
+							  
                               <tr>
                                   <td width="30%">Career Summary:</td>
                                   <td><?php if(!empty($job_career_info[0]->js_career_sum))
