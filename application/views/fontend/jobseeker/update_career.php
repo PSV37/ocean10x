@@ -77,7 +77,7 @@
                                 </tr>
                                
                               <tr>
-                                  <td width="30%">Avaliable:</td>
+                                  <td width="30%">Job Type:</td>
                                   <td><?php if(!empty($job_career_info[0]->avaliable))
                                           echo $job_career_info[0]->avaliable;
                                    ?></td>
@@ -468,7 +468,7 @@ $("#duration_month").select2( {
 	allowClear: true
 	} );
 </script>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <script>
