@@ -46,6 +46,7 @@ class Exam extends MY_Seeker_Controller
             $data['job_test_topics'] = $this->Master_model->getMaster('job_test_topics',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
            
             echo $this->db->last_query(); echo "<br><br>";
+            echo "<pre>";
             print_r($data['job_test_topics']); die;
           // get all requried skills for this job post
             $whereskill = "job_post_id='$job_id'";
