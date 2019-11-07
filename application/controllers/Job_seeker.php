@@ -412,7 +412,7 @@ exit;*/
 				'duration_month'               => $this->input->post('duration_month'),
 				'duration_to_year'               => $this->input->post('duration_to_year'),
 				'duration_to_month'               => $this->input->post('duration_to_month'),
-				'currentlyworking'               => implode(",",$this->input->post('currentlyworking')),
+				//'currentlyworking'               => implode(",",$this->input->post('currentlyworking')),
                 'job_area'             => $this->input->post('job_area'),
                 //'js_career_exp'        => $this->input->post('js_career_exp'),
             );
