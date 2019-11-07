@@ -212,7 +212,7 @@ function delete_Career(id) {
                 </div>
 				
 				 <div class="col-sm-4">
-                   <select name="duration_month" class="form-control" style="margin-top:5px;">
+                   <select name="duration_month" id="duration_month" class="form-control" style="margin-top:5px;">
 				   <?php
 				   foreach($worktill as $work){
 				   ?>
@@ -236,7 +236,7 @@ function delete_Career(id) {
 				   </select>	
                 </div>
 				 <div class="col-sm-4">
-                  <select name="duration_to_month" class="form-control" style="margin-top:5px;">
+                  <select name="duration_to_month" id="duration_to_month" class="form-control" style="margin-top:5px;">
 				   <?php
 				   foreach($worktill as $workt){
 				   ?>
@@ -451,6 +451,20 @@ $("#duration_year").select2( {
 <script>
 $("#duration_years").select2( {
 	placeholder: "Select Year",
+	allowClear: true
+	} );
+</script>
+
+<script>
+$("#duration_to_month").select2( {
+	placeholder: "Select Month",
+	allowClear: true
+	} );
+</script>
+
+<script>
+$("#duration_month").select2( {
+	placeholder: "Select Month",
 	allowClear: true
 	} );
 </script>
