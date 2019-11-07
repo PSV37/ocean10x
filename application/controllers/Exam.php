@@ -26,6 +26,49 @@ class Exam extends MY_Seeker_Controller
             $data['title'] = 'Exam Instructions';
             $data['job_id'] = $job_id; 
 
+            //To get topics fir
+            $where_topic="job_id='$job_id'";
+            $job_test_topics = $this->Master_model->getMaster('job_test_topics',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+            if($job_test_topics)
+            {
+               foreach($job_test_topics as $topic_row)
+               {
+                
+                   $tid = $topic_row['test_question_id']; //test topic primary key
+                   $topic_id = $topic_row['topic_id'];
+                   $level = $topic_row['test_level'];
+                   $no_ques = $topic_row['no_questions'];
+                    
+                    $where_topic="topic_id='$topic_id' AND level='$level' LIMIT $no_ques";
+                    $data['questions'] = $this->Master_model->getMaster('questionbank',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit =false ,$start=false, $search=false);
+                    $question_id = $data['questions'][0]['ques_id'];
+                    echo $this->db->last_query(); echo "<br><br>";
+                    echo "<pre>";
+                    print_r($data['questions']);
+                    $wherechks = "question_id='$question_id'";
+                    $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
+               }
+            }else{
+                // get all requried skills for this job post
+                $whereskill = "job_post_id='$job_id'";
+                $data['skills'] = $this->Master_model->get_master_row('job_posting', $select ='skills_required' , $whereskill, $join = FALSE);
+                $skill_id = $data['skills']['skills_required'];
+
+                $where_req_skill="technical_id IN (".$skill_id.")";
+                $data['questions'] = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit='1',$start=false, $search=false);
+                foreach($data['questions'] as $qrow){}
+                $question_id = $qrow['ques_id'];
+
+                $wherechks = "question_id='$question_id'";
+                $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
+            }
+
+            die;
+            
+
+
+
+
             $this->load->view('fontend/exam/exam_instruction',$data);
         } else {
             redirect('/');
@@ -46,7 +89,6 @@ class Exam extends MY_Seeker_Controller
             $job_test_topics = $this->Master_model->getMaster('job_test_topics',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
             if($job_test_topics)
             {
-                echo "test topic";
                foreach($job_test_topics as $topic_row)
                {
                 
@@ -68,7 +110,6 @@ class Exam extends MY_Seeker_Controller
                }
                 $this->load->view('fontend/exam/exam_start',$data);
             }else{
-                 echo "Skills";
                 // get all requried skills for this job post
                 $whereskill = "job_post_id='$job_id'";
                 $data['skills'] = $this->Master_model->get_master_row('job_posting', $select ='skills_required' , $whereskill, $join = FALSE);
