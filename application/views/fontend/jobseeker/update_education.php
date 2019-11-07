@@ -46,7 +46,7 @@
 
                                 <tr>
                                   <td>Passing Year:</td>
-                                <td><?php echo $v_education->passing_year; ?></td>
+                                <td><?php echo $v_education->js_year_of_passing; ?></td>
                                 </tr>
      
                               </tbody>
@@ -284,6 +284,7 @@
 			   <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Passing Year:</label>
                 <div class="col-sm-9">
+				<option></option>
                   <select  name="js_year_of_passing" id="ddlYear" class="form-control">
 				 
 				 </select>
