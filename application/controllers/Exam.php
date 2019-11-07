@@ -59,14 +59,12 @@ class Exam extends MY_Seeker_Controller
                     $data['questions'] = $this->Master_model->getMaster('questionbank',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit =false ,$start=false, $search=false);
                     echo $this->db->last_query(); echo "<br><br>";
                     echo "<pre>";
-                    print_r($data['questions']);
+                    print_r($data['questions']); 
                     $question_id = $data['questions'][0]['ques_id'];
 
                     $wherechks = "question_id='$question_id'";
                     $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
-
-                    
-                   
+            
                }
                 $this->load->view('fontend/exam/exam_start',$data);
             }else{
