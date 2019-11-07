@@ -171,19 +171,21 @@ class Exam extends MY_Seeker_Controller
                         
                     for($q=0;$q<$no_ques;$q++)
                     {
-                        echo $level[$q];
+                       $where_topic="topic_id='$topic_id[$q]' AND level='$level' AND ques_id not in(".implode(',',$tested_question).")";
+                       $data['questions'] = $this->Master_model->getMaster('questionbank',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit ='1' ,$start=false, $search=false);
+                        echo $this->db->last_query(); echo "<br><br>";
+                        echo "<pre>";
+                        print_r($data['questions']);
+                        $question_id = $data['questions'][0]['ques_id'];
+
+                        $wherechks = "question_id='$question_id'";
+                        $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
                     }
-die;
+// die;
 
-                    $where_topic="topic_id='$topic_id' AND level='$level' AND ques_id not in(".implode(',',$tested_question).")";
-                    $data['questions'] = $this->Master_model->getMaster('questionbank',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit ='1' ,$start=false, $search=false);
-                    echo $this->db->last_query(); echo "<br><br>";
-                    echo "<pre>";
-                    print_r($data['questions']); 
-                    $question_id = $data['questions'][0]['ques_id'];
-
-                    $wherechks = "question_id='$question_id'";
-                    $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
+                    
+                   
+                    
             
                }
             }else{
