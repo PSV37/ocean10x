@@ -258,7 +258,7 @@ function delete_Career(id) {
 			  <div class="form-group">
                
                 <div class="col-sm-12">
-                 <input type="checkbox"  value="I am currently working on this" name="currentlyworking" id="coupon_question" <?php echo ($job_career_info=='currentlyworking')?"checked":"" ;?>>&nbsp;&nbsp;&nbsp;I am currently working on this
+                 <input type="checkbox"  value="I am currently working on this" name="currentlyworking" id="coupon_question" <?php foreach($job_career_info as $key1){if(in_array($key1,'currentlyworking')) {?> checked="checked" <?php } }?>>&nbsp;&nbsp;&nbsp;I am currently working on this
                 </div>
               </div>
 			  
