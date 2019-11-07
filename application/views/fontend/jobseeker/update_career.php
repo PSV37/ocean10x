@@ -258,7 +258,7 @@ function delete_Career(id) {
 			  <div class="form-group">
                
                 <div class="col-sm-12">
-                 <input type="checkbox"  value="I am currently working on this" name="currentlyworking[]" id="coupon_question" >&nbsp;&nbsp;&nbsp;I am currently working on this
+                 <input type="checkbox"  value="I am currently working on this" name="currentlyworking" id="coupon_question" >&nbsp;&nbsp;&nbsp;I am currently working on this
                 </div>
               </div>
 			  

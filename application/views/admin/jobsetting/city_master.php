@@ -162,7 +162,7 @@
                 success:function(res){
                     $('#state_name').html(res);
                     $('#state_name').val(<?php echo $row['state_id']; ?>);
-					getStates_load();
+					//getStates_load();
                 }
                 
             }); 
