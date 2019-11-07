@@ -54,7 +54,7 @@ class Exam extends MY_Seeker_Controller
                     $wherechks = "question_id='$question_id'";
                     $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
                }
-               $fp = fopen('./exam_question/'.$job_id.'_'.$jobseeker_id.'.json', 'w');
+               $fp = fopen('./exam_questions/'.$job_id.'_'.$jobseeker_id.'.json', 'w');
                fwrite($fp, json_encode($questions));
 
             }else{
@@ -72,7 +72,7 @@ class Exam extends MY_Seeker_Controller
                     // echo "<pre>";
                     // print_r($data['questions']);
                      echo $questions = json_encode($questions);
-                      $fp = fopen('./exam_question/'.$job_id.'_'.$jobseeker_id.'.json', 'w');
+                      $fp = fopen('./exam_questions/'.$job_id.'_'.$jobseeker_id.'.json', 'w');
                     fwrite($fp, json_encode($questions));
 
                 $wherechks = "question_id='$question_id'";
