@@ -18,6 +18,20 @@
                             <table class="table">
 
                               <tbody>
+							  <tr>
+                                  <td width="30%">Work Title:</td>
+                                  <td><?php if(!empty($job_career_info[0]->worktitle))
+                                          echo $job_career_info[0]->worktitle;
+                                   ?></td>
+                                </tr>
+								
+								<tr>
+                                  <td width="30%">URL:</td>
+                                  <td><?php if(!empty($job_career_info[0]->url))
+                                          echo $job_career_info[0]->url;
+                                   ?></td>
+                                </tr>
+							  
                               <tr>
                                   <td width="30%">Career Summary:</td>
                                   <td><?php if(!empty($job_career_info[0]->js_career_sum))
@@ -26,12 +40,12 @@
                                 </tr>
 
 
-                             <tr>
+                             <!--<tr>
                                   <td width="30%">Total Number of Experience :</td>
-                                  <td><?php if(!empty($job_career_info[0]->js_career_exp))
-                                          echo $job_career_info[0]->js_career_exp;
+                                  <td><?php /*if(!empty($job_career_info[0]->js_career_exp))
+                                          echo $job_career_info[0]->js_career_exp; */
                                    ?></td>
-                                </tr>
+                                </tr>-->
                                <tr>
                                   <td width="30%">Field of Specialization :</td>
                                   <td><?php if(!empty($job_career_info[0]->field_sepicalization))
@@ -106,7 +120,27 @@ function delete_Career(id) {
       </div>
       <div class="modal-body">
          <form id="Career-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_career');?>" method="post" style="padding: 30px;">
-
+				
+				 <div class="form-group">
+                <label class="control-label col-sm-3" for="pwd">Work Title:</label>
+                <div class="col-sm-9">
+                  <input type="text" name="worktitle" id="worktitle" class="form-control" required value="<?php if (!empty($job_career_info[0]->worktitle)) {
+                           echo $job_career_info[0]->worktitle;
+                           }
+                       ?>">
+                </div>
+              </div>
+			  
+			  <div class="form-group">
+                <label class="control-label col-sm-3" for="pwd">URL:</label>
+                <div class="col-sm-9">
+                  <input type="text" name="url" id="url" class="form-control" value="<?php if (!empty($job_career_info[0]->url)) {
+                           echo $job_career_info[0]->url;
+                           }
+                       ?>">
+                </div>
+              </div>
+				
                <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Career Summary:</label>
                 <div class="col-sm-9">
@@ -152,19 +186,79 @@ function delete_Career(id) {
               </div>
       
 
-               <div class="form-group">
+               <!--<div class="form-group">
                 <label class="control-label col-sm-3" for="email"> Expected Salary:</label>
                 <div class="col-sm-9">
                   <input type="text" name="js_career_salary" class="form-control" id="js_career_salary" placeholder="Expected Salary"
                    value="<?php
-                         if (!empty($job_career_info[0]->js_career_salary)) {
+                         /*if (!empty($job_career_info[0]->js_career_salary)) {
                            echo $job_career_info[0]->js_career_salary;
-                           }
+                           } */
                        ?>">
                 </div>
+              </div>-->
+			  		  
+			  <div class="form-group">
+                <label class="control-label col-sm-3" for="pwd">Duration From:</label>
+                <div class="col-sm-4">
+                  <select name="duration_year" id="duration_year" class="form-control">
+					 <option>Year</option>
+				   <?php
+				   foreach($worktill as $workt){
+				   ?>
+				   <option value="<?php echo $workt['work_id']; ?>"><?php echo $workt['work_year']; ?></option>
+				   <?php } ?>
+				   </select>
+                </div>
+				
+				 <div class="col-sm-4">
+                   <select name="duration_month" class="form-control" style="margin-top:5px;">
+				  <option>Month</option>
+				   <?php
+				   foreach($worktill as $workt){
+				   ?>
+				   <option value="<?php echo $workt['work_id']; ?>"><?php echo $workt['work_month']; ?></option>
+				   <?php } ?>
+				   
+				   </select>	
+                </div>
               </div>
+			  
+			  <div class="form-group answer">
+                <label class="control-label col-sm-3" for="pwd">Duration To:</label>
+                <div class="col-sm-4">
+                  <select name="duration_to_year" id="duration_year" class="form-control">
+				   <option>Year</option>
+				   <?php
+				   foreach($worktill as $workt){
+				   ?>
+				   <option value="<?php echo $workt['work_id']; ?>"><?php echo $workt['work_year']; ?></option>
+				   <?php } ?>
+				   </select>	
+                </div>
+				 <div class="col-sm-4">
+                  <select name="duration_to_month" class="form-control" style="margin-top:5px;">
+				   <option>Month</option>
+				   <?php
+				   foreach($worktill as $workt){
+				   ?>
+				   <option value="<?php echo $workt['work_id']; ?>"><?php echo $workt['work_month']; ?></option>
+				   <?php } ?>
+				   
+				   </select>	
+                </div>
+				
+              </div>
+			  
+			  <div class="form-group">
+               
+                <div class="col-sm-12">
+                 <input type="checkbox"  value="I am currently working on this" id="coupon_question">&nbsp;&nbsp;&nbsp;I am currently working on this
+                </div>
+              </div>
+			  
               <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Year of Experience:</label>
+               <br/> <label class="control-label col-sm-3" for="email">Year of Experience:</label>
                 <div class="col-sm-9">
                   <input type="text" name="js_career_exp" class="form-control" id="js_career_exp" placeholder="Total Career Number of Experience"
                    value="<?php
@@ -303,3 +397,12 @@ function delete_Career(id) {
 
 }
 </style>
+
+
+<script>
+$(function() {
+  $("#coupon_question").on("click",function() {
+    $(".answer").toggle(this.unchecked);
+  });
+});
+</script>
