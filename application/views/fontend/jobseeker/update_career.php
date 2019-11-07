@@ -397,3 +397,12 @@ function delete_Career(id) {
 
 }
 </style>
+
+
+<script>
+$(function() {
+  $("#coupon_question").on("click",function() {
+    $(".answer").toggle(this.unchecked);
+  });
+});
+</script>
