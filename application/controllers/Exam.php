@@ -57,7 +57,7 @@ class Exam extends MY_Seeker_Controller
                 $skill_id = $data['skills']['skills_required'];
 
                 $where_req_skill="technical_id IN (".$skill_id.")";
-                $data['questions'] = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit='1',$start=false, $search=false);
+                $data['questions'] = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit=NUMBER_QUESTIONS,$start=false, $search=false);
                 foreach($data['questions'] as $qrow){}
                 $question_id = $qrow['ques_id'];
                     echo $this->db->last_query(); echo "<br><br>";
@@ -121,7 +121,7 @@ class Exam extends MY_Seeker_Controller
                 $skill_id = $data['skills']['skills_required'];
 
                 $where_req_skill="technical_id IN (".$skill_id.")";
-                $data['questions'] = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit=NUMBER_QUESTIONS,$start=false, $search=false);
+                $data['questions'] = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit='1',$start=false, $search=false);
                 foreach($data['questions'] as $qrow){}
                 $question_id = $qrow['ques_id'];
 
