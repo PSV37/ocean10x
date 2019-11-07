@@ -284,7 +284,7 @@
 			   <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Passing Year:</label>
                 <div class="col-sm-9">
-                  <select  name="js_year_of_passing" id="ddlYears" class="form-control">
+                  <select  name="js_year_of_passing" id="ddlYear" class="form-control">
 				 
 				 </select>
                 </div>
@@ -602,6 +602,25 @@
         $(function () {
             //Reference the DropDownList.
             var ddlYears = $("#ddlYears");
+
+            //Determine the Current Year.
+            var currentYear = (new Date()).getFullYear();
+
+            //Loop and add the Year values to DropDownList.
+            for (var i = 1940; i <= currentYear; i++) {
+                var option = $("<option />");
+                option.html(i);
+                option.val(i);
+                ddlYears.append(option);
+            }
+        });
+    </script>
+	
+	
+	<script type="text/javascript">
+        $(function () {
+            //Reference the DropDownList.
+            var ddlYears = $("#ddlYear");
 
             //Determine the Current Year.
             var currentYear = (new Date()).getFullYear();
