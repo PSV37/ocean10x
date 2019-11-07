@@ -451,7 +451,8 @@ exit;*/
             $jobseeker_id    = $this->session->userdata('job_seeker_id');
             $job_career_info = $this->Job_career_model->js_careerinfo_by_seeker($jobseeker_id);
 			$worktill = $this->Master_model->getMaster('worktill',$where=false);
-            $this->load->view('fontend/jobseeker/update_career', compact('job_career_info', 'worktill'));
+			$employee_jobtype = $this->Master_model->getMaster('employee_jobtype',$where=false);
+            $this->load->view('fontend/jobseeker/update_career', compact('job_career_info', 'worktill', 'employee_jobtype'));
         }
     }
 
