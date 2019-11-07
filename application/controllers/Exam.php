@@ -165,12 +165,21 @@ class Exam extends MY_Seeker_Controller
                {
                 
                    $tid = $topic_row['test_question_id']; //test topic primary key
-                   $topic_id = $topic_row['topic_id'];
+                  
                    $level = $topic_row['test_level'];
                    $no_ques = $topic_row['no_questions'];
-                    
-                    $where_topic="topic_id='$topic_id' AND level='$level' AND ques_id not in(".implode(',',$tested_question).")";
-                    $data['questions'] = $this->Master_model->getMaster('questionbank',$where_topic,$join = FALSE, $order = 'ques_id ASC', $field = false, $select = false,$limit =false ,$start=false, $search=false);
+                    if($no_ques<2)
+                    {
+                         $topic_id = $topic_row['topic_id'];
+                        $where_topic="topic_id='$topic_id' AND level='$level' AND ques_id not in(".implode(',',$tested_question).")";
+                        $data['questions'] = $this->Master_model->getMaster('questionbank',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit =false ,$start=false, $search=false);
+
+                    }else{
+                         $topic_id1 = $topic_row['topic_id'];
+                        $where_topic="topic_id='$topic_id1' AND level='$level' AND ques_id not in(".implode(',',$tested_question).")";
+                        $data['questions'] = $this->Master_model->getMaster('questionbank',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit =false ,$start=false, $search=false);
+                    }
+                   
                     echo $this->db->last_query(); echo "<br><br>";
                     echo "<pre>";
                     print_r($data['questions']); 
