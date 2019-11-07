@@ -71,7 +71,7 @@ class Exam extends MY_Seeker_Controller
                     //echo $this->db->last_query(); echo "<br><br>";
                     // echo "<pre>";
                     // print_r($data['questions']);
-                     echo $questions = json_encode($questions);
+                     // echo $questions = json_encode($questions);
                       $fp = fopen('./exam_questions/'.$job_id.'_'.$jobseeker_id.'.json', 'w');
                     fwrite($fp, json_encode($questions));
 
