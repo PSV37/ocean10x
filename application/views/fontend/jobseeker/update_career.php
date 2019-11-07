@@ -486,7 +486,7 @@ $("#duration_month").select2( {
             dataType: "json",
             success: function(data){
                var resp = $.map(data,function(obj){
-                    return obj.name;
+                    return obj.city_name;
                }); 
  
                response(resp);
