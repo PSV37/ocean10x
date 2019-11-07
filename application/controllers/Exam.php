@@ -171,7 +171,7 @@ class Exam extends MY_Seeker_Controller
                         
                     for($q=0;$q<$no_ques;$q++)
                     {
-                       $where_topic="topic_id='$topic_id[$q]' AND level='$level' AND ques_id not in(".implode(',',$tested_question).")";
+                       $where_topic="topic_id='$topic_id' AND level='$level' AND ques_id not in(".implode(',',$tested_question).")";
                        $data['questions'] = $this->Master_model->getMaster('questionbank',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit ='1' ,$start=false, $search=false);
                         echo $this->db->last_query(); echo "<br><br>";
                         echo "<pre>";
