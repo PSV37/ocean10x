@@ -203,11 +203,7 @@ function delete_Career(id) {
                 <div class="col-sm-4">
                   <select name="duration_year" id="duration_year" class="form-control">
 					 <option>Year</option>
-				   <?php
-				   foreach($worktill as $workt){
-				   ?>
-				   <option value="<?php echo $workt['work_id']; ?>"><?php echo $workt['work_year']; ?></option>
-				   <?php } ?>
+				  
 				   </select>
                 </div>
 				
@@ -227,13 +223,9 @@ function delete_Career(id) {
 			  <div class="form-group answer">
                 <label class="control-label col-sm-3" for="pwd">Duration To:</label>
                 <div class="col-sm-4">
-                  <select name="duration_to_year" id="duration_year" class="form-control">
+                  <select name="duration_to_year" id="duration_years" class="form-control">
 				   <option>Year</option>
-				   <?php
-				   foreach($worktill as $workt){
-				   ?>
-				   <option value="<?php echo $workt['work_id']; ?>"><?php echo $workt['work_year']; ?></option>
-				   <?php } ?>
+				  
 				   </select>	
                 </div>
 				 <div class="col-sm-4">
@@ -257,7 +249,7 @@ function delete_Career(id) {
                 </div>
               </div>
 			  
-              <div class="form-group">
+             <!-- <div class="form-group">
                <br/> <label class="control-label col-sm-3" for="email">Year of Experience:</label>
                 <div class="col-sm-9">
                   <input type="text" name="js_career_exp" class="form-control" id="js_career_exp" placeholder="Total Career Number of Experience"
@@ -267,7 +259,7 @@ function delete_Career(id) {
                            }
                        ?>">
                 </div>
-              </div>
+              </div>-->
          
          <div class="form-group">
                 <label class="control-label col-sm-3" for="email"> Avaliable:</label>
@@ -406,3 +398,41 @@ $(function() {
   });
 });
 </script>
+
+
+<script type="text/javascript">
+        $(function () {
+            //Reference the DropDownList.
+            var ddlYears = $("#duration_year");
+
+            //Determine the Current Year.
+            var currentYear = (new Date()).getFullYear();
+
+            //Loop and add the Year values to DropDownList.
+            for (var i = 1940; i <= currentYear; i++) {
+                var option = $("<option />");
+                option.html(i);
+                option.val(i);
+                ddlYears.append(option);
+            }
+        });
+    </script>
+	
+	
+	<script type="text/javascript">
+        $(function () {
+            //Reference the DropDownList.
+            var ddlYears = $("#duration_years");
+
+            //Determine the Current Year.
+            var currentYear = (new Date()).getFullYear();
+
+            //Loop and add the Year values to DropDownList.
+            for (var i = 1940; i <= currentYear; i++) {
+                var option = $("<option />");
+                option.html(i);
+                option.val(i);
+                ddlYears.append(option);
+            }
+        });
+    </script>
