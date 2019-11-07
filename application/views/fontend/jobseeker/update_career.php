@@ -240,7 +240,7 @@ function delete_Career(id) {
 				   <?php
 				   foreach($worktill as $workt){
 				   ?>
-				   <option value="<?php echo $workt['work_id']; ?>"<?php if($job_career_info->duration_to_month==$workt['work_id']){ echo "selected"; }?>><?php echo $workt['work_month']; ?></option>
+				   <option value="<?php echo $workt['work_id']; ?>"<?php if($job_career_info[0]->duration_to_month==$workt['work_id']){ echo "selected"; }?>><?php echo $workt['work_month']; ?></option>
 				   <?php } ?>
 				   
 				   </select>	
