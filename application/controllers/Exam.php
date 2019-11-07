@@ -27,7 +27,7 @@ class Exam extends MY_Seeker_Controller
             $data['title'] = 'Exam Instructions';
             $data['job_id'] = $job_id; 
 
-            //To get topics fir
+            //To get topics for exam questions
             $where_topic="job_id='$job_id'";
             $job_test_topics = $this->Master_model->getMaster('job_test_topics',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
             if($job_test_topics)
@@ -44,21 +44,18 @@ class Exam extends MY_Seeker_Controller
                     $where_topic="topic_id='$topic_id' AND level='$level' LIMIT $no_ques";
                     $questions = $this->Master_model->getMaster('questionbank',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit =false ,$start=false, $search=false);
                     $question_id = $questions[0]['ques_id'];
-                    //echo $this->db->last_query(); echo "<br><br>";
-                    //echo "<pre>";
-                   //print_r($questions);
-                    echo $questions = json_encode($questions);
-                    array_push($exam_question,$questions);
                     
-
+                    array_push($exam_question,$questions); //push all questions to store in json file
+                    
                     $wherechks = "question_id='$question_id'";
                     $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
                }
-               $fp = fopen('./exam_question/'.$job_id.'_'.$jobseeker_id.'.json', 'w');
-               fwrite($fp, json_encode($questions));
+               // creating json file of all questions based on topic
+               $fp = fopen('./exam_questions/'.$job_id.'_'.$jobseeker_id.'.json', 'w');
+               fwrite($fp, json_encode($exam_question));
 
             }else{
-                echo "skill";
+               
                 // get all requried skills for this job post
                 $whereskill = "job_post_id='$job_id'";
                 $data['skills'] = $this->Master_model->get_master_row('job_posting', $select ='skills_required' , $whereskill, $join = FALSE);
@@ -71,19 +68,12 @@ class Exam extends MY_Seeker_Controller
                     //echo $this->db->last_query(); echo "<br><br>";
                     // echo "<pre>";
                     // print_r($data['questions']);
-                     echo $questions = json_encode($questions);
-                      $fp = fopen('./exam_question/'.$job_id.'_'.$jobseeker_id.'.json', 'w');
-                    fwrite($fp, json_encode($questions));
+                $fp = fopen('./exam_questions/'.$job_id.'_'.$jobseeker_id.'.json', 'w');
+                fwrite($fp, json_encode($questions));
 
                 $wherechks = "question_id='$question_id'";
                 $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
             }
-
-            die;
-            
-
-
-
 
             $this->load->view('fontend/exam/exam_instruction',$data);
         } else {
