@@ -56,6 +56,7 @@ class Exam extends MY_Seeker_Controller
                     $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
                     echo $this->db->last_query(); echo "<br><br>";
                }
+               die;
                // creating json file of all questions based on topic
                $fp = fopen('./exam_questions/'.$job_id.'_'.$jobseeker_id.'.json', 'w');
                fwrite($fp, json_encode($exam_question));
