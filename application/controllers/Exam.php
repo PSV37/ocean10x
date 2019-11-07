@@ -32,7 +32,7 @@ class Exam extends MY_Seeker_Controller
             $job_test_topics = $this->Master_model->getMaster('job_test_topics',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
             if($job_test_topics)
             {
-                echo "topic";
+                $exam_question = array();
                foreach($job_test_topics as $topic_row)
                {
                 
@@ -48,12 +48,15 @@ class Exam extends MY_Seeker_Controller
                     //echo "<pre>";
                    //print_r($questions);
                     echo $questions = json_encode($questions);
-                    $fp = fopen('./'.$job_id.'_'.$jobseeker_id.'.json', 'w');
-                    fwrite($fp, json_encode($questions));
+                    array_push($exam_question,$questions);
+                    
 
                     $wherechks = "question_id='$question_id'";
                     $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
                }
+               $fp = fopen('./exam_question/'.$job_id.'_'.$jobseeker_id.'.json', 'w');
+               fwrite($fp, json_encode($questions));
+
             }else{
                 echo "skill";
                 // get all requried skills for this job post
@@ -65,10 +68,12 @@ class Exam extends MY_Seeker_Controller
                 $questions = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit=NUMBER_QUESTIONS,$start=false, $search=false);
                 foreach($questions as $qrow){}
                 $question_id = $qrow['ques_id'];
-                    echo $this->db->last_query(); echo "<br><br>";
+                    //echo $this->db->last_query(); echo "<br><br>";
                     // echo "<pre>";
                     // print_r($data['questions']);
                      echo $questions = json_encode($questions);
+                      $fp = fopen('./exam_question/'.$job_id.'_'.$jobseeker_id.'.json', 'w');
+                    fwrite($fp, json_encode($questions));
 
                 $wherechks = "question_id='$question_id'";
                 $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
