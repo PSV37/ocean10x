@@ -43,7 +43,7 @@ class Exam extends MY_Seeker_Controller
             
             //To get topics fir
             $where_topic="job_id='$job_id'";
-            $data['job_test_topics'] = $this->Master_model->getMaster('job_test_topics',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit='1',$start=false, $search=false);
+            $data['job_test_topics'] = $this->Master_model->getMaster('job_test_topics',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
            
             echo $this->db->last_query(); echo "<br><br>";
             print_r($data['job_test_topics']); die;
