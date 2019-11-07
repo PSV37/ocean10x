@@ -54,10 +54,16 @@ class Exam extends MY_Seeker_Controller
                $no_ques = $topic_row['no_questions'];
                 
             $where_topic="topic_id='$topic_id' AND level='$level' LIMIT $no_ques";
-            $topics_ques = $this->Master_model->getMaster('questionbank',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit =false ,$start=false, $search=false);
+            $data['questions'] = $this->Master_model->getMaster('questionbank',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit =false ,$start=false, $search=false);
+                
+            $question_id = $data['questions'][0]['ques_id'];
+
+            $wherechks = "question_id='$question_id'";
+            $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
+
                 echo $this->db->last_query(); echo "<br><br>";
                 echo "<pre>";
-                print_r($topics_ques);
+                print_r($data['ans']);
            }
 
             
