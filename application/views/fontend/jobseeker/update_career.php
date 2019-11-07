@@ -250,7 +250,7 @@ function delete_Career(id) {
               </div>
 			  
              <!-- <div class="form-group">
-               <br/> <label class="control-label col-sm-3" for="email">Year of Experience:</label>
+               <label class="control-label col-sm-3" for="email">Year of Experience:</label>
                 <div class="col-sm-9">
                   <input type="text" name="js_career_exp" class="form-control" id="js_career_exp" placeholder="Total Career Number of Experience"
                    value="<?php
@@ -262,7 +262,7 @@ function delete_Career(id) {
               </div>-->
          
          <div class="form-group">
-                <label class="control-label col-sm-3" for="email"> Avaliable:</label>
+                <br/> <label class="control-label col-sm-3" for="email"> Avaliable:</label>
                 <div class="col-sm-9">
                   <input type="text" name="avaliable" class="form-control" id="avaliable" placeholder="Enter Full Time/ Half Time"
                    value="<?php
