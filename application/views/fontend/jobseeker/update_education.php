@@ -514,7 +514,7 @@
 					success:function(res){
 						$('#specializations_id').html(res);
 						$('#specializations_id').val(<?php echo $row['id']; ?>);
-						  getSpecials_load();
+						  //getSpecials_load();
 					}
 					
 				}); 
@@ -621,7 +621,7 @@
 	<script type="text/javascript">
         $(function () {
             //Reference the DropDownList.
-            var ddlYears = $("#ddlYear");
+            var ddlYear = $("#ddlYear");
 
             //Determine the Current Year.
             var currentYear = (new Date()).getFullYear();
@@ -631,7 +631,7 @@
                 var option = $("<option />");
                 option.html(i);
                 option.val(i);
-                ddlYears.append(option);
+                ddlYear.append(option);
             }
         });
     </script>

@@ -776,7 +776,7 @@ exit;*/
     	
     	$result = '';
     	if(!empty($specialization)){ 
-    		$result .='<option value="">Select Specilazation</option>';
+    		//$result .='<option value="">Select Specilazation</option>';
     		foreach($specialization as $key){
     		  $result .='<option value="'.$key['id'].'">'.$key['education_specialization'].'</option>';
     		}
