@@ -47,7 +47,8 @@ class Exam extends MY_Seeker_Controller
                     //echo "<pre>";
                    //print_r($questions);
                     echo $questions = json_encode($questions);
-
+                    $fp = fopen('./ques_array.json', 'w');
+                    fwrite($fp, json_encode($questions));
                     $wherechks = "question_id='$question_id'";
                     $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
                }
@@ -67,7 +68,6 @@ class Exam extends MY_Seeker_Controller
                     // print_r($data['questions']);
                      echo $questions = json_encode($questions);
 
-                    $wherechks = "question_id='$question_id'";
                 $wherechks = "question_id='$question_id'";
                 $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
             }
