@@ -203,7 +203,12 @@ function delete_Career(id) {
                 <div class="col-sm-4">
                   <select name="duration_year" id="duration_year" class="form-control">
 					 <option>Year</option>
-				  
+					<option value="<?php if (!empty($job_career_info[0]->duration_year)) {
+                           echo $job_career_info[0]->duration_year;
+                           } ?>"><?php  if (!empty($job_career_info[0]->duration_year)) {
+                           echo $job_career_info[0]->duration_year;
+                           } ?>
+				   </option>
 				   </select>
                 </div>
 				
@@ -225,7 +230,12 @@ function delete_Career(id) {
                 <div class="col-sm-4">
                   <select name="duration_to_year" id="duration_years" class="form-control">
 				   <option value="">Year</option>
-				  
+				   <option value="<?php if (!empty($job_career_info[0]->duration_to_year)) {
+                           echo $job_career_info[0]->duration_to_year;
+                           } ?>"><?php  if (!empty($job_career_info[0]->duration_to_year)) {
+                           echo $job_career_info[0]->duration_to_year;
+                           } ?>
+				   </option>
 				   </select>	
                 </div>
 				 <div class="col-sm-4">
