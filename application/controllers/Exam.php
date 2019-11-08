@@ -149,7 +149,11 @@ class Exam extends MY_Seeker_Controller
            break;
         }
         // print_r($data['questions']);
-        print_r($data['questions']['answer']);
+        // print_r($data['questions']['answer']);
+        for($q=0;$q<sizeof($data['questions']['answer']);$q++)
+        {
+            echo $data['questions']['answer'][$q]['answer_id'];
+        }
         // if($question_id == $data['questions']['ques_id'])
         // {
         //     echo "Yes";
