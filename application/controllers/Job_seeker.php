@@ -483,6 +483,7 @@ exit;*/
             $del = $this->Master_model->master_delete('job_seeker_skills',$where_del);
             if($del==true)
             {
+				
                 if(!empty($js_skills)) {
                 $skill = explode(',', $js_skills);
 
