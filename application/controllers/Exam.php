@@ -49,6 +49,7 @@ class Exam extends MY_Seeker_Controller
                     
                     // 
                }
+               echo "<pre>";
  print_r($exam_question);echo "<br><br>";
                for($n=0;$n<sizeof($exam_question);$n++)
                {
