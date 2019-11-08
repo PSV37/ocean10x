@@ -64,7 +64,7 @@ class Exam extends MY_Seeker_Controller
                         $answer = $this->Master_model->getMaster('questionbank_answer',$wherechks);
                         $temp[$n1]['answer']=$answer;
                         $inditidual_question[]=$temp[$n1];
-                        array_push($temp_array, $inditidual_question)
+                        array_push($temp_array, $inditidual_question);
                     }
                }
                echo "<pre>";
