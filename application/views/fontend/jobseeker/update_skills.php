@@ -1,13 +1,16 @@
 <div class="section lb">
-      <div class="container">
-          <div class="row">
-              <?php $this->load->view('fontend/layout/seeker_left.php'); ?>
-               <!-- <input type="text" class="form-control" id="tokenfield" value="red,green,blue" /> -->
-
-              <div class="content col-md-9">
-                  <div class="userccount">
-                    <div id="vsskills" class="tab-pane fade in">
-                  <?php $this->load->view('fontend/layout/seeker_resumemenu.php'); ?>
+  <div class="container">                                
+                         
+    <div class="row">
+      <?php $this->load->view('fontend/layout/seeker_left.php'); ?>
+      <div class="content col-md-9">
+        <div class="userccount">
+          <?php $this->load->view('fontend/layout/seeker_resumemenu.php'); ?>
+        <hr>
+          <div id="vsskills" class="tab-pane fade in">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="containe1r">
                   <?php $key = 1 ?>
                           <hr>
                   <h5>
@@ -29,13 +32,16 @@
                     </table>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
 
 
-                  </div><!-- end post-padding -->
-              </div><!-- end col -->
-          </div><!-- end row -->  
-      </div><!-- end container -->
-  </div><!-- end section -->
+      </div><!-- end post-padding -->
+  </div><!-- end col -->
+</div><!-- end row -->  
+</div><!-- end container -->
+</div><!-- end section -->
  
 <script>
 function delete_Career(id) {
