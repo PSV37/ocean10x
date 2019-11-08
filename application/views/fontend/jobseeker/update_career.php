@@ -140,13 +140,15 @@ function delete_Career(id) {
                 </div>
               </div>
 			  
-			  <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">URL:</label>
+			   <div class="form-group">
+                <label class="control-label col-sm-3" for="pwd">Department:</label>
                 <div class="col-sm-9">
-                  <input type="text" name="url" id="url" class="form-control" value="<?php if (!empty($job_career_info[0]->url)) {
-                           echo $job_career_info[0]->url;
-                           }
-                       ?>">
+                  <select  name="dept_id" id="dept_id" class="form-control">
+				  <option></option>
+				 <?php foreach($department as $dept){?>
+					<option value="<?php echo $dept['dept_id']; ?>"<?php if($job_career_info->dept_id==$dept['dept_id']){ echo "selected"; }?>><?php echo $dept['department_name']; ?></option>
+					<?php } ?>
+				 </select>
                 </div>
               </div>
 				
