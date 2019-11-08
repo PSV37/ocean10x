@@ -476,7 +476,7 @@ $("#duration_month").select2( {
 	} );
 </script>
 
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 
 <script>
   var BASE_URL = "<?php echo base_url(); ?>";
