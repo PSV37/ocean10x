@@ -1309,12 +1309,12 @@ function runit(){
 	              <div class="input-group">
 	                  <label class="control-label" for="email">Preferable Job Location:</label>
 					 
-	                  <input type="text" name="job_area" class="form-control" id="job_area" placeholder="Preferable Job Area"
+	                  <input type="text" name="job_area" class="form-control ui-autocomplete-input" id="job_area" placeholder="Preferable Job Area"
                    value="<?php
                          if (!empty($job_career_info[0]->job_area)) {
                            echo $job_career_info[0]->job_area;
                            }
-                       ?>">
+                        ?>">
 	              </div>
 	          	</div>
 		  </div>
