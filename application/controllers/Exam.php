@@ -36,18 +36,15 @@ class Exam extends MY_Seeker_Controller
                 $temp_array = array();
                foreach($job_test_topics as $topic_row)
                {
-                
-                   $tid = $topic_row['test_question_id']; //test topic primary key
-                   $topic_id = $topic_row['topic_id'];
-                   $level = $topic_row['test_level'];
-                   $no_ques = $topic_row['no_questions'];
+                    $topic_id = $topic_row['topic_id'];
+                    $level = $topic_row['test_level'];
+                    $no_ques = $topic_row['no_questions'];
                     
                     $where_topic="topic_id='$topic_id' AND level='$level' LIMIT $no_ques";
                     $questions = $this->Master_model->getMaster('questionbank',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit =false ,$start=false, $search=false);
-                  // echo $question_id = $questions[0]['ques_id'];
-                    
                     array_push($exam_question,$questions); //push all questions to store in json file
                }
+               // check for number of questions and fetch answer
                for($n=0;$n<sizeof($exam_question);$n++)
                {
                   $temp = $exam_question[$n];
@@ -62,13 +59,10 @@ class Exam extends MY_Seeker_Controller
                         array_push($temp_array, $temp[$n1]);
                     }
                }
-               echo "<pre>";
-               print_r($temp_array);
                
                // creating json file of all questions based on topic
                $fp = fopen('./exam_questions/'.$job_id.'_'.$jobseeker_id.'.json', 'w');
                fwrite($fp, json_encode($temp_array));
-               die;
 
             }else{
                
@@ -78,18 +72,30 @@ class Exam extends MY_Seeker_Controller
                 $skill_id = $data['skills']['skills_required'];
 
                 $where_req_skill="technical_id IN (".$skill_id.")";
-                $questions = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit=NUMBER_QUESTIONS,$start=false, $search=false);
-                foreach($questions as $qrow){}
-                $question_id = $qrow['ques_id'];
-                    //echo $this->db->last_query(); echo "<br><br>";
-                    // echo "<pre>";
-                    // print_r($data['questions']);
+                $exam_question = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit=NUMBER_QUESTIONS,$start=false, $search=false);
+                // foreach($questions as $qrow){}
+                // $question_id = $questions['ques_id'];
+                for($n=0;$n<sizeof($exam_question);$n++)
+                   {
+                      $temp = $exam_question[$n];
+                        for($n1=0;$n1<sizeof($temp);$n1++)
+                        {
+                            $individual_question=array();
+                            $question_id = $temp[$n1]['ques_id'];
+                            $wherechks = "question_id='$question_id'";
+                            $answer = $this->Master_model->getMaster('questionbank_answer',$wherechks);
+                            $temp[$n1]['answer']=$answer;
+                            $individual_question[]=$temp[$n1];
+                            array_push($temp_array, $temp[$n1]);
+                        }
+                   }
+                echo "<pre>";
+                print_r($temp_array);
                 $fp = fopen('./exam_questions/'.$job_id.'_'.$jobseeker_id.'.json', 'w');
-                fwrite($fp, json_encode($questions));
+                fwrite($fp, json_encode($temp_array));
 
-                $wherechks = "question_id='$question_id'";
-                $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
             }
+            die;
 
             $this->load->view('fontend/exam/exam_instruction',$data);
         } else {
