@@ -32,7 +32,7 @@
                   <form id="nextques" class="submit-form" action="#" method="post">
                     <div class="row">
                       <div class="col-md-12 col-sm-12">
-                        <?php print_r($questions['answer']); echo "<br>"; ?>
+                        <?php echo(count($questions['answer'])); echo "<br>"; ?>
                         <input type="hidden" name="job_id" id="job_id" value="<?php if(!empty($job_id))echo base64_encode($job_id); ?>">
                         <input type="hidden" name="question_id" id="question_id" value="<?php echo $questions['ques_id']; ?>">
                         <label><?php echo "Question:- ".$questions['question']; ?></label> 
