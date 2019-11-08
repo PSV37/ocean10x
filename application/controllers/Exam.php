@@ -152,7 +152,12 @@ class Exam extends MY_Seeker_Controller
         // print_r($data['questions']['answer']);
         for($q=0;$q<sizeof($data['questions']['answer']);$q++)
         {
-            echo $data['questions']['answer'][$q]['answer_id'];
+            $answer_id = $data['questions']['answer'][$q]['answer_id'];
+            $status = array();
+            for($i=0;$i<sizeof($option);$i++)
+            {
+                echo $option[$i];
+            }
         }
         // if($question_id == $data['questions']['ques_id'])
         // {
