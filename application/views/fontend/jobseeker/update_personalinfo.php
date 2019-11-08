@@ -1313,6 +1313,23 @@ function runit(){
 	          	</div>
 		        </div>
 		  </div>
+		  
+		  <div class="row">
+		   <div class="col-md-12">
+		  <div class="col-md-6 col-sm-12">         
+	              <div class="input-group">
+	                  <label class="control-label" for="email">Preferable Job Location:</label>
+					 
+	                  <input type="text" name="job_area" class="form-control" id="job_area" placeholder="Preferable Job Area"
+                   value="<?php
+                         if (!empty($job_career_info[0]->job_area)) {
+                           echo $job_career_info[0]->job_area;
+                           }
+                       ?>">
+	              </div>
+	          	</div>
+		  </div>
+		  </div>
 			
                <div class="modal-footer">
                	 
@@ -2216,3 +2233,34 @@ $(document).ready(function() {
          });
         });
 </script>
+
+
+ <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+  var BASE_URL = "<?php echo base_url(); ?>";
+ 
+ $(document).ready(function() {
+    $( "#job_area" ).autocomplete({
+ 
+        source: function(request, response) {
+            $.ajax({
+            url: BASE_URL + "job_seeker/search",
+            data: {
+                    term : request.term
+             },
+            dataType: "json",
+            success: function(data){
+               var resp = $.map(data,function(obj){
+                    return obj.city_name;
+               }); 
+ 
+               response(resp);
+            }
+        });
+    },
+    minLength: 1
+ });
+});
+ 
+</script>   
