@@ -139,7 +139,7 @@ class Exam extends MY_Seeker_Controller
         $data['job_id'] = $job_post_id;
         $question_id = $this->input->post('question_id');
         $option = $this->input->post('option');
-      
+        $status = array();
         $str = file_get_contents('./exam_questions/'.$job_post_id.'_'.$jobseeker_id.'.json');
 
         $json = json_decode($str, true);
@@ -157,7 +157,7 @@ class Exam extends MY_Seeker_Controller
             for($i=0;$i<sizeof($option);$i++)
             {
                 echo $option[$i]; echo "<br>";
-                if($$answer_id == $option[$i])
+                if($answer_id == $option[$i])
                 {
                     $status[]= 'Yes';
                 }else{
