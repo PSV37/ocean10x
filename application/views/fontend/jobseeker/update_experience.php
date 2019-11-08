@@ -34,10 +34,10 @@
                                     <td><?php echo $v_experience->department_name; ?></td>
                                   </tr>
 
-                                  <tr>
+                                 <!-- <tr>
                                     <td>Job Level:</td>
-                                    <td><?php echo $this->job_level_model->get_job_level_by_id( $v_experience->job_level); ?></td>
-                                  </tr>
+                                    <td><?php /* echo $this->job_level_model->get_job_level_by_id( $v_experience->job_level); */ ?></td>
+                                  </tr>-->
 
                                   <tr>
                                     <td>Duration:</td>
@@ -47,10 +47,10 @@
                                     
                                   </td>
                                   </tr>
-                                  <tr>
+                                  <!--<tr>
                                     <td>Address:</td>
                                      <td><?php echo $v_experience->address; ?></td>
-                                  </tr>
+                                  </tr>-->
                                 
                                 </tbody>
                               </table>
@@ -136,16 +136,16 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
                 </div>
               </div>
 
-              <div class="form-group">
+              <!--<div class="form-group">
                 <label class="control-label col-sm-3" for="email">Job Level</label>
                 <div class="col-sm-9">
                     <select name="job_level" class="form-control" id="job_level" >
-                       <?php
-echo $this->job_level_model->selected($experinece->job_level);
+                       <?php /*
+echo $this->job_level_model->selected($experinece->job_level); */
 ?>
                       </select>
                 </div>
-              </div>
+              </div>-->
 
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Department:</label>
@@ -161,20 +161,20 @@ echo $this->job_level_model->selected($experinece->job_level);
 
 
    <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Joining Date:</label>
+                <label class="control-label col-sm-3" for="email">Start Date:</label>
                 <div class="col-sm-9"><input class="datepicker form-control"  required name="start_date" value="<?php
 if (!empty($experinece->start_date)) {
     echo date('d-m-Y',strtotime($experinece->start_date));
 }
 ?>" class="form-control" >
- <label><input type="checkbox" id="upChkDisable_<?php echo $count?>" onclick="disableUpperDP('<?php echo $count?>')">  Continue</label>
+ <label><input type="checkbox" id="upChkDisable_<?php echo $count?>" onclick="disableUpperDP('<?php echo $count?>')">  Current Job</label>
 
                 </div>
               </div>
 
 
             <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Resignation Date:</label>
+                <label class="control-label col-sm-3" for="email">End Date:</label>
                 <div class="col-sm-9"><input id="resDate_<?php echo $count?>" class="datepicker form-control"  required name="end_date" value="<?php if (!empty($experinece->end_date)) { echo date('d/m/Y',strtotime($experinece->end_date)); }else{ echo "";} ?>" class="form-control" >
                  
                 </div>
@@ -182,9 +182,9 @@ if (!empty($experinece->start_date)) {
 
  
             <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">Address</label>
+                <label class="control-label col-sm-3" for="pwd">Job Location</label>
                 <div class="col-sm-9">
-                 <textarea name="address" class="form-control" rows="5" id="address"><?php 
+                 <textarea name="address" class="form-control" rows="5" id="job_area"><?php 
                          if (!empty($experinece->address)) {
                            echo $experinece->address;
                            }
@@ -200,31 +200,9 @@ if (!empty($experinece->start_date)) {
                        ?>">
                 </div>
               </div>
-				
-                <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">Achievement  </label>
-                <div class="col-sm-9">
-                 <textarea name="achievement" class="form-control" rows="5" id="achievement"><?php 
-                         if (!empty($experinece->achievement )) {
-                           echo $experinece->achievement ;
-                           }
-                       ?></textarea>
-                </div>
-              </div>
-
-                 <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">Major Activity</label>
-                <div class="col-sm-9">
-                 <textarea name="major_activity" class="form-control" rows="5" id="major_activity"><?php 
-                         if (!empty($experinece->major_activity)) {
-                           echo $experinece->major_activity;
-                           }
-                       ?></textarea>
-                </div>
-              </div>
-
-                <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">Responsibilities</label>
+			  
+			   <div class="form-group">
+                <label class="control-label col-sm-3" for="pwd">My Responsibilities</label>
                 <div class="col-sm-9">
                  <textarea name="responsibilities" class="form-control" rows="5" id="responsibilities"><?php 
                          if (!empty($experinece->responsibilities)) {
@@ -233,6 +211,29 @@ if (!empty($experinece->start_date)) {
                        ?></textarea>
                 </div>
               </div>
+			  
+				<div class="form-group">
+                <label class="control-label col-sm-3" for="pwd">My Achievement  </label>
+                <div class="col-sm-9">
+                 <textarea name="achievement" class="form-control" rows="5" id="achievement"><?php
+                         if (!empty($experinece->achievement )) {
+                           echo $experinece->achievement ;
+                           }
+                        ?></textarea>
+                </div>
+              </div>
+
+                <!-- <div class="form-group">
+                <label class="control-label col-sm-3" for="pwd">Major Activity</label>
+                <div class="col-sm-9">
+                 <textarea name="major_activity" class="form-control" rows="5" id="major_activity"><?php 
+                       /*  if (!empty($experinece->major_activity)) {
+                           echo $experinece->major_activity;
+                           }
+                    */   ?></textarea>
+                </div>
+              </div>-->
+
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                   <button type="submit" class="btn btn-primary">Submit</button>
@@ -280,7 +281,7 @@ if (!empty($experinece->start_date)) {
                 </div>
               </div>
 
-              <div class="form-group">
+              <!--<div class="form-group">
                 <label class="control-label col-sm-3" for="email">Job Level</label>
                 <div class="col-sm-9">
                     <select name="job_level" class="form-control" id="job_level">
@@ -288,7 +289,7 @@ if (!empty($experinece->start_date)) {
                        <?php echo $this->job_level_model->selected(); ?>
                       </select>
                 </div>
-              </div>
+              </div>-->
 
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Department:</label>
@@ -304,24 +305,24 @@ if (!empty($experinece->start_date)) {
               </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Joining Date</label>
+                <label class="control-label col-sm-3" for="email">Start Date</label>
                 <div class="col-sm-9">
                   <input type="text" class="form-control datepicker"  required id="start_date" name="start_date">
-                  <label><input type="checkbox" id="chkDisable" onclick="disableAddDP()">  Continue</label>
+                  <label><input type="checkbox" id="chkDisable" onclick="disableAddDP()">  Current Job</label>
                 </div>
               </div>
 
 
               <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Resignation Date</label>
+                <label class="control-label col-sm-3" for="email">End Date</label>
                 <div  class="col-sm-9"><input type="text" class="form-control datepicker"  required id="end_date" name="end_date">
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">Address</label>
+                <label class="control-label col-sm-3" for="pwd">Job Location</label>
                 <div class="col-sm-9">
-                 <textarea name="address" class="form-control" rows="5" id="address"></textarea>
+                 <input type="text" name="address" id="job_area" class="form-control">
                 </div>
               </div>
 			
@@ -333,27 +334,26 @@ if (!empty($experinece->start_date)) {
                 </div>
               </div>
 			
+			<div class="form-group">
+                <label class="control-label col-sm-3" for="pwd">My Responsibilities</label>
+                <div class="col-sm-9">
+                 <textarea name="responsibilities" class="form-control" rows="5" id="responsibilities"></textarea>
+                </div>
+              </div>
+			
                 <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">Achievement </label>
+                <label class="control-label col-sm-3" for="pwd">My Achievement </label>
                 <div class="col-sm-9">
                  <textarea name="achievement" class="form-control" rows="5" id="achievement"></textarea>
                 </div>
               </div>
 
-              <div class="form-group">
+              <!--<div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Major Activities</label>
                 <div class="col-sm-9">
                  <textarea name="major_activity" class="form-control" rows="5" id="major_activity"></textarea>
                 </div>
-              </div>
-
-
-                <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">Responsibilities</label>
-                <div class="col-sm-9">
-                 <textarea name="responsibilities" class="form-control" rows="5" id="responsibilities"></textarea>
-                </div>
-              </div>
+              </div>-->
 
           
            <div class="modal-footer">
@@ -577,9 +577,6 @@ for(var i =1; i < max_experience; i++){
       z-index: 1100;
   }
 </style>
-
-
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <script>
   var BASE_URL = "<?php echo base_url(); ?>";
