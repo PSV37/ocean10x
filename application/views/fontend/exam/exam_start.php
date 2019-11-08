@@ -32,16 +32,23 @@
                   <form id="nextques" class="submit-form" action="#" method="post">
                     <div class="row">
                       <div class="col-md-12 col-sm-12">
-                        <?php echo(count($questions['answer'])); echo "<br>"; ?>
+                        <?php $ans_cnt = count($questions['answer'])); echo "<br>"; 
+                          if($ans_cnt > 1)
+                          {
+                            $input_type='checkbox';
+                          }else{
+                            $input_type='radio';
+                          }
+                        ?>
                         <input type="hidden" name="job_id" id="job_id" value="<?php if(!empty($job_id))echo base64_encode($job_id); ?>">
                         <input type="hidden" name="question_id" id="question_id" value="<?php echo $questions['ques_id']; ?>">
                         <label><?php echo "Question:- ".$questions['question']; ?></label> 
                           <ul>
-                            <li><input type="radio" name="option[]" id="option1" value="1"><?php echo $questions['option1'];?></li>
-                            <li><input type="radio" name="option[]" id="option2" value="2"><?php echo $questions['option2'];?></li>
-                            <li><input type="radio" name="option[]" id="option3" value="3"><?php echo $questions['option3'];?></li>
-                            <li><input type="radio" name="option[]" id="option4" value="4"><?php echo $questions['option4'];?></li>
-                            <li><input type="radio" name="option[]" id="option5" value="5"><?php echo $questions['option5'];?></li>
+                            <li><input type="<?php echo $input_type; ?>" name="option[]" id="option1" value="1"><?php echo $questions['option1'];?></li>
+                            <li><input type="<?php echo $input_type; ?>" name="option[]" id="option2" value="2"><?php echo $questions['option2'];?></li>
+                            <li><input type="<?php echo $input_type; ?>" name="option[]" id="option3" value="3"><?php echo $questions['option3'];?></li>
+                            <li><input type="<?php echo $input_type; ?>" name="option[]" id="option4" value="4"><?php echo $questions['option4'];?></li>
+                            <li><input type="<?php echo $input_type; ?>" name="option[]" id="option5" value="5"><?php echo $questions['option5'];?></li>
                           </ul>
                            <button id="next" type="submit" class="btn btn-primary pull-right">Next</button>
                       </div>
