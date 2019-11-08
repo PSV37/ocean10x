@@ -49,12 +49,13 @@ class Exam extends MY_Seeker_Controller
                     
                     // 
                }
-
+ print_r($exam_question);echo "<br><br>";
                for($n=0;$n<sizeof($exam_question);$n++)
                {
-                    echo $question_id = $exam_question['ques_id'][$n];
+                
+                    echo $question_id = $exam_question['ques_id'];echo "<br><br>";
                     $wherechks = "question_id='$question_id'";
-                    $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
+                    $exam_question['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
                     echo $this->db->last_query(); echo "<br><br>";
                }
                die;
