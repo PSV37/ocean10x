@@ -148,7 +148,13 @@ class Exam extends MY_Seeker_Controller
            $data['questions'] = $value;
            break;
         }
-
+        if($question_id == $data['questions']['ques_id'])
+        {
+            echo "Yes";
+        }
+        else{
+            echo "No";
+        }
         print_r($data['questions']); die;
 
 
