@@ -470,11 +470,11 @@ exit;*/
     {
         if ($_POST) {
             $jobseeker_id = $this->session->userdata('job_seeker_id');
-            $js_career_id = $this->input->post('js_career_id');
             $js_skills = $this->input->post('skills');
-
+			print_r($js_skills);die();
             $career_info  = array(
 				'skills'               => $this->input->post('skills'),
+                
             );
             
             if (empty($js_career_id)) {
