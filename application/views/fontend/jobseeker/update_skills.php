@@ -10,13 +10,13 @@
           <div id="vsskills" class="tab-pane fade in">
             <div class="row">
               <div class="col-md-12">
-                <div class="container">
+                <div class="containe1r">
                   <?php $key = 1 ?>
                           <hr>
                   <h5>
                     Career Information
                    <a href="#" data-toggle="modal" data-target="#Updateskills" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>   
-                    <a href="<?php echo site_url('job_seeker//'.$job_career_info[0]->job_seeker_id.''); ?>" onclick="return confirm('Are you sure?');"  class="btn pull-right bg-red btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash" aria-hidden="true"></i></a>               
+                    <a href="<?php echo site_url('job_seeker/'.$job_career_info[0]->job_seeker_id.''); ?>" onclick="return confirm('Are you sure?');"  class="btn pull-right bg-red btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash" aria-hidden="true"></i></a>               
                   </h5>
                   <div class="table-responsive">          
                     <table class="table">
