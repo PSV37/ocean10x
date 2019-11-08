@@ -58,12 +58,12 @@ class Exam extends MY_Seeker_Controller
                   $temp = $exam_question[$n];
                     for($n1=0;$n1<sizeof($temp);$n1++)
                     {
-                        $inditidual_question=array();
+                        $individual_question=array();
                         $question_id = $temp[$n1]['ques_id'];
                         $wherechks = "question_id='$question_id'";
                         $answer = $this->Master_model->getMaster('questionbank_answer',$wherechks);
                         $temp[$n1]['answer']=$answer;
-                        $inditidual_question[]=$temp[$n1];
+                        $individual_question[]=$temp[$n1];
                         array_push($temp_array, $temp[$n1]);
                     }
                }
