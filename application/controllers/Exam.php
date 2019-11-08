@@ -22,18 +22,19 @@ class Exam extends MY_Seeker_Controller
     {   
         $jobseeker_id = $this->session->userdata('job_seeker_id');
         $job_id = base64_decode($id);
+
         if (!empty($job_id)) {
                  
             $data['title'] = 'Exam Instructions';
             $data['job_id'] = $job_id; 
-
+            $temp_array = array();
             //To get topics for exam questions
             $where_topic="job_id='$job_id'";
             $job_test_topics = $this->Master_model->getMaster('job_test_topics',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
             if($job_test_topics)
             {
                 $exam_question = array();
-                $temp_array = array();
+               
                foreach($job_test_topics as $topic_row)
                {
                     $topic_id = $topic_row['topic_id'];
@@ -79,7 +80,7 @@ class Exam extends MY_Seeker_Controller
                 for($n1=0;$n1<sizeof($exam_question);$n1++)
                 {
                     $individual_question=array();
-                    $question_id = $exam_question[$n1]['ques_id'];
+                   echo $question_id = $exam_question[$n1]['ques_id']; echo "<br>";
                     $wherechks = "question_id='$question_id'";
                     $answer = $this->Master_model->getMaster('questionbank_answer',$wherechks);
                     $exam_question[$n1]['answer']=$answer;
