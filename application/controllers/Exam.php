@@ -108,24 +108,29 @@ class Exam extends MY_Seeker_Controller
 
             $json = json_decode($str, true);
 
-            $data['question_id']        = $json[0]['ques_id'];
-            $data['technical_id']       = $json[0]['technical_id'];
-            $data['topic_id']           = $json[0]['topic_id'];
-            $data['subtopic_id']        = $json[0]['subtopic_id'];
-            $data['line_item_id']       = $json[0]['lineitem_id'];
-            $data['line_itemlevel_id']  = $json[0]['line_itemlevel_id'];
-            $data['level']              = $json[0]['level'];
-            $data['question']           = $json[0]['question'];
-            $data['option1']            = $json[0]['option1'];
-            $data['option2']            = $json[0]['option2'];
-            $data['option3']            = $json[0]['option3'];
-            $data['option4']            = $json[0]['option4'];
-            $data['option5']            = $json[0]['option5'];
+            foreach ($json  as $value) {
+               $tt = $value;
+               break;
+            }
+            print_r($tt);
+            // $data['question_id']        = $json[0]['ques_id'];
+            // $data['technical_id']       = $json[0]['technical_id'];
+            // $data['topic_id']           = $json[0]['topic_id'];
+            // $data['subtopic_id']        = $json[0]['subtopic_id'];
+            // $data['line_item_id']       = $json[0]['lineitem_id'];
+            // $data['line_itemlevel_id']  = $json[0]['line_itemlevel_id'];
+            // $data['level']              = $json[0]['level'];
+            // $data['question']           = $json[0]['question'];
+            // $data['option1']            = $json[0]['option1'];
+            // $data['option2']            = $json[0]['option2'];
+            // $data['option3']            = $json[0]['option3'];
+            // $data['option4']            = $json[0]['option4'];
+            // $data['option5']            = $json[0]['option5'];
           
           
-            echo $json[0]['answer']['answer_id'];
-            echo "<br><br>";
-            echo '<pre>' . print_r($json, true) . '</pre>';
+            // echo $json[0]['answer']['answer_id'];
+            // echo "<br><br>";
+            // echo '<pre>' . print_r($json, true) . '</pre>';
             die;
 
             $this->load->view('fontend/exam/exam_start',$data);
