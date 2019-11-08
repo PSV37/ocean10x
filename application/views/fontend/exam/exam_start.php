@@ -34,13 +34,13 @@
                       <div class="col-md-12 col-sm-12">
                         <?php 
 
-                          // print_r($questions);
-                          $sr_no=0;
-                          if(!empty($questions)) foreach($questions as $row){ 
-                            $sr_no++;
+                          print_r($questions);
+                          // $sr_no=0;
+                          // if(!empty($questions)) foreach($questions as $row){ 
+                          //   $sr_no++;
                         ?>
                         
-                        <input type="hidden" name="job_id" id="job_id" value="<?php if(!empty($job_id))echo base64_encode($job_id); ?>">
+                        <!-- <input type="hidden" name="job_id" id="job_id" value="<?php if(!empty($job_id))echo base64_encode($job_id); ?>">
                         <input type="hidden" name="question_id" id="question_id" value="<?php echo $row['ques_id']; ?>">
                         <label><?php echo "Question:- ".$row['question']; ?></label> 
                           <ul>
@@ -50,7 +50,7 @@
                             <li><input type="radio" name="option[]" id="option4" value="4"><?php echo $row['option4'];?></li>
                             <li><input type="radio" name="option[]" id="option5" value="5"><?php echo $row['option5'];?></li>
                            <button id="next" type="submit" class="btn btn-primary pull-right">Next</button>
-                        <?php } ?>
+                        <?php } ?> -->
                          
                       </div>
                     </div>
