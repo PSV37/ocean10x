@@ -397,26 +397,14 @@ exit;*/
         if ($_POST) {
             $jobseeker_id = $this->session->userdata('job_seeker_id');
             $js_career_id = $this->input->post('js_career_id');
-            $js_skills = $this->input->post('skills');
 
             $career_info  = array(
                 'job_seeker_id'        => $jobseeker_id,
-                'js_career_sum'        => $this->input->post('js_career_sum'),
 				'industry_id'        => $this->input->post('industry_id'),
-				'worktitle'        => $this->input->post('worktitle'),
-				'url'        => $this->input->post('url'),
-                'field_sepicalization' => $this->input->post('field_sepicalization'),
-                'extracurricular'      => $this->input->post('extracurricular'),
-                'js_career_salary'     => $this->input->post('js_career_salary'),
-                'avaliable'            => $this->input->post('avaliable'),
-				'skills'               => $this->input->post('skills'),
-                'duration_year'               => $this->input->post('duration_year'),
-				'duration_month'               => $this->input->post('duration_month'),
-				'duration_to_year'               => $this->input->post('duration_to_year'),
-				'duration_to_month'               => $this->input->post('duration_to_month'),
-				'currentlyworking'               => $this->input->post('currentlyworking'),
-                'job_area'             => $this->input->post('job_area'),
-                //'js_career_exp'        => $this->input->post('js_career_exp'),
+				'dept_id'        => $this->input->post('dept_id'),
+				'job_role'        => $this->input->post('job_role'),
+				
+				
             );
             
             if (empty($js_career_id)) {
@@ -426,29 +414,6 @@ exit;*/
             } else {
             	$this->Job_career_model->update($career_info, $js_career_id);
             }
-            
-            $where_del = "job_seeker_id='$jobseeker_id'";
-            $del = $this->Master_model->master_delete('job_seeker_skills',$where_del);
-            if($del==true)
-            {
-                if(!empty($js_skills)) {
-                $skill = explode(',', $js_skills);
-
-                for($k=0; $k<sizeof($skill); $k++)
-                    {
-                        $skill_array= array(
-                            'job_seeker_id' => $jobseeker_id,
-                            'skills'        => $skill[$k],
-                            'created_by'    => $jobseeker_id,
-                            'created_on'    => date('Y-m-d H:i:s'),
-                        );
-                        $this->Master_model->master_insert($skill_array,'job_seeker_skills');
-                    }
-                }
-                   
-            }
-     
-            redirect('job_seeker/seeker_info');
         } else {
             $jobseeker_id    = $this->session->userdata('job_seeker_id');
             $job_career_info = $this->Job_career_model->js_careerinfo_by_seeker($jobseeker_id);
