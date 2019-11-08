@@ -55,7 +55,7 @@ class Exam extends MY_Seeker_Controller
 
                for($n=0;$n<sizeof($exam_question);$n++)
                {
-                  echo "main_temp" $temp = $exam_question[0][$n];
+                  echo "main_temp" .$temp = $exam_question[0][$n];echo "<br><br>";
                     for($n1=0;$n1<sizeof($temp);$n1++)
                     {
                         echo $question_id = $temp[$n1]['ques_id'];echo "<br><br>";
