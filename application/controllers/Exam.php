@@ -63,8 +63,8 @@ class Exam extends MY_Seeker_Controller
                     {
                         $question_id = $temp[$n1]['ques_id'];
                         $wherechks = "question_id='$question_id'";
-                        $exam_question['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
-                        print_r($exam_question['ans']);
+                        $ques['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
+                        print_r($ques['ans'][0]['answer_id']);
                         echo $this->db->last_query(); echo "<br><br>";
                     }
                }
