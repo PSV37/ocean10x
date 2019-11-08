@@ -83,8 +83,8 @@ function delete_skills(id) {
                 <div class="col-sm-9">
                   <input type="text" name="skills" class="form-control" id="tokenfield" placeholder="Enter Your Skills"
                    value="<?php
-                          if (!empty($job_career_info[0]->skills)) {
-                           echo $job_career_info[0]->skills;
+                          if (!empty($js_skills[0]->skills)) {
+                           echo $js_skills[0]->skills;
                            }
                        ?>">
                   
