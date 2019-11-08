@@ -32,14 +32,7 @@
                   <form id="nextques" class="submit-form" action="#" method="post">
                     <div class="row">
                       <div class="col-md-12 col-sm-12">
-                        <?php 
-
-                          print_r($questions);
-                          // $sr_no=0;
-                          
-                          //   $sr_no++;
-                        ?>
-                        
+                        <?php echo(count($questions['answer'])); echo "<br>"; ?>
                         <input type="hidden" name="job_id" id="job_id" value="<?php if(!empty($job_id))echo base64_encode($job_id); ?>">
                         <input type="hidden" name="question_id" id="question_id" value="<?php echo $questions['ques_id']; ?>">
                         <label><?php echo "Question:- ".$questions['question']; ?></label> 
@@ -49,9 +42,8 @@
                             <li><input type="radio" name="option[]" id="option3" value="3"><?php echo $questions['option3'];?></li>
                             <li><input type="radio" name="option[]" id="option4" value="4"><?php echo $questions['option4'];?></li>
                             <li><input type="radio" name="option[]" id="option5" value="5"><?php echo $questions['option5'];?></li>
+                          </ul>
                            <button id="next" type="submit" class="btn btn-primary pull-right">Next</button>
-                       
-                         
                       </div>
                     </div>
                   </form>
