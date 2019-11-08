@@ -183,8 +183,8 @@ class Exam extends MY_Seeker_Controller
         $last_id = $this->Master_model->master_insert($exam_array, 'js_test_info');
         if($last_id)
         {
-            echo array_shift($data['questions'])."<br>";
-            print_r ($data['questions']);
+            echo array_shift($json)."<br>";
+            print_r ($json);
         }
         // if($question_id == $data['questions']['ques_id'])
         // {
