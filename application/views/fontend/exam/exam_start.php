@@ -131,5 +131,26 @@
       1000);
     }
 
-     
+
+
+  function fetchdata(){
+    var timer = $('#timer').val();
+    var job_id = $('#job_id').val();
+    $.ajax({
+      url: '<?php echo base_url();?>exam/insert_exam_session_data',
+      type: 'post',
+      data:{
+        timer:timer,job_id:job_id
+      },
+      success: function(response){
+       // Perform operation on the return value
+       alert(response);
+      }
+    });
+  }
+
+  $(document).ready(function(){
+   setInterval(fetchdata,5000);
+  });
+
   </script>
