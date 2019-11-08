@@ -366,7 +366,7 @@ function delete_Career(id) {
 
               });
               // to avoid duplications
-            $('#tokenfield').on('tokenfield:createtoken', function (event) {
+           $('#tokenfield').on('tokenfield:createtoken', function (event) {
                 var existingTokens = $(this).tokenfield('getTokens');
                 $.each(existingTokens, function(index, token) {
                     if (token.value === event.attrs.value)
