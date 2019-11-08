@@ -106,23 +106,24 @@ class Exam extends MY_Seeker_Controller
             $data['job_id'] = $job_id;
             $str = file_get_contents('./exam_questions/'.$job_id.'_'.$jobseeker_id.'.json');
 
-            $json = json_decode($str, true); // decode the JSON into an associative array
+            $json = json_decode($str, true);
 
-            // foreach ($json as $key => $value) {
-            //     if (!is_array($value)) {
-            //         echo $key . '=>' . $value . '<br/>';
-            //     } else {
-            //         foreach ($value as $key => $val) {
-            //             echo $key . '=>' . $val . '<br/>';
-            //         }
-            //     }
-            // }
-            // foreach ($json['answer'] as $field => $value) {
-            //     // Use $field and $value here
-            //      echo $field . '=>' . $value . '<br/>';
-            // }
-            echo $json[0]['ques_id']; echo "<br>";
-            echo $json[0]['question'];
+            $data['question_id']        = $json[0]['ques_id'];
+            $data['technical_id']       = $json[0]['technical_id'];
+            $data['topic_id']           = $json[0]['topic_id'];
+            $data['subtopic_id']        = $json[0]['subtopic_id'];
+            $data['line_item_id']       = $json[0]['lineitem_id'];
+            $data['line_itemlevel_id']  = $json[0]['line_itemlevel_id'];
+            $data['level']              = $json[0]['level'];
+            $data['question']           = $json[0]['question'];
+            $data['option1']            = $json[0]['option1'];
+            $data['option2']            = $json[0]['option2'];
+            $data['option3']            = $json[0]['option3'];
+            $data['option4']            = $json[0]['option4'];
+            $data['option5']            = $json[0]['option5'];
+          
+          
+            echo $json[0]['answer']['answer_id'];
             echo "<br><br>";
             echo '<pre>' . print_r($json, true) . '</pre>';
             die;
