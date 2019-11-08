@@ -112,11 +112,11 @@ class Exam extends MY_Seeker_Controller
                $data['questions'] = $value;
                break;
             }
-            print_r($data['questions']);
+            // print_r($data['questions']);
             // echo $json[0]['answer']['answer_id'];
             // echo "<br><br>";
             // echo '<pre>' . print_r($json, true) . '</pre>';
-            die;
+            // die;
 
             $this->load->view('fontend/exam/exam_start',$data);
             
