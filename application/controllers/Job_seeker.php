@@ -456,6 +456,66 @@ exit;*/
             $this->load->view('fontend/jobseeker/update_career', compact('job_career_info', 'worktill', 'employe_jobtype'));
         }
     }
+	
+	
+	 public function delete_skills($job_seeker_id)
+    {
+       $this->Job_career_model->delete_skills($job_seeker_id);
+        redirect('job_seeker/seeker_info');
+    }
+	
+	
+	
+	public function update_skills()
+    {
+        if ($_POST) {
+            $jobseeker_id = $this->session->userdata('job_seeker_id');
+            $js_career_id = $this->input->post('js_career_id');
+            $js_skills = $this->input->post('skills');
+
+            $skills_info  = array(
+				'skills'               => $this->input->post('skills'),
+                //'js_career_exp'        => $this->input->post('js_career_exp'),
+            );
+            
+            if (empty($js_career_id)) {
+                $ins_id = $this->Job_career_model->insert($skills_info);
+               
+                redirect('job_seeker/seeker_info');
+            } else {
+            	$this->Job_career_model->update($skills_info, $js_career_id);
+            }
+            
+            $where_del = "job_seeker_id='$jobseeker_id'";
+            $del = $this->Master_model->master_delete('job_seeker_skills',$where_del);
+            if($del==true)
+            {
+                if(!empty($js_skills)) {
+                $skill = explode(',', $js_skills);
+
+                for($k=0; $k<sizeof($skill); $k++)
+                    {
+                        $skill_array= array(
+                            'job_seeker_id' => $jobseeker_id,
+                            'skills'        => $skill[$k],
+                            'created_by'    => $jobseeker_id,
+                            'created_on'    => date('Y-m-d H:i:s'),
+                        );
+                        $this->Master_model->master_insert($skill_array,'job_seeker_skills');
+                    }
+                }
+                   
+            }
+     
+            redirect('job_seeker/seeker_info');
+        } else {
+            $jobseeker_id    = $this->session->userdata('job_seeker_id');
+            $job_career_info = $this->Job_career_model->js_careerinfo_by_seeker($jobseeker_id);
+			
+            $this->load->view('fontend/jobseeker/update_skills', compact('job_career_info'));
+        }
+    }
+	
 
     public function update_reference()
     {

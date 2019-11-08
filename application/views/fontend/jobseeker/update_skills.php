@@ -15,8 +15,8 @@
                           <hr>
                   <h5>
                     Career Information
-                   <a href="#" data-toggle="modal" data-target="#UpdateCareer" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>   
-                    <a href="<?php echo site_url('job_seeker/delete_career/'.$job_career_info[0]->job_seeker_id.''); ?>" onclick="return confirm('Are you sure?');"  class="btn pull-right bg-red btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash" aria-hidden="true"></i></a>               
+                   <a href="#" data-toggle="modal" data-target="#Upddelete_careerateCareer" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>   
+                    <a href="<?php echo site_url('job_seeker//'.$job_career_info[0]->job_seeker_id.''); ?>" onclick="return confirm('Are you sure?');"  class="btn pull-right bg-red btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash" aria-hidden="true"></i></a>               
                   </h5>
                   <div class="table-responsive">          
                     <table class="table">
@@ -44,7 +44,7 @@
 </div><!-- end section -->
  
 <script>
-function delete_Career(id) {
+function delete_skills(id) {
     if (confirm('Are you sure you want to Delete Career ?')) {
 //   window.location.href = "<?php echo site_url('job_seeker/delete_career/'); ?>";
 
