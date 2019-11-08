@@ -47,12 +47,7 @@ class Exam extends MY_Seeker_Controller
                   // echo $question_id = $questions[0]['ques_id'];
                     
                     array_push($exam_question,$questions); //push all questions to store in json file
-                    
-                    // 
                }
-               // echo "<pre>";
-               // print_r($exam_question);echo "<br><br>";
-
                for($n=0;$n<sizeof($exam_question);$n++)
                {
                   $temp = $exam_question[$n];
@@ -72,7 +67,7 @@ class Exam extends MY_Seeker_Controller
                die;
                // creating json file of all questions based on topic
                $fp = fopen('./exam_questions/'.$job_id.'_'.$jobseeker_id.'.json', 'w');
-               fwrite($fp, json_encode($exam_question));
+               fwrite($fp, json_encode($temp_array));
 
             }else{
                
