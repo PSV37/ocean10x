@@ -14,7 +14,7 @@
                   <?php $key = 1 ?>
                           <hr>
                   <h5>
-                    Career Information
+                    Skills
                    <a href="#" data-toggle="modal" data-target="#Updateskills" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>   
                     <a href="<?php echo site_url('job_seeker/'.$job_career_info[0]->job_seeker_id.''); ?>" onclick="return confirm('Are you sure?');"  class="btn pull-right bg-red btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash" aria-hidden="true"></i></a>               
                   </h5>
@@ -24,8 +24,18 @@
                       <tbody>
   		  	              <tr>
                           <td width="30%">Skills:</td>
-                          <td><?php  if(!empty($job_career_info[0]->skills))
-                                  echo $job_career_info[0]->skills;
+                          <td><?php  
+						  if(!empty($js_skills)){
+							  $skill="";
+							  for($i=0;$i<sizeof($js_skills);$i++){
+								  if($i==0){
+								  $skill=$skill+$js_skills[$i]['skills'];
+								  }else{
+									  $skill=$skill+','+$js_skills[$i]['skills'];
+								  }
+							  }
+							  echo $skill;
+						  }
                            ?></td>
                        </tr>
                       </tbody>

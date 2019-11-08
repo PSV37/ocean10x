@@ -504,10 +504,11 @@ exit;*/
             redirect('job_seeker/seeker_info');
         } else {
             $jobseeker_id    = $this->session->userdata('job_seeker_id');
-            $job_career_info = $this->Job_career_model->js_careerinfo_by_seeker($jobseeker_id);
-			$worktill = $this->Master_model->getMaster('worktill',$where=false);
-			$employe_jobtype = $this->Master_model->getMaster('employe_jobtype',$where=false);
-            $this->load->view('fontend/jobseeker/update_skills', compact('job_career_info', 'worktill', 'employe_jobtype'));
+           // $job_career_info = $this->Job_career_model->js_careerinfo_by_seeker($jobseeker_id);
+			//$worktill = $this->Master_model->getMaster('worktill',$where=false);
+			$where_skill['job_seeker_id']=$jobseeker_id;
+			$js_skills = $this->Master_model->getMaster('job_seeker_skills',$where_skill);
+            $this->load->view('fontend/jobseeker/update_skills', compact('js_skills'));
         }
     }
 	
