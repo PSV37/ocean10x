@@ -10,7 +10,7 @@
           <div id="vsskills" class="tab-pane fade in">
             <div class="row">
               <div class="col-md-12">
-                <div class="container">
+                <div class="containe1r">
                   <?php $key = 1 ?>
                           <hr>
                   <h5>
