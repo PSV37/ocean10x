@@ -104,6 +104,11 @@ class Exam extends MY_Seeker_Controller
                  
             $data['title'] = 'Exam Start';
             $data['job_id'] = $job_id;
+            $str = file_get_contents('./exam_questions/'.$job_id.'_'.$jobseeker_id.'.json');
+
+            $json = json_decode($str, true); // decode the JSON into an associative array
+
+            echo '<pre>' . print_r($json, true) . '</pre>';die;
 
             $this->load->view('fontend/exam/exam_start',$data);
             
