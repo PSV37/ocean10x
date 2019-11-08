@@ -309,22 +309,16 @@ if (!empty($experinece->start_date)) {
                 </div>
               </div>
 
-              <!--<div class="form-group">
+              <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Address</label>
                 <div class="col-sm-9">
                  <textarea name="address" class="form-control" rows="5" id="address"></textarea>
                 </div>
-              </div>-->
-			
-			 <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Preferable Job Location:</label>
-                <div class="col-sm-9">
-                  <input type="text" name="address" class="form-control" id="job_area" placeholder="Preferable Job Area">
-                </div>
               </div>
 			
+			
 			 <div class="form-group">
-                <label class="control-label col-sm-3" for="email"> Expected Salary:</label>
+                <label class="control-label col-sm-3" for="email">Salary:</label>
                 <div class="col-sm-9">
                   <input type="text" name="js_career_salary" class="form-control" id="js_career_salary" placeholder="Expected Salary">
                 </div>
