@@ -202,7 +202,7 @@ if (!empty($experinece->start_date)) {
 				<div class="form-group">
                 <label class="control-label col-sm-3" for="email">Salary:</label>
                 <div class="col-sm-9">
-                  <input type="text" name="js_career_salary" class="form-control" id="js_career_salary" placeholder="Expected Salary" value="<?php if (!empty($experinece->js_career_salary)) {
+                  <input type="text" name="js_career_salary" class="form-control" id="js_career_salary" placeholder="Salary" value="<?php if (!empty($experinece->js_career_salary)) {
                            echo $experinece->js_career_salary;
                            }
                        ?>">
