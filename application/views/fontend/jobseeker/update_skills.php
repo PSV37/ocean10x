@@ -15,7 +15,7 @@
                           <hr>
                   <h5>
                     Career Information
-                   <a href="#" data-toggle="modal" data-target="#Upddelete_careerateCareer" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>   
+                   <a href="#" data-toggle="modal" data-target="#Updateskills" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>   
                     <a href="<?php echo site_url('job_seeker//'.$job_career_info[0]->job_seeker_id.''); ?>" onclick="return confirm('Are you sure?');"  class="btn pull-right bg-red btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash" aria-hidden="true"></i></a>               
                   </h5>
                   <div class="table-responsive">          
@@ -55,7 +55,7 @@ function delete_career(id) {
 
 
 <!-- Modal -->
-<div id="UpdateCareer" class="modal fade" role="dialog">
+<div id="Updateskills" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
     <!-- Modal content-->
