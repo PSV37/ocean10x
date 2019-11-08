@@ -92,7 +92,7 @@
 
                                    if($is_exam_required['is_test_required'] =='Yes')
                                     {
-                                      if($applicaiton->is_test_done == 0)
+                                      if($applicaiton->is_test_done == 0 || $applicaiton->is_test_done == 2)
                                       { 
                                   ?>
                                       <a href="<?php echo base_url(); ?>exam/index/<?php echo base64_encode($applicaiton->job_post_id); ?>" class="btn btn-success btn-xs">Give Exam</a>
@@ -156,7 +156,7 @@
                                   <td>
                                     <?php
 
-                                      if($forward_applicaiton->apply_status == 0)
+                                      if($forward_applicaiton->apply_status == 0 || $forward_applicaiton->is_test_done == 2)
                                         { 
                                     ?>
                                         <span class="label label-warning"><?php echo 'Not Sorted' ?></span>
