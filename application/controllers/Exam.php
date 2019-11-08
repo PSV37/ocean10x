@@ -184,7 +184,7 @@ class Exam extends MY_Seeker_Controller
         if($last_id)
         {
             array_shift($json); // remove completed element from json array
-          // update json file with remaining questions
+           // update json file with remaining questions
            $fp = fopen('./exam_questions/'.$job_post_id.'_'.$jobseeker_id.'.json', 'w');
            fwrite($fp, json_encode($json));
 
@@ -197,7 +197,7 @@ class Exam extends MY_Seeker_Controller
                break;
             }
             // print_r($data['questions']);
-
+            echo count($new_json); die;
             if(count($new_json) > 1 )
             {
                 $this->load->view('fontend/exam/exam_next_question',$data);
@@ -213,95 +213,6 @@ class Exam extends MY_Seeker_Controller
                 $this->load->view('fontend/exam/exam_success');
             }
         }
-        
-        die;
-
-
-
-
-
-
-
-        $wherechk = "job_id='$job_post_id' AND question_id='$question_id' AND js_id='$jobseeker_id'";
-        $testdata= $this->Master_model->master_get_num_rows('js_test_info', $wherechk, $like = false, $join=false, $select = false);
-
-        if($testdata == 0){
-            $status = array();
-            for($i=0;$i<sizeof($option);$i++)
-            {
-                $where_queans = "question_id='$question_id' AND answer_id='$option[$i]'";
-                $test_ans_data= $this->Master_model->getMaster('questionbank_answer', $where_queans, $like = false, $join=false, $select = false);
-                if($test_ans_data == true)
-                {
-                    $status[]= 'Yes';
-                }else{
-                    $status[]= 'No';
-                }
-            }
-            if (count(array_unique($status)) === 1 && end($status) === 'Yes') {
-                $mark=1;
-                $cstatus = 'Yes';
-            }else {
-                $mark =0;
-                $cstatus = 'No';
-            } 
-            
-                $exam_array = array(
-                    'job_id'            => $job_post_id,
-                    'js_id'             => $jobseeker_id,  
-                    'question_id'       => $question_id,
-                    'marks'             => $mark,
-                    'correct_status'    => $cstatus,
-                    'date_time'         => date('Y-m-d H:i:s'),
-                );
-
-                $last_id = $this->Master_model->master_insert($exam_array, 'js_test_info');
-            
-            // check for next questions
-            $whereskill = "job_post_id='$job_post_id'";
-            $data['skills'] = $this->Master_model->get_master_row('job_posting', $select ='skills_required' , $whereskill, $join = FALSE);
-            $skill_id = $data['skills']['skills_required'];
-
-            $where_que = "job_id='$job_post_id' AND js_id='$jobseeker_id' ";
-            $test_data= $this->Master_model->getMaster('js_test_info', $where_que, $like = false, $join=false, $select = false);
-            $tested_question=array();
-            foreach($test_data as $row_test)
-            {
-                $qus = $row_test['question_id'];
-                array_push($tested_question,$qus);
-            }
-
-            $where_req_skill="technical_id IN (".$skill_id.") AND ques_id not in(".implode(',',$tested_question).")";
-            $data['questions'] = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit='1',$start=false, $search=false);
-            $ques_id = $data['questions'][0]['ques_id'];
-
-            $wherechks = "question_id='$ques_id'";
-            $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);    
-                
-            $where_last = "job_id='$job_post_id' AND js_id='$jobseeker_id'";
-            $data['last_count']= $this->Master_model->getList($condition, $field_by, $order_by, $offset, $perpage, 'js_test_info', $search, $join = FALSE, $where_last, $select = FALSE, $distinct = FALSE, $group_by = 'question_id');
-           
-            if(count($data['last_count']) < NUMBER_QUESTIONS )
-            {
-                $this->load->view('fontend/exam/exam_next_question',$data);
-            }else{
-
-                $attend_array = array(
-                    'is_test_done' => '1',
-                );
-                $where['job_seeker_id'] = $jobseeker_id;
-                $where['job_post_id'] = $job_post_id;
-                $this->Master_model->master_update($attend_array,'job_apply',$where);
-                // echo $this->db->last_query(); die;
-                $this->load->view('fontend/exam/exam_success');
-            }
-           
-
-        }else{
-            echo "attempted Question";
-        }
-        
-
        
 
     }
