@@ -60,12 +60,12 @@
                                    ?></td>
                                 </tr>
 
-                                <tr>
+                                <!--<tr>
                                   <td width="30%">Skills:</td>
-                                  <td><?php if(!empty($job_career_info[0]->skills))
+                                  <td><?php /* if(!empty($job_career_info[0]->skills))
                                           echo $job_career_info[0]->skills;
-                                   ?></td>
-                                </tr>
+                                  */ ?></td>
+                                </tr>-->
 
 
 
@@ -179,18 +179,18 @@ function delete_Career(id) {
                 </div>
               </div>
 
-              <div class="form-group">
+              <!--<div class="form-group">
                 <label class="control-label col-sm-3" for="email">Skills:</label>
                 <div class="col-sm-9">
                   <input type="text" name="skills" class="form-control" id="tokenfield" placeholder="Enter Your Skills"
                    value="<?php
-                         if (!empty($job_career_info[0]->skills)) {
+                         /* if (!empty($job_career_info[0]->skills)) {
                            echo $job_career_info[0]->skills;
                            }
-                       ?>">
+                       */ ?>">
                   
                 </div>
-              </div>
+              </div>-->
       
 
                <div class="form-group">
