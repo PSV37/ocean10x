@@ -2139,32 +2139,7 @@ $(document).ready(function(){
   .datepicker{z-index:1151 !important;}
 </style> 
 
-<script>
-  var BASE_URL = "<?php echo base_url(); ?>";
- 
- $(document).ready(function() {
-    $( "#seeker_pincode" ).autocomplete({
- 
-        source: function(request, response) {
-            $.ajax({
-            url: BASE_URL + "employer/search",
-            data: {
-                    term : request.term
-             },
-            dataType: "json",
-            success: function(data){
-               var resp = $.map(data,function(obj){
-                    return obj.pincode;
-               }); 
- 
-               response(resp);
-            }
-        });
-    },
-    minLength: 1
- });
-});
-</script>
+
 
 <script>        
            function phoneno(){          
