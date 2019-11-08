@@ -155,37 +155,37 @@ class Exam extends MY_Seeker_Controller
             
             for($i=0;$i<sizeof($option);$i++)
             {   
-                echo $option[$i]; echo "<br>";
-                echo $answer_id;
                 if($answer_id == $option[$i])
                 {
-                    echo $status[]= 'Yes';
+                     $status[]= 'Yes';
                 }else{
-                    echo $status[]= 'No';
+                     $status[]= 'No';
                 }
             }
             
         }
         if (count(array_unique($status)) === 1 && end($status) === 'Yes') {
-            echo $mark=1;
+            $mark=1;
             $cstatus = 'Yes';
         }else {
-            echo $mark =0;
+            $mark =0;
             $cstatus = 'No';
         } 
       
-        // $exam_array = array(
-        //     'job_id'            => $job_post_id,
-        //     'js_id'             => $jobseeker_id,  
-        //     'question_id'       => $question_id,
-        //     'marks'             => $mark,
-        //     'correct_status'    => $cstatus,
-        //     'date_time'         => date('Y-m-d H:i:s'),
-        // );
-
-        // $last_id = $this->Master_model->master_insert($exam_array, 'js_test_info');
-            
-
+        $exam_array = array(
+            'job_id'            => $job_post_id,
+            'js_id'             => $jobseeker_id,  
+            'question_id'       => $question_id,
+            'marks'             => $mark,
+            'correct_status'    => $cstatus,
+            'date_time'         => date('Y-m-d H:i:s'),
+        );
+        $last_id = $this->Master_model->master_insert($exam_array, 'js_test_info');
+        if($last_id)
+        {
+            echo array_shift($data['questions'])."<br>";
+            print_r ($data['questions']);
+        }
         // if($question_id == $data['questions']['ques_id'])
         // {
         //     echo "Yes";
