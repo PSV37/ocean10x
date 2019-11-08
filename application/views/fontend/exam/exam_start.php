@@ -36,7 +36,7 @@
 
                           print_r($questions);
                           // $sr_no=0;
-                          // if(!empty($questions)) foreach($questions as $row){ 
+                          
                           //   $sr_no++;
                         ?>
                         
@@ -50,7 +50,7 @@
                             <li><input type="radio" name="option[]" id="option4" value="4"><?php echo $row['option4'];?></li>
                             <li><input type="radio" name="option[]" id="option5" value="5"><?php echo $row['option5'];?></li>
                            <button id="next" type="submit" class="btn btn-primary pull-right">Next</button>
-                        <?php } ?> -->
+                        -->
                          
                       </div>
                     </div>
