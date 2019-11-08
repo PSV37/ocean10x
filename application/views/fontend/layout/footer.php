@@ -177,10 +177,10 @@ function readURL2(input) {
 <script src="<?php echo base_url() ?>fontend/js/map-upload.js "></script> 
 <script src="<?php echo base_url(); ?>asset/js/plugins/dataTables/jquery.dataTables.js" type="text/javascript"></script> 
 <script src="<?php echo base_url(); ?>asset/js/plugins/dataTables/dataTables.bootstrap.js" type="text/javascript"></script> 
-<!--<script src="<?php echo base_url() ?>asset/js/jquery-ui.js"></script> -->
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="<?php echo base_url() ?>asset/js/jquery-ui.js"></script>
 <script src="<?php echo base_url() ?>asset/tokenjs/bootstrap-tokenfield.js"></script> 
 <script src="<?php echo base_url() ?>asset/tokenjs/typeahead.bundle.min.js"></script> 
+<script src="<?php echo base_url() ?>asset/js/search.js""></script>
 
 <script>
 
