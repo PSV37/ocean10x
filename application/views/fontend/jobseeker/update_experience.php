@@ -184,11 +184,11 @@ if (!empty($experinece->start_date)) {
             <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Job Location</label>
                 <div class="col-sm-9">
-                 <textarea name="address" class="form-control" rows="5" id="job_area"><?php 
+                 <input type="text" name="address" class="form-control" id="job_area" value="<?php 
                          if (!empty($experinece->address)) {
                            echo $experinece->address;
                            }
-                       ?></textarea>
+                       ?>">
                 </div>
               </div>
 				<div class="form-group">
