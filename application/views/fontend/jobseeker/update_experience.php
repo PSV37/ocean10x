@@ -51,7 +51,15 @@
                                     <td>Address:</td>
                                      <td><?php echo $v_experience->address; ?></td>
                                   </tr>-->
-                                
+									<tr>
+                                    <td>My Responsibilities:</td>
+                                    <td><?php echo $v_experience->responsibilities ; ?></td>
+                                  </tr>
+								  
+								   <tr>
+                                    <td>My Achievement:</td>
+                                    <td><?php  echo $v_experience->achievement ; ?></td>
+                                  </tr>
                                 </tbody>
                               </table>
                               </div>
