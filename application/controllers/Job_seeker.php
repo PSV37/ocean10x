@@ -473,17 +473,21 @@ exit;*/
             $js_career_id = $this->input->post('js_career_id');
             $js_skills = $this->input->post('skills');
 
-            $skills_info  = array(
+            $career_info  = array(
+                'job_seeker_id'        => $jobseeker_id,
+                
+				
 				'skills'               => $this->input->post('skills'),
-                //'js_career_exp'        => $this->input->post('js_career_exp'),
+                
+               
             );
             
             if (empty($js_career_id)) {
-                $ins_id = $this->Job_career_model->insert($skills_info);
+                $ins_id = $this->Job_career_model->insert($career_info);
                
                 redirect('job_seeker/seeker_info');
             } else {
-            	$this->Job_career_model->update($skills_info, $js_career_id);
+            	$this->Job_career_model->update($career_info, $js_career_id);
             }
             
             $where_del = "job_seeker_id='$jobseeker_id'";
@@ -511,8 +515,9 @@ exit;*/
         } else {
             $jobseeker_id    = $this->session->userdata('job_seeker_id');
             $job_career_info = $this->Job_career_model->js_careerinfo_by_seeker($jobseeker_id);
-			
-            $this->load->view('fontend/jobseeker/update_skills', compact('job_career_info'));
+			$worktill = $this->Master_model->getMaster('worktill',$where=false);
+			$employe_jobtype = $this->Master_model->getMaster('employe_jobtype',$where=false);
+            $this->load->view('fontend/jobseeker/update_skills', compact('job_career_info', 'worktill', 'employe_jobtype'));
         }
     }
 	

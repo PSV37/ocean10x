@@ -10,7 +10,7 @@
           <div id="vsskills" class="tab-pane fade in">
             <div class="row">
               <div class="col-md-12">
-                <div class="containe1r">
+                <div class="container">
                   <?php $key = 1 ?>
                           <hr>
                   <h5>
@@ -44,7 +44,7 @@
 </div><!-- end section -->
  
 <script>
-function delete_career(id) {
+function delete_skills(id) {
     if (confirm('Are you sure you want to Delete Career ?')) {
 //   window.location.href = "<?php echo site_url('job_seeker/delete_career/'); ?>";
 
