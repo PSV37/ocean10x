@@ -33,6 +33,7 @@ class Exam extends MY_Seeker_Controller
             if($job_test_topics)
             {
                 $exam_question = array();
+                $temp_array = array();
                foreach($job_test_topics as $topic_row)
                {
                 
@@ -51,13 +52,17 @@ class Exam extends MY_Seeker_Controller
                }
                echo "<pre>";
  print_r($exam_question);echo "<br><br>";
+
                for($n=0;$n<sizeof($exam_question);$n++)
                {
-                    
-                    echo $question_id = $exam_question[0][$n]['ques_id'];echo "<br><br>";
-                    $wherechks = "question_id='$question_id'";
-                    $exam_question['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
-                    echo $this->db->last_query(); echo "<br><br>";
+                  echo "main_temp" $temp = $exam_question[0][$n];
+                    for($n1=0;$n1<sizeof($temp);$n1++)
+                    {
+                        echo $question_id = $temp[$n1]['ques_id'];echo "<br><br>";
+                        // $wherechks = "question_id='$question_id'";
+                        // $exam_question['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
+                        // echo $this->db->last_query(); echo "<br><br>";
+                    }
                }
                die;
                // creating json file of all questions based on topic
