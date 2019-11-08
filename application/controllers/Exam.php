@@ -111,18 +111,16 @@ class Exam extends MY_Seeker_Controller
             $where_start['job_seeker_id'] = $jobseeker_id;
             $where_start['job_post_id']   = $job_id;
             $start_status = $this->Master_model->master_update($start_array,'job_apply',$where_start);
-           // if($start_status)
-           // {
-                $str = file_get_contents('./exam_questions/'.$job_id.'_'.$jobseeker_id.'.json');
-                $json = json_decode($str, true);
+    
+            $str = file_get_contents('./exam_questions/'.$job_id.'_'.$jobseeker_id.'.json');
+            $json = json_decode($str, true);
 
-                foreach ($json  as $value) {
-                   $data['questions'] = $value;
-                   break;
-                }
-                
-                $this->load->view('fontend/exam/exam_start',$data);
-           // }
+            foreach ($json  as $value) {
+               $data['questions'] = $value;
+               break;
+            }
+            
+            $this->load->view('fontend/exam/exam_start',$data);
 
         } else {
             redirect('exam');
@@ -199,7 +197,7 @@ class Exam extends MY_Seeker_Controller
             {
                 $this->load->view('fontend/exam/exam_next_question',$data);
             }else{
-
+                unlink('./exam_questions/'.$job_post_id.'_'.$jobseeker_id.'.json');
                 $attend_array = array(
                     'is_test_done' => '1',
                 );
