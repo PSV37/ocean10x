@@ -183,20 +183,23 @@ class Exam extends MY_Seeker_Controller
         $last_id = $this->Master_model->master_insert($exam_array, 'js_test_info');
         if($last_id)
         {
-            echo array_shift($json)."<br>";
-            print_r ($json);
+            array_shift($json); // remove completed element from json array
+           // print_r ($json);
+          // update json file with remaining questions
+           $fp = fopen('./exam_questions/'.$job_post_id.'_'.$jobseeker_id.'.json', 'w');
+           fwrite($fp, json_encode($json));
+
+           $new_str = file_get_contents('./exam_questions/'.$job_post_id.'_'.$jobseeker_id.'.json');
+
+            $new_json = json_decode($new_str, true);
+
+            foreach ($new_json  as $value) {
+               $data['questions'] = $value;
+               break;
+            }
+            print_r($data['questions']);
         }
-        // if($question_id == $data['questions']['ques_id'])
-        // {
-        //     echo "Yes";
-            //unset($data['questions']['ques_id']);
-//             echo array_shift($a)."<br>";
-// print_r ($a);
-        // }
-        // else{
-        //     echo "No";
-        // }
-        // print_r($data['questions']); 
+        
         die;
 
 
