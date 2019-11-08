@@ -65,7 +65,7 @@ function delete_career(id) {
         <h4 class="modal-title">Update Skill's</h4>
       </div>
       <div class="modal-body">
-         <form id="Career-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_career');?>" method="post" style="padding: 30px;">
+         <form id="Career-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_skills');?>" method="post" style="padding: 30px;">
 				
 				<div class="form-group">
                 <label class="control-label col-sm-3" for="email">Skills:</label>
