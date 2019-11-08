@@ -32,13 +32,13 @@
                   <form id="nextques" class="submit-form" action="#" method="post">
                     <div class="row">
                       <div class="col-md-12 col-sm-12">
-                        <?php $ans_cnt = count($questions['answer'])); echo "<br>"; 
-                          if($ans_cnt > 1)
-                          {
-                            $input_type='checkbox';
-                          }else{
-                            $input_type='radio';
-                          }
+                        <?php 
+                          $ans_cnt = count($questions['answer']);
+                            if($ans_cnt > 1){
+                              $input_type='checkbox';
+                            }else{
+                              $input_type='radio';
+                            }
                         ?>
                         <input type="hidden" name="job_id" id="job_id" value="<?php if(!empty($job_id))echo base64_encode($job_id); ?>">
                         <input type="hidden" name="question_id" id="question_id" value="<?php echo $questions['ques_id']; ?>">
