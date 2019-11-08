@@ -75,20 +75,18 @@ class Exam extends MY_Seeker_Controller
                 $exam_question = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit=NUMBER_QUESTIONS,$start=false, $search=false);
                 // foreach($questions as $qrow){}
                 // $question_id = $questions['ques_id'];
-                for($n=0;$n<sizeof($exam_question);$n++)
-                   {
-                      $temp = $exam_question[$n];
-                        for($n1=0;$n1<sizeof($temp);$n1++)
-                        {
-                            $individual_question=array();
-                            $question_id = $temp[$n1]['ques_id'];
-                            $wherechks = "question_id='$question_id'";
-                            $answer = $this->Master_model->getMaster('questionbank_answer',$wherechks);
-                            $temp[$n1]['answer']=$answer;
-                            $individual_question[]=$temp[$n1];
-                            array_push($temp_array, $temp[$n1]);
-                        }
-                   }
+                
+                for($n1=0;$n1<sizeof($exam_question);$n1++)
+                {
+                    $individual_question=array();
+                    $question_id = $exam_question[$n1]['ques_id'];
+                    $wherechks = "question_id='$question_id'";
+                    $answer = $this->Master_model->getMaster('questionbank_answer',$wherechks);
+                    $exam_question[$n1]['answer']=$answer;
+                    $individual_question[]=$exam_question[$n1];
+                    array_push($temp_array, $exam_question[$n1]);
+                }
+                   
                 echo "<pre>";
                 print_r($temp_array);
                 $fp = fopen('./exam_questions/'.$job_id.'_'.$jobseeker_id.'.json', 'w');
