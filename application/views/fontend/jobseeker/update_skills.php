@@ -82,11 +82,20 @@ function delete_skills(id) {
                 <label class="control-label col-sm-3" for="email">Skills:</label>
                 <div class="col-sm-9">
                   <input type="text" name="skills" class="form-control" id="tokenfield" placeholder="Enter Your Skills"
-                   value="<?php
-                          if (!empty($js_skills[0]->skills)) {
-                           echo $js_skills[0]->skills;
-                           }
-                       ?>">
+                   value="<?php  
+
+						  if(!empty($js_skills)){
+							  $skill="";
+							  for($i=0;$i<sizeof($js_skills);$i++){
+								  if($i==0){
+									$skill=$skill.$js_skills[$i]['skills'];
+								  }else{
+									  $skill=$skill.','.$js_skills[$i]['skills'];
+								  }
+							  }
+							  echo $skill;
+						  }
+                           ?>">
                   
                 </div>
               </div>
