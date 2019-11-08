@@ -111,6 +111,7 @@ class Exam extends MY_Seeker_Controller
             $where_start['job_seeker_id'] = $jobseeker_id;
             $where_start['job_post_id']   = $job_post_id;
            $start_status = $this->Master_model->master_update($start_array,'job_apply',$where_start);
+         echo  $this->db->last_query(); die;
            if($start_status)
            {
                 $str = file_get_contents('./exam_questions/'.$job_id.'_'.$jobseeker_id.'.json');
