@@ -148,24 +148,44 @@ class Exam extends MY_Seeker_Controller
            $data['questions'] = $value;
            break;
         }
-        // print_r($data['questions']);
-        // print_r($data['questions']['answer']);
+       
         for($q=0;$q<sizeof($data['questions']['answer']);$q++)
         {
-             $answer_id = $data['questions']['answer'][$q]['answer_id'];
-            $status = array();
+            $answer_id = $data['questions']['answer'][$q]['answer_id'];
+            
             for($i=0;$i<sizeof($option);$i++)
             {   
                 echo $option[$i]; echo "<br>";
                 echo $answer_id;
                 if($answer_id == $option[$i])
                 {
-                    $status[]= 'Yes';
+                    echo $status[]= 'Yes';
                 }else{
-                    $status[]= 'No';
+                    echo $status[]= 'No';
                 }
             }
+            
         }
+        if (count(array_unique($status)) === 1 && end($status) === 'Yes') {
+            echo $mark=1;
+            $cstatus = 'Yes';
+        }else {
+            echo $mark =0;
+            $cstatus = 'No';
+        } 
+      
+        // $exam_array = array(
+        //     'job_id'            => $job_post_id,
+        //     'js_id'             => $jobseeker_id,  
+        //     'question_id'       => $question_id,
+        //     'marks'             => $mark,
+        //     'correct_status'    => $cstatus,
+        //     'date_time'         => date('Y-m-d H:i:s'),
+        // );
+
+        // $last_id = $this->Master_model->master_insert($exam_array, 'js_test_info');
+            
+
         // if($question_id == $data['questions']['ques_id'])
         // {
         //     echo "Yes";
@@ -213,7 +233,7 @@ class Exam extends MY_Seeker_Controller
                     'job_id'            => $job_post_id,
                     'js_id'             => $jobseeker_id,  
                     'question_id'       => $question_id,
-                    'marks'              => $mark,
+                    'marks'             => $mark,
                     'correct_status'    => $cstatus,
                     'date_time'         => date('Y-m-d H:i:s'),
                 );
