@@ -109,10 +109,10 @@ class Exam extends MY_Seeker_Controller
             $json = json_decode($str, true);
 
             foreach ($json  as $value) {
-               $tt = $value;
+               $data['questions'] = $value;
                break;
             }
-            print_r($tt);
+            print_r($data['questions']);
             // $data['question_id']        = $json[0]['ques_id'];
             // $data['technical_id']       = $json[0]['technical_id'];
             // $data['topic_id']           = $json[0]['topic_id'];
