@@ -323,6 +323,13 @@ if (!empty($experinece->start_date)) {
                 </div>
               </div>
 			
+			 <div class="form-group">
+                <label class="control-label col-sm-3" for="email"> Expected Salary:</label>
+                <div class="col-sm-9">
+                  <input type="text" name="js_career_salary" class="form-control" id="js_career_salary" placeholder="Expected Salary">
+                </div>
+              </div>
+			
                 <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Achievement </label>
                 <div class="col-sm-9">
