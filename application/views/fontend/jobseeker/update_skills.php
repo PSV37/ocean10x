@@ -1,40 +1,41 @@
-          <div class="section lb">
-                <div class="container">
-                    <div class="row">
-                        <?php $this->load->view('fontend/layout/seeker_left.php'); ?>
-                         <!-- <input type="text" class="form-control" id="tokenfield" value="red,green,blue" /> -->
+<div class="section lb">
+      <div class="container">
+          <div class="row">
+              <?php $this->load->view('fontend/layout/seeker_left.php'); ?>
+               <!-- <input type="text" class="form-control" id="tokenfield" value="red,green,blue" /> -->
 
-                        <div class="content col-md-9">
-                            <div class="userccount">
-                            <?php $this->load->view('fontend/layout/seeker_resumemenu.php'); ?>
-                            <?php $key = 1 ?>
-                                    <hr>
-                            <h5>
-                              Career Information
-                             <a href="#" data-toggle="modal" data-target="#UpdateCareer" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>   
-                              <a href="<?php echo site_url('job_seeker/delete_career/'.$job_career_info[0]->job_seeker_id.''); ?>" onclick="return confirm('Are you sure?');"  class="btn pull-right bg-red btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash" aria-hidden="true"></i></a>               
-                            </h5>
-                            <div class="table-responsive">          
-                            <table class="table">
+              <div class="content col-md-9">
+                  <div class="userccount">
+                    <div id="vsphoto" class="tab-pane fade in">
+                  <?php $this->load->view('fontend/layout/seeker_resumemenu.php'); ?>
+                  <?php $key = 1 ?>
+                          <hr>
+                  <h5>
+                    Career Information
+                   <a href="#" data-toggle="modal" data-target="#UpdateCareer" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>   
+                    <a href="<?php echo site_url('job_seeker/delete_career/'.$job_career_info[0]->job_seeker_id.''); ?>" onclick="return confirm('Are you sure?');"  class="btn pull-right bg-red btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash" aria-hidden="true"></i></a>               
+                  </h5>
+                  <div class="table-responsive">          
+                    <table class="table">
 
-                              <tbody>
-							  	<tr>
-                                  <td width="30%">Skills:</td>
-                                  <td><?php  if(!empty($job_career_info[0]->skills))
-                                          echo $job_career_info[0]->skills;
-                                   ?></td>
-                               </tr>
-                              </tbody>
-                            </table>
-                            </div>
+                      <tbody>
+  		  	              <tr>
+                          <td width="30%">Skills:</td>
+                          <td><?php  if(!empty($job_career_info[0]->skills))
+                                  echo $job_career_info[0]->skills;
+                           ?></td>
+                       </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
 
 
-
-                            </div><!-- end post-padding -->
-                        </div><!-- end col -->
-                    </div><!-- end row -->  
-                </div><!-- end container -->
-            </div><!-- end section -->
+                  </div><!-- end post-padding -->
+              </div><!-- end col -->
+          </div><!-- end row -->  
+      </div><!-- end container -->
+  </div><!-- end section -->
  
 <script>
 function delete_Career(id) {
