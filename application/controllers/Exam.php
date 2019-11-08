@@ -137,7 +137,7 @@ class Exam extends MY_Seeker_Controller
         $jid= $this->input->post('job_id');
         $job_post_id = base64_decode($jid);
         $data['job_id'] = $job_post_id;
-      echo  $question_id = $this->input->post('question_id');
+        $question_id = $this->input->post('question_id');
         $option = $this->input->post('option');
       
         $str = file_get_contents('./exam_questions/'.$job_post_id.'_'.$jobseeker_id.'.json');
@@ -151,6 +151,7 @@ class Exam extends MY_Seeker_Controller
         if($question_id == $data['questions']['ques_id'])
         {
             echo "Yes";
+            unset($data['questions']['ques_id']);
         }
         else{
             echo "No";
