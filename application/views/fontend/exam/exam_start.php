@@ -42,6 +42,7 @@
                         ?>
                         <input type="hidden" name="job_id" id="job_id" value="<?php if(!empty($job_id))echo base64_encode($job_id); ?>">
                         <input type="hidden" name="question_id" id="question_id" value="<?php echo $questions['ques_id']; ?>">
+                        <input type="text" name="timer_val" id="timer_val">
                         <label><?php echo "Question:- ".$questions['question']; ?></label> 
                           <ul>
 
@@ -117,6 +118,7 @@
 
             
       $('#timer').html(result);
+      $('#timer_val').html(result);
       if(c == 0 )
         {
                 //setConfirmUnload(false);
@@ -134,7 +136,7 @@
 
 
   function fetchdata(){
-    var timer = $('#timer').val();
+    var timer = $('#timer_val').val();
     var job_id = $('#job_id').val();
     $.ajax({
       url: '<?php echo base_url();?>exam/insert_exam_session_data',
