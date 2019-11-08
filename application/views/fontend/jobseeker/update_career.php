@@ -477,7 +477,6 @@ $("#duration_month").select2( {
 </script>
 
 
-
 <script>
   var BASE_URL = "<?php echo base_url(); ?>";
  
