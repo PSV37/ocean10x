@@ -397,7 +397,7 @@ exit;*/
         if ($_POST) {
             $jobseeker_id = $this->session->userdata('job_seeker_id');
             $js_career_id = $this->input->post('js_career_id');
-            $js_skills = $this->input->post('skills');
+           // $js_skills = $this->input->post('skills');
 
             $career_info  = array(
                 'job_seeker_id'        => $jobseeker_id,
@@ -408,7 +408,7 @@ exit;*/
                 'extracurricular'      => $this->input->post('extracurricular'),
                 'js_career_salary'     => $this->input->post('js_career_salary'),
                 'avaliable'            => $this->input->post('avaliable'),
-				'skills'               => $this->input->post('skills'),
+				//'skills'               => $this->input->post('skills'),
                 'duration_year'               => $this->input->post('duration_year'),
 				'duration_month'               => $this->input->post('duration_month'),
 				'duration_to_year'               => $this->input->post('duration_to_year'),
