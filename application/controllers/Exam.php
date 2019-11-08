@@ -110,10 +110,9 @@ class Exam extends MY_Seeker_Controller
             );
             $where_start['job_seeker_id'] = $jobseeker_id;
             $where_start['job_post_id']   = $job_id;
-           $start_status = $this->Master_model->master_update($start_array,'job_apply',$where_start);
-      
-           if($start_status)
-           {
+            $start_status = $this->Master_model->master_update($start_array,'job_apply',$where_start);
+           // if($start_status)
+           // {
                 $str = file_get_contents('./exam_questions/'.$job_id.'_'.$jobseeker_id.'.json');
                 $json = json_decode($str, true);
 
@@ -123,10 +122,8 @@ class Exam extends MY_Seeker_Controller
                 }
                 
                 $this->load->view('fontend/exam/exam_start',$data);
-           }
+           // }
 
-           
-            
         } else {
             redirect('exam');
         }
@@ -135,22 +132,39 @@ class Exam extends MY_Seeker_Controller
 	 
     public function insert_data()
     {
-
         $jobseeker_id = $this->session->userdata('job_seeker_id');
        
         $jid= $this->input->post('job_id');
         $job_post_id = base64_decode($jid);
-
         $data['job_id'] = $job_post_id;
-        $question_id = $this->input->post('question_id');
+      echo  $question_id = $this->input->post('question_id');
         $option = $this->input->post('option');
       
+        $str = file_get_contents('./exam_questions/'.$job_post_id.'_'.$jobseeker_id.'.json');
+
+        $json = json_decode($str, true);
+
+        foreach ($json  as $value) {
+           $data['questions'] = $value;
+           break;
+        }
+
+        print_r($data['questions']); die;
+
+
+
+
+
+
+
+
+
+
         $wherechk = "job_id='$job_post_id' AND question_id='$question_id' AND js_id='$jobseeker_id'";
         $testdata= $this->Master_model->master_get_num_rows('js_test_info', $wherechk, $like = false, $join=false, $select = false);
+
         if($testdata == 0){
-         
             $status = array();
-           // $mark ='';
             for($i=0;$i<sizeof($option);$i++)
             {
                 $where_queans = "question_id='$question_id' AND answer_id='$option[$i]'";
@@ -174,12 +188,9 @@ class Exam extends MY_Seeker_Controller
                     'job_id'            => $job_post_id,
                     'js_id'             => $jobseeker_id,  
                     'question_id'       => $question_id,
-                    //'answer_selected'   => $option[$i],
                     'marks'              => $mark,
                     'correct_status'    => $cstatus,
-
                     'date_time'         => date('Y-m-d H:i:s'),
-
                 );
 
                 $last_id = $this->Master_model->master_insert($exam_array, 'js_test_info');
