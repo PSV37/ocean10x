@@ -121,7 +121,9 @@ class Exam extends MY_Seeker_Controller
             //     // Use $field and $value here
             //      echo $field . '=>' . $value . '<br/>';
             // }
-
+            echo $json[0]['ques_id']; echo "<br>";
+            echo $json[0]['question'];
+            echo "<br><br>";
             echo '<pre>' . print_r($json, true) . '</pre>';
             die;
 
