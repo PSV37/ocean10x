@@ -117,6 +117,10 @@ class Exam extends MY_Seeker_Controller
                     }
                 }
             }
+            foreach ($json['answer'] as $field => $value) {
+                // Use $field and $value here
+                 echo $field . '=>' . $value . '<br/>';
+            }
 
             // echo '<pre>' . print_r($json, true) . '</pre>';
             die;
