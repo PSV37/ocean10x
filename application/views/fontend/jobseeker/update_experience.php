@@ -309,13 +309,20 @@ if (!empty($experinece->start_date)) {
                 </div>
               </div>
 
-              <div class="form-group">
+              <!--<div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Address</label>
                 <div class="col-sm-9">
                  <textarea name="address" class="form-control" rows="5" id="address"></textarea>
                 </div>
+              </div>-->
+			
+			 <div class="form-group">
+                <label class="control-label col-sm-3" for="email">Preferable Job Location:</label>
+                <div class="col-sm-9">
+                  <input type="text" name="address" class="form-control" id="job_area" placeholder="Preferable Job Area">
+                </div>
               </div>
-
+			
                 <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Achievement </label>
                 <div class="col-sm-9">
@@ -560,3 +567,34 @@ for(var i =1; i < max_experience; i++){
       z-index: 1100;
   }
 </style>
+
+
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+  var BASE_URL = "<?php echo base_url(); ?>";
+ 
+ $(document).ready(function() {
+    $( "#job_area" ).autocomplete({
+ 
+        source: function(request, response) {
+            $.ajax({
+            url: BASE_URL + "job_seeker/search",
+            data: {
+                    term : request.term
+             },
+            dataType: "json",
+            success: function(data){
+               var resp = $.map(data,function(obj){
+                    return obj.city_name;
+               }); 
+ 
+               response(resp);
+            }
+        });
+    },
+    minLength: 1
+ });
+});
+ 
+</script>   
