@@ -1336,8 +1336,660 @@ function runit(){
 </div>
 </div>
 </div>
+<script type="text/javascript">
+	// Personal Info
+  	$( document ).ready( function () {
+            $( "#Personal-info" ).validate( {
+                rules: {
 
-   
+                    resume_title: {
+                        required: true,
+                    },
+
+                    father_name: {
+                        required: true,
+                    },
+
+                    mother_name: {
+                        required: true,
+                    },
+
+                    date_of_birth: {
+                        required: true,
+                    },
+                    matrial_status: {
+                        required: true,
+                    },
+                    nationality: {
+                        required: true,
+                    },
+
+                    mobile: {
+                        required: true,
+                        minlength:10,
+                    },
+
+                    present_address: {
+                        required: true,
+                    },
+                     parmanent_address : {
+                        required: true,
+                    },
+
+
+
+                },
+                messages: {
+                    email: "Please enter a valid email address",
+                    father_name: "Please enter your father name ",
+                    mother_name: "Please enter your mother name",
+                    date_of_birth: "Please enter your birthday",
+                    matrial_status: "Please select your matarial",
+                    nationality: "Please select your nationality" ,
+                    present_address: "Please enter your present address ",
+                    parmanent_address: "Please enter your parmanent address ",
+
+                },
+                errorElement: "em",
+                errorPlacement: function ( error, element ) {
+                    // Add the `help-block` class to the error element
+                    error.addClass( "help-block" );
+
+                    if ( element.prop( "type" ) === "checkbox" ) {
+                        error.insertAfter( element.parent( "label" ) );
+                    } else {
+                        error.insertAfter( element );
+                    }
+                },
+                highlight: function ( element, errorClass, validClass ) {
+                    $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+                }
+            } );
+
+
+        });
+	
+	// Experience
+	$( document ).ready( function () {
+               // Education Add form Valiaton
+        $( "#addExperience-info" ).validate( {
+                rules: {
+
+                    company_name: {
+                        required: true,
+                    },
+
+                    designation: {
+                        required: true,
+                    },
+
+                    job_level: {
+                        required: true,
+                    },
+
+                    job_nature: {
+                        required: true,
+                    },
+                    department: {
+                        required: true,
+                    },
+                      duration: {
+                        required: true,
+                    },
+
+                },
+                messages: {
+                    company_name: "Please enter company name",
+                    designation: "Please designation name ",
+                    job_level: "Please select job level",
+                    job_nature: "Please select job nature",
+                    department: "Please enter your department",
+                    duration: "Please enter your duration",
+                },
+                errorElement: "em",
+                errorPlacement: function ( error, element ) {
+                    // Add the `help-block` class to the error element
+                    error.addClass( "help-block" );
+
+                    if ( element.prop( "type" ) === "checkbox" ) {
+                        error.insertAfter( element.parent( "label" ) );
+                    } else {
+                        error.insertAfter( element );
+                    }
+                },
+                highlight: function ( element, errorClass, validClass ) {
+                    $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+                }
+            } );
+      $( "#UpdateExperience-info" ).validate( {
+                rules: {
+
+                    company_name: {
+                        required: true,
+                    },
+
+                    designation: {
+                        required: true,
+                    },
+
+                    job_level: {
+                        required: true,
+                    },
+
+                    job_nature: {
+                        required: true,
+                    },
+                    department: {
+                        required: true,
+                    },
+                      duration: {
+                        required: true,
+                    },
+
+                },
+              messages: {
+                    company_name: "Please enter company name",
+                    designation: "Please designation name ",
+                    job_level: "Please select job level",
+                    job_nature: "Please select job nature",
+                    department: "Please enter your department",
+                    duration: "Please enter your duration",
+                },
+                errorElement: "em",
+                errorPlacement: function ( error, element ) {
+                    // Add the `help-block` class to the error element
+                    error.addClass( "help-block" );
+
+                    if ( element.prop( "type" ) === "checkbox" ) {
+                        error.insertAfter( element.parent( "label" ) );
+                    } else {
+                        error.insertAfter( element );
+                    }
+                },
+                highlight: function ( element, errorClass, validClass ) {
+                    $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+                }
+            } );
+
+
+        });
+	
+	// Reference
+    $( document ).ready( function () {
+               
+        $( "#Reference-info" ).validate( {
+                rules: {
+
+                    name: {
+                        required: true,
+                        minlength: 5
+                    },
+
+                    org_name: {
+                        required: true,
+                    },
+
+                    mobile: {
+                        required: true,
+                    },
+
+                    designation: {
+                        required: true,
+                    },
+                    email: {
+                        required: true,
+                    },
+                realtion: {
+                        required: true,
+                    },
+
+                },
+                messages: {
+                    name: "Please enter a full name",
+                    org_name: "Please enter organization name ",
+                    mobile: "Please enter  mobile number",
+                    designation: "Please enter designation ",
+                    email: "Please enter email",
+                },
+                errorElement: "em",
+                errorPlacement: function ( error, element ) {
+                    // Add the `help-block` class to the error element
+                    error.addClass( "help-block" );
+
+                    if ( element.prop( "type" ) === "checkbox" ) {
+                        error.insertAfter( element.parent( "label" ) );
+                    } else {
+                        error.insertAfter( element );
+                    }
+                },
+                highlight: function ( element, errorClass, validClass ) {
+                    $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+                }
+            } );
+      $( "#UpdateEducational-info" ).validate( {
+                rules: {
+
+                    name: {
+                        required: true,
+                        minlength: 5
+                    },
+
+                    org_name: {
+                        required: true,
+                    },
+
+                    mobile: {
+                        required: true,
+                    },
+
+                    designation: {
+                        required: true,
+                    },
+                    email: {
+                        required: true,
+                    },
+
+                },
+                messages: {
+                    name: "Please enter a full name",
+                    org_name: "Please enter organization name ",
+                    mobile: "Please enter  mobile number",
+                    designation: "Please enter designation ",
+                    email: "Please enter email",
+                },
+                errorElement: "em",
+                errorPlacement: function ( error, element ) {
+                    // Add the `help-block` class to the error element
+                    error.addClass( "help-block" );
+
+                    if ( element.prop( "type" ) === "checkbox" ) {
+                        error.insertAfter( element.parent( "label" ) );
+                    } else {
+                        error.insertAfter( element );
+                    }
+                },
+                highlight: function ( element, errorClass, validClass ) {
+                    $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+                }
+            } );
+
+
+        });
+		
+	// Career Info
+	$( document ).ready( function () {
+            $( "#Career-info" ).validate( {
+                rules: {
+
+                    js_career_obj: {
+                        required: true,
+                    },
+
+                    js_career_sum: {
+                        required: true,
+                    },
+
+                    js_career_salary: {
+                        required: true,
+                    },
+
+                    avaliable: {
+                        required: true,
+                    },
+               },
+                messages: {
+
+                },
+                errorElement: "em",
+                errorPlacement: function ( error, element ) {
+                    // Add the `help-block` class to the error element
+                    error.addClass( "help-block" );
+
+                    if ( element.prop( "type" ) === "checkbox" ) {
+                        error.insertAfter( element.parent( "label" ) );
+                    } else {
+                        error.insertAfter( element );
+                    }
+                },
+                highlight: function ( element, errorClass, validClass ) {
+                    $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+                }
+            } );
+
+
+        });
+	
+	//
+	$( document ).ready( function () {
+            $( "#addLanguage-info" ).validate( {
+                rules: {
+
+                    language: {
+                        required: true,
+                    },
+
+                    reading: {
+                        required: true,
+                    },
+
+                    writing: {
+                        required: true,
+                    },
+
+                    speaking: {
+                        required: true,
+                    },
+               },
+                messages: {
+
+                },
+                errorElement: "em",
+                errorPlacement: function ( error, element ) {
+                    // Add the `help-block` class to the error element
+                    error.addClass( "help-block" );
+
+                    if ( element.prop( "type" ) === "checkbox" ) {
+                        error.insertAfter( element.parent( "label" ) );
+                    } else {
+                        error.insertAfter( element );
+                    }
+                },
+                highlight: function ( element, errorClass, validClass ) {
+                    $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+                }
+            } );
+
+
+        });
+	
+	// Education
+	$( document ).ready( function () {
+               // Education Add form Valiaton
+        $( "#Educational-info" ).validate( {
+                rules: {
+
+                    js_degree: {
+                        required: true,
+                    },
+
+                    js_group: {
+                        required: true,
+                    },
+
+                    js_resut: {
+                        required: true,
+                    },
+
+                    js_institute_name: {
+                        required: true,
+                    },
+                    js_year_of_passing: {
+                        required: true,
+                    },
+
+                },
+                messages: {
+                    js_degree: "Please your degree",
+                    js_group: "Please enter your group name ",
+                    js_resut: "Please enter your result",
+                    js_institute_name: "Please institute name",
+                    js_year_of_passing: "Please your passing years",
+                },
+                errorElement: "em",
+                errorPlacement: function ( error, element ) {
+                    // Add the `help-block` class to the error element
+                    error.addClass( "help-block" );
+
+                    if ( element.prop( "type" ) === "checkbox" ) {
+                        error.insertAfter( element.parent( "label" ) );
+                    } else {
+                        error.insertAfter( element );
+                    }
+                },
+                highlight: function ( element, errorClass, validClass ) {
+                    $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+                }
+            } );
+      $( "#UpdateEducational-info" ).validate( {
+                rules: {
+
+                    js_degree: {
+                        required: true,
+                    },
+
+                    js_group: {
+                        required: true,
+                    },
+
+                    js_resut: {
+                        required: true,
+                    },
+
+                    js_institute_name: {
+                        required: true,
+                    },
+                    js_year_of_passing: {
+                        required: true,
+                    },
+
+                },
+                messages: {
+                    js_degree: "Please your degree",
+                    js_group: "Please enter your group name ",
+                    js_resut: "Please enter your result",
+                    js_institute_name: "Please institute name",
+                    js_year_of_passing: "Please your passing years",
+                },
+                errorElement: "em",
+                errorPlacement: function ( error, element ) {
+                    // Add the `help-block` class to the error element
+                    error.addClass( "help-block" );
+
+                    if ( element.prop( "type" ) === "checkbox" ) {
+                        error.insertAfter( element.parent( "label" ) );
+                    } else {
+                        error.insertAfter( element );
+                    }
+                },
+                highlight: function ( element, errorClass, validClass ) {
+                    $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+                }
+            } );
+
+
+        });
+	
+	// Training
+	$( document ).ready( function () {
+               // Education Add form Valiaton
+        $( "#Training-info").validate( {
+                rules: {
+
+                    training_title: {
+                        required: true,
+                        minlength: 5
+                    },
+                    country: {
+                        required: true,
+                    },
+
+                    institute: {
+                        required: true,
+                    },
+                    location: {
+                        required: true,
+                    },
+                    duration: {
+                      required: true,
+                    },
+                     training_year: {
+                      required: true,
+                    },
+
+                },
+                messages: {
+                    training_title: "Please enter a valid Title",
+                    country: "Please enter your country name",
+                    institute: "Please enter your institue",
+                    location: "Please enter your location",
+                    duration: "Please enter your duration",
+                    training_year: "Please enter training year",
+                },
+                errorElement: "em",
+                errorPlacement: function ( error, element ) {
+                    // Add the `help-block` class to the error element
+                    error.addClass( "help-block" );
+
+                    if ( element.prop( "type" ) === "checkbox" ) {
+                        error.insertAfter( element.parent( "label" ) );
+                    } else {
+                        error.insertAfter( element );
+                    }
+                },
+                highlight: function ( element, errorClass, validClass ) {
+                    $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+                }
+            } );
+      $( "#UpdateEducational-info" ).validate( {
+                rules: {
+
+                    training_title: {
+                        required: true,
+                        minlength: 5
+                    },
+                    country: {
+                        required: true,
+                    },
+
+                    institute: {
+                        required: true,
+                    },
+                    location: {
+                        required: true,
+                    },
+                    duration: {
+                      required: true,
+                    },     
+                     training_year: {
+                      required: true,
+                    },
+
+                },
+                messages: {
+                    training_title: "Please enter a valid Title",
+                    country: "Please enter your country name",
+                    institute: "Please enter your institue",
+                    location: "Please enter your location",
+                    duration: "Please enter your duration",
+                    training_year: "Please enter training year",
+                },
+                errorElement: "em",
+                errorPlacement: function ( error, element ) {
+                    // Add the `help-block` class to the error element
+                    error.addClass( "help-block" );
+
+                    if ( element.prop( "type" ) === "checkbox" ) {
+                        error.insertAfter( element.parent( "label" ) );
+                    } else {
+                        error.insertAfter( element );
+                    }
+                },
+                highlight: function ( element, errorClass, validClass ) {
+                    $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+                }
+            } );
+
+
+        });
+		
+	
+</script>
+
+<script>$(document).ready(function () {
+  //called when key is pressed in textbox
+  $("#number").keypress(function (e) {
+     //if the letter is not digit then display error and don't type anything
+     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+        //display error message
+        $("#errmsg").html("Digits Only").show().fadeOut("slow");
+               return false;
+    }
+   });
+});</script>
+<script>
+$(document).ready(function(){
+    $("#father_name").keypress(function(event){
+        var inputValue = event.charCode;
+        if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
+            event.preventDefault();
+        }
+    });
+});
+
+</script>
+<script>
+$(document).ready(function(){
+    $("#mother_name").keypress(function(event){
+        var inputValue = event.charCode;
+        if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
+            event.preventDefault();
+        }
+    });
+});
+
+</script>
+            
+<script>
+function FillBilling(f) {
+  if(f.billingtoo.checked == true) {
+    f.parmanent_address.value = f.present_address.value;
+	f.country1_id.value = f.country_id.value;
+    f.state1_id.value = f.state_id.value;
+	f.city1_id.value = f.city_id.value;
+	f.pincode1.value = f.pincode.value;
+  }else{
+
+  	f.parmanent_address.value = '';
+	f.country1_id.value = '';
+    f.state1_id.value ='';
+	f.city1_id.value = '';
+	f.pincode1.value = '';
+  }
+}
+</script>    
 
 <script>
 	  function getStates(id){
@@ -1487,32 +2139,7 @@ $(document).ready(function(){
   .datepicker{z-index:1151 !important;}
 </style> 
 
-<script>
-  var BASE_URL = "<?php echo base_url(); ?>";
- 
- $(document).ready(function() {
-    $( "#seeker_pincode" ).autocomplete({
- 
-        source: function(request, response) {
-            $.ajax({
-            url: BASE_URL + "employer/search",
-            data: {
-                    term : request.term
-             },
-            dataType: "json",
-            success: function(data){
-               var resp = $.map(data,function(obj){
-                    return obj.pincode;
-               }); 
- 
-               response(resp);
-            }
-        });
-    },
-    minLength: 1
- });
-});
-</script>
+
 
 <script>        
            function phoneno(){          
