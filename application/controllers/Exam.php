@@ -211,6 +211,24 @@ class Exam extends MY_Seeker_Controller
        
 
     }
-	
+
+	public function insert_exam_session_data()
+    {
+        $jobseeker_id = $this->session->userdata('job_seeker_id');
+       
+        $jid= $this->input->post('job_id');
+        $job_post_id = base64_decode($jid);
+
+        $timer= $this->input->post('timer');
+
+        $data_array = array(
+            'job_id'        => $job_post_id,
+            'job_seeker_id' => $jobseeker_id,
+            'exam_time'     => $timer,
+        );
+
+        $this->Master_model->master_insert($data_array, 'js_exam_session_info');
+
+    }
   
 }
