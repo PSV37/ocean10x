@@ -129,12 +129,14 @@ function delete_Career(id) {
          <form id="Career-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_career');?>" method="post" style="padding: 30px;">
 				
 				 <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">Work Title:</label>
+                <label class="control-label col-sm-3" for="pwd">Industry:</label>
                 <div class="col-sm-9">
-                  <input type="text" name="worktitle" id="worktitle" class="form-control" required value="<?php if (!empty($job_career_info[0]->worktitle)) {
-                           echo $job_career_info[0]->worktitle;
-                           }
-                       ?>">
+                  <select  name="board_id" id="board_id" class="form-control">
+				  <option></option>
+				 <?php foreach($industry_master as $industry){?>
+					<option value="<?php echo $industry['id']; ?>"<?php if($job_career_info->industry_id==$industry['id']){ echo "selected"; }?>><?php echo $industry['industry_name']; ?></option>
+					<?php } ?>
+				 </select>
                 </div>
               </div>
 			  
