@@ -108,21 +108,21 @@ class Exam extends MY_Seeker_Controller
 
             $json = json_decode($str, true); // decode the JSON into an associative array
 
-            foreach ($json as $key => $value) {
-                if (!is_array($value)) {
-                    echo $key . '=>' . $value . '<br/>';
-                } else {
-                    foreach ($value as $key => $val) {
-                        echo $key . '=>' . $val . '<br/>';
-                    }
-                }
-            }
-            foreach ($json['answer'] as $field => $value) {
-                // Use $field and $value here
-                 echo $field . '=>' . $value . '<br/>';
-            }
+            // foreach ($json as $key => $value) {
+            //     if (!is_array($value)) {
+            //         echo $key . '=>' . $value . '<br/>';
+            //     } else {
+            //         foreach ($value as $key => $val) {
+            //             echo $key . '=>' . $val . '<br/>';
+            //         }
+            //     }
+            // }
+            // foreach ($json['answer'] as $field => $value) {
+            //     // Use $field and $value here
+            //      echo $field . '=>' . $value . '<br/>';
+            // }
 
-            // echo '<pre>' . print_r($json, true) . '</pre>';
+            echo '<pre>' . print_r($json, true) . '</pre>';
             die;
 
             $this->load->view('fontend/exam/exam_start',$data);
