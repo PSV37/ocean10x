@@ -188,15 +188,14 @@ class Exam extends MY_Seeker_Controller
            $fp = fopen('./exam_questions/'.$job_post_id.'_'.$jobseeker_id.'.json', 'w');
            fwrite($fp, json_encode($json));
 
-           $new_str = file_get_contents('./exam_questions/'.$job_post_id.'_'.$jobseeker_id.'.json');
+            $new_str = file_get_contents('./exam_questions/'.$job_post_id.'_'.$jobseeker_id.'.json');
+            $data['new_json'] = json_decode($new_str, true);
 
-            $new_json = json_decode($new_str, true);
-
-            foreach ($new_json  as $value) {
+            foreach ($data['new_json']  as $value) {
                $data['questions'] = $value;
                break;
             }
-            if(count($new_json) >= 1 )
+            if(count($data['new_json']) >= 1 )
             {
                 $this->load->view('fontend/exam/exam_next_question',$data);
             }else{

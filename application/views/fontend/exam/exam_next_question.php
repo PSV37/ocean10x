@@ -4,6 +4,7 @@
     <div class="col-md-12 col-sm-12">
       <?php 
        
+        $ques_cnt = count($new_json);
         $ans_cnt = count($questions['answer']);
           if($ans_cnt > 1){
             $input_type='checkbox';
@@ -33,7 +34,11 @@
         <?php }else{} ?>
 
         </ul>
-         <button id="next" type="submit" class="btn btn-primary pull-right">Next</button>
+        <?php if($ques_cnt > 1){ ?>
+          <button id="next" type="submit" class="btn btn-primary pull-right">Next</button>
+       <?php }else{ ?>
+          <button id="next" type="submit" class="btn btn-primary pull-right">Submit</button>
+       <?php } ?>
     </div>
   </div>
 </form>
