@@ -1,5 +1,5 @@
           <div class="section lb">
-                <div class="container">
+                <div class="container-fluid">
                     <div class="row">
                         <?php $this->load->view('fontend/layout/seeker_left.php'); ?>
                          <!-- <input type="text" class="form-control" id="tokenfield" value="red,green,blue" /> -->
