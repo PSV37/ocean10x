@@ -194,7 +194,7 @@ function delete_Career(id) {
       
 
                <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Salary:</label>
+                <label class="control-label col-sm-3" for="email">Expected Salary:</label>
                 <div class="col-sm-9">
                   <input type="text" name="js_career_salary" class="form-control" id="js_career_salary" placeholder="Expected Salary"
                    value="<?php
