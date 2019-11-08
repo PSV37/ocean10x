@@ -458,11 +458,7 @@ exit;*/
     }
 	
 	
-	 public function delete_skills($job_seeker_id)
-    {
-       $this->Job_career_model->delete_skills($job_seeker_id);
-        redirect('job_seeker/seeker_info');
-    }
+	
 	
 	
 	

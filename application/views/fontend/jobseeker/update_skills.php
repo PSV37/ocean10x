@@ -16,7 +16,7 @@
                   <h5>
                     Skills
                    <a href="#" data-toggle="modal" data-target="#Updateskills" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>   
-                    <a href="<?php echo site_url('job_seeker/'.$js_skills->js_skill_id.''); ?>" onclick="return confirm('Are you sure?');"  class="btn pull-right bg-red btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash" aria-hidden="true"></i></a>               
+                                
                   </h5>
                   <div class="table-responsive">          
                     <table class="table">
@@ -53,16 +53,6 @@
 </div><!-- end row -->  
 </div><!-- end container -->
 </div><!-- end section -->
- 
-<script>
-function delete_skills(id) {
-    if (confirm('Are you sure you want to Delete Career ?')) {
-//   window.location.href = "<?php echo site_url('job_seeker/delete_career/'); ?>";
-
-}
-   
-} 
-</script>
 
 
 <!-- Modal -->
