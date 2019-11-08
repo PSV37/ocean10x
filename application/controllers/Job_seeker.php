@@ -149,7 +149,7 @@ class Job_seeker extends MY_Seeker_Controller
                 'job_seeker_id'    => $jobseeker_id,
                 'company_profile_id'     => $this->input->post('company_profile_id'),
                 'designation_id'      => $this->input->post('designation_id'),
-                'job_level'        => $this->input->post('job_level'),
+               // 'job_level'        => $this->input->post('job_level'),
                 'dept_id'       => $this->input->post('dept_id'),
                 'start_date'       => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('start_date')))),
                 'end_date'         => (empty($enddate)) ? null : date('Y-m-d', strtotime(str_replace('/', '-', $enddate))),
@@ -458,11 +458,7 @@ exit;*/
     }
 	
 	
-	 public function delete_skills($job_seeker_id)
-    {
-       $this->Job_career_model->delete_skills($job_seeker_id);
-        redirect('job_seeker/seeker_info');
-    }
+	
 	
 	
 	
