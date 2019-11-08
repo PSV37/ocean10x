@@ -43,7 +43,7 @@ class Exam extends MY_Seeker_Controller
                     
                     $where_topic="topic_id='$topic_id' AND level='$level' LIMIT $no_ques";
                     $questions = $this->Master_model->getMaster('questionbank',$where_topic,$join = FALSE, $order = false, $field = false, $select = false,$limit =false ,$start=false, $search=false);
-                  echo $question_id = $questions[0]['ques_id'];
+                  // echo $question_id = $questions[0]['ques_id'];
                     
                     array_push($exam_question,$questions); //push all questions to store in json file
                     
@@ -52,7 +52,7 @@ class Exam extends MY_Seeker_Controller
 
                for($n=0;$n<sizeof($exam_question);$n++)
                {
-                    echo $question_id = $exam_question[$n]['ques_id'];
+                    echo $question_id = $exam_question['ques_id'][$n];
                     $wherechks = "question_id='$question_id'";
                     $data['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
                     echo $this->db->last_query(); echo "<br><br>";
