@@ -152,13 +152,15 @@ function delete_Career(id) {
                 </div>
               </div>
 				
-               <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">Career Summary:</label>
+                <div class="form-group">
+                <label class="control-label col-sm-3" for="pwd">Job Role:</label>
                 <div class="col-sm-9">
-                  <textarea name="js_career_sum" class="form-control" rows="5"><?php if (!empty($job_career_info[0]->js_career_sum)) {
-                           echo $job_career_info[0]->js_career_sum;
-                           }
-                       ?></textarea>
+                  <select  name="job_role" id="job_role" class="form-control">
+				  <option></option>
+				 <?php foreach($job_role as $role){?>
+					<option value="<?php echo $role['id']; ?>"<?php if($job_career_info->job_role==$role['id']){ echo "selected"; }?>><?php echo $role['job_role_title']; ?></option>
+					<?php } ?>
+				 </select>
                 </div>
               </div>
 
