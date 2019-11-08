@@ -42,7 +42,7 @@
                         ?>
                         <input type="hidden" name="job_id" id="job_id" value="<?php if(!empty($job_id))echo base64_encode($job_id); ?>">
                         <input type="hidden" name="question_id" id="question_id" value="<?php echo $questions['ques_id']; ?>">
-                        <input type="text" name="timer_val" id="timer_val">
+                        <!-- <input type="text" name="timer_val" id="timer_val"> -->
                         <label><?php echo "Question:- ".$questions['question']; ?></label> 
                           <ul>
 
@@ -135,24 +135,23 @@
 
 
 
-  function fetchdata(){
-    var timer = $('#timer_val').val();
-    var job_id = $('#job_id').val();
-    $.ajax({
-      url: '<?php echo base_url();?>exam/insert_exam_session_data',
-      type: 'post',
-      data:{
-        timer:timer,job_id:job_id
-      },
-      success: function(response){
-       // Perform operation on the return value
-       alert(response);
-      }
-    });
-  }
+  // function fetchdata(){
+  //   var timer = $('#timer_val').val();
+  //   var job_id = $('#job_id').val();
+  //   $.ajax({
+  //     url: '<?php echo base_url();?>exam/insert_exam_session_data',
+  //     type: 'post',
+  //     data:{
+  //       timer:timer,job_id:job_id
+  //     },
+  //     success: function(response){
+  //      alert(response);
+  //     }
+  //   });
+  // }
 
-  $(document).ready(function(){
-   setInterval(fetchdata,5000);
-  });
+  // $(document).ready(function(){
+  //  setInterval(fetchdata,5000);
+  // });
 
   </script>
