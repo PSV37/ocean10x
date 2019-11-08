@@ -1303,7 +1303,7 @@ function runit(){
 		        </div>
 		  </div>
 		  
-		  <div class="row">
+		  <!--<div class="row">
 		   <div class="col-md-12">
 		  <div class="col-md-6 col-sm-12">         
 	              <div class="input-group">
@@ -1318,7 +1318,7 @@ function runit(){
 	              </div>
 	          	</div>
 		  </div>
-		  </div>
+		  </div>-->
 			
                <div class="modal-footer">
                	 
@@ -2199,7 +2199,7 @@ $(document).ready(function() {
 </script>
 
 
- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ <!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <script>
   var BASE_URL = "<?php echo base_url(); ?>";
@@ -2227,4 +2227,4 @@ $(document).ready(function() {
  });
 });
  
-</script>   
+</script>   -->

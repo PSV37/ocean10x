@@ -25,7 +25,7 @@ echo '<ul class="nav nav-tabs">
 			<li class="active"><a data-toggle="tab" href="#vspinfo" onClick="load_data('update_personalinfo','vspinfo');">My Profile</a></li>
 			<li><a data-toggle="tab" onClick="load_data('update_education','vsedu');" href="#vsedu" >Education</a></li>
 			<li><a data-toggle="tab" href="#vscareer" onClick="load_data('update_experience','vscareer');">Work Experience </a></li>
-            <!--<li><a data-toggle="tab" href="#vscareers" onClick="load_data('update_career','vscareers');">Work Experience</a></li>-->
+            <li><a data-toggle="tab" href="#vscareers" onClick="load_data('update_career','vscareers');">Experience</a></li>
 			<li><a data-toggle="tab" href="#vstrain" onClick="load_data('update_training','vstrain');">Certs & Trainings</a></li>
 			<li><a data-toggle="tab" href="#vsref" onClick="load_data('update_reference','vsref');">Reference</a></li>
 			<li><a data-toggle="tab" href="#vsuplresume" onClick="load_data('upload_resume','vsuplresume');">Attach Resume</a></li>
