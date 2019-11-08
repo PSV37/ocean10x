@@ -184,7 +184,6 @@ class Exam extends MY_Seeker_Controller
         if($last_id)
         {
             array_shift($json); // remove completed element from json array
-           // print_r ($json);
           // update json file with remaining questions
            $fp = fopen('./exam_questions/'.$job_post_id.'_'.$jobseeker_id.'.json', 'w');
            fwrite($fp, json_encode($json));
@@ -197,7 +196,22 @@ class Exam extends MY_Seeker_Controller
                $data['questions'] = $value;
                break;
             }
-            print_r($data['questions']);
+            // print_r($data['questions']);
+
+            if(count($data['questions']) > 1 )
+            {
+                $this->load->view('fontend/exam/exam_next_question',$data);
+            }else{
+
+                $attend_array = array(
+                    'is_test_done' => '1',
+                );
+                $where['job_seeker_id'] = $jobseeker_id;
+                $where['job_post_id'] = $job_post_id;
+                $this->Master_model->master_update($attend_array,'job_apply',$where);
+                // echo $this->db->last_query(); die;
+                $this->load->view('fontend/exam/exam_success');
+            }
         }
         
         die;
