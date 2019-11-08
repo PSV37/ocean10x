@@ -64,10 +64,11 @@ class Exam extends MY_Seeker_Controller
                }
                echo "<pre>";
                print_r($temp_array);
-               die;
+               
                // creating json file of all questions based on topic
                $fp = fopen('./exam_questions/'.$job_id.'_'.$jobseeker_id.'.json', 'w');
                fwrite($fp, json_encode($temp_array));
+               die;
 
             }else{
                
