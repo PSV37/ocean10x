@@ -25,13 +25,14 @@
   		  	              <tr>
                           <td width="30%">Skills:</td>
                           <td><?php  
+
 						  if(!empty($js_skills)){
 							  $skill="";
 							  for($i=0;$i<sizeof($js_skills);$i++){
 								  if($i==0){
-								  $skill=$skill+$js_skills[$i]['skills'];
+									$skill=$skill.$js_skills[$i]['skills'];
 								  }else{
-									  $skill=$skill+','+$js_skills[$i]['skills'];
+									  $skill=$skill.','.$js_skills[$i]['skills'];
 								  }
 							  }
 							  echo $skill;
