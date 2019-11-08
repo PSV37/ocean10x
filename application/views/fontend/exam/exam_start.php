@@ -45,22 +45,22 @@
                         <label><?php echo "Question:- ".$questions['question']; ?></label> 
                           <ul>
 
-                            <li><input type="<?php echo $input_type; ?>" name="option[]" id="option1" value="1"><?php echo $questions['option1'];?></li>
+                            <li><input type="<?php echo $input_type; ?>" name="option[]" id="option1" value="1"> <?php echo $questions['option1'];?></li>
 
-                            <li><input type="<?php echo $input_type; ?>" name="option[]" id="option2" value="2"><?php echo $questions['option2'];?></li>
+                            <li><input type="<?php echo $input_type; ?>" name="option[]" id="option2" value="2"> <?php echo $questions['option2'];?></li>
 
                           <?php if(!empty($questions['option3'])){ ?>
-                            <li><input type="<?php echo $input_type; ?>" name="option[]" id="option3" value="3"><?php echo $questions['option3'];?></li>
+                            <li><input type="<?php echo $input_type; ?>" name="option[]" id="option3" value="3"> <?php echo $questions['option3'];?></li>
                           <?php }else{} ?>
 
                           <?php if(!empty($questions['option4'])){ ?>
-                            <li><input type="<?php echo $input_type; ?>" name="option[]" id="option4" value="4"><?php echo $questions['option4'];?></li>
+                            <li><input type="<?php echo $input_type; ?>" name="option[]" id="option4" value="4"> <?php echo $questions['option4'];?></li>
                           <?php }else{} ?>
 
                           <?php if(!empty($questions['option5'])){ ?>
-                            <li><input type="<?php echo $input_type; ?>" name="option[]" id="option5" value="5"><?php echo $questions['option5'];?></li>
+                            <li><input type="<?php echo $input_type; ?>" name="option[]" id="option5" value="5"> <?php echo $questions['option5'];?></li>
                           <?php }else{} ?>
-                          
+
                           </ul>
                            <button id="next" type="submit" class="btn btn-primary pull-right">Next</button>
                       </div>
