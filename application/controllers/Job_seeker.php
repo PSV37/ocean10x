@@ -397,7 +397,7 @@ exit;*/
         if ($_POST) {
             $jobseeker_id = $this->session->userdata('job_seeker_id');
             $js_career_id = $this->input->post('js_career_id');
-           // $js_skills = $this->input->post('skills');
+            $js_skills = $this->input->post('skills');
 
             $career_info  = array(
                 'job_seeker_id'        => $jobseeker_id,
@@ -408,7 +408,7 @@ exit;*/
                 'extracurricular'      => $this->input->post('extracurricular'),
                 'js_career_salary'     => $this->input->post('js_career_salary'),
                 'avaliable'            => $this->input->post('avaliable'),
-				//'skills'               => $this->input->post('skills'),
+				'skills'               => $this->input->post('skills'),
                 'duration_year'               => $this->input->post('duration_year'),
 				'duration_month'               => $this->input->post('duration_month'),
 				'duration_to_year'               => $this->input->post('duration_to_year'),
@@ -473,21 +473,17 @@ exit;*/
             $js_career_id = $this->input->post('js_career_id');
             $js_skills = $this->input->post('skills');
 
-            $career_info  = array(
-                'job_seeker_id'        => $jobseeker_id,
-                
-				
+            $skills_info  = array(
 				'skills'               => $this->input->post('skills'),
-                
-               
+                //'js_career_exp'        => $this->input->post('js_career_exp'),
             );
             
             if (empty($js_career_id)) {
-                $ins_id = $this->Job_career_model->insert($career_info);
+                $ins_id = $this->Job_career_model->insert($skills_info);
                
                 redirect('job_seeker/seeker_info');
             } else {
-            	$this->Job_career_model->update($career_info, $js_career_id);
+            	$this->Job_career_model->update($skills_info, $js_career_id);
             }
             
             $where_del = "job_seeker_id='$jobseeker_id'";
@@ -515,9 +511,8 @@ exit;*/
         } else {
             $jobseeker_id    = $this->session->userdata('job_seeker_id');
             $job_career_info = $this->Job_career_model->js_careerinfo_by_seeker($jobseeker_id);
-			$worktill = $this->Master_model->getMaster('worktill',$where=false);
-			$employe_jobtype = $this->Master_model->getMaster('employe_jobtype',$where=false);
-            $this->load->view('fontend/jobseeker/update_skills', compact('job_career_info', 'worktill', 'employe_jobtype'));
+			
+            $this->load->view('fontend/jobseeker/update_skills', compact('job_career_info'));
         }
     }
 	
