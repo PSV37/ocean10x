@@ -145,7 +145,7 @@
         timer:timer,job_id:job_id
       },
       success: function(response){
-       alert(response);
+      /// alert(response);
       }
     });
   }
