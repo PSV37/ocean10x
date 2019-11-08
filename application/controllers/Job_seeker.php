@@ -471,19 +471,13 @@ exit;*/
         if ($_POST) {
             $jobseeker_id = $this->session->userdata('job_seeker_id');
             $js_skills = $this->input->post('skills');
-			print_r($js_skills);die();
+			
             $career_info  = array(
 				'skills'               => $this->input->post('skills'),
                 
             );
             
-            if (empty($js_career_id)) {
-                $ins_id = $this->Job_career_model->insert($career_info);
-               
-                redirect('job_seeker/seeker_info');
-            } else {
-            	$this->Job_career_model->update($career_info, $js_career_id);
-            }
+           
             
             $where_del = "job_seeker_id='$jobseeker_id'";
             $del = $this->Master_model->master_delete('job_seeker_skills',$where_del);
