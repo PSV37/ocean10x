@@ -1,14 +1,3 @@
-<style type="text/css">
-  label {
-    display: inline-block;
-    max-width: 100%;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-</style>  
-
-
-
           <div class="section lb">
                 <div class="container">
                     <div class="row">
