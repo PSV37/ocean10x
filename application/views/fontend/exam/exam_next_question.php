@@ -3,9 +3,7 @@
   <div class="row">
     <div class="col-md-12 col-sm-12">
       <?php 
-        $new_str = file_get_contents('./exam_questions/'.$job_post_id.'_'.$jobseeker_id.'.json');
-        $new_json = json_decode($new_str, true);
-        echo sizeof($new_json);
+       
         $ans_cnt = count($questions['answer']);
           if($ans_cnt > 1){
             $input_type='checkbox';

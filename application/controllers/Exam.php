@@ -198,7 +198,7 @@ class Exam extends MY_Seeker_Controller
             }
             // print_r($data['questions']);
 
-            if(count($data['questions']) > 1 )
+            if(count($new_json) > 1 )
             {
                 $this->load->view('fontend/exam/exam_next_question',$data);
             }else{
