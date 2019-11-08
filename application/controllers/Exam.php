@@ -56,18 +56,19 @@ class Exam extends MY_Seeker_Controller
                for($n=0;$n<sizeof($exam_question);$n++)
                {
                   $temp = $exam_question[$n];
-                  // echo "main_temp";
-                  // print_r($temp);
-                  // echo "<br>";
                     for($n1=0;$n1<sizeof($temp);$n1++)
                     {
+                        $inditidual_question=array();
                         $question_id = $temp[$n1]['ques_id'];
                         $wherechks = "question_id='$question_id'";
-                        $ques['ans'] = $this->Master_model->getMaster('questionbank_answer',$wherechks);
-                        print_r($ques['ans'][0]['answer_id']);
-                        echo $this->db->last_query(); echo "<br><br>";
+                        $answer = $this->Master_model->getMaster('questionbank_answer',$wherechks);
+                        $temp[$n1]['answer']=$answer;
+                        $inditidual_question[]=$temp[$n1];
+                        array_push($temp_array, $inditidual_question);
                     }
                }
+               echo "<pre>";
+               print_r($temp_array);
                die;
                // creating json file of all questions based on topic
                $fp = fopen('./exam_questions/'.$job_id.'_'.$jobseeker_id.'.json', 'w');
