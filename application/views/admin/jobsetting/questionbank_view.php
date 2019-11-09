@@ -33,8 +33,8 @@
                     </div>
                 </div>
 				<div class="row">
-				<div class="col-md-10"></div>
-				<div class="col-md-2">
+				<div class="col-md-9"></div>
+				<div class="col-md-3">
 				<a href="questionimportpattarn/Questionbank_pattern.csv" download>Download Question Import Pattarn</a>
 				</div>
 				</div>
