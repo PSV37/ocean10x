@@ -41,9 +41,7 @@
 								
 								<tr>
                                   <td width="30%">Preferred Shift:</td>
-                                  <td><?php if(!empty($job_career_info[0]->avaliable))
-                                          echo $job_career_info[0]->avaliable;
-                                   ?></td>
+                                   <td><?php echo $results['shift_type']; ?></td>
                                 </tr>
 
                               <tr>
