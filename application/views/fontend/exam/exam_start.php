@@ -153,7 +153,7 @@
   }
 
   $(document).ready(function(){
-   setInterval(fetchdata,5000);
+   setInterval(fetchdata,30000);
   });
 
   </script>

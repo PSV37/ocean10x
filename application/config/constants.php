@@ -85,6 +85,7 @@ defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automat
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
 // defined('SITE_NAME')      OR define('SITE_NAME', 'consultnhire.com');
-defined('NUMBER_QUESTIONS')      OR define('NUMBER_QUESTIONS', 3);
+defined('NUMBER_QUESTIONS')    OR define('NUMBER_QUESTIONS', 3);
 // constant to show result to candidate 1-show 0-Not show
-defined('EXAM_RESULT_SHOW')      OR define('EXAM_RESULT_SHOW', 0);
+defined('EXAM_RESULT_SHOW')    OR define('EXAM_RESULT_SHOW', 0);
+defined('EXAM_TIMER_SESSION')  OR define('EXAM_TIMER_SESSION', 30000); //exam timer 

@@ -127,6 +127,37 @@ class Exam extends MY_Seeker_Controller
         }
        
     }
+
+    
+    public function restart_exam($job_id=null)
+    {   
+        $jobseeker_id = $this->session->userdata('job_seeker_id');
+        $job_id = base64_decode($job_id);
+        if (!empty($job_id)) {
+                 
+            $data['title'] = 'Exam Restart';
+            $data['job_id'] = $job_id;
+            
+            $where_time = "job_id='$job_id' AND job_seeker_id='$jobseeker_id' ORDER BY id DESC";
+            $data['exam_previous_time'] = $this->Master_model->get_master_row('js_exam_session_info', $select ='exam_time' , $where_time, $join = FALSE);
+            echo $this->db->last_query(); 
+            print_r($data['exam_previous_time']);
+            die;
+            $str = file_get_contents('./exam_questions/'.$job_id.'_'.$jobseeker_id.'.json');
+            $json = json_decode($str, true);
+
+            foreach ($json  as $value) {
+               $data['questions'] = $value;
+               break;
+            }
+            
+            $this->load->view('fontend/exam/exam_start',$data);
+
+        } else {
+            redirect('exam');
+        }
+       
+    }
 	 
     public function insert_data()
     {
