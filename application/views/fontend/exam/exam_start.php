@@ -118,7 +118,7 @@
         var minutes = parseInt( c / 60 ) % 60;
         var seconds = c % 60;
 
-        if(!isNaN(restart_timer_val))
+        if(restart_timer_val)
         {
           var result = restart_timer_val;
         }else{
