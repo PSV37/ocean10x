@@ -113,28 +113,28 @@
 
     function timedCount()
     {
-        var restart_timer_val = $('#restart_timer_val').val();
+        // var restart_timer_val = $('#restart_timer_val').val();
+
+
         var hours = parseInt( c / 3600 ) % 24;
         var minutes = parseInt( c / 60 ) % 60;
         var seconds = c % 60;
 
-        if(restart_timer_val)
-        {
-          var result = restart_timer_val;
-        }else{
+      
           var result = (hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds  < 10 ? "0" + seconds : seconds);
-        }
+        
       
             
       $('#timer').html(result);
-      $('#timer_val').val(result);
+     
       if(c == 0 )
         {
-                //setConfirmUnload(false);
-                  //$("#quiz_form").submit();
+            //setConfirmUnload(false);
+              //$("#quiz_form").submit();
           // window.location="logout.html";
         }
           c = c - 1;
+           $('#timer_val').val(c);
           t = setTimeout(function()
       {
        timedCount()
