@@ -28,8 +28,8 @@
                   <h3 style="color:#FF0000" align="center">
                     Time Left : <span id='timer'></span>
                   </h3>
-                <input type="text" name="restart_timer_val" id="restart_timer_val" value="<?php if(!empty($exam_previous_time))echo $exam_previous_time['exam_time']; ?>"> 
-                <input type="text" name="timer_val" id="timer_val"> 
+                <input type="hidden" name="restart_timer_val" id="restart_timer_val" value="<?php if(!empty($exam_previous_time))echo $exam_previous_time['exam_time']; ?>"> 
+                <input type="hidden" name="timer_val" id="timer_val"> 
                 <div id="nextshow">
 
                   <form id="nextques" class="submit-form" action="#" method="post">

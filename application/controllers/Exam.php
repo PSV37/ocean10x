@@ -143,7 +143,7 @@ class Exam extends MY_Seeker_Controller
            
             $str = file_get_contents('./exam_questions/'.$job_id.'_'.$jobseeker_id.'.json');
             $json = json_decode($str, true);
-            print_r($json); die;
+        
             foreach ($json  as $value) {
                $data['questions'] = $value;
                break;
