@@ -41,7 +41,7 @@
 								
 								<tr>
                                   <td width="30%">Preferred Shift:</td>
-                                   <td><?php echo $results['shift_type']; ?></td>
+                                   <td><?php echo $results['shift_name']; ?></td>
                                 </tr>
 
                               <tr>
