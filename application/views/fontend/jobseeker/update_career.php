@@ -131,7 +131,7 @@ function delete_Career(id) {
 				 <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Industry:</label>
                 <div class="col-sm-9">
-                  <select  name="indistry_id" id="industry_id" class="form-control">
+                  <select  name="industry_id" id="industry_id" class="form-control">
 				  <option></option>
 				 <?php foreach($industry_master as $industry){?>
 					<option value="<?php echo $industry['id']; ?>"<?php if($job_career_info[0]->industry_id==$industry['id']){ echo "selected"; }?>><?php echo $industry['industry_name']; ?></option>
