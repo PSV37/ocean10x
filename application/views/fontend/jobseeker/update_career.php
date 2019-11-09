@@ -20,8 +20,8 @@
                               <tbody>
 							  <tr>
                                   <td width="30%">industry:</td>
-                                  <td><?php if(!empty($results[0]->industry_name))
-                                          echo $results[0]->industry_name;
+                                  <td><?php $results['industry_name'];
+                                         
                                    ?></td>
                                 </tr>
 								
