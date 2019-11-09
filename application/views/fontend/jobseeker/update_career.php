@@ -179,6 +179,18 @@ function delete_Career(id) {
 				  </select>
                 </div>
               </div>
+			   <div class="form-group">
+                <label class="control-label col-sm-3" for="email">Preferred Shift:</label>
+                <div class="col-sm-9">
+                  <select  name="shift_id" id="shift_id" class="form-control">
+				  <option>Select Shift</option>
+				 <?php foreach($shift as $shifts){?>
+					<option value="<?php echo $shifts['shift_id']; ?>"<?php if($job_career_info[0]->shift_id==$shifts['shift_id']){ echo "selected"; }?>><?php echo $shifts['shift_type']; ?></option>
+					<?php } ?>
+				 </select>
+                </div>
+              </div>
+			  
 				 <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Expected Salary:</label>
                 <div class="col-sm-9">
