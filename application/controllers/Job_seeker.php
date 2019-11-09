@@ -423,9 +423,10 @@ exit;*/
             $job_career_info = $this->Job_career_model->js_careerinfo_by_seeker($jobseeker_id);
 			$employe_jobtype = $this->Master_model->getMaster('employe_jobtype',$where=false);
 			$industry_master = $this->Master_model->getMaster('industry_master',$where=false);
+			$shift = $this->Master_model->getMaster('shift',$where=false);
 			$department = $this->Master_model->getMaster('department',$where=false);
 			$job_role = $this->Master_model->getMaster('job_role',$where=false);
-            $this->load->view('fontend/jobseeker/update_career', compact('job_career_info','employe_jobtype', 'industry_master', 'department', 'job_role'));
+            $this->load->view('fontend/jobseeker/update_career', compact('job_career_info','employe_jobtype', 'industry_master', 'shift', 'department', 'job_role'));
         }
     }
 	
