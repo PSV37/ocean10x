@@ -432,6 +432,14 @@ order by RAND() limit 3");
         return isset($result[0]->job_title) ? $result[0]->job_title : '';
     }
 
+    public function job_deadline($id)
+    {
+        $this->db->select("job_deadline");
+        $this->db->where($this->_primary_key, $id);
+        $result = $this->db->get($this->_table_name)->result();
+        return isset($result[0]->job_title) ? $result[0]->job_title : '';
+    }
+
     public function get_job_id_by_job_slug($slug)
     {
         $this->db->select('job_post_id');

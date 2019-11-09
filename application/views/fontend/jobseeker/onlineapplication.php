@@ -175,6 +175,7 @@
                                     <?php } ?>
                                    
                                   </td>
+                                  <?php echo $this->job_posting_model->job_deadline($forward_applicaiton->job_post_id); ?>
                                   <?php if(EXAM_RESULT_SHOW ==1){ ?>
                                   <td>
                                     <a href="<?php echo base_url(); ?>job/all-results/<?php echo $forward_applicaiton->job_post_id; ?>" class="btn btn-success btn-xs">View Result</a>
