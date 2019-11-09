@@ -29,6 +29,7 @@
                     Time Left : <span id='timer'></span>
                   </h3>
                 <div id="nextshow">
+                   <input type="text" name="timer_val" id="timer_val"> 
                   <form id="nextques" class="submit-form" action="#" method="post">
                     <div class="row">
                       <div class="col-md-12 col-sm-12">
@@ -42,7 +43,7 @@
                         ?>
                         <input type="hidden" name="job_id" id="job_id" value="<?php if(!empty($job_id))echo base64_encode($job_id); ?>">
                         <input type="hidden" name="question_id" id="question_id" value="<?php echo $questions['ques_id']; ?>">
-                        <input type="text" name="timer_val" id="timer_val"> 
+                       
                         <label><?php echo "Question:- ".$questions['question']; ?></label> 
                           <ul>
 
@@ -118,7 +119,7 @@
 
             
       $('#timer').html(result);
-       $('#timer_val').val(result);
+      $('#timer_val').val(result);
       if(c == 0 )
         {
                 //setConfirmUnload(false);
