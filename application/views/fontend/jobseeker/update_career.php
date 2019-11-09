@@ -184,7 +184,47 @@ function delete_Career(id) {
                        ?></textarea>
                 </div>
               </div>
+				
+				  <div class="form-group">
+                <label class="control-label col-sm-3" for="email">Expected Salary:</label>
+                <div class="col-sm-9">
+                  <input type="text" name="js_career_salary" class="form-control" id="js_career_salary" placeholder="Expected Salary"
+                   value="<?php
+                         if (!empty($job_career_info[0]->js_career_salary)) {
+                           echo $job_career_info[0]->js_career_salary;
+                           } 
+                       ?>">
+                </div>
+              </div>
+				<div class="form-group">
+                <br/> <label class="control-label col-sm-3"> Job Type:</label>
+                <div class="col-sm-9">
+                  <select name="avaliable" class="form-control">
+				  <option value="<?php if (!empty($job_career_info[0]->avaliable)) {
+                           echo $job_career_info[0]->avaliable;
+                           } ?>"><?php  if (!empty($job_career_info[0]->avaliable)) {
+                           echo $job_career_info[0]->avaliable;
+                           } ?></option>
+					<option value="Full Time">Full Time</option>
+					<option value="Part Time">Part Time</option>
+					<option value="Contractual Time">Contractual</option>
+				  </select>
+                </div>
+              </div>
 
+             <div class="form-group">
+                <label class="control-label col-sm-3" for="email">Preferable Job Location:</label>
+                <div class="col-sm-9">
+                  <input type="text" name="job_area" class="form-control" id="job_area" placeholder="Preferable Job Area"
+                   value="<?php
+                         if (!empty($job_career_info[0]->job_area)) {
+                           echo $job_career_info[0]->job_area;
+                           }
+                       ?>">
+                </div>
+              </div>
+				
+				
               <!--<div class="form-group">
                 <label class="control-label col-sm-3" for="email">Skills:</label>
                 <div class="col-sm-9">
@@ -199,17 +239,7 @@ function delete_Career(id) {
               </div>-->
       
 
-               <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Expected Salary:</label>
-                <div class="col-sm-9">
-                  <input type="text" name="js_career_salary" class="form-control" id="js_career_salary" placeholder="Expected Salary"
-                   value="<?php
-                         if (!empty($job_career_info[0]->js_career_salary)) {
-                           echo $job_career_info[0]->js_career_salary;
-                           } 
-                       ?>">
-                </div>
-              </div>
+             
 			  		  
 			  <!--<div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Duration From:</label>
@@ -280,33 +310,7 @@ function delete_Career(id) {
                 </div>
               </div>-->
          
-         <div class="form-group">
-                <br/> <label class="control-label col-sm-3"> Job Type:</label>
-                <div class="col-sm-9">
-                  <select name="avaliable" class="form-control">
-				  <option value="<?php if (!empty($job_career_info[0]->avaliable)) {
-                           echo $job_career_info[0]->avaliable;
-                           } ?>"><?php  if (!empty($job_career_info[0]->avaliable)) {
-                           echo $job_career_info[0]->avaliable;
-                           } ?></option>
-					<option value="Full Time">Full Time</option>
-					<option value="Part Time">Part Time</option>
-					<option value="Contractual Time">Contractual</option>
-				  </select>
-                </div>
-              </div>
-
-             <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Preferable Job Location:</label>
-                <div class="col-sm-9">
-                  <input type="text" name="job_area" class="form-control" id="job_area" placeholder="Preferable Job Area"
-                   value="<?php
-                         if (!empty($job_career_info[0]->job_area)) {
-                           echo $job_career_info[0]->job_area;
-                           }
-                       ?>">
-                </div>
-              </div>
+         
 
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
