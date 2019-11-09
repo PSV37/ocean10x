@@ -88,6 +88,9 @@
                                    <?php }?>
 
                                   <td>
+
+                                  <?php echo $this->job_posting_model->job_deadline($applicaiton->job_post_id); ?>
+
                                   <?php
                                     $is_exam_required = getExamRequired($applicaiton->job_post_id);
 
