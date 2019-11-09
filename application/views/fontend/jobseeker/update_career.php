@@ -19,55 +19,38 @@
 
                               <tbody>
 							  <tr>
-                                  <td width="30%">Work Title:</td>
+                                  <td width="30%">industry:</td>
                                   <td><?php if(!empty($job_career_info[0]->worktitle))
                                           echo $job_career_info[0]->worktitle;
                                    ?></td>
                                 </tr>
 								
 								<tr>
-                                  <td width="30%">URL:</td>
+                                  <td width="30%">Department:</td>
                                   <td><?php if(!empty($job_career_info[0]->url))
                                           echo $job_career_info[0]->url;
                                    ?></td>
                                 </tr>
 							  
                               <tr>
-                                  <td width="30%">Career Summary:</td>
+                                  <td width="30%">Job Role:</td>
                                   <td><?php if(!empty($job_career_info[0]->js_career_sum))
                                           echo $job_career_info[0]->js_career_sum;
                                    ?></td>
                                 </tr>
-
-
-                             <!--<tr>
-                                  <td width="30%">Total Number of Experience :</td>
-                                  <td><?php /*if(!empty($job_career_info[0]->js_career_exp))
-                                          echo $job_career_info[0]->js_career_exp; */
-                                   ?></td>
-                                </tr>-->
-                               <tr>
-                                  <td width="30%">Field of Specialization :</td>
-                                  <td><?php if(!empty($job_career_info[0]->field_sepicalization))
-                                          echo $job_career_info[0]->field_sepicalization;
+								<tr>
+                                  <td width="30%">Job Type:</td>
+                                  <td><?php if(!empty($job_career_info[0]->avaliable))
+                                          echo $job_career_info[0]->avaliable;
                                    ?></td>
                                 </tr>
-
-                               <tr>
-                                  <td width="30%">Extra Curricular Activities:</td>
-                                  <td><?php if(!empty($job_career_info[0]->extracurricular))
-                                          echo $job_career_info[0]->extracurricular;
+								
+								<tr>
+                                  <td width="30%">Preferred Shift:</td>
+                                  <td><?php if(!empty($job_career_info[0]->avaliable))
+                                          echo $job_career_info[0]->avaliable;
                                    ?></td>
                                 </tr>
-
-                                <!--<tr>
-                                  <td width="30%">Skills:</td>
-                                  <td><?php /* if(!empty($job_career_info[0]->skills))
-                                          echo $job_career_info[0]->skills;
-                                  */ ?></td>
-                                </tr>-->
-
-
 
                               <tr>
                                   <td width="30%">Expected Salary:</td>
@@ -76,12 +59,7 @@
                                    ?></td>
                                 </tr>
                                
-                              <tr>
-                                  <td width="30%">Job Type:</td>
-                                  <td><?php if(!empty($job_career_info[0]->avaliable))
-                                          echo $job_career_info[0]->avaliable;
-                                   ?></td>
-                                </tr>
+                              
 								
 								<tr>
                                   <td width="30%">Preferable Job Location:</td>
