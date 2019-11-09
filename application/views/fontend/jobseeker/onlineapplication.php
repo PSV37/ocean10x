@@ -89,7 +89,9 @@
 
                                   <td>
 
-                                  <?php echo $this->job_posting_model->job_deadline($applicaiton->job_post_id); ?>
+                                  <?php $job_deadline = $this->job_posting_model->job_deadline($applicaiton->job_post_id); 
+                                    if ($job_deadline > date('Y-m-d')){
+                                  ?>
 
                                   <?php
                                     $is_exam_required = getExamRequired($applicaiton->job_post_id);
@@ -111,6 +113,9 @@
                                     }else{
                                       echo "<span class='label label-info'>Not Required</span>";
                                     }
+                                  }else{
+                                    echo "<span class='label label-danger'>Job Expired</span>";
+                                  }
 
                                   ?>
                                   </td>
@@ -178,7 +183,7 @@
                                     <?php } ?>
                                    
                                   </td>
-                                  <?php echo $this->job_posting_model->job_deadline($forward_applicaiton->job_post_id); ?>
+                               
                                   <?php if(EXAM_RESULT_SHOW ==1){ ?>
                                   <td>
                                     <a href="<?php echo base_url(); ?>job/all-results/<?php echo $forward_applicaiton->job_post_id; ?>" class="btn btn-success btn-xs">View Result</a>
@@ -186,6 +191,9 @@
                                   <?php }?>
                                   
                                   <td>
+                                  <?php $job_deadline= $this->job_posting_model->job_deadline($forward_applicaiton->job_post_id);
+                                    if ($job_deadline > date('Y-m-d')){
+                                  ?>
                                   <?php
                                    $is_exam_required = getExamRequired($forward_applicaiton->job_post_id);
 
@@ -208,6 +216,10 @@
                                     }else{
                                       echo "<span class='label label-info'>Not Required</span>";
                                     }
+
+                                  }else{
+                                    echo "<span class='label label-danger'>Job Expired</span>";
+                                  }
                                   ?>
                                   </td>
                                 
