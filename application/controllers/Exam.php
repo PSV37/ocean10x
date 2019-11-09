@@ -138,7 +138,7 @@ class Exam extends MY_Seeker_Controller
             $data['title'] = 'Exam Restart';
             $data['job_id'] = $job_id;
             
-            $where_time = "job_post_id='$job_id' AND job_seeker_id='$jobseeker_id' ORDER BY id DESC";
+            $where_time = "job_id='$job_id' AND job_seeker_id='$jobseeker_id' ORDER BY id DESC";
             $data['exam_previous_time'] = $this->Master_model->get_master_row('js_exam_session_info', $select ='exam_time' , $where_time, $join = FALSE);
             echo $this->db->last_query(); die;
             $str = file_get_contents('./exam_questions/'.$job_id.'_'.$jobseeker_id.'.json');
