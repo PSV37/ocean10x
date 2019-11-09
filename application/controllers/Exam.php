@@ -143,11 +143,12 @@ class Exam extends MY_Seeker_Controller
            
             $str = file_get_contents('./exam_questions/'.$job_id.'_'.$jobseeker_id.'.json');
             $json = json_decode($str, true);
-
+        
             foreach ($json  as $value) {
                $data['questions'] = $value;
                break;
             }
+
             
             $this->load->view('fontend/exam/exam_start',$data);
 
