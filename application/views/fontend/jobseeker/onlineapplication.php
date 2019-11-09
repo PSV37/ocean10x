@@ -156,7 +156,7 @@
                                   <td>
                                     <?php
 
-                                      if($forward_applicaiton->apply_status == 0 || $forward_applicaiton->is_test_done == 2)
+                                      if($forward_applicaiton->apply_status == 0)
                                         { 
                                     ?>
                                         <span class="label label-warning"><?php echo 'Not Sorted' ?></span>
@@ -181,11 +181,18 @@
 
                                    if($is_exam_required['is_test_required'] =='Yes')
                                     {
+                                      
                                       if($forward_applicaiton->is_test_done == 0)
                                         { 
                                   ?>
                                     <a href="<?php echo base_url(); ?>exam/index/<?php echo base64_encode($forward_applicaiton->job_post_id); ?>" class="btn btn-success btn-xs">Give Exam</a>
-                                  <?php }else{
+                                  <?php }else if($forward_applicaiton->is_test_done == 2)
+                                        { 
+                                  ?>
+                                    <a href="<?php echo base_url(); ?>exam/restart_exam/<?php echo base64_encode($forward_applicaiton->job_post_id); ?>" class="btn btn-success btn-xs">Restart Exam</a>
+                                  <?php
+                                    }
+                                    else{
                                           echo "<span class='label label-primary'>Done</span>";
                                         } 
                                     }else{
