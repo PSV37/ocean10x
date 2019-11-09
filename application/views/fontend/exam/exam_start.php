@@ -28,6 +28,7 @@
                   <h3 style="color:#FF0000" align="center">
                     Time Left : <span id='timer'></span>
                   </h3>
+                <input type="text" name="restart_timer_val" id="restart_timer_val" value="<?php if(!empty($exam_previous_time))echo $exam_previous_time['exam_time']; ?>"> 
                 <input type="text" name="timer_val" id="timer_val"> 
                 <div id="nextshow">
 
@@ -105,19 +106,25 @@
 
 
   //define your time in second
+
     var c=1800;
     var t;
     timedCount();
 
     function timedCount()
     {
-
+        var restart_timer_val = $('#restart_timer_val').val();
         var hours = parseInt( c / 3600 ) % 24;
         var minutes = parseInt( c / 60 ) % 60;
         var seconds = c % 60;
 
-        var result = (hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds  < 10 ? "0" + seconds : seconds);
-
+        if(restart_timer_val)
+        {
+          var result = restart_timer_val;
+        }else{
+          var result = (hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds  < 10 ? "0" + seconds : seconds);
+        }
+      
             
       $('#timer').html(result);
       $('#timer_val').val(result);
