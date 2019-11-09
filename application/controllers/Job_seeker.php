@@ -451,7 +451,7 @@ exit;*/
     {
         if ($_POST) {
             $jobseeker_id = $this->session->userdata('job_seeker_id');
-            $js_skills = $this->input->post('skills');
+            //$js_skills = $this->input->post('skills');
 			
             $career_info  = array(
 				'skills'               => $this->input->post('skills'),
