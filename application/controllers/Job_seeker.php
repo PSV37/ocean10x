@@ -404,6 +404,7 @@ exit;*/
 				'dept_id'        => $this->input->post('dept_id'),
 				'job_role'        => $this->input->post('job_role'),
 				'avaliable'        => $this->input->post('avaliable'),
+				'shift_id'        => $this->input->post('shift_id'),
 				'js_career_salary'        => $this->input->post('js_career_salary'),
 				'job_area'        => $this->input->post('job_area'),
 				
