@@ -20,8 +20,8 @@
                               <tbody>
 							  <tr>
                                   <td width="30%">industry:</td>
-                                  <td><?php if(!empty($job_career_info[0]->worktitle))
-                                          echo $job_career_info[0]->worktitle;
+                                  <td><?php if(!empty($results[0]->industry_name))
+                                          echo $results[0]->industry_name;
                                    ?></td>
                                 </tr>
 								
