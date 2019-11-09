@@ -55,6 +55,7 @@
                               <tbody>
                               <?php
                                  $sr_no=0;
+                                 print_r($applicationlist);
                                if (!empty($applicationlist)): foreach ($applicationlist as $applicaiton) : $sr_no++; ?>
                                 <tr>
                                     <?php if ($applicaiton->job_deadline > date('Y-m-d')){ echo "s";} else{ echo 'n'; }?>
