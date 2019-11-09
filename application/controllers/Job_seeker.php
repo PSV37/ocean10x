@@ -403,7 +403,9 @@ exit;*/
 				'industry_id'        => $this->input->post('industry_id'),
 				'dept_id'        => $this->input->post('dept_id'),
 				'job_role'        => $this->input->post('job_role'),
-				
+				'avaliable'        => $this->input->post('avaliable'),
+				'js_career_salary'        => $this->input->post('js_career_salary'),
+				'job_area'        => $this->input->post('job_area'),
 				
             );
             
