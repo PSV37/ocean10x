@@ -106,25 +106,25 @@
 
 
   //define your time in second
-
+var restart_timer_val = $('#restart_timer_val').val();
+  if(restart_timer_val)
+  {
+    var c=restart_timer_val;
+  }else{
     var c=1800;
+  }
+    
     var t;
     timedCount();
 
     function timedCount()
     {
-        // var restart_timer_val = $('#restart_timer_val').val();
-
-
         var hours = parseInt( c / 3600 ) % 24;
         var minutes = parseInt( c / 60 ) % 60;
         var seconds = c % 60;
-
       
-          var result = (hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds  < 10 ? "0" + seconds : seconds);
+        var result = (hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds  < 10 ? "0" + seconds : seconds);
         
-      
-            
       $('#timer').html(result);
      
       if(c == 0 )
