@@ -55,11 +55,10 @@
                               <tbody>
                               <?php
                                  $sr_no=0;
-                                 print_r($applicationlist);
+                                 
                                if (!empty($applicationlist)): foreach ($applicationlist as $applicaiton) : $sr_no++; ?>
                                 <tr>
-                                    <?php if ($applicaiton->job_deadline > date('Y-m-d')){ echo "s";} else{ echo 'n'; }?>
-                                  <td><?php echo $sr_no; echo $applicaiton->job_deadline; ?></td>
+                                  <td><?php echo $sr_no; ?></td>
                                   <td>
                                     <h4>
                                       <a href="<?php  echo base_url();?>job/show/<?php echo $this->job_posting_model->get_slug_nameby_id($applicaiton->job_post_id) ?>"><?php echo $this->job_posting_model->job_title_by_name($applicaiton->job_post_id); ?></a><br>
