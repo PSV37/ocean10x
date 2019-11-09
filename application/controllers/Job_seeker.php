@@ -414,6 +414,7 @@ exit;*/
             } else {
             	$this->Job_career_model->update($career_info, $js_career_id);
             }
+			redirect('job_seeker/seeker_info');
         } else {
             $jobseeker_id    = $this->session->userdata('job_seeker_id');
             $job_career_info = $this->Job_career_model->js_careerinfo_by_seeker($jobseeker_id);
