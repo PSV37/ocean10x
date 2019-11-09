@@ -35,7 +35,7 @@
 				<div class="row">
 				<div class="col-md-9"></div>
 				<div class="col-md-3">
-				<a download="questionimportpattarn.zip">Download Question Import Pattarn</a>
+				<a href="questionimportpattarn.zip">Download Question Import Pattarn</a>
 				</div>
 				</div>
                 <!-- /.box-header -->
