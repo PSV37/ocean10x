@@ -32,7 +32,12 @@
                         <h3 class="box-title ">Import Question's</h3>
                     </div>
                 </div>
-				
+				<div class="row">
+				<div class="col-md-10"></div>
+				<div class="col-md-2">
+				<a href="questionimportpattarn/Questionbank_pattern.csv" download>Download Question Import Pattarn</a>
+				</div>
+				</div>
                 <!-- /.box-header -->
                 <div class="box-background">
                 <!-- form start -->
