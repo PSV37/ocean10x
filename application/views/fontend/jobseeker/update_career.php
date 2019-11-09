@@ -134,7 +134,7 @@ function delete_Career(id) {
                   <select  name="indistry_id" id="industry_id" class="form-control">
 				  <option></option>
 				 <?php foreach($industry_master as $industry){?>
-					<option value="<?php echo $industry['id']; ?>"<?php if($job_career_info->industry_id==$industry['id']){ echo "selected"; }?>><?php echo $industry['industry_name']; ?></option>
+					<option value="<?php echo $industry['id']; ?>"<?php if($job_career_info[0]->industry_id==$industry['id']){ echo "selected"; }?>><?php echo $industry['industry_name']; ?></option>
 					<?php } ?>
 				 </select>
                 </div>
@@ -146,7 +146,7 @@ function delete_Career(id) {
                   <select  name="dept_id" id="dept_id" class="form-control">
 				  <option></option>
 				 <?php foreach($department as $dept){?>
-					<option value="<?php echo $dept['dept_id']; ?>"<?php if($job_career_info->dept_id==$dept['dept_id']){ echo "selected"; }?>><?php echo $dept['department_name']; ?></option>
+					<option value="<?php echo $dept['dept_id']; ?>"<?php if($job_career_info[0]->dept_id==$dept['dept_id']){ echo "selected"; }?>><?php echo $dept['department_name']; ?></option>
 					<?php } ?>
 				 </select>
                 </div>
@@ -158,7 +158,7 @@ function delete_Career(id) {
                   <select  name="job_role" id="job_role" class="form-control">
 				  <option></option>
 				 <?php foreach($job_role as $role){?>
-					<option value="<?php echo $role['id']; ?>"<?php if($job_career_info->job_role==$role['id']){ echo "selected"; }?>><?php echo $role['job_role_title']; ?></option>
+					<option value="<?php echo $role['id']; ?>"<?php if($job_career_info[0]->job_role==$role['id']){ echo "selected"; }?>><?php echo $role['job_role_title']; ?></option>
 					<?php } ?>
 				 </select>
                 </div>
