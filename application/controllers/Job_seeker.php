@@ -435,7 +435,8 @@ exit;*/
 			);
 			
 			$results = $this->Master_model->get_master_row("js_career_info", $select = false, $where_sek, $join1);
-			echo $this->db->last_query();
+			//echo $this->db->last_query();
+			print_r($results);die();
 			
             $this->load->view('fontend/jobseeker/update_career', compact('job_career_info','employe_jobtype', 'industry_master', 'shift', 'department', 'job_role', 'results'));
         }
