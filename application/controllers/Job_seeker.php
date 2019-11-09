@@ -428,9 +428,9 @@ exit;*/
 			$job_role = $this->Master_model->getMaster('job_role',$where=false);
 			$where_sek['job_seeker_id'] = $jobseeker_id;
 			$join1 = array(
-				'industry_master' => 'industry_master.id = js_career_info.industry_id|INNER',
-				'department' => 'department.dept_id = js_career_info.dept_id|INNER',
-				'job_role' => 'job_role.id = js_career_info.job_role|INNER',
+				'industry_master' => 'industry_master.id = js_career_info.industry_id|LEFT OUTER',
+				'department' => 'department.dept_id = js_career_info.dept_id|LEFT OUTER',
+				'job_role' => 'job_role.id = js_career_info.job_role|LEFT OUTER',
 			);
 			
 			$results = $this->Master_model->get_master_row("js_career_info", $select = false, $where_sek, $join1);

@@ -30,7 +30,7 @@
 							  
                               <tr>
                                   <td width="30%">Job Role:</td>
-                                  <td><td><?php echo $results['job_role_title']; ?></td>
+                                  <td><?php echo $results['job_role_title']; ?></td>
                                 </tr>
 								<tr>
                                   <td width="30%">Job Type:</td>
