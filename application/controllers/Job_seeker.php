@@ -429,11 +429,12 @@ exit;*/
 			$where_sek['job_seeker_id'] = $jobseeker_id;
 			$join1 = array(
 				'industry_master' => 'industry_master.id = js_career_info.industry_id|INNER',
-				
+				'department' => 'department.dept_id = js_career_info.dept_id|INNER',
+				'job_role' => 'job_role.id = js_career_info.job_role|INNER',
 			);
 			
 			$results = $this->Master_model->get_master_row("js_career_info", $select = false, $where_sek, $join1);
-			echo $this->db->last_query();
+			//echo $this->db->last_query();
 			
             $this->load->view('fontend/jobseeker/update_career', compact('job_career_info','employe_jobtype', 'industry_master', 'shift', 'department', 'job_role', 'results'));
         }
