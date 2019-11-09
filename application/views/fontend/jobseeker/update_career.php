@@ -164,38 +164,6 @@ function delete_Career(id) {
                 </div>
               </div>
 
-            <div class="form-group">
-            <input type="hidden" name="js_career_id" value="<?php echo $job_career_info[0]->js_career_info_id; ?>">
-                <label class="control-label col-sm-3" for="pwd">Field of Specialization:</label>
-                <div class="col-sm-9">
-                  <textarea name="field_sepicalization" class="form-control" rows="5" id="field_sepicalization"><?php if (!empty($job_career_info[0]->field_sepicalization)) {
-                           echo $job_career_info[0]->field_sepicalization;
-                           }
-                       ?></textarea>
-                </div>
-              </div>
-
-               <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">Extra Curricular Activities:</label>
-                <div class="col-sm-9">
-                  <textarea name="extracurricular" class="form-control" rows="5" id="extracurricular"><?php if (!empty($job_career_info[0]->extracurricular)) {
-                           echo $job_career_info[0]->extracurricular;
-                           }
-                       ?></textarea>
-                </div>
-              </div>
-				
-				  <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Expected Salary:</label>
-                <div class="col-sm-9">
-                  <input type="text" name="js_career_salary" class="form-control" id="js_career_salary" placeholder="Expected Salary"
-                   value="<?php
-                         if (!empty($job_career_info[0]->js_career_salary)) {
-                           echo $job_career_info[0]->js_career_salary;
-                           } 
-                       ?>">
-                </div>
-              </div>
 				<div class="form-group">
                 <br/> <label class="control-label col-sm-3"> Job Type:</label>
                 <div class="col-sm-9">
@@ -211,7 +179,17 @@ function delete_Career(id) {
 				  </select>
                 </div>
               </div>
-
+				 <div class="form-group">
+                <label class="control-label col-sm-3" for="email">Expected Salary:</label>
+                <div class="col-sm-9">
+                  <input type="text" name="js_career_salary" class="form-control" id="js_career_salary" placeholder="Expected Salary"
+                   value="<?php
+                         if (!empty($job_career_info[0]->js_career_salary)) {
+                           echo $job_career_info[0]->js_career_salary;
+                           } 
+                       ?>">
+                </div>
+              </div>
              <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Preferable Job Location:</label>
                 <div class="col-sm-9">
@@ -308,8 +286,27 @@ function delete_Career(id) {
                            }
                       */ ?> ">
                 </div>
+              </div>
+				<div class="form-group">
+            <input type="hidden" name="js_career_id" value="<?php echo $job_career_info[0]->js_career_info_id; ?>">
+                <label class="control-label col-sm-3" for="pwd">Field of Specialization:</label>
+                <div class="col-sm-9">
+                  <textarea name="field_sepicalization" class="form-control" rows="5" id="field_sepicalization"><?php /* if (!empty($job_career_info[0]->field_sepicalization)) {
+                           echo $job_career_info[0]->field_sepicalization;
+                           }
+                       */ ?></textarea>
+                </div>
+              </div>
+
+               <div class="form-group">
+                <label class="control-label col-sm-3" for="pwd">Extra Curricular Activities:</label>
+                <div class="col-sm-9">
+                  <textarea name="extracurricular" class="form-control" rows="5" id="extracurricular"><?php /* if (!empty($job_career_info[0]->extracurricular)) {
+                           echo $job_career_info[0]->extracurricular;
+                           }
+                      */  ?></textarea>
+                </div>
               </div>-->
-         
          
 
               <div class="modal-footer">
