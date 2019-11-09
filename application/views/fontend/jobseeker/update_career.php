@@ -20,7 +20,7 @@
                               <tbody>
 							  <tr>
                                   <td width="30%">industry:</td>
-                                  <td><?php $results['industry_name'];
+                                  <td><?php echo $results['industry_name'];
                                          
                                    ?></td>
                                 </tr>
