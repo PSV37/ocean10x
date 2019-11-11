@@ -77,10 +77,10 @@ class Job_seeker extends MY_Seeker_Controller
                             $lang_array = array(
                                 'job_seeker_id'  => $jobseeker_id,
                                 'language'       => $language[$l],
-                                'proficiency'    => $post_data['proficiency'.$language[$l]],
-                                'lang_write'     => $this->input->post('lang_write'),
-                                'lang_speak'     => $this->input->post('lang_speak'),
-                                'lang_read'      => $this->input->post('lang_read'),
+                                'proficiency'    => $proficiency[$l],
+                                'lang_write'     => $this->input->post('lang_write')[$l],
+                                'lang_speak'     => $this->input->post('lang_speak')[$l],
+                                'lang_read'      => $this->input->post('lang_read')[$l],
                                 
                             );
                             $last_id = $this->Master_model->master_insert($lang_array, 'js_languages');
@@ -105,10 +105,10 @@ class Job_seeker extends MY_Seeker_Controller
                             $lang_array = array(
                                 'job_seeker_id'  => $jobseeker_id,
                                 'language'       => $language[$l],
-                                'proficiency'    => $post_data['proficiency'.$language[$l]],
-                                'lang_write'     => $this->input->post('lang_write'),
-                                'lang_speak'     => $this->input->post('lang_speak'),
-                                'lang_read'      => $this->input->post('lang_read'),
+                                'proficiency'    => $proficiency[$l],
+                                'lang_write'     => $this->input->post('lang_write')[$l],
+                                'lang_speak'     => $this->input->post('lang_speak')[$l],
+                                'lang_read'      => $this->input->post('lang_read')[$l],
                                 
                             );
                             $last_id = $this->Master_model->master_insert($lang_array, 'js_languages');
