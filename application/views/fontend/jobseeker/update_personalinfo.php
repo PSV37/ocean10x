@@ -219,11 +219,13 @@
           <table class="table">
             <thead><th>Language</th><th>Proficienct</th><th>Read</th><th>Write</th><th>Speak</th></thead>
             <tbody><?php if(!empty($languages)) foreach($languages as $lrow){ ?>
-              <td><?php echo $lrow['language']; ?></td>
-              <td><?php echo $lrow['proficiency']; ?></td>
-              <td><?php echo $lrow['lang_read']; ?></td>
-              <td><?php echo $lrow['lang_write']; ?></td>
-              <td><?php echo $lrow['lang_speak']; ?></td>
+              <tr>
+                <td><?php echo $lrow['language']; ?></td>
+                <td><?php echo $lrow['proficiency']; ?></td>
+                <td><?php echo $lrow['lang_read']; ?></td>
+                <td><?php echo $lrow['lang_write']; ?></td>
+                <td><?php echo $lrow['lang_speak']; ?></td>
+              </tr>
             <?php } ?>
             </tbody>
           </table>
