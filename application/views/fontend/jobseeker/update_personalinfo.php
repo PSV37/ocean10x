@@ -1364,10 +1364,11 @@
                         
                       </select>
                     </div>
-                    <div class="col-md-12">  
-                      <input type="checkbox" name="experties[]" id="experties" value="Read"> Read
-                      <input type="checkbox" name="experties[]" id="experties" value="Write"> Write
-                      <input type="checkbox" name="experties[]" id="experties" value="Speak"> Speak
+                    <div class="col-md-12" style="margin-top:10px;">  
+                      <input type="checkbox" name="experties[]" id="experties" value="Read" style="margin: 0 15px;"> Read
+                      <input type="checkbox" name="experties[]" id="experties" value="Write" style="margin: 0 15px;"> Write
+                      <input type="checkbox" name="experties[]" id="experties" value="Speak" style="margin: 0 15px;"> Speak
+
                     </div>
                   </div>
                 </div>
@@ -1395,11 +1396,11 @@
                 </select>
               </div>
               <div class="col-md-12" style="margin-top:10px;">  
-                <input type="checkbox" name="experties[]" id="experties" value="Read"> Read
-                <input type="checkbox" name="experties[]" id="experties" value="Write"> Write
-                <input type="checkbox" name="experties[]" id="experties" value="Speak"> Speak
+                <input type="checkbox" name="experties[]" id="experties" value="Read" style="margin: 0 15px;"> Read
+                <input type="checkbox" name="experties[]" id="experties" value="Write" style="margin: 0 15px;"> Write
+                <input type="checkbox" name="experties[]" id="experties" value="Speak" style="margin: 0 15px;"> Speak
 
-                <button class="btn btn-danger btn-xs remove" type="button" style="margin-top:10px;"><i class="fa fa-trash"></i> Remove</button><br/>
+                <button class="btn btn-danger btn-xs pull-right remove" type="button" style="margin-top:10px;"><i class="fa fa-trash"></i> Remove</button><br/>
               </div>
 
             </div>
