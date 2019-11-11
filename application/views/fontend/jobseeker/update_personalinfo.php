@@ -1377,6 +1377,7 @@
                   delay: 100
                 },
                 showAutocompleteOnFocus: true,
+                limit: 3,
 
               });
               // to avoid duplications
