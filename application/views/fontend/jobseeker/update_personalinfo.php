@@ -1349,7 +1349,7 @@
               <button class="btn btn-success btn-xs pull-right add-more" type="button"><i class="fa fa-plus"></i> Add Language</button> <br>
               <div class="input-group control-group after-add-more">
                 <div>
-                  <?php if(!empty($languages)) foreach($$languages as $lrow){?>
+                  <?php if(!empty($languages)) foreach($languages as $lrow){?>
                   <div class="col-md-12">
                     <div class="col-md-6"> 
                        <label>Language</label>
