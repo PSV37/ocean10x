@@ -217,7 +217,7 @@
           <h6>Languages: </h6>
         
           <table class="table">
-            <thead><th>Language</th><th>Proficienct</th><th>Read</th><th>Write</th><th>Speak</th></thead>
+            <thead><th>Languages</th><th>Proficiency</th><th>Read</th><th>Write</th><th>Speak</th></thead>
             <tbody><?php if(!empty($languages)) foreach($languages as $lrow){ ?>
               <tr>
                 <td><?php echo $lrow['language']; ?></td>
