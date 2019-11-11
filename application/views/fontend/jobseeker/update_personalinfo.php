@@ -1,3 +1,11 @@
+<style type="text/css">
+  label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+</style>
 <div class="section lb">
   <div class="container">
     <div class="row">
@@ -1391,9 +1399,10 @@
                 <input type="checkbox" name="experties[]" id="experties" value="Write"> Write
                 <input type="checkbox" name="experties[]" id="experties" value="Speak"> Speak
               </div>
+              <button class="btn btn-danger btn-xs remove" type="button" style="margin-top:10px;"><i class="fa fa-trash"></i> Remove</button><br/>
             </div>
           </div>
-          <button class="btn btn-danger btn-xs remove" type="button" style="margin-top:10px;"><i class="glyphicon glyphicon-remove"></i> Remove</button><br/>
+        
           <br/>
         </div>
       </div>
