@@ -79,18 +79,18 @@ class Job_seeker extends MY_Seeker_Controller
                     {
                         if($language[$l]!=''){
                             
-                            if(!isset($lang_write[$l]))
-                            {
-                                $lang_write[$l] = 'No';
-                            }
-                            if(!isset($lang_speak[$l]))
-                            {
-                                $lang_speak[$l] = 'No';
-                            }
-                            if(!isset($lang_read[$l]))
-                            {
-                                $lang_read[$l] = 'No';
-                            }
+                            // if(!isset($lang_write[$l]))
+                            // {
+                            //     $lang_write[$l] = 'No';
+                            // }
+                            // if(!isset($lang_speak[$l]))
+                            // {
+                            //     $lang_speak[$l] = 'No';
+                            // }
+                            // if(!isset($lang_read[$l]))
+                            // {
+                            //     $lang_read[$l] = 'No';
+                            // }
 
                             $lang_array = array(
                                 'job_seeker_id'  => $jobseeker_id,
@@ -122,18 +122,18 @@ class Job_seeker extends MY_Seeker_Controller
                     {
                         if($language[$l]!=''){
 
-                            if(!isset($lang_write[$l]))
-                            {
-                                $lang_write[$l] = 'No';
-                            }
-                            if(!isset($lang_speak[$l]))
-                            {
-                                $lang_speak[$l] = 'No';
-                            }
-                            if(!isset($lang_read[$l]))
-                            {
-                                $lang_read[$l] = 'No';
-                            }
+                            // if(!isset($lang_write[$l]))
+                            // {
+                            //     $lang_write[$l] = 'No';
+                            // }
+                            // if(!isset($lang_speak[$l]))
+                            // {
+                            //     $lang_speak[$l] = 'No';
+                            // }
+                            // if(!isset($lang_read[$l]))
+                            // {
+                            //     $lang_read[$l] = 'No';
+                            // }
         
                             $lang_array = array(
                                 'job_seeker_id'  => $jobseeker_id,

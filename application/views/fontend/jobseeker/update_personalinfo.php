@@ -1405,8 +1405,13 @@
                     </div>
                     <div class="col-md-12" style="margin-top:10px;">  
                       <input type="checkbox" name="lang_read[]" id="lang_read" value="Yes"<?php if($lrow['lang_read']=='Yes'){echo 'checked';} ?> style="margin: 0 15px;"> Read
+
+                      <input type="text" name="lang_read[]" id="txtlang_read" value="No" style="margin: 0 15px;"> 
+
                       <input type="checkbox" name="lang_write[]" id="lang_write" value="Yes"<?php if($lrow['lang_write']=='Yes'){echo 'checked';} ?> style="margin: 0 15px;"> Write
+                      <input type="text" name="lang_write[]" id="txtlang_write" value="No" style="margin: 0 15px;"> 
                       <input type="checkbox" name="lang_speak[]" id="lang_speak" value="Yes"<?php if($lrow['lang_speak']=='Yes'){echo 'checked';} ?> style="margin: 0 15px;"> Speak
+                      <input type="text" name="lang_speak[]" id="txtlang_speak" value="No" style="margin: 0 15px;"> 
                       <!-- <button class="btn btn-danger btn-xs pull-right remove" type="button"><i class="fa fa-trash"></i> Remove</button><br/> -->
                     </div>
                   </div>
@@ -1428,8 +1433,13 @@
                     </div>
                     <div class="col-md-12" style="margin-top:10px;">  
                       <input type="checkbox" name="lang_read[]" id="lang_read" value="Yes" style="margin: 0 15px;"> Read
+                      <input type="text" name="lang_read[]" id="txtlang_read" value="No" style="margin: 0 15px;"> 
+                      
                       <input type="checkbox" name="lang_write[]" id="lang_write" value="Yes" style="margin: 0 15px;"> Write
+                      <input type="text" name="lang_write[]" id="txtlang_write" value="No" style="margin: 0 15px;"> 
+                      
                       <input type="checkbox" name="lang_speak[]" id="lang_speak" value="Yes" style="margin: 0 15px;"> Speak
+                      <input type="text" name="lang_speak[]" id="txtlang_speak" value="No" style="margin: 0 15px;"> 
 
                     </div>
                   </div>
@@ -1504,6 +1514,15 @@
 
 <script type="text/javascript">
 
+  if(document.getElementById("lang_read").checked) {
+      document.getElementById('txtlang_read').disabled = true;
+  }
+  if(document.getElementById("lang_speak").checked) {
+      document.getElementById('txtlang_speak').disabled = true;
+  }
+  if(document.getElementById("lang_write").checked) {
+      document.getElementById('txtlang_write').disabled = true;
+  }
 
     $(document).ready(function() {
 
