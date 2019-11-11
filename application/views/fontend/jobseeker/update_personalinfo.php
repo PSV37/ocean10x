@@ -1326,17 +1326,16 @@
         <div class="col-md-6 col-sm-12">
           <div class="input-group">
             <label class="control-label" for="email">Work Permit for Other Countries</label>
-                   <input type="text" name="skills" class="form-control" id="tokenfield" placeholder="Enter Your Skills"
-                   value="">
+              <input type="text" name="other_country_work_permit" class="form-control" id="tokenfield" placeholder="Enter Country" value="">
           </div>     
         </div>
-        <div class="col-md-6 col-sm-12">         
+       <!--  <div class="col-md-6 col-sm-12">         
           <div class="input-group">
             <label class="control-label" for="email">Differently Abled</label>
             <input type="radio" name="differently_abled" id="differently_abled" value="Yes"> Yes
             <input type="radio" name="differently_abled" id="differently_abled" value="No" checked> No
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 		  
