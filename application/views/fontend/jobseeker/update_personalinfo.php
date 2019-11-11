@@ -209,26 +209,25 @@
                   echo $js_personal_info->work_permit_countries; ?></td>
               </tr>
 
-              <tr>
-                <td>Languages: </td>
-              </tr>
-              <tr>
-                <table class="table">
-                  <thead><th>Language</th><th>Proficienct</th><th>Read</th><th>Write</th><th>Speak</th></thead>
-                  <tbody><?php if(!empty($languages)) foreach($languages as $lrow){ ?>
-                    <td><?php echo $lrow['language']; ?></td>
-                    <td><?php echo $lrow['proficiency']; ?></td>
-                    <td><?php echo $lrow['lang_read']; ?></td>
-                    <td><?php echo $lrow['lang_write']; ?></td>
-                    <td><?php echo $lrow['lang_speak']; ?></td>
-                  <?php } ?>
-                  </tbody>
-                </table>
-
-              </tr>
+              
 									
             </tbody>
           </table>
+
+          <h6>Languages: </h6>
+        
+          <table class="table">
+            <thead><th>Language</th><th>Proficienct</th><th>Read</th><th>Write</th><th>Speak</th></thead>
+            <tbody><?php if(!empty($languages)) foreach($languages as $lrow){ ?>
+              <td><?php echo $lrow['language']; ?></td>
+              <td><?php echo $lrow['proficiency']; ?></td>
+              <td><?php echo $lrow['lang_read']; ?></td>
+              <td><?php echo $lrow['lang_write']; ?></td>
+              <td><?php echo $lrow['lang_speak']; ?></td>
+            <?php } ?>
+            </tbody>
+          </table>
+
         </div>
         <!-- end post-padding -->
       </div><!-- end col -->
