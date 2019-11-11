@@ -77,7 +77,7 @@ class Job_seeker extends MY_Seeker_Controller
                             $lang_array = array(
                                 'job_seeker_id'  => $jobseeker_id,
                                 'language'       => $language[$l],
-                                'proficiency'    => $proficiency[$l],
+                                'proficiency'    => $proficiency,
                                 'lang_write'     => $this->input->post('lang_write'),
                                 'lang_speak'     => $this->input->post('lang_speak'),
                                 'lang_read'      => $this->input->post('lang_read'),
@@ -101,10 +101,11 @@ class Job_seeker extends MY_Seeker_Controller
                 {
                     for($l=0;$l<sizeof($language);$l++)
                        {
+
                             $lang_array = array(
                                 'job_seeker_id'  => $jobseeker_id,
                                 'language'       => $language[$l],
-                                'proficiency'    => $proficiency[$l],
+                                'proficiency'    => $proficiency,
                                 'lang_write'     => $this->input->post('lang_write'),
                                 'lang_speak'     => $this->input->post('lang_speak'),
                                 'lang_read'      => $this->input->post('lang_read'),
