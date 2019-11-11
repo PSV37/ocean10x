@@ -93,11 +93,10 @@ class Job_seeker extends MY_Seeker_Controller
                 $del = $this->Master_model->master_delete('js_languages',$where_del);
                 if($del==true)
                 {
-                    var_dump($language); die;
-                   
                     for($l=0;$l<sizeof($language);$l++)
-                       {
-
+                    {
+                        if($language[$l]!=''){
+        
                             $lang_array = array(
                                 'job_seeker_id'  => $jobseeker_id,
                                 'language'       => $language[$l],
@@ -109,6 +108,7 @@ class Job_seeker extends MY_Seeker_Controller
                             );
                             $last_id = $this->Master_model->master_insert($lang_array, 'js_languages');
                         }
+                    }
                 }
                 redirect('job_seeker/seeker_info',$data);
             } else {
@@ -123,10 +123,10 @@ class Job_seeker extends MY_Seeker_Controller
                 $del = $this->Master_model->master_delete('js_languages',$where_del);
                 if($del==true)
                 {
-                    var_dump($language); die;
                     for($l=0;$l<sizeof($language);$l++)
-                       {
-
+                    {
+                        if($language[$l]!=''){
+        
                             $lang_array = array(
                                 'job_seeker_id'  => $jobseeker_id,
                                 'language'       => $language[$l],
@@ -138,6 +138,7 @@ class Job_seeker extends MY_Seeker_Controller
                             );
                             $last_id = $this->Master_model->master_insert($lang_array, 'js_languages');
                         }
+                    }
                 }
                 redirect('job_seeker/seeker_info',$data);
             }
