@@ -54,10 +54,11 @@ class Job_seeker extends MY_Seeker_Controller
 				'city1_id'          => $this->input->post('city1_id'),
 				'pincode1'          => $this->input->post('pincode1'),
                 'parmanent_address' => $this->input->post('parmanent_address'),
-                // work_permit_countries
-                // work_permit_usa
-                // marital_status
 
+                'marital_status'          => $this->input->post('matrial_status'),
+                'work_permit_usa'          => $this->input->post('work_permit_usa'),
+                'work_permit_countries' => $this->input->post('other_country_work_permit'),
+                
             );
             if (empty($personal_info_id)) {
                 $ins = $this->job_seeker_personal_model->insert($personal_info);
