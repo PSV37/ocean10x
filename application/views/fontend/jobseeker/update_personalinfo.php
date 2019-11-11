@@ -1366,9 +1366,9 @@
                       </select>
                     </div>
                     <div class="col-md-12" style="margin-top:10px;">  
-                      <input type="checkbox" name="lang_read[]" id="lang_read" value="Yes"<?php if($lrow['lang_read']=='Yes'){echo 'checked';} ?> style="margin: 0 15px;"> Read
-                      <input type="checkbox" name="lang_write[]" id="lang_write" value="Yes"<?php if($lrow['lang_write']=='Yes'){echo 'checked';} ?> style="margin: 0 15px;"> Write
-                      <input type="checkbox" name="lang_speak[]" id="lang_speak" value="Yes"<?php if($lrow['lang_speak']=='Yes'){echo 'checked';} ?> style="margin: 0 15px;"> Speak
+                      <input type="checkbox" name="lang_read" id="lang_read" value="Yes"<?php if($lrow['lang_read']=='Yes'){echo 'checked';} ?> style="margin: 0 15px;"> Read
+                      <input type="checkbox" name="lang_write" id="lang_write" value="Yes"<?php if($lrow['lang_write']=='Yes'){echo 'checked';} ?> style="margin: 0 15px;"> Write
+                      <input type="checkbox" name="lang_speak" id="lang_speak" value="Yes"<?php if($lrow['lang_speak']=='Yes'){echo 'checked';} ?> style="margin: 0 15px;"> Speak
 
                     </div>
                   </div>
