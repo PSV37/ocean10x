@@ -1400,7 +1400,7 @@
                 <input type="checkbox" name="experties[]" id="experties" value="Write" style="margin: 0 15px;"> Write
                 <input type="checkbox" name="experties[]" id="experties" value="Speak" style="margin: 0 15px;"> Speak
 
-                <button class="btn btn-danger btn-xs pull-right remove" type="button" style="margin-top:10px;"><i class="fa fa-trash"></i> Remove</button><br/>
+                <button class="btn btn-danger btn-xs pull-right remove" type="button"><i class="fa fa-trash"></i> Remove</button><br/>
               </div>
 
             </div>
