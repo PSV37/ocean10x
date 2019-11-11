@@ -1333,27 +1333,20 @@
     </div>
 
     <div class="panel-body"></div>   
-    <div class="row">
-      <div class="col-md-12">
-        <div class="col-md-12 col-sm-12">
-          <div class="input-group">
-            <label class="control-label" for="email">Work Permit for Other Countries</label>
-              <div class="input-group control-group after-add-more">
-                <div>
-                  <select name="language[]" id="language1" class="form-control">
-                    <option>--Select Language--</option>
-                    <option value="Marathi">Marathi</option>
-                    <option value="Hindi">Hindi</option>
-              
-                  </select>
-                     <br/> <button class="btn btn-success add-more" type="button" style="margin-top:10px;"><i class="glyphicon glyphicon-plus"></i> Add Another Language</button>
-                 
-                </div>
-              </div>
-          </div>     
+ 
+    <label class="control-label" for="email">Languages Known</label>
+      <div class="input-group control-group after-add-more">
+        <div>
+          <select name="language[]" id="language1" class="form-control">
+            <option>--Select Language--</option>
+            <option value="Marathi">Marathi</option>
+            <option value="Hindi">Hindi</option>
+      
+          </select>
+             <br/> <button class="btn btn-success add-more" type="button" style="margin-top:10px;"><i class="glyphicon glyphicon-plus"></i> Add Another Language</button>
+         
         </div>
       </div>
-    </div>
 		  
 		  <!--<div class="row">
 		   <div class="col-md-12">
