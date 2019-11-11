@@ -1337,8 +1337,8 @@
       <div class="col-md-12">
         <div class="col-md-12 col-sm-12">
           <div class="input-group">
-              <h6>Languages</h6>
-              <button class="btn btn-success add-more" type="button"><i class="glyphicon glyphicon-plus"></i> Add Language</button> <br>
+              <h6>Languages</h6><br>
+              <button class="btn btn-success btn-xs pull-right add-more" type="button"><i class="fa fa-plus"></i> Add Language</button> <br>
               <div class="input-group control-group after-add-more">
                 <div>
                   <div class="col-md-12">
@@ -1355,6 +1355,11 @@
                         <option value="Expert">Expert</option>
                         
                       </select>
+                    </div>
+                    <div class="col-md-12">  
+                      <input type="checkbox" name="experties[]" id="experties" value="Read"> Read
+                      <input type="checkbox" name="experties[]" id="experties" value="Write"> Write
+                      <input type="checkbox" name="experties[]" id="experties" value="Speak"> Speak
                     </div>
                   </div>
                 </div>
@@ -1381,9 +1386,14 @@
                   <option value="Expert">Expert</option>
                 </select>
               </div>
+              <div class="col-md-12">  
+                <input type="checkbox" name="experties[]" id="experties" value="Read"> Read
+                <input type="checkbox" name="experties[]" id="experties" value="Write"> Write
+                <input type="checkbox" name="experties[]" id="experties" value="Speak"> Speak
+              </div>
             </div>
           </div>
-          <button class="btn btn-danger remove" type="button" style="margin-top:10px;"><i class="glyphicon glyphicon-remove"></i> Remove</button><br/>
+          <button class="btn btn-danger btn-xs remove" type="button" style="margin-top:10px;"><i class="glyphicon glyphicon-remove"></i> Remove</button><br/>
           <br/>
         </div>
       </div>
