@@ -1255,7 +1255,7 @@
               <div class="col-md-12">
               	<div class="col-md-6 col-sm-12">
 	              	<div class="input-group">
-	                  <label class="control-label" for="email">Father Name:</label>
+	                  <label class="control-label" for="email">Father Name</label>
 	                  <input type="text" name="father_name" class="form-control name-valid" id="father_name"
 	                   value="<?php
 	                         if (!empty($js_personal_info->father_name)) {
@@ -1266,7 +1266,7 @@
 	            </div>
                 <div class="col-md-6 col-sm-12">         
 	              <div class="input-group">
-	                  <label class="control-label" for="email">Mother Name:</label>
+	                  <label class="control-label" for="email">Mother Name</label>
 	                  <input type="text" name="mother_name" class="form-control name-valid" id="mother_name"
 	                   value="<?php
 	                         if (!empty($js_personal_info->mother_name)) {
@@ -1277,6 +1277,34 @@
 	          	</div>
 		        </div>
 		  </div>
+
+    <div class="panel-body"></div>   
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-6 col-sm-12">
+          <div class="input-group">
+            <label class="control-label" for="email">Marital Status</label>
+                <select class="form-control" name="matrial_status" id="matrial_status">
+                  <option value="">Select Marital Status</option>
+                  <option value="Single/unmarried">Single/unmarried</option>
+                  <option value="Married">Married</option>
+                  <option value="Widowed">Widowed</option>
+                  <option value="Divorded">Divorced</option>
+                  <option value="Separated">Separated</option>
+                  <option value="Other">Other</option>
+                  
+                </select>
+          </div>     
+        </div>
+        <div class="col-md-6 col-sm-12">         
+        <div class="input-group">
+          <label class="control-label" for="email">Differently Abled</label>
+          <input type="radio" name="differently_abled" class="form-control" id="differently_abled" value="Yes"> Yes
+          <input type="radio" name="differently_abled" class="form-control" id="differently_abled" value="No" checked> No
+        </div>
+        </div>
+      </div>
+    </div>
 		  
 		  <!--<div class="row">
 		   <div class="col-md-12">
