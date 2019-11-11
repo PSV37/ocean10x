@@ -1337,7 +1337,8 @@
       <div class="col-md-12">
         <div class="col-md-12 col-sm-12">
           <div class="input-group">
-            <label class="control-label" for="email">Work Permit for Other Countries</label>
+            <label class="control-label" for="email">Languages</label>
+              <button class="btn btn-success add-more" type="button" style="margin-top:10px;"><i class="glyphicon glyphicon-plus"></i> Add Language</button>
               <div class="input-group control-group after-add-more">
                 <div>
                   <select name="language[]" id="language1" class="form-control">
@@ -1346,8 +1347,6 @@
                     <option value="Hindi">Hindi</option>
               
                   </select>
-                     <br/> <button class="btn btn-success add-more" type="button" style="margin-top:10px;"><i class="glyphicon glyphicon-plus"></i> Add Another Language</button>
-                 
                 </div>
               </div>
           </div>     
