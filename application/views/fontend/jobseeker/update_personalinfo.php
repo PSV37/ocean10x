@@ -1329,13 +1329,29 @@
               <input type="text" name="other_country_work_permit" class="form-control" id="tokenfield" placeholder="Enter Country" value="">
           </div>     
         </div>
-       <!--  <div class="col-md-6 col-sm-12">         
+      </div>
+    </div>
+
+    <div class="panel-body"></div>   
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-12 col-sm-12">
           <div class="input-group">
-            <label class="control-label" for="email">Differently Abled</label>
-            <input type="radio" name="differently_abled" id="differently_abled" value="Yes"> Yes
-            <input type="radio" name="differently_abled" id="differently_abled" value="No" checked> No
-          </div>
-        </div> -->
+            <label class="control-label" for="email">Work Permit for Other Countries</label>
+              <div class="input-group control-group after-add-more">
+                <div>
+                  <select name="language[]" id="language1" class="form-control">
+                    <option>--Select Language--</option>
+                    <option value="Marathi">Marathi</option>
+                    <option value="Hindi">Hindi</option>
+              
+                  </select>
+                     <br/> <button class="btn btn-success add-more" type="button" style="margin-top:10px;"><i class="glyphicon glyphicon-plus"></i> Add Another Language</button>
+                 
+                </div>
+              </div>
+          </div>     
+        </div>
       </div>
     </div>
 		  
@@ -1368,6 +1384,28 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+
+
+    $(document).ready(function() {
+
+
+      $(".add-more").click(function(){ 
+          var html = $(".copy").html();
+          $(".after-add-more").after(html);
+      });
+
+
+      $("body").on("click",".remove",function(){ 
+          $(this).parents(".control-group").remove();
+      });
+
+
+    });
+
+
+</script>
 <script type="text/javascript">
 
 
