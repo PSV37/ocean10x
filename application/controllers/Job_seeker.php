@@ -32,7 +32,28 @@ class Job_seeker extends MY_Seeker_Controller
             $personal_info_id = $this->input->post('js_personal_info_id');
             $language = $this->input->post('language');
             $proficiency = $this->input->post('proficiency');
-            
+            $lang_write = $this->input->post('lang_write');
+            $lang_speak = $this->input->post('lang_speak');
+            $lang_read = $this->input->post('lang_read');
+
+            if(isset($lang_write))
+            {
+                $lang_write = 'Yes';
+            }else{
+                $lang_write = 'No';
+            }
+            if(isset($lang_speak))
+            {
+                $lang_speak = 'Yes';
+            }else{
+                $lang_speak = 'No';
+            }
+            if(isset($lang_read))
+            {
+                $lang_read = 'Yes';
+            }else{
+                $lang_read = 'No';
+            }
             $personal_info    = array(
                 'job_seeker_id'     => $jobseeker_id,
                 'father_name'       => $this->input->post('father_name'),
@@ -72,15 +93,17 @@ class Job_seeker extends MY_Seeker_Controller
                 $del = $this->Master_model->master_delete('js_languages',$where_del);
                 if($del==true)
                 {
+                   
                     for($l=0;$l<sizeof($language);$l++)
                        {
+
                             $lang_array = array(
                                 'job_seeker_id'  => $jobseeker_id,
                                 'language'       => $language[$l],
                                 'proficiency'    => $proficiency[$l],
-                                'lang_write'     => $this->input->post('lang_write'),
-                                'lang_speak'     => $this->input->post('lang_speak'),
-                                'lang_read'      => $this->input->post('lang_read'),
+                                'lang_write'     => $lang_write,
+                                'lang_speak'     => $lang_speak,
+                                'lang_read'      => $lang_read,
                                 
                             );
                             $last_id = $this->Master_model->master_insert($lang_array, 'js_languages');
@@ -106,9 +129,9 @@ class Job_seeker extends MY_Seeker_Controller
                                 'job_seeker_id'  => $jobseeker_id,
                                 'language'       => $language[$l],
                                 'proficiency'    => $proficiency[$l],
-                                'lang_write'     => $this->input->post('lang_write'),
-                                'lang_speak'     => $this->input->post('lang_speak'),
-                                'lang_read'      => $this->input->post('lang_read'),
+                                'lang_write'     => $lang_write,
+                                'lang_speak'     => $lang_speak,
+                                'lang_read'      => $lang_read,
                                 
                             );
                             $last_id = $this->Master_model->master_insert($lang_array, 'js_languages');
