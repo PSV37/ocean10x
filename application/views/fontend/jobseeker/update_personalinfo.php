@@ -1394,12 +1394,14 @@
                   <option value="Expert">Expert</option>
                 </select>
               </div>
-              <div class="col-md-12">  
+              <div class="col-md-12" style="margin-top:10px;">  
                 <input type="checkbox" name="experties[]" id="experties" value="Read"> Read
                 <input type="checkbox" name="experties[]" id="experties" value="Write"> Write
                 <input type="checkbox" name="experties[]" id="experties" value="Speak"> Speak
+
+                <button class="btn btn-danger btn-xs remove" type="button" style="margin-top:10px;"><i class="fa fa-trash"></i> Remove</button><br/>
               </div>
-              <button class="btn btn-danger btn-xs remove" type="button" style="margin-top:10px;"><i class="fa fa-trash"></i> Remove</button><br/>
+
             </div>
           </div>
         
