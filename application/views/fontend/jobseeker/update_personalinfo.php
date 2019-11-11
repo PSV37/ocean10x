@@ -1514,18 +1514,19 @@
 
 <script type="text/javascript">
 
-  if(document.getElementById("lang_read").checked) {
-      document.getElementById('txtlang_read').disabled = true;
-  }
-  if(document.getElementById("lang_speak").checked) {
-      document.getElementById('txtlang_speak').disabled = true;
-  }
-  if(document.getElementById("lang_write").checked) {
-      document.getElementById('txtlang_write').disabled = true;
-  }
+  
 
     $(document).ready(function() {
 
+      if(document.getElementById("lang_read").checked) {
+          document.getElementById('txtlang_read').disabled = true;
+      }
+      if(document.getElementById("lang_speak").checked) {
+          document.getElementById('txtlang_speak').disabled = true;
+      }
+      if(document.getElementById("lang_write").checked) {
+          document.getElementById('txtlang_write').disabled = true;
+      }
 
       $(".add-more").click(function(){ 
           var html = $(".copy").html();
