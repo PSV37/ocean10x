@@ -1294,12 +1294,12 @@
             <label class="control-label" for="email">Marital Status</label>
                 <select class="form-control" name="matrial_status" id="matrial_status">
                   <option value="">Select Marital Status</option>
-                  <option value="Single/unmarried"<?php if($js_personal_info['marital_status']=='Single/unmarried'){echo 'selected';} ?>>Single/unmarried</option>
-                  <option value="Married"<?php if($js_personal_info['marital_status']=='Married'){echo 'selected';} ?>>Married</option>
-                  <option value="Widowed"<?php if($js_personal_info['marital_status']=='Widowed'){echo 'selected';} ?>>Widowed</option>
-                  <option value="Divorded"<?php if($js_personal_info['marital_status']=='Divorded'){echo 'selected';} ?>>Divorced</option>
-                  <option value="Separated"<?php if($js_personal_info['marital_status']=='Separated'){echo 'selected';} ?>>Separated</option>
-                  <option value="Other"<?php if($js_personal_info['marital_status']=='Other'){echo 'selected';} ?>>Other</option>
+                  <option value="Single/unmarried"<?php if($js_personal_info->marital_status=='Single/unmarried'){echo 'selected';} ?>>Single/unmarried</option>
+                  <option value="Married"<?php if($js_personal_info->marital_status=='Married'){echo 'selected';} ?>>Married</option>
+                  <option value="Widowed"<?php if($js_personal_info->marital_status=='Widowed'){echo 'selected';} ?>>Widowed</option>
+                  <option value="Divorded"<?php if($js_personal_info->marital_status=='Divorded'){echo 'selected';} ?>>Divorced</option>
+                  <option value="Separated"<?php if($js_personal_info->marital_status=='Separated'){echo 'selected';} ?>>Separated</option>
+                  <option value="Other"<?php if($js_personal_info->marital_status=='Other'){echo 'selected';} ?>>Other</option>
                   
                 </select>
           </div>     
@@ -1317,12 +1317,12 @@
             <label class="control-label" for="email">Work Permit for USA</label>
                 <select class="form-control" name="work_permit_usa" id="work_permit_usa">
                   <option value="">Select Work Permit</option>
-                  <option value="Have H1 Visa"<?php if($js_personal_info['work_permit_usa']=='Have H1 Visa'){echo 'selected';} ?>>Have H1 Visa</option>
-                  <option value="Need H1 Visa"<?php if($js_personal_info['work_permit_usa']=='Need H1 Visa'){echo 'selected';} ?>>Need H1 Visa</option>
-                  <option value="TN Permit Holder"<?php if($js_personal_info['work_permit_usa']=='TN Permit Holder'){echo 'selected';} ?>>TN Permit Holder</option>
-                  <option value="Green Card Holder"<?php if($js_personal_info['work_permit_usa']=='Green Card Holder'){echo 'selected';} ?>>Green Card Holder</option>
-                  <option value="US Citizen"<?php if($js_personal_info['work_permit_usa']=='US Citizen'){echo 'selected';} ?>>US Citizen</option>
-                  <option value="Authorized to work in US"<?php if($js_personal_info['work_permit_usa']=='Authorized to work in US'){echo 'selected';} ?>>Authorized to work in US</option>
+                  <option value="Have H1 Visa"<?php if($js_personal_info->work_permit_usa=='Have H1 Visa'){echo 'selected';} ?>>Have H1 Visa</option>
+                  <option value="Need H1 Visa"<?php if($js_personal_info->work_permit_usa=='Need H1 Visa'){echo 'selected';} ?>>Need H1 Visa</option>
+                  <option value="TN Permit Holder"<?php if($js_personal_info->work_permit_usa=='TN Permit Holder'){echo 'selected';} ?>>TN Permit Holder</option>
+                  <option value="Green Card Holder"<?php if($js_personal_info->work_permit_usa=='Green Card Holder'){echo 'selected';} ?>>Green Card Holder</option>
+                  <option value="US Citizen"<?php if($js_personal_info->work_permit_usa=='US Citizen'){echo 'selected';} ?>>US Citizen</option>
+                  <option value="Authorized to work in US"<?php if($js_personal_info->work_permit_usa=='Authorized to work in US'){echo 'selected';} ?>>Authorized to work in US</option>
                 </select>
           </div>     
         </div>
