@@ -1396,9 +1396,9 @@
                 </select>
               </div>
               <div class="col-md-12" style="margin-top:10px;">  
-                <input type="checkbox" name="experties[]" id="experties" value="Read" style="margin: 0 15px;"> Read
-                <input type="checkbox" name="experties[]" id="experties" value="Write" style="margin: 0 15px;"> Write
-                <input type="checkbox" name="experties[]" id="experties" value="Speak" style="margin: 0 15px;"> Speak
+                <input type="checkbox" name="lang_read" id="lang_read" value="Yes" style="margin: 0 15px;"> Read
+                <input type="checkbox" name="lang_write" id="lang_write" value="Yes" style="margin: 0 15px;"> Write
+                <input type="checkbox" name="lang_speak" id="lang_speak" value="Yes" style="margin: 0 15px;"> Speak
 
                 <button class="btn btn-danger btn-xs pull-right remove" type="button"><i class="fa fa-trash"></i> Remove</button><br/>
               </div>
