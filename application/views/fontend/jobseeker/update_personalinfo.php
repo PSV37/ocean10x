@@ -1366,9 +1366,32 @@
                       </select>
                     </div>
                     <div class="col-md-12" style="margin-top:10px;">  
-                      <input type="checkbox" name="lang_read" id="lang_read" value="Yes"<?php if($lrow['lang_read']=='Yes'){echo 'checked';} ?> style="margin: 0 15px;"> Read
-                      <input type="checkbox" name="lang_write" id="lang_write" value="Yes"<?php if($lrow['lang_write']=='Yes'){echo 'checked';} ?> style="margin: 0 15px;"> Write
-                      <input type="checkbox" name="lang_speak" id="lang_speak" value="Yes"<?php if($lrow['lang_speak']=='Yes'){echo 'checked';} ?> style="margin: 0 15px;"> Speak
+                      <input type="checkbox" name="lang_read[]" id="lang_read" value="Yes"<?php if($lrow['lang_read']=='Yes'){echo 'checked';} ?> style="margin: 0 15px;"> Read
+                      <input type="checkbox" name="lang_write[]" id="lang_write" value="Yes"<?php if($lrow['lang_write']=='Yes'){echo 'checked';} ?> style="margin: 0 15px;"> Write
+                      <input type="checkbox" name="lang_speak[]" id="lang_speak" value="Yes"<?php if($lrow['lang_speak']=='Yes'){echo 'checked';} ?> style="margin: 0 15px;"> Speak
+
+                    </div>
+                  </div>
+                <?php }else{ ?>
+                  <div class="col-md-12">
+                    <div class="col-md-6"> 
+                       <label>Language</label>
+                      <input type="text" name="language[]" id="language1" class="form-control" >
+                    </div>
+                    <div class="col-md-6">  
+                      <label>Proficiency</label>
+                      <select class="form-control" name="proficiency[]" id="proficiency">
+                        <option value="">Select Proficiency</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Proficient">Proficient</option>
+                        <option value="Expert">Expert</option>
+                        
+                      </select>
+                    </div>
+                    <div class="col-md-12" style="margin-top:10px;">  
+                      <input type="checkbox" name="lang_read[]" id="lang_read" value="Yes" style="margin: 0 15px;"> Read
+                      <input type="checkbox" name="lang_write[]" id="lang_write" value="Yes" style="margin: 0 15px;"> Write
+                      <input type="checkbox" name="lang_speak[]" id="lang_speak" value="Yes" style="margin: 0 15px;"> Speak
 
                     </div>
                   </div>
