@@ -1337,16 +1337,26 @@
       <div class="col-md-12">
         <div class="col-md-12 col-sm-12">
           <div class="input-group">
-            <label class="control-label" for="email">Languages</label>
-              <button class="btn btn-success add-more" type="button" style="margin-top:10px;"><i class="glyphicon glyphicon-plus"></i> Add Language</button>
+              <h6>Languages</h6>
+              <button class="btn btn-success add-more" type="button"><i class="glyphicon glyphicon-plus"></i> Add Language</button> <br>
               <div class="input-group control-group after-add-more">
                 <div>
-                  <select name="language[]" id="language1" class="form-control">
-                    <option>--Select Language--</option>
-                    <option value="Marathi">Marathi</option>
-                    <option value="Hindi">Hindi</option>
-              
-                  </select>
+                  <div class="col-md-12">
+                    <div class="col-md-6"> 
+                       <label>Language</label>
+                      <input type="text" name="language[]" id="language1" class="form-control">
+                    </div>
+                    <div class="col-md-6">  
+                      <label>Proficiency</label>
+                      <select class="form-control" name="proficiency" id="proficiency">
+                        <option value="">Select Proficiency</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Proficient">Proficient</option>
+                        <option value="Expert">Expert</option>
+                        
+                      </select>
+                    </div>
+                  </div>
                 </div>
               </div>
           </div>     
@@ -1357,19 +1367,26 @@
       <div class="copy hide">
         <div class="control-group input-group" style="margin-top:10px">
           <div>
-            <select name="language2[]" class="form-control">
-              <option>--Select Language--</option>
-              <option value="Marathi">Marathi</option>
-              <option value="Hindi">Hindi</option>
-          </select>
-           </div>
-            <button class="btn btn-danger remove" type="button" style="margin-top:10px;"><i class="glyphicon glyphicon-remove"></i> Remove</button><br/>
-        
+            <div class="col-md-12">
+              <div class="col-md-6"> 
+                 <label>Language</label>
+                <input type="text" name="language[]" id="language2" class="form-control">
+              </div>
+              <div class="col-md-6">  
+                <label>Proficiency</label>
+                <select class="form-control" name="proficiency" id="proficiency">
+                  <option value="">Select Proficiency</option>
+                  <option value="Beginner">Beginner</option>
+                  <option value="Proficient">Proficient</option>
+                  <option value="Expert">Expert</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-danger remove" type="button" style="margin-top:10px;"><i class="glyphicon glyphicon-remove"></i> Remove</button><br/>
           <br/>
-     
-      </div>
-      
         </div>
+      </div>
 		  <!--<div class="row">
 		   <div class="col-md-12">
 		  <div class="col-md-6 col-sm-12">         
