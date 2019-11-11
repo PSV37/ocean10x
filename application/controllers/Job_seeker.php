@@ -30,6 +30,9 @@ class Job_seeker extends MY_Seeker_Controller
         if ($_POST) {
             $jobseeker_id     = $this->session->userdata('job_seeker_id');
             $personal_info_id = $this->input->post('js_personal_info_id');
+            $language = $this->input->post('language');
+            $proficiency = $this->input->post('proficiency');
+            
             $personal_info    = array(
                 'job_seeker_id'     => $jobseeker_id,
                 'father_name'       => $this->input->post('father_name'),
@@ -51,15 +54,37 @@ class Job_seeker extends MY_Seeker_Controller
 				'city1_id'          => $this->input->post('city1_id'),
 				'pincode1'          => $this->input->post('pincode1'),
                 'parmanent_address' => $this->input->post('parmanent_address'),
+                // work_permit_countries
+                // work_permit_usa
+                // marital_status
 
             );
             if (empty($personal_info_id)) {
-                $this->job_seeker_personal_model->insert($personal_info);
+                $ins = $this->job_seeker_personal_model->insert($personal_info);
                 $in_arr= array(
                     'mobile_no'            => $this->input->post('mobile')
                 );
-                 $where_update['job_seeker_id']=$jobseeker_id;
+                $where_update['job_seeker_id']=$jobseeker_id;
                 $this->Master_model->master_update($in_arr,'js_info',$where_update);
+
+                $where_del = "job_seeker_id='$jobseeker_id'";
+                $del = $this->Master_model->master_delete('js_languages',$where_del);
+                if($del==true)
+                {
+                    for($l=0;$l<sizeof($language);$l++)
+                       {
+                            $lang_array = array(
+                                'job_seeker_id'  => $jobseeker_id,
+                                'language'       => $language[$l],
+                                'proficiency'    => $proficiency,
+                                'lang_write'     => $this->input->post('lang_write'),
+                                'lang_speak'     => $this->input->post('lang_speak'),
+                                'lang_read'      => $this->input->post('lang_read'),
+                                
+                            );
+                            $last_id = $this->Master_model->master_insert($lang_array, 'js_languages');
+                        }
+                }
                 redirect('job_seeker/seeker_info',$data);
             } else {
                 $this->job_seeker_personal_model->update($personal_info, $personal_info_id);
@@ -68,6 +93,25 @@ class Job_seeker extends MY_Seeker_Controller
                 );
                 $where_update['job_seeker_id']=$jobseeker_id;
                 $this->Master_model->master_update($in_arr,'js_info',$where_update);
+               
+                $where_del = "job_seeker_id='$jobseeker_id'";
+                $del = $this->Master_model->master_delete('js_languages',$where_del);
+                if($del==true)
+                {
+                    for($l=0;$l<sizeof($language);$l++)
+                       {
+                            $lang_array = array(
+                                'job_seeker_id'  => $jobseeker_id,
+                                'language'       => $language[$l],
+                                'proficiency'    => $proficiency,
+                                'lang_write'     => $this->input->post('lang_write'),
+                                'lang_speak'     => $this->input->post('lang_speak'),
+                                'lang_read'      => $this->input->post('lang_read'),
+                                
+                            );
+                            $last_id = $this->Master_model->master_insert($lang_array, 'js_languages');
+                        }
+                }
                 redirect('job_seeker/seeker_info',$data);
             }
         } else {
