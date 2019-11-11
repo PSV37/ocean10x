@@ -222,9 +222,9 @@
               <tr>
                 <td><?php echo $lrow['language']; ?></td>
                 <td><?php echo $lrow['proficiency']; ?></td>
-                <td><?php echo $lrow['lang_read']; ?></td>
-                <td><?php echo $lrow['lang_write']; ?></td>
-                <td><?php echo $lrow['lang_speak']; ?></td>
+                <td><?php if($lrow['lang_read']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{echo "<i class='fa fa-remove' style='color:red;'></i>";} ?></td>
+                <td><?php if($lrow['lang_write']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{echo "<i class='fa fa-remove' style='color:red;'></i>";}  ?></td>
+                <td><?php if($lrow['lang_speak']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{echo "<i class='fa fa-remove' style='color:red;'></i>";}  ?></td>
               </tr>
             <?php } ?>
             </tbody>
