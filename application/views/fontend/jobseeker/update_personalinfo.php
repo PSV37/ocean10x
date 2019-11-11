@@ -2282,3 +2282,23 @@ $(document).ready(function() {
 });
  
 </script>
+<style>
+  ul.ui-autocomplete {
+      z-index: 1100;
+  }
+  .tokenfield .token .close {
+    font-family: Arial !important;
+    display: inline-block !important;
+    line-height: 100% !important;
+    font-size: 1.1em !important;
+    line-height: 1.49em !important;
+    margin-left: 5px !important;
+    float: none !important;
+    height: 100% !important;
+    vertical-align: top !important;
+    padding-right: 4px !important;
+
+    color: #989090f2; 
+
+}
+</style>
