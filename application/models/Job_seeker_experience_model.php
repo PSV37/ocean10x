@@ -55,7 +55,7 @@ class Job_seeker_experience_model extends MY_Model
     }
 
 
-    function search_country($title){
+    function search_companies($title){
         $this->db->like('company_name', $title , 'both');
         $this->db->order_by('company_name', 'ASC');
         // $this->db->WHERE('status', '1');
@@ -71,6 +71,13 @@ class Job_seeker_experience_model extends MY_Model
         return $this->db->get('skill_master')->result();
     }
 
+    function search_country($title){
+        $this->db->like('country_name', $title , 'both');
+        $this->db->order_by('country_name', 'ASC');
+        // $this->db->WHERE('status', '1');
+        // $this->db->limit(10);
+        return $this->db->get('country')->result();
+    }
 
     
 }
