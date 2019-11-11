@@ -1202,8 +1202,8 @@
               <div class="col-md-12">
 			  <div class="col-md-6 col-sm-12">
 				<div class="input-group">
-	                <label class="control-label" for="pwd">Country</label>
-	                <select  name="country1_id" id="country1_id" class="form-control" onchange="getStatess(this.value)">
+          <label class="control-label" for="pwd">Country</label>
+          <select  name="country1_id" id="country1_id" class="form-control" onchange="getStatess(this.value)">
 						<option value="">Select Country</option>
 						<?php foreach($country as $keys){?>
 						<option value="<?php echo $keys['country_id']; ?>"<?php if($js_personal_info->country1_id==$keys['country_id']){ echo "selected"; }?>><?php echo $keys['country_name']; ?></option>
@@ -1296,12 +1296,46 @@
                 </select>
           </div>     
         </div>
-        <div class="col-md-6 col-sm-12">         
-        <div class="input-group">
-          <label class="control-label" for="email">Differently Abled</label>
-          <input type="radio" name="differently_abled" id="differently_abled" value="Yes"> Yes
-          <input type="radio" name="differently_abled" id="differently_abled" value="No" checked> No
+        <!-- <div class="col-md-6 col-sm-12">         
+          <div class="input-group">
+            <label class="control-label" for="email">Differently Abled</label>
+            <input type="radio" name="differently_abled" id="differently_abled" value="Yes"> Yes
+            <input type="radio" name="differently_abled" id="differently_abled" value="No" checked> No
+          </div>
+        </div> -->
+        
+        <div class="col-md-6 col-sm-12">
+          <div class="input-group">
+            <label class="control-label" for="email">Work Permit for USA</label>
+                <select class="form-control" name="work_permit_usa" id="work_permit_usa">
+                  <option value="">Select Work Permit</option>
+                  <option value="Have H1 Visa">Have H1 Visa</option>
+                  <option value="Need H1 Visa">Need H1 Visa</option>
+                  <option value="TN Permit Holder">TN Permit Holder</option>
+                  <option value="Green Card Holder">Green Card Holder</option>
+                  <option value="US Citizen">US Citizen</option>
+                  <option value="Authorized to work in US">Authorized to work in US</option>
+                </select>
+          </div>     
         </div>
+      </div>
+    </div>
+    <div class="panel-body"></div>   
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-6 col-sm-12">
+          <div class="input-group">
+            <label class="control-label" for="email">Work Permit for Other Countries</label>
+                   <input type="text" name="skills" class="form-control" id="tokenfield" placeholder="Enter Your Skills"
+                   value="">
+          </div>     
+        </div>
+        <div class="col-md-6 col-sm-12">         
+          <div class="input-group">
+            <label class="control-label" for="email">Differently Abled</label>
+            <input type="radio" name="differently_abled" id="differently_abled" value="Yes"> Yes
+            <input type="radio" name="differently_abled" id="differently_abled" value="No" checked> No
+          </div>
         </div>
       </div>
     </div>
@@ -1336,6 +1370,27 @@
   </div>
 </div>
 <script type="text/javascript">
+
+
+    $('#tokenfield').tokenfield({
+                autocomplete: {
+                  source: "<?php echo base_url('job_seeker/get_skills_autocomplete'); ?>",
+                  delay: 100
+                },
+                showAutocompleteOnFocus: true,
+
+              });
+              // to avoid duplications
+           $('#tokenfield').on('tokenfield:createtoken', function (event) {
+                var existingTokens = $(this).tokenfield('getTokens');
+                $.each(existingTokens, function(index, token) {
+                    if (token.value === event.attrs.value)
+                        event.preventDefault();
+
+                });
+            });
+
+
 	// Personal Info
   	$( document ).ready( function () {
             $( "#Personal-info" ).validate( {
