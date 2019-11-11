@@ -193,6 +193,21 @@
                   <td><?php if(!empty($js_personal_info->mother_name))
                   echo $js_personal_info->mother_name; ?></td>
               </tr>
+              <tr>
+                <td>Marital Status:</td>
+                <td><?php if(!empty($js_personal_info->marital_status))
+                  echo $js_personal_info->marital_status; ?></td>
+              </tr>
+              <tr>
+                <td>Work Permit for USA: </td>
+                <td><?php if(!empty($js_personal_info->work_permit_usa))
+                  echo $js_personal_info->work_permit_usa; ?></td>
+              </tr>
+              <tr>
+                <td>Work Permit for Other Countries: </td>
+                <td><?php if(!empty($js_personal_info->work_permit_countries))
+                  echo $js_personal_info->work_permit_countries; ?></td>
+              </tr>
 									
             </tbody>
           </table>
