@@ -6,6 +6,9 @@
     font-weight: bold;
 }
 </style>
+<link rel="stylesheet" href="<?php echo base_url('asset/crop/dist/cropper.min.css');?>">
+  <link rel="stylesheet" href="<?php echo base_url('asset/crop/css/main.css');?>">
+
 <div class="section lb">
   <div class="container">
     <div class="row">
@@ -53,11 +56,11 @@
                               <div class="row">
                                 <div class="col-md-9">
                                   <div class="avatar-wrapper"></div>
-                                 <!-- <div class="dragtxt">Drag frame to adjust portrait.</div>-->
+                                  <div class="dragtxt">Drag frame to adjust portrait.</div>
                                 </div>
                                 <div class="col-md-3">
                                   <div class="avatar-preview preview-lg"></div>
-                                 <!-- <p>Must be an actual picture of you! Logos, clip-art, group pictures, and digitally-altered images not allowed.</p>-->
+                                  <p>Must be an actual picture of you! Logos, clip-art, group pictures, and digitally-altered images not allowed.</p>
                                 </div>
                               </div>
 

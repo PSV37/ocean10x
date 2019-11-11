@@ -79,27 +79,22 @@
     <div class="loading" aria-label="Loading" role="img" tabindex="-1"></div>
   </div>
                                           
-                                        </div>
-                                        <div class="col-md-8">
-                          
-                          <?php if(!empty($error)){
-                            echo $error;
-                            };?>
-                          <?php if($job_seeker_photo->photo_path==""){
-                                echo "Please Upload Your Photo ";
-                            } ?>
-                            <div class="formpanel">
-                            <h4>Please Upload Your Photo Max Size 300*300 pixel</h4><br>
-                         	<a href="#." onClick="runit();" class="btn">Click here to Upload Photo</a>
-                            
-                            
-                         
-                        
-                        
-                        </div>
-                        </div>
-                                        </div>
-                                 </div>
+  </div>
+  
+    <div class="col-md-8">
+      <?php if(!empty($error)){
+        echo $error;
+        };?>
+      <?php if($job_seeker_photo->photo_path==""){
+            echo "Please Upload Your Photo ";
+        } ?>
+      <div class="formpanel">
+        <h4>Please Upload Your Photo Max Size 300*300 pixel</h4><br>
+      	<a href="#." onClick="runit();" class="btn">Click here to Upload Photo</a>
+      </div>
+    </div>
+    </div>
+  </div>
                             
                             
                             
