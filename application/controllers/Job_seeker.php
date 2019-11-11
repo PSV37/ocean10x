@@ -78,20 +78,7 @@ class Job_seeker extends MY_Seeker_Controller
                     for($l=0;$l<sizeof($language);$l++)
                     {
                         if($language[$l]!=''){
-                            
-                            // if(!isset($lang_write[$l]))
-                            // {
-                            //     $lang_write[$l] = 'No';
-                            // }
-                            // if(!isset($lang_speak[$l]))
-                            // {
-                            //     $lang_speak[$l] = 'No';
-                            // }
-                            // if(!isset($lang_read[$l]))
-                            // {
-                            //     $lang_read[$l] = 'No';
-                            // }
-
+                           
                             $lang_array = array(
                                 'job_seeker_id'  => $jobseeker_id,
                                 'language'       => $language[$l],
@@ -121,20 +108,7 @@ class Job_seeker extends MY_Seeker_Controller
                     for($l=0;$l<sizeof($language);$l++)
                     {
                         if($language[$l]!=''){
-
-                            // if(!isset($lang_write[$l]))
-                            // {
-                            //     $lang_write[$l] = 'No';
-                            // }
-                            // if(!isset($lang_speak[$l]))
-                            // {
-                            //     $lang_speak[$l] = 'No';
-                            // }
-                            // if(!isset($lang_read[$l]))
-                            // {
-                            //     $lang_read[$l] = 'No';
-                            // }
-        
+                           
                             $lang_array = array(
                                 'job_seeker_id'  => $jobseeker_id,
                                 'language'       => $language[$l],
@@ -166,8 +140,8 @@ class Job_seeker extends MY_Seeker_Controller
 			);
 			
 			$results = $this->Master_model->get_master_row("js_personal_info", $select = false, $where_sek, $join1);
-
-            $languages = $this->Master_model->getMaster('js_languages',$where="job_seeker_id='$jobseeker_id'");
+            $where_lang="job_seeker_id='$jobseeker_id' ORDER BY language ASC";
+            $languages = $this->Master_model->getMaster('js_languages',$where_lang);
 			//echo $this->db->last_query();
             echo $this->load->view('fontend/jobseeker/update_personalinfo', compact('jobseeker_id', 'js_personal_info', 'job_seeker_photo', 'name', 'city', 'country', 'state', 'results','languages'),true);
         }
