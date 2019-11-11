@@ -78,9 +78,9 @@ class Job_seeker extends MY_Seeker_Controller
                                 'job_seeker_id'  => $jobseeker_id,
                                 'language'       => $language[$l],
                                 'proficiency'    => $proficiency[$l],
-                                'lang_write'     => $this->input->post('lang_write')[$l],
-                                'lang_speak'     => $this->input->post('lang_speak')[$l],
-                                'lang_read'      => $this->input->post('lang_read')[$l],
+                                'lang_write'     => $this->input->post('lang_write'),
+                                'lang_speak'     => $this->input->post('lang_speak'),
+                                'lang_read'      => $this->input->post('lang_read'),
                                 
                             );
                             $last_id = $this->Master_model->master_insert($lang_array, 'js_languages');
@@ -106,9 +106,9 @@ class Job_seeker extends MY_Seeker_Controller
                                 'job_seeker_id'  => $jobseeker_id,
                                 'language'       => $language[$l],
                                 'proficiency'    => $proficiency[$l],
-                                'lang_write'     => $this->input->post('lang_write')[$l],
-                                'lang_speak'     => $this->input->post('lang_speak')[$l],
-                                'lang_read'      => $this->input->post('lang_read')[$l],
+                                'lang_write'     => $this->input->post('lang_write'),
+                                'lang_speak'     => $this->input->post('lang_speak'),
+                                'lang_read'      => $this->input->post('lang_read'),
                                 
                             );
                             $last_id = $this->Master_model->master_insert($lang_array, 'js_languages');
