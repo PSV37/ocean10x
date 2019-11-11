@@ -1299,8 +1299,8 @@
         <div class="col-md-6 col-sm-12">         
         <div class="input-group">
           <label class="control-label" for="email">Differently Abled</label>
-          <input type="radio" name="differently_abled" class="form-control" id="differently_abled" value="Yes"> Yes
-          <input type="radio" name="differently_abled" class="form-control" id="differently_abled" value="No" checked> No
+          <input type="radio" name="differently_abled" id="differently_abled" value="Yes"> Yes
+          <input type="radio" name="differently_abled" id="differently_abled" value="No" checked> No
         </div>
         </div>
       </div>
