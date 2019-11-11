@@ -1374,7 +1374,7 @@
 
     $('#tokenfield').tokenfield({
                 autocomplete: {
-                  source: "<?php echo base_url('job_seeker/get_autocomplete'); ?>",
+                  source: "<?php echo base_url('job_seeker/get_country_autocomplete'); ?>",
                   delay: 100
                 },
                 showAutocompleteOnFocus: true,
