@@ -1323,7 +1323,7 @@
     <div class="panel-body"></div>   
     <div class="row">
       <div class="col-md-12">
-        <div class="col-md-6 col-sm-12">
+        <div class="col-md-12 col-sm-12">
           <div class="input-group">
             <label class="control-label" for="email">Work Permit for Other Countries</label>
               <input type="text" name="other_country_work_permit" class="form-control" id="tokenfield" placeholder="Enter Country" value="">
