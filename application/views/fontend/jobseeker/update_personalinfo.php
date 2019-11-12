@@ -318,9 +318,6 @@
 <!-- end col -->
 <!-- end section -->
 
-
-
-
 <!-- Modal -->
 <div id="PersonalinfoUpdate" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -1196,28 +1193,28 @@
     <div class="row">
         <div class="col-md-12">
             
-            <div class="col-md-6 col-sm-12">
-			  <div class="input-group">
-                 <label class="control-label" for="pwd">City</label>
-                 <select  name="city_id" id="city_id" class="form-control">
-				 <option value="">Select State First</option>
-				 <?php foreach($city as $valu){?>
-					<option value="<?php echo $valu['id']; ?>"<?php if($js_personal_info->city_id==$valu['id']){ echo "selected"; }?>><?php echo $valu['city_name']; ?></option>
-					<?php } ?>
-				 </select>
+          <div class="col-md-6 col-sm-12">
+			      <div class="input-group">
+              <label class="control-label" for="pwd">City</label>
+              <select  name="city_id" id="city_id" class="form-control">
+				        <option value="">Select State First</option>
+      				 <?php foreach($city as $valu){?>
+      					<option value="<?php echo $valu['id']; ?>"<?php if($js_personal_info->city_id==$valu['id']){ echo "selected"; }?>><?php echo $valu['city_name']; ?></option>
+      					<?php } ?>
+    				 </select>
               </div>
             </div>
 			
 			<div class="col-md-6 col-sm-12">
 				<div class="input-group">
-	                <label class="control-label" for="pwd">Pincode</label>
-	               <input type="text" name="pincode" id="seeker_pincode" class="form-control" maxlength="6"  value="<?php
-	                         if (!empty($js_personal_info->pincode)) {
-	                           echo $js_personal_info->pincode;
-	                           }
-	                       ?>" required onkeypress="return isNumber(event)">
-	            </div>
-          	</div>
+	        <label class="control-label" for="pwd">Pincode</label>
+	        <input type="text" name="pincode" id="seeker_pincode" class="form-control" maxlength="6"  value="<?php
+                 if (!empty($js_personal_info->pincode)) {
+                   echo $js_personal_info->pincode;
+                   }
+               ?>" required onkeypress="return isNumber(event)">
+        </div>
+    	</div>
 			</div>
 			
 			 </div>

@@ -451,6 +451,7 @@ exit;*/
     public function update_career()
     {
         if ($_POST) {
+            
             $jobseeker_id = $this->session->userdata('job_seeker_id');
             $js_career_id = $this->input->post('js_career_id');
 

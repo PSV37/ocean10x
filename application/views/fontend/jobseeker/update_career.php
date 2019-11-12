@@ -15,74 +15,69 @@
                               <a href="<?php echo site_url('job_seeker/delete_career/'.$job_career_info[0]->job_seeker_id.''); ?>" onclick="return confirm('Are you sure?');"  class="btn pull-right bg-red btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash" aria-hidden="true"></i></a>               
                             </h5>
                             <div class="table-responsive">          
-                            <table class="table">
+                              <table class="table">
+                                
+                                <tbody>
+  							                  
+                                  <tr>
+                                    <td width="30%">industry:</td>
+                                    <td><?php echo $results['industry_name']; ?> </td>
+                                  </tr>
+  								
+  								                <tr>
+                                    <td width="30%">Department:</td>
+                                    <td><?php echo $results['department_name']; ?></td>
+                                  </tr>
+  							  
+                                  <tr>
+                                    <td width="30%">Job Role:</td>
+                                    <td><?php echo $results['job_role_title']; ?></td>
+                                  </tr>
+  								                <tr>
+                                    <td width="30%">Job Type:</td>
+                                    <td><?php if(!empty($job_career_info[0]->avaliable))
+                                            echo $job_career_info[0]->avaliable;
+                                     ?></td>
+                                  </tr>
+  								
+  								                <tr>
+                                    <td width="30%">Preferred Shift:</td>
+                                     <td><?php echo $results['shift_type']; ?></td>
+                                  </tr>
 
-                              <tbody>
-							  <tr>
-                                  <td width="30%">industry:</td>
-                                  <td><?php echo $results['industry_name']; ?> </td>
-                                </tr>
-								
-								<tr>
-                                  <td width="30%">Department:</td>
-                                  <td><?php echo $results['department_name']; ?></td>
-                                </tr>
-							  
-                              <tr>
-                                  <td width="30%">Job Role:</td>
-                                  <td><?php echo $results['job_role_title']; ?></td>
-                                </tr>
-								<tr>
-                                  <td width="30%">Job Type:</td>
-                                  <td><?php if(!empty($job_career_info[0]->avaliable))
-                                          echo $job_career_info[0]->avaliable;
-                                   ?></td>
-                                </tr>
-								
-								<tr>
-                                  <td width="30%">Preferred Shift:</td>
-                                   <td><?php echo $results['shift_type']; ?></td>
-                                </tr>
-
-                              <tr>
-                                  <td width="30%">Expected Salary:</td>
-                                  <td><?php if(!empty($job_career_info[0]->js_career_salary))
-                                          echo $job_career_info[0]->js_career_salary;
-                                   ?></td>
-                                </tr>
-                               
-                              
-								
-								<tr>
-                                  <td width="30%">Preferable Job Location:</td>
-                                  <td><?php if(!empty($job_career_info[0]->job_area))
-                                          echo $job_career_info[0]->job_area;
-                                   ?></td>
-                                </tr>
-								
-                              </tbody>
-                            </table>
+                                  <tr>
+                                    <td width="30%">Expected Salary:</td>
+                                    <td><?php if(!empty($job_career_info[0]->js_career_salary))
+                                            echo $job_career_info[0]->js_career_salary;
+                                     ?></td>
+                                  </tr>
+                                								
+  								                <tr>
+                                    <td width="30%">Preferable Job Location:</td>
+                                    <td><?php if(!empty($job_career_info[0]->job_area))
+                                            echo $job_career_info[0]->job_area;
+                                     ?></td>
+                                  </tr>
+  								
+                                </tbody>
+                              </table>
                             </div>
 
-
-
-                            </div><!-- end post-padding -->
-                        </div><!-- end col -->
-                    </div><!-- end row -->  
-                </div><!-- end container -->
-            </div><!-- end section -->
+                          </div><!-- end post-padding -->
+                      </div><!-- end col -->
+                  </div><!-- end row -->  
+              </div><!-- end container -->
+          </div><!-- end section -->
  
 <script>
-function delete_Career(id) {
+  function delete_Career(id) {
     if (confirm('Are you sure you want to Delete Career ?')) {
-//   window.location.href = "<?php echo site_url('job_seeker/delete_career/'); ?>";
+    //   window.location.href = "<?php echo site_url('job_seeker/delete_career/'); ?>";
 
-}
-   
-} 
+    }
+     
+  } 
 </script>
-
-
 
 
 <!-- Modal -->
