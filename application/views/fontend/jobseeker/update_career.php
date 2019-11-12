@@ -32,7 +32,7 @@
                                   </tr>
   								
   								                <tr>
-                                    <td width="30%">Department:</td>
+                                    <td width="30%">Functional Area:</td>
                                     <td><?php echo $results['department_name']; ?></td>
                                   </tr>
   							  
@@ -123,10 +123,10 @@
             </div>
 			  
 			    <div class="form-group">
-            <label class="control-label col-sm-3" for="pwd">Department</label>
+            <label class="control-label col-sm-3" for="pwd">Functional Area</label>
               <div class="col-sm-9">
                 <select  name="dept_id" id="dept_id" class="form-control">
-          				<option value="">Select Department</option>
+          				<option value="">Select Area</option>
           				<?php foreach($department as $dept){?>
           				<option value="<?php echo $dept['dept_id']; ?>"<?php if($job_career_info[0]->dept_id==$dept['dept_id']){ echo "selected"; }?>><?php echo $dept['department_name']; ?></option>
           					<?php } ?>
