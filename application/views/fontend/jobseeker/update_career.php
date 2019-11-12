@@ -204,10 +204,12 @@
                    <option value="<?php echo $month['work_month'];?>"><?php echo $month['work_month'];?></option>
                   <?php } ?>
                 </select>
-              </div> <br><br>
-              <input type="checkbox" name="join_immediate" id="join_immediate" value="Yes" style="margin: 0 15px;"> Join Immediately
+              </div> 
+              
           </div>
-			  
+			   <div class="form-group">
+          <input type="checkbox" name="join_immediate" id="join_immediate" value="Yes" style="margin: 0 15px;"> Join Immediately
+         </div>
 				  <div class="form-group">
             <label class="control-label col-sm-3" for="email">Expected Salary</label>
               <div class="col-sm-9">
