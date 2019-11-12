@@ -193,8 +193,8 @@
               <div class="col-sm-9">
                 <input type="text" name="desired_industry" class="form-control" id="tokenfield_indus" placeholder="Enter Industry"
                  value="<?php
-                       if (!empty($job_career_info[0]->job_area)) {
-                         echo $job_career_info[0]->job_area;
+                       if (!empty($job_career_info[0]->desired_industry)) {
+                         echo $job_career_info[0]->desired_industry;
                          }
                      ?>">
               </div>
