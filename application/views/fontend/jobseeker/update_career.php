@@ -54,7 +54,7 @@
 
                                   <tr>
                                     <td width="30%">Expected Salary:</td>
-                                    <td><?php if(!empty($job_career_info[0]->js_career_salary))
+                                    <td><?php if(!empty($job_career_info[0]->salary_type)) $job_career_info[0]->salary_type   if(!empty($job_career_info[0]->js_career_salary))
                                             echo $job_career_info[0]->js_career_salary;
                                      ?></td>
                                   </tr>
@@ -111,7 +111,7 @@
                          echo $job_career_info[0]->js_career_info_id;
                          } ?>">
 				  <div class="form-group">
-            <label class="control-label col-sm-3" for="pwd">Industry:</label>
+            <label class="control-label col-sm-3" for="pwd">Industry</label>
               <div class="col-sm-9">
                 <select  name="industry_id" id="industry_id" class="form-control">
 				          <option value="">Select Industry</option>
@@ -123,7 +123,7 @@
             </div>
 			  
 			    <div class="form-group">
-            <label class="control-label col-sm-3" for="pwd">Department:</label>
+            <label class="control-label col-sm-3" for="pwd">Department</label>
               <div class="col-sm-9">
                 <select  name="dept_id" id="dept_id" class="form-control">
           				<option value="">Select Department</option>
@@ -135,7 +135,7 @@
           </div>
 				
           <div class="form-group">
-            <label class="control-label col-sm-3" for="pwd">Job Role:</label>
+            <label class="control-label col-sm-3" for="pwd">Job Role</label>
               <div class="col-sm-9">
                 <select  name="job_role" id="job_role" class="form-control">
         				  <option value="">Select Role</option>
@@ -147,7 +147,7 @@
           </div>
 
 				  <div class="form-group">
-            <label class="control-label col-sm-3"> Job Type:</label>
+            <label class="control-label col-sm-3"> Job Type</label>
               <div class="col-sm-9">
                 <?php if (!empty($job_career_info[0]->avaliable)) {
                         if($job_career_info[0]->avaliable){
@@ -171,7 +171,7 @@
           </div>
 
 			   <div class="form-group">
-          <label class="control-label col-sm-3" for="email">Preferred Shift:</label>
+          <label class="control-label col-sm-3" for="email">Preferred Shift</label>
             <div class="col-sm-9">
               <select  name="shift_id" id="shift_id" class="form-control">
       				  <option>Select Shift</option>
@@ -183,15 +183,15 @@
           </div>
 			  
 				  <div class="form-group">
-            <label class="control-label col-sm-3" for="email">Expected Salary:</label>
+            <label class="control-label col-sm-3" for="email">Expected Salary</label>
               <div class="col-sm-9">
 
-                <input type="radio" name="salary_type" id="salary_type" value="Indian Rupees"<?php if (!empty($job_career_info[0]->avaliable)) {
-                          if($job_career_info[0]->salary_type=='Indian Rupees'){ echo 'checked';};
+                <input type="radio" name="salary_type" id="salary_type" value="INR"<?php if (!empty($job_career_info[0]->avaliable)) {
+                          if($job_career_info[0]->salary_type=='INR'){ echo 'checked';};
                          } ?> style="margin: 0 15px;"> Indian Rupees
 
-                <input type="radio" name="salary_type" id="salary_type" value="US Dollars"<?php if (!empty($job_career_info[0]->avaliable)) {
-                          if($job_career_info[0]->salary_type=='US Dollars'){ echo 'checked';};
+                <input type="radio" name="salary_type" id="salary_type" value="USD"<?php if (!empty($job_career_info[0]->avaliable)) {
+                          if($job_career_info[0]->salary_type=='USD'){ echo 'checked';};
                          } ?> style="margin: 0 15px;"> US Dollars <br><br>
 
                 <input type="text" name="js_career_salary" class="form-control" id="js_career_salary" placeholder="Expected Salary"
@@ -204,7 +204,7 @@
           </div>
 
           <div class="form-group">
-            <label class="control-label col-sm-3" for="email">Desired Location:</label>
+            <label class="control-label col-sm-3" for="email">Desired Location</label>
               <div class="col-sm-9">
                 <input type="text" name="job_area" class="form-control" id="tokenfield" placeholder="Enter Location"
                  value="<?php
@@ -216,7 +216,7 @@
           </div>
 
           <div class="form-group">
-            <label class="control-label col-sm-3" for="email">Desired Industry:</label>
+            <label class="control-label col-sm-3" for="email">Desired Industry</label>
               <div class="col-sm-9">
                 <input type="text" name="desired_industry" class="form-control" id="tokenfield_indus" placeholder="Enter Industry"
                  value="<?php
@@ -289,36 +289,36 @@
   });
 
 
-        $( document ).ready( function () {
-            $( "#Career-info" ).validate( {
-              rules: {
-                        js_career_salary: {
-                            required: true,
-                        },
+  $( document ).ready( function () {
+      $( "#Career-info" ).validate( {
+        rules: {
+                  js_career_salary: {
+                      required: true,
                   },
-                messages: {
+            },
+          messages: {
 
-                },
-                errorElement: "em",
-                errorPlacement: function ( error, element ) {
-                    // Add the `help-block` class to the error element
-                    error.addClass( "help-block" );
+          },
+          errorElement: "em",
+          errorPlacement: function ( error, element ) {
+              // Add the `help-block` class to the error element
+              error.addClass( "help-block" );
 
-                    if ( element.prop( "type" ) === "checkbox" ) {
-                        error.insertAfter( element.parent( "label" ) );
-                    } else {
-                        error.insertAfter( element );
-                    }
-                },
-                highlight: function ( element, errorClass, validClass ) {
-                    $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
-                },
-                unhighlight: function (element, errorClass, validClass) {
-                    $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
-                }
-            } );
+              if ( element.prop( "type" ) === "checkbox" ) {
+                  error.insertAfter( element.parent( "label" ) );
+              } else {
+                  error.insertAfter( element );
+              }
+          },
+          highlight: function ( element, errorClass, validClass ) {
+              $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+          },
+          unhighlight: function (element, errorClass, validClass) {
+              $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+          }
+      } );
 
-        });
+  });
 
     function isNumber(evt) {
       var iKeyCode = (evt.which) ? evt.which : evt.keyCode
