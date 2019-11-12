@@ -178,7 +178,7 @@
           <div class="form-group">
             <label class="control-label col-sm-3" for="email">Preferable Job Location:</label>
               <div class="col-sm-9">
-                <input type="text" name="job_area" class="form-control" id="job_area" placeholder="Preferable Job Area"
+                <input type="text" name="job_area" class="form-control" id="tokenfield" placeholder="Preferable Job Area"
                  value="<?php
                        if (!empty($job_career_info[0]->job_area)) {
                          echo $job_career_info[0]->job_area;
@@ -312,7 +312,25 @@
 
 
   <script type="text/javascript">
+    $('#tokenfield').tokenfield({
+      autocomplete: {
+        source: "<?php echo base_url('job_seeker/search'); ?>",
+        delay: 100
+      },
+      minLength: 3
+      showAutocompleteOnFocus: true,
+    
 
+    });
+    // to avoid duplications
+ $('#tokenfield').on('tokenfield:createtoken', function (event) {
+      var existingTokens = $(this).tokenfield('getTokens');
+      $.each(existingTokens, function(index, token) {
+          if (token.value === event.attrs.value)
+              event.preventDefault();
+
+      });
+  });
 
 
         $( document ).ready( function () {
@@ -469,7 +487,7 @@ $("#duration_month").select2( {
 </script>
 
 
-<script>
+<!-- <script>
   var BASE_URL = "<?php echo base_url(); ?>";
  
  $(document).ready(function() {
@@ -495,4 +513,4 @@ $("#duration_month").select2( {
  });
 });
  
-</script>   
+</script>    -->

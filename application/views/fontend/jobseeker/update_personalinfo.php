@@ -1553,23 +1553,23 @@
 
 
     $('#tokenfield').tokenfield({
-                autocomplete: {
-                  source: "<?php echo base_url('job_seeker/get_country_autocomplete'); ?>",
-                  delay: 100
-                },
-                showAutocompleteOnFocus: true,
-                limit: 3,
+      autocomplete: {
+        source: "<?php echo base_url('job_seeker/get_country_autocomplete'); ?>",
+        delay: 100
+      },
+      showAutocompleteOnFocus: true,
+      limit: 3,
 
-              });
-              // to avoid duplications
-           $('#tokenfield').on('tokenfield:createtoken', function (event) {
-                var existingTokens = $(this).tokenfield('getTokens');
-                $.each(existingTokens, function(index, token) {
-                    if (token.value === event.attrs.value)
-                        event.preventDefault();
+    });
+    // to avoid duplications
+ $('#tokenfield').on('tokenfield:createtoken', function (event) {
+      var existingTokens = $(this).tokenfield('getTokens');
+      $.each(existingTokens, function(index, token) {
+          if (token.value === event.attrs.value)
+              event.preventDefault();
 
-                });
-            });
+      });
+  });
 
 
 	// Personal Info
