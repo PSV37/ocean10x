@@ -224,16 +224,11 @@
 
         $( document ).ready( function () {
             $( "#Career-info" ).validate( {
-                rules: {
-
-                    
-
-                    js_career_salary: {
-                        required: true,
-                    },
-
-                    
-               },
+              rules: {
+                        js_career_salary: {
+                            required: true,
+                        },
+                  },
                 messages: {
 
                 },
@@ -255,24 +250,6 @@
                     $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
                 }
             } );
-
-              // $('#tokenfield').tokenfield({
-              //   autocomplete: {
-              //     source: "<?php echo base_url('job_seeker/get_skills_autocomplete'); ?>",
-              //     delay: 100
-              //   },
-              //   showAutocompleteOnFocus: true,
-
-              // });
-              // to avoid duplications
-           // $('#tokenfield').on('tokenfield:createtoken', function (event) {
-           //      var existingTokens = $(this).tokenfield('getTokens');
-           //      $.each(existingTokens, function(index, token) {
-           //          if (token.value === event.attrs.value)
-           //              event.preventDefault();
-
-           //      });
-           //  });
 
         });
 
