@@ -2,7 +2,6 @@
                 <div class="container">
                     <div class="row">
                         <?php $this->load->view('fontend/layout/seeker_left.php'); ?>
-                         <!-- <input type="text" class="form-control" id="tokenfield" value="red,green,blue" /> -->
 
                         <div class="content col-md-9">
                             <div class="userccount">
@@ -133,11 +132,6 @@
             <label class="control-label col-sm-3"> Job Type:</label>
               <div class="col-sm-9">
                 <select name="avaliable" class="form-control">
-				         <!--  <option value="<?php if (!empty($job_career_info[0]->avaliable)) {
-                     echo $job_career_info[0]->avaliable;
-                     } ?>"><?php  if (!empty($job_career_info[0]->avaliable)) {
-                     echo $job_career_info[0]->avaliable;
-                     } ?></option> -->
           					<option value="Full Time"<?php if (!empty($job_career_info[0]->avaliable)) {
                           if($job_career_info[0]->avaliable=='Full Time'){ echo 'selected';};
                          } ?>>Full Time</option>
@@ -178,7 +172,7 @@
           <div class="form-group">
             <label class="control-label col-sm-3" for="email">Preferable Job Location:</label>
               <div class="col-sm-9">
-                <input type="text" name="job_area" class="form-control" id="tokenfield" placeholder="Preferable Job Area"
+                <input type="text" name="job_area" class="form-control" id="tokenfield" placeholder="Job Area"
                  value="<?php
                        if (!empty($job_career_info[0]->job_area)) {
                          echo $job_career_info[0]->job_area;
@@ -187,117 +181,12 @@
               </div>
           </div>
 				
-				
-              <!--<div class="form-group">
-                <label class="control-label col-sm-3" for="email">Skills:</label>
-                <div class="col-sm-9">
-                  <input type="text" name="skills" class="form-control" id="tokenfield" placeholder="Enter Your Skills"
-                   value="<?php
-                         /* if (!empty($job_career_info[0]->skills)) {
-                           echo $job_career_info[0]->skills;
-                           }
-                       */ ?>">
-                  
-                </div>
-              </div>-->
-      
-
              
-			  		  
-			  <!--<div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">Duration From:</label>
-                <div class="col-sm-4">
-                  <select name="duration_year" id="duration_year" class="form-control">
-					<option value="<?php /*if (!empty($job_career_info[0]->duration_year)) {
-                           echo $job_career_info[0]->duration_year;
-                           } ?>"><?php  if (!empty($job_career_info[0]->duration_year)) {
-                           echo $job_career_info[0]->duration_year;
-                           } ?>
-				   </option>
-				   </select>
-                </div>
-				
-				 <div class="col-sm-4">
-                   <select name="duration_month" id="duration_month" class="form-control" style="margin-top:5px;">
-				   <?php
-				   foreach($worktill as $work){
-				   ?>
-				   <option value="<?php echo $work['work_id']; ?>"<?php if($job_career_info[0]->duration_month==$work['work_id']){ echo "selected"; }?>><?php echo $work['work_month']; ?></option>
-				   <?php } ?>
-				   
-				   </select>	
-                </div>
-              </div>
-			  
-			  <div class="form-group answer">
-                <label class="control-label col-sm-3" for="pwd">Duration To:</label>
-                <div class="col-sm-4">
-                  <select name="duration_to_year" id="duration_years" class="form-control">
-				   <option value="<?php if (!empty($job_career_info[0]->duration_to_year)) {
-                           echo $job_career_info[0]->duration_to_year;
-                           } ?>"><?php  if (!empty($job_career_info[0]->duration_to_year)) {
-                           echo $job_career_info[0]->duration_to_year;
-                           } ?>
-				   </option>
-				   </select>	
-                </div>
-				 <div class="col-sm-4">
-                  <select name="duration_to_month" id="duration_to_month" class="form-control" style="margin-top:5px;">
-				   <?php
-				   foreach($worktill as $workt){
-				   ?>
-				   <option value="<?php echo $workt['work_id']; ?>"<?php if($job_career_info[0]->duration_to_month==$workt['work_id']){ echo "selected"; }?>><?php echo $workt['work_month']; ?></option>
-				   <?php } ?>
-				   
-				   </select>	
-                </div>
-				
-              </div>
-			  
-			  <div class="form-group">
-               
-                <div class="col-sm-12">
-                 <input type="checkbox"  value="I am currently working on this" name="currentlyworking" id="coupon_question" >&nbsp;&nbsp;&nbsp;I am currently working on this
-                </div>
-              </div>
-			  
-            <!-- <div class="form-group">
-               <label class="control-label col-sm-3" for="email">Year of Experience:</label>
-                <div class="col-sm-9">
-                  <input type="text" name="js_career_exp" class="form-control" id="js_career_exp" placeholder="Total Career Number of Experience"
-                   value="<?php 
-                         if (!empty($job_career_info[0]->js_career_exp)) {
-                           echo $job_career_info[0]->js_career_exp;
-                           }
-                      */ ?> ">
-                </div>
-              </div>
-				<div class="form-group">
-            <input type="hidden" name="js_career_id" value="<?php echo $job_career_info[0]->js_career_info_id; ?>">
-                <label class="control-label col-sm-3" for="pwd">Field of Specialization:</label>
-                <div class="col-sm-9">
-                  <textarea name="field_sepicalization" class="form-control" rows="5" id="field_sepicalization"><?php /* if (!empty($job_career_info[0]->field_sepicalization)) {
-                           echo $job_career_info[0]->field_sepicalization;
-                           }
-                       */ ?></textarea>
-                </div>
-              </div>
 
-               <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">Extra Curricular Activities:</label>
-                <div class="col-sm-9">
-                  <textarea name="extracurricular" class="form-control" rows="5" id="extracurricular"><?php /* if (!empty($job_career_info[0]->extracurricular)) {
-                           echo $job_career_info[0]->extracurricular;
-                           }
-                      */  ?></textarea>
-                </div>
-              </div>-->
-         
-
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
 
 
           
