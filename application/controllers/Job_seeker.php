@@ -485,10 +485,10 @@ exit;*/
 			$job_role = $this->Master_model->getMaster('job_role',$where=false);
 			$where_sek['job_seeker_id'] = $jobseeker_id;
 			$join1 = array(
-				'job_category' => 'job_category.job_category_id = js_career_info.industry_id|INNER',
-				'department' => 'department.dept_id = js_career_info.dept_id|INNER',
-				'job_role' => 'job_role.id = js_career_info.job_role|INNER',
-				'shift' => 'shift.shift_id = js_career_info.shift_id|INNER',
+				'job_category' => 'job_category.job_category_id = js_career_info.industry_id|LFET OUTER',
+				'department' => 'department.dept_id = js_career_info.dept_id|LFET OUTER',
+				'job_role' => 'job_role.id = js_career_info.job_role|LFET OUTER',
+				'shift' => 'shift.shift_id = js_career_info.shift_id|LFET OUTER',
 			);
 			
 			$results = $this->Master_model->get_master_row("js_career_info", $select = false, $where_sek, $join1);
