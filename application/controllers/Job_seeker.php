@@ -906,7 +906,7 @@ public function search(){
         echo json_encode( $data);
     }
     // search city 
-  function search(){
+  function search_city(){
         if (isset($_GET['term'])) {
 
             //$result = $this->Job_seeker_experience_model->search_country($_GET['term']);

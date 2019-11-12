@@ -203,10 +203,10 @@
   <script type="text/javascript">
     $('#tokenfield').tokenfield({
       autocomplete: {
-        source: "<?php echo base_url('job_seeker/search'); ?>",
+        source: "<?php echo base_url('job_seeker/search_city'); ?>",
         delay: 100
       },
-     // minLength: 3,
+     minLength: 3,
       showAutocompleteOnFocus: true,
     
 
