@@ -451,7 +451,7 @@ exit;*/
     public function update_career()
     {
         if ($_POST) {
-            
+
             $jobseeker_id = $this->session->userdata('job_seeker_id');
             $js_career_id = $this->input->post('js_career_id');
 
@@ -905,7 +905,21 @@ public function search(){
  
         echo json_encode( $data);
     }
+    // search city 
+  function search(){
+        if (isset($_GET['term'])) {
 
+            //$result = $this->Job_seeker_experience_model->search_country($_GET['term']);
+            $where_city = "city_name='$term','both' ORDER BY city_name ASC"; 
+            $select_city = "city_name";
+            $result = $this->Master_model->getMaster('city',$where_city,$join = FALSE, $order = false, $field = false, $select_city,$limit=false,$start=false, $search=false);
+            if (count($result) > 0) {
+            foreach ($result as $row)
+                $arr_result[] = $row->city_name;
+                echo json_encode($arr_result);
+            }
+        }
+    }
 
 
 } //end function
