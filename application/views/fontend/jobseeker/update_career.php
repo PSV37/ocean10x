@@ -199,7 +199,7 @@
                          if (!empty($job_career_info[0]->js_career_salary)) {
                            echo $job_career_info[0]->js_career_salary;
                            } 
-                       ?>">
+                       ?>" onkeypress="javascript:return isNumber(event)" >
               </div>
           </div>
 
@@ -319,6 +319,14 @@
             } );
 
         });
+
+    function isNumber(evt) {
+      var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+        if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+            return false;
+
+        return true;
+    }    
 
     </script>
 
