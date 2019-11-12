@@ -187,10 +187,10 @@
               <div class="col-sm-9">
                 <select  name="shift_id" id="shift_id" class="form-control">
                   <option value="">Select Year</option>
-                   <?php echo date('Y'); 
+                   <?php
                       for($yr=0;$yr<3;$yr++){
                    ?> 
-                   <option value=""><?php echo date('Y-m-d', strtotime('+'.$yr.'years'));?></option>
+                   <option value=""><?php echo date('Y', strtotime('+'.$yr.'years'));?></option>
                   <?php } ?>
                 </select>
               </div>
