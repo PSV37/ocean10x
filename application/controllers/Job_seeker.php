@@ -454,13 +454,14 @@ exit;*/
 
             $jobseeker_id = $this->session->userdata('job_seeker_id');
             $js_career_id = $this->input->post('js_career_id');
-
+              $avil = $this->input->post('avaliable');
+              $avaliable = implode(',', $avil);
             $career_info  = array(
                 'job_seeker_id'        => $jobseeker_id,
 				'industry_id'        => $this->input->post('industry_id'),
 				'dept_id'        => $this->input->post('dept_id'),
 				'job_role'        => $this->input->post('job_role'),
-				'avaliable'        => $this->input->post('avaliable'),
+				'avaliable'        => $avaliable,
 				'shift_id'        => $this->input->post('shift_id'),
 				'js_career_salary'        => $this->input->post('js_career_salary'),
 				'job_area'        => $this->input->post('job_area'),
