@@ -184,13 +184,23 @@
 
           <div class="form-group">
             <label class="control-label col-sm-3" for="email">Availability to Join</label>
-              <div class="col-sm-9">
+              <div class="col-sm-4">
                 <select  name="shift_id" id="shift_id" class="form-control">
                   <option value="">Select Year</option>
                    <?php
                       for($yr=0;$yr<3;$yr++){
                    ?> 
-                   <option value=""><?php echo date('Y', strtotime('+'.$yr.'years'));?></option>
+                   <option value="<?php echo date('Y', strtotime('+'.$yr.'years'));?>"><?php echo date('Y', strtotime('+'.$yr.'years'));?></option>
+                  <?php } ?>
+                </select>
+              </div>
+              <div class="col-sm-4">
+                <select  name="shift_id" id="shift_id" class="form-control">
+                  <option value="">Select Month</option>
+                   <?php
+                      for($yr=0;$yr<11;$yr++){
+                   ?> 
+                   <option value="<?php echo date('M', strtotime('+'.$yr.'months'));?>"><?php echo date('M', strtotime('+'.$yr.'months'));?></option>
                   <?php } ?>
                 </select>
               </div>
