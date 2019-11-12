@@ -277,20 +277,7 @@
 
   <script type="text/javascript">
 
-    s = 1;
-   function check(){
-       o = document.getElementById('join_immediate');
-       if(o.value=='Yes'){
-           s++;
-           if(s%2==0)
-              $('#join_year').prop('disabled',true);
-              $('#join_month').prop('disabled',true);
-           else
-              $('#join_year').prop('disabled',false);
-              $('#join_month').prop('disabled',false);
-       }
-       
-   }
+  
     
     $('#tokenfield').tokenfield({
       autocomplete: {
@@ -361,6 +348,24 @@
               $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
           }
       } );
+
+
+      s = 1;
+     function check(){
+         o = document.getElementById('join_immediate');
+         if(o.value=='Yes'){
+             s++;
+             if(s%2==0){
+                $('#join_year').prop('disabled',true);
+                $('#join_month').prop('disabled',true);
+             }else{
+                $('#join_year').prop('disabled',false);
+                $('#join_month').prop('disabled',false);
+             }
+            
+         }
+         
+     }
 
   });
 
