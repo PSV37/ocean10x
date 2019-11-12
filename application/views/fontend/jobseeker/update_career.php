@@ -185,7 +185,7 @@
           <div class="form-group">
             <label class="control-label col-sm-3" for="email">Availability to Join</label>
               <div class="col-sm-4">
-                <select  name="shift_id" id="shift_id" class="form-control">
+                <select  name="join_year" id="join_year" class="form-control">
                   <option value="">Select Year</option>
                    <?php
                       for($yr=0;$yr<3;$yr++){
@@ -195,7 +195,7 @@
                 </select>
               </div>
               <div class="col-sm-4">
-                <select  name="shift_id" id="shift_id" class="form-control">
+                <select  name="join_month" id="join_month" class="form-control">
                   <option value="">Select Month</option>
                    <?php
                    if(!empty($months))
@@ -208,11 +208,12 @@
               
           </div>
 			   <div class="form-group">
-          <input type="checkbox" name="join_immediate" id="join_immediate" value="Yes" style="margin: 0 15px;"> Join Immediately
+          <input type="checkbox" name="join_immediate" id="join_immediate" value="Yes" style="margin: 0 15px;" onclick="check()"> Join Immediately
          </div>
 				  <div class="form-group">
             <label class="control-label col-sm-3" for="email">Expected Salary</label>
               <div class="col-sm-9">
+                <br><br>
 
                 <input type="radio" name="salary_type" id="salary_type" value="INR"<?php if (!empty($job_career_info[0]->avaliable)) {
                           if($job_career_info[0]->salary_type=='INR'){ echo 'checked';};
@@ -275,6 +276,21 @@
 
 
   <script type="text/javascript">
+
+    s = 1;
+   function check(){
+       o = document.getElementById('join_immediate');
+       if(o.value=='Yes'){
+           s++;
+           if(s%2==0)
+              $('#join_year').prop('disabled',true);
+              $('#join_month').prop('disabled',true);
+           else
+              $('#join_year').prop('disabled',false);
+              $('#join_month').prop('disabled',false);
+       }
+       
+   }
     
     $('#tokenfield').tokenfield({
       autocomplete: {
