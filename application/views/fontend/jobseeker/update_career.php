@@ -317,7 +317,7 @@
         source: "<?php echo base_url('job_seeker/search'); ?>",
         delay: 100
       },
-      minLength: 3
+      minLength: 3,
       showAutocompleteOnFocus: true,
     
 
