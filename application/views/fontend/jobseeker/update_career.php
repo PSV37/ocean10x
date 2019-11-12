@@ -177,6 +177,15 @@
 				  <div class="form-group">
             <label class="control-label col-sm-3" for="email">Expected Salary:</label>
               <div class="col-sm-9">
+
+                <input type="radio" name="salary_type" id="salary_type" value="Indian Rupees"<?php if (!empty($job_career_info[0]->avaliable)) {
+                          if($job_career_info[0]->salary_type=='Indian Rupees'){ echo 'checked';};
+                         } ?> style="margin: 0 15px;"> Indian Rupees
+
+                <input type="radio" name="salary_type" id="salary_type" value="US Dollars"<?php if (!empty($job_career_info[0]->avaliable)) {
+                          if($job_career_info[0]->salary_type=='US Dollars'){ echo 'checked';};
+                         } ?> style="margin: 0 15px;"> US Dollars <br><br>
+
                 <input type="text" name="js_career_salary" class="form-control" id="js_career_salary" placeholder="Expected Salary"
                   value="<?php
                          if (!empty($job_career_info[0]->js_career_salary)) {

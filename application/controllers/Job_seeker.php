@@ -456,6 +456,7 @@ exit;*/
             $js_career_id = $this->input->post('js_career_id');
               $avil = $this->input->post('avaliable');
               $avaliable = implode(',', $avil);
+              
             $career_info  = array(
                 'job_seeker_id'         => $jobseeker_id,
 				'industry_id'           => $this->input->post('industry_id'),
@@ -463,6 +464,7 @@ exit;*/
 				'job_role'              => $this->input->post('job_role'),
 				'avaliable'             => $avaliable,
 				'shift_id'              => $this->input->post('shift_id'),
+                'salary_type'              => $this->input->post('salary_type'),
 				'js_career_salary'      => $this->input->post('js_career_salary'),
 				'job_area'              => $this->input->post('job_area'),
                 'desired_industry'      => $this->input->post('desired_industry'),
