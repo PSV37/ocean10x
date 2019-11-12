@@ -198,9 +198,10 @@
                 <select  name="shift_id" id="shift_id" class="form-control">
                   <option value="">Select Month</option>
                    <?php
-                      for($yr=1;$yr<12;$yr++){
+                   if(!empty($months))
+                      foreach($months as $month){
                    ?> 
-                   <option value="<?php echo date('M', strtotime('+'.$yr.'months'));?>"><?php echo date('M', strtotime('+'.$yr.'months'));?></option>
+                   <option value="<?php echo $month['work_month'];?>"><?php echo $month['work_month'];?></option>
                   <?php } ?>
                 </select>
               </div>

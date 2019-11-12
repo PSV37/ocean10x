@@ -487,6 +487,8 @@ exit;*/
 			$shift = $this->Master_model->getMaster('shift',$where=false);
 			$department = $this->Master_model->getMaster('department',$where=false);
 			$job_role = $this->Master_model->getMaster('job_role',$where=false);
+            $months = $this->Master_model->getMaster('worktill',$where=false);
+            
 			$where_sek['job_seeker_id'] = $jobseeker_id;
 			$join1 = array(
 				'job_category' => 'job_category.job_category_id = js_career_info.industry_id|LFET OUTER',
@@ -499,7 +501,7 @@ exit;*/
 			//echo $this->db->last_query();
 			//print_r($results);die();
 			
-            $this->load->view('fontend/jobseeker/update_career', compact('job_career_info','employe_jobtype', 'industry_master', 'shift', 'department', 'job_role', 'results'));
+            $this->load->view('fontend/jobseeker/update_career', compact('job_career_info','employe_jobtype', 'industry_master', 'shift', 'department', 'job_role', 'results','months'));
         }
     }
 	
