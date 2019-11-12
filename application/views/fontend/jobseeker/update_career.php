@@ -204,7 +204,8 @@
                    <option value="<?php echo $month['work_month'];?>"><?php echo $month['work_month'];?></option>
                   <?php } ?>
                 </select>
-              </div>
+              </div> <br><br>
+              <input type="checkbox" name="join_immediate" id="join_immediate" value="Yes" style="margin: 0 15px;"> Join Immediately
           </div>
 			  
 				  <div class="form-group">
