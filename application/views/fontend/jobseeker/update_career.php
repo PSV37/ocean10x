@@ -170,9 +170,21 @@
           </div>
 
           <div class="form-group">
-            <label class="control-label col-sm-3" for="email">Preferable Job Location:</label>
+            <label class="control-label col-sm-3" for="email">Desired Location:</label>
               <div class="col-sm-9">
-                <input type="text" name="job_area" class="form-control" id="tokenfield" placeholder="Job Area"
+                <input type="text" name="job_area" class="form-control" id="tokenfield" placeholder="Enter Location"
+                 value="<?php
+                       if (!empty($job_career_info[0]->job_area)) {
+                         echo $job_career_info[0]->job_area;
+                         }
+                     ?>">
+              </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-3" for="email">Desired Industry:</label>
+              <div class="col-sm-9">
+                <input type="text" name="desired_industry" class="form-control" id="tokenfield_indus" placeholder="Enter Industry"
                  value="<?php
                        if (!empty($job_career_info[0]->job_area)) {
                          echo $job_career_info[0]->job_area;
@@ -201,18 +213,39 @@
 
 
   <script type="text/javascript">
+    
     $('#tokenfield').tokenfield({
       autocomplete: {
         source: "<?php echo base_url('job_seeker/search_city'); ?>",
         delay: 100
       },
-     
+
       showAutocompleteOnFocus: true,
     
 
     });
     // to avoid duplications
  $('#tokenfield').on('tokenfield:createtoken', function (event) {
+      var existingTokens = $(this).tokenfield('getTokens');
+      $.each(existingTokens, function(index, token) {
+          if (token.value === event.attrs.value)
+              event.preventDefault();
+
+      });
+  });
+
+ $('#tokenfield_indus').tokenfield({
+      autocomplete: {
+        source: "<?php echo base_url('job_seeker/search_industry'); ?>",
+        delay: 100
+      },
+
+      showAutocompleteOnFocus: true,
+    
+
+    });
+    // to avoid duplications
+ $('#tokenfield_indus').on('tokenfield_indus:createtoken', function (event) {
       var existingTokens = $(this).tokenfield('getTokens');
       $.each(existingTokens, function(index, token) {
           if (token.value === event.attrs.value)

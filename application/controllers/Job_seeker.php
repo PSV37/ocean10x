@@ -872,8 +872,18 @@ exit;*/
         }
     }
 
-    
+    // to get industry master for autocomplete
+    function search_industry(){
+        if (isset($_GET['term'])) {
 
+            $result = $this->Job_seeker_experience_model->search_industry_name($_GET['term']);
+            if (count($result) > 0) {
+            foreach ($result as $row)
+                $arr_result[] = $row->industry_name;
+                echo json_encode($arr_result);
+            }
+        }
+    }
 
 
     function getspecilization(){
