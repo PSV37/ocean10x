@@ -131,10 +131,11 @@
 				  <div class="form-group">
             <label class="control-label col-sm-3"> Job Type:</label>
               <div class="col-sm-9">
-                  <?php if (!empty($job_career_info[0]->avaliable)) {
-                          if($job_career_info[0]->avaliable){
-                            $avail = explode(',', $job_career_info[0]->avaliable);
-                          } } ?>
+                <?php if (!empty($job_career_info[0]->avaliable)) {
+                        if($job_career_info[0]->avaliable){
+                          $avail = explode(',', $job_career_info[0]->avaliable);
+                      } } 
+                ?>
 
                 <input type="checkbox" name="avaliable[]" id="avaliable_ft" value="Full Time"<?php if (!empty($job_career_info[0]->avaliable)) {
                           if($avail[0]=='Full Time'){ echo 'checked';};
@@ -148,19 +149,6 @@
                           if($avail[2]=='Contractual'){ echo 'checked';};
                          } ?> style="margin: 0 15px;"> Contractual
 
-
-
-                <!-- <select name="avaliable" class="form-control">
-          					<option value="Full Time"<?php if (!empty($job_career_info[0]->avaliable)) {
-                          if($job_career_info[0]->avaliable=='Full Time'){ echo 'selected';};
-                         } ?>>Full Time</option>
-          					<option value="Part Time"<?php if (!empty($job_career_info[0]->avaliable)) {
-                          if($job_career_info[0]->avaliable=='Part Time'){ echo 'selected';};
-                         } ?>>Part Time</option>
-          					<option value="Contractual Time"<?php if (!empty($job_career_info[0]->avaliable)) {
-                          if($job_career_info[0]->avaliable=='Contractual Time'){ echo 'selected';};
-                         } ?>>Contractual</option>
-				        </select> -->
               </div>
           </div>
 
