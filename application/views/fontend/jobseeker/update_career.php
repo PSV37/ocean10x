@@ -54,8 +54,8 @@
 
                                   <tr>
                                     <td width="30%">Expected Salary:</td>
-                                    <td><?php if(!empty($job_career_info[0]->salary_type)) echo $job_career_info[0]->salary_type;   if(!empty($job_career_info[0]->js_career_salary))
-                                            echo $job_career_info[0]->js_career_salary;
+                                    <td><?php if(!empty($job_career_info[0]->salary_type)) echo $job_career_info[0]->salary_type;if(!empty($job_career_info[0]->js_career_salary))
+                                            echo " ". $job_career_info[0]->js_career_salary;
                                      ?></td>
                                   </tr>
                                 								
