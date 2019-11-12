@@ -204,7 +204,7 @@
           </div>
 
           <div class="form-group">
-            <label class="control-label col-sm-3" for="email">Desired Location</label>
+            <label class="control-label col-sm-3" for="email">Preferred Locations</label>
               <div class="col-sm-9">
                 <input type="text" name="job_area" class="form-control" id="tokenfield" placeholder="Enter Location"
                  value="<?php
@@ -216,7 +216,7 @@
           </div>
 
           <div class="form-group">
-            <label class="control-label col-sm-3" for="email">Desired Industry</label>
+            <label class="control-label col-sm-3" for="email">Preferred Industries</label>
               <div class="col-sm-9">
                 <input type="text" name="desired_industry" class="form-control" id="tokenfield_indus" placeholder="Enter Industry"
                  value="<?php
