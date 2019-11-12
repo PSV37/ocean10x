@@ -184,17 +184,18 @@
 
           <div class="form-group">
             <label class="control-label col-sm-3" for="email">Availability to Join</label>
-              <div class="col-sm-4">
-                <select  name="join_year" id="join_year" class="form-control">
+              <div class="col-sm-9">
+                 <input type="text" class="form-control datepicker" name="avail_to_join" value="">
+               <!--  <select  name="join_year" id="join_year" class="form-control">
                   <option value="">Select Year</option>
                    <?php
                       for($yr=0;$yr<3;$yr++){
                    ?> 
                    <option value="<?php echo date('Y', strtotime('+'.$yr.'years'));?>"><?php echo date('Y', strtotime('+'.$yr.'years'));?></option>
                   <?php } ?>
-                </select>
+                </select> -->
               </div>
-              <div class="col-sm-4">
+            <!--   <div class="col-sm-4">
                 <select  name="join_month" id="join_month" class="form-control">
                   <option value="">Select Month</option>
                    <?php
@@ -204,11 +205,11 @@
                    <option value="<?php echo $month['work_month'];?>"><?php echo $month['work_month'];?></option>
                   <?php } ?>
                 </select>
-              </div> 
+              </div>  -->
               
           </div>
 			   <div class="form-group">
-          <input type="checkbox" name="join_immediate" id="join_immediate" value="Yes" style="margin: 0 15px;" onclick="check()"> Join Immediately
+          <input type="checkbox" name="join_immediate" id="join_immediate" value="Yes"  onclick="check()" style="margin: 0 15px;"> Join Immediately
          </div>
 				  <div class="form-group">
             <label class="control-label col-sm-3" for="email">Expected Salary</label>
@@ -356,11 +357,11 @@
          if(o.value=='Yes'){
              s++;
              if(s%2==0){
-                $('#join_year').prop('disabled',true);
-                $('#join_month').prop('disabled',true);
+                $('#avail_to_join').prop('disabled',true);
+               // $('#join_month').prop('disabled',true);
              }else{
-                $('#join_year').prop('disabled',false);
-                $('#join_month').prop('disabled',false);
+                $('#avail_to_join').prop('disabled',false);
+                //$('#join_month').prop('disabled',false);
              }
             
          }
