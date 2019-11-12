@@ -79,5 +79,13 @@ class Job_seeker_experience_model extends MY_Model
         return $this->db->get('country')->result();
     }
 
+    function search_city($title){
+        $this->db->like('city_name', $title , 'both');
+        $this->db->order_by('city_name', 'ASC');
+        // $this->db->WHERE('status', '1');
+        // $this->db->limit(10);
+        return $this->db->get('city')->result();
+    }
+
     
 }
