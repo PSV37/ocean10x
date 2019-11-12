@@ -88,11 +88,11 @@ class Job_seeker_experience_model extends MY_Model
     }
 
     function search_industry_name($title){
-        $this->db->like('industry_name', $title , 'both');
-        $this->db->order_by('industry_name', 'ASC');
+        $this->db->like('job_category_name', $title , 'both');
+        $this->db->order_by('job_category_name', 'ASC');
         // $this->db->WHERE('status', '1');
         // $this->db->limit(10);
-        return $this->db->get('industry_master')->result();
+        return $this->db->get('job_category')->result();
     }
     
 }

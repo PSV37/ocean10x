@@ -98,7 +98,7 @@
                 <select  name="industry_id" id="industry_id" class="form-control">
 				          <option value="">Select Industry</option>
         				 <?php foreach($industry_master as $industry){?>
-        					<option value="<?php echo $industry['id']; ?>"<?php if($job_career_info[0]->industry_id==$industry['id']){ echo "selected"; }?>><?php echo $industry['industry_name']; ?></option>
+        					<option value="<?php echo $industry['job_category_id']; ?>"<?php if($job_career_info[0]->industry_id==$industry['job_category_id']){ echo "selected"; }?>><?php echo $industry['job_category_name']; ?></option>
         					<?php } ?>
         				</select>
               </div>

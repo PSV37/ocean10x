@@ -479,13 +479,13 @@ exit;*/
             $jobseeker_id    = $this->session->userdata('job_seeker_id');
             $job_career_info = $this->Job_career_model->js_careerinfo_by_seeker($jobseeker_id);
 			$employe_jobtype = $this->Master_model->getMaster('employe_jobtype',$where=false);
-			$industry_master = $this->Master_model->getMaster('industry_master',$where=false);
+			$industry_master = $this->Master_model->getMaster('job_category',$where=false);
 			$shift = $this->Master_model->getMaster('shift',$where=false);
 			$department = $this->Master_model->getMaster('department',$where=false);
 			$job_role = $this->Master_model->getMaster('job_role',$where=false);
 			$where_sek['job_seeker_id'] = $jobseeker_id;
 			$join1 = array(
-				'industry_master' => 'industry_master.id = js_career_info.industry_id|INNER',
+				'job_category' => 'job_category.job_category_id = js_career_info.industry_id|INNER',
 				'department' => 'department.dept_id = js_career_info.dept_id|INNER',
 				'job_role' => 'job_role.id = js_career_info.job_role|INNER',
 				'shift' => 'shift.shift_id = js_career_info.shift_id|INNER',
@@ -879,7 +879,7 @@ exit;*/
             $result = $this->Job_seeker_experience_model->search_industry_name($_GET['term']);
             if (count($result) > 0) {
             foreach ($result as $row)
-                $arr_result[] = $row->industry_name;
+                $arr_result[] = $row->job_category_name;
                 echo json_encode($arr_result);
             }
         }
