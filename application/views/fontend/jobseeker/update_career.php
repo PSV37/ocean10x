@@ -367,47 +367,28 @@
                 }
             } );
 
-              $('#tokenfield').tokenfield({
-                autocomplete: {
-                  source: "<?php echo base_url('job_seeker/get_skills_autocomplete'); ?>",
-                  delay: 100
-                },
-                showAutocompleteOnFocus: true,
+              // $('#tokenfield').tokenfield({
+              //   autocomplete: {
+              //     source: "<?php echo base_url('job_seeker/get_skills_autocomplete'); ?>",
+              //     delay: 100
+              //   },
+              //   showAutocompleteOnFocus: true,
 
-              });
+              // });
               // to avoid duplications
-           $('#tokenfield').on('tokenfield:createtoken', function (event) {
-                var existingTokens = $(this).tokenfield('getTokens');
-                $.each(existingTokens, function(index, token) {
-                    if (token.value === event.attrs.value)
-                        event.preventDefault();
+           // $('#tokenfield').on('tokenfield:createtoken', function (event) {
+           //      var existingTokens = $(this).tokenfield('getTokens');
+           //      $.each(existingTokens, function(index, token) {
+           //          if (token.value === event.attrs.value)
+           //              event.preventDefault();
 
-                });
-            });
+           //      });
+           //  });
 
         });
 
     </script>
-<style>
-  ul.ui-autocomplete {
-      z-index: 1100;
-  }
-  .tokenfield .token .close {
-    font-family: Arial !important;
-    display: inline-block !important;
-    line-height: 100% !important;
-    font-size: 1.1em !important;
-    line-height: 1.49em !important;
-    margin-left: 5px !important;
-    float: none !important;
-    height: 100% !important;
-    vertical-align: top !important;
-    padding-right: 4px !important;
 
-    color: #989090f2; 
-
-}
-</style>
 
 
 <script>
@@ -514,3 +495,24 @@ $("#duration_month").select2( {
 });
  
 </script>    -->
+
+<style>
+  ul.ui-autocomplete {
+      z-index: 1100;
+  }
+  .tokenfield .token .close {
+    font-family: Arial !important;
+    display: inline-block !important;
+    line-height: 100% !important;
+    font-size: 1.1em !important;
+    line-height: 1.49em !important;
+    margin-left: 5px !important;
+    float: none !important;
+    height: 100% !important;
+    vertical-align: top !important;
+    padding-right: 4px !important;
+
+    color: #989090f2; 
+
+}
+</style>
