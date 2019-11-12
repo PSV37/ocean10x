@@ -19,7 +19,7 @@
                                 <tbody>
   							                  
                                   <tr>
-                                    <td width="30%">industry:</td>
+                                    <td width="30%">Industry:</td>
                                     <td><?php echo $results['job_category_name']; ?> </td>
                                   </tr>
   								
@@ -29,7 +29,7 @@
                                   </tr>
   							  
                                   <tr>
-                                    <td width="30%">Job Role:</td>
+                                    <td width="30%">Role:</td>
                                     <td><?php echo $results['job_role_title']; ?></td>
                                   </tr>
   								                <tr>
@@ -98,7 +98,7 @@
       <div class="modal-body">
         <form id="Career-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_career');?>" method="post" style="padding: 30px;">
 				
-        <input type="text" name="js_career_id" class="form-control" value="<?php
+        <input type="hidden" name="js_career_id" class="form-control" value="<?php
                        if (!empty($job_career_info[0]->js_career_info_id)) {
                          echo $job_career_info[0]->js_career_info_id;
                          } ?>">
