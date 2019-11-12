@@ -133,20 +133,19 @@
               <div class="col-sm-9">
                   <?php if (!empty($job_career_info[0]->avaliable)) {
                           if($job_career_info[0]->avaliable){
-
-                            echo $job_career_info[0]->avaliable;
+                            $avail = explode(',', $job_career_info[0]->avaliable);
                           } } ?>
 
                 <input type="checkbox" name="avaliable[]" id="avaliable_ft" value="Full Time"<?php if (!empty($job_career_info[0]->avaliable)) {
-                          if($job_career_info[0]->avaliable=='Full Time'){ echo 'checked';};
+                          if($avail[0]=='Full Time'){ echo 'checked';};
                          } ?> style="margin: 0 15px;"> Full Time
 
                 <input type="checkbox" name="avaliable[]" id="avaliable_pt" value="Part Time"<?php if (!empty($job_career_info[0]->avaliable)) {
-                          if($job_career_info[0]->avaliable=='Part Time'){ echo 'checked';};
+                          if($avail[1]=='Part Time'){ echo 'checked';};
                          } ?> style="margin: 0 15px;"> Part Time
                       
                 <input type="checkbox" name="avaliable[]" id="avaliable_ct" value="Contractual"<?php if (!empty($job_career_info[0]->avaliable)) {
-                          if($job_career_info[0]->avaliable=='Contractual'){ echo 'checked';};
+                          if($avail[2]=='Contractual'){ echo 'checked';};
                          } ?> style="margin: 0 15px;"> Contractual
 
 
