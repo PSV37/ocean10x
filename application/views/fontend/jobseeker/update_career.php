@@ -91,93 +91,101 @@
         <h4 class="modal-title">Update My Desired Profile</h4>
       </div>
       <div class="modal-body">
-         <form id="Career-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_career');?>" method="post" style="padding: 30px;">
+        <form id="Career-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_career');?>" method="post" style="padding: 30px;">
 				
-				 <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">Industry:</label>
-                <div class="col-sm-9">
-                  <select  name="industry_id" id="industry_id" class="form-control">
-				  <option></option>
-				 <?php foreach($industry_master as $industry){?>
-					<option value="<?php echo $industry['id']; ?>"<?php if($job_career_info[0]->industry_id==$industry['id']){ echo "selected"; }?>><?php echo $industry['industry_name']; ?></option>
-					<?php } ?>
-				 </select>
-                </div>
+				  <div class="form-group">
+            <label class="control-label col-sm-3" for="pwd">Industry:</label>
+              <div class="col-sm-9">
+                <select  name="industry_id" id="industry_id" class="form-control">
+				          <option value="">Select Industry</option>
+        				 <?php foreach($industry_master as $industry){?>
+        					<option value="<?php echo $industry['id']; ?>"<?php if($job_career_info[0]->industry_id==$industry['id']){ echo "selected"; }?>><?php echo $industry['industry_name']; ?></option>
+        					<?php } ?>
+        				</select>
               </div>
+            </div>
 			  
-			   <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">Department:</label>
-                <div class="col-sm-9">
-                  <select  name="dept_id" id="dept_id" class="form-control">
-				  <option></option>
-				 <?php foreach($department as $dept){?>
-					<option value="<?php echo $dept['dept_id']; ?>"<?php if($job_career_info[0]->dept_id==$dept['dept_id']){ echo "selected"; }?>><?php echo $dept['department_name']; ?></option>
-					<?php } ?>
-				 </select>
-                </div>
+			    <div class="form-group">
+            <label class="control-label col-sm-3" for="pwd">Department:</label>
+              <div class="col-sm-9">
+                <select  name="dept_id" id="dept_id" class="form-control">
+          				<option value="">Select Department</option>
+          				<?php foreach($department as $dept){?>
+          				<option value="<?php echo $dept['dept_id']; ?>"<?php if($job_career_info[0]->dept_id==$dept['dept_id']){ echo "selected"; }?>><?php echo $dept['department_name']; ?></option>
+          					<?php } ?>
+          			</select>
               </div>
+          </div>
 				
-                <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">Job Role:</label>
-                <div class="col-sm-9">
-                  <select  name="job_role" id="job_role" class="form-control">
-				  <option></option>
-				 <?php foreach($job_role as $role){?>
-					<option value="<?php echo $role['id']; ?>"<?php if($job_career_info[0]->job_role==$role['id']){ echo "selected"; }?>><?php echo $role['job_role_title']; ?></option>
-					<?php } ?>
-				 </select>
-                </div>
+          <div class="form-group">
+            <label class="control-label col-sm-3" for="pwd">Job Role:</label>
+              <div class="col-sm-9">
+                <select  name="job_role" id="job_role" class="form-control">
+        				  <option value="">Select Role</option>
+        				  <?php foreach($job_role as $role){?>
+        					<option value="<?php echo $role['id']; ?>"<?php if($job_career_info[0]->job_role==$role['id']){ echo "selected"; }?>><?php echo $role['job_role_title']; ?></option>
+        					<?php } ?>
+      				  </select>
               </div>
+          </div>
 
-				<div class="form-group">
-                <br/> <label class="control-label col-sm-3"> Job Type:</label>
-                <div class="col-sm-9">
-                  <select name="avaliable" class="form-control">
-				  <option value="<?php if (!empty($job_career_info[0]->avaliable)) {
-                           echo $job_career_info[0]->avaliable;
-                           } ?>"><?php  if (!empty($job_career_info[0]->avaliable)) {
-                           echo $job_career_info[0]->avaliable;
-                           } ?></option>
-					<option value="Full Time">Full Time</option>
-					<option value="Part Time">Part Time</option>
-					<option value="Contractual Time">Contractual</option>
-				  </select>
-                </div>
+				  <div class="form-group">
+            <label class="control-label col-sm-3"> Job Type:</label>
+              <div class="col-sm-9">
+                <select name="avaliable" class="form-control">
+				         <!--  <option value="<?php if (!empty($job_career_info[0]->avaliable)) {
+                     echo $job_career_info[0]->avaliable;
+                     } ?>"><?php  if (!empty($job_career_info[0]->avaliable)) {
+                     echo $job_career_info[0]->avaliable;
+                     } ?></option> -->
+          					<option value="Full Time"<?php if (!empty($job_career_info[0]->avaliable)) {
+                          if($job_career_info[0]->avaliable=='Full Time'){ echo 'selected';};
+                         } ?>>Full Time</option>
+          					<option value="Part Time"<?php if (!empty($job_career_info[0]->avaliable)) {
+                          if($job_career_info[0]->avaliable=='Part Time'){ echo 'selected';};
+                         } ?>>Part Time</option>
+          					<option value="Contractual Time"<?php if (!empty($job_career_info[0]->avaliable)) {
+                          if($job_career_info[0]->avaliable=='Contractual Time'){ echo 'selected';};
+                         } ?>>Contractual</option>
+				        </select>
               </div>
+          </div>
+
 			   <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Preferred Shift:</label>
-                <div class="col-sm-9">
-                  <select  name="shift_id" id="shift_id" class="form-control">
-				  <option>Select Shift</option>
-				 <?php foreach($shift as $shifts){?>
-					<option value="<?php echo $shifts['shift_id']; ?>"<?php if($job_career_info[0]->shift_id==$shifts['shift_id']){ echo "selected"; }?>><?php echo $shifts['shift_type']; ?></option>
-					<?php } ?>
-				 </select>
-                </div>
-              </div>
+          <label class="control-label col-sm-3" for="email">Preferred Shift:</label>
+            <div class="col-sm-9">
+              <select  name="shift_id" id="shift_id" class="form-control">
+      				  <option>Select Shift</option>
+      				 <?php foreach($shift as $shifts){?>
+      					<option value="<?php echo $shifts['shift_id']; ?>"<?php if($job_career_info[0]->shift_id==$shifts['shift_id']){ echo "selected"; }?>><?php echo $shifts['shift_type']; ?></option>
+      					<?php } ?>
+      				</select>
+            </div>
+          </div>
 			  
-				 <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Expected Salary:</label>
-                <div class="col-sm-9">
-                  <input type="text" name="js_career_salary" class="form-control" id="js_career_salary" placeholder="Expected Salary"
-                   value="<?php
+				  <div class="form-group">
+            <label class="control-label col-sm-3" for="email">Expected Salary:</label>
+              <div class="col-sm-9">
+                <input type="text" name="js_career_salary" class="form-control" id="js_career_salary" placeholder="Expected Salary"
+                  value="<?php
                          if (!empty($job_career_info[0]->js_career_salary)) {
                            echo $job_career_info[0]->js_career_salary;
                            } 
                        ?>">
-                </div>
               </div>
-             <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Preferable Job Location:</label>
-                <div class="col-sm-9">
-                  <input type="text" name="job_area" class="form-control" id="job_area" placeholder="Preferable Job Area"
-                   value="<?php
-                         if (!empty($job_career_info[0]->job_area)) {
-                           echo $job_career_info[0]->job_area;
-                           }
-                       ?>">
-                </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-3" for="email">Preferable Job Location:</label>
+              <div class="col-sm-9">
+                <input type="text" name="job_area" class="form-control" id="job_area" placeholder="Preferable Job Area"
+                 value="<?php
+                       if (!empty($job_career_info[0]->job_area)) {
+                         echo $job_career_info[0]->job_area;
+                         }
+                     ?>">
               </div>
+          </div>
 				
 				
               <!--<div class="form-group">
