@@ -349,10 +349,9 @@
      // function check(){
       $("#join_immediate").on("click",function() {
          o = document.getElementById('join_immediate');
-         var s=  $('#join_immediate').prop('checked',true);
-         if(s){
-             // s++;
-             // if(s%2==0){
+         if(o.value=='Yes'){
+             s++;
+             if(s%2==0){
                 $('#avail_to_join').prop('disabled',true);
                 $('#avail_to_join').val('');
              }else{
@@ -360,7 +359,7 @@
                  $('#avail_to_join').val('');
              }
             
-         // }//
+         }
          
      });
 
