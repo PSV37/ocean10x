@@ -363,12 +363,7 @@
      //     }
          
      // });
-    function enable_text(status)
-    {
-    alert(status);
-    status=!status; 
-    document.f1.avail_to_join.disabled = status;
-    }
+    
 
   });
 
@@ -433,6 +428,12 @@ $(function() {
 	
 	<script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
 <script>
+  function enable_text(status)
+    {
+    alert(status);
+    status=!status; 
+    document.f1.avail_to_join.disabled = status;
+    }
 $("#duration_year").select2( {
 	placeholder: "Select Year",
 	allowClear: true
