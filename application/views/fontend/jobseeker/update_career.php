@@ -430,7 +430,7 @@ $(function() {
 <script>
   function enable_text(status)
     {
-    //alert(status);
+    alert(status);
       if(status=!status){
          document.f1.avail_to_join.disabled = status;
       }else{
