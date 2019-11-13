@@ -354,7 +354,12 @@
              if(s%2==0){
                 $('#avail_to_join').prop('disabled',true);
                 $('#avail_to_join').val('');
-             }else{
+             } 
+             else if(s%3==0){
+               $('#avail_to_join').prop('disabled',false);
+               $('#avail_to_join').val('');
+             }
+             else{
                 $('#avail_to_join').prop('disabled',false);
                  $('#avail_to_join').val('');
              }
