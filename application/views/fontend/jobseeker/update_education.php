@@ -9,7 +9,7 @@
                   <?php $this->load->view('fontend/layout/seeker_resumemenu.php'); ?>
                     <h5>Education</h5>
                     <hr>
-                    <?php if (!empty($edcuaiton_list)): foreach ($edcuaiton_list as $v_education) : ?>  
+                    <?php if (!empty($education_level)): foreach ($education_level as $v_education) : ?>  
                       <h5>
                         <!-- Ph.D/Doctorate --> <?php echo $v_education->education_level_name; ?><a href="#" class="btn btn-xs" title="Add More" onclick="open_phdmodel();"><i class="fa fa-plus"></i></a>
                       </h5>
