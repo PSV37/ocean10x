@@ -430,16 +430,17 @@ $(function() {
 <script>
   function enable_text(status)
     {
-    alert(status);
+   // alert(status);
       if(status==true){
-         document.f1.avail_to_join.disabled = status;
+         //document.f1.avail_to_join.disabled = status;
+        $('#avail_to_join').prop('disabled',true);
+        $('#avail_to_join').val('');
       }else{
-        alert('s');
+        //alert('s');
+        $('#avail_to_join').prop('disabled',false);
+        $('#avail_to_join').val('');
       }
-      //   // document.f1.avail_to_join.disabled = status;
-      //     $('#avail_to_join').prop('disabled',false);
-      //     $('#avail_to_join').val('');
-      // }
+      
      
     }
 $("#duration_year").select2( {
