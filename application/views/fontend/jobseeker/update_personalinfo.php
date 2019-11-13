@@ -123,11 +123,11 @@
                  ?></td>
               </tr>
 									
-							<tr>
+						<!-- 	<tr>
                 <td>Nationality:</td>
                 <td><?php echo $js_personal_info->nationality; ?></td>
               </tr>  
-                                        
+                      -->                   
             <!--<tr>
               <td>Adhar No:</td>
             <td><?php /*if($js_personal_info->national_id=="0") { echo "";} else { echo $js_personal_info->national_id;} */ ?></td>
@@ -167,7 +167,7 @@
                 <td>country:</td>
                 <td><?php echo $js_personal_info->country_name; ?></td>
               </tr>
-              <tr>
+             <!--  <tr>
                 <td>Parmanent Address:</td>
                 <td><?php echo $js_personal_info->parmanent_address; ?></td>
               </tr>
@@ -195,7 +195,7 @@
                 <td>Mother Name:</td>
                   <td><?php if(!empty($js_personal_info->mother_name))
                   echo $js_personal_info->mother_name; ?></td>
-              </tr>
+              </tr> -->
               <tr>
                 <td>Marital Status:</td>
                 <td><?php if(!empty($js_personal_info->marital_status))
@@ -352,12 +352,19 @@
 
               	<div class="col-md-6 col-sm-12">
 	              	<div class="input-group">
-	                 <label class="control-label" for="email">Date of Birth:</label>
-	                  <input type="text" class="form-control datepicker" name="date_of_birth" value="<?php echo date('d-m-Y', strtotime($js_personal_info->date_of_birth)); ?>">
+	                 <label class="control-label" for="email">Name:</label>
+	                  <input type="text" class="form-control" name="date_of_birth" value="<?php echo date('d-m-Y', strtotime($js_personal_info->date_of_birth)); ?>">
 	             
 	              	</div>
           		</div>
-				
+              <div class="col-md-6 col-sm-12">
+                  <div class="input-group">
+                   <label class="control-label" for="email">Date of Birth:</label>
+                    <input type="text" class="form-control datepicker" name="date_of_birth" value="<?php echo date('d-m-Y', strtotime($js_personal_info->date_of_birth)); ?>">
+               
+                  </div>
+              </div>
+<!-- 				
 				    <div class="col-md-6 col-sm-12">
               <div class="input-group">
                   <label class="control-label" for="email">Nationality:</label>
@@ -613,7 +620,7 @@
                   </select>
               </div>
           </div>
-				
+				 -->
 				
           		
 	          </div>
@@ -1130,19 +1137,6 @@
 	          </div>
 	      </div>
          
-            <!--<div class="col-md-6 col-sm-12">
-              <div class="input-group">
-                  <label class="control-label" for="pwd">Adhar NO:</label>
-                  <input name="national_id" type="text"  class="form-control" id="national_id" 
-
-               value="<?php
-                         if (!empty($js_personal_info->national_id)) {
-                           echo $js_personal_info->national_id;
-                           }
-                       ?>">
-              </div>
-          	</div>-->
-         
 		     <div class="row">
               <div class="col-md-12">
             <div class="col-md-12 col-sm-12">  
@@ -1218,12 +1212,12 @@
 			</div>
 			
 			 </div>
-       <input type="checkbox" name="billingtoo" onclick="FillBilling(this.form)">
+     <!--   <input type="checkbox" name="billingtoo" onclick="FillBilling(this.form)">
 			  
-			 <em>Check this box if Present Address and Parmanent Address are the same.</em>
+			 <em>Check this box if Present Address and Parmanent Address are the same.</em> -->
 			
         
-		   <div class="row">
+		<!--    <div class="row">
               <div class="col-md-12">
           	<div class="col-md-12 col-sm-12">
               <div class="input-group">
@@ -1279,8 +1273,8 @@
 						<?php } ?>
 					 </select>
 	            </div>
-          	</div>
-			 <div class="col-md-6 col-sm-12">
+          	</div> -->
+			 <!-- <div class="col-md-6 col-sm-12">
 				<div class="input-group">
 	                <label class="control-label" for="pwd">Pincode</label>
 	               <input type="text" name="pincode1" id="pincode1" maxlength="6" class="form-control"  value="<?php
@@ -1289,10 +1283,10 @@
 	                           }
 	                       ?>" required onkeypress="return isNumber(event)">
 	            </div>
-          	</div>
-	  </div>
-   </div>
-    <div class="panel-body"></div>   
+          	</div> -->
+	  <!-- </div>
+   </div> -->
+    <!-- <div class="panel-body"></div>   
 	  <div class="row">
               <div class="col-md-12">
               	<div class="col-md-6 col-sm-12">
@@ -1318,7 +1312,7 @@
 	              </div>
 	          	</div>
 		        </div>
-		  </div>
+		  </div> -->
 
     <div class="panel-body"></div>   
     <div class="row">
