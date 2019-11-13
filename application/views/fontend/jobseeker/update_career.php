@@ -196,7 +196,9 @@
           <div class="form-group">
             <label class="control-label col-sm-3" for="email">Availability to Join</label>
               <div class="col-sm-9">
-                <input type="text" class="form-control datepicker" name="avail_to_join" id="avail_to_join" value="<?php echo date('d-m-Y', strtotime($job_career_info[0]->availability_date)); ?>">
+                <input type="text" class="form-control datepicker" name="avail_to_join" id="avail_to_join" value="<?php echo date('d-m-Y', strtotime($job_career_info[0]->availability_date)); ?>" <?php if (!empty($job_career_info[0]->immediate_join)) {
+                          if($job_career_info[0]->immediate_join=='Yes'){ echo 'disabled';};
+                         } ?>>
               </div>
         
           </div>
@@ -345,26 +347,6 @@
       } );
 
 
-     //  s = 1;
-     // // function check(){
-     //  $("#join_immediate").on("click",function() {
-     //     o = document.getElementById('join_immediate');
-     //     if(o.value=='Yes'){
-     //         s++;
-     //         if(s%2==0){
-     //            $('#avail_to_join').prop('disabled',true);
-     //            $('#avail_to_join').val('');
-     //         }
-     //         else{
-     //            $('#avail_to_join').prop('disabled',false);
-     //             $('#avail_to_join').val('');
-     //         }
-            
-     //     }
-         
-     // });
-    
-
   });
 
     function isNumber(evt) {
@@ -436,7 +418,6 @@ $(function() {
         $('#avail_to_join').val('');
       }
       
-     
     }
 
 </script>
