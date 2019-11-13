@@ -14,7 +14,7 @@
                       <h5>
                         <!-- Ph.D/Doctorate --> <?php echo $v_education['education_level_name']; ?><a href="#" class="btn btn-xs" title="Add More" data-toggle="modal" data-target="#addEducation" onclick="$('#education_level_id').val(<?php echo $v_education['education_level_id']; ?>);"><i class="fa fa-plus"></i></a>
                       </h5>
-                      <?php echo $jobseeker_id = $this->session->userdata('job_seeker_id'); echo $v_education['education_level_id'];  ?>
+                      <!-- <?php echo $jobseeker_id = $this->session->userdata('job_seeker_id'); echo $v_education['education_level_id'];  ?> -->
                       <h5>
                         <a href="#" data-toggle="modal" data-target="#EditEducation" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                        
