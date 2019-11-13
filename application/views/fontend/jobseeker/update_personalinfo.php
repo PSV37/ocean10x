@@ -342,7 +342,7 @@
          // });
        // });  
       $(function() {
-        $("body").delegate("#datepicker", "focusin", function(){
+        $(".modal-body").delegate("#datepicker", "focusin", function(){
             $(this).datepicker();
         });
       });
