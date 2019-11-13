@@ -188,7 +188,7 @@
                 <?php if (!empty($job_career_info[0]->immediate_join)) {
                           if($job_career_info[0]->immediate_join=='Yes'){
                   ?>
-                  <input type="text" class="form-control" name="avail_to_join" id="avail" value="" disabled>
+                  <input type="text" class="form-control" name="avail_to_join" id="avail_to_join" value="" disabled>
                   <?php
                     }else{?>
                   <input type="text" class="form-control datepicker" name="avail_to_join" id="avail_to_join" value="<?php echo date('d-m-Y', strtotime($job_career_info[0]->availability_date)); ?>">
@@ -376,6 +376,9 @@
                 //$('#join_month').prop('disabled',false);
              }
             
+         }else{
+           $('#avail_to_join').prop('disabled',false);
+            $('#avail_to_join').val('');
          }
          
      });
