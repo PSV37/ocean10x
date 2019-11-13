@@ -349,17 +349,10 @@
             
 		    <div class="row">
               <div class="col-md-12">
-
-              	<div class="col-md-6 col-sm-12">
-	              	<div class="input-group">
-	                 <label class="control-label" for="email">Name:</label>
-	                  <input type="text" class="form-control" name="date_of_birth" value="<?php echo date('d-m-Y', strtotime($js_personal_info->date_of_birth)); ?>">
-	             
-	              	</div>
-          		</div>
-              <div class="col-md-6 col-sm-12">
+              	
+              <div class="col-md-12 col-sm-12">
                   <div class="input-group">
-                   <label class="control-label" for="email">Date of Birth:</label>
+                   <label class="control-label" for="email">Date of Birth:<span class="required">*</span></label>
                     <input type="text" class="form-control datepicker" name="date_of_birth" value="<?php echo date('d-m-Y', strtotime($js_personal_info->date_of_birth)); ?>">
                
                   </div>
@@ -629,7 +622,7 @@
               <div class="col-md-12">
 				<div class="col-md-6 col-sm-12">
               <div class="input-group">
-                <label class="control-label" for="pwd"> Country Code:</label>
+                <label class="control-label" for="pwd"> Country Code:<span class="required">*</span></label>
 				<select id="country" name="country_code" class="form-control">
 					<option><?php echo $js_personal_info->country_code?></option>
 					<option value="AD - Andorra (+376)">AD - Andorra (+376)</option>
@@ -870,7 +863,7 @@
 				
           	<div class="col-md-6 col-sm-12">
               <div class="input-group">
-                  <label class="control-label" for="pwd"> Primary Phone No:</label>
+                  <label class="control-label" for="pwd"> Primary Phone No:<span class="required">*</span></label>
                   <input name="mobile" type="text"  class="form-control"  maxlength="10" id="number" 
                value="<?php
                          if (!empty($js_personal_info->mobile)) {
@@ -1141,7 +1134,7 @@
               <div class="col-md-12">
             <div class="col-md-12 col-sm-12">  
               	<div class="input-group">
-                  	<label class="control-label" for="pwd">Present Address</label>
+                  	<label class="control-label" for="pwd">Present Address<span class="required">*</span></label>
                   	<textarea name="present_address" class="form-control ckeditor" rows="5" id="comment"><?php 
                          if (!empty($js_personal_info->present_address)) {
                            echo $js_personal_info->present_address;
@@ -1160,7 +1153,7 @@
           	
             <div class="col-md-6 col-sm-12">
 			    <div class="input-group">
-                  <label class="control-label" for="pwd">Country</label>
+                  <label class="control-label" for="pwd">Country<span class="required">*</span></label>
                   <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
 					<option value="">Select Country</option>
 					<?php foreach($country as $key){?>
@@ -1172,9 +1165,9 @@
 			
 			<div class="col-md-6 col-sm-12">
 			  <div class="input-group">
-                  <label class="control-label" for="pwd">State</label>
+                  <label class="control-label" for="pwd">State<span class="required">*</span></label>
                  <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
-				 <option value="">Select Country First</option>
+				 <option value="">Select State</option>
 				 <?php foreach($state as $val){?>
 					<option value="<?php echo $val['state_id']; ?>"<?php if($js_personal_info->state_id==$val['state_id']){ echo "selected"; }?>><?php echo $val['state_name']; ?></option>
 					<?php } ?>
@@ -1189,9 +1182,9 @@
             
           <div class="col-md-6 col-sm-12">
 			      <div class="input-group">
-              <label class="control-label" for="pwd">City</label>
+              <label class="control-label" for="pwd">City<span class="required">*</span></label>
               <select  name="city_id" id="city_id" class="form-control">
-				        <option value="">Select State First</option>
+				        <option value="">Select City</option>
       				 <?php foreach($city as $valu){?>
       					<option value="<?php echo $valu['id']; ?>"<?php if($js_personal_info->city_id==$valu['id']){ echo "selected"; }?>><?php echo $valu['city_name']; ?></option>
       					<?php } ?>
@@ -1201,7 +1194,7 @@
 			
 			<div class="col-md-6 col-sm-12">
 				<div class="input-group">
-	        <label class="control-label" for="pwd">Pincode</label>
+	        <label class="control-label" for="pwd">Pincode<span class="required">*</span></label>
 	        <input type="text" name="pincode" id="seeker_pincode" class="form-control" maxlength="6"  value="<?php
                  if (!empty($js_personal_info->pincode)) {
                    echo $js_personal_info->pincode;
@@ -1319,7 +1312,7 @@
       <div class="col-md-12">
         <div class="col-md-6 col-sm-12">
           <div class="input-group">
-            <label class="control-label" for="email">Marital Status</label>
+            <label class="control-label" for="email">Marital Status<span class="required">*</span></label>
                 <select class="form-control" name="matrial_status" id="matrial_status">
                   <option value="">Select Marital Status</option>
                   <option value="Single/unmarried"<?php if($js_personal_info->marital_status=='Single/unmarried'){echo 'selected';} ?>>Single/unmarried</option>
@@ -1604,7 +1597,15 @@
                      parmanent_address : {
                         required: true,
                     },
-
+                     country_id: {
+                        required: true,
+                    },
+                    state_id: {
+                        required: true,
+                    },
+                    city_id: {
+                        required: true,
+                    },
 
 
                 },
@@ -1617,6 +1618,9 @@
                     nationality: "Please select your nationality" ,
                     present_address: "Please enter your present address ",
                     parmanent_address: "Please enter your parmanent address ",
+                    country_id: "Please select country ",
+                    state_id: "Please select state ",
+                    city_id: "Please select city ",
 
                 },
                 errorElement: "em",
