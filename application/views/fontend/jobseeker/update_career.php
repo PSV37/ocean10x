@@ -115,7 +115,7 @@
         <h4 class="modal-title">Update My Desired Profile</h4>
       </div>
       <div class="modal-body">
-        <form id="Career-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_career');?>" method="post" style="padding: 30px;">
+        <form name="f1" id="Career-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_career');?>" method="post" style="padding: 30px;">
 				
         <input type="hidden" name="js_career_id" class="form-control" value="<?php
                        if (!empty($job_career_info[0]->js_career_info_id)) {
@@ -430,9 +430,15 @@ $(function() {
 <script>
   function enable_text(status)
     {
-    alert(status);
-    status=!status; 
-    document.f1.avail_to_join.disabled = status;
+    //alert(status);
+      if(status=!status){
+         document.f1.avail_to_join.disabled = status;
+      }else{
+        // document.f1.avail_to_join.disabled = status;
+          $('#avail_to_join').prop('disabled',false);
+          $('#avail_to_join').val('');
+      }
+     
     }
 $("#duration_year").select2( {
 	placeholder: "Select Year",
