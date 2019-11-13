@@ -8,9 +8,10 @@
                   <div class="userccount">
                   <?php $this->load->view('fontend/layout/seeker_resumemenu.php'); ?>
                     <h5>Education</h5>
-                    <hr>  
+                    <hr>
+                    <?php if (!empty($edcuaiton_list)): foreach ($edcuaiton_list as $v_education) : ?>  
                       <h5>
-                        Ph.D/Doctorate <a href="#" class="btn btn-xs" title="Add More"><i class="fa fa-plus"></i></a>
+                        <!-- Ph.D/Doctorate --> <?php echo $v_education->education_level_name; ?><a href="#" class="btn btn-xs" title="Add More" onclick="open_phdmodel();"><i class="fa fa-plus"></i></a>
                       </h5>
                       <h5>
                         <a href="#" data-toggle="modal" data-target="#EditEducation" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
@@ -49,7 +50,12 @@
                               </tbody>
                             </table>
                           </div>
-                      <h5>
+                          <?php
+                    $key++;
+                    endforeach;
+                  endif;
+                    ?>
+              <!--         <h5>
                         Masters/Post-Graduation <a href="#" class="btn btn-xs" title="Add More"><i class="fa fa-plus"></i></a>
                       </h5>
                       <h5>
@@ -208,7 +214,7 @@
      
                               </tbody>
                             </table>
-                          </div>
+                          </div> -->
                     <hr class="invis">
 
                      
@@ -218,3 +224,9 @@
   </div><!-- end container -->
 </div><!-- end section -->
 
+<script>
+  function open_phdmodel(){
+
+
+  }
+</script>
