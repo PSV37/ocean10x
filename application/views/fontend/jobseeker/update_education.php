@@ -12,6 +12,43 @@
                       <h5>
                         <a href="#">Add Ph.D/Doctorate</a> 
                       </h5>
+                      <h5>>
+                      <a href="#" data-toggle="modal" data-target="#EditEducation" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                     
+                     <a href="<?php echo base_url() ?>/job_seeker/delete_education/" class="pull-right btn  btn-xs" title="Delete" data-toggle="tooltip" data-placement="top" onclick="return confirm('Are you sure want to delete this record ?');"><i class="fa fa-trash-o"></i></a>                   
+                            </h5>
+                              <div class="table-responsive">          
+                            <table class="table">
+
+                              <tbody>
+                              <tr>
+                                  <td width="30%">Degree:</td>
+                                  <td><?php echo $v_education->education_level_name; ?></td>
+                                </tr>
+
+                                <tr>
+                                  <td>Specialization:</td>
+                                    <td><?php echo $v_education->education_specialization; ?></td>
+                                </tr>
+
+                                <tr>
+                                  <td>Institute Name:</td>
+                              <td><?php echo $v_education->js_institute_name; ?></td>
+                                </tr>
+
+                                <tr>
+                                  <td>Result:</td>
+                                <td><?php echo $v_education->js_resut; ?></td>
+                                </tr>
+
+                                <tr>
+                                  <td>Passing Year:</td>
+                                <td><?php echo $v_education->js_year_of_passing; ?></td>
+                                </tr>
+     
+                              </tbody>
+                            </table>
+                            </div>
                       <h5>
                         <a href="#">Add Masters/Post-Graduation</a> 
                       </h5>
