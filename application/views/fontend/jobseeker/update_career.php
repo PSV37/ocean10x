@@ -54,6 +54,17 @@
 
                                   <tr>
                                     <td width="30%">Expected Salary:</td>
+                                    <td>
+                                      <?php if (!empty($job_career_info[0]->immediate_join)) {
+                                          if($job_career_info[0]->immediate_join=='Yes'){ echo 'Immediately';};
+                                      }else{
+                                         echo date('d M Y', strtotime($job_career_info[0]->availability_date)); 
+                                      } ?>
+                                    </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td width="30%">Availability to Join:</td>
                                     <td><?php if(!empty($job_career_info[0]->salary_type)) echo $job_career_info[0]->salary_type;if(!empty($job_career_info[0]->js_career_salary))
                                             echo " ". $job_career_info[0]->js_career_salary;
                                      ?></td>
