@@ -425,79 +425,22 @@ $(function() {
         });
     </script>
 	
-	
-	<script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
 <script>
   function enable_text(status)
     {
-   // alert(status);
       if(status==true){
-         //document.f1.avail_to_join.disabled = status;
         $('#avail_to_join').prop('disabled',true);
         $('#avail_to_join').val('');
       }else{
-        //alert('s');
         $('#avail_to_join').prop('disabled',false);
         $('#avail_to_join').val('');
       }
       
      
     }
-$("#duration_year").select2( {
-	placeholder: "Select Year",
-	allowClear: true
-	} );
+
 </script>
 
-<script>
-$("#duration_years").select2( {
-	placeholder: "Select Year",
-	allowClear: true
-	} );
-</script>
-
-<script>
-$("#duration_to_month").select2( {
-	placeholder: "Select Month",
-	allowClear: true
-	} );
-</script>
-
-<script>
-$("#duration_month").select2( {
-	placeholder: "Select Month",
-	allowClear: true
-	} );
-</script>
-
-
-<!-- <script>
-  var BASE_URL = "<?php echo base_url(); ?>";
- 
- $(document).ready(function() {
-    $( "#job_area" ).autocomplete({
- 
-        source: function(request, response) {
-            $.ajax({
-            url: BASE_URL + "job_seeker/search",
-            data: {
-                    term : request.term
-             },
-            dataType: "json",
-            success: function(data){
-               var resp = $.map(data,function(obj){
-                    return obj.city_name;
-               }); 
- 
-               response(resp);
-            }
-        });
-    },
-    minLength: 1
- });
-});
- 
-</script>    -->
 
 <style>
   ul.ui-autocomplete {
