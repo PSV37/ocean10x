@@ -329,7 +329,7 @@
         <h4 class="modal-title">Personal Information</h4>
       </div>
       <script>
-      $(document).on("load", ".modal-body", function () {
+      $(document).on("click", ".modal-body", function () {
        $(".datepicker").datepicker({
          // dateFormat: 'dd-mm-yy'     
          	//changeMonth: true,
