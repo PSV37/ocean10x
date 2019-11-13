@@ -185,7 +185,7 @@
           <div class="form-group">
             <label class="control-label col-sm-3" for="email">Availability to Join</label>
               <div class="col-sm-9">
-                 <input type="text" class="form-control datepicker" name="avail_to_join" id="avail_to_join" value="">
+                 <input type="text" class="form-control datepicker" name="avail_to_join" id="avail_to_join" value="<?php echo date('d-m-Y', strtotime($job_career_info[0]->availability_date)); ?>">
                <!--  <select  name="join_year" id="join_year" class="form-control">
                   <option value="">Select Year</option>
                    <?php
@@ -209,7 +209,9 @@
               
           </div>
 			   <div class="form-group">
-          <input type="checkbox" name="join_immediate" id="join_immediate" value="Yes"  style="margin: 0 15px;"> Join Immediately
+          <input type="checkbox" name="join_immediate" id="join_immediate" value="Yes"  style="margin: 0 15px;" <?php if (!empty($job_career_info[0]->immediate_join)) {
+                          if($job_career_info[0]->immediate_join=='Yes'){ echo 'checked';};
+                         } ?>> Join Immediately
          </div>
 				  <div class="form-group">
             <label class="control-label col-sm-3" for="email">Expected Salary</label>
