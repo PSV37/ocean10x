@@ -329,18 +329,23 @@
         <h4 class="modal-title">Personal Information</h4>
       </div>
       <script>
-      $(document).on("click", ".modal-body", function () {
-       $(".datepicker").datepicker({
+      // $(document).on("click", ".modal-body", function () {
+       // $(".datepicker").datepicker({
          // dateFormat: 'dd-mm-yy'     
          	//changeMonth: true,
 
           //changeYear: true,
-
-          dateFormat: 'dd-mm-yy',
+// 
+          // dateFormat: 'dd-mm-yy',
 
          // yearRange: '1980:2010',                               
-         });
-       });  
+         // });
+       // });  
+      $(function() {
+        $("body").delegate("#datepicker", "focusin", function(){
+            $(this).datepicker();
+        });
+      });
     </script> 
       <div class="modal-body">
          <form id="Personal-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_personalinfo');?>"  method="post" autocomplete="off">
