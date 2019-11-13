@@ -10,7 +10,7 @@
                     <h5>Education</h5>
                     <hr>  
                       <h5>
-                        Ph.D/Doctorate <a href="#" class="btn btn-xs"><i class="fa fa-plus"></i> Add</a>
+                        Ph.D/Doctorate <a href="#" class="btn btn-xs" title="Add More"><i class="fa fa-plus"></i></a>
                       </h5>
                       <h5>
                         <a href="#" data-toggle="modal" data-target="#EditEducation" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
@@ -50,7 +50,7 @@
                             </table>
                           </div>
                       <h5>
-                        Masters/Post-Graduation <a href="#" class="btn btn-xs"><i class="fa fa-plus"></i> Add</a>
+                        Masters/Post-Graduation <a href="#" class="btn btn-xs" title="Add More"><i class="fa fa-plus"></i></a>
                       </h5>
                       <h5>
                         <a href="#" data-toggle="modal" data-target="#EditEducation" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
@@ -90,7 +90,7 @@
                             </table>
                           </div>
                       <h5>
-                        Add Graduation/Diploma <a href="#" class="btn btn-xs"><i class="fa fa-plus"></i> Add</a>
+                         Graduation/Diploma <a href="#" class="btn btn-xs" title="Add More"><i class="fa fa-plus"></i> </a>
                       </h5>
                       <h5>
                         <a href="#" data-toggle="modal" data-target="#EditEducation" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
