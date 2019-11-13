@@ -431,13 +431,15 @@ $(function() {
   function enable_text(status)
     {
     alert(status);
-      if(status=!status){
+      if(status=true){
          document.f1.avail_to_join.disabled = status;
       }else{
-        // document.f1.avail_to_join.disabled = status;
-          $('#avail_to_join').prop('disabled',false);
-          $('#avail_to_join').val('');
+        alert('s');
       }
+      //   // document.f1.avail_to_join.disabled = status;
+      //     $('#avail_to_join').prop('disabled',false);
+      //     $('#avail_to_join').val('');
+      // }
      
     }
 $("#duration_year").select2( {
