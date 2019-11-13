@@ -463,7 +463,7 @@ exit;*/
                {
                    $available = 'Yes';
                }else{
-                    $available = 'No',
+                    $available = 'No';
                }
               
             $career_info  = array(
