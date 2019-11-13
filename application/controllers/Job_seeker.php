@@ -132,18 +132,18 @@ class Job_seeker extends MY_Seeker_Controller
 			$city = $this->Master_model->getMaster('city',$where=false);
 			$country = $this->Master_model->getMaster('country',$where=false);
 			$state = $this->Master_model->getMaster('state',$where=false);
-			$where_sek['job_seeker_id'] = $jobseeker_id;
-            $join1 = array(
-				'country' => 'country.country_id = js_personal_info.country1_id|INNER',
-				'state' => 'state.state_id = js_personal_info.state1_id|INNER',
-				'city' => 'city.id = js_personal_info.city1_id|INNER'
-			);
+			// $where_sek['job_seeker_id'] = $jobseeker_id;
+   //          $join1 = array(
+			// 	'country' => 'country.country_id = js_personal_info.country1_id|INNER',
+			// 	'state' => 'state.state_id = js_personal_info.state1_id|INNER',
+			// 	'city' => 'city.id = js_personal_info.city1_id|INNER'
+			// );
 			
-			$results = $this->Master_model->get_master_row("js_personal_info", $select = false, $where_sek, $join1);
+			// $results = $this->Master_model->get_master_row("js_personal_info", $select = false, $where_sek, $join1);
             $where_lang="job_seeker_id='$jobseeker_id' ORDER BY language ASC";
             $languages = $this->Master_model->getMaster('js_languages',$where_lang);
 			//echo $this->db->last_query();
-            echo $this->load->view('fontend/jobseeker/update_personalinfo', compact('jobseeker_id', 'js_personal_info', 'job_seeker_photo', 'name', 'city', 'country', 'state', 'results','languages'),true);
+            echo $this->load->view('fontend/jobseeker/update_personalinfo', compact('jobseeker_id', 'js_personal_info', 'job_seeker_photo', 'name', 'city', 'country', 'state','languages'),true);
         }
     }
 
