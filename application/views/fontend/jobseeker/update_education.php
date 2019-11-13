@@ -14,6 +14,7 @@
                       <h5>
                         <!-- Ph.D/Doctorate --> <?php echo $v_education['education_level_name']; ?><a href="#" class="btn btn-xs" title="Add More" data-toggle="modal" data-target="#addEducation" onclick="$('#education_level_id').val(<?php echo $v_education['education_level_id']; ?>);"><i class="fa fa-plus"></i></a>
                       </h5>
+                      <?php echo $jobseeker_id = $this->session->userdata('job_seeker_id'); echo $v_education['education_level_id'];  ?>
                       <h5>
                         <a href="#" data-toggle="modal" data-target="#EditEducation" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                        
@@ -232,16 +233,16 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Educational Information</h4>
+        <h4 class="modal-title" align="center">Add Education</h4>
       </div>
       <div class="modal-body">
         <form id="Educational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post" style="padding: 30px;">
           <p> Please add your educational information in chronological order.</p> <br>
           <div class="form-group">
-            <label class="control-label col-sm-3" for="email">Degree:</label>
+            <label class="control-label col-sm-3" for="email">Education:</label>
             <div class="col-sm-9">
               <select  name="education_level_id" id="education_level_id" class="form-control" onchange="getSpecilizations(this.value)">
-                <option value="">Select Degree </option>
+                <option value="">Select Education </option>
                  <?php foreach($education_level as $education){?>
                   <option value="<?php echo $education['education_level_id']; ?>"><?php echo $education['education_level_name']; ?></option>
                   <?php } ?>
