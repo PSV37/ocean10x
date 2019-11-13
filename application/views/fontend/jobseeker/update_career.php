@@ -216,11 +216,11 @@
               <div class="col-sm-9">
                 <br><br>
 
-                <input type="radio" name="salary_type" id="salary_type" value="INR"<?php if (!empty($job_career_info[0]->avaliable)) {
+                <input type="radio" name="salary_type" id="salary_type" value="INR"<?php if (!empty($job_career_info[0]->salary_type)) {
                           if($job_career_info[0]->salary_type=='INR'){ echo 'checked';};
                          } ?> style="margin: 0 15px;"> Indian Rupees
 
-                <input type="radio" name="salary_type" id="salary_type" value="USD"<?php if (!empty($job_career_info[0]->avaliable)) {
+                <input type="radio" name="salary_type" id="salary_type" value="USD"<?php if (!empty($job_career_info[0]->salary_type)) {
                           if($job_career_info[0]->salary_type=='USD'){ echo 'checked';};
                          } ?> style="margin: 0 15px;"> US Dollars <br><br>
 

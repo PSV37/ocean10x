@@ -454,21 +454,31 @@ exit;*/
 
             $jobseeker_id = $this->session->userdata('job_seeker_id');
             $js_career_id = $this->input->post('js_career_id');
-              $avil = $this->input->post('avaliable');
-              $avaliable = implode(', ', $avil);
+              $jobtype = $this->input->post('avaliable'); //JOB TYPE
+              $job_type = implode(', ', $jobtype);
+              
+            $avail_to_join = $this->input->post('avail_to_join');
+            $join_immediate = $this->input->post('join_immediate');
+               if(isset($join_immediate))
+               {
+                   $available = 'Yes';
+               }else{
+                    $available = 'No',
+               }
               
             $career_info  = array(
                 'job_seeker_id'         => $jobseeker_id,
 				'industry_id'           => $this->input->post('industry_id'),
 				'dept_id'               => $this->input->post('dept_id'),
 				'job_role'              => $this->input->post('job_role'),
-				'avaliable'             => $avaliable,
+				'avaliable'             => $job_type,
 				'shift_id'              => $this->input->post('shift_id'),
-                'salary_type'              => $this->input->post('salary_type'),
+                'salary_type'           => $this->input->post('salary_type'),
 				'js_career_salary'      => $this->input->post('js_career_salary'),
 				'job_area'              => $this->input->post('job_area'),
                 'desired_industry'      => $this->input->post('desired_industry'),
-			
+			    'immediate_join'    => $available,
+                'availability_date' =>date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('avail_to_join')))),
             );
             
             if (empty($js_career_id)) {
