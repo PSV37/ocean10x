@@ -349,7 +349,8 @@
      // function check(){
       $("#join_immediate").on("click",function() {
          o = document.getElementById('join_immediate');
-         if(o.value=='Yes'){
+         var s=  $('#join_immediate').prop('checked',true);
+         if(s){
              // s++;
              // if(s%2==0){
                 $('#avail_to_join').prop('disabled',true);
