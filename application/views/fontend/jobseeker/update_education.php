@@ -29,13 +29,13 @@
                   
                    <hr class="invis">
 
-                <?php if (!empty($edcuaiton_list)) : ?> 
+               <!--  <?php if (!empty($edcuaiton_list)) : ?> 
                                     <div class="menu text-right"><button class="btn radius-button btn-primary" data-toggle="modal" data-target="#addEducation">Add More Education</a></div>
                       <?php else : ?>
 
                           <div class="menu text-right"><button class="btn radius-button btn-primary" data-toggle="modal" data-target="#addEducation">Add Education</a></div>
 
-                        <?php endif; ?>
+                        <?php endif; ?> -->
                             </div><!-- end post-padding -->
                         </div><!-- end col -->
                     </div><!-- end row -->  
