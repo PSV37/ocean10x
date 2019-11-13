@@ -185,35 +185,9 @@
           <div class="form-group">
             <label class="control-label col-sm-3" for="email">Availability to Join</label>
               <div class="col-sm-9">
-                <?php if (!empty($job_career_info[0]->immediate_join)) {
-                          if($job_career_info[0]->immediate_join=='Yes'){
-                  ?>
-                  <input type="text" class="form-control" name="avail_to_join" id="avail_to_join" value="" disabled>
-                  <?php
-                    }else{?>
-                  <input type="text" class="form-control datepicker" name="avail_to_join" id="avail_to_join" value="<?php echo date('d-m-Y', strtotime($job_career_info[0]->availability_date)); ?>">
-                    <?php } }?>
-               <!--  <select  name="join_year" id="join_year" class="form-control">
-                  <option value="">Select Year</option>
-                   <?php
-                      for($yr=0;$yr<3;$yr++){
-                   ?> 
-                   <option value="<?php echo date('Y', strtotime('+'.$yr.'years'));?>"><?php echo date('Y', strtotime('+'.$yr.'years'));?></option>
-                  <?php } ?>
-                </select> -->
+                <input type="text" class="form-control datepicker" name="avail_to_join" id="avail_to_join" value="<?php echo date('d-m-Y', strtotime($job_career_info[0]->availability_date)); ?>">
               </div>
-            <!--   <div class="col-sm-4">
-                <select  name="join_month" id="join_month" class="form-control">
-                  <option value="">Select Month</option>
-                   <?php
-                   if(!empty($months))
-                      foreach($months as $month){
-                   ?> 
-                   <option value="<?php echo $month['work_month'];?>"><?php echo $month['work_month'];?></option>
-                  <?php } ?>
-                </select>
-              </div>  -->
-              
+        
           </div>
 			   <div class="form-group">
           <input type="checkbox" name="join_immediate" id="join_immediate" value="Yes"  style="margin: 0 15px;" <?php if (!empty($job_career_info[0]->immediate_join)) {
@@ -369,16 +343,11 @@
              if(s%2==0){
                 $('#avail_to_join').prop('disabled',true);
                 $('#avail_to_join').val('');
-               // $('#join_month').prop('disabled',true);
              }else{
                 $('#avail_to_join').prop('disabled',false);
                  $('#avail_to_join').val('');
-                //$('#join_month').prop('disabled',false);
              }
             
-         }else{
-           $('#avail_to_join').prop('disabled',false);
-            $('#avail_to_join').val('');
          }
          
      });
