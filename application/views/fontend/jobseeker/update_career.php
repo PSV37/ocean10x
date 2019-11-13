@@ -201,7 +201,7 @@
         
           </div>
 			   <div class="form-group">
-          <input type="checkbox" name="join_immediate" id="join_immediate" value="Yes"  style="margin: 0 15px;" <?php if (!empty($job_career_info[0]->immediate_join)) {
+          <input type="checkbox" name="join_immediate" id="join_immediate" value="Yes" onclick="enable_text(this.checked)"  style="margin: 0 15px;" <?php if (!empty($job_career_info[0]->immediate_join)) {
                           if($job_career_info[0]->immediate_join=='Yes'){ echo 'checked';};
                          } ?>> Join Immediately
          </div>
@@ -345,24 +345,30 @@
       } );
 
 
-      s = 1;
-     // function check(){
-      $("#join_immediate").on("click",function() {
-         o = document.getElementById('join_immediate');
-         if(o.value=='Yes'){
-             s++;
-             if(s%2==0){
-                $('#avail_to_join').prop('disabled',true);
-                $('#avail_to_join').val('');
-             }
-             else{
-                $('#avail_to_join').prop('disabled',false);
-                 $('#avail_to_join').val('');
-             }
+     //  s = 1;
+     // // function check(){
+     //  $("#join_immediate").on("click",function() {
+     //     o = document.getElementById('join_immediate');
+     //     if(o.value=='Yes'){
+     //         s++;
+     //         if(s%2==0){
+     //            $('#avail_to_join').prop('disabled',true);
+     //            $('#avail_to_join').val('');
+     //         }
+     //         else{
+     //            $('#avail_to_join').prop('disabled',false);
+     //             $('#avail_to_join').val('');
+     //         }
             
-         }
+     //     }
          
-     });
+     // });
+    function enable_text(status)
+    {
+    alert(status);
+    status=!status; 
+    document.f1.avail_to_join.disabled = status;
+    }
 
   });
 
