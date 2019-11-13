@@ -9,14 +9,13 @@
                   <?php $this->load->view('fontend/layout/seeker_resumemenu.php'); ?>
                     <h5>Education</h5>
                     <hr>  
-                    
-                    <?php if (!empty($education_level)): foreach ($education_level as $edu_level) : ?>
-
-                      <h6><?php echo $edu_level['education_level_name']; ?></h6>
+                      <h5>
+                        <a href="#">Add Ph.D/Doctorate</a> 
+                        <a href="#" data-toggle="modal" data-target="#EditEducation" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                     
+                     <a href="<?php echo base_url() ?>/job_seeker/delete_education/" class="pull-right btn  btn-xs" title="Delete" data-toggle="tooltip" data-placement="top" onclick="return confirm('Are you sure want to delete this record ?');"><i class="fa fa-trash-o"></i></a>
+                      </h5>
                   
-                    <?php
-                      endforeach;
-                     endif; ?>
                    <hr class="invis">
 
                 <?php if (!empty($edcuaiton_list)) : ?> 
