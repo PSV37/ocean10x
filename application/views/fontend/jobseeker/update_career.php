@@ -431,7 +431,7 @@ $(function() {
   function enable_text(status)
     {
     alert(status);
-      if(status=true){
+      if(status==true){
          document.f1.avail_to_join.disabled = status;
       }else{
         alert('s');
