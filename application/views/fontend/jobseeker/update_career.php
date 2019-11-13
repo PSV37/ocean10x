@@ -192,7 +192,7 @@
                   <?php
                     }else{?>
                   <input type="text" class="form-control datepicker" name="avail_to_join" id="avail_to_join" value="<?php echo date('d-m-Y', strtotime($job_career_info[0]->availability_date)); ?>">
-                    <?php }?>
+                    <?php } }?>
                <!--  <select  name="join_year" id="join_year" class="form-control">
                   <option value="">Select Year</option>
                    <?php
