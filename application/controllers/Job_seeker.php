@@ -227,7 +227,7 @@ class Job_seeker extends MY_Seeker_Controller
 
         // $select_edu = "education_level.education_level_name,education_specialization.education_specialization,schoolboard.schoolboard_name,course.education_type,schoolmedium.school_medium,js_education.js_institute_name,js_education.js_resut,js_education.js_year_of_passing,js_education.totalmarks_id,js_education.gradding,js_education.js_education_id";
 
-        $data['edit_edu_res'] = $this->Master_model->getMaster('js_education', $where_ress, $join=false, $order = false, $field = false, $select=false,$limit=false,$start=false, $search=false);
+        $data['edit_edu_res'] = $this->Master_model->get_master_row('js_education', $select=false, $where_ress, $join = FALSE);
                // echo $this->db->last_query(); die;
 
 
