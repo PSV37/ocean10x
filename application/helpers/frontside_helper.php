@@ -160,6 +160,18 @@ function get_metas() {
         return $exam_res;
     } 
 
-    
+    function geSeekerEducationByid($jobseeker_id,$seeker_edu_id)
+    {
+        $CI = get_instance();
+        // $select_result = "is_test_required";
+        $table = "js_education";
+        $where_ress['job_seeker_id'] = $jobseeker_id;
+        $where_ress['education_level_id'] = $seeker_edu_id;
+        $edu_res = $CI->Master_model->getMaster($table, $where_ress, false, false ,false, $select=false, $limit =false, $start =false, $search= false);
+     //   echo $CI->db->last_query(); die;
+
+        return $edu_res;
+    } 
+
     
     
