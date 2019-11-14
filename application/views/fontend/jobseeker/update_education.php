@@ -34,7 +34,7 @@
                              
                               <tr>
                                   <td width="30%">Education:</td>
-                                  <td><?php echo $all_education['education_level_id']; ?></td>
+                                  <td><?php echo $all_education['education_level_name']; ?></td>
                                 </tr>
 
                                 <tr>
