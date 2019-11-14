@@ -19,7 +19,9 @@
                          $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
                          // echo "<pre>";
                          // print_r($education_data);
+
                       ?>
+                       <?php if (!empty($education_data)): foreach ($education_data as $all_education) : ?>
                       <h5>
                         <a href="#" data-toggle="modal" data-target="#EditEducation" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                        
@@ -29,7 +31,7 @@
                             <table class="table">
 
                               <tbody>
-                              <?php if (!empty($education_data)): foreach ($education_data as $all_education) : ?>
+                             
                               <tr>
                                   <td width="30%">Degree:</td>
                                   <td><?php echo $all_education->education_level_name; ?></td>
