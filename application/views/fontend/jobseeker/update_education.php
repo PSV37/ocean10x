@@ -36,7 +36,7 @@
                                   <td width="30%">Education:</td>
                                   <td><?php echo $all_education['education_level_name']; ?></td>
                                 </tr>
-
+                                <?php if($all_education['education_level_name']=='Ph.D / Doctorate' || $all_education['education_level_name']=='Masters/Post-Graduation' || $all_education['education_level_name']=='Gradution/Diploma') {?>
                                 <tr>
                                   <td>Specialization:</td>
                                     <td><?php echo $all_education['education_specialization']; ?></td>
@@ -46,12 +46,26 @@
                                   <td>University/Institute Name:</td>
                                   <td><?php echo $all_education['js_institute_name']; ?></td>
                                 </tr>
-
-                                <tr>
-                                  <td>Result:</td>
-                                  <td><?php echo $all_education['js_resut']; ?></td>
+                                 <tr>
+                                  <td>Marks:</td>
+                                  <td><?php echo $all_education['js_resut'].'%'; ?></td>
                                 </tr>
-
+                                <?php } ?>
+                                <?php if($all_education['education_level_name']=='10th' || $all_education['education_level_name']=='12th') {?>
+                                <tr>
+                                  <td>Board:</td>
+                                  <td><?php echo $all_education['schoolboard_name']; ?></td>
+                                </tr>
+                                <tr>
+                                  <td>School Medium:</td>
+                                  <td><?php echo $all_education['school_medium']; ?></td>
+                                </tr>
+                                 <tr>
+                                  <td>Marks:</td>
+                                  <td><?php echo $all_education['totalmarks_id'].'%'; ?></td>
+                                </tr>
+                                <?php } ?>
+                               
                                 <tr>
                                   <td>Passing Year:</td>
                                   <td><?php echo $all_education['js_year_of_passing']; ?></td>

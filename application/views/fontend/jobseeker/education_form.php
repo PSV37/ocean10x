@@ -12,7 +12,7 @@
         </div>
         <div class="col-sm-1"></div>
       </div>
-      <?php if(!empty($education_level)) if($education_level['education_level_name']=='Ph.D / Doctorate' || $education_level['education_level_name']=='Masters/Post-Graduation' || $education_level['education_level_name']=='Gradution'){?>
+      <?php if(!empty($education_level)) if($education_level['education_level_name']=='Ph.D / Doctorate' || $education_level['education_level_name']=='Masters/Post-Graduation' || $education_level['education_level_name']=='Gradution/Diploma'){?>
       <div class="form-group">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
@@ -76,7 +76,7 @@
 
       </div>
  
-<?php if(!empty($education_level)) if($education_level['education_level_name']=='Ph.D / Doctorate' || $education_level['education_level_name']=='Masters/Post-Graduation' || $education_level['education_level_name']=='Gradution'){?>
+<?php if(!empty($education_level)) if($education_level['education_level_name']=='Ph.D / Doctorate' || $education_level['education_level_name']=='Masters/Post-Graduation' || $education_level['education_level_name']=='Gradution/Diploma'){?>
       <div class="form-group">
          <div class="col-sm-1"></div>
         <div class="col-sm-10">
