@@ -94,7 +94,7 @@
         <div class="col-sm-1"></div>
       </div>
     
-      <div class="form-group" id="comp_name" <?php if($edit_edu_res['gradding']!='Course Requires a Pass') {?> style="display:none;"<?php }else{ ?>style="display:block;"<?php } ?>>
+      <div class="form-group" id="comp_name" <?php if($edit_edu_res['gradding']=='Course Requires a Pass') {?> style="display:none;"<?php }else{ ?>style="display:block;"<?php } ?>>
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
           <label class="control-label" for="email">Marks</label>
