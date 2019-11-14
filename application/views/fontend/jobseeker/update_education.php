@@ -17,8 +17,8 @@
                       <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
                         $seeker_edu_id = $v_education['education_level_id'];  
                          $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
-                         // echo "<pre>";
-                         // print_r($education_data);
+                         echo "<pre>";
+                         print_r($education_data);
 
                       ?>
                        <?php if (!empty($education_data)): foreach ($education_data as $all_education) : ?>
