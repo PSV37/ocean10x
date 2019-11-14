@@ -194,6 +194,29 @@ class Job_seeker extends MY_Seeker_Controller
         }
     }
 
+    public function education_data()
+    {
+        $jobseeker_id = $this->session->userdata('job_seeker_id');
+       
+        $edu_id= $this->input->post('edu_id');
+
+        $where_edu="education_level_id='$edu_id'";
+        $select_edu = "education_level_name,education_level_id";
+        $data['education_level'] = $this->Master_model->getMaster('education_level',$where_edu,$join = FALSE, $order = false, $field = false, $select_edu,$limit=false,$start=false, $search=false);
+
+        $where_edu_spec="edu_level_id='$edu_id'";
+        $select_edu_spec = "education_specialization,id";
+        $data['education_specialization'] = $this->Master_model->getMaster('education_specialization',$where_edu_spec,$join = FALSE, $order = false, $field = false, $select_edu_spec,$limit=false,$start=false, $search=false);
+
+        $data['schoolboard'] = $this->Master_model->getMaster('schoolboard',$where=false);
+        $data['course'] = $this->Master_model->getMaster('course',$where=false);
+        $data['schoolmedium'] = $this->Master_model->getMaster('schoolmedium',$where=false);
+        $data['passingyear'] = $this->Master_model->getMaster('passingyear',$where=false);
+        $data['totalmarks'] = $this->Master_model->getMaster('totalmarks',$where=false);
+
+        $this->load->view('fontend/jobseeker/education_form',$data);
+    }
+
     public function update_experience()
     {
 
