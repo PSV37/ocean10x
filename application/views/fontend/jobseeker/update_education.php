@@ -57,23 +57,24 @@
                                 <td><?php echo $all_education->js_year_of_passing; ?></td>
                                 </tr>
                                <?php
-                                $key++;
+                                
                                 endforeach;
-                                endif;
+                                
                               ?>
                               </tbody>
                             </table>
                           </div>
-
+                          <?php else : ?> <!--get error message if this empty-->
+                          <td colspan="3">
+                              <strong>There is no Educational Information to show!</strong>
+                          </td><!--/ get error message if this empty-->
                         <?php
+                          endif;
                           $key++;
                           endforeach;
+                           endif;
                         ?>
-                        <?php else : ?> <!--get error message if this empty-->
-                        <td colspan="3">
-                            <strong>There is no Educational Information to show!</strong>
-                        </td><!--/ get error message if this empty-->
-                    <?php endif;?>
+                  
                     <hr class="invis">
               </div><!-- end post-padding -->
           </div><!-- end col -->
