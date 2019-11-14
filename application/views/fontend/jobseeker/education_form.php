@@ -1,7 +1,7 @@
 
   <form id="Educational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
     <?php if(!empty($edit_edu_res))  ?>
-     <input type="text" name="js_education_id" value="<?php echo $edit_edu_res['js_education_id']; ?>">
+     <input type="hidden" name="js_education_id" value="<?php echo $edit_edu_res['js_education_id']; ?>">
       <div class="form-group">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
@@ -70,7 +70,7 @@
               $latest_year = date('Y'); 
               foreach ( range( $latest_year, $earliest_year ) as $i ) {
               ?>
-              <option value="<?php echo $i; ?>"<?php if($edit_edu_res['js_year_of_passing']==$i) echo "selected";?>><?php echo $edu_special['education_specialization']; ?>><?php echo $i; ?></option>
+              <option value="<?php echo $i; ?>"<?php if($edit_edu_res['js_year_of_passing']==$i) echo "selected";?>><?php echo $i; ?></option>
             <?php } ?>
           </select>
         </div>
@@ -85,10 +85,10 @@
         <label class="control-label" for="email">Grading System</label>
           <select  name="gradding"  class="form-control" id="category" onchange='hideshowfun()'>
             <option value="">Select Grading System</option>
-            <option value="Scale 10 Grading System"<?php if($edit_edu_res['js_year_of_passing']=='Scale 10 Grading System') echo "selected";?>>Scale 10 Grading System</option>
-            <option value="Scale 4 Grading System"<?php if($edit_edu_res['js_year_of_passing']=='Scale 4 Grading System') echo "selected";?>>Scale 4 Grading System</option>
-            <option value="% Marks of 100 Maximum"<?php if($edit_edu_res['js_year_of_passing']=='% Marks of 100 Maximum') echo "selected";?>>% Marks of 100 Maximum</option>
-            <option value="Course Requires a Pass"<?php if($edit_edu_res['js_year_of_passing']=='Course Requires a Pass') echo "selected";?>>Course Requires a Pass</option>
+            <option value="Scale 10 Grading System"<?php if($edit_edu_res['gradding']=='Scale 10 Grading System') echo "selected";?>>Scale 10 Grading System</option>
+            <option value="Scale 4 Grading System"<?php if($edit_edu_res['gradding']=='Scale 4 Grading System') echo "selected";?>>Scale 4 Grading System</option>
+            <option value="% Marks of 100 Maximum"<?php if($edit_edu_res['gradding']=='% Marks of 100 Maximum') echo "selected";?>>% Marks of 100 Maximum</option>
+            <option value="Course Requires a Pass"<?php if($edit_edu_res['gradding']=='Course Requires a Pass') echo "selected";?>>Course Requires a Pass</option>
           </select>
         </div>
         <div class="col-sm-1"></div>
