@@ -43,10 +43,10 @@
                                   <td>University/Institute Name:</td>
                                   <td><?php echo $all_education['js_institute_name']; ?></td>
                                 </tr>
-                                 <tr>
+                                <!--  <tr>
                                   <td>Marks:</td>
                                   <td><?php echo $all_education['js_resut'].'%'; ?></td>
-                                </tr>
+                                </tr> -->
                                 <?php } ?>
 
                                 <?php if($all_education['education_level_name']=='10th' || $all_education['education_level_name']=='12th') {?>
@@ -58,10 +58,10 @@
                                   <td>School Medium:</td>
                                   <td><?php echo $all_education['school_medium']; ?></td>
                                 </tr>
-                                 <tr>
+                               <!--   <tr>
                                   <td>Marks:</td>
                                   <td><?php echo $all_education['totalmarks_id'].'%'; ?></td>
-                                </tr>
+                                </tr> -->
                                 <?php } ?>
                                
                                 <tr>
@@ -290,28 +290,4 @@ $(".geteditformbylevel").on('click', function(event){
        } 
     }
 
-  //   $(document).ready(function(){
-       
-  //     function hideshowfunload(id)
-  //     {
-  //       var a = id;
-        
-  //     if(a=='Course Requires a Pass')
-  //       {
-  //         $('#comp_name').hide();
-  //       }
-  //      else{
-  //         $('#comp_name').show();
-  //      } 
-       
-  //     if(a=='Scale 10 Grading System' || a=='Scale 4 Grading System' || a=='% Marks of 100 Maximum')
-  //       {
-  //         $('#name').hide();
-  //       }
-  //      else{
-  //         $('#name').show();
-  //      } 
-  //   }
-  //      hideshowfunload();
-  // });
 </script>
