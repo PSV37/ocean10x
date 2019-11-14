@@ -257,7 +257,9 @@ $(".geteditformbylevel").on('click', function(event){
               {
                 $('.education_frm').html(data);
                 // Display Modal
-                $('#addEducation').modal('show'); 
+                $('#addEducation').modal('show');
+                hideshowfunload(<?php echo $all_education['gradding']; ?>)
+
 
               }
         });
@@ -290,9 +292,9 @@ $(".geteditformbylevel").on('click', function(event){
 
     $(document).ready(function(){
        
-      function hideshowfunload()
+      function hideshowfunload(id)
       {
-        var a = $('#category').val();
+        var a = id;
         
       if(a=='Course Requires a Pass')
         {
