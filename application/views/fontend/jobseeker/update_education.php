@@ -219,10 +219,7 @@
     event.stopImmediatePropagation();
     //(... rest of your JS code)
     var edu_id = $(this).data('level_id');
-    // var edu_id = edu_ids[1];
-    // var edu_id1 = edu_ids[0];
-    // alert(edu_id);
-
+  
      $.ajax({
               url: "<?php echo base_url();?>job_seeker/education_data",
               type: "POST",
@@ -258,7 +255,6 @@ $(".geteditformbylevel").on('click', function(event){
                 $('.education_frm').html(data);
                 // Display Modal
                 $('#addEducation').modal('show');
-                // hideshowfunload(<?php echo $all_education['gradding']; ?>)
 
 
               }
