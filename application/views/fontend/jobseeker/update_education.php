@@ -17,8 +17,8 @@
                       <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
                         $seeker_edu_id = $v_education['education_level_id'];  
                          $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
-                         echo "<pre>";
-                         print_r($education_data);
+                         // echo "<pre>";
+                         // print_r($education_data);
                       ?>
                       <h5>
                         <a href="#" data-toggle="modal" data-target="#EditEducation" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
@@ -29,39 +29,49 @@
                             <table class="table">
 
                               <tbody>
+                              <?php if (!empty($education_data)): foreach ($education_data as $all_education) : ?>
                               <tr>
                                   <td width="30%">Degree:</td>
-                                  <td><?php echo $v_education->education_level_name; ?></td>
+                                  <td><?php echo $all_education->education_level_name; ?></td>
                                 </tr>
 
                                 <tr>
                                   <td>Specialization:</td>
-                                    <td><?php echo $v_education->education_specialization; ?></td>
+                                    <td><?php echo $all_education->education_specialization; ?></td>
                                 </tr>
 
                                 <tr>
                                   <td>Institute Name:</td>
-                              <td><?php echo $v_education->js_institute_name; ?></td>
+                              <td><?php echo $all_education->js_institute_name; ?></td>
                                 </tr>
 
                                 <tr>
                                   <td>Result:</td>
-                                <td><?php echo $v_education->js_resut; ?></td>
+                                <td><?php echo $all_education->js_resut; ?></td>
                                 </tr>
 
                                 <tr>
                                   <td>Passing Year:</td>
-                                <td><?php echo $v_education->js_year_of_passing; ?></td>
+                                <td><?php echo $all_education->js_year_of_passing; ?></td>
                                 </tr>
-     
+                               <?php
+                                $key++;
+                                endforeach;
+                                endif;
+                              ?>
                               </tbody>
                             </table>
                           </div>
+
                         <?php
                           $key++;
                           endforeach;
-                          endif;
                         ?>
+                        <?php else : ?> <!--get error message if this empty-->
+                        <td colspan="3">
+                            <strong>There is no Educational Information to show!</strong>
+                        </td><!--/ get error message if this empty-->
+                    <?php endif;?>
                     <hr class="invis">
               </div><!-- end post-padding -->
           </div><!-- end col -->
