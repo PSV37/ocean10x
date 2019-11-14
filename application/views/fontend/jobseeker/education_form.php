@@ -1,6 +1,7 @@
 
   <form id="Educational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
     <?php if(!empty($edit_edu_res))  ?>
+     <input type="text" name="js_education_id" value="<?php echo $edit_edu_res['js_education_id']; ?>">
       <div class="form-group">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
