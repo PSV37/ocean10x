@@ -21,7 +21,7 @@
                          // print_r($education_data);
 
                       ?>
-                       <?php if (!empty($education_data)): foreach ($education_data as $all_education) : ?>
+                       <?php if (!empty($education_data)): foreach ($education_data as $all_education) : echo $all_education['education_level_id'];?>
                       <h5>
                         <a href="#" data-toggle="modal" data-target="#EditEducation" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                        
@@ -34,7 +34,7 @@
                              
                               <tr>
                                   <td width="30%">Education:</td>
-                                  <td><?php echo $all_education->education_level_name; ?></td>
+                                  <td><?php echo $all_education->education_level_id; ?></td>
                                 </tr>
 
                                 <tr>
