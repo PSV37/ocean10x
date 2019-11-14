@@ -16,16 +16,13 @@
                       </h5>
                       <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
                         $seeker_edu_id = $v_education['education_level_id'];  
-                         $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
-                         // echo "<pre>";
-                         // print_r($education_data);
-
+                        $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
                       ?>
                        <?php if (!empty($education_data)): foreach ($education_data as $all_education) : ?>
                       <h5>
-                        <a href="#" data-toggle="modal" data-target="#EditEducation" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                        <a href="#" data-edit_level_id='<?php echo $all_education['js_education_id']; ?>' data-toggle="modal" data-target="#EditEducation" class="btn pull-right bg-navy btn-xs geteditformbylevel" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                        
-                        <a href="<?php echo base_url() ?>/job_seeker/delete_education/" class="pull-right btn  btn-xs" title="Delete" data-toggle="tooltip" data-placement="top" onclick="return confirm('Are you sure want to delete this record ?');"><i class="fa fa-trash-o"></i></a>                   
+                        <a href="<?php echo base_url() ?>/job_seeker/delete_education/<?php echo $all_education['js_education_id']; ?>" class="pull-right btn  btn-xs" title="Delete" data-toggle="tooltip" data-placement="top" onclick="return confirm('Are you sure want to delete this record ?');"><i class="fa fa-trash-o"></i></a>                   
                       </h5>
                           <div class="table-responsive">          
                             <table class="table">
@@ -51,6 +48,7 @@
                                   <td><?php echo $all_education['js_resut'].'%'; ?></td>
                                 </tr>
                                 <?php } ?>
+
                                 <?php if($all_education['education_level_name']=='10th' || $all_education['education_level_name']=='12th') {?>
                                 <tr>
                                   <td>Board:</td>
@@ -68,7 +66,7 @@
                                
                                 <tr>
                                   <td>Passing Year:</td>
-                                  <td><?php echo $all_education['js_year_of_passing']; ?></td>
+                                  <td><?php echo $all_education['js_year_of_passing']; ?> (<?php echo $all_education['education_type']; ?>)</td>
                                 </tr>
                               
                               </tbody>
@@ -225,6 +223,27 @@
               url: "<?php echo base_url();?>job_seeker/education_data",
               type: "POST",
               data: {edu_id:edu_id},
+          
+              success: function(data)
+              {
+                $('.education_frm').html(data);
+                // Display Modal
+                $('#addEducation').modal('show'); 
+
+              }
+        });
+       
+});
+
+$(".geteditformbylevel").on('click', function(event){
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+    //(... rest of your JS code)
+    var edit_edu_id = $(this).data('edit_level_id');
+     $.ajax({
+              url: "<?php echo base_url();?>job_seeker/education_data",
+              type: "POST",
+              data: {edit_edu_id:edit_edu_id},
           
               success: function(data)
               {
