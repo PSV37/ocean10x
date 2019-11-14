@@ -5,8 +5,8 @@
         <div class="col-sm-10">
           <label class="control-label" for="email">Education</label>
           <select  name="education_level_id" id="education_level_id" class="form-control">
-           <?php foreach($education_level as $education){?>
-            <option value="<?php echo $education['education_level_id']; ?>"><?php echo $education['education_level_name']; ?></option>
+           <?php if(!empty($education_level)){?>
+            <option value="<?php echo $education_level['education_level_id']; ?>"><?php echo $education_level['education_level_name']; ?></option>
             <?php } ?>
           </select>
         </div>
@@ -85,7 +85,7 @@
         </div>
         <div class="col-sm-1"></div>
       </div>
-    
+      <?php if(!empty($education_level)) echo $education_level['education_level_name'];?>
       <div class="form-group">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">

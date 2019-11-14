@@ -202,7 +202,7 @@ class Job_seeker extends MY_Seeker_Controller
 
         $where_edu="education_level_id='$edu_id'";
         $select_edu = "education_level_name,education_level_id";
-        $data['education_level'] = $this->Master_model->getMaster('education_level',$where_edu,$join = FALSE, $order = false, $field = false, $select_edu,$limit=false,$start=false, $search=false);
+        $data['education_level'] = $this->Master_model->get_master_row("education_level", $select_edu, $where_edu, $join = FALSE);
 
         $where_edu_spec="edu_level_id='$edu_id'";
         $select_edu_spec = "education_specialization,id";
