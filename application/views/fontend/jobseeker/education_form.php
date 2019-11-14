@@ -22,7 +22,7 @@
           <select  name="specialization_id" id="specialization_id" class="form-control">
             <option value="">Select One</option>
              <?php foreach($education_specialization as $edu_special){?>
-              <option value="<?php echo $edu_special['id']; ?>"><?php echo $edu_special['education_specialization']; ?></option>
+              <option value="<?php echo $edu_special['id']; ?>"<?php if($edit_edu_res['specialization_id']==$edu_special['id']) echo "selected";?>><?php echo $edu_special['education_specialization']; ?></option>
             <?php } ?>
           </select>
         </div>
@@ -33,7 +33,7 @@
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
           <label class="control-label" for="email">University/Institute Name</label>
-          <input type="text" name="js_institute_name" class="form-control" id="js_institute_name" placeholder="Enter Institute Name">
+          <input type="text" name="js_institute_name" class="form-control" id="js_institute_name" placeholder="Enter Institute Name" value="<?php echo $edit_edu_res['js_institute_name']; ?>">
         </div>
         <div class="col-sm-1"></div>
       </div>
@@ -49,7 +49,7 @@
           
           </select> -->
           <?php foreach($course as $courses){?>
-            <input type="radio" name="education_type_id" id="education_type_id" value="<?php echo $courses['education_type_id']; ?>" style="margin: 0 15px;"> <?php echo $courses['education_type']; ?>
+            <input type="radio" name="education_type_id" id="education_type_id" value="<?php echo $courses['education_type_id']; ?>"<?php if($edit_edu_res['education_type_id']==$courses['education_type_id']) echo "checked";?> style="margin: 0 15px;"> <?php echo $courses['education_type']; ?>
           <?php } ?>
          
 
@@ -70,7 +70,7 @@
               $latest_year = date('Y'); 
               foreach ( range( $latest_year, $earliest_year ) as $i ) {
               ?>
-              <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+              <option value="<?php echo $i; ?>"<?php if($edit_edu_res['js_year_of_passing']==$i) echo "selected";?>><?php echo $edu_special['education_specialization']; ?>><?php echo $i; ?></option>
             <?php } ?>
           </select>
         </div>
@@ -85,10 +85,10 @@
         <label class="control-label" for="email">Grading System</label>
           <select  name="gradding"  class="form-control" id="category" onchange='hideshowfun()'>
             <option value="">Select Grading System</option>
-            <option value="Scale 10 Grading System">Scale 10 Grading System</option>
-            <option value="Scale 4 Grading System">Scale 4 Grading System</option>
-            <option value="% Marks of 100 Maximum">% Marks of 100 Maximum</option>
-            <option value="Course Requires a Pass">Course Requires a Pass</option>
+            <option value="Scale 10 Grading System"<?php if($edit_edu_res['js_year_of_passing']=='Scale 10 Grading System') echo "selected";?>>Scale 10 Grading System</option>
+            <option value="Scale 4 Grading System"<?php if($edit_edu_res['js_year_of_passing']=='Scale 4 Grading System') echo "selected";?>>Scale 4 Grading System</option>
+            <option value="% Marks of 100 Maximum"<?php if($edit_edu_res['js_year_of_passing']=='% Marks of 100 Maximum') echo "selected";?>>% Marks of 100 Maximum</option>
+            <option value="Course Requires a Pass"<?php if($edit_edu_res['js_year_of_passing']=='Course Requires a Pass') echo "selected";?>>Course Requires a Pass</option>
           </select>
         </div>
         <div class="col-sm-1"></div>
@@ -98,7 +98,7 @@
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
           <label class="control-label" for="email">Marks</label>
-          <input type="text" name="js_resut" class="form-control" placeholder="Enter Result GPA/GGPA">
+          <input type="text" name="js_resut" class="form-control" placeholder="Enter Result GPA/GGPA" value="<?php echo $edit_edu_res['js_resut']; ?>">
         </div>
         <div class="col-sm-1"></div>
       </div>
@@ -112,7 +112,7 @@
           <select  name="board_id" id="board_id" class="form-control">
             <option value="">Select Board</option>
             <?php foreach($schoolboard as $boards){?>
-              <option value="<?php echo $boards['schoolboard_id']; ?>"><?php echo $boards['schoolboard_name']; ?></option>
+              <option value="<?php echo $boards['schoolboard_id']; ?>"<?php if($edit_edu_res['board_id']==$boards['schoolboard_id']) echo "selected";?>><?php echo $boards['schoolboard_name']; ?></option>
             <?php } ?>
           </select>
         </div>
@@ -126,7 +126,7 @@
           <select  name="schoolmedium_id" id="schoolmedium_id" class="form-control">
             <option value="">Select Medium</option>
            <?php foreach($schoolmedium as $medium){?>
-            <option value="<?php echo $medium['schoolmedium_id']; ?>"><?php echo $medium['school_medium']; ?></option>
+            <option value="<?php echo $medium['schoolmedium_id']; ?>"<?php if($edit_edu_res['schoolmedium_id']==$medium['schoolmedium_id']) echo "selected";?>><?php echo $medium['school_medium']; ?></option>
             <?php } ?>
           </select>
         </div>
@@ -138,7 +138,7 @@
       <div class="col-sm-1"></div>
       <div class="col-sm-10">
         <label class="control-label" for="email">Total Marks</label>
-        <input type="text" name="totalmarks_id" id="totalmarks_id" class="form-control">
+        <input type="text" name="totalmarks_id" id="totalmarks_id" class="form-control" value="<?php echo $edit_edu_res['totalmarks_id']; ?>">
       </div>
       <div class="col-sm-1"></div>
     </div>
