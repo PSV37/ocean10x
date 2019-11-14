@@ -87,7 +87,6 @@
     event.stopImmediatePropagation();
     //(... rest of your JS code)
     var edu_id = $(this).data('level_id');
-    alert();
      $.ajax({
               url: "<?php echo base_url();?>job_seeker/education_data",
               type: "POST",
