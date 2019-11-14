@@ -82,7 +82,7 @@
         <div class="col-sm-10">
         <label class="control-label" for="email">Grading System</label>
           <select  name="gradding"  class="form-control" id="category" onchange='hideshowfun()'>
-            <option>Select Grading System</option>
+            <option value="">Select Grading System</option>
             <option value="Scale 10 Grading System">Scale 10 Grading System</option>
             <option value="Scale 4 Grading System">Scale 4 Grading System</option>
             <option value="% Marks of 100 Maximum">% Marks of 100 Maximum</option>
