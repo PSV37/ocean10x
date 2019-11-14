@@ -171,7 +171,7 @@ function get_metas() {
                 'education_specialization' => 'education_specialization.id = js_education.specialization_id|LFET',
                 'schoolboard' => 'schoolboard.schoolboard_id = js_education.board_id|LFET',
                 'course' => 'course.education_type_id = js_education.education_type_id|LFET',
-                'schoolmedium' => 'schoolmedium.schoolmedium_id = js_education.schoolmedium_id|LFET',
+                'schoolmedium' => 'schoolmedium.schoolmedium_id = js_education.schoolmedium_id|LFET'
             );
 
         $select_edu = "education_level.education_level_name,education_specialization.education_specialization,schoolboard.schoolboard_name,course.education_type,schoolmedium.school_medium,js_education.js_institute_name,js_education.js_resut,js_education.js_year_of_passing,js_education.totalmarks_id,js_education.gradding,js_education.js_education_id";
