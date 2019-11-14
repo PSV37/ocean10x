@@ -243,15 +243,15 @@ $(".geteditformbylevel").on('click', function(event){
     event.stopPropagation();
     event.stopImmediatePropagation();
     //(... rest of your JS code)
-    var edit_edu_id = $(this).data('edit_level_id');
-    var srt = edit_edu_id.split('|');
-
-    alert(srt[0]);
-    alert(srt[1]);
+    var edit_edu_idq = $(this).data('edit_level_id');
+    var srt = edit_edu_idq.split('|');
+   var edit_edu_id = srt[0];
+   var edu_id = srt[1];
+    
      $.ajax({
               url: "<?php echo base_url();?>job_seeker/education_data",
               type: "POST",
-              data: {edit_edu_id:edit_edu_id},
+              data: {edit_edu_id:edit_edu_id,edu_id:edu_id},
           
               success: function(data)
               {
