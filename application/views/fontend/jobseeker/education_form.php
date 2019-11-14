@@ -40,12 +40,18 @@
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
           <label class="control-label" for="email">Course Type</label>
-          <select  name="education_type_id" id="education_type_id" class="form-control">
+          <!-- <select  name="education_type_id" id="education_type_id" class="form-control">
             <option value="">Select Course Type </option>
-            <?php foreach($course as $courses){?>
+            
             <option value="<?php echo $courses['education_type_id']; ?>"><?php echo $courses['education_type']; ?></option>
-            <?php } ?>
-          </select>
+          
+          </select> -->
+          <?php foreach($course as $courses){?>
+            <input type="redio" name="education_type_id" id="education_type_id" value="<?php echo $courses['education_type_id']; ?>" style="margin: 0 15px;"> <?php echo $courses['education_type']; ?>
+              <?php } ?>
+          <!--   <input type="redio" name="education_type_id" id="education_type_id" value="<?php echo $courses['education_type_id']; ?>" style="margin: 0 15px;"> Write
+            <input type="redio" name="education_type_id" id="education_type_id" value="<?php echo $courses['education_type_id']; ?>" style="margin: 0 15px;"> Speak -->
+
         </div>
         <div class="col-sm-1"></div>
       </div>
@@ -54,7 +60,7 @@
       <div class="form-group">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
-          <label class="control-label" for="pwd">Passing Year</label>
+          <label class="control-label" for="pwd">Passing Out Year</label>
           <select  name="js_year_of_passing" id="ddlYear" class="form-control">
            <option value="">Select Passing Year</option>
             <?php
@@ -70,12 +76,7 @@
         <div class="col-sm-1"></div>
 
       </div>
-       <!-- 
-          // Prints the option with the next year in range.
-          print '<option value="'.$i.'"'.($i === $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
-        
-        print '</select>';
-  ?> -->
+ 
 <?php if(!empty($education_level)) if($education_level['education_level_name']=='Ph.D / Doctorate' || $education_level['education_level_name']=='Masters/Post-Graduation' || $education_level['education_level_name']=='Gradution'){?>
       <div class="form-group">
          <div class="col-sm-1"></div>
