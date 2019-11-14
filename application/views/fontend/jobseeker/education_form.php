@@ -1,5 +1,6 @@
 
   <form id="Educational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
+    <?php print_r($edit_edu_res); ?>
       <div class="form-group">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
