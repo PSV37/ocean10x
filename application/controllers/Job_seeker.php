@@ -187,7 +187,7 @@ class Job_seeker extends MY_Seeker_Controller
 			$course = $this->Master_model->getMaster('course',$where=false);
 			$schoolmedium = $this->Master_model->getMaster('schoolmedium',$where=false);
 			$passingyear = $this->Master_model->getMaster('passingyear',$where=false);
-			$totalmarks = $this->Master_model->getMaster('totalmarks',$where=false);
+			//$totalmarks = $this->Master_model->getMaster('totalmarks',$where=false);
 			$education_level = $this->Master_model->getMaster('education_level',$where=false);
 			$education_specialization = $this->Master_model->getMaster('education_specialization',$where=false);
            echo $this->load->view('fontend/jobseeker/update_education.php', compact('edcuaiton_list', 'schoolboard', 'course', 'schoolmedium', 'passingyear', 'totalmarks', 'education_level', 'education_specialization'),true);
@@ -211,7 +211,7 @@ class Job_seeker extends MY_Seeker_Controller
         $data['schoolboard'] = $this->Master_model->getMaster('schoolboard',$where=false);
         $data['course'] = $this->Master_model->getMaster('course',$where=false);
         $data['schoolmedium'] = $this->Master_model->getMaster('schoolmedium',$where=false);
-        $data['passingyear'] = $this->Master_model->getMaster('passingyear',$where=false);
+       // $data['passingyear'] = $this->Master_model->getMaster('passingyear',$where=false);
         $data['totalmarks'] = $this->Master_model->getMaster('totalmarks',$where=false);
 
         $this->load->view('fontend/jobseeker/education_form',$data);

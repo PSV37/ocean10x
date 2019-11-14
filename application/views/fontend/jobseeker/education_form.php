@@ -48,9 +48,8 @@
           </select> -->
           <?php foreach($course as $courses){?>
             <input type="radio" name="education_type_id" id="education_type_id" value="<?php echo $courses['education_type_id']; ?>" style="margin: 0 15px;"> <?php echo $courses['education_type']; ?>
-              <?php } ?>
-          <!--   <input type="redio" name="education_type_id" id="education_type_id" value="<?php echo $courses['education_type_id']; ?>" style="margin: 0 15px;"> Write
-            <input type="redio" name="education_type_id" id="education_type_id" value="<?php echo $courses['education_type_id']; ?>" style="margin: 0 15px;"> Speak -->
+          <?php } ?>
+         
 
         </div>
         <div class="col-sm-1"></div>
@@ -137,12 +136,7 @@
       <div class="col-sm-1"></div>
       <div class="col-sm-10">
         <label class="control-label" for="email">Total Marks</label>
-        <select name="totalmarks_id" id="search6" class="form-control">
-          <option>Select Marks</option>
-          <?php foreach($totalmarks as $total) { ?>
-          <option value="<?php echo $total['totalmarks_id'];?>"><?php echo $total['total_marks'];?></option>
-          <?php } ?>
-        </select>
+        <input type="text" name="totalmarks_id" id="totalmarks_id" class="form-control">
       </div>
       <div class="col-sm-1"></div>
     </div>

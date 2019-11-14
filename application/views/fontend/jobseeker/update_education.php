@@ -82,6 +82,114 @@
 </div>
 
 <script>
+  $( document ).ready( function () {
+  // Education Add form Valiaton
+    $( "#Educational-info" ).validate( {
+                rules: {
+
+                    js_degree: {
+                        required: true,
+                    },
+
+                    js_group: {
+                        required: true,
+                    },
+
+                    js_resut: {
+                        required: true,
+                    },
+
+                    js_institute_name: {
+                        required: true,
+                    },
+                    js_year_of_passing: {
+                        required: true,
+                    },
+
+                },
+                messages: {
+                    js_degree: "Please your degree",
+                    js_group: "Please enter your group name ",
+                    js_resut: "Please enter your result",
+                    js_institute_name: "Please institute name",
+                    js_year_of_passing: "Please your passing years",
+                },
+                errorElement: "em",
+                errorPlacement: function ( error, element ) {
+                    // Add the `help-block` class to the error element
+                    error.addClass( "help-block" );
+
+                    if ( element.prop( "type" ) === "checkbox" ) {
+                        error.insertAfter( element.parent( "label" ) );
+                    } else {
+                        error.insertAfter( element );
+                    }
+                },
+                highlight: function ( element, errorClass, validClass ) {
+                    $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+                }
+            } );
+      $( "#UpdateEducational-info" ).validate( {
+                rules: {
+
+                    js_degree: {
+                        required: true,
+                    },
+
+                    js_group: {
+                        required: true,
+                    },
+
+                    js_resut: {
+                        required: true,
+                    },
+
+                    js_institute_name: {
+                        required: true,
+                    },
+                    js_year_of_passing: {
+                        required: true,
+                    },
+
+                },
+                messages: {
+                    js_degree: "Please your degree",
+                    js_group: "Please enter your group name ",
+                    js_resut: "Please enter your result",
+                    js_institute_name: "Please institute name",
+                    js_year_of_passing: "Please your passing years",
+                },
+                errorElement: "em",
+                errorPlacement: function ( error, element ) {
+                    // Add the `help-block` class to the error element
+                    error.addClass( "help-block" );
+
+                    if ( element.prop( "type" ) === "checkbox" ) {
+                        error.insertAfter( element.parent( "label" ) );
+                    } else {
+                        error.insertAfter( element );
+                    }
+                },
+                highlight: function ( element, errorClass, validClass ) {
+                    $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+                }
+            } );
+
+
+        });
+
+       
+            
+
+
+
+
   $(".getformbylevel").on('click', function(event){
     event.stopPropagation();
     event.stopImmediatePropagation();
