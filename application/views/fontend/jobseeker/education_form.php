@@ -47,7 +47,7 @@
           
           </select> -->
           <?php foreach($course as $courses){?>
-            <input type="redio" name="education_type_id" id="education_type_id" value="<?php echo $courses['education_type_id']; ?>" style="margin: 0 15px;"> <?php echo $courses['education_type']; ?>
+            <input type="radio" name="education_type_id" id="education_type_id" value="<?php echo $courses['education_type_id']; ?>" style="margin: 0 15px;"> <?php echo $courses['education_type']; ?>
               <?php } ?>
           <!--   <input type="redio" name="education_type_id" id="education_type_id" value="<?php echo $courses['education_type_id']; ?>" style="margin: 0 15px;"> Write
             <input type="redio" name="education_type_id" id="education_type_id" value="<?php echo $courses['education_type_id']; ?>" style="margin: 0 15px;"> Speak -->
