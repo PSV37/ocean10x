@@ -258,7 +258,7 @@ $(".geteditformbylevel").on('click', function(event){
                 $('.education_frm').html(data);
                 // Display Modal
                 $('#addEducation').modal('show');
-                hideshowfunload(<?php echo $all_education['gradding']; ?>)
+                // hideshowfunload(<?php echo $all_education['gradding']; ?>)
 
 
               }
@@ -290,28 +290,28 @@ $(".geteditformbylevel").on('click', function(event){
        } 
     }
 
-    $(document).ready(function(){
+  //   $(document).ready(function(){
        
-      function hideshowfunload(id)
-      {
-        var a = id;
+  //     function hideshowfunload(id)
+  //     {
+  //       var a = id;
         
-      if(a=='Course Requires a Pass')
-        {
-          $('#comp_name').hide();
-        }
-       else{
-          $('#comp_name').show();
-       } 
+  //     if(a=='Course Requires a Pass')
+  //       {
+  //         $('#comp_name').hide();
+  //       }
+  //      else{
+  //         $('#comp_name').show();
+  //      } 
        
-      if(a=='Scale 10 Grading System' || a=='Scale 4 Grading System' || a=='% Marks of 100 Maximum')
-        {
-          $('#name').hide();
-        }
-       else{
-          $('#name').show();
-       } 
-    }
-       hideshowfunload();
-  });
+  //     if(a=='Scale 10 Grading System' || a=='Scale 4 Grading System' || a=='% Marks of 100 Maximum')
+  //       {
+  //         $('#name').hide();
+  //       }
+  //      else{
+  //         $('#name').show();
+  //      } 
+  //   }
+  //      hideshowfunload();
+  // });
 </script>
