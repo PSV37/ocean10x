@@ -20,7 +20,7 @@
                       ?>
                        <?php if (!empty($education_data)): foreach ($education_data as $all_education) : ?>
                       <h5>
-                        <a href="#" data-edit_level_id='<?php echo $all_education['js_education_id']; ?>|<?php echo $v_education['education_level_id']; ?>' data-toggle="modal" data-target="#EditEducation" class="btn pull-right bg-navy btn-xs getformbylevel" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                        <a href="#" data-edit_level_id='<?php echo $all_education['js_education_id']; ?>|<?php echo $v_education['education_level_id']; ?>' data-toggle="modal" data-target="#EditEducation" class="btn pull-right bg-navy btn-xs geteditformbylevel" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                        
                         <a href="<?php echo base_url() ?>/job_seeker/delete_education/<?php echo $all_education['js_education_id']; ?>" class="pull-right btn  btn-xs" title="Delete" data-toggle="tooltip" data-placement="top" onclick="return confirm('Are you sure want to delete this record ?');"><i class="fa fa-trash-o"></i></a>                   
                       </h5>
@@ -218,11 +218,11 @@
     event.stopPropagation();
     event.stopImmediatePropagation();
     //(... rest of your JS code)
-    var edu_ids = $(this).data('level_id').split('|');
-    var edu_id = edu_ids[1];
-    var edu_id1 = edu_ids[0];
-    alert(edu_id);
-     alert(edu_id1);
+    var edu_id = $(this).data('level_id');
+    // var edu_id = edu_ids[1];
+    // var edu_id1 = edu_ids[0];
+    // alert(edu_id);
+
      $.ajax({
               url: "<?php echo base_url();?>job_seeker/education_data",
               type: "POST",
@@ -239,26 +239,27 @@
        
 });
 
-// $(".geteditformbylevel").on('click', function(event){
-//     event.stopPropagation();
-//     event.stopImmediatePropagation();
-//     //(... rest of your JS code)
-//     var edit_edu_id = $(this).data('edit_level_id');
-//      $.ajax({
-//               url: "<?php echo base_url();?>job_seeker/education_data",
-//               type: "POST",
-//               data: {edit_edu_id:edit_edu_id},
+$(".geteditformbylevel").on('click', function(event){
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+    //(... rest of your JS code)
+    var edit_edu_id = $(this).data('edit_level_id');
+    alert(edit_edu_id);
+     $.ajax({
+              url: "<?php echo base_url();?>job_seeker/education_data",
+              type: "POST",
+              data: {edit_edu_id:edit_edu_id},
           
-//               success: function(data)
-//               {
-//                 $('.education_frm').html(data);
-//                 // Display Modal
-//                 $('#addEducation').modal('show'); 
+              success: function(data)
+              {
+                $('.education_frm').html(data);
+                // Display Modal
+                $('#addEducation').modal('show'); 
 
-//               }
-//         });
+              }
+        });
        
-// });
+});
 </script>
 
   <script>
