@@ -91,16 +91,10 @@
               url: "<?php echo base_url();?>job_seeker/education_data",
               type: "POST",
               data: {edu_id:edu_id},
-              contentType:false,
-              processData:false,
-               // dataType: "json",
+          
               success: function(data)
               {
-                // $('#addEducation').modal('show'); 
-                // $('#education_frm').html(data);
-                 // Add response in Modal body
                 $('.education_frm').html(data);
-
                 // Display Modal
                 $('#addEducation').modal('show'); 
 
