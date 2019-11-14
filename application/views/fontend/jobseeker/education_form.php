@@ -39,7 +39,7 @@
       <div class="form-group">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
-          <label class="control-label" for="email">Course Type:</label>
+          <label class="control-label" for="email">Course Type</label>
           <select  name="education_type_id" id="education_type_id" class="form-control">
             <option value="">Select Course Type </option>
             <?php foreach($course as $courses){?>
@@ -54,7 +54,7 @@
       <div class="form-group">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
-          <label class="control-label" for="pwd">Passing Year:</label>
+          <label class="control-label" for="pwd">Passing Year</label>
           <select  name="js_year_of_passing" id="ddlYear" class="form-control">
            <option value="">Select Passing Year</option>s
           </select>
@@ -62,11 +62,27 @@
         <div class="col-sm-1"></div>
 
       </div>
+        <?php
+        // Sets the top option to be the current year. (IE. the option that is chosen by default).
+        $currently_selected = date('Y'); 
+        // Year to start available options at
+        $earliest_year = 1950; 
+        // Set your latest year you want in the range, in this case we use PHP to just set it to the current year.
+        $latest_year = date('Y'); 
+
+        print '<select>';
+        // Loops over each int[year] from current year, back to the $earliest_year [1950]
+        foreach ( range( $latest_year, $earliest_year ) as $i ) {
+          // Prints the option with the next year in range.
+          print '<option value="'.$i.'"'.($i === $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
+        }
+        print '</select>';
+  ?>
 <?php if(!empty($education_level)) if($education_level['education_level_name']=='Ph.D / Doctorate' || $education_level['education_level_name']=='Masters/Post-Graduation' || $education_level['education_level_name']=='Gradution'){?>
       <div class="form-group">
          <div class="col-sm-1"></div>
         <div class="col-sm-10">
-        <label class="control-label" for="email">Grading System:</label>
+        <label class="control-label" for="email">Grading System</label>
           <select  name="gradding"  class="form-control" id="category" onchange='hideshowfun()'>
             <option>Select Grading System</option>
             <option value="Scale 10 Grading System">Scale 10 Grading System</option>
@@ -81,7 +97,7 @@
       <div class="form-group" id="comp_name" style="display:none;">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
-          <label class="control-label" for="email">Marks:</label>
+          <label class="control-label" for="email">Marks</label>
           <input type="text" name="js_resut" class="form-control" placeholder="Enter Result GPA/GGPA">
         </div>
         <div class="col-sm-1"></div>
@@ -92,7 +108,7 @@
       <div class="form-group">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
-          <label class="control-label" for="email">Board:</label>
+          <label class="control-label" for="email">Board</label>
           <select  name="board_id" id="board_id" class="form-control">
             <option value="">Select Board</option>
             <?php foreach($schoolboard as $boards){?>
@@ -106,7 +122,7 @@
       <div class="form-group">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
-          <label class="control-label" for="email">School Medium:</label>
+          <label class="control-label" for="email">School Medium</label>
           <select  name="schoolmedium_id" id="schoolmedium_id" class="form-control">
             <option value="">Select Medium</option>
            <?php foreach($schoolmedium as $medium){?>
@@ -121,7 +137,7 @@
     <div class="form-group">
       <div class="col-sm-1"></div>
       <div class="col-sm-10">
-        <label class="control-label" for="email">Total Marks:</label>
+        <label class="control-label" for="email">Total Marks</label>
         <select name="totalmarks_id" id="search6" class="form-control">
           <option>Select Marks</option>
           <?php foreach($totalmarks as $total) { ?>
