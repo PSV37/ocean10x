@@ -287,4 +287,29 @@ $(".geteditformbylevel").on('click', function(event){
           $('#name').show();
        } 
     }
+
+    $(document).ready(function(){
+       
+      function hideshowfunload()
+      {
+        var a = $('#category').val();
+        
+      if(a=='Course Requires a Pass')
+        {
+          $('#comp_name').hide();
+        }
+       else{
+          $('#comp_name').show();
+       } 
+       
+      if(a=='Scale 10 Grading System' || a=='Scale 4 Grading System' || a=='% Marks of 100 Maximum')
+        {
+          $('#name').hide();
+        }
+       else{
+          $('#name').show();
+       } 
+    }
+       hideshowfunload();
+  });
 </script>
