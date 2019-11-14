@@ -217,16 +217,6 @@ class Job_seeker extends MY_Seeker_Controller
 
         $edit_edu_id= $this->input->post('edit_edu_id');
         $where_ress = "js_education.js_education_id='$edit_edu_id'";
-        // $join_edu = array(
-        //         'education_level' => 'education_level.education_level_id = js_education.education_level_id|left outer',
-        //         'education_specialization' => 'education_specialization.id = js_education.specialization_id|left outer',
-        //         'schoolboard' => 'schoolboard.schoolboard_id = js_education.board_id|left outer',
-        //         'course' => 'course.education_type_id = js_education.education_type_id|left outer',
-        //         'schoolmedium' => 'schoolmedium.schoolmedium_id = js_education.schoolmedium_id|left outer'
-        //     );
-
-        // $select_edu = "education_level.education_level_name,education_specialization.education_specialization,schoolboard.schoolboard_name,course.education_type,schoolmedium.school_medium,js_education.js_institute_name,js_education.js_resut,js_education.js_year_of_passing,js_education.totalmarks_id,js_education.gradding,js_education.js_education_id";
-
         $data['edit_edu_res'] = $this->Master_model->get_master_row('js_education', $select=false, $where_ress, $join = FALSE);
                // echo $this->db->last_query(); die;
 
@@ -234,28 +224,6 @@ class Job_seeker extends MY_Seeker_Controller
         $this->load->view('fontend/jobseeker/education_form',$data);
     }
     
-    // public function edit_education_data()
-    // {
-    //     $jobseeker_id = $this->session->userdata('job_seeker_id');
-       
-    //     $edit_edu_id= $this->input->post('edit_edu_id');
-
-    //     $where_edu="education_level_id='$edu_id'";
-    //     $select_edu = "education_level_name,education_level_id";
-    //     $data['education_level'] = $this->Master_model->get_master_row("education_level", $select_edu, $where_edu, $join = FALSE);
-
-    //     $where_edu_spec="edu_level_id='$edu_id'";
-    //     $select_edu_spec = "education_specialization,id";
-    //     $data['education_specialization'] = $this->Master_model->getMaster('education_specialization',$where_edu_spec,$join = FALSE, $order = false, $field = false, $select_edu_spec,$limit=false,$start=false, $search=false);
-
-    //     $data['schoolboard'] = $this->Master_model->getMaster('schoolboard',$where=false);
-    //     $data['course'] = $this->Master_model->getMaster('course',$where=false);
-    //     $data['schoolmedium'] = $this->Master_model->getMaster('schoolmedium',$where=false);
-    //    // $data['passingyear'] = $this->Master_model->getMaster('passingyear',$where=false);
-    //     $data['totalmarks'] = $this->Master_model->getMaster('totalmarks',$where=false);
-
-    //     $this->load->view('fontend/jobseeker/education_form',$data);
-    // }
     public function update_experience()
     {
 
