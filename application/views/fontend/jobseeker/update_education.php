@@ -33,7 +33,7 @@
                               <tbody>
                              
                               <tr>
-                                  <td width="30%">Degree:</td>
+                                  <td width="30%">Education:</td>
                                   <td><?php echo $all_education->education_level_name; ?></td>
                                 </tr>
 
@@ -43,30 +43,29 @@
                                 </tr>
 
                                 <tr>
-                                  <td>Institute Name:</td>
-                              <td><?php echo $all_education->js_institute_name; ?></td>
+                                  <td>University/Institute Name:</td>
+                                  <td><?php echo $all_education->js_institute_name; ?></td>
                                 </tr>
 
                                 <tr>
                                   <td>Result:</td>
-                                <td><?php echo $all_education->js_resut; ?></td>
+                                  <td><?php echo $all_education->js_resut; ?></td>
                                 </tr>
 
                                 <tr>
                                   <td>Passing Year:</td>
-                                <td><?php echo $all_education->js_year_of_passing; ?></td>
+                                  <td><?php echo $all_education->js_year_of_passing; ?></td>
                                 </tr>
-                               <?php
-                                
-                                endforeach;
-                                
-                              ?>
+                              
                               </tbody>
                             </table>
-                          </div>
-                          <?php else : ?> <!--get error message if this empty-->
+                          </div> 
+                          <?php
+                            endforeach;
+                            else :
+                          ?>
                           <td colspan="3">
-                              <strong>There is no Educational Information to show!</strong>
+                              <!-- <strong>There is no Educational Information to show!</strong> -->
                           </td><!--/ get error message if this empty-->
                         <?php
                           endif;
