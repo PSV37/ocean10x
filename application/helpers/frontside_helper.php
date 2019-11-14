@@ -178,7 +178,7 @@ function get_metas() {
 
         $edu_res = $CI->Master_model->getMaster($table, $where_ress, $join_edu, $order = false, $field = false, $select_edu,$limit=false,$start=false, $search=false);
 
-       echo $CI->db->last_query(); die;
+       // echo $CI->db->last_query(); die;
 
         return $edu_res;
     } 
