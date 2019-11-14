@@ -218,8 +218,11 @@
     event.stopPropagation();
     event.stopImmediatePropagation();
     //(... rest of your JS code)
-    var edu_id = $(this).data('level_id');
+    var edu_ids = $(this).data('level_id').split('|');
+    var edu_id = edu_ids[1];
+    var edu_id1 = edu_ids[0];
     alert(edu_id);
+     alert(edu_id1);
      $.ajax({
               url: "<?php echo base_url();?>job_seeker/education_data",
               type: "POST",
