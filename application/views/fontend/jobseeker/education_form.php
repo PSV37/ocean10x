@@ -10,7 +10,7 @@
               </select>
             </div>
           </div>
-
+          <?php print_r($education_level); ?>
           <div class="form-group">
             <label class="control-label col-sm-3" for="email">Specialization</label>
             <div class="col-sm-9">
