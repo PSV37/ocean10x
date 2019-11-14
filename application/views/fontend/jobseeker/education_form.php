@@ -12,7 +12,7 @@
         </div>
         <div class="col-sm-1"></div>
       </div>
-
+      <?php if(!empty($education_level)) if($education_level['education_level_name']!='10th' || $education_level['education_level_name']!='12th'){?>
       <div class="form-group">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
@@ -49,6 +49,7 @@
         </div>
         <div class="col-sm-1"></div>
       </div>
+    <?php } ?>
     
       <div class="form-group">
         <div class="col-sm-1"></div>
