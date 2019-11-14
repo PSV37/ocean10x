@@ -96,8 +96,13 @@
                // dataType: "json",
               success: function(data)
               {
+                // $('#addEducation').modal('show'); 
+                // $('#education_frm').html(data);
+                 // Add response in Modal body
+                $('.education_frm').html(data);
+
+                // Display Modal
                 $('#addEducation').modal('show'); 
-                $('#education_frm').html(data);
 
               }
         });
