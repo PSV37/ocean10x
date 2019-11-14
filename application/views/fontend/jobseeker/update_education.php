@@ -21,7 +21,7 @@
                          // print_r($education_data);
 
                       ?>
-                       <?php if (!empty($education_data)): foreach ($education_data as $all_education) : echo $all_education['education_level_id'];?>
+                       <?php if (!empty($education_data)): foreach ($education_data as $all_education) : ?>
                       <h5>
                         <a href="#" data-toggle="modal" data-target="#EditEducation" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                        
@@ -34,27 +34,27 @@
                              
                               <tr>
                                   <td width="30%">Education:</td>
-                                  <td><?php echo $all_education->education_level_id; ?></td>
+                                  <td><?php echo $all_education['education_level_id']; ?></td>
                                 </tr>
 
                                 <tr>
                                   <td>Specialization:</td>
-                                    <td><?php echo $all_education->education_specialization; ?></td>
+                                    <td><?php echo $all_education['education_specialization']; ?></td>
                                 </tr>
 
                                 <tr>
                                   <td>University/Institute Name:</td>
-                                  <td><?php echo $all_education->js_institute_name; ?></td>
+                                  <td><?php echo $all_education['js_institute_name']; ?></td>
                                 </tr>
 
                                 <tr>
                                   <td>Result:</td>
-                                  <td><?php echo $all_education->js_resut; ?></td>
+                                  <td><?php echo $all_education['js_resut']; ?></td>
                                 </tr>
 
                                 <tr>
                                   <td>Passing Year:</td>
-                                  <td><?php echo $all_education->js_year_of_passing; ?></td>
+                                  <td><?php echo $all_education['js_year_of_passing']; ?></td>
                                 </tr>
                               
                               </tbody>
