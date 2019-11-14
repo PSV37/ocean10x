@@ -165,7 +165,7 @@ function get_metas() {
         $CI = get_instance();
         // $select_result = "is_test_required";
         $table = "js_education";
-        $where_ress = "js_education.job_seeker_id='$jobseeker_id' AND js_education.education_level_id='$seeker_edu_id'"
+        $where_ress = "js_education.job_seeker_id='$jobseeker_id' AND js_education.education_level_id='$seeker_edu_id'";
         $join_edu = array(
                 'education_level' => 'education_level.education_level_id = js_education.education_level_id|LFET OUTER',
                 'education_specialization' => 'education_specialization.id = js_education.specialization_id|LFET OUTER',
@@ -176,7 +176,7 @@ function get_metas() {
 
         $select_edu = "education_level.education_level_name,education_specialization.education_specialization,schoolboard.schoolboard_name,course.education_type,schoolmedium.school_medium,js_education.js_institute_name,js_education.js_resut,js_education.js_year_of_passing,js_education.totalmarks_id,js_education.gradding,js_education.js_education_id";
 
-        $edu_res = $CI->Master_model->getMaster($table, $where_ress, $join = FALSE, $order = false, $field = false, $select_edu_spec,$limit=false,$start=false, $search=false);
+        $edu_res = $CI->Master_model->getMaster($table, $where_ress, $join_edu, $order = false, $field = false, $select_edu,$limit=false,$start=false, $search=false);
 
      //   echo $CI->db->last_query(); die;
 
