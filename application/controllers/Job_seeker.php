@@ -217,17 +217,17 @@ class Job_seeker extends MY_Seeker_Controller
 
         $edit_edu_id= $this->input->post('edit_edu_id');
         $where_ress = "js_education.js_education_id='$edit_edu_id'";
-        $join_edu = array(
-                'education_level' => 'education_level.education_level_id = js_education.education_level_id|left outer',
-                'education_specialization' => 'education_specialization.id = js_education.specialization_id|left outer',
-                'schoolboard' => 'schoolboard.schoolboard_id = js_education.board_id|left outer',
-                'course' => 'course.education_type_id = js_education.education_type_id|left outer',
-                'schoolmedium' => 'schoolmedium.schoolmedium_id = js_education.schoolmedium_id|left outer'
-            );
+        // $join_edu = array(
+        //         'education_level' => 'education_level.education_level_id = js_education.education_level_id|left outer',
+        //         'education_specialization' => 'education_specialization.id = js_education.specialization_id|left outer',
+        //         'schoolboard' => 'schoolboard.schoolboard_id = js_education.board_id|left outer',
+        //         'course' => 'course.education_type_id = js_education.education_type_id|left outer',
+        //         'schoolmedium' => 'schoolmedium.schoolmedium_id = js_education.schoolmedium_id|left outer'
+        //     );
 
-        $select_edu = "education_level.education_level_name,education_specialization.education_specialization,schoolboard.schoolboard_name,course.education_type,schoolmedium.school_medium,js_education.js_institute_name,js_education.js_resut,js_education.js_year_of_passing,js_education.totalmarks_id,js_education.gradding,js_education.js_education_id";
+        // $select_edu = "education_level.education_level_name,education_specialization.education_specialization,schoolboard.schoolboard_name,course.education_type,schoolmedium.school_medium,js_education.js_institute_name,js_education.js_resut,js_education.js_year_of_passing,js_education.totalmarks_id,js_education.gradding,js_education.js_education_id";
 
-        $edu_res = $this->Master_model->getMaster($table, $where_ress, $join_edu, $order = false, $field = false, $select_edu,$limit=false,$start=false, $search=false);
+        $edu_res = $this->Master_model->getMaster('js_education', $where_ress, $join=false, $order = false, $field = false, $select=false,$limit=false,$start=false, $search=false);
                echo $this->db->last_query(); die;
 
 

@@ -66,7 +66,7 @@
                                
                                 <tr>
                                   <td>Passing Year:</td>
-                                  <td><?php echo $all_education['js_year_of_passing']; ?> (<?php echo $all_education['education_type']; ?>)</td>
+                                  <td><?php echo $all_education['js_year_of_passing']; ?> </td>
                                 </tr>
                               
                               </tbody>
