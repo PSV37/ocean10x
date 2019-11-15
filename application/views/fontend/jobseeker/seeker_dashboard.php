@@ -22,8 +22,11 @@ h6{
     padding: 15px;
 }
 .tag_line{
-	line-height: 24px !important;
-    color: #999 !important;
+	text-align: unset !important;
+}
+.title-career{
+	font-size: 20px;
+	font-style: bold;
 }
 	    
 </style>       
@@ -80,7 +83,7 @@ h6{
 		                <div class="col-md-12">
 		                	<div class="col-md-1"><i class="fa fa-user" aria-hidden="true"></i></div>
 		                	<div class="col-md-11">
-				           	 	<sapn><b>Career Advice</b></sapn> <br><br>
+				           	 	<sapn class="title-career"><b>Career Advice</b></sapn> <br><br>
 				           	 	<span>Participate in the career advice platform: <a href="#">On</a></span><br>
 				           	 	<p class="tag_line">Get career advice by conversing with other LinkedIn users who are leaders in their fields</p><hr>
 				           	</div>
@@ -88,7 +91,7 @@ h6{
 		             	<div class="col-md-12">
 		             		<div class="col-md-1"><i class="fa fa-briefcase" aria-hidden="true"></i></div>
 		             		<div class="col-md-11">
-			           	 		<span><b>Career Interests</b></span><br><br>
+			           	 		<span class="title-career"><b>Career Interests</b></span><br><br>
 			           	 		<span>Let recruiters know you’re open: <a href="#">Off</a></span><br>	
 			           	 		<p class="tag_line">Choose the types of opportunities you’d like to be connected with</p><hr>
 			           	 	</div>
@@ -96,7 +99,7 @@ h6{
 		             	<div class="col-md-12">
 		             		<div class="col-md-1"><i class="fa fa-money" aria-hidden="true"></i></div>
 		             		<div class="col-md-11">
-			           	 		<span><b>Salary Insights</b></span><br><br>
+			           	 		<span class="title-career"><b>Salary Insights</b></span><br><br>
 			           	 		<p class="tag_line">See how your salary compares to others in the community</p><hr>
 			           	 	</div>
 		             	</div><br><hr>
