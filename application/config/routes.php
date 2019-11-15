@@ -93,7 +93,7 @@ $route['seeker/logout']="job_seeker/logout";
 $route['seeker/downloadcv']="job_seeker/downloadcv";
 $route['seeker/attach-resume']="job_seeker/upload_resume";
 $route['seeker/update-skills']="job_seeker/update_skills";
-$route['seeker/profile-summary']="job_seeker/profile_summary";
+$route['seeker/profile-summary/(:num)']="job_seeker/profile_summary/$1";
 
 
 

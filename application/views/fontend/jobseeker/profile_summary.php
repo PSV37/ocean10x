@@ -10,7 +10,7 @@
         <hr>
           <?php echo $this->session->flashdata('msg'); ?>
                   <div id="vsphoto" class="tab-pane fade in">
-                    <h5>About</h5>
+                    <h5>Profile Summary</h5>
                     
                     <?php echo $this->session->flashdata('msg'); ?>
                     <?php if(!empty($error)){echo $error;};?>
@@ -18,8 +18,8 @@
                       <div class="col-md-12">
                         <div class="containe1r">
 
-                          <form class="avatar-form" action="<?php echo base_url('Job_seeker/profile_summary');?>" enctype="multipart/form-data" method="post">
-                            <input type="hidden" name="resume_id" value="<?php if(!empty($job_seeker_profile['id'])){echo $job_seeker_profile['id'];} ?>">
+                          <form class="avatar-form" action="<?php echo base_url();?>Job_seeker/profile_summary/<?php if(!empty($job_seeker_profile['id'])){echo $job_seeker_profile['id'];} ?>" enctype="multipart/form-data" method="post">
+                            <!-- <input type="hidden" name="prof_id" value="<?php if(!empty($job_seeker_profile['id'])){echo $job_seeker_profile['id'];} ?>"> -->
                           
                               <div class="col-md-12">
                                 <!-- <label for="avatarInput">Upload Resume</label> -->

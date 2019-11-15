@@ -826,13 +826,13 @@ exit;*/
 
     }
         
-    public function profile_summary()
+    public function profile_summary($profile_summary_id==null)
     {
         $jobseeker_id     = $this->session->userdata('job_seeker_id');
        
          if ($_POST) {
             $jobseeker_id      = $this->session->userdata('job_seeker_id');
-            $profile_summary_id = $this->input->post('js_education_id');
+           // $profile_summary_id = $this->input->post('prof_id');
             $profile_data    = array(
                 'job_seeker_id'     => $jobseeker_id,
                 'about_me'          => addslashes($this->input->post('profile_summary')),
