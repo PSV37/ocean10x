@@ -15,6 +15,12 @@ h6{
     margin: 15px;
     font-size: 25px;
 }
+.career{
+	border-radius: 6px;
+    background: #cbced247;
+   	margin: 2px;
+    padding: 15px;
+}
 	    
 </style>       
 
@@ -66,7 +72,7 @@ h6{
 					</div>
 					<div class="panel-body"></div>
 
-					<div class="row summary" >
+					<div class="row career" >
 		                <div class="col-md-12">
 		                	<div class="col-md-1"><i class="fa fa-user" aria-hidden="true"></i></div>
 		                	<div class="col-md-11">
