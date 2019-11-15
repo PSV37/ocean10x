@@ -15,6 +15,14 @@ class Job_seeker extends MY_Seeker_Controller
     }
 
     /*** Dashboard ***/
+
+
+    
+    public function my_dashboard()
+    {
+            
+        $this->load->view('fontend/jobseeker/seeker_dashboard');
+    }
 	
 	public function seeker_info()
     {

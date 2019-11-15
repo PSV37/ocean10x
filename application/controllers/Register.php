@@ -150,7 +150,7 @@ class Register extends CI_Controller
 
         $job_seeker_id = $this->session->userdata('job_seeker_id');
         if ($job_seeker_id != null) {
-            redirect('job_seeker/seeker_info');
+            redirect('job_seeker/my_dashboard');
     }
 
         $this->load->view('fontend/jobseeker/login');
@@ -183,7 +183,7 @@ class Register extends CI_Controller
             $this->session->set_userdata($data);
             $this->session->set_flashdata('type', 'success');
             $this->session->set_flashdata('Message', "Welcome Back - ".$result->user_name."<br>  Your Last Successfull Login Was - ".$results['login']);
-            redirect('job_seeker/seeker_info');
+            redirect('job_seeker/my_dashboard');
         } else {
             $this->session->set_flashdata('invalid', '<div class="alert alert-danger text-center">Sorry! There is error verifying your Email Address!</div>');
             redirect('register/jobseeker_login');
