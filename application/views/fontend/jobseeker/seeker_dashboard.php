@@ -7,6 +7,8 @@
     border-radius: 6px;
     height: 100px;
     background: #7bc6ec7d;
+   	margin: 1px;
+    padding: 15px;
 }
 h6{
 	text-align: center;
@@ -45,36 +47,23 @@ h6{
             <div class="row">
               <div class="col-md-12">
                 <div class="containe1r">
-
-                <div class="col-md-12">
-            	 	<div class="col-md-3 summary">
-            	  		<h6>100</h6>
-            	  		<p>Who viewed your profile</p>
-            	  	</div>
-            	  	<div class="col-md-3 summary">
-            	  		<h6>100</h6>
-            	  		<p>Who viewed your profile</p>
-            	  	</div>
-	            	<div class="col-md-3 summary">
-	            	  	<h6>100</h6>
-            	  		<p>Who viewed your profile</p>
-	           	 	</div>
-	           	 	<div class="col-md-3 summary">
-	            	  	<h6>100</h6>
-            	  		<p>Who viewed your profile</p>
-	           	 	</div>
-             	</div>
-             	<div class="row">
-				    <div class="col summary">
-				      1 of 3
-				    </div>
-				    <div class="col summary">
-				      2 of 3
-				    </div>
-				    <div class="col summary">
-				      3 of 3
-				    </div>
-				</div>
+					<div class="row">
+		                <div class="col-md-12">
+		            	 	<div class="col-md-3 summary">
+		            	  		<h6>100</h6>
+		            	  		<p>Who viewed your profile</p>
+		            	  	</div>
+		            	  	<div class="col-md-3 summary">
+		            	  		<h6>100</h6>
+		            	  		<p>Who viewed your profile</p>
+		            	  	</div>
+			            	<div class="col-md-3 summary">
+			            	  	<h6>100</h6>
+		            	  		<p>Who viewed your profile</p>
+			           	 	</div>
+			           	 	
+		             	</div>
+					</div>
 
 		                  
                 </div>
