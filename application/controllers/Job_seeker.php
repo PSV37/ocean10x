@@ -826,7 +826,7 @@ exit;*/
 
     }
         
-    public function profile_summary($profile_summary_id==null)
+    public function profile_summary($profile_summary_id=null)
     {
         $jobseeker_id     = $this->session->userdata('job_seeker_id');
        
