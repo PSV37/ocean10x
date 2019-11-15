@@ -7,6 +7,7 @@
     border-radius: 6px;
     background: #7bc6ec7d;
    	margin: 2px;
+   	width: 256px;
     padding: 15px;
 }
 h6{
@@ -22,10 +23,10 @@ h6{
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-6">
-        <h1 class="page-heading">Active Jobs</h1>
+        <h1 class="page-heading">Dashboard</h1>
       </div>
       <div class="col-md-6 col-sm-6">
-        <div class="breadCrumb"><a href="#.">Home</a> / <span>Active Jobs</span></div>
+        <div class="breadCrumb"><a href="#.">Home</a> / <span>Dashboard</span></div>
       </div>
     </div>
   </div>
@@ -42,7 +43,7 @@ h6{
 
           <div id="vsphoto" class="tab-pane fade in">
             <h5>Your Dashboard</h5>
-            <em>Private to you</em>
+           
            
             <div class="row">
               <div class="col-md-12">
