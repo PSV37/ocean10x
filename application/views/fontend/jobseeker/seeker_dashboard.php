@@ -1,6 +1,23 @@
 <?php 
     $this->load->view('fontend/layout/seeker_header.php');
 ?>        
+<style>
+	.element-box {
+    border-radius: 6px;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 2px 4px rgba(126, 142, 177, 0.12);
+    box-shadow: 0px 2px 4px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1rem;
+    } 
+    .element-wrapper .element-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+</style>
  <!-- Page Title start -->
 <div class="pageTitle">
   <div class="container">
