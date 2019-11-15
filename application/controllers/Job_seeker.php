@@ -136,7 +136,7 @@ class Job_seeker extends MY_Seeker_Controller
             $jobseeker_id     = $this->session->userdata('job_seeker_id');
             $js_personal_info = $this->job_seeker_personal_model->personalinfo_list_by_id($jobseeker_id);
 			$job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id);
-			$name = $this->Job_seeker_model->resume_view_by_id($jobseeker_id);
+			$name = $this->Job_seeker_model->get_jobseeker_fullname($jobseeker_id);
 			$city = $this->Master_model->getMaster('city',$where=false);
 			$country = $this->Master_model->getMaster('country',$where=false);
 			$state = $this->Master_model->getMaster('state',$where=false);
