@@ -21,6 +21,10 @@ h6{
    	margin: 2px;
     padding: 15px;
 }
+.tag_line{
+	line-height: 24px !important;
+    color: #999 !important;
+}
 	    
 </style>       
 
@@ -72,28 +76,28 @@ h6{
 					</div>
 					<div class="panel-body"></div>
 
-					<div class="row career" >
+					<div class="row career">
 		                <div class="col-md-12">
 		                	<div class="col-md-1"><i class="fa fa-user" aria-hidden="true"></i></div>
 		                	<div class="col-md-11">
-				           	 	<span>Career Advice</span> <br>
-				           	 	<span>Participate in the career advice platform:<a href="#">On</a></span>
-				           	 	<p>Get career advice by conversing with other LinkedIn users who are leaders in their fields</p>
+				           	 	<sapn><b>Career Advice</b></sapn> <br><br>
+				           	 	<span>Participate in the career advice platform: <a href="#">On</a></span><br>
+				           	 	<p class="tag_line">Get career advice by conversing with other LinkedIn users who are leaders in their fields</p><hr>
 				           	</div>
-		             	</div><br><hr>
+		             	</div>
 		             	<div class="col-md-12">
 		             		<div class="col-md-1"><i class="fa fa-briefcase" aria-hidden="true"></i></div>
 		             		<div class="col-md-11">
-			           	 		<span>Career Interests</span>
-			           	 		<span>Let recruiters know you’re open:<a href="#">Off</a></span>	
-			           	 		<p>Choose the types of opportunities you’d like to be connected with</p>
+			           	 		<span><b>Career Interests</b></span><br><br>
+			           	 		<span>Let recruiters know you’re open: <a href="#">Off</a></span><br>	
+			           	 		<p class="tag_line">Choose the types of opportunities you’d like to be connected with</p><hr>
 			           	 	</div>
-		             	</div><br><hr>
+		             	</div>
 		             	<div class="col-md-12">
 		             		<div class="col-md-1"><i class="fa fa-money" aria-hidden="true"></i></div>
 		             		<div class="col-md-11">
-			           	 		<span>Salary Insights</span>
-			           	 		<p>See how your salary compares to others in the community</p>
+			           	 		<span><b>Salary Insights</b></span><br><br>
+			           	 		<p class="tag_line">See how your salary compares to others in the community</p><hr>
 			           	 	</div>
 		             	</div><br><hr>
 					</div>
