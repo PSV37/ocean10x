@@ -207,15 +207,6 @@
                           if($job_career_info[0]->immediate_join=='Yes'){ echo 'checked';};
                          } ?>> Join Immediately
          </div>
-         <div class="form-group">
-            <label class="control-label col-sm-3" for="email">Notice Period</label>
-              <div class="col-sm-9">
-                <input type="text" class="form-control datepicker" name="avail_to_join" placeholder="Availablity Date " id="avail_to_join" value="<?php echo date('d-m-Y', strtotime($job_career_info[0]->availability_date)); ?>" <?php if (!empty($job_career_info[0]->immediate_join)) {
-                          if($job_career_info[0]->immediate_join=='Yes'){ echo 'disabled';};
-                         } ?>>
-              </div>
-        
-          </div>
 				  <div class="form-group">
             <label class="control-label col-sm-3" for="email">Expected Salary</label>
               <div class="col-sm-9">
