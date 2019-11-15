@@ -26,24 +26,13 @@
         <div class="userccount">
 
           <div id="vsphoto" class="tab-pane fade in">
-            <h5>Profile Summary</h5>
+            <h5>Your Dashboard</h5>
            
             <div class="row">
               <div class="col-md-12">
                 <div class="containe1r">
 
                  
-                      <div class="col-md-12">
-                      <textarea name="profile_summary" id="profile_summary" class="form-control" placeholder="Profile Summary" rows="5"></textarea>
-                      </div>
-
-                      <div class="panel-body"></div>
-                      <p>Write a meaningful summary of more than 50 characters.</p><br>
-                      <div class="col-md-12">
-                        <button type="submit" class="btn btn-success btn-block avatar-save2">Save</button>
-
-                      </div>
-                   
                  
                 </div>
                                           
