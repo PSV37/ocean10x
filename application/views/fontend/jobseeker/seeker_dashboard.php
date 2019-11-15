@@ -3,9 +3,9 @@
 ?> 
 <style>
 .summary{
-	border: 1px solid;
+	/*border: 1px solid;*/
     border-radius: 6px;
-    background: #7bc6ec7d;
+    background: #cbced247;
    	margin: 2px;
    	width: 256px;
     padding: 15px;
@@ -44,18 +44,17 @@ h6{
           <div id="vsphoto" class="tab-pane fade in">
             <h5>Your Dashboard</h5>
            
-           
             <div class="row">
               <div class="col-md-12">
                 <div class="containe1r">
 					<div class="row">
 		                <div class="col-md-12">
 		            	 	<div class="col-md-3 summary">
-		            	  		<h6>100</h6>
+		            	  		<h6>45</h6>
 		            	  		<p>Who viewed your profile</p>
 		            	  	</div>
 		            	  	<div class="col-md-3 summary">
-		            	  		<h6>100</h6>
+		            	  		<h6>10</h6>
 		            	  		<p>Article views</p>
 		            	  	</div>
 			            	<div class="col-md-3 summary">
@@ -66,8 +65,34 @@ h6{
 		             	</div>
 					</div>
 
+					<div class="row">
+		                <div class="col-md-12">
+		                	<div class="col-md-2"><i class="fa fa-user" aria-hidden="true"></i></div>
+		                	<div class="col-md-10">
+				           	 	<span>Career Advice</span> <br>
+				           	 	<span>Participate in the career advice platform:<a href="#">On</a></span>
+				           	 	<p>Get career advice by conversing with other LinkedIn users who are leaders in their fields</p>
+				           	</div>
+		             	</div><br><hr>
+		             	<div class="col-md-12">
+		             		<div class="col-md-2"><i class="fa fa-briefcase" aria-hidden="true"></i></div>
+		             		<div class="col-md-10">
+			           	 		<span>Career Interests</span>
+			           	 		<span>Let recruiters know you’re open:<a href="#">Off</a></span>	
+			           	 		<p>Choose the types of opportunities you’d like to be connected with</p>
+			           	 	</div>
+		             	</div><br><hr>
+		             	<div class="col-md-12">
+		             		<div class="col-md-2"><i class="fa fa-money" aria-hidden="true"></i></div>
+		             		<div class="col-md-10">
+			           	 		<span>Salary Insights</span>
+			           	 		<p>See how your salary compares to others in the community</p>
+			           	 	</div>
+		             	</div><br><hr>
+					</div>
+
 		                  
-                </div>
+                </div> <!-- container end -->
                                           
               </div>
               
