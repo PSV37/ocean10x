@@ -1,6 +1,19 @@
 <?php 
     $this->load->view('fontend/layout/seeker_header.php');
-?>        
+?> 
+<style>
+.summary{
+	border: 1px solid;
+    border-radius: 6px;
+    height: 100px;
+    background: #7bc6ec7d;
+}
+h6{
+	text-align: center;
+    margin: 15px;
+}
+	    
+</style>       
 
  <!-- Page Title start -->
 <div class="pageTitle">
@@ -34,15 +47,15 @@
                 <div class="containe1r">
 
                 <div class="col-md-12">
-            	 	<div class="col-md-4">
+            	 	<div class="col-md-4 summary">
             	  		<h6>100</h6>
             	  		<p>Who viewed your profile</p>
             	  	</div>
-            	  	<div class="col-md-4">
+            	  	<div class="col-md-4 summary">
             	  		<h6>100</h6>
             	  		<p>Who viewed your profile</p>
             	  	</div>
-	            	<div class="col-md-4">
+	            	<div class="col-md-4 summary">
 	            	  	<h6>100</h6>
             	  		<p>Who viewed your profile</p>
 	           	 	</div>
