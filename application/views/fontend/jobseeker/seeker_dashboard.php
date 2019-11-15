@@ -16,46 +16,48 @@
 </div>
 <!-- Page Title End -->             
 
+
 <div class="section lb">
-	<div class="container">
-	   <div class="row">
-	    <?php $this->load->view('fontend/layout/seeker_left.php'); ?>
+  <div class="container">                                
+                         
+    <div class="row">
+      <?php $this->load->view('fontend/layout/seeker_left.php'); ?>
+      <div class="content col-md-9">
+        <div class="userccount">
 
-            <div class="content col-md-9">
-	            <div class="row">
-                    <div class="content col-md-8 col-md-offset-2">
-                        <div class="userccount">
-                            <h5>Your Dashboard</h5>
+          <div id="vsphoto" class="tab-pane fade in">
+            <h5>Profile Summary</h5>
+           
+            <div class="row">
+              <div class="col-md-12">
+                <div class="containe1r">
 
-                            <div class="formpanel">
-                                <div class="formrow">
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-12">
-	                                        <input type="Password" id="password" name="password" class="form-control" placeholder="Password">
-	                                    </div>
-                                    </div><!-- end row -->
-                                </div>
-                                 
-                               <div class="formrow">
-	                               <div class="row">
-	                                       <div class="col-md-6 col-sm-12">
-	                                            <input type="Password" id="password" name="password" class="form-control" placeholder="Password">
-	                                        </div>
+                 
+                      <div class="col-md-12">
+                      <textarea name="profile_summary" id="profile_summary" class="form-control" placeholder="Profile Summary" rows="5"></textarea>
+                      </div>
 
-	                                         <div class="col-md-6 col-sm-12">
-	                                            <input type="Password" name="confirm_password" class="form-control" placeholder="Confirm Password">
-	                                        </div>
-	                                </div>
-                                </div>
+                      <div class="panel-body"></div>
+                      <p>Write a meaningful summary of more than 50 characters.</p><br>
+                      <div class="col-md-12">
+                        <button type="submit" class="btn btn-success btn-block avatar-save2">Save</button>
 
-                            </div><!-- end post-padding -->
-                        </div>
-                    </div><!-- end col -->
-        		</div>
-
-  		</div> <!--end row -->
-	</div><!-- end container -->
-</div><!-- end section -->
+                      </div>
+                   
+                 
+                </div>
+                                          
+              </div>
+              
+            </div>
+          </div>
+                             
+        </div><!-- end col -->
+      </div><!-- end row -->  
+    </div><!-- end container -->
+  </div><!-- end section -->
+</div>
+  
 
 <?php $this->load->view("fontend/layout/footer.php"); ?>
  
