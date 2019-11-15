@@ -164,7 +164,7 @@ class Register extends CI_Controller
         $result             = $this->job_seeker_model->check_login_info($jobseeker_email, $jobseeker_password);
         if (!empty($result)) {
             $data['job_seeker_id'] = $result->job_seeker_id;
-            $data['user_name']     = $result->user_name;
+            $data['user_name']     = $result->full_name;
             $ID= $result->job_seeker_id;
             $LoginDateTime = date('Y-m-d H:i:s');
             $ipAddr = $this->input->ip_address();
@@ -182,7 +182,7 @@ class Register extends CI_Controller
             $results = $this->Master_model->get_master_row("js_login_logs", $select ='login', $where_sek, $join = false);
             $this->session->set_userdata($data);
             $this->session->set_flashdata('type', 'success');
-            $this->session->set_flashdata('Message', "Welcome Back - ".$result->user_name."<br>  Your Last Successfull Login Was - ".$results['login']);
+            $this->session->set_flashdata('Message', "Welcome Back - ".$result->full_name."<br>  Your Last Successfull Login Was - ".$results['login']);
             redirect('job_seeker/my_dashboard');
         } else {
             $this->session->set_flashdata('invalid', '<div class="alert alert-danger text-center">Sorry! There is error verifying your Email Address!</div>');
@@ -208,7 +208,7 @@ class Register extends CI_Controller
         $result             = $this->job_seeker_model->check_forgot_user_info($jobseeker_email);
         if (!empty($result)) {
             $data['job_seeker_id'] = $result->job_seeker_id;
-            $data['user_name']     = $result->user_name;
+            $data['user_name']     = $result->full_name;
             $this->session->set_userdata($data);
              $this->session->set_flashdata('invalid', '<div class="alert alert-success text-center">An email has been sent to you to reset password.</div>');
              redirect('register/jobseeker_login');

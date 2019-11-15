@@ -11,7 +11,7 @@
         <h1 class="page-heading">Seeker Login</h1>
       </div>
       <div class="col-md-6 col-sm-6">
-        <div class="breadCrumb"><a href="#.">Home</a> / <span>Employer Login</span></div>
+        <div class="breadCrumb"><a href="#.">Home</a> / <span>Seeker Login</span></div>
       </div>
     </div>
   </div>
