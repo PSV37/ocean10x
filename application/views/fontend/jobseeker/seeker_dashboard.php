@@ -6,7 +6,7 @@
 	border: 1px solid;
     border-radius: 6px;
     background: #7bc6ec7d;
-   	margin: 1px;
+   	margin: 2px;
     padding: 15px;
 }
 h6{
@@ -32,7 +32,6 @@ h6{
 </div>
 <!-- Page Title End -->             
 
-
 <div class="section lb">
   <div class="container">                                
                          
@@ -43,6 +42,7 @@ h6{
 
           <div id="vsphoto" class="tab-pane fade in">
             <h5>Your Dashboard</h5>
+            <em>Private to you</em>
            
             <div class="row">
               <div class="col-md-12">
@@ -55,11 +55,11 @@ h6{
 		            	  	</div>
 		            	  	<div class="col-md-3 summary">
 		            	  		<h6>100</h6>
-		            	  		<p>Who viewed your profile</p>
+		            	  		<p>Article views</p>
 		            	  	</div>
 			            	<div class="col-md-3 summary">
 			            	  	<h6>100</h6>
-		            	  		<p>Who viewed your profile</p>
+		            	  		<p>Search Appearnaces</p>
 			           	 	</div>
 			           	 	
 		             	</div>
