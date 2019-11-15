@@ -169,13 +169,13 @@ class Job_forword_seeker extends CI_Controller {
                 $js_personal = array(
                     'job_seeker_id' => $seeker_id,
                 );
-                $this->job_seeker_personal_model->insert($js_personal);
+                $this->Job_seeker_personal_model->insert($js_personal);
 
                 // Last ID add Js Photo Table
                 $js_photo = array(
                     'job_seeker_id' => $seeker_id,
                 );
-                $this->job_seeker_photo_model->insert($js_photo);
+                $this->Job_seeker_photo_model->insert($js_photo);
 
                 // Last ID add Js Carrer Table
                 $js_career = array(
