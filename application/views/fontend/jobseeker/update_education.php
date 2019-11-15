@@ -263,8 +263,8 @@ $(".geteditformbylevel").on('click', function(event){
 });
 </script>
 
-  <script>
-    function hideshowfun()
+<script>
+  function hideshowfun()
     {
       var a = $('#category').val();
      
@@ -285,5 +285,22 @@ $(".geteditformbylevel").on('click', function(event){
           $('#name').show();
        } 
     }
+
+
+    function isNumber(evt) {
+      var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+        if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+            return false;
+
+        return true;
+    }    
+
+    function isNumber1(evt) {
+      var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+        if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+            return false;
+
+        return true;
+    }    
 
 </script>

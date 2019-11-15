@@ -92,7 +92,7 @@
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
           <label class="control-label" for="email">Marks<span class="required">*</span></label>
-          <input type="text" name="js_resut" class="form-control" placeholder="Enter Result GPA/GGPA" value="<?php if(!empty($edit_edu_res)) echo $edit_edu_res['js_resut']; ?>">
+          <input type="text" name="js_resut" class="form-control" placeholder="Enter Result GPA/GGPA" value="<?php if(!empty($edit_edu_res)) echo $edit_edu_res['js_resut']; ?>" onkeypress="javascript:return isNumber1(event)">
         </div>
         <div class="col-sm-1"></div>
       </div>
@@ -132,7 +132,7 @@
       <div class="col-sm-1"></div>
       <div class="col-sm-10">
         <label class="control-label" for="email">Total Marks<span class="required">*</span></label>
-        <input type="text" name="totalmarks_id" id="totalmarks_id" class="form-control" value="<?php if(!empty($edit_edu_res)) echo $edit_edu_res['totalmarks_id']; ?>">
+        <input type="text" name="totalmarks_id" id="totalmarks_id" class="form-control" value="<?php if(!empty($edit_edu_res)) echo $edit_edu_res['totalmarks_id']; ?>" onkeypress="javascript:return isNumber(event)">
       </div>
       <div class="col-sm-1"></div>
     </div>
