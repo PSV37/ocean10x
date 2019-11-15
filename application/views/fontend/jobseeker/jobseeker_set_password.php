@@ -66,9 +66,9 @@
                                                   <option value="2" <?php echo $str_f ; ?>>Female</option>
                                                 </select>
                                             </div>
-                                            <div class="col-md-6 col-sm-12">
+                                            <!-- <div class="col-md-6 col-sm-12">
                                                 <input type="text" name="user_name"  value="<?php echo isset($this->session->userdata['reg_jobseeker']['user_name'])?$this->session->userdata['reg_jobseeker']['user_name']:''; ?>"class="form-control" placeholder="User Name">
-                                            </div>
+                                            </div> -->
                                         </div><!-- end row -->
                                     </div>
 
@@ -101,7 +101,7 @@
                                <div class="formrow">
                                  <div class="row">
                                  <div class="col-md-6 col-sm-12">
-                                      <input type="checkbox" value="" > <a  href="<?php echo base_url().'terms' ?>" target="_blank">  I agree to the Terms and Conditions</a>
+                                      <input type="checkbox" value="" checked=""> <a  href="<?php echo base_url().'terms' ?>" target="_blank">  I agree to the Terms and Conditions</a>
                                   </div>
                                  </div>
                               </div>
@@ -163,10 +163,7 @@
 
                 rules: {
                     full_name: "required",
-                    user_name: {
-                        required: true,
-                        minlength: 2
-                    },
+                    
                  gender: {
                         required: true,
                     },
