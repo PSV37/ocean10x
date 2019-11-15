@@ -22,7 +22,7 @@
 
 <nav class="side-menu hidden-sm hidden-xs">
   <ul>
-    <!-- <li> <a href="<?php echo base_url(); ?>" class=""> <i class="fa fa-home" aria-hidden="true"></i>Home </a> </li> -->
+    <li> <a href="<?php echo base_url(); ?>" class=""> <i class="fa fa-dashboard" aria-hidden="true"></i>My Dashboard </a> </li>
     <li class="title">RESUME</li>
     <li> <a href="<?php echo base_url(); ?>seeker/resume" class=""> <i class="fa fa-file-text" aria-hidden="true"></i> View Resume </a> </li>
     <li> <a href="<?php echo base_url() ?>job_seeker/seeker_info" class=""> <i class="fa fa-pencil" aria-hidden="true"></i> Post Resume </a> </li>

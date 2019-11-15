@@ -70,7 +70,7 @@
                       <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" alt="" class="img-circle"><strong>Welcome <?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></strong></a>
                       <?php endif; ?>
                       <ul class="dropdown-menu start-right">                                            
-                        <li><a href="<?php echo base_url(); ?>job_seeker/seeker_info"><span class="glyphicon glyphicon-user"></span>My Dashboard</a></li>
+                        <li><a href="<?php echo base_url(); ?>job_seeker/seeker_info"><span class="glyphicon glyphicon-user"></span>My Profile</a></li>
                         <!--<li><a href="<?php echo base_url(); ?>job_seeker/view_resume"><span class="glyphicon glyphicon-edit"></span> View Resume</a></li>-->
                         <li><a href="<?php echo base_url(); ?>job_seeker/change_password" class=""><span class="glyphicon glyphicon-lock"></span> Change Password</a></li>
                         <li><a href="#" onclick="logout();"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
