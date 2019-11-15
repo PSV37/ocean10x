@@ -23,7 +23,7 @@
                           
                               <div class="col-md-12">
                                 <!-- <label for="avatarInput">Upload Resume</label> -->
-                              <textarea name="profile_summary" id="profile_summary" class="form-control" placeholder="Profile Summary"><?php if(!empty($job_seeker_profile['about_me'])){echo $job_seeker_profile['about_me'];} ?></textarea>
+                              <textarea name="profile_summary" id="profile_summary" class="form-control" placeholder="Profile Summary" rows="5"><?php if(!empty($job_seeker_profile['about_me'])){echo $job_seeker_profile['about_me'];} ?></textarea>
                               </div>
 
                               <div class="panel-body"></div>
