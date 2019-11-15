@@ -219,8 +219,6 @@ class Job_seeker extends MY_Seeker_Controller
         $where_ress = "js_education.js_education_id='$edit_edu_id'";
         $data['edit_edu_res'] = $this->Master_model->get_master_row('js_education', $select=false, $where_ress, $join = FALSE);
                // echo $this->db->last_query(); die;
-
-
         $this->load->view('fontend/jobseeker/education_form',$data);
     }
     
@@ -826,6 +824,15 @@ exit;*/
                 $this->load->view('fontend/jobseeker/upload_resume.php', compact('job_seeker_resume'));
             }
 
+    }
+        
+    public function profile_summary()
+    {
+        $jobseeker_id     = $this->session->userdata('job_seeker_id');
+        // $job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id);
+        $job_seeker_resume = $this->Master_model->get_master_row('js_attached_resumes', $select =FALSE ,$where="job_seeker_id='$jobseeker_id'",$join = false); 
+        // echo $this->db->last_query();
+        $this->load->view('fontend/jobseeker/profile_summary.php', compact('job_seeker_resume'));
     }
         
 	function getstate(){
