@@ -64,27 +64,28 @@ h6{
 			           	 	
 		             	</div>
 					</div>
+					<div class="panel-body"></div>
 
-					<div class="row">
+					<div class="row summary" >
 		                <div class="col-md-12">
-		                	<div class="col-md-2"><i class="fa fa-user" aria-hidden="true"></i></div>
-		                	<div class="col-md-10">
+		                	<div class="col-md-1"><i class="fa fa-user" aria-hidden="true"></i></div>
+		                	<div class="col-md-11">
 				           	 	<span>Career Advice</span> <br>
 				           	 	<span>Participate in the career advice platform:<a href="#">On</a></span>
 				           	 	<p>Get career advice by conversing with other LinkedIn users who are leaders in their fields</p>
 				           	</div>
 		             	</div><br><hr>
 		             	<div class="col-md-12">
-		             		<div class="col-md-2"><i class="fa fa-briefcase" aria-hidden="true"></i></div>
-		             		<div class="col-md-10">
+		             		<div class="col-md-1"><i class="fa fa-briefcase" aria-hidden="true"></i></div>
+		             		<div class="col-md-11">
 			           	 		<span>Career Interests</span>
 			           	 		<span>Let recruiters know you’re open:<a href="#">Off</a></span>	
 			           	 		<p>Choose the types of opportunities you’d like to be connected with</p>
 			           	 	</div>
 		             	</div><br><hr>
 		             	<div class="col-md-12">
-		             		<div class="col-md-2"><i class="fa fa-money" aria-hidden="true"></i></div>
-		             		<div class="col-md-10">
+		             		<div class="col-md-1"><i class="fa fa-money" aria-hidden="true"></i></div>
+		             		<div class="col-md-11">
 			           	 		<span>Salary Insights</span>
 			           	 		<p>See how your salary compares to others in the community</p>
 			           	 	</div>
