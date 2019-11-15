@@ -829,12 +829,37 @@ exit;*/
     public function profile_summary()
     {
         $jobseeker_id     = $this->session->userdata('job_seeker_id');
-        // $job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id);
-        $job_seeker_resume = $this->Master_model->get_master_row('js_attached_resumes', $select =FALSE ,$where="job_seeker_id='$jobseeker_id'",$join = false); 
-        // echo $this->db->last_query();
-        $this->load->view('fontend/jobseeker/profile_summary.php', compact('job_seeker_resume'));
+       
+         if ($_POST) {
+            $jobseeker_id      = $this->session->userdata('job_seeker_id');
+            $profile_summary_id = $this->input->post('js_education_id');
+            $profile_data    = array(
+                'job_seeker_id'     => $jobseeker_id,
+                'about_me'          => addslashes($this->input->post('profile_summary')),
+            );
+            if (empty($profile_summary_id)) {
+                $profile_data['created_on'] = date('Y-m-d H:i:s');
+                $profile_data['created_by'] = $jobseeker_id;
+
+               $this->Master_model->master_insert($profile_data,'js_profile_summary');
+                redirect('job_seeker/seeker_info');
+            } else {
+                $profile_data['updated_on'] = date('Y-m-d H:i:s');
+                $profile_data['updated_by'] = $jobseeker_id;
+                $where_cans['id']=$profile_summary_id;
+                $this->Master_model->master_update($profile_data,'js_profile_summary',$where_cans);
+                redirect('job_seeker/seeker_info');
+            }
+        } else {
+            $jobseeker_id   = $this->session->userdata('job_seeker_id');
+            $job_seeker_profile = $this->Master_model->get_master_row('js_profile_summary', $select =FALSE ,$where="job_seeker_id='$jobseeker_id'",$join = false); 
+            // echo $this->db->last_query();
+            $this->load->view('fontend/jobseeker/profile_summary.php', compact('job_seeker_profile'));
+
+
+        }
     }
-        
+
 	function getstate(){
     	$country_id = $this->input->post('id');
     	$where['country_id'] = $country_id;

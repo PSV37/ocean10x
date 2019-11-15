@@ -18,41 +18,21 @@
                       <div class="col-md-12">
                         <div class="containe1r">
 
-                          <form class="avatar-form" action="<?php echo base_url('Job_seeker/save_attached_resume');?>" enctype="multipart/form-data" method="post">
-                            <input type="hidden" name="resume_id" value="<?php if(!empty($job_seeker_resume['id'])){echo $job_seeker_resume['id'];} ?>">
-                              <!-- Upload image and data -->
-                            <div class="col-md-6">
+                          <form class="avatar-form" action="<?php echo base_url('Job_seeker/profile_summary');?>" enctype="multipart/form-data" method="post">
+                            <input type="hidden" name="resume_id" value="<?php if(!empty($job_seeker_profile['id'])){echo $job_seeker_profile['id'];} ?>">
+                          
                               <div class="col-md-12">
-                                <label for="avatarInput">Current Resume</label><br><br>
-                                <span><a href="<?php echo  base_url(); ?>upload/Resumes/<?php if(!empty($job_seeker_resume['resume'])){echo $job_seeker_resume['resume'];} ?>" title='Download Your Attached Resume' download><?php if(!empty($job_seeker_resume['resume'])){echo $job_seeker_resume['resume'];} ?></a></span>
-                              </div>
-                              <div class="panel-body"></div>
-                              <?php if(!empty($job_seeker_resume['id']) ){?>
-                              <p style="text-align: left !important;color: #999;">Last Updated Was: <?php
-                                if(!empty($job_seeker_resume['updated_on']) && date('Y-m-d',strtotime($job_seeker_resume['updated_on'])!='0000-00-00')){
-                                  echo date('d M Y', strtotime($job_seeker_resume['updated_on']));
-                                }else{
-                                  echo date('d M Y', strtotime($job_seeker_resume['created_on']));
-                                } 
-                              ?></p><br>
-                            <?php }else{echo "<p style='text-align: left !important;color: #999;'>Please upload your resume</p>";} ?>
-                            </div>
-                            <div class="col-md-6">
-                              <!-- Upload image and data -->
-                              <div class="col-md-12">
-                                <label for="avatarInput">Upload Resume</label>
-                                <input type="file" class="form-control" id="txt_resume" name="txt_resume">
-
-                                <input type="hidden" class="form-control" id="" name="oldresume" value="<?php if(!empty($job_seeker_resume['resume'])){echo $job_seeker_resume['resume'];} ?>">
+                                <!-- <label for="avatarInput">Upload Resume</label> -->
+                              <textarea name="profile_summary" id="profile_summary" class="form-control" placeholder="Profile Summary"><?php if(!empty($job_seeker_profile['about_me'])){echo $job_seeker_profile['about_me'];} ?></textarea>
                               </div>
 
                               <div class="panel-body"></div>
-                              <p>Supported Formats: doc, docx, rtf, pdf, upto 2 MB</p><br>
+                              <p>Write a meaningful summary of more than 50 characters.</p><br>
                               <div class="col-md-12">
-                                <button type="submit" class="btn btn-success btn-block avatar-save2">Upload Resume</button>
+                                <button type="submit" class="btn btn-success btn-block avatar-save2">Save</button>
 
                               </div>
-                            </div>
+                           
                           </form>
 
                         </div>
