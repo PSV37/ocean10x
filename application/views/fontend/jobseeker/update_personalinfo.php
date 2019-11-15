@@ -22,7 +22,7 @@
                 <h5>My Profile</h5>
 								<div id="vsphoto" class="tab-pane fade in">
                   <?php echo $this->session->flashdata('msg'); ?>
-
+<?php  $job_seeker=$this->session->userdata('job_seeker_id'); ?>   
             <div class="row">
               <div class="col-md-4">
                 <div class="containe1r" id="crop-avatar">
@@ -110,7 +110,7 @@
             <tbody>
 							<tr>
                 <td>Name:</td>
-                <td><?php echo $name->full_name; ?></td>
+                <td><?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></td>
               </tr> 
 								  
 							<tr>
