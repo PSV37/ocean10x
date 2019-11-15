@@ -47,19 +47,34 @@ h6{
                 <div class="containe1r">
 
                 <div class="col-md-12">
-            	 	<div class="col-md-4 summary">
+            	 	<div class="col-md-3 summary">
             	  		<h6>100</h6>
             	  		<p>Who viewed your profile</p>
             	  	</div>
-            	  	<div class="col-md-4 summary">
+            	  	<div class="col-md-3 summary">
             	  		<h6>100</h6>
             	  		<p>Who viewed your profile</p>
             	  	</div>
-	            	<div class="col-md-4 summary">
+	            	<div class="col-md-3 summary">
+	            	  	<h6>100</h6>
+            	  		<p>Who viewed your profile</p>
+	           	 	</div>
+	           	 	<div class="col-md-3 summary">
 	            	  	<h6>100</h6>
             	  		<p>Who viewed your profile</p>
 	           	 	</div>
              	</div>
+             	<div class="row">
+				    <div class="col summary">
+				      1 of 3
+				    </div>
+				    <div class="col summary">
+				      2 of 3
+				    </div>
+				    <div class="col summary">
+				      3 of 3
+				    </div>
+				</div>
 
 		                  
                 </div>
