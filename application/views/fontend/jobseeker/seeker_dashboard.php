@@ -5,7 +5,6 @@
 .summary{
 	border: 1px solid;
     border-radius: 6px;
-    height: 100px;
     background: #7bc6ec7d;
    	margin: 1px;
     padding: 15px;
@@ -13,6 +12,7 @@
 h6{
 	text-align: center;
     margin: 15px;
+    font-size: 25px;
 }
 	    
 </style>       
