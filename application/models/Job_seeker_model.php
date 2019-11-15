@@ -21,7 +21,7 @@ class Job_seeker_model extends MY_Model
         $this->db->select("full_name");
         $this->db->where($this->_primary_key, $id);
         $result = $this->db->get($this->_table_name)->result();
-        return $result[0]->user_name;
+        return $result[0]->full_name;
     }
     public function get_jobseeker_fullname($id)
     {
