@@ -250,7 +250,7 @@
                   <div class="formrow">  
                     <label class="control-label ">Specialization <span class="required">*</span></label>
                     <select name="job_edu_special" id="job_edu_special" class="form-control"  data-style="btn-default" data-live-search="true" required="">
-                     <option value="">Select Education </option>
+                     <option value="">Select Specialization </option>
                    
                     </select> 
                   </div>
