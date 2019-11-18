@@ -60,9 +60,9 @@
                   </div>
                 </div>
               </div>
-			  <hr class="invis">
+
               <div class="row">
-			  <div class="col-md-4 col-sm-12">
+			          <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label mandatory"><b>Job Level</b> <span class="required">*</span></label>
                     <select name="job_level" required class="form-control" data-style="btn-default" data-live-search="true">
@@ -115,7 +115,6 @@
               </div>
               <div class="panel-body"></div>
 			  
-              <hr class="invis">
               <div class="row">
 								<!-- 	<div class="col-md-4 col-sm-12">
 									<div class="formrow">
@@ -161,26 +160,24 @@
                                             ?>" class="form-control" >
                     </div>
                   </div>
-
-                  <div class="formrow">
-                    <label class="control-label"><b>Job Deadline</b> <span class="required">*</span></label>
-                    
-                    <div class="row">
-                    <div class="col-md-12 col-sm-12">
-                       <input type="text" name="job_deadline" class="form-control datepicker" id="job_deadline_day" required value="<?php echo date('d-m-Y',strtotime($job_info->job_deadline))?>">
+                  <div class="col-md-4 col-sm-12">
+                    <div class="formrow">
+                      <label class="control-label"><b>Job Deadline</b> <span class="required">*</span></label>
+                      
+                      <div class="row">
+                      <div class="col-md-12 col-sm-12">
+                         <input type="text" name="job_deadline" class="form-control datepicker" id="job_deadline_day" required value="<?php echo date('d-m-Y',strtotime($job_info->job_deadline))?>">
+                      </div>
+                      
                     </div>
-                    
                   </div>
-                </div>
+                 </div>
                 
               </div>
               <!-- end row -->
               
-              <hr class="invis">
               <div class="row">
 			           
-                <!-- <div class="col-md-4 col-sm-12"> -->
-              
                  <div class="col-md-4">
                   <div class="formrow">
                     <label class="control-label "><b>Compensation Range</b> <span class="required">*</span></label>
@@ -270,7 +267,6 @@
               
               <!-- end row -->
               
-              <hr class="invis">
               <div class="row">
                
                 <div class="col-md-4 col-sm-12">
@@ -315,7 +311,6 @@
 
               </div>
               <!-- end row -->
-              <hr class="invis">
               <div class="row">
                 <div class="col-md-12 col-sm-12">
                   <div class="formrow">
@@ -324,7 +319,6 @@
                   </div>
                 </div>
               </div>
-			  <hr class="invis">
               <div class="row">
                 <div class="col-md-12 col-sm-12">	
                   <div class="formrow">
@@ -334,7 +328,6 @@
                 </div>
               </div>
 			  
-			  <hr class="invis">
               <div class="row">
                 <div class="col-md-12 col-sm-12">
                   <div class="formrow">
