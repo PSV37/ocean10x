@@ -37,7 +37,7 @@
               <div class="row">
                 <div class="col-md-6 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label ">Job Title<span class="required">*</span> </label>
+                    <label class="control-label ">Job Title / Designation<span class="required">*</span> </label>
                     <input type="text" name="job_title" value="<?php 
                                             	 if(!empty($job_info->job_title)){
                                             	 	echo $job_info->job_title;
@@ -48,9 +48,10 @@
                 </div>
                 <div class="col-md-6 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label ">Job Industry<span class="required">*</span> </label>
+                    <!-- donain is nothing but industry -->
+                    <label class="control-label ">Expected Domain<span class="required">*</span> </label>
                     <select name="job_category" id="job_category" required class="form-control industry" data-style="btn-default" data-live-search="true">
-                      <option value="">Select Industry</option>
+                      <option value="">Select Domain</option>
                         <?php if(!empty($job_info->job_category)) {
                             echo $this->job_category_model->selected($job_info->job_category);
                           } else {
@@ -82,9 +83,9 @@
 				
 				        <div class="col-md-4 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label ">Job Nature<span class="required">*</span> </label>
+                    <label class="control-label ">Engagement Model<span class="required">*</span> </label>
                     <select name="job_nature" class="form-control" data-style="btn-default" data-live-search="true">
-                      <option value="">Select Job Nature</option>
+                      <option value="">Select Engagement Model</option>
                       <?php if(!empty($job_info->job_nature)) {
                           echo $this->job_nature_model->selected($job_info->job_nature);
                         } else {
@@ -173,23 +174,24 @@
 
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
+                    <label class="control-label ">Compensation Range<span class="required">*</span></label>
+                    <input type="number" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1" autocomplete="off">
+                  </div>
+                </div>
+
+            <!--     <div class="col-md-4 col-sm-12">
+                  <div class="formrow">
                     <label class="control-label ">Job Types<span class="required">*</span></label>
                     <select name="job_types" required class="form-control" data-style="btn-default" data-live-search="true">
                       <?php echo $this->job_types_model->selected_types(); ?>
                     </select>
                   </div>
-                </div>
+                </div> -->
               </div>
               <!-- end row -->
 
-              <div class="row">
-                <div class="col-md-4 col-sm-12">
-                  <div class="formrow">
-                    <label class="control-label ">Salary Offered<span class="required">*</span></label>
-                    <input type="number" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1" autocomplete="off">
-                  </div>
-                </div>
-
+              <!-- <div class="row"> -->
+<!-- 
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Preferred Age(From)</label>
@@ -201,9 +203,9 @@
                     <label class="control-label ">Preferred Age(To)</label>
                		  <input class="form-control" required name="preferred_age_to" value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>" type="number" autocomplete="off">
                   </div>
-        				</div>
+        				</div> -->
                
-              </div>
+              <!-- </div> -->
               <!-- end row -->
               
               <!-- <hr class="invis"> -->
@@ -212,7 +214,7 @@
               <div class="row">
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label ">Number of Vacancy </label>
+                    <label class="control-label ">Number of Positions<span class="required">*</span> </label>
                     <input class="form-control" min="1" type="number"  name="no_jobs" value="<?php 
                            if(!empty($job_info->no_jobs)){
                               echo $job_info->no_jobs;
@@ -222,7 +224,7 @@
                 </div>
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label ">Years of Experience </label>
+                    <label class="control-label ">Work Experience </label>
                     <input class="form-control" type="text"  name="experience" value="<?php 
                       if(!empty($job_info->experience)){
                           echo $job_info->experience;
@@ -233,7 +235,7 @@
              
                 <div class="col-md-4 col-sm-12"> 
                   <div class="formrow">  
-                    <label class="control-label">Required Education Level  <span class="required">*</span></label>
+                    <label class="control-label">Education Level<span class="required">*</span></label>
 
                     <select name="job_edu" id="job_edu" class="form-control"  data-style="btn-default" data-live-search="true" onchange="getEducationSpecial(this.value)" required="">
                      <option value="">Select Level </option>
@@ -246,7 +248,7 @@
 
                 <div class="col-md-4 col-sm-12"> 
                   <div class="formrow">  
-                    <label class="control-label ">Required Education <span class="required">*</span></label>
+                    <label class="control-label ">Specialization <span class="required">*</span></label>
                     <select name="job_edu_special" id="job_edu_special" class="form-control"  data-style="btn-default" data-live-search="true" required="">
                      <option value="">Select Education </option>
                    
@@ -256,7 +258,7 @@
 
                 <div class="col-md-4 col-sm-12"> 
                   <div class="formrow">  
-                    <label class="control-label ">Is Test Required <span class="required">*</span></label>
+                    <label class="control-label ">Ocean Test Required <span class="required">*</span></label>
                     <select name="job_test_requirment" id="job_test_requirment" class="form-control"  data-style="btn-default" data-live-search="true" required="">
                      <option value="">Select One </option>
                      <option value="Yes"<?php if($job_info->is_test_required=="Yes"){ echo "selected"; }?>>Yes </option>
@@ -271,19 +273,19 @@
               <div class="row">
                 <div class="col-md-12 col-sm-12">
                   <div class="formrow">
-                    <label>Job Description<span class="required">*</span></label>
+                    <label>Job Description (JD)<span class="required">*</span></label>
                     <textarea name="job_desc" required class="form-control ckeditor" required><?php if(!empty($job_info)) echo $job_info->job_desc; ?></textarea>
                   </div>
                 </div>
                 <div class="col-md-12 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label mandatory">Other Skills Description</label>
+                    <label class="control-label mandatory">Other Expected Skills</label>
                     <textarea name="education" class="form-control ckeditor" ><?php if(!empty($job_info)) echo $job_info->education; ?></textarea>
                   </div>
                 </div>
                 <div class="col-md-12 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label mandatory">Benefits </label>
+                    <label class="control-label mandatory">Company Benefits Offered</label>
                     <textarea name="benefits" class="form-control ckeditor" ><?php if(!empty($job_info)) echo $job_info->benefits; ?></textarea>
                   </div>
                 </div>
