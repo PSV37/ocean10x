@@ -35,7 +35,7 @@
             <li> <a href="<?php echo base_url() ?>employer/active-job"><i class="fa fa-check-square-o" aria-hidden="true"></i> Posted Job </a> </li>
             <li> <a href="<?php echo base_url() ?>employer/pending-job" class=""><i class="fa fa-clock-o" aria-hidden="true"></i> Pending Job </a> </li>
             <li> <a href="<?php echo base_url() ?>employer/change-password" class=""><i class="fa fa-lock" aria-hidden="true"></i> Change Password </a> </li>    
-            <li> <a href="<?php echo base_url() ?>employer/logout" class=""> <i class="fa fa-sign-out" aria-hidden="true"></i> Sign Out </a> </li>
+            <!-- <li> <a href="<?php echo base_url() ?>employer/logout" class=""> <i class="fa fa-sign-out" aria-hidden="true"></i> Sign Out </a> </li> -->
           </ul>
           
         </div>
