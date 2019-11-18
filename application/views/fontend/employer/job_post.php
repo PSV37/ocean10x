@@ -312,11 +312,9 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 </script>
 <?php $this->load->view("fontend/layout/footer.php"); ?>
 
-
-
-
-
 <script>
+
+
 
     $('#tokenfield').tokenfield({
       autocomplete: {
@@ -388,7 +386,11 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 
   function getEducationSpecial(id){
      
-    if(id){
+    if(id==5 || id==6){
+      alert('10th');
+
+    }
+      else{
             $.ajax({
                 type:'POST',
                 url:'<?php echo base_url();?>Employer/getEducation_specialization',
