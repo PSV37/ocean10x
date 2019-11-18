@@ -176,7 +176,7 @@
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Compensation Range<span class="required">*</span></label>
-                    <input type="text" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1" autocomplete="off">
+                    <input type="text" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1" autocomplete="off" onkeypress="javascript:return isNumber(event)">
                   </div>
                 </div>
 
@@ -337,7 +337,13 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 
       });
   });
+function isNumber(evt) {
+      var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+        if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+            return false;
 
+        return true;
+    }    
 	// function getStates(id){
 	// 	if(id){
  //            $.ajax({
