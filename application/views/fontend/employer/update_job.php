@@ -127,7 +127,7 @@
 										<option value="<?php echo $key['country_id']; ?>"<?php if($job_info->job_location==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
 										<?php } ?>
 									  </select>
-                                        </div>
+                  </div>
 									</div>
 										<div class="col-md-4 col-sm-12">
 										<div class="formrow">

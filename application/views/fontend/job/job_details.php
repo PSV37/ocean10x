@@ -74,10 +74,10 @@ $jobseeker_id = $this->session->userdata('job_seeker_id');
               <div class="col-md-6">
                 <ul class="jobinfolist">
                   <li>
-                    <h4>Number of Vacancy:</h4>
+                    <h4>Number of Position:</h4>
                     <strong><?php echo $singlejob->no_jobs; ?></strong></li>
                   <li>
-                    <h4>Industry:</h4>
+                    <h4>Expected Domain:</h4>
                     <strong><?php echo $singlejob->job_category_name; ?></strong></li>
                   <li>
                     <h4>Job Level:</h4>
@@ -87,35 +87,35 @@ $jobseeker_id = $this->session->userdata('job_seeker_id');
                     <h4>Working Hours:</h4>
                     <strong><?php echo $singlejob->working_hours; ?></strong></li>
                   <li>
-                    <h4>Years of Experience </h4>
+                    <h4>Work Experience </h4>
                     <strong> <?php echo $singlejob->experience;?></strong></li>
                 </ul>
               </div>
               <div class="col-md-6">
                 <ul class="jobinfolist">
                   <li>
-                    <h4>Salary Offered:</h4>
+                    <h4>Compensation Range:</h4>
                     <strong>Rs.<?php echo $singlejob->salary_range; ?></strong></li>
                   <li>
-                    <h4>Job Location:</h4>
+                    <h4>Job Locations:</h4>
                     <strong><?php echo $singlejob->city_name. '-'.$singlejob->state_name.', '.$singlejob->country_name; ?></strong></li>
-                  <li>
+               <!--    <li>
                     <h4>Preferred Age:</h4> 
                     <strong><?php echo $singlejob->preferred_age; ?> (years)</strong></li>
-                  <li>
+                  <li> -->
                     <h4>Required Education:</h4>
                     <strong> <?php echo $singlejob->education_level_name.'('.$singlejob->education_specialization.')'; ?></strong></li>
                   <li>
-                    <h4>Vacancy Nature:</h4>
+                    <h4>Engagement Model:</h4>
                     <strong> <?php echo $this->job_nature_model->get_job_nature_by_id($singlejob->job_nature);?> </strong></li>
                 </ul>
               </div>
             </div>
-            <h3>Description </h3>
+            <h3>Job Description (JD)</h3>
             <pre><?php echo $singlejob->job_desc; ?></pre>
-            <h3>Work/Educational Requirements</h3>
+            <h3>Other Expected Skills</h3>
             <pre><?php echo $singlejob->education; ?></pre>
-            <h3>Benefits </h3>
+            <h3>Company Benefits Offered </h3>
             <pre><?php echo $singlejob->benefits; ?></pre>
             <hr>
             <div class="jobButtons">
