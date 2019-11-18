@@ -181,7 +181,7 @@
                  <div class="col-md-4">
                   <div class="formrow">
                     <label class="control-label "><b>Compensation Range</b> <span class="required">*</span></label>
-                    <input type="number" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control"  value="<?php 
+                    <input type="text" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control"  value="<?php 
                                                  if(!empty($job_info->salary_range)){
                                                     echo $job_info->salary_range;
                                                  }

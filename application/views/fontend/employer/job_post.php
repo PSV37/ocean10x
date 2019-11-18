@@ -176,7 +176,7 @@
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Compensation Range<span class="required">*</span></label>
-                    <input type="number" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1" autocomplete="off">
+                    <input type="text" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1" autocomplete="off">
                   </div>
                 </div>
 
