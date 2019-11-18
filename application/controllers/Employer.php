@@ -129,11 +129,11 @@ class Employer extends MY_Employer_Controller
 
                         'job_level'          => $this->input->post('job_level'),
                         'salary_range'       => $this->input->post('salary_range'),
-                        'job_types'          => $this->input->post('job_types'),
+                        // 'job_types'          => $this->input->post('job_types'),
                         "job_deadline"       => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('job_deadline')))),
 
-                        'preferred_age'      => $this->input->post('preferred_age_from'),
-						'preferred_age_to'   => $this->input->post('preferred_age_to'),
+      //                   'preferred_age'      => $this->input->post('preferred_age_from'),
+						// 'preferred_age_to'   => $this->input->post('preferred_age_to'),
                         'working_hours'      => $this->input->post('working_hours'),
                         'is_test_required'      => $this->input->post('job_test_requirment'),
                         
