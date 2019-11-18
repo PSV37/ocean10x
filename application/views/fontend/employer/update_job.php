@@ -284,7 +284,7 @@
                   </div>
                 </div>
 
-                 <div class="col-md-4 col-sm-12"> 
+                 <div class="col-md-4 col-sm-12" id="spectial"> 
                   <div class="formrow">  
                     <label class="control-label "><b>Specialization</b> <span class="required">*</span></label>
                     <select name="job_edu_special" id="job_edu_special" class="form-control"  data-style="btn-default" data-live-search="true" required="">
@@ -431,7 +431,11 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 
   function getEducationSpecial(id){
      
-    if(id){
+     if(id==5 || id==6){
+     $('#spectial').hide();
+    }
+    else{
+      $('#spectial').show();
             $.ajax({
                 type:'POST',
                 url:'<?php echo base_url();?>Employer/getEducation_specialization',
@@ -488,7 +492,11 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 
  function getEducationSpecial_load(){
     var id = $('#job_edu').val();
-      if(id){
+    if(id==5 || id==6){
+     $('#spectial').hide();
+    }
+    else{
+      $('#spectial').show();
             $.ajax({
                 type:'POST',
                 url:'<?php echo base_url();?>Employer/getEducation_specialization',
