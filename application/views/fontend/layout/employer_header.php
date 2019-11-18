@@ -90,7 +90,7 @@
                             <li><a href="<?php echo base_url(); ?>employer/active-job"><span class="glyphicon glyphicon-star"></span> Active Job</a></li>
                             <li><a href="<?php echo base_url(); ?>employer/pending-job"><span class="glyphicon glyphicon-star"></span>Pending Job</a></li>
                             <li><a href="<?php echo base_url(); ?>employer/change-password"><span class="glyphicon glyphicon-briefcase"></span> Change Password</a></li>
-                            <li><a href="<?php echo base_url(); ?>employer/logout"><span class="glyphicon glyphicon-lock"></span> Logout</a></li>
+                            <li><a href="#" onclick="logout();"><span class="glyphicon glyphicon-lock"></span> Logout</a></li>
                         </ul>
                     </li>
                     
@@ -160,3 +160,14 @@
   <!-- /.modal-dialog --> 
   
 </div>
+
+<script>
+  function logout()
+  {
+    if(window.confirm('Are you sure want to logout?'))
+     {
+        window.location.href="<?php echo base_url(); ?>employer/logout";  
+     }
+    
+  }
+</script>

@@ -323,7 +323,6 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
       },
 
       showAutocompleteOnFocus: true,
-    
 
     });
     // to avoid duplications
