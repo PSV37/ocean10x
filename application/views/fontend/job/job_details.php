@@ -98,7 +98,7 @@ $jobseeker_id = $this->session->userdata('job_seeker_id');
                     <strong>Rs.<?php echo $singlejob->salary_range; ?></strong></li>
                   <li>
                     <h4>Job Locations:</h4>
-                    <strong><?php echo $singlejob->city_name. '-'.$singlejob->state_name.', '.$singlejob->country_name; ?></strong></li>
+                    <strong><?php echo $singlejob->city_id; ?></strong></li>
                   <!-- <li>
                     <h4>Preferred Age:</h4> 
                     <strong><?php echo $singlejob->preferred_age; ?> (years)</strong></li> -->

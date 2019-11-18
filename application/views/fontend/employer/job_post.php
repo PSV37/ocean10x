@@ -147,11 +147,7 @@
                     <!-- <div class="formrow"> -->
                       <label class="control-label ">Job Locations<span class="required">*</span> </label>
                        <input type="text" name="city_id" class="form-control" id="tokenfield" placeholder="Enter Location"
-                        value="<?php
-                        if(!empty($job_info->working_hours)){
-                          echo $job_info->working_hours;
-                         }
-                     ?>">
+                        value="">
                     <!-- </div> -->
                   </div>
                 </div><!-- end row -->
