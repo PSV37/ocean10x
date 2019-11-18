@@ -140,95 +140,47 @@
 										</select>
                                         </div>
 										</div> -->
-										 <div class="col-md-4 col-sm-12">
-										 <div class="formrow">
-										 <label class="control-label"><b>Job City</b> <span class="required">*</span> </label>
-										 <!-- <select  name="city_id" id="city_id" class="form-control">
-										 <option value="">Select State First</option>
-										 <?php foreach($city as $keyss){?>
-										 <option value="<?php echo $keyss['id']; ?>"<?php if($job_info->city_id==$keyss['id']){ echo "selected"; }?>><?php echo $keyss['city_name']; ?></option>
-										 <?php } ?>
-										</select> -->
-                     <input type="text" name="city_id" class="form-control" id="tokenfield" placeholder="Enter Location"
-                        value="<?php 
-                         if(!empty($job_info->city_id)){
-                          echo $job_info->city_id;
-                         }
-                      ?>">
-                                        </div>
+										<div class="col-md-4 col-sm-12">
+										  <div class="formrow">
+										    <label class="control-label"><b>Job City</b> <span class="required">*</span> </label>
+										
+                          <input type="text" name="city_id" class="form-control" id="tokenfield" placeholder="Enter Location" value="<?php 
+                             if(!empty($job_info->city_id)){
+                              echo $job_info->city_id;
+                             }
+                          ?>">
+                      </div>
 										</div>
+                    <div class="col-md-4 col-sm-12">
+                      <div class="formrow">
+                        <label class="control-label"></b>Working Hours</b> <span class="required">*</span></label>
+                        <input type="text"  name="working_hours" value="<?php 
+                                                 if(!empty($job_info->working_hours)){
+                                                    echo $job_info->working_hours;
+                                                 }
+                                            ?>" class="form-control" >
+                    </div>
+                  </div>
+
+                  <div class="formrow">
+                    <label class="control-label"><b>Job Deadline</b> <span class="required">*</span></label>
+                    
+                    <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                       <input type="text" name="job_deadline" class="form-control datepicker" id="job_deadline_day" required value="<?php echo date('d-m-Y',strtotime($job_info->job_deadline))?>">
+                    </div>
+                    
+                  </div>
+                </div>
                 
               </div>
               <!-- end row -->
               
               <hr class="invis">
               <div class="row">
-			  <div class="col-md-4 col-sm-12">
-                  <div class="formrow">
-                    <label class="control-label"></b>Working Hours</b> <span class="required">*</span></label>
-                    <input type="text"  name="working_hours" value="<?php 
-                                                 if(!empty($job_info->working_hours)){
-                                                    echo $job_info->working_hours;
-                                                 }
-                                            ?>" class="form-control" >
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                  <div class="formrow">
-                    <label class="control-label"><b>Job Deadline</b> <span class="required">*</span></label>
-                    
-                    <div class="row">
-                    <div class="col-md-12 col-sm-12">
-					<input type="text" name="job_deadline" class="form-control datepicker" id="job_deadline_day" required value="<?php echo date('d-m-Y',strtotime($job_info->job_deadline))?>">
-                   <!-- <select name="job_deadline_day" class="form-control" id="job_deadline_day" required>
-                      <option value="" selected>Day</option>
-                      <?php
-					  
-										for($i=1;$i<=31;$i++){
-											$selected='';
-											if($job_info->job_deadline==$i){
-												$selected='selected';
-											}
-												
-											echo '<option value="'.$i.'" '.$selected.'>'.$i.'</option>';	
-										}
-									?>
-                    </select>-->
-                    </div>
-                    <!--<div class="col-md-4">
-                    <select name="job_deadline_month" class="form-control" id="job_deadline_month" required>
-                      <option value="" selected>Month</option>
-                      <?php
-					   
-										for($i=1;$i<=12;$i++){
-											$selected='';
-											if($job_info->job_deadline_month==$i){
-												$selected='selected';
-											}
-											echo '<option value="'.$i.'" '.$selected.'>'.$i.'</option>';	
-										}
-									?>
-                    </select>
-                    </div>
-                    <div class="col-md-4">
-                    <select name="job_deadline_year" class="form-control" id="job_deadline_year" required>
-                      <option value="" selected>Year</option>
-                      <?php
-					   
-										for($i=date('Y')+1;$i>date('Y')-1;$i--){
-											$selected='';
-											if($job_info->job_deadline_year==$i){
-												$selected='selected';
-											}
-											echo '<option value="'.$i.'" '.$selected.'>'.$i.'</option>';	
-										}
-									?>
-                    </select>
-                    </div>-->
-                    </div>
-                    
-                  </div>
-                </div>
+			           
+                <!-- <div class="col-md-4 col-sm-12"> -->
+              
                  <div class="col-md-4">
                   <div class="formrow">
                     <label class="control-label "><b>Compensation Range</b> <span class="required">*</span></label>
@@ -237,6 +189,26 @@
                                                     echo $job_info->salary_range;
                                                  }
                                             ?>">
+                  </div>
+                </div>
+                 <div class="col-md-4 col-sm-12">
+                  <div class="formrow">
+                    <label class="control-label "><b>Number of Positions</b> </label>
+                    <input class="form-control"  name="no_jobs" value="<?php 
+                                                 if(!empty($job_info->no_jobs)){
+                                                    echo $job_info->no_jobs;
+                                                 }
+                                            ?>" type="number" min="1"/>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                  <div class="formrow">
+                    <label class="control-label "><b>Work Experience</b></label>
+                    <input class="form-control"  name="experience" value="<?php 
+                                                 if(!empty($job_info->experience)){
+                                                    echo $job_info->experience;
+                                                 }
+                                            ?>"  type="number" min="1"/>
                   </div>
                 </div>
           <!--       <div class="col-md-4 col-sm-12">
@@ -249,7 +221,7 @@
                 </div> -->
               </div>
               <!-- end row -->
-              </hr>
+              
               <!-- <hr class="invis"> -->
               <!-- <div class="row"> -->
 			         
@@ -300,26 +272,7 @@
               
               <hr class="invis">
               <div class="row">
-                <div class="col-md-4 col-sm-12">
-                  <div class="formrow">
-                    <label class="control-label "><b>Number of Positions</b> </label>
-                    <input class="form-control"  name="no_jobs" value="<?php 
-                                                 if(!empty($job_info->no_jobs)){
-                                                    echo $job_info->no_jobs;
-                                                 }
-                                            ?>" type="number" min="1"/>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                  <div class="formrow">
-                    <label class="control-label "><b>Work Experience</b></label>
-                    <input class="form-control"  name="experience" value="<?php 
-                                                 if(!empty($job_info->experience)){
-                                                    echo $job_info->experience;
-                                                 }
-                                            ?>"  type="number" min="1"/>
-                  </div>
-                </div>
+               
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label "><b>Education Level</b> <span class="required">*</span></label>
@@ -334,23 +287,21 @@
                     </select>
                   </div>
                 </div>
-              </div>
-              <hr class="invis">
-      			  <div class="row">
-        			  <div class="col-md-4 col-sm-12"> 
+
+                 <div class="col-md-4 col-sm-12"> 
                   <div class="formrow">  
                     <label class="control-label "><b>Specialization</b> <span class="required">*</span></label>
                     <select name="job_edu_special" id="job_edu_special" class="form-control"  data-style="btn-default" data-live-search="true" required="">
                      <option value="">Select Specialization </option>
-            					<?php
+                      <?php
                         foreach($education_specialization as $spec_row){
-            					?>
-            			      <option value="<?php echo $spec_row['id']; ?>"<?php if($job_info->edu_specialization==$spec_row['id']){ echo "selected"; }?>><?php echo $spec_row['education_specialization']; ?></option>
-										 <?php } ?>
-		
+                      ?>
+                        <option value="<?php echo $spec_row['id']; ?>"<?php if($job_info->edu_specialization==$spec_row['id']){ echo "selected"; }?>><?php echo $spec_row['education_specialization']; ?></option>
+                     <?php } ?>
+    
                     </select> 
                   </div>
-        				</div>
+                </div>
                  <div class="col-md-4 col-sm-12"> 
                   <div class="formrow">  
                     <label class="control-label ">Ocean Test Required <span class="required">*</span></label>
@@ -361,9 +312,8 @@
                     </select> 
                   </div>
                 </div>
+
               </div>
-              </hr>
-              
               <!-- end row -->
               <hr class="invis">
               <div class="row">
