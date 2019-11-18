@@ -144,37 +144,60 @@
                   </div> -->
                     
                   <div class="col-md-4 col-sm-4">
-                    <!-- <div class="formrow"> -->
+                    <div class="formrow">
                       <label class="control-label ">Job Locations<span class="required">*</span> </label>
                        <input type="text" name="city_id" class="form-control" id="tokenfield" placeholder="Enter Location"
                         value="">
-                    <!-- </div> -->
+                    </div>
                   </div>
+
+                  <div class="col-md-4 col-sm-12">
+                    <div class="formrow">
+                      <label class="control-label ">Working Hours<span class="required">*</span></label>
+                      <input type="number"  name="working_hours" value="<?php 
+                           if(!empty($job_info->working_hours)){
+                            echo $job_info->working_hours;
+                           }
+                        ?>" class="form-control" autocomplete="off">
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-12">
+                    <div class="formrow">
+                      <label class="control-label ">Job Deadline<span class="required">*</span></label>
+                        <input type="text" name="job_deadline" class="form-control datepicker" id="job_deadline_day" required value="" autocomplete="off">
+                    </div>
+                  </div>
+
                 </div><!-- end row -->
               <!-- <hr class="invis"> -->
 
               <div class="row">
+               
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label ">Working Hours<span class="required">*</span></label>
-                    <input type="number"  name="working_hours" value="<?php 
-                         if(!empty($job_info->working_hours)){
-                          echo $job_info->working_hours;
-                         }
-                      ?>" class="form-control" autocomplete="off">
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                  <div class="formrow">
-                    <label class="control-label ">Job Deadline<span class="required">*</span></label>
-                      <input type="text" name="job_deadline" class="form-control datepicker" id="job_deadline_day" required value="" autocomplete="off">
+                    <label class="control-label ">Compensation Range<span class="required">*</span></label>
+                    <input type="number" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1" autocomplete="off">
                   </div>
                 </div>
 
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label ">Compensation Range<span class="required">*</span></label>
-                    <input type="number" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1" autocomplete="off">
+                    <label class="control-label ">Number of Positions<span class="required">*</span> </label>
+                    <input class="form-control" min="1" type="number"  name="no_jobs" value="<?php 
+                           if(!empty($job_info->no_jobs)){
+                              echo $job_info->no_jobs;
+                           }
+                      ?>" autocomplete="off"/>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                  <div class="formrow">
+                    <label class="control-label ">Work Experience </label>
+                    <input class="form-control" type="text"  name="experience" value="<?php 
+                      if(!empty($job_info->experience)){
+                          echo $job_info->experience;
+                       }
+                    ?>" autocomplete="off"/>
                   </div>
                 </div>
 
@@ -211,27 +234,7 @@
 
               <!-- <hr class="invis"> -->
               <div class="row">
-                <div class="col-md-4 col-sm-12">
-                  <div class="formrow">
-                    <label class="control-label ">Number of Positions<span class="required">*</span> </label>
-                    <input class="form-control" min="1" type="number"  name="no_jobs" value="<?php 
-                           if(!empty($job_info->no_jobs)){
-                              echo $job_info->no_jobs;
-                           }
-                      ?>" autocomplete="off"/>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                  <div class="formrow">
-                    <label class="control-label ">Work Experience </label>
-                    <input class="form-control" type="text"  name="experience" value="<?php 
-                      if(!empty($job_info->experience)){
-                          echo $job_info->experience;
-                       }
-                    ?>" autocomplete="off"/>
-                  </div>
-                </div>
-             
+               
                 <div class="col-md-4 col-sm-12"> 
                   <div class="formrow">  
                     <label class="control-label">Education Level<span class="required">*</span></label>
@@ -265,7 +268,6 @@
                     </select> 
                   </div>
                 </div>
-
 
               </div>
              
