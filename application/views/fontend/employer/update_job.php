@@ -185,7 +185,7 @@
                                                  if(!empty($job_info->salary_range)){
                                                     echo $job_info->salary_range;
                                                  }
-                                            ?>" onkeypress="javascript:return isNumber(event)">
+                                            ?>" >
                   </div>
                 </div>
                  <div class="col-md-4 col-sm-12">
@@ -380,13 +380,6 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 
       });
   });
- function isNumber(evt) {
-      var iKeyCode = (evt.which) ? evt.which : evt.keyCode
-        if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
-            return false;
-
-        return true;
-    }    
 	// function getStates(id){
 	// 	if(id){
  //            $.ajax({
