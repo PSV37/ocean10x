@@ -99,10 +99,10 @@ $jobseeker_id = $this->session->userdata('job_seeker_id');
                   <li>
                     <h4>Job Locations:</h4>
                     <strong><?php echo $singlejob->city_name. '-'.$singlejob->state_name.', '.$singlejob->country_name; ?></strong></li>
-               <!--    <li>
+                  <!-- <li>
                     <h4>Preferred Age:</h4> 
-                    <strong><?php echo $singlejob->preferred_age; ?> (years)</strong></li>
-                  <li> -->
+                    <strong><?php echo $singlejob->preferred_age; ?> (years)</strong></li> -->
+                  <li>
                     <h4>Required Education:</h4>
                     <strong> <?php echo $singlejob->education_level_name.'('.$singlejob->education_specialization.')'; ?></strong></li>
                   <li>
