@@ -164,9 +164,9 @@
                      </li>
 
 
-                     <li <?php echo $this->company_profile_model->User_status_check(); ?> >
+                    <!--  <li <?php echo $this->company_profile_model->User_status_check(); ?> >
                         <a href='<?php echo base_url(); ?>admin/education-level'> <i class='glyphicon glyphicon-plus'></i><span>Education Level</span></a>
-                     </li>
+                     </li> -->
                       <li <?php echo $this->company_profile_model->User_status_check(); ?> >
                         <a href='<?php echo base_url(); ?>admin/education-specialization'> <i class='glyphicon glyphicon-plus'></i><span>Education Specialization</span></a>
                      </li>
