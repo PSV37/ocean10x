@@ -122,7 +122,7 @@
               <div class="panel-body"></div>
               
                <div class="row">
-                  <div class="col-md-4 col-sm-4">
+<!--                   <div class="col-md-4 col-sm-4">
                     <div class="formrow">
                       <label class="control-label ">Job Country<span class="required">*</span> </label>
                       <select  name="country_id" id="country_id" class="form-control country" onchange="getStates(this.value)" data-style="btn-default" data-live-search="true">
@@ -141,12 +141,12 @@
                         <option value="">Select State</option>
                       </select>
                   </div>
-                  </div>
+                  </div> -->
                     
                   <div class="col-md-4 col-sm-4">
                     <div class="formrow">
                       <label class="control-label ">Job City<span class="required">*</span> </label>
-                      <select  name="city_id" id="city_id" class="form-control">
+                      <select  name="city_id" class="form-control" id="tokenfield">
                         <option value="">Select City</option>
                       </select>
                     </div>
@@ -316,34 +316,55 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 
 
 <script>
-	function getStates(id){
-		if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>Employer/getstate',
-                data:{id:id},
-                success:function(res){
-                    $('#state_id').html(res);
-                }
+
+    $('#tokenfield').tokenfield({
+      autocomplete: {
+        source: "<?php echo base_url('Employer/search_city'); ?>",
+        delay: 100
+      },
+
+      showAutocompleteOnFocus: true,
+    
+
+    });
+    // to avoid duplications
+ $('#tokenfield').on('tokenfield:createtoken', function (event) {
+      var existingTokens = $(this).tokenfield('getTokens');
+      $.each(existingTokens, function(index, token) {
+          if (token.value === event.attrs.value)
+              event.preventDefault();
+
+      });
+  });
+
+	// function getStates(id){
+	// 	if(id){
+ //            $.ajax({
+ //                type:'POST',
+ //                url:'<?php echo base_url();?>Employer/getstate',
+ //                data:{id:id},
+ //                success:function(res){
+ //                    $('#state_id').html(res);
+ //                }
 				
-            }); 
-          }
+ //            }); 
+ //          }
    
-	   }
+	//    }
 	   
-	function getCitys(id){
-		if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>Employer/getcity',
-                data:{id:id},
-                success:function(res){
-                  $('#city_id').html(res);
-                }
+	// function getCitys(id){
+	// 	if(id){
+ //            $.ajax({
+ //                type:'POST',
+ //                url:'<?php echo base_url();?>Employer/getcity',
+ //                data:{id:id},
+ //                success:function(res){
+ //                  $('#city_id').html(res);
+ //                }
 				
-            }); 
-          }
-	   }
+ //            }); 
+ //          }
+	//    }
 
   function getSkillsdetails(id)
     {
@@ -383,42 +404,42 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 
   $(document).ready(function(){
 
-    function getStates_load(){
-        var id = $('#country_id').val();
+    // function getStates_load(){
+    //     var id = $('#country_id').val();
 
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>admin/Job_posting/getstate',
-                data:{id:id},
-                success:function(res){
-                    $('#state_id').html(res);
-                    $('#state_id').val(<?php echo $job_info->state_id; ?>);
-                     getCitys_load(<?php echo $job_info->state_id; ?>);
-                }
+    //     if(id){
+    //         $.ajax({
+    //             type:'POST',
+    //             url:'<?php echo base_url();?>admin/Job_posting/getstate',
+    //             data:{id:id},
+    //             success:function(res){
+    //                 $('#state_id').html(res);
+    //                 $('#state_id').val(<?php echo $job_info->state_id; ?>);
+    //                  getCitys_load(<?php echo $job_info->state_id; ?>);
+    //             }
                 
-            }); 
-          }
+    //         }); 
+    //       }
    
-       }
+    //    }
     
-    function getCitys_load(id){
-      //var id = $('#state_id').val();
-      // alert(id);
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>admin/Job_posting/getcity',
-                data:{id:id},
-                success:function(res){
-                    $('#city_id').html(res);
-                    $('#city_id').val(<?php echo $job_info->city_id; ?>);
-                }
+    // function getCitys_load(id){
+    //   //var id = $('#state_id').val();
+    //   // alert(id);
+    //     if(id){
+    //         $.ajax({
+    //             type:'POST',
+    //             url:'<?php echo base_url();?>admin/Job_posting/getcity',
+    //             data:{id:id},
+    //             success:function(res){
+    //                 $('#city_id').html(res);
+    //                 $('#city_id').val(<?php echo $job_info->city_id; ?>);
+    //             }
                 
-            }); 
-          }
+    //         }); 
+    //       }
    
-       }
+    //    }
 
 
  function getEducationSpecial_load(){
@@ -459,8 +480,8 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
       }
 }
 
-  getCitys_load();
-  getStates_load();
+  // getCitys_load();
+  // getStates_load();
   getSkillsdetails_load();
   getEducationSpecial_load();
 });

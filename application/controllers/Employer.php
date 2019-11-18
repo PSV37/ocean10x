@@ -1277,6 +1277,20 @@ function getstate(){
         }
     }
 
+     // search city 
+  function search_city(){
+        if (isset($_GET['term'])) {
+
+            $result = $this->job_posting_model->search_city($_GET['term']);
+        
+            if (count($result) > 0) {
+            foreach ($result as $row)
+                $arr_result[] = $row->city_name;
+                echo json_encode($arr_result);
+            }
+        }
+    }
+
 /*import question*/
 
 	public function importquestion(){

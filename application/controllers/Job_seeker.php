@@ -1006,9 +1006,7 @@ public function search(){
         if (isset($_GET['term'])) {
 
             $result = $this->Job_seeker_experience_model->search_city($_GET['term']);
-            // $where_city = "city_name like '$term' ORDER BY city_name ASC"; 
-            // $select_city = "city_name";
-            // $result = $this->Master_model->getMaster('city',$where_city,$join = FALSE, $order = false, $field = false, $select_city,$limit=false,$start=false, $search=false);
+        
             if (count($result) > 0) {
             foreach ($result as $row)
                 $arr_result[] = $row->city_name;

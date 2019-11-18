@@ -668,5 +668,10 @@ public function get_all_company_by_banksbook()
         }
     }
 
+    function search_city($title){
+        $this->db->like('city_name', $title , 'both');
+        $this->db->order_by('city_name', 'ASC');
+        return $this->db->get('city')->result();
+    }
 
 }
