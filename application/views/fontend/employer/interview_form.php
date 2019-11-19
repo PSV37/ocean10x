@@ -5,6 +5,9 @@
     margin-bottom: 5px;
     font-weight: bold;
 }
+#start_time,#end_time{
+  line-height: 0px !important; 
+}
 </style>
   <form id="interview-info" class="form-horizontal" action="<?php echo base_url();?>employer/send_interview_invitation/<?php if(!empty($js_apply_data)) echo $js_apply_data['job_apply_id']; ?>" method="post">
      
@@ -19,7 +22,7 @@
         </div>
         <div class="col-sm-3">
            <label class="control-label" for="email">End Time<span class="required">*</span></label>
-           <input type="time" name="end_time" id="end_time" class="form-control" value="<?php echo date('H:i'); ?>">
+           <input type="time" name="end_time" id="end_time" class="form-control" value="<?php echo date('H:i',strtotime("+30 minutes", date('H:i'))); ?>">
         </div>
       </div>
       
