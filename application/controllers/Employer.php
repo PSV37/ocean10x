@@ -1401,7 +1401,7 @@ function getstate(){
 	}
 
 
-public function interview_scheduler($job_apply_id = null)
+public function interview_scheduler()
     {
         $company_id = $this->session->userdata('company_profile_id');
        
@@ -1410,7 +1410,7 @@ public function interview_scheduler($job_apply_id = null)
        $job_apply_id = $this->input->post('job_apply_id');
 
         $where_apply="job_apply_id='$job_apply_id'";
-        $select_edu = "job_seeker_id,job_post_id";
+        $select_edu = "job_seeker_id,job_post_id,job_apply_id";
         $data['js_apply_data'] = $this->Master_model->get_master_row("job_apply", $select_edu, $where_apply, $join = FALSE);
         $job_seeker_id = $data['js_apply_data']['job_seeker_id'];
 
