@@ -29,23 +29,19 @@
       </div>
       
       <div class="form-group">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-10">
+        <div class="col-sm-12">
           <label class="control-label" for="email">Interview Address<span class="required">*</span></label>
           <input type="text" name="interview_address" class="form-control" id="interview_address">
         </div>
-        <div class="col-sm-1"></div>
       </div>
     
       <div class="form-group">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-10">
+        <div class="col-sm-12">
           <label class="control-label" for="email">Message To <?php  if(!empty($js_info_data)) echo $js_info_data['full_name'];?><span class="required">*</span></label>
          
           <textarea class="form-control" name="message" id="message" rows="5"></textarea>
 
         </div>
-        <div class="col-sm-1"></div>
       </div>
 
     <div class="modal-footer">
