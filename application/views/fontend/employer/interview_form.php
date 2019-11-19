@@ -8,9 +8,11 @@
         </div>
         <div class="col-sm-3">
            <label class="control-label" for="email">Start Time<span class="required">*</span></label>
+           <input type="text" name="start_time" id="start_time" class="form-control">
         </div>
         <div class="col-sm-3">
            <label class="control-label" for="email">End Time<span class="required">*</span></label>
+           <input type="text" name="end_time" id="end_time" class="form-control">
         </div>
       </div>
       
