@@ -208,7 +208,7 @@
                       <a href="<?php echo base_url() ?>employer/reject-resume/<?php echo $v_applicant->job_seeker_id; ?>" class="reject"><i class="fa fa-times" aria-hidden="true"></i> <strong>Reject</strong> 
                       </a>
 
-                      <a href="#" class="btn btn-xs getformbylevel"  data-level_id='<?php echo base64_encode($seeker_info->email); ?>' title="Set Up Interview" data-toggle="modal" data-target="#schedule_interview"><i class="fa fa-times" aria-hidden="true"></i> <strong>Set Up Interview</strong> 
+                      <a href="#" class="btn btn-success btn-xs getformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id; ?>' title="Set Up Interview" data-toggle="modal" data-target="#schedule_interview"><strong>Set Up Interview</strong> 
                       </a>
                       
                     </div>
@@ -293,11 +293,11 @@ $(".getformbylevel").on('click', function(event){
     event.stopPropagation();
     event.stopImmediatePropagation();
     //(... rest of your JS code)
-    var job_apply_email = $(this).data('level_id');
+    var job_apply_id = $(this).data('level_id');
      $.ajax({
               url: "<?php echo base_url();?>Employer/interview_scheduler",
               type: "POST",
-              data: {job_apply_email:job_apply_email},
+              data: {job_apply_id:job_apply_id},
           
               success: function(data)
               {
