@@ -304,7 +304,7 @@ $(".getformbylevel").on('click', function(event){
                 $('.interview_frm').html(data);
                 // Display Modal
                 $('#schedule_interview').modal('show'); 
-
+                $( "#datepicker" ).datepicker();
               }
         });
        
