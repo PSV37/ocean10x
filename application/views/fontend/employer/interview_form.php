@@ -7,10 +7,7 @@
 }
 </style>
   <form id="interview-info" class="form-horizontal" action="<?php echo base_url();?>employer/send_interview_invitation/<?php if(!empty($js_apply_data)) echo $js_apply_data['job_apply_id']; ?>" method="post">
-      <?php echo "<pre>"; print_r($js_apply_data); ?>
-
-       <?php echo "<pre>"; print_r($js_info_data); ?>
-     <!-- <input type="hidden" name="job_seeker_id" value="<?php if(!empty($js_info_data)) echo $js_info_data['job_seeker_id']; ?>"> -->
+    
       <div class="form-group">
         <div class="col-sm-6">
           <label class="control-label" for="email">Date<span class="required">*</span></label>
