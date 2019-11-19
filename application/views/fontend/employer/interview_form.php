@@ -18,14 +18,14 @@
       </div>
       
       <div class="form-group">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-10">
+        <!-- <div class="col-sm-1"></div> -->
+        <div class="col-sm-12">
           <label class="control-label" for="email">Interview Type<span class="required">*</span></label>
           <input type="radio" name="interview_type" id="interview_type" value="in_person" style="margin: 0 15px;">In-Person
           <input type="radio" name="interview_type" id="interview_type" value="phone" style="margin: 0 15px;">Phone
           <input type="radio" name="interview_type" id="interview_type" value="video" style="margin: 0 15px;">Video
         </div>
-        <div class="col-sm-1"></div>
+        <!-- <div class="col-sm-1"></div> -->
       </div>
       
       <div class="form-group">
