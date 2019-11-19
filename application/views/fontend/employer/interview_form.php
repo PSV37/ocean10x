@@ -31,9 +31,8 @@
          <!--  <input type="radio" name="interview_type" id="interview_type" value="in_person" style="margin: 0 15px;">In-Person
           <input type="radio" name="interview_type" id="interview_type" value="phone" style="margin: 0 15px;">Phone
           <input type="radio" name="interview_type" id="interview_type" value="video" style="margin: 0 15px;">Video -->
-          <select  name="interview_type" id="interview_type" class="form-control">
-            <option value="">Select One</option>
-            <option value="In-Person">In-Person</option>
+          <select  name="interview_type" id="interview_type" class="form-control" onchange="changelable(this.value);">
+            <option value="In_Person">In-Person</option>
             <option value="Phone">Phone</option>
             <option value="Video">Video</option>
           </select>
@@ -44,7 +43,7 @@
       
       <div class="form-group">
         <div class="col-sm-12">
-          <label class="control-label" for="email">Interview Address<span class="required">*</span></label>
+          <label class="control-label" for="email" id="interview_label">Interview Address<span class="required">*</span></label>
           <input type="text" name="interview_address" class="form-control" id="interview_address">
         </div>
       </div>
@@ -62,4 +61,24 @@
       <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
       <button type="submit" class="btn btn-primary">Send Invitation</button>
     </div>
-  </form>
+  </form> 
+
+  <script>
+    function changelable(type)
+    {
+      var int_type = type;
+
+      if(int_type=='In_Person')
+      {
+          $('#interview_label').html('Interview Address');
+      }else if(int_type=='Phone')
+      {
+          $('#interview_label').html('Interviewers Phone number');
+      }else if(int_type=='Video')
+      {
+          $('#interview_label').html('Add instructions for the candidate');
+      } 
+
+
+    }
+  </script>
