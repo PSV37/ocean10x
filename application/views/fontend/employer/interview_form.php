@@ -8,7 +8,6 @@
 </style>
   <form id="interview-info" class="form-horizontal" action="<?php echo base_url();?>employer/send_interview_invitation/<?php if(!empty($js_apply_data)) echo $js_apply_data['job_apply_id']; ?>" method="post">
      
-     <input type="text" name="job_seeker_id" value="<?php if(!empty($js_apply_data)) echo $js_apply_data['job_apply_id']; ?>">
       <div class="form-group">
         <div class="col-sm-6">
           <label class="control-label" for="email">Date<span class="required">*</span></label>
@@ -25,12 +24,8 @@
       </div>
       
       <div class="form-group">
-        <!-- <div class="col-sm-1"></div> -->
         <div class="col-sm-12">
           <label class="control-label" for="email">Interview Type<span class="required">*</span></label>
-         <!--  <input type="radio" name="interview_type" id="interview_type" value="in_person" style="margin: 0 15px;">In-Person
-          <input type="radio" name="interview_type" id="interview_type" value="phone" style="margin: 0 15px;">Phone
-          <input type="radio" name="interview_type" id="interview_type" value="video" style="margin: 0 15px;">Video -->
           <select  name="interview_type" id="interview_type" class="form-control" onchange="changelable(this.value);">
             <option value="In_Person">In-Person</option>
             <option value="Phone">Phone</option>
