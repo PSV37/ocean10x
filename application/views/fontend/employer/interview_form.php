@@ -80,17 +80,4 @@
 
     }
 
-      $(document).ready(function () {
-       $(".datepicker").datepicker({
-         // dateFormat: 'dd-mm-yy'     
-          //changeMonth: true,
-
-          //changeYear: true,
-
-          dateFormat: 'dd-mm-yy',
-
-         // yearRange: '1980:2010',                               
-         });
-       });  
-    
   </script>
