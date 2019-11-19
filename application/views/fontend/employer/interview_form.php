@@ -6,7 +6,7 @@
     font-weight: bold;
 }
 </style>
-  <form id="interview-info" class="form-horizontal" action="<?php echo base_url();?>employer/interview_scheduler/<?php if(!empty($js_apply_data)) echo $js_apply_data['job_apply_id']; ?>" method="post">
+  <form id="interview-info" class="form-horizontal" action="<?php echo base_url();?>employer/send_interview_invitation/<?php if(!empty($js_apply_data)) echo $js_apply_data['job_apply_id']; ?>" method="post">
       <?php echo "<pre>"; print_r($js_apply_data); ?>
 
        <?php echo "<pre>"; print_r($js_info_data); ?>
