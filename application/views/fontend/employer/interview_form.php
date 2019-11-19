@@ -7,7 +7,7 @@
 }
 </style>
   <form id="interview-info" class="form-horizontal" action="<?php echo base_url('employer/update_education');?>" method="post">
-      <?php print_r($js_info_data); ?>
+      <!-- <?php print_r($js_info_data); ?> -->
      <input type="hidden" name="job_seeker_id" value="<?php if(!empty($js_info_data)) echo $js_info_data['job_seeker_id']; ?>">
       <div class="form-group">
         <div class="col-sm-6">
@@ -28,9 +28,16 @@
         <!-- <div class="col-sm-1"></div> -->
         <div class="col-sm-12">
           <label class="control-label" for="email">Interview Type<span class="required">*</span></label>
-          <input type="radio" name="interview_type" id="interview_type" value="in_person" style="margin: 0 15px;">In-Person
+         <!--  <input type="radio" name="interview_type" id="interview_type" value="in_person" style="margin: 0 15px;">In-Person
           <input type="radio" name="interview_type" id="interview_type" value="phone" style="margin: 0 15px;">Phone
-          <input type="radio" name="interview_type" id="interview_type" value="video" style="margin: 0 15px;">Video
+          <input type="radio" name="interview_type" id="interview_type" value="video" style="margin: 0 15px;">Video -->
+          <select  name="interview_type" id="interview_type" class="form-control">
+            <option value="">Select One</option>
+            <option value="In-Person">In-Person</option>
+            <option value="Phone">Phone</option>
+            <option value="Video">Video</option>
+          </select>
+
         </div>
         <!-- <div class="col-sm-1"></div> -->
       </div>
