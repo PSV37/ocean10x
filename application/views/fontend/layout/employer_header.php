@@ -74,7 +74,7 @@
             <li class="green"><a title="" href="<?php echo base_url(); ?>employer/job-post">Submit Vacancy</a></li>
              
              <li>
-                       <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown yamm-half membermenu hasmenu">
 
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -83,7 +83,7 @@
                         <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($employer_id);?>" alt="" class="img-circle"></a>
                        <?php else: ?>
                         <img src="<?php echo base_url() ?>upload/notfound.gif" alt="" class="img-circle"></a>
-                    <?php endif; ?>
+                        <?php endif; ?>
                         <ul class="dropdown-menu start-right">
                             <li class="dropdown-header">Welcome <?php echo $this->company_profile_model->company_name($employer_id); ?></li>
                             <li><a href="<?php echo base_url(); ?>employer"><span class="glyphicon glyphicon-user"></span>Dashboard</a></li>
@@ -108,14 +108,6 @@
     </li>
         </div>
         </div>
-        
-        
-        
-        
-        
-        
-        
-        
         
         
         <div class="modal fade" id="lookingjob" tabindex="-1" role="dialog">

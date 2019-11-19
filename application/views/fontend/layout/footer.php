@@ -194,7 +194,7 @@ function readURL2(input) {
 
               dateFormat: 'dd-mm-yy',
 
-              yearRange: '2017:2020',
+              yearRange: '2019:2020',
 
           });
 

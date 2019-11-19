@@ -498,7 +498,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 
 <script>
 $("#job_category").select2( {
-	placeholder: "Select Industry",
+	placeholder: "Select Domain",
 	allowClear: true
 	} );
 </script> 
