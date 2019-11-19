@@ -1401,77 +1401,90 @@ function getstate(){
 	}
 
 
-public function interview_scheduler()
+public function interview_scheduler($job_apply_id = null)
     {
         $company_id = $this->session->userdata('company_profile_id');
-       
-       // $emails= base64_decode($this->input->post('job_apply_email'));
+         
+       if($_POST)
+       {
+            $job_apply_id = $job_apply_id;
+            $where_apply="job_apply_id='$job_apply_id'";
+            $select_edu = "job_seeker_id,job_post_id";
+            $data['js_apply_data'] = $this->Master_model->get_master_row("job_apply", $select= FALSE, $where_apply, $join = FALSE);
+            $job_seeker_id = $data['js_apply_data']['job_seeker_id'];
+
+            $where_js="job_seeker_id='$job_seeker_id'";
+            $data['js_info_data'] = $this->Master_model->get_master_row("js_info", $select= FALSE, $where_js, $join = FALSE);
+            echo "post";
+            echo $this->db->last_query(); die;
+
+       }else{
+         $job_apply_id = $this->input->post('job_apply_id');
+            $where_apply="job_apply_id='$job_apply_id'";
+            $select_edu = "job_seeker_id,job_post_id";
+            $data['js_apply_data'] = $this->Master_model->get_master_row("job_apply", $select= FALSE, $where_apply, $join = FALSE);
+            $job_seeker_id = $data['js_apply_data']['job_seeker_id'];
+
+            $where_js="job_seeker_id='$job_seeker_id'";
+            $data['js_info_data'] = $this->Master_model->get_master_row("js_info", $select= FALSE, $where_js, $join = FALSE);
+
+            $this->load->view('fontend/employer/interview_form',$data);
+       }
         
-       $job_apply_id = $this->input->post('job_apply_id');
 
-        $where_edu="job_apply_id='$job_apply_id'";
-        $select_edu = "job_seeker_id,job_post_id";
-        $data['js_apply_data'] = $this->Master_model->get_master_row("job_apply", $select= FALSE, $where_edu, $join = FALSE);
-        $job_seeker_id = $data['js_apply_data']['job_seeker_id'];
-
-        $where_edu="job_seeker_id='$job_seeker_id'";
-        // $select_edu = "full_name,education_level_id";
-        $data['js_info_data'] = $this->Master_model->get_master_row("js_info", $select= FALSE, $where_edu, $join = FALSE);
-
-        // $where_edu_spec="edu_level_id='$edu_id'";
-        // $select_edu_spec = "education_specialization,id";
-        // $data['education_specialization'] = $this->Master_model->getMaster('education_specialization',$where_edu_spec,$join = FALSE, $order = false, $field = false, $select_edu_spec,$limit=false,$start=false, $search=false);
-
-        // echo $this->db->last_query(); die;
-        $this->load->view('fontend/employer/interview_form',$data);
+       
     }
 
     
-    public function send_interview_invitation($job_seeker_id = null)
-    {
-        $company_id = $this->session->userdata('company_profile_id');
+    // public function send_interview_invitation($job_apply_id = null)
+    // {
+    //     $company_id = $this->session->userdata('company_profile_id');
        
-        $js_id= $job_seeker_id;
+    //     $apply_id= $job_apply_id;
 
-        $where_edu="job_seeker_id='$js_id'";
-        $select_edu = "full_name,email";
-        $js_data = $this->Master_model->get_master_row("js_info", $select= FALSE, $where_edu, $join = FALSE);
+    //     $where_apply="job_apply_id='$job_apply_id'";
+    //     $select_edu = "job_seeker_id,job_post_id";
+    //     $data['js_apply_data'] = $this->Master_model->get_master_row("job_apply", $select= FALSE, $where_apply, $join = FALSE);
 
-        // $where_edu_spec="edu_level_id='$edu_id'";
-        // $select_edu_spec = "education_specialization,id";
-        // $data['education_specialization'] = $this->Master_model->getMaster('education_specialization',$where_edu_spec,$join = FALSE, $order = false, $field = false, $select_edu_spec,$limit=false,$start=false, $search=false);
+    //     $where_edu="job_apply_id='$apply_id'";
+    //     $select_edu = "full_name,email";
+    //     $js_data = $this->Master_model->get_master_row("js_info", $select= FALSE, $where_edu, $join = FALSE);
+
+    //     // $where_edu_spec="edu_level_id='$edu_id'";
+    //     // $select_edu_spec = "education_specialization,id";
+    //     // $data['education_specialization'] = $this->Master_model->getMaster('education_specialization',$where_edu_spec,$join = FALSE, $order = false, $field = false, $select_edu_spec,$limit=false,$start=false, $search=false);
 
 
-            $subject = 'Job | Urgent requirement for '.$require['job_title'];
+    //         $subject = 'Job | Urgent requirement for '.$require['job_title'];
 
-            $message = '
-                <style>
-                    .btn-primary{
-                        width: 232px;
-                        color: #fff;
-                        text-align: center;
-                        margin: 0 0 0 5%;
-                        background-color: #6495ED;
-                        padding: 5px;
-                        text-decoration: none;
-                    }
+    //         $message = '
+    //             <style>
+    //                 .btn-primary{
+    //                     width: 232px;
+    //                     color: #fff;
+    //                     text-align: center;
+    //                     margin: 0 0 0 5%;
+    //                     background-color: #6495ED;
+    //                     padding: 5px;
+    //                     text-decoration: none;
+    //                 }
                 
-                </style>
-            <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
-            <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
-            <a href="#"><img src="'.base_url().'upload/'.$require['company_logo'].'" style="height: 50px;"> </a>
-            <br><br>Hi '.$email_name[0].',<br>'.$job_desc.'<br/><br/><em><b>Now Hiring!!</b></em> <br/><br/><b>Company Name:</b>' .$require['company_name'].'<br/><br/> <b>Job Profile:</b><br/> <b>Job Title: </b> '.$require['job_title'].'<br/>';
+    //             </style>
+    //         <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+    //         <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+    //         <a href="#"><img src="'.base_url().'upload/'.$require['company_logo'].'" style="height: 50px;"> </a>
+    //         <br><br>Hi '.$email_name[0].',<br>'.$job_desc.'<br/><br/><em><b>Now Hiring!!</b></em> <br/><br/><b>Company Name:</b>' .$require['company_name'].'<br/><br/> <b>Job Profile:</b><br/> <b>Job Title: </b> '.$require['job_title'].'<br/>';
 
-            $message .='<br/><b>Job Description: </b> '.$require['job_desc'].'<br/><b>Job Benefits: </b> '.$require['benefits'].'<br/><b>Other Job Description: </b> '.$require['education'].'<br><br><a href="'.base_url().'job_forword_seeker/apply_forworded_job?apply_id='.base64_encode($email[$i]).'&job_id='.base64_encode($apply).'" class="btn btn-primary" value="Apply Now" align="center" target="_blank">Apply Now</a> <br><br><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><small>Enjoy personalized job searching experience<br>Goa a Question? Check out how works and our support team are ready to help.<br><br>You have received this mail because your e-mail ID is registered with Consultnhire.com. This is a system-generated e-mail regarding your Consultnhire account preferences, please do not reply to this message. The jobs sent in this mail have been posted by the clients of Consultnhire.com. And we have enabled auto-login for your convenience, you are strongly advised not to forward this email to protect your account from unauthorized access. IEIL has taken all reasonable steps to ensure that the information in this mailer is authentic. Users are advised to research bonafides of advertisers independently. Please do not pay any money to anyone who promises to find you a job. IEIL shall not have any responsibility in this regard. We recommend that you visit our Terms & Conditions and the Security Advice for more comprehensive information.</small><br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+    //         $message .='<br/><b>Job Description: </b> '.$require['job_desc'].'<br/><b>Job Benefits: </b> '.$require['benefits'].'<br/><b>Other Job Description: </b> '.$require['education'].'<br><br><a href="'.base_url().'job_forword_seeker/apply_forworded_job?apply_id='.base64_encode($email[$i]).'&job_id='.base64_encode($apply).'" class="btn btn-primary" value="Apply Now" align="center" target="_blank">Apply Now</a> <br><br><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><small>Enjoy personalized job searching experience<br>Goa a Question? Check out how works and our support team are ready to help.<br><br>You have received this mail because your e-mail ID is registered with Consultnhire.com. This is a system-generated e-mail regarding your Consultnhire account preferences, please do not reply to this message. The jobs sent in this mail have been posted by the clients of Consultnhire.com. And we have enabled auto-login for your convenience, you are strongly advised not to forward this email to protect your account from unauthorized access. IEIL has taken all reasonable steps to ensure that the information in this mailer is authentic. Users are advised to research bonafides of advertisers independently. Please do not pay any money to anyone who promises to find you a job. IEIL shall not have any responsibility in this regard. We recommend that you visit our Terms & Conditions and the Security Advice for more comprehensive information.</small><br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
 
 
-           $send = sendEmail_JobRequest($email,$message,$subject);
-           //echo $send;
-            echo $message;
+    //        $send = sendEmail_JobRequest($email,$message,$subject);
+    //        //echo $send;
+    //         echo $message;
 
-        // echo $this->db->last_query(); die;
-        $this->load->view('fontend/employer/interview_form',$data);
-    }
+    //     // echo $this->db->last_query(); die;
+    //     $this->load->view('fontend/employer/interview_form',$data);
+    // }
 
 } // end class
 
