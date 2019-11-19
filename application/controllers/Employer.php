@@ -1405,9 +1405,9 @@ public function interview_scheduler()
     {
         $company_id = $this->session->userdata('company_profile_id');
        
-        $email= base64_decode($job_apply_email);
+        $emails= base64_decode($this->input->post('job_apply_email'));
 
-        $where_edu="email='$email'";
+        $where_edu="email='$emails'";
         // $select_edu = "full_name,education_level_id";
         $data['js_info_data'] = $this->Master_model->get_master_row("js_info", $select= FALSE, $where_edu, $join = FALSE);
 
