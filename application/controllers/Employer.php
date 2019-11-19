@@ -1471,8 +1471,8 @@ public function interview_scheduler()
 
            $send = sendEmail_JobRequest($email,$message,$subject);
            //echo $send;
-            echo $message;
-
+            // echo $message;
+        redirect('employer/all_applicant/'.$js_apply['job_post_id']);
         // echo $this->db->last_query(); die;
         // $this->load->view('fontend/employer/interview_form',$data);
     }
