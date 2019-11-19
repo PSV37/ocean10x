@@ -1401,7 +1401,23 @@ function getstate(){
 	}
 
 
+public function interview_scheduler()
+    {
+        $company_id = $this->session->userdata('company_profile_id');
+       
+        $email= base64_decode($job_apply_email);
 
+        $where_edu="email='$edu_id'";
+        // $select_edu = "full_name,education_level_id";
+        $data['js_info_data'] = $this->Master_model->get_master_row("js_info", $select= FALSE, $where_edu, $join = FALSE);
+
+        // $where_edu_spec="edu_level_id='$edu_id'";
+        // $select_edu_spec = "education_specialization,id";
+        // $data['education_specialization'] = $this->Master_model->getMaster('education_specialization',$where_edu_spec,$join = FALSE, $order = false, $field = false, $select_edu_spec,$limit=false,$start=false, $search=false);
+
+        // echo $this->db->last_query(); die;
+        $this->load->view('fontend/employer/interview_form',$data);
+    }
 
 } // end class
 

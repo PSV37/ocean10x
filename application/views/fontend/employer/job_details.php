@@ -293,21 +293,20 @@ $(".getformbylevel").on('click', function(event){
     event.stopPropagation();
     event.stopImmediatePropagation();
     //(... rest of your JS code)
-    var job_apply_id = $(this).data('level_id');
-    $('#schedule_interview').modal('show'); 
-     // $.ajax({
-     //          url: "<?php echo base_url();?>job_seeker/education_data",
-     //          type: "POST",
-     //          data: {job_apply_id:job_apply_id},
+    var job_apply_email = $(this).data('level_id');
+     $.ajax({
+              url: "<?php echo base_url();?>Employer/interview_scheduler",
+              type: "POST",
+              data: {job_apply_email:job_apply_email},
           
-     //          success: function(data)
-     //          {
-     //            $('.interview_frm').html(data);
-     //            // Display Modal
-     //            $('#schedule_interview').modal('show'); 
+              success: function(data)
+              {
+                $('.interview_frm').html(data);
+                // Display Modal
+                $('#schedule_interview').modal('show'); 
 
-     //          }
-     //    });
+              }
+        });
        
 });
 </script>
