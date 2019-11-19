@@ -1415,7 +1415,7 @@ public function interview_scheduler()
         // $select_edu_spec = "education_specialization,id";
         // $data['education_specialization'] = $this->Master_model->getMaster('education_specialization',$where_edu_spec,$join = FALSE, $order = false, $field = false, $select_edu_spec,$limit=false,$start=false, $search=false);
 
-        echo $this->db->last_query(); die;
+        // echo $this->db->last_query(); die;
         $this->load->view('fontend/employer/interview_form',$data);
     }
 
