@@ -207,6 +207,9 @@
 							        </div>
                       <a href="<?php echo base_url() ?>employer/reject-resume/<?php echo $v_applicant->job_seeker_id; ?>" class="reject"><i class="fa fa-times" aria-hidden="true"></i> <strong>Reject</strong> 
                       </a>
+
+                      <a href="#" class="btn btn-xs getformbylevel"  data-level_id='<?php echo base64_encode($seeker_info->email)); ?>' title="Set Up Interview" data-toggle="modal" data-target="#schedule_interview"><i class="fa fa-times" aria-hidden="true"></i> <strong>Set Up Interview</strong> 
+                      </a>
                       
                     </div>
                     <div class="col-md-6">
@@ -258,6 +261,22 @@ endforeach;
 </div>
 <!-- end section -->
 
+<div id="schedule_interview" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" align="center">Invite to interview</h4>
+      </div>
+      <div class="modal-body interview_frm">
+    
+      </div>
+   
+    </div>
+
+  </div>
+</div>
 <script>
 function download_cv_all(array_id){
 var jArray= <?php echo json_encode($array_id); ?>;
@@ -269,6 +288,28 @@ var total=<?php echo count($array_id); ?>;
      
     }
 }
+
+$(".getformbylevel").on('click', function(event){
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+    //(... rest of your JS code)
+    var job_apply_id = $(this).data('level_id');
+    $('#schedule_interview').modal('show'); 
+     // $.ajax({
+     //          url: "<?php echo base_url();?>job_seeker/education_data",
+     //          type: "POST",
+     //          data: {job_apply_id:job_apply_id},
+          
+     //          success: function(data)
+     //          {
+     //            $('.interview_frm').html(data);
+     //            // Display Modal
+     //            $('#schedule_interview').modal('show'); 
+
+     //          }
+     //    });
+       
+});
 </script>
 
 

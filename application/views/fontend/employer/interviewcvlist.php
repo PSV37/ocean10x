@@ -130,9 +130,9 @@
                     <?php
 							if($v_applicant->apply_status == 0)
 							{ ?>
-                    <span class="label label-warning"> <?php echo 'Not Sorted' ?> </span>
+                    <span class="label label-warning"> <?php echo 'Not Shorted' ?> </span>
                     <?php } elseif($v_applicant->apply_status == 1) { ?>
-                    <span class="label label-primary"> <?php echo 'Sorted' ?> </span>
+                    <span class="label label-primary"> <?php echo 'Shorted' ?> </span>
                     <?php } elseif($v_applicant->apply_status == 2) { ?>
                     <span class="label label-primary"> <?php echo 'Interview' ?> </span>
                     <?php } elseif($v_applicant->apply_status == 3) { ?>
@@ -144,7 +144,7 @@
                   <div class="action">
                     <?php 
 							if($v_applicant->apply_status==0){
-							echo btn_sorted('employer/update_sortlist/' . $v_applicant->job_apply_id.'/'. base64_encode($seeker_info->email)).'<br> sorted list'; }
+							echo btn_sorted('employer/update_sortlist/' . $v_applicant->job_apply_id.'/'. base64_encode($seeker_info->email)).'<br> shorted list'; }
 							else if($v_applicant->apply_status==1) {
 							echo btn_interview('employer/update_interviewlist/' . $v_applicant->job_apply_id.'/'. base64_encode($seeker_info->email)).'<br> interview list';
 							} 
