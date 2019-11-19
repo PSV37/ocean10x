@@ -262,9 +262,9 @@
                   <div class="formrow">  
                     <label class="control-label ">Ocean Test Required <span class="required">*</span></label>
                     <select name="job_test_requirment" id="job_test_requirment" class="form-control"  data-style="btn-default" data-live-search="true" required="">
-                     <option value="">Select One </option>
-                     <option value="Yes"<?php if($job_info->is_test_required=="Yes"){ echo "selected"; }?>>Yes </option>
-                     <option value="No"<?php if($job_info->is_test_required=="No"){ echo "selected"; }?>>No </option>
+                      <option value="">Select One </option>
+                      <option value="Yes"<?php if($job_info->is_test_required=="Yes"){ echo "selected"; }?>>Yes </option>
+                      <option value="No"<?php if($job_info->is_test_required=="No"){ echo "selected"; }?>>No </option>
                     </select> 
                   </div>
                 </div>
