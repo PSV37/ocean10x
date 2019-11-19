@@ -1427,7 +1427,7 @@ public function interview_scheduler($job_apply_id = null)
        
         $apply_id= $job_apply_id;
 
-        $where_apply="job_apply_id='$job_apply_id'";
+        $where_apply="job_apply_id='$apply_id'";
         $select_s = "job_seeker_id,job_post_id";
         $js_apply = $this->Master_model->get_master_row("job_apply", $select_s, $where_apply, $join = FALSE);
 
