@@ -31,6 +31,21 @@ class Job_apply_model extends MY_Model
         }
     }
  
+    public function check_confirmed_interview($userId, $company_id,$job_post_id)
+    {
+        $this->db->select("*");
+        $this->db->where('job_seeker_id', $userId);
+        $this->db->where('company_id', $company_id);
+        $this->db->where('job_post_id', $job_post_id);
+        $this->db->where('confirm_status',1);
+        $query = $this->db->get('interview_scheduler');
+        if ($query->num_rows() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
     public function check_apply_forwarded_job($userId, $company_id,$job_post_id)
     {
         $this->db->select("*");
