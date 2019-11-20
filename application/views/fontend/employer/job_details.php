@@ -230,7 +230,7 @@
                         <?php } ?>
                       <?php } ?>
                         
-                    </div>
+                    </div><br>
 
                      <div class="col-md-12">
                       <p>Scheduled interviews through Ocean:</p>
@@ -245,13 +245,19 @@
                               </tr>
                             </thead>
                             <tbody>
+                              <?php if(!empty($interview_data)) foreach ($interview_data as $introw) {
+                                
+                                if($introw['job_seeker_id']==$v_applicant->job_seeker_id)
+                                {
+                              ?>
                               <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td><?php echo $introw['interview_date']; ?></td>
+                                <td><?php echo $introw['start_time']; ?></td>
+                                <td><?php echo $introw['end_time']; ?></td>
+                                <td><?php echo $introw['interview_type']; ?></td>
+                                <td><?php echo $introw['interview_details']; ?></td>
                               </tr>
+                            <?php } } ?>
                             </tbody>
                         </table>
                         
