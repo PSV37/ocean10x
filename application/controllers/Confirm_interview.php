@@ -69,7 +69,7 @@ class Confirm_interview extends CI_Controller {
 
                             if($this->Job_apply_model->check_confirmed_interview($job_seeker_id, $company_id, $job_post_id))
                             {
-                                $this->load->view('fontend/alreadyapply');
+                                $this->load->view('fontend/alreadyconfirmed');
                             } else {
                             // To update forwarded job status
                                 $data_status=array( 
@@ -79,12 +79,11 @@ class Confirm_interview extends CI_Controller {
                                 $status = $this->Master_model->master_update($data_status, 'interview_scheduler', $where_update1);
                                 if($status==true)
                                 {
-                                    $wherejob = "job_post_id='$job_post_id' AND company_profile_id='$company_id'";
-                                    $select_test = "is_test_required,job_post_id,company_profile_id";
-                                  
-                                    $data1['job_test'] = $this->Master_model->getMaster('job_posting',$wherejob,$join = FALSE, $order = false, $field = false, $select_test,$limit=false,$start=false, $search=false);
+                                    $wherejob = "job_post_id='$job_post_id' AND company_id='$company_id' AND job_seeker_id='$job_seeker_id'";
+                                   
+                                    $data1['interview_data'] = $this->Master_model->getMaster('interview_scheduler',$wherejob,$join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
                                         
-                                    $this->load->view('fontend/applysucess',$data1);
+                                    $this->load->view('fontend/confirmsucess',$data1);
                                 }
                             }
 			            
@@ -97,7 +96,7 @@ class Confirm_interview extends CI_Controller {
                         // redirect('Job_forword_seeker/index');
                         if($this->Job_apply_model->check_confirmed_interview($job_seeker_id, $company_id, $job_post_id))
                         {
-                            $this->load->view('fontend/alreadyapply');
+                            $this->load->view('fontend/alreadyconfirmed');
                         } else {
                             // To update job status
                             $data_status=array( 
@@ -107,12 +106,11 @@ class Confirm_interview extends CI_Controller {
                             $status = $this->Master_model->master_update($data_status, 'interview_scheduler', $where_update1);
                             if($status==true)
                             {
-                                $wherejob = "job_post_id='$job_post_id' AND company_profile_id='$company_id'";
-                                $select_test = "is_test_required,job_post_id,company_profile_id";
-                              
-                                $data1['job_test'] = $this->Master_model->getMaster('job_posting',$wherejob,$join = FALSE, $order = false, $field = false, $select_test,$limit=false,$start=false, $search=false);
+                                $wherejob = "job_post_id='$job_post_id' AND company_id='$company_id' AND job_seeker_id='$job_seeker_id'";
+                                   
+                                $data1['interview_data'] = $this->Master_model->getMaster('interview_scheduler',$wherejob,$join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
                                     
-                                $this->load->view('fontend/applysucess',$data1);
+                                $this->load->view('fontend/confirmsucess',$data1);
                             }
                         }
                         
