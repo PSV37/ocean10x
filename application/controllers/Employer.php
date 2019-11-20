@@ -1451,7 +1451,7 @@ public function interview_scheduler()
             'job_post_id'           => $js_apply['job_post_id'],
             'job_seeker_id'         => $js_apply['job_seeker_id'],
             'company_id'            => $company_id,
-            'interview_date'        => date('Y-m-d', strtotime(str_replace('/', '-', $interview_date))),
+            'interview_date'        => date('Y-m-d', strtotime($interview_date)),
             'start_time'            => $start_time,
             'end_time'              => $end_time,
             'interview_type'        => $interview_type,
