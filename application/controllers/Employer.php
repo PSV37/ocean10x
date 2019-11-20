@@ -1413,9 +1413,13 @@ public function interview_scheduler()
         $select_edu = "job_seeker_id,job_post_id,job_apply_id";
         $data['js_apply_data'] = $this->Master_model->get_master_row("job_apply", $select_edu, $where_apply, $join = FALSE);
         $job_seeker_id = $data['js_apply_data']['job_seeker_id'];
+        $job_post_id = $data['js_apply_data']['job_post_id'];
 
         $where_js="job_seeker_id='$job_seeker_id'";
         $data['js_info_data'] = $this->Master_model->get_master_row("js_info", $select= FALSE, $where_js, $join = FALSE);
+
+        $where_int="job_seeker_id='$job_seeker_id' AND job_post_id='$job_post_id'";
+        $data['interview_data'] = $this->Master_model->get_master_row("interview_scheduler", $select= FALSE, $where_int, $join = FALSE);
 
         $this->load->view('fontend/employer/interview_form',$data);
     }
