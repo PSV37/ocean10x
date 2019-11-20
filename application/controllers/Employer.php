@@ -1462,17 +1462,15 @@ public function interview_scheduler()
             'interview_type'        => $interview_type,
             'interview_details'     => $interview_address,
             'message_to_candidate'  => $user_message,
-            
         );
-       if(empty($interview_id)){
+        if(empty($interview_id)){
             $inte_array['created_by']  = $company_id;
             $inte_array['created_on']  = date('Y-m-d H:i:s');
             $ins_id = $this->Master_model->master_insert($inte_array,'interview_scheduler');
-
         }else{
             $inte_array['updated_by']  = $company_id;
             $inte_array['updated_on']  = date('Y-m-d H:i:s');
-            // $ins_id = $interview_id;
+
             $where_ins['id']=$interview_id;
             $ins_id = $this->Master_model->master_update($inte_array,'interview_scheduler',$where_ins);
         }
