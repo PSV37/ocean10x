@@ -230,10 +230,10 @@
                         <?php } ?>
                       <?php } ?>
                         
-                    </div><br>
-
+                    </div>
+                    <div class="panel-body"></div>
                      <div class="col-md-12">
-                      <p>Scheduled interviews through Ocean:</p>
+                      <b>Scheduled interviews through Ocean:</b>
                         <table class="table">
                             <thead>
                               <tr>
@@ -245,7 +245,7 @@
                               </tr>
                             </thead>
                             <tbody>
-                              <?php if(!empty($interview_data)) foreach ($interview_data as $introw) {
+                              <?php if(!empty($interview_data)) {foreach ($interview_data as $introw) {
                                 
                                 if($introw['job_seeker_id']==$v_applicant->job_seeker_id)
                                 {
@@ -257,7 +257,7 @@
                                 <td><?php echo $introw['interview_type']; ?></td>
                                 <td><?php echo $introw['interview_details']; ?></td>
                               </tr>
-                            <?php } } ?>
+                            <?php } } }else{ echo "No Data Found";}?>
                             </tbody>
                         </table>
                         
