@@ -231,6 +231,31 @@
                       <?php } ?>
                         
                     </div>
+
+                     <div class="col-md-12">
+                      <p>Scheduled interviews through Ocean:</p>
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th> Date</th>
+                                <th> Start Time</th>
+                                <th> End Time</th>
+                                <th> Interview Type</th>
+                                <th> Interview Details</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                        </table>
+                        
+                    </div>
                 </div>
             </li>
             <?php
