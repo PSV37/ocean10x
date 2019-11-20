@@ -1449,6 +1449,7 @@ public function interview_scheduler()
         $interview_type = $this->input->post('interview_type');
         $interview_address = addslashes($this->input->post('interview_address'));
         $user_message = addslashes($this->input->post('message'));
+        $interview_id = $this->input->post('interview_id');
        // echo date('Y-m-d', strtotime(str_replace('/', '-', $interview_date))); die;
 
         $inte_array = array(
@@ -1461,12 +1462,19 @@ public function interview_scheduler()
             'interview_type'        => $interview_type,
             'interview_details'     => $interview_address,
             'message_to_candidate'  => $user_message,
-            'created_by'            => $company_id,
-            'created_on'            => date('Y-m-d H:i:s'),
+            
         );
+       if(empty($id)){
+            $inte_array['created_by']  => $company_id,
+            $inte_array['created_on']  => date('Y-m-d H:i:s'),
+            $ins_id = $this->Master_model->master_insert($inte_array,'interview_scheduler');
+        }else{
+            $inte_array['updated_by']  => $company_id,
+            $inte_array['updated_on']  => date('Y-m-d H:i:s'),
 
-        $ins_id = $this->Master_model->master_insert($inte_array,'interview_scheduler');
-
+            $where_ins['id']=$id;
+            $ins_id = $this->Master_model->master_update($inte_array,'interview_scheduler',$where_ins);
+        }
         if($ins_id)
         {
 

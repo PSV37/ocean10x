@@ -10,19 +10,20 @@
 }
 </style>
   <form id="interview-info" class="form-horizontal" action="<?php echo base_url();?>employer/send_interview_invitation/<?php if(!empty($js_apply_data)) echo $js_apply_data['job_apply_id']; ?>" method="post">
-      <?php print_r($interview_data); ?>
+      
+      <input type="text" name="interview_id" value="<?php if(!empty($interview_data)) echo $interview_data['id']; ?>">
       <div class="form-group">
         <div class="col-sm-6">
           <label class="control-label" for="email">Date<span class="required">*</span></label>
-          <input type="text" name="interview_date" id="datepicker" class="form-control"> 
+          <input type="text" name="interview_date" id="datepicker" class="form-control" value="<?php if(!empty($interview_data)) echo date('d-m-y', strtotime($interview_data['interview_date'])); ?>"> 
         </div>
         <div class="col-sm-3">
            <label class="control-label" for="email">Start Time<span class="required">*</span></label>
-           <input type="time" name="start_time" id="start_time" class="form-control" value="<?php echo date('H:i'); ?>">
+           <input type="time" name="start_time" id="start_time" class="form-control" value="<?php if(!empty($interview_data)){ echo $interview_data['start_time'];} else{ echo date('H:i'); } ?>">
         </div>
         <div class="col-sm-3">
            <label class="control-label" for="email">End Time<span class="required">*</span></label>
-           <input type="time" name="end_time" id="end_time" class="form-control" value="<?php echo date('H:i',strtotime("+30 minutes", date('H:i'))); ?>">
+           <input type="time" name="end_time" id="end_time" class="form-control" value="<?php if(!empty($interview_data)){ echo $interview_data['end_time'];} else{ echo date('H:i'); } ?>">
         </div>
       </div>
       
@@ -30,9 +31,9 @@
         <div class="col-sm-12">
           <label class="control-label" for="email">Interview Type<span class="required">*</span></label>
           <select  name="interview_type" id="interview_type" class="form-control" onchange="changelable(this.value);">
-            <option value="In_Person">In-Person</option>
-            <option value="Phone">Phone</option>
-            <option value="Video">Video</option>
+            <option value="In_Person"<?php if(!empty($interview_data)) if($interview_data['interview_type']=='In_Person') echo 'selected'; ?>>In-Person</option>
+            <option value="Phone"<?php if(!empty($interview_data)) if($interview_data['interview_type']=='Phone') echo 'selected'; ?>>Phone</option>
+            <option value="Video"<?php if(!empty($interview_data)) if($interview_data['interview_type']=='Video') echo 'selected'; ?>>Video</option>
           </select>
 
         </div>
@@ -42,7 +43,7 @@
       <div class="form-group">
         <div class="col-sm-12">
           <label class="control-label" for="email" id="interview_label">Interview Address<span class="required">*</span></label>
-          <input type="text" name="interview_address" class="form-control" id="interview_address">
+          <input type="text" name="interview_address" class="form-control" id="interview_address" value="<?php if(!empty($interview_data)) echo $interview_data['interview_details']; ?>">
         </div>
       </div>
     
@@ -50,7 +51,7 @@
         <div class="col-sm-12">
           <label class="control-label" for="email">Message To <?php  if(!empty($js_info_data)) echo $js_info_data['full_name'];?><span class="required">*</span></label>
          
-          <textarea class="form-control" name="message" id="message" rows="5"></textarea>
+          <textarea class="form-control" name="message" id="message" rows="5"><?php if(!empty($interview_data)) echo $interview_data['message_to_candidate']; ?></textarea>
 
         </div>
       </div>
