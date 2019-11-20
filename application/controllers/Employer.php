@@ -1439,19 +1439,19 @@ public function interview_scheduler()
         $select_job = "job_post_id,job_title";
         $job_data = $this->Master_model->get_master_row("job_posting", $select_job, $where_job, $join = FALSE);
 
-     echo   $interview_date = $this->input->post('interview_date');
+        $interview_date = $this->input->post('interview_date');
         $start_time = $this->input->post('start_time');
         $end_time = $this->input->post('end_time');
         $interview_type = $this->input->post('interview_type');
         $interview_address = addslashes($this->input->post('interview_address'));
         $user_message = addslashes($this->input->post('message'));
-       echo date('Y-m-d', strtotime(str_replace('/', '-', $interview_date))); die;
+       // echo date('Y-m-d', strtotime(str_replace('/', '-', $interview_date))); die;
 
         $inte_array = array(
             'job_post_id'           => $js_apply['job_post_id'],
             'job_seeker_id'         => $js_apply['job_seeker_id'],
             'company_id'            => $company_id,
-            'interview_date'        => date('Y-m-d', strtotime($interview_date)),
+            'interview_date'        => date('Y-m-d', strtotime(str_replace('/', '-', $interview_date))),
             'start_time'            => $start_time,
             'end_time'              => $end_time,
             'interview_type'        => $interview_type,
