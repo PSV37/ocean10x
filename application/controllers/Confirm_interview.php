@@ -79,9 +79,12 @@ class Confirm_interview extends CI_Controller {
                                 $status = $this->Master_model->master_update($data_status, 'interview_scheduler', $where_update1);
                                 if($status==true)
                                 {
-                                    $wherejob = "job_post_id='$job_post_id' AND company_id='$company_id' AND job_seeker_id='$job_seeker_id'";
-                                   
-                                    $data1['interview_data'] = $this->Master_model->getMaster('interview_scheduler',$wherejob,$join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+                                    $wherejob = "interview_scheduler.job_post_id='$job_post_id' AND interview_scheduler.company_id='$company_id' AND interview_scheduler.job_seeker_id='$job_seeker_id'";
+                                    $Join_data = array(
+                                        'job_posting' => 'job_posting.job_post_id = interview_scheduler.job_post_id|INNER',
+                                    );
+                                    $select = "job_posting.job_title,interview_scheduler.interview_date,interview_scheduler.start_time,interview_scheduler.end_time,interview_scheduler.interview_type,interview_scheduler.interview_details,interview_scheduler.message_to_candidate,interview_scheduler.company_id";
+                                    $data1['interview_data'] = $this->Master_model->getMaster('interview_scheduler',$wherejob, $Join_data, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
                                         
                                     $this->load->view('fontend/confirmsucess',$data1);
                                 }
@@ -106,10 +109,12 @@ class Confirm_interview extends CI_Controller {
                             $status = $this->Master_model->master_update($data_status, 'interview_scheduler', $where_update1);
                             if($status==true)
                             {
-                                $wherejob = "job_post_id='$job_post_id' AND company_id='$company_id' AND job_seeker_id='$job_seeker_id'";
-                                   
-                                $data1['interview_data'] = $this->Master_model->getMaster('interview_scheduler',$wherejob,$join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
-                                    
+                                 $wherejob = "interview_scheduler.job_post_id='$job_post_id' AND interview_scheduler.company_id='$company_id' AND interview_scheduler.job_seeker_id='$job_seeker_id'";
+                                    $Join_data = array(
+                                        'job_posting' => 'job_posting.job_post_id = interview_scheduler.job_post_id|INNER',
+                                    );
+                                    $select = "job_posting.job_title,interview_scheduler.interview_date,interview_scheduler.start_time,interview_scheduler.end_time,interview_scheduler.interview_type,interview_scheduler.interview_details,interview_scheduler.message_to_candidate,interview_scheduler.company_id";
+                                    $data1['interview_data'] = $this->Master_model->getMaster('interview_scheduler',$wherejob, $Join_data, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
                                 $this->load->view('fontend/confirmsucess',$data1);
                             }
                         }
