@@ -69,36 +69,32 @@
 
         if(int_type=='In_Person')
         {
-            $('#interview_label').html('Interview Address<span class="required">*</span>');
+          $('#interview_label').html('Interview Address<span class="required">*</span>');
         }else if(int_type=='Phone')
         {
-            $('#interview_label').html('Interviewers Phone number<span class="required">*</span>');
+          $('#interview_label').html('Interviewers Phone number<span class="required">*</span>');
         }else if(int_type=='Video')
         {
-            $('#interview_label').html('Add instructions for the candidate<span class="required">*</span>');
+          $('#interview_label').html('Add instructions for the candidate<span class="required">*</span>');
         } 
-
-
       }
+
       $(document).ready(function(){
         function changelableload()
-        {
-          
-          var int_type = $('#interview_type').val();
-
-          if(int_type=='In_Person')
           {
+            var int_type = $('#interview_type').val();
+
+            if(int_type=='In_Person')
+            {
               $('#interview_label').html('Interview Address<span class="required">*</span>');
-          }else if(int_type=='Phone')
-          {
+            }else if(int_type=='Phone')
+            {
               $('#interview_label').html('Interviewers Phone number<span class="required">*</span>');
-          }else if(int_type=='Video')
-          {
+            }else if(int_type=='Video')
+            {
               $('#interview_label').html('Add instructions for the candidate<span class="required">*</span>');
-          } 
-
-
-        }
+            } 
+          }
         changelableload();
       });
   </script>
