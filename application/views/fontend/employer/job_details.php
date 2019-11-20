@@ -208,8 +208,7 @@
                       <a href="<?php echo base_url() ?>employer/reject-resume/<?php echo $v_applicant->job_seeker_id; ?>" class="reject"><i class="fa fa-times" aria-hidden="true"></i> <strong>Reject</strong> 
                       </a>  <br>
 
-                      <a href="#" class="btn btn-success btn-xs getformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id; ?>' title="Set Up Interview" data-toggle="modal" data-target="#schedule_interview"><strong>Set Up Interview</strong> 
-                      </a>
+                     
                       
                     </div>
                     <div class="col-md-6">
@@ -233,7 +232,9 @@
                     </div>
                     <div class="panel-body"></div>
                      <div class="col-md-12">
-                      <b>Scheduled interviews through Ocean:</b>
+                      <b>Schedule interviews through Ocean:</b>
+                      <a href="#" class="btn btn-success btn-xs getformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id; ?>' title="Set Up Interview" data-toggle="modal" data-target="#schedule_interview"><strong>Set Up Interview</strong> 
+                      </a>
                         <table class="table">
                             <thead>
                               <tr>
