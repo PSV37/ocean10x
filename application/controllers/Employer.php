@@ -1465,7 +1465,8 @@ public function interview_scheduler()
         if($ins_id)
         {
 
-            $email = $js_data['email'];
+            // $email = $js_data['email'];
+            $email = 'shyam@itdivine.in';
             $subject = 'UNCONFIRMED. Interview request for '.$js_data['full_name'];
             $message = '
                     <style>
