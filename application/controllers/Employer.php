@@ -1410,6 +1410,8 @@ public function interview_scheduler()
        // $emails= base64_decode($this->input->post('job_apply_email'));
         
        $job_apply_id = $this->input->post('job_apply_id');
+        $interview_id = $this->input->post('interview_id');
+       
 
         $where_apply="job_apply_id='$job_apply_id'";
         $select_edu = "job_seeker_id,job_post_id,job_apply_id";
@@ -1422,8 +1424,13 @@ public function interview_scheduler()
 
         $where_int="job_seeker_id='$job_seeker_id' AND job_post_id='$job_post_id'";
         $data['interview_data'] = $this->Master_model->get_master_row("interview_scheduler", $select= FALSE, $where_int, $join = FALSE);
-
-        $this->load->view('fontend/employer/interview_form',$data);
+        if(empty($job_apply_id))
+        {
+            $this->load->view('fontend/employer/update_interview_form',$data);
+        }else{
+            $this->load->view('fontend/employer/interview_form',$data);
+        }
+       
     }
 
     

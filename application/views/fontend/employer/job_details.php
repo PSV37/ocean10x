@@ -233,7 +233,7 @@
                     <div class="panel-body"></div>
                      <div class="col-md-12">
                       <b>Schedule interviews through Ocean:</b>
-                      <a href="#" class="btn btn-success btn-xs getformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id; ?>' title="Set Up Interview" data-toggle="modal" data-target="#schedule_interview"><strong>Set Up Interview</strong> 
+                      <a href="#" class="btn btn-primary btn-xs getformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id; ?>' title="Set Up Interview" data-toggle="modal" data-target="#schedule_interview"><strong>Set Up Interview</strong> 
                       </a>
                         <table class="table">
                             <thead>
@@ -243,6 +243,7 @@
                                 <th> End Time</th>
                                 <th> Interview Type</th>
                                 <th> Interview Details</th>
+                                <th>Action</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -257,6 +258,7 @@
                                 <td><?php echo $introw['end_time']; ?></td>
                                 <td><?php echo $introw['interview_type']; ?></td>
                                 <td><?php echo $introw['interview_details']; ?></td>
+                                <td> <a href="#" class="btn btn-primary btn-xs geteditformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id; ?>' title="Reschedule Interview" data-toggle="modal" data-target="#schedule_interview"><strong>Reschedule Interview</strong> </a></td>
                               </tr>
                             <?php } } }else{ echo "No Data Found";}?>
                             </tbody>
@@ -330,6 +332,31 @@ $(".getformbylevel").on('click', function(event){
               url: "<?php echo base_url();?>Employer/interview_scheduler",
               type: "POST",
               data: {job_apply_id:job_apply_id},
+          
+              success: function(data)
+              {
+                $('.interview_frm').html(data);
+                // Display Modal
+                $('#schedule_interview').modal('show'); 
+                // $( "#datepicker" ).datepicker();
+                $("#datepicker").datepicker({
+                  dateFormat: 'dd-mm-yy'     
+                });
+            
+              }
+        });
+       
+});
+
+$(".geteditformbylevel").on('click', function(event){
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+    //(... rest of your JS code)
+    var int_apply_id = $(this).data('level_id');
+     $.ajax({
+              url: "<?php echo base_url();?>Employer/interview_scheduler",
+              type: "POST",
+              data: {interview_id:int_apply_id},
           
               success: function(data)
               {
