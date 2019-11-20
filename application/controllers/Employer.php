@@ -1446,35 +1446,50 @@ public function interview_scheduler()
         $interview_address = addslashes($this->input->post('interview_address'));
         $user_message = addslashes($this->input->post('message'));
 
-        $email = $js_data['email'];
-        $subject = 'UNCONFIRMED. Interview request for '.$js_data['full_name'];
+        $inte_array = array(
+            'job_post_id'           => $$js_apply['job_post_id'],
+            'job_seeker_id'         => $js_apply['job_seeker_id'],
+            'company_id'            => $company_id,
+            'interview_date'        => $interview_date,
+            'start_time'            => $start_time,
+            'end_time'              => $end_time,
+            'interview_type'        => $interview_type,
+            'interview_details'     => $interview_address,
+            'message_to_candidate'  => $user_message,
+            'created_by'            => $company_id,
+            'created_on'            => date('Y-m-d H:i:s'),
+        );
 
-        $message = '
-                <style>
-                    .btn-primary{
-                        width: 232px;
-                        color: #fff;
-                        text-align: center;
-                        margin: 0 0 0 5%;
-                        background-color: #6495ED;
-                        padding: 5px;
-                        text-decoration: none;
-                    }
-                
-                </style>
-            <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
-            <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
-            <br><br>Hi '.$js_data['full_name'].',<br>'.$user_message.'<br/><br/><br/><b>Job Title: </b> '.$job_data['job_title'].'<br/><b>Interview Date: </b> '.$interview_date.'<br/><b>Interview Start Time: </b> '.$start_time.'<br/><br/><b>Interview End Time: </b> '.$end_time.'<br/><b>Interview Type: </b> '.$interview_type.'<br/><b>Interview Start Time: </b> '.$interview_address.'<br>';
+        $ins_id = $this->Master_model->master_insert($inte_array,'interview_scheduler');
 
-            $message .='<br><br><a href="#" class="btn btn-primary" value="Confirm Now" align="center" target="_blank">Confirm Now</a> <br><br><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+        if($ins_id)
+        {
+
+            $email = $js_data['email'];
+            $subject = 'UNCONFIRMED. Interview request for '.$js_data['full_name'];
+            $message = '
+                    <style>
+                        .btn-primary{
+                            width: 232px;
+                            color: #fff;
+                            text-align: center;
+                            margin: 0 0 0 5%;
+                            background-color: #6495ED;
+                            padding: 5px;
+                            text-decoration: none;
+                        }
+                    
+                    </style>
+                <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+                <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+                <br><br>Hi '.$js_data['full_name'].',<br>'.$user_message.'<br/><br/><br/><b>Job Title: </b> '.$job_data['job_title'].'<br/><b>Interview Date: </b> '.$interview_date.'<br/><b>Interview Start Time: </b> '.$start_time.'<br/><br/><b>Interview End Time: </b> '.$end_time.'<br/><b>Interview Type: </b> '.$interview_type.'<br/><b>Interview Start Time: </b> '.$interview_address.'<br>';
+
+                $message .='<br><br><a href="#" class="btn btn-primary" value="Confirm Interview" align="center" target="_blank">Confirm Interview</a> <br><br><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
 
 
-           $send = sendEmail_JobRequest($email,$message,$subject);
-           //echo $send;
-            // echo $message;
-        redirect('employer/all_applicant/'.$js_apply['job_post_id']);
-        // echo $this->db->last_query(); die;
-        // $this->load->view('fontend/employer/interview_form',$data);
+               $send = sendEmail_JobRequest($email,$message,$subject);
+               redirect('employer/all_applicant/'.$js_apply['job_post_id']);
+        }
     }
 
 } // end class
