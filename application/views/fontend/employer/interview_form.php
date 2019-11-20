@@ -15,7 +15,7 @@
       <div class="form-group">
         <div class="col-sm-6">
           <label class="control-label" for="email">Date<span class="required">*</span></label>
-          <input type="text" name="interview_date" id="datepicker" class="form-control" value="<?php if(!empty($interview_data)) echo date('d-m-y', strtotime($interview_data['interview_date'])); ?>"> 
+          <input type="text" name="interview_date" id="datepicker" class="form-control" value="<?php if(!empty($interview_data)) echo date('d-m-Y', strtotime($interview_data['interview_date'])); ?>"> 
         </div>
         <div class="col-sm-3">
            <label class="control-label" for="email">Start Time<span class="required">*</span></label>
