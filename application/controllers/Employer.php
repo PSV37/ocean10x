@@ -1439,12 +1439,13 @@ public function interview_scheduler()
         $select_job = "job_post_id,job_title";
         $job_data = $this->Master_model->get_master_row("job_posting", $select_job, $where_job, $join = FALSE);
 
-        $interview_date = $this->input->post('interview_date');
+     echo   $interview_date = $this->input->post('interview_date');
         $start_time = $this->input->post('start_time');
         $end_time = $this->input->post('end_time');
         $interview_type = $this->input->post('interview_type');
         $interview_address = addslashes($this->input->post('interview_address'));
         $user_message = addslashes($this->input->post('message'));
+       echo date('Y-m-d', strtotime(str_replace('/', '-', $interview_date))); die;
 
         $inte_array = array(
             'job_post_id'           => $js_apply['job_post_id'],
@@ -1483,7 +1484,7 @@ public function interview_scheduler()
                     </style>
                 <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
                 <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
-                <br><br>Hi '.$js_data['full_name'].',<br>'.$user_message.'<br/><br/><br/><b>Job Title: </b> '.$job_data['job_title'].'<br/><b>Interview Date: </b> '.$interview_date.'<br/><b>Interview Start Time: </b> '.$start_time.'<br/><br/><b>Interview End Time: </b> '.$end_time.'<br/><b>Interview Type: </b> '.$interview_type.'<br/><b>Interview Start Time: </b> '.$interview_address.'<br>';
+                <br><br>Hi '.$js_data['full_name'].',<br>'.$user_message.'<br/><br/><br/><b>Job Title: </b> '.$job_data['job_title'].'<br/><b>Interview Date: </b> '.$interview_date.'<br/><b>Interview Start Time: </b> '.$start_time.'<br/><b>Interview End Time: </b> '.$end_time.'<br/><b>Interview Type: </b> '.$interview_type.'<br/><b>Interview Details: </b> '.$interview_address.'<br>';
 
                 $message .='<br><br><a href="#" class="btn btn-primary" value="Confirm Interview" align="center" target="_blank">Confirm Interview</a> <br><br><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
 
