@@ -63,21 +63,21 @@
 
   <script>
     function changelable(type)
-    {
-      var int_type = type;
-
-      if(int_type=='In_Person')
       {
-          $('#interview_label').html('Interview Address<span class="required">*</span>');
-      }else if(int_type=='Phone')
-      {
-          $('#interview_label').html('Interviewers Phone number<span class="required">*</span>');
-      }else if(int_type=='Video')
-      {
-          $('#interview_label').html('Add instructions for the candidate<span class="required">*</span>');
-      } 
+        var int_type = type;
+
+        if(int_type=='In_Person')
+        {
+            $('#interview_label').html('Interview Address<span class="required">*</span>');
+        }else if(int_type=='Phone')
+        {
+            $('#interview_label').html('Interviewers Phone number<span class="required">*</span>');
+        }else if(int_type=='Video')
+        {
+            $('#interview_label').html('Add instructions for the candidate<span class="required">*</span>');
+        } 
 
 
-    }
+      }
 
   </script>
