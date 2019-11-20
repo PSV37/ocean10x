@@ -1469,20 +1469,28 @@ public function interview_scheduler()
             $inte_array['created_on']  = date('Y-m-d H:i:s');
             $ins_id = $this->Master_model->master_insert($inte_array,'interview_scheduler');
 
-            $this->Master_model->master_insert($inte_array,'interview_history');
-
-
         }else{
             $inte_array['updated_by']  = $company_id;
             $inte_array['updated_on']  = date('Y-m-d H:i:s');
             // $ins_id = $interview_id;
             $where_ins['id']=$interview_id;
             $ins_id = $this->Master_model->master_update($inte_array,'interview_scheduler',$where_ins);
-
-            $inte_array['created_by']  = $company_id;
-            $inte_array['created_on']  = date('Y-m-d H:i:s');
-            $this->Master_model->master_insert($inte_array,'interview_history');
         }
+            $inter_his_array = array(
+                'job_post_id'           => $js_apply['job_post_id'],
+                'job_seeker_id'         => $js_apply['job_seeker_id'],
+                'company_id'            => $company_id,
+                'interview_date'        => date('Y-m-d', strtotime(str_replace('/', '-', $interview_date))),
+                'start_time'            => $start_time,
+                'end_time'              => $end_time,
+                'interview_type'        => $interview_type,
+                'interview_details'     => $interview_address,
+                'message_to_candidate'  => $user_message,
+                'created_on'            => date('Y-m-d H:i:s'),
+                'created_by'            => $company_id,
+            );
+            $this->Master_model->master_insert($inter_his_array,'interview_history');
+
         if($ins_id)
         {
 
