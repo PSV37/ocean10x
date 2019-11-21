@@ -235,6 +235,7 @@
                       <b>Schedule interviews through Ocean:</b>
                       <a href="#" class="btn btn-info btn-xs getformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id; ?>' title="Set Up Interview" data-toggle="modal" data-target="#schedule_interview"><strong>Set Up Interview</strong> 
                       </a>
+                  
                         <table class="table">
                             <thead>
                               <tr>
@@ -373,7 +374,7 @@ $(".geteditformbylevel").on('click', function(event){
     var level_id = int_apply_id.split('|');
     var apply_id = level_id[0];
     var int_id = level_id[1];
-    
+
      $.ajax({
               url: "<?php echo base_url();?>Employer/update_interview_scheduler",
               type: "POST",

@@ -174,6 +174,7 @@
       $(".add-more").click(function(){ 
           var html = $(".copy").html();
           $(".after-add-more").after(html);
+         
           $(".datepicker").datepicker({
             dateFormat: 'dd-mm-yy'     
           });
