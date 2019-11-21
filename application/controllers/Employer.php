@@ -1617,7 +1617,7 @@ public function interview_scheduler()
 
                     for($l1=0;$l1<sizeof($interview_date);$l1++)
                     {
-                        $message .='<b>Interview Date: </b> '.$interview_date[$l1].'<br/><b>Start Time: </b> '.$start_time[$l1].'<br/><b>End Time: </b> '.$end_time[$l1];
+                        $message .='<br><b>Interview Date: </b> '.$interview_date[$l1].'<br/><b>Start Time: </b> '.$start_time[$l1].'<br/><b>End Time: </b> '.$end_time[$l1].'<br>';
                     }
                     $message .= '<br/><b>Interview Type: </b> '.$interview_type.'<br/><b>Interview Details: </b> '.$interview_address.'<br>';
 
@@ -1631,10 +1631,7 @@ public function interview_scheduler()
             
         
     }
-    // function confirm_interview($apply_id=null)
-    // {
 
-    // }
 
 } // end class
 
