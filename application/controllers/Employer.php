@@ -1613,13 +1613,17 @@ public function interview_scheduler()
                         </style>
                     <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
                     <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
-                    <br><br>Hi '.$js_data['full_name'].',<br>'.$user_message.'<br/><br/>Please check the following rescheduled interview details: <br/><b>Job Title: </b> '.$job_data['job_title'].'<br/>';
+                    <br><br>Hi '.$js_data['full_name'].',<br>'.$user_message.'<br/><br/>Please check the following rescheduled interview details: <br/><b>Job Title: </b> '.$job_data['job_title'].'<br/>
+                         <table>
+                        <tr><td>Interview Date</td><td>Start Time</td><td>End Time</td></tr>';
 
-                    for($l1=0;$l1<sizeof($interview_date);$l1++)
-                    {
-                        $message .='<br><b>Interview Date: </b> '.$interview_date[$l1].'<br/><b>Start Time: </b> '.$start_time[$l1].'<br/><b>End Time: </b> '.$end_time[$l1].'<br>';
-                    }
-                    $message .= '<br/><b>Interview Type: </b> '.$interview_type.'<br/><b>Interview Details: </b> '.$interview_address.'<br>';
+                        for($l1=0;$l1<sizeof($interview_date);$l1++)
+                        {
+                            // $message .='<br><b>Interview Date: </b> '.$interview_date[$l1].'<br/><b>Start Time: </b> '.$start_time[$l1].'<br/><b>End Time: </b> '.$end_time[$l1].'<br>';
+                           $message .='<tr><td>'.$interview_date[$l1].'</td><td>'.$start_time[$l1].'</td><td>'.$end_time[$l1].'</td></tr>';
+                        }
+                    $message .= '
+                        </table><br/><b>Interview Type: </b> '.$interview_type.'<br/><b>Interview Details: </b> '.$interview_address.'<br>';
 
                     $message .='<br><br><a href="'.base_url().'Confirm_interview/confirm_interview_now?apply_id='.base64_encode($ins_id).'&js_id='.base64_encode($email).'" class="btn btn-primary" value="Confirm Interview" align="center" target="_blank">Confirm Interview</a> <br><br><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
 
