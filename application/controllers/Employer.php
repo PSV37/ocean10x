@@ -1530,7 +1530,9 @@ public function interview_scheduler()
                         }
                     }
                 }
-
+                $where['id'] = $ins_id;
+                $interview_dates = $this->Master_model->getMaster('interview_dates',$where);
+                
                 $email = $js_data['email'];
                 // $email = 'shyam@itdivine.in';
                 $subject = 'UNCONFIRMED. Interview request for '.$js_data['full_name'];
@@ -1552,11 +1554,13 @@ public function interview_scheduler()
                     <br><br>Hi '.$js_data['full_name'].',<br>'.$user_message.'<br/><br/>Please check the following interview details: <br/><b>Job Title: </b> '.$job_data['job_title'].'<br/>
                         <table>
                         <tr><td>Interview Date</td><td>Start Time</td><td>End Time</td><td></td></tr>';
-                    if(sizeof($interview_date)==1)
+
+         
+                if(sizeof($interview_dates)==1)
                     {
-                        for($l1=0;$l1<sizeof($interview_date);$l1++)
+                        for($l1=0;$l1<sizeof($interview_dates);$l1++)
                         {
-                            $message .='<tr><td>'.$interview_date[$l1].'</td><td>'.$start_time[$l1].'</td><td>'.$end_time[$l1].'</td><td></td></tr>';
+                            $message .='<tr><td>'.$interview_dates[$l1]['interview_date'].'</td><td>'.$interview_dates[$l1]['start_time'].'</td><td>'.$interview_dates[$l1]['end_time'].'</td><td></td></tr>';
                         }
                             $message .= '
                                 </table><br/><b>Interview Type: </b> '.$interview_type.'<br/><b>Interview Details: </b> '.$interview_address.'<br>';
@@ -1566,9 +1570,13 @@ public function interview_scheduler()
                                 <a href="'.base_url().'Confirm_interview/reschedule_interview?apply_id='.base64_encode($ins_id).'&js_id='.base64_encode($email).'" class="btn btn-primary" value="Reschedule Interview" align="center" target="_blank">Reschedule Interview</a>';
                     }else{
 
-                        for($l1=0;$l1<sizeof($interview_date);$l1++)
+                        for($l1=0;$l1<sizeof($interview_dates);$l1++)
                         {
-                            $message .='<tr><td>'.$interview_date[$l1].'</td><td>'.$start_time[$l1].'</td><td>'.$end_time[$l1].'</td><td><a href="#">Select</a></td></tr>';
+                            if($interview_dates[$l1]!=''){
+                                
+                                $message .='<tr><td>'.$interview_dates[$l1]['interview_date'].'</td><td>'.$interview_dates[$l1]['start_time'].'</td><td>'.$interview_dates[$l1]['end_time'].'</td><td><a href="#">Select</a></td></tr>';
+                            }
+                           
                         }
                         $message .= '
                                 </table><br/><b>Interview Type: </b> '.$interview_type.'<br/><b>Interview Details: </b> '.$interview_address.'<br>';
@@ -1610,6 +1618,9 @@ public function interview_scheduler()
                     }
                 }
 
+                $where['id'] = $interview_id;
+                $interview_datess = $this->Master_model->getMaster('interview_dates',$where);
+
                 $email = $js_data['email'];
                 // $email = 'shyam@itdivine.in';
                 $subject = 'UNCONFIRMED RESCHEDULED. Interview request for '.$js_data['full_name'];
@@ -1632,13 +1643,11 @@ public function interview_scheduler()
                          <table>
                         <tr><td><b>Interview Date</b></td><td><b>Start Time</b></td><td><b>End Time</b></td></tr>';
 
-                if(sizeof($interview_date)==1)
+                if(sizeof($interview_datess)==1)
                     {
-                        for($l1=0;$l1<sizeof($interview_date);$l1++)
+                        for($l1=0;$l1<sizeof($interview_datess);$l1++)
                         {
-                            if($interview_date[$l1]!=''){
-                                $message .='<tr><td>'.$interview_date[$l1].'</td><td>'.$start_time[$l1].'</td><td>'.$end_time[$l1].'</td><td></td></tr>';
-                            }
+                            $message .='<tr><td>'.$interview_datess[$l1]['interview_date'].'</td><td>'.$interview_datess[$l1]['start_time'].'</td><td>'.$interview_datess[$l1]['end_time'].'</td><td></td></tr>';
                         }
                             $message .= '
                                 </table><br/><b>Interview Type: </b> '.$interview_type.'<br/><b>Interview Details: </b> '.$interview_address.'<br>';
@@ -1648,10 +1657,11 @@ public function interview_scheduler()
                                 <a href="'.base_url().'Confirm_interview/reschedule_interview?apply_id='.base64_encode($ins_id).'&js_id='.base64_encode($email).'" class="btn btn-primary" value="Reschedule Interview" align="center" target="_blank">Reschedule Interview</a>';
                     }else{
 
-                        for($l1=0;$l1<sizeof($interview_date);$l1++)
+                        for($l1=0;$l1<sizeof($interview_datess);$l1++)
                         {
-                            if($interview_date[$l1]!=''){
-                                $message .='<tr><td>'.$interview_date[$l1].'</td><td>'.$start_time[$l1].'</td><td>'.$end_time[$l1].'</td><td><a href="#">Select</a></td></tr>';
+                            if($interview_datess[$l1]!=''){
+                                
+                                $message .='<tr><td>'.$interview_datess[$l1]['interview_date'].'</td><td>'.$interview_datess[$l1]['start_time'].'</td><td>'.$interview_datess[$l1]['end_time'].'</td><td><a href="#">Select</a></td></tr>';
                             }
                            
                         }
