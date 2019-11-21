@@ -356,7 +356,7 @@ $(".getformbylevel").on('click', function(event){
                 // Display Modal
                 $('#schedule_interview').modal('show'); 
                 // $( "#datepicker" ).datepicker();
-                $("#datepicker").datepicker({
+                $(".datepicker").datepicker({
                   dateFormat: 'dd-mm-yy'     
                 });
             
@@ -381,7 +381,7 @@ $(".geteditformbylevel").on('click', function(event){
                 // Display Modal
                 $('#update_schedule_interview').modal('show'); 
                 // $( "#datepicker" ).datepicker();
-                $("#datepicker").datepicker({
+                $(".datepicker").datepicker({
                   dateFormat: 'dd-mm-yy'     
                 });
             

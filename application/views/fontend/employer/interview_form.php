@@ -33,7 +33,7 @@
         <div class="form-group">
           <div class="col-sm-6"> 
             <label class="control-label" for="email">Date<span class="required">*</span></label>
-            <input type="text" name="interview_date[]" id="datepicker" class="form-control" value=""> 
+            <input type="text" name="interview_date[]" id="interview_date" class="form-control datepicker" value=""> 
           </div>
           <div class="col-sm-3">  
             <label class="control-label" for="email">Start Time<span class="required">*</span></label>
@@ -80,12 +80,12 @@
 
       <!-- Copy Fields -->
       <div class="copy hide">
-        <div class="control-group input-group" style="margin-top:10px">
+        <div class="control-group input-group">
           <div>
             <div class="form-group">
               <div class="col-sm-5"> 
                 <label class="control-label" for="email">Date<span class="required">*</span></label>
-                <input type="text" name="interview_date[]" id="datepicker" class="form-control" value=""> 
+                <input type="text" name="interview_date[]" id="interview_date" class="form-control datepicker" value=""> 
               </div>
               <div class="col-sm-3">  
                 <label class="control-label" for="email">Start Time<span class="required">*</span></label>
@@ -158,7 +158,7 @@
       $("body").on("click",".remove",function(){ 
           $(this).parents(".control-group").remove();
       });
-      $("#datepicker").datepicker({
+      $(".datepicker").datepicker({
         dateFormat: 'dd-mm-yy'     
       });
     });
