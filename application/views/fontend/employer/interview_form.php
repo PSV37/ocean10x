@@ -158,6 +158,8 @@
       $("body").on("click",".remove",function(){ 
           $(this).parents(".control-group").remove();
       });
-
+      $("#datepicker").datepicker({
+        dateFormat: 'dd-mm-yy'     
+      });
     });
 </script>
