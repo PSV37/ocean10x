@@ -153,14 +153,15 @@
       $(".add-more").click(function(){ 
           var html = $(".copy").html();
           $(".after-add-more").after(html);
+          $(".datepicker").datepicker({
+            dateFormat: 'dd-mm-yy'     
+          });
       });
 
       $("body").on("click",".remove",function(){ 
           $(this).parents(".control-group").remove();
       });
-      $(".datepicker").datepicker({
-        dateFormat: 'dd-mm-yy'     
-      });
+     
     });
 </script>
 <style>
