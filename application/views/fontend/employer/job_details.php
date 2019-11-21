@@ -238,7 +238,8 @@
                       if (!empty($exam_res)): foreach ($exam_res as $res_row) :
                       echo $marks = $res_row['total_marks']; 
                       echo $percentage = ($marks * 100)/NUMBER_QUESTIONS;
-
+                    endforeach;
+                  endif;
                       ?>
 
                       <b>Schedule interviews through Ocean:</b>
