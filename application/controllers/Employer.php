@@ -1445,7 +1445,8 @@ public function interview_scheduler()
         $where_int="job_seeker_id='$job_seeker_id' AND job_post_id='$job_post_id'";
         $data['interview_data'] = $this->Master_model->get_master_row("interview_scheduler", $select= FALSE, $where_int, $join = FALSE);
        
-        $this->load->view('fontend/employer/update_interview_form',$data);
+        // $this->load->view('fontend/employer/update_interview_form',$data);
+         $this->load->view('fontend/employer/interview_form',$data);
     }
 
     
