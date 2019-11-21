@@ -1524,6 +1524,7 @@ public function interview_scheduler()
                                 'end_time'       => $end_time[$l],
                             );
                            $this->Master_model->master_insert($lang_array, 'interview_dates');
+                           $this->Master_model->master_insert($lang_array, 'interview_dates_history');
                         }
                     }
                 }

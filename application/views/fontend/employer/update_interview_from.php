@@ -12,7 +12,7 @@
   <form id="interview-info" class="form-horizontal" action="<?php echo base_url();?>employer/send_interview_invitation/<?php if(!empty($js_apply_data)) echo $js_apply_data['job_apply_id']; ?>" method="post">
       
       <input type="hidden" name="interview_id" value="<?php if(!empty($interview_data)) echo $interview_data['id']; ?>">
-      <div class="form-group">
+      <!-- <div class="form-group">
         <div class="col-sm-6">
           <label class="control-label" for="email">Date<span class="required">*</span></label>
           <input type="text" name="interview_date" id="datepicker" class="form-control" value="<?php if(!empty($interview_data)) echo date('d-m-Y', strtotime($interview_data['interview_date'])); ?>"> 
@@ -24,6 +24,30 @@
         <div class="col-sm-3">
            <label class="control-label" for="email">End Time<span class="required">*</span></label>
            <input type="time" name="end_time" id="end_time" class="form-control" value="<?php if(!empty($interview_data)){ echo $interview_data['end_time'];} else{ echo date('H:i'); } ?>">
+        </div>
+      </div> -->
+      <?php $getdates = getinerviewdates(if(!empty($interview_data)) echo $interview_data['id'];); 
+        print_r($getdates);
+      ?>
+      <div class="input-group">
+        <button class="btn btn-info btn-xs pull-left add-more" type="button"><i class="fa fa-plus"></i> Suggest multile times</button> <br><br>
+        <div class="input-group control-group after-add-more">
+          <div>
+            <div class="form-group">
+              <div class="col-sm-6"> 
+                <label class="control-label" for="email">Date<span class="required">*</span></label>
+                <input type="text" name="interview_date[]" id="interview_date" class="form-control datepicker" value=""> 
+              </div>
+              <div class="col-sm-3">  
+                <label class="control-label" for="email">Start Time<span class="required">*</span></label>
+                <input type="time" name="start_time[]" id="start_time" class="form-control" value="<?php echo date('H:i');?>">
+              </div>
+              <div class="col-sm-3">  
+                <label class="control-label" for="email">End Time<span class="required">*</span></label>
+                <input type="time" name="end_time[]" id="end_time" class="form-control" value="<?php echo date('H:i'); ?>">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       
@@ -53,6 +77,34 @@
          
           <textarea class="form-control" name="message" id="message" rows="5"><?php if(!empty($interview_data)) echo $interview_data['message_to_candidate']; ?></textarea>
 
+        </div>
+      </div>
+
+       <!-- Copy Fields -->
+      <div class="copy hide">
+        <div class="control-group input-group">
+          <div>
+            <div class="form-group">
+              <div class="col-sm-5"> 
+                <label class="control-label" for="email">Date<span class="required">*</span></label>
+                <input type="text" name="interview_date[]" id="interview_date" class="form-control datepicker" value=""> 
+              </div>
+              <div class="col-sm-3">  
+                <label class="control-label" for="email">Start Time<span class="required">*</span></label>
+                <input type="time" name="start_time[]" id="start_time" class="form-control" value="<?php echo date('H:i');?>">
+              </div>
+              <div class="col-sm-3">  
+                <label class="control-label" for="email">End Time<span class="required">*</span></label>
+                <input type="time" name="end_time[]" id="end_time" class="form-control" value="<?php echo date('H:i'); ?>">
+              </div>
+              <div class="col-sm-1">  
+                <button class="btn btn-danger btn-xs pull-right remove" type="button"><i class="fa fa-trash"></i></button><br/>
+              </div>
+
+            </div>
+          </div>
+        
+          <br/>
         </div>
       </div>
 
@@ -97,6 +149,22 @@
           }
         changelableload();
       });
+
+    $(document).ready(function() {
+
+      $(".add-more").click(function(){ 
+          var html = $(".copy").html();
+          $(".after-add-more").after(html);
+          $(".datepicker").datepicker({
+            dateFormat: 'dd-mm-yy'     
+          });
+      });
+
+      $("body").on("click",".remove",function(){ 
+          $(this).parents(".control-group").remove();
+      });
+     
+    });
   </script>
   <style>
   .datepicker{z-index:1151 !important;}
