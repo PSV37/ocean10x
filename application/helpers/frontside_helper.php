@@ -191,7 +191,7 @@ function get_metas() {
         $table = "interview_dates";
         $where_res['interview_id'] = $inter_id;
         $intr_result = $CI->Master_model->getMaster($table, $where_res, false, false ,false, $select_result, $limit =false, $start =false, $search= false);
-       echo $CI->db->last_query(); die;
+       // echo $CI->db->last_query(); die;
 
         return $intr_result;
     } 
