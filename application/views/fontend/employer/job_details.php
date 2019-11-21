@@ -233,7 +233,7 @@
                     <div class="panel-body"></div>
                      <div class="col-md-12">
                       <b>Schedule interviews through Ocean:</b>
-                      <a href="#" class="btn btn-primary btn-xs getformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id; ?>' title="Set Up Interview" data-toggle="modal" data-target="#schedule_interview"><strong>Set Up Interview</strong> 
+                      <a href="#" class="btn btn-info btn-xs getformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id; ?>' title="Set Up Interview" data-toggle="modal" data-target="#schedule_interview"><strong>Set Up Interview</strong> 
                       </a>
                         <table class="table">
                             <thead>
@@ -258,7 +258,7 @@
                                 <td><?php echo $introw['end_time']; ?></td>
                                 <td><?php echo $introw['interview_type']; ?></td>
                                 <td><?php echo $introw['interview_details']; ?></td>
-                                <td> <a href="#" class="btn btn-primary btn-xs geteditformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id; ?>' title="Reschedule Interview" data-toggle="modal" data-target="#schedule_interview"><strong>Reschedule Interview</strong> </a></td>
+                                <td> <a href="#" class="btn btn-success btn-xs geteditformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id; ?>' title="Reschedule Interview" data-toggle="modal" data-target="#update_schedule_interview"><strong>Reschedule Interview</strong> </a></td>
                               </tr>
                             <?php } } }else{ echo "No Data Found";}?>
                             </tbody>
@@ -304,6 +304,23 @@ endforeach;
         <h4 class="modal-title" align="center">Invite to interview</h4>
       </div>
       <div class="modal-body interview_frm">
+    
+      </div>
+   
+    </div>
+
+  </div>
+</div>
+
+<div id="update_schedule_interview" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" align="center">Invite to interview</h4>
+      </div>
+      <div class="modal-body upinterview_frm">
     
       </div>
    
@@ -360,9 +377,9 @@ $(".geteditformbylevel").on('click', function(event){
           
               success: function(data)
               {
-                $('.interview_frm').html(data);
+                $('.upinterview_frm').html(data);
                 // Display Modal
-                $('#schedule_interview').modal('show'); 
+                $('#update_schedule_interview').modal('show'); 
                 // $( "#datepicker" ).datepicker();
                 $("#datepicker").datepicker({
                   dateFormat: 'dd-mm-yy'     
