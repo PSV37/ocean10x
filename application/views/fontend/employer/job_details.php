@@ -370,11 +370,10 @@ $(".geteditformbylevel").on('click', function(event){
     event.stopImmediatePropagation();
     //(... rest of your JS code)
     var int_apply_id = $(this).data('level_id');
-    alert(int_apply_id);
-
-        var level_id = int_apply_id.split('|');
-        var apply_id = level_id[0];
-        var int_id = level_id[1];
+    var level_id = int_apply_id.split('|');
+    var apply_id = level_id[0];
+    var int_id = level_id[1];
+    
      $.ajax({
               url: "<?php echo base_url();?>Employer/update_interview_scheduler",
               type: "POST",

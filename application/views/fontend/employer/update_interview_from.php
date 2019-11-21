@@ -26,31 +26,50 @@
            <input type="time" name="end_time" id="end_time" class="form-control" value="<?php if(!empty($interview_data)){ echo $interview_data['end_time'];} else{ echo date('H:i'); } ?>">
         </div>
       </div> -->
-      <?php $getdates = getinerviewdates($interview_data['id']); 
-        print_r($getdates);
-      ?>
       <div class="input-group">
         <button class="btn btn-info btn-xs pull-left add-more" type="button"><i class="fa fa-plus"></i> Suggest multile times</button> <br><br>
         <div class="input-group control-group after-add-more">
           <div>
+            <?php $getdates = getinerviewdates($interview_data['id']); 
+              if(!empty($getdates)){
+              foreach ($getdates as $row_date) {
+            ?>
+      
             <div class="form-group">
-              <div class="col-sm-6"> 
-                <label class="control-label" for="email">Date<span class="required">*</span></label>
-                <input type="text" name="interview_date[]" id="interview_date" class="form-control datepicker" value=""> 
-              </div>
-              <div class="col-sm-3">  
-                <label class="control-label" for="email">Start Time<span class="required">*</span></label>
-                <input type="time" name="start_time[]" id="start_time" class="form-control" value="<?php echo date('H:i');?>">
-              </div>
-              <div class="col-sm-3">  
-                <label class="control-label" for="email">End Time<span class="required">*</span></label>
-                <input type="time" name="end_time[]" id="end_time" class="form-control" value="<?php echo date('H:i'); ?>">
-              </div>
+             <div class="col-sm-6">
+              <label class="control-label" for="email">Date<span class="required">*</span></label>
+              <input type="text" name="interview_date[]" id="interview_date" class="form-control datepicker" value="<?php  echo date('d-m-Y', strtotime($row_date['interview_date'])); ?>"> 
+            </div>
+            <div class="col-sm-3">
+               <label class="control-label" for="email">Start Time<span class="required">*</span></label>
+               <input type="time" name="start_time[]" id="start_time" class="form-control" value="<?php echo $row_date['start_time'];?>">
+            </div>
+            <div class="col-sm-3">
+               <label class="control-label" for="email">End Time<span class="required">*</span></label>
+               <input type="time" name="end_time[]" id="end_time" class="form-control" value="<?phpecho $row_date['end_time'];?>">
+            </div>
+            </div>
+          
+        <?php } } else{ ?>
+          <div class="form-group">
+            <div class="col-sm-6"> 
+              <label class="control-label" for="email">Date<span class="required">*</span></label>
+              <input type="text" name="interview_date[]" id="interview_date" class="form-control datepicker" value=""> 
+            </div>
+            <div class="col-sm-3">  
+              <label class="control-label" for="email">Start Time<span class="required">*</span></label>
+              <input type="time" name="start_time[]" id="start_time" class="form-control" value="<?php echo date('H:i');?>">
+            </div>
+            <div class="col-sm-3">  
+              <label class="control-label" for="email">End Time<span class="required">*</span></label>
+              <input type="time" name="end_time[]" id="end_time" class="form-control" value="<?php echo date('H:i'); ?>">
             </div>
           </div>
+        <?php } ?>
         </div>
       </div>
-      
+    </div>
+    
       <div class="form-group">
         <div class="col-sm-12">
           <label class="control-label" for="email">Interview Type<span class="required">*</span></label>
