@@ -233,7 +233,14 @@
                     <div class="panel-body"></div>
                      <div class="col-md-12">
                      
-                    <?php if($v_applicant->is_test_done==1){ ?>
+                    <?php if($v_applicant->is_test_done==1){ 
+                      $exam_res = getExamResultByID($v_applicant->job_seeker_id,$job_id); 
+                      if (!empty($exam_res)): foreach ($exam_res as $res_row) :
+                      echo $marks = $res_row['total_marks']; 
+                      echo $percentage = ($marks * 100)/NUMBER_QUESTIONS;
+
+                      ?>
+
                       <b>Schedule interviews through Ocean:</b>
                       <a href="#" class="btn btn-info btn-xs getformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id; ?>' title="Set Up Interview" data-toggle="modal" data-target="#schedule_interview"><strong>Set Up Interview</strong> 
                       </a>
