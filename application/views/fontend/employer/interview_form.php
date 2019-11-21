@@ -12,7 +12,7 @@
   <form id="interview-info" class="form-horizontal" action="<?php echo base_url();?>employer/send_interview_invitation/<?php if(!empty($js_apply_data)) echo $js_apply_data['job_apply_id']; ?>" method="post">
       
       <input type="hidden" name="interview_id" value="">
-      <div class="form-group">
+      <!-- <div class="form-group">
         <div class="col-sm-6">
           <label class="control-label" for="email">Date<span class="required">*</span></label>
           <input type="text" name="interview_date" id="datepicker" class="form-control" value=""> 
@@ -25,7 +25,30 @@
            <label class="control-label" for="email">End Time<span class="required">*</span></label>
            <input type="time" name="end_time" id="end_time" class="form-control" value="<?php echo date('H:i'); ?>">
         </div>
+      </div> -->
+    <div class="input-group">
+      <h6>Languages</h6><br>
+      <button class="btn btn-success btn-xs pull-right add-more" type="button"><i class="fa fa-plus"></i> Add Language</button> <br>
+      <div class="input-group control-group after-add-more">
+      <div>
+        <div class="form-group">
+          <div class="col-sm-6"> 
+            <label class="control-label" for="email">Date<span class="required">*</span></label>
+            <input type="text" name="interview_date[]" id="datepicker" class="form-control" value=""> 
+          </div>
+          <div class="col-sm-3">  
+            <label class="control-label" for="email">Start Time<span class="required">*</span></label>
+            <input type="time" name="start_time[]" id="start_time" class="form-control" value="<?php echo date('H:i');?>">
+          </div>
+          <div class="col-sm-3">  
+            <label class="control-label" for="email">End Time<span class="required">*</span></label>
+            <input type="time" name="end_time[]" id="end_time" class="form-control" value="<?php echo date('H:i'); ?>">
+          </div>
+        </div>
       </div>
+    </div>
+  </div>
+
       
       <div class="form-group">
         <div class="col-sm-12">
@@ -53,6 +76,34 @@
          
           <textarea class="form-control" name="message" id="message" rows="5"></textarea>
 
+        </div>
+      </div>
+
+      <!-- Copy Fields -->
+      <div class="copy hide">
+        <div class="control-group input-group" style="margin-top:10px">
+          <div>
+            <div class="form-group">
+              <div class="col-sm-5"> 
+                <label class="control-label" for="email">Date<span class="required">*</span></label>
+                <input type="text" name="interview_date[]" id="datepicker" class="form-control" value=""> 
+              </div>
+              <div class="col-sm-3">  
+                <label class="control-label" for="email">Start Time<span class="required">*</span></label>
+                <input type="time" name="start_time[]" id="start_time" class="form-control" value="<?php echo date('H:i');?>">
+              </div>
+              <div class="col-sm-3">  
+                <label class="control-label" for="email">End Time<span class="required">*</span></label>
+                <input type="time" name="end_time[]" id="end_time" class="form-control" value="<?php echo date('H:i'); ?>">
+              </div>
+              <div class="col-sm-1">  
+                <button class="btn btn-danger btn-xs pull-right remove" type="button"><i class="fa fa-trash"></i></button><br/>
+              </div>
+
+            </div>
+          </div>
+        
+          <br/>
         </div>
       </div>
 
@@ -97,4 +148,17 @@
           }
         changelableload();
       });
-  </script>
+
+    $(document).ready(function() {
+
+      $(".add-more").click(function(){ 
+          var html = $(".copy").html();
+          $(".after-add-more").after(html);
+      });
+
+      $("body").on("click",".remove",function(){ 
+          $(this).parents(".control-group").remove();
+      });
+
+    });
+</script>
