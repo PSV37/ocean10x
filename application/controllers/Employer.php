@@ -1568,6 +1568,26 @@ public function interview_scheduler()
             if($ins_id)
             {
 
+                $where_del = "interview_id='$interview_id'";
+                $del = $this->Master_model->master_delete('interview_dates',$where_del);
+                if($del==true)
+                {
+                    for($l=0;$l<sizeof($interview_date);$l++)
+                    {
+                        if($interview_date[$l]!=''){
+                           
+                            $lang_array = array(
+                                'interview_id'   => $interview_id,
+                                'interview_date' => date('Y-m-d', strtotime(str_replace('/', '-', $interview_date[$l]))),
+                                'start_time'     => $start_time[$l],
+                                'end_time'       => $end_time[$l],
+                            );
+                           $this->Master_model->master_insert($lang_array, 'interview_dates');
+                           $this->Master_model->master_insert($lang_array, 'interview_dates_history');
+                        }
+                    }
+                }
+
                 $email = $js_data['email'];
                 // $email = 'shyam@itdivine.in';
                 $subject = 'UNCONFIRMED RESCHEDULED. Interview request for '.$js_data['full_name'];
