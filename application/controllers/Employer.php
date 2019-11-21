@@ -1530,7 +1530,7 @@ public function interview_scheduler()
                         }
                     }
                 }
-                $where['id'] = $ins_id;
+                $where['interview_id'] = $ins_id;
                 $interview_dates = $this->Master_model->getMaster('interview_dates',$where);
                 
                 $email = $js_data['email'];
@@ -1614,7 +1614,7 @@ public function interview_scheduler()
                     }
                 }
 
-                $where['id'] = $interview_id;
+                $where['interview_id'] = $interview_id;
                 $interview_datess = $this->Master_model->getMaster('interview_dates',$where);
 
                 $email = $js_data['email'];
@@ -1655,7 +1655,8 @@ public function interview_scheduler()
 
                         for($l1=0;$l1<sizeof($interview_datess);$l1++)
                         {
-                            $message .='<tr><td>'.$interview_datess[$l1]['interview_date'].'</td><td>'.$interview_datess[$l1]['start_time'].'</td><td>'.$interview_datess[$l1]['end_time'].'</td><td><a href="#">Select</a></td></tr>';
+                            $interview_datess[$l1]['id'];
+                            $message .='<tr><td>'.$interview_datess[$l1]['interview_date'].'</td><td>'.$interview_datess[$l1]['start_time'].'</td><td>'.$interview_datess[$l1]['end_time'].'</td><td><a href="#">Select </a></td></tr>';
                         }
                         $message .= '
                                 </table><br/><b>Interview Type: </b> '.$interview_type.'<br/><b>Interview Details: </b> '.$interview_address.'<br>';
