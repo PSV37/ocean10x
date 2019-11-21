@@ -261,7 +261,7 @@
                                 <td><?php echo $introw['interview_details']; ?></td>
                                 <td> <a href="#" class="btn btn-success btn-xs geteditformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id.'|'.$introw['id']; ?>' title="Reschedule Interview" data-toggle="modal" data-target="#update_schedule_interview"><strong>Reschedule Interview</strong> </a></td>
                               </tr>
-                            <?php } } }else{ echo "No Data Found";}?>
+                            <?php } } }else{ echo "<td>No Data Found</td>";}?>
                             </tbody>
                         </table>
                         
