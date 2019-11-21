@@ -27,8 +27,7 @@
         </div>
       </div> -->
     <div class="input-group">
-      <h6>Languages</h6><br>
-      <button class="btn btn-success btn-xs pull-right add-more" type="button"><i class="fa fa-plus"></i> Add Language</button> <br>
+      <button class="btn btn-info btn-xs pull-left add-more" type="button"><i class="fa fa-plus"></i> Suggest multile times</button> <br><br>
       <div class="input-group control-group after-add-more">
       <div>
         <div class="form-group">
