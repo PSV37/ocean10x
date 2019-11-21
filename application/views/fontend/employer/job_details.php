@@ -359,10 +359,7 @@ $(".getformbylevel").on('click', function(event){
                 $(".datepicker").datepicker({
                   dateFormat: 'dd-mm-yy'     
                 });
-                $(".datepicker2").datepicker({
-                  dateFormat: 'dd-mm-yy'     
-                });
-                  
+            
               }
         });
        
@@ -394,7 +391,7 @@ $(".geteditformbylevel").on('click', function(event){
 });
 </script>
 
-<style>
+<!-- <style>
   .datepicker{z-index:1151 !important;}
-</style> 
+</style>  -->
 <?php $this->load->view("fontend/layout/footer.php"); ?>

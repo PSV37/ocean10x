@@ -1480,9 +1480,9 @@ public function interview_scheduler()
             'job_post_id'           => $js_apply['job_post_id'],
             'job_seeker_id'         => $js_apply['job_seeker_id'],
             'company_id'            => $company_id,
-            'interview_date'        => date('Y-m-d', strtotime(str_replace('/', '-', $interview_date))),
-            'start_time'            => $start_time,
-            'end_time'              => $end_time,
+            // 'interview_date'        => date('Y-m-d', strtotime(str_replace('/', '-', $interview_date))),
+            // 'start_time'            => $start_time,
+            // 'end_time'              => $end_time,
             'interview_type'        => $interview_type,
             'interview_details'     => $interview_address,
             'message_to_candidate'  => $user_message,
@@ -1492,9 +1492,9 @@ public function interview_scheduler()
             'job_post_id'           => $js_apply['job_post_id'],
             'job_seeker_id'         => $js_apply['job_seeker_id'],
             'company_id'            => $company_id,
-            'interview_date'        => date('Y-m-d', strtotime(str_replace('/', '-', $interview_date))),
-            'start_time'            => $start_time,
-            'end_time'              => $end_time,
+           // 'interview_date'        => date('Y-m-d', strtotime(str_replace('/', '-', $interview_date))),
+          //  'start_time'            => $start_time,
+            //'end_time'              => $end_time,
             'interview_type'        => $interview_type,
             'interview_details'     => $interview_address,
             'message_to_candidate'  => $user_message,
@@ -1509,6 +1509,24 @@ public function interview_scheduler()
             $ins_id = $this->Master_model->master_insert($inte_array,'interview_scheduler');
             if($ins_id)
             {
+                $where_del = "interview_id='$ins_id'";
+                $del = $this->Master_model->master_delete('interview_dates',$where_del);
+                if($del==true)
+                {
+                    for($l=0;$l<sizeof($interview_date);$l++)
+                    {
+                        if($interview_date[$l]!=''){
+                           
+                            $lang_array = array(
+                                'interview_id'   => $ins_id,
+                                'interview_date' => date('Y-m-d', strtotime(str_replace('/', '-', $interview_date[$l]))),
+                                'start_time'     => $start_time[$l],
+                                'end_time'       => $end_time[$l],
+                            );
+                           $this->Master_model->master_insert($lang_array, 'interview_dates');
+                        }
+                    }
+                }
 
                 $email = $js_data['email'];
                 // $email = 'shyam@itdivine.in';

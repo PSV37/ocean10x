@@ -85,7 +85,7 @@
             <div class="form-group">
               <div class="col-sm-5"> 
                 <label class="control-label" for="email">Date<span class="required">*</span></label>
-                <input type="text" name="interview_date[]" id="interview_date" class="form-control datepicker2" value=""> 
+                <input type="text" name="interview_date[]" id="interview_date" class="form-control datepicker" value=""> 
               </div>
               <div class="col-sm-3">  
                 <label class="control-label" for="email">Start Time<span class="required">*</span></label>
@@ -153,7 +153,7 @@
       $(".add-more").click(function(){ 
           var html = $(".copy").html();
           $(".after-add-more").after(html);
-          $(".datepicker2").datepicker({
+          $(".datepicker").datepicker({
             dateFormat: 'dd-mm-yy'     
           });
       });
@@ -165,5 +165,5 @@
     });
 </script>
 <style>
-  .datepicker,.datepicker2{z-index:1151 !important;}
+  .datepicker{z-index:1151 !important;}
 </style> 
