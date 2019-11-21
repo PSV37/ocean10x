@@ -26,7 +26,7 @@
            <input type="time" name="end_time" id="end_time" class="form-control" value="<?php if(!empty($interview_data)){ echo $interview_data['end_time'];} else{ echo date('H:i'); } ?>">
         </div>
       </div> -->
-      <?php $getdates = getinerviewdates(if(!empty($interview_data)) echo $interview_data['id'];); 
+      <?php $getdates = getinerviewdates($interview_data['id']); 
         print_r($getdates);
       ?>
       <div class="input-group">
