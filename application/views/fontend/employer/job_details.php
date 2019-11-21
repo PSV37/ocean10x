@@ -391,5 +391,7 @@ $(".geteditformbylevel").on('click', function(event){
 });
 </script>
 
-
+<style>
+  .datepicker{z-index:1151 !important;}
+</style> 
 <?php $this->load->view("fontend/layout/footer.php"); ?>
