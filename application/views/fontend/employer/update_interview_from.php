@@ -58,11 +58,11 @@
             </div>
             <div class="col-sm-3">  
               <label class="control-label" for="email">Start Time<span class="required">*</span></label>
-              <input type="time" name="start_time[]" id="start_time" class="form-control" value="<?php echo date('H:i');?>">
+              <input type="time" name="start_time[]" id="start_time" class="form-control" value="">
             </div>
             <div class="col-sm-3">  
               <label class="control-label" for="email">End Time<span class="required">*</span></label>
-              <input type="time" name="end_time[]" id="end_time" class="form-control" value="<?php echo date('H:i'); ?>">
+              <input type="time" name="end_time[]" id="end_time" class="form-control" value="">
             </div>
           </div>
         <?php } ?>
@@ -110,11 +110,11 @@
               </div>
               <div class="col-sm-3">  
                 <label class="control-label" for="email">Start Time<span class="required">*</span></label>
-                <input type="time" name="start_time[]" id="start_time" class="form-control" value="<?php echo date('H:i');?>">
+                <input type="time" name="start_time[]" id="start_time" class="form-control" value="">
               </div>
               <div class="col-sm-3">  
                 <label class="control-label" for="email">End Time<span class="required">*</span></label>
-                <input type="time" name="end_time[]" id="end_time" class="form-control" value="<?php echo date('H:i'); ?>">
+                <input type="time" name="end_time[]" id="end_time" class="form-control" value="">
               </div>
               <div class="col-sm-1">  
                 <button class="btn btn-danger btn-xs pull-right remove" type="button"><i class="fa fa-trash"></i></button><br/>
