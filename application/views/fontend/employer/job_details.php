@@ -359,7 +359,10 @@ $(".getformbylevel").on('click', function(event){
                 $(".datepicker").datepicker({
                   dateFormat: 'dd-mm-yy'     
                 });
-            
+                $(".datepicker2").datepicker({
+                  dateFormat: 'dd-mm-yy'     
+                });
+                  
               }
         });
        
