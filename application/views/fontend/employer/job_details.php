@@ -233,9 +233,10 @@
                     <div class="panel-body"></div>
                      <div class="col-md-12">
                       <b>Schedule interviews through Ocean:</b>
+                    <?php if($v_applicant->is_test_done==1){ ?>
                       <a href="#" class="btn btn-info btn-xs getformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id; ?>' title="Set Up Interview" data-toggle="modal" data-target="#schedule_interview"><strong>Set Up Interview</strong> 
                       </a>
-                  
+                    
                         <table class="table">
                             <thead>
                               <tr>
@@ -264,7 +265,7 @@
                             <?php } } }else{ echo "<td>No Data Found</td>";}?>
                             </tbody>
                         </table>
-                        
+                      <?php } ?>
                     </div>
                 </div>
             </li>
