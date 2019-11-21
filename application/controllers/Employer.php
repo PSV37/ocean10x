@@ -1572,11 +1572,7 @@ public function interview_scheduler()
 
                         for($l1=0;$l1<sizeof($interview_dates);$l1++)
                         {
-                            if($interview_dates[$l1]!=''){
-                                
-                                $message .='<tr><td>'.$interview_dates[$l1]['interview_date'].'</td><td>'.$interview_dates[$l1]['start_time'].'</td><td>'.$interview_dates[$l1]['end_time'].'</td><td><a href="#">Select</a></td></tr>';
-                            }
-                           
+                            $message .='<tr><td>'.$interview_dates[$l1]['interview_date'].'</td><td>'.$interview_dates[$l1]['start_time'].'</td><td>'.$interview_dates[$l1]['end_time'].'</td><td><a href="#">Select</a></td></tr>';
                         }
                         $message .= '
                                 </table><br/><b>Interview Type: </b> '.$interview_type.'<br/><b>Interview Details: </b> '.$interview_address.'<br>';
@@ -1659,11 +1655,7 @@ public function interview_scheduler()
 
                         for($l1=0;$l1<sizeof($interview_datess);$l1++)
                         {
-                            if($interview_datess[$l1]!=''){
-                                
-                                $message .='<tr><td>'.$interview_datess[$l1]['interview_date'].'</td><td>'.$interview_datess[$l1]['start_time'].'</td><td>'.$interview_datess[$l1]['end_time'].'</td><td><a href="#">Select</a></td></tr>';
-                            }
-                           
+                            $message .='<tr><td>'.$interview_datess[$l1]['interview_date'].'</td><td>'.$interview_datess[$l1]['start_time'].'</td><td>'.$interview_datess[$l1]['end_time'].'</td><td><a href="#">Select</a></td></tr>';
                         }
                         $message .= '
                                 </table><br/><b>Interview Type: </b> '.$interview_type.'<br/><b>Interview Details: </b> '.$interview_address.'<br>';
