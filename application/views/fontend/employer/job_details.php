@@ -243,7 +243,7 @@
                                 <th> End Time</th>
                                 <th> Interview Type</th>
                                 <th> Interview Details</th>
-                                <th>Action</th>
+                                <th> Action</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -354,7 +354,7 @@ $(".geteditformbylevel").on('click', function(event){
     //(... rest of your JS code)
     var int_apply_id = $(this).data('level_id');
      $.ajax({
-              url: "<?php echo base_url();?>Employer/interview_scheduler",
+              url: "<?php echo base_url();?>Employer/update_interview_scheduler",
               type: "POST",
               data: {interview_id:int_apply_id},
           

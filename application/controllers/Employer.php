@@ -1409,8 +1409,31 @@ public function interview_scheduler()
        
        // $emails= base64_decode($this->input->post('job_apply_email'));
         
-       $job_apply_id = $this->input->post('job_apply_id');
-        $interview_id = $this->input->post('interview_id');
+        $job_apply_id = $this->input->post('job_apply_id');
+
+        $where_apply="job_apply_id='$job_apply_id'";
+        $select_edu = "job_seeker_id,job_post_id,job_apply_id";
+        $data['js_apply_data'] = $this->Master_model->get_master_row("job_apply", $select_edu, $where_apply, $join = FALSE);
+        $job_seeker_id = $data['js_apply_data']['job_seeker_id'];
+        $job_post_id = $data['js_apply_data']['job_post_id'];
+
+        $where_js="job_seeker_id='$job_seeker_id'";
+        $data['js_info_data'] = $this->Master_model->get_master_row("js_info", $select= FALSE, $where_js, $join = FALSE);
+
+        $where_int="job_seeker_id='$job_seeker_id' AND job_post_id='$job_post_id'";
+        $data['interview_data'] = $this->Master_model->get_master_row("interview_scheduler", $select= FALSE, $where_int, $join = FALSE);
+        
+        $this->load->view('fontend/employer/interview_form',$data);
+       
+    }
+
+    public function update_interview_scheduler()
+    {
+        $company_id = $this->session->userdata('company_profile_id');
+       
+       // $emails= base64_decode($this->input->post('job_apply_email'));
+        
+        $job_apply_id = $this->input->post('interview_id');
        
 
         $where_apply="job_apply_id='$job_apply_id'";
@@ -1424,13 +1447,8 @@ public function interview_scheduler()
 
         $where_int="job_seeker_id='$job_seeker_id' AND job_post_id='$job_post_id'";
         $data['interview_data'] = $this->Master_model->get_master_row("interview_scheduler", $select= FALSE, $where_int, $join = FALSE);
-        if(empty($job_apply_id))
-        {
-            $this->load->view('fontend/employer/update_interview_form',$data);
-        }else{
-            $this->load->view('fontend/employer/interview_form',$data);
-        }
        
+        $this->load->view('fontend/employer/update_interview_form',$data);
     }
 
     
