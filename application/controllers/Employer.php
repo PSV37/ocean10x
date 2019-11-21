@@ -1552,25 +1552,27 @@ public function interview_scheduler()
                     <br><br>Hi '.$js_data['full_name'].',<br>'.$user_message.'<br/><br/>Please check the following interview details: <br/><b>Job Title: </b> '.$job_data['job_title'].'<br/>
                         <table>
                         <tr><td>Interview Date</td><td>Start Time</td><td>End Time</td><td></td></tr>';
-                        
+                    if(sizeof($interview_date)==1)
+                    {
                         for($l1=0;$l1<sizeof($interview_date);$l1++)
                         {
-                            if(sizeof($interview_date)==1)
-                            {
-                                $message .='<tr><td>'.$interview_date[$l1].'</td><td>'.$start_time[$l1].'</td><td>'.$end_time[$l1].'</td><td></td></tr>';
-                            }else{
-                                $message .='<tr><td>'.$interview_date[$l1].'</td><td>'.$start_time[$l1].'</td><td>'.$end_time[$l1].'</td><td><a href="#">Select</a></td></tr>';
-                            }
-                          
+                            $message .='<tr><td>'.$interview_date[$l1].'</td><td>'.$start_time[$l1].'</td><td>'.$end_time[$l1].'</td><td></td></tr>';
                         }
-                    $message .= '
-                        </table><br/><b>Interview Type: </b> '.$interview_type.'<br/><b>Interview Details: </b> '.$interview_address.'<br>';
-                        if(sizeof($interview_date)==1)
-                        {
-                    $message .= '
+                            $message .= '
+                                </table><br/><b>Interview Type: </b> '.$interview_type.'<br/><b>Interview Details: </b> '.$interview_address.'<br>';
+                                
+                            $message .= '
                                 <br><br><a href="'.base_url().'Confirm_interview/confirm_interview_now?apply_id='.base64_encode($ins_id).'&js_id='.base64_encode($email).'" class="btn btn-primary" value="Confirm Interview" align="center" target="_blank">Confirm Interview</a>
                                 <a href="'.base_url().'Confirm_interview/reschedule_interview?apply_id='.base64_encode($ins_id).'&js_id='.base64_encode($email).'" class="btn btn-primary" value="Reschedule Interview" align="center" target="_blank">Reschedule Interview</a>';
+                    }else{
+
+                        for($l1=0;$l1<sizeof($interview_date);$l1++)
+                        {
+                            $message .='<tr><td>'.$interview_date[$l1].'</td><td>'.$start_time[$l1].'</td><td>'.$end_time[$l1].'</td><td><a href="#">Select</a></td></tr>';
                         }
+                        $message .= '
+                                </table><br/><b>Interview Type: </b> '.$interview_type.'<br/><b>Interview Details: </b> '.$interview_address.'<br>';
+                    }
                     $message .=' <br><br><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
 
 
@@ -1630,14 +1632,28 @@ public function interview_scheduler()
                          <table>
                         <tr><td><b>Interview Date</b></td><td><b>Start Time</b></td><td><b>End Time</b></td></tr>';
 
+                if(sizeof($interview_date)==1)
+                    {
                         for($l1=0;$l1<sizeof($interview_date);$l1++)
                         {
-                           $message .='<tr><td>'.$interview_date[$l1].'</td><td>'.$start_time[$l1].'</td><td>'.$end_time[$l1].'</td></tr>';
+                            $message .='<tr><td>'.$interview_date[$l1].'</td><td>'.$start_time[$l1].'</td><td>'.$end_time[$l1].'</td><td></td></tr>';
                         }
-                    $message .= '
-                        </table><br/><b>Interview Type: </b> '.$interview_type.'<br/><b>Interview Details: </b> '.$interview_address.'<br>';
+                            $message .= '
+                                </table><br/><b>Interview Type: </b> '.$interview_type.'<br/><b>Interview Details: </b> '.$interview_address.'<br>';
+                                
+                            $message .= '
+                                <br><br><a href="'.base_url().'Confirm_interview/confirm_interview_now?apply_id='.base64_encode($ins_id).'&js_id='.base64_encode($email).'" class="btn btn-primary" value="Confirm Interview" align="center" target="_blank">Confirm Interview</a>
+                                <a href="'.base_url().'Confirm_interview/reschedule_interview?apply_id='.base64_encode($ins_id).'&js_id='.base64_encode($email).'" class="btn btn-primary" value="Reschedule Interview" align="center" target="_blank">Reschedule Interview</a>';
+                    }else{
 
-                    $message .='<br><br><a href="'.base_url().'Confirm_interview/confirm_interview_now?apply_id='.base64_encode($ins_id).'&js_id='.base64_encode($email).'" class="btn btn-primary" value="Confirm Interview" align="center" target="_blank">Confirm Interview</a> <br><br><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+                        for($l1=0;$l1<sizeof($interview_date);$l1++)
+                        {
+                            $message .='<tr><td>'.$interview_date[$l1].'</td><td>'.$start_time[$l1].'</td><td>'.$end_time[$l1].'</td><td><a href="#">Select</a></td></tr>';
+                        }
+                        $message .= '
+                                </table><br/><b>Interview Type: </b> '.$interview_type.'<br/><b>Interview Details: </b> '.$interview_address.'<br>';
+                    }
+                    $message .=' <br><br><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
 
 
                    $send = sendEmail_JobRequest($email,$message,$subject);
