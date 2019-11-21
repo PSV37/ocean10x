@@ -1636,7 +1636,9 @@ public function interview_scheduler()
                     {
                         for($l1=0;$l1<sizeof($interview_date);$l1++)
                         {
-                            $message .='<tr><td>'.$interview_date[$l1].'</td><td>'.$start_time[$l1].'</td><td>'.$end_time[$l1].'</td><td></td></tr>';
+                            if($interview_date[$l1]!=''){
+                                $message .='<tr><td>'.$interview_date[$l1].'</td><td>'.$start_time[$l1].'</td><td>'.$end_time[$l1].'</td><td></td></tr>';
+                            }
                         }
                             $message .= '
                                 </table><br/><b>Interview Type: </b> '.$interview_type.'<br/><b>Interview Details: </b> '.$interview_address.'<br>';
@@ -1648,7 +1650,10 @@ public function interview_scheduler()
 
                         for($l1=0;$l1<sizeof($interview_date);$l1++)
                         {
-                            $message .='<tr><td>'.$interview_date[$l1].'</td><td>'.$start_time[$l1].'</td><td>'.$end_time[$l1].'</td><td><a href="#">Select</a></td></tr>';
+                            if($interview_date[$l1]!=''){
+                                $message .='<tr><td>'.$interview_date[$l1].'</td><td>'.$start_time[$l1].'</td><td>'.$end_time[$l1].'</td><td><a href="#">Select</a></td></tr>';
+                            }
+                           
                         }
                         $message .= '
                                 </table><br/><b>Interview Type: </b> '.$interview_type.'<br/><b>Interview Details: </b> '.$interview_address.'<br>';
