@@ -1672,22 +1672,30 @@ public function interview_scheduler()
         
     }
 
-    public function update_interview_status()
+    public function update_interview_status($interview_id = null)
     {
         $company_id = $this->session->userdata('company_profile_id');
      
-        $interview_id = $this->input->post('interview_id');
+        $interview_id = $interview_id;
+        $inter_id = $this->input->post('interview_id');
         $job_id = $this->input->post('job_id');
+       if($interview_id){
+            $status_array['interview_complete_status'] = $this->input->post('interview_status');
+            $status_array['updated_by']  = $company_id;
+            $status_array['updated_on']  = date('Y-m-d H:i:s');
 
-        $status_array['interview_complete_status'] = $this->input->post('interview_status');
-        $status_array['updated_by']  = $company_id;
-        $status_array['updated_on']  = date('Y-m-d H:i:s');
-
-        $where_ins['id']=$interview_id;
-        $ins_id = $this->Master_model->master_update($status_array,'interview_scheduler',$where_ins);
+            $where_ins['id']=$inter_id;
+            $ins_id = $this->Master_model->master_update($status_array,'interview_scheduler',$where_ins);
+            redirect('employer/all_applicant/'.$job_id);
+       }
+        else{
+           $where_int="id='$interview_id'";
+            $data['interview_data'] = $this->Master_model->get_master_row("interview_scheduler", $select= FALSE, $where_int, $join = FALSE);
        
+            $this->load->view('fontend/employer/interview_status_form',$data); 
+        }
+        
       
-       redirect('employer/all_applicant/'.$job_id);
     }
 
 

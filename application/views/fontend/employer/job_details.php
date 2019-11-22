@@ -272,7 +272,7 @@
                                 <td><?php echo $introw['interview_type']; ?></td>
                                 <td><?php echo $introw['interview_details']; ?></td>
                                 <td> <a href="#" class="btn btn-success btn-xs geteditformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id.'|'.$introw['id']; ?>' title="Reschedule Interview" data-toggle="modal" data-target="#update_schedule_interview"><strong>Reschedule</strong> </a>
-                                <a href="#" class="btn btn-info btn-xs" title="Interview Status" data-toggle="modal" data-target="#update_status" onclick="$('#interview').val(<?php echo $introw['id']; ?>),$('#job_id').val(<?php echo $introw['job_post_id']; ?>)"><strong>Status</strong> </a>
+                                <a href="#" class="btn btn-info btn-xs getstatusformbylevel" data-level_id='<?php echo $introw['id'].'|'.$introw['job_post_id']; ?>' title="Interview Status" data-toggle="modal" data-target="#update_status" ><strong>Status</strong> </a>
                                 </td>
                               </tr>
                             <?php } } }else{ echo "<td>No Data Found</td>";}?>
@@ -352,29 +352,9 @@ endforeach;
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title" align="center">Interview Status</h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body stainterview_frm">
     
-      <form id="frm-info" class="form-horizontal" action="<?php echo base_url();?>employer/update_interview_status/" method="post">
       
-        <input type="text" name="interview_id" id="interview" value="">
-        <input type="text" name="job_id" id="job_id" value="">
-        <div class="form-group">
-        <div class="col-sm-12">
-          <label class="control-label" for="email">Interview Status<span class="required">*</span></label>
-          <select  name="interview_status" id="interview_status" class="form-control" required="">
-            <option value="">Select Status</option>
-            <option value="1">Completed</option>
-            <option value="0">Not Completed</option>
-          </select>
-
-        </div>
-        <!-- <div class="col-sm-1"></div> -->
-      </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-          <button type="submit" class="btn btn-primary">Send Invitation</button>
-        </div>
-      </form>
       </div>
    
     </div>
@@ -435,13 +415,40 @@ $(".geteditformbylevel").on('click', function(event){
           
               success: function(data)
               {
-                $('.upinterview_frm').html(data);
+                $('.stainterview_frm').html(data);
                 // Display Modal
                 $('#update_schedule_interview').modal('show'); 
                 // $( "#datepicker" ).datepicker();
                 $(".datepicker").datepicker({
                   dateFormat: 'dd-mm-yy'     
                 });
+            
+              }
+        });
+       
+});
+
+$(".getstatusformbylevel").on('click', function(event){
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+    //(... rest of your JS code)
+    var int_apply_id = $(this).data('level_id');
+    var level_id = int_apply_id.split('|');
+    var int_id = level_id[0];
+    var job_id = level_id[1];
+
+     $.ajax({
+              url: "<?php echo base_url();?>Employer/update_interview_status",
+              type: "POST",
+              data: {job_id:job_id,interview_id:int_id},
+          
+              success: function(data)
+              {
+                $('.upinterview_frm').html(data);
+                // Display Modal
+                $('#update_status').modal('show'); 
+                // $( "#datepicker" ).datepicker();
+                
             
               }
         });
