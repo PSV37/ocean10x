@@ -44,7 +44,7 @@ class Confirm_interview extends CI_Controller {
         $tablename1 = "interview_dates";
         $where_res1['interview_id'] = $rec_id;
         $apply_res1 = $this->Master_model->get_master_row($tablename1, $select_result1, $where_res1, $join = FALSE);
-
+echo  $this->db->last_query(); die;
         $interview_id = $apply_res1['interview_id'];
         $interview_date = $apply_res1['interview_date'];
         $start_time = $apply_res1['start_time'];
@@ -80,7 +80,7 @@ class Confirm_interview extends CI_Controller {
                            // if($this->Job_apply_model->check_confirmed_interview($job_seeker_id, $company_id, $job_post_id))
                             $where_chlk = "id='$rec_id' AND is_slot_selected='1'";
                             $check_res1 = $this->Master_model->get_master_row('interview_scheduler', $select = FALSE, $where_chlk, $join = FALSE);
-                          // echo  $this->db->last_query(); die;
+                          // 
                         if($check_res1==ture)
                             {
                                 $this->load->view('fontend/alreadyconfirmed');
