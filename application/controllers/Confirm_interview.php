@@ -80,8 +80,8 @@ class Confirm_interview extends CI_Controller {
                            // if($this->Job_apply_model->check_confirmed_interview($job_seeker_id, $company_id, $job_post_id))
                             $where_chlk = "id='$rec_id' AND is_slot_selected='1'";
                             $check_res1 = $this->Master_model->get_master_row('interview_scheduler', $select = FALSE, $where_chlk, $join = FALSE);
-                          echo  $this->db->last_query(); die;
-                        if($check_res1)
+                          // echo  $this->db->last_query(); die;
+                        if($check_res1==ture)
                             {
                                 $this->load->view('fontend/alreadyconfirmed');
                             } else {
@@ -135,7 +135,7 @@ class Confirm_interview extends CI_Controller {
                         // if($this->Job_apply_model->check_confirmed_interview($job_seeker_id, $company_id, $job_post_id))
                          $where_chlk = "id='$rec_id' AND is_slot_selected='1'";
                             $check_res1 = $this->Master_model->get_master_row('interview_scheduler', $select = FALSE, $where_chlk, $join = FALSE);
-                        if($check_res1)
+                         if($check_res1==ture)
                         {
                             $this->load->view('fontend/alreadyconfirmed');
                         } else {
