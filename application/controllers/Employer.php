@@ -1678,8 +1678,8 @@ public function interview_scheduler()
      
         $interview_id = $this->input->post('interview_id');
         $job_id = $this->input->post('job_id');
-        
-        $status_array['interview_complete_status'] = 1;
+
+        $status_array['interview_complete_status'] = $this->input->post('interview_status');
         $status_array['updated_by']  = $company_id;
         $status_array['updated_on']  = date('Y-m-d H:i:s');
 
@@ -1687,7 +1687,6 @@ public function interview_scheduler()
         $ins_id = $this->Master_model->master_update($status_array,'interview_scheduler',$where_ins);
        
       
-       
        redirect('employer/all_applicant/'.$job_id);
     }
 

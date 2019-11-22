@@ -363,8 +363,8 @@ endforeach;
           <label class="control-label" for="email">Interview Status<span class="required">*</span></label>
           <select  name="interview_status" id="interview_status" class="form-control" required="">
             <option value="">Select Status</option>
-            <option value="Completed">Completed</option>
-            <option value="Not Completed">Not Completed</option>
+            <option value="1">Completed</option>
+            <option value="0">Not Completed</option>
           </select>
 
         </div>
