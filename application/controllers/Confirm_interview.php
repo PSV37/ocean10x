@@ -473,5 +473,5 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                     redirect('register/jobseeker_login', 'refresh');
                 }
     }
-12688
+
 }// end class
