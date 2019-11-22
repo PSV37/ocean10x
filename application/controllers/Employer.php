@@ -1689,7 +1689,7 @@ public function interview_scheduler()
             redirect('employer/all_applicant/'.$job_id);
        }
         else{
-           $where_int="id='$inter_id'";
+           $where_int="id='$interview_id'";
             $data['interview_data'] = $this->Master_model->get_master_row("interview_scheduler", $select= FALSE, $where_int, $join = FALSE);
        
             $this->load->view('fontend/employer/interview_status_form',$data); 
