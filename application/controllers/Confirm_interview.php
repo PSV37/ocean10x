@@ -265,6 +265,178 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
     }
 
 
+    public function select_slot()
+    {
+        $rec_id = base64_decode($this->input->get('apply_id'));
+        $email_id =base64_decode($this->input->get('js_id'));
 
+        // to get details about apply job table 
+        $select_result = "interview_id,interview_date,start_time,end_time";
+        $tablename = "interview_dates";
+        $where_res['id'] = $rec_id;
+        $apply_res = $this->Master_model->get_master_row($tablename, $select_result, $where_res, $join = FALSE);
+
+        $interview_id = $apply_res['interview_id'];
+        $interview_date = $apply_res['interview_date'];
+        $start_time = $apply_res['start_time'];
+        $end_time = $apply_res['end_time'];
+
+        $select_result1 = "job_post_id,company_id,job_seeker_id";
+        $tablename1 = "interview_scheduler";
+        $where_res1['id'] = $interview_id;
+        $apply_res1 = $this->Master_model->get_master_row($tablename1, $select_result1, $where_res1, $join = FALSE);
+
+           $company_id = $apply_res1['company_id'];
+           $job_post_id = $apply_res1['job_post_id'];
+
+
+        $wherecan="email= '$email_id'";
+        $check_candidate = $this->Master_model->get_master_row('js_info', $select = FALSE, $wherecan, $join = FALSE);
+            // echo $this->db->last_query(); echo "<br><br>"; 
+            if($check_candidate)
+            {
+                $job_seeker_id = $check_candidate['job_seeker_id'];
+                $email_id = $check_candidate['email'];
+                $pass = $check_candidate['password'];
+                             
+                if($pass!='')
+                {
+                    $data_ck = array(
+                        'job_seeker_id' => "'".$job_seeker_id."'",
+                    );
+                    $validate = $this->Master_model->getMaster("js_info",$data_ck);
+                    if(!empty($validate))
+                    {
+                        foreach($validate as $rows)
+                        {
+                            $data['email'] = $rows['email'];
+                            $data['job_seeker_id'] = $rows['job_seeker_id'];
+                        }
+                            $this->session->set_userdata($data);
+
+                        $where_chlk = "id='$interview_id' AND is_slot_selected='1'";
+                        $check_res1 = $this->Master_model->get_master_row('interview_scheduler', $select = FALSE, $where_chlk, $join = FALSE);
+
+                            // if($this->Job_apply_model->check_confirmed_interview($job_seeker_id, $company_id, $job_post_id))
+                            if($check_res1==ture)
+                            {
+                                $this->load->view('fontend/alreadyconfirmed');
+                            } else {
+                            // To update forwarded job status
+                                $data_status=array( 
+                                    'interview_date'    => $interview_date,
+                                    'start_time'        => $start_time,
+                                    'end_time'          => $end_time,
+                                    'confirm_status'    => 1,
+                                    'is_slot_selected'  => 1,
+                                );
+                                $where_update1['id'] = $interview_id;
+                                $status = $this->Master_model->master_update($data_status, 'interview_scheduler', $where_update1);
+      
+                                if($status==true)
+                                {
+                                    $wherejob = "interview_scheduler.job_post_id='$job_post_id' AND interview_scheduler.company_id='$company_id' AND interview_scheduler.job_seeker_id='$job_seeker_id'";
+                                    $Join_data = array(
+                                        'job_posting' => 'job_posting.job_post_id = interview_scheduler.job_post_id|INNER',
+                                    );
+                                    $select = "job_posting.job_title,interview_scheduler.interview_date,interview_scheduler.start_time,interview_scheduler.end_time,interview_scheduler.interview_type,interview_scheduler.interview_details,interview_scheduler.message_to_candidate,interview_scheduler.company_id";
+                                    $data1['interview_data'] = $this->Master_model->getMaster('interview_scheduler',$wherejob, $Join_data, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
+
+
+                                    $email = $email_id;
+                                    // $email = 'shyam@itdivine.in';
+                                    $subject = 'CONFIRMED. Interview date and time for '.$js_data['full_name'];
+                                    $message = '
+                                        <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+                                        <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+                                        <br><br>Hi '.$js_data['full_name'].',<br> Your interview slot is scheduled successfully here are the details: <br/><b>Interview Date:</b>'.$interview_date.'<br/><b>Start Time:</b>'.$start_time.'<br/><b>End Time:</b>'.$end_time.'<br/>';
+
+                                        $message .='<br><br><br><br><br>Good luck!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+
+
+                                       $send = sendEmail_JobRequest($email,$message,$subject);
+                                        
+                                    $this->load->view('fontend/confirmsucess',$data1);
+                                }
+                            }
+                        
+
+                    }else{
+                        $this->session->set_flashdata('type', 'danger');
+                        $this->session->set_flashdata('Message', 'Invalid User...!');
+                        $this->session->set_userdata($data);
+
+                        // redirect('Job_forword_seeker/index');
+                        $where_chlk = "id='$interview_id' AND is_slot_selected='1'";
+                        $check_res1 = $this->Master_model->get_master_row('interview_scheduler', $select = FALSE, $where_chlk, $join = FALSE);
+
+                            // if($this->Job_apply_model->check_confirmed_interview($job_seeker_id, $company_id, $job_post_id))
+                        if($check_res1==ture)
+                        // if($this->Job_apply_model->check_confirmed_interview($job_seeker_id, $company_id, $job_post_id))
+                        {
+                            $this->load->view('fontend/alreadyconfirmed');
+                        } else {
+                            // To update job status
+                            $data_status=array( 
+                                'interview_date'    => $interview_date,
+                                'start_time'        => $start_time,
+                                'end_time'          => $end_time,
+                                'confirm_status'    => 1,
+                                'is_slot_selected'  => 1,
+                            );
+                            $where_update1['id'] = $interview_id;
+                            $status = $this->Master_model->master_update($data_status, 'interview_scheduler', $where_update1);
+                            if($status==true)
+                            {
+                                 $wherejob = "interview_scheduler.job_post_id='$job_post_id' AND interview_scheduler.company_id='$company_id' AND interview_scheduler.job_seeker_id='$job_seeker_id'";
+                                    $Join_data = array(
+                                        'job_posting' => 'job_posting.job_post_id = interview_scheduler.job_post_id|INNER',
+                                    );
+                                    $select = "job_posting.job_title,interview_scheduler.interview_date,interview_scheduler.start_time,interview_scheduler.end_time,interview_scheduler.interview_type,interview_scheduler.interview_details,interview_scheduler.message_to_candidate,interview_scheduler.company_id";
+                                    $data1['interview_data'] = $this->Master_model->getMaster('interview_scheduler',$wherejob, $Join_data, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
+
+                                    $email = $email_id;
+                                    // $email = 'shyam@itdivine.in';
+                                    $subject = 'CONFIRMED. Interview date and time for '.$js_data['full_name'];
+                                    $message = '
+                                        <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+                                        <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+                                        <br><br>Hi '.$js_data['full_name'].',<br> Your interview slot is scheduled successfully here are the details: <br/><b>Interview Date:</b>'.$interview_date.'<br/><b>Start Time:</b>'.$start_time.'<br/><b>End Time:</b>'.$end_time.'<br/>';
+
+                                    $message .='<br><br><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+
+                                    $send = sendEmail_JobRequest($email,$message,$subject);
+
+                                $this->load->view('fontend/confirmsucess',$data1);
+                            }
+                        }
+                        
+                        
+                    }  
+                }else{
+                        // To update job status
+                       $data_status=array( 
+                            'interview_date'    => $interview_date,
+                            'start_time'        => $start_time,
+                            'end_time'          => $end_time,
+                            'confirm_status'    => 1,
+                            'is_slot_selected'  => 1,
+                        );
+                        $where_update1['id'] = $interview_id;
+                        $status = $this->Master_model->master_update($data_status, 'interview_scheduler', $where_update1);
+                        if($status==true)
+                        {
+                            $data['job_seeker_id'] = $job_seeker_id;
+                            $data['email_id'] = $email_id;
+                            $this->load->view('fontend/jobseeker/jobseeker_set_password',$data);
+                        }
+                    }
+                 
+            } // verify password empty cond else
+              
+           else{
+                    redirect('register/jobseeker_login', 'refresh');
+                }
+    }
 
 }// end class
