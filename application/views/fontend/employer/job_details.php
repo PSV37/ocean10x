@@ -415,7 +415,7 @@ $(".geteditformbylevel").on('click', function(event){
           
               success: function(data)
               {
-                $('.stainterview_frm').html(data);
+                $('.upinterview_frm').html(data);
                 // Display Modal
                 $('#update_schedule_interview').modal('show'); 
                 // $( "#datepicker" ).datepicker();
@@ -444,11 +444,11 @@ $(".getstatusformbylevel").on('click', function(event){
           
               success: function(data)
               {
-                $('.upinterview_frm').html(data);
+                $('.stainterview_frm').html(data);
                 // Display Modal
                 $('#update_status').modal('show'); 
                 // $( "#datepicker" ).datepicker();
-                
+              
             
               }
         });
