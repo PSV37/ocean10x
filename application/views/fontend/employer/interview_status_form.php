@@ -3,7 +3,7 @@
 <form id="interview-info" class="form-horizontal" action="<?php echo base_url();?>employer/update_inter_status" method="post">
 
   <input type="hidden" name="interview_id" id="interview" value="<?php if(!empty($interview_data)) echo $interview_data['id']; ?>">
-  <input type="text" name="job_id" id="job_id" value="<?php if(!empty($interview_data)) echo $interview_data['job_post_id']; ?>">
+  <input type="hidden" name="job_id" id="job_id" value="<?php if(!empty($interview_data)) echo $interview_data['job_post_id']; ?>">
   <div class="form-group">
   <div class="col-sm-12">
     <label class="control-label" for="email">Interview Status<span class="required">*</span></label>
