@@ -1677,6 +1677,8 @@ public function interview_scheduler()
         $company_id = $this->session->userdata('company_profile_id');
      
         $interview_id = $this->input->post('interview_id');
+        $job_id = $this->input->post('job_id');
+        
         $status_array['interview_complete_status'] = 1;
         $status_array['updated_by']  = $company_id;
         $status_array['updated_on']  = date('Y-m-d H:i:s');
@@ -1686,7 +1688,7 @@ public function interview_scheduler()
        
       
        
-       redirect('employer/all_applicant/'.$js_apply['job_post_id']);
+       redirect('employer/all_applicant/'.$job_id);
     }
 
 
