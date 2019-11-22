@@ -244,11 +244,8 @@
                       endforeach;
                       endif;
                     ?>
-                   
-                      <a href="#" class="btn btn-info btn-xs getformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id; ?>' title="Set Up Interview" data-toggle="modal" data-target="#schedule_interview"><strong>Set Up Interview</strong> 
-                   
-                     
-                      </a>
+                    <a href="#" class="btn btn-info btn-xs getformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id; ?>' title="Set Up Interview" data-toggle="modal" data-target="#schedule_interview"><strong>Set Up Interview</strong> 
+                    </a>
                     
                         <table class="table">
                             <thead>
@@ -266,7 +263,7 @@
                                 
                                 if($introw['job_seeker_id']==$v_applicant->job_seeker_id)
                                 {
-                                  // $inter_res = getinterviewstatus($v_applicant->job_seeker_id,$job_id);
+                                  $inter_res = getinterviewstatus($v_applicant->job_seeker_id,$job_id);
                               ?>
                               <tr>
                                 <td><?php echo $introw['interview_date']; ?></td>
