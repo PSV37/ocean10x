@@ -39,6 +39,16 @@ class Confirm_interview extends CI_Controller {
 
            $company_id = $apply_res['company_id'];
            $job_post_id = $apply_res['job_post_id'];
+
+        $select_result1 = "interview_id,interview_date,start_time,end_time";
+        $tablename1 = "interview_dates";
+        $where_res1['interview_id'] = $rec_id;
+        $apply_res1 = $this->Master_model->get_master_row($tablename1, $select_result1, $where_res1, $join = FALSE);
+
+        $interview_id = $apply_res1['interview_id'];
+        $interview_date = $apply_res1['interview_date'];
+        $start_time = $apply_res1['start_time'];
+        $end_time = $apply_res1['end_time'];
 	   
 	        $wherecan="email= '$email_id'";
 	        $check_candidate = $this->Master_model->getMaster('js_info', $wherecan);
@@ -73,8 +83,15 @@ class Confirm_interview extends CI_Controller {
                             } else {
                             // To update forwarded job status
                                 $data_status=array( 
-                                    'confirm_status' => 1,
+                                    'interview_date'    => $interview_date,
+                                    'start_time'        => $start_time,
+                                    'end_time'          => $end_time,
+                                    'confirm_status'    => 1,
+                                    'is_slot_selected'  => 1,
+                                    'updated_by'        => $job_seeker_id,
+                                    'updated_on'        => date('Y-m-d H'),
                                 );
+
                                 $where_update1['id'] = $rec_id;
                                 $status = $this->Master_model->master_update($data_status, 'interview_scheduler', $where_update1);
                                 if($status==true)
@@ -117,7 +134,13 @@ class Confirm_interview extends CI_Controller {
                         } else {
                             // To update job status
                             $data_status=array( 
-                                'confirm_status' => 1,
+                                'interview_date'    => $interview_date,
+                                'start_time'        => $start_time,
+                                'end_time'          => $end_time,
+                                'confirm_status'    => 1,
+                                'is_slot_selected'  => 1,
+                                'updated_by'        => $job_seeker_id,
+                                'updated_on'        => date('Y-m-d H'),
                             );
                             $where_update1['id'] = $rec_id;
                             $status = $this->Master_model->master_update($data_status, 'interview_scheduler', $where_update1);
@@ -150,8 +173,14 @@ class Confirm_interview extends CI_Controller {
 					}  
 	            }else{
                         // To update job status
-                        $data_status=array( 
-                            'confirm_status' => 1,
+                       $data_status=array( 
+                            'interview_date'    => $interview_date,
+                            'start_time'        => $start_time,
+                            'end_time'          => $end_time,
+                            'confirm_status'    => 1,
+                            'is_slot_selected'  => 1,
+                            'updated_by'        => $job_seeker_id,
+                            'updated_on'        => date('Y-m-d H'),
                         );
                         $where_update1['id'] = $rec_id;
                         $status = $this->Master_model->master_update($data_status, 'interview_scheduler', $where_update1);
