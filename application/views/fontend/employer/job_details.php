@@ -244,7 +244,9 @@
                       endforeach;
                       endif;
                     ?>
-
+                    <?php $inter_res = getinterviewstatus($v_applicant->job_seeker_id,$job_id);  
+                      print_r($inter_res);
+                    ?>
                       <a href="#" class="btn btn-info btn-xs getformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id; ?>' title="Set Up Interview" data-toggle="modal" data-target="#schedule_interview"><strong>Set Up Interview</strong> 
                       </a>
                     
