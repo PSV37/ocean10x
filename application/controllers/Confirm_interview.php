@@ -44,7 +44,7 @@ class Confirm_interview extends CI_Controller {
         $tablename1 = "interview_dates";
         $where_res1['interview_id'] = $rec_id;
         $apply_res1 = $this->Master_model->get_master_row($tablename1, $select_result1, $where_res1, $join = FALSE);
-// echo  $this->db->last_query(); die;
+
         $interview_id = $apply_res1['interview_id'];
         $interview_date = $apply_res1['interview_date'];
         $start_time = $apply_res1['start_time'];
@@ -76,12 +76,9 @@ class Confirm_interview extends CI_Controller {
 							$data['job_seeker_id'] = $rows['job_seeker_id'];
 						}
                             $this->session->set_userdata($data);
-
-                           // if($this->Job_apply_model->check_confirmed_interview($job_seeker_id, $company_id, $job_post_id))
                             $where_chlk = "id='$rec_id' AND is_slot_selected='1'";
                             $check_res1 = $this->Master_model->get_master_row('interview_scheduler', $select = FALSE, $where_chlk, $join = FALSE);
-                          // 
-                        if($check_res1==ture)
+                        if($check_res1)
                             {
                                 $this->load->view('fontend/alreadyconfirmed');
                             } else {
@@ -109,7 +106,6 @@ class Confirm_interview extends CI_Controller {
 
 
                                     $email = $email_id;
-                                    // $email = 'shyam@itdivine.in';
                                     $subject = 'CONFIRMED. Interview request for '.$js_data['full_name'];
                                     $message = '
                                         <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
@@ -131,11 +127,9 @@ class Confirm_interview extends CI_Controller {
 						$this->session->set_flashdata('Message', 'Invalid User...!');
 						$this->session->set_userdata($data);
 
-                        // redirect('Job_forword_seeker/index');
-                        // if($this->Job_apply_model->check_confirmed_interview($job_seeker_id, $company_id, $job_post_id))
-                         $where_chlk = "id='$rec_id' AND is_slot_selected='1'";
+                        $where_chlk = "id='$rec_id' AND is_slot_selected='1'";
                             $check_res1 = $this->Master_model->get_master_row('interview_scheduler', $select = FALSE, $where_chlk, $join = FALSE);
-                         if($check_res1==ture)
+                        if($check_res1==true)
                         {
                             $this->load->view('fontend/alreadyconfirmed');
                         } else {
