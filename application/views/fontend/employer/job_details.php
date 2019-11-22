@@ -271,7 +271,9 @@
                                 <td><?php echo $introw['end_time']; ?></td>
                                 <td><?php echo $introw['interview_type']; ?></td>
                                 <td><?php echo $introw['interview_details']; ?></td>
-                                <td> <a href="#" class="btn btn-success btn-xs geteditformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id.'|'.$introw['id']; ?>' title="Reschedule Interview" data-toggle="modal" data-target="#update_schedule_interview"><strong>Reschedule Interview</strong> </a></td>
+                                <td> <a href="#" class="btn btn-success btn-xs geteditformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id.'|'.$introw['id']; ?>' title="Reschedule Interview" data-toggle="modal" data-target="#update_schedule_interview"><strong>Reschedule</strong> </a>
+                                <a href="#" class="btn btn-success btn-xs geteditformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id.'|'.$introw['id']; ?>' title="Interview Status" data-toggle="modal" data-target="#update_schedule_interview"><strong>Status</strong> </a>
+                                </td>
                               </tr>
                             <?php } } }else{ echo "<td>No Data Found</td>";}?>
                             </tbody>

@@ -329,6 +329,8 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                                     'end_time'          => $end_time,
                                     'confirm_status'    => 1,
                                     'is_slot_selected'  => 1,
+                                    'updated_by'        => $job_seeker_id,
+                                    'updated_on'        => date('Y-m-d H'),
                                 );
                                 $where_update1['id'] = $interview_id;
                                 $status = $this->Master_model->master_update($data_status, 'interview_scheduler', $where_update1);
@@ -383,6 +385,8 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                                 'end_time'          => $end_time,
                                 'confirm_status'    => 1,
                                 'is_slot_selected'  => 1,
+                                'updated_by'        => $job_seeker_id,
+                                'updated_on'        => date('Y-m-d H'),
                             );
                             $where_update1['id'] = $interview_id;
                             $status = $this->Master_model->master_update($data_status, 'interview_scheduler', $where_update1);
@@ -421,6 +425,8 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                             'end_time'          => $end_time,
                             'confirm_status'    => 1,
                             'is_slot_selected'  => 1,
+                            'updated_by'        => $job_seeker_id,
+                            'updated_on'        => date('Y-m-d H'),
                         );
                         $where_update1['id'] = $interview_id;
                         $status = $this->Master_model->master_update($data_status, 'interview_scheduler', $where_update1);
@@ -438,5 +444,5 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                     redirect('register/jobseeker_login', 'refresh');
                 }
     }
-
+12688
 }// end class
