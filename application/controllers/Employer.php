@@ -1672,6 +1672,23 @@ public function interview_scheduler()
         
     }
 
+    public function update_interview_status()
+    {
+        $company_id = $this->session->userdata('company_profile_id');
+     
+        $interview_id = $this->input->post('interview_id');
+        $status_array['interview_complete_status'] = 1;
+        $status_array['updated_by']  = $company_id;
+        $status_array['updated_on']  = date('Y-m-d H:i:s');
+
+        $where_ins['id']=$interview_id;
+        $ins_id = $this->Master_model->master_update($status_array,'interview_scheduler',$where_ins);
+       
+      
+       
+       redirect('employer/all_applicant/'.$js_apply['job_post_id']);
+    }
+
 
 } // end class
 
