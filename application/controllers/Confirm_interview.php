@@ -106,11 +106,11 @@ class Confirm_interview extends CI_Controller {
 
 
                                     $email = $email_id;
-                                    $subject = 'CONFIRMED. Interview request for '.$js_data['full_name'];
+                                    $subject = 'CONFIRMED. Interview request for '.$check_candidate['full_name'];
                                     $message = '
                                         <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
                                         <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
-                                        <br><br>Hi '.$js_data['full_name'].',<br> Your interview is scheduled successfully: <br/>';
+                                        <br><br>Hi '.$check_candidate['full_name'].',<br> Your interview is scheduled successfully: <br/>';
 
                                         $message .='<br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
 
@@ -156,11 +156,11 @@ class Confirm_interview extends CI_Controller {
 
                                     $email = $email_id;
                                     // $email = 'shyam@itdivine.in';
-                                    $subject = 'CONFIRMED. Interview request for '.$js_data['full_name'];
+                                    $subject = 'CONFIRMED. Interview request for '.$check_candidate['full_name'];
                                     $message = '
                                         <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
                                         <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
-                                        <br><br>Hi '.$js_data['full_name'].',<br> Your interview is scheduled successfully: <br/>';
+                                        <br><br>Hi '.$check_candidate['full_name'].',<br> Your interview is scheduled successfully: <br/>';
 
                                         $message .='<br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
 
