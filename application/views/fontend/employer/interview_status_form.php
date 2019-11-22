@@ -1,6 +1,6 @@
 
 
-<form id="frm-info" class="form-horizontal" action="<?php echo base_url();?>employer/update_interview_status" method="post">
+<form id="interview-info" class="form-horizontal" action="<?php echo base_url();?>employer/update_interview_status" method="post">
 
   <input type="text" name="interview_id" id="interview" value="<?php if(!empty($interview_data)) echo $interview_data['id']; ?>">
   <input type="hidden" name="job_id" id="job_id" value="<?php if(!empty($interview_data)) echo $interview_data['job_post_id']; ?>">
