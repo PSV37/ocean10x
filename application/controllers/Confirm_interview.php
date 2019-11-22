@@ -44,7 +44,7 @@ class Confirm_interview extends CI_Controller {
         $tablename1 = "interview_dates";
         $where_res1['interview_id'] = $rec_id;
         $apply_res1 = $this->Master_model->get_master_row($tablename1, $select_result1, $where_res1, $join = FALSE);
-echo  $this->db->last_query(); die;
+// echo  $this->db->last_query(); die;
         $interview_id = $apply_res1['interview_id'];
         $interview_date = $apply_res1['interview_date'];
         $start_time = $apply_res1['start_time'];
