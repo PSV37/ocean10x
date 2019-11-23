@@ -76,7 +76,7 @@
                                 </table><br/><b>Interview Type: </b> '.$ct_row["interview_type"].'<br/><b>Interview Details: </b> '.$ct_row["interview_details"].'<br>';
                     }
                     $message .='<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
-          
+                echo "<hr>";
                 echo $message;
                 $sr_bo++;
                 endforeach;
