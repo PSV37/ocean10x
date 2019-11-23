@@ -285,9 +285,9 @@
 
                                   <a href="#" class="btn btn-info btn-xs getstatusformbylevel" data-level_id='<?php echo $introw['id'].'|'.$introw['job_post_id']; ?>' title="Interview Status" data-toggle="modal" data-target="#update_status" ><strong>Status</strong> </a>
                               <?php if($introw['interview_complete_status']==1){ ?>
-                                  <a href="#" title="Interview Completed"><i class="fa fa-check" style="color: green;"></i></a>
+                                  <a href="#" title="Interview Completed" data-toggle="tooltip" data-placement="top"><i class="fa fa-check" style="color: green;"></i></a>
                               <?php }else{ ?>
-                                <a href="#" title="Interview Not Completed"><i class="fa fa-remove" style="color: red;"></i></a>
+                                <a href="#" title="Interview Not Completed" data-toggle="tooltip" data-placement="top"><i class="fa fa-remove" style="color: red;"></i></a>
                               <?php } ?>
                                 </td>
                               </tr>
