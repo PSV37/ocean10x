@@ -250,12 +250,12 @@
                         <table class="table">
                             <thead>
                               <tr>
-                                <th style="font-size: 15px;"> Date</th>
-                                <th style="font-size: 15px;"> Start Time</th>
-                                <th style="font-size: 15px;"> End Time</th>
-                                <th style="font-size: 15px;"> Interview Type</th>
-                                <th style="font-size: 15px;"> Interview Details</th>
-                                <th style="font-size: 15px;"> Action</th>
+                                <th> Date</th>
+                                <th> Start Time</th>
+                                <th> End Time</th>
+                                <th> Interview Type</th>
+                                <th> Interview Details</th>
+                                <th> Action</th>
                               </tr>
                             </thead>
                             <tbody>
