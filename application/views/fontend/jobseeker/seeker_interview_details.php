@@ -44,12 +44,12 @@
                   text-decoration: none;
               }
           </style>
-          <?php $key = 1; if (!empty($interview_details)): foreach ($interview_details as $ct_row) :
+          <?php if (!empty($interview_details)): foreach ($interview_details as $ct_row) :
            $message = '<div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;#f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
                 <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
                     <br>Hi,<br>'.$ct_row["message_to_candidate"].'<br/><br/>Please check the following rescheduled interview details: <br/>
 
-                    <table border=1>
+                    <table style="border:1;">
                         <tr><td><b>Interview Date</b></td><td><b>Start Time</b></td><td><b>End Time</b></td></tr>';
                     $interview_datess = getinerviewdates($ct_row["id"]);
                 if(sizeof($interview_datess)==1)
@@ -76,11 +76,9 @@
                     }
                     $message .='<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
           
-                $key++;
                 echo $message;
                 endforeach;
                 endif; 
-
             ?>
             
 
