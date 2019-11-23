@@ -68,8 +68,8 @@
                                 </table><br/><b>Interview Type: </b> '.$interview_type.'<br/><b>Interview Details: </b> '.$interview_address.'<br>';
                                 
                             $message .= '
-                                <br><br><a href="'.base_url().'Confirm_interview/confirm_interview_now?apply_id='.base64_encode($ct_row["id"]).'&js_id='.base64_encode($js_data['email']).'" class="btn btn-primary" value="Confirm Interview" align="center" target="_blank">Confirm Interview</a>
-                                <a href="'.base_url().'Confirm_interview/reschedule_interview?apply_id='.base64_encode($ct_row["id"]).'&js_id='.base64_encode($js_data['email']).'" class="btn btn-info" value="Reschedule Interview" align="center" target="_blank">Reschedule Interview</a>';
+                                <br><a href="'.base_url().'Confirm_interview/confirm_interview_now?apply_id='.base64_encode($ct_row["id"]).'&js_id='.base64_encode($js_data['email']).'" class="btn btn-primary" value="Confirm Interview" align="center" target="_blank">Confirm Interview</a>
+                                 <a href="'.base_url().'Confirm_interview/reschedule_interview?apply_id='.base64_encode($ct_row["id"]).'&js_id='.base64_encode($js_data['email']).'" class="btn btn-info" value="Reschedule Interview" align="center" target="_blank">Reschedule Interview</a><br>';
                     }else{
 
                         for($l1=0;$l1<sizeof($interview_datess);$l1++)
@@ -80,7 +80,7 @@
                         $message .= '
                                 </table><br/><b>Interview Type: </b> '.$ct_row["interview_type"].'<br/><b>Interview Details: </b> '.$ct_row["interview_details"].'<br>';
                     }
-                    $message .='<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+                    $message .='<br>Good Luck!<br/> Team ConsultnHire!<br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
                 
                 echo $message;
                 $sr_bo++;
