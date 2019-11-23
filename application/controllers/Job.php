@@ -264,7 +264,19 @@ class Job extends MY_Fontend_Controller
             // echo $this->db->last_query(); die;
 
             $this->load->view('fontend/jobseeker/seeker_interview_details',$data);
-        } 
+        } else {
+            $data['job_id'] = $job_id;
+            
+            $where_int = "interview_scheduler.job_post_id='$job_id' AND interview_scheduler.job_seeker_id='$jobseeker_id'";
+            $data['interview_details'] = $this->Master_model->getMaster('interview_scheduler',$where_int, $join_arr=false, $order = false, $field = false, $select_int=false, $limit=false,$start=false, $search=false);
+
+            $where_edu="job_seeker_id='$jobseeker_id'";
+            $select_edu = "full_name,email";
+            $data['js_data'] = $this->Master_model->get_master_row("js_info", $select_edu, $where_edu, $join = FALSE);
+            // echo $this->db->last_query(); die;
+
+            $this->load->view('fontend/jobseeker/seeker_interview_details',$data);
+        }
     }
 
 }
