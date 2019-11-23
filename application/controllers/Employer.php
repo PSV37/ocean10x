@@ -627,12 +627,12 @@ function getstate(){
                     }
                     
                 }
-              echo  $skill_id = $require['skills_required'];
+                $skill_id = $require['skills_required'];
                 
                 $where_req_skill="skill_master.id IN (".$skill_id.")";
                 $select_skill = "skill_master.skill_name";
                 $req_skill_details = $this->Master_model->getMaster('skill_master', $where_req_skill, $join=false, $order = false, $field = false, $select_skill,$limit=false,$start=false, $search=false);
-                  echo $this->db->last_query(); die;
+                  // echo $this->db->last_query(); die;
                     for($i=0;$i<sizeof($email);$i++)
                     {
                         $where_can = "email='$email[$i]'";
