@@ -250,7 +250,7 @@ class Job extends MY_Fontend_Controller
         $where_chlk = "job_seeker_id='$jobseeker_id' AND job_post_id='$job_id'";
         $check_res = $this->Master_model->get_master_row('interview_scheduler', $select = FALSE, $where_chlk, $join = FALSE);
 
-
+         echo $this->db->last_query(); die;
         if ($check_res == true) {
                 
             $data['job_id'] = $job_id;
