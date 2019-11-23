@@ -18,6 +18,9 @@
       padding: 5px;
       text-decoration: none;
   }
+  table{
+    border: 1px solid black !important;
+  }
 </style>
 <!-- Page Title start -->
 
