@@ -50,7 +50,7 @@
                     <br>Hi,<br>'.$ct_row["message_to_candidate"].'<br/><br/>Please check the following rescheduled interview details: <br/>
 
                     <table style="border:1;">
-                        <tr><td><b>Interview Date</b></td><td><b>Start Time</b></td><td><b>End Time</b></td></tr>';
+                        <tr><td><b>Date</b></td><td><b>Start Time</b></td><td><b>End Time</b></td></tr>';
                     $interview_datess = getinerviewdates($ct_row["id"]);
                 if(sizeof($interview_datess)==1)
                     {
