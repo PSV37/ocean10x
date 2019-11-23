@@ -264,17 +264,18 @@
                                 if($introw['job_seeker_id']==$v_applicant->job_seeker_id)
                                 {
                                   //$inter_res = getinterviewstatus($v_applicant->job_seeker_id,$job_id);
-                                  if($introw['interview_date'] !='0000-00-00'){
-                                    echo $mydate = date('d-m-Y', strtotime($introw['interview_date']));
-                                    echo "date";
-                                  }else{
-                                    echo $mydate ='empty';
-                                  }
+                                  
                               ?>
                               <tr>
-                                <td><?php echo $introw['interview_date']; ?></td>
-                                <td><?php echo $introw['start_time']; ?></td>
-                                <td><?php echo $introw['end_time']; ?></td>
+                                <?php if($introw['interview_date'] !='0000-00-00'){ ?>
+                                  <td ><?php echo date('d-m-Y', strtotime($introw['interview_date'])); ?></td>
+                                  <td><?php echo $introw['start_time']; ?></td>
+                                  <td><?php echo $introw['end_time']; ?></td>
+                                <?php
+                                  }else{
+                                    echo '<td colspan="3">Wating For Candidate </td>';
+                                  } ?>
+
                                 <td><?php echo $introw['interview_type']; ?></td>
                                 <td><?php echo $introw['interview_details']; ?></td>
                                 <td>
