@@ -32,50 +32,55 @@
       <div class="content col-md-9">
         <div class="userccount empdash">
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
-           
-            <table class="table table-bordered table-striped" id="dataTables-example">
-              <thead>
-                <tr>
-                  <th class="active">SL</th>
-                  <th class="active">Total Question</th>
-                  <th class="active">Attended Question</th>
-                  <th class="active">Total Marks</th>
-                  <th class="active">Percenage</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php $key = 1; if (!empty($exam_attended_candidates)): foreach ($exam_attended_candidates as $ct_row) :
 
-                  $js_id = $ct_row['js_id'];
-                  $exam_res = getExamResultByID($js_id,$job_id); 
-                  if (!empty($exam_res)): foreach ($exam_res as $res_row) :
-                  $marks = $res_row['total_marks']; 
-                  $percentage = ($marks * 100)/NUMBER_QUESTIONS;
-                ?>
-                    <tr>
-                      <td><?php echo $key ?></td>
-                      <td><?php echo NUMBER_QUESTIONS; ?></td>
-                      <td><?php echo $res_row['total_questions'] ?></td>
-                      <td><?php echo $res_row['total_marks'] ?></td>
-                      <td><?php echo round($percentage, 2).'%'; ?></td>
-                     
-                  </tr>
-                  <?php
-                      $key++;
-                      endforeach;
-                      endif; 
-                      endforeach;
-                  ?>
-                  <?php else : ?> 
-                      <td colspan="3">
-                          <strong>There is no record for display</strong>
-                      </td>
-                  <?php
-                    endif; ?>
-              </tbody>
-          </table>
+           <style>
+              .btn-primary,.btn-info{
+                  width: 232px;
+                  color: #fff;
+                  text-align: center;
+                  margin: 0 0 0 5%;
+                  background-color: #6495ED;
+                  padding: 5px;
+                  text-decoration: none;
+              }
+          </style>
+          <?php $key = 1; if (!empty($interview_details)): foreach ($interview_details as $ct_row) :
+          echo  $message = '<div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+                <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+                    <br><br>Hi,<br>'.$ct_row["message_to_candidate"].'<br/><br/>Please check the following rescheduled interview details: <br/>
 
+                    <table>
+                        <tr><td><b>Interview Date</b></td><td><b>Start Time</b></td><td><b>End Time</b></td></tr>';
+                    $interview_datess = getinerviewdates($ct_row["id"]);
+                if(sizeof($interview_datess)==1)
+                    {
+                        for($l1=0;$l1<sizeof($interview_datess);$l1++)
+                        {
+                            $message .='<tr><td>'.$interview_datess[$l1]['interview_date'].'</td><td>'.$interview_datess[$l1]['start_time'].'</td><td>'.$interview_datess[$l1]['end_time'].'</td><td></td></tr>';
+                        }
+                            $message .= '
+                                </table><br/><b>Interview Type: </b> '.$interview_type.'<br/><b>Interview Details: </b> '.$interview_address.'<br>';
+                                
+                            $message .= '
+                                <br><br><a href="'.base_url().'Confirm_interview/confirm_interview_now?apply_id='.base64_encode($ins_id).'&js_id='.base64_encode($email).'" class="btn btn-primary" value="Confirm Interview" align="center" target="_blank">Confirm Interview</a>
+                                <a href="'.base_url().'Confirm_interview/reschedule_interview?apply_id='.base64_encode($ins_id).'&js_id='.base64_encode($email).'" class="btn btn-info" value="Reschedule Interview" align="center" target="_blank">Reschedule Interview</a>';
+                    }else{
 
+                        for($l1=0;$l1<sizeof($interview_datess);$l1++)
+                        {
+                          
+                            $message .='<tr><td>'.$interview_datess[$l1]['interview_date'].'</td><td>'.$interview_datess[$l1]['start_time'].'</td><td>'.$interview_datess[$l1]['end_time'].'</td><td><a href="'.base_url().'Confirm_interview/select_slot?apply_id='.base64_encode($interview_datess[$l1]['id']).'&js_id='.base64_encode($email).'" target="_blank">Select</a></td></tr>';
+                        }
+                        $message .= '
+                                </table><br/><b>Interview Type: </b> '.$interview_type.'<br/><b>Interview Details: </b> '.$interview_address.'<br>';
+                    }
+                    $message .=' <br><br><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+          
+                $key++;
+                endforeach;
+                endif; 
+            ?>
+            
 
           </div>
         </div>
