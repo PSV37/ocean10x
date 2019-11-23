@@ -2,7 +2,7 @@
     $this->load->view('fontend/layout/seeker_header.php');
 ?>
 <style type="text/css">
-  label,b {
+  label {
     display: inline-block;
     max-width: 100%;
     margin-bottom: 5px;
