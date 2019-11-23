@@ -46,7 +46,7 @@
 
           
           <?php $sr_bo=1; if (!empty($interview_details)): foreach ($interview_details as $ct_row) :
-          echo $sr_bo; 
+          echo "#".$sr_bo; 
 
           if($ct_row['interview_complete_status']==1){
             echo '<a href="#" title="Interview Completed" data-toggle="tooltip" data-placement="top" class="pull-right"><i class="fa fa-check" style="color: green;"></i> Completed</a>';
