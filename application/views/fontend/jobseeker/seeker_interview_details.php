@@ -77,9 +77,10 @@
                     $message .=' <br><br><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
           
                 $key++;
+                echo $message;
                 endforeach;
                 endif; 
-                echo $message;
+
             ?>
             
 
