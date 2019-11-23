@@ -18,9 +18,7 @@
       padding: 5px;
       text-decoration: none;
   }
-  .inners_table{
-    border: 1px solid black !important;
-  }
+  
 </style>
 <!-- Page Title start -->
 
@@ -64,14 +62,14 @@
                 <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
                     <br>Hi '.$js_data['full_name'].',<br>'.$ct_row["message_to_candidate"].'<br/><br/>Please check the following rescheduled interview details: <br/>
 
-                    <table class="table inner_table">
+                    <table class="table">
                         <tr><td><b>Interview Date</b></td><td><b>Start Time</b></td><td><b>End Time</b></td></tr>';
                     $interview_datess = getinerviewdates($ct_row["id"]);
                 if(sizeof($interview_datess)==1)
                     {
                         for($l1=0;$l1<sizeof($interview_datess);$l1++)
                         {
-                            $message .='<tr><td>'.date('d M Y', strtotime($interview_datess[$l1]['interview_date'])).'</td><td>'.date("h:i",strtotime($interview_datess[$l1]['start_time'])).'</td><td>'.date("h:i",strtotime($interview_datess[$l1]['end_time'])).'</td><td></td></tr>';
+                            $message .='<tr><td>'.date('d M Y', strtotime($interview_datess[$l1]['interview_date'])).'</td><td>'.date("h:i",strtotime($interview_datess[$l1]['start_time'])).'</td><td>'.date("h:i",strtotime($interview_datess[$l1]['end_time'])).'</td></tr>';
                         }
                            $message .= '
                                 </table><br/><b>Interview Type: </b> '.$ct_row["interview_type"].'<br/><b>Interview Details: </b> '.$ct_row["interview_details"].'<br>';
