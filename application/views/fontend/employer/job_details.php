@@ -264,7 +264,7 @@
                                 if($introw['job_seeker_id']==$v_applicant->job_seeker_id)
                                 {
                                   //$inter_res = getinterviewstatus($v_applicant->job_seeker_id,$job_id);
-                                  if(strtotime($introw['interview_date'])!='0000-00-00'){
+                                  if($introw['interview_date'] !='0000-00-00'){
                                     echo $mydate = date('d-m-Y', strtotime($introw['interview_date']));
                                     echo "date";
                                   }else{
