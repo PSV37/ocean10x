@@ -273,7 +273,7 @@
                                   <td><?php echo $introw['end_time']; ?></td>
                                 <?php
                                   }else{
-                                    echo '<td colspan="3">Wating For Candidate confirmation</td>';
+                                    echo '<td colspan="3">Awating for candidate confirmation</td>';
                                   } ?>
 
                                 <td><?php echo $introw['interview_type']; ?></td>
