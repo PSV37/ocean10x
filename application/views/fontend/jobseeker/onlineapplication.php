@@ -122,7 +122,7 @@
                                   </td>
 
                                   </td>
-                                    <td><a href="<?php echo base_url(); ?>job/all-scheduled-interviews/<?php echo $applicaiton->job_post_id; ?>" class="btn btn-success btn-xs">View</a></td>
+                                    <td><a href="<?php echo base_url(); ?>job/all-scheduled-interviews/<?php echo $applicaiton->job_post_id; ?>" class="btn btn-success btn-xs">View Interviews</a></td>
                                   <td>
                                   
                                 </tr>
@@ -230,7 +230,7 @@
                                   </td>
 
                                   </td>
-                                    <td><a href="<?php echo base_url(); ?>job/all-scheduled-interviews/<?php echo $forward_applicaiton->job_post_id; ?>" class="btn btn-success btn-xs">View</a></td>
+                                    <td><a href="<?php echo base_url(); ?>job/all-scheduled-interviews/<?php echo $forward_applicaiton->job_post_id; ?>" class="btn btn-success btn-xs">View Interviews</a></td>
                                   <td>
                                  
                                 </tr>
