@@ -605,17 +605,17 @@ function getstate(){
 
                 $where_req="job_post_id= '$job_post_id'";
                 $join_req = array(
-                    'job_types' => 'job_types.job_types_id = job_posting.job_types|INNER',
-                    'company_profile' => 'company_profile.company_profile_id = job_posting.company_profile_id|INNER',
-                    'city' => 'city.id = job_posting.city_id|INNER',
-                    'country' => 'country.country_id = job_posting.job_location|INNER',
-                    'state' => 'state.state_id = job_posting.state_id|INNER',
-                    'job_category' => 'job_category.job_category_id = job_posting.job_category|INNER',
-                    'job_nature' => 'job_nature.job_nature_id = job_posting.job_nature|INNER',
-                    'job_level' => 'job_level.job_level_id = job_posting.job_level|INNER',
-                    'job_role' => 'job_role.id = job_posting.job_role|INNER',
-                    'education_level' => 'education_level.education_level_id = job_posting.job_edu|INNER',
-                    'education_specialization' => 'education_specialization.id = job_posting.edu_specialization|INNER',
+                    'job_types' => 'job_types.job_types_id = job_posting.job_types|LEFT OUTER',
+                    'company_profile' => 'company_profile.company_profile_id = job_posting.company_profile_id|LEFT OUTER',
+                    'city' => 'city.id = job_posting.city_id|LEFT OUTER',
+                    'country' => 'country.country_id = job_posting.job_location|LEFT OUTER',
+                    'state' => 'state.state_id = job_posting.state_id|LEFT OUTER',
+                    'job_category' => 'job_category.job_category_id = job_posting.job_category|LEFT OUTER',
+                    'job_nature' => 'job_nature.job_nature_id = job_posting.job_nature|LEFT OUTER',
+                    'job_level' => 'job_level.job_level_id = job_posting.job_level|LEFT OUTER',
+                    'job_role' => 'job_role.id = job_posting.job_role|LEFT OUTER',
+                    'education_level' => 'education_level.education_level_id = job_posting.job_edu|LEFT OUTER',
+                    'education_specialization' => 'education_specialization.id = job_posting.edu_specialization|LEFT OUTER',
                     
                 );
                 $select_job = "job_role.job_role_title,education_specialization.education_specialization,education_level.education_level_name,job_level.job_level_name,job_nature.job_nature_name,job_category.job_category_name,state.state_name,country.country_name,city.city_name,company_profile.company_name,company_profile.company_logo,job_types.job_types_name,job_posting.job_title,job_posting.job_position,job_posting.job_desc,job_posting.education,job_posting.salary_range,job_posting.job_deadline,job_posting.preferred_age,job_posting.preferred_age_to,job_posting.working_hours,job_posting.no_jobs,job_posting.benefits,job_posting.experience,job_posting.skills_required";
