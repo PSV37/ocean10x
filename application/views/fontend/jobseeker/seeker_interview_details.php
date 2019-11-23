@@ -18,7 +18,7 @@
       padding: 5px;
       text-decoration: none;
   }
-  table{
+  .inners_table{
     border: 1px solid black !important;
   }
 </style>
@@ -64,7 +64,7 @@
                 <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
                     <br>Hi '.$js_data['full_name'].',<br>'.$ct_row["message_to_candidate"].'<br/><br/>Please check the following rescheduled interview details: <br/>
 
-                    <table>
+                    <table class="table inner_table">
                         <tr><td><b>Interview Date</b></td><td><b>Start Time</b></td><td><b>End Time</b></td></tr>';
                     $interview_datess = getinerviewdates($ct_row["id"]);
                 if(sizeof($interview_datess)==1)
