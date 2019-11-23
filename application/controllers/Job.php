@@ -261,7 +261,7 @@ class Job extends MY_Fontend_Controller
             );
             $select_int = "interview_dates.interview_date as intr_dates,interview_dates.start_time as intr_stime,interview_dates.end_time as intr_etime, interview_scheduler.*";
 
-            $data['job_test'] = $this->Master_model->getMaster('interview_scheduler',$where_int,$join = FALSE, $order = false, $field = false, $select_int,$limit=false,$start=false, $search=false);
+            $data['job_test'] = $this->Master_model->getMaster('interview_scheduler',$where_int, $join_arr, $order = false, $field = false, $select_int, $limit=false,$start=false, $search=false);
             echo $this->db->last_query(); die;
 
             $this->load->view('fontend/jobseeker/seeker_interview_details',$data);
