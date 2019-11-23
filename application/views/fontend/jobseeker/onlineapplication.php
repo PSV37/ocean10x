@@ -50,6 +50,7 @@
                                   <th>Exam Result</th>
                                   <?php } ?>
                                   <th>Exam</th>
+                                  <th>Schedule Interview</th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -119,6 +120,10 @@
 
                                   ?>
                                   </td>
+
+                                  </td>
+                                    <td><a href="<?php echo base_url(); ?>job/all-scheduled-interviews/<?php echo $applicaiton->job_post_id; ?>" class="btn btn-success btn-xs">View Interviews</a></td>
+                                  <td>
                                   
                                 </tr>
                                 <?php
