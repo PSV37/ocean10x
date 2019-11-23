@@ -2,12 +2,22 @@
     $this->load->view('fontend/layout/seeker_header.php');
 ?>
 <style type="text/css">
-  label {
+  label,b {
     display: inline-block;
     max-width: 100%;
     margin-bottom: 5px;
     font-weight: bold;
-}
+  }
+
+  .btn-primary,.btn-info{
+      width: 232px;
+      color: #fff;
+      text-align: center;
+      margin: 0 0 0 5%;
+      background-color: #6495ED;
+      padding: 5px;
+      text-decoration: none;
+  }
 </style>
 <!-- Page Title start -->
 
@@ -33,17 +43,7 @@
         <div class="userccount empdash">
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
 
-           <style>
-              .btn-primary,.btn-info{
-                  width: 232px;
-                  color: #fff;
-                  text-align: center;
-                  margin: 0 0 0 5%;
-                  background-color: #6495ED;
-                  padding: 5px;
-                  text-decoration: none;
-              }
-          </style>
+          
           <?php $sr_bo=1; if (!empty($interview_details)): foreach ($interview_details as $ct_row) :
           echo $sr_bo; 
 
