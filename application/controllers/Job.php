@@ -246,17 +246,23 @@ class Job extends MY_Fontend_Controller
     public function all_interview_list($job_id = null)
     {
         $jobseeker_id = $this->session->userdata('job_seeker_id');
-        if (!empty($job_id) && $this->job_posting_model->check_jobid_and_js_id($job_id, $jobseeker_id) == true) {
+
+        $where_chlk = "job_seeker_id='$jobseeker_id' AND job_post_id='$job_id'";
+        $check_res = $this->Master_model->get_master_row('interview_scheduler', $select = FALSE, $where_chlk, $join = FALSE);
+
+
+        if ($check_res == true) {
                 
             $data['job_id'] = $job_id;
             
-            $where_test = "js_test_info.job_id='$job_id' AND js_test_info.js_id='$jobseeker_id'";
+            $where_int = "interview_scheduler.job_post_id='$job_id' AND interview_scheduler.job_seeker_id='$jobseeker_id'";
             $join_arr = array(
-                'js_info' => 'js_info.job_seeker_id=js_test_info.js_id |INNER',
+                'interview_dates' => 'interview_dates.interview_id=interview_scheduler.id |INNER',
             );
-            $select_result = "js_test_info.marks,js_test_info.test_id,js_test_info.js_id, js_info.full_name";
-            $data['exam_attended_candidates']= $this->Master_model->getList($condition, $field_by, $order_by, $offset, $perpage, 'js_test_info', $search, $join_arr, $where_test, $select_result, $distinct = FALSE, $group_by = 'js_id');
-            //echo $this->db->last_query(); die;
+            $select_int = "interview_dates.interview_date as intr_dates,interview_dates.start_time as intr_stime,interview_dates.end_time as intr_etime, interview_scheduler.*";
+
+            $data['job_test'] = $this->Master_model->getMaster('interview_scheduler',$where_int,$join = FALSE, $order = false, $field = false, $select_int,$limit=false,$start=false, $search=false);
+            echo $this->db->last_query(); die;
 
             $this->load->view('fontend/jobseeker/seeker_interview_details',$data);
         } else {
