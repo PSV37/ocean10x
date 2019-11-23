@@ -67,7 +67,7 @@
                                   </td>
                                   <td><?php echo $this->company_profile_model->company_name($applicaiton->company_id); ?></td>
                                   <!-- <td><?php echo $applicaiton->expected_salary; ?></td> -->
-                                  <td><?php echo date('F j, Y',strtotime($applicaiton->apply_date));  ?></td>
+                                  <td><?php echo date('M j, Y',strtotime($applicaiton->apply_date));  ?></td>
                                   <td>
                                     <?php
                                       if($applicaiton->apply_status == 0)
@@ -122,7 +122,7 @@
                                   </td>
 
                                   </td>
-                                    <td><a href="<?php echo base_url(); ?>job/all-scheduled-interviews/<?php echo $applicaiton->job_post_id; ?>" class="btn btn-success btn-xs">View Interviews</a></td>
+                                    <td><a href="<?php echo base_url(); ?>job/all-scheduled-interviews/<?php echo $applicaiton->job_post_id; ?>" class="btn btn-success btn-xs">View</a></td>
                                   <td>
                                   
                                 </tr>
@@ -230,7 +230,7 @@
                                   </td>
 
                                   </td>
-                                    <td><a href="<?php echo base_url(); ?>job/all-scheduled-interviews/<?php echo $forward_applicaiton->job_post_id; ?>" class="btn btn-success btn-xs">View Interviews</a></td>
+                                    <td><a href="<?php echo base_url(); ?>job/all-scheduled-interviews/<?php echo $forward_applicaiton->job_post_id; ?>" class="btn btn-success btn-xs">View</a></td>
                                   <td>
                                  
                                 </tr>
