@@ -44,7 +44,7 @@
                   text-decoration: none;
               }
           </style>
-          <?php $sr_bo=0; if (!empty($interview_details)): foreach ($interview_details as $ct_row) :
+          <?php $sr_bo=1; if (!empty($interview_details)): foreach ($interview_details as $ct_row) :
           echo $sr_bo;
            $message = '<div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;#f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
                 <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
