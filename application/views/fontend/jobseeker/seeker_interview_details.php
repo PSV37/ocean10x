@@ -68,7 +68,7 @@
                     {
                         for($l1=0;$l1<sizeof($interview_datess);$l1++)
                         {
-                            $message .='<tr><td>'.$interview_datess[$l1]['interview_date'].'</td><td>'.date("h:i",strtotime($interview_datess[$l1]['start_time'])).'</td><td>'.date("h:i",strtotime($interview_datess[$l1]['end_time'])).'</td><td></td></tr>';
+                            $message .='<tr><td>'.date('d M Y', strtotime($interview_datess[$l1]['interview_date'])).'</td><td>'.date("h:i",strtotime($interview_datess[$l1]['start_time'])).'</td><td>'.date("h:i",strtotime($interview_datess[$l1]['end_time'])).'</td><td></td></tr>';
                         }
                            $message .= '
                                 </table><br/><b>Interview Type: </b> '.$ct_row["interview_type"].'<br/><b>Interview Details: </b> '.$ct_row["interview_details"].'<br>';
@@ -81,7 +81,7 @@
                         for($l1=0;$l1<sizeof($interview_datess);$l1++)
                         {
                           
-                            $message .='<tr><td>'.$interview_datess[$l1]['interview_date'].'</td><td>'.date("h:i",strtotime($interview_datess[$l1]['start_time'])).'</td><td>'.date("h:i",strtotime($interview_datess[$l1]['end_time'])).'</td><td><a href="'.base_url().'Confirm_interview/select_slot?apply_id='.base64_encode($interview_datess[$l1]['id']).'&js_id='.base64_encode($js_data['email']).'" target="_blank">Select</a></td></tr>';
+                            $message .='<tr><td>'.date('d M Y', strtotime($interview_datess[$l1]['interview_date'])).'</td><td>'.date("h:i",strtotime($interview_datess[$l1]['start_time'])).'</td><td>'.date("h:i",strtotime($interview_datess[$l1]['end_time'])).'</td><td><a href="'.base_url().'Confirm_interview/select_slot?apply_id='.base64_encode($interview_datess[$l1]['id']).'&js_id='.base64_encode($js_data['email']).'" target="_blank">Select</a></td></tr>';
                         }
                         $message .= '
                                 </table><br/><b>Interview Type: </b> '.$ct_row["interview_type"].'<br/><b>Interview Details: </b> '.$ct_row["interview_details"].'<br>';
