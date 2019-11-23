@@ -264,9 +264,7 @@ class Job extends MY_Fontend_Controller
             // echo $this->db->last_query(); die;
 
             $this->load->view('fontend/jobseeker/seeker_interview_details',$data);
-        } else {
-            echo "not found";  
-        }
+        } 
     }
 
 }
