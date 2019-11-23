@@ -43,7 +43,7 @@
                                   <th>Sr.No</th>
                                   <th>Job Title</th>
                                   <th>Company Name</th>
-                                  <th>Expected Salary</th>
+                                  <!-- <th>Expected Salary</th> -->
                                   <th>Applied Date</th>
                                   <th>Employer Activity</th>
                                   <?php if(EXAM_RESULT_SHOW ==1){ ?>
@@ -66,7 +66,7 @@
                                     </h4>
                                   </td>
                                   <td><?php echo $this->company_profile_model->company_name($applicaiton->company_id); ?></td>
-                                  <td><?php echo $applicaiton->expected_salary; ?></td>
+                                  <!-- <td><?php echo $applicaiton->expected_salary; ?></td> -->
                                   <td><?php echo date('F j, Y',strtotime($applicaiton->apply_date));  ?></td>
                                   <td>
                                     <?php
@@ -149,7 +149,7 @@
                                   <th>Sr.No</th>
                                   <th>Job Title</th>
                                   <th>Company Name</th>
-                                  <th>Expected Salary</th>
+                                  <!-- <th>Expected Salary</th> -->
                                   <th>Applied Date</th>
                                   <th>Employer Activity</th>
                                   <?php if(EXAM_RESULT_SHOW ==1){ ?>
@@ -171,8 +171,8 @@
                                     </h4>
                                   </td>
                                   <td><?php echo $this->company_profile_model->company_name($forward_applicaiton->company_id); ?></td>
-                                  <td><?php echo $forward_applicaiton->expected_salary; ?></td>
-                                  <td><?php echo date('F j, Y',strtotime($forward_applicaiton->apply_date));  ?></td>
+                                  <!-- <td><?php echo $forward_applicaiton->expected_salary; ?></td> -->
+                                  <td><?php echo date('M j, Y',strtotime($forward_applicaiton->apply_date));  ?></td>
                                   <td>
                                     <?php
 
