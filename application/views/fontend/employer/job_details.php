@@ -239,7 +239,7 @@
                        $marks = $res_row['total_marks']; 
                        $percentage = ($marks * 100)/NUMBER_QUESTIONS;
                       ?>
-                        <h6>Exam Result: <?php echo round($percentage, 2).'%'; ?></h6>
+                        <p><h6>Exam Result: <?php echo round($percentage, 2).'%'; ?></h6></p>
                     <?php
                       endforeach;
                       endif;
