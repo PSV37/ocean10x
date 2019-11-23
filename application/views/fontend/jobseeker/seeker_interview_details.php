@@ -45,7 +45,8 @@
               }
           </style>
           <?php $sr_bo=1; if (!empty($interview_details)): foreach ($interview_details as $ct_row) :
-          echo $sr_bo;
+          echo $sr_bo; 
+          echo "<p>Your interview scheduled on:".date('d M Y', strtotime($ct_row['interview_date'])).'At Time'.$ct_row['start_time'].'To'.$ct_row['end_time'].'</p><br>';
           if($ct_row['interview_complete_status']==1){
             echo '<a href="#" title="Interview Completed" data-toggle="tooltip" data-placement="top" class="pull-right"><i class="fa fa-check" style="color: green;"></i> Completed</a>';
           }else{
