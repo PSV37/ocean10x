@@ -194,6 +194,9 @@
                     mobile: {
                         required: true,
                     }, 
+                    profession: {
+                        required: true,
+                    }, 
 
 
                     captcha: {
@@ -203,7 +206,7 @@
                 },
                 messages: {
                     full_name: "Please enter your firstname",
-                    gender: "Please enter your Gender",
+                    gender: "Please select your Gender",
                    
                     password: {
                         required: "Please provide a password",
@@ -214,6 +217,7 @@
                     //     minlength: "Your password must be at least 6 characters long",
                     //     equalTo: "Please enter the same password as above"
                     // },
+                    profession: "Please tell us about yourself",
                     email: "Please enter a valid email address",
                     mobile: "Please enter  mobile number",
                     captcha:{
