@@ -133,7 +133,7 @@
       <div class="col-sm-1"></div>
       <div class="col-sm-10">
         <label class="control-label" for="email">Total Score<span class="required">*</span></label>
-        <input type="text" name="totalmarks_id" id="totalmarks_id" class="form-control" value="<?php if(!empty($edit_edu_res)) echo $edit_edu_res['totalmarks_id']; ?>" onkeypress="javascript:return isNumber(event)">
+        <input type="text" name="totalmarks_id" id="totalmarks_id" class="form-control" value="<?php if(!empty($edit_edu_res)) echo $edit_edu_res['totalmarks_id']; ?>" placeholder="Enter Total Score" onkeypress="javascript:return isNumber(event)">
       </div>
       <div class="col-sm-1"></div>
     </div>
