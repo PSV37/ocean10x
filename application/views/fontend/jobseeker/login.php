@@ -36,6 +36,8 @@
             </div>
             <div class="formrow">
               <input name="password" type="password" class="form-control" placeholder="Key in Your Password" autocomplete="off">
+              <!-- An element to toggle between password visibility -->
+              <input type="checkbox" onclick="myFunction()">Show Password
             </div>
             <div class="formrow">
               <div class="row">
@@ -105,3 +107,14 @@
       line-height: 35px;
    }
  </style>
+
+ <script>
+   function myFunction() {
+    var x = document.getElementById("myInput");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+ </script>
