@@ -29,7 +29,7 @@
         <div class="content col-md-8 col-md-offset-2">
           <div class="userccount">
             <!-- <h5>Jobseeker Account</h5> -->
-            <h5 align="center">Join the Ocean to hunt the best Professional Opportunities !</h5>
+            <h5 align="center">Join the Ocean to hunt the best Professional Opportunities !</h5><hr>
             <div class="formpanel">
                     
               <form id="submit" action="" method="post" class="submit-form">
