@@ -123,16 +123,6 @@
                  ?></td>
               </tr>
 									
-						<!-- 	<tr>
-                <td>Nationality:</td>
-                <td><?php echo $js_personal_info->nationality; ?></td>
-              </tr>  
-                      -->                   
-            <!--<tr>
-              <td>Adhar No:</td>
-            <td><?php /*if($js_personal_info->national_id=="0") { echo "";} else { echo $js_personal_info->national_id;} */ ?></td>
-            </tr>-->
-                                   
 							<tr>
                 <td>Country Code:</td>
                 <td><?php echo $js_personal_info->country_code; ?></td>
@@ -350,8 +340,20 @@
         <div class="col-md-12">
           <div class="col-md-12 col-sm-12">
             <div class="input-group">
+              <label class="control-label" for="email">Name:<span class="required">*</span></label>
+              <input type="text" class="form-control datepicker" name="full_name" value="">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="col-md-12 col-sm-12">
+            <div class="input-group">
               <label class="control-label" for="email">Date of Birth:<span class="required">*</span></label>
               <input type="text" class="form-control datepicker" name="date_of_birth" value="<?php echo date('d-m-Y', strtotime($js_personal_info->date_of_birth)); ?>">
+              <input type="checkbox" name="dobmake_public" checked=""> Birthday not visible to my network
             </div>
           </div>
         </div>
