@@ -41,7 +41,7 @@
 </head>
 
 <body>
-<div class="header topshadow navbar-fixed-top">
+<div class="header topshadow">
   <div class="container">
     <div class="row">
       <div class="col-md-2 col-sm-3 col-xs-12">
