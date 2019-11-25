@@ -74,7 +74,8 @@ class Job_seeker extends MY_Seeker_Controller
             if (empty($personal_info_id)) {
                 $ins = $this->job_seeker_personal_model->insert($personal_info);
                 $in_arr= array(
-                    'mobile_no'            => $this->input->post('mobile')
+                    'mobile_no'            => $this->input->post('mobile'),
+                    'full_name'            => $this->input->post('full_name')
                 );
                 $where_update['job_seeker_id']=$jobseeker_id;
                 $this->Master_model->master_update($in_arr,'js_info',$where_update);
