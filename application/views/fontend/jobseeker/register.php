@@ -120,9 +120,10 @@
                   </div>
                 </div>
 
+              <div class="newuser">
                 <button type="submit" id="submitButton" class="btn btn-primary">Join the Ocean !</button>
-           
-                <a href="<?php echo base_url() . 'register/jobseeker_login' ?>" class="btn btn-default">Already on Ocean ? Sign in !</a>
+              </div>
+                <a href="<?php echo base_url() . 'register/jobseeker_login' ?>" class="pull-right">Already on Ocean ? Sign in !</a>
             </form>
 
             <?php //echo $this->session->flashdata('msg'); ?>
