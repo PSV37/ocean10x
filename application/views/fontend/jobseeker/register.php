@@ -37,9 +37,20 @@
                 <div class="formrow">
                   <div class="row">
                     <div class="col-md-6 col-sm-12">
+                       <?php $str_fr="";
+                        if((isset($this->session->userdata['reg_jobseeker']['gender'])) && $this->session->userdata['reg_jobseeker']['profession']=='1'){
+
+                        $str_fr="selected";
+                        $str_pro="";
+                        }
+                        if((isset($this->session->userdata['reg_jobseeker']['gender'])) && $this->session->userdata['reg_jobseeker']['profession']=='2'){
+                        $str_fr="";
+                        $str_pro="selected";
+                        } 
+                      ?>
                      <label>I am a</label> &nbsp;&nbsp;
-                      <input type="radio" name="profession" value="Fresher"> Fresher &nbsp;
-                      <input type="radio" name="profession" value="Professional"> Professional
+                      <input type="radio" name="profession" value="Fresher" <?php echo $str_fr ; ?>> Fresher &nbsp;
+                      <input type="radio" name="profession" value="Professional" <?php echo $str_pro ; ?>> Professional
                     </div>
                     
                   </div><!-- end row -->
@@ -61,7 +72,7 @@
                 <div class="formrow">
                   <div class="row">
                     <div class="col-md-6 col-sm-12">
-                      <input type="text" name="mobile" value="<?php echo isset($this->session->userdata['reg_jobseeker']['email'])?$this->session->userdata['reg_jobseeker']['email']:''; ?>" class="form-control" placeholder="Mobile Number" autocomplete="off">
+                      <input type="text" name="mobile" value="<?php echo isset($this->session->userdata['reg_jobseeker']['mobile_no'])?$this->session->userdata['reg_jobseeker']['mobile_no']:''; ?>" class="form-control" placeholder="Mobile Number" autocomplete="off">
                     </div>
 
                     <div class="col-md-6 col-sm-12">
@@ -118,7 +129,7 @@
                 <div class="formrow">
                   <div class="row">
                     <div class="col-md-6 col-sm-12">
-                      <input type="checkbox" value="" checked="" > <a  href="<?php echo base_url().'terms' ?>" target="_blank" required>  I agree to the Terms and Conditions</a>
+                      <input type="checkbox" value="" name="terms" checked="" > <a  href="<?php echo base_url().'terms' ?>" target="_blank" required>  I agree to the Terms and Conditions</a>
                     </div>
                   </div>
                 </div>
@@ -193,6 +204,9 @@
                     //     minlength: 6,
                     //     equalTo: "#password"
                     // },
+                    terms: {
+                      required: true,
+                    }
                     email: {
                         required: true,
                         email: true
@@ -212,7 +226,7 @@
                 },
                 messages: {
                     full_name: "Please enter your firstname",
-                    gender: "Please select your Gender",
+                    gender: "Please select your gender",
                    
                     password: {
                         required: "Please provide a password",
@@ -226,6 +240,7 @@
                     profession: "Please tell us about yourself",
                     email: "Please enter a valid email address",
                     mobile: "Please enter  mobile number",
+                    terms: "Please accept terms and condition",
                     captcha:{
                         required:"Captcha is required!",
                         equalTo: "Captcha doesn't match!",
