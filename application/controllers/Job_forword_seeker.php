@@ -150,6 +150,8 @@ class Job_forword_seeker extends CI_Controller {
                 'gender'    => $this->input->post('gender'),
                 // 'user_name' => $this->input->post('user_name'),
                 'password'  => md5($this->input->post('password')),
+                'profession' => $this->input->post('profession'),
+                'mobile_no'    => $this->input->post('mobile'),
                 'js_status' => 1,
                 'cv_type'   => 1,
             );
