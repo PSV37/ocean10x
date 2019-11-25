@@ -73,10 +73,16 @@
                         }
                            $message .= '
                                 </table><br/><b>Interview Type: </b> '.$ct_row["interview_type"].'<br/><b>Interview Details: </b> '.$ct_row["interview_details"].'<br>';
-                                
+
+                          if($ct_row['is_slot_selected']==1){
                             $message .= '
+                                 <a href="'.base_url().'Confirm_interview/reschedule_interview?apply_id='.base64_encode($ct_row["id"]).'&js_id='.base64_encode($js_data['email']).'" class="btn btn-info" value="Reschedule Interview" align="center" target="_blank">Reschedule Interview</a><br>';
+                               }else{
+                                $message .= '
                                 <br><a href="'.base_url().'Confirm_interview/confirm_interview_now?apply_id='.base64_encode($ct_row["id"]).'&js_id='.base64_encode($js_data['email']).'" class="btn btn-primary" value="Confirm Interview" align="center" target="_blank">Confirm Interview</a>
                                  <a href="'.base_url().'Confirm_interview/reschedule_interview?apply_id='.base64_encode($ct_row["id"]).'&js_id='.base64_encode($js_data['email']).'" class="btn btn-info" value="Reschedule Interview" align="center" target="_blank">Reschedule Interview</a><br>';
+                               }
+
                     }else{
 
                         for($l1=0;$l1<sizeof($interview_datess);$l1++)
