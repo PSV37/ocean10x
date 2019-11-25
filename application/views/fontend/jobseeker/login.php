@@ -4,18 +4,18 @@
 
 
 <!-- Page Title start -->
-<!-- <div class="pageTitle">
+<div class="pageTitle">
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-6">
-        <h1 class="page-heading">Seeker Login</h1>
+        <h1 class="page-heading">Login / Sign In (Candidate)</h1>
       </div>
       <div class="col-md-6 col-sm-6">
         <div class="breadCrumb"><a href="#.">Home</a> / <span>Seeker Login</span></div>
       </div>
     </div>
   </div>
-</div> -->
+</div>
 <!-- Page Title End --> 
 
 
