@@ -22,7 +22,7 @@
                       <h5>
                         <a href="#" data-edit_level_id='<?php echo $all_education['js_education_id']; ?>|<?php echo $v_education['education_level_id']; ?>' data-toggle="modal" data-target="#EditEducation" class="btn pull-right bg-navy btn-xs geteditformbylevel" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                        
-                        <a href="<?php echo base_url() ?>/job_seeker/delete_education/<?php echo $all_education['js_education_id']; ?>" class="pull-right btn  btn-xs" title="Delete" data-toggle="tooltip" data-placement="top" onclick="return confirm('Are you sure want to delete this record ?');"><i class="fa fa-trash-o"></i></a>                   
+                        <a href="<?php echo base_url() ?>/job_seeker/delete_education/<?php echo $all_education['js_education_id']; ?>" class="pull-right btn  btn-xs" title="Delete" data-toggle="tooltip" data-placement="top" onclick="return confirm('Are you sure you want to delete this info ?');"><i class="fa fa-trash-o"></i></a>                   
                       </h5>
                           <div class="table-responsive">          
                             <table class="table">
