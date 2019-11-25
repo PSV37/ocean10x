@@ -178,7 +178,7 @@ class Job_seeker extends MY_Seeker_Controller
 				'js_institute_name'     => $this->input->post('js_institute_name'),
 				'education_type_id'     => $this->input->post('education_type_id'),
 				'js_year_of_passing'    => $this->input->post('js_year_of_passing'),
-				'gradding'              => $this->input->post('gradding'),
+				// 'gradding'              => $this->input->post('gradding'),
 				'js_resut'              => round($this->input->post('js_resut')),
 				'board_id'              => $this->input->post('board_id'),
 				'totalmarks_id'         => round($this->input->post('totalmarks_id')),
