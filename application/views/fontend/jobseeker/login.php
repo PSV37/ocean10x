@@ -4,25 +4,25 @@
 
 
 <!-- Page Title start -->
-<!-- <div class="pageTitle">
+<div class="pageTitle">
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-6">
-        <h1 class="page-heading">Seeker Login</h1>
+        <h1 class="page-heading">Company Logo on Top Here
+
+  Hello Talented Professional !
+      Welcome Back !
+  Login into the Ocean know about the latest Professional Opportunities !</h5></h1>
       </div>
       <div class="col-md-6 col-sm-6">
         <div class="breadCrumb"><a href="#.">Home</a> / <span>Seeker Login</span></div>
       </div>
     </div>
   </div>
-</div> -->
+</div>
 <!-- Page Title End --> 
 
-  Company Logo on Top Here
-
-  <h5>Hello Talented Professional !<br>
-      Welcome Back !<br>
-  Login into the Ocean know about the latest Professional Opportunities !</h5>
+  
 <div class="listpgWraper">
   <div class="container">
     <div class="row">
