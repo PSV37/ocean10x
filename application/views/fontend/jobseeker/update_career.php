@@ -17,7 +17,7 @@
                             <?php $key = 1 ?>
                                     <hr>
                             <h5>
-                              My Desired Profile
+                              I am looking for Better Opportunities !
                              <a href="#" data-toggle="modal" data-target="#UpdateCareer" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>   
                               <a href="<?php echo site_url('job_seeker/delete_career/'.$job_career_info[0]->job_seeker_id.''); ?>" onclick="return confirm('Are you sure?');"  class="btn pull-right bg-red btn-xs" title="Delete" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash" aria-hidden="true"></i></a>               
                             </h5>
