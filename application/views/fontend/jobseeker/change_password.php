@@ -41,6 +41,8 @@
                                     </div>
                                 </form>
                             </div><!-- end post-padding -->
+                          </div>
+                        </div>
                         
                 
                         </div><!-- end col -->
