@@ -32,7 +32,7 @@
       <div class="form-group">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
-          <label class="control-label" for="email">University/Institute Name<span class="required">*</span></label>
+          <label class="control-label" for="email">University / Name of Institution<span class="required">*</span></label>
           <input type="text" name="js_institute_name" class="form-control" id="js_institute_name" placeholder="Enter Institute Name" value="<?php if(!empty($edit_edu_res)) echo $edit_edu_res['js_institute_name']; ?>">
         </div>
         <div class="col-sm-1"></div>
@@ -55,9 +55,9 @@
       <div class="form-group">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
-          <label class="control-label" for="pwd">Passing Out Year<span class="required">*</span></label>
+          <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
           <select  name="js_year_of_passing" id="ddlYear" class="form-control">
-           <option value="">Select Passing Year</option>
+           <option value="">Select Completion Year</option>
             <?php
               $currently_selected = date('Y'); 
               $earliest_year = 1940; 
@@ -73,7 +73,7 @@
       </div>
  
 <?php if(!empty($education_level)) if($education_level['education_level_name']=='Ph.D / Doctorate' || $education_level['education_level_name']=='Masters/Post-Graduation' || $education_level['education_level_name']=='Graduation/Diploma'){?>
-      <div class="form-group">
+     <!--  <div class="form-group">
          <div class="col-sm-1"></div>
         <div class="col-sm-10">
         <label class="control-label" for="email">Grading System</label>
@@ -86,13 +86,14 @@
           </select>
         </div>
         <div class="col-sm-1"></div>
-      </div>
+      </div> -->
     
-      <div class="form-group" id="comp_name" <?php if(!empty($edit_edu_res)){ if($edit_edu_res['gradding']=='Course Requires a Pass') {?> style="display:none;"<?php }else{ ?>style="display:block;"<?php } }else{ ?>style="display:none;"<?php } ?>>
+      <!-- <div class="form-group" id="comp_name" <?php if(!empty($edit_edu_res)){ if($edit_edu_res['gradding']=='Course Requires a Pass') {?> style="display:none;"<?php }else{ ?>style="display:block;"<?php } }else{ ?>style="display:none;"<?php } ?>> -->
+      <div class="form-group">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
-          <label class="control-label" for="email">Marks<span class="required">*</span></label>
-          <input type="text" name="js_resut" class="form-control" placeholder="Enter Result GPA/GGPA" value="<?php if(!empty($edit_edu_res)) echo $edit_edu_res['js_resut']; ?>" onkeypress="javascript:return isNumber1(event)">
+          <label class="control-label" for="email">Score<span class="required">*</span></label>
+          <input type="text" name="js_resut" class="form-control" placeholder="Enter Score" value="<?php if(!empty($edit_edu_res)) echo $edit_edu_res['js_resut']; ?>" onkeypress="javascript:return isNumber1(event)">
         </div>
         <div class="col-sm-1"></div>
       </div>
@@ -131,7 +132,7 @@
     <div class="form-group">
       <div class="col-sm-1"></div>
       <div class="col-sm-10">
-        <label class="control-label" for="email">Total Marks<span class="required">*</span></label>
+        <label class="control-label" for="email">Total Score<span class="required">*</span></label>
         <input type="text" name="totalmarks_id" id="totalmarks_id" class="form-control" value="<?php if(!empty($edit_edu_res)) echo $edit_edu_res['totalmarks_id']; ?>" onkeypress="javascript:return isNumber(event)">
       </div>
       <div class="col-sm-1"></div>
@@ -140,7 +141,7 @@
     
 
     <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      <button type="submit" class="btn btn-primary">Save</button>
     </div>
   </form>

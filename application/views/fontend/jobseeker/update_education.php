@@ -40,7 +40,7 @@
                                 </tr>
 
                                 <tr>
-                                  <td>University/Institute Name:</td>
+                                  <td>University / Name of Institution:</td>
                                   <td><?php echo $all_education['js_institute_name']; ?></td>
                                 </tr>
                                 <!--  <tr>
@@ -65,7 +65,7 @@
                                 <?php } ?>
                                
                                 <tr>
-                                  <td>Passing Year:</td>
+                                  <td>Year of Completion:</td>
                                   <td><?php echo $all_education['js_year_of_passing']; ?> </td>
                                 </tr>
                               
