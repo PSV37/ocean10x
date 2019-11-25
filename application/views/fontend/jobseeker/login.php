@@ -26,8 +26,8 @@
           	<h6><p>Hello Talented Professional !</p>
                   <p>Welcome Back !</p>
               <p>Login into the Ocean know about the latest Professional Opportunities !</p></h6>
-         <!--  <h5 align="center">Seeker Login</h5>
-          <hr> -->
+          <!-- <h5 align="center">Seeker Login</h5> -->
+          <hr>
           <!-- login form -->
            <form class="submit-form customform loginform" action="<?php echo base_url() ?>register/check_login" method="post">
            <?php echo $this->session->flashdata('verify_msg'); ?>
