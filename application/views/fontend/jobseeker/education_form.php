@@ -43,7 +43,7 @@
         <div class="col-sm-10">
           <label class="control-label" for="email">Course Type<span class="required">*</span></label>
           <?php foreach($course as $courses){?>
-            <input type="radio" name="education_type_id" id="education_type_id" value="<?php echo $courses['education_type_id']; ?>"<?php if(!empty($edit_edu_res)) if($edit_edu_res['education_type_id']==$courses['education_type_id']) echo "checked";?> style="margin: 0 15px;"> <?php echo $courses['education_type']; ?>
+            <input type="radio" name="education_type_id" id="education_type_id" value="<?php echo $courses['education_type_id']; ?>"<?php if(!empty($edit_edu_res)) if($edit_edu_res['education_type_id']==$courses['education_type_id']) echo "checked";?> style="margin: 0 1px;"> <?php echo $courses['education_type']; ?>
           <?php } ?>
          
 
