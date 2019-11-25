@@ -23,9 +23,9 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <div class="userccount">
-          	<h6><p>Hello Talented Professional !</p>
-                  <p>Welcome Back !</p>
-              <p>Login into the Ocean know about the latest Professional Opportunities !</p></h6>
+          	<h5 align="center">Hello Talented Professional !</br>
+                  Welcome Back !</br>
+             Login into the Ocean know about the latest Professional Opportunities !</h5 align="center">
           <!-- <h5 align="center">Seeker Login</h5> -->
           <hr>
           <!-- login form -->
