@@ -71,9 +71,9 @@
 
                 <div class="formrow">
                   <div class="row">
-                    <div class="col-md-6 col-sm-12">
+                    <!-- <div class="col-md-6 col-sm-12">
                       <input type="text" name="mobile" value="<?php echo isset($this->session->userdata['reg_jobseeker']['mobile_no'])?$this->session->userdata['reg_jobseeker']['mobile_no']:''; ?>" class="form-control" placeholder="Mobile Number" autocomplete="off">
-                    </div>
+                    </div> -->
 
                     <div class="col-md-6 col-sm-12">
                       <?php $str_m="";
@@ -96,14 +96,15 @@
                       <input type="radio" name="gender" value="1" <?php echo $str_m ; ?>> Male &nbsp;
                       <input type="radio" name="gender" value="2" <?php echo $str_f ; ?>> Female
                     </div>
+                    <div class="col-md-6 col-sm-12">
+                      <input type="Password" id="password" name="password" class="form-control" placeholder="Password">
+                    </div>
                   </div><!-- end row -->
                 </div>
 
                 <div class="formrow">
                   <div class="row">
-                    <div class="col-md-6 col-sm-12">
-                      <input type="Password" id="password" name="password" class="form-control" placeholder="Password">
-                    </div>
+                   
                    <!--  <div class="col-md-6 col-sm-12">
                       <input type="Password" name="confirm_password" class="form-control" placeholder="Confirm Password">
                     </div> -->
