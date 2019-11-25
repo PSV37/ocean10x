@@ -37,7 +37,7 @@
             
             
             <input type="submit" class="btn" value="Retrieve Password">
-            <input type="submit" class="btn" value="Cancel">
+            <a href="<?php echo base_url() . 'register/jobseeker_login' ?>"><input type="submit" class="btn" value="Cancel"></a>
           </div>
            </form>
           <!-- login form  end--> 
