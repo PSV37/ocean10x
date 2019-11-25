@@ -28,7 +28,7 @@ class Register extends CI_Controller
                 'password'  => md5($this->input->post('password')),
                 'js_token'  => md5($this->input->post('email')),
                 'profession' => $this->input->post('profession'),
-                'mobile_no'    => $this->input->post('mobile'),
+                // 'mobile_no'    => $this->input->post('mobile'),
                 'js_status' => 0,
                 'cv_type'   => 1,
             );
