@@ -40,17 +40,17 @@
             <div class="formrow">
               <div class="row">
               	<div class="col-md-6">
-                <input id="checkbox_qu_01" type="checkbox" class="styled">
-              	<label for="checkbox_qu_01"><small>Remember me</small></label>
+                  <input id="checkbox_qu_01" type="checkbox" class="styled">
+                	<label for="checkbox_qu_01"><small>Remember me</small></label>
                 </div>
                 <div class="col-md-6" align="right"><a href="<?php echo base_url() . 'register/forgot_pass' ?>">Forgot Password?</a></div>
               </div>
               
             </div>
-             <!--  <div class="newuser"> <input type="submit" class="btn" value="Login Account"> 
-                  Or
-                <a href="#">Login via OTP</a>
-            </div> -->
+              <div class="newuser"> <input type="submit" class="btn" value="Login Account"> 
+                 <!--  Or
+                <a href="#">Login via OTP</a> -->
+            </div>
         
           </div>
         </form>
