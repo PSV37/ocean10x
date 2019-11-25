@@ -18,17 +18,14 @@
 </div> -->
 <!-- Page Title End --> 
 
-  Company Logo on Top Here
-
-  
 <div class="listpgWraper">
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <div class="userccount">
-          	<p>Hello Talented Professional !
-                  Welcome Back !
-              Login into the Ocean know about the latest Professional Opportunities !</p>
+          	<p>Hello Talented Professional !</p>
+                  <p>Welcome Back !</p>
+              <p>Login into the Ocean know about the latest Professional Opportunities !</p>
          <!--  <h5 align="center">Seeker Login</h5>
           <hr> -->
           <!-- login form -->
