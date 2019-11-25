@@ -38,7 +38,7 @@
                   <div class="row">
                     <!-- <div class="col-md-2 col-sm-12">I am a</div> -->
                     <div class="col-md-6 col-sm-12">
-                     <label>I am a</label>
+                     <label>I am a</label> &nbsp;&nbsp;
                       <input type="radio" name="profession" value="Fresher"> Fresher
                       <input type="radio" name="profession" value="Professional"> Professional
                     </div>
