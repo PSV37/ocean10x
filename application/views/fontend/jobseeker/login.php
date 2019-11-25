@@ -26,6 +26,7 @@
         <div class="userccount">
           	
           <h5 align="center">Seeker Login</h5>
+          <hr>
           <!-- login form -->
            <form class="submit-form customform loginform" action="<?php echo base_url() ?>register/check_login" method="post">
            <?php echo $this->session->flashdata('verify_msg'); ?>
