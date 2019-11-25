@@ -51,7 +51,9 @@
               </div>
               
             </div>
-              <div class="newuser"> <input type="submit" class="btn" value="Sign in"> 
+              <div class="newuser"> 
+                <!-- <input type="submit" class="btn" value="Sign in">  -->
+                <button type="submit" class="btn btn-primary">Sign in</button>
                  <!--  Or
                 <a href="#">Login via OTP</a> -->
             </div>
