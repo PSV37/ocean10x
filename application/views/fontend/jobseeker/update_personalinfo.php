@@ -341,7 +341,7 @@
           <div class="col-md-12 col-sm-12">
             <div class="input-group">
               <label class="control-label" for="email">Name:<span class="required">*</span></label>
-              <input type="text" class="form-control datepicker" name="full_name" value="">
+              <input type="text" class="form-control" name="full_name" value="<?php name ?>">
             </div>
           </div>
         </div>
