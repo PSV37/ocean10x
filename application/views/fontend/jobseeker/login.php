@@ -4,7 +4,7 @@
 
 
 <!-- Page Title start -->
-<div class="pageTitle">
+<!-- <div class="pageTitle">
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-6">
@@ -15,7 +15,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <!-- Page Title End --> 
 
 
