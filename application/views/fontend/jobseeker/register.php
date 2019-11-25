@@ -206,7 +206,7 @@
                     // },
                     terms: {
                       required: true,
-                    }
+                    },
                     email: {
                         required: true,
                         email: true
