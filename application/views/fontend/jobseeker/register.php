@@ -33,6 +33,17 @@
             <div class="formpanel">
                     
               <form id="submit" action="" method="post" class="submit-form">
+
+                <div class="formrow">
+                  <div class="row">
+                    <div class="col-md-10 col-sm-12">I am a</div>
+                    <div class="col-md-10 col-sm-12">
+                      <input type="redio" name="profession" value="Fresher"> Fresher
+                      <input type="redio" name="profession" value="Professional"> Professional
+                    </div>
+                  </div><!-- end row -->
+                </div>
+
                 <div class="formrow">
                   <div class="row">
                     <div class="col-md-6 col-sm-12">
