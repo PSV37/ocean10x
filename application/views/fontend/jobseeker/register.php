@@ -38,8 +38,8 @@
                   <div class="row">
                     <div class="col-md-2 col-sm-12">I am a</div>
                     <div class="col-md-10 col-sm-12">
-                      <input type="radio" name="profession" value="Fresher"> Fresher
-                      <input type="radio" name="profession" value="Professional"> Professional
+                      <input type="radio" name="profession" value="Fresher" class="form-control" style="border-radius: 0!important;,padding: 10px 13px!important;border-color: #ddd!important;"> Fresher
+                      <input type="radio" name="profession" value="Professional" class="form-control" style="border-radius: 0!important;,padding: 10px 13px!important;border-color: #ddd!important;"> Professional
                     </div>
                   </div><!-- end row -->
                 </div>
