@@ -36,7 +36,7 @@
 
                 <div class="formrow">
                   <div class="row">
-                    <div class="col-md-10 col-sm-12">I am a</div>
+                    <div class="col-md-2 col-sm-12">I am a</div>
                     <div class="col-md-10 col-sm-12">
                       <input type="radio" name="profession" value="Fresher"> Fresher
                       <input type="radio" name="profession" value="Professional"> Professional
