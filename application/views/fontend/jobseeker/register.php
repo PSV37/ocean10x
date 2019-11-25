@@ -76,11 +76,14 @@
                         $str_f="selected";
                         } 
                       ?>
-                      <select name="gender" class="form-control" id="gender">
+                      <!-- <select name="gender" class="form-control" id="gender">
                         <option value="">Select One</option>
                         <option value="1" <?php echo $str_m ; ?>>Male</option>
                         <option value="2" <?php echo $str_f ; ?>>Female</option>
-                      </select>
+                      </select> -->
+                       <label>Gender</label> &nbsp;&nbsp;
+                      <input type="radio" name="gender" value="1" <?php echo $str_m ; ?>> Male &nbsp;
+                      <input type="radio" name="gender" value="2" <?php echo $str_f ; ?>> Female
                     </div>
                   </div><!-- end row -->
                 </div>
