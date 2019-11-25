@@ -18,15 +18,19 @@
 </div> -->
 <!-- Page Title End --> 
 
+  Company Logo on Top Here
 
+  <h5>Hello Talented Professional !<br>
+      Welcome Back !<br>
+  Login into the Ocean know about the latest Professional Opportunities !</h5>
 <div class="listpgWraper">
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <div class="userccount">
           	
-          <h5 align="center">Seeker Login</h5>
-          <hr>
+         <!--  <h5 align="center">Seeker Login</h5>
+          <hr> -->
           <!-- login form -->
            <form class="submit-form customform loginform" action="<?php echo base_url() ?>register/check_login" method="post">
            <?php echo $this->session->flashdata('verify_msg'); ?>
