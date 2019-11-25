@@ -25,7 +25,7 @@
       <div class="col-md-6 col-md-offset-3">
         <div class="userccount">
           	
-          <h5>Please enter new Password</h5>
+          <h5>Please enter new password</h5>
           <!-- login form -->
            <form class="submit-form customform loginform" action="" method="post">
            <?php echo $this->session->flashdata('verify_msg'); ?>
@@ -33,17 +33,18 @@
           <div class="formpanel">
             
             <div class="formrow">
-              <input name="password" type="password" id="myInput" class="form-control" placeholder="Password" min="5" required>
+              <input name="password" type="password" id="myInput" class="form-control" placeholder="Enter New Password" min="8" required>
               <input type="checkbox" onclick="myFunction()">Show Password
             </div>
             <div class="formrow"></div>
-            <input type="submit" class="btn" value="Reset Account">
+            <input type="submit" class="btn" value="Reset Password">
           </div>
            </form>
           <!-- login form  end--> 
           
          <!-- sign up form -->
-          <div class="newuser"><i class="fa fa-user" aria-hidden="true"></i> New User? <a href="<?php echo base_url() . 'register' ?>">Register Here</a></div>
+          <!-- <div class="newuser"><i class="fa fa-user" aria-hidden="true"></i> New User? <a href="<?php echo base_url() . 'register' ?>">Register Here</a></div> -->
+          <div class="newuser"><i class="fa fa-user" aria-hidden="true"></i> Not a member yet ? <a href="<?php echo base_url() . 'register' ?>">Register Now</a></div>
           <!-- sign up form end--> 
           
         </div>
