@@ -562,7 +562,7 @@ border-radius: 2px !important;
 	background: #000;
 }
 
-.nav>li>a>img{width:40px; float:left; /*margin-right:15px;*/ border:1px solid #ddd; height:40px;}	
+.nav>li>a>img{width:40px; float:left; *margin-right:5px; border:1px solid #ddd; height:40px;}	
 .nav>li .dropdown-toggle{padding:5px 0 0 0 !important;}
 
 .control-label{display:block; width:100%; margin-bottom:5px;}
