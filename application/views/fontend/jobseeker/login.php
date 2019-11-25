@@ -25,7 +25,7 @@
         <div class="userccount">
           	<h5 align="center">Hello Talented Professional !</br>
                   Welcome Back !</br>
-             Login into the Ocean know about the latest Professional Opportunities !</h5 align="center">
+             Login into the Ocean know about the latest Professional Opportunities !</h5>
           <!-- <h5 align="center">Seeker Login</h5> -->
           <hr>
           <!-- login form -->
