@@ -8,7 +8,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-6">
-        <h1 class="page-heading">Login / Sign In (Candidate)</h1>
+        <h1 class="page-heading">Seeker Login</h1>
       </div>
       <div class="col-md-6 col-sm-6">
         <div class="breadCrumb"><a href="#.">Home</a> / <span>Seeker Login</span></div>
@@ -25,7 +25,7 @@
       <div class="col-md-6 col-md-offset-3">
         <div class="userccount">
           	
-          <h5>Jobseeker Login</h5>
+          <h5>Login</h5>
           <!-- login form -->
            <form class="submit-form customform loginform" action="<?php echo base_url() ?>register/check_login" method="post">
            <?php echo $this->session->flashdata('verify_msg'); ?>
