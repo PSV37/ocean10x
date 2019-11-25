@@ -3,7 +3,7 @@
 ?>
 
 <!-- Page Title start -->
-<div class="pageTitle">
+<!-- <div class="pageTitle">
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-6">
@@ -14,118 +14,107 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <!-- Page Title End --> 
 
-            <div class="section lb">
-                <div class="container">
-                <div class="row">
-                <div class="col-md-6 col-md-offset-3">
-                    <?php echo $this->session->flashdata('msg'); ?>
-                    <?php echo $this->session->flashdata('captcha_msg'); ?>
+<div class="listpgWraper lb">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <?php echo $this->session->flashdata('msg'); ?>
+        <?php echo $this->session->flashdata('captcha_msg'); ?>
+      </div>
+    </div>
+      <div class="row">
+        <div class="content col-md-8 col-md-offset-2">
+          <div class="userccount">
+            <!-- <h5>Jobseeker Account</h5> -->
+            <div class="formpanel">
+                    
+              <form id="submit" action="" method="post" class="submit-form">
+                <div class="formrow">
+                  <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                      <input type="text" name="full_name" value="<?php echo isset($this->session->userdata['reg_jobseeker']['full_name'])?$this->session->userdata['reg_jobseeker']['full_name']:''; ?>" class="form-control name-valid" placeholder="Full Name" autocomplete="off">
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                      <input type="email" name="email" value="<?php echo isset($this->session->userdata['reg_jobseeker']['email'])?$this->session->userdata['reg_jobseeker']['email']:''; ?>" class="form-control" placeholder="Email" autocomplete="off">
+                    </div>
+                  </div><!-- end row -->
                 </div>
-            </div>
-                    <div class="row">
-                        <div class="content col-md-8 col-md-offset-2">
-                            <div class="userccount">
-                            <h5>Jobseeker Account</h5>
-                            <div class="formpanel">
-                                  
-                                <form id="submit" action="" method="post" class="submit-form">
-                                    <div class="formrow">
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-12">
-                                            <input type="text" name="full_name" value="<?php echo isset($this->session->userdata['reg_jobseeker']['full_name'])?$this->session->userdata['reg_jobseeker']['full_name']:''; ?>" class="form-control name-valid" placeholder="Full Name" autocomplete="off">
-                                        </div>
-                                        <div class="col-md-6 col-sm-12">
-                                            <input type="email" name="email" value="<?php echo isset($this->session->userdata['reg_jobseeker']['email'])?$this->session->userdata['reg_jobseeker']['email']:''; ?>" class="form-control" placeholder="Email" autocomplete="off">
-                                        </div>
-                                    </div><!-- end row -->
-                                    </div>
 
-                                    <div class="formrow">
-                                        <div class="row">
-                                            <div class="col-md-6 col-sm-12">
+                <div class="formrow">
+                  <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                      <?php $str_m="";
+                        if((isset($this->session->userdata['reg_jobseeker']['gender'])) && $this->session->userdata['reg_jobseeker']['gender']=='1'){
 
-                                        <?php $str_m="";
-                                            if((isset($this->session->userdata['reg_jobseeker']['gender'])) && $this->session->userdata['reg_jobseeker']['gender']=='1'){
+                        $str_m="selected";
+                        $str_f="";
+                        }
+                        if((isset($this->session->userdata['reg_jobseeker']['gender'])) && $this->session->userdata['reg_jobseeker']['gender']=='2'){
+                        $str_m="";
+                        $str_f="selected";
+                        } 
+                      ?>
+                      <select name="gender" class="form-control" id="gender">
+                        <option value="">Select One</option>
+                        <option value="1" <?php echo $str_m ; ?>>Male</option>
+                        <option value="2" <?php echo $str_f ; ?>>Female</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                      <input type="hidden" name="user_name"  value="<?php echo isset($this->session->userdata['reg_jobseeker']['user_name'])?$this->session->userdata['reg_jobseeker']['user_name']:''; ?>"class="form-control" placeholder="User Name" autocomplete="off">
+                    </div>
+                  </div><!-- end row -->
+                </div>
 
-                                            $str_m="selected";
-                                            $str_f="";
-                                            }
-                                            if((isset($this->session->userdata['reg_jobseeker']['gender'])) && $this->session->userdata['reg_jobseeker']['gender']=='2'){
-                                            $str_m="";
-                                            $str_f="selected";
-                                            } 
-                                        ?>
-                                                <select name="gender" class="form-control" id="gender">
-
-                                                    <option value="">Select One</option>
-                                                    <option value="1" <?php echo $str_m ; ?>>Male</option>
-                                                    <option value="2" <?php echo $str_f ; ?>>Female</option>
-                                                  </select>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <input type="hidden" name="user_name"  value="<?php echo isset($this->session->userdata['reg_jobseeker']['user_name'])?$this->session->userdata['reg_jobseeker']['user_name']:''; ?>"class="form-control" placeholder="User Name" autocomplete="off">
-                                            </div>
-                                        </div><!-- end row -->
-                                    </div>
-
-                               <div class="formrow">
-                               <div class="row">
-                                       <div class="col-md-6 col-sm-12">
-                                            <input type="Password" id="password" name="password" class="form-control" placeholder="Password">
-                                        </div>
-
-                                         <div class="col-md-6 col-sm-12">
-                                            <input type="Password" name="confirm_password" class="form-control" placeholder="Confirm Password">
-                                        </div>
-                                </div>
-                                </div>
-
-
-
-
-<div class="formrow">
-
-                <div class="captchacode">Captcha is cause sensitive</div>
-
-                                     <div class="row">
-
-                                   <div class="col-md-6 col-sm-12">
-                                            <input id="inputchapcha" type="text"  name="captcha" value="" class="form-control" autocomplete="off">
-                                        </div>
-
-                                    <div class="col-md-5 col-sm-5">
-                 <p id="captImg"><?php echo $captcha_images; ?></p>
-                  <a href="javascript:void(0);" class="refreshCaptcha" ><img src="<?php echo base_url().'fontend/images/refresh-button.png'; ?>"/></a>
+                <div class="formrow">
+                  <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                      <input type="Password" id="password" name="password" class="form-control" placeholder="Password">
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                      <input type="Password" name="confirm_password" class="form-control" placeholder="Confirm Password">
+                    </div>
                   </div>
-                   <div class="col-md-1 col-sm-1"></div>
-                                    </div><!-- end row -->
-</div>
+                </div>
 
-                               <div class="formrow">
-                               <div class="row">
-                               <div class="col-md-6 col-sm-12">
-                                    <input type="checkbox" value="" checked="" > <a  href="<?php echo base_url().'terms' ?>" target="_blank" required>  I agree to the Terms and Conditions</a></label>
-                                </div>
-                               </div>
-</div>
+                <div class="formrow">
+                  <div class="captchacode">Captcha is cause sensitive</div>
+                    <div class="row">
 
+                      <div class="col-md-6 col-sm-12">
+                        <input id="inputchapcha" type="text" name="captcha" value="" class="form-control" autocomplete="off">
+                      </div>
 
+                      <div class="col-md-5 col-sm-5">
+                        <p id="captImg"><?php echo $captcha_images; ?></p>
+                        <a href="javascript:void(0);" class="refreshCaptcha" ><img src="<?php echo base_url().'fontend/images/refresh-button.png'; ?>"/></a>
+                      </div>
+                      <div class="col-md-1 col-sm-1"></div>
+                    </div><!-- end row -->
+                </div>
 
-                                    <button type="submit" id="submitButton" class="btn btn-primary btn-block">Create Account</button>
-                                </form>
+                <div class="formrow">
+                  <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                      <input type="checkbox" value="" checked="" > <a  href="<?php echo base_url().'terms' ?>" target="_blank" required>  I agree to the Terms and Conditions</a>
+                    </div>
+                  </div>
+                </div>
 
-                                 <?php //echo $this->session->flashdata('msg'); ?>
-                            </div><!-- end post-padding -->
-                            </div>
-                        </div><!-- end col -->
+                <button type="submit" id="submitButton" class="btn btn-primary btn-block">Create Account</button>
+            </form>
 
-                        <!-- end col -->
-                    </div><!-- end row -->  
-                </div><!-- end container -->
-            </div><!-- end section -->
+            <?php //echo $this->session->flashdata('msg'); ?>
+          </div><!-- end post-padding -->
+        </div>
+      </div><!-- end col -->
+      <!-- end col -->
+    </div><!-- end row -->  
+  </div><!-- end container -->
+</div><!-- end section -->
 
 
 
