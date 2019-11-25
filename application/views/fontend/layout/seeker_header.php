@@ -41,7 +41,7 @@
 </head>
 
 <body>
-<div class="header topshadow">
+<div class="header topshadow navbar-fixed-top">
   <div class="container">
     <div class="row">
       <div class="col-md-2 col-sm-3 col-xs-12">
@@ -71,7 +71,6 @@
                       <?php endif; ?>
                       <ul class="dropdown-menu start-right">                                            
                         <li><a href="<?php echo base_url(); ?>job_seeker/seeker_info"><span class="glyphicon glyphicon-user"></span>My Profile</a></li>
-                        <!--<li><a href="<?php echo base_url(); ?>job_seeker/view_resume"><span class="glyphicon glyphicon-edit"></span> View Resume</a></li>-->
                         <li><a href="<?php echo base_url(); ?>job_seeker/change_password" class=""><span class="glyphicon glyphicon-lock"></span> Change Password</a></li>
                         <li><a href="#" onclick="logout();"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
                       </ul>
