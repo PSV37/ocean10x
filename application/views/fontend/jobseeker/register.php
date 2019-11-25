@@ -129,7 +129,7 @@
                 <div class="formrow">
                   <div class="row">
                     <div class="col-md-6 col-sm-12">
-                      <input type="checkbox" value="" name="terms" checked="" > <a  href="<?php echo base_url().'terms' ?>" target="_blank" required>  I agree to the Terms and Conditions</a>
+                      <input type="checkbox" value="" name="termss" checked="" > <a  href="<?php echo base_url().'terms' ?>" target="_blank" required>  I agree to the Terms and Conditions</a>
                     </div>
                   </div>
                 </div>
@@ -204,7 +204,7 @@
                     //     minlength: 6,
                     //     equalTo: "#password"
                     // },
-                    terms: {
+                    termss: {
                       required: true,
                     },
                     email: {
@@ -240,7 +240,7 @@
                     profession: "Please tell us about yourself",
                     email: "Please enter a valid email address",
                     mobile: "Please enter  mobile number",
-                    terms: "Please accept terms and condition",
+                    termss: "Please accept terms and condition",
                     captcha:{
                         required:"Captcha is required!",
                         equalTo: "Captcha doesn't match!",
