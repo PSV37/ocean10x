@@ -35,7 +35,7 @@
               <input type="text" class="form-control" name="email" placeholder="Enter your Email / Phone Number" autocomplete="off">
             </div>
             <div class="formrow">
-              <input name="password" type="password" class="form-control" placeholder="Key in Your Password" autocomplete="off">
+              <input name="password" type="password" id="myInput" class="form-control" placeholder="Key in Your Password" autocomplete="off">
               <!-- An element to toggle between password visibility -->
               <input type="checkbox" onclick="myFunction()">Show Password
             </div>
