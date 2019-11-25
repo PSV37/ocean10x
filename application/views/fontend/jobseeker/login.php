@@ -25,7 +25,7 @@
       <div class="col-md-6 col-md-offset-3">
         <div class="userccount">
           	
-          <h5>Login</h5>
+          <h5>Seeker Login</h5>
           <!-- login form -->
            <form class="submit-form customform loginform" action="<?php echo base_url() ?>register/check_login" method="post">
            <?php echo $this->session->flashdata('verify_msg'); ?>
