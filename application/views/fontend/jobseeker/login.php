@@ -32,10 +32,10 @@
            <?php echo $this->session->flashdata('invalid'); ?>
           <div class="formpanel">
             <div class="formrow">
-              <input type="text" class="form-control" name="email" placeholder="Email/Mobile" autocomplete="off">
+              <input type="text" class="form-control" name="email" placeholder="Enter your Email / Phone Number" autocomplete="off">
             </div>
             <div class="formrow">
-              <input name="password" type="password" class="form-control" placeholder="Password" autocomplete="off">
+              <input name="password" type="password" class="form-control" placeholder="Key in Your Password" autocomplete="off">
             </div>
             <div class="formrow">
               <div class="row">
@@ -47,7 +47,7 @@
               </div>
               
             </div>
-              <div class="newuser"> <input type="submit" class="btn" value="Login Account"> 
+              <div class="newuser"> <input type="submit" class="btn" value="Sign in"> 
                  <!--  Or
                 <a href="#">Login via OTP</a> -->
             </div>
@@ -58,7 +58,7 @@
           <hr>
             <div class="row">
               <div class="col-md-6">
-                <span> Or login via socials</span>
+                <span> Or Login using Social </span>
               </div>
               <div class="col-md-6" align="right"> 
                 <a href="#"><span class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></span></a><a href="#"><span class="goog"><i class="fa fa-google" aria-hidden="true"></i></span></a>
