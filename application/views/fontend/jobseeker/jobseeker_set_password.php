@@ -204,9 +204,9 @@
                         required: true,
                         email: true
                     }, 
-                    mobile: {
-                        required: true,
-                    }, 
+                    // mobile: {
+                    //     required: true,
+                    // }, 
                     profession: {
                         required: true,
                     }, 
@@ -234,7 +234,7 @@
                     // },
                     profession: "Please tell us about yourself",
                     email: "Please enter a valid email address",
-                    mobile: "Please enter  mobile number",
+                    // mobile: "Please enter  mobile number",
                     captcha:{
                         required:"Captcha is required!",
                         equalTo: "Captcha doesn't match!",
