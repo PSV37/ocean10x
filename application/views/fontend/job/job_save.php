@@ -26,7 +26,7 @@
 </div>
 <!-- Page Title End -->
 
-<?php print_r($singlejob); ?>
+<!-- <?php print_r($singlejob); ?> -->
 <div class="section lb">
   <div class="container">
       <div class="row">

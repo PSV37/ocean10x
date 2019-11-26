@@ -16,7 +16,7 @@ class Save_job extends MY_Fontend_Controller {
     }
 
 
-   public function check_login($slugs = null)
+   public function check_login($slug = null)
     {
         if (!empty($slug) && ($this->job_posting_model->check_slug($slug) == true)) {
             
