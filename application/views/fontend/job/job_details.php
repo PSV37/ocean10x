@@ -124,10 +124,15 @@ $jobseeker_id = $this->session->userdata('job_seeker_id');
             <?php  $jobseeker_id;
                 if($jobseeker_id==null): ?>
               <a href="<?php echo base_url(); ?>job-apply/<?php echo $singlejob->job_slugs; ?>" class="btn apply">Apply For This Vacancy</a>
-              <?php else: ?>
-          
-              <a href="#" data-toggle="modal" data-target="#ApplyJob"  class="btn apply">  Apply For This Vacancy</a>
 
+              <a href="<?php echo base_url(); ?>job-apply/<?php echo $singlejob->job_slugs; ?>" class="btn apply">Save This Jobs</a>
+
+              <?php else: 
+                print_r($singlejob);
+                ?>
+              
+              <a href="#" data-toggle="modal" data-target="#ApplyJob"  class="btn apply">  Apply For This Vacancy</a>
+              <a href="<?php echo base_url(); ?>job-apply/<?php echo $singlejob->job_slugs; ?>" class="btn apply">Save This Job</a>
               <?php endif; ?>
               <?php endif; ?>
 			  <div class="deadlinie">Job Deadline : <?php echo $singlejob->job_deadline; ?></div>
