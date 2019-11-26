@@ -1104,6 +1104,23 @@
       </div>
     </div>
 
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-12 col-sm-12">
+          <div class="input-group">
+            <label class="control-label" for="email">Website (Personal / Company / Blog / Other)</label>
+              <input type="text" name="website" class="form-control" placeholder="Enter Your Website (Personal / Company / Blog / Other)" value="<?php
+                           if (!empty($js_personal_info->website)) {
+                             echo $js_personal_info->website;
+                             }
+                         ?>">
+          </div>  
+
+        </div>
+      </div>
+    </div>
+
+
     <div class="panel-body"></div>   
     <div class="row">
       <div class="col-md-12">

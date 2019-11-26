@@ -59,16 +59,18 @@ class Job_seeker extends MY_Seeker_Controller
 				'state_id'          => $this->input->post('state_id'),
 				'city_id'           => $this->input->post('city_id'),
 				'pincode'           => $this->input->post('pincode'),
-                'present_address'   => $this->input->post('present_address'),
+                'present_address'   => addslashes($this->input->post('present_address')),
 				// 'country1_id'       => $this->input->post('country1_id'),
 				// 'state1_id'         => $this->input->post('state1_id'),
 				// 'city1_id'          => $this->input->post('city1_id'),
 				// 'pincode1'          => $this->input->post('pincode1'),
                 // 'parmanent_address' => $this->input->post('parmanent_address'),
 
-                'marital_status'          => $this->input->post('matrial_status'),
-                'work_permit_usa'          => $this->input->post('work_permit_usa'),
-                'work_permit_countries' => $this->input->post('other_country_work_permit'),
+                'marital_status'            => $this->input->post('matrial_status'),
+                'work_permit_usa'           => $this->input->post('work_permit_usa'),
+                'work_permit_countries'     => $this->input->post('other_country_work_permit'),
+                'website'                   => addslashes($this->input->post('website')),
+                
                 
             );
             if (empty($personal_info_id)) {
