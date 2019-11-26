@@ -216,8 +216,9 @@ class Job extends MY_Fontend_Controller
                     'created_by'      => $jobseeker_id,
                 );
             $this->Master_model->master_insert($sv_info,'js_saved_jobs');
-                    // redirect('job_seeker/seeker_info');
+                    redirect('job/show/'.$slug);
             // $this->load->view('fontend/job/jobapply.php', compact('singlejob', 'jobseeker_id'));
+            // $this->load->view('fontend/job/job_details.php', compact('singlejob', 'jobseeker_id','radom_jobs','forward_status'));
         } else {
             echo "Not Found";
         }
