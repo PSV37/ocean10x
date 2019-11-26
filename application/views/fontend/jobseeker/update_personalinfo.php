@@ -116,30 +116,30 @@
 							<tr>
                 <td>Date of Birth:</td>
                 <td><?php if($js_personal_info->date_of_birth=="0000-00-00") {
-                  echo "";
-                } else {
-                        echo date('j F Y',strtotime($js_personal_info->date_of_birth));
+                    echo "";
+                  } else {
+                        echo date('j M Y',strtotime($js_personal_info->date_of_birth));
                   }
                  ?></td>
               </tr>
 									
-							<tr>
+							<!-- <tr>
                 <td>Country Code:</td>
                 <td><?php echo $js_personal_info->country_code; ?></td>
               </tr>
-
+ -->
               <tr>
                 <td>Primary Phone No:</td>
-                <td><?php echo $js_personal_info->mobile; ?></td>
+                <td><?php echo $js_personal_info->country_code.'- '.$js_personal_info->mobile; ?></td>
               </tr>
 
-							<tr>
+						<!-- 	<tr>
                 <td>Country Code:</td>
                 <td><?php echo $js_personal_info->alternatecountry_code; ?></td>
-              </tr>
+              </tr> -->
               <tr>
                 <td>Alternate Phone No:</td>
-                <td><?php echo $js_personal_info->alternatemobile; ?></td>
+                <td><?php echo $js_personal_info->alternatecountry_code.'- '.$js_personal_info->alternatemobile; ?></td>
               </tr>
               <tr>
                 <td>Present Address:</td>
@@ -200,6 +200,11 @@
                 <td>Work Permit for Other Countries: </td>
                 <td><?php if(!empty($js_personal_info->work_permit_countries))
                   echo $js_personal_info->work_permit_countries; ?></td>
+              </tr>
+              <tr>
+                <td>Website: </td>
+                <td><?php if(!empty($js_personal_info->website))
+                  echo $js_personal_info->website; ?></td>
               </tr>
 
               
