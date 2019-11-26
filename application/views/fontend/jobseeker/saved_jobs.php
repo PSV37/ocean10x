@@ -35,7 +35,7 @@
               
               <td>
                 <a href="<?php echo base_url(); ?>job/show/<?php echo $applicaiton['job_slugs']; ?>" class="btn btn-success btn-xs">Apply</a>
-                <a href="<?php echo base_url(); ?>job/delete_saved_job/<?php echo $applicaiton['id']; ?>" class="btn btn-success btn-xs">Delete</a>
+                <a href="<?php echo base_url(); ?>job/delete_saved_job/<?php echo $applicaiton['id']; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure to delete this saved job?');">Delete</a>
               </td>
             
             </tr>
