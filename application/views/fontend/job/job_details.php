@@ -132,14 +132,15 @@ $jobseeker_id = $this->session->userdata('job_seeker_id');
               
               <a href="#" data-toggle="modal" data-target="#ApplyJob"  class="btn apply">  Apply For This Vacancy</a>
                 <?php $saved = getsavedjobsdetails($singlejob->job_post_id,$jobseeker_id); 
-                    echo $saved->job_post_id;
-                    if($saved['job_post_id']==$singlejob->job_post_id)
+                   
+                  foreach($saved as $srow){
+                    if($srow['job_post_id']==$singlejob->job_post_id)
                     {
                        echo '<div class="deadlinie"><b style="color:green">Saved Job</b> </div>';
                     }else{
                 ?>
                   <a href="<?php echo base_url(); ?>job/save_my_job/<?php echo $singlejob->job_slugs; ?>" class="btn apply">Save This Job</a>
-              <?php } ?>
+              <?php } }?>
               <?php endif; ?>
               <?php endif; ?>
 			  <div class="deadlinie">Job Deadline : <?php echo $singlejob->job_deadline; ?></div>
