@@ -20,7 +20,7 @@
           <tbody>
           <?php
              $sr_no=0;
-             
+             print_r($saved_job_data);
            if (!empty($saved_job_data)): foreach ($saved_job_data as $applicaiton) : $sr_no++; ?>
             <tr>
               <td><?php echo $sr_no; ?></td>
