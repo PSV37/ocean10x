@@ -119,6 +119,11 @@
                     echo "";
                   } else {
                         echo date('j M Y',strtotime($js_personal_info->date_of_birth));
+                        if($js_personal_info->dob_visiblity=="Yes") {
+                          echo "Birthday not visible to my network";
+                        }else{
+                          echo "Birthday visible to my network";
+                        }
                   }
                  ?></td>
               </tr>
