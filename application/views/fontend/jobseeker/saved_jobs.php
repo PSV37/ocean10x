@@ -21,7 +21,10 @@
           <?php
              $sr_no=0;
              print_r($saved_job_data);
-           if (!empty($saved_job_data)): foreach ($saved_job_data as $applicaiton) : $sr_no++; ?>
+           if (!empty($saved_job_data)): foreach ($saved_job_data as $applicaiton) : $sr_no++;
+              echo 'dasd'.$applicaiton['job_post_id'];
+                echo $applicaiton->job_post_id;
+            ?>
             <tr>
               <td><?php echo $sr_no; ?></td>
               <td>
