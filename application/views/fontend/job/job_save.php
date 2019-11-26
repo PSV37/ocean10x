@@ -35,7 +35,7 @@
             <div class="userccount">
               <div class="formpanel">
                
-                <form action="<?php echo base_url() ?>save_job/check_login" method="post" class="form-horizontal">
+                <form action="<?php echo base_url() ?>save_job/check_login/<?php if(!empty($singlejob)) echo $singlejob->job_slugs; ?>" method="post" class="form-horizontal">
                   <div class="form-group">
                   <?php echo $this->session->flashdata('verify_msg'); ?>
                         <?php echo $this->session->flashdata('invalid'); ?>
