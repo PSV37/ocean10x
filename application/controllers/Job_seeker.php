@@ -164,6 +164,13 @@ class Job_seeker extends MY_Seeker_Controller
         }
     }
 
+    public function delete_language($id)
+    {
+        $where_del = "id='$id'";
+        $del = $this->Master_model->master_delete('js_languages',$where_del);
+        redirect('job_seeker/seeker_info');
+    }
+
     public function delete_education($id)
     {
         $this->Job_seeker_education_model->delete($id);

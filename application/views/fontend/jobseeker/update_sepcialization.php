@@ -65,7 +65,7 @@
                             <td><?php echo $v_language->speaking ?></td>
                             <td>
                                 <a href="#" data-toggle="modal" data-target="#EditLanugae<?php  echo $v_language->js_language_id; ?>" class="btn  bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-edit"></i></a>  
-                                 <a href="<?php echo base_url() ?>/job_seeker/delete_experience/<?php echo $v_language->js_language_id ?>" class=" btn  btn-xs" title="Delete" data-toggle="tooltip" data-placement="top" onclick="return confirm('Are you sure want to delete this record ?');"><i class="fa fa-trash-o"></i></a>
+                                <a href="<?php echo base_url() ?>/job_seeker/delete_experience/<?php echo $v_language->js_language_id ?>" class=" btn  btn-xs" title="Delete" data-toggle="tooltip" data-placement="top" onclick="return confirm('Are you sure want to delete this record ?');"><i class="fa fa-trash-o"></i></a>
                             </td>
                         </tr>
                     <?php
