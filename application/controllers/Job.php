@@ -216,15 +216,25 @@ class Job extends MY_Fontend_Controller
                     'created_by'      => $jobseeker_id,
                 );
             $this->Master_model->master_insert($sv_info,'js_saved_jobs');
-                    redirect('job/show/'.$slug);
-            // $this->load->view('fontend/job/jobapply.php', compact('singlejob', 'jobseeker_id'));
-            // $this->load->view('fontend/job/job_details.php', compact('singlejob', 'jobseeker_id','radom_jobs','forward_status'));
+            redirect('job/show/'.$slug);
         } else {
             echo "Not Found";
         }
 
     }
+// 
+    public function save_this_job($slug = null)
+    {
+        if (!empty($slug) && ($this->job_posting_model->check_slug($slug) == true)) {
+            $jobseeker_id = $this->session->userdata('job_seeker_id');
+            $job_id       = $this->job_posting_model->get_job_id_by_job_slug($slug);
+            $singlejob    = $this->job_posting_model->get($job_id);
+            $this->load->view('fontend/job/job_save.php', compact('singlejob', 'jobseeker_id'));
+        } else {
+            echo "Not Found";
+        }
 
+    }
     public function application($postid = null, $company_id = null)
     {
         $postid     = $postid;

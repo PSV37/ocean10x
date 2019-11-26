@@ -142,6 +142,9 @@ $route['employer/questionbank-import']="employer/importquestion";
 
 
 $route['job-apply/(:any)'] = "job/jobapply/$1";
+$route['save-job/(:any)'] = "job/save_this_job/$1";
+
+
 
 // Category and Level Search Jobs
 $route['jobs/type/(:any)'] = "job/get_job_types_job/$1";
