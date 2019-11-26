@@ -201,6 +201,25 @@ class Job extends MY_Fontend_Controller
         }
     }
 
+    
+    public function save_my_job($slug = null)
+    {
+        if (!empty($slug) && ($this->job_posting_model->check_slug($slug) == true)) {
+            $jobseeker_id = $this->session->userdata('job_seeker_id');
+            $job_id       = $this->job_posting_model->get_job_id_by_job_slug($slug);
+            $singlejob    = $this->job_posting_model->get($job_id);
+
+            print_r($singlejob); die;
+
+
+
+            $this->load->view('fontend/job/jobapply.php', compact('singlejob', 'jobseeker_id'));
+        } else {
+            echo "Not Found";
+        }
+
+    }
+
     public function application($postid = null, $company_id = null)
     {
         $postid     = $postid;
