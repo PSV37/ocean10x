@@ -164,7 +164,7 @@ class Job_seeker extends MY_Seeker_Controller
         }
     }
 
-    public function delete_language($id)
+    public function delete_mylanguage($id)
     {
         $where_del = "id='$id'";
         $del = $this->Master_model->master_delete('js_languages',$where_del);
