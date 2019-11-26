@@ -31,7 +31,7 @@
     <!-- <li> <a href="<?php echo base_url(); ?>job_seeker/deletecv" onClick="return confirm('Do you really want to delete your resume?');" class=""> <i class="fa fa-trash" aria-hidden="true"></i> Delete Resume </a> </li> -->
     
     <li class="title">My OceanHunt Activities</li>
-    <li> <a href="<?php echo base_url(); ?>seeker/my-applicaiton" class=""> <i class="fa fa-laptop" aria-hidden="true"></i> My Application</a></li>
+    <!-- <li> <a href="<?php echo base_url(); ?>seeker/my-applicaiton" class=""> <i class="fa fa-laptop" aria-hidden="true"></i> My Application</a></li> -->
     
     <li><a href="<?php echo base_url(); ?>how-to-build-cv"> <i class="fa fa-star" aria-hidden="true"></i>Saved Job Searches in the Ocean</a></li>
     <li><a href="<?php echo base_url(); ?>seeker/my-inbound-job-invitations"> <i class="fa fa-star" aria-hidden="true"></i>Inbound Job Invitations </a></li>
