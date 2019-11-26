@@ -14,8 +14,9 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/responsive.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/main.css">
 
-<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>asset/jc/css/jquery.Jcrop.css">
-
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>asset/jc/css/jquery.Jcrop.css">
+    <!-- Data Table  CSS -->
+    <!-- <link href="<?php echo base_url(); ?>asset/css/plugins/dataTables.bootstrap.css" rel="stylesheet" type="text/css" /> -->
 <!--Token-Input CSS-->
     <link rel="stylesheet" href="<?php echo base_url(); ?>asset/styles/token-input.css" type="text/css" />
     <link rel="stylesheet" href="<?php echo base_url(); ?>asset/styles/token-input-facebook.css" type="text/css" />

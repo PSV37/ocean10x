@@ -29,24 +29,20 @@
   <script>
     $(document).ready(function() {
         //$('#dataTables-example').dataTable();
-
         $('#dataTables-example').dataTable({
-   "bPaginate" : $('#dataTables-example tbody tr').length>10,
-   "iDisplayLength": 10,
-   "bAutoWidth": false,
-   "aoColumnDefs": [
-       {"bSortable": true, "aTargets": [0,2]}
-   ]
-});
+           "bPaginate" : $('#dataTables-example tbody tr').length>10,
+           "iDisplayLength": 10,
+           "bAutoWidth": false,
+           "aoColumnDefs": [
+               {"bSortable": true, "aTargets": [0,2]}
+           ]
+        });
 
     });
 
-
-    </script>
-    <script>
+</script>
+<script>
     // Validating Empty Field
-
-
 </script> 
 <script>
 var baseUrl = '<?php echo base_url();?>';

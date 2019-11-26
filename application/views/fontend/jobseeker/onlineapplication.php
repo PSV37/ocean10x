@@ -7,7 +7,7 @@
      <div class="row">
       <?php $this->load->view('fontend/layout/seeker_left.php'); ?>
       <div class="content col-md-9">
-        <table id="dataTables-example" class="table table-striped table-bordered">
+        <table id="example" class="table table-striped table-bordered">
           <thead>
             <tr>
               <th>Sr.No</th>
