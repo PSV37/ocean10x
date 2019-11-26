@@ -1097,8 +1097,9 @@
                              echo $js_personal_info->work_permit_countries;
                              }
                          ?>">
+            <p>You can choose upto 3 Countries</p>  
           </div>  
-          <p>You can choose upto 3 Countries</p>   
+
         </div>
       </div>
     </div>
