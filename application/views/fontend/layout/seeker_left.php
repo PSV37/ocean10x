@@ -33,7 +33,7 @@
     <li class="title">My OceanHunt Activities</li>
     <!-- <li> <a href="<?php echo base_url(); ?>seeker/my-applicaiton" class=""> <i class="fa fa-laptop" aria-hidden="true"></i> My Application</a></li> -->
     
-    <li><a href="<?php echo base_url(); ?>how-to-build-cv"> <i class="fa fa-star" aria-hidden="true"></i>Saved Job Searches in the Ocean</a></li>
+    <li><a href="<?php echo base_url(); ?>seeker/my-saved-jobs"> <i class="fa fa-star" aria-hidden="true"></i>Saved Job Searches in the Ocean</a></li>
     <li><a href="<?php echo base_url(); ?>seeker/my-inbound-job-invitations"> <i class="fa fa-level-down" aria-hidden="true"></i>Inbound Job Invitations </a></li>
     <li><a href="<?php echo base_url(); ?>seeker/my-applicaiton"> <i class="fa fa-level-up" aria-hidden="true"></i>Outbound Job Applications </a></li>
     <li><a href="<?php echo base_url(); ?>how-to-build-cv"> <i class="fa fa-calendar" aria-hidden="true"></i>Ocean Interview Calendar </a></li>

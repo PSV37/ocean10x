@@ -98,6 +98,8 @@ $route['seeker/dashboard']="job_seeker/my_dashboard";
 
 $route['seeker/my-inbound-job-invitations']="job_seeker/my_inbound_application";
 $route['seeker/interview-calendar']="job_seeker/interview_calendar";
+$route['seeker/my-saved-jobs']="job_seeker/my_saved_jobs";
+
 
 $route['seeker-login']="register/jobseeker_login";
 
