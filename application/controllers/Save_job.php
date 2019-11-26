@@ -30,14 +30,22 @@ class Save_job extends MY_Fontend_Controller {
                 $data['job_seeker_id'] = $result->job_seeker_id;
                 $data['user_name']     = $result->user_name;
                 $this->session->set_userdata($data);
-                $sv_info = array(
+
+                $job_save = $this->Master_model->get_master_row('js_saved_jobs', $select =FALSE ,$where="job_seeker_id='$jobseeker_id' AND job_post_id='$job_id'",$join = false); 
+                if($job_id==true)
+                {   
+                    // redirect('job/show/'.$slug);
+                      echo "Not Foundsss"; 
+                }else{
+                    $sv_info = array(
                     'job_seeker_id'   => $result->job_seeker_id,
                     'job_post_id'     => $job_id,
                     'created_on'      => date('Y-m-d H:i:s'),
                     'created_by'      => $result->job_seeker_id,
-                );
-                $this->Master_model->master_insert($sv_info,'js_saved_jobs');
-                redirect('job/show/'.$slug);
+                    );
+                    $this->Master_model->master_insert($sv_info,'js_saved_jobs');
+                    redirect('job/show/'.$slug);
+                }
 
             } else {
                 $this->session->set_flashdata('invalid', '<div class="alert alert-danger text-center">Sorry! incorrect email or password</div>');

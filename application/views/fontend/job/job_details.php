@@ -125,7 +125,7 @@ $jobseeker_id = $this->session->userdata('job_seeker_id');
                 if($jobseeker_id==null): ?>
               <a href="<?php echo base_url(); ?>job-apply/<?php echo $singlejob->job_slugs; ?>" class="btn apply">Apply For This Vacancy</a>
 
-              <a href="<?php echo base_url(); ?>save-job/<?php echo $singlejob->job_slugs; ?>" class="btn apply">Save This Jobs</a>
+              <a href="<?php echo base_url(); ?>save-job/<?php echo $singlejob->job_slugs; ?>" class="btn btn-info">Save This Jobs</a>
 
               <?php else: 
                 ?>
@@ -136,7 +136,7 @@ $jobseeker_id = $this->session->userdata('job_seeker_id');
                     echo '<div class="deadlinie"><b style="color:green">Saved Job</b> </div>';
                   }else{
                 ?>
-                  <a href="<?php echo base_url(); ?>job/save_my_job/<?php echo $singlejob->job_slugs; ?>" class="btn apply">Save This Job</a>
+                  <a href="<?php echo base_url(); ?>job/save_my_job/<?php echo $singlejob->job_slugs; ?>" class="btn btn-info">Save This Job</a>
               <?php } ?>
               <?php endif; ?>
               <?php endif; ?>
