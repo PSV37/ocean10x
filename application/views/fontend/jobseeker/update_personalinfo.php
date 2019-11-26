@@ -127,21 +127,12 @@
                   }
                  ?></td>
               </tr>
-									
-							<!-- <tr>
-                <td>Country Code:</td>
-                <td><?php echo $js_personal_info->country_code; ?></td>
-              </tr>
- -->
+				
               <tr>
                 <td>Primary Phone No:</td>
                 <td><?php echo $js_personal_info->country_code.'- '.$js_personal_info->mobile; ?></td>
               </tr>
 
-						<!-- 	<tr>
-                <td>Country Code:</td>
-                <td><?php echo $js_personal_info->alternatecountry_code; ?></td>
-              </tr> -->
               <tr>
                 <td>Alternate Phone No:</td>
                 <td><?php echo $js_personal_info->alternatecountry_code.'- '.$js_personal_info->alternatemobile; ?></td>
@@ -162,35 +153,7 @@
                 <td>country:</td>
                 <td><?php echo $js_personal_info->country_name; ?></td>
               </tr>
-             <!--  <tr>
-                <td>Parmanent Address:</td>
-                <td><?php echo $js_personal_info->parmanent_address; ?></td>
-              </tr>
-							<tr>
-                <td>City:</td>
-                <td><?php echo $results['city_name']; ?></td>
-              </tr>
-							<tr>
-                <td>State:</td>
-                <td><?php echo $results['state_name']; ?></td>
-              </tr>
-							<tr>
-                <td>Country:</td>
-                <td><?php echo $results['country_name']; ?></td>
-              </tr>
-							<tr>
-                <td width="30%">Father Name:</td>
-                <td><?php if(!empty($js_personal_info->father_name))
-                        echo $js_personal_info->father_name;
-                        else echo "";
-                 ?></td>
-              </tr>
-    
-              <tr>
-                <td>Mother Name:</td>
-                  <td><?php if(!empty($js_personal_info->mother_name))
-                  echo $js_personal_info->mother_name; ?></td>
-              </tr> -->
+             
               <tr>
                 <td>Marital Status:</td>
                 <td><?php if(!empty($js_personal_info->marital_status))
@@ -212,8 +175,6 @@
                   echo $js_personal_info->website; ?></td>
               </tr>
 
-              
-									
             </tbody>
           </table>
 
@@ -1072,13 +1033,6 @@
                 </select>
           </div>     
         </div>
-        <!-- <div class="col-md-6 col-sm-12">         
-          <div class="input-group">
-            <label class="control-label" for="email">Differently Abled</label>
-            <input type="radio" name="differently_abled" id="differently_abled" value="Yes"> Yes
-            <input type="radio" name="differently_abled" id="differently_abled" value="No" checked> No
-          </div>
-        </div> -->
         
         <div class="col-md-6 col-sm-12">
           <div class="input-group">
@@ -1096,7 +1050,7 @@
         </div>
       </div>
     </div>
-    <!-- <div class="panel-body"></div>    -->
+
     <div class="row">
       <div class="col-md-12">
         <div class="col-md-12 col-sm-12">
