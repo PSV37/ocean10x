@@ -216,9 +216,11 @@ class Job extends MY_Fontend_Controller
                     'created_by'      => $jobseeker_id,
                 );
             $this->Master_model->master_insert($sv_info,'js_saved_jobs');
+            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Job saved successfully!</div>');
             redirect('job/show/'.$slug);
         } else {
-            echo "Not Found";
+             $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">This job is already saved by you!</div>');
+             redirect('job/show/'.$slug);
         }
 
     }

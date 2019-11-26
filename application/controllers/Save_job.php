@@ -35,9 +35,8 @@ class Save_job extends MY_Fontend_Controller {
             //    echo $this->db->last_query();die;
                 if(!empty($job_save))
                 {   
-                    
-                    // redirect('job/show/'.$slug);
-                      echo "Not Foundsss"; 
+                    $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">This job is already saved by you!</div>');
+                    redirect('job/show/'.$slug);
                 }else{
                     $sv_info = array(
                     'job_seeker_id'   => $result->job_seeker_id,
@@ -46,6 +45,7 @@ class Save_job extends MY_Fontend_Controller {
                     'created_by'      => $result->job_seeker_id,
                     );
                     $this->Master_model->master_insert($sv_info,'js_saved_jobs');
+                    $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Job saved successfully!</div>');
                     redirect('job/show/'.$slug);
                 }
 

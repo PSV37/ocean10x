@@ -55,6 +55,7 @@ $jobseeker_id = $this->session->userdata('job_seeker_id');
                     } ?>
               <br>
               <div class="row">
+                <?php echo $this->session->flashdata('msg'); ?>
                 <div class="col-md-7">
                   <h2 id="heading_2title"><?php echo $singlejob->job_title; ?></h2>
                   <div class="ptext">Date Posted: <?php echo $singlejob->created_at; ?></div>
