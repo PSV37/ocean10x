@@ -124,7 +124,7 @@ $jobseeker_id = $this->session->userdata('job_seeker_id');
             <?php  $jobseeker_id;
                 if($jobseeker_id==null): ?>
               <a href="<?php echo base_url(); ?>job-apply/<?php echo $singlejob->job_slugs; ?>" class="btn apply">Apply For This Vacancy</a>
-
+              
               <a href="<?php echo base_url(); ?>save-job/<?php echo $singlejob->job_slugs; ?>" class="btn apply">Save This Jobs</a>
 
               <?php else: 
