@@ -95,9 +95,11 @@
               endforeach;
             ?>
             <?php else : ?> 
-              <td colspan="8">
-                  <strong>There is no data to display</strong>
-              </td><!--/ get error message if this empty-->
+            
+                <td colspan="7">
+                    <strong>There is no data to display</strong>
+                </td><!--/ get error message if this empty-->
+              
             <?php endif; ?>
           </tbody>
         </table>
