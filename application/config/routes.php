@@ -96,6 +96,7 @@ $route['seeker/update-skills']="job_seeker/update_skills";
 $route['seeker/profile-summary/(:num)']="job_seeker/profile_summary/$1";
 $route['seeker/dashboard']="job_seeker/my_dashboard";
 
+$route['seeker/my-inbound-job-invitations']="job_seeker/my_inbound_application";
 
 
 $route['seeker-login']="register/jobseeker_login";
