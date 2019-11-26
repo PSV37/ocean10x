@@ -122,9 +122,9 @@ $jobseeker_id = $this->session->userdata('job_seeker_id');
 			      <?php if ($singlejob->job_deadline > date('Y-m-d')): ?>
             <?php  if(!$this->session->userdata('company_profile_id')):?>
             <?php  $jobseeker_id;
-                if($jobseeker_id==null): ?>
+                if($jobseeker_id==null): print_r($singlejob);?>
               <a href="<?php echo base_url(); ?>job-apply/<?php echo $singlejob->job_slugs; ?>" class="btn apply">Apply For This Vacancy</a>
-
+              
               <a href="<?php echo base_url(); ?>job-apply/<?php echo $singlejob->job_slugs; ?>" class="btn apply">Save This Jobs</a>
 
               <?php else: 
