@@ -134,6 +134,7 @@ $jobseeker_id = $this->session->userdata('job_seeker_id');
                 <?php $saved = getsavedjobsdetails($singlejob->job_post_id,$jobseeker_id); 
                   if(empty($saved)) {
                     echo '<div class="deadlinie"><b style="color:green">Saved Job</b> </div>';
+                  }else{
                 ?>
                   <a href="<?php echo base_url(); ?>job/save_my_job/<?php echo $singlejob->job_slugs; ?>" class="btn apply">Save This Job</a>
               <?php } ?>
