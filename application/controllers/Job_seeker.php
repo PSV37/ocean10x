@@ -117,8 +117,7 @@ class Job_seeker extends MY_Seeker_Controller
                 $del = $this->Master_model->master_delete('js_languages',$where_del);
                 if($del==true)
                 {
-                    echo "<pre>";
-                    print_r($_POST); die;
+                    
 
                     for($l=0;$l<sizeof($language);$l++)
                     {
