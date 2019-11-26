@@ -25,9 +25,9 @@
     <li> <a href="<?php echo base_url(); ?>seeker/dashboard" class=""> <i class="fa fa-dashboard" aria-hidden="true"></i>My Dashboard </a> </li>
     <li class="title">MY OCEAN RESUME</li>
     <li> <a href="<?php echo base_url() ?>job_seeker/seeker_info" class=""> <i class="fa fa-pencil" aria-hidden="true"></i> My Ocean Profile </a> </li>
-    <li> <a href="<?php echo base_url(); ?>seeker/resume" class=""> <i class="fa fa-file-text" aria-hidden="true"></i> View Ocean Created Resume </a> </li>
+    <li> <a href="<?php echo base_url(); ?>seeker/resume" class=""> <i class="fa fa-file-text" aria-hidden="true"></i> View Ocean Resume </a> </li>
    
-    <li><a href="<?php echo base_url(); ?>seeker/downloadcv"><i class="fa fa-cloud-download" aria-hidden="true"></i> Download Ocean Created Resume</a></li>
+    <li><a href="<?php echo base_url(); ?>seeker/downloadcv"><i class="fa fa-cloud-download" aria-hidden="true"></i> Download Ocean Resume</a></li>
     <!-- <li> <a href="<?php echo base_url(); ?>job_seeker/deletecv" onClick="return confirm('Do you really want to delete your resume?');" class=""> <i class="fa fa-trash" aria-hidden="true"></i> Delete Resume </a> </li> -->
     
     <li class="title">My OceanHunt Activities</li>
