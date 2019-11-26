@@ -34,10 +34,10 @@
               <td><?php echo date('M j, Y',strtotime($applicaiton['created_on']));  ?></td>
               
               <td>
-                <a href="<?php echo base_url(); ?>job/all-scheduled-interviews/<?php echo $applicaiton['job_post_id']; ?>" class="btn btn-success btn-xs">View Interviews</a>
+                <a href="<?php echo base_url(); ?>job/show/<?php echo $applicaiton['job_slugs']; ?>" class="btn btn-success btn-xs">Apply</a>
+                <a href="<?php echo base_url(); ?>job/delete_saved_job/<?php echo $applicaiton['id']; ?>" class="btn btn-success btn-xs">Delete</a>
               </td>
             
-              
             </tr>
             <?php
               endforeach;
