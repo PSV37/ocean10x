@@ -132,7 +132,7 @@ $jobseeker_id = $this->session->userdata('job_seeker_id');
               
               <a href="#" data-toggle="modal" data-target="#ApplyJob"  class="btn apply">  Apply For This Vacancy</a>
                 <?php $saved = getsavedjobsdetails($singlejob->job_post_id,$jobseeker_id); 
-                  if(empty($saved)) {
+                  if(!empty($saved)) {
                     echo '<div class="deadlinie"><b style="color:green">Saved Job</b> </div>';
                   }else{
                 ?>
