@@ -94,17 +94,19 @@
               </td>
 
               </td>
-                <td><a href="<?php echo base_url(); ?>job/all-scheduled-interviews/<?php echo $forward_applicaiton->job_post_id; ?>" class="btn btn-success btn-xs">View Interviews</a></td>
               <td>
+                <a href="<?php echo base_url(); ?>job/all-scheduled-interviews/<?php echo $forward_applicaiton->job_post_id; ?>" class="btn btn-success btn-xs">View Interviews</a>
+              </td>
+              
              
             </tr>
             <?php
               endforeach;
             ?>
             <?php else : ?> 
-             <!--  <td colspan="7">
+              <td colspan="7">
                   <strong>There is no data to display</strong>
-              </td> -->
+              </td>
             <?php endif; ?>
           </tbody>
         </table>

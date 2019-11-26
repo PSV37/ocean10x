@@ -87,8 +87,10 @@
               </td>
 
               </td>
-                <td><a href="<?php echo base_url(); ?>job/all-scheduled-interviews/<?php echo $applicaiton->job_post_id; ?>" class="btn btn-success btn-xs">View Interviews</a></td>
               <td>
+                <a href="<?php echo base_url(); ?>job/all-scheduled-interviews/<?php echo $applicaiton->job_post_id; ?>" class="btn btn-success btn-xs">View Interviews</a>
+              </td>
+            
               
             </tr>
             <?php
