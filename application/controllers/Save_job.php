@@ -32,7 +32,7 @@ class Save_job extends MY_Fontend_Controller {
                 $this->session->set_userdata($data);
 
                 $job_save = $this->Master_model->get_master_row('js_saved_jobs', $select =FALSE ,$where="job_seeker_id='$jobseeker_id' AND job_post_id='$job_id'",$join = false); 
-                if($job_id==true)
+                if($job_save==true)
                 {   
                     // redirect('job/show/'.$slug);
                       echo "Not Foundsss"; 
