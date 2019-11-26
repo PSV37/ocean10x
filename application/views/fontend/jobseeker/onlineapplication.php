@@ -7,6 +7,7 @@
      <div class="row">
       <?php $this->load->view('fontend/layout/seeker_left.php'); ?>
       <div class="content col-md-9">
+         <h5>Outbound Job Applications</h5>
         <table id="example" class="table table-striped table-bordered">
           <thead>
             <tr>
