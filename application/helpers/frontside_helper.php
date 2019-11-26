@@ -196,13 +196,13 @@ function get_metas() {
         return $intr_result;
     } 
 
- // function getinterviewstatus($js_id,$job_id){
- //        $CI = get_instance();
- //        $select_result = "interview_complete_status";
- //        $table = "interview_scheduler";
- //        $where_res="job_post_id = $job_id AND job_seeker_id='$js_id' order by id desc";
- //        $intrv_result = $CI->Master_model->getMaster($table, $where_res, false, false ,false, $select_result, $limit ='1', $start =false, $search= false);
- //       // echo $CI->db->last_query(); die;
+ function getsavedjobsdetails($job_id,$js_id){
+        $CI = get_instance();
+        $select_result = "job_post_id,job_seeker_id";
+        $table = "js_saved_jobs";
+        $where_res="job_post_id = $job_id AND job_seeker_id='$js_id'";
+        $job_result = $CI->Master_model->getMaster($table, $where_res, false, false ,false, $select_result, $limit =false, $start =false, $search= false);
+       // echo $CI->db->last_query(); die;
 
- //        return $intrv_result;
- //    } 
+        return $job_result;
+    } 
