@@ -184,43 +184,39 @@ function readURL2(input) {
 
 <script>
 
-      $(document).ready(function() {
+$(document).ready(function() {
 
-             $(".datepicker").datepicker({
+    $(".datepicker").datepicker({
 
-              changeMonth: true,
+      changeMonth: true,
 
-              changeYear: true,
+      changeYear: true,
 
-              dateFormat: 'dd-mm-yy',
+      dateFormat: 'dd-mm-yy',
 
-              yearRange: '2019:2020',
+      yearRange: '2019:2020',
 
-          });
-
-
-
-                       $('#example').dataTable({
-
-   "bPaginate" : $('#example tbody tr').length>10,
-
-   "iDisplayLength": 10,
-
-   "bAutoWidth": false,
-
-   "aoColumnDefs": [
-
-       {"bSortable": true, "aTargets": [0,2]}
-
-   ]
-
-});
+  });
 
 
+    $('#example').dataTable({
 
-                });
+      "bPaginate" : $('#example tbody tr').length>10,
 
-    </script> 
+      "iDisplayLength": 10,
+
+      "bAutoWidth": false,
+
+      "aoColumnDefs": [
+
+        {"bSortable": true, "aTargets": [0,2]}
+
+       ]
+
+    });
+  });
+
+</script> 
 <script type="text/javascript">
  function load_data(func_name,hrf){
     jQuery.get("<?php echo base_url('job_seeker/');?>" + func_name, function(data, status){
