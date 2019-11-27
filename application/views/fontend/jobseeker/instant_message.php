@@ -74,6 +74,42 @@
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
 </style>
 <div class="section lb">
   <div class="container">
@@ -89,15 +125,26 @@
              <?php echo $this->session->flashdata('change_password'); ?>
               <form id="submit" class="submit-form" action="<?php echo base_url(); ?>job_seeker/change_password" method="post">
                 <div class="row">
-                  <div class="col-md-6 col-sm-12">
-                    <label class="control-label">Current Password </label>
-                    <input type="password" name="oldpassword" class="form-control" placeholder="Type your current password">
-                      <br>
-                    <label class="control-label">New Password</label>
-                    <input type="password" name="newpassword" class="form-control" placeholder="Type your new password">
-                      <br>
-                    <button type="submit" class="btn btn-primary">Update Password</button>
+                  <!-- <div class="col-md-4 col-sm-12">
+                    
                   </div>
+                  <div class="col-md-4 col-sm-12">
+                    
+                  </div> -->
+                  <div class="card">
+                    <img src="/w3images/team2.jpg" alt="John" style="width:100%">
+                    <h1>John Doe</h1>
+                    <p class="title">CEO & Founder, Example</p>
+                    <p>Harvard University</p>
+                    <div style="margin: 24px 0;">
+                      <a href="#"><i class="fa fa-dribbble"></i></a> 
+                      <a href="#"><i class="fa fa-twitter"></i></a>  
+                      <a href="#"><i class="fa fa-linkedin"></i></a>  
+                      <a href="#"><i class="fa fa-facebook"></i></a> 
+                    </div>
+                    <p><button>Contact</button></p>
+                  </div>
+
                 </div>
               </form>
             </div><!-- end post-padding -->
