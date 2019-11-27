@@ -1062,6 +1062,39 @@ public function search(){
         $del = $this->Master_model->master_delete('js_saved_jobs',$where_del);
         redirect('job_seeker/my_saved_jobs');
     }
+    
+    public function instant_message()
+    {
+        $jobseeker_id    = $this->session->userdata('job_seeker_id');
+        if ($_POST) {
+           
+            // $job_training_id = $this->input->post('job_training_id');
+            // $training_info   = array(
+            //     'job_seeker_id'  => $jobseeker_id,
+            //     'training_title' => $this->input->post('training_title'),
+            //     'training_topic' => $this->input->post('training_topic'),
+            //     'institute'      => $this->input->post('institute'),
+            //     'country_id'        => $this->input->post('country_id'),
+            //     'state_id'       => $this->input->post('state_id'),
+            //     'city_id'       => $this->input->post('city_id'),
+            //     'duration'       => $this->input->post('duration'),
+            //     'training_year'       => $this->input->post('training_year'),
+            // );
+            // if (empty($job_training_id)) {
+            //     $this->Job_training_model->insert($training_info);
+            //     redirect('job_seeker/seeker_info');
+            // } else {
+            //     $this->Job_training_model->update($training_info, $job_training_id);
+            //     redirect('job_seeker/seeker_info');
+            // }
+        } else {
+            $seeker_data = $this->Master_model->getMaster('js_info',$where="js_status=1");
+            $connection_requests = $this->Master_model->getMaster('message_connections',$where=false);
+           
+            echo $this->load->view('fontend/jobseeker/instant_message', compact('connection_requests','seeker_data'),true);
+        }
+    }
+
 
 } //end function
 

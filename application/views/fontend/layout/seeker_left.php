@@ -37,7 +37,7 @@
     <li><a href="<?php echo base_url(); ?>seeker/my-inbound-job-invitations"> <i class="fa fa-level-down" aria-hidden="true"></i>Inbound Job Invitations </a></li>
     <li><a href="<?php echo base_url(); ?>seeker/my-applicaiton"> <i class="fa fa-level-up" aria-hidden="true"></i>Outbound Job Applications </a></li>
     <li><a href="<?php echo base_url(); ?>how-to-build-cv"> <i class="fa fa-calendar" aria-hidden="true"></i>Ocean Interview Calendar </a></li>
-    <li><a href="<?php echo base_url(); ?>how-to-build-cv"> <i class="fa fa-envelope" aria-hidden="true"></i> Ocean Instant Messaging </a></li>
+    <li><a href="<?php echo base_url(); ?>seeker/instant-message"> <i class="fa fa-envelope" aria-hidden="true"></i> Ocean Instant Messaging </a></li>
        
      
     <li class="divider"></li>
