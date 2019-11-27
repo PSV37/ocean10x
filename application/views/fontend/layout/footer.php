@@ -254,7 +254,7 @@ $(function() {
       })
         .autocomplete( "instance" )._renderItem = function( ul, item ) {
 
-        return $( "<hr><li><div><img style='border-radius: 35px; border: 5px;' src='<?php echo base_url(); ?>upload/"+item.img+"'><span>"+item.value+"</span></div></li><hr>" ).appendTo( ul );
+        return $( "<hr><li><div><img style='border-radius: 35px; border: 5px;' width='50px;' src='<?php echo base_url(); ?>upload/"+item.img+"'><span>"+item.value+"</span></div></li><hr>" ).appendTo( ul );
       };
 
     });          
