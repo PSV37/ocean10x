@@ -1099,10 +1099,13 @@ public function search(){
     {
         if (isset($_GET['term'])) 
         {
-              $where= "f_name like '%".$_GET['term']."%'";
-              $tablename='registered_user';
-
-              $result = $this->Master_model->getMaster($tablename, $where, $join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+              $where= "js_info.full_name like '%".$_GET['term']."%'";
+              $tablename='js_info';
+              $join_a = array(
+                'js_photo' => 'js_photo.job_seeker_id=js_info.job_seeker_id | left outer',
+              );
+              $select = "js_photo.photo_path,js_info.job_seeker_id,js_info.full_name";
+              $result = $this->Master_model->getMaster($tablename, $where, $join_a, $order = false, $field = false, $select ,$limit=false,$start=false, $search=false);
 
               $final_array=array();
 
@@ -1111,10 +1114,10 @@ public function search(){
                 foreach ($result as $row)
                 {
                  $arr_result= array(
-                   'id'=>$row['user_id'],
-                   'value'=>$row['f_name'],
-                   'label'=>$row['f_name'],
-                   'img'=>$row['profile_pic']
+                   'id'=>$row['job_seeker_id'],
+                   'value'=>$row['full_name'],
+                   'label'=>$row['full_name'],
+                   'img'=>$row['photo_path']
                    
                    ); 
                   array_push($final_array,$arr_result);
