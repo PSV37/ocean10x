@@ -59,8 +59,8 @@
         <!-- Nav start -->
         <div class="navbar navbar-default" role="navigation">
           <div class="navbar-collapse collapse" id="nav-main">
-            <ul class="nav navbar-nav">              
-             
+            <ul class="nav navbar-nav">                
+              
             <li>
             	<?php  $job_seeker=$this->session->userdata('job_seeker_id'); ?>                             
                 <ul class="nav navbar-nav navbar-right">
