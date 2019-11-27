@@ -253,8 +253,13 @@ $(function() {
         }
       })
         .autocomplete( "instance" )._renderItem = function( ul, item ) {
-
-        return $( "<hr><li><div><img style='border-radius: 35px; border: 5px;' width='50px;' src='<?php echo base_url(); ?>upload/"+item.img+"'><span>"+item.value+"</span></div></li><hr>" ).appendTo( ul );
+          if(!isNaN(item.img))
+          {
+            return $( "<li><div><img  alt="" class='img-circle' src='<?php echo base_url(); ?>upload/"+item.img+"'><span>"+item.value+"</span></div></li>" ).appendTo( ul );
+          }else{
+            return $( "<img src='<?php echo base_url(); ?>fontend/images/no-image.jpg alt='' class='img-circle'><strong>"+item.value+"</strong></a>").appendTo( ul );
+          }
+     
       };
 
     });          
