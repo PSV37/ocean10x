@@ -83,6 +83,9 @@
         <div class="job-header">
           <div class="contentbox">
             <div class="formpanel">
+            <div class="col-md-6 col-sm-12">
+              <input type="text" name="search_people" id="search_people" placeholder="Search People..">
+            </div>
              <?php echo $this->session->flashdata('change_password'); ?>
               <form id="submit" class="submit-form" action="<?php echo base_url(); ?>job_seeker/change_password" method="post">
                 <div class="row">
@@ -131,4 +134,13 @@
   function closeForm() {
     document.getElementById("myForm").style.display = "none";
   }
+  $(function() {
+      $("#search_people").autocomplete({
+          source: "<?php echo base_url('job_seeker/get_autocomplete'); ?>",
+          select: function(a,b)
+            {
+              $(this).val(b.item.value); //grabed the selected value
+            }
+        });
+    });
 </script>
