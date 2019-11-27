@@ -52,7 +52,10 @@
         </div>
         <div class="clearfix"></div>
       </div>
-      <div class="col-md-10 col-sm-12 col-xs-12"> 
+      <div class="col-md-4 col-sm-12 col-xs-12"> 
+        <input type="text" id="search_people" placeholder="<i class='fa fa-search'></i> Search Peoples..">
+      </div>
+      <div class="col-md-6 col-sm-12 col-xs-12"> 
         <!-- Nav start -->
         <div class="navbar navbar-default" role="navigation">
           <div class="navbar-collapse collapse" id="nav-main">
