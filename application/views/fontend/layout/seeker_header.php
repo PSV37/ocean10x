@@ -148,33 +148,3 @@
     
   }
 </script>
-<script type="text/javascript">
-
-       
-$(function() {
-
-      $("#search_text").autocomplete({
-        source: "<?php echo base_url('home/search_user'); ?>",
-      
-        select: function(event,ui) {
-          
-          var url = ui.item.id;
-          if(url != '') {
-            window.location.href = '<?php echo base_url(); ?>user_timeline?user='+ btoa(url);
-          }
-          
-        },
-        html: true, 
-        open: function(ui) {
-          $(".ui-autocomplete").css("z-index", 1000);
-
-        }
-      })
-        .autocomplete( "instance" )._renderItem = function( ul, item ) {
-
-        return $( "<hr><li><div><img style='border-radius: 35px; border: 5px;' src='<?php echo base_url(); ?>upload/"+item.img+"'><span>"+item.value+"</span></div></li><hr>" ).appendTo( ul );
-      };
-
-    });          
-
-</script>
