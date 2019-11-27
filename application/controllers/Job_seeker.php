@@ -1095,6 +1095,35 @@ public function search(){
         }
     }
 
+    public function search_user()
+    {
+        if (isset($_GET['term'])) 
+        {
+              $where= "f_name like '%".$_GET['term']."%'";
+              $tablename='registered_user';
+
+              $result = $this->Master_model->getMaster($tablename, $where, $join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+
+              $final_array=array();
+
+              if (count($result) > 0) 
+              {
+                foreach ($result as $row)
+                {
+                 $arr_result= array(
+                   'id'=>$row['user_id'],
+                   'value'=>$row['f_name'],
+                   'label'=>$row['f_name'],
+                   'img'=>$row['profile_pic']
+                   
+                   ); 
+                  array_push($final_array,$arr_result);
+                }
+              }
+                echo json_encode($final_array);
+        }
+    }
+
 
 } //end function
 

@@ -53,7 +53,7 @@
         <div class="clearfix"></div>
       </div>
       <div class="col-md-4 col-sm-12 col-xs-12"> 
-        <input type="text" class="form-control" id="search_people" placeholder="Search Peoples..">
+        <input type="text" class="form-control" id="search_people" placeholder="Search Peoples.." style="margin: 5%;">
       </div>
       <div class="col-md-6 col-sm-12 col-xs-12"> 
         <!-- Nav start -->
