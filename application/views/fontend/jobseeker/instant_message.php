@@ -27,6 +27,7 @@
             </div><!-- end post-padding -->
           </div>
         </div>
+      </div>
       <div class="content col-md-4">
         <div class="job-header">
           <div class="contentbox">
