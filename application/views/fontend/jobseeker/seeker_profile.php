@@ -156,3 +156,11 @@
   </div>
 </div>
  <?php $this->load->view("fontend/layout/footer.php"); ?>
+ 
+ <script>
+  $(document).ready (function(){
+    $("#con_message").fadeTo(2000, 500).slideUp(500, function(){
+    $("#con_message").slideUp(500);
+    });   
+  });
+ </script>
