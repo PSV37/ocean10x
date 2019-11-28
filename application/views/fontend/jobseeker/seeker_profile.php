@@ -25,8 +25,8 @@
           <div class="contentbox">
             <div class="formpanel">
               <?php echo $this->session->flashdata('change_password'); ?>
-                <h3>Personal Profile</h3>
-                <img src="https://i.ibb.co/pdJfzx9/profile-picture.jpg" alt="profile-picture" border="0" class="img img-thumbnail">/>
+                <h3 align="center">Personal Profile</h3>
+                <img src="https://i.ibb.co/pdJfzx9/profile-picture.jpg" alt="profile-picture" border="0" class="img img-thumbnail">
                 <h1>Dan Englishby</h1>
               
                  <h4>About Me</h4>
