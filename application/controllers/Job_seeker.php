@@ -1145,7 +1145,7 @@ public function user_profile()
         $where_lang="job_seeker_id='$js_id' ORDER BY language ASC";
         $data['languages'] = $this->Master_model->getMaster('js_languages',$where_lang);
 
-       $this->load->view('fontend/jobseeker/seeker_profile',$data)
+       $this->load->view('fontend/jobseeker/seeker_profile',$data);
 }
 
 } //end function
