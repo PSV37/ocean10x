@@ -12,9 +12,7 @@
 
   .listFlex {display: flex; /*justify-content: center;*/}
 
-  img {
-    width: 15%;
-  }
+  
   .career{
     border-radius: 6px;
     /*background: #cbced247;*/
@@ -41,7 +39,7 @@
               <?php echo $this->session->flashdata('change_password'); ?>
                 <h2 align="center">Personal Profile</h2>
 
-                <img src="<?php echo base_url() ?>upload/<?php echo $intro_data['photo_path'];?>" alt="profile-picture" border="0" class="img img-thumbnail">
+                <img src="<?php echo base_url() ?>upload/<?php echo $intro_data['photo_path'];?>" alt="profile-picture" border="0" class="img img-thumbnail" style="width: 15%;">
               <div class="row">
                 <div class="col-md-8">
                   <h3><?php echo $intro_data['full_name']; ?> </h3>
