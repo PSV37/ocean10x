@@ -46,7 +46,11 @@
                   <p><?php echo $personal_data['city_name'].', '.$personal_data['state_name'].', '.$personal_data['country_name']; ?></p>
                 </div>
                 <div class="col-md-4">
+                  <?php   
+                    print_r($connect_data);
+                   //if (!empty($connect_data)): foreach ($connect_data as $sks_row) :?><?php endforeach;  endif;?>
                   <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#connect" onclick="$('#js_id').val(<?php echo $intro_data['job_seeker_id']; ?>);">Connect</a>
+
                   <a href="#" class="btn btn-primary">Message</a>
                 </div>
               </div>

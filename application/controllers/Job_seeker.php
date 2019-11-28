@@ -1151,7 +1151,9 @@ public function user_profile()
          // echo $this->db->last_query();echo "<br>";
         $where_sk="job_seeker_skills.job_seeker_id='$js_id'";
         $data['skill_data'] = $this->Master_model->getMaster("job_seeker_skills", $where_sk, $join = FALSE, $order = false, $field = false, $select= FALSE ,$limit=false,$start=false, $search=false);
-         // echo $this->db->last_query(); die;
+         
+        $where_sks="job_seeker_id='$jobseeker_id' AND connection_id='$js_id'";
+        $data['connect_data'] = $this->Master_model->getMaster("message_connections", $where_sks, $join = FALSE, $order = false, $field = false, $select= FALSE ,$limit=false,$start=false, $search=false);
       
        $this->load->view('fontend/jobseeker/seeker_profile',$data);
 }
