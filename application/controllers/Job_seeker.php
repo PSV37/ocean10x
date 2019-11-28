@@ -1129,7 +1129,7 @@ public function search(){
 public function user_profile()
 {
     $jobseeker_id    = $this->session->userdata('job_seeker_id');
-    $js_id = base64_decode($this->input->get('seeker_id');
+    $js_id = base64_decode($this->input->get('seeker_id'));
 
 
         $data['js_personal_info'] = $this->job_seeker_personal_model->personalinfo_list_by_id($js_id);
