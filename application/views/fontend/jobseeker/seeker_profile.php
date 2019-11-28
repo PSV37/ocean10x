@@ -72,13 +72,19 @@
                   <hr>
                  <h4>Experience</h4>
                   <div class="row career">
-                    <?php if (!empty($exp_data)): foreach ($exp_data as $exp_row) : ?>
+                    <?php if (!empty($exp_data)): foreach ($exp_data as $exp_row) : 
+                      if($exp_row['end_date']!='') {
+                      $end =  date('M Y', strtotime($exp_row['end_date']));
+                     }else{
+                       $end = "Present";
+                     }
+                      ?>
                     <div class="col-md-12">
                       <div class="col-md-1"><i class="fa fa-user" aria-hidden="true"></i></div>
                       <div class="col-md-11">
                         <sapn class="title-career"><b><?php echo $exp_row['designation_id']; ?></b></sapn> <br>
                         <span><?php echo $exp_row['company_profile_id']; ?></span><br>
-                        <p class="tag_line"><?php echo date('M Y', strtotime($exp_row['start_date'])).' - 'if($exp_row['end_date']!='') {.date('M Y', strtotime($exp_row['end_date']))}else{echo "Present";}; ?></p><br>
+                        <p class="tag_line"><?php echo date('M Y', strtotime($exp_row['start_date'])).' - '.$end; ?></p><br>
                         <p class="tag_line"><?php echo $exp_row['address']; ?></p><br>
                         <p class="tag_line"><?php echo $exp_row['responsibilities']; ?></p><hr>
                       </div>
