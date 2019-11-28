@@ -1099,7 +1099,7 @@ public function search(){
     {
         if (isset($_GET['term'])) 
         {
-              $where= "js_info.full_name like '%".$_GET['term']."%'";
+              $where= "js_info.js_status=1 AND js_info.full_name like '%".$_GET['term']."%'";
               $tablename='js_info';
               $join_a = array(
                 'js_photo' => 'js_photo.job_seeker_id=js_info.job_seeker_id | left outer',
