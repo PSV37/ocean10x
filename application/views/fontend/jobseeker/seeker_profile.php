@@ -17,7 +17,7 @@
   }
   .career{
     border-radius: 6px;
-    background: #cbced247;
+    /*background: #cbced247;*/
     margin: 2px;
     padding: 15px;
   }
