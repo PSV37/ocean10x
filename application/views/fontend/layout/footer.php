@@ -232,8 +232,7 @@ $( document ).ready(function() {
  </script>
  <script type="text/javascript">
 
-       
-$(function() {
+  $(function() {
 
       $("#search_text").autocomplete({
         source: "<?php echo base_url('job_seeker/search_user'); ?>",
@@ -242,7 +241,7 @@ $(function() {
           
           var url = ui.item.id;
           if(url != '') {
-            window.location.href = '<?php echo base_url(); ?>job_seeker?user='+ btoa(url);
+            window.location.href = '<?php echo base_url(); ?>seeker/seeker-profile?seeker_id='+ btoa(url);
           }
           
         },
@@ -262,7 +261,7 @@ $(function() {
      
       };
 
-    });          
+  });          
 
 </script>
 </body></html>

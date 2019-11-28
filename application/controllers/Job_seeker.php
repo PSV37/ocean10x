@@ -1126,6 +1126,27 @@ public function search(){
         }
     }
 
+public function user_profile()
+{
+    $jobseeker_id    = $this->session->userdata('job_seeker_id');
+    $js_id = base64_decode($seeker_id);
+
+
+        $data['js_personal_info'] = $this->job_seeker_personal_model->personalinfo_list_by_id($js_id);
+        $data['job_seeker_photo'] = $this->Job_seeker_photo_model->photo_by_seeker($js_id);
+        $data['name'] = $this->Job_seeker_model->get_jobseeker_fullname($js_id);
+        $data['city'] = $this->Master_model->getMaster('city',$where=false);
+        $data['country'] = $this->Master_model->getMaster('country',$where=false);
+        $data['state'] = $this->Master_model->getMaster('state',$where=false);
+
+        $where_int="job_seeker_id='$js_id'";
+        $data['intro_data'] = $this->Master_model->get_master_row("js_info", $select= FALSE, $where_int, $join = FALSE);
+            
+        $where_lang="job_seeker_id='$js_id' ORDER BY language ASC";
+        $data['languages'] = $this->Master_model->getMaster('js_languages',$where_lang);
+
+       $this->load->view('fontend/jobseeker/seeker_profile',$data)
+}
 
 } //end function
 
