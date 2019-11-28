@@ -38,10 +38,10 @@
           <div class="contentbox">
             <div class="formpanel">
               <?php 
-              echo "<pre>"; 
+             // echo "<pre>"; 
 
              // print_r($skill_data);
-              print_r($exp_data);
+              //print_r($exp_data);
               // print_r($personal_data);
 
               ?>
