@@ -36,7 +36,7 @@
           <div class="contentbox">
             <div class="formpanel">
              
-              <?php echo $this->session->flashdata('change_password'); ?>
+              <?php echo $this->session->flashdata('con_message'); ?>
                 <h2 align="center">Personal Profile</h2>
 
                 <img src="<?php echo base_url() ?>upload/<?php echo $intro_data['photo_path'];?>" alt="profile-picture" border="0" class="img img-thumbnail" style="width: 20%;">

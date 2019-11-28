@@ -1179,6 +1179,8 @@ public function user_profile()
             );
             $chtid = $this->Master_model->master_insert($con_data,'message_chat');
         }
+        $this->session->set_flashdata('con_message','<div class="alert alert-success text-center">Connection request sent successfully!</div>');
+
         redirect(base_url()."job_seeker/user_profile?seeker_id=".base64_encode($connecter_id));
 
 
