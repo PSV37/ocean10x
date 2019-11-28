@@ -38,7 +38,8 @@
           <div class="contentbox">
             <div class="formpanel">
               <?php 
-              // echo "<pre>"; print_r($intro_data);   
+              echo "<pre>"; 
+
              // print_r($skill_data);
               print_r($exp_data);
               // print_r($personal_data);
@@ -71,15 +72,24 @@
                   <hr>
                  <h4>Experience</h4>
                   <div class="row career">
+                    <?php if (!empty($exp_data)): foreach ($exp_data as $exp_row) : ?>
                     <div class="col-md-12">
                       <div class="col-md-1"><i class="fa fa-user" aria-hidden="true"></i></div>
                       <div class="col-md-11">
-                        <sapn class="title-career"><b>Career Advice</b></sapn> <br><br>
-                        <span>Participate in the career advice platform: <a href="#">On</a></span><br>
-                        <p class="tag_line">Get career advice by conversing with other LinkedIn users who are leaders in their fields</p><hr>
+                        <sapn class="title-career"><b><?php echo $exp_row['designation_id']; ?></b></sapn> <br><br>
+                        <span><?php echo $exp_row['company_profile_id']; ?></span><br>
+                        <span><?php echo date('M Y', strtotime($exp_row['start_date'])).' - '.date('M Y', strtotime($exp_row['end_date'])); ?></span><br>
+                        <span><?php echo $exp_row['address']; ?></span><br>
+                        <p class="tag_line"><?php echo $exp_row['responsibilities']; ?></p><hr>
                       </div>
                     </div>
-                    <div class="col-md-12">
+                  <?php endforeach;  ?>
+                  <?php else : ?> 
+                    <div>
+                      <strong>There is no data to display</strong>
+                    </div>
+                  <?php endif; ?>
+                    <!-- <div class="col-md-12">
                       <div class="col-md-1"><i class="fa fa-briefcase" aria-hidden="true"></i></div>
                       <div class="col-md-11">
                         <span class="title-career"><b>Career Interests</b></span><br><br>
@@ -93,7 +103,7 @@
                         <span class="title-career"><b>Salary Insights</b></span><br><br>
                         <p class="tag_line">See how your salary compares to others in the community</p><hr>
                       </div>
-                    </div><br><hr>
+                    </div><br><hr> -->
                   </div>
 
 
