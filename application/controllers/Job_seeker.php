@@ -1135,12 +1135,10 @@ public function user_profile()
         $join_a = array(
             'js_photo'  => 'js_photo.job_seeker_id=js_info.job_seeker_id | left outer',
             'js_profile_summary'     => 'js_profile_summary.job_seeker_id=js_info.job_seeker_id | left outer',
-            'job_seeker_skills'     => 'job_seeker_skills.job_seeker_id=js_info.job_seeker_id | left outer',
           );
         $select = "job_seeker_skills.skills,js_profile_summary.about_me,js_photo.photo_path,js_info.job_seeker_id,js_info.full_name";
         $data['intro_data'] = $this->Master_model->get_master_row("js_info", $select, $where_int, $join_a);
 
-     
         $where_p= "js_personal_info.job_seeker_id='$js_id'";
         $join_p = array(
             'city'      => 'city.id=js_personal_info.city_id | left outer',
@@ -1151,7 +1149,9 @@ public function user_profile()
         $data['personal_data'] = $this->Master_model->get_master_row("js_personal_info", $select= FALSE, $where_p, $join_p);
 
         $where_edu="job_seeker_id='$js_id'";
-        $data['education_data'] = $this->Master_model->get_master_row("js_experience", $select= FALSE, $where_edu, $join = FALSE);
+        $data['education_data'] = $this->Master_model->getMaster("js_experience", $select= FALSE, $where_edu, $join = FALSE);
+         $where_sk="job_seeker_id='$js_id'";
+        $data['skill_data'] = $this->Master_model->getMaster("job_seeker_skills", $select= FALSE, $where_sk, $join = FALSE);
           
         // $where_lang="job_seeker_id='$js_id' ORDER BY language ASC";
         // $data['languages'] = $this->Master_model->getMaster('js_languages',$where_lang);
