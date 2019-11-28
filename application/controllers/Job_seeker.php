@@ -1138,10 +1138,10 @@ public function user_profile()
             'city'      => 'city.id=js_info.city_id | left outer',
             'country'   => 'country.country_id=js_info.country_id | left outer',
             'state'     => 'state.state_id=js_info.state_id | left outer',
-            'profile_summary'     => 'profile_summary.job_seeker_id=js_info.job_seeker_id | left outer',
+            'js_profile_summary'     => 'js_profile_summary.job_seeker_id=js_info.job_seeker_id | left outer',
             'job_seeker_skills'     => 'job_seeker_skills.job_seeker_id=js_info.job_seeker_id | left outer',
           );
-        $select = "job_seeker_skills.skills,profile_summary.about_me,js_photo.photo_path,js_info.job_seeker_id,js_info.full_name";
+        $select = "job_seeker_skills.skills,js_profile_summary.about_me,js_photo.photo_path,js_info.job_seeker_id,js_info.full_name";
         $data['intro_data'] = $this->Master_model->get_master_row("js_info", $select, $where_int, $join_a);
 
         $where_edu="job_seeker_id='$js_id'";
