@@ -6,7 +6,7 @@
   /*.formpanel {background: #ececec;}*/
   h1, h2, h3, h4, h5 {
     border-bottom: 1px solid #ccc;
-    color: #3F51B5;
+    /*color: #3F51B5;*/
     padding-bottom: 8px
   }
 
@@ -24,10 +24,11 @@
         <div class="job-header">
           <div class="contentbox">
             <div class="formpanel">
+              <?php echo "<pre>";print_r($intro_data); ?>
               <?php echo $this->session->flashdata('change_password'); ?>
-                <h3 align="center">Personal Profile</h3>
+                <h2 align="center">Personal Profile</h2>
                 <img src="https://i.ibb.co/pdJfzx9/profile-picture.jpg" alt="profile-picture" border="0" class="img img-thumbnail">
-                <h1>Dan Englishby</h1>
+                <h3>Dan Englishby</h3>
               
                  <h4>About Me</h4>
                  <p>Hi, I'm Dan Englishby, I have a huge passion for web-development and programming. I love to learn and thrive from challenges.</p>
