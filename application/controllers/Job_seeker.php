@@ -1159,6 +1159,7 @@ public function user_profile()
    {
         $jobseeker_id    = $this->session->userdata('job_seeker_id');
         $connecter_id = $this->input->post('js_id');
+        $message = addslashes($this->input->post('message'));
 
         $con_data = array(
             'job_seeker_id' => $jobseeker_id,
@@ -1166,9 +1167,19 @@ public function user_profile()
             'created_on' => date('Y-m-d H:i:s'),
             'created_by' => $jobseeker_id,
         );
-        $this->Master_model->master_insert($con_data,'message_connections');
-        
-        redirect(base_url()."user_profile/".base64_encode($connecter_id));
+        $cid = $this->Master_model->master_insert($con_data,'message_connections');
+        if($cid){
+            $con_data = array(
+                'job_seeker_id' => $jobseeker_id,
+                'connection_id' => $cid,
+                'chat_js_id'    => $connecter_id,
+                'message_desc'  => $message,
+                'created_on' => date('Y-m-d H:i:s'),
+                'created_by' => $jobseeker_id,
+            );
+            $chtid = $this->Master_model->master_insert($con_data,'message_chat');
+        }
+        redirect(base_url()."job_seeker/user_profile?seeker_id=".base64_encode($connecter_id));
 
 
 
