@@ -4,8 +4,8 @@
  <style>
   /*use-itty-bitty-template*/
   /*.formpanel {background: #ececec;}*/
- h2, h4, h5 {
-    border-bottom: 1px solid #ccc;
+  h1, h2, h4, h5 {
+    /*border-bottom: 1px solid #ccc;*/
     /*color: #3F51B5;*/
     padding-bottom: 10px
   }
@@ -27,8 +27,8 @@
               <?php 
               // echo "<pre>"; print_r($intro_data);   
              // print_r($skill_data);
-              print_r($exp_data);
-              // print_r($personal_data);
+              print_r($education_data);
+              print_r($personal_data);
 
               ?>
               <?php echo $this->session->flashdata('change_password'); ?>
@@ -39,6 +39,7 @@
                 <hr>
                  <h4>About Me</h4>
                  <p><?php echo $intro_data['about_me']; ?></p>
+                <hr>
                  <h4>Skills</h4>
                  <div class="listFlex">
                   <?php if (!empty($skill_data)): foreach ($skill_data as $sk_row) : ?>
@@ -54,9 +55,10 @@
                     </div>
                   <?php endif; ?>
                  </div>
+                  <hr>
                  <h4>Experience</h4>
                  <!-- Catch me on Twitter - <a href="https://twitter.com/DanEnglishby">@DanEnglishby</a> -->
-              
+                 <hr>
             </div><!-- end post-padding -->
           </div>
         </div>
