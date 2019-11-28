@@ -1146,9 +1146,7 @@ public function user_profile()
             'state'     => 'state.state_id=js_personal_info.state_id | left outer',
           );
         $data['personal_data'] = $this->Master_model->get_master_row("js_personal_info", $select= FALSE, $where_p, $join_p);
-        // echo $this->db->last_query();echo "<br>";
-        // $where_edu="js_experience.job_seeker_id='$js_id'";
-        // $data['exp_data'] = $this->Master_model->getMaster("js_experience", $where_edu, $join = FALSE, $order = false, $field = false, $select= FALSE ,$limit=false,$start=false, $search=false);
+  
         $data['exp_data'] = $this->Job_seeker_experience_model->experience_list_by_id($js_id);
          // echo $this->db->last_query();echo "<br>";
         $where_sk="job_seeker_skills.job_seeker_id='$js_id'";
@@ -1157,6 +1155,11 @@ public function user_profile()
       
        $this->load->view('fontend/jobseeker/seeker_profile',$data);
 }
+   public function connection_request($id=null)
+   {
+        $jobseeker_id    = $this->session->userdata('job_seeker_id');
+       echo $connecter_id = $id;
+   }
 
 } //end function
 

@@ -39,14 +39,14 @@
               <?php echo $this->session->flashdata('change_password'); ?>
                 <h2 align="center">Personal Profile</h2>
 
-                <img src="<?php echo base_url() ?>upload/<?php echo $intro_data['photo_path'];?>" alt="profile-picture" border="0" class="img img-thumbnail" style="width: 15%;">
+                <img src="<?php echo base_url() ?>upload/<?php echo $intro_data['photo_path'];?>" alt="profile-picture" border="0" class="img img-thumbnail" style="width: 20%;">
               <div class="row">
                 <div class="col-md-8">
                   <h3><?php echo $intro_data['full_name']; ?> </h3>
                   <p><?php echo $personal_data['city_name'].', '.$personal_data['state_name'].', '.$personal_data['country_name']; ?></p>
                 </div>
                 <div class="col-md-4">
-                  <a href="#" class="btn btn-primary">Connect</a>
+                  <a href="<?php echo base_url(); ?>job_seeker/connection_request/<?php echo $intro_data['job_seeker_id']; ?>" class="btn btn-primary">Connect</a>
                   <a href="#" class="btn btn-primary">Message</a>
                 </div>
               </div>
