@@ -253,11 +253,11 @@ $(function() {
         }
       })
         .autocomplete( "instance" )._renderItem = function( ul, item ) {
-          if(!isNaN(item.img))
+          if(item.img != '')
           {
-            return $( "<li><div><img  alt="" class='img-circle' src='<?php echo base_url(); ?>upload/"+item.img+"'><span>"+item.value+"</span></div></li>" ).appendTo( ul );
+            return $( "<li><div><img  alt='' class='img-circle' src='<?php echo base_url(); ?>upload/"+item.img+"'><strong>"+item.value+"</strong></div></li>" ).appendTo( ul );
           }else{
-            return $( "<li><div><img src='<?php echo base_url(); ?>fontend/images/no-image.jpg alt='' class='img-circle'><strong>"+item.value+"</strong></div></li>").appendTo( ul );
+            return $( "<li><div><img src='<?php echo base_url(); ?>fontend/images/no-image.jpg' alt='' class='img-circle'><strong>"+item.value+"</strong></div></li>").appendTo( ul );
           }
      
       };
