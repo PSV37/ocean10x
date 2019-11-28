@@ -24,7 +24,7 @@
         <div class="job-header">
           <div class="contentbox">
             <div class="formpanel">
-              <?php echo "<pre>"; print_r($js_personal_info); ?>
+              <?php echo "<pre>"; print_r($intro_data); ?>
               <?php echo $this->session->flashdata('change_password'); ?>
                 <h2 align="center">Personal Profile</h2>
                 <img src="https://i.ibb.co/pdJfzx9/profile-picture.jpg" alt="profile-picture" border="0" class="img img-thumbnail">
