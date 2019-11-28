@@ -10,7 +10,7 @@
     padding-bottom: 10px
   }
 
-  .listFlex {display: flex; justify-content: center;}
+  .listFlex {display: flex; /*justify-content: center;*/}
 
   img {
     width: 15%;
