@@ -48,6 +48,8 @@
                 <div class="col-md-4">
                   <?php   
                     print_r($connect_data);
+                    // if($connect_data['connect_status'])
+                      echo $connect_data['connect_status'];
                    ?>
                   <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#connect" onclick="$('#js_id').val(<?php echo $intro_data['job_seeker_id']; ?>);">Connect</a>
 
