@@ -1146,15 +1146,12 @@ public function user_profile()
             'state'     => 'state.state_id=js_personal_info.state_id | left outer',
           );
         $data['personal_data'] = $this->Master_model->get_master_row("js_personal_info", $select= FALSE, $where_p, $join_p);
-
+       echo $this->db->last_query(); die;
         $where_edu="js_experience.job_seeker_id='$js_id'";
-        $data['education_data'] = $this->Master_model->getMaster("js_experience", $select= FALSE, $where_edu, $join = FALSE);
-         $where_sk="job_seeker_skills.job_seeker_id='$js_id'";
-        $data['skill_data'] = $this->Master_model->getMaster("job_seeker_skills", $select= FALSE, $where_sk, $join = FALSE);
-          
-        // $where_lang="job_seeker_id='$js_id' ORDER BY language ASC";
-        // $data['languages'] = $this->Master_model->getMaster('js_languages',$where_lang);
-
+        $data['education_data'] = $this->Master_model->getMaster("js_experience", $where_edu, $join = FALSE, $order = false, $field = false, $select= FALSE ,$limit=false,$start=false, $search=false);
+        $where_sk="job_seeker_skills.job_seeker_id='$js_id'";
+        $data['skill_data'] = $this->Master_model->getMaster("job_seeker_skills", $where_sk, $join = FALSE, $order = false, $field = false, $select= FALSE ,$limit=false,$start=false, $search=false);
+      
        $this->load->view('fontend/jobseeker/seeker_profile',$data);
 }
 
