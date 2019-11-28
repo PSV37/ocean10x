@@ -1158,7 +1158,15 @@ public function user_profile()
    public function connection_request($id=null)
    {
         $jobseeker_id    = $this->session->userdata('job_seeker_id');
-       echo $connecter_id = $id;
+        $connecter_id = $id;
+
+        $con_data = array(
+            'job_seeker_id' => $jobseeker_id,
+            'connection_id' => $connecter_id,
+            'created_on' => date('Y-m-d H:i:s'),
+            'created_by' => $jobseeker_id,
+        );
+        $this->Master_model->master_insert($con_data,'message_connections');
    }
 
 } //end function
