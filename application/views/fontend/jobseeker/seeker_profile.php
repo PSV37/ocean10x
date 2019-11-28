@@ -3,17 +3,17 @@
 ?>                
  <style>
   /*use-itty-bitty-template*/
-  body {background: #ececec;}
+  .formpanel {background: #ececec;}
   h1, h2, h3, h4, h5 {
     border-bottom: 1px solid #ccc;
     color: #3F51B5;
     padding-bottom: 8px
   }
-  .container {
+  /*.container {
     margin: auto;
     width: 350px;
     text-align: center;
-  }
+  }*/
   .listFlex {display: flex; justify-content: center;}
 
   img {
@@ -30,7 +30,7 @@
             <div class="formpanel">
            
              <?php echo $this->session->flashdata('change_password'); ?>
-              <div class="container">
+              
                  <h1>Dan Englishby</h1>
                  <h3>Personal Profile</h3>
                  <a href="https://imgbb.com/"><img src="https://i.ibb.co/pdJfzx9/profile-picture.jpg" alt="profile-picture" border="0" /></a>
@@ -55,7 +55,7 @@
                  </div>
                  <h4>Social Media</h4>
                  Catch me on Twitter - <a href="https://twitter.com/DanEnglishby">@DanEnglishby</a>
-              </div>
+              
             </div><!-- end post-padding -->
           </div>
         </div>
