@@ -26,7 +26,7 @@
             <div class="formpanel">
               <?php 
               // echo "<pre>"; print_r($intro_data);   
-              // print_r($skill_data);
+              print_r($skill_data);
               // print_r($education_data);
               // print_r($personal_data);
 
