@@ -73,7 +73,7 @@
                  <h4>Experience</h4>
                   <div class="row career">
                     <?php if (!empty($exp_data)): foreach ($exp_data as $exp_row) : 
-                      if($exp_row['end_date']!='') {
+                      if($exp_row->end_date!='') {
                       $end =  date('M Y', strtotime($exp_row->end_date));
                      }else{
                        $end = "Present";
