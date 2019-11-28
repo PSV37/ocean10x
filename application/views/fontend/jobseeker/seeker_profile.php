@@ -3,21 +3,17 @@
 ?>                
  <style>
   /*use-itty-bitty-template*/
-  .formpanel {background: #ececec;}
+  /*.formpanel {background: #ececec;}*/
   h1, h2, h3, h4, h5 {
     border-bottom: 1px solid #ccc;
     color: #3F51B5;
     padding-bottom: 8px
   }
-  /*.container {
-    margin: auto;
-    width: 350px;
-    text-align: center;
-  }*/
+
   .listFlex {display: flex; justify-content: center;}
 
   img {
-    width: 100%;
+    width: 15%;
   }
 </style>
 <div class="section lb">
@@ -28,12 +24,11 @@
         <div class="job-header">
           <div class="contentbox">
             <div class="formpanel">
-           
-             <?php echo $this->session->flashdata('change_password'); ?>
+              <?php echo $this->session->flashdata('change_password'); ?>
+                <h3>Personal Profile</h3>
+                <img src="https://i.ibb.co/pdJfzx9/profile-picture.jpg" alt="profile-picture" border="0" class="img img-thumbnail">/>
+                <h1>Dan Englishby</h1>
               
-                 <h1>Dan Englishby</h1>
-                 <h3>Personal Profile</h3>
-                 <a href="https://imgbb.com/"><img src="https://i.ibb.co/pdJfzx9/profile-picture.jpg" alt="profile-picture" border="0" /></a>
                  <h4>About Me</h4>
                  <p>Hi, I'm Dan Englishby, I have a huge passion for web-development and programming. I love to learn and thrive from challenges.</p>
                  <h4>My Skills</h4>
