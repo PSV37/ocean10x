@@ -253,7 +253,7 @@ $(function() {
         }
       })
         .autocomplete( "instance" )._renderItem = function( ul, item ) {
-          if(item.img != '' ||item.img=null)
+          if(item.img != '' || item.img!=null)
           {
             return $( "<li><div><img  alt='' style='border-radius: 35px; border: 5px; width:30px;' src='<?php echo base_url(); ?>upload/"+item.img+"'><strong>"+item.value+"</strong></div></li>" ).appendTo( ul );
           }else{
