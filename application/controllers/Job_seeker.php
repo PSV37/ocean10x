@@ -1146,11 +1146,13 @@ public function user_profile()
             'state'     => 'state.state_id=js_personal_info.state_id | left outer',
           );
         $data['personal_data'] = $this->Master_model->get_master_row("js_personal_info", $select= FALSE, $where_p, $join_p);
-       echo $this->db->last_query(); die;
+        echo $this->db->last_query();echo "<br>";
         $where_edu="js_experience.job_seeker_id='$js_id'";
         $data['education_data'] = $this->Master_model->getMaster("js_experience", $where_edu, $join = FALSE, $order = false, $field = false, $select= FALSE ,$limit=false,$start=false, $search=false);
+         echo $this->db->last_query();echo "<br>";
         $where_sk="job_seeker_skills.job_seeker_id='$js_id'";
         $data['skill_data'] = $this->Master_model->getMaster("job_seeker_skills", $where_sk, $join = FALSE, $order = false, $field = false, $select= FALSE ,$limit=false,$start=false, $search=false);
+         echo $this->db->last_query(); die;
       
        $this->load->view('fontend/jobseeker/seeker_profile',$data);
 }
