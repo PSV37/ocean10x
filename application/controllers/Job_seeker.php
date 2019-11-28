@@ -1133,10 +1133,10 @@ public function user_profile()
 
         $where_int= "js_info.job_seeker_id='$js_id'";
         $join_a = array(
-            'js_photo'  => 'js_photo.job_seeker_id=js_info.job_seeker_id | left outer',
-            'js_profile_summary'     => 'js_profile_summary.job_seeker_id=js_info.job_seeker_id | left outer',
+            'js_photo'              => 'js_photo.job_seeker_id=js_info.job_seeker_id | left outer',
+            'js_profile_summary'    => 'js_profile_summary.job_seeker_id=js_info.job_seeker_id | left outer',
           );
-        $select = "job_seeker_skills.skills,js_profile_summary.about_me,js_photo.photo_path,js_info.job_seeker_id,js_info.full_name";
+        $select = "js_profile_summary.about_me,js_photo.photo_path,js_info.job_seeker_id,js_info.full_name,js_info.profession";
         $data['intro_data'] = $this->Master_model->get_master_row("js_info", $select, $where_int, $join_a);
 
         $where_p= "js_personal_info.job_seeker_id='$js_id'";
