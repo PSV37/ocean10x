@@ -5,7 +5,7 @@
   /*use-itty-bitty-template*/
   /*.formpanel {background: #ececec;}*/
   h1, h2, h4, h5 {
-    /*border-bottom: 1px solid #ccc;*/
+    border-bottom: 1px solid #ccc;
     /*color: #3F51B5;*/
     padding-bottom: 10px
   }
