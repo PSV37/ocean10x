@@ -1145,12 +1145,11 @@ public function user_profile()
             'country'   => 'country.country_id=js_personal_info.country_id | left outer',
             'state'     => 'state.state_id=js_personal_info.state_id | left outer',
           );
-        // $selects = "job_seeker_skills.skills,js_profile_summary.about_me,js_photo.photo_path,js_info.job_seeker_id,js_info.full_name";
         $data['personal_data'] = $this->Master_model->get_master_row("js_personal_info", $select= FALSE, $where_p, $join_p);
 
-        $where_edu="job_seeker_id='$js_id'";
+        $where_edu="js_experience.job_seeker_id='$js_id'";
         $data['education_data'] = $this->Master_model->getMaster("js_experience", $select= FALSE, $where_edu, $join = FALSE);
-         $where_sk="job_seeker_id='$js_id'";
+         $where_sk="job_seeker_skills.job_seeker_id='$js_id'";
         $data['skill_data'] = $this->Master_model->getMaster("job_seeker_skills", $select= FALSE, $where_sk, $join = FALSE);
           
         // $where_lang="job_seeker_id='$js_id' ORDER BY language ASC";
