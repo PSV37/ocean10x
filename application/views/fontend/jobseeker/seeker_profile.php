@@ -76,10 +76,10 @@
                     <div class="col-md-12">
                       <div class="col-md-1"><i class="fa fa-user" aria-hidden="true"></i></div>
                       <div class="col-md-11">
-                        <sapn class="title-career"><b><?php echo $exp_row['designation_id']; ?></b></sapn> <br><br>
+                        <sapn class="title-career"><b><?php echo $exp_row['designation_id']; ?></b></sapn> <br>
                         <span><?php echo $exp_row['company_profile_id']; ?></span><br>
-                        <span><?php echo date('M Y', strtotime($exp_row['start_date'])).' - '.date('M Y', strtotime($exp_row['end_date'])); ?></span><br>
-                        <span><?php echo $exp_row['address']; ?></span><br>
+                        <p class="tag_line"><?php echo date('M Y', strtotime($exp_row['start_date'])).' - '.if($exp_row['end_date']!='') {date('M Y', strtotime($exp_row['end_date']))}else{echo "Present";}; ?></p><br>
+                        <p class="tag_line"><?php echo $exp_row['address']; ?></p><br>
                         <p class="tag_line"><?php echo $exp_row['responsibilities']; ?></p><hr>
                       </div>
                     </div>
