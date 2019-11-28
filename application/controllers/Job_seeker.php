@@ -1113,13 +1113,12 @@ public function search(){
               {
                 foreach ($result as $row)
                 {
-                 $arr_result= array(
-                   'id'=>$row['job_seeker_id'],
-                   'value'=>$row['full_name'],
-                   'label'=>$row['full_name'],
-                   'img'=>$row['photo_path']
-                   
-                   ); 
+                    $arr_result= array(
+                       'id'=>$row['job_seeker_id'],
+                       'value'=>$row['full_name'],
+                       'label'=>$row['full_name'],
+                       'img'=>$row['photo_path']
+                    ); 
                   array_push($final_array,$arr_result);
                 }
               }
