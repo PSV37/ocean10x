@@ -257,7 +257,7 @@ $(function() {
           {
             return $( "<li><div><img  alt="" class='img-circle' src='<?php echo base_url(); ?>upload/"+item.img+"'><span>"+item.value+"</span></div></li>" ).appendTo( ul );
           }else{
-            return $( "<img src='<?php echo base_url(); ?>fontend/images/no-image.jpg alt='' class='img-circle'><strong>"+item.value+"</strong></a>").appendTo( ul );
+            return $( "<li><div><img src='<?php echo base_url(); ?>fontend/images/no-image.jpg alt='' class='img-circle'><strong>"+item.value+"</strong></div></li>").appendTo( ul );
           }
      
       };
