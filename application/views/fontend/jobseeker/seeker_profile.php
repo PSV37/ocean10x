@@ -4,10 +4,10 @@
  <style>
   /*use-itty-bitty-template*/
   /*.formpanel {background: #ececec;}*/
-  h1, h2, h3, h4, h5 {
-    border-bottom: 1px solid #ccc;
+  h1, h2, h4, h5 {
+    /*border-bottom: 1px solid #ccc;*/
     /*color: #3F51B5;*/
-    padding-bottom: 8px
+    padding-bottom: 10px
   }
 
   .listFlex {display: flex; justify-content: center;}
@@ -34,9 +34,9 @@
               <?php echo $this->session->flashdata('change_password'); ?>
                 <h2 align="center">Personal Profile</h2>
                 <img src="<?php echo base_url() ?>upload/<?php echo $intro_data['photo_path'];?>" alt="profile-picture" border="0" class="img img-thumbnail">
-                <h3><?php echo $intro_data['full_name']; ?> (<?php echo $intro_data['profession']; ?>)</h3>
+                <h3><?php echo $intro_data['full_name']; ?> </h3>
                 <p><?php echo $personal_data['city_name'].', '.$personal_data['state_name'].', '.$personal_data['country_name']; ?></p>
-                
+                <hr>
                  <h4>About Me</h4>
                  <p><?php echo $intro_data['about_me']; ?></p>
                  <h4>Skills</h4>
