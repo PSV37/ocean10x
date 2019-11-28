@@ -1141,7 +1141,7 @@ public function user_profile()
 
         $where_int="job_seeker_id='$js_id'";
         $data['intro_data'] = $this->Master_model->get_master_row("js_info", $select= FALSE, $where_int, $join = FALSE);
-          echo  $this->db->last_query(); die;
+          // echo  $this->db->last_query(); die;
         $where_lang="job_seeker_id='$js_id' ORDER BY language ASC";
         $data['languages'] = $this->Master_model->getMaster('js_languages',$where_lang);
 
