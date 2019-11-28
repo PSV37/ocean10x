@@ -80,7 +80,7 @@
                      }
                       ?>
                     <div class="col-md-12">
-                      <div class="col-md-1"><i class="fa fa-user" aria-hidden="true"></i></div>
+                      <div class="col-md-1"><i class="fa fa-briefcase" aria-hidden="true"></i></div>
                       <div class="col-md-11">
                         <sapn class="title-career"><b><?php echo $exp_row->designation_name.' ('.$exp_row->department_name.')'; ?></b></sapn> <br>
                         <span><?php echo $exp_row->company_profile_id; ?></span><br>
