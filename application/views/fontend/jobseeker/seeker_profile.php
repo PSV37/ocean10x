@@ -47,44 +47,29 @@
               ?>
               <?php echo $this->session->flashdata('change_password'); ?>
                 <h2 align="center">Personal Profile</h2>
-              <div class="col-md-12">
                 <img src="<?php echo base_url() ?>upload/<?php echo $intro_data['photo_path'];?>" alt="profile-picture" border="0" class="img img-thumbnail">
-              </div>
-              <div class="col-md-12">
-                <div class="col-md-6">
-                  <h3><?php echo $intro_data['full_name']; ?> </h3>
-                  <p><?php echo $personal_data['city_name'].', '.$personal_data['state_name'].', '.$personal_data['country_name']; ?></p>
-                </div>
-                <div class="col-md-6"> 
-                  <h3><?php echo $intro_data['full_name']; ?> </h3>
-                  <p><?php echo $personal_data['city_name'].', '.$personal_data['state_name'].', '.$personal_data['country_name']; ?></p>
-                </div>
-              </div>
+                <h3><?php echo $intro_data['full_name']; ?> </h3>
+                <p><?php echo $personal_data['city_name'].', '.$personal_data['state_name'].', '.$personal_data['country_name']; ?></p>
                 <hr>
-                <div class="col-md-12">
-                  <h4>About Me</h4>
-                  <p><?php echo $intro_data['about_me']; ?></p>
-                </div>
+                 <h4>About Me</h4>
+                 <p><?php echo $intro_data['about_me']; ?></p>
                 <hr>
-                <div class="col-md-12">
-                  <h4>Skills</h4>
-                  <div class="listFlex">
-                    <?php if (!empty($skill_data)): foreach ($skill_data as $sk_row) : ?>
-                        <div>
-                          <ul>
-                            <li><?php echo $sk_row['skills']; ?></li>
-                          </ul>
-                        </div>
-                    <?php endforeach;  ?>
-                    <?php else : ?> 
+                 <h4>Skills</h4>
+                 <div class="listFlex">
+                  <?php if (!empty($skill_data)): foreach ($skill_data as $sk_row) : ?>
                       <div>
-                        <strong>There is no data to display</strong>
+                        <ul>
+                          <li><?php echo $sk_row['skills']; ?></li>
+                        </ul>
                       </div>
-                    <?php endif; ?>
-                  </div>
-               </div>
+                  <?php endforeach;  ?>
+                  <?php else : ?> 
+                    <div>
+                      <strong>There is no data to display</strong>
+                    </div>
+                  <?php endif; ?>
+                 </div>
                   <hr>
-                <div class="col-md-12">
                  <h4>Experience</h4>
                   <div class="row career">
                     <?php if (!empty($exp_data)): foreach ($exp_data as $exp_row) : 
@@ -110,8 +95,23 @@
                       <strong>There is no data to display</strong>
                     </div>
                   <?php endif; ?>
+                    <!-- <div class="col-md-12">
+                      <div class="col-md-1"><i class="fa fa-briefcase" aria-hidden="true"></i></div>
+                      <div class="col-md-11">
+                        <span class="title-career"><b>Career Interests</b></span><br><br>
+                        <span>Let recruiters know you’re open: <a href="#">Off</a></span><br> 
+                        <p class="tag_line">Choose the types of opportunities you’d like to be connected with</p><hr>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="col-md-1"><i class="fa fa-money" aria-hidden="true"></i></div>
+                      <div class="col-md-11">
+                        <span class="title-career"><b>Salary Insights</b></span><br><br>
+                        <p class="tag_line">See how your salary compares to others in the community</p><hr>
+                      </div>
+                    </div><br><hr> -->
                   </div>
-                </div>
+
 
                  <!-- Catch me on Twitter - <a href="https://twitter.com/DanEnglishby">@DanEnglishby</a> -->
                  <hr>
