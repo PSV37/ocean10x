@@ -1132,17 +1132,23 @@ public function user_profile()
     $js_id = base64_decode($this->input->get('seeker_id'));
 
         $where_int= "js_info.job_seeker_id='$js_id'";
-        $tablename='js_info';
         $join_a = array(
             'js_photo'  => 'js_photo.job_seeker_id=js_info.job_seeker_id | left outer',
-            'city'      => 'city.id=js_info.city_id | left outer',
-            'country'   => 'country.country_id=js_info.country_id | left outer',
-            'state'     => 'state.state_id=js_info.state_id | left outer',
             'js_profile_summary'     => 'js_profile_summary.job_seeker_id=js_info.job_seeker_id | left outer',
             'job_seeker_skills'     => 'job_seeker_skills.job_seeker_id=js_info.job_seeker_id | left outer',
           );
         $select = "job_seeker_skills.skills,js_profile_summary.about_me,js_photo.photo_path,js_info.job_seeker_id,js_info.full_name";
         $data['intro_data'] = $this->Master_model->get_master_row("js_info", $select, $where_int, $join_a);
+
+     
+        $where_p= "js_personal_info.job_seeker_id='$js_id'";
+        $join_p = array(
+            'city'      => 'city.id=js_personal_info.city_id | left outer',
+            'country'   => 'country.country_id=js_personal_info.country_id | left outer',
+            'state'     => 'state.state_id=js_personal_info.state_id | left outer',
+          );
+        // $selects = "job_seeker_skills.skills,js_profile_summary.about_me,js_photo.photo_path,js_info.job_seeker_id,js_info.full_name";
+        $data['personal_data'] = $this->Master_model->get_master_row("js_personal_info", $select= FALSE, $where_p, $join_p);
 
         $where_edu="job_seeker_id='$js_id'";
         $data['education_data'] = $this->Master_model->get_master_row("js_experience", $select= FALSE, $where_edu, $join = FALSE);
