@@ -15,6 +15,19 @@
   img {
     width: 15%;
   }
+  .career{
+    border-radius: 6px;
+    background: #cbced247;
+    margin: 2px;
+    padding: 15px;
+  }
+  .tag_line{
+    text-align: unset !important;
+  }
+  .title-career{
+    font-size: 20px;
+    font-style: bold;
+  }
 </style>
 <div class="section lb">
   <div class="container">
@@ -57,6 +70,33 @@
                  </div>
                   <hr>
                  <h4>Experience</h4>
+                  <div class="row career">
+                    <div class="col-md-12">
+                      <div class="col-md-1"><i class="fa fa-user" aria-hidden="true"></i></div>
+                      <div class="col-md-11">
+                        <sapn class="title-career"><b>Career Advice</b></sapn> <br><br>
+                        <span>Participate in the career advice platform: <a href="#">On</a></span><br>
+                        <p class="tag_line">Get career advice by conversing with other LinkedIn users who are leaders in their fields</p><hr>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="col-md-1"><i class="fa fa-briefcase" aria-hidden="true"></i></div>
+                      <div class="col-md-11">
+                        <span class="title-career"><b>Career Interests</b></span><br><br>
+                        <span>Let recruiters know you’re open: <a href="#">Off</a></span><br> 
+                        <p class="tag_line">Choose the types of opportunities you’d like to be connected with</p><hr>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="col-md-1"><i class="fa fa-money" aria-hidden="true"></i></div>
+                      <div class="col-md-11">
+                        <span class="title-career"><b>Salary Insights</b></span><br><br>
+                        <p class="tag_line">See how your salary compares to others in the community</p><hr>
+                      </div>
+                    </div><br><hr>
+                  </div>
+
+
                  <!-- Catch me on Twitter - <a href="https://twitter.com/DanEnglishby">@DanEnglishby</a> -->
                  <hr>
             </div><!-- end post-padding -->
