@@ -26,9 +26,9 @@
             <div class="formpanel">
               <?php 
               // echo "<pre>"; print_r($intro_data);   
-              print_r($skill_data);
-              // print_r($education_data);
-              // print_r($personal_data);
+             // print_r($skill_data);
+              print_r($education_data);
+              print_r($personal_data);
 
               ?>
               <?php echo $this->session->flashdata('change_password'); ?>
@@ -38,7 +38,7 @@
                 
                  <h4>About Me</h4>
                  <p><?php echo $intro_data['about_me']; ?></p>
-                 <h4>My Skills</h4>
+                 <h4>Skills</h4>
                  <div class="listFlex">
                   <?php if (!empty($skill_data)): foreach ($skill_data as $sk_row) : ?>
                       <div>
@@ -53,7 +53,7 @@
                     </div>
                   <?php endif; ?>
                  </div>
-                 <h4>Social Media</h4>
+                 <h4>Experience</h4>
                  <!-- Catch me on Twitter - <a href="https://twitter.com/DanEnglishby">@DanEnglishby</a> -->
               
             </div><!-- end post-padding -->
