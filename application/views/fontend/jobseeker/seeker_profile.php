@@ -46,7 +46,7 @@
                   <p><?php echo $personal_data['city_name'].', '.$personal_data['state_name'].', '.$personal_data['country_name']; ?></p>
                 </div>
                 <div class="col-md-4">
-                  <a href="<?php echo base_url(); ?>job_seeker/connection_request/<?php echo $intro_data['job_seeker_id']; ?>" class="btn btn-primary">Connect</a>
+                  <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#connect" onclick="$('#js_id').val(<?php echo $intro_data['job_seeker_id']; ?>);">Connect</a>
                   <a href="#" class="btn btn-primary">Message</a>
                 </div>
               </div>
@@ -95,21 +95,6 @@
                       <strong>There is no data to display</strong>
                     </div>
                   <?php endif; ?>
-                    <!-- <div class="col-md-12">
-                      <div class="col-md-1"><i class="fa fa-briefcase" aria-hidden="true"></i></div>
-                      <div class="col-md-11">
-                        <span class="title-career"><b>Career Interests</b></span><br><br>
-                        <span>Let recruiters know you’re open: <a href="#">Off</a></span><br> 
-                        <p class="tag_line">Choose the types of opportunities you’d like to be connected with</p><hr>
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="col-md-1"><i class="fa fa-money" aria-hidden="true"></i></div>
-                      <div class="col-md-11">
-                        <span class="title-career"><b>Salary Insights</b></span><br><br>
-                        <p class="tag_line">See how your salary compares to others in the community</p><hr>
-                      </div>
-                    </div><br><hr> -->
                   </div>
 
 
@@ -125,5 +110,37 @@
   </div><!-- end container -->
 </div><!-- end section -->
 
+<!-- Modal -->
+<div id="connect" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">You can customize this invitation</h4>
+      </div>
+      <div class="modal-body">
+        <form id="Career-info" class="form-horizontal" action="<?php echo base_url('job_seeker/connection_request');?>" method="post">
+          <input type="text" name="js_id" id="js_id" value="">
+          
+          <div class="form-group">
+            <label class="control-label col-sm-3" for="email">Message</label>
+            <div class="col-sm-9">
+              <textarea class="form-control" name='message' placeholder="Enter message"></textarea>
+            </div>
+          </div>
+          
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+            
+        </form>
+      </div>
+    
+    </div>
+  
+  </div>
+</div>
  <?php $this->load->view("fontend/layout/footer.php"); ?>

@@ -1155,10 +1155,10 @@ public function user_profile()
       
        $this->load->view('fontend/jobseeker/seeker_profile',$data);
 }
-   public function connection_request($id=null)
+   public function connection_request()
    {
         $jobseeker_id    = $this->session->userdata('job_seeker_id');
-        $connecter_id = $id;
+        $connecter_id = $this->input->post('js_id');
 
         $con_data = array(
             'job_seeker_id' => $jobseeker_id,
@@ -1167,6 +1167,12 @@ public function user_profile()
             'created_by' => $jobseeker_id,
         );
         $this->Master_model->master_insert($con_data,'message_connections');
+        
+        redirect(base_url()."user_profile/".base64_encode($connecter_id));
+
+
+
+
    }
 
 } //end function
