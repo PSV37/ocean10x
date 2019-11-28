@@ -47,16 +47,18 @@
                 </div>
                 <div class="col-md-4">
                   <?php   
+                  if (!empty($connect_data)) {
                     if($connect_data['connect_status']==0){
                   ?>
                   <a href="#" class="btn btn-primary" disabled>Processing</a>
                 <?php }else if($connect_data['connect_status']==1){ ?>
-
                 <?php }else{
                 ?>
                   <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#connect" onclick="$('#js_id').val(<?php echo $intro_data['job_seeker_id']; ?>);">Connect</a>
                 <?php
-                } ?>
+                } }else{?>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#connect" onclick="$('#js_id').val(<?php echo $intro_data['job_seeker_id']; ?>);">Connect</a>
+                <?php } ?>
                   <a href="#" class="btn btn-primary">Message</a>
                 </div>
               </div>
