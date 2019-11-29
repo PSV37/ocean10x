@@ -21,6 +21,7 @@
           <tbody>
           <?php
             $sr_no=0;
+            print_r($saved_job_data);
            if (!empty($seeker_data)): foreach ($seeker_data as $js_row) : $sr_no++; ?>
             <tr>
               <td><?php echo $sr_no; ?></td>

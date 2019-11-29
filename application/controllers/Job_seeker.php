@@ -1067,15 +1067,13 @@ public function search(){
     {
         $jobseeker_id    = $this->session->userdata('job_seeker_id');
         if ($_POST) {
-           
-            $send_to = $this->input->post('send_to');
 
+            $send_to = $this->input->post('send_to');
             $created_on = date('Y-m-d H:i:s');
             $cenvertedTime = date('Y-m-d H:i:s',strtotime('+5 hour +30 minutes',strtotime($created_on)));
 
             $where_sks="(job_seeker_id='$jobseeker_id' AND connection_id='$send_to') OR (job_seeker_id='$send_to' AND connection_id='$jobseeker_id')";
             $connect_data = $this->Master_model->get_master_row("message_connections", $select= FALSE, $where_sks, $join=FALSE);
-
 
             $con_data   = array(
                 'job_seeker_id'    => $jobseeker_id,
@@ -1084,7 +1082,6 @@ public function search(){
                 'message_desc'     => $this->input->post('user_msg'),
                 'created_on'       => $cenvertedTime,
                 'created_by'       => $jobseeker_id,
-            
             );
            $this->Master_model->master_insert($con_data,'message_chat');
 
@@ -1094,10 +1091,16 @@ public function search(){
             echo $this->load->view('fontend/jobseeker/instant_message', compact('connection_requests','seeker_data'),true);
 
         } else {
+            $wheremsg = "(job_seeker_id='$jobseeker_id') OR (chat_js_id='jobseeker_id')";
+            $saved_job_data = $this->Master_model->getMaster("message_chat", $where_edu, $join_save, $order = false, $field = false, $select_edu,$limit=false,$start=false, $search=false);
+
+
+
+
             $seeker_data = $this->Master_model->getMaster('js_info',$where="js_status=1");
             $connection_requests = $this->Master_model->getMaster('message_connections',$where=false);
            
-            echo $this->load->view('fontend/jobseeker/instant_message', compact('connection_requests','seeker_data'),true);
+            echo $this->load->view('fontend/jobseeker/instant_message', compact('connection_requests','seeker_data','saved_job_data'),true);
         }
     }
 
