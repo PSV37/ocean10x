@@ -128,7 +128,7 @@
                     ?>
 
 
-                    <li <?php if($msg_row['status']==0){?>style="background-color: #ccc;" <?php }else{} ?> style="margin: 5px;">
+                    <li <?php if($msg_row['status']==0){?>style="background-color: #ccc;margin: 5px;" <?php }else{?> style="margin: 5px;"<?php} ?> >
 
                       <a data-toggle="modal" data-target="#myMsgModal">
                         <span>
