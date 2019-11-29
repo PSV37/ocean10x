@@ -55,6 +55,7 @@
                   ?>
                   <a href="#" class="btn btn-primary" disabled>Processing</a>
                 <?php }else if($connect_data['connect_status']==1){ ?>
+                  <a href="#" class="btn btn-primary" onclick="openForm(<?php echo $intro_data['job_seeker_id']; ?>)">Message</a>
                 <?php }else{
                 ?>
                   <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#connect" onclick="$('#js_id').val(<?php echo $intro_data['job_seeker_id']; ?>);">Connect</a>
@@ -62,7 +63,7 @@
                 } }else{?>
                     <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#connect" onclick="$('#js_id').val(<?php echo $intro_data['job_seeker_id']; ?>);">Connect</a>
                 <?php } ?>
-                  <a href="#" class="btn btn-primary">Message</a>
+                  
                 </div>
               </div>
                 <hr>
@@ -124,6 +125,17 @@
     </div><!-- end row -->  
   </div><!-- end container -->
 </div><!-- end section -->
+ <div class="chat-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Message</h1>
+
+    <label for="msg"><b>Message</b></label>
+    <textarea placeholder="Type message.." name="msg" required></textarea>
+
+    <button type="submit" class="btn">Send</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
 
 <!-- Modal -->
 <div id="connect" class="modal fade" role="dialog">
@@ -158,6 +170,7 @@
   
   </div>
 </div>
+
  <?php $this->load->view("fontend/layout/footer.php"); ?>
  
  <script>
@@ -167,3 +180,13 @@
     });   
   });
  </script>
+ <script>
+  function openForm(id) {
+    alert(id);
+    document.getElementById("myForm").style.display = "block";
+  }
+
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }
+</script>
