@@ -486,13 +486,14 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $data_ck = array(
             'job_seeker_id' => "'".$conn_id."'",
         );
-        $validate = $this->Master_model->getMaster("js_info",$data_ck);
+        // $validate = $this->Master_model->getMaster("js_info",$data_ck);
+          $validate = $this->Master_model->get_master_row('js_info', $select = FALSE, $data_ck, $join = FALSE);
         if(!empty($validate))
         {
             foreach($validate as $rows)
             {
-                $data['email'] = $rows['email'];
-                $data['job_seeker_id'] = $rows['job_seeker_id'];
+                $data['email'] = $validate['email'];
+                $data['job_seeker_id'] = $validate['job_seeker_id'];
             }
             $this->session->set_userdata($data);
             $where_chlk = "job_seeker_id='$jobseeker_id' AND connection_id='$conn_id' AND connect_status='1'";
@@ -503,9 +504,9 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             } else {
 
                 $data_status=array( 
-                    'connect_status'        => 1,
-                    'updated_by'    => $conn_id,
-                    'updated_on'    => $cenvertedTime,
+                    'connect_status'    => 1,
+                    'updated_by'        => $conn_id,
+                    'updated_on'        => $cenvertedTime,
                 );
                 $where_update1 = "job_seeker_id='$jobseeker_id' AND connection_id='$conn_id'";
                 $status = $this->Master_model->master_update($data_status, 'message_connections', $where_update1);
