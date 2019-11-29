@@ -1163,6 +1163,12 @@ public function user_profile()
         $connecter_id = $this->input->post('js_id');
         $message = addslashes($this->input->post('message'));
 
+        $where_sks="job_seeker_id='$connecter_id'";
+        $select_eml="email,full_name";
+        $emails = $this->Master_model->get_master_row("js_info", $select_eml, $where_sks, $join=FALSE);
+        echo   $email = $emails['email'];
+        echo   $name = $emails['full_name'];
+         die;
         $con_data = array(
             'job_seeker_id' => $jobseeker_id,
             'connection_id' => $connecter_id,
@@ -1181,7 +1187,7 @@ public function user_profile()
             );
             $chtid = $this->Master_model->master_insert($con_data,'message_chat');
 
-            // $email = $email_id;
+        
             // $subject = 'CONFIRMED. Interview request for '.$check_candidate['full_name'];
             // $message = '
             //     <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
