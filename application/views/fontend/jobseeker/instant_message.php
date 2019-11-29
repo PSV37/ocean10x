@@ -29,10 +29,17 @@
               <td><?php echo $sr_no; ?></td>
               <td>
                 <?php echo $this->Job_seeker_model->jobseeker_name($js_row['chat_js_id']); ?>
-               <!-- <?php echo $js_row['chat_js_id']; ?> -->
               </td>
                <td>
-               <?php echo $js_row['message_desc']; ?>
+              <?php
+               // echo $js_row['message_desc']; 
+                $message = $js_row['message_desc'];
+                if(strlen($message)>100)
+                  {
+                    echo substr($message, 0, 100);
+                   echo '...';  
+                  }else{echo $message; }
+              ?>
               </td>
             
               <td>
