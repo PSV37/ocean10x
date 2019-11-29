@@ -129,7 +129,7 @@
 
                       <a data-toggle="modal" data-target="#myMsgModal">
                         <span>
-                          <span><?php echo $msg_row['job_seeker_id']; ?></span>
+                          <span><?php echo $msg_row['full_name']; ?></span>
                           <span class="time">
                           <?php 
 

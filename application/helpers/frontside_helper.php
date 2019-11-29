@@ -225,13 +225,16 @@ function get_metas() {
         $select_result = "*";
         $table = "message_chat";
         $where_res['chat_js_id'] = $js_id;
-        $exam_result = $CI->Master_model->getMaster($table, $where_res, false, false ,false, $select_result, $limit =false, $start =false, $search= false);
+        $join = array(
+            'js_info' => 'js_info.job_seeker_id=message_chat.job_seeker_id | INNER',
+        );
+        $exam_result = $CI->Master_model->getMaster($table, $where_res, $join, false ,false, $select_result, $limit =false, $start =false, $search= false);
      //   echo $CI->db->last_query(); die;
 
         return $exam_result;
     } 
 
-    
+
  function time_ago_in_php($timestamp){
 
     $CI = get_instance();
