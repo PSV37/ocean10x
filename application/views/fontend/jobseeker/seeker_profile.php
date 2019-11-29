@@ -38,8 +38,11 @@
              
               <?php echo $this->session->flashdata('con_message'); ?>
                 <h2 align="center">Personal Profile</h2>
-
+                <?php if(!empty($intro_data['photo_path'])){ ?>
                 <img src="<?php echo base_url() ?>upload/<?php echo $intro_data['photo_path'];?>" alt="profile-picture" border="0" class="img img-thumbnail" style="width: 20%;">
+              <?php }else{ ?>
+                 <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" border="0" alt="profile-picture" class="img img-thumbnail" style="width: 20%;">
+              <?php } ?>
               <div class="row">
                 <div class="col-md-8">
                   <h3><?php echo $intro_data['full_name']; ?> </h3>
