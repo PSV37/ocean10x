@@ -137,7 +137,7 @@
       </div>
       <div class="modal-body">
         <form id="Career-info" class="form-horizontal" action="<?php echo base_url('job_seeker/connection_request');?>" method="post">
-          <input type="text" name="js_id" id="js_id" value="">
+          <input type="hidden" name="js_id" id="js_id" value="">
           
           <div class="form-group">
             <label class="control-label col-sm-3" for="email">Message</label>
