@@ -44,8 +44,8 @@
                 line-height: 13px;
                 padding: 2px 6px;
                 position: absolute;
-                right: -2px;
-                top: -8px;
+                right: -12px;
+                top: -5px;
             }
             .bg-green {
                 background: #1ABB9C !important;
