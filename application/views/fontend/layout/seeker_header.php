@@ -83,7 +83,7 @@
               <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu" style="width: 300px;">
                 <li>
                   <div class="text-center">
-                    <a href="<?php echo base_url(); ?>">
+                    <a href="<?php echo base_url(); ?>" class="dropdown-item">
                       <strong>Mark All As Read</strong>
                     </a>
                   </div>
@@ -107,7 +107,7 @@
               
                 <li>
                   <div class="text-center">
-                    <a href="<?php echo base_url(); ?>">
+                    <a href="<?php echo base_url(); ?>" class="dropdown-item">
                       <strong>See All Messages</strong>
                       <i class="fa fa-angle-right"></i>
                     </a>
