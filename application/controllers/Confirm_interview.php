@@ -483,18 +483,19 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $created_on = date('Y-m-d H:i:s');
         $cenvertedTime = date('Y-m-d H:i:s',strtotime('+5 hour +30 minutes',strtotime($created_on)));
 
+        $where_hlk = "job_seeker_id='$jobseeker_id' AND connection_id='$conn_id'";
+        $result = $this->Master_model->get_master_row('message_connections', $select = FALSE, $where_hlk, $join = FALSE);
+        $rec = $result['id'];
+        
         $data_ck = array(
             'job_seeker_id' => "'".$conn_id."'",
         );
-        // $validate = $this->Master_model->getMaster("js_info",$data_ck);
-          $validate = $this->Master_model->get_master_row('js_info', $select = FALSE, $data_ck, $join = FALSE);
+        $validate = $this->Master_model->get_master_row('js_info', $select = FALSE, $data_ck, $join = FALSE);
         if(!empty($validate))
         {
-            foreach($validate as $rows)
-            {
-                $data['email'] = $validate['email'];
-                $data['job_seeker_id'] = $validate['job_seeker_id'];
-            }
+            $data['email'] = $validate['email'];
+            $data['job_seeker_id'] = $validate['job_seeker_id'];
+           
             $this->session->set_userdata($data);
             $where_chlk = "job_seeker_id='$jobseeker_id' AND connection_id='$conn_id' AND connect_status='1'";
             $check_res1 = $this->Master_model->get_master_row('message_connections', $select = FALSE, $where_chlk, $join = FALSE);
@@ -508,7 +509,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                     'updated_by'        => $conn_id,
                     'updated_on'        => $cenvertedTime,
                 );
-                $where_update1 = "job_seeker_id='$jobseeker_id' AND connection_id='$conn_id'";
+                $where_update1 = "id='$rec'";
                 $status = $this->Master_model->master_update($data_status, 'message_connections', $where_update1);
                 if($status==true)
                 {
