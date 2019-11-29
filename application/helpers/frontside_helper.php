@@ -225,11 +225,11 @@ function get_metas() {
         $CI = get_instance();
         $select_result = "*";
         $table = "message_chat";
-        $where_res['chat_js_id'] = $js_id;
+        $where_res="chat_js_id = '$js_id' order by chat_id desc";
         $join = array(
             'js_info' => 'js_info.job_seeker_id=message_chat.job_seeker_id | INNER',
         );
-        $exam_result = $CI->Master_model->getMaster($table, $where_res, $join, false ,false, $select_result, $limit =false, $start =false, $search= false);
+        $exam_result = $CI->Master_model->getMaster($table, $where_res, $join, false ,false, $select_result, $limit ='5', $start =false, $search= false);
      //   echo $CI->db->last_query(); die;
 
         return $exam_result;
