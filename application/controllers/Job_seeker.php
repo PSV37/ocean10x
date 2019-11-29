@@ -1238,7 +1238,7 @@ public function user_profile()
             'status'    => 1,
         );
         $where_u1['chat_js_id']=$jobseeker_id;
-        $status = $this->Master_model->master_update($data_status, 'message_connections', $where_u1);
+        $status = $this->Master_model->master_update($data_status, 'message_chat', $where_u1);
         redirect('job_seeker/my_dashboard');
    }
 
