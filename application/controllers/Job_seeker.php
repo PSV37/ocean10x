@@ -1091,9 +1091,9 @@ public function search(){
             echo $this->load->view('fontend/jobseeker/instant_message', compact('connection_requests','seeker_data'),true);
 
         } else {
-            $wheremsg = "created_by='$jobseeker_id' order by chat_id desc";
+            $wheremsg = "created_by='$jobseeker_id'";
             // $saved_job_data = $this->Master_model->getMaster("message_chat", $where_edu, $join_save, $order = false, $field = false, $select_edu,$limit=false,$start=false, $search=false);
-            $saved_job_data = $this->Master_model-> getList($condition= FALSE, $field_by= FALSE, $order_by= FALSE, $offset= FALSE, $perpage= FALSE, 'message_chat', $search= FALSE, $join = FALSE, $wheremsg, $select = FALSE, $distinct = FALSE, $group_by = 'chat_js_id');
+            $saved_job_data = $this->Master_model-> getList($condition= FALSE, $field_by= FALSE, $order_by= 'chat_id desc', $offset= FALSE, $perpage= FALSE, 'message_chat', $search= FALSE, $join = FALSE, $wheremsg, $select = FALSE, $distinct = FALSE, $group_by = 'chat_js_id');
 
 
 
