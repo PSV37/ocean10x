@@ -155,7 +155,7 @@
                       </a>
                     </li>
                   <?php } } else{?>
-                    <li style="background-color: #ccc;">
+                    <li style="background-color: #ccc; margin: 5px;">
                         <a>
                         <span>
                           No Message Found..
@@ -166,7 +166,7 @@
               
                 <li>
                   <div class="text-center">
-                    <a href="<?php echo base_url(); ?>" class="dropdown-item" style="color: #1d1c1c !important;">
+                    <a href="<?php echo base_url(); ?>seeker/instant-message" class="dropdown-item" style="color: #1d1c1c !important;">
                       <strong>See All Messages</strong>
                       <i class="fa fa-angle-right"></i>
                     </a>
