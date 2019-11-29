@@ -1163,11 +1163,17 @@ public function user_profile()
         $connecter_id = $this->input->post('js_id');
         $message = addslashes($this->input->post('message'));
 
-        $where_sks="job_seeker_id='$connecter_id' AND job_seeker_id='$jobseeker_id'";
+        $where_sks="job_seeker_id='$connecter_id'";
         $select_eml="email,full_name";
-        $emails = $this->Master_model->getMaster("js_info", $where_sks, $join = FALSE, $order = false, $field = false, $select_eml ,$limit=false,$start=false, $search=false);
-        echo   $email = $emails[0]['email'];
-        echo   $name = $emails[0]['full_name'];
+        $emails = $this->Master_model->get_master_row("js_info", $select_eml, $where_sks, $join=FALSE);
+        echo   $email = $emails['email']; echo "<br>";
+        echo   $name = $emails['full_name'];
+
+        $where_sks1="job_seeker_id='$jobseeker_id'";
+        $select_eml1="email,full_name";
+        $sender_email = $this->Master_model->get_master_row("js_info", $select_eml1, $where_sks1, $join=FALSE);
+        echo   $email = $sender_email['email']; echo "<br>";
+        echo   $name = $sender_email['full_name'];
          die;
         $con_data = array(
             'job_seeker_id' => $jobseeker_id,
