@@ -76,7 +76,7 @@
             <ul class="nav navbar-nav">      
 
             <li role="presentation" class="dropdown" >
-              <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+              <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false" style="font-size: 15px;">
                 <i class="fa fa-envelope-o"></i>
                 <span class="badge bg-green" >5</span>
               </a>
