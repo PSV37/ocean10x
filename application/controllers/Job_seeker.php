@@ -1158,7 +1158,7 @@ public function user_profile()
         $where_sk="job_seeker_skills.job_seeker_id='$js_id'";
         $data['skill_data'] = $this->Master_model->getMaster("job_seeker_skills", $where_sk, $join = FALSE, $order = false, $field = false, $select= FALSE ,$limit=false,$start=false, $search=false);
          
-        $where_sks="job_seeker_id='$jobseeker_id' AND connection_id='$js_id'";
+        $where_sks="(job_seeker_id='$jobseeker_id' AND connection_id='$js_id') OR (job_seeker_id='$js_id' AND connection_id='$jobseeker_id')";
         $data['connect_data'] = $this->Master_model->get_master_row("message_connections", $select= FALSE, $where_sks, $join=FALSE);
       
        $this->load->view('fontend/jobseeker/seeker_profile',$data);
