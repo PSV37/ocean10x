@@ -511,7 +511,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                     'updated_by'        => $conn_id,
                     'updated_on'        => $cenvertedTime,
                 );
-                $where_u1 = "id='$rec'";
+                $where_u1['id']=$rec;
                 $status = $this->Master_model->master_update($data_status, 'message_connections', $where_u1);
                  echo $this->db->last_query(); die;
                 if($status==true)
