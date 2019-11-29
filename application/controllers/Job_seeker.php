@@ -1228,9 +1228,18 @@ public function user_profile()
 
         redirect(base_url()."job_seeker/user_profile?seeker_id=".base64_encode($connecter_id));
 
+   }
 
+   public function ReadAllMessages()
+   {
+       $jobseeker_id    = $this->session->userdata('job_seeker_id');
 
-
+        $data_status=array( 
+            'status'    => 1,
+        );
+        $where_u1['chat_js_id']=$jobseeker_id;
+        $status = $this->Master_model->master_update($data_status, 'message_connections', $where_u1);
+        redirect('job_seeker/my_dashboard');
    }
 
 } //end function
