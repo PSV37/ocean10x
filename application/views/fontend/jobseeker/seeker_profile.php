@@ -200,7 +200,7 @@
     <!-- <h1>Message</h1> -->
     <input type="hidden" name="send_to" id="send_to">
     <label for="msg"><b>Message</b></label>
-    <textarea placeholder="Type message.." name="msg" required></textarea>
+    <textarea placeholder="Type message.." name="user_msg" required></textarea>
 
     <button type="submit" class="btn">Send</button>
     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>

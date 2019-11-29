@@ -1072,11 +1072,12 @@ public function search(){
 
             $created_on = date('Y-m-d H:i:s');
             $cenvertedTime = date('Y-m-d H:i:s',strtotime('+5 hour +30 minutes',strtotime($created_on)));
-            
+
             $con_data   = array(
                 'job_seeker_id'    => $jobseeker_id,
+                'connection_id'    => $jobseeker_id,
                 'chat_js_id'       => $this->input->post('send_to'),
-                'message_desc'     => $this->input->post('training_topic'),
+                'message_desc'     => $this->input->post('user_msg'),
                 'created_on'       => $cenvertedTime,
                 'created_by'       => $jobseeker_id,
             
