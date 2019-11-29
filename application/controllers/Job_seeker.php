@@ -1213,7 +1213,7 @@ public function user_profile()
                 <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
                 <br><br>Hi '.$name.', I would like to join your Ocean network <br/>';
 
-                $message .='<br><a href="'.base_url().'job_forword_seeker/accept_invitation?apply_id='.base64_encode($jobseeker_id).'&js_id='.base64_encode($connecter_id).'" class="btn btn-primary" value="Accept" align="center" target="_blank">Accept</a> <br><br>Regards,<br> '.$sender_name.'<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+                $message .='<br><a href="'.base_url().'job_forword_seeker/accept_invitation?apply_id='.base64_encode($jobseeker_id).'&connection_id='.base64_encode($connecter_id).'" class="btn btn-primary" value="Accept" align="center" target="_blank">Accept</a> <br><br>Regards,<br> '.$sender_name.'<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
 
 
                 $send = sendEmail_JobRequest($email,$message,$subject);

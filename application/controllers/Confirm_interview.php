@@ -475,4 +475,79 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 }
     }
 
+
+    public function accept_invitation()
+    {
+        $jobseeker_id = base64_decode($this->input->get('apply_id'));
+        $conn_id =base64_decode($this->input->get('connection_id'));
+
+        $data_ck = array(
+            'job_seeker_id' => "'".$conn_id."'",
+        );
+        $validate = $this->Master_model->getMaster("js_info",$data_ck);
+        if(!empty($validate))
+        {
+            foreach($validate as $rows)
+            {
+                $data['email'] = $rows['email'];
+                $data['job_seeker_id'] = $rows['job_seeker_id'];
+            }
+            $this->session->set_userdata($data);
+            $where_chlk = "job_seeker_id='$jobseeker_id' AND connection_id='$conn_id' AND status='1'";
+            $check_res1 = $this->Master_model->get_master_row('message_connections', $select = FALSE, $where_chlk, $join = FALSE);
+        if($check_res1)
+            {
+                $this->load->view('fontend/alreadyconfirmed');
+            } else {
+
+                $data_status=array( 
+                    'status'        => 1,
+                    'updated_by'    => $conn_id,
+                    'updated_on'    => date('Y-m-d H:i:s'),
+                );
+                $where_update1 = "job_seeker_id='$jobseeker_id' AND connection_id='$conn_id'";
+                $status = $this->Master_model->master_update($data_status, 'message_connections', $where_update1);
+                if($status==true)
+                {
+
+                    //$email = $email_id;
+                    // $subject = 'CONFIRMED. Interview request for '.$check_candidate['full_name'];
+                    // $message = '
+                    //     <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+                    //     <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+                    //     <br><br>Hi '.$check_candidate['full_name'].',<br> Your interview is scheduled successfully: <br/>';
+                    //     $message .='<br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+
+
+                    //    $send = sendEmail_JobRequest($email,$message,$subject);
+                        
+                    $this->load->view('fontend/confirmsucess',$data1);
+                }
+            }
+
+        }else{
+                        // To update job status
+                // $data_status=array( 
+                //     'status'        => 1,
+                //     'updated_by'    => $conn_id,
+                //     'updated_on'    => date('Y-m-d H:i:s'),
+                // );
+                // $where_update1 = "job_seeker_id='$jobseeker_id' AND connection_id='$conn_id'";
+                // $status = $this->Master_model->master_update($data_status, 'message_connections', $where_update1);
+                // if($status==true)
+                // {
+                //     $data['job_seeker_id'] = $job_seeker_id;
+                //     $data['email_id'] = $email_id;
+                //     $this->load->view('fontend/jobseeker/jobseeker_set_password',$data);
+                // }
+                redirect('register/jobseeker_login', 'refresh');
+            }
+                 
+              
+           // else{
+           //          redirect('register/jobseeker_login', 'refresh');
+           //      }
+    }
+
+
 }// end class
