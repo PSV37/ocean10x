@@ -55,7 +55,17 @@
             .text-center{
                 margin: 10px;
             }
-           
+            ul.msg_list li a .time {
+                font-size: 11px;
+                font-style: italic;
+                font-weight: bold;
+                position: absolute;
+                right: 35px;
+            }
+           ul.msg_list li a .message {
+                display: block !important;
+                font-size: 11px;
+            }
         </style>
 </head>
 
@@ -78,6 +88,7 @@
         <div class="navbar navbar-default" role="navigation">
           <div class="navbar-collapse collapse" id="nav-main">
             <ul class="nav navbar-nav">      
+            <?php  $job_seeker=$this->session->userdata('job_seeker_id'); ?>      
 
             <li role="presentation" class="dropdown" style="margin: 10px;" >
               <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false" style="font-size: 15px;">
@@ -121,7 +132,7 @@
             </li>          
               
             <li>
-            	<?php  $job_seeker=$this->session->userdata('job_seeker_id'); ?>                             
+            	                       
                 <ul class="nav navbar-nav navbar-right">
                   <li class="dropdown yamm-half membermenu hasmenu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
