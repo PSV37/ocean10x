@@ -54,6 +54,9 @@
             }
             .text-center{
                 margin: 10px;
+                padding: 5px;
+                height: 25px;
+                background-color: #cccccc;
             }
             ul.msg_list li a .time {
                 font-size: 11px;
