@@ -80,7 +80,7 @@
                 <i class="fa fa-envelope-o"></i>
                 <span class="badge bg-green" >5</span>
               </a>
-              <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+              <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu" style="width: 300px;">
                 <li>
                   <div class="text-center">
                     <a href="<?php echo base_url(); ?>">
