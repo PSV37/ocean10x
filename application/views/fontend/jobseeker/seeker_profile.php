@@ -124,7 +124,7 @@
                   ?>
                   <a href="#" class="btn btn-primary" disabled>Processing</a>
                 <?php }else if($connect_data['connect_status']==1){ ?>
-                  <a href="#" class="btn btn-primary" onclick="return openForm($intro_data['job_seeker_id']+','+$intro_data['full_name'])">Message</a>
+                  <a href="#" class="btn btn-primary" onclick="return openForm(<?php echo $intro_data['job_seeker_id'].','.$intro_data['full_name']; ?>)">Message</a>
                 <?php }else{
                 ?>
                   <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#connect" onclick="$('#js_id').val(<?php echo $intro_data['job_seeker_id']; ?>);">Connect</a>
