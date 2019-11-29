@@ -38,6 +38,20 @@
                 color: #DD4B39;
             }
 
+            .badge {
+                font-size: 10px;
+                font-weight: normal;
+                line-height: 13px;
+                padding: 2px 6px;
+                position: absolute;
+                right: -2px;
+                top: -8px;
+            }
+            .bg-green {
+                background: #1ABB9C !important;
+                border: 1px solid #1ABB9C !important;
+                color: #fff;
+            }
         </style>
 </head>
 
@@ -61,7 +75,7 @@
           <div class="navbar-collapse collapse" id="nav-main">
             <ul class="nav navbar-nav">      
 
-               <li role="presentation" class="dropdown" >
+            <!-- <li role="presentation" class="dropdown" >
               <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
                 <i class="fa fa-envelope-o"></i>
                 <span class="badge bg-green" >5</span>
@@ -100,7 +114,72 @@
                   </div>
                 </li>
               </ul>
-            </li>          
+            </li>           -->
+
+            <li role="presentation" class="nav-item dropdown open">
+            <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-envelope-o"></i>
+            <span class="badge bg-green">6</span>
+            </a>
+            <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
+            <li class="nav-item">
+            <a class="dropdown-item">
+            <span class="image"><img src="images/img.jpg" alt="Profile Image"></span>
+            <span>
+            <span>John Smith</span>
+            <span class="time">3 mins ago</span>
+            </span>
+            <span class="message">
+            Film festivals used to be do-or-die moments for movie makers. They were where...
+            </span>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a class="dropdown-item">
+            <span class="image"><img src="images/img.jpg" alt="Profile Image"></span>
+            <span>
+            <span>John Smith</span>
+            <span class="time">3 mins ago</span>
+            </span>
+            <span class="message">
+            Film festivals used to be do-or-die moments for movie makers. They were where...
+            </span>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a class="dropdown-item">
+            <span class="image"><img src="images/img.jpg" alt="Profile Image"></span>
+            <span>
+            <span>John Smith</span>
+            <span class="time">3 mins ago</span>
+            </span>
+            <span class="message">
+            Film festivals used to be do-or-die moments for movie makers. They were where...
+            </span>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a class="dropdown-item">
+            <span class="image"><img src="images/img.jpg" alt="Profile Image"></span>
+            <span>
+            <span>John Smith</span>
+            <span class="time">3 mins ago</span>
+            </span>
+            <span class="message">
+            Film festivals used to be do-or-die moments for movie makers. They were where...
+            </span>
+            </a>
+            </li>
+            <li class="nav-item">
+            <div class="text-center">
+            <a class="dropdown-item">
+            <strong>See All Alerts</strong>
+            <i class="fa fa-angle-right"></i>
+            </a>
+            </div>
+            </li>
+            </ul>
+            </li>
               
             <li>
             	<?php  $job_seeker=$this->session->userdata('job_seeker_id'); ?>                             
