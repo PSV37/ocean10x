@@ -52,26 +52,6 @@
                 border: 1px solid #1ABB9C !important;
                 color: #fff;
             }
-            .dropdown-menus {
-                box-shadow: none;
-                display: none;
-                float: left;
-                font-size: 12px;
-                left: 0;
-                list-style: none;
-                padding: 0;
-                position: absolute;
-                text-shadow: none;
-                top: 100%;
-                z-index: 9998;
-                border: 1px solid #D9DEE4;
-                border-top-left-radius: 0;
-                border-top-right-radius: 0;
-
-            }
-            .navbar-nav .open .dropdown-menus.msg_list {
-                width: 300px;
-            }
         </style>
 </head>
 
@@ -100,7 +80,7 @@
                 <i class="fa fa-envelope-o"></i>
                 <span class="badge bg-green" >5</span>
               </a>
-              <ul id="menu1" class="dropdown-menus list-unstyled msg_list" role="menu">
+              <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                 <li>
                   <div class="text-center">
                     <a href="<?php echo base_url(); ?>">
