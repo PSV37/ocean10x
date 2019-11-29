@@ -93,7 +93,17 @@
             <li role="presentation" class="dropdown" style="margin: 10px;" >
               <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false" style="font-size: 15px;">
                 <i class="fa fa-envelope-o"></i>
-                <span class="badge bg-green" >5</span>
+                <?php 
+                    $msgs = get_messagescount($job_seeker);
+                      if(!empty($msgs))
+                        foreach($msgs as $msgs_row)
+                        {
+                          if($msgs_row['total_msg']!=0)
+                          {
+                     ?>
+                    <span class="badge bg-green" ><?php echo $msgs_row['total_msg']; ?></span>
+                  <?php } }else{}
+                  ?>
               </a>
               <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu" style="width: 300px;">
                 <li>
