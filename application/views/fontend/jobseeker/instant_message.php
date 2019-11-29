@@ -36,7 +36,7 @@
               </td>
             
               <td>
-                <a href="<?php echo base_url(); ?>" class="btn btn-success btn-xs">View History</a>
+                <a href="#" class="btn btn-success btn-xs">View History</a>
               </td>
               
              
