@@ -111,7 +111,7 @@
               <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu" style="width: 300px;">
                 <li>
                   <div class="text-center">
-                    <a href="<?php echo base_url(); ?>" class="dropdown-item">
+                    <a href="<?php echo base_url(); ?>" class="dropdown-item" style="color: #1d1c1c !important;">
                       <strong>Mark All As Read</strong>
                     </a>
                   </div>
