@@ -485,9 +485,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
 
         $where_hlk = "job_seeker_id='$jobseeker_id' AND connection_id='$conn_id'";
         $result = $this->Master_model->get_master_row('message_connections', $select = FALSE, $where_hlk, $join = FALSE);
-        echo $rec = $result['id'];
-
-        echo $this->db->last_query(); 
+         $rec = $result['id'];
 
         $data_ck = array(
             'job_seeker_id' => "'".$conn_id."'",
@@ -513,7 +511,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 );
                 $where_u1['id']=$rec;
                 $status = $this->Master_model->master_update($data_status, 'message_connections', $where_u1);
-                 echo $this->db->last_query(); die;
+               
                 if($status==true)
                 {
                     $where_c = "job_seeker_id='$jobseeker_id'";
