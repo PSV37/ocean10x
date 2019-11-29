@@ -211,7 +211,7 @@ function get_metas() {
       // to fetch exam result by job seeker ids
     function get_messagescount($js_id){
         $CI = get_instance();
-        $select_result = "COUNT(test_id) as total_msg";
+        $select_result = "COUNT(chat_id) as total_msg";
         $table = "message_chat";
         $where_res['chat_js_id'] = $js_id;
         $exam_result = $CI->Master_model->getMaster($table, $where_res, false, false ,false, $select_result, $limit =false, $start =false, $search= false);

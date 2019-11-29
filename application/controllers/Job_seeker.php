@@ -1172,7 +1172,7 @@ public function user_profile()
         $where_sks1="job_seeker_id='$jobseeker_id'";
         $select_eml1="email,full_name";
         $sender_email = $this->Master_model->get_master_row("js_info", $select_eml1, $where_sks1, $join=FALSE);
-        $senderemail = $sender_email['email']; echo "<br>";
+        $senderemail = $sender_email['email']; 
         $sender_name = $sender_email['full_name'];
         
         $con_data = array(
