@@ -197,7 +197,7 @@
  <div class="chat-popup" id="myForm">
   <form action="/action_page.php" class="form-container">
     <h1>Message</h1>
-
+    <input type="text" name="send_to" id="send_to">
     <label for="msg"><b>Message</b></label>
     <textarea placeholder="Type message.." name="msg" required></textarea>
 
@@ -251,7 +251,8 @@
  </script>
  <script>
   function openForm(id) {
-    alert(id);
+    // alert(id);
+    $('#send_to').val(id);
     document.getElementById("myForm").style.display = "block";
   }
 
