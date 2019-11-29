@@ -166,7 +166,7 @@
               
                 <li>
                   <div class="text-center">
-                    <a href="<?php echo base_url(); ?>" class="dropdown-item">
+                    <a href="<?php echo base_url(); ?>" class="dropdown-item" style="color: #1d1c1c !important;">
                       <strong>See All Messages</strong>
                       <i class="fa fa-angle-right"></i>
                     </a>
