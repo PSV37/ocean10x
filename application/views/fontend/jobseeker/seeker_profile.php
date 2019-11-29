@@ -195,8 +195,9 @@
   </div><!-- end container -->
 </div><!-- end section -->
  <div class="chat-popup" id="myForm">
-  <form action="/action_page.php" class="form-container">
-    <h1>Message</h1>
+  
+    <form id="Career-info" class="form-container" action="<?php echo base_url('job_seeker/instant_message');?>" method="post">
+    <!-- <h1>Message</h1> -->
     <input type="hidden" name="send_to" id="send_to">
     <label for="msg"><b>Message</b></label>
     <textarea placeholder="Type message.." name="msg" required></textarea>
