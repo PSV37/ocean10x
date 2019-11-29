@@ -1073,9 +1073,13 @@ public function search(){
             $created_on = date('Y-m-d H:i:s');
             $cenvertedTime = date('Y-m-d H:i:s',strtotime('+5 hour +30 minutes',strtotime($created_on)));
 
+            $where_sks="job_seeker_id='$jobseeker_id' AND connection_id='$send_to'";
+            $connect_data = $this->Master_model->get_master_row("message_connections", $select= FALSE, $where_sks, $join=FALSE);
+
+
             $con_data   = array(
                 'job_seeker_id'    => $jobseeker_id,
-                'connection_id'    => $jobseeker_id,
+                'connection_id'    => $connect_data['id'],
                 'chat_js_id'       => $this->input->post('send_to'),
                 'message_desc'     => $this->input->post('user_msg'),
                 'created_on'       => $cenvertedTime,
