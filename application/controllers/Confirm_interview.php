@@ -497,7 +497,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             $check_res1 = $this->Master_model->get_master_row('message_connections', $select = FALSE, $where_chlk, $join = FALSE);
         if($check_res1)
             {
-                $this->load->view('fontend/alreadyconfirmed');
+                $this->load->view('fontend/alreadyconnected');
             } else {
 
                 $data_status=array( 
@@ -521,32 +521,13 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
 
                     //    $send = sendEmail_JobRequest($email,$message,$subject);
                         
-                    $this->load->view('fontend/confirmsucess',$data1);
+                    $this->load->view('fontend/accept_invitation');
                 }
             }
 
         }else{
-                        // To update job status
-                // $data_status=array( 
-                //     'status'        => 1,
-                //     'updated_by'    => $conn_id,
-                //     'updated_on'    => date('Y-m-d H:i:s'),
-                // );
-                // $where_update1 = "job_seeker_id='$jobseeker_id' AND connection_id='$conn_id'";
-                // $status = $this->Master_model->master_update($data_status, 'message_connections', $where_update1);
-                // if($status==true)
-                // {
-                //     $data['job_seeker_id'] = $job_seeker_id;
-                //     $data['email_id'] = $email_id;
-                //     $this->load->view('fontend/jobseeker/jobseeker_set_password',$data);
-                // }
                 redirect('register/jobseeker_login', 'refresh');
             }
-                 
-              
-           // else{
-           //          redirect('register/jobseeker_login', 'refresh');
-           //      }
     }
 
 
