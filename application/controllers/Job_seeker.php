@@ -1174,12 +1174,15 @@ public function user_profile()
         $sender_email = $this->Master_model->get_master_row("js_info", $select_eml1, $where_sks1, $join=FALSE);
         $senderemail = $sender_email['email']; 
         $sender_name = $sender_email['full_name'];
+
+        $created_on = date('Y-m-d H:i:s');
+        $cenvertedTime = date('Y-m-d H:i:s',strtotime('+5 hour +30 minutes',strtotime($created_on)));
         
         $con_data = array(
             'job_seeker_id' => $jobseeker_id,
             'connection_id' => $connecter_id,
-            'created_on' => date('Y-m-d H:i:s'),
-            'created_by' => $jobseeker_id,
+            'created_on'    => $cenvertedTime,
+            'created_by'    => $jobseeker_id,
         );
         $cid = $this->Master_model->master_insert($con_data,'message_connections');
         if($cid){
@@ -1188,8 +1191,8 @@ public function user_profile()
                 'connection_id' => $cid,
                 'chat_js_id'    => $connecter_id,
                 'message_desc'  => $message,
-                'created_on' => date('Y-m-d H:i:s'),
-                'created_by' => $jobseeker_id,
+                'created_on'    => $cenvertedTime,
+                'created_by'    => $jobseeker_id,
             );
             $chtid = $this->Master_model->master_insert($con_data,'message_chat');
 
