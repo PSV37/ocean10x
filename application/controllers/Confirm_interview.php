@@ -493,7 +493,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 $data['job_seeker_id'] = $rows['job_seeker_id'];
             }
             $this->session->set_userdata($data);
-            $where_chlk = "job_seeker_id='$jobseeker_id' AND connection_id='$conn_id' AND status='1'";
+            $where_chlk = "job_seeker_id='$jobseeker_id' AND connection_id='$conn_id' AND connect_status='1'";
             $check_res1 = $this->Master_model->get_master_row('message_connections', $select = FALSE, $where_chlk, $join = FALSE);
         if($check_res1)
             {
@@ -501,7 +501,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             } else {
 
                 $data_status=array( 
-                    'status'        => 1,
+                    'connect_status'        => 1,
                     'updated_by'    => $conn_id,
                     'updated_on'    => date('Y-m-d H:i:s'),
                 );
