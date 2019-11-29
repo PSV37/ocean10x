@@ -214,6 +214,7 @@ function get_metas() {
         $select_result = "COUNT(chat_id) as total_msg";
         $table = "message_chat";
         $where_res['chat_js_id'] = $js_id;
+        $where_res['status'] = 0;
         $exam_result = $CI->Master_model->getMaster($table, $where_res, false, false ,false, $select_result, $limit =false, $start =false, $search= false);
      //   echo $CI->db->last_query(); die;
 
