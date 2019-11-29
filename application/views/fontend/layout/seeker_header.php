@@ -52,6 +52,10 @@
                 border: 1px solid #1ABB9C !important;
                 color: #fff;
             }
+            .text-center{
+                margin: 10px;
+            }
+           
         </style>
 </head>
 
