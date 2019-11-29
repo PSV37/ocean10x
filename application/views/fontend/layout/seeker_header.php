@@ -114,21 +114,44 @@
                   </div>
                 </li>
                
-                <li style="background-color: #ccc;">
+                  <?php 
+                    $msg = get_messages($job_seeker);
+                      if(!empty($msg))
+                      foreach($msg as $msg_row)
+                      {
+                        $date = strtotime($msg_row['created_on']);
+                        $dat = date('m/d/y', $date);
+                        $tme = date('H:m:s A',$date);
+                    ?>
 
-                  <a data-toggle="modal" data-target="#myMsgModal">
-                    <span>
-                      <span>name</span>
-                        <span><i class="fa fa-paperclip"></i></span>
-                      <span class="time">
-                        time
-                      </span> 
-                    </span>
-                    <span class="message">
-                        message...
-                    </span>
-                  </a>
-                </li>
+
+                    <li <?php if($msg_row['status']==0){?>style="background-color: #ccc;" <?php }else{} ?>>
+
+                      <a data-toggle="modal" data-target="#myMsgModal">
+                        <span>
+                          <span><?php echo $msg_row['job_seeker_id']; ?></span>
+                          <span class="time">
+                          <?php 
+
+                            $mtime = time_ago_in_php($msg_row['created_on']);
+                            echo $mtime;
+
+                            
+                          ?></span> 
+                        </span>
+                        <span class="message">
+                         <?php 
+                            $message = $msg_row['message_desc'];
+                            if(strlen($message)>30)
+                            {
+                              echo substr($message, 0, 50);
+                             echo '...';  
+                            }else{echo $message; }
+                         ?>
+                        </span>
+                      </a>
+                    </li>
+                  <?php } ?>
               
                 <li>
                   <div class="text-center">
