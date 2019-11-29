@@ -511,6 +511,8 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 $status = $this->Master_model->master_update($data_status, 'message_connections', $where_update1);
                 if($status==true)
                 {
+                    $where_c = "job_seeker_id='$jobseeker_id'";
+                    $data['sender'] = $this->Master_model->get_master_row('js_info', $select = FALSE, $where_c, $join = FALSE);
 
                     //$email = $email_id;
                     // $subject = 'CONFIRMED. Interview request for '.$check_candidate['full_name'];
@@ -523,7 +525,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
 
                     //    $send = sendEmail_JobRequest($email,$message,$subject);
                         
-                    $this->load->view('fontend/accept_invitation');
+                    $this->load->view('fontend/accept_invitation',$data);
                 }
             }
 

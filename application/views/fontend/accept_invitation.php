@@ -16,10 +16,10 @@ $jobseeker_id = $this->session->userdata('job_seeker_id');
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <div class="userccount">
-        	 <h2 align="center">Success <span>!</span></h2> 
-            <p>You are now connected. <br>
-              <br>Please go to <a href="<?php echo base_url(); ?>">Home </a> or search something from search form.</p>
-              <div class="backtohome"><a href="<?php echo base_url(); ?>" class="btn btn-custom">Back to Home</a></div>
+        	  <h2 align="center">Success <span>!</span></h2> 
+            <p>You are now connected with <?php if(!empty($sender)) echo $sender['full_name']; ?>. <br>
+            <br>Please go to <a href="<?php echo base_url(); ?>">Home </a> or search something from search form.</p>
+            <div class="backtohome"><a href="<?php echo base_url(); ?>" class="btn btn-custom">Back to Home</a></div>
         </div>
       </div>
     </div>
