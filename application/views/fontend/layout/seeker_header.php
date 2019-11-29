@@ -81,6 +81,46 @@
                   </li>
               </ul>
             </li>
+            <li role="presentation" class="dropdown" >
+              <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-envelope-o"></i>
+                <span class="badge bg-green" >5</span>
+              </a>
+              <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                <li>
+                  <div class="text-center">
+                    <a href="<?php echo base_url(); ?>">
+                      <strong>Mark All As Read</strong>
+                    </a>
+                  </div>
+                </li>
+               
+                <li style="background-color: #ccc;">
+
+                  <a data-toggle="modal" data-target="#myMsgModal">
+                    <span>
+                      <span>name</span>
+                        <span><i class="fa fa-paperclip"></i></span>
+                      <span class="time">
+                        time
+                      </span> 
+                    </span>
+                    <span class="message">
+                        message...
+                    </span>
+                  </a>
+                </li>
+              
+                <li>
+                  <div class="text-center">
+                    <a href="<?php echo base_url(); ?>">
+                      <strong>See All Messages</strong>
+                      <i class="fa fa-angle-right"></i>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </li>
                     
             </ul>
             <!-- Nav collapes end --> 
