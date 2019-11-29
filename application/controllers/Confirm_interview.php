@@ -480,6 +480,8 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
     {
         $jobseeker_id = base64_decode($this->input->get('apply_id'));
         $conn_id =base64_decode($this->input->get('connection_id'));
+        $created_on = date('Y-m-d H:i:s');
+        $cenvertedTime = date('Y-m-d H:i:s',strtotime('+5 hour +30 minutes',strtotime($created_on)));
 
         $data_ck = array(
             'job_seeker_id' => "'".$conn_id."'",
@@ -503,7 +505,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 $data_status=array( 
                     'connect_status'        => 1,
                     'updated_by'    => $conn_id,
-                    'updated_on'    => date('Y-m-d H:i:s'),
+                    'updated_on'    => $cenvertedTime,
                 );
                 $where_update1 = "job_seeker_id='$jobseeker_id' AND connection_id='$conn_id'";
                 $status = $this->Master_model->master_update($data_status, 'message_connections', $where_update1);
