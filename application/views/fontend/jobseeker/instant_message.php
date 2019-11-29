@@ -21,11 +21,15 @@
           <?php
             $sr_no=0;
             // print_r($saved_job_data);
-           if (!empty($saved_job_data)): foreach ($saved_job_data as $js_row) : $sr_no++; ?>
+           if (!empty($saved_job_data)): foreach ($saved_job_data as $js_row) : $sr_no++; 
+
+            ?>
+
             <tr>
               <td><?php echo $sr_no; ?></td>
               <td>
-               <?php echo $js_row['chat_js_id']; ?>
+                <?php echo $this->Job_seeker_model->jobseeker_name($js_row['chat_js_id']); ?>
+               <!-- <?php echo $js_row['chat_js_id']; ?> -->
               </td>
                <td>
                <?php echo $js_row['message_desc']; ?>
