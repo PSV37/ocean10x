@@ -1163,10 +1163,10 @@ public function user_profile()
         $connecter_id = $this->input->post('js_id');
         $message = addslashes($this->input->post('message'));
 
-        $where_sks="job_seeker_id='$connecter_id'";
+        $where_sks="job_seeker_id='$connecter_id' AND job_seeker_id='$jobseeker_id'";
         $select_eml="email,full_name";
         $emails = $this->Master_model->get_master_row("js_info", $select_eml, $where_sks, $join=FALSE);
-        echo   $email = $emails['email'];
+        echo   $email = $emails['email']; echo "<br>";
         echo   $name = $emails['full_name'];
          die;
         $con_data = array(
@@ -1187,17 +1187,16 @@ public function user_profile()
             );
             $chtid = $this->Master_model->master_insert($con_data,'message_chat');
 
-        
-            // $subject = 'CONFIRMED. Interview request for '.$check_candidate['full_name'];
-            // $message = '
-            //     <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
-            //     <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
-            //     <br><br>Hi '.$check_candidate['full_name'].',<br> Your interview is scheduled successfully: <br/>';
+            $subject = 'Hi '.$name.', please add me to your professional network';
+            $message = '
+                <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+                <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+                <br><br>Hi '.$name.', I would like to join your Ocean network <br/>';
 
-            //     $message .='<br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+                $message .='<br><a href="'.base_url().'job_forword_seeker/apply_forworded_job?apply_id='.base64_encode($jobseeker_id).'&js_id='.base64_encode($connecter_id).'" class="btn btn-primary" value="Apply Now" align="center" target="_blank">Accept</a> <br><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
 
 
-            //    $send = sendEmail_JobRequest($email,$message,$subject);
+               $send = sendEmail_JobRequest($email,$message,$subject);
         }
         $this->session->set_flashdata('con_message','<div class="alert alert-success text-center">Connection request sent successfully!</div>');
 
