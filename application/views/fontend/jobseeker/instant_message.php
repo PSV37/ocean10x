@@ -13,30 +13,26 @@
             <tr>
               <th>Sr.No</th>
               <th>Name</th>
-              <th>Profession</th>
-              <th>Email Date</th>
+              <th>Message</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
           <?php
             $sr_no=0;
-            print_r($saved_job_data);
-           if (!empty($seeker_data)): foreach ($seeker_data as $js_row) : $sr_no++; ?>
+            // print_r($saved_job_data);
+           if (!empty($saved_job_data)): foreach ($saved_job_data as $js_row) : $sr_no++; ?>
             <tr>
               <td><?php echo $sr_no; ?></td>
               <td>
-               <?php echo $js_row['full_name']; ?>
-              </td>
-              <td>
-               <?php echo $js_row['profession']; ?>
+               <?php echo $js_row['chat_js_id']; ?>
               </td>
                <td>
-               <?php echo $js_row['email']; ?>
+               <?php echo $js_row['message_desc']; ?>
               </td>
             
               <td>
-                <a href="<?php echo base_url(); ?>" class="btn btn-success btn-xs">View Profile</a>
+                <a href="<?php echo base_url(); ?>" class="btn btn-success btn-xs">View History</a>
               </td>
               
              
