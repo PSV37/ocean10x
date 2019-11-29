@@ -116,7 +116,7 @@
                
                   <?php 
                     $msg = get_messages($job_seeker);
-                      if(!empty($msg))
+                      if(!empty($msg)){
                       foreach($msg as $msg_row)
                       {
                         $date = strtotime($msg_row['created_on']);
@@ -148,6 +148,14 @@
                              echo '...';  
                             }else{echo $message; }
                          ?>
+                        </span>
+                      </a>
+                    </li>
+                  <?php } } else{?>
+                    <li style="background-color: #ccc;">
+                        <a>
+                        <span>
+                          No Message Found..
                         </span>
                       </a>
                     </li>
