@@ -67,7 +67,7 @@
                   $eid =$msg_his['created_by'];
           ?>
             <div class="cont">
-              <strong><?php echo $msg_his['chat_js_id']; ?></strong>
+              <strong><?php echo $msg_his['created_by']; ?></strong>
               <span class="time-right"><?php echo $month.' At '. $time; ?></span>
               <p><?php echo $msg_his['message_desc']; ?></p>
             </div>
