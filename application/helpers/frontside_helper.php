@@ -251,7 +251,7 @@ function get_metas() {
 
     function get_notifications($js_id){
         $CI = get_instance();
-        $select_result = "message_chat.message_desc,message_chat.status,js_info.full_name,message_connections.id,message_connections.created_on,message_connections.connection_id";
+        $select_result = "message_chat.message_desc,message_chat.status,js_info.full_name,message_connections.id,message_connections.created_on,message_connections.job_seeker_id";
         $table = "message_connections";
         $where_res="message_connections.connection_id = '$js_id' order by chat_id desc";
         $join = array(

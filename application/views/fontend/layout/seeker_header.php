@@ -193,9 +193,9 @@
               <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu" style="width: 300px;">
                
                   <?php 
-                    $msg = get_notifications($job_seeker);
-                      if(!empty($msg)){
-                      foreach($msg as $msg_row)
+                    $noti = get_notifications($job_seeker);
+                      if(!empty($noti)){
+                      foreach($noti as $msg_row)
                       {
                         $date = strtotime($msg_row['created_on']);
                         $dat = date('m/d/y', $date);
@@ -205,7 +205,7 @@
 
                     <li <?php if($msg_row['status']==0){?>style="background-color: #ccc;margin: 5px;" <?php }else{?> style="margin: 5px;"<?php } ?> >
 
-                      <a data-toggle="modal" data-target="#myMsgModal">
+                      <a href="<?php echo base_url(); ?>seeker/seeker-profile?seeker_id=<?php echo base64_encode($msg_row['job_seeker_id'];) ?>">
                         <span>
                           <span><?php echo $msg_row['full_name']; ?></span>
                           <span class="time">
