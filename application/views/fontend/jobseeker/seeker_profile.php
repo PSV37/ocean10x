@@ -118,12 +118,20 @@
                   <p><?php echo $personal_data['city_name'].', '.$personal_data['state_name'].', '.$personal_data['country_name']; ?></p>
                 </div>
                 <div class="col-md-4">
-                  <?php   
+                <?php   
+                 $jobseeker_id   = $this->session->userdata('job_seeker_id');
                   if (!empty($connect_data)) {
+
                     if($connect_data['connect_status']==0){
-                  ?>
+
+                      if($connect_data['created_by']!=$jobseeker_id)
+                        {
+                ?>
                   <a href="#" class="btn btn-primary" disabled>Awaiting</a>
-                <?php }else if($connect_data['connect_status']==1){ ?>
+
+                <?php }else{ ?>
+                   <a href="#" class="btn btn-primary">Accept</a>
+                <?php } }else if($connect_data['connect_status']==1){ ?>
                   <a href="#" class="btn btn-primary" onclick="openForm(<?php echo $intro_data['job_seeker_id']; ?>)">Message</a>
                 <?php }else{
                 ?>
