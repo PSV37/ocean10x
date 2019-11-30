@@ -123,8 +123,8 @@
                   if (!empty($connect_data)) {
 
                     if($connect_data['connect_status']==0){
-                      echo $connect_data['created_by'];
-                      if($connect_data['created_by']!=$jobseeker_id)
+                      //echo $connect_data['created_by'];
+                      if($connect_data['created_by']==$jobseeker_id)
                         {
                 ?>
                   <a href="#" class="btn btn-primary" disabled>Awaiting</a>
