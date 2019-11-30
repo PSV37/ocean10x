@@ -1256,6 +1256,48 @@ public function user_profile()
         $this->load->view('fontend/jobseeker/message_history',$data);
    }
 
+   
+    public function all_notifications()
+    {
+        $jobseeker_id    = $this->session->userdata('job_seeker_id');
+        if ($_POST) {
+
+            $send_to = $this->input->post('send_to');
+            $created_on = date('Y-m-d H:i:s');
+            $cenvertedTime = date('Y-m-d H:i:s',strtotime('+5 hour +30 minutes',strtotime($created_on)));
+
+            $where_sks="(job_seeker_id='$jobseeker_id' AND connection_id='$send_to') OR (job_seeker_id='$send_to' AND connection_id='$jobseeker_id')";
+            $connect_data = $this->Master_model->get_master_row("message_connections", $select= FALSE, $where_sks, $join=FALSE);
+
+            $con_data   = array(
+                'job_seeker_id'    => $jobseeker_id,
+                'connection_id'    => $connect_data['id'],
+                'chat_js_id'       => $this->input->post('send_to'),
+                'message_desc'     => $this->input->post('user_msg'),
+                'created_on'       => $cenvertedTime,
+                'created_by'       => $jobseeker_id,
+            );
+           $this->Master_model->master_insert($con_data,'message_chat');
+
+           $seeker_data = $this->Master_model->getMaster('js_info',$where="js_status=1");
+            $connection_requests = $this->Master_model->getMaster('message_connections',$where=false);
+           
+            echo $this->load->view('fontend/jobseeker/instant_message', compact('connection_requests','seeker_data'),true);
+
+        } else {
+            $wheremsg = "message_connections.connection_id = '$jobseeker_id' order by id desc";
+            $join_save = array(
+                'js_info' => 'js_info.job_seeker_id=message_connections.created_by | left outer',
+                'message_chat' => 'message_chat.connection_id=message_connections.id | left outer',
+            );
+            $select_result = "message_chat.message_desc,message_chat.status,js_info.full_name,message_connections.id,message_connections.created_on,message_connections.job_seeker_id";
+            $notification_data = $this->Master_model->getMaster("message_connections", $wheremsg, $join_save, $order = false, $field = false, $select_result,$limit=false,$start=false, $search=false);
+         
+           
+            echo $this->load->view('fontend/jobseeker/notification', compact('connection_requests','seeker_data','saved_job_data'),true);
+        }
+    }
+
 } //end function
 
 

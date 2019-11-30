@@ -241,7 +241,7 @@
               
                 <li>
                   <div class="text-center">
-                    <a href="<?php echo base_url(); ?>seeker/instant-message" class="dropdown-item" style="color: #1d1c1c !important;">
+                    <a href="<?php echo base_url(); ?>seeker/all-notifications" class="dropdown-item" style="color: #1d1c1c !important;">
                       <strong>See All Notification</strong>
                       <i class="fa fa-angle-right"></i>
                     </a>
