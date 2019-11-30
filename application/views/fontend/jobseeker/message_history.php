@@ -65,6 +65,8 @@
                   $month = date("M-d", strtotime($dt));
                   $time = date("h:i A",strtotime($dt));
                   $eid =$msg_his['created_by'];
+                  if($eid==$jobseeker_id)
+                  {
           ?>
             <div class="cont">
               <strong><?php echo $this->Job_seeker_model->jobseeker_name($msg_his['created_by']); ?></strong>
@@ -72,7 +74,14 @@
               <p><?php echo $msg_his['message_desc']; ?></p>
             </div>
           
-          <?php } ?>
+           <?php }else{ ?>
+              <div class="cont darker">
+                <strong><?php echo $msg_his['emp_name']; ?></strong>
+                <span class="time-right"><?php echo $month.' At '. $time; ?></span>
+                <p><?php echo $msg_his['message']; ?></p>
+                
+              </div>
+            <?php } }?>
       </div>
     </div> <!--end row -->
   </div><!-- end container -->
