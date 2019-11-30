@@ -123,7 +123,7 @@
                   if (!empty($connect_data)) {
 
                     if($connect_data['connect_status']==0){
-
+                      echo $connect_data['created_by'];
                       if($connect_data['created_by']!=$jobseeker_id)
                         {
                 ?>
