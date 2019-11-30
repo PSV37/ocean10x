@@ -183,10 +183,10 @@
                       if(!empty($msgs))
                         foreach($msgs as $msgs_row)
                         {
-                          if($msgs_row['total_msg']!=0)
+                          if($msgs_row['total_notifications']!=0)
                           {
                      ?>
-                    <span class="badge bg-green" ><?php echo $msgs_row['total_msg']; ?></span>
+                    <span class="badge bg-green" ><?php echo $msgs_row['total_notifications']; ?></span>
                   <?php } }else{}
                   ?>
               </a>
