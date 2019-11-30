@@ -1246,16 +1246,18 @@ public function user_profile()
         redirect('job_seeker/my_dashboard');
    }
 
-   public function message_history($id=null)
+   public function message_history($chat_js_id=null)
    {
         $jobseeker_id    = $this->session->userdata('job_seeker_id');
         $connecter_id = $id;
         if (!empty($id)) {
-            $wheremsg = "chat_js_id='$id'";
-            $saved_job_data = $this->Master_model->getMaster("message_chat", $wheremsg, $join = false, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
-            echo $this->db->last_query();
-            echo "<pre>";
-            print_r($saved_job_data);
+            $wheremsg = "(created_by='$jobseeker_id' AND chat_js_id='$chat_js_id') OR (created_by='$chat_js_id' AND chat_js_id='$jobseeker_id')";
+            $data['message_history'] = $this->Master_model->getMaster("message_chat", $wheremsg, $join = false, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+            // echo $this->db->last_query();
+            // echo "<pre>";
+            // print_r($saved_job_data);
+
+            $this->load->view('fontend/jobseeker/message_history',$data);
         }
        
             // $saved_job_data = $this->Master_model-> getList($condition= FALSE, $field_by= FALSE, $order_by= 'chat_id desc', $offset= FALSE, $perpage= FALSE, 'message_chat', $search= FALSE, $join = FALSE, $wheremsg, $select = FALSE, $distinct = FALSE, $group_by = 'chat_js_id');
