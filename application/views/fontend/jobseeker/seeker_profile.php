@@ -130,8 +130,7 @@
                   <a href="#" class="btn btn-primary" disabled>Awaiting</a>
 
                 <?php }else{ ?>
-                   <a href="#" class="btn btn-primary">Accept</a>
-                   <a href="<?php echo base_url();?>confirm_interview/accept_invitation?apply_id=<?php echo base64_encode($jobseeker_id); ?>&connection_id=<?php echo base64_encode($connect_data['created_by']); ?>" class="btn btn-primary" value="Accept" align="center" target="_blank">Accept</a>
+                  <a href="<?php echo base_url();?>confirm_interview/accept_invitation?apply_id=<?php echo base64_encode($jobseeker_id); ?>&connection_id=<?php echo base64_encode($connect_data['created_by']); ?>" class="btn btn-primary" value="Accept" align="center" target="_blank">Accept</a>
                 <?php 
                       } 
                     }else if($connect_data['connect_status']==1){ ?>
