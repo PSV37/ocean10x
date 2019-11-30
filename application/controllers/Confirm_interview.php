@@ -483,7 +483,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $created_on = date('Y-m-d H:i:s');
         $cenvertedTime = date('Y-m-d H:i:s',strtotime('+5 hour +30 minutes',strtotime($created_on)));
 
-        $where_hlk = "job_seeker_id='$jobseeker_id' AND connection_id='$conn_id'";
+        $where_hlk = "(job_seeker_id='$jobseeker_id' AND connection_id='$conn_id') OR (job_seeker_id='$conn_id' AND connection_id='$jobseeker_id')";
         $result = $this->Master_model->get_master_row('message_connections', $select = FALSE, $where_hlk, $join = FALSE);
          $rec = $result['id'];
         echo $this->db->last_query(); die;
