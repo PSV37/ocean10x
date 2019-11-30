@@ -101,7 +101,7 @@ $route['seeker/interview-calendar']="job_seeker/interview_calendar";
 $route['seeker/my-saved-jobs']="job_seeker/my_saved_jobs";
 $route['seeker/instant-message']="job_seeker/instant_message";
 $route['seeker/seeker-profile']="job_seeker/user_profile";
-
+$route['seeker/message-history/(:num)']="job_seeker/message_history/$1";
 
 $route['seeker-login']="register/jobseeker_login";
 

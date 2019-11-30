@@ -43,7 +43,7 @@
               </td>
             
               <td>
-                <a href="#" class="btn btn-success btn-xs">View History</a>
+                <a href="<?php echo base_url(); ?>seeker/message-history/<?php echo $js_row['chat_js_id']; ?>" class="btn btn-success btn-xs">View History</a>
               </td>
               
              

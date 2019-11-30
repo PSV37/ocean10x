@@ -1246,6 +1246,18 @@ public function user_profile()
         redirect('job_seeker/my_dashboard');
    }
 
+   public function message_history($id=null)
+   {
+        $jobseeker_id    = $this->session->userdata('job_seeker_id');
+        $connecter_id = $id;
+        if (!empty($id)) {
+            $wheremsg = "chat_js_id='$id'";
+            $saved_job_data = $this->Master_model->getMaster("message_chat", $where_edu, $join_save, $order = false, $field = false, $select_edu,$limit=false,$start=false, $search=false);
+        }
+       
+            // $saved_job_data = $this->Master_model-> getList($condition= FALSE, $field_by= FALSE, $order_by= 'chat_id desc', $offset= FALSE, $perpage= FALSE, 'message_chat', $search= FALSE, $join = FALSE, $wheremsg, $select = FALSE, $distinct = FALSE, $group_by = 'chat_js_id');
+   }
+
 } //end function
 
 
