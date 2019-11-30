@@ -1,3 +1,7 @@
+<?php 
+    $this->load->view('fontend/layout/seeker_header.php');
+?>                
+   
 <style>
 .cont {
   border: 2px solid #dedede;
@@ -46,50 +50,43 @@
 }
 </style>
 <!-- page content -->
-<div class="right_col" role="main">
-  <div class="">
-            
-      <div class="clearfix"></div>
-
-        <div class="row">
-
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="x_panel">
-              <div class="x_title">
-                <h2>Message History</h2> 
-                  <ul class="nav navbar-right panel_toolbox">
-                    <a href="<?php echo base_url(); ?>seeker/instant-message"><button class="btn btn-primary btn-sm deal-value"><i class="fa fa-back"></i>Go To Back</button></a>
-                  </ul>
-                <div class="clearfix"></div>
-              </div>
-              <div class="x_content">
+<div class="section lb">
+  <div class="container">
+    <div class="row">
+      <?php $this->load->view('fontend/layout/seeker_left.php'); ?>
+      <div class="content col-md-9">
+        <div class="x_title">
+          <h2>Message History</h2> 
+            <ul class="nav navbar-right panel_toolbox">
+              <a href="<?php echo base_url(); ?>seeker/instant-message"><button class="btn btn-primary btn-sm deal-value"><i class="fa fa-back"></i>Go To Back</button></a>
+            </ul>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+          <h2>Chat Messages</h2>
+          <?php 
+            $jobseeker_id    = $this->session->userdata('job_seeker_id');
+           
+              if(!empty($message_history))
+              foreach($message_history as $msg_his)
+                {
+                  $dt =$msg_his['created_on'];
+                  $month = date("M-d", strtotime($dt));
+                  $time = date("h:i A",strtotime($dt));
+                  $eid =$msg_his['created_by'];
+          ?>
+            <div class="cont">
+              <strong><?php echo $msg_his['chat_js_id']; ?></strong>
+              <span class="time-right"><?php echo $month.' At '. $time; ?></span>
+              <p><?php echo $msg_his['message_desc']; ?></p>
+            </div>
           
-              <h2>Chat Messages</h2>
-              <?php 
-              $jobseeker_id    = $this->session->userdata('job_seeker_id');
-             
-                if(!empty($message_history))
-                foreach($message_history as $msg_his)
-                  {
-                      $dt =$msg_his['created_on'];
-                      $month = date("M-d", strtotime($dt));
-                      $time = date("h:i A",strtotime($dt));
-                      $eid =$msg_his['created_by'];
-              ?>
-              <div class="cont">
-                <strong><?php echo $msg_his['chat_js_id']; ?></strong>
-                <span class="time-right"><?php echo $month.' At '. $time; ?></span>
-                <p><?php echo $msg_his['message_desc']; ?></p>
-              </div>
-            
-            <?php } ?>
-              
-          </div>
+          <?php } ?>
         </div>
       </div>
+    </div> <!--end row -->
+  </div><!-- end container -->
+</div><!-- end section -->
 
-    </div>
-  </div>
-</div>
 <!-- /page content -->
-
+<?php $this->load->view("fontend/layout/footer.php"); ?>
