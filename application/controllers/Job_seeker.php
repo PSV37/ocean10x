@@ -1252,11 +1252,8 @@ public function user_profile()
         $connecter_id = $id;
         if (!empty($id)) {
             $wheremsg = "(created_by='$jobseeker_id' AND chat_js_id='$chat_js_id') OR (created_by='$chat_js_id' AND chat_js_id='$jobseeker_id')";
-            $data['message_history'] = $this->Master_model->getMaster("message_chat", $wheremsg, $join = false, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
-            // echo $this->db->last_query();
-            // echo "<pre>";
-            // print_r($saved_job_data);
-
+            $data['message_data'] = $this->Master_model->getMaster("message_chat", $wheremsg, $join = false, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+            
             $this->load->view('fontend/jobseeker/message_history',$data);
         }
        

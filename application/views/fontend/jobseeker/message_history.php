@@ -67,8 +67,8 @@
           <?php 
             $jobseeker_id    = $this->session->userdata('job_seeker_id');
            
-              if(!empty($message_history))
-              foreach($message_history as $msg_his)
+              if(!empty($message_data))
+              foreach($message_data as $msg_his)
                 {
                   $dt =$msg_his['created_on'];
                   $month = date("M-d", strtotime($dt));
