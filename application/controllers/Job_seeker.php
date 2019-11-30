@@ -1252,7 +1252,7 @@ public function user_profile()
         $connecter_id = $id;
         if (!empty($id)) {
             $wheremsg = "chat_js_id='$id'";
-            $saved_job_data = $this->Master_model->getMaster("message_chat", $where_edu, $join = false, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+            $saved_job_data = $this->Master_model->getMaster("message_chat", $wheremsg, $join = false, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
             echo $this->db->last_query();
             echo "<pre>";
             print_r($saved_job_data);
