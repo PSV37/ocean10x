@@ -100,7 +100,7 @@
               </td>
             
               <td>
-                <a href="#" class="btn btn-primary" onclick="openForm(<?php echo $js_row['chat_js_id']; ?>)">Message</a>
+                <a href="#" class="btn btn-primary btn-xs" onclick="openForm(<?php echo $js_row['chat_js_id']; ?>)">Message</a>
                 <a href="<?php echo base_url(); ?>seeker/message-history/<?php echo $js_row['chat_js_id']; ?>" class="btn btn-success btn-xs">View History</a>
               </td>
               
