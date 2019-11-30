@@ -497,7 +497,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             $data['job_seeker_id'] = $validate['job_seeker_id'];
            
             $this->session->set_userdata($data);
-            $where_chlk = "job_seeker_id='$jobseeker_id' AND connection_id='$conn_id' AND connect_status='1'";
+            $where_chlk = "(job_seeker_id='$jobseeker_id' AND connection_id='$conn_id' AND connect_status='1') OR (job_seeker_id='$conn_id' AND connection_id='$jobseeker_id' AND connect_status='1')";
             $check_res1 = $this->Master_model->get_master_row('message_connections', $select = FALSE, $where_chlk, $join = FALSE);
         if($check_res1)
             {
