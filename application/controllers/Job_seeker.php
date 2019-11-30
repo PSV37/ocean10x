@@ -1085,10 +1085,12 @@ public function search(){
             );
            $this->Master_model->master_insert($con_data,'message_chat');
 
-           $seeker_data = $this->Master_model->getMaster('js_info',$where="js_status=1");
-            $connection_requests = $this->Master_model->getMaster('message_connections',$where=false);
+            $wheremsg = "created_by='$jobseeker_id'";
+            // $saved_job_data = $this->Master_model->getMaster("message_chat", $where_edu, $join_save, $order = false, $field = false, $select_edu,$limit=false,$start=false, $search=false);
+            $saved_job_data = $this->Master_model-> getList($condition= FALSE, $field_by= FALSE, $order_by= 'chat_id desc', $offset= FALSE, $perpage= FALSE, 'message_chat', $search= FALSE, $join = FALSE, $wheremsg, $select = FALSE, $distinct = FALSE, $group_by = 'chat_js_id');
+
            
-            echo $this->load->view('fontend/jobseeker/instant_message', compact('connection_requests','seeker_data'),true);
+            echo $this->load->view('fontend/jobseeker/instant_message', compact('connection_requests','seeker_data','saved_job_data'),true);
 
         } else {
             $wheremsg = "created_by='$jobseeker_id'";
