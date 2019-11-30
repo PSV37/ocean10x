@@ -191,16 +191,9 @@
                   ?>
               </a>
               <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu" style="width: 300px;">
-                <li>
-                  <div class="text-center">
-                    <a href="<?php echo base_url(); ?>job_seeker/ReadAllMessages" class="dropdown-item" style="color: #1d1c1c !important;">
-                      <strong>Mark All As Read</strong>
-                    </a>
-                  </div>
-                </li>
                
                   <?php 
-                    $msg = get_messages($job_seeker);
+                    $msg = get_notifications($job_seeker);
                       if(!empty($msg)){
                       foreach($msg as $msg_row)
                       {
@@ -240,7 +233,7 @@
                     <li style="background-color: #ccc; margin: 5px;">
                         <a>
                         <span>
-                          No Message Found..
+                          No any notification found..
                         </span>
                       </a>
                     </li>
@@ -249,7 +242,7 @@
                 <li>
                   <div class="text-center">
                     <a href="<?php echo base_url(); ?>seeker/instant-message" class="dropdown-item" style="color: #1d1c1c !important;">
-                      <strong>See All Messages</strong>
+                      <strong>See All Notification</strong>
                       <i class="fa fa-angle-right"></i>
                     </a>
                   </div>

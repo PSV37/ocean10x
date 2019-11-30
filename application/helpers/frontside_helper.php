@@ -249,6 +249,21 @@ function get_metas() {
         return $exam_result;
     } 
 
+    function get_notifications($js_id){
+        $CI = get_instance();
+        $select_result = "message_chat.message_desc,message_chat.status,js_info.full_name,message_connections.id,message_connections.created_on";
+        $table = "message_connections";
+        $where_res="connection_id = '$js_id' order by chat_id desc";
+        $join = array(
+            'js_info' => 'js_info.job_seeker_id=message_connections.created_by | left outer',
+            'message_chat' => 'message_chat.connection_id=message_connections.id | left outer',
+        );
+        $exam_result = $CI->Master_model->getMaster($table, $where_res, $join, false ,false, $select_result, $limit ='5', $start =false, $search= false);
+     //   echo $CI->db->last_query(); die;
+
+        return $exam_result;
+    } 
+
  function time_ago_in_php($timestamp){
 
     $CI = get_instance();
