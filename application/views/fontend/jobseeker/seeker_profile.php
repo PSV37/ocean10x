@@ -122,7 +122,7 @@
                   if (!empty($connect_data)) {
                     if($connect_data['connect_status']==0){
                   ?>
-                  <a href="#" class="btn btn-primary" disabled>Processing</a>
+                  <a href="#" class="btn btn-primary" disabled>Awaiting</a>
                 <?php }else if($connect_data['connect_status']==1){ ?>
                   <a href="#" class="btn btn-primary" onclick="openForm(<?php echo $intro_data['job_seeker_id']; ?>)">Message</a>
                 <?php }else{
