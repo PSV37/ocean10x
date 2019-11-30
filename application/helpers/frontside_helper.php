@@ -253,7 +253,7 @@ function get_metas() {
         $CI = get_instance();
         $select_result = "message_chat.message_desc,message_chat.status,js_info.full_name,message_connections.id,message_connections.created_on";
         $table = "message_connections";
-        $where_res="connection_id = '$js_id' order by chat_id desc";
+        $where_res="message_connections.connection_id = '$js_id' order by chat_id desc";
         $join = array(
             'js_info' => 'js_info.job_seeker_id=message_connections.created_by | left outer',
             'message_chat' => 'message_chat.connection_id=message_connections.id | left outer',
