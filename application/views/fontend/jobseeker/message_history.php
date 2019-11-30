@@ -76,9 +76,9 @@
           
            <?php }else{ ?>
               <div class="cont darker">
-                <strong><?php echo $msg_his['emp_name']; ?></strong>
+                <strong><?php echo $this->Job_seeker_model->jobseeker_name($msg_his['created_by']); ?></strong>
                 <span class="time-right"><?php echo $month.' At '. $time; ?></span>
-                <p><?php echo $msg_his['message']; ?></p>
+                <p><?php echo $msg_his['message_desc']; ?></p>
                 
               </div>
             <?php } }?>
