@@ -486,7 +486,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $where_hlk = "job_seeker_id='$jobseeker_id' AND connection_id='$conn_id'";
         $result = $this->Master_model->get_master_row('message_connections', $select = FALSE, $where_hlk, $join = FALSE);
          $rec = $result['id'];
-
+        echo $this->db->last_query(); die;
         $data_ck = array(
             'job_seeker_id' => "'".$conn_id."'",
         );
