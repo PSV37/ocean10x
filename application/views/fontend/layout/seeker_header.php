@@ -179,7 +179,7 @@
               <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false" style="font-size: 15px;">
                 <i class="fa fa-bell"></i>
                 <?php 
-                    $msgs = get_messagescount($job_seeker);
+                    $msgs = get_notifcationcount($job_seeker);
                       if(!empty($msgs))
                         foreach($msgs as $msgs_row)
                         {

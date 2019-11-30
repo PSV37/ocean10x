@@ -236,6 +236,19 @@ function get_metas() {
     } 
 
 
+  // to fetch exam result by job seeker ids
+    function get_notifcationcount($js_id){
+        $CI = get_instance();
+        $select_result = "COUNT(id) as total_notifications";
+        $table = "message_connections";
+        $where_res['connection_id'] = $js_id;
+        
+        $exam_result = $CI->Master_model->getMaster($table, $where_res, false, false ,false, $select_result, $limit =false, $start =false, $search= false);
+     //   echo $CI->db->last_query(); die;
+
+        return $exam_result;
+    } 
+
  function time_ago_in_php($timestamp){
 
     $CI = get_instance();
