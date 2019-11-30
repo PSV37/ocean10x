@@ -20,7 +20,7 @@
           <tbody>
           <?php
             $sr_no=0;
-            // print_r($saved_job_data);
+           
            if (!empty($saved_job_data)): foreach ($saved_job_data as $js_row) : $sr_no++; 
 
             ?>
