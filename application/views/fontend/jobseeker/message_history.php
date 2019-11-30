@@ -55,14 +55,14 @@
     <div class="row">
       <?php $this->load->view('fontend/layout/seeker_left.php'); ?>
       <div class="content col-md-9">
-        <div class="x_title">
+        <<!-- div class="x_title">
           <h2>Message History</h2> 
             <ul class="nav navbar-right panel_toolbox">
               <a href="<?php echo base_url(); ?>seeker/instant-message"><button class="btn btn-primary btn-sm deal-value"><i class="fa fa-back"></i>Go To Back</button></a>
             </ul>
           <div class="clearfix"></div>
         </div>
-        <div class="x_content">
+        <div class="x_content"> -->
           <h2>Chat Messages</h2>
           <?php 
             $jobseeker_id    = $this->session->userdata('job_seeker_id');
@@ -82,7 +82,7 @@
             </div>
           
           <?php } ?>
-        </div>
+        <!-- </div> -->
       </div>
     </div> <!--end row -->
   </div><!-- end container -->
