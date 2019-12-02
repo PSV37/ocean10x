@@ -865,9 +865,41 @@ exit;*/
          if ($_POST) {
             $jobseeker_id      = $this->session->userdata('job_seeker_id');
            // $profile_summary_id = $this->input->post('prof_id');
+
+            $NewFileName;
+            if($_FILES['txt_media']['name']!='')
+            {
+                $this->load->helper('string'); 
+                $NewFileName = $_FILES['txt_media']['name']; 
+                
+                $config['upload_path'] = './upload/Media/';
+                $config['allowed_types'] = 'doc|docx|rtf|pdf|gif|jpg|png|ppt/pps/pptx/ppsx/pot/potx';
+                // $config['max_size']    = '2000000';
+                //$config['encrypt_name']  = true;
+                $config['max_size']      = 100000000; //2 mb
+                $config['file_name'] = $NewFileName;
+            
+                 $this->load->library('upload', $config);      
+                 $field_name = "txt_media";
+                 if (! $this->upload->do_upload($field_name))
+                    {
+                        $error = array('error' => $this->upload->display_errors());
+                        $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">'.$this->upload->display_errors().'</div>');
+                        redirect('job_seeker/seeker_info');
+                    }
+                    else {}
+                }//END of file checking if loop
+                else
+                    {     
+                      $NewFileName = $this->input->post('oldmedia'); 
+                    }
+
+
             $profile_data    = array(
                 'job_seeker_id'     => $jobseeker_id,
+                'uploded_media'     => $NewFileName,
                 'about_me'          => addslashes($this->input->post('profile_summary')),
+                'media_link'        => addslashes($this->input->post('txt_link')),
             );
             if (empty($profile_summary_id)) {
                 $profile_data['created_on'] = date('Y-m-d H:i:s');

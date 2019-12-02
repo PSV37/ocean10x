@@ -36,10 +36,11 @@
                               <div class="col-md-6">
                                 <label for="avatarInput">Upload Media</label>
                                 <input type="file" class="form-control" id="txt_media" name="txt_media">
+                                <input type="hidden" class="form-control" id="" name="oldmedia" value="<?php if(!empty($job_seeker_profile['uploded_media'])){echo $job_seeker_profile['uploded_media'];} ?>">
                               </div>
                               <div class="col-md-6">
                                 <label for="avatarInput"> Media Link</label>
-                                <input type="text" class="form-control" id="txt_link" name="txt_link">
+                                <input type="text" class="form-control" id="txt_link" name="txt_link" value="<?php if(!empty($job_seeker_profile['media_link'])){echo $job_seeker_profile['media_link'];} ?>">
                               </div>
 
                               <div class="panel-body"></div>
