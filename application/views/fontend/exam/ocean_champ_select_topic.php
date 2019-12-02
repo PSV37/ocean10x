@@ -48,6 +48,8 @@ $this->load->view('fontend/layout/seeker_header.php');
 
   
  <?php $this->load->view("fontend/layout/footer.php"); ?>
+ <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
+
  <script>
 $(function() {
   // choose target dropdown
