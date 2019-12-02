@@ -56,6 +56,19 @@ $this->load->view('fontend/layout/seeker_header.php');
     allowClear: true
   });
 
+$(function() {
+
+    $('#topic').multiselect({
+
+        includeSelectAllOption: true
+    });
+
+    // $('#btnget').click(function(){
+
+    //     alert($('#chkveg').val());
+    // });
+});
+
 
   function getTopic(id){
     if(id){
