@@ -51,10 +51,10 @@ $this->load->view('fontend/layout/seeker_header.php');
     allowClear: true
   });
 
-  $("#topic").select2( {
-    placeholder: "Select Topics",
-    allowClear: true
-  });
+  // $("#topic").select2( {
+  //   placeholder: "Select Topics",
+  //   allowClear: true
+  // });
 
 $(function() {
 
