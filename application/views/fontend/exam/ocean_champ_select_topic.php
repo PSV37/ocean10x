@@ -1,12 +1,12 @@
 <?php 
-    $this->load->view('fontend/layout/employer_header.php');
+$this->load->view('fontend/layout/seeker_header.php');
 ?>                
              
 
 <div class="section lb">
   <div class="container">
     <div class="row">
-      <?php $this->load->view('fontend/layout/employer_left.php'); ?>
+      <?php $this->load->view('fontend/layout/seeker_left.php'); ?>
       <div class="content col-md-9">
         <div class="userccount">
           <div class="formpanel">
@@ -48,7 +48,7 @@
 
   
  <?php $this->load->view("fontend/layout/footer.php"); ?>
-<script>
+ <script>
 $(function() {
   // choose target dropdown
   var select = $('.skill');
