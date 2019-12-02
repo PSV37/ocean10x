@@ -224,7 +224,7 @@
 				   </div>
 				  <div id="checkboxes">
      
-				<?php 
+					<?php 
 					  if(!empty($options))
 						foreach($options as $key){
 							$checked="";
