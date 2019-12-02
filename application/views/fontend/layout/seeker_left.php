@@ -47,7 +47,7 @@
 
     <li class="title">Become an OceanChamp ! </li>
 
-    <li><a href="<?php echo base_url(); ?>how-to-build-cv"> <i class="fa fa-star" aria-hidden="true"></i> OceanChamp Online Test</a></li>
+    <li><a href="<?php echo base_url(); ?>seeker/oceanchamp-test"> <i class="fa fa-star" aria-hidden="true"></i> OceanChamp Online Test</a></li>
     <li> <a href="<?php echo base_url() ?>how-to-build-cv" class=""> <i class="fa fa-black-tie" aria-hidden="true"></i> OceanTest Results</a> </li>
 
     <!--<li> <a href="<?php echo base_url() ?>seeker/logout" class=""> <i class="fa fa-sign-out" aria-hidden="true"></i> Sign Out </a> </li>-->

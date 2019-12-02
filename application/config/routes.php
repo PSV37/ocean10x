@@ -104,6 +104,8 @@ $route['seeker/seeker-profile']="job_seeker/user_profile";
 $route['seeker/message-history/(:num)']="job_seeker/message_history/$1";
 $route['seeker/all-notifications']="job_seeker/all_notifications";
 
+$route['seeker/oceanchamp-test']="exam/ocean_champ_test";
+
 
 
 $route['seeker-login']="register/jobseeker_login";
