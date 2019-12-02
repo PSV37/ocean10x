@@ -1018,7 +1018,7 @@
       <div class="col-md-12">
         <div class="col-md-12 col-sm-12">
           <div class="input-group">
-            <label class="control-label" for="email">My Tagline</label>
+            <label class="control-label" for="email">My Tagline<span class="required">*</span></label>
               <textarea name="tagline" class="form-control" rows="3" placeholder="Enter Your Tagline"><?php 
                        if (!empty($js_personal_info->resume_title)) {
                          echo $js_personal_info->resume_title;
