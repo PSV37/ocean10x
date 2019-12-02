@@ -25,7 +25,7 @@ $this->load->view('fontend/layout/seeker_header.php');
                 </div>
                 <div class="col-md-6 col-sm-12">
                   <label class="control-label ">Topics<span class="required">*</span> </label>
-                  <select name="topics" id="skill_name" required class="form-control topic" data-style="btn-default" data-live-search="true">
+                  <select name="topics" id="topic" required class="form-control topic" data-style="btn-default" data-live-search="true">
                     <option value="">Select Topics</option>
                     <?php if(!empty($skill_data)) foreach ($skill_data as $svalue) { ?>
                       <option value="<?php echo $svalue['id']; ?>"><?php echo $svalue['skill_name']; ?></option>
@@ -51,26 +51,14 @@ $this->load->view('fontend/layout/seeker_header.php');
  <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
 
  <script>
-$(function() {
-  // choose target dropdown
-  var select = $('.skill');
-  select.html(select.find('option').sort(function(x, y) {
-    // to change to descending order switch "<" for ">"
-    return $(x).text() > $(y).text() ? 1 : -1;
-  }));
+$("#skill_name").select2( {
+  placeholder: "Select Skill",
+  allowClear: true
+  } );
 
-  // select default item after sorting (first item)
-  //$('select').get(0).selectedIndex = 0;
-});
-$(function() {
-  // choose target dropdown
-  var select = $('.topic');
-  select.html(select.find('option').sort(function(x, y) {
-    // to change to descending order switch "<" for ">"
-    return $(x).text() > $(y).text() ? 1 : -1;
-  }));
+$("#topic").select2( {
+  placeholder: "Select Topics",
+  allowClear: true
+  } );
 
-  // select default item after sorting (first item)
-  //$('select').get(0).selectedIndex = 0;
-});
 </script>
