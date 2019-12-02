@@ -297,7 +297,7 @@ class Exam extends MY_Seeker_Controller
         $topics = $this->Master_model->getMaster('topic',$where);
         $result = '';
         if(!empty($topics)){ 
-            $result .='<option value="">Select Topic</option>';
+            // $result .='<option value="">Select Topic</option>';
             foreach($topics as $key){
               $result .='<option value="'.$key['topic_id'].'">'.$key['topic_name'].'</option>';
             }
