@@ -24,7 +24,7 @@ $this->load->view('fontend/layout/seeker_header.php');
                 </div>
                 <div class="col-md-6 col-sm-12">
                   <label class="control-label ">Topics<span class="required">*</span> </label>
-                  <select name="topics" id="topic" required class="form-control topic" data-style="btn-default" data-live-search="true"  multiple="">
+                  <select name="topics" id="topic" required class="form-control" multiple="">
                     <option value="">Select Topics</option>
                   </select>
                 </div>
