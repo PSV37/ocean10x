@@ -58,10 +58,10 @@ $this->load->view('fontend/layout/seeker_header.php');
 
 $(function() {
 
-    $('#topic').multiselect({
+    // $('#topic').multiselect({
 
-        includeSelectAllOption: true
-    });
+    //     includeSelectAllOption: true
+    // });
 
     // $('#btnget').click(function(){
 
@@ -78,6 +78,9 @@ $(function() {
         data:{id:id},
         success:function(res){
           $('#topic').html(res);
+          $('#topic').multiselect({
+            includeSelectAllOption: true
+          });
         }
         
       }); 
