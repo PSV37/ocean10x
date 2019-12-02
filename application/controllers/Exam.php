@@ -272,15 +272,17 @@ class Exam extends MY_Seeker_Controller
         $select_can_sk = "skills";
         $can_skills = $this->Master_model->getMaster('job_seeker_skills', $where_js, $join = FALSE, $order = false, $field = false, $select_can_sk,$limit=false,$start=false, $search=false);
       // echo $this->db->last_query();
-        echo $can_skills = $can_skills[0]['skills'];
-      //   for($i=0;$i<sizeof($can_skills); $i++)
-      //   {
-      //       $where_req_skill="skill_name = '".$can_skills[$i]['skills']."'";
-      //       $skls = $this->Master_model->getMaster('skill_master',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false, $limit=false, $start=false, $search=false);
+       // echo $can_skills = $can_skills[0]['skills'];
+        for($i=0;$i<sizeof($can_skills); $i++)
+        {
+            $where_req_skill="skill_name = '".$can_skills[$i]['skills']."'";
+            $skls = $this->Master_model->getMaster('skill_master',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false, $limit=false, $start=false, $search=false);
       //       //   echo $this->db->last_query();
       //       echo "<br>";
+             print_r($skls);
+            die;
       //       print_r($skls);
-      //   }
+        }
 
         // echo $data['topics_data'][0]['toipc_name'];
       
