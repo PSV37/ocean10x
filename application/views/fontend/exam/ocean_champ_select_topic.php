@@ -15,7 +15,7 @@ $this->load->view('fontend/layout/seeker_header.php');
               <div class="row">
                 <div class="col-md-6 col-sm-12">
                   <label class="control-label ">Skill Name<span class="required">*</span> </label>
-                  <select name="skill_name" id="skill_name" required class="form-control skill" data-style="btn-default" data-live-search="true">
+                  <select name="skill_name" id="skill_name" required class="form-control skill" data-style="btn-default" data-live-search="true" onchange="getTopic(this.value)">
                     <option value="">Select Skill</option>
                     <?php if(!empty($skill_data)) foreach ($skill_data as $svalue) { ?>
                       <option value="<?php echo $svalue['id']; ?>"><?php echo $svalue['skill_name']; ?></option>
@@ -27,13 +27,9 @@ $this->load->view('fontend/layout/seeker_header.php');
                   <label class="control-label ">Topics<span class="required">*</span> </label>
                   <select name="topics" id="topic" required class="form-control topic" data-style="btn-default" data-live-search="true">
                     <option value="">Select Topics</option>
-                    <?php if(!empty($skill_data)) foreach ($skill_data as $svalue) { ?>
-                      <option value="<?php echo $svalue['id']; ?>"><?php echo $svalue['skill_name']; ?></option>
-                    <?php  }
-                    ?>
                   </select>
                 </div>
-                  <button type="submit" class="btn btn-primary">Update Password</button>
+                 <!--  <button type="submit" class="btn btn-primary">Update Password</button> -->
                 </div>
               </div>
             </form>
@@ -61,4 +57,18 @@ $("#topic").select2( {
   allowClear: true
   } );
 
+
+  function getTopic(id){
+    if(id){
+      $.ajax({
+        type:'POST',
+        url:'<?php echo base_url();?>exam/gettopic',
+        data:{id:id},
+        success:function(res){
+          $('#topic_id').html(res);
+        }
+        
+      }); 
+      }
+   }
 </script>
