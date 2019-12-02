@@ -25,9 +25,11 @@
                         <div class="containe1r">
 
                           <form class="avatar-form" action="<?php echo base_url();?>Job_seeker/profile_summary/<?php if(!empty($job_seeker_profile['id'])){echo $job_seeker_profile['id'];} ?>" enctype="multipart/form-data" method="post">
-                              <p>Write a meaningful summary of more than 50 characters.</p><br>
+                            <p>Write a meaningful summary of more than 50 characters.</p><br>
                               <div class="col-md-12">
-                              <textarea name="profile_summary" id="profile_summary" class="form-control" placeholder="Profile Summary" rows="5"><?php if(!empty($job_seeker_profile['about_me'])){echo $job_seeker_profile['about_me'];} ?></textarea>
+                                
+                                <label for="avatarInput"> Summary</label>
+                                <textarea name="profile_summary" id="profile_summary" class="form-control" placeholder="Profile Summary" rows="5"><?php if(!empty($job_seeker_profile['about_me'])){echo $job_seeker_profile['about_me'];} ?></textarea>
                               </div>
 
                               <div class="panel-body"></div>
