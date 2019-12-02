@@ -58,24 +58,10 @@ $this->load->view('fontend/layout/seeker_header.php');
     allowClear: true
   });
 
-  $("#topic").select2( {
-    placeholder: "Select Topics",
-    allowClear: true
-  });
-
-$(function() {
-
-    // $('#topic').multiselect({
-
-    //     includeSelectAllOption: true
-    // });
-
-    // $('#btnget').click(function(){
-
-    //     alert($('#chkveg').val());
-    // });
-});
-
+  // $("#topic").select2( {
+  //   placeholder: "Select Topics",
+  //   allowClear: true
+  // });
 
   function getTopic(id){
     if(id){
