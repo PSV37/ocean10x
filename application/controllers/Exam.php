@@ -277,7 +277,7 @@ class Exam extends MY_Seeker_Controller
         for($i=0;$i<sizeof($can_skills); $i++)
         {
             $where_req_skill="skill_name = '".$can_skills[$i]['skills']."'";
-            $exam_question = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit=NUMBER_QUESTIONS,$start=false, $search=false);
+            $exam_question = $this->Master_model->getMaster('skill_master',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false, $limit=false, $start=false, $search=false);
                echo $this->db->last_query();
         }
 
