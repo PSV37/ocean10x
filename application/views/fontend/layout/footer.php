@@ -167,6 +167,9 @@ function readURL2(input) {
 
 </script> 
 <script src="<?php echo base_url() ?>fontend/js/bootstrap.min.js "></script> 
+
+<script type="text/javascript" src="<?php echo base_url() ?>asset/js/bootstrap-multiselect.js"></script>
+
 <!-- token input js -->
 <script src="<?php echo base_url(); ?>asset/src/jquery.tokeninput.js"></script>
 
