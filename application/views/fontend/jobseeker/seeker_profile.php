@@ -115,6 +115,7 @@
               <div class="row">
                 <div class="col-md-8">
                   <h3><?php echo $intro_data['full_name']; ?> </h3>
+                  <p><?php echo $personal_data['resume_title']; ?></p>
                   <p><?php echo $personal_data['city_name'].', '.$personal_data['state_name'].', '.$personal_data['country_name']; ?></p>
                 </div>
                 <div class="col-md-4">
