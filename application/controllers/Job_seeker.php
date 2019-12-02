@@ -873,7 +873,7 @@ exit;*/
                 $NewFileName = $_FILES['txt_media']['name']; 
                 
                 $config['upload_path'] = './upload/Media/';
-                $config['allowed_types'] = 'doc|docx|rtf|pdf|gif|jpg|png|ppt/pps/pptx/ppsx/pot/potx';
+                $config['allowed_types'] = 'doc|docx|rtf|pdf|gif|jpg|png|ppt|pps|pptx|ppsx|pot|potx';
                 // $config['max_size']    = '2000000';
                 //$config['encrypt_name']  = true;
                 $config['max_size']      = 100000000; //2 mb

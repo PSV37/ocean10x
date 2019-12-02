@@ -37,6 +37,7 @@
                                 <label for="avatarInput">Upload Media</label>
                                 <input type="file" class="form-control" id="txt_media" name="txt_media">
                                 <input type="hidden" class="form-control" id="" name="oldmedia" value="<?php if(!empty($job_seeker_profile['uploded_media'])){echo $job_seeker_profile['uploded_media'];} ?>">
+                                <p>Supported Formats: doc, docx, rtf, pdf, gif, jpg, png, ppt, pps, pptx, ppsx, pot, potx, upto 100 MB</p><br>
                               </div>
                               <div class="col-md-6">
                                 <label for="avatarInput"> Media Link</label>
@@ -44,8 +45,6 @@
                               </div>
 
                               <div class="panel-body"></div>
-                              <!-- <p>Supported Formats: doc, docx, rtf, pdf, upto 2 MB</p><br> -->
-
                               <div class="col-md-12">
                                 <button type="submit" class="btn btn-success btn-block avatar-save2">Save</button>
 
