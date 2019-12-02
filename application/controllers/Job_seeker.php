@@ -1141,9 +1141,10 @@ public function search(){
 
     public function search_user()
     {
+        $jobseeker_id    = $this->session->userdata('job_seeker_id');
         if (isset($_GET['term'])) 
         {
-              $where= "js_info.js_status=1 AND js_info.full_name like '%".$_GET['term']."%'";
+              $where= "js_info.js_status=1 AND js_info.job_seeker_id!='$jobseeker_id' AND js_info.full_name like '%".$_GET['term']."%'";
               $tablename='js_info';
               $join_a = array(
                 'js_photo' => 'js_photo.job_seeker_id=js_info.job_seeker_id | left outer',
