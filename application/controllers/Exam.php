@@ -272,28 +272,22 @@ class Exam extends MY_Seeker_Controller
         $select_can_sk = "skills";
         $can_skills = $this->Master_model->getMaster('job_seeker_skills', $where_js, $join = FALSE, $order = false, $field = false, $select_can_sk,$limit=false,$start=false, $search=false);
       // echo $this->db->last_query();
-        
-        //$can_skills = $data['can_skills'][0]['skills'];
-        for($i=0;$i<sizeof($can_skills); $i++)
-        {
-            $where_req_skill="skill_name = '".$can_skills[$i]['skills']."'";
-            $skls = $this->Master_model->getMaster('skill_master',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false, $limit=false, $start=false, $search=false);
-            //   echo $this->db->last_query();
-            echo "<br>";
-        print_r($skls);
-          //  echo $skls[$i]['id'];
-        // $where_req="technical_id = '".$skls[$i]['id']."'";     
-        // $select_topics = "toipc_name,topic_id";
-        // $data['topics_data'] = $this->Master_model->getMaster('topic',$where_req,$join = FALSE, $order = false, $field = false, $select_topics,$limit=false,$start=false, $search=false);
-        //    echo $this->db->last_query();echo "<br>";
-
-        }
+        echo $can_skills = $data['can_skills'][0]['skills'];
+      //   for($i=0;$i<sizeof($can_skills); $i++)
+      //   {
+      //       $where_req_skill="skill_name = '".$can_skills[$i]['skills']."'";
+      //       $skls = $this->Master_model->getMaster('skill_master',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false, $limit=false, $start=false, $search=false);
+      //       //   echo $this->db->last_query();
+      //       echo "<br>";
+      //       print_r($skls);
+      //   }
 
         // echo $data['topics_data'][0]['toipc_name'];
+      
+        // $select_topics = "toipc_name,topic_id";
+        // $data['topics_data'] = $this->Master_model->getMaster('topic',$where_req,$join = FALSE, $order = false, $field = false, $select_topics,$limit=false,$start=false, $search=false);
+
         die;
-
-
-        
 
         $this->load->view('fontend/exam/ocean_champ_select_topic',$data);
     }
