@@ -65,7 +65,7 @@ class Job_seeker extends MY_Seeker_Controller
 				// 'city1_id'          => $this->input->post('city1_id'),
 				// 'pincode1'          => $this->input->post('pincode1'),
                 // 'parmanent_address' => $this->input->post('parmanent_address'),
-
+                'resume_title'              => addslashes($this->input->post('tagline')),
                 'marital_status'            => $this->input->post('matrial_status'),
                 'work_permit_usa'           => $this->input->post('work_permit_usa'),
                 'work_permit_countries'     => $this->input->post('other_country_work_permit'),
@@ -876,7 +876,7 @@ exit;*/
                 $config['allowed_types'] = 'doc|docx|rtf|pdf|gif|jpg|png|ppt|pps|pptx|ppsx|pot|potx';
                 // $config['max_size']    = '2000000';
                 //$config['encrypt_name']  = true;
-                $config['max_size']      = 100000000; //2 mb
+                $config['max_size']      = 100000000; //100 mb
                 $config['file_name'] = $NewFileName;
             
                  $this->load->library('upload', $config);      

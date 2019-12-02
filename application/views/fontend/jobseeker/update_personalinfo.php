@@ -1014,6 +1014,21 @@
 	          	</div>
 		        </div>
 		  </div> -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-12 col-sm-12">
+          <div class="input-group">
+            <label class="control-label" for="email">My Tagline</label>
+              <textarea name="tagline" class="form-control" rows="3" placeholder="Enter Your Tagline"><?php 
+                       if (!empty($js_personal_info->resume_title)) {
+                         echo $js_personal_info->resume_title;
+                         }
+                     ?></textarea>          
+          </div>  
+
+        </div>
+      </div>
+    </div>
 
     <div class="panel-body"></div>   
     <div class="row">
