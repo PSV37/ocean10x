@@ -280,9 +280,9 @@ class Exam extends MY_Seeker_Controller
             $skls = $this->Master_model->getMaster('skill_master',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false, $limit=false, $start=false, $search=false);
                echo $this->db->last_query();
             echo "<br>";
-        $where_req_skill="technical_id = '".$skls[$i]['id']."'";     
+        $where_req="technical_id = '".$skls[$i]['id']."'";     
         $select_topics = "toipc_name,topic_id";
-        $data['topics_data'] = $this->Master_model->getMaster('topic',$where = false,$join = FALSE, $order = false, $field = false, $select_topics,$limit=false,$start=false, $search=false);
+        $data['topics_data'] = $this->Master_model->getMaster('topic',$where_req,$join = FALSE, $order = false, $field = false, $select_topics,$limit=false,$start=false, $search=false);
            echo $this->db->last_query();echo "<br>";
 
         }
