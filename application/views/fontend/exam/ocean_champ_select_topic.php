@@ -1,6 +1,13 @@
 <?php 
 $this->load->view('fontend/layout/seeker_header.php');
-?>                
+?>
+<style>
+  .dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover {
+    color: #463d3d !important;
+    text-decoration: none !important;
+    outline: 0 !important;
+}
+</style>                
              
 <div class="section lb">
   <div class="container">
