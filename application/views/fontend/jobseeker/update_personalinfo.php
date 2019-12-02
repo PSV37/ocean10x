@@ -175,6 +175,12 @@
                   echo $js_personal_info->website; ?></td>
               </tr>
 
+              <tr>
+                <td>My Tagline: </td>
+                <td><?php if(!empty($js_personal_info->resume_title))
+                  echo $js_personal_info->resume_title; ?></td>
+              </tr>
+
             </tbody>
           </table>
 
