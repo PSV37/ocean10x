@@ -1,4 +1,10 @@
-
+<style>
+  .userccount p {
+    text-align: inherit !important; 
+    line-height: 24px !important;
+    color: #999 !important;
+}
+</style>
 <div class="section lb">
   <div class="container">                                
                          
@@ -37,7 +43,7 @@
                               </div>
 
                               <div class="panel-body"></div>
-                              <p>Supported Formats: doc, docx, rtf, pdf, upto 2 MB</p><br>
+                              <!-- <p>Supported Formats: doc, docx, rtf, pdf, upto 2 MB</p><br> -->
 
                               <div class="col-md-12">
                                 <button type="submit" class="btn btn-success btn-block avatar-save2">Save</button>
