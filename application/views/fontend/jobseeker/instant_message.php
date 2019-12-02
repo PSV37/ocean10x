@@ -100,7 +100,7 @@
               </td>
             
               <td>
-                <a href="#" class="btn btn-primary btn-xs" onclick="openForm(<?php echo $js_row['chat_js_id']; ?>)">Message</a>
+                <a href="#" class="btn btn-info btn-xs" onclick="openForm(<?php echo $js_row['chat_js_id']; ?>)">Message</a>
                 <a href="<?php echo base_url(); ?>seeker/message-history/<?php echo $js_row['chat_js_id']; ?>" class="btn btn-success btn-xs">View History</a>
               </td>
               
@@ -125,7 +125,7 @@
   
     <form id="Career-info" class="form-container" action="<?php echo base_url('job_seeker/instant_message');?>" method="post">
     <!-- <h1>Message</h1> -->
-    <input type="text" name="send_to" id="send_to">
+    <input type="hidden" name="send_to" id="send_to">
     <label for="msg"><b>Message</b></label>
     <textarea placeholder="Type message.." name="user_msg" required></textarea>
 
