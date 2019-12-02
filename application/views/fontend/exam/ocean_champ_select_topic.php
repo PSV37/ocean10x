@@ -2,7 +2,6 @@
 $this->load->view('fontend/layout/seeker_header.php');
 ?>                
              
-
 <div class="section lb">
   <div class="container">
     <div class="row">
@@ -25,7 +24,7 @@ $this->load->view('fontend/layout/seeker_header.php');
                 </div>
                 <div class="col-md-6 col-sm-12">
                   <label class="control-label ">Topics<span class="required">*</span> </label>
-                  <select name="topics" id="topic" required class="form-control topic" data-style="btn-default" data-live-search="true">
+                  <select name="topics" id="topic" required class="form-control topic" data-style="btn-default" data-live-search="true"  multiple="">
                     <option value="">Select Topics</option>
                   </select>
                 </div>
@@ -43,19 +42,19 @@ $this->load->view('fontend/layout/seeker_header.php');
 
 
   
- <?php $this->load->view("fontend/layout/footer.php"); ?>
- <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
+<?php $this->load->view("fontend/layout/footer.php"); ?>
+<script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
 
- <script>
-$("#skill_name").select2( {
-  placeholder: "Select Skill",
-  allowClear: true
-  } );
+<script>
+  $("#skill_name").select2( {
+    placeholder: "Select Skill",
+    allowClear: true
+  });
 
-$("#topic").select2( {
-  placeholder: "Select Topics",
-  allowClear: true
-  } );
+  $("#topic").select2( {
+    placeholder: "Select Topics",
+    allowClear: true
+  });
 
 
   function getTopic(id){
@@ -69,6 +68,6 @@ $("#topic").select2( {
         }
         
       }); 
-      }
-   }
+    }
+  }
 </script>
