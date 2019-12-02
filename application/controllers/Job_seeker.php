@@ -579,8 +579,7 @@ exit;*/
             $js_skills = $this->input->post('skills');
 			
             $career_info  = array(
-				'skills'               => $this->input->post('skills'),
-                
+				'skills' => $this->input->post('skills'),
             );
             
            
@@ -597,7 +596,7 @@ exit;*/
                     {
                         $skill_array= array(
                             'job_seeker_id' => $jobseeker_id,
-                            'skills'        => $skill[$k],
+                            'skills'        => trim($skill[$k]),
                             'created_by'    => $jobseeker_id,
                             'created_on'    => date('Y-m-d H:i:s'),
                         );
