@@ -19,12 +19,26 @@
                         <div class="containe1r">
 
                           <form class="avatar-form" action="<?php echo base_url();?>Job_seeker/profile_summary/<?php if(!empty($job_seeker_profile['id'])){echo $job_seeker_profile['id'];} ?>" enctype="multipart/form-data" method="post">
+                              <p>Write a meaningful summary of more than 50 characters.</p><br>
                               <div class="col-md-12">
                               <textarea name="profile_summary" id="profile_summary" class="form-control" placeholder="Profile Summary" rows="5"><?php if(!empty($job_seeker_profile['about_me'])){echo $job_seeker_profile['about_me'];} ?></textarea>
                               </div>
 
                               <div class="panel-body"></div>
-                              <p>Write a meaningful summary of more than 50 characters.</p><br>
+                              
+                               <p>Add or link to external documents, photos, sites, videos, and presentations.</p><br>
+                              <div class="col-md-6">
+                                <label for="avatarInput">Upload Media</label>
+                                <input type="file" class="form-control" id="txt_media" name="txt_media">
+                              </div>
+                              <div class="col-md-6">
+                                <label for="avatarInput"> Media Link</label>
+                                <input type="text" class="form-control" id="txt_link" name="txt_link">
+                              </div>
+
+                              <div class="panel-body"></div>
+                              <p>Supported Formats: doc, docx, rtf, pdf, upto 2 MB</p><br>
+
                               <div class="col-md-12">
                                 <button type="submit" class="btn btn-success btn-block avatar-save2">Save</button>
 

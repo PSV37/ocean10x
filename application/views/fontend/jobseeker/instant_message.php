@@ -77,10 +77,8 @@
           <tbody>
           <?php
             $sr_no=0;
-           
-           if (!empty($saved_job_data)): foreach ($saved_job_data as $js_row) : $sr_no++; 
-
-            ?>
+            if (!empty($saved_job_data)): foreach ($saved_job_data as $js_row) : $sr_no++; 
+          ?>
 
             <tr>
               <td><?php echo $sr_no; ?></td>
