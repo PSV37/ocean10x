@@ -16,7 +16,7 @@ $this->load->view('fontend/layout/seeker_header.php');
       <div class="content col-md-9">
         <div class="userccount">
           <div class="formpanel">
-            <?php echo $this->session->flashdata('change_password'); ?>
+            <?php echo $this->session->flashdata('msg'); ?>
         
             <form id="submit" class="submit-form" action="<?php echo base_url(); ?>exam/ocean_champ_test" method="post">
               <div class="row">
@@ -68,11 +68,6 @@ $this->load->view('fontend/layout/seeker_header.php');
     allowClear: true
   });
 
-  // $("#topic").select2( {
-  //   placeholder: "Select Topics",
-  //   allowClear: true
-  // });
-
   $(document).delegate('#skill_name', 'change', function(event){
     event.stopPropagation();
     event.stopImmediatePropagation();
@@ -86,6 +81,6 @@ $this->load->view('fontend/layout/seeker_header.php');
               $('#topic').html(data);
             }
         });//end ajax
-});
+  });
 
 </script>

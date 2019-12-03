@@ -272,22 +272,21 @@ class Exam extends MY_Seeker_Controller
             $topics = $this->input->post('topics');
             if(!empty($topics))
             {
-                
+                $data_array = array(
+                    'job_seeker_id' => $jobseeker_id,
+                    'topic_id'      => implode(',', $this->input->post('topics')),
+                    'level'         => $this->input->post('level'),
+                    'skill_id'      => $this->input->post('skill_name'),
+                    'created_on'    => date('Y-m-d H:i:s'),
+                    'created_by'    => $jobseeker_id,
+                );
 
-                    $data_array = array(
-                        'job_seeker_id' => $jobseeker_id,
-                        'topic_id'      => implode(',', $this->input->post('topics')),
-                        'level'         => $this->input->post('level'),
-                        'skill_id'      => $this->input->post('skill_name'),
-                        'created_on'    => date('Y-m-d H:i:s'),
-                        'created_by'    => $jobseeker_id,
-                    );
-
-                    $this->Master_model->master_insert($data_array, 'js_ocean_exam_topics');
+                $this->Master_model->master_insert($data_array, 'js_ocean_exam_topics');
                
             }
             else{
-                echo "select topics";
+                    $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">Please select topic</div>');                
+                    redirect('exam/ocean_champ_test');
             }
 
 
