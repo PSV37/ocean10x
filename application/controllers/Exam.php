@@ -285,9 +285,9 @@ class Exam extends MY_Seeker_Controller
             // $data['topics_data'] = $this->Master_model->getMaster('topic',$where_req,$join = FALSE, $order = false, $field = false, $select_topics,$limit=false,$start=false, $search=false);
         }
         
-        echo "<pre>";
-        print_r($temp_array);
-        die;
+        // echo "<pre>";
+        // print_r($temp_array);
+        // die;
 
         // $where_skill="status ='1'";
         // $select_skl = "skill_name,id";
