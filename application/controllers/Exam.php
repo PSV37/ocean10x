@@ -282,17 +282,9 @@ class Exam extends MY_Seeker_Controller
             $can_skills[$i]['id']= $skill_data[0]['id'];
             
            array_push($temp_array, $can_skills[$i]);
-            //$data[] = $can_skills;
         }
-       // print_r($data);
         $data['skill_data']  = $temp_array;
-     //    echo "<pre>";
-     //    print_r($data['skill_data']);
-     // die;
-        // $where_skill="status ='1'";
-        // $select_skl = "skill_name,id";
-        // $data['skill_data'] = $this->Master_model->getMaster('skill_master',$where_skill,$join = FALSE, $order = false, $field = false, $select_skl, $limit=false, $start=false, $search=false);
-
+     
         $this->load->view('fontend/exam/ocean_champ_select_topic',$data);
     }
 
