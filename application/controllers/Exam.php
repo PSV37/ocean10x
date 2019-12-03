@@ -270,8 +270,11 @@ class Exam extends MY_Seeker_Controller
         if($_POST)
         {
             $topics = $this->input->post('topics');
+
             if(!empty($topics))
             {
+                $all_topics = implode(',', $this->input->post('topics'));
+                $skill = $this->input->post('skill_name');
                 $data_array = array(
                     'job_seeker_id' => $jobseeker_id,
                     'topic_id'      => implode(',', $this->input->post('topics')),
@@ -281,7 +284,33 @@ class Exam extends MY_Seeker_Controller
                     'created_by'    => $jobseeker_id,
                 );
 
-                $this->Master_model->master_insert($data_array, 'js_ocean_exam_topics');
+                $last_id = $this->Master_model->master_insert($data_array, 'js_ocean_exam_topics');
+
+                $where_req_skill="topic_id IN (".$all_topics.")";
+                $exam_question = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit=NUMBER_QUESTIONS,$start=false, $search=false);
+
+                echo $this->db->last_query(); echo "<br>";
+                echo "<pre>";
+                print_r($exam_question); 
+                die;
+               // check for answers
+                for($n1=0;$n1<sizeof($exam_question);$n1++)
+                {
+                    $individual_question=array();
+                    $question_id = $exam_question[$n1]['ques_id']; 
+                    $wherechks = "question_id='$question_id'";
+                    $answer = $this->Master_model->getMaster('questionbank_answer',$wherechks);
+                    $exam_question[$n1]['answer']=$answer;
+                    $individual_question[]=$exam_question[$n1];
+                    array_push($temp_array, $exam_question[$n1]);
+                }
+                
+                $fp = fopen('./exam_questions/'.$skill.'_'.$jobseeker_id.'.json', 'w');
+                fwrite($fp, json_encode($temp_array));
+
+                }
+              
+                $this->load->view('fontend/exam/exam_instruction',$data);
                
             }
             else{
