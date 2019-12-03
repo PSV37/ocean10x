@@ -65,38 +65,21 @@ $this->load->view('fontend/layout/seeker_header.php');
   // });
 
   $(document).delegate('#skill_name', 'change', function(event){
-          event.stopPropagation();
-          event.stopImmediatePropagation();
-          var id = $(this).val();
-            $.ajax({
-                  url:'<?php echo base_url();?>exam/gettopic',
-                  type: "POST",
-                  data:{id:id},
-                  success: function(data)
-                  {
-                    $('#topic').html(data);
-                    $('#topic').multiselect({
-                      includeSelectAllOption: true
-                    });
-                  }
-              });//end ajax
-      });
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+    var id = $(this).val();
+      $.ajax({
+            url:'<?php echo base_url();?>exam/gettopic',
+            type: "POST",
+            data:{id:id},
+            success: function(data)
+            {
+              $('#topic').html(data);
+              // $('#topic').multiselect({
+              //   includeSelectAllOption: true
+              // });
+            }
+        });//end ajax
+});
 
-  // function getTopic(id){
-  //   if(id){
-  //     $.ajax({
-  //       type:'POST',
-  //       url:'<?php echo base_url();?>exam/gettopic',
-  //       data:{id:id},
-  //       success:function(res){
-  //         $('#topic').html(res);
-  //        // alert(res);
-  //         $('#topic').multiselect({
-  //           includeSelectAllOption: true
-  //         });
-  //       }
-        
-  //     }); 
-  //   }
-  // }
 </script>
