@@ -281,8 +281,10 @@ class Exam extends MY_Seeker_Controller
             $can_skills[$i]['skill_name']= $skill_data['skill_name'];
             $can_skills[$i]['id']= $skill_data['id'];
             
-            array_push($temp_array, $can_skills[$i]);
+           array_push($temp_array, $can_skills[$i]);
+            $data[] = $can_skills;
         }
+        print_r($data);
         $data['skill_data']  = $temp_array;
         echo "<pre>";
         print_r($data['skill_data']);
