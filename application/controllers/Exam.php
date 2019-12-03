@@ -303,9 +303,10 @@ class Exam extends MY_Seeker_Controller
                     $answer = $this->Master_model->getMaster('questionbank_answer',$wherechks);
                      echo $this->db->last_query(); echo "<br>";
                     $exam_question[$n1]['answer']=$answer;
-                    echo "<pre>";
-                    print_r($answer); 
+                  
                     $individual_question[]=$exam_question[$n1];
+                      echo "<pre>";
+                    print_r($exam_question[$n1]); 
                     array_push($temp_array, $exam_question[$n1]);
                 }
                 die;
