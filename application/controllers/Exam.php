@@ -278,8 +278,8 @@ class Exam extends MY_Seeker_Controller
             $where_req_skill="skill_name ='".$can_skills[$i]['skills']."'";
             $select = "id,skill_name";
             $skill_data = $this->Master_model->getMaster('skill_master',$where_req_skill,$join = FALSE, $order = false, $field = false, $select, $limit=false, $start=false, $search=false);
-            $can_skills[$i]['skill_name']= $skill_data[$i]['skill_name'];
-            $can_skills[$i]['id']= $skill_data[$i]['id'];
+            $can_skills[$i]['skill_name']= $skill_data['skill_name'];
+            $can_skills[$i]['id']= $skill_data['id'];
             
             array_push($temp_array, $can_skills[$i]);
         }
