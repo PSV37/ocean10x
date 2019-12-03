@@ -275,14 +275,11 @@ class Exam extends MY_Seeker_Controller
   
         for($i=0;$i<sizeof($can_skills); $i++)
         {
-            $ind = array();
             $where_req_skill="skill_name ='".$can_skills[$i]['skills']."'";
             $select = "id,skill_name";
             $skill_data = $this->Master_model->getMaster('skill_master',$where_req_skill,$join = FALSE, $order = false, $field = false, $select, $limit=false, $start=false, $search=false);
-           // $ $skill_data[$i]['id'];
-           // $ $skill_data[$i]['skill_name'];
-           $ind[] = $skill_data[$i];
-            array_push($temp_array, $skill_data[$i]);
+           $can_skills[$i]['indu_skill']= $skill_data;
+            array_push($temp_array, $can_skills[$i]);
         }
         $data['skill_data']  = $temp_array;
         echo "<pre>";
