@@ -268,7 +268,7 @@ class Exam extends MY_Seeker_Controller
         $jobseeker_id = $this->session->userdata('job_seeker_id');
         //$job_id = base64_decode($id);
         $temp_array= array();
-        $data;
+        $data= array();
         $where_js = "job_seeker_id='$jobseeker_id'";
         $select_can_sk = "skills";
         $can_skills = $this->Master_model->getMaster('job_seeker_skills', $where_js, $join = FALSE, $order = false, $field = false, $select_can_sk,$limit=false,$start=false, $search=false);
