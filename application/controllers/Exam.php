@@ -285,7 +285,7 @@ class Exam extends MY_Seeker_Controller
                     'created_by'    => $jobseeker_id,
                 );
 
-                $last_id = $this->Master_model->master_insert($data_array, 'js_ocean_exam_topics');
+                // $last_id = $this->Master_model->master_insert($data_array, 'js_ocean_exam_topics');
 
                 $where_req_skill="topic_id IN (".$all_topics.") AND level='$level'";
                 $exam_question = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit=NUMBER_QUESTIONS,$start=false, $search=false);
@@ -301,11 +301,14 @@ class Exam extends MY_Seeker_Controller
                     $question_id = $exam_question[$n1]['ques_id']; 
                     $wherechks = "question_id='$question_id'";
                     $answer = $this->Master_model->getMaster('questionbank_answer',$wherechks);
+                     echo $this->db->last_query(); echo "<br>";
                     $exam_question[$n1]['answer']=$answer;
+                    echo "<pre>";
+                    print_r($answer); 
                     $individual_question[]=$exam_question[$n1];
                     array_push($temp_array, $exam_question[$n1]);
                 }
-                
+                die;
                 $fp = fopen('./exam_questions/'.$skill.'_'.$jobseeker_id.'.json', 'w');
                 fwrite($fp, json_encode($temp_array));
 
