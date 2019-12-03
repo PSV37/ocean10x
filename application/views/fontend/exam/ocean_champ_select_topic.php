@@ -76,7 +76,7 @@ $this->load->view('fontend/layout/seeker_header.php');
             {
               $('#topic').html(data);
               $('#topic').multiselect({
-              //   includeSelectAllOption: true
+                includeSelectAllOption: true
               });
             }
         });//end ajax
