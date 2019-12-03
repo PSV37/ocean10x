@@ -300,7 +300,7 @@ class Exam extends MY_Seeker_Controller
               $result .='<input type="checkbox" name="topic" id="topic" value="'.$key['topic_id'].'" checked>'.$key['topic_name'];
             }
         }else{
-            $result .='<p>Topic not available</p>';
+            $result .='<p>Topics not available</p>';
         }
         echo $result;
     }

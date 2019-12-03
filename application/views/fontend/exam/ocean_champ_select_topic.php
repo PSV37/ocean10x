@@ -44,6 +44,7 @@ $this->load->view('fontend/layout/seeker_header.php');
                   <div id="topic"></div>
                  
                 </div>
+                 <button id="next" type="submit" class="btn btn-primary pull-right">Next</button>
                  <!--  <button type="submit" class="btn btn-primary">Update Password</button> -->
                 </div>
               </div>
