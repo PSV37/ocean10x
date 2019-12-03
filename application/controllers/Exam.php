@@ -275,19 +275,20 @@ class Exam extends MY_Seeker_Controller
         for($i=0;$i<sizeof($can_skills); $i++)
         {
             $where_req_skill="skill_name ='".$can_skills[$i]['skills']."'";
-            $skls = $this->Master_model->getMaster('skill_master',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false, $limit=false, $start=false, $search=false);
-            echo "<pre>";
-            print_r($skls);
-           
-        }
-        die;
-      
-        // $select_topics = "toipc_name,topic_id";
-        // $data['topics_data'] = $this->Master_model->getMaster('topic',$where_req,$join = FALSE, $order = false, $field = false, $select_topics,$limit=false,$start=false, $search=false);
+            $data['skill_data'] = $this->Master_model->getMaster('skill_master',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false, $limit=false, $start=false, $search=false);
+            // echo "<pre>";
+            // print_r($skls);
 
-        $where_skill="status ='1'";
-        $select_skl = "skill_name,id";
-        $data['skill_data'] = $this->Master_model->getMaster('skill_master',$where_skill,$join = FALSE, $order = false, $field = false, $select_skl, $limit=false, $start=false, $search=false);
+            //$select_topics = "toipc_name,topic_id";
+            // $data['topics_data'] = $this->Master_model->getMaster('topic',$where_req,$join = FALSE, $order = false, $field = false, $select_topics,$limit=false,$start=false, $search=false);
+        }
+        // die;
+      
+        
+
+        // $where_skill="status ='1'";
+        // $select_skl = "skill_name,id";
+        // $data['skill_data'] = $this->Master_model->getMaster('skill_master',$where_skill,$join = FALSE, $order = false, $field = false, $select_skl, $limit=false, $start=false, $search=false);
 
         $this->load->view('fontend/exam/ocean_champ_select_topic',$data);
     }
