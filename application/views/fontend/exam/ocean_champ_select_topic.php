@@ -22,7 +22,7 @@ $this->load->view('fontend/layout/seeker_header.php');
               <div class="row">
                 <div class="col-md-6 col-sm-12">
                   <label class="control-label ">Subject<span class="required">*</span> </label>
-                  <select name="skill_name" id="skill_name" required class="form-control skill" data-style="btn-default" data-live-search="true" onchange="getTopic(this.value)">
+                  <select name="skill_name" id="skill_name" required class="form-control skill" data-style="btn-default" data-live-search="true" >
                     <option value="">Select Skill</option>
                     <?php if(!empty($skill_data)) foreach ($skill_data as $svalue) { ?>
                       <option value="<?php echo $svalue['id']; ?>"><?php echo $svalue['skill_name']; ?></option>
@@ -64,21 +64,39 @@ $this->load->view('fontend/layout/seeker_header.php');
   //   allowClear: true
   // });
 
-  function getTopic(id){
-    if(id){
-      $.ajax({
-        type:'POST',
-        url:'<?php echo base_url();?>exam/gettopic',
-        data:{id:id},
-        success:function(res){
-          $('#topic').html(res);
-         // alert(res);
-          $('#topic').multiselect({
-            includeSelectAllOption: true
-          });
-        }
+  $(document).delegate('#skill_name', 'change', function(event){
+          event.stopPropagation();
+          event.stopImmediatePropagation();
+          var id = $(this).val();
+            $.ajax({
+                  url:'<?php echo base_url();?>exam/gettopic',
+                  type: "POST",
+                  data:{id:id},
+                  success: function(data)
+                  {
+                    $('#topic').html(data);
+                    $('#topic').multiselect({
+                      includeSelectAllOption: true
+                    });
+                  }
+              });//end ajax
+      });
+
+  // function getTopic(id){
+  //   if(id){
+  //     $.ajax({
+  //       type:'POST',
+  //       url:'<?php echo base_url();?>exam/gettopic',
+  //       data:{id:id},
+  //       success:function(res){
+  //         $('#topic').html(res);
+  //        // alert(res);
+  //         $('#topic').multiselect({
+  //           includeSelectAllOption: true
+  //         });
+  //       }
         
-      }); 
-    }
-  }
+  //     }); 
+  //   }
+  // }
 </script>
