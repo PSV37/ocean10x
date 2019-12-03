@@ -270,7 +270,7 @@ class Exam extends MY_Seeker_Controller
         if($_POST)
         {
             $topics = $this->input->post('topics');
-
+             $temp_array= array();
             if(!empty($topics))
             {
                 $all_topics = implode(',', $this->input->post('topics'));
@@ -324,7 +324,7 @@ class Exam extends MY_Seeker_Controller
 
 
         }else{
-            $temp_array= array();
+            $temp_array2= array();
             $data= array();
             $where_js = "job_seeker_id='$jobseeker_id'";
             $select_can_sk = "skills";
@@ -338,9 +338,9 @@ class Exam extends MY_Seeker_Controller
                 $can_skills[$i]['skill_name']= $skill_data[0]['skill_name'];
                 $can_skills[$i]['id']= $skill_data[0]['id'];
                 
-               array_push($temp_array, $can_skills[$i]);
+               array_push($temp_array2, $can_skills[$i]);
             }
-            $data['skill_data']  = $temp_array;
+            $data['skill_data']  = $temp_array2;
          
             $this->load->view('fontend/exam/ocean_champ_select_topic',$data);
         }
