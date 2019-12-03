@@ -308,8 +308,7 @@ class Exam extends MY_Seeker_Controller
                 $fp = fopen('./exam_questions/'.$skill.'_'.$jobseeker_id.'.json', 'w');
                 fwrite($fp, json_encode($temp_array));
 
-                }
-              
+                              
                 $this->load->view('fontend/exam/exam_instruction',$data);
                
             }
