@@ -301,18 +301,16 @@ class Exam extends MY_Seeker_Controller
                     $question_id = $exam_question[$n1]['ques_id']; 
                     $wherechks = "question_id='$question_id'";
                     $answer = $this->Master_model->getMaster('questionbank_answer',$wherechks);
-                     echo $this->db->last_query(); echo "<br>";
+
                     $exam_question[$n1]['answer']=$answer;
                   
                     $individual_question[]=$exam_question[$n1];
-                      echo "<pre>";
-                    print_r($exam_question[$n1]); 
+                      
                     array_push($temp_array, $exam_question[$n1]);
                 }
-                die;
+
                 $fp = fopen('./exam_questions/'.$skill.'_'.$jobseeker_id.'.json', 'w');
                 fwrite($fp, json_encode($temp_array));
-
                               
                 $this->load->view('fontend/exam/exam_instruction',$data);
                
