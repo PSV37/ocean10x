@@ -268,6 +268,7 @@ class Exam extends MY_Seeker_Controller
         $jobseeker_id = $this->session->userdata('job_seeker_id');
         //$job_id = base64_decode($id);
         $temp_array= array();
+        $data;
         $where_js = "job_seeker_id='$jobseeker_id'";
         $select_can_sk = "skills";
         $can_skills = $this->Master_model->getMaster('job_seeker_skills', $where_js, $join = FALSE, $order = false, $field = false, $select_can_sk,$limit=false,$start=false, $search=false);
@@ -276,15 +277,16 @@ class Exam extends MY_Seeker_Controller
         {
             $where_req_skill="skill_name ='".$can_skills[$i]['skills']."'";
             $skill_data = $this->Master_model->getMaster('skill_master',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false, $limit=false, $start=false, $search=false);
-                $data['skill_data']  = $skill_data;
-               array_push($temp_array, $data);
+               // $data['skill_data']  = $skill_data;
+
+               array_push($temp_array, $skill_data);
             // echo "<pre>";
             // print_r($skls);
 
             //$select_topics = "toipc_name,topic_id";
             // $data['topics_data'] = $this->Master_model->getMaster('topic',$where_req,$join = FALSE, $order = false, $field = false, $select_topics,$limit=false,$start=false, $search=false);
         }
-        
+        $data['skill_data']  = $temp_array;
         // echo "<pre>";
         // print_r($temp_array);
         // die;
@@ -293,7 +295,7 @@ class Exam extends MY_Seeker_Controller
         // $select_skl = "skill_name,id";
         // $data['skill_data'] = $this->Master_model->getMaster('skill_master',$where_skill,$join = FALSE, $order = false, $field = false, $select_skl, $limit=false, $start=false, $search=false);
 
-        $this->load->view('fontend/exam/ocean_champ_select_topic',$temp_array);
+        $this->load->view('fontend/exam/ocean_champ_select_topic',$data);
     }
 
     function gettopic(){
