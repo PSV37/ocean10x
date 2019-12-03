@@ -268,18 +268,19 @@ class Exam extends MY_Seeker_Controller
         $jobseeker_id = $this->session->userdata('job_seeker_id');
         //$job_id = base64_decode($id);
 
-        // $where_js = "job_seeker_id='$jobseeker_id'";
-        // $select_can_sk = "skills";
-        // $can_skills = $this->Master_model->getMaster('job_seeker_skills', $where_js, $join = FALSE, $order = false, $field = false, $select_can_sk,$limit=false,$start=false, $search=false);
+        $where_js = "job_seeker_id='$jobseeker_id'";
+        $select_can_sk = "skills";
+        $can_skills = $this->Master_model->getMaster('job_seeker_skills', $where_js, $join = FALSE, $order = false, $field = false, $select_can_sk,$limit=false,$start=false, $search=false);
   
-        // for($i=0;$i<sizeof($can_skills); $i++)
-        // {
-        //     $where_req_skill="skill_name ='".$can_skills[$i]['skills']."'";
-        //     $skls = $this->Master_model->getMaster('skill_master',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false, $limit=false, $start=false, $search=false);
-        //     echo "<pre>";
-        //     print_r($skls);
+        for($i=0;$i<sizeof($can_skills); $i++)
+        {
+            $where_req_skill="skill_name ='".$can_skills[$i]['skills']."'";
+            $skls = $this->Master_model->getMaster('skill_master',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false, $limit=false, $start=false, $search=false);
+            echo "<pre>";
+            print_r($skls);
            
-        // }
+        }
+        die;
       
         // $select_topics = "toipc_name,topic_id";
         // $data['topics_data'] = $this->Master_model->getMaster('topic',$where_req,$join = FALSE, $order = false, $field = false, $select_topics,$limit=false,$start=false, $search=false);
