@@ -72,9 +72,10 @@ $this->load->view('fontend/layout/seeker_header.php');
         data:{id:id},
         success:function(res){
           $('#topic').html(res);
-          $('#topic').multiselect({
-            includeSelectAllOption: true
-          });
+          alert(res);
+          // $('#topic').multiselect({
+          //   includeSelectAllOption: true
+          // });
         }
         
       }); 
