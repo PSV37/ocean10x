@@ -18,7 +18,7 @@ $this->load->view('fontend/layout/seeker_header.php');
           <div class="formpanel">
             <?php echo $this->session->flashdata('change_password'); ?>
         
-            <form id="submit" class="submit-form" action="<?php echo base_url(); ?>exam/save_champdata" method="post">
+            <form id="submit" class="submit-form" action="<?php echo base_url(); ?>exam/ocean_champ_test" method="post">
               <div class="row">
                 <div class="col-md-6 col-sm-12">
                   <label class="control-label ">Subject<span class="required">*</span> </label>
