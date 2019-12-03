@@ -296,10 +296,11 @@ class Exam extends MY_Seeker_Controller
         if(!empty($topics)){ 
             // $result .='<option value="">Select Topic</option>';
             foreach($topics as $key){
-              $result .='<option value="'.$key['topic_id'].'">'.$key['topic_name'].'</option>';
+             // $result .='<option value="'.$key['topic_id'].'">'.$key['topic_name'].'</option>';
+              $result .='<input type="checkbox" name="topic" id="topic" value="'.$key['topic_id'].'" checked>'.$key['topic_name'];
             }
         }else{
-            $result .='<option value="">Topic not available</option>';
+            $result .='<p>Topic not available</p>';
         }
         echo $result;
     }

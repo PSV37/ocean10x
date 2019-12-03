@@ -32,9 +32,10 @@ $this->load->view('fontend/layout/seeker_header.php');
                 </div>
                 <div class="col-md-6 col-sm-12">
                   <label class="control-label ">Topics<span class="required">*</span> </label>
-                  <select name="topics" id="topic" required class="form-control" multiple="">
+                  <div id="topic"></div>
+                  <!-- <select name="topics" id="topic" required class="form-control" multiple=""> -->
                     <!-- <option value="">Select Topics</option> -->
-                  </select>
+                  <!-- </select> -->
                 </div>
                  <!--  <button type="submit" class="btn btn-primary">Update Password</button> -->
                 </div>
@@ -75,9 +76,9 @@ $this->load->view('fontend/layout/seeker_header.php');
             success: function(data)
             {
               $('#topic').html(data);
-              $('#topic').multiselect({
-                includeSelectAllOption: true
-              });
+              // $('#topic').multiselect({
+              //   includeSelectAllOption: true
+              // });
             }
         });//end ajax
 });
