@@ -53,7 +53,7 @@
                                     <div class="formrow">
                                         <div class="row">
                                             <div class="col-md-6 col-sm-12">
-                                                <input type="email" name="company_email" value="<?php echo isset($data['email_id'])?$data['email_id']:''; ?>" class="form-control" placeholder="Email" autocomplete="off">
+                                                <input type="email" name="company_email" value="<?php print_r($data); ?>" class="form-control" placeholder="Email" autocomplete="off">
                                             </div>
                                             <div class="col-md-6 col-sm-12">
                                                 <input type="text" name="company_username" id="company_username" value="<?php echo isset($this->session->userdata['reg_in']['company_username'])?$this->session->userdata['reg_in']['company_username']:''; ?>" class="form-control" placeholder="Company User Name" autocomplete="off">
