@@ -496,6 +496,23 @@ class Exam extends MY_Seeker_Controller
     {
         $this->load->view('fontend/exam/end_exam');
     }
+
+    
+     public function ocean_champ_result()
+    {
+        $jobseeker_id = $this->session->userdata('job_seeker_id');
+       
+
+        $where_req_skill="job_seeker_id ='$jobseeker_id'";
+        $select = "id,skill_id,levle,topic_id,created_on";
+        $data['final_result'] = $this->Master_model->getMaster('js_ocean_exam_topics',$where_req_skill,$join = FALSE, $order = false, $field = false, $select, $limit=false, $start=false, $search=false);
+
+        echo $this->db->last_query();
+
+        echo "<pre>";
+        print_r($data['final_result']);
+
+    }
     /*END OCEAN CHAMP TEST SECTION*/
 
   
