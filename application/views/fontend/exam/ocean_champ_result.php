@@ -8,7 +8,7 @@
     <div class="row">
       <?php $this->load->view('fontend/layout/seeker_left.php'); ?>
       <div class="content col-md-9">
-        <h5>Inbound Job Invitations</h5>
+        <h5>Ocean Champ Exam Result's </h5>
         <table id="example" class="table table-striped table-bordered">
           <thead>
             <tr>
@@ -49,8 +49,16 @@
               <td>
                <?php echo $result['skill_name']; ?>
               </td>
-              <td><?php if (!empty($exam_topic)): foreach ($exam_topic as $top_row) : echo $top_row['topic_name']; endif; 
-              endforeach;?></td>
+              <td>
+              <?php
+                // if (!empty($exam_topic)){ 
+                //   foreach ($exam_topic as $top_row) { 
+                //     echo $top_row['topic_name']; 
+                //   } 
+                // } 
+              ?>
+              11
+              </td>
               <td><?php echo $result['level']; ?></td>
               <td><?php echo NUMBER_QUESTIONS; ?></td>
               <td><?php echo $res_row['total_questions']; ?></td>
