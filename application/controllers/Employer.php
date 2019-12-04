@@ -640,33 +640,34 @@ function getstate(){
                     for($i=0;$i<sizeof($email);$i++)
                     {
 
-                         if ($send_to=="consultant") {
-                            $where_cndn = "company_email='$email[$i]'";
+                         if ($send_to=="consultant") 
+                         {
+                                $where_cndn = "company_email='$email[$i]'";
 
-                            $consultant_data = $this->Master_model->getMaster('company_profile',$where_cndn);
-                            if ($consultant_data) {
-                                $consultant_id=$consultant_data[0]['company_profile_id'];
-                            }
-                             else{
-                           $new_JS_array = array(
-                                'company_email' => $email[$i],
-                                'token' => md5($email[$i]),
-                                'create_at' => date('Y-m-d H:i:s'),
-                            );
+                                $consultant_data = $this->Master_model->getMaster('company_profile',$where_cndn);
+                                if ($consultant_data) {
+                                    $consultant_id=$consultant_data[0]['company_profile_id'];
+                                }
+                                 else{
+                               $new_JS_array = array(
+                                    'company_email' => $email[$i],
+                                    'token' => md5($email[$i]),
+                                    'create_at' => date('Y-m-d H:i:s'),
+                                );
 
-                            $comp_id = $this->Master_model->master_insert($new_JS_array,'company_profile');
-                            // echo $comp_id;
-                        }
-                         $apply_array = array(
-                            'company_profile_id' => $comp_id,
-                            'job_post_id'   => $job_post_id,
-                            'created_on' =>date('Y-m-d H:i:s'),
-                            'created_by' =>$comp_id
-                        );
-                        $apply = $this->Master_model->master_insert($apply_array,'consultants_jobs');
-                        if($apply)
-                        {
-                             $email_name = explode('@', $email[$i]);
+                                $comp_id = $this->Master_model->master_insert($new_JS_array,'company_profile');
+                                // echo $comp_id;
+                                }
+                                 $apply_array = array(
+                                    'company_profile_id' => $comp_id,
+                                    'job_post_id'   => $job_post_id,
+                                    'created_on' =>date('Y-m-d H:i:s'),
+                                    'created_by' =>$comp_id
+                                );
+                                $apply = $this->Master_model->master_insert($apply_array,'consultants_jobs');
+                                if($apply)
+                                {
+                                     $email_name = explode('@', $email[$i]);
 
                             $subject = 'Job | Urgent requirement for '.$require['job_title'];
 
@@ -699,12 +700,13 @@ function getstate(){
                             echo $message;
                         }
                         
+                               
                         
 
                 
 
                 }else
-                {   
+                {  
                         $where_can = "email='$email[$i]'";
 
                         $can_data = $this->Master_model->getMaster('js_info',$where_can);
@@ -733,37 +735,7 @@ function getstate(){
 
                         if($apply)
                         {
-                             $email_name = explode('@', $email[$i]);
-
-                            $subject = 'Job | Urgent requirement for '.$require['job_title'];
-
-                            $message = '
-                                <style>
-                                    .btn-primary{
-                                        width: 232px;
-                                        color: #fff;
-                                        text-align: center;
-                                        margin: 0 0 0 5%;
-                                        background-color: #6495ED;
-                                        padding: 5px;
-                                        text-decoration: none;
-                                    }
-                                
-                                </style>
-                            <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
-                            <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
-                            <a href="#"><img src="'.base_url().'upload/'.$require['company_logo'].'" style="height: 50px;"> </a>
-                            <br><br>Hi '.$email_name[0].',<br>'.$job_desc.'<br/><br/><em><b>Now Hiring!!</b></em> <br/><br/><b>Company Name:</b>' .$require['company_name'].'<br/><br/> <b>Job Profile:</b><br/> <b>Job Title: </b> '.$require['job_title'].'<br/> <b>Experience: </b> '.$require['experience'].'<br/><b>Salary Offered: </b> '.$require['salary_range'].'<br/><b>Vacancies: </b> '.$require['no_jobs'].'<br/><b>Job Location: </b> '.$require['city_name'].'-'.$require['state_name'].','.$require['country_name'].'<br/><b>Job Role: </b> '.$require['job_role_title'].'<br/><b>Job Type: </b> '.$require['job_types_name'].'<br/><b>Job Nature: </b> '.$require['job_nature_name'].'<br/><b>Wrking Hrs: </b> '.$require['working_hours'].'<br/><b>Job Deadline: </b> '.$require['job_deadline'].'<br/><b>Education Required: </b> '.$require['education_level_name'].'('.$require['education_specialization'].')'.'<br/><b>Preferred Age: </b> '.$require['preferred_age'].'-'.$require['preferred_age_to'].'<br/><b>Required Skills: </b> ';
-                                for($j=0;$j<sizeof($req_skill_details);$j++){
-                                    $message .= ' <br>'.$req_skill_details[$j]['skill_name'];
-                                }
-
-                            $message .='<br/><b>Job Description: </b> '.$require['job_desc'].'<br/><b>Job Benefits: </b> '.$require['benefits'].'<br/><b>Other Job Description: </b> '.$require['education'].'<br><br><a href="'.base_url().'job_forword_seeker/apply_forworded_job?apply_id='.base64_encode($email[$i]).'&job_id='.base64_encode($apply).'" class="btn btn-primary" value="Apply Now" align="center" target="_blank">Apply Now</a> <br><br><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><small>Enjoy personalized job searching experience<br>Goa a Question? Check out how works and our support team are ready to help.<br><br>You have received this mail because your e-mail ID is registered with Consultnhire.com. This is a system-generated e-mail regarding your Consultnhire account preferences, please do not reply to this message. The jobs sent in this mail have been posted by the clients of Consultnhire.com. And we have enabled auto-login for your convenience, you are strongly advised not to forward this email to protect your account from unauthorized access. IEIL has taken all reasonable steps to ensure that the information in this mailer is authentic. Users are advised to research bonafides of advertisers independently. Please do not pay any money to anyone who promises to find you a job. IEIL shall not have any responsibility in this regard. We recommend that you visit our Terms & Conditions and the Security Advice for more comprehensive information.</small><br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
-
-
-                           $send = sendEmail_JobRequest($email[$i],$message,$subject);
-                           //echo $send;
-                            echo $message;
+                             
                           //  if ($send) {
                           //   $this->session->set_flashdata('success',
                           //   '<div class="alert alert-success alert-dismissable">
