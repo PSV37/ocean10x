@@ -653,6 +653,7 @@ function getstate(){
                                     'company_email' => $email[$i],
                                     'token' => md5($email[$i]),
                                     'create_at' => date('Y-m-d H:i:s'),
+                                    'comp_type' =>"HR Consultant"
                                 );
 
                                 $comp_id = $this->Master_model->master_insert($new_JS_array,'company_profile');

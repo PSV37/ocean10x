@@ -167,7 +167,7 @@ class Job_forword_seeker extends CI_Controller {
                         {
                             // $data['consultant_id'] = $job_seeker_id;
                             // $data['email_id'] = $email_id;
-                            $this->load->view('fontend/employer/employer_register');
+                            $this->load->view('fontend/employer/consultant_registration');
                         }
                     }
             }
