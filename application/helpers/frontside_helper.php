@@ -158,7 +158,7 @@ function get_metas() {
         $where_res['skill_id'] = $skill_id;
         $where_res['job_seeker_id'] = $js_id;
         $exam_result = $CI->Master_model->getMaster($table, $where_res, false, false ,false, $select_result, $limit =false, $start =false, $search= false);
-       echo $CI->db->last_query(); die;
+       // echo $CI->db->last_query(); die;
 
         return $exam_result;
     } 
