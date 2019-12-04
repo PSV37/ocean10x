@@ -455,17 +455,29 @@ class Exam extends MY_Seeker_Controller
                 $this->load->view('fontend/exam/ocean_exam_next_question',$data);
             }else{
                 unlink('./exam_questions/'.$skill_id.'_'.$jobseeker_id.'.json');
-                // $attend_array = array(
-                //     'is_test_done' => '1',
-                // );
-                // $where['job_seeker_id'] = $jobseeker_id;
-                // $where['skill_id'] = $skill_id;
-                // $this->Master_model->master_update($attend_array,'job_apply',$where);
-                // echo $this->db->last_query(); die;
+             
                 $this->load->view('fontend/exam/exam_success');
             }
         }
+
+    }
+    
+    public function insert_ocean_exam_session()
+    {
+        $jobseeker_id = $this->session->userdata('job_seeker_id');
        
+        $jid= $this->input->post('skill_id');
+        $skill_id = base64_decode($jid);
+
+        $timer= $this->input->post('timer');
+
+        $data_array = array(
+            'skill_id'        => $skill_id,
+            'job_seeker_id'   => $jobseeker_id,
+            'exam_time'       => $timer,
+        );
+
+        $this->Master_model->master_insert($data_array, 'js_ocean_exam_session');
 
     }
 
