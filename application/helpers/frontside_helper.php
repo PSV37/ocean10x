@@ -170,7 +170,7 @@ function get_metas() {
        $exam_result = $CI->Master_model->getMaster($tablename, $where_res, false, false ,false, $select_result, $limit =false, $start =false, $search= false);
       // echo $CI->db->last_query(); die;
 
-        return $exam_res;
+        return $exam_result;
     } 
 
     function getExamRequired($job_id){

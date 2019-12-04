@@ -36,8 +36,8 @@
               $exam_res = getOceanExamResultByID($jobseeker_id,$skill_id); 
 
               $exam_topic = getOceanExamTopicByID($result['topic_id']); 
-              echo "<pre>";
-              print_r($exam_topic);
+              // echo "<pre>";
+              // print_r($exam_topic);
               if (!empty($exam_res)): foreach ($exam_res as $res_row) :
               $marks = $res_row['total_marks']; 
               $percentage = ($marks * 100)/NUMBER_QUESTIONS;
@@ -49,7 +49,8 @@
               <td>
                <?php echo $result['skill_name']; ?>
               </td>
-              <td><?php echo $result['topic_id']; ?></td>
+              <td><?php if (!empty($exam_topic)): foreach ($exam_topic as $top_row) : echo $top_row['topic_name']; endif; 
+              endforeach;?></td>
               <td><?php echo $result['level']; ?></td>
               <td><?php echo NUMBER_QUESTIONS; ?></td>
               <td><?php echo $res_row['total_questions']; ?></td>
