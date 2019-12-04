@@ -35,14 +35,14 @@
             <form id="submit" action="<?php echo base_url() ?>employer/forword_job_post" method="post" class="submit-form">
               <input type="hidden" name="job_post_id" value="<?php echo $job_id; ?>">
               <div class="row">
-                <div class="col-md-12 col-sm-12">
+                <div class="col-md-6 col-sm-12">
                   <div class="formrow">
                     <label class="control-label">Send To:</label>
                      <input type="radio" name="consultanat" value="consultanat" >Consultanat &nbsp;
                       <input type="radio" name="consultanat" value="JobSeeker">JobSeeker(candidate)                
                   </div>
                 </div>
-                <div class="col-md-6 col-sm-12">
+                <div class="col-md-12 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Emails<span class="required">*</span> </label><small><b>Enter one or more emails separated by comma.</b></small>   
                       <textarea name="candiate_email" placeholder="Candiate Emails" required class="form-control" rows="3"></textarea>
