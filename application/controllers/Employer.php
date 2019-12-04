@@ -700,11 +700,14 @@ function getstate(){
                             echo $message;
                         }
                         
+<<<<<<< HEAD
+=======
                                
                         
 
                 
 
+>>>>>>> 7051ab83307b57007286e1ed61d691201ec882c6
                 }else
                 {  
                         $where_can = "email='$email[$i]'";
