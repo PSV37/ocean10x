@@ -384,6 +384,91 @@ class Exam extends MY_Seeker_Controller
         }
        
     }
+
+    public function insert_ocean_data()
+    {
+        $jobseeker_id = $this->session->userdata('job_seeker_id');
+       
+        $jid= $this->input->post('skill_id');
+        $skill_id = base64_decode($jid);
+        $data['skill_id'] = $skill_id;
+        $question_id = $this->input->post('question_id');
+        $option = $this->input->post('option');
+        $status = array();
+        $str = file_get_contents('./exam_questions/'.$skill_id.'_'.$jobseeker_id.'.json');
+
+        $json = json_decode($str, true);
+
+        foreach ($json  as $value) {
+           $data['questions'] = $value;
+           break;
+        }
+       
+        for($q=0;$q<sizeof($data['questions']['answer']);$q++)
+        {
+            $answer_id = $data['questions']['answer'][$q]['answer_id'];
+            
+            for($i=0;$i<sizeof($option);$i++)
+            {   
+                if($answer_id == $option[$i])
+                {
+                     $status[]= 'Yes';
+                }else{
+                     $status[]= 'No';
+                }
+            }
+            
+        }
+        if (count(array_unique($status)) === 1 && end($status) === 'Yes') {
+            $mark=1;
+            $cstatus = 'Yes';
+        }else {
+            $mark =0;
+            $cstatus = 'No';
+        } 
+      
+        $exam_array = array(
+            'skill_id'          => $skill_id,
+            'job_seeker_id'     => $jobseeker_id,  
+            'question_id'       => $question_id,
+            'marks'             => $mark,
+            'correct_status'    => $cstatus,
+            'date_time'         => date('Y-m-d H:i:s'),
+        );
+        $last_id = $this->Master_model->master_insert($exam_array, 'js_ocean_exam_result');
+        if($last_id)
+        {
+            array_shift($json); // remove completed element from json array
+           // update json file with remaining questions
+           $fp = fopen('./exam_questions/'.$skill_id.'_'.$jobseeker_id.'.json', 'w');
+           fwrite($fp, json_encode($json));
+
+            $new_str = file_get_contents('./exam_questions/'.$skill_id.'_'.$jobseeker_id.'.json');
+            $data['new_json'] = json_decode($new_str, true);
+
+            foreach ($data['new_json']  as $value) {
+               $data['questions'] = $value;
+               break;
+            }
+            if(count($data['new_json']) >= 1 )
+            {
+                $this->load->view('fontend/exam/ocean_exam_next_question',$data);
+            }else{
+                unlink('./exam_questions/'.$skill_id.'_'.$jobseeker_id.'.json');
+                // $attend_array = array(
+                //     'is_test_done' => '1',
+                // );
+                // $where['job_seeker_id'] = $jobseeker_id;
+                // $where['skill_id'] = $skill_id;
+                // $this->Master_model->master_update($attend_array,'job_apply',$where);
+                // echo $this->db->last_query(); die;
+                $this->load->view('fontend/exam/exam_success');
+            }
+        }
+       
+
+    }
+
     /*END OCEAN CHAMP TEST SECTION*/
 
   
