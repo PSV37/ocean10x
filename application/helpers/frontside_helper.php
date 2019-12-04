@@ -162,6 +162,16 @@ function get_metas() {
 
         return $exam_result;
     } 
+    function getOceanExamTopicByID($topic_id){
+        $CI = get_instance();
+        $select_result = "topic_name";
+        $tablename = "topic";
+        $where_res ="topic_id IN (".$topic_id.")";
+       $exam_result = $CI->Master_model->getMaster($tablename, $where_res, false, false ,false, $select_result, $limit =false, $start =false, $search= false);
+     //   echo $CI->db->last_query(); die;
+
+        return $exam_res;
+    } 
 
     function getExamRequired($job_id){
         $CI = get_instance();
