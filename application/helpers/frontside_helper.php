@@ -153,7 +153,7 @@ function get_metas() {
 // to fetch exam result by job seeker ids
     function getOceanExamResultByID($js_id,$skill_id){
         $CI = get_instance();
-        $select_result = "SUM(marks) as total_marks,COUNT(id) as total_questions,js_ocean_exam_result.js_id";
+        $select_result = "SUM(marks) as total_marks,COUNT(id) as total_questions,js_ocean_exam_result.job_seeker_id";
         $table = "js_ocean_exam_result";
         $where_res['skill_id'] = $skill_id;
         $where_res['job_seeker_id'] = $js_id;
