@@ -743,7 +743,7 @@ function getstate(){
                         // else{
                         //     redirect('employer/active_job');
                         // }
-                    }
+                    // }
 
                     }
                    
