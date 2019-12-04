@@ -646,7 +646,7 @@ function getstate(){
 
                                 $consultant_data = $this->Master_model->getMaster('company_profile',$where_cndn);
                                 if ($consultant_data) {
-                                    $consultant_id=$consultant_data[0]['company_profile_id'];
+                                    $comp_id=$consultant_data[0]['company_profile_id'];
                                 }
                                  else{
                                $new_JS_array = array(
