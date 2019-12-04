@@ -31,7 +31,9 @@
 
               $skill_id = $result['skill_id'];
               $js_id = $result['job_seeker_id'];  
-              $exam_res = getOceanExamResultByID(,$js_id,$skill_id); 
+              $exam_res = getOceanExamResultByID($js_id,$skill_id); 
+              echo "<pre>";
+              print_r($exam_res);
               // if (!empty($exam_res)): foreach ($exam_res as $res_row) :
               // $marks = $res_row['total_marks']; 
               // $percentage = ($marks * 100)/NUMBER_QUESTIONS;
