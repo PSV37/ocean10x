@@ -483,7 +483,7 @@ class Exam extends MY_Seeker_Controller
 
     public function autosubmit()
     {
-        $this->load->view('fontend/exam/exam_success');
+        $this->load->view('fontend/exam/end_exam');
     }
     /*END OCEAN CHAMP TEST SECTION*/
 
