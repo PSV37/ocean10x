@@ -655,14 +655,14 @@ function getstate(){
                             );
 
                             $comp_id = $this->Master_model->master_insert($new_JS_array,'company_profile');
-                            echo $comp_id;
+                            // echo $comp_id;
                         }
-                        //  $apply_array = array(
-                        //     'company_profile_id' => $comp_id,
-                        //     'job_post_id'   => $job_post_id,
-                        //     'job_status' => 1,
-                        // );
-                        // $apply = $this->Master_model->master_insert($apply_array,'consultants_jobs');
+                         $apply_array = array(
+                            'company_profile_id' => $comp_id,
+                            'job_post_id'   => $job_post_id,
+                            'job_status' => 1,
+                        );
+                        $apply = $this->Master_model->master_insert($apply_array,'consultants_jobs');
                         
                         
 
