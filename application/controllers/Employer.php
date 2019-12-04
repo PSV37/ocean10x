@@ -699,10 +699,6 @@ function getstate(){
                             echo $message;
                         }
                         
-                        
-
-                
-
                 }else
                 {   
                         $where_can = "email='$email[$i]'";
