@@ -26,12 +26,13 @@
           </thead>
           <tbody>
           <?php
+           $jobseeker_id = $this->session->userdata('job_seeker_id');
             $sr_no=0;
            if (!empty($final_result)): foreach ($final_result as $result) : $sr_no++; 
 
               $skill_id = $result['skill_id'];
-              $js_id = $result['job_seeker_id'];  
-              $exam_res = getOceanExamResultByID($js_id,$skill_id); 
+             
+              $exam_res = getOceanExamResultByID($jobseeker_id,$skill_id); 
               echo "<pre>";
               print_r($exam_res);
               // if (!empty($exam_res)): foreach ($exam_res as $res_row) :
