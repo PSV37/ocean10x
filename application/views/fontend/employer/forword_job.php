@@ -37,7 +37,7 @@
               <div class="row">
                 <div class="col-md-12 col-sm-12">
                   <div class="formrow">
-                    <label >Send To:</label>
+                    <label class="control-label">Send To:</label>
                     <input type="radio" name="Seeker" value="consultanat">Consultant
                     <input type="radio" name="Seeker" value="Seeker">JobSeeker(candidate)
 
