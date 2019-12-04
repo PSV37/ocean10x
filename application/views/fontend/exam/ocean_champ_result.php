@@ -49,7 +49,8 @@
               <td>
                <?php echo $result['skill_name']; ?>
               </td>
-              <td><?php echo $exam_topic->topic_name; ?></td>
+              <td><?php if (!empty($exam_topic)): foreach ($exam_topic as $top_row) : echo $top_row['topic_name']; endif; 
+              endforeach;?></td>
               <td><?php echo $result['level']; ?></td>
               <td><?php echo NUMBER_QUESTIONS; ?></td>
               <td><?php echo $res_row['total_questions']; ?></td>
