@@ -360,41 +360,37 @@ class Exam extends MY_Seeker_Controller
         echo $result;
     }
 
-    // public function ocean_exam_start()()
-    // {   
-    //     $jobseeker_id = $this->session->userdata('job_seeker_id');
+    public function ocean_exam_start($skill_id=null)
+    {   
+        $jobseeker_id = $this->session->userdata('job_seeker_id');
+        $skill_id = base64_decode($skill_id);
+        if (!empty($skill_id)) {
+                 
+            $data['title'] = 'Exam Start';
+            $data['skill_id'] = $skill_id;
 
-
-
-
-
-    //      // get all requried skills for this job post
-    //         $whereskill = "job_post_id='$job_id'";
-    //         $data['skills'] = $this->Master_model->get_master_row('job_posting', $select ='skills_required' , $whereskill, $join = FALSE);
-    //         $skill_id = $data['skills']['skills_required'];
-
-    //         $where_req_skill="technical_id IN (".$skill_id.")";
-    //         $exam_question = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit=NUMBER_QUESTIONS,$start=false, $search=false);
-    //        // check for answers
-    //         for($n1=0;$n1<sizeof($exam_question);$n1++)
-    //         {
-    //             $individual_question=array();
-    //             $question_id = $exam_question[$n1]['ques_id']; 
-    //             $wherechks = "question_id='$question_id'";
-    //             $answer = $this->Master_model->getMaster('questionbank_answer',$wherechks);
-    //             $exam_question[$n1]['answer']=$answer;
-    //             $individual_question[]=$exam_question[$n1];
-    //             array_push($temp_array, $exam_question[$n1]);
-    //         }
-            
-    //         $fp = fopen('./exam_questions/'.$job_id.'_'.$jobseeker_id.'.json', 'w');
-    //         fwrite($fp, json_encode($temp_array));
-
-    //         }
-          
-    //         $this->load->view('fontend/exam/exam_instruction',$data);
+            //  $start_array = array(
+            //     'is_test_done' => '2',
+            // );
+            //$where_start['job_seeker_id'] = $jobseeker_id;
+            //$where_start['job_post_id']   = $job_id;
+            //$start_status = $this->Master_model->master_update($start_array,'job_apply',$where_start);
     
-    // }
+            $str = file_get_contents('./exam_questions/'.$skill_id.'_'.$jobseeker_id.'.json');
+            $json = json_decode($str, true);
+
+            foreach ($json  as $value) {
+               $data['questions'] = $value;
+               break;
+            }
+            
+            $this->load->view('fontend/exam/ocean_exam_start',$data);
+
+        } else {
+            redirect('exam');
+        }
+       
+    }
     /*END OCEAN CHAMP TEST SECTION*/
 
   
