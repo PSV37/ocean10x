@@ -660,7 +660,8 @@ function getstate(){
                          $apply_array = array(
                             'company_profile_id' => $comp_id,
                             'job_post_id'   => $job_post_id,
-                            'job_status' => 1,
+                            'created_on' =>date('Y-m-d H:i:s'),
+                            'created_by' =>$comp_id
                         );
                         $apply = $this->Master_model->master_insert($apply_array,'consultants_jobs');
                         
@@ -695,6 +696,7 @@ function getstate(){
                             'forword_job_status' => 1,
                         );
                         $apply = $this->Master_model->master_insert($apply_array,'job_apply');
+                    }
                         if($apply)
                         {
 
