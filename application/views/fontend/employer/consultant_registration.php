@@ -11,7 +11,7 @@
     <div class="row">
       <div class="col-md-6 col-sm-6">
         <h1 class="page-heading">Employer Register</h1>
-        <?php print_r($data); ?>
+       
       </div>
       <div class="col-md-6 col-sm-6">
       </div>
@@ -19,7 +19,7 @@
   </div>
 </div>
 <!-- Page Title End -->
- 
+  <?php print_r($email_id); ?>
             <div class="section lb">
                 <div class="container">
                 <div class="row">
