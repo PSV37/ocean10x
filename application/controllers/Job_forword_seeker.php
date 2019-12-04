@@ -165,11 +165,31 @@ class Job_forword_seeker extends CI_Controller {
                         $status = $this->Master_model->master_update($data_status, 'consultants_jobs', $where_update1);
                         if($status==true)
                         {
+                            
+                                     $config = array(
+                                                'img_path'      => 'captcha_images/',
+                                                'img_url'       => base_url().'captcha_images/',
+                                                'img_width'     => '150',
+                                                'img_height'    => 50,
+                                                'word_length'   => 4,
+                                                'font_path' => FCPATH . 'captcha_images/font/captcha4.ttf',
+                                            );
+                            $captcha = create_captcha($config);
+                            
+                            // Unset previous captcha and store new captcha word
+                            $this->session->unset_userdata('captchaCode');
+                            $this->session->set_userdata('captchaCode',$captcha['word']);
+                            
+                            // Send captcha image to view
                              $data['comp_profile_id'] = $comp_profile_id;
                             $data['email_id'] = $comp_email;
                             $data['job_category'] = $this->Master_model->getMaster('job_category',$where=false);
+                            $captcha_images = $captcha['image'];
+                            $data['city'] = $this->Master_model->getMaster('city',$where=false);
+                            $data['country'] = $this->Master_model->getMaster('country',$where=false);
+                            $data['state'] = $this->Master_model->getMaster('state',$where=false);
 
-                            $this->load->view('fontend/employer/consultant_registration',$data);
+                            $this->load->view('fontend/employer/consultant_registration',$data,compact('captcha_images'));
                         }
                     }
             }
