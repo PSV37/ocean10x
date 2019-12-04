@@ -594,8 +594,8 @@ function getstate(){
         public function forword_job_post()
         {
             $employer_id = $this->session->userdata('company_profile_id');
-                $send_to=$this->input->post('consultanat');
-                // echo $send_to;
+                $send_to=$this->input->post('consultant');
+                 echo $send_to;
                
 
 
