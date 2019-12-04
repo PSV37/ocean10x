@@ -21,7 +21,7 @@ $this->load->view('fontend/layout/seeker_header.php');
             <form id="submit" class="submit-form" action="<?php echo base_url(); ?>exam/ocean_champ_test" method="post">
               <div class="row">
                 <div class="col-md-6 col-sm-12">
-                  <label class="control-label ">Subject<span class="required">*</span> </label>
+                  <label class="control-label">Subject<span class="required">*</span> </label>
                   <select name="skill_name" id="skill_name" required class="form-control skill" data-style="btn-default" data-live-search="true" >
                     <option value="">Select Skill</option>
                     <?php if(!empty($skill_data)) foreach ($skill_data as $svalue) { ?>
@@ -44,8 +44,7 @@ $this->load->view('fontend/layout/seeker_header.php');
                   <div id="topic"></div>
                  
                 </div>
-                 <button id="next" type="submit" class="btn btn-primary pull-right">Next</button>
-                 <!--  <button type="submit" class="btn btn-primary">Update Password</button> -->
+                  <button id="next" type="submit" class="btn btn-primary pull-right">Next</button>
                 </div>
               </div>
             </form>

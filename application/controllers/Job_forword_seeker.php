@@ -13,8 +13,6 @@ class Job_forword_seeker extends CI_Controller {
         $this->load->model('Job_career_model');
         $this->load->model('Job_specialization_model');
         $this->load->model('Job_apply_model');
-
-       
 	}
 
 	public function index()
