@@ -51,12 +51,13 @@
               </td>
               <td>
               <?php
-                if (!empty($exam_topic)){ 
-                  foreach ($exam_topic as $top_row) { 
-                    echo $top_row['topic_name']; 
-                  } 
-                } 
+                // if (!empty($exam_topic)){ 
+                //   foreach ($exam_topic as $top_row) { 
+                //     echo $top_row['topic_name']; 
+                //   } 
+                // } 
               ?>
+              11
               </td>
               <td><?php echo $result['level']; ?></td>
               <td><?php echo NUMBER_QUESTIONS; ?></td>
