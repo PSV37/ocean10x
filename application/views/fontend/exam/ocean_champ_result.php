@@ -49,12 +49,13 @@
               <td>
                <?php echo $result['skill_name']; ?>
               </td>
-              <td><?php
-               if (!empty($exam_topic)){ 
-                foreach ($exam_topic as $top_row) { 
-                  echo $top_row['topic_name']; 
+              <td>
+              <?php
+                if (!empty($exam_topic)){ 
+                  foreach ($exam_topic as $top_row) { 
+                    echo $top_row['topic_name']; 
+                  } 
                 } 
-              } 
               ?>
               </td>
               <td><?php echo $result['level']; ?></td>
