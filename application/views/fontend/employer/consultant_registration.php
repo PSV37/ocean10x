@@ -11,6 +11,7 @@
     <div class="row">
       <div class="col-md-6 col-sm-6">
         <h1 class="page-heading">Employer Register</h1>
+        <?php print_r($data); ?>
       </div>
       <div class="col-md-6 col-sm-6">
       </div>
