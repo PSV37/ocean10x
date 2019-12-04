@@ -144,7 +144,33 @@ class Job_forword_seeker extends CI_Controller {
 
          $wherecan="company_email= '$comp_email'";
             $check_candidate = $this->Master_model->getMaster('company_profile', $wherecan);
-            print_r($check_candidate);
+            // print_r($check_candidate);
+             if($check_candidate)
+            {
+                foreach($check_candidate as $row)
+                {
+                    $comp_profile_id = $row['company_profile_id'];
+                    $comp_id = $row['company_email'];
+                    $pass = $row['company_password'];
+                }
+                if ($pass!='') {
+                    # code...
+                }
+                else{
+                        // To update job status
+                        $data_status=array( 
+                            'job_status' => 2,
+                        );
+                        $where_update1['consultant_job_id'] = $job_id;
+                        $status = $this->Master_model->master_update($data_status, 'consultants_jobs', $where_update1);
+                        if($status==true)
+                        {
+                            // $data['consultant_id'] = $job_seeker_id;
+                            // $data['email_id'] = $email_id;
+                            $this->load->view('fontend/employer/employer_register');
+                        }
+                    }
+            }
 
     }
 	
