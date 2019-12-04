@@ -595,7 +595,9 @@ function getstate(){
         {
             $employer_id = $this->session->userdata('company_profile_id');
                 $send_to=$this->input->post('consultanat');
-                echo $send_to;
+                // echo $send_to;
+               
+
 
                 if ($_POST) {
                     $employer_id  = $this->session->userdata('company_profile_id');
@@ -637,7 +639,14 @@ function getstate(){
                   // echo $this->db->last_query(); die;
                     for($i=0;$i<sizeof($email);$i++)
                     {
+
+                         if ($send_to=="consultant") {
+                            echo "string";
+
+                }else
+                {   
                         $where_can = "email='$email[$i]'";
+
                         $can_data = $this->Master_model->getMaster('js_info',$where_can);
 
                         if($can_data)
@@ -707,6 +716,7 @@ function getstate(){
                         // else{
                         //     redirect('employer/active_job');
                         // }
+                    }
 
                     }
                    
