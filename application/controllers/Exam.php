@@ -504,7 +504,7 @@ class Exam extends MY_Seeker_Controller
        
 
         $where_req_skill="job_seeker_id ='$jobseeker_id'";
-        $select = "id,skill_id,levle,topic_id,created_on";
+        $select = "id,skill_id,level,topic_id,created_on";
         $data['final_result'] = $this->Master_model->getMaster('js_ocean_exam_topics',$where_req_skill,$join = FALSE, $order = false, $field = false, $select, $limit=false, $start=false, $search=false);
 
         echo $this->db->last_query();
