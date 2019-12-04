@@ -35,7 +35,7 @@
             <form id="submit" action="<?php echo base_url() ?>employer/forword_job_post" method="post" class="submit-form">
               <input type="hidden" name="job_post_id" value="<?php echo $job_id; ?>">
               <div class="row">
-                <div class="col-md-6 col-sm-12">
+                <div class="col-md-12 col-sm-12">
                   <div class="formrow">
                     <label class="control-label">Send To:</label>
                      <input type="radio" name="consultanat" value="consultanat" >Consultanat &nbsp;
