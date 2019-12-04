@@ -503,15 +503,19 @@ class Exam extends MY_Seeker_Controller
         $jobseeker_id = $this->session->userdata('job_seeker_id');
        
 
-        $where_req_skill="job_seeker_id ='$jobseeker_id'";
-        $select = "id,skill_id,level,topic_id,created_on";
-        $data['final_result'] = $this->Master_model->getMaster('js_ocean_exam_topics',$where_req_skill,$join = FALSE, $order = false, $field = false, $select, $limit=false, $start=false, $search=false);
+        $where_req_skill="js_ocean_exam_topics.job_seeker_id ='$jobseeker_id'";
+        $join_r = array(
+            'skill_master' => 'skill_master.id = js_ocean_exam_topics.skill_id | INNER',
+        );
+        $select = "js_ocean_exam_topics.id as exam_id,js_ocean_exam_topics.skill_id,js_ocean_exam_topics.level,js_ocean_exam_topics.topic_id,js_ocean_exam_topics.created_on,skill_master.skill_name";
+        
+        $data['final_result'] = $this->Master_model->getMaster('js_ocean_exam_topics',$where_req_skill,$join_r, $order = false, $field = false, $select, $limit=false, $start=false, $search=false);
 
-        echo $this->db->last_query();
+        // echo $this->db->last_query();
 
-        echo "<pre>";
-        print_r($data['final_result']);
-
+        // echo "<pre>";
+        // print_r($data['final_result']);
+        $this->load->view('fontend/exam/ocean_champ_result', $data);
     }
     /*END OCEAN CHAMP TEST SECTION*/
 
