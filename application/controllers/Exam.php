@@ -281,7 +281,7 @@ class Exam extends MY_Seeker_Controller
                 $exists = $this->Master_model->get_master_row('js_ocean_exam_topics', $select =FALSE , $where_time, $join = FALSE);
                 if($exists)
                 {   
-                    $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">You have alredy given test for this skill</div>');                
+                    $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">You have already given test for this skill</div>');                
                     redirect('exam/ocean_champ_test');
 
                 }else{
