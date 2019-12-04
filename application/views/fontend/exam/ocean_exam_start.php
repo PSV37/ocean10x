@@ -134,7 +134,7 @@ var restart_timer_val = $('#restart_timer_val').val();
     var timer = $('#timer_val').val();
     var job_id = $('#job_id').val();
     $.ajax({
-      url: '<?php echo base_url();?>exam/insert_exam_session_data',
+      url: '<?php echo base_url();?>exam/insert_ocean_exam_session',
       type: 'post',
       data:{
         timer:timer,job_id:job_id
