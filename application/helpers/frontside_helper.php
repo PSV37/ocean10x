@@ -168,7 +168,7 @@ function get_metas() {
         $tablename = "topic";
         $where_res ="topic_id IN (".$topic_id.")";
        $exam_result = $CI->Master_model->getMaster($tablename, $where_res, false, false ,false, $select_result, $limit =false, $start =false, $search= false);
-       echo $CI->db->last_query(); die;
+      // echo $CI->db->last_query(); die;
 
         return $exam_res;
     } 
