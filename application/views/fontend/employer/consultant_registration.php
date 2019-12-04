@@ -10,7 +10,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-6">
-        <h1 class="page-heading">Employer Register</h1>
+        <h1 class="page-heading">consultant Register</h1>
       </div>
       <div class="col-md-6 col-sm-6">
       </div>
