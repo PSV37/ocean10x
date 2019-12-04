@@ -595,7 +595,7 @@ function getstate(){
         {
             $employer_id = $this->session->userdata('company_profile_id');
                 $send_to=$this->input->post('consultant');
-                 echo $send_to;
+                 // echo $send_to;
                
 
 
@@ -641,7 +641,32 @@ function getstate(){
                     {
 
                          if ($send_to=="consultant") {
-                            echo "string";
+                            $where_cndn = "company_email='$email[$i]'";
+
+                            $consultant_data = $this->Master_model->getMaster('company_profile',$where_cndn);
+                            if ($consultant_data) {
+                                $consultant_id=$consultant_data[0]['company_profile_id'];
+                            }
+                             else{
+                           $new_JS_array = array(
+                                'company_email' => $email[$i],
+                                'token' => md5($email[$i]),
+                                'create_at' => date('Y-m-d H:i:s'),
+                            );
+
+                            $comp_id = $this->Master_model->master_insert($new_JS_array,'company_profile');
+                            echo $comp_id;
+                        }
+                        //  $apply_array = array(
+                        //     'company_profile_id' => $comp_id,
+                        //     'job_post_id'   => $job_post_id,
+                        //     'job_status' => 1,
+                        // );
+                        // $apply = $this->Master_model->master_insert($apply_array,'consultants_jobs');
+                        
+                        
+
+                
 
                 }else
                 {   
