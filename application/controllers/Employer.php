@@ -640,33 +640,34 @@ function getstate(){
                     for($i=0;$i<sizeof($email);$i++)
                     {
 
-                         if ($send_to=="consultant") {
-                            $where_cndn = "company_email='$email[$i]'";
+                         if ($send_to=="consultant") 
+                         {
+                                $where_cndn = "company_email='$email[$i]'";
 
-                            $consultant_data = $this->Master_model->getMaster('company_profile',$where_cndn);
-                            if ($consultant_data) {
-                                $consultant_id=$consultant_data[0]['company_profile_id'];
-                            }
-                             else{
-                           $new_JS_array = array(
-                                'company_email' => $email[$i],
-                                'token' => md5($email[$i]),
-                                'create_at' => date('Y-m-d H:i:s'),
-                            );
+                                $consultant_data = $this->Master_model->getMaster('company_profile',$where_cndn);
+                                if ($consultant_data) {
+                                    $consultant_id=$consultant_data[0]['company_profile_id'];
+                                }
+                                 else{
+                               $new_JS_array = array(
+                                    'company_email' => $email[$i],
+                                    'token' => md5($email[$i]),
+                                    'create_at' => date('Y-m-d H:i:s'),
+                                );
 
-                            $comp_id = $this->Master_model->master_insert($new_JS_array,'company_profile');
-                            // echo $comp_id;
-                        }
-                         $apply_array = array(
-                            'company_profile_id' => $comp_id,
-                            'job_post_id'   => $job_post_id,
-                            'created_on' =>date('Y-m-d H:i:s'),
-                            'created_by' =>$comp_id
-                        );
-                        $apply = $this->Master_model->master_insert($apply_array,'consultants_jobs');
-                        if($apply)
-                        {
-                             $email_name = explode('@', $email[$i]);
+                                $comp_id = $this->Master_model->master_insert($new_JS_array,'company_profile');
+                                // echo $comp_id;
+                                }
+                                 $apply_array = array(
+                                    'company_profile_id' => $comp_id,
+                                    'job_post_id'   => $job_post_id,
+                                    'created_on' =>date('Y-m-d H:i:s'),
+                                    'created_by' =>$comp_id
+                                );
+                                $apply = $this->Master_model->master_insert($apply_array,'consultants_jobs');
+                                if($apply)
+                                {
+                                     $email_name = explode('@', $email[$i]);
 
                             $subject = 'Job | Urgent requirement for '.$require['job_title'];
 
@@ -699,8 +700,16 @@ function getstate(){
                             echo $message;
                         }
                         
+<<<<<<< HEAD
+=======
+                               
+                        
+
+                
+
+>>>>>>> 7051ab83307b57007286e1ed61d691201ec882c6
                 }else
-                {   
+                {  
                         $where_can = "email='$email[$i]'";
 
                         $can_data = $this->Master_model->getMaster('js_info',$where_can);
@@ -729,7 +738,7 @@ function getstate(){
 
                         if($apply)
                         {
-                             $email_name = explode('@', $email[$i]);
+                          $email_name = explode('@', $email[$i]);
 
                             $subject = 'Job | Urgent requirement for '.$require['job_title'];
 
@@ -760,14 +769,6 @@ function getstate(){
                            $send = sendEmail_JobRequest($email[$i],$message,$subject);
                            //echo $send;
                             echo $message;
-                          //  if ($send) {
-                          //   $this->session->set_flashdata('success',
-                          //   '<div class="alert alert-success alert-dismissable">
-                          //   <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                          // Job post is sucessfully Send To Candidates  
-                          // </div>');
-                          //   redirect('employer/active_job');
-                          //  }
                            
                         }
                         // else{
