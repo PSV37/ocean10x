@@ -699,8 +699,7 @@ function getstate(){
                     }
                         if($apply)
                         {
-
-                            $email_name = explode('@', $email[$i]);
+                             $email_name = explode('@', $email[$i]);
 
                             $subject = 'Job | Urgent requirement for '.$require['job_title'];
 
@@ -739,6 +738,7 @@ function getstate(){
                           // </div>');
                           //   redirect('employer/active_job');
                           //  }
+                           
                         }
                         // else{
                         //     redirect('employer/active_job');
