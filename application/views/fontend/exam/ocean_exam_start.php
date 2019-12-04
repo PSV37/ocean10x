@@ -97,7 +97,8 @@ var restart_timer_val = $('#restart_timer_val').val();
   {
     var c=restart_timer_val;
   }else{
-    var c=1800;
+    // var c=1800;
+    var c = 60;
   }
     
     var t;
@@ -116,8 +117,8 @@ var restart_timer_val = $('#restart_timer_val').val();
       if(c == 0 )
         {
             //setConfirmUnload(false);
-              //$("#quiz_form").submit();
-          // window.location="logout.html";
+          $("#nextques").submit();
+          window.location="<?php echo base_url();?>exam/autosubmit";
         }
           c = c - 1;
            $('#timer_val').val(c);
@@ -132,12 +133,12 @@ var restart_timer_val = $('#restart_timer_val').val();
 
   function fetchdata(){
     var timer = $('#timer_val').val();
-    var job_id = $('#job_id').val();
+    var skill_id = $('#skill_id').val();
     $.ajax({
       url: '<?php echo base_url();?>exam/insert_ocean_exam_session',
       type: 'post',
       data:{
-        timer:timer,job_id:job_id
+        timer:timer,skill_id:skill_id
       },
       success: function(response){
       /// alert(response);
