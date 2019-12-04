@@ -38,7 +38,9 @@
                 <div class="col-md-12 col-sm-12">
                   <div class="formrow">
                     <label class="control-label">Send To:</label>
-                    <input type="radio" name="consultanat">Consultant
+                    <input type="radio" name="consultant" value="consultanat">Consultant
+                    <input type="radio" name="Seeker" value="Seeker">JobSeeker(candidate)
+
                     
                   </div>
                 </div>
