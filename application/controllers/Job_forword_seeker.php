@@ -165,11 +165,31 @@ class Job_forword_seeker extends CI_Controller {
                         $status = $this->Master_model->master_update($data_status, 'consultants_jobs', $where_update1);
                         if($status==true)
                         {
+                            
+                                     $config = array(
+                                                'img_path'      => 'captcha_images/',
+                                                'img_url'       => base_url().'captcha_images/',
+                                                'img_width'     => '150',
+                                                'img_height'    => 50,
+                                                'word_length'   => 4,
+                                                'font_path' => FCPATH . 'captcha_images/font/captcha4.ttf',
+                                            );
+                            $captcha = create_captcha($config);
+                            
+                            // Unset previous captcha and store new captcha word
+                            $this->session->unset_userdata('captchaCode');
+                            $this->session->set_userdata('captchaCode',$captcha['word']);
+                            
+                            // Send captcha image to view
                              $data['comp_profile_id'] = $comp_profile_id;
                             $data['email_id'] = $comp_email;
                             $data['job_category'] = $this->Master_model->getMaster('job_category',$where=false);
+                            $captcha_images = $captcha['image'];
+                            $data['city'] = $this->Master_model->getMaster('city',$where=false);
+                            $data['country'] = $this->Master_model->getMaster('country',$where=false);
+                            $data['state'] = $this->Master_model->getMaster('state',$where=false);
 
-                            $this->load->view('fontend/employer/consultant_registration',$data);
+                            $this->load->view('fontend/employer/consultant_registration',$data,compact('captcha_images'));
                         }
                     }
             }
@@ -281,6 +301,14 @@ public function create_consultant_account()
                 // 'user_name' => $this->input->post('user_name'),
                 'company_password'  => md5($this->input->post('company_password')),
                 'company_category' => $this->input->post('company_category'),
+                'company_address' => $this->input->post('company_address'),
+                'company_address2' => $this->input->post('company_address2'),
+                'country_id' => $this->input->post('country_id'),
+                'state_id' => $this->input->post('state_id'),
+                'city_id' => $this->input->post('city_id'),
+                'company_pincode' => $this->input->post('company_pincode'),
+                'city_id' => $this->input->post('city_id'),
+
                 // 'mobile_no'    => $this->input->post('mobile'),
                 'js_status' => 1,
                 'cv_type'   => 1,
@@ -288,6 +316,51 @@ public function create_consultant_account()
            
             $email_to = base64_decode($this->input->get('comp_mail'));
             $comp_profile_id =$this->input->post('comp_profile_id');
+        $to_email=$this->input->post('company_email');
+        $exist_companyname = $this->company_profile_model->companyname_check($this->input->post('company_name'));
+       
+        $exist_username = $this->company_profile_model->username_check($this->input->post('company_username'));
+        
+$this->session->set_userdata('reg_in', $company_profile );
+  $company_logo = isset($_FILES['company_logo']['name']) ? $_FILES['company_logo']['name'] : null;
+
+
+       if (!empty($company_id) || !empty($company_logo)) {
+                if (!empty($company_logo)) {
+                    $config['upload_path']   = 'upload/';
+                    $config['allowed_types'] = 'gif|jpg|png';
+                    $config['encrypt_name']  = true;
+                     $config['max_width']     = 300;
+                    $config['max_height']    = 300;
+
+                    $this->load->library('upload', $config);
+                    $result_upload                   = $this->upload->do_upload('company_logo');
+                    $upload_data                     = $this->upload->data();
+                    $company_logo                    = $upload_data['file_name'];
+                    $consultant_info['company_logo'] = $company_logo;
+
+                    if (!$result_upload == true) {
+                        $error = array('error' => $this->upload->display_errors());
+                        $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">Please Upload a Valid Logo Size Max size 300*300</div>');
+                        echo "error";
+                        ///redirect('employer/profile-setting');
+                    } 
+                }
+            }
+        if ($exist_companyname) {
+            // all Ready Account Message
+            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Company Name Or Account Already Use This!</div>');
+            redirect('employer_register');
+        } 
+
+       
+        if ($exist_username) {
+            // all Ready Account Message
+            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Username Or Account Already Use This!</div>');
+            redirect('employer_register');
+        } 
+        
+        else {
 
           
                 $inputCaptcha = $this->input->post('captcha');
