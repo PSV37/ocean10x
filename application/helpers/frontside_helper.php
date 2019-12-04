@@ -149,6 +149,20 @@ function get_metas() {
         return $exam_result;
     } 
 
+
+// to fetch exam result by job seeker ids
+    function getOceanExamResultByID($js_id,$skill_id){
+        $CI = get_instance();
+        $select_result = "SUM(marks) as total_marks,COUNT(id) as total_questions,js_ocean_exam_result.js_id";
+        $table = "js_ocean_exam_result";
+        $where_res['skill_id'] = $skill_id;
+        $where_res['job_seeker_id'] = $js_id;
+        $exam_result = $CI->Master_model->getMaster($table, $where_res, false, false ,false, $select_result, $limit =false, $start =false, $search= false);
+     //   echo $CI->db->last_query(); die;
+
+        return $exam_result;
+    } 
+
     function getExamRequired($job_id){
         $CI = get_instance();
         $select_result = "is_test_required";
