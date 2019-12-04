@@ -144,7 +144,7 @@ class Job_forword_seeker extends CI_Controller {
 
          $wherecan="company_email= '$comp_email'";
             $check_candidate = $this->Master_model->getMaster('company_profile', $wherecan);
-            echo $check_candidate;
+            print_r($check_candidate);
 
     }
 	
