@@ -34,7 +34,7 @@
                                 <h5>Create An Account</h5>
                                 <div class="formpanel">
                                 
-                                <form id="EmpRegistation" action="<?php echo base_url(); ?>employer_register/create" method="post" enctype="multipart/form-data" class="submit-form">
+                                <form id="EmpRegistation" action="<?php echo base_url(); ?>job_forword_seeker/create_consultant_account" method="post" enctype="multipart/form-data" class="submit-form">
                                     <div class="formrow">
                                         <div class="row">
                                             <div class="col-md-6 col-sm-12">
@@ -55,6 +55,7 @@
                                             <div class="col-md-6 col-sm-12">
 
                                                <!--  <input type="email" name="company_email" value="<?php echo isset($email_id)?$email_id:''; ?>" class="form-control" placeholder="Email" autocomplete="off"> -->
+                                                <input type="hidden" class="form-control" name="comp_profile_id" placeholder="comp_profile_id" value="<?php echo $comp_profile_id; ?>" readonly>
                                                <p><?php echo $email_id;; ?></p>
                                             </div>
                                             <div class="col-md-6 col-sm-12">
