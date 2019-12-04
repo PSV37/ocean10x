@@ -368,13 +368,6 @@ class Exam extends MY_Seeker_Controller
                  
             $data['title'] = 'Exam Start';
             $data['skill_id'] = $skill_id;
-
-            //  $start_array = array(
-            //     'is_test_done' => '2',
-            // );
-            //$where_start['job_seeker_id'] = $jobseeker_id;
-            //$where_start['job_post_id']   = $job_id;
-            //$start_status = $this->Master_model->master_update($start_array,'job_apply',$where_start);
     
             $str = file_get_contents('./exam_questions/'.$skill_id.'_'.$jobseeker_id.'.json');
             $json = json_decode($str, true);
