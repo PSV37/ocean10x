@@ -29,7 +29,7 @@
                               $input_type='radio';
                             }
                         ?>
-                        <input type="hidden" name="skill_id" id="skill_id" value="<?php if(!empty($skill_id))echo base64_encode($skill_id); ?>">
+                        <input type="text" name="skill_id" id="skill_id" value="<?php if(!empty($skill_id))echo base64_encode($skill_id); ?>">
                         <input type="hidden" name="question_id" id="question_id" value="<?php echo $questions['ques_id']; ?>">
                        
                         <label><?php echo "Question:- ".$questions['question']; ?></label> 
