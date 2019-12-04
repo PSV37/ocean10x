@@ -97,8 +97,8 @@ var restart_timer_val = $('#restart_timer_val').val();
   {
     var c=restart_timer_val;
   }else{
-    // var c=1800;
-    var c = 60;
+    var c=1800;
+    // var c = 60;
   }
     
     var t;
