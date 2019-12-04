@@ -53,7 +53,7 @@
               <?php
                 if (!empty($exam_topic)){ 
                   foreach ($exam_topic as $top_row) { 
-                    echo implode(',', $top_row['topic_name']); 
+                    echo  $top_row['topic_name']; 
                   } 
                 } 
               ?>
