@@ -137,7 +137,16 @@ class Job_forword_seeker extends CI_Controller {
 	                redirect('register/jobseeker_login', 'refresh');
 	            }
 	}
+    public function open_forworded_job()
+    {
+        $comp_email= base64_decode($this->input->get('comp_mail'));
+        $job_id= base64_decode($this->input->get('job_id'));
 
+         $wherecan="company_email= '$comp_email'";
+            $check_candidate = $this->Master_model->getMaster('company_profile', $wherecan);
+            echo $check_candidate;
+
+    }
 	
  public function create_seeker_account()
     {
