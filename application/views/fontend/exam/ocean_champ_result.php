@@ -50,7 +50,7 @@
               <td><?php echo $result['topic_id']; ?></td>
               <td><?php echo $result['level']; ?></td>
               <td><?php echo NUMBER_QUESTIONS; ?></td>
-              <td><?php echo $result['total_questions']; ?></td>
+              <td><?php echo $res_row['total_questions']; ?></td>
               <td><?php echo $res_row['total_marks']; ?></td>
               <td>
                <?php echo round($percentage, 2).'%'; ?>
