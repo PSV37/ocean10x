@@ -335,11 +335,12 @@ class Exam extends MY_Seeker_Controller
 
         }else{
             $temp_array2= array();
+            $temp_array3= array();
             $data= array();
             $where_js = "job_seeker_id='$jobseeker_id'";
             $select_can_sk = "skills";
             $can_skills = $this->Master_model->getMaster('job_seeker_skills', $where_js, $join = FALSE, $order = false, $field = false, $select_can_sk,$limit=false,$start=false, $search=false);
-      
+        
             for($i=0;$i<sizeof($can_skills); $i++)
             {
                 $where_req_skill="skill_name ='".$can_skills[$i]['skills']."'";
@@ -349,9 +350,25 @@ class Exam extends MY_Seeker_Controller
                 $can_skills[$i]['id']= $skill_data[0]['id'];
                 
                array_push($temp_array2, $can_skills[$i]);
+
+                $whereadd="skill_name !='".$can_skills[$i]['skills']."'";
+                $selectadd = "id,skill_name";
+                $add_skill_data = $this->Master_model->getMaster('skill_master',$whereadd, $join = FALSE, $order = false, $field = false, $selectadd, $limit=false, $start=false, $search=false);
+
+                $can_skills[$i]['skill_name']= $add_skill_data[0]['skill_name'];
+                $can_skills[$i]['id']= $add_skill_data[0]['id'];
+                 echo $this->db->last_query(); echo "<br>";
+               array_push($temp_array3, $can_skills[$i]);
+
             }
             $data['skill_data']  = $temp_array2;
-         
+            $data['add_skill_data'] = $temp_array3;
+
+           
+           
+            echo "<pre>";
+            print_r($data['add_skill_data']);
+            die;
             $this->load->view('fontend/exam/ocean_champ_select_topic',$data);
         }
     }
@@ -372,6 +389,80 @@ class Exam extends MY_Seeker_Controller
             $result .='<p>Topics not available</p>';
         }
         echo $result;
+    }
+
+
+    public function oceanchamp_additional_exam()
+    {   
+        $jobseeker_id = $this->session->userdata('job_seeker_id');
+
+        if($_POST)
+        {
+            $created_on = date('Y-m-d H:i:s');
+            $cenvertedTime = date('Y-m-d H:i:s',strtotime('+5 hour +30 minutes',strtotime($created_on)));
+
+            $topics = $this->input->post('topics');
+            $temp_array= array();
+            if(!empty($topics))
+            {
+                $all_topics = implode(',', $this->input->post('add_topics'));
+                $skill = $this->input->post('add_skill_name');
+                $level = $this->input->post('add_level');
+
+                $where_time = "skill_id='$skill' AND job_seeker_id='$jobseeker_id' AND topic_id IN (".$all_topics.")";
+                $exists = $this->Master_model->get_master_row('js_ocean_exam_topics', $select =FALSE , $where_time, $join = FALSE);
+                if($exists)
+                {   
+                    $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">You have already given test for this skill</div>');                
+                    redirect('exam/ocean_champ_test');
+
+                }else{
+                    $data_array = array(
+                        'job_seeker_id' => $jobseeker_id,
+                        'topic_id'      => implode(',', $this->input->post('topics')),
+                        'level'         => $this->input->post('add_level'),
+                        'skill_id'      => $this->input->post('add_skill_name'),
+                        'created_on'    => $cenvertedTime,
+                        'created_by'    => $jobseeker_id,
+                    );
+
+                    $last_id = $this->Master_model->master_insert($data_array, 'js_ocean_exam_topics');
+
+                    $where_req_skill="topic_id IN (".$all_topics.") AND level='$level'";
+                    $exam_question = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit=NUMBER_QUESTIONS,$start=false, $search=false);
+                  
+                   // check for answers
+                    for($n1=0;$n1<sizeof($exam_question);$n1++)
+                    {
+                        $individual_question=array();
+                        $question_id = $exam_question[$n1]['ques_id']; 
+                        $wherechks = "question_id='$question_id'";
+                        $answer = $this->Master_model->getMaster('questionbank_answer',$wherechks);
+
+                        $exam_question[$n1]['answer']=$answer;
+                      
+                        $individual_question[]=$exam_question[$n1];
+                          
+                        array_push($temp_array, $exam_question[$n1]);
+                    }
+
+                    $fp = fopen('./exam_questions/'.$skill.'_'.$jobseeker_id.'.json', 'w');
+                    fwrite($fp, json_encode($temp_array));
+                                  
+                    $data['skill'] =  $skill;
+
+                    $this->load->view('fontend/exam/ocean_exam_instruction',$data);
+                }
+             
+               
+            }
+            else{
+                $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">Please select topic</div>');                
+                redirect('exam/ocean_champ_test');
+            }
+
+
+        }
     }
 
     public function ocean_exam_start($skill_id=null)
