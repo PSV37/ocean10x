@@ -1193,14 +1193,19 @@ function getstate(){
                 else
                 {
                     $comp_id=$this->Master_model->master_insert($company_profile,'company_profile');
-                    $consultanat_data=array(
+                    echo $comp_id;
+                    if (isset($comp_id) && !empty($comp_id)) {
+                        # code...
+                        $consultanat_data=array(
                         'consultant_id' =>$comp_id,
                         'company_id'=>$user_id,
                         'created_on' => date('Y-m-d H:i:s'),
                         'created_by' =>$user_id,
                         );
                     $consultant=$this->Master_model->master_insert($consultant_data,'consultant_company_mapping');
-                    echo $consultant;
+                    // echo $consultant;
+                    }
+                    
                 }
                
        
