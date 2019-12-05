@@ -23,7 +23,8 @@
     </div>
   </div>
 </div>
-<!-- Page Title End -->     
+<!-- Page Title End -->  
+<?php print_r($company_info); ?>   
           <div class="section lb">
                 <div class="container">
                     <div class="row">
