@@ -1131,7 +1131,15 @@ function getstate(){
 
     public function addconsultant()
     {
-        echo "string";
+        $user_id = $this->session->userdata('company_profile_id');
+        if(isset($_POST['add_consultant'])) {
+            # code...
+        }
+        
+        $data['city'] = $this->Master_model->getMaster('city',$where=false);
+        $data['country'] = $this->Master_model->getMaster('country',$where=false);
+        $data['state'] = $this->Master_model->getMaster('state',$where=false);
+        $this->load->view('fontend/consultant/add_consultant',$data);
     }
 /*Employee Listing */
     public function allemployee(){
