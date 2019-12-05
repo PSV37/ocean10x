@@ -53,7 +53,7 @@
 				<td><?php echo $key['company_name']; ?></td>
 				<td><?php echo $key['company_email']; ?></td>
 				<td><?php echo $key['company_phone']; ?></td>	
-				<td><?php echo $key['contact_person_name']; ?></td>				
+				<td><?php echo $key['contact_name']; ?></td>				
 				<td><?php echo $key['cont_person_email']; ?></td>
 				<td><?php echo $key['cont_person_mobile']; ?></td>
 				<td><?php echo $key['is_favourite']; ?></td>
