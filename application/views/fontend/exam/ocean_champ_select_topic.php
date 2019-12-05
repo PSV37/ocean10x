@@ -20,6 +20,7 @@ $this->load->view('fontend/layout/seeker_header.php');
         
             <form id="submit" class="submit-form" action="<?php echo base_url(); ?>exam/ocean_champ_test" method="post">
               <div class="row">
+                <h5>System recommended</h5>
                 <div class="col-md-6 col-sm-12">
                   <label class="control-label">Subject<span class="required">*</span> </label>
                   <select name="skill_name" id="skill_name" required class="form-control skill" data-style="btn-default" data-live-search="true" >
@@ -45,15 +46,14 @@ $this->load->view('fontend/layout/seeker_header.php');
                  
                 </div>
                   <button id="next" type="submit" class="btn btn-primary pull-right">Next</button>
-                </div>
               </div>
             </form>
-          </div><!-- end post-padding -->
-        </div>
+        </div><!-- end post-padding -->
       </div>
+    </div>
 
-    </div> <!--end row -->
-  </div><!-- end container -->
+  </div> <!--end row -->
+</div><!-- end container -->
 </div><!-- end section -->
 
 

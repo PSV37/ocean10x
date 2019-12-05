@@ -21,7 +21,7 @@
               <th>Total Marks</th>
               <th>Exam Result</th>
               <th>Exam Date</th>
-              <!-- <th>Exam</th> -->
+              <th>Performance</th>
               
             </tr>
           </thead>
@@ -52,8 +52,6 @@
               <td>
               <?php
                 if (!empty($exam_topic)){ 
-                 // echo $exam_topic->topic_name;
-                  // echo implode(',', );
                   foreach ($exam_topic as $top_row) { 
                     echo  $top_row['topic_name'].', '; 
                   } 
@@ -67,8 +65,27 @@
               <td>
                <?php echo round($percentage, 2).'%'; ?>
               </td>
-               <td><?php echo date('M j, Y',strtotime($result['created_on']));  ?></td>
-            
+              <td><?php echo date('M j, Y',strtotime($result['created_on']));  ?></td>
+              <td>
+                <?php
+                   $per = round($percentage, 2).'%'; 
+                   if($per<=25)
+                   {
+                      echo '<span class="label label-danger">Average</span>';
+                   }
+                   else if($per > 25 && $per <= 50)
+                   {
+                      echo '<span class="label label-warning">Good</span>';
+                   } else if($per > 50 && $per <= 75)
+                   {
+                      echo '<span class="label label-info">Very Good</span>';
+                   }
+                   else if($per > 75 && $per <= 100)
+                   {
+                      echo '<span class="label label-success">Exelent</span>';
+                   }
+                ?>
+              </td>
             </tr>
             <?php
               endforeach;
