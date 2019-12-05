@@ -71,18 +71,18 @@
                    $per = round($percentage, 2).'%'; 
                    if($per<=25)
                    {
-                      echo "Average";
+                      echo '<span class="label label-danger">Average</span>';
                    }
                    else if($per > 25 && $per <= 50)
                    {
-                      echo "Good";
+                      echo '<span class="label label-warning">Good</span>';
                    } else if($per > 50 && $per <= 75)
                    {
-                      echo "Very Good";
+                      echo '<span class="label label-info">Very Good</span>';
                    }
                    else if($per > 75 && $per <= 100)
                    {
-                      echo "Exelent";
+                      echo '<span class="label label-success">Exelent</span>';
                    }
                 ?>
               </td>
