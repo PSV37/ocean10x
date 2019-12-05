@@ -357,9 +357,10 @@ class Exam extends MY_Seeker_Controller
               
                 //$can_skills[$i]['skill_name']= $add_skill_data[0]['skill_name'];
                 //$can_skills[$i]['id']= $add_skill_data[0]['id'];
-                if($add_skill_data[0]['skill_name']==$can_skills[$i]['skills'])
+                if($add_skill_data[$i]['skill_name']==$can_skills[$i]['skills'])
                 {
                     echo "same";
+                    array_push($temp_array3, $add_skill_data[$i]);
                 }else{
                     array_push($temp_array3, $add_skill_data);
                 }
