@@ -319,8 +319,8 @@
                                           <div class="formrow">
                                           <label class="control-label">Company Phone: <span class="required">*</span></label>
                                             <input type="tel" name="company_phone" value="<?php 
-                                               if(!empty($company_info->company_phone)){
-                                                echo $company_info->company_phone;
+                                               if(!empty($company_info['company_phone'])){
+                                                echo $company_info['company_phone'];
                                                }
                                             ?>" class="form-control" maxlength="10" id="company_phone" onkeypress="phoneno()" style="margin-left:-32px; width:203px;" maxlength="10">
                                             </div>
@@ -333,8 +333,8 @@
                                           <div class="formrow">
                                           <label class="control-label">Company Contact Person: <span class="required">*</span></label>  
                                             <input type="text" name="contact_name"  value="<?php 
-                                               if(!empty($company_info->contact_name)){
-                                                echo $company_info->contact_name;
+                                               if(!empty($company_info['contact_name'])){
+                                                echo $company_info['contact_name'];
                                                }
                                             ?>" class="form-control" id="contact_name" placeholder="Contact Name">
                                             </div>
@@ -343,8 +343,8 @@
                                  <div class="formrow">
                                        <label class="control-label">Contact Person Email: <span class="required">*</span></label>
                                       <input type="text" name="cont_person_email" id="cont_person_email"  class="form-control" value="<?php 
-                                               if(!empty($company_info->cont_person_email)){
-                                                echo $company_info->cont_person_email;
+                                               if(!empty($company_info['cont_person_email'])){
+                                                echo $company_info['cont_person_email'];
                                                }
                                             ?>">
                                   </div>
@@ -360,8 +360,8 @@
                                   <div class="formrow">
                                     <label class="control-label">Contact Person Mobile: <span class="required">*</span></label>
                                      <input type="text" name="cont_person_mobile" id="cont_person_mobile"  class="form-control" value="<?php 
-                                             if(!empty($company_info->cont_person_mobile)){
-                                                echo $company_info->cont_person_mobile;
+                                             if(!empty($company_info['cont_person_mobile'])){
+                                                echo $company_info['cont_person_mobile'];
                                              }
                                         ?>" onkeypress="phonenoo()" maxlength="10">
                                   </div>
@@ -370,8 +370,8 @@
                             <div class="formrow">
                               <label class="control-label">Company Career Link:</label>
                               <input type="text" name="company_career_link"  id="company_career_link" class="form-control" value="<?php 
-                              if(!empty($company_info->company_career_link)){
-                              echo $company_info->company_career_link;
+                              if(!empty($company_info['company_career_link'])){
+                              echo $company_info['company_career_link'];
                               }
                               ?>" placeholder="Company Career Link">
                             </div>
@@ -389,8 +389,8 @@
                     <div class="col-md-12 col-sm-12">
                                          <div class="formrow">
                                           <label class="control-label">Company Address-1: <span class="required">*</span></label>
-                                            <textarea name="company_address" class="form-control ckeditor" placeholder="Company Address"><?php if(!empty($company_info->company_address)){
-                                                echo $company_info->company_address;
+                                            <textarea name="company_address" class="form-control ckeditor" placeholder="Company Address"><?php if(!empty($company_info['company_address'])){
+                                                echo $company_info['company_address'];
                                                } ?></textarea>
                                                  </div>
                                         </div>
@@ -399,8 +399,8 @@
                                         <div class="col-md-12 col-sm-12">
                                           <div class="formrow">
                                           <label class="control-label">Company Address-2:</label>
-                                            <textarea name="company_address2" class="form-control ckeditor" placeholder="Company Address-2"><?php if(!empty($company_info->company_address)){
-                                                echo $company_info->company_address2;
+                                            <textarea name="company_address2" class="form-control ckeditor" placeholder="Company Address-2"><?php if(!empty($company_info['company_address'])){
+                                                echo $company_info['company_address2'];
                                                } ?></textarea>
                                              </div>
                                         </div>
@@ -415,7 +415,7 @@
                       <select  name="country_id" id="country_id" class="form-control country" onchange="getStates(this.value)">
                       <option value="">Select Country</option>
                       <?php foreach($country as $key){?>
-                      <option value="<?php echo $key['country_id']; ?>"<?php if($company_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
+                      <option value="<?php echo $key['country_id']; ?>"<?php if($company_info['country_id']==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
                       <?php } ?>
                       </select>
                                           </div>
@@ -426,7 +426,7 @@
                       <div class="formrow">
                       <label class="control-label">Company State: <span class="required">*</span></label>
                       <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
-                      <option value="">Select State</option>
+                      <option value="$company_info['state_id']">Select State</option>
                          
                       </select>
                     </div>
@@ -436,7 +436,7 @@
                       <div class="formrow">
                       <label class="control-label">Company City: <span class="required">*</span></label>
                       <select  name="city_id" id="city_id" class="form-control">
-                      <option value="">Select City</option>
+                      <option value="$company_info['city_id']">Select City</option>
                        
                       </select>
                                       </div>
@@ -450,8 +450,8 @@
                                  <div class="formrow">
                                        <label class="control-label">Pincode: <span class="required">*</span></label>
                                       <input type="text" name="company_pincode" id="company_pincode"  class="form-control" value="<?php 
-                                               if(!empty($company_info->company_pincode)){
-                                                  echo $company_info->company_pincode;
+                                               if(!empty($company_info['company_pincode'])){
+                                                  echo $company_info['company_pincode'];
                                                }
                                           ?>" required>
                                   </div>
@@ -462,8 +462,8 @@
                                  <div class="formrow">
                                        <label class="control-label">GSTN No:</label>
                                       <input type="text" name="comp_gst_no" id="comp_gst_no"  class="form-control" value="<?php 
-                                               if(!empty($company_info->comp_gstn_no)){
-                                                  echo $company_info->comp_gstn_no;
+                                               if(!empty($company_info['comp_gstn_no'])){
+                                                  echo $company_info['comp_gstn_no'];
                                                }
                                           ?>">
                                   </div>
@@ -473,8 +473,8 @@
                                 <div class="formrow">
                                       <label class="control-label">PAN No: </label>
                                       <input type="text" name="comp_pan_no" id="comp_pan_no"  class="form-control" value="<?php 
-                                               if(!empty($company_info->comp_pan_no)){
-                                                  echo $company_info->comp_pan_no;
+                                               if(!empty($company_info['comp_pan_no'])){
+                                                  echo $company_info['comp_pan_no'];
                                                }
                                           ?>">
                                   </div>
@@ -494,8 +494,8 @@
                                           <div class="formrow">
                                             <label class="control-label">Company Logo<small> company logo measures 300 x 300 pixels </small></label>
                                             <input type="file" name="company_logo"  value="<?php 
-                                                 if(!empty($company_info->company_logo)){
-                                                    echo $company_info->company_logo;
+                                                 if(!empty($company_info['company_logo'])){
+                                                    echo $company_info['company_logo'];
                                                  }
                                             ?>" class="form-control">
                                             </div>
@@ -503,8 +503,8 @@
                                         <div class="col-md-3">
                                           <div class="formrow">
                                             <img class="thumbnail" src="<?php echo base_url(); ?>upload/<?php 
-                                                 if(!empty($company_info->company_logo)){
-                                                    echo $company_info->company_logo;
+                                                 if(!empty($company_info['company_logo'])){
+                                                    echo $company_info['company_logo'];
                                                  } else { echo "notfound.gif";}
                                             ?>">
                                             </div>
