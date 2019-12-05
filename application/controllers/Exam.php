@@ -354,28 +354,16 @@ class Exam extends MY_Seeker_Controller
                // $whereadd="skill_name !='".$can_skills[$i]['skills']."'";
                 $selectadd = "id,skill_name";
                 $add_skill_data = $this->Master_model->getMaster('skill_master',$whereadd = FALSE, $join = FALSE, $order = false, $field = false, $selectadd, $limit=false, $start=false, $search=false);
-              
-                //$can_skills[$i]['skill_name']= $add_skill_data[0]['skill_name'];
-                //$can_skills[$i]['id']= $add_skill_data[0]['id'];
-
-                
+            
                 array_push($temp_array3, $add_skill_data);
                 
               
 
             }
             $data['skill_data']  = $temp_array2;
-            $data['add_skill_data'] = $temp_array3;
-         
-                // $s= implode(',', $temp_array3);
+            $selectadd = "id,skill_name";
+            $data['add_skill_data'] = $this->Master_model->getMaster('skill_master',$whereadd = FALSE, $join = FALSE, $order = false, $field = false, $selectadd, $limit=false, $start=false, $search=false);
 
-             // $whereadd="skill_name NOT IN ('".$s."')";
-             //    $selectadd = "id,skill_name";
-             //    $data['add_skill_data'] = $this->Master_model->getMaster('skill_master',$whereadd, $join = FALSE, $order = false, $field = false, $selectadd, $limit=false, $start=false, $search=false);
-             // echo $this->db->last_query();
-            echo "<pre>";
-            print_r($data['add_skill_data']);
-            die;
             $this->load->view('fontend/exam/ocean_champ_select_topic',$data);
         }
     }
@@ -425,12 +413,13 @@ class Exam extends MY_Seeker_Controller
 
                 }else{
                     $data_array = array(
-                        'job_seeker_id' => $jobseeker_id,
-                        'topic_id'      => implode(',', $this->input->post('topics')),
-                        'level'         => $this->input->post('add_level'),
-                        'skill_id'      => $this->input->post('add_skill_name'),
-                        'created_on'    => $cenvertedTime,
-                        'created_by'    => $jobseeker_id,
+                        'job_seeker_id'     => $jobseeker_id,
+                        'topic_id'          => implode(',', $this->input->post('topics')),
+                        'level'             => $this->input->post('add_level'),
+                        'skill_id'          => $this->input->post('add_skill_name'),
+                        'additional_status' => 1,
+                        'created_on'        => $cenvertedTime,
+                        'created_by'        => $jobseeker_id,
                     );
 
                     $last_id = $this->Master_model->master_insert($data_array, 'js_ocean_exam_topics');
