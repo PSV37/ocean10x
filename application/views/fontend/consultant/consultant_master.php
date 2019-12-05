@@ -46,7 +46,7 @@
 			  <th>Actions</th>
             </thead>
             <tbody>
-			<?php print_r($result); foreach($result as $key){
+			<?php foreach($result as $key){
 				?>
               <tr>
 				<td><?php $count=1; echo $count; $count++; ?></td>
