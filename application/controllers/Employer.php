@@ -1133,6 +1133,7 @@ function getstate(){
     {
         $user_id = $this->session->userdata('company_profile_id');
         if(isset($_POST['add_consultant'])) {
+            $pass=rand(100,999);
           $company_profile = array(
                 'company_name'     => $this->input->post('company_name'),
                 'company_email'     => $this->input->post('company_email'),
@@ -1140,19 +1141,21 @@ function getstate(){
                 'country_code'     => $this->input->post('country_code'),
                 'company_phone'    => $this->input->post('company_phone'),
                 'contact_name'     => $this->input->post('contact_name'),
-                'company_career_link'     => $this->input->post('company_career_link'),
-                //'company_service'  => $this->input->post('company_service'),
+                'company_career_link' => $this->input->post('company_career_link'),
                 'company_address'  => $this->input->post('company_address'),
                 'company_address2'  => $this->input->post('company_address2'),
                 'country_id'       => $this->input->post('country_id'),
                 'state_id'         => $this->input->post('state_id'),
                 'city_id'          => $this->input->post('city_id'),
                 'company_pincode'          => $this->input->post('company_pincode'),
-
                 'cont_person_email'    => $this->input->post('cont_person_email'),
                 'cont_person_mobile'   => $this->input->post('cont_person_mobile'),
                 'comp_gstn_no'         => $this->input->post('comp_gst_no'),
                 'comp_pan_no'          => $this->input->post('comp_pan_no'),
+                'comp_type'            =>'HR Consultant',
+                'company_slug'     => $this->slug->create_uri($this->input->post('company_name')),
+                 'company_password' => md5($pass),
+                 'token'            => md5($this->input->post('company_email')),
             );
 
             $company_logo = isset($_FILES['company_logo']['name']) ? $_FILES['company_logo']['name'] : null;
@@ -1176,7 +1179,7 @@ function getstate(){
                     if (!$result_upload == true) {
                         $error = array('error' => $this->upload->display_errors());
                         $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">Please Upload a Valid Logo Size Max size 300*300</div>');
-                        redirect('employer/profile-setting');
+                        redirect('employer/addconsultant');
                     } 
                 }
             }
@@ -1185,12 +1188,20 @@ function getstate(){
                if ($exist_companyname) {
                     // all Ready Account Message
                     $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Company Name Or Account Already Use This!</div>');
-                    redirect('employer_register');
+                    // redirect('employer_register');
                 } 
                 else
                 {
                     $comp_id=$this->Master_model->master_insert($company_profile,'company_profile');
-                    echo $comp_id;
+                    // echo $comp_id;
+                    $consultanat_data=array(
+                        'consultant_id' =>$comp_id,
+                        'company_id'=>$user_id,
+                        'created_on' => date('Y-m-d H:i:s'),
+                        'created_by' =>$user_id,
+                        );
+                    $consultant=$this->Master_model->master_insert($consultant_data,'consultant_company_mapping');
+                    echo $consultant;
                         // redirect(base_url().'employer/allemployee');
                 }
         // $exist_username = $this->company_profile_model->username_check($this->input->post('company_username'));        
