@@ -367,7 +367,7 @@ class Exam extends MY_Seeker_Controller
            
            
             echo "<pre>";
-            print_r($data['add_skill_data']);
+            print_r($temp_array3);
             die;
             $this->load->view('fontend/exam/ocean_champ_select_topic',$data);
         }
