@@ -36,7 +36,9 @@
                             <div class="formpanel">
                                 <?php echo $this->session->flashdata('msg'); ?>
                                 <?php echo $this->session->flashdata('success_msg'); ?>
-                                <form id="submit" action="" method="post" class="submit-form" enctype="multipart/form-data">
+                               
+        <form method="post" action="<?php echo base_url();?>employer/addconsultant" enctype="multipart/form-data">
+
                                 <input type="hidden" name="company_profile_id" value="<?php echo $company_info->company_profile_id;?>">
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12">   
@@ -53,7 +55,7 @@
                                         <div class="col-md-6 col-sm-12">
                                           <div class="formrow">
                                             <label class="control-label">Company Email: <span class="required">*</span></label>
-                                            <input type="text" readonly name="company_email" value="<?php 
+                                            <input type="text"  name="company_email" value="<?php 
                                                if(!empty($company_info->company_email)){
                                                 echo $company_info->company_email;
                                                }
@@ -511,7 +513,7 @@
 
                                     </div><!-- end row -->
 
-                                    <button class="btn btn-primary" id="submit" type="submit">Add consultant</button>
+                                    <button class="btn btn-primary" name="add_consultant" id="submit" type="submit">Add consultant</button>
                                 </form>
                                 </div>
                             </div>
