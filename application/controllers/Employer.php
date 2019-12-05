@@ -1331,7 +1331,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
 
            $data["links"] = $this->pagination->create_links();
 
-           $this->load->view('fontend/consultant/consultant_master',$data)
+           $this->load->view('fontend/consultant/consultant_master',$data);
         }
 
 
