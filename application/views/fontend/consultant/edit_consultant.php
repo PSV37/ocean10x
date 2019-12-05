@@ -619,8 +619,8 @@ $(document).ready(function(){
                 data:{id:id},
                 success:function(res){
                     $('#state_id').html(res);
-                    $('#state_id').val(<?php echo $company_info->state_id; ?>);
-                     getCitys_load(<?php echo $company_info->state_id; ?>);
+                    $('#state_id').val(<?php echo $company_info['state_id']; ?>);
+                     getCitys_load(<?php echo $company_info['state_id']; ?>);
                 }
                 
             }); 
@@ -638,7 +638,7 @@ $(document).ready(function(){
                 data:{id:id},
                 success:function(res){
                     $('#city_id').html(res);
-                    $('#city_id').val(<?php echo $company_info->city_id; ?>);
+                    $('#city_id').val(<?php echo $company_info['city_id']; ?>);
                 }
                 
             }); 
