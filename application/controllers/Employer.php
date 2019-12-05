@@ -1203,8 +1203,10 @@ function getstate(){
                         'created_by' =>$user_id,
                         );
                     $consultant=$this->Master_model->master_insert($consultanat_data,'consultant_company_mapping');
-                    // echo $consultant;
-                    }
+                    // send mail to consultant
+                    print_r($this->session->userdata());
+                                        }
+
                     
                 }
                
