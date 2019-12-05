@@ -288,9 +288,9 @@
                         <div class="panel-body"></div>
                         <div class="col-md-12 col-sm-12">
                             <div class="form-group">
-                                <label class="control-label">Attractive Offers: <span class="required">*</span></label>
-                             <textarea  name="company_service" id="company_service" class="form-control ckeditor" rows="8" id="comment"><?php if(!empty($company_profile->company_service)){
-                                        echo $company_profile->company_service;
+                                <label class="control-label">Head Office Address-2: <span class="required">*</span></label>
+                             <textarea  name="company_address2" id="company_address2" class="form-control ckeditor" rows="8" id="comment"><?php if(!empty($company_profile->company_address2)){
+                                        echo $company_profile->company_address2;
                                      }
                                 ?></textarea>
                             </div>
