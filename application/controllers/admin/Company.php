@@ -52,7 +52,7 @@ class Company extends MY_Controller
                     'company_phone'    => $this->input->post('company_phone'),
                     'company_category' => $this->input->post('company_category'),
                     'company_logo'     => $file_name,
-                    'company_service'  => $this->input->post('company_service'),
+                    'company_address2'  => $this->input->post('company_address2'),
                     'company_address'  => $this->input->post('company_address'),
                     'hot_jobs'         => '1',
                     'company_aboutus'  => $this->input->post('company_aboutus'),
@@ -106,8 +106,8 @@ class Company extends MY_Controller
                 'company_url'      => $this->input->post('company_url'),
                 'company_phone'    => $this->input->post('company_phone'),
                 'company_category' => $this->input->post('company_category'),
-                'contact_name'     => $this->input->post('contact_name'),
-                'company_service'  => $this->input->post('company_service'),
+                'contact_name'     => $this->input->post('contact_person'),
+                'company_address2'  => $this->input->post('company_address2'),
                 'company_address'  => $this->input->post('company_address'),
                 'hot_jobs'  => $this->input->post('hot_jobs'),
                 'company_aboutus'  => $this->input->post('company_aboutus'),
@@ -115,7 +115,7 @@ class Company extends MY_Controller
                 
                 //newly added fields
                     'comp_type'            => $this->input->post('company_type'),
-                    'contact_person_name'  => $this->input->post('contact_person'),
+                   // 'contact_person_name'  => $this->input->post('contact_person'),
                     'cont_person_email'    => $this->input->post('cont_person_email'),
                     'cont_person_mobile'   => $this->input->post('cont_person_mobile'),
                     'comp_gstn_no'         => $this->input->post('comp_gst_no'),
