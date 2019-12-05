@@ -1202,7 +1202,7 @@ function getstate(){
                         'created_on' => date('Y-m-d H:i:s'),
                         'created_by' =>$user_id,
                         );
-                    $consultant=$this->Master_model->master_insert($consultant_data,'consultant_company_mapping');
+                    $consultant=$this->Master_model->master_insert($consultanat_data,'consultant_company_mapping');
                     // echo $consultant;
                     }
                     
