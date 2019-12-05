@@ -160,7 +160,7 @@ var restart_timer_val = $('#restart_timer_val').val();
   }
 
   $(document).ready(function(){
-   setInterval(fetchdata,30000);
+   setInterval(fetchdata,5000);
   });
 
   </script>
