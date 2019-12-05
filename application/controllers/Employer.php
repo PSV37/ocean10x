@@ -1129,6 +1129,10 @@ function getstate(){
     	$this->load->view('fontend/employee/add_employee',$data);		
     }
 
+    public function addconsultant()
+    {
+        echo "string";
+    }
 /*Employee Listing */
     public function allemployee(){
     	$employer = $this->session->userdata('company_profile_id');
