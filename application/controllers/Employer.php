@@ -1132,7 +1132,11 @@ function getstate(){
     public function addconsultant()
     {
         $user_id = $this->session->userdata('company_profile_id');
-        if(isset($_POST['add_consultant'])) {
+        if (isset($_POST['update_consultant'])) {
+            echo "string";
+            # code...
+        }
+        elseif(isset($_POST['add_consultant'])) {
             $pass=rand(100,999);
           $company_profile = array(
                 'company_name'     => $this->input->post('company_name'),
@@ -1289,12 +1293,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
     public function allconsultants()
     {
         $employer=$this->session->userdata('company_profile_id');
-        if ($_POST('update_consultant')) {
-            echo "string";
-            # code...
-        }
-        else
-        {
+
         $where='consultant_company_mapping.company_id='.$employer;
         //$data['result'] = $this->Master_model->getMaster('industry',$where=FALSE);
         $join = array(
@@ -1338,7 +1337,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
 
            $this->load->view('fontend/consultant/consultant_master',$data);
        
-       }
+
 
     }
 
