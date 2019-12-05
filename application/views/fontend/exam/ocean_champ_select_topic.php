@@ -49,6 +49,41 @@ $this->load->view('fontend/layout/seeker_header.php');
               </div>
             </form>
         </div><!-- end post-padding -->
+
+        <div class="formpanel">
+            <?php echo $this->session->flashdata('msg'); ?>
+        
+            <form id="submit" class="submit-form" action="<?php echo base_url(); ?>exam/ocean_champ_additional" method="post">
+              <div class="row">
+                <h5>Additional</h5>
+                <div class="col-md-6 col-sm-12">
+                  <label class="control-label">Subject<span class="required">*</span> </label>
+                  <select name="add_skill_name" id="add_skill_name" required class="form-control skill" data-style="btn-default" data-live-search="true" >
+                    <option value="">Select Skill</option>
+                    <?php if(!empty($skill_data)) foreach ($skill_data as $svalue) { ?>
+                      <option value="<?php echo $svalue['id']; ?>"><?php echo $svalue['skill_name']; ?></option>
+                    <?php  }
+                    ?>
+                  </select>
+                </div>
+                 <div class="col-md-6 col-sm-12">
+                  <label class="control-label ">Level<span class="required">*</span> </label>
+                  <select name="add_level" id="add_level" required class="form-control">
+                    <option value="">Select Level</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Expert">Expert</option>
+                  </select>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <label class="control-label ">Topics<span class="required">*</span> </label>
+                  <div id="add_topics"></div>
+                 
+                </div>
+                  <button id="next" type="submit" class="btn btn-primary pull-right">Next</button>
+              </div>
+            </form>
+        </div><!-- end post-padding -->
       </div>
     </div>
 
@@ -78,6 +113,21 @@ $this->load->view('fontend/layout/seeker_header.php');
             success: function(data)
             {
               $('#topic').html(data);
+            }
+        });//end ajax
+  });
+
+ $(document).delegate('#add_skill_name', 'change', function(event){
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+    var id = $(this).val();
+      $.ajax({
+            url:'<?php echo base_url();?>exam/gettopic',
+            type: "POST",
+            data:{id:id},
+            success: function(data)
+            {
+              $('#add_topics').html(data);
             }
         });//end ajax
   });
