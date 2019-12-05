@@ -24,7 +24,7 @@
   </div>
 </div>
 <!-- Page Title End -->    
-<?php print_r($company_info) ?> 
+<!-- <?php print_r($company_info) ?>  -->
           <div class="section lb">
                 <div class="container">
                     <div class="row">
@@ -45,10 +45,8 @@
                                         <div class="col-md-6 col-sm-12">   
                                            <div class="formrow">
                                             <label class="control-label">Company Name: <span class="required">*</span></label>
-                                            <input type="text" name="company_name" value="<?php 
-                                               if(!empty($company_info['company_name'])){
-                                                echo $company_info['company_name'];
-                                               } ?>" 
+                                            <input type="text" name="company_name" value="<?php echo $company_info['company_name'];?>"
+                                               
                                                class="form-control" placeholder="Company Name">
                                             </div>
                                         </div>
@@ -71,8 +69,8 @@
                                           <div class="formrow">
                                           <label class="control-label">Company URL:</label>
                                             <input type="text" name="company_url" value="<?php 
-                                               if(!empty($company_info->company_url)){
-                                                echo $company_info->company_url;
+                                               if(!empty($company_info['company_url'])){
+                                                echo $company_info['company_url'];
                                                }
                                             ?>" class="form-control" placeholder="Company Website">
                                             </div>
@@ -80,10 +78,10 @@
                                         <div class="col-md-3 col-sm-12">
                                           <div class="formrow">
                       <label class="control-label">Country Code:</label>
-                      <select id="country" name="country_code" class="form-control country_code">
+                      <select id="country" name="country_code" class="form-control country_code" >
                         <!-- <option value="">Select Country Code</option> -->
                         <br/>
-                        <option><?php echo $company_info->country_code?></option>
+                        <option><?php echo $company_info['country_code']?></option>
                         <option value="AD - Andorra (+376)">AD - Andorra (+376)</option>
                         <option value="AE - United Arab Emirates (+971)">AE - United Arab Emirates (+971)</option>
                         <option value="AF - Afghanistan (+93)">AF - Afghanistan (+93)</option>
