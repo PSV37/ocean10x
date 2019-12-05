@@ -60,8 +60,8 @@ $this->load->view('fontend/layout/seeker_header.php');
                   <label class="control-label">Subject<span class="required">*</span> </label>
                   <select name="add_skill_name" id="add_skill_name" required class="form-control skill" data-style="btn-default" data-live-search="true" >
                     <option value="">Select Skill</option>
-                    <?php if(!empty($skill_data)) foreach ($skill_data as $svalue) { ?>
-                      <option value="<?php echo $svalue['id']; ?>"><?php echo $svalue['skill_name']; ?></option>
+                    <?php if(!empty($add_skill_data)) foreach ($add_skill_data as $value) { ?>
+                      <option value="<?php echo $value['id']; ?>"><?php echo $value['skill_name']; ?></option>
                     <?php  }
                     ?>
                   </select>

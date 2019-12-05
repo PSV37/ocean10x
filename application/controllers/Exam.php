@@ -351,7 +351,10 @@ class Exam extends MY_Seeker_Controller
                array_push($temp_array2, $can_skills[$i]);
             }
             $data['skill_data']  = $temp_array2;
-         
+            
+            $selectadd = "id,skill_name";
+            $data['add_skill_data'] = $this->Master_model->getMaster('skill_master',$where = FALSE, $join = FALSE, $order = false, $field = false, $selectadd, $limit=false, $start=false, $search=false);
+
             $this->load->view('fontend/exam/ocean_champ_select_topic',$data);
         }
     }
