@@ -111,8 +111,8 @@
                         <div class="form-group">
                          <label class="control-label">Contact Person: <span class="required">*</span></label>
                           <input type="text" name="contact_person" id="contact_person" class="form-control" value="<?php 
-                                     if(!empty($company_profile->contact_person_name)){
-                                        echo $company_profile->contact_person_name;
+                                     if(!empty($company_profile->contact_name)){
+                                        echo $company_profile->contact_name;
                                      }
                                 ?>">
                           </div>
