@@ -357,9 +357,8 @@ class Exam extends MY_Seeker_Controller
 
                 $can_skills[$i]['skill_name']= $add_skill_data[0]['skill_name'];
                 $can_skills[$i]['id']= $add_skill_data[0]['id'];
-                 echo $this->db->last_query(); echo "<br>";
                array_push($temp_array3, $can_skills[$i]);
-
+               
             }
             $data['skill_data']  = $temp_array2;
             $data['add_skill_data'] = $temp_array3;
@@ -367,7 +366,7 @@ class Exam extends MY_Seeker_Controller
            
            
             echo "<pre>";
-            print_r($data['add_skill_data']);
+            print_r($temp_array3);
             die;
             $this->load->view('fontend/exam/ocean_champ_select_topic',$data);
         }
