@@ -55,7 +55,7 @@
                  // echo $exam_topic->topic_name;
                   // echo implode(',', );
                   foreach ($exam_topic as $top_row) { 
-                    echo  $top_row['topic_name'].','; 
+                    echo  $top_row['topic_name'].', '; 
                   } 
                 } 
               ?>
