@@ -413,12 +413,13 @@ class Exam extends MY_Seeker_Controller
 
                 }else{
                     $data_array = array(
-                        'job_seeker_id' => $jobseeker_id,
-                        'topic_id'      => implode(',', $this->input->post('topics')),
-                        'level'         => $this->input->post('add_level'),
-                        'skill_id'      => $this->input->post('add_skill_name'),
-                        'created_on'    => $cenvertedTime,
-                        'created_by'    => $jobseeker_id,
+                        'job_seeker_id'     => $jobseeker_id,
+                        'topic_id'          => implode(',', $this->input->post('topics')),
+                        'level'             => $this->input->post('add_level'),
+                        'skill_id'          => $this->input->post('add_skill_name'),
+                        'additional_status' => 1,
+                        'created_on'        => $cenvertedTime,
+                        'created_by'        => $jobseeker_id,
                     );
 
                     $last_id = $this->Master_model->master_insert($data_array, 'js_ocean_exam_topics');
