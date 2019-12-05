@@ -1188,7 +1188,7 @@ function getstate(){
                if ($exist_companyname) {
                     // all Ready Account Message
                     $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Company Name Or Account Already Use This!</div>');
-                    // redirect('employer_register');
+                     redirect('employer/addconsultant');
                 } 
                 else
                 {
@@ -1204,7 +1204,7 @@ function getstate(){
                     echo $consultant;
                         // redirect(base_url().'employer/allemployee');
                 }
-        // $exist_username = $this->company_profile_model->username_check($this->input->post('company_username'));        
+               
        
     }
      $data['city'] = $this->Master_model->getMaster('city',$where=false);
