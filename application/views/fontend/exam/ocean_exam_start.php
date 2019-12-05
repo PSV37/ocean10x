@@ -134,6 +134,7 @@ var restart_timer_val = $('#restart_timer_val').val();
   function fetchdata(){
     var timer = $('#timer_val').val();
     var skill_id = $('#skill_id').val();
+    alert(skill_id);
     $.ajax({
       url: '<?php echo base_url();?>exam/insert_ocean_exam_session',
       type: 'post',
