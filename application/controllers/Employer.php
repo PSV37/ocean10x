@@ -1132,11 +1132,9 @@ function getstate(){
     public function addconsultant()
     {
         $user_id = $this->session->userdata('company_profile_id');
-        if (isset($_POST['update_consultant'])) {
-            $consultant_id=$this->input->post('company_profile_id');
-            echo $consultant_id;
+        
             # code...
-        }
+        
         elseif(isset($_POST['add_consultant'])) {
             $pass=rand(100,999);
           $company_profile = array(
@@ -1197,6 +1195,7 @@ function getstate(){
                 } 
                 else
                 {
+                    if(isset($_POST['add_consultant'])) {
                     $comp_id=$this->Master_model->master_insert($company_profile,'company_profile');
                     // echo $comp_id;
                     if (isset($comp_id) && !empty($comp_id)) {
@@ -1228,7 +1227,18 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                    $send = sendEmail_JobRequest($to_email,$message,$subject);
                         
                   }
+              }
 
+            }
+            elseif (isset($_POST['update_consultant'])) {
+            $consultant_id=$this->input->post('company_profile_id');
+            echo $consultant_id;
+            if (isset($consultant_id)) {
+                $where['company_profile_id']=$consultant_id;
+            $this->Master_model->master_update($company_profile,'company_profile',$where);
+            redirect(base_url().'employer/allconsultants');
+            }
+                # code...
             }
 
                     
