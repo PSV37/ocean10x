@@ -1396,6 +1396,15 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $this->load->view('fontend/consultant/edit_consultant',$data);
                
     }
+     public function delete_consultant()
+    {
+        $id = $this->input->post('id');
+        $del = array(
+            'cons_status' =>'1',
+        );
+        $where11['con_comp_map_id']=$id;
+        $this->Master_model->master_update($del,'consultant_company_mapping',$where11);
+    }
 
     public function postEditData(){
         $this->form_validation->set_rules('emp_no', 'Employee No.', 'required|min_length[3]|max_length[6]|alpha_numeric');
