@@ -1369,7 +1369,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             'company_profile' => 'company_profile.company_profile_id = consultant_company_mapping.consultant_id|INNER',
             
         );
-         $data['company_id'] = $this->Master_model->get_master_row('consultant_company_mapping',$select = FALSE, $where = $where_cond , $join = $join_cond);
+         $data['company_info'] = $this->Master_model->get_master_row('consultant_company_mapping',$select = FALSE, $where = $where_cond , $join = $join_cond);
         $this->load->view('fontend/consultant/edit_consultant',$data);
                
     }
