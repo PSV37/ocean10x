@@ -1289,6 +1289,12 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
     public function allconsultants()
     {
         $employer=$this->session->userdata('company_profile_id');
+        if ($_POST('update_consultant')) {
+            echo "string";
+            # code...
+        }
+        else
+        {
         $where='consultant_company_mapping.company_id='.$employer;
         //$data['result'] = $this->Master_model->getMaster('industry',$where=FALSE);
         $join = array(
@@ -1332,7 +1338,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
 
            $this->load->view('fontend/consultant/consultant_master',$data);
        
-
+       }
 
     }
 

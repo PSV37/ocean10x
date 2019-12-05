@@ -40,7 +40,7 @@
                                
         <form method="post" action="<?php echo base_url();?>employer/addconsultant" enctype="multipart/form-data">
 
-                                <input type="hidden" name="company_profile_id" value="<?php echo $company_info->company_profile_id;?>">
+                                <input type="hidden" name="company_profile_id" value="<?php echo $company_info['company_profile_id'];?>">
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12">   
                                            <div class="formrow">
@@ -512,7 +512,7 @@
 
                                     </div><!-- end row -->
 
-                                    <button class="btn btn-primary" name="add_consultant" id="submit" type="submit">Add consultant</button>
+                                    <button class="btn btn-primary" name="update_consultant" id="submit" type="submit">update</button>
                                 </form>
                                 </div>
                             </div>
