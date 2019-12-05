@@ -269,6 +269,9 @@ class Exam extends MY_Seeker_Controller
 
         if($_POST)
         {
+            $created_on = date('Y-m-d H:i:s');
+            $cenvertedTime = date('Y-m-d H:i:s',strtotime('+5 hour +30 minutes',strtotime($created_on)));
+
             $topics = $this->input->post('topics');
             $temp_array= array();
             if(!empty($topics))
@@ -290,7 +293,7 @@ class Exam extends MY_Seeker_Controller
                         'topic_id'      => implode(',', $this->input->post('topics')),
                         'level'         => $this->input->post('level'),
                         'skill_id'      => $this->input->post('skill_name'),
-                        'created_on'    => date('Y-m-d H:i:s'),
+                        'created_on'    => $cenvertedTime,
                         'created_by'    => $jobseeker_id,
                     );
 
@@ -409,6 +412,8 @@ class Exam extends MY_Seeker_Controller
         $str = file_get_contents('./exam_questions/'.$skill_id.'_'.$jobseeker_id.'.json');
 
         $json = json_decode($str, true);
+        $created_on = date('Y-m-d H:i:s');
+        $cenvertedTime = date('Y-m-d H:i:s',strtotime('+5 hour +30 minutes',strtotime($created_on)));
 
         foreach ($json  as $value) {
            $data['questions'] = $value;
@@ -444,7 +449,7 @@ class Exam extends MY_Seeker_Controller
             'question_id'       => $question_id,
             'marks'             => $mark,
             'correct_status'    => $cstatus,
-            'date_time'         => date('Y-m-d H:i:s'),
+            'date_time'         => $cenvertedTime,
         );
         $last_id = $this->Master_model->master_insert($exam_array, 'js_ocean_exam_result');
         if($last_id)
