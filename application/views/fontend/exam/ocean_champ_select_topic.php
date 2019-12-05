@@ -49,7 +49,7 @@ $this->load->view('fontend/layout/seeker_header.php');
               </div>
             </form>
         </div><!-- end post-padding -->
-
+        <hr>
         <div class="formpanel">
             <?php echo $this->session->flashdata('msg'); ?>
         
