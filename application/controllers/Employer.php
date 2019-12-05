@@ -1180,26 +1180,19 @@ function getstate(){
                     } 
                 }
             }
-        $to_email=$this->input->post('cont_person_email');
-        $exist_companyname = $this->company_profile_model->companyname_check($this->input->post('company_name'));
-       if ($exist_companyname) {
-            // all Ready Account Message
-            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Company Name Or Account Already Use This!</div>');
-            redirect('employer_register');
-        } 
-
-       
-        if ($exist_username) {
-            // all Ready Account Message
-            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Username Or Account Already Use This!</div>');
-            redirect('employer_register');
-        }
-        else
-        {
-            $comp_id=$this->Master_model->master_insert($company_profile,'company_profile');
-            echo $comp_id;
-                // redirect(base_url().'employer/allemployee');
-        }
+             $to_email=$this->input->post('cont_person_email');
+             $exist_companyname = $this->company_profile_model->companyname_check($this->input->post('company_name'));
+               if ($exist_companyname) {
+                    // all Ready Account Message
+                    $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Company Name Or Account Already Use This!</div>');
+                    redirect('employer_register');
+                } 
+                else
+                {
+                    $comp_id=$this->Master_model->master_insert($company_profile,'company_profile');
+                    echo $comp_id;
+                        // redirect(base_url().'employer/allemployee');
+                }
         // $exist_username = $this->company_profile_model->username_check($this->input->post('company_username'));        
         $data['city'] = $this->Master_model->getMaster('city',$where=false);
         $data['country'] = $this->Master_model->getMaster('country',$where=false);
