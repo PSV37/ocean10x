@@ -52,7 +52,7 @@
               <td>
               <?php
                 if (!empty($exam_topic)){ 
-                  echo implode(',', $exam_topic->topic_name);
+                  echo implode(',', $exam_topic['topic_name']);
                   // foreach ($exam_topic as $top_row) { 
                   //   echo  $top_row['topic_name']; 
                   // } 
