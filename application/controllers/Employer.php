@@ -1364,12 +1364,12 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
     public function edit_consultant()
     {
         $consultant_id = $this->input->get('id');
-        $where = "consultant_company_mapping.con_comp_map_id='$consultant_id'";
-        $join = array(
+        $where_cond = "consultant_company_mapping.con_comp_map_id='$consultant_id'";
+        $join_cond = array(
             'company_profile' => 'company_profile.company_profile_id = consultant_company_mapping.consultant_id|INNER',
             
         );
-         $company_info = $this->Master_model->get_master_row('consultant_company_mapping',$where, $join, $order ="ASC", $field = "con_comp_map_id", $select = false, $config["per_page"],$page, $search=false, $group_by = false);
+         $company_info = $this->Master_model->get_master_row('consultant_company_mapping',$select = FALSE, $where = $where_cond , $join = $join_cond);
         $this->load->view('fontend/consultant/edit_consultant',$data);
                
     }
