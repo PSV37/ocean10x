@@ -1135,7 +1135,7 @@ function getstate(){
         
             # code...
         
-        if(isset($_POST['add_consultant'])) {
+        // if(isset($_POST['add_consultant'])) {
             $pass=rand(100,999);
           $company_profile = array(
                 'company_name'     => $this->input->post('company_name'),
@@ -1157,7 +1157,6 @@ function getstate(){
                 'comp_pan_no'          => $this->input->post('comp_pan_no'),
                 'comp_type'            =>"HR Consultant",
                 'company_slug'     => $this->slug->create_uri($this->input->post('company_name')),
-                 'company_password' => md5($pass),
                  'token'            => md5($this->input->post('company_email')),
             );
 
@@ -1196,9 +1195,10 @@ function getstate(){
                 else
                 {
                     if(isset($_POST['add_consultant'])) {
+                        $company_profile['company_password']=md5($pass);
                     $comp_id=$this->Master_model->master_insert($company_profile,'company_profile');
-                    // echo $comp_id;
-                    if (isset($comp_id) && !empty($comp_id)) {
+                    // echo $comp_id
+                                        if (isset($comp_id) && !empty($comp_id)) {
                         # code...
                         $consultanat_data=array(
                         'consultant_id' =>$comp_id,
@@ -1242,7 +1242,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             }
 
                     
-        }
+        // }
                
        
     }
