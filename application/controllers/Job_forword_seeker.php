@@ -397,6 +397,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
 
         } 
     }
+}
 
 
 }// end class
