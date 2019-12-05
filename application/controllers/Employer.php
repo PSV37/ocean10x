@@ -1227,7 +1227,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             }
 
                     
-                }
+        }
                
        
     }
@@ -1284,6 +1284,22 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
     	   
            $data["result"] = $this->Master_model->getMaster("employee", $where, $join, $order = "ASC", $field = "employee.emp_id", $select = false,$config["per_page"],$page, $search=false, $group_by = FALSE);
     	$this->load->view('fontend/employee/employee_master',$data);
+    }
+
+    public function allconsultants()
+    {
+        $employer=$this->session->userdata('company_profile_id');
+        $where='consultant_company_mapping.company_id='.$employer;
+        //$data['result'] = $this->Master_model->getMaster('industry',$where=FALSE);
+        $join = array(
+            'company_profile' => 'company_profile.company_profile_id = consultant_company_mapping.consultant_id|INNER',
+            
+        );
+    
+        $res = $this->Master_model->getMaster('consultant_company_mapping',$where, $join);
+        print_r($res);
+
+
     }
 
     /*Delete Employee*/
