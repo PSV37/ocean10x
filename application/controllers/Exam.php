@@ -351,20 +351,23 @@ class Exam extends MY_Seeker_Controller
                 
                array_push($temp_array2, $can_skills[$i]);
 
-                $whereadd="skill_name !='".$can_skills[$i]['skills']."'";
-                $selectadd = "id,skill_name";
-                $add_skill_data = $this->Master_model->getMaster('skill_master',$whereadd, $join = FALSE, $order = false, $field = false, $selectadd, $limit=false, $start=false, $search=false);
-
+                // $whereadd="skill_name !='".$can_skills[$i]['skills']."'";
+                // $selectadd = "id,skill_name";
+                // $add_skill_data = $this->Master_model->getMaster('skill_master',$whereadd, $join = FALSE, $order = false, $field = false, $selectadd, $limit=false, $start=false, $search=false);
+              
                 //$can_skills[$i]['skill_name']= $add_skill_data[0]['skill_name'];
                 //$can_skills[$i]['id']= $add_skill_data[0]['id'];
-               array_push($temp_array3, $add_skill_data);
+               array_push($temp_array3, $can_skills[$i]['skills']);
 
             }
             $data['skill_data']  = $temp_array2;
-            $data['add_skill_data'] = $temp_array3;
+            //$data['add_skill_data'] = $temp_array3;
+                $s= implode(',', $temp_array3);
 
-           
-           
+             $whereadd="skill_name NOT IN ('".$s."')";
+                $selectadd = "id,skill_name";
+                $data['add_skill_data'] = $this->Master_model->getMaster('skill_master',$whereadd, $join = FALSE, $order = false, $field = false, $selectadd, $limit=false, $start=false, $search=false);
+             echo $this->db->last_query();
             echo "<pre>";
             print_r($temp_array3);
             die;
