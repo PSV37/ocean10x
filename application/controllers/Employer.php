@@ -1367,12 +1367,12 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $where_cond = "consultant_company_mapping.con_comp_map_id='$consultant_id'";
         $join_cond = array(
             'company_profile' => 'company_profile.company_profile_id = consultant_company_mapping.consultant_id|INNER',
-            'country' => 'country.country_id = 
-            company_profile.country_id|INNER',
-            'city' => 'city.id = 
-            company_profile.city_id|INNER',
+           
             
         );
+        $data['country'] = $this->Master_model->getMaster('country',$where=false);
+        $data['state'] = $this->Master_model->getMaster('state',$where=false);
+        $data['city'] = $this->Master_model->getMaster('city',$where=false);
          $data['company_info'] = $this->Master_model->get_master_row('consultant_company_mapping',$select = FALSE, $where = $where_cond , $join = $join_cond);
         $this->load->view('fontend/consultant/edit_consultant',$data);
                
