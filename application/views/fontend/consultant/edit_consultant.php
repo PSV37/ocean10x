@@ -24,7 +24,7 @@
   </div>
 </div>
 <!-- Page Title End -->    
-<?php print_r($company_info->company_name) ?> 
+<?php print_r($company_info) ?> 
           <div class="section lb">
                 <div class="container">
                     <div class="row">
@@ -46,10 +46,10 @@
                                            <div class="formrow">
                                             <label class="control-label">Company Name: <span class="required">*</span></label>
                                             <input type="text" name="company_name" value="<?php 
-                                               if(!empty($company_info->company_name)){
-                                                echo $company_info->company_name;
-                                               }
-                                            ?>" class="form-control" placeholder="Company Name">
+                                               if(!empty($company_info['company_name'])){
+                                                echo $company_info['company_name'];
+                                               } ?>" 
+                                               class="form-control" placeholder="Company Name">
                                             </div>
                                         </div>
 
@@ -57,8 +57,8 @@
                                           <div class="formrow">
                                             <label class="control-label">Company Email: <span class="required">*</span></label>
                                             <input type="text"  name="company_email" value="<?php 
-                                               if(!empty($company_info->company_email)){
-                                                echo $company_info->company_email;
+                                               if(!empty($company_info['company_email'])){
+                                                echo $company_info['company_email'];
                                                }
                                             ?>" class="form-control" placeholder="Company Email">
                                             </div>
