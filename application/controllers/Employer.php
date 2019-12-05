@@ -1361,6 +1361,19 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
     	$this->load->view('fontend/employee/edit_employee',$data);
     }
 
+    public function edit_consultant()
+    {
+        $consultant_id = $this->input->get('id');
+        $where = "consultant_company_mapping.con_comp_map_id='$consultant_id'";
+        $join = array(
+            'company_profile' => 'company_profile.company_profile_id = consultant_company_mapping.consultant_id|INNER',
+            
+        );
+         $company_info = $this->Master_model->get_master_row('consultant_company_mapping',$where, $join, $order ="ASC", $field = "con_comp_map_id", $select = false, $config["per_page"],$page, $search=false, $group_by = false);
+        $this->load->view('fontend/consultant/edit_consultant',$data);
+               
+    }
+
     public function postEditData(){
         $this->form_validation->set_rules('emp_no', 'Employee No.', 'required|min_length[3]|max_length[6]|alpha_numeric');
 		$this->form_validation->set_rules('emp_name', 'Name', 'required');

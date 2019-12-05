@@ -46,10 +46,10 @@
 			  <th>Actions</th>
             </thead>
             <tbody>
-			<?php foreach($result as $key){
+			<?php  $count=1; foreach($result as $key){
 				?>
               <tr>
-				<td><?php $count=1; echo $count; $count++; ?></td>
+				<td><?php echo $count; $count++; ?></td>
 				<td><?php echo $key['company_name']; ?></td>
 				<td><?php echo $key['company_email']; ?></td>
 				<td><?php echo $key['company_phone']; ?></td>	
@@ -60,9 +60,9 @@
 				
 				<!--<td><?php if($key['emp_status']=='1'){ echo "Active"; }else{ echo "Inactive"; } ?></td>-->
                 <td>
-                 &nbsp;&nbsp; <a href="<?php echo base_url();?>employer/editemployee?id=<?php echo $key['emp_id']; ?>"><i class="fa fa-pencil"></i></a>
-                 &nbsp;&nbsp; <!--<a href="<?php echo base_url();?>emp/deletestatus?id=<?php echo $key['emp_id']; ?>"> <i class="fa fa-toggle-on"></i></a>-->
-                &nbsp;&nbsp; <a href='#' "title='Delete Record' data-toggle="modal" data-target="#deleteModal"  onclick="$('#del_id').val('<?php echo $key['emp_id'];?>');"><i class="fa fa-trash-o"></i></a>
+                 &nbsp;&nbsp; <a href="<?php echo base_url();?>employer/edit_consultant?id=<?php echo $key['con_comp_map_id']; ?>"><i class="fa fa-pencil"></i></a>
+                 &nbsp;&nbsp; <!--<a href="<?php echo base_url();?>emp/deletestatus?id=<?php echo $key['con_comp_map_id']; ?>"> <i class="fa fa-toggle-on"></i></a>-->
+                &nbsp;&nbsp; <a href='#' "title='Delete Record' data-toggle="modal" data-target="#deleteModal"  onclick="$('#del_id').val('<?php echo $key['con_comp_map_id'];?>');"><i class="fa fa-trash-o"></i></a>
 				</td>
               </tr>
 			<?php } ?>
@@ -135,7 +135,7 @@ $("#delete_btn").click(function(e)
 
          $.ajax({ 
                 
-                    url: "<?php echo site_url('employer/deleteemployee')?>",
+                    url: "<?php echo site_url('employer/delete_consultant')?>",
                     type: "POST",
                     data: {
                            id:id  
