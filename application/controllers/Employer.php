@@ -1296,8 +1296,42 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             
         );
     
-        $res = $this->Master_model->getMaster('consultant_company_mapping',$where, $join);
-        print_r($res);
+        $data['result'] = $this->Master_model->getMaster('consultant_company_mapping',$where, $join, $order ="ASC", $field = "con_comp_map_id", $select = false, $config["per_page"],$page, $search=false, $group_by = false);
+       
+            $config = array();
+            $config["base_url"] = base_url('employer/index');
+            $config["total_rows"] = count($res);
+            $config['per_page'] =5;
+            $config['uri_segment'] = 3;
+              
+            $config['full_tag_open'] = '<div class="pagination">';
+            $config['full_tag_close'] = '</div>';
+                 
+            $config['first_link'] = '<button>First Page</button>';
+            $config['first_tag_open'] = '<span class="firstlink">';
+            $config['first_tag_close'] = '</span>';
+            $config['last_link'] = '<button style="">Last Page</button>';
+            $config['last_tag_open'] = '<span class="lastlink">';
+            $config['last_tag_close'] = '</span>';
+            $config['next_link'] = '<span style="margin-left:8px;"><button style="color:#FFF; background:#008000;">Next Page</button></span>';
+            $config['next_tag_open'] = '<span class="nextlink">';
+            $config['next_tag_close'] = '</span>';
+            $config['prev_link'] = '<button style="color:#FFF; background:#0000FF;">Prev Page</button>';
+            $config['prev_tag_open'] = '<span class="prevlink">';
+            $config['prev_tag_close'] = '</span>';
+            $config['cur_tag_open'] = '<span style="margin-left:8px;">';
+            $config['cur_tag_close'] = '</span>';
+            $config['num_tag_open'] = '<span style="margin-left:8px;">';
+            $config['num_tag_close'] = '</span>';
+            $this->pagination->initialize($config);
+            $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+
+            $this->pagination->initialize($config);
+
+           $data["links"] = $this->pagination->create_links();
+
+           $this->load->view('fontend/consultant/consultant_master',$data);
+       
 
 
     }
