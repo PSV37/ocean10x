@@ -60,7 +60,7 @@ class Company extends MY_Controller
 
                     //newly added fields
                     'comp_type'            => $this->input->post('company_type'),
-                    'contact_person_name'  => $this->input->post('contact_person'),
+                    'contact_name'  => $this->input->post('contact_person'),
                     'cont_person_email'    => $this->input->post('cont_person_email'),
                     'cont_person_mobile'   => $this->input->post('cont_person_mobile'),
                     'comp_gstn_no'         => $this->input->post('comp_gst_no'),
