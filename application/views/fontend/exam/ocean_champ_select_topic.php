@@ -53,7 +53,7 @@ $this->load->view('fontend/layout/seeker_header.php');
         <div class="formpanel">
             <?php echo $this->session->flashdata('msg'); ?>
         
-            <form id="submit" class="submit-form" action="<?php echo base_url(); ?>exam/ocean_champ_additional" method="post">
+            <form id="submit" class="submit-form" action="<?php echo base_url(); ?>exam/oceanchamp_additional_exam" method="post">
               <div class="row">
                 <h5>Additional</h5>
                 <div class="col-md-6 col-sm-12">
@@ -101,7 +101,10 @@ $this->load->view('fontend/layout/seeker_header.php');
     placeholder: "Select Skill",
     allowClear: true
   });
-
+ $("#add_skill_name").select2( {
+    placeholder: "Select Skill",
+    allowClear: true
+  });
   $(document).delegate('#skill_name', 'change', function(event){
     event.stopPropagation();
     event.stopImmediatePropagation();
