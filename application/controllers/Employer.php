@@ -1152,7 +1152,7 @@ function getstate(){
                 'cont_person_mobile'   => $this->input->post('cont_person_mobile'),
                 'comp_gstn_no'         => $this->input->post('comp_gst_no'),
                 'comp_pan_no'          => $this->input->post('comp_pan_no'),
-                'comp_type'            =>'HR Consultant',
+                'comp_type'            =>"HR Consultant",
                 'company_slug'     => $this->slug->create_uri($this->input->post('company_name')),
                  'company_password' => md5($pass),
                  'token'            => md5($this->input->post('company_email')),
@@ -1193,7 +1193,6 @@ function getstate(){
                 else
                 {
                     $comp_id=$this->Master_model->master_insert($company_profile,'company_profile');
-                    // echo $comp_id;
                     $consultanat_data=array(
                         'consultant_id' =>$comp_id,
                         'company_id'=>$user_id,
@@ -1202,15 +1201,14 @@ function getstate(){
                         );
                     $consultant=$this->Master_model->master_insert($consultant_data,'consultant_company_mapping');
                     echo $consultant;
-                        // redirect(base_url().'employer/allemployee');
                 }
                
        
     }
-     $data['city'] = $this->Master_model->getMaster('city',$where=false);
-        $data['country'] = $this->Master_model->getMaster('country',$where=false);
-        $data['state'] = $this->Master_model->getMaster('state',$where=false);
-        $this->load->view('fontend/consultant/add_consultant',$data);
+             $data['city'] = $this->Master_model->getMaster('city',$where=false);
+                $data['country'] = $this->Master_model->getMaster('country',$where=false);
+                $data['state'] = $this->Master_model->getMaster('state',$where=false);
+                $this->load->view('fontend/consultant/add_consultant',$data);
 }
 /*Employee Listing */
     public function allemployee(){
