@@ -1133,14 +1133,80 @@ function getstate(){
     {
         $user_id = $this->session->userdata('company_profile_id');
         if(isset($_POST['add_consultant'])) {
-            # code...
+          $company_profile = array(
+                'company_name'     => $this->input->post('company_name'),
+                'company_email'     => $this->input->post('company_email'),
+                'company_url'      => $this->input->post('company_url'),
+                'country_code'     => $this->input->post('country_code'),
+                'company_phone'    => $this->input->post('company_phone'),
+                'contact_name'     => $this->input->post('contact_name'),
+                'company_career_link'     => $this->input->post('company_career_link'),
+                //'company_service'  => $this->input->post('company_service'),
+                'company_address'  => $this->input->post('company_address'),
+                'company_address2'  => $this->input->post('company_address2'),
+                'country_id'       => $this->input->post('country_id'),
+                'state_id'         => $this->input->post('state_id'),
+                'city_id'          => $this->input->post('city_id'),
+                'company_pincode'          => $this->input->post('company_pincode'),
+
+                'cont_person_email'    => $this->input->post('cont_person_email'),
+                'cont_person_mobile'   => $this->input->post('cont_person_mobile'),
+                'comp_gstn_no'         => $this->input->post('comp_gst_no'),
+                'comp_pan_no'          => $this->input->post('comp_pan_no'),
+            );
+
+            $company_logo = isset($_FILES['company_logo']['name']) ? $_FILES['company_logo']['name'] : null;
+
+            if (!empty($employer_id) || !empty($company_logo)) {
+                if (!empty($company_logo)) {
+
+                    $config['upload_path']   = 'upload/';
+                    $config['allowed_types'] = 'gif|jpg|png';
+                    $config['encrypt_name']  = true;
+                    $config['max_size']      = 1000;
+                    $config['max_width']     = 300;
+                    $config['max_height']    = 300;
+
+                    $this->load->library('upload', $config);
+                    $result_upload                   = $this->upload->do_upload('company_logo');
+                    $upload_data                     = $this->upload->data();
+                    $company_logo                    = $upload_data['file_name'];
+                    $company_profile['company_logo'] = $company_logo;
+
+                    if (!$result_upload == true) {
+                        $error = array('error' => $this->upload->display_errors());
+                        $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">Please Upload a Valid Logo Size Max size 300*300</div>');
+                        redirect('employer/profile-setting');
+                    } 
+                }
+            }
+        $to_email=$this->input->post('cont_person_email');
+        $exist_companyname = $this->company_profile_model->companyname_check($this->input->post('company_name'));
+       if ($exist_companyname) {
+            // all Ready Account Message
+            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Company Name Or Account Already Use This!</div>');
+            redirect('employer_register');
+        } 
+
+       
+        if ($exist_username) {
+            // all Ready Account Message
+            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Username Or Account Already Use This!</div>');
+            redirect('employer_register');
         }
-        
+        else
+        {
+            $comp_id=$this->Master_model->master_insert($company_profile,'company_profile');
+            echo $comp_id;
+                // redirect(base_url().'employer/allemployee');
+        }
+        // $exist_username = $this->company_profile_model->username_check($this->input->post('company_username'));        
         $data['city'] = $this->Master_model->getMaster('city',$where=false);
         $data['country'] = $this->Master_model->getMaster('country',$where=false);
         $data['state'] = $this->Master_model->getMaster('state',$where=false);
         $this->load->view('fontend/consultant/add_consultant',$data);
     }
+}
 /*Employee Listing */
     public function allemployee(){
     	$employer = $this->session->userdata('company_profile_id');
