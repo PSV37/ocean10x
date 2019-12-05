@@ -1204,6 +1204,7 @@ function getstate(){
                         );
                     $consultant=$this->Master_model->master_insert($consultanat_data,'consultant_company_mapping');
                     // send mail to consultant
+                    echo $consultant;
                     $comp_name=$this->session->userdata('company_name');
                     if (isset($consultant) && !empty($consultant)) {
                          $subject = "Registration done successfully";
@@ -1221,7 +1222,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                         
                   }
 
-                                        }
+            }
 
                     
                 }
