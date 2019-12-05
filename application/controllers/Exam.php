@@ -364,7 +364,7 @@ class Exam extends MY_Seeker_Controller
             //$data['add_skill_data'] = $temp_array3;
                 $s= implode(',', $temp_array3);
 
-             $whereadd="skill_name NOT IN (".$s.")";
+             $whereadd="skill_name NOT IN ('".$s."')";
                 $selectadd = "id,skill_name";
                 $data['add_skill_data'] = $this->Master_model->getMaster('skill_master',$whereadd, $join = FALSE, $order = false, $field = false, $selectadd, $limit=false, $start=false, $search=false);
              echo $this->db->last_query();
