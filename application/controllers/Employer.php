@@ -1194,11 +1194,12 @@ function getstate(){
                         // redirect(base_url().'employer/allemployee');
                 }
         // $exist_username = $this->company_profile_model->username_check($this->input->post('company_username'));        
-        $data['city'] = $this->Master_model->getMaster('city',$where=false);
+       
+    }
+     $data['city'] = $this->Master_model->getMaster('city',$where=false);
         $data['country'] = $this->Master_model->getMaster('country',$where=false);
         $data['state'] = $this->Master_model->getMaster('state',$where=false);
         $this->load->view('fontend/consultant/add_consultant',$data);
-    }
 }
 /*Employee Listing */
     public function allemployee(){
