@@ -1133,7 +1133,8 @@ function getstate(){
     {
         $user_id = $this->session->userdata('company_profile_id');
         if (isset($_POST['update_consultant'])) {
-            echo "string";
+            $consultant_id=$this->input->get('id');
+            echo $consultant_id;
             # code...
         }
         elseif(isset($_POST['add_consultant'])) {
