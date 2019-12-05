@@ -366,7 +366,7 @@ class Exam extends MY_Seeker_Controller
             }
             $data['skill_data']  = $temp_array2;
             $data['add_skill_data'] = $temp_array3;
-            $result = array_diff($temp_array2, $temp_array3);
+            $result = array_diff($temp_array3, $temp_array2);
 
                 // $s= implode(',', $temp_array3);
 
