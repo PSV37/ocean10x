@@ -1204,7 +1204,23 @@ function getstate(){
                         );
                     $consultant=$this->Master_model->master_insert($consultanat_data,'consultant_company_mapping');
                     // send mail to consultant
-                    print_r($this->session->userdata());
+                    $comp_name=$this->session->userdata('company_name');
+                    if (isset($consultant) && !empty($consultant)) {
+                         $subject = "Registration done successfully";
+                $message = '<div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+<table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"><?php echo get_logo();?></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+<br><br>Hi Dear,<br>Your account has been created successfully by <?php echo($comp_name); ?><br><br>You can login to our portal using following credentials<br>
+username:<?php echo($send_to);?><br>
+Password:<?php echo($pass);?><br>
+Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Question? Check out how works and our support team are ready to help.<br><br>© 2017 ConsultnHire All Rights Reserved.<br><br>You have received this mail because your e-mail ID is registered with Consultnhire.com. This is a system-generated e-mail regarding your Consultnhire account preferences, please do not reply to this message. The jobs sent in this mail have been posted by the clients of Consultnhire.com. And we have enabled auto-login for your convenience, you are strongly advised not to forward this email to protect your account from unauthorized access. IEIL has taken all reasonable steps to ensure that the information in this mailer is authentic. Users are advised to research bonafides of advertisers independently. Please do not pay any money to anyone who promises to find you a job. IEIL shall not have any responsibility in this regard. We recommend that you visit our Terms & Conditions and the Security Advice for more comprehensive information.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+
+                    // successfully sent mail
+                  // $this->job_seeker_model->sendEmail($email_to);
+
+                   $send = sendEmail_JobRequest($to_email,$message,$subject);
+                        
+                  }
+
                                         }
 
                     
