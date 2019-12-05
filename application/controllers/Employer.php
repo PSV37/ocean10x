@@ -1135,7 +1135,7 @@ function getstate(){
         
             # code...
         
-        elseif(isset($_POST['add_consultant'])) {
+        if(isset($_POST['add_consultant'])) {
             $pass=rand(100,999);
           $company_profile = array(
                 'company_name'     => $this->input->post('company_name'),
