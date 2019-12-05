@@ -160,18 +160,18 @@
                         <!-- end col -->
                     </div><!-- end row -->  
                 </div>
-										<div class="formrow">
-                                       
-                                		<div class="container-fluid">
-										<div class="col-md-3 col-sm-12"></div>
-                                            <div class="col-md-6 col-sm-12">
-											<br/><p>For Any Query:</p>
-											<p>Contact Us: +91 99999 99999 or +91 88888 88888</p>
-											<p>Email us: <a href="mailto:onlinebuy@ocean.com">onlinebuy@ocean.com</a></p>											
-											</div>
-                                           </div><!-- end row -->
-										</div><!-- end container -->
-            </div><!-- end section -->
+			<div class="formrow">
+           
+        		<div class="container-fluid">
+        			<div class="col-md-3 col-sm-12"></div>
+                    <div class="col-md-6 col-sm-12">
+        				<br/><p>For Any Query:</p>
+        				<p>Contact Us: +91 99999 99999 or +91 88888 88888</p>
+        				<p>Email us: <a href="mailto:onlinebuy@ocean.com">onlinebuy@ocean.com</a></p>											
+            		</div>
+               </div><!-- end row -->
+			</div><!-- end container -->
+        </div><!-- end section -->
 										
 <input type="hidden" id="sessionCaptcha1" name="sessionCaptcha1" value="<?php echo $this->session->userdata('captchaCode'); ?>">
 
