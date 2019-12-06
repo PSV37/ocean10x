@@ -485,7 +485,7 @@
                               <div class="col-md-6 col-sm-6">
                                  <div class="formrow">
                                     <label class="control-label">Is the consultant is Favorite</label>
-                                      <select name="Favorite">
+                                      <select class="form-control" name="Favorite">
                                           <option>No</option>
                                           <option>Yes</option>
                                       </select>
