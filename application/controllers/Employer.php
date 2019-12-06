@@ -700,11 +700,6 @@ function getstate(){
                            //echo $send;
                             echo $message;
                         }
-                        
-                               
-                        
-
-                
 
                 }else
                 {  
@@ -2013,12 +2008,12 @@ public function interview_scheduler()
     function get_company_info()
     {
        
-    $s =$this->input->post('comp_name');
-    $where1 = "company_name = '$s'";
-    $join = array( "country"=>"country.country_id=company_profile.country_id | LEFT OUTER",
-                    "city"=>"city.id=company_profile.city_id | LEFT OUTER",
-                    "state"=>"state.state_id=company_profile.state_id | LEFT OUTER");
-    $select ="company_profile_id,company_name,company_email,company_url,country_code,company_phone,contact_name,cont_person_email,cont_person_mobile,company_career_link,company_address,company_address2,company_pincode,comp_gstn_no,comp_pan_no,company_profile.country_id,city.city_name,state.state_name";
+        $s =$this->input->post('comp_name');
+        $where1 = "company_name = '$s'";
+        $join = array( "country"=>"country.country_id=company_profile.country_id | LEFT OUTER",
+                        "city"=>"city.id=company_profile.city_id | LEFT OUTER",
+                        "state"=>"state.state_id=company_profile.state_id | LEFT OUTER");
+        $select ="company_profile_id,company_name,company_email,company_url,country_code,company_phone,contact_name,cont_person_email,cont_person_mobile,company_career_link,company_address,company_address2,company_pincode,comp_gstn_no,comp_pan_no,company_profile.country_id,city.city_name,state.state_name";
         $result = $this->Master_model->getMaster('company_profile', $where1, $join = $join, $order = false, $field = false, $select = $select,$limit=false,$start=false, $search=false);
                 echo json_encode($result);
 
@@ -2035,7 +2030,16 @@ public function interview_scheduler()
       public function add_new_cv()
     {
         $company_id = $this->session->userdata('company_profile_id');
-       
+
+        $industry_master = $this->Master_model->getMaster('job_category',$where=false);
+        echo "<pre>";
+        print_r($industry_master);
+        $shift = $this->Master_model->getMaster('shift',$where=false);
+        $department = $this->Master_model->getMaster('department',$where=false);
+        echo "<pre>";
+        print_r($department);
+        $job_role = $this->Master_model->getMaster('job_role',$where=false);
+        die;
         $this->load->view('fontend/employer/add_new_cv');
     }
 
