@@ -569,7 +569,7 @@
                      $('#company_career_link').val(value.company_career_link);
                      $('#company_address').val(value.company_address);
                      $('#company_address2').val(value.company_address2);
-                     $('#country_id').val(value.country_name);
+                     $('#country_id').val(value.country_id);
                      $('#state_id').val(value.state_name);
                      $('#city_id').val(value.city_name);
                      $('#company_pincode').val(value.company_pincode);
@@ -578,7 +578,29 @@
                   });
                } 
         });
+    // savecompanymapping(value.company_profile_id);
 }
+    function savecompanymapping(comp_id)
+    {
+            $.ajax({
+              url:'<?php echo site_url('employer/addconsultant') ?>',
+              type:'POST',
+              data:{
+                    comp_name:company_name
+              },
+               dataType: "JSON",  
+               success: function(data)
+               {
+                 // console.log(data);
+                 $.each(data, function(index, value) 
+                  {
+                    // console.log(value);
+                    
+                  });
+               } 
+        });
+
+    }
 </script>
 <script>
     // WRITE THE VALIDATION SCRIPT.
