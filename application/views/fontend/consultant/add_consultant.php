@@ -426,7 +426,7 @@
                     <div class="col-md-4 col-sm-4">
                       <div class="formrow">
                       <label class="control-label">Company State: <span class="required">*</span></label>
-                      <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+                      <select  name="state_id" id="state_ids" class="form-control" onchange="getCitys(this.value)">
                       <option value="">Select State</option>
                          
                       </select>
@@ -436,7 +436,7 @@
                     <div class="col-md-4 col-sm-4">
                       <div class="formrow">
                       <label class="control-label">Company City: <span class="required">*</span></label>
-                      <select  name="city_id" id="city_id" class="form-control">
+                      <select  name="city_id" id="city_ids" class="form-control">
                       <option value="">Select City</option>
                        
                       </select>
@@ -570,8 +570,8 @@
                      $('#company_address').val(value.company_address);
                      $('#company_address2').val(value.company_address2);
                      $('#country_idf').val(value.country_id);
-                     $('#state_id').val(value.state_id);
-                     $('#city_id').val(value.city_id);
+                     $('#state_ids').val(value.state_id);
+                     $('#city_ids').val(value.city_id);
                      $('#company_pincode').val(value.company_pincode);
                      $('#comp_gst_no').val(value.comp_gstn_no);
                      $('#comp_pan_no').val(value.comp_pan_no);
