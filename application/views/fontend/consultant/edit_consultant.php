@@ -489,6 +489,7 @@
                                                   echo $company_info['is_favourite'];
                                                }
                                           ?>">>
+                                          <option value="<?php echo $company_info['is_favourite']; ?>"<?php if($company_info['is_favourite']==$company_info['company_info']){ echo "selected"; }?>><?php echo $company_info['is_favourite']; ?></option>
                                           <option>No</option>
                                           <option>Yes</option>
                                       </select>
