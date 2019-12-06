@@ -1989,14 +1989,13 @@ public function interview_scheduler()
 
     function get_autocomplete(){
         if (isset($_GET['term'])) {
-            $this->load->model('Consultant_autocomplete_model');
-            $result = $this->Consultant_autocomplete_model->search_companies($_GET['term']);
+            // $this->load->model('Consultant_autocomplete_model');
+            $result = $this->Job_seeker_experience_model->search_companies($_GET['term']);
             if (count($result) > 0) {
             foreach ($result as $row)
                 $arr_result[] = $row->company_name;
-                // echo json_encode($arr_result);
-                print_r($arr_result);
-
+                echo json_encode($arr_result);
+                
             }
         }
     }

@@ -41,7 +41,7 @@ class MY_Employer_Controller extends CI_Controller
             if($employer_id==null) {
                 redirect('employer_login?redirect='.urlencode(current_url()),'refresh');
          }
-
+  $this->load->model('Consultant_autocomplete_model');
         //$this->load->model('global_model');
 
 
