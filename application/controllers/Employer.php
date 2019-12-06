@@ -1189,6 +1189,7 @@ function getstate(){
             if(isset($_POST['add_consultant'])) 
             {
                 
+                                    $company_id=$this->input->post('company_profile_id');
                                
                             // echo $comp_id
                                 # code...
@@ -1200,11 +1201,12 @@ function getstate(){
                                 );
                                 if (isset($company_id) && !empty($company_id)) 
                                 {
+
                                     $consultanat_data['company_id']=$company_id;
+                                    $comp_id=$this->Master_model->master_insert($consultanat_data,'consultant_company_mapping');
                                 }
                                 else {
-                                    $company_id=$this->input->post('company_profile_id');
-                
+
                         $to_email=$this->input->post('cont_person_email');
                         $exist_companyname = $this->company_profile_model->companyname_check($this->input->post('company_name'));
                        if ($exist_companyname) {
@@ -1217,6 +1219,7 @@ function getstate(){
                                      $company_profile['company_password']=md5($pass);
                             $comp_id=$this->Master_model->master_insert($company_profile,'company_profile');
                                 $consultanat_data['company_id']=$comp_id;
+                                $comp_id=$this->Master_model->master_insert($consultanat_data,'consultant_company_mapping');
                             // send mail to consultant
                             }
                             $user_id = $this->session->userdata('company_profile_id');
