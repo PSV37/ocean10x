@@ -37,11 +37,12 @@
               <thead>
                 <tr>
                   <th class="active">SL</th>
+                  <th>Photo</th>
                   <th class="active">Name</th>
                   <th class="active">Email</th>
                   <th class="active">Mobile No</th>
                   <th class="active">Current Location</th>
-                  <th class="active">Experiance</th>
+                  <th class="active">Last Profile Update Date</th>
                   <!-- <th class="active"></th>
                   <th class="active">Question</th> -->
                   <th class="active col-sm-2">Action</th>
