@@ -484,11 +484,7 @@
                               <div class="col-md-6 col-sm-6">
                                  <div class="formrow">
                                     <label class="control-label">Is the consultant is Favorite</label>
-                                      <select class="form-control" name="Favorite" value="<?php 
-                                               if(!empty($company_info['is_favourite'])){
-                                                  echo $company_info['is_favourite'];
-                                               }
-                                          ?>">>
+                                      <select class="form-control" name="Favorite">
                                           <option value="<?php echo $company_info['is_favourite']; ?>"<?php if($company_info['is_favourite']==$company_info['company_info']){ echo "selected"; }?>><?php echo $company_info['is_favourite']; ?></option>
                                           <option>No</option>
                                           <option>Yes</option>
