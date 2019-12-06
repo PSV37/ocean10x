@@ -537,8 +537,8 @@
           source: "<?php echo base_url('employer/get_autocomplete'); ?>",
           select: function(a,b)
             {
-                 
-              $(this).val(b.item.value); //grabed the selected value
+                 console.lo(b);
+              // $(this).val(b.item.value); //grabed the selected value
             }
         });
     });
