@@ -1186,7 +1186,7 @@ function getstate(){
                 $company_id=$this->input->post('company_profile_id');
                 if (isset($company_id)) {
                     // echo "string";
-                            // echo $comp_id
+                            echo $company_id
                                 # code...
                                 $consultanat_data=array(
                                 'consultant_id' =>$company_id,
@@ -1194,7 +1194,7 @@ function getstate(){
                                 'created_on' => date('Y-m-d H:i:s'),
                                 'created_by' =>$user_id,
                                 );
-                            $consultant=$this->Master_model->master_insert($consultanat_data,'consultant_company_mapping');
+                            // $consultant=$this->Master_model->master_insert($consultanat_data,'consultant_company_mapping');
                     # code...
                 }else{
                         $to_email=$this->input->post('cont_person_email');
