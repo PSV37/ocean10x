@@ -1200,6 +1200,8 @@ function getstate(){
                                 'is_favourite' =>$this->input->post('Favorite'),
                                 );
                             $consultant=$this->Master_model->master_insert($consultanat_data,'consultant_company_mapping');
+                            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">This consultant Added Successfully</div>');
+                             redirect('employer/addconsultant');
                     }
                 }else{
                         $to_email=$this->input->post('cont_person_email');
