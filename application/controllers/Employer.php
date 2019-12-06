@@ -1993,9 +1993,7 @@ public function interview_scheduler()
             $result = $this->Job_seeker_experience_model->search_companies($_GET['term']);
             if (count($result) > 0) {
             foreach ($result as $row)
-                $arr_result['company_name'] = $row->company_name;
-                $arr_result['company_id'] = $row->company_profile_id;
-
+                $arr_result[] = $row;
                 echo json_encode($arr_result);
 
             }
