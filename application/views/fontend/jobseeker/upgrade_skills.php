@@ -8,8 +8,7 @@
       <?php $this->load->view('fontend/layout/seeker_left.php'); ?>
       <div class="content col-md-9">
         <h5>Upgrade your Skills in this ever challenging world of Complex Technologies !</h5>
-        
-        <h1>Coming Soon !</h1>
+        <h1 align="center" style="margin: 50px;">Coming Soon !</h1>
         
       </div>
     </div> <!--end row -->
