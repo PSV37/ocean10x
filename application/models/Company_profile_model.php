@@ -141,7 +141,7 @@ public function get_slug_name($company_id)
         $this->db->select("*");
         $this->db->where('consultant_id', $consultant_id);
         $this->db->where('company_id', $company_id);
-        $query = $this->db->get($this->_table_name);
+        $query = $this->db->get('consultant_company_mapping');
         if ($query->num_rows() > 0) {
             return 1;
         } else {
