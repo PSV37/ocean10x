@@ -69,7 +69,7 @@
                                         <div class="col-md-6 col-sm-12">
                                           <div class="formrow">
                                           <label class="control-label">Company URL:</label>
-                                            <input type="text" name="company_url" value="<?php 
+                                            <input type="text" name="company_url" id="company_url" value="<?php 
                                                if(!empty($company_info->company_url)){
                                                 echo $company_info->company_url;
                                                }
@@ -79,7 +79,7 @@
                                         <div class="col-md-3 col-sm-12">
                                           <div class="formrow">
                       <label class="control-label">Country Code:</label>
-                      <select id="country" name="country_code" class="form-control country_code">
+                      <select id="country" id="country_code" name="country_code" class="form-control country_code">
                         <!-- <option value="">Select Country Code</option> -->
                         <br/>
                         <option><?php echo $company_info->country_code?></option>
@@ -319,7 +319,7 @@
                       <div class="col-md-3 col-sm-12">
                                           <div class="formrow">
                                           <label class="control-label">Company Phone: <span class="required">*</span></label>
-                                            <input type="tel" name="company_phone" value="<?php 
+                                            <input type="tel"  name="company_phone" value="<?php 
                                                if(!empty($company_info->company_phone)){
                                                 echo $company_info->company_phone;
                                                }
@@ -333,7 +333,7 @@
                                         <div class="col-md-6 col-sm-12">
                                           <div class="formrow">
                                           <label class="control-label">Company Contact Person: <span class="required">*</span></label>  
-                                            <input type="text" name="contact_name"  value="<?php 
+                                            <input type="text"  name="contact_name"  value="<?php 
                                                if(!empty($company_info->contact_name)){
                                                 echo $company_info->contact_name;
                                                }
@@ -390,7 +390,7 @@
                     <div class="col-md-12 col-sm-12">
                                          <div class="formrow">
                                           <label class="control-label">Company Address-1: <span class="required">*</span></label>
-                                            <textarea name="company_address" class="form-control ckeditor" placeholder="Company Address"><?php if(!empty($company_info->company_address)){
+                                            <textarea name="company_address" id="company_address" class="form-control ckeditor" placeholder="Company Address"><?php if(!empty($company_info->company_address)){
                                                 echo $company_info->company_address;
                                                } ?></textarea>
                                                  </div>
@@ -400,7 +400,7 @@
                                         <div class="col-md-12 col-sm-12">
                                           <div class="formrow">
                                           <label class="control-label">Company Address-2:</label>
-                                            <textarea name="company_address2" class="form-control ckeditor" placeholder="Company Address-2"><?php if(!empty($company_info->company_address)){
+                                            <textarea name="company_address2" id="company_address2" class="form-control ckeditor" placeholder="Company Address-2"><?php if(!empty($company_info->company_address)){
                                                 echo $company_info->company_address2;
                                                } ?></textarea>
                                              </div>
@@ -558,9 +558,23 @@
                  // console.log(data);
                  $.each(data, function(index, value) 
                   {
-                    console.log(value);
-                    // $('#company_email').val(value.company_email);
-                    // $('#sect_id').val(value.id);
+                    // console.log(value);
+                     $('#company_email').val(value.company_email);
+                     $('#company_url').val(value.company_url);
+                     $('#country_code').val(value.country_code);
+                     $('#company_phone').val(value.company_phone);
+                     $('#contact_name').val(value.contact_name);
+                     $('#cont_person_email').val(value.cont_person_email);
+                     $('#cont_person_mobile').val(value.cont_person_mobile);
+                     $('#company_career_link').val(value.company_career_link);
+                     $('#company_address').val(value.company_address);
+                     $('#company_address2').val(value.company_address2);
+                     $('#country_id').val(value.country_name);
+                     $('#state_id').val(value.state_name);
+                     $('#city_id').val(value.city_name);
+                     $('#company_pincode').val(value.company_pincode);
+                     $('#comp_gst_no').val(value.comp_gstn_no);
+                     $('#comp_pan_no').val(value.comp_pan_no);
                   });
                } 
         });
