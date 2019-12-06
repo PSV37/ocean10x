@@ -50,6 +50,7 @@
     <li><a href="<?php echo base_url(); ?>seeker/oceanchamp-test"> <i class="fa fa-star" aria-hidden="true"></i> OceanChamp Online Test</a></li>
     <li> <a href="<?php echo base_url() ?>seeker/ocean-champ-test-result" class=""> <i class="fa fa-black-tie" aria-hidden="true"></i> OceanTest Results</a> </li>
 
+    <li> <a href="<?php echo base_url() ?>seeker/skill-upgrade" class=""> <i class="fa fa-star" aria-hidden="true"></i> Skill Upgrade</a> </li>
     <!--<li> <a href="<?php echo base_url() ?>seeker/logout" class=""> <i class="fa fa-sign-out" aria-hidden="true"></i> Sign Out </a> </li>-->
     
        
