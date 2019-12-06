@@ -399,6 +399,7 @@ if (!empty($experinece->start_date)) {
           select: function(a,b)
             {
               $(this).val(b.item.value); //grabed the selected value
+              alert($(this).val());
             }
         });
     });
