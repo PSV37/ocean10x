@@ -62,6 +62,13 @@ class Job_seeker_experience_model extends MY_Model
         // $this->db->limit(10);
         return $this->db->get('company_profile')->result();
     }
+    function autocomplete_companies($title){
+        $this->db->like('company_name', $title , 'both');
+        $this->db->order_by('company_name', 'ASC');
+         $this->db->WHERE('comp_type', 'HR Consultant');
+        // $this->db->limit(10);
+        return $this->db->get('company_profile')->result();
+    }
     
     function search_skills($title){
         $this->db->like('skill_name', $title , 'both');

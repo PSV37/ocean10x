@@ -2009,7 +2009,7 @@ public function interview_scheduler()
     function get_autocomplete(){
         if (isset($_GET['term'])) {
             // $this->load->model('Consultant_autocomplete_model');
-            $result = $this->Job_seeker_experience_model->search_companies($_GET['term']);
+            $result = $this->Job_seeker_experience_model->autocomplete_companies($_GET['term']);
             if (count($result) > 0) {
             foreach ($result as $row)
                 $arr_result[] = $row->company_name;
@@ -2023,7 +2023,7 @@ public function interview_scheduler()
     {
        
         $s =$this->input->post('comp_name');
-        $where1 = "company_name = '$s' and comp_type = 'HR Consultant'";
+        $where1 = "company_name = '$s'";
         $join = array( "country"=>"country.country_id=company_profile.country_id | LEFT OUTER",
                         "city"=>"city.id=company_profile.city_id | LEFT OUTER",
                         "state"=>"state.state_id=company_profile.state_id | LEFT OUTER");
