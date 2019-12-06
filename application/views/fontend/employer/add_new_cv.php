@@ -79,7 +79,7 @@
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Job Type<span class="required">*</span></label>
-	                 	<select id="job_type"  name="job_type" class="form-control">
+	                 	<select id="job_type"  name="job_type[]" class="form-control" multiple="">
 	                      <option value="">Select Type</option>
 	                      <option value="Full Time">Full Time</option>
 	                      <option value="Part Time">Part Time</option>
@@ -112,13 +112,6 @@
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Current CTC<span class="required">*</span></label>
-	                 	<input type="text" name="working_current_since" class="form-control">
-					</div>
-				</div>
-
-				<div class="col-md-6">
-				  	<div class="form-group">
-	                    <label for="exampleInputEmail1">Last Salary Hike<span class="required">*</span></label>
 	                 	<input type="text" name="working_current_since" class="form-control">
 					</div>
 				</div>
@@ -213,6 +206,18 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>asset/js/tinymce/tinymce.min.js"></script> 
 <script type="text/javascript">
 document.getElementsByClassName('form-control').innerHTML+="<br />";
+
+
+
+$(function() {
+
+    $('#job_type').multiselect({
+
+        includeSelectAllOption: true
+    });
+
+});
+
 </script>
 <?php $this->load->view("fontend/layout/footer.php"); ?>
 

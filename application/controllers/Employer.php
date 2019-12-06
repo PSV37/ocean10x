@@ -2033,7 +2033,7 @@ public function interview_scheduler()
         $this->load->view('fontend/employer/corporate_cv_bank');
     }
 
-      public function add_new_cv()
+    public function add_new_cv()
     {
         $company_id = $this->session->userdata('company_profile_id');
 
