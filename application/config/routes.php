@@ -141,7 +141,10 @@ $route['employer/employee-master']="employer/addemployee";
 $route['employer/employee']="employer/allemployee";
 $route['employer/questionbank-import']="employer/importquestion";
 $route['employer/corporate-cv-bank']="employer/corporate_cv_bank";
+$route['employer/add-new-cv']="employer/add_new_cv";
 
+$route['employer/add-new-consultant']="employer/addconsultant";
+$route['employer/show-all-consultant']="employer/allconsultants";
 
 
 $route['job-apply/(:any)'] = "job/jobapply/$1";

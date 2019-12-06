@@ -13,9 +13,9 @@
   	 <li> <a href="<?php echo base_url() ?>employer/questionbank-import" class=""><i class="fa fa-upload" aria-hidden="true"></i>Import Question</a></li> 
   	 <li> <a href="<?php echo base_url() ?>employer/addemployee" class=""><i class="fa fa-plus" aria-hidden="true"></i> Add Employe</a></li> 
   	 <li> <a href="<?php echo base_url() ?>employer/allemployee" class=""><i class="fa fa-user" aria-hidden="true"></i> Employee</a></li>
-     <li> <a href="<?php echo base_url() ?>employer/addconsultant" class=""><i class="fa fa-plus" aria-hidden="true"></i> Add Consultant</a></li> 
-     <li> <a href="<?php echo base_url() ?>employer/allconsultants" class=""><i class="fa fa-user" aria-hidden="true"></i>All Consultants</a></li> 	
-
+     <li> <a href="<?php echo base_url() ?>employer/add-new-consultant" class=""><i class="fa fa-plus" aria-hidden="true"></i> Add Consultant</a></li> 
+     <li> <a href="<?php echo base_url() ?>employer/show-all-consultant" class=""><i class="fa fa-user" aria-hidden="true"></i>All Consultants</a></li> 	
+     <li> <a href="<?php echo base_url() ?>employer/add-new-cv" class=""><i class="fa fa-plus" aria-hidden="true"></i> Add New CV</a></li> 
      <li> <a href="<?php echo base_url() ?>employer/corporate-cv-bank" class=""><i class="fa fa-file-text" aria-hidden="true"></i> CV Bank</a></li> 
   	
     </ul>
