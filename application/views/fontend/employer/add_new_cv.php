@@ -79,7 +79,7 @@
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Job Type<span class="required">*</span></label>
-	                 	<select id="job_type"  name="job_type" class="form-control" >
+	                 	<select id="job_type" name="job_type" class="form-control" >
 	                      <option value="">Select Type</option>
 	                      <option value="Full Time">Full Time</option>
 	                      <option value="Part Time">Part Time</option>

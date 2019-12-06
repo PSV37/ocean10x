@@ -413,12 +413,12 @@
                                           <div class="col-md-4 col-sm-4">
                                             <div class="formrow">
                                           <label class="control-label">Company Country: <span class="required">*</span></label>
-                      <select  name="country_id" id="country_id" class="form-control country" onchange="getStates(this.value)">
-                      <option value="">Select Country</option>
-                      <?php foreach($country as $key){?>
-                      <option value="<?php echo $key['country_id']; ?>"<?php if($company_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
-                      <?php } ?>
-                      </select>
+                                              <select  name="country_id" id="country_idf" class="form-control country" onchange="getStates(this.value)">
+                                              <option value="">Select Country</option>
+                                              <?php foreach($country as $key){?>
+                                              <option value="<?php echo $key['country_id']; ?>"><?php echo $key['country_name']; ?></option>
+                                              <?php } ?>
+                                              </select>
                                           </div>
                                       </div>
 
@@ -569,7 +569,7 @@
                      $('#company_career_link').val(value.company_career_link);
                      $('#company_address').val(value.company_address);
                      $('#company_address2').val(value.company_address2);
-                     $('#country_id').val(value.country_id);
+                     $('#country_idf').val(value.country_id);
                      $('#state_id').val(value.state_name);
                      $('#city_id').val(value.city_name);
                      $('#company_pincode').val(value.company_pincode);
