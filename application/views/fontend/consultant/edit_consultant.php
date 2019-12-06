@@ -45,6 +45,7 @@
                                         <div class="col-md-6 col-sm-12">   
                                            <div class="formrow">
                                             <label class="control-label">Company Name: <span class="required">*</span></label>
+                                            
                                             <input type="text" name="company_name" value="<?php echo $company_info['company_name'];?>"
                                                
                                                class="form-control" placeholder="Company Name">
