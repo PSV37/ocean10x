@@ -60,7 +60,8 @@ class Job_seeker_experience_model extends MY_Model
         $this->db->order_by('company_name', 'ASC');
         // $this->db->WHERE('status', '1');
         // $this->db->limit(10);
-        return $this->db->get('company_profile')->result();
+        // return $this->db->get('company_profile')->result();
+        return $this->db->last_query();
     }
     
     function search_skills($title){
