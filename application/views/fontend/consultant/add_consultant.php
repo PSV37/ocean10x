@@ -555,12 +555,13 @@
                dataType: "JSON",  
                success: function(data)
                {
-                 console.log(data);
-                 // $.each(data, function(index, value) 
-                 //  {
-                 //    $('#comp_sector').val(value.sector_name);
-                 //    $('#sect_id').val(value.id);
-                 //  });
+                 // console.log(data);
+                 $.each(data, function(index, value) 
+                  {
+                    // $('#comp_sector').val(value.sector_name);
+                    // $('#sect_id').val(value.id);
+                    console.log(value);
+                  });
                } 
         });
 }
