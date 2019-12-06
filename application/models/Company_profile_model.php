@@ -46,7 +46,7 @@ class Company_Profile_Model extends MY_Model
     //send verification email to user's email id
     public function sendEmail($to_email)
     {
-        //  $ci = get_instance();
+        // $ci = get_instance();
         // $ci->load->library('email');
         // $config['protocol']    = 'smtp';
 		// $config['smtp_host']    = 'mail.consultnhire.com';
