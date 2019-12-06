@@ -2015,5 +2015,19 @@ public function interview_scheduler()
     }
 
 
+    public function corporate_cv_bank()
+    {
+        $company_id = $this->session->userdata('company_profile_id');
+       
+        $this->load->view('fontend/employer/corporate_cv_bank');
+    }
+
+      public function add_new_cv()
+    {
+        $company_id = $this->session->userdata('company_profile_id');
+       
+        $this->load->view('fontend/employer/add_new_cv');
+    }
+
 } // end class
 
