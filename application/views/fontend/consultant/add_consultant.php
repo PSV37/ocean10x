@@ -44,7 +44,7 @@
                                         <div class="col-md-6 col-sm-12">   
                                            <div class="formrow">
                                             <label class="control-label">Company Name: <span class="required">*</span></label>
-                                            <input type="text" name="company_name" value="<?php 
+                                            <input type="text" id="company_name" name="company_name" value="<?php 
                                                if(!empty($company_info->company_name)){
                                                 echo $company_info->company_name;
                                                }
@@ -531,6 +531,17 @@
 </div>
   </div>
 </div>
+<script type="text/javascript">
+      $(function() {
+      $("#company_name").autocomplete({
+          source: "<?php echo base_url('employer/get_autocomplete'); ?>",
+          select: function(a,b)
+            {
+              $(this).val(b.item.value); //grabed the selected value
+            }
+        });
+    });
+</script>
 <script>
     // WRITE THE VALIDATION SCRIPT.
     function isNumber(evt) {
