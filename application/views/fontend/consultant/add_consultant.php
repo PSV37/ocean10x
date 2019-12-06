@@ -575,6 +575,8 @@
                      $('#company_pincode').val(value.company_pincode);
                      $('#comp_gst_no').val(value.comp_gstn_no);
                      $('#comp_pan_no').val(value.comp_pan_no);
+                     $('#company_profile_id').val(value.company_profile_id);
+                     
                   });
                } 
         });
