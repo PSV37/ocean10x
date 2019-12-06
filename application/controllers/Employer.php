@@ -2005,7 +2005,7 @@ public function interview_scheduler()
        
     $s =$this->input->post('comp_name');
     $where = "company_name = '$s'";
-        $result = $this->Master_model->getMaster('company_name', $where);
+        $result = $this->Master_model->getMaster('company_profile', $where);
         print_r($result);
 
     }
