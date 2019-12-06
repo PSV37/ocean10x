@@ -579,7 +579,7 @@
                      getStates(value.country_id);
                      getCitys(value.state_id);
                   });
-               } 
+               }  
         });
     // savecompanymapping(value.company_profile_id);
 }
@@ -658,7 +658,7 @@ $(document).ready(function(){
                 url:'<?php echo base_url();?>Employer/getstate',
                 data:{id:id},
                 success:function(res){
-                    $('#state_id').html(res);
+                    $('#state_ids').html(res);
                 }
         
             }); 
@@ -674,7 +674,7 @@ $(document).ready(function(){
                 url:'<?php echo base_url();?>Employer/getcity',
                 data:{id:id},
                 success:function(res){
-                    $('#city_id').html(res);
+                    $('#city_ids').html(res);
                 }
         
             }); 
@@ -693,8 +693,8 @@ $(document).ready(function(){
                 url:'<?php echo base_url();?>Employer/getstate',
                 data:{id:id},
                 success:function(res){
-                    $('#state_id').html(res);
-                    $('#state_id').val(<?php echo $company_info->state_id; ?>);
+                    $('#state_ids').html(res);
+                    $('#state_ids').val(<?php echo $company_info->state_id; ?>);
                      getCitys_load(<?php echo $company_info->state_id; ?>);
                 }
                 
@@ -712,8 +712,8 @@ $(document).ready(function(){
                 url:'<?php echo base_url();?>Employer/getcity',
                 data:{id:id},
                 success:function(res){
-                    $('#city_id').html(res);
-                    $('#city_id').val(<?php echo $company_info->city_id; ?>);
+                    $('#city_ids').html(res);
+                    $('#city_ids').val(<?php echo $company_info->city_id; ?>);
                 }
                 
             }); 
