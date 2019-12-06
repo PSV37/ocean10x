@@ -537,7 +537,7 @@
           source: "<?php echo base_url('employer/get_autocomplete'); ?>",
           select: function(a,b)
             {
-                 alert(b.item.value);
+                 // alert(b.item.value);
               $(this).val(b.item.value); //grabed the selected value
               getcompanyinfo(b.item.value);
 
