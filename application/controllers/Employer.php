@@ -2030,7 +2030,7 @@ public function interview_scheduler()
         echo "<pre>";
         print_r($department);
         $job_role = $this->Master_model->getMaster('job_role',$where=false);
-
+        die;
         $this->load->view('fontend/employer/add_new_cv');
     }
 
