@@ -559,7 +559,7 @@
                  $.each(data, function(index, value) 
                   {
                     console.log(value);
-                    $('#company_email').val(value.company_email);
+                    // $('#company_email').val(value.company_email);
                     // $('#sect_id').val(value.id);
                   });
                } 
