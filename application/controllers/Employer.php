@@ -1188,17 +1188,7 @@ function getstate(){
              
             if(isset($_POST['add_consultant'])) 
             {
-                $company_id=$this->input->post('company_profile_id');
                 
-                        $to_email=$this->input->post('cont_person_email');
-                        $exist_companyname = $this->company_profile_model->companyname_check($this->input->post('company_name'));
-                       if ($exist_companyname) {
-                            // all Ready Account Message
-                            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Company Name Or Account Already Use This!</div>');
-                             redirect('employer/addconsultant');
-                        } 
-                        else
-                        {
                                
                             // echo $comp_id
                                 # code...
@@ -1213,6 +1203,17 @@ function getstate(){
                                     $consultanat_data['company_id']=$company_id;
                                 }
                                 else {
+                                    $company_id=$this->input->post('company_profile_id');
+                
+                        $to_email=$this->input->post('cont_person_email');
+                        $exist_companyname = $this->company_profile_model->companyname_check($this->input->post('company_name'));
+                       if ($exist_companyname) {
+                            // all Ready Account Message
+                            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Company Name Or Account Already Use This!</div>');
+                             redirect('employer/addconsultant');
+                        } 
+                        else
+                        {
                                      $company_profile['company_password']=md5($pass);
                             $comp_id=$this->Master_model->master_insert($company_profile,'company_profile');
                                 $consultanat_data['company_id']=$comp_id;
