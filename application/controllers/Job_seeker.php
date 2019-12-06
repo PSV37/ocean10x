@@ -1308,6 +1308,14 @@ public function user_profile()
         
     }
 
+    public function skill_upgrade()
+    {
+        $jobseeker_id     = $this->session->userdata('job_seeker_id');
+        // $job_seeker_resume = $this->Master_model->get_master_row('js_attached_resumes', $select =FALSE ,$where="job_seeker_id='$jobseeker_id'",$join = false); 
+        $this->load->view('fontend/jobseeker/upgrade_skills');
+    
+    }
+
 } //end function
 
 
