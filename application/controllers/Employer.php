@@ -1189,20 +1189,20 @@ function getstate(){
                             // echo $company_id;
                                 # code...
                     $exist_companyid = $this->company_profile_model->companyid_check($company_id,$user_id);
-                    echo $exist_companyid;
-                    //    if ($exist_companyid) {
-                    //         // all Ready Account Message
-                    //         $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">This consultant is already added in your list</div>');
-                    //          redirect('employer/addconsultant');
-                    //     }else{ 
-                    //             $consultanat_data=array(
-                    //             'consultant_id' =>$company_id,
-                    //             'company_id'=>$user_id,
-                    //             'created_on' => date('Y-m-d H:i:s'),
-                    //             'created_by' =>$user_id,
-                    //             );
-                    //         $consultant=$this->Master_model->master_insert($consultanat_data,'consultant_company_mapping');
-                    // }
+                    // echo $exist_companyid;
+                       if ($exist_companyid) {
+                            // all Ready Account Message
+                            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">This consultant is already added in your list</div>');
+                             redirect('employer/addconsultant');
+                        }else{ 
+                                $consultanat_data=array(
+                                'consultant_id' =>$company_id,
+                                'company_id'=>$user_id,
+                                'created_on' => date('Y-m-d H:i:s'),
+                                'created_by' =>$user_id,
+                                );
+                            $consultant=$this->Master_model->master_insert($consultanat_data,'consultant_company_mapping');
+                    }
                 }else{
                         $to_email=$this->input->post('cont_person_email');
                         $exist_companyname = $this->company_profile_model->companyname_check($this->input->post('company_name'));
