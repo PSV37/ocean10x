@@ -158,7 +158,9 @@
 	                    <label for="exampleInputEmail1">Industry</label>
 	                 	<select id="candidate_industry"  name="candidate_industry" class="form-control">
 	                      <option value="">Select Industry</option>
-
+                      	  <?php if (!empty($industry_master)): foreach ($industry_master as $ind_row) : ?>
+                      	  	<option value="<?php echo $ind_row['job_category_id']; ?>"><?php echo $ind_row['job_category_name']; ?></option>
+                      	  <?php  endforeach; endif; ?>
 	                    </select> 
 					</div>
 				</div>
@@ -167,7 +169,9 @@
 	                    <label for="exampleInputEmail1">Role</label>
 	                 	<select id="candidate_role"  name="candidate_role" class="form-control">
 	                      <option value="">Select Role</option>
-	                      
+	                      <?php if (!empty($job_role)): foreach ($job_role as $role_row) : ?>
+                      	  	<option value="<?php echo $role_row['id']; ?>"><?php echo $role_row['job_role_title']; ?></option>
+                      	  <?php  endforeach; endif; ?>
 	                    </select> 
 					</div>
 				</div>
