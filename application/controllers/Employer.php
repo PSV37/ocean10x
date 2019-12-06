@@ -1309,7 +1309,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $employer=$this->session->userdata('company_profile_id');
         $where='employee.org_id="'.$employer.'" and employee.emp_status!= 0';
 
-        $where='consultant_company_mapping.company_id="'.$employer.'"and consultant_company_mapping.cons_status= 0';
+        $where='consultant_company_mapping.company_id="'.$employer.'"and consultant_company_mapping.cons_status!=1';
         $join = array(
             'company_profile' => 'company_profile.company_profile_id = consultant_company_mapping.consultant_id|INNER',
             
