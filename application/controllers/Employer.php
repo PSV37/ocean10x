@@ -2004,9 +2004,9 @@ public function interview_scheduler()
     {
        
     $s =$this->input->post('comp_name');
-    $where = "company_name = '$s'";
-        $result = $this->Master_model->getMaster('company_profile', $where);
-        print_r($result);
+    $where1 = "company_name = '$s'";
+        $result = $this->Master_model->getMaster('company_profile', $where1, $join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+                echo json_encode($arr_result);
 
     }
 
