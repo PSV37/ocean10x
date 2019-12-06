@@ -1253,6 +1253,10 @@ function getstate(){
             if (isset($consultant_id)) {
                 $where['company_profile_id']=$consultant_id;
             $this->Master_model->master_update($company_profile,'company_profile',$where);
+            $data['is_favourite']=$this->input->post('Favorite');
+            $this->Master_model->master_update($data,'consultant_company_mapping',$where);
+
+
             redirect(base_url().'employer/allconsultants');
             }
                 # code...
