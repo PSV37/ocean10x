@@ -83,7 +83,7 @@
 	                      <option value="">Select Type</option>
 	                      <option value="Full Time">Full Time</option>
 	                      <option value="Part Time">Part Time</option>
-	                      <option value="Contractual">Contractual</option>
+	                      <option value="Contractual">Contractual</option>	
 	                    </select> 
 					</div>
 				</div>
@@ -166,7 +166,7 @@
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Role</label>
 	                 	<select id="candidate_role"  name="candidate_role" class="form-control">
-	                      <option value="">Select Industry</option>
+	                      <option value="">Select Role</option>
 	                      
 	                    </select> 
 					</div>
