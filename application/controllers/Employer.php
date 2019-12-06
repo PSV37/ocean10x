@@ -2003,7 +2003,8 @@ public function interview_scheduler()
     function get_company_info()
     {
        
-    $where['company_name'] =$this->input->post('comp_name');
+    $s =$this->input->post('comp_name');
+    $where = "company_name = '$s'";
         $result = $this->Master_model->getMaster('company_name', $where);
         print_r($result);
 
