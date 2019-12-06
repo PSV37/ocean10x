@@ -81,6 +81,9 @@
 	                    <label for="exampleInputEmail1">Job Type<span class="required">*</span></label>
 	                 	<select id="job_type"  name="job_type" class="form-control">
 	                      <option value="">Select Type</option>
+	                      <option value="Full Time">Full Time</option>
+	                      <option value="Part Time">Part Time</option>
+	                      <option value="Contractual">Contractual</option>
 	                    </select> 
 					</div>
 				</div>
@@ -153,13 +156,19 @@
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Industry</label>
-	                 	<input type="text" name="candidate_industry" class="form-control">
+	                 	<select id="candidate_industry"  name="candidate_industry" class="form-control">
+	                      <option value="">Select Industry</option>
+
+	                    </select> 
 					</div>
 				</div>
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Role</label>
-	                 	<input type="text" name="candidate_role" class="form-control">
+	                 	<select id="candidate_role"  name="candidate_role" class="form-control">
+	                      <option value="">Select Industry</option>
+	                      
+	                    </select> 
 					</div>
 				</div>
 				<div class="col-md-6">
