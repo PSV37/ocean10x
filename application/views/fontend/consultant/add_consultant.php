@@ -39,7 +39,7 @@
                                
         <form method="post" action="<?php echo base_url();?>employer/addconsultant" enctype="multipart/form-data">
 
-                                <input type="hidden" name="company_profile_id" id="company_profile_id"value="<?php echo $company_info->company_profile_id;?>">
+                                <input type="text" name="company_profile_id" id="company_profile_id"value="<?php echo $company_info->company_profile_id;?>">
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12">   
                                            <div class="formrow">
