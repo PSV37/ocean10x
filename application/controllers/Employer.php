@@ -1184,23 +1184,23 @@ function getstate(){
             if(isset($_POST['add_consultant'])) 
             {
                 $company_id=$this->input->post('company_profile_id');
-                if (isset($company_id)) {
                 echo $company_id;
+                if (isset($company_id) && !empty($company_id)) {
                     
-                    // $exist_companyid = $this->company_profile_model->companyid_check($company_id,$user_id);
-                    //    if ($exist_companyid) {
-                    //         $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">This consultant is already added in your list</div>');
-                    //          redirect('employer/addconsultant');
-                    //     }else{ 
-                    //             $consultanat_data=array(
-                    //             'consultant_id' =>$company_id,
-                    //             'company_id'=>$user_id,
-                    //             'created_on' => date('Y-m-d H:i:s'),
-                    //             'created_by' =>$user_id,
-                    //             'is_favourite' =>$this->input->post('Favorite'),
-                    //             );
-                    //         $consultant=$this->Master_model->master_insert($consultanat_data,'consultant_company_mapping');
-                    // }
+                    $exist_companyid = $this->company_profile_model->companyid_check($company_id,$user_id);
+                       if ($exist_companyid) {
+                            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">This consultant is already added in your list</div>');
+                             redirect('employer/addconsultant');
+                        }else{ 
+                                $consultanat_data=array(
+                                'consultant_id' =>$company_id,
+                                'company_id'=>$user_id,
+                                'created_on' => date('Y-m-d H:i:s'),
+                                'created_by' =>$user_id,
+                                'is_favourite' =>$this->input->post('Favorite'),
+                                );
+                            $consultant=$this->Master_model->master_insert($consultanat_data,'consultant_company_mapping');
+                    }
                 }else{
                         $to_email=$this->input->post('cont_person_email');
                         $exist_companyname = $this->company_profile_model->companyname_check($this->input->post('company_name'));
