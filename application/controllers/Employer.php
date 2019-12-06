@@ -1188,25 +1188,11 @@ function getstate(){
              
             if(isset($_POST['add_consultant'])) 
             {
-                
-                                    $company_id=$this->input->post('company_profile_id');
-                               
-                            // echo $comp_id
-                                # code...
-                                $consultanat_data=array(
-                                
-                                'company_id'=>$user_id,
-                                'created_on' => date('Y-m-d H:i:s'),
-                                'created_by' =>$user_id,
-                                );
-                                if (isset($company_id) && !empty($company_id)) 
-                                {
-
-                                    $consultanat_data['company_id']=$company_id;
-                                    $comp_id=$this->Master_model->master_insert($consultanat_data,'consultant_company_mapping');
-                                }
-                                else {
-
+                $company_id=$this->input->post('company_profile_id');
+                if (isset($company_id)) {
+                    echo "string";
+                    # code...
+                }else{
                         $to_email=$this->input->post('cont_person_email');
                         $exist_companyname = $this->company_profile_model->companyname_check($this->input->post('company_name'));
                        if ($exist_companyname) {
@@ -1216,12 +1202,19 @@ function getstate(){
                         } 
                         else
                         {
-                                     $company_profile['company_password']=md5($pass);
+                                $company_profile['company_password']=md5($pass);
                             $comp_id=$this->Master_model->master_insert($company_profile,'company_profile');
-                                $consultanat_data['company_id']=$comp_id;
-                                $comp_id=$this->Master_model->master_insert($consultanat_data,'consultant_company_mapping');
+                            // echo $comp_id
+                                if (isset($comp_id) && !empty($comp_id)) {
+                                # code...
+                                $consultanat_data=array(
+                                'consultant_id' =>$comp_id,
+                                'company_id'=>$user_id,
+                                'created_on' => date('Y-m-d H:i:s'),
+                                'created_by' =>$user_id,
+                                );
+                            $consultant=$this->Master_model->master_insert($consultanat_data,'consultant_company_mapping');
                             // send mail to consultant
-                            }
                             $user_id = $this->session->userdata('company_profile_id');
 
                             $comp_name = $this->session->userdata('company_name');
@@ -1243,7 +1236,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                           }
                       }
 
-                    
+                    }
             }
             elseif (isset($_POST['update_consultant'])) {
             $consultant_id=$this->input->post('company_profile_id');
@@ -1257,7 +1250,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             }
 
                     
-        // }
+        }
                
        
     
