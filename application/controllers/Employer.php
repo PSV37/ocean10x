@@ -1990,7 +1990,7 @@ public function interview_scheduler()
     function get_autocomplete(){
         if (isset($_GET['term'])) {
 
-            $result = $this->Job_seeker_experience_model->search_companies($_GET['term']);
+            $result = $this->consultant_autocomplete_model->search_companies($_GET['term']);
             if (count($result) > 0) {
             foreach ($result as $row)
                 $arr_result[] = $row->company_name;
