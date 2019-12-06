@@ -2006,24 +2006,10 @@ public function interview_scheduler()
     $s =$this->input->post('comp_name');
     $where1 = "company_name = '$s'";
         $result = $this->Master_model->getMaster('company_profile', $where1, $join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
-                echo json_encode($arr_result);
+        print_r($result);
 
     }
 
-
-     public function corporate_cv_bank()
-    {
-        $company_id = $this->session->userdata('company_profile_id');
-     
-        // $interview_id = $this->input->post('interview_id');
-        // $job_id = $this->input->post('job_id');
-       
-        // $where_int="id='$interview_id'";
-        // $data['interview_data'] = $this->Master_model->get_master_row("interview_scheduler", $select= FALSE, $where_int, $join = FALSE);
-       
-        $this->load->view('fontend/employer/corporate_cv_bank'); 
-      
-    }
 
 } // end class
 

@@ -558,9 +558,9 @@
                  // console.log(data);
                  $.each(data, function(index, value) 
                   {
-                    // $('#comp_sector').val(value.sector_name);
-                    // $('#sect_id').val(value.id);
                     console.log(value);
+                    $('#company_email').val(value.company_email);
+                    // $('#sect_id').val(value.id);
                   });
                } 
         });
