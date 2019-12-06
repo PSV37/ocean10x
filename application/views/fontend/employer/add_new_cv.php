@@ -79,9 +79,11 @@
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Job Type<span class="required">*</span></label>
-	                 	<select id="job_type"  name="job_type" class="form-control">
-	                      <option value="">Select Type</option>
-	                    </select> 
+	                 	<input type="checkbox" name="avaliable[]" id="avaliable_ft" value="Full Time" style="margin: 0 15px;"> Full Time
+
+		                <input type="checkbox" name="avaliable[]" id="avaliable_pt" value="Part Time" style="margin: 0 15px;"> Part Time
+		                      
+		                <input type="checkbox" name="avaliable[]" id="avaliable_ct" value="Contractual" style="margin: 0 15px;"> Contractual
 					</div>
 				</div>
 					
@@ -153,13 +155,19 @@
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Industry</label>
-	                 	<input type="text" name="candidate_industry" class="form-control">
+	                 	<select id="candidate_industry"  name="candidate_industry" class="form-control">
+	                      <option value="">Select Industry</option>
+
+	                    </select> 
 					</div>
 				</div>
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Role</label>
-	                 	<input type="text" name="candidate_role" class="form-control">
+	                 	<select id="candidate_role"  name="candidate_role" class="form-control">
+	                      <option value="">Select Industry</option>
+	                      
+	                    </select> 
 					</div>
 				</div>
 				<div class="col-md-6">
