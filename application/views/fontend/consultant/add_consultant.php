@@ -55,7 +55,7 @@
                                         <div class="col-md-6 col-sm-12">
                                           <div class="formrow">
                                             <label class="control-label">Company Email: <span class="required">*</span></label>
-                                            <input type="text"  name="company_email" value="<?php 
+                                            <input type="text" id="company_email"  name="company_email" value="<?php 
                                                if(!empty($company_info->company_email)){
                                                 echo $company_info->company_email;
                                                }
@@ -537,8 +537,9 @@
           source: "<?php echo base_url('employer/get_autocomplete'); ?>",
           select: function(a,b)
             {
-                // alert(b.item.value);
-              $(this).val(b.item.value); //grabed the selected value
+                 alert(b);
+              // $(this).val(b.item.value); //grabed the selected value
+              // $("company_email").val
             }
         });
     });
