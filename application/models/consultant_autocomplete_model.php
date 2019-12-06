@@ -4,7 +4,7 @@ if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 
-class Consultant_autocomplete_model extends MY_Model
+class Consultant_autocomplete_model extends CI_Model
 {
 	function search_companies($title){
         $this->db->like('company_name', $title , 'both');
