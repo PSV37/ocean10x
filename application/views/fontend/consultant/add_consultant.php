@@ -43,7 +43,7 @@
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12">   
                                            <div class="formrow">
-                                            <label class="control-label">Company Name: <span class="required">*</span></label>
+                                            <label class="control-label">Consultancy Name: <span class="required">*</span></label>
                                             <input type="text" id="company_name" name="company_name" value="<?php 
                                                if(!empty($company_info->company_name)){
                                                 echo $company_info->company_name;
@@ -54,7 +54,7 @@
 
                                         <div class="col-md-6 col-sm-12">
                                           <div class="formrow">
-                                            <label class="control-label">Company Email: <span class="required">*</span></label>
+                                            <label class="control-label">Consultancy Email: <span class="required">*</span></label>
                                             <input type="text" id="company_email"  name="company_email" value="<?php 
                                                if(!empty($company_info->company_email)){
                                                 echo $company_info->company_email;
@@ -68,7 +68,7 @@
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12">
                                           <div class="formrow">
-                                          <label class="control-label">Company URL:</label>
+                                          <label class="control-label">Consultancy URL:</label>
                                             <input type="text" name="company_url" id="company_url" value="<?php 
                                                if(!empty($company_info->company_url)){
                                                 echo $company_info->company_url;
@@ -318,7 +318,7 @@
                       </div>
                       <div class="col-md-3 col-sm-12">
                                           <div class="formrow">
-                                          <label class="control-label">Company Phone: <span class="required">*</span></label>
+                                          <label class="control-label">Consultancy Phone: <span class="required">*</span></label>
                                             <input type="tel"  name="company_phone" value="<?php 
                                                if(!empty($company_info->company_phone)){
                                                 echo $company_info->company_phone;
@@ -332,7 +332,7 @@
                                        
                                         <div class="col-md-6 col-sm-12">
                                           <div class="formrow">
-                                          <label class="control-label">Company Contact Person: <span class="required">*</span></label>  
+                                          <label class="control-label">Consultancy Contact Person: <span class="required">*</span></label>  
                                             <input type="text"  name="contact_name"  value="<?php 
                                                if(!empty($company_info->contact_name)){
                                                 echo $company_info->contact_name;
@@ -342,7 +342,7 @@
                                         </div>
                                          <div class="col-md-6 col-sm-12">
                                  <div class="formrow">
-                                       <label class="control-label">Contact Person Email: <span class="required">*</span></label>
+                                       <label class="control-label">Consultancy Person Email: <span class="required">*</span></label>
                                       <input type="text" name="cont_person_email" id="cont_person_email"  class="form-control" value="<?php 
                                                if(!empty($company_info->cont_person_email)){
                                                 echo $company_info->cont_person_email;
@@ -359,7 +359,7 @@
                                 
                                  <div class="col-md-6 col-sm-12">
                                   <div class="formrow">
-                                    <label class="control-label">Contact Person Mobile: <span class="required">*</span></label>
+                                    <label class="control-label">Consultancy Person Mobile: <span class="required">*</span></label>
                                      <input type="text" name="cont_person_mobile" id="cont_person_mobile"  class="form-control" value="<?php 
                                              if(!empty($company_info->cont_person_mobile)){
                                                 echo $company_info->cont_person_mobile;
@@ -369,7 +369,7 @@
                                 </div>
                                  <div class="col-md-6 col-sm-6">
                             <div class="formrow">
-                              <label class="control-label">Company Career Link:</label>
+                              <label class="control-label">Consultancy Career Link:</label>
                               <input type="text" name="company_career_link"  id="company_career_link" class="form-control" value="<?php 
                               if(!empty($company_info->company_career_link)){
                               echo $company_info->company_career_link;
@@ -389,7 +389,7 @@
 
                     <div class="col-md-12 col-sm-12">
                                          <div class="formrow">
-                                          <label class="control-label">Company Address-1: <span class="required">*</span></label>
+                                          <label class="control-label">Consultancy Address-1: <span class="required">*</span></label>
                                             <textarea name="company_address" id="company_address" class="form-control ckeditor" placeholder="Company Address"><?php if(!empty($company_info->company_address)){
                                                 echo $company_info->company_address;
                                                } ?></textarea>
@@ -399,7 +399,7 @@
 
                                         <div class="col-md-12 col-sm-12">
                                           <div class="formrow">
-                                          <label class="control-label">Company Address-2:</label>
+                                          <label class="control-label">Consultancy Address-2:</label>
                                             <textarea name="company_address2" id="company_address2" class="form-control ckeditor" placeholder="Company Address-2"><?php if(!empty($company_info->company_address)){
                                                 echo $company_info->company_address2;
                                                } ?></textarea>
@@ -412,7 +412,7 @@
                                         
                                           <div class="col-md-4 col-sm-4">
                                             <div class="formrow">
-                                          <label class="control-label">Company Country: <span class="required">*</span></label>
+                                          <label class="control-label">Consultancy Country: <span class="required">*</span></label>
                       <select  name="country_id" id="country_id" class="form-control country" onchange="getStates(this.value)">
                       <option value="">Select Country</option>
                       <?php foreach($country as $key){?>
@@ -425,7 +425,7 @@
                     
                     <div class="col-md-4 col-sm-4">
                       <div class="formrow">
-                      <label class="control-label">Company State: <span class="required">*</span></label>
+                      <label class="control-label">Consultancy State: <span class="required">*</span></label>
                       <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
                       <option value="">Select State</option>
                          
@@ -435,7 +435,7 @@
                     
                     <div class="col-md-4 col-sm-4">
                       <div class="formrow">
-                      <label class="control-label">Company City: <span class="required">*</span></label>
+                      <label class="control-label">Consultancy City: <span class="required">*</span></label>
                       <select  name="city_id" id="city_id" class="form-control">
                       <option value="">Select City</option>
                        
@@ -458,8 +458,7 @@
                                   </div>
                                </div>
                           </div><br/>
-                  <div class="row">
-                    <div class="col-md-6 col-sm-6">
+                          <div class="col-md-6 col-sm-6">
                                  <div class="formrow">
                                        <label class="control-label">GSTN No:</label>
                                       <input type="text" name="comp_gst_no" id="comp_gst_no"  class="form-control" value="<?php 
@@ -469,6 +468,8 @@
                                           ?>">
                                   </div>
                                </div>
+                  <div class="row">
+                    
 
                               <div class="col-md-6 col-sm-6">
                                 <div class="formrow">
@@ -480,6 +481,15 @@
                                           ?>">
                                   </div>
                               </div>
+                              <div class="col-md-6 col-sm-6">
+                                 <div class="formrow">
+                                    <label class="control-label">Is the consultant is Favorite</label>
+                                      <select name="Favorite">
+                                          <option>No</option>
+                                          <option>Yes</option>
+                                      </select>
+                                  </div>
+                               </div>
                           </div>
                   
                   
@@ -493,7 +503,7 @@
                                     <div class="row">
                                         <div class="col-md-6 col-sm-6">
                                           <div class="formrow">
-                                            <label class="control-label">Company Logo<small> company logo measures 300 x 300 pixels </small></label>
+                                            <label class="control-label">Consultancy Logo<small> company logo measures 300 x 300 pixels </small></label>
                                             <input type="file" name="company_logo"  value="<?php 
                                                  if(!empty($company_info->company_logo)){
                                                     echo $company_info->company_logo;

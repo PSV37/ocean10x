@@ -1185,13 +1185,9 @@ function getstate(){
             {
                 $company_id=$this->input->post('company_profile_id');
                 if (isset($company_id)) {
-                    // echo "string";
-                            // echo $company_id;
-                                # code...
+                    
                     $exist_companyid = $this->company_profile_model->companyid_check($company_id,$user_id);
-                    // echo $exist_companyid;
                        if ($exist_companyid) {
-                            // all Ready Account Message
                             $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">This consultant is already added in your list</div>');
                              redirect('employer/addconsultant');
                         }else{ 
@@ -1200,6 +1196,7 @@ function getstate(){
                                 'company_id'=>$user_id,
                                 'created_on' => date('Y-m-d H:i:s'),
                                 'created_by' =>$user_id,
+                                'is_favourite' =>$this->input->post('Favorite');
                                 );
                             $consultant=$this->Master_model->master_insert($consultanat_data,'consultant_company_mapping');
                     }
@@ -1223,6 +1220,8 @@ function getstate(){
                                 'company_id'=>$user_id,
                                 'created_on' => date('Y-m-d H:i:s'),
                                 'created_by' =>$user_id,
+                                'is_favourite' =>$this->input->post('Favorite');
+
                                 );
                             $consultant=$this->Master_model->master_insert($consultanat_data,'consultant_company_mapping');
                             // send mail to consultant
@@ -1231,19 +1230,27 @@ function getstate(){
                             $comp_name = $this->session->userdata('company_name');
                            
                             if (isset($consultant) && !empty($consultant)) {
-                                 $subject = "Registration done successfully";
                                 
 
                             // successfully sent mail
                           // $this->job_seeker_model->sendEmail($email_to);
 
-                           $send = sendEmail_JobRequest($to_email,$message,$subject);
                                 
                           }
                       }
 
                     }
             }
+                                 $subject = "Registration done successfully";
+
+            $message = '<div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+<table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+<br><br>Hi Dear,<br>Your account has been created successfully by '.$comp_name.' <br><br>You can login to our portal using following credentials<br>
+username: '.$to_email.'<br>
+Password: '.$pass.'<br>
+Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Question? Check out how works and our support team are ready to help.<br><br>© 2017 ConsultnHire All Rights Reserved.<br><br>You have received this mail because your e-mail ID is registered with Consultnhire.com. This is a system-generated e-mail regarding your Consultnhire account preferences, please do not reply to this message. The jobs sent in this mail have been posted by the clients of Consultnhire.com. And we have enabled auto-login for your convenience, you are strongly advised not to forward this email to protect your account from unauthorized access. IEIL has taken all reasonable steps to ensure that the information in this mailer is authentic. Users are advised to research bonafides of advertisers independently. Please do not pay any money to anyone who promises to find you a job. IEIL shall not have any responsibility in this regard. We recommend that you visit our Terms & Conditions and the Security Advice for more comprehensive information.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+                           $send = sendEmail_JobRequest($to_email,$message,$subject);
+
         }
             elseif (isset($_POST['update_consultant'])) {
             $consultant_id=$this->input->post('company_profile_id');
@@ -1261,7 +1268,7 @@ function getstate(){
                
        
     
-             $data['city'] = $this->Master_model->getMaster('city',$where=false);
+                $data['city'] = $this->Master_model->getMaster('city',$where=false);
                 $data['country'] = $this->Master_model->getMaster('country',$where=false);
                 $data['state'] = $this->Master_model->getMaster('state',$where=false);
                 $this->load->view('fontend/consultant/add_consultant',$data);
@@ -2016,11 +2023,11 @@ public function interview_scheduler()
     {
        
         $s =$this->input->post('comp_name');
-        $where1 = "company_name = '$s'";
+        $where1 = "company_name = '$s' and comp_type = 'HR Consultant'";
         $join = array( "country"=>"country.country_id=company_profile.country_id | LEFT OUTER",
                         "city"=>"city.id=company_profile.city_id | LEFT OUTER",
                         "state"=>"state.state_id=company_profile.state_id | LEFT OUTER");
-        $select ="company_profile_id,company_name,company_email,company_url,country_code,company_phone,contact_name,cont_person_email,cont_person_mobile,company_career_link,company_address,company_address2,company_pincode,comp_gstn_no,comp_pan_no,company_profile.country_id,city.city_name,state.state_name";
+        $select ="company_profile_id,company_name,company_email,company_url,country_code,company_phone,contact_name,cont_person_email,cont_person_mobile,company_career_link,company_address,company_address2,company_pincode,comp_gstn_no,comp_pan_no,company_profile.country_id";
         $result = $this->Master_model->getMaster('company_profile', $where1, $join = $join, $order = false, $field = false, $select = $select,$limit=false,$start=false, $search=false);
                 echo json_encode($result);
 
