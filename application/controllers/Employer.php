@@ -1196,7 +1196,7 @@ function getstate(){
                                 'company_id'=>$user_id,
                                 'created_on' => date('Y-m-d H:i:s'),
                                 'created_by' =>$user_id,
-                                'is_favourite' =>$this->input->post('Favorite');
+                                'is_favourite' =>$this->input->post('Favorite'),
                                 );
                             $consultant=$this->Master_model->master_insert($consultanat_data,'consultant_company_mapping');
                     }
@@ -1220,7 +1220,7 @@ function getstate(){
                                 'company_id'=>$user_id,
                                 'created_on' => date('Y-m-d H:i:s'),
                                 'created_by' =>$user_id,
-                                'is_favourite' =>$this->input->post('Favorite');
+                                'is_favourite' =>$this->input->post('Favorite'),
 
                                 );
                             $consultant=$this->Master_model->master_insert($consultanat_data,'consultant_company_mapping');
