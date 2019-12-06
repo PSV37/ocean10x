@@ -8,11 +8,12 @@
     margin-bottom: 5px;
     font-weight: bold;
 }
-input, select {
+select {
     border: 1px solid #CCC;
     width: 30px !important;
+      height: 15px !important;
 }
-input, button {
+ /*button {
     height: 15px !important;
     margin: 0;
     padding: 6px 12px;
@@ -20,7 +21,7 @@ input, button {
     font-family: inherit;
     font-size: 100%;
     color: inherit;
-}
+}*/
 </style>
 
 <!-- Page Title start -->
