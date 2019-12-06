@@ -2011,5 +2011,19 @@ public function interview_scheduler()
     }
 
 
+     public function corporate_cv_bank()
+    {
+        $company_id = $this->session->userdata('company_profile_id');
+     
+        // $interview_id = $this->input->post('interview_id');
+        // $job_id = $this->input->post('job_id');
+       
+        // $where_int="id='$interview_id'";
+        // $data['interview_data'] = $this->Master_model->get_master_row("interview_scheduler", $select= FALSE, $where_int, $join = FALSE);
+       
+        $this->load->view('fontend/employer/corporate_cv_bank'); 
+      
+    }
+
 } // end class
 
