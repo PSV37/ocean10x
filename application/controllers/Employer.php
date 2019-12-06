@@ -2008,7 +2008,7 @@ public function interview_scheduler()
     $join = array( "country"=>"country.country_id=company_profile.country_id | LEFT OUTER",
                     "city"=>"city.id=company_profile.city_id | LEFT OUTER",
                     "state"=>"state.state_id=company_profile.state_id | LEFT OUTER");
-    $select ="company_name,company_email,company_url,country_code,company_phone,contact_name,cont_person_email,cont_person_mobile,company_career_link,company_address,company_address2,company_pincode,comp_gstn_no,comp_pan_no"
+    $select ="company_name,company_email,company_url,country_code,company_phone,contact_name,cont_person_email,cont_person_mobile,company_career_link,company_address,company_address2,company_pincode,comp_gstn_no,comp_pan_no";
         $result = $this->Master_model->getMaster('company_profile', $where1, $join = FALSE, $order = false, $field = false, $select = $select,$limit=false,$start=false, $search=false);
                 echo json_encode($result);
 
