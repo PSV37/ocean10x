@@ -2032,13 +2032,12 @@ public function interview_scheduler()
         $company_id = $this->session->userdata('company_profile_id');
 
         $industry_master = $this->Master_model->getMaster('job_category',$where=false);
-        echo "<pre>";
-        print_r($industry_master);
-        $shift = $this->Master_model->getMaster('shift',$where=false);
+       
         $department = $this->Master_model->getMaster('department',$where=false);
-        echo "<pre>";
-        print_r($department);
+       
         $job_role = $this->Master_model->getMaster('job_role',$where=false);
+         echo "<pre>";
+        print_r($job_role);
         die;
         $this->load->view('fontend/employer/add_new_cv');
     }
