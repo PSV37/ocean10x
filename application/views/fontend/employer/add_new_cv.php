@@ -8,20 +8,6 @@
     margin-bottom: 5px;
     font-weight: bold;
 }
-select {
-    border: 1px solid #CCC;
-    width: 30px !important;
-      height: 15px !important;
-}
- /*button {
-    height: 15px !important;
-    margin: 0;
-    padding: 6px 12px;
-    border-radius: 2px;
-    font-family: inherit;
-    font-size: 100%;
-    color: inherit;
-}*/
 </style>
 
 <!-- Page Title start -->
@@ -93,7 +79,7 @@ select {
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Job Type<span class="required">*</span></label>
-	                 	<select id="job_type"  name="job_type[]" class="form-control" multiple="">
+	                 	<select id="job_type" name="job_type" class="form-control" >
 	                      <option value="">Select Type</option>
 	                      <option value="Full Time">Full Time</option>
 	                      <option value="Part Time">Part Time</option>
@@ -194,13 +180,10 @@ select {
 	                 	<input type="text" name="desired_wrok_location" class="form-control">
 					</div>
 				</div>
-				
-
 
                 <div class="panel-body"></div>
-                <button type="submit" class="btn bg-navy" type="submit">Save CV
+                <button type="submit" class="btn bg-navy pull-right" type="submit">Save CV
                 </button>
-                <div class="panel-body"></div>
              </div>
          	</div>
             </form>
@@ -223,14 +206,15 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 
 
 
-$(function() {
+// $(function() {
 
-    $('#job_type').multiselect({
+//     $('#job_type').multiselect({
 
-        includeSelectAllOption: true
-    });
+//         includeSelectAllOption: true
+//     });
 
-});
+    
+// });
 
 </script>
 <?php $this->load->view("fontend/layout/footer.php"); ?>
