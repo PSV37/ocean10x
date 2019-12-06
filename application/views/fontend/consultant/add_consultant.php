@@ -580,13 +580,14 @@
                      $('#company_address').val(value.company_address);
                      $('#company_address2').val(value.company_address2);
                      $('#country_id').val(value.country_id);
-                     $('#state_id').val(value.state_name);
-                     $('#city_id').val(value.city_name);
+                     $('#state_id').val(value.state_id);
+                     $('#city_id').val(value.city_id);
                      $('#company_pincode').val(value.company_pincode);
                      $('#comp_gst_no').val(value.comp_gstn_no);
                      $('#comp_pan_no').val(value.comp_pan_no);
                      $('#company_profile_id').val(value.company_profile_id);
-
+                     getStates(value.country_id);
+                     getCitys(value.state_id);
                   });
                } 
         });
