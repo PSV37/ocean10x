@@ -43,76 +43,110 @@
 
         	<div class="col-md-12 col-sm-12 col-xs-12">
             
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="form-group">                                       
-					   <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
-                        
+					   <label for="exampleInputEmail1">Full Name <span class="required">*</span></label>
+                        <input type="text" name="candidate_name" class="form-control">
 					</div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
-                        <select id="topic_id"  name="topic_id" class="form-control">
-                          
-                        </select>
+                        <label for="exampleInputEmail1">Email Id <span class="required">*</span></label>
+                      	<input type="email" name="candidate_email" class="form-control">
                     </div>
                 </div>
-				<div class="col-md-4">
+				<div class="col-md-6">
 				  	<div class="form-group">
-	                    <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
-	                 	<select id="subtopic_id"  name="subtopic_id" class="form-control">
-	                      
-	                    </select>
+	                    <label for="exampleInputEmail1">Phone Number<span class="required">*</span></label>
+	                 	<input type="text" name="candidate_phone" class="form-control">
 					</div>
 				</div>
-              
-									 
-				<div class="col-md-4">
+
+              	<div class="col-md-6">
 				  	<div class="form-group">
-	                    <label for="exampleInputEmail1">Line Item(Level 1)<span class="required">*</span></label>
-	                 	<select id="lineitem_id"  name="lineitem_id" class="form-control">
-	                      
+	                    <label for="exampleInputEmail1">Yrs of Experience<span class="required">*</span></label>
+	                 	<input type="text" name="candidate_experiance" class="form-control">
+					</div>
+				</div>
+				<div class="col-md-6">
+				  	<div class="form-group">
+	                    <label for="exampleInputEmail1">Notice Period at Current Job<span class="required">*</span></label>
+	                 	<input type="text" name="candidate_notice_period" class="form-control">
+					</div>
+				</div>
+									 
+				<div class="col-md-6">
+				  	<div class="form-group">
+	                    <label for="exampleInputEmail1">Job Type<span class="required">*</span></label>
+	                 	<select id="job_type"  name="job_type" class="form-control">
+	                      <option value="">Select Type</option>
 	                    </select> 
 					</div>
 				</div>
-									
-				<div class="col-md-4">
-				   <div class="form-group">
-                        <label for="exampleInputEmail1">Line Item(Level 2)<span class="required">*</span></label>
-                     	<select id="lineitemlevel_id"  name="lineitemlevel_id" class="form-control">
-                           
-                        </select> 
+					
+				<div class="col-md-6">
+				  	<div class="form-group">
+	                    <label for="exampleInputEmail1">Current Job Designation<span class="required">*</span></label>
+	                 	<input type="text" name="current_job_desig" class="form-control">
 					</div>
 				</div>
-								
-				<div class="col-md-4">
-                    <div class="form-group">
-                       	<label for="exampleInputEmail1">Level<span class="required">*</span></label>
-                      	<select  name="level" class="form-control">
-					                                          
-						<option value="Expert">Expert</option>
-						<option value="Medium">Medium</option>
-						<option value="Beginner">Beginner</option>
-					 </select>
-					 </div>
-                </div>
-								
-				<div class="col-md-4">
-                    <div class="form-group">
-					<label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
-					<select  name="ques_type" class="form-control" id="category">
-					</select>
-					 </div>
-                </div>
-				
-				<div class="col-md-12">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Question<span class="required">*</span></label>
-					 	<textarea name="question" id="question" class="form-control ckeditor"  required></textarea>
-				   </div>
+
+				<div class="col-md-6">
+				  	<div class="form-group">
+	                    <label for="exampleInputEmail1">Current Work Location<span class="required">*</span></label>
+	                 	<input type="text" name="current_work_location" class="form-control">
+					</div>
 				</div>
-								
+
+				<div class="col-md-6">
+				  	<div class="form-group">
+	                    <label for="exampleInputEmail1">Working at Current Job Since<span class="required">*</span></label>
+	                 	<input type="text" name="working_current_since" class="form-control">
+					</div>
+				</div>
+
+				<div class="col-md-6">
+				  	<div class="form-group">
+	                    <label for="exampleInputEmail1">Current CTC<span class="required">*</span></label>
+	                 	<input type="text" name="working_current_since" class="form-control">
+					</div>
+				</div>
+
+				<div class="col-md-6">
+				  	<div class="form-group">
+	                    <label for="exampleInputEmail1">Last Salary Hike<span class="required">*</span></label>
+	                 	<input type="text" name="working_current_since" class="form-control">
+					</div>
+				</div>
+
+				<div class="col-md-6">
+				  	<div class="form-group">
+	                    <label for="exampleInputEmail1">Last Salary Hike<span class="required">*</span></label>
+	                 	<input type="text" name="working_current_since" class="form-control">
+					</div>
+				</div>
+
+				<div class="col-md-6">
+				  	<div class="form-group">
+	                    <label for="exampleInputEmail1">Top Education<span class="required">*</span></label>
+	                 	<input type="text" name="top_education" class="form-control">
+					</div>
+				</div>
+				<div class="col-md-6">
+				  	<div class="form-group">
+	                    <label for="exampleInputEmail1">Skills<span class="required">*</span></label>
+	                 	<input type="text" name="candidate_skills" class="form-control">
+					</div>
+				</div>
+				<div class="col-md-6">
+				  	<div class="form-group">
+	                    <label for="exampleInputEmail1">Certifications</label>
+	                 	<input type="text" name="candidate_certification" class="form-control">
+					</div>
+				</div>
+				
+
                 <div class="panel-body"></div>
                 <button type="submit" class="btn bg-navy" type="submit">Save CV
                 </button>
