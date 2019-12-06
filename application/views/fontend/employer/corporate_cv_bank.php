@@ -37,15 +37,14 @@
               <thead>
                 <tr>
                   <th class="active">SL</th>
-                  <th>Photo</th>
+                  <th class="active">Photo</th>
                   <th class="active">Name</th>
                   <th class="active">Email</th>
                   <th class="active">Mobile No</th>
                   <th class="active">Current Location</th>
                   <th class="active">Last Profile Update Date</th>
-                  <!-- <th class="active"></th>
-                  <th class="active">Question</th> -->
-                  <th class="active col-sm-2">Action</th>
+                  <th class="active">Candidate Uploaded CV </th>
+                  <th class="active">Ocean Generated CV</th>
                 </tr>
               </thead>
               <tbody>
@@ -57,8 +56,8 @@
                       <td></td>
                       <td></td>
                       <td></td>
-                     <!--  <td></td>
-                      <td></td> -->
+                      <td></td>
+                      <td></td>
                   </tr>
               </tbody>
           </table>

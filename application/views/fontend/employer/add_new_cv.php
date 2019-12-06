@@ -145,7 +145,37 @@
 	                 	<input type="text" name="candidate_certification" class="form-control">
 					</div>
 				</div>
+				<div class="col-md-12">
+				  	<div class="form-group">
+	                    <label for="exampleInputEmail1">Candidate Expectations (Desires):</label>
+					</div>
+				</div>
+				<div class="col-md-6">
+				  	<div class="form-group">
+	                    <label for="exampleInputEmail1">Industry</label>
+	                 	<input type="text" name="candidate_industry" class="form-control">
+					</div>
+				</div>
+				<div class="col-md-6">
+				  	<div class="form-group">
+	                    <label for="exampleInputEmail1">Role</label>
+	                 	<input type="text" name="candidate_role" class="form-control">
+					</div>
+				</div>
+				<div class="col-md-6">
+				  	<div class="form-group">
+	                    <label for="exampleInputEmail1">Expected Salary</label>
+	                 	<input type="text" name="candidate_expected_sal" class="form-control">
+					</div>
+				</div>
+				<div class="col-md-6">
+				  	<div class="form-group">
+	                    <label for="exampleInputEmail1">Desired Work Location</label>
+	                 	<input type="text" name="desired_wrok_location" class="form-control">
+					</div>
+				</div>
 				
+
 
                 <div class="panel-body"></div>
                 <button type="submit" class="btn bg-navy" type="submit">Save CV
