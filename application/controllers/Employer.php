@@ -1995,9 +1995,18 @@ public function interview_scheduler()
             foreach ($result as $row)
                 $arr_result[] = $row->company_name;
                 echo json_encode($arr_result);
-                
+
             }
         }
+    }
+
+    function get_company_info()
+    {
+       
+    $where['company_name'] =$this->input->post('comp_name');
+        $result = $this->Master_model->getMaster('company_name', $where);
+        print_r($result);
+
     }
 
 
