@@ -1188,7 +1188,7 @@ function getstate(){
                     // echo "string";
                             // echo $company_id;
                                 # code...
-                    $exist_companyid = $this->company_profile_model->companyid_check($this->input->post('company_id'),$user_id);
+                    $exist_companyid = $this->company_profile_model->companyid_check($company_id,$user_id);
                        if ($exist_companyid) {
                             // all Ready Account Message
                             $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">This consultant is already added in your list</div>');
