@@ -2031,15 +2031,13 @@ public function interview_scheduler()
     {
         $company_id = $this->session->userdata('company_profile_id');
 
-        $industry_master = $this->Master_model->getMaster('job_category',$where=false);
+        $data['industry_master'] = $this->Master_model->getMaster('job_category',$where=false);
        
-        $department = $this->Master_model->getMaster('department',$where=false);
+        $data['department'] = $this->Master_model->getMaster('department',$where=false);
        
-        $job_role = $this->Master_model->getMaster('job_role',$where=false);
-         echo "<pre>";
-        print_r($job_role);
-        die;
-        $this->load->view('fontend/employer/add_new_cv');
+        $data['job_role'] = $this->Master_model->getMaster('job_role',$where=false);
+
+        $this->load->view('fontend/employer/add_new_cv', $data);
     }
 
 } // end class
