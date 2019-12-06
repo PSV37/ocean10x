@@ -55,7 +55,7 @@
                                         <div class="col-md-6 col-sm-12">
                                           <div class="formrow">
                                             <label class="control-label">Company Email: <span class="required">*</span></label>
-                                            <input type="text"  name="company_email" value="<?php 
+                                            <input type="text" id="company_email"  name="company_email" value="<?php 
                                                if(!empty($company_info->company_email)){
                                                 echo $company_info->company_email;
                                                }
@@ -537,11 +537,33 @@
           source: "<?php echo base_url('employer/get_autocomplete'); ?>",
           select: function(a,b)
             {
-                alert(b.item.value);
+                 alert(b.item.value);
               $(this).val(b.item.value); //grabed the selected value
+              getcompanyinfo(b.item.value);
+
             }
         });
     });
+      function getcompanyinfo(company_name){
+
+    $.ajax({
+              url:'<?php echo site_url('employer/get_company_info') ?>',
+              type:'POST',
+              data:{
+                    comp_name:company_name
+              },
+               dataType: "JSON",  
+               success: function(data)
+               {
+                 console.log(data);
+                 // $.each(data, function(index, value) 
+                 //  {
+                 //    $('#comp_sector').val(value.sector_name);
+                 //    $('#sect_id').val(value.id);
+                 //  });
+               } 
+        });
+}
 </script>
 <script>
     // WRITE THE VALIDATION SCRIPT.
