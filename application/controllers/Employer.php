@@ -1210,12 +1210,12 @@ function getstate(){
                                 );
                                 if (isset($company_id) && !empty($company_id)) 
                                 {
-                                    $consultanat_data['company_id']=>$company_id;
+                                    $consultanat_data['company_id']=$company_id;
                                 }
                                 else {
                                      $company_profile['company_password']=md5($pass);
                             $comp_id=$this->Master_model->master_insert($company_profile,'company_profile');
-                                $consultanat_data['company_id']=>$comp_id;
+                                $consultanat_data['company_id']=$comp_id;
                             // send mail to consultant
                             }
                             $user_id = $this->session->userdata('company_profile_id');
