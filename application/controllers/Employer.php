@@ -1994,7 +1994,9 @@ public function interview_scheduler()
             if (count($result) > 0) {
             foreach ($result as $row)
                 $arr_result[] = $row->company_name;
-                echo json_encode($arr_result);
+                // echo json_encode($arr_result);
+                print_r($arr_result);
+
             }
         }
     }
