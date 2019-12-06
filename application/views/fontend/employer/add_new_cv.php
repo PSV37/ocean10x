@@ -180,13 +180,10 @@
 	                 	<input type="text" name="desired_wrok_location" class="form-control">
 					</div>
 				</div>
-				
-
 
                 <div class="panel-body"></div>
-                <button type="submit" class="btn bg-navy" type="submit">Save CV
+                <button type="submit" class="btn bg-navy pull-right" type="submit">Save CV
                 </button>
-                <div class="panel-body"></div>
              </div>
          	</div>
             </form>
