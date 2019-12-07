@@ -69,7 +69,7 @@
 									<div class="formrow">
                                         <div class="row">
                                             <div class="col-md-6 col-sm-12">
-                                              <input type="Password" name="company_password" class="form-control" placeholder="Password">
+                                              <input type="Password" name="company_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control" placeholder="Password">
                                            </div>
 										   <div class="col-md-6 col-sm-12">
                                               <select  name="company_category" id="company_category" class="form-control services">
