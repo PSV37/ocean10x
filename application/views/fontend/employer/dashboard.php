@@ -69,7 +69,7 @@
                                             	 if(!empty($company_info->alternate_email_id)){
                                             	 	echo $company_info->alternate_email_id;
                                             	 }
-                                            ?>" class="form-control" placeholder="Company Name">
+                                            ?>" class="form-control" placeholder="Alternate Email ID">
                                             </div>
                                         </div>
 
@@ -335,7 +335,7 @@
                                             	 if(!empty($company_info->company_phone)){
                                             	 	echo $company_info->company_phone;
                                             	 }
-                                            ?>" class="form-control" maxlength="10" id="company_phone" onkeypress="phoneno()" style="margin-left:-32px; width:203px;" maxlength="10">
+                                            ?>" class="form-control" maxlength="10" id="company_phone" onkeypress="phoneno()"  maxlength="10">
                                             </div>
                                         </div>
                                     </div><!-- end row -->
@@ -376,7 +376,7 @@
                                             	 if(!empty($company_info->cont_person_level)){
                                             	 	echo $company_info->cont_person_level;
                                             	 }
-                                            ?>">
+                                            ?>" placeholder="E.g. Administrator" >
 					                        </div>
 					                      </div>
                                         <div class="col-md-6 col-sm-12">
