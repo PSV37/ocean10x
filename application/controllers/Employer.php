@@ -1141,9 +1141,6 @@ function getstate(){
                 'contact_name'     => $this->input->post('contact_name'),
                 'company_career_link' => $this->input->post('company_career_link'),
                 'company_address'  => $this->input->post('company_address'),
-                'company_address2'  => $this->input->post('company_address2'),
-                'country_id'       => $this->input->post('country_id'),
-                'state_id'         => $this->input->post('state_id'),
                 'city_id'          => $this->input->post('city_id'),
                 'company_pincode'          => $this->input->post('company_pincode'),
                 'cont_person_email'    => $this->input->post('cont_person_email'),
@@ -1155,31 +1152,7 @@ function getstate(){
                  'token'            => md5($this->input->post('company_email')),
             );
 
-            $company_logo = isset($_FILES['company_logo']['name']) ? $_FILES['company_logo']['name'] : null;
-
-            if (!empty($employer_id) || !empty($company_logo)) {
-                if (!empty($company_logo)) {
-
-                    $config['upload_path']   = 'upload/';
-                    $config['allowed_types'] = 'gif|jpg|png';
-                    $config['encrypt_name']  = true;
-                    $config['max_size']      = 1000;
-                    $config['max_width']     = 300;
-                    $config['max_height']    = 300;
-
-                    $this->load->library('upload', $config);
-                    $result_upload                   = $this->upload->do_upload('company_logo');
-                    $upload_data                     = $this->upload->data();
-                    $company_logo                    = $upload_data['file_name'];
-                    $company_profile['company_logo'] = $company_logo;
-
-                    if (!$result_upload == true) {
-                        $error = array('error' => $this->upload->display_errors());
-                        $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">Please Upload a Valid Logo Size Max size 300*300</div>');
-                        redirect('employer/addconsultant');
-                    } 
-                }
-            }
+            
              
             if(isset($_POST['add_consultant'])) 
             {
