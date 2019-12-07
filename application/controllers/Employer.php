@@ -2087,5 +2087,33 @@ public function interview_scheduler()
         
     }
 
+
+ function get_candidate_by_email(){
+        if (isset($_GET['term'])) {
+            // $this->load->model('Consultant_autocomplete_model');
+            $result = $this->Job_seeker_experience_model->autocomplete_candidate($_GET['term']);
+            if (count($result) > 0) {
+            foreach ($result as $row)
+                $arr_result[] = $row->email;
+                echo json_encode($arr_result);
+
+            }
+        }
+    }
+
+    function get_candidate_info_by_email()
+    {
+       
+        $email_id =$this->input->post('email');
+        $where1 = "js_info.email = '$email_id'";
+        //$join = array( "country"=>"country.country_id=company_profile.country_id | LEFT OUTER",
+                      //  "city"=>"city.id=company_profile.city_id | LEFT OUTER",
+                       // "state"=>"state.state_id=company_profile.state_id | LEFT OUTER");
+      
+        //$select ="company_profile_id,company_name,company_email,company_url,country_code,company_phone,contact_name,cont_person_email,cont_person_mobile,company_career_link,company_address,company_address2,company_pincode,comp_gstn_no,comp_pan_no,company_profile.country_id,city.city_name,state.state_name,company_profile.state_id,company_profile.city_id";
+        $result = $this->Master_model->getMaster('js_info', $where1, $join = false, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+                echo json_encode($result);
+
+    }
 } // end class
 
