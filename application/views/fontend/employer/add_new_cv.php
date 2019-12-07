@@ -226,12 +226,12 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
             {
                  // alert(b.item.value);
               $(this).val(b.item.value); //grabed the selected value
-              getcompanyinfo(b.item.value);
+              get_candidate_info(b.item.value);
 
             }
         });
     });
-   function getcompanyinfo(email){
+   function get_candidate_info(email){
 
     	$.ajax({
               url:'<?php echo site_url('employer/get_candidate_info_by_email') ?>',
@@ -265,6 +265,8 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                      // $('#comp_pan_no').val(value.comp_pan_no);
                      // $('#company_profile_id').val(value.company_profile_id);
                     
+
+
                   });
                } 
         });
