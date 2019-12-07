@@ -25,7 +25,7 @@
       <div class="col-md-6 col-md-offset-3">
         <div class="userccount">
           	
-          <h5>Employer Reset Password</h5>
+          <h5>Please enter new password</h5>
           <!-- login form -->
            <form class="submit-form customform loginform" action="" method="post">
            <?php echo $this->session->flashdata('verify_msg'); ?>
@@ -34,6 +34,8 @@
             
             <div class="formrow">
               <input name="password" type="password" class="form-control" placeholder="Password" min="5" required>
+              <input type="checkbox" onclick="myFunction()">Show Password
+              
             </div>
             <div class="formrow"></div>
             <input type="submit" class="btn" value="Reset Account">
