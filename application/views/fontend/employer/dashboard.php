@@ -596,7 +596,7 @@
                  <select  name="country2" id="country2" class="form-control country" onchange="getStates(this.value)">
 											<option value="">Select Country</option>
 											<?php foreach($country as $key){?>
-											<option value="<?php echo $key['country_id']; ?>"<?php if($company_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
+											<option value="<?php echo $key['country_id']; ?>"><?php echo $key['country_name']; ?></option>
 											<?php } ?>
 										  </select>
               </div>
