@@ -2027,17 +2027,63 @@ public function interview_scheduler()
         $this->load->view('fontend/employer/corporate_cv_bank');
     }
 
-    public function add_new_cv()
+    public function add_new_cv($cv_id = null)
     {
         $company_id = $this->session->userdata('company_profile_id');
 
-        $data['industry_master'] = $this->Master_model->getMaster('job_category',$where=false);
-       
-        $data['department'] = $this->Master_model->getMaster('department',$where=false);
-       
-        $data['job_role'] = $this->Master_model->getMaster('job_role',$where=false);
+        if($_POST)
+        {
+            $cv_data = array(
+                'company_id'                 => $company_id,
+                'js_name'                    => $interview_address,
+                'js_email'                   => $user_message,
+                'js_mobile'                  => $company_id,
+                'js_job_type'                => $interview_address,
+                'js_current_designation'     => $user_message,
+                'js_current_work_location'   => $company_id,
+                'js_working_since'           => $interview_address,
+                'js_current_ctc'             => $user_message,
+                'js_current_notice_period'   => $company_id,
+                'js_experience'              => $interview_address,
+                'js_last_salary_hike'        => $user_message,
+                'js_top_education'           => $user_message,
+                'js_edu_special'             => $company_id,
+                'js_skill_set'               => $interview_address,
+                'js_certifications'          => $user_message,
+                'js_industry'                => $company_id,
+                'js_role'                    => $interview_address,
+                'js_expected_salary'         => $user_message,
+                'js_desired_work_location'   => $company_id,
+            );
 
-        $this->load->view('fontend/employer/add_new_cv', $data);
+            if(empty($cv_id))
+            {
+                $data['created_on'] = date('Y-m-d H:i:s');
+                $data['created_by'] = $company_id;
+
+                $this->Master_model->master_insert($cv_data, 'corporate_cv_bank');
+                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New CV added sucessfully!</div>');
+                redirect('employer/add_new_cv');
+            }else{
+                $data['updated_on'] = date('Y-m-d H:i:s');
+                $data['updated_by'] = $company_id;
+
+                $where_ins['cv_id']=$cv_id;
+               $this->Master_model->master_update($cv_data,'corporate_cv_bank',$where_ins);
+                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">CV upated sucessfully!</div>');
+                redirect('employer/add_new_cv');
+            }
+
+        }else{
+            $data['industry_master'] = $this->Master_model->getMaster('job_category',$where=false);
+            $data['department'] = $this->Master_model->getMaster('department',$where=false);
+            $data['job_role'] = $this->Master_model->getMaster('job_role',$where=false);
+
+            //$data['cv_info'] = $this->Master_model->getMaster('corporate_cv_bank',$where=false);
+
+            $this->load->view('fontend/employer/add_new_cv', $data);
+        }
+        
     }
 
 } // end class
