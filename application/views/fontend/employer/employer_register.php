@@ -59,7 +59,7 @@
                                                 <input type="email" name="company_email" value="<?php echo isset($this->session->userdata['reg_in']['company_email'])?$this->session->userdata['reg_in']['company_email']:''; ?>" class="form-control" placeholder="Email" autocomplete="off">
                                             </div>
                                             <div class="col-md-6 col-sm-12">
-                                                <input type="text" name="company_username" id="company_username" value="<?php echo isset($this->session->userdata['reg_in']['company_username'])?$this->session->userdata['reg_in']['company_username']:''; ?>" class="form-control" placeholder="Company User Name" autocomplete="off">
+                                                <input type="text" name="company_username" id="company_username" value="<?php echo isset($this->session->userdata['reg_in']['company_username'])?$this->session->userdata['reg_in']['company_username']:''; ?>" class="form-control" placeholder="Company Admin UserName" autocomplete="off">
                                             </div>
                                           
                                         </div><!-- end row -->
