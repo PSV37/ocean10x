@@ -49,18 +49,7 @@ class Employer_register extends CI_Controller
 
     public function create()
     {
-        
-                $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]|alpha_numeric|callback_password_check');
-            
-            // $this->form_validation->set_rules($rules);
-            if ($this->form_validation->run())
-            {
-                echo 'Success! Account can be created.';
-            }
-            else
-            {
-                echo 'Error! <ul>' . validation_errors('<li>', '</li>') . '</ul>';
-            }
+
 
         if($_POST){
         $company_name    = $this->input->post('company_name');
@@ -139,11 +128,12 @@ $this->session->set_userdata('reg_in', $company_profile );
             $this->company_profile_model->sendEmail($to_email);
 
             $this->session->unset_userdata($company_profile);
- $this->session->unset_userdata('reg_in');
+             $this->session->unset_userdata('reg_in');
+             $data['company_name']=$this->input->post('company_name');
 
 
             // successfully sent mail
-            $this->load->view('fontend/employer/register_success');
+            $this->load->view('fontend/employer/register_success',$data);
         } else {
              $this->session->set_flashdata('captchaCode_msg', '<div class="alert alert-warning text-center">captcha code does not match please try again</div>');
                 redirect_back();
@@ -152,58 +142,6 @@ $this->session->set_userdata('reg_in', $company_profile );
         } 
        }
     }
-    public function password_check($str)
-{
-   if (preg_match('#[0-9]#', $str) && preg_match('#[a-zA-Z]#', $str)) {
-     return TRUE;
-   }
-   return FALSE;
-}
- public function valid_password($password = '')
-    {
-        $password = trim($password);
-        $regex_lowercase = '/[a-z]/';
-        $regex_uppercase = '/[A-Z]/';
-        $regex_number = '/[0-9]/';
-        $regex_special = '/[!@#$%^&*()\-_=+{};:,<.>§~]/';
-        if (empty($password))
-        {
-            $this->form_validation->set_message('company_password', 'The {field} field is required.');
-            return FALSE;
-        }
-        if (preg_match_all($regex_lowercase, $password) < 1)
-        {
-            $this->form_validation->set_message('company_password', 'The {field} field must be at least one lowercase letter.');
-            return FALSE;
-        }
-        if (preg_match_all($regex_uppercase, $password) < 1)
-        {
-            $this->form_validation->set_message('company_password', 'The {field} field must be at least one uppercase letter.');
-            return FALSE;
-        }
-        if (preg_match_all($regex_number, $password) < 1)
-        {
-            $this->form_validation->set_message('company_password', 'The {field} field must have at least one number.');
-            return FALSE;
-        }
-        if (preg_match_all($regex_special, $password) < 1)
-        {
-            $this->form_validation->set_message('company_password', 'The {field} field must have at least one special character.' . ' ' . htmlentities('!@#$%^&*()\-_=+{};:,<.>§~'));
-            return FALSE;
-        }
-        if (strlen($password) < 5)
-        {
-            $this->form_validation->set_message('company_password', 'The {field} field must be at least 5 characters in length.');
-            return FALSE;
-        }
-        if (strlen($password) > 32)
-        {
-            $this->form_validation->set_message('company_password', 'The {field} field cannot exceed 32 characters in length.');
-            return FALSE;
-        }
-        return TRUE;
-    }
-  
 
 
     public function refresh()

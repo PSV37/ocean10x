@@ -8,8 +8,10 @@
                         <div class="content col-md-6 col-md-offset-3">
                             <div class="userccount">
                             <div class="notfound confirm">
-                          
-                                <p>Your account registered successfully.Please activate your account via email Link has been sent your register email account </p>
+                                <?php echo $company_name; ?>
+                                <h3>Congratulations <?php echo $company_name ?></h3>
+                                <p>You have successfully registered your presence on TheOcean ! 
+Please activate your Corporate Account by accessing the secure link sent to your e-mail account ! </p>
                                
                                 <div class="clearfix"></div>
                            </div>
