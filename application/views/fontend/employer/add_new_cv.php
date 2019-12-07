@@ -62,20 +62,20 @@
 
               	<div class="col-md-6">
 				  	<div class="form-group">
-	                    <label for="exampleInputEmail1">Yrs of Experience<span class="required">*</span></label>
+	                    <label for="exampleInputEmail1">Yrs of Experience</label>
 	                 	<input type="text" name="candidate_experiance" id="candidate_experiance" class="form-control">
 					</div>
 				</div>
 				<div class="col-md-6">
 				  	<div class="form-group">
-	                    <label for="exampleInputEmail1">Notice Period at Current Job<span class="required">*</span></label>
+	                    <label for="exampleInputEmail1">Notice Period at Current Job</label>
 	                 	<input type="text" name="candidate_notice_period" id="candidate_notice_period" class="form-control">
 					</div>
 				</div>
 									 
 				<div class="col-md-6">
 				  	<div class="form-group">
-	                    <label for="exampleInputEmail1">Job Type<span class="required">*</span></label>
+	                    <label for="exampleInputEmail1">Job Type</label>
 	                 	<select id="job_type" name="job_type" class="form-control" >
 	                      <option value="">Select Type</option>
 	                      <option value="Full Time">Full Time</option>
@@ -87,54 +87,54 @@
 					
 				<div class="col-md-6">
 				  	<div class="form-group">
-	                    <label for="exampleInputEmail1">Current Job Designation<span class="required">*</span></label>
+	                    <label for="exampleInputEmail1">Current Job Designation</label>
 	                 	<input type="text" name="current_job_desig" id="current_job_desig" class="form-control">
 					</div>
 				</div>
 
 				<div class="col-md-6">
 				  	<div class="form-group">
-	                    <label for="exampleInputEmail1">Current Work Location<span class="required">*</span></label>
+	                    <label for="exampleInputEmail1">Current Work Location</label>
 	                 	<input type="text" name="current_work_location" id="current_work_location" class="form-control">
 					</div>
 				</div>
 
 				<div class="col-md-6">
 				  	<div class="form-group">
-	                    <label for="exampleInputEmail1">Working at Current Job Since<span class="required">*</span></label>
+	                    <label for="exampleInputEmail1">Working at Current Job Since</label>
 	                 	<input type="text" name="working_current_since" id="working_current_since" class="form-control">
 					</div>
 				</div>
 
 				<div class="col-md-6">
 				  	<div class="form-group">
-	                    <label for="exampleInputEmail1">Current CTC<span class="required">*</span></label>
+	                    <label for="exampleInputEmail1">Current CTC</label>
 	                 	<input type="text" name="current_ctc" id="current_ctc" class="form-control">
 					</div>
 				</div>
 
 				<div class="col-md-6">
 				  	<div class="form-group">
-	                    <label for="exampleInputEmail1">Last Salary Hike<span class="required">*</span></label>
+	                    <label for="exampleInputEmail1">Last Salary Hike</label>
 	                 	<input type="text" name="last_salary_hike" id="last_salary_hike" class="form-control">
 					</div>
 				</div>
 
 				<div class="col-md-6">
 				  	<div class="form-group">
-	                    <label for="exampleInputEmail1">Top Education<span class="required">*</span></label>
+	                    <label for="exampleInputEmail1">Top Education</label>
 	                 	<input type="text" name="top_education" id="top_education" class="form-control">
 					</div>
 				</div>
 				<div class="col-md-6">
 				  	<div class="form-group">
-	                    <label for="exampleInputEmail1">Education Specialization<span class="required">*</span></label>
+	                    <label for="exampleInputEmail1">Education Specialization</label>
 	                 	<input type="text" name="education_specialization" id="education_specialization" class="form-control">
 					</div>
 				</div>
 				<div class="col-md-6">
 				  	<div class="form-group">
-	                    <label for="exampleInputEmail1">Skills<span class="required">*</span></label>
+	                    <label for="exampleInputEmail1">Skills</label>
 	                 	<input type="text" name="candidate_skills" id="candidate_skills" class="form-control">
 					</div>
 				</div>
@@ -246,7 +246,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                  $.each(data, function(index, value) 
                   {
                     console.log(value);
-                    
+
                      $('#candidate_name').val(value.full_name);
                      $('#job_type').val(value.avaliable);
                      // $('#country_code').val(value.desired_industry);
