@@ -532,11 +532,11 @@
                   <div class="col-md-12">
                     <div class="col-md-4"> 
                        <label>Branch Address</label>
-                      <input type="text" name="language[]" id="language1" class="form-control" >
+                      <input type="text" name="branches[]" id="branch1" class="form-control" >
                     </div>
                     <div class="col-md-4">  
                      <label class="control-label">Company Country: <span class="required">*</span></label>
-										  <select  name="country" id="country" class="form-control country" onchange="getStates(this.value)">
+										  <select  name="country1" id="country1" class="form-control country" onchange="getStates(this.value)">
 											<option value="">Select Country</option>
 											<?php foreach($country as $key){?>
 											<option value="<?php echo $key['country_id']; ?>"<?php if($company_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
@@ -545,7 +545,7 @@
                     </div>
                     <div class="col-md-4">  
                     <label class="control-label">Company State: <span class="required">*</span></label>
-											<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+											<select  name="state1" id="state1" class="form-control" onchange="getCitys(this.value)">
 											<option value="">Select State</option>
 										     
 											</select>
@@ -558,7 +558,7 @@
                   <div class="col-md-12">
                     <div class="col-md-6"> 
                        <label class="control-label">Company City: <span class="required">*</span></label>
-											<select  name="city_id" id="city_id" class="form-control">
+											<select  name="city1" id="city1" class="form-control">
 											<option value="">Select City</option>
 											 
 											</select>
@@ -566,11 +566,7 @@
                     <div class="col-md-6">  
                      <div class="formrow">
 					                             <label class="control-label">Pincode: <span class="required">*</span></label>
-					                            <input type="text" name="company_pincode" id="company_pincode"  class="form-control" value="<?php 
-					                                     if(!empty($company_info->company_pincode)){
-					                                        echo $company_info->company_pincode;
-					                                     }
-					                                ?>" required>
+					                            <input type="text" name="company_pincode1" id="company_pincode1"  class="form-control" value="" required>
 					                        </div>
                     </div>
                     
@@ -593,11 +589,11 @@
             <div class="col-md-12">
               <div class="col-md-4"> 
                  <label>Branch Address</label>
-                      <input type="text" name="language[]" id="language2" class="form-control" >
+                      <input type="text" name="branches[]" id="branch2" class="form-control" >
               </div>
               <div class="col-md-4">  
                 <label>select Country</label>
-                 <select  name="country" id="country" class="form-control country" onchange="getStates(this.value)">
+                 <select  name="country2" id="country2" class="form-control country" onchange="getStates(this.value)">
 											<option value="">Select Country</option>
 											<?php foreach($country as $key){?>
 											<option value="<?php echo $key['country_id']; ?>"<?php if($company_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
@@ -606,7 +602,7 @@
               </div>
                <div class="col-md-4">  
                 <label>select State</label>
-                <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+                <select  name="state_id2" id="state_id2" class="form-control" onchange="getCitys(this.value)">
 											<option value="">Select State</option>
 										     
 											</select>
@@ -614,14 +610,14 @@
               <div class="col-md-12" style="margin-top:10px;">  
               	<div class="col-md-4">  
                 <label>select City</label>
-                <select  name="city_id" id="city_id" class="form-control">
+                <select  name="city_id2" id="city_id2" class="form-control">
 											<option value="">Select City</option>
 											 
 											</select>
               </div>
               <div class="col-md-4">  
                 <label>Pincode</label>
-                <input type="text" name="company_pincode" id="company_pincode"  class="form-control" value="<?php 
+                <input type="text" name="company_pincode2" id="company_pincode2"  class="form-control" value="<?php 
 					                                     if(!empty($company_info->company_pincode)){
 					                                        echo $company_info->company_pincode;
 					                                     }
