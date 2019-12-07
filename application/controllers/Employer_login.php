@@ -81,7 +81,7 @@ class Employer_Login extends CI_Controller
 	
 	    $pass    = md5($this->input->post('password'));
 
-        print_r($pass);
+        print_r($this->employer_login_model->reset_account($hash,$pass));
    
         // if ($this->employer_login_model->reset_account($hash,$pass)) {
         //     $this->session->set_flashdata('verify_msg', '<div class="alert alert-success text-center">Your password is successfully reset! Please login to access your account!</div>');
