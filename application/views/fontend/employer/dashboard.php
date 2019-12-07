@@ -612,6 +612,21 @@
 											</select>
               </div>
               <div class="col-md-12" style="margin-top:10px;">  
+              	<div class="col-md-4">  
+                <label>select City</label>
+                <select  name="city_id" id="city_id" class="form-control">
+											<option value="">Select City</option>
+											 
+											</select>
+              </div>
+              <div class="col-md-4">  
+                <label>Pincode</label>
+                <input type="text" name="company_pincode" id="company_pincode"  class="form-control" value="<?php 
+					                                     if(!empty($company_info->company_pincode)){
+					                                        echo $company_info->company_pincode;
+					                                     }
+					                                ?>" required>
+              </div>
                 
               </div>
 
