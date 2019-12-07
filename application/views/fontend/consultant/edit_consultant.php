@@ -428,7 +428,7 @@
                       <div class="formrow">
                       <label class="control-label">Consultancy State: <span class="required">*</span></label>
                       <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
-                      <option value="$company_info['state_id']">Select State</option>
+                      <option value="<?php $company_info['state_id']?>">Select State</option>
                          
                       </select>
                     </div>
@@ -438,7 +438,7 @@
                       <div class="formrow">
                       <label class="control-label">Consultancy City: <span class="required">*</span></label>
                       <select  name="city_id" id="city_id" class="form-control">
-                      <option value="$company_info['city_id']">Select City</option>
+                      <option value="<?php echo $company_info['city_id']?>">Select City</option>
                        
                       </select>
                                       </div>
