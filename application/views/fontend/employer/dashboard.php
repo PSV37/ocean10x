@@ -477,7 +477,7 @@
 					                        </div>
 					                     </div>
 					                </div><br/>
-					 				<div class="row">
+					 				<!-- <div class="row">
 					 				 	<div class="col-md-6 col-sm-6">
 					                       <div class="formrow">
 					                             <label class="control-label">GSTN No:</label>
@@ -499,7 +499,81 @@
 					                                ?>">
 					                        </div>
 					                    </div>
-					                </div>
+					                </div> -->
+					                
+      <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-12 col-sm-12">
+          <div class="input-group">
+              <h6>Languages</h6><br>
+              <button class="btn btn-success btn-xs pull-right add-more" type="button"><i class="fa fa-plus"></i> Add Office Branches</button> <br>
+             <!--  <div class="input-group control-group after-add-more">
+                <div>
+                  <?php if(!empty($languages)) foreach($languages as $lrow){?>
+                  <div class="col-md-12">
+                    <div class="col-md-6"> 
+                       <label>Language</label>
+                      <input type="text" name="language[]" id="language1" class="form-control" value="<?php echo $lrow['language']; ?>">
+                    </div>
+                    <div class="col-md-6">  
+                      <label>Proficiency</label>
+                      <select class="form-control" name="proficiency[]" id="proficiency">
+                        <option value="">Select Proficiency</option>
+                        <option value="Beginner"<?php if($lrow['proficiency']=='Beginner'){echo 'selected';} ?>>Beginner</option>
+                        <option value="Proficient"<?php if($lrow['proficiency']=='Proficient'){echo 'selected';} ?>>Proficient</option>
+                        <option value="Expert"<?php if($lrow['proficiency']=='Expert'){echo 'selected';} ?>>Expert</option>
+                        
+                      </select>
+                    </div>
+                    <div class="col-md-12" style="margin-top:10px;">  
+                      <input type="checkbox" name="lang_read[]" id="lang_read" value="Yes"<?php if($lrow['lang_read']=='Yes'){echo 'checked';} ?> style="margin: 0 15px;"> Read
+
+                      <input type="hidden" name="lang_read[]" id="txtlang_read" value="No" style="margin: 0 15px;"> 
+
+                      <input type="checkbox" name="lang_write[]" id="lang_write" value="Yes"<?php if($lrow['lang_write']=='Yes'){echo 'checked';} ?> style="margin: 0 15px;"> Write
+                      <input type="hidden" name="lang_write[]" id="txtlang_write" value="No" style="margin: 0 15px;"> 
+                      
+                      <input type="checkbox" name="lang_speak[]" id="lang_speak" value="Yes"<?php if($lrow['lang_speak']=='Yes'){echo 'checked';} ?> style="margin: 0 15px;"> Speak
+                      <input type="hidden" name="lang_speak[]" id="txtlang_speak" value="No" style="margin: 0 15px;"> 
+                    
+                      <a href="<?php echo base_url() ?>/job_seeker/delete_mylanguage/<?php echo $lrow['id']; ?>" class="btn btn-danger btn-xs pull-right" title="Remove" data-toggle="tooltip" data-placement="top" onclick="return confirm('Are you sure want to delete this language ?');"><i class="fa fa-trash"></i> Remove</a>
+                    </div>
+                  </div>
+                <?php }else{ ?>
+                  <div class="col-md-12">
+                    <div class="col-md-6"> 
+                       <label>Language</label>
+                      <input type="text" name="language[]" id="language1" class="form-control" >
+                    </div>
+                    <div class="col-md-6">  
+                      <label>Proficiency</label>
+                      <select class="form-control" name="proficiency[]" id="proficiency">
+                        <option value="">Select Proficiency</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Proficient">Proficient</option>
+                        <option value="Expert">Expert</option>
+                        
+                      </select>
+                    </div>
+                    <div class="col-md-12" style="margin-top:10px;">  
+                      <input type="checkbox" name="lang_read[]" id="lang_read" value="Yes" style="margin: 0 15px;"> Read
+                      <input type="hidden" name="lang_read[]" id="txtlang_read" value="No" style="margin: 0 15px;"> 
+                      
+                      <input type="checkbox" name="lang_write[]" id="lang_write" value="Yes" style="margin: 0 15px;"> Write
+                      <input type="hidden" name="lang_write[]" id="txtlang_write" value="No" style="margin: 0 15px;"> 
+                      
+                      <input type="checkbox" name="lang_speak[]" id="lang_speak" value="Yes" style="margin: 0 15px;"> Speak
+                      <input type="hidden" name="lang_speak[]" id="txtlang_speak" value="No" style="margin: 0 15px;"> 
+
+                    </div>
+                  </div>
+                <?php } ?>
+                </div>
+              </div> -->
+          </div>     
+        </div>
+      </div>
+    </div>
 									
 									
                                     <!-- end row -->
