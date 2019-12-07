@@ -1257,13 +1257,15 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
 
         }
             elseif (isset($_POST['update_consultant'])) {
-            $consultant_id=$this->input->post('company_profile_id');
-            echo $consultant_id;
-            if (isset($consultant_id)) {
+            $company_profile_id=$this->input->post('company_profile_id');
+            // echo $consultant_id;
+            if (isset($company_profile_id)) {
                 $where['company_profile_id']=$consultant_id;
             $this->Master_model->master_update($company_profile,'company_profile',$where);
-            // $data['is_favourite']=$this->input->post('Favorite');
-            // $this->Master_model->master_update($data,'consultant_company_mapping',$where);
+            $consultant_id=$this->input->post('consultant_id');
+            $whr=['con_comp_map_id']=$consultant_id;
+            $data['is_favourite']=$this->input->post('Favorite');
+            $this->Master_model->master_update($data,'consultant_company_mapping',$whr);
 
 
             redirect(base_url().'employer/allconsultants');
