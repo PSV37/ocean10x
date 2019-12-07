@@ -65,9 +65,9 @@
                                         <div class="col-md-6 col-sm-12">   
                                            <div class="formrow">
                                            	<label class="control-label">Alternate Email ID <span class="required">*</span></label>
-                                            <input type="text" name="company_name" value="<?php 
-                                            	 if(!empty($company_info->company_name)){
-                                            	 	echo $company_info->company_name;
+                                            <input type="text" name="alternate_email_id" value="<?php 
+                                            	 if(!empty($company_info->alternate_email_id)){
+                                            	 	echo $company_info->alternate_email_id;
                                             	 }
                                             ?>" class="form-control" placeholder="Company Name">
                                             </div>
@@ -88,7 +88,7 @@
 
                                     <div class="row">
                                        
-                                        <div class="col-md-3 col-sm-12">
+                                        <div class="col-md-6 col-sm-12">
                                         	<div class="formrow">
 											<label class="control-label">Country Code:</label>
 											<select id="country" name="country_code" class="form-control country_code">
@@ -328,7 +328,7 @@
 											</select>
 											</div>
 											</div>
-											<div class="col-md-3 col-sm-12">
+											<div class="col-md-6 col-sm-12">
                                         	<div class="formrow">
                                         	<label class="control-label">Company Phone: <span class="required">*</span></label>
                                             <input type="tel" name="company_phone" value="<?php 

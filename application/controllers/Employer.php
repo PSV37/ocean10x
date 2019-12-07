@@ -52,7 +52,8 @@ class Employer extends MY_Employer_Controller
 				'city_id'          => $this->input->post('city_id'),
 				'company_pincode'          => $this->input->post('company_pincode'),
 				'company_aboutus'  => $this->input->post('company_aboutus'),
-
+                'cont_person_level' =>$this->input->post('cont_person_level'),
+                'alternate_email_id'=>$this->input->post('alternate_email_id'),
                 'cont_person_email'    => $this->input->post('cont_person_email'),
                 'cont_person_mobile'   => $this->input->post('cont_person_mobile'),
                 'comp_gstn_no'         => $this->input->post('comp_gst_no'),
