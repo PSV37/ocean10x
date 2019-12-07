@@ -34,10 +34,7 @@
         <div class="userccount empdash">
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
            
-    		<form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>employer/save_questionbank/<?php  if (!empty($edit_questionbank_info)) { foreach($edit_questionbank_info as $row)
-                    echo $row['ques_id'];
-            	}
-            ?>" method="post">
+    		<form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>employer/add_new_cv" method="post">
 
            <div class="row">
 
@@ -46,20 +43,20 @@
                 <div class="col-md-6">
                     <div class="form-group">                                       
 					   <label for="exampleInputEmail1">Full Name <span class="required">*</span></label>
-                        <input type="text" name="candidate_name" class="form-control">
+                        <input type="text" name="candidate_name" class="form-control" required="">
 					</div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email Id <span class="required">*</span></label>
-                      	<input type="email" name="candidate_email" class="form-control">
+                      	<input type="email" name="candidate_email" class="form-control" required="">
                     </div>
                 </div>
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Phone Number<span class="required">*</span></label>
-	                 	<input type="text" name="candidate_phone" class="form-control">
+	                 	<input type="text" name="candidate_phone" class="form-control" required="">
 					</div>
 				</div>
 
@@ -131,6 +128,12 @@
 				</div>
 				<div class="col-md-6">
 				  	<div class="form-group">
+	                    <label for="exampleInputEmail1">Education Specialization<span class="required">*</span></label>
+	                 	<input type="text" name="education_specialization" class="form-control">
+					</div>
+				</div>
+				<div class="col-md-6">
+				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Skills<span class="required">*</span></label>
 	                 	<input type="text" name="candidate_skills" class="form-control">
 					</div>
@@ -182,8 +185,8 @@
 				</div>
 
                 <div class="panel-body"></div>
-                <button type="submit" class="btn bg-navy pull-right" type="submit">Save CV
-                </button>
+                <button type="submit" class="btn bg-navy pull-right" type="submit">Save CV </button>
+               
              </div>
          	</div>
             </form>
