@@ -1416,6 +1416,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
            
             
         );
+        $data['consultant_id']=$consultant_id;
         $data['country'] = $this->Master_model->getMaster('country',$where=false);
         $data['state'] = $this->Master_model->getMaster('state',$where=false);
         $data['city'] = $this->Master_model->getMaster('city',$where=false);
