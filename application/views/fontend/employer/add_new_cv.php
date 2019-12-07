@@ -246,17 +246,18 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                  $.each(data, function(index, value) 
                   {
                     console.log(value);
-                     // $('#company_email').val(value.company_email);
-                     // $('#company_url').val(value.company_url);
-                     // $('#country_code').val(value.country_code);
-                     // $('#company_phone').val(value.company_phone);
-                     // $('#contact_name').val(value.contact_name);
-                     // $('#cont_person_email').val(value.cont_person_email);
-                     // $('#cont_person_mobile').val(value.cont_person_mobile);
-                     // $('#company_career_link').val(value.company_career_link);
-                     // $('#company_address').val(value.company_address);
-                     // $('#company_address2').val(value.company_address2);
-                     // $('#country_id').val(value.country_id);
+                    
+                     $('#candidate_name').val(value.full_name);
+                     $('#job_type').val(value.avaliable);
+                     // $('#country_code').val(value.desired_industry);
+                     // $('#company_phone').val(value.immediate_join);
+                     $('#candidate_industry').val(value.industry_id);
+                     $('#desired_wrok_location').val(value.job_area);
+                     $('#candidate_role').val(value.job_role);
+                     $('#candidate_expected_sal').val(value.js_career_salary);
+                     $('#candidate_phone').val(value.mobile_no);
+                     $('#candidate_notice_period').val(value.notice_period);
+                     // $('#country_id').val(value.serving_notice_period);
                      // $('#state_id').val(value.state_id);
                      // $('#city_id').val(value.city_id);
                      // $('#company_pincode').val(value.company_pincode);
