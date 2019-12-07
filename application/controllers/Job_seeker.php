@@ -518,6 +518,14 @@ exit;*/
                     $available = 'No';
                }
               
+              $srving = $this->input->post('Serving_notice_period');
+              if(isset($srving))
+               {
+                   $srving_notice = 'Yes';
+               }else{
+                    $srving_notice = 'No';
+               }
+
             $career_info  = array(
                 'job_seeker_id'         => $jobseeker_id,
 				'industry_id'           => $this->input->post('industry_id'),
@@ -529,10 +537,10 @@ exit;*/
 				'js_career_salary'      => $this->input->post('js_career_salary'),
 				'job_area'              => $this->input->post('job_area'),
                 'desired_industry'      => $this->input->post('desired_industry'),
-			    'immediate_join'    => $available,
-                'availability_date' =>date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('avail_to_join')))),
-                'notice_period'  =>$this->input->post('Notice_period'),
-                'serving_notice_period' =>$this->input->post('Serving_notice_period'),
+			    'immediate_join'        => $available,
+                'availability_date'     => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('avail_to_join')))),
+                'notice_period'         => $this->input->post('Notice_period'),
+                'serving_notice_period' => $srving_notice,
             );
             
             if (empty($js_career_id)) {
