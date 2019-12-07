@@ -61,10 +61,19 @@
                                             </div>
                                         </div>
                                     </div>
-
-
                                     <div class="row">
-                                        <div class="col-md-6 col-sm-12">
+                                        <div class="col-md-6 col-sm-12">   
+                                           <div class="formrow">
+                                           	<label class="control-label">Alternate Email ID <span class="required">*</span></label>
+                                            <input type="text" name="company_name" value="<?php 
+                                            	 if(!empty($company_info->company_name)){
+                                            	 	echo $company_info->company_name;
+                                            	 }
+                                            ?>" class="form-control" placeholder="Company Name">
+                                            </div>
+                                        </div>
+
+                                         <div class="col-md-6 col-sm-12">
                                         	<div class="formrow">
                                         	<label class="control-label">Company URL:</label>
                                             <input type="text" name="company_url" value="<?php 
@@ -74,6 +83,11 @@
                                             ?>" class="form-control" placeholder="Company Website">
                                             </div>
                                         </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                       
                                         <div class="col-md-3 col-sm-12">
                                         	<div class="formrow">
 											<label class="control-label">Country Code:</label>
@@ -355,6 +369,16 @@
  									</div><!-- end row -->
 
  									 <div class="row">
+ 									 	<div class="col-md-6 col-sm-12">
+					                       <div class="formrow">
+					                             <label class="control-label">Contact Person Level: <span class="required">*</span></label>
+					                            <input type="text" name="cont_person_level" id="cont_person_level"  class="form-control" value="<?php 
+                                            	 if(!empty($company_info->cont_person_level)){
+                                            	 	echo $company_info->cont_person_level;
+                                            	 }
+                                            ?>">
+					                        </div>
+					                      </div>
                                         <div class="col-md-6 col-sm-12">
 					                       <div class="formrow">
 					                             <label class="control-label">Contact Person Email: <span class="required">*</span></label>
@@ -367,7 +391,13 @@
 					                      </div>
 
 					                      
-					                       <div class="col-md-6 col-sm-12">
+					                       
+					                                   
+ 									</div><!-- end row -->
+ 
+ 
+									<div class="row">
+										<div class="col-md-6 col-sm-12">
 					                       	<div class="formrow">
 					                          <label class="control-label">Contact Person Mobile: <span class="required">*</span></label>
 					                           <input type="text" name="cont_person_mobile" id="cont_person_mobile"  class="form-control" value="<?php 
@@ -377,11 +407,6 @@
 				                                ?>" onkeypress="phonenoo()" maxlength="10">
 					                        </div>
 					                      </div>
-					                                   
- 									</div><!-- end row -->
- 
- 
-									<div class="row">
 										<div class="col-md-6 col-sm-6">
 											<div class="formrow">
 												<label class="control-label">Company Type:</label>
@@ -393,17 +418,10 @@
 												</select>
 											</div>
 										</div>
-										<div class="col-md-6 col-sm-6">
-											<div class="formrow">
-												<label class="control-label">Company Career Link:</label>
-												<input type="text" name="company_career_link"  id="company_career_link" class="form-control" value="<?php 
-												if(!empty($company_info->company_career_link)){
-												echo $company_info->company_career_link;
-												}
-												?>" placeholder="Company Career Link">
-											</div>
-										</div>
+										
 									</div>
+
+
 										<div class="row">
 
  										<div class="col-md-12 col-sm-12">
