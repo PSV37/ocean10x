@@ -224,7 +224,7 @@
         
           </div>
           <div class="form-group">
-            <input type="checked" name="Serving_notice_period" value="yes">Serving Notice Period
+            <input type="checkbox" name="Serving_notice_period" value="yes" style="margin: 0 15px;" >Serving Notice Period
             
           </div>
 				  <div class="form-group">
