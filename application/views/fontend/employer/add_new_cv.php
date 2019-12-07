@@ -231,13 +231,13 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
             }
         });
     });
-   function getcompanyinfo(company_name){
+   function getcompanyinfo(email){
 
     	$.ajax({
-              url:'<?php echo site_url('employer/get_company_info') ?>',
+              url:'<?php echo site_url('employer/get_candidate_info_by_email') ?>',
               type:'POST',
               data:{
-                    comp_name:company_name
+                    email:email
               },
                dataType: "JSON",  
                success: function(data)
