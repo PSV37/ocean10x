@@ -604,6 +604,13 @@
 											<?php } ?>
 										  </select>
               </div>
+               <div class="col-md-4">  
+                <label>select State</label>
+                <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+											<option value="">Select State</option>
+										     
+											</select>
+              </div>
               <div class="col-md-12" style="margin-top:10px;">  
                 
               </div>
