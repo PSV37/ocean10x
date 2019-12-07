@@ -219,12 +219,16 @@
           <div class="form-group">
             <label class="control-label col-sm-3" for="email">Notice Period</label>
               <div class="col-sm-9">
-                <input type="text" class="form-control" name="Notice_period" placeholder="Notice period in days" id="Notice_period" value="">
+                <input type="text" class="form-control" name="Notice_period" placeholder="Notice period in days" id="Notice_period" value="" <?php if (!empty($job_career_info[0]->notice_period)) {
+                          if($job_career_info[0]->notice_period=='Yes'){ echo 'disabled';};
+                         } ?>>
               </div>
         
           </div>
           <div class="form-group">
-            <input type="checkbox" name="Serving_notice_period" value="yes" style="margin: 0 15px;" >Serving Notice Period
+            <input type="checkbox" name="Serving_notice_period" value="yes" style="margin: 0 15px;" <?php if (!empty($job_career_info[0]->serving_notice_period)) {
+                          if($job_career_info[0]->serving_notice_period=='Yes'){ echo 'checked';};
+                         } ?>>Serving Notice Period
             
           </div>
 				  <div class="form-group">
