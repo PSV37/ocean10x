@@ -1263,7 +1263,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 $where['company_profile_id']=$consultant_id;
             $this->Master_model->master_update($company_profile,'company_profile',$where);
             $consultant_id=$this->input->post('consultant_id');
-            $whr=['con_comp_map_id']=$consultant_id;
+            $whr['con_comp_map_id']=$consultant_id;
             $data['is_favourite']=$this->input->post('Favorite');
             $this->Master_model->master_update($data,'consultant_company_mapping',$whr);
 
