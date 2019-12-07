@@ -80,15 +80,17 @@ class Employer_Login extends CI_Controller
     	}
 	
 	    $pass    = md5($this->input->post('password'));
+
+        print_r($pass);
    
-        if ($this->employer_login_model->reset_account($hash,$pass)) {
-            $this->session->set_flashdata('verify_msg', '<div class="alert alert-success text-center">Your password is successfully reset! Please login to access your account!</div>');
-            
-            redirect('employer_login');
-        } else {
-            $this->session->set_flashdata('verify_msg', '<div class="alert alert-danger text-center">Sorry! There is error in verifying your account!</div>');
-            redirect('employer_login');
-        }
+        // if ($this->employer_login_model->reset_account($hash,$pass)) {
+        //     $this->session->set_flashdata('verify_msg', '<div class="alert alert-success text-center">Your password is successfully reset! Please login to access your account!</div>');
+
+        //     redirect('employer_login');
+        // } else {
+        //     $this->session->set_flashdata('verify_msg', '<div class="alert alert-danger text-center">Sorry! There is error in verifying your account!</div>');
+        //     redirect('employer_login');
+        // }
 
     }
     
