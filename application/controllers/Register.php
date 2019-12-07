@@ -233,8 +233,8 @@ class Register extends CI_Controller
          $whereres = "js_token='$hash'";
         $js_data= $this->Master_model->get_master_row('js_info',$select = FALSE,$whereres);
 
-        $js_email = $js_data['company_email'];
-        $js_password = $js_data['company_password'];
+        $js_email = $js_data['email'];
+        $js_password = $js_data['password'];
          
         if ($this->job_seeker_model->reset_account($hash,$pass) || ($js_password==$pass)) {
             $this->session->set_flashdata('verify_msg', '<div class="alert alert-success text-center">Your password is successfully reset! Please login to access your account!</div>');
