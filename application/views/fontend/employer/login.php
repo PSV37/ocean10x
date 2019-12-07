@@ -29,6 +29,8 @@
            <form class="submit-form customform loginform" action="<?php echo base_url() ?>employer_login/check_login?redirect=<?php echo $this->input->get('redirect'); ?>" method="post">
            <?php echo $this->session->flashdata('emp_msg');; ?>
              <?php echo $this->session->flashdata('invalid'); ?>
+           <?php echo $this->session->flashdata('verify_msg'); ?>
+             
           <div class="formpanel">
             <div class="formrow">
               <input type="text" class="form-control" name="email" placeholder="Email Address">
