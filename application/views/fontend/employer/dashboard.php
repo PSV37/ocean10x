@@ -596,13 +596,13 @@
                       <input type="text" name="language[]" id="language2" class="form-control" >
               </div>
               <div class="col-md-6">  
-                <label>Proficiency</label>
-                <select class="form-control" name="proficiency[]" id="proficiency">
-                  <option value="">Select Proficiency</option>
-                  <option value="Beginner">Beginner</option>
-                  <option value="Proficient">Proficient</option>
-                  <option value="Expert">Expert</option>
-                </select>
+                <label>select Country</label>
+                 <select  name="country" id="country" class="form-control country" onchange="getStates(this.value)">
+											<option value="">Select Country</option>
+											<?php foreach($country as $key){?>
+											<option value="<?php echo $key['country_id']; ?>"<?php if($company_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
+											<?php } ?>
+										  </select>
               </div>
               <div class="col-md-12" style="margin-top:10px;">  
                 
