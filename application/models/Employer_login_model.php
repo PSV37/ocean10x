@@ -120,7 +120,7 @@ public function check_forgot_user_info($email)
         $this->db->set('company_password', $password);
         $this->db->where('token', $token);
         $this->db->update('company_profile');
-        return $this->db->affected_rows();
+        return $this->db->last_query(); die();
     }	
 
     //verify user account
