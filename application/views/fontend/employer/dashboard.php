@@ -596,25 +596,16 @@
                       <input type="text" name="language[]" id="language2" class="form-control" >
               </div>
               <div class="col-md-6">  
-                <label class="control-label">Company Country: <span class="required">*</span></label>
-										  <select  name="country" id="country1" class="form-control country" onchange="getStates(this.value)">
-											<option value="">Select Country</option>
-											<?php foreach($country as $key){?>
-											<option value="<?php echo $key['country_id']; ?>"<?php if($company_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
-											<?php } ?>
-										  </select>
+                <label>Proficiency</label>
+                <select class="form-control" name="proficiency[]" id="proficiency">
+                  <option value="">Select Proficiency</option>
+                  <option value="Beginner">Beginner</option>
+                  <option value="Proficient">Proficient</option>
+                  <option value="Expert">Expert</option>
+                </select>
               </div>
               <div class="col-md-12" style="margin-top:10px;">  
-                <input type="checkbox" name="lang_read[]" id="lang_read" value="Yes" style="margin: 0 15px;"> Read
-                <input type="hidden" name="lang_read[]" id="txtlang_read" value="No" style="margin: 0 15px;"> 
                 
-                <input type="checkbox" name="lang_write[]" id="lang_write" value="Yes" style="margin: 0 15px;"> Write
-                <input type="hidden" name="lang_write[]" id="txtlang_write" value="No" style="margin: 0 15px;"> 
-                
-                <input type="checkbox" name="lang_speak[]" id="lang_speak" value="Yes" style="margin: 0 15px;"> Speak
-                <input type="hidden" name="lang_speak[]" id="txtlang_speak" value="No" style="margin: 0 15px;"> 
-
-                <button class="btn btn-danger btn-xs pull-right remove" type="button"><i class="fa fa-trash"></i> Remove</button><br/>
               </div>
 
             </div>
@@ -947,15 +938,7 @@ $(function() {
 		<script type="text/javascript">
 	$(document).ready(function() {
 
-      if(document.getElementById("lang_read").checked) {
-          document.getElementById('txtlang_read').disabled = true;
-      }
-      if(document.getElementById("lang_speak").checked) {
-          document.getElementById('txtlang_speak').disabled = true;
-      }
-      if(document.getElementById("lang_write").checked) {
-          document.getElementById('txtlang_write').disabled = true;
-      }
+      
 
       $(".add-more").click(function(){ 
           var html = $(".copy").html();
