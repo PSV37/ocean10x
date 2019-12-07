@@ -532,7 +532,7 @@ exit;*/
 			    'immediate_join'    => $available,
                 'availability_date' =>date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('avail_to_join')))),
                 'notice_period'  =>$this->input->post('Notice_period'),
-                'serving_np' =>$this->input->post('Serving_notice_period'),
+                'serving_notice_period' =>$this->input->post('Serving_notice_period'),
             );
             
             if (empty($js_career_id)) {
