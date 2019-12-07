@@ -530,11 +530,11 @@
                   </div>
                 <?php }else{ ?>
                   <div class="col-md-12">
-                    <div class="col-md-6"> 
+                    <div class="col-md-4"> 
                        <label>Branch Address</label>
                       <input type="text" name="language[]" id="language1" class="form-control" >
                     </div>
-                    <div class="col-md-6">  
+                    <div class="col-md-4">  
                      <label class="control-label">Company Country: <span class="required">*</span></label>
 										  <select  name="country_id" id="country_id" class="form-control country" onchange="getStates(this.value)">
 											<option value="">Select Country</option>
@@ -542,6 +542,13 @@
 											<option value="<?php echo $key['country_id']; ?>"<?php if($company_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
 											<?php } ?>
 										  </select>
+                    </div>
+                    <div class="col-md-4">  
+                    <label class="control-label">Company State: <span class="required">*</span></label>
+											<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+											<option value="">Select State</option>
+										     
+											</select>
                     </div>
                     <div class="col-md-12" style="margin-top:10px;">  
                       
