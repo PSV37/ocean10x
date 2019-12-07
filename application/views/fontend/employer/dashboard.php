@@ -591,11 +591,11 @@
         <div class="control-group input-group" style="margin-top:10px">
           <div>
             <div class="col-md-12">
-              <div class="col-md-6"> 
+              <div class="col-md-4"> 
                  <label>Branch Address</label>
                       <input type="text" name="language[]" id="language2" class="form-control" >
               </div>
-              <div class="col-md-6">  
+              <div class="col-md-4">  
                 <label>select Country</label>
                  <select  name="country" id="country" class="form-control country" onchange="getStates(this.value)">
 											<option value="">Select Country</option>
