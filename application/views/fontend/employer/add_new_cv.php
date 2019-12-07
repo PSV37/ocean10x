@@ -43,33 +43,33 @@
                 <div class="col-md-6">
                     <div class="form-group">                                       
 					   <label for="exampleInputEmail1">Full Name <span class="required">*</span></label>
-                        <input type="text" name="candidate_name" class="form-control" required="">
+                        <input type="text" name="candidate_name" id="candidate_name" class="form-control" required="">
 					</div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email Id <span class="required">*</span></label>
-                      	<input type="email" name="candidate_email" class="form-control" required="">
+                      	<input type="email" name="candidate_email" id="candidate_email" class="form-control" required="">
                     </div>
                 </div>
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Phone Number<span class="required">*</span></label>
-	                 	<input type="text" name="candidate_phone" class="form-control" required="">
+	                 	<input type="text" name="candidate_phone" id="candidate_phone" class="form-control" required="">
 					</div>
 				</div>
 
               	<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Yrs of Experience<span class="required">*</span></label>
-	                 	<input type="text" name="candidate_experiance" class="form-control">
+	                 	<input type="text" name="candidate_experiance" id="candidate_experiance" class="form-control">
 					</div>
 				</div>
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Notice Period at Current Job<span class="required">*</span></label>
-	                 	<input type="text" name="candidate_notice_period" class="form-control">
+	                 	<input type="text" name="candidate_notice_period" id="candidate_notice_period" class="form-control">
 					</div>
 				</div>
 									 
@@ -88,60 +88,60 @@
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Current Job Designation<span class="required">*</span></label>
-	                 	<input type="text" name="current_job_desig" class="form-control">
+	                 	<input type="text" name="current_job_desig" id="current_job_desig" class="form-control">
 					</div>
 				</div>
 
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Current Work Location<span class="required">*</span></label>
-	                 	<input type="text" name="current_work_location" class="form-control">
+	                 	<input type="text" name="current_work_location" id="current_work_location" class="form-control">
 					</div>
 				</div>
 
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Working at Current Job Since<span class="required">*</span></label>
-	                 	<input type="text" name="working_current_since" class="form-control">
+	                 	<input type="text" name="working_current_since" id="working_current_since" class="form-control">
 					</div>
 				</div>
 
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Current CTC<span class="required">*</span></label>
-	                 	<input type="text" name="current_ctc" class="form-control">
+	                 	<input type="text" name="current_ctc" id="current_ctc" class="form-control">
 					</div>
 				</div>
 
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Last Salary Hike<span class="required">*</span></label>
-	                 	<input type="text" name="last_salary_hike" class="form-control">
+	                 	<input type="text" name="last_salary_hike" id="last_salary_hike" class="form-control">
 					</div>
 				</div>
 
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Top Education<span class="required">*</span></label>
-	                 	<input type="text" name="top_education" class="form-control">
+	                 	<input type="text" name="top_education" id="top_education" class="form-control">
 					</div>
 				</div>
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Education Specialization<span class="required">*</span></label>
-	                 	<input type="text" name="education_specialization" class="form-control">
+	                 	<input type="text" name="education_specialization" id="education_specialization" class="form-control">
 					</div>
 				</div>
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Skills<span class="required">*</span></label>
-	                 	<input type="text" name="candidate_skills" class="form-control">
+	                 	<input type="text" name="candidate_skills" id="candidate_skills" class="form-control">
 					</div>
 				</div>
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Certifications</label>
-	                 	<input type="text" name="candidate_certification" class="form-control">
+	                 	<input type="text" name="candidate_certification" id="candidate_certification" class="form-control">
 					</div>
 				</div>
 				<div class="col-md-12">
@@ -174,13 +174,13 @@
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Expected Salary</label>
-	                 	<input type="text" name="candidate_expected_sal" class="form-control">
+	                 	<input type="text" name="candidate_expected_sal" id="candidate_expected_sal" class="form-control">
 					</div>
 				</div>
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Desired Work Location</label>
-	                 	<input type="text" name="desired_wrok_location" class="form-control">
+	                 	<input type="text" name="desired_wrok_location" id="desired_wrok_location" class="form-control">
 					</div>
 				</div>
 
@@ -218,6 +218,57 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 
     
 // });
+
+    $(function() {
+      $("#candidate_email").autocomplete({
+          source: "<?php echo base_url('employer/get_candidate_by_email'); ?>",
+          select: function(a,b)
+            {
+                 // alert(b.item.value);
+              $(this).val(b.item.value); //grabed the selected value
+              getcompanyinfo(b.item.value);
+
+            }
+        });
+    });
+   function getcompanyinfo(company_name){
+
+    	$.ajax({
+              url:'<?php echo site_url('employer/get_company_info') ?>',
+              type:'POST',
+              data:{
+                    comp_name:company_name
+              },
+               dataType: "JSON",  
+               success: function(data)
+               {
+                 // console.log(data);
+                 $.each(data, function(index, value) 
+                  {
+                    console.log(value);
+                     // $('#company_email').val(value.company_email);
+                     // $('#company_url').val(value.company_url);
+                     // $('#country_code').val(value.country_code);
+                     // $('#company_phone').val(value.company_phone);
+                     // $('#contact_name').val(value.contact_name);
+                     // $('#cont_person_email').val(value.cont_person_email);
+                     // $('#cont_person_mobile').val(value.cont_person_mobile);
+                     // $('#company_career_link').val(value.company_career_link);
+                     // $('#company_address').val(value.company_address);
+                     // $('#company_address2').val(value.company_address2);
+                     // $('#country_id').val(value.country_id);
+                     // $('#state_id').val(value.state_id);
+                     // $('#city_id').val(value.city_id);
+                     // $('#company_pincode').val(value.company_pincode);
+                     // $('#comp_gst_no').val(value.comp_gstn_no);
+                     // $('#comp_pan_no').val(value.comp_pan_no);
+                     // $('#company_profile_id').val(value.company_profile_id);
+                    
+                  });
+               } 
+        });
+    // savecompanymapping(value.company_profile_id);
+}
 
 </script>
 <?php $this->load->view("fontend/layout/footer.php"); ?>
