@@ -191,13 +191,13 @@ $(document).ready(function() {
 
     $(".datepicker").datepicker({
 
-      changeMonth: true,
+      //changeMonth: true,
 
-      changeYear: true,
+      //changeYear: true,
 
       dateFormat: 'dd-mm-yy',
 
-      yearRange: '2019:2020',
+      //yearRange: '2019:2020',
 
   });
 

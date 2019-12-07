@@ -102,7 +102,7 @@
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Working at Current Job Since</label>
-	                 	<input type="text" name="working_current_since" id="working_current_since" class="form-control">
+	                 	<input type="text" name="working_current_since" id="working_current_since" class="form-control datepicker">
 					</div>
 				</div>
 
@@ -116,7 +116,7 @@
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Last Salary Hike</label>
-	                 	<input type="text" name="last_salary_hike" id="last_salary_hike" class="form-control">
+	                 	<input type="text" name="last_salary_hike" id="last_salary_hike" class="form-control datepicker">
 					</div>
 				</div>
 
