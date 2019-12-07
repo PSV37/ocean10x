@@ -38,7 +38,7 @@
 
             </div>
             <div class="formrow"></div>
-            <input type="submit" class="btn" value="Reset Account">
+            <input type="submit" class="btn" value="Reset Password">
           </div>
            </form>
           <!-- login form  end--> 

@@ -224,7 +224,7 @@
         
           </div>
           <div class="form-group">
-            <input type="checkbox" name="Serving_notice_period" value="yes" style="margin: 0 15px;" <?php if (!empty($job_career_info[0]->serving_notice_period)) {
+            <input type="checkbox" name="Serving_notice_period" value="Yes" style="margin: 0 15px;" <?php if (!empty($job_career_info[0]->serving_notice_period)) {
                           if($job_career_info[0]->serving_notice_period=='Yes'){ echo 'checked';};
                          } ?>>Serving Notice Period
             
