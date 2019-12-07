@@ -458,28 +458,7 @@
                                       <div class="panel-body"></div>
                   
                     <div class="panel-body"></div>
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-6">
-                                          <div class="formrow">
-                                            <label class="control-label">Consultancy Logo<small> company logo measures 300 x 300 pixels </small></label>
-                                            <input type="file" name="company_logo"  value="<?php 
-                                                 if(!empty($company_info['company_logo'])){
-                                                    echo $company_info['company_logo'];
-                                                 }
-                                            ?>" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                          <div class="formrow">
-                                            <img class="thumbnail" src="<?php echo base_url(); ?>upload/<?php 
-                                                 if(!empty($company_info['company_logo'])){
-                                                    echo $company_info['company_logo'];
-                                                 } else { echo "notfound.gif";}
-                                            ?>">
-                                            </div>
-                                        </div>
-
-                                    </div><!-- end row -->
+                                    
 
                                     <button class="btn btn-primary" name="update_consultant" id="submit" type="submit">update</button>
                                 </form>
