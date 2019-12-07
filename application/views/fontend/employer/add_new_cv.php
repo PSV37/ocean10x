@@ -245,7 +245,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                  // console.log(data);
                  $.each(data, function(index, value) 
                   {
-                    //console.log(value);
+                    console.log(value);
 
                      $('#candidate_name').val(value.full_name);
                      $('#job_type').val(value.avaliable);
