@@ -73,7 +73,7 @@
                                     <td width="30%">Notice Period</td>
                                     <td>
                                       <?php if(!empty($job_career_info[0]->notice_period))
-                                            echo $job_career_info[0]->notice_period.'days';
+                                            echo $job_career_info[0]->notice_period.' Days';
                                      ?>
                                     </td>
                                   </tr>	
