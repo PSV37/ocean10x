@@ -2027,52 +2027,53 @@ public function interview_scheduler()
         $this->load->view('fontend/employer/corporate_cv_bank');
     }
 
-    public function add_new_cv($cv_id = null)
+    public function add_new_cv()
     {
         $company_id = $this->session->userdata('company_profile_id');
 
         if($_POST)
         {
+            // addslashes($this->input->post('interview_address'));
             $cv_data = array(
                 'company_id'                 => $company_id,
-                'js_name'                    => $interview_address,
-                'js_email'                   => $user_message,
-                'js_mobile'                  => $company_id,
-                'js_job_type'                => $interview_address,
-                'js_current_designation'     => $user_message,
-                'js_current_work_location'   => $company_id,
-                'js_working_since'           => $interview_address,
-                'js_current_ctc'             => $user_message,
-                'js_current_notice_period'   => $company_id,
-                'js_experience'              => $interview_address,
-                'js_last_salary_hike'        => $user_message,
-                'js_top_education'           => $user_message,
-                'js_edu_special'             => $company_id,
-                'js_skill_set'               => $interview_address,
-                'js_certifications'          => $user_message,
-                'js_industry'                => $company_id,
-                'js_role'                    => $interview_address,
-                'js_expected_salary'         => $user_message,
-                'js_desired_work_location'   => $company_id,
+                'js_name'                    => $this->input->post('candidate_name'),
+                'js_email'                   => $this->input->post('candidate_email'),
+                'js_mobile'                  => $this->input->post('candidate_phone'),
+                'js_job_type'                => $this->input->post('job_type'),
+                'js_current_designation'     => $this->input->post('current_job_desig'),
+                'js_current_work_location'   => $this->input->post('current_work_location'),
+                'js_working_since'           => date('Y-m-d', strtotime($this->input->post('working_current_since')),
+                'js_current_ctc'             => $this->input->post('current_ctc'),
+                'js_current_notice_period'   => $this->input->post('candidate_notice_period'),
+                'js_experience'              => $this->input->post('candidate_experiance'),
+                'js_last_salary_hike'        => date('Y-m-d', strtotime($this->input->post('last_salary_hike')),
+                'js_top_education'           => $this->input->post('top_education'),
+                'js_edu_special'             => $this->input->post('education_specialization'),
+                'js_skill_set'               => $this->input->post('candidate_skills'),
+                'js_certifications'          => $this->input->post('candidate_certification'),
+                'js_industry'                => $this->input->post('candidate_industry'),
+                'js_role'                    => $this->input->post('candidate_role'),
+                'js_expected_salary'         => $this->input->post('candidate_expected_sal'),
+                'js_desired_work_location'   => $this->input->post('desired_wrok_location'),
             );
 
-            if(empty($cv_id))
-            {
+            // if(empty($cv_id))
+            // {
                 $data['created_on'] = date('Y-m-d H:i:s');
                 $data['created_by'] = $company_id;
 
                 $this->Master_model->master_insert($cv_data, 'corporate_cv_bank');
                 $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New CV added sucessfully!</div>');
                 redirect('employer/add_new_cv');
-            }else{
-                $data['updated_on'] = date('Y-m-d H:i:s');
-                $data['updated_by'] = $company_id;
+            // }else{
+            //     $data['updated_on'] = date('Y-m-d H:i:s');
+            //     $data['updated_by'] = $company_id;
 
-                $where_ins['cv_id']=$cv_id;
-               $this->Master_model->master_update($cv_data,'corporate_cv_bank',$where_ins);
-                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">CV upated sucessfully!</div>');
-                redirect('employer/add_new_cv');
-            }
+            //     $where_ins['cv_id']=$cv_id;
+            //    $this->Master_model->master_update($cv_data,'corporate_cv_bank',$where_ins);
+            //     $this->session->set_flashdata('success', '<div class="alert alert-success text-center">CV upated sucessfully!</div>');
+            //     redirect('employer/add_new_cv');
+            // }
 
         }else{
             $data['industry_master'] = $this->Master_model->getMaster('job_category',$where=false);
