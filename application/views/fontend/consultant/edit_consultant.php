@@ -398,54 +398,10 @@
                                         </div>
                       <div class="panel-body"></div>
 
-                                        <div class="col-md-12 col-sm-12">
-                                          <div class="formrow">
-                                          <label class="control-label">Consultancy Address-2:</label>
-                                            <textarea name="company_address2" class="form-control ckeditor" placeholder="Company Address-2"><?php if(!empty($company_info['company_address'])){
-                                                echo $company_info['company_address2'];
-                                               } ?></textarea>
-                                             </div>
-                                        </div>
-                                       
+                                        
                                     </div>
                   
-                                      <div class="row">
-                                        
-                                          <div class="col-md-4 col-sm-4">
-                                            <div class="formrow">
-                                          <label class="control-label">Consultancy Country: <span class="required">*</span></label>
-                      <select  name="country_id" id="country_id" class="form-control country" onchange="getStates(this.value)">
-                      <option value="">Select Country</option>
-                      <?php foreach($country as $key){?>
-                      <option value="<?php echo $key['country_id']; ?>"<?php if($company_info['country_id']==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
-                      <?php } ?>
-                      </select>
-                                          </div>
-                                      </div>
-
-                    
-                    <div class="col-md-4 col-sm-4">
-                      <div class="formrow">
-                      <label class="control-label">Consultancy State: <span class="required">*</span></label>
-                      <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
-                      <option value="<?php $company_info['state_id']?>">Select State</option>
-                         
-                      </select>
-                    </div>
-                                      </div>
-                    
-                    <div class="col-md-4 col-sm-4">
-                      <div class="formrow">
-                      <label class="control-label">Consultancy City: <span class="required">*</span></label>
-                      <select  name="city_id" id="city_id" class="form-control">
-                      <option value="<?php echo $company_info['city_id']?>">Select City</option>
-                       
-                      </select>
-                                      </div>
-                    
-
-                                  </div>
-                                      </div><!-- end row -->
+                                      <!-- end row -->
                                     </div>
                   <div class="row">
                     <div class="col-md-6 col-sm-6">
