@@ -2106,12 +2106,15 @@ public function interview_scheduler()
        
         $email_id =$this->input->post('email');
         $where1 = "js_info.email = '$email_id'";
-        //$join = array( "country"=>"country.country_id=company_profile.country_id | LEFT OUTER",
-                      //  "city"=>"city.id=company_profile.city_id | LEFT OUTER",
-                       // "state"=>"state.state_id=company_profile.state_id | LEFT OUTER");
+        $join = array( 
+            "js_career_info"=>"js_career_info.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
+            "js_personal_info"=>"js_personal_info.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
+            "js_education"=>"js_education.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
+        );
       
-        //$select ="company_profile_id,company_name,company_email,company_url,country_code,company_phone,contact_name,cont_person_email,cont_person_mobile,company_career_link,company_address,company_address2,company_pincode,comp_gstn_no,comp_pan_no,company_profile.country_id,city.city_name,state.state_name,company_profile.state_id,company_profile.city_id";
-        $result = $this->Master_model->getMaster('js_info', $where1, $join = false, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+        $select ="js_career_info.notice_period,js_career_info.serving_notice_period,js_career_info.immediate_join,js_career_info.desired_industry,js_career_info.job_area,js_career_info.js_career_salary,js_career_info.avaliable,js_career_info.skills,js_career_info.job_role,js_career_info.industry_id,js_education.education_level_id,js_education.specialization_id,js_info.full_name,js_info.mobile";
+
+        $result = $this->Master_model->getMaster('js_info', $where1, $join, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
                 echo json_encode($result);
 
     }
