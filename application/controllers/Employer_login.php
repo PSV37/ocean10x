@@ -63,7 +63,7 @@ class Employer_Login extends CI_Controller
             $data['job_seeker_id'] = $result->job_seeker_id;
             $data['user_name']     = $result->user_name;
             $this->session->set_userdata($data);
-            $this->session->set_flashdata('invalid', '<div class="alert alert-success text-center">An email has been sent to you to reset password.</div>');
+             $this->session->set_flashdata('invalid', '<div class="alert alert-success text-center">Please check your Email Inbox or Spam folder for the password change secure link !</div>');
             redirect('employer_login');
         } else {
             $this->session->set_flashdata('invalid', '<div class="alert alert-danger text-center">Sorry! Invalid email address provided!</div>');
