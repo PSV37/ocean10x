@@ -52,7 +52,7 @@ class Employer_register extends CI_Controller
 
 
         if($_POST){
-            $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]|alpha_numeric|callback_password_check');
+            $this->form_validation->set_rules('company_password', 'password', 'required|min_length[8]|alpha_numeric|callback_password_check');
         $company_name    = $this->input->post('company_name');
         $company_slug    = slugify($company_name);
         $company_profile = array(
