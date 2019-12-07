@@ -73,7 +73,6 @@ class Employer_Login extends CI_Controller
     
      public function reset_password($hash = '')
     {
-
     
     	if(!$this->input->post('password')){
     	 $this->load->view('fontend/employer/reset_password');
@@ -81,13 +80,9 @@ class Employer_Login extends CI_Controller
     	}
 	
 	    $pass    = md5($this->input->post('password'));
-        print_r($this->employer_login_model->reset_account($hash,$pass));
+   
         if ($this->employer_login_model->reset_account($hash,$pass)) {
             $this->session->set_flashdata('verify_msg', '<div class="alert alert-success text-center">Your password is successfully reset! Please login to access your account!</div>');
-
-            $whereres = "token='$hash'";
-             $employer_data= $this->Master_model->get_master_row('company_profile',$select = FALSE,$whereres);
-            print_r($employer_data);
             
             redirect('employer_login');
         } else {
