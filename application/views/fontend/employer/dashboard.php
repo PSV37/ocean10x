@@ -476,6 +476,12 @@
 					                                ?>" required>
 					                        </div>
 					                     </div>
+					                     <div class="col-md-6 col-sm-6">
+					                       <div class="formrow">
+					                             <h6>Office Locations / Branches</h6><br>
+              <button class="btn btn-success btn-xs pull-right add-more" type="button"><i class="fa fa-plus"></i> Add Branches</button> <br>
+					                        </div>
+					                     </div>
 					                </div><br/>
 					 				<!-- <div class="row">
 					 				 	<div class="col-md-6 col-sm-6">
@@ -506,17 +512,16 @@
       <div class="col-md-12">
         <div class="col-md-12 col-sm-12">
           <div class="input-group">
-              <h6>Office Locations / Branches</h6><br>
-              <button class="btn btn-success btn-xs pull-right add-more" type="button"><i class="fa fa-plus"></i> Add Branches</button> <br>
+              
               <div class="input-group control-group after-add-more">
                 <div>
                   <?php if(!empty($languages)) foreach($languages as $lrow){?>
                   <div class="col-md-12">
-                    <div class="col-md-6"> 
+                    <div class="col-md-4"> 
                        <label>Office Address</label>
                       <input type="text" name="address[]" id="address" class="form-control" value="<?php echo $lrow['address']; ?>">
                     </div>
-                    <div class="col-md-6">  
+                    <div class="col-md-4">  
                       <label>country</label>
 	                                        <label class="control-label">Company Country: <span class="required">*</span></label>
 										  <select  name="country_id" id="country_id" class="form-control country" onchange="getStates(this.value)">
@@ -535,7 +540,7 @@
                        <label>Branch Address</label>
                       <input type="text" name="language[]" id="language1" class="form-control" >
                     </div>
-                    <div class="col-md-6 col-sm-6">
+                    <div class="col-md-4 col-sm-4">
 	                                        	<div class="formrow">
 	                                        <label class="control-label">Company Country: <span class="required">*</span></label>
 										  <select  name="country_id" id="country_id" class="form-control country" onchange="getStates(this.value)">
@@ -546,13 +551,11 @@
 										  </select>
 	                                        </div>
 	                                    </div>
-	                                </div>
-	                             </div>
-	                             <div class="row">
-	                                 <div class="col-md-12">
-
+	                                
+	                             
+	                               
 										
-										<div class="col-md-6 col-sm-6">
+										<div class="col-md-4 col-sm-4">
 											<div class="formrow">
 											<label class="control-label">Company State: <span class="required">*</span></label>
 											<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
@@ -560,9 +563,12 @@
 										     
 											</select>
 										</div>
-	                                    </div>
-										
-										<div class="col-md-6 col-sm-6">
+	                                   </div>
+	                               </div>
+	                           </div>
+									
+	                             <div class="row">
+										<div class="col-md-4 col-sm-4">
 											<div class="formrow">
 											<label class="control-label">Company City: <span class="required">*</span></label>
 											<select  name="city_id" id="city_id" class="form-control">
