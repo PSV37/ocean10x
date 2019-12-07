@@ -250,6 +250,13 @@ $this->session->set_userdata('reg_in', $company_profile );
 	}
 	 echo $result;
 }
+public function password_check($str)
+{
+   if (preg_match('#[0-9]#', $str) && preg_match('#[a-zA-Z]#', $str)) {
+     return TRUE;
+   }
+   return FALSE;
+}
 
 }
 
@@ -268,10 +275,4 @@ $this->session->set_userdata('reg_in', $company_profile );
 //             }
 // }
 
-public function password_check($str)
-{
-   if (preg_match('#[0-9]#', $str) && preg_match('#[a-zA-Z]#', $str)) {
-     return TRUE;
-   }
-   return FALSE;
-}
+
