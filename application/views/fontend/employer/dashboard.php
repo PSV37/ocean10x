@@ -335,7 +335,7 @@
                                             	 if(!empty($company_info->company_phone)){
                                             	 	echo $company_info->company_phone;
                                             	 }
-                                            ?>" class="form-control" maxlength="10" id="company_phone" onkeypress="phoneno()" style="margin-left:-32px; width:203px;" maxlength="10">
+                                            ?>" class="form-control" maxlength="10" id="company_phone" onkeypress="phoneno()"  maxlength="10">
                                             </div>
                                         </div>
                                     </div><!-- end row -->
