@@ -109,14 +109,14 @@
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Current CTC<span class="required">*</span></label>
-	                 	<input type="text" name="working_current_since" class="form-control">
+	                 	<input type="text" name="current_ctc" class="form-control">
 					</div>
 				</div>
 
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Last Salary Hike<span class="required">*</span></label>
-	                 	<input type="text" name="working_current_since" class="form-control">
+	                 	<input type="text" name="last_salary_hike" class="form-control">
 					</div>
 				</div>
 
