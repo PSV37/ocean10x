@@ -222,7 +222,7 @@
                          } ?>> Join Immediately
          </div>
           <div class="form-group">
-            <label class="control-label col-sm-3" for="email">Notice Period</label>
+            <label class="control-label col-sm-3" for="email">Notice Period In Days</label>
               <div class="col-sm-9">
                 <input type="text" class="form-control" name="Notice_period" placeholder="Notice period in days" id="Notice_period" value=" <?php if (!empty($job_career_info[0]->notice_period)) {
                          echo $job_career_info[0]->notice_period;
