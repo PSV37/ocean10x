@@ -505,9 +505,9 @@
       <div class="col-md-12">
         <div class="col-md-12 col-sm-12">
           <div class="input-group">
-              <h6>Languages</h6><br>
+              <h6>Office Locations / Branches</h6><br>
               <button class="btn btn-success btn-xs pull-right add-more" type="button"><i class="fa fa-plus"></i> Add Office Branches</button> <br>
-             <!--  <div class="input-group control-group after-add-more">
+               <div class="input-group control-group after-add-more">
                 <div>
                   <?php if(!empty($languages)) foreach($languages as $lrow){?>
                   <div class="col-md-12">
@@ -569,7 +569,7 @@
                   </div>
                 <?php } ?>
                 </div>
-              </div> -->
+              </div> 
           </div>     
         </div>
       </div>
