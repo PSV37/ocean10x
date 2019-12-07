@@ -536,7 +536,7 @@
                     </div>
                     <div class="col-md-4">  
                      <label class="control-label">Company Country: <span class="required">*</span></label>
-										  <select  name="country_id" id="country_id" class="form-control country" onchange="getStates(this.value)">
+										  <select  name="country" id="country" class="form-control country" onchange="getStates(this.value)">
 											<option value="">Select Country</option>
 											<?php foreach($country as $key){?>
 											<option value="<?php echo $key['country_id']; ?>"<?php if($company_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
@@ -550,6 +550,30 @@
 										     
 											</select>
                     </div>
+                    <div class="col-md-12" style="margin-top:10px;">  
+                      
+
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="col-md-6"> 
+                       <label class="control-label">Company City: <span class="required">*</span></label>
+											<select  name="city_id" id="city_id" class="form-control">
+											<option value="">Select City</option>
+											 
+											</select>
+                    </div>
+                    <div class="col-md-6">  
+                     <div class="formrow">
+					                             <label class="control-label">Pincode: <span class="required">*</span></label>
+					                            <input type="text" name="company_pincode" id="company_pincode"  class="form-control" value="<?php 
+					                                     if(!empty($company_info->company_pincode)){
+					                                        echo $company_info->company_pincode;
+					                                     }
+					                                ?>" required>
+					                        </div>
+                    </div>
+                    
                     <div class="col-md-12" style="margin-top:10px;">  
                       
 
