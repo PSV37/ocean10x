@@ -529,12 +529,13 @@
                     
                   </div>
                 <?php }else{ ?>
+                	<div class="row">
                   <div class="col-md-12">
                     <div class="col-md-6"> 
                        <label>Branch Address</label>
                       <input type="text" name="language[]" id="language1" class="form-control" >
                     </div>
-                    <div class="col-md-4 col-sm-4">
+                    <div class="col-md-6 col-sm-6">
 	                                        	<div class="formrow">
 	                                        <label class="control-label">Company Country: <span class="required">*</span></label>
 										  <select  name="country_id" id="country_id" class="form-control country" onchange="getStates(this.value)">
@@ -545,9 +546,13 @@
 										  </select>
 	                                        </div>
 	                                    </div>
+	                                </div>
+	                             </div>
+	                             <div class="row">
+	                                 <div class="col-md-12">
 
 										
-										<div class="col-md-4 col-sm-4">
+										<div class="col-md-6 col-sm-6">
 											<div class="formrow">
 											<label class="control-label">Company State: <span class="required">*</span></label>
 											<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
@@ -557,7 +562,7 @@
 										</div>
 	                                    </div>
 										
-										<div class="col-md-4 col-sm-4">
+										<div class="col-md-6 col-sm-6">
 											<div class="formrow">
 											<label class="control-label">Company City: <span class="required">*</span></label>
 											<select  name="city_id" id="city_id" class="form-control">
@@ -569,6 +574,7 @@
 
 	                                </div>
                   </div>
+              </div>
                 <?php } ?>
                 </div>
               </div>
@@ -580,34 +586,52 @@
       <div class="copy hide">
         <div class="control-group input-group" style="margin-top:10px">
           <div>
-            <div class="col-md-12">
-              <div class="col-md-6"> 
-                 <label>Language</label>
-                <input type="text" name="language[]" id="language2" class="form-control">
-              </div>
-              <div class="col-md-6">  
-                <label>Proficiency</label>
-                <select class="form-control" name="proficiency[]" id="proficiency">
-                  <option value="">Select Proficiency</option>
-                  <option value="Beginner">Beginner</option>
-                  <option value="Proficient">Proficient</option>
-                  <option value="Expert">Expert</option>
-                </select>
-              </div>
-              <div class="col-md-12" style="margin-top:10px;">  
-                <input type="checkbox" name="lang_read[]" id="lang_read" value="Yes" style="margin: 0 15px;"> Read
-                <input type="hidden" name="lang_read[]" id="txtlang_read" value="No" style="margin: 0 15px;"> 
-                
-                <input type="checkbox" name="lang_write[]" id="lang_write" value="Yes" style="margin: 0 15px;"> Write
-                <input type="hidden" name="lang_write[]" id="txtlang_write" value="No" style="margin: 0 15px;"> 
-                
-                <input type="checkbox" name="lang_speak[]" id="lang_speak" value="Yes" style="margin: 0 15px;"> Speak
-                <input type="hidden" name="lang_speak[]" id="txtlang_speak" value="No" style="margin: 0 15px;"> 
+            <div class="row">
+                  <div class="col-md-12">
+                    <div class="col-md-6"> 
+                       <label>Branch Address</label>
+                      <input type="text" name="language[]" id="language1" class="form-control" >
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+	                                        	<div class="formrow">
+	                                        <label class="control-label">Company Country: <span class="required">*</span></label>
+										  <select  name="country_id" id="country_id" class="form-control country" onchange="getStates(this.value)">
+											<option value="">Select Country</option>
+											<?php foreach($country as $key){?>
+											<option value="<?php echo $key['country_id']; ?>"<?php if($company_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
+											<?php } ?>
+										  </select>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                             </div>
+	                             <div class="row">
+	                                 <div class="col-md-12">
 
-                <button class="btn btn-danger btn-xs pull-right remove" type="button"><i class="fa fa-trash"></i> Remove</button><br/>
-              </div>
+										
+										<div class="col-md-6 col-sm-6">
+											<div class="formrow">
+											<label class="control-label">Company State: <span class="required">*</span></label>
+											<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+											<option value="">Select State</option>
+										     
+											</select>
+										</div>
+	                                    </div>
+										
+										<div class="col-md-6 col-sm-6">
+											<div class="formrow">
+											<label class="control-label">Company City: <span class="required">*</span></label>
+											<select  name="city_id" id="city_id" class="form-control">
+											<option value="">Select City</option>
+											 
+											</select>
+	                                    </div>
+										
 
-            </div>
+	                                </div>
+                  </div>
+              </div>
           </div>
         
           <br/>
