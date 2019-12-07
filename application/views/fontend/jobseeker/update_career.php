@@ -72,11 +72,9 @@
                                 		<tr>
                                     <td width="30%">Notice Period</td>
                                     <td>
-                                      <?php if (!empty($job_career_info[0]->immediate_join)) {
-                                          if($job_career_info[0]->immediate_join=='Yes'){ echo 'Immediately';};
-                                      }else{
-                                         echo date('d M Y', strtotime($job_career_info[0]->availability_date)); 
-                                      } ?>
+                                      <?php if(!empty($job_career_info[0]->notice_period))
+                                            echo $job_career_info[0]->notice_period.'days';
+                                     ?>
                                     </td>
                                   </tr>	
   								                <tr>
