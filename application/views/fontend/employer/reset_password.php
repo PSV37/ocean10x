@@ -33,9 +33,9 @@
           <div class="formpanel">
             
             <div class="formrow">
-              <input name="password" type="password" class="form-control" placeholder="Password" min="5" required>
+              <input name="password" type="password" id="myInput" class="form-control" placeholder="Password" min="5" required>
               <input type="checkbox" onclick="myFunction()">Show Password
-              
+
             </div>
             <div class="formrow"></div>
             <input type="submit" class="btn" value="Reset Account">
