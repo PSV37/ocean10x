@@ -2059,8 +2059,8 @@ public function interview_scheduler()
 
             // if(empty($cv_id))
             // {
-                $data['created_on'] = date('Y-m-d H:i:s');
-                $data['created_by'] = $company_id;
+                $cv_data['created_on'] = date('Y-m-d H:i:s');
+                $cv_data['created_by'] = $company_id;
 
                 $this->Master_model->master_insert($cv_data, 'corporate_cv_bank');
                 $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New CV added sucessfully!</div>');
