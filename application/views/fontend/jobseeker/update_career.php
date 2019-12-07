@@ -219,7 +219,7 @@
           <div class="form-group">
             <label class="control-label col-sm-3" for="email">Notice Period</label>
               <div class="col-sm-9">
-                <input type="text"  name="Notice_period" placeholder="Notice period in days" id="Notice_period" value="">
+                <input type="text" class="form-control" name="Notice_period" placeholder="Notice period in days" id="Notice_period" value="">
               </div>
         
           </div>
