@@ -917,7 +917,7 @@ function saveBranches()
 
 var tableLength=$("#BranchTable tbody tr").length;
 
-    alert(tableLength);
+    // alert(tableLength);
     var branchadd=[];
     var branchcountry=[];
     var branchstate=[];
@@ -931,8 +931,8 @@ var tableLength=$("#BranchTable tbody tr").length;
 
      
       branchadd.push(document.getElementById('BranchName'+oCells[0].firstChild.data).value);
-  //     var bcountry=document.getElementById('BranchCountry'+oCells[0].firstChild.data);
-  //     branchcountry.push(bcountry.options[bcountry.selectedIndex].text);
+      var bcountry=document.getElementById('BranchCountry'+oCells[0].firstChild.data);
+      branchcountry.push(bcountry.options[bcountry.selectedIndex].text);
  	// var bstate=document.getElementById('BranchState'+oCells[0].firstChild.data);
   //     branchstate.push(bstate.options[bstate.selectedIndex].text);
 	 // var bcity=document.getElementById('BranchCity'+oCells[0].firstChild.data);
@@ -946,6 +946,7 @@ var tableLength=$("#BranchTable tbody tr").length;
     }
        // alert(oCells[0].firstChild.data);
 alert(branchadd);
+alert(branchcountry);
 
      
      document.getElementById("Branchname").value=branchadd;
