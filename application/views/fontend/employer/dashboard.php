@@ -927,6 +927,8 @@ var tableLength=$("#BranchTable tbody tr").length;
     for(var i=1;i<=tableLength;i++)
     {
      var oCells = branchTable.rows.item(i).cells;
+        alert(oCells[0].firstChild.data);
+
      
       branchadd.push(document.getElementById('BranchName'+oCells[0].firstChild.data).value);
   //     var bcountry=document.getElementById('BranchCountry'+oCells[0].firstChild.data);
@@ -939,11 +941,12 @@ var tableLength=$("#BranchTable tbody tr").length;
 
 
      
-alert(branchadd);
   
      
     }
        // alert(oCells[0].firstChild.data);
+alert(branchadd);
+
      
      document.getElementById("Branchname").value=branchadd;
      document.getElementById("BranchCountry").value=branchcountry;
