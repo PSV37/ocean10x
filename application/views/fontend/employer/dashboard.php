@@ -917,7 +917,7 @@ function saveBranches()
 
 var tableLength=$("#BranchTable tbody tr").length;
 
-    alert(tableLength);
+    // alert(tableLength);
     var branchadd=[];
     var branchcountry=[];
     var branchstate=[];
@@ -938,7 +938,7 @@ var tableLength=$("#BranchTable tbody tr").length;
       branchpincode.push(document.getElementById('BranchName'+oCells[0].firstChild.data).value);
 
 
-     
+      alert(oCells[0].firstChild.data);
 alert(branchadd);
 alert(branchcountry);
 alert(branchstate);
