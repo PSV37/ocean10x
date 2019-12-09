@@ -2164,7 +2164,7 @@ public function interview_scheduler()
 
     public function add_Corporate_Documents()
     {
-        $this->load->view('fontend/employer/corporate_documents')
+        $this->load->view('fontend/employer/corporate_documents');
     }
 } // end class
 
