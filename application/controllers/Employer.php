@@ -2171,7 +2171,7 @@ public function interview_scheduler()
     {
         
             $config['upload_path']   = 'upload/corporate_documents/';
-            $config['allowed_types'] =   'gif|jpg|jpeg|png|pdf|doc|docx|odt|xlsm|xls|xlm|xla|xlsx|bmp|docm|dotx|dotm|docb|gif';;
+            $config['allowed_types'] =   '*';
             $config['encrypt_name']  = true;
            
             
