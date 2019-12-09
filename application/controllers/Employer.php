@@ -2128,16 +2128,21 @@ public function interview_scheduler()
         $join = array( 
             // "js_career_info"=>"js_career_info.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
             "js_education"=>"js_education.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
-            "education_level"=>"education_level.education_level_id=js_education.education_level_id | LEFT OUTER",
-            "education_specialization"=>"education_specialization.id=js_education.specialization_id | LEFT OUTER",
+            // "education_level"=>"education_level.education_level_id=js_education.education_level_id | LEFT OUTER",
+            // "education_specialization"=>"education_specialization.id=js_education.specialization_id | LEFT OUTER",
         );
       
-        $select ="js_education.education_level_id,js_education.specialization_id,js_education.education_level_id,education_level.education_level_name,education_specialization.education_specialization";
+        // $select ="js_education.education_level_id,js_education.specialization_id,js_education.education_level_id,education_level.education_level_name,education_specialization.education_specialization";
 
+$select ="min(js_education.education_level_id) as edu_high, js_education.js_educatin_id";
         $result = $this->Master_model->getMaster('js_info', $where1, $join, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
 
-        //for($k=0;$k<sizeof($result);)
-        
+        echo "<pre>";
+        print_r($result);
+        die;
+
+        // $data['interview_data'] = $this->Master_model->get_master_row("interview_scheduler", $select= FALSE, $where_int, $join = FALSE);
+       
         echo json_encode($result);
 
     }
