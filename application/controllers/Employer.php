@@ -2170,7 +2170,7 @@ public function interview_scheduler()
     {
         $company_id = $this->session->userdata('company_profile_id');
 
-        $whereres = "company_profile_id='$company_id'";
+        $whereres = "company_profile_id='$company_id' and status!='1'";
          $documents = $this->Master_model->getMaster('corporate_documents',$whereres,$join = FALSE, $order = false, $field = false, $select = FALSE,$limit=false,$start=false, $search=false);
               
         // $data['documents']=$this->Master_model->get_master('corporate_documents',$select=FALSE,$whereres);
@@ -2214,7 +2214,7 @@ public function interview_scheduler()
          public function delete_document($id) {
         
         $status = array(
-            'status'=>1,
+            'status'=> '1',
         );
         $where_del['document_id']=$id;
         $this->Master_model->master_update($status,'corporate_documents',$where_del);
