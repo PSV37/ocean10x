@@ -73,7 +73,7 @@
 					<div class="container-fluid">
                         <div class="col-md-6">
                             <div class="form-group">                                       
-							   <label for="exampleInputEmail1"  >Document Type<span class="required">*</span></label>
+							   <label for="exampleInputEmail1">Select Document Type<span class="required">*</span></label>
                                <select name="document_type" class="form-control">
                                	<option value="Incorporation">Attach Certificate of Incorporation</option>
                                	<option value="PAN">PAN</option>
@@ -119,7 +119,7 @@
                       }elseif ($row['document_type']=='Add_proof') {
                       	echo "Office Address Proof ";
                       	# code...
-                      } echo $row['document_type']; ?></td>
+                      } else{echo $row['document_type']; }?></td>
                       
                       <td><div class="formrow">
                                             <a target="_blank" download="<?php if( $row['document_type']=='Incorporation') {
@@ -127,7 +127,7 @@
                       }elseif ($row['document_type']=='Add_proof') {
                       	echo "Office Address Proof ";
                       	# code...
-                      } echo $row['document_type']; ?>" style="text-decoration: none;" href="<?php echo base_url(); ?>upload/corporate_documents/<?php 
+                      } else{echo $row['document_type']; } ?>" style="text-decoration: none;" href="<?php echo base_url(); ?>upload/corporate_documents/<?php 
                                                  if(!empty($row['document'])){
                                                     echo $row['document'];
                                                  } 
@@ -136,7 +136,7 @@
                       }elseif ($row['document_type']=='Add_proof') {
                       	echo "Office Address Proof ";
                       	# code...
-                      } echo $row['document_type']; ?></div></td>
+                      } else{echo $row['document_type']; } ?></div></td>
                                             
                       
                       <td>
