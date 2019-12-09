@@ -105,9 +105,7 @@
         </div>
         <!-- end post-padding --> 
       </div>
-      <!-- end col --> 
-    </div>
-    <?php $count=1; if ($documents) {?>
+      <?php $count=1; if ($documents) {?>
 
 	<div class="section lb">
   <div class="container">
@@ -166,6 +164,9 @@
     
 
 <?php } ?>
+      <!-- end col --> 
+    </div>
+
     <!-- end row --> 
   </div>
   <!-- end container --> 
