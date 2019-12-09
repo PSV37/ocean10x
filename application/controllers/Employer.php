@@ -2147,7 +2147,7 @@ public function interview_scheduler()
 
     }
 
-<<<<<<< HEAD
+
     function get_cand_skills_by_email()
     {
        
@@ -2165,7 +2165,7 @@ public function interview_scheduler()
 
     }
 
-=======
+
     public function add_Corporate_Documents()
     {
         $this->load->view('fontend/employer/corporate_documents');
@@ -2196,7 +2196,7 @@ public function interview_scheduler()
             }
         }
         
->>>>>>> dee9afdd17980b82d1f3c43a4289c8bf5dd1de46
+
 
     
 } // end class
