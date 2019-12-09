@@ -303,9 +303,9 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                     for(var l=0; l<data.length; l++)
                     {	
                     	var arr = data[l]['skills'];
-                    	var s = arr.join(", ");
-                    	console.log(s);
-                    	$('.skill').val(s);
+                    	// var s = arr.join(", ");
+                    	console.log(arr);
+                    	$('.skill').val(arr);
                     }
                    
                     
