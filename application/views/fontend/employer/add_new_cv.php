@@ -303,10 +303,10 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                   {
                     
                     //var edu_level = value.skills;
-                    for(var l=0; l<value.length; l++)
+                    for(var l=0; l<data.length; l++)
                     {
                     	
-                    	console.log(value[l]['skills']);
+                    	console.log(data[l]['skills']);
                     }
                    
                     $('#tokenfield').val(value.skills);
