@@ -313,8 +313,9 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 						 }
                     }
                    console.log(skill);
-                    $('#tokenfield1').val(skill);
-                    
+                  
+                   $('#tokenfield').tokenfield();
+                   	$('#tokenfield').val(skill);
                } 
         });
 	}
