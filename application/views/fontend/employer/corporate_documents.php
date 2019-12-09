@@ -107,11 +107,7 @@
       </div>
       <!-- end col --> 
     </div>
-    <!-- end row --> 
-  </div>
-  <!-- end container --> 
-</div>
-<?php $count=1; if ($documents) {?>
+    <?php $count=1; if ($documents) {?>
 
 	<div class="section lb">
   <div class="container">
@@ -170,6 +166,11 @@
     
 
 <?php } ?>
+    <!-- end row --> 
+  </div>
+  <!-- end container --> 
+</div>
+
 <!-- end section --> 
 
 <script type="text/javascript" src="<?php echo base_url(); ?>asset/js/tinymce/tinymce.min.js"></script> 
