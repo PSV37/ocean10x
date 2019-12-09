@@ -135,7 +135,7 @@
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Skills</label>
-	                 	<input type="text" name="candidate_skills" id="tokenfield" class="form-control skill" value=""> 
+	                 	<input type="text" name="candidate_skills" id="tokenfield1" class="skill form-control" value=""> 
 					</div>
 				</div>
 				<div class="col-md-6">
@@ -313,7 +313,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 						 }
                     }
                    console.log(skill);
-                    $('.skill').val(skill);
+                    $('#tokenfield1').val(skill);
                     
                } 
         });
