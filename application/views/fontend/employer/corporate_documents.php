@@ -73,12 +73,12 @@
 					<div class="container-fluid">
                         <div class="col-md-6">
                             <div class="form-group">                                       
-							   <label for="exampleInputEmail1">Document Type<span class="required">*</span></label>
-                               <select>
-                               	<option>Corporate Name (as in Regd. Docs)</option>
-                               	<option>PAN</option>
-                               	<option>GSTIN</option>
-                               	<option>Office Address Proof</option>
+							   <label for="exampleInputEmail1" nam >Document Type<span class="required">*</span></label>
+                               <select name="document_type">
+                               	<option value="Corporate_name">Corporate Name (as in Regd. Docs)</option>
+                               	<option value="pan">PAN</option>
+                               	<option value="GSTIN">GSTIN</option>
+                               	<option value="Add_proof">Office Address Proof</option>
                                </select>
 								
 							</div>

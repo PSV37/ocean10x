@@ -2173,6 +2173,8 @@ public function interview_scheduler()
 
     public function savedocumets()
     {
+        $company_id = $this->session->userdata('company_profile_id');
+
         
             $config['upload_path']   = 'upload/corporate_documents/';
             $config['allowed_types'] =   '*';
@@ -2192,7 +2194,10 @@ public function interview_scheduler()
             {
                  $img             = $this->upload->data();
                  $file_name       = $img['file_name'];
-                 print_r($file_name);
+                 $documets=array('company_profile_id'=>$company_id,
+                    'document_type'=>$this->input->post('document_type'),
+                    'documet'=>$file_name);
+                 print_r($documets);
             }
         }
         
