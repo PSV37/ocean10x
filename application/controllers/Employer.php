@@ -2128,11 +2128,14 @@ public function interview_scheduler()
         $join = array( 
             // "js_career_info"=>"js_career_info.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
             "js_education"=>"js_education.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
+            "education_level"=>"education_level.education_level_id=js_education.education_level_id | LEFT OUTER",
         );
       
-        $select ="js_education.education_level_id,js_education.specialization_id,js_education.education_level_id,";
+        $select ="js_education.education_level_id,js_education.specialization_id,js_education.education_level_id,education_level.education_level_name";
 
         $result = $this->Master_model->getMaster('js_info', $where1, $join, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
+
+        //for($k=0;$k<sizeof($result);)
         
         echo json_encode($result);
 
