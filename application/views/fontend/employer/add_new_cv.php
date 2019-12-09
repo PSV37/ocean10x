@@ -298,21 +298,15 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                dataType: "JSON",  
                success: function(data)
                {
-                 console.log(data);
-                 $.each(data, function(index, value) 
-                  {
-                    
                     //var edu_level = value.skills;
-                    console.log(data.length);
+                   
                     for(var l=0; l<data.length; l++)
                     {
-                    	
-                    	console.log(data[l]['skills']);
+                    	$('#tokenfield').val(data[l]['skills']);
                     }
                    
-                    $('#tokenfield').val(value.skills);
                     
-                  });
+                    
                } 
         });
 	}
