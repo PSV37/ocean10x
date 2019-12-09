@@ -88,6 +88,7 @@ class Employer extends MY_Employer_Controller
 
             if(!empty($employer_id)) {
                 $response['branchadd']=$this->input->post('Branchname');
+                $response['BranchCountry']=$this->input->post('BranchCountry');
                 print_r($response);
                 echo "string";
 
