@@ -526,7 +526,7 @@
                             <tr>
                               <th style="display: none;">No.</th>
                               <th>Branch</th>
-                              <th>Country/th>
+                              <th>Country</th>
                               <th>State</th>
                               <th>City</th>
                               <th>Pincode</th>
@@ -540,8 +540,7 @@
                           <tfoot>
                            <tr>
                             <td colspan="2" align="right"><strong><p id="wordTotalPathology">----</p></strong></td>
-                            <td align="right"><strong>Total</strong></td>
-                            <td><strong><p id="PathologyTotal">0</p></strong></td>
+                           
                           </tr>
                         </tfoot>
                       </table>
