@@ -298,7 +298,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                dataType: "JSON",  
                success: function(data)
                {
-                 // console.log(data);
+                 console.log(data);
                  $.each(data, function(index, value) 
                   {
                     
