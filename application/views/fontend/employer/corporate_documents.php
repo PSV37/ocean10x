@@ -105,13 +105,9 @@
         </div>
         <!-- end post-padding --> 
       </div>
-      <!-- end col --> 
-    </div>
-    <?php $count=1; if ($documents) {?>
+      <?php $count=1; if ($documents) {?>
 
-	<div class="section lb">
-  <div class="container">
-    <div class="row">
+	
       
            
             <table class="table table-bordered table-striped" id="dataTables-example">
@@ -125,7 +121,7 @@
                 </tr>
               </thead>
               <tbody>
-                <?php $key = 1; if (!empty($questionbank)): foreach ($documents as $row) : ?>
+                <?php $key = 1; if (!empty($documents)): foreach ($documents as $row) : ?>
                     <tr>
                       <td><?php echo $key ?></td>
                       <td><?php echo $row['document_type'] ?></td>
@@ -158,14 +154,12 @@
 
 
 
-          </div>
-        </div>
-        <!-- end post-padding --> 
-      </div>
-      <!-- end col --> 
     
 
 <?php } ?>
+      <!-- end col --> 
+    </div>
+
     <!-- end row --> 
   </div>
   <!-- end container --> 
