@@ -2191,6 +2191,10 @@ public function interview_scheduler()
                  print_r($file_name);
             }
         }
+        else{
+            echo "string";
+        }
+
     }
 } // end class
 
