@@ -95,12 +95,12 @@
 				  </div>
 				</div>
 			</div>
-			 <button type="submit" id="submitdocs" class="btn bg-navy" type="submit">submit</button>
+			 <button type="submit"  id="submitdocs" class="btn bg-navy" type="submit">submit</button>
 			
                 </form>
                  <div class="col-md-12 col-sm-12 col-xs-12">
                  </div>
-                <table class="table table-bordered table-striped" id="dataTables-example" style="margin-top: 15x">
+                <table class="table table-bordered table-striped" id="dataTables-example" style="margin-top: 25px;">
               <thead>
                 <tr>
                   <th class="active">Sr No</th>
@@ -115,28 +115,14 @@
                     <tr>
                       <td><?php echo $key ?></td>
                       <td><?php if( $row['document_type']=='Incorporation') {
-                      	echo "Certificate of Incorporation";
-                      }elseif ($row['document_type']=='Add_proof') {
-                      	echo "Office Address Proof ";
-                      	# code...
-                      } else{echo $row['document_type']; }?></td>
+                      	echo "Certificate of Incorporation";}elseif ($row['document_type']=='Add_proof') {
+                      	echo "Office Address Proof ";} else{echo $row['document_type']; }?></td>
                       
                       <td><div class="formrow">
-                                            <a target="_blank" download="<?php if( $row['document_type']=='Incorporation') {
-                      	echo "Certificate of Incorporation";
-                      }elseif ($row['document_type']=='Add_proof') {
-                      	echo "Office Address Proof ";
-                      	# code...
-                      } else{echo $row['document_type']; } ?>" style="text-decoration: none;" href="<?php echo base_url(); ?>upload/corporate_documents/<?php 
-                                                 if(!empty($row['document'])){
-                                                    echo $row['document'];
-                                                 } 
-                                            ?>">  <?php if ($row['document_type']=='Incorporation') {
-                      	echo "Certificate of Incorporation";
-                      }elseif ($row['document_type']=='Add_proof') {
-                      	echo "Office Address Proof ";
-                      	# code...
-                      } else{echo $row['document_type']; } ?></div></td>
+                          <a target="_blank" download="<?php if( $row['document_type']=='Incorporation') {echo "Certificate of Incorporation";}elseif ($row['document_type']=='Add_proof') {echo "Office Address Proof ";} else{echo $row['document_type']; } ?>" style="text-decoration: none;" href="<?php echo base_url(); ?>upload/corporate_documents/<?php if(!empty($row['document'])){echo $row['document'];}?>">  <?php if ($row['document_type']=='Incorporation') {
+                      	echo "Certificate of Incorporation";}elseif ($row['document_type']=='Add_proof') {
+                      	echo "Office Address Proof ";} else{echo $row['document_type']; } ?>
+                      </div></td>
                                             
                       
                       <td>
