@@ -936,8 +936,8 @@ var tableLength=$("#BranchTable tbody tr").length;
  	var bstate=document.getElementById('BranchState'+oCells[0].firstChild.data);
       branchstatesdata.push(bstate.options[bstate.selectedIndex].text);
 	 var bcity=document.getElementById('BranchCity'+oCells[0].firstChild.data);
-      branchcitiedata.push(pathTest.options[bcity.selectedIndex].text);
-  //     branchpincodeData.push(document.getElementById('BranchPincode'+oCells[0].firstChild.data).value);
+      branchcitiedata.push(bcity.options[bcity.selectedIndex].text);
+      branchpincodeData.push(document.getElementById('BranchPincode'+oCells[0].firstChild.data).value);
 
 
      
