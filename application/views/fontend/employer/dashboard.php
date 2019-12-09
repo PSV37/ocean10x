@@ -538,10 +538,7 @@
                           </tbody>
 
                           <tfoot>
-                           <tr>
-                            <td colspan="2" align="right"><strong><p id="wordTotalPathology">----</p></strong></td>
                            
-                          </tr>
                         </tfoot>
                       </table>
 									
