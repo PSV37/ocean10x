@@ -2147,6 +2147,7 @@ public function interview_scheduler()
 
     }
 
+<<<<<<< HEAD
     function get_cand_skills_by_email()
     {
        
@@ -2164,6 +2165,38 @@ public function interview_scheduler()
 
     }
 
+=======
+    public function add_Corporate_Documents()
+    {
+        $this->load->view('fontend/employer/corporate_documents');
+    }
+
+    public function savedocumets()
+    {
+        
+            $config['upload_path']   = 'upload/corporate_documents/';
+            $config['allowed_types'] =   'gif|jpg|jpeg|png|pdf|doc|docx|odt|xlsm|xls|xlm|xla|xlsx|bmp|docm|dotx|dotm|docb|gif';;
+            $config['encrypt_name']  = true;
+           
+            $config['max_width']     = 300;
+            $config['max_height']    = 300;
+
+            $this->load->library('upload', $config);
+
+            if (!$this->upload->do_upload('corporate_doc')) {
+                $error = array('error' => $this->upload->display_errors());
+                $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">Please upload a valid logo,  max  size 300*300 and  file size limit to 1MB</div>');
+                redirect('employer/add_Corporate_Documents');
+            }
+            else
+            {
+                 $img             = $this->upload->data();
+                 $file_name       = $img['file_name'];
+                 print_r($file_name);
+            }
+        }
+        
+>>>>>>> dee9afdd17980b82d1f3c43a4289c8bf5dd1de46
 
     
 } // end class
