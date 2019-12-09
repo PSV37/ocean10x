@@ -122,7 +122,12 @@
                       } echo $row['document_type']; ?></td>
                       
                       <td><div class="formrow">
-                                            <a target="_blank" download="proposed_file_name" style="text-decoration: none;" href="<?php echo base_url(); ?>upload/corporate_documents/<?php 
+                                            <a target="_blank" download="<?php if( $row['document_type']=='Incorporation') {
+                      	echo "Certificate of Incorporation";
+                      }elseif ($row['document_type']=='Add_proof') {
+                      	echo "Office Address Proof ";
+                      	# code...
+                      } echo $row['document_type']; ?>" style="text-decoration: none;" href="<?php echo base_url(); ?>upload/corporate_documents/<?php 
                                                  if(!empty($row['document'])){
                                                     echo $row['document'];
                                                  } 
