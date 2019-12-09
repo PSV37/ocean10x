@@ -124,7 +124,7 @@
                 <?php $key = 1; if (!empty($documents)): foreach ($documents as $row) : ?>
                     <tr>
                       <td><?php echo $key ?></td>
-                      <td><?php echo $row['document_type'] ?></td>
+                      <td><?php echo $row->document_type ?></td>
                       
                       <td><div class="formrow">
                                             <img class="thumbnail" src="<?php echo base_url(); ?>upload/corporate_documents/<?php 
