@@ -546,7 +546,7 @@
                       </table>
                   </div>
               </div>
-									
+					</div>				
 									
                                     <!-- end row -->
                                     <div class="panel-body"></div>
