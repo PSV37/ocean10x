@@ -73,10 +73,10 @@
 					<div class="container-fluid">
                         <div class="col-md-6">
                             <div class="form-group">                                       
-							   <label for="exampleInputEmail1" nam >Document Type<span class="required">*</span></label>
-                               <select name="document_type">
-                               	<option value="Corporate_name">Corporate Name (as in Regd. Docs)</option>
-                               	<option value="pan">PAN</option>
+							   <label for="exampleInputEmail1"  >Document Type<span class="required">*</span></label>
+                               <select name="document_type" class="form-control">
+                               	<option value="Incorporation">Attach Certificate of Incorporation</option>
+                               	<option value="PAN">PAN</option>
                                	<option value="GSTIN">GSTIN</option>
                                	<option value="Add_proof">Office Address Proof</option>
                                </select>
@@ -86,7 +86,7 @@
                         <div class="col-md-6">
                             <div class="form-group">                                       
 							   <label for="exampleInputEmail1">Attach Document<span class="required">*</span></label>
-                                <input type="file" name="corporate_doc">
+                                <input type="file" name="corporate_doc" class="form-control">
 								
 								</div>
                         </div>
@@ -98,17 +98,12 @@
 			 <button type="submit" id="submitdocs" class="btn bg-navy" type="submit">submit</button>
 			
                 </form>
-
-
-
-          </div>
-        </div>
-        <table class="table table-bordered table-striped" id="dataTables-example">
+                <table class="table table-bordered table-striped" id="dataTables-example">
               <thead>
                 <tr>
                   <th class="active">Sr No</th>
-                  <th class="active">document type</th>
-                  <th class="active">document</th>
+                  <th class="active">Document Type</th>
+                  <th class="active">Document</th>
                  
                   <th class="active col-sm-2">Action</th>
                 </tr>
@@ -117,14 +112,24 @@
                 <?php $key = 1; if (!empty($documents)): foreach ($documents as $row) : ?>
                     <tr>
                       <td><?php echo $key ?></td>
-                      <td><?php echo $row['document_type'] ?></td>
+                      <td><?php if( $row['document_type']=='Incorporation') {
+                      	echo "Certificate of Incorporation";
+                      }elseif ($row['document_type']=='Add_proof') {
+                      	echo "Office Address Proof ";
+                      	# code...
+                      } echo $row['document_type']; ?></td>
                       
                       <td><div class="formrow">
-                                            <img class="thumbnail" src="<?php echo base_url(); ?>upload/corporate_documents/<?php 
-                                                 if(!empty($document_type->document)){
-                                                    echo $document_type->document;
-                                                 } else { echo "notfound.gif";}
-                                            ?>"></div></td>
+                                            <a src="<?php echo base_url(); ?>upload/corporate_documents/<?php 
+                                                 if(!empty($row['document'])){
+                                                    echo $row['document'];
+                                                 } 
+                                            ?>"><?php if ($row['document_type']=='Incorporation') {
+                      	echo "Certificate of Incorporation";
+                      }elseif ($row['document_type']=='Add_proof') {
+                      	echo "Office Address Proof ";
+                      	# code...
+                      } echo $row['document_type']; ?></div></td>
                                             
                       
                       <td>
@@ -144,6 +149,11 @@
                     endif; ?>
               </tbody>
           </table>
+
+
+          </div>
+        </div>
+        
         <!-- end post-padding --> 
       </div>
       
