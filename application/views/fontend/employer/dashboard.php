@@ -895,7 +895,7 @@ $(function() {
 			});
 function getState(id)
 {
-	var country_id=document.getElementById("BranchCountry"+id).value;select
+	var country_id=document.getElementById("BranchCountry"+id).value;
 	alert(country_id);
 	 $.ajax({
                 type:'POST',
