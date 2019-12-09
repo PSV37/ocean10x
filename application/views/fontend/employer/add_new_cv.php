@@ -301,8 +301,11 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                     //var edu_level = value.skills;
                    
                     for(var l=0; l<data.length; l++)
-                    {
-                    	$('.skill').val(data[l]['skills']);
+                    {	
+                    	var arr = data[l]['skills'];
+                    	var s = arr.join(", ");
+                    	console.log(s);
+                    	$('.skill').val(s);
                     }
                    
                     
