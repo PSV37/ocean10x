@@ -519,8 +519,9 @@
 					                    </div>
 					                </div> -->
 					                <div class="row">
-					 				 	<div class="col-md-12 col-sm-12">
-					                <div class="box-body">
+					 				 	<div class="col-md-6 col-sm-6">
+					                <!-- <div class="box-body"> -->
+					                	 <div class="formrow">
                         <button type="button" id="addMoreBranches" class="btn btn-success">Add More</button>
 
      <table id="BranchTable" class="table table-bordered table-striped">
@@ -546,7 +547,7 @@
                       </table>
                   </div>
               </div>
-					</div>				
+			</div>				
 									
                                     <!-- end row -->
                                     <div class="panel-body"></div>
