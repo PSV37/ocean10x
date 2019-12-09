@@ -290,13 +290,13 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                     // console.log(value);
                     var edu_level = value.education_level_id;
                     console.log(edu_level);
-                    var l;
+                    // var l;
      //                var min = Infinity, name;
-     					for(l=0;l<sizeof(edu_level);l++){
-     						console.log(edu_level[l]);
-     						console.log(value.education_specialization[l]);
+     					// for(l=0;l<sizeof(edu_level);l++){
+     					// 	console.log(edu_level[l]);
+     					// 	console.log(value.education_specialization[l]);
 
-     					}
+     					// }
      //                for(var x in edu_level) {
 					//     if( edu_level[x] < min) {
 					//         min = edu_level[x];

@@ -2132,12 +2132,11 @@ public function interview_scheduler()
             "education_specialization"=>"education_specialization.id=js_education.specialization_id | LEFT OUTER",
         );
       
-        $select ="min(js_education.education_level_id) as daa,js_education.specialization_id,js_education.education_level_id,education_level.education_level_name,education_specialization.education_specialization";
+        $select ="js_education.education_level_id,js_education.specialization_id,js_education.education_level_id,education_level.education_level_name,education_specialization.education_specialization";
 
         $result = $this->Master_model->getMaster('js_info', $where1, $join, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
 
         //for($k=0;$k<sizeof($result);)
-        
         
         echo json_encode($result);
 
