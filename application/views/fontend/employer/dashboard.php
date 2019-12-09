@@ -919,7 +919,7 @@ var tableLength=$("#BranchTable tbody tr").length;
 
     // alert(tableLength);
     var branchadd=[];
-    var branchcountry=[];
+    var branchcountries=[];
     var branchstate=[];
     var branchcity=[];
     var branchpincode=[];
@@ -932,7 +932,7 @@ var tableLength=$("#BranchTable tbody tr").length;
      
       branchadd.push(document.getElementById('BranchName'+oCells[0].firstChild.data).value);
       var bcountry=document.getElementById('BranchCountry'+oCells[0].firstChild.data);
-      branchcountry.push(bcountry.options[bcountry.selectedIndex].text);
+      branchcountries.push(bcountry.options[bcountry.selectedIndex].text);
  	// var bstate=document.getElementById('BranchState'+oCells[0].firstChild.data);
   //     branchstate.push(bstate.options[bstate.selectedIndex].text);
 	 // var bcity=document.getElementById('BranchCity'+oCells[0].firstChild.data);
@@ -946,11 +946,11 @@ var tableLength=$("#BranchTable tbody tr").length;
     }
        // alert(oCells[0].firstChild.data);
 alert(branchadd);
-alert(branchcountry);
+alert(branchcountries);
 
      
      document.getElementById("Branchname").value=branchadd;
-     document.getElementById("BranchCountry").value=branchcountry;
+     document.getElementById("BranchCountry").value=branchcountries;
      document.getElementById("Branchstate").value=branchstate;
      document.getElementById("BranchCity").value=branchcity;
      document.getElementById("Branchpincode").value=branchpincode;
