@@ -518,138 +518,33 @@
 					                        </div>
 					                    </div>
 					                </div> -->
-					                
-    <div class="panel-body"></div>   
-    <div class="row">
-      <div class="col-md-12">
-        <div class="col-md-12 col-sm-12">
-          <div class="input-group">
-              <h6>Office Locations / Branches</h6><br>
-              <button class="btn btn-success btn-xs pull-right add-more" type="button"><i class="fa fa-plus"></i> Add Branches</button> <br>
-              <div class="input-group control-group after-add-more">
-                <div>
-                  <?php if(!empty($languages)) foreach($languages as $lrow){?>
-                  <div class="col-md-12">
-                    <div class="col-md-6"> 
-                       <label>Office Address</label>
-                      <input type="text" name="address[]" id="address" class="form-control" value="<?php echo $lrow['address']; ?>">
-                    </div>
-                    <div class="col-md-6">  
-                      <label>country</label>
-	                                        <label class="control-label">Company Country: <span class="required">*</span></label>
-										  <select  name="country_id" id="country_id" class="form-control country" onchange="getStates(this.value)">
-											<option value="">Select Country</option>
-											<?php foreach($country as $key){?>
-											<option value="<?php echo $key['country_id']; ?>"<?php if($company_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
-											<?php } ?>
-										  </select>
-                    </div>
-                    
-                  </div>
-                <?php }else{ ?>
-                  <div class="col-md-12">
-                    <div class="col-md-4"> 
-                       <label>Branch Address</label>
-                      <input type="text" name="branches[]" id="branch1" class="form-control" >
-                    </div>
-                    <div class="col-md-4">  
-                     <label class="control-label">Company Country: <span class="required">*</span></label>
-										  <select  name="country1" id="country1" class="form-control country" onchange="getStates(this.value)">
-											<option value="">Select Country</option>
-											<?php foreach($country as $key){?>
-											<option value="<?php echo $key['country_id']; ?>"><?php echo $key['country_name']; ?></option>
-											<?php } ?>
-										  </select>
-                    </div>
-                    <div class="col-md-4">  
-                    <label class="control-label">Company State: <span class="required">*</span></label>
-											<select  name="state1" id="state1" class="form-control" onchange="getCitys(this.value)">
-											<option value="">Select State</option>
-										     
-											</select>
-                    </div>
-                    <div class="col-md-12" style="margin-top:10px;">  
-                      
+					                <div class="box-body">
+                        <button type="button" id="addMorePathology" class="btn btn-success">Add More</button>
 
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="col-md-6"> 
-                       <label class="control-label">Company City: <span class="required">*</span></label>
-											<select  name="city1" id="city1" class="form-control">
-											<option value="">Select City</option>
-											 
-											</select>
-                    </div>
-                    <div class="col-md-6">  
-                     <div class="formrow">
-					                             <label class="control-label">Pincode: <span class="required">*</span></label>
-					                            <input type="text" name="company_pincode1" id="company_pincode1"  class="form-control" value="" required>
-					                        </div>
-                    </div>
-                    
-                    <div class="col-md-12" style="margin-top:10px;">  
-                      
+     <table id="PathologyTable" class="table table-bordered table-striped">
+                          <thead>
+                            <tr>
+                              <th style="display: none;">No.</th>
+                              <th>Branch</th>
+                              <th>Country/th>
+                              <th>State</th>
+                              <th>City</th>
+                              <th>Pincode</th>
+                            </tr>
+                          </thead>
 
-                    </div>
-                  </div>
-                <?php } ?>
-                </div>
-              </div>
-          </div>     
-        </div>
-      </div>
-    </div>
-		   <!-- Copy Fields -->
-      <div class="copy hide">
-        <div class="control-group input-group" style="margin-top:10px">
-          <div>
-            <div class="col-md-12">
-              <div class="col-md-4"> 
-                 <label>Branch Address</label>
-                      <input type="text" name="branches[]" id="branch2" class="form-control" >
-              </div>
-              <div class="col-md-4">  
-                <label>select Country</label>
-                 <select  name="country2" id="country2" class="form-control country" onchange="getStates(this.value)">
-											<option value="">Select Country</option>
-											<?php foreach($country as $key){?>
-											<option value="<?php echo $key['country_id']; ?>"><?php echo $key['country_name']; ?></option>
-											<?php } ?>
-										  </select>
-              </div>
-               <div class="col-md-4">  
-                <label>select State</label>
-                <select  name="state_id2" id="state_id2" class="form-control" onchange="getCitys(this.value)">
-											<option value="">Select State</option>
-										     
-											</select>
-              </div>
-              <div class="col-md-12" style="margin-top:10px;">  
-              	<div class="col-md-4">  
-                <label>select City</label>
-                <select  name="city_id2" id="city_id2" class="form-control">
-											<option value="">Select City</option>
-											 
-											</select>
-              </div>
-              <div class="col-md-4">  
-                <label>Pincode</label>
-                <input type="text" name="company_pincode2" id="company_pincode2"  class="form-control" value="<?php 
-					                                     if(!empty($company_info->company_pincode)){
-					                                        echo $company_info->company_pincode;
-					                                     }
-					                                ?>" required>
-              </div>
-                
-              </div>
+                          <tbody>
+                            <!-- <tr></tr> -->
+                          </tbody>
 
-            </div>
-          </div>
-        
-          <br/>
-        </div>
-      </div>
+                          <tfoot>
+                           <tr>
+                            <td colspan="2" align="right"><strong><p id="wordTotalPathology">----</p></strong></td>
+                            <td align="right"><strong>Total</strong></td>
+                            <td><strong><p id="PathologyTotal">0</p></strong></td>
+                          </tr>
+                        </tfoot>
+                      </table>
 									
 									
                                     <!-- end row -->
