@@ -2187,7 +2187,7 @@ public function interview_scheduler()
 
             if (!$this->upload->do_upload('corporate_doc')) {
                 $error = array('error' => $this->upload->display_errors());
-                $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">Please upload a valid logo,  max  size 300*300 and  file size limit to 1MB</div>');
+                $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">Please upload a valid Document</div>');
                 redirect('employer/add_Corporate_Documents');
             }
             else
@@ -2196,8 +2196,13 @@ public function interview_scheduler()
                  $file_name       = $img['file_name'];
                  $documets=array('company_profile_id'=>$company_id,
                     'document_type'=>$this->input->post('document_type'),
-                    'documet'=>$file_name);
-                 print_r($documets);
+                    'document'=>$file_name,
+                    'created_on'=>date('Y-m-d H:i:s'),
+                    'created_by'=>$company_id);
+                 $result=$this->Master_model->master_insert($documets,'corporate_documents');
+                 $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Document Uploaded sucessfully</div>');
+                redirect('employer/add_Corporate_Documents');
+                 
             }
         }
         
