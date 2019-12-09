@@ -290,6 +290,8 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                     // console.log(value);
                     var edu_level = value.education_level_id;
                     console.log(edu_level);
+                    var cars = new Array(edu_level);
+ console.log(cars);
                     // var l;
      //                var min = Infinity, name;
      					// for(l=0;l<sizeof(edu_level);l++){
