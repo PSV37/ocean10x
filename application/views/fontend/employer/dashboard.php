@@ -519,9 +519,8 @@
 					                    </div>
 					                </div> -->
 					                <div class="row">
-					 				 	<div class="col-md-6 col-sm-6">
-					                <!-- <div class="box-body"> -->
-					                	 <div class="formrow">
+					 				 	<div class="col-md-12 col-sm-12">
+					                <div class="box-body">
                         <button type="button" id="addMoreBranches" class="btn btn-success">Add More</button>
 
      <table id="BranchTable" class="table table-bordered table-striped">
@@ -547,7 +546,7 @@
                       </table>
                   </div>
               </div>
-			</div>				
+					</div>				
 									
                                     <!-- end row -->
                                     <div class="panel-body"></div>
@@ -890,7 +889,8 @@ $(function() {
 			$(document).ready(function(){
 				 var j=1;  
 				$('#addMoreBranches').click(function(){ 
-				 $('#BranchTable tbody').append("<tr id='Branchtr"+j+"'><td class='hidetd'>"+j+"</td><td><input type='text' name='BranchName"+j+"' id='BranchName"+j+"' required></td><td><select name='BranchCountry"+j+"' id='BranchCountry"+j+"' onchange='getState("+j+");' style='width: 197px;' required></select></td><td ><input type='text'  name='BranchState"+j+"' id='BranchState"+j+"' required ></td><td><input type='text' name='BranchCity"+j+"' id='BranchCity"+j+"' readonly></td><td><input type='text' name='BranchPincode"+j+"' id='BranchPincode"+j+"' readonly></td><td><a href='#' class='removebtn' id='"+j+"' onclick='removePathologyTr(this);'>X</a></td></tr>"); 
+				 $('#BranchTable tbody').append("<tr id='Branchtr"+j+"'><td class='hidden'>"+j+"</td><td><input type='text' class='form-control' name='BranchName"+j+"' id='BranchName"+j+"' required></td><td><select name='BranchCountry"+j+"' id='BranchCountry"+j+"' onchange='getState("+j+"); class='form-control' required><?php foreach($country as $key){?>
+											<option value="<?php echo $key['country_id']; ?>"<?php echo $key['country_name']; ?>></option><?php } ?></select></td><td ><input type='text' class='form-control'  name='BranchState"+j+"' id='BranchState"+j+"' required ></td><td><input type='text' class='form-control' name='BranchCity"+j+"' id='BranchCity"+j+"' readonly></td><td><input type='text' class='form-control' name='BranchPincode"+j+"' id='BranchPincode"+j+"' readonly></td><td><a href='#' class='removebtn' id='"+j+"' onclick='removePathologyTr(this);'>X</a></td></tr></div></div>"); 
 			})
 			});
 		</script>
