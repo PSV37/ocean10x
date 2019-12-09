@@ -889,7 +889,7 @@ $(function() {
 			$(document).ready(function(){
 				 var j=1;  
 				$('#addMoreBranches').click(function(){ 
-				 $('#BranchTable tbody').append("<div class='row'><div class='col-md-12 col-sm-12'><tr id='Branchtr"+j+"'><td class='hidetd'>"+j+"</td><td><input type='text' name='BranchName"+j+"' id='BranchName"+j+"' required></td><td><select name='BranchCountry"+j+"' id='BranchCountry"+j+"' onchange='getState("+j+");' style='width: 197px;' required></select></td><td ><input type='text'  name='BranchState"+j+"' id='BranchState"+j+"' required ></td><td><input type='text' name='BranchCity"+j+"' id='BranchCity"+j+"' readonly></td><td><input type='text' name='BranchPincode"+j+"' id='BranchPincode"+j+"' readonly></td><td><a href='#' class='removebtn' id='"+j+"' onclick='removePathologyTr(this);'>X</a></td></tr></div></div>"); 
+				 $('#BranchTable tbody').append("<tr id='Branchtr"+j+"'><td class='hidetd'>"+j+"</td><td><input type='text' class='form-control' name='BranchName"+j+"' id='BranchName"+j+"' required></td><td><select name='BranchCountry"+j+"' id='BranchCountry"+j+"' onchange='getState("+j+"); class='form-control' required></select></td><td ><input type='text' class='form-control'  name='BranchState"+j+"' id='BranchState"+j+"' required ></td><td><input type='text' class='form-control' name='BranchCity"+j+"' id='BranchCity"+j+"' readonly></td><td><input type='text' class='form-control' name='BranchPincode"+j+"' id='BranchPincode"+j+"' readonly></td><td><a href='#' class='removebtn' id='"+j+"' onclick='removePathologyTr(this);'>X</a></td></tr></div></div>"); 
 			})
 			});
 		</script>
