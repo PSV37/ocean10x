@@ -317,7 +317,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                    // $('#tokenfield').tokenfield();
                    	$('#tokenfield').val(skill);
                    	$('#tokenfield').tokenfield('enable');
-                   	$('#tokenfield').data('bs.tokenfield').$input.autocomplete({source: new_array})
+                   //	$('#tokenfield').data('bs.tokenfield').$input.autocomplete({source: new_array})
 
                } 
         });
