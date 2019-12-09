@@ -920,24 +920,24 @@ var tableLength=$("#BranchTable tbody tr").length;
     // alert(tableLength);
     var branchadd=[];
     var branchcountries=[];
-    var branchstate=[];
-    var branchcity=[];
-    var branchpincode=[];
+    var branchstates=[];
+    var branchcities=[];
+    var branchpincodeData=[];
 
     for(var i=1;i<=tableLength;i++)
     {
      var oCells = branchTable.rows.item(i).cells;
-        alert(oCells[0].firstChild.data);
+        // alert(oCells[0].firstChild.data);
 
      
       branchadd.push(document.getElementById('BranchName'+oCells[0].firstChild.data).value);
       var bcountry=document.getElementById('BranchCountry'+oCells[0].firstChild.data);
       branchcountries.push(bcountry.options[bcountry.selectedIndex].text);
- 	// var bstate=document.getElementById('BranchState'+oCells[0].firstChild.data);
-  //     branchstate.push(bstate.options[bstate.selectedIndex].text);
-	 // var bcity=document.getElementById('BranchCity'+oCells[0].firstChild.data);
-  //     branchcity.push(pathTest.options[bcity.selectedIndex].text);
-  //     branchpincode.push(document.getElementById('BranchName'+oCells[0].firstChild.data).value);
+ 	var bstate=document.getElementById('BranchState'+oCells[0].firstChild.data);
+      branchstates.push(bstate.options[bstate.selectedIndex].text);
+	 var bcity=document.getElementById('BranchCity'+oCells[0].firstChild.data);
+      branchcities.push(pathTest.options[bcity.selectedIndex].text);
+      branchpincodeData.push(document.getElementById('BranchPincode'+oCells[0].firstChild.data).value);
 
 
      
@@ -947,13 +947,16 @@ var tableLength=$("#BranchTable tbody tr").length;
        // alert(oCells[0].firstChild.data);
 alert(branchadd);
 alert(branchcountries);
+alert(branchstates);
+alert(branchcities);
+alert(branchpincodeData);
 
      
      document.getElementById("Branchname").value=branchadd;
      document.getElementById("BranchCountry").value=branchcountries;
-     document.getElementById("Branchstate").value=branchstate;
-     document.getElementById("BranchCity").value=branchcity;
-     document.getElementById("Branchpincode").value=branchpincode;
+     document.getElementById("Branchstate").value=branchstates;
+     document.getElementById("BranchCity").value=branchcities;
+     document.getElementById("Branchpincode").value=branchpincodeData;
 
 }
 		</script>
