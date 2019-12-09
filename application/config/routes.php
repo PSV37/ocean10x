@@ -146,6 +146,10 @@ $route['employer/add-new-cv']="employer/add_new_cv";
 $route['employer/add-new-consultant']="employer/addconsultant";
 $route['employer/show-all-consultant']="employer/allconsultants";
 
+$route['add-Corporate-Documents']="employer/add-Corporate-Documents";
+$route['employer/show-all-consultant']="employer/allconsultants";
+
+
 
 $route['job-apply/(:any)'] = "job/jobapply/$1";
 $route['save-job/(:any)'] = "job/save_this_job/$1";
