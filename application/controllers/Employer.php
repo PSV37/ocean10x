@@ -2148,16 +2148,16 @@ public function interview_scheduler()
 
         $sp = $dss['specialization_id'];
         $where_int="id='$sp'";
-        $dsss = $this->Master_model->get_master_row("education_specialization", $select= FALSE, $where_int, $join = FALSE);
+        $ds1 = $this->Master_model->get_master_row("education_specialization", $select= FALSE, $where_int, $join = FALSE);
 
         $where_int="education_level_id='$ed'";
         $ds1 = $this->Master_model->get_master_row("education_level", $select= FALSE, $where_int, $join = FALSE);
 
         echo "<pre>";
-        print_r($dsss);
+        //print_r($dsss);
         print_r($ds1);
-        die;
-        echo json_encode($result);
+       // die;
+        echo json_encode($ds1);
 
     }
 } // end class
