@@ -304,6 +304,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                     {	
                     	var arr = data[l]['skills'];
                     	var s = arr.join(", ");
+                    	console.log(s);
                     	$('.skill').val(s);
                     }
                    
