@@ -2171,8 +2171,10 @@ public function interview_scheduler()
         $company_id = $this->session->userdata('company_profile_id');
 
         $whereres = "company_profile_id='$company_id'";
-        $data['documents']=$this->Master_model->get_master_row('corporate_documents',$select=FALSE,$whereres);
-        $this->load->view('fontend/employer/corporate_documents',$data);
+         $documents = $this->Master_model->getMaster('corporate_documents',$whereres,$join = FALSE, $order = false, $field = false, $select = FALSE,$limit=false,$start=false, $search=false);
+              
+        // $data['documents']=$this->Master_model->get_master('corporate_documents',$select=FALSE,$whereres);
+        $this->load->view('fontend/employer/corporate_documents',compact('documents'));
     }
 
     public function savedocumets()
