@@ -897,6 +897,15 @@ function getState(id)
 {
 	var country_id=document.getElementById("BranchCountry"+id).value;
 	alert(country_id);
+	 $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Employer/getstate',
+                data:{id:country_id},
+                success:function(res){
+                    $('#BranchState'+id+).html(res);
+                }
+				
+            }); 
 }
 		</script>
 
