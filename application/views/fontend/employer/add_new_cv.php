@@ -307,9 +307,9 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                     	//console.log(arr);
 
                     	if(l==0){
-							skill=skill.arr;
+							skill=skill+arr;
 						 }else{
-							skill=skill.','.arr;
+							skill=skill+','+arr;
 						 }
                     }
                    
