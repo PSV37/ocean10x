@@ -290,8 +290,18 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                     // console.log(value);
                     var edu_level = value.education_level_id;
                     console.log(edu_level);
-                 	var a = Math.min.apply(null, edu_level) // 1
-                 	console.log(a);
+                    var min = Infinity, value.education_level_name;
+
+                    for(var x in edu_level) {
+					    if( edu_level[x] < min) {
+					        min = edu_level[x];
+					        name = x;
+					    } 
+					}
+                 //	var a = Math.min.apply(null, edu_level) // 1
+                 	//console.log(a);
+                 	console.log ( 'property name is ' + name + ' and value is ' + min );
+
 
                     $('#top_education').val(value.education_level_name);
                     $('#education_specialization').val(value.education_specialization);
