@@ -299,16 +299,21 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                success: function(data)
                {
                     //var edu_level = value.skills;
-                   
+                   var skill='';
                     for(var l=0; l<data.length; l++)
                     {	
                     	var arr = data[l]['skills'];
-                    	// var s = arr.join(", ");
-                    	console.log(arr);
-                    	$('.skill').val(arr);
+                    	//var s = arr.join(", ");
+                    	//console.log(arr);
+
+                    	if(l==0){
+							skill=skill.arr;
+						 }else{
+							skill=skill.','.arr;
+						 }
                     }
                    
-                    
+                    $('.tokenfield').val(skill);
                     
                } 
         });
