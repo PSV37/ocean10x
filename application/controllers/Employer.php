@@ -2129,9 +2129,10 @@ public function interview_scheduler()
             // "js_career_info"=>"js_career_info.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
             "js_education"=>"js_education.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
             "education_level"=>"education_level.education_level_id=js_education.education_level_id | LEFT OUTER",
+            "education_specialization"=>"education_specialization.id=js_education.specialization_id | LEFT OUTER",
         );
       
-        $select ="js_education.education_level_id,js_education.specialization_id,js_education.education_level_id,education_level.education_level_name";
+        $select ="js_education.education_level_id,js_education.specialization_id,js_education.education_level_id,education_level.education_level_name,education_specialization.education_specialization";
 
         $result = $this->Master_model->getMaster('js_info', $where1, $join, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
 
