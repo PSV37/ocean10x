@@ -312,7 +312,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 							skill=skill+','+arr;
 						 }
                     }
-                   
+                   console.log(skill);
                     $('.tokenfield').val(skill);
                     
                } 
