@@ -111,8 +111,65 @@
   </div>
   <!-- end container --> 
 </div>
-</div>
-</div>
+<?php $count=1; if ($documents) {?>
+
+	<div class="section lb">
+  <div class="container">
+    <div class="row">
+      
+           
+            <table class="table table-bordered table-striped" id="dataTables-example">
+              <thead>
+                <tr>
+                  <th class="active">Sr No</th>
+                  <th class="active">document_type</th>
+                  <th class="active">document</th>
+                 
+                  <th class="active col-sm-2">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php $key = 1; if (!empty($questionbank)): foreach ($documents as $row) : ?>
+                    <tr>
+                      <td><?php echo $key ?></td>
+                      <td><?php echo $row['document_type'] ?></td>
+                      
+                      <td><div class="formrow">
+                                            <img class="thumbnail" src="<?php echo base_url(); ?>upload/corporate_documents/<?php 
+                                                 if(!empty($document_type->document)){
+                                                    echo $document_type->document;
+                                                 } else { echo "notfound.gif";}
+                                            ?>"></div></td>
+                                            
+                      
+                      <td>
+                          <?php echo btn_edit('employer/edit_questionbank/' . $ct_row['ques_id']); ?>
+                          <?php echo btn_delete('employer/delete_questionbank/' . $ct_row['ques_id']); ?>
+                      </td>
+                  </tr>
+                  <?php
+                      $key++;
+                      endforeach;
+                  ?>
+                  <?php else : ?> 
+                      <td colspan="3">
+                          <strong>There is no record for display</strong>
+                      </td>
+                  <?php
+                    endif; ?>
+              </tbody>
+          </table>
+
+
+
+          </div>
+        </div>
+        <!-- end post-padding --> 
+      </div>
+      <!-- end col --> 
+    
+
+<?php } ?>
 <!-- end section --> 
 
 <script type="text/javascript" src="<?php echo base_url(); ?>asset/js/tinymce/tinymce.min.js"></script> 
