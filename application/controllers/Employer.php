@@ -2140,10 +2140,10 @@ public function interview_scheduler()
         // $select ="js_education.education_level_id,js_education.specialization_id,js_education.education_level_id,education_level.education_level_name,education_specialization.education_specialization";
 
         $select ="min(js_education.education_level_id) as edu_high,js_education.job_seeker_id";
-        $result = $this->Master_model->getMaster('js_info', $where1, $join, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
+        $res = $this->Master_model->getMaster('js_info', $where1, $join, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
 
-        $ed  = $result[0]['edu_high'];
-        $js = $result[0]['job_seeker_id'];
+        $ed  = $res[0]['edu_high'];
+        $js = $res[0]['job_seeker_id'];
         // $where_int="job_seeker_id='$js' AND education_level_id='$ed'";
         // $dss = $this->Master_model->get_master_row("js_education", $select= FALSE, $where_int, $join = FALSE);
 
@@ -2152,13 +2152,13 @@ public function interview_scheduler()
         // $data['result1'] = $this->Master_model->get_master_row("education_specialization", $select= FALSE, $where_int, $join = FALSE);
 
         $where_int="education_level_id='$ed'";
-        $result1 = $this->Master_model->get_master_row("education_level", $select= FALSE, $where_int, $join = FALSE);
-
+        // $result1 = $this->Master_model->get_master_row("education_level", $select= FALSE, $where_int, $join = FALSE);
+        $result = $this->Master_model->getMaster('education_level', $where_int, $join= false, $order = false, $field = false, $select= false,$limit=false,$start=false, $search=false);
     //    echo "<pre>";
         //print_r($dsss);
        // print_r($data);
        // die;
-        echo json_encode($result1);
+        echo json_encode($result);
 
     }
 } // end class
