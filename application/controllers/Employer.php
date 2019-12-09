@@ -2168,7 +2168,11 @@ public function interview_scheduler()
 
     public function add_Corporate_Documents()
     {
-        $this->load->view('fontend/employer/corporate_documents');
+        $company_id = $this->session->userdata('company_profile_id');
+
+        $whereres = "company_profile_id='$company_id'";
+        $data['documents']=$this->Master_model->get_master_row('corporate_documents',$select=FALSE,$whereres);
+        $this->load->view('fontend/employer/corporate_documents',$data);
     }
 
     public function savedocumets()
