@@ -135,7 +135,7 @@
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Skills</label>
-	                 	<input type="text" name="candidate_skills" id="candidate_skills" class="form-control">
+	                 	<input type="text" name="candidate_skills" id="tokenfield" class="form-control">
 					</div>
 				</div>
 				<div class="col-md-6">
@@ -227,7 +227,8 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                  // alert(b.item.value);
               $(this).val(b.item.value); //grabed the selected value
               get_candidate_info(b.item.value);
-              get_cand_other_info(b.item.value);
+              get_cand_education_info(b.item.value);
+              get_cand_skills_info(b.item.value);
 
             }
         });
@@ -250,30 +251,19 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 
                      $('#candidate_name').val(value.full_name);
                      $('#job_type').val(value.avaliable);
-                     // $('#country_code').val(value.desired_industry);
-                     // $('#company_phone').val(value.immediate_join);
                      $('#candidate_industry').val(value.industry_id);
                      $('#desired_wrok_location').val(value.job_area);
                      $('#candidate_role').val(value.job_role);
                      $('#candidate_expected_sal').val(value.js_career_salary);
                      $('#candidate_phone').val(value.mobile_no);
                      $('#candidate_notice_period').val(value.notice_period);
-                     // $('#country_id').val(value.serving_notice_period);
-                     // $('#state_id').val(value.state_id);
-                     // $('#city_id').val(value.city_id);
-                     // $('#company_pincode').val(value.company_pincode);
-                     // $('#comp_gst_no').val(value.comp_gstn_no);
-                     // $('#comp_pan_no').val(value.comp_pan_no);
-                     // $('#company_profile_id').val(value.company_profile_id);
-                    
-
 
                   });
                } 
         });
 	}
 
-	function get_cand_other_info(email){
+	function get_cand_education_info(email){
 
     	$.ajax({
               url:'<?php echo site_url('employer/get_cand_other_info_by_email') ?>',
@@ -291,12 +281,56 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                     var edu_level = value.education_level_id;
                    
                     $('#top_education').val(value.education_level_name);
-                    // $('#education_specialization').val(value.education_specialization);
                     
                   });
                } 
         });
 	}
+
+	function get_cand_skills_info(email){
+
+    	$.ajax({
+              url:'<?php echo site_url('employer/get_cand_skills_by_email') ?>',
+              type:'POST',
+              data:{
+                    email:email
+              },
+               dataType: "JSON",  
+               success: function(data)
+               {
+                 // console.log(data);
+                 $.each(data, function(index, value) 
+                  {
+                    console.log(value);
+                    //var edu_level = value.skills;
+                   
+                    $('#tokenfield').val(value.skills);
+                    
+                  });
+               } 
+        });
+	}
+
+	$( document ).ready( function () {
+		$('#tokenfield').tokenfield({
+            autocomplete: {
+              source: "<?php echo base_url('job_seeker/get_skills_autocomplete'); ?>",
+              delay: 100
+            },
+            showAutocompleteOnFocus: true,
+
+          });
+              // to avoid duplications
+        $('#tokenfield').on('tokenfield:createtoken', function (event) {
+                var existingTokens = $(this).tokenfield('getTokens');
+                $.each(existingTokens, function(index, token) {
+                    if (token.value === event.attrs.value)
+                        event.preventDefault();
+
+                });
+            });
+
+	});
 
 </script>
 <?php $this->load->view("fontend/layout/footer.php"); ?>

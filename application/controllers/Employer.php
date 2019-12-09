@@ -2131,37 +2131,41 @@ public function interview_scheduler()
         $email_id =$this->input->post('email');
         $where1 = "js_info.email = '$email_id'";
         $join = array( 
-            // "js_career_info"=>"js_career_info.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
             "js_education"=>"js_education.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
-            // "education_level"=>"education_level.education_level_id=js_education.education_level_id | LEFT OUTER",
-            // "education_specialization"=>"education_specialization.id=js_education.specialization_id | LEFT OUTER",
         );
-      
         // $select ="js_education.education_level_id,js_education.specialization_id,js_education.education_level_id,education_level.education_level_name,education_specialization.education_specialization";
-
         $select ="min(js_education.education_level_id) as edu_high,js_education.job_seeker_id";
         $res = $this->Master_model->getMaster('js_info', $where1, $join, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
 
         $ed  = $res[0]['edu_high'];
         $js = $res[0]['job_seeker_id'];
-        // $where_int="job_seeker_id='$js' AND education_level_id='$ed'";
-        // $dss = $this->Master_model->get_master_row("js_education", $select= FALSE, $where_int, $join = FALSE);
-
-        // $sp = $dss['specialization_id'];
-        // $where_int="id='$sp'";
-        // $data['result1'] = $this->Master_model->get_master_row("education_specialization", $select= FALSE, $where_int, $join = FALSE);
-
+        
         $where_int="education_level_id='$ed'";
-        // $result1 = $this->Master_model->get_master_row("education_level", $select= FALSE, $where_int, $join = FALSE);
         $result = $this->Master_model->getMaster('education_level', $where_int, $join= false, $order = false, $field = false, $select= false,$limit=false,$start=false, $search=false);
-    //    echo "<pre>";
-        //print_r($dsss);
-       // print_r($data);
-       // die;
+
         echo json_encode($result);
 
     }
 
+<<<<<<< HEAD
+    function get_cand_skills_by_email()
+    {
+       
+        $email_id =$this->input->post('email');
+        $where1 = "js_info.email = '$email_id'";
+        $join = array( 
+            "job_seeker_skills"=>"job_seeker_skills.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
+        );
+        // $select ="js_education.education_level_id,js_education.specialization_id,js_education.education_level_id,education_level.education_level_name,education_specialization.education_specialization";
+        $select ="job_seeker_skills.skills,job_seeker_skills.js_skill_id";
+        $result = $this->Master_model->getMaster('js_info', $where1, $join, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
+
+        
+        echo json_encode($result);
+
+    }
+
+=======
     public function add_Corporate_Documents()
     {
         $this->load->view('fontend/employer/corporate_documents');
@@ -2192,6 +2196,7 @@ public function interview_scheduler()
             }
         }
         
+>>>>>>> dee9afdd17980b82d1f3c43a4289c8bf5dd1de46
 
     
 } // end class
