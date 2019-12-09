@@ -929,17 +929,21 @@ var tableLength=$("#BranchTable tbody tr").length;
      var oCells = branchTable.rows.item(i).cells;
      
       branchadd.push(document.getElementById('BranchName'+oCells[0].firstChild.data).value);
-  //     var bcountry=document.getElementById('BranchCountry'+oCells[0].firstChild.data);
-  //     branchcountry.push(bcountry.options[bcountry.selectedIndex].text);
- 	// var bstate=document.getElementById('BranchState'+oCells[0].firstChild.data);
-  //     branchstate.push(bstate.options[bstate.selectedIndex].text);
-	 // var bcity=document.getElementById('BranchCity'+oCells[0].firstChild.data);
-  //     branchcity.push(pathTest.options[bcity.selectedIndex].text);
-  //     branchpincode.push(document.getElementById('BranchName'+oCells[0].firstChild.data).value);
+      var bcountry=document.getElementById('BranchCountry'+oCells[0].firstChild.data);
+      branchcountry.push(bcountry.options[bcountry.selectedIndex].text);
+ 	var bstate=document.getElementById('BranchState'+oCells[0].firstChild.data);
+      branchstate.push(bstate.options[bstate.selectedIndex].text);
+	 var bcity=document.getElementById('BranchCity'+oCells[0].firstChild.data);
+      branchcity.push(pathTest.options[bcity.selectedIndex].text);
+      branchpincode.push(document.getElementById('BranchName'+oCells[0].firstChild.data).value);
 
 
      
 alert(branchadd);
+alert(branchcountry);
+alert(branchstate);
+alert(branchcity);
+alert(branchpincode);
   
      
     }
