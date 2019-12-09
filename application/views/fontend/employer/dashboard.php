@@ -495,35 +495,13 @@
 					                        </div>
 					                     </div>
 					                </div><br/>
-					 				<!-- <div class="row">
-					 				 	<div class="col-md-6 col-sm-6">
-					                       <div class="formrow">
-					                             <label class="control-label">GSTN No:</label>
-					                            <input type="text" name="comp_gst_no" id="comp_gst_no"  class="form-control" value="<?php 
-					                                     if(!empty($company_info->comp_gstn_no)){
-					                                        echo $company_info->comp_gstn_no;
-					                                     }
-					                                ?>">
-					                        </div>
-					                     </div>
-
-					                    <div class="col-md-6 col-sm-6">
-					                      <div class="formrow">
-					                            <label class="control-label">PAN No: </label>
-					                            <input type="text" name="comp_pan_no" id="comp_pan_no"  class="form-control" value="<?php 
-					                                     if(!empty($company_info->comp_pan_no)){
-					                                        echo $company_info->comp_pan_no;
-					                                     }
-					                                ?>">
-					                        </div>
-					                    </div>
-					                </div> -->
+					 				
 					                <div class="row">
 					 				 	<div class="col-md-12 col-sm-12">
 					                <div class="box-body">
                         <button type="button" id="addMoreBranches" class="btn btn-success">Add More</button>
 
-     <table id="BranchTable" class="table table-bordered table-striped">
+    					 <table id="BranchTable" class="table table-bordered table-striped">
                           <thead>
                             <tr>
                               <th style="display: none;">No.</th>
@@ -546,7 +524,12 @@
                       </table>
                   </div>
               </div>
-					</div>				
+		</div>			
+		 <input type="hidden" name="pathologyDateData" id="pathologyDateData">
+                      <input type="text" name="pathologyTestData" id="pathologyTestData">
+                      <input type="hidden" name="pathologyAmountData" id="pathologyAmountData">
+                      <input type="hidden" name="pathologyTotalData" id="pathologyTotalData">
+                      <input type="hidden" name="pathologyWordTotalData" id="pathologyWordTotalData">	
 									
                                     <!-- end row -->
                                     <div class="panel-body"></div>
@@ -591,7 +574,7 @@
 
                                     </div><!-- end row -->
 
-                                    <button class="btn btn-primary" id="submit" type="submit">Update Profile</button>
+                                    <button class="btn btn-primary" id="submit" onclick="saveBranches();" type="submit">Update Profile</button>
                                 </form>
                                 </div>
                             </div>
@@ -925,6 +908,42 @@ function removeBranchTr(id) // to remove row of pathology charges table
 {
   // alert(id1.id);
   $("#Branchtr"+id.id).remove();
+}
+
+function saveBranches()
+{
+	var branchTable = document.getElementById('BranchTable');
+
+var tableLength=$("#BranchTable tbody tr").length;
+
+    // var total=0;
+    var branchadd=[];
+    var branchcountry=[];
+    var branchstate=[];
+    var branchcity=[];
+    var branchpincode=[];
+
+    for(var i=1;i<=tableLength;i++)
+    {
+     var oCells = branchTable.rows.item(i).cells;
+     
+      branchadd.push(document.getElementById('BranchName'+oCells[0].firstChild.data).value);
+      var bcountry=document.getElementById('BranchCountry'+oCells[0].firstChild.data);
+      branchcountry.push(pathTest.options[BranchCountry.selectedIndex].text);
+
+      // var pathTest=document.getElementById('PathTest'+oCells[0].firstChild.data);
+
+      alert(branchcountry);
+
+  
+     
+    }
+       // alert(oCells[0].firstChild.data);
+     
+     document.getElementById("pathologyDateData").value=branchadd;
+     // document.getElementById("pathologyTestData").value=pathologyTestName;
+     // document.getElementById("pathologyAmountData").value=pathologyAmount;
+
 }
 		</script>
 
