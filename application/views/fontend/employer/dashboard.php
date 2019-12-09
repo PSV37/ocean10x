@@ -518,6 +518,8 @@
 					                        </div>
 					                    </div>
 					                </div> -->
+					                <div class="row">
+					 				 	<div class="col-md-12 col-sm-12">
 					                <div class="box-body">
                         <button type="button" id="addMoreBranches" class="btn btn-success">Add More</button>
 
@@ -542,6 +544,8 @@
                            
                         </tfoot>
                       </table>
+                  </div>
+              </div>
 									
 									
                                     <!-- end row -->
