@@ -2210,7 +2210,18 @@ public function interview_scheduler()
             }
         }
         
+// to get skill master for autocomplete
+    function get_skills_autocomplete(){
+        if (isset($_GET['term'])) {
 
+            $result = $this->Job_seeker_experience_model->search_skills($_GET['term']);
+            if (count($result) > 0) {
+            foreach ($result as $row)
+                $arr_result[] = $row->skill_name;
+                echo json_encode($arr_result);
+            }
+        }
+    }
 
     
 } // end class
