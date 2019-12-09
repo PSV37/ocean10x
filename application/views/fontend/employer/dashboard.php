@@ -519,9 +519,9 @@
 					                    </div>
 					                </div> -->
 					                <div class="box-body">
-                        <button type="button" id="addMorePathology" class="btn btn-success">Add More</button>
+                        <button type="button" id="addMoreBranches" class="btn btn-success">Add More</button>
 
-     <table id="PathologyTable" class="table table-bordered table-striped">
+     <table id="BranchTable" class="table table-bordered table-striped">
                           <thead>
                             <tr>
                               <th style="display: none;">No.</th>
@@ -530,6 +530,7 @@
                               <th>State</th>
                               <th>City</th>
                               <th>Pincode</th>
+                              <th>Action</th>
                             </tr>
                           </thead>
 
@@ -879,5 +880,11 @@ $(function() {
 
 
     });
+		</script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#addMoreBranches').click(function(){ 
+				 $('#BranchTable tbody').append("<tr id='Branchtr"+j+"'><td class='hidetd'>"+j+"</td><td><input type='text' name='BranchName"+j+"' id='BranchName"+j+"' required></td><td><select name='BranchCountry"+j+"' id='BranchCountry"+j+"' onchange='getState("+j+");' style='width: 197px;' required></select></td><td ><input type='text'  name='BranchState"+j+"' id='BranchState"+j+"' required ></td><td><input type='text' name='BranchCity"+j+"' id='BranchCity"+j+"' readonly></td><td><input type='text' name='BranchPincode"+j+"' id='BranchPincode"+j+"' readonly></td><td><a href='#' class='removebtn' id='"+j+"' onclick='removePathologyTr(this);'>X</a></td></tr>"); 
+			})
 		</script>
  <?php $this->load->view("fontend/layout/footer.php"); ?>
