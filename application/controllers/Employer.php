@@ -2161,5 +2161,10 @@ public function interview_scheduler()
         echo json_encode($data);
 
     }
+
+    public function add_Corporate_Documents()
+    {
+        $this->load->view('fontend/employer/corporate_documents')
+    }
 } // end class
 

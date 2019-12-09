@@ -146,7 +146,7 @@ $route['employer/add-new-cv']="employer/add_new_cv";
 $route['employer/add-new-consultant']="employer/addconsultant";
 $route['employer/show-all-consultant']="employer/allconsultants";
 
-$route['add-Corporate-Documents']="employer/add-Corporate-Documents";
+$route['add-Corporate-Documents']="employer/add_Corporate_Documents";
 $route['employer/show-all-consultant']="employer/allconsultants";
 
 

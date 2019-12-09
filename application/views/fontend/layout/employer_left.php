@@ -17,7 +17,7 @@
      <li> <a href="<?php echo base_url() ?>employer/show-all-consultant" class=""><i class="fa fa-user" aria-hidden="true"></i>All Consultants</a></li> 	
      <li> <a href="<?php echo base_url() ?>employer/add-new-cv" class=""><i class="fa fa-plus" aria-hidden="true"></i> Add New CV</a></li> 
      <li> <a href="<?php echo base_url() ?>employer/corporate-cv-bank" class=""><i class="fa fa-file-text" aria-hidden="true"></i> CV Bank</a></li> 
-     <li> <a href="<?php echo base_url() ?>add-Corporate-Documents" class=""><i class="fas fa-file" aria-hidden="true"></i> Add Corporate Documents</a></li> 
+     <li> <a href="<?php echo base_url() ?>add-Corporate-Documents" class=""><i class="fa fa-file" aria-hidden="true"></i> Add Corporate Documents</a></li> 
   	
     </ul>
   </nav>
