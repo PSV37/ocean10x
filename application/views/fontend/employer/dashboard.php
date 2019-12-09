@@ -889,14 +889,13 @@ $(function() {
 			$(document).ready(function(){
 				 var j=1;  
 				$('#addMoreBranches').click(function(){ 
-				 $('#BranchTable tbody').append("<tr id='Branchtr"+j+"'><td class='hidden'>"+j+"</td><td><input type='text' class='form-control' name='BranchName"+j+"' id='BranchName"+j+"' required></td><td><select name='BranchCountry"+j+"' id='BranchCountry"+j+"'  class='form-control' onchange='getState("+j+");' required>											<?php foreach($country as $key){?>
-											<option value='<?php echo $key['country_id']; ?>'><?php echo $key['country_name']; ?></option><?php } ?></select></td><td ><select type='text' class='form-control'  name='BranchState"+j+"' id='BranchState"+j+"' required ></select></td><td><select type='text' class='form-control' name='BranchCity"+j+"' id='BranchCity"+j+"' readonly></select></td><td><input type='text' class='form-control' name='BranchPincode"+j+"' id='BranchPincode"+j+"' readonly></td><td><a href='#' class='removebtn' id='"+j+"' onclick='removePathologyTr(this);'>X</a></td></tr>"); 
+				 $('#BranchTable tbody').append("<tr id='Branchtr"+j+"'><td class='hidden'>"+j+"</td><td><input type='text' class='form-control' name='BranchName"+j+"' id='BranchName"+j+"' required></td><td><select name='BranchCountry"+j+"' id='BranchCountry"+j+"'  class='form-control' onchange='getState("+j+");' required><option value=''>Select Country</option><?php foreach($country as $key){?><option value='<?php echo $key['country_id']; ?>'><?php echo $key['country_name']; ?></option><?php } ?></select></td><td ><select type='text' class='form-control'  name='BranchState"+j+"' id='BranchState"+j+"' onchange='getCity("+j+");' required ></select></td><td><select type='text' class='form-control' name='BranchCity"+j+"' id='BranchCity"+j+"' required></select></td><td><input type='text' class='form-control' name='BranchPincode"+j+"' id='BranchPincode"+j+"' required></td><td><a href='#' class='removebtn' id='"+j+"' onclick='removeBranchTr(this);'>X</a></td></tr>"); 
 			})
 			});
 function getState(id)
 {
 	var country_id=document.getElementById("BranchCountry"+id).value;
-	alert(country_id);
+	// alert(country_id);
 	 $.ajax({
                 type:'POST',
                 url:'<?php echo base_url();?>Employer/getstate',
@@ -906,6 +905,25 @@ function getState(id)
                 }
 				
             }); 
+}
+function getCity(id)
+{
+	var state_id=document.getElementById('BranchState'+id).value;
+	// alert(state_id);
+	$.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Employer/getcity',
+                data:{id:state_id},
+                success:function(res){
+                    $('#BranchCity'+id).html(res);
+                }
+				
+            }); 
+}
+function removeBranchTr(id) // to remove row of pathology charges table
+{
+  // alert(id1.id);
+  $("#Branchtr"+id.id).remove();
 }
 		</script>
 
