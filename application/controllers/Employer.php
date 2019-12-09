@@ -87,9 +87,12 @@ class Employer extends MY_Employer_Controller
             }
 
             if(!empty($employer_id)) {
-                $this->company_profile_model->update($company_profile, $employer_id);
-                $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Company Profile details have been successfully updated !</div>');
-                 redirect('employer/profile-setting');
+                $branchadd=$this->input->post('Branchname');
+                print_r($branchadd);
+
+                // $this->company_profile_model->update($company_profile, $employer_id);
+                // $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Company Profile details have been successfully updated !</div>');
+                //  redirect('employer/profile-setting');
             }
 
             } else {

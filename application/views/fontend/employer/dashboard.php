@@ -525,11 +525,11 @@
                   </div>
               </div>
 		</div>			
-		 <input type="hidden" name="pathologyDateData" id="pathologyDateData">
-                      <input type="text" name="pathologyTestData" id="pathologyTestData">
-                      <input type="hidden" name="pathologyAmountData" id="pathologyAmountData">
-                      <input type="hidden" name="pathologyTotalData" id="pathologyTotalData">
-                      <input type="hidden" name="pathologyWordTotalData" id="pathologyWordTotalData">	
+		 <input type="hidden" name="Branchname" id="Branchname">
+                      <input type="hidden" name="BranchCountry" id="BranchCountry">
+                      <input type="hidden" name="Branchstate" id="Branchstate">
+                      <input type="hidden" name="BranchCity" id="BranchCity">
+                      <input type="hidden" name="Branchpincode" id="Branchpincode">	
 									
                                     <!-- end row -->
                                     <div class="panel-body"></div>
@@ -929,20 +929,26 @@ var tableLength=$("#BranchTable tbody tr").length;
      
       branchadd.push(document.getElementById('BranchName'+oCells[0].firstChild.data).value);
       var bcountry=document.getElementById('BranchCountry'+oCells[0].firstChild.data);
-      branchcountry.push(pathTest.options[BranchCountry.selectedIndex].text);
+      branchcountry.push(pathTest.options[bcountry.selectedIndex].text);
+ 	var bstate=document.getElementById('BranchState'+oCells[0].firstChild.data);
+      branchstate.push(pathTest.options[bstate.selectedIndex].text);
+	 var bcity=document.getElementById('BranchCity'+oCells[0].firstChild.data);
+      branchcity.push(pathTest.options[bcity.selectedIndex].text);
+      branchpincode.push(document.getElementById('BranchName'+oCells[0].firstChild.data).value);
 
-      // var pathTest=document.getElementById('PathTest'+oCells[0].firstChild.data);
 
-      alert(branchcountry);
+     
 
   
      
     }
        // alert(oCells[0].firstChild.data);
      
-     document.getElementById("pathologyDateData").value=branchadd;
-     // document.getElementById("pathologyTestData").value=pathologyTestName;
-     // document.getElementById("pathologyAmountData").value=pathologyAmount;
+     document.getElementById("Branchname").value=branchadd;
+     document.getElementById("BranchCountry").value=branchcountry;
+     document.getElementById("Branchstate").value=branchstate;
+     document.getElementById("BranchCity").value=branchcity;
+     document.getElementById("Branchpincode").value=branchpincode;
 
 }
 		</script>
