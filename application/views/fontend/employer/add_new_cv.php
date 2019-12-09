@@ -135,7 +135,7 @@
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Skills</label>
-	                 	<input type="text" name="candidate_skills" id="tokenfield" class="form-control skill">
+	                 	<input type="text" name="candidate_skills" id="tokenfield" class="form-control skill" value=""> 
 					</div>
 				</div>
 				<div class="col-md-6">
