@@ -893,5 +893,11 @@ $(function() {
 											<option value='<?php echo $key['country_id']; ?>'><?php echo $key['country_name']; ?></option><?php } ?></select></td><td ><input type='text' class='form-control'  name='BranchState"+j+"' id='BranchState"+j+"' required ></td><td><input type='text' class='form-control' name='BranchCity"+j+"' id='BranchCity"+j+"' readonly></td><td><input type='text' class='form-control' name='BranchPincode"+j+"' id='BranchPincode"+j+"' readonly></td><td><a href='#' class='removebtn' id='"+j+"' onclick='removePathologyTr(this);'>X</a></td></tr>"); 
 			})
 			});
+function getStates(id)
+{
+	var country_id=document.getElementById("BranchCountry"+id).value;
+	alert(country_id);
+}
 		</script>
+
  <?php $this->load->view("fontend/layout/footer.php"); ?>
