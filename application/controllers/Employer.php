@@ -2211,6 +2211,16 @@ public function interview_scheduler()
                  
             }
         }
+         public function delete_document($id) {
+        
+        $status = array(
+            'status'=>1,
+        );
+        $where_del['document_id']=$id;
+        $this->Master_model->master_update($status,'corporate_documents',$where_del);
+                redirect('employer/add_Corporate_Documents');
+          
+    }
         
 // to get skill master for autocomplete
     function get_skills_autocomplete(){

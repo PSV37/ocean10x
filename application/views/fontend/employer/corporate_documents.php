@@ -98,6 +98,8 @@
 			 <button type="submit" id="submitdocs" class="btn bg-navy" type="submit">submit</button>
 			
                 </form>
+                 <div class="col-md-12 col-sm-12 col-xs-12">
+                 </div>
                 <table class="table table-bordered table-striped" id="dataTables-example">
               <thead>
                 <tr>
@@ -120,7 +122,7 @@
                       } echo $row['document_type']; ?></td>
                       
                       <td><div class="formrow">
-                                            <a src="<?php echo base_url(); ?>upload/corporate_documents/<?php 
+                                            <a style="text-decoration: none;" href="<?php echo base_url(); ?>upload/corporate_documents/<?php 
                                                  if(!empty($row['document'])){
                                                     echo $row['document'];
                                                  } 
@@ -133,8 +135,8 @@
                                             
                       
                       <td>
-                          <?php echo btn_edit('employer/edit_questionbank/' . $ct_row['ques_id']); ?>
-                          <?php echo btn_delete('employer/delete_questionbank/' . $ct_row['ques_id']); ?>
+                          
+                          <?php echo btn_delete('employer/delete_document/' . $row['document_id']); ?>
                       </td>
                   </tr>
                   <?php
