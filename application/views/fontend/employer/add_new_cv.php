@@ -317,7 +317,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                    // $('#tokenfield').tokenfield();
                    	$('#tokenfield').val(skill);
                    	$('#tokenfield').tokenfield('enable');
-                   	$('#tokenfield').tokenfield('setTokens', 'blue,red,white');
+                   	$('#tokenfield').tokenfield('setTokens', skill);
 
                    //	$('#tokenfield').data('bs.tokenfield').$input.autocomplete({source: new_array})
 
