@@ -284,14 +284,15 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                dataType: "JSON",  
                success: function(data)
                {
-                 // console.log(data);
+                 console.log(data);
                  $.each(data, function(index, value) 
                   {
+                  	//var cars = new Array();
                     // console.log(value);
                     var edu_level = value.education_level_id;
-                    console.log(edu_level);
-                    var cars = new Array(edu_level);
- console.log(cars);
+                    //console.log(edu_level);
+ //                    var cars = new Array(edu_level);
+ // console.log(cars);
                     // var l;
      //                var min = Infinity, name;
      					// for(l=0;l<sizeof(edu_level);l++){
