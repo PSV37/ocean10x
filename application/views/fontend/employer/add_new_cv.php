@@ -284,10 +284,10 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                dataType: "JSON",  
                success: function(data)
                {
-                 console.log(data);
+                 // console.log(data);
                  $.each(data, function(index, value) 
                   {
-                    // console.log(value);
+                    console.log(value);
                     var edu_level = value.education_level_id;
                    
                     $('#top_education').val(value.education_level_name);
