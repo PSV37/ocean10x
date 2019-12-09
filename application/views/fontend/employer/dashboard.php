@@ -917,7 +917,7 @@ function saveBranches()
 
 var tableLength=$("#BranchTable tbody tr").length;
 
-    // alert(tableLength);
+    alert(tableLength);
     var branchadd=[];
     var branchcountry=[];
     var branchstate=[];
