@@ -301,8 +301,13 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                  // console.log(data);
                  $.each(data, function(index, value) 
                   {
-                    console.log(value);
+                    
                     //var edu_level = value.skills;
+                    for(var l=0; l<value.length; l++)
+                    {
+                    	
+                    	console.log(value[l]['skills']);
+                    }
                    
                     $('#tokenfield').val(value.skills);
                     
