@@ -103,18 +103,11 @@
 
           </div>
         </div>
-        <!-- end post-padding --> 
-      </div>
-      <?php $count=1; if ($documents) {?>
-
-	
-      
-           
-            <table class="table table-bordered table-striped" id="dataTables-example">
+        <table class="table table-bordered table-striped" id="dataTables-example">
               <thead>
                 <tr>
                   <th class="active">Sr No</th>
-                  <th class="active">document_type</th>
+                  <th class="active">document type</th>
                   <th class="active">document</th>
                  
                   <th class="active col-sm-2">Action</th>
@@ -151,12 +144,20 @@
                     endif; ?>
               </tbody>
           </table>
+        <!-- end post-padding --> 
+      </div>
+      
+
+	
+      
+           
+            
 
 
 
     
 
-<?php } ?>
+
       <!-- end col --> 
     </div>
 
