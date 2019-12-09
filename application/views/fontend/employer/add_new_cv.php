@@ -309,7 +309,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                     	if(l==0){
 							skill=skill+arr;
 						 }else{
-							skill=skill+' '+arr;
+							skill=skill+','+arr;
 						 }
                     }
                    console.log(skill);
@@ -317,6 +317,8 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                    // $('#tokenfield').tokenfield();
                    	$('#tokenfield').val(skill);
                    	$('#tokenfield').tokenfield('enable');
+                   	$('#tokenfield').tokenfield('setTokens', 'blue,red,white');
+
                    //	$('#tokenfield').data('bs.tokenfield').$input.autocomplete({source: new_array})
 
                } 
