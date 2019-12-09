@@ -287,21 +287,15 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                  // console.log(data);
                  $.each(data, function(index, value) 
                   {
-                    console.log(value);
+                    // console.log(value);
+                    var edu_level = value.education_level_id;
+                    console.log(edu_level);
+                 	var a = Math.min.apply(null, edu_level) // 1
+                 	console.log(a);
 
-                     
-                     // $('#country_code').val(value.desired_industry);
-                     // $('#company_phone').val(value.immediate_join);
-                     // $('#country_id').val(value.serving_notice_period);
-                     // $('#state_id').val(value.state_id);
-                     // $('#city_id').val(value.city_id);
-                     // $('#company_pincode').val(value.company_pincode);
-                     // $('#comp_gst_no').val(value.comp_gstn_no);
-                     // $('#comp_pan_no').val(value.comp_pan_no);
-                     // $('#company_profile_id').val(value.company_profile_id);
+                    $('#top_education').val(value.education_level_name);
+                    $('#education_specialization').val(value.education_specialization);
                     
-
-
                   });
                } 
         });
