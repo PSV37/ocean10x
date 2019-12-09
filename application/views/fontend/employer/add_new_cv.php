@@ -126,12 +126,12 @@
 	                 	<input type="text" name="top_education" id="top_education" class="form-control">
 					</div>
 				</div>
-				<div class="col-md-6">
+				<!-- <div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Education Specialization</label>
 	                 	<input type="text" name="education_specialization" id="education_specialization" class="form-control">
 					</div>
-				</div>
+				</div> -->
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Skills</label>
@@ -287,32 +287,11 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                  console.log(data);
                  $.each(data, function(index, value) 
                   {
-                  	//var cars = new Array();
                     // console.log(value);
                     var edu_level = value.education_level_id;
-                    //console.log(edu_level);
- //                    var cars = new Array(edu_level);
- // console.log(cars);
-                    // var l;
-     //                var min = Infinity, name;
-     					// for(l=0;l<sizeof(edu_level);l++){
-     					// 	console.log(edu_level[l]);
-     					// 	console.log(value.education_specialization[l]);
-
-     					// }
-     //                for(var x in edu_level) {
-					//     if( edu_level[x] < min) {
-					//         min = edu_level[x];
-					//         name = x;
-					//     } 
-					// }
-     //             //	var a = Math.min.apply(null, edu_level) // 1
-     //             	//console.log(a);
-     //             	console.log ( 'property name is ' + name + ' and value is ' + min );
-
-
+                   
                     $('#top_education').val(value.education_level_name);
-                    $('#education_specialization').val(value.education_specialization);
+                    // $('#education_specialization').val(value.education_specialization);
                     
                   });
                } 
