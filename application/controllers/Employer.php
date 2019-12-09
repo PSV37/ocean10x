@@ -2190,6 +2190,7 @@ public function interview_scheduler()
                  $file_name       = $img['file_name'];
                  print_r($file_name);
             }
+        }
     }
 } // end class
 
