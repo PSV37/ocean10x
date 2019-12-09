@@ -303,6 +303,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                   {
                     
                     //var edu_level = value.skills;
+                    console.log(data.length);
                     for(var l=0; l<data.length; l++)
                     {
                     	
