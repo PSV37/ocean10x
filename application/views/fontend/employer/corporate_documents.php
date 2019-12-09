@@ -86,7 +86,7 @@
                         <div class="col-md-6">
                             <div class="form-group">                                       
 							   <label for="exampleInputEmail1">Attach Document<span class="required">*</span></label>
-                                <input type="file" name="corporate_pan">
+                                <input type="file" name="corporate_doc">
 								
 								</div>
                         </div>
