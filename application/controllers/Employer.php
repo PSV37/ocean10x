@@ -89,8 +89,13 @@ class Employer extends MY_Employer_Controller
             if(!empty($employer_id)) {
                 $response['branchadd']=$this->input->post('Branchname');
                 $response['BranchCountry']=$this->input->post('BranchCountry');
+                $response['Branchstate']=$this->input->post('Branchstate');
+                $response['BranchCountry']=$this->input->post('BranchCountry');
+                $response['BranchCity']=$this->input->post('BranchCity');
+                $response['Branchpincode']=$this->input->post('Branchpincode');
                 print_r($response);
-                echo "string";
+                print_r(sizeof($response['branchadd']));
+               
 
                 // $this->company_profile_model->update($company_profile, $employer_id);
                 // $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Company Profile details have been successfully updated !</div>');
