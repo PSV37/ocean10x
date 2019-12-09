@@ -112,7 +112,7 @@
                 <?php $key = 1; if (!empty($documents)): foreach ($documents as $row) : ?>
                     <tr>
                       <td><?php echo $key ?></td>
-                      <td><?php if $row['document_type']=='Incorporation' {
+                      <td><?php if( $row['document_type']=='Incorporation') {
                       	echo "Certificate of Incorporation";
                       }elseif ($row['document_type']=='Add_proof') {
                       	echo "Office Address Proof ";
@@ -124,7 +124,7 @@
                                                  if(!empty($row['document'])){
                                                     echo $row['document'];
                                                  } 
-                                            ?>"><?php if $row['document_type']=='Incorporation' {
+                                            ?>"><?php if ($row['document_type']=='Incorporation') {
                       	echo "Certificate of Incorporation";
                       }elseif ($row['document_type']=='Add_proof') {
                       	echo "Office Address Proof ";
