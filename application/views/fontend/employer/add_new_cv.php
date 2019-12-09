@@ -314,8 +314,10 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                     }
                    console.log(skill);
                   
-                   $('#tokenfield').tokenfield();
+                   // $('#tokenfield').tokenfield();
                    	$('#tokenfield').val(skill);
+                   	$('#tokenfield').tokenfield('enable');
+
                } 
         });
 	}
