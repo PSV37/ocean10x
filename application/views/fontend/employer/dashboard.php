@@ -912,11 +912,12 @@ function removeBranchTr(id) // to remove row of pathology charges table
 
 function saveBranches()
 {
+
 	var branchTable = document.getElementById('BranchTable');
 
 var tableLength=$("#BranchTable tbody tr").length;
 
-    // var total=0;
+    alert(tableLength);
     var branchadd=[];
     var branchcountry=[];
     var branchstate=[];
@@ -929,16 +930,20 @@ var tableLength=$("#BranchTable tbody tr").length;
      
       branchadd.push(document.getElementById('BranchName'+oCells[0].firstChild.data).value);
       var bcountry=document.getElementById('BranchCountry'+oCells[0].firstChild.data);
-      branchcountry.push(bcountry.options[bcountry.selectedIndex].text);
- 	var bstate=document.getElementById('BranchState'+oCells[0].firstChild.data);
-      branchstate.push(bstate.options[bstate.selectedIndex].text);
-	 var bcity=document.getElementById('BranchCity'+oCells[0].firstChild.data);
-      branchcity.push(pathTest.options[bcity.selectedIndex].text);
-      branchpincode.push(document.getElementById('BranchName'+oCells[0].firstChild.data).value);
+  //     branchcountry.push(bcountry.options[bcountry.selectedIndex].text);
+ 	// var bstate=document.getElementById('BranchState'+oCells[0].firstChild.data);
+  //     branchstate.push(bstate.options[bstate.selectedIndex].text);
+	 // var bcity=document.getElementById('BranchCity'+oCells[0].firstChild.data);
+  //     branchcity.push(pathTest.options[bcity.selectedIndex].text);
+  //     branchpincode.push(document.getElementById('BranchName'+oCells[0].firstChild.data).value);
 
 
-     
-
+      alert(oCells[0].firstChild.data);
+alert(branchadd);
+alert(branchcountry);
+alert(branchstate);
+alert(branchcity);
+alert(branchpincode);
   
      
     }
