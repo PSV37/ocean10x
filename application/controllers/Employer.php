@@ -87,8 +87,8 @@ class Employer extends MY_Employer_Controller
             }
 
             if(!empty($employer_id)) {
-                $branchadd=$this->input->post('Branchname');
-                print_r($branchadd);
+                $response['branchadd']=$this->input->post('Branchname');
+                print_r($response);
                 echo "string";
 
                 // $this->company_profile_model->update($company_profile, $employer_id);
