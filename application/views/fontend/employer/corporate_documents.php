@@ -100,7 +100,7 @@
                 </form>
                  <div class="col-md-12 col-sm-12 col-xs-12">
                  </div>
-                <table class="table table-bordered table-striped" id="dataTables-example" style="padding-top: 20px;">
+                <table class="table table-bordered table-striped" id="dataTables-example" style="margin-top: 15x">
               <thead>
                 <tr>
                   <th class="active">Sr No</th>
