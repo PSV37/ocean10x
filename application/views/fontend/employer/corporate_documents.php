@@ -46,7 +46,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-6">
-        <h1 class="page-heading">Add corporate Documents>
+        <h1 class="page-heading">Add corporate Documents</h1>
       </div>
       <div class="col-md-6 col-sm-6">
         <div class="breadCrumb"><a href="#.">Home</a> / <span>Add corporate Documents</span></div>
@@ -73,14 +73,19 @@
 					<div class="container-fluid">
                         <div class="col-md-6">
                             <div class="form-group">                                       
-							   <label for="exampleInputEmail1">Corporate Name (as in Regd. Docs) <span class="required">*</span></label>
-                                <input type="file" name="Corporate_name">
+							   <label for="exampleInputEmail1">Document Type<span class="required">*</span></label>
+                               <select>
+                               	<option>Corporate Name (as in Regd. Docs)</option>
+                               	<option>PAN</option>
+                               	<option>GSTIN</option>
+                               	<option>Office Address Proof</option>
+                               </select>
 								
-								</div>
+							</div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">                                       
-							   <label for="exampleInputEmail1">PAN<span class="required">*</span></label>
+							   <label for="exampleInputEmail1">Attach Document<span class="required">*</span></label>
                                 <input type="file" name="corporate_pan">
 								
 								</div>
@@ -91,29 +96,12 @@
 				</div>
 			</div>
 			<div class="row">
-
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                   <div class="box-body">
-					<div class="container-fluid">
-                        <div class="col-md-6">
-                            <div class="form-group">                                       
-							   <label for="exampleInputEmail1">GSTIN<span class="required">*</span></label>
-                                <input type="file" name="GSTIN">
-								
-								</div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">                                       
-							   <label for="exampleInputEmail1">Office Address Proof <span class="required">*</span></label>
-                                <input type="file" name="corporate_address_proof">
-								
-								</div>
-                        </div>
 
-                    </div>
-				  </div>
-				</div>
+				<button type="submit">Add</button>
 			</div>
+			</div>
+			
                 </form>
 
 
