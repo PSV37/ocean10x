@@ -2178,8 +2178,8 @@ public function interview_scheduler()
             $config['allowed_types'] =   'gif|jpg|jpeg|png|pdf|doc|docx|odt|xlsm|xls|xlm|xla|xlsx|bmp|docm|dotx|dotm|docb|gif';;
             $config['encrypt_name']  = true;
            
-            $config['max_width']     = 300;
-            $config['max_height']    = 300;
+            
+             $config['max_size']      = 1000;
 
             $this->load->library('upload', $config);
 
