@@ -90,6 +90,30 @@
 				  </div>
 				</div>
 			</div>
+			<div class="row">
+
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                   <div class="box-body">
+					<div class="container-fluid">
+                        <div class="col-md-6">
+                            <div class="form-group">                                       
+							   <label for="exampleInputEmail1">GSTIN<span class="required">*</span></label>
+                                <input type="file" name="GSTIN">
+								
+								</div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">                                       
+							   <label for="exampleInputEmail1">Office Address Proof <span class="required">*</span></label>
+                                <input type="file" name="corporate_address_proof">
+								
+								</div>
+                        </div>
+
+                    </div>
+				  </div>
+				</div>
+			</div>
                 </form>
 
 
