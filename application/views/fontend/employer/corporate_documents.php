@@ -62,7 +62,7 @@
       <?php $this->load->view('fontend/layout/employer_left.php'); ?>
       <div class="content col-md-9">
         <div class="userccount empdash">
-          <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
+          <div class="formpanel"> <?php echo $this->session->flashdata('msg'); ?>
            
     		<form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>employer/savedocumets" method="post">
 

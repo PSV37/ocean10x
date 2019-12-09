@@ -2182,7 +2182,7 @@ public function interview_scheduler()
             if (!$this->upload->do_upload('corporate_doc')) {
                 $error = array('error' => $this->upload->display_errors());
                 $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">Please upload a valid logo,  max  size 300*300 and  file size limit to 1MB</div>');
-                redirect('admin/company/save_company');
+                redirect('employer/add_Corporate_Documents');
             }
             else
             {
