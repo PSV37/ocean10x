@@ -2169,7 +2169,7 @@ public function interview_scheduler()
 
     public function savedocumets()
     {
-        if ($_POST) {
+        
             $config['upload_path']   = 'upload/corporate_documents/';
             $config['allowed_types'] =   'gif|jpg|jpeg|png|pdf|doc|docx|odt|xlsm|xls|xlm|xla|xlsx|bmp|docm|dotx|dotm|docb|gif';;
             $config['encrypt_name']  = true;
@@ -2191,9 +2191,7 @@ public function interview_scheduler()
                  print_r($file_name);
             }
         }
-        else{
-            echo "string";
-        }
+        
 
     }
 } // end class
