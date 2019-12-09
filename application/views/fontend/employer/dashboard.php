@@ -947,7 +947,7 @@ var tableLength=$("#BranchTable tbody tr").length;
        // alert(oCells[0].firstChild.data);
 alert(branchadd);
 alert(branchcountries);
-alert(branchstates);
+alert(branchstatesdata);
 alert(branchcitiedata);
 alert(branchpincodeData);
 
