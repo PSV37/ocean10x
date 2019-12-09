@@ -100,7 +100,7 @@
                 </form>
                  <div class="col-md-12 col-sm-12 col-xs-12">
                  </div>
-                <table class="table table-bordered table-striped" id="dataTables-example">
+                <table class="table table-bordered table-striped" id="dataTables-example" style="padding-top: 20px;">
               <thead>
                 <tr>
                   <th class="active">Sr No</th>
@@ -122,11 +122,11 @@
                       } echo $row['document_type']; ?></td>
                       
                       <td><div class="formrow">
-                                            <a style="text-decoration: none;" href="<?php echo base_url(); ?>upload/corporate_documents/<?php 
+                                            <a target="_blank" download="proposed_file_name" style="text-decoration: none;" href="<?php echo base_url(); ?>upload/corporate_documents/<?php 
                                                  if(!empty($row['document'])){
                                                     echo $row['document'];
                                                  } 
-                                            ?>"><?php if ($row['document_type']=='Incorporation') {
+                                            ?>">  <?php if ($row['document_type']=='Incorporation') {
                       	echo "Certificate of Incorporation";
                       }elseif ($row['document_type']=='Add_proof') {
                       	echo "Office Address Proof ";
