@@ -227,6 +227,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                  // alert(b.item.value);
               $(this).val(b.item.value); //grabed the selected value
               get_candidate_info(b.item.value);
+              get_cand_other_info(b.item.value);
 
             }
         });
@@ -270,8 +271,41 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                   });
                } 
         });
-    // savecompanymapping(value.company_profile_id);
-}
+	}
+
+	function get_cand_other_info(email){
+
+    	$.ajax({
+              url:'<?php echo site_url('employer/get_cand_other_info_by_email') ?>',
+              type:'POST',
+              data:{
+                    email:email
+              },
+               dataType: "JSON",  
+               success: function(data)
+               {
+                 // console.log(data);
+                 $.each(data, function(index, value) 
+                  {
+                    console.log(value);
+
+                     
+                     // $('#country_code').val(value.desired_industry);
+                     // $('#company_phone').val(value.immediate_join);
+                     // $('#country_id').val(value.serving_notice_period);
+                     // $('#state_id').val(value.state_id);
+                     // $('#city_id').val(value.city_id);
+                     // $('#company_pincode').val(value.company_pincode);
+                     // $('#comp_gst_no').val(value.comp_gstn_no);
+                     // $('#comp_pan_no').val(value.comp_pan_no);
+                     // $('#company_profile_id').val(value.company_profile_id);
+                    
+
+
+                  });
+               } 
+        });
+	}
 
 </script>
 <?php $this->load->view("fontend/layout/footer.php"); ?>

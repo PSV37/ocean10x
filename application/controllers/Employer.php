@@ -2119,5 +2119,23 @@ public function interview_scheduler()
         echo json_encode($result);
 
     }
+    
+    function get_cand_other_info_by_email()
+    {
+       
+        $email_id =$this->input->post('email');
+        $where1 = "js_info.email = '$email_id'";
+        $join = array( 
+            // "js_career_info"=>"js_career_info.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
+            "js_education"=>"js_education.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
+        );
+      
+        $select ="js_education.education_level_id,js_education.specialization_id,js_education.education_level_id,";
+
+        $result = $this->Master_model->getMaster('js_info', $where1, $join, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
+        
+        echo json_encode($result);
+
+    }
 } // end class
 
