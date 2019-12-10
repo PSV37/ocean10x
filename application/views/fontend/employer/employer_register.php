@@ -41,7 +41,7 @@
                                                 <select name="company_type" id="company_type" class="form-control" >
                                                     <option value="">Select Type</option> 
                                                     <option value="Company"<?php echo (isset(set_value('company_name'))?set_value('company_name')); ?>>Company</option> 
-                                                    <option value="HR Consultant"<?php echo (set_value('company_name')?set_value('company_name'):''); ?>>HR Consultant</option> 
+                                                    <option value="HR Consultant"<?php echo (isset(set_value('company_name'))?set_value('company_name')); ?>>HR Consultant</option> 
                                                 </select>
                                                
                                             </div>
