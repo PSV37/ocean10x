@@ -75,7 +75,7 @@
                                               <select  name="company_category" id="company_category" class="form-control services">
                                                 <option value="">Company Services</option>
                                                 <?php foreach($job_category as $dept){?>
-                                                <option value="<?php echo $dept['job_category_id']; ?>"<?php echo set_select('company_category', $dept['job_category_id'], False); ?>><?php echo $dept['job_category_name']; ?></option>
+                                                <option value="<?php echo $dept['job_category_id']; ?>"<?php echo set_select('company_category', $dept['job_category_id'], TRUE); ?>><?php echo $dept['job_category_name']; ?></option>
                                                 <?php } ?>
                                               </select> </div>
                                           </div><!-- end row -->
