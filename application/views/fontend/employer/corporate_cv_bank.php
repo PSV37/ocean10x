@@ -48,16 +48,14 @@
                 </tr>
               </thead>
               <tbody>
-                <?php 
-                  print_r($cv_bank_data);
-                 ?>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
+                <?php $key = 1; if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) : ?>
+                  <tr>
+                      <td><?php echo $key ?></td>
+                      <td><?php echo $cv_row['js_name']; ?></td>
+                      <td><?php echo $cv_row['js_email']; ?></td>
+                      <td><?php echo $cv_row['js_mobile']; ?></td>
+                      <td><?php echo $cv_row['js_working_since']; ?></td>
+                      <td><?php echo $cv_row['js_current_ctc']; ?></td>
                       <td></td>
                       <td></td>
                       <td></td>
