@@ -98,7 +98,7 @@ class Employer extends MY_Employer_Controller
                 
 
                 // print_r($response);
-                 $size=sizeof($this->input->post('Branchname'));
+                 $size=sizeof($response['branch_address']);
                  print_r($size);
 
                 //  $result=$this->Master_model->master_insert($response,'company_branches');
