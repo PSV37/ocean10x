@@ -378,6 +378,13 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 	});
 
 </script>
+ <script>
+	$(document).ready (function(){
+		$(".formpanel").fadeTo(2000, 500).slideUp(500, function(){
+		$(".formpanel").slideUp(500);
+		});   
+	});
+ </script>
 <?php $this->load->view("fontend/layout/footer.php"); ?>
 
 
