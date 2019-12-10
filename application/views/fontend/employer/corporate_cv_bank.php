@@ -48,6 +48,9 @@
                 </tr>
               </thead>
               <tbody>
+                <?php 
+                  print_r($cv_bank_data);
+                 ?>
                     <tr>
                       <td></td>
                       <td></td>
