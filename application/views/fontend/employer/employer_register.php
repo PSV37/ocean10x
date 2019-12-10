@@ -141,7 +141,7 @@
                                         <div class="captchacode">Captcha is cause sensitive</div>
                                 		<div class="row">
                                             <div class="col-md-6 col-sm-12">
-                                                <input type="text" id="inputchapcha" required name="captcha" value="<?php echo set_value('captcha'); ?>" class="form-control" placeholder="Captcha Code">
+                                                <input type="text" id="inputchapcha" required name="captcha" value="" class="form-control" placeholder="Captcha Code">
                                             </div>
                                             <div class="col-md-4 col-sm-4"><p id="captImg"><?php echo $captcha_images; ?></p>
                                             <a href="javascript:void(0);" class="refreshCaptcha" ><img src="<?php echo base_url().'fontend/images/refresh-button.png'; ?>"/></a>
@@ -330,10 +330,10 @@
 // 	} );
 </script>
 <script>
-$("#company_category").select2( {
-	placeholder: "Select Industry",
-	allowClear: true
-	} );
+// $("#company_category").select2( {
+// 	placeholder: "Select Industry",
+// 	allowClear: true
+// 	} );
 </script>
 
 
