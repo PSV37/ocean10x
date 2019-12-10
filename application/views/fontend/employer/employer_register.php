@@ -40,8 +40,8 @@
                                             <div class="col-md-6 col-sm-12">
                                                 <select name="company_type" id="company_type" class="form-control" >
                                                     <option value="">Select Type</option> 
-                                                    <option value="Company"<?php echo set_value('company_name') ?>>Company</option> 
-                                                    <option value="HR Consultant"<?php echo (isset(set_value('company_type'))?set_value('company_type')); ?>>HR Consultant</option> 
+                                                    <option value="Company"<?php echo set_value('company_name'); ?>>Company</option> 
+                                                    <option value="HR Consultant"<?php echo set_value('company_type'); ?>>HR Consultant</option> 
                                                 </select>
                                                
                                             </div>
