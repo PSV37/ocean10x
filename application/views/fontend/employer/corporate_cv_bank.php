@@ -41,8 +41,10 @@
                   <th class="active">Name</th>
                   <th class="active">Email</th>
                   <th class="active">Mobile No</th>
-                  <th class="active">Current Location</th>
-                  <th class="active">Last Profile Update Date</th>
+                  <th class="active">Current Work Location</th>
+                  <th class="active">Current Job Role</th>
+                  <!-- <th class="active">Last Profile Update Date</th> -->
+                  <th class="active">Current Notice Period</th>
                   <th class="active">Candidate Uploaded CV </th>
                   <!-- <th class="active">Ocean Generated CV</th> -->
                 </tr>
@@ -57,9 +59,9 @@
                       <td><?php echo $cv_row['js_name']; ?></td>
                       <td><?php echo $cv_row['js_email']; ?></td>
                       <td><?php echo $cv_row['js_mobile']; ?></td>
-                      <td><?php echo $cv_row['js_working_since']; ?></td>
-                      <td><?php echo $cv_row['js_current_ctc']; ?></td>
-                     
+                      <td><?php echo $cv_row['js_current_work_location']; ?></td>
+                      <td><?php echo $cv_row['js_role']; ?></td>
+                      <td><?php echo $cv_row['js_current_notice_period']; ?></td>
                       <td><a href="<?php echo  base_url(); ?>upload/Resumes/<?php if(!empty($resume[0]['resume'])){echo $resume[0]['resume'];} ?>" title='Download Attached Resume' download>Dowunload</a></td>
                       <!-- <td></td> -->
                   </tr>
