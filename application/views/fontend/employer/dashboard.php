@@ -946,11 +946,11 @@ var tableLength=$("#BranchTable tbody tr").length;
      
     }
        // alert(oCells[0].firstChild.data);
-alert(branchadd);
-alert(branchcountries);
-alert(branchstatesdata);
-alert(branchcitiedata);
-alert(branchpincodeData);
+// alert(branchadd);
+// alert(branchcountries);
+// alert(branchstatesdata);
+// alert(branchcitiedata);
+// alert(branchpincodeData);
 
      
      document.getElementById("Branchname").value=branchadd;
