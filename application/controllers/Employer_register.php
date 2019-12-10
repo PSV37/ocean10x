@@ -52,7 +52,7 @@ class Employer_register extends CI_Controller
 
 
         if($_POST){
-           $this->form_validation->set_rules('company_password', 'password', 'required|max_length[15]|min_length[8]|regex_match[/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.[\W]).{8,}$/]');
+           $this->form_validation->set_rules('company_password', 'password', 'required|max_length[15]|min_length[8]|regex_match[/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$]');
            array('required' => 'You must provide a %s.','regex_match' =>'You must provide One Uppercase,One Lowercase,Numbers');
              if ($this->form_validation->run() == FALSE)
             {
