@@ -97,7 +97,8 @@ class Employer extends MY_Employer_Controller
                  
                 
 
-                // print_r($response);
+                print_r($branch_address);
+                echo sizeof($branch_address);
                  
                  $imploded= implode(" ",$branch_address);
                  $size=sizeof($imploded);
