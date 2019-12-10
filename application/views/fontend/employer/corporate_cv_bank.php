@@ -60,6 +60,16 @@
                       <td></td>
                       <td></td>
                   </tr>
+                  <?php
+                      $key++;
+                      endforeach;
+                  ?>
+                  <?php else : ?> 
+                      <td colspan="3">
+                          <strong>There is no record for display</strong>
+                      </td>
+                  <?php
+                    endif; ?>
               </tbody>
           </table>
 
