@@ -105,7 +105,7 @@ class Employer extends MY_Employer_Controller
                 $branchpincodedata=explode(",",$pincode);
                 $size=sizeof($branchadddata);
                 for ($i=0; $i <$size ; $i++) { 
-                    print_r($branchadddata[$i];);
+                    // print_r($branchadddata[$i]);
                     $response['branch_address']=$branchadddata[$i];
                     $response['country']=$branchcountrydata[$i];
                     $response['state']=$branchstatedata[$i];
