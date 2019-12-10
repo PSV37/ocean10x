@@ -52,7 +52,14 @@ class Employer_register extends CI_Controller
 
 
         if($_POST){
-            $this->form_validation->set_rules('company_password', 'password', 'required|min_length[8]|alpha_numeric|callback_password_check');
+            $this->form_validation->set_rules('company_password', 'password', 'required|min_length[8]|alpha_numeric|regex_match(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}');
+             if ($this->form_validation->run() == FALSE)
+            {
+                // $data['result'] = $this->Master_model->getMaster('department' ,$select=false);
+               //$this->load->view('organization/add_employee',$data);      
+            }
+            else
+            {
         $company_name    = $this->input->post('company_name');
         $company_slug    = slugify($company_name);
         $company_profile = array(
@@ -143,6 +150,7 @@ $this->session->set_userdata('reg_in', $company_profile );
         } 
        }
     }
+}
 
 
     public function refresh()

@@ -47,7 +47,7 @@
                                             </div>
 
                                             <div class="col-md-6 col-sm-12">
-                                                <input type="text" name="company_name" id="company_name"class="form-control"  value="<?php echo (isset($this->session->userdata['reg_in']['company_name'])?$this->session->userdata['reg_in']['company_name']:''); ?>" placeholder="Company Name" autocomplete="off">
+                                                <input type="text" name="company_name" id="company_name"class="form-control"  value="<?php echo (isset($this->session->userdata['reg_in']['company_name'])?$this->session->userdata['reg_in']['company_name']:''); ?>" placeholder="Company Name" autocomplete="off"><?php echo form_error('password'); ?>
                                             </div>
                                             
                                         </div><!-- end row -->
