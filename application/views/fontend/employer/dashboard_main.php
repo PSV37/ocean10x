@@ -2,7 +2,11 @@
     $this->load->view('fontend/layout/employer_header.php');
 
 
-?>      
+?>   
+<div id="smsg" class="alert alert-alert-dismissible fade in">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong><?php echo $this->session->flashdata('emp_msg');?></strong>
+</div>   
           
 <!-- Page Title start -->
 
@@ -57,5 +61,12 @@
 </div>
   </div>
 </div>
+<script>
+  $(document).ready (function(){
+    $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
+    $("#smsg").slideUp(500);
+    });   
+  });
+ </script>
 
  <?php $this->load->view("fontend/layout/footer.php"); ?>
