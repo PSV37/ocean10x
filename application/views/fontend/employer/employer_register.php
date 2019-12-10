@@ -40,8 +40,8 @@
                                             <div class="col-md-6 col-sm-12">
                                                 <select name="company_type" id="company_type" class="form-control" >
                                                     <option value="">Select Type</option> 
-                                                    <option value="Company"<?php echo set_value('company_name'); ?>>Company</option> 
-                                                    <option value="HR Consultant"<?php echo set_value('company_type'); ?>>HR Consultant</option> 
+                                                    <option value="Company"<?php echo set_select('company_type', 'Company', TRUE); ?>>Company</option> 
+                                                    <option value="HR Consultant"<?php echo set_select('company_type', 'HR Consultant', TRUE); ?>>HR Consultant</option> 
                                                 </select>
                                                
                                             </div>
@@ -141,7 +141,7 @@
                                         <div class="captchacode">Captcha is cause sensitive</div>
                                 		<div class="row">
                                             <div class="col-md-6 col-sm-12">
-                                                <input type="text" id="inputchapcha" required name="captcha" value="<?php echo set_value('company_password'); ?>" class="form-control" placeholder="Captcha Code">
+                                                <input type="text" id="inputchapcha" required name="captcha" value="<?php echo set_value('captcha'); ?>" class="form-control" placeholder="Captcha Code">
                                             </div>
                                             <div class="col-md-4 col-sm-4"><p id="captImg"><?php echo $captcha_images; ?></p>
                                             <a href="javascript:void(0);" class="refreshCaptcha" ><img src="<?php echo base_url().'fontend/images/refresh-button.png'; ?>"/></a>
