@@ -279,7 +279,20 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                     	console.log(value);
 
                     	$('#current_ctc').val(value.js_career_salary);
-                    	$('#working_current_since').val(value.start_date);
+                    	// var sdt = value.start_date;
+                    	var todate1 = new Date(value.start_date);
+                        var d1 = todate1.getDate();
+                        var m1 = todate1.getMonth()+1; 
+                        var y1 = todate1.getFullYear();
+
+                        if(d1 < 10){
+                          d1 = '0'+ d1;
+                        }
+                        if(m1 < 10){
+                          m1 = '0' + m1;
+                        }
+                        var start = d1 + '-' + m1 + '-' + y1;
+                    	$('#working_current_since').val(start);
                     	$('#current_work_location').val(value.address);
                     	$('#current_job_desig').val(value.job_role_title);
 
