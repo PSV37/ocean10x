@@ -40,8 +40,8 @@
                                             <div class="col-md-6 col-sm-12">
                                                 <select name="company_type" id="company_type" class="form-control" >
                                                     <option value="">Select Type</option> 
-                                                    <option value="Company"<?php echo set_value('company_name'); ?>>Company</option> 
-                                                    <option value="HR Consultant"<?php echo set_value('company_type'); ?>>HR Consultant</option> 
+                                                    <option value="Company"<?php echo set_select('company_type', 'Company', TRUE); ?>>Company</option> 
+                                                    <option value="HR Consultant"<?php echo set_select('company_type', 'HR Consultant', TRUE); ?>>HR Consultant</option> 
                                                 </select>
                                                
                                             </div>
@@ -75,7 +75,7 @@
                                               <select  name="company_category" id="company_category" class="form-control services">
                                                 <option value="">Company Services</option>
                                                 <?php foreach($job_category as $dept){?>
-                                                <option value="<?php echo $dept['job_category_id']; ?>"><?php echo $dept['job_category_name']; ?></option>
+                                                <option value="<?php echo $dept['job_category_id']; ?>"<?php echo set_select('company_category', $dept['job_category_id'], TRUE);?>><?php echo $dept['job_category_name']; ?></option>
                                                 <?php } ?>
                                               </select> </div>
                                           </div><!-- end row -->
@@ -102,7 +102,7 @@
                                               <select  name="country_id" id="country_id" class="form-control country" onchange="getStates(this.value)">
                                                 <option value="">Select Country</option>
                                                 <?php foreach($country as $key){?>
-                                                <option value="<?php echo $key['country_id']; ?>"><?php echo $key['country_name']; ?></option>
+                                                <option value="<?php echo $key['country_id']; ?>"<?php echo set_select('country_id', $dept['country_id'], TRUE);?>><?php echo $key['country_name']; ?></option>
                                                 <?php } ?>
                                               </select>
                                             </div>
@@ -141,7 +141,7 @@
                                         <div class="captchacode">Captcha is cause sensitive</div>
                                 		<div class="row">
                                             <div class="col-md-6 col-sm-12">
-                                                <input type="text" id="inputchapcha" required name="captcha" value="<?php echo set_value('company_password'); ?>" class="form-control" placeholder="Captcha Code">
+                                                <input type="text" id="inputchapcha" required name="captcha" value="<?php echo set_value('captcha'); ?>" class="form-control" placeholder="Captcha Code">
                                             </div>
                                             <div class="col-md-4 col-sm-4"><p id="captImg"><?php echo $captcha_images; ?></p>
                                             <a href="javascript:void(0);" class="refreshCaptcha" ><img src="<?php echo base_url().'fontend/images/refresh-button.png'; ?>"/></a>
