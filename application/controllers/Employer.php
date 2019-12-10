@@ -87,7 +87,7 @@ class Employer extends MY_Employer_Controller
             }
 
             if(!empty($employer_id)) {
-                $branch_address[]=$this->input->post('Branchname');
+                $branch_address=$this->input->post('Branchname');
                 $response['country']=$this->input->post('BranchCountry');
                 $response['state']=$this->input->post('Branchstate');
                 $response['city']=$this->input->post('BranchCountry');
@@ -97,8 +97,8 @@ class Employer extends MY_Employer_Controller
                  
                 
 
-                 // print_r($branch_address);
-                 echo implode(" ",$branch_address[0]);
+                 
+                 echo explode(",",$branch_address);
                  // $size=sizeof($branch_address);
                  // print_r($size);
 
