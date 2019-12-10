@@ -514,9 +514,12 @@
                               <th>Action</th>
                             </tr>
                           </thead>
-                          	<?php print_r($branches); ?>
+
                           <tbody>
-                            <!-- <tr></tr> -->
+                            <tr><?php print_r($branches);
+                            echo "string"; ?>
+                            	
+                            </tr>
                           </tbody>
 
                           <tfoot>
