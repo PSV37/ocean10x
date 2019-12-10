@@ -226,8 +226,7 @@
                     },
                     company_password: {
                         required: true,
-                        minlength: 8,
-                        pattern:(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}
+                        minlength: 8
                     },
                     company_service: {
                         required: true,
