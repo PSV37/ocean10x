@@ -44,27 +44,24 @@
                   <th class="active">Current Location</th>
                   <th class="active">Last Profile Update Date</th>
                   <th class="active">Candidate Uploaded CV </th>
-                  <th class="active">Ocean Generated CV</th>
+                  <!-- <th class="active">Ocean Generated CV</th> -->
                 </tr>
               </thead>
               <tbody>
                 <?php $key = 1; if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) : 
-
                   $resume = getUploadedResume($cv_row['js_email']);
-
-                //  print_r($resume);
-                  echo $resume[0]['resume'];
                 ?>
                   <tr>
                       <td><?php echo $key ?></td>
+                      <td></td>
                       <td><?php echo $cv_row['js_name']; ?></td>
                       <td><?php echo $cv_row['js_email']; ?></td>
                       <td><?php echo $cv_row['js_mobile']; ?></td>
                       <td><?php echo $cv_row['js_working_since']; ?></td>
                       <td><?php echo $cv_row['js_current_ctc']; ?></td>
-                      <td></td>
-                      <td><a href="<?php echo  base_url(); ?>upload/Resumes/<?php if(!empty($resume->resume)){echo $resume->resume;} ?>" title='Download Attached Resume' download>Dowunload</a></td>
-                      <td></td>
+                     
+                      <td><a href="<?php echo  base_url(); ?>upload/Resumes/<?php if(!empty($resume[0]['resume'])){echo $resume[0]['resume'];} ?>" title='Download Attached Resume' download>Dowunload</a></td>
+                      <!-- <td></td> -->
                   </tr>
                   <?php
                       $key++;
