@@ -87,7 +87,7 @@ class Employer extends MY_Employer_Controller
             }
 
             if(!empty($employer_id)) {
-                $branch_address=$this->input->post('Branchname');
+                $response['branch_address']=$this->input->post('Branchname');
                 $response['country']=$this->input->post('BranchCountry');
                 $response['state']=$this->input->post('Branchstate');
                 $response['city']=$this->input->post('BranchCountry');
@@ -97,21 +97,13 @@ class Employer extends MY_Employer_Controller
                  
                 
 
-                print_r($branch_address);
-                echo sizeof($branch_address);
-                 
-                 $imploded= implode(" ",$branch_address);
-                 $size=sizeof($imploded);
+                // print_r($response);
+                 $size=sizeof($response['branch_address']);
                  print_r($size);
 
-
-                 // $result=$this->Master_model->master_insert($response,'company_branches');
-               //  for ($i=0; $i <$size ; $i++) { 
-
-               //      $data=array('company_profile_id'=>$employer_id,
-               //          'branch_address'=> $response['branchadd'][$i]);
-               //  }
-               // print_r($data);
+                //  $result=$this->Master_model->master_insert($response,'company_branches');
+                 
+              
 
 
                 // $this->company_profile_model->update($company_profile, $employer_id);
