@@ -604,7 +604,6 @@ function getstate(){
                  // echo $send_to;
                
 
-
                 if ($_POST) {
                     $employer_id  = $this->session->userdata('company_profile_id');
                     $candiate_email  = $this->input->post('candiate_email');
@@ -2107,6 +2106,7 @@ public function interview_scheduler()
         }
     }
 
+    // desired career
     function get_candidate_info_by_email()
     {
        
@@ -2133,7 +2133,6 @@ public function interview_scheduler()
         $join = array( 
             "js_education"=>"js_education.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
         );
-        // $select ="js_education.education_level_id,js_education.specialization_id,js_education.education_level_id,education_level.education_level_name,education_specialization.education_specialization";
         $select ="min(js_education.education_level_id) as edu_high,js_education.job_seeker_id";
         $res = $this->Master_model->getMaster('js_info', $where1, $join, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
 
@@ -2156,7 +2155,6 @@ public function interview_scheduler()
         $join = array( 
             "job_seeker_skills"=>"job_seeker_skills.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
         );
-        // $select ="js_education.education_level_id,js_education.specialization_id,js_education.education_level_id,education_level.education_level_name,education_specialization.education_specialization";
         $select ="job_seeker_skills.skills,job_seeker_skills.js_skill_id";
         $result = $this->Master_model->getMaster('js_info', $where1, $join, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
 
@@ -2235,6 +2233,22 @@ public function interview_scheduler()
         }
     }
 
+    function get_candidate_experiance_by_email()
+    {
+       
+        $email_id =$this->input->post('email');
+        $where1 = "js_info.email = '$email_id' AND end_date IS NULL";
+        $join = array( 
+            "js_experience"=>"js_experience.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
+        );
+      
+        $select ="js_experience.company_profile_id,js_experience.js_career_salary,js_experience.designation_id,js_experience.start_date,js_experience.address";
+
+        $result = $this->Master_model->getMaster('js_experience', $where1, $join, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
+        
+        echo json_encode($result);
+
+    }
     
 } // end class
 
