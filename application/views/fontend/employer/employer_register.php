@@ -40,8 +40,8 @@
                                             <div class="col-md-6 col-sm-12">
                                                 <select name="company_type" id="company_type" class="form-control" >
                                                     <option value="">Select Type</option> 
-                                                    <option value="Company"<?php echo (isset($this->session->userdata['reg_in']['comp_type'])?$this->session->userdata['reg_in']['comp_type']:''); ?>>Company</option> 
-                                                    <option value="HR Consultant"<?php echo (isset($this->session->userdata['reg_in']['comp_type'])?$this->session->userdata['reg_in']['comp_type']:''); ?>>HR Consultant</option> 
+                                                    <option value="Company"<?php echo (isset(set_value('company_name'))?set_value('company_name')); ?>>Company</option> 
+                                                    <option value="HR Consultant"<?php echo (set_value('company_name')?set_value('company_name'):''); ?>>HR Consultant</option> 
                                                 </select>
                                                
                                             </div>
