@@ -207,8 +207,6 @@
 <script type="text/javascript">
 document.getElementsByClassName('form-control').innerHTML+="<br />";
 
-
-
 // $(function() {
 
 //     $('#job_type').multiselect({
@@ -225,10 +223,11 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
           select: function(a,b)
             {
                  // alert(b.item.value);
-              $(this).val(b.item.value); //grabed the selected value
-              get_candidate_info(b.item.value);
-              get_cand_education_info(b.item.value);
-              get_cand_skills_info(b.item.value);
+              	$(this).val(b.item.value); //grabed the selected value
+              	get_candidate_info(b.item.value);
+              	get_cand_education_info(b.item.value);
+              	get_cand_skills_info(b.item.value);
+              	get_cand_experiance_info(b.item.value);
 
             }
         });
@@ -247,7 +246,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                  // console.log(data);
                  $.each(data, function(index, value) 
                   {
-                    console.log(value);
+                    // console.log(value);
 
                      $('#candidate_name').val(value.full_name);
                      $('#job_type').val(value.avaliable);
@@ -263,13 +262,39 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
         });
 	}
 
+   function get_cand_experiance_info(email){
+
+    	$.ajax({
+              url:'<?php echo site_url('employer/get_candidate_experiance_by_email') ?>',
+              type:'POST',
+              data:{
+                    email:email
+              },
+               dataType: "JSON",  
+               success: function(data)
+               {
+                 console.log(data);
+                 $.each(data, function(index, value) 
+                  {
+                    	console.log(value);
+
+                    	$('#current_ctc').val(value.js_career_salary);
+                    	$('#working_current_since').val(value.start_date);
+                    	$('#current_work_location').val(value.address);
+                    	$('#current_job_desig').val(value.designation_id);
+
+                  });
+               } 
+        });
+	}
+
 	function get_cand_education_info(email){
 
     	$.ajax({
               url:'<?php echo site_url('employer/get_cand_other_info_by_email') ?>',
               type:'POST',
               data:{
-                    email:email
+                email:email
               },
                dataType: "JSON",  
                success: function(data)
@@ -293,33 +318,26 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
               url:'<?php echo site_url('employer/get_cand_skills_by_email') ?>',
               type:'POST',
               data:{
-                    email:email
+                email:email
               },
                dataType: "JSON",  
                success: function(data)
                {
-                    //var edu_level = value.skills;
                    var skill='';
                     for(var l=0; l<data.length; l++)
                     {	
                     	var arr = data[l]['skills'];
-                    	//var s = arr.join(", ");
-                    	//console.log(arr);
-
+                    
                     	if(l==0){
 							skill=skill+arr;
-						 }else{
+						}else{
 							skill=skill+','+arr;
-						 }
+						}
                     }
-                   console.log(skill);
                   
-                   // $('#tokenfield').tokenfield();
                    	$('#tokenfield').val(skill);
                    	$('#tokenfield').tokenfield('enable');
                    	$('#tokenfield').tokenfield('setTokens', skill);
-
-                   //	$('#tokenfield').data('bs.tokenfield').$input.autocomplete({source: new_array})
 
                } 
         });
