@@ -964,5 +964,12 @@ alert(branchpincodeData);
 
 }
 		</script>
+		<script>
+	$(document).ready (function(){
+		$("#smsg").fadeTo(2000, 500).slideUp(500, function(){
+		$("#smsg").slideUp(500);
+		});   
+	});
+ </script>
 
  <?php $this->load->view("fontend/layout/footer.php"); ?>
