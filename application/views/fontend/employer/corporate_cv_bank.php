@@ -60,7 +60,7 @@
                       <td><?php echo $cv_row['js_working_since']; ?></td>
                       <td><?php echo $cv_row['js_current_ctc']; ?></td>
                      
-                      <td><a href="<?php echo  base_url(); ?>upload/Resumes/<?php if(!empty($resume[0]['resume'];)){echo $resume[0]['resume'];;} ?>" title='Download Attached Resume' download>Dowunload</a></td>
+                      <td><a href="<?php echo  base_url(); ?>upload/Resumes/<?php if(!empty($resume[0]['resume'])){echo $resume[0]['resume'];} ?>" title='Download Attached Resume' download>Dowunload</a></td>
                       <!-- <td></td> -->
                   </tr>
                   <?php
