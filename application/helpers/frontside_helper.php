@@ -293,7 +293,7 @@ function get_metas() {
        $CI = get_instance();
         $select_result = "js_attached_resumes.resume,js_attached_resumes.job_seeker_id";
         $table = "js_attached_resumes";
-        $where_res="js_info.job_seeker_id = '$js_email'";
+        $where_res="js_info.email = '$js_email'";
         $join = array(
             'js_info' => 'js_info.job_seeker_id=js_attached_resumes.job_seeker_id | left outer',
         );
