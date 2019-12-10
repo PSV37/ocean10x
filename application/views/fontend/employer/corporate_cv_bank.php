@@ -60,7 +60,7 @@
                       <td><?php echo $cv_row['js_email']; ?></td>
                       <td><?php echo $cv_row['js_mobile']; ?></td>
                       <td><?php echo $cv_row['js_current_work_location']; ?></td>
-                      <td><?php echo $cv_row['js_role']; ?></td>
+                      <td><?php echo $cv_row['js_current_designation']; ?></td>
                       <td><?php echo $cv_row['js_current_notice_period']; ?></td>
                       <td><a href="<?php echo  base_url(); ?>upload/Resumes/<?php if(!empty($resume[0]['resume'])){echo $resume[0]['resume'];} ?>" title='Download Attached Resume' download>Dowunload</a></td>
                       <!-- <td></td> -->
