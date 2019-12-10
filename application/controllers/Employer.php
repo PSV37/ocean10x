@@ -98,6 +98,7 @@ class Employer extends MY_Employer_Controller
                 
 
                 print_r($response['branch_address']);
+                print_r (explode(",",$response['branch_address']));
                 
 
                 //  $result=$this->Master_model->master_insert($response,'company_branches');
