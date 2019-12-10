@@ -9,9 +9,9 @@
     font-weight: bold;
 }
 </style>  
-<div id="smsg" class="alert alert-<?php echo $this->session->flashdata('type');?> alert-dismissible fade in">
+<div id="smsg" class="alert alert-alert-dismissible fade in">
   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  <strong><?php echo $this->session->flashdata('Message');?></strong>
+  <strong><?php echo $this->session->flashdata('emp_msg');?></strong>
 </div>
           
 <!-- Page Title start -->
