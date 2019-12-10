@@ -76,7 +76,7 @@
 							   <label for="exampleInputEmail1">Select Document Type<span class="required">*</span></label>
                                <select name="document_type" class="form-control">
                                	<option value="Incorporation" <?php foreach ($documents as $row){?>
-                                  style="display:<?php ($row['document_type']=='Incorporation')? "none":"block"; ?>" 
+                                  style="display:<?php ($row['document_type']=='Incorporation')? "none":"block"; }?>" 
                                 } ?>>Attach Certificate of Incorporation</option>
                                	<option value="PAN">PAN</option>
                                	<option value="GSTIN">GSTIN</option>
