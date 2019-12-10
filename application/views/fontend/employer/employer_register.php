@@ -47,7 +47,7 @@
                                             </div>
 
                                             <div class="col-md-6 col-sm-12">
-                                                <input type="text" name="company_name" id="company_name"class="form-control"  value="<?php echo (isset($this->session->userdata['reg_in']['company_name'])?$this->session->userdata['reg_in']['company_name']:''); ?>" placeholder="Company Name" autocomplete="off">
+                                                <input type="text" name="company_name" id="company_name"class="form-control"  value="<?php echo set_value('company_name'); ?>" placeholder="Company Name" autocomplete="off"><?php echo form_error('company_name'); ?>
                                             </div>
                                             
                                         </div><!-- end row -->
@@ -56,10 +56,10 @@
                                     <div class="formrow">
                                         <div class="row">
                                             <div class="col-md-6 col-sm-12">
-                                                <input type="email" name="company_email" value="<?php echo isset($this->session->userdata['reg_in']['company_email'])?$this->session->userdata['reg_in']['company_email']:''; ?>" class="form-control" placeholder="Email" autocomplete="off">
+                                                <input type="email" name="company_email" value="<?php echo set_value('company_email'); ?>" class="form-control" placeholder="Email" autocomplete="off"><?php echo form_error('company_email'); ?>
                                             </div>
                                             <div class="col-md-6 col-sm-12">
-                                                <input type="text" name="company_username" id="company_username" value="<?php echo isset($this->session->userdata['reg_in']['company_username'])?$this->session->userdata['reg_in']['company_username']:''; ?>" class="form-control" placeholder="Company Admin UserName" autocomplete="off">
+                                                <input type="text" name="company_username" id="company_username" value="<?php echo set_value('company_username'); ?>" class="form-control" placeholder="Company Admin UserName" autocomplete="off"><?php echo form_error('company_username'); ?>
                                             </div>
                                           
                                         </div><!-- end row -->
@@ -83,7 +83,7 @@
                                      <div class="formrow">
                                         <div class="row">
                                             <div class="col-md-12 col-sm-12">
-                                              <textarea name="company_address" class="form-control" placeholder="Address-1" autocomplete="off"><?php echo isset($this->session->userdata['reg_in']['company_address'])?$this->session->userdata['reg_in']['company_address']:''; ?></textarea>
+                                              <textarea name="company_address" class="form-control" placeholder="Address-1" autocomplete="off"  ><?php echo set_value('company_address'); ?></textarea><?php echo form_error('company_address'); ?>
                                            </div>
                                           </div><!-- end row -->
                                     </div>
@@ -91,7 +91,7 @@
 									  <div class="formrow">
                                         <div class="row">
                                             <div class="col-md-12 col-sm-12">
-                                              <textarea name="company_address2" id="company_address2" class="form-control" placeholder="Address-2" autocomplete="off"><?php echo isset($this->session->userdata['reg_in']['company_address2'])?$this->session->userdata['reg_in']['company_address2']:''; ?></textarea>
+                                              <textarea name="company_address2" id="company_address2" class="form-control" placeholder="Address-2" autocomplete="off"><?php echo set_value('company_address2'); ?></textarea><?php echo form_error('company_address2'); ?>
                                            </div>
                                           </div><!-- end row -->
                                     </div>
@@ -124,7 +124,6 @@
                                             </div>
 											 <div class="col-md-6 col-sm-12">
 											
-                                            <input type="text" name="company_pincode" id="company_pincode" class="form-control"  value="<?php echo (isset($this->session->userdata['reg_in']['company_pincode'])?$this->session->userdata['reg_in']['company_pincode']:''); ?>" placeholder="Pincode" autocomplete="off" >
 											
 										  </div>
                                         </div><!-- end row -->
@@ -142,7 +141,7 @@
                                         <div class="captchacode">Captcha is cause sensitive</div>
                                 		<div class="row">
                                             <div class="col-md-6 col-sm-12">
-                                                <input type="text" id="inputchapcha" required name="captcha" value="" class="form-control" placeholder="Captcha Code">
+                                                <input type="text" id="inputchapcha" required name="captcha" value="<?php echo set_value('company_password'); ?>" class="form-control" placeholder="Captcha Code">
                                             </div>
                                             <div class="col-md-4 col-sm-4"><p id="captImg"><?php echo $captcha_images; ?></p>
                                             <a href="javascript:void(0);" class="refreshCaptcha" ><img src="<?php echo base_url().'fontend/images/refresh-button.png'; ?>"/></a>
