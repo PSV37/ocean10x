@@ -53,6 +53,7 @@
                   $resume = getUploadedResume($cv_row['js_email']);
 
                 //  print_r($resume);
+                  echo $resume[0]['resume'];
                 ?>
                   <tr>
                       <td><?php echo $key ?></td>
@@ -62,7 +63,7 @@
                       <td><?php echo $cv_row['js_working_since']; ?></td>
                       <td><?php echo $cv_row['js_current_ctc']; ?></td>
                       <td></td>
-                      <td><a href="<?php echo  base_url(); ?>upload/Resumes/<?php if(!empty($resume->resume)){echo $resume->resume;} ?>" title='Download Your Attached Resume' download>Dowunload</a></td>
+                      <td><a href="<?php echo  base_url(); ?>upload/Resumes/<?php if(!empty($resume->resume)){echo $resume->resume;} ?>" title='Download Attached Resume' download>Dowunload</a></td>
                       <td></td>
                   </tr>
                   <?php
