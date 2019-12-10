@@ -75,7 +75,7 @@
                                               <select  name="company_category" id="company_category" class="form-control services">
                                                 <option value="">Company Services</option>
                                                 <?php foreach($job_category as $dept){?>
-                                                <option value="<?php echo $dept['job_category_id']; ?>"<?php echo set_select('company_category', $dept['job_category_id'], False);?>><?php echo $dept['job_category_name']; ?></option>
+                                                <option value="<?php echo $dept['job_category_id']; ?>"<?php echo set_select('company_category', $dept['job_category_id'], False); ?>><?php echo $dept['job_category_name']; ?></option>
                                                 <?php } ?>
                                               </select> </div>
                                           </div><!-- end row -->
@@ -102,7 +102,7 @@
                                               <select  name="country_id" id="country_id" class="form-control country" onchange="getStates(this.value)">
                                                 <option value="">Select Country</option>
                                                 <?php foreach($country as $key){?>
-                                                <option value="<?php echo $key['country_id']; ?>"<?php echo set_select('country_id', $dept['country_id'], False);?>><?php echo $key['country_name']; ?></option>
+                                                <option value="<?php echo $key['country_id']; ?>" <?php echo set_select('country_id', $key['country_id'], False); ?>><?php echo $key['country_name']; ?></option>
                                                 <?php } ?>
                                               </select>
                                             </div>
