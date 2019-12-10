@@ -32,7 +32,8 @@
       <?php $this->load->view('fontend/layout/employer_left.php'); ?>
       <div class="content col-md-9">
         <div class="userccount empdash">
-          <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
+          <div class="formpanel"> 
+          	<div id="smsg"><?php echo $this->session->flashdata('success'); ?></div>
            
     		<form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>employer/add_new_cv" method="post">
 
@@ -380,8 +381,8 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 </script>
  <script>
 	$(document).ready (function(){
-		$(".formpanel").fadeTo(2000, 500).slideUp(500, function(){
-		$(".formpanel").slideUp(500);
+		$("#smsg").fadeTo(2000, 500).slideUp(500, function(){
+		$("#smsg").slideUp(500);
 		});   
 	});
  </script>

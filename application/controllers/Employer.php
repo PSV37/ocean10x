@@ -2046,8 +2046,11 @@ public function interview_scheduler()
     public function corporate_cv_bank()
     {
         $company_id = $this->session->userdata('company_profile_id');
+
+        $where_c['company_id'] = $company_id;
+        $data['cv_bank_data'] = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join = false, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
        
-        $this->load->view('fontend/employer/corporate_cv_bank');
+        $this->load->view('fontend/employer/corporate_cv_bank',$data);
     }
 
     public function add_new_cv()
@@ -2056,7 +2059,6 @@ public function interview_scheduler()
 
         if($_POST)
         {
-            // addslashes($this->input->post('interview_address'));
             $cv_data = array(
                 'company_id'                 => $company_id,
                 'js_name'                    => $this->input->post('candidate_name'),
@@ -2079,24 +2081,14 @@ public function interview_scheduler()
                 'js_expected_salary'         => $this->input->post('candidate_expected_sal'),
                 'js_desired_work_location'   => $this->input->post('desired_wrok_location'),
             );
-
-            // if(empty($cv_id))
-            // {
+            
                 $cv_data['created_on'] = date('Y-m-d H:i:s');
                 $cv_data['created_by'] = $company_id;
 
                 $this->Master_model->master_insert($cv_data, 'corporate_cv_bank');
                 $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New CV added sucessfully!</div>');
                 redirect('employer/add_new_cv');
-            // }else{
-            //     $data['updated_on'] = date('Y-m-d H:i:s');
-            //     $data['updated_by'] = $company_id;
-
-            //     $where_ins['cv_id']=$cv_id;
-            //    $this->Master_model->master_update($cv_data,'corporate_cv_bank',$where_ins);
-            //     $this->session->set_flashdata('success', '<div class="alert alert-success text-center">CV upated sucessfully!</div>');
-            //     redirect('employer/add_new_cv');
-            // }
+          
 
         }else{
             $data['industry_master'] = $this->Master_model->getMaster('job_category',$where=false);
