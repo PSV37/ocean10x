@@ -514,7 +514,7 @@
                               <th>Action</th>
                             </tr>
                           </thead>
-
+                          	<?php print_r($branches); ?>
                           <tbody>
                             <!-- <tr></tr> -->
                           </tbody>

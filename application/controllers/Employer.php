@@ -122,11 +122,12 @@ class Employer extends MY_Employer_Controller
                 //  $result=$this->Master_model->master_insert($response,'company_branches');
 
               
-
+                $wheres="company_profile_id='employer_id'";
+                $branches = $this->Master_model->getMaster('company_branches',$where=$wheres);
 
                 $this->company_profile_model->update($company_profile, $employer_id);
                 $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Company Profile details have been successfully updated !</div>');
-                 redirect('employer/profile-setting');
+                 redirect('employer/profile-setting',compact('branches'));
             }
 
             } else {
