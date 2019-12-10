@@ -2258,9 +2258,11 @@ public function interview_scheduler()
         $where1 = "js_info.email = '$email_id' AND end_date IS NULL";
         $join = array( 
             "js_experience"=>"js_experience.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
+            "job_role"=>"job_role.id=js_experience.designation_id | LEFT OUTER",
+
         );
       
-        $select ="js_experience.company_profile_id,js_experience.js_career_salary,js_experience.designation_id,js_experience.start_date,js_experience.address";
+        $select ="job_role.job_role_title,js_experience.company_profile_id,js_experience.js_career_salary,js_experience.designation_id,js_experience.start_date,js_experience.address";
 
         $result = $this->Master_model->getMaster('js_info', $where1, $join, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
         
