@@ -97,9 +97,10 @@ class Employer extends MY_Employer_Controller
                  
                 
 
-                 print_r($branch_address);
-                 $size=sizeof($branch_address);
-                 print_r($size);
+                 // print_r($branch_address);
+                 echo implode(" ",$branch_address[0]);
+                 // $size=sizeof($branch_address);
+                 // print_r($size);
 
                 //  $result=$this->Master_model->master_insert($response,'company_branches');
 
