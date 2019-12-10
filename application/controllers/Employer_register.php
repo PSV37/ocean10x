@@ -56,6 +56,27 @@ class Employer_register extends CI_Controller
            array('required' => 'You must provide a %s.');
              if ($this->form_validation->run() == FALSE)
             {
+                 $config = array(
+            'img_path'      => 'captcha_images/',
+            'img_url'       => base_url().'captcha_images/',
+            'img_width'     => '150',
+            'img_height'    => 50,
+            'word_length'   => 4,
+            'font_path' => FCPATH . 'captcha_images/font/captcha4.ttf',
+        );
+        $captcha = create_captcha($config);
+        
+        // Unset previous captcha and store new captcha word
+        $this->session->unset_userdata('captchaCode');
+        $this->session->set_userdata('captchaCode',$captcha['word']);
+        
+        // Send captcha image to view
+        $captcha_images = $captcha['image'];
+        $city = $this->Master_model->getMaster('city',$where=false);
+        $country = $this->Master_model->getMaster('country',$where=false);
+        $state = $this->Master_model->getMaster('state',$where=false);
+        $job_category = $this->Master_model->getMaster('job_category',$where=false);
+        $this->load->view('fontend/employer/employer_register.php',compact('captcha_images', 'js_personal_info', 'city', 'country', 'state', 'job_category'));
                // redirect('Employer_register');
                $this->load->view('fontend/employer/employer_register');    
             }
