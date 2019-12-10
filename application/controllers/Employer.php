@@ -98,7 +98,7 @@ class Employer extends MY_Employer_Controller
                 
 
                 print_r($response['branch_address']);
-                $branchadddata=explode(",",$response['branch_address']));
+                $branchadddata=explode(",",$response['branch_address']);
                 $size=sizeof($branchadddata);
                 print_r($size);
                 for ($i=0; $i <$size ; $i++) { 
