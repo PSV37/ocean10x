@@ -37,6 +37,7 @@ class Employer_Login extends CI_Controller
             $data['company_name']       = $result->company_name;
             $data['comp_type']          = $result->comp_type;
             $this->session->set_userdata($data);
+             $this->session->set_flashdata('emp_msg', "Welcome Admin!");
                 redirect('employer');
         } else {
             $this->session->set_flashdata('emp_msg',

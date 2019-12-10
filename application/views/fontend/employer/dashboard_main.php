@@ -3,10 +3,7 @@
 
 
 ?>   
-<div id="smsg" class="alert alert-alert-dismissible fade in">
-  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  <strong><?php echo $this->session->flashdata('emp_msg');?></strong>
-</div>   
+   
           
 <!-- Page Title start -->
 
@@ -22,7 +19,11 @@
     </div>
   </div>
 </div>
-<!-- Page Title End -->              
+<!-- Page Title End --> 
+<div id="smsg" class="alert alert-alert-dismissible fade in">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong><?php echo $this->session->flashdata('emp_msg');?></strong>
+</div>             
 
 <div class="section lb">
   <div class="container">
