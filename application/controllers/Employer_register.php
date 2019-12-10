@@ -52,7 +52,7 @@ class Employer_register extends CI_Controller
 
 
         if($_POST){
-           $this->form_validation->set_rules('password', 'password', 'required|max_length[15]|min_length[8]|alpha_numeric');
+           $this->form_validation->set_rules('company_password', 'password', 'required|max_length[15]|min_length[8]|alpha_numeric');
            array('required' => 'You must provide a %s.');
              if ($this->form_validation->run() == FALSE)
             {
