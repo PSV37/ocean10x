@@ -48,7 +48,12 @@
                 </tr>
               </thead>
               <tbody>
-                <?php $key = 1; if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) : ?>
+                <?php $key = 1; if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) : 
+
+                  $resume = getUploadedResume($cv_row['js_email']);
+
+                  print_r($resume);
+                ?>
                   <tr>
                       <td><?php echo $key ?></td>
                       <td><?php echo $cv_row['js_name']; ?></td>

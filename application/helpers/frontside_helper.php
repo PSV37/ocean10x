@@ -288,6 +288,20 @@ function get_metas() {
         return $exam_result;
     } 
 
+    function getUploadedResume($js_email){
+     
+       $CI = get_instance();
+        $select_result = "js_attached_resumes.resume,js_attached_resumes.job_seeker_id";
+        $table = "js_attached_resumes";
+        $where_res="js_info.job_seeker_id = '$js_email'";
+        $join = array(
+            'js_info' => 'js_info.job_seeker_id=js_attached_resumes.job_seeker_id | left outer',
+        );
+        $seeker_resume = $CI->Master_model->getMaster($table, $where_res, $join, false ,false, $select_result, $limit ='5', $start =false, $search= false);
+     //   echo $CI->db->last_query(); die;
+
+        return $seeker_resume;
+    }
  function time_ago_in_php($timestamp){
 
     $CI = get_instance();
