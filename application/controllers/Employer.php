@@ -113,8 +113,8 @@ class Employer extends MY_Employer_Controller
                      $response['pincode']=$branchpincodedata[$i];
                      $response['company_profile_id']=$employer_id;
                      $response['created_on']=date('Y-m-d H:i:s');
-                     print_r($response);
-                //  $result=$this->Master_model->master_insert($response,'company_branches');
+                     // print_r($response);
+                $result=$this->Master_model->master_insert($response,'company_branches');
 
                 }
                 
@@ -124,9 +124,9 @@ class Employer extends MY_Employer_Controller
               
 
 
-                // $this->company_profile_model->update($company_profile, $employer_id);
-                // $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Company Profile details have been successfully updated !</div>');
-                //  redirect('employer/profile-setting');
+                $this->company_profile_model->update($company_profile, $employer_id);
+                $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Company Profile details have been successfully updated !</div>');
+                 redirect('employer/profile-setting');
             }
 
             } else {
