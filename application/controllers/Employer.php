@@ -2262,7 +2262,7 @@ public function interview_scheduler()
       
         $select ="js_experience.company_profile_id,js_experience.js_career_salary,js_experience.designation_id,js_experience.start_date,js_experience.address";
 
-        $result = $this->Master_model->getMaster('js_experience', $where1, $join, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
+        $result = $this->Master_model->getMaster('js_info', $where1, $join, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
         
         echo json_encode($result);
 
