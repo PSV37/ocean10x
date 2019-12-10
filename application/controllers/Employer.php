@@ -88,21 +88,34 @@ class Employer extends MY_Employer_Controller
 
             if(!empty($employer_id)) {
                 $branch_address=$this->input->post('Branchname');
-                $response['country']=$this->input->post('BranchCountry');
-                $response['state']=$this->input->post('Branchstate');
-                $response['city']=$this->input->post('BranchCountry');
-                $response['pincode']=$this->input->post('BranchCity');
-                $response['company_profile_id']=$employer_id;
-                $response['created_on']=date('Y-m-d H:i:s');
+                $country=$this->input->post('BranchCountry');
+                $state=$this->input->post('Branchstate');
+                $city=$this->input->post('BranchCountry');
+                $pincode=$this->input->post('BranchCity');
+                
+                
                  
                 
 
-                print_r($branch_address);
+                // print_r($branch_address);
                 $branchadddata=explode(",",$branch_address);
+                $branchcountrydata=explode(",",$country);
+                $branchstatedata=explode(",",$state);
+                $branchcitydata=explode(",",$city);
+                $branchpincodedata=explode(",",$pincode);
                 $size=sizeof($branchadddata);
-                print_r($size);
                 for ($i=0; $i <$size ; $i++) { 
-                    print_r($branchadddata[$i]);
+                    print_r($branchadddata[$i];);
+                    $response['branch_address']=$branchadddata[$i];
+                    $response['country']=$branchcountrydata[$i];
+                    $response['state']=$branchstatedata[$i];
+                     $response['city']=$branchcitydata[$i];
+                     $response['pincode']=$branchpincodedata[$i];
+                     $response['company_profile_id']=$employer_id;
+                     $response['created_on']=date('Y-m-d H:i:s');
+                     print_r($response);
+                //  $result=$this->Master_model->master_insert($response,'company_branches');
+
                 }
                 
 
