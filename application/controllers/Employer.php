@@ -127,7 +127,11 @@ class Employer extends MY_Employer_Controller
 
                 $this->company_profile_model->update($company_profile, $employer_id);
                 $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Company Profile details have been successfully updated !</div>');
-                 redirect('employer/profile-setting',compact('branches'));
+                 $company_info = $this->company_profile_model->get($employer_id);
+                $city = $this->Master_model->getMaster('city',$where=false);
+                $country = $this->Master_model->getMaster('country',$where=false);
+                $state = $this->Master_model->getMaster('state',$where=false);
+                $this->load->view('fontend/employer/dashboard', compact('company_info', 'city', 'country', 'state','branches'));
             }
 
             } else {
