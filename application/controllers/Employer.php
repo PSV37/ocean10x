@@ -87,10 +87,28 @@ class Employer extends MY_Employer_Controller
             }
 
             if(!empty($employer_id)) {
-                $response['branchadd']=$this->input->post('Branchname');
-                $response['BranchCountry']=$this->input->post('BranchCountry');
-                print_r($response);
-                echo "string";
+                $branch_address=$this->input->post('Branchname');
+                $response['country']=$this->input->post('BranchCountry');
+                $response['state']=$this->input->post('Branchstate');
+                $response['city']=$this->input->post('BranchCountry');
+                $response['pincode']=$this->input->post('BranchCity');
+                $response['company_profile_id']=$employer_id;
+                $response['created_on']=date('Y-m-d H:i:s');
+                 
+                
+
+                // print_r($response);
+                 $size=sizeof($branch_address);
+                 print_r($size);
+
+                 $result=$this->Master_model->master_insert($response,'company_branches');
+               //  for ($i=0; $i <$size ; $i++) { 
+
+               //      $data=array('company_profile_id'=>$employer_id,
+               //          'branch_address'=> $response['branchadd'][$i]);
+               //  }
+               // print_r($data);
+
 
                 // $this->company_profile_model->update($company_profile, $employer_id);
                 // $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Company Profile details have been successfully updated !</div>');

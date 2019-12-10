@@ -69,7 +69,7 @@
 									<div class="formrow">
                                         <div class="row">
                                             <div class="col-md-6 col-sm-12">
-                                              <input type="Password" name="company_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control" placeholder="Password">
+                                              <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="company_password"  class="form-control" placeholder="Password" value="<?php echo set_value('password'); ?>" ><?php echo form_error('password'); ?>
                                            </div>
 										   <div class="col-md-6 col-sm-12">
                                               <select  name="company_category" id="company_category" class="form-control services">
@@ -226,7 +226,8 @@
                     },
                     company_password: {
                         required: true,
-                        minlength: 6
+                        minlength: 8
+                        
                     },
                     company_service: {
                         required: true,
@@ -255,7 +256,7 @@
               messages: { 
                 company_password: {
                          required: "Please provide a password",
-                        minlength: "Your password must be at least 6 characters long"
+                        minlength: "Your password must be at least 8 characters long"
                 },
                  captcha:{
                         required:"Captcha is required!",
