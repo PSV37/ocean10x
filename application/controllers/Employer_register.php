@@ -56,7 +56,8 @@ class Employer_register extends CI_Controller
            array('required' => 'You must provide a %s.');
              if ($this->form_validation->run() == FALSE)
             {
-               redirect('Employer_register');     
+               // redirect('Employer_register');
+               $this->load->view('fontend/employer/employer_register');    
             }
             else
             {
