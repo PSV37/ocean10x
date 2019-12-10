@@ -281,7 +281,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                     	$('#current_ctc').val(value.js_career_salary);
                     	$('#working_current_since').val(value.start_date);
                     	$('#current_work_location').val(value.address);
-                    	$('#current_job_desig').val(value.designation_id);
+                    	$('#current_job_desig').val(value.job_role_title);
 
                   });
                } 
