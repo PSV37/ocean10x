@@ -9,6 +9,10 @@
     font-weight: bold;
 }
 </style>  
+<div id="smsg" class="alert alert-<?php echo $this->session->flashdata('type');?> alert-dismissible fade in">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong><?php echo $this->session->flashdata('Message');?></strong>
+</div>
           
 <!-- Page Title start -->
 <div class="pageTitle">
@@ -960,5 +964,12 @@ alert(branchpincodeData);
 
 }
 		</script>
+		<script>
+	$(document).ready (function(){
+		$("#smsg").fadeTo(2000, 500).slideUp(500, function(){
+		$("#smsg").slideUp(500);
+		});   
+	});
+ </script>
 
  <?php $this->load->view("fontend/layout/footer.php"); ?>
