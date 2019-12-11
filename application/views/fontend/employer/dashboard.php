@@ -518,7 +518,7 @@
                           <tbody>
                           	<?php foreach ($branches as $row) {?>
                           		<tr>
-                          			<td><?php echo $row->branch_address; ?></td>
+                          			<td><?php echo $row['branch_address']; ?></td>
                           			<td><?php echo $row->country; ?></td>
                           			<td><?php echo $row->state; ?></td>
                           			<td><?php echo $row->city; ?></td>
