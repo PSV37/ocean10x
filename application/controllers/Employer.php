@@ -2375,7 +2375,7 @@ public function interview_scheduler()
                         }
                         $skip ++;
                     }
-                    redirect('employer/questionbank-import');
+                    redirect('employer/bulk_upload_cvs');
                     $data['response'] = 'successfully uploaded '.$filename;
                     
                    
