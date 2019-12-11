@@ -1170,7 +1170,7 @@ function getstate(){
 <br><br>Hi Dear,<br>Your account has been created successfully by '.$comp_name.' <br><br>You can login to our portal using following credentials<br>
 username: '.$to_email.'<br>
 Password: '.$pass.'<br>
-Link :<a href="https://www.consultnhire.com/employee_login"></a>
+Link :<a href="https://www.consultnhire.com/employee_login">Employee Login</a><br>
 Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out how works and our support team are ready to help.<br><br>© 2017 ConsultnHire All Rights Reserved.<br><br>You have received this mail because your e-mail ID is registered with Consultnhire.com. This is a system-generated e-mail regarding your Consultnhire account preferences, please do not reply to this message. The jobs sent in this mail have been posted by the clients of Consultnhire.com. And we have enabled auto-login for your convenience, you are strongly advised not to forward this email to protect your account from unauthorized access. IEIL has taken all reasonable steps to ensure that the information in this mailer is authentic. Users are advised to research bonafides of advertisers independently. Please do not pay any money to anyone who promises to find you a job. IEIL shall not have any responsibility in this regard. We recommend that you visit our Terms & Conditions and the Security Advice for more comprehensive information.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
                            $send = sendEmail_JobRequest($to_email,$message,$subject);
         		redirect(base_url().'employer/allemployee');
@@ -1284,6 +1284,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 <br><br>Hi Dear,<br>Your account has been created successfully by '.$comp_name.' <br><br>You can login to our portal using following credentials<br>
 username: '.$to_email.'<br>
 Password: '.$pass.'<br>
+Link :<a href="https://www.consultnhire.com/employee_login">Employee Login</a><br>
+
 Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Question? Check out how works and our support team are ready to help.<br><br>© 2017 ConsultnHire All Rights Reserved.<br><br>You have received this mail because your e-mail ID is registered with Consultnhire.com. This is a system-generated e-mail regarding your Consultnhire account preferences, please do not reply to this message. The jobs sent in this mail have been posted by the clients of Consultnhire.com. And we have enabled auto-login for your convenience, you are strongly advised not to forward this email to protect your account from unauthorized access. IEIL has taken all reasonable steps to ensure that the information in this mailer is authentic. Users are advised to research bonafides of advertisers independently. Please do not pay any money to anyone who promises to find you a job. IEIL shall not have any responsibility in this regard. We recommend that you visit our Terms & Conditions and the Security Advice for more comprehensive information.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
                            $send = sendEmail_JobRequest($to_email,$message,$subject);
                                 
