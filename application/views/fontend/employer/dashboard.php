@@ -62,7 +62,7 @@ alert(branchpincodeData);
 }
 		</script>
 		
- 
+
 
           
 <!-- Page Title start -->
@@ -91,7 +91,7 @@ alert(branchpincodeData);
                             <div class="formpanel">
                                 <?php echo $this->session->flashdata('msg'); ?>
                                 <?php echo $this->session->flashdata('success_msg'); ?>
-                                <form id="submit" action="" method="post" class="submit-form" enctype="multipart/form-data" onsubmit="saveBranches();" >
+                                <form id="submit" action="" method="post" class="submit-form" enctype="multipart/form-data"  >
                                 <input type="hidden" name="company_profile_id" value="<?php echo $company_info->company_profile_id;?>">
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12">   
@@ -645,7 +645,7 @@ alert(branchpincodeData);
 
                                     </div><!-- end row -->
 
-                                    <button class="btn btn-primary" id="submit"  type="submit">Update Profile</button>
+                                    <button class="btn btn-primary" id="submit"  type="submit" onclick="saveBranches();" >Update Profile</button>
                                 </form>
                                 </div>
                             </div>
@@ -945,7 +945,7 @@ $(function() {
 				$('#addMoreBranches').click(function(){ 
 				 $('#BranchTable tbody').append("<tr id='Branchtr"+j+"'><td class='hidden'>"+j+"</td><td><input type='text' class='form-control' name='BranchName"+j+"' id='BranchName"+j+"' required></td><td><select name='BranchCountry"+j+"' id='BranchCountry"+j+"'  class='form-control' onchange='getState("+j+");' required><option value=''>Select Country</option><?php foreach($country as $key){?><option value='<?php echo $key['country_id']; ?>'><?php echo $key['country_name']; ?></option><?php } ?></select></td><td ><select type='text' class='form-control'  name='BranchState"+j+"' id='BranchState"+j+"' onchange='getCity("+j+");' required ></select></td><td><select type='text' class='form-control' name='BranchCity"+j+"' id='BranchCity"+j+"' required></select></td><td><input type='text' class='form-control' name='BranchPincode"+j+"' id='BranchPincode"+j+"' required></td><td><a href='#' class='removebtn' id='"+j+"' onclick='removeBranchTr(this);'>X</a></td></tr>"); 
 				 j++;
-				 saveBranches();
+				
 			})
 			});
 function getState(id)
