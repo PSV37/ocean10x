@@ -258,3 +258,4 @@ $route['admin/training/save-training']="admin/training/save_training";
 //Employee 
 
 $route['employee-login']="employee_login";
+$route['Edit_profile']="employee/edit_profile";
