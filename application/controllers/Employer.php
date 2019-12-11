@@ -2304,7 +2304,7 @@ public function interview_scheduler()
             'status'=>'1',
         );
         $where_del['comp_branch_id']=$id;
-        $this->Master_model->master_update($ques_status,'company_branches',$where_del);
+        $this->Master_model->master_update($status,'company_branches',$where_del);
         redirect('employer/profile_setting');
     
 
