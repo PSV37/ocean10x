@@ -90,8 +90,8 @@ class Employer extends MY_Employer_Controller
                 $branch_address=$this->input->post('Branchname');
                 $country=$this->input->post('BranchCountry');
                 $state=$this->input->post('Branchstate');
-                $city=$this->input->post('BranchCountry');
-                $pincode=$this->input->post('BranchCity');
+                $city=$this->input->post('BranchCity');
+                $pincode=$this->input->post('BranchPincode');
                 
                 
                  

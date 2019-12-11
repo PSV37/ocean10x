@@ -537,6 +537,7 @@
                            
                         </tfoot>
                       </table>
+                       <button type="button" id="add" onclick="saveBranches();" class="btn btn-success">Add</button>
                   </div>
               </div>
 		</div>			
