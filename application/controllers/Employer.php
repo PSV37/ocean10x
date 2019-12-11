@@ -133,7 +133,7 @@ class Employer extends MY_Employer_Controller
                 $city = $this->Master_model->getMaster('city',$where=false);
                 $country = $this->Master_model->getMaster('country',$where=false);
                 $state = $this->Master_model->getMaster('state',$where=false);
-                $this->load->view('fontend/employer/dashboard', compact('company_info', 'city', 'country', 'state',));
+                $this->load->view('fontend/employer/dashboard', compact('company_info', 'city', 'country', 'state','branches'));
             }
 
             } else {
