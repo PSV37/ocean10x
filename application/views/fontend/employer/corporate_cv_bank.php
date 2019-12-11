@@ -58,7 +58,8 @@
                   <tr>
                       <td><?php echo $key ?></td>
                       <td><img src="<?php echo  base_url(); ?>upload/<?php if(!empty($photo[0]['photo_path'])){echo $photo[0]['photo_path'];} ?>" alt="" style="max-width: 40% !important;"></td>
-                      <td><a target="_blank" href="<?php echo base_url() ?>employer/view-resume/<?php echo $cv_row['job_seeker_id']; ?>"><?php echo $cv_row['js_name']; ?></a></td>
+                      <!-- <td><a target="_blank" href="<?php echo base_url() ?>employer/view-resume/<?php echo $cv_row['job_seeker_id']; ?>"><?php echo $cv_row['js_name']; ?></a></td> -->
+                       <td><?php echo $cv_row['js_name']; ?></td>
                       <td><?php echo $cv_row['js_email']; ?></td>
                       <td><?php echo $cv_row['js_mobile']; ?></td>
                       <td><?php echo $cv_row['js_current_work_location']; ?></td>
