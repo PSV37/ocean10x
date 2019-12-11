@@ -116,7 +116,6 @@ $route['seeker-login']="register/jobseeker_login";
 
 $route['employer-login']="employer_login";
 
-$route['employee-login']="employee_login";
 
 $route['employer/all-applicants/(:num)']="employer/all_applicant/$1";
 $route['employer/downloadcv/(:num)']="employer/downloadcv/$1";
@@ -253,3 +252,9 @@ $route['admin/seeker/downloadcv/(:num)']="admin/seeker/downloadcv_admin/$1/";
 $route['admin/all-training']="admin/training/training_list";
 $route['admin/enrolled-users']="admin/training/enrolled_list";
 $route['admin/training/save-training']="admin/training/save_training";
+
+
+
+//Employee 
+
+$route['employee-login']="employee_login";
