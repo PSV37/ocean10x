@@ -2359,18 +2359,18 @@ public function interview_scheduler()
                     // insert import data
                     foreach($importData_arr as $userdata){
                         if($skip != 0){
-                            echo "<pre>";
-                            print_r($userdata);die; 
+                            // echo "<pre>";
+                            // print_r($userdata);die; 
                            
-                            $userdata[0]=$tech_data[0]['id'];
-                            $userdata[1]=$topic_data[0]['topic_id'];
-                            $userdata[2]=$subtopic_data[0]['subtopic_id'];
-                            $userdata[3]=$lineitem_data[0]['lineitem_id'];
-                            $userdata[4]=$lineitemlevel_data[0]['lineitemlevel_id'];
+                            // $userdata[0]=$tech_data[0]['id'];
+                            // $userdata[1]=$topic_data[0]['topic_id'];
+                            // $userdata[2]=$subtopic_data[0]['subtopic_id'];
+                            // $userdata[3]=$lineitem_data[0]['lineitem_id'];
+                            // $userdata[4]=$lineitemlevel_data[0]['lineitemlevel_id'];
                     
-                            $userdata[13]=$options_data[0]['options_id'];
+                            // $userdata[13]=$options_data[0]['options_id'];
                             
-                           $this->Questionbank_employer_model->insertRecord($userdata);
+                           $this->Questionbank_employer_model->InsertCVData($userdata);
                             //echo $this->db->last_query();die();
                         }
                         $skip ++;
