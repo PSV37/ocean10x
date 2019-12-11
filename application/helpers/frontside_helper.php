@@ -304,7 +304,7 @@ function get_metas() {
     }
 
     function getSeekerPhoto($js_email) {
-        $CI = get_instance();=
+        $CI = get_instance();
         $select_result = "js_photo.photo_path";
         $table = "js_photo";
         $where_res="js_info.email = '$js_email'";
