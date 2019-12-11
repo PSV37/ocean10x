@@ -943,7 +943,7 @@ var tableLength=$("#BranchTable tbody tr").length;
     for(var i=1;i<=tableLength;i++)
     {
      var oCells = branchTable.rows.item(i).cells;
-        // alert(oCells[0].firstChild.data);
+        alert(oCells[0].firstChild.data);
 
      
       branchadd.push(document.getElementById('BranchName'+oCells[0].firstChild.data).value);
