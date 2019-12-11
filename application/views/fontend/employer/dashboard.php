@@ -515,7 +515,8 @@
                             </tr>
                           </thead>
 
-                          <tbody>
+                          <tbody >
+                          	 <?php print_r(sizeof($branches)); ?>
                           	<?php foreach ($branches as $row) {?>
                           		<tr>
                           			<td><?php echo $row['branch_address']; ?></td>
@@ -527,6 +528,7 @@
                          
                           <?php echo btn_delete('employer/delete_branch/' . $row['comp_branch_id']); ?>
                       </td>
+
                           		</tr>
                           	<?php } ?>
                            
@@ -536,6 +538,7 @@
                            
                         </tfoot>
                       </table>
+                       <!-- <button type="button" id="add" onclick="saveBranches();" class="btn btn-success">Add</button> -->
                   </div>
               </div>
 		</div>			
@@ -884,7 +887,7 @@ $(function() {
 		</script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				 var j=1;  
+				 var x = document.getElementById("BranchTable").rows.length+1;  
 				$('#addMoreBranches').click(function(){ 
 				 $('#BranchTable tbody').append("<tr id='Branchtr"+j+"'><td class='hidden'>"+j+"</td><td><input type='text' class='form-control' name='BranchName"+j+"' id='BranchName"+j+"' required></td><td><select name='BranchCountry"+j+"' id='BranchCountry"+j+"'  class='form-control' onchange='getState("+j+");' required><option value=''>Select Country</option><?php foreach($country as $key){?><option value='<?php echo $key['country_id']; ?>'><?php echo $key['country_name']; ?></option><?php } ?></select></td><td ><select type='text' class='form-control'  name='BranchState"+j+"' id='BranchState"+j+"' onchange='getCity("+j+");' required ></select></td><td><select type='text' class='form-control' name='BranchCity"+j+"' id='BranchCity"+j+"' required></select></td><td><input type='text' class='form-control' name='BranchPincode"+j+"' id='BranchPincode"+j+"' required></td><td><a href='#' class='removebtn' id='"+j+"' onclick='removeBranchTr(this);'>X</a></td></tr>"); 
 				 j++;
@@ -937,11 +940,11 @@ var tableLength=$("#BranchTable tbody tr").length;
     var branchstatesdata=[];
     var branchcitiedata=[];
     var branchpincodeData=[];
-
-    for(var i=1;i<=tableLength;i++)
+var len = document.getElementById("BranchTable").rows.length+1;
+    for(var i=len;i<=tableLength;i++)
     {
      var oCells = branchTable.rows.item(i).cells;
-        // alert(oCells[0].firstChild.data);
+        alert(oCells[0].firstChild.data);
 
      
       branchadd.push(document.getElementById('BranchName'+oCells[0].firstChild.data).value);
@@ -959,11 +962,11 @@ var tableLength=$("#BranchTable tbody tr").length;
      
     }
        // alert(oCells[0].firstChild.data);
-// alert(branchadd);
-// alert(branchcountries);
-// alert(branchstatesdata);
-// alert(branchcitiedata);
-// alert(branchpincodeData);
+alert(branchadd);
+alert(branchcountries);
+alert(branchstatesdata);
+alert(branchcitiedata);
+alert(branchpincodeData);
 
      
      document.getElementById("Branchname").value=branchadd;
