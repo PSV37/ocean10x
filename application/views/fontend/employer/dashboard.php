@@ -946,14 +946,14 @@ var tableLength=$("#BranchTable tbody tr").length;
         alert(oCells[0].firstChild.data);
 
      
-      branchadd.push(document.getElementById('BranchName'+oCells[0].firstChild.data).value);
-      var bcountry=document.getElementById('BranchCountry'+oCells[0].firstChild.data);
-      branchcountries.push(bcountry.options[bcountry.selectedIndex].text);
- 	var bstate=document.getElementById('BranchState'+oCells[0].firstChild.data);
-      branchstatesdata.push(bstate.options[bstate.selectedIndex].text);
-	 var bcity=document.getElementById('BranchCity'+oCells[0].firstChild.data);
-      branchcitiedata.push(bcity.options[bcity.selectedIndex].text);
-      branchpincodeData.push(document.getElementById('BranchPincode'+oCells[0].firstChild.data).value);
+  //     branchadd.push(document.getElementById('BranchName'+oCells[0].firstChild.data).value);
+  //     var bcountry=document.getElementById('BranchCountry'+oCells[0].firstChild.data);
+  //     branchcountries.push(bcountry.options[bcountry.selectedIndex].text);
+ 	// var bstate=document.getElementById('BranchState'+oCells[0].firstChild.data);
+  //     branchstatesdata.push(bstate.options[bstate.selectedIndex].text);
+	 // var bcity=document.getElementById('BranchCity'+oCells[0].firstChild.data);
+  //     branchcitiedata.push(bcity.options[bcity.selectedIndex].text);
+  //     branchpincodeData.push(document.getElementById('BranchPincode'+oCells[0].firstChild.data).value);
 
 
      
