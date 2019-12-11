@@ -148,7 +148,7 @@ $route['employer/show-all-consultant']="employer/allconsultants";
 
 $route['add-Corporate-Documents']="employer/add_Corporate_Documents";
 $route['employer/show-all-consultant']="employer/allconsultants";
-
+$route['employer/view-resume//(:num)']="employer/view_added_resume/$1";
 
 
 $route['job-apply/(:any)'] = "job/jobapply/$1";
