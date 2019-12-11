@@ -940,8 +940,8 @@ var tableLength=$("#BranchTable tbody tr").length;
     var branchstatesdata=[];
     var branchcitiedata=[];
     var branchpincodeData=[];
-
-    for(var i=$('#BranchTable').length;i<=tableLength;i++)
+var len=$('#BranchTable').length+1;
+    for(var i=len;i<=tableLength;i++)
     {
      var oCells = branchTable.rows.item(i).cells;
         alert(oCells[0].firstChild.data);
