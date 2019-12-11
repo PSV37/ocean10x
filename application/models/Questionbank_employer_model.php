@@ -61,7 +61,7 @@ class Questionbank_employer_model extends MY_Model {
 					"js_industry" 				=> trim($record[14]),
 					"js_role" 					=> trim($record[15]),
 					"js_expected_salary" 		=> trim($record[16]),
-					"js_desired_work_location" 	=> trim($record[17]),,
+					"js_desired_work_location" 	=> trim($record[17]),
 					"created_on" 				=> date('Y-m-d H:i:s'),
 					"created_by" 				=> $employer_id
                 );
