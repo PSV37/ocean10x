@@ -123,7 +123,7 @@ class Employer extends MY_Employer_Controller
 
               
                 
-                $wheres="company_profile_id='$employer_id' and status!='1'";
+                $wheres="company_profile_id='$employer_id' and status='0'";
                 
                 $branches = $this->Master_model->getMaster('company_branches',$where=$wheres);
 
