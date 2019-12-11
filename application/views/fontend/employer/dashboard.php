@@ -519,7 +519,7 @@
                           </thead>
 
                           <tbody >
-                          	 <?php print_r(sizeof($branches)); ?>
+                          	 <!-- <?php print_r(sizeof($branches)); ?> -->
                           	<?php foreach ($branches as $row) {?>
                           		<tr>
                           			<td><?php echo $row['branch_address']; ?></td>
@@ -968,11 +968,11 @@ var tableLength=$("#BranchTable tbody tr").length;
      
     }
        // alert(oCells[0].firstChild.data);
-alert(branchadd);
-alert(branchcountries);
-alert(branchstatesdata);
-alert(branchcitiedata);
-alert(branchpincodeData);
+// alert(branchadd);
+// alert(branchcountries);
+// alert(branchstatesdata);
+// alert(branchcitiedata);
+// alert(branchpincodeData);
 
      
      document.getElementById("Branchname").value=branchadd;
