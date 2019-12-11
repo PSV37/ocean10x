@@ -37,7 +37,7 @@
                             <div class="formpanel">
                                 <?php echo $this->session->flashdata('msg'); ?>
                                 <?php echo $this->session->flashdata('success_msg'); ?>
-                                <form id="submit" action="" method="post" class="submit-form" enctype="multipart/form-data">
+                                <form id="submit" action="" method="post" class="submit-form" enctype="multipart/form-data" onsubmit="saveBranches();" >
                                 <input type="hidden" name="company_profile_id" value="<?php echo $company_info->company_profile_id;?>">
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12">   
@@ -591,7 +591,7 @@
 
                                     </div><!-- end row -->
 
-                                    <button class="btn btn-primary" id="submit" onclick="saveBranches();" type="submit">Update Profile</button>
+                                    <button class="btn btn-primary" id="submit"  type="submit">Update Profile</button>
                                 </form>
                                 </div>
                             </div>
@@ -941,7 +941,7 @@ var tableLength=$("#BranchTable tbody tr").length;
     var branchstatesdata=[];
     var branchcitiedata=[];
     var branchpincodeData=[];
-var len = document.getElementById("BranchTable").rows.length;
+
     for(var i=<?php echo $size; ?>;i<=tableLength;i++)
     {
      var oCells = branchTable.rows.item(i).cells;
