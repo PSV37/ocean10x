@@ -953,7 +953,7 @@ var tableLength=$("#BranchTable tbody tr").length;
          alert(oCells);
 
      
-      branchadd.push(document.getElementById('BranchName'+oCells[0].firstChild.data).value);
+      branchadd.push(document.getElementById('BranchName'+oCells[0].firstChild).value);
   //     var bcountry=document.getElementById('BranchCountry'+oCells[0].firstChild.data);
   //     branchcountries.push(bcountry.options[bcountry.selectedIndex].text);
  	// var bstate=document.getElementById('BranchState'+oCells[0].firstChild.data);
