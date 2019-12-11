@@ -2386,10 +2386,10 @@ public function interview_scheduler()
                 $data['response'] = 'failed'; 
             } 
             // load view 
-            $this->load->view('fontend/employer/questionbank_view',$data); 
+            $this->load->view('fontend/employer/bulk_cv_upload_view',$data); 
         }else{
             // load view 
-            $this->load->view('fontend/employer/questionbank_view'); 
+            $this->load->view('fontend/employer/bulk_cv_upload_view'); 
         } 
 
     }
