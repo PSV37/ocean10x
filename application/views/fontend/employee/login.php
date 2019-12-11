@@ -24,7 +24,7 @@
       <div class="col-md-6 col-md-offset-3">
         <div class="userccount">
           	
-          <h5>Employer Login</h5>
+          <h5>Employee Login</h5>
           <!-- login form -->
            <form class="submit-form customform loginform" action="<?php echo base_url() ?>employee_login/check_login?redirect=<?php echo $this->input->get('redirect'); ?>" method="post">
            <?php echo $this->session->flashdata('emp_msg');; ?>
