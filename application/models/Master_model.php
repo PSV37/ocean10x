@@ -121,8 +121,8 @@ class Master_model extends CI_Model
             $this->db->select('*');
         }
 		$query = $this->db->get($tablename);
-        //echo $this->db->last_query();die;
-        return $query->result_array();
+        return $this->db->last_query();die;
+        // return $query->result_array();
     }
     
     /**
