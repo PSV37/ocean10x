@@ -516,7 +516,7 @@
                           </thead>
 
                           <tbody>
-                          	 <!-- <?php print_r(); ?> -->
+                          	 <?php print_r(sizeof($branches)); ?>
                           	<?php foreach ($branches as $row) {?>
                           		<tr>
                           			<td><?php echo $row['branch_address']; ?></td>
