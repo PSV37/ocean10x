@@ -302,6 +302,24 @@ function get_metas() {
 
         return $seeker_resume;
     }
+
+    function getSeekerPhoto($js_email) {
+        $CI = get_instance();=
+        $select_result = "js_photo.photo_path";
+        $table = "js_photo";
+        $where_res="js_info.email = '$js_email'";
+        $join = array(
+            'js_info' => 'js_info.job_seeker_id=js_photo.job_seeker_id | left outer',
+        );
+        $seeker_resume = $CI->Master_model->getMaster($table, $where_res, $join, false ,false, $select_result, $limit ='5', $start =false, $search= false);
+     //   echo $CI->db->last_query(); die;
+
+        return $seeker_resume;
+
+    }
+
+
+
  function time_ago_in_php($timestamp){
 
     $CI = get_instance();
