@@ -950,7 +950,7 @@ var tableLength=$("#BranchTable tbody tr").length;
     for(var i=<?php echo $size; ?>;i<=tableLength;i++)
     {
      var oCells = branchTable.rows.item(i).cells;
-         alert(oCells[0].firstChild.data);
+         alert(oCells);
 
      
       branchadd.push(document.getElementById('BranchName'+oCells[0].firstChild.data).value);
@@ -961,7 +961,7 @@ var tableLength=$("#BranchTable tbody tr").length;
 	 // var bcity=document.getElementById('BranchCity'+oCells[0].firstChild.data);
   //     branchcitiedata.push(bcity.options[bcity.selectedIndex].text);
   //     branchpincodeData.push(document.getElementById('BranchPincode'+oCells[0].firstChild.data).value);
-  
+
 
 
      
