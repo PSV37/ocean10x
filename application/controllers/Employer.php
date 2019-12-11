@@ -2315,6 +2315,85 @@ public function interview_scheduler()
     }
 
     
+    public function bulk_upload_cvs(){
+        $company_id = $this->session->userdata('company_profile_id');
+        //load model
+        $this->load->model('Questionbank_employer_model');
+        // Check form submit or not 
+        if($this->input->post('upload') != NULL ){ 
+            $data = array(); 
+            if(!empty($_FILES['file']['name'])){ 
+                // Set preference 
+                $config['upload_path'] = 'cv_bank_excel/files/'; 
+                $config['allowed_types'] = 'csv'; 
+                $config['max_size'] = '1000'; // max_size in kb 
+                $config['file_name'] = $_FILES['file']['name']; 
+
+                // Load upload library 
+                $this->load->library('upload',$config); 
+   
+                // File upload
+                if($this->upload->do_upload('file')){ 
+                    // Get data about the file
+                    $uploadData = $this->upload->data(); 
+                    $filename = $uploadData['file_name']; 
+
+                    // Reading file
+                    $file = fopen("cv_bank_excel/files/".$filename,"r");
+                    $i = 0;
+
+                    $importData_arr = array();
+                       
+                    while (($filedata = fgetcsv($file, 1000, ",")) !== FALSE) {
+                        $num = count($filedata);
+
+                        for ($c=0; $c < $num; $c++) {
+                            $importData_arr[$i][] = $filedata[$c];
+                        }
+                        $i++;
+                    }
+                    fclose($file);
+
+                    $skip = 0;
+
+                    // insert import data
+                    foreach($importData_arr as $userdata){
+                        if($skip != 0){
+                            echo "<pre>";
+                            print_r($userdata);die; 
+                           
+                            $userdata[0]=$tech_data[0]['id'];
+                            $userdata[1]=$topic_data[0]['topic_id'];
+                            $userdata[2]=$subtopic_data[0]['subtopic_id'];
+                            $userdata[3]=$lineitem_data[0]['lineitem_id'];
+                            $userdata[4]=$lineitemlevel_data[0]['lineitemlevel_id'];
+                    
+                            $userdata[13]=$options_data[0]['options_id'];
+                            
+                           $this->Questionbank_employer_model->insertRecord($userdata);
+                            //echo $this->db->last_query();die();
+                        }
+                        $skip ++;
+                    }
+                    redirect('employer/questionbank-import');
+                    $data['response'] = 'successfully uploaded '.$filename;
+                    
+                   
+                }else{ 
+                    $data['response'] = 'failed'; 
+                } 
+            }else{ 
+                $data['response'] = 'failed'; 
+            } 
+            // load view 
+            $this->load->view('fontend/employer/bulk_cv_upload_view',$data); 
+        }else{
+            // load view 
+            $this->load->view('fontend/employer/bulk_cv_upload_view'); 
+        } 
+
+    }
+    
     // public function view_added_resume($jobseeker_id = null)
     // {
     //     if (!empty($jobseeker_id)) {
