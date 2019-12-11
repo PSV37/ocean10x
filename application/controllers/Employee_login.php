@@ -37,8 +37,8 @@ class Employee_Login extends CI_Controller
             $data['name']       = $result->emp_name;
            
             $this->session->set_userdata($data);
-            
-               $this->load->view('fontend/employee/employee_dashboard');
+            redirect('fontend/employee/employee_dashboard');
+               // $this->load->view('fontend/employee/employee_dashboard');
         } else {
             $this->session->set_flashdata('emp_msg',
                 '<div class="alert alert-danger alert-dismissable">

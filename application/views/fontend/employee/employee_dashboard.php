@@ -36,7 +36,7 @@
           <?php $emp_id=$this->session->userdata('emp_id'); 
                 $name=$this->session->userdata('name');;
           ?>
-          <h2>Welcome Back: <strong><?php print_r($this->session->userdata()); echo $name; ?></strong></h2>
+          <h2>Welcome Back: <strong><?php  echo $name; ?></strong></h2>
           
           <ul class="dashbuttons">
             <li> <a href="<?php echo base_url(); ?>employer/profile_setting" class=""> <i class="fa fa-user-circle-o" aria-hidden="true"></i> Edit Profile </a> </li>
