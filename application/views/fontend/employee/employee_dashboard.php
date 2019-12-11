@@ -33,10 +33,10 @@
       <div class="content col-md-9">
        
         <div class="userccount empdash">
-          <?php $employer_id=$this->session->userdata('company_profile_id'); 
+          <?php $employee_id=$this->session->userdata('emp_id'); 
                 $type=$this->session->userdata('comp_type');
           ?>
-          <h2>Welcome Back: <strong><?php echo $this->company_profile_model->company_name($employer_id); ?></strong></h2>
+          <h2>Welcome Back: <strong><?php echo $this->session->userdata('name'); ?></strong></h2>
           
           <ul class="dashbuttons">
             <li> <a href="<?php echo base_url(); ?>employer/profile_setting" class=""> <i class="fa fa-user-circle-o" aria-hidden="true"></i> Edit Profile </a> </li>
