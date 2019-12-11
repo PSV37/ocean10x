@@ -34,7 +34,7 @@ class Employee_Login extends CI_Controller
         $result           = $this->employee_login_model->check_login_info($email, $password);
         if (!empty($result)) {
             $data['emp_id'] = $result->emp_id;
-            $data['name']       = $result->name;
+            $data['name']       = $result->emp_name;
            
             $this->session->set_userdata($data);
             
