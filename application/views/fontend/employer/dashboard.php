@@ -947,7 +947,7 @@ var tableLength=$("#BranchTable tbody tr").length;
     var branchcitiedata=[];
     var branchpincodeData=[];
 
-    for(var i=<?php sizeof($branches); ?>;i<=tableLength;i++)
+    for(var i=<?php echo (sizeof($branches)); ?>;i<=tableLength;i++)
     {
      var oCells = branchTable.rows.item(i).cells;
         alert(oCells[0].firstChild.data);
