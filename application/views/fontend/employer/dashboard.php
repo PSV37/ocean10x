@@ -645,7 +645,7 @@ alert(branchpincodeData);
 
                                     </div><!-- end row -->
 
-                                    <button class="btn btn-primary" id="submitbtn"  type="submit" onclick="saveBranches();" >Update Profile</button>
+                                    <button class="btn btn-primary" id="submitbtn"  type="submit" " >Update Profile</button>
                                 </form>
                                 </div>
                             </div>
