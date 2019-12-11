@@ -2311,8 +2311,8 @@ public function interview_scheduler()
 
     }
 
-    view_added_resume
-    public function view_resume($jobseeker_id = null)
+    
+    public function view_added_resume($jobseeker_id = null)
     {
         if (!empty($jobseeker_id)) {
             $company_id = $this->session->userdata('company_profile_id');
