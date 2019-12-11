@@ -2296,6 +2296,19 @@ public function interview_scheduler()
         echo json_encode($result);
 
     }
+
+    function delete_branch($id)
+    {
+
+        $status = array(
+            'status'=>0,
+        );
+        $where_del['company_profile_id']=$id;
+        $this->Master_model->master_update($ques_status,'company_branches',$where_del);
+        redirect('employer/profile_setting');
+    
+
+    }
     
 } // end class
 
