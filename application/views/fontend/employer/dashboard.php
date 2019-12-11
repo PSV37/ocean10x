@@ -516,8 +516,8 @@
                           </thead>
 
                           <tbody>
-                            <tr><?php print_r($branches);
-                            echo "string"; ?>
+                            <tr>
+                            <td><?php print_r($branches);echo "string"; ?></td></tr>
                             	
                             </tr>
                           </tbody>
