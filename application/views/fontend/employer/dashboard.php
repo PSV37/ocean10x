@@ -516,10 +516,20 @@
                           </thead>
 
                           <tbody>
-                            <tr>
-                            <td><?php print_r($branches); ?></td></tr>
-                            	
-                            </tr>
+                          	<?php foreach ($branches as $row) {?>
+                          		<tr>
+                          			<td><?php echo $row->branch_address; ?></td>
+                          			<td><?php echo $row->country; ?></td>
+                          			<td><?php echo $row->state; ?></td>
+                          			<td><?php echo $row->city; ?></td>
+                          			<td><?php echo $row->pincode; ?></td>
+                          			 <td>
+                         
+                          <?php echo btn_delete('employer/delete_branch/' . $row['comp_branch_id']); ?>
+                      </td>
+                          		</tr>
+                          	<?php } ?>
+                           
                           </tbody>
 
                           <tfoot>
