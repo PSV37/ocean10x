@@ -82,10 +82,7 @@
                     <li class="dropdown yamm-half membermenu hasmenu">
 
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            <?php $employee_id         = $this->session->userdata('emp_id'); ?>
-                       
-                        
-                        <?php endif; ?>
+                           
                         <ul class="dropdown-menu start-right">
                             <li class="dropdown-header">Welcome <?php echo $this->session->userdata('name'); ?></li>
                             <li><a href="<?php echo base_url(); ?>employer"><span class="glyphicon glyphicon-user"></span>Dashboard</a></li>
