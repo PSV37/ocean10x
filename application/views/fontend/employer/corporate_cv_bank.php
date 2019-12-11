@@ -57,7 +57,7 @@
                 ?>
                   <tr>
                       <td><?php echo $key ?></td>
-                      <td><img src="https://www.consultnhire.com/upload/<?php if(!empty($photo[0]['photo_path'])){echo $photo[0]['photo_path'];} ?>" alt="" class="img-circle"></td>
+                      <td><img src="https://www.consultnhire.com/upload/<?php if(!empty($photo[0]['photo_path'])){echo $photo[0]['photo_path'];} ?>" alt="" style="max-width: 40% !important;"></td>
                       <td><?php echo $cv_row['js_name']; ?></td>
                       <td><?php echo $cv_row['js_email']; ?></td>
                       <td><?php echo $cv_row['js_mobile']; ?></td>
