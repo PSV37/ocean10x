@@ -940,7 +940,7 @@ var tableLength=$("#BranchTable tbody tr").length;
     var branchstatesdata=[];
     var branchcitiedata=[];
     var branchpincodeData=[];
-var len = document.getElementById("BranchTable").rows.length+1;
+var len = document.getElementById("BranchTable").rows.length;
     for(var i=len;i<=tableLength;i++)
     {
      var oCells = branchTable.rows.item(i).cells;
