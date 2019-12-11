@@ -137,7 +137,7 @@ class Employer extends MY_Employer_Controller
             }
 
             } else {
-                $wheres="company_profile_id='$employer_id'";
+                $wheres="status='0' AND company_profile_id='$employer_id'";
                  $branches = $this->Master_model->getMaster('company_branches',$where=$wheres);
                 $company_info = $this->company_profile_model->get($employer_id);
 				$city = $this->Master_model->getMaster('city',$where=false);
