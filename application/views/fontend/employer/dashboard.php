@@ -9,58 +9,7 @@
     font-weight: bold;
 }
 </style> 
-<script type="text/javascript">
-$("#submitbtn").click(function () {
 
-
-	var branchTable = document.getElementById('BranchTable');
-
-var tableLength=$("#BranchTable tbody tr").length;
-
-<?php $size=sizeof($branches); ?>
-    // alert(tableLength);
-    var branchadd=[];
-    var branchcountries=[];
-    var branchstatesdata=[];
-    var branchcitiedata=[];
-    var branchpincodeData=[];
-
-    for(var i=<?php echo $size; ?>;i<=tableLength;i++)
-    {
-     var oCells = branchTable.rows.item(i).cells;
-        alert(oCells[0].firstChild.data);
-
-     
-      branchadd.push(document.getElementById('BranchName'+oCells[0].firstChild.data).value);
-      var bcountry=document.getElementById('BranchCountry'+oCells[0].firstChild.data);
-      branchcountries.push(bcountry.options[bcountry.selectedIndex].text);
- 	var bstate=document.getElementById('BranchState'+oCells[0].firstChild.data);
-      branchstatesdata.push(bstate.options[bstate.selectedIndex].text);
-	 var bcity=document.getElementById('BranchCity'+oCells[0].firstChild.data);
-      branchcitiedata.push(bcity.options[bcity.selectedIndex].text);
-      branchpincodeData.push(document.getElementById('BranchPincode'+oCells[0].firstChild.data).value);
-
-
-     
-  
-     
-    }
-       // alert(oCells[0].firstChild.data);
-alert(branchadd);
-alert(branchcountries);
-alert(branchstatesdata);
-alert(branchcitiedata);
-alert(branchpincodeData);
-
-     
-     document.getElementById("Branchname").value=branchadd;
-     document.getElementById("BranchCountry").value=branchcountries;
-     document.getElementById("Branchstate").value=branchstatesdata;
-     document.getElementById("BranchCity").value=branchcitiedata;
-     document.getElementById("Branchpincode").value=branchpincodeData;
-
-});
-		</script>
 		
 
 
@@ -645,7 +594,7 @@ alert(branchpincodeData);
 
                                     </div><!-- end row -->
 
-                                    <button class="btn btn-primary" id="submitbtn"  type="submit" " >Update Profile</button>
+                                    <button class="btn btn-primary" id="submitbtn"  type="submit"  >Update Profile</button>
                                 </form>
                                 </div>
                             </div>
@@ -982,5 +931,56 @@ function removeBranchTr(id) // to remove row of pathology charges table
   $("#Branchtr"+id.id).remove();
 }
 </script>
+<script type="text/javascript">
+$("#submitbtn").click(function () {
 
+
+	var branchTable = document.getElementById('BranchTable');
+
+var tableLength=$("#BranchTable tbody tr").length;
+
+<?php $size=sizeof($branches); ?>
+    // alert(tableLength);
+    var branchadd=[];
+    var branchcountries=[];
+    var branchstatesdata=[];
+    var branchcitiedata=[];
+    var branchpincodeData=[];
+
+    for(var i=<?php echo $size; ?>;i<=tableLength;i++)
+    {
+     var oCells = branchTable.rows.item(i).cells;
+        alert(oCells[0].firstChild.data);
+
+     
+      branchadd.push(document.getElementById('BranchName'+oCells[0].firstChild.data).value);
+      var bcountry=document.getElementById('BranchCountry'+oCells[0].firstChild.data);
+      branchcountries.push(bcountry.options[bcountry.selectedIndex].text);
+ 	var bstate=document.getElementById('BranchState'+oCells[0].firstChild.data);
+      branchstatesdata.push(bstate.options[bstate.selectedIndex].text);
+	 var bcity=document.getElementById('BranchCity'+oCells[0].firstChild.data);
+      branchcitiedata.push(bcity.options[bcity.selectedIndex].text);
+      branchpincodeData.push(document.getElementById('BranchPincode'+oCells[0].firstChild.data).value);
+
+
+     
+  
+     
+    }
+       // alert(oCells[0].firstChild.data);
+alert(branchadd);
+alert(branchcountries);
+alert(branchstatesdata);
+alert(branchcitiedata);
+alert(branchpincodeData);
+
+     
+     document.getElementById("Branchname").value=branchadd;
+     document.getElementById("BranchCountry").value=branchcountries;
+     document.getElementById("Branchstate").value=branchstatesdata;
+     document.getElementById("BranchCity").value=branchcitiedata;
+     document.getElementById("Branchpincode").value=branchpincodeData;
+
+});
+		</script>
  <?php $this->load->view("fontend/layout/footer.php"); ?>
