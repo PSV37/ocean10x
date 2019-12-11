@@ -92,6 +92,7 @@ class Employer extends MY_Employer_Controller
                 $state=$this->input->post('Branchstate');
                 $city=$this->input->post('BranchCity');
                 $pincode=$this->input->post('BranchPincode');
+                print_r($pincode);
                 
                 
                  

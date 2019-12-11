@@ -549,7 +549,7 @@
                       <input type="hidden" name="BranchCountry" id="BranchCountry">
                       <input type="hidden" name="Branchstate" id="Branchstate">
                       <input type="hidden" name="BranchCity" id="BranchCity">
-                      <input type="hidden" name="Branchpincode" id="Branchpincode">	
+                      <input type="hidden" name="Branchpincodes" id="Branchpincodes">	
 									
                                     <!-- end row -->
                                     <div class="panel-body"></div>
@@ -979,7 +979,7 @@ alert(branchpincodeData);
      document.getElementById("BranchCountry").value=branchcountries;
      document.getElementById("Branchstate").value=branchstatesdata;
      document.getElementById("BranchCity").value=branchcitiedata;
-     document.getElementById("Branchpincode").value=branchpincodeData;
+     document.getElementById("Branchpincodes").value=branchpincodeData;
 
 });
 		</script>
