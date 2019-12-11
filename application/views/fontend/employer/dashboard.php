@@ -950,7 +950,7 @@ var tableLength=$("#BranchTable tbody tr").length;
     for(var i=<?php echo $size; ?>;i<=tableLength;i++)
     {
      var oCells = branchTable.rows.item(i).cells;
-         alert(oCells[0].firstChild);
+         alert(oCells[0].firstChild.data);
 
      
       branchadd.push(document.getElementById('BranchName'+oCells[0].firstChild.data).value);
