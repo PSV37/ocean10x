@@ -934,6 +934,7 @@ function saveBranches()
 
 var tableLength=$("#BranchTable tbody tr").length;
 
+<?php $size=sizeof($branches); ?>
     // alert(tableLength);
     var branchadd=[];
     var branchcountries=[];
@@ -941,7 +942,7 @@ var tableLength=$("#BranchTable tbody tr").length;
     var branchcitiedata=[];
     var branchpincodeData=[];
 var len = document.getElementById("BranchTable").rows.length;
-    for(var i=len;i<=tableLength;i++)
+    for(var i=<?php echo $size; ?>;i<=tableLength;i++)
     {
      var oCells = branchTable.rows.item(i).cells;
         alert(oCells[0].firstChild.data);
