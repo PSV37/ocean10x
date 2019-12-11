@@ -31,7 +31,7 @@
                    <input type='file' name='file' required class="form-control">
                 </div>
                  <div class="col-md-6">
-                  <small>To Import Leads Download Excel Format <a href="<?php echo base_url(); ?>cv_bank_excel/bulk_upload_cv_format.csv" download><strong>Click here To Download</strong></a></small>
+                  <small>To Import CV'c Download CSV Format <a href="<?php echo base_url(); ?>cv_bank_excel/bulk_upload_cv_format.csv" download><strong>Click here To Download</strong></a></small>
                 </div>
           		 
           		</div>
