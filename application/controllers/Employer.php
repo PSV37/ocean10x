@@ -2301,7 +2301,7 @@ public function interview_scheduler()
     {
 
         $status = array(
-            'status'=>0,
+            'status'=>'1',
         );
         $where_del['comp_branch_id']=$id;
         $this->Master_model->master_update($ques_status,'company_branches',$where_del);
