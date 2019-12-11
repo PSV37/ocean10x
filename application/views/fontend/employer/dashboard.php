@@ -10,8 +10,8 @@
 }
 </style> 
 <script type="text/javascript">
-function saveBranches()
-{
+$("#submitbtn").click(function () {
+
 
 	var branchTable = document.getElementById('BranchTable');
 
@@ -59,7 +59,7 @@ alert(branchpincodeData);
      document.getElementById("BranchCity").value=branchcitiedata;
      document.getElementById("Branchpincode").value=branchpincodeData;
 
-}
+});
 		</script>
 		
 
@@ -645,7 +645,7 @@ alert(branchpincodeData);
 
                                     </div><!-- end row -->
 
-                                    <button class="btn btn-primary" id="submit"  type="submit" onclick="saveBranches();" >Update Profile</button>
+                                    <button class="btn btn-primary" id="submitbtn"  type="submit" onclick="saveBranches();" >Update Profile</button>
                                 </form>
                                 </div>
                             </div>
