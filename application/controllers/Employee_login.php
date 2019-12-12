@@ -11,8 +11,8 @@ class Employee_Login extends CI_Controller
         parent::__construct();
         $this->load->model('employee_login_model');
         $emp_id = $this->session->userdata('emp_id');
-        if ($emp_id != null) {
-            redirect('employee', 'refresh');
+        if ($emp_id = null) {
+            redirect('employee_Login', 'refresh');
         }
 
     }
