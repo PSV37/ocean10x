@@ -44,7 +44,7 @@ class Employee extends CI_controller
 		$emp_id=$this->session->userdata('emp_id');
 		 $whereres = "emp_id='$emp_id'";
         $employee_info= $this->Master_model->get_master_row('employee',$select = FALSE,$whereres);
-         print_r($employee_info);
+         // print_r($employee_info);
         $this->load->view('fontend/employee/employee_edit',compact('employee_info'));
 
 		
