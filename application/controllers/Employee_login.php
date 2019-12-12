@@ -57,7 +57,8 @@ class Employee_Login extends CI_Controller
         if (!empty($result)) {
             $data['emp_id'] = $result->emp_id;
             $data['name']       = $result->emp_name;
-            $data['company_id']         = $result->org_id;
+            $data['company_id'] = $result->org_id;
+            $data['photo']      = $result->photo;
             $this->session->set_userdata($data);
              $this->session->set_flashdata('welcome', "Welcome Back!");
                 redirect('employee/index');

@@ -59,7 +59,7 @@
             <div class="container">
             	<div class="row">
       <div class="col-md-2 col-sm-3 col-xs-12">
-      <!-- <a class="logo" title="" href="<?php echo base_url() ?>"><?php echo get_logo();?></a>       -->
+      <a class="logo" title="" href="<?php echo base_url() ?>employee/"><?php echo $this->session->userdata('photo');?></a>      
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
         </div>
