@@ -61,17 +61,42 @@ class Employee extends CI_controller
              $whereres = "emp_id='$employee_id'";
         $data['result']= $this->Master_model->get_master_row('employee',$select = FALSE,$whereres);
         $org_id=$data['result']['org_id'];
-             $wherecond = "company_profile_id='$org_id'";
+        $name=$data['result']['emp_name'];
+        $wherecond = "company_profile_id='$org_id'";
 
         $company_info= $this->Master_model->get_master_row('company_profile',$select = FALSE,$wherecond);
-        print_r($company_info['company_email']);
+        $to_mail= $company_info['company_email'];
+        $company_name= $company_info['company_name'];
+         $subject = $name.' Updated profile';
+                $message = '
+                        <style>
+                            .btn-primary,.btn-info{
+                                width: 232px;
+                                color: #fff;
+                                text-align: center;
+                                margin: 0 0 0 5%;
+                                background-color: #6495ED;
+                                padding: 5px;
+                                text-decoration: none;
+                            }
+                        
+                        </style>
+                    <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+                    <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+                    <br><br>Hi '.$company_name.',<br>Your Employee '.$name.'Updated Ocean Profile.<br/>
+                    Thank You
+                    Ocean Team..
+                        ';
+                   $send = sendEmail_JobRequest($to_mail,$message,$subject);
 
-        // $data['department'] = $this->Master_model->getMaster('department',$where=false);
-        // $data['country'] = $this->Master_model->getMaster('country',$where=false);
-        // $data['state'] = $this->Master_model->getMaster('state',$where=false);
-        // $data['city'] = $this->Master_model->getMaster('city',$where=false);
-        // $this->load->view('fontend/employee/employee_edit',$data);
-        echo "string";
+
+
+        $data['department'] = $this->Master_model->getMaster('department',$where=false);
+        $data['country'] = $this->Master_model->getMaster('country',$where=false);
+        $data['state'] = $this->Master_model->getMaster('state',$where=false);
+        $data['city'] = $this->Master_model->getMaster('city',$where=false);
+        $this->load->view('fontend/employee/employee_edit',$data);
+        // echo "string";
            
         }
         else
