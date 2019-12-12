@@ -16,8 +16,22 @@ class Employee extends CI_controller
         }
 
     }
+    public function index()
+    {
+        $emp_id = $this->session->userdata('emp_id');
+         // $emp_name = $this->session->userdata('name');
+        $this->load->view('fontend/employee/employee_dashboard');
+        // echo "string";
+    }   
+    public function logout()
+    {
+        $this->session->sess_destroy();
+        redirect('employee_login');
+    }
+
 	public function edit_profile()
 	{
+
 		// echo "string";
 		$emp_id=$this->session->userdata('emp_id');
 		 $whereres = "emp_id='$emp_id'";
@@ -25,5 +39,7 @@ class Employee extends CI_controller
         print_r($employee_data);
 		
 
+
+		echo "string";
 	}
 }

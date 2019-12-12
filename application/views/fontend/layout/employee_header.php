@@ -82,13 +82,20 @@
                     <li class="dropdown yamm-half membermenu hasmenu">
 
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                           
+                        <?php
+                        $emp_id = $this->session->userdata('emp_id');
+                       if(!empty($this->Employee_photo_model->get_employee_photo($emp_id))):?>
+                      <img src="<?php echo base_url() ?>employee/<?php echo  $this->Employee_photo_model->get_employee_photo($emp_id);?>" alt="" class="img-circle"> <strong>Welcome <?php echo $this->session->userdata('name'); ?></strong></a>
+                      <?php else: ?>
+                      <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" alt="" class="img-circle"><strong>Welcome <?php echo $this->session->userdata('name'); ?></strong></a>
+                      <?php endif; ?>   
+
                         <ul class="dropdown-menu start-right">
-                            <li class="dropdown-header">Welcome <?php echo $this->session->userdata('name'); ?></li>
-                            <li><a href="<?php echo base_url(); ?>employer"><span class="glyphicon glyphicon-user"></span>Dashboard</a></li>
-                            <li><a href="<?php echo base_url(); ?>employer/active-job"><span class="glyphicon glyphicon-star"></span> Active Job</a></li>
+                            <!-- <li class="dropdown-header">Welcome <?php echo $this->session->userdata('name'); ?></li> -->
+                            <!-- <li><a href="<?php echo base_url(); ?>employee"><span class="glyphicon glyphicon-user"></span>Dashboard</a></li> -->
+                            <!-- <li><a href="<?php echo base_url(); ?>employee/active-job"><span class="glyphicon glyphicon-star"></span> Active Job</a></li> -->
                             
-                            <li><a href="<?php echo base_url(); ?>employer/change-password"><span class="glyphicon glyphicon-briefcase"></span> Change Password</a></li>
+                            <!-- <li><a href="<?php echo base_url(); ?>employee/change-password"><span class="glyphicon glyphicon-briefcase"></span> Change Password</a></li> -->
                             <li><a href="#" onclick="logout();"><span class="glyphicon glyphicon-lock"></span> Logout</a></li>
                         </ul>
                     </li>
@@ -157,7 +164,7 @@
   {
     if(window.confirm('Are you sure want to logout?'))
      {
-        window.location.href="<?php echo base_url(); ?>employer/logout";  
+        window.location.href="<?php echo base_url(); ?>employee/logout";  
      }
     
   }
