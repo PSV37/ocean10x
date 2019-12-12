@@ -20,7 +20,13 @@ class Employee extends CI_controller
          // $emp_name = $this->session->userdata('name');
         $this->load->view('fontend/employee/employee_dashboard');
         // echo "string";
+    }   
+    public function logout()
+    {
+        $this->session->sess_destroy();
+        redirect('employee_login');
     }
+
 	public function edit_profile()
 	{
 

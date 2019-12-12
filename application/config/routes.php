@@ -160,7 +160,7 @@ $route['save-job/(:any)'] = "job/save_this_job/$1";
 //Employee 
 
 $route['employee-login']="employee_login";
-$route['employee/Edit-profile']="employee/edit_profile";
+$route['employee/edit-profile']="employee/edit_profile";
 
 
 // Category and Level Search Jobs

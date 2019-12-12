@@ -59,7 +59,7 @@
             <div class="container">
             	<div class="row">
       <div class="col-md-2 col-sm-3 col-xs-12">
-      <a class="logo" title="" href="<?php echo base_url() ?>"><?php echo get_logo();?></a>      
+      <!-- <a class="logo" title="" href="<?php echo base_url() ?>"><?php echo get_logo();?></a>       -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
         </div>
@@ -85,10 +85,10 @@
                            
                         <ul class="dropdown-menu start-right">
                             <li class="dropdown-header">Welcome <?php echo $this->session->userdata('name'); ?></li>
-                            <li><a href="<?php echo base_url(); ?>employer"><span class="glyphicon glyphicon-user"></span>Dashboard</a></li>
-                            <li><a href="<?php echo base_url(); ?>employer/active-job"><span class="glyphicon glyphicon-star"></span> Active Job</a></li>
+                            <!-- <li><a href="<?php echo base_url(); ?>employee"><span class="glyphicon glyphicon-user"></span>Dashboard</a></li> -->
+                            <!-- <li><a href="<?php echo base_url(); ?>employee/active-job"><span class="glyphicon glyphicon-star"></span> Active Job</a></li> -->
                             
-                            <li><a href="<?php echo base_url(); ?>employer/change-password"><span class="glyphicon glyphicon-briefcase"></span> Change Password</a></li>
+                            <!-- <li><a href="<?php echo base_url(); ?>employee/change-password"><span class="glyphicon glyphicon-briefcase"></span> Change Password</a></li> -->
                             <li><a href="#" onclick="logout();"><span class="glyphicon glyphicon-lock"></span> Logout</a></li>
                         </ul>
                     </li>
@@ -157,7 +157,7 @@
   {
     if(window.confirm('Are you sure want to logout?'))
      {
-        window.location.href="<?php echo base_url(); ?>employer/logout";  
+        window.location.href="<?php echo base_url(); ?>employee/logout";  
      }
     
   }
