@@ -157,6 +157,12 @@ $route['save-job/(:any)'] = "job/save_this_job/$1";
 
 
 
+//Employee 
+
+$route['employee-login']="employee_login";
+$route['Edit-profile']="employee/edit_profile";
+
+
 // Category and Level Search Jobs
 $route['jobs/type/(:any)'] = "job/get_job_types_job/$1";
 $route['jobs/type/(:any)/(:num)'] = "job/get_job_types_job/$1/$2";
@@ -255,9 +261,3 @@ $route['admin/all-training']="admin/training/training_list";
 $route['admin/enrolled-users']="admin/training/enrolled_list";
 $route['admin/training/save-training']="admin/training/save_training";
 
-
-
-//Employee 
-
-$route['employee-login']="employee_login";
-$route['Edit_profile']="employee/edit_profile";
