@@ -75,7 +75,7 @@
                <li><a title="" href="<?php echo base_url() ?>training">Training</a></li>
                <li class="<?=(current_url()==base_url('job')) ? 'active':''?>"><a title="" href="<?php echo base_url() ?>job">All Jobs</a></li>
                <li><a title="" href="<?php echo base_url() ?>contact">Contact Us</a></li>
-            <li class="green"><a title="" href="<?php echo base_url(); ?>employer/job-post">Submit Vacancy</a></li>
+            
              
              <li>
                 <ul class="nav navbar-nav navbar-right">
