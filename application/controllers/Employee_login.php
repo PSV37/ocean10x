@@ -11,8 +11,8 @@ class Employee_Login extends CI_Controller
         parent::__construct();
         $this->load->model('employee_login_model');
         $emp_id = $this->session->userdata('emp_id');
-        if ($emp_id = null) {
-            redirect('employee_Login', 'refresh');
+        if ($emp_id != null) {
+            redirect('employee/index', 'refresh');
         }
 
     }
@@ -60,7 +60,7 @@ class Employee_Login extends CI_Controller
             $data['company_id']         = $result->org_id;
             $this->session->set_userdata($data);
              $this->session->set_flashdata('welcome', "Welcome Back!");
-                redirect('employee');
+                redirect('employee/index');
         } else {
             $this->session->set_flashdata('emp_msg',
                 '<div class="alert alert-danger alert-dismissable">
