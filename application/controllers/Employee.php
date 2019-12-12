@@ -16,7 +16,7 @@ class Employee extends CI_controller
         if ($emp_id != null) {
             redirect('employee/index');
         }else{
-            redirect('employee_login/index');
+            $this->load->view('fontend/employee/employee_dashboard');
         }
 
     }
