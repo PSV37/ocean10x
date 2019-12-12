@@ -14,8 +14,16 @@ class Employee extends CI_controller
         
 
     }
+    public function index()
+    {
+        echo $emp_id = $this->session->userdata('emp_id');
+        echo $emp_name = $this->session->userdata('name');
+
+        echo "string";
+    }
 	public function edit_profile()
 	{
+
 		echo "string";
 	}
 }
