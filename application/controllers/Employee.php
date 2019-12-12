@@ -14,9 +14,13 @@ class Employee extends CI_controller
         $emp_id = $this->session->userdata('emp_id');
         echo $emp_id;
         if ($emp_id != null) {
-            redirect('employee/index');
+            // redirect('employee/index');
+        $this->load->view('fontend/employee/employee_dashboard');
+            
         }else{
-            $this->load->view('fontend/employee/employee_dashboard');
+            // redirect('employee_login/index');
+        $this->load->view('fontend/employee/login');
+
         }
 
     }
