@@ -64,7 +64,7 @@ class Employee extends CI_controller
              $wherecond = "company_profile_id='$org_id'";
 
         $company_info= $this->Master_model->get_master_row('company_profile',$select = FALSE,$wherecond);
-        print_r($company_info);
+        print_r($company_info->company_email);
 
         // $data['department'] = $this->Master_model->getMaster('department',$where=false);
         // $data['country'] = $this->Master_model->getMaster('country',$where=false);
