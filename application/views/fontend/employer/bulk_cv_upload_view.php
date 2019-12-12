@@ -33,9 +33,14 @@
 
                 <div class="col-md-6">
                   <input type='file' name='file' required class="form-control">
+
+                  <div class="panel-body"></div>
+                  <button type="submit" name='upload' class="btn btn-info btn-sm pull-right">Upload Now</button>
                 </div>
           		</div>
-    			    <input type='submit' value='Import' name='upload' class="btn btn-info btn-sm pull-right">
+    			    <!-- <input type='submit' value='Import' name='upload' class="btn btn-info btn-sm pull-right"> -->
+
+             
     	      </form>
 
           </div>
