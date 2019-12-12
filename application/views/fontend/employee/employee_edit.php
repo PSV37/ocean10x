@@ -1,26 +1,13 @@
 <?php 
     $this->load->view('fontend/layout/employee_header.php');
-?>   
-<style type="text/css">
-  label {
-    display: inline-block;
-    max-width: 100%;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-</style> 
-
-		
-
-
-          
+?>
 <!-- Page Title start -->
+
 <div class="pageTitle">
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-6">
         <h1 class="page-heading">Edit Profile</h1>
-        <?php print_r($employee_info); ?>
       </div>
       <div class="col-md-6 col-sm-6">
         <div class="breadCrumb"><a href="#.">Home</a> / <span>Edit Profile</span></div>
@@ -28,15 +15,16 @@
     </div>
   </div>
 </div>
-<!-- Page Title End -->     
-         <div class="section lb">
+<!-- Page Title End -->
+
+<div class="section lb">
   <div class="container">
     <div class="row">
       <?php $this->load->view('fontend/layout/employee_left.php'); ?>
       <div class="content col-md-9">
         <div class="userccount empdash">
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
-        <form method="post" action="<?php echo base_url();?>employer/postEditData" enctype="multipart/form-data">
+        <form method="post" action="<?php echo base_url();?>employee/Editemployee" enctype="multipart/form-data">
        <input type="hidden" name="cid" id="cid" value="<?php echo $result['emp_id'];?>">
               <div class="row">
 
@@ -170,94 +158,51 @@
   </div>
   <!-- end container --> 
 </div>
-
-
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-<div class="text-center">
-  <img src="<?php echo base_url(); ?>/fontend/images/loader.gif">
 </div>
-  </div>
 </div>
-<script>
-    // WRITE THE VALIDATION SCRIPT.
-    function isNumber(evt) {
-        var iKeyCode = (evt.which) ? evt.which : evt.keyCode
-        if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
-            return false;
-
-        return true;
-    }    
-</script>
-
-
+<!-- end section --> 
+</div>
+<script type="text/javascript" src="<?php echo base_url(); ?>asset/js/tinymce/tinymce.min.js"></script> 
 <script type="text/javascript">
+document.getElementsByClassName('form-control').innerHTML+="<br />";
+</script>
+<?php $this->load->view("fontend/layout/footer.php"); ?>
+
+
+ 
     
-    $(document).ready(function(){
-        $('#submit').submit(function(){
-            $('#myModal').modal();
-        })
-    })
-
-</script>
-
-
-<script>
-$(document).ready(function(){
-    $("#name").keypress(function(event){
-        var inputValue = event.charCode;
-        if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
-            event.preventDefault();
-        }
-    });
-});
-
-</script>
-  <script src="<?php echo base_url(); ?>asset/js/intlTelInput.js"></script>
-  <script src="<?php echo base_url(); ?>asset/js/utils.js"></script>
-  <script>
-    var input = document.querySelector("#phone");
-    window.intlTelInput(input, {
-      utilsScript: "",
-    });
-  </script>
+    <script>
   
   
-    
+  function hideshowfun()
+  {
+  
+      var a = $('#category').val();
+      
+      if(a=='MCQ')
+      {
+          $('#comp_name').hide();
+      }
+     else{
+         $('#comp_name').show();
+     } 
+     
+     if(a=='Subjective' || a=='Practical')
+      {
+          $('#name').hide();
+      }
+     else{
+         $('#name').show();
+     } 
+     
+      
+  }
+</script> 
+
 <script>
-	function getStates(id){
-		if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>Employer/getstate',
-                data:{id:id},
-                success:function(res){
-                    $('#state_id').html(res);
-                }
-				
-            }); 
-        }
-   
-	}
-	   
-	  
-	  function getCitys(id){
-		if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>Employer/getcity',
-                data:{id:id},
-                success:function(res){
-                    $('#city_id').html(res);
-                }
-				
-            }); 
-          }
-   
-	   }
-	   
-	  $(document).ready(function(){
+  $(document).ready(function(){
+
+
 
     function getStates_load(){
         var id = $('#country_id').val();
@@ -265,30 +210,49 @@ $(document).ready(function(){
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>Employer/getstate',
+                url:'<?php echo base_url();?>employer/getstate',
                 data:{id:id},
                 success:function(res){
                     $('#state_id').html(res);
-                    $('#state_id').val(<?php echo $employee_info->state_id; ?>);
-                     getCitys_load(<?php echo $employee_info->state_id; ?>);
+                    $('#state_id').val(<?php echo $result['state_id']; ?>);
+          getCitys_load();
                 }
                 
             }); 
           }
    
        }
-    
-    function getCitys_load(id){
-      //var id = $('#state_id').val();
-      // alert(id);
+     
+    function getCitys_load(){
+        var id = $('#state_id').val();
+
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>Employer/getcity',
+                url:'<?php echo base_url();?>employer/getcity',
                 data:{id:id},
                 success:function(res){
                     $('#city_id').html(res);
-                    $('#city_id').val(<?php echo $employee_info->city_id; ?>);
+                    $('#city_id').val(<?php echo $result['city_id']; ?>);
+          
+                }
+                
+            }); 
+          }
+   
+       }
+       getStates_load();
+    });
+</script>
+<script>
+    function getStates(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>employer/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state_id').html(res);
                 }
                 
             }); 
@@ -296,39 +260,87 @@ $(document).ready(function(){
    
        }
 
-  getCitys_load();
-  getStates_load();
- 
-});
+       
+</script>   
 
-</script>  
 
- <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
+      
 <script>
+    function getCitys(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>employer/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city_id').html(res);
+                }
+                
+            }); 
+          }
+   
+       }
+
+       
+</script>    
+
+
+<script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
+<script>
+$("#dept_id").select2( {
+  placeholder: "Select Department",
+  allowClear: true
+  } );
+</script>
+
+<!--<script>
 $("#country_id").select2( {
-	placeholder: "Select Country",
-	allowClear: true
-	} );
+  placeholder: "Select Country",
+  allowClear: true
+  } );
 </script>
-<script>
-$("#company_category").select2( {
-	placeholder: "Select Industry",
-	allowClear: true
-	} );
-</script>
-<script>
-$("#country").select2( {
-	placeholder: "Select Country Code",
-	allowClear: true
-	} );
+
+  <script>
+$("#country_id").html($("#country_id option").sort(function (a, b) {
+    return a.text == b.text ? 0 : a.text < b.text ? -1 : 1
+}))
 </script>
 
 
+
 <script>
+$(function() {
+  // choose target dropdown
+  var select = $('.department');
+  select.html(select.find('option').sort(function(x, y) {
+    // to change to descending order switch "<" for ">"
+    return $(x).text() > $(y).text() ? -1 : 1;
+  }));
+
+  // select default item after sorting (first item)
+  $('select').get(0).selectedIndex = 0;
+});
+</script>-->
+<script>        
+           function phoneno(){          
+            $('#mobile').keypress(function(e) {
+                var a = [];
+                var k = e.which;
+
+                for (i = 48; i < 58; i++)
+                    a.push(i);
+
+                if (!(a.indexOf(k)>=0))
+                    e.preventDefault();
+            });
+        }
+       </script>
+     
+     <script>
   var BASE_URL = "<?php echo base_url(); ?>";
  
  $(document).ready(function() {
-    $( "#company_pincode" ).autocomplete({
+    $( "#pincode" ).autocomplete({
  
         source: function(request, response) {
             $.ajax({
@@ -350,111 +362,12 @@ $("#country").select2( {
  });
 });
 </script>
-
-
-<script>
-$(function() {
-  // choose target dropdown
-  var select = $('.counrey_code');
-  select.html(select.find('option').sort(function(x, y) {
-    // to change to descending order switch "<" for ">"
-    return $(x).text() > $(y).text() ? 1 : -1;
-  }));
-
-  // select default item after sorting (first item)
-  //$('select').get(0).selectedIndex = 0;
-});
-</script>
-
-
-<script>
-$(function() {
-  // choose target dropdown
-  var select = $('.counrey_code');
-  select.html(select.find('option').sort(function(x, y) {
-    // to change to descending order switch "<" for ">"
-    return $(x).text() > $(y).text() ? 1 : -1;
-  }));
-
-  // select default item after sorting (first item)
-  //$('select').get(0).selectedIndex = 0;
-});
-</script>
-
-<script>
-$(function() {
-  // choose target dropdown
-  var select = $('.services');
-  select.html(select.find('option').sort(function(x, y) {
-    // to change to descending order switch "<" for ">"
-    return $(x).text() > $(y).text() ? 1 : -1;
-  }));
-
-  // select default item after sorting (first item)
-  //$('select').get(0).selectedIndex = 0;
-});
-</script>
-
-<script>
-$(function() {
-  // choose target dropdown
-  var select = $('.country');
-  select.html(select.find('option').sort(function(x, y) {
-    // to change to descending order switch "<" for ">"
-    return $(x).text() > $(y).text() ? 1 : -1;
-  }));
-
-  // select default item after sorting (first item)
-  //$('select').get(0).selectedIndex = 0;
-});
-</script>
-
-		<script>        
-           function phoneno(){          
-            $('#company_phone').keypress(function(e) {
-                var a = [];
-                var k = e.which;
-
-                for (i = 48; i < 58; i++)
-                    a.push(i);
-
-                if (!(a.indexOf(k)>=0))
-                    e.preventDefault();
-            });
-        }
-       </script>
-	   
-	   <script>        
-           function phonenoo(){          
-            $('#cont_person_mobile').keypress(function(e) {
-                var a = [];
-                var k = e.which;
-
-                for (i = 48; i < 58; i++)
-                    a.push(i);
-
-                if (!(a.indexOf(k)>=0))
-                    e.preventDefault();
-            });
-        }
-       </script>
-		<script type="text/javascript">
-	$(document).ready(function() {
-
-      
-
-      $(".add-more").click(function(){ 
-          var html = $(".copy").html();
-          $(".after-add-more").after(html);
-      });
-
-
-      $("body").on("click",".remove",function(){ 
-          $(this).parents(".control-group").remove();
-      });
-
-
-    });
-		</script>
-	
- <?php $this->load->view("fontend/layout/footer.php"); ?>
+     
+     
+<!-- <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script> -->
+<!-- <script>
+$("#subject").select2( {
+  placeholder: "Select Subject",
+  allowClear: true
+  } );
+</script> -->
