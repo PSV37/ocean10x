@@ -57,7 +57,7 @@ class Employee_Login extends CI_Controller
          print_r($result);
         if ($result) {
             $data['emp_id'] = $result->emp_id;
-            $data['emp_name'] = $result->emp_name;
+            $data['name'] = $result->emp_name;
             $this->session->set_userdata($data);
             print_r($this->session->userdata());
              $this->session->set_flashdata('welcome','Welcome' );
