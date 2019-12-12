@@ -60,12 +60,13 @@ class Employee extends CI_controller
             $this->Master_model->master_update($employee_data,'employee',$where);
              $whereres = "emp_id='$emp_id'";
         $data['result']= $this->Master_model->get_master_row('employee',$select = FALSE,$whereres);
-        print_r($data['result']['org_id']);
-        $data['department'] = $this->Master_model->getMaster('department',$where=false);
-        $data['country'] = $this->Master_model->getMaster('country',$where=false);
-        $data['state'] = $this->Master_model->getMaster('state',$where=false);
-        $data['city'] = $this->Master_model->getMaster('city',$where=false);
-        $this->load->view('fontend/employee/employee_edit',$data);
+        // print_r($data['result']['org_id']);
+        // $data['department'] = $this->Master_model->getMaster('department',$where=false);
+        // $data['country'] = $this->Master_model->getMaster('country',$where=false);
+        // $data['state'] = $this->Master_model->getMaster('state',$where=false);
+        // $data['city'] = $this->Master_model->getMaster('city',$where=false);
+        // $this->load->view('fontend/employee/employee_edit',$data);
+        echo "string";
            
         }
         else
