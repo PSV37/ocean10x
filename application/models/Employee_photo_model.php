@@ -5,7 +5,7 @@ if (!defined('BASEPATH')) {
 }
 
 
-class Job_seeker_photo_model extends MY_Model {
+class Employee_photo_model extends MY_Model {
 
     protected $_table_name = 'employee';
     protected $_primary_key = 'emp_id';
