@@ -2314,7 +2314,7 @@ public function interview_scheduler()
 
     }
 
-    
+        /*BULK UPLOAD CV's*/    
     public function bulk_upload_cvs(){
         $company_id = $this->session->userdata('company_profile_id');
         //load model
@@ -2365,18 +2365,23 @@ public function interview_scheduler()
                         }
                         $skip ++;
                     }
-                    redirect('employer/bulk_upload_cvs');
-                    $data['response'] = 'successfully uploaded '.$filename;
-                    
                    
+                   // $data['response'] = 'successfully uploaded '.$filename;
+                    $this->session->set_flashdata('success', '<div class="alert alert-success text-center">CVs Uploaded successfully!</div>');
+                    // redirect('employer/bulk_upload_cvs');
+
                 }else{ 
-                    $data['response'] = 'failed'; 
+                    //$data['response'] = 'failed'; 
+                    $this->session->set_flashdata('success', '<div class="alert alert-danger text-center">CVs Upload failed!</div>');
                 } 
             }else{ 
-                $data['response'] = 'failed'; 
+                // $data['response'] = 'failed'; 
+                $this->session->set_flashdata('success', '<div class="alert alert-danger text-center">CVs Upload failed!</div>');
             } 
+            // $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">CVs Uploaded successfully!</div>');
+            redirect('employer/bulk_upload_cvs');
             // load view 
-            $this->load->view('fontend/employer/bulk_cv_upload_view',$data); 
+            // $this->load->view('fontend/employer/bulk_cv_upload_view',$data); 
         }else{
             // load view 
             $this->load->view('fontend/employer/bulk_cv_upload_view'); 
