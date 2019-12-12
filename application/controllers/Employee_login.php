@@ -12,7 +12,7 @@ class Employee_Login extends CI_Controller
         $this->load->model('employee_login_model');
         $emp_id = $this->session->userdata('emp_id');
         if ($emp_id != null) {
-            redirect('employee/index', 'refresh');
+            redirect('employee/index');
         }
 
     }
