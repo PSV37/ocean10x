@@ -117,6 +117,7 @@ $route['seeker-login']="register/jobseeker_login";
 $route['employer-login']="employer_login";
 
 
+
 $route['employer/all-applicants/(:num)']="employer/all_applicant/$1";
 $route['employer/downloadcv/(:num)']="employer/downloadcv/$1";
 $route['employer/sortlist-cv/(:num)']="employer/sortlist_cv/$1";
@@ -160,8 +161,8 @@ $route['save-job/(:any)'] = "job/save_this_job/$1";
 //Employee 
 
 $route['employee-login']="employee_login";
-$route['employee/edit-profile']="employee/edit_profile";
-
+// $route['employee/edit-profile']="employee/edit_profile";
+$route['Edit-profile']="employee/edit_profile"
 
 // Category and Level Search Jobs
 $route['jobs/type/(:any)'] = "job/get_job_types_job/$1";

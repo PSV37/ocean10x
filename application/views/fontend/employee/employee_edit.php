@@ -24,7 +24,7 @@
       <div class="content col-md-9">
         <div class="userccount empdash">
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
-        <form method="post" action="<?php echo base_url();?>employee/Editemployee" enctype="multipart/form-data">
+        <form method="post" action="<?php echo base_url();?>Edit-profile" enctype="multipart/form-data">
        <input type="hidden" name="cid" id="cid" value="<?php echo $result['emp_id'];?>">
               <div class="row">
 
@@ -32,7 +32,8 @@
                     <div class="box-body">
           <div class="container-fluid">
                         <div class="col-md-4">
-                            <div class="form-group">                                       
+                            <div class="form-group">  
+                            <input type="hidden" name="emp_id" value="<?php echo $result['emp_id']; ?>">                                     
                  <label for="exampleInputEmail1">Employee No <span class="required">*</span></label>
                                 
                 <input type="number" min="1" name="emp_no" id="emp_no" class="form-control" value="<?php echo $result['emp_no']; ?>">
@@ -140,7 +141,7 @@
                   </div>
                 </div>
                    <div class="panel-body"></div>
-                                <button type="submit" class="btn bg-navy" type="submit">Edit Employe
+                                <button type="submit" class="btn bg-navy" type="submit">Update Profile
                                 </button>
                 
 
