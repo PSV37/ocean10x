@@ -60,7 +60,7 @@ class Employee extends CI_controller
             $this->Master_model->master_update($employee_data,'employee',$where);
              $whereres = "emp_id='$employee_id'";
         $data['result']= $this->Master_model->get_master_row('employee',$select = FALSE,$whereres);
-        $org_id=$data['result']['org_id']);
+        $org_id=$data['result']['org_id'];
              $wherecond = "company_profile_id='$org_id'";
 
         $company_info= $this->Master_model->get_master_row('company_profile',$select = FALSE,$wherecond);
