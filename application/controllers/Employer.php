@@ -1170,7 +1170,8 @@ function getstate(){
 <br><br>Hi Dear,<br>Your account has been created successfully by '.$comp_name.' <br><br>You can login to our portal using following credentials<br>
 username: '.$to_email.'<br>
 Password: '.$pass.'<br>
-Link :<a href="https://www.consultnhire.com/employee_login">Employee Login</a><br>
+Link :<a href="">Employee Login</a><br>
+<a href="https://www.consultnhire.com/employee_login" class="btn btn-primary" value="Login" align="center" target="_blank">Login Now</a>
 Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out how works and our support team are ready to help.<br><br>© 2017 ConsultnHire All Rights Reserved.<br><br>You have received this mail because your e-mail ID is registered with Consultnhire.com. This is a system-generated e-mail regarding your Consultnhire account preferences, please do not reply to this message. The jobs sent in this mail have been posted by the clients of Consultnhire.com. And we have enabled auto-login for your convenience, you are strongly advised not to forward this email to protect your account from unauthorized access. IEIL has taken all reasonable steps to ensure that the information in this mailer is authentic. Users are advised to research bonafides of advertisers independently. Please do not pay any money to anyone who promises to find you a job. IEIL shall not have any responsibility in this regard. We recommend that you visit our Terms & Conditions and the Security Advice for more comprehensive information.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
                            $send = sendEmail_JobRequest($to_email,$message,$subject);
         		redirect(base_url().'employer/allemployee');
@@ -1181,7 +1182,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $data['city'] = $this->Master_model->getMaster('city',$where=false);
         $data['country'] = $this->Master_model->getMaster('country',$where=false);
         $data['state'] = $this->Master_model->getMaster('state',$where=false);
-    	$this->load->view('fontend/employee/add_employee',$data);		
+    	$this->load->view('fontend/employer/add_employee',$data);		
     }
 
     public function addconsultant()
@@ -1366,7 +1367,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
            $data["links"] = $this->pagination->create_links();
     	   
            $data["result"] = $this->Master_model->getMaster("employee", $where, $join, $order = "ASC", $field = "employee.emp_id", $select = false,$config["per_page"],$page, $search=false, $group_by = FALSE);
-    	$this->load->view('fontend/employee/employee_master',$data);
+    	$this->load->view('fontend/employer/employee_master',$data);
     }
 
     public function allconsultants()
@@ -1442,7 +1443,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
     	$data['state'] = $this->Master_model->getMaster('state',$where=false);
     	$data['city'] = $this->Master_model->getMaster('city',$where=false);
     	//echo $this->db->last_query(); die;
-    	$this->load->view('fontend/employee/edit_employee',$data);
+    	$this->load->view('fontend/employer/edit_employee',$data);
     }
 
     public function edit_consultant()
