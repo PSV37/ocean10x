@@ -12,10 +12,15 @@ class Employee extends CI_controller
         $this->load->model('employee_login_model');
         $this->load->model('Employee_photo_model');
         $emp_id = $this->session->userdata('emp_id');
+        echo $emp_id;
         if ($emp_id != null) {
-            redirect('employee/index');
+            // redirect('employee/index');
+        // $this->load->view('fontend/employee/employee_dashboard');
+
         }else{
-            redirect('employee_login/index');
+            // redirect('employee_login/index');
+        $this->load->view('fontend/employee/login');
+
         }
 
     }
@@ -38,11 +43,16 @@ class Employee extends CI_controller
 		// echo "string";
 		$emp_id=$this->session->userdata('emp_id');
 		 $whereres = "emp_id='$emp_id'";
-        $employee_data= $this->Master_model->get_master_row('employee',$select = FALSE,$whereres);
-        print_r($employee_data);
+        $data['result']= $this->Master_model->get_master_row('employee',$select = FALSE,$whereres);
+        $data['department'] = $this->Master_model->getMaster('department',$where=false);
+        $data['country'] = $this->Master_model->getMaster('country',$where=false);
+        $data['state'] = $this->Master_model->getMaster('state',$where=false);
+        $data['city'] = $this->Master_model->getMaster('city',$where=false);
+        $this->load->view('fontend/employee/employee_edit',$data);
+
 		
 
 
-		echo "string";
+		// echo "string";
 	}
 }
