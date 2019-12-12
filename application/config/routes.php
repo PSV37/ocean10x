@@ -117,6 +117,7 @@ $route['seeker-login']="register/jobseeker_login";
 $route['employer-login']="employer_login";
 
 
+
 $route['employer/all-applicants/(:num)']="employer/all_applicant/$1";
 $route['employer/downloadcv/(:num)']="employer/downloadcv/$1";
 $route['employer/sortlist-cv/(:num)']="employer/sortlist_cv/$1";
