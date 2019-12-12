@@ -20,6 +20,7 @@
     <div class="row">
       <div class="col-md-6 col-sm-6">
         <h1 class="page-heading">Edit Profile</h1>
+        <?php print_r($employee_info); ?>
       </div>
       <div class="col-md-6 col-sm-6">
         <div class="breadCrumb"><a href="#.">Home</a> / <span>Edit Profile</span></div>
