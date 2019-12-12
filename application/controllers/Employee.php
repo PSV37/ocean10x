@@ -13,7 +13,9 @@ class Employee extends CI_controller
         $this->load->model('Employee_photo_model');
         $emp_id = $this->session->userdata('emp_id');
         if ($emp_id != null) {
-            redirect('employee/index', 'refresh');
+            redirect('employee/index');
+        }else{
+            redirect('employee_login/index');
         }
 
     }
