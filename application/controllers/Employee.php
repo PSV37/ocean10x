@@ -98,7 +98,7 @@ class Employee extends CI_controller
                         ';
                          
                    $send = sendEmail_JobRequest($to_mail,$message,$subject);
-                   print_r($message);
+                   // print_r($message);
         // echo "string";
            
         }
