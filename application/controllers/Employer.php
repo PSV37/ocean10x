@@ -2359,23 +2359,13 @@ public function interview_scheduler()
                     // insert import data
                     foreach($importData_arr as $userdata){
                         if($skip != 0){
-                            echo "<pre>";
-                            print_r($userdata);die; 
-                           
-                            $userdata[0]=$tech_data[0]['id'];
-                            $userdata[1]=$topic_data[0]['topic_id'];
-                            $userdata[2]=$subtopic_data[0]['subtopic_id'];
-                            $userdata[3]=$lineitem_data[0]['lineitem_id'];
-                            $userdata[4]=$lineitemlevel_data[0]['lineitemlevel_id'];
-                    
-                            $userdata[13]=$options_data[0]['options_id'];
-                            
-                           $this->Questionbank_employer_model->insertRecord($userdata);
-                            //echo $this->db->last_query();die();
+                        
+                           $this->Questionbank_employer_model->InsertCVData($userdata);
+                     
                         }
                         $skip ++;
                     }
-                    redirect('employer/questionbank-import');
+                    redirect('employer/bulk_upload_cvs');
                     $data['response'] = 'successfully uploaded '.$filename;
                     
                    
@@ -2394,24 +2384,7 @@ public function interview_scheduler()
 
     }
     
-    // public function view_added_resume($jobseeker_id = null)
-    // {
-    //     if (!empty($jobseeker_id)) {
-    //         $company_id = $this->session->userdata('company_profile_id');
-
-    //         $resume          = $this->job_seeker_model->resume_view_by_id($jobseeker_id);
-    //         $edcuaiton_list  = $this->Job_seeker_education_model->education_list_by_id($jobseeker_id);
-    //         $experinece_list = $this->Job_seeker_experience_model->experience_list_by_id($jobseeker_id);
-    //         $training_list   = $this->Job_training_model->training_list_by_id($jobseeker_id);
-    //         $reference_list  = $this->Job_reference_model->reference_list_by_id($jobseeker_id);
-
-    //         $this->load->view('fontend/viewresume', compact('resume', 'edcuaiton_list', 'experinece_list', 'training_list', 'reference_list', 'language_list','job_id'));
-            
-    //     } else {
-    //         echo "not found";
-    //     }
-
-    // }  
+   
     
 } // end class
 
