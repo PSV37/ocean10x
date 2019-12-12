@@ -61,6 +61,7 @@ class Employee extends CI_controller
              $whereres = "emp_id='$emp_id'";
         $data['result']= $this->Master_model->get_master_row('employee',$select = FALSE,$whereres);
         print_r($data['result']['org_id']);
+        print_r($data['result']);
         // $data['department'] = $this->Master_model->getMaster('department',$where=false);
         // $data['country'] = $this->Master_model->getMaster('country',$where=false);
         // $data['state'] = $this->Master_model->getMaster('state',$where=false);
