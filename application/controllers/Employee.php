@@ -87,6 +87,7 @@ class Employee extends CI_controller
                     Thank You
                     Ocean Team..
                         ';
+                         $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Company Profile details have been successfully updated !</div>');
                    $send = sendEmail_JobRequest($to_mail,$message,$subject);
 
 
