@@ -42,22 +42,22 @@ class Employee extends CI_controller
         $employee_id=$this->input->post('emp_id');
         if (isset($employee_id) && !empty($employee_id)) {
 
-            $data['emp_no'] = $this->input->post('emp_no');
-            $data['emp_name'] = $this->input->post('emp_name');
-            $data['email'] = $this->input->post('email');
-            $data['mobile'] = $this->input->post('mobile');
-            $data['dept_id'] = $this->input->post('dept_id');
-            $data['address'] = $this->input->post('address');
-            $data['country_id'] = $this->input->post('country_id');
-            $data['state_id'] = $this->input->post('state_id');
-            $data['city_id'] = $this->input->post('city_id');
-            $data['pincode'] = $this->input->post('pincode');
-            $data['emp_status'] = $this->input->post('emp_status');
-            $data['emp_updated_date'] = date('Y-m-d H:i:s');
-            $data['emp_updated_by'] = $employee_id;
+            $employee_data['emp_no'] = $this->input->post('emp_no');
+            $employee_data['emp_name'] = $this->input->post('emp_name');
+            $employee_data['email'] = $this->input->post('email');
+            $employee_data['mobile'] = $this->input->post('mobile');
+            $employee_data['dept_id'] = $this->input->post('dept_id');
+            $employee_data['address'] = $this->input->post('address');
+            $employee_data['country_id'] = $this->input->post('country_id');
+            $employee_data['state_id'] = $this->input->post('state_id');
+            $employee_data['city_id'] = $this->input->post('city_id');
+            $employee_data['pincode'] = $this->input->post('pincode');
+            $employee_data['emp_status'] = $this->input->post('emp_status');
+            $employee_data['emp_updated_date'] = date('Y-m-d H:i:s');
+            $employee_data['emp_updated_by'] = $employee_id;
             $id = $this->input->post('cid');
             $where['emp_id']=$employee_id;
-            $this->Master_model->master_update($data,'employee',$where);
+            $this->Master_model->master_update($employee_data,'employee',$where);
              $whereres = "emp_id='$emp_id'";
         $data['result']= $this->Master_model->get_master_row('employee',$select = FALSE,$whereres);
         print_r($data['result']->org_id);
