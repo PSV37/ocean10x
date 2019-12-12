@@ -39,7 +39,7 @@
           <h2>Welcome Back: <strong><?php  echo $name; ?></strong></h2>
           
           <ul class="dashbuttons">
-            <li> <a href="<?php echo base_url(); ?>employee/Edit-profile" class=""> <i class="fa fa-user-circle-o" aria-hidden="true"></i> Edit Profile </a> </li>
+            <li> <a href="<?php echo base_url() ?>employee/Edit-profile" class=""> <i class="fa fa-user-circle-o" aria-hidden="true"></i> Edit Profile </a> </li>
            
             <li> <a href="<?php echo base_url() ?>employer/active-job"><i class="fa fa-check-square-o" aria-hidden="true"></i> Posted Job </a> </li>
            
