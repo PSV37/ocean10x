@@ -59,7 +59,7 @@
             <div class="container">
             	<div class="row">
       <div class="col-md-2 col-sm-3 col-xs-12">
-      <a class="logo" title="" href="<?php echo base_url() ?>"><img src="<?php echo base_url();?>employee/<?php echo $this->session->userdata('photo'); ?>"></a>      
+      <a class="logo" title="" href="<?php echo base_url() ?>"><?php echo get_logo();?></a>      
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
         </div>
@@ -82,9 +82,16 @@
                     <li class="dropdown yamm-half membermenu hasmenu">
 
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                           
+                        <?php
+                        $emp_id = $this->session->userdata('emp_id');
+                       if(!empty($this->Employee_photo_model->get_employee_photo($emp_id))):?>
+                      <img src="<?php echo base_url() ?>employee/<?php echo  $this->Employee_photo_model->get_employee_photo($emp_id);?>" alt="" class="img-circle"> <strong>Welcome <?php echo $this->session->userdata('name'); ?></strong></a>
+                      <?php else: ?>
+                      <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" alt="" class="img-circle"><strong>Welcome <?php echo $this->session->userdata('name'); ?></strong></a>
+                      <?php endif; ?>   
+
                         <ul class="dropdown-menu start-right">
-                            <li class="dropdown-header">Welcome <?php echo $this->session->userdata('name'); ?></li>
+                            <!-- <li class="dropdown-header">Welcome <?php echo $this->session->userdata('name'); ?></li> -->
                             <!-- <li><a href="<?php echo base_url(); ?>employee"><span class="glyphicon glyphicon-user"></span>Dashboard</a></li> -->
                             <!-- <li><a href="<?php echo base_url(); ?>employee/active-job"><span class="glyphicon glyphicon-star"></span> Active Job</a></li> -->
                             
