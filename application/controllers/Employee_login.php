@@ -59,7 +59,7 @@ class Employee_Login extends CI_Controller
             $data['emp_id'] = $result->emp_id;
             $data['emp_name'] = $result->emp_name;
             $this->session->set_userdata($data);
-             $this->session->set_flashdata('welcome','Welcome' echo $this->session->userdata('name'););
+             $this->session->set_flashdata('welcome','Welcome' );
                $this->load->view('fontend/employee/employee_dashboard');
             // redirect_back();
         } else {
