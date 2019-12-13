@@ -108,7 +108,7 @@ class Employee extends CI_controller
         {
 		
 		$emp_id=$this->session->userdata('emp_id');
-        // print_r($emp_id);   
+        print_r($emp_id);   
 		$whereres = "emp_id='$emp_id'";
         $data['result']= $this->Master_model->get_master_row('employee',$select = FALSE,$whereres);
         $data['department'] = $this->Master_model->getMaster('department',$where=false);
