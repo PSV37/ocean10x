@@ -25,7 +25,7 @@
                         <div class="userccount">
                             <div class="formpanel">
                            <?php echo $this->session->flashdata('change_password'); ?>
-                               <form id="submit" class="submit-form" action="change-password" method="post">
+                               <form id="submit" class="submit-form"  method="post">
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12">
                                             <label class="control-label">Current Password </label>
