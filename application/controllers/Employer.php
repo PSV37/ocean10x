@@ -1217,7 +1217,6 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             if(isset($_POST['add_consultant'])) 
             {
                 $company_id=$this->input->post('company_profile_id');
-                echo $company_id;
                 if (isset($company_id) && !empty($company_id)) {
                     
                     $exist_companyid = $this->company_profile_model->companyid_check($company_id,$user_id);
@@ -1237,7 +1236,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                              redirect('employer/addconsultant');
                     }
                 }else{
-                        $to_email=$this->input->post('cont_person_email');
+                        
                         $exist_companyname = $this->company_profile_model->companyname_check($this->input->post('company_name'));
                          $exist_email    = $this->company_profile_model->email_check($this->input->post('company_email'));
                         $exist_username = $this->company_profile_model->username_check($this->input->post('company_username'));
@@ -1245,22 +1244,22 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                        if ($exist_companyname) {
             // all Ready Account Message
                         $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Company Name Or Account Already Use This!</div>');
-                        redirect('employer_register');
+                        redirect('add_consultant');
                     } 
 
                     if ($exist_email) {
                         // all Ready Account Message
                         $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Email Or Account Already Use This!</div>');
-                        redirect('employer_register');
+                        redirect('add_consultant');
                     }
                     if ($exist_username) {
                         // all Ready Account Message
                         $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Username Or Account Already Use This!</div>');
-                        redirect('employer_register');
+                        redirect('add_consultant');
                     } 
                     if ($exist_phone_name) {
                         $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Phone Number Or Account Already Use This!</div>');
-                        redirect('employer_register');
+                        redirect('add_consultant');
                     }
         
                         else
@@ -1296,6 +1295,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
                     }
             }
+            $to_email=$this->input->post('cont_person_email');
+                        // echo $to_email;
              $subject = "Registration done successfully";
 
             $message = '<div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
@@ -1313,7 +1314,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $company_profile_id=$this->input->post('company_profile_id');
             // echo $consultant_id;
             if (isset($company_profile_id)) {
-                $where['company_profile_id']=$consultant_id;
+                $where['company_profile_id']=$company_profile_id;
                 // print_r($company_profile);
             $this->Master_model->master_update($company_profile,'company_profile',$where);
             $consultant_id=$this->input->post('consultant_id');
@@ -1322,7 +1323,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $this->Master_model->master_update($data,'consultant_company_mapping',$whr);
 
 
-             redirect(base_url().'employer/allconsultants');
+             redirect('allconsultants');
             }
                 # code...
             }
