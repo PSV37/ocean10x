@@ -81,8 +81,6 @@ class Employee extends CI_controller
         $data['country'] = $this->Master_model->getMaster('country',$where=false);
         $data['state'] = $this->Master_model->getMaster('state',$where=false);
         $data['city'] = $this->Master_model->getMaster('city',$where=false);
-        $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Company Profile details have been successfully updated !</div>');
-        $this->load->view('fontend/employee/employee_edit',$data);
         $subject = $name.' Updated profile';
                 $message = '
                         <style>
@@ -103,6 +101,9 @@ class Employee extends CI_controller
                     Thank You<br>Ocean Team';
                          
                    $send = sendEmail_JobRequest($to_mail,$message,$subject);
+        $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Company Profile details have been successfully updated !</div>');
+        $this->load->view('fontend/employee/employee_edit',$data);
+        
                    // print_r($message);
         // echo "string";
            
