@@ -190,4 +190,17 @@ class Employee extends CI_controller
                     $this->load->view('fontend/employee/change_password');
                 }
             }
+
+            public function current_jobs()
+            {
+                $where['emp_id']=$emp_id;
+                $this->Master_model->master_update($newpassword,'employee',$where);
+                $whereres = "emp_id='$emp_id'";
+                $result= $this->Master_model->get_master_row('employee',$select = FALSE,$whereres);
+                $org_id=$result['org_id'];
+                $company_active_jobs = $this->job_posting_model->get_company_active_jobs($org_id);
+                // $this->load->view('fontend/employer/active_job.php', compact('company_active_jobs', 'employer_id'));
+                print_r($company_active_jobs);
+            }
+                
 }
