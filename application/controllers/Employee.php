@@ -200,7 +200,7 @@ class Employee extends CI_controller
                 $employer_id=$result['org_id'];
                 $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
                 $this->load->view('fontend/employee/active_job.php', compact('company_active_jobs', 'employer_id'));
-                print_r($company_active_jobs);
+                // print_r($company_active_jobs);
             }
                 
 }
