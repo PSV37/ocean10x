@@ -58,6 +58,12 @@
                                             echo " ". $job_career_info[0]->js_career_salary;
                                      ?></td>
                                   </tr>
+                                  <tr>
+                                    <td width="30%">Last Salary Hike:</td>
+                                    <td><?php if(!empty($job_career_info[0]->last_salary_hike))
+                                            echo  date('d M Y', strtotime($job_career_info[0]->last_salary_hike));
+                                     ?></td>
+                                  </tr>
 
                                    <tr>
                                     <td width="30%">Availability to Join:</td>
@@ -73,15 +79,13 @@
                                     <td width="30%">Notice Period</td>
                                     <td>
                                       <?php if(!empty($job_career_info[0]->notice_period))
-                                            echo $job_career_info[0]->notice_period.' Days';
+                                        echo $job_career_info[0]->notice_period.' Days';
 
                                         if(!empty($job_career_info[0]->serving_notice_period))
                                         if($job_career_info[0]->serving_notice_period=='Yes') {
                                           echo "(Serving)";
                                         }
-
-                                            
-                                     ?>
+                                      ?>
                                     </td>
                                   </tr>	
   								                <tr>
@@ -255,6 +259,18 @@
                            echo $job_career_info[0]->js_career_salary;
                            } 
                        ?>" onkeypress="javascript:return isNumber(event)" >
+              </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-3" for="email">Last Salary Hike</label>
+              <div class="col-sm-9">
+                <input type="text" name="last_salary_hike" class="form-control datepicker" id="last_salary_hike" placeholder="Enter Date"
+                 value="<?php
+                       if (!empty($job_career_info[0]->last_salary_hike)) {
+                         echo date('d-m-Y', strtotime($job_career_info[0]->last_salary_hike));
+                         }
+                     ?>">
               </div>
           </div>
 
