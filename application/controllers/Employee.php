@@ -42,6 +42,8 @@ class Employee extends CI_controller
         $employee_id=$this->input->post('emp_id');
         if (isset($employee_id) && !empty($employee_id)) {
 
+            print_r($employee_id);
+
             $employee_data['emp_no'] = $this->input->post('emp_no');
             $employee_data['emp_name'] = $this->input->post('emp_name');
             $employee_data['email'] = $this->input->post('email');
@@ -57,16 +59,16 @@ class Employee extends CI_controller
             $employee_data['emp_updated_by'] = $employee_id;
             $id = $this->input->post('cid');
             // $where['emp_id']=$employee_id;
-            $this->Master_model->master_update($employee_data,'employee',$where);
-             $whereres = "emp_id='$employee_id'";
-        $data['result']= $this->Master_model->get_master_row('employee',$select = FALSE,$whereres);
-        $org_id=$data['result']['org_id'];
-        $name=$data['result']['emp_name'];
-        $wherecond = "company_profile_id='$org_id'";
+        //     $this->Master_model->master_update($employee_data,'employee',$where);
+        //      $whereres = "emp_id='$employee_id'";
+        // $data['result']= $this->Master_model->get_master_row('employee',$select = FALSE,$whereres);
+        // $org_id=$data['result']['org_id'];
+        // $name=$data['result']['emp_name'];
+        // $wherecond = "company_profile_id='$org_id'";
 
-        $company_info= $this->Master_model->get_master_row('company_profile',$select = FALSE,$wherecond);
-        $to_mail= $company_info['company_email'];
-        $company_name= $company_info['company_name'];
+        // $company_info= $this->Master_model->get_master_row('company_profile',$select = FALSE,$wherecond);
+        // $to_mail= $company_info['company_email'];
+        // $company_name= $company_info['company_name'];
          
 
 
