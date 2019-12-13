@@ -148,13 +148,14 @@ class Employee extends CI_controller
                             // $this->Master_model->master_update($newpassword, $employer_id);
                             $this->session->set_flashdata('change_password',
                                 '<span class="label label-info"> Password Changed Sucessfully!</span>');
-                            redirect('change-password');
+                            redirect('employee/change_password');
                         }
 
                     } else {
                         $this->session->set_flashdata('change_password',
                             '<span class="label label-info">Your Old Password Not Found</span>');
-                        redirect('change-password');
+                            redirect('employee/change_password');
+                        
                     }
                 } else {
                     $this->load->view('fontend/employee/change_password');
