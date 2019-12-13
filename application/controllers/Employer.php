@@ -2098,34 +2098,43 @@ public function interview_scheduler()
 
         if($_POST)
         {
-            $cv_data = array(
-                'company_id'                 => $company_id,
-                'js_name'                    => $this->input->post('candidate_name'),
-                'js_email'                   => $this->input->post('candidate_email'),
-                'js_mobile'                  => $this->input->post('candidate_phone'),
-                'js_job_type'                => $this->input->post('job_type'),
-                'js_current_designation'     => $this->input->post('current_job_desig'),
-                'js_current_work_location'   => $this->input->post('current_work_location'),
-                'js_working_since'           => date('Y-m-d', strtotime($this->input->post('working_current_since'))),
-                'js_current_ctc'             => $this->input->post('current_ctc'),
-                'js_current_notice_period'   => $this->input->post('candidate_notice_period'),
-                'js_experience'              => $this->input->post('candidate_experiance'),
-                'js_last_salary_hike'        => date('Y-m-d', strtotime($this->input->post('last_salary_hike'))),
-                'js_top_education'           => $this->input->post('top_education'),
-                // 'js_edu_special'             => $this->input->post('education_specialization'),
-                'js_skill_set'               => $this->input->post('candidate_skills'),
-                'js_certifications'          => $this->input->post('candidate_certification'),
-                'js_industry'                => $this->input->post('candidate_industry'),
-                'js_role'                    => $this->input->post('candidate_role'),
-                'js_expected_salary'         => $this->input->post('candidate_expected_sal'),
-                'js_desired_work_location'   => $this->input->post('desired_wrok_location'),
-            );
+            $email = $this->input->post('candidate_email');
+            $where_find = "js_email= '$email'";
+            $exists = $this->Master_model->get_master_row('corporate_cv_bank', $select= FALSE, $where_find, $join = FALSE);
+            
+            if($exists==true)
+            {
+                $this->session->set_flashdata('success', '<div class="alert alert-warning text-center">This CV already exists!</div>');
+            }else{
+                $cv_data = array(
+                    'company_id'                 => $company_id,
+                    'js_name'                    => $this->input->post('candidate_name'),
+                    'js_email'                   => $this->input->post('candidate_email'),
+                    'js_mobile'                  => $this->input->post('candidate_phone'),
+                    'js_job_type'                => $this->input->post('job_type'),
+                    'js_current_designation'     => $this->input->post('current_job_desig'),
+                    'js_current_work_location'   => $this->input->post('current_work_location'),
+                    'js_working_since'           => date('Y-m-d', strtotime($this->input->post('working_current_since'))),
+                    'js_current_ctc'             => $this->input->post('current_ctc'),
+                    'js_current_notice_period'   => $this->input->post('candidate_notice_period'),
+                    'js_experience'              => $this->input->post('candidate_experiance'),
+                    'js_last_salary_hike'        => date('Y-m-d', strtotime($this->input->post('last_salary_hike'))),
+                    'js_top_education'           => $this->input->post('top_education'),
+                    // 'js_edu_special'             => $this->input->post('education_specialization'),
+                    'js_skill_set'               => $this->input->post('candidate_skills'),
+                    'js_certifications'          => $this->input->post('candidate_certification'),
+                    'js_industry'                => $this->input->post('candidate_industry'),
+                    'js_role'                    => $this->input->post('candidate_role'),
+                    'js_expected_salary'         => $this->input->post('candidate_expected_sal'),
+                    'js_desired_work_location'   => $this->input->post('desired_wrok_location'),
+                );
             
                 $cv_data['created_on'] = date('Y-m-d H:i:s');
                 $cv_data['created_by'] = $company_id;
 
                 $this->Master_model->master_insert($cv_data, 'corporate_cv_bank');
                 $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New CV added sucessfully!</div>');
+            }
                 redirect('employer/add_new_cv');
           
 
