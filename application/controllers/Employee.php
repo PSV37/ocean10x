@@ -141,8 +141,8 @@ class Employee extends CI_controller
                     $data = $this->employee_login_model->change_password($emp_id, $oldpassword);
                     if ($data == true) {
 
-                        if ($employer_id) {
-                             $where['emp_id']=$employee_id;
+                        if ($emp_id) {
+                             $where['emp_id']=$emp_id;
 
                             $this->Master_model->master_update($newpassword,'employee',$where);
                             // $this->Master_model->master_update($newpassword, $employer_id);
