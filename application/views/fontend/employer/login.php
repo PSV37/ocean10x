@@ -3,7 +3,7 @@
 ?>                
           
 <!-- Page Title start -->
-<div class="pageTitle">
+<!-- <div class="pageTitle">
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-6">
@@ -14,7 +14,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <!-- Page Title End --> 
 
 
@@ -72,7 +72,7 @@
           <!-- login form  end--> 
           
           <!-- sign up form -->
-          <div class="newuser"><i class="fa fa-user" aria-hidden="true"></i>Not on Ocean ? <a href="<?php echo base_url(); ?>employer_register">Register Now</a></div>
+          <div class="newuser"><i class="fa fa-user" aria-hidden="true"></i> Not on Ocean ? <a href="<?php echo base_url(); ?>employer_register">Register Now</a></div>
           <!-- sign up form end--> 
           
         </div>
