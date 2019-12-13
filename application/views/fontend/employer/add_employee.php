@@ -2,7 +2,14 @@
     $this->load->view('fontend/layout/employer_header.php');
 ?>
 <!-- Page Title start -->
-
+<style type="text/css">
+  label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+</style>
 <div class="pageTitle">
   <div class="container">
     <div class="row">
@@ -31,13 +38,13 @@
 
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="box-body">
-					<?php
-if (isset($message_display)) {
-echo "<div class='message'>";
-echo $message_display;
-echo "</div>";
-}
-?>
+					  <?php
+              if (isset($message_display)) {
+                echo "<div class='message'>";
+                echo $message_display;
+                echo "</div>";
+              }
+            ?>
 					<div class="container-fluid">
                         <div class="col-md-4">
                             <div class="form-group">                                       
