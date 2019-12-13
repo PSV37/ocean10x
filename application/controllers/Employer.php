@@ -1324,7 +1324,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             $this->Master_model->master_update($data,'consultant_company_mapping',$whr);
 
 
-             redirect(base_url().'employer/allconsultants');
+             redirect('allconsultants');
             }
                 # code...
             }
