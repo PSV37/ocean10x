@@ -1239,11 +1239,30 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 }else{
                         $to_email=$this->input->post('cont_person_email');
                         $exist_companyname = $this->company_profile_model->companyname_check($this->input->post('company_name'));
+                         $exist_email    = $this->company_profile_model->email_check($this->input->post('company_email'));
+                        $exist_username = $this->company_profile_model->username_check($this->input->post('company_username'));
+                         $exist_phone_name = $this->company_profile_model->phonenumber_check($this->input->post('company_phone'));
                        if ($exist_companyname) {
-                            // all Ready Account Message
-                            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Company Name Or Account Already Use This!</div>');
-                             redirect('employer/addconsultant');
-                        } 
+            // all Ready Account Message
+                        $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Company Name Or Account Already Use This!</div>');
+                        redirect('employer_register');
+                    } 
+
+                    if ($exist_email) {
+                        // all Ready Account Message
+                        $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Email Or Account Already Use This!</div>');
+                        redirect('employer_register');
+                    }
+                    if ($exist_username) {
+                        // all Ready Account Message
+                        $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Username Or Account Already Use This!</div>');
+                        redirect('employer_register');
+                    } 
+                    if ($exist_phone_name) {
+                        $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Phone Number Or Account Already Use This!</div>');
+                        redirect('employer_register');
+                    }
+        
                         else
                         {
                                 $company_profile['company_password']=md5($pass);
@@ -1284,7 +1303,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 <br><br>Hi Dear,<br>Your account has been created successfully by '.$comp_name.' <br><br>You can login to our portal using following credentials<br>
 username: '.$to_email.'<br>
 Password: '.$pass.'<br>
-Link :<a href="https://www.consultnhire.com/employee_login">Employee Login</a><br>
+<a href="https://www.consultnhire.com/employer_login" class="btn btn-primary" value="Login" align="center" target="_blank">Login Now</a>
 
 Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Question? Check out how works and our support team are ready to help.<br><br>© 2017 ConsultnHire All Rights Reserved.<br><br>You have received this mail because your e-mail ID is registered with Consultnhire.com. This is a system-generated e-mail regarding your Consultnhire account preferences, please do not reply to this message. The jobs sent in this mail have been posted by the clients of Consultnhire.com. And we have enabled auto-login for your convenience, you are strongly advised not to forward this email to protect your account from unauthorized access. IEIL has taken all reasonable steps to ensure that the information in this mailer is authentic. Users are advised to research bonafides of advertisers independently. Please do not pay any money to anyone who promises to find you a job. IEIL shall not have any responsibility in this regard. We recommend that you visit our Terms & Conditions and the Security Advice for more comprehensive information.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
                            $send = sendEmail_JobRequest($to_email,$message,$subject);
@@ -1304,7 +1323,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             $this->Master_model->master_update($data,'consultant_company_mapping',$whr);
 
 
-            // redirect(base_url().'employer/allconsultants');
+             redirect(base_url().'employer/allconsultants');
             }
                 # code...
             }
