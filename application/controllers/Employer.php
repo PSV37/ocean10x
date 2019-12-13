@@ -2099,7 +2099,7 @@ public function interview_scheduler()
         if($_POST)
         {
             $email = $this->input->post('candidate_email');
-            $where_find['js_email']= $email;
+            $where_find = "js_email= '$email'";
             $exists = $this->Master_model->get_master_row('corporate_cv_bank', $select= FALSE, $where_find, $join = FALSE);
             
             if($exists==true)
