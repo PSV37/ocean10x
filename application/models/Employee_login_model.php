@@ -130,6 +130,20 @@ public function check_forgot_user_info($email)
         $this->db->where('token', $token);
         $this->db->update('employee');
         return $this->db->affected_rows();
+    }
+
+    public function change_password($employee_id, $password)
+    {
+        $this->db->select('*');
+        $this->db->from('employee');
+        $this->db->where('emp_id', $employee_id);
+        $this->db->where('password', $password);
+        $query = $this->db->get();
+        if ($query->num_rows() == 1) {
+            return true;
+        } else {
+            return false;
+        }
     }	    
     
     

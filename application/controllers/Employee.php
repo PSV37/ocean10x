@@ -128,4 +128,36 @@ class Employee extends CI_controller
 
 		
 	}
+
+    public function change_password()
+            {
+
+                if ($_POST) {
+                    $emp_id = $this->session->userdata('emp_id');
+                    $oldpassword = md5($this->input->post('oldpassword'));
+                    $newpassword = array(
+                        'password' => md5($this->input->post('newpassword')),
+                    );
+                    $data = $this->employee_login_model->change_password($employer_id, $oldpassword);
+                    if ($data == true) {
+
+                        if ($employer_id) {
+                             $where['emp_id']=$employee_id;
+
+                            $this->Master_model->master_update($newpassword,'employee',$where);
+                            // $this->Master_model->master_update($newpassword, $employer_id);
+                            $this->session->set_flashdata('change_password',
+                                '<span class="label label-info"> Password Changed Sucessfully!</span>');
+                            redirect('change_password');
+                        }
+
+                    } else {
+                        $this->session->set_flashdata('change_password',
+                            '<span class="label label-info">Your Old Password Not Found</span>');
+                        redirect('change_password');
+                    }
+                } else {
+                    $this->load->view('fontend/employee/change_password');
+                }
+            }
 }
