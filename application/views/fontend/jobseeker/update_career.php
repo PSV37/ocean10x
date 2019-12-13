@@ -262,7 +262,7 @@
                 <input type="text" name="last_salary_hike" class="form-control datepicker" id="last_salary_hike" placeholder="Enter Date"
                  value="<?php
                        if (!empty($job_career_info[0]->last_salary_hike)) {
-                         echo $job_career_info[0]->last_salary_hike;
+                         echo date('d-m-Y', strtotime($job_career_info[0]->last_salary_hike));
                          }
                      ?>">
               </div>
