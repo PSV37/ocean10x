@@ -1400,7 +1400,6 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         );
     
         $data['result'] = $this->Master_model->getMaster('consultant_company_mapping',$where, $join, $order ="ASC", $field = "con_comp_map_id", $select = false, $config["per_page"],$page, $search=false, $group_by = false);
-        print_r($this->db->last_query());
        
             $config = array();
             $config["base_url"] = base_url('employer/index');
