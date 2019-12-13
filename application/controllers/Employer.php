@@ -1372,15 +1372,16 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
     public function allconsultants()
     {
         $employer=$this->session->userdata('company_profile_id');
-        $where='employee.org_id="'.$employer.'" and employee.emp_status!= 0';
+       
 
-        $where='consultant_company_mapping.company_id="'.$employer.'"and consultant_company_mapping.cons_status!=1';
+        $where='consultant_company_mapping.company_id="'.$employer.'"and consultant_company_mapping.cons_status=0';
         $join = array(
             'company_profile' => 'company_profile.company_profile_id = consultant_company_mapping.consultant_id|INNER',
             
         );
     
         $data['result'] = $this->Master_model->getMaster('consultant_company_mapping',$where, $join, $order ="ASC", $field = "con_comp_map_id", $select = false, $config["per_page"],$page, $search=false, $group_by = false);
+        print_r($this->db->last_query());
        
             $config = array();
             $config["base_url"] = base_url('employer/index');
