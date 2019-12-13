@@ -138,7 +138,7 @@ class Employee extends CI_controller
                     $newpassword = array(
                         'password' => md5($this->input->post('newpassword')),
                     );
-                    $data = $this->employee_login_model->change_password($employer_id, $oldpassword);
+                    $data = $this->employee_login_model->change_password($emp_id, $oldpassword);
                     if ($data == true) {
 
                         if ($employer_id) {
