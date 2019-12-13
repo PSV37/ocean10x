@@ -2,7 +2,7 @@
     $this->load->view('fontend/layout/header.php');
 ?>                
           
-          <!-- Page Title start -->
+<!-- Page Title start -->
 <div class="pageTitle">
   <div class="container">
     <div class="row">
@@ -24,7 +24,8 @@
       <div class="col-md-6 col-md-offset-3">
         <div class="userccount">
           	
-          <h5>Employer Login</h5>
+          <h5 align="center">Employer Login</h5>
+          <hr>
           <!-- login form -->
            <form class="submit-form customform loginform" action="<?php echo base_url() ?>employer_login/check_login?redirect=<?php echo $this->input->get('redirect'); ?>" method="post">
            <?php echo $this->session->flashdata('emp_msg');; ?>
