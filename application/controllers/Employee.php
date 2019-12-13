@@ -57,11 +57,12 @@ class Employee extends CI_controller
             $employee_data['emp_status'] = $this->input->post('emp_status');
             $employee_data['emp_updated_date'] = date('Y-m-d H:i:s');
             $employee_data['emp_updated_by'] = $employee_id;
-            $id = $this->input->post('cid');
+           
             // $where['emp_id']=$employee_id;
         //     $this->Master_model->master_update($employee_data,'employee',$where);
         //      $whereres = "emp_id='$employee_id'";
-        // $data['result']= $this->Master_model->get_master_row('employee',$select = FALSE,$whereres);
+        $data['result']= $this->Master_model->get_master_row('employee',$select = FALSE,$whereres);
+        print_r($data);
         // $org_id=$data['result']['org_id'];
         // $name=$data['result']['emp_name'];
         // $wherecond = "company_profile_id='$org_id'";
@@ -73,10 +74,10 @@ class Employee extends CI_controller
 
 
 
-        $data['department'] = $this->Master_model->getMaster('department',$where=false);
-        $data['country'] = $this->Master_model->getMaster('country',$where=false);
-        $data['state'] = $this->Master_model->getMaster('state',$where=false);
-        $data['city'] = $this->Master_model->getMaster('city',$where=false);
+        // $data['department'] = $this->Master_model->getMaster('department',$where=false);
+        // $data['country'] = $this->Master_model->getMaster('country',$where=false);
+        // $data['state'] = $this->Master_model->getMaster('state',$where=false);
+        // $data['city'] = $this->Master_model->getMaster('city',$where=false);
         $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Company Profile details have been successfully updated !</div>');
         $this->load->view('fontend/employee/employee_edit',$data);
         $subject = $name.' Updated profile';
