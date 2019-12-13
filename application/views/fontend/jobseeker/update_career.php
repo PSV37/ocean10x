@@ -58,6 +58,12 @@
                                             echo " ". $job_career_info[0]->js_career_salary;
                                      ?></td>
                                   </tr>
+                                  <tr>
+                                    <td width="30%">Last Salary Hike:</td>
+                                    <td><?php if(!empty($job_career_info[0]->last_salary_hike))
+                                            echo  date('d M Y', strtotime($job_career_info[0]->last_salary_hike));
+                                     ?></td>
+                                  </tr>
 
                                    <tr>
                                     <td width="30%">Availability to Join:</td>
