@@ -151,7 +151,7 @@
                                     <div class="formrow">
                                       <div class="row">
                                         <div class="col-md-6 col-sm-12">
-                                          <input type="checkbox" value="" checked="" style="width: 25px !important;height: 15px !important;" > <a  href="<?php echo base_url().'terms' ?>" target="_blank" required>  I agree to the Terms and Conditions</a>
+                                          <input type="checkbox" value="" checked="" style="width: 25px !important;height: 15px !important;" > <a href="<?php echo base_url().'terms' ?>" target="_blank" required>  I agree to the Terms and Conditions</a>
                                         </div>
                                       </div>
                                     </div>
@@ -193,26 +193,21 @@
             var inputchapcha=$('#inputchapcha').val();
             var imageData='<?php echo $this->session->userdata('captchaCode'); ?>';
             validateCaptcha();
-         });
+        });
 
-            /// CAPTCHA CODE 
+        /// CAPTCHA CODE 
 
         $('.refreshCaptcha').on('click', function(){
             $.get('<?php echo base_url().'Employer_register/refresh'; ?>', function(data){
               $('#captImg').html(data);
-                         $.get('<?php echo base_url().'Employer_register/getCaptcha'; ?>', function(data1){
-                         $('#sessionCaptcha1').val(data1);
-              
-                        });
+                $.get('<?php echo base_url().'Employer_register/getCaptcha'; ?>', function(data1){
+                 $('#sessionCaptcha1').val(data1);
+  
+                });
             });
-      });
-
-
-
-
-
-
         });
+
+    });
 
         function validateCaptcha(){
             var sessionCaptcha = '<?php echo $this->session->userdata('captchaCode'); ?>';
