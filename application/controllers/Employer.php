@@ -1376,7 +1376,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
 
         $where='consultant_company_mapping.company_id="'.$employer.'"and consultant_company_mapping.cons_status=0';
         $join = array(
-            'company_profile' => 'company_profile.company_profile_id = consultant_company_mapping.consultant_id|INNER',
+            'company_profile' => 'company_profile.company_profile_id = consultant_company_mapping.consultant_id|LEFT OUTER',
             
         );
     
