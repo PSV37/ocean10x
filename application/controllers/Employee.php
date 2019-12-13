@@ -155,7 +155,7 @@ class Employee extends CI_controller
                             $company_info= $this->Master_model->get_master_row('company_profile',$select = FALSE,$wherecond);
                             $to_mail= $company_info['company_email'];
                             $company_name= $company_info['company_name'];
-                            $subject = 'Your Employee Updated ';
+                            $subject = 'Your Employee'.$name.' Updated profile.';
                 $message = '
                         <style>
                             .btn-primary,.btn-info{
@@ -171,7 +171,7 @@ class Employee extends CI_controller
                         </style>
                     <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
                     <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
-                    <br><br>Hi '.$company_name.',<br>Your Employee '.$name.' changed thie password of  Ocean Account.<br/>
+                    <br><br>Hi '.$company_name.',<br>Your Employee '.$name.' changed the password of  Ocean Account.<br/>
                     Thank You<br>Ocean Team';
                          
                    $send = sendEmail_JobRequest($to_mail,$message,$subject);
