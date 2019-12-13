@@ -194,7 +194,7 @@ class Employee extends CI_controller
 
             public function current_jobs()
             {
-                
+                $emp_id=$this->session->userdata('emp_id');   
                 $whereres = "emp_id='$emp_id'";
                 $result= $this->Master_model->get_master_row('employee',$select = FALSE,$whereres);
                 $employer_id=$result['org_id'];
