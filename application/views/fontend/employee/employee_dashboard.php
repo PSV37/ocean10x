@@ -41,7 +41,7 @@
           <ul class="dashbuttons">
             <li> <a href="<?php echo base_url() ?>employee/edit-profile" class=""> <i class="fa fa-user-circle-o" aria-hidden="true"></i> My Profile </a> </li>
            
-            <li> <a href="<?php echo base_url() ?>employee/active-job"><i class="fa fa-check-square-o" aria-hidden="true"></i> Posted Job </a> </li>
+            <li> <a href="<?php echo base_url() ?>active-job"><i class="fa fa-check-square-o" aria-hidden="true"></i> Posted Job </a> </li>
            
             <li> <a href="<?php echo base_url() ?>change-password" class=""><i class="fa fa-lock" aria-hidden="true"></i> Change Password </a> </li>   
            

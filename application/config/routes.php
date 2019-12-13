@@ -163,6 +163,7 @@ $route['save-job/(:any)'] = "job/save_this_job/$1";
 $route['employee-login']="employee_login";
 $route['employee/edit-profile']="employee/edit_profile";
 $route['change-password']="employee/change_password";
+$route['active-job']="employee/current_jobs";
 
 
 
