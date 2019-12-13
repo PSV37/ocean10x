@@ -33,7 +33,7 @@
              
           <div class="formpanel">
             <div class="formrow">
-              <input type="text" class="form-control" name="email" placeholder="Email Address">
+              <input type="text" class="form-control" name="email" placeholder="Enter your Email / Phone Number">
             </div>
           <!--   <div class="formrow">
               <input name="password" type="password" class="form-control" placeholder="Password">
@@ -58,8 +58,14 @@
               </div>
               
             </div>
+             <div class="newuser"> 
+                <!-- <input type="submit" class="btn" value="Sign in">  -->
+                <button type="submit" class="btn btn-primary">Sign in</button>
+                 <!--  Or
+                <a href="#">Login via OTP</a> -->
+            </div>
             <!-- <input type="submit" class="btn" value="Login Account"> -->
-             <button type="submit" class="btn btn-primary">Sign in</button>
+             <!-- <button type="submit" class="btn btn-primary">Sign in</button> -->
           </div>
            </form>
           <!-- login form  end--> 
