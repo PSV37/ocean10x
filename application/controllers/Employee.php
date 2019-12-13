@@ -147,7 +147,7 @@ class Employee extends CI_controller
                             $this->Master_model->master_update($newpassword,'employee',$where);
                             // $this->Master_model->master_update($newpassword, $employer_id);
                             $this->session->set_flashdata('change_password',
-                                '<div class="alert alert-success text-center"> Password Changed Sucessfully!</span>');
+                                '<div class="alert alert-success text-center"> Password Changed Sucessfully!<div>');
                             redirect('employee/change_password');
                         }
 
