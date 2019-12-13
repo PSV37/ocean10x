@@ -1201,7 +1201,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 'contact_name'     => $this->input->post('contact_name'),
                 'company_career_link' => $this->input->post('company_career_link'),
                 'company_address'  => $this->input->post('company_address'),
-                'city_id'          => $this->input->post('city_id'),
+                
                 'company_pincode'          => $this->input->post('company_pincode'),
                 'cont_person_email'    => $this->input->post('cont_person_email'),
                 'cont_person_mobile'   => $this->input->post('cont_person_mobile'),
