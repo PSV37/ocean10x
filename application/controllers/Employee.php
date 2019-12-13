@@ -11,6 +11,7 @@ class Employee extends CI_controller
         parent::__construct();
         $this->load->model('employee_login_model');
         $this->load->model('Employee_photo_model');
+        $this->load->model('job_posting_model');
         $emp_id = $this->session->userdata('emp_id');
         // echo $emp_id;
         if ($emp_id != null) {
