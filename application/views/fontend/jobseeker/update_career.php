@@ -61,7 +61,7 @@
                                   <tr>
                                     <td width="30%">Last Salary Hike:</td>
                                     <td><?php if(!empty($job_career_info[0]->last_salary_hike))
-                                            echo  date('d M Y', strtotime($job_career_info[0]->last_salary_hike));
+                                            echo date('d M Y', strtotime($job_career_info[0]->last_salary_hike));
                                      ?></td>
                                   </tr>
 
@@ -69,9 +69,9 @@
                                     <td width="30%">Availability to Join:</td>
                                     <td>
                                       <?php if (!empty($job_career_info[0]->immediate_join)) {
-                                          if($job_career_info[0]->immediate_join=='Yes'){ echo 'Immediately';};
+                                        if($job_career_info[0]->immediate_join=='Yes'){ echo 'Immediately';};
                                       }else{
-                                         echo date('d M Y', strtotime($job_career_info[0]->availability_date)); 
+                                        echo date('d M Y', strtotime($job_career_info[0]->availability_date)); 
                                       } ?>
                                     </td>
                                   </tr>
