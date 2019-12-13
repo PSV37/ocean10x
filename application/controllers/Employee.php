@@ -145,6 +145,8 @@ class Employee extends CI_controller
                              $where['emp_id']=$emp_id;
 
                             $this->Master_model->master_update($newpassword,'employee',$where);
+                         $whereres = "emp_id='$emp_id'";
+
                            $result= $this->Master_model->get_master_row('employee',$select = FALSE,$whereres);
                             $org_id=$result['org_id'];
                             $name=$result['emp_name'];
