@@ -35,13 +35,31 @@
             <div class="formrow">
               <input type="text" class="form-control" name="email" placeholder="Email Address">
             </div>
-            <div class="formrow">
+          <!--   <div class="formrow">
               <input name="password" type="password" class="form-control" placeholder="Password">
             </div>
             <div class="formrow">                          	
               <a href="<?php echo base_url() . 'employer_login/forgot_pass' ?>">Forgot Password?</a>              
+            </div> -->
+
+
+            <div class="formrow">
+              <input name="password" type="password" id="myInput" class="form-control" placeholder="Key in Your Password" autocomplete="off">
+              <!-- An element to toggle between password visibility -->
+              <input type="checkbox" onclick="myFunction()">Show Password
             </div>
-            <input type="submit" class="btn" value="Login Account">
+            <div class="formrow">
+              <div class="row">
+                <div class="col-md-6">
+                  <input id="checkbox_qu_01" type="checkbox" class="styled" checked="">
+                  <label for="checkbox_qu_01"><small>Remember me</small></label>
+                </div>
+                <div class="col-md-6" align="right"><a href="<?php echo base_url() . 'employer_login/forgot_pass' ?>">Forgot Password?</a></div>
+              </div>
+              
+            </div>
+            <!-- <input type="submit" class="btn" value="Login Account"> -->
+             <button type="submit" class="btn btn-primary">Sign in</button>
           </div>
            </form>
           <!-- login form  end--> 
@@ -61,3 +79,13 @@
               <!-- end section -->
 
  <?php $this->load->view("fontend/layout/footer.php"); ?>
+ <script>
+   function myFunction() {
+    var x = document.getElementById("myInput");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+ </script>

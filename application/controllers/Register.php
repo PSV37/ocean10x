@@ -202,8 +202,8 @@ class Register extends CI_Controller
      public function forgot_pass()
     {
     	if($this->input->post('email')==''){
-	 $this->load->view('fontend/jobseeker/forgot');
-	 return;
+    	 $this->load->view('fontend/jobseeker/forgot');
+    	 return;
 	 }
 	 
         $jobseeker_email    = $this->input->post('email');
