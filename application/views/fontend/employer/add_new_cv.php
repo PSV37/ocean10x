@@ -257,6 +257,20 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                      $('#candidate_expected_sal').val(value.js_career_salary);
                      $('#candidate_phone').val(value.mobile_no);
                      $('#candidate_notice_period').val(value.notice_period);
+                     var todate1 = new Date(value.last_salary_hike);
+                        var d1 = todate1.getDate();
+                        var m1 = todate1.getMonth()+1; 
+                        var y1 = todate1.getFullYear();
+
+                        if(d1 < 10){
+                          d1 = '0'+ d1;
+                        }
+                        if(m1 < 10){
+                          m1 = '0' + m1;
+                        }
+                        var hike_date = d1 + '-' + m1 + '-' + y1;
+
+                     $('#last_salary_hike').val(hike_date);
 
                   });
                } 
