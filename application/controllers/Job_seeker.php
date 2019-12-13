@@ -539,6 +539,7 @@ exit;*/
                 'desired_industry'      => $this->input->post('desired_industry'),
 			    'immediate_join'        => $available,
                 'availability_date'     => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('avail_to_join')))),
+                'last_salary_hike'      => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('last_salary_hike')))),
                 'notice_period'         => $this->input->post('Notice_period'),
                 'serving_notice_period' => $srving_notice,
             );
@@ -576,11 +577,6 @@ exit;*/
             $this->load->view('fontend/jobseeker/update_career', compact('job_career_info','employe_jobtype', 'industry_master', 'shift', 'department', 'job_role', 'results','months'));
         }
     }
-	
-	
-	
-	
-	
 	
 	public function update_skills()
     {
