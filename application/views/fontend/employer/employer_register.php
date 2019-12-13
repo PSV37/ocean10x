@@ -148,11 +148,17 @@
                                             </div>
                                         </div><!-- end row -->
                                     </div>
-
+                                    <div class="formrow">
+                                      <div class="row">
+                                        <div class="col-md-6 col-sm-12">
+                                          <input type="checkbox" value="" checked="" > <a  href="<?php echo base_url().'terms' ?>" target="_blank" required>  I agree to the Terms and Conditions</a>
+                                        </div>
+                                      </div>
+                                    </div>
                                     
                                     <div class="newuser">
                                         <!-- <button type="submit" id="submitButton" class="btn btn-primary">Join the Ocean !</button> -->
-                                        <button id="submitButton" class="btn">Join the Ocean !</button>
+                                        <button id="submitButton" class="btn btn-primary"">Join the Ocean !</button>
                                     </div>
                                     <a href="<?php echo base_url() . 'employer_login' ?>" class="pull-right">Already on Ocean ? Sign in !</a>
                                 </form>
