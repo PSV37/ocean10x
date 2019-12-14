@@ -95,8 +95,8 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
      success: function(response){
       var len = response.length;
                
-                 console.log(data);
-                 $.each(data, function(index, value) 
+                 console.log(response);
+                 $.each(response, function(index, value) 
                   {
                  //    // console.log(value);
                      $('#candiate_email').val(value.company_email);
