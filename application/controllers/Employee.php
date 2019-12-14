@@ -219,10 +219,10 @@ class Employee extends CI_controller
        
         $emp_id =$this->input->post('emp_id');
         $where_cond = "consultant_company_mapping.company_id='$employer_id' AND consultant_company_mapping.is_favourite='yes'";
-                $join_cond = array('company_profile' => 'company_profile.company_profile_id = consultant_company_mapping.consultant_id|Left outer');
+                $join_cond = array('consultant_company_mapping' => 'company_profile.company_profile_id = consultant_company_mapping.consultant_id|Left outer');
       
         $select ="company_email,";
-        $result = $this->Master_model->getMaster('company_profile', $where1, $join = $join, $order = false, $field = false, $select = $select,$limit=false,$start=false, $search=false);
+        $result = $this->Master_model->getMaster('consultant_company_mapping', $where1, $join = $join, $order = false, $field = false, $select = $select,$limit=false,$start=false, $search=false);
                 echo json_encode($result);
 
     }
