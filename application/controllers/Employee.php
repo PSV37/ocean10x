@@ -216,7 +216,7 @@ class Employee extends CI_controller
         );
         $select='company_email';
         
-            $result = $this->Master_model->getMaster('consultant_company_mapping',$where = $where_cond, $join = $join_cond, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+            $result = $this->Master_model->getMaster('consultant_company_mapping',$where = $where_cond, $join = $join_cond, $order = false, $field = false, $select = $select,$limit=false,$start=false, $search=false);
         //      $term = $this->input->get('term');
         //      $thi
         // $this->db->like('pincode', $term);
