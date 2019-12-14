@@ -92,7 +92,8 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
               data:{
                     emp_id:emp_id
               },
-               dataType: "JSON",  
+               dataType: "JSON",
+               contentType: "application/json; charset=utf-8",  
                success: function(data)
                {
                  // console.log(data);
