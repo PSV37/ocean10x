@@ -46,7 +46,7 @@
                 <div class="col-md-12 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Emails<span class="required">*</span> </label><small><b>Enter one or more emails separated by comma.</b></small>   
-                      <textarea name="candiate_email" placeholder="Candiate Emails" required class="form-control" rows="3"></textarea>
+                      <textarea name="candiate_email" placeholder="Enter Emails" required class="form-control" rows="3"></textarea>
                   </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
@@ -86,6 +86,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
   function getall_consultants()
   {
      var employer_id=document.getElementById('company_profile_id');
+     alert(employer_id);
   }
 </script>
 <?php $this->load->view("fontend/layout/footer.php"); ?>
