@@ -39,7 +39,8 @@ class Employee_Login extends CI_Controller
             $data['company_id'] = $result->org_id;
             $data['photo']      = $result->photo;
             $this->session->set_userdata($data);
-             $this->session->set_flashdata('welcome', "Welcome Back!");
+             $this->session->set_flashdata('welcome', '<div class="alert alert-success alert-dismissable">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>Welcome '.$data['name'].'</div>');
                 redirect('employee/index');
         } else {
             $this->session->set_flashdata('emp_msg',
