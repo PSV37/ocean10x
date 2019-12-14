@@ -35,6 +35,7 @@
            <div class="table-responsive">
             <table class="table table-bordered table-striped" id="dataTables-example">
               <thead>
+                <th>Sr.No</th>
         			  <th>Emp Id.</th>
         			  <th>Employee Name</th>
         			  <th>Email Id</th>
@@ -51,9 +52,10 @@
         			  <th>Actions</th>
               </thead>
               <tbody>
-          		<?php foreach($result as $key){ ?>
+          		<?php $srno=0; foreach($result as $key){ $srno++; ?>
           				
                 <tr>
+                  <td><?php echo $srno; ?></td>
           				<td><?php echo $key['emp_no']; ?></td>
           				<td><?php echo $key['emp_name']; ?></td>
           				<td><?php echo $key['email']; ?></td>
