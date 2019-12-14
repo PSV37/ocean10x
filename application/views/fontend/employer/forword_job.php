@@ -90,8 +90,8 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
               // url:'<?php echo site_url('employee/get_fav_consultants') ?>',
               url:'<?php echo base_url()?>employee/get_fav_consultants',
              method: 'post',
-             data: {emp_id: emp_id},
              dataType: 'json',
+             data: {emp_id:emp_id},
              success: function(response){
               var len = response.length;
                

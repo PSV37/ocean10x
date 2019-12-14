@@ -203,18 +203,29 @@ class Employee extends CI_controller
                 // print_r($company_active_jobs);
             }
 
-         function get_fav_consultants()
-            {
+// function get_fav_consultants()
+//             {
                 
-                $employer_id=$this->input->post('emp_id');
-                $where_cond = "consultant_company_mapping.company_id='$employer_id' AND consultant_company_mapping.is_favourite='yes'";
+//                 $employer_id=$this->input->post('emp_id');
+//                 $where_cond = "consultant_company_mapping.company_id='$employer_id' AND consultant_company_mapping.is_favourite='yes'";
+//                 $join_cond = array('company_profile' => 'company_profile.company_profile_id = consultant_company_mapping.consultant_id|Left outer');
+//                 $selects='company_email';
+//                 $result = $this->Master_model->getMaster('consultant_company_mapping',$where = $where_cond, $join =$join_cond, $order = false, $field = false, $select = $selects,$limit=false,$start=false, $search=false);
+//                 // print_r($this->db->last_query());
+//                 echo json_encode($result);
+//             }
+    function get_fav_consultants()
+    {
+       
+        $emp_id =$this->input->post('emp_id');
+        $where_cond = "consultant_company_mapping.company_id='$employer_id' AND consultant_company_mapping.is_favourite='yes'";
                 $join_cond = array('company_profile' => 'company_profile.company_profile_id = consultant_company_mapping.consultant_id|Left outer');
-                $selects='company_email';
-                $result = $this->Master_model->getMaster('consultant_company_mapping',$where = $where_cond, $join =$join_cond, $order = false, $field = false, $select = $selects,$limit=false,$start=false, $search=false);
-                // print_r($this->db->last_query());
+      
+        $select ="company_email,";
+        $result = $this->Master_model->getMaster('company_profile', $where1, $join = $join, $order = false, $field = false, $select = $select,$limit=false,$start=false, $search=false);
                 echo json_encode($result);
-            }
-                
+
+    }
         
        
                 
