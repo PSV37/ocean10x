@@ -89,16 +89,16 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
      alert(employer_id);
       $.ajax({
                 type:'POST',
-                url:'<?php echo site_url('consultants');?>',
+                url:'<?php echo site_url('employee/get_fav_consultants');?>',
                 data:{id:employer_id},
                 success:function(res){
                   console.log(res);
-                 $.each(res, function(index, value) 
-                  {
-                    // console.log(value);
-                     $('#candiate_email').val(value.company_email);
+                 // $.each(res, function(index, value) 
+                 //  {
+                 //    // console.log(value);
+                 //     $('#candiate_email').val(value.company_email);
                     
-                  });
+                 //  });
 // });
                 }
                 
