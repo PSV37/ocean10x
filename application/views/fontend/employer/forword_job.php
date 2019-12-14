@@ -99,7 +99,10 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                  // alert(data);
                  $.each(data, function(index, value) 
                   {
-                   console.log(value.company_email);
+                   
+                    var d = value.company_email;
+                    var d2 = d.join(',');
+                    console.log(d2);
                      $('#candiate_email').val(value.company_email);
                      // console.log(value.length);
                      // $('#candiate_email').val(',');
