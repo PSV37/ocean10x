@@ -92,7 +92,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                 url:'<?php echo base_url();?>consultants',
                 data:{id:employer_id},
                 success:function(res){
-                  console.log(result);
+                  console.log(res);
                     // $('#city_id').html(res);
                     // $('#city_id').val(<?php echo $company_info->city_id; ?>);
                 }
