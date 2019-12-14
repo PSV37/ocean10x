@@ -93,9 +93,9 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                 data:{id:employer_id},
                 success:function(res){
                   console.log(res);
-                  console.log(res.length);
-                    // $('#city_id').html(res);
-                    // $('#city_id').val(<?php echo $company_info->city_id; ?>);
+                 $.each(res,function(index, value){
+    console.log('My array has at position ' + index + ', this value: ' + value);
+});
                 }
                 
             });
