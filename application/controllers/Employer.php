@@ -93,10 +93,6 @@ class Employer extends MY_Employer_Controller
                 $city=$this->input->post('BranchCity');
                 $pincode=$this->input->post('Branchpincodes');
                 // print_r($pincode);
-                
-                
-                 
-                
 
                 // print_r($branch_address);
                 $branchadddata=explode(",",$branch_address);
@@ -110,12 +106,12 @@ class Employer extends MY_Employer_Controller
                     $response['branch_address']=$branchadddata[$i];
                     $response['country']=$branchcountrydata[$i];
                     $response['state']=$branchstatedata[$i];
-                     $response['city']=$branchcitydata[$i];
-                     $response['pincode']=$branchpincodedata[$i];
-                     $response['company_profile_id']=$employer_id;
-                     $response['created_on']=date('Y-m-d H:i:s');
+                    $response['city']=$branchcitydata[$i];
+                    $response['pincode']=$branchpincodedata[$i];
+                    $response['company_profile_id']=$employer_id;
+                    $response['created_on']=date('Y-m-d H:i:s');
                      // print_r($response);
-                $result=$this->Master_model->master_insert($response,'company_branches');
+                    $result=$this->Master_model->master_insert($response,'company_branches');
 
                 }
                 
@@ -130,7 +126,7 @@ class Employer extends MY_Employer_Controller
 
                 $this->company_profile_model->update($company_profile, $employer_id);
                 $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Company Profile details have been successfully updated !</div>');
-                 $company_info = $this->company_profile_model->get($employer_id);
+                $company_info = $this->company_profile_model->get($employer_id);
                 $city = $this->Master_model->getMaster('city',$where=false);
                 $country = $this->Master_model->getMaster('country',$where=false);
                 $state = $this->Master_model->getMaster('state',$where=false);

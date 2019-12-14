@@ -179,7 +179,7 @@
             </li>    
 
             <li role="presentation" class="dropdown" style="margin: 10px;" >
-              <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false" style="font-size: 15px;">
+                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false" style="font-size: 15px;">
                 <i class="fa fa-bell"></i>
                 <?php 
                     $msgs = get_notifcationcount($job_seeker);
