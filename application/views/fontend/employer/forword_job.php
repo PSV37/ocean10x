@@ -92,6 +92,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
              method: 'post',
              dataType: 'json',
              data: {emp_id:emp_id},
+             content_type:'application/json',
              success: function(response){
               var len = response.length;
                
