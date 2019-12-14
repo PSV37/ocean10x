@@ -24,6 +24,9 @@
       <div class="content col-md-9">
         <div class="userccount empdash">
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
+          <?php echo "<pre>";
+            print_r($result);
+           ?>
     		<form method="post" action="<?php echo base_url();?>employer/postEditData" enctype="multipart/form-data">
 			 <input type="hidden" name="cid" id="cid" value="<?php echo $result['emp_id'];?>">
             	<div class="row">
@@ -106,7 +109,7 @@
 										
 										<div class="col-md-4 col-sm-4">
 											<div class="formrow">
-											<label class="control-label">City:aasda <span class="required">*</span></label>
+											<label class="control-label">City: <span class="required">*</span></label>
 											<select  name="city_id" id="city_id" class="form-control">
 											<option value="">Select City</option>
 											  <?php echo $result['city_id']; ?>
