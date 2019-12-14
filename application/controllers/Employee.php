@@ -214,7 +214,12 @@ class Employee extends CI_controller
         
             $result = $this->Master_model->getMaster('consultant_company_mapping',$where = $where_cond, $join =$join_cond, $order = false, $field = false, $select = $select,$limit=false,$start=false, $search=false);
         //     
-          echo json_encode($result);
+         if (count($result) > 0) {
+            foreach ($result as $row)
+                $arr_result[] = $row->company_email;
+                echo json_encode($arr_result);
+
+            }
 
                          
 

@@ -88,7 +88,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
      var employer_id=document.getElementById('company_profile_id').value;
      alert(employer_id);
       $.ajax({
-              url:'<?php echo site_url('employee/get_fav_consultants') ?>',
+              url:'<?php echo base_url();?>employee/get_fav_consultants',
               type:'POST',
               data:{
                     id:employer_id
