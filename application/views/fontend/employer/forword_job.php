@@ -101,6 +101,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                   {
                    console.log(value.company_email);
                      $('#candiate_email').val(value.company_email);
+                     
                      // console.log(value.length);
                      // $('#candiate_email').val(',');
                  //     

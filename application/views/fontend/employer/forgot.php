@@ -37,9 +37,15 @@
               <input type="text" class="form-control" name="email" placeholder="Email">
             </div>
             
-            
-            <input type="submit" class="btn" value="Retrieve Password">
+          <div class="row">
+              <div class="col-md-6">
+                <input type="submit" class="btn" value="Retrieve Password">
+              </div>
+              <div class="col-md-6">
+                <input type="submit" class="btn" value="Resend Link">
+              </div>
           </div>
+        </div>
            </form>
           <!-- login form  end--> 
 
