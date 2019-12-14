@@ -203,7 +203,7 @@ class Employee extends CI_controller
                 // print_r($company_active_jobs);
             }
 
-            public function get_fav_consultants()
+         function get_fav_consultants()
             {
                 $employer_id=$this->input->post('id');
                 // print_r($employee_id);
