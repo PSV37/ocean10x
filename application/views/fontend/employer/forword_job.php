@@ -98,19 +98,27 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                  // $.each(data, function(index, value) 
                  //  {
                    
-                    // var d = value.company_email;
-                    // var d2 = d.join(',');
-                    
-                    for(var i=0;i<data.length;i++)
-                    {
-                      console.log(data[i]);
-                      $('#candiate_email').val(data[i]['company_email']);
-                    }
+                   // console.log(data.length);
+                   //  for(var i=0;i<data.length;i++)
+                   //  {
+                   //    console.log(data[i]);
+                   //    $('#candiate_email').val(data[i]['company_email']);
+                   //  }
                      // $('#candiate_email').val(value.company_email);
+                      var emails='';
+                    for(var l=0; l<data.length; l++)
+                    { 
+                      var arr = data[l]['company_email'];
+                    
+                      if(l==0){
+                        emails=emails+arr;
+                      }else{
+                        emails=emails+','+arr;
+                      }
+                    }
+                  
+                    $('#candiate_email').val(emails);
                      
-                     // console.log(value.length);
-                     // $('#candiate_email').val(',');
-                 //     
                // }); 
              }
         });

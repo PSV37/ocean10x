@@ -357,10 +357,10 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                     	var arr = data[l]['skills'];
                     
                     	if(l==0){
-							skill=skill+arr;
-						}else{
-							skill=skill+','+arr;
-						}
+          							skill=skill+arr;
+          						}else{
+          							skill=skill+','+arr;
+          						}
                     }
                   
                    	$('#tokenfield').val(skill);
