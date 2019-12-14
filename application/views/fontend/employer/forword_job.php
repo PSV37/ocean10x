@@ -101,8 +101,12 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                   {
                    
                     var d = value.company_email;
-                    var d2 = d.join(',');
-                    console.log(d2);
+                    // var d2 = d.join(',');
+                    
+                    for(var i=0;i<d.length;i++)
+                    {
+                      console.log(d[i]);
+                    }
                      $('#candiate_email').val(value.company_email);
                      // console.log(value.length);
                      // $('#candiate_email').val(',');
