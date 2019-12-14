@@ -37,7 +37,7 @@
               <div class="row">
                 <div class="col-md-12 col-sm-12">
                   <div class="formrow">
-                    <input type="hidden" name="company_profile_id" value="<?php echo $this->session->userdata('company_profile_id'); ?>">
+                    <input type="hidden" name="company_profile_id" id="company_profile_id" value="<?php echo $this->session->userdata('company_profile_id'); ?>">
                     <label class="control-label">Send To:</label>
                      <input type="radio" name="consultant" value="consultant" onclick="getall_consultants();" >Consultanat &nbsp;
                       <input type="radio" name="consultant" value="JobSeeker">JobSeeker(candidate)                
