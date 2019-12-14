@@ -89,7 +89,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
      alert(employer_id);
       $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>consultants',
+                  url:'<?php echo site_url('employee/get_fav_consultants') ?>',
                 data:{id:employer_id},
                  dataType: "JSON",  
                 success:function(res){
