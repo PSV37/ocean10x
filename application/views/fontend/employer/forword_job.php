@@ -85,7 +85,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 <script type="text/javascript">
   function getall_consultants()
   {
-     var employer_id=document.getElementById('company_profile_id');
+     var employer_id=document.getElementById('company_profile_id').value;
      alert(employer_id);
   }
 </script>
