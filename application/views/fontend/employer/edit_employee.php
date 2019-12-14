@@ -274,6 +274,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 
   getCitys_load();
   getStates_load();
+});
 
 
 </script>
