@@ -206,7 +206,19 @@ class Employee extends CI_controller
             public function get_fav_consultants()
             {
                 $employer_id=$this->input->post('id');
-                print_r($employee_id);
+                // print_r($employee_id);
+
+        $where_cond = "consultant_company_mapping.company_id='$employer_id'";
+        $join_cond = array(
+            'company_profile' => 'company_profile.company_profile_id = consultant_company_mapping.consultant_id|Left outer',
+           
+            
+        );
+        // $select='company_email';
+        
+        $company_info = $this->Master_model->get_master_row('consultant_company_mapping',$select = FALSE, $where = $where_cond , $join = $join_cond);
+               
+
             }
                 
 }
