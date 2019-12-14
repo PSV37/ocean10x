@@ -96,10 +96,10 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
              // content_type:'application/json',
              success: function(data){
                
-                 alert(data);
+                 // alert(data);
                  $.each(data, function(index, value) 
                   {
-                 //    // console.log(value);
+                   console.log(value);
                      $('#candiate_email').val(value.company_email);
                  //     
                }); 
