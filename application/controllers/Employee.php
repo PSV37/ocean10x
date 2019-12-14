@@ -210,7 +210,8 @@ class Employee extends CI_controller
                 $join_cond = array('company_profile' => 'company_profile.company_profile_id = consultant_company_mapping.consultant_id|Left outer');
                 $select='company_email';
                 $result = $this->Master_model->getMaster('consultant_company_mapping',$where = $where_cond, $join =$join_cond, $order = false, $field = false, $select = $select,$limit=false,$start=false, $search=false);
-                echo json_encode($result);
+                print_r($this->db->last_query());
+                // echo json_encode($result);
             }
                 
         
