@@ -97,8 +97,8 @@
 										
 										<div class="col-md-4 col-sm-4">
 											<div class="formrow">
-											<label class="control-label">State:  <?php echo "[]" $result['state_id']; 
-                        echo "->" $result->state_id;
+											<label class="control-label">State:  <?php echo "[]" .$result['state_id']; 
+                        echo "->" .$result->state_id;
                       ?> <span class="required">*</span></label>
 											<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
 											<option value="">Select State</option>
@@ -109,8 +109,8 @@
 										
 										<div class="col-md-4 col-sm-4">
 											<div class="formrow">
-											<label class="control-label">City:<?php echo "[]" $result['city_id']; 
-                        echo "->" $result->city_id;
+											<label class="control-label">City:<?php echo "[]" .$result['city_id']; 
+                        echo "->" .$result->city_id;
                       ?>  <span class="required">*</span></label>
 											<select  name="city_id" id="city_id" class="form-control">
 											<option value="">Select City</option>
