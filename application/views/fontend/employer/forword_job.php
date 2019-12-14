@@ -87,6 +87,16 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
   {
      var employer_id=document.getElementById('company_profile_id').value;
      alert(employer_id);
+      $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>consultants',
+                data:{id:employer_id},
+                success:function(res){
+                    // $('#city_id').html(res);
+                    // $('#city_id').val(<?php echo $company_info->city_id; ?>);
+                }
+                
+            });
   }
 </script>
 <?php $this->load->view("fontend/layout/footer.php"); ?>

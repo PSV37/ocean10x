@@ -202,5 +202,11 @@ class Employee extends CI_controller
                 $this->load->view('fontend/employee/active_job.php', compact('company_active_jobs', 'employer_id'));
                 // print_r($company_active_jobs);
             }
+
+            public function get_fav_consultants()
+            {
+                $employer_id=$this->input->post('id');
+                print_r($employee_id);
+            }
                 
 }
