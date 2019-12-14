@@ -83,22 +83,29 @@
 document.getElementsByClassName('form-control').innerHTML+="<br />";
 </script>
 <script type="text/javascript">
-  function getall_consultants()
-  {
-     var employer_id=document.getElementById('company_profile_id').value;
-     alert(employer_id);
-      $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>consultants',
-                data:{id:employer_id},
-                success:function(res){
-                  console.log(result);
-                    // $('#city_id').html(res);
-                    // $('#city_id').val(<?php echo $company_info->city_id; ?>);
-                }
-                
-            });
-  }
+  function getall_consultants(){
+    var emp_id=document.getElementById('company_profile_id').value;
+    alert(emp_id);
+    $.ajax({
+              url:'<?php echo site_url('employee/get_fav_consultants') ?>',
+              type:'POST',
+              data:{
+                    emp_id:emp_id
+              },
+               dataType: "JSON",  
+               success: function(data)
+               {
+                 console.log(data);
+                 $.each(data, function(index, value) 
+                  {
+                 //    // console.log(value);
+                     $('#candiate_email').val(value.company_email);
+                 //     
+               }); 
+             }
+        });
+    // savecompanymapping(value.company_profile_id);
+}
 </script>
 <?php $this->load->view("fontend/layout/footer.php"); ?>
 

@@ -203,24 +203,19 @@ class Employee extends CI_controller
                 // print_r($company_active_jobs);
             }
 
-            public function get_fav_consultants()
+         function get_fav_consultants()
             {
-                $employer_id=$this->input->post('id');
-                // print_r($employee_id);
-
-        $where_cond = "consultant_company_mapping.company_id='$employer_id'";
-        $join_cond = array(
-            'company_profile' => 'company_profile.company_profile_id = consultant_company_mapping.consultant_id|Left outer',
-           
-            
-        );
-        // $select='company_email';
-        
-            $result = $this->Master_model->get_master_row('consultant_company_mapping',$select = FALSE, $where = $where_cond , $join = $join_cond);
-
-            echo $result;
-               
-
+                // $employer_id=$this->session->userdata('emp_id');
+                $employer_id=$this->input->post('emp_id');
+                $where_cond = "consultant_company_mapping.company_id='$employer_id' AND consultant_company_mapping.is_favourite='yes'";
+                $join_cond = array('company_profile' => 'company_profile.company_profile_id = consultant_company_mapping.consultant_id|Left outer');
+                $select='company_email';
+                $result = $this->Master_model->getMaster('consultant_company_mapping',$where = $where_cond, $join =$join_cond, $order = false, $field = false, $select = $select,$limit=false,$start=false, $search=false);
+                // print_r($this->db->last_query());
+                echo json_encode($result);
             }
+                
+        
+       
                 
 }
