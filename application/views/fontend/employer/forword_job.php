@@ -88,11 +88,15 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
      var employer_id=document.getElementById('company_profile_id').value;
      alert(employer_id);
       $.ajax({
-                type:'POST',
-                url:'<?php echo site_url('employee/get_fav_consultants');?>',
-                data:{id:employer_id},
-                success:function(res){
-                  console.log(res);
+                 url:'<?php echo site_url('employee/get_fav_consultants') ?>',
+              type:'POST',
+              data:{
+                    id:employer_id
+              },
+               dataType: "JSON",  
+               success: function(data)
+               {
+                  console.log(data);
                  // $.each(res, function(index, value) 
                  //  {
                  //    // console.log(value);
