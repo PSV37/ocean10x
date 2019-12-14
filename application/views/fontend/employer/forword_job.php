@@ -46,7 +46,7 @@
                 <div class="col-md-12 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Emails<span class="required">*</span> </label><small><b>Enter one or more emails separated by comma.</b></small>   
-                      <textarea name="candiate_email" id="tokenfield" placeholder="Enter Emails" required class="form-control" rows="3"></textarea>
+                      <textarea name="candiate_email" id="candiate_email" placeholder="Enter Emails" required class="form-control" rows="3"></textarea>
                   </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
@@ -106,56 +106,13 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                   }
                 }
               
-                // $('#candiate_email').val(emails);
-                 
-                    $('#tokenfield').val(emails);
-                    $('#tokenfield').tokenfield('enable');
-                    $('#tokenfield').tokenfield('setTokens', emails);    
+                $('#candiate_email').val(emails);
+                     
+              
              }
         });
 }
-
-$( document ).ready( function () {
-    // $('#tokenfield').tokenfield({
-    //         autocomplete: {
-    //           source: "<?php echo base_url('employer/get_skills_autocomplete'); ?>",
-    //           delay: 100
-    //         },
-    //         showAutocompleteOnFocus: true,
-
-    //       });
-              // to avoid duplications
-        $('#tokenfield').on('tokenfield:createtoken', function (event) {
-                var existingTokens = $(this).tokenfield('getTokens');
-                $.each(existingTokens, function(index, token) {
-                    if (token.value === event.attrs.value)
-                        event.preventDefault();
-
-                });
-            });
-
-  });
 </script>
 <?php $this->load->view("fontend/layout/footer.php"); ?>
 
 
-<style>
-  ul.ui-autocomplete {
-      z-index: 1100;
-  }
-  .tokenfield .token .close {
-    font-family: Arial !important;
-    display: inline-block !important;
-    line-height: 100% !important;
-    font-size: 1.1em !important;
-    line-height: 1.49em !important;
-    margin-left: 5px !important;
-    float: none !important;
-    height: 100% !important;
-    vertical-align: top !important;
-    padding-right: 4px !important;
-
-    color: #989090f2; 
-
-}
-</style>
