@@ -91,11 +91,12 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                 type:'POST',
                 url:'<?php echo site_url('employee/get_fav_consultants');?>',
                 data:{id:employer_id},
-               dataType: "JSON",  
-                
+               contentType: "application/json;"
+
                 success:function(res){
-                  console.log(res);
-                 // $.each(res, function(index, value) 
+                  // console.log(res);
+                  alert(res);
+                                   // $.each(res, function(index, value) 
                  //  {
                  //    // console.log(value);
                  //     $('#candiate_email').val(value.company_email);
