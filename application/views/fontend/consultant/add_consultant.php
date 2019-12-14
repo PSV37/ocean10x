@@ -497,13 +497,14 @@
     $.ajax({
               url:'<?php echo site_url('employer/get_company_info') ?>',
               type:'POST',
-              data:{
+             
+               dataType: "JSON",  
+                data:{
                     comp_name:company_name
               },
-               dataType: "JSON",  
                success: function(data)
                {
-                 // console.log(data);
+                 console.log(data);
                  $.each(data, function(index, value) 
                   {
                     // console.log(value);
