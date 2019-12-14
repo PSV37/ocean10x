@@ -83,7 +83,7 @@
 document.getElementsByClassName('form-control').innerHTML+="<br />";
 </script>
 <script type="text/javascript">
-  function getcompanyinfo(){
+  function getall_consultants(){
     var emp_id=document.getElementById('company_profile_id').value;
     alert(emp_id);
     $.ajax({
