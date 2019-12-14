@@ -99,7 +99,7 @@
 											<label class="control-label">State: <span class="required">*</span></label>
 											<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
 											<option value="">Select State</option>
-										     
+										     <?php echo $result['state_id']; ?>
 											</select>
 										</div>
 	                                    </div>
@@ -109,7 +109,7 @@
 											<label class="control-label">City: <span class="required">*</span></label>
 											<select  name="city_id" id="city_id" class="form-control">
 											<option value="">Select City</option>
-											 
+											  <?php echo $result['city_id']; ?>
 											</select>
 											</div>
 										</div>
