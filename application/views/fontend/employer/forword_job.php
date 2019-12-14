@@ -94,7 +94,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                 success:function(res){
                   console.log(res);
                  $.each(res,function(index, value){
-    console.log(value);
+    console.log('My array has at position ' + index + ', this value: ' + value);
 });
                 }
                 

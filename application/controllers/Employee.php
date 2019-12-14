@@ -221,7 +221,7 @@ class Employee extends CI_controller
         //      $thi
         // $this->db->like('pincode', $term);
         // $data = $this->db->get("pincode")->result();
-        echo json_encode( $result);
+        echo json_encode($result);
 
             // print_r($result);
                
