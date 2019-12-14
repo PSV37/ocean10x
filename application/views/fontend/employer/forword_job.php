@@ -83,16 +83,19 @@
 document.getElementsByClassName('form-control').innerHTML+="<br />";
 </script>
 <script type="text/javascript">
-  function getall_consultants(){
-
+  function getcompanyinfo(){
+    var emp_id=document.getElementById('company_profile_id').value;
+    alert(emp_id);
     $.ajax({
               url:'<?php echo site_url('employee/get_fav_consultants') ?>',
               type:'POST',
-             
+              data:{
+                    emp_id:emp_id
+              },
                dataType: "JSON",  
                success: function(data)
                {
-                  console.log(data);
+                 // console.log(data);
                  // $.each(data, function(index, value) 
                  //  {
                  //    // console.log(value);
