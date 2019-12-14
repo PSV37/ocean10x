@@ -88,38 +88,40 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
      var employer_id=document.getElementById('company_profile_id').value;
      alert(employer_id);
       $.ajax({
-                type:'POST',
-                  url:'<?php echo site_url('employee/get_fav_consultants') ?>',
-                data:{id:employer_id},
-                 dataType: "JSON",  
-                success:function(res){
-                  console.log(res);
-            // $.each(res, function(index, value) 
-            //       {
-            //          // console.log(value);
-            //          $('#candiate_email').val(value.company_email);
-            //          // $('#company_url').val(value.company_url);
-            //          // $('#country_code').val(value.country_code);
-            //          // $('#company_phone').val(value.company_phone);
-            //          // $('#contact_name').val(value.contact_name);
-            //          // $('#cont_person_email').val(value.cont_person_email);
-            //          // $('#cont_person_mobile').val(value.cont_person_mobile);
-            //          // $('#company_career_link').val(value.company_career_link);
-            //          // $('#company_address').val(value.company_address);
-            //          // $('#company_address2').val(value.company_address2);
-            //          // $('#country_id').val(value.country_id);
-            //          // $('#state_id').val(value.state_id);
-            //          // $('#city_id').val(value.city_id);
-            //          // $('#company_pincode').val(value.company_pincode);
-            //          // $('#comp_gst_no').val(value.comp_gstn_no);
-            //          // $('#comp_pan_no').val(value.comp_pan_no);
-            //          // $('#company_profile_id').val(value.company_profile_id);
-            //          // getStates(value.country_id);
-            //          // getCitys(value.state_id);
-            //       });
-                }
-                
-            });
+              url:'<?php echo site_url('employee/get_fav_consultants') ?>',
+              type:'POST',
+              data:{
+                    id:employer_id
+              },
+               dataType: "JSON",  
+               success: function(data)
+               {
+                  console.log(data);
+                 $.each(data, function(index, value) 
+                  {
+                    console.log(value);
+                     // $('#company_email').val(value.company_email);
+                     // $('#company_url').val(value.company_url);
+                     // $('#country_code').val(value.country_code);
+                     // $('#company_phone').val(value.company_phone);
+                     // $('#contact_name').val(value.contact_name);
+                     // $('#cont_person_email').val(value.cont_person_email);
+                     // $('#cont_person_mobile').val(value.cont_person_mobile);
+                     // $('#company_career_link').val(value.company_career_link);
+                     // $('#company_address').val(value.company_address);
+                     // $('#company_address2').val(value.company_address2);
+                     // $('#country_id').val(value.country_id);
+                     // $('#state_id').val(value.state_id);
+                     // $('#city_id').val(value.city_id);
+                     // $('#company_pincode').val(value.company_pincode);
+                     // $('#comp_gst_no').val(value.comp_gstn_no);
+                     // $('#comp_pan_no').val(value.comp_pan_no);
+                     // $('#company_profile_id').val(value.company_profile_id);
+                     // getStates(value.country_id);
+                     // getCitys(value.state_id);
+                  });
+               } 
+        });
   }
 </script>
 <?php $this->load->view("fontend/layout/footer.php"); ?>
