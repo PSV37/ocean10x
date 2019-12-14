@@ -88,7 +88,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
     alert(emp_id);
     $.ajax({
               // url:'<?php echo site_url('employee/get_fav_consultants') ?>',
-              url:'<?php echo base_url()?>employee/get_fav_consultants',
+              url:'<?php echo base_url()?>/employee/get_fav_consultants',
              type: 'post',
             
              data: {emp_id:emp_id},
