@@ -218,10 +218,9 @@ class Employee extends CI_controller
         
             $result = $this->Master_model->getMaster('consultant_company_mapping',$where = $where_cond, $join = $join_cond, $order = false, $field = false, $select = $select,$limit=false,$start=false, $search=false);
         //     
-        // echo json_encode($result);
+          echo json_encode($result);
 
-            print_r(json_encode($result));
-               
+                         
 
             }
                 
