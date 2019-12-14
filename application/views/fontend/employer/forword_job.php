@@ -92,7 +92,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
               data:{
                     emp_id:emp_id
               },
-               // dataType: "JSON",  
+               dataType: "JSON",  
                success: function(data)
                {
                  // console.log(data);
