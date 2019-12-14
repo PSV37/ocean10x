@@ -87,14 +87,14 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
     var emp_id=document.getElementById('company_profile_id').value;
     alert(emp_id);
     $.ajax({
-              url:'<?php echo site_url('employee/get_fav_consultants') ?>',
-              type:'POST',
-              data:{
-                    emp_id:emp_id
-              },
-               dataType: "JSON",  
-               success: function(data)
-               {
+              // url:'<?php echo site_url('employee/get_fav_consultants') ?>',
+              url:'<?php echo base_url()?>employee/get_fav_consultants',
+     method: 'post',
+     data: {emp_id: emp_id},
+     dataType: 'json',
+     success: function(response){
+      var len = response.length;
+               
                  console.log(data);
                  $.each(data, function(index, value) 
                   {
