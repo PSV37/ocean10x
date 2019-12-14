@@ -91,7 +91,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                 type:'POST',
                 url:'<?php echo site_url('employee/get_fav_consultants');?>',
                 data:{id:employer_id},
-               contentType: "application/json;"
+               contentType: "application/json;",
 
                 success:function(res){
                   // console.log(res);
