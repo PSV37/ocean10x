@@ -83,7 +83,7 @@
 document.getElementsByClassName('form-control').innerHTML+="<br />";
 </script>
 <script type="text/javascript">
-  function getcompanyinfo(){
+  function getall_consultants(){
 
     $.ajax({
               url:'<?php echo site_url('employee/get_fav_consultants') ?>',
