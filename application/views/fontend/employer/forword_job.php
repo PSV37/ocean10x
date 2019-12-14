@@ -89,13 +89,13 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
     $.ajax({
               // url:'<?php echo site_url('employee/get_fav_consultants') ?>',
               url:'<?php echo base_url()?>employee/get_fav_consultants',
-     method: 'post',
-     data: {emp_id: emp_id},
-     dataType: 'json',
-     success: function(response){
-      var len = response.length;
+             method: 'post',
+             data: {emp_id: emp_id},
+             dataType: 'json',
+             success: function(response){
+              var len = response.length;
                
-                 console.log(response);
+                 alert(response);
                  $.each(response, function(index, value) 
                   {
                  //    // console.log(value);
@@ -104,7 +104,6 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                }); 
              }
         });
-    // savecompanymapping(value.company_profile_id);
 }
 </script>
 <?php $this->load->view("fontend/layout/footer.php"); ?>
