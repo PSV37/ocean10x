@@ -95,13 +95,14 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                dataType: "JSON",  
                success: function(data)
                {
-                 // console.log(data);
-                 // $.each(data, function(index, value) 
-                 //  {
+                 console.log(data);
+                 $.each(data, function(index, value) 
+                  {
                  //    // console.log(value);
                      $('#candiate_email').val(value.company_email);
                  //     
-               } 
+               }); 
+             }
         });
     // savecompanymapping(value.company_profile_id);
 }
