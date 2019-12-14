@@ -85,10 +85,8 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 <script type="text/javascript">
   function getall_consultants(){
     var emp_id=$('#company_profile_id').val();
-    alert(emp_id);
     $.ajax({
-              // url:'<?php echo site_url('employee/get_fav_consultants') ?>',
-              url:'<?php echo base_url()?>employer/get_fav_consultants',
+             url:'<?php echo base_url()?>employer/get_fav_consultants',
              type: 'post',
             
              data: {emp_id:emp_id},
@@ -97,22 +95,22 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
              success: function(data){
                
                  // alert(data);
-                 $.each(data, function(index, value) 
-                  {
+                 // $.each(data, function(index, value) 
+                 //  {
                    
                     var d = value.company_email;
                     // var d2 = d.join(',');
                     
-                    for(var i=0;i<d.length;i++)
+                    for(var i=0;i<data.length;i++)
                     {
-                      console.log(d[i]);
+                      console.log(data[i]);
                     }
                      $('#candiate_email').val(value.company_email);
                      
                      // console.log(value.length);
                      // $('#candiate_email').val(',');
                  //     
-               }); 
+               // }); 
              }
         });
 }
