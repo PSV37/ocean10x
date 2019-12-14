@@ -62,6 +62,7 @@ class Employee extends CI_controller
              $where['emp_id']=$employee_id;
 
          $this->Master_model->master_update($employee_data,'employee',$where);
+        $this->Master_model->master_insert($employee_data,'emp_record_history');
         // print_r($this->db->last_query());die;       //    
           $whereres = "emp_id='$employee_id'";
         $data['result']= $this->Master_model->get_master_row('employee',$select = FALSE,$whereres);
