@@ -216,9 +216,9 @@ class Employee extends CI_controller
         );
         // $select='company_email';
         
-            $result = $this->Master_model->get_master_row('consultant_company_mapping',$select = FALSE, $where = $where_cond , $join = $join_cond);
+            $result = $this->Master_model->getMaster('consultant_company_mapping',$where = $where_cond, $join = $join_cond, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
 
-            echo $result;
+            print_r($result);
                
 
             }
