@@ -208,7 +208,7 @@ class Employee extends CI_controller
                 $employer_id=$this->input->post('id');
                 // print_r($employee_id);
 
-        $where_cond = "consultant_company_mapping.company_id='$employer_id'";
+        $where_cond = "consultant_company_mapping.company_id='$employer_id' AND consultant_company_mapping.is_favourite='yes'";
         $join_cond = array(
             'company_profile' => 'company_profile.company_profile_id = consultant_company_mapping.consultant_id|Left outer',
            
