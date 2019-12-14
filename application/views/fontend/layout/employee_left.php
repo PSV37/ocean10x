@@ -7,7 +7,7 @@
       <li class="title">Employee</li>
       <li> <a href="<?php echo base_url() ?>employee/edit-profile" class=""> <i class="fa fa-user-circle-o" aria-hidden="true"></i> My Profile </a> </li>
       <li> <a href="<?php echo base_url() ?>active-job"><i class="fa fa-check-square-o" aria-hidden="true"></i> Posted Job </a> </li>
-      <li><a href="#" onclick="logout();"><span class="glyphicon glyphicon-lock"></span> Logout</a></li>
+      
       
   	
     </ul>
