@@ -93,10 +93,10 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                 data:{id:employer_id},
                 success:function(res){
                   console.log(res);
-                  result = jQuery.parseJSON(res);
-                 $.each(result,function(index, value){
-    console.log('My array has at position ' + index + ', this value: ' + value);
-});
+//                   result = jQuery.parseJSON(res);
+//                  $.each(result,function(index, value){
+//     console.log('My array has at position ' + index + ', this value: ' + value);
+// });
                 }
                 
             });

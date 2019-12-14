@@ -217,13 +217,10 @@ class Employee extends CI_controller
         $select='company_email';
         
             $result = $this->Master_model->getMaster('consultant_company_mapping',$where = $where_cond, $join = $join_cond, $order = false, $field = false, $select = $select,$limit=false,$start=false, $search=false);
-        //      $term = $this->input->get('term');
-        //      $thi
-        // $this->db->like('pincode', $term);
-        // $data = $this->db->get("pincode")->result();
-        echo json_encode($result);
+        //     
+        // echo json_encode($result);
 
-            // print_r($result);
+            print_r(json_encode($result));
                
 
             }
