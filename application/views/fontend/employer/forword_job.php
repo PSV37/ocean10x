@@ -104,7 +104,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                     for(var i=0;i<data.length;i++)
                     {
                       console.log(data[i]);
-                      $('#candiate_email').val(data[i]);
+                      $('#candiate_email').val(data[i]['company_email']);
                     }
                      // $('#candiate_email').val(value.company_email);
                      
