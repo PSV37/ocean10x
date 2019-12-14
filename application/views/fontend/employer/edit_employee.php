@@ -232,50 +232,51 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
        
 </script>	   
 <script>
+  
   $(document).ready(function(){
 
     function getStates_load(){
         var id = $('#country_id').val();
-        alert(id);
-        alert(<?php echo $result['state_id']; ?>);
+
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>employer/getstate',
+                url:'<?php echo base_url();?>Employer/getstate',
                 data:{id:id},
                 success:function(res){
                     $('#state_id').html(res);
-
                     $('#state_id').val(<?php echo $result['state_id']; ?>);
-                   getCitys_load();
+                     getCitys_load(<?php echo $result['state_id']; ?>);
                 }
                 
             }); 
           }
    
        }
-     
-    function getCitys_load(){
-        var id = $('#state_id').val();
-
+    
+    function getCitys_load(id){
+      //var id = $('#state_id').val();
+      // alert(id);
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>employer/getcity',
+                url:'<?php echo base_url();?>Employer/getcity',
                 data:{id:id},
                 success:function(res){
                     $('#city_id').html(res);
                     $('#city_id').val(<?php echo $result['city_id']; ?>);
-          
                 }
                 
             }); 
           }
    
        }
-       getStates_load();
-       getCitys_load();
-    });
+
+  getCitys_load();
+  getStates_load();
+});
+
+
 </script>
 
 <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
@@ -286,48 +287,20 @@ $("#dept_id").select2( {
 	} );
 </script>
 
-<!--<script>
-$("#country_id").select2( {
-	placeholder: "Select Country",
-	allowClear: true
-	} );
-</script>
-
-  <script>
-$("#country_id").html($("#country_id option").sort(function (a, b) {
-    return a.text == b.text ? 0 : a.text < b.text ? -1 : 1
-}))
-</script>
-
-
-
-<script>
-$(function() {
-  // choose target dropdown
-  var select = $('.department');
-  select.html(select.find('option').sort(function(x, y) {
-    // to change to descending order switch "<" for ">"
-    return $(x).text() > $(y).text() ? -1 : 1;
-  }));
-
-  // select default item after sorting (first item)
-  $('select').get(0).selectedIndex = 0;
-});
-</script>-->
 <script>        
-           function phoneno(){          
-            $('#mobile').keypress(function(e) {
-                var a = [];
-                var k = e.which;
+  function phoneno(){          
+    $('#mobile').keypress(function(e) {
+        var a = [];
+        var k = e.which;
 
-                for (i = 48; i < 58; i++)
-                    a.push(i);
+        for (i = 48; i < 58; i++)
+            a.push(i);
 
-                if (!(a.indexOf(k)>=0))
-                    e.preventDefault();
-            });
-        }
-       </script>
+        if (!(a.indexOf(k)>=0))
+            e.preventDefault();
+    });
+  }
+</script>
 	   
 	   <script>
   var BASE_URL = "<?php echo base_url(); ?>";
@@ -357,10 +330,3 @@ $(function() {
 </script>
 	   
 	   
-<!-- <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script> -->
-<!-- <script>
-$("#subject").select2( {
-	placeholder: "Select Subject",
-	allowClear: true
-	} );
-</script> -->
