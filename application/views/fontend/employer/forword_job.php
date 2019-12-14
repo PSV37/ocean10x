@@ -108,6 +108,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                       console.log(d[i]);
                     }
                      $('#candiate_email').val(value.company_email);
+                     
                      // console.log(value.length);
                      // $('#candiate_email').val(',');
                  //     
