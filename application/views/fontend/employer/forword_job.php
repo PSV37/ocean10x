@@ -93,11 +93,11 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                 data:{id:employer_id},
                  dataType: "JSON",  
                 success:function(res){
-                  console.log(res);
+                  // console.log(res);
             $.each(res, function(index, value) 
                   {
-                     console.log(value);
-                     // $('#company_email').val(value.company_email);
+                     // console.log(value);
+                     $('#candiate_email').val(value.company_email);
                      // $('#company_url').val(value.company_url);
                      // $('#country_code').val(value.country_code);
                      // $('#company_phone').val(value.company_phone);
