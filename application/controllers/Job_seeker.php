@@ -116,7 +116,7 @@ class Job_seeker extends MY_Seeker_Controller
     {
          if ($_POST) {
             $jobseeker_id     = $this->session->userdata('job_seeker_id');
-            
+
          $language = $this->input->post('language');
             $proficiency = $this->input->post('proficiency');
             $lang_write = $this->input->post('lang_write');
@@ -135,8 +135,10 @@ class Job_seeker extends MY_Seeker_Controller
                                 'lang_read'      => $lang_read,
                                 
                             );
-                            $last_id = $this->Master_model->master_insert($lang_array, 'js_languages');
+    $last_id = $this->Master_model->master_insert($lang_array, 'js_languages');
+
     }
+    redirect('job_seeker/update_personalinfo');
 }
 
     public function delete_mylanguage($id)
