@@ -144,9 +144,10 @@ redirect('job_seeker/seeker_info');
  function edit_language()
 {
     $lang_id=$this->input->post($language_id);
-     $where_lang="id='$lang_id'";
+    $where_lang="id='$lang_id'";
     $language_data = $this->Master_model->get_master_row("js_languages", $select= FALSE, $where_lang, $join = FALSE);
     // echo json_encode($language_data);
+    print_r($where_lang);
     print_r($this->db->last_query());
 
 }
