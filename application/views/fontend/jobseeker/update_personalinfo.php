@@ -1137,11 +1137,11 @@
                       <input type="hidden" name="lang_read[]" id="txtlang_read" value="No" style="margin: 0 15px;"> 
 
                       <input type="checkbox" name="lang_write[]" id="lang_write" value="Yes"<?php if($lrow['lang_write']=='Yes'){echo 'checked';} ?> style="margin: 0 15px;"> Write
-                     <!--  <input type="hidden" name="lang_write[]" id="txtlang_write" value="No" style="margin: 0 15px;">  -->
+                      <input type="hidden" name="lang_write[]" id="txtlang_write" value="No" style="margin: 0 15px;"> 
                       
                       <input type="checkbox" name="lang_speak[]" id="lang_speak" value="Yes"<?php if($lrow['lang_speak']=='Yes'){echo 'checked';} ?> style="margin: 0 15px;"> Speak
-                      <!-- <input type="hidden" name="lang_speak[]" id="txtlang_speak" value="No" style="margin: 0 15px;"> 
-                     -->
+                      <input type="hidden" name="lang_speak[]" id="txtlang_speak" value="No" style="margin: 0 15px;"> 
+                    
                       <a href="<?php echo base_url() ?>/job_seeker/delete_mylanguage/<?php echo $lrow['id']; ?>" class="btn btn-danger btn-xs pull-right" title="Remove" data-toggle="tooltip" data-placement="top" onclick="return confirm('Are you sure want to delete this language ?');"><i class="fa fa-trash"></i> Remove</a>
                     </div>
                   </div>
