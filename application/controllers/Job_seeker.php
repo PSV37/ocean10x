@@ -143,10 +143,14 @@ class Job_seeker extends MY_Seeker_Controller
 }
  function edit_language()
 {
-    $lang_id=$this->input->post('language_id');
-    $where_lang="id='$lang_id'";
-    $language_data = $this->Master_model->get_master_row("js_languages", $select= FALSE, $where_lang, $join = FALSE);
-    echo json_encode($language_data);
+    // $lang_id=$this->input->post('language_id');
+    // $where_lang="id='$lang_id'";
+    // $language_data = $this->Master_model->get_master_row("js_languages", $select= FALSE, $where_lang, $join = FALSE);
+    // echo json_encode($language_data);
+    $id=$this->input->post('language_id');
+    // $data = $this->Admin_model->show_child_data($id);
+    $data = $this->job_seeker_personal_model->show_language($id);
+    echo json_encode($data); 
 
     // print_r($this->db->last_query());
 

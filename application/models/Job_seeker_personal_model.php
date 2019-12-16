@@ -29,6 +29,21 @@ class Job_seeker_personal_model extends MY_Model {
     }
 
 
+    function show_language($id)
+    {
+        $this->db->select('*');
+        $this->db->from('js_languages'); 
+        $this->db->where('id',$id);
+        $query_child = $this->db->get();
+
+        if ($query_child->num_rows() > 0) {
+            foreach ($query_child->result() as $data) {
+                $hasil[] = $data;
+            }
+            return $hasil;
+        }
+
+    } 
 
   }
 
