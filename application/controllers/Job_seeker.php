@@ -114,7 +114,7 @@ class Job_seeker extends MY_Seeker_Controller
 
     public function add_language()
     {
-         if ($_POST) {
+         
             $jobseeker_id     = $this->session->userdata('job_seeker_id');
 
          $language = $this->input->post('language');
@@ -148,21 +148,7 @@ class Job_seeker extends MY_Seeker_Controller
             //echo $this->db->last_query();
              $this->load->view('fontend/jobseeker/update_personalinfo', compact('jobseeker_id', 'js_personal_info', 'job_seeker_photo', 'name', 'city', 'country', 'state','languages','intro_data'),true);
 
-    }
-     $jobseeker_id     = $this->session->userdata('job_seeker_id');
-            $js_personal_info = $this->job_seeker_personal_model->personalinfo_list_by_id($jobseeker_id);
-            $job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id);
-            $name = $this->Job_seeker_model->get_jobseeker_fullname($jobseeker_id);
-            $city = $this->Master_model->getMaster('city',$where=false);
-            $country = $this->Master_model->getMaster('country',$where=false);
-            $state = $this->Master_model->getMaster('state',$where=false);
-
-            $where_int="job_seeker_id='$jobseeker_id'";
-            $intro_data = $this->Master_model->get_master_row("js_info", $select= FALSE, $where_int, $join = FALSE);
-            $where_lang="job_seeker_id='$jobseeker_id' ORDER BY language ASC";
-            $languages = $this->Master_model->getMaster('js_languages',$where_lang);
-            //echo $this->db->last_query();
-             $this->load->view('fontend/jobseeker/update_personalinfo', compact('jobseeker_id', 'js_personal_info', 'job_seeker_photo', 'name', 'city', 'country', 'state','languages','intro_data'),true);
+    
     // redirect('job_seeker/update_personalinfo');
 }
 
