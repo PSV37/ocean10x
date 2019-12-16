@@ -104,7 +104,7 @@ class Job_seeker extends MY_Seeker_Controller
 			$state = $this->Master_model->getMaster('state',$where=false);
 
             $where_int="job_seeker_id='$jobseeker_id'";
-            $intro_data = $this->Master_model->get_master_row("js_info", $select= FALSE, $where_int, $join = 
+            $intro_data = $this->Master_model->get_master_row("js_info", $select= FALSE, $where_int, $join = FALSE);
             $where_lang="job_seeker_id='$jobseeker_id' ORDER BY language ASC";
             $languages = $this->Master_model->getMaster('js_languages',$where_lang);
 			//echo $this->db->last_query();
@@ -114,9 +114,7 @@ class Job_seeker extends MY_Seeker_Controller
 
     public function add_language()
     {
-        if ($_POST) {
-            $jobseeker_id     = $this->session->userdata('job_seeker_id');
-            
+         if ($_POST) {
          $language = $this->input->post('language');
             $proficiency = $this->input->post('proficiency');
             $lang_write = $this->input->post('lang_write');
@@ -128,14 +126,14 @@ class Job_seeker extends MY_Seeker_Controller
             print_r($language);
              $lang_array = array(
                                 'job_seeker_id'  => $jobseeker_id,
-                                'language'       => $language[$l],
+                                'language'       => $language,
                                 'proficiency'    => $proficiency,
                                 'lang_write'     => $lang_write,
                                 'lang_speak'     => $lang_speak,
                                 'lang_read'      => $lang_read,
                                 
                             );
-            $last_id = $this->Master_model->master_insert($lang_array, 'js_languages');
+                            $last_id = $this->Master_model->master_insert($lang_array, 'js_languages');
     }
 }
 
