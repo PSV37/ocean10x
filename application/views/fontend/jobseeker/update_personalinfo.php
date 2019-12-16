@@ -195,7 +195,7 @@
                 <td><?php if($lrow['lang_read']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{echo "<i class='fa fa-remove' style='color:red;'></i>";} ?></td>
                 <td><?php if($lrow['lang_write']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{echo "<i class='fa fa-remove' style='color:red;'></i>";}  ?></td>
                 <td><?php if($lrow['lang_speak']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{echo "<i class='fa fa-remove' style='color:red;'></i>";}  ?></td>
-                <td> <?php echo btn_edit('job_seeker/edit_language/' . base64_encode($languages['id'])); ?></td>
+                <td> <?php echo btn_edit('job_seeker/edit_language/' . base64_encode($lrow['id'])); ?></td>
               </tr>
             <?php } ?>
             </tbody>
