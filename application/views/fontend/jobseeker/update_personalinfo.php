@@ -195,7 +195,7 @@
                 <td><?php if($lrow['lang_read']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{echo "<i class='fa fa-remove' style='color:red;'></i>";} ?></td>
                 <td><?php if($lrow['lang_write']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{echo "<i class='fa fa-remove' style='color:red;'></i>";}  ?></td>
                 <td><?php if($lrow['lang_speak']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{echo "<i class='fa fa-remove' style='color:red;'></i>";}  ?></td>
-                <td> <button class="fa fa-pencil-square-o" value="<?php echo($lrow['id']) ?>" onclick="getlanguage_data(this.value);">Edit</button></td>
+                <td> <button class="fa fa-pencil-square-o" data-toggle="modal" data-target="#Addlanguage" value="<?php echo($lrow['id']) ?>" onclick="getlanguage_data(this.value);">Edit</button></td>
               </tr>
             <?php } ?>
             </tbody>
@@ -2151,7 +2151,7 @@ $(document).ready(function() {
               {
                 
                   $('#lang_id').val(value.id);
-                  
+
                   $('#language').val(value.language);
                   $('#proficiency').val(value.proficiency);
                   $('#lang_read').val(value.lang_read);
