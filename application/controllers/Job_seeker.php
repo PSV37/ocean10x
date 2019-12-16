@@ -134,7 +134,7 @@ class Job_seeker extends MY_Seeker_Controller
                                 
                             );
                             $last_id = $this->Master_model->master_insert($lang_array, 'js_languages');
-                            print_r ($this->db->last_query()); die;
+                            // print_r ($this->db->last_query()); die;
                         }
                     }
                 }
