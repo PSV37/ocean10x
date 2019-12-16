@@ -1507,7 +1507,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         	$data['state'] = $this->Master_model->getMaster('state',$where=false);
         	$data['city'] = $this->Master_model->getMaster('city',$where=false);
         	//echo $this->db->last_query(); die;
-        	$this->load->view('fontend/employee/edit_employee',$data);	
+        	$this->load->view('fontend/employer/edit_employee',$data);	
         }
         else
 		{
