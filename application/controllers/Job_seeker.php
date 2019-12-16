@@ -115,15 +115,17 @@ class Job_seeker extends MY_Seeker_Controller
     public function add_language()
     {
          if ($_POST) {
+            $jobseeker_id     = $this->session->userdata('job_seeker_id');
+            
          $language = $this->input->post('language');
             $proficiency = $this->input->post('proficiency');
             $lang_write = $this->input->post('lang_write');
             $lang_speak = $this->input->post('lang_speak');
             $lang_read = $this->input->post('lang_read');
-              print_r($lang_write);
-            print_r($lang_speak);
-            print_r($lang_read);
-            print_r($language);
+            //   print_r($lang_write);
+            // print_r($lang_speak);
+            // print_r($lang_read);
+            // print_r($language);
              $lang_array = array(
                                 'job_seeker_id'  => $jobseeker_id,
                                 'language'       => $language,
