@@ -195,7 +195,7 @@
                 <td><?php if($lrow['lang_read']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{echo "<i class='fa fa-remove' style='color:red;'></i>";} ?></td>
                 <td><?php if($lrow['lang_write']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{echo "<i class='fa fa-remove' style='color:red;'></i>";}  ?></td>
                 <td><?php if($lrow['lang_speak']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{echo "<i class='fa fa-remove' style='color:red;'></i>";}  ?></td>
-                <td> <a class="fa fa-pencil-square-o" data-toggle="modal" data-target="#Addlanguage" value="<?php echo($lrow['id']) ?>" onclick="getlanguage_data(this.value);">Edit</a></td>
+                <td> <a class="fa fa-pencil-square-o" data-toggle="modal" title="Edit" data-target="#Addlanguage" value="<?php echo($lrow['id']) ?>" onclick="getlanguage_data(this.value);">Edit</a></td>
               </tr>
             <?php } ?>
             </tbody>
