@@ -146,8 +146,8 @@ public function edit_language()
     $language_id=$this->input->post($language_id);
      $where_lang="id='$language_id'";
     $language_data = $this->Master_model->get_master_row("js_languages", $select= FALSE, $where_lang, $join = FALSE);
-    echo json_encode($language_data);
-
+    // echo json_encode($language_data);
+    print_r($this->db->last_query());
 
 }
      

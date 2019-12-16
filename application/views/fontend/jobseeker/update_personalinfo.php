@@ -2219,6 +2219,7 @@ $(document).ready(function() {
   function getlanguage_data(id)
   {
    
+   
     $.ajax({
              url:'<?php echo base_url()?>job_seeker/edit_language',
              type: 'post',
