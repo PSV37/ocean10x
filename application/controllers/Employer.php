@@ -1488,6 +1488,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     }
 
     public function postEditData(){
+        $user_id=$this->session->userdata('company_profile_id');
         $this->form_validation->set_rules('emp_no', 'Employee No.', 'required|min_length[3]|max_length[6]|alpha_numeric');
 		$this->form_validation->set_rules('emp_name', 'Name', 'required');
 		$this->form_validation->set_rules('mobile', ' Contact No.', 'required|regex_match[/^[0-9]{10}$/]');
@@ -1528,7 +1529,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     		$id = $this->input->post('cid');
     		$where['emp_id']=$id;
     		$this->Master_model->master_update($data,'employee',$where);
-            $this->session->set_flashdata('success', '<div class="alert alert-warning text-center">Employee Updated Successfully!</div>');
+            $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Employee Updated Successfully!</div>');
     		redirect(base_url().'employer/allemployee');
 		}
     }
