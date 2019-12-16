@@ -318,7 +318,7 @@
                     </div>
                     <div class="col-md-6">  
                       <label>Proficiency</label>
-                      <select class="form-control" name="proficiency[]" id="proficiency">
+                      <select class="form-control" name="proficiency" id="proficiency">
                         <option value="">Select Proficiency</option>
                         <option value="Beginner">Beginner</option>
                         <option value="Proficient">Proficient</option>
@@ -1213,30 +1213,7 @@
 
   
 
-    $(document).ready(function() {
-
-      if(document.getElementById("lang_read").checked) {
-          document.getElementById('txtlang_read').disabled = true;
-      }
-      if(document.getElementById("lang_speak").checked) {
-          document.getElementById('txtlang_speak').disabled = true;
-      }
-      if(document.getElementById("lang_write").checked) {
-          document.getElementById('txtlang_write').disabled = true;
-      }
-
-      $(".add-more").click(function(){ 
-          var html = $(".copy").html();
-          $(".after-add-more").after(html);
-      });
-
-
-      $("body").on("click",".remove",function(){ 
-          $(this).parents(".control-group").remove();
-      });
-
-
-    });
+    
 
 
 </script>
