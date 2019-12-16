@@ -114,7 +114,7 @@ class Job_seeker extends MY_Seeker_Controller
 
     public function add_language()
     {
-         
+
             $jobseeker_id     = $this->session->userdata('job_seeker_id');
 
          $language = $this->input->post('language');
@@ -132,7 +132,13 @@ class Job_seeker extends MY_Seeker_Controller
                                 'lang_read'      => $lang_read,
                                 
                             );
+              $language_id=$this->input->post('languageid');
+         if (isset($language_id) && ! empty($language_id)) {
+             $where_update['id']=$language_id;
+                $this->Master_model->master_update($lang_array,'js_languages',$where_update);
+         }else{
     $last_id = $this->Master_model->master_insert($lang_array, 'js_languages');
+}
      
 
     
