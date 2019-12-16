@@ -131,7 +131,7 @@ class Job_seeker extends MY_Seeker_Controller
                             $where_update['job_seeker_id']=$jobseeker_id;
                             $where_update['language']=$language[$l];
                             $last_id = $this->Master_model->master_update($lang_array, 'js_languages',$where_update);
-                            print_r($this->db->last_query(); die)
+                            print_r ($this->db->last_query()); die
                         }
                     }
                 if($del==true)
