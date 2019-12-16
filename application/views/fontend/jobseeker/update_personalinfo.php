@@ -2154,9 +2154,35 @@ $(document).ready(function() {
 
                   $('#language').val(value.language);
                   $('#proficiency').val(value.proficiency);
-                  $('#lang_read').val(value.lang_read);
-                  $('#lang_write').val(value.lang_write);
-                  $('#lang_speak').val(value.lang_speak);
+
+                  var read = value.lang_read;
+                  var write = value.lang_write;
+                  var speak = value.lang_speak;
+                  if(read == 'Yes')
+                  {
+                    $('#lang_read').prop('checked', true);
+
+                  }else{
+                    $('#lang_read').prop('checked', false);
+
+                  }
+                  if(write == 'Yes')
+                  {
+                    $('#lang_write').prop('checked', true);
+
+                  }else{
+                    $('#lang_write').prop('checked', false);
+
+                  } 
+                  if(speak == 'Yes')
+                  {
+                    $('#lang_speak').prop('checked', true);
+
+                  }else{
+                    $('#lang_speak').prop('checked', false);
+
+                  }
+                
               });
               
                 // $('#candiate_email').val(emails);
