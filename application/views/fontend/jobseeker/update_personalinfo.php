@@ -2216,15 +2216,15 @@ $(document).ready(function() {
  
 </script>
 <script type="text/javascript">
-  function getlanguage_data(id)
+  function getlanguage_data(lan_id)
   {
-   alert(id);
+   alert(lan_id);
 
     $.ajax({
              url:'<?php echo base_url()?>job_seeker/edit_language',
              type: 'post',
             
-             data: {language_id:id},
+             data: {language_id:lan_id},
               dataType: 'json',
              // content_type:'application/json',
              success: function(data){
