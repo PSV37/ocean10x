@@ -139,6 +139,15 @@ class Job_seeker extends MY_Seeker_Controller
          }else{
     $last_id = $this->Master_model->master_insert($lang_array, 'js_languages');
 }
+function edit_language(id)
+{
+    $language_id=base64_decode($id);
+     $where_lang="id='$language_id'";
+    $language_data = $this->Master_model->get_master_row("js_languages", $select= FALSE, $where_lang, $join = FALSE);
+     $this->load->view('fontend/jobseeker/update_personalinfo', compact('language_data'));
+
+
+}
      
 
     
