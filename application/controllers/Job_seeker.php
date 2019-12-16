@@ -141,7 +141,7 @@ class Job_seeker extends MY_Seeker_Controller
 }
 redirect('job_seeker/seeker_info');
 }
-public function edit_language()
+ function edit_language()
 {
     $lang_id=$this->input->post($language_id);
      $where_lang="id='$lang_id'";
