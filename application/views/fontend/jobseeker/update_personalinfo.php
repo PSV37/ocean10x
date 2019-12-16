@@ -323,9 +323,9 @@
                       <label>Proficiency</label>
                       <select class="form-control" name="proficiency" id="proficiency">
                         <option value="">Select Proficiency</option>
-                        <option value="Beginner"<?php $lrow['proficiency']=='Beginner' echo ' selected="selected"'; ?>>Beginner</option>
-                        <option value="Proficient"<?php $lrow['proficiency']=='Proficient' echo ' selected="selected"'; ?>>Proficient</option>
-                        <option value="Expert"<?php $lrow['proficiency']=='Expert' echo ' selected="selected"'; ?>>Expert</option>
+                        <option value="Beginner"<?php if($lrow['proficiency']=='Beginner'){ echo ' selected="selected"';} ?>>Beginner</option>
+                        <option value="Proficient"<?php if ($lrow['proficiency']=='Proficient'){ echo ' selected="selected"';} ?>>Proficient</option>
+                        <option value="Expert"<?php if($lrow['proficiency']=='Expert'){echo ' selected="selected"';} ?>>Expert</option>
                         
                       </select>
                     </div>
