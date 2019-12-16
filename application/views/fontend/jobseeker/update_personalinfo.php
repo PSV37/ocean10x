@@ -296,7 +296,7 @@
       </div>
        
   <div class="modal-body">
-    <form id="Personal-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_language');?>"  method="post" autocomplete="off">
+    <form id="Personal-info" class="form-horizontal" action="<?php echo base_url('job_seeker/add_language');?>"  method="post" autocomplete="off">
     <input type="hidden" value="<?php echo $js_personal_info->job_personal_info_id; ?>" name="js_personal_info_id">
             
    

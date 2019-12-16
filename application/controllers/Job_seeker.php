@@ -38,113 +38,62 @@ class Job_seeker extends MY_Seeker_Controller
         if ($_POST) {
             $jobseeker_id     = $this->session->userdata('job_seeker_id');
             $personal_info_id = $this->input->post('js_personal_info_id');
-            $language = $this->input->post('language');
-            $proficiency = $this->input->post('proficiency');
-            $lang_write = $this->input->post('lang_write');
-            $lang_speak = $this->input->post('lang_speak');
-            $lang_read = $this->input->post('lang_read');
-            print_r($lang_write);
-            print_r($lang_speak);
-            print_r($lang_read);
-            print_r($language);
+           
+               
 
             
-    //         $personal_info    = array(
-    //             'job_seeker_id'     => $jobseeker_id,
-    //             // 'father_name'       => $this->input->post('father_name'),
-    //             // 'mother_name'       => $this->input->post('mother_name'),
-    //             "date_of_birth"     => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('date_of_birth')))),
-    //             'dob_visiblity'       => $this->input->post('dobmake_public'),
-    //            // 'national_id'       => $this->input->post('national_id'),
-				// 'country_code'      => $this->input->post('country_code'),
-    //             'mobile'            => $this->input->post('mobile'),
-				// 'alternatecountry_code'      => $this->input->post('alternatecountry_code'),
-    //             'alternatemobile'            => $this->input->post('alternatemobile'),
-				// 'country_id'        => $this->input->post('country_id'),
-				// 'state_id'          => $this->input->post('state_id'),
-				// 'city_id'           => $this->input->post('city_id'),
-				// 'pincode'           => $this->input->post('pincode'),
-    //             'present_address'   => addslashes($this->input->post('present_address')),
-				// // 'country1_id'       => $this->input->post('country1_id'),
-				// // 'state1_id'         => $this->input->post('state1_id'),
-				// // 'city1_id'          => $this->input->post('city1_id'),
-				// // 'pincode1'          => $this->input->post('pincode1'),
-    //             // 'parmanent_address' => $this->input->post('parmanent_address'),
-    //             'resume_title'              => addslashes($this->input->post('tagline')),
-    //             'marital_status'            => $this->input->post('matrial_status'),
-    //             'work_permit_usa'           => $this->input->post('work_permit_usa'),
-    //             'work_permit_countries'     => $this->input->post('other_country_work_permit'),
-    //             'website'                   => addslashes($this->input->post('website')),
+            $personal_info    = array(
+                'job_seeker_id'     => $jobseeker_id,
+                // 'father_name'       => $this->input->post('father_name'),
+                // 'mother_name'       => $this->input->post('mother_name'),
+                "date_of_birth"     => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('date_of_birth')))),
+                'dob_visiblity'       => $this->input->post('dobmake_public'),
+               // 'national_id'       => $this->input->post('national_id'),
+				'country_code'      => $this->input->post('country_code'),
+                'mobile'            => $this->input->post('mobile'),
+				'alternatecountry_code'      => $this->input->post('alternatecountry_code'),
+                'alternatemobile'            => $this->input->post('alternatemobile'),
+				'country_id'        => $this->input->post('country_id'),
+				'state_id'          => $this->input->post('state_id'),
+				'city_id'           => $this->input->post('city_id'),
+				'pincode'           => $this->input->post('pincode'),
+                'present_address'   => addslashes($this->input->post('present_address')),
+				// 'country1_id'       => $this->input->post('country1_id'),
+				// 'state1_id'         => $this->input->post('state1_id'),
+				// 'city1_id'          => $this->input->post('city1_id'),
+				// 'pincode1'          => $this->input->post('pincode1'),
+                // 'parmanent_address' => $this->input->post('parmanent_address'),
+                'resume_title'              => addslashes($this->input->post('tagline')),
+                'marital_status'            => $this->input->post('matrial_status'),
+                'work_permit_usa'           => $this->input->post('work_permit_usa'),
+                'work_permit_countries'     => $this->input->post('other_country_work_permit'),
+                'website'                   => addslashes($this->input->post('website')),
                 
                 
-    //         );
-    //         if (empty($personal_info_id)) {
-    //             $ins = $this->job_seeker_personal_model->insert($personal_info);
-    //             $in_arr= array(
-    //                 'mobile_no'            => $this->input->post('mobile'),
-    //                 'full_name'            => $this->input->post('full_name')
-    //             );
-    //             $where_update['job_seeker_id']=$jobseeker_id;
-    //             $this->Master_model->master_update($in_arr,'js_info',$where_update);
+            );
+            if (empty($personal_info_id)) {
+                $ins = $this->job_seeker_personal_model->insert($personal_info);
+                $in_arr= array(
+                    'mobile_no'            => $this->input->post('mobile'),
+                    'full_name'            => $this->input->post('full_name')
+                );
+                $where_update['job_seeker_id']=$jobseeker_id;
+                $this->Master_model->master_update($in_arr,'js_info',$where_update);
 
-    //             $where_del = "job_seeker_id='$jobseeker_id'";
-    //             $del = $this->Master_model->master_delete('js_languages',$where_del);
-    //             if($del==true)
-    //             {
-    //                 for($l=0;$l<sizeof($language);$l++)
-    //                 {
-    //                     if($language[$l]!=''){
-                           
-    //                         $lang_array = array(
-    //                             'job_seeker_id'  => $jobseeker_id,
-    //                             'language'       => $language[$l],
-    //                             'proficiency'    => $proficiency[$l],
-    //                             'lang_write'     => $lang_write[$l],
-    //                             'lang_speak'     => $lang_speak[$l],
-    //                             'lang_read'      => $lang_read[$l],
-                                
-    //                         );
-    //                         $last_id = $this->Master_model->master_insert($lang_array, 'js_languages');
-    //                     }
-    //                 }
-    //             }
-    //             redirect('job_seeker/seeker_info',$data);
-    //         } else {
-    //             $this->job_seeker_personal_model->update($personal_info, $personal_info_id);
-    //             $in_arr= array(
-    //                 'mobile_no'            => $this->input->post('mobile'),
-    //                 'full_name'            => $this->input->post('full_name')
-    //             );
-    //             $where_update['job_seeker_id']=$jobseeker_id;
-    //             $this->Master_model->master_update($in_arr,'js_info',$where_update);
+                
+                redirect('job_seeker/seeker_info',$data);
+            } else {
+                $this->job_seeker_personal_model->update($personal_info, $personal_info_id);
+                $in_arr= array(
+                    'mobile_no'            => $this->input->post('mobile'),
+                    'full_name'            => $this->input->post('full_name')
+                );
+                $where_update['job_seeker_id']=$jobseeker_id;
+                $this->Master_model->master_update($in_arr,'js_info',$where_update);
                
-    //             $where_del = "job_seeker_id='$jobseeker_id'";
-    //             $del = $this->Master_model->master_delete('js_languages',$where_del);
-
-    //             if($del==true)
-    //             {
-                    
-
-    //                 for($l=0;$l<sizeof($language);$l++)
-    //                 {
-    //                     if($language[$l]!=''){
-                           
-    //                         $lang_array = array(
-    //                             'job_seeker_id'  => $jobseeker_id,
-    //                             'language'       => $language[$l],
-    //                             'proficiency'    => $proficiency[$l],
-    //                             'lang_write'     => $lang_write[$l],
-    //                             'lang_speak'     => $lang_speak[$l],
-    //                             'lang_read'      => $lang_read[$l],
-                                
-    //                         );
-    //                         $last_id = $this->Master_model->master_insert($lang_array, 'js_languages');
-    //                         // print_r ($this->db->last_query()); die;
-    //                     }
-    //                 }
-    //             }
-    //             redirect('job_seeker/seeker_info',$data);
-    //         }
+               
+                redirect('job_seeker/seeker_info',$data);
+            }
         } else {
             $jobseeker_id     = $this->session->userdata('job_seeker_id');
             $js_personal_info = $this->job_seeker_personal_model->personalinfo_list_by_id($jobseeker_id);
@@ -155,21 +104,40 @@ class Job_seeker extends MY_Seeker_Controller
 			$state = $this->Master_model->getMaster('state',$where=false);
 
             $where_int="job_seeker_id='$jobseeker_id'";
-            $intro_data = $this->Master_model->get_master_row("js_info", $select= FALSE, $where_int, $join = FALSE);
-			// $where_sek['job_seeker_id'] = $jobseeker_id;
-   //          $join1 = array(
-			// 	'country' => 'country.country_id = js_personal_info.country1_id|INNER',
-			// 	'state' => 'state.state_id = js_personal_info.state1_id|INNER',
-			// 	'city' => 'city.id = js_personal_info.city1_id|INNER'
-			// );
-			
-			// $results = $this->Master_model->get_master_row("js_personal_info", $select = false, $where_sek, $join1);
+            $intro_data = $this->Master_model->get_master_row("js_info", $select= FALSE, $where_int, $join = 
             $where_lang="job_seeker_id='$jobseeker_id' ORDER BY language ASC";
             $languages = $this->Master_model->getMaster('js_languages',$where_lang);
 			//echo $this->db->last_query();
             echo $this->load->view('fontend/jobseeker/update_personalinfo', compact('jobseeker_id', 'js_personal_info', 'job_seeker_photo', 'name', 'city', 'country', 'state','languages','intro_data'),true);
         }
     }
+
+    public function add_language()
+    {
+        if ($_POST) {
+            $jobseeker_id     = $this->session->userdata('job_seeker_id');
+            
+         $language = $this->input->post('language');
+            $proficiency = $this->input->post('proficiency');
+            $lang_write = $this->input->post('lang_write');
+            $lang_speak = $this->input->post('lang_speak');
+            $lang_read = $this->input->post('lang_read');
+              print_r($lang_write);
+            print_r($lang_speak);
+            print_r($lang_read);
+            print_r($language);
+             $lang_array = array(
+                                'job_seeker_id'  => $jobseeker_id,
+                                'language'       => $language[$l],
+                                'proficiency'    => $proficiency,
+                                'lang_write'     => $lang_write,
+                                'lang_speak'     => $lang_speak,
+                                'lang_read'      => $lang_read,
+                                
+                            );
+            $last_id = $this->Master_model->master_insert($lang_array, 'js_languages');
+    }
+}
 
     public function delete_mylanguage($id)
     {
