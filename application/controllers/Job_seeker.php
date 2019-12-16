@@ -115,6 +115,24 @@ class Job_seeker extends MY_Seeker_Controller
                
                 $where_del = "job_seeker_id='$jobseeker_id'";
                 $del = $this->Master_model->master_delete('js_languages',$where_del);
+                for($l=0;$l<sizeof($language);$l++)
+                    {
+                        if($language[$l]!=''){
+                           
+                            $lang_array = array(
+                                'job_seeker_id'  => $jobseeker_id,
+                                'language'       => $language[$l],
+                                'proficiency'    => $proficiency[$l],
+                                'lang_write'     => $lang_write[$l],
+                                'lang_speak'     => $lang_speak[$l],
+                                'lang_read'      => $lang_read[$l],
+                                
+                            );
+                            $where_update['job_seeker_id']=$jobseeker_id;
+                            $where_update['language']=$language[$l];
+                            $last_id = $this->Master_model->master_update($lang_array, 'js_languages',$where_update);
+                        }
+                    }
                 if($del==true)
                 {
                     
