@@ -43,7 +43,7 @@ class Job_seeker extends MY_Seeker_Controller
             $lang_write = $this->input->post('lang_write');
             $lang_speak = $this->input->post('lang_speak');
             $lang_read = $this->input->post('lang_read');
-            print_r($lang_write);
+            print_r(array_unique($lang_write));
             print_r($lang_speak);
             print_r($lang_read);
             print_r($language);
