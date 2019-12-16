@@ -286,182 +286,64 @@
 <!-- end col -->
 <!-- end section -->
 
-<!--Edit Modal -->
-<div id="langulagedata" class="modal fade" role="dialog">
+
+
+<div id="Addlanguage" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
     <!-- Modal content-->
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header"></div>
         
-      </div>
-       
-  <div class="modal-body">
-    <form id="Personal-info" class="form-horizontal" action="<?php echo base_url('job_seeker/add_language');?>"  method="post" autocomplete="off">
-    <input type="hidden" value="<?php echo $js_personal_info->job_personal_info_id; ?>" name="js_personal_info_id">
-            
-   
-    		 
-    	 <div class="panel-body"></div>   
-        <div class="row">
-          <div class="col-md-12">
-            <div class="col-md-12 col-sm-12">
-              <div class="input-group">
-                  <h6>Languages</h6><br>
-		 
-	 <div class="panel-body"></div>   
-    <div class="row">
-      <div class="col-md-12">
-        <div class="col-md-12 col-sm-12">
-          <div class="input-group">
-              <h6>Languages</h6><br>
-              
-              <div class="input-group control-group after-add-more">
-                <div>
-                <?php foreach ($language_data as $lrow) {?>
-                 
+      <div class="modal-body">
+        <form id="Personal-info" class="form-horizontal" action="<?php echo base_url('job_seeker/add_language');?>"  method="post" autocomplete="off">
+        <input type="hidden" value="<?php echo $js_personal_info->job_personal_info_id; ?>" name="js_personal_info_id">
                 
-                  <div class="col-md-12">
-                    <div class="col-md-6"> 
-                       <label>Language</label>
-                      <input type="text" name="language" id="language" class="form-control" value="<?php echo $lrow['language']; ?>">
-
-                      <input type="hidden" name="languageid" id="languageid" class="form-control" value="<?php echo $lrow['id']; ?>">
-                    </div>
-                    <div class="col-md-6">  
-                      <label>Proficiency</label>
-                      <select class="form-control" name="proficiency" id="proficiency">
-                        <option value="">Select Proficiency</option>
-                        <option value="Beginner"<?php if($lrow['proficiency']=='Beginner'){ echo ' selected="selected"';} ?>>Beginner</option>
-                        <option value="Proficient"<?php if ($lrow['proficiency']=='Proficient'){ echo ' selected="selected"';} ?>>Proficient</option>
-                        <option value="Expert"<?php if($lrow['proficiency']=='Expert'){echo ' selected="selected"';} ?>>Expert</option>
-                        
-                      </select>
-                    </div>
-                    <div class="col-md-12" style="margin-top:10px;">  
-                      <input type="checkbox" name="lang_read" id="lang_read" style="margin: 0 15px;" value="Yes"<?php if($lrow['lang_read']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{} ?> > Read
-
-                    <input type="checkbox" name="lang_write"  id="lang_write" style="margin: 0 15px;" value="Yes"<?php if($lrow['lang_write']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{}?>> Write
-                   
-                      <input type="checkbox" name="lang_speak" id="lang_speak" value="Yes"<?php if($lrow['lang_speak']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{} ?> > Speak
-                   
-                  
-                  <div class="input-group control-group after-add-more">
-                    <div>
-                    <?php foreach ($languages as $lrow) {?>
-                     
+        <div class="panel-body"></div>   
+          <div class="row">
+            <div class="col-md-12">
+              <div class="col-md-12 col-sm-12">
+                <div class="input-group">
+                    <h6>Languages</h6><br>
                     
-                      <div class="col-md-12">
-                        <div class="col-md-6"> 
-                           <label>Language</label>
-                          <input type="text" name="language" id="language" class="form-control" value="<?php echo $lrow['language']; ?>">
-                        </div>
-                        <div class="col-md-6">  
-                          <label>Proficiency</label>
-                          <select class="form-control" name="proficiency" id="proficiency">
-                            <option value="">Select Proficiency</option>
-                            <option value="Beginner"<?php if($lrow['proficiency']=='Beginner'){ echo ' selected="selected"';} ?>>Beginner</option>
-                            <option value="Proficient"<?php if ($lrow['proficiency']=='Proficient'){ echo ' selected="selected"';} ?>>Proficient</option>
-                            <option value="Expert"<?php if($lrow['proficiency']=='Expert'){echo ' selected="selected"';} ?>>Expert</option>
-                            
-                          </select>
-                        </div>
-                        <div class="col-md-12" style="margin-top:10px;">  
-                          <input type="checkbox" name="lang_read" id="lang_read" style="margin: 0 15px;" value="Yes"<?php if($lrow['lang_read']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{echo "<i class='fa fa-remove' style='color:red;'></i>";} ?> > Read
-                          <input type="checkbox" name="lang_write" style="margin: 0 15px;" id="lang_write" value="Yes"<?php if($lrow['lang_write']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{echo "<i class='fa fa-remove' style='color:red;'></i>";} ?> > Write
-                       
-                          <input type="checkbox" name="lang_speak" id="lang_speak" value="Yes"<?php if($lrow['lang_speak']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{echo "<i class='fa fa-remove' style='color:red;'></i>";} ?> > Speak
-                       
+                    <div class="input-group control-group after-add-more">
+                      <div>
                       
+                        <div class="col-md-12">
+                          <div class="col-md-6"> 
+                            <label>Language</label>
+                            <input type="text" name="language" id="language" class="form-control" value="">
+                          </div>
+                          <div class="col-md-6">  
+                            <label>Proficiency</label>
+                            <select class="form-control" name="proficiency" id="proficiency">
+                              <option value="">Select Proficiency</option>
+                              <option value="Beginner">Beginner</option>
+                              <option value="Proficient">Proficient</option>
+                              <option value="Expert">Expert</option>
+                              
+                            </select>
+                          </div>
+                          <div class="col-md-12" style="margin-top:10px;">  
+                            <input type="checkbox" name="lang_read" id="lang_read" style="margin: 0 15px;" value="Yes" > Read
+
+                            <input type="checkbox" name="lang_write"  id="lang_write" style="margin: 0 15px;" value="Yes"> Write
+                            <input type="checkbox" name="lang_speak" id="lang_speak" value="Yes" > Speak
+                          </div>
                         </div>
+                    
                       </div>
-                    <?php }?>
                     </div>
-                  </div>
-              </div>     
+                </div>     
+              </div>
             </div>
           </div>
-    </div>
-		   
-           <div class="modal-footer">
-           	 
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button type="submit" class="btn btn-primary">Save</button>
-      </div>
-        </form>
- 
-    </div>
-  </div>
-</div>
-</div>
-
-  <div id="Addlanguage" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        
-      </div>
-       
-  <div class="modal-body">
-    <form id="Personal-info" class="form-horizontal" action="<?php echo base_url('job_seeker/add_language');?>"  method="post" autocomplete="off">
-    <input type="hidden" value="<?php echo $js_personal_info->job_personal_info_id; ?>" name="js_personal_info_id">
-            
-   
-     
-   <div class="panel-body"></div>   
-    <div class="row">
-      <div class="col-md-12">
-        <div class="col-md-12 col-sm-12">
-          <div class="input-group">
-              <h6>Languages</h6><br>
-              
-              <div class="input-group control-group after-add-more">
-                <div>
-                
-                  <div class="col-md-12">
-                    <div class="col-md-6"> 
-                       <label>Language</label>
-                      <input type="text" name="language" id="language" class="form-control" value="">
-
-                      
-                    </div>
-                    <div class="col-md-6">  
-                      <label>Proficiency</label>
-                      <select class="form-control" name="proficiency" id="proficiency">
-                        <option value="">Select Proficiency</option>
-                        <option value="Beginner">Beginner</option>
-                        <option value="Proficient">Proficient</option>
-                        <option value="Expert">Expert</option>
-                        
-                      </select>
-                    </div>
-                    <div class="col-md-12" style="margin-top:10px;">  
-                      <input type="checkbox" name="lang_read" id="lang_read" style="margin: 0 15px;" value="Yes" > Read
-
-                      <input type="checkbox" name="lang_write"  id="lang_write" style="margin: 0 15px;" value="Yes"> Write
-                   
-                      <input type="checkbox" name="lang_speak" id="lang_speak" value="Yes" > Speak
-                   
-                  
-                    </div>
-                  </div>
-              
-                </div>
-              </div>
-          </div>     
-        </div>
-      </div>
-    </div>
-       
-               <div class="modal-footer">
-                 
-            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-primary">Save</button>
-          </div>
-            </form>
-     
+             
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
