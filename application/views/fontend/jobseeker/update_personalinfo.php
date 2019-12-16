@@ -195,7 +195,7 @@
                 <td><?php if($lrow['lang_read']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{echo "<i class='fa fa-remove' style='color:red;'></i>";} ?></td>
                 <td><?php if($lrow['lang_write']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{echo "<i class='fa fa-remove' style='color:red;'></i>";}  ?></td>
                 <td><?php if($lrow['lang_speak']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{echo "<i class='fa fa-remove' style='color:red;'></i>";}  ?></td>
-                <td> <?php echo btn_edit('job_seeker/edit_language/' . base64_encode($lrow['id'])); ?></td>
+                <td> <button class="fa fa-pencil-square-o" value="<?php echo($lrow['id']) ?>" onclick="getlanguage_data(this.value);">Edit</button></td>
               </tr>
             <?php } ?>
             </tbody>
@@ -384,8 +384,6 @@
               
               <div class="input-group control-group after-add-more">
                 <div>
-                <?php foreach ($languages as $lrow) {?>
-                 
                 
                   <div class="col-md-12">
                     <div class="col-md-6"> 
@@ -414,7 +412,7 @@
                   
                     </div>
                   </div>
-                <?php }?>
+              
                 </div>
               </div>
           </div>     
@@ -2216,6 +2214,28 @@ $(document).ready(function() {
  });
 });
  
+</script>
+<script type="text/javascript">
+  function getlanguage_data(id)
+  {
+   
+    $.ajax({
+             url:'<?php echo base_url()?>job_seeker/edit_language',
+             type: 'post',
+            
+             data: {language_id:id},
+              dataType: 'json',
+             // content_type:'application/json',
+             success: function(data){
+               
+               console.log(data);
+              
+                // $('#candiate_email').val(emails);
+                     
+              
+             }
+        });
+  }
 </script>
 <style>
   ul.ui-autocomplete {
