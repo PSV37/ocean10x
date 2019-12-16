@@ -187,7 +187,7 @@
           <h6>Languages: </h6><button class="btn btn-success btn-xs pull-right add-more"  data-toggle="modal" data-target="#langulagedata" class="btn pull-right bg-navy btn-xs" title="add" data-toggle="tooltip" data-placement="top" type="button"><i class="fa fa-plus"></i> Add Language</button> <br>
         
           <table class="table">
-            <thead><th>Languages</th><th>Proficiency</th><th>Read</th><th>Write</th><th>Speak</th></thead>
+            <thead><th>Languages</th><th>Proficiency</th><th>Read</th><th>Write</th><th>Speak</th><th>Edit</th></thead>
             <tbody><?php if(!empty($languages)) foreach($languages as $lrow){ ?>
               <tr>
                 <td><?php echo $lrow['language']; ?></td>
@@ -195,6 +195,7 @@
                 <td><?php if($lrow['lang_read']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{echo "<i class='fa fa-remove' style='color:red;'></i>";} ?></td>
                 <td><?php if($lrow['lang_write']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{echo "<i class='fa fa-remove' style='color:red;'></i>";}  ?></td>
                 <td><?php if($lrow['lang_speak']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{echo "<i class='fa fa-remove' style='color:red;'></i>";}  ?></td>
+                <td><a href="#" data-toggle="modal" data-target="#langulagedata" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top" style="font-size:18px;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a></td>
               </tr>
             <?php } ?>
             </tbody>
@@ -310,27 +311,29 @@
               
               <div class="input-group control-group after-add-more">
                 <div>
-                
+                <?php foreach ($language as $key => $value) {
+                  # code...
+                }?>
                   <div class="col-md-12">
                     <div class="col-md-6"> 
                        <label>Language</label>
-                      <input type="text" name="language" id="language" class="form-control" value="">
+                      <input type="text" name="language" id="language" class="form-control" value="<?php echo $lrow['language']; ?>">
                     </div>
                     <div class="col-md-6">  
                       <label>Proficiency</label>
                       <select class="form-control" name="proficiency" id="proficiency">
                         <option value="">Select Proficiency</option>
-                        <option value="Beginner">Beginner</option>
-                        <option value="Proficient">Proficient</option>
-                        <option value="Expert">Expert</option>
+                        <option value="Beginner"<?php $lrow['proficiency']=='Beginner' echo ' selected="selected"'; ?>>Beginner</option>
+                        <option value="Proficient"<?php $lrow['proficiency']=='Proficient' echo ' selected="selected"'; ?>>Proficient</option>
+                        <option value="Expert"<?php $lrow['proficiency']=='Expert' echo ' selected="selected"'; ?>>Expert</option>
                         
                       </select>
                     </div>
                     <div class="col-md-12" style="margin-top:10px;">  
-                      <input type="checkbox" name="lang_read" id="lang_read" value="Yes" style="margin: 0 15px;"> Read
-                      <input type="checkbox" name="lang_write" id="lang_write" value="Yes" style="margin: 0 15px;"> Write
+                      <input type="checkbox" name="lang_read" id="lang_read" value="Yes"<?php if($lrow['lang_read']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{echo "<i class='fa fa-remove' style='color:red;'></i>";} ?> style="margin: 0 15px;"> Read
+                      <input type="checkbox" name="lang_write" id="lang_write" value="Yes"<?php if($lrow['lang_write']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{echo "<i class='fa fa-remove' style='color:red;'></i>";} ?> style="margin: 0 15px;"> Write
                    
-                      <input type="checkbox" name="lang_speak" id="lang_speak" value="Yes" style="margin: 0 15px;"> Speak
+                      <input type="checkbox" name="lang_speak" id="lang_speak" value="Yes"<?php if($lrow['lang_speak']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{echo "<i class='fa fa-remove' style='color:red;'></i>";} ?> style="margin: 0 15px;"> Speak
                    
                   
                     </div>
