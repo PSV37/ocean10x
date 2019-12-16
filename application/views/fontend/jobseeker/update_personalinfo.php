@@ -311,7 +311,7 @@
               
               <div class="input-group control-group after-add-more">
                 <div>
-                <?php foreach ($language as $key => $value) {?>
+                <?php foreach ($languages as $lrow) {?>
                  
                 
                   <div class="col-md-12">
