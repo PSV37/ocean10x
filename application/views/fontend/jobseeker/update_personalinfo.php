@@ -184,7 +184,7 @@
             </tbody>
           </table>
 
-          <h6>Languages: </h6><button class="btn btn-success btn-xs pull-right add-more"  data-toggle="modal" data-target="#langulagedata" class="btn pull-right bg-navy btn-xs" title="add" data-toggle="tooltip" data-placement="top" type="button"><i class="fa fa-plus"></i> Add Language</button> <br>
+          <h6>Languages: </h6><button class="btn btn-success btn-xs pull-right add-more"  data-toggle="modal" data-target="#Addlanguage" class="btn pull-right bg-navy btn-xs" title="add" data-toggle="tooltip" data-placement="top" type="button"><i class="fa fa-plus"></i> Add Language</button> <br>
         
           <table class="table">
             <thead><th>Languages</th><th>Proficiency</th><th>Read</th><th>Write</th><th>Speak</th><th>Edit</th></thead>
@@ -354,6 +354,79 @@
 		        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 		        <button type="submit" class="btn btn-primary">Save</button>
 		      </div>
+            </form>
+     
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="Addlanguage" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        
+      </div>
+       
+  <div class="modal-body">
+    <form id="Personal-info" class="form-horizontal" action="<?php echo base_url('job_seeker/add_language');?>"  method="post" autocomplete="off">
+    <input type="hidden" value="<?php echo $js_personal_info->job_personal_info_id; ?>" name="js_personal_info_id">
+            
+   
+     
+   <div class="panel-body"></div>   
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-12 col-sm-12">
+          <div class="input-group">
+              <h6>Languages</h6><br>
+              
+              <div class="input-group control-group after-add-more">
+                <div>
+                <?php foreach ($languages as $lrow) {?>
+                 
+                
+                  <div class="col-md-12">
+                    <div class="col-md-6"> 
+                       <label>Language</label>
+                      <input type="text" name="language" id="language" class="form-control" value="">
+
+                      
+                    </div>
+                    <div class="col-md-6">  
+                      <label>Proficiency</label>
+                      <select class="form-control" name="proficiency" id="proficiency">
+                        <option value="">Select Proficiency</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Proficient">Proficient</option>
+                        <option value="Expert">Expert</option>
+                        
+                      </select>
+                    </div>
+                    <div class="col-md-12" style="margin-top:10px;">  
+                      <input type="checkbox" name="lang_read" id="lang_read" style="margin: 0 15px;" value="Yes" > Read
+
+                      <input type="checkbox" name="lang_write"  id="lang_write" style="margin: 0 15px;" value="Yes"> Write
+                   
+                      <input type="checkbox" name="lang_speak" id="lang_speak" value="Yes" > Speak
+                   
+                  
+                    </div>
+                  </div>
+                <?php }?>
+                </div>
+              </div>
+          </div>     
+        </div>
+      </div>
+    </div>
+       
+               <div class="modal-footer">
+                 
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
             </form>
      
         </div>
