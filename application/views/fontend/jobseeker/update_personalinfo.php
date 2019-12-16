@@ -184,7 +184,7 @@
             </tbody>
           </table>
 
-          <h6>Languages: </h6><button class="btn btn-success btn-xs pull-right add-more" data-target="#PersonalinfoUpdate" type="button"><i class="fa fa-plus"></i> Add Language</button> <br>
+          <h6>Languages: </h6><button class="btn btn-success btn-xs pull-right add-more"  data-toggle="modal" data-target="#PersonalinfoUpdate" class="btn pull-right bg-navy btn-xs" title="add" data-toggle="tooltip" data-placement="top" type="button"><i class="fa fa-plus"></i> Add Language</button> <br>
         
           <table class="table">
             <thead><th>Languages</th><th>Proficiency</th><th>Read</th><th>Write</th><th>Speak</th></thead>
