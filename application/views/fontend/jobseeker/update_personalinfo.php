@@ -286,7 +286,7 @@
 <!-- end col -->
 <!-- end section -->
 
-<!-- Modal -->
+<!--Edit Modal -->
 <div id="langulagedata" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
@@ -301,7 +301,6 @@
     <input type="hidden" value="<?php echo $js_personal_info->job_personal_info_id; ?>" name="js_personal_info_id">
             
    
-<<<<<<< HEAD
     		 
     	 <div class="panel-body"></div>   
         <div class="row">
@@ -309,7 +308,6 @@
             <div class="col-md-12 col-sm-12">
               <div class="input-group">
                   <h6>Languages</h6><br>
-=======
 		 
 	 <div class="panel-body"></div>   
     <div class="row">
@@ -347,7 +345,6 @@
                    
                       <input type="checkbox" name="lang_speak" id="lang_speak" value="Yes"<?php if($lrow['lang_speak']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{} ?> > Speak
                    
->>>>>>> 8298f4b784c0de80e3ff14ebb145758b9ed385c7
                   
                   <div class="input-group control-group after-add-more">
                     <div>
@@ -395,10 +392,9 @@
  
     </div>
   </div>
-<<<<<<< HEAD
 </div>
 </div>
-=======
+
   <div id="Addlanguage" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
@@ -470,7 +466,6 @@
       </div>
     </div>
   </div>
->>>>>>> 8298f4b784c0de80e3ff14ebb145758b9ed385c7
 <!-- </div> -->
 <div id="PersonalinfoUpdate" class="modal fade" role="dialog">
   <div class="modal-dialog">
