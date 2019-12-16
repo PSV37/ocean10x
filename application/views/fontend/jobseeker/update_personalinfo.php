@@ -331,7 +331,8 @@
                     </div>
                     <div class="col-md-12" style="margin-top:10px;">  
                       <input type="checkbox" name="lang_read" id="lang_read" style="margin: 0 15px;" value="Yes"<?php if($lrow['lang_read']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{} ?> > Read
-                      <input type="checkbox" name="lang_write" style="margin: 0 15px;" id="lang_write" value="Yes"<?php if($lrow['lang_write']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{} ?> > Write
+
+                      <input type="checkbox" name="lang_write"  id="lang_write" style="margin: 0 15px;" value="Yes"<?php if($lrow['lang_write']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{}?> > Write
                    
                       <input type="checkbox" name="lang_speak" id="lang_speak" value="Yes"<?php if($lrow['lang_speak']=='Yes'){echo "<i class='fa fa-check' style='color:green;'></i>";}else{} ?> > Speak
                    
