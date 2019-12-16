@@ -311,9 +311,9 @@
               
               <div class="input-group control-group after-add-more">
                 <div>
-                <?php foreach ($language as $key => $value) {
-                  # code...
-                }?>
+                <?php foreach ($language as $key => $value) {?>
+                 
+                
                   <div class="col-md-12">
                     <div class="col-md-6"> 
                        <label>Language</label>
@@ -338,7 +338,7 @@
                   
                     </div>
                   </div>
-                
+                <?php }?>
                 </div>
               </div>
           </div>     
