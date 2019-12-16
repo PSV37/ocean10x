@@ -2218,8 +2218,8 @@ $(document).ready(function() {
 <script type="text/javascript">
   function getlanguage_data(id)
   {
-   
-   
+   alert(id);
+
     $.ajax({
              url:'<?php echo base_url()?>job_seeker/edit_language',
              type: 'post',
