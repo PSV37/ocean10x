@@ -297,7 +297,7 @@
         
       <div class="modal-body">
         <form id="Personal-info" class="form-horizontal" action="<?php echo base_url('job_seeker/add_language');?>"  method="post" autocomplete="off">
-        <input type="hidden" value="<?php echo $js_personal_info->job_personal_info_id; ?>" name="js_personal_info_id">
+        <input type="hidden" value="" name="lang_id" id="lang_id">
                 
         <div class="panel-body"></div>   
           <div class="row">
@@ -2147,6 +2147,17 @@ $(document).ready(function() {
              success: function(data){
                
                console.log(data);
+               $.each(data, function(index, value) 
+              {
+                
+                  $('#lang_id').val(value.id);
+                  
+                  $('#language').val(value.language);
+                  $('#proficiency').val(value.proficiency);
+                  $('#lang_read').val(value.lang_read);
+                  $('#lang_write').val(value.lang_write);
+                  $('#lang_speak').val(value.lang_speak);
+              });
               
                 // $('#candiate_email').val(emails);
                      
