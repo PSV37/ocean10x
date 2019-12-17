@@ -47,7 +47,7 @@ h4.panel-title > .small, .panel-title > .small > a, .panel-title > a, .panel-tit
           <div class="searchform">
             <div class="row">
               <div class="col-md-5 col-sm-4">
-                <input name="keyword" type="text" class="keyword-form form-control" placeholder="Keywords" id="keyword">
+                <input name="keyword" type="text" class="keyword-form form-control" placeholder="Keyword" id="keyword">
               </div>
               <div class="col-md-6 col-sm-6 select-location-padding">
                 <select name="location_name[]"  class="form-control" data-style="form-control" data-live-search="true">
@@ -58,7 +58,7 @@ h4.panel-title > .small, .panel-title > .small > a, .panel-title > a, .panel-tit
               
              
               <div class="col-md-1 col-sm-2">
-                <button type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i>da </button>
+                <button type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i> </button>
 
               </div>
             </div>
@@ -171,9 +171,7 @@ h4.panel-title > .small, .panel-title > .small > a, .panel-title > a, .panel-tit
           source: "<?php echo base_url('job/get_keyword_suggesions'); ?>",
           select: function(a,b)
             {
-                 // alert(b.item.value);
-                $(this).val(b.item.value); //grabed the selected value
-                get_candidate_info(b.item.value);
+              $(this).val(b.item.value); //grabed the selected value
             }
         });
     });

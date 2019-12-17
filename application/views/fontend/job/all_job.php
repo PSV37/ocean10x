@@ -213,9 +213,8 @@
           source: "<?php echo base_url('job/get_keyword_suggesions'); ?>",
           select: function(a,b)
             {
-                 // alert(b.item.value);
+                // alert(b.item.value);
                 $(this).val(b.item.value); //grabed the selected value
-                get_candidate_info(b.item.value);
             }
         });
     });
