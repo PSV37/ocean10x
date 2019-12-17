@@ -161,7 +161,7 @@ h4.panel-title > .small, .panel-title > .small > a, .panel-title > a, .panel-tit
 
     if ($company_profile_id != null) {
     ?>
-    <?php $this->load->view("fontend/layout/footer.php"); ?>
+
 
     <script type="text/javascript">
       $(document).ready(function(){
@@ -181,6 +181,7 @@ h4.panel-title > .small, .panel-title > .small > a, .panel-title > a, .panel-tit
           });
       });
   </script>
+  <?php $this->load->view("fontend/layout/footer.php"); ?>
 
   <?php
     }
