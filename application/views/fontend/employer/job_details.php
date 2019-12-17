@@ -281,6 +281,10 @@
                                 <td><?php echo $introw['interview_details']; ?></td>
                                 <td><?php echo $introw['is_rescheduled']; ?></td>
                                 <td>
+                                  <?php if($introw['is_rescheduled']=='Yes'){?><a href="#" class="btn btn-success btn-xs geteditformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id.'|'.$introw['id']; ?>' title="Reschedule Interview" data-toggle="modal" data-target="#rescheduled"><strong>confirm</strong> </a>
+
+                                  <a href="<?php echo site_url('employer/cancel_interview/'.$introw['id'].'/'.$introw['job_post_id'].''); ?>" onclick="return confirm('Are you sure?');"  class="btn btn-danger btn-xs" title="Cancel Interview" data-toggle="tooltip" data-placement="top">Cancel</a>  
+                                  <?php}else{ ?>
                                   <a href="#" class="btn btn-success btn-xs geteditformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id.'|'.$introw['id']; ?>' title="Reschedule Interview" data-toggle="modal" data-target="#update_schedule_interview"><strong>Reschedule</strong> </a>
 
                                   <a href="<?php echo site_url('employer/cancel_interview/'.$introw['id'].'/'.$introw['job_post_id'].''); ?>" onclick="return confirm('Are you sure?');"  class="btn btn-danger btn-xs" title="Cancel Interview" data-toggle="tooltip" data-placement="top">Cancel</a>   
@@ -290,7 +294,8 @@
                                   <a href="#" title="Interview Completed" data-toggle="tooltip" data-placement="top"><i class="fa fa-check" style="color: green;"></i></a>
                               <?php }else{ ?>
                                 <a href="#" title="Interview Not Completed" data-toggle="tooltip" data-placement="top"><i class="fa fa-remove" style="color: red;"></i></a>
-                              <?php } ?>
+                              <?php }} ?>
+
                                 </td>
                               </tr>
                             <?php } } }else{ echo "<td>No Data Found</td>";}?>
@@ -361,6 +366,44 @@ endforeach;
 
   </div>
 </div>
+<div id="rescheduled" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" align="center">Confirm Rescheduled interview</h4>
+      </div>
+      <div class="modal-body upinterview_frm">
+           <form id="Personal-info" class="form-horizontal" action="<?php echo base_url('Confirm_interview/confirm_rescheduled?apply_id='.base64_encode($interview_data["id"]));?>"  method="post" autocomplete="off">
+        <input type="hidden" value="" name="lang_id" id="lang_id">
+                
+        <div class="panel-body"></div>   
+          <div class="row">
+            <div class="col-md-12">
+              <div class="col-md-12 col-sm-12">
+                <label class="control-label" for="email">Message to jobseeker<span class="required">*</span></label>
+                    <textarea class="form-control" name="message" id="message" rows="5"></textarea>
+                </div>     
+              </div>
+            </div>
+          
+             
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+          </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+                
+         
+
+       
+   
 
 <div id="update_status" class="modal fade" role="dialog">
   <div class="modal-dialog">
