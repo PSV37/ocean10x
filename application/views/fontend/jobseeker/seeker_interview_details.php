@@ -76,7 +76,11 @@
                                 
                             $message .= '
                                 <br><a href="'.base_url().'Confirm_interview/confirm_interview_now?apply_id='.base64_encode($ct_row["id"]).'&js_id='.base64_encode($js_data['email']).'" class="btn btn-primary" value="Confirm Interview" align="center" target="_blank">Confirm Interview</a>
-                                 <a href="'.base_url().'Confirm_interview/reschedule_interview?apply_id='.base64_encode($ct_row["id"]).'&js_id='.base64_encode($js_data['email']).'" class="btn btn-info" value="Reschedule Interview" align="center" target="_blank">Reschedule Interview</a><br>';
+
+                                 
+
+                                  <a href="#" class="btn btn-primary"  data-level_id="<?php echo $v_applicant->job_apply_id; ?>" title="Reschedule Interview" data-toggle="modal" data-target="#reschedule_interview"><strong>Reschedule Interview</strong></a>';
+                    
                     }else{
 
                         for($l1=0;$l1<sizeof($interview_datess);$l1++)
@@ -112,6 +116,22 @@
   <!-- end container --> 
 </div>
 <!-- end section --> 
+<div id="reschedule_interview" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" align="center">Reschedule Interview</h4>
+      </div>
+      <div class="modal-body upinterview_frm">
+    
+      </div>
+   
+    </div>
+
+  </div>
+</div>
 
 <script type="text/javascript" src="<?php echo base_url(); ?>asset/js/tinymce/tinymce.min.js"></script> 
 <script type="text/javascript">

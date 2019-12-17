@@ -538,4 +538,20 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
     }
 
 
+    public function reschedule_interview()
+    {
+        $interview_id = base64_decode($this->input->get('apply_id'));
+        $email_id =base64_decode($this->input->get('js_id'));
+         $Join_data = array(
+                                        'company_profile' => 'company_profile.company_profile_id = interview_scheduler.company_id|Left OUTER ',
+                                    );
+        $where_cond['id']=$interview_id;
+       
+         $data['interview_data'] = $this->Master_model->getMaster('interview_scheduler',$where_cond, $Join_data, $order = false, $field = false, $select=FALSE,$limit=false,$start=false, $search=false);
+               
+               
+
+    }
+
+
 }// end class
