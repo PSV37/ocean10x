@@ -592,21 +592,33 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $interview_id=base64_decode($this->input->get('apply_id'));
         print_r($interview_id);
         $where_cond['id']=$interview_id;
-        //  $Join_data = array(
-        //                                 'company_profile' => 'company_profile.company_profile_id = interview_scheduler.company_id|Left OUTER ',
-        //                                  'js_info' => 'js_info.job_seeker_id = interview_scheduler.job_seeker_id|Left OUTER ',
-        //                                  'job_posting' => 'job_posting.job_post_id = interview_scheduler.job_post_id|Left OUTER ',
-        //                             );
-        // $where_cond['id']=$interview_id;
+        // $where_cond['is_rescheduled']='No';
+        // $where_del = "id='$ins_id'";
+        // $del = $this->Master_model->master_delete('interview_dates',$where_del);
+
+         $Join_data = array(
+                                        'company_profile' => 'company_profile.company_profile_id = interview_scheduler.company_id|Left OUTER ',
+                                         'js_info' => 'js_info.job_seeker_id = interview_scheduler.job_seeker_id|Left OUTER ',
+                                         'job_posting' => 'job_posting.job_post_id = interview_scheduler.job_post_id|Left OUTER ',
+                                    );
+        $where_cond['id']=$interview_id;
        
-        //  $interview_data = $this->Master_model->getMaster('interview_scheduler',$where_cond, $Join_data, $order = false, $field = false, $select=FALSE,$limit=false,$start=false, $search=false);
-        //  $resc_data=$interview_data['0'];
-        //   $reschedule_data=array('job_post_id'=>$resc_data[''],
-        //                          'interview_date'=>$interview_date,
-        //                          'start_time'=>$start_time,
-        //                          'is_rescheduled'=>'Yes');
+         $interview_data = $this->Master_model->getMaster('interview_dates',$where_cond, $join=FALSE, $order = false, $field = false, $select=FALSE,$limit=false,$start=false, $search=false);
+         $resc_data=$interview_data['0'];
+         print_r($resc_data);
+          $data_status=array( 
+                    'interview_date'    => $resc_data['interview_date'],
+                    'start_time'        => $resc_data['start_time'],
+                    'end_time'        => $resc_data['end_time'],
+                    'updated_on'     =>date('Y-m-d H:i:s'),
+                    'updated_by'    =>$this->session->userdata('company_profile_id');
+                    'confirm_status'=>'1'
+                );
+                $where_u1['id']=$resc_data['interview_id'];
+                $status = $this->Master_model->master_update($data_status, 'interview_dates', $where_u1);
+          
             
-        // }
+        }
         // $result=$this->Master_model->master_insert($reschedule_data,'interview_dates');
 
     }
