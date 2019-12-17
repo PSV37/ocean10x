@@ -621,7 +621,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         }
         // $result=$this->Master_model->master_insert($reschedule_data,'interview_dates');
 
-    }
+    // }
 
 
 }// end class
