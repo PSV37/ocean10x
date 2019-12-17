@@ -66,7 +66,7 @@ h4.panel-title > .small, .panel-title > .small > a, .panel-title > a, .panel-tit
         </div>
       </div>
     </div>
-            <?php echo $this->input->cookie(); ?>
+            <?php echo "<pre>";print_r($this->input->cookie()); ?>
             <div class="row">
               
                 <?php $this->load->view('fontend/layout/jobsearch_leftbar.php'); ?>
