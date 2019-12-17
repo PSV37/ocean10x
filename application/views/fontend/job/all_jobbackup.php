@@ -66,16 +66,13 @@ h4.panel-title > .small, .panel-title > .small > a, .panel-title > a, .panel-tit
         </div>
       </div>
     </div>
-            
+            <?php echo $this->input->cookie(); ?>
             <div class="row">
-            
-                
-                    
-                
+              
                 <?php $this->load->view('fontend/layout/jobsearch_leftbar.php'); ?>
 
                 <div class="col-md-6 col-sm-12"> 
-          <ul class="searchList">                    
+                  <ul class="searchList">                    
                     <?php if (!empty($alljobs)): foreach ($alljobs as $v_job) : ?>
                     <!-- job start -->
                       <li>
@@ -99,16 +96,16 @@ h4.panel-title > .small, .panel-title > .small > a, .panel-title > a, .panel-tit
                         <p><?php echo strip_tags(substr($v_job->job_desc,0,120)); ?></p>
                         
                         <div class="greybox">
-          	<div class="infobox"><i class="fa fa-map-marker" aria-hidden="true"></i> <span><?php $joblocation=$this->job_location_model->get($v_job->job_location); echo $joblocation->country_name;  ?></span></div>
-            <div class="infobox"><i class="fa fa-file-text" aria-hidden="true"></i> <?php echo $v_job->experience;?> year(s)</div>
-            <div class="infobox"><i class="fa fa-calendar" aria-hidden="true"></i> <?php // echo $v_job->created_at; ?>
-            
-            <?php if(!is_null($v_job->created_at)) { echo date('F j Y',strtotime($v_job->created_at)); } ?>
-            
-            </div>
-            <div class="infobox"><i class="fa fa-clock-o" aria-hidden="true"></i> <?php $jobnature=$this->job_nature_model->get($v_job->job_nature); echo $jobnature->job_nature_name;?></div>            
-            <div class="clearfix"></div>
-          </div>
+                      	<div class="infobox"><i class="fa fa-map-marker" aria-hidden="true"></i> <span><?php $joblocation=$this->job_location_model->get($v_job->job_location); echo $joblocation->country_name;  ?></span></div>
+                        <div class="infobox"><i class="fa fa-file-text" aria-hidden="true"></i> <?php echo $v_job->experience;?> year(s)</div>
+                        <div class="infobox"><i class="fa fa-calendar" aria-hidden="true"></i> <?php // echo $v_job->created_at; ?>
+                        
+                        <?php if(!is_null($v_job->created_at)) { echo date('F j Y',strtotime($v_job->created_at)); } ?>
+                        
+                        </div>
+                        <div class="infobox"><i class="fa fa-clock-o" aria-hidden="true"></i> <?php $jobnature=$this->job_nature_model->get($v_job->job_nature); echo $jobnature->job_nature_name;?></div>            
+                        <div class="clearfix"></div>
+                      </div>
                         
                       </li>
                       <!-- job end -->                    
@@ -123,9 +120,9 @@ h4.panel-title > .small, .panel-title > .small > a, .panel-title > a, .panel-tit
                         
                     <?php
                     endif; ?>
-</ul>    
+                  </ul>    
                     <?php //echo $links; ?></p>
-<div class="clearfix"></div>
+                  <div class="clearfix"></div>
                     <?php if($totalrow>=15): ?>
 
                     <nav aria-label="Page navigation">
