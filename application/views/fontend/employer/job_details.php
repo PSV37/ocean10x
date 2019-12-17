@@ -281,7 +281,7 @@
                                 <td><?php echo $introw['interview_details']; ?></td>
                                 <td><?php echo $introw['is_rescheduled']; ?></td>
                                 <td>
-                                  <?php if($introw['is_rescheduled']=='Yes'){?><a href="#" class="btn btn-success"   title="Reschedule Interview" data-toggle="modal" data-target="#rescheduled"><strong>confirm</strong> </a>
+                                  <?php if($introw['is_rescheduled']=='Yes'){?><a href="#" class="btn btn-success btn-xs getform " data-level_id='<?php echo $introw['id']; ?>'  title="Reschedule Interview" data-toggle="modal" data-target="#rescheduled"><strong>confirm</strong> </a>
 
                                   <a href="<?php echo site_url('employer/cancel_interview/'.$introw['id'].'/'.$introw['job_post_id'].''); ?>" onclick="return confirm('Are you sure?');"  class="btn btn-danger btn-xs" title="Cancel Interview" data-toggle="tooltip" data-placement="top">Cancel</a>  
                                   <?php } else{ ?>
@@ -374,26 +374,10 @@ endforeach;
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title" align="center">Confirm Rescheduled interview</h4>
       </div>
-      
-           <form id="Personal-info" class="form-horizontal" action="<?php echo base_url('Confirm_interview/confirm_rescheduled?apply_id='.base64_encode($interview_data["id"]));?>"  method="post" autocomplete="off">
-        <input type="hidden" value="" name="lang_id" id="lang_id">
-                
-        <div class="panel-body"></div>   
-          <div class="row">
-            <div class="col-md-12">
-              <div class="col-md-12 col-sm-12">
-                <label class="control-label" for="email">Message to jobseeker<span class="required">*</span></label>
-                    <textarea class="form-control" name="message" id="message" rows="5"></textarea>
-                </div>     
-              </div>
-            </div>
-          
-             
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-              <button type="submit" class="btn btn-primary">Save</button>
-            </div>
-          </form>
+        <div class="modal-body cnf_reschedule_frm">
+    
+      </div>
+           
      
     </div>
 
@@ -458,6 +442,28 @@ $(".getformbylevel").on('click', function(event){
               }
         });
        
+});
+$.(".getform").on('click',function(event){
+
+   event.stopPropagation();
+    event.stopImmediatePropagation();
+    //(... rest of your JS code)
+    var interview_id = $(this).data('level_id');
+     $.ajax({
+              url: "<?php echo base_url();?>Employer/interview_rescheduler",
+              type: "POST",
+              data: {interview_id:interview_id},
+          
+              success: function(data)
+              {
+                $('.cnf_reschedule_frm').html(data);
+                // Display Modal
+                $('#rescheduled').modal('show'); 
+                // $( "#datepicker" ).datepicker();
+               
+            
+              }
+        });
 });
 
 $(".geteditformbylevel").on('click', function(event){
