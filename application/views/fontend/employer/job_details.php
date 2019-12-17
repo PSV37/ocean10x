@@ -255,6 +255,7 @@
                                 <th> End Time</th>
                                 <th> Interview Type</th>
                                 <th> Interview Details</th>
+                                <th> Is Rescheduled </th>
                                 <th> Action</th>
                               </tr>
                             </thead>
@@ -278,6 +279,7 @@
 
                                 <td><?php echo $introw['interview_type']; ?></td>
                                 <td><?php echo $introw['interview_details']; ?></td>
+                                <td><?php echo $introw['is_rescheduled']; ?></td>
                                 <td>
                                   <a href="#" class="btn btn-success btn-xs geteditformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id.'|'.$introw['id']; ?>' title="Reschedule Interview" data-toggle="modal" data-target="#update_schedule_interview"><strong>Reschedule</strong> </a>
 
