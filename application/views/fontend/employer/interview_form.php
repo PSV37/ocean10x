@@ -188,7 +188,7 @@
     function handler(e){
   var start_date=e.target.value;
   var end_start=(start_date+30);
-  console.log(end_start);
+  console.log(start_date.getMinutes());
    $('#select1').append(`<option value=""> 
                                        ${end_start} 
                                   </option>`); 
