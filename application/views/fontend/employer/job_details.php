@@ -284,7 +284,7 @@
                                   <?php if($introw['is_rescheduled']=='Yes'){?><a href="#" class="btn btn-success btn-xs geteditformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id.'|'.$introw['id']; ?>' title="Reschedule Interview" data-toggle="modal" data-target="#rescheduled"><strong>confirm</strong> </a>
 
                                   <a href="<?php echo site_url('employer/cancel_interview/'.$introw['id'].'/'.$introw['job_post_id'].''); ?>" onclick="return confirm('Are you sure?');"  class="btn btn-danger btn-xs" title="Cancel Interview" data-toggle="tooltip" data-placement="top">Cancel</a>  
-                                  <?php}else{ ?>
+                                  <?php } else{ ?>
                                   <a href="#" class="btn btn-success btn-xs geteditformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id.'|'.$introw['id']; ?>' title="Reschedule Interview" data-toggle="modal" data-target="#update_schedule_interview"><strong>Reschedule</strong> </a>
 
                                   <a href="<?php echo site_url('employer/cancel_interview/'.$introw['id'].'/'.$introw['job_post_id'].''); ?>" onclick="return confirm('Are you sure?');"  class="btn btn-danger btn-xs" title="Cancel Interview" data-toggle="tooltip" data-placement="top">Cancel</a>   
