@@ -141,7 +141,7 @@
                         <div class="col-md-12">
                           <div class="col-md-6"> 
                             <label>Date</label>
-                            <input type="date" name="language" id="language" class="form-control" value="" max="<?php echo date('Y-m-d'); ?>">
+                            <input type="date" name="language" id="language" class="form-control" value="" min="<?php echo date('Y-m-d'); ?>">
                           </div>
                         </div>
                          <div class="col-md-12">
