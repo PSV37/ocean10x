@@ -1,3 +1,4 @@
+
 <style type="text/css">
   label {
     display: inline-block;
@@ -186,7 +187,7 @@
 
     function handler(e){
   var start_date=e.target.value;
-  var end_start= (start_date+30 minutes)
+  var end_start= (start_date+30)
    $('#select1').append(`<option value=""> 
                                        ${end_start} 
                                   </option>`); 
