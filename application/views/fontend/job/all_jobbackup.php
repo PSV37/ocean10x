@@ -156,7 +156,7 @@ h4.panel-title > .small, .panel-title > .small > a, .panel-title > a, .panel-tit
         </div>
  </form>
  </div>
-
+<?php $this->load->view("fontend/layout/footer.php"); ?>
 
  <script type="text/javascript">
      $(document).ready(function(){
@@ -177,4 +177,4 @@ h4.panel-title > .small, .panel-title > .small > a, .panel-title > a, .panel-tit
     });
 </script>
 
- <?php $this->load->view("fontend/layout/footer.php"); ?>
+ 
