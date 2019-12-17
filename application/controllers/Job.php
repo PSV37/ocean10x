@@ -333,7 +333,7 @@ class Job extends MY_Fontend_Controller
      function get_keyword_suggesions(){
         if (isset($_GET['term'])) {
 
-            $result = $this->Job_posting_model->search_job_keywords($_GET['term']);
+            $result = $this->job_posting_model->search_job_keywords($_GET['term']);
             if (count($result) > 0) {
             foreach ($result as $row)
                 $arr_result[] = $row->job_title;
