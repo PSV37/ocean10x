@@ -59,8 +59,7 @@ class Employer extends MY_Employer_Controller
                 'comp_gstn_no'         => $this->input->post('comp_gst_no'),
                 'comp_pan_no'          => $this->input->post('comp_pan_no'),
             );
-            echo "<pre>";
-print_r($company_profile); die;
+         
             $company_logo = isset($_FILES['company_logo']['name']) ? $_FILES['company_logo']['name'] : null;
 
             if (!empty($employer_id) || !empty($company_logo)) {
@@ -131,20 +130,22 @@ print_r($company_profile); die;
                 $this->company_profile_model->update($company_profile, $employer_id);
                 $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Company Profile details have been successfully updated !</div>');
                 $company_info = $this->company_profile_model->get($employer_id);
-                $city = $this->Master_model->getMaster('city',$where=false);
+                //$city = $this->Master_model->getMaster('city',$where=false);
                 $country = $this->Master_model->getMaster('country',$where=false);
-                $state = $this->Master_model->getMaster('state',$where=false);
-                $this->load->view('fontend/employer/dashboard', compact('company_info', 'city', 'country', 'state','branches'));
+              //  $state = $this->Master_model->getMaster('state',$where=false);
+                $this->load->view('fontend/employer/dashboard', compact('company_info', 'country', 'branches'));
+                   echo "<pre>";
+print_r($company_profile); die;
             }
 
             } else {
                 $wheres="status='0' AND company_profile_id='$employer_id'";
                  $branches = $this->Master_model->getMaster('company_branches',$where=$wheres);
                 $company_info = $this->company_profile_model->get($employer_id);
-				$city = $this->Master_model->getMaster('city',$where=false);
+				//$city = $this->Master_model->getMaster('city',$where=false);
 				$country = $this->Master_model->getMaster('country',$where=false);
-				$state = $this->Master_model->getMaster('state',$where=false);
-                $this->load->view('fontend/employer/dashboard', compact('company_info', 'city', 'country', 'state','branches'));
+				//$state = $this->Master_model->getMaster('state',$where=false);
+                $this->load->view('fontend/employer/dashboard', compact('company_info', 'country', 'branches'));
             }
     }
 
