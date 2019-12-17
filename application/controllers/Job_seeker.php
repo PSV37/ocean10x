@@ -132,7 +132,7 @@ class Job_seeker extends MY_Seeker_Controller
                                 'lang_read'      => $lang_read,
                                 
                             );
-              $language_id=$this->input->post('languageid');
+              $language_id=$this->input->post('lang_id');
          if (isset($language_id) && ! empty($language_id)) {
              $where_update['id']=$language_id;
                 $this->Master_model->master_update($lang_array,'js_languages',$where_update);
