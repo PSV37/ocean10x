@@ -370,7 +370,11 @@ class Employer extends MY_Employer_Controller
                     $job_details         = $this->job_posting_model->get_job_details($job_id);
 
                     $wherejob = "job_post_id='$job_id' AND company_id='$company_id'";
-                    $interview_data = $this->Master_model->getMaster('interview_scheduler',$wherejob, $Join=false, $order = false, $field = false, $select=false,$limit=false,$start=false, $search=false);
+                    $Join_data = array(
+                                        'interview_dates' => 'interview_dates.interview_id = interview_scheduler.id|Left OUTER ',
+                                         
+                                    );
+                    $interview_data = $this->Master_model->getMaster('interview_scheduler',$wherejob, $Join=$Join_data, $order = false, $field = false, $select=false,$limit=false,$start=false, $search=false);
                     $this->load->view('fontend/employer/job_details', compact('job_id', 'company_id', 'job_details', 'total_applicantlist','interview_data'));
                 } else {
                     echo "not found";
