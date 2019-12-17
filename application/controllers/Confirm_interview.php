@@ -582,7 +582,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                         <br><br>Hi '.$interview_data["0"]["full_name"].',<br> You have send a request to '.$interview_data["0"]["company_name"].' for rescheduling your Interview on '.$interview_date.' at '.$start_time.' for the post of '.$interview_data["0"]["job_title"].' '.$interview_data["0"]["job_position"].'. The interview was previously scheduled on '.$interview_data["0"]["interview_date"].' at '.$interview_data["0"]["start_time"]. ' <br/><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
 
                        $send1 = sendEmail_JobRequest($to_mail,$message1,$subject1);
-                       redirect('job_seeker/my_application/'$interview_data["0"]["job_post_id"]);
+                       redirect('job_seeker/my_application/'.$interview_data["0"]["job_post_id"]);
                
 
     }
