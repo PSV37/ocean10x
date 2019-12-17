@@ -18,6 +18,7 @@ h4.panel-title > .small, .panel-title > .small > a, .panel-title > a, .panel-tit
 }
 </style>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
 
 <!-- Page Title start -->
 <div class="pageTitle">
@@ -156,7 +157,11 @@ h4.panel-title > .small, .panel-title > .small > a, .panel-title > a, .panel-tit
         </div>
  </form>
  </div>
-
+<script type="text/javascript">
+  $("li").lazyload({
+      effect : "fadeIn"
+  });
+</script>
   <?php 
 
     if ($company_profile_id != null) {
