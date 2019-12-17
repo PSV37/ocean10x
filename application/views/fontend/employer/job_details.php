@@ -281,15 +281,15 @@
                                 <td><?php echo $introw['interview_details']; ?></td>
                                 <td><?php echo $introw['is_rescheduled']; ?></td>
                                 <td>
-                                  <?php if($introw['is_rescheduled']=='Yes'){?><a href="#" class="btn btn-success btn-xs getform " data-level_id='<?php echo $introw['id']; ?>'  title="Reschedule Interview" data-toggle="modal" data-target="#rescheduled"><strong>confirm</strong> </a>
+                                  <?php if($introw['is_rescheduled']=='Yes'){?><a href="#" class="btn btn-success btn-xs getform " data-level_id='<?php echo $introw['interview_id']; ?>'  title="Reschedule Interview" data-toggle="modal" data-target="#rescheduled"><strong>confirm</strong> </a>
 
-                                  <a href="<?php echo site_url('employer/cancel_interview/'.$introw['id']); ?>" onclick="return confirm('Are you sure?');"  class="btn btn-danger btn-xs" title="Cancel Interview" data-toggle="tooltip" data-placement="top">Cancel</a>  
+                                  <a href="<?php echo site_url('employer/cancel_interview/'.$introw['interview_id']); ?>" onclick="return confirm('Are you sure?');"  class="btn btn-danger btn-xs" title="Cancel Interview" data-toggle="tooltip" data-placement="top">Cancel</a>  
                                   <?php } else{ ?>
                                   <a href="#" class="btn btn-success btn-xs geteditformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id.'|'.$introw['id']; ?>' title="Reschedule Interview" data-toggle="modal" data-target="#update_schedule_interview"><strong>Reschedule</strong> </a>
 
-                                  <a href="<?php echo site_url('employer/cancel_interview/'.$introw['id'].'/'.$introw['job_post_id'].''); ?>" onclick="return confirm('Are you sure?');"  class="btn btn-danger btn-xs" title="Cancel Interview" data-toggle="tooltip" data-placement="top">Cancel</a>   
+                                  <a href="<?php echo site_url('employer/cancel_interview/'.$introw['interview_id'].'/'.$introw['job_post_id'].''); ?>" onclick="return confirm('Are you sure?');"  class="btn btn-danger btn-xs" title="Cancel Interview" data-toggle="tooltip" data-placement="top">Cancel</a>   
 
-                                  <a href="#" class="btn btn-info btn-xs getstatusformbylevel" data-level_id='<?php echo $introw['id'].'|'.$introw['job_post_id']; ?>' title="Interview Status" data-toggle="modal" data-target="#update_status" ><strong>Status</strong> </a>
+                                  <a href="#" class="btn btn-info btn-xs getstatusformbylevel" data-level_id='<?php echo $introw['interview_id'].'|'.$introw['job_post_id']; ?>' title="Interview Status" data-toggle="modal" data-target="#update_status" ><strong>Status</strong> </a>
                               <?php if($introw['interview_complete_status']==1){ ?>
                                   <a href="#" title="Interview Completed" data-toggle="tooltip" data-placement="top"><i class="fa fa-check" style="color: green;"></i></a>
                               <?php }else{ ?>
