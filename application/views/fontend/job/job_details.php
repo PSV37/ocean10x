@@ -141,7 +141,7 @@ $jobseeker_id = $this->session->userdata('job_seeker_id');
               <?php } ?>
               <?php endif; ?>
               <?php endif; ?>
-			  <div class="deadlinie">Job Deadline : <?php echo $singlejob->job_deadline; ?></div>
+			  <div class="deadlinie">Job Deadline : <!-- <?php echo $singlejob->job_deadline; ?> --><?php  echo date('F j Y',strtotime($singlejob->job_deadline));?></div>
 			
 			  <?php else: ?>
               <div class="deadlinie">Job Deadline : <b style="color:red">Expired</b>   </div>
