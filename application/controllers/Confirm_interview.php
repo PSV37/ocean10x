@@ -611,7 +611,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                     'start_time'        => $resc_data['start_time'],
                     'end_time'        => $resc_data['end_time'],
                     'updated_on'     =>date('Y-m-d H:i:s'),
-                    'updated_by'    =>$this->session->userdata('company_profile_id');
+                    'updated_by'    =>$this->session->userdata('company_profile_id'),
                     'confirm_status'=>'1'
                 );
                 $where_u1['id']=$resc_data['interview_id'];
