@@ -134,8 +134,7 @@ class Employer extends MY_Employer_Controller
                 $country = $this->Master_model->getMaster('country',$where=false);
               //  $state = $this->Master_model->getMaster('state',$where=false);
                 $this->load->view('fontend/employer/dashboard', compact('company_info', 'country', 'branches'));
-                   echo "<pre>";
-print_r($company_profile); die;
+                 
             }
 
             } else {
