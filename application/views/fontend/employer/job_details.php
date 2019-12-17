@@ -281,7 +281,7 @@
                                 <td><?php echo $introw['interview_details']; ?></td>
                                 <td><?php echo $introw['is_rescheduled']; ?></td>
                                 <td>
-                                  <?php if($introw['is_rescheduled']=='Yes'){?><a href="#" class="btn btn-success btn-xs geteditformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id.'|'.$introw['id']; ?>' title="Reschedule Interview" data-toggle="modal" data-target="#rescheduled"><strong>confirm</strong> </a>
+                                  <?php if($introw['is_rescheduled']=='Yes'){?><a href="#" class="btn btn-success btn-xs geteditformbylevel"   title="Reschedule Interview" data-toggle="modal" data-target="#rescheduled"><strong>confirm</strong> </a>
 
                                   <a href="<?php echo site_url('employer/cancel_interview/'.$introw['id'].'/'.$introw['job_post_id'].''); ?>" onclick="return confirm('Are you sure?');"  class="btn btn-danger btn-xs" title="Cancel Interview" data-toggle="tooltip" data-placement="top">Cancel</a>  
                                   <?php } else{ ?>
@@ -374,7 +374,7 @@ endforeach;
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title" align="center">Confirm Rescheduled interview</h4>
       </div>
-      <div class="modal-body upinterview_frm">
+      
            <form id="Personal-info" class="form-horizontal" action="<?php echo base_url('Confirm_interview/confirm_rescheduled?apply_id='.base64_encode($interview_data["id"]));?>"  method="post" autocomplete="off">
         <input type="hidden" value="" name="lang_id" id="lang_id">
                 
@@ -394,7 +394,7 @@ endforeach;
               <button type="submit" class="btn btn-primary">Save</button>
             </div>
           </form>
-      </div>
+     
     </div>
 
   </div>
