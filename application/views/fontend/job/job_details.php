@@ -58,7 +58,7 @@ $jobseeker_id = $this->session->userdata('job_seeker_id');
                 <?php echo $this->session->flashdata('msg'); ?>
                 <div class="col-md-7">
                   <h2 id="heading_2title"><?php echo $singlejob->job_title; ?></h2>
-                  <div class="ptext">Date Posted: <?php echo $singlejob->created_at; ?></div>
+                  <div class="ptext">Date Posted: <?php  echo date('F j Y',strtotime($singlejob->created_at));?></div>
                   
                   <!-- <div class="salary">Monthly Salary: <strong>$500 - $3000</strong></div>--> 
 
@@ -183,7 +183,11 @@ $jobseeker_id = $this->session->userdata('job_seeker_id');
               <div class="greybox">
                 <div class="infobox"><i class="fa fa-map-marker" aria-hidden="true"></i> <span><?php echo $row_related->job_location_name;?></span></div>
                 <div class="infobox"><i class="fa fa-file-text" aria-hidden="true"></i> <?php echo $row_related->experience;?> years</div>
-                <div class="infobox"><i class="fa fa-calendar" aria-hidden="true"></i> Posted : <?php echo $row_related->created_at; ?></div>
+                <div class="infobox"><i class="fa fa-calendar" aria-hidden="true"></i> Posted : <!-- <?php echo $row_related->created_at;  ?> -->
+                 <?php if(!is_null($row_related->created_at)) { $mtime = time_ago_in_php($row_related->created_at);
+                            echo $mtime;} ?>
+
+              </div>
                 <div class="infobox"><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $row_related->job_nature_name;?></div>
                 <div class="clearfix"></div>
               </div>

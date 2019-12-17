@@ -100,8 +100,10 @@ h4.panel-title > .small, .panel-title > .small > a, .panel-title > a, .panel-tit
                         <div class="infobox"><i class="fa fa-file-text" aria-hidden="true"></i> <?php echo $v_job->experience;?> year(s)</div>
                         <div class="infobox"><i class="fa fa-calendar" aria-hidden="true"></i> <?php // echo $v_job->created_at; ?>
                         
-                        <?php if(!is_null($v_job->created_at)) { echo date('F j Y',strtotime($v_job->created_at)); }   $mtime = time_ago_in_php($v_job->created_at);
-                            echo $mtime; ?>
+                        <!-- <?php if(!is_null($v_job->created_at)) { echo date('F j Y',strtotime($v_job->created_at)); } ?> -->
+
+                        <?php if(!is_null($v_job->created_at)) { $mtime = time_ago_in_php($v_job->created_at);
+                            echo $mtime;} ?>
                         
                         </div>
                         <div class="infobox"><i class="fa fa-clock-o" aria-hidden="true"></i> <?php $jobnature=$this->job_nature_model->get($v_job->job_nature); echo $jobnature->job_nature_name;?></div>            
