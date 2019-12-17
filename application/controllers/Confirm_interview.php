@@ -624,23 +624,24 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $del = $this->Master_model->master_delete('interview_dates',$where_del);
         $email=$resc_data['company_email'];
         
-        $subject="Iterview of ".$resc_data['full_name'].' rescheduled..';
-        $message='<div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
-                        <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
-                        <br><br>Hi '.$resc_data["company_name"]. ',<br> you have successfully rescheduled the interview of '.$resc_data["full_name"].' on'.$resc_data["interview_date"].' at '.$resc_data['start_time'].' for the post of '.$resc_data["job_title"].' '.$resc_data["job_position"].'. The interview was previously scheduled on '.$resc_data["interview_date"].'at '.$resc_data["start_time"]. '<br/><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+        // $subject="Iterview of ".$resc_data['full_name'].' rescheduled..';
+        // $message='<div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+        //                 <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+        //                 <br><br>Hi '.$resc_data["company_name"]. ',<br> you have successfully rescheduled the interview of '.$resc_data["full_name"].' on'.$resc_data["interview_date"].' at '.$resc_data['start_time'].' for the post of '.$resc_data["job_title"].' '.$resc_data["job_position"].'. The interview was previously scheduled on '.$resc_data["interview_date"].'at '.$resc_data["start_time"]. '<br/><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
                         
 
 
-                       $send = sendEmail_JobRequest($email,$message,$subject);
-                       $to_mail=$resc_data['email'];
+        //                $send = sendEmail_JobRequest($email,$message,$subject);
+        //                $to_mail=$resc_data['email'];
 
-                       $subject1="Interview of " .$resc_data['0']['company_name'].' is rescheduled.';
-        $message1='<div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
-                        <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
-                        <br><br>Hi '.$resc_data["full_name"].',<br> Your Interview with  '.$resc_data["company_name"].' Is successfully rescheduled on  '.$resc_data['interview_date'].' at '.$resc_data['start_time'].' for the post of '.$resc_data["job_title"].' '.$resc_data["job_position"].'. The interview was previously scheduled on '.$resc_data["interview_date"].' at '.$resc_data["start_time"]. ' <br/><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+        //                $subject1="Interview of " .$resc_data['0']['company_name'].' is rescheduled.';
+        // $message1='<div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+        //                 <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+        //                 <br><br>Hi '.$resc_data["full_name"].',<br> Your Interview with  '.$resc_data["company_name"].' Is successfully rescheduled on  '.$resc_data['interview_date'].' at '.$resc_data['start_time'].' for the post of '.$resc_data["job_title"].' '.$resc_data["job_position"].'. The interview was previously scheduled on '.$resc_data["interview_date"].' at '.$resc_data["start_time"]. ' <br/><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
 
-                       $send1 = sendEmail_JobRequest($to_mail,$message1,$subject1);
-                       redirect('job_seeker/my_application/'.$interview_data["0"]["job_post_id"]);
+        //                $send1 = sendEmail_JobRequest($to_mail,$message1,$subject1);
+         print_r($resc_data);
+                       // redirect('job_seeker/my_application/'.$interview_data["0"]["job_post_id"]);
           
             
         }
