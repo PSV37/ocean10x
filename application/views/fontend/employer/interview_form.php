@@ -59,7 +59,7 @@
           <div class="col-sm-3">  
             <label class="control-label" for="email">End Time<span class="required">*</span></label>
             <!-- <input type="time" name="end_time[]" id="end_time" class="form-control" value="<?php echo date('H:i'); ?>"> -->
-            <select id="select1"> 
+            <select id="select1" class="control-label"> 
             <!-- <option value="free">Free</option> 
             <option value="basic">Basic</option> --> 
             </select> 
@@ -187,7 +187,8 @@
 
     function handler(e){
   var start_date=e.target.value;
-  var end_start= (start_date+30)
+  var end_start=(start_date+30);
+  console.log(end_start);
    $('#select1').append(`<option value=""> 
                                        ${end_start} 
                                   </option>`); 
