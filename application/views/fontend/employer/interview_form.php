@@ -58,11 +58,11 @@
           </div>
           <div class="col-sm-3">  
             <label class="control-label" for="email">End Time<span class="required">*</span></label>
-            <!-- <input type="time" name="end_time[]" id="end_time" class="form-control" value="<?php echo date('H:i'); ?>"> -->
-            <select id="select1" class="form-control"> 
-            <!-- <option value="free">Free</option> 
-            <option value="basic">Basic</option> --> 
-            </select> 
+            <input type="time" name="end_time[]" id="end_time" class="form-control" value="<?php echo date('H:i'); ?>">
+            <!-- <select id="select1" class="form-control"> 
+            <option value="free">Free</option> 
+            <option value="basic">Basic</option> 
+            </select>  -->
           </div>
         </div>
       </div>
@@ -188,7 +188,7 @@
     function handler(e){
   var start_date=e.target.value;
   var end_start=(start_date+30);
-  console.log(start_date.getMinutes());
+  console.log(start_date);
    $('#select1').append(`<option value=""> 
                                        ${end_start} 
                                   </option>`); 
