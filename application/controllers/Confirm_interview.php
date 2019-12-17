@@ -619,7 +619,8 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 $where_u1['id']=$resc_data['interview_id'];
                 $status = $this->Master_model->master_update($data_status, 'interview_scheduler', $where_u1);
          $where_cond['is_rescheduled']='No';
-        $where_del = "is_rescheduled='No' and interview_id='$resc_data['interview_id']'";
+         $ids=$resc_data['interview_id'];
+        $where_del = "is_rescheduled='No' and interview_id='$ids'";
         $del = $this->Master_model->master_delete('interview_dates',$where_del);
         $email=$resc_data['company_email'];
         
