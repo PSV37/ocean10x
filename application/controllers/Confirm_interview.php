@@ -641,6 +641,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
 
                        $send1 = sendEmail_JobRequest($to_mail,$message1,$subject1);
          // print_r($resc_data);
+                       $this->session->set_flashdata('success', 'Interview successfully Rescheduled!');
                      redirect('employer/all-applicants/'.$resc_data["job_post_id"]);
           
             
