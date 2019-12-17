@@ -93,7 +93,9 @@ class Employer extends MY_Employer_Controller
                 $city=$this->input->post('BranchCity');
                 $pincode=$this->input->post('Branchpincodes');
                 // print_r($pincode);
-
+                if (isset($branch_address) && !empty($branch_address) && !empty($country) && !empty($state) && !empty($city) && !empty($pincode)) {
+                    # code...
+               
                 // print_r($branch_address);
                 $branchadddata=explode(",",$branch_address);
                 $branchcountrydata=explode(",",$country);
@@ -114,6 +116,7 @@ class Employer extends MY_Employer_Controller
                     $result=$this->Master_model->master_insert($response,'company_branches');
 
                 }
+            }
                 
 
                 //  $result=$this->Master_model->master_insert($response,'company_branches');
