@@ -9,10 +9,6 @@
     font-weight: bold;
 }
 </style> 
-
-		
-
-
           
 <!-- Page Title start -->
 <div class="pageTitle">
@@ -394,9 +390,6 @@
 					                        </div>
 					                      </div>
 
-					                      
-					                       
-					                                   
  									</div><!-- end row -->
  
  
@@ -519,20 +512,18 @@
                           </thead>
 
                           <tbody >
-                          	 <!-- <?php print_r(sizeof($branches)); ?> -->
-                          	<?php foreach ($branches as $row) {?>
-                          		<tr>
-                          			<td><?php echo $row['branch_address']; ?></td>
-                          			<td><?php echo $row['country'];?></td>
-                          			<td><?php echo $row['state'];?></td>
-                          			<td><?php echo $row['city']; ?></td>
-                          			<td><?php echo $row['pincode']; ?></td>
-                          			 <td>
-                         
-                          <?php echo btn_delete('employer/delete_branch/' . $row['comp_branch_id']); ?>
-                      </td>
-
-                          		</tr>
+                          	<!-- <?php print_r(sizeof($branches)); ?> -->
+                          	<?php foreach ($branches as $row) { ?>
+                      		<tr>
+                      			<td><?php echo $row['branch_address']; ?></td>
+                      			<td><?php echo $row['country'];?></td>
+                      			<td><?php echo $row['state'];?></td>
+                      			<td><?php echo $row['city']; ?></td>
+                      			<td><?php echo $row['pincode']; ?></td>
+                      			<td>
+                      				<?php echo btn_delete('employer/delete_branch/' . $row['comp_branch_id']); ?>
+                  				</td>
+                      		</tr>
                           	<?php } ?>
                            
                           </tbody>
@@ -693,7 +684,7 @@ $(document).ready(function(){
 
     function getStates_load(){
         var id = $('#country_id').val();
-
+        alert(id);
         if(id){
             $.ajax({
                 type:'POST',

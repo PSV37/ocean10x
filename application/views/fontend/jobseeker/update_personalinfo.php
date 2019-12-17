@@ -2135,7 +2135,7 @@ $(document).ready(function() {
 <script type="text/javascript">
   function getlanguage_data(lan_id)
   {
-   alert(lan_id);
+   // alert(lan_id);
 
     $.ajax({
              url:'<?php echo base_url()?>job_seeker/edit_language',
