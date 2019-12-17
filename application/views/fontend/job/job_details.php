@@ -58,7 +58,7 @@ $jobseeker_id = $this->session->userdata('job_seeker_id');
                 <?php echo $this->session->flashdata('msg'); ?>
                 <div class="col-md-7">
                   <h2 id="heading_2title"><?php echo $singlejob->job_title; ?></h2>
-                  <div class="ptext">Date Posted: <?php echo $singlejob->created_at; ?></div>
+                  <div class="ptext">Date Posted: <?php  echo date('F j Y',strtotime($singlejob->created_at));?></div>
                   
                   <!-- <div class="salary">Monthly Salary: <strong>$500 - $3000</strong></div>--> 
 
