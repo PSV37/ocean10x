@@ -544,10 +544,20 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $email_id =base64_decode($this->input->get('js_id'));
         $interview_date=$this->input->post('resc_interview_date');
         $start_time=$this->input->post('start_time');
+        if (isset($interview_date) && !empty($interview_date) && !empty($start_time)) {
+
+            $reschedule_data=array('interview_id'=>$interview_id,
+                                 'interview_date'=>$interview_date,
+                                 'start_time'=>$start_time,
+                                 'is_rescheduled'=>'Yes');
+            # code...
+        }
+        $result=$this->Master_model->master_insert($reschedule_data,'interview_dates');
         
          $Join_data = array(
                                         'company_profile' => 'company_profile.company_profile_id = interview_scheduler.company_id|Left OUTER ',
                                          'js_info' => 'js_info.job_seeker_id = interview_scheduler.job_seeker_id|Left OUTER ',
+                                         'job_posting' => 'job_posting.job_post_id = interview_scheduler.job_post_id|Left OUTER ',
                                     );
         $where_cond['id']=$interview_id;
        
@@ -559,8 +569,8 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $subject="Reschedule Interview of ".$interview_data['full_name'];
         $message='<div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
                         <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
-                        <br><br>Hi '.$interview_data["0"]["company_name"]. ',<br>'.$interview_data["0"]["full_name"].' wants to Reschedule the Interview on'.$interview_date.' at '.$start_time.' <br/>';
-                        $message .='<br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+                        <br><br>Hi '.$interview_data["0"]["company_name"]. ',<br>'.$interview_data["0"]["full_name"].' wants to Reschedule the Interview on'.$interview_date.' at '.$start_time.' for the post of '.$interview_data["0"]["job_title"].' '.$interview_data["0"]["job_position"].'. The interview was previously scheduled on '.$interview_data["0"]["interview_date"].'at '.$interview_data["0"]["start_time"]. '<br/><br><br><a href="'.base_url().'employer/all_applicant/'.$interview_data["0"]["job_post_id"].'" class="btn btn-primary" value="open" align="center" target="_blank">view</a><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+                        
 
 
                        $send = sendEmail_JobRequest($email,$message,$subject);
@@ -569,10 +579,10 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                        $subject1="Reschedule Interview of " .$interview_data['0']['company_name'];
         $message1='<div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
                         <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
-                        <br><br>Hi '.$interview_data["0"]["full_name"].',<br> You have send a request to '.$interview_data["0"]["company_name"].' for rescheduling your Interview on '.$interview_date.' at '.$start_time.' <br/><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+                        <br><br>Hi '.$interview_data["0"]["full_name"].',<br> You have send a request to '.$interview_data["0"]["company_name"].' for rescheduling your Interview on '.$interview_date.' at '.$start_time.' for the post of '.$interview_data["0"]["job_title"].' '.$interview_data["0"]["job_position"].'. The interview was previously scheduled on '.$interview_data["0"]["interview_date"].'at '.$interview_data["0"]["start_time"]. ' <br/><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
 
                        $send1 = sendEmail_JobRequest($to_mail,$message1,$subject1);
-                       redirect('job/all_interview_list');
+                       redirect('job_seeker/my_application');
                
 
     }
