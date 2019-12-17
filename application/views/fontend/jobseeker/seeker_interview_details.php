@@ -125,6 +125,49 @@
         <h4 class="modal-title" align="center">Reschedule Interview</h4>
       </div>
       <div class="modal-body upinterview_frm">
+        orm id="Personal-info" class="form-horizontal" action="<?php echo base_url('job_seeker/add_language');?>"  method="post" autocomplete="off">
+        <input type="hidden" value="" name="lang_id" id="lang_id">
+                
+        <div class="panel-body"></div>   
+          <div class="row">
+            <div class="col-md-12">
+              <div class="col-md-12 col-sm-12">
+                <div class="input-group">
+                    <h6>when Would you like to reschedule the Interview?</h6><br>
+                    
+                    <div class="input-group control-group after-add-more">
+                      <div>
+                      
+                        <div class="col-md-12">
+                          <div class="col-md-6"> 
+                            <label>Date</label>
+                            <input type="date" name="language" id="language" class="form-control" value="" max="<?php echo date('Y-m-d'); ?>">
+                          </div>
+                          <div class="col-md-6">  
+                            <div class="col-sm-3">  
+                              <label class="control-label" for="email">Start Time<span class="required">*</span></label>
+                              <input type="time" name="start_time[]" id="start_time" class="form-control" value="<?php echo date('H:i');?>">
+                            </div>
+                            <div class="col-sm-3">  
+                              <label class="control-label" for="email">End Time<span class="required">*</span></label>
+                              <input type="time" name="end_time[]" id="end_time" class="form-control" value="<?php echo date('H:i'); ?>">
+                            </div>
+                          </div>
+                         
+                        </div>
+                    
+                      </div>
+                    </div>
+                </div>     
+              </div>
+            </div>
+          </div>
+             
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+          </form>
     
       </div>
    
