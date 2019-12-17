@@ -2088,6 +2088,7 @@ public function interview_scheduler()
         $interview_id1 = $interview_id;
         $where1 = "id='$interview_id1'";
         $del1 = $this->Master_model->master_delete('interview_scheduler',$where1);
+        print_r($this->db->last_query());
         
         if($del1){
             $where_del = "interview_id='$interview_id1'";
