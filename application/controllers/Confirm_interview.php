@@ -602,7 +602,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                                          'js_info' => 'js_info.job_seeker_id = interview_scheduler.job_seeker_id|Left OUTER ',
                                          'job_posting' => 'job_posting.job_post_id = interview_scheduler.job_post_id|Left OUTER ',
                                     );
-        $where_cond['id']=$interview_id;
+        $where_cond['interview_dates.id']=$interview_id;
        
          $interview_data = $this->Master_model->getMaster('interview_dates',$where_cond, $Join_data, $order = false, $field = false, $select=FALSE,$limit=false,$start=false, $search=false);
          $resc_data=$interview_data['0'];
