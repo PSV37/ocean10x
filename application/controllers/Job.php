@@ -315,22 +315,7 @@ class Job extends MY_Fontend_Controller
         }
     }
 
-    
-    // desired career
-    // function get_keyword_suggesions()
-    // {
-       
-    //     $keyword =$this->input->post('keyword');
-    //     $where1 = "job_posting.job_title = '$keyword'";
-    //     $select ="job_posting.job_title";
-
-    //     $result = $this->Master_model->getMaster('job_posting', $where1, $join, $order = 'job_title ASC', $field = false, $select,$limit=false,$start=false, $search=false);
-        
-    //     echo json_encode($result);
-
-    // }
-
-     function get_keyword_suggesions(){
+    function get_keyword_suggesions(){
         if (isset($_GET['term'])) {
 
             $result = $this->job_posting_model->search_job_keywords($_GET['term']);

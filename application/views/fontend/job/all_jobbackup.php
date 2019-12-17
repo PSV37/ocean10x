@@ -47,7 +47,7 @@ h4.panel-title > .small, .panel-title > .small > a, .panel-title > a, .panel-tit
           <div class="searchform">
             <div class="row">
               <div class="col-md-5 col-sm-4">
-                <input name="keyword" type="text" class="keyword-form form-control" placeholder="Keyword" id="keyword">
+                <input name="keyword" type="text" class="keyword-form form-control" placeholder="Keywords" id="keyword">
               </div>
               <div class="col-md-6 col-sm-6 select-location-padding">
                 <select name="location_name[]"  class="form-control" data-style="form-control" data-live-search="true">
