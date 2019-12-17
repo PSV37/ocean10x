@@ -550,7 +550,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                                  'interview_date'=>$interview_date,
                                  'start_time'=>$start_time,
                                  'is_rescheduled'=>'Yes');
-            # code...
+            
         }
         $result=$this->Master_model->master_insert($reschedule_data,'interview_dates');
         
@@ -584,6 +584,30 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                        $send1 = sendEmail_JobRequest($to_mail,$message1,$subject1);
                        redirect('job_seeker/my_application/'$interview_data["0"]["job_post_id"]);
                
+
+    }
+
+    public function confirm_rescheduled()
+    {
+        $interview_id=$this->input->get('apply_id');
+        print_r($interview_id);
+        $where_cond['id']=$interview_id;
+        //  $Join_data = array(
+        //                                 'company_profile' => 'company_profile.company_profile_id = interview_scheduler.company_id|Left OUTER ',
+        //                                  'js_info' => 'js_info.job_seeker_id = interview_scheduler.job_seeker_id|Left OUTER ',
+        //                                  'job_posting' => 'job_posting.job_post_id = interview_scheduler.job_post_id|Left OUTER ',
+        //                             );
+        // $where_cond['id']=$interview_id;
+       
+        //  $interview_data = $this->Master_model->getMaster('interview_scheduler',$where_cond, $Join_data, $order = false, $field = false, $select=FALSE,$limit=false,$start=false, $search=false);
+        //  $resc_data=$interview_data['0'];
+        //   $reschedule_data=array('job_post_id'=>$resc_data[''],
+        //                          'interview_date'=>$interview_date,
+        //                          'start_time'=>$start_time,
+        //                          'is_rescheduled'=>'Yes');
+            
+        // }
+        // $result=$this->Master_model->master_insert($reschedule_data,'interview_dates');
 
     }
 
