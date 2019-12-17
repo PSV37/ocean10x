@@ -615,7 +615,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                     'confirm_status'=>'1'
                 );
                 $where_u1['id']=$resc_data['interview_id'];
-                $status = $this->Master_model->master_update($data_status, 'interview_dates', $where_u1);
+                $status = $this->Master_model->master_update($data_status, 'interview_scheduler', $where_u1);
           
             
         }
