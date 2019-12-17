@@ -443,7 +443,8 @@ $(".getformbylevel").on('click', function(event){
         });
        
 });
-$.(".getform").on('click',function(event){
+// $.(".getform").on('click',function(event){
+  $(".getform").on('click', function(event){
 
    event.stopPropagation();
     event.stopImmediatePropagation();
@@ -456,6 +457,7 @@ $.(".getform").on('click',function(event){
           
               success: function(data)
               {
+                console.log(data);
                 $('.cnf_reschedule_frm').html(data);
                 // Display Modal
                 $('#rescheduled').modal('show'); 
