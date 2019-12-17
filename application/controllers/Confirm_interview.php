@@ -589,7 +589,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
 
     public function confirm_rescheduled()
     {
-        $interview_id=$this->input->get('apply_id');
+        $interview_id=base64_decode($this->input->get('apply_id'));
         print_r($interview_id);
         $where_cond['id']=$interview_id;
         //  $Join_data = array(
