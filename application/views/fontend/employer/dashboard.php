@@ -684,7 +684,7 @@ $(document).ready(function(){
 
     function getStates_load(){
         var id = $('#country_id').val();
-        alert(id);
+       
         if(id){
             $.ajax({
                 type:'POST',
