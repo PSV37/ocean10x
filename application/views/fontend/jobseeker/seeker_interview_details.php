@@ -125,7 +125,7 @@
         <h4 class="modal-title" align="center">Reschedule Interview</h4>
       </div>
       <div class="modal-body upinterview_frm">
-        <form id="Personal-info" class="form-horizontal" action="<?php echo base_url('job_seeker/add_language');?>"  method="post" autocomplete="off">
+        <form id="Personal-info" class="form-horizontal" action="<?php echo base_url('Confirm_interview/reschedule_interview?apply_id='.base64_encode($ct_row["id"]).'&js_id='.base64_encode($js_data['email']));?>"  method="post" autocomplete="off">
         <input type="hidden" value="" name="lang_id" id="lang_id">
                 
         <div class="panel-body"></div>   
