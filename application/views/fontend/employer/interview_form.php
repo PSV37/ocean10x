@@ -36,30 +36,32 @@
             <input type="text" name="interview_date[]" id="interview_date" class="form-control datepicker" value=""> 
           </div>
           <div class="col-sm-3">  
-            <label class="control-label" for="email">Start Time<span class="required">*</span></label>
+            <label class="control-label" for="email" onchange="handler(event);">Start Time<span class="required">*</span></label>
             <!-- <input type="time" name="start_time[]" id="start_time" class="form-control" value="<?php echo date('H:i');?>"> -->
              <select class="form-control">
-            <?php
-$start = "1:00";
-$end = "24:00";
+                <?php
+                $start = "1:00";
+                $end = "24:00";
 
-$tStart = strtotime($start);
-$tEnd = strtotime($end);
-$tNow = $tStart;
+                $tStart = strtotime($start);
+                $tEnd = strtotime($end);
+                $tNow = $tStart;
 
-while($tNow <= $tEnd){?>
-  
+                while($tNow <= $tEnd){?>
+                <option value="<?php echo date("H:i A",$tNow); ?>"><?php echo date("H:i",$tNow)."\n"; ?> </option>
+                <?php $tNow = strtotime('+30 minutes',$tNow); }?>
+            </select>
+                  
   
  
-    <option value="<?php echo date("H:i",$tNow); ?>"><?php echo date("H:i",$tNow)."\n"; ?> </option>
-
-<?php $tNow = strtotime('+30 minutes',$tNow); }
-?>
-  </select>
           </div>
           <div class="col-sm-3">  
             <label class="control-label" for="email">End Time<span class="required">*</span></label>
-            <input type="time" name="end_time[]" id="end_time" class="form-control" value="<?php echo date('H:i'); ?>">
+            <!-- <input type="time" name="end_time[]" id="end_time" class="form-control" value="<?php echo date('H:i'); ?>"> -->
+            <select id="select1"> 
+            <!-- <option value="free">Free</option> 
+            <option value="basic">Basic</option> --> 
+            </select> 
           </div>
         </div>
       </div>
@@ -181,7 +183,17 @@ while($tNow <= $tEnd){?>
       });
      
     });
+
+    function handler(e){
+  var start_date=e.target.value;
+  var end_start= (start_date+30 minutes)
+   $('#select1').append(`<option value=""> 
+                                       ${end_start} 
+                                  </option>`); 
+
+}
 </script>
+
 <style>
   .datepicker{z-index:1151 !important;}
 </style> 
