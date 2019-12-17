@@ -37,7 +37,25 @@
           </div>
           <div class="col-sm-3">  
             <label class="control-label" for="email">Start Time<span class="required">*</span></label>
-            <input type="time" name="start_time[]" id="start_time" class="form-control" value="<?php echo date('H:i');?>">
+            <!-- <input type="time" name="start_time[]" id="start_time" class="form-control" value="<?php echo date('H:i');?>"> -->
+             <select>
+            <?php
+$start = "11:00";
+$end = "13:30";
+
+$tStart = strtotime($start);
+$tEnd = strtotime($end);
+$tNow = $tStart;
+
+while($tNow <= $tEnd){?>
+  
+  
+ 
+    <option><?php echo date("H:i",$tNow)."\n"; ?> </option>
+
+<?php $tNow = strtotime('+30 minutes',$tNow); }
+?>
+  </select>
           </div>
           <div class="col-sm-3">  
             <label class="control-label" for="email">End Time<span class="required">*</span></label>
