@@ -552,6 +552,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $where_cond['id']=$interview_id;
        
          $interview_data = $this->Master_model->getMaster('interview_scheduler',$where_cond, $Join_data, $order = false, $field = false, $select=FALSE,$limit=false,$start=false, $search=false);
+         print_r($interview_data);
         print_r($interview_data->company_email);
         // $email=$interview_data['company_email'];
         // $subject="Reschedule Interview for";
