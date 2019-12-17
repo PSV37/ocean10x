@@ -59,7 +59,8 @@ class Employer extends MY_Employer_Controller
                 'comp_gstn_no'         => $this->input->post('comp_gst_no'),
                 'comp_pan_no'          => $this->input->post('comp_pan_no'),
             );
-
+            echo "<pre>";
+print_r($company_profile); die;
             $company_logo = isset($_FILES['company_logo']['name']) ? $_FILES['company_logo']['name'] : null;
 
             if (!empty($employer_id) || !empty($company_logo)) {
