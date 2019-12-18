@@ -31,7 +31,7 @@
       <?php $this->load->view('fontend/layout/employer_left.php'); ?>
       <div class="content col-md-9">
         <div class="userccount empdash">
-          <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
+          <div class="formpanel" style="overflow-x: scroll; overflow-y: hidden;"> <?php echo $this->session->flashdata('success'); ?>
            
             <table class="table table-bordered table-striped" id="example" style="overflow: scroll;">
               <thead>
@@ -89,9 +89,9 @@
                       <td><?php echo $cv_row['js_experience']; ?></td>
                       <td><?php echo $cv_row['js_current_notice_period']; ?></td>
                       <td><?php echo $cv_row['js_job_type']; ?></td>
-                      <td><?php echo $cv_row['js_working_since']; ?></td>
+                      <td><?php echo date('d M Y', strtotime($cv_row['js_working_since'])); ?></td>
                       <td><?php echo $cv_row['js_current_ctc']; ?></td>
-                      <td><?php echo $cv_row['js_last_salary_hike']; ?></td>
+                      <td><?php echo date('M `y', strtotime($cv_row['js_last_salary_hike'])); ?></td>
                       <td><?php echo $cv_row['js_top_education']; ?></td>
                       <td><?php echo $cv_row['js_skill_set']; ?></td>
                       <td><?php echo $cv_row['js_certifications']; ?></td>
