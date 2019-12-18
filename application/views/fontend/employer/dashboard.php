@@ -1,5 +1,15 @@
 <?php 
-    $this->load->view('fontend/layout/employer_header.php');
+$company_profile_id = $this->session->userdata('company_profile_id');
+
+ $employee_id = $this->session->userdata('emp_id');
+if ($company_profile_id != null) {
+ $this->load->view('fontend/layout/employer_header.php');
+}
+else($employee_id != null)
+{
+	$this->load->view('fontend/layout/employee_header.php');
+}
+   
 ?>   
 <style type="text/css">
   label {

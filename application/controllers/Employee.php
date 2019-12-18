@@ -203,6 +203,117 @@ class Employee extends CI_controller
                 $this->load->view('fontend/employee/active_job.php', compact('company_active_jobs', 'employer_id'));
                 // print_r($company_active_jobs);
             }
+             public function profile_setting()
+    {
+
+        $employee_id = $this->session->userdata('emp_id');
+        $employer_id= $this->session->userdata('org_id');
+
+        if ($_POST) {
+
+            $company_profile = array(
+                'company_name'     => $this->input->post('company_name'),
+                'company_url'      => $this->input->post('company_url'), 
+                'country_code'     => $this->input->post('country_code'),
+                'company_phone'    => $this->input->post('company_phone'),
+                'company_category' => $this->input->post('company_category'),
+                'contact_name'     => $this->input->post('contact_name'),
+                'hot_jobs'         => $this->input->post('hot_jobs'),
+                'company_career_link'     => $this->input->post('company_career_link'),
+                //'company_service'  => $this->input->post('company_service'),
+                'company_address'  => $this->input->post('company_address'),
+                'company_address2'  => $this->input->post('company_address2'),
+                'country_id'       => $this->input->post('country_id'),
+                'state_id'         => $this->input->post('state_id'),
+                'city_id'          => $this->input->post('city_id'),
+                'company_pincode'          => $this->input->post('company_pincode'),
+                'company_aboutus'  => $this->input->post('company_aboutus'),
+                'cont_person_level' =>$this->input->post('cont_person_level'),
+                'alternate_email_id'=>$this->input->post('alternate_email_id'),
+                'cont_person_email'    => $this->input->post('cont_person_email'),
+                'cont_person_mobile'   => $this->input->post('cont_person_mobile'),
+                'comp_gstn_no'         => $this->input->post('comp_gst_no'),
+                'comp_pan_no'          => $this->input->post('comp_pan_no'),
+            );
+         
+            $company_logo = isset($_FILES['company_logo']['name']) ? $_FILES['company_logo']['name'] : null;
+
+            if (!empty($employer_id) || !empty($company_logo)) {
+                if (!empty($company_logo)) {
+
+                    $config['upload_path']   = 'upload/';
+                    $config['allowed_types'] = 'gif|jpg|png';
+                    $config['encrypt_name']  = true;
+                    $config['max_size']      = 1000;
+                    $config['max_width']     = 300;
+                    $config['max_height']    = 300;
+
+                    $this->load->library('upload', $config);
+                    $result_upload                   = $this->upload->do_upload('company_logo');
+                    $upload_data                     = $this->upload->data();
+                    $company_logo                    = $upload_data['file_name'];
+                    $company_profile['company_logo'] = $company_logo;
+
+                    if (!$result_upload == true) {
+                        $error = array('error' => $this->upload->display_errors());
+                        $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">Please Upload a Valid Logo Size Max size 300*300</div>');
+                        redirect('employer/profile-setting');
+                    } 
+                }
+            }
+
+            if(!empty($employer_id)) {
+                $branch_address=$this->input->post('Branchname');
+                $country=$this->input->post('BranchCountry');
+                $state=$this->input->post('Branchstate');
+                $city=$this->input->post('BranchCity');
+                $pincode=$this->input->post('Branchpincodes');
+                // print_r($pincode);
+                if (isset($branch_address) && !empty($branch_address) && !empty($country) && !empty($state) && !empty($city) && !empty($pincode)) {
+                    # code...
+               
+                // print_r($branch_address);
+                $branchadddata=explode(",",$branch_address);
+                $branchcountrydata=explode(",",$country);
+                $branchstatedata=explode(",",$state);
+                $branchcitydata=explode(",",$city);
+                $branchpincodedata=explode(",",$pincode);
+                $size=sizeof($branchadddata);
+                for ($i=0; $i <$size ; $i++) { 
+                    // print_r($branchadddata[$i]);
+                    $response['branch_address']=$branchadddata[$i];
+                    $response['country']=$branchcountrydata[$i];
+                    $response['state']=$branchstatedata[$i];
+                    $response['city']=$branchcitydata[$i];
+                    $response['pincode']=$branchpincodedata[$i];
+                    $response['company_profile_id']=$employer_id;
+                    $response['created_on']=date('Y-m-d H:i:s');
+                     // print_r($response);
+                    $result=$this->Master_model->master_insert($response,'company_branches');
+
+                }
+            }
+             
+                $wheres="status='0' AND company_profile_id='$employer_id' ";
+                
+                $branches = $this->Master_model->getMaster('company_branches',$where=$wheres);
+
+                $this->company_profile_model->update($company_profile, $employer_id);
+                $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Company Profile details have been successfully updated !</div>');
+                $company_info = $this->company_profile_model->get($employer_id);
+                $country = $this->Master_model->getMaster('country',$where=false);
+                $this->load->view('fontend/employer/dashboard', compact('company_info', 'country', 'branches'));
+                 
+            }
+
+            } else {
+                $wheres="status='0' AND company_profile_id='$employer_id'";
+                 $branches = $this->Master_model->getMaster('company_branches',$where=$wheres);
+                $company_info = $this->company_profile_model->get($employer_id);
+                $country = $this->Master_model->getMaster('country',$where=false);
+                $this->load->view('fontend/employer/dashboard', compact('company_info', 'country', 'branches'));
+            }
+    }
 
 
     
