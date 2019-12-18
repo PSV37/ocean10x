@@ -76,8 +76,8 @@
                    <div class="col-md-6">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Designmation<span class="required">*</span></label>
-                      <input type="email" name="email" id="email" class="form-control" value="<?php echo $result['email']; ?>">
-                      <select>
+                     <!--  <input type="email" name="email" id="email" class="form-control" value="<?php echo $result['email']; ?>"> -->
+                      <select class="form-control">
                         <option>Select designation</option>
                         <option>HR Manager</option>
                         <option>Project Manager</option>
@@ -88,7 +88,7 @@
                   <div class="col-md-6">
                       <div class="form-group">
                           <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
-                           <select class="mdb-select colorful-select dropdown-primary md-form" multiple searchable="Search here..">
+                           <select class="mdb-select colorful-select dropdown-primary md-form" multiple searchable="Search here.." class="form-control">
                               <option value="" disabled selected>Choose</option>
                               <option value="1">Post A job</option>
                               <option value="2">Edit Company Profile</option>
@@ -110,41 +110,28 @@
                   </div>
                 </div>
                   
-                     
-                
-                   
-								
-								
-									
-										 
-								
-									 
-								
-										<div class="container-fluid">
-				    
-	                                    	
-	                                        <div class="col-md-4 col-sm-4">
-	                                        	<div class="formrow">
-	                                        <label class="control-label">Country: <span class="required">*</span></label>
-										  <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
-											<option value="">Select Country</option>
-											<?php foreach($country as $key){?>
-											<option value="<?php echo $key['country_id']; ?>"<?php if($result['country_id']==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
-											<?php } ?>
-										  </select>
-	                                        </div>
-	                                    </div>
+                <div class="container-fluid">
+                    <div class="col-md-4 col-sm-4">
+	                   <div class="formrow">
+	                      <label class="control-label">Country: <span class="required">*</span></label>
+										    <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
+    											 <option value="">Select Country</option>
+    											<?php foreach($country as $key){?>
+    											<option value="<?php echo $key['country_id']; ?>"<?php if($result['country_id']==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
+    											<?php } ?>
+										    </select>
+	                     </div>
+	                   </div>
 
 										
 										<div class="col-md-4 col-sm-4">
 											<div class="formrow">
 											<label class="control-label">State: <span class="required">*</span></label>
 											<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
-											<option value="">Select State</option>
-										   
+											   <option value="">Select State</option>
 											</select>
 										</div>
-	                                    </div>
+	               </div>
 										
 										<div class="col-md-4 col-sm-4">
 											<div class="formrow">
@@ -159,31 +146,30 @@
 										</div>
 								<div class="container-fluid">
 									<div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Address<span class="required">*</span></label>
-									<textarea class="form-control ckeditor" name="address"><?php echo $result['address']; ?></textarea>
-									</div>
-								   </div>
-                                </div>		 
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Address<span class="required">*</span></label>
+									     <textarea class="form-control ckeditor" name="address"><?php echo $result['address']; ?></textarea>
+									   </div>
+								  </div>
+                </div>		 
 								<div class="container-fluid">
 								<div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Pincode<span class="required">*</span></label>
-									<input type="text" name="pincode" id="pincode" class="form-control" autocomplete="off" value="<?php echo $result['pincode']; ?>">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Pincode<span class="required">*</span></label>
+									   <input type="text" name="pincode" id="pincode" class="form-control" autocomplete="off" value="<?php echo $result['pincode']; ?>">
 									</div>
-								   </div>
+								</div>
 								<div class="col-sm-6">
 								   <label>Status:</label>
-									<select name="emp_status" class="form-control">
-										<option value="">Select</option>
-										<option value="1"<?php if($result['emp_status']=='1'){ echo "selected"; } ?>>Active</option>
-										<option value="2"<?php if($result['emp_status']=='2'){ echo "selected"; } ?>>Inactive</option>
+									   <select name="emp_status" class="form-control">
+  										<option value="">Select</option>
+  										<option value="1"<?php if($result['emp_status']=='1'){ echo "selected"; } ?>>Active</option>
+  										<option value="2"<?php if($result['emp_status']=='2'){ echo "selected"; } ?>>Inactive</option>
 									 </select>
-								  </div>
+								</div>
 								</div>
 									 <div class="panel-body"></div>
-                                <button type="submit" class="btn bg-navy" type="submit">Edit Employe
-                                </button>
+                     <button type="submit" class="btn bg-navy" type="submit">Edit Employee</button>
 								
 
             </form>
@@ -369,6 +355,11 @@ $("#dept_id").select2( {
     },
     minLength: 1
  });
+});
+</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+$('.mdb-select').materialSelect();
 });
 </script>
 	   
