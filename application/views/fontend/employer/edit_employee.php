@@ -367,7 +367,7 @@ $("#dept_id").select2( {
 <script type="text/javascript">
   $(document).ready(function() {
 // $('.mdb-select').materialSelect();
-$('select').selectpicker();
+// $('select').selectpicker();
 });
 </script>
 	   
