@@ -93,7 +93,7 @@
                   <div class="col-md-6">
                       <div class="form-group">
                           <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
-                          <select class="selectpicker form-control" multiple data-live-search="true">
+                          <select class="selectpicker form-control" multiple data-live-search="true" id="Access[]" name="Access[]">
                               <option value="1">Post A job</option>
                               <option value="2">Edit Company Profile</option>
                               <option value="3">Add Ouestion Bank</option>
@@ -362,9 +362,14 @@ $("#dept_id").select2( {
 });
 </script>
 <script type="text/javascript">
-  $(document).ready(function() {
-// $('.mdb-select').materialSelect();
-// $('select').selectpicker();
+ 
+  $(function() {
+
+    $('#selectpicker').multiselect({
+
+        includeSelectAllOption: true
+    });
+ 
 });
 </script>
 	   
