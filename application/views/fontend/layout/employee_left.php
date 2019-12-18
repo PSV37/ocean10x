@@ -6,8 +6,8 @@
         
         // echo "string";
         $accessSpecifiers = explode(',',$data['access_to_employee']);
-       $data['org_id']=$data['org_id'];
-                $this->session->set_userdata($data);
+       
+                $this->session->set_userdata($data['org_id']);
 
   
 
