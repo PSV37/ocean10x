@@ -56,12 +56,13 @@
                   $updates = getSeekerlastUpdates($cv_row['js_email']);
                   if (!empty($updates)) {
                    if($updates[0]['update_at']=='0000-00-00 00:00:00') { 
-                      $mtime = time_ago_in_php($updates[0]['create_at']);
+                      $mtime = date('d-M-y',strtotime($updates[0]['create_at']));
                     } else{
-                      $mtime = time_ago_in_php($updates[0]['update_at']);
+                      $mtime = date('d-M-y',strtotime($updates[0]['update_at']));
                     }
                   }else{
-                    $mtime = time_ago_in_php($cv_row['created_on']);
+                    //time_ago_in_php($cv_row['created_on']);
+                     $mtime = date('d-M-y',strtotime($updates[0]['created_on']));
                   }
                 ?>
                   <tr>
