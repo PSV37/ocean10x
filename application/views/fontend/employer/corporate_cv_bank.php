@@ -55,12 +55,15 @@
                   $photo = getSeekerPhoto($cv_row['js_email']);
                   $updates = getSeekerlastUpdates($cv_row['js_email']);
                   if (!empty($updates)) {
-                   if($updates[0]['update_at']=='0000-00-00 00:00:00')) { 
+                   if($updates[0]['update_at']=='0000-00-00 00:00:00') { 
+                      echo "js up";
                       $mtime = time_ago_in_php($updates[0]['update_at']);
                     } else{
+                        echo "js cr";
                       $mtime = time_ago_in_php($updates[0]['create_at']);
                     }
                   }else{
+                     echo "cv cr";
                     $mtime = time_ago_in_php($cv_row['created_on']);
                   }
                 ?>
