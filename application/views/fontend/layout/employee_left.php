@@ -14,7 +14,7 @@
       <?php if (in_array("edit_profile", $access))
   {?>
   <li> <a href="<?php echo base_url() ?>employee/edit-profile" class=""> <i class="fa fa-user-circle-o" aria-hidden="true"></i> My Profile </a> </li>
-  <?php}?>
+  <?php }?>
       
       
       <li> <a href="<?php echo base_url() ?>active-job"><i class="fa fa-check-square-o" aria-hidden="true"></i> Posted Job </a> </li>
