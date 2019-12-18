@@ -56,28 +56,38 @@
                   $updates = getSeekerlastUpdates($cv_row['js_email']);
                   if (!empty($updates)) {
                    if($updates[0]['update_at']=='0000-00-00 00:00:00') { 
-                      echo "js cp";
-                      $mtime = time_ago_in_php($updates[0]['create_at']);
+                      $mtime = date('d-M-y',strtotime($updates[0]['create_at']));
                     } else{
-                        echo "js up";
-                      $mtime = time_ago_in_php($updates[0]['update_at']);
+                      $mtime = date('d-M-y',strtotime($updates[0]['update_at']));
                     }
                   }else{
-                     echo "cv cr";
-                    $mtime = time_ago_in_php($cv_row['created_on']);
+                    //time_ago_in_php($cv_row['created_on']);
+                     $mtime = date('d-M-y',strtotime($updates[0]['created_on']));
                   }
                 ?>
                   <tr>
                       <td><?php echo $key ?></td>
-                      <td><img src="<?php echo  base_url(); ?>upload/<?php if(!empty($photo[0]['photo_path'])){echo $photo[0]['photo_path'];} ?>" alt="" style="max-width: 40% !important;"></td>
-                      <!-- <td><a target="_blank" href="<?php echo base_url() ?>employer/view-resume/<?php echo $cv_row['job_seeker_id']; ?>"><?php echo $cv_row['js_name']; ?></a></td> -->
+                      <td>
+                        <?php if(!empty($photo)){ ?>
+                        <img src="<?php echo  base_url(); ?>upload/<?php if(!empty($photo[0]['photo_path'])){echo $photo[0]['photo_path'];} ?>" alt="" style="max-width: 100% !important;min-width: 40% !important;">
+                        <?php }else{ ?>
+                        <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" alt="" style="max-width: 100% !important;min-width: 40% !important;">
+                        <?php } ?>
+                      </td>
+                     
                        <td><?php echo $cv_row['js_name']; ?></td>
                       <td><?php echo $cv_row['js_email']; ?></td>
                       <td><?php echo $cv_row['js_mobile']; ?></td>
                       <td><?php echo $cv_row['js_current_work_location']; ?></td>
                       <td><?php echo $cv_row['js_current_designation']; ?></td>
                       <td><?php echo $cv_row['js_current_notice_period']; ?></td>
-                      <td><a href="<?php echo  base_url(); ?>upload/Resumes/<?php if(!empty($resume[0]['resume'])){echo $resume[0]['resume'];} ?>" title='Download Attached Resume' download><i class="fa fa-download"></i> </a></td>
+                      <td>
+                        <?php if(!empty($resume)){ ?>
+                        <a href="<?php echo  base_url(); ?>upload/Resumes/<?php if(!empty($resume[0]['resume'])){echo $resume[0]['resume'];} ?>" title='Download Attached Resume' download><i class="fa fa-download"></i> </a>
+                        <?php }else{ ?>
+                          Not Attached
+                        <?php } ?>
+                      </td>
                       <td><?php echo $mtime; ?></td>
                   </tr>
                   <?php
