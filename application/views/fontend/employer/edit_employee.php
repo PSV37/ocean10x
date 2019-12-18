@@ -365,7 +365,7 @@ $("#dept_id").select2( {
  
   $(function() {
 
-    $('#selectpicker').multiselect({
+    $('#selectpicker form-control').multiselect({
 
         includeSelectAllOption: true
     });
