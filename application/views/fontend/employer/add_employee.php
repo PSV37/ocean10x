@@ -46,70 +46,89 @@
               }
             ?>
 					<div class="container-fluid">
-                        <div class="col-md-4">
-                            <div class="form-group">                                       
+            <div class="col-md-4">
+              <div class="form-group">                                       
 							   <label for="exampleInputEmail1">Employee Number <span class="required">*</span></label>
-                                
-								<input type="number" min="1" name="emp_no" id="emp_no" class="form-control" autocomplete="off" value="<?php echo set_value('emp_no'); ?>">
-								<span style="color:#ff0000;"><?php echo form_error('emp_no'); ?></span>
-								</div>
-                        </div>
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Name <span class="required">*</span></label>
-                                         <input type="text" name="emp_name" id="emp_name" class="form-control name-valid" autocomplete="off" value="<?php echo set_value('emp_name'); ?>">
-                                    <span style="color:#ff0000;"><?php echo form_error('emp_name'); ?></span>
-									</div>
-                                </div>
-									<div class="col-md-4">
-                                    <div class="form-group">
-									<label for="exampleInputEmail1">Department<span class="required">*</span></label>
-									<select  name="dept_id" id="dept_id" class="form-control department">
-										<option value="">Select Department</option>
-										<?php foreach($result as $key){?>
-										<option value="<?php echo $key['dept_id']; ?>"><?php echo $key['department_name']; ?></option>
-										<?php } ?>
-								    </select>
-									 </div>
-                                </div>
-                                </div>
-									 <div class="container-fluid">
-									 <div class="col-md-4">
-								  <div class="form-group">
-                                        <label for="exampleInputEmail1">Email-Id<span class="required">*</span></label>
-                                    <input type="email" name="email" id="email" class="form-control" value="<?php echo set_value('email'); ?>">
+                  <input type="number" min="1" name="emp_no" id="emp_no" class="form-control" autocomplete="off" value="<?php echo set_value('emp_no'); ?>">
+								  <span style="color:#ff0000;"><?php echo form_error('emp_no'); ?></span>
+							</div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                 <label for="exampleInputEmail1">Name <span class="required">*</span></label>
+                  <input type="text" name="emp_name" id="emp_name" class="form-control name-valid" autocomplete="off" value="<?php echo set_value('emp_name'); ?>">
+                  <span style="color:#ff0000;"><?php echo form_error('emp_name'); ?></span>
+							</div>
+            </div>
+						<div class="col-md-4">
+              <div class="form-group">
+								<label for="exampleInputEmail1">Department<span class="required">*</span></label>
+								  <select  name="dept_id" id="dept_id" class="form-control department">
+  										<option value="">Select Department</option>
+  										<?php foreach($result as $key){?>
+  										<option value="<?php echo $key['dept_id']; ?>"><?php echo $key['department_name']; ?></option>
+  										<?php } ?>
+								  </select>
+							</div>
+            </div>
+         </div>
+				<div class="container-fluid">
+					<div class="col-md-4">
+					 <div class="form-group">
+             <label for="exampleInputEmail1">Email-Id<span class="required">*</span></label>
+              <input type="email" name="email" id="email" class="form-control" value="<?php echo set_value('email'); ?>">
 									<?php echo form_error('email'); ?>
-										</div>
-									</div>
-									
-										 <div class="col-md-4">
-								  <div class="form-group">
-                                        <label for="exampleInputEmail1">Password<span class="required">*</span></label>
-                                         <input type="password" name="password" id="password" class="form-control" value="<?php echo set_value('password'); ?>">
+					 </div>
+				  </div>
+					<div class="col-md-4">
+						<div class="form-group">
+              <label for="exampleInputEmail1">Password<span class="required">*</span></label>
+               <input type="password" name="password" id="password" class="form-control" value="<?php echo set_value('password'); ?>">
 										<?php echo form_error('password'); ?>
-										</div>
-									</div>
-								
-									 
-									 <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Contact No.<span class="required">*</span></label>
-                                       <input type="tel" name="mobile" id="mobile" class="form-control" autocomplete="off" onkeypress="phoneno()" maxlength="10" value="<?php echo set_value('mobile'); ?>">
+						</div>
+					</div>
+					<div class="col-md-4">
+             <div class="form-group">
+               <label for="exampleInputEmail1">Contact No.<span class="required">*</span></label>
+                <input type="tel" name="mobile" id="mobile" class="form-control" autocomplete="off" onkeypress="phoneno()" maxlength="10" value="<?php echo set_value('mobile'); ?>">
 									 <?php echo form_error('mobile'); ?>
-									 </div>
-                                </div>
-								
-								
-								</div>
-								<div class="container-fluid">
-								<div class="col-md-8">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Photo<span class="required">*</span></label>
-                                       <input type="file" name="photo" id="photo" class="form-control">
-									 </div>
-                                </div>
-								</div>
+							</div>
+           </div>
+				</div>
+				<div class="container-fluid">
+					<div class="col-md-8">
+              <div class="form-group">
+                  <label for="exampleInputEmail1">Photo<span class="required">*</span></label>
+                   <input type="file" name="photo" id="photo" class="form-control">
+							</div>
+           </div>
+				</div>
+          <div class="container-fluid">
+             <div class="col-md-6">
+               <div class="form-group">
+                <label for="exampleInputEmail1">Designation<span class="required">*</span></label>
+                    <select class="form-control">
+                        <option>Select designation</option>
+                        <option>HR Manager</option>
+                        <option>Project Manager</option>
+                        <option>Finance Manager</option>
+                      </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
+                  <select class="selectpicker form-control" multiple data-live-search="true" id="Access[]" name="Access[]">
+                      <option value="post_job">Post A job</option>
+                      <option value="editprofile">Edit Company Profile</option>
+                      <option value="Addquestion_bank">Add Ouestion Bank</option>
+                      <option value="addemp">Add Employee</option>
+                      <option value="addconsultant">Add Consultant</option>
+                    </select>
+                          
+                </div>
+              </div>
+            </div>
 										<div class="container-fluid">
 				    
 	                                    	

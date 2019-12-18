@@ -1141,7 +1141,8 @@ function getstate(){
                       $NewFileName = '';
                     }    
     					
-        		//$data['org_id'] = $this->input->post('org_id');		
+        		//$data['org_id'] = $this->input->post('org_id');
+                $List = implode(', ', $this->input->post('Access')); 		
         		$data['emp_no'] = $this->input->post('emp_no');
         		$data['org_id'] = $user_id;
         		$data['emp_name'] = $this->input->post('emp_name');
@@ -1155,6 +1156,7 @@ function getstate(){
         		$data['pincode'] = $this->input->post('pincode');
         		$data['address'] = $this->input->post('address');
         		$data['emp_created_date'] = $this->input->post('emp_created_date');
+                $data['access_to_employee'] =$List;
         		$data['emp_created_by'] = $user_id;
         		$data['photo'] =$NewFileName;
         		
