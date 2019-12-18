@@ -49,10 +49,8 @@ $jobseeker_id = $this->session->userdata('job_seeker_id');
           <div class="contentbox">
             <div class="jobinfo">
               <?php if(!empty($admin_id)) {
-
-                    echo '<a href="'.base_url().'/admin/jobs" class="btn btn-primary">Back </a>';
-
-                    } ?>
+                echo '<a href="'.base_url().'/admin/jobs" class="btn btn-primary">Back </a>';
+              } ?>
               <br>
               <div class="row">
                 <?php echo $this->session->flashdata('msg'); ?>
