@@ -80,7 +80,7 @@
                 <div class="container-fluid">
                    <div class="col-md-6">
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Designmation<span class="required">*</span></label>
+                      <label for="exampleInputEmail1">Designation<span class="required">*</span></label>
                      <!--  <input type="email" name="email" id="email" class="form-control" value="<?php echo $result['email']; ?>"> -->
                       <select class="form-control">
                         <option>Select designation</option>
@@ -93,7 +93,7 @@
                   <div class="col-md-6">
                       <div class="form-group">
                           <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
-                          <select class="selectpicker form-control" multiple data-live-search="true" id="Access[]" name="Access[]">
+                          <select class="selectpicker form-control" multiple data-live-search="true" id="Access" name="Access">
                               <option value="1">Post A job</option>
                               <option value="2">Edit Company Profile</option>
                               <option value="3">Add Ouestion Bank</option>
@@ -365,7 +365,7 @@ $("#dept_id").select2( {
  
   $(function() {
 
-   $('.selectpicker').selectpicker({
+   $('.selectpicker form-control').selectpicker({
     selectAllText: 'Your select-all-text',
     deselectAllText: 'Your deselect-all-text'
 });
