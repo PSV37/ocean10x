@@ -22,7 +22,7 @@
       <?php 
       if (in_array('editprofile', $accessSpecifiers)) 
       {?>
-        <li> <a href="<?php echo base_url() ?>employer/profile_setting" class=""> <i class="fa fa-check-square-oa-user-circle-o" aria-hidden="true"></i>Edit Company Profile</a> </li>
+        <li> <a href="<?php echo base_url() ?>employee/profile_setting" class=""> <i class="fa fa-check-square-oa-user-circle-o" aria-hidden="true"></i>Edit Company Profile</a> </li>
       <?php }?> 
       
       
