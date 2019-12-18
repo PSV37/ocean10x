@@ -41,9 +41,19 @@
                   <th class="active">Name</th>
                   <th class="active">Email</th>
                   <th class="active">Mobile No</th>
+                  <th class="active">Yrs of Experience</th>
+                  <th class="active">Current Notice Period</th>
+                  <th class="active">Job Type</th>
+
+                  <th class="active">Working at Current Job since</th>
+                  <th class="active">Current CTC</th>
+                  <th class="active">Last Salary Hike</th>
+                  <th class="active">Top Education</th>
+                  <th class="active">Skills</th>
+                  <th class="active">Certifications</th>
+
                   <th class="active">Current Work Location</th>
                   <th class="active">Current Job Role</th>
-                  <th class="active">Current Notice Period</th>
                   <th class="active">Candidate Uploaded CV </th>
                   <th class="active">Last Profile Update At</th>
                   <!-- <th class="active">Ocean Generated CV</th> -->
@@ -78,9 +88,19 @@
                        <td><?php echo $cv_row['js_name']; ?></td>
                       <td><?php echo $cv_row['js_email']; ?></td>
                       <td><?php echo $cv_row['js_mobile']; ?></td>
+                      <td></td>
+                      <td><?php echo $cv_row['js_current_notice_period']; ?></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+
                       <td><?php echo $cv_row['js_current_work_location']; ?></td>
                       <td><?php echo $cv_row['js_current_designation']; ?></td>
-                      <td><?php echo $cv_row['js_current_notice_period']; ?></td>
+                     
                       <td>
                         <?php if(!empty($resume)){ ?>
                         <a href="<?php echo  base_url(); ?>upload/Resumes/<?php if(!empty($resume[0]['resume'])){echo $resume[0]['resume'];} ?>" title='Download Attached Resume' download><i class="fa fa-download"></i> </a>
