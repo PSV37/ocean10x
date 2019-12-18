@@ -320,7 +320,7 @@ function get_metas() {
 
     function getSeekerlastUpdates($js_email) {
         $CI = get_instance();
-        $select_result = "js_info.update_at";
+        $select_result = "js_info.update_at,js_info.create_at";
         $table = "js_info";
         $where_res="js_info.email = '$js_email'";
         $seeker_resume = $CI->Master_model->getMaster($table, $where_res, false, false ,false, $select_result, $limit =false, $start =false, $search= false);
