@@ -163,12 +163,12 @@ $this->session->set_userdata('reg_in', $company_profile );
           
                
                 $data['org_id'] = $company_profile_id;
-                $data['emp_name'] ='user_name'.$i;
+                $data['emp_name'] ='user'.$i;
                
                 $data['emp_created_date'] = date('Y-m-d H:i:s');
                 $data['emp_created_by'] = $company_profile_id;
                 $this->Master_model->master_insert($data,'employee');
-                  }
+            }
             $this->company_profile_model->sendEmail($to_email);
 
             $this->session->unset_userdata($company_profile);
