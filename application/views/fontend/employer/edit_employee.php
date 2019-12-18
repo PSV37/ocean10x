@@ -1,11 +1,9 @@
 <?php 
     $this->load->view('fontend/layout/employer_header.php');
 ?>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+</script> -->
 
 
 <!-- Page Title start -->
@@ -95,8 +93,7 @@
                   <div class="col-md-6">
                       <div class="form-group">
                           <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
-                          <select class="selectpicker" multiple data-live-search="true">
-                              <option value="" disabled selected>Choose</option>
+                          <select class="selectpicker form-control" multiple data-live-search="true" id="Access[]" name="Access[]">
                               <option value="1">Post A job</option>
                               <option value="2">Edit Company Profile</option>
                               <option value="3">Add Ouestion Bank</option>
@@ -365,9 +362,14 @@ $("#dept_id").select2( {
 });
 </script>
 <script type="text/javascript">
-  $(document).ready(function() {
-// $('.mdb-select').materialSelect();
-// $('select').selectpicker();
+ 
+  $(function() {
+
+    $('#selectpicker form-control').multiselect({
+
+        includeSelectAllOption: true
+    });
+ 
 });
 </script>
 	   
