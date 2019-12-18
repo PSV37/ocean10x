@@ -7,6 +7,7 @@
         echo "string";
         $result=array_search('edit_profile',$access); 
       print_r($result);
+      echo "string";
 
  ?>
 <div class="col-md-3">
