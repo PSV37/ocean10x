@@ -7,7 +7,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-6">
-        <h1 class="page-heading">Edit Question's </h1>
+        <h1 class="page-heading">Edit Employee </h1>
       </div>
       <div class="col-md-6 col-sm-6">
         <div class="breadCrumb"><a href="#.">Home</a> / <span>Edit Employee</span></div>
@@ -47,37 +47,78 @@
                                     </div>
                                 </div>
 									<div class="col-md-4">
-                                    <div class="form-group">
-									<label for="exampleInputEmail1">Department<span class="required">*</span></label>
-									<select  name="dept_id" id="dept_id" class="form-control department">
-										<option value="">Select Department</option>
-										<?php foreach($department as $key){?>
-										<option value="<?php echo $key['dept_id']; ?>"<?php if($result['dept_id'] == $key['dept_id']){ echo "selected"; }?>><?php echo $key['department_name']; ?></option>
-										<?php } ?>
-								    </select>
+                    <div class="form-group">
+  									<label for="exampleInputEmail1">Department<span class="required">*</span></label>
+  									<select  name="dept_id" id="dept_id" class="form-control department">
+  										<option value="">Select Department</option>
+  										<?php foreach($department as $key){?>
+  										<option value="<?php echo $key['dept_id']; ?>"<?php if($result['dept_id'] == $key['dept_id']){ echo "selected"; }?>><?php echo $key['department_name']; ?></option>
+  										<?php } ?>
+  								    </select>
 									 </div>
-                                </div>
-                                </div>
-									 <div class="container-fluid">
-									 <div class="col-md-6">
-								  <div class="form-group">
-                                        <label for="exampleInputEmail1">Email-Id<span class="required">*</span></label>
-                                    <input type="email" name="email" id="email" class="form-control" value="<?php echo $result['email']; ?>">
-										</div>
-									</div>
+                  </div>
+                </div>
+									<div class="container-fluid">
+  									 <div class="col-md-6">
+    								  <div class="form-group">
+                        <label for="exampleInputEmail1">Email-Id<span class="required">*</span></label>
+                        <input type="email" name="email" id="email" class="form-control" value="<?php echo $result['email']; ?>">
+    										</div>
+  									   </div>
+									   <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Contact No.<span class="required">*</span></label>
+                        <input type="tel" name="mobile" id="mobile" class="form-control" value="<?php echo $result['mobile']; ?>" onkeypress="phoneno()" maxlength="10">
+									     </div>
+                    </div>
+								</div>
+                <div class="container-fluid">
+                   <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Designmation<span class="required">*</span></label>
+                      <input type="email" name="email" id="email" class="form-control" value="<?php echo $result['email']; ?>">
+                      <select>
+                        <option>Select designation</option>
+                        <option>HR Manager</option>
+                        <option>Project Manager</option>
+                        <option>Finance Manager</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
+                           <select class="mdb-select colorful-select dropdown-primary md-form" multiple searchable="Search here..">
+                              <option value="" disabled selected>Choose</option>
+                              <option value="1">Post A job</option>
+                              <option value="2">Edit Company Profile</option>
+                              <option value="3">Add Ouestion Bank</option>
+                              <option value="4">Add Employee</option>
+                              <option value="5">Add Consultant</option>
+                          </select>
+                          <!--   <div class="row">
+                              <div class="col-md-12">
+
+                               
+                                <label class="mdb-main-label">Label example</label>
+                                <button class="btn-save btn btn-primary btn-sm">Save</button>
+
+                              </div>
+                            </div> -->
+                         <!--  <input type="tel" name="mobile" id="mobile" class="form-control" value="<?php echo $result['mobile']; ?>" onkeypress="phoneno()" maxlength="10"> -->
+                      </div>
+                  </div>
+                </div>
+                  
+                     
+                
+                   
+								
+								
 									
 										 
 								
 									 
-									 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Contact No.<span class="required">*</span></label>
-                                       <input type="tel" name="mobile" id="mobile" class="form-control" value="<?php echo $result['mobile']; ?>" onkeypress="phoneno()" maxlength="10">
-									 </div>
-                                </div>
-								
-								
-								</div>
 								
 										<div class="container-fluid">
 				    
