@@ -5,7 +5,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
 if ($company_profile_id != null) {
  $this->load->view('fontend/layout/employer_header.php');
 }
-else($employee_id != null)
+elseif($employee_id != null)
 {
 	$this->load->view('fontend/layout/employee_header.php');
 }
