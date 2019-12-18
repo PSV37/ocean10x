@@ -4,7 +4,7 @@
         $data = $this->Master_model->get_master_row("employee", $select_edu, $where_apply, $join = FALSE);
         $access=explode(",", $data['access_to_employee']);
         
-        // echo "string";
+        print_r($data['org_id']);
         $accessSpecifiers = explode(',',$data['access_to_employee']);
        
                 $this->session->set_userdata($data['org_id']);
