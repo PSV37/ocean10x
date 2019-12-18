@@ -1,6 +1,13 @@
 <?php 
     $this->load->view('fontend/layout/employer_header.php');
 ?>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+
+
 <!-- Page Title start -->
 
 <div class="pageTitle">
@@ -88,7 +95,7 @@
                   <div class="col-md-6">
                       <div class="form-group">
                           <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
-                           <select  multiple="multiple" searchable="Search here.." class="form-control">
+                          <select class="selectpicker" multiple data-live-search="true">
                               <option value="" disabled selected>Choose</option>
                               <option value="1">Post A job</option>
                               <option value="2">Edit Company Profile</option>
@@ -359,7 +366,8 @@ $("#dept_id").select2( {
 </script>
 <script type="text/javascript">
   $(document).ready(function() {
-$('.mdb-select').materialSelect();
+// $('.mdb-select').materialSelect();
+$('select').selectpicker();
 });
 </script>
 	   
