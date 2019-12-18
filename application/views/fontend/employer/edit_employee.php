@@ -365,10 +365,10 @@ $("#dept_id").select2( {
  
   $(function() {
 
-    $('#selectpicker form-control').multiselect({
-
-        includeSelectAllOption: true
-    });
+   $('.selectpicker').selectpicker({
+    selectAllText: 'Your select-all-text',
+    deselectAllText: 'Your deselect-all-text'
+});
  
 });
 </script>
