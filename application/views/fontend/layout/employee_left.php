@@ -1,4 +1,9 @@
-<?php $employee_id=$this->session->userdata('emp_id'); ?>
+<?php $employee_id=$this->session->userdata('emp_id');
+ $where_apply="emp_id='$employee_id'";
+        $select_edu = "access_to_employee";
+        $data = $this->Master_model->get_master_row("employee", $select_edu, $where_apply, $join = FALSE);
+        print_r($data);
+ ?>
 <div class="col-md-3">
   <nav class="side-menu hidden-sm hidden-xs">
     <ul>
