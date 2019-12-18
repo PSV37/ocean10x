@@ -45,7 +45,7 @@
                   <th class="active">Current Job Role</th>
                   <th class="active">Current Notice Period</th>
                   <th class="active">Candidate Uploaded CV </th>
-                  <th class="active">Last Profile Update Date</th>
+                  <th class="active">Last Profile Update At</th>
                   <!-- <th class="active">Ocean Generated CV</th> -->
                 </tr>
               </thead>
@@ -54,7 +54,15 @@
                   $resume = getUploadedResume($cv_row['js_email']);
                   $photo = getSeekerPhoto($cv_row['js_email']);
                   $updates = getSeekerlastUpdates($cv_row['js_email']);
-
+                  if (!empty($updates)) {
+                   if($updates[0]['update_at']=='0000-00-00 00:00:00')) { 
+                      $mtime = time_ago_in_php($updates[0]['update_at']);
+                    } else{
+                      $mtime = time_ago_in_php($updates[0]['create_at']);
+                    }
+                  }else{
+                    $mtime = time_ago_in_php($cv_row['created_on']);
+                  }
                 ?>
                   <tr>
                       <td><?php echo $key ?></td>
@@ -67,8 +75,7 @@
                       <td><?php echo $cv_row['js_current_designation']; ?></td>
                       <td><?php echo $cv_row['js_current_notice_period']; ?></td>
                       <td><a href="<?php echo  base_url(); ?>upload/Resumes/<?php if(!empty($resume[0]['resume'])){echo $resume[0]['resume'];} ?>" title='Download Attached Resume' download><i class="fa fa-download"></i> </a></td>
-                      <td><?php if(!is_null($updates[0]['update_at'] || $updates[0]['update_at']!='0000-00-00 00:00:00')) { $mtime = time_ago_in_php($updates[0]['update_at']);
-                            echo $mtime;} ?></td>
+                      <td><?php echo $mtime; ?></td>
                   </tr>
                   <?php
                       $key++;
