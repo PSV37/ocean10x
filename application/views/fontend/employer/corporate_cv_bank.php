@@ -89,9 +89,9 @@
                       <td><?php echo $cv_row['js_experience']; ?></td>
                       <td><?php echo $cv_row['js_current_notice_period']; ?></td>
                       <td><?php echo $cv_row['js_job_type']; ?></td>
-                      <td><?php echo $cv_row['js_working_since']; ?></td>
+                      <td><?php echo date('d-M-Y', strtotime($cv_row['js_working_since'])); ?></td>
                       <td><?php echo $cv_row['js_current_ctc']; ?></td>
-                      <td><?php echo $cv_row['js_last_salary_hike']; ?></td>
+                      <td><?php echo date('M y', strtotime($cv_row['js_last_salary_hike'])); ?></td>
                       <td><?php echo $cv_row['js_top_education']; ?></td>
                       <td><?php echo $cv_row['js_skill_set']; ?></td>
                       <td><?php echo $cv_row['js_certifications']; ?></td>
