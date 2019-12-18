@@ -95,10 +95,10 @@
                           <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
                           <select class="selectpicker form-control" multiple data-live-search="true" id="Access[]" name="Access[]">
                               <option value="post_job">Post A job</option>
-                              <option value="edit_profile">Edit Company Profile</option>
-                              <option value="Add_question_bank">Add Ouestion Bank</option>
-                              <option value="add_emp">Add Employee</option>
-                              <option value="add_consultant">Add Consultant</option>
+                              <option value="editprofile">Edit Company Profile</option>
+                              <option value="Addquestion_bank">Add Ouestion Bank</option>
+                              <option value="addemp">Add Employee</option>
+                              <option value="addconsultant">Add Consultant</option>
                           </select>
                           <!--   <div class="row">
                               <div class="col-md-12">

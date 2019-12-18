@@ -5,8 +5,12 @@
         $access=explode(",", $data['access_to_employee']);
         print_r($access);
         echo "string";
-        $result=array_search('edit_profile',$access); 
-      print_r($result);
+        $HiddenProducts = explode(',',$$data['access_to_employee']);
+if (in_array('editprofile', $HiddenProducts)) {
+  echo "Available";
+} else {
+  echo "Not available";
+}
       echo "string";
 
  ?>
@@ -32,4 +36,5 @@
   </nav>
 
  <!-- end widget -->
-</div><!-- end col -->
+</div>
+<!-- end col -->
