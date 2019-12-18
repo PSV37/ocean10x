@@ -1530,13 +1530,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     		$data['emp_status'] = $this->input->post('emp_status');
     		$data['emp_updated_date'] = date('Y-m-d H:i:s');
     		$data['emp_updated_by'] = $user_id;
-            $data['access'] = $this->input->post('Access');
+            $data['access_to_employee'] = $this->input->post('Access');
     		$id = $this->input->post('cid');
     		$where['emp_id']=$id;
-            print_r($data);
-    		// $this->Master_model->master_update($data,'employee',$where);
-      //       $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Employee Updated Successfully!</div>');
-    		// redirect(base_url().'employer/allemployee');
+            // print_r($data);
+    		$this->Master_model->master_update($data,'employee',$where);
+            $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Employee Updated Successfully!</div>');
+    		redirect(base_url().'employer/allemployee');
 		}
     }
 
