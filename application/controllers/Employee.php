@@ -208,6 +208,7 @@ class Employee extends CI_controller
 
         $employee_id = $this->session->userdata('emp_id');
         $employer_id= $this->session->userdata('org_id');
+        print_r($employer_id);
 
         if ($_POST) {
 
@@ -302,7 +303,7 @@ class Employee extends CI_controller
                 $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Company Profile details have been successfully updated !</div>');
                 $company_info = $this->company_profile_model->get($employer_id);
                 $country = $this->Master_model->getMaster('country',$where=false);
-                print_r($this->db->last_query());die;
+
                 $this->load->view('fontend/employer/dashboard', compact('company_info', 'country', 'branches'));
                  
             }

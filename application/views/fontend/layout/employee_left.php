@@ -5,7 +5,7 @@
         $access=explode(",", $data['access_to_employee']);
         
         print_r($data['org_id']);
-        $data1['org_id']=$data['org_id']
+        $data1['org_id']=$data['org_id'];
         $accessSpecifiers = explode(',',$data['access_to_employee']);
        
                 $this->session->set_userdata($data1);
