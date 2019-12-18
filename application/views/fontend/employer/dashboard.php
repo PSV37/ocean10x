@@ -37,7 +37,17 @@ elseif($employee_id != null)
           <div class="section lb">
                 <div class="container">
                     <div class="row">
-                     <?php $this->load->view('fontend/layout/employer_left.php'); ?>
+
+                     <?php 
+                     if ($company_profile_id != null) 
+                     {
+
+                     	$this->load->view('fontend/layout/employer_left.php'); 
+                 	}
+                 	elseif($employee_id != null)
+					{
+					  $this->load->view('fontend/layout/employee_left.php'); 
+					} ?>
 
 
                         <div class="content col-md-9">
@@ -984,4 +994,5 @@ var tableLength=$("#BranchTable tbody tr").length;
 
 });
 		</script>
+		
  <?php $this->load->view("fontend/layout/footer.php"); ?>
