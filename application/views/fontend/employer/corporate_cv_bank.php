@@ -33,7 +33,7 @@
         <div class="userccount empdash">
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
            
-            <table class="table table-bordered table-striped" id="example">
+            <table class="table table-bordered table-striped" id="example" style="overflow: scroll;">
               <thead>
                 <tr>
                   <th class="active">SL</th>
@@ -44,14 +44,12 @@
                   <th class="active">Yrs of Experience</th>
                   <th class="active">Current Notice Period</th>
                   <th class="active">Job Type</th>
-
                   <th class="active">Working at Current Job since</th>
                   <th class="active">Current CTC</th>
                   <th class="active">Last Salary Hike</th>
                   <th class="active">Top Education</th>
                   <th class="active">Skills</th>
                   <th class="active">Certifications</th>
-
                   <th class="active">Current Work Location</th>
                   <th class="active">Current Job Role</th>
                   <th class="active">Candidate Uploaded CV </th>
@@ -88,15 +86,15 @@
                        <td><?php echo $cv_row['js_name']; ?></td>
                       <td><?php echo $cv_row['js_email']; ?></td>
                       <td><?php echo $cv_row['js_mobile']; ?></td>
-                      <td></td>
+                      <td><?php echo $cv_row['js_experience']; ?></td>
                       <td><?php echo $cv_row['js_current_notice_period']; ?></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
+                      <td><?php echo $cv_row['js_job_type']; ?></td>
+                      <td><?php echo $cv_row['js_working_since']; ?></td>
+                      <td><?php echo $cv_row['js_current_ctc']; ?></td>
+                      <td><?php echo $cv_row['js_last_salary_hike']; ?></td>
+                      <td><?php echo $cv_row['js_top_education']; ?></td>
+                      <td><?php echo $cv_row['js_skill_set']; ?></td>
+                      <td><?php echo $cv_row['js_certifications']; ?></td>
 
                       <td><?php echo $cv_row['js_current_work_location']; ?></td>
                       <td><?php echo $cv_row['js_current_designation']; ?></td>
