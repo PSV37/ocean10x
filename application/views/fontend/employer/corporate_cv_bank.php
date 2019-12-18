@@ -56,14 +56,11 @@
                   $updates = getSeekerlastUpdates($cv_row['js_email']);
                   if (!empty($updates)) {
                    if($updates[0]['update_at']=='0000-00-00 00:00:00') { 
-                      echo "js cp";
                       $mtime = time_ago_in_php($updates[0]['create_at']);
                     } else{
-                        echo "js up";
                       $mtime = time_ago_in_php($updates[0]['update_at']);
                     }
                   }else{
-                     echo "cv cr";
                     $mtime = time_ago_in_php($cv_row['created_on']);
                   }
                 ?>
@@ -83,7 +80,13 @@
                       <td><?php echo $cv_row['js_current_work_location']; ?></td>
                       <td><?php echo $cv_row['js_current_designation']; ?></td>
                       <td><?php echo $cv_row['js_current_notice_period']; ?></td>
-                      <td><a href="<?php echo  base_url(); ?>upload/Resumes/<?php if(!empty($resume[0]['resume'])){echo $resume[0]['resume'];} ?>" title='Download Attached Resume' download><i class="fa fa-download"></i> </a></td>
+                      <td>
+                        <?php if(!empty($resume)){ ?>
+                        <a href="<?php echo  base_url(); ?>upload/Resumes/<?php if(!empty($resume[0]['resume'])){echo $resume[0]['resume'];} ?>" title='Download Attached Resume' download><i class="fa fa-download"></i> </a>
+                        <?php }else{ ?>
+                          Not Attached
+                        <?php } ?>
+                      </td>
                       <td><?php echo $mtime; ?></td>
                   </tr>
                   <?php
