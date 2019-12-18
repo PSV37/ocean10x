@@ -1345,10 +1345,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     	$where='employee.org_id="'.$employer.'" and employee.emp_status!= 0';
     	//$data['result'] = $this->Master_model->getMaster('industry',$where=FALSE);
     	$join = array(
-    		'department' => 'department.dept_id = employee.dept_id|INNER',
-    		'country' => 'country.country_id = employee.country_id|INNER',
-    		'state' => 'state.state_id = employee.state_id|INNER',
-    		'city' => 'city.id = employee.city_id|INNER',
+    		'department' => 'department.dept_id = employee.dept_id|LEFT OUTER',
+    		'country' => 'country.country_id = employee.country_id|LEFT OUTER',
+    		'state' => 'state.state_id = employee.state_id|LEFT OUTER',
+    		'city' => 'city.id = employee.city_id|LEFT OUTER',
     	);
 	
     	$res = $this->Master_model->getMaster('employee',$where, $join);
