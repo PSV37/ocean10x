@@ -6,12 +6,8 @@
         print_r($access);
         echo "string";
         $HiddenProducts = explode(',',$data['access_to_employee']);
-if (in_array('editprofile', $HiddenProducts)) {
-  echo "Available";
-} else {
-  echo "Not available";
-}
-      echo "string";
+
+  
 
  ?>
 <div class="col-md-3">
@@ -21,8 +17,7 @@ if (in_array('editprofile', $HiddenProducts)) {
       <li> <a href="<?php echo base_url(); ?>employee/index" class=""> <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard </a> </li>
       <li class="title">Employee</li>
       <?php 
-      echo $result;
-      if($result>0)
+      if (in_array('editprofile', $HiddenProducts)) 
   {?>
   <li> <a href="<?php echo base_url() ?>employee/edit-profile" class=""> <i class="fa fa-user-circle-o" aria-hidden="true"></i> My Profile </a> </li>
   <?php }?> 
