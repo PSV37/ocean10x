@@ -5,7 +5,7 @@
         $access=explode(",", $data['access_to_employee']);
         print_r($access);
         echo "string";
-        $result=array_search('edit_profile',$data); 
+        $result=array_search('edit_profile',$access); 
       print_r($result);
 
  ?>
