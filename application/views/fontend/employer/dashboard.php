@@ -1,7 +1,10 @@
 <?php 
 $company_profile_id = $this->session->userdata('company_profile_id');
 
+
  $employee_id = $this->session->userdata('emp_id');
+ print_r($company_profile_id);
+print_r($employee_id);
 if ($company_profile_id != null) {
  $this->load->view('fontend/layout/employer_header.php');
 }
@@ -994,5 +997,5 @@ var tableLength=$("#BranchTable tbody tr").length;
 
 });
 		</script>
-		
+
  <?php $this->load->view("fontend/layout/footer.php"); ?>

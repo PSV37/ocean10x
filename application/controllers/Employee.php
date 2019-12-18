@@ -13,7 +13,7 @@ class Employee extends CI_controller
         $this->load->model('Employee_photo_model');
         $this->load->model('job_posting_model');
         $this->load->model('company_profile_model');
-        
+
         $emp_id = $this->session->userdata('emp_id');
         // echo $emp_id;
         if ($emp_id != null) {
@@ -205,7 +205,7 @@ class Employee extends CI_controller
                 $this->load->view('fontend/employee/active_job.php', compact('company_active_jobs', 'employer_id'));
                 // print_r($company_active_jobs);
             }
-             public function profile_setting()
+    public function profile_setting()
     {
 
         $employee_id = $this->session->userdata('emp_id');
