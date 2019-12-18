@@ -5,7 +5,7 @@
         $access=explode(",", $data['access_to_employee']);
         print_r($access);
         echo "string";
-        $HiddenProducts = explode(',',$$data['access_to_employee']);
+        $HiddenProducts = explode(',',$data['access_to_employee']);
 if (in_array('editprofile', $HiddenProducts)) {
   echo "Available";
 } else {
