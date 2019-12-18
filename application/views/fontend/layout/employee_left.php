@@ -2,7 +2,7 @@
  $where_apply="emp_id='$employee_id'";
         $select_edu = "access_to_employee";
         $data = $this->Master_model->get_master_row("employee", $select_edu, $where_apply, $join = FALSE);
-        $access=$data['access_to_employee'];
+        $access[]=$data['access_to_employee'];
         print_r($access);
  ?>
 <div class="col-md-3">
