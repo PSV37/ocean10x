@@ -31,7 +31,7 @@
       <?php $this->load->view('fontend/layout/employer_left.php'); ?>
       <div class="content col-md-9">
         <div class="userccount empdash">
-          <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
+          <div class="formpanel" style="overflow-x: scroll; overflow-y: hidden;"> <?php echo $this->session->flashdata('success'); ?>
            
             <table class="table table-bordered table-striped" id="example" style="overflow: scroll;">
               <thead>
