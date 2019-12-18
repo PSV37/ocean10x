@@ -4,6 +4,8 @@
         $data = $this->Master_model->get_master_row("employee", $select_edu, $where_apply, $join = FALSE);
         $access=explode(",", $data['access_to_employee']);
         print_r($access);
+        $result=array_search('edit_profile', $access); 
+      print_r($result);
 
  ?>
 <div class="col-md-3">
@@ -12,7 +14,7 @@
       <!-- <li> <a href="<?php echo base_url(); ?>" class=""> <i class="fa fa-home" aria-hidden="true"></i>Home </a> </li> -->
       <li> <a href="<?php echo base_url(); ?>employee/index" class=""> <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard </a> </li>
       <li class="title">Employee</li>
-      <?php $result=array_search('edit_profile', $access); 
+      <?php 
       echo $result;
       if($result>0)
   {?>
