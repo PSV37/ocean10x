@@ -2,10 +2,10 @@
  $where_apply="emp_id='$employee_id'";
         $select_edu = "access_to_employee";
         $data = $this->Master_model->get_master_row("employee", $select_edu, $where_apply, $join = FALSE);
-        // $access=explode(",", $data);
-        // print_r($access);
+        $access=explode(",", $data['access_to_employee']);
+        print_r($access);
         echo "string";
-        $result=array_search('edit_profile', $data); 
+        $result=array_search('edit_profile',$data); 
       print_r($result);
 
  ?>
