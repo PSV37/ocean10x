@@ -165,6 +165,9 @@ $route['employee/edit-profile']="employee/edit_profile";
 $route['change-password']="employee/change_password";
 $route['active-job']="employee/current_jobs";
 $route['consultants']="employee/get_fav_consultants";
+$route['company-profile']="employee/profile_setting";
+$route['post-a-job']="employee/job_post";
+
 
 
 

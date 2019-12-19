@@ -3,27 +3,25 @@
         $select_edu = "access_to_employee,org_id";
         $data = $this->Master_model->get_master_row("employee", $select_edu, $where_apply, $join = FALSE);
         $access=explode(",", $data['access_to_employee']);
-        
-        print_r($data['org_id']);
-        $data1['org_id']=$data['org_id'];
         $accessSpecifiers = explode(',',$data['access_to_employee']);
-       
-                $this->session->set_userdata($data1);
-
-  
-
+        
  ?>
 <div class="col-md-3">
   <nav class="side-menu hidden-sm hidden-xs">
     <ul>
-      <!-- <li> <a href="<?php echo base_url(); ?>" class=""> <i class="fa fa-home" aria-hidden="true"></i>Home </a> </li> -->
+     
       <li> <a href="<?php echo base_url(); ?>employee/index" class=""> <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard </a> </li>
       <li> <a href="<?php echo base_url() ?>employee/edit-profile" class=""> <i class="fa fa-check-square-oa-user-circle-o" aria-hidden="true"></i> My Profile </a> </li>
       <li class="title">Employee</li>
       <?php 
       if (in_array('editprofile', $accessSpecifiers)) 
       {?>
-        <li> <a href="<?php echo base_url() ?>employee/profile_setting" class=""> <i class="fa fa-check-square-oa-user-circle-o" aria-hidden="true"></i>Edit Company Profile</a> </li>
+        <li> <a href="<?php echo base_url() ?>company-profile" class=""> <i class="fa fa-check-square-oa-user-circle-o" aria-hidden="true"></i>Edit Company Profile</a> </li>
+      <?php }?> 
+      <?php 
+      if (in_array('postjob', $accessSpecifiers)) 
+      {?>
+        <li> <a href="<?php echo base_url(); ?>post-a-job" class=""> <i class="fa fa-pencil" aria-hidden="true"></i> Post New Job </a> </li>
       <?php }?> 
       
       

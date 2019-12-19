@@ -1,17 +1,7 @@
 <?php 
-$company_profile_id = $this->session->userdata('company_profile_id');
 
-
- $employee_id = $this->session->userdata('emp_id');
- print_r($company_profile_id);
-print_r($employee_id);
-if ($company_profile_id != null) {
- $this->load->view('fontend/layout/employer_header.php');
-}
-elseif($employee_id != null)
-{
 	$this->load->view('fontend/layout/employee_header.php');
-}
+
    
 ?>   
 <style type="text/css">
@@ -42,15 +32,9 @@ elseif($employee_id != null)
                     <div class="row">
 
                      <?php 
-                     if ($company_profile_id != null) 
-                     {
-
-                     	$this->load->view('fontend/layout/employer_left.php'); 
-                 	}
-                 	elseif($employee_id != null)
-					{
+                    
 					  $this->load->view('fontend/layout/employee_left.php'); 
-					} ?>
+					 ?>
 
 
                         <div class="content col-md-9">
