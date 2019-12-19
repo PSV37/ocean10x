@@ -398,11 +398,11 @@ class Employee extends MY_Employee_Controller
                             '<div class="alert alert-success alert-dismissable">
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                             Vacancy post is sucessfully created</div>');
-                            redirect('job/show/'.$job_info['job_slugs']);
+                            redirect('employee_job/show/'.$job_info['job_slugs']);
                 } else {
                         $this->job_posting_model->update($job_info, $job_post_id);
                         $this->session->set_flashdata('update','<div class="alert alert-success alert-dismissable"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>Vacancy post is sucessfully Update;</div>');
-                        redirect('job/show/'.$job_info['job_slugs']);
+                        redirect('employee_job/show/'.$job_info['job_slugs']);
                     }
             } else {
                     $data['city'] = $this->Master_model->getMaster('city',$where=false);
