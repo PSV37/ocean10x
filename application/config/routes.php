@@ -168,6 +168,12 @@ $route['consultants']="employee/get_fav_consultants";
 $route['company-profile']="employee/profile_setting";
 $route['post-a-job']="employee/job_post";
 $route['jobs']="employee/active_job";
+$route['update-job']="employee/update_job";
+$route['delete-job']="employee/delete_job";
+$route['forword-job']="employee/forword_job";
+$route['all-applicants/(:num)']="employee/all_applicant/$1";
+$route['all-results/(:num)']="employee/all_exam_result/$1";
+
 
 
 
