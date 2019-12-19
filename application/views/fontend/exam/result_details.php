@@ -1,6 +1,9 @@
 <?php 
 $employer_id=$this->session->userdata('company_profile_id');
 $company_id=$this->session->userdata('company_id');
+print_r($employer_id);
+print_r($company_id);
+
 if (isset($employer_id) && !empty($employer_id)) {
   $this->load->view('fontend/layout/employer_header.php');
 }
