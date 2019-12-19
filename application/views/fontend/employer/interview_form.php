@@ -47,8 +47,8 @@ if ($company_id != null) {?>
           </div>
           <div class="col-sm-3">  
             <label class="control-label" for="email" onchange="handler(event);">Start Time<span class="required">*</span></label>
-            <!-- <input type="time" name="start_time[]" id="start_time" class="form-control" value="<?php echo date('H:i');?>"> -->
-             <select class="form-control">
+            <input type="time" name="start_time[]" id="start_time" class="form-control" value="<?php echo date('H:i');?>">
+            <!--  <select class="form-control">
                 <?php
                 $start = "1:00";
                 $end = "24:00";
@@ -60,7 +60,7 @@ if ($company_id != null) {?>
                 while($tNow <= $tEnd){?>
                 <option value="<?php echo date("H:i A",$tNow); ?>"><?php echo date("H:i",$tNow)."\n"; ?> </option>
                 <?php $tNow = strtotime('+30 minutes',$tNow); }?>
-            </select>
+            </select> -->
                   
   
  

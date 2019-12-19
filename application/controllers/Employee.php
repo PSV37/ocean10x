@@ -1068,6 +1068,286 @@ class Employee extends MY_Employee_Controller
 
         redirect('employee/all_applicant/'.$job_id);
     }
+    public function send_interview_invitation($job_apply_id = null)
+    {
+        $company_id = $this->session->userdata('company_profile_id');
+       
+        $apply_id= $job_apply_id;
+
+        $where_apply="job_apply_id='$apply_id'";
+        $select_s = "job_seeker_id,job_post_id";
+        $js_apply = $this->Master_model->get_master_row("job_apply", $select_s, $where_apply, $join = FALSE);
+
+        $where_edu="job_seeker_id='".$js_apply['job_seeker_id']."'";
+        $select_edu = "full_name,email";
+        $js_data = $this->Master_model->get_master_row("js_info", $select_edu, $where_edu, $join = FALSE);
+
+        $where_job="job_post_id='".$js_apply['job_post_id']."'";
+        $select_job = "job_post_id,job_title";
+        $job_data = $this->Master_model->get_master_row("job_posting", $select_job, $where_job, $join = FALSE);
+
+        $interview_date = $this->input->post('interview_date');
+        $start_time = $this->input->post('start_time');
+        $end_time = $this->input->post('end_time');
+        $interview_type = $this->input->post('interview_type');
+        $interview_address = addslashes($this->input->post('interview_address'));
+        $user_message = addslashes($this->input->post('message'));
+        $interview_id = $this->input->post('interview_id');
+       // echo date('Y-m-d', strtotime(str_replace('/', '-', $interview_date))); die;
+
+        $inte_array = array(
+            'job_post_id'           => $js_apply['job_post_id'],
+            'job_seeker_id'         => $js_apply['job_seeker_id'],
+            'company_id'            => $company_id,
+            // 'interview_date'        => date('Y-m-d', strtotime(str_replace('/', '-', $interview_date))),
+            // 'start_time'            => $start_time,
+            // 'end_time'              => $end_time,
+            'interview_type'        => $interview_type,
+            'interview_details'     => $interview_address,
+            'message_to_candidate'  => $user_message,
+        );
+
+        $inter_his_array = array(
+            'job_post_id'           => $js_apply['job_post_id'],
+            'job_seeker_id'         => $js_apply['job_seeker_id'],
+            'company_id'            => $company_id,
+           // 'interview_date'        => date('Y-m-d', strtotime(str_replace('/', '-', $interview_date))),
+          //  'start_time'            => $start_time,
+            //'end_time'              => $end_time,
+            'interview_type'        => $interview_type,
+            'interview_details'     => $interview_address,
+            'message_to_candidate'  => $user_message,
+            'created_on'            => date('Y-m-d H:i:s'),
+            'created_by'            => $company_id,
+        );
+        $this->Master_model->master_insert($inter_his_array,'interview_history');
+
+        if(empty($interview_id)){
+            $inte_array['created_by']  = $company_id;
+            $inte_array['created_on']  = date('Y-m-d H:i:s');
+            $ins_id = $this->Master_model->master_insert($inte_array,'interview_scheduler');
+            if($ins_id)
+            {
+                $where_del = "interview_id='$ins_id'";
+                $del = $this->Master_model->master_delete('interview_dates',$where_del);
+                if($del==true)
+                {
+                    for($l=0;$l<sizeof($interview_date);$l++)
+                    {
+                        if($interview_date[$l]!=''){
+                           
+                            $lang_array = array(
+                                'interview_id'   => $ins_id,
+                                'interview_date' => date('Y-m-d', strtotime(str_replace('/', '-', $interview_date[$l]))),
+                                'start_time'     => $start_time[$l],
+                                'end_time'       => $end_time[$l],
+                            );
+                           $this->Master_model->master_insert($lang_array, 'interview_dates');
+                           $this->Master_model->master_insert($lang_array, 'interview_dates_history');
+                        }
+                    }
+                }
+                $where['interview_id'] = $ins_id;
+                $interview_dates = $this->Master_model->getMaster('interview_dates',$where);
+                
+                $email = $js_data['email'];
+                // $email = 'shyam@itdivine.in';
+                $subject = 'UNCONFIRMED. Interview request for '.$js_data['full_name'];
+                $message = '
+                        <style>
+                            .btn-primary,.btn-info{
+                                width: 232px;
+                                color: #fff;
+                                text-align: center;
+                                margin: 0 0 0 5%;
+                                background-color: #6495ED;
+                                padding: 5px;
+                                text-decoration: none;
+                            }
+                        
+                        </style>
+                    <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+                    <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+                    <br><br>Hi '.$js_data['full_name'].',<br>'.$user_message.'<br/><br/>Please check the following interview details: <br/><b>Job Title: </b> '.$job_data['job_title'].'<br/>
+                        <table>
+                        <tr><td>Interview Date</td><td>Start Time</td><td>End Time</td><td></td></tr>';
+
+         
+                if(sizeof($interview_dates)==1)
+                    {
+                        for($l1=0;$l1<sizeof($interview_dates);$l1++)
+                        {
+                            $message .='<tr><td>'.$interview_dates[$l1]['interview_date'].'</td><td>'.$interview_dates[$l1]['start_time'].'</td><td>'.$interview_dates[$l1]['end_time'].'</td><td></td></tr>';
+                        }
+                            $message .= '
+                                </table><br/><b>Interview Type: </b> '.$interview_type.'<br/><b>Interview Details: </b> '.$interview_address.'<br>';
+                                
+                            $message .= '
+                                <br><br><a href="'.base_url().'Confirm_interview/confirm_interview_now?apply_id='.base64_encode($ins_id).'&js_id='.base64_encode($email).'" class="btn btn-primary" value="Confirm Interview" align="center" target="_blank">Confirm Interview</a>
+                                <a href="'.base_url().'Confirm_interview/reschedule_interview?apply_id='.base64_encode($ins_id).'&js_id='.base64_encode($email).'" class="btn btn-info" value="Reschedule Interview" align="center" target="_blank">Reschedule Interview</a>';
+                    }else{
+
+                        for($l1=0;$l1<sizeof($interview_dates);$l1++)
+                        {
+                            $message .='<tr><td>'.$interview_dates[$l1]['interview_date'].'</td><td>'.$interview_dates[$l1]['start_time'].'</td><td>'.$interview_dates[$l1]['end_time'].'</td><td><a href="#">Select</a></td></tr>';
+                        }
+                        $message .= '
+                                </table><br/><b>Interview Type: </b> '.$interview_type.'<br/><b>Interview Details: </b> '.$interview_address.'<br>';
+                    }
+                    $message .=' <br><br><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+
+
+                   $send = sendEmail_JobRequest($email,$message,$subject);
+                   redirect('employer/all_applicant/'.$js_apply['job_post_id']);
+            }
+
+        }else{
+            $inte_array['updated_by']  = $company_id;
+            $inte_array['updated_on']  = date('Y-m-d H:i:s');
+
+            $where_ins['id']=$interview_id;
+            $ins_id = $this->Master_model->master_update($inte_array,'interview_scheduler',$where_ins);
+
+            if($ins_id)
+            {
+
+                $where_del = "interview_id='$interview_id'";
+                $del = $this->Master_model->master_delete('interview_dates',$where_del);
+                if($del==true)
+                {
+                    for($l=0;$l<sizeof($interview_date);$l++)
+                    {
+                        if($interview_date[$l]!=''){
+                           
+                            $lang_array = array(
+                                'interview_id'   => $interview_id,
+                                'interview_date' => date('Y-m-d', strtotime(str_replace('/', '-', $interview_date[$l]))),
+                                'start_time'     => $start_time[$l],
+                                'end_time'       => $end_time[$l],
+                            );
+                           $this->Master_model->master_insert($lang_array, 'interview_dates');
+                           $this->Master_model->master_insert($lang_array, 'interview_dates_history');
+                        }
+                    }
+                }
+
+                $where['interview_id'] = $interview_id;
+                $interview_datess = $this->Master_model->getMaster('interview_dates',$where);
+
+                $email = $js_data['email'];
+                // $email = 'shyam@itdivine.in';
+                $subject = 'UNCONFIRMED RESCHEDULED. Interview request for '.$js_data['full_name'];
+                $message = '
+                        <style>
+                            .btn-primary,.btn-info{
+                                width: 232px;
+                                color: #fff;
+                                text-align: center;
+                                margin: 0 0 0 5%;
+                                background-color: #6495ED;
+                                padding: 5px;
+                                text-decoration: none;
+                            }
+                        
+                        </style>
+                    <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+                    <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+                    <br><br>Hi '.$js_data['full_name'].',<br>'.$user_message.'<br/><br/>Please check the following rescheduled interview details: <br/><b>Job Title: </b> '.$job_data['job_title'].'<br/>
+                         <table>
+                        <tr><td><b>Interview Date</b></td><td><b>Start Time</b></td><td><b>End Time</b></td></tr>';
+
+                if(sizeof($interview_datess)==1)
+                    {
+                        for($l1=0;$l1<sizeof($interview_datess);$l1++)
+                        {
+                            $message .='<tr><td>'.$interview_datess[$l1]['interview_date'].'</td><td>'.$interview_datess[$l1]['start_time'].'</td><td>'.$interview_datess[$l1]['end_time'].'</td><td></td></tr>';
+                        }
+                            $message .= '
+                                </table><br/><b>Interview Type: </b> '.$interview_type.'<br/><b>Interview Details: </b> '.$interview_address.'<br>';
+                                
+                            $message .= '
+                                <br><br><a href="'.base_url().'Confirm_interview/confirm_interview_now?apply_id='.base64_encode($ins_id).'&js_id='.base64_encode($email).'" class="btn btn-primary" value="Confirm Interview" align="center" target="_blank">Confirm Interview</a>
+                                <a href="'.base_url().'Confirm_interview/reschedule_interview?apply_id='.base64_encode($ins_id).'&js_id='.base64_encode($email).'" class="btn btn-info" value="Reschedule Interview" align="center" target="_blank">Reschedule Interview</a>';
+                    }else{
+
+                        for($l1=0;$l1<sizeof($interview_datess);$l1++)
+                        {
+                          
+                            $message .='<tr><td>'.$interview_datess[$l1]['interview_date'].'</td><td>'.$interview_datess[$l1]['start_time'].'</td><td>'.$interview_datess[$l1]['end_time'].'</td><td><a href="'.base_url().'Confirm_interview/select_slot?apply_id='.base64_encode($interview_datess[$l1]['id']).'&js_id='.base64_encode($email).'" target="_blank">Select</a></td></tr>';
+                        }
+                        $message .= '
+                                </table><br/><b>Interview Type: </b> '.$interview_type.'<br/><b>Interview Details: </b> '.$interview_address.'<br>';
+                    }
+                    $message .=' <br><br><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+
+
+                   $send = sendEmail_JobRequest($email,$message,$subject);
+                   redirect('employer/all_applicant/'.$js_apply['job_post_id']);
+            }
+        }
+            
+        
+    }
+
+    public function confirm_rescheduled()
+    {
+        $interview_id=base64_decode($this->input->get('apply_id'));
+        // print_r($interview_id);
+        
+        // $where_cond['is_rescheduled']='No';
+        // $where_del = "id='$ins_id'";
+        // $del = $this->Master_model->master_delete('interview_dates',$where_del);
+
+         $Join_data = array(
+                                    'interview_scheduler' => 'interview_scheduler.id = interview_dates.interview_id|Left OUTER ',
+                                        'company_profile' => 'company_profile.company_profile_id = interview_scheduler.company_id|Left OUTER ',
+                                         'js_info' => 'js_info.job_seeker_id = interview_scheduler.job_seeker_id|Left OUTER ',
+                                         'job_posting' => 'job_posting.job_post_id = interview_scheduler.job_post_id|Left OUTER ',
+                                    );
+        $where_cond['interview_dates.id']=$interview_id;
+       
+         $interview_data = $this->Master_model->getMaster('interview_dates',$where_cond, $Join_data, $order = false, $field = false, $select=FALSE,$limit=false,$start=false, $search=false);
+         $resc_data=$interview_data['0'];
+         
+          $data_status=array( 
+                    'interview_date'    => $resc_data['interview_date'],
+                    'start_time'        => $resc_data['start_time'],
+                    'end_time'        => $resc_data['end_time'],
+                    'updated_on'     =>date('Y-m-d H:i:s'),
+                    'updated_by'    =>$this->session->userdata('company_profile_id'),
+                    'confirm_status'=>'1',
+                    'message_to_candidate'=>$this->input->post('message')
+                );
+                $where_u1['id']=$resc_data['interview_id'];
+                $status = $this->Master_model->master_update($data_status, 'interview_scheduler', $where_u1);
+         $where_cond['is_rescheduled']='No';
+         $ids=$resc_data['interview_id'];
+        $where_del = "is_rescheduled='No' and interview_id='$ids'";
+        $del = $this->Master_model->master_delete('interview_dates',$where_del);
+        $email=$resc_data['company_email'];
+        
+        $subject="Iterview of ".$resc_data['full_name'].' rescheduled..';
+        $message='<div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+                        <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+                        <br><br>Hi '.$resc_data["company_name"]. ',<br> you have successfully rescheduled the interview of '.$resc_data["full_name"].' on '.$resc_data["interview_date"].' at '.$resc_data['start_time'].' for the post of '.$resc_data["job_title"].' '.$resc_data["job_position"].'. The interview was previously scheduled on '.$resc_data["interview_date"].' at '.$resc_data["start_time"]. '<br/><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+                        
+
+
+                       $send = sendEmail_JobRequest($email,$message,$subject);
+                       $to_mail=$resc_data['email'];
+
+                       $subject1="Interview of " .$resc_data['company_name'].' is rescheduled.';
+        $message1='<div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+                        <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+                        <br><br>Hi '.$resc_data["full_name"].',<br> Your Interview with  '.$resc_data["company_name"].' Is successfully rescheduled on  '.$resc_data['interview_date'].' at '.$resc_data['start_time'].' for the post of '.$resc_data["job_title"].' '.$resc_data["job_position"].'. The interview was previously scheduled on '.$resc_data["interview_date"].' at '.$resc_data["start_time"]. ' <br/><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+
+                       $send1 = sendEmail_JobRequest($to_mail,$message1,$subject1);
+         // print_r($resc_data);
+                       $this->session->set_flashdata('success', 'Interview successfully Rescheduled!');
+                     redirect('all-applicants/'.$resc_data["job_post_id"]);
+          
+            
+        }
 
     
         

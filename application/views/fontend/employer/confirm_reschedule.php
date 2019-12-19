@@ -9,7 +9,15 @@
   line-height: 15px !important; 
 }
 </style>
+<?php 
+$company_id=$this->session->userdata('company_profile_id'); 
+$emp_id=$this->session->userdata('emp_id'); 
+if ($company_id != null) {?>
   <form id="Personal-info" class="form-horizontal" action="<?php echo base_url('Confirm_interview/confirm_rescheduled?apply_id='.base64_encode($interview_id));?>"  method="post" autocomplete="off">
+    <?} else{?>
+<form id="Personal-info" class="form-horizontal" action="<?php echo base_url('employee/confirm_rescheduled?apply_id='.base64_encode($interview_id));?>"  method="post" autocomplete="off">
+  <?php }
+?>
         <input type="hidden" value="" name="lang_id" id="lang_id">
                 
         <div class="panel-body"></div>   
