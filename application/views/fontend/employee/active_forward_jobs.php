@@ -77,9 +77,9 @@
                                     <div class="status">Actions</div>
                                     <span data-placement="top" data-toggle="tooltip" title="Update">
                                     <a href="<?php echo base_url() ?>update-job/<?php echo $v_companyjobs->job_post_id ?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit</a></span>
-                                    <span data-placement="top" data-toggle="tooltip" title="Remove"><a href="<?php echo base_url() ?>delete-job/<?php echo $v_companyjobs->job_post_id ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a></span>
+                                    <span data-placement="top" data-toggle="tooltip" title="Remove"><a href="<?php echo base_url() ?>employee/delete_job/<?php echo $v_companyjobs->job_post_id ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a></span>
                                     <?php   if ($v_companyjobs->job_deadline > date('Y-m-d')){ ?>
-                                    <span data-placement="top" data-toggle="tooltip" title="Forward Job"><a href="<?php echo base_url() ?>forword-job/<?php echo $v_companyjobs->job_post_id ?>" class="btn btn-primary btn-xs"><i class="fa fa-paper-plane"></i> Forward</a></span>
+                                    <span data-placement="top" data-toggle="tooltip" title="Forward Job"><a href="<?php echo base_url() ?>employee/forword_job/<?php echo $v_companyjobs->job_post_id ?>" class="btn btn-primary btn-xs"><i class="fa fa-paper-plane"></i> Forward</a></span>
                                     <?php }else{} ?>
                                     <?php   if ($v_companyjobs->is_test_required =="Yes"){ ?>
                                     <span data-placement="top" data-toggle="tooltip" title="Add Topics For Test"><a href="<?php echo base_url() ?>employer/topics_for_test/<?php echo $v_companyjobs->job_post_id ?>" class="btn btn-warning btn-xs"><i class="fa fa-plus"></i> Test Topic's</a></span>
