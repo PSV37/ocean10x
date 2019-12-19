@@ -1093,7 +1093,6 @@ class Employee extends MY_Employee_Controller
         $interview_address = addslashes($this->input->post('interview_address'));
         $user_message = addslashes($this->input->post('message'));
         $interview_id = $this->input->post('interview_id');
-       // echo date('Y-m-d', strtotime(str_replace('/', '-', $interview_date))); die;
 
         $inte_array = array(
             'job_post_id'           => $js_apply['job_post_id'],
@@ -1145,7 +1144,6 @@ class Employee extends MY_Employee_Controller
                 $interview_dates = $this->Master_model->getMaster('interview_dates',$where);
                 
                 $email = $js_data['email'];
-                // $email = 'shyam@itdivine.in';
                 $subject = 'UNCONFIRMED. Interview request for '.$js_data['full_name'];
                 $message = '
                         <style>
@@ -1192,7 +1190,7 @@ class Employee extends MY_Employee_Controller
 
 
                    $send = sendEmail_JobRequest($email,$message,$subject);
-                   redirect('employer/all_applicant/'.$js_apply['job_post_id']);
+                   redirect('employee/all_applicant/'.$js_apply['job_post_id']);
             }
 
         }else{
@@ -1276,7 +1274,7 @@ class Employee extends MY_Employee_Controller
 
 
                    $send = sendEmail_JobRequest($email,$message,$subject);
-                   redirect('employer/all_applicant/'.$js_apply['job_post_id']);
+                   redirect('employee/all_applicant/'.$js_apply['job_post_id']);
             }
         }
             
