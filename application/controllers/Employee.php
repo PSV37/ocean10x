@@ -363,9 +363,9 @@ class Employee extends MY_Employee_Controller
     }
     public function job_post()
             {
-                $employer_id = $this->session->userdata('emp_id');
+                $employer_id = $this->session->userdata('org_id');
                 if ($_POST) {
-                    $employer_id  = $this->session->userdata('emp_id');
+                    $employer_id  = $this->session->userdata('org_id');
                     $job_deadline = strtolower($this->input->post('job_deadline'));
                     $job_post_id  = $this->input->post('job_post_id');
                     $job_info     = array(
@@ -398,11 +398,11 @@ class Employee extends MY_Employee_Controller
                             '<div class="alert alert-success alert-dismissable">
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                             Vacancy post is sucessfully created</div>');
-                            redirect('job/show/'.$job_info['job_slugs']);
+                            redirect('employee_job/show/'.$job_info['job_slugs']);
                 } else {
                         $this->job_posting_model->update($job_info, $job_post_id);
                         $this->session->set_flashdata('update','<div class="alert alert-success alert-dismissable"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>Vacancy post is sucessfully Update;</div>');
-                        redirect('job/show/'.$job_info['job_slugs']);
+                        redirect('employee_job/show/'.$job_info['job_slugs']);
                     }
             } else {
                     $data['city'] = $this->Master_model->getMaster('city',$where=false);

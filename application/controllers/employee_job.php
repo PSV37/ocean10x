@@ -15,7 +15,7 @@ public function show($slug = null)
             $job_id       = $this->job_posting_model->get_job_id_by_job_slug($slug);
             $radom_jobs       = $this->job_posting_model->get_random_jobs();
 
-          $employer_id = $this->session->userdata('company_profile_id');
+          $employer_id = $this->session->userdata('emp_id');
 
            if(!empty($employer_id)){
                 $singlejob    = $this->job_posting_model->get_job_details_employer($job_id);
