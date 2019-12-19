@@ -50,7 +50,7 @@ class Employee extends MY_Employee_Controller
         $employee_id=$this->input->post('emp_id');
         if (isset($employee_id) && !empty($employee_id)) {
 
-            print_r($employee_id);
+            // print_r($employee_id);
 
             $employee_data['emp_no'] = $this->input->post('emp_no');
             $employee_data['emp_name'] = $this->input->post('emp_name');

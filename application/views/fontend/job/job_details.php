@@ -14,7 +14,7 @@ $emp_id = $this->session->userdata('emp_id');
 
              $this->load->view('fontend/layout/seeker_header.php');
 
-        } elseif($emp_id!=null) {
+        } elseif($emp_id != null) {
 
              $this->load->view('fontend/layout/employee_header.php');
     
