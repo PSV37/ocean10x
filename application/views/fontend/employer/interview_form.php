@@ -10,7 +10,16 @@
   line-height: 15px !important; 
 }
 </style>
-  <form id="interview-info" class="form-horizontal" action="<?php echo base_url();?>employer/send_interview_invitation/<?php if(!empty($js_apply_data)) echo $js_apply_data['job_apply_id']; ?>" method="post">
+<?php 
+$company_id=$this->session->userdata('company_profile_id'); 
+$emp_id=$this->session->userdata('emp_id'); 
+if ($company_id != null) {?>
+ <form id="interview-info" class="form-horizontal" action="<?php echo base_url();?>employer/send_interview_invitation/<?php if(!empty($js_apply_data)) echo $js_apply_data['job_apply_id']; ?>" method="post">
+<?} else{?>
+<form id="interview-info" class="form-horizontal" action="<?php echo base_url();?>employee/send_interview_invitation/<?php if(!empty($js_apply_data)) echo $js_apply_data['job_apply_id']; ?>" method="post">
+  <?php}
+?>
+  
       
       <input type="hidden" name="interview_id" value="">
       <!-- <div class="form-group">
