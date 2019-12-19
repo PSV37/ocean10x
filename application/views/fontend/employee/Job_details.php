@@ -189,7 +189,7 @@
             							} 
 							          ?>
 							        </div>
-                      <a href="<?php echo base_url() ?>reject-resume/<?php echo $v_applicant->job_seeker_id; ?>" class="reject"><i class="fa fa-times" aria-hidden="true"></i> <strong>Reject</strong> 
+                      <a href="<?php echo base_url() ?>reject-resume/<?php echo $v_applicant->job_apply_id; ?>" class="reject"><i class="fa fa-times" aria-hidden="true"></i> <strong>Reject</strong> 
                       </a>  <br>
 
                      
