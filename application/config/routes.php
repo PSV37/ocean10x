@@ -167,6 +167,8 @@ $route['active-job']="employee/current_jobs";
 $route['consultants']="employee/get_fav_consultants";
 $route['company-profile']="employee/profile_setting";
 $route['post-a-job']="employee/job_post";
+$route['jobs']="employee/active_job";
+
 
 
 

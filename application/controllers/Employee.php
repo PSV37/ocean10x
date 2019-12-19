@@ -478,7 +478,14 @@ class Employee extends MY_Employee_Controller
             $result .='<option value="">Specilazation Not Found </option>';
         }
          echo $result;
-    }      
+    }    
+
+     public function active_job()
+            {
+                $employer_id         = $this->session->userdata('company_id');
+                $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
+                $this->load->view('fontend/employee/active_forward_jobs.php', compact('company_active_jobs', 'employer_id'));
+            }  
 
 
     
