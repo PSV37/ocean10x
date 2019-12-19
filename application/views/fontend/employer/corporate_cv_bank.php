@@ -98,11 +98,12 @@
                       <td><?php echo $cv_row['js_current_designation']; ?></td>
                      
                       <td>
-                        <?php if(!empty($resume)){ ?>
+                        Not Attached
+                        <!-- <?php if(!empty($resume)){ ?>
                         <a href="<?php echo  base_url(); ?>upload/Resumes/<?php if(!empty($resume[0]['resume'])){echo $resume[0]['resume'];} ?>" title='Download Attached Resume' download><i class="fa fa-download"></i> </a>
                         <?php }else{ ?>
                           Not Attached
-                        <?php } ?>
+                        <?php } ?> -->
                       </td>
                       <td><?php echo $mtime; ?></td>
                   </tr>
