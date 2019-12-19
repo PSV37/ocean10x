@@ -13,6 +13,11 @@ class Employee extends MY_Employee_Controller
         $this->load->model('Employee_photo_model');
         $this->load->model('job_posting_model');
         $this->load->model('company_profile_model');
+        $config = array(
+            'field' => 'job_slugs',
+            'table' => 'job_posting',
+        );
+        $this->load->library('slug', $config);
 
         $emp_id = $this->session->userdata('emp_id');
         // echo $emp_id;
