@@ -210,7 +210,7 @@ class Employee extends CI_controller
 
         $employee_id = $this->session->userdata('emp_id');
         $employer_id= $this->session->userdata('org_id');
-        print_r($employer_id);
+        // print_r($employer_id);
 
         if ($_POST) {
 
