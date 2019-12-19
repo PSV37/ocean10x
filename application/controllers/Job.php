@@ -106,8 +106,9 @@ class Job extends MY_Fontend_Controller
             $radom_jobs       = $this->job_posting_model->get_random_jobs();
 
           $employer_id = $this->session->userdata('company_profile_id');
+          $company_id = $this->session->userdata('company_id');
 
-           if(!empty($employer_id)){
+           if(!empty($employer_id) || !empty($company_id) ){
                 $singlejob    = $this->job_posting_model->get_job_details_employer($job_id);
             }
             else{ 
