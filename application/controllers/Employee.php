@@ -355,12 +355,125 @@ class Employee extends MY_Employee_Controller
      echo $result;
 }
 
-public function search(){
+    public function search(){
         $term = $this->input->get('term');
         $this->db->like('pincode', $term);
         $data = $this->db->get("pincode")->result();
         echo json_encode( $data);
     }
+    public function job_post()
+            {
+                $employer_id = $this->session->userdata('emp_id');
+                if ($_POST) {
+                    $employer_id  = $this->session->userdata('emp_id');
+                    $job_deadline = strtolower($this->input->post('job_deadline'));
+                    $job_post_id  = $this->input->post('job_post_id');
+                    $job_info     = array(
+                        'company_profile_id' => $employer_id,
+                        'job_title'          => $this->input->post('job_title'),
+                        'job_slugs'          => $this->slug->create_uri($this->input->post('job_title')),
+                        'job_desc'           => $this->input->post('job_desc'),
+                        'job_category'       => $this->input->post('job_category'),
+                        'education'          => $this->input->post('education'),
+                        'benefits'           => $this->input->post('benefits'),
+                        'experience'         => $this->input->post('experience'),
+                        'city_id'            => $this->input->post('city_id'),
+                        'job_nature'         => $this->input->post('job_nature'),
+                        'job_edu'            => $this->input->post('job_edu'),
+                        'no_jobs'            => $this->input->post('no_jobs'),
+                        'edu_specialization' => $this->input->post('job_edu_special'),   //new added 
+                        'job_role'           => $this->input->post('job_role'),   //new added field
+                        'skills_required'    => implode(',', $this->input->post('skill_set')), //new 
+                        'job_level'          => $this->input->post('job_level'),
+                        'salary_range'       => $this->input->post('salary_range'),
+                        "job_deadline"       => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('job_deadline')))),
+                        'working_hours'      => $this->input->post('working_hours'),
+                        'is_test_required'      => $this->input->post('job_test_requirment'),
+                        
+                    );
+                if (empty($job_post_id)) 
+                {
+                        $this->job_posting_model->insert($job_info);
+                        $this->session->set_flashdata('success',
+                            '<div class="alert alert-success alert-dismissable">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                            Vacancy post is sucessfully created</div>');
+                            redirect('job/show/'.$job_info['job_slugs']);
+                } else {
+                        $this->job_posting_model->update($job_info, $job_post_id);
+                        $this->session->set_flashdata('update','<div class="alert alert-success alert-dismissable"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>Vacancy post is sucessfully Update;</div>');
+                        redirect('job/show/'.$job_info['job_slugs']);
+                    }
+            } else {
+                    $data['city'] = $this->Master_model->getMaster('city',$where=false);
+                    $data['country'] = $this->Master_model->getMaster('country',$where=false);
+                    $data['state'] = $this->Master_model->getMaster('state',$where=false);
+                    $data['education_level'] = $this->Master_model->getMaster('education_level',$where=false);
+
+                    $where_cn= "status=1";
+                    $select = "job_role_title, skill_set ,id";
+                    $data['job_role_data'] = $this->Master_model->getMaster('job_role',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
+
+
+                    $this->load->view('fontend/employee/job_post', $data);
+                }
+            }
+
+      function search_city(){
+        if (isset($_GET['term'])) {
+
+            $result = $this->job_posting_model->search_city($_GET['term']);
+        
+            if (count($result) > 0) {
+            foreach ($result as $row)
+                $arr_result[] = $row->city_name;
+                echo json_encode($arr_result);
+            }
+        }
+    }
+     function getSkillsByRole() {
+        $id=$this->input->post('role_id');
+        $whereres = "id='$id'";
+        $role_data= $this->Master_model->get_master_row('job_role',$select = FALSE,$whereres);
+
+        $sk = $role_data['skill_set'];
+        
+        if ($sk) {
+            $where_sk= "id IN (".$sk.") AND status=1";
+            $select_sk = "skill_name ,id";
+            $skills = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=false,$start=false, $search=false);
+              
+               $result = '';
+                if(!empty($skills)){ 
+                    foreach($skills as $skill_row){
+                      $result .="<input type='checkbox' name='skill_set[]' style='height:15px; width:20px;' id='skill_set' value=".$skill_row['id']." checked> ".$skill_row['skill_name']."";
+
+                    }
+                }else{
+                    $result .='Skills Not Found ';
+                }
+                                        
+        }
+        else{
+            $result .='Skills Not Found ';
+        }
+         echo $result;    
+    }
+    function getEducation_specialization(){
+        $level_id = $this->input->post('id');
+        $where['edu_level_id'] = $level_id;
+        $special = $this->Master_model->getMaster('education_specialization',$where);
+        $result = '';
+        if(!empty($special)){ 
+            $result .='<option value="">Select Specilazation</option>';
+            foreach($special as $spec_row){
+              $result .='<option value="'.$spec_row['id'].'">'.$spec_row['education_specialization'].'</option>';
+            }
+        }else{
+            $result .='<option value="">Specilazation Not Found </option>';
+        }
+         echo $result;
+    }      
 
 
     

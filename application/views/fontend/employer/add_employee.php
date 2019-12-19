@@ -119,9 +119,9 @@
                 <div class="form-group">
                     <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
                   <select class="selectpicker form-control" multiple data-live-search="true" id="Access[]" name="Access[]">
-                      <option value="post_job">Post A job</option>
                       <option value="editprofile">Edit Company Profile</option>
-                      <option value="Addquestion_bank">Add Ouestion Bank</option>
+                      <option value="postjob">Post A job</option>
+                      <option value="Addquestionbank">Add Ouestion Bank</option>
                       <option value="addemp">Add Employee</option>
                       <option value="addconsultant">Add Consultant</option>
                     </select>
