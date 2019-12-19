@@ -32,7 +32,7 @@
       <div class="content col-md-9">
         <div class="userccount empdash">
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
-            <form id="submit" action="<?php echo base_url() ?>employer/job_post" method="post" class="submit-form">
+            <form id="submit" action="<?php echo base_url() ?>employee/job_post" method="post" class="submit-form">
               <input type="hidden" name="job_post_id" value="<?php if(!empty($job_info->job_post_id)){echo $job_info->job_post_id;} ?>">
               <div class="row">
                 <div class="col-md-6 col-sm-12">

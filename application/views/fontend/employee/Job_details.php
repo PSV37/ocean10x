@@ -507,6 +507,7 @@ $(".getstatusformbylevel").on('click', function(event){
         });
        
 });
+
 </script>
 
 <!-- <style>
