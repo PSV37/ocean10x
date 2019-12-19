@@ -82,13 +82,7 @@
                     <li class="dropdown yamm-half membermenu hasmenu">
 
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <!-- <?php
-                        $emp_id = $this->session->userdata('emp_id');
-                       if(!empty($this->employee_photo_model->get_employee_photo($emp_id))):?>
-                      <img src="<?php echo base_url() ?>employee/<?php echo  $this->employee_photo_model->get_employee_photo($emp_id);?>" alt="" class="img-circle"> <strong>Welcome <?php echo $this->session->userdata('name'); ?></strong></a>
-                      <?php else: ?>
-                      <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" alt="" class="img-circle"><strong>Welcome <?php echo $this->session->userdata('name'); ?></strong></a>
-                      <?php endif; ?>  -->  
+                       
 
                         <ul class="dropdown-menu start-right">
                             <!-- <li class="dropdown-header">Welcome <?php echo $this->session->userdata('name'); ?></li> -->
