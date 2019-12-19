@@ -930,7 +930,129 @@ class Employee extends MY_Employee_Controller
                     echo "not found";
                 }
 
-            }    
+            }
+    public function update_sortlist($apply_id,$email)
+            {
+                    $email= base64_decode($email);
+                $this->job_apply_model->sendEmail_job($email,'short');
+                
+                $this->job_apply_model->update_sortlist($apply_id);
+            
+                
+                redirect_back();
+            }
+        public function update_interviewlist($apply_id,$email)
+            {
+                    $email= base64_decode($email);
+                $this->job_apply_model->sendEmail_job($email,'interview');
+                
+                $this->job_apply_model->update_interviewlist($apply_id,$job_seeker_id);
+            
+                redirect_back();
+            }
+
+            public function update_finallist($apply_id,$email)
+            {
+                $email= base64_decode($email);
+                $this->job_apply_model->sendEmail_job($email,'final');
+                
+                $this->job_apply_model->update_finallist($apply_id);
+                
+                redirect_back();
+            }
+
+    
+
+            public function downloadcv($jobseeker_id = null)
+            {
+                if (!empty($jobseeker_id)) {
+                    $company_id = $this->session->userdata('company_id');
+                    if ($this->job_apply_model->check_resume_by_id($jobseeker_id, $company_id) == true) {
+
+                        $data['resume'] = $this->job_seeker_model->resume_view_by_id($jobseeker_id);
+                       
+                        $data['edcuaiton_list']  = $this->Job_seeker_education_model->education_list_by_id($jobseeker_id);
+                        $data['experinece_list'] = $this->Job_seeker_experience_model->experience_list_by_id($jobseeker_id);
+                        $data['training_list']   = $this->Job_training_model->training_list_by_id($jobseeker_id);
+                        $data['reference_list']  = $this->Job_reference_model->reference_list_by_id($jobseeker_id);
+                        
+                        
+                        echo $this->load->view('fontend/downloadcv', $data,true); die;
+                        
+                    } else {
+                        echo "not found";
+                    }
+                } else {
+                    echo "not found";
+                }
+
+            }
+             public function reject_resume($resume_id = null)
+            {
+                if (!empty($resume_id)) {
+                    $this->job_apply_model->delete($resume_id);
+                    redirect_back();
+                } else {
+                    echo "not found";
+                }
+            }
+
+        public function interview_scheduler()
+    {
+        $company_id = $this->session->userdata('company_id');
+       
+       // $emails= base64_decode($this->input->post('job_apply_email'));
+        
+        $job_apply_id = $this->input->post('job_apply_id');
+
+        $where_apply="job_apply_id='$job_apply_id'";
+        $select_edu = "job_seeker_id,job_post_id,job_apply_id";
+        $data['js_apply_data'] = $this->Master_model->get_master_row("job_apply", $select_edu, $where_apply, $join = FALSE);
+        $job_seeker_id = $data['js_apply_data']['job_seeker_id'];
+        $job_post_id = $data['js_apply_data']['job_post_id'];
+
+        $where_js="job_seeker_id='$job_seeker_id'";
+        $data['js_info_data'] = $this->Master_model->get_master_row("js_info", $select= FALSE, $where_js, $join = FALSE);
+
+        $where_int="job_seeker_id='$job_seeker_id' AND job_post_id='$job_post_id'";
+        $data['interview_data'] = $this->Master_model->get_master_row("interview_scheduler", $select= FALSE, $where_int, $join = FALSE);
+        
+        $this->load->view('fontend/employer/interview_form',$data);
+       
+    }
+    public function interview_rescheduler()
+    {
+        $company_id = $this->session->userdata('company_id');
+        $data['interview_id'] = $this->input->post('interview_id');
+        $this->load->view('fontend/employer/confirm_reschedule',$data);
+       
+    }
+   
+
+    public function update_interview_scheduler()
+    {
+        $company_id = $this->session->userdata('company_profile_id');
+       
+        $job_apply_id = $this->input->post('apply_id');
+        
+        $interview_id = $this->input->post('interview_id');
+       
+        $where_apply="job_apply_id='$job_apply_id'";
+        $select_edu = "job_seeker_id,job_post_id,job_apply_id";
+        $data['js_apply_data'] = $this->Master_model->get_master_row("job_apply", $select_edu, $where_apply, $join = FALSE);
+        $job_seeker_id = $data['js_apply_data']['job_seeker_id'];
+        $job_post_id = $data['js_apply_data']['job_post_id'];
+
+        $where_js="job_seeker_id='$job_seeker_id'";
+        $data['js_info_data'] = $this->Master_model->get_master_row("js_info", $select= FALSE, $where_js, $join = FALSE);
+
+        $where_int="id='$interview_id'";
+        $data['interview_data'] = $this->Master_model->get_master_row("interview_scheduler", $select= FALSE, $where_int, $join = FALSE);
+       
+        $this->load->view('fontend/employer/update_interview_from',$data);
+    }
+
+    
         
 
     

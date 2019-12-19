@@ -149,11 +149,11 @@
               							if($v_applicant->apply_status == 0)
               							{ ?>
                           <span class="label label-warning">
-                            <?php echo 'Not Shorted' ?>
+                            <?php echo 'Not Shortlisted' ?>
                           </span>
                           <?php } elseif($v_applicant->apply_status == 1) { ?>
                           <span class="label label-primary">
-                            <?php echo 'Shorted' ?>
+                            <?php echo 'Shortlisted' ?>
                           </span>
                           <?php } elseif($v_applicant->apply_status == 2) { ?>
                           <span class="label label-primary">
@@ -177,19 +177,19 @@
                       <div class="action">
                         <?php 
             							if($v_applicant->apply_status==0){
-            							echo btn_sorted('employer/update_sortlist/' . $v_applicant->job_apply_id.'/'. base64_encode($seeker_info->email)).'<br> short listed '; }
+            							echo btn_sortlist('employee/update_sortlist/' . $v_applicant->job_apply_id.'/'. base64_encode($seeker_info->email)).'<br> short listed '; }
             							else if($v_applicant->apply_status==1) {
-            							echo btn_interview('employer/update_interviewlist/' . $v_applicant->job_apply_id.'/'. base64_encode($seeker_info->email)).'<br> interview list';
+            							echo btn_interview('employee/update_interviewlist/' . $v_applicant->job_apply_id.'/'. base64_encode($seeker_info->email)).'<br> interview list';
             							} 
             							else if($v_applicant->apply_status==2) {
-            							echo btn_final('employer/update_finallist/' . $v_applicant->job_apply_id.'/'. base64_encode($seeker_info->email)).'<br> final list';
+            							echo btn_final('employee/update_finallist/' . $v_applicant->job_apply_id.'/'. base64_encode($seeker_info->email)).'<br> final list';
             							} 
             							else if($v_applicant->apply_status==3) {
             							echo '<span class="label label-primary"><i class="fa fa-check" aria-hidden="true"></i> Selected</span>';
             							} 
 							          ?>
 							        </div>
-                      <a href="<?php echo base_url() ?>employer/reject-resume/<?php echo $v_applicant->job_seeker_id; ?>" class="reject"><i class="fa fa-times" aria-hidden="true"></i> <strong>Reject</strong> 
+                      <a href="<?php echo base_url() ?>employee/reject-resume/<?php echo $v_applicant->job_seeker_id; ?>" class="reject"><i class="fa fa-times" aria-hidden="true"></i> <strong>Reject</strong> 
                       </a>  <br>
 
                      
@@ -397,7 +397,7 @@ var jArray= <?php echo json_encode($array_id); ?>;
 var total=<?php echo count($array_id); ?>;
 
     for(var i=0;i<total;i++){
-   var launch_code = "http://yourdomain.com/employer/downloadcv/"+jArray[i];
+   var launch_code = "http://yourdomain.com/employee/downloadcv/"+jArray[i];
          window.open(launch_code, '_blank');
      
     }
@@ -409,7 +409,7 @@ $(".getformbylevel").on('click', function(event){
     //(... rest of your JS code)
     var job_apply_id = $(this).data('level_id');
      $.ajax({
-              url: "<?php echo base_url();?>Employer/interview_scheduler",
+              url: "<?php echo base_url();?>Employee/interview_scheduler",
               type: "POST",
               data: {job_apply_id:job_apply_id},
           
@@ -435,7 +435,7 @@ $(".getformbylevel").on('click', function(event){
     //(... rest of your JS code)
     var interview_id = $(this).data('level_id');
      $.ajax({
-              url: "<?php echo base_url();?>Employer/interview_rescheduler",
+              url: "<?php echo base_url();?>Employee/interview_rescheduler",
               type: "POST",
               data: {interview_id:interview_id},
           
@@ -462,7 +462,7 @@ $(".geteditformbylevel").on('click', function(event){
     var int_id = level_id[1];
 
      $.ajax({
-              url: "<?php echo base_url();?>Employer/update_interview_scheduler",
+              url: "<?php echo base_url();?>Employee/update_interview_scheduler",
               type: "POST",
               data: {apply_id:apply_id,interview_id:int_id},
           
@@ -491,7 +491,7 @@ $(".getstatusformbylevel").on('click', function(event){
     var job_id = level_id[1];
 
      $.ajax({
-              url: "<?php echo base_url();?>Employer/update_interview_status",
+              url: "<?php echo base_url();?>Employee/update_interview_status",
               type: "POST",
               data: {job_id:job_id,interview_id:int_id},
           
