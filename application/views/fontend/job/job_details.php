@@ -2,6 +2,7 @@
 $company_profile_id = $this->session->userdata('company_profile_id');
 
 $jobseeker_id = $this->session->userdata('job_seeker_id');
+$emp_id = $this->session->userdata('emp_id');
 
         if ($company_profile_id != null) {
 
@@ -13,10 +14,14 @@ $jobseeker_id = $this->session->userdata('job_seeker_id');
 
              $this->load->view('fontend/layout/seeker_header.php');
 
-        } else {
+        } elseif($emp_id!=null) {
 
-    $this->load->view('fontend/layout/header.php');
+             $this->load->view('fontend/layout/employee_header.php');
+    
 
+    }else
+    {
+      $this->load->view('fontend/layout/header.php');
     }
 
      $admin_id = $this->session->userdata('admin_user_id');
