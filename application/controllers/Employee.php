@@ -688,6 +688,9 @@ class Employee extends MY_Employee_Controller
 
 
                            $send = sendEmail_JobRequest($email[$i],$message,$subject);
+                           $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Job has been successfully forwarded..</div>');
+                            redirect('employee/active_job');
+
                            //echo $send;
                             // echo $message;
                         }
@@ -751,6 +754,9 @@ class Employee extends MY_Employee_Controller
 
 
                            $send = sendEmail_JobRequest($email[$i],$message,$subject);
+                            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Job has been successfully forwarded..</div>');
+                            redirect('employee/active_job');
+
                            
                         }
                        
@@ -846,7 +852,85 @@ class Employee extends MY_Employee_Controller
         }
         
     }
-                   
+
+    public function view_resumelist($job_id = null)
+            {
+                if (!empty($job_id)) {
+                    $company_id      = $this->session->userdata('company_id');
+                    $view_resumelist = $this->job_apply_model->view_resumelist($job_id, $company_id);
+                    $job_details     = $this->job_posting_model->get($job_id);
+                    $this->load->view('fontend/employee/resumelist', compact('job_id', 'company_id', 'job_details', 'view_resumelist'));
+                } else {
+                    echo "not found";
+                }
+            }
+     public function not_view_resumelist($job_id = null)
+            {
+                if (!empty($job_id)) {
+                    $company_id          = $this->session->userdata('company_id');
+                    $not_view_resumelist = $this->job_apply_model->not_view_resumelist($job_id, $company_id);
+                    $job_details         = $this->job_posting_model->get($job_id);
+                    $this->load->view('fontend/employee/not_view_resumelist', compact('job_id', 'company_id', 'job_details', 'not_view_resumelist'));
+                } else {
+                    echo "not found";
+                }
+            }
+         public function sortlist_cv($job_id = null)
+            {
+                if (!empty($job_id)) {
+                    $company_id   = $this->session->userdata('company_id');
+                    $sortlist_cvs = $this->job_apply_model->sorlist_applicants_cv($job_id, $company_id);
+                    $job_details  = $this->job_posting_model->get($job_id);
+                    $this->load->view('fontend/employee/sortlistcv', compact('job_id', 'company_id', 'job_details', 'sortlist_cvs'));
+                } else {
+                    echo "not found";
+                }
+            }
+         public function interview_cv($job_id = null)
+            {
+                if (!empty($job_id)) {
+                    $company_id    = $this->session->userdata('company_id');
+                    $interview_cvs = $this->job_apply_model->interview_applicants_cv($job_id, $company_id);
+                    $job_details   = $this->job_posting_model->get($job_id);
+                    $this->load->view('fontend/employee/interviewcv', compact('job_id', 'company_id', 'job_details', 'interview_cvs'));
+                } else {
+                    echo "not found";
+                }
+            } 
+
+        public function final_cv($job_id = null)
+            {
+                if (!empty($job_id)) {
+                    $company_id  = $this->session->userdata('company_id');
+                    $final_cvs   = $this->job_apply_model->final_applicants_cv($job_id, $company_id);
+                    $job_details = $this->job_posting_model->get($job_id);
+                    $this->load->view('fontend/employee/finalcvlist', compact('job_id', 'company_id', 'job_details', 'final_cvs'));
+                } else {
+                    echo "not Found";
+                }
+            } 
+
+        public function view_resume($jobseeker_id = null, $job_id = null)
+            {
+                if (!empty($jobseeker_id)) {
+                    $company_id = $this->session->userdata('company_id');
+                    if ($this->job_apply_model->check_apply_job($jobseeker_id, $company_id, $job_id) == true) {
+
+                        $resume          = $this->job_seeker_model->resume_view_by_id($jobseeker_id);
+                        $edcuaiton_list  = $this->Job_seeker_education_model->education_list_by_id($jobseeker_id);
+                        $experinece_list = $this->Job_seeker_experience_model->experience_list_by_id($jobseeker_id);
+                        $training_list   = $this->Job_training_model->training_list_by_id($jobseeker_id);
+                        $reference_list  = $this->Job_reference_model->reference_list_by_id($jobseeker_id);
+                        $this->job_apply_model->update_resume_view($jobseeker_id, $company_id, $job_id);
+                        $this->load->view('fontend/viewresume', compact('resume', 'edcuaiton_list', 'experinece_list', 'training_list', 'reference_list', 'language_list','job_id'));
+                    } else {
+                        echo "not found";
+                    }
+                } else {
+                    echo "not found";
+                }
+
+            }    
         
 
     

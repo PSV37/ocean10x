@@ -1,10 +1,10 @@
 <?php 
-    $this->load->view('fontend/layout/employer_header.php');
+    $this->load->view('fontend/layout/employee_header.php');
 ?>                
           <div class="section lb">
   <div class="container">
     <div class="row">
-      <?php $this->load->view('fontend/layout/employer_left.php'); ?>
+      <?php $this->load->view('fontend/layout/employee_left.php'); ?>
       <div class="content col-md-9">
         <div class="viewrevdet">
           <h4>Job Title: <?php echo $this->job_posting_model->job_title_by_name($job_id); ?></h4>

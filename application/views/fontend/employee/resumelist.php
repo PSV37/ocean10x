@@ -1,15 +1,16 @@
 <?php 
-    $this->load->view('fontend/layout/employer_header.php');
+    $this->load->view('fontend/layout/employee_header.php');
 ?>                
           <div class="section lb">
   <div class="container">
     <div class="row">
-      <?php $this->load->view('fontend/layout/employer_left.php'); ?>
+      <?php $this->load->view('fontend/layout/employee_left.php'); ?>
       <div class="content col-md-9">
-        <div class="viewrevdet">
-          <h4>Job Title: <?php echo $this->job_posting_model->job_title_by_name($job_id); ?></h4>
-          
-          <div class="rsumeinfo">
+      	<div class="viewrevdet">
+        
+        <h4>Job Title: <?php echo $this->job_posting_model->job_title_by_name($job_id); ?></h4>
+        
+        <div class="rsumeinfo">
             	<div class="row">
                 	<div class="col-md-7 col-sm-6">
                     	<div class="jbinfo">
@@ -51,9 +52,9 @@
                     </div>
                 </div>
             </div>
-          
+        
           <div class="postviewbox">
-          	<h4>Not Viewed</h4>
+          	<h4>View Resume</h4>
           	
             <ul class="countlist row">
             	<li class="col-md-2 col-sm-4 col-xs-6">
@@ -63,13 +64,13 @@
                     <h6>All list</h6>
                 </li>
                 <li class="col-md-2 col-sm-4 col-xs-6">
-                	<div class="countcirc"><a href="<?php echo base_url() ?>employee/view_resumelist/<?php echo $job_id; ?>">
+                	<div class="countcirc"><a href="<?php echo base_url() ?>employee/view_resumelist/<?php echo $job_id; ?>" class="active">
                     <?php echo $this->job_apply_model->count_resume_view($job_id,$company_id);?>
                   </a></div>
                     <h6>View</h6>
                 </li>
                 <li class="col-md-2 col-sm-4 col-xs-6">
-                	<div class="countcirc"><a href="<?php echo base_url() ?>employee/not_view_resumelist/<?php echo $job_id; ?>" class="active">
+                	<div class="countcirc"><a href="<?php echo base_url() ?>employee/not_view_resumelist/<?php echo $job_id; ?>">
                     <?php echo $this->job_apply_model->count_resume_not_view($job_id,$company_id);?>
                   </a> </div>
                     <h6>Not View</h6>
@@ -96,10 +97,11 @@
             </ul>          
           </div>
           
+          
+          
           <hr>
           
-          
-          <div class="totalcandi">Not View <span> <?php echo $this->job_apply_model->count_resume_not_view($job_id,$company_id);?></span></div>
+          <div class="totalcandi">Total View <span> <?php echo $this->job_apply_model->count_resume_view($job_id,$company_id);?></span></div>
           
           <div class="sortbycad">
           	<div class="row">
@@ -110,37 +112,34 @@
           
           
           
-          
-                                
-
-<ul class="viewseekers">
-        <?php $i=1; if (!empty($not_view_resumelist)): foreach ($not_view_resumelist as $v_applicant) : $seeker_info=$this->job_seeker_model->applicant_job_seeker($v_applicant->job_seeker_id);?>
-            <li>
+          <ul class="viewseekers">
+                
+                
+                  <?php $i=1; if (!empty($view_resumelist)): foreach ($view_resumelist as $v_applicant) : $seeker_info=$this->job_seeker_model->applicant_job_seeker($v_applicant->job_seeker_id);?>
+                  <li>
             	<div class="row">
-                	<!--<div class="col-md-3">
+                	<div class="col-md-2">
                       <?php if (!empty($seeker_info->photo_path)):  ?>
                       <img src="<?php echo base_url(); ?>upload/<?php echo $seeker_info->photo_path; ?>" />
                       <?php else:?>
                       <img src="<?php echo base_url() ?>upload/compnay/company.png" alt="company Image">
                       <?php endif; ?>
-                    </div>-->
-                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-3">
                     	<h3><a target="_blank" href="<?php echo base_url() ?>employee/view_resume/<?php echo $v_applicant->job_seeker_id."/".$job_id; ?>"><?php echo $seeker_info->full_name; ?></a></h3>
                         <div class="uniname"><?= $this->Job_seeker_education_model->education_list_by_id($v_applicant->job_seeker_id)[0]->js_institute_name;?></div>
                         <div class="uniname"><i class="fa fa-phone" aria-hidden="true"></i> <?php echo $seeker_info->mobile; ?></div>
                         <div class="uniname"><i class="fa fa-envelope" aria-hidden="true"></i> <?php echo $seeker_info->email; ?> </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
 <?php $exp=($this->Job_seeker_experience_model->experience_list_by_id($v_applicant->job_seeker_id));
 
 ?>
 
                     	<div class="exp">
-						<label>Company Name</label>
                         	<?=(!empty($exp[0]->company_name)?'<strong>'.$exp[0]->company_name.'</strong>':'');?></strong>
-							<!--<div>
                             <?=(!empty($exp[0]->company_name)?''.$exp[0]->designation.'('.$exp[0]->duration.')':'');?></strong>
-                            </div>-->
+                            
                         </div>
                         <div class="exp">
                         	<?=(!empty($exp[1]->company_name)?'<strong>'.$exp[1]->company_name.'</strong>':'');?></strong>
@@ -149,8 +148,8 @@
                     </div>
                      <?php $career = ($this->job_career_model->js_careerinfo_by_seeker($v_applicant->job_seeker_id));?>
                     <div class="col-md-2">
-                    	<div class="moreinfo"><i class="fa fa-briefcase" aria-hidden="true"></i><?=(!empty($career[0]->js_career_exp)?$career[0]->js_career_exp:'');?></div>
-                        <div class="moreinfo"><i>Rs.</i> 
+                    	<div class="moreinfo"><i class="fa fa-briefcase" aria-hidden="true"></i><?=(!empty($career[0]->js_career_exp)?$career[0]->js_career_exp:'');?> Years</div>
+                        <div class="moreinfo"><i>$</i> 
  <?php echo $this->job_apply_model->expedited_salary($v_applicant->job_seeker_id,$job_id)[0]->expected_salary; ?> 
         </div>
                         <div class="sorted">
@@ -203,7 +202,8 @@
                       </a>
                       
                     </div>
-                    <div class="col-md-12">
+
+                       <div class="col-md-12">
                       <?php if($v_applicant->forword_job_status==1){ ?>
                        <a class="btn btn-info btn-xs">Forwared</a>
                       <?php }else if($v_applicant->forword_job_status==2){ ?>
@@ -214,27 +214,28 @@
                     </div>
                 </div>
             </li>
-             <?php
-
-                            endforeach;
-                            ?><!--get all sub category if not this empty-->
-                            <?php else : ?> <!--get error message if this empty-->
-                                <li>
-                                    <strong>There is no data to display</strong>
-                                </li><!--/ get error message if this empty-->
-                            <?php endif; ?>
-       
-</ul>       
-       
-       
-       
-  
-                            </div><!-- end post-padding -->
-                            
-                        </div>
-
-                </div> <!--end row -->
-                </div><!-- end container -->
-            </div><!-- end section -->
-
- <?php $this->load->view("fontend/layout/footer.php"); ?>
+                  <?php
+endforeach;
+?>
+                  <!--get all sub category if not this empty-->
+                  <?php else : ?> 
+                  <!--get error message if this empty-->
+                  <li>
+                    <strong>There is no data to display
+                    </strong>
+                  </li>
+                  <!--/ get error message if this empty-->
+                  <?php endif; ?>
+                </li>
+              </ul>
+             
+          
+      </div>  
+      </div>
+    </div> 
+    <!--end row -->
+  </div>
+  <!-- end container -->
+</div>
+<!-- end section -->
+<?php $this->load->view("fontend/layout/footer.php"); ?>

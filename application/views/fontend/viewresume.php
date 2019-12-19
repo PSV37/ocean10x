@@ -2,12 +2,18 @@
 
   $company_profile_id = $this->session->userdata('company_profile_id');
  $jobseeker_id = $this->session->userdata('job_seeker_id');
+ $emp_id = $this->session->userdata('emp_id');
         if ($company_profile_id != null) {
              $this->load->view('fontend/layout/employer_header.php');
             }
         elseif($jobseeker_id != null) {
              $this->load->view('fontend/layout/seeker_header.php');
-        } else {
+        }
+        elseif ($emp_id != null) {
+             $this->load->view('fontend/layout/employee_header.php');
+          # code...
+        }
+         else {
     $this->load->view('fontend/layout/header.php');
     }
 ?>
@@ -93,7 +99,7 @@ table td{line-height:24px;}
 
 <div class="container">
 <div id="resume"> 
-     <a href="<?php echo base_url().'employer/all-applicants/'.$job_id; ?>" class="btn btn-info back-button" role="button">Back</a>
+     <a href="<?php echo base_url().'all-applicants/'.$job_id; ?>" class="btn btn-info back-button" role="button">Back</a>
      <div class="table-responsive">
      <table class="table">
   <tr>

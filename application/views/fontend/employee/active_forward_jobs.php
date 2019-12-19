@@ -22,6 +22,7 @@
         <div class="row">
         <?php $this->load->view('fontend/layout/employee_left.php'); ?>
             <div class="content col-md-9">
+                 <?php echo $this->session->flashdata('msg'); ?>
             <h2>Posted Jobs</h2>
                 <ul class="myjobslist">
             		<?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>

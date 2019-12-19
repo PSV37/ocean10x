@@ -173,6 +173,9 @@ $route['delete-job']="employee/delete_job";
 $route['forword-job']="employee/forword_job";
 $route['all-applicants/(:num)']="employee/all_applicant/$1";
 $route['all-results/(:num)']="employee/all_exam_result/$1";
+$route['sortlist-cv/(:num)']="employee/sortlist_cv/$1";
+$route['interview-cv/(:num)']="employee/interview_cv/$1";
+$route['final-cv/(:num)']="employee/final_cv/$1";
 
 
 

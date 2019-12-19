@@ -69,37 +69,37 @@
           	
             <ul class="countlist row">
             	<li class="col-md-2 col-sm-4 col-xs-6">
-                	<div class="countcirc"><a href="<?php echo base_url() ?>employer/all-applicants/<?php echo $job_id;?>" class="active">
+                	<div class="countcirc"><a href="<?php echo base_url() ?>all-applicants/<?php echo $job_id;?>" class="active">
                     <?php echo $this->job_apply_model->count_job_apply($job_id,$company_id);?>
                   </a>  </div>
                     <h6>All list</h6>
                 </li>
                 <li class="col-md-2 col-sm-4 col-xs-6">
-                	<div class="countcirc"><a href="<?php echo base_url() ?>employer/view_resumelist/<?php echo $job_id; ?>">
+                	<div class="countcirc"><a href="<?php echo base_url() ?>employee/view_resumelist/<?php echo $job_id; ?>">
                     <?php echo $this->job_apply_model->count_resume_view($job_id,$company_id);?>
                   </a></div>
                     <h6>View</h6>
                 </li>
                 <li class="col-md-2 col-sm-4 col-xs-6">
-                	<div class="countcirc"><a href="<?php echo base_url() ?>employer/not_view_resumelist/<?php echo $job_id; ?>">
+                	<div class="countcirc"><a href="<?php echo base_url() ?>employee/not_view_resumelist/<?php echo $job_id; ?>">
                     <?php echo $this->job_apply_model->count_resume_not_view($job_id,$company_id);?>
                   </a> </div>
                     <h6>Not View</h6>
                 </li>
                 <li class="col-md-2 col-sm-4 col-xs-6">
-                	<div class="countcirc"><a href="<?php echo base_url() ?>employer/sortlist-cv/<?php echo $job_id; ?>">
+                	<div class="countcirc"><a href="<?php echo base_url() ?>sortlist-cv/<?php echo $job_id; ?>">
                     <?php echo $this->job_apply_model->count_job_apply_sortedlist($job_id,$company_id);?>
                   </a> </div>
                     <h6>Short Listed</h6>
                 </li>
                 <li class="col-md-2 col-sm-4 col-xs-6">
-                	<div class="countcirc"><a href="<?php echo base_url() ?>employer/interview-cv/<?php echo $job_id; ?>">
+                	<div class="countcirc"><a href="<?php echo base_url() ?>interview-cv/<?php echo $job_id; ?>">
                     <?php echo $this->job_apply_model->count_job_apply_inteviewlist($job_id,$company_id);?>
                   </a></div>
                     <h6>Interview</h6>
                 </li>
                 <li class="col-md-2 col-sm-4 col-xs-6">
-                	<div class="countcirc"><a href="<?php echo base_url() ?>employer/final-cv/<?php echo $job_id; ?>">
+                	<div class="countcirc"><a href="<?php echo base_url() ?>final-cv/<?php echo $job_id; ?>">
                     <?php echo $this->job_apply_model->count_job_apply_finallist($job_id,$company_id);?>
                   </a></div>
                     <h6>Final list</h6>
