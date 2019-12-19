@@ -1,5 +1,13 @@
 <?php 
-    $this->load->view('fontend/layout/employer_header.php');
+$employer_id=$this->session->userdata('company_profile_id');
+$company_id=$this->session->userdata('company_id');
+if (isset($employer_id) && !empty($employer_id)) {
+  $this->load->view('fontend/layout/employer_header.php');
+}
+elseif ($company_id != null) {
+  $this->load->view('fontend/layout/employee_header.php');
+}
+    
 ?>
 <style type="text/css">
   label {
@@ -28,7 +36,14 @@
 <div class="section lb">
   <div class="container">
     <div class="row">
-      <?php $this->load->view('fontend/layout/employer_left.php'); ?>
+      <?php
+        if (isset($employer_id) && !empty($employer_id)) {
+           $this->load->view('fontend/layout/employer_left.php');
+        }
+        elseif ($company_id != null) {
+           $this->load->view('fontend/layout/employee_left.php');
+        }
+       ?>
       <div class="content col-md-9">
         <div class="userccount empdash">
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>

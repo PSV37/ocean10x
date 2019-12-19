@@ -500,7 +500,7 @@ class Employee extends MY_Employee_Controller
                                          
                                     );
                     $interview_data = $this->Master_model->getMaster('interview_scheduler',$wherejob, $Join=$Join_data, $order = false, $field = false, $select=false,$limit=false,$start=false, $search=false);
-                    $this->load->view('fontend/employee/job_details', compact('job_id', 'company_id', 'job_details', 'total_applicantlist','interview_data'));
+                    $this->load->view('fontend/employee/Job_details', compact('job_id', 'company_id', 'job_details', 'total_applicantlist','interview_data'));
                 } else {
                     echo "not found";
                 }
