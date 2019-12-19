@@ -141,24 +141,24 @@
                     <span class="label label-success"> <i class="fa fa-check" aria-hidden="true"></i> <?php echo 'Final' ?> </span>
                     <?php } ?>
                   </div>
-                  <a href="<?php echo base_url() ?>employer/downloadcv/<?php echo $v_applicant->job_seeker_id; ?>" class="downcv" title="Download CV"> <i class="fa fa-download" aria-hidden="true"></i> Download </a> </div>
+                  <a href="<?php echo base_url() ?>employee/downloadcv/<?php echo $v_applicant->job_seeker_id; ?>" class="downcv" title="Download CV"> <i class="fa fa-download" aria-hidden="true"></i> Download </a> </div>
                 <div class="col-md-2">
                   <div class="action">
                     <?php 
 							if($v_applicant->apply_status==0){
-							echo btn_sorted('employer/update_sortlist/' . $v_applicant->job_apply_id.'/'. base64_encode($seeker_info->email)).'<br> sorted list'; }
+							echo btn_sorted('employee/update_sortlist/' . $v_applicant->job_apply_id.'/'. base64_encode($seeker_info->email)).'<br> sorted list'; }
 							else if($v_applicant->apply_status==1) {
-							echo btn_interview('employer/update_interviewlist/' . $v_applicant->job_apply_id.'/'. base64_encode($seeker_info->email)).'<br> interview list';
+							echo btn_interview('employee/update_interviewlist/' . $v_applicant->job_apply_id.'/'. base64_encode($seeker_info->email)).'<br> interview list';
 							} 
 							else if($v_applicant->apply_status==2) {
-							echo btn_final('employer/update_finallist/' . $v_applicant->job_apply_id.'/'. base64_encode($seeker_info->email)).'<br> final list';
+							echo btn_final('employee/update_finallist/' . $v_applicant->job_apply_id.'/'. base64_encode($seeker_info->email)).'<br> final list';
 							} 
 							else if($v_applicant->apply_status==3) {
 							echo '<span class="label label-primary"><i class="fa fa-check" aria-hidden="true"></i> Selected</span>';
 							} 
 							?>
                   </div>
-                  <a href="<?php echo base_url() ?>employer/reject-resume/<?php echo $v_applicant->job_seeker_id; ?>" class="reject"> <i class="fa fa-times" aria-hidden="true"></i> <strong>Reject</strong> </a> </div>
+                  <a href="<?php echo base_url() ?>reject-resume/<?php echo $v_applicant->job_seeker_id; ?>" class="reject"> <i class="fa fa-times" aria-hidden="true"></i> <strong>Reject</strong> </a> </div>
                   <div class="col-md-12">
                       <?php if($v_applicant->forword_job_status==1){ ?>
                        <a class="btn btn-info btn-xs">Forwared</a>

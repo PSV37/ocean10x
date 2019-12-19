@@ -166,7 +166,7 @@
                           <?php } ?>
                         </div>
                           
-                        <a href="<?php echo base_url() ?>employer/downloadcv/<?php echo $v_applicant->job_seeker_id; ?>" class="downcv" title="Download CV">
+                        <a href="<?php echo base_url() ?>employee/downloadcv/<?php echo $v_applicant->job_seeker_id; ?>" class="downcv" title="Download CV">
                         	<i class="fa fa-download" aria-hidden="true"></i> Download
                       	</a>
                           
@@ -189,7 +189,7 @@
             							} 
 							          ?>
 							        </div>
-                      <a href="<?php echo base_url() ?>employee/reject-resume/<?php echo $v_applicant->job_seeker_id; ?>" class="reject"><i class="fa fa-times" aria-hidden="true"></i> <strong>Reject</strong> 
+                      <a href="<?php echo base_url() ?>reject-resume/<?php echo $v_applicant->job_seeker_id; ?>" class="reject"><i class="fa fa-times" aria-hidden="true"></i> <strong>Reject</strong> 
                       </a>  <br>
 
                      
