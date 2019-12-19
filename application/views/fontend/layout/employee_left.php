@@ -23,8 +23,10 @@
       {?>
         <li> <a href="<?php echo base_url(); ?>post-a-job" class=""> <i class="fa fa-pencil" aria-hidden="true"></i> Post New Job </a> </li>
          <li> <a href="<?php echo base_url() ?>jobs"><i class="fa fa-check-square-o" aria-hidden="true"></i> Posted Job </a> </li>
-      <?php }?> 
-      
+      <?php }else{?> 
+      <li> <a href="<?php echo base_url() ?>active-job"><i class="fa fa-check-square-o" aria-hidden="true"></i> Posted Job </a> </li>
+      <?php ?>
+      <li> <a href="<?php echo base_url() ?>employee/logout"><i class="fa fa-check-square-o" aria-hidden="true"></i> Posted Job </a> </li>
       
      
       
