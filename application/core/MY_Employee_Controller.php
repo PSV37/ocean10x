@@ -13,15 +13,15 @@ class MY_Employee_Controller extends CI_Controller
        // $this->load->model('login_model');
         $this->load->model('job_category_model');
         $this->load->model('job_location_model');
-       $this->load->model('public_demand_model');
+        $this->load->model('public_demand_model');
         $this->load->model('job_level_model');
         $this->load->model('job_nature_model');
-          $this->load->model('education_level_model');
+        $this->load->model('education_level_model');
 
         $this->load->model('job_salary_range_model');
         $this->load->model('company_profile_model');
         $this->load->model('job_apply_model');
- $this->load->model('job_career_model');
+        $this->load->model('job_career_model');
 
         $this->load->model('job_seeker_model');
         $this->load->model('job_types_model');
