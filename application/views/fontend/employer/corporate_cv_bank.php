@@ -59,28 +59,29 @@
               </thead>
               <tbody>
                 <?php $key = 1; if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) : 
-                  $resume = getUploadedResume($cv_row['js_email']);
-                  $photo = getSeekerPhoto($cv_row['js_email']);
-                  $updates = getSeekerlastUpdates($cv_row['js_email']);
-                  if (!empty($updates)) {
-                   if($updates[0]['update_at']=='0000-00-00 00:00:00') { 
-                      $mtime = date('d-M-y',strtotime($updates[0]['create_at']));
-                    } else{
-                      $mtime = date('d-M-y',strtotime($updates[0]['update_at']));
-                    }
-                  }else{
-                    //time_ago_in_php($cv_row['created_on']);
-                     $mtime = date('d-M-y',strtotime($cv_row['created_on']));
-                  }
+                  // $resume = getUploadedResume($cv_row['js_email']);
+                  // $photo = getSeekerPhoto($cv_row['js_email']);
+                  // $updates = getSeekerlastUpdates($cv_row['js_email']);
+                  // if (!empty($updates)) {
+                  //  if($updates[0]['update_at']=='0000-00-00 00:00:00') { 
+                  //     $mtime = date('d-M-y',strtotime($updates[0]['create_at']));
+                  //   } else{
+                  //     $mtime = date('d-M-y',strtotime($updates[0]['update_at']));
+                  //   }
+                  // }else{
+                  //    $mtime = date('d-M-y',strtotime($cv_row['created_on']));
+                  // }
+                   $mtime = date('d-M-y',strtotime($cv_row['created_on']));
                 ?>
                   <tr>
                       <td><?php echo $key ?></td>
                       <td>
-                        <?php if(!empty($photo)){ ?>
+                       <!--  <?php if(!empty($photo)){ ?>
                         <img src="<?php echo  base_url(); ?>upload/<?php if(!empty($photo[0]['photo_path'])){echo $photo[0]['photo_path'];} ?>" alt="" style="max-width: 100% !important;min-width: 40% !important;">
                         <?php }else{ ?>
                         <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" alt="" style="max-width: 100% !important;min-width: 40% !important;">
-                        <?php } ?>
+                        <?php } ?> -->
+                        <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" alt="" style="max-width: 100% !important;min-width: 40% !important;">
                       </td>
                      
                       <td><?php echo $cv_row['js_name']; ?></td>
