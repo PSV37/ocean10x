@@ -17,7 +17,7 @@ if ($company_id != null) {?>
  <form id="interview-info" class="form-horizontal" action="<?php echo base_url();?>employer/send_interview_invitation/<?php if(!empty($js_apply_data)) echo $js_apply_data['job_apply_id']; ?>" method="post">
 <?} else{?>
 <form id="interview-info" class="form-horizontal" action="<?php echo base_url();?>employee/send_interview_invitation/<?php if(!empty($js_apply_data)) echo $js_apply_data['job_apply_id']; ?>" method="post">
-  <?php}
+  <?php }
 ?>
   
       
