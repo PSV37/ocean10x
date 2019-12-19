@@ -1335,7 +1335,7 @@ class Employee extends MY_Employee_Controller
         }
 public function update_interview_status()
     {
-        $company_id = $this->session->userdata('company_profile_id');
+        $company_id = $this->session->userdata('company_id');
      
         $interview_id = $this->input->post('interview_id');
         $job_id = $this->input->post('job_id');
@@ -1348,7 +1348,7 @@ public function update_interview_status()
     }
      public function update_inter_status()
     {
-        $company_id = $this->session->userdata('company_profile_id');
+        $company_id = $this->session->userdata('company_id');
      
         $interview_id = $this->input->post('interview_id');
         $job_id = $this->input->post('job_id');
@@ -1359,7 +1359,7 @@ public function update_interview_status()
 
         $where_ins['id']=$interview_id;
         $ins_id = $this->Master_model->master_update($status_array,'interview_scheduler',$where_ins);
-        redirect('employer/all_applicant/'.$job_id);
+        redirect('employee/all_applicant/'.$job_id);
     }
 
     
