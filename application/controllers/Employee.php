@@ -10,7 +10,7 @@ class Employee extends MY_Employee_Controller
     {
         parent::__construct();
         $this->load->model('employee_login_model');
-        $this->load->model('Employee_photo_model');
+        $this->load->model('employee_photo_model');
         $this->load->model('job_posting_model');
         $this->load->model('company_profile_model');
         $config = array(
