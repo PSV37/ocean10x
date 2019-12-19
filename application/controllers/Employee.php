@@ -1070,7 +1070,7 @@ class Employee extends MY_Employee_Controller
     }
     public function send_interview_invitation($job_apply_id = null)
     {
-        $company_id = $this->session->userdata('company_profile_id');
+        $company_id = $this->session->userdata('company_id');
        
         $apply_id= $job_apply_id;
 
@@ -1099,9 +1099,6 @@ class Employee extends MY_Employee_Controller
             'job_post_id'           => $js_apply['job_post_id'],
             'job_seeker_id'         => $js_apply['job_seeker_id'],
             'company_id'            => $company_id,
-            // 'interview_date'        => date('Y-m-d', strtotime(str_replace('/', '-', $interview_date))),
-            // 'start_time'            => $start_time,
-            // 'end_time'              => $end_time,
             'interview_type'        => $interview_type,
             'interview_details'     => $interview_address,
             'message_to_candidate'  => $user_message,
@@ -1111,9 +1108,6 @@ class Employee extends MY_Employee_Controller
             'job_post_id'           => $js_apply['job_post_id'],
             'job_seeker_id'         => $js_apply['job_seeker_id'],
             'company_id'            => $company_id,
-           // 'interview_date'        => date('Y-m-d', strtotime(str_replace('/', '-', $interview_date))),
-          //  'start_time'            => $start_time,
-            //'end_time'              => $end_time,
             'interview_type'        => $interview_type,
             'interview_details'     => $interview_address,
             'message_to_candidate'  => $user_message,
@@ -1292,12 +1286,6 @@ class Employee extends MY_Employee_Controller
     public function confirm_rescheduled()
     {
         $interview_id=base64_decode($this->input->get('apply_id'));
-        // print_r($interview_id);
-        
-        // $where_cond['is_rescheduled']='No';
-        // $where_del = "id='$ins_id'";
-        // $del = $this->Master_model->master_delete('interview_dates',$where_del);
-
          $Join_data = array(
                                     'interview_scheduler' => 'interview_scheduler.id = interview_dates.interview_id|Left OUTER ',
                                         'company_profile' => 'company_profile.company_profile_id = interview_scheduler.company_id|Left OUTER ',
@@ -1342,7 +1330,6 @@ class Employee extends MY_Employee_Controller
                         <br><br>Hi '.$resc_data["full_name"].',<br> Your Interview with  '.$resc_data["company_name"].' Is successfully rescheduled on  '.$resc_data['interview_date'].' at '.$resc_data['start_time'].' for the post of '.$resc_data["job_title"].' '.$resc_data["job_position"].'. The interview was previously scheduled on '.$resc_data["interview_date"].' at '.$resc_data["start_time"]. ' <br/><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
 
                        $send1 = sendEmail_JobRequest($to_mail,$message1,$subject1);
-         // print_r($resc_data);
                        $this->session->set_flashdata('success', 'Interview successfully Rescheduled!');
                      redirect('all-applicants/'.$resc_data["job_post_id"]);
           
