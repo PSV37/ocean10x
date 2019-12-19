@@ -30,9 +30,9 @@ h6{
 }
 	    
 </style>       
-<div style="float: right;" id="smsg" class="alert alert-<?php echo $this->session->flashdata('type');?> alert-dismissible fade in">
+<div  id="smsg" class="alert alert-<?php echo $this->session->flashdata('type');?> alert-dismissible fade in">
   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  <strong><?php echo $this->session->flashdata('Message');?></strong>
+  <strong style="float: right;"><?php echo $this->session->flashdata('Message');?></strong>
 </div>
 
  <!-- Page Title start -->
