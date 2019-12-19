@@ -4,7 +4,7 @@ if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 
-class Employee extends CI_controller
+class Employee extends MY_Employer_Controller
 {
 	public function __construct()
     {

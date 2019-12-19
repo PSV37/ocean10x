@@ -380,7 +380,7 @@ elseif($employee_id != null)
                                         </div>
                                         <div class="col-md-6 col-sm-12">
                                         	<div class="formrow">
-                                        	<label class="control-label">Company Contact Person: <span class="required">*</span></label>	
+                                        	<label class="control-label">Company Contact Person:<span class="required">*</span></label>	
                                             <input type="text" name="contact_name"  value="<?php 
                                             	 if(!empty($company_info->contact_name)){
                                             	 	echo $company_info->contact_name;
