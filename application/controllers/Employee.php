@@ -363,9 +363,9 @@ class Employee extends MY_Employee_Controller
     }
     public function job_post()
             {
-                $employer_id = $this->session->userdata('emp_id');
+                $employer_id = $this->session->userdata('org_id');
                 if ($_POST) {
-                    $employer_id  = $this->session->userdata('emp_id');
+                    $employer_id  = $this->session->userdata('org_id');
                     $job_deadline = strtolower($this->input->post('job_deadline'));
                     $job_post_id  = $this->input->post('job_post_id');
                     $job_info     = array(
