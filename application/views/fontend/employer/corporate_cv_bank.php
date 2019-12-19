@@ -49,7 +49,6 @@
                   <th class="active">Last Salary Hike</th>
                   <th class="active">Top Education</th>
                   <th class="active">Skills</th>
-                  <th class="active">Certifications</th>
                   <th class="active">Current Work Location</th>
                   <th class="active">Current Job Role</th>
                   <th class="active">Candidate Uploaded CV </th>
@@ -95,7 +94,6 @@
                       <td><?php echo date('M `y', strtotime($cv_row['js_last_salary_hike'])); ?></td>
                       <td><?php echo $cv_row['js_top_education']; ?></td>
                       <td><?php echo $cv_row['js_skill_set']; ?></td>
-                      <td><?php echo $cv_row['js_certifications']; ?></td>
                       <td><?php echo $cv_row['js_current_work_location']; ?></td>
                       <td><?php echo $cv_row['js_current_designation']; ?></td>
                      
