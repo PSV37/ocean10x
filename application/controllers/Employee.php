@@ -991,6 +991,7 @@ class Employee extends MY_Employee_Controller
             {
                 if (!empty($resume_id)) {
                     $this->job_apply_model->delete($resume_id);
+                    print_r($this->db->last_query());die;
                     redirect_back();
                 } else {
                     echo "not found";
