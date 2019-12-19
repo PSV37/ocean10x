@@ -25,7 +25,7 @@
          <li> <a href="<?php echo base_url() ?>jobs"><i class="fa fa-check-square-o" aria-hidden="true"></i> Posted Job </a> </li>
       <?php }else{?> 
       <li> <a href="<?php echo base_url() ?>active-job"><i class="fa fa-check-square-o" aria-hidden="true"></i> Posted Job </a> </li>
-      <?php ?>
+      <?php } ?>
       <li> <a href="<?php echo base_url() ?>employee/logout"><i class="fa fa-check-square-o" aria-hidden="true"></i> Posted Job </a> </li>
       
      
