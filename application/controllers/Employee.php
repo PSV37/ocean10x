@@ -1051,6 +1051,22 @@ class Employee extends MY_Employee_Controller
        
         $this->load->view('fontend/employer/update_interview_from',$data);
     }
+    public function cancel_interview($interview_id,$job_post_id)
+    {
+       // $this->Job_career_model->delete_career($job_seeker_id);
+        $job_id = $job_post_id;
+        $interview_id1 = $interview_id;
+        $where1 = "id='$interview_id1'";
+        $del1 = $this->Master_model->master_delete('interview_scheduler',$where1);
+        // print_r($this->db->last_query());die;
+        
+        if($del1){
+            $where_del = "interview_id='$interview_id1'";
+            $del = $this->Master_model->master_delete('interview_dates',$where_del);
+        }
+
+        redirect('employee/all_applicant/'.$job_id);
+    }
 
     
         
