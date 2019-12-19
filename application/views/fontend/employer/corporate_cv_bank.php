@@ -70,7 +70,7 @@
                     }
                   }else{
                     //time_ago_in_php($cv_row['created_on']);
-                     $mtime = date('d-M-y',strtotime($updates[0]['created_on']));
+                     $mtime = date('d-M-y',strtotime($cv_row[0]['created_on']));
                   }
                 ?>
                   <tr>
@@ -83,7 +83,7 @@
                         <?php } ?>
                       </td>
                      
-                       <td><?php echo $cv_row['js_name']; ?></td>
+                      <td><?php echo $cv_row['js_name']; ?></td>
                       <td><?php echo $cv_row['js_email']; ?></td>
                       <td><?php echo $cv_row['js_mobile']; ?></td>
                       <td><?php echo $cv_row['js_experience']; ?></td>
@@ -95,7 +95,6 @@
                       <td><?php echo $cv_row['js_top_education']; ?></td>
                       <td><?php echo $cv_row['js_skill_set']; ?></td>
                       <td><?php echo $cv_row['js_certifications']; ?></td>
-
                       <td><?php echo $cv_row['js_current_work_location']; ?></td>
                       <td><?php echo $cv_row['js_current_designation']; ?></td>
                      
