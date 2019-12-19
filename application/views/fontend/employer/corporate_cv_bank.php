@@ -70,7 +70,7 @@
                     }
                   }else{
                     //time_ago_in_php($cv_row['created_on']);
-                     $mtime = date('d-M-y',strtotime($cv_row[0]['created_on']));
+                     $mtime = date('d-M-y',strtotime($cv_row['created_on']));
                   }
                 ?>
                   <tr>
