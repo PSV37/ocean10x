@@ -260,7 +260,7 @@ class Employee extends MY_Employee_Controller
                     if (!$result_upload == true) {
                         $error = array('error' => $this->upload->display_errors());
                         $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">Please Upload a Valid Logo Size Max size 300*300</div>');
-                        redirect('employer/profile-setting');
+                        redirect('employee/profile-setting');
                     } 
                 }
             }
@@ -307,7 +307,7 @@ class Employee extends MY_Employee_Controller
 
                 $country = $this->Master_model->getMaster('country',$where=false);
 
-                $this->load->view('fontend/employer/dashboard', compact('company_info', 'country', 'branches'));
+                $this->load->view('fontend/employee/edit_company', compact('company_info', 'country', 'branches'));
                  
             }
 
@@ -317,8 +317,49 @@ class Employee extends MY_Employee_Controller
                 $company_info = $this->company_profile_model->get($employer_id);
                 $country = $this->Master_model->getMaster('country',$where=false);
                 // print_r($this->db->last_query());
-                 $this->load->view('fontend/employer/dashboard', compact('company_info', 'country', 'branches'));
+                 $this->load->view('fontend/employee/edit_company', compact('company_info', 'country', 'branches'));
             }
+    }
+    function getstate(){
+    $country_id = $this->input->post('id');
+    $where['country_id'] = $country_id;
+    $states = $this->Master_model->getMaster('state',$where);
+    $result = '';
+    if(!empty($states)){ 
+        $result .='<option value="">Select State</option>';
+        foreach($states as $key){
+          $result .='<option value="'.$key['state_id'].'">'.$key['state_name'].'</option>';
+        }
+    }else{
+    
+        $result .='<option value="">State not available</option>';
+    }
+     echo $result;
+}
+
+
+ function getcity(){
+    $state_id = $this->input->post('id');
+    $where['state_id'] = $state_id;
+    $citys = $this->Master_model->getMaster('city',$where);
+    $result = '';
+    if(!empty($citys)){ 
+        $result .='<option value="">Select City</option>';
+        foreach($citys as $key){
+          $result .='<option value="'.$key['id'].'">'.$key['city_name'].'</option>';
+        }
+    }else{
+    
+        $result .='<option value="">State not available</option>';
+    }
+     echo $result;
+}
+
+public function search(){
+        $term = $this->input->get('term');
+        $this->db->like('pincode', $term);
+        $data = $this->db->get("pincode")->result();
+        echo json_encode( $data);
     }
 
 

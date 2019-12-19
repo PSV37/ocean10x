@@ -570,7 +570,7 @@ elseif($employee_id != null)
  									<!-- end row -->
 									
                                       <div class="panel-body"></div>
-									<div class="row">
+										<div class="row">
                                         <div class="col-md-12 col-sm-12">
                                          <div class="formrow">
                                            <label class="control-label">Special Features:</label>
@@ -676,7 +676,7 @@ $(document).ready(function(){
 		if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>Employer/getstate',
+                url:'<?php echo base_url();?>Employee/getstate',
                 data:{id:id},
                 success:function(res){
                     $('#state_id').html(res);
@@ -692,7 +692,7 @@ $(document).ready(function(){
 		if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>Employer/getcity',
+                url:'<?php echo base_url();?>Employee/getcity',
                 data:{id:id},
                 success:function(res){
                     $('#city_id').html(res);
@@ -711,7 +711,7 @@ $(document).ready(function(){
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>Employer/getstate',
+                url:'<?php echo base_url();?>Employee/getstate',
                 data:{id:id},
                 success:function(res){
                     $('#state_id').html(res);
@@ -730,7 +730,7 @@ $(document).ready(function(){
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>Employer/getcity',
+                url:'<?php echo base_url();?>Employee/getcity',
                 data:{id:id},
                 success:function(res){
                     $('#city_id').html(res);
@@ -778,7 +778,7 @@ $("#country").select2( {
  
         source: function(request, response) {
             $.ajax({
-            url: BASE_URL + "employer/search",
+            url: BASE_URL + "employee/search",
             data: {
                     term : request.term
              },
@@ -917,7 +917,7 @@ function getState(id)
 	// alert(country_id);
 	 $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>Employer/getstate',
+                url:'<?php echo base_url();?>Employee/getstate',
                 data:{id:country_id},
                 success:function(res){
                     $('#BranchState'+id).html(res);
@@ -931,7 +931,7 @@ function getCity(id)
 	// alert(state_id);
 	$.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>Employer/getcity',
+                url:'<?php echo base_url();?>Employee/getcity',
                 data:{id:state_id},
                 success:function(res){
                     $('#BranchCity'+id).html(res);
