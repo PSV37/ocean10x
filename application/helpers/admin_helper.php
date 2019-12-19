@@ -49,7 +49,7 @@ function btn_delete($uri)
 function btn_sorted($uri)
 {
     return anchor($uri, '<i class="fa fa-check-circle-o"></i>', array(
-        'class' => "btn btn-success btn-xs", 'title' => 'Sorted', 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'onclick' => "return confirm('Are you sure want to sorted this record ?');",
+        'class' => "btn btn-success btn-xs", 'title' => 'shortlist', 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'onclick' => "return confirm('Are you sure want to sorted this record ?');",
     ));
 }
 
