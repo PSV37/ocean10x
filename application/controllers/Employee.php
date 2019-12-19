@@ -315,9 +315,9 @@ class Employee extends CI_controller
                 $wheres="status='0' AND company_profile_id='$employer_id'";
                  $branches = $this->Master_model->getMaster('company_branches',$where=$wheres);
                 $company_info = $this->company_profile_model->get($employer_id);
-                // $country = $this->Master_model->getMaster('country',$where=false);
-                print_r($this->db->last_query());
-                // $this->load->view('fontend/employer/dashboard', compact('company_info', 'country', 'branches'));
+                $country = $this->Master_model->getMaster('country',$where=false);
+                // print_r($this->db->last_query());
+                 $this->load->view('fontend/employer/dashboard', compact('company_info', 'country', 'branches'));
             }
     }
 
