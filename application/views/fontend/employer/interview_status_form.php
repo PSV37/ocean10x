@@ -1,6 +1,18 @@
+<?php 
+$company_id=$this->session->userdata('company_profile_id'); 
+$emp_id=$this->session->userdata('emp_id');
+
+if ($company_id != null) {?>
+
+ <form id="interview-info" class="form-horizontal" action="<?php echo base_url();?>employer/update_inter_status" method="post">
+<?} else{?>
+
+<form id="interview-info" class="form-horizontal" action="<?php echo base_url();?>employee/update_inter_status" method="post">
+
+  <?php }
+?>
 
 
-<form id="interview-info" class="form-horizontal" action="<?php echo base_url();?>employer/update_inter_status" method="post">
 
   <input type="hidden" name="interview_id" id="interview" value="<?php if(!empty($interview_data)) echo $interview_data['id']; ?>">
   <input type="hidden" name="job_id" id="job_id" value="<?php if(!empty($interview_data)) echo $interview_data['job_post_id']; ?>">
