@@ -10,7 +10,7 @@ class MY_Employee_Controller extends CI_Controller
     {
         parent::__construct();
 
-       // $this->load->model('login_model');
+        $this->load->model('Employee_photo_model');
         $this->load->model('job_category_model');
         $this->load->model('job_location_model');
         $this->load->model('public_demand_model');
