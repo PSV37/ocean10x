@@ -97,7 +97,7 @@
                           <select class="selectpicker form-control" multiple data-live-search="true" id="access" name="Access[]">
                               <!-- <option value="post_job">Post A job</option>
                               <option value="editprofile">Edit Company Profile</option>
-                              <option value="Addquestionbank">Add Ouestion Bank</option>
+                              <option value="Addquestionbank">Add Question Bank</option>
                               <option value="addemp">Add Employee</option>
                               <option value="addconsultant">Add Consultant</option> -->
                           </select>
