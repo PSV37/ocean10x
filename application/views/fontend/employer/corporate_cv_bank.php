@@ -124,7 +124,7 @@
                           <?php }
                             }else{
                           ?>
-                          Not Attached On Ocean
+                          Not Attached
                         <?php } ?>
                       </td>
                       <td><?php echo $mtime; ?></td>
