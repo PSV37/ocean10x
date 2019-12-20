@@ -87,7 +87,8 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
-                                    <select id="topic_id"  name="topic_id" class="form-control"  onchange="getSubtopic(this.value)">
+                                    <select id="topic_id"  name="topic_id" class="form-control"
+                                    onchange="getSubtopic(this.value)">
                                           
                                     </select>
                                  </div>
@@ -337,7 +338,7 @@ function showCheckboxes() {
 			if(id){
 				$.ajax({
 					type:'POST',
-					url:'<?php echo base_url();?>employer/getlineitemlevel',
+					url:'<?php echo base_url();?>employee/getlineitemlevel',
 					data:{id:id},
 					success:function(res){
 						$('#lineitemlevel_id').html(res);
@@ -353,7 +354,7 @@ function showCheckboxes() {
 			if(id){
 				$.ajax({
 					type:'POST',
-					url:'<?php echo base_url();?>employer/getlineitem',
+					url:'<?php echo base_url();?>employee/getlineitem',
 					data:{id:id},
 					success:function(res){
 						$('#lineitem_id').html(res);
@@ -372,7 +373,7 @@ function showCheckboxes() {
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>employer/getsubtopic',
+                url:'<?php echo base_url();?>employee/getsubtopic',
                 data:{id:id},
                 success:function(res){
                     $('#subtopic_id').html(res);
@@ -390,7 +391,7 @@ function showCheckboxes() {
 			if(id){
 				$.ajax({
 					type:'POST',
-					url:'<?php echo base_url();?>employer/gettopic',
+					url:'<?php echo base_url();?>employee/gettopic',
 					data:{id:id},
 					success:function(res){
 						$('#topic_id').html(res);
@@ -410,7 +411,7 @@ function showCheckboxes() {
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>employer/getsubtopic',
+                url:'<?php echo base_url();?>employee/getsubtopic',
                 data:{id:id},
                 success:function(res){
                     $('#subtopic_id').html(res);
@@ -429,7 +430,7 @@ function showCheckboxes() {
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>employer/getlineitem',
+                url:'<?php echo base_url();?>employee/getlineitem',
                 data:{id:id},
                 success:function(res){
                     $('#lineitem_id').html(res);
@@ -448,7 +449,7 @@ function showCheckboxes() {
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>employer/getlineitemlevel',
+                url:'<?php echo base_url();?>employee/getlineitemlevel',
                 data:{id:id},
                 success:function(res){
                     $('#lineitemlevel_id').html(res);
