@@ -80,8 +80,8 @@
                     <div class="form-group">
                       <label for="exampleInputEmail1">Designation<span class="required">*</span></label>
                      <!--  <input type="email" name="email" id="email" class="form-control" value="<?php echo $result['email']; ?>"> -->
-                      <select class="form-control" onchange="getaccess(this.value);">
-                        <option>Select designation</option>
+                      <select class="form-control" onchange="getaccess(this.value);" name="user_role">
+                        <!-- <option value="">Select designation</option> -->
                         <?php foreach($roles as $key){?>
                         <option value="<?php echo $key['user_role_id']; ?>"<?php if($result['user_role_id'] == $key['user_role_id']){ echo "selected"; }?>><?php echo $key['user_roles']; ?></option>
                         <?php } ?>

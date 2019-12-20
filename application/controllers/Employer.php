@@ -574,8 +574,7 @@ function getstate(){
     function get_access_specifiers(){
     $role_id = $this->input->post('id');
     $where['user_role_id'] = $role_id;
-    // $access = $this->Master_model->getMaster('employee_access',$where);
-    // $result = '';
+   
      $select_edu = "access_specifiers";
         $data = $this->Master_model->get_master_row("employee_access", $select_edu, $where, $join = FALSE);
        
@@ -584,7 +583,7 @@ function getstate(){
    
 
     if(!empty($accessSpecifiers)){ 
-        // $result .='<option value="">Select City</option>';
+         $result .='<option value="">Select City</option>';
         foreach($accessSpecifiers as $key){
 
             // print_r($key);
