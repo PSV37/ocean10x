@@ -2484,7 +2484,7 @@ public function interview_scheduler()
     {
        
         $email_id =base64_decode($email);
-        $where1 = "js_info.email = '$email_id'";
+        $where1 = "js_info.email = '$email_id' AND js_experience.end_date IS NULL";
         $join = array( 
             "js_career_info"=>"js_career_info.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
             "js_experience"=>"js_experience.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
