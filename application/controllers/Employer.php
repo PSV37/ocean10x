@@ -588,13 +588,13 @@ function getstate(){
         foreach($accessSpecifiers as $key){
 
             print_r($key);
-          // $result .='<option value="'.$key['aceess_id'].'">'.$key['access_specifiers'].'</option>';
+          $result .='<option value="'.$key.'">'.$key.'</option>';
         }
     }else{
     
         // $result .='<option value="">No access available</option>';
     }
-     // echo $result;
+      echo $result;
 }
      // To fetch getProfssionalSkillsDetails details
     function getSkillsByRole() {
