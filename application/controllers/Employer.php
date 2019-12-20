@@ -2483,7 +2483,7 @@ public function interview_scheduler()
    public function getocean_profile($email)
     {
        
-        $email_id =$email;
+        $email_id =base64_decode($email);
         $where1 = "js_info.email = '$email_id'";
         $join = array( 
             "js_career_info"=>"js_career_info.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
