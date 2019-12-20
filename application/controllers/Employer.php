@@ -2495,6 +2495,7 @@ public function interview_scheduler()
 
         $result = $this->Master_model->getMaster('js_info', $where1, $join, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
 
+        echo $this->db->last_query();
         echo "<pre>";
         print_r($result);
     }
