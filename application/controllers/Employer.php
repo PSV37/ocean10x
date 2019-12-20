@@ -2479,12 +2479,35 @@ public function interview_scheduler()
                 echo json_encode($result);
 
     }
+
+     function get_access_data(){
+        $u_id = $this->input->post('id');
+        $where['user_role_id'] = $u_id;
+        // $lineitemlevels = $this->Master_model->getMaster('employee_access',$where);
+        $exists = $this->Master_model->get_master_row('employee_access', $select= FALSE, $where, $join = FALSE);
+
+        $result = '';
+         $dd= $exists['access_specifiers'];
+        $a = explode(',', $dd);
+        
+        if(!empty($a)){ 
+            $result .='<option value="">Select</option>';
+            // foreach($a as $keys){
+                for($i=0; $i<sizeof($a);$i++){
+              $result .='<option value="'.$a[$i]['access_specifiers'].'">'.$a[$i]['access_specifiers'].'</option>';
+            }
+        }else{
+        
+            $result .='<option value="">Lineitem Level not available</option>';
+        }
+         echo $result;
+    }
    
    public function getocean_profile($email)
     {
        
         $email_id =base64_decode($email);
-        $where1 = "js_info.email = '$email_id'";
+        $where1 = "js_info.email = '$email_id' AND js_experience.end_date IS NULL";
         $join = array( 
             "js_career_info"=>"js_career_info.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
             "js_experience"=>"js_experience.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
