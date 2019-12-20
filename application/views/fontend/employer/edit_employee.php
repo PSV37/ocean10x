@@ -96,11 +96,11 @@
                           <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
                           <!-- <select class="selectpicker form-control" multiple data-live-search="true" id="user_acc" name="Access[]"> -->
                             <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc" id="user_accc">
-                              <option value="post_job">Post A job</option>
+                             <!--  <option value="post_job">Post A job</option>
                               <option value="editprofile">Edit Company Profile</option>
                               <option value="Addquestionbank">Add Question Bank</option>
                               <option value="addemp">Add Employee</option>
-                              <option value="addconsultant">Add Consultant</option>
+                              <option value="addconsultant">Add Consultant</option> -->
                           </select>
                           <!--   <div class="row">
                               <div class="col-md-12">
@@ -275,7 +275,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
           
               }); 
             }
-      $("#user_accc").selectpicker('refresh');
+          $("#user_accc").selectpicker('refresh');
        }
      
 // function getaccess(id)
