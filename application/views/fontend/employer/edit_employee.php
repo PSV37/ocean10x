@@ -4,7 +4,9 @@
 <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
 </script> -->
-
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 
 <!-- Page Title start -->
 
@@ -95,9 +97,17 @@
                       <div class="form-group">
                           <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
                           
-                            <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc" id="user_accc">
+                           <!--  <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc" id="user_accc">
                             
-                          </select>
+                          </select> -->
+                           <select id="dates-field2" class="multiselect-ui form-control" multiple="multiple">
+                                <option value="cheese">Cheese</option>
+                                <option value="tomatoes">Tomatoes</option>
+                                <option value="mozarella">Mozzarella</option>
+                                <option value="mushrooms">Mushrooms</option>
+                                <option value="pepperoni">Pepperoni</option>
+                                <option value="onions">Onions</option>
+                            </select>
                          
                       </div>
                   </div>
@@ -392,20 +402,15 @@ $("#dept_id").select2( {
  
 });
 
-$(document).delegate('#select-all', 'click', function(e) {
-if(this.checked) {
-$('.bank-checkbox').each(function() {
-this.checked = true;
-});
-} else {
-$('.bank-checkbox').each(function() {
-this.checked = false;
-});
-}
-});
+
 </script>
-<script>
-   
+   <script type="text/javascript">
+$(function() {
+    $('.multiselect-ui').multiselect({
+        includeSelectAllOption: true
+    });
+});
+
 </script>
 	   
 	   
