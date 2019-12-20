@@ -331,6 +331,62 @@ function showCheckboxes() {
 					}); 
 				  }
 		   }
+		   </script>
+	   <script>
+    function getSubtopic(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>employee/getsubtopic',
+                data:{id:id},
+                success:function(res){
+                    $('#subtopic_id').html(res);
+                }
+                
+            }); 
+          }
+   
+    }
+</script>
+
+
+
+ <script>
+    function getLineitem(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>employee/getlineitem',
+                data:{id:id},
+                success:function(res){
+                    $('#lineitem_id').html(res);
+                }
+                
+            }); 
+          }
+   
+    }
+</script>
+
+
+
+<script>
+    function getLineitemlevel(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>employee/getlineitemlevel',
+                data:{id:id},
+                success:function(res){
+                    $('#lineitemlevel_id').html(res);
+                }
+                
+            }); 
+          }
+   
+       }
+</script>   
+<script type="text/javascript">
 
     $(document).ready(function(){
 		
@@ -409,60 +465,4 @@ function showCheckboxes() {
        getLineitemlevel_load();
 
     });
-       
-</script>
-	   <script>
-    function getSubtopic(id){
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>employee/getsubtopic',
-                data:{id:id},
-                success:function(res){
-                    $('#subtopic_id').html(res);
-                }
-                
-            }); 
-          }
-   
-    }
-</script>
-
-
-
- <script>
-    function getLineitem(id){
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>employee/getlineitem',
-                data:{id:id},
-                success:function(res){
-                    $('#lineitem_id').html(res);
-                }
-                
-            }); 
-          }
-   
-    }
-</script>
-
-
-
-<script>
-    function getLineitemlevel(id){
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>employee/getlineitemlevel',
-                data:{id:id},
-                success:function(res){
-                    $('#lineitemlevel_id').html(res);
-                }
-                
-            }); 
-          }
-   
-       }
-</script>   
-
+ </script>
