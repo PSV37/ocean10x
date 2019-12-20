@@ -102,9 +102,13 @@
                               <option value="Addquestionbank">Add Question Bank</option>
                               <option value="addemp">Add Employee</option>
                               <option value="addconsultant">Add Consultant</option> -->
-                              <select class="multiselect" id="my-multi-select" name="options[]" multiple="multiple">
-                                <option>1</option>
-                                <option>2</option>
+                              <select id="example-onSelectAll" multiple="multiple">
+                              <option value="cheese">Cheese</option>
+                              <option value="tomatoes">Tomatoes</option>
+                              <option value="mozarella">Mozzarella</option>
+                              <option value="mushrooms">Mushrooms</option>
+                              <option value="pepperoni">Pepperoni</option>
+                              <option value="onions">Onions</option>
                             </select>
                          
                           <!--   <div class="row">
@@ -421,13 +425,26 @@ $("#dept_id").select2( {
 </script>
 <script type="text/javascript">
    $(function() {
+    var allSelected = false;
 
-    $('#my-multi-select').multiselect({
-        includeSelectAllOption: true
-    });
+$('#example-onSelectAll').multiselect({
+  includeSelectAllOption: true,
+  onSelectAll: function(){
+    allSelected = true;
+  },
+  onChange: function(){
+    allSelected = false;
+  }
+});
 
-    $("#my-multi-select").multiselect('selectAll', false);
-    $("#my-multi-select").multiselect('updateButtonText');
+$("#btn_loadSchools").click(function(){
+  if(allSelected){
+    alert("Yes!");
+  }else{
+    alert("No.");
+  }
+});
+ 
 
 });
 </script>
