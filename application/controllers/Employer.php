@@ -578,15 +578,16 @@ function getstate(){
     // $result = '';
      $select_edu = "access_specifiers";
         $data = $this->Master_model->get_master_row("employee_access", $select_edu, $where, $join = FALSE);
-        $access=explode(",", $data['access_specifiers']);
+       
         $accessSpecifiers = explode(',',$data['access_specifiers']);
    
-    print_r($access);
-    print_r($accessSpecifiers);die;
+   
 
-    if(!empty($access)){ 
+    if(!empty($accessSpecifiers)){ 
         // $result .='<option value="">Select City</option>';
-        foreach($access as $key){
+        foreach($accessSpecifiers as $key){
+
+            print_r($key);
           // $result .='<option value="'.$key['aceess_id'].'">'.$key['access_specifiers'].'</option>';
         }
     }else{
