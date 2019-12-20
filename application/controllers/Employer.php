@@ -2136,7 +2136,15 @@ public function interview_scheduler()
             $email = $this->input->post('candidate_email');
             $where_find = "js_email= '$email'";
             $exists = $this->Master_model->get_master_row('corporate_cv_bank', $select= FALSE, $where_find, $join = FALSE);
-            
+
+            $where_finds = "email= '$email'";
+            $on_ocean = $this->Master_model->get_master_row('js_info', $select= FALSE, $where_finds, $join = FALSE);
+            if ($on_ocean==true) {
+                $ocean_candidate = 'Yes';
+            }else{
+                $ocean_candidate = 'No';
+            }
+
             if($exists==true)
             {
                 $this->session->set_flashdata('success', '<div class="alert alert-warning text-center">This CV already exists!</div>');
@@ -2162,6 +2170,7 @@ public function interview_scheduler()
                     'js_role'                    => $this->input->post('candidate_role'),
                     'js_expected_salary'         => $this->input->post('candidate_expected_sal'),
                     'js_desired_work_location'   => $this->input->post('desired_wrok_location'),
+                    'ocean_candidate'            => $ocean_candidate,
                 );
             
                 $cv_data['created_on'] = date('Y-m-d H:i:s');
