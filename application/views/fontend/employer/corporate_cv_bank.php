@@ -54,7 +54,7 @@
                   <th class="active">Candidate Uploaded CV </th>
                   <th class="active">Last Profile Update At</th>
                   <!-- <th class="active">Ocean Generated CV</th> -->
-                   <!-- <th class="active">Action</th> -->
+                   <th class="active">Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -79,7 +79,6 @@
                   $mtime = date('d-M-y',strtotime($cv_row['created_on']));
                  }
                 
-                   
                 ?>
                   <tr>
                       <td><?php echo $key ?></td>
@@ -128,7 +127,7 @@
                         <?php } ?>
                       </td>
                       <td><?php echo $mtime; ?></td>
-                      <!-- <td><a href="<?php echo base_url(); ?>job/all-scheduled-interviews/<?php echo $cv_row['js_email']; ?>" class="btn btn-success btn-xs">View Interviews</a></td> -->
+                      <td><a href="<?php echo base_url(); ?>employer/getocean_profile/<?php echo $cv_row['js_email']; ?>" class="btn btn-success btn-xs">Get Ocean Profile</a></td>
                   </tr>
                   <?php
                       $key++;
