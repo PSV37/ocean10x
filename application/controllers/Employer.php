@@ -578,7 +578,7 @@ function getstate(){
     $result = '';
     // print_r($this->db->last_query());
    
-    print_r($access);die;
+    print_r($access['access_specifiers']);die;
 
     if(!empty($access)){ 
         // $result .='<option value="">Select City</option>';
