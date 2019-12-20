@@ -2490,11 +2490,11 @@ public function interview_scheduler()
          $dd= $exists['access_specifiers'];
         $a = explode(',', $dd);
         
-        if(!empty($a)){ 
+        if(!empty($dd)){ 
             $result .='<option value="">Select</option>';
             // foreach($a as $keys){
                 for($i=0; $i<sizeof($a);$i++){
-              $result .='<option value="'.$a[$i]['access_specifiers'].'">'.$a[$i]['access_specifiers'].'</option>';
+              $result .='<option value="'.$a[$i].'">'.$a[$i].'</option>';
             }
         }else{
         
