@@ -587,12 +587,12 @@ function getstate(){
         // $result .='<option value="">Select City</option>';
         foreach($accessSpecifiers as $key){
 
-            print_r($key);
+            // print_r($key);
           $result .='<option value="'.$key.'">'.$key.'</option>';
         }
     }else{
     
-        // $result .='<option value="">No access available</option>';
+         $result .='<option value="">No access available</option>';
     }
       echo $result;
 }
