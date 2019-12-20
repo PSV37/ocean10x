@@ -384,6 +384,7 @@ $("#dept_id").select2( {
                 url:'<?php echo base_url();?>employer/get_access_specifiers',
                 data:{id:id},
                 success:function(res){
+                  console.log(res);
                     $('#access').html(res);
                 }
                 
