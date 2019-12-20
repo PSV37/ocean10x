@@ -59,8 +59,8 @@
                       <td><?php echo $ct_row['ques_type'] ?></td>
                       <td><?php echo $ct_row['question'] ?></td>
                       <td>
-                          <?php echo btn_edit('employer/edit_questionbank/' . $ct_row['ques_id']); ?>
-                          <?php echo btn_delete('employer/delete_questionbank/' . $ct_row['ques_id']); ?>
+                          <?php echo btn_edit('employee/edit_questionbank/' . $ct_row['ques_id']); ?>
+                          <?php echo btn_delete('employee/delete_questionbank/' . $ct_row['ques_id']); ?>
                       </td>
                   </tr>
                   <?php
