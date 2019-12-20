@@ -95,14 +95,18 @@
                       <div class="form-group">
                           <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
                           <!-- <select class="selectpicker form-control" multiple data-live-search="true" id="user_acc" name="Access[]"> -->
-                            <select class="form-control"  name="user_acc" id="user_accc" multiple="multiple">
+                           <!--  <select class="form-control"  name="user_acc" id="user_accc" multiple="multiple"> -->
                               <!-- <option value="select-all">select all</option> -->
                               <!-- <option value="post_job">Post A job</option>
                               <option value="editprofile">Edit Company Profile</option>
                               <option value="Addquestionbank">Add Question Bank</option>
                               <option value="addemp">Add Employee</option>
                               <option value="addconsultant">Add Consultant</option> -->
-                          </select>
+                              <select class="multiselect" id="my-multi-select" name="options[]" multiple="multiple">
+                                <option>1</option>
+                                <option>2</option>
+                            </select>
+                         
                           <!--   <div class="row">
                               <div class="col-md-12">
 
@@ -416,9 +420,16 @@ $("#dept_id").select2( {
 });
 </script>
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('#user_accc').multiselect();
+   $(function() {
+
+    $('#my-multi-select').multiselect({
+        includeSelectAllOption: true
     });
+
+    $("#my-multi-select").multiselect('selectAll', false);
+    $("#my-multi-select").multiselect('updateButtonText');
+
+});
 </script>
 <script>
    
