@@ -1,7 +1,7 @@
 <?php 
 
-   $this->load->view('fontend/layout/employer_header.php');
-  
+   $this->load->view('fontend/layout/employee_header.php');
+   
 ?>   
 <style type="text/css">
   label {
@@ -29,7 +29,7 @@
           <div class="section lb">
                 <div class="container">
                     <div class="row">
-                     <?php $this->load->view('fontend/layout/employer_left.php');?>
+                     <?php $this->load->view('fontend/layout/employee_left.php');?>
 
 
                         <div class="content col-md-9">

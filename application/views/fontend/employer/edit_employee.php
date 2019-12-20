@@ -275,7 +275,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
           
               }); 
             }
-      // $("#user_acc").selectpicker('refresh');
+      $("#user_acc").selectpicker('refresh');
        }
      
 // function getaccess(id)
