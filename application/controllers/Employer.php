@@ -2492,8 +2492,9 @@ public function interview_scheduler()
         print_r($a); die;
         if(!empty($a)){ 
             $result .='<option value="">Select</option>';
-            foreach($a as $keys){
-              $result .='<option value="'.$keys['access_specifiers'].'">'.$keys['access_specifiers'].'</option>';
+            // foreach($a as $keys){
+                for($i=0; $i<sizeof($a);$i++){
+              $result .='<option value="'.$a[$i]['access_specifiers'].'">'.$a[$i]['access_specifiers'].'</option>';
             }
         }else{
         
