@@ -95,8 +95,8 @@
                       <div class="form-group">
                           <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
                           <!-- <select class="selectpicker form-control" multiple data-live-search="true" id="user_acc" name="Access[]"> -->
-                            <select class="form-control"  name="user_acc" id="user_accc" multiple="">
-                              <option value="select-all">select all</option>
+                            <select class="form-control"  name="user_acc" id="user_accc" multiple="multiple">
+                              <!-- <option value="select-all">select all</option> -->
                               <!-- <option value="post_job">Post A job</option>
                               <option value="editprofile">Edit Company Profile</option>
                               <option value="Addquestionbank">Add Question Bank</option>
@@ -414,6 +414,11 @@ $("#dept_id").select2( {
 });
  
 });
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#user_accc').multiselect();
+    });
 </script>
 <script>
    
