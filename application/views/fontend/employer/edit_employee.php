@@ -263,7 +263,21 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
    
        }
      
-
+// function getaccess(id)
+//       {
+//         if(id){
+//             $.ajax({
+//                 type:'POST',
+//                 url:'<?php echo base_url();?>employer/get_access_specifierss',
+//                 data:{id:id},
+//                 success:function(res){
+//                   console.log(res);
+//                     $('#accessrr').html(res);
+//                 }
+                
+//             }); 
+//           }
+//       }
        
 </script>	   
 <script>
@@ -376,21 +390,7 @@ $("#dept_id").select2( {
 });
 </script>
 <script>
-   function getaccess(id)
-      {
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>employer/get_access_specifierss',
-                data:{id:id},
-                success:function(res){
-                  console.log(res);
-                    $('#accessrr').html(res);
-                }
-                
-            }); 
-          }
-      }
+   
 </script>
 	   
 	   
