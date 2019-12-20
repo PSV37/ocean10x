@@ -102,14 +102,16 @@
                               <option value="Addquestionbank">Add Question Bank</option>
                               <option value="addemp">Add Employee</option>
                               <option value="addconsultant">Add Consultant</option> -->
-                              <select id="example-onSelectAll" multiple="multiple">
-                              <option value="cheese">Cheese</option>
-                              <option value="tomatoes">Tomatoes</option>
-                              <option value="mozarella">Mozzarella</option>
-                              <option value="mushrooms">Mushrooms</option>
-                              <option value="pepperoni">Pepperoni</option>
-                              <option value="onions">Onions</option>
+                             <select class="mdb-select md-form" multiple>
+                              <option value="" disabled selected>Choose your country</option>
+                              <option value="1">USA</option>
+                              <option value="2">Germany</option>
+                              <option value="3">France</option>
+                              <option value="3">Poland</option>
+                              <option value="3">Japan</option>
                             </select>
+                            <label class="mdb-main-label">Label example</label>
+                            <button class="btn-save btn btn-primary btn-sm">Save</button>
                          
                           <!--   <div class="row">
                               <div class="col-md-12">
@@ -424,28 +426,9 @@ $("#dept_id").select2( {
 });
 </script>
 <script type="text/javascript">
-   $(function() {
-    var allSelected = false;
-
-$('#example-onSelectAll').multiselect({
-  includeSelectAllOption: true,
-  onSelectAll: function(){
-    allSelected = true;
-  },
-  onChange: function(){
-    allSelected = false;
-  }
-});
-
-$("#btn_loadSchools").click(function(){
-  if(allSelected){
-    alert("Yes!");
-  }else{
-    alert("No.");
-  }
-});
- 
-
+ // Material Select Initialization
+$(document).ready(function() {
+$('.mdb-select').materialSelect();
 });
 </script>
 <script>
