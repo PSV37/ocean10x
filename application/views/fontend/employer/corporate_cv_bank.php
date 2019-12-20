@@ -84,12 +84,18 @@
                   <tr>
                       <td><?php echo $key ?></td>
                       <td>
-                        <?php if(!empty($photo)){ ?>
-                        <img src="<?php echo  base_url(); ?>upload/<?php if(!empty($photo[0]['photo_path'])){echo $photo[0]['photo_path'];} ?>" alt="" style="max-width: 100% !important;min-width: 40% !important;">
-                        <?php }else{ ?>
+                        <?php
+                        if($on_ocean == 'Yes')
+                        {
+                         if(!empty($photo)){ ?>
+                          <img src="<?php echo  base_url(); ?>upload/<?php if(!empty($photo[0]['photo_path'])){echo $photo[0]['photo_path'];} ?>" alt="" style="max-width: 100% !important;min-width: 40% !important;">
+                          <?php }else{ ?>
+                          <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" alt="" style="max-width: 100% !important;min-width: 40% !important;">
+                        <?php } 
+                          }else{
+                        ?>
                         <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" alt="" style="max-width: 100% !important;min-width: 40% !important;">
-                        <?php } ?>
-                        <!-- <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" alt="" style="max-width: 100% !important;min-width: 40% !important;"> -->
+                      <?php } ?>
                       </td>
                      
                       <td><?php echo $cv_row['js_name']; ?></td>
@@ -108,10 +114,17 @@
                      
                       <td>
                        
-                        <?php if(!empty($resume)){ ?>
-                        <a href="<?php echo  base_url(); ?>upload/Resumes/<?php if(!empty($resume[0]['resume'])){echo $resume[0]['resume'];} ?>" title='Download Attached Resume' download><i class="fa fa-download"></i> </a>
-                        <?php }else{ ?>
-                          Not Attached
+                        <?php 
+                         if($on_ocean == 'Yes')
+                          {
+                          if(!empty($resume)){ ?>
+                          <a href="<?php echo  base_url(); ?>upload/Resumes/<?php if(!empty($resume[0]['resume'])){echo $resume[0]['resume'];} ?>" title='Download Attached Resume' download><i class="fa fa-download"></i> </a>
+                          <?php }else{ ?>
+                            Not Attached
+                          <?php }
+                            }else{
+                          ?>
+                          Not Attached On Ocean
                         <?php } ?>
                       </td>
                       <td><?php echo $mtime; ?></td>
