@@ -79,7 +79,7 @@
                    <div class="col-md-6">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Designation<span class="required">*</span></label>
-                     <!--  <input type="email" name="email" id="email" class="form-control" value="<?php echo $result['email']; ?>"> -->
+                     
                       <select class="form-control" onchange="getaccess(this.value);" name="user_role">
                         <!-- <option value="">Select designation</option> -->
                         <?php foreach($roles as $key){?>
@@ -94,8 +94,8 @@
                   <div class="col-md-6">
                       <div class="form-group">
                           <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
-                          <!-- <select class="selectpicker form-control" multiple data-live-search="true" id="access" name="Access[]"> -->
-                            <select class="form-control" name="access">
+                          <select class="selectpicker form-control" multiple data-live-search="true" id="access" name="Access[]">
+                            <!-- <select class="form-control" name="access"> -->
                               <!-- <option value="post_job">Post A job</option>
                               <option value="editprofile">Edit Company Profile</option>
                               <option value="Addquestionbank">Add Question Bank</option>
