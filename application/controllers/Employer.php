@@ -577,8 +577,8 @@ function getstate(){
     $access = $this->Master_model->get_master_row('employee_access',$where);
     $result = '';
     // print_r($this->db->last_query());
-    
-    print_r(sizeof($access));
+    $result_array=implode(',', $access);
+    print_r($result_array);
 
     if(!empty($access)){ 
         // $result .='<option value="">Select City</option>';
