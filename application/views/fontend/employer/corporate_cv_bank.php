@@ -54,33 +54,48 @@
                   <th class="active">Candidate Uploaded CV </th>
                   <th class="active">Last Profile Update At</th>
                   <!-- <th class="active">Ocean Generated CV</th> -->
+                   <!-- <th class="active">Action</th> -->
                 </tr>
               </thead>
               <tbody>
                 <?php $key = 1; if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) : 
-                  // $resume = getUploadedResume($cv_row['js_email']);
-                  // $photo = getSeekerPhoto($cv_row['js_email']);
-                  // $updates = getSeekerlastUpdates($cv_row['js_email']);
-                  // if (!empty($updates)) {
-                  //  if($updates[0]['update_at']=='0000-00-00 00:00:00') { 
-                  //     $mtime = date('d-M-y',strtotime($updates[0]['create_at']));
-                  //   } else{
-                  //     $mtime = date('d-M-y',strtotime($updates[0]['update_at']));
-                  //   }
-                  // }else{
-                  //    $mtime = date('d-M-y',strtotime($cv_row['created_on']));
-                  // }
-                   $mtime = date('d-M-y',strtotime($cv_row['created_on']));
+
+                 $on_ocean = $cv_row['ocean_candidate'];
+                 if($on_ocean == 'Yes')
+                 {
+                    $resume = getUploadedResume($cv_row['js_email']);
+                    $photo = getSeekerPhoto($cv_row['js_email']);
+                    $updates = getSeekerlastUpdates($cv_row['js_email']);
+                    if (!empty($updates)) {
+                      if($updates[0]['update_at']=='0000-00-00 00:00:00') { 
+                        $mtime = date('d-M-y',strtotime($updates[0]['create_at']));
+                      } else{
+                        $mtime = date('d-M-y',strtotime($updates[0]['update_at']));
+                      }
+                    }else{
+                      $mtime = date('d-M-y',strtotime($cv_row['created_on']));
+                    }
+                 }else{
+                  $mtime = date('d-M-y',strtotime($cv_row['created_on']));
+                 }
+                
+                   
                 ?>
                   <tr>
                       <td><?php echo $key ?></td>
                       <td>
-                       <!--  <?php if(!empty($photo)){ ?>
-                        <img src="<?php echo  base_url(); ?>upload/<?php if(!empty($photo[0]['photo_path'])){echo $photo[0]['photo_path'];} ?>" alt="" style="max-width: 100% !important;min-width: 40% !important;">
-                        <?php }else{ ?>
+                        <?php
+                        if($on_ocean == 'Yes')
+                        {
+                         if(!empty($photo)){ ?>
+                          <img src="<?php echo  base_url(); ?>upload/<?php if(!empty($photo[0]['photo_path'])){echo $photo[0]['photo_path'];} ?>" alt="" style="max-width: 100% !important;min-width: 40% !important;">
+                          <?php }else{ ?>
+                          <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" alt="" style="max-width: 100% !important;min-width: 40% !important;">
+                        <?php } 
+                          }else{
+                        ?>
                         <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" alt="" style="max-width: 100% !important;min-width: 40% !important;">
-                        <?php } ?> -->
-                        <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" alt="" style="max-width: 100% !important;min-width: 40% !important;">
+                      <?php } ?>
                       </td>
                      
                       <td><?php echo $cv_row['js_name']; ?></td>
@@ -98,14 +113,22 @@
                       <td><?php echo $cv_row['js_current_designation']; ?></td>
                      
                       <td>
-                        Not Attached
-                        <!-- <?php if(!empty($resume)){ ?>
-                        <a href="<?php echo  base_url(); ?>upload/Resumes/<?php if(!empty($resume[0]['resume'])){echo $resume[0]['resume'];} ?>" title='Download Attached Resume' download><i class="fa fa-download"></i> </a>
-                        <?php }else{ ?>
+                       
+                        <?php 
+                         if($on_ocean == 'Yes')
+                          {
+                          if(!empty($resume)){ ?>
+                          <a href="<?php echo  base_url(); ?>upload/Resumes/<?php if(!empty($resume[0]['resume'])){echo $resume[0]['resume'];} ?>" title='Download Attached Resume' download><i class="fa fa-download"></i> </a>
+                          <?php }else{ ?>
+                            Not Attached
+                          <?php }
+                            }else{
+                          ?>
                           Not Attached
-                        <?php } ?> -->
+                        <?php } ?>
                       </td>
                       <td><?php echo $mtime; ?></td>
+                      <!-- <td><a href="<?php echo base_url(); ?>job/all-scheduled-interviews/<?php echo $cv_row['js_email']; ?>" class="btn btn-success btn-xs">View Interviews</a></td> -->
                   </tr>
                   <?php
                       $key++;
