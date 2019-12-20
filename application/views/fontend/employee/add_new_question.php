@@ -325,87 +325,13 @@ function showCheckboxes() {
 						data:{id:id},
 						success:function(res){
 							$('#topic_id').html(res);
+
 						}
 						
 					}); 
 				  }
 		   }
-
-    $(document).ready(function(){
-		
-		function getLineitemlevel_load(){
-			var id = $('#lineitem_id').val();
-			if(id){
-				$.ajax({
-					type:'POST',
-					url:'<?php echo base_url();?>employee/getlineitemlevel',
-					data:{id:id},
-					success:function(res){
-						$('#lineitemlevel_id').html(res);
-						$('#lineitemlevel_id').val(<?php echo $row['lineitemlevel_id']; ?>);
-					}
-				}); 
-			  }
-        }
-		
-		function getLineitem_load(){
-			var id = $('#subtopic_id').val();
-
-			if(id){
-				$.ajax({
-					type:'POST',
-					url:'<?php echo base_url();?>employee/getlineitem',
-					data:{id:id},
-					success:function(res){
-						$('#lineitem_id').html(res);
-						$('#lineitem_id').val(<?php echo $row['lineitem_id']; ?>);
-						 getLineitemlevel_load();
-					}
-					
-				}); 
-			  }
-   
-        }
-		
-		function getSubtopic_load(){
-        var id = $('#topic_id').val();
-
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>employee/getsubtopic',
-                data:{id:id},
-                success:function(res){
-                    $('#subtopic_id').html(res);
-                    $('#subtopic_id').val(<?php echo $row['subtopic_id']; ?>);
-					getLineitem_load();
-                }
-                
-            }); 
-          }
-   
-       }
-		
-		function getTopic_load(){
-			var id = $('#subject').val();
-			if(id){
-				$.ajax({
-					type:'POST',
-					url:'<?php echo base_url();?>employee/gettopic',
-					data:{id:id},
-					success:function(res){
-						$('#topic_id').html(res);
-						$('#topic_id').val(<?php echo $row['topic_id']; ?>);
-						getSubtopic_load();
-					}
-					
-				}); 
-			}
-       }
-       getTopic_load();
-    });
-       
-</script>
+		   </script>
 	   <script>
     function getSubtopic(id){
         if(id){
@@ -460,4 +386,83 @@ function showCheckboxes() {
    
        }
 </script>   
+<script type="text/javascript">
 
+    $(document).ready(function(){
+		
+		function getTopic_load(){
+			 var id = <?php echo $row['technical_id']; ?>;
+			 alert(id);
+			if(id){
+				$.ajax({
+					type:'POST',
+					url:'<?php echo base_url();?>employee/gettopic',
+					data:{id:id},
+					success:function(res){
+						$('#topic_id').html(res);
+						$('#topic_id').val(<?php echo $row['topic_id']; ?>);
+						getSubtopic_load(<?php echo $row['topic_id']; ?>);
+					}
+					
+				}); 
+			}
+       }
+       function getSubtopic_load(id){
+        // var id = $('#topic_id').val();
+
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>employee/getsubtopic',
+                data:{id:id},
+                success:function(res){
+                    $('#subtopic_id').html(res);
+                    $('#subtopic_id').val(<?php echo $row['subtopic_id']; ?>);
+					getLineitem_load(<?php  echo $row['subtopic_id']; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+       function getLineitem_load(){
+			// var id = $('#subtopic_id').val();
+
+			if(id){
+				$.ajax({
+					type:'POST',
+					url:'<?php echo base_url();?>employee/getlineitem',
+					data:{id:id},
+					success:function(res){
+						$('#lineitem_id').html(res);
+						$('#lineitem_id').val(<?php echo $row['lineitem_id']; ?>);
+						 getLineitemlevel_load(<?php echo $row['lineitem_id']; ?>);
+					}
+					
+				}); 
+			  }
+   
+        }
+        function getLineitemlevel_load(id){
+			// var id = $('#lineitem_id').val();
+			if(id){
+				$.ajax({
+					type:'POST',
+					url:'<?php echo base_url();?>employee/getlineitemlevel',
+					data:{id:id},
+					success:function(res){
+						$('#lineitemlevel_id').html(res);
+						$('#lineitemlevel_id').val(<?php echo $row['lineitemlevel_id']; ?>);
+					}
+				}); 
+			  }
+        }
+		
+		
+       getTopic_load();
+       getSubtopic_load();
+       getLineitem_load();
+       getLineitemlevel_load();
+
+    });
+ </script>
