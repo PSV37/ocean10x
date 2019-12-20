@@ -576,8 +576,10 @@ function getstate(){
     $where['user_role_id'] = $role_id;
     $access = $this->Master_model->getMaster('employee_access',$where);
     $result = '';
-    print_r($this->db->last_query());
-    
+    // print_r($this->db->last_query());
+    $result_array=explode(',', $access);
+    print_r($result_array);
+
     if(!empty($access)){ 
         // $result .='<option value="">Select City</option>';
         foreach($access as $key){
