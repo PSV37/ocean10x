@@ -177,6 +177,9 @@ $route['sortlist-cv/(:num)']="employee/sortlist_cv/$1";
 $route['interview-cv/(:num)']="employee/interview_cv/$1";
 $route['final-cv/(:num)']="employee/final_cv/$1";
 $route['reject-resume/(:num)']="employee/reject_resume/$1";
+$route['reject-resume/(:num)']="employee/reject_resume/$1";
+$route['add-question']="employer/add_new_question";
+
 
 
 
