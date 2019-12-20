@@ -571,7 +571,7 @@ function getstate(){
 	}
 	 echo $result;
 }
-    function get_access_specifiers(){
+    function get_access_specifierss(){
     $role_id = $this->input->post('id');
     $where['user_role_id'] = $role_id;
    
@@ -580,10 +580,10 @@ function getstate(){
        
         $accessSpecifiers = explode(',',$data['access_specifiers']);
    
-   
+   $result ='';
 
     if(!empty($accessSpecifiers)){ 
-         // $result .='<option value="">Select City</option>';
+         $result .='<option value="">Select One</option>';
         foreach($accessSpecifiers as $key){
 
             // print_r($key);

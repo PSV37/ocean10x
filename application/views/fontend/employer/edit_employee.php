@@ -94,7 +94,7 @@
                   <div class="col-md-6">
                       <div class="form-group">
                           <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
-                          <select class="selectpicker form-control" multiple data-live-search="true" id="access" name="Access[]">
+                          <select class="selectpicker form-control" multiple data-live-search="true" id="accessrr" name="Access[]">
                             <!-- <select class="form-control" name="access"> -->
                               <!-- <option value="post_job">Post A job</option>
                               <option value="editprofile">Edit Company Profile</option>
@@ -381,11 +381,11 @@ $("#dept_id").select2( {
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>employer/get_access_specifiers',
+                url:'<?php echo base_url();?>employer/get_access_specifierss',
                 data:{id:id},
                 success:function(res){
                   console.log(res);
-                    $('#access').html(res);
+                    $('#accessrr').html(res);
                 }
                 
             }); 
