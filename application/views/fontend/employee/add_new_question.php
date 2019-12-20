@@ -333,8 +333,8 @@ function showCheckboxes() {
 
     $(document).ready(function(){
 		
-		function getLineitemlevel_load(){
-			var id = $('#lineitem_id').val();
+		function getLineitemlevel_load(id){
+			// var id = $('#lineitem_id').val();
 			if(id){
 				$.ajax({
 					type:'POST',
@@ -349,7 +349,7 @@ function showCheckboxes() {
         }
 		
 		function getLineitem_load(){
-			var id = $('#subtopic_id').val();
+			// var id = $('#subtopic_id').val();
 
 			if(id){
 				$.ajax({
@@ -359,7 +359,7 @@ function showCheckboxes() {
 					success:function(res){
 						$('#lineitem_id').html(res);
 						$('#lineitem_id').val(<?php echo $row['lineitem_id']; ?>);
-						 getLineitemlevel_load();
+						 getLineitemlevel_load(<?php echo $row['lineitem_id']; ?>);
 					}
 					
 				}); 
@@ -367,8 +367,8 @@ function showCheckboxes() {
    
         }
 		
-		function getSubtopic_load(){
-        var id = $('#topic_id').val();
+		function getSubtopic_load(id){
+        // var id = $('#topic_id').val();
 
         if(id){
             $.ajax({
@@ -378,7 +378,7 @@ function showCheckboxes() {
                 success:function(res){
                     $('#subtopic_id').html(res);
                     $('#subtopic_id').val(<?php echo $row['subtopic_id']; ?>);
-					getLineitem_load();
+					getLineitem_load(<?php echo echo $row['subtopic_id']; ?>);
                 }
                 
             }); 
@@ -387,7 +387,8 @@ function showCheckboxes() {
        }
 		
 		function getTopic_load(){
-			var id = $('#subject').val();
+			 var id = $('#subject').val();
+			 alert(id);
 			if(id){
 				$.ajax({
 					type:'POST',
@@ -396,13 +397,17 @@ function showCheckboxes() {
 					success:function(res){
 						$('#topic_id').html(res);
 						$('#topic_id').val(<?php echo $row['topic_id']; ?>);
-						getSubtopic_load();
+						getSubtopic_load(<?php echo $row['topic_id']; ?>);
 					}
 					
 				}); 
 			}
        }
        getTopic_load();
+       getSubtopic_load();
+       getLineitem_load();
+       getLineitemlevel_load();
+
     });
        
 </script>
