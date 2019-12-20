@@ -325,6 +325,7 @@ function showCheckboxes() {
 						data:{id:id},
 						success:function(res){
 							$('#topic_id').html(res);
+
 						}
 						
 					}); 
@@ -332,59 +333,6 @@ function showCheckboxes() {
 		   }
 
     $(document).ready(function(){
-		
-		function getLineitemlevel_load(id){
-			// var id = $('#lineitem_id').val();
-			if(id){
-				$.ajax({
-					type:'POST',
-					url:'<?php echo base_url();?>employee/getlineitemlevel',
-					data:{id:id},
-					success:function(res){
-						$('#lineitemlevel_id').html(res);
-						$('#lineitemlevel_id').val(<?php echo $row['lineitemlevel_id']; ?>);
-					}
-				}); 
-			  }
-        }
-		
-		function getLineitem_load(){
-			// var id = $('#subtopic_id').val();
-
-			if(id){
-				$.ajax({
-					type:'POST',
-					url:'<?php echo base_url();?>employee/getlineitem',
-					data:{id:id},
-					success:function(res){
-						$('#lineitem_id').html(res);
-						$('#lineitem_id').val(<?php echo $row['lineitem_id']; ?>);
-						 getLineitemlevel_load(<?php echo $row['lineitem_id']; ?>);
-					}
-					
-				}); 
-			  }
-   
-        }
-		
-		function getSubtopic_load(id){
-        // var id = $('#topic_id').val();
-
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>employee/getsubtopic',
-                data:{id:id},
-                success:function(res){
-                    $('#subtopic_id').html(res);
-                    $('#subtopic_id').val(<?php echo $row['subtopic_id']; ?>);
-					getLineitem_load(<?php  echo $row['subtopic_id']; ?>);
-                }
-                
-            }); 
-          }
-   
-       }
 		
 		function getTopic_load(){
 			 var id = $('#subject').val();
@@ -403,6 +351,58 @@ function showCheckboxes() {
 				}); 
 			}
        }
+       function getSubtopic_load(id){
+        // var id = $('#topic_id').val();
+
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>employee/getsubtopic',
+                data:{id:id},
+                success:function(res){
+                    $('#subtopic_id').html(res);
+                    $('#subtopic_id').val(<?php echo $row['subtopic_id']; ?>);
+					getLineitem_load(<?php  echo $row['subtopic_id']; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+       function getLineitem_load(){
+			// var id = $('#subtopic_id').val();
+
+			if(id){
+				$.ajax({
+					type:'POST',
+					url:'<?php echo base_url();?>employee/getlineitem',
+					data:{id:id},
+					success:function(res){
+						$('#lineitem_id').html(res);
+						$('#lineitem_id').val(<?php echo $row['lineitem_id']; ?>);
+						 getLineitemlevel_load(<?php echo $row['lineitem_id']; ?>);
+					}
+					
+				}); 
+			  }
+   
+        }
+        function getLineitemlevel_load(id){
+			// var id = $('#lineitem_id').val();
+			if(id){
+				$.ajax({
+					type:'POST',
+					url:'<?php echo base_url();?>employee/getlineitemlevel',
+					data:{id:id},
+					success:function(res){
+						$('#lineitemlevel_id').html(res);
+						$('#lineitemlevel_id').val(<?php echo $row['lineitemlevel_id']; ?>);
+					}
+				}); 
+			  }
+        }
+		
+		
        getTopic_load();
        getSubtopic_load();
        getLineitem_load();
