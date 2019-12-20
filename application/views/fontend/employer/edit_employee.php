@@ -31,36 +31,34 @@
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
         
     		<form method="post" action="<?php echo base_url();?>employer/postEditData" enctype="multipart/form-data">
-			 <input type="hidden" name="cid" id="cid" value="<?php echo $result['emp_id'];?>">
-            	<div class="row">
+			    <input type="hidden" name="cid" id="cid" value="<?php echo $result['emp_id'];?>">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="box-body">
+					       <div class="container-fluid">
+                   <div class="col-md-4">
+                    <div class="form-group">                                       
+							       <label for="exampleInputEmail1">Employee No<span class="required">*</span></label>
+                      <input type="number" min="1" name="emp_no" id="emp_no" class="form-control" value="<?php echo $result['emp_no']; ?>">
+								    </div>
+                    </div>
 
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="box-body">
-					<div class="container-fluid">
-                        <div class="col-md-4">
-                            <div class="form-group">                                       
-							   <label for="exampleInputEmail1">Employee No <span class="required">*</span></label>
-                                
-								<input type="number" min="1" name="emp_no" id="emp_no" class="form-control" value="<?php echo $result['emp_no']; ?>">
-								</div>
-                        </div>
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Name <span class="required">*</span></label>
-                                         <input type="text" name="emp_name" id="emp_name" class="form-control" value="<?php echo $result['emp_name']; ?>">
-                                    </div>
-                                </div>
-									<div class="col-md-4">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Name <span class="required">*</span></label>
+                        <input type="text" name="emp_name" id="emp_name" class="form-control" value="<?php echo $result['emp_name']; ?>">
+                      </div>
+                    </div>
+								  <div class="col-md-4">
                     <div class="form-group">
-  									<label for="exampleInputEmail1">Department<span class="required">*</span></label>
-  									<select  name="dept_id" id="dept_id" class="form-control department">
-  										<option value="">Select Department</option>
-  										<?php foreach($department as $key){?>
-  										<option value="<?php echo $key['dept_id']; ?>"<?php if($result['dept_id'] == $key['dept_id']){ echo "selected"; }?>><?php echo $key['department_name']; ?></option>
-  										<?php } ?>
-  								    </select>
-									 </div>
+    									<label for="exampleInputEmail1">Department<span class="required">*</span></label>
+    									<select  name="dept_id" id="dept_id" class="form-control department">
+    										<option value="">Select Department</option>
+    										<?php foreach($department as $key){?>
+    										<option value="<?php echo $key['dept_id']; ?>"<?php if($result['dept_id'] == $key['dept_id']){ echo "selected"; }?>><?php echo $key['department_name']; ?></option>
+    										<?php } ?>
+    								    </select>
+									   </div>
                   </div>
                 </div>
 									<div class="container-fluid">
@@ -96,7 +94,7 @@
                           <select class="selectpicker form-control" multiple data-live-search="true" id="Access[]" name="Access[]">
                               <option value="post_job">Post A job</option>
                               <option value="editprofile">Edit Company Profile</option>
-                              <option value="Addquestion_bank">Add Ouestion Bank</option>
+                              <option value="Addquestionbank">Add Ouestion Bank</option>
                               <option value="addemp">Add Employee</option>
                               <option value="addconsultant">Add Consultant</option>
                           </select>

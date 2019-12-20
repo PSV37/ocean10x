@@ -18,16 +18,22 @@
       {?>
         <li> <a href="<?php echo base_url() ?>company-profile" class=""> <i class="fa fa-check-square-oa-user-circle-o" aria-hidden="true"></i>Edit Company Profile</a> </li>
       <?php }?> 
+
       <?php 
       if (in_array('postjob', $accessSpecifiers)) 
       {?>
-        <li> <a href="<?php echo base_url(); ?>post-a-job" class=""> <i class="fa fa-pencil" aria-hidden="true"></i> Post New Job </a> </li>
-         <li> <a href="<?php echo base_url() ?>jobs"><i class="fa fa-check-square-o" aria-hidden="true"></i> Posted Job </a> </li>
+          <li> <a href="<?php echo base_url(); ?>post-a-job" class=""> <i class="fa fa-pencil" aria-hidden="true"></i> Post New Job </a> </li>
+          <li> <a href="<?php echo base_url() ?>jobs"><i class="fa fa-check-square-o" aria-hidden="true"></i> Posted Job </a> </li>
       <?php }else{?> 
-      <li> <a href="<?php echo base_url() ?>active-job"><i class="fa fa-check-square-o" aria-hidden="true"></i> Posted Job </a> </li>
+        <li> <a href="<?php echo base_url() ?>active-job"><i class="fa fa-check-square-o" aria-hidden="true"></i> Posted Job </a> </li>
       <?php } ?>
-      <li> <a href="<?php echo base_url() ?>employee/logout"><i class="fa fa-lock" aria-hidden="true"></i> logout </a> </li>
+        
+
+      <?php if (in_array('Addquestionbank', $accessSpecifiers)) {?>
+          <li> <a href="<?php echo base_url() ?>add-question"><i class="fa fa-check-square-o" aria-hidden="true"></i>Add Question</a> </li>
+     <?php } ?>
       
+      <li> <a href="<?php echo base_url() ?>employee/logout"><i class="fa fa-lock" aria-hidden="true"></i> logout </a> </li>
      
       
       
