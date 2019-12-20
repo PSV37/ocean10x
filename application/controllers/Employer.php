@@ -577,7 +577,7 @@ function getstate(){
     $access = $this->Master_model->getMaster('employee_access',$where);
     $result = '';
     // print_r($this->db->last_query());
-    $result_array=explode(',', $access);
+    $result_array=implode(',', $access);
     print_r($result_array);
 
     if(!empty($access)){ 
