@@ -181,6 +181,8 @@ $route['all-questions']="employee/all_questions";
 $route['add-question']="employee/add_new_question";
 $route['question-bank']="employee/importquestion";
 $route['add-new-consultant']="employee/addconsultant";
+$route['show-all-consultant']="employee/allconsultants";
+
 
 
 
