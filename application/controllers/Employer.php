@@ -571,7 +571,22 @@ function getstate(){
 	}
 	 echo $result;
 }
+    function get_access_specifiers(){
+    $role_id = $this->input->post('id');
+    $where['user_role_id'] = $role_id;
+    $access = $this->Master_model->getMaster('employee_access',$where);
+    $result = '';
+    if(!empty($access)){ 
+        // $result .='<option value="">Select City</option>';
+        foreach($access as $key){
+          $result .='<option value="'.$key['aceess_id'].'">'.$key['access_specifiers'].'</option>';
+        }
+    }else{
     
+        $result .='<option value="">No access available</option>';
+    }
+     echo $result;
+}
      // To fetch getProfssionalSkillsDetails details
     function getSkillsByRole() {
         $id=$this->input->post('role_id');
@@ -1461,7 +1476,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     	$data['department'] = $this->Master_model->getMaster('department',$where=false);
     	$data['country'] = $this->Master_model->getMaster('country',$where=false);
     	$data['state'] = $this->Master_model->getMaster('state',$where=false);
-    	$data['city'] = $this->Master_model->getMaster('city',$where=false);
+        $data['city'] = $this->Master_model->getMaster('city',$where=false);
+    	$data['roles'] = $this->Master_model->getMaster('user_role',$where=false);
     	//echo $this->db->last_query(); die;
     	$this->load->view('fontend/employer/edit_employee',$data);
     }
