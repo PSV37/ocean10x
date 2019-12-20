@@ -1867,8 +1867,35 @@ public function update_interview_status()
         $data['city'] = $this->Master_model->getMaster('city',$where=false);
         $data['country'] = $this->Master_model->getMaster('country',$where=false);
         $data['state'] = $this->Master_model->getMaster('state',$where=false);
-        $this->load->view('fontend/consultant/add_consultant',$data);
+        $this->load->view('fontend/employee/add_consultant',$data);
 }
+function get_autocomplete(){
+        if (isset($_GET['term'])) {
+            // $this->load->model('Consultant_autocomplete_model');
+            $result = $this->Job_seeker_experience_model->autocomplete_companies($_GET['term']);
+            if (count($result) > 0) {
+            foreach ($result as $row)
+                $arr_result[] = $row->company_name;
+                echo json_encode($arr_result);
+
+            }
+        }
+    }
+
+    function get_company_info()
+    {
+       
+        $s =$this->input->post('comp_name');
+        $where1 = "company_name = '$s'";
+        $join = array( "country"=>"country.country_id=company_profile.country_id | LEFT OUTER",
+                        "city"=>"city.id=company_profile.city_id | LEFT OUTER",
+                        "state"=>"state.state_id=company_profile.state_id | LEFT OUTER");
+      
+        $select ="company_profile_id,company_name,company_email,company_url,country_code,company_phone,contact_name,cont_person_email,cont_person_mobile,company_career_link,company_address,company_address2,company_pincode,comp_gstn_no,comp_pan_no,company_profile.country_id,city.city_name,state.state_name,company_profile.state_id,company_profile.city_id";
+        $result = $this->Master_model->getMaster('company_profile', $where1, $join = $join, $order = false, $field = false, $select = $select,$limit=false,$start=false, $search=false);
+                echo json_encode($result);
+
+    }
         
 
     

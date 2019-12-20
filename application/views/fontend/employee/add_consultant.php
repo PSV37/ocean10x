@@ -39,7 +39,7 @@
                                 <?php echo $this->session->flashdata('msg'); ?>
                                 <?php echo $this->session->flashdata('success_msg'); ?>
                                
-        <form method="post" action="<?php echo base_url();?>employer/addconsultant" enctype="multipart/form-data">
+        <form method="post" action="<?php echo base_url();?>employee/addconsultant" enctype="multipart/form-data">
 
                                 <input type="hidden" name="company_profile_id" id="company_profile_id"value="<?php echo $company_info->company_profile_id;?>">
                                  
@@ -391,35 +391,30 @@
                     <div class="row"> 
 
                     <div class="col-md-12 col-sm-12">
-                                         <div class="formrow">
-                                          <label class="control-label">Consultancy Address-1: <span class="required">*</span></label>
-                                            <textarea name="company_address" id="company_address" class="form-control ckeditor" placeholder="Company Address"><?php if(!empty($company_info->company_address)){
-                                                echo $company_info->company_address;
-                                               } ?></textarea>
-                                                 </div>
-                                        </div>
-                      <div class="panel-body"></div>
-
-                                        
-                                       
-                                    </div>
+                         <div class="formrow">
+                            <label class="control-label">Consultancy Address-1: <span class="required">*</span></label>
+                             <textarea name="company_address" id="company_address" class="form-control ckeditor" placeholder="Company Address"><?php if(!empty($company_info->company_address)){
+                                   echo $company_info->company_address;} ?></textarea>
+                         </div>
+                    </div>
+                    <div class="panel-body"></div>
+                </div>
                   
                                       
                                     </div>
                   <div class="row">
                     <div class="col-md-6 col-sm-6">
-                                 <div class="formrow">
-                                       <label class="control-label">Pincode: <span class="required">*</span></label>
-                                      <input type="text" name="company_pincode" id="company_pincode"  class="form-control" value="<?php 
-                                               if(!empty($company_info->company_pincode)){
+                         <div class="formrow">
+                            <label class="control-label">Pincode: <span class="required">*</span></label>
+                             <input type="text" name="company_pincode" id="company_pincode"  class="form-control" value="<?php 
+                                 if(!empty($company_info->company_pincode)){
                                                   echo $company_info->company_pincode;
-                                               }
-                                          ?>" required>
-                                  </div>
-                               </div>
-                               <div class="col-md-6 col-sm-6">
-                                 <div class="formrow">
-                                       <label class="control-label">GSTN No:</label>
+                                               }?>" required>
+                        </div>
+                    </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="formrow">
+                        <label class="control-label">GSTN No:</label>
                                       <input type="text" name="comp_gst_no" id="comp_gst_no"  class="form-control" value="<?php 
                                                if(!empty($company_info->comp_gstn_no)){
                                                   echo $company_info->comp_gstn_no;
@@ -484,7 +479,7 @@
 <script type="text/javascript">
       $(function() {
       $("#company_name").autocomplete({
-          source: "<?php echo base_url('employer/get_autocomplete'); ?>",
+          source: "<?php echo base_url('employee/get_autocomplete'); ?>",
           select: function(a,b)
             {
                  // alert(b.item.value);
@@ -497,7 +492,7 @@
       function getcompanyinfo(company_name){
 
     $.ajax({
-              url:'<?php echo site_url('employer/get_company_info') ?>',
+              url:'<?php echo site_url('employee/get_company_info') ?>',
               type:'POST',
              
                dataType: "JSON",  
@@ -537,7 +532,7 @@
     function savecompanymapping(comp_id)
     {
             $.ajax({
-              url:'<?php echo site_url('employer/addconsultant') ?>',
+              url:'<?php echo site_url('employee/addconsultant') ?>',
               type:'POST',
               data:{
                     comp_name:company_name
@@ -606,7 +601,7 @@ $(document).ready(function(){
     if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>Employer/getstate',
+                url:'<?php echo base_url();?>Employee/getstate',
                 data:{id:id},
                 success:function(res){
                     $('#state_id').html(res);
@@ -622,7 +617,7 @@ $(document).ready(function(){
     if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>Employer/getcity',
+                url:'<?php echo base_url();?>Employee/getcity',
                 data:{id:id},
                 success:function(res){
                     $('#city_id').html(res);
@@ -641,7 +636,7 @@ $(document).ready(function(){
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>Employer/getstate',
+                url:'<?php echo base_url();?>Employee/getstate',
                 data:{id:id},
                 success:function(res){
                     $('#state_id').html(res);
@@ -660,7 +655,7 @@ $(document).ready(function(){
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>Employer/getcity',
+                url:'<?php echo base_url();?>Employee/getcity',
                 data:{id:id},
                 success:function(res){
                     $('#city_id').html(res);

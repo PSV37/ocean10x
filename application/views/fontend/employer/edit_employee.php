@@ -95,7 +95,8 @@
                       <div class="form-group">
                           <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
                           <!-- <select class="selectpicker form-control" multiple data-live-search="true" id="user_acc" name="Access[]"> -->
-                            <select class="form-control"  name="user_acc" id="user_accc">
+                            <select class="form-control"  name="user_acc" id="user_accc" multiple="">
+                              <option value="select-all">select all</option>
                               <!-- <option value="post_job">Post A job</option>
                               <option value="editprofile">Edit Company Profile</option>
                               <option value="Addquestionbank">Add Question Bank</option>
@@ -277,7 +278,17 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
             }
       // $("#user_accc").selectpicker('refresh');
        }
-     
+     $(document).delegate('#select-all', 'click', function(e) {
+    if(this.checked) {
+        $('.bank-checkbox').each(function() {
+            this.checked = true;                        
+        });
+    } else {
+        $('.bank-checkbox').each(function() {
+            this.checked = false;                       
+        });
+    }
+});
 // function getaccess(id)
 //       {
 //         if(id){
