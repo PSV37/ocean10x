@@ -2487,9 +2487,9 @@ public function interview_scheduler()
         $exists = $this->Master_model->get_master_row('employee_access', $select= FALSE, $where, $join = FALSE);
 
         $result = '';
-        $dd= $exists['access_specifiers'];
+        echo $dd= $exists['access_specifiers'];
         $a = explode(',', $dd);
-        
+        print_r($a); die;
         if(!empty($a)){ 
             $result .='<option value="">Select</option>';
             foreach($a as $keys){
