@@ -95,7 +95,7 @@
                       <div class="form-group">
                           <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
                           <!-- <select class="selectpicker form-control" multiple data-live-search="true" id="user_acc" name="Access[]"> -->
-                            <select class=form-control" multiple data-live-search="true" name="user_acc" id="user_accc">
+                            <select class="form-control" multiple data-live-search="true" name="user_acc" id="user_accc">
                               <!-- <option value="post_job">Post A job</option>
                               <option value="editprofile">Edit Company Profile</option>
                               <option value="Addquestionbank">Add Question Bank</option>
