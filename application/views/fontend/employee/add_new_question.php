@@ -378,7 +378,7 @@ function showCheckboxes() {
                 success:function(res){
                     $('#subtopic_id').html(res);
                     $('#subtopic_id').val(<?php echo $row['subtopic_id']; ?>);
-					getLineitem_load(<?php echo echo $row['subtopic_id']; ?>);
+					getLineitem_load(<?php  echo $row['subtopic_id']; ?>);
                 }
                 
             }); 
