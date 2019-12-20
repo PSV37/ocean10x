@@ -335,7 +335,7 @@ function showCheckboxes() {
     $(document).ready(function(){
 		
 		function getTopic_load(){
-			 var id = <?php echo $row['technical_id']; ?>
+			 var id = <?php echo $row['technical_id']; ?>;
 			 alert(id);
 			if(id){
 				$.ajax({
