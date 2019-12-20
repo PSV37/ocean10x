@@ -80,7 +80,7 @@
                     <div class="form-group">
                       <label for="exampleInputEmail1">Designation<span class="required">*</span></label>
                      
-                      <select class="form-control" onchange="getaccess(this.value);" name="user_role">
+                      <select class="form-control" name="user_role" id="user_role" onchange="getuseraccess(this.value);">
                         <!-- <option value="">Select designation</option> -->
                         <?php foreach($roles as $key){?>
                         <option value="<?php echo $key['user_role_id']; ?>"<?php if($result['user_role_id'] == $key['user_role_id']){ echo "selected"; }?>><?php echo $key['user_roles']; ?></option>
@@ -94,8 +94,8 @@
                   <div class="col-md-6">
                       <div class="form-group">
                           <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
-                          <select class="selectpicker form-control" multiple data-live-search="true" id="accessrr" name="Access[]">
-                            <!-- <select class="form-control" name="access"> -->
+                          <!-- <select class="selectpicker form-control" multiple data-live-search="true" id="accessrr" name="Access[]"> -->
+                            <select class="form-control" name="user_acc" id="user_acc">
                               <!-- <option value="post_job">Post A job</option>
                               <option value="editprofile">Edit Company Profile</option>
                               <option value="Addquestionbank">Add Question Bank</option>
@@ -261,6 +261,21 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
             }); 
           }
    
+       }
+
+      function getuseraccess(id){
+      if(id){
+              $.ajax({
+                  type:'POST',
+                  url:'<?php echo base_url();?>employer/get_access_data',
+                  data:{id:id},
+                  success:function(res){
+                      $('#user_acc').html(res);
+                  }
+          
+              }); 
+            }
+     
        }
      
 // function getaccess(id)

@@ -2479,6 +2479,28 @@ public function interview_scheduler()
                 echo json_encode($result);
 
     }
+
+     function get_access_data(){
+        $u_id = $this->input->post('id');
+        $where['user_role_id'] = $u_id;
+        // $lineitemlevels = $this->Master_model->getMaster('employee_access',$where);
+        $exists = $this->Master_model->get_master_row('employee_access', $select= FALSE, $where, $join = FALSE);
+
+        $result = '';
+        $dd= $exists['access_specifiers'];
+        $a = explode(',', $dd);
+        
+        if(!empty($a)){ 
+            $result .='<option value="">Select</option>';
+            foreach($a as $keys){
+              $result .='<option value="'.$keys['access_specifiers'].'">'.$keys['access_specifiers'].'</option>';
+            }
+        }else{
+        
+            $result .='<option value="">Lineitem Level not available</option>';
+        }
+         echo $result;
+    }
    
    public function getocean_profile($email)
     {
