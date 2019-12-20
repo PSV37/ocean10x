@@ -30,7 +30,7 @@
         
 
       <?php if (in_array('Addquestionbank', $accessSpecifiers)) {?>
-          <li> <a href="<?php echo base_url() ?>add-question"><i class="fa fa-check-square-o" aria-hidden="true"></i> Posted Job </a> </li>
+          <li> <a href="<?php echo base_url() ?>add-question"><i class="fa fa-check-square-o" aria-hidden="true"></i>Add Question</a> </li>
      <?php } ?>
       
       <li> <a href="<?php echo base_url() ?>employee/logout"><i class="fa fa-lock" aria-hidden="true"></i> logout </a> </li>
