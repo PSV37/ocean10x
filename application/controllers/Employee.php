@@ -1443,7 +1443,7 @@ public function update_interview_status()
         $where['topic_id'] = $subtopic_id;
         $subtopics = $this->Master_model->getMaster('subtopic',$where);
         $result = '';
-        
+        print_r($this->db->last_query()); die;
         if(!empty($subtopics)){ 
             $result .='<option value="">Select Subtopic</option>';
             foreach($subtopics as $key){
