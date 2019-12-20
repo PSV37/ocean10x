@@ -95,24 +95,13 @@
                       <div class="form-group">
                           <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
                           <!-- <select class="selectpicker form-control" multiple data-live-search="true" id="user_acc" name="Access[]"> -->
-                           <!--  <select class="form-control"  name="user_acc" id="user_accc" multiple="multiple"> -->
-                              <!-- <option value="select-all">select all</option> -->
+                            <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc" id="user_accc">
                               <!-- <option value="post_job">Post A job</option>
                               <option value="editprofile">Edit Company Profile</option>
                               <option value="Addquestionbank">Add Question Bank</option>
                               <option value="addemp">Add Employee</option>
                               <option value="addconsultant">Add Consultant</option> -->
-                             <select class="mdb-select md-form" multiple>
-                              <option value="" disabled selected>Choose your country</option>
-                              <option value="1">USA</option>
-                              <option value="2">Germany</option>
-                              <option value="3">France</option>
-                              <option value="3">Poland</option>
-                              <option value="3">Japan</option>
-                            </select>
-                            <label class="mdb-main-label">Label example</label>
-                            <button class="btn-save btn btn-primary btn-sm">Save</button>
-                         
+                          </select>
                           <!--   <div class="row">
                               <div class="col-md-12">
 
@@ -286,19 +275,9 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
           
               }); 
             }
-      // $("#user_accc").selectpicker('refresh');
+      $("#user_accc").selectpicker('refresh');
        }
-     $(document).delegate('#select-all', 'click', function(e) {
-    if(this.checked) {
-        $('.bank-checkbox').each(function() {
-            this.checked = true;                        
-        });
-    } else {
-        $('.bank-checkbox').each(function() {
-            this.checked = false;                       
-        });
-    }
-});
+     
 // function getaccess(id)
 //       {
 //         if(id){
@@ -423,12 +402,6 @@ $("#dept_id").select2( {
     deselectAllText: 'Your deselect-all-text'
 });
  
-});
-</script>
-<script type="text/javascript">
- // Material Select Initialization
-$(document).ready(function() {
-$('.mdb-select').materialSelect();
 });
 </script>
 <script>
