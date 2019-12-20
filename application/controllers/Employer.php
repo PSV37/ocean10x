@@ -574,7 +574,7 @@ function getstate(){
     function get_access_specifiers(){
     $role_id = $this->input->post('id');
     $where['user_role_id'] = $role_id;
-    $access = $this->Master_model->get_master_row('employee_access',$where);
+    $access = $this->Master_model->getMaster('employee_access',$where);
     $result = '';
     // print_r($this->db->last_query());
    
