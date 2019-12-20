@@ -223,7 +223,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
           source: "<?php echo base_url('employer/get_candidate_by_email'); ?>",
           select: function(a,b)
             {
-                 // alert(b.item.value);
+                // alert(b.item.value);
               	$(this).val(b.item.value); //grabed the selected value
               	get_candidate_info(b.item.value);
               	get_cand_education_info(b.item.value);
@@ -324,7 +324,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
               data:{
                 email:email
               },
-               dataType: "JSON",  
+               dataType: "JSON",    
                success: function(data)
                {
                  // console.log(data);

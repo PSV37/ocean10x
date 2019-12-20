@@ -127,7 +127,7 @@
                         <?php } ?>
                       </td>
                       <td><?php echo $mtime; ?></td>
-                      <td><a href="<?php echo base_url(); ?>employer/getocean_profile/<?php echo $cv_row['js_email']; ?>" class="btn btn-success btn-xs">Get Ocean Profile</a></td>
+                      <td><a href="<?php echo base_url(); ?>employer/getocean_profile/<?php echo base64_encode($cv_row['js_email']); ?>" class="btn btn-success btn-xs">Get Ocean Profile</a></td>
                   </tr>
                   <?php
                       $key++;
