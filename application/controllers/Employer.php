@@ -578,7 +578,7 @@ function getstate(){
     $result = '';
     // print_r($this->db->last_query());
    
-    print_r($result_array);die;
+    print_r($access);die;
 
     if(!empty($access)){ 
         // $result .='<option value="">Select City</option>';
