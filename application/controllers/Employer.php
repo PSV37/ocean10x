@@ -2456,7 +2456,7 @@ public function interview_scheduler()
 
     }
    
-   function getocean_profile($email)
+   public function getocean_profile($email)
     {
        
         $email_id =$email;
@@ -2472,7 +2472,7 @@ public function interview_scheduler()
         $result = $this->Master_model->getMaster('js_info', $where1, $join, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
 
         echo "<pre>";
-        print_r($result); die;
+        print_r($result);
     }
     
 } // end class
