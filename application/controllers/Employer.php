@@ -574,22 +574,26 @@ function getstate(){
     function get_access_specifiers(){
     $role_id = $this->input->post('id');
     $where['user_role_id'] = $role_id;
-    $access = $this->Master_model->getMaster('employee_access',$where);
-    $result = '';
-    // print_r($this->db->last_query());
+    // $access = $this->Master_model->getMaster('employee_access',$where);
+    // $result = '';
+     $select_edu = "access_specifiers";
+        $data = $this->Master_model->get_master_row("employee_access", $select_edu, $where, $join = FALSE);
+        $access=explode(",", $data['access_specifiers']);
+        $accessSpecifiers = explode(',',$data['access_specifiers']);
    
-    print_r($access['access_specifiers']);die;
+    print_r($access);
+    print_r($accessSpecifiers);die;
 
     if(!empty($access)){ 
         // $result .='<option value="">Select City</option>';
         foreach($access as $key){
-          $result .='<option value="'.$key['aceess_id'].'">'.$key['access_specifiers'].'</option>';
+          // $result .='<option value="'.$key['aceess_id'].'">'.$key['access_specifiers'].'</option>';
         }
     }else{
     
-        $result .='<option value="">No access available</option>';
+        // $result .='<option value="">No access available</option>';
     }
-     echo $result;
+     // echo $result;
 }
      // To fetch getProfssionalSkillsDetails details
     function getSkillsByRole() {
