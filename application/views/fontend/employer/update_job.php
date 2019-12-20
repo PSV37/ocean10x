@@ -450,6 +450,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
     }
 $(document).ready(function(){
   var id = $('#job_role').val();
+  alert(id);
     $.ajax({
             url:'<?php echo base_url();?>Employer/getSkillsByRole',
             type:'POST',
