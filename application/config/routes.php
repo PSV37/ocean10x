@@ -180,6 +180,8 @@ $route['reject-resume/(:num)']="employee/reject_resume/$1";
 $route['all-questions']="employee/all_questions";
 $route['add-question']="employee/add_new_question";
 $route['question-bank']="employee/importquestion";
+$route['add-new-consultant']="employee/addconsultant";
+
 
 
 

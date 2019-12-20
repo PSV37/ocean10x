@@ -34,6 +34,10 @@
           <li> <a href="<?php echo base_url() ?>question-bank" class=""><i class="fa fa-upload" aria-hidden="true"></i>Import Question</a></li> 
           <li> <a href="<?php echo base_url() ?>all-questions" class=""><i class="fa fa-check-square-o" aria-hidden="true"></i> Question Bank</a> </li>
      <?php } ?>
+
+     <?php if (in_array('Add Consultant', $accessSpecifiers)) {?>
+         <li> <a href="<?php echo base_url() ?>employer/add-new-consultant" class=""><i class="fa fa-plus" aria-hidden="true"></i> Add Consultant</a></li>
+     <?php } ?>
       
       <li> <a href="<?php echo base_url() ?>employee/logout"><i class="fa fa-lock" aria-hidden="true"></i> logout </a> </li>
      
