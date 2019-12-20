@@ -448,7 +448,24 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
           }
    
     }
+$(document).ready(function(){
+  var id = $('#job_role').val();
+    $.ajax({
+            url:'<?php echo base_url();?>Employer/getSkillsByRole',
+            type:'POST',
+            data:{
+                  role_id:id
+            },
+             dataType: "html",  
+             success: function(data)
+             {
+                $('#skills_result').html(data);
+                $('#skills_result').val(<?php echo $job_info->job_role; ?>);
+             } 
+      });
 
+
+});
 
   $(document).ready(function(){
 
