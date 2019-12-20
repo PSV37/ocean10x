@@ -583,7 +583,7 @@ function getstate(){
    
 
     if(!empty($accessSpecifiers)){ 
-         $result .='<option value="">Select City</option>';
+         // $result .='<option value="">Select City</option>';
         foreach($accessSpecifiers as $key){
 
             // print_r($key);
