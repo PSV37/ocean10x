@@ -95,7 +95,7 @@
                       <div class="form-group">
                           <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
                           <!-- <select class="selectpicker form-control" multiple data-live-search="true" id="user_acc" name="Access[]"> -->
-                            <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc" id="user_acc">
+                            <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc" id="user_accc">
                               <!-- <option value="post_job">Post A job</option>
                               <option value="editprofile">Edit Company Profile</option>
                               <option value="Addquestionbank">Add Question Bank</option>
@@ -270,12 +270,12 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                   url:'<?php echo base_url();?>employer/get_access_data',
                   data:{id:id},
                   success:function(res){
-                      $('#user_acc').html(res);
+                      $('#user_accc').html(res);
                   }
           
               }); 
             }
-      $("#user_acc").selectpicker('refresh');
+      $("#user_accc").selectpicker('refresh');
        }
      
 // function getaccess(id)
