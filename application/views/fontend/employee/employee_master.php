@@ -33,47 +33,49 @@
         <div class="userccount empdash">
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
            <div class="table-responsive">
-            <table class="table table-bordered table-striped" id="dataTables-example">
+             <table class="table table-bordered table-striped" id="dataTables-example">
               <thead>
-			  <th>Employee No.</th>
-			  <th>Name</th>
-			  <th>Email Id</th>
-			  <th>Mobile No.</th>
-			  <th>Department</th>
-			  <th>Address</th>
-			  <th>City</th>
-			  <th>State</th>
-			  <th>Country</th>
-			  <th>Pincode</th>
-			  <th>Created Date</th>
-			  <th>Updated Date</th>
-			  <th>Actions</th>
-			  <th>Status</th>
-            </thead>
-            <tbody>
-			<?php foreach($result as $key){
-				?>
-              <tr>
-				<td><?php echo $key['emp_no']; ?></td>
-				<td><?php echo $key['emp_name']; ?></td>
-				<td><?php echo $key['email']; ?></td>
-				<td><?php echo $key['mobile']; ?></td>	
-				<td><?php echo $key['department_name']; ?></td>				
-				<td><?php echo $key['address']; ?></td>
-				<td><?php echo $key['city_name']; ?></td>
-				<td><?php echo $key['state_name']; ?></td>
-				<td><?php echo $key['country_name']; ?></td>
-				<td><?php echo $key['pincode']; ?></td>
-				<td><?php echo $key['emp_created_date']; ?></td>
-				<td><?php echo $key['emp_updated_date']; ?></td>
-	  	  <td><button><?php if($key['emp_status']=='1'){ echo "Active"; }else{ echo "Inactive"; } ?></td></button>
-                <td>
-                 &nbsp;&nbsp; <a href="<?php echo base_url();?>employer/editemployee?id=<?php echo $key['emp_id']; ?>"><i class="fa fa-pencil"></i></a>
-                 &nbsp;&nbsp; <!--<a href="<?php echo base_url();?>emp/deletestatus?id=<?php echo $key['emp_id']; ?>"> <i class="fa fa-toggle-on"></i></a>-->
-                &nbsp;&nbsp; <a href='#' "title='Delete Record' data-toggle="modal" data-target="#deleteModal"  onclick="$('#del_id').val('<?php echo $key['emp_id'];?>');"><i class="fa fa-trash-o"></i></a>
-				</td>
-              </tr>
-			<?php } ?>
+                <th>Sr.No</th>
+                <th>Emp Id.</th>
+                <th>Employee Name</th>
+                <th>Email Id</th>
+                <th>Mobile No.</th>
+                <th>Department</th>
+              <!--   <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Country</th>
+                <th>Pincode</th>
+                <th>Created Date</th>
+                <th>Updated Date</th> -->
+                <!--<th>Status</th>-->
+                <th>Actions</th>
+              </thead>
+              <tbody>
+              <?php $srno=0; foreach($result as $key){ $srno++; ?>
+                  
+                <tr>
+                  <td><?php echo $srno; ?></td>
+                  <td><?php echo $key['emp_no']; ?></td>
+                  <td><?php echo $key['emp_name']; ?></td>
+                  <td><?php echo $key['email']; ?></td>
+                  <td><?php echo $key['mobile']; ?></td>  
+                  <td><?php echo $key['department_name']; ?></td>       
+              <!--    <td><?php echo $key['address']; ?></td>
+                  <td><?php echo $key['city_name']; ?></td>
+                  <td><?php echo $key['state_name']; ?></td>
+                  <td><?php echo $key['country_name']; ?></td>
+                  <td><?php echo $key['pincode']; ?></td>
+                  <td><?php echo $key['emp_created_date']; ?></td>
+                  <td><?php echo $key['emp_updated_date']; ?></td> -->
+                  <!--<td><?php if($key['emp_status']=='1'){ echo "Active"; }else{ echo "Inactive"; } ?></td>-->
+                  <td>
+                   &nbsp;&nbsp; <a href="<?php echo base_url();?>employer/editemployee?id=<?php echo $key['emp_id']; ?>"><i class="fa fa-pencil"></i></a>
+                   &nbsp;&nbsp; <!--<a href="<?php echo base_url();?>emp/deletestatus?id=<?php echo $key['emp_id']; ?>"> <i class="fa fa-toggle-on"></i></a>-->
+                  &nbsp;&nbsp; <a href='#' title='Delete Record' data-toggle="modal" data-target="#deleteModal"  onclick="$('#del_id').val('<?php echo $key['emp_id'];?>');"><i class="fa fa-trash-o"></i></a>
+                  </td>
+                </tr>
+              <?php } ?>
               
             </tbody>
           </table>
