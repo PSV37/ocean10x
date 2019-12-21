@@ -1367,7 +1367,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     public function allemployee(){
     	$employer = $this->session->userdata('company_profile_id');
     	//$company=$employer['company_profile_id'];
-    	$where='employee.org_id="'.$employer.'" and employee.emp_status!= 0';
+    	$where='employee.org_id="'.$employer.'" ';
     	//$data['result'] = $this->Master_model->getMaster('industry',$where=FALSE);
     	$join = array(
     		'department' => 'department.dept_id = employee.dept_id|LEFT OUTER',
