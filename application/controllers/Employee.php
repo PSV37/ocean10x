@@ -1710,166 +1710,7 @@ public function update_interview_status()
         } 
 
     }
-    public function addconsultant()
-    {
-        $user_id = $this->session->userdata('company_id');
-        
-            # code...
-        
-        // if(isset($_POST['add_consultant'])) {
-            $pass=rand(100,999);
-          $company_profile = array(
-                'company_name'     => $this->input->post('company_name'),
-                'company_email'     => $this->input->post('company_email'),
-                'company_url'      => $this->input->post('company_url'),
-                'country_code'     => $this->input->post('country_code'),
-                'company_phone'    => $this->input->post('company_phone'),
-                'contact_name'     => $this->input->post('contact_name'),
-                'company_career_link' => $this->input->post('company_career_link'),
-                'company_address'  => $this->input->post('company_address'),
-                
-                'company_pincode'          => $this->input->post('company_pincode'),
-                'cont_person_email'    => $this->input->post('cont_person_email'),
-                'cont_person_mobile'   => $this->input->post('cont_person_mobile'),
-                'comp_gstn_no'         => $this->input->post('comp_gst_no'),
-                'comp_pan_no'          => $this->input->post('comp_pan_no'),
-                'comp_type'            =>"HR Consultant",
-                'company_slug'     => $this->slug->create_uri($this->input->post('company_name')),
-                 'token'            => md5($this->input->post('company_email')),
-            );
 
-            
-             
-            if(isset($_POST['add_consultant'])) 
-            {
-                $company_id=$this->input->post('company_id');
-                if (isset($company_id) && !empty($company_id)) {
-                    
-                    $exist_companyid = $this->company_profile_model->companyid_check($company_id,$user_id);
-                       if ($exist_companyid) {
-                            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">This consultant is already added in your list</div>');
-                             redirect('employee/addconsultant');
-                        }else{ 
-                                $consultanat_data=array(
-                                'consultant_id' =>$company_id,
-                                'company_id'=>$user_id,
-                                'created_on' => date('Y-m-d H:i:s'),
-                                'created_by' =>$user_id,
-                                'is_favourite' =>$this->input->post('Favorite'),
-                                );
-                            $consultant=$this->Master_model->master_insert($consultanat_data,'consultant_company_mapping');
-                            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">This consultant Added Successfully</div>');
-                             redirect('employee/addconsultant');
-                    }
-                }else{
-                        
-                        $exist_companyname = $this->company_profile_model->companyname_check($this->input->post('company_name'));
-                         $exist_email    = $this->company_profile_model->email_check($this->input->post('company_email'));
-                        $exist_username = $this->company_profile_model->username_check($this->input->post('company_username'));
-                         $exist_phone_name = $this->company_profile_model->phonenumber_check($this->input->post('company_phone'));
-                       if ($exist_companyname) {
-            // all Ready Account Message
-                        $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Company Name Or Account Already Use This!</div>');
-                        redirect('add_consultant');
-                    } 
-
-                    if ($exist_email) {
-                        // all Ready Account Message
-                        $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Email Or Account Already Use This!</div>');
-                        redirect('add_consultant');
-                    }
-                    if ($exist_username) {
-                        // all Ready Account Message
-                        $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Username Or Account Already Use This!</div>');
-                        redirect('add_consultant');
-                    } 
-                    if ($exist_phone_name) {
-                        $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Phone Number Or Account Already Use This!</div>');
-                        redirect('add_consultant');
-                    }
-        
-                        else
-                        {
-                                $company_profile['company_password']=md5($pass);
-                            $comp_id=$this->Master_model->master_insert($company_profile,'company_profile');
-                            // echo $comp_id
-                                if (isset($comp_id) && !empty($comp_id)) {
-                                # code...
-                                $consultanat_data=array(
-                                'consultant_id' =>$comp_id,
-                                'company_id'=>$user_id,
-                                'created_on' => date('Y-m-d H:i:s'),
-                                'created_by' =>$user_id,
-                                'is_favourite' =>$this->input->post('Favorite'),
-
-                                );
-                            $consultant=$this->Master_model->master_insert($consultanat_data,'consultant_company_mapping');
-                            // send mail to consultant
-                            $user_id = $this->session->userdata('company_id');
-
-                            $wherecond = "company_profile_id='$user_id'";
-
-                            $company_info= $this->Master_model->get_master_row('company_profile',$select = FALSE,$wherecond);
-                            $company_name= $company_info['company_name'];
-
-                            $comp_name = $this->session->userdata('company_name');
-                           
-                            if (isset($consultant) && !empty($consultant)) {
-                                
-
-                            // successfully sent mail
-                          // $this->job_seeker_model->sendEmail($email_to);
-
-                                
-                          }
-                      }
-
-                    }
-            }
-            $to_email=$this->input->post('cont_person_email');
-                        // echo $to_email;
-             $subject = "Registration done successfully";
-
-            $message = '<div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
-                <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
-                <br><br>Hi Dear,<br>Your account has been created successfully by '.$comp_name.' <br><br>You can login to our portal using following credentials<br>
-                username: '.$to_email.'<br>
-                Password: '.$pass.'<br>
-                <a href="https://www.consultnhire.com/employer_login" class="btn btn-primary" value="Login" align="center" target="_blank">Login Now</a>
-
-                Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Question? Check out how works and our support team are ready to help.<br><br>© 2017 ConsultnHire All Rights Reserved.<br><br>You have received this mail because your e-mail ID is registered with Consultnhire.com. This is a system-generated e-mail regarding your Consultnhire account preferences, please do not reply to this message. The jobs sent in this mail have been posted by the clients of Consultnhire.com. And we have enabled auto-login for your convenience, you are strongly advised not to forward this email to protect your account from unauthorized access. IEIL has taken all reasonable steps to ensure that the information in this mailer is authentic. Users are advised to research bonafides of advertisers independently. Please do not pay any money to anyone who promises to find you a job. IEIL shall not have any responsibility in this regard. We recommend that you visit our Terms & Conditions and the Security Advice for more comprehensive information.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
-            $send = sendEmail_JobRequest($to_email,$message,$subject);
-
-        }
-            elseif (isset($_POST['update_consultant'])) {
-            $company_profile_id=$this->input->post('company_id');
-            // echo $consultant_id;
-            if (isset($company_profile_id)) {
-                $where['company_profile_id']=$company_profile_id;
-                // print_r($company_profile);
-            $this->Master_model->master_update($company_profile,'company_profile',$where);
-            $consultant_id=$this->input->post('consultant_id');
-            $whr['con_comp_map_id']=$consultant_id;
-            $data['is_favourite']=$this->input->post('Favorite');
-            $this->Master_model->master_update($data,'consultant_company_mapping',$whr);
-            
-
-
-             redirect('allconsultants');
-            }
-                # code...
-        }
-
-                    
-        
-               
-       
-    
-        $data['city'] = $this->Master_model->getMaster('city',$where=false);
-        $data['country'] = $this->Master_model->getMaster('country',$where=false);
-        $data['state'] = $this->Master_model->getMaster('state',$where=false);
-        $this->load->view('fontend/employee/add_consultant',$data);
-}
 function get_autocomplete(){
         if (isset($_GET['term'])) {
             // $this->load->model('Consultant_autocomplete_model');
@@ -1948,6 +1789,160 @@ function get_autocomplete(){
 
 
     }
+    public function addconsultant()
+    {
+        $user_id = $this->session->userdata('company_id');
+        
+            # code...
+        
+        // if(isset($_POST['add_consultant'])) {
+            $pass=rand(100,999);
+          $company_profile = array(
+                'company_name'     => $this->input->post('company_name'),
+                'company_email'     => $this->input->post('company_email'),
+                'company_url'      => $this->input->post('company_url'),
+                'country_code'     => $this->input->post('country_code'),
+                'company_phone'    => $this->input->post('company_phone'),
+                'contact_name'     => $this->input->post('contact_name'),
+                'company_career_link' => $this->input->post('company_career_link'),
+                'company_address'  => $this->input->post('company_address'),
+                
+                'company_pincode'          => $this->input->post('company_pincode'),
+                'cont_person_email'    => $this->input->post('cont_person_email'),
+                'cont_person_mobile'   => $this->input->post('cont_person_mobile'),
+                'comp_gstn_no'         => $this->input->post('comp_gst_no'),
+                'comp_pan_no'          => $this->input->post('comp_pan_no'),
+                'comp_type'            =>"HR Consultant",
+                'company_slug'     => $this->slug->create_uri($this->input->post('company_name')),
+                 'token'            => md5($this->input->post('company_email')),
+            );
+
+            
+             
+            if(isset($_POST['add_consultant'])) 
+            {
+                $company_id=$this->input->post('company_profile_id');
+                if (isset($company_id) && !empty($company_id)) {
+                    
+                    $exist_companyid = $this->company_profile_model->companyid_check($company_id,$user_id);
+                       if ($exist_companyid) {
+                            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">This consultant is already added in your list</div>');
+                             redirect('employee/addconsultant');
+                        }else{ 
+                                $consultanat_data=array(
+                                'consultant_id' =>$company_id,
+                                'company_id'=>$user_id,
+                                'created_on' => date('Y-m-d H:i:s'),
+                                'created_by' =>$user_id,
+                                'is_favourite' =>$this->input->post('Favorite'),
+                                );
+                            $consultant=$this->Master_model->master_insert($consultanat_data,'consultant_company_mapping');
+                            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">This consultant Added Successfully</div>');
+                             redirect('employee/addconsultant');
+                    }
+                }else{
+                        
+                        $exist_companyname = $this->company_profile_model->companyname_check($this->input->post('company_name'));
+                         $exist_email    = $this->company_profile_model->email_check($this->input->post('company_email'));
+                        $exist_username = $this->company_profile_model->username_check($this->input->post('company_username'));
+                         $exist_phone_name = $this->company_profile_model->phonenumber_check($this->input->post('company_phone'));
+                       if ($exist_companyname) {
+            // all Ready Account Message
+                        $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Company Name Or Account Already Use This!</div>');
+                        redirect('add_consultant');
+                    } 
+
+                    if ($exist_email) {
+                        // all Ready Account Message
+                        $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Email Or Account Already Use This!</div>');
+                        redirect('add_consultant');
+                    }
+                    if ($exist_username) {
+                        // all Ready Account Message
+                        $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Username Or Account Already Use This!</div>');
+                        redirect('add_consultant');
+                    } 
+                    if ($exist_phone_name) {
+                        $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Phone Number Or Account Already Use This!</div>');
+                        redirect('add_consultant');
+                    }
+        
+                        else
+                        {
+                                $company_profile['company_password']=md5($pass);
+                            $comp_id=$this->Master_model->master_insert($company_profile,'company_profile');
+                            // echo $comp_id
+                                if (isset($comp_id) && !empty($comp_id)) {
+                                # code...
+                                $consultanat_data=array(
+                                'consultant_id' =>$comp_id,
+                                'company_id'=>$user_id,
+                                'created_on' => date('Y-m-d H:i:s'),
+                                'created_by' =>$user_id,
+                                'is_favourite' =>$this->input->post('Favorite'),
+
+                                );
+                            $consultant=$this->Master_model->master_insert($consultanat_data,'consultant_company_mapping');
+                            // send mail to consultant
+                            $user_id = $this->session->userdata('company_profile_id');
+
+                            $comp_name = $this->session->userdata('company_name');
+                           
+                            if (isset($consultant) && !empty($consultant)) {
+                                
+
+                            // successfully sent mail
+                          // $this->job_seeker_model->sendEmail($email_to);
+
+                                
+                          }
+                      }
+
+                    }
+            }
+            $to_email=$this->input->post('cont_person_email');
+                        // echo $to_email;
+             $subject = "Registration done successfully";
+
+            $message = '<div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+                <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+                <br><br>Hi Dear,<br>Your account has been created successfully by '.$comp_name.' <br><br>You can login to our portal using following credentials<br>
+                username: '.$to_email.'<br>
+                Password: '.$pass.'<br>
+                <a href="https://www.consultnhire.com/employer_login" class="btn btn-primary" value="Login" align="center" target="_blank">Login Now</a>
+
+                Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Question? Check out how works and our support team are ready to help.<br><br>© 2017 ConsultnHire All Rights Reserved.<br><br>You have received this mail because your e-mail ID is registered with Consultnhire.com. This is a system-generated e-mail regarding your Consultnhire account preferences, please do not reply to this message. The jobs sent in this mail have been posted by the clients of Consultnhire.com. And we have enabled auto-login for your convenience, you are strongly advised not to forward this email to protect your account from unauthorized access. IEIL has taken all reasonable steps to ensure that the information in this mailer is authentic. Users are advised to research bonafides of advertisers independently. Please do not pay any money to anyone who promises to find you a job. IEIL shall not have any responsibility in this regard. We recommend that you visit our Terms & Conditions and the Security Advice for more comprehensive information.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+            $send = sendEmail_JobRequest($to_email,$message,$subject);
+
+        }
+            elseif (isset($_POST['update_consultant'])) {
+            $company_profile_id=$this->input->post('company_profile_id');
+            // echo $consultant_id;
+            if (isset($company_profile_id)) {
+                $where['company_profile_id']=$company_profile_id;
+                // print_r($company_profile);
+            $this->Master_model->master_update($company_profile,'company_profile',$where);
+            $consultant_id=$this->input->post('consultant_id');
+            $whr['con_comp_map_id']=$consultant_id;
+            $data['is_favourite']=$this->input->post('Favorite');
+            $this->Master_model->master_update($data,'consultant_company_mapping',$whr);
+
+
+             redirect('show-all-consultant');
+            }
+                # code...
+            }
+
+                    
+        
+               
+       
+    
+        $data['city'] = $this->Master_model->getMaster('city',$where=false);
+        $data['country'] = $this->Master_model->getMaster('country',$where=false);
+        $data['state'] = $this->Master_model->getMaster('state',$where=false);
+        $this->load->view('fontend/employee/add_consultant',$data);
+}
 
 
      public function delete_consultant()
