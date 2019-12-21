@@ -1852,12 +1852,13 @@ public function update_interview_status()
             $whr['con_comp_map_id']=$consultant_id;
             $data['is_favourite']=$this->input->post('Favorite');
             $this->Master_model->master_update($data,'consultant_company_mapping',$whr);
+            print_r($this->db->last_query());die;
 
 
              redirect('allconsultants');
             }
                 # code...
-            }
+        }
 
                     
         
