@@ -386,26 +386,8 @@ $("#dept_id").select2( {
  });
 });
 </script>
-<script type="text/javascript">
- 
-  $(function() {
-
-   $('.selectpicker').selectpicker({
-    selectAllText: 'Your select-all-text',
-    deselectAllText: 'Your deselect-all-text'
-});
- 
-});
 
 
-</script>
-   <script type="text/javascript">
-$(function() {
-    $('.multiselect-ui').multiselect({
-        includeSelectAllOption: true
-    });
-});
 
-</script>
 	   
 	   
