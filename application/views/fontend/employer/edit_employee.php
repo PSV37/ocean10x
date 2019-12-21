@@ -262,7 +262,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 
       function getuseraccess(id){
       if(id){
-          $("#user_accc").selectpicker('refresh');
+          
         
               $.ajax({
                   type:'POST',
@@ -270,6 +270,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                   data:{id:id},
                   success:function(res){
                       $('#user_accc').html(res);
+                      $("#user_accc").selectpicker('refresh');
                   }
 
           
