@@ -80,7 +80,7 @@
                     <div class="form-group">
                       <label for="exampleInputEmail1">Designation<span class="required">*</span></label>
                      
-                      <select class="form-control" name="user_role" id="user_role" >
+                      <select class="form-control" name="user_role" id="user_role">
                         <!-- <option value="">Select designation</option> -->
                         <?php foreach($roles as $key){?>
                         <option value="<?php echo $key['user_role_id']; ?>"<?php if($result['user_role_id'] == $key['user_role_id']){ echo "selected"; }?>><?php echo $key['user_roles']; ?></option>
@@ -415,7 +415,7 @@ $(document).ready(function(){
   buttonWidth:'400px'
  });
  
- $('#getuseraccess').on('change', function(event){
+ $('#user_role').on('change', function(event){
   event.preventDefault();
   var form_data = $(this).serialize();
   $.ajax({
