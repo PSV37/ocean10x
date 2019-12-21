@@ -97,17 +97,25 @@
                       <div class="form-group">
                           <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
                           
-                            <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc" id="user_accc">
+                            <!-- <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc" id="user_accc"> -->
                             
                           <!-- </select> -->
                           <!--  <select id="dates-field2" class="multiselect-ui form-control" multiple="multiple"> -->
-                                <option value="cheese">Cheese</option>
+                                <!-- <option value="cheese">Cheese</option>
                                 <option value="tomatoes">Tomatoes</option>
                                 <option value="mozarella">Mozzarella</option>
                                 <option value="mushrooms">Mushrooms</option>
                                 <option value="pepperoni">Pepperoni</option>
                                 <option value="onions">Onions</option>
-                            </select>
+                            </select> -->
+
+                            <select id="multi-select-demo" multiple="multiple">
+                              <option value="jQuery">jQuery tutorial</option>
+                              <option value="Bootstrap">Bootstrap Tips</option>
+                              <option value="HTML">HTML</option>
+                              <option value="CSS">CSS tricks</option>
+                              <option value="angular">Angular JS</option>
+                          </select>
                          
                       </div>
                   </div>
@@ -415,6 +423,11 @@ $(function() {
     });
 });
 
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#multi-select-demo').multiselect();
+    });
 </script>
 	   
 	   
