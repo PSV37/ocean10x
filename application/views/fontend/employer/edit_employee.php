@@ -270,12 +270,13 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                   data:{id:id},
                   success:function(res){
                       $('#user_accc').html(res);
-                      $("#user_accc").selectpicker('refresh');
+                      
                   }
 
           
               }); 
             }
+            $("#user_accc").selectpicker('refresh');
           // $(".empdash .selectpicker").css("display", "block");
        }
      
