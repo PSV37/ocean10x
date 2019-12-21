@@ -1,10 +1,11 @@
 <?php 
     $this->load->view('fontend/layout/employer_header.php');
 ?>
-<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
-</script> -->
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css">
 
 <!-- Page Title start -->
 
@@ -80,7 +81,7 @@
                     <div class="form-group">
                       <label for="exampleInputEmail1">Designation<span class="required">*</span></label>
                      
-                      <select class="form-control" name="user_role" id="user_role">
+                      <select class="form-control" name="user_role" id="user_role" onchange="getuseraccess(this.value);">
                         <!-- <option value="">Select designation</option> -->
                         <?php foreach($roles as $key){?>
                         <option value="<?php echo $key['user_role_id']; ?>"<?php if($result['user_role_id'] == $key['user_role_id']){ echo "selected"; }?>><?php echo $key['user_roles']; ?></option>
@@ -95,7 +96,7 @@
                       <div class="form-group">
                           <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
                           
-                            <!-- <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc" id="user_accc"> -->
+                            <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc" id="user_accc">
                             
                           <!-- </select> -->
                           <!--  <select id="dates-field2" class="multiselect-ui form-control" multiple="multiple"> -->
@@ -104,19 +105,16 @@
                                 <option value="mozarella">Mozzarella</option>
                                 <option value="mushrooms">Mushrooms</option>
                                 <option value="pepperoni">Pepperoni</option>
-                                <option value="onions">Onions</option>
-                            </select> -->
-
-                          <select id="framework" name="framework[]" multiple class="form-control">
-                            <option value="Codeigniter">Codeigniter</option>
-                            <option value="CakePHP">CakePHP</option>
-                            <option value="Laravel">Laravel</option>
-                            <option value="YII">YII</option>
-                            <option value="Zend">Zend</option>
-                            <option value="Symfony">Symfony</option>
-                            <option value="Phalcon">Phalcon</option>
-                            <option value="Slim">Slim</option>
-                           </select>
+                                <option value="onions">Onions</option> -->
+                            <!-- </select> -->
+                            <select id="multiple-checkboxes" multiple="multiple">
+                              <option value="php">PHP</option>
+                              <option value="javascript">JavaScript</option>
+                              <option value="java">Java</option>
+                              <option value="sql">SQL</option>
+                              <option value="jquery">Jquery</option>
+                              <option value=".net">.Net</option>
+                          </select>
                          
                       </div>
                   </div>
@@ -279,13 +277,12 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                   data:{id:id},
                   success:function(res){
                       $('#user_accc').html(res);
-                      
+                      $("#user_accc").selectpicker('refresh');
                   }
 
           
               }); 
             }
-            $("#user_accc").selectpicker('refresh');
           // $(".empdash .selectpicker").css("display", "block");
        }
      
@@ -404,44 +401,30 @@ $("#dept_id").select2( {
  });
 });
 </script>
-
-
-<script>
-$(document).ready(function(){
- $('#framework').multiselect({
-  nonSelectedText: 'Select Framework',
-  enableFiltering: true,
-  enableCaseInsensitiveFiltering: true,
-  buttonWidth:'400px'
- });
+<script type="text/javascript">
  
- $('#user_role').on('change', function(event){
-  event.preventDefault();
-  var form_data = $(this).serialize();
-  $.ajax({
-                  type:'POST',
-                  url:'<?php echo base_url();?>employer/get_access_data',
-                  data:{id:id},
-                  success:function(res){
-                      // $('#user_accc').html(res);
-                      $('#framework option:selected').each(function(){
-                       $(this).prop('selected', false);
-                      });
-                      $('#framework').multiselect('refresh');
-                      alert(data);
-                  }
+  $(function() {
 
-          
-              });
-  
- });
- 
+   $('.selectpicker').selectpicker({
+    selectAllText: 'Your select-all-text',
+    deselectAllText: 'Your deselect-all-text'
+});
  
 });
+
+
+</script>
+   <script type="text/javascript">
+$(function() {
+    $('.multiselect-ui').multiselect({
+        includeSelectAllOption: true
+    });
+});
+
 </script>
 <script type="text/javascript">
     $(document).ready(function() {
-        $('#multi-select-demo').multiselect();
+        $('#multiple-checkboxes').multiselect();
     });
 </script>
 	   
