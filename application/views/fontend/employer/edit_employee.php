@@ -4,8 +4,7 @@
 <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
 </script> -->
-  <link rel="stylesheet" href="css/bootstrap-multiselect/bootstrap-multiselect.css" type="text/css">
-        <script type="text/javascript" src="js/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+
 
 <!-- Page Title start -->
 
@@ -81,7 +80,7 @@
                     <div class="form-group">
                       <label for="exampleInputEmail1">Designation<span class="required">*</span></label>
                      
-                      <select class="form-control" name="user_role" id="user_role" onchange="getuseraccess(this.value);">
+                      <select class="form-control" name="user_role" id="user_role" >
                         <!-- <option value="">Select designation</option> -->
                         <?php foreach($roles as $key){?>
                         <option value="<?php echo $key['user_role_id']; ?>"<?php if($result['user_role_id'] == $key['user_role_id']){ echo "selected"; }?>><?php echo $key['user_roles']; ?></option>
@@ -108,13 +107,16 @@
                                 <option value="onions">Onions</option>
                             </select> -->
 
-                            <select id="multi-select-demo" multiple="multiple">
-                              <option value="jQuery">jQuery tutorial</option>
-                              <option value="Bootstrap">Bootstrap Tips</option>
-                              <option value="HTML">HTML</option>
-                              <option value="CSS">CSS tricks</option>
-                              <option value="angular">Angular JS</option>
-                          </select>
+                          <select id="framework" name="framework[]" multiple class="form-control">
+                            <option value="Codeigniter">Codeigniter</option>
+                            <option value="CakePHP">CakePHP</option>
+                            <option value="Laravel">Laravel</option>
+                            <option value="YII">YII</option>
+                            <option value="Zend">Zend</option>
+                            <option value="Symfony">Symfony</option>
+                            <option value="Phalcon">Phalcon</option>
+                            <option value="Slim">Slim</option>
+                           </select>
                          
                       </div>
                   </div>
@@ -402,26 +404,40 @@ $("#dept_id").select2( {
  });
 });
 </script>
-<script type="text/javascript">
+
+
+<script>
+$(document).ready(function(){
+ $('#framework').multiselect({
+  nonSelectedText: 'Select Framework',
+  enableFiltering: true,
+  enableCaseInsensitiveFiltering: true,
+  buttonWidth:'400px'
+ });
  
-  $(function() {
+ $('#getuseraccess').on('change', function(event){
+  event.preventDefault();
+  var form_data = $(this).serialize();
+  $.ajax({
+                  type:'POST',
+                  url:'<?php echo base_url();?>employer/get_access_data',
+                  data:{id:id},
+                  success:function(res){
+                      // $('#user_accc').html(res);
+                      $('#framework option:selected').each(function(){
+                       $(this).prop('selected', false);
+                      });
+                      $('#framework').multiselect('refresh');
+                      alert(data);
+                  }
 
-   $('.selectpicker').selectpicker({
-    selectAllText: 'Your select-all-text',
-    deselectAllText: 'Your deselect-all-text'
-});
+          
+              });
+  
+ });
+ 
  
 });
-
-
-</script>
-   <script type="text/javascript">
-$(function() {
-    $('.multiselect-ui').multiselect({
-        includeSelectAllOption: true
-    });
-});
-
 </script>
 <script type="text/javascript">
     $(document).ready(function() {
