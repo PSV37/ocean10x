@@ -182,7 +182,7 @@ function chnagestatus(id)
                 url:'<?php echo base_url();?>Employer/change_status',
                 data:{id:id},
                 success:function(res){
-                     $("#status").html('<div class="alert alert-danger"><button type="button" class="close">×</button>Record Successfully Deleted!</div>');
+                     alert('status changed Successfully!');
                 }
                 
             }); 
