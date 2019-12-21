@@ -387,7 +387,7 @@ $("#dept_id").select2( {
 });
 </script>
 <script type="text/javascript">
-  $("select").mousedown(function(e){
+  $("#user_accc").mousedown(function(e){
     e.preventDefault();
     
     var select = this;
