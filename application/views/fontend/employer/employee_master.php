@@ -74,7 +74,12 @@
                    &nbsp;&nbsp; <!--<a href="<?php echo base_url();?>emp/deletestatus?id=<?php echo $key['emp_id']; ?>"> <i class="fa fa-toggle-on"></i></a>-->
                   &nbsp;&nbsp; <a href='#' title='Delete Record' data-toggle="modal" data-target="#deleteModal"  onclick="$('#del_id').val('<?php echo $key['emp_id'];?>');"><i class="fa fa-trash-o"></i></a>
           				</td>
-                  <td><button class="<?php if($key['emp_status']=='1'){ echo "btn btn-success"; }else{ echo "btn btn-danger"; } ?>" name="status" id="status" onclick="chnagestatus(this.value);" value="<?php echo $key['emp_id']?>" ><?php if($key['emp_status']=='1'){ echo "Active"; }else{ echo "Inactive"; } ?></button></td>
+                 <?php if($key['emp_status']=='1')
+                 {?> <td><button class="btn btn-success"  name="status" id="status" onclick="chnagestatus(this.value);" value="Active" ?></button></td> <?}
+                 else
+                  { ?> 
+                  <td><button class="btn btn-danger" style="background: #CCC" name="status" id="status" onclick="chnagestatus(this.value);" value="Inactive" ?></button></td></button></td>
+                  <?php } ?>
                 </tr>
 			        <?php } ?>
               
