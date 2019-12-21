@@ -1948,7 +1948,7 @@ function get_autocomplete(){
 
     }
 
-    }
+    
      public function delete_consultant()
     {
         $id = $this->input->post('id');
