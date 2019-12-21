@@ -35,7 +35,7 @@
           <div class="formpanel"> 
           	<div id="smsg"><?php echo $this->session->flashdata('success'); ?></div>
            
-    		<form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>employee/add_new_cv" method="post">
+    		<form role="form" enctype="multipart/form-data" action="<?php echo base_url();?>employee/add_new_cv" method="post">
 
            <div class="row">
 

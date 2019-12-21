@@ -2029,7 +2029,7 @@ function get_autocomplete(){
                 $this->Master_model->master_insert($cv_data, 'corporate_cv_bank');
                 $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New CV added sucessfully!</div>');
             }
-                redirect('employer/add_new_cv');
+                redirect('employee/add_new_cv');
           
 
         }else{
