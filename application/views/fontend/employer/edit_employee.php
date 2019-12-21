@@ -100,7 +100,7 @@
                             <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc" id="user_accc">
                             
                           <!-- </select> -->
-                           <select id="dates-field2" class="multiselect-ui form-control" multiple="multiple">
+                          <!--  <select id="dates-field2" class="multiselect-ui form-control" multiple="multiple"> -->
                                 <option value="cheese">Cheese</option>
                                 <option value="tomatoes">Tomatoes</option>
                                 <option value="mozarella">Mozzarella</option>
@@ -262,6 +262,8 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 
       function getuseraccess(id){
       if(id){
+          $("#user_accc").selectpicker('refresh');
+        
               $.ajax({
                   type:'POST',
                   url:'<?php echo base_url();?>employer/get_access_data',
@@ -269,11 +271,11 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                   success:function(res){
                       $('#user_accc').html(res);
                   }
+
           
               }); 
             }
-          $("#user_accc").selectpicker('refresh');
-          $(".empdash .selectpicker").css("display", "block");
+          // $(".empdash .selectpicker").css("display", "block");
        }
      
 // function getaccess(id)

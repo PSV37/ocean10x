@@ -1948,6 +1948,17 @@ function get_autocomplete(){
 
     }
 
+    }
+     public function delete_consultant()
+    {
+        $id = $this->input->post('id');
+        $del = array(
+            'cons_status' =>'1',
+        );
+        $where11['con_comp_map_id']=$id;
+        $this->Master_model->master_update($del,'consultant_company_mapping',$where11);
+    }
+
         
 
     
