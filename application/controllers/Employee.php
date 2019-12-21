@@ -1972,10 +1972,10 @@ function get_autocomplete(){
         $data['state'] = $this->Master_model->getMaster('state',$where=false);
         $data['city'] = $this->Master_model->getMaster('city',$where=false);
          $data['company_info'] = $this->Master_model->get_master_row('consultant_company_mapping',$select = FALSE, $where = $where_cond , $join = $join_cond);
-        $this->load->view('fontend/consultant/edit_consultant',$data);
+        $this->load->view('fontend/employee/edit_consultant',$data);
                
     }
-   
+
 
         
 
