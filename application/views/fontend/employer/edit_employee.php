@@ -94,7 +94,7 @@
                           
                             <!-- <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc" id="user_accc"> -->
 
-                              <select class="form-control"  name="user_acc" id="user_accc">
+                              <select class="form-control" multiple  name="user_acc" id="user_accc">
                             
                           <!-- </select> -->
                           <!--  <select id="dates-field2" class="multiselect-ui form-control" multiple="multiple"> -->
