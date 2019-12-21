@@ -3646,6 +3646,7 @@ blockquote:after {
     width: 100%;
     padding: 10px 13px;
     padding-right: 25px;
+    display: none;
 }
 
 .has-error .bootstrap-select .dropdown-toggle,

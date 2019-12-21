@@ -386,7 +386,20 @@ $("#dept_id").select2( {
  });
 });
 </script>
-
+<script type="text/javascript">
+  $("select").mousedown(function(e){
+    e.preventDefault();
+    
+    var select = this;
+    var scroll = select.scrollTop;
+    
+    e.target.selected = !e.target.selected;
+    
+    setTimeout(function(){select.scrollTop = scroll;}, 0);
+    
+    $(select).focus();
+}).mousemove(function(e){e.preventDefault()});
+</script>
 
 
 	   
