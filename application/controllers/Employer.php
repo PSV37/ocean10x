@@ -1475,6 +1475,20 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     	$where11['emp_id']=$id;
     	$this->Master_model->master_update($del,'employee',$where11);
     }
+    public function change_status()
+    {
+        $id = $this->input->post('id');
+        $where11['emp_id']=$id;
+
+        $result= $this->Master_model->get_master_row('employee',$select = FALSE,$where);
+        print_r($result['emp_status']);die;
+
+        $del = array(
+            'emp_status' =>'0',
+        );
+        
+        // $this->Master_model->master_update($del,'employee',$where11);
+    }
 	
 	/*Edit Employee*/
 	public function editemployee(){

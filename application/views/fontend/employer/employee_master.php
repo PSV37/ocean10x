@@ -33,6 +33,7 @@
         <div class="userccount empdash">
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
            <div class="table-responsive">
+            <!-- <input type="hidden" name="emp_id" value=""> -->
             <table class="table table-bordered table-striped" id="dataTables-example">
               <thead>
                 <th>Sr.No</th>
@@ -74,7 +75,7 @@
                    &nbsp;&nbsp; <!--<a href="<?php echo base_url();?>emp/deletestatus?id=<?php echo $key['emp_id']; ?>"> <i class="fa fa-toggle-on"></i></a>-->
                   &nbsp;&nbsp; <a href='#' title='Delete Record' data-toggle="modal" data-target="#deleteModal"  onclick="$('#del_id').val('<?php echo $key['emp_id'];?>');"><i class="fa fa-trash-o"></i></a>
           				</td>
-                  <td><button name="status_button" id="status_button" value="<?php echo $key['emp_status']?>"><?php if($key['emp_status']=='1'){ echo "Active"; }else{ echo "Inactive"; } ?></button></td>
+                  <td><button name="status_button" id="status_button" value="<?php echo $key['emp_id']?>"><?php if($key['emp_status']=='1'){ echo "Active"; }else{ echo "Inactive"; } ?></button></td>
                 </tr>
 			        <?php } ?>
               
