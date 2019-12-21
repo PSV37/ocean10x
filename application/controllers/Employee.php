@@ -1977,6 +1977,250 @@ function get_autocomplete(){
                
     }
 
+    public function add_new_cv()
+    {
+        $company_id = $this->session->userdata('company_id');
+
+        if($_POST)
+        {
+            $email = $this->input->post('candidate_email');
+            $where_find = "js_email= '$email'";
+            $exists = $this->Master_model->get_master_row('corporate_cv_bank', $select= FALSE, $where_find, $join = FALSE);
+
+            $where_finds = "email= '$email'";
+            $on_ocean = $this->Master_model->get_master_row('js_info', $select= FALSE, $where_finds, $join = FALSE);
+            if ($on_ocean==true) {
+                $ocean_candidate = 'Yes';
+            }else{
+                $ocean_candidate = 'No';
+            }
+
+            if($exists==true)
+            {
+                $this->session->set_flashdata('success', '<div class="alert alert-warning text-center">This CV already exists!</div>');
+            }else{
+                $cv_data = array(
+                    'company_id'                 => $company_id,
+                    'js_name'                    => $this->input->post('candidate_name'),
+                    'js_email'                   => $this->input->post('candidate_email'),
+                    'js_mobile'                  => $this->input->post('candidate_phone'),
+                    'js_job_type'                => $this->input->post('job_type'),
+                    'js_current_designation'     => $this->input->post('current_job_desig'),
+                    'js_current_work_location'   => $this->input->post('current_work_location'),
+                    'js_working_since'           => date('Y-m-d', strtotime($this->input->post('working_current_since'))),
+                    'js_current_ctc'             => $this->input->post('current_ctc'),
+                    'js_current_notice_period'   => $this->input->post('candidate_notice_period'),
+                    'js_experience'              => $this->input->post('candidate_experiance'),
+                    'js_last_salary_hike'        => date('Y-m-d', strtotime($this->input->post('last_salary_hike'))),
+                    'js_top_education'           => $this->input->post('top_education'),
+                    // 'js_edu_special'             => $this->input->post('education_specialization'),
+                    'js_skill_set'               => $this->input->post('candidate_skills'),
+                    'js_certifications'          => $this->input->post('candidate_certification'),
+                    'js_industry'                => $this->input->post('candidate_industry'),
+                    'js_role'                    => $this->input->post('candidate_role'),
+                    'js_expected_salary'         => $this->input->post('candidate_expected_sal'),
+                    'js_desired_work_location'   => $this->input->post('desired_wrok_location'),
+                    'ocean_candidate'            => $ocean_candidate,
+                );
+            
+                $cv_data['created_on'] = date('Y-m-d H:i:s');
+                $cv_data['created_by'] = $company_id;
+
+                $this->Master_model->master_insert($cv_data, 'corporate_cv_bank');
+                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New CV added sucessfully!</div>');
+            }
+                redirect('employer/add_new_cv');
+          
+
+        }else{
+            $data['industry_master'] = $this->Master_model->getMaster('job_category',$where=false);
+            $data['department'] = $this->Master_model->getMaster('department',$where=false);
+            $data['job_role'] = $this->Master_model->getMaster('job_role',$where=false);
+
+            //$data['cv_info'] = $this->Master_model->getMaster('corporate_cv_bank',$where=false);
+
+            $this->load->view('fontend/employee/add_new_cv', $data);
+        }
+        
+    }
+
+    function get_candidate_by_email(){
+        if (isset($_GET['term'])) {
+            // $this->load->model('Consultant_autocomplete_model');
+            $result = $this->Job_seeker_experience_model->autocomplete_candidate($_GET['term']);
+            if (count($result) > 0) {
+            foreach ($result as $row)
+                $arr_result[] = $row->email;
+                echo json_encode($arr_result);
+
+            }
+        }
+    }
+
+    // desired career
+    function get_candidate_info_by_email()
+    {
+       
+        $email_id =$this->input->post('email');
+        $where1 = "js_info.email = '$email_id'";
+        $join = array( 
+            "js_career_info"=>"js_career_info.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
+            // "js_education"=>"js_education.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
+        );
+      
+        $select ="js_career_info.notice_period,js_career_info.serving_notice_period,js_career_info.immediate_join,js_career_info.desired_industry,js_career_info.job_area,js_career_info.js_career_salary,js_career_info.avaliable,js_career_info.skills,js_career_info.job_role,js_career_info.industry_id,js_career_info.last_salary_hike,js_info.full_name,js_info.mobile_no,js_info.job_seeker_id";
+
+        $result = $this->Master_model->getMaster('js_info', $where1, $join, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
+        
+        echo json_encode($result);
+
+    }
+    
+    function get_cand_other_info_by_email()
+    {
+       
+        $email_id =$this->input->post('email');
+        $where1 = "js_info.email = '$email_id'";
+        $join = array( 
+            "js_education"=>"js_education.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
+        );
+        $select ="min(js_education.education_level_id) as edu_high,js_education.job_seeker_id";
+        $res = $this->Master_model->getMaster('js_info', $where1, $join, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
+
+        $ed  = $res[0]['edu_high'];
+        $js = $res[0]['job_seeker_id'];
+        
+        $where_int="education_level_id='$ed'";
+        $result = $this->Master_model->getMaster('education_level', $where_int, $join= false, $order = false, $field = false, $select= false,$limit=false,$start=false, $search=false);
+
+        echo json_encode($result);
+
+    }
+
+
+    function get_cand_skills_by_email()
+    {
+       
+        $email_id =$this->input->post('email');
+        $where1 = "js_info.email = '$email_id'";
+        $join = array( 
+            "job_seeker_skills"=>"job_seeker_skills.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
+        );
+        $select ="job_seeker_skills.skills,job_seeker_skills.js_skill_id";
+        $result = $this->Master_model->getMaster('js_info', $where1, $join, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
+
+        echo json_encode($result);
+
+    }
+
+        /*BULK UPLOAD CV's*/    
+    public function bulk_upload_cvs(){
+        $company_id = $this->session->userdata('company_id');
+        //load model
+        $this->load->model('Questionbank_employer_model');
+        // Check form submit or not 
+        if($this->input->post('upload') != NULL ){ 
+            $data = array(); 
+            if(!empty($_FILES['file']['name'])){ 
+                // Set preference 
+                $config['upload_path'] = 'cv_bank_excel/files/'; 
+                $config['allowed_types'] = 'csv'; 
+                $config['max_size'] = '1000'; // max_size in kb 
+                $config['file_name'] = $_FILES['file']['name']; 
+
+                // Load upload library 
+                $this->load->library('upload',$config); 
+   
+                // File upload
+                if($this->upload->do_upload('file')){ 
+                    // Get data about the file
+                    $uploadData = $this->upload->data(); 
+                    $filename = $uploadData['file_name']; 
+
+                    // Reading file
+                    $file = fopen("cv_bank_excel/files/".$filename,"r");
+                    $i = 0;
+
+                    $importData_arr = array();
+                       
+                    while (($filedata = fgetcsv($file, 1000, ",")) !== FALSE) {
+                        $num = count($filedata);
+
+                        for ($c=0; $c < $num; $c++) {
+                            $importData_arr[$i][] = $filedata[$c];
+                        }
+                        $i++;
+                    }
+                    fclose($file);
+
+                    $skip = 0;
+
+                    // insert import data
+                    foreach($importData_arr as $userdata){
+                        if($skip != 0){
+                        
+                           $this->Questionbank_employer_model->InsertCVData($userdata);
+                     
+                        }
+                        $skip ++;
+                    }
+                   
+                   // $data['response'] = 'successfully uploaded '.$filename;
+                    $this->session->set_flashdata('success', '<div class="alert alert-success text-center">CVs Uploaded successfully!</div>');
+                    // redirect('employer/bulk_upload_cvs');
+
+                }else{ 
+                    //$data['response'] = 'failed'; 
+                    $this->session->set_flashdata('success', '<div class="alert alert-danger text-center">CVs Upload failed!</div>');
+                } 
+            }else{ 
+                // $data['response'] = 'failed'; 
+                $this->session->set_flashdata('success', '<div class="alert alert-danger text-center">CVs Upload failed!</div>');
+            } 
+            // $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">CVs Uploaded successfully!</div>');
+            redirect('employer/bulk_upload_cvs');
+            // load view 
+            // $this->load->view('fontend/employer/bulk_cv_upload_view',$data); 
+        }else{
+            // load view 
+            $this->load->view('fontend/employee/bulk_cv_upload_view'); 
+        } 
+
+    }
+
+    public function corporate_cv_bank()
+    {
+        $company_id = $this->session->userdata('company_profile_id');
+
+        $where_c['company_id'] = $company_id;
+        $data['cv_bank_data'] = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join = false, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+       
+        $this->load->view('fontend/employee/corporate_cv_bank',$data);
+    }
+
+    public function getocean_profile($email)
+    {
+       
+        $email_id =base64_decode($email);
+        $where1 = "js_info.email = '$email_id' AND js_experience.end_date IS NULL";
+        $join = array( 
+            "js_career_info"=>"js_career_info.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
+            "js_experience"=>"js_experience.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
+            "job_role"=>"job_role.id=js_experience.designation_id | LEFT OUTER",
+            "job_seeker_skills"=>"job_seeker_skills.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
+            "js_education"=>"js_education.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
+
+        );
+      
+        $select ="js_career_info.notice_period,js_career_info.serving_notice_period,js_career_info.immediate_join,js_career_info.desired_industry,js_career_info.job_area,js_career_info.js_career_salary,js_career_info.avaliable,js_career_info.skills,js_career_info.job_role,js_career_info.industry_id,js_career_info.last_salary_hike,js_info.full_name,js_info.mobile_no,js_info.job_seeker_id,job_role.job_role_title,js_experience.company_profile_id,js_experience.js_career_salary,js_experience.designation_id,js_experience.start_date,js_experience.address,min(js_education.education_level_id) as edu_high,job_seeker_skills.skills";
+
+        $result = $this->Master_model->getMaster('js_info', $where1, $join, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
+
+        echo $this->db->last_query();
+        echo "<pre>";
+        print_r($result);
+    }
+
 
         
 

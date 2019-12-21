@@ -182,6 +182,12 @@ $route['add-question']="employee/add_new_question";
 $route['question-bank']="employee/importquestion";
 $route['add-new-consultant']="employee/addconsultant";
 $route['show-all-consultant']="employee/allconsultants";
+$route['add-new-cv']="employee/add_new_cv";
+$route['bulk-upload-cv']="employee/bulk_upload_cvs";
+$route['corporate-cv-bank']="employee/corporate_cv_bank";
+
+
+
 
 
 

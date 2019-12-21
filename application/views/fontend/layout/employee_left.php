@@ -39,6 +39,9 @@
          <li> <a href="<?php echo base_url() ?>add-new-consultant" class=""><i class="fa fa-plus" aria-hidden="true"></i> Add Consultant</a></li>
          <li> <a href="<?php echo base_url() ?>show-all-consultant" class=""><i class="fa fa-user" aria-hidden="true"></i>All Consultants</a></li>   
      <?php } ?>
+      <li> <a href="<?php echo base_url() ?>add-new-cv" class=""><i class="fa fa-plus" aria-hidden="true"></i> Add New CV</a></li> 
+     <li> <a href="<?php echo base_url() ?>bulk-upload-cv" class=""><i class="fa fa-plus" aria-hidden="true"></i> Bulk Upload CVs</a></li> 
+     <li> <a href="<?php echo base_url() ?>corporate-cv-bank" class=""><i class="fa fa-file-text" aria-hidden="true"></i><?php echo $this->company_profile_model->company_name($employer_id); ?> CV Bank</a></li> 
       
       <li> <a href="<?php echo base_url() ?>employee/logout"><i class="fa fa-lock" aria-hidden="true"></i> logout </a> </li>
      
