@@ -1948,8 +1948,34 @@ function get_autocomplete(){
 
     }
 
-    
+
      public function delete_consultant()
+    {
+        $id = $this->input->post('id');
+        $del = array(
+            'cons_status' =>'1',
+        );
+        $where11['con_comp_map_id']=$id;
+        $this->Master_model->master_update($del,'consultant_company_mapping',$where11);
+    }
+    public function edit_consultant()
+    {
+        $consultant_id = $this->input->get('id');
+        $where_cond = "consultant_company_mapping.con_comp_map_id='$consultant_id'";
+        $join_cond = array(
+            'company_profile' => 'company_profile.company_profile_id = consultant_company_mapping.consultant_id|INNER',
+           
+            
+        );
+        $data['consultant_id']=$consultant_id;
+        $data['country'] = $this->Master_model->getMaster('country',$where=false);
+        $data['state'] = $this->Master_model->getMaster('state',$where=false);
+        $data['city'] = $this->Master_model->getMaster('city',$where=false);
+         $data['company_info'] = $this->Master_model->get_master_row('consultant_company_mapping',$select = FALSE, $where = $where_cond , $join = $join_cond);
+        $this->load->view('fontend/consultant/edit_consultant',$data);
+               
+    }
+    public function delete_consultant()
     {
         $id = $this->input->post('id');
         $del = array(
