@@ -1481,7 +1481,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $where11['emp_id']=$id;
 
         $result= $this->Master_model->get_master_row('employee',$select = FALSE,$where);
-        print_r($result['emp_status']);die;
+        // print_r($result['emp_status']);die;
         if ($result['emp_status']=='1') {
            $status = array(
             'emp_status' =>'0',
