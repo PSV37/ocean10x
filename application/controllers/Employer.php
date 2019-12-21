@@ -1348,7 +1348,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $this->Master_model->master_update($data,'consultant_company_mapping',$whr);
 
 
-             redirect('allconsultants');
+             redirect('show-all-consultant');
             }
                 # code...
             }
