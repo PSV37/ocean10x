@@ -1884,9 +1884,14 @@ function get_autocomplete(){
                                 );
                             $consultant=$this->Master_model->master_insert($consultanat_data,'consultant_company_mapping');
                             // send mail to consultant
-                            $user_id = $this->session->userdata('company_profile_id');
+                            $user_id = $this->session->userdata('company_id');
 
-                            $comp_name = $this->session->userdata('company_name');
+                            
+                            $wherecond = "company_profile_id='$user_id'";
+
+                            $company_info= $this->Master_model->get_master_row('company_profile',$select = FALSE,$wherecond);
+        
+                            $comp_name= $company_info['company_name'];
                            
                             if (isset($consultant) && !empty($consultant)) {
                                 
