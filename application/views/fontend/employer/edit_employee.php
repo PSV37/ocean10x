@@ -1,11 +1,12 @@
 <?php 
     $this->load->view('fontend/layout/employer_header.php');
 ?>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css">
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+</script> -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 
 <!-- Page Title start -->
 
@@ -96,25 +97,12 @@
                       <div class="form-group">
                           <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
                           
-                            <!-- <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc" id="user_accc"> -->
+                            <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc" id="user_accc">
                             
                           <!-- </select> -->
                           <!--  <select id="dates-field2" class="multiselect-ui form-control" multiple="multiple"> -->
-                                <!-- <option value="cheese">Cheese</option>
-                                <option value="tomatoes">Tomatoes</option>
-                                <option value="mozarella">Mozzarella</option>
-                                <option value="mushrooms">Mushrooms</option>
-                                <option value="pepperoni">Pepperoni</option>
-                                <option value="onions">Onions</option> -->
-                            <!-- </select> -->
-                            <select id="multiple-checkboxes" multiple="multiple">
-                              <option value="php">PHP</option>
-                              <option value="javascript">JavaScript</option>
-                              <option value="java">Java</option>
-                              <option value="sql">SQL</option>
-                              <option value="jquery">Jquery</option>
-                              <option value=".net">.Net</option>
-                          </select>
+                                
+                            </select>
                          
                       </div>
                   </div>
@@ -421,11 +409,6 @@ $(function() {
     });
 });
 
-</script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#multiple-checkboxes').multiselect();
-    });
 </script>
 	   
 	   
