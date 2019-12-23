@@ -253,7 +253,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
               $.ajax({
                   type:'POST',
                   url:'<?php echo base_url();?>employer/get_access_data',
-                  data:{id:id,emp_id:<?php echo $result['emp_id']; ?>},
+                  data:{id:id},
                   success:function(res){
                       $('#user_accc').html(res);
                       $("#user_accc").selectpicker('refresh');
