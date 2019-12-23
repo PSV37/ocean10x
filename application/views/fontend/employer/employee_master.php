@@ -52,9 +52,10 @@
         			  <th>Status</th>
               </thead>
               <tbody>
-          		<?php $srno=0; foreach($result as $key){ $srno++; ?>
+          		<?php $srno=0; foreach($result as $key){ $srno++; 
+                ?>
           				
-                <tr>
+                <tr style=<?php if($key['emp_status']=='1'){"background: #CCC"} ?>>
                   <td><?php echo $srno; ?></td>
           				<td><?php echo $key['emp_no']; ?></td>
           				<td><?php echo $key['emp_name']; ?></td>
@@ -78,7 +79,7 @@
                  {?> <td><button class="btn btn-success"  name="status" id="status" onclick="chnagestatus(this.value);" value="Active" ?></button></td> <?}
                  else
                   { ?> 
-                  <td style="background: #CCC"><button class="btn btn-danger"  name="status" id="status" onclick="chnagestatus(this.value);" value="Inactive" ?></button></td></button></td>
+                  <td style=""><button class="btn btn-danger"  name="status" id="status" onclick="chnagestatus(this.value);" value="Inactive" ?></button></td></button></td>
                   <?php } ?>
                 </tr>
 			        <?php } ?>
