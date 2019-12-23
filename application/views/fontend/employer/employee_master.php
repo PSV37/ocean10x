@@ -76,7 +76,7 @@
                   &nbsp;&nbsp; <a href='#' title='Delete Record' data-toggle="modal" data-target="#deleteModal"  onclick="$('#del_id').val('<?php echo $key['emp_id'];?>');"><i class="fa fa-trash-o"></i></a>
           				</td>
                  <?php if($key['emp_status']=='1')
-                 {?> <td><button class="btn btn-success"  name="status" id="status" onclick="chnagestatus(this.value);" value="Active" ?>Active</button></td> <?}
+                 {?> <td><button class="btn btn-success"  name="status" id="status" onclick="chnagestatus(this.value);" value="Active" ?></button>Active</td> <?}
                  else
                   { ?> 
                   <td style=""><button class="btn btn-danger"  name="status" id="status" onclick="chnagestatus(this.value);" value="Inactive" ?></button>Inactive</td>
