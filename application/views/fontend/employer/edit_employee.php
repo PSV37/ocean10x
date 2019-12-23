@@ -59,13 +59,19 @@
                   </div>
                 </div>
 									<div class="container-fluid">
-  									 <div class="col-md-6">
+  									 <div class="col-md-4">
     								  <div class="form-group">
                         <label for="exampleInputEmail1">Email-Id<span class="required">*</span></label>
                         <input type="email" name="email" id="email" class="form-control" value="<?php echo $result['email']; ?>">
     										</div>
   									   </div>
-									   <div class="col-md-6">
+                       <div class="col-md-4">
+                        <div class="form-group">
+                        <label for="exampleInputEmail1">Password<span class="required">*</span></label>
+                        <input type="Password" name="Password" id="Password" class="form-control" value="<?php echo $result['Password']; ?>">
+                        </div>
+                      </div>
+									   <div class="col-md-4">
                       <div class="form-group">
                         <label for="exampleInputEmail1">Contact No.<span class="required">*</span></label>
                         <input type="tel" name="mobile" id="mobile" class="form-control" value="<?php echo $result['mobile']; ?>" onkeypress="phoneno()" maxlength="10">
