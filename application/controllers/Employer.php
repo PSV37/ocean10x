@@ -2573,7 +2573,7 @@ public function interview_scheduler()
             'updated_by'=>$this->session->userdata('company_profile_id'),
 
         );
-        $where11['email']=$email_id;
+        $where11['js_email']=$email_id;
 
         $this->Master_model->master_update($update_profile,'corporate_cv_bank',$where11);
 
