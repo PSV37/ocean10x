@@ -2507,9 +2507,6 @@ public function interview_scheduler()
      function get_access_data(){
         $u_id = $this->input->post('id');
         $where['user_role_id'] = $u_id;
-        $emp_id=$this->input->post('emp_id');
-        $where1['emp_id'] = $emp_id;
-
         // $lineitemlevels = $this->Master_model->getMaster('employee_access',$where);
         $exists = $this->Master_model->get_master_row('employee_access', $select= FALSE, $where, $join = FALSE);
 
@@ -2518,17 +2515,15 @@ public function interview_scheduler()
         $result = '';
          $dd= $exists['access_specifiers'];
          $
-         $emp_data= $this->Master_model->get_master_row('employee', $select= FALSE, $where1, $join = FALSE);
+         $emp_data= $this->Master_model->get_master_row('employee_access', $select= FALSE, $where, $join = FALSE);
         $a = explode(',', $dd);
-        $result=$emp_data['access_to_employee'];
-        print_r($result);die;
         
         if(!empty($dd)){ 
             $result .='<option value="">Select</option>';
             // foreach($a as $keys){
                 for($i=0; $i<sizeof($a);$i++){
-                    
-              $result .='<option value="'.$a[$i].'"if($result["country_id"]==$key["country_id"]){ echo "selected";>'.$a[$i].'</option>';
+                    value="<?php echo $key['country_id']; ?>"<?php if($result['country_id']==$key['country_id']){ echo "selected"; }?>
+              $result .='<option value="'.$a[$i].'">'.$a[$i].'</option>';
             }
         }else{
         
