@@ -125,7 +125,7 @@
                           
                             <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc[]" id="user_accc">
                               <?php  $arr=explode(',', $result['access_to_employee']); 
-                              print_r($arr);
+                              print_r($result['access_to_employee']);
                                 foreach ($arr as $key) { ?>
                                  <option value="<?php echo $key ?>"<?php  echo "selected";?>><?php echo $key; ?></option>
                                
