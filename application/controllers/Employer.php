@@ -2510,24 +2510,19 @@ public function interview_scheduler()
         // $lineitemlevels = $this->Master_model->getMaster('employee_access',$where);
         $exists = $this->Master_model->get_master_row('employee_access', $select= FALSE, $where, $join = FALSE);
 
-
-
         $result = '';
          $dd= $exists['access_specifiers'];
-         $
-         $emp_data= $this->Master_model->get_master_row('employee_access', $select= FALSE, $where, $join = FALSE);
         $a = explode(',', $dd);
         
         if(!empty($dd)){ 
             $result .='<option value="">Select</option>';
             // foreach($a as $keys){
                 for($i=0; $i<sizeof($a);$i++){
-                    value="<?php echo $key['country_id']; ?>"<?php if($result['country_id']==$key['country_id']){ echo "selected"; }?>
               $result .='<option value="'.$a[$i].'">'.$a[$i].'</option>';
             }
         }else{
         
-            $result .='<option value="">Data not available</option>';
+            $result ='<option value="">Data not available</option>';
         }
          echo $result;
     }
