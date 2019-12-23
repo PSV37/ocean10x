@@ -1577,7 +1577,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     		$data['state_id'] = $this->input->post('state_id');
     		$data['city_id'] = $this->input->post('city_id');
 			$data['pincode'] = $this->input->post('pincode');
-    		$data['emp_status'] = $this->input->post('emp_status');
+            $data['emp_status'] = $this->input->post('emp_status');
+    		$data['password'] = md5($this->input->post('password'));
     		$data['emp_updated_date'] = date('Y-m-d H:i:s');
     		$data['emp_updated_by'] = $user_id;
             $data['access_to_employee'] =$List;

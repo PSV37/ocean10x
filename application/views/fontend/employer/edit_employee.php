@@ -68,7 +68,7 @@
                        <div class="col-md-4">
                         <div class="form-group">
                         <label for="exampleInputEmail1">Password<span class="required">*</span></label>
-                        <input type="Password" name="Password" id="Password" class="form-control" value="<?php echo $result['Password']; ?>">
+                        <input type="Password" name="Password" id="Password" maxlength="15" class="form-control" value="<?php echo $result['Password']; ?>"  >
                         </div>
                       </div>
 									   <div class="col-md-4">
@@ -353,6 +353,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 
   getCitys_load();
   getStates_load();
+  getuseraccess_load();
 });
 
 
