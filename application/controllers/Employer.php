@@ -2561,7 +2561,7 @@ public function interview_scheduler()
             'js_current_ctc'=>$latest['js_career_salary'],
             'js_current_notice_period'=>$latest['notice_period'],
             'js_experience'=>$latest['js_career_exp'],
-            'last_salary_hike'=>$latest['last_salary_hike'],
+            'js_last_salary_hike'=>$latest['last_salary_hike'],
             'js_top_education'=>$latest['edu_high'],
             'js_skill_set'=>$latest['skills'],
             'js_certifications'=>$latest['training_title'],
