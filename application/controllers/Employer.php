@@ -1492,6 +1492,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         );
         }
         $this->Master_model->master_update($status,'employee',$where11);
+        print_r($this->last_query());die();
 
        
     }
