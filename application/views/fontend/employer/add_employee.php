@@ -109,9 +109,9 @@
                       <label for="exampleInputEmail1">Designation<span class="required">*</span></label>
                      
                       <select class="form-control" name="user_role" id="user_role" onchange="getuseraccess(this.value);">
-                        <!-- <option value="">Select designation</option> -->
+                        <option value="">Select designation</option>
                         <?php foreach($roles as $key){?>
-                        <option value="<?php echo $key['user_role_id']; ?>"<?php if($result['user_role_id'] == $key['user_role_id']){ echo "selected"; }?>><?php echo $key['user_roles']; ?></option>
+                        <option value="<?php echo $key['user_role_id']; ?>"<?php if($result['user_role'] == $key['user_role_id']){ echo "selected"; }?>><?php echo $key['user_roles']; ?></option>
                         <?php } ?>
                         <!-- <option>HR Manager</option>
                         <option>Project Manager</option>
@@ -123,8 +123,7 @@
                       <div class="form-group">
                           <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
                           
-                            <select class="form-control" multiple data-live-search="true" name="user_acc[]" id="user_accc">
-                              
+                            <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc[]" id="user_accc"  >
                             </select>
                          
                       </div>
