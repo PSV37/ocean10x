@@ -189,7 +189,7 @@ function chnagestatus(id)
                 data:{id:id},
                 success:function(res){
                      alert('status changed Successfully!');
-                     document.reload();
+                     location.reload();
                 }
                 
             }); 
