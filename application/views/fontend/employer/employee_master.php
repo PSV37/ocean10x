@@ -55,7 +55,7 @@
           		<?php $srno=0; foreach($result as $key){ $srno++; 
                 ?>
           				
-                <tr style=<?php if($key['emp_status']=='1'){"background: #CCC"} ?>>
+                <tr <?php if($key['emp_status']=='1'){?> style="background: #CCC;" <?php } ?>>
                   <td><?php echo $srno; ?></td>
           				<td><?php echo $key['emp_no']; ?></td>
           				<td><?php echo $key['emp_name']; ?></td>
