@@ -2,7 +2,13 @@
     $this->load->view('fontend/layout/employer_header.php');
 ?>
 <!-- Page Title start -->
-
+<style type="text/css">
+  label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
 </style>
 <div class="pageTitle">
   <div class="container">
@@ -115,13 +121,11 @@
                   </div>
                   <div class="col-md-6">
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
-                          <select class="selectpicker" multiple data-live-search="true" name="user_acccc[]" id="user_accccc">
-                            <option>select</option>
-                          </select>
-                            <!-- <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc[]" id="user_accc">
+                          <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
+                          
+                            <select class="form-control" multiple data-live-search="true" name="user_acc[]" id="user_accc">
                               
-                            </select> -->
+                            </select>
                          
                       </div>
                   </div>
