@@ -80,7 +80,7 @@
                       <select class="form-control" name="user_role" id="user_role" onchange="getuseraccess(this.value);">
                         <option value="">Select designation</option>
                         <?php foreach($roles as $key){?>
-                        <option value="<?php echo $key['user_role_id']; ?>"<?php if($result['user_role_id'] == $key['user_role_id']){ echo "selected"; }?>><?php echo $key['user_roles']; ?></option>
+                        <option value="<?php echo $key['user_role_id']; ?>"<?php if($result['user_role'] == $key['user_role_id']){ echo "selected"; }?>><?php echo $key['user_roles']; ?></option>
                         <?php } ?>
                         <!-- <option>HR Manager</option>
                         <option>Project Manager</option>
