@@ -40,7 +40,7 @@ class Employer_Login extends CI_Controller
 
              $whereres = "company_profile_id='$company_profile_id'";
             $employer_data= $this->Master_model->get_master_row('company_profile',$select = FALSE,$whereres);
-            print_r($employer_login);die;
+            print_r($employer_data);die;
              $this->session->set_flashdata('emp_msg', '<div class="alert alert-success alert-dismissable">Welcome Admin!</div>');
                 redirect('employer/employee-master');
         } else {
