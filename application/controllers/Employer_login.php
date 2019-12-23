@@ -42,12 +42,12 @@ class Employer_Login extends CI_Controller
             $employer_data= $this->Master_model->get_master_row('company_profile',$select = FALSE,$whereres);
             if($employer_data['last_login']=="0000-00-00 00:00:00")
             {
-                $this->session->set_flashdata('emp_msg', '<div class="alert alert-success alert-dismissable">Welcome Admin!</div>');
+                $this->session->set_flashdata('emp_msg', '<div class="alert alert-success alert-dismissable">Thank You for joining “TheOcean” !</div>');
+                
             }else{
-             $this->session->set_flashdata('emp_msg', '<div class="alert alert-success alert-dismissable">Thank You for joining “TheOcean” !</div>');
-             print_r($employer_data);
+             $this->session->set_flashdata('emp_msg', '<div class="alert alert-success alert-dismissable">Welcome Admin!</div>');
          }
-                // redirect('employer/employee-master');
+                redirect('employer/employee-master');
         } else {
             $this->session->set_flashdata('emp_msg',
                 '<div class="alert alert-danger alert-dismissable">
