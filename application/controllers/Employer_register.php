@@ -167,22 +167,23 @@ $this->session->set_userdata('reg_in', $company_profile );
                 $data['access_to_employee']='Post A job,Add question Bank,Add Consultant,view question bank,CV Bank,Contractis';
                
                 $data['emp_created_date'] = date('Y-m-d H:i:s');
+                $data['user_role']='1';
                 $data['emp_created_by'] = $company_profile_id;
                 $this->Master_model->master_insert($data,'employee');
 
                 $data1['org_id'] = $company_profile_id;
                 $data1['emp_name'] ='Employee-2';
                 $data1['access_to_employee']='Post A job,Add Consultant,view question bank CV Bank,Contractis';
-               
                 $data1['emp_created_date'] = date('Y-m-d H:i:s');
+                $data1['user_role']='2';
                 $data1['emp_created_by'] = $company_profile_id;
                 $this->Master_model->master_insert($data1,'employee');
 
-                 $data2['org_id'] = $company_profile_id;
+                $data2['org_id'] = $company_profile_id;
                 $data2['emp_name'] ='Employee-3';
                 $data2['access_to_employee']='view question bank,CV Bank';
-               
                 $data2['emp_created_date'] = date('Y-m-d H:i:s');
+                $data2['user_role']='3';
                 $data2['emp_created_by'] = $company_profile_id;
                 $this->Master_model->master_insert($data2,'employee');
             

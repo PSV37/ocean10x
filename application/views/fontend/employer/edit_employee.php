@@ -324,6 +324,26 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
    
        }
 
+       function getuseraccess_load(){
+         var id = $('#user_role').val();
+      if(id){
+          
+        
+              $.ajax({
+                  type:'POST',
+                  url:'<?php echo base_url();?>employer/get_access_data',
+                  data:{id:id},
+                  success:function(res){
+                      $('#user_accc').html(res);
+                      $("#user_accc").selectpicker('refresh');
+                  }
+
+          
+              }); 
+            }
+          // $(".empdash .selectpicker").css("display", "block");
+       }
+
   getCitys_load();
   getStates_load();
 });
