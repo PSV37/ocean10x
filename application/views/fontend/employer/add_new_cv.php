@@ -57,7 +57,7 @@
 				<div class="col-md-6">
 				  	<div class="form-group">
 	                    <label for="exampleInputEmail1">Phone Number<span class="required">*</span></label>
-	                 	<input type="text" name="candidate_phone" id="candidate_phone" class="form-control" required="">
+	                 	<input type="text" name="candidate_phone" id="candidate_phone" class="form-control" maxlength="10" required="">
 					</div>
 				</div>
 

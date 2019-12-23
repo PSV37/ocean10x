@@ -2549,7 +2549,7 @@ public function interview_scheduler()
 
         echo $this->db->last_query();
         echo "<pre>";
-        print_r($result);
+        print_r($result['0']);
     }
     
 } // end class
