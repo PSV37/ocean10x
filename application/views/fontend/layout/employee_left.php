@@ -20,7 +20,7 @@
       <?php }?> 
 
       <?php 
-      if (in_array('postjob', $accessSpecifiers)) 
+      if (in_array('Post A job', $accessSpecifiers)) 
       {?>
           <li> <a href="<?php echo base_url(); ?>post-a-job" class=""> <i class="fa fa-pencil" aria-hidden="true"></i> Post New Job </a> </li>
           <li> <a href="<?php echo base_url() ?>jobs"><i class="fa fa-check-square-o" aria-hidden="true"></i> Posted Job </a> </li>
@@ -29,19 +29,24 @@
       <?php } ?>
         
 
-      <?php if (in_array('Addquestionbank', $accessSpecifiers)) {?>
+      <?php if (in_array('Add question Bank', $accessSpecifiers)) {?>
           <li> <a href="<?php echo base_url() ?>add-question"><i class="fa fa-pencil" aria-hidden="true"></i>Add Question</a> </li>
           <li> <a href="<?php echo base_url() ?>question-bank" class=""><i class="fa fa-upload" aria-hidden="true"></i>Import Question</a></li> 
-          <li> <a href="<?php echo base_url() ?>all-questions" class=""><i class="fa fa-check-square-o" aria-hidden="true"></i> Question Bank</a> </li>
+          
      <?php } ?>
+      <?php if (in_array('view question bank', $accessSpecifiers)) {?>
+        <li> <a href="<?php echo base_url() ?>all-questions" class=""><i class="fa fa-check-square-o" aria-hidden="true"></i> Question Bank</a> </li>
+       <?php } ?> 
 
      <?php if (in_array('Add Consultant', $accessSpecifiers)) {?>
          <li> <a href="<?php echo base_url() ?>add-new-consultant" class=""><i class="fa fa-plus" aria-hidden="true"></i> Add Consultant</a></li>
          <li> <a href="<?php echo base_url() ?>show-all-consultant" class=""><i class="fa fa-user" aria-hidden="true"></i>All Consultants</a></li>   
      <?php } ?>
+     <?php if (in_array('CV Bank', $accessSpecifiers)) {?>
       <li> <a href="<?php echo base_url() ?>add-new-cv" class=""><i class="fa fa-plus" aria-hidden="true"></i> Add New CV</a></li> 
      <li> <a href="<?php echo base_url() ?>bulk-upload-cv" class=""><i class="fa fa-plus" aria-hidden="true"></i> Bulk Upload CVs</a></li> 
-     <li> <a href="<?php echo base_url() ?>corporate-cv-bank" class=""><i class="fa fa-file-text" aria-hidden="true"></i><?php echo $this->company_profile_model->company_name($employer_id); ?> CV Bank</a></li> 
+     <li> <a href="<?php echo base_url() ?>corporate-cv-bank" class=""><i class="fa fa-file-text" aria-hidden="true"></i><?php echo $this->company_profile_model->company_name($employer_id); ?> CV Bank</a></li>
+     <?php } ?> 
       
       <li> <a href="<?php echo base_url() ?>employee/logout"><i class="fa fa-lock" aria-hidden="true"></i> logout </a> </li>
      
