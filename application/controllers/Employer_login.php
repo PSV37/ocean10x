@@ -37,8 +37,12 @@ class Employer_Login extends CI_Controller
             $data['company_name']       = $result->company_name;
             $data['comp_type']          = $result->comp_type;
             $this->session->set_userdata($data);
+
+             $whereres = "company_profile_id='$company_profile_id'";
+            $employer_data= $this->Master_model->get_master_row('company_profile',$select = FALSE,$whereres);
+            print_r($employer_login);die;
              $this->session->set_flashdata('emp_msg', '<div class="alert alert-success alert-dismissable">Welcome Admin!</div>');
-                redirect('employer');
+                redirect('employer/employee-master');
         } else {
             $this->session->set_flashdata('emp_msg',
                 '<div class="alert alert-danger alert-dismissable">
