@@ -1207,7 +1207,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $data['country'] = $this->Master_model->getMaster('country',$where=false);
         $data['state'] = $this->Master_model->getMaster('state',$where=false);
         $data['roles'] = $this->Master_model->getMaster('user_role',$where=false);
-        
+
     	$this->load->view('fontend/employer/add_employee',$data);		
     }
 
@@ -1585,8 +1585,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     		$where['emp_id']=$id;
             // print_r($data);
     		$this->Master_model->master_update($data,'employee',$where);
+            print_r($this->db->last_query());die;
             $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Employee Updated Successfully!</div>');
-    		redirect(base_url().'employer/allemployee');
+    		// redirect(base_url().'employer/allemployee');
 		}
     }
 
