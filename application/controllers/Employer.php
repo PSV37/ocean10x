@@ -2522,7 +2522,7 @@ public function interview_scheduler()
             }
         }else{
         
-            $result .='<option value="">Lineitem Level not available</option>';
+            $result .='<option value="">Data not available</option>';
         }
          echo $result;
     }
