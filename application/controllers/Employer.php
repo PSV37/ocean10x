@@ -2540,16 +2540,42 @@ public function interview_scheduler()
             "job_role"=>"job_role.id=js_experience.designation_id | LEFT OUTER",
             "job_seeker_skills"=>"job_seeker_skills.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
             "js_education"=>"js_education.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
+            "js_training"=>"js_training.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
+            "industry_master"=>"industry_master.id=js_career_info.industry_id | LEFT OUTER",
+
 
         );
       
-        $select ="js_career_info.notice_period,js_career_info.serving_notice_period,js_career_info.immediate_join,js_career_info.desired_industry,js_career_info.job_area,js_career_info.js_career_salary,js_career_info.avaliable,js_career_info.skills,js_career_info.job_role,js_career_info.industry_id,js_career_info.last_salary_hike,js_info.full_name,js_info.mobile_no,js_info.job_seeker_id,job_role.job_role_title,js_experience.company_profile_id,js_experience.js_career_salary,js_experience.designation_id,js_experience.start_date,js_experience.address,min(js_education.education_level_id) as edu_high,job_seeker_skills.skills";
+        $select ="js_career_info.notice_period,js_career_info.serving_notice_period,js_career_info.immediate_join,js_career_info.desired_industry,js_career_info.job_area,js_career_info.js_career_salary,js_career_info.avaliable,js_career_info.skills,js_career_info.job_role,js_career_info.industry_id,js_career_info.last_salary_hike,js_info.full_name,js_info.mobile_no,js_info.job_seeker_id,job_role.job_role_title,js_experience.company_profile_id,js_experience.js_career_salary,js_experience.designation_id,js_experience.start_date,js_experience.address,min(js_education.education_level_id) as edu_high,job_seeker_skills.skills,js_career_info.js_career_exp,js_training.training_title,industry_master.industry_name";
 
         $result = $this->Master_model->getMaster('js_info', $where1, $join, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
 
-        echo $this->db->last_query();
+        // echo $this->db->last_query();
         echo "<pre>";
-        print_r($result['0']);
+        $latest=$result['0'];
+        $update_profile=array(
+            'js_name'=>$latest['full_name'],
+            'js_mobile'=>$latest['mobile_no'],
+            'js_current_designation'=>$latest['job_role_title'],
+            'js_current_work_location'=>$latest['address'],
+            'js_current_ctc'=>$latest['js_career_salary'],
+            'js_current_notice_period'=>$latest['notice_period'],
+            'js_experience'=>$latest['js_career_exp'],
+            'last_salary_hike'=>$latest['last_salary_hike'],
+            'js_top_education'=>$latest['edu_high'],
+            'js_skill_set'=>$latest['skills'],
+            'js_certifications'=>$latest['training_title'],
+            'js_industry'=>$latest['industry_name'],
+            'js_role'=>$latest['job_role_title'],
+            'js_expected_salary'=>$latest['js_career_salary'],
+            'js_desired_work_location'=>$latest['job_area'],
+            'updated_on'=>date('Y-m-d H:i:s'),
+            'updated_by'=>$this->session->userdata('company_profile_id'),
+
+        );
+        $where11 = "corporate_cv_bank.email = '$email_id'";
+        $this->Master_model->master_update($update_profile,'corporate_cv_bank',$where11);
+
     }
     
 } // end class
