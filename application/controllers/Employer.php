@@ -2577,6 +2577,8 @@ public function interview_scheduler()
 
         $this->Master_model->master_update($update_profile,'corporate_cv_bank',$where11);
 
+        redirect('corporate_cv_bank');
+
     }
     
 } // end class
