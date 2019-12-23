@@ -158,17 +158,17 @@ $this->session->set_userdata('reg_in', $company_profile );
 
             $this->company_profile_model->insert($company_profile);
             $company_profile_id=$this->db->insert_id();
-            for ($i=1; $i <=3 ; $i++) { 
+             
                 # code...
           
                
                 $data['org_id'] = $company_profile_id;
-                $data['emp_name'] ='user'.$i;
+                $data['emp_name'] ='Employee-1';
                
                 $data['emp_created_date'] = date('Y-m-d H:i:s');
                 $data['emp_created_by'] = $company_profile_id;
                 $this->Master_model->master_insert($data,'employee');
-            }
+            
             $this->company_profile_model->sendEmail($to_email);
 
             $this->session->unset_userdata($company_profile);

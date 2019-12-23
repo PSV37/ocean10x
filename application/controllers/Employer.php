@@ -1165,7 +1165,7 @@ function getstate(){
                     }    
     					
         		//$data['org_id'] = $this->input->post('org_id');
-                $List = implode(', ', $this->input->post('Access')); 		
+                $List = implode(', ', $this->input->post('user_acc')); 		
         		$data['emp_no'] = $this->input->post('emp_no');
         		$data['org_id'] = $user_id;
         		$data['emp_name'] = $this->input->post('emp_name');
@@ -1206,6 +1206,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $data['city'] = $this->Master_model->getMaster('city',$where=false);
         $data['country'] = $this->Master_model->getMaster('country',$where=false);
         $data['state'] = $this->Master_model->getMaster('state',$where=false);
+        $data['roles'] = $this->Master_model->getMaster('user_role',$where=false);
+        
     	$this->load->view('fontend/employer/add_employee',$data);		
     }
 
@@ -1563,7 +1565,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         }
         else
 		{
-			$List = implode(', ', $this->input->post('Access')); 
+			$List = implode(', ', $this->input->post('user_acc')); 
   
     		$data['emp_no'] = $this->input->post('emp_no');
     		$data['emp_name'] = $this->input->post('emp_name');

@@ -181,7 +181,7 @@ $("#delete_btn").click(function(e)
 
 function chnagestatus(id)
 {
-   alert(id);
+   // alert(id);
    if(id){
             $.ajax({
                 type:'POST',

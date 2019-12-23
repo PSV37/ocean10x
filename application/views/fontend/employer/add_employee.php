@@ -104,31 +104,31 @@
            </div>
 				</div>
           <div class="container-fluid">
-             <div class="col-md-6">
-               <div class="form-group">
-                <label for="exampleInputEmail1">Designation<span class="required">*</span></label>
-                    <select class="form-control">
-                        <option>Select designation</option>
-                        <option>HR Manager</option>
+                   <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Designation<span class="required">*</span></label>
+                     
+                      <select class="form-control" name="user_role" id="user_role" onchange="getuseraccess(this.value);">
+                        <!-- <option value="">Select designation</option> -->
+                        <?php foreach($roles as $key){?>
+                        <option value="<?php echo $key['user_role_id']; ?>"<?php if($result['user_role_id'] == $key['user_role_id']){ echo "selected"; }?>><?php echo $key['user_roles']; ?></option>
+                        <?php } ?>
+                        <!-- <option>HR Manager</option>
                         <option>Project Manager</option>
-                        <option>Finance Manager</option>
+                        <option>Finance Manager</option> -->
                       </select>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
-                  <select class="selectpicker form-control" multiple data-live-search="true" id="Access[]" name="Access[]">
-                      <option value="editprofile">Edit Company Profile</option>
-                      <option value="postjob">Post A job</option>
-                      <option value="Addquestionbank">Add Ouestion Bank</option>
-                      <option value="addemp">Add Employee</option>
-                      <option value="addconsultant">Add Consultant</option>
-                    </select>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
                           
+                            <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc" id="user_accc">
+                            </select>
+                         
+                      </div>
+                  </div>
                 </div>
-              </div>
-            </div>
 										<div class="container-fluid">
 				    
 	                                    	
@@ -242,6 +242,24 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
           }
    
 	   }
+      function getuseraccess(id){
+      if(id){
+          
+        
+              $.ajax({
+                  type:'POST',
+                  url:'<?php echo base_url();?>employer/get_access_data',
+                  data:{id:id},
+                  success:function(res){
+                      $('#user_accc').html(res);
+                      $("#user_accc").selectpicker('refresh');
+                  }
+
+          
+              }); 
+            }
+          // $(".empdash .selectpicker").css("display", "block");
+       }
 	   
 	  $(document).ready(function(){
 
