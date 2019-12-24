@@ -37,7 +37,7 @@ class Employer_Login extends CI_Controller
             $data['company_name']       = $result->company_name;
             $data['comp_type']          = $result->comp_type;
             $this->session->set_userdata($data);
-
+            $company_profile_id=$this->session->userdata('company_profile_id');
              $whereres = "company_profile_id='$company_profile_id'";
             $employer_data= $this->Master_model->get_master_row('company_profile',$select = FALSE,$whereres);
             print_r($employer_data);
