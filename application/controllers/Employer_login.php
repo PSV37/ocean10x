@@ -53,7 +53,7 @@ class Employer_Login extends CI_Controller
           $where11['company_profile_id']=$company_profile_id;
              
         $this->Master_model->master_update($update_data,'company_profile',$where11);
-        print_r($this->db->last_query());die;
+        // print_r($this->db->last_query());die;
 
 
                 redirect('employer/employee');
