@@ -1165,7 +1165,7 @@ function getstate(){
                     }    
     					
         		//$data['org_id'] = $this->input->post('org_id');
-                $List = implode(', ', $this->input->post('user_acc')); 		
+                $List = implode(',', $this->input->post('user_acc')); 		
         		$data['emp_no'] = $this->input->post('emp_no');
         		$data['org_id'] = $user_id;
         		$data['emp_name'] = $this->input->post('emp_name');
