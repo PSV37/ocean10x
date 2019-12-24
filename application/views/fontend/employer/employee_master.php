@@ -81,7 +81,7 @@
           				</td>
                  <?php if($key['emp_status']=='1')
                  {?> <td><button class="btn btn-success"  name="status" id="status" onclick="chnagestatus(this.value);" value="<?php echo $key['emp_id'];?>" ?>Active</button></td> <?}
-                 else
+                 elseif($key['emp_status']=='2')
                   { ?> 
                   <td style=""><button class="btn btn-danger"  name="status" id="status" onclick="chnagestatus(this.value);" value="<?php echo $key['emp_id'];?>" ?>Inactive</button></td>
                   <?php } ?>

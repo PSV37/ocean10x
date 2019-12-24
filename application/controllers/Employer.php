@@ -1371,7 +1371,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     public function allemployee(){
     	$employer = $this->session->userdata('company_profile_id');
     	//$company=$employer['company_profile_id'];
-    	$where='employee.org_id="'.$employer.'" ';
+    	$where='employee.org_id="'.$employer.'" and employee.emp_status!="0" ';
     	//$data['result'] = $this->Master_model->getMaster('industry',$where=FALSE);
     	$join = array(
     		'department' => 'department.dept_id = employee.dept_id|LEFT OUTER',
@@ -1488,9 +1488,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         // print_r($result['emp_status']);die;
         if ($result['emp_status']=='1') {
            $status = array(
-            'emp_status' =>'0',
+            'emp_status' =>'2',
         );
-        }elseif ($result['emp_status']=='0') {
+        }elseif ($result['emp_status']=='2') {
              $status = array(
             'emp_status' =>'1',
         );
@@ -1567,7 +1567,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         }
         else
 		{
-			$List = implode(', ', $this->input->post('user_acc')); 
+			$List = implode(',', $this->input->post('user_acc')); 
   
     		$data['emp_no'] = $this->input->post('emp_no');
     		$data['emp_name'] = $this->input->post('emp_name');
