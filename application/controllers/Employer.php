@@ -1179,7 +1179,7 @@ function getstate(){
         		$data['pincode'] = $this->input->post('pincode');
         		$data['address'] = $this->input->post('address');
         		$data['emp_created_date'] = $this->input->post('emp_created_date');
-                $data['access_to_employee'] =$List;
+                $data['access_to_employee'] =trim($List);
         		$data['emp_created_by'] = $user_id;
         		$data['photo'] =$NewFileName;
         		
