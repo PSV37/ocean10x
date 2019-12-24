@@ -46,7 +46,7 @@ class Employer_Login extends CI_Controller
                 $this->session->set_flashdata('emp_msg', '<div class="alert alert-success alert-dismissable">Thank You for joining “TheOcean” !</div>');
                 
             }else{
-             $this->session->set_flashdata('emp_msg', '<div class="alert alert-success alert-dismissable">Welcome Admin!</div>');
+             $this->session->set_flashdata('emp_msg', '<div class="alert alert-success alert-dismissable">Welcome Admin!'.print_r($employer_data);.'</div>');
          }
                 redirect('employer/employee');
         } else {
