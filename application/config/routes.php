@@ -127,6 +127,7 @@ $route['employer/final-cv/(:num)']="employer/final_cv/$1";
 $route['employer/job-post']="employer/job_post";
 $route['employer/manage-job']="employer/manage_job";
 $route['employer/change-password']="employer/change_password";
+$route['audit']="employer/audit";
 $route['employer/active-job']="employer/active_job";
 $route['employer/pending-job']="employer/pending_job";
 $route['employer/selected-job']="employer/selected_job";

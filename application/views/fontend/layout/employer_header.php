@@ -93,7 +93,8 @@
                             <li><a href="<?php echo base_url(); ?>employer"><span class="glyphicon glyphicon-user"></span>Dashboard</a></li>
                             <li><a href="<?php echo base_url(); ?>employer/active-job"><span class="glyphicon glyphicon-star"></span> Active Job</a></li>
                             <li><a href="<?php echo base_url(); ?>employer/pending-job"><span class="glyphicon glyphicon-star"></span>Pending Job</a></li>
-                            <li><a href="<?php echo base_url(); ?>employer/change-password"><span class="glyphicon glyphicon-briefcase"></span> Change Password</a></li>
+                             <li><a href="<?php echo base_url(); ?>employer/change-password"><span class="glyphicon glyphicon-briefcase"></span> Change Password</a></li>
+                            <li><a href="<?php echo base_url(); ?>audit"><span class="glyphicon glyphicon-briefcase"></span>Audit Trail</a></li>
                             <li><a href="#" onclick="logout();"><span class="glyphicon glyphicon-lock"></span> Logout</a></li>
                         </ul>
                     </li>

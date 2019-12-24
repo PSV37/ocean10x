@@ -2584,6 +2584,16 @@ public function interview_scheduler()
         redirect('employer/corporate-cv-bank');
 
     }
+
+    public function audit()
+    {
+        $company_id=$this->session->userdata('company_profile_id');
+        $where1 = "employee_profile_record.company_profile_id = '$company_id' ";
+
+        $result = $this->Master_model->getMaster('employee_profile_record', $where1, $join, $order = 'desc', $field = 'emp_updated_date', $select,$limit='10',$start=false, $search=false);
+
+        print_r($result);die;
+    }
     
 } // end class
 
