@@ -48,9 +48,10 @@ class Employer_Login extends CI_Controller
             }else{
              $this->session->set_flashdata('emp_msg', '<div class="alert alert-success alert-dismissable">Welcome Admin!</div>');
          }
-         $data1['last_login']=date('Y-m-d H:i:s');
+         
+         $update_data=array('last_login'=date('Y-m-d H:i:s'));
              $whereres = "company_profile_id='$company_profile_id'";
-        $this->Master_model->master_update($data1,'company_profile',$whereres);
+        $this->Master_model->master_update($update_data,'company_profile',$whereres);
         print_r($this->db->last_query());
 
 
