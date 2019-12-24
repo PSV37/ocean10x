@@ -1165,7 +1165,9 @@ function getstate(){
                     }    
     					
         		//$data['org_id'] = $this->input->post('org_id');
-                $List = implode(',', trim($this->input->post('user_acc'))); 		
+
+                $List = implode(',', trim($this->input->post('user_acc')));
+                $x = preg_replace('/\s*,\s*/', ',', $List);		
         		$data['emp_no'] = $this->input->post('emp_no');
         		$data['org_id'] = $user_id;
         		$data['emp_name'] = $this->input->post('emp_name');
@@ -1179,7 +1181,7 @@ function getstate(){
         		$data['pincode'] = $this->input->post('pincode');
         		$data['address'] = $this->input->post('address');
         		$data['emp_created_date'] = $this->input->post('emp_created_date');
-                $data['access_to_employee'] =trim($List);
+                $data['access_to_employee'] =trim($x);
         		$data['emp_created_by'] = $user_id;
         		$data['photo'] =$NewFileName;
         		
