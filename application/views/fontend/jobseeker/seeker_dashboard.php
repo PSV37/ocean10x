@@ -102,7 +102,8 @@ h6{
 				           	 		$Desired_profile_each=$Desired_profile/11;
 				           	 		
 				           	 		//for personal info
-				           	 		if (isset($this->Job_seeker_model->jobseeker_name($job_seeker);) && !empty($this->Job_seeker_model->jobseeker_name($job_seeker);)) {
+				           	 		$name=$this->Job_seeker_model->jobseeker_name($job_seeker);
+				           	 		if (isset($name) && !empty($name)) {
 
 				           	 			$personal_total +=$personal_info_each;
 				           	 			echo $personal_total;
