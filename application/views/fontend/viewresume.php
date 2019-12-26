@@ -706,7 +706,7 @@ PERSONAL DETAILS:
                  <tr class="resume-texttwo">
                <!--Exam Title:-->
                 <td style="border-right:1px solid #EAE7E7;border-top:1px solid #EAE7E7;" align="center" width="20%">
-               <?php echo $result->skill_name; ?>
+               <?php echo $result['skill_name']; ?>
                &nbsp;
                </td>
                 <!--Concentration/Major:-->
