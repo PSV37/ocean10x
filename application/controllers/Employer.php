@@ -520,6 +520,16 @@ class Employer extends MY_Employer_Controller
                 if (!empty($jobseeker_id)) {
                     $company_id = $this->session->userdata('company_profile_id');
                     if ($this->job_apply_model->check_apply_job($jobseeker_id, $company_id, $job_id) == true) {
+                        $where_req_skill="js_ocean_exam_topics.job_seeker_id ='$jobseeker_id'";
+        $join_r = array(
+            'skill_master' => 'skill_master.id = js_ocean_exam_topics.skill_id | INNER',
+        );
+        $select = "js_ocean_exam_topics.id as exam_id,js_ocean_exam_topics.skill_id,js_ocean_exam_topics.level,js_ocean_exam_topics.topic_id,js_ocean_exam_topics.created_on,skill_master.skill_name";
+        
+        $final_result = $this->Master_model->getMaster('js_ocean_exam_topics',$where_req_skill,$join_r, $order = false, $field = false, $select, $limit=false, $start=false, $search=false);
+        
+
+            
 
                         $resume          = $this->job_seeker_model->resume_view_by_id($jobseeker_id);
                         $edcuaiton_list  = $this->Job_seeker_education_model->education_list_by_id($jobseeker_id);
@@ -527,7 +537,7 @@ class Employer extends MY_Employer_Controller
                         $training_list   = $this->Job_training_model->training_list_by_id($jobseeker_id);
                         $reference_list  = $this->Job_reference_model->reference_list_by_id($jobseeker_id);
                         $this->job_apply_model->update_resume_view($jobseeker_id, $company_id, $job_id);
-                        $this->load->view('fontend/viewresume', compact('resume', 'edcuaiton_list', 'experinece_list', 'training_list', 'reference_list', 'language_list','job_id'));
+                        $this->load->view('fontend/viewresume', compact('resume', 'edcuaiton_list', 'experinece_list', 'training_list', 'reference_list', 'language_list','job_id','final_result'));
                     } else {
                         echo "not found";
                     }

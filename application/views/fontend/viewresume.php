@@ -673,6 +673,93 @@ PERSONAL DETAILS:
 <!--
 REFERENCE:
 -->
+<?php if (!empty($final_result)): ?>
+    <table style="margin-top:3px;" align="center" border="0" cellpadding="0" cellspacing="0" width="750">
+      <!--
+      Reference:
+      -->
+      <tbody><tr>
+      <td colspan="6" class="resume-headingone"><?php echo $resume->full_name;?> Is a Ocean-champ:</td>
+      </tr>
+      
+      <tr>
+      <td colspan="6" class="resume-textone" align="left">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+         
+              <!--Name:-->
+                    <?php 
+
+                      if (!empty($final_result)): foreach ($final_result as $result) : $sr_no++; 
+
+              $skill_id = $result['skill_id'];
+             
+              $exam_res = getOceanExamResultByID($jobseeker_id,$skill_id); 
+
+              $exam_topic = getOceanExamTopicByID($result['topic_id']); 
+              // echo "<pre>";
+              // print_r($exam_topic);
+              if (!empty($exam_res)): foreach ($exam_res as $res_row) :
+              $marks = $res_row['total_marks']; 
+              $percentage = ($marks * 100)/NUMBER_QUESTIONS;
+
+                ?>
+
+            <tr>
+              <td><?php echo $sr_no; ?></td>
+              <td>
+               <?php echo $result['skill_name']; ?>
+              </td>
+              <td>
+              <?php
+                if (!empty($exam_topic)){ 
+                  foreach ($exam_topic as $top_row) { 
+                    echo  $top_row['topic_name'].', '; 
+                  } 
+                } 
+              ?>
+              </td>
+              <td><?php echo $result['level']; ?></td>
+              <td><?php echo NUMBER_QUESTIONS; ?></td>
+              <td><?php echo $res_row['total_questions']; ?></td>
+              <td><?php echo $res_row['total_marks']; ?></td>
+              <td>
+               <?php echo round($percentage, 2).'%'; ?>
+              </td>
+              <td><?php echo date('M j, Y',strtotime($result['created_on']));  ?></td>
+              <td>
+                <?php
+                   $per = round($percentage, 2).'%'; 
+                   if($per<=25)
+                   {
+                      echo '<span class="label label-danger">Average</span>';
+                   }
+                   else if($per > 25 && $per <= 50)
+                   {
+                      echo '<span class="label label-warning">Good</span>';
+                   } else if($per > 50 && $per <= 75)
+                   {
+                      echo '<span class="label label-info">Very Good</span>';
+                   }
+                   else if($per > 75 && $per <= 100)
+                   {
+                      echo '<span class="label label-success">Excelent</span>';
+                   }
+                ?>
+              </td>
+            </tr>
+            <?php
+              endforeach;
+              endif; 
+              endforeach;
+            ?>
+
+                    
+      </table>
+      </td>
+      </tr>
+   </tbody></table>
+<?php endif; ?>
+
 <?php if (!empty($reference_list)): ?>
     <table style="margin-top:3px;" align="center" border="0" cellpadding="0" cellspacing="0" width="750">
       <!--
@@ -810,6 +897,7 @@ REFERENCE:
       </tr>
    </tbody></table>
 <?php endif; ?>
+
 
     <table style="margin-bottom:30px !important;" align="center" border="0" cellpadding="0" cellspacing="0" width="750"> 
     <tr class="resume-textthree">
