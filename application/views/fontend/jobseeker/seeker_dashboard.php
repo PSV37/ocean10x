@@ -186,8 +186,9 @@ h6{
             						if (isset($languages) && !empty($languages)) 
 				           	 		{
 				           	 			$personal_total +=$personal_info_each;
-				           	 			echo $personal_total;
 				           	 		}
+				           	 			echo $personal_total;
+				           	 		
 
 				           	 		
 
