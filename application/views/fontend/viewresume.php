@@ -667,11 +667,11 @@ PERSONAL DETAILS:
       </td>
       </tr>
    </tbody></table>
-   <?php if(!empty($edcuaiton_list)): ?>
+   <?php if(!empty($final_result)): ?>
     <div class="table-responsive">
      <table class="table">
        <tbody><tr>
-       <td colspan="6" class="resume-headingone">Educations:</td>
+       <td colspan="6" class="resume-headingone"><?php echo $resume->full_name; ?> Is an Ocean-champ</td>
        </tr>
    
        <tr>
