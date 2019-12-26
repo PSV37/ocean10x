@@ -102,6 +102,8 @@ h6{
 				           	 		$Desired_profile_each=$Desired_profile/11;
 				           	 		
 				           	 		//for personal info
+                					 $job_seeker=$this->session->userdata('job_seeker_id');  
+
 				           	 		$name=$this->Job_seeker_model->jobseeker_name($job_seeker);
 				           	 		if (isset($name) && !empty($name)) {
 
