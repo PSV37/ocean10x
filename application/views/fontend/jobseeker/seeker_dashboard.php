@@ -90,6 +90,15 @@ h6{
 				           	 	<sapn class="title-career"><b>Profile Percentage</b></sapn> <br><br>
 				           	 	<?php $each=100/6;
 				           	 		echo $each;
+				           	 		$personal_info=$each;
+				           	 		$education=$each;
+				           	 		$skills=$each;
+				           	 		$work_experience=$each;
+				           	 		$Desired_profile=$each;
+				           	 		$attach_resume=$each;
+				           	 		$total=$personal_info+$education+$skills+$work_experience+$Desired_profile+$attach_resume;
+				           	 		echo $total;
+
 				           	 	 ?>
 				           	 	<p class="tag_line">Get career advice by conversing with other LinkedIn users who are leaders in their fields</p><hr>
 				           	</div>
