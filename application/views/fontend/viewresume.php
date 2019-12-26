@@ -747,7 +747,14 @@ REFERENCE:
                 ?>
               </td>
             </tr>
-            <?php
+            
+
+                    
+      </table>
+      </td>
+      </tr>
+   </tbody>
+ <?php
               endforeach;
               endif; 
               endforeach;
@@ -756,13 +763,7 @@ REFERENCE:
              <?php else : ?> 
               <tr colspan="7">
                  <td colspan="6" class="resume-headingone"><?php echo $resume->full_name;?> Is not an Ocean-champ:</td>
-              </tr>
-
-                    
-      </table>
-      </td>
-      </tr>
-   </tbody></table>
+              </tr></table>
 <?php endif; ?>
 
 <?php if (!empty($reference_list)): ?>
