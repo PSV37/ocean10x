@@ -187,7 +187,6 @@ h6{
 				           	 		{
 				           	 			$personal_total +=$personal_info_each;
 				           	 		}
-				           	 			echo $personal_total;
 
 			$education_level = $this->Master_model->getMaster('education_level',$where=false);
 			// foreach ($education_level as $v_education) :
@@ -218,7 +217,6 @@ h6{
 											$education_total +=$education_each;
 										}
 								}
-								?> <br> <? echo $education_total;
 
 								$where_skill['job_seeker_id']=$job_seeker;
 			$js_skills = $this->Master_model->getMaster('job_seeker_skills',$where_skill);
@@ -229,7 +227,6 @@ h6{
 				           	 			$skill_total +=$skills;
 				           	 			
 				           	 		}
-				           	 		?> <br> <? echo $skill_total;
 
 				           	 		$where_ex['job_seeker_id']=$job_seeker;
 			$js_experience = $this->Master_model->getMaster('js_experience',$where_ex);
@@ -240,7 +237,6 @@ h6{
 				           	 			$work_experience_total+=$work_experience;
 				           	 			
 				           	 		}
-				           	 		?> <br> <? echo $work_experience_total;
 		
 				          
 				          $job_seeker_resume = $this->Master_model->get_master_row('js_attached_resumes', $select =FALSE ,$where="job_seeker_id='$job_seeker'",$join = false);
@@ -250,7 +246,6 @@ h6{
 				           	 			$attach_resume_total+=$attach_resume;
 				           	 			
 				           	 		}
-				           	 		?> <br> <? echo $attach_resume_total;
 
 
 							$where_sek['job_seeker_id'] = $job_seeker;
@@ -323,7 +318,7 @@ h6{
 				           	 			
 				           	 		}
 
-				           	 		?> <br> <? echo $career_total;
+				           	 		
 
 				           	 		// endforeach;
 
@@ -336,7 +331,7 @@ h6{
 				           	 		
 
 				           	 	 ?>
-				           	 	<p class="tag_line">Get career advice by conversing with other LinkedIn users who are leaders in their fields</p><hr>
+				           	 	<p class="tag_line"><?php echo $total ?> percent of your completed.</p><hr>
 				           	</div>
 		             	</div>
 		                <div class="col-md-12">
