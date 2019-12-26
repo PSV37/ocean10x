@@ -218,7 +218,7 @@ h6{
 											$education_total +=$education_each;
 										}
 								}
-								echo $education_total;
+								?> <br> <? echo $education_total;
 		
 				          
 
