@@ -750,127 +750,15 @@ REFERENCE:
                     
                       
        </tbody></table> 
-                      <tbody><tr class="resume-textthree">
                     
-                      <td style="padding-left:10px;" align="left" width="22%">Full Name </td>
-                      <td align="center" width="2%">:</td>
-                      <td align="left" width="35%">
-                      <?php echo $v_reference->name;; ?>
-                      &nbsp;
-                      </td>
-                      
-                          <td align="left" width="41%">
-                          
-                          </td>
-                        
-                      </tr>
-               
-              <!--Organization:-->
-                   
-              <tr class="resume-textthree">
-                  
-              <td style="padding-left:10px;" align="left" width="22%">Organization</td>
-              <td align="center" width="2%">:</td>
-              <td align="left" width="35%">
-             <?php echo $v_reference->company_profile_id; ?>
-              &nbsp;
-              </td>
-                  
-                      <td align="left" width="41%">
-                                   
-                      </td>
-                  
-              </tr>
-                   
-              <!--Designation:-->    
-                  
-                      <tr class="resume-textthree">
-                     
-                      <td style="padding-left:10px;" align="left" width="22%">Designation</td>
-                      <td align="center" width="2%">:</td>
-                      <td align="left" width="35%">
-                      <?php echo $v_reference->designation_name; ?>
-                      &nbsp;
-                      </td>
-                      
-                              <td align="left" width="41%">
-                                            
-                              </td>
-                        
-                      </tr>
-                 
-                              
-              <!--Phone(Off):--> 
-                 
-              <!--Phone(Res):-->
-                   
-              <!--Mobile:-->
-                   
-                      <tr class="resume-textthree">
-                     
-                      <td style="padding-left:10px;" align="left">Voice</td>
-                      <td align="center">:</td>
-                      <td align="left">
-                     <?php echo $v_reference->mobile; ?>
-                      &nbsp;
-                      </td>
-                       
-                          <td align="left">
-                                      
-                          </td>
-                     
-                      </tr>
-                  
-              <!--E-Mail:-->
-                     
-                      <tr class="resume-textthree">
-                      
-                      <td style="padding-left:10px;" align="left">E-Mail</td>
-                      <td align="center">:</td>
-                      <td align="left">
-                     <?php echo $v_reference->email; ?>
-                      &nbsp;
-                      </td>
-                      
-                          <td align="left">
-                                      
-                          </td>
-                      
-                      </tr>
-                  
-              <!--Relation:-->
-                  
-                      <tr class="resume-textthree">
-                      
-                      <td style="padding-left:10px;" align="left">Relation</td>
-                      <td align="center">:</td>
-                      <td align="left">
-                      <?php echo $v_reference->relation; ?>
-                      &nbsp;
-                      </td>
-                     
-                          <td align="left">
-                                                  
-                          </td>
-                  
-                      </tr>
-                  
-              
-              <tr class="resume-textthree">
-              <td align="left">&nbsp;</td>
-              <td align="center">&nbsp;</td>
-              <td colspan="2" align="left">
-              </td>
-              </tr>
-            
-      </tbody>
 <?php
                     endforeach;
+                  endif;
                     ?>
       </table>
       </td>
       </tr>
-   </tbody></table>
+   </tbody></table><
 <?php endif; ?>
 
 <?php if (!empty($reference_list)): ?>
