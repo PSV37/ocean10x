@@ -772,7 +772,15 @@ PERSONAL DETAILS:
        </tr>
     </tbody></table>
   </div>
+ <?php  else: ?>
+ <table class="table">
+       <tbody><tr>
+       <td colspan="6" class="resume-headingone"><?php echo $resume->full_name; ?> Is not an Ocean-champ</td>
+       </tr>
+     </tbody>
+   </table>
  <?php endif; ?>
+
 
 
 
