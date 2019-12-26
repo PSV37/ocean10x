@@ -258,7 +258,7 @@ h6{
 							$js_desired_profile = $this->Master_model->get_master_row("js_career_info", $select = false, $where_sek);
 							print_r($js_desired_profile);
 
-								if (isset($js_desired_profile->industry_id) && !empty($js_desired_profile->industry_id)) 
+								if (isset($js_desired_profile['industry_id']) && !empty($js_desired_profile['industry_id'])) 
 				           	 		{
 				           	 			$career_total +=$Desired_profile_each;
 				           	 		}
