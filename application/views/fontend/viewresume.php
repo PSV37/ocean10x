@@ -259,6 +259,7 @@ Jobs Duty & Responsibility::
        </td>
        </tr>      
    </table>
+ </div>
 <?php endif; ?>
       <!-- <!-
 Achievement:
@@ -278,7 +279,7 @@ Achievement:
        </td>
        </tr>      
    </table>
-   </table>
+   </div>
 <?php endif; ?>
 <!-- <!-
 Major Activities::
@@ -666,48 +667,20 @@ PERSONAL DETAILS:
       </td>
       </tr>
    </tbody></table>
+   <?php if(!empty($edcuaiton_list)): ?>
+    <div class="table-responsive">
+     <table class="table">
+       <tbody><tr>
+       <td colspan="6" class="resume-headingone">Educations:</td>
+       </tr>
    
-
-
-
-<!--
-REFERENCE:
--->
-<?php if (!empty($final_result)): ?>
-    <table style="margin-top:3px;" align="center" border="0" cellpadding="0" cellspacing="0" width="750">
-      <!--
-      Reference:
-      -->
-      <tbody><tr>
-      <td colspan="6" class="resume-headingone"><?php echo $resume->full_name;  ?> Is An Ocean champ</td>
-      </tr>
-      
-      <tr>
-      <td colspan="6" class="resume-textone" align="left">
-      <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
-         
-              <!--Name:-->
-           <?php  foreach ($final_result as $result) : $sr_no++; 
-
-              $skill_id = $result['skill_id'];
-             
-              $exam_res = getOceanExamResultByID($jobseeker_id,$skill_id); 
-
-              $exam_topic = getOceanExamTopicByID($result['topic_id']); 
-              // echo "<pre>";
-              // print_r($exam_topic);
-              if (!empty($exam_res)): foreach ($exam_res as $res_row) :
-              $marks = $res_row['total_marks']; 
-              $percentage = ($marks * 100)/NUMBER_QUESTIONS;
-
-            ?>
-            <table width="100%">
+       <tr>
+       <td colspan="6" align="left">
+       <table width="100%">
            <tbody><tr class="resume-texttwo">
-           <td width="20%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Skill</strong></td>
-           <td width="15%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Topics</strong></td>
-           <td width="20%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Exam Level</strong></td>
-           <td width="20%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Exam Level</strong></td>
-
+           <td width="20%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Exam Title</strong></td>
+           <td width="15%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Specialization</strong></td>
+           <td width="20%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Institute</strong></td>
            <td width="15%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Result</strong></td>
            
                 <td width="15%"  align="center" bgcolor="#f4f4f4"><strong>Pas.Year</strong></td>              
@@ -750,17 +723,17 @@ REFERENCE:
                     
                       
        </tbody></table> 
-                    
-<?php
-                    endforeach;
-                 
-                    ?>
-      </table>
-      </td>
-      </tr>
-   </tbody></table>
-<?php endif; ?>
+       </td>
+       </tr>
+    </tbody></table>
+  </div>
+ <?php endif; ?>
 
+
+
+<!--
+REFERENCE:
+-->
 <?php if (!empty($reference_list)): ?>
     <table style="margin-top:3px;" align="center" border="0" cellpadding="0" cellspacing="0" width="750">
       <!--
@@ -899,7 +872,6 @@ REFERENCE:
    </tbody></table>
 <?php endif; ?>
 
-
     <table style="margin-bottom:30px !important;" align="center" border="0" cellpadding="0" cellspacing="0" width="750"> 
     <tr class="resume-textthree">
           <td style="padding-left:10px; border-top:1px solid;" align="left" width="22%">
@@ -908,7 +880,6 @@ REFERENCE:
       </div>
 
           </td>
-        </tr>
 
           <!--<td style="padding-right:50px;" align="right" width="70%"><?php echo get_logo();?> </td>-->
 
@@ -916,5 +887,7 @@ REFERENCE:
     </table>     
     
 
-  </div></div></div></div>
+  </tbody></table>
+        </div>
+</div>
  <?php $this->load->view("fontend/layout/footer.php"); ?>
