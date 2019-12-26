@@ -700,7 +700,7 @@ PERSONAL DETAILS:
               $marks = $res_row['total_marks']; 
               $percentage = ($marks * 100)/NUMBER_QUESTIONS; 
 
-              print_r($exam_res);die;
+              print_r($jobseeker_id);die;
 
 
               ?>
