@@ -188,9 +188,16 @@ h6{
 				           	 			$personal_total +=$personal_info_each;
 				           	 		}
 				           	 			echo $personal_total;
-				           	 		
 
-				           	 		
+			$education_level = $this->Master_model->getMaster('education_level',$where=false);
+			foreach ($education_level as $v_education) :
+				$seeker_edu_id = $v_education['education_level_id'];
+
+				           $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
+				           print_r($education_data);
+
+
+				           	 		endforeach;
 
 
 
