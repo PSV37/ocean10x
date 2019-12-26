@@ -52,7 +52,7 @@
           				
                 <tr>
                   <td><?php echo $srno; ?></td>
-          				<td><?php echo $key['comapny']; ?></td>
+          				<td><?php echo $key['company']; ?></td>
           				<td><?php echo $key['Action']; ?></td>
           				<td><?php echo $key['datetime']; ?></td>
           				<td><?php echo $key['updated_by']; ?></td>	
