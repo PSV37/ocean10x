@@ -700,7 +700,7 @@ PERSONAL DETAILS:
               $marks = $res_row['total_marks']; 
               $percentage = ($marks * 100)/NUMBER_QUESTIONS; 
 
-              // print_r($result);die;
+              print_r($exam_res);die;
 
 
               ?>
@@ -729,7 +729,7 @@ PERSONAL DETAILS:
                </td>
                 <!--Result:-->
                <td style="border-right:1px solid #EAE7E7;border-top:1px solid #EAE7E7;" align="center" width="12.5%">
-              <?php echo $marks; ?>
+              <?php echo $res_row['total_marks']; ?>
                &nbsp;               
                </td>
                 <!--Passing Year:-->
