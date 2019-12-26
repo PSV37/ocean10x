@@ -701,7 +701,7 @@ PERSONAL DETAILS:
               $marks = $res_row['total_marks']; 
               $percentage = ($marks * 100)/NUMBER_QUESTIONS; 
 
-              print_r($jbS_id);die;
+              // print_r($jbS_id);die;
 
 
               ?>
