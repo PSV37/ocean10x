@@ -105,13 +105,94 @@ h6{
                 					 $job_seeker=$this->session->userdata('job_seeker_id');  
 
 				           	 		$name=$this->Job_seeker_model->jobseeker_name($job_seeker);
-				           	 		print_r($this->db->last_query());
-				           	 		if (isset($name) && !empty($name)) {
+				           	 		// print_r($this->db->last_query());
+				           	 		if (isset($name) && !empty($name)) 
+				           	 		{
+				           	 			$personal_total +=$personal_info_each;
+				           	 		}
 
+				           	 		$job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($job_seeker);
+				           	 		if (isset($job_seeker_photo->js_photo_id) && !empty($job_seeker_photo->js_photo_id)) 
+				           	 		{
+				           	 			$personal_total +=$personal_info_each;
+				           	 		}
+
+				           	 		$js_personal_info = $this->job_seeker_personal_model->personalinfo_list_by_id($job_seeker);
+
+				           	 		if (isset($js_personal_info->date_of_birth) && !empty($js_personal_info->date_of_birth)) 
+				           	 		{
+				           	 			$personal_total +=$personal_info_each;
+				           	 		}
+
+				           	 		if (isset($js_personal_info->mobile) && !empty($js_personal_info->mobile)) 
+				           	 		{
+				           	 			$personal_total +=$personal_info_each;
+				           	 		}
+
+				           	 		if (isset($js_personal_info->present_address) && !empty($js_personal_info->present_address)) 
+				           	 		{
+				           	 			$personal_total +=$personal_info_each;
+				           	 		}
+
+				           	 		if (isset($js_personal_info->city_name) && !empty($js_personal_info->city_name)) 
+				           	 		{
+				           	 			$personal_total +=$personal_info_each;
+				           	 		}
+
+				           	 		if (isset($js_personal_info->state_name) && !empty($js_personal_info->state_name)) 
+				           	 		{
+				           	 			$personal_total +=$personal_info_each;
+				           	 		}
+
+				           	 		if (isset($js_personal_info->country_name) && !empty($js_personal_info->country_name)) 
+				           	 		{
+				           	 			$personal_total +=$personal_info_each;
+				           	 		}
+
+				           	 		if (isset($js_personal_info->marital_status) && !empty($js_personal_info->marital_status)) 
+				           	 		{
+				           	 			$personal_total +=$personal_info_each;
+				           	 		}
+
+				           	 		if (isset($js_personal_info->work_permit_usa) && !empty($js_personal_info->work_permit_usa)) 
+				           	 		{
+				           	 			$personal_total +=$personal_info_each;
+				           	 		}
+
+				           	 		if (isset($js_personal_info->work_permit_countries) && !empty($js_personal_info->work_permit_countries)) 
+				           	 		{
+				           	 			$personal_total +=$personal_info_each;
+				           	 		}
+
+				           	 		if (isset($js_personal_info->website) && !empty($js_personal_info->website)) 
+				           	 		{
+				           	 			$personal_total +=$personal_info_each;
+				           	 		}
+
+				           	 		if (isset($js_personal_info->resume_title) && !empty($js_personal_info->resume_title)) 
+				           	 		{
+				           	 			$personal_total +=$personal_info_each;
+				           	 		}
+
+				           	 		if (isset($js_personal_info->resume_title) && !empty($js_personal_info->resume_title)) 
+				           	 		{
+				           	 			$personal_total +=$personal_info_each;
+				           	 			
+				           	 		}
+
+				           	 $where_lang="job_seeker_id='$jobseeker_id' ORDER BY language ASC";
+            			$languages = $this->Master_model->getMaster('js_languages',$where_lang);
+
+            						if (isset($languages) && !empty($languages)) 
+				           	 		{
 				           	 			$personal_total +=$personal_info_each;
 				           	 			echo $personal_total;
-				           	 			# code...
 				           	 		}
+
+				           	 		
+
+
+
 
 
 				           	 		$total=$personal_info+$education+$skills+$work_experience+$Desired_profile+$attach_resume;
