@@ -82,7 +82,7 @@
                    }
                    else if($per > 75 && $per <= 100)
                    {
-                      echo '<span class="label label-success">Exelent</span>';
+                      echo '<span class="label label-success">Excelent</span>';
                    }
                 ?>
               </td>

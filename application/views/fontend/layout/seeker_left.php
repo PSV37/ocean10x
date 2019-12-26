@@ -1,4 +1,19 @@
 <div class="col-md-3">
+    <?php
+     $jobseeker_id = $this->session->userdata('job_seeker_id');
+       
+
+        $where_req_skill="js_ocean_exam_topics.job_seeker_id ='$jobseeker_id'";
+        $join_r = array(
+            'skill_master' => 'skill_master.id = js_ocean_exam_topics.skill_id | INNER',
+        );
+        $select = "js_ocean_exam_topics.id as exam_id,js_ocean_exam_topics.skill_id,js_ocean_exam_topics.level,js_ocean_exam_topics.topic_id,js_ocean_exam_topics.created_on,skill_master.skill_name";
+        
+        $final_result = $this->Master_model->getMaster('js_ocean_exam_topics',$where_req_skill,$join_r, $order = false, $field = false, $select, $limit=false, $start=false, $search=false);
+        print_r($final_result);die;
+
+    ?>
+
 <?php /*?><div class="userdashnav">
 <ul class="usernavdash">
 <li><a href="<?php echo base_url(); ?>seeker/personal"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Profile</a></li>
@@ -24,6 +39,7 @@
   <ul>
     <li> <a href="<?php echo base_url(); ?>seeker/dashboard" class=""> <i class="fa fa-dashboard" aria-hidden="true"></i>My Dashboard </a> </li>
     <li class="title">MY OCEAN RESUME</li>
+     <li><a href="<?php echo base_url(); ?>seeker/downloadcv"><i class="fa fa-cloud-download" aria-hidden="true"></i> Download Ocean Resume</a></li>
     <li> <a href="<?php echo base_url() ?>job_seeker/seeker_info" class=""> <i class="fa fa-pencil" aria-hidden="true"></i> My Ocean Profile </a> </li>
     <li> <a href="<?php echo base_url(); ?>seeker/resume" class=""> <i class="fa fa-file-text" aria-hidden="true"></i> View Ocean Resume </a> </li>
    
