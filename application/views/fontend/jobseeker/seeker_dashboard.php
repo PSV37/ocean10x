@@ -197,10 +197,10 @@ $where_ress = "js_education.job_seeker_id='$job_seeker'";
 				           $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
 				           $select='education_level_id';
 		$education_data = $this->Master_model->getMaster('js_education',$where_ress, $join = FALSE, $order = false, $field = false, $select = $select,$limit=false,$start=false, $search=false);
-		// if (in_array('1', $education_data)) {
-		// 	# code...
-		// }
-				           print_r($education_data);
+		if (in_array('1', $education_data->education_level_id)) {
+			echo "string";
+		}
+				           print_r($education_data->education_level_id);
 
 
 				           	 		// endforeach;
