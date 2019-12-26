@@ -706,7 +706,7 @@ PERSONAL DETAILS:
                  <tr class="resume-texttwo">
                <!--Exam Title:-->
                 <td style="border-right:1px solid #EAE7E7;border-top:1px solid #EAE7E7;" align="center" width="20%">
-               <?php echo $result->skill_name ; ?>
+               <?php echo $result->skill_name; ?>
                &nbsp;
                </td>
                 <!--Concentration/Major:-->
@@ -722,12 +722,12 @@ PERSONAL DETAILS:
                </td>
                 <!--Institute:-->
                <td style="border-right:1px solid #EAE7E7;border-top:1px solid #EAE7E7;" align="center" width="15%">
-               <?php echo $result->level ; ?>
+               <?php echo $result->level; ?>
                &nbsp;            
                </td>
                 <!--Result:-->
                <td style="border-right:1px solid #EAE7E7;border-top:1px solid #EAE7E7;" align="center" width="12.5%">
-              <?php echo $result->total_marks  ; ?>
+              <?php echo $result->total_marks; ?>
                &nbsp;               
                </td>
                 <!--Passing Year:-->
