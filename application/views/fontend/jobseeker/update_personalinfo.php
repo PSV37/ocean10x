@@ -1171,6 +1171,13 @@
 
     <div class="panel-body"></div>   
            <!-- Copy Fields -->
+           <div class="row avatar-btns">
+                  <div class="col-md-9">
+                  </div>
+                  <div class="col-md-3">
+                    <button type="submit" class="btn btn-primary btn-block avatar-save2">Save </button>
+                  </div>
+                </div>
       
       <!--<div class="row">
        <div class="col-md-12">
