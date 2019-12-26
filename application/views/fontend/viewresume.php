@@ -703,23 +703,22 @@ PERSONAL DETAILS:
                  <tr class="resume-texttwo">
                <!--Exam Title:-->
                 <td style="border-right:1px solid #EAE7E7;border-top:1px solid #EAE7E7;" align="center" width="20%">
-               <?php echo $result->skill_name ; ?>
+               <?php echo $result->education_level_name ; ?>
                &nbsp;
                </td>
                 <!--Concentration/Major:-->
                <td style="border-right:1px solid #EAE7E7;border-top:1px solid #EAE7E7;" align="center" width="15%">
-              
-              <!--  -->
+              <?php echo $v_education->education_specialization ; ?>
                &nbsp;
                </td>
                 <!--Institute:-->
                <td style="border-right:1px solid #EAE7E7;border-top:1px solid #EAE7E7;" align="center" width="15%">
-                <td><?php echo $result->level; ?></td>
+               <?php echo $v_education->js_institute_name ; ?>
                &nbsp;            
                </td>
                 <!--Result:-->
                <td style="border-right:1px solid #EAE7E7;border-top:1px solid #EAE7E7;" align="center" width="12.5%">
-               <td><?php echo $res_row->total_marks; ?></td>
+              <?php echo $v_education->js_resut  ; ?>
                &nbsp;               
                </td>
                 <!--Passing Year:-->
