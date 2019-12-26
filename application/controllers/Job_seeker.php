@@ -68,7 +68,7 @@ class Job_seeker extends MY_Seeker_Controller
                 'work_permit_usa'           => $this->input->post('work_permit_usa'),
                 'work_permit_countries'     => $this->input->post('other_country_work_permit'),
                 'website'                   => addslashes($this->input->post('website')),
-                'update_at'                 =>date('Y-m-d H:i:s')
+                
                 
                 
             );
