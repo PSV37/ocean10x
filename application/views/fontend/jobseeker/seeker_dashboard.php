@@ -84,6 +84,16 @@ h6{
 					<div class="panel-body"></div>
 
 					<div class="row career">
+						<div class="col-md-12">
+		                	<div class="col-md-1"><i class="fa fa-user" aria-hidden="true"></i></div>
+		                	<div class="col-md-11">
+				           	 	<sapn class="title-career"><b>Profile Percentage</b></sapn> <br><br>
+				           	 	<?php $each=100/6;
+				           	 		echo $each;
+				           	 	 ?>
+				           	 	<p class="tag_line">Get career advice by conversing with other LinkedIn users who are leaders in their fields</p><hr>
+				           	</div>
+		             	</div>
 		                <div class="col-md-12">
 		                	<div class="col-md-1"><i class="fa fa-user" aria-hidden="true"></i></div>
 		                	<div class="col-md-11">
