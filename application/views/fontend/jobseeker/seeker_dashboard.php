@@ -193,15 +193,32 @@ h6{
 			// foreach ($education_level as $v_education) :
 				$seeker_edu_id = $v_education['education_level_id'];
 
-$where_ress = "js_education.job_seeker_id='$job_seeker'";
+							$where_ress = "js_education.job_seeker_id='$job_seeker'";
 				           $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
 				           $select='education_level_id';
-		$education_data = $this->Master_model->getMaster('js_education',$where_ress, $join = FALSE, $order = false, $field = false, $select = $select,$limit=false,$start=false, $search=false);
-		foreach ($education_data as $row) {
-			if (in_array('1', $row)) {
-			echo "string";
-		}
-		}
+							$education_data = $this->Master_model->getMaster('js_education',$where_ress, $join = FALSE, $order = false, $field = false, $select = $select,$limit=false,$start=false, $search=false);
+								foreach ($education_data as $row) 
+								{
+									if (in_array('1', $row)) {
+									$education_total +=$education_each;
+										}
+										if (in_array('2', $row)) {
+											$education_total +=$education_each;
+										}
+										if (in_array('3', $row)) {
+											$education_total +=$education_each;
+										}
+										if (in_array('4', $row)) {
+											$education_total +=$education_each;
+										}
+										if (in_array('5', $row)) {
+											$education_total +=$education_each;
+										}
+										if (in_array('6', $row)) {
+											$education_total +=$education_each;
+										}
+								}
+								echo $education_total;
 		
 				          
 
