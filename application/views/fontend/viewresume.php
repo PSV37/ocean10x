@@ -678,41 +678,77 @@ PERSONAL DETAILS:
        <td colspan="6" align="left">
        <table width="100%">
            <tbody><tr class="resume-texttwo">
-           <td width="20%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Exam Title</strong></td>
-           <td width="15%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Specialization</strong></td>
-           <td width="20%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Institute</strong></td>
+           <td width="20%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Skill</strong></td>
+           <td width="15%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Topics</strong></td>
+           <td width="20%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Level</strong></td>
            <td width="15%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Result</strong></td>
-           
-                <td width="15%"  align="center" bgcolor="#f4f4f4"><strong>Pas.Year</strong></td>              
+           <td width="15%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Performance</strong></td>              
 
            </tr>         
-            <?php foreach ($edcuaiton_list as $v_education) : ?>
+            <?php $sr_no=0; foreach ($final_result as $result) : 
+
+              $sr_no++; 
+
+              $skill_id = $result['skill_id'];
+             
+              $exam_res = getOceanExamResultByID($jobseeker_id,$skill_id); 
+
+              $exam_topic = getOceanExamTopicByID($result->topic_id); 
+              // echo "<pre>";
+              // print_r($exam_topic);
+              if (!empty($exam_res)): foreach ($exam_res as $res_row) :
+              $marks = $res_row['total_marks']; 
+              $percentage = ($marks * 100)/NUMBER_QUESTIONS; ?>
 
                  <tr class="resume-texttwo">
                <!--Exam Title:-->
                 <td style="border-right:1px solid #EAE7E7;border-top:1px solid #EAE7E7;" align="center" width="20%">
-               <?php echo $v_education->education_level_name ; ?>
+               <?php echo $result->skill_name ; ?>
                &nbsp;
                </td>
                 <!--Concentration/Major:-->
                <td style="border-right:1px solid #EAE7E7;border-top:1px solid #EAE7E7;" align="center" width="15%">
-              <?php echo $v_education->education_specialization ; ?>
+              
+               <?php
+                if (!empty($exam_topic)){ 
+                  foreach ($exam_topic as $top_row) { 
+                    echo  $top_row['topic_name'].', '; 
+                  } 
+                } 
+              ?>
                &nbsp;
                </td>
                 <!--Institute:-->
                <td style="border-right:1px solid #EAE7E7;border-top:1px solid #EAE7E7;" align="center" width="15%">
-               <?php echo $v_education->js_institute_name ; ?>
+                <td><?php echo $result->level; ?></td>
                &nbsp;            
                </td>
                 <!--Result:-->
                <td style="border-right:1px solid #EAE7E7;border-top:1px solid #EAE7E7;" align="center" width="12.5%">
-              <?php echo $v_education->js_resut  ; ?>
+               <td><?php echo $res_row->total_marks; ?></td>
                &nbsp;               
                </td>
                 <!--Passing Year:-->
                
                    <td style="border-top:1px solid #EAE7E7;" align="center" width="12.5%">
-                    <?php echo $v_education->js_year_of_passing ; ?>
+                    <?php
+                   $per = round($percentage, 2).'%'; 
+                   if($per<=25)
+                   {
+                      echo '<span class="label label-danger">Average</span>';
+                   }
+                   else if($per > 25 && $per <= 50)
+                   {
+                      echo '<span class="label label-warning">Good</span>';
+                   } else if($per > 50 && $per <= 75)
+                   {
+                      echo '<span class="label label-info">Very Good</span>';
+                   }
+                   else if($per > 75 && $per <= 100)
+                   {
+                      echo '<span class="label label-success">Excelent</span>';
+                   }
+                ?>
                    &nbsp;
                     </td>
                   </tr>
