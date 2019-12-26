@@ -685,25 +685,14 @@ PERSONAL DETAILS:
            <td width="15%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Performance</strong></td>              
 
            </tr>         
-            <?php $sr_no=0; foreach ($final_result as $result) : 
+            <?php foreach ($final_result as $result) : ?>
 
-              $sr_no++; 
-
-              $skill_id = $result['skill_id'];
-             
-              $exam_res = getOceanExamResultByID($jobseeker_id,$skill_id); 
-
-              $exam_topic = getOceanExamTopicByID($result->topic_id); 
-              // echo "<pre>";
-              // print_r($exam_topic);
-              if (!empty($exam_res)): foreach ($exam_res as $res_row) :
-              $marks = $res_row['total_marks']; 
-              $percentage = ($marks * 100)/NUMBER_QUESTIONS; ?>
+              
 
                  <tr class="resume-texttwo">
                <!--Exam Title:-->
                 <td style="border-right:1px solid #EAE7E7;border-top:1px solid #EAE7E7;" align="center" width="20%">
-               <?php echo $result->education_level_name ; ?>
+               <?php echo $v_education->education_level_name ; ?>
                &nbsp;
                </td>
                 <!--Concentration/Major:-->
