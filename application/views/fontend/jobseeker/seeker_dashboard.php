@@ -105,6 +105,7 @@ h6{
                 					 $job_seeker=$this->session->userdata('job_seeker_id');  
 
 				           	 		$name=$this->Job_seeker_model->jobseeker_name($job_seeker);
+				           	 		print_r($this->db->last_query());
 				           	 		if (isset($name) && !empty($name)) {
 
 				           	 			$personal_total +=$personal_info_each;
