@@ -698,7 +698,10 @@ PERSONAL DETAILS:
               // print_r($exam_topic);
               if (!empty($exam_res)): foreach ($exam_res as $res_row) :
               $marks = $res_row['total_marks']; 
-              $percentage = ($marks * 100)/NUMBER_QUESTIONS; ?>
+              $percentage = ($marks * 100)/NUMBER_QUESTIONS; 
+
+
+              ?>
 
                  <tr class="resume-texttwo">
                <!--Exam Title:-->
@@ -730,7 +733,10 @@ PERSONAL DETAILS:
                   </tr>
                
                 <?php
+                endforeach;
+              endif; 
                        endforeach;
+
                     ?>
                     
                       
