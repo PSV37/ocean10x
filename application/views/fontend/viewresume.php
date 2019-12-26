@@ -687,7 +687,7 @@ REFERENCE:
       <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
          
               <!--Name:-->
-           <?php     if (!empty($final_result)): foreach ($final_result as $result) : $sr_no++; 
+           <?php  foreach ($final_result as $result) : $sr_no++; 
 
               $skill_id = $result['skill_id'];
              
@@ -753,7 +753,7 @@ REFERENCE:
                     
 <?php
                     endforeach;
-                  endif;
+                 
                     ?>
       </table>
       </td>
