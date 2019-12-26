@@ -194,7 +194,7 @@ h6{
 				$seeker_edu_id = $v_education['education_level_id'];
 
 				           $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
-				           print_r($education_data);
+				           print_r($this->db->last_query());
 
 
 				           	 		endforeach;
