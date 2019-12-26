@@ -758,7 +758,7 @@ REFERENCE:
       </table>
       </td>
       </tr>
-   </tbody></table><
+   </tbody></table>
 <?php endif; ?>
 
 <?php if (!empty($reference_list)): ?>
