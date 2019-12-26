@@ -58,7 +58,8 @@ class Employer extends MY_Employer_Controller
                 'cont_person_mobile'   => $this->input->post('cont_person_mobile'),
                 'comp_gstn_no'         => $this->input->post('comp_gst_no'),
                 'comp_pan_no'          => $this->input->post('comp_pan_no'),
-                'updated_by'            =>$this->session->userdata('company_profile_id')
+                'updated_by'            =>$this->session->userdata('company_profile_id'),
+                'update_at'            =>date('Y-m-d H:i:s')
             );
          
             $company_logo = isset($_FILES['company_logo']['name']) ? $_FILES['company_logo']['name'] : null;
