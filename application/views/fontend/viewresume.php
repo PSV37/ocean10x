@@ -678,13 +678,7 @@ REFERENCE:
       <!--
       Reference:
       -->
-      <tbody><tr>
-      <td colspan="6" class="resume-headingone"><?php echo $resume->full_name;?> Is a Ocean-champ:</td>
-      </tr>
-      
-      <tr>
-      <td colspan="6" class="resume-textone" align="left">
-      <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+     
          
               <!--Name:-->
                     <?php 
@@ -703,7 +697,13 @@ REFERENCE:
               $percentage = ($marks * 100)/NUMBER_QUESTIONS;
 
                 ?>
-
+ <tbody><tr>
+      <td colspan="6" class="resume-headingone"><?php echo $resume->full_name;?> Is an Ocean-champ:</td>
+      </tr>
+      
+      <tr>
+      <td colspan="6" class="resume-textone" align="left">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
             <tr>
               <td><?php echo $sr_no; ?></td>
               <td>
@@ -751,7 +751,12 @@ REFERENCE:
               endforeach;
               endif; 
               endforeach;
+
             ?>
+             <?php else : ?> 
+              <tr colspan="7">
+                 <td colspan="6" class="resume-headingone"><?php echo $resume->full_name;?> Is not an Ocean-champ:</td>
+              </tr>
 
                     
       </table>
