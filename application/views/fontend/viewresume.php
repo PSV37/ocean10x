@@ -688,10 +688,11 @@ PERSONAL DETAILS:
             <?php $sr_no=0; foreach ($final_result as $result) : 
 
               $sr_no++; 
+              $jbS_id=$resume->job_seeker_id;
 
               $skill_id = $result['skill_id'];
              
-              $exam_res = getOceanExamResultByID($jobseeker_id,$skill_id); 
+              $exam_res = getOceanExamResultByID($jbS_id,$skill_id); 
 
               $exam_topic = getOceanExamTopicByID($result['topic_id']); 
               // echo "<pre>";
@@ -700,7 +701,7 @@ PERSONAL DETAILS:
               $marks = $res_row['total_marks']; 
               $percentage = ($marks * 100)/NUMBER_QUESTIONS; 
 
-              print_r($jobseeker_id);die;
+              print_r($jbS_id);die;
 
 
               ?>
@@ -729,7 +730,8 @@ PERSONAL DETAILS:
                </td>
                 <!--Result:-->
                <td style="border-right:1px solid #EAE7E7;border-top:1px solid #EAE7E7;" align="center" width="12.5%">
-              <?php echo $res_row['total_marks']; ?>
+              
+               <?php echo round($percentage, 2).'%'; ?>
                &nbsp;               
                </td>
                 <!--Passing Year:-->
