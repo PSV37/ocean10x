@@ -700,6 +700,8 @@ PERSONAL DETAILS:
               $marks = $res_row['total_marks']; 
               $percentage = ($marks * 100)/NUMBER_QUESTIONS; 
 
+              print_r($result);die;
+
 
               ?>
 
