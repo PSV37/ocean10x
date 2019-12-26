@@ -393,7 +393,7 @@
             <div class="input-group">
               <label class="control-label" for="email">Date of Birth:<span class="required">*</span></label>
               <input type="text" class="form-control datepicker" name="date_of_birth" value="<?php echo date('d-m-Y', strtotime($js_personal_info->date_of_birth)); ?>">
-              <input type="checkbox" name="dobmake_public" value="No"<?php if($js_personal_info->dob_visiblity=='No') {echo 'checked'; }else{}?>> Birthday not visible to my network
+              <input type="checkbox" required name="dobmake_public" value="No"<?php if($js_personal_info->dob_visiblity=='No') {echo 'checked'; }else{}?>  > Birthday not visible to my network
             </div>
           </div>
         </div>
