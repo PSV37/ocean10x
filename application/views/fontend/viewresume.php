@@ -678,92 +678,137 @@ REFERENCE:
       <!--
       Reference:
       -->
-     
-         
-              <!--Name:-->
-                    <?php 
-
-                      if (!empty($final_result)): foreach ($final_result as $result) : $sr_no++; 
-
-              $skill_id = $result['skill_id'];
-             
-              $exam_res = getOceanExamResultByID($jobseeker_id,$skill_id); 
-
-              $exam_topic = getOceanExamTopicByID($result['topic_id']); 
-              // echo "<pre>";
-              // print_r($exam_topic);
-              if (!empty($exam_res)): foreach ($exam_res as $res_row) :
-              $marks = $res_row['total_marks']; 
-              $percentage = ($marks * 100)/NUMBER_QUESTIONS;
-
-                ?>
- <tbody><tr>
-      <td colspan="6" class="resume-headingone"><?php echo $resume->full_name;?> Is an Ocean-champ:</td>
+      <tbody><tr>
+      <td colspan="6" class="resume-headingone"><?php echo $resume->full_name;  ?> IS An Ocean champ</td>
       </tr>
       
       <tr>
       <td colspan="6" class="resume-textone" align="left">
       <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
-            <tr>
-              <td><?php echo $sr_no; ?></td>
-              <td>
-               <?php echo $result['skill_name']; ?>
-              </td>
-              <td>
-              <?php
-                if (!empty($exam_topic)){ 
-                  foreach ($exam_topic as $top_row) { 
-                    echo  $top_row['topic_name'].', '; 
-                  } 
-                } 
-              ?>
-              </td>
-              <td><?php echo $result['level']; ?></td>
-              <td><?php echo NUMBER_QUESTIONS; ?></td>
-              <td><?php echo $res_row['total_questions']; ?></td>
-              <td><?php echo $res_row['total_marks']; ?></td>
-              <td>
-               <?php echo round($percentage, 2).'%'; ?>
-              </td>
-              <td><?php echo date('M j, Y',strtotime($result['created_on']));  ?></td>
-              <td>
-                <?php
-                   $per = round($percentage, 2).'%'; 
-                   if($per<=25)
-                   {
-                      echo '<span class="label label-danger">Average</span>';
-                   }
-                   else if($per > 25 && $per <= 50)
-                   {
-                      echo '<span class="label label-warning">Good</span>';
-                   } else if($per > 50 && $per <= 75)
-                   {
-                      echo '<span class="label label-info">Very Good</span>';
-                   }
-                   else if($per > 75 && $per <= 100)
-                   {
-                      echo '<span class="label label-success">Excelent</span>';
-                   }
-                ?>
-              </td>
-            </tr>
-            
-
+         
+              <!--Name:-->
+                    <?php  foreach ($reference_list as $v_reference) : ?>
+                      <tbody><tr class="resume-textthree">
                     
+                      <td style="padding-left:10px;" align="left" width="22%">Full Name </td>
+                      <td align="center" width="2%">:</td>
+                      <td align="left" width="35%">
+                      <?php echo $v_reference->name;; ?>
+                      &nbsp;
+                      </td>
+                      
+                          <td align="left" width="41%">
+                          
+                          </td>
+                        
+                      </tr>
+               
+              <!--Organization:-->
+                   
+              <tr class="resume-textthree">
+                  
+              <td style="padding-left:10px;" align="left" width="22%">Organization</td>
+              <td align="center" width="2%">:</td>
+              <td align="left" width="35%">
+             <?php echo $v_reference->company_profile_id; ?>
+              &nbsp;
+              </td>
+                  
+                      <td align="left" width="41%">
+                                   
+                      </td>
+                  
+              </tr>
+                   
+              <!--Designation:-->    
+                  
+                      <tr class="resume-textthree">
+                     
+                      <td style="padding-left:10px;" align="left" width="22%">Designation</td>
+                      <td align="center" width="2%">:</td>
+                      <td align="left" width="35%">
+                      <?php echo $v_reference->designation_name; ?>
+                      &nbsp;
+                      </td>
+                      
+                              <td align="left" width="41%">
+                                            
+                              </td>
+                        
+                      </tr>
+                 
+                              
+              <!--Phone(Off):--> 
+                 
+              <!--Phone(Res):-->
+                   
+              <!--Mobile:-->
+                   
+                      <tr class="resume-textthree">
+                     
+                      <td style="padding-left:10px;" align="left">Voice</td>
+                      <td align="center">:</td>
+                      <td align="left">
+                     <?php echo $v_reference->mobile; ?>
+                      &nbsp;
+                      </td>
+                       
+                          <td align="left">
+                                      
+                          </td>
+                     
+                      </tr>
+                  
+              <!--E-Mail:-->
+                     
+                      <tr class="resume-textthree">
+                      
+                      <td style="padding-left:10px;" align="left">E-Mail</td>
+                      <td align="center">:</td>
+                      <td align="left">
+                     <?php echo $v_reference->email; ?>
+                      &nbsp;
+                      </td>
+                      
+                          <td align="left">
+                                      
+                          </td>
+                      
+                      </tr>
+                  
+              <!--Relation:-->
+                  
+                      <tr class="resume-textthree">
+                      
+                      <td style="padding-left:10px;" align="left">Relation</td>
+                      <td align="center">:</td>
+                      <td align="left">
+                      <?php echo $v_reference->relation; ?>
+                      &nbsp;
+                      </td>
+                     
+                          <td align="left">
+                                                  
+                          </td>
+                  
+                      </tr>
+                  
+              
+              <tr class="resume-textthree">
+              <td align="left">&nbsp;</td>
+              <td align="center">&nbsp;</td>
+              <td colspan="2" align="left">
+              </td>
+              </tr>
+            
+      </tbody>
+<?php
+                    endforeach;
+                    ?>
       </table>
       </td>
       </tr>
-   </tbody>
- <?php
-              endforeach;
-              endif; 
-              endforeach;
-
-            ?>
-             <?php else : ?> 
-              <tr colspan="7">
-                 <td colspan="6" class="resume-headingone"><?php echo $resume->full_name;?> Is not an Ocean-champ:</td>
-              </tr></table>
+   </tbody></table>
 <?php endif; ?>
 
 <?php if (!empty($reference_list)): ?>
