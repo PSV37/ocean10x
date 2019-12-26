@@ -679,7 +679,7 @@ REFERENCE:
       Reference:
       -->
       <tbody><tr>
-      <td colspan="6" class="resume-headingone"><?php echo $resume->full_name;  ?> IS An Ocean champ</td>
+      <td colspan="6" class="resume-headingone"><?php echo $resume->full_name;  ?> Is An Ocean champ</td>
       </tr>
       
       <tr>
@@ -687,121 +687,70 @@ REFERENCE:
       <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
          
               <!--Name:-->
-                    <?php  foreach ($reference_list as $v_reference) : ?>
-                      <tbody><tr class="resume-textthree">
-                    
-                      <td style="padding-left:10px;" align="left" width="22%">Full Name </td>
-                      <td align="center" width="2%">:</td>
-                      <td align="left" width="35%">
-                      <?php echo $v_reference->name;; ?>
-                      &nbsp;
-                      </td>
-                      
-                          <td align="left" width="41%">
-                          
-                          </td>
-                        
-                      </tr>
+           <?php     if (!empty($final_result)): foreach ($final_result as $result) : $sr_no++; 
+
+              $skill_id = $result['skill_id'];
+             
+              $exam_res = getOceanExamResultByID($jobseeker_id,$skill_id); 
+
+              $exam_topic = getOceanExamTopicByID($result['topic_id']); 
+              // echo "<pre>";
+              // print_r($exam_topic);
+              if (!empty($exam_res)): foreach ($exam_res as $res_row) :
+              $marks = $res_row['total_marks']; 
+              $percentage = ($marks * 100)/NUMBER_QUESTIONS;
+
+            ?>
+            <table width="100%">
+           <tbody><tr class="resume-texttwo">
+           <td width="20%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Skill</strong></td>
+           <td width="15%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Topics</strong></td>
+           <td width="20%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Exam Level</strong></td>
+           <td width="20%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Exam Level</strong></td>
+
+           <td width="15%" align="center" bgcolor="#f4f4f4" style="border-right:1px solid #EAE7E7"><strong>Result</strong></td>
+           
+                <td width="15%"  align="center" bgcolor="#f4f4f4"><strong>Pas.Year</strong></td>              
+
+           </tr>         
+            <?php foreach ($edcuaiton_list as $v_education) : ?>
+
+                 <tr class="resume-texttwo">
+               <!--Exam Title:-->
+                <td style="border-right:1px solid #EAE7E7;border-top:1px solid #EAE7E7;" align="center" width="20%">
+               <?php echo $v_education->education_level_name ; ?>
+               &nbsp;
+               </td>
+                <!--Concentration/Major:-->
+               <td style="border-right:1px solid #EAE7E7;border-top:1px solid #EAE7E7;" align="center" width="15%">
+              <?php echo $v_education->education_specialization ; ?>
+               &nbsp;
+               </td>
+                <!--Institute:-->
+               <td style="border-right:1px solid #EAE7E7;border-top:1px solid #EAE7E7;" align="center" width="15%">
+               <?php echo $v_education->js_institute_name ; ?>
+               &nbsp;            
+               </td>
+                <!--Result:-->
+               <td style="border-right:1px solid #EAE7E7;border-top:1px solid #EAE7E7;" align="center" width="12.5%">
+              <?php echo $v_education->js_resut  ; ?>
+               &nbsp;               
+               </td>
+                <!--Passing Year:-->
                
-              <!--Organization:-->
-                   
-              <tr class="resume-textthree">
-                  
-              <td style="padding-left:10px;" align="left" width="22%">Organization</td>
-              <td align="center" width="2%">:</td>
-              <td align="left" width="35%">
-             <?php echo $v_reference->company_profile_id; ?>
-              &nbsp;
-              </td>
-                  
-                      <td align="left" width="41%">
-                                   
-                      </td>
-                  
-              </tr>
-                   
-              <!--Designation:-->    
-                  
-                      <tr class="resume-textthree">
-                     
-                      <td style="padding-left:10px;" align="left" width="22%">Designation</td>
-                      <td align="center" width="2%">:</td>
-                      <td align="left" width="35%">
-                      <?php echo $v_reference->designation_name; ?>
-                      &nbsp;
-                      </td>
+                   <td style="border-top:1px solid #EAE7E7;" align="center" width="12.5%">
+                    <?php echo $v_education->js_year_of_passing ; ?>
+                   &nbsp;
+                    </td>
+                  </tr>
+               
+                <?php
+                       endforeach;
+                    ?>
+                    
                       
-                              <td align="left" width="41%">
-                                            
-                              </td>
-                        
-                      </tr>
-                 
-                              
-              <!--Phone(Off):--> 
-                 
-              <!--Phone(Res):-->
-                   
-              <!--Mobile:-->
-                   
-                      <tr class="resume-textthree">
-                     
-                      <td style="padding-left:10px;" align="left">Voice</td>
-                      <td align="center">:</td>
-                      <td align="left">
-                     <?php echo $v_reference->mobile; ?>
-                      &nbsp;
-                      </td>
-                       
-                          <td align="left">
-                                      
-                          </td>
-                     
-                      </tr>
-                  
-              <!--E-Mail:-->
-                     
-                      <tr class="resume-textthree">
+       </tbody></table> 
                       
-                      <td style="padding-left:10px;" align="left">E-Mail</td>
-                      <td align="center">:</td>
-                      <td align="left">
-                     <?php echo $v_reference->email; ?>
-                      &nbsp;
-                      </td>
-                      
-                          <td align="left">
-                                      
-                          </td>
-                      
-                      </tr>
-                  
-              <!--Relation:-->
-                  
-                      <tr class="resume-textthree">
-                      
-                      <td style="padding-left:10px;" align="left">Relation</td>
-                      <td align="center">:</td>
-                      <td align="left">
-                      <?php echo $v_reference->relation; ?>
-                      &nbsp;
-                      </td>
-                     
-                          <td align="left">
-                                                  
-                          </td>
-                  
-                      </tr>
-                  
-              
-              <tr class="resume-textthree">
-              <td align="left">&nbsp;</td>
-              <td align="center">&nbsp;</td>
-              <td colspan="2" align="left">
-              </td>
-              </tr>
-            
-      </tbody>
 <?php
                     endforeach;
                     ?>
