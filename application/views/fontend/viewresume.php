@@ -908,6 +908,7 @@ REFERENCE:
       </div>
 
           </td>
+        </tr>
 
           <!--<td style="padding-right:50px;" align="right" width="70%"><?php echo get_logo();?> </td>-->
 
@@ -915,7 +916,5 @@ REFERENCE:
     </table>     
     
 
-  </tbody></table>
-        </div>
-</div>
+  </div></div></div></div>
  <?php $this->load->view("fontend/layout/footer.php"); ?>
