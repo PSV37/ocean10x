@@ -180,7 +180,7 @@ h6{
 				           	 			
 				           	 		}
 
-				           	 $where_lang="job_seeker_id='$jobseeker_id' ORDER BY language ASC";
+				           	 $where_lang="job_seeker_id='$job_seeker' ORDER BY language ASC";
             			$languages = $this->Master_model->getMaster('js_languages',$where_lang);
 
             						if (isset($languages) && !empty($languages)) 
@@ -194,7 +194,7 @@ h6{
 				$seeker_edu_id = $v_education['education_level_id'];
 
 							$where_ress = "js_education.job_seeker_id='$job_seeker'";
-				           $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
+				           $education_data = geSeekerEducationByid($job_seeker,$seeker_edu_id);
 				           $select='education_level_id';
 							$education_data = $this->Master_model->getMaster('js_education',$where_ress, $join = FALSE, $order = false, $field = false, $select = $select,$limit=false,$start=false, $search=false);
 								foreach ($education_data as $row) 
@@ -219,6 +219,17 @@ h6{
 										}
 								}
 								?> <br> <? echo $education_total;
+
+								$where_skill['job_seeker_id']=$job_seeker;
+			$js_skills = $this->Master_model->getMaster('job_seeker_skills',$where_skill);
+			print_r($js_skills);
+
+								if (isset($js_skills) && !empty($js_skills)) 
+				           	 		{
+				           	 			$skill_total +=$skills;
+				           	 			
+				           	 		}
+				           	 		?> <br> <? echo $skill_total;
 		
 				          
 
