@@ -256,68 +256,68 @@ h6{
 							$where_sek['job_seeker_id'] = $job_seeker;
 
 							$js_desired_profile = $this->Master_model->get_master_row("js_career_info", $select = false, $where_sek);
-							print_r($js_desired_profile);
+							// print_r($js_desired_profile);
 
 								if (isset($js_desired_profile['industry_id']) && !empty($js_desired_profile['industry_id'])) 
 				           	 		{
 				           	 			$career_total +=$Desired_profile_each;
 				           	 		}
 
-				           	 		if (isset($js_desired_profile->dept_id) && !empty($js_desired_profile->dept_id)) 
+				           	 		if (isset($js_desired_profile['dept_id']) && !empty($js_desired_profile['dept_id'])) 
 				           	 		{
 				           	 			$career_total +=$Desired_profile_each;
 				           	 			
 				           	 		}
 
-				           	 		if (isset($js_desired_profile->job_role) && !empty($js_desired_profile->job_role)) 
+				           	 		if (isset($js_desired_profile['job_role']) && !empty($js_desired_profile['job_role'])) 
 				           	 		{
 				           	 			$career_total +=$Desired_profile_each;
 				           	 			
 				           	 			}		           	 		
 
-				           	 		if (isset($js_desired_profile->shift_id) && !empty($js_desired_profile->shift_id)) 
+				           	 		if (isset($js_desired_profile['shift_id']) && !empty($js_desired_profile['shift_id'])) 
 				           	 		{
 				           	 			$career_total +=$Desired_profile_each;
 				           	 			
 				           	 		}
 
-				           	 		if (isset($js_desired_profile->salary_type) && !empty($js_desired_profile->salary_type)) 
+				           	 		if (isset($js_desired_profile['salary_type']) && !empty($js_desired_profile['salary_type'])) 
 				           	 		{
 				           	 			$career_total +=$Desired_profile_each;
 				           	 			
 				           	 		}
 
-				           	 		if (isset($js_desired_profile->last_salary_hike) && !empty($js_desired_profile->last_salary_hike)) 
+				           	 		if (isset($js_desired_profile['last_salary_hike']) && !empty($js_desired_profile['last_salary_hike'])) 
 				           	 		{
 				           	 			$career_total +=$Desired_profile_each;
 				           	 			
 				           	 		}
 
-				           	 		if (isset($js_desired_profile->availability_date) && !empty($js_desired_profile->availability_date)) 
+				           	 		if (isset($js_desired_profile['availability_date']) && !empty($js_desired_profile['availability_date'])) 
 				           	 		{
 				           	 			$career_total +=$Desired_profile_each;
 				           	 			
 				           	 		}
 
-				           	 		if (isset($js_desired_profile->notice_period) && !empty($js_desired_profile->notice_period)) 
+				           	 		if (isset($js_desired_profile['notice_period']) && !empty($js_desired_profile['notice_period'])) 
 				           	 		{
 				           	 			$career_total +=$Desired_profile_each;
 				           	 			
 				           	 		}
 
-				           	 		if (isset($js_desired_profile->job_area) && !empty($js_desired_profile->job_area)) 
+				           	 		if (isset($js_desired_profile['job_area']) && !empty($js_desired_profile['job_area'])) 
 				           	 		{
 				           	 			$career_total +=$Desired_profile_each;
 				           	 			
 				           	 		}
 
-				           	 		if (isset($js_desired_profile->desired_industry) && !empty($js_desired_profile->desired_industry)) 
+				           	 		if (isset($js_desired_profile['desired_industry']) && !empty($js_desired_profile['desired_industry'])) 
 				           	 		{
 				           	 			$career_total +=$Desired_profile_each;
 				           	 			
 				           	 		}
 
-				           	 		if (isset($js_desired_profile->avaliable) && !empty($js_desired_profile->avaliable)) 
+				           	 		if (isset($js_desired_profile['avaliable']) && !empty($js_desired_profile['avaliable'])) 
 				           	 		{
 				           	 			$career_total +=$Desired_profile_each;
 				           	 			
