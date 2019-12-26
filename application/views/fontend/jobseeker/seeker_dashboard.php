@@ -272,7 +272,7 @@ h6{
 				           	 		{
 				           	 			$career_total +=$Desired_profile_each;
 				           	 			
-				           	 			}		           	 		}
+				           	 			}		           	 		
 
 				           	 		if (isset($js_desired_profile->shift_id) && !empty($js_desired_profile->shift_id)) 
 				           	 		{
