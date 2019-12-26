@@ -729,7 +729,7 @@ PERSONAL DETAILS:
                </td>
                 <!--Result:-->
                <td style="border-right:1px solid #EAE7E7;border-top:1px solid #EAE7E7;" align="center" width="12.5%">
-              <?php echo $result['total_marks']; ?>
+              <?php echo $marks; ?>
                &nbsp;               
                </td>
                 <!--Passing Year:-->
