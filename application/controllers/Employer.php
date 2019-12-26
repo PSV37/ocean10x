@@ -537,7 +537,7 @@ class Employer extends MY_Employer_Controller
                         $training_list   = $this->Job_training_model->training_list_by_id($jobseeker_id);
                         $reference_list  = $this->Job_reference_model->reference_list_by_id($jobseeker_id);
                         $this->job_apply_model->update_resume_view($jobseeker_id, $company_id, $job_id);
-                        $this->load->view('fontend/viewresume', compact('resume', 'edcuaiton_list', 'experinece_list', 'training_list', 'reference_list', 'language_list','job_id','final_result'));
+                        $this->load->view('fontend/viewresume', compact('resume', 'edcuaiton_list', 'experinece_list', 'training_list', 'reference_list', 'language_list','job_id','final_result','jobseeker_id'));
                     } else {
                         echo "not found";
                     }
