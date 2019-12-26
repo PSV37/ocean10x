@@ -222,7 +222,7 @@ h6{
 
 								$where_skill['job_seeker_id']=$job_seeker;
 			$js_skills = $this->Master_model->getMaster('job_seeker_skills',$where_skill);
-			print_r($js_skills);
+			// print_r($js_skills);
 
 								if (isset($js_skills) && !empty($js_skills)) 
 				           	 		{
@@ -230,6 +230,17 @@ h6{
 				           	 			
 				           	 		}
 				           	 		?> <br> <? echo $skill_total;
+
+				           	 		$where_ex['job_seeker_id']=$job_seeker;
+			$js_experience = $this->Master_model->getMaster('js_experience',$where_ex);
+			// print_r($js_skills);
+
+								if (isset($js_experience) && !empty($js_experience)) 
+				           	 		{
+				           	 			$work_experience_total+=$work_experience;
+				           	 			
+				           	 		}
+				           	 		?> <br> <? echo $work_experience_total;
 		
 				          
 
