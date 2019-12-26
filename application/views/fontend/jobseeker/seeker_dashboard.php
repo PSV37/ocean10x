@@ -190,14 +190,16 @@ h6{
 				           	 			echo $personal_total;
 
 			$education_level = $this->Master_model->getMaster('education_level',$where=false);
-			foreach ($education_level as $v_education) :
+			// foreach ($education_level as $v_education) :
 				$seeker_edu_id = $v_education['education_level_id'];
 
+$where_ress = "js_education.job_seeker_id='$job_seeker'";
 				           $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
+		$education_data = $this->Master_model->getMaster('js_education',$where_ress);
 				           print_r($this->db->last_query());
 
 
-				           	 		endforeach;
+				           	 		// endforeach;
 
 
 
