@@ -2588,11 +2588,14 @@ public function interview_scheduler()
     public function audit()
     {
         $company_id=$this->session->userdata('company_profile_id');
-        $where1 = "employee_profile_record.company_profile_id = '$company_id' ";
+        $where1 = "employer_audit_record.company_profile_id = '$company_id' ";
 
-        $result = $this->Master_model->getMaster('employee_profile_record', $where1, $join, $order = 'desc', $field = 'emp_updated_date', $select,$limit='10',$start=false, $search=false);
+        $data['result'] = $this->Master_model->getMaster('employer_audit_record', $where1, $join, $order = 'desc', $field = 'emp_updated_date', $select,$limit='10',$start=false, $search=false);
 
-        print_r($result);die;
+            $this->load->view('fontend/employer/audit',$data); 
+
+
+        // print_r($result);die;
     }
     
 } // end class
