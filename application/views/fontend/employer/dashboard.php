@@ -59,7 +59,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                                         <div class="col-md-6 col-sm-12">   
                                            <div class="formrow">
                                            	<label class="control-label">Company Name: <span class="required">*</span></label>
-                                            <input type="text" name="company_name" value="<?php 
+                                            <input type="text" required name="company_name" value="<?php 
                                             	 if(!empty($company_info->company_name)){
                                             	 	echo $company_info->company_name;
                                             	 }
