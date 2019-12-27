@@ -26,6 +26,7 @@ class Register extends CI_Controller
            $this->form_validation->set_message('regex_match', 'You must provide One Uppercase,One Lowercase,Numbers and special Character');
            if ($this->form_validation->run() == FALSE)
             {
+                echo "string";
             }
             else{
             $js_info = array(
