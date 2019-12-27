@@ -44,10 +44,9 @@ class Register extends CI_Controller
             // Send captcha image to view
             $captcha_images = $captcha['image'];
             $this->load->view('fontend/jobseeker/register', compact('captcha_images'));
-            }
-            
-            else{
-            $js_info = array(
+            }else
+            {
+                $js_info = array(
                 'full_name' => $this->input->post('full_name'),
                 'email'     => $this->input->post('email'),
                 'gender'    => $this->input->post('gender'),
@@ -57,10 +56,9 @@ class Register extends CI_Controller
                 'profession' => $this->input->post('profession'),
                 // 'mobile_no'    => $this->input->post('mobile'),
                 'js_status' => 0,
-                'cv_type'   => 1,
-            );
-            $email_to = $this->input->post('email');
-            $exist_email    = $this->job_seeker_model->email_check($this->input->post('email'));
+                'cv_type'   => 1,);
+                $email_to = $this->input->post('email');
+                $exist_email    = $this->job_seeker_model->email_check($this->input->post('email'));
             // $exist_username = $this->job_seeker_model->username_check($this->input->post('user_name'));
                  $this->session->set_userdata('reg_jobseeker', $js_info );
 
@@ -119,7 +117,7 @@ class Register extends CI_Controller
 
         } 
     }
-}
+
         else {
 
             $config = array(
