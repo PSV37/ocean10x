@@ -16,40 +16,11 @@ class Register extends CI_Controller
         $this->load->helper("captcha");
     }
 
-    
-
     public function index()
     {
-        if ($_POST) 
-        {
-             $this->form_validation->set_rules('password', 'password', 'required|max_length[15]|min_length[8]|regex_match[/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/]');
-           // array('required' => 'You must provide a %s.','regex_match' =>'You must provide One Uppercase,One Lowercase,Numbers');
-           array('regex_match'=>'You must provide One Uppercase,One Lowercase,Numbers');
-           $this->form_validation->set_message('regex_match', 'You must provide One Uppercase,One Lowercase,Numbers and special Character');
-             if ($this->form_validation->run() == FALSE)
-            {
-                 $config = array(
-                'img_path'    => 'captcha_images/',
-                'img_url'     => base_url() . 'captcha_images/',
-                'img_width'   => '150',
-                'img_height'  => 50,
-                'word'        => strtoupper(substr(md5(time()), 0, 4)),
-                'font_path' => FCPATH . 'captcha_images/font/captcha4.ttf',);
-                 $captcha = create_captcha($config);
 
-            // Unset previous captcha and store new captcha word
-            $this->session->unset_userdata('captchaCode');
-            $this->session->set_userdata('captchaCode', $captcha['word']);
-
-            // Send captcha image to view
-            $captcha_images = $captcha['image'];
-            $this->load->view('fontend/jobseeker/register', compact('captcha_images'));
-
-            $this->session->set_userdata('reg_jobseeker', $js_info );
-                
-            }else
-            {
-                $js_info = array(
+        if ($_POST) {
+            $js_info = array(
                 'full_name' => $this->input->post('full_name'),
                 'email'     => $this->input->post('email'),
                 'gender'    => $this->input->post('gender'),
@@ -59,45 +30,52 @@ class Register extends CI_Controller
                 'profession' => $this->input->post('profession'),
                 // 'mobile_no'    => $this->input->post('mobile'),
                 'js_status' => 0,
-                    'cv_type'   => 1,
+                'cv_type'   => 1,
+            );
+            $email_to = $this->input->post('email');
+            $exist_email    = $this->job_seeker_model->email_check($this->input->post('email'));
+            // $exist_username = $this->job_seeker_model->username_check($this->input->post('user_name'));
+                 $this->session->set_userdata('reg_jobseeker', $js_info );
+
+			// if ($exist_username) {
+   //              // all Ready Account Message
+   //              $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your username Or Account Already Use This!</div>');
+   //              redirect('register');
+   //          }
+
+            if ($exist_email) {
+                // all Ready Account Message
+                $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Email Or Account Already Use This!</div>');
+                redirect('register');
+            } else {
+                $inputCaptcha = $this->input->post('captcha');
+                $sessCaptcha  = $this->session->userdata('captchaCode');
+                if ($inputCaptcha === $sessCaptcha) {
+                    
+                $last_id = $this->job_seeker_model->insert($js_info);
+
+                // Last Id Add Personal Info Table
+                $js_personal = array(
+                    'job_seeker_id' => $last_id,
                 );
-                $email_to = $this->input->post('email');
-                $exist_email    = $this->job_seeker_model->email_check($this->input->post('email'));
-                 if ($exist_email) 
-                 {
-                    // all Ready Account Message
-                    $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Email Or Account Already Use This!</div>');
-                    redirect('register');
-                 }else 
-                 {
-                    $inputCaptcha = $this->input->post('captcha');
-                    $sessCaptcha  = $this->session->userdata('captchaCode');
-                    if ($inputCaptcha === $sessCaptcha) 
-                    {
-                         $last_id = $this->job_seeker_model->insert($js_info);
+                $this->job_seeker_personal_model->insert($js_personal);
 
-                        // Last Id Add Personal Info Table
-                        $js_personal = array(
-                            'job_seeker_id' => $last_id,
-                        );
-                        $this->job_seeker_personal_model->insert($js_personal);
+                // Last ID add Js Photo Table
+                $js_photo = array(
+                    'job_seeker_id' => $last_id,
+                );
+                $this->job_seeker_photo_model->insert($js_photo);
 
-                        // Last ID add Js Photo Table
-                        $js_photo = array(
-                            'job_seeker_id' => $last_id,
-                        );
-                        $this->job_seeker_photo_model->insert($js_photo);
+                // Last ID add Js Carrer Table
+                $js_career = array(
+                    'job_seeker_id' => $last_id,
+                );
+                $this->Job_career_model->insert($js_career);
 
-                        // Last ID add Js Carrer Table
-                        $js_career = array(
-                            'job_seeker_id' => $last_id,
-                        );
-                        $this->Job_career_model->insert($js_career);
-
-                        // Last ID add Js Special Table
-                        $js_specialiazation = array(
-                            'job_seeker_id' => $last_id,
-                        );
+                // Last ID add Js Special Table
+                $js_specialiazation = array(
+                    'job_seeker_id' => $last_id,
+                );
 
                     $this->Job_specialization_model->insert($js_specialiazation);
                     // successfully sent mail
@@ -106,31 +84,24 @@ class Register extends CI_Controller
   
 
                     $this->load->view('fontend/jobseeker/register_success');
-                            
-                       
-
-
-
-                    }else
-                    {
-                        $this->session->set_flashdata('captcha_msg', '<div class="alert alert-warning text-center">Captcha Code Does not Match Please Try Again</div>');
+                } else {
+                    $this->session->set_flashdata('captcha_msg', '<div class="alert alert-warning text-center">Captcha Code Does not Match Please Try Again</div>');
                     redirect_back();
-                    }
-
-                
-                 }
+                }
             }
-            
-        }else
-        {
-             $config = array(
+
+        } else {
+
+            $config = array(
                 'img_path'    => 'captcha_images/',
                 'img_url'     => base_url() . 'captcha_images/',
                 'img_width'   => '150',
                 'img_height'  => 50,
                 'word'        => strtoupper(substr(md5(time()), 0, 4)),
-                'font_path' => FCPATH . 'captcha_images/font/captcha4.ttf');
-                 $captcha = create_captcha($config);
+                'font_path' => FCPATH . 'captcha_images/font/captcha4.ttf',
+
+            );
+            $captcha = create_captcha($config);
 
             // Unset previous captcha and store new captcha word
             $this->session->unset_userdata('captchaCode');
@@ -139,8 +110,6 @@ class Register extends CI_Controller
             // Send captcha image to view
             $captcha_images = $captcha['image'];
             $this->load->view('fontend/jobseeker/register', compact('captcha_images'));
-
-            $this->session->set_userdata('reg_jobseeker', $js_info );
         }
 
     }
