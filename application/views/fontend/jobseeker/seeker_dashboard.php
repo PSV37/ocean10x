@@ -85,7 +85,7 @@ h6{
 
 					<div class="row career">
 						<div class="col-md-12">
-		                	<div class="col-md-1"><i class="fa fa-user" aria-hidden="true"></i></div>
+		                	<div class="col-md-1"><i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
 		                	<div class="col-md-11">
 				           	 	<sapn class="title-career"><b>Profile Percentage</b></sapn> <br><br>
 				           	 	<?php $each=100/6;
@@ -330,7 +330,7 @@ h6{
 				           	</div>
 		             	</div>
 		                <div class="col-md-12">
-		                	<div class="col-md-1"><i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
+		                	<div class="col-md-1"><i class="fa fa-user" aria-hidden="true"></i></div>
 		                	<div class="col-md-11">
 				           	 	<sapn class="title-career"><b>Career Advice</b></sapn> <br><br>
 				           	 	<span>Participate in the career advice platform: <a href="#">On</a></span><br>
