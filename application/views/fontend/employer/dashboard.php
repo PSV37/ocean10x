@@ -75,6 +75,8 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                                             	 	echo $company_info->company_email;
                                             	 }
                                             ?>" class="form-control" placeholder="Company Email">
+                                            <?php echo form_error('company_email'); ?>
+
                                             </div>
                                         </div>
                                     </div>
@@ -82,11 +84,11 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                                         <div class="col-md-6 col-sm-12">   
                                            <div class="formrow">
                                            	<label class="control-label">Alternate Email ID <span class="required">*</span></label>
-                                            <input type="text" name="alternate_email_id" value="<?php 
+                                            <input type="text" required name="alternate_email_id" value="<?php 
                                             	 if(!empty($company_info->alternate_email_id)){
                                             	 	echo $company_info->alternate_email_id;
                                             	 }
-                                            ?>" class="form-control" placeholder="Alternate Email ID">
+                                            ?>" class="form-control" placeholder="Alternate Email ID"><?php echo form_error('alternate_email_id'); ?>
                                             </div>
                                         </div>
 
@@ -348,11 +350,11 @@ $company_profile_id = $this->session->userdata('company_profile_id');
 											<div class="col-md-6 col-sm-12">
                                         	<div class="formrow">
                                         	<label class="control-label">Company Phone: <span class="required">*</span></label>
-                                            <input type="tel" name="company_phone" value="<?php 
+                                            <input type="tel" required name="company_phone" value="<?php 
                                             	 if(!empty($company_info->company_phone)){
                                             	 	echo $company_info->company_phone;
                                             	 }
-                                            ?>" class="form-control" maxlength="10" id="company_phone" onkeypress="phoneno()"  maxlength="10">
+                                            ?>" class="form-control" maxlength="10" id="company_phone" onkeypress="phoneno()"  maxlength="10"><?php echo form_error('company_phone'); ?>
                                             </div>
                                         </div>
                                     </div><!-- end row -->
@@ -361,25 +363,25 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                                         <div class="col-md-6 col-sm-12">
                                         <div class="formrow">
                                         	<label class="control-label">Company Services: <span class="required">*</span></label>
-                                            <select name="company_category" id="company_category" class="form-control services" data-style="btn-default" data-live-search="true">
+                                            <select name="company_category" id="company_category" class="form-control services" required data-style="btn-default" data-live-search="true">
                                             	<option value="">Select Services</option> 
                                                 <?php if(!empty($company_info->company_category)) {
                                                 echo $this->job_category_model->selected($company_info->company_category);
                                                 } else {
                                                    echo $this->job_category_model->selected();
                                                 }
-                                                 ?>
+                                                 ?><?php echo form_error('company_category'); ?>
                                             </select>  
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-12">
                                         	<div class="formrow">
                                         	<label class="control-label">Company Contact Person:<span class="required">*</span></label>	
-                                            <input type="text" name="contact_name"  value="<?php 
+                                            <input type="text" name="contact_name" required value="<?php 
                                             	 if(!empty($company_info->contact_name)){
                                             	 	echo $company_info->contact_name;
                                             	 }
-                                            ?>" class="form-control" id="contact_name" placeholder="Contact Name">
+                                            ?>" class="form-control" id="contact_name" placeholder="Contact Name"><?php echo form_error('contact_name'); ?>
                                             </div>
                                         </div>
                                    
@@ -389,21 +391,21 @@ $company_profile_id = $this->session->userdata('company_profile_id');
  									 	<div class="col-md-6 col-sm-12">
 					                       <div class="formrow">
 					                             <label class="control-label">Contact Person Level: <span class="required">*</span></label>
-					                            <input type="text" name="cont_person_level" id="cont_person_level"  class="form-control" value="<?php 
+					                            <input type="text" required name="cont_person_level" id="cont_person_level"  class="form-control" value="<?php 
                                             	 if(!empty($company_info->cont_person_level)){
                                             	 	echo $company_info->cont_person_level;
                                             	 }
-                                            ?>" placeholder="E.g. Administrator" >
+                                            ?>" placeholder="E.g. Administrator" ><?php echo form_error('cont_person_level'); ?>
 					                        </div>
 					                      </div>
                                         <div class="col-md-6 col-sm-12">
 					                       <div class="formrow">
 					                             <label class="control-label">Contact Person Email: <span class="required">*</span></label>
-					                            <input type="text" name="cont_person_email" id="cont_person_email"  class="form-control" value="<?php 
+					                            <input type="text" name="cont_person_email" id="cont_person_email" required class="form-control" value="<?php 
                                             	 if(!empty($company_info->cont_person_email)){
                                             	 	echo $company_info->cont_person_email;
                                             	 }
-                                            ?>">
+                                            ?>"><?php echo form_error('cont_person_email'); ?>
 					                        </div>
 					                      </div>
 
@@ -418,7 +420,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
 				                                     if(!empty($company_info->cont_person_mobile)){
 				                                        echo $company_info->cont_person_mobile;
 				                                     }
-				                                ?>" onkeypress="phonenoo()" maxlength="10">
+				                                ?>" onkeypress="phonenoo()" maxlength="10" required ><?php echo form_error('cont_person_mobile'); ?>
 					                        </div>
 					                      </div>
 										<div class="col-md-6 col-sm-6">
@@ -443,7 +445,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                                          	<label class="control-label">Company Address-1: <span class="required">*</span></label>
                                             <textarea name="company_address" class="form-control ckeditor" placeholder="Company Address"><?php if(!empty($company_info->company_address)){
                                             	 	echo $company_info->company_address;
-                                            	 } ?></textarea>
+                                            	 } ?></textarea><?php echo form_error('company_address'); ?>
                                                  </div>
                                         </div>
   										<div class="panel-body"></div>
@@ -501,11 +503,11 @@ $company_profile_id = $this->session->userdata('company_profile_id');
 					 				 	<div class="col-md-6 col-sm-6">
 					                       <div class="formrow">
 					                             <label class="control-label">Pincode: <span class="required">*</span></label>
-					                            <input type="text" name="company_pincode" id="company_pincode"  class="form-control" value="<?php 
+					                            <input type="text" name="company_pincode" id="company_pincode" required class="form-control" value="<?php 
 					                                     if(!empty($company_info->company_pincode)){
 					                                        echo $company_info->company_pincode;
 					                                     }
-					                                ?>" required>
+					                                ?>" required><?php echo form_error('company_pincode'); ?>
 					                        </div>
 					                     </div>
 					                </div><br/>

@@ -35,7 +35,20 @@ class Employer extends MY_Employer_Controller
 
         if ($_POST) {
 
-             $this->form_validation->set_rules('company_name', 'company_name', 'required');
+             $this->form_validation->set_rules('company_name', 'company name', 'required');
+             $this->form_validation->set_rules('company_email', 'company email', 'required');
+             $this->form_validation->set_rules('alternate_email_id','alternate email','required');
+             $this->form_validation->set_rules('company_phone', 'company phone', 'required');
+             $this->form_validation->set_rules('company_email', 'company email', 'required');
+             $this->form_validation->set_rules('contact_name', 'contact name', 'required');
+             $this->form_validation->set_rules('cont_person_level','contact level', 'required');
+             $this->form_validation->set_rules('cont_person_email','contact email', 'required');
+            $this->form_validation->set_rules('cont_person_mobile','contact mobile','required');
+             $this->form_validation->set_rules('company_address','company address', 'required');
+             $this->form_validation->set_rules('company_email', 'company email', 'required');
+
+
+
           
            $this->form_validation->set_message('required', 'You must provide this field');
              if ($this->form_validation->run() == FALSE)
