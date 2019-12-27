@@ -116,6 +116,7 @@ class Register extends CI_Controller
                 }
             }
 
+        }
         } else {
 
             $config = array(
@@ -138,7 +139,7 @@ class Register extends CI_Controller
             $this->load->view('fontend/jobseeker/register', compact('captcha_images'));
         }
 
-    }
+    
 }
 
     public function refresh()
