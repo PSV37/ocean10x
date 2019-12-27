@@ -38,26 +38,10 @@ class Job_seeker extends MY_Seeker_Controller
         if ($_POST) {
             $jobseeker_id     = $this->session->userdata('job_seeker_id');
             $personal_info_id = $this->input->post('js_personal_info_id');
-                 
-               $this->form_validation->set_rules('name', 'name', 'required');
-               $this->form_validation->set_rules('date_of_birth', 'Date of Birth', 'required');
-               $this->form_validation->set_rules('country_code', 'country code', 'required');
-               $this->form_validation->set_rules('mobile', 'mobile', 'required');
-               $this->form_validation->set_rules('present_address', 'present address', 'required');
-               $this->form_validation->set_rules('country_id', 'country', 'required');
-               $this->form_validation->set_rules('state_id', 'state', 'required');
-               $this->form_validation->set_rules('city_id', 'city', 'required');
-               $this->form_validation->set_rules('pincode', 'pincode', 'required');
-
+           
                
-               $this->form_validation->set_message('required', 'This field is mandatory');
-             if ($this->form_validation->run() == FALSE)
-            {
-                redirect('job_seeker/seeker_info',$data);
-                 
-            }
-            else{
 
+            
             $personal_info    = array(
                 'job_seeker_id'     => $jobseeker_id,
                 // 'father_name'       => $this->input->post('father_name'),
@@ -111,7 +95,6 @@ class Job_seeker extends MY_Seeker_Controller
                
                 redirect('job_seeker/seeker_info',$data);
             }
-        }
         } else {
             $jobseeker_id     = $this->session->userdata('job_seeker_id');
             $js_personal_info = $this->job_seeker_personal_model->personalinfo_list_by_id($jobseeker_id);

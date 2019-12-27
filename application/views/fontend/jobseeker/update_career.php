@@ -140,9 +140,9 @@
                          echo $job_career_info[0]->js_career_info_id;
                          } ?>">
 				  <div class="form-group">
-            <label class="control-label col-sm-3" for="pwd">Industry</label>
+            <label class="control-label col-sm-3" for="pwd">Industry<span>*</span></label>
               <div class="col-sm-9">
-                <select  name="industry_id" id="industry_id" class="form-control">
+                <select  name="industry_id" id="industry_id" class="form-control" required >
 				          <option value="">Select Industry</option>
         				 <?php foreach($industry_master as $industry){?>
         					<option value="<?php echo $industry['job_category_id']; ?>"<?php if($job_career_info[0]->industry_id==$industry['job_category_id']){ echo "selected"; }?>><?php echo $industry['job_category_name']; ?></option>
@@ -152,9 +152,9 @@
             </div>
 			  
 			    <div class="form-group">
-            <label class="control-label col-sm-3" for="pwd">Functional Area</label>
+            <label class="control-label col-sm-3" for="pwd">Functional Area<span>*</span></label>
               <div class="col-sm-9">
-                <select  name="dept_id" id="dept_id" class="form-control">
+                <select  name="dept_id" id="dept_id" class="form-control" required>
           				<option value="">Select Area</option>
           				<?php foreach($department as $dept){?>
           				<option value="<?php echo $dept['dept_id']; ?>"<?php if($job_career_info[0]->dept_id==$dept['dept_id']){ echo "selected"; }?>><?php echo $dept['department_name']; ?></option>
@@ -164,9 +164,9 @@
           </div>
 				
           <div class="form-group">
-            <label class="control-label col-sm-3" for="pwd">Job Role</label>
+            <label class="control-label col-sm-3" for="pwd">Job Role<span>*</span></label>
               <div class="col-sm-9">
-                <select  name="job_role" id="job_role" class="form-control">
+                <select  name="job_role" id="job_role" class="form-control" required >
         				  <option value="">Select Role</option>
         				  <?php foreach($job_role as $role){?>
         					<option value="<?php echo $role['id']; ?>"<?php if($job_career_info[0]->job_role==$role['id']){ echo "selected"; }?>><?php echo $role['job_role_title']; ?></option>
@@ -212,9 +212,9 @@
           </div>
 
           <div class="form-group">
-            <label class="control-label col-sm-3" for="email">Availability to Join</label>
+            <label class="control-label col-sm-3" for="email">Availability to Join<span class="required">*</span></label>
               <div class="col-sm-9">
-                <input type="text" class="form-control datepicker" name="avail_to_join" placeholder="Availablity Date " id="avail_to_join" value="<?php echo date('d-m-Y', strtotime($job_career_info[0]->availability_date)); ?>" <?php if (!empty($job_career_info[0]->immediate_join)) {
+                <input type="text" class="form-control datepicker" required name="avail_to_join" placeholder="Availablity Date " id="avail_to_join" value="<?php echo date('d-m-Y', strtotime($job_career_info[0]->availability_date)); ?>" <?php if (!empty($job_career_info[0]->immediate_join)) {
                           if($job_career_info[0]->immediate_join=='Yes'){ echo 'disabled';};
                          } ?>>
               </div>
@@ -226,9 +226,9 @@
                          } ?>> Join Immediately
          </div>
           <div class="form-group">
-            <label class="control-label col-sm-3" for="email">Notice Period In Days</label>
+            <label class="control-label col-sm-3" for="email">Notice Period In Days<span class="required">*</span></label>
               <div class="col-sm-9">
-                <input type="text" class="form-control" name="Notice_period" placeholder="Notice period in days" id="Notice_period" value=" <?php if (!empty($job_career_info[0]->notice_period)) {
+                <input type="text" class="form-control" required name="Notice_period" placeholder="Notice period in days" id="Notice_period" value=" <?php if (!empty($job_career_info[0]->notice_period)) {
                          echo $job_career_info[0]->notice_period;
                          } ?>" onkeypress="javascript:return isNumber(event)">
               </div>
@@ -263,9 +263,9 @@
           </div>
 
           <div class="form-group">
-            <label class="control-label col-sm-3" for="email">Last Salary Hike</label>
+            <label class="control-label col-sm-3" for="email">Last Salary Hike<span class="required">*</span></label>
               <div class="col-sm-9">
-                <input type="text" name="last_salary_hike" class="form-control datepicker" id="last_salary_hike" placeholder="Enter Date"
+                <input type="text" name="last_salary_hike" class="form-control datepicker" id="last_salary_hike" placeholder="Enter Date" required
                  value="<?php
                        if (!empty($job_career_info[0]->last_salary_hike)) {
                          echo date('d-m-Y', strtotime($job_career_info[0]->last_salary_hike));

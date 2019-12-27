@@ -6,7 +6,7 @@
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
           <label class="control-label" for="email">Education<span class="required">*</span></label>
-          <select  name="education_level_id" id="education_level_id" class="form-control" required="">
+          <select  name="education_level_id" id="education_level_id" class="form-control" required>
            <?php if(!empty($education_level)){?>
             <option value="<?php echo $education_level['education_level_id']; ?>"><?php echo $education_level['education_level_name']; ?></option>
             <?php } ?>
@@ -19,7 +19,7 @@
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
           <label class="control-label" for="email">Specialization<span class="required">*</span></label>
-          <select  name="specialization_id" id="specialization_id" class="form-control">
+          <select  name="specialization_id" id="specialization_id" class="form-control" required>
             <option value="">Select One</option>
              <?php foreach($education_specialization as $edu_special){?>
               <option value="<?php echo $edu_special['id']; ?>"<?php if(!empty($edit_edu_res)) if($edit_edu_res['specialization_id']==$edu_special['id']) echo "selected";?>><?php echo $edu_special['education_specialization']; ?></option>
@@ -33,7 +33,7 @@
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
           <label class="control-label" for="email">University / Name of Institution<span class="required">*</span></label>
-          <input type="text" name="js_institute_name" class="form-control" id="js_institute_name" placeholder="Enter Institute Name" value="<?php if(!empty($edit_edu_res)) echo $edit_edu_res['js_institute_name']; ?>">
+          <input type="text" name="js_institute_name" class="form-control" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($edit_edu_res)) echo $edit_edu_res['js_institute_name']; ?>">
         </div>
         <div class="col-sm-1"></div>
       </div>
@@ -43,7 +43,7 @@
         <div class="col-sm-10">
           <label class="control-label" for="email">Course Type<span class="required">*</span></label>
           <?php foreach($course as $courses){?>
-            <input type="radio" name="education_type_id" id="education_type_id" value="<?php echo $courses['education_type_id']; ?>"<?php if(!empty($edit_edu_res)) if($edit_edu_res['education_type_id']==$courses['education_type_id']) echo "checked";?> style="margin: 0 1px;"> <?php echo $courses['education_type']; ?>
+            <input type="radio" name="education_type_id" required id="education_type_id" value="<?php echo $courses['education_type_id']; ?>"<?php if(!empty($edit_edu_res)) if($edit_edu_res['education_type_id']==$courses['education_type_id']) echo "checked";?> style="margin: 0 1px;"> <?php echo $courses['education_type']; ?>
           <?php } ?>
          
 
@@ -56,7 +56,7 @@
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
           <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
-          <select  name="js_year_of_passing" id="ddlYear" class="form-control">
+          <select  name="js_year_of_passing" id="ddlYear" class="form-control" required>
            <option value="">Select Completion Year</option>
             <?php
               $currently_selected = date('Y'); 
@@ -93,7 +93,7 @@
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
           <label class="control-label" for="email">Score<span class="required">*</span></label>
-          <input type="text" name="js_resut" class="form-control" placeholder="Enter Score" value="<?php if(!empty($edit_edu_res)) echo $edit_edu_res['js_resut']; ?>" onkeypress="javascript:return isNumber1(event)">
+          <input type="text" name="js_resut" class="form-control" placeholder="Enter Score" value="<?php if(!empty($edit_edu_res)) echo $edit_edu_res['js_resut']; ?>" onkeypress="javascript:return isNumber1(event)" required>
         </div>
         <div class="col-sm-1"></div>
       </div>
