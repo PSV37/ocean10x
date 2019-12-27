@@ -327,6 +327,7 @@ h6{
 
 				           	 	 ?>
 				           	 	<div class="progress-bar bg-success" style="width:<?php echo $total;?>%"><?php echo round($total); ?> percent Profile completed.</div>
+				           	 	<br>
 				           	</div>
 		             	</div>
 		                <div class="col-md-12">
