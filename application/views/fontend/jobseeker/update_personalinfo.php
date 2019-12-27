@@ -658,7 +658,7 @@
           <div class="col-md-6 col-sm-12">
             <div class="input-group">
               <label class="control-label" for="pwd"> Country Code:</label>
-                <select id="country" name="alternatecountry_code" class="form-control">
+                <select id="country" name="alternatecountry_code" class="form-control" >
                   <option><?php echo $js_personal_info->alternatecountry_code?></option>
                   <option value="AD - Andorra (+376)">AD - Andorra (+376)</option>
                   <option value="AE - United Arab Emirates (+971)">AE - United Arab Emirates (+971)</option>
@@ -896,7 +896,7 @@
           <div class="col-md-6 col-sm-12">
             <div class="input-group">
               <label class="control-label" for="pwd">Alternate Phone No:</label>
-              <input name="alternatemobile" type="text"  class="form-control"   maxlength="10" id="number" 
+              <input name="alternatemobile" type="text"  class="form-control"  maxlength="10" id="number" 
                value="<?php
                          if (!empty($js_personal_info->alternatemobile)) {
                            echo $js_personal_info->alternatemobile;
@@ -913,7 +913,7 @@
           <div class="col-md-12 col-sm-12">  
             <div class="input-group">
               <label class="control-label" for="pwd">Present Address<span class="required">*</span></label>
-              <textarea name="present_address" class="form-control ckeditor" required  rows="5" id="comment" required><?php 
+              <textarea name="present_address" class="form-control ckeditor" rows="5" id="comment" required><?php 
                        if (!empty($js_personal_info->present_address)) {
                          echo $js_personal_info->present_address;
                          }
@@ -931,7 +931,7 @@
             <div class="col-md-6 col-sm-12">
           <div class="input-group">
                   <label class="control-label" for="pwd">Country<span class="required">*</span></label>
-                  <select  name="country_id" id="country_id" class="form-control" required onchange="getStates(this.value)">
+                  <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
           <option value="">Select Country</option>
           <?php foreach($country as $key){?>
           <option value="<?php echo $key['country_id']; ?>"<?php if($js_personal_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
@@ -943,7 +943,7 @@
       <div class="col-md-6 col-sm-12">
         <div class="input-group">
                   <label class="control-label" for="pwd">State<span class="required">*</span></label>
-                 <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)" required>
+                 <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
          <option value="">Select State</option>
          <?php foreach($state as $val){?>
           <option value="<?php echo $val['state_id']; ?>"<?php if($js_personal_info->state_id==$val['state_id']){ echo "selected"; }?>><?php echo $val['state_name']; ?></option>
@@ -960,7 +960,7 @@
           <div class="col-md-6 col-sm-12">
             <div class="input-group">
               <label class="control-label" for="pwd">City<span class="required">*</span></label>
-              <select  name="city_id" id="city_id" class="form-control" required>
+              <select  name="city_id" id="city_id" class="form-control">
                 <option value="">Select City</option>
                <?php foreach($city as $valu){?>
                 <option value="<?php echo $valu['id']; ?>"<?php if($js_personal_info->city_id==$valu['id']){ echo "selected"; }?>><?php echo $valu['city_name']; ?></option>
@@ -1088,7 +1088,7 @@
         <div class="col-md-12 col-sm-12">
           <div class="input-group">
             <label class="control-label" for="email">My Tagline<span class="required">*</span></label>
-              <textarea name="tagline" class="form-control" rows="3" placeholder="Enter Your Tagline" required><?php 
+              <textarea name="tagline" class="form-control" rows="3" placeholder="Enter Your Tagline"><?php 
                        if (!empty($js_personal_info->resume_title)) {
                          echo $js_personal_info->resume_title;
                          }
@@ -1105,7 +1105,7 @@
         <div class="col-md-6 col-sm-12">
           <div class="input-group">
             <label class="control-label" for="email">Marital Status<span class="required">*</span></label>
-                <select class="form-control" name="matrial_status" id="matrial_status" required>
+                <select class="form-control" name="matrial_status" id="matrial_status">
                   <option value="">Select Marital Status</option>
                   <option value="Single/unmarried"<?php if($js_personal_info->marital_status=='Single/unmarried'){echo 'selected';} ?>>Single/unmarried</option>
                   <option value="Married"<?php if($js_personal_info->marital_status=='Married'){echo 'selected';} ?>>Married</option>
