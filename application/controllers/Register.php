@@ -25,7 +25,7 @@ class Register extends CI_Controller
            array('regex_match'=>'You must provide One Uppercase,One Lowercase,Numbers');
            $this->form_validation->set_message('regex_match', 'You must provide One Uppercase,One Lowercase,Numbers and special Character');
              if ($this->form_validation->run() == FALSE)
-            {
+                {
                  $config = array(
                 'img_path'    => 'captcha_images/',
                 'img_url'     => base_url() . 'captcha_images/',
@@ -45,6 +45,7 @@ class Register extends CI_Controller
             $captcha_images = $captcha['image'];
             $this->load->view('fontend/jobseeker/register', compact('captcha_images'));
             }
+            
             else{
             $js_info = array(
                 'full_name' => $this->input->post('full_name'),
@@ -116,10 +117,10 @@ class Register extends CI_Controller
                 }
             }
 
-        }
+        } 
     }
-        
-         else {
+}
+        else {
 
             $config = array(
                 'img_path'    => 'captcha_images/',
@@ -141,8 +142,8 @@ class Register extends CI_Controller
             $this->load->view('fontend/jobseeker/register', compact('captcha_images'));
         }
 
-    
-}
+    }
+
 
     public function refresh()
     {
