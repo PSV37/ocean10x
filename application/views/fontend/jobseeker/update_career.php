@@ -140,7 +140,7 @@
                          echo $job_career_info[0]->js_career_info_id;
                          } ?>">
 				  <div class="form-group">
-            <label class="control-label col-sm-3" for="pwd">Industry<span>*</span></label>
+            <label class="control-label col-sm-3" for="pwd">Industry<span class="required">*</span></label>
               <div class="col-sm-9">
                 <select  name="industry_id" id="industry_id" class="form-control" required >
 				          <option value="">Select Industry</option>
@@ -152,7 +152,7 @@
             </div>
 			  
 			    <div class="form-group">
-            <label class="control-label col-sm-3" for="pwd">Functional Area<span>*</span></label>
+            <label class="control-label col-sm-3" for="pwd">Functional Area<span class="required">*</span></label>
               <div class="col-sm-9">
                 <select  name="dept_id" id="dept_id" class="form-control" required>
           				<option value="">Select Area</option>
@@ -164,7 +164,7 @@
           </div>
 				
           <div class="form-group">
-            <label class="control-label col-sm-3" for="pwd">Job Role<span>*</span></label>
+            <label class="control-label col-sm-3" for="pwd">Job Role<span class="required">*</span></label>
               <div class="col-sm-9">
                 <select  name="job_role" id="job_role" class="form-control" required >
         				  <option value="">Select Role</option>

@@ -40,7 +40,7 @@
                             <div class="col-md-6">
                               <!-- Upload image and data -->
                               <div class="col-md-12">
-                                <label for="avatarInput">Upload Resume</label>
+                                <label for="avatarInput">Upload Resume<span class="required">*</span></label>
                                 <input type="file" class="form-control" id="txt_resume" name="txt_resume" required="">
 
                                 <input type="hidden" class="form-control" id="" name="oldresume" value="<?php if(!empty($job_seeker_resume['resume'])){echo $job_seeker_resume['resume'];} ?>">
