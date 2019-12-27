@@ -63,7 +63,7 @@
                     </div>
 
                     <div class="col-md-6 col-sm-12">
-                      <input type="email" name="email" value="<?php echo isset($this->session->userdata['reg_jobseeker']['email'])?$this->session->userdata['reg_jobseeker']['email']:''; ?>" class="form-control" placeholder="Email" autocomplete="off">
+                      <input type="email" name="email" value="<?php echo isset($this->session->userdata['reg_jobseeker']['email'])?$this->session->userdata['reg_jobseeker']['email']:''; ?>" class="form-control" placeholder="Email" autocomplete="off"><?php echo form_error('email'); ?>
                     </div>
 
                   </div><!-- end row -->
@@ -97,7 +97,7 @@
                       <input type="radio" name="gender" value="2" <?php echo $str_f ; ?>> Female
                     </div>
                     <div class="col-md-6 col-sm-12">
-                      <input type="Password" id="password" name="password" class="form-control" placeholder="Password">
+                      <input type="Password" id="password" name="password" class="form-control" placeholder="Password"><?php echo form_error('password'); ?>
                     </div>
                   </div><!-- end row -->
                 </div>
