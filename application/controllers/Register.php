@@ -20,16 +20,7 @@ class Register extends CI_Controller
     {
 
         if ($_POST) {
-            $this->form_validation->set_rules('password', 'password', 'required|max_length[15]|min_length[8]|regex_match[/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/]');
-           // array('required' => 'You must provide a %s.','regex_match' =>'You must provide One Uppercase,One Lowercase,Numbers');
-           array('regex_match'=>'You must provide One Uppercase,One Lowercase,Numbers');
-           $this->form_validation->set_message('regex_match', 'You must provide One Uppercase,One Lowercase,Numbers and special Character');
-             if ($this->form_validation->run() == FALSE)
-                {
-                 
-            }else
-            {
-                $js_info = array(
+            $js_info = array(
                 'full_name' => $this->input->post('full_name'),
                 'email'     => $this->input->post('email'),
                 'gender'    => $this->input->post('gender'),
@@ -39,9 +30,10 @@ class Register extends CI_Controller
                 'profession' => $this->input->post('profession'),
                 // 'mobile_no'    => $this->input->post('mobile'),
                 'js_status' => 0,
-                'cv_type'   => 1,);
-                $email_to = $this->input->post('email');
-                $exist_email    = $this->job_seeker_model->email_check($this->input->post('email'));
+                'cv_type'   => 1,
+            );
+            $email_to = $this->input->post('email');
+            $exist_email    = $this->job_seeker_model->email_check($this->input->post('email'));
             // $exist_username = $this->job_seeker_model->username_check($this->input->post('user_name'));
                  $this->session->set_userdata('reg_jobseeker', $js_info );
 
@@ -98,10 +90,7 @@ class Register extends CI_Controller
                 }
             }
 
-        } 
-    }
-
-        else {
+        } else {
 
             $config = array(
                 'img_path'    => 'captcha_images/',
@@ -124,7 +113,6 @@ class Register extends CI_Controller
         }
 
     }
-
 
     public function refresh()
     {
