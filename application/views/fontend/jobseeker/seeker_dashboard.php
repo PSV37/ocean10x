@@ -322,11 +322,7 @@ h6{
 
 				           	 		// endforeach;
 
-
-
-
-
-				           	 		$total=$personal_total+$education_total+$skill_total+$work_experience_total+$attach_resume_total+$career_total;
+						$total=$personal_total+$education_total+$skill_total+$work_experience_total+$attach_resume_total+$career_total;
 				           	 		
 
 				           	 	 ?>
@@ -334,7 +330,7 @@ h6{
 				           	</div>
 		             	</div>
 		                <div class="col-md-12">
-		                	<div class="col-md-1"><i class="fa fa-user" aria-hidden="true"></i></div>
+		                	<div class="col-md-1"><i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
 		                	<div class="col-md-11">
 				           	 	<sapn class="title-career"><b>Career Advice</b></sapn> <br><br>
 				           	 	<span>Participate in the career advice platform: <a href="#">On</a></span><br>
