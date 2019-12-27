@@ -327,11 +327,10 @@ h6{
 
 
 				           	 		$total=$personal_total+$education_total+$skill_total+$work_experience_total+$attach_resume_total+$career_total;
-				           	 		?> <br> <? echo $total;
 				           	 		
 
 				           	 	 ?>
-				           	 	<p class="tag_line"><?php echo $total ?> percent of your completed.</p><hr>
+				           	 	<p class="tag_line"><?php echo round($total); ?> percent Profile completed.</p><hr>
 				           	</div>
 		             	</div>
 		                <div class="col-md-12">
