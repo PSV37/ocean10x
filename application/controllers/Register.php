@@ -26,7 +26,24 @@ class Register extends CI_Controller
            $this->form_validation->set_message('regex_match', 'You must provide One Uppercase,One Lowercase,Numbers and special Character');
            if ($this->form_validation->run() == FALSE)
             {
-                echo "string";
+               $config = array(
+                'img_path'    => 'captcha_images/',
+                'img_url'     => base_url() . 'captcha_images/',
+                'img_width'   => '150',
+                'img_height'  => 50,
+                'word'        => strtoupper(substr(md5(time()), 0, 4)),
+                'font_path' => FCPATH . 'captcha_images/font/captcha4.ttf',
+
+            );
+            $captcha = create_captcha($config);
+
+            // Unset previous captcha and store new captcha word
+            $this->session->unset_userdata('captchaCode');
+            $this->session->set_userdata('captchaCode', $captcha['word']);
+
+            // Send captcha image to view
+            $captcha_images = $captcha['image'];
+            $this->load->view('fontend/jobseeker/register', compact('captcha_images'));
             }
             else{
             $js_info = array(
