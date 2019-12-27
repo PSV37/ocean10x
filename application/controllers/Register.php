@@ -117,7 +117,9 @@ class Register extends CI_Controller
             }
 
         }
-        } else {
+    }
+        
+         else {
 
             $config = array(
                 'img_path'    => 'captcha_images/',
