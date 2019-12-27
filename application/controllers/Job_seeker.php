@@ -714,8 +714,8 @@ exit;*/
 		$city = $this->Master_model->getMaster('city',$where=false);
 		$country = $this->Master_model->getMaster('country',$where=false);
 		$state = $this->Master_model->getMaster('state',$where=false);
-        //echo $this->db->last_query();
-		$this->load->view('fontend/jobseeker/view_resume', compact('resume', 'edcuaiton_list', 'experinece_list', 'training_list', 'reference_list', 'js_personal_info', 'job_seeker_photo', 'country', 'state', 'city'));
+       $final_result = $this->Master_model->getMaster('js_ocean_exam_topics',$where_req_skill,$join_r, $order = false, $field = false, $select, $limit=false, $start=false, $search=false);
+		$this->load->view('fontend/jobseeker/view_resume', compact('resume', 'edcuaiton_list', 'experinece_list', 'training_list', 'reference_list', 'js_personal_info', 'job_seeker_photo', 'country', 'state', 'city','final_result'));
     
 	}
 
