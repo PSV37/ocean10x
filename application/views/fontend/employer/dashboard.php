@@ -63,7 +63,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                                             	 if(!empty($company_info->company_name)){
                                             	 	echo $company_info->company_name;
                                             	 }
-                                            ?>" class="form-control" placeholder="Company Name">
+                                            ?>" class="form-control" placeholder="Company Name"><?php echo form_error('company_name'); ?>
                                             </div>
                                         </div>
 

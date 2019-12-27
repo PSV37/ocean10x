@@ -35,6 +35,19 @@ class Employer extends MY_Employer_Controller
 
         if ($_POST) {
 
+             $this->form_validation->set_rules('company_name', 'company_name', 'required');
+          
+           $this->form_validation->set_message('required', 'You must provide this field');
+             if ($this->form_validation->run() == FALSE)
+            {
+                $wheres="status='0' AND company_profile_id='$employer_id'";
+                 $branches = $this->Master_model->getMaster('company_branches',$where=$wheres);
+                $company_info = $this->company_profile_model->get($employer_id);
+                $country = $this->Master_model->getMaster('country',$where=false);
+                $this->load->view('fontend/employer/dashboard', compact('company_info', 'country', 'branches'));
+            }
+            else{
+
             $company_profile = array(
                 'company_name'     => $this->input->post('company_name'),
                 'company_url'      => $this->input->post('company_url'), 
@@ -136,6 +149,7 @@ class Employer extends MY_Employer_Controller
                 $this->load->view('fontend/employer/dashboard', compact('company_info', 'country', 'branches'));
                  
             }
+        }
 
             } else {
                 $wheres="status='0' AND company_profile_id='$employer_id'";
