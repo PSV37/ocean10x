@@ -1484,6 +1484,57 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     	$this->load->view('fontend/employer/employee_master',$data);
     }
 
+    public function deactivated_employees(){
+        $employer = $this->session->userdata('company_profile_id');
+        //$company=$employer['company_profile_id'];
+        $day = date("Y-m-d H:i:s", strtotime('-24 hours', time()));
+        $where='employee.org_id="'.$employer.'" and employee.emp_status!="0" and employee.emp_status="3" and employee.emp_updated_date < "'.$day.'"';
+        print_r($this->db->last_query());die;
+        //$data['result'] = $this->Master_model->getMaster('industry',$where=FALSE);
+        $join = array(
+            'department' => 'department.dept_id = employee.dept_id|LEFT OUTER',
+            'country' => 'country.country_id = employee.country_id|LEFT OUTER',
+            'state' => 'state.state_id = employee.state_id|LEFT OUTER',
+            'city' => 'city.id = employee.city_id|LEFT OUTER',
+        );
+    
+        $res = $this->Master_model->getMaster('employee',$where, $join);
+        $config = array();
+            $config["base_url"] = base_url('employer/index');
+            $config["total_rows"] = count($res);
+            $config['per_page'] =5;
+            $config['uri_segment'] = 3;
+              
+            $config['full_tag_open'] = '<div class="pagination">';
+            $config['full_tag_close'] = '</div>';
+                 
+            $config['first_link'] = '<button>First Page</button>';
+            $config['first_tag_open'] = '<span class="firstlink">';
+            $config['first_tag_close'] = '</span>';
+            $config['last_link'] = '<button style="">Last Page</button>';
+            $config['last_tag_open'] = '<span class="lastlink">';
+            $config['last_tag_close'] = '</span>';
+            $config['next_link'] = '<span style="margin-left:8px;"><button style="color:#FFF; background:#008000;">Next Page</button></span>';
+            $config['next_tag_open'] = '<span class="nextlink">';
+            $config['next_tag_close'] = '</span>';
+            $config['prev_link'] = '<button style="color:#FFF; background:#0000FF;">Prev Page</button>';
+            $config['prev_tag_open'] = '<span class="prevlink">';
+            $config['prev_tag_close'] = '</span>';
+            $config['cur_tag_open'] = '<span style="margin-left:8px;">';
+            $config['cur_tag_close'] = '</span>';
+            $config['num_tag_open'] = '<span style="margin-left:8px;">';
+            $config['num_tag_close'] = '</span>';
+            $this->pagination->initialize($config);
+            $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+          
+            $this->pagination->initialize($config);
+
+           $data["links"] = $this->pagination->create_links();
+           
+           $data["result"] = $this->Master_model->getMaster("employee", $where, $join, $order = "ASC", $field = "employee.emp_id", $select = false,$config["per_page"],$page, $search=false, $group_by = FALSE);
+        $this->load->view('fontend/employer/employee_master',$data);
+    }
+
     public function allconsultants()
     {
         $employer=$this->session->userdata('company_profile_id');

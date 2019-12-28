@@ -135,6 +135,7 @@ $route['employer/non-selected-job']="employer/non_selected_job";
 $route['employer/profile-setting']="employer/profile_setting";
 $route['employer/all-questions']="employer/all_questions";
 $route['employer/add-question']="employer/add_new_question";
+$route['employer/deactivated-employee']="employer/deactivated_employees";
 // $route['employer/all-results']="employer/all_exam_result";
 $route['employer/all-results/(:num)']="employer/all_exam_result/$1";
 $route['employer/reject-resume/(:num)']="employer/reject_resume/$1";
