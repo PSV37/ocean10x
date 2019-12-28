@@ -76,7 +76,7 @@
                    <td>
                   &nbsp;&nbsp; <a href="<?php echo base_url();?>employer/editemployee?id=<?php echo $key['emp_id']; ?>"><i class="fa fa-pencil"></i></a>
                 </td>
-                  <td><button class="btn btn-success"   name="status" id="status" onclick="chnagestatus(this.value);" value="<?php echo $key['emp_id'];?>" >Active</button></td> <?}
+                  <td><button class="btn btn-success"   name="status" id="status" onclick="change_status(this.value);" value="<?php echo $key['emp_id'];?>" >Active</button></td> <?}
                  elseif($key['emp_status']=='2')
                   { ?> 
                   <td style=""><button class="btn btn-danger"  name="status" id="status" onclick="Activate_user(this.value);" value="<?php echo $key['emp_id'];?>" >Inactive</button></td>
