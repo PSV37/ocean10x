@@ -1,15 +1,10 @@
 <?php 
     $this->load->view('fontend/layout/employer_header.php');
 ?>
+
+
 <!-- Page Title start -->
-<style type="text/css">
-  label {
-    display: inline-block;
-    max-width: 100%;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-</style>
+
 <div class="pageTitle">
   <div class="container">
     <div class="row">
@@ -32,9 +27,9 @@
         <div class="userccount empdash">
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
            
-    		<form method="post" action="<?php echo base_url();?>employer/addemployee" enctype="multipart/form-data">
+        <form method="post" action="<?php echo base_url();?>employer/addemployee" enctype="multipart/form-data">
 
-            	 <input type="hidden" name="cid" id="cid" value="<?php echo $result['emp_id'];?>">
+               <input type="hidden" name="cid" id="cid" value="<?php echo $result['emp_id'];?>">
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="box-body">
@@ -48,7 +43,7 @@
 
                     <div class="col-md-4">
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Name <span class="required">*</span></label>
+                        <label for="exampleInputEmail1">Full Name <span class="required">*</span></label>
                         <input type="text" name="emp_name" id="emp_name" class="form-control" value="<?php echo $result['emp_name']; ?>">
                       </div>
                     </div>
@@ -104,7 +99,7 @@
                       <div class="form-group">
                           <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
                           
-                            <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc[]" id="user_accc" style="display: block;"  >
+                            <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc[]" id="user_accc"  >
                             </select>
                          
                       </div>
@@ -118,7 +113,7 @@
                         <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
                            <option value="">Select Country</option>
                           <?php foreach($country as $key){?>
-                          <option value="<?php echo $key['country_id']; ?>"<?php if($result['country_id']==$key['country_id']){ echo "selected"; }elseif ($key['country_name']=='India') {echo "selected";}?>><?php echo $key['country_name']; ?></option>
+                          <option value="<?php echo $key['country_id']; ?>"<?php if($result['country_id']==$key['country_id']){ echo "selected"; } elseif ($key['country_name']=='India') {echo "selected";}?>><?php echo $key['country_name']; ?></option>
                           <?php } ?>
                         </select>
                        </div>
@@ -171,12 +166,12 @@
                 </div>
                    <div class="panel-body"></div>
                      <button type="submit" class="btn bg-navy" type="submit">Add Employee</button>
-								
+                
 
             </form>
 
-							
-							
+              
+              
           </div>
         </div>
         <!-- end post-padding --> 
@@ -196,38 +191,37 @@
 document.getElementsByClassName('form-control').innerHTML+="<br />";
 </script>
 <?php $this->load->view("fontend/layout/footer.php"); ?>   
-	   
+     
 <script>
-	function getStates(id){
-		if(id){
+  function getStates(id){
+    if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>Employer/getstate',
+                url:'<?php echo base_url();?>employer/getstate',
                 data:{id:id},
                 success:function(res){
                     $('#state_id').html(res);
                 }
-				
+                
             }); 
         }
    
-	}
-	   
-	  
-	  function getCitys(id){
-		if(id){
+      }
+
+    function getCitys(id){
+        if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>Employer/getcity',
+                url:'<?php echo base_url();?>employer/getcity',
                 data:{id:id},
                 success:function(res){
                     $('#city_id').html(res);
                 }
-				
+                
             }); 
           }
    
-	   }
+     }
       function getuseraccess(id){
       if(id){
           
@@ -246,8 +240,8 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
             }
            // $(".empdash .selectpicker").css("display", "block");
        }
-	   
-	  $(document).ready(function(){
+     
+    $(document).ready(function(){
 
     function getStates_load(){
         var id = $('#country_id').val();
@@ -286,26 +280,46 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
    
        }
 
+       function getuseraccess_load(){
+         var id = $('#user_role').val();
+         alert(id);
+      if(id){
+          
+        
+              $.ajax({
+                  type:'POST',
+                  url:'<?php echo base_url();?>employer/get_access_data',
+                  data:{id:id},
+                  success:function(res){
+                      $('#user_accc').html(res);
+                      $("#user_accc").selectpicker('refresh');
+                  }
+
+          
+              }); 
+            }
+          // $(".empdash .selectpicker").css("display", "block");
+       }
+
   getCitys_load();
   getStates_load();
- 
+  getuseraccess_load();
 });
 
-</script> 
 
 <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
 <script>
 $("#dept_id").select2( {
-	placeholder: "Select Department",
-	allowClear: true
-	} );
+  placeholder: "Select Department",
+  allowClear: true
+  } );
 </script>
 
 <script>
 $("#country_id").select2( {
-	placeholder: "Select Country",
-	allowClear: true
-	} );
+  placeholder: "Select Country",
+  allowClear: true
+  } );
 </script>
 
   <script>
@@ -396,7 +410,22 @@ $(document).ready(function() {
 <!-- <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script> -->
 <!-- <script>
 $("#subject").select2( {
-	placeholder: "Select Subject",
-	allowClear: true
-	} );
+  placeholder: "Select Subject",
+  allowClear: true
+  } );
 </script> -->
+
+<script type="text/javascript">
+  $("#user_accc").mousedown(function(e){
+    e.preventDefault();
+    
+    var select = this;
+    var scroll = select.scrollTop;
+    
+    e.target.selected = !e.target.selected;
+    
+    setTimeout(function(){select.scrollTop = scroll;}, 0);
+    
+    $(select).focus();
+}).mousemove(function(e){e.preventDefault()});
+</script>
