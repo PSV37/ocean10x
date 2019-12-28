@@ -194,7 +194,7 @@ function Activate_user(id)
                 url:'<?php echo base_url();?>Employer/change_status',
                 data:{id:id},
                 success:function(res){
-                     alert('status changed Successfully!');
+                     alert('User Activated  Successfully!');
                      location.replace("<?php echo base_url();?>employer/editemployee?id="+id);
                      // location.reload();
                 }
@@ -212,9 +212,9 @@ function change_status(id)
                 url:'<?php echo base_url();?>Employer/change_status',
                 data:{id:id},
                 success:function(res){
-                     alert('status changed Successfully!');
-                     location.replace("<?php echo base_url();?>employer/editemployee?id="+id);
-                     // location.reload();
+                     alert('User Deactivated Successfully!');
+                     // location.replace("<?php echo base_url();?>employer/editemployee?id="+id);
+                      location.reload();
                 }
                 
             }); 
