@@ -51,7 +51,8 @@
         			  <th>Mobile No.</th>
         			  <th>Department</th>
         			  <th>Actions</th>
-        			  <th>Status</th>
+                <th>Status</th>
+        			  <th>Access Given</th>
                 
 
 
@@ -90,7 +91,7 @@
                   <td style=""><button class="btn btn-danger"  name="status" id="status" value="<?php echo $key['emp_id'];?>" >Deactivate</button></td>
                   <?php } ?>
 
-                  <td><button class="btn btn-info" data-target="#aceess_specifiers"   name="acess" id="acess" onclick="get_acess(this.value);" value="<?php echo $key['emp_id'];?>" >View Access given</button></td>
+                  <td><button class="btn btn-info" data-target="#aceess_specifiers"   name="acess" id="acess"  value="<?php echo $key['emp_id'];?>" >View Access given</button></td>
 
                 </tr>
 			        <?php } ?>
@@ -149,7 +150,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
     </div>
   </div>
 
-  <form id="Personal-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_personalinfo');?>"  method="post" autocomplete="off">
+  <form id="aceess_specifiers" class="form-horizontal" action="<?php echo base_url('job_seeker/update_personalinfo');?>"  method="post" autocomplete="off">
     <input type="hidden" value="<?php echo $js_personal_info->job_personal_info_id; ?>" name="js_personal_info_id">
             
      
