@@ -190,11 +190,41 @@
 <script type="text/javascript">
 document.getElementsByClassName('form-control').innerHTML+="<br />";
 </script>
-<?php $this->load->view("fontend/layout/footer.php"); ?>   
-     
+<?php $this->load->view("fontend/layout/footer.php"); ?>
+
+
+ 
+    
 <script>
-  function getStates(id){
-    if(id){
+  function hideshowfun()
+  {
+  
+      var a = $('#category').val();
+      
+      if(a=='MCQ')
+      {
+          $('#comp_name').hide();
+      }
+     else{
+         $('#comp_name').show();
+     } 
+     
+     if(a=='Subjective' || a=='Practical')
+      {
+          $('#name').hide();
+      }
+     else{
+         $('#name').show();
+     } 
+     
+      
+  }
+</script> 
+
+
+<script>
+    function getStates(id){
+        if(id){
             $.ajax({
                 type:'POST',
                 url:'<?php echo base_url();?>employer/getstate',
@@ -204,7 +234,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                 }
                 
             }); 
-        }
+          }
    
       }
 
@@ -221,7 +251,8 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
             }); 
           }
    
-     }
+       }
+
       function getuseraccess(id){
       if(id){
           
@@ -238,10 +269,30 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
           
               }); 
             }
-           // $(".empdash .selectpicker").css("display", "block");
+          // $(".empdash .selectpicker").css("display", "block");
        }
      
-    $(document).ready(function(){
+// function getaccess(id)
+//       {
+//         if(id){
+//             $.ajax({
+//                 type:'POST',
+//                 url:'<?php echo base_url();?>employer/get_access_specifierss',
+//                 data:{id:id},
+//                 success:function(res){
+//                   console.log(res);
+//                     $('#accessrr').html(res);
+//                 }
+                
+//             }); 
+//           }
+//       }
+       
+</script>    
+<script>
+  
+  $(document).ready(function(){
+    
 
     function getStates_load(){
         var id = $('#country_id').val();
@@ -253,8 +304,8 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                 data:{id:id},
                 success:function(res){
                     $('#state_id').html(res);
-                    $('#state_id').val(<?php echo $company_info->state_id; ?>);
-                     getCitys_load(<?php echo $company_info->state_id; ?>);
+                    $('#state_id').val(<?php echo $result['state_id']; ?>);
+                     getCitys_load(<?php echo $result['state_id']; ?>);
                 }
                 
             }); 
@@ -272,7 +323,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                 data:{id:id},
                 success:function(res){
                     $('#city_id').html(res);
-                    $('#city_id').val(<?php echo $company_info->city_id; ?>);
+                    $('#city_id').val(<?php echo $result['city_id']; ?>);
                 }
                 
             }); 
@@ -305,6 +356,8 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
   getStates_load();
   getuseraccess_load();
 });
+
+
 </script>
 
 <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
@@ -315,59 +368,22 @@ $("#dept_id").select2( {
   } );
 </script>
 
-<script>
-$("#country_id").select2( {
-  placeholder: "Select Country",
-  allowClear: true
-  } );
-</script>
-
-  <script>
-$(function() {
-  // choose target dropdown
-  var select = $('.country');
-  select.html(select.find('option').sort(function(x, y) {
-    // to change to descending order switch "<" for ">"
-    return $(x).text() > $(y).text() ? 1 : -1;
-  }));
-
-  // select default item after sorting (first item)
-  // $('select').get(0).selectedIndex = 0;
-});
-</script>
-
-
-
-<script>
-$(function() {
-  // choose target dropdown
-  var select = $('.department');
-  select.html(select.find('option').sort(function(x, y) {
-    // to change to descending order switch "<" for ">"
-    return $(x).text() > $(y).text() ? 1 : -1;
-  }));
-
-  // select default item after sorting (first item)
-  //$('select').get(0).selectedIndex = 0;
-});
-</script>
-
 <script>        
-           function phoneno(){          
-            $('#mobile').keypress(function(e) {
-                var a = [];
-                var k = e.which;
+  function phoneno(){          
+    $('#mobile').keypress(function(e) {
+        var a = [];
+        var k = e.which;
 
-                for (i = 48; i < 58; i++)
-                    a.push(i);
+        for (i = 48; i < 58; i++)
+            a.push(i);
 
-                if (!(a.indexOf(k)>=0))
-                    e.preventDefault();
-            });
-        }
-       </script>
-
-<script>
+        if (!(a.indexOf(k)>=0))
+            e.preventDefault();
+    });
+  }
+</script>
+     
+     <script>
   var BASE_URL = "<?php echo base_url(); ?>";
  
  $(document).ready(function() {
@@ -393,15 +409,6 @@ $(function() {
  });
 });
 </script>
-
-<!-- <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script> -->
-<!-- <script>
-$("#subject").select2( {
-  placeholder: "Select Subject",
-  allowClear: true
-  } );
-</script> -->
-
 <script type="text/javascript">
   $("#user_accc").mousedown(function(e){
     e.preventDefault();
@@ -416,3 +423,4 @@ $("#subject").select2( {
     $(select).focus();
 }).mousemove(function(e){e.preventDefault()});
 </script>
+
