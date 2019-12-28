@@ -1489,7 +1489,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         //$company=$employer['company_profile_id'];
         $day = date("Y-m-d H:i:s", strtotime('-24 hours', time()));
         $where='employee.org_id="'.$employer.'" and employee.emp_status!="0" and employee.emp_status="3" and employee.emp_updated_date < "'.$day.'"';
-        print_r($this->db->last_query());die;
+
         //$data['result'] = $this->Master_model->getMaster('industry',$where=FALSE);
         $join = array(
             'department' => 'department.dept_id = employee.dept_id|LEFT OUTER',
@@ -1499,6 +1499,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         );
     
         $res = $this->Master_model->getMaster('employee',$where, $join);
+        print_r($this->db->last_query());die;
         $config = array();
             $config["base_url"] = base_url('employer/index');
             $config["total_rows"] = count($res);
