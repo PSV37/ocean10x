@@ -91,7 +91,9 @@
                   <td style=""><button class="btn btn-danger"  name="status" id="status" value="<?php echo $key['emp_id'];?>" >Deactivate</button></td>
                   <?php } ?>
 
-                  <td><button class="btn btn-info" data-target="#aceess_specifiers"   name="acess" id="acess"  value="<?php echo $key['emp_id'];?>" >View Access given</button></td>
+                  <!-- <td><button class="btn btn-info" data-target="#aceess_specifiers"   name="acess" id="acess"  value="<?php echo $key['emp_id'];?>" >View Access given</button></td> -->
+
+                  <td><a href="#" class="btn btn-info btn-xs getacessdetails" data-level_id='<?php echo $key['emp_id']; ?>' title="acess" data-toggle="modal" data-target="#aceess_specifiers" ><strong>View Access given</strong> </a></td>
 
                 </tr>
 			        <?php } ?>
@@ -150,39 +152,23 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
     </div>
   </div>
 
-  <form id="aceess_specifiers" class="form-horizontal" action="<?php echo base_url('job_seeker/update_personalinfo');?>"  method="post" autocomplete="off">
-    <input type="hidden" value="<?php echo $js_personal_info->job_personal_info_id; ?>" name="js_personal_info_id">
-            
-     
-     
-      
-     
-         
-      
-     
-     
-   
-    <div class="panel-body"></div>   
+  <div id="aceess_specifiers" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" align="center">View access given </h4>
+      </div>
+        <div class="modal-body cnf_reschedule_frm">
     
-
-   
-    
-
-
-    <div class="panel-body"></div>   
-           <!-- Copy Fields -->
-           <div class="row avatar-btns">
-                  <div class="col-md-9">
-                  </div>
-                  <div class="col-md-3">
-                    <button type="submit" class="btn btn-primary btn-block avatar-save2">Save </button>
-                  </div>
-                </div>
-      
+      </div>
+           
      
-      
-              
-            </form>
+    </div>
+
+  </div>
+</div>
 
   </section>
 <!-- /.content -->
@@ -268,7 +254,33 @@ function change_status(id)
     });   
   });
  </script>
+<script type="text/javascript">
+  
+  $(".getacessdetails").on('click', function(event){
 
+   event.stopPropagation();
+    event.stopImmediatePropagation();
+    //(... rest of your JS code)
+    var user = $(this).data('emp_id');
+    alert(user);
+     $.ajax({
+              // url: "<?php echo base_url();?>Employer/get_acess_details",
+              // type: "POST",
+              // data: {emp_id:emp_id},
+          
+              // success: function(data)
+              // {
+              //   console.log(data);
+              //   $('.cnf_reschedule_frm').html(data);
+                // Display Modal
+                // $('#rescheduled').modal('show'); 
+                // $( "#datepicker" ).datepicker();
+               
+            
+              // }
+        });
+});
+</script>
 <?php $this->load->view("fontend/layout/footer.php"); ?>
 
 

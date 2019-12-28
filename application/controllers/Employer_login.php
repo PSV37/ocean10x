@@ -57,7 +57,7 @@ class Employer_Login extends CI_Controller
         // print_r($this->db->last_query());die;
 
 
-                redirect('employer/employee');
+                redirect('employer/index');
         } else {
             $this->session->set_flashdata('emp_msg',
                 '<div class="alert alert-danger alert-dismissable">
