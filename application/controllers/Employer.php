@@ -1555,7 +1555,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         // print_r($result['emp_status']);die;
         if ($result['emp_status']=='1') {
            $status = array(
-            'emp_status' =>'2',
+            'emp_status' =>'3',
         );
         }elseif ($result['emp_status']=='2') {
              $status = array(
