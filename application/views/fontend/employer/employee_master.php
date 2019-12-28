@@ -50,13 +50,6 @@
         			  <th>Email Id</th>
         			  <th>Mobile No.</th>
         			  <th>Department</th>
-        			<!--   <th>Address</th>
-        			  <th>City</th>
-        			  <th>State</th>
-        			  <th>Country</th>
-        			  <th>Pincode</th>
-        			  <th>Created Date</th>
-        			  <th>Updated Date</th> -->
         			  <th>Actions</th>
         			  <th>Status</th>
               </thead>
@@ -71,24 +64,22 @@
           				<td><?php echo $key['email']; ?></td>
           				<td><?php echo $key['mobile']; ?></td>	
           				<td><?php echo $key['department_name']; ?></td>				
-          		<!-- 		<td><?php echo $key['address']; ?></td>
-          				<td><?php echo $key['city_name']; ?></td>
-          				<td><?php echo $key['state_name']; ?></td>
-          				<td><?php echo $key['country_name']; ?></td>
-          				<td><?php echo $key['pincode']; ?></td>
-          				<td><?php echo $key['emp_created_date']; ?></td>
-          				<td><?php echo $key['emp_updated_date']; ?></td> -->
-          				
-                  <td>
-                   &nbsp;&nbsp; <a href="<?php echo base_url();?>employer/editemployee?id=<?php echo $key['emp_id']; ?>"><i class="fa fa-pencil"></i></a>
-                   &nbsp;&nbsp; <!--<a href="<?php echo base_url();?>emp/deletestatus?id=<?php echo $key['emp_id']; ?>"> <i class="fa fa-toggle-on"></i></a>-->
-                  &nbsp;&nbsp; <a href='#' title='Delete Record' data-toggle="modal" data-target="#deleteModal"  onclick="$('#del_id').val('<?php echo $key['emp_id'];?>');"><i class="fa fa-trash-o"></i></a>
-          				</td>
+          		
+                 
+
+                   
+                 
+                 <!--  &nbsp;&nbsp; <a href='#' title='Delete Record' data-toggle="modal" data-target="#deleteModal"  onclick="$('#del_id').val('<?php echo $key['emp_id'];?>');"><i class="fa fa-trash-o"></i></a>
+          				</td> -->
                  <?php if($key['emp_status']=='1')
-                 {?> <td><button class="btn btn-success"  name="status" id="status" onclick="chnagestatus(this.value);" value="<?php echo $key['emp_id'];?>" ?>Active</button></td> <?}
+                 {?>
+                   <td>
+                  &nbsp;&nbsp; <a href="<?php echo base_url();?>employer/editemployee?id=<?php echo $key['emp_id']; ?>"><i class="fa fa-pencil"></i></a>
+                </td>
+                  <td><button class="btn btn-success"   name="status" id="status" onclick="chnagestatus(this.value);" value="<?php echo $key['emp_id'];?>" >Active</button></td> <?}
                  elseif($key['emp_status']=='2')
                   { ?> 
-                  <td style=""><button class="btn btn-danger"  name="status" id="status" onclick="chnagestatus(this.value);" value="<?php echo $key['emp_id'];?>" ?>Inactive</button></td>
+                  <td style=""><button class="btn btn-danger"  name="status" id="status" onclick="chnagestatus(this.value);" value="<?php echo $key['emp_id'];?>" >Inactive</button></td>
                   <?php } ?>
                 </tr>
 			        <?php } ?>
