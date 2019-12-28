@@ -305,7 +305,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
   getStates_load();
   getuseraccess_load();
 });
-
+</script>
 
 <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
 <script>
