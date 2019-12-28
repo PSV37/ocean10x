@@ -27,7 +27,7 @@
   
                 // If same return True. 
                 else{ 
-                    alert("Password Match: Welcome to GeeksforGeeks!") 
+                    // alert("Password Match: Welcome to GeeksforGeeks!") 
                     return true; 
                 } 
             } 
@@ -73,12 +73,13 @@
             </div>
 
             <div class="formrow">
-              <input name="confirm_password" type="password" id="confirm_password" class="form-control" placeholder="Password" min="5" required>
+              <input name="confirm_password" type="password" id="confirm_password" class="form-control" placeholder="Confirm Password" min="5" required>
               <input type="checkbox" onclick="myFunction()">Show Password
 
             </div>
             <div class="formrow"></div>
-            <input type="submit" class="btn" value="Reset Password">
+            <button class="btn btn-primary" type="submit">Reset Password</button>
+            <!-- <input type="submit" class="btn" value="Reset Password"> -->
           </div>
            </form>
           <!-- login form  end--> 

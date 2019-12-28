@@ -18,6 +18,35 @@
   </div>
 </div> -->
 <!-- Page Title End -->
+ <script> 
+          
+            // Function to check Whether both passwords 
+            // is same or not. 
+            function checkPassword(form) { 
+                password1 = form.company_password.value; 
+                password2 = form.confirm_password.value; 
+  
+                // If password not entered 
+                if (password1 == '') 
+                    alert ("Please enter Password"); 
+                      
+                // If confirm password not entered 
+                else if (password2 == '') 
+                    alert ("Please enter confirm password"); 
+                      
+                // If Not same return False.     
+                else if (password1 != password2) { 
+                    alert ("\nPassword did not match: Please try again...") 
+                    return false; 
+                } 
+  
+                // If same return True. 
+                else{ 
+                    // alert("Password Match: Welcome to GeeksforGeeks!") 
+                    return true; 
+                } 
+            } 
+        </script> 
  
             <div class="section lb">
                 <div class="container">
@@ -34,7 +63,7 @@
                                 <h5 align="center">Join the Ocean to hunt the best Professional !</h5><hr>
                                 <div class="formpanel">
                                 
-                                <form id="EmpRegistation" action="<?php echo base_url(); ?>employer_register/create" method="post" enctype="multipart/form-data" class="submit-form">
+                                <form id="EmpRegistation" action="<?php echo base_url(); ?>employer_register/create" method="post" enctype="multipart/form-data" class="submit-form" onSubmit = "return checkPassword(this)" >
                                     <div class="formrow">
                                         <div class="row">
                                             <div class="col-md-6 col-sm-12">
@@ -72,6 +101,13 @@
                                               <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="company_password"  class="form-control" placeholder="Password" value="<?php echo set_value('company_password'); ?>" ><?php echo form_error('company_password'); ?>
                                            </div>
 										   <div class="col-md-6 col-sm-12">
+                                             <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="confirm_password"  class="form-control" placeholder="confirm password" value="<?php echo set_value('company_password'); ?>" ><?php echo form_error('company_password'); ?>
+                                              </div>
+                                          </div><!-- end row -->
+                                    </div>
+                                    <div class="formrow">
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-12">
                                               <select  name="company_category" id="company_category" class="form-control services">
                                                 <option value="">Company Services</option>
                                                 <?php foreach($job_category as $dept){?>
