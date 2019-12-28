@@ -1270,8 +1270,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         		redirect(base_url().'employer/allemployee');
     	    }
     	}
-
-        $data['result'] = $this->Master_model->getMaster('department' ,$select=false);
+        $data['department'] = $this->Master_model->getMaster('department',$where=false);  
+        // $data['result'] = $this->Master_model->getMaster('department' ,$select=false);
         $data['city'] = $this->Master_model->getMaster('city',$where=false);
         $data['country'] = $this->Master_model->getMaster('country',$where=false);
         $data['state'] = $this->Master_model->getMaster('state',$where=false);

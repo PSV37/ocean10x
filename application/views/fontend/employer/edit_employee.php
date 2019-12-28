@@ -164,7 +164,7 @@
 								</div>
 								</div>
 									 <div class="panel-body"></div>
-                     <button type="submit" class="btn bg-navy" type="submit">Edit Employee</button>
+                     <button type="submit" class="btn bg-navy" type="submit">update Employee</button>
 								
 
             </form>
