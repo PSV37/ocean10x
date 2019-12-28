@@ -104,7 +104,7 @@
                       <div class="form-group">
                           <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
                           
-                            <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc[]" id="user_accc"  >
+                            <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc[]" id="user_accc" style="display: block;"  >
                             </select>
                          
                       </div>
@@ -244,7 +244,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
           
               }); 
             }
-           $(".empdash .selectpicker").css("display", "block");
+           // $(".empdash .selectpicker").css("display", "block");
        }
 	   
 	  $(document).ready(function(){
