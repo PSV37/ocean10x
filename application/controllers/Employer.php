@@ -1499,7 +1499,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         );
     
         $res = $this->Master_model->getMaster('employee',$where, $join);
-        print_r($this->db->last_query());die;
+        // print_r($this->db->last_query());die;
         $config = array();
             $config["base_url"] = base_url('employer/index');
             $config["total_rows"] = count($res);
@@ -1533,7 +1533,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
            $data["links"] = $this->pagination->create_links();
            
            $data["result"] = $this->Master_model->getMaster("employee", $where, $join, $order = "ASC", $field = "employee.emp_id", $select = false,$config["per_page"],$page, $search=false, $group_by = FALSE);
-        $this->load->view('fontend/employer/employee_master',$data);
+        $this->load->view('fontend/employer/deactivated_employees',$data);
     }
 
     public function allconsultants()
