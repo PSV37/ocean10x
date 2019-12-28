@@ -67,7 +67,7 @@
           <div class="formpanel">
             
             <div class="formrow">
-              <input name="password" type="password" id="myInput" class="form-control" placeholder="Password" min="5" required>
+              <input name="password" type="password" id="myInput" class="form-control" placeholder="Password" min="5" required><?php echo form_error('password'); ?>
              
 
             </div>

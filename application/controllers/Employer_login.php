@@ -97,7 +97,16 @@ class Employer_Login extends CI_Controller
     	 $this->load->view('fontend/employer/reset_password');
     	 return;
     	}
-	
+
+        $this->form_validation->set_rules('password', 'password', 'required|max_length[15]|min_length[8]|regex_match[/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/]');
+           
+        $this->form_validation->set_message('regex_match', 'You must provide One Uppercase,One Lowercase,Numbers and special Character');
+        if ($this->form_validation->run() == FALSE)
+           {
+                $this->load->view('fontend/employer/reset_password');
+
+           } 
+	   else{
 	    $pass    = md5($this->input->post('password'));
         print_r($hash);
 
@@ -124,6 +133,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             $this->session->set_flashdata('verify_msg', '<div class="alert alert-danger text-center">Sorry! There is error in verifying your account!</div>');
             redirect('employer_login');
         }
+    }
 
     }
     
