@@ -179,7 +179,25 @@ $("#delete_btn").click(function(e)
 
     })
 
-function Activate_use(id)
+function Activate_user(id)
+{
+   // alert(id);
+   if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Employer/change_status',
+                data:{id:id},
+                success:function(res){
+                     alert('status changed Successfully!');
+                     location.replace("<?php echo base_url();?>employer/editemployee?id="+id);
+                     // location.reload();
+                }
+                
+            }); 
+          }
+}
+
+function change_status(id)
 {
    // alert(id);
    if(id){
