@@ -3,6 +3,40 @@
 ?> 
 
 
+ <script> 
+          
+            // Function to check Whether both passwords 
+            // is same or not. 
+            function checkPassword(form) { 
+                password1 = form.password.value; 
+                password2 = form.confirm_password.value; 
+  
+                // If password not entered 
+                if (password1 == '') 
+                    alert ("Please enter Password"); 
+                      
+                // If confirm password not entered 
+                else if (password2 == '') 
+                    alert ("Please enter confirm password"); 
+                      
+                // If Not same return False.     
+                else if (password1 != password2) { 
+                    alert ("\nPassword did not match: Please try again...") 
+                    return false; 
+                } 
+  
+                // If same return True. 
+                else{ 
+                    alert("Password Match: Welcome to GeeksforGeeks!") 
+                    return true; 
+                } 
+            } 
+        </script> 
+
+
+
+
+
 <!-- Page Title start -->
 <div class="pageTitle">
   <div class="container">
@@ -27,13 +61,19 @@
           	
           <h5>Please enter new password</h5>
           <!-- login form -->
-           <form class="submit-form customform loginform" action="" method="post">
+           <form class="submit-form customform loginform" action="" method="post" onSubmit = "return checkPassword(this)">
            <?php echo $this->session->flashdata('verify_msg'); ?>
            <?php echo $this->session->flashdata('invalid'); ?>
           <div class="formpanel">
             
             <div class="formrow">
               <input name="password" type="password" id="myInput" class="form-control" placeholder="Password" min="5" required>
+             
+
+            </div>
+
+            <div class="formrow">
+              <input name="confirm_password" type="password" id="confirm_password" class="form-control" placeholder="Password" min="5" required>
               <input type="checkbox" onclick="myFunction()">Show Password
 
             </div>

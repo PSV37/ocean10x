@@ -37,7 +37,7 @@ class Employer extends MY_Employer_Controller
 
              $this->form_validation->set_rules('company_name', 'company name', 'required');
              $this->form_validation->set_rules('company_email', 'company email', 'required');
-             $this->form_validation->set_rules('alternate_email_id','alternate email','required');
+            $this->form_validation->set_rules('alternate_email_id','alternate email','required');
              $this->form_validation->set_rules('company_phone', 'company phone', 'required');
              $this->form_validation->set_rules('company_email', 'company email', 'required');
              $this->form_validation->set_rules('contact_name', 'contact name', 'required');
@@ -173,10 +173,37 @@ class Employer extends MY_Employer_Controller
             }
     }
 
-            public function job_post()
+public function job_post()
+{
+    $employer_id = $this->session->userdata('company_profile_id');
+    if ($_POST) {
+        $this->form_validation->set_rules('job_title', 'job title', 'required');
+        $this->form_validation->set_rules('company_email', 'company email', 'required');
+        $this->form_validation->set_rules('alternate_email_id','alternate email','required');
+        $this->form_validation->set_rules('company_phone', 'company phone', 'required');
+        $this->form_validation->set_rules('company_email', 'company email', 'required');
+        $this->form_validation->set_rules('contact_name', 'contact name', 'required');
+        $this->form_validation->set_rules('cont_person_level','contact level', 'required');
+        $this->form_validation->set_rules('cont_person_email','contact email', 'required');
+        $this->form_validation->set_rules('cont_person_mobile','contact mobile','required');
+        $this->form_validation->set_rules('company_address','company address', 'required');
+        $this->form_validation->set_rules('company_email', 'company email', 'required');
+        $this->form_validation->set_message('required', 'You must provide this field');
+             if ($this->form_validation->run() == FALSE)
             {
-                $employer_id = $this->session->userdata('company_profile_id');
-                if ($_POST) {
+                $data['city'] = $this->Master_model->getMaster('city',$where=false);
+                    $data['country'] = $this->Master_model->getMaster('country',$where=false);
+                    $data['state'] = $this->Master_model->getMaster('state',$where=false);
+                    $data['education_level'] = $this->Master_model->getMaster('education_level',$where=false);
+
+                    $where_cn= "status=1";
+                    $select = "job_role_title, skill_set ,id";
+                    $data['job_role_data'] = $this->Master_model->getMaster('job_role',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
+
+
+                    $this->load->view('fontend/employer/job_post', $data);
+            }
+            else{
                     $employer_id  = $this->session->userdata('company_profile_id');
                     $job_deadline = strtolower($this->input->post('job_deadline'));
                     $job_post_id  = $this->input->post('job_post_id');
@@ -228,6 +255,7 @@ class Employer extends MY_Employer_Controller
                   </div>');
                         redirect('job/show/'.$job_info['job_slugs']);
                     }
+                }
                 } else {
 					$data['city'] = $this->Master_model->getMaster('city',$where=false);
 					$data['country'] = $this->Master_model->getMaster('country',$where=false);

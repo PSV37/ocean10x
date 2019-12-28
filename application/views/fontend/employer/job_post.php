@@ -42,7 +42,7 @@
                                             	 if(!empty($job_info->job_title)){
                                             	 	echo $job_info->job_title;
                                             	 }
-                                            ?><?php echo set_value('job_title'); ?>" class="form-control" autocomplete="off">
+                                            ?><?php echo set_value('job_title'); ?>" class="form-control" autocomplete="off" required>
 											<?php echo form_error('job_title'); ?>
                   </div>
                 </div>
@@ -84,7 +84,7 @@
 				        <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Engagement Model<span class="required">*</span> </label>
-                    <select name="job_nature" class="form-control" data-style="btn-default" data-live-search="true">
+                    <select name="job_nature" class="form-control" data-style="btn-default" data-live-search="true" required >
                       <option value="">Select Engagement Model</option>
                       <?php if(!empty($job_info->job_nature)) {
                           echo $this->job_nature_model->selected($job_info->job_nature);
@@ -98,7 +98,7 @@
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label>Job Role<span class="required">*</span></label>
-                      <select name="job_role" id="job_role" class="form-control col-sm-5" onchange="getSkillsdetails(this.value)">
+                      <select name="job_role" id="job_role" class="form-control col-sm-5" onchange="getSkillsdetails(this.value)" required>
                         <option value="">Select Role</option>
                         <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
                            ?> 
