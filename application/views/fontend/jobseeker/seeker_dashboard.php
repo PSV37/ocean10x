@@ -29,11 +29,15 @@ h6{
 	font-style: bold;
 }
 	    
-</style>       
+</style>    
+<?php if (isset($this->session->flashdata('Message'))) {?>
 <div  id="smsg" class="alert alert-<?php echo $this->session->flashdata('type');?> alert-dismissible fade in">
   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
   <strong style="float: right;"><?php echo $this->session->flashdata('Message');?></strong>
-</div>
+</div> 
+
+<?php } ?>   
+
 
  <!-- Page Title start -->
 <!-- <div class="pageTitle">
