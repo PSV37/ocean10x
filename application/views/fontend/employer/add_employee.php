@@ -393,20 +393,7 @@ $(function() {
  });
 });
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-         $('.name-valid').on('keypress', function(e) {
-          var regex = new RegExp("^[a-zA-Z ]*$");
-          var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
-          if (regex.test(str)) {
-             return true;
-          }
-          e.preventDefault();
-          return false;
-         });
-        });
-</script>
+
 <!-- <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script> -->
 <!-- <script>
 $("#subject").select2( {
