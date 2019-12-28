@@ -101,7 +101,7 @@
                                               <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="company_password"  class="form-control" placeholder="Password" value="<?php echo set_value('company_password'); ?>" ><?php echo form_error('company_password'); ?>
                                            </div>
 										   <div class="col-md-6 col-sm-12">
-                                             <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="confirm_password"  class="form-control" placeholder="confirm password" value="<?php echo set_value('company_password'); ?>" ><?php echo form_error('company_password'); ?>
+                                             <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="confirm_password"  class="form-control" placeholder="Confirm password" value="<?php echo set_value('company_password'); ?>" ><?php echo form_error('company_password'); ?>
                                               </div>
                                           </div><!-- end row -->
                                     </div>
