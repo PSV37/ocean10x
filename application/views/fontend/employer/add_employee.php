@@ -34,76 +34,57 @@
            
     		<form method="post" action="<?php echo base_url();?>employer/addemployee" enctype="multipart/form-data">
 
-            	<div class="row">
+            	 <input type="hidden" name="cid" id="cid" value="<?php echo $result['emp_id'];?>">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="box-body">
+                 <div class="container-fluid">
+                   <div class="col-md-4">
+                    <div class="form-group">                                       
+                     <label for="exampleInputEmail1">Employee No<span class="required">*</span></label>
+                      <input type="number" min="1" name="emp_no" id="emp_no" class="form-control" value="<?php echo $result['emp_no']; ?>">
+                    </div>
+                    </div>
 
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="box-body">
-					  <?php
-              if (isset($message_display)) {
-                echo "<div class='message'>";
-                echo $message_display;
-                echo "</div>";
-              }
-            ?>
-					<div class="container-fluid">
-            <div class="col-md-4">
-              <div class="form-group">                                       
-							   <label for="exampleInputEmail1">Employee Number <span class="required">*</span></label>
-                  <input type="number" min="1" name="emp_no" id="emp_no" class="form-control" autocomplete="off" value="<?php echo set_value('emp_no'); ?>">
-								  <span style="color:#ff0000;"><?php echo form_error('emp_no'); ?></span>
-							</div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                 <label for="exampleInputEmail1">Name <span class="required">*</span></label>
-                  <input type="text" name="emp_name" id="emp_name" class="form-control name-valid" autocomplete="off" value="<?php echo set_value('emp_name'); ?>">
-                  <span style="color:#ff0000;"><?php echo form_error('emp_name'); ?></span>
-							</div>
-            </div>
-						<div class="col-md-4">
-              <div class="form-group">
-								<label for="exampleInputEmail1">Department<span class="required">*</span></label>
-								  <select  name="dept_id" id="dept_id" class="form-control department">
-  										<option value="">Select Department</option>
-  										<?php foreach($result as $key){?>
-  										<option value="<?php echo $key['dept_id']; ?>"><?php echo $key['department_name']; ?></option>
-  										<?php } ?>
-								  </select>
-							</div>
-            </div>
-         </div>
-				<div class="container-fluid">
-					<div class="col-md-4">
-					 <div class="form-group">
-             <label for="exampleInputEmail1">Email-Id<span class="required">*</span></label>
-              <input type="email" name="email" id="email" class="form-control" value="<?php echo set_value('email'); ?>">
-									<?php echo form_error('email'); ?>
-					 </div>
-				  </div>
-					<div class="col-md-4">
-						<div class="form-group">
-              <label for="exampleInputEmail1">Password<span class="required">*</span></label>
-               <input type="password" name="password" id="password" class="form-control" value="<?php echo set_value('password'); ?>">
-										<?php echo form_error('password'); ?>
-						</div>
-					</div>
-					<div class="col-md-4">
-             <div class="form-group">
-               <label for="exampleInputEmail1">Contact No.<span class="required">*</span></label>
-                <input type="tel" name="mobile" id="mobile" class="form-control" autocomplete="off" onkeypress="phoneno()" maxlength="10" value="<?php echo set_value('mobile'); ?>">
-									 <?php echo form_error('mobile'); ?>
-							</div>
-           </div>
-				</div>
-				<div class="container-fluid">
-					<div class="col-md-8">
-              <div class="form-group">
-                  <label for="exampleInputEmail1">Photo<span class="required">*</span></label>
-                   <input type="file" name="photo" id="photo" class="form-control">
-							</div>
-           </div>
-				</div>
-          <div class="container-fluid">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Name <span class="required">*</span></label>
+                        <input type="text" name="emp_name" id="emp_name" class="form-control" value="<?php echo $result['emp_name']; ?>">
+                      </div>
+                    </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Department<span class="required">*</span></label>
+                      <select  name="dept_id" id="dept_id" class="form-control department">
+                        <option value="">Select Department</option>
+                        <?php foreach($department as $key){?>
+                        <option value="<?php echo $key['dept_id']; ?>"<?php if($result['dept_id'] == $key['dept_id']){ echo "selected"; }?>><?php echo $key['department_name']; ?></option>
+                        <?php } ?>
+                        </select>
+                     </div>
+                  </div>
+                </div>
+                  <div class="container-fluid">
+                     <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Email-Id<span class="required">*</span></label>
+                        <input type="email" name="email" id="email" class="form-control" value="<?php echo $result['email']; ?>">
+                        </div>
+                       </div>
+                       <div class="col-md-4">
+                        <div class="form-group">
+                        <label for="exampleInputEmail1">Password<span class="required">*</span></label>
+                        <input type="Password" name="Password" id="Password" maxlength="15" class="form-control" value="<?php echo $result['Password']; ?>"  >
+                        </div>
+                      </div>
+                     <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Contact No.<span class="required">*</span></label>
+                        <input type="tel" name="mobile" id="mobile" class="form-control" value="<?php echo $result['mobile']; ?>" onkeypress="phoneno()" maxlength="10">
+                       </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
                    <div class="col-md-6">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Designation<span class="required">*</span></label>
@@ -120,80 +101,76 @@
                     </div>
                   </div>
                   <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
-                     
-                      <select class="selectpicker form-control" multiple data-live-search="true" name="user_accc" id="user_accc">
-                        
-                      </select>
-                    </div>
-                  </div>
-                 <!--  <div class="col-md-6">
                       <div class="form-group">
                           <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
                           
-                            <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc[]" id="user_accc">
+                            <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc[]" id="user_accc"  >
                             </select>
                          
                       </div>
-                  </div> -->
+                  </div>
                 </div>
-										<div class="container-fluid">
-				    
-	                                    	
-	                                        <div class="col-md-4 col-sm-4">
-	                                        	<div class="formrow">
-	                                        <label class="control-label">Company Country: <span class="required">*</span></label>
-										  <select  name="country_id" id="country_id" class="form-control country" onchange="getStates(this.value)">
-											<option value="">Select Country</option>
-											<?php foreach($country as $key){?>
-											<option value="<?php echo $key['country_id']; ?>"<?php if($company_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
-											<?php } ?>
-										  </select>
-	                                        </div>
-	                                    </div>
+                  
+                <div class="container-fluid">
+                    <div class="col-md-4 col-sm-4">
+                     <div class="formrow">
+                        <label class="control-label">Country: <span class="required">*</span></label>
+                        <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
+                           <option value="">Select Country</option>
+                          <?php foreach($country as $key){?>
+                          <option value="<?php echo $key['country_id']; ?>"<?php if($result['country_id']==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
+                          <?php } ?>
+                        </select>
+                       </div>
+                     </div>
 
-										
-										<div class="col-md-4 col-sm-4">
-											<div class="formrow">
-											<label class="control-label">Company State: <span class="required">*</span></label>
-											<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
-											<option value="">Select State</option>
-										     
-											</select>
-										</div>
-	                                    </div>
-										
-										<div class="col-md-4 col-sm-4">
-											<div class="formrow">
-											<label class="control-label">Company City: <span class="required">*</span></label>
-											<select  name="city_id" id="city_id" class="form-control">
-											<option value="">Select City</option>
-											 
-											</select>
-											</div>
-										</div>
-				                                             
-										</div>
-								<div class="container-fluid">
-									<div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Address<span class="required">*</span></label>
-									<textarea class="form-control ckeditor" name="address" autocomplete="off"></textarea> </div>
-								   </div>
-                                </div>	
-								<div class="container-fluid">
-									<div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Pincode<span class="required">*</span></label>
-									<input type="text" name="pincode" id="pincode" class="form-control" value="<?php echo set_value('pincode'); ?>">
-									<?php echo form_error('pincode'); ?>
-									</div>
-								   </div>
-                                </div>										
-									 <div class="panel-body"></div>
-                                <button type="submit" class="btn bg-navy" type="submit" name="submit_employee" id="submit_employee">Add Employe
-                                </button>
+                    
+                    <div class="col-md-4 col-sm-4">
+                      <div class="formrow">
+                      <label class="control-label">State: <span class="required">*</span></label>
+                      <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+                         <option value="">Select State</option>
+                      </select>
+                    </div>
+                 </div>
+                    
+                    <div class="col-md-4 col-sm-4">
+                      <div class="formrow">
+                      <label class="control-label">City: <span class="required">*</span></label>
+                      <select  name="city_id" id="city_id" class="form-control">
+                      <option value="">Select City</option>
+                       
+                      </select>
+                      </div>
+                    </div>
+                                                     
+                    </div>
+                <div class="container-fluid">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Address<span class="required">*</span></label>
+                       <textarea class="form-control ckeditor" name="address"><?php echo $result['address']; ?></textarea>
+                     </div>
+                  </div>
+                </div>     
+                <div class="container-fluid">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Pincode<span class="required">*</span></label>
+                     <input type="text" name="pincode" id="pincode" class="form-control" autocomplete="off" value="<?php echo $result['pincode']; ?>">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                   <label>Status:</label>
+                     <select name="emp_status" class="form-control">
+                      <option value="">Select</option>
+                      <option value="1"<?php if($result['emp_status']=='1'){ echo "selected"; } ?>>Active</option>
+                      <option value="2"<?php if($result['emp_status']=='2'){ echo "selected"; } ?>>Inactive</option>
+                   </select>
+                </div>
+                </div>
+                   <div class="panel-body"></div>
+                     <button type="submit" class="btn bg-navy" type="submit">Add Employee</button>
 								
 
             </form>
