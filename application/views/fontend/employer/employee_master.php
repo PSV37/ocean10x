@@ -85,7 +85,7 @@
                   { ?> 
                     <td></td>
                   <td style=""><button class="btn btn-danger"  name="status" id="status" value="<?php echo $key['emp_id'];?>" >Deactivate</button></td>
-                  <?php } ?> ?>
+                  <?php } ?>
 
                 </tr>
 			        <?php } ?>
