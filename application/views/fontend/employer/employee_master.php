@@ -189,7 +189,8 @@ function chnagestatus(id)
                 data:{id:id},
                 success:function(res){
                      alert('status changed Successfully!');
-                     location.reload();
+                     location.replace("<?php echo base_url();?>employer/editemployee?id="+id);
+                     // location.reload();
                 }
                 
             }); 

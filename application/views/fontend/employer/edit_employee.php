@@ -42,7 +42,7 @@
 
                     <div class="col-md-4">
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Name <span class="required">*</span></label>
+                        <label for="exampleInputEmail1">Full Name <span class="required">*</span></label>
                         <input type="text" name="emp_name" id="emp_name" class="form-control" value="<?php echo $result['emp_name']; ?>">
                       </div>
                     </div>
@@ -112,7 +112,7 @@
 										    <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
     											 <option value="">Select Country</option>
     											<?php foreach($country as $key){?>
-    											<option value="<?php echo $key['country_id']; ?>"<?php if($result['country_id']==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
+    											<option value="<?php echo $key['country_id']; ?>"<?php if($result['country_id']==$key['country_id']){ echo "selected"; } elseif ($key['country_name']=='India') {echo "selected";}?>><?php echo $key['country_name']; ?></option>
     											<?php } ?>
 										    </select>
 	                     </div>

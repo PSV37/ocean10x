@@ -1657,7 +1657,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             // print_r($data);
     		$this->Master_model->master_update($data,'employee',$where);
             // print_r($this->db->last_query());die;
-            $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Employee Updated Successfully!</div>');
+            $this->session->set_flashdata('success', '<div class="alert alert-success text-center">'.$this->input->post('emp_name').' has been activated !!</div>');
     		 redirect(base_url().'employer/allemployee');
 		}
     }
