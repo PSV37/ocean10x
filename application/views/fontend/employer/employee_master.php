@@ -52,6 +52,9 @@
         			  <th>Department</th>
         			  <th>Actions</th>
         			  <th>Status</th>
+                
+
+
               </thead>
               <tbody>
           		<?php $srno=0; foreach($result as $key){ $srno++; 
@@ -86,6 +89,8 @@
                     <td></td>
                   <td style=""><button class="btn btn-danger"  name="status" id="status" value="<?php echo $key['emp_id'];?>" >Deactivate</button></td>
                   <?php } ?>
+
+                  <td><button class="btn btn-info" data-target="#aceess_specifiers"   name="acess" id="acess" onclick="get_acess(this.value);" value="<?php echo $key['emp_id'];?>" >View Access given</button></td>
 
                 </tr>
 			        <?php } ?>
@@ -143,6 +148,40 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
       </div>
     </div>
   </div>
+
+  <form id="Personal-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_personalinfo');?>"  method="post" autocomplete="off">
+    <input type="hidden" value="<?php echo $js_personal_info->job_personal_info_id; ?>" name="js_personal_info_id">
+            
+     
+     
+      
+     
+         
+      
+     
+     
+   
+    <div class="panel-body"></div>   
+    
+
+   
+    
+
+
+    <div class="panel-body"></div>   
+           <!-- Copy Fields -->
+           <div class="row avatar-btns">
+                  <div class="col-md-9">
+                  </div>
+                  <div class="col-md-3">
+                    <button type="submit" class="btn btn-primary btn-block avatar-save2">Save </button>
+                  </div>
+                </div>
+      
+     
+      
+              
+            </form>
 
   </section>
 <!-- /.content -->

@@ -33,7 +33,7 @@
       <?php $this->load->view('fontend/layout/employer_left.php'); ?>
       <div class="content col-md-9">
         <div class="userccount empdash">
-          <div class="formpanel" id="smsg"> <?php echo $this->session->flashdata('success'); ?>&times;
+          <div class="formpanel"> 
            <div class="table-responsive">
             <table class="table table-bordered table-striped" id="dataTables-example">
               <thead>

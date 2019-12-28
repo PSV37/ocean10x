@@ -16,7 +16,7 @@
   	 <li> <a href="<?php echo base_url() ?>employer/questionbank-import" class=""><i class="fa fa-upload" aria-hidden="true"></i>Import Question</a></li> 
   	 <li> <a href="<?php echo base_url() ?>employer/addemployee" class=""><i class="fa fa-plus" aria-hidden="true"></i> Add Employee</a></li> 
   	 <li> <a href="<?php echo base_url() ?>employer/allemployee" class=""><i class="fa fa-user" aria-hidden="true"></i> Employee</a></li>
-      <li> <a href="<?php echo base_url() ?>employer/deactivated-employee" class=""><i class="fa fa-user" aria-hidden="true"></i>Deactivated User</a></li>
+      <li> <a href="<?php echo base_url() ?>employer/deactivated-employee" class=""><i class="fa fa-user-times" aria-hidden="true"></i>Deactivated Employees</a></li>
      <li> <a href="<?php echo base_url() ?>employer/add-new-consultant" class=""><i class="fa fa-plus" aria-hidden="true"></i> Add Consultant</a></li> 
      <li> <a href="<?php echo base_url() ?>employer/show-all-consultant" class=""><i class="fa fa-user" aria-hidden="true"></i>All Consultants</a></li> 	
      <li> <a href="<?php echo base_url() ?>employer/add-new-cv" class=""><i class="fa fa-plus" aria-hidden="true"></i> Add New CV</a></li> 
