@@ -46,7 +46,8 @@ class Employer_Login extends CI_Controller
                 $this->session->set_flashdata('emp_msg', '<div class="alert alert-success alert-dismissable">Thank You for joining “TheOcean” !</div>');
                 
             }else{
-             $this->session->set_flashdata('emp_msg', '<div class="alert alert-success alert-dismissable">Welcome Admin!</div>');
+             $this->session->set_flashdata('emp_msg', '<div class="alert alert-success alert-dismissable">Welcome to TheOcean !<br>You are logged in as Administrator for '.$this->session->userdata('company_name').' !</div>');
+             $this->session->set_flashdata('employee', '<div class="alert alert-success alert-dismissable">To start using TheOcean resources, we have created 3 users. Please enter their details !</div>');
          }
          
          $update_data=array('last_login'=>date('Y-m-d H:i:s'));

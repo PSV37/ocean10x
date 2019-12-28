@@ -27,6 +27,11 @@
 <div id="smsg" class="alert alert-alert-dismissible fade in">
   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
   <strong style="font-size: 15px;  float: right;"><?php echo $this->session->flashdata('emp_msg');?></strong>
+</div>
+
+<div id="smsg" class="alert alert-alert-dismissible fade in">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong style="font-size: 15px;" ><?php echo $this->session->flashdata('employee');?></strong>
 </div> 
 
 <div class="section lb">
