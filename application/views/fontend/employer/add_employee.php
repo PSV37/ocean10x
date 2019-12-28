@@ -267,7 +267,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
           
               }); 
             }
-          // $(".empdash .selectpicker").css("display", "block");
+           $(".empdash .selectpicker").css("display", "block");
        }
 	   
 	  $(document).ready(function(){
