@@ -51,7 +51,7 @@
   
   function record_audit(var1) {
     // body...
-    alert(var1);
+    // alert(var1);
     if (var1) {
       $.ajax({
                 type:'POST',
