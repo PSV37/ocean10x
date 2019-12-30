@@ -2717,13 +2717,13 @@ public function interview_scheduler()
     }
 
 
-     function get_acess_details()
+    public function get_acess_details()
     {
       $emp_id=$this->input->post('user');
       $where = "emp_id='$emp_id'";
-    $data = $this->Master_model->get_master_row('employee',$select = FALSE,$where);
-          echo json_encode($data);
-    // print_r($data);die;
+      $data['access_data'] = $this->Master_model->get_master_row('employee',$select = FALSE,$where);
+        $this->load->view('fontend/employer/access_given',$data);
+
 
     }
     
