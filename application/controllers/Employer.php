@@ -2732,7 +2732,7 @@ public function interview_scheduler()
                     $j=$i+1;
        
         $result .='<tr>';
-        $result .='<td>'.$j.'</td>';
+        $result .='<td>'.$j.'. </td>';
 
               $result .='<td value="'.$a[$i].'">'.$a[$i].'</td>';
         $result .='</tr>';
