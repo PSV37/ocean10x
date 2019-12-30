@@ -17,7 +17,7 @@
       <table>
         <?php 
            $data=explode(",", $access_data['access_to_employee']);
-          print_r($data);
+          // print_r($data);
          ?>
       </table>
 

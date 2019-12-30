@@ -2721,8 +2721,22 @@ public function interview_scheduler()
     {
       $emp_id=$this->input->post('user');
       $where = "emp_id='$emp_id'";
-      $data['access_data'] = $this->Master_model->get_master_row('employee',$select = FALSE,$where);
-        $this->load->view('fontend/employer/access_given',$data);
+      $data = $this->Master_model->get_master_row('employee',$select = FALSE,$where);
+        $dd= $data['access_to_employee'];
+        $a = explode(',', $dd);
+        
+        if(!empty($dd)){ 
+            $result .='<option value="">Select</option>';
+            // foreach($a as $keys){
+                for($i=0; $i<sizeof($a);$i++){
+              $result .='<td value="'.$a[$i].'">'.$a[$i].'</td>';
+            }
+        }else{
+        
+            $result ='<td value="">Data not available</td>';
+        }
+         echo $result;
+    }
 
 
     }

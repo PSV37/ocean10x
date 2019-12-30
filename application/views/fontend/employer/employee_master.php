@@ -271,7 +271,8 @@ function change_status(id)
               {
                 console.log(data);
                 $('.cnf_reschedule_frm').html(data);
-                //Display Modal
+                //Display Modal  $('#user_accc').html(res);
+                      // $("#user_accc").selectpicker('refresh');
                 $('#rescheduled').modal('show'); 
                 $( "#datepicker" ).datepicker();
                
