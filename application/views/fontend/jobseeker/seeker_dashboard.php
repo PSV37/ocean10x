@@ -30,7 +30,7 @@ h6{
 }
 	    
 </style>    
-<?php if (isset($this->session->flashdata('Message'))) {?>
+<?php if (!empty($this->session->flashdata('Message'))) {?>
 <div  id="smsg" class="alert alert-<?php echo $this->session->flashdata('type');?> alert-dismissible fade in">
   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
   <strong style="float: right;"><?php echo $this->session->flashdata('Message');?></strong>
