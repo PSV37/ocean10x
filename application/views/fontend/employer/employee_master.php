@@ -160,6 +160,9 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
         <h4 class="modal-title" align="center">View access given </h4>
       </div>
         <div class="modal-body cnf_reschedule_frm">
+          <table>
+            
+          </table>
     
       </div>
            
