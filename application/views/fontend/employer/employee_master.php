@@ -92,7 +92,7 @@
 
                   <!-- <td><button class="btn btn-info" data-target="#aceess_specifiers"   name="acess" id="acess"  value="<?php echo $key['emp_id'];?>" >View Access given</button></td> -->
 
-                  <td><a href="#" class="btn btn-info btn-xs getacessdetails" data-level_id='<?php echo $key['emp_id']; ?>' title="acess" data-toggle="modal" data-target="#aceess_specifiers" ><strong>View Access given</strong> </a></td>
+                  <td><a href="#" class="btn btn-info btn-xs getacessdetails" data-emp_id='<?php echo $key['emp_id']; ?>' title="acess" data-toggle="modal" data-target="#aceess_specifiers" ><strong>View Access given</strong> </a></td>
 
                 </tr>
 			        <?php } ?>
