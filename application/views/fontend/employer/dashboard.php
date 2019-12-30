@@ -17,13 +17,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
 }
 </style> 
 
-<?php if (!empty($this->session->flashdata('emp_msg'))) {?>
-<div id="smsg" class="alert alert-alert-dismissible fade in">
-  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  <strong style="font-size: 15px;  float: right;"><?php echo $this->session->flashdata('emp_msg');?></strong>
-</div>             
 
-<?php } ?>
           
 <!-- Page Title start -->
 <div class="pageTitle">
@@ -38,7 +32,8 @@ $company_profile_id = $this->session->userdata('company_profile_id');
     </div>
   </div>
 </div>
-<!-- Page Title End -->     
+<!-- Page Title End --> 
+
           <div class="section lb">
                 <div class="container">
                     <div class="row">
@@ -59,6 +54,13 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                          
 							<div class="userccount empdash">
                             <div class="formpanel">
+                            	<?php if (!empty($this->session->flashdata('emp_msg'))) {?>
+<div id="smsg" class="alert alert-alert-dismissible fade in">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong style="font-size: 15px;  float: right;"><?php echo $this->session->flashdata('emp_msg');?></strong>
+</div>             
+
+<?php } ?>
                                 <?php echo $this->session->flashdata('msg'); ?>
                                 <?php echo $this->session->flashdata('success_msg'); ?>
                                 <form id="submit" action="" method="post" class="submit-form" enctype="multipart/form-data"  >
