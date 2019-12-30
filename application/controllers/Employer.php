@@ -2739,7 +2739,7 @@ public function interview_scheduler()
     }
 
 
-    }
+    
     
 } // end class
 
