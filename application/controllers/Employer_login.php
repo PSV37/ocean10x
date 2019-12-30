@@ -47,6 +47,8 @@ class Employer_Login extends CI_Controller
             if($employer_data['last_login']=="0000-00-00 00:00:00")
             {
                 $this->session->set_flashdata('emp_msg', '<div class="alert alert-success alert-dismissable">Thank You for joining “TheOcean” !</div>');
+
+                $this->session->set_flashdata('emp_msg', '<div class="alert alert-success alert-dismissable">Please fill the details!</div>');
                
         // print_r($this->db->last_query());die;
 
