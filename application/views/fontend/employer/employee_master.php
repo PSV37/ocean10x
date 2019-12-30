@@ -263,20 +263,20 @@ function change_status(id)
     var user = $(this).data('emp_id');
     alert(user);
      $.ajax({
-              // url: "<?php echo base_url();?>Employer/get_acess_details",
-              // type: "POST",
-              // data: {emp_id:emp_id},
+              url: "<?php echo base_url();?>Employer/get_acess_details",
+              type: "POST",
+              data: {user:user},
           
-              // success: function(data)
-              // {
-              //   console.log(data);
-              //   $('.cnf_reschedule_frm').html(data);
-                // Display Modal
-                // $('#rescheduled').modal('show'); 
-                // $( "#datepicker" ).datepicker();
+              success: function(data)
+              {
+                console.log(data);
+                $('.cnf_reschedule_frm').html(data);
+                Display Modal
+                $('#rescheduled').modal('show'); 
+                $( "#datepicker" ).datepicker();
                
             
-              // }
+              }
         });
 });
 </script>
