@@ -2773,6 +2773,18 @@ public function interview_scheduler()
          echo $result;
     }
 
+    public function add_to_audit()
+    {
+        $action=$this->input->post('var1');
+        $company_name=$this->session->userdata('company_name');
+        $data=array('company'=>$company_name,
+            'Action'=>$company_name.' visited '.$action,
+            'datetime'=>date('Y-m-d H:i:S'));
+
+        $result=$this->Master_model->master_insert($data,'employer_audit_record');
+
+    }
+
 
     
     
