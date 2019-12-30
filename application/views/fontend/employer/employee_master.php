@@ -264,7 +264,7 @@ function change_status(id)
     event.stopImmediatePropagation();
     //(... rest of your JS code)
     var user = $(this).data('emp_id');
-    alert(user);
+    // alert(user);
      $.ajax({
               url: "<?php echo base_url();?>Employer/get_acess_details",
               type: "POST",
@@ -274,8 +274,7 @@ function change_status(id)
               {
                 console.log(data);
                 $('.cnf_reschedule_frm').html(data);
-                //Display Modal  $('#user_accc').html(res);
-                      // $("#user_accc").selectpicker('refresh');
+                
                 $('#aceess_specifiers').modal('show'); 
                 $( "#datepicker" ).datepicker();
                

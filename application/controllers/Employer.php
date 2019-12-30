@@ -1479,8 +1479,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $this->pagination->initialize($config);
 
            $data["links"] = $this->pagination->create_links();
+           $day = date("Y-m-d H:i:s", strtotime('-24 hours', time()));
+            $where='employee.org_id="'.$employer.'" and employee.emp_status!="0" and employee.emp_status="3" and employee.emp_updated_date < "'.$day.'"';
     	   
-           $data["result"] = $this->Master_model->getMaster("employee", $where, $join, $order = "ASC", $field = "employee.emp_id", $select = false,$config["per_page"],$page, $search=false, $group_by = FALSE);
+           $data["result"] = $this->Master_model->getMaster("employee", $where=$where, $join, $order = "ASC", $field = "employee.emp_id", $select = false,$config["per_page"],$page, $search=false, $group_by = FALSE);
     	$this->load->view('fontend/employer/employee_master',$data);
     }
 
