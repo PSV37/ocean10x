@@ -161,10 +161,20 @@ class Employer extends MY_Employer_Controller
         );
         $where11['org_id']=$employer_id;
         $this->Master_model->master_update($del,'employee',$where11);
-                $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Company Profile details have been successfully updated !</div>');
+        $company_profile_id=$this->session->userdata('company_profile_id');
+             $whereres = "company_profile_id='$company_profile_id'";
+            $employer_data= $this->Master_model->get_master_row('company_profile',$select = FALSE,$whereres);
+            $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Company Profile details have been successfully updated !</div>');
                 $company_info = $this->company_profile_model->get($employer_id);
                 $country = $this->Master_model->getMaster('country',$where=false);
+          
+            if($employer_data['last_login']=="0000-00-00 00:00:00")
+            {
                 $this->load->view('fontend/employer/dashboard', compact('company_info', 'country', 'branches'));
+            }else{
+                redirect('employer/employee');
+
+            }
                  
             }
         }

@@ -44,13 +44,17 @@ class Employer_Login extends CI_Controller
             if($employer_data['last_login']=="0000-00-00 00:00:00")
             {
                 $this->session->set_flashdata('emp_msg', '<div class="alert alert-success alert-dismissable">Thank You for joining “TheOcean” !</div>');
-                
+                $where11['company_profile_id']=$company_profile_id;
+             
+        $this->Master_model->master_update($update_data,'company_profile',$where11);
+        // print_r($this->db->last_query());die;
+
+
+                redirect('employer/profile_setting');
             }else{
              $this->session->set_flashdata('emp_msg', '<div class="alert alert-success alert-dismissable">Welcome to TheOcean !<br>You are logged in as Administrator for '.$this->session->userdata('company_name').' !</div>');
              $this->session->set_flashdata('employee', '<div class="alert alert-success alert-dismissable">To start using TheOcean resources, we have created 3 users. Please enter their details !</div>');
-         }
-         
-         $update_data=array('last_login'=>date('Y-m-d H:i:s'));
+               $update_data=array('last_login'=>date('Y-m-d H:i:s'));
           $where11['company_profile_id']=$company_profile_id;
              
         $this->Master_model->master_update($update_data,'company_profile',$where11);
@@ -58,6 +62,9 @@ class Employer_Login extends CI_Controller
 
 
                 redirect('employer/index');
+         }
+         
+       
         } else {
             $this->session->set_flashdata('emp_msg',
                 '<div class="alert alert-danger alert-dismissable">
