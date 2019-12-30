@@ -2726,11 +2726,13 @@ public function interview_scheduler()
         $a = explode(',', $dd);
         
         if(!empty($dd)){ 
-            // $result .='<option value="">Select</option>';
+        $result .='<table>';
             // foreach($a as $keys){
                 for($i=0; $i<sizeof($a);$i++){
               $result .='<tr value="'.$a[$i].'">'.$a[$i].'</tr>';
             }
+        $result .='</table>';
+
         }else{
         
             $result ='<tr value="">Data not available</tr>';
