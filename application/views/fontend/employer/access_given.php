@@ -16,7 +16,7 @@
     <label class="control-label" for="email">Access given<span class="required">*</span></label>
       <table>
         <?php foreach ($access_data as $row) {
-          $data=explode(",", $row['access_to_employee'])
+          $data=explode(",", $row['access_to_employee']);
           print_r($data);
         } ?>
       </table>
