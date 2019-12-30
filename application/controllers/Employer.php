@@ -2722,7 +2722,7 @@ public function interview_scheduler()
       $emp_id=$this->input->post('user');
       $where = "emp_id='$emp_id'";
     $data['access'] = $this->Master_model->get_master_row('employee',$select = FALSE,$where);
-    print_r($data);
+    print_r($data);die;
 
     }
     
