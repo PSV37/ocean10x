@@ -167,8 +167,9 @@ class Employer extends MY_Employer_Controller
           
             if($employer_data['last_login']=="0000-00-00 00:00:00")
             {
+                $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">“To start using TheOcean resources, we have created 3 users. Please enter their details !</div>');
                 redirect('employer/employee');
-                
+
             }
             else
             {
