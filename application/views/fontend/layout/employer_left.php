@@ -34,6 +34,6 @@
   
   function record_audit(var1) {
     // body...
-    alert('var1');
+    alert(var1);
   }
 </script>
