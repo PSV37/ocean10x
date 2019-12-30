@@ -16,8 +16,8 @@
     <label class="control-label" for="email">Access given</label>
       <table>
         <?php 
-          // $data=explode(",", $access_data['access_to_employee']);
-          print_r($access_data);
+           $data=explode(",", $access_data['access_to_employee']);
+          print_r($data);
          ?>
       </table>
 
