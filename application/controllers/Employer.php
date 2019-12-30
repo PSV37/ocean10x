@@ -167,14 +167,16 @@ class Employer extends MY_Employer_Controller
           
             if($employer_data['last_login']=="0000-00-00 00:00:00")
             {
+                redirect('employer/employee');
+                
+            }
+            else
+            {
+
                 $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Company Profile details have been successfully updated !</div>');
                 $company_info = $this->company_profile_model->get($employer_id);
                 $country = $this->Master_model->getMaster('country',$where=false);
                 $this->load->view('fontend/employer/dashboard', compact('company_info', 'country', 'branches'));
-            }
-            else
-            {
-                redirect('employer/employee');
                  
             }
             }
