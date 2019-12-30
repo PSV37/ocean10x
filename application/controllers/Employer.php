@@ -2729,7 +2729,14 @@ public function interview_scheduler()
         $result .='<table>';
             // foreach($a as $keys){
                 for($i=0; $i<sizeof($a);$i++){
-              $result .='<tr value="'.$a[$i].'">'.$a[$i].'</tr>';
+                    $j=$i+1;
+       
+        $result .='<tr>';
+        $result .='<td>'.$j.'</td>';
+
+              $result .='<td value="'.$a[$i].'">'.$a[$i].'</td>';
+        $result .='</tr>';
+
             }
         $result .='</table>';
 
