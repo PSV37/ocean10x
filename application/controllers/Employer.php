@@ -2779,7 +2779,8 @@ public function interview_scheduler()
         $company_name=$this->session->userdata('company_name');
         $data=array('company'=>$company_name,
             'Action'=>$company_name.' visited '.$action,
-            'datetime'=>date('Y-m-d H:i:S'));
+            'datetime'=>date('Y-m-d H:i:S'),
+            'updated_by' =>$company_name);
 
         $result=$this->Master_model->master_insert($data,'employer_audit_record');
 
