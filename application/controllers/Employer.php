@@ -156,6 +156,11 @@ class Employer extends MY_Employer_Controller
                 $branches = $this->Master_model->getMaster('company_branches',$where=$wheres);
 
                 $this->company_profile_model->update($company_profile, $employer_id);
+                $del = array(
+            'address' =>$this->input->post('company_address'),
+        );
+        $where11['org_id']=$employer_id;
+        $this->Master_model->master_update($del,'employee',$where11);
                 $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Company Profile details have been successfully updated !</div>');
                 $company_info = $this->company_profile_model->get($employer_id);
                 $country = $this->Master_model->getMaster('country',$where=false);
