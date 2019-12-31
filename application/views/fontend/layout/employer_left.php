@@ -61,6 +61,7 @@
         <div class="modal-body cnf_reschedule_frm">
           <div class="row">
             <div class="col-md-12">
+              <input type="hidden" name="redirect_id" id="redirect_id">
               <label  class="control-label" ><span class="required">*</span></label>
                 <input class="form-control" type="Password" name="Password">
               
@@ -92,7 +93,8 @@
                 url:'<?php echo base_url();?>Employer/add_to_audit',
                 data:{var1:var1,var2:var2},
                 success:function(res){
-                  $('#superadmin').modal('show'); 
+                  $('#superadmin').modal('show');
+                   $('#redirect_id').val(var2); 
                  
                     
                 }
