@@ -1735,14 +1735,26 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     		$id = $this->input->post('cid');
     		$where['emp_id']=$id;
             // print_r($data);
+             $company_profile_id=$this->session->userdata('company_profile_id');
+             $whereres = "company_profile_id='$company_profile_id'";
+            $employer_data= $this->Master_model->get_master_row('company_profile',$select = FALSE,$whereres);
+          
+            if($employer_data['last_login']=="0000-00-00 00:00:00")
+            {
+                $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">“Add Superadmin Details</div>');
+                $this->load->view('fontend/Employer/Superadmin')
+
+            }
+            else{
     		$this->Master_model->master_update($data,'employee',$where);
              $update_data=array('last_login'=>date('Y-m-d H:i:s'));
           $where11['company_profile_id']=$user_id;
              
         $this->Master_model->master_update($update_data,'company_profile',$where11);
-            // print_r($this->db->last_query());die;
+            
             $this->session->set_flashdata('success', '<div class="alert alert-success text-center">'.$this->input->post('emp_name').' has been activated !!</div>');
     		 redirect(base_url().'employer/allemployee');
+            }
 
 		}
     }
