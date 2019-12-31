@@ -1,4 +1,4 @@
-<?php 
+t<?php 
   $this->load->view('fontend/layout/employer_header.php');
   foreach ($total_applicantlist as $v_applicant)
   {

@@ -2837,9 +2837,24 @@ public function superadmin()
 
     }
 }
-public function check_super_pass()
+ function check_super_pass()
 {
-    echo "string";
+    // echo "string";
+    $password=$this->input->post('Password');
+    $pass=md5($password);
+    $company_profile_id=$this->session->userdata('company_profile_id');
+    $whereres = "company_id='$company_profile_id' and superadmin_password ='$pass' ";
+    $superadmin= $this->Master_model->get_master_row('company_superadmin',$select = FALSE,$whereres);
+    if (!empty($superadmin)) {
+        return true;
+    }
+    else
+    {
+         return false;
+    }
+   
+
+
 }
     
     
