@@ -70,8 +70,10 @@
     
       </div>
    <div class="modal-footer">
-             
-              <button type="submit" class="btn btn-primary" onclick="submit_password();" >Submit</button>
+             <script type="text/javascript">
+               var myBookId = $(this).data('level_id');
+             </script>
+              <button type="submit" class="btn btn-primary" onclick="submit_password(myBookId);">Submit</button>
             </div>
            
      
@@ -98,10 +100,10 @@
             });
     }
   }
-  function submit_password()
+  function submit_password(id)
   {
     var Password=$('#Password').val();
-    var id = $(this).data('level_id');
+    // var id = $(this).data('level_id');
     alert(id);
 
     if (Password) {
