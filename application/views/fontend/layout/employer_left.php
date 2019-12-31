@@ -9,7 +9,7 @@
 
       <li> <a href="<?php echo base_url(); ?>employer" class=""> <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard </a> </li>
 
-      <li title="superadmin" data-toggle="modal" data-target="#superadmin"  onclick="record_audit('Edit Profile');"  data-level_id='Edit_Profile' id="Edit_Profile" value="<?php echo base_url(); ?>employer/profile_setting"> <a href="  class=""> <i class="fa fa-user-circle-o" aria-hidden="true" ></i> Edit Profile </a> </li>
+      <li title="superadmin" data-toggle="modal" data-target="#superadmin"  onclick="record_audit('Edit Profile');"  data-level_id='Edit_Profile' id="Edit_Profile" value="<?php echo base_url(); ?>employer/profile_setting"> <a href="#" class=""> <i class="fa fa-user-circle-o" aria-hidden="true" ></i> Edit Profile </a> </li>
 
       <li onclick="record_audit('Post New Job ');"> <a href="<?php echo base_url(); ?>employer/job-post" class=""> <i class="fa fa-pencil" aria-hidden="true"></i> Post New Job </a> </li>
 
