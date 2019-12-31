@@ -36,20 +36,20 @@
                    <div class="col-md-4">
                     <div class="form-group">                                       
 							       <label for="exampleInputEmail1">Employee No<span class="required">*</span></label>
-                      <input type="number" min="1" name="emp_no" id="emp_no" class="form-control" value="<?php echo $result['emp_no']; ?>">
+                      <input type="number" min="1" name="emp_no" id="emp_no" required class="form-control" value="<?php echo $result['emp_no']; ?>">
 								    </div>
                     </div>
 
                     <div class="col-md-4">
                       <div class="form-group">
                         <label for="exampleInputEmail1">Full Name <span class="required">*</span></label>
-                        <input type="text" name="emp_name" id="emp_name" class="form-control" value="<?php echo $result['emp_name']; ?>">
+                        <input type="text" name="emp_name" id="emp_name" required class="form-control" value="<?php echo $result['emp_name']; ?>">
                       </div>
                     </div>
 								  <div class="col-md-4">
                     <div class="form-group">
     									<label for="exampleInputEmail1">Department<span class="required">*</span></label>
-    									<select  name="dept_id" id="dept_id" class="form-control department">
+    									<select  name="dept_id" id="dept_id" class="form-control department" required>
     										<option value="">Select Department</option>
     										<?php foreach($department as $key){?>
     										<option value="<?php echo $key['dept_id']; ?>"<?php if($result['dept_id'] == $key['dept_id']){ echo "selected"; }?>><?php echo $key['department_name']; ?></option>
@@ -62,19 +62,19 @@
   									 <div class="col-md-4">
     								  <div class="form-group">
                         <label for="exampleInputEmail1">Email-Id<span class="required">*</span></label>
-                        <input type="email" name="email" id="email" class="form-control" value="<?php echo $result['email']; ?>">
+                        <input type="email" name="email" id="email" class="form-control" value="<?php echo $result['email']; ?>" required>
     										</div>
   									   </div>
                        <div class="col-md-4">
                         <div class="form-group">
                         <label for="exampleInputEmail1">Password<span class="required">*</span></label>
-                        <input type="Password" name="Password" id="Password" maxlength="15" class="form-control" value="<?php echo $result['Password']; ?>"  >
+                        <input type="Password" name="Password" id="Password" maxlength="15" class="form-control" value="<?php echo $result['Password']; ?>" required >
                         </div>
                       </div>
 									   <div class="col-md-4">
                       <div class="form-group">
                         <label for="exampleInputEmail1">Contact No.<span class="required">*</span></label>
-                        <input type="tel" name="mobile" id="mobile" class="form-control" value="<?php echo $result['mobile']; ?>" onkeypress="phoneno()" maxlength="10">
+                        <input type="tel" name="mobile" id="mobile" class="form-control" value="<?php echo $result['mobile']; ?>" onkeypress="phoneno()" maxlength="10" required>
 									     </div>
                     </div>
 								</div>
@@ -83,7 +83,7 @@
                     <div class="form-group">
                       <label for="exampleInputEmail1">Designation<span class="required">*</span></label>
                      
-                      <select class="form-control" name="user_role" id="user_role" onchange="getuseraccess(this.value);">
+                      <select class="form-control" required name="user_role" id="user_role" onchange="getuseraccess(this.value);">
                         <option value="">Select designation</option>
                         <?php foreach($roles as $key){?>
                         <option value="<?php echo $key['user_role_id']; ?>"<?php if($result['user_role'] == $key['user_role_id']){ echo "selected"; }?>><?php echo $key['user_roles']; ?></option>
@@ -98,7 +98,7 @@
                       <div class="form-group">
                           <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
                           
-                            <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc[]" id="user_accc"  >
+                            <select class="selectpicker  form-control" multiple data-live-search="true" name="user_acc[]" id="user_accc" required >
                             </select>
                          
                       </div>
@@ -109,7 +109,7 @@
                     <div class="col-md-4 col-sm-4">
 	                   <div class="formrow">
 	                      <label class="control-label">Country: <span class="required">*</span></label>
-										    <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
+										    <select  name="country_id" id="country_id" class="form-control" required onchange="getStates(this.value)">
     											 <option value="">Select Country</option>
     											<?php foreach($country as $key){?>
     											<option value="<?php echo $key['country_id']; ?>"<?php if($result['country_id']==$key['country_id']){ echo "selected"; } elseif ($key['country_name']=='India') {echo "selected";}?>><?php echo $key['country_name']; ?></option>
@@ -122,7 +122,7 @@
 										<div class="col-md-4 col-sm-4">
 											<div class="formrow">
 											<label class="control-label">State: <span class="required">*</span></label>
-											<select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+											<select  name="state_id" id="state_id" class="form-control" required onchange="getCitys(this.value)">
 											   <option value="">Select State</option>
 											</select>
 										</div>
@@ -131,7 +131,7 @@
 										<div class="col-md-4 col-sm-4">
 											<div class="formrow">
 											<label class="control-label">City: <span class="required">*</span></label>
-											<select  name="city_id" id="city_id" class="form-control">
+											<select  name="city_id" id="city_id" class="form-control" required>
 											<option value="">Select City</option>
 											 
 											</select>
@@ -143,7 +143,7 @@
 									<div class="col-md-12">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Address<span class="required">*</span></label>
-									     <textarea class="form-control ckeditor" name="address"><?php echo $result['address']; ?></textarea>
+									     <textarea class="form-control ckeditor" required name="address"><?php echo $result['address']; ?></textarea>
 									   </div>
 								  </div>
                 </div>		 
@@ -151,12 +151,12 @@
 								<div class="col-md-6">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Pincode<span class="required">*</span></label>
-									   <input type="text" name="pincode" id="pincode" class="form-control" autocomplete="off" value="<?php echo $result['pincode']; ?>">
+									   <input type="text" name="pincode" id="pincode" class="form-control" autocomplete="off" value="<?php echo $result['pincode']; ?>" required>
 									</div>
 								</div>
 								<div class="col-sm-6">
 								   <label>Status:</label>
-									   <select name="emp_status" class="form-control">
+									   <select name="emp_status" class="form-control" required>
   										<option value="">Select</option>
   										<option value="1"<?php if($result['emp_status']=='1'){ echo "selected"; } ?>>Active</option>
   										<option value="2"<?php if($result['emp_status']=='2'){ echo "selected"; } ?>>Inactive</option>

@@ -2821,6 +2821,7 @@ public function superadmin()
         'superadmin_email'=> $email,
         'superadmin_password' => md5($password),
         'created_by'=> $employer_id,
+        'company_id' =>$employer_id,
         'created_on' => date('Y-m-d H:i:s'));
 
         $result=$this->Master_model->master_insert($superadmin,'company_superadmin');
@@ -2829,14 +2830,17 @@ public function superadmin()
              
         $this->Master_model->master_update($update_data,'company_profile',$where11);
             
-            $this->session->set_flashdata('success', '<div class="alert alert-success text-center">'.$this->input->post('emp_name').' has been activated !!</div>');
+            $this->session->set_flashdata('emp_msg', '<div class="alert alert-success text-center">Thank You for choosing The Ocean !!</div>');
         
         $company_info = $this->company_profile_model->get($employer_id);
         $this->load->view('fontend/employer/dashboard_main', compact('company_info'));
 
     }
 }
-
+public function check_super_pass()
+{
+    echo "string";
+}
     
     
 } // end class
