@@ -52,7 +52,7 @@
 <div id="superadmin" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
-    <form id="Personal-info" class="form-horizontal" action="<?php echo base_url('employee/check_super_pass');?>"  method="post" autocomplete="off">
+    <form id="Personal-info" class="form-horizontal" action="<?php echo base_url('employer/check_super_pass');?>"  method="post" autocomplete="off">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
