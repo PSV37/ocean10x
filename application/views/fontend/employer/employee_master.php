@@ -79,15 +79,15 @@
                    <td>
                   &nbsp;&nbsp; <a href="<?php echo base_url();?>employer/editemployee?id=<?php echo $key['emp_id']; ?>"><i class="fa fa-pencil"></i></a>
                 </td>
-                  <td><button class="btn btn-success"   name="status" id="status" onclick="change_status(this.value);" value="<?php echo $key['emp_id'];?>" >Deactive</button></td> <?}
+                  <td><button class="btn btn-success" title='Deactivate' data-toggle="modal" data-target="#deactivateModal"  name="status" id="status"  onclick="change_status(this.value);" value="<?php echo $key['emp_id'];?>" >Deactive</button></td> <?}
                  elseif($key['emp_status']=='2')
                   { ?> 
                     <td></td>
-                  <td style=""><button class="btn btn-warning"  name="status" id="status" onclick="Activate_user(this.value);" value="<?php echo $key['emp_id'];?>" >Inactive</button></td>
+                  <td style=""><button class="btn btn-warning" title='Activate' data-toggle="modal" data-target="#deleteModal"  name="status" id="status" onclick="Activate_user(this.value);" value="<?php echo $key['emp_id'];?>" >Inactive</button></td>
                   <?php } elseif($key['emp_status']=='3')
                   { ?> 
                     <td></td>
-                  <td style=""><button class="btn btn-danger"  name="status" id="status" value="<?php echo $key['emp_id'];?>" >Deactivate</button></td>
+                  <td style=""><button class="btn btn-danger"  name="status" id="status" value="<?php echo $key['emp_id'];?>" >Deactivated</button></td>
                   <?php } ?>
 
                   <!-- <td><button class="btn btn-info" data-target="#aceess_specifiers"   name="acess" id="acess"  value="<?php echo $key['emp_id'];?>" >View Access given</button></td> -->
@@ -126,7 +126,32 @@
 document.getElementsByClassName('form-control').innerHTML+="<br />";
 </script>
 <!-- delete model -->
-  <div id="deleteModal" class="modal fade" role="dialog">
+  <div id="deactivateModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" align="center">Deactivate Employee</h4>
+        </div>
+        <form  id="del" autocomplete="off" enctype="multipart/formdata" method="POST">
+          <div class="modal-body" id="deleteContent">
+            <input type="hidden" name="del_id" id="del_id">
+            <div class="form-group">
+              <p><b>Are you sure want to Deactivate Account? Once  the account get deactivated you cannot reactivate it...</b></p>
+            </div>
+          </div>
+          <center><div id='res'></div></center>
+          <div class="modal-footer">
+            <button class="btn btn-success submit" id="deactivate_btn" name="submit">Confirm</button>
+            <button type="button" class="btn btn-primary btn-md" data-dismiss="modal">Cancel</button>      
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+   <div id="deleteModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
       <!-- Modal content-->
       <div class="modal-content">
@@ -196,6 +221,41 @@ $("#delete_btn").click(function(e)
 
                     // $("button#del_id").button('reset');
                        $("#res").html('<div class="alert alert-danger"><button type="button" class="close">×</button>Record Successfully Deleted!</div>');
+                          window.setTimeout(function() {
+                                $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                                    $(this).remove(); 
+                                });
+                                location.reload();
+                            }, 1500);
+                          $('.alert .close').on("click", function(e){
+                                $(this).parent().fadeTo(500, 0).slideUp(500);
+                          });
+
+                    }
+            });
+
+
+
+    })
+$("#deactivate_btn").click(function(e)
+   { 
+      var id=$('#status').val();
+
+      e.preventDefault();
+      
+         $.ajax({ 
+                
+                url:'<?php echo base_url();?>Employer/change_status',
+                   
+                    type: "POST",
+                    data: {
+                           id:id  
+                    },
+                    success: function(data)
+                    {
+
+                    // $("button#del_id").button('reset');
+                       $("#res").html('<div class="alert alert-danger"><button type="button" class="close">×</button>User Deactivated Successfully!</div>');
                           window.setTimeout(function() {
                                 $(".alert").fadeTo(500, 0).slideUp(500, function(){
                                     $(this).remove(); 
