@@ -1742,7 +1742,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             if($employer_data['last_login']=="0000-00-00 00:00:00")
             {
                 $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">“Add Superadmin Details</div>');
-                $this->load->view('fontend/employer/superadmin');
+            $this->load->view('fontend/employer/Superadmin',$data);  
+
+                
 
             }
             else{
