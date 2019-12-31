@@ -1516,7 +1516,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $employer = $this->session->userdata('company_profile_id');
         //$company=$employer['company_profile_id'];
         $day = date("Y-m-d H:i:s", strtotime('-24 hours', time()));
-        $where='employee.org_id="'.$employer.'" and employee.emp_status!="0" and employee.emp_status="3" and employee.emp_updated_date < "'.$day.'"';
+        $where='employee.org_id="'.$employer.'" and employee.emp_status="0"  and employee.emp_updated_date < "'.$day.'"';
 
         //$data['result'] = $this->Master_model->getMaster('industry',$where=FALSE);
         $join = array(
@@ -1635,12 +1635,39 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
          // print_r($result['emp_status']);die;
         
            $status = array(
-            'emp_status' =>'3',);
+            'emp_status' =>'0',);
       
         $this->Master_model->master_update($status,'employee',$where11);
         // print_r($this->db->last_query());die();
 
        
+    }
+    function activate()
+    {
+         $id = $this->input->post('id');
+        $where11['emp_id']=$id;
+
+        $result= $this->Master_model->get_master_row('employee',$select = FALSE,$where);
+         // print_r($result['emp_status']);die;
+        
+           $status = array(
+            'emp_status' =>'1',);
+      
+        $this->Master_model->master_update($status,'employee',$where11);
+    }
+
+    function suspend()
+    {
+         $id = $this->input->post('id');
+        $where11['emp_id']=$id;
+
+        $result= $this->Master_model->get_master_row('employee',$select = FALSE,$where);
+         // print_r($result['emp_status']);die;
+        
+           $status = array(
+            'emp_status' =>'3',);
+      
+        $this->Master_model->master_update($status,'employee',$where11);
     }
 	
 	/*Edit Employee*/
