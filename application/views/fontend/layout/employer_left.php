@@ -27,7 +27,7 @@
 
   	 <li onclick="record_audit('Employee');"> <a href="<?php echo base_url() ?>employer/allemployee" class=""><i class="fa fa-user" aria-hidden="true"></i>Employees</a></li>
 
-      <li onclick="record_audit('Deactivated Employees');"> <a href="<?php echo base_url() ?>employer/deactivated-employee" class=""><i class="fas fa-user-slash" aria-hidden="true"></i>
+      <li onclick="record_audit('Deactivated Employees');"> <a href="<?php echo base_url() ?>employer/deactivated-employee" class=""><i class="fa fa-user-slash" aria-hidden="true"></i>
       Deactivated Employees</a></li>
 
       <li onclick="record_audit('suspended Employees');"> <a href="<?php echo base_url() ?>employer/suspended-employee" class=""><i class="fa fa-user-times" aria-hidden="true"></i>
