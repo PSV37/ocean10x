@@ -1738,6 +1738,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
              $company_profile_id=$this->session->userdata('company_profile_id');
              $whereres = "company_profile_id='$company_profile_id'";
             $employer_data= $this->Master_model->get_master_row('company_profile',$select = FALSE,$whereres);
+            $this->Master_model->master_update($data,'employee',$where);
+
           
             if($employer_data['last_login']=="0000-00-00 00:00:00")
             {
@@ -1748,7 +1750,6 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
             }
             else{
-    		$this->Master_model->master_update($data,'employee',$where);
              $update_data=array('last_login'=>date('Y-m-d H:i:s'));
           $where11['company_profile_id']=$user_id;
              
@@ -2807,6 +2808,34 @@ public function interview_scheduler()
 
     }
 
+
+public function superadmin()
+{
+    $employer_id=$this->session->userdata('company_profile_id');
+    if ($_POST) {
+
+       $username=$this->input->post('username');
+       $email=$this->input->post('email');
+       $password=$this->input->post('password');
+       $superadmin=array('superadmin_name'=> $username,
+        'superadmin_email'=> $email,
+        'superadmin_password' => md5($password),
+        'created_by'=> $employer_id,
+        'created_on' => date('Y-m-d H:i:s'));
+
+        $result=$this->Master_model->master_insert($superadmin,'company_superadmin');
+        $update_data=array('last_login'=>date('Y-m-d H:i:s'));
+          $where11['company_profile_id']=$employer_id;
+             
+        $this->Master_model->master_update($update_data,'company_profile',$where11);
+            
+            $this->session->set_flashdata('success', '<div class="alert alert-success text-center">'.$this->input->post('emp_name').' has been activated !!</div>');
+        
+        $company_info = $this->company_profile_model->get($employer_id);
+        $this->load->view('fontend/employer/dashboard_main', compact('company_info'));
+
+    }
+}
 
     
     

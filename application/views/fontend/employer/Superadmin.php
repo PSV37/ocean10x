@@ -53,11 +53,11 @@
                         <div class="userccount">
                             <div class="formpanel">
                            <?php echo $this->session->flashdata('change_password'); ?>
-                               <form id="submit" class="submit-form" action="<?php echo base_url(); ?>employer/change_password" method="post">
+                               <form id="submit" class="submit-form" action="<?php echo base_url(); ?>employer/superadmin" method="post">
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12">
                                            <label class="control-label">User Name</label>
-                                            <input type="username" name="username" class="form-control" readonly >Super Admin
+                                            <input type="username" name="username" class="form-control" readonly value="Super Admin" >
                                             <br>
                                             <label class="control-label">Email</label>
                                             <input type="email" name="email" class="form-control" placeholder="Superadmin Email">
