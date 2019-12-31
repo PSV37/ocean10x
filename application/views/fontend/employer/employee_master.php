@@ -266,6 +266,7 @@ $("#deactivate_btn").click(function(e)
                           $('.alert .close').on("click", function(e){
                                 $(this).parent().fadeTo(500, 0).slideUp(500);
                           });
+                          location.reload();
 
                     }
             });
