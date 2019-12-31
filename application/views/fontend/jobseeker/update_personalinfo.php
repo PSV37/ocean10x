@@ -312,11 +312,11 @@
                         <div class="col-md-12">
                           <div class="col-md-6"> 
                             <label>Language</label>
-                            <input type="text" name="language" id="language" class="form-control" value="">
+                            <input type="text" name="language" id="language" required class="form-control" value="">
                           </div>
                           <div class="col-md-6">  
                             <label>Proficiency</label>
-                            <select class="form-control" name="proficiency" id="proficiency">
+                            <select class="form-control" name="proficiency" required  id="proficiency">
                               <option value="">Select Proficiency</option>
                               <option value="Beginner">Beginner</option>
                               <option value="Proficient">Proficient</option>

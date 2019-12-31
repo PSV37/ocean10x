@@ -1198,16 +1198,23 @@ function getstate(){
     public function addemployee(){
     	$user_id = $this->session->userdata('company_profile_id');
     	if(isset($_POST['submit_employee'])){
+
+           $this->form_validation->set_rules('password', 'password', 'required|max_length[15]|min_length[8]|regex_match[/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/]');
+          
+          
+           
     		$this->form_validation->set_rules('emp_no', 'Employee No.', 'required|min_length[3]|max_length[6]|alpha_numeric');
     		$this->form_validation->set_rules('emp_name', 'Name', 'required');
     		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[employee.email]');
     		$this->form_validation->set_rules('mobile', ' Contact No.', 'required|regex_match[/^[0-9]{10}$/]');
-    		$this->form_validation->set_rules('password', 'password', 'required|max_length[15]|min_length[6]|alpha_numeric');
+    		
     		$this->form_validation->set_rules('dept_id', 'Department', 'required');
     		$this->form_validation->set_rules('address', 'Address', 'required');
     		$this->form_validation->set_rules('pincode', 'Pincode', 'required|numeric');
     		
             array('required' => 'You must provide a %s.');
+             $this->form_validation->set_message('required', 'You must provide this field');
+            $this->form_validation->set_message('regex_match', 'You must provide One Uppercase,One Lowercase,Numbers and special Character');
     		
             if ($this->form_validation->run() == FALSE)
             {
