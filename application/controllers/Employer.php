@@ -2846,16 +2846,16 @@ public function superadmin()
     $company_profile_id=$this->session->userdata('company_profile_id');
     $whereres = "company_id='$company_profile_id' and superadmin_password ='$pass' ";
     $superadmin= $this->Master_model->get_master_row('company_superadmin',$select = FALSE,$whereres);
+    print_r($this->db->last_query());die;
    
    if (!empty($superadmin)) {
 
-    redirect($redirect);
+    redirect('employer/'.$redirect);
        
    }
    else
    {
-     $company_info = $this->company_profile_model->get($employer_id);
-        $this->load->view('fontend/employer/dashboard_main', compact('company_info'));
+     redirect_back();
    }
    
 
