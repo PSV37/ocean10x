@@ -240,6 +240,7 @@ $("#delete_btn").click(function(e)
 $("#deactivate_btn").click(function(e)
    { 
       var id=$('#status').val();
+      alert(id);
 
       e.preventDefault();
       
