@@ -1635,10 +1635,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
          // print_r($result['emp_status']);die;
         
            $status = array(
-            'emp_status' =>'3',
+            'emp_status' =>'3',);
       
         $this->Master_model->master_update($status,'employee',$where11);
-        print_r($this->db->last_query());die();
+        // print_r($this->db->last_query());die();
 
        
     }
