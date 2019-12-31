@@ -1633,19 +1633,11 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
         $result= $this->Master_model->get_master_row('employee',$select = FALSE,$where);
          // print_r($result['emp_status']);die;
-        if ($result['emp_status']=='1') {
+        
            $status = array(
             'emp_status' =>'3',
-        );
+      
         $this->Master_model->master_update($status,'employee',$where11);
-           
-        }elseif ($result['emp_status']=='2') {
-             $status = array(
-            'emp_status' =>'1',
-        );
-        $this->Master_model->master_update($status,'employee',$where11);
-             
-        }
         print_r($this->db->last_query());die();
 
        
