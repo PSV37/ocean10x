@@ -2847,7 +2847,7 @@ public function superadmin()
     $whereres = "company_id='$company_profile_id' and superadmin_password ='$pass' ";
     $superadmin= $this->Master_model->get_master_row('company_superadmin',$select = FALSE,$whereres);
     // print_r($this->db->last_query());die;
-    print_r($redirect);die;
+    // print_r($redirect);die;
    
    if (!empty($superadmin)) {
 
