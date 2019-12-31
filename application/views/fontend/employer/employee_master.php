@@ -51,7 +51,7 @@
         			  <th>Department</th>
         			  <th>Actions</th>
                 <th>Status</th>
-                <th>Suspended</th>
+                <th>Suspend</th>
         			  <th>Access Given</th>
                 
 
@@ -92,7 +92,7 @@
                   <?php } ?>
 
                   <!-- <td><button class="btn btn-info" data-target="#aceess_specifiers"   name="acess" id="acess"  value="<?php echo $key['emp_id'];?>" >View Access given</button></td> -->
-                   <td><button class="btn btn-success" title='suspend' data-toggle="modal" data-target="#suspendModal"  name="suspend" id="suspend"   value="<?php echo $key['emp_id'];?>" >Suspend</button></td>
+                   <td><button class="btn btn-warning" title='suspend' data-toggle="modal" data-target="#suspendModal"  name="suspend" id="suspend"   value="<?php echo $key['emp_id'];?>" >Suspend</button></td>
 
                   <td><a href="#" class="btn btn-info btn-xs getacessdetails" data-emp_id='<?php echo $key['emp_id']; ?>' title="acess" data-toggle="modal" data-target="#aceess_specifiers" ><strong>View Access given</strong> </a></td>
 
