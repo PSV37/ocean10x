@@ -88,12 +88,13 @@
     // body...
     // alert(var1);
     if (var2) {
+      $('#superadmin').modal('show');
       $.ajax({
                 type:'POST',
                 url:'<?php echo base_url();?>Employer/add_to_audit',
                 data:{var1:var1,var2:var2},
                 success:function(res){
-                  $('#superadmin').modal('show');
+                  
                    $('#redirect_id').val(var2); 
                  
                     
