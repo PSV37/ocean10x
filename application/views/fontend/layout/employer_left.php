@@ -92,7 +92,7 @@
                 url:'<?php echo base_url();?>Employer/add_to_audit',
                 data:{var1:var1,var2:var2},
                 success:function(res){
-                  $('#rescheduled').modal('show'); 
+                  $('#superadmin').modal('show'); 
                  
                     
                 }
