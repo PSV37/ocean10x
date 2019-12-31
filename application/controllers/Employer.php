@@ -2845,13 +2845,7 @@ public function superadmin()
     $company_profile_id=$this->session->userdata('company_profile_id');
     $whereres = "company_id='$company_profile_id' and superadmin_password ='$pass' ";
     $superadmin= $this->Master_model->get_master_row('company_superadmin',$select = FALSE,$whereres);
-    if (!empty($superadmin)) {
-        return true;
-    }
-    else
-    {
-         return false;
-    }
+    echo json_encode($superadmin);
    
 
 
