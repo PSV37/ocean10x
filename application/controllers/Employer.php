@@ -81,13 +81,15 @@ class Employer extends MY_Employer_Controller
                         }
                         else
                         {
-                            $company_name=$this->session->userdata('company_name');
+                            $company=$this->session->userdata('company_name');
                             $data=array('company'=>$company_name,
+                                       'action_taken_for'=>$company_name,
+                                        'field_changed' =>$parameter,
                                         'Action'=>$company_name.' changed '.$parameter,
                                         'datetime'=>date('Y-m-d H:i:s'),
                                         'updated_by' =>$company_name);
                             $result=$this->Master_model->master_insert($data,'employer_audit_record');
-                            print_r($this->db->last_query());die;
+                            // print_r($this->db->last_query());die;
 
                         }
                     }
@@ -2911,6 +2913,8 @@ public function interview_scheduler()
         $action=$this->input->post('var1');
         $company_name=$this->session->userdata('company_name');
         $data=array('company'=>$company_name,
+            'action_taken_for'=>$company_name,
+            'field_changed' =>$action,
             'Action'=>$company_name.' visited '.$action,
             'datetime'=>date('Y-m-d H:i:s'),
             'updated_by' =>$company_name);

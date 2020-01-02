@@ -35,8 +35,9 @@
             <table class="table table-bordered table-striped" id="dataTables-example">
               <thead>
                 <th>Sr.No</th>
-        			  <th>company Name</th>
-        			  <th>action</th>
+        			  <th>Action taken For</th>
+                <th>Field changed</th>
+                <th>action</th>
         			  <th>Date & Time</th>
         			  <th>Updated By</th>
         			  <!-- <th>Department</th> -->
@@ -47,7 +48,8 @@
           				
                 <tr>
                   <td><?php echo $srno; ?></td>
-          				<td><?php echo $key['company']; ?></td>
+                  <td><?php echo $key['action_taken_for']; ?></td>
+          				<td><?php echo $key['field_changed']; ?></td>
           				<td><?php echo $key['Action']; ?></td>
           				<td><?php echo $key['datetime']; ?></td>
           				<td><?php echo $key['updated_by']; ?></td>	
