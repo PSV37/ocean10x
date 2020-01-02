@@ -1825,7 +1825,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             
             $where['emp_id']=$id;
             
-                $old_company_profile=$this->Master_model->get_master_row('employee',$select = FALSE,$where);
+                $old_employee_profile=$this->Master_model->get_master_row('employee',$select = FALSE,$where);
                 $old_array_keys=array_keys($old_employee_profile);
                 $old_array_values=array_values($old_employee_profile);
                 // print_r($old_array_keys);
