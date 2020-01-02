@@ -299,6 +299,16 @@ public function job_post()
                       redirect('job/show/'.$job_info['job_slugs']);
                     } else {
                         $this->job_posting_model->update($job_info, $job_post_id);
+
+                        $company_name=$this->session->userdata('company_name');
+                        $data=array('company'=>$company_name,
+                            'action_taken_for'=>$company_name,
+                            'field_changed' =>'Posted A job',
+                            'Action'=>$company_name.' Posted A Job ',
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
+
+                    $result=$this->Master_model->master_insert($data,'employer_audit_record');
                         $this->session->set_flashdata('update',
                             '<div class="alert alert-success alert-dismissable">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
