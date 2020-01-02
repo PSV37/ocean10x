@@ -293,7 +293,6 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
   $(document).ready(function(){
     
 
-   $('.selectpicker').selectpicker();
 
     function getStates_load(){
         var id = $('#country_id').val();
