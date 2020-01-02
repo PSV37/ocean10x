@@ -60,6 +60,15 @@ class Employer extends MY_Employer_Controller
                 $this->load->view('fontend/employer/dashboard', compact('company_info', 'country', 'branches'));
             }
             else{
+                $company_profile_id=$this->session->userdata('company_profile_id');
+                $whereres = "company_profile_id='$company_profile_id'";
+                $old_company_profile=$this->Master_model->get_master_row('company_profile',$select = FALSE,$whereres);
+                $old_array_keys=array_keys($old_company_profile);
+                $old_array_values=array_values($old_company_profile);
+                print_r($old_array_keys);
+                print_r($old_array_values);die;
+
+
 
             $company_profile = array(
                 'company_name'     => $this->input->post('company_name'),
@@ -114,72 +123,66 @@ class Employer extends MY_Employer_Controller
                 }
             }
 
-            if(!empty($employer_id)) {
+            if(!empty($employer_id)) 
+            {
                 $branch_address=$this->input->post('Branchname');
                 $country=$this->input->post('BranchCountry');
                 $state=$this->input->post('Branchstate');
                 $city=$this->input->post('BranchCity');
                 $pincode=$this->input->post('Branchpincodes');
-                // print_r($pincode);
-                if (isset($branch_address) && !empty($branch_address) && !empty($country) && !empty($state) && !empty($city) && !empty($pincode)) {
-                    # code...
                
-                // print_r($branch_address);
-                $branchadddata=explode(",",$branch_address);
-                $branchcountrydata=explode(",",$country);
-                $branchstatedata=explode(",",$state);
-                $branchcitydata=explode(",",$city);
-                $branchpincodedata=explode(",",$pincode);
-                $size=sizeof($branchadddata);
-                for ($i=0; $i <$size ; $i++) { 
-                    // print_r($branchadddata[$i]);
-                    $response['branch_address']=$branchadddata[$i];
-                    $response['country']=$branchcountrydata[$i];
-                    $response['state']=$branchstatedata[$i];
-                    $response['city']=$branchcitydata[$i];
-                    $response['pincode']=$branchpincodedata[$i];
-                    $response['company_profile_id']=$employer_id;
-                    $response['created_on']=date('Y-m-d H:i:s');
-                     // print_r($response);
-                    $result=$this->Master_model->master_insert($response,'company_branches');
-
-                }
-            }
+                if (isset($branch_address) && !empty($branch_address) && !empty($country) && !empty($state) && !empty($city) && !empty($pincode))
+                 {
                 
+                    $branchadddata=explode(",",$branch_address);
+                    $branchcountrydata=explode(",",$country);
+                    $branchstatedata=explode(",",$state);
+                    $branchcitydata=explode(",",$city);
+                    $branchpincodedata=explode(",",$pincode);
+                    $size=sizeof($branchadddata);
+                    for ($i=0; $i <$size ; $i++) 
+                    { 
+                        $response['branch_address']=$branchadddata[$i];
+                        $response['country']=$branchcountrydata[$i];
+                        $response['state']=$branchstatedata[$i];
+                        $response['city']=$branchcitydata[$i];
+                        $response['pincode']=$branchpincodedata[$i];
+                        $response['company_profile_id']=$employer_id;
+                        $response['created_on']=date('Y-m-d H:i:s');
+                         // print_r($response);
+                        $result=$this->Master_model->master_insert($response,'company_branches');
 
-                //  $result=$this->Master_model->master_insert($response,'company_branches');
-
-              
+                    }
+                }
+               
                 
                 $wheres="status='0' AND company_profile_id='$employer_id' ";
                 
                 $branches = $this->Master_model->getMaster('company_branches',$where=$wheres);
 
                 $this->company_profile_model->update($company_profile, $employer_id);
-                $del = array(
-            'address' =>$this->input->post('company_address'),
-        );
-        $where11['org_id']=$employer_id;
-        $this->Master_model->master_update($del,'employee',$where11);
-        $company_profile_id=$this->session->userdata('company_profile_id');
-             $whereres = "company_profile_id='$company_profile_id'";
-            $employer_data= $this->Master_model->get_master_row('company_profile',$select = FALSE,$whereres);
+                $del = array('address' =>$this->input->post('company_address'),);
+                $where11['org_id']=$employer_id;
+                $this->Master_model->master_update($del,'employee',$where11);
+                $company_profile_id=$this->session->userdata('company_profile_id');
+                 $whereres = "company_profile_id='$company_profile_id'";
+                $employer_data= $this->Master_model->get_master_row('company_profile',$select = FALSE,$whereres);
           
-            if($employer_data['last_login']=="0000-00-00 00:00:00")
-            {
-                $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">“To start using TheOcean resources, we have created 3 users. Please enter their details !</div>');
-                redirect('employer/employee');
+                if($employer_data['last_login']=="0000-00-00 00:00:00")
+                {
+                    $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">“To start using TheOcean resources, we have created 3 users. Please enter their details !</div>');
+                    redirect('employer/employee');
 
-            }
-            else
-            {
+                }
+                else
+                {
 
-                $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Company Profile details have been successfully updated !</div>');
-                $company_info = $this->company_profile_model->get($employer_id);
-                $country = $this->Master_model->getMaster('country',$where=false);
-                $this->load->view('fontend/employer/dashboard', compact('company_info', 'country', 'branches'));
-                 
-            }
+                    $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Company Profile details have been successfully updated !</div>');
+                    $company_info = $this->company_profile_model->get($employer_id);
+                    $country = $this->Master_model->getMaster('country',$where=false);
+                    $this->load->view('fontend/employer/dashboard', compact('company_info', 'country', 'branches'));
+                     
+                }
             }
         }
 
