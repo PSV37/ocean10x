@@ -97,8 +97,8 @@
                   <div class="col-md-6">
                       <div class="form-group">
                           <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
-                          
-                            <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc[]" id="user_accc">
+                           <select class="selectpicker" data-style="btn-default" data-live-search="true" name="user_acc[]" id="user_accc" multiple>
+                           <!--  <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc[]" id="user_accc"> -->
                             </select>
                          
                       </div>
@@ -332,7 +332,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 
        function getuseraccess_load(){
          var id = $('#user_role').val();
-         alert(id);
+         // alert(id);
       if(id){
           
         
