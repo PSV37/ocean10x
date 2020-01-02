@@ -97,8 +97,8 @@
                   <div class="col-md-6">
                       <div class="form-group">
                           <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
-                         
-                            <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc[]" id="user_accc">
+                          
+                            <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc[]" id="user_accc" required >
                             </select>
                          
                       </div>
@@ -268,7 +268,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
           
               }); 
             }
-           $(".empdash .selectpicker").css("display", "block");
+          // $(".empdash .selectpicker").css("display", "block");
        }
      
 // function getaccess(id)
@@ -292,8 +292,6 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
   
   $(document).ready(function(){
     
-
-   $('.selectpicker').selectpicker();
 
     function getStates_load(){
         var id = $('#country_id').val();
@@ -334,7 +332,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 
        function getuseraccess_load(){
          var id = $('#user_role').val();
-         // alert(id);
+         alert(id);
       if(id){
           
         

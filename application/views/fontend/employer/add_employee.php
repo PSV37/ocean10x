@@ -99,7 +99,7 @@
                       <div class="form-group">
                           <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
                           
-                            <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc[]" id="user_accc" required>
+                            <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc[]" id="user_accc" required >
                             </select>
                          
                       </div>

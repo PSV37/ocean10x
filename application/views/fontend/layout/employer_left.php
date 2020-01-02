@@ -1,8 +1,6 @@
 <?php $employer_id=$this->session->userdata('company_profile_id'); 
                 $type=$this->session->userdata('comp_type');
           ?>
-
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
 <div class="col-md-3">
   <nav class="side-menu hidden-sm hidden-xs">
     <ul>
