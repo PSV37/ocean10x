@@ -54,7 +54,6 @@ class Employer_register extends CI_Controller
         if($_POST){
            $this->form_validation->set_rules('company_password', 'password', 'required|max_length[15]|min_length[8]|regex_match[/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/]');
            // array('required' => 'You must provide a %s.','regex_match' =>'You must provide One Uppercase,One Lowercase,Numbers');
-           array('regex_match'=>'You must provide One Uppercase,One Lowercase,Numbers');
            $this->form_validation->set_message('regex_match', 'You must provide One Uppercase,One Lowercase,Numbers and special Character');
              if ($this->form_validation->run() == FALSE)
             {
