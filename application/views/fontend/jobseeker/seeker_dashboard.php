@@ -330,7 +330,13 @@ h6{
 				           	 		
 
 				           	 	 ?>
-				           	 	<div class="progress-bar bg-success" style="width:<?php echo $total;?>%"><?php echo round($total); ?> percent Profile completed.</div><hr>
+				           	 	 <div class="progress bg-warning">
+								 <div class="progress-bar bg-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $total;?>%"><?php echo round($total); ?> percent Profile completed.
+								60%
+								 </div>
+								</div>
+				           	 	<!-- <div class="progress-bar bg-success" style="width:<?php echo $total;?>%"><?php echo round($total); ?> percent Profile completed.</div> -->
+				           	 	<hr>
 				           	 	<br>
 				           	</div>
 		             	</div>
