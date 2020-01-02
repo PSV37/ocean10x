@@ -82,7 +82,7 @@ class Employer extends MY_Employer_Controller
                         else
                         {
                             $company_name=$this->session->userdata('company_name');
-                            $action=preg_replace('/[^a-zA-Z0-9_ %\[\]\.\(\)%&-]/s','', $parameter);
+                            $action= str_replace("_", '', $parameter);
                             $data=array('company'=>$company_name,
                                        'action_taken_for'=>$company_name,
                                         'field_changed' =>$action,
