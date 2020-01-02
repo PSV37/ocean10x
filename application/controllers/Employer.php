@@ -2867,7 +2867,7 @@ public function interview_scheduler()
 
             $result .='<table>';
               $result .='<tr>';
-                $result .='<td value="">No access given!! Edit Employee Details and assign a Access rights... </td>';
+                $result .='<td value="">No access given!! Edit  Employee Details and assign  Access rights... </td>';
         $result .='</tr>';
         $result .='</table>';
 
