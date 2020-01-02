@@ -69,7 +69,7 @@
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Job Level<span class="required">*</span></label>
-                    <select name="job_nature" required class="form-control" data-style="btn-default" data-live-search="true">
+                    <select name="job_level" required class="form-control" data-style="btn-default" data-live-search="true">
                       <option value="">Select Job Level</option>
                       <?php if(!empty($job_info->job_level)) {
                           echo $this->job_level_model->selected($job_info->job_level);
