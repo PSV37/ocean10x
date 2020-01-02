@@ -73,7 +73,7 @@
                        <div class="col-md-4">
                         <div class="form-group">
                         <label for="exampleInputEmail1">Password<span class="required">*</span></label>
-                        <input type="Password" name="Password" id="Password" maxlength="15" class="form-control" value="<?php echo $result['Password']; ?>" required >
+                        <input type="Password" name="Password" id="Password" maxlength="15" class="form-control" value="<?php echo $result['password']; ?>" >
                         </div>
                       </div>
 									   <div class="col-md-4">
