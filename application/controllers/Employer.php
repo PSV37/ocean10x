@@ -1880,7 +1880,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                         'datetime'=>date('Y-m-d H:i:s'),
                                         'updated_by' =>$company_name);
                             $result=$this->Master_model->master_insert($data,'employer_audit_record');
-                            print_r($this->db->last_query());die;
+                            // print_r($this->db->last_query());die;
 
                         }
                     }
