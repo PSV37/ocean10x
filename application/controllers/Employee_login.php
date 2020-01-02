@@ -32,7 +32,7 @@ class Employee_Login extends CI_Controller
         $emp_email      = $this->input->post('email');
         $emp_password   = md5($this->input->post('password'));
         $result         = $this->employee_login_model->check_login_info($emp_email, $emp_password);
-        // echo $this->db->last_query(); die;
+        echo $this->db->last_query(); die;
         if (!empty($result)) {
             $data['emp_id'] = $result->emp_id;
             $data['name']       = $result->emp_name;
