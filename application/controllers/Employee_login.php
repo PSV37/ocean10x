@@ -38,10 +38,24 @@ class Employee_Login extends CI_Controller
             $data['name']       = $result->emp_name;
             $data['company_id'] = $result->org_id;
             $data['photo']      = $result->photo;
-            $this->session->set_userdata($data);
+            $data['status']      = $result->emp_status;
+
+            if ($data['status']=='1') {
+               $this->session->set_userdata($data);
              $this->session->set_flashdata('welcome', '<div class="alert alert-success alert-dismissable">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>Welcome '.$data['name'].'</div>');
                 redirect('employee/index');
+            }elseif ($data['status']=='3') {
+               $this->session->set_flashdata('emp_msg',
+                '<div class="alert alert-danger alert-dismissable">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                   Your account has been suspended please contact your admin to activate it..
+                  </div>');
+            redirect('employee_login');
+            }
+
+
+            
         } else {
             $this->session->set_flashdata('emp_msg',
                 '<div class="alert alert-danger alert-dismissable">

@@ -18,6 +18,8 @@ class Employee_Login_model extends MY_Model
             $this->db->where('email',$email);
             $this->db->where('password',$password);
             $this->db->where('emp_status','1');
+            $this->db->where('emp_status','3');
+
             //$this->db->cache_off();
             $query = $this->db->get();
             $result=$query->row();
