@@ -165,7 +165,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
           <div class="modal-body" id="deleteContent">
             <input type="hidden" name="del_id" id="del_id">
             <div class="form-group">
-              <p><b>Are you sure want to Suspend this  Account?</b></p>
+              <p><b>Are you sure  you want to Suspend this  Account?</b></p>
             </div>
           </div>
           <center><div id='res'></div></center>
