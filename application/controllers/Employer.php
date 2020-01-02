@@ -1798,7 +1798,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
     public function postEditData(){
         $user_id=$this->session->userdata('company_profile_id');
-         $this->form_validation->set_rules('Password', 'Password', 'required|max_length[15]|min_length[8]|regex_match[/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/]');
+         // $this->form_validation->set_rules('Password', 'Password', 'required|max_length[15]|min_length[8]|regex_match[/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/]');
           
         $this->form_validation->set_rules('emp_no', 'Employee No.', 'required|min_length[3]|max_length[6]|alpha_numeric');
 		$this->form_validation->set_rules('emp_name', 'Name', 'required');
@@ -1809,7 +1809,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 		
         array('required' => 'You must provide a %s.');
          
-           $this->form_validation->set_message('regex_match', 'You must provide One Uppercase,One Lowercase,Numbers and special Character');
+           // $this->form_validation->set_message('regex_match', 'You must provide One Uppercase,One Lowercase,Numbers and special Character');
 
         if ($this->form_validation->run() == FALSE)
         {
