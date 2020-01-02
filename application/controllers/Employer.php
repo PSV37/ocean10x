@@ -295,8 +295,8 @@ public function job_post()
                          $company_name=$this->session->userdata('company_name');
                         $data=array('company'=>$company_name,
                             'action_taken_for'=>$company_name,
-                            'field_changed' =>'Posted A job',
-                            'Action'=>$company_name.' Posted A Job ',
+                            'field_changed' =>'Posted A new Job',
+                            'Action'=>$company_name.' Posted A new  Job ',
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
 
@@ -1145,6 +1145,15 @@ function getstate(){
                 $state_dt['ques_created_by']=$user_id;
 
                 $q_id=$this->Master_model->master_insert($state_dt,'questionbank');
+                $company_name=$this->session->userdata('company_name');
+                        $data=array('company'=>$company_name,
+                            'action_taken_for'=>$company_name,
+                            'field_changed' =>' Added a new Question.',
+                            'Action'=>$company_name.' Added a new Question to Questionbank.',
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
+
+                    $result=$this->Master_model->master_insert($data,'employer_audit_record');
                 if($this->input->post('ques_type')=='MCQ'){
                     $tablename='questionbank_answer';
                     $where_delete['question_id']=$q_id;
