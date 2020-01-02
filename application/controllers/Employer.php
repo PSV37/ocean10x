@@ -2864,6 +2864,13 @@ public function interview_scheduler()
         $result .='</table>';
 
         }else{
+
+            $result .='<table>';
+              $result .='<tr>';
+                $result .='<td value="">No access given edit the employee and assign a Access rights... </td>';
+        $result .='</tr>';
+        $result .='</table>';
+
         
             $result ='<tr value="">Data not available</tr>';
         }
