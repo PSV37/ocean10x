@@ -2,6 +2,11 @@
     $this->load->view('fontend/layout/employer_header.php');
 ?>
 
+<style type="text/css">
+  .bootstrap-select > .dropdown-toggle {
+    display: block;
+  }
+</style>
 
 <!-- Page Title start -->
 
