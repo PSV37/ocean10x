@@ -1871,6 +1871,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         else
                         {
                             $employee_name=$this->input->post('emp_name');
+                            $company_name=$this->session->userdata('company_name');
                             $action= str_replace("_", ' ', $parameter);
                             $data=array('company'=>$company_name,
                                        'action_taken_for'=>$employee_name,
