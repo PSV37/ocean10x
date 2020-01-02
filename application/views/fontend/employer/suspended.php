@@ -60,7 +60,7 @@
           		
                   <td style=""><button class="btn btn-danger"  name="status" id="status" value="<?php echo $key['emp_id'];?>" >Suspended</button></td>
 
-                  <td><button class="btn btn-warning" title='activate' data-toggle="modal" data-target="#activateModal"  name="activate" id="activate"    value="<?php echo $key['emp_id'];?>" >Activate</button></td>
+                  <td><button class="btn btn-success" title='activate' data-toggle="modal" data-target="#activateModal"  name="activate" id="activate"    value="<?php echo $key['emp_id'];?>" >Activate</button></td>
                  
 
                 </tr>
@@ -144,7 +144,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                     {
 
                     // $("button#del_id").button('reset');
-                       $("#res").html('<div class="alert alert-danger"><button type="button" class="close">×</button>Employee Activated</div>');
+                       $("#res").html('<div class="alert alert-success"><button type="button" class="close">×</button>Employee Activated</div>');
                           window.setTimeout(function() {
                                 $(".alert").fadeTo(500, 0).slideUp(500, function(){
                                     $(this).remove(); 
@@ -154,7 +154,9 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                           $('.alert .close').on("click", function(e){
                                 $(this).parent().fadeTo(500, 0).slideUp(500);
                           });
-                          location.reload();
+                     location.replace("<?php echo base_url();?>employer/allemployee");
+
+                          // location.reload();
 
                     }
             });
