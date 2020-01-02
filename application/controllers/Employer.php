@@ -1808,7 +1808,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 		$this->form_validation->set_rules('pincode', 'Pincode', 'required|numeric');
 		
         array('required' => 'You must provide a %s.');
-         
+
            // $this->form_validation->set_message('regex_match', 'You must provide One Uppercase,One Lowercase,Numbers and special Character');
 
         if ($this->form_validation->run() == FALSE)
@@ -1868,7 +1868,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     $old_data=$old_array_values[$i];
                      $new_data=$data[$parameter];
                     if (isset($new_data) && !empty($new_data)) {
-                        if ($old_data==$new_data) 
+                        if (($old_data==$new_data) && (($new_data !='emp_updated_date') || ($new_data !='emp_updated_by')  ))
                         {
                             
                         }
@@ -1906,7 +1906,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
              
         $this->Master_model->master_update($update_data,'company_profile',$where11);
             
-            $this->session->set_flashdata('success', '<div class="alert alert-success text-center">'.$this->input->post('emp_name').' has been activated !!</div>');
+            $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">'.$this->input->post('emp_name').' has been activated !!</div>');
     		 redirect(base_url().'employer/allemployee');
             }
 
