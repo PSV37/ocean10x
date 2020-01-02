@@ -65,8 +65,34 @@ class Employer extends MY_Employer_Controller
                 $old_company_profile=$this->Master_model->get_master_row('company_profile',$select = FALSE,$whereres);
                 $old_array_keys=array_keys($old_company_profile);
                 $old_array_values=array_values($old_company_profile);
-                print_r($old_array_keys);
-                print_r($old_array_values);die;
+                // print_r($old_array_keys);
+                // print_r($old_array_values);die;
+
+                $size=sizeof($old_array_keys);
+                for ($i=0; $i <$size ; $i++) 
+                { 
+                    $parameter=$old_array_keys[$i];
+                    $old_data=$old_array_values[$i];
+                    $new_data=$this->input->post($parameter);
+                    if (isset($new_data) && !empty($new_data)) {
+                        if ($old_data==$new_data) 
+                        {
+                            
+                        }
+                        else
+                        {
+                            $company_name=$this->session->userdata('company_name');
+                            $data=array('company'=>$company_name,
+                                        'Action'=>$company_name.' changed '.$parameter,
+                                        'datetime'=>date('Y-m-d H:i:s'),
+                                        'updated_by' =>$company_name);
+                            $result=$this->Master_model->master_insert($data,'employer_audit_record');
+                            print_r($this->db->last_query());die;
+
+                        }
+                    }
+                    
+                }
 
 
 
