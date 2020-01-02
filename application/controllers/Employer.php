@@ -2872,7 +2872,7 @@ public function interview_scheduler()
         $result .='</table>';
 
         
-            $result ='<tr value="">Data not available</tr>';
+            // $result ='<tr value="">Data not available</tr>';
         }
          echo $result;
     }
