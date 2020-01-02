@@ -291,6 +291,15 @@ public function job_post()
                     );
                     if (empty($job_post_id)) {
                         $this->job_posting_model->insert($job_info);
+                         $company_name=$this->session->userdata('company_name');
+                        $data=array('company'=>$company_name,
+                            'action_taken_for'=>$company_name,
+                            'field_changed' =>'Posted A job',
+                            'Action'=>$company_name.' Posted A Job ',
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
+
+                    $result=$this->Master_model->master_insert($data,'employer_audit_record');
                         $this->session->set_flashdata('success',
                             '<div class="alert alert-success alert-dismissable">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
@@ -300,15 +309,7 @@ public function job_post()
                     } else {
                         $this->job_posting_model->update($job_info, $job_post_id);
 
-                        $company_name=$this->session->userdata('company_name');
-                        $data=array('company'=>$company_name,
-                            'action_taken_for'=>$company_name,
-                            'field_changed' =>'Posted A job',
-                            'Action'=>$company_name.' Posted A Job ',
-                            'datetime'=>date('Y-m-d H:i:s'),
-                            'updated_by' =>$company_name);
-
-                    $result=$this->Master_model->master_insert($data,'employer_audit_record');
+                       
                         $this->session->set_flashdata('update',
                             '<div class="alert alert-success alert-dismissable">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
