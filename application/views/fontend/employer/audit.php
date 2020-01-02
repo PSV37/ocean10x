@@ -36,10 +36,10 @@
               <thead>
                 <th>Sr.No</th>
         			  <th>Action taken For</th>
-                <th>Field changed</th>
-                <th>action</th>
+                <th>Field changed/visited</th>
+                <th>Action</th>
         			  <th>Date & Time</th>
-        			  <th>Updated By</th>
+        			  <th>Action Done by</th>
         			  <!-- <th>Department</th> -->
               </thead>
               <tbody>

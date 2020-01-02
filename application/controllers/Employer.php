@@ -1821,6 +1821,18 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         }
         else
 		{
+            $id = $this->input->post('cid');
+            
+            $where['emp_id']=$id;
+            
+                $old_company_profile=$this->Master_model->get_master_row('employee',$select = FALSE,$where);
+                $old_array_keys=array_keys($old_employee_profile);
+                $old_array_values=array_values($old_employee_profile);
+                // print_r($old_array_keys);
+                // print_r($old_array_values);die;
+
+                $size=sizeof($old_array_keys);
+                
 			$List = implode(',', $this->input->post('user_acc')); 
   
     		$data['emp_no'] = $this->input->post('emp_no');
@@ -1846,6 +1858,33 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
              $whereres = "company_profile_id='$company_profile_id'";
             $employer_data= $this->Master_model->get_master_row('company_profile',$select = FALSE,$whereres);
             $this->Master_model->master_update($data,'employee',$where);
+            for ($i=0; $i <$size ; $i++) 
+                { 
+                    $parameter=$old_array_keys[$i];
+                    $old_data=$old_array_values[$i];
+                     $new_data=$data[$parameter];
+                    if (isset($new_data) && !empty($new_data)) {
+                        if ($old_data==$new_data) 
+                        {
+                            
+                        }
+                        else
+                        {
+                            $employee_name=$this->input->post('emp_name');
+                            $action= str_replace("_", ' ', $parameter);
+                            $data=array('company'=>$company_name,
+                                       'action_taken_for'=>$employee_name,
+                                        'field_changed' =>$action,
+                                        'Action'=>$company_name.' updated '.$action.' of '.$employee_name,
+                                        'datetime'=>date('Y-m-d H:i:s'),
+                                        'updated_by' =>$company_name);
+                            $result=$this->Master_model->master_insert($data,'employer_audit_record');
+                            print_r($this->db->last_query());die;
+
+                        }
+                    }
+                    
+                }
 
           
             if($employer_data['last_login']=="0000-00-00 00:00:00")
