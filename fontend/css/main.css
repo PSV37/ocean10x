@@ -640,7 +640,7 @@ li.dropdown a{margin-top:0 !important;}
 }
 .searchbar .btn:hover{background:#6eb11a; color:#fff;}
 .searchbar .btn i{font-weight:400;}
-.searchbar .selectpicker{display:none;}
+.searchbar .selectpicker{display: none;}
 .searchbar .btn-group .dropdown-toggle{border:none !important; color:#000; font-size:14px; font-weight:300; margin-top:0; padding:12px 10px; text-transform:none; letter-spacing:0; box-shadow:none;}
 .searchbar .btn-group .dropdown-toggle:hover{background:none;}
 
@@ -1471,7 +1471,7 @@ a.wit-btn {
 .selectpicker{padding: 9px 12px;
 	background:#fff;
 	line-height:45px; border: 1px solid #ccc; margin-right:30px;}
-.searchform .selectpicker, .contactfwrap .selectpicker{padding:13px 12px; display:none;}
+.searchform .selectpicker, .contactfwrap .selectpicker{padding:13px 12px; display:block;}
 
 .contactfwrap{background:#fff; padding:25px; border:1px solid #ddd;}
 .contactfwrap .form-control{border-radius:0; height:auto; padding:10px 12px;}
