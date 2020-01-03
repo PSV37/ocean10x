@@ -325,7 +325,7 @@ public function job_post()
                                 $old_data=$old_array_values[$i];
                                 $new_data=$job_info[$parameter];
                                 if (isset($new_data) && !empty($new_data)) {
-                                    if ($old_data==$new_data) 
+                                    if (($old_data==$new_data) && ($new_data!='job_slugs') )
                                     {
                                         
                                     }
@@ -336,7 +336,7 @@ public function job_post()
                                         $data=array('company'=>$company_name,
                                                    'action_taken_for'=>$company_name,
                                                     'field_changed' =>$action,
-                                                    'Action'=>$company_name.' changed '.$action,
+                                                    'Action'=>$company_name.' changed '.$action.' In posted job for ' .$this->input->post('job_title'). ,
                                                     'datetime'=>date('Y-m-d H:i:s'),
                                                     'updated_by' =>$company_name);
                                         $result=$this->Master_model->master_insert($data,'employer_audit_record');
@@ -857,6 +857,16 @@ function getstate(){
              
                 if ($avail) {
                     $data['job_id'] = $job_id; 
+
+                            $company_name=$this->session->userdata('company_name');
+                            $data=array('company'=>$company_name,
+                            'action_taken_for'=>$company_name,
+                            'field_changed' =>'Forward Job',
+                            'Action'=>$company_name.' visited forward job.',
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
+
+                    $result=$this->Master_model->master_insert($data,'employer_audit_record');
                     $this->load->view('fontend/employer/forword_job',$data);
                 } else {
                     redirect('employer/active_job');
@@ -974,6 +984,16 @@ function getstate(){
                            $send = sendEmail_JobRequest($email[$i],$message,$subject);
                            //echo $send;
                             echo $message;
+
+                             $company_name=$this->session->userdata('company_name');
+                            $data=array('company'=>$company_name,
+                            'action_taken_for'=>$email[$i],
+                            'field_changed' =>'Forwarded Job ',
+                            'Action'=>$company_name.' Forwarded job for the position of '.$require['job_title'],
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
+
+                    $result=$this->Master_model->master_insert($data,'employer_audit_record');
                         }
 
                 }else
@@ -1037,6 +1057,15 @@ function getstate(){
                            $send = sendEmail_JobRequest($email[$i],$message,$subject);
                            //echo $send;
                             echo $message;
+
+
+                             $company_name=$this->session->userdata('company_name');
+                            $data=array('company'=>$company_name,
+                            'action_taken_for'=>$email[$i],
+                            'field_changed' =>'Forwarded Job ',
+                            'Action'=>$company_name.' Forwarded job for the position of '.$require['job_title'],
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
                            
                         }
                         // else{
@@ -1101,6 +1130,16 @@ function getstate(){
                             
                         );
                         $this->Master_model->master_insert($ques_array,'job_test_topics');
+                        $job_info = $this->job_posting_model->get($id);
+
+
+                            $company_name=$this->session->userdata('company_name');
+                            $data=array('company'=>$company_name,
+                            'action_taken_for'=>$email[$i],
+                            'field_changed' =>'Test Topics',
+                            'Action'=>'Added Test Topics for '.$job_info['job_title'],
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
                        
                     }
                     $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Job Test Topic Sucessfully Inserted</div>');
@@ -1261,6 +1300,44 @@ function getstate(){
 
                 $where['ques_id']=$id;
                 $this->Master_model->master_update($state_dt,'questionbank',$where);
+
+                    $company_profile_id=$this->session->userdata('company_profile_id');
+                        $where['ques_id']=$id;
+                        $old_question_data=$this->Master_model->get_master_row('questionbank',$select = FALSE,$whereres);
+                        $old_array_keys=array_keys($old_question_data);
+                        $old_array_values=array_values($old_question_data);
+                        // print_r($old_array_keys);
+                        // print_r($old_array_values);die;
+
+                        $size=sizeof($old_array_keys);
+                        for ($i=0; $i <$size ; $i++) 
+                        { 
+                            $parameter=$old_array_keys[$i];
+                            $old_data=$old_array_values[$i];
+                            $new_data=$state_dt[$parameter];
+                            if (isset($new_data) && !empty($new_data)) {
+                                if ($old_data==$new_data) 
+                                {
+                                    
+                                }
+                                else
+                                {
+                                    $company_name=$this->session->userdata('company_name');
+                                    $action= str_replace("_", ' ', $parameter);
+                                    $data=array('company'=>$company_name,
+                                               'action_taken_for'=>$company_name,
+                                                'field_changed' =>$action,
+                                                'Action'=>$company_name.' changed '.$action,
+                                                'datetime'=>date('Y-m-d H:i:s'),
+                                                'updated_by' =>$company_name);
+                                    $result=$this->Master_model->master_insert($data,'employer_audit_record');
+                                    // print_r($this->db->last_query());die;
+
+                                }
+                            }
+                            
+                        }
+
                 if($this->input->post('ques_type')=='MCQ'){
                     $tablename='questionbank_answer';
                     $where_delete['question_id']=$id;
