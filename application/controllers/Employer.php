@@ -1302,11 +1302,11 @@ function getstate(){
 
                     $company_profile_id=$this->session->userdata('company_profile_id');
                         $where['ques_id']=$id;
-                        $old_question_data=$this->Master_model->get_master_row('questionbank',$select = FALSE,$whereres);
+                        $old_question_data=$this->Master_model->get_master_row('questionbank',$select = FALSE,$where);
                         $old_array_keys=array_keys($old_question_data);
                         $old_array_values=array_values($old_question_data);
-                         print_r($old_array_keys);
-                         print_r($old_array_values);die;
+                         // print_r($old_array_keys);
+                         // print_r($old_array_values);die;
 
                         $size=sizeof($old_array_keys);
                         for ($i=0; $i <$size ; $i++) 
