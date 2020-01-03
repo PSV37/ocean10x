@@ -1315,7 +1315,7 @@ function getstate(){
                             $old_data=$old_array_values[$i];
                             $new_data=$state_dt[$parameter];
                             if (isset($new_data) && !empty($new_data)) {
-                                if (($old_data==$new_data) && (($new_data!='ques_updated_date') || ($new_data!='ques_updated_by') ) )
+                                if (($old_data==$new_data) && (($new_data != 'ques_updated_date') || ($new_data != 'ques_updated_by') ) )
                                 {
                                     
                                 }
@@ -1395,6 +1395,15 @@ function getstate(){
             'ques_status'=>0,
         );
         $where_del['ques_id']=$id;
+         $company_name=$this->session->userdata('company_name');
+                        $data=array('company'=>$company_name,
+                            'action_taken_for'=>$company_name,
+                            'field_changed' =>'Deleted a Question.',
+                            'Action'=>$company_name.' Deleted a Question.',
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
+
+                    $result=$this->Master_model->master_insert($data,'employer_audit_record');
         $this->Master_model->master_update($ques_status,'questionbank',$where_del);
         redirect('employer/all_questions');
     }
@@ -1675,6 +1684,42 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             // echo $consultant_id;
             if (isset($company_profile_id)) {
                 $where['company_profile_id']=$company_profile_id;
+
+
+                $old_company_profile=$this->Master_model->get_master_row('company_profile',$select = FALSE,$where);
+                $old_array_keys=array_keys($old_company_profile);
+                $old_array_values=array_values($old_company_profile);
+                // print_r($old_array_keys);
+                // print_r($old_array_values);die;
+
+                $size=sizeof($old_array_keys);
+                for ($i=0; $i <$size ; $i++) 
+                { 
+                    $parameter=$old_array_keys[$i];
+                    $old_data=$old_array_values[$i];
+                    $new_data=$company_profile[$parameter];
+                    if (isset($new_data) && !empty($new_data)) {
+                        if (($old_data==$new_data) && (($new_data[$parameter] =='company_slug') || ($new_data[$parameter] =='token')) )
+                        {
+                            
+                        }
+                        else
+                        {
+                            $company_name=$this->session->userdata('company_name');
+                            $action= str_replace("_", ' ', $parameter);
+                            $data=array('company'=>$company_name,
+                                       'action_taken_for'=>$this->input->post('company_name'),
+                                        'field_changed' =>$action,
+                                        'Action'=>$company_name.' changed '.$action. ' for '.$this->input->post('company_name'),
+                                        'datetime'=>date('Y-m-d H:i:s'),
+                                        'updated_by' =>$company_name);
+                            $result=$this->Master_model->master_insert($data,'employer_audit_record');
+                            // print_r($this->db->last_query());die;
+
+                        }
+                    }
+                    
+                }
                 // print_r($company_profile);
             $this->Master_model->master_update($company_profile,'company_profile',$where);
             $consultant_id=$this->input->post('consultant_id');
@@ -2074,7 +2119,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     $old_data=$old_array_values[$i];
                      $new_data=$data[$parameter];
                     if (isset($new_data) && !empty($new_data)) {
-                        if (($old_data==$new_data) && (($new_data !='emp_updated_date') || ($new_data !='emp_updated_by')  ))
+                        if (($old_data==$new_data) && (($new_data =='emp_updated_date') || ($new_data =='emp_updated_by')  ))
                         {
                             
                         }
@@ -2465,6 +2510,16 @@ public function interview_scheduler()
             $inte_array['created_by']  = $company_id;
             $inte_array['created_on']  = date('Y-m-d H:i:s');
             $ins_id = $this->Master_model->master_insert($inte_array,'interview_scheduler');
+
+                            $company_name=$this->session->userdata('company_name');
+                            $data=array('company'=>$company_name,
+                            'action_taken_for'=>$js_data['full_name'],
+                            'field_changed' =>'Interview Invitation',
+                            'Action'=>$company_name.' Interview Invitation has been sent to '.$js_data['full_name'],
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
+
+                    $result=$this->Master_model->master_insert($data,'employer_audit_record');
             if($ins_id)
             {
                 $where_del = "interview_id='$ins_id'";
@@ -2541,11 +2596,51 @@ public function interview_scheduler()
             }
 
         }else{
+
+               $where_ins['id']=$interview_id;
+                $old_interview_data=$this->Master_model->get_master_row('interview_scheduler',$select = FALSE,$where_ins);
+                $old_array_keys=array_keys($old_interview_data);
+                $old_array_values=array_values($old_interview_data);
+                // print_r($old_array_keys);
+                // print_r($old_array_values);die;
+
+                $size=sizeof($old_array_keys);
+                for ($i=0; $i <$size ; $i++) 
+                { 
+                    $parameter=$old_array_keys[$i];
+                    $old_data=$old_array_values[$i];
+                    $new_data=$inte_array[$parameter];
+                    if (isset($new_data) && !empty($new_data)) {
+                        if ($old_data==$new_data) 
+                        {
+                            
+                        }
+                        else
+                        {
+                            $company_name=$this->session->userdata('company_name');
+                            $action= str_replace("_", ' ', $parameter);
+                             $data=array('company'=>$company_name,
+                            'action_taken_for'=>$js_data['full_name'],
+                            'field_changed' =>$action,
+                           'Action'=>$company_name.' changed '.$action,
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
+                           
+                            $result=$this->Master_model->master_insert($data,'employer_audit_record');
+                            // print_r($this->db->last_query());die;
+
+                        }
+                    }
+                    
+                }
+
             $inte_array['updated_by']  = $company_id;
             $inte_array['updated_on']  = date('Y-m-d H:i:s');
 
             $where_ins['id']=$interview_id;
             $ins_id = $this->Master_model->master_update($inte_array,'interview_scheduler',$where_ins);
+
+
 
             if($ins_id)
             {
@@ -2652,8 +2747,23 @@ public function interview_scheduler()
         $status_array['updated_by']  = $company_id;
         $status_array['updated_on']  = date('Y-m-d H:i:s');
 
-        $where_ins['id']=$interview_id;
+
         $ins_id = $this->Master_model->master_update($status_array,'interview_scheduler',$where_ins);
+        if ($this->input->post('interview_status')=='1') {
+            $status='Completed'}else{$status='Not Completed'
+        }
+
+
+                            $company_name=$this->session->userdata('company_name');
+                            $data=array('company'=>$company_name,
+                            'action_taken_for'=>'Jobseeker',
+                            'field_changed' =>'Interview Status',
+                            'Action'=>$company_name.' updated Interview Status to '.$status, 
+                               
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
+
+                    $result=$this->Master_model->master_insert($data,'employer_audit_record');
         redirect('employer/all_applicant/'.$job_id);
     }
 
@@ -3248,6 +3358,16 @@ public function superadmin()
         'created_on' => date('Y-m-d H:i:s'));
 
         $result=$this->Master_model->master_insert($superadmin,'company_superadmin');
+
+                            $company_name=$this->session->userdata('company_name');
+                            $data=array('company'=>$company_name,
+                            'action_taken_for'=>$company_name,
+                            'field_changed' =>'Superadmin',
+                            'Action'=>$company_name.' Created superadmin and superadmin password',
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
+
+                    $result=$this->Master_model->master_insert($data,'employer_audit_record');
 
         $comp_name=$this->session->userdata('company_name');
 
