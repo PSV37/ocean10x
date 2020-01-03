@@ -1252,7 +1252,7 @@ function getstate(){
     	$user_id = $this->session->userdata('company_profile_id');
     	if(isset($_POST['submit_employee'])){
 
-           $this->form_validation->set_rules('password', 'password', 'required|max_length[15]|min_length[8]|regex_match[/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/]');
+           $this->form_validation->set_rules('Password', 'password', 'required|max_length[15]|min_length[8]|regex_match[/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/]');
           
           
            
