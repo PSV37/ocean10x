@@ -193,7 +193,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>employer/getstate',
+                url:'<?php echo base_url();?>employee/getstate',
                 data:{id:id},
                 success:function(res){
                     $('#state_id').html(res);
@@ -212,7 +212,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>employer/getcity',
+                url:'<?php echo base_url();?>employee/getcity',
                 data:{id:id},
                 success:function(res){
                     $('#city_id').html(res);
@@ -233,7 +233,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>employer/getstate',
+                url:'<?php echo base_url();?>employee/getstate',
                 data:{id:id},
                 success:function(res){
                   console.log(res);
@@ -255,7 +255,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
         if(id){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>employer/getcity',
+                url:'<?php echo base_url();?>employee/getcity',
                 data:{id:id},
                 success:function(res){
                     $('#city_id').html(res);
@@ -329,7 +329,7 @@ $(function() {
  
         source: function(request, response) {
             $.ajax({
-            url: BASE_URL + "employer/search",
+            url: BASE_URL + "employee/search",
             data: {
                     term : request.term
              },
