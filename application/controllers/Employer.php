@@ -2774,7 +2774,7 @@ public function interview_scheduler()
         );
         $where_del['document_id']=$id;
 
-        $old_Document=$this->Master_model->get_master_row('company_profile',$select = FALSE,$where_del);
+        $old_Document=$this->Master_model->get_master_row('corporate_documents',$select = FALSE,$where_del);
         $this->Master_model->master_update($status,'corporate_documents',$where_del);
 
          $company_name=$this->session->userdata('company_name');
