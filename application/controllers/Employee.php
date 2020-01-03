@@ -484,7 +484,10 @@ class Employee extends MY_Employee_Controller
                                     }
                                     else
                                     {
-                                        $company_name=$this->session->userdata('company_name');
+                                         $company_profile_id=$this->session->userdata('company_id');
+                                        $whereres = "company_profile_id='$company_profile_id'";
+                                        $company_profile=$this->Master_model->get_master_row('company_profile',$select = FALSE,$whereres);
+                                        $company_name=$company_profile['company_name'];
                                         $action= str_replace("_", ' ', $parameter);
                                         $data=array('company'=>$company_name,
                                                    'action_taken_for'=>$company_name,
