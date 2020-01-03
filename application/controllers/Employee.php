@@ -88,7 +88,7 @@ class Employee extends MY_Employee_Controller
                     // print_r($old_data);echo "<br/>";
                     // print_r($new_data);echo "<br/>";
                     if (isset($new_data) && !empty($new_data)) {
-                        if (($old_data==$new_data) && (($new_data=='emp_updated_date') || ($new_data=='emp_updated_by')) )
+                        if (($old_data==$new_data) || (($parameter=='emp_updated_date') || ($parameter=='emp_updated_by')) )
                         {
                             
                         }
