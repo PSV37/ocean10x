@@ -308,7 +308,45 @@ public function job_post()
                   </div>');
                       redirect('job/show/'.$job_info['job_slugs']);
                     } else {
-                        $this->job_posting_model->update($job_info, $job_post_id);
+                       
+
+                        $company_profile_id=$this->session->userdata('company_profile_id');
+                            $whereres = "job_post_id='$job_post_id'";
+                            $old_job_details=$this->Master_model->get_master_row('job_post_id',$select = FALSE,$whereres);
+                            $old_array_keys=array_keys($old_job_details);
+                            $old_array_values=array_values($old_job_details);
+                            // print_r($old_array_keys);
+                            // print_r($old_array_values);die;
+
+                            $size=sizeof($old_array_keys);
+                            for ($i=0; $i <$size ; $i++) 
+                            { 
+                                $parameter=$old_array_keys[$i];
+                                $old_data=$old_array_values[$i];
+                                $new_data=$job_info[$parameter];
+                                if (isset($new_data) && !empty($new_data)) {
+                                    if ($old_data==$new_data) 
+                                    {
+                                        
+                                    }
+                                    else
+                                    {
+                                        $company_name=$this->session->userdata('company_name');
+                                        $action= str_replace("_", ' ', $parameter);
+                                        $data=array('company'=>$company_name,
+                                                   'action_taken_for'=>$company_name,
+                                                    'field_changed' =>$action,
+                                                    'Action'=>$company_name.' changed '.$action,
+                                                    'datetime'=>date('Y-m-d H:i:s'),
+                                                    'updated_by' =>$company_name);
+                                        $result=$this->Master_model->master_insert($data,'employer_audit_record');
+                                        // print_r($this->db->last_query());die;
+
+                                    }
+                                }
+                                
+                            }
+                             $this->job_posting_model->update($job_info, $job_post_id);
 
                        
                         $this->session->set_flashdata('update',
@@ -347,6 +385,20 @@ public function job_post()
                     $company_id = $this->session->userdata('company_profile_id');
                     if ($this->job_posting_model->check_jobid_and_post_id($job_id, $company_id) == true) {
                         $this->job_posting_model->delete_job_by_company($job_id, $company_id);
+
+                             $whereres = "job_post_id='$job_id'";
+                $old_job_details=$this->Master_model->get_master_row('job_posting',$select = FALSE,$whereres);
+
+                            $company_name=$this->session->userdata('company_name');
+                            $data=array('company'=>$company_name,
+                            'action_taken_for'=>$company_name,
+                            'field_changed' =>'Deleted Job',
+                            'Action'=>$company_name.' Deleted '.$old_job_details['job_title'].' Job .',
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
+
+                    $result=$this->Master_model->master_insert($data,'employer_audit_record');
+
                         redirect_back();
                     } else {
                         echo "error";
@@ -434,6 +486,18 @@ public function job_post()
 
                         if ($employer_id) {
                             $this->company_profile_model->update($newpassword, $employer_id);
+
+
+                            $company_name=$this->session->userdata('company_name');
+                            $data=array('company'=>$company_name,
+                            'action_taken_for'=>$company_name,
+                            'field_changed' =>'Changed Password',
+                            'Action'=>$company_name.' Changed Password',
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
+
+                            $result=$this->Master_model->master_insert($data,'employer_audit_record');
+
                             $this->session->set_flashdata('change_password',
                                 '<span class="label label-info">Sucessfully Password Changed!</span>');
                             redirect('employer/change_password');
@@ -501,6 +565,17 @@ public function job_post()
             {
                 if (!empty($resume_id)) {
                     $this->job_apply_model->delete($resume_id);
+
+                    // $company_name=$this->session->userdata('company_name');
+                    //         $data=array('company'=>$company_name,
+                    //         'action_taken_for'=>$company_name,
+                    //         'field_changed' =>'Changed Password',
+                    //         'Action'=>$company_name.' Changed Password',
+                    //         'datetime'=>date('Y-m-d H:i:s'),
+                    //         'updated_by' =>$company_name);
+
+                    //         $result=$this->Master_model->master_insert($data,'employer_audit_record');
+
                     redirect_back();
                 } else {
                     echo "not found";
@@ -2755,7 +2830,7 @@ public function interview_scheduler()
                             $data=array('company'=>$company_name,
                             'action_taken_for'=>$company_name,
                             'field_changed' =>'Added Document',
-                            'Action'=>$company_name.' Added '.$this->input->post('document_type'),
+                            'Action'=>$company_name.' Added document related to'.$this->input->post('document_type'),
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
 
@@ -2781,7 +2856,7 @@ public function interview_scheduler()
                             $data=array('company'=>$company_name,
                             'action_taken_for'=>$company_name,
                             'field_changed' =>'Deleted Document',
-                            'Action'=>$company_name.' Deleted '.$old_Document['document_type'],
+                            'Action'=>$company_name.' Deleted document related to'.$old_Document['document_type'],
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
 
