@@ -36,7 +36,7 @@
 
       <div class="content col-md-9">
        
-        <div class="userccount empdash"><?php echo $this->session->flashdata('success_msg'); ?>
+        <div class="userccount empdash"><div id="smsg"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><?php echo $this->session->flashdata('success_msg'); ?></div>
           <?php $emp_id=$this->session->userdata('emp_id'); 
                 $name=$this->session->userdata('name');;
           ?>

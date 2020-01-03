@@ -76,7 +76,7 @@ class Employee extends MY_Employee_Controller
                 $old_array_keys=array_keys($old_emp_profile);
                 $old_array_values=array_values($old_emp_profile);
                 
-                print_r($old_emp_profile);die;
+                // print_r($old_emp_profile);die;
 
                 $size=sizeof($old_array_keys);
                 for ($i=0; $i <$size ; $i++) 
