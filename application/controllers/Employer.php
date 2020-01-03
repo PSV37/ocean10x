@@ -1333,7 +1333,7 @@ function getstate(){
         		
         		$data['emp_created_date'] = date('Y-m-d H:i:s');
         		$this->Master_model->master_insert($data,'employee');
-                 $this->Questionbank_employer_model->insertRecord($userdata);
+                
                             $company_name=$this->session->userdata('company_name');
                             $data=array('company'=>$company_name,
                             'action_taken_for'=>$this->input->post('emp_name'),
@@ -1417,6 +1417,18 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                 'is_favourite' =>$this->input->post('Favorite'),
                                 );
                             $consultant=$this->Master_model->master_insert($consultanat_data,'consultant_company_mapping');
+
+                            $company_name=$this->session->userdata('company_name');
+                            $data=array('company'=>$company_name,
+                            'action_taken_for'=>$this->input->post('company_name'),
+                            'field_changed' =>'Added  consultant',
+                            'Action'=>$company_name.' Added '.$this->input->post('company_name').' As a consultant.',
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
+
+                    $result=$this->Master_model->master_insert($data,'employer_audit_record');
+
+
                             $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">This consultant Added Successfully</div>');
                              redirect('employer/addconsultant');
                     }
@@ -1451,6 +1463,15 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         {
                                 $company_profile['company_password']=md5($pass);
                             $comp_id=$this->Master_model->master_insert($company_profile,'company_profile');
+                            $company_name=$this->session->userdata('company_name');
+                            $data=array('company'=>$company_name,
+                            'action_taken_for'=>$this->input->post('emp_name'),
+                            'field_changed' =>'Added  consultant',
+                            'Action'=>$company_name.' Added '.$this->input->post('company_name').' As a consultant.',
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
+
+                    $result=$this->Master_model->master_insert($data,'employer_audit_record');
                             // echo $comp_id
                                 if (isset($comp_id) && !empty($comp_id)) {
                                 # code...
@@ -2588,6 +2609,18 @@ public function interview_scheduler()
                 $cv_data['created_by'] = $company_id;
 
                 $this->Master_model->master_insert($cv_data, 'corporate_cv_bank');
+
+                $company_name=$this->session->userdata('company_name');
+                            $data=array('company'=>$company_name,
+                            'action_taken_for'=>$this->input->post('candidate_name'),
+                            'field_changed' =>'Added  CV',
+                            'Action'=>$company_name.' Added  CV of '.$this->input->post('candidate_name'),
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
+
+                    $result=$this->Master_model->master_insert($data,'employer_audit_record');
+
+
                 $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New CV added sucessfully!</div>');
             }
                 redirect('employer/add_new_cv');
@@ -2716,6 +2749,18 @@ public function interview_scheduler()
                     'created_on'=>date('Y-m-d H:i:s'),
                     'created_by'=>$company_id);
                  $result=$this->Master_model->master_insert($documets,'corporate_documents');
+
+                        $company_name=$this->session->userdata('company_name');
+                            $data=array('company'=>$company_name,
+                            'action_taken_for'=>$company_name,
+                            'field_changed' =>'Imported Questions',
+                            'Action'=>$company_name.' Imported new Questions.',
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
+
+                    $result=$this->Master_model->master_insert($data,'employer_audit_record');
+
+
                  $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Document Uploaded sucessfully</div>');
                 redirect('employer/add_Corporate_Documents');
                  
@@ -2727,7 +2772,20 @@ public function interview_scheduler()
             'status'=> '1',
         );
         $where_del['document_id']=$id;
+
+        $old_Document=$this->Master_model->get_master_row('company_profile',$select = FALSE,$where_del);
         $this->Master_model->master_update($status,'corporate_documents',$where_del);
+
+         $company_name=$this->session->userdata('company_name');
+                            $data=array('company'=>$company_name,
+                            'action_taken_for'=>$company_name,
+                            'field_changed' =>'Deleted Document',
+                            'Action'=>$company_name.' Deleted '.$old_Document['document_type'],
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
+
+                    $result=$this->Master_model->master_insert($data,'employer_audit_record'); 
+
                 redirect('employer/add_Corporate_Documents');
           
     }
@@ -2824,6 +2882,16 @@ public function interview_scheduler()
                         if($skip != 0){
                         
                            $this->Questionbank_employer_model->InsertCVData($userdata);
+
+                            $company_name=$this->session->userdata('company_name');
+                            $data=array('company'=>$company_name,
+                            'action_taken_for'=>$this->input->post('company_name'),
+                            'field_changed' =>'Imported CVs',
+                            'Action'=>$company_name.'Imported Multiple CVs',
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
+
+                    $result=$this->Master_model->master_insert($data,'employer_audit_record');
                      
                         }
                         $skip ++;
