@@ -229,7 +229,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 </script>
 <script>
     function getStates(id){
-      alert(id);
+      // alert(id);
         if(id){
             $.ajax({
                 type:'POST',

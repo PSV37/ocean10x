@@ -71,10 +71,12 @@ class Employee extends MY_Employee_Controller
                 $whereres = "company_profile_id='$company_profile_id'";
                 $company_profile=$this->Master_model->get_master_row('company_profile',$select = FALSE,$whereres);
                 $company_name=$company_profile['company_name'];
+
                 $old_emp_profile=$this->Master_model->get_master_row('employee',$select = FALSE,$where);
                 $old_array_keys=array_keys($old_emp_profile);
                 $old_array_values=array_values($old_emp_profile);
                 
+                print_r($old_emp_profile);die;
 
                 $size=sizeof($old_array_keys);
                 for ($i=0; $i <$size ; $i++) 
