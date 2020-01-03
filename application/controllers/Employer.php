@@ -1305,8 +1305,8 @@ function getstate(){
                         $old_question_data=$this->Master_model->get_master_row('questionbank',$select = FALSE,$whereres);
                         $old_array_keys=array_keys($old_question_data);
                         $old_array_values=array_values($old_question_data);
-                        // print_r($old_array_keys);
-                        // print_r($old_array_values);die;
+                         print_r($old_array_keys);
+                         print_r($old_array_values);die;
 
                         $size=sizeof($old_array_keys);
                         for ($i=0; $i <$size ; $i++) 
