@@ -2039,6 +2039,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                             'Action'=>$company_name.' Suspended employee '.$result['emp_name'],
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
+                    $result=$this->Master_model->master_insert($data,'employer_audit_record');
+                            
     }
 	
 	/*Edit Employee*/
