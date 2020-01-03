@@ -1298,8 +1298,7 @@ function getstate(){
                 $state_dt['ques_updated_date']=date('Y-m-d H:i:s');
                 $state_dt['ques_updated_by']=$user_id;
 
-                $where['ques_id']=$id;
-                $this->Master_model->master_update($state_dt,'questionbank',$where);
+               
 
                     $company_profile_id=$this->session->userdata('company_profile_id');
                         $where['ques_id']=$id;
@@ -1316,7 +1315,7 @@ function getstate(){
                             $old_data=$old_array_values[$i];
                             $new_data=$state_dt[$parameter];
                             if (isset($new_data) && !empty($new_data)) {
-                                if ($old_data==$new_data) 
+                                if (($old_data==$new_data) && (($new_data!='ques_updated_date') || ($new_data!='ques_updated_by') ) )
                                 {
                                     
                                 }
@@ -1337,6 +1336,8 @@ function getstate(){
                             }
                             
                         }
+                         $where['ques_id']=$id;
+                $this->Master_model->master_update($state_dt,'questionbank',$where);
 
                 if($this->input->post('ques_type')=='MCQ'){
                     $tablename='questionbank_answer';
