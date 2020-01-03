@@ -2750,7 +2750,7 @@ public function interview_scheduler()
 
         $ins_id = $this->Master_model->master_update($status_array,'interview_scheduler',$where_ins);
         if ($this->input->post('interview_status')=='1') {
-            $status='Completed'}else{$status='Not Completed'
+            $status='Completed';}else{$status='Not Completed';
         }
 
 
