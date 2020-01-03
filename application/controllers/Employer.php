@@ -325,7 +325,7 @@ public function job_post()
                                 $old_data=$old_array_values[$i];
                                 $new_data=$job_info[$parameter];
                                 if (isset($new_data) && !empty($new_data)) {
-                                    if (($old_data==$new_data) && ($new_data!='job_slugs') )
+                                    if (($old_data==$new_data) || ($parameter=='job_slugs') )
                                     {
                                         
                                     }
@@ -1315,7 +1315,7 @@ function getstate(){
                             $old_data=$old_array_values[$i];
                             $new_data=$state_dt[$parameter];
                             if (isset($new_data) && !empty($new_data)) {
-                                if (($old_data==$new_data) && (($new_data != 'ques_updated_date') || ($new_data != 'ques_updated_by') ) )
+                                if (($old_data==$new_data) || (($parameter != 'ques_updated_date') || ($parameter != 'ques_updated_by') ) )
                                 {
                                     
                                 }
@@ -1699,7 +1699,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     $old_data=$old_array_values[$i];
                     $new_data=$company_profile[$parameter];
                     if (isset($new_data) && !empty($new_data)) {
-                        if (($old_data==$new_data) && (($new_data =='company_slug') || ($new_data =='token')) )
+                        if (($old_data==$new_data) || (($parameter =='company_slug') || ($parameter =='token')) )
                         {
                             
                         }
@@ -2165,7 +2165,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     $old_data=$old_array_values[$i];
                      $new_data=$data[$parameter];
                     if (isset($new_data) && !empty($new_data)) {
-                        if (($old_data==$new_data) && (($new_data =='emp_updated_date') || ($new_data =='emp_updated_by')  ))
+                        if (($old_data==$new_data) || (($parameter =='emp_updated_date') || ($parameter =='emp_updated_by')  ))
                         {
                             
                         }

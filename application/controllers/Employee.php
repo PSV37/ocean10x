@@ -478,7 +478,7 @@ class Employee extends MY_Employee_Controller
                                 $old_data=$old_array_values[$i];
                                 $new_data=$job_info[$parameter];
                                 if (isset($new_data) && !empty($new_data)) {
-                                    if (($old_data==$new_data) && ($new_data!='job_slugs') )
+                                    if (($old_data==$new_data) || ($parameter=='job_slugs') )
                                     {
                                         
                                     }
