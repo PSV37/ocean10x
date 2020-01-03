@@ -312,7 +312,7 @@ public function job_post()
 
                         $company_profile_id=$this->session->userdata('company_profile_id');
                             $whereres = "job_post_id='$job_post_id'";
-                            $old_job_details=$this->Master_model->get_master_row('job_post_id',$select = FALSE,$whereres);
+                            $old_job_details=$this->Master_model->get_master_row('job_posting',$select = FALSE,$whereres);
                             $old_array_keys=array_keys($old_job_details);
                             $old_array_values=array_values($old_job_details);
                             // print_r($old_array_keys);
