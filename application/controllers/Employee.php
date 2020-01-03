@@ -67,9 +67,46 @@ class Employee extends MY_Employee_Controller
             $employee_data['emp_updated_by'] = $employee_id;
            
              $where['emp_id']=$employee_id;
+                $company_profile_id=$this->session->userdata('company_id');
+                $whereres = "company_profile_id='$company_profile_id'";
+                $company_profile=$this->Master_model->get_master_row('company_profile',$select = FALSE,$whereres);
+                $company_name=$company_profile['company_name'];
+                $old_emp_profile=$this->Master_model->get_master_row('employee',$select = FALSE,$where);
+                $old_array_keys=array_keys($old_emp_profile);
+                $old_array_values=array_values($old_emp_profile);
+                
+
+                $size=sizeof($old_array_keys);
+                for ($i=0; $i <$size ; $i++) 
+                { 
+                    $parameter=$old_array_keys[$i];
+                    $old_data=$old_array_values[$i];
+                    $new_data=$employee_data[$parameter];
+                    if (isset($new_data) && !empty($new_data)) {
+                        if (($old_data==$new_data) && (($new_data=='emp_updated_date') || ($new_data=='emp_updated_by')) )
+                        {
+                            
+                        }
+                        else
+                        {
+                            $employee_name=$this->session->userdata('name');
+                            $action= str_replace("_", ' ', $parameter);
+                            $data=array('company'=>$company_name,
+                                       'action_taken_for'=>$employee_name,
+                                        'field_changed' =>$action,
+                                        'Action'=>$employee_name.' changed '.$action,
+                                        'datetime'=>date('Y-m-d H:i:s'),
+                                        'updated_by' =>$employee_name);
+                            $result=$this->Master_model->master_insert($data,'employer_audit_record');
+                            // print_r($this->db->last_query());die;
+
+                        }
+                    }
+                    
+                }
 
          $this->Master_model->master_update($employee_data,'employee',$where);
-        $this->Master_model->master_insert($employee_data,'emp_record_history');
+        // $this->Master_model->master_insert($employee_data,'emp_record_history');
         // print_r($this->db->last_query());die;       //    
           $whereres = "emp_id='$employee_id'";
         $data['result']= $this->Master_model->get_master_row('employee',$select = FALSE,$whereres);
