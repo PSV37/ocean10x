@@ -169,7 +169,7 @@
                 </div>
                 </div>
                    <div class="panel-body"></div>
-                     <button type="submit" class="btn bg-navy" type="submit">Add Employee</button>
+                     <button name="submit_employee" class="btn bg-navy" type="submit">Add Employee</button>
                 
 
             </form>

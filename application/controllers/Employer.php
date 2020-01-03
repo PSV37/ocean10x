@@ -1268,7 +1268,7 @@ function getstate(){
             array('required' => 'You must provide a %s.');
              $this->form_validation->set_message('required', 'You must provide this field');
             $this->form_validation->set_message('regex_match', 'You must provide One Uppercase,One Lowercase,Numbers and special Character');
-            print_r($this->form_validation->run());die;
+            // print_r($this->form_validation->run());die;
     		
             if ($this->form_validation->run() == FALSE)
             {
