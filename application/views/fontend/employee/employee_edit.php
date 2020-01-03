@@ -236,6 +236,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                 url:'<?php echo base_url();?>employer/getstate',
                 data:{id:id},
                 success:function(res){
+                  console.log(res);
                     $('#state_id').html(res);
                 }
                 
