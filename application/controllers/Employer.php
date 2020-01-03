@@ -336,7 +336,7 @@ public function job_post()
                                         $data=array('company'=>$company_name,
                                                    'action_taken_for'=>$company_name,
                                                     'field_changed' =>$action,
-                                                    'Action'=>$company_name.' changed '.$action.' In posted job for ' .$this->input->post('job_title'). ,
+                                                    'Action'=>$company_name.' changed '.$action.' In posted job for ' .$this->input->post('job_title') ,
                                                     'datetime'=>date('Y-m-d H:i:s'),
                                                     'updated_by' =>$company_name);
                                         $result=$this->Master_model->master_insert($data,'employer_audit_record');
