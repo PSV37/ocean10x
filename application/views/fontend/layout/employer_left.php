@@ -33,7 +33,7 @@
       <li onclick="record_audit('suspended Employees');"> <a href="<?php echo base_url() ?>employer/suspended-employee" class=""><i class="fa fa-user-times" aria-hidden="true"></i>
       Suspended Employees</a></li>
 
-     <li onclick="record_audit(' Add Consultant','add-new-consultant');"> <a href="#" class=""><i class="fa fa-plus" aria-hidden="true"></i> Add Consultant</a></li> 
+     <li onclick="record_audit('Add Consultant','add-new-consultant');"> <a href="#" class=""><i class="fa fa-plus" aria-hidden="true"></i> Add Consultant</a></li> 
 
      <li onclick="record_audit('All Consultants');"> <a href="<?php echo base_url() ?>employer/show-all-consultant" class=""><i class="fa fa-user" aria-hidden="true"></i>All Consultants</a></li> 
 
