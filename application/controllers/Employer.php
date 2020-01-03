@@ -1335,15 +1335,15 @@ function getstate(){
         		$data['emp_created_date'] = date('Y-m-d H:i:s');
         		$this->Master_model->master_insert($data,'employee');
                 
-                    //         $company_name=$this->session->userdata('company_name');
-                    //         $data=array('company'=>$company_name,
-                    //         'action_taken_for'=>$this->input->post('emp_name'),
-                    //         'field_changed' =>'Added new Employee',
-                    //         'Action'=>$company_name.' Added '.$this->input->post('emp_name').' As an Employee.',
-                    //         'datetime'=>date('Y-m-d H:i:s'),
-                    //         'updated_by' =>$company_name);
+                            $company_name=$this->session->userdata('company_name');
+                            $data=array('company'=>$company_name,
+                            'action_taken_for'=>$this->input->post('emp_name'),
+                            'field_changed' =>'Added new Employee',
+                            'Action'=>$company_name.' Added '.$this->input->post('emp_name').' As an Employee.',
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
 
-                    // $result=$this->Master_model->master_insert($data,'employer_audit_record');
+                    $result=$this->Master_model->master_insert($data,'employer_audit_record');
                $comp_name = $this->session->userdata('company_name');
                 $to_email=$this->input->post('email');
                 $pass=$this->input->post('password');
