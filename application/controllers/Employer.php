@@ -2754,8 +2754,8 @@ public function interview_scheduler()
                         $company_name=$this->session->userdata('company_name');
                             $data=array('company'=>$company_name,
                             'action_taken_for'=>$company_name,
-                            'field_changed' =>'Imported Questions',
-                            'Action'=>$company_name.' Imported new Questions.',
+                            'field_changed' =>'Added Document',
+                            'Action'=>$company_name.' Added '.$this->input->post('document_type'),
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
 
