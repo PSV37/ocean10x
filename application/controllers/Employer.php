@@ -1333,6 +1333,16 @@ function getstate(){
         		
         		$data['emp_created_date'] = date('Y-m-d H:i:s');
         		$this->Master_model->master_insert($data,'employee');
+                 $this->Questionbank_employer_model->insertRecord($userdata);
+                            $company_name=$this->session->userdata('company_name');
+                            $data=array('company'=>$company_name,
+                            'action_taken_for'=>$this->input->post('emp_name'),
+                            'field_changed' =>'Added new Employee',
+                            'Action'=>$company_name.' Added '.$this->input->post('emp_name').' As an Employee.',
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
+
+                    $result=$this->Master_model->master_insert($data,'employer_audit_record');
                $comp_name = $this->session->userdata('company_name');
                 $to_email=$this->input->post('email');
                 $pass=$this->input->post('password');
@@ -2132,6 +2142,16 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 							$userdata[13]=$options_data[0]['options_id'];
 							
                            $this->Questionbank_employer_model->insertRecord($userdata);
+
+                            $company_name=$this->session->userdata('company_name');
+                            $data=array('company'=>$company_name,
+                            'action_taken_for'=>$company_name,
+                            'field_changed' =>'Imported Questions',
+                            'Action'=>$company_name.' Imported new Questions.',
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
+
+                    $result=$this->Master_model->master_insert($data,'employer_audit_record');
 							//echo $this->db->last_query();die();
                         }
                         $skip ++;
@@ -3006,6 +3026,22 @@ public function superadmin()
         'created_on' => date('Y-m-d H:i:s'));
 
         $result=$this->Master_model->master_insert($superadmin,'company_superadmin');
+
+        $comp_name=$this->session->userdata('company_name');
+
+
+         $subject = "Successfully Registered as a Superadmin..";
+
+            $message = '<div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+<table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+<br><br>Hi Dear,<br>You are registered as a Superadmin for company '.$comp_name.' <br><br>You can login to Ocean portal using following credentials<br>
+username: '.$to_email.'<br>
+Password: '.$password.'<br>
+
+Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out how works and our support team are ready to help.<br><br>© 2017 ConsultnHire All Rights Reserved.<br><br>You have received this mail because your e-mail ID is registered with Consultnhire.com. This is a system-generated e-mail regarding your Consultnhire account preferences, please do not reply to this message. The jobs sent in this mail have been posted by the clients of Consultnhire.com. And we have enabled auto-login for your convenience, you are strongly advised not to forward this email to protect your account from unauthorized access. IEIL has taken all reasonable steps to ensure that the information in this mailer is authentic. Users are advised to research bonafides of advertisers independently. Please do not pay any money to anyone who promises to find you a job. IEIL shall not have any responsibility in this regard. We recommend that you visit our Terms & Conditions and the Security Advice for more comprehensive information.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+    $send = sendEmail_JobRequest($email,$message,$subject);
+
+
         $update_data=array('last_login'=>date('Y-m-d H:i:s'));
           $where11['company_profile_id']=$employer_id;
              
