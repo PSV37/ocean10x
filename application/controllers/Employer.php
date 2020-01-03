@@ -1724,8 +1724,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $this->Master_model->master_update($company_profile,'company_profile',$where);
             $consultant_id=$this->input->post('consultant_id');
             $whr['con_comp_map_id']=$consultant_id;
-            $data['is_favourite']=$this->input->post('Favorite');
-            $this->Master_model->master_update($data,'consultant_company_mapping',$whr);
+            $data1['is_favourite']=$this->input->post('Favorite');
+            $this->Master_model->master_update($data1,'consultant_company_mapping',$whr);
 
 
              redirect('employer/show-all-consultant');
