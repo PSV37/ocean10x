@@ -1699,7 +1699,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     $old_data=$old_array_values[$i];
                     $new_data=$company_profile[$parameter];
                     if (isset($new_data) && !empty($new_data)) {
-                        if (($old_data==$new_data) && (($new_data[$parameter] =='company_slug') || ($new_data[$parameter] =='token')) )
+                        if (($old_data==$new_data) && (($new_data =='company_slug') || ($new_data =='token')) )
                         {
                             
                         }
