@@ -84,8 +84,9 @@ class Employee extends MY_Employee_Controller
                     $parameter=$old_array_keys[$i];
                     $old_data=$old_array_values[$i];
                     $new_data=$employee_data[$parameter];
-                    print_r($old_data);
-                    print_r($new_data);
+                    print_r($parameter);echo "<br/>";
+                    print_r($old_data);echo "<br/>";
+                    print_r($new_data);echo "<br/>";
                     // if (isset($new_data) && !empty($new_data)) {
                     //     if (($old_data==$new_data) && (($new_data=='emp_updated_date') || ($new_data=='emp_updated_by')) )
                     //     {
