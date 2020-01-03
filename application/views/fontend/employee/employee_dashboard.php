@@ -36,7 +36,7 @@
 
       <div class="content col-md-9">
        
-        <div class="userccount empdash">
+        <div class="userccount empdash"><?php echo $this->session->flashdata('success_msg'); ?>
           <?php $emp_id=$this->session->userdata('emp_id'); 
                 $name=$this->session->userdata('name');;
           ?>
