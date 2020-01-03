@@ -336,7 +336,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
        }
 
        function getuseraccess_load(){
-         var id = $('#user_role').val();
+         var id = <?php echo $result['dept_id']; ?>
          alert(id);
       if(id){
           
