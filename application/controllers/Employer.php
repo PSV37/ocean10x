@@ -1731,7 +1731,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
              redirect('employer/show-all-consultant');
             }
                 # code...
-            }
+        }
 
                     
         
@@ -1960,7 +1960,17 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     		'emp_status' =>'0',
     	);
     	$where11['emp_id']=$id;
+        $old_employee_profile=$this->Master_model->get_master_row('company_profile',$select = FALSE,$where11);
     	$this->Master_model->master_update($del,'employee',$where11);
+         $company_name=$this->session->userdata('company_name');
+                            $data=array('company'=>$company_name,
+                            'action_taken_for'=>$old_employee_profile['emp_name'],
+                            'field_changed' =>'Deleted Employee',
+                            'Action'=>$company_name.' Deleted '.$old_employee_profile['emp_name'],
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
+
+                    $result=$this->Master_model->master_insert($data,'employer_audit_record');
     }
      function change_status()
     {
@@ -1974,6 +1984,15 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             'emp_status' =>'0',);
       
         $this->Master_model->master_update($status,'employee',$where11);
+         $company_name=$this->session->userdata('company_name');
+                            $data=array('company'=>$company_name,
+                            'action_taken_for'=>$result['emp_name'],
+                            'field_changed' =>'Deactivated Employee',
+                            'Action'=>$company_name.' Deactivated employee '.$result['emp_name'],
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
+
+                    $result=$this->Master_model->master_insert($data,'employer_audit_record');
         // print_r($this->db->last_query());die();
 
        
@@ -1990,6 +2009,15 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             'emp_status' =>'1',);
       
         $this->Master_model->master_update($status,'employee',$where11);
+          $company_name=$this->session->userdata('company_name');
+                            $data=array('company'=>$company_name,
+                            'action_taken_for'=>$result['emp_name'],
+                            'field_changed' =>'Activated Employee',
+                            'Action'=>$company_name.' Activated employee '.$result['emp_name'],
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
+
+                    $result=$this->Master_model->master_insert($data,'employer_audit_record');
     }
 
     function suspend()
@@ -2004,6 +2032,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             'emp_status' =>'3',);
       
         $this->Master_model->master_update($status,'employee',$where11);
+         $company_name=$this->session->userdata('company_name');
+                            $data=array('company'=>$company_name,
+                            'action_taken_for'=>$result['emp_name'],
+                            'field_changed' =>'Suspended Employee',
+                            'Action'=>$company_name.' Suspended employee '.$result['emp_name'],
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
     }
 	
 	/*Edit Employee*/
@@ -2045,6 +2080,15 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         );
         $where11['con_comp_map_id']=$id;
         $this->Master_model->master_update($del,'consultant_company_mapping',$where11);
+        $company_name=$this->session->userdata('company_name');
+                            $data=array('company'=>$company_name,
+                            'action_taken_for'=>$company_name,
+                            'field_changed' =>'Deleted Consultant',
+                            'Action'=>$company_name.' Deleted Consultant',
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
+
+                    $result=$this->Master_model->master_insert($data,'employer_audit_record');
     }
 
     public function postEditData(){
