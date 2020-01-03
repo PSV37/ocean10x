@@ -94,16 +94,20 @@ class Employee extends MY_Employee_Controller
                         }
                         else
                         {
-                            $employee_name=$this->session->userdata('name');
-                            $action= str_replace("_", ' ', $parameter);
-                            $data=array('company'=>$company_name,
-                                       'action_taken_for'=>$employee_name,
-                                        'field_changed' =>$action,
-                                        'Action'=>$employee_name.' changed '.$action,
-                                        'datetime'=>date('Y-m-d H:i:s'),
-                                        'updated_by' =>$employee_name);
-                            $result=$this->Master_model->master_insert($data,'employer_audit_record');
-                            print_r($this->db->last_query());
+                                print_r($parameter);echo "<br/>";
+                    print_r($old_data);echo "<br/>";
+                    print_r($new_data);echo "<br/>";
+
+                            // $employee_name=$this->session->userdata('name');
+                            // $action= str_replace("_", ' ', $parameter);
+                            // $data=array('company'=>$company_name,
+                            //            'action_taken_for'=>$employee_name,
+                            //             'field_changed' =>$action,
+                            //             'Action'=>$employee_name.' changed '.$action,
+                            //             'datetime'=>date('Y-m-d H:i:s'),
+                            //             'updated_by' =>$employee_name);
+                            // $result=$this->Master_model->master_insert($data,'employer_audit_record');
+                            // print_r($this->db->last_query());
 
                         }
                     }
