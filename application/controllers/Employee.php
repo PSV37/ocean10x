@@ -66,7 +66,7 @@ class Employee extends MY_Employee_Controller
             $employee_data['emp_updated_date'] = date('Y-m-d H:i:s');
             $employee_data['emp_updated_by'] = $employee_id;
            
-             $where['emp_id']=$employee_id;
+                $where['emp_id']=$employee_id;
                 $company_profile_id=$this->session->userdata('company_id');
                 $whereres = "company_profile_id='$company_profile_id'";
                 $company_profile=$this->Master_model->get_master_row('company_profile',$select = FALSE,$whereres);
@@ -413,6 +413,7 @@ class Employee extends MY_Employee_Controller
     public function job_post()
             {
                 $employer_id = $this->session->userdata('company_id');
+                $emp_name=$this->session->userdata('name');
                 if ($_POST) {
                     $employer_id  = $this->session->userdata('company_id');
                     $job_deadline = strtolower($this->input->post('job_deadline'));
@@ -442,6 +443,18 @@ class Employee extends MY_Employee_Controller
                     );
                 if (empty($job_post_id)) 
                 {
+                $company_profile_id=$this->session->userdata('company_id');
+                $whereres = "company_profile_id='$company_profile_id'";
+                $company_profile=$this->Master_model->get_master_row('company_profile',$select = FALSE,$whereres);
+                $company_name=$company_profile['company_name'];
+                    $data=array('company'=>$company_name,
+                            'action_taken_for'=>$company_name,
+                            'field_changed' =>'Posted A new Job',
+                            'Action'=>$emp_name.' Posted A new  Job ',
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$this->session->userdata('name'));
+
+                    $result=$this->Master_model->master_insert($data,'employer_audit_record');
                         $this->job_posting_model->insert($job_info);
                         $this->session->set_flashdata('success',
                             '<div class="alert alert-success alert-dismissable">
@@ -449,6 +462,43 @@ class Employee extends MY_Employee_Controller
                             Job posted successfully</div>');
                             redirect('job/show/'.$job_info['job_slugs']);
                 } else {
+
+                     $company_profile_id=$this->session->userdata('company_id');
+                            $whereres = "job_post_id='$job_post_id'";
+                            $old_job_details=$this->Master_model->get_master_row('job_posting',$select = FALSE,$whereres);
+                            $old_array_keys=array_keys($old_job_details);
+                            $old_array_values=array_values($old_job_details);
+                            // print_r($old_array_keys);
+                            // print_r($old_array_values);die;
+
+                            $size=sizeof($old_array_keys);
+                            for ($i=0; $i <$size ; $i++) 
+                            { 
+                                $parameter=$old_array_keys[$i];
+                                $old_data=$old_array_values[$i];
+                                $new_data=$job_info[$parameter];
+                                if (isset($new_data) && !empty($new_data)) {
+                                    if (($old_data==$new_data) && ($new_data!='job_slugs') )
+                                    {
+                                        
+                                    }
+                                    else
+                                    {
+                                        $company_name=$this->session->userdata('company_name');
+                                        $action= str_replace("_", ' ', $parameter);
+                                        $data=array('company'=>$company_name,
+                                                   'action_taken_for'=>$company_name,
+                                                    'field_changed' =>$action,
+                                                    'Action'=>$emp_name.' changed '.$action.' In posted job for ' .$this->input->post('job_title') ,
+                                                    'datetime'=>date('Y-m-d H:i:s'),
+                                                    'updated_by' =>$emp_name);
+                                        $result=$this->Master_model->master_insert($data,'employer_audit_record');
+                                        // print_r($this->db->last_query());die;
+
+                                    }
+                                }
+                                
+                            }
                         $this->job_posting_model->update($job_info, $job_post_id);
                         $this->session->set_flashdata('update','<div class="alert alert-success alert-dismissable"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>Job post updated successfully;</div>');
                         redirect('job/show/'.$job_info['job_slugs']);
