@@ -375,7 +375,7 @@ class Employee extends MY_Employee_Controller
     $states = $this->Master_model->getMaster('state',$where);
     $result = '';
     if(!empty($states)){ 
-        $result .='<option value="">Select State</option>';
+        $result .='<option value="0">Select State</option>';
         foreach($states as $key){
           $result .='<option value="'.$key['state_id'].'">'.$key['state_name'].'</option>';
         }
@@ -393,7 +393,7 @@ class Employee extends MY_Employee_Controller
     $citys = $this->Master_model->getMaster('city',$where);
     $result = '';
     if(!empty($citys)){ 
-        $result .='<option value="">Select City</option>';
+        $result .='<option value="0">Select City</option>';
         foreach($citys as $key){
           $result .='<option value="'.$key['id'].'">'.$key['city_name'].'</option>';
         }
