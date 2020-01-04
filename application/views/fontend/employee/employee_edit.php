@@ -86,7 +86,7 @@
                       <div class="formrow">
                         <label class="control-label">State: <span class="required">*</span></label>
                         <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
-                        <option value="" selected>Select State</option>
+                        <option value="" >Select State</option>
                            
                         </select>
                       </div>
@@ -204,8 +204,8 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                 data:{id:id},
                 success:function(res){
                     $('#state_id').html(res);
-                    $('#state_id').val(<?php echo $result['state_id']; ?>);
-          getCitys_load();
+                    // $('#state_id').val(<?php echo $result['state_id']; ?>);
+          // getCitys_load();
                 }
                 
             }); 
