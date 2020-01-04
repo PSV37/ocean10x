@@ -86,7 +86,7 @@
                       <div class="formrow">
                         <label class="control-label">State: <span class="required">*</span></label>
                         <select  name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
-                        <option value="" >Select State</option>
+                        <option value="0" >Select State</option>
                            
                         </select>
                       </div>
