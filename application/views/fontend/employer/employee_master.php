@@ -115,7 +115,7 @@
                   
               <?php  }else{ ?>
 
-                   <td><button href="#" class="btn btn-info" data-emp_id='<?php echo $key['emp_id']; ?>' title="access"  ><strong>No Access given</strong> </button></td>
+                   <td><button href="#" class="btn btn-info btn-xs" data-emp_id='<?php echo $key['emp_id']; ?>' title="access"  ><strong>No Access given</strong> </button></td>
 
              <?php } ?>
 
