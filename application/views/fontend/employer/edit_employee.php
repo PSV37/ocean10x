@@ -283,7 +283,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
       function getuseraccess(id){
       if(id){
           
-        console.log(<?php echo $result['access_to_employee']; ?>);
+        
               $.ajax({
                   type:'POST',
                   url:'<?php echo base_url();?>employer/get_access_data',
@@ -361,10 +361,10 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 
        function getuseraccess_load(){
          var id = <?php echo $result['dept_id']; ?>;
-         alert(id);
+         // alert(id);
       if(id){
           
-        
+        console.log(<?php echo $result['access_to_employee']; ?>);
               $.ajax({
                   type:'POST',
                   url:'<?php echo base_url();?>employer/get_access_data',
