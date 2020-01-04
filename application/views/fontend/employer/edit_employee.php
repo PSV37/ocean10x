@@ -283,7 +283,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
       function getuseraccess(id){
       if(id){
           
-        
+        console.log(<?php echo $result['access_to_employee']; ?>)
               $.ajax({
                   type:'POST',
                   url:'<?php echo base_url();?>employer/get_access_data',
@@ -291,6 +291,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                   success:function(res){
                       $('#user_accc').html(res);
                       $("#user_accc").selectpicker('refresh');
+
                   }
 
           
