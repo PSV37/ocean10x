@@ -364,9 +364,9 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
          // alert(id);
       if(id){
           
-        console.log(<?php echo $result['access_to_employee'];
-           print_r(explode(",", $result['access_to_employee']));
-          ?>);
+        <?php $result['access_to_employee'];?>
+           var data=<?php explode(",", $result['access_to_employee']));
+          ?>;
               $.ajax({
                   type:'POST',
                   url:'<?php echo base_url();?>employer/get_access_data',
@@ -374,6 +374,12 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                   success:function(res){
                       $('#user_accc').html(res);
                       $("#user_accc").selectpicker('refresh');
+                      var text = "";
+                      var x;
+                      for (x in data) {
+                        text += data[x] + " ";
+                      }
+                 $("#user_accc").val(text);
                   }
 
           
