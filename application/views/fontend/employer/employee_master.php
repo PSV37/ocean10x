@@ -86,14 +86,18 @@
                   <td><button class="btn btn-success" title='Deactivate' data-toggle="modal" data-target="#deactivateModal"  name="status" id="status"   value="<?php echo $key['emp_id'];?>" >Deactivate</button></td> <?}
                  elseif($key['emp_status']=='2')
                   { ?> 
-                    <td></td>
+                    <td>
+                  &nbsp;&nbsp; <a href="#"><i class="fa fa-pencil"></i></a>
+                </td>
 
                       <td><button class="btn btn-warning" title='suspend' data-toggle="modal" data-target="#suspendModal"  name="suspend" id="suspend"   value="<?php echo $key['emp_id'];?>" >Suspend</button></td>
 
                   <td style=""><button class="btn btn-warning" title='Activate' data-toggle="modal"  name="status" id="status" onclick="Activate_user(this.value);" value="<?php echo $key['emp_id'];?>" >Inactive</button></td>
                   <?php } elseif($key['emp_status']=='0')
                   { ?> 
-                    <td></td>
+                   <td>
+                  &nbsp;&nbsp; <a href="#"><i class="fa fa-pencil"></i></a>
+                </td>
 
                       <td><button class="btn btn-warning" title='suspend' data-toggle="modal" data-target="#suspendModal"  name="suspend" id="suspend"   value="<?php echo $key['emp_id'];?>" >Suspend</button></td>
 
@@ -102,7 +106,9 @@
                   elseif($key['emp_status']=='3')
                   { ?> 
 
-                    <td></td>
+                   <td>
+                  &nbsp;&nbsp; <a href="#"><i class="fa fa-pencil"></i></a>
+                </td>
                     <td style=""><button class="btn btn-warning"  name="suspend" id="suspend" value="<?php echo $key['emp_id'];?>" >Suspended</button></td>
 
                   <td style=""><button class="btn btn-warning"  name="status" id="status" value="<?php echo $key['emp_id'];?>" >Suspended</button></td>
