@@ -50,8 +50,8 @@
         			  <th>Mobile No.</th>
         			  <th>Department</th>
         			  <th>Actions</th>
-                <th>Status</th>
                 <th>Suspend</th>
+                <th>Status</th>
         			  <th>Access Given</th>
                 
 
@@ -80,19 +80,25 @@
                    <td>
                   &nbsp;&nbsp; <a href="<?php echo base_url();?>employer/editemployee?id=<?php echo $key['emp_id']; ?>"><i class="fa fa-pencil"></i></a>
                 </td>
+                 <td><button class="btn btn-warning" title='suspend' data-toggle="modal" data-target="#suspendModal"  name="suspend" id="suspend"   value="<?php echo $key['emp_id'];?>" >Suspend</button></td>
+                 
                   <td><button class="btn btn-success" title='Deactivate' data-toggle="modal" data-target="#deactivateModal"  name="status" id="status"   value="<?php echo $key['emp_id'];?>" >Deactivate</button></td> <?}
                  elseif($key['emp_status']=='2')
                   { ?> 
                     <td></td>
+                     <td><button class="btn btn-warning" title='suspend' data-toggle="modal" data-target="#suspendModal"  name="suspend" id="suspend"   value="<?php echo $key['emp_id'];?>" >Suspend</button></td>
+
                   <td style=""><button class="btn btn-warning" title='Activate' data-toggle="modal"  name="status" id="status" onclick="Activate_user(this.value);" value="<?php echo $key['emp_id'];?>" >Inactive</button></td>
                   <?php } elseif($key['emp_status']=='0')
                   { ?> 
                     <td></td>
+                     <td><button class="btn btn-warning" title='suspend' data-toggle="modal" data-target="#suspendModal"  name="suspend" id="suspend"   value="<?php echo $key['emp_id'];?>" >Suspend</button></td>
+
                   <td style=""><button class="btn btn-danger"  name="status" id="status" value="<?php echo $key['emp_id'];?>" >Deactivated</button></td>
                   <?php } ?>
 
                   <!-- <td><button class="btn btn-info" data-target="#aceess_specifiers"   name="acess" id="acess"  value="<?php echo $key['emp_id'];?>" >View Access given</button></td> -->
-                   <td><button class="btn btn-warning" title='suspend' data-toggle="modal" data-target="#suspendModal"  name="suspend" id="suspend"   value="<?php echo $key['emp_id'];?>" >Suspend</button></td>
+                  
 
                   <td><button href="#" class="btn btn-info btn-xs getacessdetails" data-emp_id='<?php echo $key['emp_id']; ?>' title="access" data-toggle="modal" data-target="#aceess_specifiers" ><strong>View Access given</strong> </button></td>
 
