@@ -86,7 +86,7 @@ class Employer extends MY_Employer_Controller
                             $data=array('company'=>$company_name,
                                        'action_taken_for'=>$company_name,
                                         'field_changed' =>$action,
-                                        'Action'=>$company_name.' changed '.$action,
+                                        'Action'=>'Changed '.$action,
                                         'datetime'=>date('Y-m-d H:i:s'),
                                         'updated_by' =>$company_name);
                             $result=$this->Master_model->master_insert($data,'employer_audit_record');
@@ -296,7 +296,7 @@ public function job_post()
                         $data=array('company'=>$company_name,
                             'action_taken_for'=>$company_name,
                             'field_changed' =>'Posted A new Job',
-                            'Action'=>$company_name.' Posted A new  Job ',
+                            'Action'=>'Posted A new  Job ',
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
 
@@ -336,7 +336,7 @@ public function job_post()
                                         $data=array('company'=>$company_name,
                                                    'action_taken_for'=>$company_name,
                                                     'field_changed' =>$action,
-                                                    'Action'=>$company_name.' changed '.$action.' In posted job for ' .$this->input->post('job_title') ,
+                                                    'Action'=>'Changed '.$action.' In posted job for ' .$this->input->post('job_title') ,
                                                     'datetime'=>date('Y-m-d H:i:s'),
                                                     'updated_by' =>$company_name);
                                         $result=$this->Master_model->master_insert($data,'employer_audit_record');
@@ -393,7 +393,7 @@ public function job_post()
                             $data=array('company'=>$company_name,
                             'action_taken_for'=>$company_name,
                             'field_changed' =>'Deleted Job',
-                            'Action'=>$company_name.' Deleted '.$old_job_details['job_title'].' Job .',
+                            'Action'=>'Deleted '.$old_job_details['job_title'].' Job .',
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
 
@@ -492,7 +492,7 @@ public function job_post()
                             $data=array('company'=>$company_name,
                             'action_taken_for'=>$company_name,
                             'field_changed' =>'Changed Password',
-                            'Action'=>$company_name.' Changed Password',
+                            'Action'=>'Changed Password',
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
 
@@ -862,7 +862,7 @@ function getstate(){
                             $data=array('company'=>$company_name,
                             'action_taken_for'=>$company_name,
                             'field_changed' =>'Forward Job',
-                            'Action'=>$company_name.' visited forward job.',
+                            'Action'=>'visited forward job.',
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
 
@@ -989,7 +989,7 @@ function getstate(){
                             $data=array('company'=>$company_name,
                             'action_taken_for'=>$email[$i],
                             'field_changed' =>'Forwarded Job ',
-                            'Action'=>$company_name.' Forwarded job for the position of '.$require['job_title'],
+                            'Action'=>'Forwarded job for the position of '.$require['job_title'],
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
 
@@ -1262,8 +1262,8 @@ function getstate(){
                 $company_name=$this->session->userdata('company_name');
                         $data=array('company'=>$company_name,
                             'action_taken_for'=>$company_name,
-                            'field_changed' =>' Added a new Question.',
-                            'Action'=>$company_name.' Added a new Question to Questionbank.',
+                            'field_changed' =>'Added a new Question.',
+                            'Action'=>'Added a new Question to Questionbank.',
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
 
@@ -1326,7 +1326,7 @@ function getstate(){
                                     $data=array('company'=>$company_name,
                                                'action_taken_for'=>$company_name,
                                                 'field_changed' =>$action,
-                                                'Action'=>$company_name.' changed '.$action,
+                                                'Action'=>'Changed '.$action,
                                                 'datetime'=>date('Y-m-d H:i:s'),
                                                 'updated_by' =>$company_name);
                                     $result=$this->Master_model->master_insert($data,'employer_audit_record');
@@ -1399,7 +1399,7 @@ function getstate(){
                         $data=array('company'=>$company_name,
                             'action_taken_for'=>$company_name,
                             'field_changed' =>'Deleted a Question.',
-                            'Action'=>$company_name.' Deleted a Question.',
+                            'Action'=>'Deleted a Question.',
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
 
@@ -1501,7 +1501,7 @@ function getstate(){
                             $data=array('company'=>$company_name,
                             'action_taken_for'=>$this->input->post('emp_name'),
                             'field_changed' =>'Added new Employee',
-                            'Action'=>$company_name.' Added '.$this->input->post('emp_name').' As an Employee.',
+                            'Action'=>'Added '.$this->input->post('emp_name').' As an Employee.',
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
 
@@ -1585,7 +1585,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                             $data=array('company'=>$company_name,
                             'action_taken_for'=>$this->input->post('company_name'),
                             'field_changed' =>'Added  consultant',
-                            'Action'=>$company_name.' Added '.$this->input->post('company_name').' As a consultant.',
+                            'Action'=>'Added '.$this->input->post('company_name').' As a consultant.',
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
 
@@ -1630,7 +1630,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                             $data=array('company'=>$company_name,
                             'action_taken_for'=>$this->input->post('emp_name'),
                             'field_changed' =>'Added  consultant',
-                            'Action'=>$company_name.' Added '.$this->input->post('company_name').' As a consultant.',
+                            'Action'=>'Added '.$this->input->post('company_name').' As a consultant.',
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
 
@@ -1710,7 +1710,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                             $data=array('company'=>$company_name,
                                        'action_taken_for'=>$this->input->post('company_name'),
                                         'field_changed' =>$action,
-                                        'Action'=>$company_name.' changed '.$action. ' for '.$this->input->post('company_name'),
+                                        'Action'=>'Changed '.$action. ' for '.$this->input->post('company_name'),
                                         'datetime'=>date('Y-m-d H:i:s'),
                                         'updated_by' =>$company_name);
                             $result=$this->Master_model->master_insert($data,'employer_audit_record');
@@ -1970,7 +1970,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                             $data=array('company'=>$company_name,
                             'action_taken_for'=>$old_employee_profile['emp_name'],
                             'field_changed' =>'Deleted Employee',
-                            'Action'=>$company_name.' Deleted '.$old_employee_profile['emp_name'],
+                            'Action'=>'Deleted '.$old_employee_profile['emp_name'],
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
 
@@ -1992,7 +1992,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                             $data=array('company'=>$company_name,
                             'action_taken_for'=>$result['emp_name'],
                             'field_changed' =>'Deactivated Employee',
-                            'Action'=>$company_name.' Deactivated employee '.$result['emp_name'],
+                            'Action'=>'Deactivated employee '.$result['emp_name'],
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
 
@@ -2017,7 +2017,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                             $data=array('company'=>$company_name,
                             'action_taken_for'=>$result['emp_name'],
                             'field_changed' =>'Activated Employee',
-                            'Action'=>$company_name.' Activated employee '.$result['emp_name'],
+                            'Action'=>'Activated employee '.$result['emp_name'],
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
 
@@ -2040,7 +2040,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                             $data=array('company'=>$company_name,
                             'action_taken_for'=>$result['emp_name'],
                             'field_changed' =>'Suspended Employee',
-                            'Action'=>$company_name.' Suspended employee '.$result['emp_name'],
+                            'Action'=>'Suspended employee '.$result['emp_name'],
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
                     $result=$this->Master_model->master_insert($data,'employer_audit_record');
@@ -2090,7 +2090,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                             $data=array('company'=>$company_name,
                             'action_taken_for'=>$company_name,
                             'field_changed' =>'Deleted Consultant',
-                            'Action'=>$company_name.' Deleted Consultant',
+                            'Action'=>'Deleted Consultant',
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
 
@@ -2181,7 +2181,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                             $data=array('company'=>$company_name,
                                        'action_taken_for'=>$employee_name,
                                         'field_changed' =>$action,
-                                        'Action'=>$company_name.' updated '.$action.' of '.$employee_name,
+                                        'Action'=>'Updated '.$action.' of '.$employee_name,
                                         'datetime'=>date('Y-m-d H:i:s'),
                                         'updated_by' =>$company_name);
                             $result=$this->Master_model->master_insert($data,'employer_audit_record');
@@ -2417,7 +2417,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                             $data=array('company'=>$company_name,
                             'action_taken_for'=>$company_name,
                             'field_changed' =>'Imported Questions',
-                            'Action'=>$company_name.' Imported new Questions.',
+                            'Action'=>'Imported new Questions.',
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
 
@@ -2565,7 +2565,7 @@ public function interview_scheduler()
                             $data=array('company'=>$company_name,
                             'action_taken_for'=>$js_data['full_name'],
                             'field_changed' =>'Interview Invitation',
-                            'Action'=>$company_name.' Interview Invitation has been sent to '.$js_data['full_name'],
+                            'Action'=>'Interview Invitation has been sent to '.$js_data['full_name'],
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
 
@@ -2672,7 +2672,7 @@ public function interview_scheduler()
                              $data=array('company'=>$company_name,
                             'action_taken_for'=>$js_data['full_name'],
                             'field_changed' =>$action,
-                           'Action'=>$company_name.' changed '.$action,
+                           'Action'=>'Changed '.$action,
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
                            
@@ -2808,7 +2808,7 @@ public function interview_scheduler()
                             $data=array('company'=>$company_name,
                             'action_taken_for'=>'Jobseeker',
                             'field_changed' =>'Interview Status',
-                            'Action'=>$company_name.' updated Interview Status to '.$status, 
+                            'Action'=>'Updated Interview Status to '.$status, 
                                
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
@@ -2928,7 +2928,7 @@ public function interview_scheduler()
                             $data=array('company'=>$company_name,
                             'action_taken_for'=>$this->input->post('candidate_name'),
                             'field_changed' =>'Added  CV',
-                            'Action'=>$company_name.' Added  CV of '.$this->input->post('candidate_name'),
+                            'Action'=>'Added  CV of '.$this->input->post('candidate_name'),
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
 
@@ -3068,7 +3068,7 @@ public function interview_scheduler()
                             $data=array('company'=>$company_name,
                             'action_taken_for'=>$company_name,
                             'field_changed' =>'Added Document',
-                            'Action'=>$company_name.' Added document related to'.$this->input->post('document_type'),
+                            'Action'=>'Added document related to'.$this->input->post('document_type'),
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
 
@@ -3094,7 +3094,7 @@ public function interview_scheduler()
                             $data=array('company'=>$company_name,
                             'action_taken_for'=>$company_name,
                             'field_changed' =>'Deleted Document',
-                            'Action'=>$company_name.' Deleted document related to'.$old_Document['document_type'],
+                            'Action'=>'Deleted document related to'.$old_Document['document_type'],
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
 
@@ -3201,7 +3201,7 @@ public function interview_scheduler()
                             $data=array('company'=>$company_name,
                             'action_taken_for'=>$this->input->post('company_name'),
                             'field_changed' =>'Imported CVs',
-                            'Action'=>$company_name.'Imported Multiple CVs',
+                            'Action'=>'Imported Multiple CVs',
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
 
@@ -3383,7 +3383,7 @@ public function interview_scheduler()
         $data=array('company'=>$company_name,
             'action_taken_for'=>$company_name,
             'field_changed' =>$action,
-            'Action'=>$company_name.' visited '.$action,
+            'Action'=>'visited '.$action,
             'datetime'=>date('Y-m-d H:i:s'),
             'updated_by' =>$company_name);
 
@@ -3413,7 +3413,7 @@ public function superadmin()
                             $data=array('company'=>$company_name,
                             'action_taken_for'=>$company_name,
                             'field_changed' =>'Superadmin',
-                            'Action'=>$company_name.' Created superadmin and superadmin password',
+                            'Action'=>'Created superadmin and superadmin password',
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
 
