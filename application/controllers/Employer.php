@@ -1760,7 +1760,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     	$config = array();
     		$config["base_url"] = base_url('employer/index');
     		$config["total_rows"] = count($res);
-    		$config['per_page'] =5;
+    		$config['per_page'] =10;
     		$config['uri_segment'] = 3;
     		  
     		$config['full_tag_open'] = '<div class="pagination">';
@@ -1791,11 +1791,11 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
            $day = date("Y-m-d H:i:s", strtotime('-24 hours', time()));
             // $where='employee.org_id="'.$employer.'" and employee.emp_status!="0"  and employee.emp_updated_date > "'.$day.'"';
 
-         $where='employee.org_id="'.$employer.'" or (employee.emp_status="0" and employee.emp_updated_date >"'.$day.'") or (employee.emp_status="3" and employee.emp_updated_date >"'.$day.'") ';
+         $where='employee.org_id="'.$employer.'" or (employee.emp_status="0" and employee.emp_updated_date >"'.$day.'") or (employee.emp_status="3" and employee.emp_updated_date >"'.$day.'") OR employee.emp_status="1" OR employee.emp_status="2"  ';
     	   
            $data["result"] = $this->Master_model->getMaster("employee", $where=$where, $join, $order = "ASC", $field = "employee.emp_id", $select = false,$config["per_page"],$page, $search=false, $group_by = FALSE);
 
-           print_r($this->db->last_query());die;
+           // print_r($this->db->last_query());die;
     	$this->load->view('fontend/employer/employee_master',$data);
     }
 
