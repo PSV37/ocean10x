@@ -365,8 +365,9 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
       if(id){
           
         <?php $result['access_to_employee'];?>
-           var data=<?php explode(",", $result['access_to_employee']);
+           <?php $data= explode(",", $result['access_to_employee']);
           ?>;
+          var data1=<?php echo $data;?>;
               $.ajax({
                   type:'POST',
                   url:'<?php echo base_url();?>employer/get_access_data',
@@ -376,8 +377,8 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                       $("#user_accc").selectpicker('refresh');
                       var text = "";
                       var x;
-                      for (x in data) {
-                        text += data[x] + " ";
+                      for (x in data1) {
+                        text += data1[x] + " ";
                       }
                  $("#user_accc").val(text);
                   }
