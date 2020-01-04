@@ -61,7 +61,7 @@
           		<?php $srno=0; foreach($result as $key){ $srno++; 
                 ?>
           				
-                <tr <?php if($key['emp_status']=='0'){?> style="background: #CCC;" <?php } ?>>
+                <tr <?php if($key['emp_status']=='0' || $key['emp_status']=='3' ){?> style="background: #CCC;" <?php } ?>>
                   <td><?php echo $srno; ?></td>
           				<td><?php echo $key['emp_no']; ?></td>
           				<td><?php echo $key['emp_name']; ?></td>
