@@ -9,7 +9,7 @@
   .field-icon {
   float: right;
   margin-right: 8px;
-  margin-top: -23px;
+  margin-top: -27px;
   position: relative;
   z-index: 2;
   cursor:pointer;
