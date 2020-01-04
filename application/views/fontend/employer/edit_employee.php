@@ -6,6 +6,14 @@
   .bootstrap-select > .dropdown-toggle {
     display: block;
   }
+  .field-icon {
+  float: right;
+  margin-right: 8px;
+  margin-top: -23px;
+  position: relative;
+  z-index: 2;
+  cursor:pointer;
+}
 </style>
 
 <!-- Page Title start -->
