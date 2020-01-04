@@ -109,8 +109,17 @@
 
                   <?php } ?>
                  
+                <?php if ((isset($key['access_to_employee'])) && !empty($key['access_to_employee']) ) {?>
 
-                  <td><button href="#" class="btn btn-info btn-xs getacessdetails" data-emp_id='<?php echo $key['emp_id']; ?>' title="access" data-toggle="modal" data-target="#aceess_specifiers" ><strong>View Access given</strong> </button></td>
+                   <td><button href="#" class="btn btn-info btn-xs getacessdetails" data-emp_id='<?php echo $key['emp_id']; ?>' title="access" data-toggle="modal" data-target="#aceess_specifiers" ><strong>View Access given</strong> </button></td>
+                  
+              <?php  }else{ ?>
+
+                   <td><button href="#" class="btn btn-info btn-xs getacessdetails" data-emp_id='<?php echo $key['emp_id']; ?>' title="access"  ><strong>No Access given</strong> </button></td>
+
+             <?php } ?>
+
+                 
 
                 </tr>
 			        <?php } ?>
