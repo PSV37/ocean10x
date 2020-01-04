@@ -107,7 +107,7 @@
 
                   <td style=""><button class="btn btn-danger"  name="status" id="status" value="<?php echo $key['emp_id'];?>" >Suspended</button></td>
 
-                  <?php?>
+                  <?php } ?>
                  
 
                   <td><button href="#" class="btn btn-info btn-xs getacessdetails" data-emp_id='<?php echo $key['emp_id']; ?>' title="access" data-toggle="modal" data-target="#aceess_specifiers" ><strong>View Access given</strong> </button></td>
