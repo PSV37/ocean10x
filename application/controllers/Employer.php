@@ -754,7 +754,7 @@ function getstate(){
 		}
 	}else{
 	
-		$result .='<option value="">State not available</option>';
+		$result .='<option value="0">State not available</option>';
 	}
 	 echo $result;
 }
@@ -772,7 +772,7 @@ function getstate(){
 		}
 	}else{
 	
-		$result .='<option value="">State not available</option>';
+		$result .='<option value="0">State not available</option>';
 	}
 	 echo $result;
 }

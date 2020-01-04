@@ -381,7 +381,7 @@ class Employee extends MY_Employee_Controller
         }
     }else{
     
-        $result .='<option value="">State not available</option>';
+        $result .='<option value="0">State not available</option>';
     }
      echo $result;
 }
@@ -399,7 +399,7 @@ class Employee extends MY_Employee_Controller
         }
     }else{
     
-        $result .='<option value="">State not available</option>';
+        $result .='<option value="0">State not available</option>';
     }
      echo $result;
 }
