@@ -39,6 +39,8 @@ class Employee_Login extends CI_Controller
             $data['company_id'] = $result->org_id;
             $data['photo']      = $result->photo;
             $data['status']      = $result->emp_status;
+               $this->session->set_userdata($data);
+            
 
             if ($data['status']=='1') {
 
@@ -56,7 +58,6 @@ class Employee_Login extends CI_Controller
                             'updated_by' =>$this->session->userdata('name'));
 
                     $result=$this->Master_model->master_insert($data,'employer_audit_record');
-               $this->session->set_userdata($data);
              $this->session->set_flashdata('welcome', '<div class="alert alert-success alert-dismissable">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>Welcome '.$data['name'].'</div>');
                 redirect('employee/index');
