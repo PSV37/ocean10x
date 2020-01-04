@@ -490,11 +490,11 @@ class Employee extends MY_Employee_Controller
                                         $company_name=$company_profile['company_name'];
                                         $action= str_replace("_", ' ', $parameter);
                                         $data=array('company'=>$company_name,
-                                                   'action_taken_for'=>$company_name,
-                                                    'field_changed' =>$action,
-                                                    'Action'=>$emp_name.' changed '.$action.' In posted job for ' .$this->input->post('job_title') ,
-                                                    'datetime'=>date('Y-m-d H:i:s'),
-                                                    'updated_by' =>$emp_name);
+                                            'action_taken_for'=>$company_name,
+                                            'field_changed' =>$action,
+                                            'Action'=>$emp_name.' changed '.$action.' In posted job for ' .$this->input->post('job_title') ,
+                                            'datetime'=>date('Y-m-d H:i:s'),
+                                            'updated_by' =>$emp_name);
                                         $result=$this->Master_model->master_insert($data,'employer_audit_record');
                                         // print_r($this->db->last_query());die;
 
