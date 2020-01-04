@@ -766,9 +766,9 @@ function getstate(){
 	$citys = $this->Master_model->getMaster('city',$where);
 	$result = '';
 	if(!empty($citys)){ 
-		$result .='<option value="">Select City</option>';
+		$result .='<option value="" selected>Select City</option>';
 		foreach($citys as $key){
-		  $result .='<option value="'.$key['id'].'">'.$key['city_name'].'</option>';
+		  $result .='<option value="'.$key['id'].'" >'.$key['city_name'].'</option>';
 		}
 	}else{
 	
