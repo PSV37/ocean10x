@@ -154,7 +154,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 <?php $this->load->view("fontend/layout/footer.php"); ?>
 
 <script type="text/javascript">
-  $( document ).ready(function() {
+ $(function() {
     console.log( "ready!" );
 });
 </script>
