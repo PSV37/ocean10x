@@ -89,7 +89,8 @@
                         <img src="<?php echo base_url() ?>upload/notfound.gif" alt="" class="img-circle"></a>
                         <?php endif; ?>
                         <ul class="dropdown-menu start-right">
-                            <li class="dropdown-header">Welcome <?php echo $this->company_profile_model->company_name($employer_id); ?></li>
+                            <li class="dropdown-header"><?php echo $this->company_profile_model->company_name($employer_id); ?></li>
+                            <li class="dropdown-header">Welcome Admin</li>
                             <li><a href="<?php echo base_url(); ?>employer"><span class="glyphicon glyphicon-user"></span>Dashboard</a></li>
                             <li><a href="<?php echo base_url(); ?>employer/active-job"><span class="glyphicon glyphicon-star"></span> Active Job</a></li>
                             <li><a href="<?php echo base_url(); ?>employer/pending-job"><span class="glyphicon glyphicon-star"></span>Pending Job</a></li>
