@@ -103,9 +103,9 @@
                   { ?> 
 
                     <td></td>
-                    <td></td>
+                    <td style=""><button class="btn btn-warning"  name="suspend" id="suspend" value="<?php echo $key['emp_id'];?>" >Suspended</button></td>
 
-                  <td style=""><button class="btn btn-danger"  name="status" id="status" value="<?php echo $key['emp_id'];?>" >Suspended</button></td>
+                  <td style=""><button class="btn btn-warning"  name="status" id="status" value="<?php echo $key['emp_id'];?>" >Suspended</button></td>
 
                   <?php } ?>
                  
