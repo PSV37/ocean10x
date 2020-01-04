@@ -365,7 +365,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
       if(id){
           
         console.log(<?php echo $result['access_to_employee'];
-           echo  explode(",", $result['access_to_employee']);
+           print_r(explode(",", $result['access_to_employee']));
           ?>);
               $.ajax({
                   type:'POST',
