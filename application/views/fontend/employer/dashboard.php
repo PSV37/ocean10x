@@ -654,7 +654,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
 
 </script>
 
- <script src="<?php echo base_url(); ?>asset/js/intlTelInput.js"></script>
+ <!-- <script src="<?php echo base_url(); ?>asset/js/intlTelInput.js"></script> -->
   <script src="<?php echo base_url(); ?>asset/js/utils.js"></script>
 <script>
 $(document).ready(function(){
@@ -664,10 +664,10 @@ $(document).ready(function(){
             event.preventDefault();
         }
     });
-     var input = document.querySelector("#phone");
-    window.intlTelInput(input, {
-      utilsScript: "",
-    });
+    //  var input = document.querySelector("#phone");
+    // window.intlTelInput(input, {
+    //   utilsScript: "",
+    // });
 });
 
 </script>
