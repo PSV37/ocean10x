@@ -369,8 +369,11 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
            // print_r($result['access_to_employee']);die;
 
           ?>;
-          console.log(<?php echo $data; ?>);
-          var data1=<?php print_r($data);?>;
+            var pausecontent = new Array();
+    <?php foreach($data as $key => $val){ ?>
+        pausecontent.push('<?php echo $val; ?>');
+    <?php } ?>
+         console.log(pausecontent);
               $.ajax({
                   type:'POST',
                   url:'<?php echo base_url();?>employer/get_access_data',
