@@ -11,9 +11,9 @@
                 $company_info = $this->company_profile_model->get($employer_id);
                 print_r($company_info);die;
 
-                if (isset($company_info[])) {
+                // if (isset($company_info[])) {
                   
-                }
+                // }
           ?>
 <div class="col-md-3">
   <nav class="side-menu hidden-sm hidden-xs">
