@@ -10,7 +10,7 @@
                 $wheres="status='0' AND company_profile_id='$employer_id'";
                  $branches = $this->Master_model->getMaster('company_branches',$where=$wheres);
                 $company_info = $this->company_profile_model->get($employer_id);
-                // print_r($company_info);die;
+                print_r($Corporate_docs_each);die;
 
                 if (isset($company_info->company_logo) && !empty($company_info->company_logo)) {
                     $logo_total=$logo;
