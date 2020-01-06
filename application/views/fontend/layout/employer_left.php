@@ -73,7 +73,7 @@
          $documents = $this->Master_model->getMaster('corporate_documents',$whereres,$join = FALSE, $order = false, $field = false, $select = FALSE,$limit=false,$start=false, $search=false);
          // print_r($documents);die;
 
-                if (isset($documents->document_type) && !empty($branches->document_type)) {
+                if (isset($documents->document_type) && !empty($documents->document_type)) {
                   if ($documents->document_type=='Incorporation') {
                       $Corporate_docs_total += $Corporate_docs_each;
                   }
@@ -88,7 +88,7 @@
                   }
                     
                 }
-
+                echo $Corporate_docs_total;
                 $profile_total=$Corporate_docs_total+$profile_details_total+$logo;
 
 
