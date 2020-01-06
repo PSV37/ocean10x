@@ -88,7 +88,7 @@
                   }
                     
                 }
-                echo $Corporate_docs_total;
+                echo $Corporate_docs_total; die;
                 $profile_total=$Corporate_docs_total+$profile_details_total+$logo;
 
 
