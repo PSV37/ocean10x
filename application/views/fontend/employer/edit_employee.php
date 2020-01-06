@@ -452,6 +452,8 @@ $("#dept_id").select2( {
              },
             dataType: "json",
             success: function(data){
+
+              console.log(data);
                var resp = $.map(data,function(obj){
                     return obj.pincode;
                }); 
