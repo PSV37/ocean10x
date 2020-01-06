@@ -392,6 +392,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
         $.each($(".selectpicker option:selected"), function(){   
          <?php foreach($data as $key => $val){ ?>         
              pausecontent.push('<?php echo $val; ?>');
+             $("#user_accc").val(<?php echo $val; ?>);
               <?php } ?>
         });
         
