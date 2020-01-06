@@ -367,6 +367,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
         <?php $result['access_to_employee'];?>
            <?php $data= explode(",", $result['access_to_employee']);
           ?>;
+          console.log(<?php echo $data; ?>);
           var data1=<?php echo $data;?>;
               $.ajax({
                   type:'POST',
@@ -384,7 +385,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
         $.each($(".selectpicker option:selected"), function(){            
             countries.push(text);
         });
-        alert("You have selected the  - " + countries.join(", "));
+        // alert("You have selected the  - " + countries.join(", "));
                  // $("#user_accc").val(text);
                   }
 
