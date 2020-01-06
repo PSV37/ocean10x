@@ -96,9 +96,9 @@
     <ul>
       <li> <a href="<?php echo base_url(); ?>" class=""> <i class="fa fa-home" aria-hidden="true"></i>Home </a> </li>
 
-      <li>
+      <li> <a href="#" class=""> <i class="fa fa-user" aria-hidden="true"></i>Profile Completed </a>
          <div class="progress bg-warning">
-                 <div class="progress-bar bg-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $profile_total;?>%"><?php echo round($profile_total); ?> percent Profile completed.
+                 <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style=" margin:5px;  width:<?php echo $profile_total;?>%" ><?php echo round($profile_total); ?> percent Profile completed.
                 
                  </div>
                 </div>
