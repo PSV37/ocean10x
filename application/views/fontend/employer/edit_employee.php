@@ -377,8 +377,8 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                   url:'<?php echo base_url();?>employer/get_access_data',
                   data:{id:id},
                   success:function(res){
-                      // $('#user_accc').html(res);
-                      // $("#user_accc").selectpicker('refresh');
+                      $('#user_accc').html(res);
+                       $("#user_accc").selectpicker('refresh');
                       // var text = "";
                       // var x;
                       // for (x in data1) {
