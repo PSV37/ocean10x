@@ -370,18 +370,19 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 
           ?>;
           console.log(<?php echo $data; ?>);
-          var data1[]=<?php print_r($data);?>;
+          var data1=<?php print_r($data);?>;
               $.ajax({
                   type:'POST',
                   url:'<?php echo base_url();?>employer/get_access_data',
                   data:{id:id},
                   success:function(res){
-                      $('#user_accc').html(res);
-                      $("#user_accc").selectpicker('refresh');
+                      // $('#user_accc').html(res);
+                      // $("#user_accc").selectpicker('refresh');
                       var text = "";
                       var x;
                       for (x in data1) {
                         text += data1[x] + " ";
+                        alert(text);
                       }
             var countries = [];
         $.each($(".selectpicker option:selected"), function(){            
