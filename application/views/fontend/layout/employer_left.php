@@ -1,10 +1,25 @@
 <?php $employer_id=$this->session->userdata('company_profile_id'); 
                 $type=$this->session->userdata('comp_type');
+
+                $logo=10;
+                $full_profile=50;
+                $Corporate_docs=40;
+
+                $full_profile_each=$full_profile/12;
+                $wheres="status='0' AND company_profile_id='$employer_id'";
+                 $branches = $this->Master_model->getMaster('company_branches',$where=$wheres);
+                $company_info = $this->company_profile_model->get($employer_id);
+                print_r($company_info);die;
+
+                if (isset($company_info[])) {
+                  
+                }
           ?>
 <div class="col-md-3">
   <nav class="side-menu hidden-sm hidden-xs">
     <ul>
       <li> <a href="<?php echo base_url(); ?>" class=""> <i class="fa fa-home" aria-hidden="true"></i>Home </a> </li>
+
       <li class="title">Employer</li>
 
       <li> <a href="<?php echo base_url(); ?>employer" class=""> <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard </a> </li>
