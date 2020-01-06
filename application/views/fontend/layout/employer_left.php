@@ -77,7 +77,6 @@
 
                 if (isset($documents) && !empty($documents)) {
                    foreach ($documents as $row) {
-            echo $row['document_type'];
           
                   if ($row['document_type']=='Incorporation') {
                       $Corporate_docs_total += $Corporate_docs_each;
@@ -94,7 +93,6 @@
                 }
                     
                 }
-                echo $Corporate_docs_total; die;
                 $profile_total=$Corporate_docs_total+$profile_details_total+$logo;
 
 
