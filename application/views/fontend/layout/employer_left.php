@@ -10,7 +10,7 @@
                 $wheres="status='0' AND company_profile_id='$employer_id'";
                  $branches = $this->Master_model->getMaster('company_branches',$where=$wheres);
                 $company_info = $this->company_profile_model->get($employer_id);
-                print_r($Corporate_docs_each);die;
+                // print_r($Corporate_docs_each);die;
 
                 if (isset($company_info->company_logo) && !empty($company_info->company_logo)) {
                     $logo_total=$logo;
@@ -71,7 +71,7 @@
                  $whereres = "company_profile_id='$company_id' and status!='1'";
                  // $select='document_type'
          $documents = $this->Master_model->getMaster('corporate_documents',$whereres,$join = FALSE, $order = false, $field = false, $select = FALSE,$limit=false,$start=false, $search=false);
-         // print_r($documents);die;
+          print_r($documents);die;
 
                 if (isset($documents->document_type) && !empty($documents->document_type)) {
                   if ($documents->document_type=='Incorporation') {
