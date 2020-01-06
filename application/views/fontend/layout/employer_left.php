@@ -67,8 +67,27 @@
                     $profile_details_total += $full_profile_each;
                 }
 
-                echo $profile_details_total;
-                echo $logo_total;die;
+                 $whereres = "company_profile_id='$company_id' and status!='1'";
+                 // $select='document_type'
+         $documents = $this->Master_model->getMaster('corporate_documents',$whereres,$join = FALSE, $order = false, $field = false, $select = FALSE,$limit=false,$start=false, $search=false);
+
+                if (isset($documents->document_type) && !empty($branches->document_type)) {
+                  if ($documents->document_type=='Incorporation') {
+                      $Corporate_docs += $Corporate_docs;
+                  }
+                  if ($documents->document_type=='PAN') {
+                      $Corporate_docs += $Corporate_docs;
+                  }
+                  if ($documents->document_type=='GSTIN') {
+                      $Corporate_docs += $Corporate_docs;
+                  }
+                  if ($documents->document_type=='Add_proof') {
+                      $Corporate_docs += $Corporate_docs;
+                  }
+                    
+                }
+
+                $profile_total=$Corporate_docs+$profile_details_total+$logo;
 
 
           ?>
@@ -76,6 +95,14 @@
   <nav class="side-menu hidden-sm hidden-xs">
     <ul>
       <li> <a href="<?php echo base_url(); ?>" class=""> <i class="fa fa-home" aria-hidden="true"></i>Home </a> </li>
+
+      <li>
+         <div class="progress bg-warning">
+                 <div class="progress-bar bg-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $profile_total;?>%"><?php echo round($profile_total); ?> percent Profile completed.
+                
+                 </div>
+                </div>
+      </li>
 
       <li class="title">Employer</li>
 
