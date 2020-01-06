@@ -73,23 +73,25 @@
          $documents = $this->Master_model->getMaster('corporate_documents',$whereres,$join = FALSE, $order = false, $field = false, $select = FALSE,$limit=false,$start=false, $search=false);
           // print_r($documents);
 
-          foreach ($documents as $row) {
-            echo $row['document_type'];
-          }
+         
 
-                if (isset($documents->document_type) && !empty($documents->document_type)) {
-                  if ($documents->document_type=='Incorporation') {
+                if (isset($documents) && !empty($documents)) {
+                   foreach ($documents as $row) {
+            echo $row['document_type'];
+          
+                  if ($row['document_type']=='Incorporation') {
                       $Corporate_docs_total += $Corporate_docs_each;
                   }
-                  if ($documents->document_type=='PAN') {
+                  if ($row['document_type']=='PAN') {
                       $Corporate_docs_total += $Corporate_docs_each;
                   }
-                  if ($documents->document_type=='GSTIN') {
+                  if ($row['document_type']=='GSTIN') {
                       $Corporate_docs_total += $Corporate_docs_each;
                   }
-                  if ($documents->document_type=='Add_proof') {
+                  if ($row['document_type']=='Add_proof') {
                       $Corporate_docs_total += $Corporate_docs_each;
                   }
+                }
                     
                 }
                 echo $Corporate_docs_total; die;
