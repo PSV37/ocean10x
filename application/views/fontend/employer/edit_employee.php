@@ -378,7 +378,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                   data:{id:id},
                   success:function(res){
                       $('#user_accc').html(res);
-                       $("#user_accc").selectpicker('refresh');
+                     
                       // var text = "";
                       // var x;
                       // for (x in data1) {
@@ -395,6 +395,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
              $("#user_accc").val('<?php echo $val; ?>');
               <?php } ?>
         });
+          $("#user_accc").selectpicker('refresh');
         
         // alert("You have selected the  - " + countries.join(", "));
                  // $("#user_accc").val(text);
