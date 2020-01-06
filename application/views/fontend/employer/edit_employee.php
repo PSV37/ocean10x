@@ -370,9 +370,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 
           ?>;
             var pausecontent = new Array();
-    <?php foreach($data as $key => $val){ ?>
-        pausecontent.push('<?php echo $val; ?>');
-    <?php } ?>
+    
          console.log(pausecontent);
               $.ajax({
                   type:'POST',
@@ -381,16 +379,20 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                   success:function(res){
                       // $('#user_accc').html(res);
                       // $("#user_accc").selectpicker('refresh');
-                      var text = "";
-                      var x;
-                      for (x in data1) {
-                        text += data1[x] + " ";
-                        alert(text);
-                      }
+                      // var text = "";
+                      // var x;
+                      // for (x in data1) {
+                      //   text += data1[x] + " ";
+                      //   alert(text);
+                      // }
             var countries = [];
+            <?php foreach($data as $key => $val){ ?>
+       
+   
         $.each($(".selectpicker option:selected"), function(){            
-            countries.push(text);
+             pausecontent.push('<?php echo $val; ?>');
         });
+         <?php } ?>
         // alert("You have selected the  - " + countries.join(", "));
                  // $("#user_accc").val(text);
                   }
