@@ -370,7 +370,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 
           ?>;
           console.log(<?php echo $data; ?>);
-          var data1=<?php echo $data;?>;
+          var data1[]=<?php print_r($data);?>;
               $.ajax({
                   type:'POST',
                   url:'<?php echo base_url();?>employer/get_access_data',
