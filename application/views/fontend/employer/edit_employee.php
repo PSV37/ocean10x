@@ -366,6 +366,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
           
         <?php $result['access_to_employee'];?>
            <?php $data= explode(",", $result['access_to_employee']);
+           print_r($data);die;
           ?>;
           console.log(<?php echo $data; ?>);
           var data1=<?php echo $data;?>;
