@@ -386,13 +386,15 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                       //   alert(text);
                       // }
             var countries = [];
-            <?php foreach($data as $key => $val){ ?>
+           
        
    
-        $.each($(".selectpicker option:selected"), function(){            
+        $.each($(".selectpicker option:selected"), function(){   
+         <?php foreach($data as $key => $val){ ?>         
              pausecontent.push('<?php echo $val; ?>');
+              <?php } ?>
         });
-         <?php } ?>
+        
         // alert("You have selected the  - " + countries.join(", "));
                  // $("#user_accc").val(text);
                   }
