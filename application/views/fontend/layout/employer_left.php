@@ -11,9 +11,66 @@
                 $company_info = $this->company_profile_model->get($employer_id);
                 // print_r($company_info);die;
 
-                // if (isset($company_info->)) {
-                  
-                // }
+                if (isset($company_info->company_logo) && !empty($company_info->company_logo)) {
+                    $logo_total=$logo;
+                }
+
+                if (isset($company_info->company_name) && !empty($company_info->company_name)) {
+                    $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($company_info->company_email) && !empty($company_info->company_email)) {
+                     $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($company_info->company_phone) && !empty($company_info->company_phone)) {
+                     $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($company_info->company_category) && !empty($company_info->company_category)) {
+                    $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($company_info->contact_person_name) && !empty($company_info->contact_person_name)) {
+                    $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($company_info->cont_person_level) && !empty($company_info->cont_person_level)) {
+                     $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($company_info->cont_person_email) && !empty($company_info->cont_person_email)) {
+                     $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($company_info->cont_person_mobile) && !empty($company_info->cont_person_mobile)) {
+                     $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($company_info->company_address) && !empty($company_info->company_address)) {
+                    $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($company_info->country_id) && !empty($company_info->country_id)) {
+                     $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($company_info->state_id) && !empty($company_info->state_id)) {
+                     $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($company_info->city_id) && !empty($company_info->city_id)) {
+                    $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($branches) && !empty($branches)) {
+                    $profile_details_total += $full_profile_each;
+                }
+
+                echo $profile_details_total;
+                echo $logo_total;die;
+
+
           ?>
 <div class="col-md-3">
   <nav class="side-menu hidden-sm hidden-xs">

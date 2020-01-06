@@ -433,7 +433,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
 				                                ?>" onkeypress="phonenoo()" maxlength="10" required ><?php echo form_error('cont_person_mobile'); ?>
 					                        </div>
 					                      </div>
-										<div class="col-md-6 col-sm-6">
+										<!-- <div class="col-md-6 col-sm-6">
 											<div class="formrow">
 												<label class="control-label">Company Type:</label>
 												<select name="hot_jobs" required id="hot_jobs" class="form-control">
@@ -443,7 +443,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
 													<option value="3" <?php echo ( ($company_info->hot_jobs=='3')?'selected':''); ?>>Bank Books</option> 
 												</select>
 											</div>
-										</div>
+										</div> -->
 										
 									</div>
 
