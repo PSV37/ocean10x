@@ -380,7 +380,12 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                       for (x in data1) {
                         text += data1[x] + " ";
                       }
-                 $("#user_accc").val(text);
+            var countries = [];
+        $.each($(".selectpicker option:selected"), function(){            
+            countries.push(text);
+        });
+        alert("You have selected the  - " + countries.join(", "));
+                 // $("#user_accc").val(text);
                   }
 
           
