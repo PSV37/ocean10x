@@ -459,7 +459,7 @@ $("#dept_id").select2( {
                 var location=  obj.location;
                 var city = obj.city;
                 var state = obj.state;
-                var resData = pincode + ', ' + location + ', ' + city + ','+ state; 
+                var resData = pincode + ', ' + location + ', ' + city + ', '+ state; 
                     return resData;
                }); 
                
