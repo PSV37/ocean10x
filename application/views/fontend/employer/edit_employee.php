@@ -455,15 +455,17 @@ $("#dept_id").select2( {
 
               console.log(data);
               var display_arr=[];
-               var resp = $.map(data,function(obj){
+               // var resp = $.map(data,function(obj){
+              var resp=  JSON.parse(data);
+              console.log(obj.pincode, obj.location, obj.city);
                     // var obj.pincode;
-                     display_arr.push(obj.pincode);
-                     display_arr.push(obj.location);
-                     display_arr.push(obj.city);
-                     display_arr.push(obj.state);
-               }); 
+                     // display_arr.push(obj.pincode);
+                     // display_arr.push(obj.location);
+                     // display_arr.push(obj.city);
+                     // display_arr.push(obj.state);
+               // }); 
  
-               response(display_arr.join(", "));
+               // response(display_arr.join(", "));
             }
         });
     },
