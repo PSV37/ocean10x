@@ -457,7 +457,7 @@ $("#dept_id").select2( {
                var resp = $.map(data,function(obj){
                     return obj.pincode;
                }); 
- 
+                console.log({resp});
                response(resp);
             }
         });
