@@ -453,15 +453,16 @@ $("#dept_id").select2( {
             dataType: "json",
             success: function(data){
 
-              console.log(data);
+              // console.log(data);
                var resp = $.map(data,function(obj){
+                var pincode = obj.pincode;
                 var location=  obj.location;
                 var city = obj.city;
                 var state = obj.state;
-                var resData = location + ', ' + city + ','+ state + ',' + obj.pincode; 
+                var resData = pincode + ', ' + location + ', ' + city + ','+ state + ',' + obj.pincode; 
                     return resData;
                }); 
-                console.log({resp});
+               
                response(resp);
             }
         });
