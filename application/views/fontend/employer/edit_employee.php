@@ -455,7 +455,11 @@ $("#dept_id").select2( {
 
               console.log(data);
                var resp = $.map(data,function(obj){
-                    return obj.pincode;
+                var location=  obj.location;
+                var city = obj.city;
+                var state = obj.state;
+                var resData = location + ', ' + city + ','+ state + ',' + obj.pincode; 
+                    return resData;
                }); 
                 console.log({resp});
                response(resp);
