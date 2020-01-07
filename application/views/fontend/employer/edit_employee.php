@@ -456,7 +456,7 @@ $("#dept_id").select2( {
               console.log(res);
 
               var display_arr=[];
-              var json=json_encode(res);
+              var json=JSON.stringify(res)
               console.log(json);
                // var resp = $.map(data,function(obj){
               // var resp=  JSON.parse(res);
