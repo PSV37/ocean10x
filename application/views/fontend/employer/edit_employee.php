@@ -461,7 +461,7 @@ $("#dept_id").select2( {
               console.log(resp);
                // var resp = $.map(data,function(obj){
               // var resp=  JSON.parse(res);
-              // console.log(obj.pincode, obj.location, obj.city);
+               console.log(resp.pincode, resp.location, resp.city);
                     // var obj.pincode;
                      // display_arr.push(obj.pincode);
                      // display_arr.push(obj.location);
