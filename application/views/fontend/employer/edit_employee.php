@@ -451,21 +451,19 @@ $("#dept_id").select2( {
                     term : request.term
              },
             dataType: "json",
-            success: function(res){
+            success: function(data){
 
-               console.log(res);
+              console.log(data);
               var display_arr=[];
-               // var resp = $.map(data,function(obj){
-              var obj=  JSON.parse(res);
-              console.log(obj.pincode, obj.location, obj.city);
+               var resp = $.map(data,function(obj){
                     // var obj.pincode;
-                     // display_arr.push(obj.pincode);
-                     // display_arr.push(obj.location);
-                     // display_arr.push(obj.city);
-                     // display_arr.push(obj.state);
-               // }); 
+                     display_arr.push(obj.pincode);
+                     display_arr.push(obj.location);
+                     display_arr.push(obj.city);
+                     display_arr.push(obj.state);
+               }); 
  
-               // response(display_arr.join(", "));
+               response(display_arr.join(", "));
             }
         });
     },
