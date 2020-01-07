@@ -453,7 +453,7 @@ $("#dept_id").select2( {
             dataType: "json",
             success: function(res){
 
-              // console.log(res);
+               console.log(res);
               var display_arr=[];
                // var resp = $.map(data,function(obj){
               var obj=  JSON.parse(res);
