@@ -456,7 +456,7 @@ $("#dept_id").select2( {
               console.log(data);
               var display_arr=[];
                var resp = $.map(data,function(obj){
-                    var obj.pincode;
+                    // var obj.pincode;
                      display_arr.push(obj.pincode);
                      display_arr.push(obj.location);
                      display_arr.push(obj.city);
