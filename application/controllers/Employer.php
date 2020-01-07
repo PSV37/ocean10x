@@ -2106,7 +2106,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 		$this->form_validation->set_rules('mobile', ' Contact No.', 'required|regex_match[/^[0-9]{10}$/]');
 		$this->form_validation->set_rules('dept_id', 'Department', 'required');
 		$this->form_validation->set_rules('address', 'Address', 'required');
-		$this->form_validation->set_rules('pincode', 'Pincode', 'required|numeric');
+		// $this->form_validation->set_rules('pincode', 'Pincode', 'required|numeric');
 		
         array('required' => 'You must provide a %s.');
 
