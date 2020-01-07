@@ -454,11 +454,16 @@ $("#dept_id").select2( {
             success: function(data){
 
               console.log(data);
+              var display_arr=[];
                var resp = $.map(data,function(obj){
-                    return obj.pincode;
+                    var obj.pincode;
+                     display_arr.push(obj.pincode);
+                     display_arr.push(obj.location);
+                     display_arr.push(obj.city);
+                     display_arr.push(obj.state);
                }); 
  
-               response(resp);
+               response(display_arr.join(", "));
             }
         });
     },
