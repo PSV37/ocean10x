@@ -451,12 +451,12 @@ $("#dept_id").select2( {
                     term : request.term
              },
             dataType: "json",
-            success: function(data){
+            success: function(res){
 
-              console.log(data);
+              // console.log(res);
               var display_arr=[];
                // var resp = $.map(data,function(obj){
-              var resp=  JSON.parse(data);
+              var obj=  JSON.parse(res);
               console.log(obj.pincode, obj.location, obj.city);
                     // var obj.pincode;
                      // display_arr.push(obj.pincode);
