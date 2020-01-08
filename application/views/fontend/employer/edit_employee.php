@@ -360,7 +360,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
        }
 
        function getuseraccess_load(){
-         var id = <?php echo $result['dept_id']; ?>;
+         var id = $('#user_role').val();;
          // alert(id);
       if(id){
           
