@@ -369,7 +369,6 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
            // print_r($result['access_to_employee']);die;
 
           ?>;
-          console.log(<?php print_r($data); ?>);
             var pausecontent = new Array();
     
          console.log(pausecontent);
@@ -390,18 +389,17 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
            
        // $("#drop-down option[value='a']").text("Val 1.0");
    
-        // $.each($(".selectpicker option:selected"), function(){   
-          $('.selectpicker').selectpicker();
-$('.selectpicker').selectpicker('val', [<?php echo $data; ?>]);
-         // <?php foreach($data as $key => $val){ ?>         
-         //   $("select[name=user_acc]").text("<?php echo($val); ?>");
-         //      <?php } ?>
-
-        // });
-          $("#user_accc").selectpicker('refresh');
         
-        // alert("You have selected the  - " + countries.join(", "));
-                 // $("#user_accc").val(text);
+         <?php foreach($data as $key => $val){ ?>         
+            $('.selectpicker').selectpicker();
+          $('.selectpicker').selectpicker('val', [<?php echo  $val; ?>]);
+        
+          $("#user_accc").selectpicker('refresh');
+              <?php } ?>
+  
+         
+        
+        
                   }
 
           
