@@ -387,13 +387,11 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                       // }
             var countries = [];
            
-       
+       // $("#drop-down option[value='a']").text("Val 1.0");
    
         $.each($(".selectpicker option:selected"), function(){   
          <?php foreach($data as $key => $val){ ?>         
-             pausecontent.push('<?php echo $val; ?>');
-             // $("#user_accc").val();
-             $('.selectpicker').selectpicker('val', '<?php echo $val; ?>');
+           $("select[name=user_acc]").text("<?php echo($val); ?>");
               <?php } ?>
 
         });
