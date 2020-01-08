@@ -69,7 +69,16 @@
         <!-- Nav start -->
         <div class="navbar navbar-default" role="navigation">
           <div class="navbar-collapse collapse" id="nav-main">
-            <ul class="nav navbar-nav">             
+            <ul class="nav navbar-nav">   
+            <?php 
+                $emp_id=$this->session->userdata('emp_id');
+              $whereres = "org_id='$emp_id'";
+              $Join_data = array(
+                                        'user_role' => 'user_role.user_role_id = employee.user_role|Left OUTER ',
+                                         
+                                    );
+                $emp_data=$this->Master_model->get_master_row('employee',$select = FALSE,$whereres); ?>          
+                <li class="dropdown-header">Welcome <?php echo $emp_data['user_roles']; ?></li>
                <li><a title="" href="<?php echo base_url(); ?>">Home</a></li>
                <li class="<?=(current_url()==base_url('about-us')) ? 'active':''?>"><a title="" href="<?php echo base_url(); ?>cms/cms_page/about-us">About Us</a></li>
                <li><a title="" href="<?php echo base_url() ?>training">Training</a></li>

@@ -379,25 +379,15 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                   success:function(res){
                       $('#user_accc').html(res);
                   
-            var selected_data = [];
-           
-       
-   
-        
-         <?php foreach($data as $key => $val){ ?>  
-          selected_data.push('<?php echo  $val; ?>');        
-       
-              <?php } ?>
-
-              console.log(selected_data);
-                   $('.selectpicker').selectpicker();
-          $('.selectpicker').selectpicker('val', selected_data);
-        
-          $("#user_accc").selectpicker('refresh');
-  
-         
-        
-        
+                      var selected_data = [];
+                        <?php foreach($data as $key => $val){ ?>  
+                          selected_data.push('<?php echo  $val; ?>');        
+                         <?php } ?>
+                          // console.log(selected_data);
+                          $('.selectpicker').selectpicker();
+                          $('.selectpicker').selectpicker('val', selected_data);
+                          $("#user_accc").selectpicker('refresh');
+               
                   }
 
           
