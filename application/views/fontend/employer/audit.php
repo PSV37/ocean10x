@@ -91,6 +91,11 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 <!-- /.content -->
 </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+    $('#dataTables-example').DataTable();
+});
+</script>
 
 
 <?php $this->load->view("fontend/layout/footer.php"); ?>

@@ -82,7 +82,7 @@
                     <li class="dropdown yamm-half membermenu hasmenu">
 
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            <?php $employer_id         = $this->session->userdata('company_profile_id'); ?>
+                            <?php $employer_id = $this->session->userdata('company_profile_id'); ?>
                         <?php if(!empty($this->company_profile_model->company_logoby_id($employer_id))): ?>
                         <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($employer_id);?>" alt="" class="img-circle"></a>
                        <?php else: ?>
