@@ -385,17 +385,20 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                       //   text += data1[x] + " ";
                       //   alert(text);
                       // }
-            var countries = [];
+            var selected_data = [];
            
        // $("#drop-down option[value='a']").text("Val 1.0");
    
         
-         <?php foreach($data as $key => $val){ ?>         
-            $('.selectpicker').selectpicker();
-          $('.selectpicker').selectpicker('val', ['<?php echo  $val; ?>']);
+         <?php foreach($data as $key => $val){ ?>  
+         var selected_data=<?php echo  $val; ?>        
+          //   $('.selectpicker').selectpicker();
+          // $('.selectpicker').selectpicker('val', ['']);
         
-          $("#user_accc").selectpicker('refresh');
+          // $("#user_accc").selectpicker('refresh');
               <?php } ?>
+
+              console.log(selected_data);
   
          
         
