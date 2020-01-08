@@ -92,7 +92,7 @@
 
                       <td><button class="btn btn-warning" title='suspend' data-toggle="modal" data-target="#suspendModal"  name="suspend" id="suspend"   value="<?php echo $key['emp_id'];?>" >Suspend</button></td>
 
-                  <td style=""><button type="button" class="btn btn-primary"  title='Activate' data-toggle="modal"  name="status" id="status" onclick="Activate_user(this.value);" value="<?php echo $key['emp_id'];?>" >Activate</button></td>
+                  <td style=""><button type="button" class="btn btn-primary" style="background-color: #337ab7" title='Activate' data-toggle="modal"  name="status" id="status" onclick="Activate_user(this.value);" value="<?php echo $key['emp_id'];?>" >Activate</button></td>
                   <?php } elseif($key['emp_status']=='0')
                   { ?> 
                    <td>
