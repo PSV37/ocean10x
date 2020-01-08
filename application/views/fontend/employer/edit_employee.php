@@ -391,7 +391,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
    
         
          <?php foreach($data as $key => $val){ ?>  
-         var selected_data=<?php echo  $val; ?>        
+         var selected_data='<?php echo  $val; ?>'        
           //   $('.selectpicker').selectpicker();
           // $('.selectpicker').selectpicker('val', ['']);
         
