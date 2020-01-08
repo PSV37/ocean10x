@@ -21,9 +21,9 @@
 </div>
 <!-- Page Title End --> 
 <?php if (!empty($this->session->flashdata('emp_msg'))) {?>
-<div id="sms" class="alert alert-alert-dismissible fade in">
-  <a href="#" class="close" data-dismiss="alert" aria-label="close">;</a>
-  <strong><?php echo $this->session->flashdata('emp_msg');?></strong>
+<div id="smsg" class="alert alert-alert-dismissible fade in">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong style="float: right;"><?php echo $this->session->flashdata('emp_msg');?></strong>
 </div>             
 
 <?php } ?>
