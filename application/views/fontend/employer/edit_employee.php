@@ -112,7 +112,7 @@
                   </div>
                   <div class="col-md-6">
                       <div class="form-group">
-                          <label for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
+                          <label class="control-label" for="exampleInputEmail1">Give Access To User<span class="required">*</span></label>
                           
                             <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc[]" id="user_accc" required>
                             </select>

@@ -380,7 +380,7 @@ function Activate_user(id)
                 url:'<?php echo base_url();?>Employer/activate',
                 data:{id:id},
                 success:function(res){
-                     alert('User Activated  Successfully!');
+                     // alert('User Activated  Successfully!');
                      location.replace("<?php echo base_url();?>employer/editemployee?id="+id);
                      // location.reload();
                 }
