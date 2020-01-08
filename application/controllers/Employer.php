@@ -1795,7 +1795,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     	   
            $data["result"] = $this->Master_model->getMaster("employee", $where=$where, $join, $order = "ASC", $field = "employee.emp_id", $select = false,$config["per_page"],$page, $search=false, $group_by = FALSE);
 
-           // print_r($this->db->last_query());die;
+            print_r($this->db->last_query());die;
     	$this->load->view('fontend/employer/employee_master',$data);
     }
 
