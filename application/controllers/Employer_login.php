@@ -48,15 +48,15 @@ class Employer_Login extends CI_Controller
              
                 $this->Master_model->master_update($update_data,'company_profile',$where11);
 
-                $data['org_id'] = $company_profile_id;
-                $data['emp_name'] ='Employee-1';
-                $data['access_to_employee']='Post A job,Add question Bank,Add Consultant,view question bank,CV Bank,Contractis';
+                $data3['org_id'] = $company_profile_id;
+                $data3['emp_name'] ='Employee-1';
+                $data3['access_to_employee']='Post A job,Add question Bank,Add Consultant,view question bank,CV Bank,Contractis';
                
-                $data['emp_created_date'] = date('Y-m-d H:i:s');
-                $data['user_role']='1';
-                $data['emp_created_by'] = $company_profile_id;
-                $data['created_by_system'] ='Yes';
-                $this->Master_model->master_insert($data,'employee');
+                $data3['emp_created_date'] = date('Y-m-d H:i:s');
+                $data3['user_role']='1';
+                $data3['emp_created_by'] = $company_profile_id;
+                $data3['created_by_system'] ='Yes';
+                $this->Master_model->master_insert($data3,'employee');
 
                 $data1['org_id'] = $company_profile_id;
                 $data1['emp_name'] ='Employee-2';
