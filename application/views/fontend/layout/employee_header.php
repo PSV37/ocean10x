@@ -72,7 +72,7 @@
             <ul class="nav navbar-nav">   
             <?php 
                 $emp_id=$this->session->userdata('emp_id');
-              $whereres = "org_id='$emp_id'";
+              $whereres = "emp_id='$emp_id'";
               $Join_data = array(
                                         'user_role' => 'user_role.user_role_id = employee.user_role|Left OUTER ',
                                          
