@@ -38,11 +38,13 @@ class Employer_Login extends CI_Controller
             $data['comp_type']          = $result->comp_type;
             $this->session->set_userdata($data);
             $company_profile_id=$this->session->userdata('company_profile_id');
-             $whereres = "company_profile_id='$company_profile_id'";
-            $employer_data= $this->Master_model->get_master_row('company_profile',$select = FALSE,$whereres);
-             $where11['company_profile_id']=$company_profile_id;
              
-        // $this->Master_model->master_update($update_data,'company_profile',$where11);
+            $where="org_id='".$company_profile_id."' and created_by_system='Yes'";
+            $tech_data = $this->Master_model->getMaster('employee', $where);
+            print_r($this->db->last_query());die;
+
+            $whereres = "company_profile_id='$company_profile_id'";
+            $employer_data= $this->Master_model->get_master_row('company_profile',$select = FALSE,$whereres);
           
             if($employer_data['last_login']=="0000-00-00 00:00:00")
             {
