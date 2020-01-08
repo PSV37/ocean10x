@@ -47,7 +47,7 @@ class Employer_Login extends CI_Controller
                  $where11['company_profile_id']=$company_profile_id;
              
                 $this->Master_model->master_update($update_data,'company_profile',$where11);
-                 
+
                 $data['org_id'] = $company_profile_id;
                 $data['emp_name'] ='Employee-1';
                 $data['access_to_employee']='Post A job,Add question Bank,Add Consultant,view question bank,CV Bank,Contractis';
@@ -55,7 +55,7 @@ class Employer_Login extends CI_Controller
                 $data['emp_created_date'] = date('Y-m-d H:i:s');
                 $data['user_role']='1';
                 $data['emp_created_by'] = $company_profile_id;
-                $data['created_by_system'] ='Yes'
+                $data['created_by_system'] ='Yes';
                 $this->Master_model->master_insert($data,'employee');
 
                 $data1['org_id'] = $company_profile_id;
@@ -64,7 +64,7 @@ class Employer_Login extends CI_Controller
                 $data1['emp_created_date'] = date('Y-m-d H:i:s');
                 $data1['user_role']='2';
                 $data1['emp_created_by'] = $company_profile_id;
-                $data1['created_by_system'] ='Yes'
+                $data1['created_by_system'] ='Yes';
                 $this->Master_model->master_insert($data1,'employee');
 
                 $data2['org_id'] = $company_profile_id;
@@ -73,7 +73,7 @@ class Employer_Login extends CI_Controller
                 $data2['emp_created_date'] = date('Y-m-d H:i:s');
                 $data2['user_role']='3';
                 $data2['emp_created_by'] = $company_profile_id;
-                $data2['created_by_system'] ='Yes'
+                $data2['created_by_system'] ='Yes';
                 $this->Master_model->master_insert($data2,'employee');
                
             }
