@@ -3400,14 +3400,27 @@ public function superadmin()
        $username=$this->input->post('username');
        $email=$this->input->post('email');
        $password=$this->input->post('password');
-       $superadmin=array('superadmin_name'=> $username,
+       $where = "company_id='$employer_id'";
+       $data = $this->Master_model->get_master_row('company_superadmin',$select = FALSE,$where);
+        $superadmin=array('superadmin_name'=> $username,
         'superadmin_email'=> $email,
         'superadmin_password' => md5($password),
         'created_by'=> $employer_id,
         'company_id' =>$employer_id,
         'created_on' => date('Y-m-d H:i:s'));
-
-        $result=$this->Master_model->master_insert($superadmin,'company_superadmin');
+       if (isset($data) && !empty($data)) {
+          
+      
+          $where11['company_profile_id']=$employer_id;
+             
+            $this->Master_model->master_update($superadmin,'company_superadmin',$where);
+            
+       }
+       else
+       {
+            $result=$this->Master_model->master_insert($superadmin,'company_superadmin');
+       }
+       
 
                             $company_name=$this->session->userdata('company_name');
                             $data=array('company'=>$company_name,

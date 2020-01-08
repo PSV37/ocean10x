@@ -395,7 +395,12 @@
             dataType: "json",
             success: function(data){
                var resp = $.map(data,function(obj){
-                    return obj.pincode;
+                var pincode = obj.pincode;
+                var location=  obj.location;
+                var city = obj.city;
+                var state = obj.state;
+                var resData = pincode + ', ' + location + ', ' + city + ', '+ state; 
+                    return resData;
                }); 
  
                response(resp);
