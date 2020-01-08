@@ -40,8 +40,43 @@ class Employer_Login extends CI_Controller
             $company_profile_id=$this->session->userdata('company_profile_id');
              
             $where="org_id='".$company_profile_id."' and created_by_system='Yes'";
-            $tech_data = $this->Master_model->getMaster('employee', $where);
-            print_r($this->db->last_query());die;
+            $emp_data = $this->Master_model->getMaster('employee', $where);
+            // print_r($this->db->last_query());die;
+            if (isset($emp_data) && empty($emp_data)) {
+                 $update_data=array('last_login'=>"0000-00-00 00:00:00");
+                 $where11['company_profile_id']=$company_profile_id;
+             
+                $this->Master_model->master_update($update_data,'company_profile',$where11);
+                 
+                $data['org_id'] = $company_profile_id;
+                $data['emp_name'] ='Employee-1';
+                $data['access_to_employee']='Post A job,Add question Bank,Add Consultant,view question bank,CV Bank,Contractis';
+               
+                $data['emp_created_date'] = date('Y-m-d H:i:s');
+                $data['user_role']='1';
+                $data['emp_created_by'] = $company_profile_id;
+                $data['created_by_system'] ='Yes'
+                $this->Master_model->master_insert($data,'employee');
+
+                $data1['org_id'] = $company_profile_id;
+                $data1['emp_name'] ='Employee-2';
+                $data1['access_to_employee']='Post A job,Add Consultant,view question bank CV Bank,Contractis';
+                $data1['emp_created_date'] = date('Y-m-d H:i:s');
+                $data1['user_role']='2';
+                $data1['emp_created_by'] = $company_profile_id;
+                $data1['created_by_system'] ='Yes'
+                $this->Master_model->master_insert($data1,'employee');
+
+                $data2['org_id'] = $company_profile_id;
+                $data2['emp_name'] ='Employee-3';
+                $data2['access_to_employee']='view question bank,CV Bank';
+                $data2['emp_created_date'] = date('Y-m-d H:i:s');
+                $data2['user_role']='3';
+                $data2['emp_created_by'] = $company_profile_id;
+                $data2['created_by_system'] ='Yes'
+                $this->Master_model->master_insert($data2,'employee');
+               
+            }
 
             $whereres = "company_profile_id='$company_profile_id'";
             $employer_data= $this->Master_model->get_master_row('company_profile',$select = FALSE,$whereres);
