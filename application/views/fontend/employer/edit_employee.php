@@ -82,7 +82,7 @@
                         <div class="form-group">
                         <label for="exampleInputEmail1">Password<span class="required">*</span></label>
                          <input id="password-field" type="password" class="form-control" name="Password" value="<?php echo $result['password']; ?>">
-              <span toggle="#password-field" class="fa fa-lg fa-eye field-icon toggle-password"></span>
+              <span toggle="#password-field" class="fa fa-lg fa-eye-slash field-icon toggle-password"></span>
                         <!-- <input type="Password" name="Password" id="Password" maxlength="15" class="form-control" value="<?php echo $result['password']; ?>"  >
                         <span toggle="#password-field" class="fa fa-lg fa-eye field-icon toggle-password"></span> -->
                         </div>
