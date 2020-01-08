@@ -378,27 +378,22 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
                   data:{id:id},
                   success:function(res){
                       $('#user_accc').html(res);
-                     
-                      // var text = "";
-                      // var x;
-                      // for (x in data1) {
-                      //   text += data1[x] + " ";
-                      //   alert(text);
-                      // }
+                  
             var selected_data = [];
            
-       // $("#drop-down option[value='a']").text("Val 1.0");
+       
    
         
          <?php foreach($data as $key => $val){ ?>  
           selected_data.push('<?php echo  $val; ?>');        
-          //   $('.selectpicker').selectpicker();
-          // $('.selectpicker').selectpicker('val', ['']);
-        
-          // $("#user_accc").selectpicker('refresh');
+       
               <?php } ?>
 
               console.log(selected_data);
+                   $('.selectpicker').selectpicker();
+          $('.selectpicker').selectpicker('val', selected_data);
+        
+          $("#user_accc").selectpicker('refresh');
   
          
         
