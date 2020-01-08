@@ -1791,7 +1791,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
            $day = date("Y-m-d H:i:s", strtotime('-24 hours', time()));
             // $where=employee.org_id="149" AND (employee.emp_status=1 or (employee.emp_status=3 and employee.emp_updated_date > '2020-01-07 04:53:51') or (employee.emp_status=0 and employee.emp_updated_date > '2020-01-07 04:53:51') or (employee.emp_status=1 and employee.emp_updated_date > '2020-01-07 04:53:51') );
 
-         $where='employee.org_id="'.$employer.'" AND (employee.emp_status="1" or employee.emp_status="2" or(employee.emp_status="3" and employee.emp_updated_date >"'.$day.'") or (employee.emp_status="1" and employee.emp_updated_date >"'.$day.'") ';
+         $where='employee.org_id="'.$employer.'" AND (employee.emp_status="1" or employee.emp_status="2" or(employee.emp_status="3" and employee.emp_updated_date >"'.$day.'") or (employee.emp_status="1" and employee.emp_updated_date >"'.$day.'") )';
     	   
            $data["result"] = $this->Master_model->getMaster("employee", $where=$where, $join, $order = "ASC", $field = "employee.emp_id", $select = false,$config["per_page"],$page, $search=false, $group_by = FALSE);
 
