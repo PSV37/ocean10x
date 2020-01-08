@@ -3330,7 +3330,7 @@ public function interview_scheduler()
         $company=$this->session->userdata('company_name');
         $where1 = "employer_audit_record.company = '$company' ";
 
-        $data['result'] = $this->Master_model->getMaster('employer_audit_record', $where1, $join, $order = 'desc', $field = 'datetime', $select,$limit='10',$start=false, $search=false);
+        $data['result'] = $this->Master_model->getMaster('employer_audit_record', $where1, $join, $order = 'desc', $field = 'datetime', $select,$limit='20',$start=false, $search=false);
         // print_r($this->db->last_query());die;
         $this->load->view('fontend/employer/audit',$data); 
 
