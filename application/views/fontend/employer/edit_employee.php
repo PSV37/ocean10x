@@ -392,7 +392,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
         
          <?php foreach($data as $key => $val){ ?>         
             $('.selectpicker').selectpicker();
-          $('.selectpicker').selectpicker('val', [<?php echo  $val; ?>]);
+          $('.selectpicker').selectpicker('val', ['<?php echo  $val; ?>']);
         
           $("#user_accc").selectpicker('refresh');
               <?php } ?>
