@@ -13,7 +13,7 @@ class Employee_Login_model extends MY_Model
     }
 
     public function check_login_info($email,$password) { 
-      $where = "email='".$email."' and password='".$password."' emp_status='1' OR emp_status='3'";
+      $where = "email='".$email."' and password='".$password."' and (emp_status='1' OR emp_status='3')";
             $this->db->select('*');
             $this->db->from('employee');
             // $this->db->where('email',$email);
