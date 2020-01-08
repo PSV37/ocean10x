@@ -369,6 +369,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
            // print_r($result['access_to_employee']);die;
 
           ?>;
+          console.log(<?php echo $data; ?>);
             var pausecontent = new Array();
     
          console.log(pausecontent);
