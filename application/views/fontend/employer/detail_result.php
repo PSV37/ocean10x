@@ -1,5 +1,5 @@
 
-             <div class="totalcandi">Total Questions <span><?php print_r($exam_res['0']['total_questions']);?></span></div>
+             <div class="totalcandi">Total Questions <span><?php print_r($exam_res['0']['total_questions']);?></span><span style="float: right;">Attended Questions<span><?php < echo NUMBER_QUESTIONS; ?></span></span>  </div>
           <!--  <p>Total questions=<?php print_r($exam_res['0']['total_questions']); ?></p> -->
             <table class="table table-bordered table-striped" id="dataTables-example">
               <thead>
@@ -22,8 +22,8 @@
                 ?>
                     <tr>
                       <td><?php echo $key ?></td>
-                      <td><?php echo NUMBER_QUESTIONS; ?></td>
                       <td><?php echo $res_row['total_questions'] ?></td>
+                      <td><?php echo NUMBER_QUESTIONS; ?></td>
                       <td><?php echo $res_row['total_marks'] ?></td>
                       <td><?php echo round($percentage, 2).'%'; ?></td>
                      
