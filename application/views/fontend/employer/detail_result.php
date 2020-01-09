@@ -1,14 +1,14 @@
 
-             <div class="totalcandi">Total Questions <span><?php print_r($exam_res['0']['total_questions']);?></span><p style="float: right;">Attended Questions<span ><?php  echo NUMBER_QUESTIONS; ?></span></p> </div>
+             <div class="totalques">Total Questions <span><?php print_r($exam_res['0']['total_questions']);?></span>Attempted Questions<span ><?php  echo NUMBER_QUESTIONS; ?></span>Total Marks <span><?php print_r($exam_res['0']['total_marks']);?></span> </div>
           <!--  <p>Total questions=<?php print_r($exam_res['0']['total_questions']); ?></p> -->
             <table class="table table-bordered table-striped" id="dataTables-example">
               <thead>
                 <tr>
                   <th class="active">SL</th>
-                  <th class="active">Total Question</th>
-                  <th class="active">Attended Question</th>
-                  <th class="active">Total Marks</th>
-                  <th class="active">Percenage</th>
+                  <th class="active">Question</th>
+                  <th class="active">Level</th>
+                  <th class="active">Result</th>
+                  <th class="active">Time taken</th>
                 </tr>
               </thead>
               <tbody>
