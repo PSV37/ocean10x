@@ -16,15 +16,19 @@
 
                   $js_id = $ct_row['js_id'];
                   // $exam_res = getExamResultByID($js_id,$job_id); 
-                  if (!empty($exam_res)): foreach ($exam_res as $res_row) :
+                  if (!empty($exam_result)): foreach ($exam_result as $res_row) :
                   $marks = $res_row['total_marks']; 
-                  $percentage = ($marks * 100)/NUMBER_QUESTIONS;
+                  $percentage = ($marks * 100)/$exam_res['0']['total_questions'];
                 ?>
                     <tr>
                       <td><?php echo $key ?></td>
-                      <td><?php echo $res_row['total_questions'] ?></td>
-                      <td><?php echo NUMBER_QUESTIONS; ?></td>
-                      <td><?php echo $res_row['total_marks'] ?></td>
+                      <td><?php echo $res_row['question']; ?></td>
+                      <td><?php echo $res_row['level']; ?></td>
+                      <td><?php if ($res_row['correct_status']=='Yes') {
+                        echo "Correct";
+                      }elseif ($res_row['correct_status']=='No') {
+                         echo "Wrong";
+                      }  ?></td>
                       <td><?php echo round($percentage, 2).'%'; ?></td>
                      
                   </tr>
