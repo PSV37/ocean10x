@@ -241,7 +241,7 @@
                       ?>
                         <p><h6>Exam Result: <?php echo round($percentage, 2).'%'; ?></h6></p>
 
-                         <a href="#" class="btn btn-info btn-xs getformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id; ?>' title="Set Up Interview" data-toggle="modal" data-target="#schedule_interview"><strong>Detail Report</strong> 
+                         <a href="#" class="btn btn-info btn-xs getexamdetails"  data-level_id='<?php echo $v_applicant->job_seeker_id; ?>' title="View Exam Details" data-toggle="modal" data-target="#exam_details"><strong>Detail Report</strong> 
                     </a>
                     <?php
                       endforeach;
@@ -353,6 +353,23 @@ endforeach;
   </div>
 </div>
 
+<div id="exam_details" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" align="center">Detail Report of Exam</h4>
+      </div>
+      <div class="modal-body report_frm">
+    
+      </div>
+   
+    </div>
+
+  </div>
+</div>
+
 <div id="update_schedule_interview" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
@@ -421,6 +438,31 @@ var total=<?php echo count($array_id); ?>;
      
     }
 }
+
+$(".getexamdetails").on('click', function(event){
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+    //(... rest of your JS code)
+    var job_seeker_id = $(this).data('level_id');
+     $.ajax({
+              url: "<?php echo base_url();?>Employer/get_details_report",
+              type: "POST",
+              data: {job_seeker_id:job_seeker_id},
+          
+              success: function(data)
+              {
+                $('.report_frm').html(data);
+                // Display Modal
+                $('#exam_details').modal('show'); 
+                // $( "#datepicker" ).datepicker();
+                $(".datepicker").datepicker({
+                  dateFormat: 'dd-mm-yy'     
+                });
+            
+              }
+        });
+       
+});
 
 $(".getformbylevel").on('click', function(event){
     event.stopPropagation();
