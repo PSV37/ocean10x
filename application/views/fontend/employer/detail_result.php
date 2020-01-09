@@ -1,5 +1,5 @@
 
-             <div class="totalcandi">Total Questions <span><?php print_r($exam_res['0']['total_questions']);?></span><span style="float: right;">Attended Questions</span><span><?php  echo NUMBER_QUESTIONS; ?></span> </div>
+             <div class="totalcandi">Total Questions <span><?php print_r($exam_res['0']['total_questions']);?></span><p style="float: right;">Attended Questions<span ><?php  echo NUMBER_QUESTIONS; ?></span></p> </div>
           <!--  <p>Total questions=<?php print_r($exam_res['0']['total_questions']); ?></p> -->
             <table class="table table-bordered table-striped" id="dataTables-example">
               <thead>
