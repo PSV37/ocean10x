@@ -447,7 +447,7 @@ $(".getexamdetails").on('click', function(event){
      $.ajax({
               url: "<?php echo base_url();?>Employer/get_details_report",
               type: "POST",
-              data: {job_seeker_id:job_seeker_id},
+              data: {job_seeker_id:job_seeker_id,job_id:job_id},
           
               success: function(data)
               {
