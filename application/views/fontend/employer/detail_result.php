@@ -1,5 +1,5 @@
 
-           <p>Total questions=</p><?php print_r($exam_res); ?>
+           <p>Total questions=</p><?php print_r($exam_res['0']['total_questions']); ?>
             <table class="table table-bordered table-striped" id="dataTables-example">
               <thead>
                 <tr>
