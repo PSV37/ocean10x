@@ -2480,6 +2480,12 @@ public function interview_scheduler()
         $job_id = $this->input->post('job_id');
          $exam_res = getExamResultByID($job_seeker_id,$job_id); 
 
+          $table = "js_test_info";
+        $where_res['job_id'] = $job_id;
+        $where_res['js_id'] = $job_seeker_id;
+        $exam_result = $this->Master_model->getMaster($table, $where_res, false, false ,false, $select_result, $limit =false, $start =false, $search= false);
+        print_r($exam_result);die;
+
         // $where_apply="job_apply_id='$job_apply_id'";
         // $select_edu = "job_seeker_id,job_post_id,job_apply_id";
         // $data['js_apply_data'] = $this->Master_model->get_master_row("job_apply", $select_edu, $where_apply, $join = FALSE);
