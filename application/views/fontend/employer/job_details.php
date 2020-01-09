@@ -239,7 +239,10 @@
                        $marks = $res_row['total_marks']; 
                        $percentage = ($marks * 100)/NUMBER_QUESTIONS;
                       ?>
-                        <p><h6>Exam Result: <?php echo round($percentage, 2).'%'; ?></h6><button type="button" class="btn btn-info">Deatail Report</button></p>
+                        <p><h6>Exam Result: <?php echo round($percentage, 2).'%'; ?></h6></p>
+
+                         <a href="#" class="btn btn-info btn-xs getformbylevel"  data-level_id='<?php echo $v_applicant->job_apply_id; ?>' title="Set Up Interview" data-toggle="modal" data-target="#schedule_interview"><strong>Detail Report</strong> 
+                    </a>
                     <?php
                       endforeach;
                       endif;
