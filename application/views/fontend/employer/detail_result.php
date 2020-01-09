@@ -11,7 +11,7 @@
                 </tr>
               </thead>
               <tbody>
-                <?php $key = 1; if (!empty($exam_attended_candidates)): foreach ($exam_attended_candidates as $ct_row) :
+                <?php $key = 1; 
 
                   $js_id = $ct_row['js_id'];
                   // $exam_res = getExamResultByID($js_id,$job_id); 
@@ -29,8 +29,7 @@
                   </tr>
                   <?php
                       $key++;
-                      endforeach;
-                      endif; 
+                     
                       endforeach;
                   ?>
                   <?php else : ?> 
