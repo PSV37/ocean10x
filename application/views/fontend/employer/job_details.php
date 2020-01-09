@@ -444,6 +444,7 @@ $(".getexamdetails").on('click', function(event){
     event.stopImmediatePropagation();
     //(... rest of your JS code)
     var job_seeker_id = $(this).data('level_id');
+    var job_id = <?php echo $job_id; ?>;
      $.ajax({
               url: "<?php echo base_url();?>Employer/get_details_report",
               type: "POST",
