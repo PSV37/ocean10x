@@ -107,6 +107,7 @@ class Exam extends MY_Seeker_Controller
 
              $start_array = array(
                 'is_test_done' => '2',
+                'updated_on' =>date('Y-m-d H:i:s'),
             );
             $where_start['job_seeker_id'] = $jobseeker_id;
             $where_start['job_post_id']   = $job_id;

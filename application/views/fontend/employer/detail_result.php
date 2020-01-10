@@ -19,6 +19,11 @@
                   if (!empty($exam_result)): foreach ($exam_result as $res_row) :
                   $marks = $res_row['total_marks']; 
                   $percentage = ($marks * 100)/$exam_res['0']['total_questions'];
+                  if ($key==1) {
+                    $start_time=$exam_start['0']['updated_on'];
+                    $end_time=$res_row['date_time'];
+                    $Time_taken=$end_time-$start_time;
+                  }
                 ?>
                     <tr>
                       <td><?php echo $key ?></td>
@@ -29,7 +34,7 @@
                       }elseif ($res_row['correct_status']=='No') {
                          echo "Wrong";
                       }  ?></td>
-                      <td><?php echo round($percentage, 2).'%'; ?></td>
+                      <td><?php echo $Time_taken; ?></td>
                      
                   </tr>
                   <?php

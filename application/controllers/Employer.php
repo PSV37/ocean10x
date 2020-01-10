@@ -2484,7 +2484,11 @@ public function interview_scheduler()
         $where_res['job_id'] = $job_id;
         $where_res['js_id'] = $job_seeker_id;
          $join = array( "questionbank"=>"questionbank.ques_id=js_test_info.question_id | LEFT OUTER");
-        $exam_result = $this->Master_model->getMaster($table, $where_res, $join, 'desc' ,'date_time', $select_result, $limit =false, $start =false, $search= false);
+        $exam_result = $this->Master_model->getMaster($table, $where_res, $join, 'asc' ,'date_time', $select_result, $limit =false, $start =false, $search= false);
+         
+         $where_start['job_seeker_id'] = $jobseeker_id;
+            $where_start['job_post_id']   = $job_id;
+            $exam_start = $this->Master_model->getMaster('job_apply', $where_start, FALSE, false, FALSE, FALSE, $limit =false, $start =false, $search= false);
         // print_r($exam_result);die;
 
         // $where_apply="job_apply_id='$job_apply_id'";
@@ -2499,7 +2503,7 @@ public function interview_scheduler()
         // $where_int="job_seeker_id='$job_seeker_id' AND job_post_id='$job_post_id'";
         // $data['interview_data'] = $this->Master_model->get_master_row("interview_scheduler", $select= FALSE, $where_int, $join = FALSE);
         
-        $this->load->view('fontend/employer/detail_result',compact('exam_res','exam_result'));
+        $this->load->view('fontend/employer/detail_result',compact('exam_res','exam_result','exam_start'));
        
     }
 
