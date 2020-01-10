@@ -17,7 +17,7 @@
                   $js_id = $ct_row['js_id'];
 
                   $size=sizeof($exam_result);
-                  print_r($size);
+                  // print_r($size);
 
                   for ($i=0; $i <$size ; $i++) { 
                     if ($i==0) {
@@ -42,7 +42,7 @@
                       <td><?php echo $exam_result[$i]['level']; ?></td>
                       <td><?php if ($exam_result[$i]['correct_status']=='Yes') {
                         echo "Correct";
-                      }elseif ($res_row['correct_status']=='No') {
+                      }elseif ($exam_result[$i]['correct_status']=='No') {
                          echo "Wrong";
                       }  ?></td>
                       
