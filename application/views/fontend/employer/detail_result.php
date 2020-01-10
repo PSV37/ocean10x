@@ -15,19 +15,20 @@
                 <?php $key = 1; 
 
                   $js_id = $ct_row['js_id'];
-                  // $exam_res = getExamResultByID($js_id,$job_id); 
-                  if (!empty($exam_result)): foreach ($exam_result as $res_row) :
-                  $marks = $res_row['total_marks']; 
-                  $percentage = ($marks * 100)/$exam_res['0']['total_questions'];
-                  if ($key==1) {
+                   if ($key==1) {
                     $start_time=$exam_start['0']['updated_on'];
-                    $end_time=$res_row['date_time'];
+                    $end_time=$exam_result['0']['date_time'];
                     print_r($start_time);
                     print_r($end_time);die;
 
                     // $Time_taken=$end_time-$start_time;
                     $Time_taken=date_diff($start_time,$end_time);
                   }
+                  // $exam_res = getExamResultByID($js_id,$job_id); 
+                  if (!empty($exam_result)): foreach ($exam_result as $res_row) :
+                  $marks = $res_row['total_marks']; 
+                  $percentage = ($marks * 100)/$exam_res['0']['total_questions'];
+                 
                 ?>
                     <tr>
                       <td><?php echo $key ?></td>
