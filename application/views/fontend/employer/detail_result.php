@@ -22,8 +22,9 @@
                     print_r($start_time);
                     print_r($end_time);
 
-                    // $Time_taken=$end_time-$start_time;
-                    $Time_taken=date_diff($start_time,$end_time);
+                    $diff=$end_time-$start_time;
+                    echo $diff;
+                    $Time_taken=date_diff($end_time,$start_time);
                   }
                   // $exam_res = getExamResultByID($js_id,$job_id); 
                   if (!empty($exam_result)): foreach ($exam_result as $res_row) :
