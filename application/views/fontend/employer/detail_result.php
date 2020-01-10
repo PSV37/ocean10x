@@ -16,6 +16,7 @@
 
                   $js_id = $ct_row['js_id'];
                    if ($key==1) {
+                    print_r($exam_start);
                     $start_time=$exam_start['0']['updated_on'];
                     $end_time=$exam_result['0']['date_time'];
                     print_r($start_time);
