@@ -26,7 +26,7 @@
                     else
                     {
                       $j=$i-1;
-                     $start_time=$exam_result[$j]['updated_on'];
+                     $start_time=$exam_result[$j]['date_time'];
 
                     }
                    
