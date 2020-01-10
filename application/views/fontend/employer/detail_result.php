@@ -19,8 +19,8 @@
                   $size=sizeof($exam_result);
                   print_r($size);
 
-                  for ($i=0; $i <=$size ; $i++) { 
-                    if ($i==1) {
+                  for ($i=0; $i <$size ; $i++) { 
+                    if ($i==0) {
                      $start_time=$exam_start['0']['updated_on'];
                     }
                     else
@@ -35,12 +35,12 @@
                       $datetime2 = new DateTime($start_time);
                       $interval = $datetime1->diff($datetime2);
                       $elapsed = $interval->format('%i minutes %s seconds');
-                      echo $elapsed;?>
+                      // echo $elapsed;?>
                        <tr>
-                      <td><?php echo $key ?></td>
-                      <td><?php echo $res_row['question']; ?></td>
-                      <td><?php echo $res_row['level']; ?></td>
-                      <td><?php if ($res_row['correct_status']=='Yes') {
+                      <td><?php echo $i+1; ?></td>
+                      <td><?php echo $exam_result[$i]['question']; ?></td>
+                      <td><?php echo $exam_result[$i]['level']; ?></td>
+                      <td><?php if ($exam_result[$i]['correct_status']=='Yes') {
                         echo "Correct";
                       }elseif ($res_row['correct_status']=='No') {
                          echo "Wrong";
