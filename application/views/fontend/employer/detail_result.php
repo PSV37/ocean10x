@@ -22,14 +22,14 @@ $datetime2 = new DateTime($start_time);
 $interval = $datetime1->diff($datetime2);
 $elapsed = $interval->format('%y years %m months %a days %h hours %i minutes %s seconds');
 echo $elapsed;
-                    $start_time=$exam_start['0']['updated_on'];
-                    $end_time=$exam_result['0']['date_time'];
-                    print_r($start_time);
-                    print_r($end_time);
+                    // $start_time=$exam_start['0']['updated_on'];
+                    // $end_time=$exam_result['0']['date_time'];
+                    // print_r($start_time);
+                    // print_r($end_time);
 
-                    $diff=$end_time-$start_time;
-                    echo $diff;
-                    $Time_taken=date_diff($end_time,$start_time);
+                    // $diff=$end_time-$start_time;
+                    // echo $diff;
+                    // $Time_taken=date_diff($end_time,$start_time);
                   }
                   // $exam_res = getExamResultByID($js_id,$job_id); 
                   if (!empty($exam_result)): foreach ($exam_result as $res_row) :
