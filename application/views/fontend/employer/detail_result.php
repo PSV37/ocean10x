@@ -19,7 +19,7 @@
                     $start_time=$exam_start['0']['updated_on'];
                     $end_time=$exam_result['0']['date_time'];
                     print_r($start_time);
-                    print_r($end_time);die;
+                    print_r($end_time);
 
                     // $Time_taken=$end_time-$start_time;
                     $Time_taken=date_diff($start_time,$end_time);
