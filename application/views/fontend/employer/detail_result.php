@@ -15,6 +15,9 @@
                 <?php $key = 1; 
 
                   $js_id = $ct_row['js_id'];
+
+                  $size=sizeof($exam_result);
+                  print_r($size);
                    if ($key==1) {
                     // print_r($exam_start);
                      $start_time=$exam_start['0']['updated_on'];
@@ -47,6 +50,7 @@ echo $elapsed;
                       }elseif ($res_row['correct_status']=='No') {
                          echo "Wrong";
                       }  ?></td>
+                      i
                       <td><?php echo $elapsed; ?></td>
                      
                   </tr>
