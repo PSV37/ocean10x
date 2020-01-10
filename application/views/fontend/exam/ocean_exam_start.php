@@ -73,6 +73,8 @@
 
   $('form#nextques').submit(function(e)
   {
+     var timer = $('#timer_val').val();
+     alert(timer);
       e.preventDefault();
     
     $.ajax({
@@ -134,7 +136,7 @@ var restart_timer_val = $('#restart_timer_val').val();
   function fetchdata(){
     var timer = $('#timer_val').val();
     var skill_id = $('#skill_id').val();
-    // console.log(skill_id);
+    console.log(timer);
     $.ajax({
       url: '<?php echo base_url();?>exam/insert_ocean_exam_session',
       type: 'post',
