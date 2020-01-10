@@ -17,6 +17,11 @@
                   $js_id = $ct_row['js_id'];
                    if ($key==1) {
                     print_r($exam_start);
+                    $datetime1 = new DateTime($end_time);
+$datetime2 = new DateTime($start_time);
+$interval = $datetime1->diff($datetime2);
+$elapsed = $interval->format('%y years %m months %a days %h hours %i minutes %s seconds');
+echo $elapsed;
                     $start_time=$exam_start['0']['updated_on'];
                     $end_time=$exam_result['0']['date_time'];
                     print_r($start_time);
