@@ -2484,7 +2484,7 @@ public function interview_scheduler()
         $where_res['job_id'] = $job_id;
         $where_res['js_id'] = $job_seeker_id;
          $join = array( "questionbank"=>"questionbank.ques_id=js_test_info.question_id | LEFT OUTER");
-        $exam_result = $this->Master_model->getMaster($table, $where_res, $join, false ,false, $select_result, $limit =false, $start =false, $search= false);
+        $exam_result = $this->Master_model->getMaster($table, $where_res, $join, 'desc' ,'date_time', $select_result, $limit =false, $start =false, $search= false);
         // print_r($exam_result);die;
 
         // $where_apply="job_apply_id='$job_apply_id'";
