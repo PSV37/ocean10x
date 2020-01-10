@@ -18,30 +18,25 @@
 
                   $size=sizeof($exam_result);
                   print_r($size);
-                   if ($key==1) {
-                    // print_r($exam_start);
-                     $start_time=$exam_start['0']['updated_on'];
-                    $end_time=$exam_result['0']['date_time'];
-                    $datetime1 = new DateTime($end_time);
-$datetime2 = new DateTime($start_time);
-$interval = $datetime1->diff($datetime2);
-$elapsed = $interval->format('%i minutes %s seconds');
-echo $elapsed;
-                    //
-                    // print_r($start_time);
-                    // print_r($end_time);
 
-                    // $diff=$end_time-$start_time;
-                    // echo $diff;
-                    // $Time_taken=date_diff($end_time,$start_time);
-                  }
-                  // $exam_res = getExamResultByID($js_id,$job_id); 
-                  if (!empty($exam_result)): foreach ($exam_result as $res_row) :
-                  $marks = $res_row['total_marks']; 
-                  $percentage = ($marks * 100)/$exam_res['0']['total_questions'];
-                 
-                ?>
-                    <tr>
+                  for ($i=0; $i <=$size ; $i++) { 
+                    if ($i==1) {
+                     $start_time=$exam_start['0']['updated_on'];
+                    }
+                    else
+                    {
+                      $j=$i-1;
+                     $start_time=$exam_result[$j]['updated_on'];
+
+                    }
+                   
+                      $end_time=$exam_result[$i]['date_time'];
+                      $datetime1 = new DateTime($end_time);
+                      $datetime2 = new DateTime($start_time);
+                      $interval = $datetime1->diff($datetime2);
+                      $elapsed = $interval->format('%i minutes %s seconds');
+                      echo $elapsed;?>
+                       <tr>
                       <td><?php echo $key ?></td>
                       <td><?php echo $res_row['question']; ?></td>
                       <td><?php echo $res_row['level']; ?></td>
@@ -50,21 +45,14 @@ echo $elapsed;
                       }elseif ($res_row['correct_status']=='No') {
                          echo "Wrong";
                       }  ?></td>
-                      i
+                      
                       <td><?php echo $elapsed; ?></td>
                      
                   </tr>
-                  <?php
-                      $key++;
-                     
-                      endforeach;
+                 <?php  }
+                  
+                  // $exam_res = getExamResultByID($js_id,$job_id); 
                   ?>
-                  <?php else : ?> 
-                      <td colspan="3">
-                          <strong>There is no record for display</strong>
-                      </td>
-                  <?php
-                    endif; ?>
               </tbody>
           </table>
 
