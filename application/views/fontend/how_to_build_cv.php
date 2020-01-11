@@ -33,7 +33,21 @@
 </div>
 
 <!-- Page Title End -->
+                     
+    <div class="row">
+     <?php  if ($company_profile_id != null) {
 
+             $this->load->view('fontend/layout/employer_left.php');
+
+            }
+
+        elseif($jobseeker_id != null) {
+
+              $this->load->view('fontend/layout/seeker_left.php'); 
+
+        }?>
+      <!--  -->
+      <div class="content col-md-9">
 <div class="innerpageconeten" style="padding:80px 0;">
 <div class="container">
   <div class="whoweare row">
@@ -49,6 +63,8 @@
   <!-- end container --> 
   
 </div></div>
+</div>
+</div>
 <!-- end section -->
 
 <?php $this->load->view("fontend/layout/footer.php"); ?>
