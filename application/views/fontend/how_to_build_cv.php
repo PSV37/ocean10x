@@ -22,20 +22,29 @@
 
     }
 
-?>
+?> 
 
-<!-- Page Title start -->
 
-<div class="pageTitle">
+ <!-- Page Title start -->
+<!-- <div class="pageTitle">
   <div class="container">
-    <h1 class="page-heading">How to build CV</h1>
-  </div>
-</div>
-
-<!-- Page Title End -->
-                     
     <div class="row">
-     <?php  if ($company_profile_id != null) {
+      <div class="col-md-6 col-sm-6">
+        <h1 class="page-heading">Dashboard</h1>
+      </div>
+      <div class="col-md-6 col-sm-6">
+        <div class="breadCrumb"><a href="#.">Home</a> / <span>Dashboard</span></div>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- Page Title End -->             
+
+<div class="section lb">
+  <div class="container">                                
+                         
+    <div class="row">
+        <?php  if ($company_profile_id != null) {
 
              $this->load->view('fontend/layout/employer_left.php');
 
@@ -46,25 +55,26 @@
               $this->load->view('fontend/layout/seeker_left.php'); 
 
         }?>
-      <!--  -->
       <div class="content col-md-9">
-<div class="innerpageconeten" style="padding:80px 0;">
-<div class="container">
-  <div class="whoweare row">
-  	<div class="col-md-8">
-    <div class="about-widget">
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry  standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-    </div>
-    
-   
-    </div>
-    <div class="col-md-4"></div>
-  </div>
-  <!-- end container --> 
+        <div class="userccount">
+
+           <div class="about-widget">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry  standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          </div>
+                             
+        </div><!-- end col -->
+      </div><!-- end row -->  
+    </div><!-- end container -->
+  </div><!-- end section -->
+</div>
   
-</div></div>
-</div>
-</div>
-<!-- end section -->
 
 <?php $this->load->view("fontend/layout/footer.php"); ?>
+ 
+ <script>
+  $(document).ready (function(){
+    $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
+    $("#smsg").slideUp(500);
+    });   
+  });
+ </script>
