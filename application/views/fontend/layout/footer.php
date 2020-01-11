@@ -256,6 +256,7 @@ $( document ).ready(function() {
       })
       .autocomplete().data("uiAutocomplete")._renderItem =  function( ul, item ){
         // .autocomplete( "ui-instance" )._renderItem = function( ul, item ) {
+          console.log(.autocomplete().data());
           if(item.img != '')
           {
             return $( "<li><div><img  alt='' style='border-radius: 35px; border: 5px; width:30px;' src='<?php echo base_url(); ?>upload/"+item.img+"'><strong>"+item.value+"</strong></div></li>" ).appendTo( ul );
