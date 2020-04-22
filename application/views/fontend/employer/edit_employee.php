@@ -38,7 +38,14 @@
       <?php $this->load->view('fontend/layout/employer_left.php'); ?>
       <div class="content col-md-9">
         <div class="userccount empdash">
-          <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
+          <!-- <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?> -->
+          <?php if (!empty($this->session->flashdata('success'))) {?>
+            <div id="smsg" class="formpanel alert alert-alert-dismissible fade in">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              <strong style="font-size: 15px;"><?php echo $this->session->flashdata('success');?></strong>
+            </div>             
+
+            <?php } ?>
         
     		<form method="post" action="<?php echo base_url();?>employer/postEditData" enctype="multipart/form-data">
 			    <input type="hidden" name="cid" id="cid" value="<?php echo $result['emp_id'];?>">
