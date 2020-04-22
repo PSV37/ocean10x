@@ -97,7 +97,7 @@
             <?php  $job_seeker=$this->session->userdata('job_seeker_id'); ?>      
 
             <li role="presentation" class="dropdown" style="margin: 10px;" >
-              <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false" style="font-size: 15px;">
+              <a href="<?php echo base_url();?>seeker/instant-message" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false" style="font-size: 15px;">
                 <i class="fa fa-envelope-o"></i>
                 <?php 
                     $msgs = get_messagescount($job_seeker);
