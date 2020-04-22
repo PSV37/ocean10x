@@ -135,6 +135,7 @@
 
                       <a data-toggle="modal" data-target="#myMsgModal">
                         <span>
+                        <?php print_r($msg_row); ?>
                           <span><a href="<?php echo base_url() ?>seeker/instant-message"><?php echo $msg_row['full_name']; ?></a></span>
                           <span class="time">
                           <?php 
