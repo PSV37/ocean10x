@@ -186,7 +186,7 @@ $this->session->set_userdata('reg_in', $company_profile );
                 $data2['emp_created_date'] = date('Y-m-d H:i:s');
                 $data2['user_role']='3';
                 $data2['emp_created_by'] = $company_profile_id;
-                $data2['created_by_system'] ='Yes';
+                $data2['created_by_system'] ='Yes'; 
                 $this->Master_model->master_insert($data2,'employee');
             
             $this->company_profile_model->sendEmail($to_email);
