@@ -168,7 +168,7 @@ $this->session->set_userdata('reg_in', $company_profile );
                 $data['emp_created_date'] = date('Y-m-d H:i:s');
                 $data['user_role']='1';
                 $data['emp_created_by'] = $company_profile_id;
-                $data['created_by_system'] ='Yes'
+                $data['created_by_system'] ='Yes';
                 $this->Master_model->master_insert($data,'employee');
 
                 $data1['org_id'] = $company_profile_id;
