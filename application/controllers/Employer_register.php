@@ -177,7 +177,7 @@ $this->session->set_userdata('reg_in', $company_profile );
                 $data1['emp_created_date'] = date('Y-m-d H:i:s');
                 $data1['user_role']='2';
                 $data1['emp_created_by'] = $company_profile_id;
-                $data1['created_by_system'] ='Yes'
+                $data1['created_by_system'] ='Yes';
                 $this->Master_model->master_insert($data1,'employee');
 
                 $data2['org_id'] = $company_profile_id;
@@ -186,7 +186,7 @@ $this->session->set_userdata('reg_in', $company_profile );
                 $data2['emp_created_date'] = date('Y-m-d H:i:s');
                 $data2['user_role']='3';
                 $data2['emp_created_by'] = $company_profile_id;
-                $data2['created_by_system'] ='Yes'
+                $data2['created_by_system'] ='Yes';
                 $this->Master_model->master_insert($data2,'employee');
             
             $this->company_profile_model->sendEmail($to_email);
