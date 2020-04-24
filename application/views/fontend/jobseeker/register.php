@@ -106,7 +106,7 @@
                     </div> -->
                     <div class="col-md-6 col-sm-12">
                       <label>Password</label><span class="required">*</span>
-                    <input type="Password" id="password" name="password" class="form-control" placeholder="Password" value="<?php echo set_value('password'); ?>" ><?php echo form_error('password'); ?>
+                    <input type="Password" id="password" name="password" class="form-control" placeholder="Password" value="<?php echo set_value('password'); ?>" ><?php echo form_error('password'); ?><span class="hint" id="pwdHint">Password must be at least 8 characters and must contain uppercase & lowercase letters, a number, and a special character.</span>
                     </div>
                   </div><!-- end row -->
                 </div>
@@ -292,25 +292,65 @@ $(document).ready(function() {
         });
 </script>
 <script >
-  $("#submit").click(function () {
+  var formPasswordForm = document.forms["submit"];
+var elemPW = document.getElementById("password");
+var bPasswordPasses = false;
 
-   var p = document.getElementById('password').value,
-        errors = [];
-    if (p.length < 8) {
-        errors.push("Your password must be at least 8 characters"); 
+function fnValidatePassword(evt) {
+    // enter your regular expression to check for at least 8 characters here
+    var regexPasswordLength = /.{8,}/; // test for at least 8 characters
+    // enter your regular expression to check for an uppercase letter here
+    var regexPasswordContainsUpperCase = /[A-Z]/; //test for uppercase letter
+    // enter your regular expression to check for a lowercase letter here
+    var regexPasswordContainsLowerCase = /[a-z]/; //test for lowercase letter
+    // enter your regular expression to check for a number here
+    var regexPasswordContainsNumber = /\d/; //test for number 
+    // enter your regular expression to check for a special character here
+    var regexPasswordContainsSpecialChar = /\W/; //test for special character
+
+    bPasswordPasses = true;
+
+    if (!regexPasswordLength.test(elemPW.value)) {
+        pwdHint.innerHTML = 'Password must be at least 8 characters.';
+        pwdHint.style.display = "inline";
+        bPasswordPasses = false;
     }
-    if (p.search(/[a-z]/i) < 0) {
-        errors.push("Your password must contain at least one letter.");
+
+    if (!regexPasswordContainsUpperCase.test(elemPW.value)) {
+        pwdHint.innerHTML = 'Password must contain an uppercase character.';
+        pwdHint.style.display = "inline";
+        bPasswordPasses = false;
     }
-    if (p.search(/[0-9]/) < 0) {
-        errors.push("Your password must contain at least one digit."); 
+
+    if (!regexPasswordContainsLowerCase.test(elemPW.value)) {
+        pwdHint.innerHTML = 'Password must contain an lowercase character.';
+        pwdHint.style.display = "inline";
+        bPasswordPasses = false;
     }
-    if (errors.length > 0) {
-        alert(errors.join("\n"));
-        return false;
+
+    if (!regexPasswordContainsNumber.test(elemPW.value)) {
+        pwdHint.innerHTML = 'Password must contain a number.';
+        pwdHint.style.display = "inline";
+        bPasswordPasses = false;
     }
-});
+
+    if (!regexPasswordContainsSpecialChar.test(elemPW.value)) {
+        pwdHint.innerHTML = 'Password must contain a special character.';
+        pwdHint.style.display = "inline";
+        bPasswordPasses = false;
+    }
+
+    if (bPasswordPasses) {
+        // looks goood
+        pwdHint.innerHTML = 'Password passes all tests.';
+
+    }
+    evt.preventDefault();
+}
+
+formPasswordForm.addEventListener("submit", fnValidatePassword);
 </script>
+
 
  <?php $this->load->view("fontend/layout/footer.php"); ?>
 
