@@ -66,12 +66,12 @@
                   <div class="row">
                     <div class="col-md-6 col-sm-12">
                       <label>First name</label><span class="required">*</span>
-                      <input type="text" name="full_name" value="<?php echo set_value('full_name'); ?>" class="form-control name-valid" placeholder="Full Name" autocomplete="off">
+                      <input type="text" name="full_name" value="<?php echo set_value('full_name'); ?>" class="form-control name-valid" placeholder="Full Name" autocomplete="off" required>
                     </div>
 
                     <div class="col-md-6 col-sm-12">
                      <label>Email</label><span class="required">*</span>
-                      <input type="email" name="email" value="<?php echo set_value('email'); ?>" class="form-control" placeholder="Email" autocomplete="off"><?php echo form_error('email'); ?>
+                      <input type="email" name="email" value="<?php echo set_value('email'); ?>" class="form-control" placeholder="Email" autocomplete="off" required><?php echo form_error('email'); ?>
                     </div>
 
                   </div><!-- end row -->
@@ -106,7 +106,7 @@
                     </div> -->
                     <div class="col-md-6 col-sm-12">
                       <label>Password</label><span class="required">*</span>
-                    <input type="Password" id="password" name="password" class="form-control" placeholder="Password" value="<?php echo set_value('password'); ?>" ><?php echo form_error('password'); ?><span class="hint" id="pwdHint">Password must be at least 8 characters and must contain uppercase & lowercase letters, a number, and a special character.</span>
+                    <input type="Password" id="password" name="password" class="form-control" placeholder="Password" value="<?php echo set_value('password'); ?>" ><?php echo form_error('password'); ?><span class="hint" id="pwdHint" required>Password must be at least 8 characters and must contain uppercase & lowercase letters, a number, and a special character.</span>
                     </div>
                   </div><!-- end row -->
                 </div>
@@ -125,7 +125,7 @@
                     <div class="row">
 
                       <div class="col-md-6 col-sm-12">
-                        <input id="inputchapcha" type="text" name="captcha" value="" class="form-control" autocomplete="off"></span>
+                        <input id="inputchapcha" type="text" name="captcha" value="" class="form-control" autocomplete="off" required></span>
                       </div>
 
                       <div class="col-md-5 col-sm-5">
