@@ -303,10 +303,11 @@ public function check_forgot_user_info($email)
                           <tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left">
                             <td><br>
                               <br>
-                              Hello,<br>
+                              Hello Dear,<br>
                               Please click on link below to reset your password: <br>
+                              <a href="'.base_url().'register/reset_password/' . md5($to_email) . '"> Reset</a>
                               
-                           <a href="'.base_url().'register/reset_password/' . md5($to_email) . '">Reset Password</a>
+                           <a style="border-radius:4px;font-size:15px;color:white;text-decoration:none;padding:14px 7px 14px 7px;width:210px;max-width:210px;font-family:&quot;Open Sans&quot;,&quot;Helvetica Neue&quot;,Arial;margin:0;display:block;background-color:#6caa4d;text-align:center" href="'.base_url().'register/reset_password/' . md5($to_email) . '">Reset Password</a>
                               <br>
                               <br>
                               © 2017 ConsultnHire All Rights Reserved.</td>
