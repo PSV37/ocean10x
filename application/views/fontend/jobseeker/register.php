@@ -72,9 +72,9 @@
                     <div class="col-md-6 col-sm-12">
                      
                       <input type="email" name="email" value="<?php echo set_value('email'); ?>" class="form-control" placeholder="Email" autocomplete="off"><?php echo form_error('email'); ?>
-                    </div><span class="required">*</span>
+                    </div>
 
-                  </div><!-- end row -->
+                  </div><span class="required">*</span><!-- end row -->
                 </div>
 
                 <div class="formrow">
@@ -105,9 +105,7 @@
                       <input type="radio" name="gender" value="2" <?php echo $str_f ; ?>> Female
                     </div> -->
                     <div class="col-md-6 col-sm-12">
-                       <label>Password</label><span class="required">*</span>
-
-                      <input type="Password" id="password" name="password" class="form-control" placeholder="Password" value="<?php echo set_value('password'); ?>" ><?php echo form_error('password'); ?>
+                    <input type="Password" id="password" name="password" class="form-control" placeholder="Password" value="<?php echo set_value('password'); ?>" ><?php echo form_error('password'); ?>
                     </div><span class="required">*</span>
                   </div><!-- end row -->
                 </div>
@@ -122,11 +120,11 @@
                 </div>
 
                 <div class="formrow">
-                  <div class="captchacode">Captcha is cause sensitive</div><span class="required">*</span>
+                  <div class="captchacode">Captcha is cause sensitive<span class="required">*</span></div>
                     <div class="row">
 
                       <div class="col-md-6 col-sm-12">
-                        <input id="inputchapcha" type="text" name="captcha" value="" class="form-control" autocomplete="off"><span class="required">*</span>
+                        <input id="inputchapcha" type="text" name="captcha" value="" class="form-control" autocomplete="off"></span>
                       </div>
 
                       <div class="col-md-5 col-sm-5">
@@ -134,7 +132,7 @@
                         <a href="javascript:void(0);" class="refreshCaptcha" ><img src="<?php echo base_url().'fontend/images/refresh-button.png'; ?>"/></a>
                       </div>
                       <div class="col-md-1 col-sm-1"></div>
-                    </div><span class="required">*</span><!-- end row -->
+                    </div><!-- end row -->
                 </div>
 
                 <div class="formrow">
