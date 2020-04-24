@@ -207,7 +207,8 @@
                  //    },
                     password: {
                         required: true,
-                        minlength: 8
+                        minlength: 8,
+                        pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/
                     },
                     // confirm_password: {
                     //     required: true,
@@ -237,7 +238,8 @@
                    
                     password: {
                         required: "Please provide a password",
-                        minlength: "Your password must be at least 8 characters long"
+                        minlength: "Your password must be at least 8 characters long",
+                        pattern:"should contain"
                     },
                     // confirm_password: {
                     //     required: "Please provide a password",
@@ -291,7 +293,7 @@ $(document).ready(function() {
          });
         });
 </script>
-<script >
+<!-- <script >
   var formPasswordForm = document.forms["submit"];
 var elemPW = document.getElementById("password");
 var bPasswordPasses = false;
@@ -350,7 +352,7 @@ function fnValidatePassword(evt) {
 
 formPasswordForm.addEventListener("submit", fnValidatePassword);
 </script>
-
+ -->
 
  <?php $this->load->view("fontend/layout/footer.php"); ?>
 
