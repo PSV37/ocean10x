@@ -2,12 +2,6 @@
     $this->load->view('fontend/layout/header.php');
 ?>
 
-   <style>
-    .required:after { content:" *"; }
-</style>
-
-
-
 <!-- Page Title start -->
 <!-- <div class="pageTitle">
   <div class="container">
@@ -42,7 +36,7 @@
 
                 <div class="formrow">
                   <div class="row">
-                    <div class="col-md-6 col-sm-12 required">
+                    <div class="col-md-6 col-sm-12">
                        <?php $str_fr="";
                         if((isset($this->session->userdata['reg_jobseeker']['gender'])) && $this->session->userdata['reg_jobseeker']['profession']=='1'){
 
@@ -54,7 +48,7 @@
                         $str_pro="selected";
                         } 
                       ?>
-                     <label>I am a</label> &nbsp;&nbsp;
+                     <label>I am a</label><span class="required">*</span> &nbsp;&nbsp;
                       <input type="radio" name="profession" value="Fresher" <?php echo $str_fr ; ?>> Fresher &nbsp;
                       <input type="radio" name="profession" value="Professional" <?php echo $str_pro ; ?>> Professional
                     </div>
@@ -64,12 +58,12 @@
 
                 <div class="formrow">
                   <div class="row">
-                    <div class="col-md-6 col-sm-12 required">
-                      <input type="text" name="full_name" value="<?php echo set_value('full_name'); ?>" class="form-control name-valid" placeholder="Full Name" autocomplete="off">
+                    <div class="col-md-6 col-sm-12">
+                      <input type="text" name="full_name" value="<?php echo set_value('full_name'); ?>" class="form-control name-valid" placeholder="Full Name" autocomplete="off"><span class="required">*</span>
                     </div>
 
-                    <div class="col-md-6 col-sm-12 required">
-                      <input type="email" name="email" value="<?php echo set_value('email'); ?>" class="form-control" placeholder="Email" autocomplete="off"><?php echo form_error('email'); ?>
+                    <div class="col-md-6 col-sm-12">
+                      <input type="email" name="email" value="<?php echo set_value('email'); ?>" class="form-control" placeholder="Email" autocomplete="off"><?php echo form_error('email'); ?><span class="required">*</span>
                     </div>
 
                   </div><!-- end row -->
@@ -98,12 +92,12 @@
                         <option value="1" <?php echo $str_m ; ?>>Male</option>
                         <option value="2" <?php echo $str_f ; ?>>Female</option>
                       </select> -->
-                      <!--  <label>Gender</label> &nbsp;&nbsp;
+                       <!-- <label>Gender</label> &nbsp;&nbsp;
                       <input type="radio" name="gender" value="1" <?php echo $str_m ; ?>> Male &nbsp;
                       <input type="radio" name="gender" value="2" <?php echo $str_f ; ?>> Female
                     </div> -->
-                    <div class="col-md-6 col-sm-12 required">
-                      <input type="Password" id="password" name="password" class="form-control" placeholder="Password" value="<?php echo set_value('password'); ?>" ><?php echo form_error('password'); ?>
+                    <div class="col-md-6 col-sm-12">
+                      <input type="Password" id="password" name="password" class="form-control" placeholder="Password" value="<?php echo set_value('password'); ?>" ><?php echo form_error('password'); ?><span class="required">*</span>
                     </div>
                   </div><!-- end row -->
                 </div>
@@ -117,12 +111,12 @@
                   </div>
                 </div>
 
-                <div class="formrow required">
+                <div class="formrow">
                   <div class="captchacode">Captcha is cause sensitive</div>
                     <div class="row">
 
                       <div class="col-md-6 col-sm-12">
-                        <input id="inputchapcha" type="text" name="captcha" value="" class="form-control" autocomplete="off">
+                        <input id="inputchapcha" type="text" name="captcha" value="" class="form-control" autocomplete="off"><span class="required">*</span>
                       </div>
 
                       <div class="col-md-5 col-sm-5">
@@ -206,11 +200,11 @@
                         required: true,
                         minlength: 6
                     },
-                    confirm_password: {
-                        required: true,
-                        minlength: 8,
-                        equalTo: "#password"
-                    },
+                    // confirm_password: {
+                    //     required: true,
+                    //     minlength: 6,
+                    //     equalTo: "#password"
+                    // },
                     email: {
                         required: true,
                         email: true
