@@ -4727,7 +4727,4 @@ Large Mobile Screen
 	border-color: #eeeeee;
 }
 
-    .required input:after { 
-    	content:"*"; 
-    	color: red;
-    }
+   

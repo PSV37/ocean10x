@@ -2,6 +2,14 @@
     $this->load->view('fontend/layout/header.php');
 ?>
 
+<style type="text/css">
+   .required input:after { 
+      content:"*"; 
+      color: red;
+    }
+
+</style>
+
 <!-- Page Title start -->
 <!-- <div class="pageTitle">
   <div class="container">
