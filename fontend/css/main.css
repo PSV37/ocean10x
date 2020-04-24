@@ -165,7 +165,9 @@ select{
 }
 .whitebg{background:#fff;}
 
-
+ .required {
+                color: #DD4B39;
+            }
 
 .lb{min-height:400px;}
 .content-title h4{margin-bottom:20px;}
