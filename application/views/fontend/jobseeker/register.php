@@ -207,10 +207,8 @@
                  //    },
                     password: {
                         required: true,
-                        minlength: 8,
-                        pattern: "(?=^.{8,}$)((?=.*\d)(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+                        minlength: 8
                     },
-
                     // confirm_password: {
                     //     required: true,
                     //     minlength: 6,
@@ -239,8 +237,7 @@
                    
                     password: {
                         required: "Please provide a password",
-                        minlength: "Your password must be at least 8 characters long",
-                        pattern:"You must provide One Uppercase,One Lowercase,Numbers and special Character"
+                        minlength: "Your password must be at least 8 characters long"
                     },
                     // confirm_password: {
                     //     required: "Please provide a password",
@@ -294,7 +291,26 @@ $(document).ready(function() {
          });
         });
 </script>
+<script >
+  $("#submit").click(function () {
 
+   var p = document.getElementById('password').value,
+        errors = [];
+    if (p.length < 8) {
+        errors.push("Your password must be at least 8 characters"); 
+    }
+    if (p.search(/[a-z]/i) < 0) {
+        errors.push("Your password must contain at least one letter.");
+    }
+    if (p.search(/[0-9]/) < 0) {
+        errors.push("Your password must contain at least one digit."); 
+    }
+    if (errors.length > 0) {
+        alert(errors.join("\n"));
+        return false;
+    }
+});
+</script>
 
  <?php $this->load->view("fontend/layout/footer.php"); ?>
 
