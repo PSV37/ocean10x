@@ -1,6 +1,12 @@
 <?php 
     $this->load->view('fontend/layout/header.php');
 ?>
+<style type="text/css">
+  .required
+  {
+    color: red;
+  }
+</style>
 
 <!-- Page Title start -->
 <!-- <div class="pageTitle">
@@ -59,14 +65,14 @@
                 <div class="formrow">
                   <div class="row">
                     <div class="col-md-6 col-sm-12">
-                      <label>Full Name</label><span class="required">*</span>
+                      
                       <input type="text" name="full_name" value="<?php echo set_value('full_name'); ?>" class="form-control name-valid" placeholder="Full Name" autocomplete="off">
                     </div><span class="required">*</span>
 
                     <div class="col-md-6 col-sm-12">
-                       <label>Email</label><span class="required">*</span>
-                      <input type="email" name="email" value="<?php echo set_value('email'); ?>" class="form-control" placeholder="Email" autocomplete="off"><?php echo form_error('email'); ?><span class="required">*</span>
-                    </div>
+                     
+                      <input type="email" name="email" value="<?php echo set_value('email'); ?>" class="form-control" placeholder="Email" autocomplete="off"><?php echo form_error('email'); ?>
+                    </div><span class="required">*</span>
 
                   </div><!-- end row -->
                 </div>
@@ -101,8 +107,8 @@
                     <div class="col-md-6 col-sm-12">
                        <label>Password</label><span class="required">*</span>
 
-                      <input type="Password" id="password" name="password" class="form-control" placeholder="Password" value="<?php echo set_value('password'); ?>" ><?php echo form_error('password'); ?><span class="required">*</span>
-                    </div>
+                      <input type="Password" id="password" name="password" class="form-control" placeholder="Password" value="<?php echo set_value('password'); ?>" ><?php echo form_error('password'); ?>
+                    </div><span class="required">*</span>
                   </div><!-- end row -->
                 </div>
 
@@ -128,7 +134,7 @@
                         <a href="javascript:void(0);" class="refreshCaptcha" ><img src="<?php echo base_url().'fontend/images/refresh-button.png'; ?>"/></a>
                       </div>
                       <div class="col-md-1 col-sm-1"></div>
-                    </div><!-- end row -->
+                    </div><span class="required">*</span><!-- end row -->
                 </div>
 
                 <div class="formrow">
