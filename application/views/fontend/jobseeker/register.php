@@ -120,7 +120,7 @@
                 </div>
 
                 <div class="formrow">
-                  <div class="captchacode">Captcha is cause sensitive<span class="required">*</span></div>
+                  <div class="captchacode">Captcha is case sensitive<span class="required">*</span></div>
                     <div class="row">
 
                       <div class="col-md-6 col-sm-12">
