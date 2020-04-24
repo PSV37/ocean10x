@@ -36,7 +36,7 @@
 
                 <div class="formrow">
                   <div class="row">
-                    <div class="col-md-6 col-sm-12">
+                    <div class="col-md-6 col-sm-12" class="required">
                        <?php $str_fr="";
                         if((isset($this->session->userdata['reg_jobseeker']['gender'])) && $this->session->userdata['reg_jobseeker']['profession']=='1'){
 
@@ -58,11 +58,11 @@
 
                 <div class="formrow">
                   <div class="row">
-                    <div class="col-md-6 col-sm-12">
+                    <div class="col-md-6 col-sm-12" class="required">
                       <input type="text" name="full_name" value="<?php echo set_value('full_name'); ?>" class="form-control name-valid" placeholder="Full Name" autocomplete="off">
                     </div>
 
-                    <div class="col-md-6 col-sm-12">
+                    <div class="col-md-6 col-sm-12" class="required">
                       <input type="email" name="email" value="<?php echo set_value('email'); ?>" class="form-control" placeholder="Email" autocomplete="off"><?php echo form_error('email'); ?>
                     </div>
 
@@ -75,7 +75,7 @@
                       <input type="text" name="mobile" value="<?php echo isset($this->session->userdata['reg_jobseeker']['mobile_no'])?$this->session->userdata['reg_jobseeker']['mobile_no']:''; ?>" class="form-control" placeholder="Mobile Number" autocomplete="off">
                     </div> -->
 
-                    <div class="col-md-6 col-sm-12">
+                    <!-- <div class="col-md-6 col-sm-12">
                       <?php $str_m="";
                         if((isset($this->session->userdata['reg_jobseeker']['gender'])) && $this->session->userdata['reg_jobseeker']['gender']=='1'){
 
@@ -86,17 +86,17 @@
                         $str_m="";
                         $str_f="selected";
                         } 
-                      ?>
+                      ?> -->
                       <!-- <select name="gender" class="form-control" id="gender">
                         <option value="">Select One</option>
                         <option value="1" <?php echo $str_m ; ?>>Male</option>
                         <option value="2" <?php echo $str_f ; ?>>Female</option>
                       </select> -->
-                       <label>Gender</label> &nbsp;&nbsp;
+                      <!--  <label>Gender</label> &nbsp;&nbsp;
                       <input type="radio" name="gender" value="1" <?php echo $str_m ; ?>> Male &nbsp;
                       <input type="radio" name="gender" value="2" <?php echo $str_f ; ?>> Female
-                    </div>
-                    <div class="col-md-6 col-sm-12">
+                    </div> -->
+                    <div class="col-md-6 col-sm-12" class="required">
                       <input type="Password" id="password" name="password" class="form-control" placeholder="Password" value="<?php echo set_value('password'); ?>" ><?php echo form_error('password'); ?>
                     </div>
                   </div><!-- end row -->
@@ -111,7 +111,7 @@
                   </div>
                 </div>
 
-                <div class="formrow">
+                <div class="formrow" class="required">
                   <div class="captchacode">Captcha is cause sensitive</div>
                     <div class="row">
 

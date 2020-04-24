@@ -4726,3 +4726,8 @@ Large Mobile Screen
 .bootstrap-select .dropdown-menu .inner li.selected a{
 	border-color: #eeeeee;
 }
+
+    .required input:after { 
+    	content:"*"; 
+    	color: red;
+    }
