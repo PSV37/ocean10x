@@ -65,14 +65,14 @@
                 <div class="formrow">
                   <div class="row">
                     <div class="col-md-6 col-sm-12">
-                      
+                      <label>First name</label><span class="required">*</span>
                       <input type="text" name="full_name" value="<?php echo set_value('full_name'); ?>" class="form-control name-valid" placeholder="Full Name" autocomplete="off">
-                    </div><span class="required">*</span>
+                    </div>
 
                     <div class="col-md-6 col-sm-12">
-                     
+                     <label>Email</label><span class="required">*</span>
                       <input type="email" name="email" value="<?php echo set_value('email'); ?>" class="form-control" placeholder="Email" autocomplete="off"><?php echo form_error('email'); ?>
-                    </div><span style="float: right;" class="required">*</span>
+                    </div>
 
                   </div><!-- end row -->
                 </div>
@@ -105,8 +105,9 @@
                       <input type="radio" name="gender" value="2" <?php echo $str_f ; ?>> Female
                     </div> -->
                     <div class="col-md-6 col-sm-12">
+                      <label>Password</label><span class="required">*</span>
                     <input type="Password" id="password" name="password" class="form-control" placeholder="Password" value="<?php echo set_value('password'); ?>" ><?php echo form_error('password'); ?>
-                    </div><div id="text"></div><span class="required">*</span>
+                    </div><div id="text"></div>
                   </div><!-- end row -->
                 </div>
 
