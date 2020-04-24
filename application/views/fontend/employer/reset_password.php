@@ -68,6 +68,7 @@
             
             <div class="formrow">
               <input name="password" type="password" id="myInput" class="form-control" placeholder="Password" min="5" required><?php echo form_error('password'); ?>
+              <span toggle="#password-field" class="fa fa-lg fa-eye-slash field-icon toggle-password"></span>
              
 
             </div>
@@ -104,7 +105,19 @@
     }
   }
  </script>
+<script type="text/javascript">
+  $(".toggle-password").click(function() {
 
+  $(this).toggleClass("fa-eye fa-eye-slash");
+  var input = $($(this).attr("toggle"));
+  if (input.attr("type") == "password") {
+    input.attr("type", "text");
+  } else {
+    input.attr("type", "password");
+  }
+});
+
+</script>
 
                
               <!-- end section -->

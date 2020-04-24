@@ -38,6 +38,7 @@
             </div>
             <div class="formrow">
               <input name="password" type="password" id="myInput" class="form-control" placeholder="Key in Your Password" autocomplete="off">
+              <span toggle="#password-field" class="fa fa-lg fa-eye-slash field-icon toggle-password"></span>
               <!-- An element to toggle between password visibility -->
               <input type="checkbox" onclick="myFunction()">Show Password
             </div>
@@ -122,3 +123,17 @@
     }
   }
  </script>
+
+ <script type="text/javascript">
+  $(".toggle-password").click(function() {
+
+  $(this).toggleClass("fa-eye fa-eye-slash");
+  var input = $($(this).attr("toggle"));
+  if (input.attr("type") == "password") {
+    input.attr("type", "text");
+  } else {
+    input.attr("type", "password");
+  }
+});
+
+</script>
