@@ -72,7 +72,7 @@
                     <div class="col-md-6 col-sm-12">
                      
                       <input type="email" name="email" value="<?php echo set_value('email'); ?>" class="form-control" placeholder="Email" autocomplete="off"><?php echo form_error('email'); ?>
-                    </div><span class="required">*</span>
+                    </div><span style="float: right;" class="required">*</span>
 
                   </div><!-- end row -->
                 </div>
@@ -106,7 +106,7 @@
                     </div> -->
                     <div class="col-md-6 col-sm-12">
                     <input type="Password" id="password" name="password" class="form-control" placeholder="Password" value="<?php echo set_value('password'); ?>" ><?php echo form_error('password'); ?>
-                    </div><span class="required">*</span>
+                    </div><div id="text"></div><span class="required">*</span>
                   </div><!-- end row -->
                 </div>
 
@@ -201,12 +201,12 @@
                 rules: {
                     full_name: "required",
                     
-                 gender: {
-                        required: true,
-                    },
+                 // gender: {
+                 //        required: true,
+                 //    },
                     password: {
                         required: true,
-                        minlength: 6
+                        minlength: 8
                     },
                     // confirm_password: {
                     //     required: true,
@@ -236,7 +236,7 @@
                    
                     password: {
                         required: "Please provide a password",
-                        minlength: "Your password must be at least 6 characters long"
+                        minlength: "Your password must be at least 8 characters long"
                     },
                     // confirm_password: {
                     //     required: "Please provide a password",
@@ -289,6 +289,26 @@ $(document).ready(function() {
           return false;
          });
         });
+</script>
+<script >
+  $("#submit").click(function () {
+
+    $("input[type=password]").each(function () {
+        var validated =  true;
+        if(this.value.length < 8)
+            validated = false;
+        if(!/\d/.test(this.value))
+            validated = false;
+        if(!/[a-z]/.test(this.value))
+            validated = false;
+        if(!/[A-Z]/.test(this.value))
+            validated = false;
+        if(/[^0-9a-zA-Z]/.test(this.value))
+            validated = false;
+        $('#text').text(validated ? "pass" : "fail");
+        // use DOM traversal to select the correct div for this input above
+    });
+});
 </script>
 
  <?php $this->load->view("fontend/layout/footer.php"); ?>
