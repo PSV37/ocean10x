@@ -3,7 +3,7 @@
 ?>
 
 <style type="text/css">
-   .required input:after { 
+   .required:after { 
       content:"*"; 
       color: red;
     }
@@ -208,11 +208,11 @@
                         required: true,
                         minlength: 6
                     },
-                    // confirm_password: {
-                    //     required: true,
-                    //     minlength: 6,
-                    //     equalTo: "#password"
-                    // },
+                    confirm_password: {
+                        required: true,
+                        minlength: 8,
+                        equalTo: "#password"
+                    },
                     email: {
                         required: true,
                         email: true
