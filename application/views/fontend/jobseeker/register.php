@@ -2,13 +2,11 @@
     $this->load->view('fontend/layout/header.php');
 ?>
 
-<style type="text/css">
-   .required:after { 
-      content:"*"; 
-      color: red;
-    }
-
+   <style>
+    .required:after { content:" *"; }
 </style>
+
+
 
 <!-- Page Title start -->
 <!-- <div class="pageTitle">
@@ -44,7 +42,7 @@
 
                 <div class="formrow">
                   <div class="row">
-                    <div class="col-md-6 col-sm-12" class="required">
+                    <div class="col-md-6 col-sm-12 required">
                        <?php $str_fr="";
                         if((isset($this->session->userdata['reg_jobseeker']['gender'])) && $this->session->userdata['reg_jobseeker']['profession']=='1'){
 
