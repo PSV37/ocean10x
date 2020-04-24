@@ -31,12 +31,12 @@ h6{
 	    
 </style>    
 <?php if (!empty($this->session->flashdata('Message'))) {?>
-<div id="smsg" class="alert alert-alert-dismissible fade in">
+<div  id="smsg" class="alert alert-<?php echo $this->session->flashdata('type');?> alert-dismissible fade in">
   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  <strong style="text-align: center;"><?php echo $this->session->flashdata('Message');?></strong>
-</div>             
+  <strong ><?php echo $this->session->flashdata('Message');?></strong>
+</div> 
 
-<?php } ?>  
+<?php } ?>   
 
 
  <!-- Page Title start -->
