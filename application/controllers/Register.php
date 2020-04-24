@@ -191,6 +191,7 @@ class Register extends CI_Controller
         $jobseeker_email    = $this->input->post('email');
         $jobseeker_password = md5($this->input->post('password'));
         $result             = $this->job_seeker_model->check_login_info($jobseeker_email, $jobseeker_password);
+         $email_check             = $this->job_seeker_model->check_forgot_user_info($jobseeker_email);
         if (!empty($result)) {
             $data['job_seeker_id'] = $result->job_seeker_id;
             $data['user_name']     = $result->full_name;
@@ -213,7 +214,11 @@ class Register extends CI_Controller
             $this->session->set_flashdata('type', 'success');
             $this->session->set_flashdata('Message', "Welcome Back - ".$result->full_name."<br>Your Last Successfull Login Was - ".$results['login']);
             redirect('job_seeker/my_dashboard');
-        } else {
+        } elseif (!empty($email_check)) {
+            $this->session->set_flashdata('invalid', '<div class="alert alert-danger text-center">You have entered a Wrong password!</div>');
+            redirect('register/jobseeker_login');
+        }
+        else {
             $this->session->set_flashdata('invalid', '<div class="alert alert-danger text-center">Sorry! There is error verifying your Email Address!</div>');
             redirect('register/jobseeker_login');
         }
@@ -261,6 +266,7 @@ class Register extends CI_Controller
         $js_data= $this->Master_model->get_master_row('js_info',$select = FALSE,$whereres);
 
         $js_email = $js_data['email'];
+        $js_name = $js_data['email'];
         $js_password = $js_data['password'];
          
         if ($this->job_seeker_model->reset_account($hash,$pass) || ($js_password==$pass)) {
