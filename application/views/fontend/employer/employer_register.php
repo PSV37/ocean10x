@@ -138,7 +138,7 @@
                                               <select  name="country_id" id="country_id" class="form-control country" onchange="getStates(this.value)">
                                                 <option value="">Select Country</option>
                                                 <?php foreach($country as $key){?>
-                                                <option value="<?php echo $key['country_id']; ?>" <?php echo set_select('country_id', $key['country_id'], TRUE); ?> ><?php echo $key['country_name']; ?></option>
+                                                <option value="<?php echo $key['country_id']; ?>" <?php echo  set_select('country_id', $key['country_id'], TRUE); ?> ><?php echo $key['country_name']; ?></option>
                                                 <?php } ?>
                                               </select>
                                             </div>
