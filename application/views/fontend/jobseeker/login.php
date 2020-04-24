@@ -50,7 +50,7 @@
               <input name="password" type="password" id="myInput" class="form-control" placeholder="Key in Your Password" autocomplete="off">
               <span toggle="#password-field" class="fa fa-lg fa-eye-slash field-icon toggle-password"></span>
               <!-- An element to toggle between password visibility -->
-              <input type="checkbox" onclick="myFunction()">Show Password
+              <!-- <input type="checkbox" onclick="myFunction()">Show Password -->
             </div>
             <div class="formrow">
               <div class="row">
