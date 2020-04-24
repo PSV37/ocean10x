@@ -72,9 +72,9 @@
                     <div class="col-md-6 col-sm-12">
                      
                       <input type="email" name="email" value="<?php echo set_value('email'); ?>" class="form-control" placeholder="Email" autocomplete="off"><?php echo form_error('email'); ?>
-                    </div>
+                    </div><span class="required">*</span>
 
-                  </div><span class="required">*</span><!-- end row -->
+                  </div><!-- end row -->
                 </div>
 
                 <div class="formrow">
