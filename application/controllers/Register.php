@@ -59,6 +59,7 @@ class Register extends CI_Controller
                 'cv_type'   => 1,
             );
             $email_to = $this->input->post('email');
+            $full_name = $this->input->post('full_name');
             $exist_email    = $this->job_seeker_model->email_check($this->input->post('email'));
             // $exist_username = $this->job_seeker_model->username_check($this->input->post('user_name'));
                  $this->session->set_userdata('reg_jobseeker', $js_info );
@@ -105,7 +106,7 @@ class Register extends CI_Controller
 
                     $this->Job_specialization_model->insert($js_specialiazation);
                     // successfully sent mail
-                   $this->job_seeker_model->sendEmail($email_to);
+                   $this->job_seeker_model->sendEmail($email_to,$full_name);
                     $this->session->unset_userdata('reg_jobseeker');
   
 
