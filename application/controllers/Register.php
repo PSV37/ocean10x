@@ -49,7 +49,7 @@ class Register extends CI_Controller
             $js_info = array(
                 'full_name' => $this->input->post('full_name'),
                 'email'     => $this->input->post('email'),
-                'gender'    => $this->input->post('gender'),
+                // 'gender'    => $this->input->post('gender'),
                 // 'user_name' => $this->input->post('user_name'),
                 'password'  => md5($this->input->post('password')),
                 'js_token'  => md5($this->input->post('email')),
