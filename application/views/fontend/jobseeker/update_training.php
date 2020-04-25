@@ -528,5 +528,12 @@ function check_other(value)
     x1.value = value;
   }
 }
-
-	   </script>              
+</script> 
+<script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>    
+<script>
+  $(document).ready(function(){
+ 
+  // Initialize select2
+  $("#training_title").select2();
+});
+</script>         
