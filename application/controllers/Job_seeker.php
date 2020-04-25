@@ -678,6 +678,16 @@ exit;*/
                 'training_year'       => $this->input->post('training_year'),
             );
             if (empty($job_training_id)) {
+
+                 $training   = array(
+               
+                'name' => $this->input->post('training_title'),
+                'status' => '1',
+                'created on'      => date('Y-m-d H:i:s'),
+                'created_by'        => $jobseeker_id,);
+
+                $this->Master_model->master_insert('training',$training);
+
                 $this->Job_training_model->insert($training_info);
                 redirect('job_seeker/seeker_info');
             } else {
