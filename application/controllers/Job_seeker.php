@@ -677,14 +677,16 @@ exit;*/
                 'duration'       => $this->input->post('duration'),
                 'training_year'       => $this->input->post('training_year'),
             );
-            if (empty($job_training_id)) {
-
-                 $training   = array(
+            $training   = array(
                
                 'name' => $this->input->post('training_title'),
                 'status' => '1',
                 'created on'      => date('Y-m-d H:i:s'),
-                'created_by'        => $jobseeker_id,);
+                'created_by'        => $jobseeker_id
+            );
+            if (empty($job_training_id)) {
+
+                 
 
                 $this->Master_model->master_insert('training',$training);
 
