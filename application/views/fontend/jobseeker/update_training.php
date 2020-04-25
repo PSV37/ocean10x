@@ -508,17 +508,22 @@
 
 function check_other(value)
 {
-  if (value=='other') 
-  {
+  
     var x1 = document.getElementById("training_title1");
     var x = document.getElementById("training_title");
+    if (value=='other') 
+  {
     if (x1.type === "hidden") {
       x1.type = "text";
       // x.type = "hidden";
     } else {
       x1.type = "hidden";
-      
+
     }
+  }
+  else
+  {
+    x1.type = "hidden";
   }
 }
 
