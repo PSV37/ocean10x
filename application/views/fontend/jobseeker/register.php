@@ -119,7 +119,7 @@
                     <div class="col-md-6 col-sm-12">
                       <label>Password</label><span class="required">*</span>
 
-                      <input type="Password" id="password" name="password" class="form-control" placeholder="Password" required value="<?php echo set_value('password'); ?>" onkeyup="checkPasswordStrength()"> 
+                      <input type="Password" id="password" name="password" class="form-control" placeholder="Password" required value="<?php echo set_value('password'); ?>" onkeyup="validatePassword(this.value);"> 
                       <span toggle="#password-field" class="fa fa-lg fa-eye-slash field-icon toggle-password"></span>
 
                       <?php echo form_error('password'); ?>
@@ -329,7 +329,7 @@ $(document).ready(function() {
 
 </script>
 
-<script>
+<!-- <script>
   function checkPasswordStrength() {
   /*
   RULES:
@@ -382,28 +382,85 @@ $(document).ready(function() {
   }
   // Output the result
   if (rule1 && rule2 && rule3 && rule4 && rule5) {
-    // document.getElementById('output').innerHTML = "The password is Acceptable!" + "<br>";
+    document.getElementById("password-strength").style.width = "100%";
+    document.getElementById("output").innerHTML = "Strong";
+    document.getElementById('output').innerHTML = "The password is Acceptable!" + "<br>";
   }  else {
    // document.getElementById('output').innerHTML = "The password is not strong enough" + "<br> <br>";
    if (rule1) {
+    width=document.getElementById("password-strength").style.width
     document.getElementById("password-strength").style.width = "20%";
-    document.getElementById("output").innerHTML = "ok";
+    document.getElementById("output").innerHTML = "Worst";
   }
    if (rule2) {
-    document.getElementById("output").innerHTML += "Contains Lowercase: " + rule2 + "<br>";
+    document.getElementById("password-strength").style.width = "40%";
+    document.getElementById("output").innerHTML = "Bad";
+    // document.getElementById("output").innerHTML += "Contains Lowercase: " + rule2 + "<br>";
   }
   if (rule3) {
-    document.getElementById("output").innerHTML += "Contains Number: " + rule3 + "<br>";
+    // document.getElementById("output").innerHTML += "Contains Number: " + rule3 + "<br>";
+    document.getElementById("password-strength").style.width = "60%";
+    document.getElementById("output").innerHTML = "Weak";
   }
    if (rule4) {
-    document.getElementById("output").innerHTML += "Contains Special Char: " + rule4 + "<br>";
+    // document.getElementById("output").innerHTML += "Contains Special Char: " + rule4 + "<br>";
+    document.getElementById("password-strength").style.width = "80%";
+    document.getElementById("output").innerHTML = "Good";
   }
   if (rule5) {
-    document.getElementById("output").innerHTML += "Is Long Enough: " + rule5;
+    // document.getElementById("output").innerHTML += "Is Long Enough: " + rule5;
+    document.getElementById("password-strength").style.width = "100%";
+    document.getElementById("output").innerHTML = "Strong";
   } 
 
   }
 }
-</script>
+</script> -->
+
+<script>
+  function validatePassword(password) {
+      
+      // Do not show anything when the length of password is zero.
+      if (password.length === 0) {
+          document.getElementById("output").innerHTML = "";
+          return;
+      }
+      // Create an array and push all possible values that you want in password
+      var matchedCase = new Array();
+      matchedCase.push("[$@$!%*#?&]"); // Special Charector
+      matchedCase.push("[A-Z]");      // Uppercase Alpabates
+      matchedCase.push("[0-9]");      // Numbers
+      matchedCase.push("[a-z]");     // Lowercase Alphabates
+
+      // Check the conditions
+      var ctr = 0;
+      for (var i = 0; i < matchedCase.length; i++) {
+          if (new RegExp(matchedCase[i]).test(password)) {
+              ctr++;
+          }
+      }
+      // Display it
+      var color = "";
+      var strength = "";
+      switch (ctr) {
+          case 0:
+          case 1:
+          case 2:
+              strength = "Very Weak";
+              color = "red";
+              break;
+          case 3:
+              strength = "Medium";
+              color = "orange";
+              break;
+          case 4:
+              strength = "Strong";
+              color = "green";
+              break;
+      }
+      document.getElementById("output").innerHTML = strength;
+      document.getElementById("output").style.color = color;
+            }
+        </script>
  <?php $this->load->view("fontend/layout/footer.php"); ?>
 
