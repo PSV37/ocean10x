@@ -237,8 +237,19 @@
          <form id="Training-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_training');?>" method="post" style="padding: 30px;">
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Training Title:</label>
-                <div class="col-sm-9">
-                  <input type="text" name="training_title" class="form-control" id="training_title" placeholder="Training Title">
+                 <div class="col-sm-9">
+                   <select  name="training_title" id="training_title" class="form-control" onchange="check_other(this.value)">
+                    <option value="">Select Training title</option>
+
+                    <?php foreach($training as $key){?>
+                      <option value="<?php echo $key['name']; ?>"><?php echo $key['name']; ?></option>
+                    <?php } ?>
+                    <option value="other">Other</option>
+
+                  </select>
+
+                  <input type="hidden" name="training_title" class="form-control" id="training_title1" placeholder="Training Title"
+                   value=""> 
                 </div>
               </div>
 
