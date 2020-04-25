@@ -126,7 +126,7 @@
                     </div>
                     <div class="col-md-6 col-sm-12">
                       <!-- <meter  class="form-control progress-bar" max="4" id="password-strength"></meter> -->
-                       <span class="form-control" id="output"></span>
+                       <span id="output"></span>
                     </div>
                   </div><!-- end row -->
                 </div>
