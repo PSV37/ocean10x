@@ -63,7 +63,7 @@
                         } 
                       ?>
                      <label>I am a</label> &nbsp;&nbsp;
-                      <input type="radio" name="profession" value="Fresher" <?php echo $str_fr ; ?>> Fresher &nbsp;
+                      <input type="radio" name="profession" required value="Fresher" <?php echo $str_fr ; ?>> Fresher &nbsp;
                       <input type="radio" name="profession" value="Professional" <?php echo $str_pro ; ?>> Professional<span class="required">*</span>
                     </div>
                     
