@@ -106,7 +106,7 @@
               <input type="hidden" value="<?php echo $v_training->js_training_id; ?>" name="job_training_id">
                 <label class="control-label col-sm-3" for="email">Training Title</label>
                 <div class="col-sm-9">
-                   <select  name="training_title" id="training_title" class="mdb-select md-form" searchable="Search here.." onchange="check_other(this.value)">
+                   <select  name="training_title" id="training_title" class="form-control mdb-select md-form" searchable="Search here.." onchange="check_other(this.value)">
                     <option value="" disabled selected>Select Training title</option>
 
                     <?php foreach($training as $key){?>
