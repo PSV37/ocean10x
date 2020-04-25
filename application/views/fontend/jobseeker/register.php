@@ -123,7 +123,7 @@
                     <?php echo form_error('password'); ?>
                     </div>
                     <div class="col-md-6 col-sm-12">
-                     <meter max="4" id="password-strength"></meter>
+                     <meter  class="form-control" max="4" id="password-strength"></meter>
                        <span id="password-strength-text"></span>
                     </div>
                   </div><!-- end row -->
@@ -348,7 +348,7 @@ $(document).ready(function() {
  
                 // This updates the password meter text
                 if (val !== "") {
-                    text.innerHTML = "Password Strength: " + strength[result.score]; 
+                    text.innerHTML = strength[result.score]; 
                 } else {
                     text.innerHTML = "";
                 }
