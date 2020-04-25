@@ -688,7 +688,7 @@ exit;*/
 
                  
 
-                $this->Master_model->master_insert('training',$training);
+                $this->Master_model->master_insert($training,'training');
 
                 $this->Job_training_model->insert($training_info);
                 redirect('job_seeker/seeker_info');
