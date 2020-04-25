@@ -119,7 +119,7 @@
                     <div class="col-md-6 col-sm-12">
                       <label>Password</label><span class="required">*</span>
                     <input type="Password" id="password" name="password" class="form-control" placeholder="Password" required value="<?php echo set_value('password'); ?>"> <span toggle="#password-field" class="fa fa-lg fa-eye-slash field-icon toggle-password">
-                      <meter max="4" id="password-strength"></meter>
+                      <span><meter max="4" id="password-strength"></meter></span>
                        <span id="password-strength-text"></span>
                     </span><?php echo form_error('password'); ?>
                     </div>
