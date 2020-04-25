@@ -702,8 +702,9 @@ exit;*/
 			$passingyear = $this->Master_model->getMaster('passingyear',$where=false);
 			$city = $this->Master_model->getMaster('city',$where=false);
 			$country = $this->Master_model->getMaster('country',$where=false);
-			$state = $this->Master_model->getMaster('state',$where=false);
-            echo $this->load->view('fontend/jobseeker/update_training', compact('training_list', 'passingyear', 'country', 'state', 'city'),true);
+            $state = $this->Master_model->getMaster('state',$where=false);
+			$training = $this->Master_model->getMaster('training',$where=false);
+            echo $this->load->view('fontend/jobseeker/update_training', compact('training_list', 'passingyear', 'country', 'state', 'city' ,'training'),true);
         }
     }
 

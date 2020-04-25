@@ -106,12 +106,21 @@
               <input type="hidden" value="<?php echo $v_training->js_training_id; ?>" name="job_training_id">
                 <label class="control-label col-sm-3" for="email">Training Title</label>
                 <div class="col-sm-9">
-                  <input type="text" name="training_title" class="form-control" id="training_title" placeholder="Training Title"
+                   <select  name="training_title" id="training_title" class="form-control" onchange="check_other(this.value)">
+                    <option value="">Select Training title</option>
+                    <?php foreach($training as $key){?>
+                      <option value="<?php echo $key['country_id']; ?>"<?php if($training_list->training_title==$key['name']){ echo "selected"; }?>><?php echo $key['name']; ?></option>
+                    <?php } ?>
+                    <option value="other">Other</option>
+
+                  </select>
+
+                  <input type="hidden" name="training_title" class="form-control" id="training_title1" placeholder="Training Title"
                    value="<?php
                          if (!empty($training_list->training_title)) {
                            echo $training_list->training_title;
                            }
-                       ?>">
+                       ?>"> 
                 </div>
               </div>
 
@@ -497,5 +506,20 @@
   getStates_load();
 });
 
+function check_other(value)
+{
+  if (value=='other') 
+  {
+    var x1 = document.getElementById("training_title1");
+    var x = document.getElementById("training_title");
+    if (x1.type === "hidden") {
+      x1.type = "text";
+      // x.type = "hidden";
+    } else {
+      x1.type = "hidden";
+      
+    }
+  }
+}
 
 	   </script>              
