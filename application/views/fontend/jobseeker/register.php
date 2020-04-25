@@ -119,14 +119,14 @@
                     <div class="col-md-6 col-sm-12">
                       <label>Password</label><span class="required">*</span>
 
-                      <input type="Password" id="password" name="password" class="form-control" placeholder="Password" required value="<?php echo set_value('password'); ?>" onkeyup="validatePassword(this.value);"> 
+                      <input type="Password" id="password" name="password" class="form-control" placeholder="Password" minlength="8" maxlength="20" required value="<?php echo set_value('password'); ?>" onkeyup="validatePassword(this.value);"> 
                       <span toggle="#password-field" class="fa fa-lg fa-eye-slash field-icon toggle-password"></span>
 
                       <?php echo form_error('password'); ?>
                     </div>
                     <div class="col-md-6 col-sm-12">
                       <!-- <meter  class="form-control progress-bar" max="4" id="password-strength"></meter> -->
-                       <span id="output"></span>
+                       <span class="form-control" id="output"></span>
                     </div>
                   </div><!-- end row -->
                 </div>
@@ -455,10 +455,11 @@ $(document).ready(function() {
               strength = "Medium";
               color = "orange";
               break;
-          case  (password.length > 8 ):
-           strength = "Strong";
+          case 5:
+              strength = "Strong";
               color = "green";
               break;
+
       }
       document.getElementById("output").innerHTML = strength;
       document.getElementById("output").style.color = color;
