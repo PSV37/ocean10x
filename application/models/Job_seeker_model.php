@@ -263,8 +263,8 @@ public function check_forgot_user_info($email)
         $result = $query->row();
         if($result)
         {
-            print_r($result->full_name);die;
-         	$this->forgot_pass_email($email);
+            $name=$result->full_name
+         	$this->forgot_pass_email($email,$name);
          	return true;
          }
          else{
@@ -273,7 +273,7 @@ public function check_forgot_user_info($email)
     }
 	
  //send forgot password email to user's email id
-    public function forgot_pass_email($to_email)
+    public function forgot_pass_email($to_email,$name)
     {
             $ci = get_instance();
             $ci->load->library('email');
@@ -304,7 +304,7 @@ public function check_forgot_user_info($email)
                           <tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left">
                             <td><br>
                               <br>
-                              Hello Dear,<br>
+                              Dear '.$name.',<br>
                               Please click on link below to reset your password: <br>
                               <a href="'.base_url().'register/reset_password/' . md5($to_email) . '"> Reset</a>
                               
