@@ -431,7 +431,7 @@ $(document).ready(function() {
       matchedCase.push("[A-Z]");      // Uppercase Alpabates
       matchedCase.push("[0-9]");      // Numbers
       matchedCase.push("[a-z]");     // Lowercase Alphabates
-      matchedCase.push("{8,20}");
+      matchedCase.push("[8,20]");
 
       // Check the conditions
       var ctr = 0;
