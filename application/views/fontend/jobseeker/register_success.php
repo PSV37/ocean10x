@@ -2,6 +2,7 @@
     $this->load->view('fontend/layout/header.php');
 ?>
 
+
             <div class="section lb">
                 <div class="container">
                     <div class="row">
@@ -9,7 +10,7 @@
                          <div class="userccount">
                             <div class="notfound">
                              
-                               <p>Thank you for registration.Please Active your Account Via Email. Link has been sent your register Email.</p>
+                               <p style="color: #999">Thank you for registration.Please Active your Account Via Email. Link has been sent your register Email.</p>
                            </div>
                            </div>
                        </div>
