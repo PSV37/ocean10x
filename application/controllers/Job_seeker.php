@@ -689,7 +689,11 @@ exit;*/
             $where_name = "name='$training_title'";
 
             $exist_training=$this->Master_model->get_master_row('training', $select = FALSE, $where = FALSE, $join = FALSE);
-            if (empty($exist_training)) {
+            if ($exist_training) {
+                
+            }
+            else
+            {
                 $this->Master_model->master_insert($training,'training');
             }
              
