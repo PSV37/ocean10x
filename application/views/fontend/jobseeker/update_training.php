@@ -1,16 +1,4 @@
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 
-<style type="text/css">
-  .select2-container .select2-selection--single{
-    height:34px !important;
-}
-.select2-container--default .select2-selection--single{
-         border: 1px solid #ccc !important; 
-     border-radius: 0px !important; 
-}
-
-</style>
           <div class="section lb">
                 <div class="container">
                     <div class="row">
@@ -18,7 +6,7 @@
 
                         <div class="content col-md-9">
                             <div class="userccount">
-                      <?php $this->load->view('fontend/layout/seeker_resumemenu.php'); ?>
+    <?php $this->load->view('fontend/layout/seeker_resumemenu.php'); ?>
                                     <hr>
                    <?php $key = 1 ?>
                     <?php if (!empty($training_list)): foreach ($training_list as $v_training) : ?>
@@ -118,7 +106,7 @@
               <input type="hidden" value="<?php echo $v_training->js_training_id; ?>" name="job_training_id">
                 <label class="control-label col-sm-3" for="email">Training Title</label>
                 <div class="col-sm-9">
-                   <select  name="training_title" id="training_title" class="form-control select2" onchange="check_other(this.value)">
+                   <select  name="training_title" id="training_title" class="form-control" onchange="check_other(this.value)">
                     <option value="">Select Training title</option>
                     
                     <?php foreach($training as $key){?>
@@ -541,8 +529,4 @@ function check_other(value)
   }
 }
 
-	</script> 
-    
-<script>
-    $('.select2').select2();
-</script>          
+	   </script>              
