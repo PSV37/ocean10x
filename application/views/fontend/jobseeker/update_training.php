@@ -534,6 +534,9 @@ function check_other(value)
   $(document).ready(function(){
  
   // Initialize select2
-  $("#training_title").select2();
+  $("#training_title").select2({
+    placeholder: "Select Training",
+  allowClear: true
+  });
 });
 </script>         
