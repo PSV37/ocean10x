@@ -118,7 +118,7 @@
                     </div> -->
                     <div class="col-md-6 col-sm-12">
                       <label>Password</label><span class="required">*</span>
-                    <input type="Password" id="password" name="password" class="form-control" placeholder="Password" required value="<?php echo set_value('password'); ?>"> <span toggle="#password-field" class="fa fa-lg fa-eye-slash field-icon toggle-password">
+                    <input type="Password" id="password" name="password" class="form-control" placeholder="Password" required value="<?php echo set_value('password'); ?>" onkeyup="checkPasswordStrength()"> <span toggle="#password-field" class="fa fa-lg fa-eye-slash field-icon toggle-password">
                       </span>
                     <?php echo form_error('password'); ?>
                     </div>
@@ -354,6 +354,80 @@ $(document).ready(function() {
                 }
             });
         </script>
+<script>
+  function checkPasswordStrength() {
+  /*
+  RULES:
+  1. A password must contain at least 1 capital letter
+  2. A password must contain at least 1 lowercase letter
+  3. A password must contain at least 1 number
+  4. A password must contain at least 1 of the following chars: ! @ # $ % ^ &
+  5. A password must be at least 8 chars long
+  */
 
+  // Get the password from the user
+
+  var password = document.getElementById('password').value;
+
+  // Check the password against the rules
+
+  var rule1 = false;
+  var rule2 = false;
+  var rule3 = false;
+  var rule4 = false;
+  var rule5 = false;
+
+  // Test Rule 1
+  var rulez1 = /[A-Z]/g;
+  var rulecomp1 = password.match(rulez1);
+  if (rulecomp1) {
+    rule1 = true;
+  }
+  // Test Rule 2
+  var rulez2 = /[a-z]/g;
+  var rulecomp2 = password.match(rulez2);
+  if (rulecomp2) {
+    rule2 = true;
+  }
+  // Test Rule 3
+  var rulez3 = /[0-9]/g;
+  var rulecomp3 = password.match(rulez3);
+  if (rulecomp3) {
+    rule3 = true;
+  }
+  // Test Rule 4
+  var rulez4 = /[!|@|#|$|%|^|&]/g;
+  var rulecomp4 = password.match(rulez4);
+  if (rulecomp4) {
+    rule4 = true;
+  }
+  // Test Rule 5
+  if (password.length >= 8) {
+    rule5 = true;
+  }
+  // Output the result
+  if (rule1 && rule2 && rule3 && rule4 && rule5) {
+    document.getElementById('output').innerHTML = "The password is Acceptable!" + "<br>";
+  }  else {
+   document.getElementById('output').innerHTML = "The password is not strong enough" + "<br> <br>";
+   if (rule1) {
+    document.getElementById("output").innerHTML += "Contains Uppercase: " + rule1 + "<br>";
+  }
+   if (rule2) {
+    document.getElementById("output").innerHTML += "Contains Lowercase: " + rule2 + "<br>";
+  }
+  if (rule3) {
+    document.getElementById("output").innerHTML += "Contains Number: " + rule3 + "<br>";
+  }
+   if (rule4) {
+    document.getElementById("output").innerHTML += "Contains Special Char: " + rule4 + "<br>";
+  }
+  if (rule5) {
+    document.getElementById("output").innerHTML += "Is Long Enough: " + rule5;
+  } 
+
+  }
+}
+</script>
  <?php $this->load->view("fontend/layout/footer.php"); ?>
 
