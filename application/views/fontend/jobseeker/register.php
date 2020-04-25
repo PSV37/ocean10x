@@ -455,8 +455,8 @@ $(document).ready(function() {
               strength = "Medium";
               color = "orange";
               break;
-          case 5:
-              strength = "Strong";
+          case  (password.length > 8 ):
+           strength = "Strong";
               color = "green";
               break;
       }
