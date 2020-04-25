@@ -14,6 +14,11 @@
   z-index: 2;
   cursor:pointer;
 }
+.userccount p {
+  text-align: center;
+  line-height: 24px;
+  color: red;
+}
 </style>
 
 <!-- Page Title start -->

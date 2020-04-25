@@ -10,7 +10,7 @@
                          <div class="userccount">
                             <div class="notfound">
                              
-                               <p style="color: #999">Thank you for registration.Please Active your Account Via Email. Link has been sent your register Email.</p>
+                               <p>Thank you for registration.Please Active your Account Via Email. Link has been sent your register Email.</p>
                            </div>
                            </div>
                        </div>
