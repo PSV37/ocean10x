@@ -109,7 +109,7 @@
                    <select  name="training_title" id="training_title" class="form-control" onchange="check_other(this.value)">
                     <option value="">Select Training title</option>
                     <?php foreach($training as $key){?>
-                      <option value="<?php echo $key['country_id']; ?>"<?php if($training_list->training_title==$key['name']){ echo "selected"; }?>><?php echo $key['name']; ?></option>
+                      <option value="<?php echo $key['name']; ?>"<?php if($training_list->training_title==$key['name']){ echo "selected"; }?>><?php echo $key['name']; ?></option>
                     <?php } ?>
                     <option value="other">Other</option>
 
