@@ -254,8 +254,8 @@
                 },
                 messages: {
                     full_name: "Please enter your name",
-                    profession:"Please provide your profession "
-                    // gender: "Please select your Gender",
+                    profession:"Please provide your profession ",
+                    gender: "Please select your Gender",
                    
                     password: {
                         required: "Please provide a password",
