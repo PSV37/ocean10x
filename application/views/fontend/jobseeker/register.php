@@ -114,7 +114,7 @@
                     </div> -->
                     <div class="col-md-6 col-sm-12">
                       <label>Password</label><span class="required">*</span>
-                    <input type="Password" id="password" name="password" class="form-control" placeholder="Password" value="<?php echo set_value('password'); ?>" > <span toggle="#password-field" class="fa fa-lg fa-eye-slash field-icon toggle-password"></span><?php echo form_error('password'); ?>
+                    <input type="Password" id="password" name="password" class="form-control" placeholder="Password" required value="<?php echo set_value('password'); ?>"> <span toggle="#password-field" class="fa fa-lg fa-eye-slash field-icon toggle-password"></span><?php echo form_error('password'); ?>
                     </div>
                   </div><!-- end row -->
                 </div>
