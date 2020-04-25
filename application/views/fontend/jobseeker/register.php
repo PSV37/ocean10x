@@ -1,6 +1,9 @@
 <?php 
     $this->load->view('fontend/layout/header.php');
 ?>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
+
 <style type="text/css">
   .required
   {
