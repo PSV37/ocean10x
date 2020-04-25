@@ -118,12 +118,14 @@
                     </div> -->
                     <div class="col-md-6 col-sm-12">
                       <label>Password</label><span class="required">*</span>
-                    <input type="Password" id="password" name="password" class="form-control" placeholder="Password" required value="<?php echo set_value('password'); ?>" onkeyup="checkPasswordStrength()"> <span toggle="#password-field" class="fa fa-lg fa-eye-slash field-icon toggle-password">
-                      </span>
-                    <?php echo form_error('password'); ?>
+
+                      <input type="Password" id="password" name="password" class="form-control" placeholder="Password" required value="<?php echo set_value('password'); ?>" onkeyup="checkPasswordStrength()"> 
+                      <span toggle="#password-field" class="fa fa-lg fa-eye-slash field-icon toggle-password"></span>
+
+                      <?php echo form_error('password'); ?>
                     </div>
                     <div class="col-md-6 col-sm-12">
-                     <meter  class="form-control" max="4" id="password-strength"></meter>
+                      <meter  class="form-control progress-bar" max="4" id="password-strength"></meter>
                        <span id="output"></span>
                     </div>
                   </div><!-- end row -->
@@ -326,34 +328,7 @@ $(document).ready(function() {
 });
 
 </script>
- <script type="text/javascript">
-            var strength = {
-              0: "Weakest",
-              1: "Weak",
-              2: "OK",
-              3: "Good",
-              4: "Strong"
-            }
-             
-            var password = document.getElementById('password');
-            var meter = document.getElementById('password-strength');
-            var text = document.getElementById('password-strength-text');
- 
-            password.addEventListener('input', function() {
-                var val = password.value;
-                var result = zxcvbn(val);
- 
-                // This updates the password strength meter
-                meter.value = result.score;
- 
-                // This updates the password meter text
-                if (val !== "") {
-                    text.innerHTML = strength[result.score]; 
-                } else {
-                    text.innerHTML = "";
-                }
-            });
-        </script>
+
 <script>
   function checkPasswordStrength() {
   /*
@@ -411,7 +386,8 @@ $(document).ready(function() {
   }  else {
    document.getElementById('output').innerHTML = "The password is not strong enough" + "<br> <br>";
    if (rule1) {
-    document.getElementById("output").innerHTML += "Contains Uppercase: " + rule1 + "<br>";
+    document.getElementById("p2").style.width = "20%";
+    document.getElementById("output").innerHTML = "ok";
   }
    if (rule2) {
     document.getElementById("output").innerHTML += "Contains Lowercase: " + rule2 + "<br>";
