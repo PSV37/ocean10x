@@ -666,6 +666,7 @@ exit;*/
         if ($_POST) {
             $jobseeker_id    = $this->session->userdata('job_seeker_id');
             $job_training_id = $this->input->post('job_training_id');
+            $training_title = $this->input->post('training_title'),
             $training_info   = array(
                 'job_seeker_id'  => $jobseeker_id,
                 'training_title' => $this->input->post('training_title'),
@@ -684,11 +685,19 @@ exit;*/
                 'created_on'      => date('Y-m-d H:i:s'),
                 'created_by'        => $jobseeker_id
             );
+
+            $where_name = "name='$training_title'";
+
+            $exist_training=$this->Master_model->get_master_row('training', $select = FALSE, $where = FALSE, $join = FALSE)
+            if (empty($exist_training)) {
+                $this->Master_model->master_insert($training,'training');
+            }
+             
             if (empty($job_training_id)) {
 
                  
 
-                $this->Master_model->master_insert($training,'training');
+               
 
                 $this->Job_training_model->insert($training_info);
                 redirect('job_seeker/seeker_info');

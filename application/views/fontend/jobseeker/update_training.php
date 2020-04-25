@@ -524,6 +524,7 @@ function check_other(value)
   else
   {
     x1.type = "hidden";
+    x1.value = value;
   }
 }
 
