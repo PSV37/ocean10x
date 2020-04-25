@@ -115,7 +115,10 @@
                     </div> -->
                     <div class="col-md-6 col-sm-12">
                       <label>Password</label><span class="required">*</span>
-                    <input type="Password" id="password" name="password" class="form-control" placeholder="Password" required value="<?php echo set_value('password'); ?>"> <span toggle="#password-field" class="fa fa-lg fa-eye-slash field-icon toggle-password"></span><?php echo form_error('password'); ?>
+                    <input type="Password" id="password" name="password" class="form-control" placeholder="Password" required value="<?php echo set_value('password'); ?>"> <span toggle="#password-field" class="fa fa-lg fa-eye-slash field-icon toggle-password">
+                      <meter max="4" id="password-strength"></meter>
+                       <span id="password-strength-text"></span>
+                    </span><?php echo form_error('password'); ?>
                     </div>
                   </div><!-- end row -->
                 </div>
@@ -317,6 +320,34 @@ $(document).ready(function() {
 });
 
 </script>
+ <script type="text/javascript">
+            var strength = {
+              0: "Weakest",
+              1: "Weak",
+              2: "OK",
+              3: "Good",
+              4: "Strong"
+            }
+             
+            var password = document.getElementById('password');
+            var meter = document.getElementById('password-strength');
+            var text = document.getElementById('password-strength-text');
+ 
+            password.addEventListener('input', function() {
+                var val = password.value;
+                var result = zxcvbn(val);
+ 
+                // This updates the password strength meter
+                meter.value = result.score;
+ 
+                // This updates the password meter text
+                if (val !== "") {
+                    text.innerHTML = "Password Strength: " + strength[result.score]; 
+                } else {
+                    text.innerHTML = "";
+                }
+            });
+        </script>
 
  <?php $this->load->view("fontend/layout/footer.php"); ?>
 
