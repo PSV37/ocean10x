@@ -303,7 +303,7 @@ $(document).ready(function() {
   $(".toggle-password").click(function() {
 
   $(this).toggleClass("fa-eye fa-eye-slash");
-  var x = document.getElementById("myInput");
+  var x = document.getElementById("password");
     if (x.type === "password") {
       x.type = "text";
     } else {
