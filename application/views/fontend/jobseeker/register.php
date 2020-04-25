@@ -124,7 +124,7 @@
                     </div>
                     <div class="col-md-6 col-sm-12">
                      <meter  class="form-control" max="4" id="password-strength"></meter>
-                       <span id="password-strength-text"></span>
+                       <span id="output"></span>
                     </div>
                   </div><!-- end row -->
                 </div>
