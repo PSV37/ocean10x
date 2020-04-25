@@ -106,8 +106,8 @@
               <input type="hidden" value="<?php echo $v_training->js_training_id; ?>" name="job_training_id">
                 <label class="control-label col-sm-3" for="email">Training Title</label>
                 <div class="col-sm-9">
-                   <select  name="training_title" id="training_title" class="form-control selectpicker" data-live-search="true" onchange="check_other(this.value)">
-                    <option value="" disabled selected>Select Training title</option>
+                   <select  name="training_title" id="training_title" class="form-control " onchange="check_other(this.value)">
+                    <option value="">Select Training title</option>
 
                     <?php foreach($training as $key){?>
                       <option value="<?php echo $key['name']; ?>"<?php if($training_list->training_title==$key['name']){ echo "selected"; }?>><?php echo $key['name']; ?></option>
@@ -528,13 +528,5 @@ function check_other(value)
     x1.value = value;
   }
 }
-</script>  
 
-<script>
-  $(document).ready(function() {
-$('.mdb-select').materialSelect();
-});
-</script>            
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
+	   </script>              
