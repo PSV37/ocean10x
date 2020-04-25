@@ -125,7 +125,7 @@
                       <?php echo form_error('password'); ?>
                     </div>
                     <div class="col-md-6 col-sm-12">
-                      <meter  class="form-control progress-bar" max="4" id="password-strength"></meter>
+                      <!-- <meter  class="form-control progress-bar" max="4" id="password-strength"></meter> -->
                        <span id="output"></span>
                     </div>
                   </div><!-- end row -->
@@ -431,6 +431,7 @@ $(document).ready(function() {
       matchedCase.push("[A-Z]");      // Uppercase Alpabates
       matchedCase.push("[0-9]");      // Numbers
       matchedCase.push("[a-z]");     // Lowercase Alphabates
+      matchedCase.push("{8,20}");
 
       // Check the conditions
       var ctr = 0;
@@ -450,10 +451,11 @@ $(document).ready(function() {
               color = "red";
               break;
           case 3:
+          case 4:
               strength = "Medium";
               color = "orange";
               break;
-          case 4:
+          case 5:
               strength = "Strong";
               color = "green";
               break;
