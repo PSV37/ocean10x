@@ -106,7 +106,7 @@
                     </div> -->
                     <div class="col-md-6 col-sm-12">
                       <label>Password</label><span class="required">*</span>
-                    <input type="Password" id="password" name="password" class="form-control" placeholder="Password" value="<?php echo set_value('password'); ?>" ><?php echo form_error('password'); ?>
+                    <input type="Password" id="password" name="password" class="form-control" placeholder="Password" value="<?php echo set_value('password'); ?>" > <span toggle="#password-field" class="fa fa-lg fa-eye-slash field-icon toggle-password"></span><?php echo form_error('password'); ?>
                     </div>
                   </div><!-- end row -->
                 </div>
@@ -114,9 +114,7 @@
                 <div class="formrow">
                   <div class="row">
                    
-                   <!--  <div class="col-md-6 col-sm-12">
-                      <input type="Password" name="confirm_password" class="form-control" placeholder="Confirm Password">
-                    </div> -->
+                 
                   </div>
                 </div>
 
@@ -125,7 +123,7 @@
                     <div class="row">
 
                       <div class="col-md-6 col-sm-12">
-                        <input id="inputchapcha" type="text" name="captcha" value="" class="form-control" autocomplete="off" required></span>
+                        <input id="inputchapcha" type="text" name="captcha" value="" class="form-control" autocomplete="off" required>
                       </div>
 
                       <div class="col-md-5 col-sm-5">
@@ -208,7 +206,7 @@
                     password: {
                         required: true,
                         minlength: 8,
-                        pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/
+                        pattern: '/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/'
                     },
                     // confirm_password: {
                     //     required: true,
@@ -228,7 +226,7 @@
 
 
                     captcha: {
-                        required:true,
+                        required: true,
                         equalTo: "#sessionCaptcha1",
                     }  
                 },
@@ -293,66 +291,20 @@ $(document).ready(function() {
          });
         });
 </script>
-<!-- <script >
-  var formPasswordForm = document.forms["submit"];
-var elemPW = document.getElementById("password");
-var bPasswordPasses = false;
+ <script type="text/javascript">
+  $(".toggle-password").click(function() {
 
-function fnValidatePassword(evt) {
-    // enter your regular expression to check for at least 8 characters here
-    var regexPasswordLength = /.{8,}/; // test for at least 8 characters
-    // enter your regular expression to check for an uppercase letter here
-    var regexPasswordContainsUpperCase = /[A-Z]/; //test for uppercase letter
-    // enter your regular expression to check for a lowercase letter here
-    var regexPasswordContainsLowerCase = /[a-z]/; //test for lowercase letter
-    // enter your regular expression to check for a number here
-    var regexPasswordContainsNumber = /\d/; //test for number 
-    // enter your regular expression to check for a special character here
-    var regexPasswordContainsSpecialChar = /\W/; //test for special character
-
-    bPasswordPasses = true;
-
-    if (!regexPasswordLength.test(elemPW.value)) {
-        pwdHint.innerHTML = 'Password must be at least 8 characters.';
-        pwdHint.style.display = "inline";
-        bPasswordPasses = false;
+  $(this).toggleClass("fa-eye fa-eye-slash");
+  var x = document.getElementById("myInput");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
     }
+  
+});
 
-    if (!regexPasswordContainsUpperCase.test(elemPW.value)) {
-        pwdHint.innerHTML = 'Password must contain an uppercase character.';
-        pwdHint.style.display = "inline";
-        bPasswordPasses = false;
-    }
-
-    if (!regexPasswordContainsLowerCase.test(elemPW.value)) {
-        pwdHint.innerHTML = 'Password must contain an lowercase character.';
-        pwdHint.style.display = "inline";
-        bPasswordPasses = false;
-    }
-
-    if (!regexPasswordContainsNumber.test(elemPW.value)) {
-        pwdHint.innerHTML = 'Password must contain a number.';
-        pwdHint.style.display = "inline";
-        bPasswordPasses = false;
-    }
-
-    if (!regexPasswordContainsSpecialChar.test(elemPW.value)) {
-        pwdHint.innerHTML = 'Password must contain a special character.';
-        pwdHint.style.display = "inline";
-        bPasswordPasses = false;
-    }
-
-    if (bPasswordPasses) {
-        // looks goood
-        pwdHint.innerHTML = 'Password passes all tests.';
-
-    }
-    evt.preventDefault();
-}
-
-formPasswordForm.addEventListener("submit", fnValidatePassword);
 </script>
- -->
 
  <?php $this->load->view("fontend/layout/footer.php"); ?>
 
