@@ -207,6 +207,8 @@
 
                 rules: {
                     full_name: "required",
+
+                    profession: "required",
                     
                  // gender: {
                  //        required: true,
@@ -239,7 +241,8 @@
                     }  
                 },
                 messages: {
-                    full_name: "Please enter your firstname",
+                    full_name: "Please enter your name",
+                    profession:"Please provide your profession "
                     gender: "Please select your Gender",
                    
                     password: {
