@@ -263,7 +263,7 @@ public function check_forgot_user_info($email)
         $result = $query->row();
         if($result)
         {
-            print_r($result['full_name']);die;
+            print_r($result->full_name);die;
          	$this->forgot_pass_email($email);
          	return true;
          }
