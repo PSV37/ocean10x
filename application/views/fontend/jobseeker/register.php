@@ -382,11 +382,11 @@ $(document).ready(function() {
   }
   // Output the result
   if (rule1 && rule2 && rule3 && rule4 && rule5) {
-    document.getElementById('output').innerHTML = "The password is Acceptable!" + "<br>";
+    // document.getElementById('output').innerHTML = "The password is Acceptable!" + "<br>";
   }  else {
-   document.getElementById('output').innerHTML = "The password is not strong enough" + "<br> <br>";
+   // document.getElementById('output').innerHTML = "The password is not strong enough" + "<br> <br>";
    if (rule1) {
-    document.getElementById("p2").style.width = "20%";
+    document.getElementById("password-strength").style.width = "20%";
     document.getElementById("output").innerHTML = "ok";
   }
    if (rule2) {
