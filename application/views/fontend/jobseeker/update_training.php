@@ -106,7 +106,7 @@
               <input type="hidden" value="<?php echo $v_training->js_training_id; ?>" name="job_training_id">
                 <label class="control-label col-sm-3" for="email">Training Title</label>
                 <div class="col-sm-9">
-                   <select  name="training_title" id="training_title" class="form-control" onchange="check_other(this.value)">
+                   <select  name="training_title" id="training_title" class="form-control select2" onchange="check_other(this.value)">
                     <option value="">Select Training title</option>
 
                     <?php foreach($training as $key){?>
@@ -540,24 +540,15 @@ function check_other(value)
   }
 }
 </script> 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> -->
 <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>    
 <script>
   $(document).ready(function(){
  
   // Initialize select2
-  $("#training_title").select2({
-    placeholder: "Select Training",
-  allowClear: true
-  });
+   $('.select2').select2();
 });
 
 </script>   
-<script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        // var country = ["Australia", "Bangladesh", "Denmark", "Hong Kong", "Indonesia", "Netherlands", "New Zealand", "South Africa"];
-        $("#country_id").select2();
-      });
-    </script>      
+    
