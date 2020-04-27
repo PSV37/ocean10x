@@ -553,7 +553,7 @@ function check_other(value)
 });
 
 </script> 
-<script >
+<!-- <script >
   $(function() {
       $("#country_id").autocomplete({
           source: "<?php echo base_url('job_seeker/get_country_autocomplete'); ?>",
@@ -567,7 +567,7 @@ function check_other(value)
             }
         });
     })
-</script>
+</script> -->
 <script>
   var BASE_URL = "<?php echo base_url(); ?>";
  
