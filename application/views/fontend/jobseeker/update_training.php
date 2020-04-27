@@ -1,8 +1,4 @@
-<style type="text/css">
-  .bootstrap-select > .dropdown-toggle {
-    display: block;
-  }
-</style>
+
           <div class="section lb">
                 <div class="container">
                     <div class="row">
@@ -110,12 +106,7 @@
               <input type="hidden" value="<?php echo $v_training->js_training_id; ?>" name="job_training_id">
                 <label class="control-label col-sm-3" for="email">Training Title</label>
                 <div class="col-sm-9">
-                   <select class="form-control selectpicker" id="select-country" data-live-search="true">
-                <option >China</option>
-  <option >Malayasia</option>
-  <option >Singapore</option>
-                </select>
-                   <!-- <select  name="training_title" id="training_title" class="selectpicker form-control"  data-live-search="true" onchange="check_other(this.value)">
+                   <select  name="training_title" id="training_title" class="form-control selectpicker" data-show-subtext="true" data-live-search="true" onchange="check_other(this.value)">
                     <option value="">Select Training title</option>
 
                     <?php foreach($training as $key){?>
@@ -123,7 +114,7 @@
                     <?php } ?>
                     <option value="other">Other</option>
 
-                  </select> -->
+                  </select>
 
                   <input type="hidden" name="training_title" class="form-control" id="training_title1" placeholder="Training Title"
                    value="<?php
@@ -342,9 +333,6 @@
   <script type="text/javascript">
 
         $( document ).ready( function () {
-
-        $('.selectpicker').selectpicker();
-
                // Education Add form Valiaton
         $( "#Training-info").validate( {
                 rules: {
@@ -552,5 +540,17 @@ function check_other(value)
   }
 }
 </script> 
-  
-    
+<script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>    
+<script>
+  $(document).ready(function(){
+ 
+  // Initialize select2
+  $("#training_title").select2({
+    placeholder: "Select Training",
+  allowClear: true
+  });
+});
+</script>         
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
