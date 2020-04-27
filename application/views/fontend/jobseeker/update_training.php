@@ -152,13 +152,12 @@
                <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Country:</label>
                 <div class="col-sm-9">
-                  <input type="text" name="country_id" id="country_id" class="form-control"  placeholder="Enter Country">
-                  <!-- <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
+                  <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
                     <option value="">Select Country</option>
                     <?php foreach($country as $key){?>
                       <option value="<?php echo $key['country_id']; ?>"<?php if($training_list->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
                     <?php } ?>
-                  </select> -->
+                  </select>
                 </div> 
               </div>
 
@@ -551,18 +550,4 @@ function check_other(value)
   allowClear: true
   });
 });
-    $(function() {
-      $("#country_id").autocomplete({
-          source: "<?php echo base_url('job_seeker/get_country_autocomplete'); ?>",
-          select: function(a,b)
-            {
-                 // alert(b.item.value);
-              $(this).val(b.item.value); 
-              //  $('#country_id').val(value.company_email);//grabed the selected value
-              // getcompanyinfo(b.item.value);
-
-            }
-        });
-    })
-</script> 
-
+</script>         
