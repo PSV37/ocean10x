@@ -554,18 +554,18 @@ function check_other(value)
 
 </script> 
 <script >
-  $(function() {
+  
       $("#country_id").autocomplete({
           source: "<?php echo base_url('job_seeker/get_country_autocomplete'); ?>",
           select: function(a,b)
             {
-                 // alert(b.item.value);
+                 alert(b.item.value);
               $(this).val(b.item.value); 
               //  $('#country_id').val(value.company_email);//grabed the selected value
               // getcompanyinfo(b.item.value);
 
             }
         });
-    })
+    
 </script>
 
