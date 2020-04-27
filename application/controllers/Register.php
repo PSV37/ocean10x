@@ -192,7 +192,7 @@ class Register extends CI_Controller
         $jobseeker_email    = $this->input->post('email');
         $jobseeker_password = md5($this->input->post('password'));
         $result             = $this->job_seeker_model->check_login_info($jobseeker_email, $jobseeker_password);
-         $email_check             = $this->job_seeker_model->check_forgot_user_info($jobseeker_email);
+         $email_check             = $this->job_seeker_model->email_check($jobseeker_email);
         if (!empty($result)) {
             $data['job_seeker_id'] = $result->job_seeker_id;
             $data['user_name']     = $result->full_name;
