@@ -452,10 +452,11 @@ $(document).ready(function() {
               color = "red";
               break;
           case 3:
+          case 4:
               strength = "Medium";
               color = "orange";
               break;
-          case 4:
+          case 5:
               strength = "Strong";
               color = "green";
               break;
