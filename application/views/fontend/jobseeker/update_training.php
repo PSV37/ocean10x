@@ -557,8 +557,9 @@ function check_other(value)
           select: function(a,b)
             {
                  // alert(b.item.value);
-              $(this).val(b.item.value); //grabed the selected value
-              getcompanyinfo(b.item.value);
+              $(this).val(b.item.value); 
+              //  $('#country_id').val(value.company_email);//grabed the selected value
+              // getcompanyinfo(b.item.value);
 
             }
         });
