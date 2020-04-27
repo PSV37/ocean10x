@@ -125,6 +125,7 @@
                       <?php echo form_error('password'); ?>
                     </div>
                     <div class="col-md-6 col-sm-12">
+                      <label></label>
                       <!-- <meter  class="form-control progress-bar" max="4" id="password-strength"></meter> -->
                        <span id="output"></span>
                     </div>
