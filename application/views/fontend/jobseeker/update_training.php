@@ -337,6 +337,9 @@
   <script type="text/javascript">
 
         $( document ).ready( function () {
+
+        $('.selectpicker').selectpicker();
+
                // Education Add form Valiaton
         $( "#Training-info").validate( {
                 rules: {
