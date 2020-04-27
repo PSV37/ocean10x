@@ -110,7 +110,12 @@
               <input type="hidden" value="<?php echo $v_training->js_training_id; ?>" name="job_training_id">
                 <label class="control-label col-sm-3" for="email">Training Title</label>
                 <div class="col-sm-9">
-                   <select  name="training_title" id="training_title" class="selectpicker form-control"  data-live-search="true" onchange="check_other(this.value)">
+                   <select class="form-control selectpicker" id="select-country" data-live-search="true">
+                <option >China</option>
+  <option >Malayasia</option>
+  <option >Singapore</option>
+                </select>
+                   <!-- <select  name="training_title" id="training_title" class="selectpicker form-control"  data-live-search="true" onchange="check_other(this.value)">
                     <option value="">Select Training title</option>
 
                     <?php foreach($training as $key){?>
@@ -118,7 +123,7 @@
                     <?php } ?>
                     <option value="other">Other</option>
 
-                  </select>
+                  </select> -->
 
                   <input type="hidden" name="training_title" class="form-control" id="training_title1" placeholder="Training Title"
                    value="<?php
