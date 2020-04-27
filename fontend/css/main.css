@@ -2343,10 +2343,10 @@ a.wit-btn {
 .userccount p {
 	text-align: center;
 	line-height: 24px;
-	color: #999;
+	color: #999 !important;
 }
 
- .note-editable p  {
+.note-editable p  {
 	text-align: left ;
 	line-height: 24px;
 	color: #999;
