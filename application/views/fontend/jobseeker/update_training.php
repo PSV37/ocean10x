@@ -106,7 +106,7 @@
               <input type="hidden" value="<?php echo $v_training->js_training_id; ?>" name="job_training_id">
                 <label class="control-label col-sm-3" for="email">Training Title</label>
                 <div class="col-sm-9">
-                   <select  name="training_title" id="training_title" class="form-control selectpicker" data-show-subtext="true" data-live-search="true" onchange="check_other(this.value)">
+                   <select  name="training_title" id="training_title" class="form-control" onchange="check_other(this.value)">
                     <option value="">Select Training title</option>
 
                     <?php foreach($training as $key){?>
@@ -152,12 +152,13 @@
                <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Country:</label>
                 <div class="col-sm-9">
-                  <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
+                  <input type="text" name="country_id" id="country_id" class="form-control"  placeholder="Enter Country">
+                  <!-- <select  name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
                     <option value="">Select Country</option>
                     <?php foreach($country as $key){?>
                       <option value="<?php echo $key['country_id']; ?>"<?php if($training_list->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
                     <?php } ?>
-                  </select>
+                  </select> -->
                 </div> 
               </div>
 
@@ -550,7 +551,17 @@ function check_other(value)
   allowClear: true
   });
 });
-</script>         
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+    $(function() {
+      $("#country_id").autocomplete({
+          source: "<?php echo base_url('job_seeker/get_country_autocomplete'); ?>",
+          select: function(a,b)
+            {
+                 // alert(b.item.value);
+              $(this).val(b.item.value); //grabed the selected value
+              getcompanyinfo(b.item.value);
+
+            }
+        });
+    })
+</script> 
+
