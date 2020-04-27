@@ -125,9 +125,9 @@
                       <?php echo form_error('password'); ?>
                     </div>
                     <div class="col-md-6 col-sm-12">
-                      <label></label>
+                      <label></label><br>
                       <!-- <meter  class="form-control progress-bar" max="4" id="password-strength"></meter> -->
-                       <span id="output"></span>
+                       <p id="output"></p>
                     </div>
                   </div><!-- end row -->
                 </div>
@@ -452,11 +452,10 @@ $(document).ready(function() {
               color = "red";
               break;
           case 3:
-          case 4:
               strength = "Medium";
               color = "orange";
               break;
-          case 5:
+          case 4:
               strength = "Strong";
               color = "green";
               break;
