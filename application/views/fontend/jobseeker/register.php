@@ -214,49 +214,49 @@
 
         });
 
-        function validateCaptcha(){
-            var sessionCaptcha = '<?php echo $this->session->userdata('captchaCode'); ?>';
-            $( "#submit" ).validate({
+        // function validateCaptcha(){
+        //     var sessionCaptcha = '<?php echo $this->session->userdata('captchaCode'); ?>';
+        //     $( "#submit" ).validate({
 
-                rules: {
-                    full_name: "required",
+        //         rules: {
+        //             full_name: "required",
 
-                    profession: "required",
+        //             profession: "required",
                     
                  // gender: {
                  //        required: true,
                  //    },
-                    password: {
-                        required: true,
-                        minlength: 8,
-                        pattern: '/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/'
-                    },
+                    // password: {
+                    //     required: true,
+                    //     minlength: 8,
+                    //     pattern: '/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/'
+                    // },
                     // confirm_password: {
                     //     required: true,
                     //     minlength: 6,
                     //     equalTo: "#password"
                     // },
-                    email: {
-                        required: true,
-                        email: true
-                    }, 
+                    // email: {
+                    //     required: true,
+                    //     email: true
+                    // }, 
                     // mobile: {
                     //     required: true,
                     // }, 
-                    profession: {
-                        required: true,
-                    }, 
+                //     profession: {
+                //         required: true,
+                //     }, 
 
 
-                    captcha: {
-                        required: true,
-                        equalTo: "#sessionCaptcha1",
-                    }  
-                },
-                messages: {
-                    full_name: "Please enter your name",
-                    profession:"Please provide your profession ",
-                    gender: "Please select your Gender",
+                //     captcha: {
+                //         required: true,
+                //         equalTo: "#sessionCaptcha1",
+                //     }  
+                // },
+                // messages: {
+                //     full_name: "Please enter your name",
+                //     profession:"Please provide your profession ",
+                //     gender: "Please select your Gender",
                    
                     // password: {
                     //     required: "Please provide a password",
@@ -268,33 +268,33 @@
                     //     minlength: "Your password must be at least 6 characters long",
                     //     equalTo: "Please enter the same password as above"
                     // },
-                    profession: "Please tell us about yourself",
-                    email: "Please enter a valid email address",
+                    // profession: "Please tell us about yourself",
+                    // email: "Please enter a valid email address",
                     // mobile: "Please enter  mobile number",
-                    captcha:{
-                        required:"Captcha is required!",
-                        equalTo: "Captcha doesn't match!",
-                    }
-                },
-                errorElement: "em",
-                errorPlacement: function ( error, element ) {
+                //     captcha:{
+                //         required:"Captcha is required!",
+                //         equalTo: "Captcha doesn't match!",
+                //     }
+                // },
+                // errorElement: "em",
+                // errorPlacement: function ( error, element ) {
                     // Add the `help-block` class to the error element
-                    error.addClass( "help-block" );
+        //             error.addClass( "help-block" );
 
-                    if ( element.prop( "type" ) === "checkbox" ) {
-                        error.insertAfter( element.parent( "label" ) );
-                    } else {
-                        error.insertAfter( element );
-                    }
-                },
-                highlight: function ( element, errorClass, validClass ) {
-                    $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
-                },
-                unhighlight: function (element, errorClass, validClass) {
-                    $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
-                }
-            } );
-        }
+        //             if ( element.prop( "type" ) === "checkbox" ) {
+        //                 error.insertAfter( element.parent( "label" ) );
+        //             } else {
+        //                 error.insertAfter( element );
+        //             }
+        //         },
+        //         highlight: function ( element, errorClass, validClass ) {
+        //             $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+        //         },
+        //         unhighlight: function (element, errorClass, validClass) {
+        //             $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+        //         }
+        //     } );
+        // }
 
 
 
