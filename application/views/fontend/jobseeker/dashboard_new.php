@@ -29,7 +29,7 @@ a.collapsed {
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
       <h4 class="panel-title active">
-        <i class="fa fa-dashboard" aria-hidden="true"></i><a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseListGroup1" aria-expanded="true" aria-controls="collapseListGroup1"> My Dashboard</a>
+        <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseListGroup1" aria-expanded="true" aria-controls="collapseListGroup1"> My Dashboard</a>
       </h4>
     </div>
     <div id="collapseListGroup1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading1" aria-expanded="true">
@@ -44,7 +44,7 @@ a.collapsed {
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="collapseListGroupHeading2">
       <h4 class="panel-title">
-        <i class="fa fa-pencil" aria-hidden="true"></i><a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseListGroup2" aria-expanded="true" aria-controls="collapseListGroup2">My Profile</a>
+        <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseListGroup2" aria-expanded="true" aria-controls="collapseListGroup2"><i class="fa fa-dashboard" aria-hidden="true"></i>&emsp;My Profile</a>
       </h4>
     </div>
     <div id="collapseListGroup2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading2" aria-expanded="true">
@@ -59,7 +59,7 @@ a.collapsed {
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="collapseListGroupHeading3">
       <h4 class="panel-title">
-        <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseListGroup3" aria-expanded="true" aria-controls="collapseListGroup3"> Setting</a>
+        <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseListGroup3" aria-expanded="true" aria-controls="collapseListGroup3"><i class="fa fa-pencil" aria-hidden="true"></i>&emps; Setting</a>
       </h4>
     </div>   
     <div id="collapseListGroup3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading3" aria-expanded="true">
