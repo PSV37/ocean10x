@@ -4,7 +4,7 @@
 <style>
 .panel-default>.panel-heading{cursor:pointer;}
 
-	.panel-default>.panel-heading:active {
+	.panel-default>.panel-heading:hover {
     border-left:solid 3px #89c740;
     border-radius: 0px;
 	background-color:#fff; 
