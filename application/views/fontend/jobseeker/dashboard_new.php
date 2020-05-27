@@ -10,7 +10,8 @@
   <div class="container">                                
                          
     <div class="row">
-     <!--Accordion wrapper-->
+     <div class="content col-md-3">
+         <!--Accordion wrapper-->
 <div class="accordion md-accordion" id="accordionEx1" role="tablist" aria-multiselectable="true">
 
   <!-- Accordion card -->
@@ -129,7 +130,7 @@
 
 </div>
 <!-- Accordion wrapper -->
-     
+  </div>   
      
      
      
