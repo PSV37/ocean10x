@@ -29,7 +29,7 @@ a.collapsed {
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
       <h4 class="panel-title active">
-        <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseListGroup1" aria-expanded="true" aria-controls="collapseListGroup1"> My Dashboard</a>
+        <i class="fa fa-dashboard" aria-hidden="true"></i><a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseListGroup1" aria-expanded="true" aria-controls="collapseListGroup1"> My Dashboard</a>
       </h4>
     </div>
     <div id="collapseListGroup1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading1" aria-expanded="true">
