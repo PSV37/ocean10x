@@ -44,7 +44,7 @@ a.collapsed {
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="collapseListGroupHeading2">
       <h4 class="panel-title">
-        <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseListGroup2" aria-expanded="true" aria-controls="collapseListGroup2">My Profile</a>
+        <i class="fa fa-pencil" aria-hidden="true"></i><a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseListGroup2" aria-expanded="true" aria-controls="collapseListGroup2">My Profile</a>
       </h4>
     </div>
     <div id="collapseListGroup2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading2" aria-expanded="true">
