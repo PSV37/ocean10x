@@ -13,7 +13,7 @@
 .panel-group .panel{margin-bottom:15px;}
 
 .list-group-item{cursor:pointer;}
-.panel-title>a{text-decoration:none;}
+.panel-title>a:hover{text-decoration:none;}
 </style>
    
 
