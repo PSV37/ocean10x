@@ -3,11 +3,12 @@
 ?>    
 <style>
 .panel-default>.panel-heading{cursor:pointer;}
-.panel-default>.panel-heading:hover{
-	
+
+	.panel-default>.panel-heading:hover {
+    border-left: solid 3px black;
+    border-radius: 0px;
 	background-color:#fff;   
-	bprder-radius:0px;
-	}
+}
 </style>
    
 
