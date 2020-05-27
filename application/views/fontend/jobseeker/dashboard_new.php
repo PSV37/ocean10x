@@ -119,7 +119,7 @@ $(document).ready(function () {
 		                <div class="col-md-12">
 		            	 	<div class="col-md-3 summary">
 		            	  		<h6>45</h6>
-		            	  		<p>Who viewed your profile</p>
+		            	  		<p>Saved Profile</p>   
 		            	  	</div>
 		            	  	<div class="col-md-3 summary">
 		            	  		<h6>10</h6>
