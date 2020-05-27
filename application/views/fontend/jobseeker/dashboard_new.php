@@ -56,17 +56,17 @@
   <div class="card">
 
     <!-- Card header -->
-    <div class="card-header" role="tab" id="headingThree31">
-      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseThree31"
+    <div class="card-header" role="tab" id="headingThree32">
+      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseThree32"
         aria-expanded="false" aria-controls="collapseThree31">
         <h5 class="mb-0">
           Collapsible Group Item #3 <i class="fas fa-angle-down rotate-icon"></i>
-        </h5>
+        </h5>   
       </a>
     </div>
 
     <!-- Card body -->
-    <div id="collapseThree31" class="collapse" role="tabpanel" aria-labelledby="headingThree31"
+    <div id="collapseThree31" class="collapse" role="tabpanel" aria-labelledby="headingThree32"
       data-parent="#accordionEx1">
       <div class="card-body">
         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
