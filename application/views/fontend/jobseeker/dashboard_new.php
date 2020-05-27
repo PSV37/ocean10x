@@ -9,10 +9,14 @@
     border-radius: 0px;
 	background-color:#fff;   
 }
+.panel-group .panel{margin-bottom:15px;}
+a.collapsed {
+    text-decoration: none;
+}
 </style>
    
 
-
+    
 
 <div class="section lb">
   <div class="container">                                
