@@ -15,6 +15,7 @@
 .list-group-item{cursor:pointer;}
 .panel-title>a{font-size:12px;}
 .panel-title>a:hover{text-decoration:none;}
+.summary{background-color:#fff;}
 </style>
    
 
@@ -106,7 +107,7 @@ $(document).ready(function () {
         <div class="userccount">
 
           <div id="vsphoto" class="tab-pane fade in">
-            <h5>Your Dashboard</h5>
+            <h5>My Dashboard</h5>
            
             <div class="row">
               <div class="col-md-12">
