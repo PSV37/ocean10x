@@ -5,9 +5,10 @@
 .panel-default>.panel-heading{cursor:pointer;}
 
 	.panel-default>.panel-heading:hover {
-    border-left: solid 3px black;
+    border-left:#89c740;
     border-radius: 0px;
-	background-color:#fff;   
+	background-color:#fff; 
+	color:#89c740;  
 }
 .panel-group .panel{margin-bottom:15px;}
 a.collapsed {
