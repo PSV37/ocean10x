@@ -18,17 +18,17 @@
   <div class="card">
 
     <!-- Card header -->
-    <div class="card-header" role="tab" id="headingTwo1">
-      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo1"
-        aria-expanded="false" aria-controls="collapseTwo1">
+    <div class="card-header" role="tab" id="headingThree31">
+      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseThree31"
+        aria-expanded="false" aria-controls="collapseThree31">
         <h5 class="mb-0">
-          Collapsible Group Item #1 <i class="fas fa-angle-down rotate-icon"></i>
+          Collapsible Group Item #3 <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
 
     <!-- Card body -->
-    <div id="collapseTwo1" class="collapse" role="tabpanel" aria-labelledby="headingTwo1"
+    <div id="collapseThree31" class="collapse" role="tabpanel" aria-labelledby="headingThree31"
       data-parent="#accordionEx1">
       <div class="card-body">
         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
@@ -56,17 +56,17 @@
   <div class="card">
 
     <!-- Card header -->
-    <div class="card-header" role="tab" id="headingTwo2">
-      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo21"
-        aria-expanded="false" aria-controls="collapseTwo21">
+    <div class="card-header" role="tab" id="headingThree31">
+      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseThree31"
+        aria-expanded="false" aria-controls="collapseThree31">
         <h5 class="mb-0">
-          Collapsible Group Item #2 <i class="fas fa-angle-down rotate-icon"></i>
+          Collapsible Group Item #3 <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
 
     <!-- Card body -->
-    <div id="collapseTwo21" class="collapse" role="tabpanel" aria-labelledby="headingTwo21"
+    <div id="collapseThree31" class="collapse" role="tabpanel" aria-labelledby="headingThree31"
       data-parent="#accordionEx1">
       <div class="card-body">
         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
