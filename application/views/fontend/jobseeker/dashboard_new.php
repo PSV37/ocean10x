@@ -2,9 +2,10 @@
     $this->load->view('fontend/layout/seeker_header.php');
 ?>    
 <style>
+.panel-default>.panel-heading{cursor:pointer;}
 .panel-default>.panel-heading:hover{
 	
-	background-color:#fff;
+	background-color:#fff;   
 	bprder-radius:0px;
 	}
 </style>
