@@ -65,7 +65,7 @@
     <div id="collapseListGroup3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading3" aria-expanded="true">
       <ul class="list-group">
         <li class="list-group-item">Bootply</li>
-        <li class="list-group-item">One itmus ac facilin</li>
+        <li class="list-group-item">One itmus ac facilin</li>   
         <li class="list-group-item">Second eros</li>
       </ul>
     </div>
