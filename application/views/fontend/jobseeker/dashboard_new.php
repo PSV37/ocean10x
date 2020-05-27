@@ -11,10 +11,9 @@
 	color:#89c740;  
 }
 .panel-group .panel{margin-bottom:15px;}
-a.collapsed {
-    text-decoration: none;
-}
+
 .list-group-item{cursor:pointer;}
+.panel-title>a{text-decoration:none;}
 </style>
    
 
