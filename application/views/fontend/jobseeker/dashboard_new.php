@@ -58,7 +58,7 @@
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="collapseListGroupHeading3">
       <h4 class="panel-title">
-        <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseListGroup3" aria-expanded="true" aria-controls="collapseListGroup3"><i class="fas fa-cog"></i>&emsp; Setting</a>
+        <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseListGroup3" aria-expanded="true" aria-controls="collapseListGroup3"><i class="fas fa-cog" aria-hidden="true"></i>&emsp; Setting</a>
       </h4>
     </div>   
     <div id="collapseListGroup3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading3" aria-expanded="true">
