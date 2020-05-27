@@ -3,7 +3,7 @@
 ?>    
 <style>
 .panel-default>.panel-heading:hover{
-	border-left:solid 3px black;
+	
 	background-color:#fff;
 	bprder-radius:0px;
 	}
