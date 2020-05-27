@@ -14,6 +14,7 @@
 a.collapsed {
     text-decoration: none;
 }
+.list-group-item{cursor:pointer;}
 </style>
    
 
