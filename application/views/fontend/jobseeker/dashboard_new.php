@@ -15,7 +15,7 @@
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
       <h4 class="panel-title">
-        <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseListGroup1" aria-expanded="true" aria-controls="collapseListGroup1"> Collapsible list group #1</a>
+        <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseListGroup1" aria-expanded="true" aria-controls="collapseListGroup1"> My Dashboard</a>
       </h4>
     </div>
     <div id="collapseListGroup1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading1" aria-expanded="true">
@@ -30,7 +30,7 @@
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="collapseListGroupHeading2">
       <h4 class="panel-title">
-        <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseListGroup2" aria-expanded="true" aria-controls="collapseListGroup2"> Collapsible list group #2</a>
+        <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseListGroup2" aria-expanded="true" aria-controls="collapseListGroup2">My Profile</a>
       </h4>
     </div>
     <div id="collapseListGroup2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading2" aria-expanded="true">
@@ -45,9 +45,9 @@
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="collapseListGroupHeading3">
       <h4 class="panel-title">
-        <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseListGroup3" aria-expanded="true" aria-controls="collapseListGroup3"> Collapsible list group #3</a>
+        <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseListGroup3" aria-expanded="true" aria-controls="collapseListGroup3"> Setting</a>
       </h4>
-    </div>
+    </div>   
     <div id="collapseListGroup3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading3" aria-expanded="true">
       <ul class="list-group">
         <li class="list-group-item">Bootply</li>
