@@ -27,7 +27,7 @@ a.collapsed {
   <div id="accordion" class="panel panel-group" role="tablist">
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
-      <h4 class="panel-title">
+      <h4 class="panel-title active">
         <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseListGroup1" aria-expanded="true" aria-controls="collapseListGroup1"> My Dashboard</a>
       </h4>
     </div>
