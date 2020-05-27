@@ -98,7 +98,7 @@ $(document).ready(function () {
 });
 
 </script>     
-  <?php $this->load->view('fontend/layout/seeker_left.php'); ?>    
+     
      
      
      
