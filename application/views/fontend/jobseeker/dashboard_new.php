@@ -63,7 +63,7 @@
           Collapsible Group Item #3 <i class="fas fa-angle-down rotate-icon"></i>
         </h5>   
       </a>
-    </div>
+    </div>   
 
     <!-- Card body -->
     <div id="collapseThree31" class="collapse" role="tabpanel" aria-labelledby="headingThree32"
