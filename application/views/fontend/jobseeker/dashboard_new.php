@@ -11,97 +11,79 @@
                          
     <div class="row">
      <div class="content col-md-3">
-         <!--Accordion wrapper-->
-		<!--Accordion wrapper-->
-<div class="accordion md-accordion" id="accordionEx1" role="tablist" aria-multiselectable="true">
-
-  <!-- Accordion card -->
-  <div class="card">
-
-    <!-- Card header -->
-    <div class="card-header" role="tab" id="headingTwo1">
-      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo1"
-        aria-expanded="false" aria-controls="collapseTwo1">
-        <h5 class="mb-0">
-          My Dashboard <i class="fas fa-angle-down rotate-icon"></i>
-        </h5>
-      </a>
+  <div id="accordion" class="panel panel-group" role="tablist">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
+      <h4 class="panel-title">
+        <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseListGroup1" aria-expanded="true" aria-controls="collapseListGroup1"> Collapsible list group #1</a>
+      </h4>
     </div>
-
-    <!-- Card body -->
-    <div id="collapseTwo1" class="collapse" role="tabpanel" aria-labelledby="headingTwo1"
-      data-parent="#accordionEx1">
-      <div class="card-body">
-      <ul>
-      <li> job alerat</li>
-       <li>profile view</li>
-       </ul>
-       </div>
+    <div id="collapseListGroup1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading1" aria-expanded="true">
+      <ul class="list-group">
+        <li class="list-group-item">Bootply</li>
+        <li class="list-group-item">One itmus ac facilin</li>
+        <li class="list-group-item">Second eros</li>
+      </ul>
     </div>
-
   </div>
-  <!-- Accordion card -->
 
-  <!-- Accordion card -->
-  <div class="card">
-
-    <!-- Card header -->
-    <div class="card-header" role="tab" id="headingTwo2">
-      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo21"
-        aria-expanded="false" aria-controls="collapseTwo21">
-        <h5 class="mb-0">
-          My Profile <i class="fas fa-angle-down rotate-icon"></i>
-        </h5>
-      </a>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="collapseListGroupHeading2">
+      <h4 class="panel-title">
+        <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseListGroup2" aria-expanded="true" aria-controls="collapseListGroup2"> Collapsible list group #2</a>
+      </h4>
     </div>
-
-    <!-- Card body -->
-    <div id="collapseTwo21" class="collapse" role="tabpanel" aria-labelledby="headingTwo21"
-      data-parent="#accordionEx1">
-      <div class="card-body">
-        <ul>
-      <li> job alerat</li>
-       <li>profile view</li>
-       </ul>
-      </div>
+    <div id="collapseListGroup2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading2" aria-expanded="true">
+      <ul class="list-group">
+        <li class="list-group-item">Bootply</li>
+        <li class="list-group-item">One itmus ac facilin</li>
+        <li class="list-group-item">Second eros</li>
+      </ul>
     </div>
-
   </div>
-  <!-- Accordion card -->
 
-  <!-- Accordion card -->
-  <div class="card">
-
-    <!-- Card header -->
-    <div class="card-header" role="tab" id="headingThree31">
-      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseThree31"
-        aria-expanded="false" aria-controls="collapseThree31">
-        <h5 class="mb-0">
-          Ocean Services<i class="fas fa-angle-down rotate-icon"></i>
-        </h5>
-      </a>   
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="collapseListGroupHeading3">
+      <h4 class="panel-title">
+        <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseListGroup3" aria-expanded="true" aria-controls="collapseListGroup3"> Collapsible list group #3</a>
+      </h4>
     </div>
-
-    <!-- Card body -->
-    <div id="collapseThree31" class="collapse" role="tabpanel" aria-labelledby="headingThree31"
-      data-parent="#accordionEx1">
-      <div class="card-body">
-       <ul>
-      <li> job alerat</li>
-       <li>profile view</li>
-       </ul>
-      </div>
+    <div id="collapseListGroup3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading3" aria-expanded="true">
+      <ul class="list-group">
+        <li class="list-group-item">Bootply</li>
+        <li class="list-group-item">One itmus ac facilin</li>
+        <li class="list-group-item">Second eros</li>
+      </ul>
     </div>
-
   </div>
-  <!-- Accordion card -->
-   
 </div>
 <!-- Accordion wrapper -->
 <!-- Accordion wrapper -->
   	 </div>   
      
-     
+<script>
+// http://stackoverflow.com/questions/12733238/retain-twitter-bootstrap-collapse-state-on-page-refresh-navigation
+
+$(document).ready(function () {
+  //when a group is shown, save it as the active accordion group
+  $("#accordion").on('shown.bs.collapse', function () {
+      var active = $("#accordion .in").attr('id');
+      Cookies.set('activeAccordionGroup', active, { expires: 7 });
+      alert(active);
+  });
+  $("#accordion").on('hidden.bs.collapse', function () {
+      Cookies.remove('activeAccordionGroup');
+  });
+  var last = Cookies.get('activeAccordionGroup');
+  if (last != null) {
+    //remove default collapse settings
+    $("#accordion .collapse").removeClass('in');
+    //show the account_last visible group
+    $("#" + last).addClass("in");
+  }
+});
+
+</script>     
      
      
      
