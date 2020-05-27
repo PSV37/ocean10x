@@ -48,7 +48,7 @@
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo21"
         aria-expanded="false" aria-controls="collapseTwo21">
         <h5 class="mb-0">
-          Collapsible Group Item #2 <i class="fas fa-angle-down rotate-icon"></i>
+          My Profile <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -86,9 +86,9 @@
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseThree31"
         aria-expanded="false" aria-controls="collapseThree31">
         <h5 class="mb-0">
-          Collapsible Group Item #3 <i class="fas fa-angle-down rotate-icon"></i>
+          Ocean Services<i class="fas fa-angle-down rotate-icon"></i>
         </h5>
-      </a>
+      </a>   
     </div>
 
     <!-- Card body -->
