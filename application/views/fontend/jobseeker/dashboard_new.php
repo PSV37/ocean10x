@@ -32,8 +32,10 @@
     <div id="collapseTwo1" class="collapse" role="tabpanel" aria-labelledby="headingTwo1"
       data-parent="#accordionEx1">
       <div class="card-body">
-       job alerat
-       profile view
+      <ul>
+      <li> job alerat</li>
+       <li>profile view</li>
+       </ul>
        </div>
     </div>
 
