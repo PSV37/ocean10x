@@ -5,7 +5,7 @@
 .panel-default>.panel-heading{cursor:pointer;}
 
 	.panel-default>.panel-heading:hover {
-    border-left:#89c740;
+    border-left:solid 3px #89c740;
     border-radius: 0px;
 	background-color:#fff; 
 	color:#89c740;  
