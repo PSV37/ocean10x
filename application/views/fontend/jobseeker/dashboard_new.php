@@ -153,7 +153,7 @@ $(document).ready(function () {
 					<div class="row">
 		                <div class="col-md-12">
 		            	 	<div class="col-md-3 summary">
-		            	  		<i class="fas fa-archive"></i><h6>45</h6>
+		            	  	<i class="fa fa-briefcase" aria-hidden="true"></i><h6>45</h6>
 		            	  		<p>Saved Jobs</p>   
 		            	  	</div>
 		            	  	<div class="col-md-3 summary">
