@@ -154,16 +154,16 @@ $(document).ready(function () {
 		                <div class="col-md-12">
 		            	 	<div class="col-md-3 summary">
 		            	  		<h6>45</h6>
-		            	  		<p>Saved Profile</p>   
+		            	  		<p>Saved Jobs</p>   
 		            	  	</div>
 		            	  	<div class="col-md-3 summary">
 		            	  		<h6>10</h6>
-		            	  		<p>Article views</p>
+		            	  		<p>Job Alerts</p>
 		            	  	</div>
 			            	<div class="col-md-3 summary">
 			            	  	<h6>100</h6>
-		            	  		<p>Search Appearnaces</p>
-			           	 	</div>
+		            	  		<p>Profile Views</p>
+			           	 	</div>   
 			           	 	
 		             	</div>
 					</div>
