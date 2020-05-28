@@ -169,7 +169,7 @@ $(document).ready(function () {
 		            	  		<p>Job Alerts</p>
 		            	  	</div>
 			            	<div class="col-md-3 summary">
-			            	  	<i class="fad fa-eye"></i><h6>100</h6>
+			            	  	<i class="fad fa-eye"></i><h6>100</h6>   
 		            	  		<p>Profile Views</p>
 			           	 	</div>   
 			           	 	  
