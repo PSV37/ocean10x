@@ -216,33 +216,19 @@ $(document).ready(function () {
 		                <div class="col-md-12">
 		            	 	<div class="col-md-3 summary">
 		            	  	<i class="fa fa-briefcase" aria-hidden="true"></i><h6>45</h6>
-		            	  		<p>Saved Jobs</p>   
+		            	  		<p>Ocean Profile</p>   
 		            	  	</div>
 		            	  	<div class="col-md-3 summary">
 		            	  		<i class="fa fa-bell"></i><h6>10</h6>
-		            	  		<p>Job Alerts</p>
+		            	  		<p>Job Setting</p>
 		            	  	</div>
 			            	<div class="col-md-3 summary">
 			            	  	<i class="fad fa-eye"></i><h6>100</h6>
-		            	  		<p>Profile Views</p>
+		            	  		<p>Cover Letter</p>
 			           	 	</div>   
 			           	 	  
 		             	</div>
-                        <div class="col-md-12">
-		            	 	<div class="col-md-3 summary">
-		            	  	<i class="fa fa-briefcase" aria-hidden="true"></i><h6>45</h6>
-		            	  		<p>Courses Completed</p>   
-		            	  	</div>
-		            	  	<div class="col-md-3 summary">
-		            	  		<i class="fa fa-bell"></i><h6>10</h6>
-		            	  		<p>Article Views</p>
-		            	  	</div>
-			            	<div class="col-md-3 summary">
-			            	  	<i class="fad fa-eye"></i><h6>100</h6>
-		            	  		<p>News Feed</p>
-			           	 	</div>   
-			           	 	
-		             	</div>
+                        
 					</div>
 					
 
