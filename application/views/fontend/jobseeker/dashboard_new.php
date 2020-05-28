@@ -176,7 +176,7 @@ $(document).ready(function () {
 		             	</div>
                         <div class="col-md-12">
 		            	 	<div class="col-md-3 summary">
-		            	  	<i class="fa fa-briefcase" aria-hidden="true"></i><h6>45</h6>
+		            	  	<i class="fas fa-clipboard-list-check"></i><h6>45</h6>
 		            	  		<p>Courses Completed</p>   
 		            	  	</div>
 		            	  	<div class="col-md-3 summary">
