@@ -223,11 +223,11 @@ $(document).ready(function () {
 		            	  		<p>Job Setting</p>
 		            	  	</div>
 			            	<div class="col-md-3 summary">
-			            	  	<i class="fad fa-eye"></i><h6>100</h6>
+			            	  	<i class="fa fa-envelope"></i><h6>100</h6>
 		            	  		<p>Cover Letter</p>
 			           	 	</div>   
 			           	 	  
-		             	</div>
+		             	</div> 
                         
 					</div>
 					
@@ -261,7 +261,7 @@ $(document).ready(function () {
 		            	  		<p>Skill Upgrade</p>
 		            	  	</div>
 			            	<div class="col-md-3 summary">
-			            	  	<i class="fad fa-eye"></i><h6>100</h6>
+			            	  	<i class="fas fa-award"></i><h6>100</h6>
 		            	  		<p>Ocean Champ</p>
 			           	 	</div>   
 			           	 	  
