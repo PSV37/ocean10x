@@ -13,7 +13,7 @@
 .panel-group .panel{margin-bottom:0px;}
    
 .list-group-item{cursor:pointer;}      
-.panel-title>a{font-size:12px;}
+.panel-title>a{font-size:12px;font-weight: 500;}
 .panel-title>a:hover{text-decoration:none;}   
 .summary{background-color:#f4f9fd;
 		padding: 20px;
@@ -29,6 +29,7 @@
 }
 li.list-group-item {
     background-color: #edeff1;
+	font-size: 13px;
 }
 </style>
    
