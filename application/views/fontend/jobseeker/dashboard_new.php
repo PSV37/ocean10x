@@ -40,7 +40,7 @@ li.list-group-item {
 .summary i{
     float: left;
     margin-right: 25px;
-    font-size: 34px;
+    font-size: 25px;
 }    
 </style>
    
