@@ -190,6 +190,53 @@ $(document).ready(function () {
 			           	 	
 		             	</div>
 					</div>
+					
+
+					
+
+		                  
+                </div> <!-- container end -->
+                                          
+              </div>
+              
+            </div>
+            
+            <h5>My Dashboard</h5>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="containe1r">
+					<div class="row">
+		                <div class="col-md-12">
+		            	 	<div class="col-md-3 summary">
+		            	  	<i class="fa fa-briefcase" aria-hidden="true"></i><h6>45</h6>
+		            	  		<p>Saved Jobs</p>   
+		            	  	</div>
+		            	  	<div class="col-md-3 summary">
+		            	  		<i class="fa fa-bell"></i><h6>10</h6>
+		            	  		<p>Job Alerts</p>
+		            	  	</div>
+			            	<div class="col-md-3 summary">
+			            	  	<i class="fad fa-eye"></i><h6>100</h6>
+		            	  		<p>Profile Views</p>
+			           	 	</div>   
+			           	 	  
+		             	</div>
+                        <div class="col-md-12">
+		            	 	<div class="col-md-3 summary">
+		            	  	<i class="fa fa-briefcase" aria-hidden="true"></i><h6>45</h6>
+		            	  		<p>Courses Completed</p>   
+		            	  	</div>
+		            	  	<div class="col-md-3 summary">
+		            	  		<i class="fa fa-bell"></i><h6>10</h6>
+		            	  		<p>Article Views</p>
+		            	  	</div>
+			            	<div class="col-md-3 summary">
+			            	  	<i class="fad fa-eye"></i><h6>100</h6>
+		            	  		<p>News Feed</p>
+			           	 	</div>   
+			           	 	
+		             	</div>
+					</div>
 					<div class="panel-body"></div>
 
 					<div class="row career">
@@ -476,17 +523,8 @@ $(document).ready(function () {
               </div>
               
             </div>
-          </div>
-                             
-        </div><!-- end col -->
-      </div><!-- end row --> 
-      
-      <div class="content col-md-9">
-        <div class="userccount">
-
-          <div id="vsphoto" class="tab-pane fade in">
+            
             <h5>My Dashboard</h5>
-           
             <div class="row">
               <div class="col-md-12">
                 <div class="containe1r">
@@ -811,7 +849,9 @@ $(document).ready(function () {
           </div>
                              
         </div><!-- end col -->
-      </div> 
+      </div><!-- end row --> 
+      
+       
     </div><!-- end container -->
   </div><!-- end section -->
 </div>
