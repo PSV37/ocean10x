@@ -169,14 +169,14 @@ $(document).ready(function () {
 		            	  		<p>Job Alerts</p>
 		            	  	</div>
 			            	<div class="col-md-3 summary">
-			            	  	<i class="fad fa-eye"></i><h6>100</h6>   
+			            	  	<i class="fad fa-eye"></i><h6>100</h6>
 		            	  		<p>Profile Views</p>
 			           	 	</div>   
 			           	 	  
-		             	</div>    
+		             	</div>
                         <div class="col-md-12">
 		            	 	<div class="col-md-3 summary">
-		            	  	<i class="fas fa-clipboard-list-check"></i><h6>45</h6>
+		            	  	<i class="fa fa-briefcase" aria-hidden="true"></i><h6>45</h6>
 		            	  		<p>Courses Completed</p>   
 		            	  	</div>
 		            	  	<div class="col-md-3 summary">
