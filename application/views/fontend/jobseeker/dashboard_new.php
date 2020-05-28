@@ -142,7 +142,7 @@ $(document).ready(function () {
     //show the account_last visible group
     $("#" + last).addClass("in");
   }
-});
+});    
 
 </script>     
      
