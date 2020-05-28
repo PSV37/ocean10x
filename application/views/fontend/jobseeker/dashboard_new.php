@@ -22,7 +22,11 @@
 .lb{background-color:#f5f5f585;}
 .panel-default {
     border-color: #dddddd8a;
+	
 }   
+.panel-group .panel+.panel {
+   margin-top: 0px;   
+}
 </style>
    
 
@@ -62,12 +66,27 @@
         <li class="list-group-item">Second eros</li>
       </ul>
     </div>   
-  </div>
+  </div>   
 
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="collapseListGroupHeading3">
       <h4 class="panel-title">
-        <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseListGroup3" aria-expanded="true" aria-controls="collapseListGroup3"><i class="fad fa-cog" aria-hidden="true"></i>&emsp; Setting</a>
+        <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseListGroup3" aria-expanded="true" aria-controls="collapseListGroup3"><i class="fad fa-cog" aria-hidden="true"></i>&emsp; My Training</a>
+      </h4>
+    </div>   
+    <div id="collapseListGroup3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading3" aria-expanded="true">
+      <ul class="list-group">
+        <li class="list-group-item">Bootply</li>
+        <li class="list-group-item">One itmus ac facilin</li>   
+        <li class="list-group-item">Second eros</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="collapseListGroupHeading3">
+      <h4 class="panel-title">
+        <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseListGroup3" aria-expanded="true" aria-controls="collapseListGroup3"><i class="fad fa-cog" aria-hidden="true"></i>&emsp; Ocean Services</a>
       </h4>
     </div>   
     <div id="collapseListGroup3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading3" aria-expanded="true">
