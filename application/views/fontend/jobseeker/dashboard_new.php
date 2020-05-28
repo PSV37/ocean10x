@@ -42,7 +42,8 @@ li.list-group-item {
     margin-right: 25px;
     font-size: 25px;
 }  
-.userccount p{margin-top:5px;}  
+.userccount p{margin-top:5px;}
+.userccount{margin-bottom:20px;}  
 </style>
    
 
