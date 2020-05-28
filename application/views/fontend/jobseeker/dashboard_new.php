@@ -18,13 +18,15 @@ li.list-group-item:hover{color:#8ac640;}
 .panel-title>a:hover{text-decoration:none;}   
 .summary{background-color:#f4f9fd;
 		padding: 20px;
-   	    margin-right: 65px;}
+   	    margin-right: 65px;
+		box-shadow: 2px 2px 3px 0px #ece9e9;
+}
    
 .lb{background-color:#f5f5f585;}
 .panel-default {   
     border-color: #dddddd8a;
 	
-}   
+}      
 .panel-group .panel+.panel {
    margin-top: 0px;   
 }
