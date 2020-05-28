@@ -14,7 +14,7 @@
    
 .list-group-item{cursor:pointer;}      
 .panel-title>a{font-size:12px;}
-.panel-title>a:hover{text-decoration:none;}
+.panel-title>a:hover{text-decoration:none;}   
 .summary{background-color:#f4f9fd;
 		padding: 20px;
    	    margin-right: 65px;}
