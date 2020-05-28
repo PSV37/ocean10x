@@ -21,6 +21,7 @@ li.list-group-item:hover{color:#8ac640;}
     padding: 20px 32px;
     margin-right: 65px;
     box-shadow: 2px 2px 3px 0px #ece9e9;
+	margin-bottom:20px;
 }
 .summary h6{font-size:25px;}
    
