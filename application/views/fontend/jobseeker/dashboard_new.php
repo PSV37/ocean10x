@@ -201,6 +201,7 @@ $(document).ready(function () {
               
             </div>
            </div> 
+           </div>
             <h5>My Dashboard</h5>
             <div class="row">
               <div class="col-md-12">
