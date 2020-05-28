@@ -36,7 +36,7 @@ li.list-group-item {
     background-color: #edeff1;
 	font-size: 13px;
 }
-i.fa.fa-briefcase {
+.summary i{
     float: left;
     margin-right: 25px;
     font-size: 34px;
