@@ -20,6 +20,9 @@
    	    margin-right: 65px;}
 
 .lb{background-color:#f5f5f585;}
+.panel-default {
+    border-color: #dddddd8a;
+}   
 </style>
    
 
