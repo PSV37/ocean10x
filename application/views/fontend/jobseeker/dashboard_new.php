@@ -154,7 +154,7 @@ $(document).ready(function () {
         <div class="userccount">
 
           <div id="vsphoto" class="tab-pane fade in">
-            <h5>My Profile</h5>   
+            <h5>My Dashboard</h5>   
                 
             <div class="row">
               <div class="col-md-12">
@@ -208,7 +208,7 @@ $(document).ready(function () {
 
           <div id="vsphoto" class="tab-pane fade in">
 
-            <h5>My Dashboard</h5>
+            <h5>My Profile</h5>
             <div class="row">
               <div class="col-md-12">
                 <div class="containe1r">
