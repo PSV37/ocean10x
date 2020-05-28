@@ -55,7 +55,7 @@ li.list-group-item {
         <li class="list-group-item">Second eros</li>
         <li class="list-group-item">Second eros</li>
         <li class="list-group-item">Second eros</li>   
-        <li class="list-group-item">Second eros</li>s
+        <li class="list-group-item">Second eros</li>
       </ul>   
     </div>
   </div>   
