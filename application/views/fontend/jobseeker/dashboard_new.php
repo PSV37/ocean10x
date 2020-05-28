@@ -163,7 +163,7 @@ $(document).ready(function () {
 		            	  		<p>Saved Jobs</p>   
 		            	  	</div>
 		            	  	<div class="col-md-3 summary">
-		            	  		<h6>10</h6>
+		            	  		<i class="fa fa-bell"></i><h6>10</h6>
 		            	  		<p>Job Alerts</p>
 		            	  	</div>
 			            	<div class="col-md-3 summary">
