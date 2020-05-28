@@ -202,6 +202,11 @@ $(document).ready(function () {
             </div>
            </div>
            </div>
+           
+           <div class="userccount">
+
+          <div id="vsphoto" class="tab-pane fade in">
+
             <h5>My Dashboard</h5>
             <div class="row">
               <div class="col-md-12">
@@ -247,6 +252,8 @@ $(document).ready(function () {
                                           
               </div>
               
+            </div>
+            </div>
             </div>
             
             <h5>My Dashboard</h5>
