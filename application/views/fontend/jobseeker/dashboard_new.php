@@ -16,10 +16,11 @@ li.list-group-item:hover{color:#8ac640;}
 .list-group-item{cursor:pointer;}      
 .panel-title>a{font-size:12px;font-weight:600;}
 .panel-title>a:hover{text-decoration:none;}   
-.summary{background-color:#f4f9fd;
-		padding: 20px;
-   	    margin-right: 65px;
-		box-shadow: 2px 2px 3px 0px #ece9e9;
+.summary {
+    background-color: #f4f9fd;
+    padding: 20px 32px;
+    margin-right: 65px;
+    box-shadow: 2px 2px 3px 0px #ece9e9;
 }
 .summary h6{font-size:25px;}
    
@@ -35,6 +36,11 @@ li.list-group-item {
     background-color: #edeff1;
 	font-size: 13px;
 }
+i.fa.fa-briefcase {
+    float: left;
+    margin-right: 25px;
+    font-size: 34px;
+}    
 </style>
    
 
