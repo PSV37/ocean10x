@@ -200,7 +200,11 @@ $(document).ready(function () {
               </div>
               
             </div>
-           
+           </div>
+           </div>
+           <div class="content col-md-9">
+        <div class="userccount">
+
             <h5>My Dashboard</h5>
             <div class="row">
               <div class="col-md-12">
@@ -247,7 +251,11 @@ $(document).ready(function () {
               </div>
               
             </div>
-            
+            </div>
+            </div>
+            <div class="content col-md-9">
+        <div class="userccount">
+
             <h5>My Dashboard</h5>
             <div class="row">
               <div class="col-md-12">
@@ -295,9 +303,8 @@ $(document).ready(function () {
               
             </div>
           </div>
-                             
-        </div><!-- end col -->
-      </div><!-- end row --> 
+               </div>                 
+        <!-- end row --> 
       
        
     </div><!-- end container -->
