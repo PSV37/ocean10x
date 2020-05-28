@@ -261,7 +261,7 @@ $(document).ready(function () {
 		            	  		<p>Skill Upgrade</p>
 		            	  	</div>
 			            	<div class="col-md-3 summary">
-			            	  	<i class="fa fa-award"></i><h6>100</h6>
+			            	  	<i class="fa fa-trophy"></i><h6>100</h6>
 		            	  		<p>Ocean Champ</p>
 			           	 	</div>   
 			           	 	  
