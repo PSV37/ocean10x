@@ -2,7 +2,7 @@
     $this->load->view('fontend/layout/seeker_header.php');
 ?>    
 <style>
-.panel-default>.panel-heading{cursor:pointer;}
+.panel-default>.panel-heading{cursor:pointer;background-color:#fff;}
 
 	.panel-default>.panel-heading:hover {
     border-left:solid 3px #89c740;
@@ -12,13 +12,14 @@
 }
 .panel-group .panel{margin-bottom:15px;}
 
-.list-group-item{cursor:pointer;}   
+.list-group-item{cursor:pointer;}      
 .panel-title>a{font-size:12px;}
 .panel-title>a:hover{text-decoration:none;}
-.summary{background-color:#fff;
+.summary{background-color:#f4f9fd;
 		padding: 20px;
    	    margin-right: 65px;}
-.userccount{background: #f5f5f5;}
+
+.lb{background-color:#f5f5f585;}
 </style>
    
 
