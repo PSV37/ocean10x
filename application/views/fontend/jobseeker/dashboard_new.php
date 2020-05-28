@@ -10,8 +10,8 @@
 	background-color:#fff; 
 	color:#89c740;  
 }
-.panel-group .panel{margin-bottom:15px;}
-
+.panel-group .panel{margin-bottom:0px;}
+   
 .list-group-item{cursor:pointer;}      
 .panel-title>a{font-size:12px;}
 .panel-title>a:hover{text-decoration:none;}
