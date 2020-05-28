@@ -173,7 +173,7 @@ $(document).ready(function () {
 		            	  		<p>Profile Views</p>
 			           	 	</div>   
 			           	 	  
-		             	</div>
+		             	</div>    
                         <div class="col-md-12">
 		            	 	<div class="col-md-3 summary">
 		            	  	<i class="fas fa-clipboard-list-check"></i><h6>45</h6>
