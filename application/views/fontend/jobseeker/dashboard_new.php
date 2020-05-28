@@ -2,7 +2,7 @@
     $this->load->view('fontend/layout/seeker_header.php');
 ?>    
 <style>
-.panel>.panel-heading+.panel-collapse>.list-group .list-group-item:first-child:hover{color:#8cc542;}
+li.list-group-item:hover{color:#8ac640;}
 .panel-default>.panel-heading{cursor:pointer;background-color:#fff;}
 
 	.panel-default>.panel-heading:hover {
