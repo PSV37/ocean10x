@@ -27,6 +27,9 @@
 .panel-group .panel+.panel {
    margin-top: 0px;   
 }
+li.list-group-item {
+    background-color: #edeff1;
+}
 </style>
    
 
