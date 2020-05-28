@@ -184,7 +184,7 @@ $(document).ready(function () {
 		            	  		<p>Article Views</p>
 		            	  	</div>
 			            	<div class="col-md-3 summary">
-			            	  	<i class="fad fa-eye"></i><h6>100</h6>
+			            	  	<i class="fa fa-rss"></i><h6>100</h6>
 		            	  		<p>News Feed</p>
 			           	 	</div>   
 			           	 	
