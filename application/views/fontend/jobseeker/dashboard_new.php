@@ -425,19 +425,63 @@ li.list-group-item {
 			           	 	  
 		             	</div>
                         <div class="col-md-12">
-		            	 	<div class="col-md-3 summary">
-		            	  	<i class="fa fa-briefcase" aria-hidden="true"></i><h6>45</h6>
-		            	  		<p>Courses Completed</p>   
-		            	  	</div>
-		            	  	<div class="col-md-3 summary">
-		            	  		<i class="fa fa-bell"></i><h6>10</h6>
-		            	  		<p>Article Views</p>
-		            	  	</div>
-			            	<div class="col-md-3 summary">
-			            	  	<i class="fa fa-rss"></i><h6>100</h6>
-		            	  		<p>News Feed</p>
-			           	 	</div>   
-			           	 	
+		            	 	<div class="col-lg-3 col-sm-6">
+                        		<div class="circle-tile">
+                            		<a href="#">
+                                        <div class="circle-tile-heading dark-blue">
+                                            <i class="fa fa-users fa-fw fa-3x"></i>
+                                        </div>
+                            		</a>
+                            			<div class="circle-tile-content dark-blue">
+                               			 <div class="circle-tile-description text-faded">
+                                   		 Users
+                                        </div>
+                                        <div class="circle-tile-number text-faded">
+                                            265
+                                            <span id="sparklineA"></span>
+                                        </div>
+                                        
+                            </div>
+                        </div>  
+                    </div>
+		            	  	<div class="col-lg-3 col-sm-6">
+                        		<div class="circle-tile">
+                            		<a href="#">
+                                        <div class="circle-tile-heading dark-blue">
+                                            <i class="fa fa-users fa-fw fa-3x"></i>
+                                        </div>
+                            		</a>
+                            			<div class="circle-tile-content dark-blue">
+                               			 <div class="circle-tile-description text-faded">
+                                   		 Users
+                                        </div>
+                                        <div class="circle-tile-number text-faded">
+                                            265
+                                            <span id="sparklineA"></span>
+                                        </div>
+                                        
+                            </div>
+                        </div>  
+                    </div>
+			            	<div class="col-lg-3 col-sm-6">
+                        		<div class="circle-tile">
+                            		<a href="#">
+                                        <div class="circle-tile-heading dark-blue">
+                                            <i class="fa fa-users fa-fw fa-3x"></i>
+                                        </div>
+                            		</a>
+                            			<div class="circle-tile-content dark-blue">
+                               			 <div class="circle-tile-description text-faded">
+                                   		 Users
+                                        </div>
+                                        <div class="circle-tile-number text-faded">
+                                            265
+                                            <span id="sparklineA"></span>
+                                        </div>
+                                        
+                            </div>
+                        </div>  
+                    </div>
 		             	</div>
 					</div>
 					
