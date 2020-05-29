@@ -153,40 +153,40 @@ li.list-group-item {
           <li class="nav-header">MY PROFILE</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-file"></i>
+               <i class="fa fa-briefcase" aria-hidden="true"></i>
               <p>Documentation</p>
             </a>
           </li>
           <li class="nav-header">MY TRAININGS</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="fas fa-circle nav-icon"></i>
+              <i class="fa fa-briefcase" aria-hidden="true"></i>
               <p>Level 1</p>
             </a>
           </li>
           
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="fas fa-circle nav-icon"></i>
+              <i class="fa fa-briefcase" aria-hidden="true"></i>
               <p>Level 1</p>
             </a>
           </li>
           <li class="nav-header">OCEAN SERVICES</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon far fa-circle text-danger"></i>
+               <i class="fa fa-briefcase" aria-hidden="true"></i>
               <p class="text">Important</p>
             </a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon far fa-circle text-warning"></i>
+               <i class="fa fa-briefcase" aria-hidden="true"></i>
               <p>Warning</p>
             </a>
           </li>    
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon far fa-circle text-info"></i>
+               <i class="fa fa-briefcase" aria-hidden="true"></i>
               <p>Informational</p>
             </a>
           </li>
