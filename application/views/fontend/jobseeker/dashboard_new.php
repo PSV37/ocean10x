@@ -404,7 +404,7 @@ li.list-group-item {
                                         
                             </div>
                         </div>  
-                    </div>
+                    </div>   
 			            	<div class="col-lg-3 col-sm-6">
                         		<div class="circle-tile">
                             		<a href="#">
