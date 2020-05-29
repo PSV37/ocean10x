@@ -150,14 +150,14 @@ select{
 
 .margin-top30 {
 	margin-top: 30px;
-}
+}    
 .margin-left80 {
 	margin-left: 80px;
 }
 
 /*Common*/
 .section {  
-	padding:15px 0;
+	padding:15px 0 !important;
 	overflow: hidden;
 }
 .greybg {
