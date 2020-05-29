@@ -15,7 +15,7 @@ li.list-group-item:hover{color:#8ac640;}
    
 .list-group-item{cursor:pointer;}      
 .panel-title>a{font-size:12px;font-weight:600;}
-.panel-title>a:hover{text-decoration:none;}   
+.panel-title>a:hover{text-decoration:none;}       
 .summary {
     background-color: #f4f9fd;
     padding: 20px 32px;
