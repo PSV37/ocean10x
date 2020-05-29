@@ -51,12 +51,48 @@ li.list-group-item {
 .sidebar {
     background: #fff !important;
 }
+[class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link:focus, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link:hover {
+    background-color: rgba(255,255,255,.1);
+    color: #8BC34A;
+}
 .nav-item .nav-link i{    
 	background-color:#d3d3d3;
     padding: 7px;     
     border-radius: 16px;}
 
-[class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link:focus.nav-item .nav-link i{background-color: #8bc742;}		         
+[class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link:focus.nav-item .nav-link i{background-color: #8bc742;}		  
+
+#left-panel .inner-left-pannel .inner-tabs .menu-tab .menu-principal ul li {
+    font-family: "Open Sans",sans-serif;
+    color: #a9a9a9;
+    list-style: none;
+}
+#left-panel .inner-left-pannel .inner-tabs .menu-tab .menu-principal ul a {
+    color: inherit;
+    text-decoration: none;
+    padding: 8px 0;
+}
+#left-panel .inner-left-pannel .inner-tabs .menu-tab .menu-principal ul li span.icon-container i {
+    transition: all .3s ease;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #95c619;
+    border-color: #fff;
+    color: #fff;
+    position: relative;
+    left: -100%;
+}
+#left-panel .inner-left-pannel .inner-tabs .menu-tab .menu-principal ul li span.icon-container i:before {
+    line-height: 200%;
+    font-size: 100%;
+}
+#left-panel .inner-left-pannel .inner-tabs .menu-tab .menu-principal ul li span.icon-container i:before {
+    line-height: 200%;
+    font-size: 100%;
+}
+       
 </style>
       
    
@@ -105,9 +141,19 @@ li.list-group-item {
          
           
          
-           
+           <li class="active">
+            <a data-dl-view="true" data-dl-title="Dashboard" href="/">
+                <span class="icon-container">
+                    <i class="fa fa-dashboard"></i>
+                </span>
+                 <span class="text item">
+                    Dashboard     </span>
+              </a>
+        </li>
            
          
+               
+               
                
           <li class="nav-header">MY DASHBOARD</li>
           <li class="nav-item">
