@@ -134,8 +134,7 @@ li.list-group-item {
     color: #34495e;
 }
 .circle-tile-heading .fa {
-    line-height: 74px;
-	font-size:32px;
+    line-height: 80px;
 }
 
 .circle-tile-content {
