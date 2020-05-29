@@ -197,11 +197,16 @@ li.list-group-item {
     color: #fff;
 }
 .circle-tile:hover .circle-tile-heading{border:solid #fff;box-shadow: 0px -1px 7px 0px #fff;
-}      
+}    
+.gradient_strip{
+	height: 39px;
+    width: 100%;
+    background-image: linear-gradient(to right, #84c461 , #2196F3);
+	}  
 </style>  
       
    
-    
+<div class="gradient_strip"></div>    
     
 <div class="section lb">
   <div class="container-fluid">                                
