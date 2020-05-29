@@ -201,7 +201,7 @@ li.list-group-item {
 .gradient_strip{
 	height: 39px;
     width: 100%;
-    background-image: linear-gradient(to right, #90d646 , #2196F3);
+    background-image: linear-gradient(to right, #ace41e , #2196F3);
 	}  
 </style>     
       
