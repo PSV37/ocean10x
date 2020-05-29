@@ -107,8 +107,8 @@ li.list-group-item {
 .circle-tile {
     margin-bottom: 15px;
     text-align: center;   
-	width:80%;
-}
+	width:100%;
+}   
 
 .circle-tile-heading {
     position: relative;
@@ -365,7 +365,7 @@ li.list-group-item {
                 <div class="container">
 					<div class="row">
 		                <div class="col-md-12">
-		            	 	 <div class="col-lg-3 col-sm-6">
+		            	 	 <div class="col-lg-2 col-sm-6">
                         		<div class="circle-tile">
                             		<a href="#">
                                         <div class="circle-tile-heading dark-blue">
@@ -384,15 +384,9 @@ li.list-group-item {
                             </div>
                         </div>  
                     </div>
+                           
                             
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-		            	  	<div class="col-lg-3 col-sm-6">
+		            	  	<div class="col-lg-2 col-sm-6">
                         		<div class="circle-tile">
                             		<a href="#">
                                         <div class="circle-tile-heading dark-blue">
@@ -410,8 +404,8 @@ li.list-group-item {
                                         
                             </div>
                         </div>  
-                    </div>
-			            	<div class="col-lg-3 col-sm-6">
+                    </div>     
+			            	<div class="col-lg-2 col-sm-6">
                         		<div class="circle-tile">
                             		<a href="#">
                                         <div class="circle-tile-heading dark-blue">
