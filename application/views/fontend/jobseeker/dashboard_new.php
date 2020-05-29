@@ -195,7 +195,7 @@ li.list-group-item {
     overflow: hidden;
     color: #fff;
 }
-.circle-tile:hover .dark-blue {border: solid #fff;box-shadow: 0px -1px 7px 0px #fff;
+.circle-tile:hover .circle-tile-heading{border:3px solid #fff;box-shadow: 0px -1px 7px 0px #fff;
 }      
 </style>  
       
