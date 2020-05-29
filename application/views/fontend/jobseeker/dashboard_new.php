@@ -103,7 +103,7 @@ li.list-group-item {
                
           <li class="nav-header">MY DASHBOARD</li>
           <li class="nav-item">
-            <a href="https://adminlte.io/docs/3.0" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-file"></i>
               <p>Documentation</p>
             </a>    
@@ -113,7 +113,7 @@ li.list-group-item {
           
           <li class="nav-header">MY PROFILE</li>
           <li class="nav-item">
-            <a href="https://adminlte.io/docs/3.0" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-file"></i>
               <p>Documentation</p>
             </a>
