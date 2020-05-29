@@ -4729,5 +4729,7 @@ Large Mobile Screen
 .bootstrap-select .dropdown-menu .inner li.selected a{
 	border-color: #eeeeee;
 }
-
    
+.section {
+    padding: 15px 0 !important;
+}
