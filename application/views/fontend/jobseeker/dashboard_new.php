@@ -134,22 +134,7 @@ li.list-group-item {
           <li class="nav-item has-treeview menu-open">
             
             <ul class="nav nav-treeview">
-             
-              
-             
-         
-         
-          
-         
-           <li class="active">
-            <a data-dl-view="true" data-dl-title="Dashboard" href="/">
-                <span class="icon-container">
-                    <i class="fa fa-dashboard"></i>
-                </span>
-                 <span class="text item">
-                    Dashboard     </span>
-              </a>
-        </li>
+ 
            
          
                
