@@ -370,7 +370,7 @@ li.list-group-item {
                                             265
                                             <span id="sparklineA"></span>
                                         </div>
-                                        <a href="#" class="circle-tile-footer">More Info <i class="fa                 fa-chevron-circle-right"></i></a>
+                                        
                             </div>
                         </div>  
                     </div>
