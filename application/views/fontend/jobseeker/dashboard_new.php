@@ -355,7 +355,7 @@ li.list-group-item {
                 <div class="container">
 					<div class="row">
 		                <div class="col-md-12">
-		            	 	 <div class="col-lg-2 col-sm-6">
+		            	 	 <div class="col-lg-3 col-sm-6">
                         		<div class="circle-tile">
                             		<a href="#">
                                         <div class="circle-tile-heading dark-blue">
@@ -372,7 +372,7 @@ li.list-group-item {
                                         </div>
                                         <a href="#" class="circle-tile-footer">More Info <i class="fa                 fa-chevron-circle-right"></i></a>
                             </div>
-                        </div>
+                        </div>  
                     </div>
                             
                             
