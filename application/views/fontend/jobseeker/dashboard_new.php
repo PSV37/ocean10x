@@ -135,7 +135,7 @@ li.list-group-item {
               <p>Level 1</p>
             </a>
           </li>
-          <li class="nav-header">LABELS</li>
+          <li class="nav-header">OCEAN SERVICES</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-circle text-danger"></i>
@@ -147,7 +147,7 @@ li.list-group-item {
               <i class="nav-icon far fa-circle text-warning"></i>
               <p>Warning</p>
             </a>
-          </li>
+          </li>    
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-circle text-info"></i>
