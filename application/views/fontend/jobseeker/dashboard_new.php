@@ -51,7 +51,10 @@ li.list-group-item {
 .sidebar {
     background: #fff !important;
 }
-  
+.nav-item .nav-link fa{
+	background-color: #bdbde6;
+    padding: 7px;
+    border-radius: 16px;}     
 </style>
    
    
