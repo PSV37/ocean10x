@@ -60,7 +60,7 @@ li.list-group-item {
 }
 [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link:focus .fa-briefcase:before{background-color:#000 !important;animation:toLeftFromRight 0.3s forwards;} 
 .fa-briefcase:before{        
-	    
+	  animation:toLeftFromRight 0.3s forwards;  
     padding: 7px;         
     border-radius: 16px;}     
 
