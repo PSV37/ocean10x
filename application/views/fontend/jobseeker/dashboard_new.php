@@ -62,7 +62,7 @@ li.list-group-item {
 .nav-item .nav-link i{        
 	background-color:#d3d3d3;      
     padding: 7px;         
-    border-radius: 16px;}
+    border-radius: 16px;}     
 
 [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link:focus.nav-item .nav-link i{background-color: #8bc742;}		  
 
