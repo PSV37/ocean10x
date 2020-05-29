@@ -134,11 +134,12 @@ li.list-group-item {
     color: #34495e;
 }
 .circle-tile-heading .fa {
-    line-height: 80px;
+    line-height: 74px;
+	font-size:32px;
 }
 
 .circle-tile-content {
-    padding-top: 50px;
+    padding-top:2px;   
 }
 .circle-tile-description {
     text-transform: uppercase;
