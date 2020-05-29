@@ -220,7 +220,7 @@ li.list-group-item {
 
   <!-- Navbar -->
   
-  <!-- /.navbar -->
+  <!-- /.navbar -->     
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">    
