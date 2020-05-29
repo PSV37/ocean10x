@@ -137,8 +137,9 @@ li.list-group-item {
     line-height: 80px;
 }
 
-.circle-tile-content {
-    padding-top:50px;       
+.circle-tile-content {   
+    padding-top:50px; 
+	border-radius: 3px;      
 }
 .circle-tile-description {
     text-transform: uppercase;
