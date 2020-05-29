@@ -52,7 +52,7 @@ li.list-group-item {
     background: #fff !important;
 }
 .nav-item .nav-link i{    
-	background-color: #bdbde6;
+	background-color:#d3d3d3;
     padding: 7px;     
     border-radius: 16px;}     
 </style>
