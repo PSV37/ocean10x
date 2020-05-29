@@ -25,10 +25,10 @@ li.list-group-item:hover{color:#8ac640;}
 }
 .summary h6{font-size:25px;}
    
-.lb{background-color:#f5f5f585;}
+.lb{background-color:#fff;border-top: solid 1px black;}
 .panel-default {   
     border-color: #dddddd8a;
-	
+	     
 }      
 .panel-group .panel+.panel {
    margin-top: 0px;   
