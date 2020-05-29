@@ -59,7 +59,7 @@ li.list-group-item {
     color: #8BC34A;
 }
 [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link:hover .fa-briefcase:before{background-color:#000 !important;} 
-.nav-item .nav-link i{        
+.fa-briefcase:before{        
 	background-color:#d3d3d3;      
     padding: 7px;         
     border-radius: 16px;}     
