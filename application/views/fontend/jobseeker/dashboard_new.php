@@ -24,8 +24,8 @@ li.list-group-item:hover{color:#8ac640;}
 	margin-bottom:20px;
 }
 .summary h6{font-size:25px;}
-   
-.lb{background-color:#fff;border-top: solid 1px black;}
+     
+.lb{background-color:#fff;border: solid 2px #d9d7d7}
 .panel-default {   
     border-color: #dddddd8a;
 	     
