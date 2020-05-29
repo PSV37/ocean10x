@@ -157,9 +157,9 @@ select{
 
 /*Common*/
 .section {  
-	padding:15px 0 !important;
+	padding:15px 0!important;
 	overflow: hidden;
-}
+}    
 .greybg {
 	background: #eceef1;
 }
