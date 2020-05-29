@@ -135,11 +135,12 @@ li.list-group-item {
     color: #34495e;
 }
 .circle-tile-heading .fa {
-    line-height: 80px;
+    line-height: 73px;
+	font-size:30px;
 }
 
 .circle-tile-content {   
-    padding-top:50px; 
+    padding-top:50px;     
 	border-radius: 3px;      
 }
 .circle-tile-description {
