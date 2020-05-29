@@ -149,7 +149,9 @@ li.list-group-item {
 }
 
 .text-faded {
-    color: rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 13px;
+    font-weight: 500;
 }
 
 .circle-tile-number {
