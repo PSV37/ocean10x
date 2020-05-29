@@ -56,12 +56,12 @@ li.list-group-item {
     padding: 7px;     
     border-radius: 16px;}
 
-[class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link:focus .nav-item .nav-link i{background-color: #8bc742;}		         
+[class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link:focus.nav-item .nav-link i{background-color: #8bc742;}		         
 </style>
-   
+      
    
     
-
+    
 <div class="section lb">
   <div class="container-fluid">                                
                            
