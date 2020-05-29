@@ -395,8 +395,8 @@ li.list-group-item {
                             		</a>
                             			<div class="circle-tile-content dark-blue">
                                			 <div class="circle-tile-description text-faded">
-                                   		 Users
-                                        </div>
+                                   		 Saved Jobs
+                                        </div>    
                                         <div class="circle-tile-number text-faded">
                                             265
                                             <span id="sparklineA"></span>
