@@ -104,7 +104,7 @@ li.list-group-item {
           <li class="nav-header">MY DASHBOARD</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-file"></i>
+              <i class="fa fa-briefcase" aria-hidden="true"></i>
               <p>Documentation</p>
             </a>    
           </li>
