@@ -106,7 +106,8 @@ li.list-group-item {
 
 .circle-tile {
     margin-bottom: 15px;
-    text-align: center;
+    text-align: center;   
+	width:80%;
 }
 
 .circle-tile-heading {
