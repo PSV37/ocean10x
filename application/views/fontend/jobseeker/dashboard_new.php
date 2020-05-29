@@ -115,9 +115,10 @@ li.list-group-item {
     height: 80px;
     margin: 0 auto -40px;
     border: 3px solid rgba(255,255,255,0.3);
-    border-radius: 100%;
+    border-radius: 100%;   
     color: #fff;
     transition: all ease-in-out .3s;
+	background-color:#248c33 !important
 }
 
 /* -- Background Helper Classes */
@@ -125,7 +126,7 @@ li.list-group-item {
 /* Use these to cuztomize the background color of a div. These are used along with tiles, or any other div you want to customize. */
 
  .dark-blue {
-    background-color: #34495e;
+    background-color:#94d742;
 }
 
 /* -- Text Color Helper Classes */
