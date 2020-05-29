@@ -374,7 +374,7 @@ li.list-group-item {
                             		</a>
                             			<div class="circle-tile-content dark-blue">
                                			 <div class="circle-tile-description text-faded">
-                                   		 Users
+                                   		 Saved Jobs
                                         </div>
                                         <div class="circle-tile-number text-faded">
                                             265
@@ -395,7 +395,7 @@ li.list-group-item {
                             		</a>
                             			<div class="circle-tile-content dark-blue">
                                			 <div class="circle-tile-description text-faded">
-                                   		 Saved Jobs
+                                   		 Job Alert
                                         </div>    
                                         <div class="circle-tile-number text-faded">
                                             265
@@ -414,7 +414,7 @@ li.list-group-item {
                             		</a>
                             			<div class="circle-tile-content dark-blue">
                                			 <div class="circle-tile-description text-faded">
-                                   		 Users
+                                   		 Profile Views
                                         </div>
                                         <div class="circle-tile-number text-faded">
                                             265
@@ -436,7 +436,7 @@ li.list-group-item {
                             		</a>
                             			<div class="circle-tile-content dark-blue">
                                			 <div class="circle-tile-description text-faded">
-                                   		 Users
+                                   		 Courses Completed
                                         </div>
                                         <div class="circle-tile-number text-faded">
                                             265
@@ -455,7 +455,7 @@ li.list-group-item {
                             		</a>
                             			<div class="circle-tile-content dark-blue">
                                			 <div class="circle-tile-description text-faded">
-                                   		 Users
+                                   		 Article Views
                                         </div>
                                         <div class="circle-tile-number text-faded">
                                             265
@@ -474,8 +474,8 @@ li.list-group-item {
                             		</a>
                             			<div class="circle-tile-content dark-blue">
                                			 <div class="circle-tile-description text-faded">
-                                   		 Users
-                                        </div>
+                                   		 News Feed
+                                        </div>   
                                         <div class="circle-tile-number text-faded">
                                             265
                                             <span id="sparklineA"></span>
