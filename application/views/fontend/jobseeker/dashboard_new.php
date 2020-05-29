@@ -58,7 +58,7 @@ li.list-group-item {
     background-color: rgba(255,255,255,.1);
     color: #8BC34A;
 }
-[class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link:focus, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link:hover .fa-briefcase:before{background-color:#000 !important;} 
+[class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link:focus .fa-briefcase:before{background-color:#000 !important;} 
 .fa-briefcase:before{        
 	background-color:#d3d3d3;      
     padding: 7px;         
