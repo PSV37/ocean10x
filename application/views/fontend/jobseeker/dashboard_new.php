@@ -62,8 +62,8 @@ li.list-group-item {
 .fa-briefcase:before{        
 	  animation:toLeftFromRight 0.3s forwards;       
     padding: 7px;         
-    border-radius: 16px;}     
-
+    border-radius: 16px;}        
+.nav-item .nav-link i{background-color: #8bc742;}
 [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link:focus.nav-item .nav-link i{background-color: #8bc742;}		  
 
 #left-panel .inner-left-pannel .inner-tabs .menu-tab .menu-principal ul li {
