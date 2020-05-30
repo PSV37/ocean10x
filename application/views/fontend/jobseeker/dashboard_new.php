@@ -269,14 +269,14 @@ li.list-group-item {
           
           <li class="nav-header">MY PROFILE</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="<?php echo base_url(); ?>seeker/resume" class="nav-link">
                <i class="fa fa-briefcase" aria-hidden="true"></i>
               <p>Documentation</p>
             </a>
           </li>
           <li class="nav-header">MY TRAININGS</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="<?php echo base_url() ?>training" class="nav-link">
               <i class="fa fa-briefcase" aria-hidden="true"></i>
               <p>Level 1</p>
             </a>
