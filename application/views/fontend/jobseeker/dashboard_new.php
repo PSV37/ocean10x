@@ -207,7 +207,8 @@ li.list-group-item {
 	height: 39px;
     width: 100%;
     background-image: linear-gradient(to right, #ace41e , #2196F3);
-	}  
+	}     
+.dark-blue img{margin:20px;}	 
 </style>     
       
    
