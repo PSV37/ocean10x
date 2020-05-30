@@ -370,7 +370,7 @@ li.list-group-item {
                                 <div class="col-md-12">
                                      <div class="col-lg-3 col-sm-6">
                                         <div class="circle-tile">
-                                            <a href="#">
+                                            <a href="<?php echo base_url(); ?>seeker/my-saved-jobs">
                                                 <div class="circle-tile-heading dark-blue">
                                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 width="30" height="30"
@@ -524,8 +524,7 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
                                 <div class="col-md-12">
                                      <div class="col-lg-3 col-sm-6">
                                         <div class="circle-tile">
-                                            <a href="<?php echo base_url(); ?>seeker/my-saved-jobs">
-                                                
+                                            <a href="#">
                                                 <div class="circle-tile-heading dark-blue">
                                                     <i class="fa fa-users fa-fw fa-3x"></i>
                                                 </div>
