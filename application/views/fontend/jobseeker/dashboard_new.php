@@ -208,7 +208,8 @@ li.list-group-item {
     width: 100%;
     background-image: linear-gradient(to right, #ace41e , #2196F3);
 	}     
-.dark-blue img{margin:20px;}	 
+.dark-blue img{margin:20px;}
+.dark-blue svg{margin:20px;}	 
 </style>     
       
    
