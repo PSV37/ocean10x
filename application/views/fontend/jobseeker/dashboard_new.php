@@ -478,14 +478,17 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
                                                     <span id="sparklineA"></span>
                                                 </div>
                                                 
-                                    </div>
+                                    </div>  
                                 </div>  
                             </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <div class="circle-tile">
                                             <a href="#">
                                                 <div class="circle-tile-heading dark-blue">
-                                                    <i class="fa fa-users fa-fw fa-3x"></i>
+                                                   <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="24" height="24"
+viewBox="0 0 172 172"
+style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M0,0v14.33333c24.15951,0 43,18.84049 43,43v50.16667h-21.5l28.66667,40.08854l28.66667,-40.08854h-21.5v-50.16667c0,-31.74609 -25.58724,-57.33333 -57.33333,-57.33333zM172,0c-31.74609,0 -57.33333,25.58724 -57.33333,57.33333v50.16667h-21.5l28.66667,40.08854l28.66667,-40.08854h-21.5v-50.16667c0,-24.15951 18.84049,-43 43,-43zM0,71.66667v100.33333h172v-100.33333h-28.66667v14.33333h14.33333v71.66667h-143.33333v-71.66667h14.33333v-14.33333z"></path></g></g></svg>  
                                                 </div>
                                             </a>
                                                 <div class="circle-tile-content dark-blue">
