@@ -524,14 +524,15 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
                                 <div class="col-md-12">
                                      <div class="col-lg-3 col-sm-6">
                                         <div class="circle-tile">
-                                            <a href="#">
+                                            <a href="<?php echo base_url(); ?>seeker/my-saved-jobs">
+                                                
                                                 <div class="circle-tile-heading dark-blue">
                                                     <i class="fa fa-users fa-fw fa-3x"></i>
                                                 </div>
                                             </a>
                                                 <div class="circle-tile-content dark-blue">
                                                  <div class="circle-tile-description text-faded">
-                                                 <a href="<?php echo base_url(); ?>seeker/my-saved-jobs">">Saved Jobs</a> 
+                                                 Saved Jobs
                                                 </div>
                                                 <div class="circle-tile-number text-faded">
                                                     265
