@@ -511,7 +511,7 @@ li.list-group-item {
                 <div class="containe1r">
 					<div class="row">
 		                <div class="col-md-12">
-		            	 	<div class="col-lg-3 col-sm-6">
+		            	 	 <div class="col-lg-3 col-sm-6">
                         		<div class="circle-tile">
                             		<a href="#">
                                         <div class="circle-tile-heading dark-blue">
@@ -530,18 +530,19 @@ li.list-group-item {
                             </div>
                         </div>  
                     </div>
-                    
+                            
+                            
 		            	  	<div class="col-lg-3 col-sm-6">
                         		<div class="circle-tile">
                             		<a href="#">
                                         <div class="circle-tile-heading dark-blue">
                                             <i class="fa fa-users fa-fw fa-3x"></i>
-                                        </div>
+                                        </div>     
                             		</a>
                             			<div class="circle-tile-content dark-blue">
                                			 <div class="circle-tile-description text-faded">
-                                   		 Saved Jobs
-                                        </div>
+                                   		 Job Alert
+                                        </div>    
                                         <div class="circle-tile-number text-faded">
                                             265
                                             <span id="sparklineA"></span>
@@ -549,8 +550,7 @@ li.list-group-item {
                                         
                             </div>
                         </div>  
-                    </div>
-                    
+                    </div>   
 			            	<div class="col-lg-3 col-sm-6">
                         		<div class="circle-tile">
                             		<a href="#">
@@ -560,7 +560,7 @@ li.list-group-item {
                             		</a>
                             			<div class="circle-tile-content dark-blue">
                                			 <div class="circle-tile-description text-faded">
-                                   		 Saved Jobs
+                                   		 Profile Views
                                         </div>
                                         <div class="circle-tile-number text-faded">
                                             265
@@ -571,9 +571,8 @@ li.list-group-item {
                         </div>  
                     </div>   
 			           	 	  
-		             	</div> 
-                        
-					</div>
+		             	</div>
+                        </div>
 					
 
 					
@@ -596,7 +595,7 @@ li.list-group-item {
                 <div class="containe1r">
 					<div class="row">
 		                <div class="col-md-12">
-		            	 	<div class="col-lg-3 col-sm-6">
+		            	 	 <div class="col-lg-3 col-sm-6">
                         		<div class="circle-tile">
                             		<a href="#">
                                         <div class="circle-tile-heading dark-blue">
@@ -615,18 +614,19 @@ li.list-group-item {
                             </div>
                         </div>  
                     </div>
-                    
+                            
+                            
 		            	  	<div class="col-lg-3 col-sm-6">
                         		<div class="circle-tile">
                             		<a href="#">
                                         <div class="circle-tile-heading dark-blue">
                                             <i class="fa fa-users fa-fw fa-3x"></i>
-                                        </div>
+                                        </div>     
                             		</a>
                             			<div class="circle-tile-content dark-blue">
                                			 <div class="circle-tile-description text-faded">
-                                   		 Saved Jobs
-                                        </div>
+                                   		 Job Alert
+                                        </div>    
                                         <div class="circle-tile-number text-faded">
                                             265
                                             <span id="sparklineA"></span>
@@ -635,7 +635,6 @@ li.list-group-item {
                             </div>
                         </div>  
                     </div>   
-                    
 			            	<div class="col-lg-3 col-sm-6">
                         		<div class="circle-tile">
                             		<a href="#">
@@ -645,7 +644,7 @@ li.list-group-item {
                             		</a>
                             			<div class="circle-tile-content dark-blue">
                                			 <div class="circle-tile-description text-faded">
-                                   		 Saved Jobs
+                                   		 Profile Views
                                         </div>
                                         <div class="circle-tile-number text-faded">
                                             265
@@ -656,9 +655,8 @@ li.list-group-item {
                         </div>  
                     </div>   
 			           	 	  
-		             	</div>   
-                        
-					</div>
+		             	</div>
+                        </div>
 					
 
 					
@@ -681,29 +679,91 @@ li.list-group-item {
                 <div class="containe1r">
 					<div class="row">
 		                <div class="col-md-12">
-		            	 	<div class="col-md-3 summary">
-		            	  	<i class="fa fa-briefcase" aria-hidden="true"></i><h6>45</h6>
-		            	  		<p>Resume Writer</p>   
-		            	  	</div>
-		            	  	<div class="col-md-3 summary">
-		            	  		<i class="fa fa-bell"></i><h6>10</h6>
-		            	  		<p>Career Advice</p>
-		            	  	</div>
-			            	<div class="col-md-3 summary">
-			            	  	<i class="fad fa-eye"></i><h6>100</h6>
-		            	  		<p>PMS</p>
-			           	 	</div>   
+		            	 	 <div class="col-lg-3 col-sm-6">
+                        		<div class="circle-tile">
+                            		<a href="#">
+                                        <div class="circle-tile-heading dark-blue">
+                                            <i class="fa fa-users fa-fw fa-3x"></i>
+                                        </div>
+                            		</a>
+                            			<div class="circle-tile-content dark-blue">
+                               			 <div class="circle-tile-description text-faded">
+                                   		 Saved Jobs
+                                        </div>
+                                        <div class="circle-tile-number text-faded">
+                                            265
+                                            <span id="sparklineA"></span>
+                                        </div>
+                                        
+                            </div>
+                        </div>  
+                    </div>
+                            
+                            
+		            	  	<div class="col-lg-3 col-sm-6">
+                        		<div class="circle-tile">
+                            		<a href="#">
+                                        <div class="circle-tile-heading dark-blue">
+                                            <i class="fa fa-users fa-fw fa-3x"></i>
+                                        </div>     
+                            		</a>
+                            			<div class="circle-tile-content dark-blue">
+                               			 <div class="circle-tile-description text-faded">
+                                   		 Job Alert
+                                        </div>    
+                                        <div class="circle-tile-number text-faded">
+                                            265
+                                            <span id="sparklineA"></span>
+                                        </div>
+                                        
+                            </div>
+                        </div>  
+                    </div>   
+			            	<div class="col-lg-3 col-sm-6">
+                        		<div class="circle-tile">
+                            		<a href="#">
+                                        <div class="circle-tile-heading dark-blue">
+                                            <i class="fa fa-users fa-fw fa-3x"></i>
+                                        </div>
+                            		</a>
+                            			<div class="circle-tile-content dark-blue">
+                               			 <div class="circle-tile-description text-faded">
+                                   		 Profile Views
+                                        </div>
+                                        <div class="circle-tile-number text-faded">
+                                            265
+                                            <span id="sparklineA"></span>
+                                        </div>
+                                        
+                            </div>
+                        </div>  
+                    </div>   
 			           	 	  
 		             	</div>
                         
-                        
-                          <div class="col-md-12">
-                          <div class="col-md-3 summary">
-		            	  	<i class="fa fa-briefcase" aria-hidden="true"></i><h6>45</h6>
-		            	  		<p>On Bording</p>   
-		            	  	</div>
+                        <div class="row">
+		                <div class="col-md-12">
+		            	 	 <div class="col-lg-3 col-sm-6">
+                        		<div class="circle-tile">
+                            		<a href="#">
+                                        <div class="circle-tile-heading dark-blue">
+                                            <i class="fa fa-users fa-fw fa-3x"></i>
+                                        </div>
+                            		</a>
+                            			<div class="circle-tile-content dark-blue">
+                               			 <div class="circle-tile-description text-faded">
+                                   		 Saved Jobs
+                                        </div>
+                                        <div class="circle-tile-number text-faded">
+                                            265
+                                            <span id="sparklineA"></span>
+                                        </div>
+                                        
                             </div>
-					</div>
+                        </div>  
+                    </div>
+                            </div>
+                            </div>
 					
 
 					
