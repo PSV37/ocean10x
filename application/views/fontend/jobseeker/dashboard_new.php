@@ -214,17 +214,47 @@ li.list-group-item {
 <div class="gradient_strip"></div>    
     
 <div class="section lb">
-  <div class="container-fluid">                                                        
+  <div class="container-fluid">                                
+                           
     <div class="row">
      <div class="content col-md-3">
-  		<div class="wrapper">
-			<aside class="main-sidebar sidebar-dark-primary elevation-4">    
-  					 <div class="sidebar">
-      
-      <nav class="mt-2">
+  
+  
+  
+<div class="wrapper">
+
+  <!-- Navbar -->
+  
+  <!-- /.navbar -->     
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">    
+    <!-- Brand Logo -->      
    
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
       
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+      
+      
+      
+      
+      
+      
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview menu-open">
+            
+            <ul class="nav nav-treeview">
+ 
+           
+         
+               
+               
+               
           <li class="nav-header">MY DASHBOARD</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -734,141 +764,6 @@ li.list-group-item {
       </div>                  
            
             
-             <div class="content col-md-9">
-        <div class="userccount">
-          <div id="vsphoto" class="tab-pane fade in">
-            <h5>My Dashboard</h5>   
-            
-            	<div class="row">
-              		<div class="col-md-12">
-                		<div class="container">
-							<div class="row">
-                                <div class="col-md-12">
-                                     <div class="col-lg-3 col-sm-6">
-                                        <div class="circle-tile">
-                                            <a href="#">
-                                                <div class="circle-tile-heading dark-blue">
-                                                    <i class="fa fa-users fa-fw fa-3x"></i>
-                                                </div>
-                                            </a>
-                                                <div class="circle-tile-content dark-blue">
-                                                 <div class="circle-tile-description text-faded">
-                                                 Saved Jobs
-                                                </div>
-                                                <div class="circle-tile-number text-faded">
-                                                    265
-                                                    <span id="sparklineA"></span>
-                                                </div>
-                                                
-                                    </div>
-                                </div>  
-                            </div>
-                                    <div class="col-lg-3 col-sm-6">
-                                        <div class="circle-tile">
-                                            <a href="#">
-                                                <div class="circle-tile-heading dark-blue">
-                                                    <i class="fa fa-users fa-fw fa-3x"></i>
-                                                </div>     
-                                            </a>
-                                                <div class="circle-tile-content dark-blue">
-                                                 <div class="circle-tile-description text-faded">
-                                                 Job Alert
-                                                </div>    
-                                                <div class="circle-tile-number text-faded">
-                                                    265
-                                                    <span id="sparklineA"></span>
-                                                </div>
-                                                
-                                    </div>
-                                </div>  
-                            </div>   	
-                                    <div class="col-lg-3 col-sm-6">
-                                        <div class="circle-tile">
-                                            <a href="#">
-                                                <div class="circle-tile-heading dark-blue">
-                                                    <i class="fa fa-users fa-fw fa-3x"></i>
-                                                </div>
-                                            </a>
-                                                <div class="circle-tile-content dark-blue">
-                                                 <div class="circle-tile-description text-faded">
-                                                 Profile Views
-                                                </div>
-                                                <div class="circle-tile-number text-faded">
-                                                    265
-                                                    <span id="sparklineA"></span>
-                                                </div>
-                                                
-                                    </div>
-                                </div>  
-                            </div>   
-                                      
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="col-lg-3 col-sm-6">
-                                        <div class="circle-tile">
-                                            <a href="#">
-                                                <div class="circle-tile-heading dark-blue">
-                                                    <i class="fa fa-users fa-fw fa-3x"></i>
-                                                </div>
-                                            </a>
-                                                <div class="circle-tile-content dark-blue">
-                                                 <div class="circle-tile-description text-faded">
-                                                 Courses Completed
-                                                </div>
-                                                <div class="circle-tile-number text-faded">
-                                                    265
-                                                    <span id="sparklineA"></span>
-                                                </div>
-                                                
-                                    </div>
-                                </div>  
-                            </div>
-                                    <div class="col-lg-3 col-sm-6">
-                                        <div class="circle-tile">
-                                            <a href="#">
-                                                <div class="circle-tile-heading dark-blue">
-                                                    <i class="fa fa-users fa-fw fa-3x"></i>
-                                                </div>
-                                            </a>
-                                                <div class="circle-tile-content dark-blue">
-                                                 <div class="circle-tile-description text-faded">
-                                                 Article Views
-                                                </div>
-                                                <div class="circle-tile-number text-faded">
-                                                    265
-                                                    <span id="sparklineA"></span>
-                                                </div>
-                                                
-                                    </div>
-                                </div>  
-                            </div>
-                                    <div class="col-lg-3 col-sm-6">
-                                        <div class="circle-tile">
-                                            <a href="#">
-                                                <div class="circle-tile-heading dark-blue">
-                                                    <i class="fa fa-users fa-fw fa-3x"></i>
-                                                </div>
-                                            </a>
-                                                <div class="circle-tile-content dark-blue">
-                                                 <div class="circle-tile-description text-faded">
-                                                 News Feed
-                                                </div>   
-                                                <div class="circle-tile-number text-faded">
-                                                    265
-                                                    <span id="sparklineA"></span>
-                                                </div>
-                                                
-                                    </div>
-                                </div>  
-                            </div>
-                                </div>
-							</div>
-					 </div> 
-                </div>
-          </div>
-        </div>
-      </div>
-            
             
             
             
@@ -877,12 +772,12 @@ li.list-group-item {
              
           </div>
                              
-        </div>
-      </div>
+        </div><!-- end col -->
+      </div><!-- end row --> 
       
        
-    </div>
-  </div>
+    </div><!-- end container -->
+  </div><!-- end section -->
 </div>
 
 
