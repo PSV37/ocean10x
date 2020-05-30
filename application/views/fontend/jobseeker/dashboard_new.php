@@ -485,9 +485,9 @@ li.list-group-item {
                             </div>
                                 </div>
 							</div>
-					 </div> 
-                </div>
-          </div>
+					 	</div> 
+               		 </div>
+         		 </div>
         </div>
       </div>
            
@@ -561,70 +561,13 @@ li.list-group-item {
                             </div>   
                                       
                                 </div>
-                                <div class="col-md-12">
-                                    <div class="col-lg-3 col-sm-6">
-                                        <div class="circle-tile">
-                                            <a href="#">
-                                                <div class="circle-tile-heading dark-blue">
-                                                    <i class="fa fa-users fa-fw fa-3x"></i>
-                                                </div>
-                                            </a>
-                                                <div class="circle-tile-content dark-blue">
-                                                 <div class="circle-tile-description text-faded">
-                                                 Courses Completed
-                                                </div>
-                                                <div class="circle-tile-number text-faded">
-                                                    265
-                                                    <span id="sparklineA"></span>
-                                                </div>
-                                                
-                                    </div>
-                                </div>  
-                            </div>
-                                    <div class="col-lg-3 col-sm-6">
-                                        <div class="circle-tile">
-                                            <a href="#">
-                                                <div class="circle-tile-heading dark-blue">
-                                                    <i class="fa fa-users fa-fw fa-3x"></i>
-                                                </div>
-                                            </a>
-                                                <div class="circle-tile-content dark-blue">
-                                                 <div class="circle-tile-description text-faded">
-                                                 Article Views
-                                                </div>
-                                                <div class="circle-tile-number text-faded">
-                                                    265
-                                                    <span id="sparklineA"></span>
-                                                </div>
-                                                
-                                    </div>
-                                </div>  
-                            </div>
-                                    <div class="col-lg-3 col-sm-6">
-                                        <div class="circle-tile">
-                                            <a href="#">
-                                                <div class="circle-tile-heading dark-blue">
-                                                    <i class="fa fa-users fa-fw fa-3x"></i>
-                                                </div>
-                                            </a>
-                                                <div class="circle-tile-content dark-blue">
-                                                 <div class="circle-tile-description text-faded">
-                                                 News Feed
-                                                </div>   
-                                                <div class="circle-tile-number text-faded">
-                                                    265
-                                                    <span id="sparklineA"></span>
-                                                </div>
-                                                
-                                    </div>
-                                </div>  
-                            </div>
-                                </div>
+                               
 							</div>
-					 </div> 
-                </div>
+					 	</div> 
+               	 </div>
           </div>
         </div>
+      </div>
       </div>     
            
            
