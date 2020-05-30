@@ -531,7 +531,7 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
                                             </a>
                                                 <div class="circle-tile-content dark-blue">
                                                  <div class="circle-tile-description text-faded">
-                                                 Saved Jobs
+                                                 <a href="<?php echo base_url(); ?>seeker/my-saved-jobs">">Saved Jobs</a> 
                                                 </div>
                                                 <div class="circle-tile-number text-faded">
                                                     265
