@@ -394,7 +394,10 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
                                         <div class="circle-tile">
                                             <a href="#">
                                                 <div class="circle-tile-heading dark-blue">
-                                                    <i class="fa fa-users fa-fw fa-3x"></i>
+                                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="50" height="50"
+viewBox="0 0 172 172"
+style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M29.24896,29.24896c-14.52827,14.52253 -23.51562,34.58598 -23.51562,56.75104c0,22.16507 8.98736,42.22851 23.51563,56.75104l24.32188,-24.32188c-8.3076,-8.29613 -13.4375,-19.76423 -13.4375,-32.42917c0,-12.66493 5.13563,-24.1273 13.4375,-32.42917zM142.75104,29.24896l-24.32188,24.32188c8.30187,8.30187 13.4375,19.76423 13.4375,32.42917c0,12.66493 -5.13563,24.1273 -13.4375,32.42917l24.33308,24.33308c14.52253,-14.52827 23.50442,-34.59718 23.50442,-56.76224c0,-22.16507 -8.98736,-42.22851 -23.51562,-56.75104zM86,68.8c-9.4993,0 -17.2,7.7007 -17.2,17.2c0,9.4993 7.7007,17.2 17.2,17.2c9.4993,0 17.2,-7.7007 17.2,-17.2c0,-9.4993 -7.7007,-17.2 -17.2,-17.2z"></path></g></g></svg>
                                                 </div>     
                                             </a>
                                                 <div class="circle-tile-content dark-blue">
@@ -413,7 +416,10 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
                                         <div class="circle-tile">
                                             <a href="#">
                                                 <div class="circle-tile-heading dark-blue">
-                                                    <i class="fa fa-users fa-fw fa-3x"></i>
+                                                   <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="24" height="24"
+viewBox="0 0 172 172"
+style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M57.33333,7.16667c-11.86979,0 -21.5,9.63021 -21.5,21.5c0,11.86979 9.63021,21.5 21.5,21.5c11.86979,0 21.5,-9.63021 21.5,-21.5c0,-11.86979 -9.63021,-21.5 -21.5,-21.5zM114.66667,7.16667c-11.86979,0 -21.5,9.63021 -21.5,21.5c0,11.86979 9.63021,21.5 21.5,21.5c11.86979,0 21.5,-9.63021 21.5,-21.5c0,-11.86979 -9.63021,-21.5 -21.5,-21.5zM28.66667,50.16667c-11.86979,0 -21.5,9.63021 -21.5,21.5c0,11.86979 9.63021,21.5 21.5,21.5c11.86979,0 21.5,-9.63021 21.5,-21.5c0,-11.86979 -9.63021,-21.5 -21.5,-21.5zM143.33333,50.16667c-11.86979,0 -21.5,9.63021 -21.5,21.5c0,11.86979 9.63021,21.5 21.5,21.5c11.86979,0 21.5,-9.63021 21.5,-21.5c0,-11.86979 -9.63021,-21.5 -21.5,-21.5zM86,86c-11.86979,0 -21.5,9.63021 -21.5,21.5c0,11.86979 9.63021,21.5 21.5,21.5c11.86979,0 21.5,-9.63021 21.5,-21.5c0,-11.86979 -9.63021,-21.5 -21.5,-21.5zM15.00521,96.75c-8.5944,5.01107 -15.00521,14.33333 -15.00521,25.08333v8.51042c0,0 7.16667,5.82292 28.66667,5.82292c21.5,0 28.66667,-5.82292 28.66667,-5.82292v-8.51042c0,-10.75 -6.41081,-20.07226 -15.00521,-25.08333c-4.31119,2.1556 -8.65039,3.58333 -13.66146,3.58333c-5.01107,0 -9.35026,-1.42774 -13.66146,-3.58333zM129.67188,96.75c-8.5944,5.01107 -15.00521,14.33333 -15.00521,25.08333v8.51042c0,0 7.16667,5.82292 28.66667,5.82292c21.5,0 28.66667,-5.82292 28.66667,-5.82292v-8.51042c0,-10.75 -6.41081,-20.07226 -15.00521,-25.08333c-4.31119,2.1556 -8.65039,3.58333 -13.66146,3.58333c-5.01107,0 -9.35026,-1.42774 -13.66146,-3.58333zM72.33854,132.58333c-8.5944,5.01107 -15.00521,14.33333 -15.00521,25.08333v8.51042c0,0 7.16667,5.82292 28.66667,5.82292c21.5,0 28.66667,-5.82292 28.66667,-5.82292v-8.51042c0,-10.75 -6.41081,-20.07226 -15.00521,-25.08333c-4.31119,2.1556 -8.65039,3.58333 -13.66146,3.58333c-5.01107,0 -9.35026,-1.42774 -13.66146,-3.58333z"></path></g></g></svg>
                                                 </div>
                                             </a>
                                                 <div class="circle-tile-content dark-blue">
@@ -435,7 +441,10 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
                                         <div class="circle-tile">
                                             <a href="#">
                                                 <div class="circle-tile-heading dark-blue">
-                                                    <i class="fa fa-users fa-fw fa-3x"></i>
+                                                   <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="24" height="24"
+viewBox="0 0 172 172"
+style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M10.32,13.76c-5.68406,0 -10.32,4.63594 -10.32,10.32v89.7625c5.03906,-26.82125 10.68281,-56.90781 10.965,-58.3725c1.74688,-8.90906 8.46563,-14.19 18.06,-14.19h132.655v-3.44c0,-5.68406 -4.63594,-10.32 -10.32,-10.32h-89.3325c-0.95406,-0.34937 -2.91594,-3.46687 -3.9775,-5.16c-2.64719,-4.21937 -5.36156,-8.6 -9.89,-8.6zM29.025,48.16c-4.4075,0 -9.89,1.54531 -11.2875,8.7075c-0.44344,2.23063 -13.84062,73.54344 -17.7375,94.2775v0.215c0,5.68406 4.63594,10.32 10.32,10.32h134.16c5.57656,0 10.13188,-4.46125 10.32,-9.9975l17.0925,-92.5575l0.1075,-0.645c0,-5.68406 -4.63594,-10.32 -10.32,-10.32z"></path></g></g></svg>
                                                 </div>
                                             </a>
                                                 <div class="circle-tile-content dark-blue">
@@ -454,7 +463,10 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
                                         <div class="circle-tile">
                                             <a href="#">
                                                 <div class="circle-tile-heading dark-blue">
-                                                    <i class="fa fa-users fa-fw fa-3x"></i>
+                                                   <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="24" height="24"
+viewBox="0 0 172 172"
+style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M100.33781,6.88h-76.25781v158.24h123.84v-112.02844zM92.51719,136.6325c1.96188,-0.30906 15.31875,-24.68469 -3.25187,-41.13219c5.21375,18.03312 -2.28438,30.05969 -9.7825,15.81594c-8.14313,14.24375 1.30344,23.09906 3.26531,25.31625c-13.03438,0 -19.565,-10.11844 -19.565,-23.42156c0,-17.71062 17.60312,-22.77656 19.565,-42.71781c22.48094,15.18437 29.32062,31.01375 29.32062,43.04031c0,11.0725 -6.83969,23.09906 -19.55156,23.09906zM99.76,55.04v-41.28l41.28,41.28z"></path></g></g></svg>
                                                 </div>
                                             </a>
                                                 <div class="circle-tile-content dark-blue">
