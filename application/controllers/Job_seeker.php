@@ -1105,7 +1105,7 @@ public function search(){
         $where_edu="js_saved_jobs.job_seeker_id='$jobseeker_id'";
         $join_save = array(
             'job_posting' => 'job_posting.job_post_id=js_saved_jobs.job_post_id | LFET OUTER',
-            'city' => 'city.id=job_posting.city_id | right OUTER',
+            'city' => 'city.id=job_posting.city_id | LFET OUTER',
         );
        
         $select_edu = "job_posting.job_title,job_posting.job_slugs,job_posting.job_position,job_posting.company_profile_id,js_saved_jobs.created_on,js_saved_jobs.job_post_id,js_saved_jobs.job_seeker_id,js_saved_jobs.id,city.city_name";
