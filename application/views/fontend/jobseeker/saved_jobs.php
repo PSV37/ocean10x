@@ -32,7 +32,7 @@
                 </h4>
               </td>
               <td><?php echo $this->company_profile_model->company_name($applicaiton['company_profile_id']); ?></td>
-              <td><?php echo $applicaiton['city_name'];  ?></td>
+              <td><?php echo $applicaiton['city_id'];  ?></td>
               <!-- <td><?php echo date('M j, Y',strtotime($applicaiton['created_on']));  ?></td> -->
               
               <td>

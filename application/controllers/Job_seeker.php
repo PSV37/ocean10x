@@ -1105,13 +1105,13 @@ public function search(){
         $where_edu="js_saved_jobs.job_seeker_id='$jobseeker_id'";
         $join_save = array(
             'job_posting' => 'job_posting.job_post_id=js_saved_jobs.job_post_id | LFET OUTER',
-            'city' => 'city.id=job_posting.city_id | LFET OUTER',
+            // 'city' => 'city.id=job_posting.city_id | LFET OUTER',
         );
        
-        $select_edu = "job_posting.job_title,job_posting.job_slugs,job_posting.job_position,job_posting.company_profile_id,js_saved_jobs.created_on,js_saved_jobs.job_post_id,js_saved_jobs.job_seeker_id,js_saved_jobs.id,city.city_name";
+        $select_edu = "job_posting.job_title,job_posting.job_slugs,job_posting.job_position,job_posting.company_profile_id,js_saved_jobs.created_on,js_saved_jobs.job_post_id,js_saved_jobs.job_seeker_id,js_saved_jobs.id,city.city_id";
         $data['saved_job_data'] = $this->Master_model->getMaster("js_saved_jobs", $where_edu, $join_save, $order = false, $field = false, $select_edu,$limit=false,$start=false, $search=false);
 
-        echo $this->db->last_query(); die;
+        // echo $this->db->last_query(); die;
         $this->load->view('fontend/jobseeker/saved_jobs',$data);
     }
 
