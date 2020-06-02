@@ -76,7 +76,7 @@ $this->load->view('fontend/layout/seeker_header.php');
                   </select>
                 </div>
                 <div class="col-md-12 col-sm-12">
-                  <label class="control-label ">Topics<span class="required">*</span> </label>
+                  <label class="control-label">Topics<span class="required">*</span> </label>
                   <div id="add_topics"></div>
                  
                 </div>
