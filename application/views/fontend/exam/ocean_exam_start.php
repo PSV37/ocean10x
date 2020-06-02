@@ -74,7 +74,7 @@
   $('form#nextques').submit(function(e)
   {
      var timer = $('#timer_val').val();
-     alert(timer);
+     // alert(timer);
       e.preventDefault();
     
     $.ajax({
