@@ -1379,19 +1379,19 @@ public function user_profile()
                 foreach ($saved_job_data as $applicaiton) {
                    $result .='<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 
-                  <img src="<?php echo base_url()?>uploads/<?php echo $this->company_profile_model->company_logoby_id($applicaiton["company_profile_id"]); ?>" class="dimen_img-s" />
+                  <img src="'echo base_url()'uploads/' echo $this->company_profile_model->company_logoby_id($applicaiton["company_profile_id"]);'"class="dimen_img-s" />
 
-                   <div class="job_title"><a href="<?php  echo base_url();?>job/show/<?php echo $this->job_posting_model->get_slug_nameby_id($applicaiton["job_post_id"]) ?>"><?php echo $this->job_posting_model->job_title_by_name($applicaiton["job_post_id"]); ?></a>
+                   <div class="job_title"><a href="'echo base_url();'job/show/'echo $this->job_posting_model->get_slug_nameby_id($applicaiton["job_post_id"])'"'echo $this->job_posting_model->job_title_by_name($applicaiton["job_post_id"]);'</a>
                  
                    
                    </div> 
-                    <div class="organization">
-                     <?php echo $this->company_profile_model->company_name($applicaiton["company_profile_id"]); ?>
-                    </div>
-                    <div class="location">
-                      <?php echo $applicaiton["city_id"];  ?>
-                    </div>
-                    <a href="<?php echo base_url(); ?>job/show/<?php echo $applicaiton["job_slugs"]; ?>" class="btn btn-success btn-xs apply_job_btn">Apply job</a>
+                    <div class="organization">'
+                      echo $this->company_profile_model->company_name($applicaiton["company_profile_id"]);
+                    '</div>
+                    <div class="location">'
+                       echo $applicaiton["city_id"]; 
+                    '</div>
+                    <a href="'echo base_url();'job/show/' echo $applicaiton["job_slugs"]'" class="btn btn-success btn-xs apply_job_btn">Apply job</a>
                     <!-- <div class="apply_job_btn">Apply job</div> -->
                     <button class="job_dis_btn">Details</button>';
                 }
