@@ -35,7 +35,7 @@
                                     <span class="icon-container">
                    						<i class="fas fa-user-alt"></i>
                					   </span>
-                                <span class="text item">My profil</span>
+                                <span class="text item">My profile</span>
                                       </a>
        						   </li>
                                
