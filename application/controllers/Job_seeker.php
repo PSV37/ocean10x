@@ -1376,22 +1376,20 @@ public function user_profile()
                 $select_edu = "job_posting.job_title,job_posting.job_slugs,job_posting.job_position,job_posting.company_profile_id,js_saved_jobs.created_on,js_saved_jobs.job_post_id,js_saved_jobs.job_seeker_id,js_saved_jobs.id,job_posting.city_id";
                 $saved_job_data = $this->Master_model->getMaster("js_saved_jobs", $where_edu, $join_save, $order = false, $field = false, $select_edu,$limit=false,$start=false, $search=false);
 
-                foreach ($saved_job_data as $applicaiton) {
+                foreach ($saved_job_data as $applicaiton) 
+                {
                     $base_url= base_url();
                     $company_logo=$this->company_profile_model->company_logoby_id($applicaiton["company_profile_id"]);
                     $company_slug=$this->job_posting_model->get_slug_nameby_id($applicaiton["job_post_id"]);
                     $job_title= $this->job_posting_model->job_title_by_name($applicaiton["job_post_id"]);
                     $company_name =$this->company_profile_model->company_name($applicaiton["company_profile_id"]);
-                   $result .='<div class="job-voucher alert alert-dismissible" ><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    
+                    $result .='<div class="job-voucher alert alert-dismissible" ><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 
-                  <img src="'.$base_url.'uploads/'.$company_logo.'"class="dimen_img-s" />
+                        <img src="'.$base_url.'upload/'.$company_logo.'"class="dimen_img-s" />
 
-                   <div class="job_title"><a href="'.$base_url.'job/show/'.$company_slug.'"'.$job_title.'</a>
-                 
-                   
-                   </div> 
-                    <div class="organization">'
-                      .$company_name.
+                        <div class="job_title"><a href="'.$base_url.'job/show/'.$company_slug.'"'.$job_title.'</a></div> 
+                        <div class="organization">'.$company_name.
                     '</div>
                     <div class="location">'.$applicaiton["city_id"]. 
                     '</div>
