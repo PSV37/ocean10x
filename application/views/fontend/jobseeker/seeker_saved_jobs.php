@@ -123,7 +123,7 @@
         
         </div> 
 
-                <div class="col-md-12">
+                <div class="col-md-9">
                 
                     <div class="gradient_strip"></div>
                     <div class="text-grad">
