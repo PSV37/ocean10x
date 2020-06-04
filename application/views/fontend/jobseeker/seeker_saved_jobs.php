@@ -3,117 +3,14 @@
 
 <div clas="row">
 	<div class="col-md-12">
-    	<div class="col-md-3">
-        <aside id="left-panel" style="overflow:scroll; border-right: 1px solid rgba(240, 240, 240, 0.3);box-shadow: 2px 2px 4px 0px #00000033;height:100vh;">
-    <div class="inner-left-pannel">
-        
-<!---header-->        
-        
-        
-        <!-- menus START -->
-        <div class="my-moving-parts">
-            <div class="my-param-content"></div>
-            <div class="my-normal-content">
-               <div class="inner-tabs-navigation" data-active="menu">
-                </div>
-                <div class="inner-tabs">
-                    <div class="account-tab">
-                        <div class="language-selection" title="Change language">
-                                        <div class="btn-header transparent pull-right dropdown" style="margin-top: -1px;">
-                							<span><a href="#" class="dropdown-toggle locale" data-toggle="dropdown">
-                          					  <i class="flag flag-us"></i> 
-                       							 </a>
-                         					 </span>
-                						</div>
-                  		</div>
-                    </div>
-                    
-                    <div class="menu-tab">
-                        
-                        <nav class="menu-principal">
-                        <div class="menu_logo" style="height: 115px;">
-                        	<img src="https://www.consultnhire.com/files/1506847224_00024vs-logo.jpg" />
-                        </div>
-                            <ul class="menu-principal-list" style="">
-                   				 <li class="active">
-           							 <a data-dl-view="true" data-dl-title="Dashboard" href="#">
-                                    <span class="icon-container">
-                  					 	 <i class="fas fa-tachometer-alt"></i>
-               					    </span>
-                                	<span class="text item">Dashboard</span>
-                                    </a>
-        						</li>
-                    			<li>
-           							 <a data-dl-view="true" data-dl-title="My profile" href="/candidate/detail">
-                                    <span class="icon-container">
-                   						<i class="fas fa-user-alt"></i>
-               					   </span>
-                                <span class="text item">My profil</span>
-                                      </a>
-       						   </li>
-                               
-                   			  <li>
-           					 <a data-dl-view="true" data-dl-title="Contacts" href="/candidate">
-                               <span class="icon-container">
-                  				 <i class="fas fa-phone-volume"></i>
-               				 </span>
-                                <span class="text item">Contacts</span>
-                             </a>
-      						  </li>
-                   				 <li>
-           						 <a data-dl-view="true" data-dl-title="Recruitments" href="/campaign">
-                                    <span class="icon-container">
-                  					  <i class="fas fa-filter"></i>
-              						  </span>
-                                <span class="text item">Recruitments </span>
-                                  </a>
-								</li>
-                   				 <li>
-            						<a data-dl-view="true" data-dl-title="Mobility" href="/jobprofile/generate">
-                                    <span class="icon-container">
-                  					  <i class="fas fa-map-signs"></i>
-              						  </span>
-                                <span class="text item">Mobility</span>
-                                      </a>
-       							 </li>
-                    				<li>
-            				<a data-dl-view="true" data-dl-title="Predictive models" href="/jobprofile">
-                            <span class="icon-container">
-                  			   <i class="fas fa-th-large"></i>
-              				  </span>
-                                <span class="text item">Predictive models</span>
-                             </a>
-       							 </li>
-                  				  <li>
-           						 <a data-dl-view="true" data-dl-title="Talent mapper" href="/talentmapper/generate">
-                                    <span class="icon-container">
-                   				 <i class="fas fa-th-large"></i>
-              					  </span>
-                                <span class="text item"> Talent mapper</span>
-                                 </a>
-       							 </li>
-                           		 <li>
-          					  <a data-dl-view="true" data-dl-title="Settings" href="/params" class="hidden-xs hidden-sm                                       hidden-md hidden-lg">
-                                <span class="icon-container">
-                   			    <i class="fas fa-cog"></i>
-                				</span>
-                                <span class="text item">Settings</span>
-                                            </a>
-       							 </li>
-   							 </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- menus END -->
-    </div>
-        </aside>
-        
-        </div>
+    
+    <?php 
+    $this->load->view('fontend/layout/new_seeker_header.php');
+?> 
         
  <div class="col-md-9">
         <div class="row">
+  
                 <div class="col-md-12">
                 
                     <div class="gradient_strip"></div>
@@ -131,15 +28,65 @@
             	<h3 class="profile_heading">SAVED JOB</h3>
              
                   <div class="seperate-btn">   
-                    <button class="all_b active_save_btn">All</button>  
-                    <button class="sort_b">Sort</button>  
+                    <!-- <button class="all_b active_save_btn">All</button> -->
+                    <!-- <label>Sort By</label> -->
+
+                    <select class="all_b active_save_btn" onchange="sortbyduration(this.value);">
+                      <option value="all">All</option>
+                      <option value="week">Last Week</option>
+                      <option value="month">Last Month</option>
+                    </select>  
+                    <!-- <button class="sort_b">Sort</button>   -->
+                    <label>Sort By</label>
+                    <select class="sort_b">
+                      <option>Recent</option>
+                      <option>Experience</option>
+                      <option>Status</option>
+                    </select>
                   </div>
                   
              
              
             <div class="col-md-12">
-            <div class="col-md-9">
-            	<div class="job-voucher alert alert-dismissible">
+            <div class="col-md-9" id="sort">
+            <?php
+             $sr_no=0;
+            if (!empty($saved_job_data)): foreach ($saved_job_data as $applicaiton) : $sr_no++;
+
+            ?>
+            <div class="job-voucher alert alert-dismissible" >
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+
+                  <img src="<?php echo base_url()?>upload/<?php echo $this->company_profile_model->company_logoby_id($applicaiton['company_profile_id']); ?>" class="dimen_img-s" />
+
+                   <div class="job_title"><a href="<?php  echo base_url();?>job/show/<?php echo $this->job_posting_model->get_slug_nameby_id($applicaiton['job_post_id']) ?>"><?php echo $this->job_posting_model->job_title_by_name($applicaiton['job_post_id']); ?></a>
+                   <!-- The person/job specification can be presented as a stand-alone  -->
+                   
+                   </div> 
+                    <div class="organization">
+                     <?php echo $this->company_profile_model->company_name($applicaiton['company_profile_id']); ?>
+                    </div>
+                    <div class="location">
+                      <?php echo $applicaiton['city_id'];  ?>
+                    </div>
+                    <a href="<?php echo base_url(); ?>job/show/<?php echo $applicaiton['job_slugs']; ?>" class="btn btn-success btn-xs apply_job_btn">Apply job</a>
+                    <!-- <div class="apply_job_btn">Apply job</div> -->
+                    <button class="job_dis_btn">Details</button>
+                </div>
+            <?php
+              endforeach;
+            ?>
+            <?php else : ?> 
+            
+                <div>
+                    <strong>There is no data to display</strong>
+                  
+                </div>
+             
+              
+            <?php endif; ?>
+            	
+                <!-- <div class="job-voucher alert alert-dismissible">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 	<img src="https://media-exp1.licdn.com/dms/image/C4E0BAQHbWPfQdNw1EA/company-logo_200_200/0?e=2159024400&v=beta&t=fWMuJX9leYFsDf-weERHLyIPfRh4aCOwx8wygmhad9Q" class="dimen_img-s" />
                    <div class="job_title">
@@ -183,22 +130,7 @@
                     </div>
                     <div class="apply_job_btn">Apply job</div>
                     <button class="job_dis_btn">Details</button>
-                </div>
-                <div class="job-voucher alert alert-dismissible">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                	<img src="https://media-exp1.licdn.com/dms/image/C4E0BAQHbWPfQdNw1EA/company-logo_200_200/0?e=2159024400&v=beta&t=fWMuJX9leYFsDf-weERHLyIPfRh4aCOwx8wygmhad9Q" class="dimen_img-s" />
-                   <div class="job_title">
-                   The person/job specification can be presented as a stand-alone 
-                   </div> 
-                    <div class="organization">
-                    	IT Company
-                    </div>
-                    <div class="location">
-                    	Pune ,Kalyani nagar
-                    </div>
-                    <div class="apply_job_btn">Apply job</div>
-                    <button class="job_dis_btn">Details</button>
-                </div>
+                </div> -->
                 
             </div>
             <div class="col-md-3"></div>
@@ -214,6 +146,8 @@
             
             	
           </div>
+        </div>
+      </div>
           
          
           
@@ -242,5 +176,22 @@ anime.timeline({loop: ""})
     duration: 1300,
     delay: (el, i) => 45 * i
   })
+
+  function sortbyduration(value)
+  {
+       if(value){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>job_seeker/getsorteddata',
+                data:{type:value},
+                success:function(res){
+                  $('#sort').html(res);
+                  // alert(res);
+                }
+        
+            }); 
+        }
+    
+  }
  </script>
  
