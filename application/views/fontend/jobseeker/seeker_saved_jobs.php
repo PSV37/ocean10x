@@ -54,7 +54,7 @@
             if (!empty($saved_job_data)): foreach ($saved_job_data as $applicaiton) : $sr_no++;
 
             ?>
-            <div class="job-voucher alert alert-dismissible">
+            <div class="job-voucher alert alert-dismissible" id="sort">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 
                   <img src="<?php echo base_url()?>upload/<?php echo $this->company_profile_model->company_logoby_id($applicaiton['company_profile_id']); ?>" class="dimen_img-s" />
@@ -185,8 +185,8 @@ anime.timeline({loop: ""})
                 url:'<?php echo base_url();?>job_seeker/getsorteddata',
                 data:{type:value},
                 success:function(res){
-                  // $('#state_id').html(res);
-                  alert(res);
+                  $('#sort').html(res);
+                  // alert(res);
                 }
         
             }); 
