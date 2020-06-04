@@ -1379,7 +1379,7 @@ public function user_profile()
                 foreach ($saved_job_data as $applicaiton) {
                    $result .='<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 
-                  <img src="'echo base_url();'uploads/' echo $this->company_profile_model->company_logoby_id($applicaiton["company_profile_id"]);'"class="dimen_img-s" />
+                  <img src="'.echo base_url();.'uploads/'. echo $this->company_profile_model->company_logoby_id($applicaiton["company_profile_id"]);.'"class="dimen_img-s" />
 
                    <div class="job_title"><a href="'echo base_url();'job/show/'echo $this->job_posting_model->get_slug_nameby_id($applicaiton["job_post_id"])'"'echo $this->job_posting_model->job_title_by_name($applicaiton["job_post_id"]);'</a>
                  
