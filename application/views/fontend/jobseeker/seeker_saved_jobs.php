@@ -29,7 +29,7 @@
              
                   <div class="seperate-btn">   
                     <!-- <button class="all_b active_save_btn">All</button> -->
-                    <label>Sort By</label>
+                    <!-- <label>Sort By</label> -->
 
                     <select class="all_b active_save_btn">
                       <option>All</option>
