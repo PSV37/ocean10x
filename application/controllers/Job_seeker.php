@@ -1109,12 +1109,21 @@ public function search(){
 
                 $lastWeek = date("Y-m-d", strtotime("-7 days"));
                 $today = date("Y-m-d");
-                echo $lastWeek;
+                // echo $lastWeek;
                 $where_edu="js_saved_jobs.job_seeker_id='$jobseeker_id' and DATE_FORMAT(created_at, 'Y-m-d') between '$lastWeek' and '$today' ";
+            }
+            elseif ($type=='month') {
+                $lastMonth = date("Y-m-d", strtotime("-30 days"));
+                $today = date("Y-m-d");
+                // echo $lastWeek;
+                $where_edu="js_saved_jobs.job_seeker_id='$jobseeker_id' and DATE_FORMAT(created_at, 'Y-m-d') between '$lastMonth' and '$today' ";
+            }
+            elseif ($type=='all') {
+                 $where_edu="js_saved_jobs.job_seeker_id='$jobseeker_id'";
             }
         }
 
-        $where_edu="js_saved_jobs.job_seeker_id='$jobseeker_id'";
+       
         $join_save = array(
             'job_posting' => 'job_posting.job_post_id=js_saved_jobs.job_post_id | LFET OUTER',
             // 'city' => 'city.id=job_posting.city_id | LFET OUTER',
