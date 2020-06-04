@@ -1,17 +1,17 @@
 <!--header--->
-<div class="container-fluid main-box_Scroll">
+<!-- <div class="container-fluid main-box_Scroll">
 
 <div clas="row">
 	<div class="col-md-12">
     	<div class="col-md-3">
         <aside id="left-panel" style="overflow:scroll; border-right: 1px solid rgba(240, 240, 240, 0.3);box-shadow: 2px 2px 4px 0px #00000033;height:100vh;">
-    <div class="inner-left-pannel">
+    <div class="inner-left-pannel"> -->
         
 <!---header-->        
         
         
         <!-- menus START -->
-        <div class="my-moving-parts">
+        <!-- <div class="my-moving-parts">
             <div class="my-param-content"></div>
             <div class="my-normal-content">
                <div class="inner-tabs-navigation" data-active="menu">
@@ -105,15 +105,20 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- menus END -->
-    </div>
+    <!-- </div>
         </aside>
         
-        </div>
+        </div> -->
+        <?php 
+    $this->load->view('fontend/layout/new_seeker_header.php');
+?> 
         
  <div class="col-md-9">
         <div class="row">
+      <?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
+
                 <div class="col-md-12">
                 
                     <div class="gradient_strip"></div>
@@ -217,7 +222,7 @@
           
          
           
-  </div>               
+  <!-- </div>                -->
               
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script> 
 <script>

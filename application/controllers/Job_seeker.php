@@ -1112,7 +1112,8 @@ public function search(){
         $data['saved_job_data'] = $this->Master_model->getMaster("js_saved_jobs", $where_edu, $join_save, $order = false, $field = false, $select_edu,$limit=false,$start=false, $search=false);
 
         // echo $this->db->last_query(); die;
-        $this->load->view('fontend/jobseeker/saved_jobs',$data);
+        // $this->load->view('fontend/jobseeker/saved_jobs',$data);
+        $this->load->view('fontend/jobseeker/seeker_saved_jobs',$data);
     }
 
     public function delete_saved_job($id)
