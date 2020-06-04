@@ -34,7 +34,7 @@
                       <span class="icon-container">
                    		<i class="fas fa-user-alt"></i>
                				</span>
-                      <span class="text item">My profile</span>
+                      <span class="text item">My Ocean profie</span>
                       </a>
        						</li>
                   <li>
@@ -42,7 +42,7 @@
                       <span class="icon-container">
                   		<i class="fas fa-phone-volume"></i>
                				</span>
-                      <span class="text item">Contacts</span>
+                      <span class="text item">OceanHunt Activities</span>
                       </a>
       						</li>
                   <li>
@@ -50,7 +50,7 @@
                     <span class="icon-container">
                   	<i class="fas fa-filter"></i>
               			</span>
-                    <span class="text item">Recruitments </span>
+                    <span class="text item">Skill Upgrade</span>
                     </a>
 								  </li>
                   <li>
@@ -58,10 +58,10 @@
                       <span class="icon-container">
                   		<i class="fas fa-map-signs"></i>
               				</span>
-                      <span class="text item">Mobility</span>
+                      <span class="text item">Become an OceanChamp</span>
                     </a>
        						</li>
-                  <li>
+                  <!-- <li>
             				<a data-dl-view="true" data-dl-title="Predictive models" href="/jobprofile">
                     <span class="icon-container">
                   	<i class="fas fa-th-large"></i>
@@ -84,7 +84,7 @@
                 		</span>
                     <span class="text item">Settings</span>
                     </a>
-       						</li>
+       						</li> -->
    							</ul>
               </nav>
             </div>
