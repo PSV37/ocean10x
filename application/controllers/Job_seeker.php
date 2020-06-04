@@ -1381,7 +1381,7 @@ public function user_profile()
                     $company_logo=$this->company_profile_model->company_logoby_id($applicaiton["company_profile_id"]);
                     $company_slug=$this->job_posting_model->get_slug_nameby_id($applicaiton["job_post_id"]);
                     $job_title= $this->job_posting_model->job_title_by_name($applicaiton["job_post_id"]);
-
+                    $company_name =$this->company_profile_model->company_name($applicaiton["company_profile_id"]);
                    $result .='<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 
                   <img src="'.$base_url.'uploads/'.$company_logo.'"class="dimen_img-s" />
@@ -1391,12 +1391,11 @@ public function user_profile()
                    
                    </div> 
                     <div class="organization">'
-                      echo $this->company_profile_model->company_name($applicaiton["company_profile_id"]);
+                      .$company_name.
                     '</div>
-                    <div class="location">'
-                       echo $applicaiton["city_id"]; 
+                    <div class="location">'.$applicaiton["city_id"]. 
                     '</div>
-                    <a href="'echo base_url();'job/show/' echo $applicaiton["job_slugs"]'" class="btn btn-success btn-xs apply_job_btn">Apply job</a>
+                    <a href="'.$base_url.'job/show/'.$applicaiton["job_slugs"].'" class="btn btn-success btn-xs apply_job_btn">Apply job</a>
                     <!-- <div class="apply_job_btn">Apply job</div> -->
                     <button class="job_dis_btn">Details</button>';
                 }
