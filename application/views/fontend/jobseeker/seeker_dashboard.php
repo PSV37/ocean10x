@@ -1,391 +1,430 @@
-<?php 
-    $this->load->view('fontend/layout/seeker_header.php');
-?> 
-<style>
-.summary{
-	/*border: 1px solid;*/
-    border-radius: 6px;
-    background: #cbced247;
-   	margin: 2px;
-   	width: 256px;
-    padding: 15px;
-}
-h6{
-	text-align: center;
-    margin: 15px;
-    font-size: 25px;
-}
-.career{
-	border-radius: 6px;
-    background: #cbced247;
-   	margin: 2px;
-    padding: 15px;
-}
-.tag_line{
-	text-align: unset !important;
-}
-.title-career{
-	font-size: 20px;
-	font-style: bold;
-}
-	    
-</style>    
-<?php if (!empty($this->session->flashdata('Message'))) {?>
-<div  id="smsg" class="alert alert-<?php echo $this->session->flashdata('type');?> alert-dismissible fade in">
-  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  <strong ><?php echo $this->session->flashdata('Message');?></strong>
-</div> 
+<div class="container-fluid">
 
-<?php } ?>   
-
-
- <!-- Page Title start -->
-<!-- <div class="pageTitle">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-sm-6">
-        <h1 class="page-heading">Dashboard</h1>
-      </div>
-      <div class="col-md-6 col-sm-6">
-        <div class="breadCrumb"><a href="#.">Home</a> / <span>Dashboard</span></div>
-      </div>
-    </div>
-  </div>
-</div> -->
-<!-- Page Title End -->             
-
-<div class="section lb">
-  <div class="container">                                
-                         
-    <div class="row">
-      <?php $this->load->view('fontend/layout/seeker_left.php'); ?>
-      <div class="content col-md-9">
-        <div class="userccount">
-
-          <div id="vsphoto" class="tab-pane fade in">
-            <h5>Your Dashboard</h5>
-           
-            <div class="row">
-              <div class="col-md-12">
-                <div class="containe1r">
-					<div class="row">
-		                <div class="col-md-12">
-		            	 	<div class="col-md-3 summary">
-		            	  		<h6>45</h6>
-		            	  		<p>Who viewed your profile</p>
-		            	  	</div>
-		            	  	<div class="col-md-3 summary">
-		            	  		<h6>10</h6>
-		            	  		<p>Article views</p>
-		            	  	</div>
-			            	<div class="col-md-3 summary">
-			            	  	<h6>100</h6>
-		            	  		<p>Search Appearnaces</p>
-			           	 	</div>
-			           	 	
-		             	</div>
-					</div>
-					<div class="panel-body"></div>
-
-					<div class="row career">
-						<div class="col-md-12">
-		                	<div class="col-md-1"><i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
-		                	<div class="col-md-11">
-				           	 	<sapn class="title-career"><b>Profile Percentage</b></sapn> <br><br>
-				           	 	<?php $each=100/6;
-				           	 		// echo $each;
-				           	 		$personal_info=$each;
-				           	 		$education=$each;
-				           	 		$skills=$each;
-				           	 		$work_experience=$each;
-				           	 		$Desired_profile=$each;
-				           	 		$attach_resume=$each;
-
-				           	 		$personal_info_each=$personal_info/14;
-				           	 		$education_each=$education/5;
-				           	 		$Desired_profile_each=$Desired_profile/11;
-				           	 		
-				           	 		//for personal info
-                					 $job_seeker=$this->session->userdata('job_seeker_id');  
-
-				           	 		$name=$this->Job_seeker_model->jobseeker_name($job_seeker);
-				           	 		// print_r($this->db->last_query());
-				           	 		if (isset($name) && !empty($name)) 
-				           	 		{
-				           	 			$personal_total +=$personal_info_each;
-				           	 		}
-
-				           	 		$job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($job_seeker);
-				           	 		if (isset($job_seeker_photo->js_photo_id) && !empty($job_seeker_photo->js_photo_id)) 
-				           	 		{
-				           	 			$personal_total +=$personal_info_each;
-				           	 		}
-
-				           	 		$js_personal_info = $this->job_seeker_personal_model->personalinfo_list_by_id($job_seeker);
-
-				           	 		if (isset($js_personal_info->date_of_birth) && !empty($js_personal_info->date_of_birth)) 
-				           	 		{
-				           	 			$personal_total +=$personal_info_each;
-				           	 		}
-
-				           	 		if (isset($js_personal_info->mobile) && !empty($js_personal_info->mobile)) 
-				           	 		{
-				           	 			$personal_total +=$personal_info_each;
-				           	 		}
-
-				           	 		if (isset($js_personal_info->present_address) && !empty($js_personal_info->present_address)) 
-				           	 		{
-				           	 			$personal_total +=$personal_info_each;
-				           	 		}
-
-				           	 		if (isset($js_personal_info->city_name) && !empty($js_personal_info->city_name)) 
-				           	 		{
-				           	 			$personal_total +=$personal_info_each;
-				           	 		}
-
-				           	 		if (isset($js_personal_info->state_name) && !empty($js_personal_info->state_name)) 
-				           	 		{
-				           	 			$personal_total +=$personal_info_each;
-				           	 		}
-
-				           	 		if (isset($js_personal_info->country_name) && !empty($js_personal_info->country_name)) 
-				           	 		{
-				           	 			$personal_total +=$personal_info_each;
-				           	 		}
-
-				           	 		if (isset($js_personal_info->marital_status) && !empty($js_personal_info->marital_status)) 
-				           	 		{
-				           	 			$personal_total +=$personal_info_each;
-				           	 		}
-
-				           	 		if (isset($js_personal_info->work_permit_usa) && !empty($js_personal_info->work_permit_usa)) 
-				           	 		{
-				           	 			$personal_total +=$personal_info_each;
-				           	 		}
-
-				           	 		if (isset($js_personal_info->work_permit_countries) && !empty($js_personal_info->work_permit_countries)) 
-				           	 		{
-				           	 			$personal_total +=$personal_info_each;
-				           	 		}
-
-				           	 		if (isset($js_personal_info->website) && !empty($js_personal_info->website)) 
-				           	 		{
-				           	 			$personal_total +=$personal_info_each;
-				           	 		}
-
-				           	 		if (isset($js_personal_info->resume_title) && !empty($js_personal_info->resume_title)) 
-				           	 		{
-				           	 			$personal_total +=$personal_info_each;
-				           	 		}
-
-				           	 		if (isset($js_personal_info->resume_title) && !empty($js_personal_info->resume_title)) 
-				           	 		{
-				           	 			$personal_total +=$personal_info_each;
-				           	 			
-				           	 		}
-
-				           	 $where_lang="job_seeker_id='$job_seeker' ORDER BY language ASC";
-            			$languages = $this->Master_model->getMaster('js_languages',$where_lang);
-
-            						if (isset($languages) && !empty($languages)) 
-				           	 		{
-				           	 			$personal_total +=$personal_info_each;
-				           	 		}
-
-			$education_level = $this->Master_model->getMaster('education_level',$where=false);
-			// foreach ($education_level as $v_education) :
-				$seeker_edu_id = $v_education['education_level_id'];
-
-							$where_ress = "js_education.job_seeker_id='$job_seeker'";
-				           $education_data = geSeekerEducationByid($job_seeker,$seeker_edu_id);
-				           $select='education_level_id';
-							$education_data = $this->Master_model->getMaster('js_education',$where_ress, $join = FALSE, $order = false, $field = false, $select = $select,$limit=false,$start=false, $search=false);
-								foreach ($education_data as $row) 
-								{
-									if (in_array('1', $row)) {
-									$education_total +=$education_each;
-										}
-										if (in_array('2', $row)) {
-											$education_total +=$education_each;
-										}
-										if (in_array('3', $row)) {
-											$education_total +=$education_each;
-										}
-										if (in_array('4', $row)) {
-											$education_total +=$education_each;
-										}
-										if (in_array('5', $row)) {
-											$education_total +=$education_each;
-										}
-										if (in_array('6', $row)) {
-											$education_total +=$education_each;
-										}
-								}
-
-								$where_skill['job_seeker_id']=$job_seeker;
-			$js_skills = $this->Master_model->getMaster('job_seeker_skills',$where_skill);
-			// print_r($js_skills);
-
-								if (isset($js_skills) && !empty($js_skills)) 
-				           	 		{
-				           	 			$skill_total +=$skills;
-				           	 			
-				           	 		}
-
-				           	 		$where_ex['job_seeker_id']=$job_seeker;
-			$js_experience = $this->Master_model->getMaster('js_experience',$where_ex);
-			// print_r($js_skills);
-
-								if (isset($js_experience) && !empty($js_experience)) 
-				           	 		{
-				           	 			$work_experience_total+=$work_experience;
-				           	 			
-				           	 		}
-		
-				          
-				          $job_seeker_resume = $this->Master_model->get_master_row('js_attached_resumes', $select =FALSE ,$where="job_seeker_id='$job_seeker'",$join = false);
-
-				          if (isset($job_seeker_resume) && !empty($job_seeker_resume)) 
-				           	 		{
-				           	 			$attach_resume_total+=$attach_resume;
-				           	 			
-				           	 		}
-
-
-							$where_sek['job_seeker_id'] = $job_seeker;
-
-							$js_desired_profile = $this->Master_model->get_master_row("js_career_info", $select = false, $where_sek);
-							// print_r($js_desired_profile);
-
-								if (isset($js_desired_profile['industry_id']) && !empty($js_desired_profile['industry_id'])) 
-				           	 		{
-				           	 			$career_total +=$Desired_profile_each;
-				           	 		}
-
-				           	 		if (isset($js_desired_profile['dept_id']) && !empty($js_desired_profile['dept_id'])) 
-				           	 		{
-				           	 			$career_total +=$Desired_profile_each;
-				           	 			
-				           	 		}
-
-				           	 		if (isset($js_desired_profile['job_role']) && !empty($js_desired_profile['job_role'])) 
-				           	 		{
-				           	 			$career_total +=$Desired_profile_each;
-				           	 			
-				           	 			}		           	 		
-
-				           	 		if (isset($js_desired_profile['shift_id']) && !empty($js_desired_profile['shift_id'])) 
-				           	 		{
-				           	 			$career_total +=$Desired_profile_each;
-				           	 			
-				           	 		}
-
-				           	 		if (isset($js_desired_profile['salary_type']) && !empty($js_desired_profile['salary_type'])) 
-				           	 		{
-				           	 			$career_total +=$Desired_profile_each;
-				           	 			
-				           	 		}
-
-				           	 		if (isset($js_desired_profile['last_salary_hike']) && !empty($js_desired_profile['last_salary_hike'])) 
-				           	 		{
-				           	 			$career_total +=$Desired_profile_each;
-				           	 			
-				           	 		}
-
-				           	 		if (isset($js_desired_profile['availability_date']) && !empty($js_desired_profile['availability_date'])) 
-				           	 		{
-				           	 			$career_total +=$Desired_profile_each;
-				           	 			
-				           	 		}
-
-				           	 		if (isset($js_desired_profile['notice_period']) && !empty($js_desired_profile['notice_period'])) 
-				           	 		{
-				           	 			$career_total +=$Desired_profile_each;
-				           	 			
-				           	 		}
-
-				           	 		if (isset($js_desired_profile['job_area']) && !empty($js_desired_profile['job_area'])) 
-				           	 		{
-				           	 			$career_total +=$Desired_profile_each;
-				           	 			
-				           	 		}
-
-				           	 		if (isset($js_desired_profile['desired_industry']) && !empty($js_desired_profile['desired_industry'])) 
-				           	 		{
-				           	 			$career_total +=$Desired_profile_each;
-				           	 			
-				           	 		}
-
-				           	 		if (isset($js_desired_profile['avaliable']) && !empty($js_desired_profile['avaliable'])) 
-				           	 		{
-				           	 			$career_total +=$Desired_profile_each;
-				           	 			
-				           	 		}
-
-				           	 		
-
-				           	 		// endforeach;
-
-						$total=$personal_total+$education_total+$skill_total+$work_experience_total+$attach_resume_total+$career_total;
-				           	 		
-
-				           	 	 ?>
-				           	 	 <div class="progress bg-warning">
-								 <div class="progress-bar bg-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $total;?>%"><?php echo round($total); ?> percent Profile completed.
-								
-								 </div>
-								</div>
-				           	 	<!-- <div class="progress-bar bg-success" style="width:<?php echo $total;?>%"><?php echo round($total); ?> percent Profile completed.</div> -->
-				           	 	<hr>
-				           	 	<br>
-				           	</div>
-		             	</div>
-		                <div class="col-md-12">
-		                	<div class="col-md-1"><i class="fa fa-user" aria-hidden="true"></i></div>
-		                	<div class="col-md-11">
-				           	 	<sapn class="title-career"><b>Career Advice</b></sapn> <br><br>
-				           	 	<span>Participate in the career advice platform: <a href="#">On</a></span><br>
-				           	 	<p class="tag_line">Get career advice by conversing with other LinkedIn users who are leaders in their fields</p><hr>
-				           	</div>
-		             	</div>
-		             	<div class="col-md-12">
-		             		<div class="col-md-1"><i class="fa fa-briefcase" aria-hidden="true"></i></div>
-		             		<div class="col-md-11">
-			           	 		<span class="title-career"><b>Career Interests</b></span><br><br>
-			           	 		<span>Let recruiters know you’re open: <a href="#">Off</a></span><br>	
-			           	 		<p class="tag_line">Choose the types of opportunities you’d like to be connected with</p><hr>
-			           	 	</div>
-		             	</div>
-		             	<div class="col-md-12">
-		             		<div class="col-md-1"><i class="fa fa-money" aria-hidden="true"></i></div>
-		             		<div class="col-md-11">
-			           	 		<span class="title-career"><b>Salary Insights</b></span><br><br>
-			           	 		<p class="tag_line">See how your salary compares to others in the community</p><hr>
-			           	 	</div>
-		             	</div><br><hr>
-					</div>
-
-		                  
-                </div> <!-- container end -->
-                                          
-              </div>
-              
+<div clas="row">
+	<div class="col-md-12">
+    	<div class="col-md-3">
+        <aside id="left-panel" style="overflow:scroll; border-right: 1px solid rgba(240, 240, 240, 0.3);box-shadow: 2px 2px 4px 0px #00000033;">
+    <div class="inner-left-pannel">
+        
+        
+        <!-- menus -->
+        <div class="my-moving-parts">
+            <div class="my-param-content"></div>
+            <div class="my-normal-content">
+               <div class="inner-tabs-navigation" data-active="menu">
+                </div>
+                <div class="inner-tabs">
+                    <div class="account-tab">
+                        <div class="language-selection" title="Change language">
+                                        <div class="btn-header transparent pull-right dropdown" style="margin-top: -1px;">
+                							<span><a href="#" class="dropdown-toggle locale" data-toggle="dropdown">
+                          					  <i class="flag flag-us"></i> 
+                       							 </a>
+                         					 </span>
+                						</div>
+                  		</div>
+                    </div>
+                    
+                    <div class="menu-tab">
+                        
+                        <nav class="menu-principal">
+                        <div class="menu_logo" style="height: 115px;">
+                        	<img src="https://www.consultnhire.com/files/1506847224_00024vs-logo.jpg" />
+                        </div>
+                            <ul class="menu-principal-list" style="">
+                   				 <li class="active">
+           							 <a data-dl-view="true" data-dl-title="Dashboard" href="#">
+                                    <span class="icon-container">
+                  					 	 <i class="fas fa-tachometer-alt"></i>
+               					    </span>
+                                	<span class="text item">Dashboard</span>
+                                    </a>
+        						</li>
+                    			<li>
+           							 <a data-dl-view="true" data-dl-title="My profile" href="/candidate/detail">
+                                    <span class="icon-container">
+                   						<i class="fas fa-user-alt"></i>
+               					   </span>
+                                <span class="text item">My profil</span>
+                                      </a>
+       						   </li>
+                               
+                   			  <li>
+           					 <a data-dl-view="true" data-dl-title="Contacts" href="/candidate">
+                               <span class="icon-container">
+                  				 <i class="fas fa-phone-volume"></i>
+               				 </span>
+                                <span class="text item">Contacts</span>
+                             </a>
+      						  </li>
+                   				 <li>
+           						 <a data-dl-view="true" data-dl-title="Recruitments" href="/campaign">
+                                    <span class="icon-container">
+                  					  <i class="fas fa-filter"></i>
+              						  </span>
+                                <span class="text item">Recruitments </span>
+                                  </a>
+								</li>
+                   				 <li>
+            						<a data-dl-view="true" data-dl-title="Mobility" href="/jobprofile/generate">
+                                    <span class="icon-container">
+                  					  <i class="fas fa-map-signs"></i>
+              						  </span>
+                                <span class="text item">Mobility</span>
+                                      </a>
+       							 </li>
+                    				<li>
+            				<a data-dl-view="true" data-dl-title="Predictive models" href="/jobprofile">
+                            <span class="icon-container">
+                  			   <i class="fas fa-th-large"></i>
+              				  </span>
+                                <span class="text item">Predictive models</span>
+                             </a>
+       							 </li>
+                  				  <li>
+           						 <a data-dl-view="true" data-dl-title="Talent mapper" href="/talentmapper/generate">
+                                    <span class="icon-container">
+                   				 <i class="fas fa-th-large"></i>
+              					  </span>
+                                <span class="text item"> Talent mapper</span>
+                                 </a>
+       							 </li>
+                           		 <li>
+          					  <a data-dl-view="true" data-dl-title="Settings" href="/params" class="hidden-xs hidden-sm                                       hidden-md hidden-lg">
+                                <span class="icon-container">
+                   			    <i class="fas fa-cog"></i>
+                				</span>
+                                <span class="text item">Settings</span>
+                                            </a>
+       							 </li>
+   							 </ul>
+                        </nav>
+                    </div>
+                </div>
             </div>
-          </div>
-                             
-        </div><!-- end col -->
-      </div><!-- end row -->  
-    </div><!-- end container -->
-  </div><!-- end section -->
+        </div>
+        <!-- menus END -->
+    </div>
+        </aside>
+        
+        </div>
+        
+        
+        <div class="col-md-9">
+        <div class="row">
+                <div class="col-md-12">
+               <!---header---> 
+                    <div class="gradient_strip"></div>
+                    <div class="text-grad">
+                    <h1 class="ml10">
+                      <span class="text-wrapper">
+                        <span class="letters">Dashboard</span>
+                         <p>Profile</p>
+                      </span>
+                    </h1>
+                    </div>
+                 </div>	 
+                 <!---hedaer--->
+                    <!---main dashboard-->
+                  <div class="col-md-12"> 
+                  	<div class="col-md-9"> 
+                    <h3 class="heading-dash">My Dashboard</h3>
+        			<div class="row">
+                    	<div class="col-md-4 card-lb">
+                        <div class="card text-white bg-primary o-hidden h-100">
+                            <div class="card-body">
+                            <div class="card-body-icon">
+                           <i class="fas fa-fw fa-download"></i>
+                            </div>
+                            <span>Saved Job</span>
+                            </div>
+                            <a class="card-footer text-white clearfix small z-1" href="#">
+                            <span class="float-left" style="font-size:2px;">10</span>
+                            </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 card-lb">
+                        	<div class="card text-white bg-danger o-hidden h-100">
+                            <div class="card-body">
+                            <div class="card-body-icon">
+                          <i class="fas fa-volume-up fa-fw"></i>
+                            </div>
+                            <div >Job Alerts</div>
+                            </div>
+                            <a class="card-footer text-white clearfix small z-1" href="#">
+                            <span class="float-left" style="font-size:22px;">20</span>
+                            </a>
+                            </div>
+                        </div>
+                       
+                        <div class="col-md-4 card-lb">
+                        	<div class="card text-white bg-warning o-hidden h-100">
+                            <div class="card-body">
+                            <div class="card-body-icon">
+                           <i class="fas fa-users fa-fw"></i>
+                            </div>
+                            <div>Profile Views</div>
+                            </div>
+                            <a class="card-footer text-white clearfix small z-1" href="#">
+                            <span class="float-left" style="font-size:22px;">20</span>
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                    	<div class="col-md-4 card-lb">
+                        <div class="card text-white bg-bluish o-hidden h-100">
+                            <div class="card-body">
+                            <div class="card-body-icon">
+                           <i class="fas fa-fw fa-download"></i>
+                            </div>
+                            <span>Article Views</span>
+                            </div>
+                            <a class="card-footer text-white clearfix small z-1" href="#">
+                            <span class="float-left" style="font-size:22px;">10</span>
+                            </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 card-lb">
+                        	<div class="card text-white bg-link o-hidden h-100">
+                            <div class="card-body">
+                            <div class="card-body-icon">
+                          <i class="fas fa-volume-up fa-fw"></i>
+                            </div>
+                            <div>courses Completed</div>
+                            </div>
+                            <a class="card-footer text-white clearfix small z-1" href="#">
+                            <span class="float-left" style="font-size:22px;">20</span>
+                            </a>
+                            </div>
+                        </div>
+                          
+                        <div class="col-md-4 card-lb">
+                        	<div class="card text-white bg-green o-hidden h-100">
+                            <div class="card-body">
+                            <div class="card-body-icon">
+                           <i class="fas fa-users fa-fw"></i>
+                            </div>
+                            <div>News Feed</div>
+                            </div>
+                            <a class="card-footer text-white clearfix small z-1" href="#">
+                            <span class="float-left" style="font-size:22px;">20</span>
+                            </a>
+                            </div>
+                        </div>
+                       </div>
+                    </div>
+                    
+                    <div class="col-md-3">
+                    	<h3 class="heading-dash_profile">PROFILE LEVEL</h3>
+                    <div class="col-md-3 col-sm-6">
+            <div class="progress yellow">
+                <span class="progress-left">
+                    <span class="progress-bar"></span>
+                </span>
+                <span class="progress-right">
+                    <span class="progress-bar"></span>
+                </span>
+                <div class="progress-value">75%</div>
+            </div>
+        </div>
+       
+                    
+                    </div>
+                    </div>
+        			
+                    <div class="col-md-12 profile-section">
+                  
+                        <div class="col-md-9"> 
+                    <h3 class="heading-dash">My Profile</h3>
+        			<div class="row">
+                    	<div class="col-md-4 ">
+                        <div class="pro-card ">
+                        	<div class="icon-pro p_color_red">
+                            <i class="fas fa-th-large"></i>
+                            </div>
+                            <div class="text-pro">
+                            <span>Ocean Profile</span>
+                           
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 ">
+                        <div class="pro-card">
+                        	<div class="icon-pro p_color_green">
+                            <i class="fas fa-th-large"></i>
+                            </div>
+                            <div class="text-pro">
+                            <span>Job Settings</span>
+                           
+                            </div>
+                            </div>
+                        </div>
+                       
+                        <div class="col-md-4 ">
+                        <div class="pro-card">
+                        	<div class="icon-pro p_color_blue">
+                            <i class="fas fa-th-large"></i>  
+                            </div>
+                            <div class="text-pro">
+                            <span>Cover Letter</span>
+                           
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    </div>
+                        <div class="col-md-3">
+                         <div class="paragraph_p_level">
+       	<p>Create your own, and see what different functions produce. Get to understand what is really happening. What type of Graph do you want</p> 
+        </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-12 profile-section">
+                  
+                        <div class="col-md-9"> 
+                    <h3 class="heading-dash">MY Trainers</h3>
+        			<div class="row">
+                    	<div class="col-md-4 ">
+                        <div class="pro-card ">
+                        	<div class="icon-pro p_color_red">
+                            <i class="fas fa-th-large"></i>
+                            </div>
+                            <div class="text-pro">
+                            <span>Ocean Courses</span>
+                           
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 ">
+                        <div class="pro-card">
+                        	<div class="icon-pro p_color_green">
+                            <i class="fas fa-th-large"></i>
+                            </div>
+                            <div class="text-pro">
+                            <span>Skill Upgrade</span>
+                           
+                            </div>
+                            </div>
+                        </div>
+                       
+                        <div class="col-md-4 ">
+                        <div class="pro-card">
+                        	<div class="icon-pro p_color_blue">
+                            <i class="fas fa-th-large"></i>  
+                            </div>
+                            <div class="text-pro">
+                            <span>Ocean Champ</span>
+                           
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    
+                    <div class="col-md-12">
+                   
+                    	
+                        <h3 class="heading-dash">OCEAN SERVICES</h3>
+                        	<div class="col-lg-3 col-sm-6">
+                                <div class="circle-tile">
+                                   
+                                        <div class="circle-tile-heading dark-blue">
+                                            250
+                                        </div>
+                                    
+                                    <div class="circle-tile-content dark-blue">
+                                        <div class="circle-tile-description text-faded">
+                                            Resume Writer
+                                        </div>
+                                        
+                                       
+                                    </div>
+                                   </div>
+                                </div>
+							
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="circle-tile">
+                                   
+                                        <div class="circle-tile-heading dark-blue">
+                                           30
+                                        </div>
+                                  
+                                    <div class="circle-tile-content dark-blue">
+                                        <div class="circle-tile-description text-faded">
+                                            Career Advice
+                                        </div>
+                                        
+                                       
+                                    </div>
+                                   </div>
+                                </div>
+                                
+                                <div class="col-lg-3 col-sm-6">
+                                <div class="circle-tile">
+                                    
+                                        <div class="circle-tile-heading dark-blue">
+                                          40
+                                        </div>
+                                   
+                                    <div class="circle-tile-content dark-blue">
+                                        <div class="circle-tile-description text-faded">
+                                            PMS
+                                        </div>
+                                        
+                                       
+                                    </div>
+                                   </div>
+                                </div>
+                                
+                                <div class="col-lg-3 col-sm-6">
+                                <div class="circle-tile">
+                                    
+                                        <div class="circle-tile-heading dark-blue">
+                                          30
+                                        </div>
+                                   
+                                    <div class="circle-tile-content dark-blue">
+                                        <div class="circle-tile-description text-faded">
+                                         On Bording
+                                        </div>
+                                        
+                                    </div>
+                                   </div>
+                                </div>
+                     
+                    </div>
+                    
+                    
+                    
+              
+        </div>     
+        </div>
+       
+       
+       
+ <!---main div end col-row--->      
 </div>
-  
-
-<?php $this->load->view("fontend/layout/footer.php"); ?>
- 
+    
+<div> 
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script> 
+<!---common script--->
  <script>
-	$(document).ready (function(){
-		$("#smsg").fadeTo(2000, 500).slideUp(500, function(){
-		$("#smsg").slideUp(500);
-		});   
-	});
+ // Wrap every letter in a span
+var textWrapper = document.querySelector('.ml10 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: ""})
+  .add({
+    targets: '.ml10 .letter',
+    rotateY: [-90, 0],
+    duration: 1300,
+    delay: (el, i) => 45 * i
+  })
  </script>
+<!---common---->
