@@ -176,7 +176,8 @@ anime.timeline({loop: ""})
     duration: 1300,
     delay: (el, i) => 45 * i
   })
-
+</script>
+<script>
   function sortbyduration(value)
   {
        if(value){
