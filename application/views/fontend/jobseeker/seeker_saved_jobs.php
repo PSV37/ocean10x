@@ -118,12 +118,9 @@
  <div class="col-md-9">
         <div class="row">
       <?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
-      </div>
-        </aside>
-        
-        </div> 
+      
 
-                <div class="col-md-9">
+                <div class="col-md-12">
                 
                     <div class="gradient_strip"></div>
                     <div class="text-grad">
