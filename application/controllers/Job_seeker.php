@@ -1377,11 +1377,16 @@ public function user_profile()
                 $saved_job_data = $this->Master_model->getMaster("js_saved_jobs", $where_edu, $join_save, $order = false, $field = false, $select_edu,$limit=false,$start=false, $search=false);
 
                 foreach ($saved_job_data as $applicaiton) {
+                    $base_url=echo base_url();
+                    $company_logo=$this->company_profile_model->company_logoby_id($applicaiton["company_profile_id"]);
+                    $company_slug=echo $this->job_posting_model->get_slug_nameby_id($applicaiton["job_post_id"]);
+                    $job_title=echo $this->job_posting_model->job_title_by_name($applicaiton["job_post_id"]);
+
                    $result .='<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 
-                  <img src="'.echo base_url();.'uploads/'. echo $this->company_profile_model->company_logoby_id($applicaiton["company_profile_id"]);.'"class="dimen_img-s" />
+                  <img src="'.$base_url.'uploads/'.$company_logo.'"class="dimen_img-s" />
 
-                   <div class="job_title"><a href="'echo base_url();'job/show/'echo $this->job_posting_model->get_slug_nameby_id($applicaiton["job_post_id"])'"'echo $this->job_posting_model->job_title_by_name($applicaiton["job_post_id"]);'</a>
+                   <div class="job_title"><a href="'.$base_url.'job/show/'.$company_slug.'"'.$job_title.'</a>
                  
                    
                    </div> 
