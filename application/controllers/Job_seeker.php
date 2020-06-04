@@ -1347,6 +1347,8 @@ public function user_profile()
 
     function getsorteddata()
     {
+
+        $jobseeker_id = $this->session->userdata('job_seeker_id');
         $type=$this->input->post('type');
          if ($type=='week') {
 
