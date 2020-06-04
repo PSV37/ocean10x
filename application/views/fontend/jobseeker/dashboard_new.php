@@ -35,7 +35,7 @@
                             </div>
                             <span>Saved Job</span>
                             </div>
-                            <a class="card-footer text-white clearfix small z-1" href="#">
+                            <a class="card-footer text-white clearfix small z-1" href="<?php echo base_url(); ?>seeker/my-saved-jobs">">
                             <span class="float-left" style="font-size:2px;">10</span>
                             </a>
                             </div>
