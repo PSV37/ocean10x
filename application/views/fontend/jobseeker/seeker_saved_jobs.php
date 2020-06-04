@@ -176,18 +176,17 @@ anime.timeline({loop: ""})
     duration: 1300,
     delay: (el, i) => 45 * i
   })
-</script>
-<script>
+
   function sortbyduration(value)
   {
-    alert(value);
        if(value){
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>job_seeker/my_saved_jobs',
+                url:'<?php echo base_url();?>job_seeker/getsorteddata',
                 data:{type:value},
                 success:function(res){
-                  $('#state_id').html(res);
+                  // $('#state_id').html(res);
+                  alert(res);
                 }
         
             }); 

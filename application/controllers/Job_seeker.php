@@ -1101,50 +1101,16 @@ public function search(){
     public function my_saved_jobs()
     {
         $jobseeker_id = $this->session->userdata('job_seeker_id');
-
-        $type=$this->input->post('type');
-
-        if (isset($type) && !empty($type)) {
-            if ($type=='week') {
-
-                $lastWeek = date("Y-m-d", strtotime("-7 days"));
-                $today = date("Y-m-d");
-                // echo $lastWeek;
-                $where_edu="js_saved_jobs.job_seeker_id='$jobseeker_id' and DATE_FORMAT(created_at, 'Y-m-d') between '$lastWeek' and '$today' ";
-            }
-            elseif ($type=='month') {
-                $lastMonth = date("Y-m-d", strtotime("-30 days"));
-                $today = date("Y-m-d");
-                // echo $lastWeek;
-                $where_edu="js_saved_jobs.job_seeker_id='$jobseeker_id' and DATE_FORMAT(created_at, 'Y-m-d') between '$lastMonth' and '$today' ";
-            }
-            elseif ($type=='all') {
-                 $where_edu="js_saved_jobs.job_seeker_id='$jobseeker_id'";
-            }
-                 $join_save = array(
-                'job_posting' => 'job_posting.job_post_id=js_saved_jobs.job_post_id | LFET OUTER',
-                // 'city' => 'city.id=job_posting.city_id | LFET OUTER',
-                );
-               
-                $select_edu = "job_posting.job_title,job_posting.job_slugs,job_posting.job_position,job_posting.company_profile_id,js_saved_jobs.created_on,js_saved_jobs.job_post_id,js_saved_jobs.job_seeker_id,js_saved_jobs.id,job_posting.city_id";
-                $data['saved_job_data'] = $this->Master_model->getMaster("js_saved_jobs", $where_edu, $join_save, $order = false, $field = false, $select_edu,$limit=false,$start=false, $search=false);
-        }
-        else
-        {
-                 $where_edu="js_saved_jobs.job_seeker_id='$jobseeker_id'";
-
-             $join_save = array(
+           
+        $where_edu="js_saved_jobs.job_seeker_id='$jobseeker_id'";
+        $join_save = array(
             'job_posting' => 'job_posting.job_post_id=js_saved_jobs.job_post_id | LFET OUTER',
             // 'city' => 'city.id=job_posting.city_id | LFET OUTER',
             );
            
             $select_edu = "job_posting.job_title,job_posting.job_slugs,job_posting.job_position,job_posting.company_profile_id,js_saved_jobs.created_on,js_saved_jobs.job_post_id,js_saved_jobs.job_seeker_id,js_saved_jobs.id,job_posting.city_id";
             $data['saved_job_data'] = $this->Master_model->getMaster("js_saved_jobs", $where_edu, $join_save, $order = false, $field = false, $select_edu,$limit=false,$start=false, $search=false);
-        }
-
-       
-       
-
+      
         // echo $this->db->last_query(); die;
         // $this->load->view('fontend/jobseeker/saved_jobs',$data);
         $this->load->view('fontend/jobseeker/seeker_saved_jobs',$data);
@@ -1382,6 +1348,32 @@ public function user_profile()
     function getsorteddata()
     {
         $type=$this->input->post('type');
+         if ($type=='week') {
+
+                $lastWeek = date("Y-m-d", strtotime("-7 days"));
+                $today = date("Y-m-d");
+                // echo $lastWeek;
+                $where_edu="js_saved_jobs.job_seeker_id='$jobseeker_id' and DATE_FORMAT(created_at, 'Y-m-d') between '$lastWeek' and '$today' ";
+            }
+            elseif ($type=='month') {
+                $lastMonth = date("Y-m-d", strtotime("-30 days"));
+                $today = date("Y-m-d");
+                // echo $lastWeek;
+                $where_edu="js_saved_jobs.job_seeker_id='$jobseeker_id' and DATE_FORMAT(created_at, 'Y-m-d') between '$lastMonth' and '$today' ";
+            }
+            elseif ($type=='all') {
+                
+                 $where_edu="js_saved_jobs.job_seeker_id='$jobseeker_id'";
+            }
+                
+                 $join_save = array(
+                'job_posting' => 'job_posting.job_post_id=js_saved_jobs.job_post_id | LFET OUTER',
+                // 'city' => 'city.id=job_posting.city_id | LFET OUTER',
+                );
+               
+                $select_edu = "job_posting.job_title,job_posting.job_slugs,job_posting.job_position,job_posting.company_profile_id,js_saved_jobs.created_on,js_saved_jobs.job_post_id,js_saved_jobs.job_seeker_id,js_saved_jobs.id,job_posting.city_id";
+                $data['saved_job_data'] = $this->Master_model->getMaster("js_saved_jobs", $where_edu, $join_save, $order = false, $field = false, $select_edu,$limit=false,$start=false, $search=false);
+
     }
 
 } //end function
