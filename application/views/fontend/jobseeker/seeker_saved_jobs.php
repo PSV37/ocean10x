@@ -28,8 +28,21 @@
             	<h3 class="profile_heading">SAVED JOB</h3>
              
                   <div class="seperate-btn">   
-                    <button class="all_b active_save_btn">All</button>  
-                    <button class="sort_b">Sort</button>  
+                    <!-- <button class="all_b active_save_btn">All</button> -->
+                    <label>Sort By</label>
+
+                    <select class="all_b active_save_btn">
+                      <option>All</option>
+                      <option>Last Week</option>
+                      <option>Last Month</option>
+                    </select>  
+                    <!-- <button class="sort_b">Sort</button>   -->
+                    <label>Sort By</label>
+                    <select class="sort_b">
+                      <option>Recent</option>
+                      <option>Experience</option>
+                      <option>Status</option>
+                    </select>
                   </div>
                   
              
@@ -43,7 +56,7 @@
             ?>
             <div class="job-voucher alert alert-dismissible">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                  <img src="<?php echo base_url()?>uploads/<?php echo $this->company_profile_model->company_logoby_id($applicaiton['company_profile_id']); ?>" class="dimen_img-s" />
+                  <img src="<?php echo base_url()?>upload/<?php echo $this->company_profile_model->company_logoby_id($applicaiton['company_profile_id']); ?>" class="dimen_img-s" />
                    <div class="job_title"><a href="<?php  echo base_url();?>job/show/<?php echo $this->job_posting_model->get_slug_nameby_id($applicaiton['job_post_id']) ?>"><?php echo $this->job_posting_model->job_title_by_name($applicaiton['job_post_id']); ?></a>
                    <!-- The person/job specification can be presented as a stand-alone  -->
                    
