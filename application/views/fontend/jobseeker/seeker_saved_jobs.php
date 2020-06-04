@@ -180,6 +180,7 @@ anime.timeline({loop: ""})
 <script>
   function sortbyduration(value)
   {
+    alert(value);
        if(value){
             $.ajax({
                 type:'POST',
