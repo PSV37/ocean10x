@@ -1382,7 +1382,7 @@ public function user_profile()
                     $company_slug=$this->job_posting_model->get_slug_nameby_id($applicaiton["job_post_id"]);
                     $job_title= $this->job_posting_model->job_title_by_name($applicaiton["job_post_id"]);
                     $company_name =$this->company_profile_model->company_name($applicaiton["company_profile_id"]);
-                   $result .='<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                   $result .='<div class="job-voucher alert alert-dismissible" ><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 
                   <img src="'.$base_url.'uploads/'.$company_logo.'"class="dimen_img-s" />
 
@@ -1397,7 +1397,7 @@ public function user_profile()
                     '</div>
                     <a href="'.$base_url.'job/show/'.$applicaiton["job_slugs"].'" class="btn btn-success btn-xs apply_job_btn">Apply job</a>
                     <!-- <div class="apply_job_btn">Apply job</div> -->
-                    <button class="job_dis_btn">Details</button>';
+                    <button class="job_dis_btn">Details</button></div>';
                 }
                   echo $result;
                 // echo $this->db->last_query();

@@ -48,13 +48,13 @@
              
              
             <div class="col-md-12">
-            <div class="col-md-9">
+            <div class="col-md-9" id="sort">
             <?php
              $sr_no=0;
             if (!empty($saved_job_data)): foreach ($saved_job_data as $applicaiton) : $sr_no++;
 
             ?>
-            <div class="job-voucher alert alert-dismissible" id="sort">
+            <div class="job-voucher alert alert-dismissible" >
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 
                   <img src="<?php echo base_url()?>upload/<?php echo $this->company_profile_model->company_logoby_id($applicaiton['company_profile_id']); ?>" class="dimen_img-s" />
