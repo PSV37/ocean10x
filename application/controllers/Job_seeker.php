@@ -1354,14 +1354,14 @@ public function user_profile()
 
                 $lastWeek = date("Y-m-d", strtotime("-7 days"));
                 $today = date("Y-m-d");
-                // echo $lastWeek;
-                $where_edu="js_saved_jobs.job_seeker_id='$jobseeker_id' and DATE_FORMAT(created_at, 'Y-m-d') between '$lastWeek' and '$today' ";
+                // echo $lastWeek;date("Y-m-d",strtotime($datetime))
+                $where_edu="js_saved_jobs.job_seeker_id='$jobseeker_id' and date(Y-m-d',strtotime(created_at)) between '$lastWeek' and '$today' ";
             }
             elseif ($type=='month') {
                 $lastMonth = date("Y-m-d", strtotime("-30 days"));
                 $today = date("Y-m-d");
                 // echo $lastWeek;
-                $where_edu="js_saved_jobs.job_seeker_id='$jobseeker_id' and DATE_FORMAT(created_at, 'Y-m-d') between '$lastMonth' and '$today' ";
+                $where_edu="js_saved_jobs.job_seeker_id='$jobseeker_id' and date(Y-m-d',strtotime(created_at)) between '$lastMonth' and '$today' ";
             }
             elseif ($type=='all') {
                 
