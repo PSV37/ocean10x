@@ -1102,6 +1102,18 @@ public function search(){
     {
         $jobseeker_id = $this->session->userdata('job_seeker_id');
 
+        $type=$this->input->post('type');
+
+        if (isset($type) && !empty($type)) {
+            if ($type=='week') {
+
+                $lastWeek = date("Y-m-d", strtotime("-7 days"));
+                $today = date("Y-m-d");
+                echo $lastWeek;
+                $where_edu="js_saved_jobs.job_seeker_id='$jobseeker_id' and DATE_FORMAT(created_at, 'Y-m-d') between '$lastWeek' and '$today' ";
+            }
+        }
+
         $where_edu="js_saved_jobs.job_seeker_id='$jobseeker_id'";
         $join_save = array(
             'job_posting' => 'job_posting.job_post_id=js_saved_jobs.job_post_id | LFET OUTER',
@@ -1343,6 +1355,11 @@ public function user_profile()
         // $job_seeker_resume = $this->Master_model->get_master_row('js_attached_resumes', $select =FALSE ,$where="job_seeker_id='$jobseeker_id'",$join = false); 
         $this->load->view('fontend/jobseeker/upgrade_skills');
     
+    }
+
+    function getsorteddata()
+    {
+        $type=$this->input->post('type');
     }
 
 } //end function

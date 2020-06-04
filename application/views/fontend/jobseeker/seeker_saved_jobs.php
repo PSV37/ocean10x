@@ -31,10 +31,10 @@
                     <!-- <button class="all_b active_save_btn">All</button> -->
                     <!-- <label>Sort By</label> -->
 
-                    <select class="all_b active_save_btn">
-                      <option>All</option>
-                      <option>Last Week</option>
-                      <option>Last Month</option>
+                    <select class="all_b active_save_btn" onchange="sortbyduration(this.value);">
+                      <option value="all">All</option>
+                      <option value="week">Last Week</option>
+                      <option value="month">Last Month</option>
                     </select>  
                     <!-- <button class="sort_b">Sort</button>   -->
                     <label>Sort By</label>
@@ -56,7 +56,9 @@
             ?>
             <div class="job-voucher alert alert-dismissible">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+
                   <img src="<?php echo base_url()?>upload/<?php echo $this->company_profile_model->company_logoby_id($applicaiton['company_profile_id']); ?>" class="dimen_img-s" />
+
                    <div class="job_title"><a href="<?php  echo base_url();?>job/show/<?php echo $this->job_posting_model->get_slug_nameby_id($applicaiton['job_post_id']) ?>"><?php echo $this->job_posting_model->job_title_by_name($applicaiton['job_post_id']); ?></a>
                    <!-- The person/job specification can be presented as a stand-alone  -->
                    
@@ -76,9 +78,11 @@
             ?>
             <?php else : ?> 
             
-                <td colspan="7">
+                <div>
                     <strong>There is no data to display</strong>
-                </td><!--/ get error message if this empty-->
+                  
+                </div>
+             
               
             <?php endif; ?>
             	
@@ -172,5 +176,21 @@ anime.timeline({loop: ""})
     duration: 1300,
     delay: (el, i) => 45 * i
   })
+
+  function sortbyduration(value)
+  {
+       if(value){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>job_seeker/my_saved_jobs',
+                data:{type:value},
+                success:function(res){
+                  $('#state_id').html(res);
+                }
+        
+            }); 
+        }
+    
+  }
  </script>
  
