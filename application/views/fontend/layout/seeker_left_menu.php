@@ -23,7 +23,7 @@
                         </div>
                             <ul class="menu-principal-list" style="">
                    				 <li class="active">
-           							 <a data-dl-view="true" data-dl-title="Dashboard" href="#">
+           							 <a data-dl-view="true" data-dl-title="Dashboard" href="<?php echo base_url(); ?>seeker/dashboard">
                                     <span class="icon-container">
                   					 	 <i class="fas fa-tachometer-alt"></i>
                					    </span>
@@ -31,7 +31,7 @@
                                     </a>
         						</li>
                     			<li>
-           							 <a data-dl-view="true" data-dl-title="My profile" href="/candidate/detail">
+           							 <a data-dl-view="true" data-dl-title="My profile" href="<?php echo base_url() ?>job_seeker/seeker_info">
                                     <span class="icon-container">
                    						<i class="fas fa-user-alt"></i>
                					   </span>
