@@ -28,7 +28,7 @@ class Job_seeker extends MY_Seeker_Controller
 	public function seeker_info()
     {
 			
-        $this->load->view('fontend/jobseeker/seeker_info');
+        $this->load->view('fontend/jobseeker/jobseeker_profile');
     }
 	
 
