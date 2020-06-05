@@ -83,28 +83,11 @@
         <aside id="left-panel" style="overflow:scroll; border-right: 1px solid rgba(240, 240, 240, 0.3);box-shadow: 2px 2px 4px 0px #00000033;height:100vh;">
 	    <div class="inner-left-pannel">
       <?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
-
+      
 
 	    </div>
 		</aside>
 	</div>
-    <div class="col-md-12">
-               <div class="gradient_strip"></div>
-                  <div class="text-grad">
-                      <h1 class="ml10">
-                      <span class="text-wrapper">
-                      <span class="letters">Dashboard</span>
-                        <p>Profile</p>
-                      </span>
-                        </h1>
-                  </div>
-                  <ul class="nav nav-tabs profile-nav " style="position:absolute;bottom:0px;left:20px;">
-                    <li class="active"><a data-toggle="tab" href="#home">My Profile</a></li>
-                    <li><a data-toggle="tab" href="#menu1">Education</a></li>
-                    <li><a data-toggle="tab" href="#menu2">Work Experience</a></li>
-                    <li><a data-toggle="tab" href="#menu3">Certs & Trainning</a></li>
-                  </ul>
-              </div>
 	
 </body>
 
