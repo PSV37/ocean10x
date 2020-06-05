@@ -30,7 +30,7 @@
                     </a>
         					</li>
                   <li>
-           					<a data-dl-view="true" data-dl-title="My profile" href="<?php echo base_url() ?>job_seeker/seeker_info">
+           					<a data-dl-view="true" data-dl-title="My Ocean profile" href="<?php echo base_url() ?>job_seeker/seeker_info">
                       <span class="icon-container">
                    		<i class="fas fa-user-alt"></i>
                				</span>
@@ -38,7 +38,7 @@
                       </a>
        						</li>
                   <li>
-           					 <a data-dl-view="true" data-dl-title="Contacts" href="/candidate">
+           					 <a data-dl-view="true" data-dl-title="Ocean Hunt Activities" href="/candidate">
                       <span class="icon-container">
                   		<i class="fas fa-phone-volume"></i>
                				</span>
@@ -46,7 +46,7 @@
                       </a>
       						</li>
                   <li>
-           					<a data-dl-view="true" data-dl-title="Recruitments" href="/campaign">
+           					<a data-dl-view="true" data-dl-title="Skill Upgrade" href="/campaign">
                     <span class="icon-container">
                   	<i class="fas fa-filter"></i>
               			</span>
@@ -54,37 +54,14 @@
                     </a>
 								  </li>
                   <li>
-            				<a data-dl-view="true" data-dl-title="Mobility" href="/jobprofile/generate">
+            				<a data-dl-view="true" data-dl-title="Become an OceanChamp" href="/jobprofile/generate">
                       <span class="icon-container">
                   		<i class="fas fa-map-signs"></i>
               				</span>
                       <span class="text item">Become an OceanChamp</span>
                     </a>
        						</li>
-                  <!-- <li>
-            				<a data-dl-view="true" data-dl-title="Predictive models" href="/jobprofile">
-                    <span class="icon-container">
-                  	<i class="fas fa-th-large"></i>
-              			</span>
-                    <span class="text item">Predictive models</span>
-                    </a>
-       						</li>
-                  <li>
-           					<a data-dl-view="true" data-dl-title="Talent mapper" href="/talentmapper/generate">
-                    <span class="icon-container">
-                   	<i class="fas fa-th-large"></i>
-              			</span>
-                    <span class="text item"> Talent mapper</span>
-                    </a>
-       						</li>
-                  <li>
-          					<a data-dl-view="true" data-dl-title="Settings" href="/params" class="hidden-xs hidden-sm                                       hidden-md hidden-lg">
-                    <span class="icon-container">
-                   	<i class="fas fa-cog"></i>
-                		</span>
-                    <span class="text item">Settings</span>
-                    </a>
-       						</li> -->
+
    							</ul>
               </nav>
             </div>
