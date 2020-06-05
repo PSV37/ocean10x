@@ -935,8 +935,15 @@ public function save_profile_details()
                 $where_cans['id']=$profile_summary_id;
                 $this->Master_model->master_update($profile_data,'js_profile_summary',$where_cans);
                 // redirect('job_seeker/seeker_info');
-            } 
-     }
+            }
+            redirect('job_seeker/seeker_info');
+            
+      }
+      else
+      {
+        redirect('job_seeker/seeker_info')
+      }
+      // seeker_info
 
 }
     
