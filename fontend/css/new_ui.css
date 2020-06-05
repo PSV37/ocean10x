@@ -510,7 +510,7 @@ box-shadow:2px 2px 2px red;
 }
 .progress.blue .progress-value{
 
-    color: #049dff;
+    color: #049dff;      
 }
 .progress.blue .progress-left .progress-bar{
     animation: loading-2 1.5s linear forwards 1.8s;
