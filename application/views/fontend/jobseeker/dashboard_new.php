@@ -48,7 +48,7 @@
                             </div>
                             <div >Job Alerts</div>
                             </div>
-                            <a class="card-footer text-white clearfix small z-1" href="<?php echo base_url(); ?>seeker/my-inbound-job-invitations">">
+                            <a class="card-footer text-white clearfix small z-1" href="<?php echo base_url(); ?>seeker/my-inbound-job-invitations">
                             <span class="float-left" style="font-size:22px;">20</span>
                             </a>
                             </div>
