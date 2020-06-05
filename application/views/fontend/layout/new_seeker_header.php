@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/font-awesome.css"> 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/responsive.css">
-    <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/main.css"> -->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/main.css">
      <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/new_ui.css">
 
 
