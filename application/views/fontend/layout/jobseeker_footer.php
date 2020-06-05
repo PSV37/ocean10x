@@ -1,6 +1,3 @@
-
-
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,7 +30,11 @@
     <link href="<?php echo base_url(); ?>asset/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
 </head>
                 		<!-- Footer -->
-	<div class="col-md-12 end-footer">
+	
+
+
+<div class="col-md-12 end-footer">
+<div class="conatiner">
 <div class="row">
 <div class="col-md-4 p-footer">
 <h5>About consultnHire</h5>
@@ -87,6 +88,6 @@
 
 
 </div>
-
+</div>
 </div>
 	<!-- ./Footer -->
