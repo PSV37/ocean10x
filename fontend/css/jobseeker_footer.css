@@ -29,7 +29,7 @@ section .section-title {
     margin-bottom: 20px;
     color:#ffffff;
 }
-#footer a {
+#footer a {    
     color: #ffffff;
     text-decoration: none !important;
     background-color: transparent;
