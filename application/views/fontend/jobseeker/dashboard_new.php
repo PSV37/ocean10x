@@ -201,7 +201,7 @@
                             <i class="fas fa-th-large"></i>
                             </div>
                             <div class="text-pro">
-                            <span><a href="<?php echo base_url() ?>seeker/skill-upgrade">Skill Upgrade</a></span>
+                            <a href="<?php echo base_url() ?>seeker/skill-upgrade"><span>Skill Upgrade</span></a>
                            
                             </div>
                             </div>
