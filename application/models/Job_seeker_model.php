@@ -306,7 +306,7 @@ public function check_forgot_user_info($email)
                               <br>
                               Dear '.$name.',<br>
                               Please click on link below to reset your password: <br>
-                              <a href="'.base_url().'register/reset_password/'. md5($to_email).'">reset</a>
+                              <a href="#">reset</a>
                               
                            <a href="'.base_url().'register/reset_password/'. md5($to_email).'" style="border-radius:4px;font-size:15px;color:white;text-decoration:none;padding:14px 7px 14px 7px;width:210px;max-width:210px;font-family:&quot;Open Sans&quot;,&quot;Helvetica Neue&quot;,Arial;margin:0;display:block;background-color:#6caa4d;text-align:center" >Reset Password</a>
                               <br>
