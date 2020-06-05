@@ -92,9 +92,9 @@
         
         <div class="col-md-9">
         <div class="row">
-                <div class="col-md-12">
+                <!-- <div class="col-md-12"> -->
                <!---header---> 
-                    <div class="gradient_strip"></div>
+                    <!-- <div class="gradient_strip"></div>
                     <div class="text-grad">
                     <h1 class="ml10">
                       <span class="text-wrapper">
@@ -103,7 +103,7 @@
                       </span>
                     </h1>
                     </div>
-                 </div>  
+                 </div>   -->
                  <!---hedaer--->
                     <!---main dashboard-->
                   <div class="col-md-12"> 
