@@ -48,7 +48,7 @@
                             </div>
                             <div >Job Alerts</div>
                             </div>
-                            <a class="card-footer text-white clearfix small z-1" href="#">
+                            <a class="card-footer text-white clearfix small z-1" href="<?php echo base_url(); ?>seeker/my-inbound-job-invitations">">
                             <span class="float-left" style="font-size:22px;">20</span>
                             </a>
                             </div>
@@ -201,7 +201,7 @@
                             <i class="fas fa-th-large"></i>
                             </div>
                             <div class="text-pro">
-                            <span>Skill Upgrade</span>
+                            <span><a href="<?php echo base_url() ?>seeker/skill-upgrade">Skill Upgrade</a></span>
                            
                             </div>
                             </div>
