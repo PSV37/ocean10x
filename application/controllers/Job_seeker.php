@@ -840,6 +840,8 @@ exit;*/
 
 public function save_profile_details()
 {
+    $jobseeker_id     = $this->session->userdata('job_seeker_id');
+   // echo $photo=$this->input->post('photo');die;
      if ($_POST) {
          $NewFileName;
             if($_FILES['txt_resume']['name']!='')
