@@ -838,6 +838,107 @@ exit;*/
         $this->load->view('fontend/jobseeker/upload_resume.php', compact('job_seeker_resume'));
     }
 
+public function save_profile_details()
+{
+     if ($_POST) {
+         $NewFileName;
+            if($_FILES['txt_resume']['name']!='')
+            {
+                $this->load->helper('string'); 
+                $NewFileName = $_FILES['txt_resume']['name']; 
+                
+                $config['upload_path'] = './upload/Resumes/';
+                $config['allowed_types'] = 'doc|docx|rtf|pdf';
+                // $config['max_size']    = '2000000';
+                //$config['encrypt_name']  = true;
+                $config['max_size']      = 2000000; //2 mb
+                $config['file_name'] = $NewFileName;
+            
+                 $this->load->library('upload', $config);      
+                 $field_name = "txt_resume";
+                 if (! $this->upload->do_upload($field_name))
+                    {
+                        $error = array('error' => $this->upload->display_errors());
+                        $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">'.$this->upload->display_errors().'</div>');
+                        redirect('job_seeker/seeker_info');
+                    }
+                    else {}
+                }//END of file checking if loop
+                else
+                    {     
+                      $NewFileName = $this->input->post('oldresume'); 
+                    }
+                $res = $this->input->post('resume_id');
+               
+                if($res)
+                {
+                    $data['job_seeker_id']  = $jobseeker_id;
+                    $data['resume']         = $NewFileName;
+                    $data['updated_by']     = $jobseeker_id;
+                    $data['updated_on']     = date('Y-m-d H:i:s');
+
+                    $where_cans['id']=$res;
+                    $this->Master_model->master_update($data,'js_attached_resumes',$where_cans);
+                    // redirect('job_seeker/seeker_info');
+                }else{
+                    $data['job_seeker_id']  = $jobseeker_id;
+                    $data['resume']         = $NewFileName;
+                    $data['created_by']     = $jobseeker_id;
+                    $data['created_on']     = date('Y-m-d H:i:s');
+                    $this->Master_model->master_insert($data,'js_attached_resumes');
+                    // redirect('job_seeker/seeker_info');
+                }
+            $NewFileName;
+            if($_FILES['txt_media']['name']!='')
+            {
+                $this->load->helper('string'); 
+                $NewFileName = $_FILES['txt_media']['name']; 
+                
+                $config['upload_path'] = './upload/Media/';
+                $config['allowed_types'] = 'doc|docx|rtf|pdf|gif|jpg|png|ppt|pps|pptx|ppsx|pot|potx';
+                // $config['max_size']    = '2000000';
+                //$config['encrypt_name']  = true;
+                $config['max_size']      = 100000000; //100 mb
+                $config['file_name'] = $NewFileName;
+            
+                 $this->load->library('upload', $config);      
+                 $field_name = "txt_media";
+                 if (! $this->upload->do_upload($field_name))
+                    {
+                        $error = array('error' => $this->upload->display_errors());
+                        $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">'.$this->upload->display_errors().'</div>');
+                        redirect('job_seeker/seeker_info');
+                    }
+                    else {}
+                }//END of file checking if loop
+                else
+                    {     
+                      $NewFileName = $this->input->post('oldmedia'); 
+                    }
+
+
+            $profile_data    = array(
+                'job_seeker_id'     => $jobseeker_id,
+                'uploded_media'     => $NewFileName,
+                'about_me'          => addslashes($this->input->post('profile_summary')),
+                'media_link'        => addslashes($this->input->post('txt_link')),
+            );
+            if (empty($profile_summary_id)) {
+                $profile_data['created_on'] = date('Y-m-d H:i:s');
+                $profile_data['created_by'] = $jobseeker_id;
+
+               $this->Master_model->master_insert($profile_data,'js_profile_summary');
+                // redirect('job_seeker/seeker_info');
+            } else {
+                $profile_data['updated_on'] = date('Y-m-d H:i:s');
+                $profile_data['updated_by'] = $jobseeker_id;
+                $where_cans['id']=$profile_summary_id;
+                $this->Master_model->master_update($profile_data,'js_profile_summary',$where_cans);
+                // redirect('job_seeker/seeker_info');
+            } 
+     }
+
+}
     
     public function save_attached_resume()
     {
