@@ -35,8 +35,8 @@
 
 
 <div class="col-md-12 end-footer">
-<div class="conatiner">
-<div class="row">
+<div class="container">
+<div class="row">    
 <div class="col-md-4 p-footer">
 <h5>About consultnHire</h5>
 					<ul class="list-unstyled quick-links">
