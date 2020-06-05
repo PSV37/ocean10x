@@ -64,6 +64,17 @@
     <!---mail-box-->
     <div class="notification">
         <i class="fas fa-envelope"></i>
+        <?php 
+                    $msgs = get_messagescount($job_seeker);
+                      if(!empty($msgs))
+                        foreach($msgs as $msgs_row)
+                        {
+                          if($msgs_row['total_msg']!=0)
+                          {
+                     ?>
+                    <span class="badge bg-green" ><?php echo $msgs_row['total_msg']; ?></span>
+                  <?php } }else{}
+                  ?>
     </div>    
     <!---mail box-end-->
     
