@@ -704,7 +704,7 @@ box-shadow:2px 2px 2px red;
     color: #fffefed9;
 }
 .progress.yellow .progress-left .progress-bar{
-    animation: loading-3 1s linear forwards 1.8s;
+    animation: loading-2 1s linear forwards 1.8s;
 }
 @keyframes loading-1{
     0%{

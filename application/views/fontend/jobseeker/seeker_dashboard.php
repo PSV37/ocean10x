@@ -204,7 +204,7 @@
                 <span class="progress-right">
                     <span class="progress-bar"></span>
                 </span>
-                <div class="progress-value">75%</div>
+                <div class="progress-value">95%</div>
             </div>
         </div>
        
