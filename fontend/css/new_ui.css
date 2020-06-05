@@ -949,3 +949,113 @@ button.save-apply-btn:hover{background-color:#f44336;}
     MARGIN-BOTTOM: 24PX;
 }
 /*end*/
+
+
+/*footer css*/
+
+section {
+    padding: 60px 0;
+}
+.quick-links li{margin-bottom:10px;}
+.quick-links li:hover {
+    margin-left: 8px;
+    transition: 0.3s;
+}
+.quick-links li a:hover {
+    padding-right: 4px;
+    transition: 0.3s;
+}
+section .section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+#footer {
+    background: #007b5e !important;
+}
+#footer h5{
+	padding-left: 10px;
+    border-left: 3px solid #eeeeee;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+    color:#ffffff;
+}
+#footer a {
+    color: #ffffff;
+    text-decoration: none !important;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+#footer ul.social li{
+	padding: 3px 0;
+}
+#footer ul.social li a i {
+    margin-right: 5px;
+	font-size:25px;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+#footer ul.social li:hover a i {
+	font-size:30px;
+	margin-top:-10px;
+}
+#footer ul.social li a,
+#footer ul.quick-links li a{
+	color:#ffffff;
+}
+#footer ul.social li a:hover{
+	color:#eeeeee;
+}
+#footer ul.quick-links li{
+	padding: 3px 0;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+#footer ul.quick-links li:hover{
+	padding: 3px 0;
+	margin-left:5px;
+	font-weight:700;
+}
+#footer ul.quick-links li a i{
+	margin-right: 5px;
+}
+#footer ul.quick-links li:hover a i {
+    font-weight: 700;
+}
+
+@media (max-width:767px){
+	#footer h5 {
+    padding-left: 0;
+    border-left: transparent;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+}
+}
+.end-footer {
+    border-top: solid 2px #a9e2235c;
+    padding: 35px 0px;
+    margin-left: -50px;
+    background-color: #3c3a3a;
+   
+    width: 108%;
+    margin-top: 37px;
+    padding-left: 42px;
+}
+.p-footer{padding:0px 50px;}
+.p-footer h5{font-size: 15px;
+    color: #aae321;
+    font-weight: 700;}
+.p-footer ul li a{font-size: 12px;
+    color: #dad6d6;}
+.p-footer ul li a:hover{color: #aae321;}
+.footer-icons ul li i{color: #aae321;}
+.footer-icons ul li i:hover{color:#fff;}
+.footer-icons{margin-top:20px;}	
+.p-footer ul{margin-bottom:35px;}
+.p-footer ul p{font-size:12px;
+			color: #dad6d6;
+			text-align:justify;}
+/*footer css end */
