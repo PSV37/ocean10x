@@ -1,10 +1,127 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>ConsultnHire | Job Listing Site</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/font-awesome.css"> 
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/main.css">
+     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/new_ui.css">
+
+
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>asset/jc/css/jquery.Jcrop.css">
+
+    <!-- Data Table  CSS -->
+    <link href="<?php echo base_url(); ?>asset/css/plugins/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+<!--Token-Input CSS-->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>asset/styles/token-input.css" type="text/css" />
+    <link rel="stylesheet" href="<?php echo base_url(); ?>asset/styles/token-input-facebook.css" type="text/css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
+<!-- Token field css -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>asset/tokenjs/css/tokenfield-typeahead.css" type="text/css" />
+    <link rel="stylesheet" href="<?php echo base_url(); ?>asset/tokenjs/css/bootstrap-tokenfield.css" type="text/css" />
+
+    <!-- multiselect css -->
+    <link href="<?php echo base_url(); ?>asset/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+</head>
+
+
 <div class="container-fluid">
 
 <div clas="row">
     <div class="col-md-12">
-         <?php 
-    $this->load->view('fontend/layout/new_seeker_header.php');
-?>  
+        <div class="col-md-3">
+        <aside id="left-panel" style="overflow:scroll; border-right: 1px solid rgba(240, 240, 240, 0.3);box-shadow: 2px 2px 4px 0px #00000033;">
+    <div class="inner-left-pannel">
+        
+        
+        <!-- menus -->
+        <div class="my-moving-parts">
+            <div class="my-param-content"></div>
+            <div class="my-normal-content">
+               <div class="inner-tabs-navigation" data-active="menu">
+                </div>
+                <div class="inner-tabs">
+                    <div class="account-tab">
+                        <div class="language-selection" title="Change language">
+                                        <div class="btn-header transparent pull-right dropdown" style="margin-top: -1px;">
+                                            <span><a href="#" class="dropdown-toggle locale" data-toggle="dropdown">
+                                              <i class="flag flag-us"></i> 
+                                                 </a>
+                                             </span>
+                                        </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-tab">
+                        
+                        <nav class="menu-principal">
+                        <div class="menu_logo" style="height: 115px;">
+                            <img src="https://www.consultnhire.com/files/1506847224_00024vs-logo.jpg" />
+                        </div>
+                            <ul class="menu-principal-list" style="">
+                                 <li class="active">
+                                     <a data-dl-view="true" data-dl-title="Dashboard" href="#">
+                                    <span class="icon-container">
+                                         <i class="fas fa-tachometer-alt"></i>
+                                    </span>
+                                    <span class="text item">Dashboard</span>
+                                    </a>
+                                </li>
+                                <li>
+                                     <a data-dl-view="true" data-dl-title="My profile" href="/candidate/detail">
+                                    <span class="icon-container">
+                                        <i class="fas fa-user-alt"></i>
+                                   </span>
+                                <span class="text item">My Ocean profie</span>
+                                      </a>
+                               </li>
+                               
+                              <li>
+                             <a data-dl-view="true" data-dl-title="Contacts" href="/candidate">
+                               <span class="icon-container">
+                                 <i class="fas fa-phone-volume"></i>
+                             </span>
+                                <span class="text item">OceanHunt Activities</span>
+                             </a>
+                              </li>
+                                 <li>
+                                 <a data-dl-view="true" data-dl-title="Recruitments" href="/campaign">
+                                    <span class="icon-container">
+                                      <i class="fas fa-filter"></i>
+                                      </span>
+                                <span class="text item">Skill Upgrade</span>
+                                  </a>
+                                </li>
+                                 <li>
+                                    <a data-dl-view="true" data-dl-title="Mobility" href="/jobprofile/generate">
+                                    <span class="icon-container">
+                                      <i class="fas fa-map-signs"></i>
+                                      </span>
+                                <span class="text item">Become an OceanChamp</span>
+                                      </a>
+                                 </li>
+                                    
+                                  
+                                 
+                             </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- menus END -->
+    </div>
+        </aside>
+        
+        </div>
         
         
         <div class="col-md-9">
@@ -35,7 +152,7 @@
                             </div>
                             <span>Saved Job</span>
                             </div>
-                            <a class="card-footer text-white clearfix small z-1" href="<?php echo base_url(); ?>seeker/my-saved-jobs">
+                            <a class="card-footer text-white clearfix small z-1" href="#">
                             <span class="float-left" style="font-size:2px;">10</span>
                             </a>
                             </div>
@@ -48,7 +165,7 @@
                             </div>
                             <div >Job Alerts</div>
                             </div>
-                            <a class="card-footer text-white clearfix small z-1" href="<?php echo base_url(); ?>seeker/my-inbound-job-invitations">
+                            <a class="card-footer text-white clearfix small z-1" href="#">
                             <span class="float-left" style="font-size:22px;">20</span>
                             </a>
                             </div>
@@ -201,7 +318,7 @@
                             <i class="fas fa-th-large"></i>
                             </div>
                             <div class="text-pro">
-                            <a href="<?php echo base_url() ?>seeker/skill-upgrade"><span>Skill Upgrade</span></a>
+                            <span>Skill Upgrade</span>
                            
                             </div>
                             </div>
