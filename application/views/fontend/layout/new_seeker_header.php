@@ -59,6 +59,10 @@
 </form>
      </div>          
 </div>
+<?php  $job_seeker=$this->session->userdata('job_seeker_id');
+$js_personal_info = $this->job_seeker_personal_model->personalinfo_list_by_id($jobseeker_id);
+
+ ?>      
 
     <div class="social-media">
     <!---mail-box-->
@@ -86,7 +90,7 @@
      <!---profile--->
      <div class="profile">
      <i class="fas fa-user-circle"></i>
-     <b>supriya</b>
+     <b><?php echo $jsname->full_name?></b>
      </div>
      <!---end-profile-->
     </div>
