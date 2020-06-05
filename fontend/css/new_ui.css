@@ -241,8 +241,9 @@ padding-right:0px !important;}
     width: 100%;
     background-image: linear-gradient(to right, #ace41e , #2196F3);
 	border-radius:3px;
-	position:relative;
+	position:fixed;
 	box-shadow: 2px 2px 6px 0px #00000030;
+	z-index:999;
 
 	}     
 .text-grad {
@@ -283,6 +284,7 @@ padding-right:0px !important;}
 	cursor:pointer;
 	margin-bottom:20px;
 }
+
 /*commom*/
 .o-hidden {
     overflow: hidden !important;
@@ -591,14 +593,6 @@ margin-top: 20px;
 
 
 
-#content {
-   overflow-y: auto;
-    overflow-x: hidden;
-    padding-left: 50px;
-    padding-right: 20px;
-    height: 500px;
-  margin-right: -50px;
-}
 /*end*/
 
 
