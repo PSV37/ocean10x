@@ -201,16 +201,16 @@
                     <div class="col-md-3">
                         <h3 class="heading-dash_profile">PROFILE LEVEL</h3>
                     <div class="col-md-3 col-sm-6">
-            <div class="progress yellow">
-                <span class="progress-left">
-                    <span class="progress-bar"></span>
-                </span>
-                <span class="progress-right">
-                    <span class="progress-bar"></span>
-                </span>
-                <div class="progress-value"><?php echo round($profile_total); ?></div>
-            </div>
-        </div>
+                    <div class="progress yellow">
+                        <span class="progress-left">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value"  style="width:<?php echo $profile_total;?>%"><?php echo round($profile_total); ?></div>
+                    </div>
+                    </div>
        
                     
                     </div>
