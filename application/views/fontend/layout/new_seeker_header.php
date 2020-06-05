@@ -100,7 +100,9 @@ $jsname=$this->Job_seeker_model->jobseeker_name($job_seeker);
 
 </div>
     	<div class="col-md-3">
-        <aside id="left-panel" style="overflow:scroll; border-right: 1px solid rgba(240, 240, 240, 0.3);box-shadow: 2px 2px 4px 0px #00000033;height:100vh;">
+       <aside id="left-panel" style="margin-top:83px;
+    margin-left: 14px;height:auto; border-right: 1px solid rgba(240, 240, 240, 0.3);box-shadow: 2px 2px 4px 0px #00000033;position: fixed;
+    z-index: 999;vertical-align:baseline;">
 	    <div class="inner-left-pannel">
          <?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
       
@@ -111,3 +113,4 @@ $jsname=$this->Job_seeker_model->jobseeker_name($job_seeker);
 	
 </body>
 
+>>>>
