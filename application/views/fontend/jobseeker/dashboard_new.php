@@ -329,4 +329,4 @@ anime.timeline({loop: ""})
  </script>
 <!---common---->
 
- <?php $this->load->view("fontend/layout/footer.php"); ?>
+ <?php $this->load->view("fontend/layout/jobseeker_footer.php"); ?>
