@@ -113,4 +113,3 @@ $jsname=$this->Job_seeker_model->jobseeker_name($job_seeker);
 	
 </body>
 
->>>>
