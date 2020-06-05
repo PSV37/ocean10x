@@ -941,7 +941,7 @@ public function save_profile_details()
       }
       else
       {
-        redirect('job_seeker/seeker_info')
+        redirect('job_seeker/seeker_info');
       }
       // seeker_info
 
