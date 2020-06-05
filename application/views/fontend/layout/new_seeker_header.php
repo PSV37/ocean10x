@@ -60,7 +60,8 @@
      </div>          
 </div>
 <?php  $job_seeker=$this->session->userdata('job_seeker_id');
-$js_personal_info = $this->job_seeker_personal_model->personalinfo_list_by_id($jobseeker_id);
+$jsname=$this->Job_seeker_model->jobseeker_name($job_seeker);
+
 
  ?>      
 
