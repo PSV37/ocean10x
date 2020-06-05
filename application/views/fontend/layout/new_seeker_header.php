@@ -45,7 +45,43 @@
        
 </head>
 <body>
-	
+	<div class="container-fluid gradient_strip" >
+   <div class="menu_logo">
+      <img src="http://www.tele-kinetics.com/assets/img/logo.png" />
+   </div>  
+   <div class="text-grad">
+
+   <div class="sear-bar">
+   <form class="search-form">
+  <input type="search">
+ <i class="fas fa-search"></i>
+</form>
+     </div>          
+</div>
+
+    <div class="social-media">
+    <!---mail-box-->
+    <div class="notification">
+        <i class="fas fa-envelope"></i>
+    </div>    
+    <!---mail box-end-->
+    
+    <!---notification-->
+     <div class="notification">
+        <i class="fas fa-bell"></i>
+     </div>
+     <!--notification-end-->
+     <!---profile--->
+     <div class="profile">
+     <i class="fas fa-user-circle"></i>
+     <b>supriya</b>
+     </div>
+     <!---end-profile-->
+    </div>
+    
+  
+
+</div>
     	<div class="col-md-3">
         <aside id="left-panel" style="overflow:scroll; border-right: 1px solid rgba(240, 240, 240, 0.3);box-shadow: 2px 2px 4px 0px #00000033;height:100vh;">
 	    <div class="inner-left-pannel">

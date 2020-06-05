@@ -17,9 +17,9 @@
           <div class="menu-tab">
                         
             <nav class="menu-principal">
-              <div class="menu_logo" style="height: 115px;">
+             <!--  <div class="menu_logo" style="height: 115px;">
                 <img src="https://www.consultnhire.com/files/1506847224_00024vs-logo.jpg" />
-              </div>
+              </div> -->
                 <ul class="menu-principal-list" style="">
                   <li class="active">
            					<a data-dl-view="true" data-dl-title="Dashboard" href="<?php echo base_url(); ?>seeker/dashboard">
