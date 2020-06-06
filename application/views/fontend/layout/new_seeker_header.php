@@ -94,7 +94,9 @@
 <script type="text/javascript">
     function getchecked(value)
     {
-
+      if($('#'+value).is(':checked')){ 
+        alert(checked);
+      }
     }
 
 </script>
