@@ -116,8 +116,8 @@
                             </div>
                             <span>Saved Job</span>
                             </div>
-                            <a class="card-footer text-white clearfix small z-1" href="#">
-                            <span class="float-left" style="font-size:2px;">10</span>
+                            <a class="card-footer text-white clearfix small z-1" href="<?php echo base_url(); ?>seeker/my-saved-jobs">
+                            <span class="float-left" style="font-size:2px;"><?php echo $saved_jobs; ?></span>
                             </a>
                             </div>
                         </div>
@@ -130,7 +130,7 @@
                             <div >Job Alerts</div>
                             </div>
                             <a class="card-footer text-white clearfix small z-1" href="#">
-                            <span class="float-left" style="font-size:22px;">20</span>
+                            <span class="float-left" style="font-size:22px;"><?php echo $job_alert; ?></span>
                             </a>
                             </div>
                         </div>
@@ -194,79 +194,26 @@
              </div>
              
              <div class="col-md-12 bd-2">
-             <div class="job-voucher alert alert-dismissible">
+            if (!empty($jobs)): foreach ($jobs as $applicaiton) : $sr_no++;
+
+            ?>
+            <div class="job-voucher alert alert-dismissible" >
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    <img src="https://media-exp1.licdn.com/dms/image/C4E0BAQHbWPfQdNw1EA/company-logo_200_200/0?e=2159024400&v=beta&t=fWMuJX9leYFsDf-weERHLyIPfRh4aCOwx8wygmhad9Q" class="dimen_img-s" />
-                   <div class="job_title">
-                   The person/job specification can be presented as a stand-alone 
+
+                  <img src="<?php echo base_url()?>upload/<?php echo $this->company_profile_model->company_logoby_id($applicaiton['company_profile_id']); ?>" class="dimen_img-s" />
+
+                   <div class="job_title"><a href="<?php  echo base_url();?>job/show/<?php echo $this->job_posting_model->get_slug_nameby_id($applicaiton['job_post_id']) ?>"><?php echo $this->job_posting_model->job_title_by_name($applicaiton['job_post_id']); ?></a>
+                   <!-- The person/job specification can be presented as a stand-alone  -->
+                   
                    </div> 
                     <div class="organization">
-                        IT Company
+                     <?php echo $this->company_profile_model->company_name($applicaiton['company_profile_id']); ?>
                     </div>
                     <div class="location">
-                        Pune ,Kalyani nagar
+                      <?php echo $applicaiton['city_id'];  ?>
                     </div>
-                    <div class="apply_job_btn">Apply job</div>
-                    <button class="job_dis_btn">Details</button>
-                </div>
-                <div class="job-voucher alert alert-dismissible">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    <img src="https://media-exp1.licdn.com/dms/image/C4E0BAQHbWPfQdNw1EA/company-logo_200_200/0?e=2159024400&v=beta&t=fWMuJX9leYFsDf-weERHLyIPfRh4aCOwx8wygmhad9Q" class="dimen_img-s" />
-                   <div class="job_title">
-                   The person/job specification can be presented as a stand-alone 
-                   </div> 
-                    <div class="organization">
-                        IT Company
-                    </div>
-                    <div class="location">
-                        Pune ,Kalyani nagar
-                    </div>
-                    <div class="apply_job_btn">Apply job</div>
-                    <button class="job_dis_btn">Details</button>
-                </div>
-                <div class="job-voucher alert alert-dismissible">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    <img src="https://media-exp1.licdn.com/dms/image/C4E0BAQHbWPfQdNw1EA/company-logo_200_200/0?e=2159024400&v=beta&t=fWMuJX9leYFsDf-weERHLyIPfRh4aCOwx8wygmhad9Q" class="dimen_img-s" />
-                   <div class="job_title">
-                   The person/job specification can be presented as a stand-alone 
-                   </div> 
-                    <div class="organization">
-                        IT Company
-                    </div>
-                    <div class="location">
-                        Pune ,Kalyani nagar
-                    </div>
-                    <div class="apply_job_btn">Apply job</div>
-                    <button class="job_dis_btn">Details</button>
-                </div>
-                <div class="job-voucher alert alert-dismissible">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    <img src="https://media-exp1.licdn.com/dms/image/C4E0BAQHbWPfQdNw1EA/company-logo_200_200/0?e=2159024400&v=beta&t=fWMuJX9leYFsDf-weERHLyIPfRh4aCOwx8wygmhad9Q" class="dimen_img-s" />
-                   <div class="job_title">
-                   The person/job specification can be presented as a stand-alone 
-                   </div> 
-                    <div class="organization">
-                        IT Company
-                    </div>
-                    <div class="location">
-                        Pune ,Kalyani nagar
-                    </div>
-                    <div class="apply_job_btn">Apply job</div>
-                    <button class="job_dis_btn">Details</button>
-                </div>
-                <div class="job-voucher alert alert-dismissible">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    <img src="https://media-exp1.licdn.com/dms/image/C4E0BAQHbWPfQdNw1EA/company-logo_200_200/0?e=2159024400&v=beta&t=fWMuJX9leYFsDf-weERHLyIPfRh4aCOwx8wygmhad9Q" class="dimen_img-s" />
-                   <div class="job_title">
-                   The person/job specification can be presented as a stand-alone 
-                   </div> 
-                    <div class="organization">
-                        IT Company
-                    </div>
-                    <div class="location">
-                        Pune ,Kalyani nagar
-                    </div>
-                    <div class="apply_job_btn">Apply job</div>
+                    <a href="<?php echo base_url(); ?>job/show/<?php echo $applicaiton['job_slugs']; ?>" class="btn btn-success btn-xs apply_job_btn">Apply job</a>
+                    <!-- <div class="apply_job_btn">Apply job</div> -->
                     <button class="job_dis_btn">Details</button>
                 </div>
              </div>
@@ -284,7 +231,7 @@
                 <span class="progress-right">
                     <span class="progress-bar"></span>
                 </span>
-                <div class="progress-value"><?php echo round($profile_total); ?>%</div>
+                <div class="progress-value"><?php echo round($profile_total);?>%</div>
             </div>
       
             
