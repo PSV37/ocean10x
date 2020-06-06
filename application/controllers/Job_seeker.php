@@ -25,10 +25,10 @@ class Job_seeker extends MY_Seeker_Controller
         $job_career_info = $this->Job_career_model->js_careerinfo_by_seeker($jobseeker_id);
 
         foreach ($experinece_list as $row) {
-            $joblevel=$experinece_list->job_level;
+            $joblevel=$row->job_level;
         }
         foreach ($job_career_info as $row) {
-            $category=$job_career_info->industry_id;
+            $category=$row->industry_id;
         }
 
            // $joblevel=$experinece_list[0]->job_level;
