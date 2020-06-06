@@ -43,7 +43,7 @@
 
    <div class="sear-bar">
    <form class="search-form">
-  <input type="search">
+  <input type="search" id="search">
  <i class="fas fa-search"></i>
 </form>
      </div>          
@@ -96,8 +96,18 @@
     function getchecked(value)
     {
       if($('#'+value).is(':checked')){ 
-        alert(checked);
+        alert('checked');
+        if (value=='week3') 
+        {
+          $("#search").attr("placeholder", "Job Search");
+        }
+        else
+        {
+          $("#search").attr("placeholder", "People Search");
+        }
+        
       }
+      
     }
 
 </script>
