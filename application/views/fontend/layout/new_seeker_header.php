@@ -50,9 +50,9 @@
 
 
      <div class="switch switch-yellow">
-      <input type="radio" class="switch-input" name="view3" value="week3" id="week3" checked>
+      <input type="radio" class="switch-input" name="view3" value="Job_Search" id="Job_Search" checked onchange="getchecked(this.value);">
       <label for="week3" class="switch-label switch-label-off">Job Search</label>
-      <input type="radio" class="switch-input" name="view3" value="month3" id="month3">
+      <input type="radio" class="switch-input" name="view3" value="People_Search" id="People_Search">
       <label for="month3" class="switch-label switch-label-on">People Search</label>
       <span class="switch-selection"></span>
     </div>
@@ -91,6 +91,16 @@
 </div>
 
 <!---header end--->
+<script type="text/javascript">
+    function getchecked(People_Search)
+    {
+      if($('#'+value).is(':checked')){ 
+        alert('checked');
+      }
+
+    }
+
+</script>
 
 
    
