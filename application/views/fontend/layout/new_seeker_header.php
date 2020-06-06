@@ -31,8 +31,8 @@
     <!-- multiselect css -->
     <link href="<?php echo base_url(); ?>asset/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
 </head>
+<!---header---->
 
-   
 <div class="container-fluid gradient_strip" >
 <div class="container">
    <div class="menu_logo">
@@ -48,7 +48,8 @@
      </div>          
 </div>
 
- <div class="switch switch-yellow">
+
+     <div class="switch switch-yellow">
       <input type="radio" class="switch-input" name="view3" value="week3" id="week3" checked>
       <label for="week3" class="switch-label switch-label-off">Job Search</label>
       <input type="radio" class="switch-input" name="view3" value="month3" id="month3">
@@ -56,19 +57,26 @@
       <span class="switch-selection"></span>
     </div>
 
+
+
+
+
+
     <div class="social-media">
     <!---mail-box-->
     <div class="notification">
-        <i class="fas fa-envelope"></i>
+        <i class="fas fa-comment-alt"></i><br>
+        Messaging
     </div>    
     <!---mail box-end-->
     
     <!---notification-->
-     <div class="notification">
-        <i class="fas fa-bell"></i>
+     <div class="bell">
+        <i class="fas fa-bell"></i><br>
+        Notifications
      </div>
      <!--notification-end-->
-     <!---profile--->
+     <!---profile--->   
      <div class="profile">
      <i class="fas fa-user-circle"></i>
      <b><?php
@@ -81,3 +89,8 @@
   </div>
 
 </div>
+
+<!---header end--->
+
+
+   
