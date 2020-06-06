@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/main.css">
      <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/seeker_dashboard.css">
  
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/jobseeker_footer.css">
+  
     
 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>asset/jc/css/jquery.Jcrop.css">
