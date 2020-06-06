@@ -362,7 +362,7 @@
                 <span class="progress-right">
                     <span class="progress-bar"></span>
                 </span>
-                <div class="progress-value"><?php echo $profile_total; ?>%</div>
+                <div class="progress-value"><?php echo round($profile_total); ?>%</div>
             </div>
       
             
