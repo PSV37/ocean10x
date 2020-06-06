@@ -24,12 +24,17 @@ class Job_seeker extends MY_Seeker_Controller
         $experinece_list = $this->Job_seeker_experience_model->experience_list_by_id($jobseeker_id);
         $job_career_info = $this->Job_career_model->js_careerinfo_by_seeker($jobseeker_id);
 
+        foreach ($experinece_list as $row) {
+            $joblevel=$experinece_list->job_level;
+        }
+        foreach ($job_career_info as $row) {
+            $category=$job_career_info->industry_id;
+        }
 
-
-           $joblevel=$experinece_list[0]['job_level'];
-           // print_r($experinece_list);
-           // print_r($job_career_info);
-           $category=$job_career_info[0]['industry_id'];
+           // $joblevel=$experinece_list[0]->job_level;
+           // // print_r($experinece_list);
+           // // print_r($job_career_info);
+           // $category=$job_career_info[0]->industry_id;
 
            $date=date('Y-m-d');
 
