@@ -51,7 +51,7 @@
 
 
     <div class="switch switch-yellow">
-      <input type="radio" class="switch-input" name="view3" value="week3" id="week3" checked onchange="getchecked(this.value);">
+      <input type="radio" class="switch-input" name="view3" value="week3" id="week3" onchange="getchecked(this.value);" checked >
       <label for="week3" class="switch-label switch-label-off">Job Search</label>
       <input type="radio" class="switch-input" name="view3" value="month3" id="month3">
       <label for="month3" class="switch-label switch-label-on">People Search</label>
