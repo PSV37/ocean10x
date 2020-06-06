@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,14 +11,12 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/font-awesome.css"> 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/responsive.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/main.css">
-     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/jobseeker_header.css">
      <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/seeker_dashboard.css">
+ 
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/jobseeker_footer.css">
     
 
-
-
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>asset/jc/css/jquery.Jcrop.css">
-
     <!-- Data Table  CSS -->
     <link href="<?php echo base_url(); ?>asset/css/plugins/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
 <!--Token-Input CSS-->
@@ -35,10 +30,6 @@
 
     <!-- multiselect css -->
     <link href="<?php echo base_url(); ?>asset/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
-       
 </head>
 <body>
     <?php  $job_seeker=$this->session->userdata('job_seeker_id');
@@ -46,7 +37,7 @@ $jsname=$this->Job_seeker_model->jobseeker_name($job_seeker);
 
 
  ?> 
-    <div class="container-fluid gradient_strip" >
+<div class="container-fluid gradient_strip" >
 <div class="container">
    <div class="menu_logo">
       <img src="http://www.tele-kinetics.com/assets/img/logo.png" />

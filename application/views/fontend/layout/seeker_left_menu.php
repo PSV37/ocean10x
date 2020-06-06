@@ -35,7 +35,7 @@
                                             <span class="icon-container">
                                                 <i class="fas fa-user-alt"></i>
                                            </span>
-                                        <span class="text item">My Ocean profil</span>
+                                        <span class="text item">My Ocean profile</span>
                                               </a>
                                        </li>
                                        
