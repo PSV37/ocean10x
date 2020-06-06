@@ -73,17 +73,7 @@
 
 </div>
 	
-    	<div class="col-md-3">
-            <aside id="left-panel" style="margin-top:75px;
-                 margin-left: 14px;height:auto; border-right: 1px solid rgba(240, 240, 240, 0.3);box-shadow: 2px 2px 4px 0px   #00000033;position: fixed;
-            z-index: 999;vertical-align:baseline;">
-            <div class="inner-left-pannel">
-         <?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
-      
-
-	    </div>
-		</aside>
-	</div>
+    
 	
 </body>
 

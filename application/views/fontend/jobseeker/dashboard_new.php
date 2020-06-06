@@ -92,6 +92,8 @@
 
 <?php 
     $this->load->view('fontend/layout/new_seeker_header.php');
+    $this->load->view('fontend/layout/seeker_left_menu.php'); 
+
 ?>  
    
 <div class="container-fluid">
