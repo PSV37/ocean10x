@@ -194,6 +194,7 @@
              </div>
              
              <div class="col-md-12 bd-2">
+                <?php 
             if (!empty($jobs)): foreach ($jobs as $applicaiton) : $sr_no++;
 
             ?>
