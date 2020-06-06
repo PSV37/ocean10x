@@ -68,8 +68,11 @@ $jsname=$this->Job_seeker_model->jobseeker_name($job_seeker);
     <div class="social-media">
     <!---mail-box-->
     <div class="notification">
-        <i class="fas fa-envelope"></i>
-        <?php 
+        <!-- <i class="fas fa-envelope"></i> -->
+         <li role="presentation" class="dropdown" style="margin: 10px;" >
+              <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false" style="font-size: 15px;">
+                <i class="fa fa-envelope-o"></i>
+                <?php 
                     $msgs = get_messagescount($job_seeker);
                       if(!empty($msgs))
                         foreach($msgs as $msgs_row)
@@ -80,6 +83,74 @@ $jsname=$this->Job_seeker_model->jobseeker_name($job_seeker);
                     <span class="badge bg-green" ><?php echo $msgs_row['total_msg']; ?></span>
                   <?php } }else{}
                   ?>
+              </a>
+              <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu" style="width: 300px;">
+                <li>
+                  <div class="text-center">
+                    <a href="<?php echo base_url(); ?>job_seeker/ReadAllMessages" class="dropdown-item" style="color: #1d1c1c !important;">
+                      <strong>Mark All As Read</strong>
+                    </a>
+                  </div>
+                </li>
+               
+                  <?php 
+                    $msg = get_messages($job_seeker);
+                      if(!empty($msg)){
+                      foreach($msg as $msg_row)
+                      {
+                        $date = strtotime($msg_row['created_on']);
+                        $dat = date('m/d/y', $date);
+                        $tme = date('H:m:s A',$date);
+                    ?>
+
+
+                    <li <?php if($msg_row['status']==0){?>style="background-color: #ccc;margin: 5px;" <?php }else{?> style="margin: 5px;"<?php } ?> >
+
+                      <a data-toggle="modal" data-target="#myMsgModal">
+                        <span>
+                        <!-- <?php print_r($msg_row); ?> -->
+                          <span><a href="<?php echo base_url() ?>seeker/message-history/<?php echo $msg_row['job_seeker_id']; ?>"><?php echo $msg_row['full_name']; ?></a><span class="time">
+                          <?php 
+
+                            $mtime = time_ago_in_php($msg_row['created_on']);
+                            echo $mtime;
+
+                            
+                          ?></span> </span>
+                          
+                        </span>
+                        <span class="message">
+                         <?php 
+                            $message = $msg_row['message_desc'];
+                            if(strlen($message)>30)
+                            {
+                              echo substr($message, 0, 50);
+                             echo '...';  
+                            }else{echo $message; }
+                         ?>
+                        </span>
+                      </a>
+                    </li>
+                  <?php } } else{?>
+                    <li style="background-color: #ccc; margin: 5px;">
+                        <a>
+                        <span>
+                          No Message Found..
+                        </span>
+                      </a>
+                    </li>
+                  <?php } ?>
+              
+                <li>
+                  <div class="text-center">
+                    <a href="<?php echo base_url(); ?>seeker/instant-message" class="dropdown-item" style="color: #1d1c1c !important;">
+                      <strong>See All Messages</strong>
+                      <i class="fa fa-angle-right"></i>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </li>
     </div>    
     <!---mail box-end-->
     
@@ -91,8 +162,8 @@ $jsname=$this->Job_seeker_model->jobseeker_name($job_seeker);
      <!---profile--->
      <div class="profile">
      <i class="fas fa-user-circle"></i>
-     <b><?php echo $jsname->full_name;
-     print_r($jsname); ?></b>
+     <b><?php echo $jsname;
+     // print_r($jsname); ?></b>
      </div>
      <!---end-profile-->
     </div>
