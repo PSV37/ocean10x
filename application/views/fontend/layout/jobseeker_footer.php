@@ -1,11 +1,8 @@
-
-                		<!-- Footer -->
+<div class="container-fluid end-footer">   
 	
-
-
-<div class="col-md-12 end-footer">
-<div class="container">
-<div class="row">        
+    <div class="container">
+    <div class="col-md-12 ">
+<div class="row">
 <div class="col-md-4 p-footer">
 <h5>About consultnHire</h5>
 					<ul class="list-unstyled quick-links">
@@ -48,16 +45,12 @@
 					</ul>
 </div>
 
-				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-					
-					<p class="h6">© All right Reversed.<a class="text-green ml-2" href="https://www.sunlimetech.com" target="_blank">Sunlimetech</a></p>
-				</div>
-				<hr>
+				
+				
 			</div>
 
 
-
 </div>
 </div>
 </div>
-	<!-- ./Footer -->
+</div>
