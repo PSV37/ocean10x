@@ -88,7 +88,9 @@
 
 
 <!---header end--->
-
+   <?php 
+    $this->load->view('fontend/layout/new_seeker_header.php');
+?>  
    
 <div class="container-fluid">
     <div class="container">
