@@ -1,5 +1,4 @@
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-  
 <!---header---->
 
 <div class="container-fluid gradient_strip" >
@@ -331,9 +330,10 @@
     
     </div>
     <!-- Footer -->
-	<div class="col-md-12 end-footer">
+ <div class="container-fluid end-footer">   
+	
     <div class="container">
-    
+    <div class="col-md-12 ">
 <div class="row">
 <div class="col-md-4 p-footer">
 <h5>About consultnHire</h5>
@@ -382,7 +382,7 @@
 			</div>
 
 
-
+</div>
 </div>
 </div>
 </div>
@@ -391,3 +391,4 @@
    
    
    
+</body>
