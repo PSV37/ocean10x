@@ -22,6 +22,7 @@ class Job_seeker extends MY_Seeker_Controller
     {
         $jobseeker_id = $this->session->userdata('job_seeker_id');
         $experinece_list = $this->Job_seeker_experience_model->experience_list_by_id($jobseeker_id);
+         print_r($this->db->last_query());die();
         $job_career_info = $this->Job_career_model->js_careerinfo_by_seeker($jobseeker_id);
 
            $joblevel=$experinece_list->job_level;
@@ -30,7 +31,7 @@ class Job_seeker extends MY_Seeker_Controller
            $date=date('Y-m-d');
 
             $alljobs          = $this->job_posting_model->get_job_jobseeker($category, $joblevel,$date);
-            print_r($this->db->last_query());die();
+
             $totalrow         = $alljobs['total_row'];
          
 
