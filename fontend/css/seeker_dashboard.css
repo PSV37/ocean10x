@@ -1,6 +1,7 @@
 <!---header css  --->
-
-
+.container{max-width:1300px;}
+.container-fluid{padding-right:0px;
+padding-left:0px;}
 .menu_logo img{   
 	width: 180px;
     margin-left: 45px;
@@ -329,7 +330,7 @@ body{background-color:#f7f7f738;}
     left: 0;
 }
 
-.menu-principal-list li{padding:0px 0px 20px 0px;list-style-type:none;margin-right:10px;}
+.menu-principal-list li{padding:0px 0px 20px 0px;list-style-type:none;}
 nav{overflow:auto;}
 #left-panel .inner-left-pannel .inner-tabs .menu-tab .menu-principal ul li span.text {
     margin-left: 10px;
@@ -343,9 +344,8 @@ nav{overflow:auto;}
     font-size: 13px;
 }
 
-.col-md-3{width:22% !important;}
-.col-md-12{padding-left:0px !important;
-padding-right:0px !important;}
+
+
 .menu_logo img{   
 	width: 180px;
     margin-left: 45px;
@@ -369,7 +369,7 @@ padding-right:0px !important;}
 	z-index:999;
 
 	} 
-.mid-section{margin-left:50px;}    
+
 .text-grad {
     position: absolute;
     top: 29px;
@@ -807,12 +807,12 @@ section .section-title {
 .end-footer {
     border-top: solid 2px #a9e2235c;
     padding: 10px 0px;
-    margin-left: -50px;
+    
     background-color: #3c3a3a;
    
-    width: 108%;
+    width: 100%;
     
-    padding-left: 42px;
+    
 }
 .p-footer{padding:0px 50px;}
 .p-footer h5{font-size: 15px;
@@ -916,7 +916,7 @@ i.fas.fa-search {
 }	
 #left-panel{    
 	margin-top: 75px;
-    margin-left: 14px;
+    
     height: auto;
     border: 1px solid rgba(152, 153, 154, 0.34);
     box-shadow: 1px 1px 4px 0px #0000001f;
@@ -1108,5 +1108,6 @@ background-color: #81c3f8;
 	}
 .bd-2 {
     margin-top: 20px;
+	padding:0px;
 }	
 <!--end--->
