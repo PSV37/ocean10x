@@ -31,7 +31,7 @@
     <!-- multiselect css -->
     <link href="<?php echo base_url(); ?>asset/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
+
    
 <div class="container-fluid gradient_strip" >
 <div class="container">
@@ -75,5 +75,5 @@
 	
     
 	
-</body>
+
 
