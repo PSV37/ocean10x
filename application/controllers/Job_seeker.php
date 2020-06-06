@@ -31,7 +31,7 @@ class Job_seeker extends MY_Seeker_Controller
 
             $alljobs          = $this->job_posting_model->get_job_jobseeker($category, $joblevel,$date);
             $totalrow         = $alljobs['total_row'];
-          $this->load->view('fontend/job/levelandcatjob', compact('category', 'joblevel', 'totalrow', 'offset', 'limit', 'alljobs', 'all_category', 'all_locaiton', 'company_list', 'jobtype_list', 'selectedcategory', 'selectedlocation', 'selectedcompany', 'selectednature'));
+         
 
         // $this->load->view('fontend/jobseeker/seeker_dashboard');
         
@@ -49,6 +49,7 @@ class Job_seeker extends MY_Seeker_Controller
 
         $data['saved_jobs']=sizeof($saved_job_data);
         $data['job_alert']=sizeof($alljobs);
+        $data['jobs'] = $alljobs;
         $this->load->view('fontend/jobseeker/dashboard_new',$data);
     }
 	
