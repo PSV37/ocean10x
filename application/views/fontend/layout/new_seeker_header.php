@@ -32,12 +32,47 @@
     <link href="<?php echo base_url(); ?>asset/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-   <!--  <?php  $job_seeker=$this->session->userdata('job_seeker_id');
-$jsname=$this->Job_seeker_model->jobseeker_name($job_seeker);
+   
+<div class="container-fluid gradient_strip" >
+<div class="container">
+   <div class="menu_logo">
+      <img src="http://www.tele-kinetics.com/assets/img/logo.png" />
+   </div>  
+   <div class="text-grad">
 
+   <div class="sear-bar">
+   <form class="search-form">
+  <input type="search">
+ <i class="fas fa-search"></i>
+</form>
+     </div>          
+</div>
 
- ?> 
- -->
+    <div class="social-media">
+    <!---mail-box-->
+    <div class="notification">
+        <i class="fas fa-envelope"></i>
+    </div>    
+    <!---mail box-end-->
+    
+    <!---notification-->
+     <div class="notification">
+        <i class="fas fa-bell"></i>
+     </div>
+     <!--notification-end-->
+     <!---profile--->
+     <div class="profile">
+     <i class="fas fa-user-circle"></i>
+     <b><?php echo $jsname;
+     // print_r($jsname); ?></b>
+     </div>
+     <!---end-profile-->
+    </div>
+    
+  </div>
+
+</div>
+	
     	<div class="col-md-3">
             <aside id="left-panel" style="margin-top:75px;
                  margin-left: 14px;height:auto; border-right: 1px solid rgba(240, 240, 240, 0.3);box-shadow: 2px 2px 4px 0px   #00000033;position: fixed;
