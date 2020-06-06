@@ -197,7 +197,7 @@
                 <?php 
             if (!empty($jobs)): foreach ($jobs as $applicaiton) : $sr_no++;
 
-                // print_r($applicaiton);
+                print_r($applicaiton->job_post_id);
             ?>
             <div class="job-voucher alert alert-dismissible" >
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
