@@ -17,6 +17,8 @@
      <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/jobseeker_header.css">
      <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/new_ui.css">
      <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/seeker_dashboard.css">
+     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/new_ui.css">
+     
 
 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>asset/jc/css/jquery.Jcrop.css">
