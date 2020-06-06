@@ -60,8 +60,8 @@ class Job_seeker extends MY_Seeker_Controller
 
         $data['saved_jobs']=sizeof($saved_job_data);
         $data['job_alert']=sizeof($alljobs);
-        $data['jobs'] = $alljobs;
-        print_r($alljobs);die();
+        $data['jobs']= $alljobs;
+        // print_r($alljobs);die();
         $this->load->view('fontend/jobseeker/dashboard_new',$data);
     }
 	
