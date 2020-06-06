@@ -217,6 +217,18 @@
                     <!-- <div class="apply_job_btn">Apply job</div> -->
                     <button class="job_dis_btn">Details</button>
                 </div>
+                 <?php
+              endforeach;
+            ?>
+            <?php else : ?> 
+            
+                <div>
+                    <strong>There is no data to display</strong>
+                  
+                </div>
+             
+              
+            <?php endif; ?>
              </div>
              
              
