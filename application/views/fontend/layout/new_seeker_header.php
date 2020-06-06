@@ -82,7 +82,7 @@ $jsname=$this->Job_seeker_model->jobseeker_name($job_seeker);
                  margin-left: 14px;height:auto; border-right: 1px solid rgba(240, 240, 240, 0.3);box-shadow: 2px 2px 4px 0px   #00000033;position: fixed;
             z-index: 999;vertical-align:baseline;">
             <div class="inner-left-pannel">
-         <?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
+         <!-- <?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?> -->
       
 
 	    </div>
