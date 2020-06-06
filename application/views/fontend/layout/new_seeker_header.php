@@ -91,8 +91,8 @@ $jsname=$this->Job_seeker_model->jobseeker_name($job_seeker);
      <!---profile--->
      <div class="profile">
      <i class="fas fa-user-circle"></i>
-     <b><?php echo $jsname;
-     // print_r($jsname); ?></b>
+     <b><?php echo $jsname->full_name;
+     print_r($jsname); ?></b>
      </div>
      <!---end-profile-->
     </div>
