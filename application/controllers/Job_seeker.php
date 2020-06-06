@@ -39,7 +39,7 @@ class Job_seeker extends MY_Seeker_Controller
            $date=date('Y-m-d');
 
             $alljobs          = $this->job_posting_model->get_job_jobseeker($category, $joblevel,$date);
-         print_r($this->db->last_query());die();
+         // print_r($this->db->last_query());die();
 
             $totalrow         = $alljobs['total_row'];
          
