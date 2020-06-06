@@ -31,7 +31,7 @@
                                 
                                     <ul class="menu-principal-list" style="">
                                          <li class="active">
-                                             <a data-dl-view="true" data-dl-title="Dashboard" href="#">
+                                             <a data-dl-view="true" data-dl-title="Dashboard" href="<?php echo base_url(); ?>seeker/dashboard">
                                             <span class="icon-container">
                                                  <i class="fas fa-tachometer-alt"></i>
                                             </span>
@@ -43,7 +43,7 @@
                                             <span class="icon-container">
                                                 <i class="fas fa-user-alt"></i>
                                            </span>
-                                        <span class="text item">My Ocean profil</span>
+                                        <span class="text item">My Ocean profile</span>
                                               </a>
                                        </li>
                                        

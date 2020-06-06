@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/font-awesome.css"> 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/responsive.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/main.css">
+    
      <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/seeker_dashboard.css">
  
   
@@ -65,7 +65,7 @@
      <i class="fas fa-user-circle"></i>
      <b><?php
      $job_seeker=$this->session->userdata('job_seeker_id');
-          echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?> ?></b>
+          echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?> </b>
      </div>
      <!---end-profile-->
     </div>
