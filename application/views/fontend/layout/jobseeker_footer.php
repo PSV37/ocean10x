@@ -1,42 +1,8 @@
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>ConsultnHire | Job Listing Site</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="keywords" content="">
-
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/font-awesome.css"> 
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/responsive.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/main.css">
- 
- 	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/jobseeker_footer.css">
-    
-
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>asset/jc/css/jquery.Jcrop.css">
-    <!-- Data Table  CSS -->
-    <link href="<?php echo base_url(); ?>asset/css/plugins/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
-<!--Token-Input CSS-->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>asset/styles/token-input.css" type="text/css" />
-    <link rel="stylesheet" href="<?php echo base_url(); ?>asset/styles/token-input-facebook.css" type="text/css" />
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-
-<!-- Token field css -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>asset/tokenjs/css/tokenfield-typeahead.css" type="text/css" />
-    <link rel="stylesheet" href="<?php echo base_url(); ?>asset/tokenjs/css/bootstrap-tokenfield.css" type="text/css" />
-
-    <!-- multiselect css -->
-    <link href="<?php echo base_url(); ?>asset/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
-</head>
-                		<!-- Footer -->
+<div class="container-fluid end-footer">   
 	
-
-
-<div class="col-md-12 end-footer">
-<div class="container">
-<div class="row">        
+    <div class="container">
+    <div class="col-md-12 ">
+<div class="row">
 <div class="col-md-4 p-footer">
 <h5>About consultnHire</h5>
 					<ul class="list-unstyled quick-links">
@@ -79,16 +45,12 @@
 					</ul>
 </div>
 
-				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-					
-					<p class="h6">© All right Reversed.<a class="text-green ml-2" href="https://www.sunlimetech.com" target="_blank">Sunlimetech</a></p>
-				</div>
-				<hr>
+				
+				
 			</div>
 
 
-
 </div>
 </div>
 </div>
-	<!-- ./Footer -->
+</div>

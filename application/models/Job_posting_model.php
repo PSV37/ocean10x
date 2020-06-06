@@ -472,9 +472,9 @@ order by RAND() limit 3");
     {
         $data = array();
         $this->db->select('*');
-        $this->db->where('job_category', $categoryId);
+        // $this->db->where('job_category', $categoryId);
         // $this->db->where('DATE_FORMAT(created_at, '%Y-%m-%d')',$date);
-        $_thisdb           = clone $this->db->where('job_level', $levelId);
+        $_thisdb           = clone $this->db->where('job_category', $categoryId);
         $query             = $this->db->get($this->_table_name);
         $data['total_row'] = $query->num_rows();
         // $_thisdb->limit($limit, $offset);

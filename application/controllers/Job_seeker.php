@@ -24,12 +24,23 @@ class Job_seeker extends MY_Seeker_Controller
         $experinece_list = $this->Job_seeker_experience_model->experience_list_by_id($jobseeker_id);
         $job_career_info = $this->Job_career_model->js_careerinfo_by_seeker($jobseeker_id);
 
-           $joblevel=$experinece_list->job_level;
-           $$category=$job_career_info->industry_id;
+        foreach ($experinece_list as $row) {
+            $joblevel=$row->job_level;
+        }
+        foreach ($job_career_info as $row) {
+            $category=$row->industry_id;
+        }
+
+           // $joblevel=$experinece_list[0]->job_level;
+           // // print_r($experinece_list);
+           // // print_r($job_career_info);
+           // $category=$job_career_info[0]->industry_id;
 
            $date=date('Y-m-d');
 
             $alljobs          = $this->job_posting_model->get_job_jobseeker($category, $joblevel,$date);
+         // print_r($this->db->last_query());die();
+
             $totalrow         = $alljobs['total_row'];
          
 
@@ -49,7 +60,8 @@ class Job_seeker extends MY_Seeker_Controller
 
         $data['saved_jobs']=sizeof($saved_job_data);
         $data['job_alert']=sizeof($alljobs);
-        $data['jobs'] = $alljobs;
+        $data['jobs']= $alljobs;
+        // print_r($alljobs);die();
         $this->load->view('fontend/jobseeker/dashboard_new',$data);
     }
 	

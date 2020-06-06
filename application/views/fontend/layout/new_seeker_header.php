@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,15 +10,13 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/font-awesome.css"> 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/responsive.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/main.css">
-     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/jobseeker_header.css">
+    
      <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/seeker_dashboard.css">
+ 
+  
     
 
-
-
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>asset/jc/css/jquery.Jcrop.css">
-
     <!-- Data Table  CSS -->
     <link href="<?php echo base_url(); ?>asset/css/plugins/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
 <!--Token-Input CSS-->
@@ -35,18 +30,10 @@
 
     <!-- multiselect css -->
     <link href="<?php echo base_url(); ?>asset/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
-       
 </head>
-<body>
-    <?php  $job_seeker=$this->session->userdata('job_seeker_id');
-$jsname=$this->Job_seeker_model->jobseeker_name($job_seeker);
 
-
- ?> 
-    <div class="container-fluid gradient_strip" >
+   
+<div class="container-fluid gradient_strip" >
 <div class="container">
    <div class="menu_logo">
       <img src="http://www.tele-kinetics.com/assets/img/logo.png" />
@@ -76,8 +63,9 @@ $jsname=$this->Job_seeker_model->jobseeker_name($job_seeker);
      <!---profile--->
      <div class="profile">
      <i class="fas fa-user-circle"></i>
-     <b><?php echo $jsname;
-     // print_r($jsname); ?></b>
+     <b><?php
+     $job_seeker=$this->session->userdata('job_seeker_id');
+          echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?> </b>
      </div>
      <!---end-profile-->
     </div>
@@ -85,18 +73,3 @@ $jsname=$this->Job_seeker_model->jobseeker_name($job_seeker);
   </div>
 
 </div>
-	
-    	<div class="col-md-3">
-            <aside id="left-panel" style="margin-top:75px;
-                 margin-left: 14px;height:auto; border-right: 1px solid rgba(240, 240, 240, 0.3);box-shadow: 2px 2px 4px 0px   #00000033;position: fixed;
-            z-index: 999;vertical-align:baseline;">
-            <div class="inner-left-pannel">
-         <?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
-      
-
-	    </div>
-		</aside>
-	</div>
-	
-</body>
-
