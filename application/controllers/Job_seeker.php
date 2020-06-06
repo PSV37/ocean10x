@@ -20,9 +20,21 @@ class Job_seeker extends MY_Seeker_Controller
     
     public function my_dashboard()
     {
-            
-        // $this->load->view('fontend/jobseeker/seeker_dashboard');
         $jobseeker_id = $this->session->userdata('job_seeker_id');
+        $experinece_list = $this->Job_seeker_experience_model->experience_list_by_id($jobseeker_id);
+        $job_career_info = $this->Job_career_model->js_careerinfo_by_seeker($jobseeker_id);
+
+           $joblevel=$experinece_list->job_level;
+           $$category=$job_career_info->industry_id;
+
+           $date=date('Y-m-d');
+
+            $alljobs          = $this->job_posting_model->get_job_jobseeker($category, $joblevel,$date);
+            $totalrow         = $alljobs['total_row'];
+          $this->load->view('fontend/job/levelandcatjob', compact('category', 'joblevel', 'totalrow', 'offset', 'limit', 'alljobs', 'all_category', 'all_locaiton', 'company_list', 'jobtype_list', 'selectedcategory', 'selectedlocation', 'selectedcompany', 'selectednature'));
+
+        // $this->load->view('fontend/jobseeker/seeker_dashboard');
+        
            
         $where_edu="js_saved_jobs.job_seeker_id='$jobseeker_id'";
         $join_save = array(
@@ -36,7 +48,7 @@ class Job_seeker extends MY_Seeker_Controller
 
 
         $data['saved_jobs']=sizeof($saved_job_data);
-        $data['job_alert']=sizeof($forward_applicationlist);
+        $data['job_alert']=sizeof($alljobs);
         $this->load->view('fontend/jobseeker/dashboard_new',$data);
     }
 	

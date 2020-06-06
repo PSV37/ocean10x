@@ -468,6 +468,24 @@ order by RAND() limit 3");
         return false;
     }
 
+      public function get_job_jobseeker($categoryId, $levelId, $date)
+    {
+        $data = array();
+        $this->db->select('*');
+        $this->db->where('job_category', $categoryId);
+        // $this->db->where('DATE_FORMAT(created_at, '%Y-%m-%d')',$date);
+        $_thisdb           = clone $this->db->where('job_level', $levelId);
+        $query             = $this->db->get($this->_table_name);
+        $data['total_row'] = $query->num_rows();
+        // $_thisdb->limit($limit, $offset);
+        $query = $_thisdb->get($this->_table_name);
+        if ($query->num_rows() > 0) {
+            $data['result'] = $query->result();
+            return $data;
+        }
+        return false;
+    }
+
     public function get_job_by_job_type($job_types, $limit, $offset = 0)
     {
         $data = array();

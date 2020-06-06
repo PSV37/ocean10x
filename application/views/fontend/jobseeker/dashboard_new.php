@@ -16,7 +16,7 @@
 
                  $js_personal_info = $this->job_seeker_personal_model->personalinfo_list_by_id($jobseeker_id);
                  $jsname=$this->Job_seeker_model->jobseeker_name($job_seeker);
-            $job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id);
+                $job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id);
 
 
                 $full_profile_each=$MyProfile/11;
