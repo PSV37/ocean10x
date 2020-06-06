@@ -4,6 +4,92 @@
 
 
 <!---header end--->
+<?php  
+                $MyProfile=20;
+                $Education=20;
+                $Work_Experience=20;
+                $certs_training=20;
+                $js_photo=20;
+
+                 $jobseeker_id = $this->session->userdata('job_seeker_id');
+
+                 $js_personal_info = $this->job_seeker_personal_model->personalinfo_list_by_id($jobseeker_id);
+                 $jsname=$this->Job_seeker_model->jobseeker_name($job_seeker);
+                $job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id);
+
+
+                $full_profile_each=$MyProfile/11;
+                $Education_each=$Education/4;
+
+               
+                // print_r($Corporate_docs_each);die;
+                if (isset($job_seeker_photo) && !empty($job_seeker_photo)) {
+                    $photo_total = $js_photo;
+                }
+
+                if (isset($jsname->full_name) && !empty($jsname->full_name)) {
+                    $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($js_personal_info->date_of_birth) && !empty($js_personal_info->date_of_birth)) {
+                    $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($js_personal_info->mobile) && !empty($js_personal_info->mobile)) {
+                     $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($js_personal_info->present_address) && !empty($js_personal_info->present_address)) {
+                     $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($js_personal_info->city_name) && !empty($js_personal_info->city_name)) {
+                    $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($js_personal_info->state_name) && !empty($js_personal_info->state_name)) {
+                    $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($js_personal_info->country_name) && !empty($js_personal_info->country_name)) {
+                     $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($js_personal_info->marital_status) && !empty($js_personal_info->marital_status)) {
+                     $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($js_personal_info->work_permit_usa) && !empty($js_personal_info->work_permit_usa)) {
+                     $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($js_personal_info->work_permit_countries) && !empty($js_personal_info->work_permit_countries)) {
+                    $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($js_personal_info->resume_title) && !empty($js_personal_info->resume_title)) {
+                     $profile_details_total += $full_profile_each;
+                }
+
+                $edcuaiton_list = $this->Job_seeker_education_model->education_list_by_id($jobseeker_id);
+                if (isset($edcuaiton_list) && !empty($edcuaiton_list)) {
+                    $Education_total = $Education;
+                }
+
+                $experinece_list = $this->Job_seeker_experience_model->experience_list_by_id($jobseeker_id);
+                 if (isset($experinece_list) && !empty($experinece_list)) {
+                    $Work_Experience_total = $Work_Experience;
+                }
+
+                $training_list = $this->Job_training_model->training_list_by_id($jobseeker_id);
+                 if (isset($training_list) && !empty($training_list)) {
+                    $certs_training_total = $certs_training;
+                }
+
+                $profile_total=$photo_total+$profile_details_total+$Education_total+$Work_Experience_total+$certs_training_total;
+             
+                 ?>
+
 
    
 <div class="container-fluid">
@@ -196,7 +282,7 @@
                 <span class="progress-right">
                     <span class="progress-bar"></span>
                 </span>
-                <div class="progress-value">75%</div>
+                <div class="progress-value"><?php echo round($profile_total); ?>%</div>
             </div>
       
             
