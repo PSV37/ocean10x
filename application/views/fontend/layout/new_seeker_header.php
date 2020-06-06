@@ -63,8 +63,7 @@
      <!---profile--->
      <div class="profile">
      <i class="fas fa-user-circle"></i>
-     <b><?php echo $jsname;
-     // print_r($jsname); ?></b>
+     <b>supriya</b>
      </div>
      <!---end-profile-->
     </div>
@@ -72,8 +71,3 @@
   </div>
 
 </div>
-	
-    
-	
-
-

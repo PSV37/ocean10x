@@ -92,14 +92,14 @@
 
 <?php 
     $this->load->view('fontend/layout/new_seeker_header.php');
-    $this->load->view('fontend/layout/seeker_left_menu.php'); 
 
 ?>  
    
 <div class="container-fluid">
     <div class="container">
         <div class="col-md-12">
-    
+    <?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
+     
             
             <div class="col-md-6 mid-section">
             <div class="row">    
