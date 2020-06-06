@@ -64,12 +64,8 @@
      <div class="profile">
      <i class="fas fa-user-circle"></i>
      <b><?php
-                     
-                       if(!empty($this->Job_seeker_photo_model->get_jobseeker_photo($job_seeker))):?>
-                      <img src="<?php echo base_url() ?>upload/<?php echo  $this->Job_seeker_photo_model->get_jobseeker_photo($job_seeker);?>" alt="" class="img-circle"> <strong>Welcome <?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></strong></a>
-                      <?php else: ?>
-                      <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" alt="" class="img-circle"><strong>Welcome <?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></strong></a>
-                      <?php endif; ?></b>
+     $job_seeker=$this->session->userdata('job_seeker_id');
+          echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?> ?></b>
      </div>
      <!---end-profile-->
     </div>
