@@ -1,6 +1,6 @@
 <!---header css  --->
 
-.container{max-width:1290px;}
+
 .menu_logo img{   
 	width: 180px;
     margin-left: 45px;
@@ -118,9 +118,7 @@ i.fas.fa-search {
 
 
 
-body{background-color:#f7f7f738;
-
-font-family:'Roboto', sans-serif;}
+body{background-color:#f7f7f738;}
 .fixed-navigation #left-panel {
     height: 100%;
     position: fixed;
