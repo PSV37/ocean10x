@@ -211,9 +211,10 @@
     
     </div>
     <!-- Footer -->
+ 
     <!-- ./Footer -->
 </div>
    
-   
+   <?php $this->load->view("fontend/layout/jobseeker_footer.php"); ?>
    
 </body>
