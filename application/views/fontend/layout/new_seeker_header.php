@@ -46,7 +46,7 @@
 
    <div class="sear-bar">
    <form class="search-form">
-  <input type="search" id="search" style="color: white;" placeholder="search job">
+  <input type="search" id="search_job" style="color: white;" placeholder="search job">
 
   <!-- <input type="text" class="form-control" id="title" placeholder="Title" style="width:500px;"> -->
  <i class="fas fa-search"></i>
