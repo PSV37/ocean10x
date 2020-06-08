@@ -12,6 +12,9 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/responsive.css">
     
      <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/seeker_dashboard.css">
+
+     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/profile_css.css">
+
  
   
     
@@ -136,11 +139,22 @@
     <script src="<?php echo base_url(); ?>asset/js/jquery-ui.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-           var search = document.getElementsByName("view3").value();
+
+          if($('#week3').is(':checked'))
+          {
+            var search = 'week3';
+          }
+          else
+          {
+            var search = 'month3';
+
+          }
+           // var js=$('#week3').val();
+           // var ps=$('#month3').val();
            alert(search);
             $( "#search" ).autocomplete({
               // source:"product_auto_complete.php?postcode=" + $('#zipcode').val(),
-              source: "<?php echo base_url();?>job_seeker/search_people_job?=" +search,
+              source: "<?php echo base_url();?>job_seeker/search_people_job?search=" +search,
               extraParams: { search: search }
             });
         });
