@@ -43,7 +43,10 @@
 
    <div class="sear-bar">
    <form class="search-form">
-  <input type="search" id="search" style="color: white;">
+  <input type="text" id="job_search" style="color: white;">
+  <input type="text" id="people_search" style="color: white; display: none">
+
+  <!-- <input type="text" class="form-control" id="title" placeholder="Title" style="width:500px;"> -->
  <i class="fas fa-search"></i>
 </form>
      </div>          
@@ -100,6 +103,7 @@
         if (value=='week3') 
         {
           $("#search").attr("placeholder", "Job Search");
+          
         }
         else
         {
@@ -134,8 +138,10 @@
     <script src="<?php echo base_url(); ?>asset/js/jquery-ui.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-            $( "#search" ).autocomplete({
-              source: "<?php echo base_url('job_seeker/search_people_job'); ?>"
+           var search = document.getElementsByName("view3");
+            $( "#job_search" ).autocomplete({
+              source:"product_auto_complete.php?postcode=" + $('#zipcode').val(),
+              source: "<?php echo base_url('job_seeker/search_people_job?'); ?>"
             });
         });
     </script>
