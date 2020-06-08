@@ -112,7 +112,7 @@
         {
           $("#search").attr("placeholder", " Search People");
            $('#search_value').val(value);
-          
+
         }
         
       }
@@ -144,20 +144,9 @@
     <script type="text/javascript">
         $(document).ready(function(){
 
-          if($('#week3').is(':checked'))
-          {
-            var search = 'week3';
-          }
-          else
-          {
-            alert('else');
-            var search = 'month3';
-
-          }
-           // var js=$('#week3').val();
-           // var ps=$('#month3').val();
-           alert(search);
+           // alert(search);
             $( "#search" ).autocomplete({
+              alert($('#search_value').val());
               // source:"product_auto_complete.php?postcode=" + $('#zipcode').val(),
               source: "<?php echo base_url();?>job_seeker/search_people_job?search=" +$('#search_value').val(),
               extraParams: { search: search }
