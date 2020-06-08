@@ -47,6 +47,7 @@
    <div class="sear-bar">
    <form class="search-form">
   <input type="search" id="search_job" style="color: white;" placeholder="search job">
+  <input type="hidden" id="search_people" style="color: white;" placeholder="search People">
 
   <!-- <input type="text" class="form-control" id="title" placeholder="Title" style="width:500px;"> -->
  <i class="fas fa-search"></i>
@@ -105,13 +106,20 @@
         // alert('checked');
         if (value=='week3') 
         {
-          $("#search").attr("placeholder", " Search Job");
-           $('#search_value').val(value);
+         
+         
+          $("#search_people").prop("type", "hidden");
+          $("#search_job").prop("type", "search");
+
+           
         }
         else
         {
-          $("#search").attr("placeholder", " Search People");
-           $('#search_value').val(value);
+         
+          $("#search_job").prop("type", "hidden");
+          $("#search_people").prop("type", "search");
+
+           
 
         }
         
@@ -146,10 +154,22 @@
 
            // alert(search);
             alert($('#search_value').val());
-            $("#search").autocomplete({
+            $("#search_job").autocomplete({
              
               // source:"product_auto_complete.php?postcode=" + $('#zipcode').val(),
-              source: "<?php echo base_url();?>job_seeker/search_people_job?search=" + $('#search_value').val(),
+              source: "<?php echo base_url();?>job_seeker/search_job",
+             
+            });
+        });
+
+        $(document).ready(function(){
+
+           // alert(search);
+            alert($('#search_value').val());
+            $("#search_people").autocomplete({
+             
+              // source:"product_auto_complete.php?postcode=" + $('#zipcode').val(),
+              source: "<?php echo base_url();?>job_seeker/search_people",
              
             });
         });

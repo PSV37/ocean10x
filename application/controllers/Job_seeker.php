@@ -1205,7 +1205,41 @@ public function save_profile_details()
             }
         }
     }
+        function search_job()
+        {
+            if (isset($_GET['term'])) {
 
+                  
+                        $result = $this->Job_seeker_experience_model->search_jobs($_GET['term']);
+                        if (count($result) > 0) {
+                        foreach ($result as $row)
+                            $arr_result[] = $row->company_name;
+                            echo json_encode($arr_result);
+                        }
+                   
+
+                    
+                }
+
+        }
+
+        function search_people()
+        {
+            if (isset($_GET['term'])) {
+
+                  
+                       $result = $this->Job_seeker_experience_model->search_companies($_GET['term']);
+                        if (count($result) > 0) {
+                        foreach ($result as $row)
+                            $arr_result[] = $row->company_name;
+                            echo json_encode($arr_result);
+                        }
+                   
+
+                    
+                }
+
+        }
     // to get industry master for autocomplete
     function search_people_job(){
         // $term = $this->input->post('term');
