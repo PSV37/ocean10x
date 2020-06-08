@@ -1,4 +1,42 @@
 <head>
+  <style>
+          
+            .required {
+                color: #DD4B39;
+            }
+
+            .badge {
+                font-size: 10px;
+                font-weight: normal;
+                line-height: 13px;
+                padding: 2px 6px;
+                position: absolute;
+                right: -12px;
+                top: -5px;
+            }
+            .bg-green {
+                background: #1ABB9C !important;
+                border: 1px solid #1ABB9C !important;
+                color: #fff;
+            }
+            .text-center{
+                margin: 10px;
+                padding: 5px;
+                height: 25px;
+                background-color: #cccccc;
+            }
+            ul.msg_list li a .time {
+                font-size: 11px;
+                font-style: italic;
+                font-weight: bold;
+                position: absolute;
+                right: 35px;
+            }
+           ul.msg_list li a .message {
+                display: block !important;
+                font-size: 11px;
+            }
+        </style>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
