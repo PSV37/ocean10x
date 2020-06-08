@@ -51,7 +51,8 @@
   <!-- <input type="text" class="form-control" id="title" placeholder="Title" style="width:500px;"> -->
  <i class="fas fa-search"></i>
 </form>
-     </div>          
+     </div>   
+     <input type="hidden" name="1" id="search_value">       
 </div>
 
 
@@ -105,10 +106,13 @@
         if (value=='week3') 
         {
           $("#search").attr("placeholder", " Search Job");
+           $('#search_value').val(value);
         }
         else
         {
           $("#search").attr("placeholder", " Search People");
+           $('#search_value').val(value);
+          
         }
         
       }
@@ -155,7 +159,7 @@
            alert(search);
             $( "#search" ).autocomplete({
               // source:"product_auto_complete.php?postcode=" + $('#zipcode').val(),
-              source: "<?php echo base_url();?>job_seeker/search_people_job?search=" +search,
+              source: "<?php echo base_url();?>job_seeker/search_people_job?search=" +$('#search_value').val(),
               extraParams: { search: search }
             });
         });
