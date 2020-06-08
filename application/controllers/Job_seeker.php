@@ -1213,7 +1213,7 @@ public function save_profile_details()
                         $result = $this->Job_seeker_experience_model->search_jobs($_GET['term']);
                         if (count($result) > 0) {
                         foreach ($result as $row)
-                            $arr_result[] = $row->company_name;
+                            $arr_result[] = $row->job_title;
                             echo json_encode($arr_result);
                         }
                    
