@@ -146,9 +146,9 @@
 
            // alert(search);
             $( "#search" ).autocomplete({
-              alert($('#search_value').val());
+              // alert($('#search_value').val());
               // source:"product_auto_complete.php?postcode=" + $('#zipcode').val(),
-              source: "<?php echo base_url();?>job_seeker/search_people_job?search=" +$('#search_value').val(),
+              source: "<?php echo base_url();?>job_seeker/search_people_job?search=" + $('#search_value').val(),
               extraParams: { search: search }
             });
         });
