@@ -68,7 +68,7 @@
                                             <span class="icon-container">
                                               <i class="fas fa-map-signs"></i>
                                               </span>
-                                        <span class="text item">Become an Ocean champ</span>
+                                        <span class="text item">Become an OceanChamp</span>
                                               </a>
                                          </li>
                                             
