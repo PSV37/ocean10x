@@ -104,10 +104,12 @@
     <div class="social-media">
     <!---mail-box-->
     <div class="notification">
-        <i class="fas fa-comment-alt"></i><br>
-        <!-- Messaging -->
-             <?php 
-                $job_seeker=$this->session->userdata('job_seeker_id');  
+       <ul class="nav navbar-nav">      
+            <?php  $job_seeker=$this->session->userdata('job_seeker_id'); ?>      
+      <li role="presentation" class="dropdown" style="margin: 10px;" >
+              <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false" style="font-size: 15px;">
+                <i class="fa fa-envelope-o"></i>
+                <?php 
                     $msgs = get_messagescount($job_seeker);
                       if(!empty($msgs))
                         foreach($msgs as $msgs_row)
@@ -185,6 +187,8 @@
                   </div>
                 </li>
               </ul>
+            </li>
+          </ul>
     </div>    
     <!---mail box-end-->
     
