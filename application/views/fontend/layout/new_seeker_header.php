@@ -43,7 +43,7 @@
 
    <div class="sear-bar">
    <form class="search-form">
-  <input type="search" id="search" style="color: white;">
+  <input type="search" id="search" style="color: white;" placeholder="search job">
 
   <!-- <input type="text" class="form-control" id="title" placeholder="Title" style="width:500px;"> -->
  <i class="fas fa-search"></i>
@@ -101,11 +101,11 @@
         // alert('checked');
         if (value=='week3') 
         {
-          $("#search").attr("placeholder", "Job Search");
+          $("#search").attr("placeholder", " Search Job");
         }
         else
         {
-          $("#search").attr("placeholder", "People Search");
+          $("#search").attr("placeholder", " Search People");
         }
         
       }
