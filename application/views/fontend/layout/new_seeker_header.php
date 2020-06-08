@@ -136,10 +136,11 @@
     <script src="<?php echo base_url(); ?>asset/js/jquery-ui.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-           var search = document.getElementsByName("view3");
+           var search = document.getElementsByName("view3").value();
+           alert(search);
             $( "#search" ).autocomplete({
               // source:"product_auto_complete.php?postcode=" + $('#zipcode').val(),
-              source: "<?php echo base_url();?>job_seeker/search_people_job",
+              source: "<?php echo base_url();?>job_seeker/search_people_job?=" +search,
               extraParams: { search: search }
             });
         });
