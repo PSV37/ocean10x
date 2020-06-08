@@ -107,20 +107,13 @@
         if (value=='week3') 
         {
          
-         
           $("#search_people").prop("type", "hidden");
-          $("#search_job").prop("type", "search");
-
-           
-        }
+          $("#search_job").prop("type", "search");         
+       }
         else
         {
-         
           $("#search_job").prop("type", "hidden");
           $("#search_people").prop("type", "search");
-
-           
-
         }
         
       }
@@ -152,23 +145,16 @@
     <script type="text/javascript">
         $(document).ready(function(){
 
-           // alert(search);
-            alert($('#search_value').val());
             $("#search_job").autocomplete({
-             
-              // source:"product_auto_complete.php?postcode=" + $('#zipcode').val(),
+              
               source: "<?php echo base_url();?>job_seeker/search_job",
              
             });
         });
 
         $(document).ready(function(){
-
-           // alert(search);
-            alert($('#search_value').val());
             $("#search_people").autocomplete({
              
-              // source:"product_auto_complete.php?postcode=" + $('#zipcode').val(),
               source: "<?php echo base_url();?>job_seeker/search_people",
              
             });

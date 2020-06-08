@@ -31,21 +31,10 @@ class Job_seeker extends MY_Seeker_Controller
             $category=$row->industry_id;
         }
 
-           // $joblevel=$experinece_list[0]->job_level;
-           // // print_r($experinece_list);
-           // // print_r($job_career_info);
-           // $category=$job_career_info[0]->industry_id;
-
            $date=date('Y-m-d');
 
-            $alljobs          = $this->job_posting_model->get_job_jobseeker($category, $joblevel,$date);
-         // print_r($this->db->last_query());die();
-
-            $totalrow         = $alljobs['total_row'];
-         
-
-        // $this->load->view('fontend/jobseeker/seeker_dashboard');
-        
+            $alljobs      = $this->job_posting_model->get_job_jobseeker($category, $joblevel,$date);
+            $totalrow     = $alljobs['total_row'];
            
         $where_edu="js_saved_jobs.job_seeker_id='$jobseeker_id'";
         $join_save = array(
@@ -59,7 +48,7 @@ class Job_seeker extends MY_Seeker_Controller
 
 
         $data['saved_jobs']=sizeof($saved_job_data);
-        $data['job_alert']=sizeof($alljobs);
+        $data['job_alert']=$alljobs['total_row'];
         $data['jobs']= $alljobs;
         // print_r($alljobs);die();
         $this->load->view('fontend/jobseeker/dashboard_new',$data);
@@ -67,10 +56,16 @@ class Job_seeker extends MY_Seeker_Controller
 	
 	public function seeker_info()
     {
+        $jobseeker_id = $this->session->userdata('job_seeker_id');
+
 			$city = $this->Master_model->getMaster('city',$where=false);
             $country = $this->Master_model->getMaster('country',$where=false);
             $state = $this->Master_model->getMaster('state',$where=false);
-        $this->load->view('fontend/jobseeker/jobseeker_profile');
+            $jobseeker_id     = $this->session->userdata('job_seeker_id');
+            $js_personal_info = $this->job_seeker_personal_model->personalinfo_list_by_id($jobseeker_id);
+            $job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id);
+            $name = $this->Job_seeker_model->get_jobseeker_fullname($jobseeker_id);
+        $this->load->view('fontend/jobseeker/jobseeker_profile', compact('jobseeker_id', 'js_personal_info', 'job_seeker_photo', 'name', 'city', 'country', 'state'),true);
     }
 	
 
