@@ -135,7 +135,7 @@
     <script type="text/javascript">
         $(document).ready(function(){
             $( "#search" ).autocomplete({
-              source: "<?php echo base_url('job_seeker/search_people_job?');?>"
+              source: "<?php echo base_url('job_seeker/search_people_job'); ?>"
             });
         });
     </script>
