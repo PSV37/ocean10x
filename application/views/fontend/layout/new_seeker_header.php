@@ -40,6 +40,14 @@
     color: white;
 
 }
+.box::-webkit-input-placeholder {
+    color: white;
+}
+
+.box::-moz-placeholder {
+    color: white;
+
+}
      </style>
 </head>
 <!---header---->
