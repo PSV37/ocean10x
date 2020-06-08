@@ -146,6 +146,7 @@
           }
           else
           {
+            alert('else');
             var search = 'month3';
 
           }
