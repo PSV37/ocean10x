@@ -129,9 +129,9 @@
 </script>
 
 
-<script src="<?php echo base_url().'assets/js/jquery-3.3.1.js'?>" type="text/javascript"></script>
-    <script src="<?php echo base_url().'assets/js/bootstrap.js'?>" type="text/javascript"></script>
-    <script src="<?php echo base_url().'assets/js/jquery-ui.js'?>" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>assets/js/bootstrap.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>asset/js/jquery-ui.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             $( "#search" ).autocomplete({
