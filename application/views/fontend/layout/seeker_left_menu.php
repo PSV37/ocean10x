@@ -39,7 +39,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                             <a data-dl-view="true" data-dl-title="My profile" href="/candidate/detail">
+                                             <a data-dl-view="true" data-dl-title="My profile" href="<?php echo base_url() ?>job_seeker/seeker_info">
                                             <span class="icon-container">
                                                 <i class="fas fa-user-alt"></i>
                                            </span>
