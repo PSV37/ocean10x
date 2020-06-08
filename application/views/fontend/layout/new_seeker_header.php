@@ -14,7 +14,7 @@
      <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/seeker_dashboard.css">
 
      <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/profile_css.css">
-     
+
  
   
     
@@ -139,7 +139,18 @@
     <script src="<?php echo base_url(); ?>asset/js/jquery-ui.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-           var search = document.getElementsByName("view3")[0].value;
+
+          if($('#week3'+value).is(':checked'))
+          {
+            var search = 'week3';
+          }
+          else
+          {
+            var search = 'month3';
+
+          }
+           // var js=$('#week3').val();
+           // var ps=$('#month3').val();
            alert(search);
             $( "#search" ).autocomplete({
               // source:"product_auto_complete.php?postcode=" + $('#zipcode').val(),
