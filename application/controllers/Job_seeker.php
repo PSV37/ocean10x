@@ -1209,8 +1209,8 @@ public function save_profile_details()
     // to get industry master for autocomplete
     function search_people_job(){
         $term = $this->input->post('term');
-        $search = $this->input->post('search');
-        if (isset($term)) {
+        $search = $_GET['search'];
+        if (isset($_GET['term'])) {
 
             if ($search=='week3') {
                 $result = $this->Job_seeker_experience_model->search_companies($_GET['term']);

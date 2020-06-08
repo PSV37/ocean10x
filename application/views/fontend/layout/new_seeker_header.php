@@ -43,7 +43,7 @@
 
    <div class="sear-bar">
    <form class="search-form">
-  <input type="search" id="search" style="color: white;" onchange="getautocomplete();">
+  <input type="search" id="search" style="color: white;">
  <i class="fas fa-search"></i>
 </form>
      </div>          
@@ -127,6 +127,18 @@
     }
 
 </script>
+
+
+<script src="<?php echo base_url().'assets/js/jquery-3.3.1.js'?>" type="text/javascript"></script>
+    <script src="<?php echo base_url().'assets/js/bootstrap.js'?>" type="text/javascript"></script>
+    <script src="<?php echo base_url().'assets/js/jquery-ui.js'?>" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $( "#search" ).autocomplete({
+              source: "<?php echo base_url('job_seeker/search_people_job?');?>"
+            });
+        });
+    </script>
 
 
    
