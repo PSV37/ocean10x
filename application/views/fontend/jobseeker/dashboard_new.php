@@ -1,12 +1,7 @@
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <!---header---->
 
-<style type="text/css">
-::placeholder {
-  color: white;
-  opacity: 1; /* Firefox */
-}
-</style>
+
 
 <!---header end--->
 <?php  

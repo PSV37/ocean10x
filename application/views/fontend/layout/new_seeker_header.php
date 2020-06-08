@@ -35,6 +35,12 @@
     <link href="<?php echo base_url(); ?>asset/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+     <style type="text/css">
+       .box:-moz-placeholder {
+    color: white;
+
+}
+     </style>
 </head>
 <!---header---->
 
@@ -47,8 +53,8 @@
 
    <div class="sear-bar">
    <form class="search-form">
-  <input type="search" id="search_job" style="color: white;" placeholder="search job">
-  <input type="hidden" id="search_people" style="color: white;" placeholder="search People">
+  <input type="search" class="box" id="search_job" style="color: white;" placeholder="search job">
+  <input type="hidden" class="box" id="search_people" style="color: white;" placeholder="search People">
 
   <!-- <input type="text" class="form-control" id="title" placeholder="Title" style="width:500px;"> -->
  <i class="fas fa-search"></i>
