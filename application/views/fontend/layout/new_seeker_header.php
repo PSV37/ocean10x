@@ -112,7 +112,7 @@
 
     function getautocomplete()
     {
-      var term = document.getElementByID('search');
+      var term = document.getElementById('search');
       var search = document.getElementsByName("view3");
        $.ajax({
                 type:'POST',
