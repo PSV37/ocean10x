@@ -65,7 +65,7 @@ class Job_seeker extends MY_Seeker_Controller
             $data['js_personal_info'] = $this->job_seeker_personal_model->personalinfo_list_by_id($jobseeker_id);
             $data['job_seeker_photo'] = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id);
             $data['name'] = $this->Job_seeker_model->get_jobseeker_fullname($jobseeker_id);
-        $this->load->view('fontend/jobseeker/jobseeker_profiledata',$data);
+        $this->load->view('fontend/jobseeker/jobseeker_profile',$data);
     }
 	
 
