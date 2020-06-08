@@ -139,7 +139,7 @@
            var search = document.getElementsByName("view3");
             $( "#search" ).autocomplete({
               // source:"product_auto_complete.php?postcode=" + $('#zipcode').val(),
-              source: "<?php echo base_url();?>job_seeker/search_people_job?search="+search,
+              source: "<?php echo base_url();?>job_seeker/search_people_job?search="+document.getElementsByName("view3").value(),
             });
         });
     </script>
