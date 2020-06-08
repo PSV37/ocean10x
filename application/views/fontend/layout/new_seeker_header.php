@@ -43,8 +43,7 @@
 
    <div class="sear-bar">
    <form class="search-form">
-    <input type="text" class="form-control" id="search" placeholder="Search Peoples.." style="margin: 5%;">
-  <!-- <input type="search" id="search" style="color: white;"> -->
+  <input type="search" id="search" style="color: white;" onkeypress="getautocomplete();">
  <i class="fas fa-search"></i>
 </form>
      </div>          
@@ -109,6 +108,22 @@
         
       }
       
+    }
+
+    function getautocomplete()
+    {
+      var term = document.getElementByID('search');
+      var search = document.getElementsByName("view3");
+       $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>job_seeker/search_people_job',
+                data:{term:term,search:search},
+                success:function(res){
+                  $('#sort').append(res);
+                  alert(res);
+                }
+        
+            });
     }
 
 </script>

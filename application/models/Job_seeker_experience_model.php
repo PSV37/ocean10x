@@ -104,5 +104,13 @@ class Job_seeker_experience_model extends MY_Model
         // $this->db->limit(10);
         return $this->db->get('js_info')->result();
     }
+
+    function search_jobs($title){
+        $this->db->like('job_title', $title , 'both');
+        $this->db->order_by('job_title', 'ASC');
+        // $this->db->WHERE('status', '1');
+        // $this->db->limit(10);
+        return $this->db->get('job_posting')->result();
+    }
     
 }
