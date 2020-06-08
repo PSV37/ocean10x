@@ -43,7 +43,7 @@
 
    <div class="sear-bar">
    <form class="search-form">
-  <input type="search" id="search" style="color: white;" onkeypress="getautocomplete();">
+  <input type="search" id="search" style="color: white;" onchange="getautocomplete();">
  <i class="fas fa-search"></i>
 </form>
      </div>          
