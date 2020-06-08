@@ -43,7 +43,8 @@
 
    <div class="sear-bar">
    <form class="search-form">
-  <input type="search" id="search" style="color: white;">
+    <input type="text" class="form-control" id="search" placeholder="Search Peoples.." style="margin: 5%;">
+  <!-- <input type="search" id="search" style="color: white;"> -->
  <i class="fas fa-search"></i>
 </form>
      </div>          
