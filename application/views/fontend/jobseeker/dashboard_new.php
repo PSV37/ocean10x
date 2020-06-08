@@ -116,8 +116,9 @@
                             </div>
                             <span>Saved Job</span>
                             </div>
-                            <a class="card-footer text-white clearfix small z-1" href="<?php echo base_url(); ?>seeker/my-saved-jobs">
-                            <span class="float-left" style="font-size:2px;"><?php echo $saved_jobs; ?></span>
+                            <a class="card-footer text-white clearfix small z-1" href="#">
+                            <span class="float-left" style="font-size:22px;"><?php echo $saved_jobs; ?></span>
+                            
                             </a>
                             </div>
                         </div>
