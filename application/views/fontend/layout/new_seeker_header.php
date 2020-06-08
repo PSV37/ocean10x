@@ -140,7 +140,7 @@
     <script type="text/javascript">
         $(document).ready(function(){
 
-          if($('#week3'+value).is(':checked'))
+          if($('#week3').is(':checked'))
           {
             var search = 'week3';
           }
