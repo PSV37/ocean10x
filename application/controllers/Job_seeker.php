@@ -68,7 +68,17 @@ class Job_seeker extends MY_Seeker_Controller
             $data['jobseeker_id']     = $this->session->userdata('job_seeker_id');
             $data['js_personal_info'] = $this->job_seeker_personal_model->personalinfo_list_by_id($jobseeker_id);
             $data['job_seeker_photo'] = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id);
-            $data['name'] = $this->Job_seeker_model->get_jobseeker_fullname($jobseeker_id);
+
+            $where['edu_level_id'] = '1';
+            $data['phdspecial'] = $this->Master_model->getMaster('education_specialization',$where);
+
+            $where['edu_level_id'] = '2';
+            $data['pgdspecial'] = $this->Master_model->getMaster('education_specialization',$where);
+
+            $where['edu_level_id'] = '3';
+            $data['gddspecial'] = $this->Master_model->getMaster('education_specialization',$where);
+
+           
 
             $data['edcuaiton_list']  = $this->Job_seeker_education_model->education_list_by_id($jobseeker_id);
         $this->load->view('fontend/jobseeker/jobseeker_profile',$data);
