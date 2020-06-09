@@ -26,6 +26,8 @@ class Job_seeker extends MY_Seeker_Controller
         $experinece_list = $this->Job_seeker_experience_model->experience_list_by_id($jobseeker_id);
         $job_career_info = $this->Job_career_model->js_careerinfo_by_seeker($jobseeker_id);
 
+         $data['job_seeker_resume'] = $this->Master_model->get_master_row('js_attached_resumes',$select =FALSE ,$where="job_seeker_id='$jobseeker_id'",$join = false);
+
         foreach ($experinece_list as $row) {
             $joblevel=$row->job_level;
         }
