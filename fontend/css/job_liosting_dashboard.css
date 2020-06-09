@@ -1,0 +1,132 @@
+.invitetion-box {
+    background-color: #fff;
+    margin-top: 65px;
+    padding: 10px 20px;
+}
+.invitation-img{width:70px;height:70px;
+box-shadow: -1px 1px 2px #0000001f;
+    border-radius: 5px;
+	float:left;margin-right: 20px;
+}
+.salary-info{font-size:12px;
+			color:#8a8b8c;}
+.invi-div {
+    line-height: 17px;
+	cursor:pointer;
+	margin-bottom:20px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}	
+
+.location-inv {
+    width: 25px;
+    height: 25px;
+    background-color: #f1f1f1;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 40px;
+	float:left;
+	cursor:pointer;
+}
+.location-inv:hover{color:#000;}
+.last-row-invitation {
+    margin-left: 53px;
+	margin-bottom:33px;
+}
+.year-inv {
+    width: auto;
+    height: 25px;
+    background-color:#f1f1f1;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 40px;
+    padding: 0px 12px;
+	cursor:pointer;
+}
+.year-inv:hover{color:#000;}
+.last-row-invitation ul li{float:left;
+margin-right:20px;
+list-style-type:none;}
+.calender-inv{
+	width: auto;
+    height: 25px;
+    background-color:#f1f1f1;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 40px;
+    padding: 0px 12px;
+	cursor:pointer;
+	}
+.calender-inv:hover{color:#000;}	
+.fulltime-inv{
+	width: auto;
+    height: 25px;
+    background-color:#f1f1f1;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 40px;
+    padding: 0px 12px;
+	cursor:pointer;
+	}	
+.fulltime-inv:hover{color:#000;}	
+.detail-b {
+    background-color: #ffffff;
+    height: 20px;
+   
+    width: 50px;
+    padding: 2px;
+    line-height: 14px;
+    text-align: center;
+    color: #828282;
+    margin-left: 90px;
+    cursor: pointer;
+    border-radius: 30px;
+    border: solid 1px #bcbcbc;
+    font-size: 11px;
+}
+.detail-b:hover{
+	 background-color:#bcbcbc;
+	 color:#fff;
+	}
+.apply-invi{float: right;
+    background-color: #fff;
+    padding: 10px 35px;
+    border: solid 1px #3F51B5;
+    color: #3F51B5;
+    font-weight: 700;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-top: -55px;	
+}
+.apply-invi:hover{ background-color: #3F51B5;
+color:#fff;}
+.invi-div {
+   
+    padding: 15px 10px;
+	box-shadow: 0 0 5px #cac8c8;   
+}
+.head-invi{font-size:18px;cursor: pointer;}
+.head-invi:hover{text-decoration:underline;}
+.box {
+   
+    font-size: 20px;
+    color: #747574;
+	margin-bottom:15px;
+  
+}
+.more-btn{background-color: white;
+    border: solid 2px #167dc1;
+    padding: 7px 20px;
+    border-radius:4px;
+	color:#167dc1;}
+.more-btn:hover{background-color:#167dc1;
+    border: solid 2px #167dc1;
+   
+	color:#fff;}	
+.btn-more{text-align:center;
+	margin:20px 0px;}
+.box ul li{float:left;
+list-style-type:none;
+margin-right:20PX;}
+.ocen-activities{margin-top:80px;}
+
