@@ -30,7 +30,7 @@
                                 <nav class="menu-principal">
                                 
                                     <ul class="menu-principal-list" style="">
-                                         <li class="active">
+                                         <li class="menu active">
                                              <a data-dl-view="true" data-dl-title="Dashboard" href="<?php echo base_url(); ?>seeker/dashboard">
                                             <span class="icon-container">
                                                  <i class="fas fa-tachometer-alt"></i>
@@ -38,7 +38,7 @@
                                             <span class="text item">Dashboard</span>
                                             </a>
                                         </li>
-                                        <li>
+                                        <li class="menu">
                                              <a data-dl-view="true" data-dl-title="My profile" href="<?php echo base_url() ?>job_seeker/seeker_info">
                                             <span class="icon-container">
                                                 <i class="fas fa-user-alt"></i>
@@ -47,7 +47,7 @@
                                               </a>
                                        </li>
                                        
-                                      <li>
+                                      <li class="menu">
                                      <a data-dl-view="true" data-dl-title="Contacts" href="<?php echo base_url(); ?>seeker/my-inbound-job-invitations"> 
                                        <span class="icon-container">
                                          <i class="fas fa-phone-volume"></i>
@@ -55,7 +55,7 @@
                                         <span class="text item">OcearnHunt Activities</span>
                                      </a>
                                       </li>
-                                         <li>
+                                         <li class="menu">
                                          <a data-dl-view="true" data-dl-title="Recruitments" href="/campaign">
                                             <span class="icon-container">
                                               <i class="fas fa-filter"></i>
@@ -63,7 +63,7 @@
                                         <span class="text item">Skill Upgrade</span>
                                           </a>
                                         </li>
-                                         <li>
+                                         <li class="menu">
                                             <a data-dl-view="true" data-dl-title="Mobility" href="/jobprofile/generate">
                                             <span class="icon-container">
                                               <i class="fas fa-map-signs"></i>
@@ -84,3 +84,16 @@
             </div>
           </aside>
         </div>
+
+        <script>
+// Add active class to the current button (highlight it)
+var header = document.getElementById("menu-tab");
+var btns = header.getElementsByClassName("menu");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+</script>
