@@ -48,7 +48,7 @@
                                        </li>
                                        
                                       <li>
-                                     <a data-dl-view="true" data-dl-title="Contacts" href="/candidate">
+                                     <a data-dl-view="true" data-dl-title="Contacts" href="<?php echo base_url(); ?>seeker/my-inbound-job-invitations"> 
                                        <span class="icon-container">
                                          <i class="fas fa-phone-volume"></i>
                                      </span>
