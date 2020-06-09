@@ -21,6 +21,8 @@ class Job_seeker extends MY_Seeker_Controller
     public function my_dashboard()
     {
         $jobseeker_id = $this->session->userdata('job_seeker_id');
+        $where_int="job_seeker_id='$jobseeker_id'";
+        $data['intro_data'] = $this->Master_model->get_master_row("js_info", $select= FALSE, $where_int, $join = FALSE);
         $experinece_list = $this->Job_seeker_experience_model->experience_list_by_id($jobseeker_id);
         $job_career_info = $this->Job_career_model->js_careerinfo_by_seeker($jobseeker_id);
 
