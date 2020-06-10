@@ -194,7 +194,7 @@
                   </div>                
              </div>
 
-             iv class="col-md-9 ocen-activities">
+             <div class="col-md-9 ocen-activities">
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#activity1">Invitations</a></li>
     <li><a data-toggle="tab" href="#activity2">Applications</a></li>
