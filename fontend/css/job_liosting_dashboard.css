@@ -129,4 +129,124 @@ color:#fff;}
 list-style-type:none;
 margin-right:20PX;}
 .ocen-activities{margin-top:80px;}
+<!--DETAILS CSS-->
+
+.details_box {
+    background-color:#fdfeff;
+    margin-top: 79px;
+    padding: 10px;
+    box-shadow: 1px 1px 5px #dfdcdc;
+	margin-bottom:20px;
+}
+.jobinfolist li h4 {
+    font-size: 12px;
+    display: inline-block;
+    font-weight: 700;
+    width: 46%;
+    float: left;
+}
+.jobinfolist li strong {
+    color: #747575;
+    font-weight: 400;
+    font-size: 11px;
+    float: left;
+    width: 54%;
+    line-height: 18px;
+    margin-top: 7px;
+}
+.jobinfolist {
+    margin-left: 0 !important;
+}
+.jobinfolist li:after {
+    display: table;
+    clear: both;
+    content: '';
+}
+.jobinfolist li {
+    padding-left: 0 !important;
+    padding: 0px 0 !important;
+   
+    line-height: 7px !important;
+    list-style-type: none;
+}
+.job-header .contentbox ul li {
+    padding: 8px 0 8px 25px;
+    position: relative;
+    line-height: 24px;
+}
+.jd{margin-left:40px;}
+.jd p{font-size: 12px;
+    color: #696767;
+}
+.jd-require{margin-left:40px;}
+button.apply-cv:hover{  
+background-color:#88c721 !important;
+color:#fff;
+}
+
+button.apply-cv {
+  padding: 7px 20px;
+    color: #fff;
+    background-color: #fbfbfb !important;
+    font-size: 12px;
+    margin-top: 9px;
+    margin-bottom: 20px;
+    border: solid 2px #8BC34A;
+    border-radius: 40px;
+    background-color: transperant;
+    color: #67b03d;
+} 
+.swal-title {
+    color: rgba(0, 0, 0, 0.82);
+    font-weight: inherit;
+    text-transform: none;
+    position: relative;
+    display: block;
+    padding: 13px 16px;
+    font-size: 18px;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 0;
+}
+.swal-button {
+    background-color:#4ac728;
+}
+.example button {
+  float: left;
+  background-color: #4E3E55;
+  color: white;
+  border: none;
+  box-shadow: none;
+  font-size: 17px;
+  font-weight: 500;
+  font-weight: 600;
+  border-radius: 3px;
+  padding: 15px 35px;
+  margin: 26px 5px 0 5px;
+  cursor: pointer; 
+}
+.example button:focus{
+  outline: none; 
+}
+.job-logo {
+    text-align: center;
+    margin-bottom: 20px;
+	
+}
+.example button:hover{
+  background-color: #33DE23; 
+}
+.example button:active{
+  background-color: #81ccee; 
+}
+.swal-button:not([disabled]):hover {
+    background-color: #10d818;
+}
+.swal-footer{text-align:center !important;}
+.swal-text{display:none;}
+.job-disc-logo{height:50px;
+width:50px;
+box-shadow: 1px 1px 4px #c7c2c2;
+border-radius:5px;
+cursor: pointer;}
 
