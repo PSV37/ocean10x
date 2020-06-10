@@ -1854,7 +1854,7 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
 
     <div class="col-md-12 bd-2">
                 <?php 
-        $
+       
         // print_r($experinece_list);
                 $sr_no=0;
             if (!empty($training_list)): foreach ($training_list as $v_training) : 
@@ -1924,8 +1924,8 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
     
     
     </div>
-  </div>
-        <?php foreach($training_list as $v_training): ?>
+
+      <?php foreach($training_list as $v_training): ?>
 <div id="UdpateTraining<?php echo $v_training->js_training_id; ?>" class="modal fade" role="dialog">
   <div class="modal-dialog modal-md">
    <?php
@@ -2053,8 +2053,15 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
         
       </div>
     </div>
-  </div>      
-    <?php endforeach; ?>
+  </div> 
+
+<?php  $count++; ?>
+<?php endforeach;?>
+
+  
+  </div>
+           
+    <!-- <?php endforeach; ?> -->
         
             
             
