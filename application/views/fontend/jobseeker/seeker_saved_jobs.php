@@ -1,12 +1,14 @@
 <!--header--->
+
+    <?php 
+    $this->load->view('fontend/layout/new_seeker_header.php');
+?> 
 <div class="container-fluid main-box_Scroll">
 
 <div clas="row">
 	<div class="col-md-12">
     
-    <?php 
-    $this->load->view('fontend/layout/new_seeker_header.php');
-?> 
+    <?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
         
  <div class="col-md-9">
         <div class="row">
