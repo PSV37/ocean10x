@@ -193,160 +193,6 @@
                               
                   </div>                
              </div>
-
-             <div class="col-md-9 ocen-activities">
-  <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#activity1">Invitations</a></li>
-    <li><a data-toggle="tab" href="#activity2">Applications</a></li>
-    <li><a data-toggle="tab" href="#activity3">Interview</a></li>
-    <li><a data-toggle="tab" href="#activity4">Calender</a></li>
-    
-  </ul>
-
-  <div class="tab-content">
-    <div id="activity1" class="tab-pane fade in active">
-        <div class="invi-div">
-                            <img src="https://media-exp1.licdn.com/dms/image/C4E0BAQHbWPfQdNw1EA/company-logo_200_200/0?e=2159024400&v=beta&t=fWMuJX9leYFsDf-weERHLyIPfRh4aCOwx8wygmhad9Q" class="invitation-img"/>
-                            <div class="info-invitation">
-                                <p class="head-invi">php developer</p>
-                                <span class="salary-info">Slaray: 20k-30k<span>
-                                <p>text test</p>
-                                 <div class="detail-b">Details</div>
-                                    <div class="last-row-invitation">
-                                    <ul>
-                                        <li><div class="location-inv"><i class="fas fa-map-marker-alt"></i></div></li>
-                                       <li> <div class="year-inv"><i class="fas fa-save"></i>&emsp;2 years</div></li>
-                                        <li> <div class="calender-inv"><i class="far fa-calendar-alt"></i>&emsp;7 hr ago</div></li>
-                                        <li> <div class="fulltime-inv"><i class="fas fa-clock"></i>&emsp;full time</div></li>
-                                    </ul>
-                                    </div>
-                            
-                                <button class="apply-invi">Apply Now</button>
-                            </div>
-                            <div class="clear"></div>   
-                        </div>
-                        
-        <div class="invi-div">
-                            <img src="https://media-exp1.licdn.com/dms/image/C4E0BAQHbWPfQdNw1EA/company-logo_200_200/0?e=2159024400&v=beta&t=fWMuJX9leYFsDf-weERHLyIPfRh4aCOwx8wygmhad9Q" class="invitation-img"/>
-                            <div class="info-invitation">
-                                <p class="head-invi">php developer</p>
-                                <span class="salary-info">Slaray: 20k-30k<span>
-                                <p>text test</p>
-                                 <div class="detail-b">Details</div>
-                                    <div class="last-row-invitation">
-                                    <ul>
-                                        <li><div class="location-inv"><i class="fas fa-map-marker-alt"></i></div></li>
-                                       <li> <div class="year-inv"><i class="fas fa-save"></i>&emsp;2 years</div></li>
-                                        <li> <div class="calender-inv"><i class="far fa-calendar-alt"></i>&emsp;7 hr ago</div></li>
-                                        <li> <div class="fulltime-inv"><i class="fas fa-clock"></i>&emsp;full time</div></li>
-                                    </ul>
-                                    </div>
-                            
-                                <button class="apply-invi">Apply Now</button>
-                            </div>
-                            <div class="clear"></div>   
-                        </div>
-          <div class="invi-div">
-                            <img src="https://media-exp1.licdn.com/dms/image/C4E0BAQHbWPfQdNw1EA/company-logo_200_200/0?e=2159024400&v=beta&t=fWMuJX9leYFsDf-weERHLyIPfRh4aCOwx8wygmhad9Q" class="invitation-img"/>
-                            <div class="info-invitation">
-                                <p class="head-invi">php developer</p>
-                                <span class="salary-info">Slaray: 20k-30k<span>
-                                <p>text test</p>
-                                 <div class="detail-b">Details</div>
-                                    <div class="last-row-invitation">
-                                    <ul>
-                                        <li><div class="location-inv"><i class="fas fa-map-marker-alt"></i></div></li>
-                                       <li> <div class="year-inv"><i class="fas fa-save"></i>&emsp;2 years</div></li>
-                                        <li> <div class="calender-inv"><i class="far fa-calendar-alt"></i>&emsp;7 hr ago</div></li>
-                                        <li> <div class="fulltime-inv"><i class="fas fa-clock"></i>&emsp;full time</div></li>
-                                    </ul>
-                                    </div>
-                            
-                                <button class="apply-invi">Apply Now</button>
-                            </div>
-                            <div class="clear"></div>   
-                        </div>
-        <div class="btn-more">
-                <button class="more-btn">show more</button>
-                </div>
-   </div>
-    <div id="activity2" class="tab-pane fade">
-      <div class="invi-div">
-                            <img src="https://media-exp1.licdn.com/dms/image/C4E0BAQHbWPfQdNw1EA/company-logo_200_200/0?e=2159024400&v=beta&t=fWMuJX9leYFsDf-weERHLyIPfRh4aCOwx8wygmhad9Q" class="invitation-img"/>
-                            <div class="info-invitation">
-                                <p class="head-invi">php developer</p>
-                                <span class="salary-info">Slaray: 20k-30k<span>
-                                <p>text test</p>
-                                 <div class="detail-b">Details</div>
-                                    <div class="last-row-invitation">
-                                    <ul>
-                                        <li><div class="location-inv"><i class="fas fa-map-marker-alt"></i></div></li>
-                                       <li> <div class="year-inv"><i class="fas fa-save"></i>&emsp;2 years</div></li>
-                                        <li> <div class="calender-inv"><i class="far fa-calendar-alt"></i>&emsp;7 hr ago</div></li>
-                                        <li> <div class="fulltime-inv"><i class="fas fa-clock"></i>&emsp;full time</div></li>
-                                    </ul>
-                                    </div>
-                            
-                                <button class="apply-invi">Apply Now</button>
-                            </div>
-                            <div class="clear"></div>   
-                        </div>
-                        
-        <div class="invi-div">
-                            <img src="https://media-exp1.licdn.com/dms/image/C4E0BAQHbWPfQdNw1EA/company-logo_200_200/0?e=2159024400&v=beta&t=fWMuJX9leYFsDf-weERHLyIPfRh4aCOwx8wygmhad9Q" class="invitation-img"/>
-                            <div class="info-invitation">
-                                <p class="head-invi">php developer</p>
-                                <span class="salary-info">Slaray: 20k-30k<span>
-                                <p>text test</p>
-                                 <div class="detail-b">Details</div>
-                                    <div class="last-row-invitation">
-                                    <ul>
-                                        <li><div class="location-inv"><i class="fas fa-map-marker-alt"></i></div></li>
-                                       <li> <div class="year-inv"><i class="fas fa-save"></i>&emsp;2 years</div></li>
-                                        <li> <div class="calender-inv"><i class="far fa-calendar-alt"></i>&emsp;7 hr ago</div></li>
-                                        <li> <div class="fulltime-inv"><i class="fas fa-clock"></i>&emsp;full time</div></li>
-                                    </ul>
-                                    </div>
-                            
-                                <button class="apply-invi">Apply Now</button>
-                            </div>
-                            <div class="clear"></div>   
-                        </div>
-          <div class="invi-div">
-                            <img src="https://media-exp1.licdn.com/dms/image/C4E0BAQHbWPfQdNw1EA/company-logo_200_200/0?e=2159024400&v=beta&t=fWMuJX9leYFsDf-weERHLyIPfRh4aCOwx8wygmhad9Q" class="invitation-img"/>
-                            <div class="info-invitation">
-                                <p class="head-invi">php developer</p>
-                                <span class="salary-info">Slaray: 20k-30k<span>
-                                <p>text test</p>
-                                 <div class="detail-b">Details</div>
-                                    <div class="last-row-invitation">
-                                    <ul>
-                                        <li><div class="location-inv"><i class="fas fa-map-marker-alt"></i></div></li>
-                                       <li> <div class="year-inv"><i class="fas fa-save"></i>&emsp;2 years</div></li>
-                                        <li> <div class="calender-inv"><i class="far fa-calendar-alt"></i>&emsp;7 hr ago</div></li>
-                                        <li> <div class="fulltime-inv"><i class="fas fa-clock"></i>&emsp;full time</div></li>
-                                    </ul>
-                                    </div>
-                            
-                                <button class="apply-invi">Apply Now</button>
-                            </div>
-                            <div class="clear"></div>   
-                        </div>
-        <div class="btn-more">
-                <button class="more-btn">show more</button>
-                </div>
-    </div>
-   
-    <div id="activity3" class="tab-pane fade">
-    </div>
-    
-     <div id="activity4" class="tab-pane fade">
-    </div>
-   
-   
-   
-  </div>
-</div>
              
              <div class="col-md-12 bd-2">
                 <?php 
@@ -358,25 +204,27 @@
                     # code...
                
             ?>
-            <div class="job-voucher alert alert-dismissible" >
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-
-                  <img src="<?php echo base_url()?>upload/<?php echo $this->company_profile_model->company_logoby_id($applicaiton[$i]->company_profile_id); ?>" class="dimen_img-s" />
-
-                   <div class="job_title"><a href="<?php  echo base_url();?>job/show/<?php echo $this->job_posting_model->get_slug_nameby_id($applicaiton[$i]->job_post_id) ?>"><?php echo $this->job_posting_model->job_title_by_name($applicaiton[$i]->job_post_id); ?></a>
-                   <!-- The person/job specification can be presented as a stand-alone  -->
-                   
-                   </div> 
-                    <div class="organization">
-                     <?php echo $this->company_profile_model->company_name($applicaiton[$i]->company_profile_id); ?>
-                    </div>
-                    <div class="location">
-                      <?php echo $applicaiton[$i]->city_id;  ?>
-                    </div>
-                    <a href="<?php echo base_url(); ?>job/show/<?php echo $applicaiton['job_slugs']; ?>" class="btn btn-success btn-xs apply_job_btn">Apply job</a>
-                    <!-- <div class="apply_job_btn">Apply job</div> -->
-                    <button class="job_dis_btn">Details</button>
-                </div>
+            <div class="invi-div">
+                            <img src="<?php echo base_url()?>upload/<?php echo $this->company_profile_model->company_logoby_id($applicaiton[$i]->company_profile_id); ?>" class="invitation-img"/>
+                            <div class="info-invitation">
+                                <p class="head-invi"><?php echo $this->job_posting_model->job_title_by_name($applicaiton[$i]->job_post_id); ?></p>
+                                <span class="salary-info">Slaray: <?php echo $this->job_posting_model->job_salary_by_id($applicaiton[$i]->job_post_id); ?><span>
+                                <p>text test</p>
+                                 <div class="detail-b">Details</div>
+                                    <div class="last-row-invitation">
+                                    <ul>
+                                        <li><div class="location-inv"><i class="fas fa-map-marker-alt"></i></div></li>
+                                       <li> <div class="year-inv"><i class="fas fa-save"></i>&emsp;2 years</div></li>
+                                        <li> <div class="calender-inv"><i class="far fa-calendar-alt"></i>&emsp;7 hr ago</div></li>
+                                        <li> <div class="fulltime-inv"><i class="fas fa-clock"></i>&emsp;full time</div></li>
+                                    </ul>
+                                    </div>
+                            
+                                <button class="apply-invi">Apply Now</button>
+                            </div>
+                            <div class="clear"></div>   
+                        </div>
+            <!--  -->
                  <?php
                   // $sr_no++;
                    }
