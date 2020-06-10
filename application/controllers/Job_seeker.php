@@ -78,6 +78,7 @@ class Job_seeker extends MY_Seeker_Controller
             $where['edu_level_id'] = '3';
             $data['gddspecial'] = $this->Master_model->getMaster('education_specialization',$where);
             $data['course'] = $this->Master_model->getMaster('course',$where=false);
+            $data['schoolboard'] = $this->Master_model->getMaster('schoolboard',$where=false);
 
            
 
