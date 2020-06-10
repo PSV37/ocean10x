@@ -15,16 +15,7 @@
   
                 <div class="col-md-12">
                 
-                    <div class="gradient_strip"></div>
-                    <div class="text-grad">
-                    <h1 class="ml10">
-                      <span class="text-wrapper">
-                        <span class="letters">My Profile</span>
-                         <p>Profile</p>
-                      </span>
-                    </h1>
-                    </div>
-                    
+                   
                    
         		
             	<h3 class="profile_heading">SAVED JOB</h3>
