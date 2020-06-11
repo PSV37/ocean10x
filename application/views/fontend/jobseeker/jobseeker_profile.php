@@ -2159,12 +2159,16 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
                             <div class="clear"></div>   
                         </div>
             <!--  -->
-                 <?php endif; ?>
+                  <?php else : ?> 
             
                 <div>
                     <strong>There is no data to display</strong>
                   
                 </div>
+             
+              
+            <?php endif; ?>
+             </div>
              
               
            
