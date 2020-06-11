@@ -1845,7 +1845,7 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
     </div>
   </div>
   
-              <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal7">Edit</a></span>  
+              <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal7"><i class="fa fa-plus"></i></a></span>  
 
   
       </li>
@@ -2122,6 +2122,7 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
       $js_skills = $this->Master_model->getMaster('job_seeker_skills',$where_skill);
        
 
+              if (!empty($js_skills)):
                 // print_r($applicaiton);
                 // for ($i=0; $i <sizeof($v_experience) ; $i++) { 
                     # code...
@@ -2158,12 +2159,7 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
                             <div class="clear"></div>   
                         </div>
             <!--  -->
-                 <?php
-                  // $sr_no++;
-                   // }
-              endforeach;
-            ?>
-            <?php else : ?> 
+                 <?php endif; ?>
             
                 <div>
                     <strong>There is no data to display</strong>
@@ -2171,7 +2167,7 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
                 </div>
              
               
-            <?php endif; ?>
+           
              </div>
     
     
