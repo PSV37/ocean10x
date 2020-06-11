@@ -1238,7 +1238,7 @@
         <div class="col-sm-10">
           <label class="control-label" for="email">Education<span class="required">*</span></label>
           <select name="education_level_id" id="education_level_id" class="form-control" required="">
-                       <option value="5">12th</option>
+                       <option value="4">12th</option>
                       </select>
         </div>
         <div class="col-sm-1"></div>
@@ -1346,7 +1346,7 @@
         <div class="col-sm-10">
           <label class="control-label" for="email">Education<span class="required">*</span></label>
           <select name="education_level_id" id="education_level_id" class="form-control" required="">
-                       <option value="6">10th</option>
+                       <option value="5">10th</option>
                       </select>
         </div>
         <div class="col-sm-1"></div>
