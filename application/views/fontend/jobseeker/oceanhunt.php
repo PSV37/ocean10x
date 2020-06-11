@@ -51,9 +51,11 @@
                                 <button class="apply-invi">Apply</button>
                             </div>
                             <div class="clear"></div>   
+                              </div>
                         <?php
                   // $sr_no++;
                    // }
+
               endforeach;
             ?>
             <?php else : ?> 
@@ -65,7 +67,7 @@
              
               
             <?php endif; ?>
-             </div>
+           
                         
         <div class="invi-div">
                             <img src="https://media-exp1.licdn.com/dms/image/C4E0BAQHbWPfQdNw1EA/company-logo_200_200/0?e=2159024400&v=beta&t=fWMuJX9leYFsDf-weERHLyIPfRh4aCOwx8wygmhad9Q" class="invitation-img"/>
