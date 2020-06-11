@@ -79,7 +79,7 @@
    </div>
     <div id="activity2" class="tab-pane fade">
      
-           <?  if (!empty($applicationlist)): foreach ($forward_applicationlist as $forward_applicaiton) :
+           <?  if (!empty($applicationlist)): foreach ($applicationlist as $forward_applicaiton) :
                 // for ($i=0; $i <sizeof($forward_applicationlist) ; $i++) { 
                 $singlejob    = $this->job_posting_model->get_job_details_employer($forward_applicaiton->job_post_id);
 
