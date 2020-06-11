@@ -25,12 +25,17 @@
 
   <div class="tab-content">
     <div id="activity1" class="tab-pane fade in active">
-        <div class="invi-div">
-                            <img src="https://media-exp1.licdn.com/dms/image/C4E0BAQHbWPfQdNw1EA/company-logo_200_200/0?e=2159024400&v=beta&t=fWMuJX9leYFsDf-weERHLyIPfRh4aCOwx8wygmhad9Q" class="invitation-img"/>
+       
+           <?  if (!empty($forward_applicationlist)): foreach ($forward_applicationlist as $forward_applicaiton) :
+                for ($i=0; $i <sizeof($forward_applicationlist) ; $i++) { 
+
+                            $sr_no++; ?>
+                        <div class="invi-div">
+                            <img src="<?php echo base_url()?>upload/<?php echo $this->company_profile_model->company_logoby_id($forward_applicaiton->company_id); ?>" class="invitation-img"/>
                             <div class="info-invitation">
-                                <p class="head-invi">php developer</p>
-                                <span class="salary-info">Slaray: 20k-30k<span>
-                                <p>text test</p>
+                                <p class="head-invi"><?php echo $this->job_posting_model->job_title_by_name($forward_applicaiton[$i]->job_post_id); ?></p>
+                                <span class="salary-info">Slaray: <?php echo $this->job_posting_model->job_salary_by_id($forward_applicaiton[$i]->job_post_id); ?><span>
+                                <p>Company name:<?php echo $this->company_profile_model->company_name($forward_applicaiton->company_id); ?></p>
                                  <div class="detail-b">Details</div>
                                     <div class="last-row-invitation">
                                     <ul>
@@ -41,10 +46,24 @@
                                     </ul>
                                     </div>
                             
-                                <button class="apply-invi">Apply Now</button>
+                                <button class="apply-invi">Apply</button>
                             </div>
                             <div class="clear"></div>   
-                        </div>
+                        <?php
+                  // $sr_no++;
+                   }
+              endforeach;
+            ?>
+            <?php else : ?> 
+            
+                <div>
+                    <strong>There is no data to display</strong>
+                  
+                </div>
+             
+              
+            <?php endif; ?>
+             </div>
                         
         <div class="invi-div">
                             <img src="https://media-exp1.licdn.com/dms/image/C4E0BAQHbWPfQdNw1EA/company-logo_200_200/0?e=2159024400&v=beta&t=fWMuJX9leYFsDf-weERHLyIPfRh4aCOwx8wygmhad9Q" class="invitation-img"/>
