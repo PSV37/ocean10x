@@ -39,7 +39,7 @@
                                             </a>
                                         </li>
                                         <li class="menu">
-                                             <a data-dl-view="true" data-dl-title="My profile" href="<?php echo base_url() ?>job_seeker/seeker_info">
+                                             <a data-dl-view="true" data-dl-title="My profile" href="<?php echo base_url() ?>job_seeker/oceanhunt">
                                             <span class="icon-container">
                                                 <i class="fas fa-user-alt"></i>
                                            </span>
@@ -56,7 +56,7 @@
                                      </a>
                                       </li>
                                          <li class="menu">
-                                         <a data-dl-view="true" data-dl-title="Recruitments" href="/campaign">
+                                         <a data-dl-view="true" data-dl-title="Recruitments" href="<?php echo base_url(); ?>seeker/my-inbound-job-invitations">
                                             <span class="icon-container">
                                               <i class="fas fa-filter"></i>
                                               </span>

@@ -107,6 +107,7 @@ $route['seeker/all-notifications']="job_seeker/all_notifications";
 $route['seeker/oceanchamp-test']="exam/ocean_champ_test";
 $route['seeker/ocean-champ-test-result']="exam/ocean_champ_result";
 $route['seeker/skill-upgrade']="job_seeker/skill_upgrade";
+$route['seeker/oceanhunt']="job_seeker/oceanhunt_activities";
 
 $route['seeker-login']="register/jobseeker_login";
 

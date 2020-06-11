@@ -217,6 +217,14 @@ class Job_apply_model extends MY_Model
         return $this->db->affected_rows();
     }
 
+     public function seeker_all_applications($job_seeker_id){
+        $this->db->select("*");
+        $this->db->where('job_seeker_id', $job_seeker_id);
+        // $this->db->where('forword_job_status', '0');
+        $query = $this->db->get($this->_table_name); 
+        return $query->result();
+    }
+
     public function seeker_all_application($job_seeker_id){
         $this->db->select("*");
         $this->db->where('job_seeker_id', $job_seeker_id);

@@ -680,6 +680,17 @@ exit;*/
         }
     }
 	
+    public function oceanhunt_activities()
+    {
+         $jobseeker_id    = $this->session->userdata('job_seeker_id');
+        $applicationlist = $this->job_apply_model->seeker_all_application($jobseeker_id);
+
+        $forward_applicationlist = $this->job_apply_model->seeker_all_application_send($jobseeker_id);
+
+
+        
+        $this->load->view('fontend/jobseeker/oceanhunt', compact('forward_applicationlist','applicationlist'));
+    }
 
     public function update_reference()
     {
