@@ -1762,7 +1762,7 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
           <h4 class="modal-title">My Trainnings</h4>
         </div>
         <div class="modal-body">
-         <form id="UpdateEducational-info" class="form-horizontal" action="http://www.consultnhire.com/job_seeker/update_training" method="post" style="padding: 30px;">
+         <form id="UpdateEducational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_training');?>" method="post" style="padding: 30px;">
               <div class="form-group">
               <input type="hidden" value="155" name="job_training_id">
                 <label class="control-label col-sm-3" for="email">Training Title</label>
@@ -1954,10 +1954,10 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">My Trabnnings</h4>
+          <h4 class="modal-title">My Trainnings</h4>
         </div>
         <div class="modal-body">
-         <form id="UpdateEducational-info" class="form-horizontal" action="http://www.consultnhire.com/job_seeker/update_training" method="post" style="padding: 30px;">
+         <form id="UpdateEducational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_training');?>" method="post" style="padding: 30px;">
               <div class="form-group">
               <input type="hidden" value="155" name="job_training_id">
                 <label class="control-label col-sm-3" for="email">Training Title</label>
