@@ -1795,9 +1795,9 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
                 <div class="col-sm-9">
                  <select name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
                     <option value="">Select Country First</option>
-                     <?php foreach($state as $val){?>
+                   <!--   <?php foreach($state as $val){?>
                       <option value="<?php echo $val['state_id']; ?>"<?php if($training_list->state_id==$val['state_id']){ echo "selected"; }?>><?php echo $val['state_name']; ?></option>
-                      <?php } ?>
+                      <?php } ?> -->
                     </select>
                 </div>
               </div>
@@ -1807,9 +1807,9 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
                 <div class="col-sm-9">
                  <select name="city_id" id="city_id" class="form-control">
                    <option value="">Select State First</option>
-                                       <?php foreach($city as $valu){?>
+                                  <!--      <?php foreach($city as $valu){?>
                     <option value="<?php echo $valu['id']; ?>"<?php if($training_list->city_id==$valu['id']){ echo "selected"; }?>><?php echo $valu['city_name']; ?></option>
-                    <?php } ?>
+                    <?php } ?> -->
                                       </select>
                 </div>
               </div>
@@ -1859,7 +1859,7 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
                 $sr_no=0;
             if (!empty($training_list)): foreach ($training_list as $v_training) : 
 
-             print_r($training_list);
+             // print_r($training_list);
                     # code...
                
             ?>
@@ -1869,12 +1869,12 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
                               <div class="row">
                                 <div class="col-sm-6">
                                   <p></p>
-                                 <h4 class="head-invi">Training Title:<?php echo $v_training->training_title; ?></h4>
+                                 <h5 class="head-invi">Training Title: </h5><span> <?php echo $v_training->training_title; ?></span>>
 
-                                   <h4>Training Institute: <?php echo $v_training->institute; ?></h4>
+                                   <h5>Training Institute: </h5><span>  <?php echo $v_training->institute; ?></span>>
 
-                                <h4>State: <?php echo $v_experience->achievement; ?></h4>
-                                <h4>Duration:<?php echo $v_training->duration; ?></h4>
+                                <h5>State: </h5><span>  <?php echo $v_experience->achievement; ?></span>>
+                                <h5>Duration: </h5><span> <?php echo $v_training->duration; ?></span>>
 
                                  
 
@@ -1888,12 +1888,12 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
                               <div class="col-sm-6">
                                  <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#UdpateTraining<?php  echo $v_training->js_training_id; ?>" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil"></i></a></span>
                               
-                                  <span class="salary-info">Training Topic: <?php echo $v_training->training_topic; ?><span>
+                                  <h5 class="salary-info">Training Topic: </h5><span>  <?php echo $v_training->training_topic; ?></span>>
                                 
-                                <h4>Country: <?php echo $v_training->country_name; ?></h4>
+                                <h5>Country: </h5><span>  <?php echo $v_training->country_name; ?></span>>
 
-                                <h4>City: <?php echo $v_training->city_name; ?></h4>
-                                <h4>Year: <?php echo $v_training->passing_year; ?></h4>
+                                <h5>City:  </h5><span> <?php echo $v_training->city_name; ?></span>>
+                                <h5>Year:  </h5><span> <?php echo $v_training->passing_year; ?></span>>
 
                               </div>
 
