@@ -83,6 +83,7 @@
                 // for ($i=0; $i <sizeof($forward_applicationlist) ; $i++) { 
                 $singlejob    = $this->job_posting_model->get_job_details_employer($forward_applicaiton->job_post_id);
                 print_r($forward_applicaiton->job_post_id);
+                echo $this->job_posting_model->job_salary_by_id($forward_applicaiton->job_post_id); ?>
 
 
                             $sr_no++; ?>
