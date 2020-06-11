@@ -1323,7 +1323,7 @@
       </li>
        <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
                         $seeker_edu_level_id = '5';
-                         $education_data4 = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id); 
+                         $education_data5 = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id); 
                         // $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
                         // print_r($education_data);die;
                       ?>
