@@ -93,7 +93,7 @@
                             <div class="info-invitation">
                                 <p class="head-invi"><?php echo $this->job_posting_model->job_title_by_name($forward_applicaiton->job_post_id); ?></p>
 
-                                <span class="salary-info">Salaray: <?php echo $salary ?><span>
+                                <span class="salary-info">Salaray: <?php echo $this->job_posting_model->job_salary_by_id($forward_applicaiton->job_post_id);  ?><span>
 
                                 <p>Company name:<?php echo $this->company_profile_model->company_name($forward_applicaiton->company_id); ?></p>
                                  <div class="detail-b">Details</div>
