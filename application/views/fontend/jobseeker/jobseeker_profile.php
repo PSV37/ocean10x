@@ -853,7 +853,7 @@
                         // $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
                         // print_r($education_data);die;
                       ?>
-      <li class="bullet"><a href="#" value='1' id="ed" <?php if (isset($education_data) && !empty($education_data)) { ?> style="color: red;"
+      <li class="bullet"><a href="#" value='1' id="ed" <?php if (isset($education_data) && empty($education_data)) { ?> style="color: red;"
        
     <?php  } ?> data-toggle="modal" data-target="#myModal">Ph.d / Doctorate</a>
       <div class="modal fade" id="myModal" role="dialog">
