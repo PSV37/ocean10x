@@ -2061,8 +2061,7 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
   
   </div>
            
-    <!-- <?php endforeach; ?> -->
-        
+   
             
             
             
