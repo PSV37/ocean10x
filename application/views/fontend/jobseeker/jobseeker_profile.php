@@ -1575,7 +1575,7 @@
                             </div>
                             <div class="clear"></div>   
                         </div>
-            <!--  -->
+           
                  <?php
                   // $sr_no++;
                    // }
@@ -2073,7 +2073,7 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
         </div>
         <div class="modal-body">
          <form id="Updateskill-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_skills');?>" method="post" style="padding: 30px;">
-         <!-- <input type="hidden" name="js_experience_id" value="286"> -->
+         
 
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Skills:</label>
@@ -2123,13 +2123,10 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
        
 
               if (!empty($js_skills)):
-                // print_r($applicaiton);
-                // for ($i=0; $i <sizeof($v_experience) ; $i++) { 
-                    # code...
-               
+            
             ?>
             <div class="invi-div">
-                            <!-- <img src="<?php echo base_url()?>upload/<?php echo $this->company_profile_model->company_logoby_id($applicaiton[$i]->company_profile_id); ?>" class="invitation-img"/> -->
+                         
                             <div class="info-invitation">
                              
 
@@ -2158,7 +2155,7 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
                             </div>
                             <div class="clear"></div>   
                         </div>
-            <!--  -->
+          
                   <?php else : ?> 
             
                 <div>
@@ -2179,18 +2176,12 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
     
     
     </div>
-<!-- <?php $count=1; foreach ($experinece_list as $v_experience): ?> -->
+
 
 <div id="Updateskills" class="modal fade" role="dialog">
  <div class="modal-dialog modal-md">
 
-   <!-- <?php
-$experinece = $this->Job_seeker_experience_model->get($v_experience->js_experience_id);
-           
-
-?> -->
-     <!--  <div class="modal fade" id="myModal5" role="dialog">
-    <div class="modal-dialog modal-md"> -->
+  
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -2244,7 +2235,7 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
             
             
             
-            </div><!--profile-section div -->
+            </div>
 
 
 
