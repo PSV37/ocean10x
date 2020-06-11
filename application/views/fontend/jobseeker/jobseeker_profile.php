@@ -1869,12 +1869,12 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
                               <div class="row">
                                 <div class="col-sm-6">
                                   <p></p>
-                                 <h5 class="head-invi">Training Title: <span> <?php echo $v_training->training_title; ?></span></h5>
+                                 <h5 class="head-invi">Training Title: <span class="salary-info"> <?php echo $v_training->training_title; ?></span></h5>
 
-                                   <h5>Training Institute:<span>  <?php echo $v_training->institute; ?></span> </h5>
+                                   <h5 class="head-invi">Training Institute:<span class="salary-info">  <?php echo $v_training->institute; ?></span> </h5>
 
-                                <h5>State: <span>  <?php echo $v_experience->achievement; ?></span></h5>
-                                <h5>Duration: <span> <?php echo $v_training->duration; ?></span></h5>
+                                <h5 class="head-invi">State: <span class="salary-info">  <?php echo $v_experience->achievement; ?></span></h5>
+                                <h5 class="head-invi">Duration: <span class="salary-info"> <?php echo $v_training->duration; ?></span></h5>
                                  
 
 
@@ -1887,12 +1887,12 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
                               <div class="col-sm-6">
                                  <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#UdpateTraining<?php  echo $v_training->js_training_id; ?>" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil"></i></a></span>
                               
-                                  <h5 class="salary-info">Training Topic: <span>  <?php echo $v_training->training_topic; ?></span></h5>
+                                  <h5 class="head-invi" >Training Topic: <span class="salary-info">  <?php echo $v_training->training_topic; ?></span></h5>
                                 
-                                <h5>Country: <span>  <?php echo $v_training->country_name; ?></span></h5>
+                                <h5 class="head-invi">Country: <span class="salary-info">  <?php echo $v_training->country_name; ?></span></h5>
 
-                                <h5>City:  <span> <?php echo $v_training->city_name; ?></span></h5>
-                                <h5>Year:  <span> <?php echo $v_training->passing_year; ?></span></h5>
+                                <h5 class="head-invi">City:  <span class="salary-info"> <?php echo $v_training->city_name; ?></span></h5>
+                                <h5 class="head-invi">Year:  <span class="salary-info"> <?php echo $v_training->passing_year; ?></span></h5>
 
                               </div>
 
