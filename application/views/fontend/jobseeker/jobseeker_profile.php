@@ -1531,7 +1531,7 @@
       </div>
     </div>
   </div>
-            <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal5">Add</a></span>  
+            <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal5"><i class="fa fa-plus" aria-hidden="true"></i>Add</a></span>  
 
       </li>
 
@@ -1859,7 +1859,7 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
                 $sr_no=0;
             if (!empty($training_list)): foreach ($training_list as $v_training) : 
 
-             
+             print_r($training_list);
                     # code...
                
             ?>
