@@ -2062,103 +2062,44 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
     <?php  $designation = $this->Master_model->getMaster('designation',$where=false);
 
             $department = $this->Master_model->getMaster('department',$where=false); ?>
-     <li class="bullet"><a href="#" data-toggle="modal" data-target="#myModal5">Work Experience</a>
+     <li class="bullet"><a href="#" data-toggle="modal" data-target="#myModal25">skills</a>
     
-      <div class="modal fade" id="myModal5" role="dialog">
+      <div class="modal fade" id="myModal25" role="dialog">
     <div class="modal-dialog modal-md">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Work Experience</h4>
+          <h4 class="modal-title">Skiils</h4>
         </div>
         <div class="modal-body">
-         <form id="UpdateExperience-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_experience');?>" method="post" style="padding: 30px;">
+         <form id="Updateskill-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_skills');?>" method="post" style="padding: 30px;">
          <!-- <input type="hidden" name="js_experience_id" value="286"> -->
 
               <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Company Name:</label>
+                <label class="control-label col-sm-3" for="email">Skills:</label>
                 <div class="col-sm-9">
-                <input type="text" class="form-control" id="edit_company_profile_id" required name="company_profile_id" value="">
+               
+                  <input type="text" name="skills" class="form-control" id="tokenfield" placeholder="Enter Your Skills"
+                   value="<?php  
+
+              if(!empty($js_skills)){
+                $skill="";
+                for($i=0;$i<sizeof($js_skills);$i++){
+                  if($i==0){
+                  $skill=$skill.$js_skills[$i]['skills'];
+                  }else{
+                    $skill=$skill.','.$js_skills[$i]['skills'];
+                  }
+                }
+                echo $skill;
+              }
+                           ?>">
 
                 </div>
               </div>
 
-        <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Designation:</label>
-                <div class="col-sm-9">
-                  <select name="designation_id" class="form-control">
-                    <?php foreach($designation as $keys){?>
-                    <option value="<?php echo $keys['designation_id']; ?>"><?php echo $keys['designation_name']; ?></option>
-                    <?php } ?>
-                    </select>
+       
 
-                </div>
-              </div>
-
-
-              <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Department:</label>
-                <div class="col-sm-9">
-         <select name="dept_id" class="form-control">
-          <option value="">Select Department</option>
-                   <?php foreach($department as $dept){?>
-          <option value="<?php echo $dept['dept_id']; ?>"<?php if($experinece->dept_id==$dept['dept_id']){ echo "selected"; }?>><?php echo $dept['department_name']; ?></option>
-          <?php } ?>
-                    </select>
-                </div>
-              </div>
-
-
-   <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Start Date:</label>
-                <div class="col-sm-9"><input class="datepicker form-control" required name="start_date" value="">
- <label><input type="checkbox" id="upChkDisable_1" onclick="disableUpperDP('1')" checked="checked">  Current Job</label>
-
-                </div>
-              </div>
-
-
-            <div class="form-group">
-                <label class="control-label col-sm-3" for="email">End Date:</label>
-                <div class="col-sm-9"><input id="resDate_1" class="datepicker form-control" required name="end_date" value="" disabled="disabled">
-                 
-                </div>
-              </div>
-
- 
-            <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">Job Location</label>
-                <div class="col-sm-9">
-                 <input type="text" name="address" class="form-control" id="job_area" value="">
-                </div>
-              </div>
-        <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Salary:</label>
-                <div class="col-sm-9">
-                  <input type="text" name="js_career_salary" class="form-control" id="js_career_salary" placeholder="Salary" value="25,000">
-                </div>
-              </div>
-        
-         <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">My Responsibilities</label>
-                <div class="col-sm-9">
-                 <textarea name="responsibilities" class="form-control" rows="5" id="responsibilities"></textarea>
-                </div>
-              </div>
-        
-        <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">My Achievement  </label>
-                <div class="col-sm-9">
-                 <textarea name="achievement" class="form-control" rows="5" id="achievement"></textarea>
-                </div>
-              </div>
-
-                <!-- <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">Major Activity</label>
-                <div class="col-sm-9">
-                 <textarea name="major_activity" class="form-control" rows="5" id="major_activity"></textarea>
-                </div>
-              </div>-->
 
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -2171,17 +2112,15 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
       </div>
     </div>
   </div>
-            <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal5"><i class="fa fa-plus" aria-hidden="true"></i></a></span>  
+            <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal25"><i class="fa fa-plus" aria-hidden="true"></i></a></span>  
 
       </li>
 
      </ul>
      <div class="col-md-12 bd-2">
                 <?php 
-        $experinece_list = $this->Job_seeker_experience_model->experience_list_by_id($jobseeker_id);
-        // print_r($experinece_list);
-                $sr_no=0;
-            if (!empty($experinece_list)): foreach ($experinece_list as $v_experience) :
+      $js_skills = $this->Master_model->getMaster('job_seeker_skills',$where_skill);
+       
 
                 // print_r($applicaiton);
                 // for ($i=0; $i <sizeof($v_experience) ; $i++) { 
@@ -2191,26 +2130,29 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
             <div class="invi-div">
                             <!-- <img src="<?php echo base_url()?>upload/<?php echo $this->company_profile_model->company_logoby_id($applicaiton[$i]->company_profile_id); ?>" class="invitation-img"/> -->
                             <div class="info-invitation">
-                                <p class="head-invi">Compnay Name:<?php echo $v_experience->company_profile_id; ?></p>
+                             
 
 
-                                 <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#EditExperience<?php echo $v_experience->js_experience_id; ?>" onclick="javascript:disableDP('<?php echo $key ?>')"class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></span>
+                                 <span style="float: right;font-size:12px;cursor: pointer;"> <a href="#" data-toggle="modal" data-target="#Updateskills" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> </span>
 
-                                <span class="salary-info">Designation: <?php echo $this->job_posting_model->job_salary_by_id($applicaiton[$i]->job_post_id); ?><span>
+                          
 
-                                <p>Department: <?php echo $v_experience->department_name; ?></p>
+                                <p>Skills: <?php  
 
-                                <p>Duration: <?php $today=date("Y-m-d"); if($v_experience->end_date=="2017-08-30") {
-                                    echo date_calculate($v_experience->start_date,$today);
-                                  }else { echo date_calculate($v_experience->start_date,$v_experience->end_date); }?></p>
+                              if(!empty($js_skills)){
+                                $skill="";
+                                for($i=0;$i<sizeof($js_skills);$i++){
+                                  if($i==0){
+                                  $skill=$skill.$js_skills[$i]['skills'];
+                                  }else{
+                                    $skill=$skill.','.$js_skills[$i]['skills'];
+                                  }
+                                }
+                                echo $skill;
+                              }
+                           ?></p>
 
-                                <p>My Responsibilities: <?php echo $v_experience->responsibilities ; ?></p>
-
-                                <p>My Achievement: <?php echo $v_experience->achievement; ?></p>
-
-                                
-                                  
-                            
+                               
                                 <!-- <button class="apply-invi">Apply Now</button> -->
                             </div>
                             <div class="clear"></div>   
@@ -2237,124 +2179,50 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
     
     
     </div>
-<?php $count=1; foreach ($experinece_list as $v_experience): ?>
+<!-- <?php $count=1; foreach ($experinece_list as $v_experience): ?> -->
 
-<div id="EditExperience<?php echo $v_experience->js_experience_id; ?>" class="modal fade" role="dialog">
+<div id="Updateskills" class="modal fade" role="dialog">
  <div class="modal-dialog modal-md">
 
-   <?php
+   <!-- <?php
 $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experience_id);
            
 
-?>
+?> -->
      <!--  <div class="modal fade" id="myModal5" role="dialog">
     <div class="modal-dialog modal-md"> -->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Work Experience</h4>
+          <h4 class="modal-title">Update Skills</h4>
         </div>
         <div class="modal-body">
-         <form id="UpdateExperience-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_experience');?>" method="post" style="padding: 30px;">
-         <input type="hidden" name="js_experience_id" value="<?php echo $v_experience->js_experience_id; ?>">
-              <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Company Name:</label>
-                <div class="col-sm-9">
-                <input type="text" class="form-control" id="edit_company_profile_id" required name="company_profile_id" value="<?php if (!empty($experinece->company_profile_id)) { echo $experinece->company_profile_id;} ?>">
-
-                </div>
-              </div>
-
+         <form id="Updateskill-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_skills');?>" method="post" style="padding: 30px;">
         <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Designation:</label>
+                <label class="control-label col-sm-3" for="email">Skills:</label>
                 <div class="col-sm-9">
-                  <select name="designation_id" class="form-control">
-         <?php foreach($designation as $keys){?>
-          <option value="<?php echo $keys['designation_id']; ?>"<?php if($experinece->designation_id==$keys['designation_id']){ echo "selected"; }?>><?php echo $keys['designation_name']; ?></option>
-          <?php } ?>
-                    </select>
+               
+                  <input type="text" name="skills" class="form-control" id="tokenfield" placeholder="Enter Your Skills"
+                   value="<?php  
+
+              if(!empty($js_skills)){
+                $skill="";
+                for($i=0;$i<sizeof($js_skills);$i++){
+                  if($i==0){
+                  $skill=$skill.$js_skills[$i]['skills'];
+                  }else{
+                    $skill=$skill.','.$js_skills[$i]['skills'];
+                  }
+                }
+                echo $skill;
+              }
+                           ?>">
 
                 </div>
               </div>
 
+       
 
-              <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Department:</label>
-                <div class="col-sm-9">
-                 <select name="dept_id" class="form-control">
-                  <option value="">Select Department</option>
-                  <?php foreach($department as $dept){?>
-                  <option value="<?php echo $dept['dept_id']; ?>"<?php if($experinece->dept_id==$dept['dept_id']){ echo "selected"; }?>><?php echo $dept['department_name']; ?></option>
-                  <?php } ?>
-                    </select>
-                </div>
-              </div>
-
-
-              <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Start Date:</label>
-                <div class="col-sm-9"><input class="datepicker form-control" required name="start_date" value="<?php if (!empty($experinece->start_date)) { echo date('d-m-Y',strtotime($experinece->start_date)); } ?>">
-                <label><input type="checkbox" id="upChkDisable_1" onclick="disableUpperDP('1')" checked="checked">  Current Job</label>
-
-                </div>
-              </div>
-
-
-            <div class="form-group">
-                <label class="control-label col-sm-3" for="email">End Date:</label>
-                <div class="col-sm-9"><input id="resDate_1" class="datepicker form-control" required name="end_date" value="<?php if (!empty($experinece->end_date)) { echo date('d/m/Y',strtotime($experinece->end_date)); }else{ echo "";} ?>" disabled="disabled">
-                 
-                </div>
-              </div>
-
- 
-            <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">Job Location</label>
-                <div class="col-sm-9">
-                 <input type="text" name="address" class="form-control" id="job_area" value="<?php 
-                         if (!empty($experinece->address)) {
-                           echo $experinece->address;
-                           }
-                       ?>">
-                </div>
-              </div>
-        <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Salary:</label>
-                <div class="col-sm-9">
-                  <input type="text" name="js_career_salary" class="form-control" id="js_career_salary" placeholder="Salary" value="<?php if (!empty($experinece->js_career_salary)) {
-                           echo $experinece->js_career_salary;
-                           }
-                       ?>">
-                </div>
-              </div>
-        
-         <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">My Responsibilities</label>
-                <div class="col-sm-9">
-                 <textarea name="responsibilities" class="form-control" rows="5" id="responsibilities"><?php 
-                         if (!empty($experinece->responsibilities)) {
-                           echo $experinece->responsibilities;
-                           } ?></textarea>
-                </div>
-              </div>
-        
-        <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">My Achievement  </label>
-                <div class="col-sm-9">
-                 <textarea name="achievement" class="form-control" rows="5" id="achievement"><?php
-                         if (!empty($experinece->achievement )) {
-                           echo $experinece->achievement ;
-                           }
-                        ?></textarea>
-                </div>
-              </div>
-
-                <!-- <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">Major Activity</label>
-                <div class="col-sm-9">
-                 <textarea name="major_activity" class="form-control" rows="5" id="major_activity"></textarea>
-                </div>
-              </div>-->
 
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
