@@ -2226,8 +2226,7 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
       </div>
     </div>
   </div>
-<?php  $count++; ?>
-<?php endforeach;?>
+
   
   </div>
            
@@ -2245,9 +2244,7 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
     
     
     </div>
-    <!-- Footer -->
-
-  <!-- ./Footer -->
+ 
 
    <?php $this->load->view("fontend/layout/jobseeker_footer.php"); ?>
 
