@@ -1329,7 +1329,7 @@
                       ?>
       <li class="bullet"><a href="#" data-toggle="modal" <?php if (isset($education_data5) && empty($education_data5)) { ?> style="color: red;"
        
-    <?php  } ?> ?> data-target="#myModal4">10th</a>
+    <?php  } ?> data-target="#myModal4">10th</a>
       <div class="modal fade" id="myModal4" role="dialog">
     <div class="modal-dialog modal-md">
       <div class="modal-content">
