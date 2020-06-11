@@ -47,7 +47,7 @@
                                        <li> <div class="year-inv"><i class="fas fa-save"></i>&emsp;<?php echo $forward_applicaiton->experience;  ?> years</div></li>
                                         <li> <div class="calender-inv"><i class="far fa-calendar-alt"></i>&emsp; <?php if(!is_null($forward_applicaiton->created_at)) { $mtime = time_ago_in_php($forward_applicaiton->created_at);
                             echo $mtime;} ?></div></li>
-                                        <li> <div class="fulltime-inv"><i class="fas fa-clock"></i>&emsp;<?php echo $forward_applicaiton->job_nature_name;  ?>/div></li>
+                                        <li> <div class="fulltime-inv"><i class="fas fa-clock"></i>&emsp;<?php echo $forward_applicaiton->job_nature_name;  ?></div></li>
                                     </ul>
                                     </div>
                             
