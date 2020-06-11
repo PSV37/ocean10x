@@ -217,13 +217,6 @@ class Job_apply_model extends MY_Model
         return $this->db->affected_rows();
     }
 
-     public function seeker_all_applications($job_seeker_id){
-        $this->db->select("*");
-        $this->db->where('job_seeker_id', $job_seeker_id);
-        // $this->db->where('forword_job_status', '0');
-        $query = $this->db->get($this->_table_name); 
-        return $query->result();
-    }
 
     public function seeker_all_application($job_seeker_id){
         $this->db->select("*");
@@ -237,6 +230,8 @@ class Job_apply_model extends MY_Model
         $this->db->select("*");
         $this->db->where('job_seeker_id', $job_seeker_id);
         $this->db->where('forword_job_status!=', '0');
+        $this->db->join('job_posting', 'job_apply.job_id = job_posting.job_post_id', 'inner');
+        $this->db->join('job_nature', 'job_posting.job_nature = job_nature.job_nature_id', 'inner');
         // $this->db->join('job_nature.job_nature_id=job_posting.job_nature');
         $query = $this->db->get($this->_table_name); 
         return $query->result();
@@ -244,7 +239,7 @@ class Job_apply_model extends MY_Model
  public function expedited_salary($job_seeker_id,$job_id){
         $this->db->select("*");
         $this->db->where('job_seeker_id', $job_seeker_id);
- $this->db->where('job_post_id', $job_id);
+        $this->db->where('job_post_id', $job_id);
        
         $query = $this->db->get($this->_table_name); 
         return $query->result();

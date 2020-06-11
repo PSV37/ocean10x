@@ -123,46 +123,7 @@
              
               
             <?php endif; ?>
-        <div class="invi-div">
-                            <img src="https://media-exp1.licdn.com/dms/image/C4E0BAQHbWPfQdNw1EA/company-logo_200_200/0?e=2159024400&v=beta&t=fWMuJX9leYFsDf-weERHLyIPfRh4aCOwx8wygmhad9Q" class="invitation-img"/>
-                            <div class="info-invitation">
-                                <p class="head-invi">php developer</p>
-                                <span class="salary-info">Slaray: 20k-30k<span>
-                                <p>text test</p>
-                                 <div class="detail-b">Details</div>
-                                    <div class="last-row-invitation">
-                                    <ul>
-                                        <li><div class="location-inv"><i class="fas fa-map-marker-alt"></i></div></li>
-                                       <li> <div class="year-inv"><i class="fas fa-save"></i>&emsp;2 years</div></li>
-                                        <li> <div class="calender-inv"><i class="far fa-calendar-alt"></i>&emsp;7 hr ago</div></li>
-                                        <li> <div class="fulltime-inv"><i class="fas fa-clock"></i>&emsp;full time</div></li>
-                                    </ul>
-                                    </div>
-                            
-                                <button class="apply-invi">Apply Now</button>
-                            </div>
-                            <div class="clear"></div>   
-                        </div>
-          <div class="invi-div">
-                            <img src="https://media-exp1.licdn.com/dms/image/C4E0BAQHbWPfQdNw1EA/company-logo_200_200/0?e=2159024400&v=beta&t=fWMuJX9leYFsDf-weERHLyIPfRh4aCOwx8wygmhad9Q" class="invitation-img"/>
-                            <div class="info-invitation">
-                                <p class="head-invi">php developer</p>
-                                <span class="salary-info">Slaray: 20k-30k<span>
-                                <p>text test</p>
-                                 <div class="detail-b">Details</div>
-                                    <div class="last-row-invitation">
-                                    <ul>
-                                        <li><div class="location-inv"><i class="fas fa-map-marker-alt"></i></div></li>
-                                       <li> <div class="year-inv"><i class="fas fa-save"></i>&emsp;2 years</div></li>
-                                        <li> <div class="calender-inv"><i class="far fa-calendar-alt"></i>&emsp;7 hr ago</div></li>
-                                        <li> <div class="fulltime-inv"><i class="fas fa-clock"></i>&emsp;full time</div></li>
-                                    </ul>
-                                    </div>
-                            
-                                <button class="apply-invi">Apply Now</button>
-                            </div>
-                            <div class="clear"></div>   
-                        </div>
+       
         <div class="btn-more">
                 <button class="more-btn">show more</button>
                 </div>
