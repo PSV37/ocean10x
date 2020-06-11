@@ -82,9 +82,9 @@
            <?  if (!empty($applicationlist)): foreach ($applicationlist as $forward_applicaiton) :
                 // for ($i=0; $i <sizeof($forward_applicationlist) ; $i++) { 
                 $singlejob    = $this->job_posting_model->get_job_details_employer($forward_applicaiton->job_post_id);
-                print_r($forward_applicaiton->job_post_id);
+                // print_r($forward_applicaiton->job_post_id);
                 $salary= $this->job_posting_model->job_salary_by_id($forward_applicaiton->job_post_id); 
-                print_r($this->db->last_query());
+                print_r($salary);
 
 
                             $sr_no++; ?>
@@ -93,7 +93,7 @@
                             <div class="info-invitation">
                                 <p class="head-invi"><?php echo $this->job_posting_model->job_title_by_name($forward_applicaiton->job_post_id); ?></p>
 
-                                <span class="salary-info">Salaray: $salary<span>
+                                <span class="salary-info">Salaray: <?php echo $salary ?><span>
 
                                 <p>Company name:<?php echo $this->company_profile_model->company_name($forward_applicaiton->company_id); ?></p>
                                  <div class="detail-b">Details</div>
