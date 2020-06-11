@@ -1747,7 +1747,9 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
     <div id="menu4" class="tab-pane fade">
     <ul>
             
-            <?php $training_list = $this->Job_training_model->training_list_by_id($jobseeker_id);
+            <?php 
+             $jobseeker_id = $this->session->userdata('job_seeker_id');
+            $training_list = $this->Job_training_model->training_list_by_id($jobseeker_id);
       $passingyear = $this->Master_model->getMaster('passingyear',$where=false);
              ?>
     
@@ -3160,3 +3162,113 @@ $(document).ready(function() {
   }
   
 </style>
+<script>
+    function getStates(id){
+    if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Job_seeker/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state_id').html(res);
+                }
+        
+            }); 
+          }
+   
+     }
+
+    function getCitys(id){
+    if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Job_seeker/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city_id').html(res);
+                }
+        
+            }); 
+          }
+   
+     }
+       
+       $(document).ready(function(){
+
+    function getStates_load(){
+        var id = $('#country_id').val();
+
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Job_seeker/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state_id').html(res);
+                    $('#state_id').val(<?php echo $training_list->state_id; ?>);
+                     getCitys_load(<?php echo $training_list->state_id; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+    
+    function getCitys_load(id){
+      //var id = $('#state_id').val();
+      // alert(id);
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Job_seeker/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city_id').html(res);
+                    $('#city_id').val(<?php echo $training_list->city_id; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+
+    
+
+
+  getCitys_load();
+  getStates_load();
+});
+
+function check_other(value)
+{
+  
+    var x1 = document.getElementById("training_title1");
+    var x = document.getElementById("training_title");
+    if (value=='other') 
+  {
+    if (x1.type === "hidden") {
+      x1.type = "text";
+      // x.type = "hidden";
+    } else {
+      x1.type = "hidden";
+
+    }
+  }
+  else
+  {
+    x1.type = "hidden";
+    x1.value = value;
+  }
+}
+</script> 
+<script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>    
+<script>
+  $(document).ready(function(){
+ 
+  // Initialize select2
+  $("#training_title").select2({
+    placeholder: "Select Training",
+  allowClear: true
+  });
+});
+</script>   
