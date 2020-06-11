@@ -1768,8 +1768,9 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
                    <select name="training_title" id="training_title" class="form-control" onchange="check_other(this.value)">
                     <option value="">Select Training title</option>
 
-                                          <option value="CCNA">CCNA</option>
-                                          <option value="CCNA1" selected="">CCNA1</option>
+                                          <?php foreach($training as $key){?>
+                      <option value="<?php echo $key['name']; ?>"<?php if($training_list->training_title==$key['name']){ echo "selected"; }?>><?php echo $key['name']; ?></option>
+                    <?php } ?>
                                         <option value="other">Other</option>
 
                   </select>
@@ -1883,12 +1884,12 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
                               <div class="row">
                                 <div class="col-sm-6">
                                   <p></p>
-                                 <p class="head-invi">Training Title: <span class="salary-info"> <?php echo $v_training->training_title; ?></span></p>
+                                 <p >Training Title: <span class="salary-info"> <?php echo $v_training->training_title; ?></span></p>
 
-                                   <p class="head-invi">Training Institute:<span class="salary-info">  <?php echo $v_training->institute; ?></span> </p>
+                                   <p >Training Institute:<span class="salary-info">  <?php echo $v_training->institute; ?></span> </p>
 
-                                <p class="head-invi">State: <span class="salary-info">  <?php echo $v_experience->achievement; ?></span></p>
-                                <p class="head-invi">Duration: <span class="salary-info"> <?php echo $v_training->duration; ?></span></p>
+                                <p >State: <span class="salary-info">  <?php echo $v_experience->achievement; ?></span></p>
+                                <p >Duration: <span class="salary-info"> <?php echo $v_training->duration; ?></span></p>
                                  
 
 
@@ -1901,12 +1902,12 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
                               <div class="col-sm-6">
                                  <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#UdpateTraining<?php  echo $v_training->js_training_id; ?>" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil"></i></a></span>
                               
-                                  <p class="head-invi" >Training Topic: <span class="salary-info">  <?php echo $v_training->training_topic; ?></span></p>
+                                  <p  >Training Topic: <span class="salary-info">  <?php echo $v_training->training_topic; ?></span></p>
                                 
-                                <p class="head-invi">Country: <span class="salary-info">  <?php echo $v_training->country_name; ?></span></p>
+                                <p >Country: <span class="salary-info">  <?php echo $v_training->country_name; ?></span></p>
 
-                                <p class="head-invi">City:  <span class="salary-info"> <?php echo $v_training->city_name; ?></span></p>
-                                <p class="head-invi">Year:  <span class="salary-info"> <?php echo $v_training->passing_year; ?></span></p>
+                                <p >City:  <span class="salary-info"> <?php echo $v_training->city_name; ?></span></p>
+                                <p >Year:  <span class="salary-info"> <?php echo $v_training->passing_year; ?></span></p>
 
                               </div>
 
