@@ -1438,7 +1438,7 @@
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Company Name:</label>
                 <div class="col-sm-9">
-                <input type="text" class="form-control" id="edit_company_profile_id" required name="company_profile_id" value="pp">
+                <input type="text" class="form-control" id="edit_company_profile_id" required name="company_profile_id" value="">
 
                 </div>
               </div>
@@ -1471,7 +1471,7 @@
 
    <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Start Date:</label>
-                <div class="col-sm-9"><input class="datepicker form-control" required name="start_date" value="01-09-2019">
+                <div class="col-sm-9"><input class="datepicker form-control" required name="start_date" value="">
  <label><input type="checkbox" id="upChkDisable_1" onclick="disableUpperDP('1')" checked="checked">  Current Job</label>
 
                 </div>
@@ -1489,7 +1489,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">Job Location</label>
                 <div class="col-sm-9">
-                 <input type="text" name="address" class="form-control" id="job_area" value="kalyani nagar,pune">
+                 <input type="text" name="address" class="form-control" id="job_area" value="">
                 </div>
               </div>
         <div class="form-group">
@@ -1502,14 +1502,14 @@
          <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">My Responsibilities</label>
                 <div class="col-sm-9">
-                 <textarea name="responsibilities" class="form-control" rows="5" id="responsibilities">kjkj</textarea>
+                 <textarea name="responsibilities" class="form-control" rows="5" id="responsibilities"></textarea>
                 </div>
               </div>
         
         <div class="form-group">
                 <label class="control-label col-sm-3" for="pwd">My Achievement  </label>
                 <div class="col-sm-9">
-                 <textarea name="achievement" class="form-control" rows="5" id="achievement">kj</textarea>
+                 <textarea name="achievement" class="form-control" rows="5" id="achievement"></textarea>
                 </div>
               </div>
 
