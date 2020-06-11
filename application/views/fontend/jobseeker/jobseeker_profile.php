@@ -847,7 +847,15 @@
     
     
       <ul style="margin-top:50px;">
-      <li class="bullet"><a href="#" value='1' id="ed" data-toggle="modal" data-target="#myModal">Ph.d / Doctorate</a>
+         <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
+                        $seeker_edu_level_id = '1';
+                         $education_data = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id); 
+                        // $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
+                        // print_r($education_data);die;
+                      ?>
+      <li class="bullet"><a href="#" value='1' id="ed" <?php if (isset($education_data) && !empty($education_data)) { ?> style="color: red;"
+       
+    <?php  } ?> data-toggle="modal" data-target="#myModal">Ph.d / Doctorate</a>
       <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog modal-md">
       <div class="modal-content">
@@ -855,12 +863,7 @@
           <button type="button"   class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Ph.d / Doctorate</h4>
         </div>
-        <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
-                        $seeker_edu_level_id = '1';
-                         $education_data = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id); 
-                        // $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
-                        // print_r($education_data);die;
-                      ?>
+       
     
 
         <div class="modal-body education_frm">
