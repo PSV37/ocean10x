@@ -960,8 +960,15 @@
                             <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" value='1' onclick="get_specialization(this.value);"  data-target="#myModal">Edit</a></span> 
 
       </li>
-      
-      <li class="bullet"><a href="#" data-toggle="modal" data-target="#myModal1">Masters / Post-Graduation</a>
+       <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
+                        $seeker_edu_level_id = '2';
+                         $education_data2 = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id); 
+                        // $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
+                        // print_r($education_data);die;
+                      ?>
+      <li class="bullet"><a href="#" data-toggle="modal" <?php if (isset($education_data2) && empty($education_data2)) { ?> style="color: red;"
+       
+    <?php  } ?>  data-target="#myModal1">Masters / Post-Graduation</a>
       <div class="modal fade" id="myModal1" role="dialog">
     <div class="modal-dialog modal-md">
       <div class="modal-content">
@@ -969,12 +976,7 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Masters / Post-Graduation</h4>
         </div>
-         <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
-                        $seeker_edu_level_id = '2';
-                         $education_data2 = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id); 
-                        // $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
-                        // print_r($education_data);die;
-                      ?>
+        
      
 
         <div class="modal-body education_frm">
@@ -1087,7 +1089,15 @@
                           <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal1">Edit</a></span>  
 
       </li>
-      <li class="bullet"><a href="#" data-toggle="modal" data-target="#myModal2">Graduation / Diploma</a>
+       <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
+                        $seeker_edu_level_id = '3';
+                         $education_data3 = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id); 
+                        // $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
+                        // print_r($education_data);die;
+                      ?>
+      <li class="bullet"><a href="#" data-toggle="modal" <?php if (isset($education_data3) && empty($education_data3)) { ?> style="color: red;"
+       
+    <?php  } ?> data-target="#myModal2">Graduation / Diploma</a>
       <div class="modal fade" id="myModal2" role="dialog">
     <div class="modal-dialog modal-md">
       <div class="modal-content">
@@ -1095,12 +1105,7 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Graduation / Diploma</h4>
         </div>
-         <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
-                        $seeker_edu_level_id = '3';
-                         $education_data3 = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id); 
-                        // $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
-                        // print_r($education_data);die;
-                      ?>
+        
         <div class="modal-body education_frm">
   <form id="Educational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
          <input type="hidden" name="js_education_id" value="<?php echo $education_data3[0]->js_education_id; ?>">
@@ -1208,7 +1213,15 @@
                       <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal2">Edit</a></span>  
 
       </li>
-      <li class="bullet"><a href="#" data-toggle="modal" data-target="#myModal3">12th</a>
+       <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
+                        $seeker_edu_level_id = '4';
+                         $education_data4 = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id); 
+                        // $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
+                        // print_r($education_data);die;
+                      ?>
+      <li class="bullet"><a href="#" data-toggle="modal" <?php if (isset($education_data4) && empty($education_data4)) { ?> style="color: red;"
+       
+    <?php  } ?> data-target="#myModal3">12th</a>
       <div class="modal fade" id="myModal3" role="dialog">
     <div class="modal-dialog modal-md">
       <div class="modal-content">
@@ -1216,12 +1229,7 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">12th</h4>
         </div>
-          <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
-                        $seeker_edu_level_id = '4';
-                         $education_data4 = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id); 
-                        // $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
-                        // print_r($education_data);die;
-                      ?>
+         
         <div class="modal-body education_frm">
   <form id="Educational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
          <input type="hidden" name="js_education_id" value="<?php echo $education_data4[0]->js_education_id; ?>">
@@ -1313,7 +1321,13 @@
 
 
       </li>
-      <li class="bullet"><a href="#" data-toggle="modal" data-target="#myModal4">10th</a>
+       <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
+                        $seeker_edu_level_id = '5';
+                         $education_data4 = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id); 
+                        // $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
+                        // print_r($education_data);die;
+                      ?>
+      <li class="bullet"><a href="#" data-toggle="modal" <?php if (isset($education_data5) && empty($education_data5)) { ?> data-target="#myModal4">10th</a>
       <div class="modal fade" id="myModal4" role="dialog">
     <div class="modal-dialog modal-md">
       <div class="modal-content">
@@ -1321,12 +1335,7 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">10th</h4>
         </div>
-         <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
-                        $seeker_edu_level_id = '5';
-                         $education_data4 = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id); 
-                        // $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
-                        // print_r($education_data);die;
-                      ?>
+        
         <div class="modal-body education_frm">
   <form id="Educational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
          <input type="hidden" name="js_education_id" value="<?php echo $education_data5[0]->js_education_id; ?>">
