@@ -1531,7 +1531,7 @@
       </div>
     </div>
   </div>
-            <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal5"><i class="fa fa-plus" aria-hidden="true"></i>Add</a></span>  
+            <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal5"><i class="fa fa-plus" aria-hidden="true"></i></a></span>  
 
       </li>
 
@@ -1743,7 +1743,7 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">My Trabnnings</h4>
+          <h4 class="modal-title">My Trainnings</h4>
         </div>
         <div class="modal-body">
          <form id="UpdateEducational-info" class="form-horizontal" action="http://www.consultnhire.com/job_seeker/update_training" method="post" style="padding: 30px;">
