@@ -27,14 +27,16 @@
     <div id="activity1" class="tab-pane fade in active">
        
            <?  if (!empty($forward_applicationlist)): foreach ($forward_applicationlist as $forward_applicaiton) :
-                for ($i=0; $i <sizeof($forward_applicationlist) ; $i++) { 
+                // for ($i=0; $i <sizeof($forward_applicationlist) ; $i++) { 
 
                             $sr_no++; ?>
                         <div class="invi-div">
                             <img src="<?php echo base_url()?>upload/<?php echo $this->company_profile_model->company_logoby_id($forward_applicaiton->company_id); ?>" class="invitation-img"/>
                             <div class="info-invitation">
-                                <p class="head-invi"><?php echo $this->job_posting_model->job_title_by_name($forward_applicaiton[$i]->job_post_id); ?></p>
-                                <span class="salary-info">Slaray: <?php echo $this->job_posting_model->job_salary_by_id($forward_applicaiton[$i]->job_post_id); ?><span>
+                                <p class="head-invi"><?php echo $this->job_posting_model->job_title_by_name($forward_applicaiton->job_post_id); ?></p>
+
+                                <span class="salary-info">Slaray: <?php echo $this->job_posting_model->job_salary_by_id($forward_applicaiton->job_post_id); ?><span>
+
                                 <p>Company name:<?php echo $this->company_profile_model->company_name($forward_applicaiton->company_id); ?></p>
                                  <div class="detail-b">Details</div>
                                     <div class="last-row-invitation">
@@ -51,7 +53,7 @@
                             <div class="clear"></div>   
                         <?php
                   // $sr_no++;
-                   }
+                   // }
               endforeach;
             ?>
             <?php else : ?> 
