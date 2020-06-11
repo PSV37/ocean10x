@@ -28,6 +28,8 @@
        
            <?  if (!empty($forward_applicationlist)): foreach ($forward_applicationlist as $forward_applicaiton) :
                 // for ($i=0; $i <sizeof($forward_applicationlist) ; $i++) { 
+                $singlejob    = $this->job_posting_model->get_job_details_employer($forward_applicaiton->job_post_id);
+
 
                             $sr_no++; ?>
                         <div class="invi-div">
@@ -41,10 +43,11 @@
                                  <div class="detail-b">Details</div>
                                     <div class="last-row-invitation">
                                     <ul>
-                                        <li><div class="location-inv"><i class="fas fa-map-marker-alt"></i></div></li>
-                                       <li> <div class="year-inv"><i class="fas fa-save"></i>&emsp;2 years</div></li>
-                                        <li> <div class="calender-inv"><i class="far fa-calendar-alt"></i>&emsp;7 hr ago</div></li>
-                                        <li> <div class="fulltime-inv"><i class="fas fa-clock"></i>&emsp;full time</div></li>
+                                        <li><div class="location-inv"><i class="fas fa-map-marker-alt"></i><?php echo $forward_applicaiton->city_id;  ?></div></li>
+                                       <li> <div class="year-inv"><i class="fas fa-save"></i>&emsp;<?php echo $forward_applicaiton->experience;  ?> years</div></li>
+                                        <li> <div class="calender-inv"><i class="far fa-calendar-alt"></i>&emsp; <?php if(!is_null($forward_applicaiton->created_at)) { $mtime = time_ago_in_php($forward_applicaiton->created_at);
+                            echo $mtime;} ?></div></li>
+                                        <li> <div class="fulltime-inv"><i class="fas fa-clock"></i>&emsp;<?php echo $forward_applicaiton->job_nature_name;  ?>/div></li>
                                     </ul>
                                     </div>
                             

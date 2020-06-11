@@ -237,6 +237,7 @@ class Job_apply_model extends MY_Model
         $this->db->select("*");
         $this->db->where('job_seeker_id', $job_seeker_id);
         $this->db->where('forword_job_status!=', '0');
+        $this->db->join('job_nature.job_nature_id=job_posting.job_nature', 'Inner');
         $query = $this->db->get($this->_table_name); 
         return $query->result();
     }
