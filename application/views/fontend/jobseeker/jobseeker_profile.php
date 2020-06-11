@@ -1327,7 +1327,9 @@
                         // $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
                         // print_r($education_data);die;
                       ?>
-      <li class="bullet"><a href="#" data-toggle="modal" <?php if (isset($education_data5) && empty($education_data5)) { ?> data-target="#myModal4">10th</a>
+      <li class="bullet"><a href="#" data-toggle="modal" <?php if (isset($education_data5) && empty($education_data5)) { ?> style="color: red;"
+       
+    <?php  } ?> ?> data-target="#myModal4">10th</a>
       <div class="modal fade" id="myModal4" role="dialog">
     <div class="modal-dialog modal-md">
       <div class="modal-content">
