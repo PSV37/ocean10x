@@ -123,7 +123,7 @@ class Job extends MY_Fontend_Controller
 
        //  print_r($singlejob);
            
-            $this->load->view('fontend/job/job_details.php', compact('singlejob', 'jobseeker_id','radom_jobs','forward_status'));
+            $this->load->view('fontend/job/job_detail.php', compact('singlejob', 'jobseeker_id','radom_jobs','forward_status'));
         } else {
             echo "Not Found";
         }

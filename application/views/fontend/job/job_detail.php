@@ -3,168 +3,17 @@
 
 <!---header---->
 
-<div class="container-fluid gradient_strip" >
-<div class="container">
-<div class="col-md-12">
-	<div class="col-md-3">
-   <div class="menu_logo">
-      <img src="http://www.tele-kinetics.com/assets/img/logo.png" />
-   </div> 
-   </div>
-   
-		
-   <div class="col-md-2">
-   <div class="text-grad">
+<?php 
+    $this->load->view('fontend/layout/new_seeker_header.php');
 
-   <div class="sear-bar">
-   <form class="search-form">
-  <input type="search">
- <i class="fas fa-search"></i>
-</form>
-     </div>          
-</div>
-	</div>
-
-<div class="col-md-3">
-
-	 <div class="switch switch-yellow">
-      <input type="radio" class="switch-input" name="view3" value="week3" id="week3" checked>
-      <label for="week3" class="switch-label switch-label-off">Job Search</label>
-      <input type="radio" class="switch-input" name="view3" value="month3" id="month3">
-      <label for="month3" class="switch-label switch-label-on">People Search</label>
-      <span class="switch-selection"></span>
-    </div>
-</div>
-
-
-
-<div class="col-md-4">     
-
-	<div class="social-media">
-    <!---mail-box-->
-    <div class="notification">
-    	<i class="fas fa-comment-alt"></i><br>
-        Messaging
-    </div>    
-    <!---mail box-end-->
-    
-    <!---notification-->
-     <div class="bell">
-    	<i class="fas fa-bell"></i><br>
-        Notifications
-   	 </div>
-     <!--notification-end-->
-     <!---profile--->   
-   <!---  <div class="profile">
-    <i class="fas fa-user-circle"></i>
-     <b>supriya</b>
-     </div>--->
-     
-     
-     <!---end-profile-->
-    </div>
-    </div>
-    
-    
-    
-    </div>
-  </div>
-
-</div>
-    
+?> 
 <!---header end--->
 
 <div class="container-fluid">
 	<div class="container">
         <div class="col-md-12">
-        	<div class="col-md-3 main-height">
-            
-            <aside id="left-panel" style="margin-top:75px;
-                 margin-left: -25px;height:auto; border-right: 1px solid rgba(240, 240, 240, 0.3);box-shadow: 2px 2px 4px 0px   #00000033;position: fixed;
-            z-index: 999;vertical-align:baseline;">
-            <div class="inner-left-pannel">
-                
-                
-                <!-- WHAT MOVES START -->
-                <div class="my-moving-parts">
-                    <div class="my-param-content"></div>
-                    <div class="my-normal-content">
-                       <div class="inner-tabs-navigation" data-active="menu">
-                        </div>
-                        <div class="inner-tabs">
-                            <div class="account-tab">
-                                <div class="language-selection" title="Change language">
-                                                <div class="btn-header transparent pull-right dropdown" style="margin-top: -1px;">
-                                                    <span><a href="#" class="dropdown-toggle locale" data-toggle="dropdown">
-                                                      <i class="flag flag-us"></i> 
-                                                         </a>
-                                                     </span>
-                                                </div>
-                                </div>
-                            </div>
-                            
-                            <div class="menu-tab">
-                               
-                                
-                                
-                                <nav class="menu-principal">
-                                
-                                    <ul class="menu-principal-list" style="">
-                                         <li class="active">
-                                             <a data-dl-view="true" data-dl-title="Dashboard" href="#">
-                                            <span class="icon-container">
-                                                 <i class="fas fa-tachometer-alt"></i>
-                                            </span>
-                                            <span class="text item">Dashboard</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                             <a data-dl-view="true" data-dl-title="My profile" href="/candidate/detail">
-                                            <span class="icon-container">
-                                                <i class="fas fa-user-alt"></i>
-                                           </span>
-                                        <span class="text item">My Ocean profil</span>
-                                              </a>
-                                       </li>
-                                       
-                                      <li>
-                                     <a data-dl-view="true" data-dl-title="Contacts" href="/candidate">
-                                       <span class="icon-container">
-                                         <i class="fas fa-phone-volume"></i>
-                                     </span>
-                                        <span class="text item">OcearnHunt Activities</span>
-                                     </a>
-                                      </li>
-                                         <li>
-                                         <a data-dl-view="true" data-dl-title="Recruitments" href="/campaign">
-                                            <span class="icon-container">
-                                              <i class="fas fa-filter"></i>
-                                              </span>
-                                        <span class="text item">Skill Upgrade</span>
-
-                                          </a>
-                                        </li>
-                                         <li>
-                                            <a data-dl-view="true" data-dl-title="Mobility" href="/jobprofile/generate">
-                                            <span class="icon-container">
-                                              <i class="fas fa-map-signs"></i>
-                                              </span>
-                                        <span class="text item">Become an Ocean champ</span>
-                                              </a>
-                                         </li>
-                                            
-                                          
-                                         
-                                     </ul>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- WHAT MOVES END -->
-            </div>
-                </aside>
-            </div>
+        	 <?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
+     
 			
             	<div class="col-md-9 details_box">
                 	<div class="job-logo">
@@ -175,10 +24,10 @@
                 <ul class="jobinfolist">
                   <li>
                     <h4>Job Title</h4>
-                    <strong>: 3</strong></li>
+                    <strong>: <?php echo $singlejob->job_title; ?></strong></li>
                   <li>
                     <h4>Job Status</h4>
-                    <strong>: IT &amp; Telecommunication</strong></li>
+                    <strong>: <?php if ($singlejob->job_deadline > date('Y-m-d')): echo "open"; else: echo "Expired"; endif; ?></strong></li>
                   <li>
                     <h4>Job Level</h4>
                     <strong>: Medium</strong></li>
