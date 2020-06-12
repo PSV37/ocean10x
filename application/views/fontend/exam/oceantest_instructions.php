@@ -111,7 +111,7 @@
     <div class="row">
         <?php if(!empty($skill_data)) foreach ($skill_data as $svalue) { ?>
                       <!-- <option value="<?php echo $svalue['id']; ?>"></option> -->
-    <div class="col-md-2 bo-c"><span name="skill_name" id="skill_name"  value="<?php echo $svalue['id']; ?>" onclick="gettopic(<?php echo $svalue['id']; ?>);"><?php echo $svalue['skill_name']; ?></span></div>
+    <div class="col-md-2 bo-c"><span name="skill_names" id="skill_name"  value="<?php echo $svalue['id']; ?>" onclick="gettopic(<?php echo $svalue['id']; ?>);"><?php echo $svalue['skill_name']; ?></span></div>
 
                     <?php  } ?>
 
@@ -120,10 +120,8 @@
                   <div id="topic"></div>
                  
                 </div>
-    <!-- <div class="col-md-2 bo-c">c</div>
-    <div class="col-md-2 bo-c">Bootstrap</div>
-    <div class="col-md-2 bo-c">Javascript</div>
-    <div class="col-md-2 bo-c">query</div> -->
+    
+    <input type="hidden" name="skill_name" value="">
    
     
     </div>
@@ -164,6 +162,7 @@ function gettopic(value)
             success: function(data)
             {
               $('#topic').html(data);
+               $('#skill_name').val(value);
             }
         });//end ajax
 
