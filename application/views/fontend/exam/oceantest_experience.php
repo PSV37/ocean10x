@@ -72,7 +72,7 @@
     <div class="container experience">
     <h5>How many experience do you have ?</h5>
     
-    <input type="hidden" name="topics" value="<?php echo $all_topics ?>">
+    <input type="hidden" name="topics[]" value="<?php echo $all_topics ?>">
     <input type="hidden" name="skill_name" value="<?php echo $skill ?>">
     
     <div class="col-md-12 row rexp">
