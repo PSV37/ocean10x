@@ -1563,7 +1563,7 @@
                
             ?>
             <div class="invi-div">
-                            <!-- <img src="<?php echo base_url()?>upload/<?php echo $this->company_profile_model->company_logoby_id($applicaiton[$i]->company_profile_id); ?>" class="invitation-img"/> -->
+                            <img src="<?php echo base_url()?>upload/<?php echo $this->company_profile_model->company_logoby_id($applicaiton[$i]->company_profile_id); ?>" class="invitation-img"/> 
                             <div class="info-invitation">
                                 <p class="head-invi">Compnay Name:<?php echo $v_experience->company_profile_id; ?></p>
 

@@ -18,6 +18,7 @@
      <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/job_liosting_dashboard.css">
 
      <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/oceantest.css">
+     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/oceanchamp.css">
      
 
  
@@ -61,8 +62,8 @@
     	<div class="student-pro">
         <h6>Are you a student or professional ?</h6>
         <div class="m">
-        <div class="student-b"><i class="fas fa-graduation-cap"></i><p>Student</p></div>
-        <div class="professional-b"><i class="fas fa-user-graduate"></i>professional</div>
+        <div class="student-b"><i class="fas fa-graduation-cap"></i><input type="radio" name="professional"><p>Student</p></div>
+        <div class="professional-b"><i class="fas fa-user-graduate"><input type="radio" name="professional"></i>professional</div>
         </div>
         </div>
     </div>
