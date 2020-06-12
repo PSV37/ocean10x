@@ -80,16 +80,16 @@
     <input type="hidden" name="level" id="level" value="">
     
     <div class="col-md-12 row rexp">
-    <div class="col-md-1 exp-box"><span name="levels" id="levels" onclick="getval('Beginner')" value="Beginner">1</span></div>
-    <div class="col-md-1 exp-box"><span name="levels" id="levels" onclick="getval('Beginner')"  value="Beginner">2</span></div>
-    <div class="col-md-1 exp-box"><span name="levels" id="levels" onclick="getval('Medium')" value="Medium">3</span></div>
-    <div class="col-md-1 exp-box"><span name="levels" id="levels" onclick="getval('Medium')" value="Medium">4</span></div>
-    <div class="col-md-1 exp-box"><span name="levels" id="levels" onclick="getval('Medium')" value="Medium">5</span></div>
-    <div class="col-md-1 exp-box"><span name="levels" id="levels" onclick="getval('Expert')" value="Expert">6</span></div>
-    <div class="col-md-1 exp-box"><span name="levels" id="levels" onclick="getval('Expert')" value="Expert">7</span></div>
-    <div class="col-md-1 exp-box"><span name="levels" id="levels" onclick="getval('Expert')" value="Expert">8</span></div>
-    <div class="col-md-1 exp-box"><span name="levels" id="levels" onclick="getval('Expert')" value="Expert">9</span></div>
-    <div class="col-md-1 exp-box"><span name="levels"  id="levels" onclick="getval('Expert')" value="Expert">10+</span></div>
+    <div class="col-md-1 exp-box"><span name="levels" id="levels" onclick="getval('Beginner');" value="Beginner">1</span></div>
+    <div class="col-md-1 exp-box"><span name="levels" id="levels" onclick="getval('Beginner');"  value="Beginner">2</span></div>
+    <div class="col-md-1 exp-box"><span name="levels" id="levels" onclick="getval('Medium');" value="Medium">3</span></div>
+    <div class="col-md-1 exp-box"><span name="levels" id="levels" onclick="getval('Medium');" value="Medium">4</span></div>
+    <div class="col-md-1 exp-box"><span name="levels" id="levels" onclick="getval('Medium');" value="Medium">5</span></div>
+    <div class="col-md-1 exp-box"><span name="levels" id="levels" onclick="getval('Expert');" value="Expert">6</span></div>
+    <div class="col-md-1 exp-box"><span name="levels" id="levels" onclick="getval('Expert');" value="Expert">7</span></div>
+    <div class="col-md-1 exp-box"><span name="levels" id="levels" onclick="getval('Expert');" value="Expert">8</span></div>
+    <div class="col-md-1 exp-box"><span name="levels" id="levels" onclick="getval('Expert');" value="Expert">9</span></div>
+    <div class="col-md-1 exp-box"><span name="levels"  id="levels" onclick="getval('Expert');" value="Expert">10+</span></div>
     </div>
         <button type="submit" class="pro-btn">Proceed to dashboard</button>
 
