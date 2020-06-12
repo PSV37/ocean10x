@@ -169,20 +169,20 @@ function gettopic(id)
 
 }
 
-     $(document).delegate('#skill_name', 'click', function(event){
-    event.stopPropagation();
-    event.stopImmediatePropagation();
-    alert($(this).val());
+  //    $(document).delegate('#skill_name', 'click', function(event){
+  //   event.stopPropagation();
+  //   event.stopImmediatePropagation();
+  //   alert($(this).val());
 
-    var id = $(this).val();
-      $.ajax({
-            url:'<?php echo base_url();?>exam/gettopic',
-            type: "POST",
-            data:{id:id},
-            success: function(data)
-            {
-              $('#topic').html(data);
-            }
-        });//end ajax
-  });
+  //   var id = $(this).val();
+  //     $.ajax({
+  //           url:'<?php echo base_url();?>exam/gettopic',
+  //           type: "POST",
+  //           data:{id:id},
+  //           success: function(data)
+  //           {
+  //             $('#topic').html(data);
+  //           }
+  //       });//end ajax
+  // });
 </script>
