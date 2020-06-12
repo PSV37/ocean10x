@@ -1,0 +1,115 @@
+.header-image{
+	background-image:url('https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-020.jpg');
+	width:100%;
+	height:140px;
+	position:relative
+	
+	}
+	.info {
+    margin-top: 45px;
+}
+	.profile-round {
+    /* margin-top: -8px; */
+    padding-top: 22px;
+    padding-left: 80px;
+}
+	img.rounded-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+	float:left;
+	margin-right:20px;
+}
+.info p {
+    font-size: 29px;
+    color: #aed4ff;
+    font-family: serif;
+    line-height: 13px;
+    margin-bottom: 13px;
+}	
+.info span {
+    font-size: 24px;
+    color: #7da8d8;
+    font-weight: 700;
+}
+.username p{font-size: 25px;
+    margin-top: 10px;
+    font-weight: 700;
+    color: #2f3131;
+    font-family: none;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.stepwizard-step p {
+    margin-top: 10px;    
+}
+
+.stepwizard-row {
+    display: table-row;
+}
+
+.stepwizard {
+    display: table;     
+    width: 100%;
+    position: relative;
+}
+
+.stepwizard-step button[disabled] {
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+}
+
+.stepwizard-row:before {
+    top: 14px;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    z-order: 0;
+    
+}
+
+.stepwizard-step {    
+    display: table-cell;
+    text-align: center;
+    position: relative;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.skills{background-color:#eff3f7;padding:40px 0px;
+margin-top: 50px;}
+.bo-c{background-color:#fff;
+height:60px;margin-right: 48px;margin-top:23px;
+text-align: center;
+    line-height: 60px;
+    font-size: 15px;   
+	cursor:pointer;}
+	
+.bo-c:hover{
+	background-color: #0453af;
+    color: #fff;
+    box-shadow: inset 1px -1px 8px 0px #eae8e8;
+
+	}
+.bo-c:last-child{margin-right:0px;}		
+
+.show-b {
+    text-align: center;
+    line-height: 60px;
+    margin-top: 23px;
+    color: #082f9e;
+    text-decoration: underline;
+	cursor:pointer;
+}
