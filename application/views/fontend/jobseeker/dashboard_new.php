@@ -210,7 +210,7 @@
                                 <p class="head-invi"><?php echo $this->job_posting_model->job_title_by_name($applicaiton[$i]->job_post_id); ?></p>
                                 <span class="salary-info">Slaray: <?php echo $this->job_posting_model->job_salary_by_id($applicaiton[$i]->job_post_id); ?><span>
                                 <p>text test</p>
-                                 <div class="detail-b">Details</div>
+                                 <div class="detail-b"><a href="<?php  echo base_url();?>job/show/<?php echo $this->job_posting_model->get_slug_nameby_id($applicaiton[$i]->job_post_id) ?>">Details</a></div>
                                     <div class="last-row-invitation">
                                     <ul>
                                         <li><div class="location-inv"><i class="fas fa-map-marker-alt"></i><?php echo $applicaiton[$i]->city_id;  ?></div></li>

@@ -1954,7 +1954,7 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">My Trainnings</h4>
+          <h4 class="modal-title">My Trainings</h4>
         </div>
         <div class="modal-body">
          <form id="UpdateEducational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_training');?>" method="post" style="padding: 30px;">
