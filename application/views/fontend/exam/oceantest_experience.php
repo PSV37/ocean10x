@@ -71,7 +71,7 @@
 <div class="container-fluid" style="background-color:aliceblue;margin-top:60px;">
     <div class="container experience">
     <h5>How many experience do you have ?</h5>
-    
+    <?php print_r($all_topics); ?>
     <input type="hidden" name="topics[]" value="<?php echo $all_topics ?>">
     <input type="hidden" name="skill_name" value="<?php echo $skill ?>">
     
