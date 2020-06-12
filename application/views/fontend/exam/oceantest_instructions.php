@@ -111,16 +111,20 @@
     margin-left: -15px;">Choose your programmig prefered languages</h5>
     
     <div class="row">
-    <div class="col-md-2 bo-c">c++</div>
-    <div class="col-md-2 bo-c">c</div>
+        <?php if(!empty($skill_data)) foreach ($skill_data as $svalue) { ?>
+                      <!-- <option value="<?php echo $svalue['id']; ?>"></option> -->
+    <div class="col-md-2 bo-c"><?php echo $svalue['skill_name']; ?></div>
+
+                    <?php  } ?>
+    <!-- <div class="col-md-2 bo-c">c</div>
     <div class="col-md-2 bo-c">Bootstrap</div>
     <div class="col-md-2 bo-c">Javascript</div>
-    <div class="col-md-2 bo-c">query</div>
+    <div class="col-md-2 bo-c">query</div> -->
    
     
     </div>
     
-    <div class="row">
+   <!--  <div class="row">
     <div class="col-md-2 bo-c"></div>
     <div class="col-md-2 bo-c"></div>
     <div class="col-md-2 bo-c"></div>
@@ -135,7 +139,7 @@
     <div class="col-md-2 bo-c"></div>
     <div class="col-md-2 bo-c"></div>
     <div class="col-md-2 bo-c"></div>
-    <div class="col-md-2 show-b">Show more</div>
+    <div class="col-md-2 show-b">Show more</div> -->
    
     
     </div>
