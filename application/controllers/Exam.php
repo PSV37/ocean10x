@@ -366,7 +366,7 @@ class Exam extends MY_Seeker_Controller
             $selectadd = "id,skill_name";
             $data['add_skill_data'] = $this->Master_model->getMaster('skill_master',$whereadd = FALSE, $join = FALSE, $order = false, $field = false, $selectadd, $limit=false, $start=false, $search=false);
 
-            $this->load->view('fontend/exam/ocean_champ_select_topic',$data);
+            $this->load->view('fontend/exam/oceantest_instructions',$data);
         }
     }
 

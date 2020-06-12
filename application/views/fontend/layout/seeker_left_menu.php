@@ -64,7 +64,7 @@
                                           </a>
                                         </li>
                                          <li class="menu">
-                                            <a data-dl-view="true" data-dl-title="Mobility" href="/jobprofile/generate">
+                                            <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url(); ?>seeker/oceanchamp-test">
                                             <span class="icon-container">
                                               <i class="fas fa-map-signs"></i>
                                               </span>
