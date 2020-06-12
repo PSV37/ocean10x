@@ -157,7 +157,7 @@
 
 function gettopic(id)
 {
-    alert($(this).val());
+    // alert($(this).val());
     alert(id);
     $.ajax({
             url:'<?php echo base_url();?>exam/gettopic',
