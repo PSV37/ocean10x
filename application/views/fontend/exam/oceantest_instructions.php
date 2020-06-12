@@ -155,14 +155,14 @@
 </div>
 <script type="text/javascript">
 
-function gettopic(id)
+function gettopic(value)
 {
     // alert($(this).val());
-    alert(id);
+    alert(value);
     $.ajax({
             url:'<?php echo base_url();?>exam/gettopic',
             type: "POST",
-            data:{id:id},
+            data:{id:value},
             success: function(data)
             {
               $('#topic').html(data);
