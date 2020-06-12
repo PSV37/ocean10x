@@ -1,4 +1,8 @@
+<?php 
+    $this->load->view('fontend/layout/new_seeker_header.php');
 
+?>  
+   
 <div class="container-fluid header-image">
 
 <div class="profile-round">
