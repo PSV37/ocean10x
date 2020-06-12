@@ -113,7 +113,7 @@
     <div class="row">
         <?php if(!empty($skill_data)) foreach ($skill_data as $svalue) { ?>
                       <!-- <option value="<?php echo $svalue['id']; ?>"></option> -->
-    <div class="col-md-2 bo-c"><p name="skill_name" id="skill_name" onclick="gettopic(this.value);" value="<?php echo $svalue['id']; ?>" ><?php echo $svalue['skill_name']; ?></p></div>
+    <div class="col-md-2 bo-c"><p name="skill_name" id="skill_name"  value="<?php echo $svalue['id']; ?>" onclick="gettopic($this.value);"><?php echo $svalue['skill_name']; ?></p></div>
 
                     <?php  } ?>
 
