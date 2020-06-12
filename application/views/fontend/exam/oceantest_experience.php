@@ -73,16 +73,16 @@
     
     
     <div class="col-md-12 row rexp">
-    <div class="col-md-1 exp-box">1</div>
-    <div class="col-md-1 exp-box">2</div>
-    <div class="col-md-1 exp-box">3</div>
-    <div class="col-md-1 exp-box">4</div>
-    <div class="col-md-1 exp-box">5</div>
-    <div class="col-md-1 exp-box">6</div>
-    <div class="col-md-1 exp-box">7</div>
-    <div class="col-md-1 exp-box">8</div>
-    <div class="col-md-1 exp-box">9</div>
-    <div class="col-md-1 exp-box">10+</div>
+    <div class="col-md-1 exp-box" value="Beginner">1</div>
+    <div class="col-md-1 exp-box" value="Beginner">2</div>
+    <div class="col-md-1 exp-box" value="Medium">3</div>
+    <div class="col-md-1 exp-box" value="Medium">4</div>
+    <div class="col-md-1 exp-box" value="Medium">5</div>
+    <div class="col-md-1 exp-box" value="Expert">6</div>
+    <div class="col-md-1 exp-box" value="Expert">7</div>
+    <div class="col-md-1 exp-box" value="Expert">8</div>
+    <div class="col-md-1 exp-box" value="Expert">9</div>
+    <div class="col-md-1 exp-box" value="Expert">10+</div>
     </div>
         <button class="pro-btn">Proceed to dashboard</button>
 

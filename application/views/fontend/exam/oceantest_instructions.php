@@ -113,9 +113,15 @@
     <div class="row">
         <?php if(!empty($skill_data)) foreach ($skill_data as $svalue) { ?>
                       <!-- <option value="<?php echo $svalue['id']; ?>"></option> -->
-    <div class="col-md-2 bo-c"><?php echo $svalue['skill_name']; ?></div>
+    <div class="col-md-2 bo-c" name="skill_name" id="skill_name" value="<?php echo $svalue['id']; ?>" ><?php echo $svalue['skill_name']; ?></div>
 
                     <?php  } ?>
+
+                    <div class="col-md-12 col-sm-12">
+                  <label class="control-label ">Topics<span class="required">*</span> </label>
+                  <div id="topic"></div>
+                 
+                </div>
     <!-- <div class="col-md-2 bo-c">c</div>
     <div class="col-md-2 bo-c">Bootstrap</div>
     <div class="col-md-2 bo-c">Javascript</div>
@@ -140,10 +146,26 @@
     <div class="col-md-2 bo-c"></div>
     <div class="col-md-2 bo-c"></div>
     <div class="col-md-2 show-b">Show more</div> -->
-   
-    <button>Next</button>
+    
+    <button id="next" type="submit" class="btn btn-primary pull-right"><a href="<?php echo base_url(); ?>exam/select_experience">Next</a></button>
     </div>
     
 </div>
 
 </div>
+<script type="text/javascript">
+     $(document).delegate('#skill_name', 'change', function(event){
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+    var id = $(this).val();
+      $.ajax({
+            url:'<?php echo base_url();?>exam/gettopic',
+            type: "POST",
+            data:{id:id},
+            success: function(data)
+            {
+              $('#topic').html(data);
+            }
+        });//end ajax
+  });
+</script>

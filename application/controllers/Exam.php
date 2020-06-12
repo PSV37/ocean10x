@@ -370,6 +370,12 @@ class Exam extends MY_Seeker_Controller
         }
     }
 
+    public function select_experience()
+    {
+            $this->load->view('fontend/exam/oceantest_experience');
+
+    }
+
     function gettopic(){
         $topic_id = $this->input->post('id');
         $where['technical_id'] = $topic_id;
