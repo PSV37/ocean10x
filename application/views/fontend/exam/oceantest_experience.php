@@ -71,9 +71,9 @@
 <div class="container-fluid" style="background-color:aliceblue;margin-top:60px;">
     <div class="container experience">
     <h5>How many experience do you have ?</h5>
-    <!-- <?php print_r($all_topics); ?> -->
-  <?php  foreach($all_topics as $key){ $i=0;?>
-    <input type='checkbox' name='topics[]' style='height:15px; width:20px;' id='topics' value="<?php $key[$i] ?>" checked>
+   
+  <?php $i=0;  foreach($all_topics as $key){ ?>
+    <input type='hidden' name='topics[]' style='height:15px; width:20px;' id='topics' value="<?php $key[$i] ?>" >
 <?php $i++; } ?>
     <!-- <input type="text" name="topics[]" value="<?php echo $all_topics ?>"> -->
     <input type="text" name="skill_name" value="<?php echo $skill ?>">
