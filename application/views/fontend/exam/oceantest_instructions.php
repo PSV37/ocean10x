@@ -19,7 +19,7 @@
 
      <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/oceantest.css">
      <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/oceanchamp.css">
-     
+
      
 
  
@@ -149,7 +149,7 @@
     <div class="col-md-2 bo-c"></div>
     <div class="col-md-2 show-b">Show more</div> -->
     
-    <button id="next" type="submit" class="btn btn-primary pull-right"><a href="<?php echo base_url(); ?>exam/select_experience">Next</a></button>
+    <button id="next" type="submit" class="btn btn-primary pull-right"><a href="<?php echo base_url(); ?>exam/select_experience" style="color: white;" >Next</a></button>
     </div>
     
 </div>
