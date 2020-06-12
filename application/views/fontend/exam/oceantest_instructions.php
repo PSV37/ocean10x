@@ -111,7 +111,7 @@
     <div class="row">
         <?php if(!empty($skill_data)) foreach ($skill_data as $svalue) { ?>
                       <!-- <option value="<?php echo $svalue['id']; ?>"></option> -->
-    <div class="col-md-2 bo-c"><span name="skill_names" id="skill_name"  value="<?php echo $svalue['id']; ?>" onclick="gettopic(<?php echo $svalue['id']; ?>);"><?php echo $svalue['skill_name']; ?></span></div>
+    <div class="col-md-2 bo-c"><span name="skill_names" id="skill_names"  value="<?php echo $svalue['id']; ?>" onclick="gettopic(<?php echo $svalue['id']; ?>);"><?php echo $svalue['skill_name']; ?></span></div>
 
                     <?php  } ?>
 
@@ -121,7 +121,7 @@
                  
                 </div>
     
-    <input type="hidden" name="skill_name" value="">
+    <input type="hidden" id="skill_name" name="skill_name" value="">
    
     
     </div>
