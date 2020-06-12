@@ -1,5 +1,9 @@
 
-
+<style type="text/css">
+  .col-md-9.details_box {
+    margin-top: 60px;
+}
+</style>
 
 <!---header---->
 
@@ -80,6 +84,8 @@
             <p><?php echo $singlejob->education; ?></p>
             <div class="panel-body"></div>
             <button class="apply-cv" id="b3">Apply with Ocean cv</button>
+            <div class="panel-body"></div>
+
               </div>
                      </div>
             
