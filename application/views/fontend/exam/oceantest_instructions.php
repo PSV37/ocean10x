@@ -1,7 +1,4 @@
-<?php 
-    $this->load->view('fontend/layout/new_seeker_header.php');
-
-?>  
+   <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/oceantest.css"> 
    
 <div class="container-fluid header-image">
 
