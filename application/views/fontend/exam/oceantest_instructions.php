@@ -17,8 +17,10 @@
 
      <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/job_liosting_dashboard.css">
 
-     <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/oceantest.css"> -->
      <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/oceanchamp.css">
+
+     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/oceantest.css"> 
+     
 
      
 
