@@ -56,7 +56,7 @@
 }
      </style>
 </head>
-<form action="<?php echo base_url(); ?>exam/ocean_champ_test" method="post"></form>
+<form action="<?php echo base_url(); ?>exam/ocean_champ_test" method="post">
 <div class="container-fluid">
 	<div class="container">
     	<div class="student-pro">
@@ -95,11 +95,12 @@
 
     </div>
 </div>
+</form>
 <script type="text/javascript">
 function getval(value)
 {
     // alert($(this).val());
-    alert(value);
+    // alert(value);
     
                $('#level').val(value);
       
