@@ -157,6 +157,8 @@
      $(document).delegate('#skill_name', 'click', function(event){
     event.stopPropagation();
     event.stopImmediatePropagation();
+    alert($(this).val());
+
     var id = $(this).val();
       $.ajax({
             url:'<?php echo base_url();?>exam/gettopic',
