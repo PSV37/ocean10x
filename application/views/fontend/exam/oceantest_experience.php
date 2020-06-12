@@ -72,8 +72,8 @@
     <div class="container experience">
     <h5>How many experience do you have ?</h5>
     <?php print_r($all_topics); ?>
-    <input type="hidden" name="topics[]" value="<?php echo $all_topics ?>">
-    <input type="hidden" name="skill_name" value="<?php echo $skill ?>">
+    <input type="text" name="topics[]" value="<?php echo $all_topics ?>">
+    <input type="text" name="skill_name" value="<?php echo $skill ?>">
     
     <div class="col-md-12 row rexp">
     <div class="col-md-1 exp-box"><span name="level" value="Beginner">1</span></div>

@@ -22,12 +22,6 @@
      <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/oceantest.css"> 
      
 
-     
-
- 
-  
-    
-
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>asset/jc/css/jquery.Jcrop.css">
     <!-- Data Table  CSS -->
     <link href="<?php echo base_url(); ?>asset/css/plugins/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
@@ -107,7 +101,7 @@
 </div>
 </div>
 </div>
-
+<form method="post" action="<?php echo base_url(); ?>exam/select_experience">
 <div class="container-fluid skills">
 <div class="container">
 	<h5 style="font-size: medium;
@@ -151,11 +145,11 @@
     <div class="col-md-2 bo-c"></div>
     <div class="col-md-2 show-b">Show more</div> -->
     
-    <button id="next" type="submit" class="btn btn-primary pull-right"><a href="<?php echo base_url(); ?>exam/select_experience" style="color: white;" >Next</a></button>
+    <button id="next" type="submit" class="btn btn-primary pull-right">NEXT</button>
     </div>
     
 </div>
-
+</form>
 </div>
 <script type="text/javascript">
 
