@@ -17,7 +17,7 @@
 			
             	<div class="col-md-9 details_box">
                 	<div class="job-logo">
-                 <img src="https://media-exp1.licdn.com/dms/image/C4E0BAQHbWPfQdNw1EA/company-logo_200_200/0?e=2159024400&v=beta&t=fWMuJX9leYFsDf-weERHLyIPfRh4aCOwx8wygmhad9Q" class="job-disc-logo"/>
+                 <img src="<?php echo base_url()?>upload/<?php echo $this->company_profile_model->company_logoby_id($singlejob->company_profile_id); ?>" class="job-disc-logo"/>
                     </div>
                      <div class="row">
               <div class="col-md-4">
