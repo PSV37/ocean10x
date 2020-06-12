@@ -262,6 +262,15 @@ class Exam extends MY_Seeker_Controller
 
     }
 
+     public function select_experience()
+    {
+        $data['skill'] = $this->input->post('skill_name');
+
+        $data['all_topics']  = implode(',', $this->input->post('topics'));
+            $this->load->view('fontend/exam/oceantest_experience',$data);
+
+    }
+
 
     /*OCEAN CHAMP TEST SECTION*/
     public function ocean_champ_test()
@@ -324,7 +333,7 @@ class Exam extends MY_Seeker_Controller
                                   
                     $data['skill'] =  $skill;
 
-                    $this->load->view('fontend/exam/ocean_exam_instruction',$data);
+                    $this->load->view('fontend/exam/oceantest_take_test',$data);
                 }
              
                
@@ -370,11 +379,7 @@ class Exam extends MY_Seeker_Controller
         }
     }
 
-    public function select_experience()
-    {
-            $this->load->view('fontend/exam/oceantest_experience');
-
-    }
+   
 
     function gettopic(){
         $topic_id = $this->input->post('id');

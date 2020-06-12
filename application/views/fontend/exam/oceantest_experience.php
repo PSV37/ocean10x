@@ -72,20 +72,22 @@
     <div class="container experience">
     <h5>How many experience do you have ?</h5>
     
+    <input type="hidden" name="topics" value="<?php echo $all_topics ?>">
+    <input type="hidden" name="skill_name" value="<?php echo $skill ?>">
     
     <div class="col-md-12 row rexp">
-    <div class="col-md-1 exp-box" value="Beginner">1</div>
-    <div class="col-md-1 exp-box" value="Beginner">2</div>
-    <div class="col-md-1 exp-box" value="Medium">3</div>
-    <div class="col-md-1 exp-box" value="Medium">4</div>
-    <div class="col-md-1 exp-box" value="Medium">5</div>
-    <div class="col-md-1 exp-box" value="Expert">6</div>
-    <div class="col-md-1 exp-box" value="Expert">7</div>
-    <div class="col-md-1 exp-box" value="Expert">8</div>
-    <div class="col-md-1 exp-box" value="Expert">9</div>
-    <div class="col-md-1 exp-box" value="Expert">10+</div>
+    <div class="col-md-1 exp-box"><span name="level" value="Beginner">1</span></div>
+    <div class="col-md-1 exp-box"><span name="level" value="Beginner">2</span></div>
+    <div class="col-md-1 exp-box"><span name="level" value="Medium">3</span></div>
+    <div class="col-md-1 exp-box"><span name="level" value="Medium">4</span></div>
+    <div class="col-md-1 exp-box"><span name="level" value="Medium">5</span></div>
+    <div class="col-md-1 exp-box"><span name="level" value="Expert">6</span></div>
+    <div class="col-md-1 exp-box"><span name="level" value="Expert">7</span></div>
+    <div class="col-md-1 exp-box"><span name="level" value="Expert">8</span></div>
+    <div class="col-md-1 exp-box"><span name="level" value="Expert">9</span></div>
+    <div class="col-md-1 exp-box"><span name="level" value="Expert">10+</span></div>
     </div>
-        <button class="pro-btn">Proceed to dashboard</button>
+        <button class="pro-btn"><a href="<?php echo base_url(); ?>exam/ocean_champ_test">Proceed to dashboard</a></button>
 
     </div>
 </div>
