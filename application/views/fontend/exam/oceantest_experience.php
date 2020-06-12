@@ -56,7 +56,7 @@
 }
      </style>
 </head>
-
+<form action="<?php echo base_url(); ?>exam/ocean_champ_test" method="post"></form>
 <div class="container-fluid">
 	<div class="container">
     	<div class="student-pro">
@@ -76,7 +76,7 @@
     <input type='hidden' name='topics[]' style='height:15px; width:20px;' id='topics' value="<?php $key[$i] ?>" >
 <?php $i++; } ?>
     <!-- <input type="text" name="topics[]" value="<?php echo $all_topics ?>"> -->
-    <input type="text" name="skill_name" value="<?php echo $skill ?>">
+    <input type="hidden" name="skill_name" value="<?php echo $skill ?>">
     
     <div class="col-md-12 row rexp">
     <div class="col-md-1 exp-box"><span name="level" value="Beginner">1</span></div>
@@ -90,7 +90,7 @@
     <div class="col-md-1 exp-box"><span name="level" value="Expert">9</span></div>
     <div class="col-md-1 exp-box"><span name="level" value="Expert">10+</span></div>
     </div>
-        <button class="pro-btn"><a href="<?php echo base_url(); ?>exam/ocean_champ_test">Proceed to dashboard</a></button>
+        <button class="pro-btn">Proceed to dashboard</button>
 
     </div>
 </div>
