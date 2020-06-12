@@ -72,8 +72,8 @@
     <div class="container experience">
     <h5>How many experience do you have ?</h5>
    
-  <?php $i=0;  foreach($all_topics as $key){ ?>
-    <input type='hidden' name='topics[]' style='height:15px; width:20px;' id='topics' value="<?php $key[$i] ?>" >
+  <?php $i=0;  foreach($all_topics as $key){  ?>
+    <input type='hidden' name='topics[]' style='height:15px; width:20px;' id='topics' value="<?php echo $key[$i]; ?>" >
 <?php $i++; } ?>
     <!-- <input type="text" name="topics[]" value="<?php echo $all_topics ?>"> -->
     <input type="hidden" name="skill_name" value="<?php echo $skill ?>">
@@ -90,7 +90,7 @@
     <div class="col-md-1 exp-box"><span name="level" value="Expert">9</span></div>
     <div class="col-md-1 exp-box"><span name="level" value="Expert">10+</span></div>
     </div>
-        <button class="pro-btn">Proceed to dashboard</button>
+        <button type="submit" class="pro-btn">Proceed to dashboard</button>
 
     </div>
 </div>
