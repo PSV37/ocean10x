@@ -154,7 +154,7 @@
 
 </div>
 <script type="text/javascript">
-     $(document).delegate('#skill_name', 'change', function(event){
+     $(document).delegate('#skill_name', 'click', function(event){
     event.stopPropagation();
     event.stopImmediatePropagation();
     var id = $(this).val();
