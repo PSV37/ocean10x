@@ -266,7 +266,10 @@ class Exam extends MY_Seeker_Controller
     {
         $data['skill'] = $this->input->post('skill_name');
 
-        $data['all_topics']  = implode(',', $this->input->post('topics'));
+            $data['all_topics'] = $this->input->post('topics');
+
+
+        // $data['all_topics']  = implode(',', $this->input->post('topics'));
             $this->load->view('fontend/exam/oceantest_experience',$data);
 
     }
