@@ -213,9 +213,11 @@ $company_profile_id = $this->session->userdata('company_profile_id');
 	<div class="container">
         <div class="col-md-12">
       <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
-       <div class="panel-body"></div>
+       <!-- <div class="panel-body"></div> -->
         <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
-            <div class="col-md-9">
+            <div class="row">
+            <div class="col-md-12">
+              <div class="col-md-3"></div>
             <div class="col-md-9 active-job">
            
             <div class="job-voucher alert alert-dismissible">
@@ -251,6 +253,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
             
             </div>
             </div>
+          </div>
           
             <?php
             endforeach;
