@@ -32,7 +32,7 @@
                                 
                                     <ul class="menu-principal-list" style="">
                                          <li class="active">
-                                             <a data-dl-view="true" data-dl-title="Dashboard" href="#">
+                                             <a data-dl-view="true" data-dl-title="Dashboard" href="<?php echo base_url(); ?>employer">
                                             <span class="icon-container">
                                                  <i class="fas fa-tachometer-alt"></i>
                                             </span>
@@ -49,7 +49,7 @@
                                        </li>
                                        
                                       <li>
-                                     <a data-dl-view="true" data-dl-title="Contacts" href="/candidate">
+                                     <a data-dl-view="true" data-dl-title="Contacts" href="<?php echo base_url(); ?>employer/job_post">
                                        <span class="icon-container">
                                          <i class="fas fa-phone-volume"></i>
                                      </span>
