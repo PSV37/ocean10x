@@ -323,7 +323,7 @@ $(".button").click(function () {
 <script type="text/javascript">
 document.getElementsByClassName('form-control').innerHTML+="<br />";
 </script>
-<?php $this->load->view("fontend/layout/footer.php"); ?>
+
 
 <script>
 
@@ -339,14 +339,6 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 
     });
     // to avoid duplications
- $('#tokenfield').on('tokenfield:createtoken', function (event) {
-      var existingTokens = $(this).tokenfield('getTokens');
-      $.each(existingTokens, function(index, token) {
-          if (token.value === event.attrs.value)
-              event.preventDefault();
-
-      });
-  });
 
 
   function getSkillsdetails(id)
@@ -389,99 +381,6 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
     }
 
 
-  $(document).ready(function(){
-
-   
- function getEducationSpecial_load(){
-    var id = $('#job_edu').val();
-    if(id==5 || id==6){
-     $('#spectial').hide();
-    }
-    else{
-      $('#spectial').show();
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>admin/Job_posting/getEducation_specialization',
-                data:{id:id},
-                success:function(res){
-                  $('#job_edu_special').html(res);
-                  $('#job_edu_special').val(<?php echo $job_info->edu_specialization; ?>);
-                }
-        
-            }); 
-          }
-   
-    }
-
-  function getSkillsdetails_load()
-    {
-      var id = $('#job_role').val();
-      if(id){
-        $.ajax({
-                  url:'<?php echo base_url();?>admin/Job_posting/getSkillsByRole',
-                  type:'POST',
-                  data:{
-                        role_id:id
-                  },
-                   dataType: "html",  
-                   success: function(data)
-                   {
-                      $('#skills_result').html(data);
-                      $('#skills_result').val(<?php echo $job_info->job_role; ?>);
-                   } 
-            });
-
-      }
-}
-
-  // getCitys_load();
-  // getStates_load();
-  getSkillsdetails_load();
-  getEducationSpecial_load();
-});
-     
-</script>
-
-<script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
-
-<script>
-$("#job_category").select2( {
-  placeholder: "Select Domain",
-  allowClear: true
-  } );
-</script> 
-<script>
-$("#country_id").select2( {
-  placeholder: "Select Country",
-  allowClear: true
-  } );
-</script> 
-
-<script>
-$(function() {
-  // choose target dropdown
-  var select = $('.industry');
-  select.html(select.find('option').sort(function(x, y) {
-    // to change to descending order switch "<" for ">"
-    return $(x).text() > $(y).text() ? 1 : -1;
-  }));
-
-  // select default item after sorting (first item)
-  //$('select').get(0).selectedIndex = 0;
-});
-</script>
-
-<script>
-$(function() {
-  // choose target dropdown
-  var select = $('.country');
-  select.html(select.find('option').sort(function(x, y) {
-    // to change to descending order switch "<" for ">"
-    return $(x).text() > $(y).text() ? 1 : -1;
-  }));
-
-  // select default item after sorting (first item)
-  //$('select').get(0).selectedIndex = 0;
-});
+ 
 </script>
 
