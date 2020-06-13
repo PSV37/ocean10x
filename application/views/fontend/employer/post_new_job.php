@@ -212,8 +212,8 @@ $company_profile_id = $this->session->userdata('company_profile_id');
  
               <div class="col-md-12 col-sm-12 p-m-9">
                 <div class="formrow">
-                   <label class="control-label">Company benefit offered <span class="required">*</span></label>
-                    <textarea name="benefits" class="form-control ckeditor" placeholder="Company Address"><?php if(!empty($job_info)) echo $job_info->benefits; ?></textarea><?php echo form_error('benefits'); ?>                                 
+                   <label class="control-label">Company benefits offered <span class="required">*</span></label>
+                    <textarea name="benefits" class="form-control ckeditor" placeholder="Company benefits offered"><?php if(!empty($job_info)) echo $job_info->benefits; ?></textarea><?php echo form_error('benefits'); ?>                                 
                 </div>
               </div>
             </section>
