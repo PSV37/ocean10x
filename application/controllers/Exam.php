@@ -445,7 +445,7 @@ class Exam extends MY_Seeker_Controller
                     $where_req_skill="topic_id IN (".$all_topics.") AND level='$level'";
                     $exam_question = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit=NUMBER_QUESTIONS,$start=false, $search=false);
 
-                    print_r($this->db->last_query());die;
+                    // print_r($this->db->last_query());die;
                   
                    // check for answers
                     for($n1=0;$n1<sizeof($exam_question);$n1++)
