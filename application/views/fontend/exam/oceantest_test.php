@@ -68,87 +68,20 @@
   <div class="multipleChoiceQues">
   <div id="app"></div>
 
-    
+  
     <div class="my-progress">
         <progress class="my-progress-bar" min="0" max="100" value="0" step="9" aria-labelledby="my-progress-completion"></progress>    
         <p id="my-progress-completion" class="js-my-progress-completion sr-only" aria-live="polite">0% complete</p>
     </div>
-    
     <div class="quizBox">
-       <form id="nextques" class="submit-form" action="#" method="post">
-       <?php 
-        $ans_cnt = count($questions['answer']);
-          if($ans_cnt > 1){
-            $input_type='checkbox';
-          }else{
-            $input_type='radio';
-          }
-      ?>
-      <input type="hidden" name="skill_id" id="skill_id" value="<?php if(!empty($skill_id))echo base64_encode($skill_id); ?>">
-      <input type="hidden" name="question_id" id="question_id" value="<?php echo $questions['ques_id']; ?>">
-      <div class="question">
-        <h1><?php echo $questions['question']; ?></h1>
-       </div>
-      <div class="answerOptions">
-       <ul id="optionList">
-        <li class="myoptions">
-          <input value="Credence" name="optRdBtn" type="radio" id="rd_0">
-          <label for="rd_0"><input type="<?php echo $input_type; ?>" name="option[]" id="option1" value="1"> <?php echo $questions['option1'];?></label>
-          <div class="bullet"><div class="line zero"></div>
-            <div class="line one"></div>
-            <div class="line two"></div>
-            <div class="line three"></div>
-            <div class="line four"></div>
-            <div class="line five"></div>
-            <div class="line six"></div>
-            <div class="line seven"></div>
-        </div>
-        </li>
-        <li class="myoptions">
-          <input value="Colloquy" name="optRdBtn" type="radio" id="rd_1">
-          <label for="rd_1"><input type="<?php echo $input_type; ?>" name="option[]" id="option1" value="1"> <?php echo $questions['option2'];?></label><div class="bullet">
-            <div class="line zero"></div><div class="line one"></div>
-            <div class="line two"></div>
-            <div class="line three"></div>
-            <div class="line four"></div>
-            <div class="line five"></div>
-            <div class="line six"></div>
-            <div class="line seven"></div>
-          </div>
-        </li>
-        <li class="myoptions"><input value="Abyss" name="optRdBtn" type="radio" id="rd_2"><label for="rd_2"><input type="<?php echo $input_type; ?>" name="option[]" id="option1" value="1"> <?php echo $questions['option3'];?></label>
-          <div class="bullet">
-          <div class="line zero"></div>
-          <div class="line one"></div>
-          <div class="line two"></div>
-          <div class="line three"></div>
-          <div class="line four"></div>
-          <div class="line five"></div>
-          <div class="line six"></div>
-          <div class="line seven"></div>
-        </div>
-        </li>
-        <li class="myoptions"><input value="Monition" name="optRdBtn" type="radio" id="rd_3"><label for="rd_3"><input type="<?php echo $input_type; ?>" name="option[]" id="option1" value="1"> <?php echo $questions['option4'];?></label>
-          <div class="bullet">
-          <div class="line zero"></div>
-          <div class="line one"></div>
-          <div class="line two"></div>
-          <div class="line three"></div>
-          <div class="line four"></div>
-          <div class="line five"></div>
-          <div class="line six"></div>
-          <div class="line seven"></div>
-        </div>
-        </li>
-        </ul>
-      </div>
+
+      <div class="question"> </div>
+      <div class="answerOptions"></div>
       <div class="buttonArea">
-        <button id="next" type="submit">Next</button>
+        <button id="next">Next</button>
         <button id="submit"  class="hidden">Submit</button>
       </div>
-      </form>
     </div>
-  
   </div>
   <div class="resultArea">  
     <div class="resultPage1">
@@ -198,251 +131,163 @@
   </div>
 </div>
 <!---2-->
-
-<script>
-    $('form#nextques').submit(function(e)
-  {
-     var timer = $('#timer_val').val();
-     // alert(timer);
-      e.preventDefault();
-    
-    $.ajax({
-              url: "<?php echo base_url();?>exam/insert_ocean_data",
-              type: "POST",
-              data: new FormData(this),
-              contentType:false,
-              processData:false,
-               // dataType: "json",
-              success: function(data)
-              {
-                $('#quizBox').html(data);
-              }
-        });
-       
-  }); 
-</script>
 <script>
 var $progressValue = 0;
 var resultList=[];
 
 
-// const quizdata=[
-//       {
-//         question:"Characterized by skill at understanding and profiting by circumstances",
-//         options:["Prescient", "Analyst", "Diminution", "Shrewd"],
-//         answer:"Shrewd",
-//         category:1
-//       },
-//       {
-//         question:"To refuse to acknowledge as one's own or as connected with oneself",
-//         options:["Prevalent", "Disown", "Squalid", "Employee"],
-//         answer:"Disown",
-//         category:2
-//       },
-//       {
-//         question:"Not having the abilities desired or necessary for any purpose",
-//         options:["Incompetent", "Impoverish", "Coxswain", "Devious"],
-//         answer:"Incompetent",
-//         category:3
-//       },
-//       {
-//         question:"Lizard that changes color in different situations",
-//         options:["Scruple", "Depredation", "Chameleon", "Whimsical"],
-//         answer:"Chameleon",
-//         category:1
-//       },
-//       {
-//         question:"Having the title of an office without the obligations",
-//         options:["Reciprocal", "Unsullied", "Titular", "Inflated"],
-//         answer:"Titular",
-//         category:2
-//       },
-//       {
-//         question:"An expression of disapproval or blame personally addressed to one censured",
-//         options:["Pitiful", "Reproof", "Mutation", "Raillery"],
-//         answer:"Reproof",
-//         category:3
-//       },
-//       {
-//         question:"To deliver an elaborate or formal public speech.",
-//         options:["Orate", "Magician", "Access", "Guzzle"],
-//         answer:"Orate",
-//         category:2
-//       },
-//       {
-//         question:"A wharf or artificial landing-place on the shore of a harbor or projecting into it",
-//         options:["Intolerable", "Quay", "Fez", "Insatiable"],
-//         answer:"Quay",
-//         category:3
-//       },
-//       {
-//         question:"Friendly counsel given by way of warning and implying caution or reproof",
-//         options:["Credence", "Colloquy", "Abyss", "Monition"],
-//         answer:"Monition",
-//         category:1
-//       },
-//       {
-//         question:"To make a beginning in some occupation or scheme",
-//         options:["Muster", "Embark", "Ocular", "Apprehensible"],
-//         answer:"Ocular",
-//         category:2
-//       },
-//       {
-//         question:"Able to reinforce sound by sympathetic vibrations",
-//         options:["Resonance", "Clandestine", "Diffusion", "Quietus"],
-//         answer:"Resonance",
-//         category:3
-//       },
-//       {
-//         question:"To send off or consign, as to an obscure position or remote destination",
-//         options:["Monolith", "Endurable", "Efficient", "Relegate"],
-//         answer:"Relegate",
-//         category:1
-//       }
-//     ];
-// /** Random shuffle questions **/
-// function shuffleArray(question){
-//    var shuffled=question.sort(function() {
-//     return .5 - Math.random();
-//  });
-//    return shuffled;
-// }
+const quizdata=[
+      {
+        question:"<?php echo $questions['question']; ?>",
+        options:["<?php echo $questions['option1'];?>", "<?php echo $questions['option2'];?>", "<?php echo $questions['option3'];?>", "<?php echo $questions['option4'];?>"],
+        answer:"Shrewd",
+        category:1
+      }
+      
+    ];
+/** Random shuffle questions **/
+function shuffleArray(question){
+   var shuffled=question.sort(function() {
+    return .5 - Math.random();
+ });
+   return shuffled;
+}
 
-// function shuffle(a) {
-//   for (var i = a.length; i; i--) {
-//     var j = Math.floor(Math.random() * i);
-//     var _ref = [a[j], a[i - 1]];
-//     a[i - 1] = _ref[0];
-//     a[j] = _ref[1];
-//   }
-// }
+function shuffle(a) {
+  for (var i = a.length; i; i--) {
+    var j = Math.floor(Math.random() * i);
+    var _ref = [a[j], a[i - 1]];
+    a[i - 1] = _ref[0];
+    a[j] = _ref[1];
+  }
+}
 
-// /*** Return shuffled question ***/
-// function generateQuestions(){
-//   var questions=shuffleArray(quizdata);    
-//   return questions;
-// }
+/*** Return shuffled question ***/
+function generateQuestions(){
+  var questions=shuffleArray(quizdata);    
+  return questions;
+}
 
-// /*** Return list of options ***/
-// function returnOptionList(opts, i){
+/*** Return list of options ***/
+function returnOptionList(opts, i){
 
-//   var optionHtml='<li class="myoptions">'+
-//     '<input value="'+opts+'" name="optRdBtn" type="radio" id="rd_'+i+'">'+
-//     '<label for="rd_'+i+'">'+opts+'</label>'+
-//     '<div class="bullet">'+
-//       '<div class="line zero"></div>'+
-//       '<div class="line one"></div>'+
-//       '<div class="line two"></div>'+
-//       '<div class="line three"></div>'+
-//       '<div class="line four"></div>'+
-//       '<div class="line five"></div>'+
-//       '<div class="line six"></div>'+
-//       '<div class="line seven"></div>'+
-//     '</div>'+
-//   '</li>';
+  var optionHtml='<li class="myoptions">'+
+    '<input value="'+opts+'" name="optRdBtn" type="radio" id="rd_'+i+'">'+
+    '<label for="rd_'+i+'">'+opts+'</label>'+
+    '<div class="bullet">'+
+      '<div class="line zero"></div>'+
+      '<div class="line one"></div>'+
+      '<div class="line two"></div>'+
+      '<div class="line three"></div>'+
+      '<div class="line four"></div>'+
+      '<div class="line five"></div>'+
+      '<div class="line six"></div>'+
+      '<div class="line seven"></div>'+
+    '</div>'+
+  '</li>';
 
-//   return optionHtml;
-// }
+  return optionHtml;
+}
 
-// /** Render Options **/
-// function renderOptions(optionList){
-//   var ulContainer=$('<ul>').attr('id','optionList');
-//   for (var i = 0, len = optionList.length; i < len; i++) {
-//     var optionContainer=returnOptionList(optionList[i], i)
-//     ulContainer.append(optionContainer);
-//   }
-//   $(".answerOptions").html('').append(ulContainer);
-// }
+/** Render Options **/
+function renderOptions(optionList){
+  var ulContainer=$('<ul>').attr('id','optionList');
+  for (var i = 0, len = optionList.length; i < len; i++) {
+    var optionContainer=returnOptionList(optionList[i], i)
+    ulContainer.append(optionContainer);
+  }
+  $(".answerOptions").html('').append(ulContainer);
+}
 
-// /** Render question **/
-// // function renderQuestion(question){
-// //   $(".question").html("<h1>"+question+"</h1>");
-// // }
+/** Render question **/
+function renderQuestion(question){
+  $(".question").html("<h1>"+question+"</h1>");
+}
 
-// /** Render quiz :: Question and option **/
-// function renderQuiz(questions, index){ 
-//   var currentQuest=questions[index];  
-//   // renderQuestion(currentQuest.question); 
-//   renderOptions(currentQuest.options); 
-//   console.log("Question");
-//   console.log(questions[index]);
-// }
+/** Render quiz :: Question and option **/
+function renderQuiz(questions, index){ 
+  var currentQuest=questions[index];  
+  renderQuestion(currentQuest.question); 
+  renderOptions(currentQuest.options); 
+  console.log("Question");
+  console.log(questions[index]);
+}
 
-// /** Return correct answer of a question ***/
-// function getCorrectAnswer(questions, index){
-//   return questions[index].answer;
-// }
+/** Return correct answer of a question ***/
+function getCorrectAnswer(questions, index){
+  return questions[index].answer;
+}
 
-// /** pushanswers in array **/
-// function correctAnswerArray(resultByCat){
-//   var arrayForChart=[];
-//   for(var i=0; i<resultByCat.length;i++){
-//    arrayForChart.push(resultByCat[i].correctanswer);
-//   }
+/** pushanswers in array **/
+function correctAnswerArray(resultByCat){
+  var arrayForChart=[];
+  for(var i=0; i<resultByCat.length;i++){
+   arrayForChart.push(resultByCat[i].correctanswer);
+  }
 
-//   return arrayForChart;
-// }
-// /** Generate array for percentage calculation **/
-// function genResultArray(results, wrong){
-//   var resultByCat = resultByCategory(results);
-//   var arrayForChart=correctAnswerArray(resultByCat);
-//   arrayForChart.push(wrong);
-//   return arrayForChart
-// }
+  return arrayForChart;
+}
+/** Generate array for percentage calculation **/
+function genResultArray(results, wrong){
+  var resultByCat = resultByCategory(results);
+  var arrayForChart=correctAnswerArray(resultByCat);
+  arrayForChart.push(wrong);
+  return arrayForChart
+}
 
-// /** percentage Calculation **/
-// function percentCalculation(array, total){
-//   var percent = array.map(function (d, i) {
-//     return (100 * d / total).toFixed(2);
-//   });
-//   return percent;
-// }
+/** percentage Calculation **/
+function percentCalculation(array, total){
+  var percent = array.map(function (d, i) {
+    return (100 * d / total).toFixed(2);
+  });
+  return percent;
+}
 
-// /*** Get percentage for chart **/
-// function getPercentage(resultByCat, wrong){
-//   var totalNumber=resultList.length;
-//   var wrongAnwer=wrong;
-//   //var arrayForChart=genResultArray(resultByCat, wrong);
-//   //return percentCalculation(arrayForChart, totalNumber);
-// }
+/*** Get percentage for chart **/
+function getPercentage(resultByCat, wrong){
+  var totalNumber=resultList.length;
+  var wrongAnwer=wrong;
+  //var arrayForChart=genResultArray(resultByCat, wrong);
+  //return percentCalculation(arrayForChart, totalNumber);
+}
 
-// /** count right and wrong answer number **/
-// function countAnswers(results){
+/** count right and wrong answer number **/
+function countAnswers(results){
 
-//   var countCorrect=0, countWrong=0;
+  var countCorrect=0, countWrong=0;
 
-//   for(var i=0;i<results.length;i++){
-//     if(results[i].iscorrect==true)  
-//         countCorrect++;
-//     else countWrong++;
-//   }
+  for(var i=0;i<results.length;i++){
+    if(results[i].iscorrect==true)  
+        countCorrect++;
+    else countWrong++;
+  }
 
-//   return [countCorrect, countWrong];
-// }
+  return [countCorrect, countWrong];
+}
 
-// /**** Categorize result *****/
-// function resultByCategory(results){
+/**** Categorize result *****/
+function resultByCategory(results){
 
-//   var categoryCount = [];
-//   var ctArray=results.reduce(function (res, value) {
-//     if (!res[value.category]) {
-//         res[value.category] = {
-//             category: value.category,
-//             correctanswer: 0           
-//         };
-//         categoryCount.push(res[value.category])
-//     }
-//     var val=(value.iscorrect==true)?1:0;
-//     res[value.category].correctanswer += val; 
-//     return res;
-//   }, {});
+  var categoryCount = [];
+  var ctArray=results.reduce(function (res, value) {
+    if (!res[value.category]) {
+        res[value.category] = {
+            category: value.category,
+            correctanswer: 0           
+        };
+        categoryCount.push(res[value.category])
+    }
+    var val=(value.iscorrect==true)?1:0;
+    res[value.category].correctanswer += val; 
+    return res;
+  }, {});
 
-//   categoryCount.sort(function(a,b) {
-//     return a.category - b.category;
-//   });
+  categoryCount.sort(function(a,b) {
+    return a.category - b.category;
+  });
 
-//   return categoryCount;
-// }
+  return categoryCount;
+}
 
 
 /** Total score pie chart**/
