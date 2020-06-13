@@ -17,8 +17,7 @@
 
      <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/job_liosting_dashboard.css">
 
-     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/oceantest.css"> 
-     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/oceanchamp.css">
+     <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/oceantest.css">  -->
      
 
  
@@ -41,20 +40,8 @@
     <link href="<?php echo base_url(); ?>asset/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-     <style type="text/css">
-       .box:-moz-placeholder {
-    color: white;
-
-}
-.box::-webkit-input-placeholder {
-    color: white;
-}
-
-.box::-moz-placeholder {
-    color: white;
-
-}
-     </style>
+     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/oceanchamp.css">
+    
 </head>
 
 
