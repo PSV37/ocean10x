@@ -103,7 +103,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                       <<!-- input type="text" tabindex="-1" style="position: absolute; left: -10000px;" name="city_id" id="tokenfield" placeholder="Enter Location"><?php echo form_error('city_id'); ?> -->
                       <input type="text" name="city_id" class="form-control" id="tokenfield" placeholder="Enter Location"
                         value=""><?php echo form_error('city_id'); ?>
-                      <input type="text"  name="city_id"  id="tokenfield" placeholder="Enter Location" value=""><?php echo form_error('city_id'); ?>
+                     <!--  <input type="text"  name="city_id"  id="tokenfield" placeholder="Enter Location" value=""><?php echo form_error('city_id'); ?> -->
                     </div>                    
                   </div>
               </div>
