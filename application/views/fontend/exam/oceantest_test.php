@@ -74,7 +74,7 @@
         <p id="my-progress-completion" class="js-my-progress-completion sr-only" aria-live="polite">0% complete</p>
     </div>
     <div class="quizBox">
-      <?php print_r($questions); ?>
+      <!-- <?php print_r($questions); ?> -->
  <input type="hidden" name="question_id" id="question_id" value="<?php echo $questions['ques_id']; ?>">
       <div class="question"> </div>
       <div class="answerOptions"></div>
