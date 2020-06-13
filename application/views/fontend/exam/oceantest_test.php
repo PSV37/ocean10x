@@ -68,12 +68,14 @@
   <div class="multipleChoiceQues">
   <div id="app"></div>
 
-  
+    
     <div class="my-progress">
         <progress class="my-progress-bar" min="0" max="100" value="0" step="9" aria-labelledby="my-progress-completion"></progress>    
         <p id="my-progress-completion" class="js-my-progress-completion sr-only" aria-live="polite">0% complete</p>
     </div>
+    
     <div class="quizBox">
+       <form id="nextques" class="submit-form" action="#" method="post">
        <?php 
         $ans_cnt = count($questions['answer']);
           if($ans_cnt > 1){
@@ -141,10 +143,12 @@
         </ul>
       </div>
       <div class="buttonArea">
-        <button id="next">Next</button>
+        <button id="next" type="submit">Next</button>
         <button id="submit"  class="hidden">Submit</button>
       </div>
+      </form>
     </div>
+  
   </div>
   <div class="resultArea">  
     <div class="resultPage1">
@@ -194,6 +198,29 @@
   </div>
 </div>
 <!---2-->
+
+<script>
+    $('form#nextques').submit(function(e)
+  {
+     var timer = $('#timer_val').val();
+     // alert(timer);
+      e.preventDefault();
+    
+    $.ajax({
+              url: "<?php echo base_url();?>exam/insert_ocean_data",
+              type: "POST",
+              data: new FormData(this),
+              contentType:false,
+              processData:false,
+               // dataType: "json",
+              success: function(data)
+              {
+                $('#quizBox').html(data);
+              }
+        });
+       
+  }); 
+</script>
 <script>
 var $progressValue = 0;
 var resultList=[];
