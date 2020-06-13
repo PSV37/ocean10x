@@ -8,7 +8,30 @@
 <!---header---->
 
 <?php 
-    $this->load->view('fontend/layout/new_seeker_header.php');
+$company_profile_id = $this->session->userdata('company_profile_id');
+
+$jobseeker_id = $this->session->userdata('job_seeker_id');
+$emp_id = $this->session->userdata('emp_id');
+if ($company_profile_id != null) {
+
+             $this->load->view('fontend/layout/employer_new_header.php');
+
+            }
+
+        elseif($jobseeker_id != null) {
+
+             $this->load->view('fontend/layout/new_seeker_header.php');
+
+        } elseif($emp_id != null) {
+
+             $this->load->view('fontend/layout/employee_header.php');
+    
+
+    }else
+    {
+      $this->load->view('fontend/layout/header.php');
+    }
+    // $this->load->view('fontend/layout/new_seeker_header.php');
 
 ?> 
 <!---header end--->
@@ -16,7 +39,30 @@
 <div class="container-fluid">
 	<div class="container">
         <div class="col-md-12">
-        	 <?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
+
+        	 <?php 
+           if ($company_profile_id != null) {
+
+             $this->load->view('fontend/layout/employer_menu.php');
+
+            }
+
+          elseif($jobseeker_id != null) 
+          {
+
+               $this->load->view('fontend/layout/seeker_left_menu.php');
+
+          } elseif($emp_id != null) 
+          {
+
+               $this->load->view('fontend/layout/employer_menu.php');
+      
+          }else
+          {
+            $this->load->view('fontend/layout/employer_menu.php');
+          }
+               // $this->load->view('fontend/layout/seeker_left_menu.php'); 
+        ?>
      
 			
             	<div class="col-md-9 details_box">
@@ -78,16 +124,18 @@
             <h4>Job Description :</h4>
             <p><?php echo $singlejob->job_desc; ?></p>
               </div>
-              
-              <div class="jd-require">
-            <h4>Job Requirement</h4>
-            <p><?php echo $singlejob->education; ?></p>
-            <div class="panel-body"></div>
-            <button class="apply-cv" id="b3">Apply with Ocean cv</button>
-            <div class="panel-body"></div>
+              <?php if (isset($jobseeker_id)) { ?>
+                 <div class="jd-require">
+                <h4>Job Requirement</h4>
+                <p><?php echo $singlejob->education; ?></p>
+                <div class="panel-body"></div>
+                <a href="<?php echo base_url(); ?>job-apply/<?php echo $singlejob->job_slugs; ?>"><button class="apply-cv" id="b3">Apply with Ocean cv</button></a>
+                <div class="panel-body"></div>
 
-              </div>
-                     </div>
+            </div>
+          <?php    } ?>
+             
+          </div>
             
            
            </div>
