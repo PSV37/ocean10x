@@ -554,9 +554,9 @@ class Exam extends MY_Seeker_Controller
             'correct_status'    => $cstatus,
             'date_time'         => $cenvertedTime,
         );
-        $last_id = $this->Master_model->master_insert($exam_array, 'js_ocean_exam_result');
-        if($last_id)
-        {
+        // $last_id = $this->Master_model->master_insert($exam_array, 'js_ocean_exam_result');
+        // if($last_id)
+        // {
             array_shift($json); // remove completed element from json array
            // update json file with remaining questions
            $fp = fopen('./exam_questions/'.$skill_id.'_'.$jobseeker_id.'.json', 'w');
@@ -577,7 +577,7 @@ class Exam extends MY_Seeker_Controller
              
                 $this->load->view('fontend/exam/exam_success');
             }
-        }
+        // }
 
     }
     
