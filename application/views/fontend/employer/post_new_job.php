@@ -100,7 +100,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                 <div class="formrow">
                   <label class="control-label ">Job Locations<span class="required">*</span> </label>
                     <div class="tokenfield form-control">
-                      <<!-- input type="text" tabindex="-1" style="position: absolute; left: -10000px;" name="city_id" id="tokenfield" placeholder="Enter Location"><?php echo form_error('city_id'); ?> -->
+                     
                       <input type="text" name="city_id" class="form-control" id="tokenfield" placeholder="Enter Location"
                         value=""><?php echo form_error('city_id'); ?>
                      <!--  <input type="text"  name="city_id"  id="tokenfield" placeholder="Enter Location" value=""><?php echo form_error('city_id'); ?> -->
