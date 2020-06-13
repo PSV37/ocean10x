@@ -43,6 +43,7 @@
      <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/oceanchamp.css">
     
 </head>
+<!-- <?php print_r($skill); ?> -->
 <form id="submit" class="submit-form" action="<?php echo base_url(); ?>exam/ocean_exam_start/<?php if(!empty($skill))echo base64_encode($skill); ?>" method="post">
 <div class="container-fluid inst-color">
 <div class="container">

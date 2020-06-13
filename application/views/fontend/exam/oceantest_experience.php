@@ -56,7 +56,7 @@
 }
      </style>
 </head>
-<form action="<?php echo base_url(); ?>exam/ocean_champ_test" method="post">
+<form action="<?php echo base_url(); ?>exam/oceanchamp_additional_exam" method="post">
 <div class="container-fluid">
 	<div class="container">
     	<div class="student-pro">
