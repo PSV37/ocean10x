@@ -83,7 +83,7 @@
             <h4>Job Requirement</h4>
             <p><?php echo $singlejob->education; ?></p>
             <div class="panel-body"></div>
-            <button class="apply-cv" id="b3">Apply with Ocean cv</button>
+            <a href="<?php echo base_url(); ?>job-apply/<?php echo $singlejob->job_slugs; ?>"><button class="apply-cv" id="b3">Apply with Ocean cv</button></a>
             <div class="panel-body"></div>
 
               </div>
