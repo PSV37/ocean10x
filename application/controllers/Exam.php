@@ -417,8 +417,8 @@ class Exam extends MY_Seeker_Controller
             if(!empty($topics))
             {
                 $all_topics = implode(',', $this->input->post('topics'));
-                $skill = $this->input->post('add_skill_name');
-                $level = $this->input->post('add_level');
+                $skill = $this->input->post('skill_name');
+                $level = $this->input->post('level');
 
                 $where_time = "skill_id='$skill' AND job_seeker_id='$jobseeker_id' AND topic_id IN (".$all_topics.")";
                 $exists = $this->Master_model->get_master_row('js_ocean_exam_topics', $select =FALSE , $where_time, $join = FALSE);
@@ -431,8 +431,8 @@ class Exam extends MY_Seeker_Controller
                     $data_array = array(
                         'job_seeker_id'     => $jobseeker_id,
                         'topic_id'          => implode(',', $this->input->post('topics')),
-                        'level'             => $this->input->post('add_level'),
-                        'skill_id'          => $this->input->post('add_skill_name'),
+                        'level'             => $this->input->post('level'),
+                        'skill_id'          => $this->input->post('skill_name'),
                         'additional_status' => 1,
                         'created_on'        => $cenvertedTime,
                         'created_by'        => $jobseeker_id,
