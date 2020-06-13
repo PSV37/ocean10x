@@ -24,7 +24,7 @@ class Employer extends MY_Employer_Controller
     {
         //$this->profile_setting();
         $company_info = $this->company_profile_model->get($employer_id);
-        $this->load->view('fontend/employer/dashboard_main', compact('company_info'));
+        $this->load->view('fontend/employer/employer_dashboard', compact('company_info'));
     }
 
     /*** Dashboard ***/
@@ -518,7 +518,7 @@ public function job_post()
             {
                 $employer_id         = $this->session->userdata('company_profile_id');
                 $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
-                $this->load->view('fontend/employer/active_job.php', compact('company_active_jobs', 'employer_id'));
+                $this->load->view('fontend/employer/posted_jobs.php', compact('company_active_jobs', 'employer_id'));
             }
 
             public function pending_job()
