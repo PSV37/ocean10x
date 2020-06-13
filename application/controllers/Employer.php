@@ -368,7 +368,8 @@ public function job_post()
                     $data['job_role_data'] = $this->Master_model->getMaster('job_role',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
 
 
-                    $this->load->view('fontend/employer/job_post', $data);
+                    $this->load->view('fontend/employer/post_new_job', $data);
+                    // $this->load->view('fontend/employer/job_post', $data);
                 }
             }
 
