@@ -57,7 +57,7 @@
                                      </a>
                                       </li>
                                          <li>
-                                         <a data-dl-view="true" data-dl-title="Recruitments" href="/campaign">
+                                         <a data-dl-view="true" data-dl-title="Recruitments" href="<?php echo base_url() ?>employer/active-job">">
                                             <span class="icon-container">
                                               <i class="fas fa-filter"></i>
                                               </span>
