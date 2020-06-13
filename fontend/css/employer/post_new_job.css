@@ -11,7 +11,7 @@
   fill: #dcdcdc;
 }
 #submit{background-color:rgb(20, 156, 150);}
-.button {
+.button{
     background: rgb(24, 197, 189);
     border-radius: 100px;
     padding: 6px 25px;
@@ -21,6 +21,10 @@
     color: white;
     cursor: pointer;
 	margin-left: 60px;
+}
+.button:hover{
+box-shadow: 2px 2px 2px #c9c8c8;
+transition:1s;
 }
 .disabled {
   display:none;
@@ -51,12 +55,6 @@ input {
   background:white;
 }
 
-p {
-  margin: 5px;
-  text-align: left;
-  font-weight: bold;
-  font-size: 0.9em;
-}
 .post-job{margin-top:75px;
 border: solid 1px #e4e4e4;
 border-radius: 3px;}
