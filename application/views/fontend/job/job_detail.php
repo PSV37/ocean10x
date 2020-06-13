@@ -20,8 +20,8 @@
      
 			
             	<div class="col-md-9 details_box">
-                	<div class="job-logo">
-                 <img src="<?php echo base_url()?>upload/<?php echo $this->company_profile_model->company_logoby_id($singlejob->company_profile_id); ?>" />
+                	<div>
+                 <img src="<?php echo base_url()?>upload/<?php echo $this->company_profile_model->company_logoby_id($singlejob->company_profile_id); ?>"/>
                     </div>
                      <div class="row">
               <div class="col-md-4">
