@@ -463,7 +463,7 @@ class Exam extends MY_Seeker_Controller
                                   
                     $data['skill'] =  $skill;
 
-                    $this->load->view('fontend/exam/ocean_exam_instruction',$data);
+                    $this->load->view('fontend/exam/oceantest_take_test',$data);
                 }
              
                
