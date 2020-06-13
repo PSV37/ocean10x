@@ -485,6 +485,8 @@ class Exam extends MY_Seeker_Controller
     {   
         $jobseeker_id = $this->session->userdata('job_seeker_id');
         $skill_id = base64_decode($skill_id);
+
+        print_r($skill_id);die;
         if (!empty($skill_id)) {
                  
             $data['title'] = 'Exam Start';
