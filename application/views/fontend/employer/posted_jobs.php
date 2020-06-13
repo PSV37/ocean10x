@@ -213,10 +213,11 @@ $company_profile_id = $this->session->userdata('company_profile_id');
 	<div class="container">
         <div class="col-md-12">
       <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
+       <div class="panel-body"></div>
         <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
-            <div class="col-md-12">
-              <div class="col-md-6 active-job">
-            
+            <div class="col-md-9">
+            <div class="col-md-9 active-job">
+           
             <div class="job-voucher alert alert-dismissible">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                   <img src="https://media-exp1.licdn.com/dms/image/C4E0BAQHbWPfQdNw1EA/company-logo_200_200/0?e=2159024400&v=beta&t=fWMuJX9leYFsDf-weERHLyIPfRh4aCOwx8wygmhad9Q" class="dimen_img-s" />
