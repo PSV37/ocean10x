@@ -494,7 +494,7 @@ class Exam extends MY_Seeker_Controller
                break;
             }
             
-            $this->load->view('fontend/exam/ocean_exam_start',$data);
+            $this->load->view('fontend/exam/oceantest_test.php',$data);
 
         } else {
             redirect('exam');
