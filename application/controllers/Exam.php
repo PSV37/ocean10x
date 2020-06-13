@@ -422,6 +422,8 @@ class Exam extends MY_Seeker_Controller
 
                 $where_time = "skill_id='$skill' AND job_seeker_id='$jobseeker_id' AND topic_id IN (".$all_topics.")";
                 $exists = $this->Master_model->get_master_row('js_ocean_exam_topics', $select =FALSE , $where_time, $join = FALSE);
+
+
                 if($exists)
                 {   
                     $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">You have already given test for this skill</div>');                
@@ -442,6 +444,8 @@ class Exam extends MY_Seeker_Controller
 
                     $where_req_skill="topic_id IN (".$all_topics.") AND level='$level'";
                     $exam_question = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit=NUMBER_QUESTIONS,$start=false, $search=false);
+
+                    print_r($this->db->last_query())die;
                   
                    // check for answers
                     for($n1=0;$n1<sizeof($exam_question);$n1++)
