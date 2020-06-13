@@ -99,7 +99,7 @@ list-style-type:none;}
     font-size: 12px;
     cursor: pointer;
     border-radius: 50px;
-    /*margin-top: -96px;	*/
+    margin-top: -56px;	
 }
 .apply-invi:hover{ background-color: #3F51B5;
 color:#fff;}
