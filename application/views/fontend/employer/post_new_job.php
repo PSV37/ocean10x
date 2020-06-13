@@ -11,9 +11,10 @@ $company_profile_id = $this->session->userdata('company_profile_id');
     <div class="col-md-12">
       <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
         <div class="col-md-9 post-job">
+          <form id="submit" action="<?php echo base_url() ?>employer/job_post" method="post" class="submit-form">
+            <input type="hidden" name="job_post_id" value="<?php if(!empty($job_info->job_post_id)){echo $job_info->job_post_id;} ?>">
           <div id="svg_wrap"></div>
-           <!-- <form id="submit" action="<?php echo base_url() ?>employer/job_post" method="post" class="submit-form">
-            <input type="hidden" name="job_post_id" value="<?php if(!empty($job_info->job_post_id)){echo $job_info->job_post_id;} ?>"> -->
+           
           <section>
             <div class=" col-sm-12 p-m-1">
               <div class="formrow">
@@ -218,7 +219,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
             <div class="button" id="prev">&larr; Previous</div>
             <div class="button" id="next">Next &rarr;</div>
             <div class="button" id="submit">Post Job</div>
-
+        </form>
         </div>
       <!-- </form> -->
     </div>
