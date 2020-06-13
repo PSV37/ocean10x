@@ -161,6 +161,8 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                   <div class="formrow">  
                     <label class="control-label">Education Level<span class="required">*</span></label>
                     <select name="job_edu" id="job_edu" class="form-control" data-style="btn-default" data-live-search="true" onchange="getEducationSpecial(this.value)" required="">
+                      <option value="">Select Level </option>
+                      <?php foreach($education_level as $education){?>
                       <option value="<?php echo $education['education_level_id']; ?>"<?php if($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
                       <?php } ?>
                   </select>   <?php echo form_error('job_edu'); ?>                
