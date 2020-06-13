@@ -13,10 +13,11 @@ $company_profile_id = $this->session->userdata('company_profile_id');
 <div class="container-fluid main-d">
 	<div class="container">
         <div class="col-md-12">
+          <div class="col-md-6 active-job">
           <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
         
            <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?> 
-            <div class="col-md-6 active-job">
+            
             
             <div class="job-voucher alert alert-dismissible">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -49,7 +50,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
             
             
             
-            </div>
+           
              <?php
                     endforeach;
                     ?>
@@ -58,6 +59,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                             <strong>There is no active Vacancy Post to Show</strong>
                         </div>
                     <?php endif; ?>
+                     </div>
 			<div class="col-md-3">
             <!--future use-->
             </div>            
