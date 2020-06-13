@@ -100,8 +100,10 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                 <div class="formrow">
                   <label class="control-label ">Job Locations<span class="required">*</span> </label>
                     <div class="tokenfield form-control">
-                      <!-- <input type="text" tabindex="-1" style="position: absolute; left: -10000px;" name="city_id" id="tokenfield" placeholder="Enter Location"><?php echo form_error('city_id'); ?> -->
-                      <input type="text" style="position: absolute; left: -10000px;" name="city_id"  id="tokenfield" placeholder="Enter Location" value=""><?php echo form_error('city_id'); ?>
+                      <<!-- input type="text" tabindex="-1" style="position: absolute; left: -10000px;" name="city_id" id="tokenfield" placeholder="Enter Location"><?php echo form_error('city_id'); ?> -->
+                      <input type="text" name="city_id" class="form-control" id="tokenfield" placeholder="Enter Location"
+                        value=""><?php echo form_error('city_id'); ?>
+                      <input type="text"  name="city_id"  id="tokenfield" placeholder="Enter Location" value=""><?php echo form_error('city_id'); ?>
                     </div>                    
                   </div>
               </div>
@@ -116,7 +118,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                   <div class="col-md-4 col-sm-12">
                     <div class="formrow">
                       <label class="control-label ">Job Deadline<span class="required">*</span></label>
-                      <input type="text" name="job_deadline" class="form-control datepicker hasDatepicker" id="job_deadline_day" required="" value="" autocomplete="off">
+                      <input type="date" name="job_deadline" class="form-control datepicker hasDatepicker" id="job_deadline_day" required="" value="" autocomplete="off">
                        
                     </div><?php echo form_error('job_deadline'); ?>
                   </div>
@@ -336,7 +338,14 @@ $(".button").click(function () {
     });
     // to avoid duplications
 
+$('#tokenfield').on('tokenfield:createtoken', function (event) {
+      var existingTokens = $(this).tokenfield('getTokens');
+      $.each(existingTokens, function(index, token) {
+          if (token.value === event.attrs.value)
+              event.preventDefault();
 
+      });
+  });
   function getSkillsdetails(id)
     {
       if(id){
