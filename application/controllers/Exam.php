@@ -499,10 +499,10 @@ class Exam extends MY_Seeker_Controller
                break;
             }
 
-            print_r($data['questions']);die;
+            // print_r($data['questions']);die;
 
             
-            $this->load->view('fontend/exam/oceantest_test.php',$data);
+            $this->load->view('fontend/exam/oceantest_test',$data);
 
         } else {
             redirect('exam');
