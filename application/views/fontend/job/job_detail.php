@@ -124,16 +124,18 @@ if ($company_profile_id != null) {
             <h4>Job Description :</h4>
             <p><?php echo $singlejob->job_desc; ?></p>
               </div>
-              
-              <div class="jd-require">
-            <h4>Job Requirement</h4>
-            <p><?php echo $singlejob->education; ?></p>
-            <div class="panel-body"></div>
-            <a href="<?php echo base_url(); ?>job-apply/<?php echo $singlejob->job_slugs; ?>"><button class="apply-cv" id="b3">Apply with Ocean cv</button></a>
-            <div class="panel-body"></div>
+              <?php if (isset($jobseeker_id)) { ?>
+                 <div class="jd-require">
+                <h4>Job Requirement</h4>
+                <p><?php echo $singlejob->education; ?></p>
+                <div class="panel-body"></div>
+                <a href="<?php echo base_url(); ?>job-apply/<?php echo $singlejob->job_slugs; ?>"><button class="apply-cv" id="b3">Apply with Ocean cv</button></a>
+                <div class="panel-body"></div>
 
-              </div>
-                     </div>
+            </div>
+          <?php    } ?>
+             
+          </div>
             
            
            </div>
