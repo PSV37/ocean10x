@@ -116,7 +116,8 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                   <div class="col-md-4 col-sm-12">
                     <div class="formrow">
                       <label class="control-label ">Job Deadline<span class="required">*</span></label>
-                      <input type="text" name="job_deadline" class="form-control datepicker hasDatepicker" id="job_deadline_day" required="" value="" autocomplete="off">  
+                      <input type="text" name="job_deadline" class="form-control datepicker hasDatepicker" id="job_deadline_day" required="" value="" autocomplete="off">
+                       
                     </div><?php echo form_error('job_deadline'); ?>
                   </div>
 
@@ -227,7 +228,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
   </div>
 </div> 
 
-<<script>
+<script>
 var base_color = "#dcdcdc";
 var active_color = "rgb(16, 132, 126)";
 
@@ -319,11 +320,6 @@ $(".button").click(function () {
 });
 
 </script>
-<script type="text/javascript" src="<?php echo base_url(); ?>asset/js/tinymce/tinymce.min.js"></script> 
-<script type="text/javascript">
-document.getElementsByClassName('form-control').innerHTML+="<br />";
-</script>
-
 
 <script>
 
