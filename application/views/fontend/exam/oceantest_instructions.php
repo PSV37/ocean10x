@@ -19,7 +19,7 @@
 
      <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/oceanchamp.css">
 
-     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/oceantest.css"> 
+     <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/oceantest.css">  -->
      
 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>asset/jc/css/jquery.Jcrop.css">
