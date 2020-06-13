@@ -1,12 +1,7 @@
-<!-- <?php 
+ <?php 
     $this->load->view('fontend/layout/employer_header.php');
-?> -->
-<?php 
-$company_profile_id = $this->session->userdata('company_profile_id');
+?> 
 
- $this->load->view('fontend/layout/employer_new_header.php');
- 
-?>
 <style type="text/css">
   label {
     display: inline-block;
