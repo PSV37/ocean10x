@@ -8,7 +8,30 @@
 <!---header---->
 
 <?php 
-    $this->load->view('fontend/layout/new_seeker_header.php');
+$company_profile_id = $this->session->userdata('company_profile_id');
+
+$jobseeker_id = $this->session->userdata('job_seeker_id');
+$emp_id = $this->session->userdata('emp_id');
+if ($company_profile_id != null) {
+
+             $this->load->view('fontend/layout/employer_new_header.php');
+
+            }
+
+        elseif($jobseeker_id != null) {
+
+             $this->load->view('fontend/layout/new_seeker_header.php');
+
+        } elseif($emp_id != null) {
+
+             $this->load->view('fontend/layout/employee_header.php');
+    
+
+    }else
+    {
+      $this->load->view('fontend/layout/header.php');
+    }
+    // $this->load->view('fontend/layout/new_seeker_header.php');
 
 ?> 
 <!---header end--->
@@ -16,7 +39,30 @@
 <div class="container-fluid">
 	<div class="container">
         <div class="col-md-12">
-        	 <?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
+
+        	 <?php 
+           if ($company_profile_id != null) {
+
+             $this->load->view('fontend/layout/employer_menu.php');
+
+            }
+
+          elseif($jobseeker_id != null) 
+          {
+
+               $this->load->view('fontend/layout/seeker_left_menu.php');
+
+          } elseif($emp_id != null) 
+          {
+
+               $this->load->view('fontend/layout/employer_menu.php');
+      
+          }else
+          {
+            $this->load->view('fontend/layout/employer_menu.php');
+          }
+               // $this->load->view('fontend/layout/seeker_left_menu.php'); 
+        ?>
      
 			
             	<div class="col-md-9 details_box">
