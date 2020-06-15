@@ -46,7 +46,7 @@
 
 <p style="text-align: center;font-size: 18px;">Your test compleated successfully</p>
 <div class="back_btn">
-<button class="back-b">Back to home Page</button>
+<a href="<?php echo base_url(); ?>"><button class="back-b">Back to home Page</button></a>
 </div>
         
                

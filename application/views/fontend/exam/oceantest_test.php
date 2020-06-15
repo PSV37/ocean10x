@@ -73,13 +73,15 @@
         <progress class="my-progress-bar" min="0" max="100" value="0" step="9" aria-labelledby="my-progress-completion"></progress>    
         <p id="my-progress-completion" class="js-my-progress-completion sr-only" aria-live="polite">0% complete</p>
     </div>
-   
+    <input type="hidden" name="restart_timer_val" id="restart_timer_val" value="<?php if(!empty($exam_previous_time))echo $exam_previous_time['exam_time']; ?>"> 
+                <input type="hidden" name="timer_val" id="timer_val"> 
     <div class="quizBox">
        <form id="nextques" class="submit-form" action="<?php echo base_url();?>exam/insert_ocean_data" method="post">
       <!-- <?php print_r($questions); ?> -->
 
       <input type="hidden" name="skill_id" id="skill_id" value="<?php if(!empty($skill_id))echo base64_encode($skill_id); ?>">
       <input type="hidden" name="question_id" id="question_id" value="<?php echo $questions['ques_id']; ?>">
+      
       <div class="question"> </div>
       <div class="answerOptions"></div>
       <div class="buttonArea">
@@ -720,5 +722,27 @@ function setCircleDasharray() {
     .getElementById("base-timer-path-remaining")
     .setAttribute("stroke-dasharray", circleDasharray);
 }
+
+
+
+  function fetchdata(){
+    var timer = $('#timer_val').val();
+    var skill_id = $('#skill_id').val();
+    console.log(timer);
+    $.ajax({
+      url: '<?php echo base_url();?>exam/insert_ocean_exam_session',
+      type: 'post',
+      data:{
+        timer:timer,skill_id:skill_id
+      },
+      success: function(response){
+      /// alert(response);
+      }
+    });
+  }
+
+  $(document).ready(function(){
+   setInterval(fetchdata,5000);
+  });
 </script>
 
