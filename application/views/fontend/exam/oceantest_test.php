@@ -185,7 +185,7 @@ function generateQuestions(){
 function returnOptionList(opts, i){
 
   var optionHtml='<li class="myoptions">'+
-    '<input value="'+opts+'" name="optRdBtn" type="radio" id="rd_'+i+'">'+
+    '<input value="'+opts+'" name="optRdBtn[]" type="radio" id="rd_'+i+'">'+
     '<label for="rd_'+i+'">'+opts+'</label>'+
     '<div class="bullet">'+
       '<div class="line zero"></div>'+
@@ -657,7 +657,7 @@ startTimer();
 function onTimesUp() {
   clearInterval(timerInterval);
   // alert('timeup');
-   $(this).submit();
+  $( "#nextques" ).submit();
   // document.getElementById('nextques').click();
 }
 
