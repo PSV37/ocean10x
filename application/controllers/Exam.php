@@ -537,8 +537,8 @@ class Exam extends MY_Seeker_Controller
         for($q=0;$q<sizeof($data['questions']['answer']);$q++)
         {
             $answer_id = $data['questions']['answer'][$q]['answer_id'];
-            print_r($answer_id);
-            print_r($option);die;
+            // print_r($answer_id);
+            // print_r($option);die;
             
             for($i=0;$i<sizeof($option);$i++)
             {   
