@@ -40,7 +40,7 @@
                                 <span class="salary-info">Slaray: <?php echo $this->job_posting_model->job_salary_by_id($forward_applicaiton->job_post_id); ?><span>
 
                                 <p>Company name:<?php echo $this->company_profile_model->company_name($forward_applicaiton->company_id); ?></p>
-                                 <div class="detail-b">Details</div>
+                                 <a href="<?php echo base_url(); ?>job/show/<?php echo $v_companyjobs->job_slugs; ?>"><div class="detail-b">Details</div></a>
                                     <div class="last-row-invitation">
                                     <ul>
                                         <li><div class="location-inv"><i class="fas fa-map-marker-alt"></i><?php echo $forward_applicaiton->city_id;  ?></div></li>
@@ -96,7 +96,7 @@
                                 <span class="salary-info">Salaray: <?php print_r($this->job_posting_model->job_salary_by_id($forward_applicaiton->job_post_id)) ;  ?><span>
 
                                 <p>Company name:<?php echo $this->company_profile_model->company_name($forward_applicaiton->company_id); ?></p>
-                                 <div class="detail-b">Details</div>
+                                 <a href="<?php echo base_url(); ?>job/show/<?php echo $v_companyjobs->job_slugs; ?>"><div class="detail-b">Details</div></a>
                                     <div class="last-row-invitation">
                                     <ul>
                                         <li><div class="location-inv"><i class="fas fa-map-marker-alt"></i><?php echo $forward_applicaiton->city_id;  ?></div></li>

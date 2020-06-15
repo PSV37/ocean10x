@@ -224,6 +224,7 @@ class Job_apply_model extends MY_Model
         $this->db->where('forword_job_status', '0');
          $this->db->join('job_posting', 'job_apply.job_post_id = job_posting.job_post_id', 'inner');
         $this->db->join('job_nature', 'job_posting.job_nature = job_nature.job_nature_id', 'inner');
+        $this->db->order_by('job_apply_id','desc');
         $query = $this->db->get($this->_table_name); 
         return $query->result();
     }
@@ -235,6 +236,8 @@ class Job_apply_model extends MY_Model
         $this->db->join('job_posting', 'job_apply.job_post_id = job_posting.job_post_id', 'inner');
         $this->db->join('job_nature', 'job_posting.job_nature = job_nature.job_nature_id', 'inner');
         // $this->db->join('job_nature.job_nature_id=job_posting.job_nature');
+        $this->db->order_by('job_apply_id','desc');
+        
         $query = $this->db->get($this->_table_name); 
         return $query->result();
     }
