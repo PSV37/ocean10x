@@ -185,7 +185,7 @@ function generateQuestions(){
 function returnOptionList(opts, i){
 
   var optionHtml='<li class="myoptions">'+
-    '<input value="'+opts+'" name="optRdBtn[]" type="radio" id="rd_'+i+'">'+
+    '<input type="radio" value="'+opts+'" name="optRdBtn[]"  id="rd_'+i+'">'+
     '<label for="rd_'+i+'">'+opts+'</label>'+
     '<div class="bullet">'+
       '<div class="line zero"></div>'+
@@ -622,7 +622,7 @@ const COLOR_CODES = {
   }
 };
 
-const TIME_LIMIT = 10;
+const TIME_LIMIT = 60;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
