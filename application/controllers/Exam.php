@@ -518,7 +518,7 @@ class Exam extends MY_Seeker_Controller
         $skill_id = base64_decode($jid);
         $data['skill_id'] = $skill_id;
         $question_id = $this->input->post('question_id');
-        $option = $this->input->post('option');
+        $option = $this->input->post('optRdBtn');
         $status = array();
         $str = file_get_contents('./exam_questions/'.$skill_id.'_'.$jobseeker_id.'.json');
 
