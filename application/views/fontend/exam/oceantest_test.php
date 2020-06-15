@@ -658,7 +658,7 @@ function onTimesUp() {
   clearInterval(timerInterval);
   alert('timeup');
   $("#next").click();
-  document.getElementById('nextques').submit();
+  // document.getElementById('nextques').submit();
 }
 
 function startTimer() {
