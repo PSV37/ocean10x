@@ -579,7 +579,7 @@ class Exam extends MY_Seeker_Controller
             }
             if(count($data['new_json']) >= 1 )
             {
-                $this->load->view('fontend/exam/ocean_exam_next_question',$data);
+                $this->load->view('fontend/exam/oceantest_test',$data);
             }else{
                 unlink('./exam_questions/'.$skill_id.'_'.$jobseeker_id.'.json');
              

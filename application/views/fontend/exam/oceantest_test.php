@@ -75,7 +75,7 @@
     </div>
    
     <div class="quizBox">
-       <form id="nextques" class="submit-form" action="#" method="post">
+       <form id="nextques" class="submit-form" action="<?php echo base_url();?>exam/insert_ocean_data" method="post">
       <!-- <?php print_r($questions); ?> -->
 
       <input type="hidden" name="skill_id" id="skill_id" value="<?php if(!empty($skill_id))echo base64_encode($skill_id); ?>">
@@ -141,27 +141,7 @@
 <script type="text/javascript">
   
 
-  $('form#nextques').submit(function(e)
-  {
-     // var timer = $('#timer_val').val();
-     alert('timer');
-      e.preventDefault();
-    
-    $.ajax({
-              url: "<?php echo base_url();?>exam/insert_ocean_data",
-              type: "POST",
-              data: new FormData(this),
-              contentType:false,
-              processData:false,
-               // dataType: "json",
-              success: function(data)
-              {
-                $('#quizBox').html(data);
-              }
-        });
-       
-  }); 
-
+ 
 
 </script>
 <script>
