@@ -860,14 +860,14 @@ function getstate(){
                     $data['job_id'] = $job_id; 
 
                             $company_name=$this->session->userdata('company_name');
-                            $data=array('company'=>$company_name,
+                            $data1=array('company'=>$company_name,
                             'action_taken_for'=>$company_name,
                             'field_changed' =>'Forward Job',
                             'Action'=>'visited forward job.',
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
 
-                    $result=$this->Master_model->master_insert($data,'employer_audit_record');
+                    $result=$this->Master_model->master_insert($data1,'employer_audit_record');
                     $this->load->view('fontend/employer/forword_job',$data);
                 } else {
                     redirect('employer/active_job');
