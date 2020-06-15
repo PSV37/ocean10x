@@ -530,6 +530,9 @@ class Exam extends MY_Seeker_Controller
            $data['questions'] = $value;
            break;
         }
+
+        print_r($option);
+        print_r($data['questions']);die;
        
         for($q=0;$q<sizeof($data['questions']['answer']);$q++)
         {
