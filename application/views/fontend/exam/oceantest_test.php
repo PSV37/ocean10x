@@ -185,7 +185,7 @@ function generateQuestions(){
 function returnOptionList(opts, i){
 
   var optionHtml='<li class="myoptions">'+
-    '<input type="radio" value="'+opts+'" name="optRdBtn[]"  id="rd_'+i+'">'+
+    '<input type="radio" value="'+i+'" name="optRdBtn[]"  id="rd_'+i+'">'+opts+
     '<label for="rd_'+i+'">'+opts+'</label>'+
     '<div class="bullet">'+
       '<div class="line zero"></div>'+
