@@ -223,9 +223,9 @@ $company_profile_id = $this->session->userdata('company_profile_id');
             <div class="job-voucher alert alert-dismissible">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                   <img src="https://media-exp1.licdn.com/dms/image/C4E0BAQHbWPfQdNw1EA/company-logo_200_200/0?e=2159024400&v=beta&t=fWMuJX9leYFsDf-weERHLyIPfRh4aCOwx8wygmhad9Q" class="dimen_img-s" />
-                   <div class="job_title">
+                  <a href="<?php echo base_url(); ?>job/show/<?php echo $v_companyjobs->job_slugs; ?>"> <div class="job_title">
                   <?php echo $v_companyjobs->job_title; ?>
-                   </div> 
+                   </div> </a>
                     <div class="organization">
                       Published : <?php if(!is_null($v_companyjobs->created_at)) { echo date('F j Y',strtotime($v_companyjobs->created_at)); } ?>
                     </div>

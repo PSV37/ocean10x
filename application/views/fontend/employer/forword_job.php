@@ -34,7 +34,7 @@
         <div class="userccount empdash">
           <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
             <form id="submit" action="<?php echo base_url() ?>employer/forword_job_post" method="post" class="submit-form">
-              <input type="hidden" name="job_post_id" value="<?php echo $job_id; ?>">
+              <input type="text" name="job_post_id" value="<?php echo $job_id; ?>">
               <div class="row">
                 <div class="col-md-12 col-sm-12">
                   <div class="formrow">
