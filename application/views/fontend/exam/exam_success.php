@@ -1,4 +1,4 @@
-
+<!----
 <div id="nextshow">
     <div class="row">
       <div class="col-md-12">
@@ -14,4 +14,39 @@
 
 </div>
 
+               --->
+<style>
+.hedaer-thank-you {
+    padding: 45px;
+    background-color: aliceblue;
+	text-align:center;
+}
+.back_btn {
+    text-align: center;
+	margin-top: 50px;
+}
+.back-b{
+    border: none;
+    padding: 20px 40px;
+    border-radius: 138px;
+    background-color: #18afa8;
+    color: #fff;
+    box-shadow: 1px 4px 6px #e6e5e5;
+	cursor:pointer;
+}
+.back-b:hover{ background-color:#0e8680;}
+
+
+</style>               
+               
+               
+       <div class="hedaer-thank-you">
+<h1>Thank You !</h1>
+</div>
+
+<p style="text-align: center;font-size: 18px;">Your test compleated successfully</p>
+<div class="back_btn">
+<button class="back-b">Back to home Page</button>
+</div>
+        
                
