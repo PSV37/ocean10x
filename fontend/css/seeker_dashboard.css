@@ -892,14 +892,14 @@ i.fas.fa-search {
     color: #fff;
     text-align: center;
 	margin-top:20px;
-	curser:pointer;
+	cursor: pointer;
 }
 .bell {
     font-size: 11px;
     color: #fff;
     text-align: center;
 	margin-top:20px;
-	curser:pointer;
+	cursor: pointer;
 }
 .social-media .notification{float:left;margin-left:67px;cursor:pointer;}
 .notification i{font-size:15px;color:#fff;}	
