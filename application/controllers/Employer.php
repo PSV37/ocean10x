@@ -1026,7 +1026,7 @@ function getstate(){
                             'company_id'    => $employer_id,
                             'job_post_id'   => $job_post_id,
                             'forword_job_status' => 1,
-                            'updated_on' => date('Y-m-d');
+                            'updated_on' => date('Y-m-d'),
                         );
                         $apply = $this->Master_model->master_insert($apply_array,'job_apply');
 
