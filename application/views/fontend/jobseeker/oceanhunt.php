@@ -104,9 +104,9 @@
           <div class="form-group">
             <label class="control-label col-sm-4" for="email">User Name:</label>
             <div class="col-sm-8">
-              <input type="text" name="js_career_salary" disabled="" class="form-control" id="js_career_salary" placeholder=""
+              <input type="text" name="user_name" disabled="" class="form-control" id="js_career_salary" placeholder=""
 
-                   value="<?php if(!empty($jobseeker_id)){ echo $this->Job_seeker_model->jobseeker_name($job_seeker);} ?>">
+                   value="<?php if(!empty($job_seeker)){ echo $this->Job_seeker_model->jobseeker_name($job_seeker);} ?>">
             </div>
           </div>
 
@@ -115,7 +115,7 @@
           <div class="form-group">
             <label class="control-label col-sm-4" for="email">Company Name:</label>
             <div class="col-sm-8">
-              <input type="text" name="js_career_salary" disabled="" class="form-control" id="js_career_salary" placeholder="" value="<?php $company_id=$applicaiton->company_profile_id;
+              <input type="text" name="company_name" disabled="" class="form-control" id="js_career_salary" placeholder="" value="<?php $company_id=$applicaiton->company_profile_id;
                          echo $this->company_profile_model->company_name($company_id);?>">
             </div>
           </div>
@@ -236,7 +236,7 @@
           <input type="hidden" name="forward_status" class="form-control" id="forward_status" value="<?php if(!empty($forward_status)){ foreach($forward_status as $frow){
             echo $frow['forword_job_status'];
           } }?>" placeholder="">
-          
+
           <input type="hidden" name="job_apply_id" class="form-control" id="job_apply_id" value="<?php if(!empty($forward_status)){ foreach($forward_status as $frow){
             echo $frow['job_apply_id'];
           } }?>" placeholder="">
@@ -244,7 +244,7 @@
           <div class="form-group">
             <label class="control-label col-sm-4" for="email">User Name:</label>
             <div class="col-sm-8">
-              <input type="text" name="js_career_salary" disabled="" class="form-control" id="js_career_salary" placeholder=""
+              <input type="text" name="user_name" disabled="" class="form-control" id="js_career_salary" placeholder=""
 
                    value="<?php if(!empty($job_seeker)){ echo $this->Job_seeker_model->jobseeker_name($job_seeker);} ?>">
             </div>
@@ -254,7 +254,7 @@
           <div class="form-group">
             <label class="control-label col-sm-4" for="email">Company Name:</label>
             <div class="col-sm-8">
-              <input type="text" name="js_career_salary" disabled="" class="form-control" id="js_career_salary" placeholder="" value="<?php $company_id=$applicaiton->company_profile_id;
+              <input type="text" name="company_name" disabled="" class="form-control" id="js_career_salary" placeholder="" value="<?php $company_id=$applicaiton->company_profile_id;
                          echo $this->company_profile_model->company_name($company_id);?>">
             </div>
           </div>
