@@ -109,7 +109,7 @@
     <ul class="dropdown-menu">
       <li><a href="#"><i class="fas fa-user"></i></a> My Profile</li>
       <li><a href="#"><i class="fas fa-lock"></i></a>Change Password</li>
-      <li ><a href="#" onclick="logout();"><i class="fas fa-power-off"></i></a>Logout</li>
+      <li ><a href="#" onclick="logout();"><i class="fas fa-power-off"></i>Logout</a></li>
     </ul>
   </div>
     </div>
