@@ -1,5 +1,5 @@
 <!---header css  --->
-.container{max-width:1300px;background-color:#999;}
+.container{max-width:1300px;}
 .container-fluid{padding-right:0px;
 padding-left:0px;}
 .menu_logo img{   
@@ -117,7 +117,7 @@ i.fas.fa-search {
 
 
 
-body{background-color:#f7f7f738;}
+body{background-color:#000;}
 .fixed-navigation #left-panel {
     height: 100%;
     position: fixed;
