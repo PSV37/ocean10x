@@ -93,86 +93,8 @@
     <div class="social-media">
     <!---mail-box-->
     <div class="notification">
-       <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false" style="font-size: 15px;">
-                <i class="fa fa-envelope-o"></i>
-                <?php 
-                    $msgs = get_messagescount($job_seeker);
-                      if(!empty($msgs))
-                        foreach($msgs as $msgs_row)
-                        {
-                          if($msgs_row['total_msg']!=0)
-                          {
-                     ?>
-                    <span class="badge bg-green" ><?php echo $msgs_row['total_msg']; ?></span>
-                  <?php } }else{}
-                  ?>
-              </a>
-              <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu" style="width: 300px;">
-                <li>
-                  <div class="text-center">
-                    <a href="<?php echo base_url(); ?>job_seeker/ReadAllMessages" class="dropdown-item" style="color: #1d1c1c !important;">
-                      <strong>Mark All As Read</strong>
-                    </a>
-                  </div>
-                </li>
-               
-                  <?php 
-                    $msg = get_messages($job_seeker);
-                      if(!empty($msg)){
-                      foreach($msg as $msg_row)
-                      {
-                        $date = strtotime($msg_row['created_on']);
-                        $dat = date('m/d/y', $date);
-                        $tme = date('H:m:s A',$date);
-                    ?>
-
-
-                    <li <?php if($msg_row['status']==0){?>style="background-color: #ccc;margin: 5px;" <?php }else{?> style="margin: 5px;"<?php } ?> >
-
-                      <a data-toggle="modal" data-target="#myMsgModal">
-                        <span>
-                        <!-- <?php print_r($msg_row); ?> -->
-                          <span><a href="<?php echo base_url() ?>seeker/message-history/<?php echo $msg_row['job_seeker_id']; ?>"><?php echo $msg_row['full_name']; ?></a><span class="time">
-                          <?php 
-
-                            $mtime = time_ago_in_php($msg_row['created_on']);
-                            echo $mtime;
-
-                            
-                          ?></span> </span>
-                          
-                        </span>
-                        <span class="message">
-                         <?php 
-                            $message = $msg_row['message_desc'];
-                            if(strlen($message)>30)
-                            {
-                              echo substr($message, 0, 50);
-                             echo '...';  
-                            }else{echo $message; }
-                         ?>
-                        </span>
-                      </a>
-                    </li>
-                  <?php } } else{?>
-                    <li style="background-color: #ccc; margin: 5px;">
-                        <a>
-                        <span>
-                          No Message Found..
-                        </span>
-                      </a>
-                    </li>
-                  <?php } ?>
-              
-                <li>
-                  <div class="text-center">
-                    <a href="<?php echo base_url(); ?>seeker/instant-message" class="dropdown-item" style="color: #1d1c1c !important;">
-                      <strong>See All Messages</strong>
-                      <i class="fa fa-angle-right"></i>
-                    </a>
-                  </div>
-                </li>
-              </ul>
+        <i class="fas fa-comment-alt"></i><br>
+        Messaging
     </div>    
     <!---mail box-end-->
     
@@ -184,10 +106,19 @@
      <!--notification-end-->
      <!---profile--->   
      <div class="profile">
-     <i class="fas fa-user-circle"></i>
-     <b><?php
+     <i class="fas fa-user-circle"></i><a class=" dropdown-toggle" data-toggle="dropdown">
+
+      <span class="caret"></span>
+    <p class="profile-accoutnt-p"><b><?php
      $job_seeker=$this->session->userdata('job_seeker_id');
-          echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?> </b>
+          echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?> </b></p>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="#"><i class="fas fa-user"></i></a> My Profile</li>
+      <li><a href="#"><i class="fas fa-lock"></i></a>Change Password</li>
+      <li ><a href="#" onclick="logout();"><i class="fas fa-power-off"></i></a>Logout</li>
+    </ul>
+     
      </div>
      <!---end-profile-->
     </div>
@@ -197,6 +128,16 @@
 </div>
 
 <!---header end--->
+<script>
+  function logout()
+  {
+    if(window.confirm('Are you sure want to logout?'))
+     {
+        window.location.href="<?php echo base_url(); ?>seeker/logout";  
+     }
+    
+  }
+</script>
 <script type="text/javascript">
     function getchecked(value)
     {
