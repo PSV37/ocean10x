@@ -180,7 +180,7 @@
                           </div>
                           <div class="modal-footer">
                            
-                            <button type="button" class="btn btn-save">Submit</button>
+                            <button type="button" class="btn btn-save">forward job post</button>
                           </div>
                         </div>
                       </div>

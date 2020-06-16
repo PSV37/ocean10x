@@ -284,7 +284,8 @@ background-color: #81c3f8;
 }
 
 input{padding:7px 25px;}
-.modal-footer{text-align:center;}
+.modal-footer{text-align: end;
+    margin-right: 47px;}
 
 .modal-body {
     padding: 0px 65px;
