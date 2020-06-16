@@ -926,6 +926,52 @@ i.fas.fa-search {
     vertical-align: baseline;
     background-color: #Fff;
 	}
+.dropdown {
+    margin-top: 17px;
+    cursor: pointer;
+}	
+i.fas.fa-user-circle{background-color:#fff;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 25px;
+	float:left;
+	cursor:pointer;
+}
+.dropdown {
+    margin-top: 17px;
+	cursor:pointer;
+}
+.dropdown-menu li{font-size:11px;padding:8px;cursor:pointer;}
+.dropdown-menu li:hover{background-color:#eef0fb;}
+.dropdown-menu{top:151%;}
+i.fas.fa-user {
+    float: left;
+    margin-right: 20px;
+    line-height: 18px;
+}
+i.fas.fa-lock{
+	float: left;
+    margin-right: 20px;
+    line-height: 18px;
+    
+	}
+i.fas.fa-power-off{
+	float: left;
+    margin-right: 20px;
+    line-height: 18px;
+   
+	}	
+.caret{color:#fff;
+margin-top: 8px;
+    margin-left: -4px;}	
+.profile-accoutnt-p{	
+	margin-top: -15px;
+    margin-left: 64px;
+    color: #fff;
+    font-size: 12px;
+}
 <!----index page css end--->
 
 
