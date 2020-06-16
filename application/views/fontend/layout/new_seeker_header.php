@@ -109,16 +109,16 @@
      <i class="fas fa-user-circle"></i><a class=" dropdown-toggle" data-toggle="dropdown">
 
       <span class="caret"></span>
-    <p class="profile-accoutnt-p"><b><?php
-     $job_seeker=$this->session->userdata('job_seeker_id');
-          echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?> </b></p>
+    
     </a>
     <ul class="dropdown-menu">
       <li><a href="#"><i class="fas fa-user"></i></a> My Profile</li>
       <li><a href="#"><i class="fas fa-lock"></i></a>Change Password</li>
       <li ><a href="#" onclick="logout();"><i class="fas fa-power-off"></i></a>Logout</li>
     </ul>
-     
+     <p class="profile-accoutnt-p"><b><?php
+     $job_seeker=$this->session->userdata('job_seeker_id');
+          echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?> </b></p>
      </div>
      <!---end-profile-->
     </div>
