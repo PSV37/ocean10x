@@ -1,5 +1,5 @@
 <!---header---->
-<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/profile_css.css">
+
 <?php 
     $this->load->view('fontend/layout/new_seeker_header.php');
 
