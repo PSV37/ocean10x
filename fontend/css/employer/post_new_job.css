@@ -263,3 +263,58 @@ background-color: #81c3f8;
     padding: 8px 13px;
     cursor: pointer;
 }	
+/*email css*/
+.fade-rotate {
+  transform: rotate(180deg);
+  opacity: 0;
+  -webkit-transition: all .25s linear;
+  -o-transition: all .25s linear;
+  transition: all .25s linear;
+}
+.fade-rotate.in {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+.fade-rotate .modal-dialog {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) !important;
+}
+
+input{padding:7px 25px;}
+.modal-footer{text-align:center;}
+
+.modal-body {
+    padding: 0px 65px;
+}
+button.btn-save {
+    font-size: 12px;
+    padding: 10px 52px;
+    background-color: #14a99b;
+    color: #fff;
+    border: none;
+	border-radius:20px;
+	box-shadow: 2px 2px 6px #a8a4a4;
+
+}
+.modal-content {
+    background-image: linear-gradient(#18c5bd, #d4efec);
+}
+.sendEmail label{color:#fff;font-size:13px;}
+.sendEmail input{background-color: #f3f7f663;}
+.sendEmail textarea.form-control{background-color:#fbffff80;}
+@media (min-width: 768px){
+.modal-dialog {
+    width: 460px;
+    margin: 30px auto;
+}
+}
+
+.fade-rotate .modal-dialog{top:45%;}
+.modal-footer{border-top:none;}
+.modal-header{border-bottom:none;}
+button.btn-save:hover{background-color:#0e776d;
+transition:0.9s;color:#fff;}
+/*end*/
