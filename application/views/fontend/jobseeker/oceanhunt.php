@@ -51,7 +51,7 @@
                                     </ul>
                                     </div>
                             
-                                <button class="apply-invi" data-toggle="modal" data-target="#ApplyJob1<?php echo $$forward_applicaiton->job_post_id; ?>">Apply</button>
+                                <a href="#" data-toggle="modal" data-target="#ApplyJob1<?php echo $$forward_applicaiton->job_post_id; ?>"><button class="apply-invi" >Apply</button></a>
                             </div>
                             <div class="clear"></div>   
                               </div>
