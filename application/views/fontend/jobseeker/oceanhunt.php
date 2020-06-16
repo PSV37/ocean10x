@@ -51,7 +51,7 @@
                                     </ul>
                                     </div>
                             
-                                <button class="apply-invi" >Apply</button>
+                                <button class="apply-invi" data-toggle="modal" data-target="#ApplyJob1<?php echo $forward_applicaiton->job_post_id; ?>">Apply</button>
                             </div>
                             <div class="clear"></div>   
                               </div>
@@ -170,7 +170,7 @@
                                     </ul>
                                     </div>
                             
-                                <button class="apply-invi" data-toggle="modal" data-target="#ApplyJob2<?php echo $$forward_applicaiton->job_post_id; ?>">Apply</button>
+                                <button class="apply-invi" data-toggle="modal" data-target="#ApplyJob2<?php echo $forward_applicaiton->job_post_id; ?>">Apply</button>
                             </div>
                             <div class="clear"></div>   
                               </div>
