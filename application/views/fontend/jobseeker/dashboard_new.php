@@ -221,7 +221,7 @@
                                     </ul>
                                     </div>
                             
-                                <a href="#" data-toggle="modal" data-target="#ApplyJob"><button class="apply-invi">Apply Now</button></a>
+                                <a href="#" data-toggle="modal" data-target="#ApplyJob<?php echo $applicaiton->job_post_id; ?>"><button class="apply-invi">Apply Now</button></a>
                             </div>
                             <div class="clear"></div>   
                         </div>
@@ -273,7 +273,8 @@
  
     <!-- ./Footer -->
 </div>
- <div id="ApplyJob" class="modal fade" role="dialog">
+<?php foreach ($jobs as $applicaiton) : ?>
+ <div id="ApplyJob<?php echo $applicaiton->job_post_id; ?>" class="modal fade" role="dialog">
   <div class="modal-dialog"> 
     
     <!-- Modal content-->
@@ -333,7 +334,8 @@
     
     </div>
   </div>
-</div>  
-   <?php $this->load->view("fontend/layout/jobseeker_footer.php"); ?>
+</div>
+<?php  endforeach;  
+    $this->load->view("fontend/layout/jobseeker_footer.php"); ?>
    
 </body>
