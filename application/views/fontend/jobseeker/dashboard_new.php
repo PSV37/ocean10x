@@ -210,14 +210,14 @@
                                 <p class="head-invi"><?php echo $this->job_posting_model->job_title_by_name($applicaiton[$i]->job_post_id); ?></p>
                                 <span class="salary-info">Slaray: <?php echo $this->job_posting_model->job_salary_by_id($applicaiton[$i]->job_post_id); ?><span>
                                 <p>text test</p>
-                                 <div class="detail-b"><a href="<?php  echo base_url();?>job/show/<?php echo $this->job_posting_model->get_slug_nameby_id($applicaiton[$i]->job_post_id) ?>">Details</a></div>
+                                 <div class="detail-b"><a href="<?php  echo base_url();?>job/show/<?php echo $this->job_posting_model->get_slug_nameby_id($applicaiton->job_post_id) ?>">Details</a></div>
                                     <div class="last-row-invitation">
                                     <ul>
-                                        <li><div class="location-inv"><i class="fas fa-map-marker-alt"></i><?php echo $applicaiton[$i]->city_id;  ?></div></li>
-                                       <li> <div class="year-inv"><i class="fas fa-save"></i>&emsp;<?php echo $applicaiton[$i]->experience;  ?> years</div></li>
-                                        <li> <div class="calender-inv"><i class="far fa-calendar-alt"></i>&emsp; <?php if(!is_null($applicaiton[$i]->created_at)) { $mtime = time_ago_in_php($applicaiton[$i]->created_at);
+                                        <li><div class="location-inv"><i class="fas fa-map-marker-alt"></i><?php echo $applicaiton->city_id;  ?></div></li>
+                                       <li> <div class="year-inv"><i class="fas fa-save"></i>&emsp;<?php echo $applicaiton->experience;  ?> years</div></li>
+                                        <li> <div class="calender-inv"><i class="far fa-calendar-alt"></i>&emsp; <?php if(!is_null($applicaiton->created_at)) { $mtime = time_ago_in_php($applicaiton->created_at);
                             echo $mtime;} ?></div></li>
-                                        <li> <div class="fulltime-inv"><i class="fas fa-clock"></i>&emsp;<?php echo $applicaiton[$i]->job_nature;  ?></div></li>
+                                        <li> <div class="fulltime-inv"><i class="fas fa-clock"></i>&emsp;<?php echo $applicaiton->job_nature;  ?></div></li>
                                     </ul>
                                     </div>
                             
