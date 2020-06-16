@@ -287,14 +287,14 @@ $company_profile_id = $this->session->userdata('company_profile_id');
              <input type="hidden" name="job_post_id" value="<?php echo $v_companyjobs->job_post_id; ?>">
             <input type="hidden" name="consultant" value="JobSeeker">  
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <label class="mdl-textfield__label" for="sample3">email</label>
-            <input class="mdl-textfield__input" name="candiate_email"  placeholder="Enter comma seperated Emails" type="text" id="subject" data-required="true" >
+            <label class="mdl-textfield__label" for="sample3">E-mail</label>
+            <input class="mdl-textfield__input" name="candiate_email"  placeholder="Enter comma seperated Emails" type="text" id="subject" data-required="true" required>
           </div>
         
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <label class="mdl-textfield__label" for="sample3">message</label>
+            <label class="mdl-textfield__label" for="sample3">Message</label>
 
-          <textarea class="form-control" name="message" rows="5" id="comment"></textarea>
+          <textarea class="form-control" name="message" rows="5" id="comment" required></textarea>
           </div>
          
          
