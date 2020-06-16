@@ -280,7 +280,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h5 style="text-align: center;font-size: 24px;font-weight: 600;color:#fff;">Send mail</h5>
+            <h5 style="text-align: center;font-size: 24px;font-weight: 600;color:#fff;">Forward this job post</h5>
           </div>
           <form action="<?php echo base_url() ?>employer/forword_job_post" class="sendEmail" method="post" autocomplete="off">
         <div class="modal-body">

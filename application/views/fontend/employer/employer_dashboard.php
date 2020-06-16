@@ -198,7 +198,7 @@
       
         	
        			 <div class="paragraph_p_level">
-       	<p>Create your own, and see what different functions produce. Get to understand what is really happening. What type of Graph do you want</p> 
+       	
         </div>
             </div>
             
