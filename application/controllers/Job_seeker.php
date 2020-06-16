@@ -38,8 +38,9 @@ class Job_seeker extends MY_Seeker_Controller
         $days_ago = date('Y-m-d', strtotime('-2 days', strtotime($today)));
         $forward_applicationlist = $this->job_apply_model->seeker_2days_application_send($jobseeker_id,$days_ago);
             if (!empty($forward_applicationlist)) {
+                
                $data['job_alert']=sizeof($forward_applicationlist);
-                $data['jobs']= $forward_applicationlist;.
+                $data['jobs']= $forward_applicationlist;
             }
             else
             {
