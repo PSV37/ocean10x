@@ -15,7 +15,7 @@
 
      <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/dashboard.css">
 
-     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/cv_bank.css">
+     
 
      
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>asset/jc/css/jquery.Jcrop.css">
