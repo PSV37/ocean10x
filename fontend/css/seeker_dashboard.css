@@ -555,7 +555,7 @@ box-shadow:2px 2px 2px red;
     box-shadow: none;
     position: relative;
 	margin-top: 23px;
-    margin-left: 92px;
+    
 }
 .progress:after {
     content: "";
