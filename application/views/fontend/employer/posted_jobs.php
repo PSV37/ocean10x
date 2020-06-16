@@ -294,7 +294,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <label class="mdl-textfield__label" for="sample3">message</label>
 
-          <textarea class="form-control" name="job_desc" rows="5" id="comment"></textarea>
+          <textarea class="form-control" name="message" rows="5" id="comment"></textarea>
           </div>
          
          

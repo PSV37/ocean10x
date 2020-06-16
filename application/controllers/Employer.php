@@ -988,7 +988,7 @@ function getstate(){
 
                            $send = sendEmail_JobRequest($email[$i],$message,$subject);
                            //echo $send;
-                            echo $message;
+                            // echo $message;
 
                              $company_name=$this->session->userdata('company_name');
                             $data=array('company'=>$company_name,
@@ -999,6 +999,7 @@ function getstate(){
                             'updated_by' =>$company_name);
 
                     $result=$this->Master_model->master_insert($data,'employer_audit_record');
+                     redirect('employer/active_job');
                         }
 
                 }else
@@ -1062,7 +1063,8 @@ function getstate(){
 
                            $send = sendEmail_JobRequest($email[$i],$message,$subject);
                            //echo $send;
-                            echo $message;
+                            // echo $message;
+
 
 
                              $company_name=$this->session->userdata('company_name');
@@ -1072,6 +1074,7 @@ function getstate(){
                             'Action'=>$company_name.' Forwarded job for the position of '.$require['job_title'],
                             'datetime'=>date('Y-m-d H:i:s'),
                             'updated_by' =>$company_name);
+                             redirect('employer/active_job');
                            
                         }
                         // else{
