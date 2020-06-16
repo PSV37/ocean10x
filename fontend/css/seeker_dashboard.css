@@ -1186,7 +1186,7 @@ q:before, q:after {
     width: 98px;
     line-height: 26px;
     font-size: 11px;
-    color: rgb(255, 255, 255);
+    color:#fff;   
     text-align: center;
     cursor: pointer;
 }
