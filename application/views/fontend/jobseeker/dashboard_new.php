@@ -199,13 +199,13 @@
                 $sr_no=0;
             if (!empty($jobs)): foreach ($jobs as $applicaiton) :
 
-                print_r($applicaiton);
+                // print_r($applicaiton);
                 for ($i=0; $i <sizeof($applicaiton) ; $i++) { 
                     # code...
                
             ?>
             <div class="invi-div">
-                            <img src="<?php echo base_url()?>upload/<?php echo $this->company_profile_model->company_logoby_id($applicaiton[$i]->company_profile_id); ?>" class="invitation-img"/>
+                            <img src="<?php echo base_url()?>upload/<?php echo $this->company_profile_model->company_logoby_id($applicaiton->company_profile_id); ?>" class="invitation-img"/>
                             <div class="info-invitation">
                                 <p class="head-invi"><?php echo $this->job_posting_model->job_title_by_name($applicaiton[$i]->job_post_id); ?></p>
                                 <span class="salary-info">Slaray: <?php echo $this->job_posting_model->job_salary_by_id($applicaiton[$i]->job_post_id); ?><span>
