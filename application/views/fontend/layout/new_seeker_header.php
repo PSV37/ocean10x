@@ -55,79 +55,81 @@
 }
      </style>
 </head>
+
 <!---header---->
 
 <div class="container-fluid gradient_strip" >
 <div class="container">
+<div class="col-md-12">
+	<div class="col-md-3">
    <div class="menu_logo">
       <img src="http://www.tele-kinetics.com/assets/img/logo.png" />
-   </div>  
+   </div> 
+   </div>
+   
+		
+   <div class="col-md-2">
    <div class="text-grad">
 
    <div class="sear-bar">
    <form class="search-form">
-  <input type="search" class="box" id="search_job" style="color: white;" placeholder="search job">
-  <input type="hidden" class="box" id="search_people" style="color: white;" placeholder="search People">
-
-  <!-- <input type="text" class="form-control" id="title" placeholder="Title" style="width:500px;"> -->
+  <input type="search">
  <i class="fas fa-search"></i>
 </form>
-     </div>   
-     <input type="hidden" name="1" id="search_value">       
+     </div>          
 </div>
+	</div>
 
+<div class="col-md-3">
 
-    <div class="switch switch-yellow">
-      <input type="radio" class="switch-input" name="view3" value="week3" id="week3" onchange="getchecked(this.value);" checked >
+	 <div class="switch switch-yellow">
+      <input type="radio" class="switch-input" name="view3" value="week3" id="week3" checked>
       <label for="week3" class="switch-label switch-label-off">Job Search</label>
-      <input type="radio" class="switch-input" name="view3" value="month3" id="month3" onchange="getchecked(this.value);">
+      <input type="radio" class="switch-input" name="view3" value="month3" id="month3">
       <label for="month3" class="switch-label switch-label-on">People Search</label>
       <span class="switch-selection"></span>
     </div>
+</div>
 
-
-
-
-
-
-    <div class="social-media">
-    <!---mail-box-->
-    <div class="notification">
-        <i class="fas fa-comment-alt"></i><br>
+<div class="col-md-1">
+	 <div class="notification">
+    	<i class="fas fa-comment-alt"></i><br>
         Messaging
     </div>    
-    <!---mail box-end-->
-    
-    <!---notification-->
-     <div class="bell">
-        <i class="fas fa-bell"></i><br>
-        Notifications
-     </div>
-     <!--notification-end-->
-     <!---profile--->   
-     <div class="profile">
-     <i class="fas fa-user-circle"></i><a class=" dropdown-toggle" data-toggle="dropdown">
+   
+</div>
 
-      <span class="caret"></span>
+<div class="col-md-1">
+	 <div class="bell">
+    	<i class="fas fa-bell"></i><br>
+        Notifications
+   	 </div>  
+   
+</div>     
     
+    <div class="col-md-2">
+    	 <div class="dropdown">
+  <i class="fas fa-user-circle"></i>&emsp;<a class=" dropdown-toggle" data-toggle="dropdown">
+    
+    <span class="caret"></span>
+    <p class="profile-accoutnt-p">supriya</p>
     </a>
     <ul class="dropdown-menu">
       <li><a href="#"><i class="fas fa-user"></i></a> My Profile</li>
       <li><a href="#"><i class="fas fa-lock"></i></a>Change Password</li>
-      <li ><a href="#" onclick="logout();"><i class="fas fa-power-off"></i></a>Logout</li>
+      <li><a href="#"><i class="fas fa-power-off"></i></a>Logout</li>
     </ul>
-     <p class="profile-accoutnt-p"><b><?php
-     $job_seeker=$this->session->userdata('job_seeker_id');
-          echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?> </b></p>
-     </div>
-     <!---end-profile-->
+  </div>
     </div>
     
+    </div>
   </div>
 
 </div>
-
+    
 <!---header end--->
+
+
 <script>
   function logout()
   {
@@ -202,3 +204,4 @@
 
 
    
+>>>>>>
