@@ -302,11 +302,11 @@
             </div>
           </div>
           <input type="hidden" name="job_seeker_id" value="<?php echo $jobseeker_id ?>">
-          <input type="hidden" name="job_post_id" value="<?php echo $singlejob->job_post_id; ?>">
+          <input type="hidden" name="job_post_id" value="<?php echo $applicaiton->job_post_id; ?>">
           <div class="form-group">
             <label class="control-label col-sm-4" for="email">Company Name:</label>
             <div class="col-sm-8">
-              <input type="text" name="js_career_salary" disabled="" class="form-control" id="js_career_salary" placeholder="" value="<?php $company_id=$singlejob->company_profile_id;
+              <input type="text" name="js_career_salary" disabled="" class="form-control" id="js_career_salary" placeholder="" value="<?php $company_id=$applicaiton->company_profile_id;
                          echo $this->company_profile_model->company_name($company_id);?>">
             </div>
           </div>
@@ -319,7 +319,7 @@
                    >
             </div>
           </div>
-          <?php $test=$singlejob->is_test_required;
+          <?php $test=$applicaiton->is_test_required;
             if ($test=='Yes') {
           ?>
           <div><b>Note: This job has a Online Test.</b></div>
