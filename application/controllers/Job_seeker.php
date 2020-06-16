@@ -37,7 +37,16 @@ class Job_seeker extends MY_Seeker_Controller
         $today=date('Y-m-d');
         $days_ago = date('Y-m-d', strtotime('-2 days', strtotime($today)));
         $forward_applicationlist = $this->job_apply_model->seeker_2days_application_send($jobseeker_id,$days_ago);
-
+            if (!empty($forward_applicationlist)) {
+               $data['job_alert']=sizeof($forward_applicationlist);
+                $data['jobs']= $forward_applicationlist;.
+            }
+            else
+            {
+             $recent_all_jobs=$this->job_apply_model->recent_all_jobs();
+               $data['job_alert']=sizeof($recent_all_jobs);
+                $data['jobs']= $recent_all_jobs;.
+            }
 
         $where_edu="js_saved_jobs.job_seeker_id='$jobseeker_id'";
         $join_save = array(
@@ -51,8 +60,7 @@ class Job_seeker extends MY_Seeker_Controller
 
 
         $data['saved_jobs']=sizeof($saved_job_data);
-        $data['job_alert']=sizeof($forward_applicationlist);
-        $data['jobs']= $forward_applicationlist;
+        
         // print_r($alljobs);die();
         $this->load->view('fontend/jobseeker/dashboard_new',$data);
     }

@@ -246,11 +246,12 @@ class Job_apply_model extends MY_Model
         $this->db->select("*");
         $this->db->where('job_seeker_id', $job_seeker_id);
         $this->db->where('forword_job_status!=', '0');
-        $this->db->where('DATE_FORMAT(job_apply.updated_on, "%Y-%m-%d") >=', $days_ago);
+        // $this->db->where('DATE_FORMAT(job_apply.updated_on, "%Y-%m-%d") >=', $days_ago);
         $this->db->join('job_posting', 'job_apply.job_post_id = job_posting.job_post_id', 'inner');
         $this->db->join('job_nature', 'job_posting.job_nature = job_nature.job_nature_id', 'inner');
         // $this->db->join('job_nature.job_nature_id=job_posting.job_nature');
         $this->db->order_by('job_apply_id','desc');
+         $this->db->limit(5);
         
         $query = $this->db->get($this->_table_name); 
         return $query->result();
