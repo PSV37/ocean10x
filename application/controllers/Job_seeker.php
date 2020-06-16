@@ -28,18 +28,17 @@ class Job_seeker extends MY_Seeker_Controller
 
          $data['job_seeker_resume'] = $this->Master_model->get_master_row('js_attached_resumes',$select =FALSE ,$where="job_seeker_id='$jobseeker_id'",$join = false);
 
-        foreach ($experinece_list as $row) {
-            $joblevel=$row->job_level;
-        }
-        foreach ($job_career_info as $row) {
-            $category=$row->industry_id;
-        }
+        // foreach ($experinece_list as $row) {
+        //     $joblevel=$row->job_level;
+        // }
+        // foreach ($job_career_info as $row) {
+        //     $category=$row->industry_id;
+        // }
+        $today=date('Y-m-d');
+        $days_ago = date('Y-m-d', strtotime('-2 days', strtotime($today)));
+        $forward_applicationlist = $this->job_apply_model->seeker_2days_application_send($jobseeker_id,$days_ago);
 
-           $date=date('Y-m-d');
 
-            $alljobs      = $this->job_posting_model->get_job_jobseeker($category, $joblevel,$date);
-            $totalrow     = $alljobs['total_row'];
-           
         $where_edu="js_saved_jobs.job_seeker_id='$jobseeker_id'";
         $join_save = array(
             'job_posting' => 'job_posting.job_post_id=js_saved_jobs.job_post_id | LFET OUTER',
@@ -52,8 +51,8 @@ class Job_seeker extends MY_Seeker_Controller
 
 
         $data['saved_jobs']=sizeof($saved_job_data);
-        $data['job_alert']=$alljobs['total_row'];
-        $data['jobs']= $alljobs;
+        $data['job_alert']=sizeof($forward_applicationlist);
+        $data['jobs']= $forward_applicationlist;
         // print_r($alljobs);die();
         $this->load->view('fontend/jobseeker/dashboard_new',$data);
     }
