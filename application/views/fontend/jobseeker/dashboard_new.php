@@ -220,8 +220,15 @@
                                         <li> <div class="fulltime-inv"><i class="fas fa-clock"></i>&emsp;<?php echo $applicaiton->job_nature;  ?></div></li>
                                     </ul>
                                     </div>
-                            
+                            <?php  
+                            $job_post_id = $applicaiton->job_post_id;
+                            $company_id = $applicaiton->company_profile_id;
+
+                            if ($this->job_apply_model->check_apply_job($jobseeker_id, $company_id, $job_post_id)) { ?>
+                              <button class="apply-invi">Applied</button>
+                              <?php }else { ?>
                                 <a href="#" data-toggle="modal" data-target="#ApplyJob<?php echo $applicaiton->job_post_id; ?>"><button class="apply-invi">Apply Now</button></a>
+                              <?php } ?>
                             </div>
                             <div class="clear"></div>   
                         </div>
