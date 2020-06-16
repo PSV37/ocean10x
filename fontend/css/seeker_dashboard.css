@@ -1159,8 +1159,6 @@ background-color: #81c3f8;
 }	
 <!--end--->
 
-
-
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
@@ -1172,7 +1170,7 @@ q:before, q:after {
   position: relative;
   height: 26px;
   width: 196px;
-  margin: -39px auto;
+  margin-top:20px;
   background: rgba(0, 0, 0, 0.25);
   border-radius: 3px;
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
@@ -1257,4 +1255,3 @@ q:before, q:after {
  
   background-image: -webkit-linear-gradient(top, #a8e225, #a4df2a);
 }
-
