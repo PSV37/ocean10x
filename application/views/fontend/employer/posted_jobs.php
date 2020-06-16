@@ -232,7 +232,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                     <div class="location">
                       Deadline :<?php if(!is_null($v_companyjobs->job_deadline)) { echo date('F j Y',strtotime($v_companyjobs->job_deadline)); } ?>
                     </div>
-                   <a href="#" data-toggle="modal" data-target="#rotateModal"><div class="apply_job_btn">forward</div></a> 
+                   <a href="#" data-toggle="modal" data-target="#rotateModal<?php echo $v_companyjobs->job_post_id; ?>"><div class="apply_job_btn">forward</div></a> 
                    
                    
                     <div class="dropdown right-arrow">
@@ -273,7 +273,8 @@ $company_profile_id = $this->session->userdata('company_profile_id');
    <!-- <div class=" text-center">
       <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#rotateModal">Rotate Modal</button>
     </div> -->
-  <div class="modal fade-rotate" id="rotateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
+  <div class="modal fade-rotate" id="rotateModal<?php echo $v_companyjobs->job_post_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <input type="hidden" name="company_profile_id" id="company_profile_id" value="<?php echo $this->session->userdata('company_profile_id'); ?>">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -283,7 +284,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
           </div>
           <form action="<?php echo base_url() ?>employer/forword_job_post" class="sendEmail" method="post" autocomplete="off">
         <div class="modal-body">
-        
+             <input type="hidden" name="job_post_id" value="<?php echo $$v_companyjobs->job_post_id; ?>">
             <input type="hidden" name="consultant" value="JobSeeker">  
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <label class="mdl-textfield__label" for="sample3">email</label>
@@ -302,8 +303,13 @@ $company_profile_id = $this->session->userdata('company_profile_id');
         <div class="modal-footer">
                            
        <button type="submit" class="btn btn-save">Forward Job Post</button>
-         </form>
+         
       </div>
+      </form>
     </div>
   </div>
+
 </div> 
+ <?php
+            endforeach;
+            ?>
