@@ -78,7 +78,7 @@
                 </div>
    </div>
 
-   
+
    <?php foreach ($forward_applicationlist as $applicaiton) : ?>
  <div id="ApplyJob1<?php echo $applicaiton->job_post_id; ?>" class="modal fade" role="dialog">
   <div class="modal-dialog"> 
@@ -98,16 +98,19 @@
           <input type="hidden" name="job_apply_id" class="form-control" id="job_apply_id" value="<?php if(!empty($forward_status)){ foreach($forward_status as $frow){
             echo $frow['job_apply_id'];
           } }?>" placeholder="">
-                   
+                   <?php
+               $job_seeker=$this->session->userdata('job_seeker_id');
+          $js_name= $this->Job_seeker_model->jobseeker_name($job_seeker); ?>
           <div class="form-group">
             <label class="control-label col-sm-4" for="email">User Name:</label>
             <div class="col-sm-8">
               <input type="text" name="js_career_salary" disabled="" class="form-control" id="js_career_salary" placeholder=""
 
-                   value="<?php if(!empty($jobseeker_id)){ echo $this->Job_seeker_model->jobseeker_name($jobseeker_id);} ?>">
+                   value="<?php if(!empty($jobseeker_id)){ echo $this->Job_seeker_model->jobseeker_name($job_seeker);} ?>">
             </div>
           </div>
-          <input type="hidden" name="job_seeker_id" value="<?php echo $jobseeker_id ?>">
+
+          <input type="hidden" name="job_seeker_id" value="<?php echo $job_seeker ?>">
           <input type="hidden" name="job_post_id" value="<?php echo $applicaiton->job_post_id; ?>">
           <div class="form-group">
             <label class="control-label col-sm-4" for="email">Company Name:</label>
@@ -224,11 +227,16 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Apply Job</h4>
       </div>
+        <?php
+               $job_seeker=$this->session->userdata('job_seeker_id');
+          $js_name= $this->Job_seeker_model->jobseeker_name($job_seeker); ?>
       <div class="modal-body">
         <form  class="form-horizontal" action="<?php echo base_url() ?>job/apply_job" method="post" style="padding: 30px;">
+
           <input type="hidden" name="forward_status" class="form-control" id="forward_status" value="<?php if(!empty($forward_status)){ foreach($forward_status as $frow){
             echo $frow['forword_job_status'];
           } }?>" placeholder="">
+          
           <input type="hidden" name="job_apply_id" class="form-control" id="job_apply_id" value="<?php if(!empty($forward_status)){ foreach($forward_status as $frow){
             echo $frow['job_apply_id'];
           } }?>" placeholder="">
@@ -238,10 +246,10 @@
             <div class="col-sm-8">
               <input type="text" name="js_career_salary" disabled="" class="form-control" id="js_career_salary" placeholder=""
 
-                   value="<?php if(!empty($jobseeker_id)){ echo $this->Job_seeker_model->jobseeker_name($jobseeker_id);} ?>">
+                   value="<?php if(!empty($job_seeker)){ echo $this->Job_seeker_model->jobseeker_name($job_seeker);} ?>">
             </div>
           </div>
-          <input type="hidden" name="job_seeker_id" value="<?php echo $jobseeker_id ?>">
+          <input type="hidden" name="job_seeker_id" value="<?php echo $job_seeker ?>">
           <input type="hidden" name="job_post_id" value="<?php echo $applicaiton->job_post_id; ?>">
           <div class="form-group">
             <label class="control-label col-sm-4" for="email">Company Name:</label>
