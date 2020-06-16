@@ -293,14 +293,7 @@
             echo $frow['job_apply_id'];
           } }?>" placeholder="">
                    
-          <div class="form-group">
-            <label class="control-label col-sm-4" for="email">User Name:</label>
-            <div class="col-sm-8">
-              <input type="text" name="js_career_salary" disabled="" class="form-control" id="js_career_salary" placeholder=""
-
-                   value="<?php if(!empty($jobseeker_id)){ echo $this->Job_seeker_model->jobseeker_name($jobseeker_id);} ?>">
-            </div>
-          </div>
+          
           <input type="hidden" name="job_seeker_id" value="<?php echo $jobseeker_id ?>">
           <input type="hidden" name="job_post_id" value="<?php echo $applicaiton->job_post_id; ?>">
           <div class="form-group">
