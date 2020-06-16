@@ -263,7 +263,14 @@ background-color: #81c3f8;
     padding: 8px 13px;
     cursor: pointer;
 }	
-/*email css*/
+
+
+
+
+
+
+
+
 .fade-rotate {
   transform: rotate(180deg);
   opacity: 0;
@@ -318,4 +325,3 @@ button.btn-save {
 .modal-header{border-bottom:none;}
 button.btn-save:hover{background-color:#0e776d;
 transition:0.9s;color:#fff;}
-/*end*/
