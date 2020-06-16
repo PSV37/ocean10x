@@ -24,7 +24,9 @@ class Employer extends MY_Employer_Controller
     {
         //$this->profile_setting();
         $company_info = $this->company_profile_model->get($employer_id);
-        $this->load->view('fontend/employer/dashboard_main', compact('company_info'));
+        // $this->load->view('fontend/employer/dashboard_main', compact('company_info'));
+        $this->load->view('fontend/employer/employer_dashboard', compact('company_info'));
+
     }
 
     /*** Dashboard ***/
