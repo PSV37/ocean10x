@@ -1168,13 +1168,13 @@ q:before, q:after {
 }
 
 
-.switch {
+.switch {   
   position: relative;
   height: 26px;
   width: 196px;
   margin-top:20px;
   background: rgba(0, 0, 0, 0.25);
-  border-radius: 3px;
+  border-radius:50px;
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
 }
@@ -1254,6 +1254,6 @@ q:before, q:after {
 .switch-yellow .switch-selection {
   background-color: #c4bb61;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e0dd94), color-stop(100%, #c4bb61));
- 
+ border-radius:50px;
   background-image: -webkit-linear-gradient(top, #a8e225, #a4df2a);
 }
