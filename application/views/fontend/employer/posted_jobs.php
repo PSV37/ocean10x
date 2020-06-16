@@ -285,7 +285,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
         <form class="sendEmail" method="post" autocomplete="off">
             <input type="hidden" name="consultant" value="JobSeeker">  
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <label class="mdl-textfield__label" for="sample3">email</label><small><b>Enter one or more emails separated by comma.</b></small> 
+            <label class="mdl-textfield__label" for="sample3">email</label>
             <input class="mdl-textfield__input" name="candiate_email"  placeholder="Enter comma seperated Emails" type="text" id="subject" data-required="true" >
           </div>
         
