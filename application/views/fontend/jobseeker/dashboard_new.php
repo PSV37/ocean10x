@@ -249,7 +249,7 @@
            </div>
            
            
-           <div class="col-md-3 pro-bar">
+           <div class="col-md-3 pro-bar">    
           
             <h3 class="heading-dash_profile">PROFILE LEVEL</h3>
                 <div class="progress yellow">
