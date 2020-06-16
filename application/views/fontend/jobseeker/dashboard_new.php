@@ -318,9 +318,9 @@
           <div><b>Note: This job has a Online Test.</b></div>
           <div class="panel-body"></div>
         <?php }else{} ?>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
+          <div class="modal-footer" >
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary">Apply</button>
           </div>
         </form>
       </div>
