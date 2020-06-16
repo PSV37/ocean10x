@@ -77,7 +77,9 @@
                 <button class="more-btn">show more</button>
                 </div>
    </div>
-   <?php foreach ($applicationlist as $applicaiton) : ?>
+
+   
+   <?php foreach ($forward_applicationlist as $applicaiton) : ?>
  <div id="ApplyJob1<?php echo $applicaiton->job_post_id; ?>" class="modal fade" role="dialog">
   <div class="modal-dialog"> 
     
@@ -140,6 +142,8 @@
   </div>
 </div>
 <?php  endforeach;  ?>
+
+
     <div id="activity2" class="tab-pane fade">
      
            <?  if (!empty($applicationlist)): foreach ($applicationlist as $forward_applicaiton) :
