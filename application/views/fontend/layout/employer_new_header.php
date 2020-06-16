@@ -107,7 +107,7 @@
     <ul class="dropdown-menu">
       <li><a href="#"><i class="fas fa-user"></i></a> My Profile</li>
       <li><a href="#"><i class="fas fa-lock"></i></a>Change Password</li>
-      <li><a href="#"><i class="fas fa-power-off"></i></a>Logout</li>
+      <li onclick="logout();"><a href="#"><i class="fas fa-power-off"></i></a>Logout</li>
     </ul>
   </div>
     </div>
@@ -116,3 +116,13 @@
   </div>
 
 </div>
+<script>
+  function logout()
+  {
+    if(window.confirm('Are you sure want to logout?'))
+     {
+        window.location.href="<?php echo base_url(); ?>employer/logout";  
+     }
+    
+  }
+</script>
