@@ -891,11 +891,13 @@ i.fas.fa-search {
     font-size: 11px;
     color: #fff;
     text-align: center;
+	margin-top:20px;
 }
 .bell {
     font-size: 11px;
     color: #fff;
     text-align: center;
+	margin-top:20px;
 }
 .social-media .notification{float:left;margin-left:67px;cursor:pointer;}
 .notification i{font-size:15px;color:#fff;}	
