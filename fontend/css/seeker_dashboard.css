@@ -193,9 +193,7 @@ body{background-color:#f7f7f738;}
 .pull-right {
     float: right!Important;
 }
-.btn-header a.dropdown-toggle {
-    width: 100%!important;
-}
+
 .btn-header > :first-child > a {
     background-color: #666666;
     background: none;
@@ -257,9 +255,7 @@ body{background-color:#f7f7f738;}
     left: 5%;
     padding: 10px 0;
 }
-.dropdown-menu.pull-right {
-    right: 0;
-}
+
 .flags {
     overflow-y: auto;
     max-height: 320px;
