@@ -116,7 +116,7 @@
           <div class="form-group">
             <label class="control-label col-sm-4" for="email"> Expected Salary:</label>
             <div class="col-sm-8">
-              <input type="text" name="expected_salary" required class="form-control" id="avaliable" placeholder="Expected Salary"
+              <input type="text" name="expected_salary" required class="form-control allownumericwithdecimal" id="avaliable" placeholder="Expected Salary"
 
                    >
             </div>
@@ -248,9 +248,7 @@
           <div class="form-group">
             <label class="control-label col-sm-4" for="email"> Expected Salary:</label>
             <div class="col-sm-8">
-              <input type="text" name="expected_salary" required class="form-control allownumericwithdecimal" id="avaliable" placeholder="Expected Salary"
-
-                   >
+              <input type="text" name="expected_salary" required class="form-control allownumericwithdecimal" id="avaliable" placeholder="Expected Salary">
             </div>
           </div>
           <?php $test=$applicaiton->is_test_required;

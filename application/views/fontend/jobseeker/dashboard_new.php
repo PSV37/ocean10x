@@ -307,7 +307,7 @@
           <div class="form-group">
             <label class="control-label col-sm-4" for="email"> Expected Salary:</label>
             <div class="col-sm-8">
-              <input type="text" name="expected_salary" required class="form-control" id="avaliable" placeholder="Expected Salary"
+              <input type="text" name="expected_salary" required class="form-control allownumericwithdecimal" id="avaliable" placeholder="Expected Salary"
 
                    >
             </div>
@@ -332,3 +332,13 @@
     $this->load->view("fontend/layout/jobseeker_footer.php"); ?>
    
 </body>
+
+<script>
+  $(".allownumericwithdecimal").on("keypress keyup blur",function (event) {
+            //this.value = this.value.replace(/[^0-9\.]/g,'');
+     $(this).val($(this).val().replace(/[^0-9\.]/g,''));
+            if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+                event.preventDefault();
+            }
+        });
+</script> 
