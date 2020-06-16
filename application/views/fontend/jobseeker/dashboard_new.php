@@ -1,9 +1,4 @@
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<!---header---->
-
-
-
-<!---header end--->
 <?php  
                 $MyProfile=20;
                 $Education=20;
@@ -252,8 +247,10 @@
              
             </div>
            </div>
-            <div class="col-md-3 ">
-            <div class="progress-bar-left">
+           
+           
+           <div class="col-md-3 pro-bar">
+          
             <h3 class="heading-dash_profile">PROFILE LEVEL</h3>
                 <div class="progress yellow">
                 <span class="progress-left">
@@ -265,12 +262,17 @@
                 <div class="progress-value"><?php echo round($profile_total);?>%</div>
             </div>
       
-            
-                <!--  <div class="paragraph_p_level">
-        <p>Create your own, and see what different functions produce. Get to understand what is really happening. What type of Graph do you want</p> 
-        </div> -->
+        	
+       			 
             </div>
-        </div>
+           
+           
+           
+           
+           
+           
+           
+            
         
     </div>
     
