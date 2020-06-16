@@ -2914,7 +2914,8 @@ public function interview_scheduler()
         $where_c['company_id'] = $company_id;
         $data['cv_bank_data'] = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join = false, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
        
-        $this->load->view('fontend/employer/corporate_cv_bank',$data);
+        $this->load->view('fontend/employer/cv_bank',$data);
+        // $this->load->view('fontend/employer/corporate_cv_bank',$data);
     }
 
     public function add_new_cv()
