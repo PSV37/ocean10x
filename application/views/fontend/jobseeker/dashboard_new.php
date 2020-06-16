@@ -199,7 +199,7 @@
                 $sr_no=0;
             if (!empty($jobs)): foreach ($jobs as $applicaiton) :
 
-                // print_r($applicaiton);
+                print_r($applicaiton);
                 for ($i=0; $i <sizeof($applicaiton) ; $i++) { 
                     # code...
                
