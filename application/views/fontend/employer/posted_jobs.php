@@ -281,8 +281,9 @@ $company_profile_id = $this->session->userdata('company_profile_id');
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h5 style="text-align: center;font-size: 24px;font-weight: 600;color:#fff;">Send mail</h5>
           </div>
+          <form action="<?php echo base_url() ?>employer/forword_job_post" class="sendEmail" method="post" autocomplete="off">
         <div class="modal-body">
-        <form class="sendEmail" method="post" autocomplete="off">
+        
             <input type="hidden" name="consultant" value="JobSeeker">  
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <label class="mdl-textfield__label" for="sample3">email</label>
@@ -296,11 +297,12 @@ $company_profile_id = $this->session->userdata('company_profile_id');
           </div>
          
          
-        </form>
+       
         </div>
         <div class="modal-footer">
                            
-        <a href="<?php echo base_url() ?>employer/forword_job_post"><button type="button" class="btn btn-save">Forward Job Post</button></a>
+       <button type="submit" class="btn btn-save">Forward Job Post</button>
+         </form>
       </div>
     </div>
   </div>
