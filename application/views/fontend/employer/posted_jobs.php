@@ -284,7 +284,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
           </div>
           <form action="<?php echo base_url() ?>employer/forword_job_post" class="sendEmail" method="post" autocomplete="off">
         <div class="modal-body">
-             <input type="hidden" name="job_post_id" value="<?php echo $$v_companyjobs->job_post_id; ?>">
+             <input type="hidden" name="job_post_id" value="<?php echo $v_companyjobs->job_post_id; ?>">
             <input type="hidden" name="consultant" value="JobSeeker">  
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <label class="mdl-textfield__label" for="sample3">email</label>
