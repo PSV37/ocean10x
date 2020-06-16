@@ -696,12 +696,13 @@ box-shadow:2px 2px 2px red;
 @media only screen and (max-width: 990px){
     .progress{ margin-bottom: 20px; }
 }
-.heading-dash_profile{margin: 87px 163px 0px 0px;
+.heading-dash_profile{
     font-size: 19px;
     text-transform: uppercase;
     color: #313131;
-	text-align:right;
+	text-align:center;
 }
+
 .paragraph_p_level p{
 margin-top: 20px;
     text-align: justify;
