@@ -1,4 +1,4 @@
-.header-bookbank {
+/*.header-bookbank {
     color: #fff;
     background-image: linear-gradient(to left, rgba(255,0,0,0), rgb(3, 195, 186));
     padding: 10px 0px 10px 12px;
@@ -153,3 +153,321 @@ bottom:20px;
 right:20px;}
 .add-question{margin-top:58px;
 padding:20px}
+
+*/
+
+
+
+
+
+.jobinfolist li h4 {
+    font-size: 12px;
+    display: inline-block;
+    font-weight: 700;
+    width: 46%;
+    float: left !important;
+}
+.jobinfolist li h4{
+float: left;
+    font-size: 12px;
+	}
+.jobinfolist li strong {
+    color: #747575;
+    font-weight: 400;
+    font-size: 11px;
+    float: left;
+    width:auto;
+    line-height: 18px;
+    margin-top: 7px;
+}
+.jobinfolist {
+    margin-left: -25px !important;
+}
+.jobinfolist li:after {
+    display: table;
+    clear: both;
+    content: '';
+}
+.jobinfolist li {
+    padding-left: 0 !important;
+    padding: 0px 0 !important;
+   
+    line-height: 7px !important;
+    list-style-type: none;
+}
+.job-header .contentbox ul li {
+    padding: 8px 0 8px 25px;
+    position: relative;
+    line-height: 24px;
+}
+.jd{margin-left:40px;}
+.jd p{font-size: 12px;
+    color: #696767;
+}
+
+.profile_heading{
+font-size: 19px;
+    COLOR: #444343;
+    MARGIN: 40PX 0PX 55PX 25PX;
+	float:left;
+	margin-right: 70px;
+}
+
+.btn_all {
+    color: #539617;
+    background-color: #fff;
+    height: 35px;
+    width: 70px;
+    border: solid 1px;
+    border-radius: 50px;
+}
+	
+.btn_all:hover {
+    color: #fff;
+    background-color: #a6e026;
+    border-color: #87cf56;
+}
+.all_dropdown{float:left;margin-right:20px;}
+.btn_sort{
+	color: #319fda;
+    background-color: #fff;
+    height: 35px;
+    width: 70px;
+    border: solid 1px;
+    border-radius: 50px;
+	}
+.btn_sort:hover{
+	color: #fff;
+    background-color: #44afe1;
+    border-color: #168bd8;}	
+
+.hide_btn{margin-top:20px;}
+#myDIV {
+  width: 100%;
+  
+  background-color:#eef7fa;
+  margin-top: 20px;
+}
+.horizontal_box {
+    width: 7%;
+    background-color: #a9e224;
+    height: 140px;
+    padding: 0px;
+}
+.try_bt{
+height: 30px;
+    width: 70px;
+    border: none;
+    background-color: #a3df2d;
+    color: #fff;
+	
+	}
+.horizontal_box{position:relative;
+width: 3%;
+    background-color: #a9e224;
+    height: 270px;
+    padding: 0px;
+    margin-left: 15px;}	
+.p-i {
+    position: absolute;
+    top: 19px;
+    right: -24px;
+    background-color: #fff;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    border-radius: 35px;
+    border: solid 2px #73b102;
+	text-align:center;
+}
+.details-box {
+    padding: 30px 0px;
+}
+.head-box strong{line-height:3;}
+.head-box-a strong{line-height:3;
+font-weight: 400;}
+.bg-lb:hover .p-i{color:#fff;
+				background-color:#62a910;}
+button.apply-cv-btn {
+    padding: 8px 20px;
+    border-radius: 40px;
+    border: solid 2px #F44336;
+    background-color: #fff;
+    color: #000;
+}	
+button.apply-cv-btn:hover{background-color:#F44336;
+/*new*/
+
+color:#fff;}
+.all_b {
+    float: left;
+    margin-right: 30px;
+    background-color: #fff;
+   padding: 3px 32px;
+    border-radius: 20px;
+    border: solid 1px #a7e126;
+}
+.sort_b {
+    background-color: #fff;
+   padding: 3px 32px;
+    border-radius: 20px;
+    border: solid 1px #a7e126;
+}
+.seperate-btn {
+    margin-top:34px;
+}
+.active_save_btn{background-color:#a7e126;
+color:#fff;}
+.sort_b:hover{background-color:#a7e126;
+color:#fff;}
+.all_b:hover{background-color:#a7e126;
+color:#fff;}
+.job-voucher{background-color:#fff;border-radius:3px;height:auto;padding: 15px 20px 15px 20px;box-shadow: 0px 2px 6px #00000038;
+line-height:20px;}
+.dimen_img-s{height:60px;
+			width:60px;float:left;margin-right: 20px;
+			margin-bottom:20px;}
+
+
+
+
+
+.dimen_img-s{height:60px;
+width:60px;
+border-radius: 50px;
+    border: solid 1px #e4e3e3;}	
+.job_title{font-size:18px;
+		cursor: pointer;
+		margin-bottom:5px;
+		float:left;
+		margin-right:24px;
+		}
+.job_title:hover{text-decoration:underline;}		
+.organization {
+    color: #868383;
+	font-size: 12px;
+	float:left;
+	margin-right:20px;
+}
+.location{color: #868383;
+font-size: 12px;
+}
+.alert-dismissable .close, .alert-dismissible .close {
+    position: relative;
+    top: 0px;
+    right: 0px;
+    color: inherit;
+}
+.job_dis_btn {
+    padding: 2px 16px;
+    border: none;
+    margin-left: -84px;
+    font-size: 12px;
+    background-color: #fff;
+    border: solid 1px #c6e6e4;
+    border-radius: 22px;
+    color: #878e8d;
+    margin-top: 8px;
+}
+.job_dis_btn:hover{
+background-color: #81c3f8;
+    color: #fff;
+	transition:0.5s;
+}
+.apply_job_btn {
+    float: right;
+    background-color: #fff;
+    padding: 6px 35px;
+    border: solid 1px #3F51B5;
+    color: #3F51B5;
+    font-weight: 700;
+	font-size:12px;
+	cursor:pointer;
+	border-radius:3px;
+	margin-top:-20px;
+}
+.apply_job_btn:hover{
+	 background-color:#3F51B5;
+	 color: #fff;
+	}
+.bd-2 {
+    margin-top: 20px;
+	padding:0px;
+}	
+/*end*/
+
+.col-md-9.cv-bank-section{margin-top:78px;}
+#myDIV {
+  width: 100%;
+ height: 126px;
+ padding:10x;
+ background-color:#fff;
+  margin-top: 20px;
+  display:none;
+ 
+  
+}
+.bg-hide {
+    background-color: #f3fdfc;
+    box-shadow: 1px 1px 4px #dce0e0;
+    border-radius: 0px 0px 3px 3px;
+	height:110px;
+}
+button.get_cv {
+    background-color: #18c5bd;
+    padding: 3px 25px;
+    border: none;
+    color: #fff;
+    border-radius: 29px;
+    margin-left: 12px;
+    font-size: 12px;
+}
+button.get_cv:hover{
+ background-color:#129892;
+ transition:0.5s;
+	}
+.cv-bank-section form{	
+margin-bottom: 20px;
+float:left;
+margin-right: 40px;
+   
+}
+input[type="text"] {
+  border: solid 1px #dcdede;
+    border-radius: 0px 22px 22px 0px;
+    padding: 4px 12px;
+}
+.sort-serach{
+background-color:#18c5bdb8;
+   border: none;
+   
+    border-radius: 4px;
+    text-align: center;
+    height: 33px;
+    width: 33px;
+    text-align: -webkit-auto;
+}
+.sort-serach:hover{
+background-color:#18c5bd;
+}
+.all-btn{
+	color: #109892;
+    background-color: aliceblue;
+   
+    padding: 2px 29px;
+    border-radius: 22px;
+    margin-bottom: 30px;
+    border: solid 1px #3a9b9752;
+    margin-right: 15px;
+	box-shadow: inset -3px -2px 2px #6f6e6e1f;
+
+	}
+.all-btn:hover{
+	background-color:#16ada6;
+	color:#fff;
+	transition:0.4s;
+	}
+.sort-active{background-color:#16ada6;
+	color:#fff;
+	transition:0.4s;
+	}		
