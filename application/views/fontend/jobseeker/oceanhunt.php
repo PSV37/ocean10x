@@ -101,14 +101,7 @@
                    <?php
                $job_seeker=$this->session->userdata('job_seeker_id');
           $js_name= $this->Job_seeker_model->jobseeker_name($job_seeker); ?>
-          <div class="form-group">
-            <label class="control-label col-sm-4" for="email">User Name:</label>
-            <div class="col-sm-8">
-              <input type="text" name="user_name" disabled="" class="form-control" id="js_career_salary" placeholder=""
-
-                   value="<?php if(!empty($job_seeker)){ echo $this->Job_seeker_model->jobseeker_name($job_seeker);} ?>">
-            </div>
-          </div>
+         
 
           <input type="hidden" name="job_seeker_id" value="<?php echo $job_seeker ?>">
           <input type="hidden" name="job_post_id" value="<?php echo $applicaiton->job_post_id; ?>">
@@ -241,14 +234,7 @@
             echo $frow['job_apply_id'];
           } }?>" placeholder="">
                    
-          <div class="form-group">
-            <label class="control-label col-sm-4" for="email">User Name:</label>
-            <div class="col-sm-8">
-              <input type="text" name="user_name" disabled="" class="form-control" id="js_career_salary" placeholder=""
-
-                   value="<?php if(!empty($job_seeker)){ echo $this->Job_seeker_model->jobseeker_name($job_seeker);} ?>">
-            </div>
-          </div>
+         
           <input type="hidden" name="job_seeker_id" value="<?php echo $job_seeker ?>">
           <input type="hidden" name="job_post_id" value="<?php echo $applicaiton->job_post_id; ?>">
           <div class="form-group">
