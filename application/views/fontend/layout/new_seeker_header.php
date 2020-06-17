@@ -110,7 +110,7 @@
     
     <div class="col-md-2">
     	 <div class="dropdown">
-  <i class="fas fa-user-circle"></i>&emsp;<a class=" dropdown-toggle" data-toggle="dropdown">
+  <i class="fas fa-user-circle"><img src="<?php echo base_url() ?>upload/<?php echo  $this->Job_seeker_photo_model->get_jobseeker_photo($job_seeker);?>" alt="" class="img-circle"></i>&emsp;<a class=" dropdown-toggle" data-toggle="dropdown">
     
     <span class="caret"></span>
     <p class="profile-accoutnt-p"><?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></p>
