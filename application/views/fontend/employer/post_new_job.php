@@ -16,6 +16,11 @@ $company_profile_id = $this->session->userdata('company_profile_id');
   label.control-label {
     margin-top: 15px;
 }
+div#next {
+    float: right;
+    /* margin-left: 385px; */
+    /* margin-right: -70px; */
+}
 
 </style>
 <!---header--->
@@ -180,7 +185,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
             </section>
             <div class="button" id="prev">&larr; Previous</div>
             <div class="button" id="next">Next &rarr;</div>
-            <div class="button" id="preview">preview</div>
+            <center><div class="button" id="preview">preview</div></center> 
             <button type="submit" class="button" id="submit">Post Job</button>
       
         </div>
