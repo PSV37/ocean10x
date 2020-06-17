@@ -79,22 +79,14 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                     </select>                  
                   </div>
               </div>
-            <div class="col-sm-6 p-m-2">
+            <div class="col-sm-12 p-m-2">
               <div class="formrow">
                 <!-- donain is nothing but industry -->
                 <label class="control-label ">Skill Set<span class="required"> * </span> </label>
                 <div id="skills_result">Please Select Job Role.</div>       
               </div>
             </div>
-            <div class="col-sm-6 p-m-2">
-               <div class="formrow">  
-                    <label class="control-label ">Ocean Test Required <span class="required">*</span></label>
-                    <select name="job_test_requirment" id="job_test_requirment" class="form-control" data-style="btn-default" data-live-search="true" required="">
-                      <option value="Yes"<?php if($job_info->is_test_required=="Yes"){ echo "selected"; }?>>Yes </option>
-                      <option value="No"<?php if($job_info->is_test_required=="No"){ echo "selected"; }?>>No </option>
-                    </select> <?php echo form_error('job_test_requirment'); ?>             
-                  </div>
-            </div>
+           
           </section>
            
           <section>
@@ -111,9 +103,9 @@ $company_profile_id = $this->session->userdata('company_profile_id');
               </div>
             <div class="col-md-4 col-sm-12" id="spectial"> 
                   <div class="formrow">  
-                    <label class="control-label ">Specialization <span class="required"> * </span></label>
+                    <label class="control-label ">Certifications Preferred <span class="required"> * </span></label>
                     <select name="job_edu_special" id="job_edu_special" class="form-control" data-style="btn-default" data-live-search="true">
-                     <option value="">Select Specialization </option>
+                     <option value="">Select Certifications </option>
                    
                     </select> 
                   </div>
@@ -173,12 +165,15 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                     <textarea name="benefits" class="form-control ckeditor" placeholder="Company benefits offered"><?php if(!empty($job_info)) echo $job_info->benefits; ?></textarea><?php echo form_error('benefits'); ?>                                 
                 </div>
                 </div>
-                <div class="col-md-12 col-sm-12 p-m-7">
-                <div class="formrow">
-                  <label class="control-label">upload JD <span class="required"> * </span></label>
-                 <input type="file" name="">                                  
-                </div>
-              </div>
+                 <div class="col-sm-12 p-m-2">
+               <div class="formrow">  
+                    <label class="control-label ">Ocean Test Required <span class="required">*</span></label>
+                    <select name="job_test_requirment" id="job_test_requirment" class="form-control" data-style="btn-default" data-live-search="true" required="">
+                      <option value="Yes"<?php if($job_info->is_test_required=="Yes"){ echo "selected"; }?>>Yes </option>
+                      <option value="No"<?php if($job_info->is_test_required=="No"){ echo "selected"; }?>>No </option>
+                    </select> <?php echo form_error('job_test_requirment'); ?>             
+                  </div>
+            </div>
             </section>
 
           
