@@ -13,6 +13,9 @@ $company_profile_id = $this->session->userdata('company_profile_id');
   {
     color: red;
   }
+  label.control-label {
+    margin-top: 15px;
+}
 </style>
 <!---header--->
 <div class="container-fluid main-d">
