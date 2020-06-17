@@ -281,7 +281,7 @@ public function job_post()
                         'job_role'           => $this->input->post('job_role'),   //new added field
                         'skills_required'    => implode(',', $this->input->post('skill_set')), //new added field
 
-                        'job_level'          => $this->input->post('job_level'),
+                        // 'job_level'          => $this->input->post('job_level'),
                         'salary_range'       => $this->input->post('salary_range'),
                         // 'job_types'          => $this->input->post('job_types'),
                         // "job_deadline"       => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('job_deadline')))),
