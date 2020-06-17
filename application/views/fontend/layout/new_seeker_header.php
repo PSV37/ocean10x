@@ -57,13 +57,14 @@
 </head>
 
 <!---header---->
-
+ <?php  $job_seeker=$this->session->userdata('job_seeker_id'); ?>
 <div class="container-fluid gradient_strip" >
 <div class="container">
 <div class="col-md-12">
 	<div class="col-md-3">
    <div class="menu_logo">
       <img src="http://www.tele-kinetics.com/assets/img/logo.png" />
+      <!-- <img src="http://www.tele-kinetics.com/assets/img/logo.png" />/ -->
    </div> 
    </div>
    
@@ -109,10 +110,10 @@
     
     <div class="col-md-2">
     	 <div class="dropdown">
-  <i class="fas fa-user-circle"></i>&emsp;<a class=" dropdown-toggle" data-toggle="dropdown">
+  <img src="<?php echo base_url() ?>upload/<?php echo  $this->Job_seeker_photo_model->get_jobseeker_photo($job_seeker);?>" class="fas fa-user-circle">&emsp;<a class=" dropdown-toggle" data-toggle="dropdown">
     
     <span class="caret"></span>
-    <p class="profile-accoutnt-p">supriya</p>
+    <p class="profile-accoutnt-p"><?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></p>
     </a>
     <ul class="dropdown-menu">
       <li><a href="#"><i class="fas fa-user"></i>My Profile</a> </li>
