@@ -115,8 +115,8 @@
     <p class="profile-accoutnt-p">supriya</p>
     </a>
     <ul class="dropdown-menu">
-      <li><a href="#"><i class="fas fa-user"></i></a> My Profile</li>
-      <li><a href="#"><i class="fas fa-lock"></i></a>Change Password</li>
+      <li><a href="#"><i class="fas fa-user"></i>My Profile</a> </li>
+      <li><a href="#"><i class="fas fa-lock"></i>Change Password</a></li>
       <li><a href="#" onclick="logout();"><i class="fas fa-power-off"> Logout</i></a></li>
     </ul>
   </div>
