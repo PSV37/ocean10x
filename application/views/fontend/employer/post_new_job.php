@@ -23,7 +23,7 @@ body {
     font-family:sans-serif;
 }*/
 
-#skills_result {
+#skill_set {
     margin:4px;
     background-color:#EFEFEF;
     border-radius:4px;
@@ -32,27 +32,27 @@ body {
     float:left;
 }
 
-#skills_result:hover {
+#skill_set:hover {
     background:red;
 }
 
-#skills_result label {
+#skill_set label {
     float:left;
     width:4.0em;
 }
 
-#skills_result label span {
+#skill_set label span {
     text-align:center;
     padding:3px 0px;
     display:block;
 }
 
-#skills_result label input {
+#skill_set label input {
     position:absolute;
     top:-20px;
 }
 
-#skills_result input:checked + span {
+#skill_set input:checked + span {
     background-color:#911;
     color:#fff;
 }
