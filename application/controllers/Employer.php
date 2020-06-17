@@ -276,7 +276,7 @@ public function job_post()
 						'city_id'            => $this->input->post('city_id'),
                         'job_nature'         => $this->input->post('job_nature'),
                         'job_edu'            => $this->input->post('job_edu'),
-                        'no_jobs'            => $this->input->post('no_jobs'),
+                        // 'no_jobs'            => $this->input->post('no_jobs'),
                         'edu_specialization' => $this->input->post('job_edu_special'),   //new added field
                         'job_role'           => $this->input->post('job_role'),   //new added field
                         'skills_required'    => implode(',', $this->input->post('skill_set')), //new added field
@@ -284,12 +284,12 @@ public function job_post()
                         'job_level'          => $this->input->post('job_level'),
                         'salary_range'       => $this->input->post('salary_range'),
                         // 'job_types'          => $this->input->post('job_types'),
-                        "job_deadline"       => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('job_deadline')))),
+                        // "job_deadline"       => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('job_deadline')))),
 
       //                   'preferred_age'      => $this->input->post('preferred_age_from'),
 						// 'preferred_age_to'   => $this->input->post('preferred_age_to'),
-                        'working_hours'      => $this->input->post('working_hours'),
-                        'is_test_required'      => $this->input->post('job_test_requirment'),
+                        // 'working_hours'      => $this->input->post('working_hours'),
+                        // 'is_test_required'      => $this->input->post('job_test_requirment'),
                         
                     );
                     if (empty($job_post_id)) {
