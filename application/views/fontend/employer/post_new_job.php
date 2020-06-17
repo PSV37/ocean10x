@@ -1,5 +1,6 @@
 <!---header-->
  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css">
+
 <?php 
 
 $company_profile_id = $this->session->userdata('company_profile_id');
@@ -7,6 +8,12 @@ $company_profile_id = $this->session->userdata('company_profile_id');
  $this->load->view('fontend/layout/employer_new_header.php');
  
 ?>
+<style>
+  .required
+  {
+    color: red;
+  }
+</style>
 <!---header--->
 <div class="container-fluid main-d">
 	<div class="container">
@@ -21,7 +28,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
           <section>
              <div class="col-md-4 col-sm-4">
                 <div class="formrow">
-                <label class="control-label ">Job Title / Designation<span class="required">*</span> </label>
+                <label class="control-label ">Job Title / Designation<span class="required"> * </span> </label>
                 <input type="text" name="job_title" value="<?php if(!empty($job_info->job_title)){
                   echo $job_info->job_title;} ?><?php echo set_value('job_title'); ?>" class="form-control" autocomplete="off" required="">
                   <?php echo form_error('job_title'); ?>
@@ -29,7 +36,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
               </div>
              <div class="col-md-4 col-sm-4">
                 <div class="formrow">
-                  <label class="control-label ">Job Locations<span class="required">*</span> </label>
+                  <label class="control-label ">Job Locations<span class="required"> * </span> </label>
                     <input type="text" name="city_id" class="form-control" id="tokenfield" placeholder="Enter Location"
                         value=""><?php echo form_error('city_id'); ?>                   
                   </div>
@@ -46,7 +53,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                   <div class="col-sm-12 p-m-2">
               <div class="formrow">
                 <!-- donain is nothing but industry -->
-                <label class="control-label ">Skill Set<span class="required">*</span> </label>
+                <label class="control-label ">Skill Set<span class="required"> * </span> </label>
                 <div id="skills_result">Please Select Job Role.</div>       
               </div>
             </div>
@@ -55,7 +62,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
           <section>
             <div class="col-md-4 col-sm-12"> 
                   <div class="formrow">  
-                    <label class="control-label">Education Level<span class="required">*</span></label>
+                    <label class="control-label">Education Level<span class="required"> * </span></label>
                     <select name="job_edu" id="job_edu" class="form-control" data-style="btn-default" data-live-search="true" onchange="getEducationSpecial(this.value)" required="">
                       <option value="">Select Level </option>
                       <?php foreach($education_level as $education){?>
@@ -66,7 +73,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
               </div>
             <div class="col-md-4 col-sm-12" id="spectial"> 
                   <div class="formrow">  
-                    <label class="control-label ">Specialization <span class="required">*</span></label>
+                    <label class="control-label ">Specialization <span class="required"> * </span></label>
                     <select name="job_edu_special" id="job_edu_special" class="form-control" data-style="btn-default" data-live-search="true">
                      <option value="">Select Specialization </option>
                    
@@ -76,7 +83,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
 
                   <div class="col-md-4 col-sm-12">
                 <div class="formrow">
-                  <label class="control-label ">Engagement Model<span class="required">*</span> </label>
+                  <label class="control-label ">Engagement Model<span class="required"> * </span> </label>
                   <select name="job_nature" class="form-control" data-style="btn-default" data-live-search="true" required="">
                     <option value="">Select Engagement Model</option>
                      <?php if(!empty($job_info->job_nature)) {
@@ -92,7 +99,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
             <div class="col-sm-12 p-m-2">
               <div class="formrow">
                 <!-- donain is nothing but industry -->
-                <label class="control-label ">Expected Domain<span class="required">*</span> </label>
+                <label class="control-label ">Expected Domain<span class="required"> * </span> </label>
                 <select name="job_category" id="job_category" required="" class="form-control industry select2-hidden-accessible" data-style="btn-default" data-live-search="true" tabindex="-1" aria-hidden="true">
                   <?php if(!empty($job_info->job_category)) {
                             echo $this->job_category_model->selected($job_info->job_category);
@@ -111,26 +118,26 @@ $company_profile_id = $this->session->userdata('company_profile_id');
            
               <div class="col-md-4 col-sm-4">
                 <div class="formrow">
-                  <label class="control-label">Job Description <span class="required">*</span></label>
+                  <label class="control-label">Job Description <span class="required"> * </span></label>
                   <textarea name="job_desc" class="form-control ckeditor" placeholder="Job Description"><?php if(!empty($job_info)) echo $job_info->job_desc; ?></textarea><?php echo form_error('job_desc'); ?>                                  
                 </div>
               </div>
                <div class="col-md-4 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label ">CTC (in Lakhs)<span class="required">*</span></label>
+                    <label class="control-label ">CTC (in Lakhs)<span class="required"> * </span></label>
                     <input type="text" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1" autocomplete="off"><?php echo form_error('salary_range'); ?>
                   </div>
                 </div>
 
                  <div class="col-md-4 col-sm-12">
                    <div class="formrow">
-                   <label class="control-label">Other Benefits <span class="required">*</span></label>
+                   <label class="control-label">Other Benefits <span class="required"> * </span></label>
                     <textarea name="benefits" class="form-control ckeditor" placeholder="Company benefits offered"><?php if(!empty($job_info)) echo $job_info->benefits; ?></textarea><?php echo form_error('benefits'); ?>                                 
                 </div>
                 </div>
                 <div class="col-md-12 col-sm-12 p-m-7">
                 <div class="formrow">
-                  <label class="control-label">upload JD <span class="required">*</span></label>
+                  <label class="control-label">upload JD <span class="required"> * </span></label>
                  <input type="file" name="">                                  
                 </div>
               </div>
