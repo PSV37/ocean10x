@@ -23,7 +23,7 @@ body {
     font-family:sans-serif;
 }*/
 
-#skill_set {
+#ck-button {
     margin:4px;
     background-color:#EFEFEF;
     border-radius:4px;
@@ -32,27 +32,27 @@ body {
     float:left;
 }
 
-#skill_set:hover {
+#ck-button:hover {
     background:red;
 }
 
-#skill_set label {
+#ck-button label {
     float:left;
     width:4.0em;
 }
 
-#skill_set label span {
+#ck-button label span {
     text-align:center;
     padding:3px 0px;
     display:block;
 }
 
-#skill_set label input {
+#ck-button label input {
     position:absolute;
     top:-20px;
 }
 
-#skill_set input:checked + span {
+#ck-button input:checked + span {
     background-color:#911;
     color:#fff;
 }
