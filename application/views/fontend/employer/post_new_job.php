@@ -162,8 +162,10 @@ $company_profile_id = $this->session->userdata('company_profile_id');
             </section>
             <div class="button" id="prev">&larr; Previous</div>
             <div class="button" id="next">Next &rarr;</div>
+            <button type="button" class="button" id="submit">Preview</button>
+            
             <button type="submit" class="button" id="submit">Post Job</button>
-      
+
         </div>
       </form>
     </div>
