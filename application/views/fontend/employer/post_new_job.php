@@ -53,7 +53,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                     ?>" autocomplete="off">                  
                   </div>
                 </div>
-                <div class="col-md-4 col-sm-12">
+                <div class="col-sm-12 p-m-2">
                 <div class="formrow">
                   <label>Job Role<span class="required">*</span></label>
                     <select name="job_role" id="job_role" class="form-control col-sm-5" onchange="getSkillsdetails(this.value)" required="">
