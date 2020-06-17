@@ -820,7 +820,7 @@ function getstate(){
                 if(!empty($skills)){ 
                     foreach($skills as $skill_row){
                       $result .=" <span class='button-checkbox'>
-        <button type='button' class='btn' data-color='primary'>".$skill_row['skill_name']."</button><input type='checkbox' name='skill_set[]' style='height:15px; width:20px;' id='skill_set' class='hidden' value=".$skill_row['id']." checked> ";
+        <button type='button' class='btn' data-color='primary'>".$skill_row['skill_name']."</button><input type='checkbox' name='skill_set[]' style='height:15px; width:20px;' id='skill_set' class='hidden' value=".$skill_row['id']." checked></span> ";
 
                     }
                 }else{
