@@ -54,7 +54,21 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                     ?>" autocomplete="off">                  
                   </div>
                 </div>
-                <div class="col-sm-12 p-m-2">
+                 <div class="col-md-4 col-sm-12">
+                <div class="formrow">
+                    <label class="control-label ">Number of Positions<span class="required">*</span> </label>
+                    <input class="form-control" min="1" type="number" name="no_jobs" value="<?php 
+                      if(!empty($job_info->no_jobs)){ echo $job_info->no_jobs; } ?>" autocomplete="off">  <?php echo form_error('no_jobs'); ?>                
+                  </div>
+              </div>
+               <div class="col-md-4 col-sm-12">
+                <div class="formrow">
+                      <label class="control-label ">Job Deadline<span class="required">*</span></label>
+                      <input type="date" name="job_deadline" class="form-control datepicker hasDatepicker" id="job_deadline_day" required="" value="" autocomplete="off">
+                       
+                    </div><?php echo form_error('job_deadline'); ?>
+              </div>
+                <div class="col-md-4 col-sm-12">
                 <div class="formrow">
                   <label>Job Role<span class="required">*</span></label>
                     <select name="job_role" id="job_role" class="form-control col-sm-5" onchange="getSkillsdetails(this.value)" required="">
@@ -65,12 +79,21 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                     </select>                  
                   </div>
               </div>
-                  <div class="col-sm-12 p-m-2">
+            <div class="col-sm-6 p-m-2">
               <div class="formrow">
                 <!-- donain is nothing but industry -->
                 <label class="control-label ">Skill Set<span class="required"> * </span> </label>
                 <div id="skills_result">Please Select Job Role.</div>       
               </div>
+            </div>
+            <div class="col-sm-6 p-m-2">
+               <div class="formrow">  
+                    <label class="control-label ">Ocean Test Required <span class="required">*</span></label>
+                    <select name="job_test_requirment" id="job_test_requirment" class="form-control" data-style="btn-default" data-live-search="true" required="">
+                      <option value="Yes"<?php if($job_info->is_test_required=="Yes"){ echo "selected"; }?>>Yes </option>
+                      <option value="No"<?php if($job_info->is_test_required=="No"){ echo "selected"; }?>>No </option>
+                    </select> <?php echo form_error('job_test_requirment'); ?>             
+                  </div>
             </div>
           </section>
            
@@ -162,6 +185,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
             </section>
             <div class="button" id="prev">&larr; Previous</div>
             <div class="button" id="next">Next &rarr;</div>
+            <div class="button" id="preview">preview</div>
             <button type="submit" class="button" id="submit">Post Job</button>
       
         </div>
@@ -178,6 +202,7 @@ var child = 1;
 var length = $("section").length - 1;
 $("#prev").addClass("disabled");
 $("#submit").addClass("disabled");
+$("#preview").addClass("disabled");
 
 $("section").not("section:nth-of-type(1)").hide();
 $("section").not("section:nth-of-type(1)").css('transform','translateX(100px)');
@@ -230,6 +255,7 @@ $(".button").click(function () {
     if (child >= length) {
       $(this).addClass("disabled");
       $('#submit').removeClass("disabled");
+      $('#preview').removeClass("disabled");
     }
     if (child <= length) {
       child++;
@@ -237,6 +263,7 @@ $(".button").click(function () {
   } else if (id == "prev") {
     $("#next").removeClass("disabled");
     $('#submit').addClass("disabled");
+    $('#preview').addClass("disabled");
     if (child <= 2) {
       $(this).addClass("disabled");
     }
