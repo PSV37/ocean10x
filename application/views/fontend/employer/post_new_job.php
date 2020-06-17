@@ -70,7 +70,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
               </div>
                 <div class="col-md-4 col-sm-12">
                 <div class="formrow">
-                  <label>Job Role<span class="required">*</span></label>
+                  <label  class="control-label ">Job Role<span class="required">*</span></label>
                     <select name="job_role" id="job_role" class="form-control col-sm-5" onchange="getSkillsdetails(this.value)" required="">
                        <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
                            ?> 
