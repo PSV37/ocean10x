@@ -4,7 +4,7 @@
     margin-top: 60px;
 }
 </style>
-
+<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/job_liosting_dashboard.css">
 <!---header---->
 
 <?php 
