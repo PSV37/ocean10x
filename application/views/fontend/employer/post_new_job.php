@@ -175,9 +175,9 @@ div#next {
 
           
             
-            <button class="button" id="prev">&larr; Previous</button>
-            <button class="button" id="next">Next &rarr;</button>
-           <button class="button" data-toggle="modal" data-target="#rotateModal" id="preview">preview</button>
+            <div class="button" id="prev">&larr; Previous</div>
+            <div class="button" id="next">Next &rarr;</div>
+           <div class="button" data-toggle="modal" data-target="#rotateModal" id="preview">preview</div>
             <button type="submit" class="button" id="submit">Post Job</button>
       
         </div>
