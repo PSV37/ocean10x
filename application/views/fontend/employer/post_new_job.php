@@ -129,13 +129,14 @@ div#next {
           <section>
              <div class="col-md-3 col-sm-12">
                   <div class="formrow">
-                     <input type="radio" name="">CTC (in Lakhs)<span class="required"> * </span>
-                    <input type="text" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1" autocomplete="off"><?php echo form_error('salary_range'); ?>
+                     <label class="control-label ">Salary Range<span class="required"> * </span> </label>
+                     <input type="radio" name="salary_range">Per Month
+                      <input type="radio" name="salary_range">CTC (in Lakhs)
                   </div>
                 </div>
              <div class="col-md-6 col-sm-12">
                   <div class="formrow">
-                    <input type="radio" name=""> CTC (in Lakhs)<span class="required"> * </span>
+                    <input type="text" name=""><span class="required"> * </span>
                     <input type="text" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1" autocomplete="off"><?php echo form_error('salary_range'); ?>
                   </div>
                 </div>
