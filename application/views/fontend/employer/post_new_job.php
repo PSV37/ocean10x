@@ -185,13 +185,53 @@ div#next {
             </section>
             <div class="button" id="prev">&larr; Previous</div>
             <div class="button" id="next">Next &rarr;</div>
-            <center><div class="button" id="preview">preview</div></center> 
+            <center><div class="button" data-toggle="modal" data-target="#rotateModal" id="preview">preview</div></center> 
             <button type="submit" class="button" id="submit">Post Job</button>
       
         </div>
       </form>
     </div>
   </div>
+</div> 
+
+<div class="modal fade-rotate" id="rotateModal<?php echo $v_companyjobs->job_post_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <input type="hidden" name="company_profile_id" id="company_profile_id" value="<?php echo $this->session->userdata('company_profile_id'); ?>">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h5 style="text-align: center;font-size: 24px;font-weight: 600;color:#fff;">Forward this job post</h5>
+          </div>
+          <form action="<?php echo base_url() ?>employer/job_post" class="sendEmail" method="post" autocomplete="off">
+        <div class="modal-body">
+             <div class="col-md-4 col-sm-4">
+                <div class="formrow">
+                <label class="control-label ">Job Title / Designation<span class="required"> * </span> </label>
+                <input type="text" name="job_title" value="<?php if(!empty($job_info->job_title)){
+                  echo $job_info->job_title;} ?><?php echo set_value('job_title'); ?>" class="form-control" autocomplete="off" required="">
+                  <?php echo form_error('job_title'); ?>
+                </div>
+              </div>
+          </div>
+        
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <label class="mdl-textfield__label" for="sample3">Message</label>
+
+          <textarea class="form-control" name="message" rows="5" id="comment" required></textarea>
+          </div>
+         
+         
+       
+        </div>
+        <div class="modal-footer">
+                           
+       <button type="submit" class="btn btn-save">Post Job</button>
+         
+      </div>
+      </form>
+    </div>
+  </div>
+
 </div> 
 
 <script>
