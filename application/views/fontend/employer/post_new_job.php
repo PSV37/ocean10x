@@ -21,10 +21,6 @@ div#next {
     /* margin-left: 385px; */
     /* margin-right: -70px; */
 }
-*{
-    margin: 0;
-    padding: 0;
-}
 
 .form-group {
     margin-bottom: 26px;

@@ -821,8 +821,8 @@ function getstate(){
                     foreach($skills as $skill_row){
                       // $result .="<input type='checkbox' name='skill_set[]' style='height:15px; width:20px;' id='skill_set' value=".$skill_row['id']." checked> ".$skill_row['skill_name']."";
                         $result .= ' <div  id="myfields" class="myfields" >
-                          <ul class="rating-comments"><input type="checkbox"  value='.$skill_row['id'].' class="btn-default1" >
-                                <span>'.$skill_row['skill_name'].'</span></ul></div>';
+                          <input type="checkbox"  value='.$skill_row['id'].' class="btn-default1" >
+                                <span>'.$skill_row['skill_name'].'</span></div>';
 
                     }
                 }else{
