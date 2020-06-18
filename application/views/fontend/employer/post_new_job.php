@@ -209,7 +209,7 @@ label {
 :checked + span {
     background:#2ea148 !important;
     display:inline-block; 
-    width: 100%;
+    width: 12%;
     color: #fff;   
 }
 
