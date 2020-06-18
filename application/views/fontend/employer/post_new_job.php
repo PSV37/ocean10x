@@ -35,7 +35,7 @@ div#next {
           <div id="svg_wrap"></div>
 
           <section>
-             <div class="col-md-4 col-sm-4">
+             <div class="col-md-3 col-sm-4">
                 <div class="formrow">
                 <label class="control-label ">Job Title / Designation<span class="required"> * </span> </label>
                 <input type="text" name="job_title" value="<?php if(!empty($job_info->job_title)){
@@ -43,14 +43,14 @@ div#next {
                   <?php echo form_error('job_title'); ?>
                 </div>
               </div>
-             <div class="col-md-4 col-sm-4">
+             <div class="col-md-3 col-sm-4">
                 <div class="formrow">
                   <label class="control-label ">Job Locations<span class="required"> * </span> </label>
                     <input type="text" name="city_id" class="form-control" id="tokenfield" placeholder="Enter Location"
                         value="" required><?php echo form_error('city_id'); ?>                   
                   </div>
               </div>
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-3 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Expected Experience </label>
                     <input class="form-control" type="text" name="experience" maxlength="2" value="<?php 
@@ -59,7 +59,7 @@ div#next {
                     ?>" autocomplete="off" required>                  
                   </div>
                 </div>
-                 <div class="col-md-4 col-sm-12">
+                 <div class="col-md-3 col-sm-12">
                 <div class="formrow">
                     <label class="control-label ">Number of Positions<span class="required"> *</span> </label>
                     <input class="form-control" min="1" type="number" maxlength="2" name="no_jobs" required value="<?php 
