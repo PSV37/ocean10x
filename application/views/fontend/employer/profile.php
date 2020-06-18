@@ -103,10 +103,10 @@ label {
       <div class="col-md-9 edit-profile">
         <div class="col-md-12 header-profile">
           <div class="col-md-2">
-            <img src="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" style="height:80px;width:80px;" class="img-thumbnail" />
+            <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($company_profile_id);?>" style="height:80px;width:80px;" class="img-thumbnail" />
           </div>
           <div class="col-md-9">
-            <p style="font-size:18px;">Supriya Lakhampure</p>
+            <p style="font-size:18px;"><?php echo $this->company_profile_model->company_name($company_profile_id); ?></p>
             <p class="university">Nagpur University </p>
             <div class="progresss">
               <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
@@ -120,14 +120,14 @@ label {
             <div class="col-md-6 col-sm-12">   
               <div class="formrow">
                	<label class="control-label">Company Name:</label>
-                <input type="text" required="" name="company_name" class="form-control" placeholder="Company Name">
+                <input type="text" required="" name="company_name" class="form-control" placeholder="Company Name" value="<?php if(!empty($company_info->company_name)){ echo $company_info->company_name; } ?>" class="form-control" placeholder="Company Name">
               </div>
             </div>
 
             <div class="col-md-6 col-sm-12">
             	<div class="formrow">
             		<label class="control-label">Company Email: </label>
-                <input type="text" readonly="" name="company_email" class="form-control" placeholder="Company Email">
+                <input type="text" readonly="" name="company_email" class="form-control" placeholder="Company Email" value="<?php  if(!empty($company_info->company_email)){ echo $company_info->company_email; } ?>">
               </div>
             </div>
           </div>
@@ -135,14 +135,14 @@ label {
             <div class="col-md-6 col-sm-12">   
               <div class="formrow">
                	<label class="control-label">Alternate Email ID <span class="required">*</span></label>
-                <input type="text" required="" name="alternate_email_id"  class="form-control" placeholder="Alternate Email ID">                                            
+                <input type="text" required="" name="alternate_email_id"  class="form-control" placeholder="Alternate Email ID" value="<?php if(!empty($company_info->alternate_email_id)){ echo $company_info->alternate_email_id; } ?>">                                            
               </div>
             </div>
 
             <div class="col-md-6 col-sm-12">
             	<div class="formrow">
             	<label class="control-label">Company URL:</label>
-                <input type="text" name="company_url"  class="form-control" placeholder="Company Website">
+                <input type="text" name="company_url"  class="form-control" placeholder="Company Website" value="<?php  if(!empty($company_info->company_url)){ echo $company_info->company_url; } ?>">
                 </div>
             </div>
           </div>
@@ -390,7 +390,9 @@ label {
 							<div class="col-md-6 col-sm-12">
               	<div class="formrow">
               	<label class="control-label">Company Phone:</label>
-                  <input type="tel" required="" name="company_phone"  class="form-control" maxlength="10" id="company_phone" onkeypress="phoneno()">                                            </div>
+                  <input type="tel" required="" name="company_phone"  class="form-control" maxlength="10" id="company_phone" value="<?php 
+                   if(!empty($company_info->company_phone)){ echo $company_info->company_phone; } ?>" onkeypress="phoneno()">   
+                </div>
               </div>
             </div>
             <div class="row f-4">
@@ -419,13 +421,13 @@ label {
  							<div class="col-md-6 col-sm-12">
                <div class="formrow">
                   <label class="control-label">Contact Person Level:</label>
-                  <input type="text" required="" name="cont_person_level" id="cont_person_level" class="form-control" value="Admin" placeholder="E.g. Administrator">					                        
+                  <input type="text" required="" name="cont_person_level" id="cont_person_level" class="form-control" placeholder="E.g. Administrator" value="<?php  if(!empty($company_info->contact_name)){ echo $company_info->contact_name; } ?>">					                        
                 </div>
 					    </div>
               <div class="col-md-6 col-sm-12">
                <div class="formrow">
                   <label class="control-label">Contact Person Email:</label>
-                  <input type="text" name="cont_person_email" id="cont_person_email" required="" class="form-control" value="test@gmail.com">					
+                  <input type="text" name="cont_person_email" id="cont_person_email" required="" class="form-control" value="<?php if(!empty($company_info->cont_person_email)){ echo $company_info->cont_person_email; } ?>">					
                 </div>
               </div>
             </div>     
@@ -433,7 +435,8 @@ label {
 							<div class="col-md-6 col-sm-12">
              	<div class="formrow">
                 <label class="control-label">Contact Person Mobile: <span class="required">*</span></label>
-                 <input type="text" name="cont_person_mobile" id="cont_person_mobile" class="form-control" value="7777777777" onkeypress="phonenoo()" maxlength="10" required="">					                        </div>
+                 <input type="text" name="cont_person_mobile" id="cont_person_mobile" class="form-control" value="<?php  if(!empty($company_info->cont_person_mobile)){ echo $company_info->cont_person_mobile; } ?>" onkeypress="phonenoo()" maxlength="10" required="">					 
+               </div>
               </div>
 										<!-- <div class="col-md-6 col-sm-6">
 											<div class="formrow">
@@ -453,7 +456,7 @@ label {
               <div class="col-md-12 col-sm-12">
                <div class="formrow">
                	<label class="control-label">Company Address-1: <span class="required">*</span></label>
-                  <textarea name="company_address" class="form-control ckeditor" placeholder="Company Address"></textarea>
+                  <textarea name="company_address" class="form-control ckeditor" placeholder="Company Address"><?php if(!empty($company_info->company_address)){ echo $company_info->company_address; } ?></textarea>
                 </div>
               </div>
   					</div>    
@@ -461,7 +464,8 @@ label {
               <div class="col-md-12 col-sm-12">
                <div class="formrow">
                	<label class="control-label">Company Address-2: <span class="required">*</span></label>
-                  <textarea name="company_address" class="form-control ckeditor" placeholder="Company Address"></textarea>        
+                  <textarea name="company_address" class="form-control ckeditor" placeholder="Company Address"><?php if(!empty($company_info->company_address)){ echo $company_info->company_address2;
+                                               } ?></textarea>        
                 </div>
               </div>
   					</div>
