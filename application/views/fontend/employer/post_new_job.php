@@ -137,15 +137,16 @@ div#next {
              <div class="col-md-6 col-sm-12">
                   <div class="formrow">
                      <label class="control-label ">Salary Range<span class="required"> * </span> </label>
-                     <input type="radio" name="salary_range">Per Month
-                      * </span>
+                     <input type="radio" name="salary_range">
+                     
                       
                   </div>
                 </div>
              <div class="col-md-6 col-sm-12">
                   <div class="formrow">
                     <label></label>
-                    <input type="radio" name="salary_range">CTC (in Lakhs)
+                    <input type="radio" name="salary_range">
+                    
                    
                    <!--  <input type="text" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1" autocomplete="off"><?php echo form_error('salary_range'); ?> -->
                   </div>
