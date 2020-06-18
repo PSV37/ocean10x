@@ -52,50 +52,21 @@ div#next {
               </div>
                 <div class="col-md-3 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label ">Expected Experience </label>
+                    <label class="control-label ">Expected Experience<span class="required"> *</span> </label>
                     <input class="form-control" type="text" name="experience" maxlength="2" value="<?php 
                       if(!empty($job_info->experience)){ echo $job_info->experience;
                        }
                     ?>" autocomplete="off" required>                  
                   </div>
                 </div>
-                 <div class="col-md-3 col-sm-12">
+                <div class="col-md-3 col-sm-12">
                 <div class="formrow">
                     <label class="control-label ">Number of Positions<span class="required"> *</span> </label>
                     <input class="form-control" min="1" type="number" maxlength="2" name="no_jobs" required value="<?php 
                       if(!empty($job_info->no_jobs)){ echo $job_info->no_jobs; } ?>" autocomplete="off">  <?php echo form_error('no_jobs'); ?>                
                   </div>
               </div>
-               <div class="col-md-4 col-sm-12">
-                <div class="formrow">
-                      <label class="control-label ">Job Deadline<span class="required">  *</span></label>
-                      <input type="date" name="job_deadline" class="form-control datepicker hasDatepicker" id="job_deadline_day" required="" value="" autocomplete="off">
-                       
-                    </div><?php echo form_error('job_deadline'); ?>
-              </div>
-                <div class="col-md-4 col-sm-12">
-                <div class="formrow">
-                  <label  class="control-label ">Job Role<span class="required"> *</span></label>
-                    <select name="job_role" id="job_role" class="form-control col-sm-5" onchange="getSkillsdetails(this.value)" required="">
-                       <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
-                           ?> 
-                          <option value="<?php echo $role_value['id']; ?>"<?php if(!empty($job_info)) if($job_info->job_role==$role_value['id']) echo 'selected'; ?>><?php echo $role_value['job_role_title']; ?></option>
-                        <?php } ?><?php echo form_error('job_role'); ?>
-                    </select>                  
-                  </div>
-              </div>
-            <div class="col-sm-12 p-m-2">
-              <div class="formrow">
-                <!-- donain is nothing but industry -->
-                <label class="control-label ">Skill Set<span class="required"> * </span> </label>
-                <div id="skills_result">Please Select Job Role.</div>       
-              </div>
-            </div>
-           
-          </section>
-           
-          <section>
-            <div class="col-md-4 col-sm-12"> 
+               <div class="col-md-3 col-sm-12"> 
                   <div class="formrow">  
                     <label class="control-label">Education Level<span class="required"> * </span></label>
                     <select name="job_edu" id="job_edu" class="form-control" data-style="btn-default" data-live-search="true" onchange="getEducationSpecial(this.value)" required="">
@@ -106,17 +77,7 @@ div#next {
                   </select>   <?php echo form_error('job_edu'); ?>                
                 </div>
               </div>
-            <div class="col-md-4 col-sm-12" id="spectial"> 
-                  <div class="formrow">  
-                    <label class="control-label ">Certifications Preferred <span class="required"> * </span></label>
-                    <select name="job_edu_special" id="job_edu_special" class="form-control" data-style="btn-default" data-live-search="true">
-                     <option value="">Select Certifications </option>
-                   
-                    </select> 
-                  </div>
-                </div>
-
-                  <div class="col-md-4 col-sm-12">
+              <div class="col-md-3 col-sm-12">
                 <div class="formrow">
                   <label class="control-label ">Engagement Model<span class="required"> * </span> </label>
                   <select name="job_nature" class="form-control" data-style="btn-default" data-live-search="true" required="">
@@ -129,7 +90,45 @@ div#next {
                       ?>
                   </select>   <?php echo form_error('job_nature'); ?>               
                 </div>
-              </div> 
+              </div>
+               <div class="col-md-3 col-sm-12" id="spectial"> 
+                  <div class="formrow">  
+                    <label class="control-label ">Certifications Preferred <span class="required"> * </span></label>
+                    <select name="job_edu_special" id="job_edu_special" class="form-control" data-style="btn-default" data-live-search="true">
+                     <option value="">Select Certifications </option>
+                   
+                    </select> 
+                  </div>
+                </div>
+
+                 <div class="col-md-3 col-sm-12">
+                <div class="formrow">
+                  <label  class="control-label ">Job Role<span class="required"> *</span></label>
+                    <select name="job_role" id="job_role" class="form-control col-sm-5" onchange="getSkillsdetails(this.value)" required="">
+                       <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
+                           ?> 
+                          <option value="<?php echo $role_value['id']; ?>"<?php if(!empty($job_info)) if($job_info->job_role==$role_value['id']) echo 'selected'; ?>><?php echo $role_value['job_role_title']; ?></option>
+                        <?php } ?><?php echo form_error('job_role'); ?>
+                    </select>                  
+                  </div>
+              </div>
+               
+               
+            <div class="col-sm-6 p-m-2">
+              <div class="formrow">
+                <!-- donain is nothing but industry -->
+                <label class="control-label ">Skill Set<span class="required"> * </span> </label>
+                <div id="skills_result">Please Select Job Role.</div>       
+              </div>
+            </div>
+           
+          </section>
+           
+          <section>
+           
+           
+
+                 
   
             <div class="col-sm-12 p-m-2">
               <div class="formrow">
