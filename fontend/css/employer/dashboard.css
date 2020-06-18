@@ -1,5 +1,5 @@
 body{font-family:#f8feff;}
-.gradient_strip{background-color:#18c5bd;
+.gradient_strip{background-color:
 				padding: 10px;
 				box-shadow: 2px 2px 4px #d9d9da;
 				width:100%;
@@ -9,6 +9,7 @@ body{font-family:#f8feff;}
 .container-fluid.main-d {
     padding-top: 45px;
 }
+.container{max-width:1280px;}
 .menu_logo img{width:180px;}
 .search-form {
     position: relative;
