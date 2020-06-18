@@ -21,6 +21,132 @@ div#next {
     /* margin-left: 385px; */
     /* margin-right: -70px; */
 }
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.form-group {
+    margin-bottom: 26px;
+}
+
+.star-text {
+    width: 53%;
+    margin-top: 32px;
+}
+
+
+
+@media only screen and (max-width: 320px){
+.myfields ul {
+     margin-left: -10px !important;
+}
+}
+
+@media only screen and (max-width: 375px){
+.myfields ul {
+    width: 267px !important;
+    margin-left: 19px;
+}
+
+.star-text {
+    width: 50%;
+    margin-top: 13px;
+    margin-left: 6px;
+}
+}
+
+
+@media only screen and (max-width: 500px){
+    .rate {
+    float: none !important;
+    padding: 0px !important;
+    width: 157px !important;
+    margin: 0 auto !important;
+}
+
+[type="checkbox"] + span {
+    padding: 10px 7px !important;
+}
+
+.myfields ul {
+    float: left !important;
+    width: 167px; 
+}
+
+.btn-default1:not(:checked) + span {
+    padding: 17px 10px !important;
+    width: 154px !important;
+    border-radius: 4px !important;
+}
+
+.btn-default1:input(:checked){
+    padding: 17px 10px !important;
+    width: 154px !important;
+    border-radius: 4px !important; 
+
+}
+
+
+.myfields {
+    margin-left: 5px !important;
+    margin-top: 26px !important;
+}
+
+:checked + span {
+    padding: 17px 10px !important;
+    width: 154px !important;
+    border-radius: 4px !important; 
+}
+
+
+
+}
+
+
+.rate {
+    float: left;
+    height: 46px;
+    /*padding: 0 10px;*/
+    padding: 12px 213px;
+    margin-top: -16px;
+}
+
+
+
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+    padding: 5px 0px 0px 0px;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #2ea148;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #2ea148;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #2ea148;
+}
+
+
 .myfields > input:checked ~ label {
     color: #2ea148;    
 }
@@ -35,6 +161,16 @@ div#next {
 .myfields > input:checked ~ label ~ label:hover  {
     color: #2ea148;
 }
+
+input[type="checkbox"] {
+    margin: 4px 0 0;
+    margin-top: 1px \9;
+    line-height: normal;
+    display: none;
+}
+
+
+
 .btn-default1:not(:checked) + span {
     background: #e4e2e2;
     /*padding: 8px 0;*/
@@ -44,6 +180,46 @@ div#next {
 }
 
 
+/*.btn-default1:input(:checked){
+    background-color: red;
+}*/
+
+
+.star-rating .fa-star{color: green;}
+}
+
+
+
+/*example*/
+label {
+    position:relative;   
+    cursor:pointer;
+}
+/*label [type="checkbox"] {
+    display:none;
+}*/
+[type="checkbox"] + span {
+    display:inline-block;
+    padding:1em;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+/*.btn-default1:not(:checked) + span:hover {
+    background-color: #2ea148 !important;
+}*/
+
+:checked + span {
+    background:#2ea148 !important;
+    display:inline-block; 
+    width: 100%;
+    color: #fff;   
+}
+
+[type="checkbox"][disabled] + span {
+    background:#f00;  
+}
 </style>
 <!---header--->
 <div class="container-fluid main-d">
