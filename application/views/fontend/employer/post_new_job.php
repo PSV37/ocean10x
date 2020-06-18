@@ -131,7 +131,7 @@ div#next {
                     </select> <?php echo form_error('job_test_requirment'); ?>             
                   </div>      
               </div>
-            </div>
+          
            
           </section>
            
