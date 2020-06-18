@@ -236,6 +236,7 @@ div#next {
 <script>
   $(document).ready(function(){
     $('input').keyup(function(){
+      alert('input');
         if($(this).val().length==$(this).attr("maxlength")){
             $(this).next().focus();
         }
