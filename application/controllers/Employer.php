@@ -211,7 +211,7 @@ class Employer extends MY_Employer_Controller
                     $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Company Profile details have been successfully updated !</div>');
                     $company_info = $this->company_profile_model->get($employer_id);
                     $country = $this->Master_model->getMaster('country',$where=false);
-                    $this->load->view('fontend/employer/dashboard', compact('company_info', 'country', 'branches'));
+                    $this->load->view('fontend/employer/profile', compact('company_info', 'country', 'branches'));
                      
                 }
             }
@@ -222,7 +222,7 @@ class Employer extends MY_Employer_Controller
                  $branches = $this->Master_model->getMaster('company_branches',$where=$wheres);
                 $company_info = $this->company_profile_model->get($employer_id);
 				$country = $this->Master_model->getMaster('country',$where=false);
-                $this->load->view('fontend/employer/dashboard', compact('company_info', 'country', 'branches'));
+                $this->load->view('fontend/employer/profile', compact('company_info', 'country', 'branches'));
             }
     }
 
@@ -819,7 +819,10 @@ function getstate(){
                $result = '';
                 if(!empty($skills)){ 
                     foreach($skills as $skill_row){
-                      $result .="<input type='checkbox' name='skill_set[]' style='height:15px; width:20px;' id='skill_set' value=".$skill_row['id']." checked> ".$skill_row['skill_name']."";
+                      // $result .="<input type='checkbox' name='skill_set[]' style='height:15px; width:20px;' id='skill_set' value=".$skill_row['id']." checked> ".$skill_row['skill_name']."";
+                        $result .= ' <div  id="myfields" class="myfields" >
+                          <input type="checkbox"  value='.$skill_row['id'].' class="btn-default1" >
+                                <span>'.$skill_row['skill_name'].'</span></div>';
 
                     }
                 }else{
