@@ -114,7 +114,14 @@ div#next {
               </div>
                
                
-            <div class="col-sm-12 p-m-2">
+            <div class="col-sm-6 p-m-2">
+              <div class="formrow">
+                <!-- donain is nothing but industry -->
+                <label class="control-label ">Skill Set<span class="required"> * </span> </label>
+                <div id="skills_result">Please Select Job Role.</div>       
+              </div>
+            </div>
+            <div class="col-sm-6 p-m-2">
               <div class="formrow">
                 <!-- donain is nothing but industry -->
                 <label class="control-label ">Skill Set<span class="required"> * </span> </label>
@@ -127,7 +134,7 @@ div#next {
           
 
           <section>
-             <div class="col-md-3 col-sm-12">
+             <div class="col-md-6 col-sm-12">
                   <div class="formrow">
                      <label class="control-label ">Salary Range<span class="required"> * </span> </label>
                      <input type="radio" name="salary_range">Per Month
