@@ -823,7 +823,7 @@ function getstate(){
                         $result .='<div class="input-group" style="width: 100%">
     <input type="text" class="form-control" placeholder="Password"/>
     <span class="input-group-addon"><input type="checkbox"> Show</span>
-</div>'
+</div>';
 
                     }
                 }else{
