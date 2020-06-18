@@ -122,10 +122,14 @@ div#next {
               </div>
             </div>
             <div class="col-sm-6 p-m-2">
-              <div class="formrow">
-                <!-- donain is nothing but industry -->
-                <label class="control-label ">Skill Set<span class="required"> * </span> </label>
-                <div id="skills_result">Please Select Job Role.</div>       
+              
+                 <div class="formrow">  
+                    <label class="control-label ">Ocean Test Required <span class="required">*</span></label>
+                    <select name="job_test_requirment" id="job_test_requirment" class="form-control" data-style="btn-default" data-live-search="true" required="">
+                      <option value="Yes"<?php if($job_info->is_test_required=="Yes"){ echo "selected"; }?>>Yes </option>
+                      <option value="No"<?php if($job_info->is_test_required=="No"){ echo "selected"; }?>>No </option>
+                    </select> <?php echo form_error('job_test_requirment'); ?>             
+                  </div>      
               </div>
             </div>
            
@@ -146,7 +150,7 @@ div#next {
                   <div class="formrow">
                     <label></label>
                     <input type="radio" name="salary_range">
-                    
+
                    
                    <!--  <input type="text" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1" autocomplete="off"><?php echo form_error('salary_range'); ?> -->
                   </div>
