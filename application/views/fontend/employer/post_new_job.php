@@ -112,16 +112,7 @@ div#next {
                     </select>                  
                   </div>
               </div>
-               
-               
-            <div class="col-sm-6 p-m-2">
-              <div class="formrow">
-                <!-- donain is nothing but industry -->
-                <label class="control-label ">Skill Set<span class="required"> * </span> </label>
-                <div id="skills_result">Please Select Job Role.</div>       
-              </div>
-            </div>
-            <div class="col-sm-6 p-m-2">
+               <div class="col-sm-6 p-m-2">
               
                  <div class="formrow">  
                     <label class="control-label ">Ocean Test Required <span class="required">*</span></label>
@@ -131,6 +122,15 @@ div#next {
                     </select> <?php echo form_error('job_test_requirment'); ?>             
                   </div>      
               </div>
+               
+            <div class="col-sm-12 p-m-2">
+              <div class="formrow">
+                <!-- donain is nothing but industry -->
+                <label class="control-label ">Skill Set<span class="required"> * </span> </label>
+                <div id="skills_result">Please Select Job Role.</div>       
+              </div>
+            </div>
+            
           
            
           </section>
@@ -178,15 +178,7 @@ div#next {
                   <textarea name="job_desc" class="form-control ckeditor" placeholder="Job Description"><?php if(!empty($job_info)) echo $job_info->job_desc; ?></textarea><?php echo form_error('job_desc'); ?>                                  
                 </div>
               </div>
-                 <div class="col-sm-12 p-m-2">
-               <div class="formrow">  
-                    <label class="control-label ">Ocean Test Required <span class="required">*</span></label>
-                    <select name="job_test_requirment" id="job_test_requirment" class="form-control" data-style="btn-default" data-live-search="true" required="">
-                      <option value="Yes"<?php if($job_info->is_test_required=="Yes"){ echo "selected"; }?>>Yes </option>
-                      <option value="No"<?php if($job_info->is_test_required=="No"){ echo "selected"; }?>>No </option>
-                    </select> <?php echo form_error('job_test_requirment'); ?>             
-                  </div>
-            </div>
+                
             </section>
 
           
