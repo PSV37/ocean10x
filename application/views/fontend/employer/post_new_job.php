@@ -23,7 +23,7 @@ div#next {
 }
 
 </style>
-
+<!---header--->
 <div class="container-fluid main-d">
 	<div class="container">
     <div class="col-md-12">
@@ -49,7 +49,6 @@ div#next {
                     <input type="text" name="city_id" class="form-control" id="tokenfield" placeholder="Enter Location"
                         value="" required><?php echo form_error('city_id'); ?>                   
                   </div>
-              </div>
               </div>
                 <div class="col-md-3 col-sm-12">
                   <div class="formrow">
