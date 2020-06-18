@@ -158,12 +158,12 @@ div#next {
     color: #2ea148;
 }
 
-input[type="checkbox"] {
+/*input[type="checkbox"] {
     margin: 4px 0 0;
     margin-top: 1px \9;
     line-height: normal;
     display: none;
-}
+}*/
 
 
 
