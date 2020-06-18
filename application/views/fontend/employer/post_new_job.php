@@ -181,7 +181,7 @@ div#next {
             </section>
 
           
-            </section>
+            
             <div class="button" id="prev">&larr; Previous</div>
             <div class="button" id="next">Next &rarr;</div>
            <div class="button" data-toggle="modal" data-target="#rotateModal" id="preview">preview</div>
