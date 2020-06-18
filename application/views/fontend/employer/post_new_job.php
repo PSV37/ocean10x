@@ -21,6 +21,28 @@ div#next {
     /* margin-left: 385px; */
     /* margin-right: -70px; */
 }
+.myfields > input:checked ~ label {
+    color: #2ea148;    
+}
+.myfields:not(:checked) > label:hover,
+.myfields:not(:checked) > label:hover ~ label {
+    color: #2ea148;  
+}
+.myfields > label:hover + input:checked,
+.myfields > label:hover ~ label,
+.myfields > label:hover ~ input:checked ,
+.myfields > label:hover ~ label ~ input:checked ,
+.myfields > input:checked ~ label ~ label:hover  {
+    color: #2ea148;
+}
+.btn-default1:not(:checked) + span {
+    background: #e4e2e2;
+    /*padding: 8px 0;*/
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
 
 </style>
 <!---header--->
