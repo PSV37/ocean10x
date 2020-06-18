@@ -124,33 +124,12 @@ div#next {
            
           </section>
            
-          <section>
-           
-           
-
-                 
-  
-            <div class="col-sm-12 p-m-2">
-              <div class="formrow">
-                <!-- donain is nothing but industry -->
-                <label class="control-label ">Expected Domain<span class="required"> * </span> </label>
-                <select name="job_category" id="job_category" required="" class="form-control industry select2-hidden-accessible" data-style="btn-default" data-live-search="true" tabindex="-1" aria-hidden="true">
-                  <?php if(!empty($job_info->job_category)) {
-                            echo $this->job_category_model->selected($job_info->job_category);
-                          } else {
-                            echo $this->job_category_model->selected();
-                          }
-                        ?>                    
-                 </select>  <?php echo form_error('job_category'); ?>        
-              </div>
-            </div>
-            
-          </section>
+          
 
           <section>
              <div class="col-md-3 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label ">CTC (in Lakhs)<span class="required"> * </span></label>
+                     <input type="radio" name="">CTC (in Lakhs)<span class="required"> * </span>
                     <input type="text" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1" autocomplete="off"><?php echo form_error('salary_range'); ?>
                   </div>
                 </div>
@@ -176,7 +155,7 @@ div#next {
                   <input type="file" name="">                                  
                 </div>
               </div>
-              OR
+              
                  <div class="col-md-12 col-sm-4">
                 <div class="formrow">
                   <label class="control-label">Job Description <span class="required"> * </span></label>
