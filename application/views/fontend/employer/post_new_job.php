@@ -47,35 +47,35 @@ div#next {
                 <div class="formrow">
                   <label class="control-label ">Job Locations<span class="required"> * </span> </label>
                     <input type="text" name="city_id" class="form-control" id="tokenfield" placeholder="Enter Location"
-                        value=""><?php echo form_error('city_id'); ?>                   
+                        value="" required><?php echo form_error('city_id'); ?>                   
                   </div>
               </div>
                 <div class="col-md-4 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Expected Experience </label>
-                    <input class="form-control" type="text" name="experience" value="<?php 
+                    <input class="form-control" type="text" name="experience" maxlength="2" value="<?php 
                       if(!empty($job_info->experience)){ echo $job_info->experience;
                        }
-                    ?>" autocomplete="off">                  
+                    ?>" autocomplete="off" required>                  
                   </div>
                 </div>
                  <div class="col-md-4 col-sm-12">
                 <div class="formrow">
-                    <label class="control-label ">Number of Positions<span class="required">*</span> </label>
-                    <input class="form-control" min="1" type="number" name="no_jobs" value="<?php 
+                    <label class="control-label ">Number of Positions<span class="required"> *</span> </label>
+                    <input class="form-control" min="1" type="number" maxlength="2" name="no_jobs" required value="<?php 
                       if(!empty($job_info->no_jobs)){ echo $job_info->no_jobs; } ?>" autocomplete="off">  <?php echo form_error('no_jobs'); ?>                
                   </div>
               </div>
                <div class="col-md-4 col-sm-12">
                 <div class="formrow">
-                      <label class="control-label ">Job Deadline<span class="required">*</span></label>
+                      <label class="control-label ">Job Deadline<span class="required">  *</span></label>
                       <input type="date" name="job_deadline" class="form-control datepicker hasDatepicker" id="job_deadline_day" required="" value="" autocomplete="off">
                        
                     </div><?php echo form_error('job_deadline'); ?>
               </div>
                 <div class="col-md-4 col-sm-12">
                 <div class="formrow">
-                  <label  class="control-label ">Job Role<span class="required">*</span></label>
+                  <label  class="control-label ">Job Role<span class="required"> *</span></label>
                     <select name="job_role" id="job_role" class="form-control col-sm-5" onchange="getSkillsdetails(this.value)" required="">
                        <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
                            ?> 
@@ -233,7 +233,15 @@ div#next {
   </div>
 
 </div> 
-
+<script>
+  $(document).ready(function(){
+    $('input').keyup(function(){
+        if($(this).val().length==$(this).attr("maxlength")){
+            $(this).next().focus();
+        }
+    });
+})
+</script>
 <script>
 var base_color = "#dcdcdc";
 var active_color = "rgb(16, 132, 126)";
