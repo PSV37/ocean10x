@@ -50,6 +50,7 @@ div#next {
                         value="" required><?php echo form_error('city_id'); ?>                   
                   </div>
               </div>
+              </div>
                 <div class="col-md-3 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Expected Experience<span class="required"> *</span> </label>
@@ -131,13 +132,63 @@ div#next {
                     </select> <?php echo form_error('job_test_requirment'); ?>             
                   </div>      
               </div>
-            </div>
+           
            
           </section>
            
           
 
-          
+          <section>
+             <div class="col-md-6 col-sm-12">
+                  <div class="formrow">
+                     <label class="control-label ">Salary Range<span class="required"> * </span> </label>
+                     <input type="radio" name="salary_range">
+                     
+                      
+                  </div>
+                </div>
+             <div class="col-md-6 col-sm-12">
+                  <div class="formrow">
+                    <label></label>
+                    <input type="radio" name="salary_range">
+
+                   
+                   <!--  <input type="text" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1" autocomplete="off"><?php echo form_error('salary_range'); ?> -->
+                  </div>
+                </div>
+           
+             
+              
+
+                 <div class="col-md-12 col-sm-12">
+                   <div class="formrow">
+                   <label class="control-label">Other Benefits <span class="required"> * </span></label>
+                    <textarea name="benefits" class="form-control ckeditor" placeholder="Company benefits offered"><?php if(!empty($job_info)) echo $job_info->benefits; ?></textarea><?php echo form_error('benefits'); ?>                                 
+                </div>
+                </div>
+                <div class="col-md-6 col-sm-4">
+                <div class="formrow">
+                  <label class="control-label">Upload JD <span class="required"> * </span></label>
+                  <input type="file" name="">                                  
+                </div>
+              </div>
+              
+                 <div class="col-md-12 col-sm-4">
+                <div class="formrow">
+                  <label class="control-label">Job Description <span class="required"> * </span></label>
+                  <textarea name="job_desc" class="form-control ckeditor" placeholder="Job Description"><?php if(!empty($job_info)) echo $job_info->job_desc; ?></textarea><?php echo form_error('job_desc'); ?>                                  
+                </div>
+              </div>
+                 <div class="col-sm-12 p-m-2">
+               <div class="formrow">  
+                    <label class="control-label ">Ocean Test Required <span class="required">*</span></label>
+                    <select name="job_test_requirment" id="job_test_requirment" class="form-control" data-style="btn-default" data-live-search="true" required="">
+                      <option value="Yes"<?php if($job_info->is_test_required=="Yes"){ echo "selected"; }?>>Yes </option>
+                      <option value="No"<?php if($job_info->is_test_required=="No"){ echo "selected"; }?>>No </option>
+                    </select> <?php echo form_error('job_test_requirment'); ?>             
+                  </div>
+            </div>
+            </section>
 
           
             
