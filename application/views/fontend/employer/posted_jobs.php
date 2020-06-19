@@ -296,12 +296,12 @@ $company_profile_id = $this->session->userdata('company_profile_id');
              </div>
             </label>
         </div>
-         <?php endforeach; 
+        <!--  <?php endforeach; 
           else : ?> 
             <li>
               <strong>There is no active Vacancy Post to Show</strong>
             </li>
-          <?php endif; ?>
+          <?php endif; ?> -->
 			   <div class="col-md-3">
             <!--future use-->
           </div>            
