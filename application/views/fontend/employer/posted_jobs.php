@@ -207,6 +207,8 @@ div#next {
     padding: 6px 17px;
     border-radius: 13px;
 	}
+.myfields label{float: left !important;
+    margin-right: 20px !important;}	
 </style>
 
 
