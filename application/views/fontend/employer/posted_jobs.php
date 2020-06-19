@@ -201,10 +201,10 @@ div#next {
     margin-right: 59px !important;
 }
 :checked + span{background: #18c5bd !important;
-    display: initial;
+    display: initial !important;
     width: 100% !important;     
     color: #fff;
-    padding: 6px 17px;
+    padding: 6px 17px !important;
     border-radius: 13px;
 	}
 ul.rating-comments label {float:left;margin-right:10px;}    
