@@ -215,10 +215,13 @@ input{
                 <div class="col-md-3 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Expected Experience<span class="required"> *</span> </label>
-                    <input class="form-control" type="text" name="experience" maxlength="2" value="<?php 
+                 <!--  <input class="form-control" type="text" name="experience" maxlength="2" value="<?php 
                       if(!empty($job_info->experience)){ echo $job_info->experience;
                        }
-                    ?>" autocomplete="off" required>                  
+                    ?>" autocomplete="off" required> -->
+                     <input class="form-control" min="1" type="number" maxlength="2" name="salary range" placeholder="" />
+               		</div>
+                                     
                   </div>
                 </div>
                 <div class="col-md-3 col-sm-12">
