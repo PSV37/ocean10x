@@ -296,20 +296,11 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                               $skills = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=false,$start=false, $search=false);
                               if(!empty($skills)){ 
                                       foreach($skills as $skill_row){
-                                        echo $skill_row['skill_name'];?>
-                                        <div  id="myfields" class="myfields" >
-                          <ul class="rating-comments" >
-
-
-                            <label>
-                                <input type="checkbox" name="skill_set[]"  value="<?php echo $skill_row['id'] ?>"  class="btn-default1" checked>
+                                        ?>
+                                        <label>
+                                <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
                                 <span><?php echo $skill_row['skill_name'] ?></span>
                             </label>
-
-                        
-                         </ul>
-                       
-                     </div>
                              <?         }
                                     }
                              }
