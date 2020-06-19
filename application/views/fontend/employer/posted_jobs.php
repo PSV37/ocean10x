@@ -176,7 +176,7 @@ background-color: #81c3f8;
 
 
 .col-md-6.active-job {
-    margin-top: 1291px;
+    margin-top: 1382px;
 }
 .dropdown.right-arrow {
     position: absolute;
@@ -270,7 +270,8 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                         <li class="left-title">experience</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->experience; ?></li>
                         <li class="left-title">Joining ETA</li><li class="right-title">&nbsp;:30 days</li>
                         <li class="left-title">Benifits</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->benefits; ?> </li>
-                        <li class="left-title">Skill sets</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->skills_required; ?> </li>
+                        <li class="left-title">Skill sets</li><li class="right-title">&nbsp;: </li>
+                        <!-- <?php echo $v_companyjobs->skills_required; ?> -->
                         <div class="clear"></div>
                       </div>
                       <div class="following-info3">
@@ -285,7 +286,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                                    
                                    
                 <button class="detail-btn">details</button>
-                <span class="active-span">Active</span>
+                <span class="active-span"><?php if ($v_companyjobs->job_deadline > date('Y-m-d')){ echo 'Active' else { echo "Expired";} ?></span>
                 <div class="dropdown">
                   <i class="fas fa-share"></i>
                   <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
