@@ -325,7 +325,9 @@ button.btn-save {
 .modal-header{border-bottom:none;}
 button.btn-save:hover{background-color:#0e776d;
 transition:0.9s;color:#fff;}
-/*postpost new job*/
+
+
+/*post new job*/
 
 .active-job label {
     -webkit-perspective: 1000px;

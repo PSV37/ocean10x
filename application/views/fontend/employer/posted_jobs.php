@@ -203,19 +203,22 @@ div#next {
     margin-right: 59px !important;
 }
 :checked + span{background: #18c5bd !important;
-    display: initial;
-    width: 50%;
+
+    display: initial !important;
+    width: 100% !important;     
+
     color: #fff;
-    padding: 6px 17px;
+    padding: 6px 17px !important;
     border-radius: 13px;
 	}
-</style>
+
+
 
 
       
 
 
-<!---header-->
+/*<!---header-->*/
 <?php 
 $company_profile_id = $this->session->userdata('company_profile_id');
 
