@@ -296,10 +296,10 @@ label {
                      <label class="control-label ">Salary Range<span class="required"> * </span> </label>
                    
                   <input class="form-control" min="1" type="number" maxlength="2" name="salary range" placeholder="" />
-                   <input class="form-control" min="1" type="number" maxlength="2" name="salary range"  placeholder=""/>
+               </div>
                
-                      
-                  </div>
+               <input class="form-control" min="1" type="number" maxlength="2" name="salary range"  placeholder=""/>
+
                 </div>
              <div class="col-md-6 col-sm-12">
                   <div class="formrow">
