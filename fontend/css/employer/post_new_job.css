@@ -483,6 +483,16 @@ li.right-icon-title {
 div#next {
     margin-right: 58px;
 }
+.btn-default1:not(:checked) + span{
+ background-color:#CCC;
+    display: inline-block;
+    width: 100%;
+    color: #fff;
+    padding: 5px 12px !important;   
+    font-size: 11px;
+	border-radius:13px !important; }	
+	
+	}
 :checked + span {
     background: #18c5bd !important;
     display: inline-block;
