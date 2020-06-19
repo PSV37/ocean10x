@@ -472,7 +472,7 @@ li.right-icon-title {
 	line-height:24px;
 }
 
-
+    
 <!--skills css-->
 div#next {
     float: right;    
@@ -486,4 +486,9 @@ div#next {
     padding: 6px 17px !important;
     border-radius: 13px;
 	}
-ul.rating-comments label {float:left;margin-right:10px;}    
+ul.rating-comments label {float:left;
+margin-right: 11px;
+    margin-bottom: 19px;}    
+ul.rating-comments {
+    margin-left: -40px;
+}
