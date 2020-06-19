@@ -293,15 +293,27 @@ span.options_beni {
                 
               </div>
                <div class="col-sm-6 p-m-2">
-              <div class="formrow">
-                  <label  class="control-label ">Job Role<span class="required"> *</span></label>
-                    <select name="job_role" id="job_role" class="form-control col-sm-5" onchange="getSkillsdetails(this.value)" required="">
-                       <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
-                           ?> 
-                          <option value="<?php echo $role_value['id']; ?>"<?php if(!empty($job_info)) if($job_info->job_role==$role_value['id']) echo 'selected'; ?>><?php echo $role_value['job_role_title']; ?></option>
-                        <?php } ?><?php echo form_error('job_role'); ?>
-                    </select>                  
+               <div class="col-md-3 col-sm-12">
+                <div class="formrow">
+                  <label class="control-label ">Salary Range<span class="required"> * </span> </label>
+                  <input class="form-control" min="1" type="number" maxlength="2" name="salary range" placeholder="" />
+                 </div>
+            </div>    
+            <div class="col-md-3 col-sm-12">
+              <div class="formrow" style="margin-top:37px;">
+                <input class="form-control" min="1" type="number" maxlength="2" name="salary range"  placeholder=""/>
+              </div>
+            </div>
+               
+             <div class="col-md-6 col-sm-12">
+                  <div class="formrow">
+                    <label></label>
+                    <input type="radio" name="salary_range">
+
+                   
+                   <!--  <input type="text" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1" autocomplete="off"><?php echo form_error('salary_range'); ?> -->
                   </div>
+                </div>
                       
               </div>
                <div class="col-sm-6 p-m-2">
@@ -332,31 +344,7 @@ span.options_beni {
           
 
           <section>
-             <div class="col-md-2 col-sm-12">
-                  <div class="formrow">
-                     <label class="control-label ">Salary Range<span class="required"> * </span> </label>
-                   
-                  <input class="form-control" min="1" type="number" maxlength="2" name="salary range" placeholder="" />
-               </div>
-              
-               
-               </div>    
-                <div class="col-md-2 col-sm-12">
-               | <div class="formrow" style="margin-top:37px;">
-
-             <input class="form-control" min="1" type="number" maxlength="2" name="salary range"  placeholder=""/>
-				</div>
-                </div>
-               
-             <div class="col-md-6 col-sm-12">
-                  <div class="formrow">
-                    <label></label>
-                    <input type="radio" name="salary_range">
-
-                   
-                   <!--  <input type="text" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1" autocomplete="off"><?php echo form_error('salary_range'); ?> -->
-                  </div>
-                </div>
+            
            
              
               
