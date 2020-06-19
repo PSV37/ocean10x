@@ -472,7 +472,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                         <li class="left-title">Skillls</li>
                         
             <?php 
-            $sk =  echo $v_companyjobs->skills_required; 
+            $sk =  $v_companyjobs->skills_required; 
             $where_sk= "id IN (".$sk.") AND status=1";
             $select_sk = "skill_name ,id";
             $skills = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=false,$start=false, $search=false);

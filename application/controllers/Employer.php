@@ -315,7 +315,8 @@ public function job_post()
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                   Vacancy post is sucessfully created  
                   </div>');
-                      redirect('job/show/'.$job_info['job_slugs']);
+                      // redirect('job/show/'.$job_info['job_slugs']);
+                         redirect('employer/active_job');
                     } else {
                        
 
@@ -363,7 +364,8 @@ public function job_post()
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                    Vacancy post is sucessfully Update;
                   </div>');
-                        redirect('job/show/'.$job_info['job_slugs']);
+                        // redirect('job/show/'.$job_info['job_slugs']);
+                         redirect('employer/active_job');
                     }
                 }
                 } else {
