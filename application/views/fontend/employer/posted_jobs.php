@@ -202,6 +202,13 @@ div#next {
     /* margin-left: 385px; */
     margin-right: 59px !important;
 }
+:checked + span{background: #18c5bd !important;
+    display: initial;
+    width: 50%;
+    color: #fff;
+    padding: 6px 17px;
+    border-radius: 13px;
+	}
 </style>
 
 
