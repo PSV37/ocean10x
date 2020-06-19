@@ -366,9 +366,11 @@ span.options_beni {
                    <label class="control-label">Other Benefits <span class="required"> * </span></label>
                <!--     <textarea name="benefits" class="form-control ckeditor" placeholder="Company benefits offered"><?php if(!empty($job_info)) echo $job_info->benefits; ?>--->
                      <div class="form-control benifit-div" style="padding:10px 10px; height:auto;" >
-                    <span class="options_beni">dummy1</span>
-                     <span class="options_beni">dummy2</span>
-                      <span class="options_beni">dummy3</span>
+                   			<label>
+                                <input type="checkbox" value="4" class="btn-default1" checked="">
+                                <span>Advance Java</span>
+                            </label>
+                    
                     
                     </div>
                     
