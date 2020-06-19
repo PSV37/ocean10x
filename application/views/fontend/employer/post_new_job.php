@@ -219,7 +219,9 @@ input{
                       if(!empty($job_info->experience)){ echo $job_info->experience;
                        }
                     ?>" autocomplete="off" required> -->
-                    
+                    <div class="col-md-2">
+                    	<input type="text" name="experience" />
+                    </div>
                                      
                   </div>    
                 </div>
