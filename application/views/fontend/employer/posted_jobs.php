@@ -173,8 +173,10 @@ background-color: #81c3f8;
 	padding:0px;
 }	
 /*end*/
+
+
 .col-md-6.active-job {
-    margin-top: 77px;
+    margin-top: 215px;
 }
 .dropdown.right-arrow {
     position: absolute;
@@ -195,7 +197,25 @@ background-color: #81c3f8;
 .post-job {
     margin-bottom: 20px;
 }	
+div#next {
+    float: right;
+    /* margin-left: 385px; */
+    margin-right: 59px !important;
+}
+:checked + span{background: #18c5bd !important;
+
+    display: initial !important;
+    width: 100% !important;     
+
+    color: #fff;
+    padding: 6px 17px !important;
+    border-radius: 13px;
+	}
+
+
+
 </style>
+
 
 
       
@@ -215,7 +235,8 @@ $company_profile_id = $this->session->userdata('company_profile_id');
 	<div class="container">
     <div class="col-md-12">
       <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
-     
+       <!-- <div class="panel-body"></div> -->
+        <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
             <div class="col-md-6 active-job">
               <label>
                 <input type="checkbox" />
@@ -279,7 +300,14 @@ $company_profile_id = $this->session->userdata('company_profile_id');
              </div>
             </label>
         </div>
-        
+         <?php endforeach; 
+          else : ?> 
+            <li>
+              <strong>There is no active Vacancy Post to Show</strong>
+            </li>
+          <?php endif; ?>
+			   <div class="col-md-3">
+            <!--future use-->
           </div>            
 		</div>
   </div>
