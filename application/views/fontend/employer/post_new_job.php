@@ -258,7 +258,7 @@ label {
                <label class="control-label ">Certifications Preferred <span class="required"> * </span></label>
 					<input type="text" name="job_title" value="<?php if(!empty($job_info->job_title)){
                   echo $job_info->job_title;} ?><?php echo set_value('job_title'); ?>" class="form-control" autocomplete="off" required="">
-              </div>
+              </div>     
                <div class="col-sm-6 p-m-2">
               
                  <div class="formrow">  
