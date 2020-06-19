@@ -825,7 +825,7 @@ function getstate(){
                           <ul class="rating-comments" >
 
 
-                            <label class="col-sm-3" >
+                            <label>
                                 <input type="checkbox"  value='.$skill_row['id'].'  class="btn-default1" checked>
                                 <span>'.$skill_row['skill_name'].'</span>
                             </label>
