@@ -1,3 +1,11 @@
+<style>
+.btn-pass{background-color:#18c5bd;
+border-radius:30px;
+padding:0px 25px;}
+</style>
+
+
+
 <?php 
     $this->load->view('fontend/layout/employer_header.php');
 ?>                
@@ -35,7 +43,7 @@
                                             <input type="password" name="newpassword" class="form-control" placeholder="Type your new password">
                                             <br>
                                             <div class="change-pass_btn" style="text-align:end;">
-                                               <button type="submit" class="btn btn-primary">Update Password</button>
+                                               <button type="submit" class="btn-pass">Update Password</button>
                                           	 </div>
                                         </div>
 
