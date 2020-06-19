@@ -365,7 +365,7 @@ span.options_beni {
                    <div class="formrow">
                    <label class="control-label">Other Benefits <span class="required"> * </span></label>
                <!--     <textarea name="benefits" class="form-control ckeditor" placeholder="Company benefits offered"><?php if(!empty($job_info)) echo $job_info->benefits; ?>--->
-                     <div class="form-control" >
+                     <div class="form-control" style="padding:20px 0px;" >
                     <span class="options_beni">dummy1</span>
                      <span class="options_beni">dummy2</span>
                       <span class="options_beni">dummy3</span>
