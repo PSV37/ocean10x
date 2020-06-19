@@ -370,6 +370,10 @@ span.options_beni {
                                 <input type="checkbox" value="4" class="btn-default1" checked="">
                                 <span>dummy1</span>
                             </label>
+                            <label>
+                                <input type="checkbox" value="4" class="btn-default1" checked="">
+                                <span>dummy1</span>
+                            </label>
                     
                     
                     </div>
