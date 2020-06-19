@@ -18,8 +18,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
 }
 div#next {
     float: right;
-    /* margin-left: 385px; */
-    /* margin-right: -70px; */
+    margin-right: 4px;
 }
 
 .form-group {
