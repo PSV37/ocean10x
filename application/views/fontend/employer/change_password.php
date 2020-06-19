@@ -1,3 +1,13 @@
+<style>
+.btn-pass{background-color:#18c5bd;
+border-radius:30px;
+padding:0px 25px;border:none;}
+.btn-pass:hover{background-color:#16a9a2;
+}
+</style>
+
+
+
 <?php 
     $this->load->view('fontend/layout/employer_header.php');
 ?>                
@@ -34,12 +44,44 @@
                                             <label class="control-label">New Password</label>
                                             <input type="password" name="newpassword" class="form-control" placeholder="Type your new password">
                                             <br>
-                                               <button type="submit" class="btn btn-primary">Update Password</button>
+                                            <div class="change-pass_btn" style="text-align:end;">
+                                               <button type="submit" class="btn-pass" data-toggle="modal" data-target="#modal_pass">Update Password</button>
+                                          	 </div>
+                                             
+                                             
+                                             
+                                       
+                    
+                      <!-- Modal -->
+                      <div class="modal fade" id="modal_pass" role="dialog">
+                        <div class="modal-dialog">
+                            
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <div class="modal-header">
+                             
+                              <h4 class="modal-title">Your password has been changed successfully .</h4>
+                            </div>
+                           
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+                            </div>
+                          </div>
+                          
+                        </div>
+                      </div>
+                      
+
+                                             
+                                             
+                                             
+                                             
+                                             
                                         </div>
 
                                     </div>
                                 </form>
-                            </div><!-- end post-padding -->
+                            </div><!-- end post-padding -->    
                         </div>
                         </div>
 
