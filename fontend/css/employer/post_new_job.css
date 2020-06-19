@@ -473,11 +473,9 @@ li.right-icon-title {
 }
 
     
-<!--skills css-->
+/*skills css*/
 div#next {
-    float: right;    
-    /* margin-left: 385px; */
-    margin-right: 53px !important;   
+    margin-right: 58px;
 }
 :checked + span {
     background: #18c5bd !important;
