@@ -471,33 +471,8 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                       <div>
                         <li class="left-title">Skillls</li>
                         
-            <?php 
-            $sk =   $v_companyjobs->skills_required; 
-            $where_sk= "id IN (".$sk.") AND status=1";
-            $select_sk = "skill_name ,id";
-            $skills = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=false,$start=false, $search=false);
-              
-               $result = '';
-                if(!empty($skills)){ 
-                    foreach($skills as $skill_row){ ?>
-                      <input type='checkbox' name='skill_set[]' style='height:15px; width:20px;' id='skill_set' value=".$skill_row['id']." checked> ".$skill_row['skill_name']."";
-                        $result .= '
-                          <div  id="myfields" class="myfields" >
-                          <ul class="rating-comments" >
+            
 
-
-                            <label>
-                                <input type="checkbox" name="skill_set[]"  value="<?php echo $skill_row['skill_name']; ?>" class="btn-default1" checked>
-                                <span><?php echo $skill_row['skill_name']?></span>
-                            </label>
-
-                        
-                         </ul>
-                       
-                     </div>';
-
-                    } 
-                  }
                      <div class="clear"></div>
                  </div>
                                    
