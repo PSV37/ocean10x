@@ -368,7 +368,7 @@ span.options_beni {
                      <div class="form-control benifit-div" style="padding:10px 10px; height:auto;" >
                    			<label>
                                 <input type="checkbox" value="4" class="btn-default1" checked="">
-                                <span>Advance Java</span>
+                                <span>dummy1</span>
                             </label>
                     
                     
