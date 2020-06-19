@@ -286,24 +286,18 @@ $company_profile_id = $this->session->userdata('company_profile_id');
               </div>
              </div>
             </label>
- 
-                  
-           
-      </div>
-          
-            <?php
-            endforeach;
-            ?>
-            <?php else : ?> 
-                <li>
-                    <strong>There is no active Vacancy Post to Show</strong>
-                </li>
-            <?php endif; ?>
-			<div class="col-md-3">
+        </div>
+         <?php endforeach; 
+          else : ?> 
+            <li>
+              <strong>There is no active Vacancy Post to Show</strong>
+            </li>
+          <?php endif; ?>
+			   <div class="col-md-3">
             <!--future use-->
-            </div>            
+          </div>            
 		</div>
-    </div>
+  </div>
 </div>       
 
    <!-- <div class=" text-center">
