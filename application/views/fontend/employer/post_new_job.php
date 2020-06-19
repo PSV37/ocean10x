@@ -100,47 +100,6 @@ div#next {
 }
 
 
-.rate {
-    float: left;
-    height: 46px;
-    /*padding: 0 10px;*/
-    padding: 12px 213px;
-    margin-top: -16px;
-}
-
-
-
-.rate:not(:checked) > input {
-    position:absolute;
-    top:-9999px;
-}
-.rate:not(:checked) > label {
-    float:right;
-    width:1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:30px;
-    color:#ccc;
-    padding: 5px 0px 0px 0px;
-}
-.rate:not(:checked) > label:before {
-    content: '★ ';
-}
-.rate > input:checked ~ label {
-    color: #2ea148;    
-}
-.rate:not(:checked) > label:hover,
-.rate:not(:checked) > label:hover ~ label {
-    color: #2ea148;  
-}
-.rate > input:checked + label:hover,
-.rate > input:checked + label:hover ~ label,
-.rate > input:checked ~ label:hover,
-.rate > input:checked ~ label:hover ~ label,
-.rate > label:hover ~ input:checked ~ label {
-    color: #2ea148;
-}
 
 
 .myfields > input:checked ~ label {
