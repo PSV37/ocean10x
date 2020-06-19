@@ -197,10 +197,15 @@ background-color: #81c3f8;
 .post-job {
     margin-bottom: 20px;
 }	
+div#next {
+    float: right;
+    /* margin-left: 385px; */
+    margin-right: 59px !important;
+}
 </style>
 
 
-
+      
 
 
 <!---header-->
