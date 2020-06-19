@@ -309,15 +309,7 @@ span.options_beni {
         </div>
                 </div>
                
-             <div class="col-md-6 col-sm-12">
-                  <div class="formrow">
-                    <label></label>
-                    <input type="radio" name="salary_range">
-
-                   
-                   <!--  <input type="text" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1" autocomplete="off"><?php echo form_error('salary_range'); ?> -->
-                  </div>
-                </div>
+             
 
              
                       
