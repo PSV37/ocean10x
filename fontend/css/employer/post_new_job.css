@@ -477,7 +477,7 @@ li.right-icon-title {
 div#next {
     float: right;    
     /* margin-left: 385px; */
-    margin-right: 59px !important;
+    margin-right: 53px !important;   
 }
 :checked + span {
     background: #18c5bd !important;
