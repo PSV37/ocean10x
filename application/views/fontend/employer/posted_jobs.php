@@ -256,7 +256,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                       </div>
                       <div class="following-info">
                         <li class="left-title"
-                          >Job Roll</li><li class="right-title">&nbsp;: <?php echo $v_companyjobs->job_role; ?></li>
+                          >Job Roll</li><li class="right-title">&nbsp;: <?php echo $v_companyjobs->job_role_title; ?></li>
                           <li class="left-title">Engagement</li><li class="right-title">&nbsp;: <?php echo $v_companyjobs->job_nature_name; ?></li>
                           <li class="left-title">Domain</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->job_category_name; ?></li>
                           <li class="left-title">Role Type </li><li class="right-title">&nbsp;:</li>
@@ -286,7 +286,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                                    
                                    
                 <button class="detail-btn">details</button>
-                <span class="active-span"><?php if ($v_companyjobs->job_deadline > date('Y-m-d')){ echo 'Active' else { echo "Expired";} ?></span>
+                <span class="active-span"><?php if ($v_companyjobs->job_deadline > date('Y-m-d')){ echo 'Active'; } else { echo "Expired";} ?></span>
                 <div class="dropdown">
                   <i class="fas fa-share"></i>
                   <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
