@@ -292,26 +292,18 @@ span.options_beni {
                   </div> 
                 
               </div>
-              <div class="col-md-3 col-sm-12">
+
+                <div class="col-md-3 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label ">Salary Range<span class="required"> *</span> </label>
-                 <!--  <input class="form-control" type="text" name="experience" maxlength="2" value="<?php 
-                      if(!empty($job_info->experience)){ echo $job_info->experience;
-                       }
-                    ?>" autocomplete="off" required> -->
-                    <div class="col-md-3 formrow" style="width:80px;margin-left:-14px;">
-                   
-                       <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text"name="sal_from" />
-                    </div>
-                    
-                     <div class="col-md-3 formrow" style="width:80px;margin-left:-19px;">
-                       <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="sal_to" />
-                    </div>    
-                                     
-                  </div>    
+                    <label class="control-label ">Salary Range<span class="required"> * </span> </label>
+                   <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2"  placeholder="" name="sal_from" />
+                  </div>
+                </div>    
+               <div class="col-md-3 col-sm-12">
+                <div class="formrow" style="margin-top:37px;">
+                  <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2"  name="sal_to"  placeholder=""/>
                 </div>
-                   
-              
+              </div>
               <div class="col-md-3 col-sm-12">
                 <div class="formrow">
                   <label class="control-label ">Expected Domain<span class="required"> * </span> </label>
@@ -330,9 +322,10 @@ span.options_beni {
               <div class="formrow">
                   <label  class="control-label ">Job Role<span class="required"> *</span></label>
                     <select name="job_role" id="job_role" class="form-control col-sm-5" onchange="getSkillsdetails(this.value)" required="">
+                      <option>select job Role</option>
                        <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
                            ?> 
-                           <option>select job Role</option>
+                           
                           <option value="<?php echo $role_value['id']; ?>"<?php if(!empty($job_info)) if($job_info->job_role==$role_value['id']) echo 'selected'; ?>><?php echo $role_value['job_role_title']; ?></option>
                         <?php } ?><?php echo form_error('job_role'); ?>
                     </select>                  
@@ -366,8 +359,12 @@ span.options_beni {
                  <div class="col-md-12 col-sm-12">
                    <div class="formrow">
                    <label class="control-label">Other Benefits <span class="required"> * </span></label>
+                 </div>
+               </div>
                <!--     <textarea name="benefits" class="form-control ckeditor" placeholder="Company benefits offered"><?php if(!empty($job_info)) echo $job_info->benefits; ?>--->
-                     <div class="form-control benifit-div" style="padding:10px 10px; height:auto;" >
+                    <!--  <div class="form-control benifit-div" style="padding:10px 10px; height:auto;" > -->
+                <div class="col-md-12 col-sm-12">
+                   <div class="formrow">
                    			<label>
                                 <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
                                 <span>dummy1</span>
@@ -379,11 +376,12 @@ span.options_beni {
                     
                     
                     </div>
+                  </div>
                     
                     
-                    </textarea><?php echo form_error('benefits'); ?>                                 
-                </div>
-                </div> 
+                    <!-- </textarea><?php echo form_error('benefits'); ?>                                  -->
+                <!-- </div>
+                </div>  -->
                 
                 <div class="col-md-6 col-sm-12">
                 <div class=" formrow">

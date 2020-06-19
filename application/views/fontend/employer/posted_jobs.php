@@ -263,7 +263,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                           <li class="left-title">Role Type </li><li class="right-title">&nbsp;:</li>
                           <li class="left-title">Dummy1</li><li class="right-title">&nbsp;:</li>
                           <li class="left-title">Dummy2</li><li class="right-title">&nbsp;:</li>
-                          <li class="left-title">Skill sets</li><li class="right-title">&nbsp;: </li>
+                          <li class="left-title">Skill sets</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->skills_required; ?> </li>
                           <div class="clear"></div>
                       </div>
                       <div class="following-info2">
