@@ -244,9 +244,7 @@ background-color: #81c3f8;
 /*end*/
 
 
-.col-md-6.active-job {
-    margin-top: 1380px;
-}
+
 .dropdown.right-arrow {
     position: absolute;
     top: -3px;
@@ -388,7 +386,7 @@ input {
 */
 
 .active-job {
-    margin-top:168px;
+    margin-top:1381px;
 }
 .dropdown-menu>li>a{padding:3px 20px;}
 .front{padding:11px;height:248px;}
