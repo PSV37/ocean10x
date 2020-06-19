@@ -4,6 +4,42 @@ border-radius:30px;
 padding:0px 25px;border:none;}
 .btn-pass:hover{background-color:#16a9a2;
 }
+@media (min-width: 768px){
+.modal-dialog {
+    width: 600px;
+    margin: 165px auto;
+}    
+ .modal-dialog{width:250px;}
+
+}
+ .modal-footer{border-top:none;text-align:center;padding: 20px 15px 20px 15px;}
+.modal-header{border-bottom:none;padding:20px 15px 0px 15px}
+.modal-title{padding-top:15px;}
+.btn-default {
+    color: #fff;
+    background-color:#18c5bd;
+	border:none;
+}
+.btn-default1{
+    color: #fff;
+    background-color:#18c5bd;
+	border:none;
+}
+.btn-default:hover{
+	 background-color:#118c86;
+	  color: #fff;}
+.btn-default1:hover{
+	 background-color:#118c86;
+	  color: #fff;
+}
+.modal-title {
+    padding-top: 0px;
+    font-size: 15px;
+    color: #403e3e;
+    font-weight: 700;
+	text-align:center;
+}
+
 </style>
 
 
@@ -51,7 +87,7 @@ padding:0px 25px;border:none;}
                                              
                                              
                                        
-                    
+                            
                       <!-- Modal -->
                       <div class="modal fade" id="modal_pass" role="dialog">
                         <div class="modal-dialog">
