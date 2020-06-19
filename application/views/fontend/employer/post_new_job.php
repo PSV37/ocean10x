@@ -291,11 +291,13 @@ label {
           
 
           <section>
-             <div class="col-md-6 col-sm-12">
+             <div class="col-md-3 col-sm-12">
                   <div class="formrow">
                      <label class="control-label ">Salary Range<span class="required"> * </span> </label>
-                  <input class="form-control" min="1" type="number" maxlength="2" name="salary range" />
-                     
+                     <div class="row">
+                  <input class="form-control" min="1" type="number" maxlength="2" name="salary range" placeholder="" />
+                   <input class="form-control" min="1" type="number" maxlength="2" name="salary range"  placeholder=""/>
+                     </div>
                       
                   </div>
                 </div>
