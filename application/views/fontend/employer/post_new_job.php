@@ -363,6 +363,8 @@ span.options_beni {
                </div>
                <!--     <textarea name="benefits" class="form-control ckeditor" placeholder="Company benefits offered"><?php if(!empty($job_info)) echo $job_info->benefits; ?>--->
                     <!--  <div class="form-control benifit-div" style="padding:10px 10px; height:auto;" > -->
+                <div class="col-md-12 col-sm-12">
+                   <div class="formrow">
                    			<label>
                                 <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
                                 <span>dummy1</span>
@@ -373,7 +375,8 @@ span.options_beni {
                             </label>
                     
                     
-                    <!-- </div> -->
+                    </div>
+                  </div>
                     
                     
                     <!-- </textarea><?php echo form_error('benefits'); ?>                                  -->
