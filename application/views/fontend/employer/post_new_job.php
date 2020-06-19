@@ -170,7 +170,7 @@ input[type="checkbox"] {
 .btn-default1:not(:checked) + span {
     background: #e4e2e2;
     /*padding: 8px 0;*/
-    width: 12%;
+    width: 100%;
     border-radius: 10px;
     cursor: pointer;
 }
@@ -209,7 +209,7 @@ label {
 :checked + span {
     background:#2ea148 !important;
     display:inline-block; 
-    width: 12%;
+    width: 100%;
     color: #fff;   
 }
 
