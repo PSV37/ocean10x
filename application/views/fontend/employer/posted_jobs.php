@@ -263,6 +263,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                           <li class="left-title">Role Type </li><li class="right-title">&nbsp;:</li>
                           <li class="left-title">Dummy1</li><li class="right-title">&nbsp;:</li>
                           <li class="left-title">Dummy2</li><li class="right-title">&nbsp;:</li>
+                          <li class="left-title">Skill sets</li><li class="right-title">&nbsp;: </li>
                           <div class="clear"></div>
                       </div>
                       <div class="following-info2">
@@ -271,7 +272,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                         <li class="left-title">experience</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->experience; ?></li>
                         <li class="left-title">Joining ETA</li><li class="right-title">&nbsp;:30 days</li>
                         <li class="left-title">Benifits</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->benefits; ?> </li>
-                        <li class="left-title">Skill sets</li><li class="right-title">&nbsp;: </li>
+                       
 
                         <div class="clear"></div>
                       </div>
