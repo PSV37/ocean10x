@@ -222,9 +222,9 @@ input{
                    
                     	 <input class="form-control" min="1" type="text" />
                     </div>
-                    <span>-</span>
+                    
                      <div class="col-md-3 formrow" style="width:80px;margin-left:-19px;">
-                    	 <input class="form-control" min="1" type="text" />
+                    	<span>-</span> <input class="form-control" min="1" type="text" />
                     </div>    
                                      
                   </div>    
