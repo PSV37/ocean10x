@@ -255,15 +255,9 @@ label {
                 </div>
 
                  <div class="col-md-3 col-sm-12">
-                <div class="formrow">
-                  <label  class="control-label ">Job Role<span class="required"> *</span></label>
-                    <select name="job_role" id="job_role" class="form-control col-sm-5" onchange="getSkillsdetails(this.value)" required="">
-                       <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
-                           ?> 
-                          <option value="<?php echo $role_value['id']; ?>"<?php if(!empty($job_info)) if($job_info->job_role==$role_value['id']) echo 'selected'; ?>><?php echo $role_value['job_role_title']; ?></option>
-                        <?php } ?><?php echo form_error('job_role'); ?>
-                    </select>                  
-                  </div>
+               <label class="control-label ">Certifications Preferred <span class="required"> * </span></label>
+					<input type="text" name="job_title" value="<?php if(!empty($job_info->job_title)){
+                  echo $job_info->job_title;} ?><?php echo set_value('job_title'); ?>" class="form-control" autocomplete="off" required="">
               </div>
                <div class="col-sm-6 p-m-2">
               
@@ -293,11 +287,7 @@ label {
           <section>
              
               <div class="col-sm-12 p-m-2">
-              <div class="formrow">
-                <!-- donain is nothing but industry -->
-                <label class="control-label ">Skill Set<span class="required"> * </span> </label>
-                <div id="skills_result">Please Select Job Role.</div>       
-              </div>
+              
             </div>
              
              
