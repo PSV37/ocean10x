@@ -219,8 +219,7 @@ input{
                       if(!empty($job_info->experience)){ echo $job_info->experience;
                        }
                     ?>" autocomplete="off" required> -->
-                     <input class="form-control" min="1" type="number" maxlength="2" name="salary range" placeholder="" />
-               		</div>
+                    
                                      
                   </div>
                 </div>
