@@ -176,7 +176,7 @@ background-color: #81c3f8;
 
 
 .col-md-6.active-job {
-    margin-top: 215px;
+    margin-top: 1291px;
 }
 .dropdown.right-arrow {
     position: absolute;
