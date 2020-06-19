@@ -331,7 +331,7 @@ input{
                
                </div>    
                 <div class="col-md-2 col-sm-12">
-                |&emsp;<div class="formrow" style="margin-top:37px;">
+                <div class="formrow" style="margin-top:37px;">
 
              <input class="form-control" min="1" type="number" maxlength="2" name="salary range"  placeholder=""/>
 				</div>
@@ -353,7 +353,14 @@ input{
                  <div class="col-md-12 col-sm-12">
                    <div class="formrow">
                    <label class="control-label">Other Benefits <span class="required"> * </span></label>
-                    <textarea name="benefits" class="form-control ckeditor" placeholder="Company benefits offered"><?php if(!empty($job_info)) echo $job_info->benefits; ?></textarea><?php echo form_error('benefits'); ?>                                 
+                    <textarea name="benefits" class="form-control ckeditor" placeholder="Company benefits offered"><?php if(!empty($job_info)) echo $job_info->benefits; ?>
+                    
+                    <span class="options_beni">dummy1</span>
+                    
+                    
+                    
+                    
+                    </textarea><?php echo form_error('benefits'); ?>                                 
                 </div>
                 </div> 
                 
