@@ -1,7 +1,9 @@
 <style>
 .btn-pass{background-color:#18c5bd;
 border-radius:30px;
-padding:0px 25px;}
+padding:0px 25px;border:none;}
+.btn-pass:hover{background-color:#16a9a2;
+}
 </style>
 
 
