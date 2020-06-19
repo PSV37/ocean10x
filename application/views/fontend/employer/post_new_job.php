@@ -134,7 +134,10 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
-
+.btn-bottom_3 {
+    float: right;
+    margin-right: 47px;
+}
 /*.btn-default1:input(:checked){
     background-color: red;
 }*/
