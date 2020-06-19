@@ -326,12 +326,14 @@ section {
                    <label class="control-label">Other Benefits <span class="required"> * </span></label>
                     <textarea name="benefits" class="form-control ckeditor" placeholder="Company benefits offered"><?php if(!empty($job_info)) echo $job_info->benefits; ?></textarea><?php echo form_error('benefits'); ?>                                 
                 </div>
-                </div>      
+                </div> 
+                <div class="col-md-12">     
                 <div class="col-md-6 col-sm-4">
                 <div class="formrow">
                   <label class="control-label">Upload JD <span class="required"> * </span></label>
                   <input type="file" name="">                                  
                 </div>
+              </div>
               </div>
               
                  <div class="col-md-12 col-sm-4">
