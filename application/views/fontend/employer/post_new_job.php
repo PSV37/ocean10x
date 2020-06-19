@@ -334,7 +334,7 @@ input{
                 </div>
                 </div> 
                 
-                <div class="col-md-12 col-sm-6">
+                <div class="col-md-6 col-sm-12">
                 <div class=" formrow">
                   <label class="control-label">Upload JD <span class="required"> * </span></label>
                   <input type="file" name="">                                  
