@@ -45,8 +45,38 @@ padding:0px 25px;border:none;}
                                             <input type="password" name="newpassword" class="form-control" placeholder="Type your new password">
                                             <br>
                                             <div class="change-pass_btn" style="text-align:end;">
-                                               <button type="submit" class="btn-pass">Update Password</button>
+                                               <button type="submit" class="btn-pass" data-toggle="modal" data-target="#modal_logoff">Update Password</button>
                                           	 </div>
+                                             
+                                             
+                                             
+                                       
+                    
+                      <!-- Modal -->
+                      <div class="modal fade" id="modal_logoff" role="dialog">
+                        <div class="modal-dialog">
+                            
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <div class="modal-header">
+                             
+                              <h4 class="modal-title">Your password has been changed successfully .</h4>
+                            </div>
+                           
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+                            </div>
+                          </div>
+                          
+                        </div>
+                      </div>
+                      
+
+                                             
+                                             
+                                             
+                                             
+                                             
                                         </div>
 
                                     </div>
