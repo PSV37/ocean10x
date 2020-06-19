@@ -209,7 +209,7 @@ div#next {
     padding: 6px 17px;
     border-radius: 13px;
 	}
-.rating-comments label{float: left !important;
+.myfields label{float: left !important;
     margin-right: 20px !important;}	
 </style>
 
