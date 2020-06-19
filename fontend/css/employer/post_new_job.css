@@ -464,6 +464,17 @@ li.right-icon-title {
     font-size: 11px;
 }
 
+.pasive-span{
+   position: absolute;
+    top: 12px;
+    left: 405px;
+    background-color: red;
+    padding: 1px 17px;
+    border-radius: 9px;
+    color: #fff;
+    font-size: 11px;
+}
+
 .following-info3 {
     float: right;
     margin-top: -144px;

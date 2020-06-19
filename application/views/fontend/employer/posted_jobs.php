@@ -176,7 +176,7 @@ background-color: #81c3f8;
 
 
 .col-md-6.active-job {
-    margin-top: 1291px;
+    margin-top: 1382px;
 }
 .dropdown.right-arrow {
     position: absolute;
@@ -270,7 +270,8 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                         <li class="left-title">experience</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->experience; ?></li>
                         <li class="left-title">Joining ETA</li><li class="right-title">&nbsp;:30 days</li>
                         <li class="left-title">Benifits</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->benefits; ?> </li>
-                        <li class="left-title">Skill sets</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->skills_required; ?> </li>
+                        <li class="left-title">Skill sets</li><li class="right-title">&nbsp;: </li>
+
                         <div class="clear"></div>
                       </div>
                       <div class="following-info3">
@@ -285,9 +286,17 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                                    
                                    
                 <button class="detail-btn">details</button>
-                <span class="active-span">Active</span>
+               <?php  if ($v_companyjobs->job_deadline > date('Y-m-d')){
+                                        // echo '<button class="btn btn-success btn-xs">Live <i class="fa fa-check-circle" aria-hidden="true"></i></button>';
+                                        echo '<span class="active-span">Active</span>';
+                                    }
+                                    else {
+                                        // echo'<button class="btn btn-danger btn-xs">Expired <i class="fa fa-times" aria-hidden="true"></i></button> ';
+                                        echo '<span class="pasive-span">Expired</span>';
+                                    } ?>
+                
                 <div class="dropdown">
-                  <i class="fas fa-share"></i>
+                 <a href="#" data-toggle="modal" data-target="#rotateModal<?php echo $v_companyjobs->job_post_id; ?>"> <i class="fas fa-share"></i></a>
                   <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fas fa-ellipsis-h"></i>
                   </button>
