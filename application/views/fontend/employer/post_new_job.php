@@ -358,6 +358,36 @@ span.options_beni {
 
             
 
+             <div class="col-md-2 col-sm-12">
+                  <div class="formrow">
+                     <label class="control-label ">Salary Range<span class="required"> * </span> </label>
+                   
+                  <input class="form-control" min="1" type="number" maxlength="2" name="salary range" placeholder="" />
+               </div>
+              
+               
+               </div>    
+               <div class="col-md-2 col-sm-12">
+                <div class="formrow" style="margin-top:37px;">
+
+             <input class="form-control" min="1" type="number" maxlength="2" name="salary range"  placeholder=""/>
+				</div>
+                </div>
+               
+             <div class="col-md-6 col-sm-12">
+                  <div class="formrow">
+                    <label></label>
+                    <input type="radio" name="salary_range">
+
+                   
+                   <!--  <input type="text" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1" autocomplete="off"><?php echo form_error('salary_range'); ?> -->
+                  </div>
+                </div>
+
+           
+             
+              
+
                  <div class="col-md-12 col-sm-12">
                    <div class="formrow">
                    <label class="control-label">Other Benefits <span class="required"> * </span></label>
