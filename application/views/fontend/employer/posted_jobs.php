@@ -195,19 +195,6 @@ background-color: #81c3f8;
 .post-job {
     margin-bottom: 20px;
 }	
-div#next {
-    float: right;
-    /* margin-left: 385px; */
-    margin-right: 59px !important;
-}
-:checked + span{background: #18c5bd !important;
-    display: initial !important;
-    width: 100% !important;     
-    color: #fff;
-    padding: 6px 17px !important;
-    border-radius: 13px;
-	}
-ul.rating-comments label {float:left;margin-right:10px;}    
 </style>
 
 
