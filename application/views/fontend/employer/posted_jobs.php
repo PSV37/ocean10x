@@ -257,7 +257,8 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                       <div class="following-info">
                         <li class="left-title"
                           >Job Roll</li><li class="right-title">&nbsp;: <?php echo $v_companyjobs->job_role; ?></li>
-                          <li class="left-title">Engagement</li><li class="right-title">&nbsp;: <?php echo $v_companyjobs->job_nature_name; ?></li>
+                          <li class="left-title">Engagement</li>
+                          <li class="right-title">&nbsp;: <?php echo $v_companyjobs->job_nature_name; ?></li>
                           <li class="left-title">Domain</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->job_category_name; ?></li>
                           <li class="left-title">Role Type </li><li class="right-title">&nbsp;:</li>
                           <li class="left-title">Dummy1</li><li class="right-title">&nbsp;:</li>
@@ -265,7 +266,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                           <div class="clear"></div>
                       </div>
                       <div class="following-info2">
-                        <li class="left-title">Education</li><li class="right-title">&nbsp;: <?php echo $v_companyjobs->education; ?></li>
+                        <li class="left-title">Education</li><li class="right-title">&nbsp;: <?php echo $v_companyjobs->education_level_name; ?></li>
                         <li class="left-title">Specialization</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->education_specialization; ?></li>
                         <li class="left-title">experience</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->experience; ?></li>
                         <li class="left-title">Joining ETA</li><li class="right-title">&nbsp;:30 days</li>
