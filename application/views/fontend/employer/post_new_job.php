@@ -175,6 +175,9 @@ label {
 [type="checkbox"][disabled] + span {
     background:#f00;  
 }
+section {
+    padding: 5px 45px 25px !important;
+}
 </style>
 <!---header--->
 <div class="container-fluid main-d">
@@ -299,7 +302,8 @@ label {
                </div>
                </div>
                 <div class="col-md-3 col-sm-12">
-               <div class="formrow">
+               <div class="formrow" style="margin-top:37px;">
+
                <input class="form-control" min="1" type="number" maxlength="2" name="salary range"  placeholder=""/>
 				</div>
                 </div>
@@ -322,7 +326,7 @@ label {
                    <label class="control-label">Other Benefits <span class="required"> * </span></label>
                     <textarea name="benefits" class="form-control ckeditor" placeholder="Company benefits offered"><?php if(!empty($job_info)) echo $job_info->benefits; ?></textarea><?php echo form_error('benefits'); ?>                                 
                 </div>
-                </div>
+                </div>      
                 <div class="col-md-6 col-sm-4">
                 <div class="formrow">
                   <label class="control-label">Upload JD <span class="required"> * </span></label>
