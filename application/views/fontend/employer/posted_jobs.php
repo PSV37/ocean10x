@@ -209,6 +209,8 @@ div#next {
     padding: 6px 17px;
     border-radius: 13px;
 	}
+.rating-comments label{float: left;
+    margin-right: 20px;}	
 </style>
 
 
