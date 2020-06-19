@@ -327,7 +327,8 @@ input{
                    
                   <input class="form-control" min="1" type="number" maxlength="2" name="salary range" placeholder="" />
                </div>
-               |
+               <div class="a">|</div>
+               
                </div>    
                 <div class="col-md-2 col-sm-12">
                <div class="formrow" style="margin-top:37px;">
