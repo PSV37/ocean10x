@@ -183,6 +183,17 @@ section {
 input{
 	border-radius: 4px;
     border: 1px solid lightgrey;}
+	
+span.options_beni {
+    background: #18c5bd !important;
+    display: inline-block;
+    width: 100%;
+    color: #fff;
+    padding: 5px 12px !important;   
+    font-size: 11px;
+	border-radius:13px !important; }
+
+	
 </style>
 <!---header--->
 <div class="container-fluid main-d">
