@@ -285,8 +285,22 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                         <li class="left-title">Job expiry</li><li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs->job_deadline)) { echo date('M j Y',strtotime($v_companyjobs->job_deadline)); } ?></li>
                         <div class="clear"></div>
                       </div>
+
                           <div>
-                             <li class="left-title">Skill sets</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->education_level_name; ?> </li>
+                             <span>Skill sets</span>:
+                             <?php 
+                             $sk=$v_companyjobs->skills_required;
+                             $where_sk= "id IN (".$sk.") AND status=1";
+                              $select_sk = "skill_name ,id";
+                              $skills = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=false,$start=false, $search=false);
+                              if(!empty($skills)){ 
+                                      foreach($skills as $skill_row){
+                                        echo $skill_row['skill_name'];
+                                      }
+                                    }
+                              ?>
+
+                           
                           </div>         
                                    
                 <button class="detail-btn">details</button>
