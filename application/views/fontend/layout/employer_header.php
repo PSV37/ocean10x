@@ -134,16 +134,17 @@
                             <li><a href="<?php echo base_url(); ?>employer/pending-job"><span class="glyphicon glyphicon-star"></span>Pending Job</a></li>
                              <li><a href="<?php echo base_url(); ?>employer/change-password"><span class="glyphicon glyphicon-briefcase"></span> Change Password</a></li>
                             <li><a href="<?php echo base_url(); ?>audit"><span class="glyphicon glyphicon-time"></span>Audit Trail</a></li>
-                            <li><a href="#" onclick="logout(); class="btn-logoff" data-toggle="modal" data-target="#modal_logoff"><span class="glyphicon glyphicon-lock"></span> Logout</a></li>
+                            <li><a href="#" class="btn-logoff" data-toggle="modal" data-target="#modal_logoff"><span class="glyphicon glyphicon-lock"></span> Logout</a></li>
                         </ul>
                     </li>
                     
                 </ul>
             </li>
+           
             <div class="modal fade" id="modal_logoff" role="dialog">
     <div class="modal-dialog">
         
-      <!-- Modal content-->
+      
       <div class="modal-content">
         <div class="modal-header">
          
