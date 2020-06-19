@@ -231,11 +231,11 @@ span.options_beni {
                     ?>" autocomplete="off" required> -->
                     <div class="col-md-3 formrow" style="width:80px;margin-left:-14px;">
                    
-                    	 <input class="form-control" min="1" maxlength="2" type="text" name="exp_from" />
+                    	 <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from" />
                     </div>
                     
                      <div class="col-md-3 formrow" style="width:80px;margin-left:-19px;">
-                    	 <input class="form-control" min="1" maxlength="2" type="text" name="exp_to" />
+                    	 <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to" />
                     </div>    
                                      
                   </div>    
@@ -243,7 +243,7 @@ span.options_beni {
                 <div class="col-md-3 col-sm-12">
                 <div class="formrow">
                     <label class="control-label ">Number of Positions<span class="required"> *</span> </label>
-                    <input class="form-control" min="1" type="number" maxlength="2" name="no_jobs" required value="<?php 
+                    <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2" name="no_jobs" required value="<?php 
                       if(!empty($job_info->no_jobs)){ echo $job_info->no_jobs; } ?>" autocomplete="off">  <?php echo form_error('no_jobs'); ?>                
                   </div>
               </div>
@@ -296,12 +296,12 @@ span.options_beni {
                 <div class="col-md-3 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Salary Range<span class="required"> * </span> </label>
-                   <input class="form-control" min="1" type="number" maxlength="2" name="salary range" placeholder="" name="sal_from" />
+                   <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2" name="salary range" placeholder="" name="sal_from" />
                   </div>
                 </div>    
                <div class="col-md-3 col-sm-12">
                 <div class="formrow" style="margin-top:37px;">
-                  <input class="form-control" min="1" type="number" maxlength="2" name="salary range" name="sal_to"  placeholder=""/>
+                  <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2" name="salary range" name="sal_to"  placeholder=""/>
                 </div>
               </div>
             <div class="col-sm-6 p-m-2">
@@ -603,3 +603,12 @@ $('#tokenfield').on('tokenfield:createtoken', function (event) {
  
 </script>
 
+<script>
+  $(".allownumericwithdecimal").on("keypress keyup blur",function (event) {
+            //this.value = this.value.replace(/[^0-9\.]/g,'');
+     $(this).val($(this).val().replace(/[^0-9\.]/g,''));
+            if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+                event.preventDefault();
+            }
+        });
+</script> 
