@@ -272,7 +272,17 @@ input{
                 </div>
 
                  <div class="col-md-3 col-sm-12">
-                <div class="formrow">
+                  <div class="formrow">  
+                    <label class="control-label ">Ocean Test Required <span class="required">*</span></label>
+                    <select name="job_test_requirment" id="job_test_requirment" class="form-control" data-style="btn-default" data-live-search="true" required="">
+                      <option value="Yes"<?php if($job_info->is_test_required=="Yes"){ echo "selected"; }?>>Yes </option>
+                      <option value="No"<?php if($job_info->is_test_required=="No"){ echo "selected"; }?>>No </option>
+                    </select> <?php echo form_error('job_test_requirment'); ?>             
+                  </div> 
+                
+              </div>
+               <div class="col-sm-6 p-m-2">
+              <div class="formrow">
                   <label  class="control-label ">Job Role<span class="required"> *</span></label>
                     <select name="job_role" id="job_role" class="form-control col-sm-5" onchange="getSkillsdetails(this.value)" required="">
                        <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
@@ -281,16 +291,19 @@ input{
                         <?php } ?><?php echo form_error('job_role'); ?>
                     </select>                  
                   </div>
+                      
               </div>
                <div class="col-sm-6 p-m-2">
-              
-                 <div class="formrow">  
-                    <label class="control-label ">Ocean Test Required <span class="required">*</span></label>
-                    <select name="job_test_requirment" id="job_test_requirment" class="form-control" data-style="btn-default" data-live-search="true" required="">
-                      <option value="Yes"<?php if($job_info->is_test_required=="Yes"){ echo "selected"; }?>>Yes </option>
-                      <option value="No"<?php if($job_info->is_test_required=="No"){ echo "selected"; }?>>No </option>
-                    </select> <?php echo form_error('job_test_requirment'); ?>             
-                  </div>      
+              <div class="formrow">
+                  <label  class="control-label ">Job Role<span class="required"> *</span></label>
+                    <select name="job_role" id="job_role" class="form-control col-sm-5" onchange="getSkillsdetails(this.value)" required="">
+                       <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
+                           ?> 
+                          <option value="<?php echo $role_value['id']; ?>"<?php if(!empty($job_info)) if($job_info->job_role==$role_value['id']) echo 'selected'; ?>><?php echo $role_value['job_role_title']; ?></option>
+                        <?php } ?><?php echo form_error('job_role'); ?>
+                    </select>                  
+                  </div>
+                      
               </div>
                
             <div class="col-sm-12 p-m-2">
