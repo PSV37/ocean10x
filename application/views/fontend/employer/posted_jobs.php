@@ -176,7 +176,7 @@ background-color: #81c3f8;
 
 
 .col-md-6.active-job {
-    margin-top: 1523px;
+    margin-top: 1382px;
 }
 .dropdown.right-arrow {
     position: absolute;
@@ -212,191 +212,7 @@ div#next {
     border-radius: 13px;
 	}
 
-.required
-  {
-    color: red;
-  }
-  label.control-label {
-    margin-top: 15px;
-}
-div#next {
-    float: right;
-    margin-right: 4px;
-}
 
-.form-group {
-    margin-bottom: 26px;
-}
-
-.star-text {
-    width: 53%;
-    margin-top: 32px;
-}
-
-
-
-@media only screen and (max-width: 320px){
-.myfields ul {
-     margin-left: -10px !important;
-}
-}
-
-@media only screen and (max-width: 375px){
-.myfields ul {
-    width: 267px !important;
-    margin-left: 19px;
-}
-
-.star-text {
-    width: 50%;
-    margin-top: 13px;
-    margin-left: 6px;
-}
-}
-
-
-@media only screen and (max-width: 500px){
-    .rate {
-    float: none !important;
-    padding: 0px !important;
-    width: 157px !important;
-    margin: 0 auto !important;
-}
-
-[type="checkbox"] + span {
-    padding: 10px 7px !important;
-}
-
-.myfields ul {
-    float: left !important;
-    width: 167px; 
-}
-
-.btn-default1:not(:checked) + span {
-    padding: 17px 10px !important;
-    width: 154px !important;
-    border-radius: 4px !important;
-}
-
-.btn-default1:input(:checked){
-    padding: 17px 10px !important;
-    width: 154px !important;
-    border-radius: 4px !important; 
-
-}
-
-
-.myfields {
-    margin-left: 5px !important;
-    margin-top: 26px !important;
-}
-
-:checked + span {
-    padding: 17px 10px !important;
-    width: 154px !important;
-    border-radius: 4px !important; 
-}
-
-
-
-}
-
-
-
-
-.myfields > input:checked ~ label {
-    color: #2ea148;    
-}
-.myfields:not(:checked) > label:hover,
-.myfields:not(:checked) > label:hover ~ label {
-    color: #2ea148;  
-}
-.myfields > label:hover + input:checked,
-.myfields > label:hover ~ label,
-.myfields > label:hover ~ input:checked ,
-.myfields > label:hover ~ label ~ input:checked ,
-.myfields > input:checked ~ label ~ label:hover  {
-    color: #2ea148;
-}
-
-input[type="checkbox"] {
-    margin: 4px 0 0;
-    margin-top: 1px \9;
-    line-height: normal;
-    display: none;
-}
-
-
-
-.btn-default1:not(:checked) + span {
-    background: #e4e2e2;
-    /*padding: 8px 0;*/
-    width: 100%;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.btn-bottom_3 {
-    float: right;
-    margin-right: 47px;
-}
-/*.btn-default1:input(:checked){
-    background-color: red;
-}*/
-
-
-.star-rating .fa-star{color: green;}
-}
-
-
-
-/*example*/
-label {
-    position:relative;   
-    cursor:pointer;
-}
-/*label [type="checkbox"] {
-    display:none;
-}*/
-[type="checkbox"] + span {
-    display:inline-block;
-    padding:1em;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-
-/*.btn-default1:not(:checked) + span:hover {
-    background-color: #2ea148 !important;
-}*/
-
-:checked + span {
-    background:#18c5bd !important;
-    display:inline-block; 
-    width: 100%;
-    color: #fff;   
-}
-
-[type="checkbox"][disabled] + span {
-    background:#f00;  
-}
-section {
-    padding: 5px 45px 25px !important;
-}
-input{
-  border-radius: 4px;
-    border: 1px solid lightgrey;}
-  
-span.options_beni {
-    background: #18c5bd !important;
-    display: inline-block;
-   
-    color: #fff;
-    padding: 5px 12px !important;   
-    font-size: 11px;
-  border-radius:13px !important; }
-
-  
 
 </style>
 
@@ -447,7 +263,8 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                           <li class="left-title">Role Type </li><li class="right-title">&nbsp;:</li>
                           <li class="left-title">Dummy1</li><li class="right-title">&nbsp;:</li>
                           <li class="left-title">Dummy2</li><li class="right-title">&nbsp;:</li>
-                          <div class="clear"> </div>
+                         
+                          <div class="clear"></div>
                       </div>
                       <div class="following-info2">
                         <li class="left-title">Education</li><li class="right-title">&nbsp;: <?php echo $v_companyjobs->education_level_name; ?></li>
@@ -468,13 +285,9 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                         <li class="left-title">Job expiry</li><li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs->job_deadline)) { echo date('M j Y',strtotime($v_companyjobs->job_deadline)); } ?></li>
                         <div class="clear"></div>
                       </div>
-                      <div>
-                        <li class="left-title">Skillls</li>
-                        
-            
-
-                     <div class="clear"></div>
-                 </div>
+                          <div>
+                             <li class="left-title">Skill sets</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->education_level_name; ?> </li>
+                          </div>         
                                    
                 <button class="detail-btn">details</button>
                <?php  if ($v_companyjobs->job_deadline > date('Y-m-d')){
