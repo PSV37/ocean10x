@@ -353,8 +353,8 @@ input{
                  <div class="col-md-12 col-sm-12">
                    <div class="formrow">
                    <label class="control-label">Other Benefits <span class="required"> * </span></label>
-                    <textarea name="benefits" class="form-control ckeditor" placeholder="Company benefits offered"><?php if(!empty($job_info)) echo $job_info->benefits; ?>
-                    
+               <!--     <textarea name="benefits" class="form-control ckeditor" placeholder="Company benefits offered"><?php if(!empty($job_info)) echo $job_info->benefits; ?>--->
+                     <input class="form-control" min="1"  />
                     <span class="options_beni">dummy1</span>
                     
                     
