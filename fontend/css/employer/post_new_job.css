@@ -244,9 +244,7 @@ background-color: #81c3f8;
 /*end*/
 
 
-.col-md-6.active-job {
-    margin-top: 77px;
-}
+
 .dropdown.right-arrow {
     position: absolute;
     top: -3px;
@@ -355,6 +353,7 @@ transition:0.9s;color:#fff;}
     transition: all 600ms;
     border-radius:5px;
 	padding:0px;
+	margin-bottom:20px;
 }
 
     .card div {
@@ -387,7 +386,7 @@ input {
 */
 
 .active-job {
-    margin-top:168px;
+    margin-top:1381px;
 }
 .dropdown-menu>li>a{padding:3px 20px;}
 .front{padding:11px;height:248px;}
@@ -473,22 +472,28 @@ li.right-icon-title {
 }
 
     
-<!--skills css-->
-div#next {
-    float: right;    
-    /* margin-left: 385px; */
-    margin-right: 59px !important;
+/*skills css*/
+#submit {
+   
+    border: none;
 }
-:checked + span{background: #18c5bd !important;
-    display: initial !important;
-    width: 100% !important;     
+.post-job {
+    margin-bottom: 20px;
+}
+div#next {
+    margin-right: 58px;
+}
+:checked + span {
+    background: #18c5bd !important;
+    display: inline-block;
+    width: 100%;
     color: #fff;
-    padding: 6px 17px !important;
-    border-radius: 13px;
-	}
+    padding: 5px 12px !important;   
+    font-size: 11px;
+	border-radius:13px !important; }
 ul.rating-comments label {float:left;
-margin-right: 11px;
-    margin-bottom: 19px;}    
+margin-right: 10px;
+    margin-bottom: 10px;}    
 ul.rating-comments {
     margin-left: -40px;
 }
