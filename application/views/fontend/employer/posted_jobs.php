@@ -193,6 +193,9 @@ background-color: #81c3f8;
     font-size: 11px;
     padding: 8px 13px;
     cursor: pointer;
+}
+.post-job {
+    margin-bottom: 20px;
 }	
 </style>
 
