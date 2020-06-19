@@ -293,17 +293,25 @@ span.options_beni {
                 
               </div>
 
-                <div class="col-md-3 col-sm-12">
+                 <div class="col-md-3 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label ">Salary Range<span class="required"> * </span> </label>
-                   <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2"  placeholder="" name="sal_from" />
-                  </div>
-                </div>    
-               <div class="col-md-3 col-sm-12">
-                <div class="formrow" style="margin-top:37px;">
-                  <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2"  name="sal_to"  placeholder=""/>
+                    <label class="control-label ">Expected Experience<span class="required"> *</span> </label>
+                 <!--  <input class="form-control" type="text" name="experience" maxlength="2" value="<?php 
+                      if(!empty($job_info->experience)){ echo $job_info->experience;
+                       }
+                    ?>" autocomplete="off" required> -->
+                    <div class="col-md-3 formrow" style="width:80px;margin-left:-14px;">
+                   
+                       <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from" />
+                    </div>
+                    
+                     <div class="col-md-3 formrow" style="width:80px;margin-left:-19px;">
+                       <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to" />
+                    </div>    
+                                     
+                  </div>    
                 </div>
-              </div>
+                <div class="col-md-3 c
               <div class="col-md-3 col-sm-12">
                 <div class="formrow">
                   <label class="control-label ">Expected Domain<span class="required"> * </span> </label>
