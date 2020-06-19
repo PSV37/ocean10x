@@ -34,7 +34,7 @@ padding:0px 25px;border:none;}
 }
 .modal-title {
     padding-top: 0px;
-    font-size: 15px;
+    font-size: 12px;
     color: #403e3e;
     font-weight: 700;
 	text-align:center;
