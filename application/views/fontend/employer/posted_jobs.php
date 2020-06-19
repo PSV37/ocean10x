@@ -523,7 +523,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                   </div>
                 </div>
               </div>
-             </div>
+             <!-- </div> -->
               <?php endforeach; 
           else : ?> 
             <li>
