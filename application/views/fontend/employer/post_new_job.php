@@ -328,7 +328,7 @@ section {
                 </div>
                 </div> 
                 
-                <div class="col-md-6 col-sm-4">
+                <div class="col-md-12 col-sm-4">
                 <div class="formrow">
                   <label class="control-label">Upload JD <span class="required"> * </span></label>
                   <input type="file" name="">                                  
