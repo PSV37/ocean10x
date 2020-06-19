@@ -181,6 +181,9 @@ label {
 section {
     padding: 5px 45px 25px !important;
 }
+input{
+	border-radius: 4px;
+    border: 1px solid lightgrey;}
 </style>
 <!---header--->
 <div class="container-fluid main-d">
