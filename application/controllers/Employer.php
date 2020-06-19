@@ -260,11 +260,11 @@ public function job_post()
             else{
                 $sal_from = $this->input->post('sal_from');
                 $sal_to = $this->input->post('sal_to');
-                $salary_range = $sal_from .-. $sal_to;
+                $salary_range = $sal_from.'-'.$sal_to;
 
                 $exp_from = $this->input->post('exp_from');
                 $exp_to = $this->input->post('exp_to');
-                $experience = $exp_from .-. $exp_to;
+                $experience = $exp_from.'-'.$exp_to;
                     $employer_id  = $this->session->userdata('company_profile_id');
                     $job_deadline = strtolower($this->input->post('job_deadline'));
                     $job_post_id  = $this->input->post('job_post_id');
