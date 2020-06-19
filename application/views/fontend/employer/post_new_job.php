@@ -293,28 +293,18 @@ span.options_beni {
                 
               </div>
 
-                <div class="col-md-2 col-sm-12">
+                <div class="col-md-3 col-sm-12">
                   <div class="formrow">
-                     <label class="control-label ">Salary Range<span class="required"> * </span> </label>
-                   
-                  <input class="form-control" min="1" type="number" maxlength="2" name="salary range" placeholder="" />
-               </div>
-              
-               
-               </div>    
-              To <div class="col-md-2 col-sm-12">
+                    <label class="control-label ">Salary Range<span class="required"> * </span> </label>
+                   <input class="form-control" min="1" type="number" maxlength="2" name="salary range" placeholder="" />
+                  </div>
+                </div>    
+               <div class="col-md-3 col-sm-12">
                 <div class="formrow" style="margin-top:37px;">
-
-             <input class="form-control" min="1" type="number" maxlength="2" name="salary range"  placeholder=""/>
-        </div>
+                  <input class="form-control" min="1" type="number" maxlength="2" name="salary range"  placeholder=""/>
                 </div>
-               
-             
-
-             
-                      
-              
-               <div class="col-sm-6 p-m-2">
+              </div>
+            <div class="col-sm-6 p-m-2">
               <div class="formrow">
                   <label  class="control-label ">Job Role<span class="required"> *</span></label>
                     <select name="job_role" id="job_role" class="form-control col-sm-5" onchange="getSkillsdetails(this.value)" required="">
