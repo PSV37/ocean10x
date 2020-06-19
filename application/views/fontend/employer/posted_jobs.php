@@ -497,6 +497,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                      </div>';
 
                     } 
+                  }
                      <div class="clear"></div>
                  </div>
                                    
