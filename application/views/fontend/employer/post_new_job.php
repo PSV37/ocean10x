@@ -175,6 +175,9 @@ label {
 [type="checkbox"][disabled] + span {
     background:#f00;  
 }
+section {
+    padding: 5px 45px 25px !important;
+}
 </style>
 <!---header--->
 <div class="container-fluid main-d">
