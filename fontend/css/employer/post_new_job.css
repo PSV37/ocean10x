@@ -363,7 +363,7 @@ transition:0.9s;color:#fff;}
        
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
-        border-radius: 5px;
+        border-radius: 13px;
     }
 
    .card .back {
