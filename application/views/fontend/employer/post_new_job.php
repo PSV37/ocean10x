@@ -356,7 +356,7 @@ span.options_beni {
               
                
                </div>    
-              <p>To</p> <div class="col-md-2 col-sm-12">
+              To <div class="col-md-2 col-sm-12">
                 <div class="formrow" style="margin-top:37px;">
 
              <input class="form-control" min="1" type="number" maxlength="2" name="salary range"  placeholder=""/>
