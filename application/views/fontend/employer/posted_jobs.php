@@ -447,7 +447,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                           <li class="left-title">Role Type </li><li class="right-title">&nbsp;:</li>
                           <li class="left-title">Dummy1</li><li class="right-title">&nbsp;:</li>
                           <li class="left-title">Dummy2</li><li class="right-title">&nbsp;:</li>
-                          </div>
+                          <div class="clear"> </div>
                       </div>
                       <div class="following-info2">
                         <li class="left-title">Education</li><li class="right-title">&nbsp;: <?php echo $v_companyjobs->education_level_name; ?></li>
@@ -472,7 +472,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                         <li class="left-title">Skillls</li>
                         
             <?php 
-            $sk =  $v_companyjobs->skills_required; 
+            $sk =   $v_companyjobs->skills_required; 
             $where_sk= "id IN (".$sk.") AND status=1";
             $select_sk = "skill_name ,id";
             $skills = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=false,$start=false, $search=false);
@@ -499,7 +499,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                     } 
                   }
                      <div class="clear"></div>
-                  </div>
+                 </div>
                                    
                 <button class="detail-btn">details</button>
                <?php  if ($v_companyjobs->job_deadline > date('Y-m-d')){
@@ -523,7 +523,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                   </div>
                 </div>
               </div>
-             <!-- </div> -->
+             </div>
               <?php endforeach; 
           else : ?> 
             <li>
