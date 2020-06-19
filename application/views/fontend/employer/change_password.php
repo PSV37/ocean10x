@@ -45,7 +45,7 @@ padding:0px 25px;border:none;}
                                             <input type="password" name="newpassword" class="form-control" placeholder="Type your new password">
                                             <br>
                                             <div class="change-pass_btn" style="text-align:end;">
-                                               <button type="submit" class="btn-pass" data-toggle="modal" data-target="#modal_logoff">Update Password</button>
+                                               <button type="submit" class="btn-pass" data-toggle="modal" data-target="#modal_pass">Update Password</button>
                                           	 </div>
                                              
                                              
@@ -53,7 +53,7 @@ padding:0px 25px;border:none;}
                                        
                     
                       <!-- Modal -->
-                      <div class="modal fade" id="modal_logoff" role="dialog">
+                      <div class="modal fade" id="modal_pass" role="dialog">
                         <div class="modal-dialog">
                             
                           <!-- Modal content-->
