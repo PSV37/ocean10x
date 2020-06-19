@@ -34,7 +34,9 @@
                                             <label class="control-label">New Password</label>
                                             <input type="password" name="newpassword" class="form-control" placeholder="Type your new password">
                                             <br>
+                                            <div class="change-pass_btn" style="text-align:end;">
                                                <button type="submit" class="btn btn-primary">Update Password</button>
+                                          	 </div>
                                         </div>
 
                                     </div>
