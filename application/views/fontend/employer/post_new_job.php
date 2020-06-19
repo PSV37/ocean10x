@@ -181,6 +181,9 @@ label {
 section {
     padding: 5px 45px 25px !important;
 }
+input{
+	border-radius: 4px;
+    border: 1px solid lightgrey;}
 </style>
 <!---header--->
 <div class="container-fluid main-d">
@@ -212,11 +215,15 @@ section {
                 <div class="col-md-3 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Expected Experience<span class="required"> *</span> </label>
-                    <input class="form-control" type="text" name="experience" maxlength="2" value="<?php 
+                 <!--  <input class="form-control" type="text" name="experience" maxlength="2" value="<?php 
                       if(!empty($job_info->experience)){ echo $job_info->experience;
                        }
-                    ?>" autocomplete="off" required>                  
-                  </div>
+                    ?>" autocomplete="off" required> -->
+                    <div class="col-md-2">
+                    	<input type="text" name="experience" />
+                    </div>
+                                     
+                  </div>    
                 </div>
                 <div class="col-md-3 col-sm-12">
                 <div class="formrow">
@@ -331,8 +338,8 @@ section {
                 </div>
                 </div> 
                 
-                <div class="col-md-12 col-sm-4">
-                <div class="col-md-6 formrow">
+                <div class="col-md-6 col-sm-12">
+                <div class=" formrow">
                   <label class="control-label">Upload JD <span class="required"> * </span></label>
                   <input type="file" name="">                                  
                 </div>
