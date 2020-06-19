@@ -204,6 +204,7 @@ order by RAND() limit 3");
         $this->db->join('education_specialization','education_specialization.id=job_posting.edu_specialization');
         $this->db->join('job_role','job_role.id=job_posting.job_role');
         $this->db->join('education_level','education_level.education_level_id=job_posting.job_edu');
+       
         // $job_types = array('1', '3', '4','5','6');
         // $this->db->where_in('job_types',$job_types);
         $query = $this->db->get()->result();
