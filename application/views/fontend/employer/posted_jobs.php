@@ -200,14 +200,14 @@ div#next {
     /* margin-left: 385px; */
     margin-right: 59px !important;
 }
-:checked + span{background: #000 !important;
+:checked + span{background: #18c5bd !important;
     display: initial;
     width: 100% !important;     
     color: #fff;
     padding: 6px 17px;
     border-radius: 13px;
 	}
-ul.rating-comments label {float:left;margin-right:10px;}
+ul.rating-comments label {float:left;margin-right:10px;}    
 </style>
 
 
