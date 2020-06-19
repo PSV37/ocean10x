@@ -173,8 +173,6 @@ background-color: #81c3f8;
 	padding:0px;
 }	
 /*end*/
-
-
 .col-md-6.active-job {
     margin-top: 77px;
 }
