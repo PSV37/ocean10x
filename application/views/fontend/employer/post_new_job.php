@@ -219,12 +219,13 @@ input{
                       if(!empty($job_info->experience)){ echo $job_info->experience;
                        }
                     ?>" autocomplete="off" required> -->
-                    <div class="col-md-2">
+                    <div class=" col-md-2 formrow" style="margin-top:37px;">
+                   
                     	 <input class="form-control" min="1" type="text" />
                     </div>
-                     <div class="col-md-2">
+                     <div class="col-md-2 formrow">
                     	 <input class="form-control" min="1" type="text" />
-                    </div>
+                    </div>    
                                      
                   </div>    
                 </div>
