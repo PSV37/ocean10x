@@ -304,12 +304,27 @@ span.options_beni {
                   <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2" name="salary range" name="sal_to"  placeholder=""/>
                 </div>
               </div>
-            <div class="col-sm-6 p-m-2">
+              <div class="col-md-3 col-sm-12">
+                <div class="formrow">
+                  <label class="control-label ">Expected Domain<span class="required"> * </span> </label>
+                  <select name="job_category" class="form-control" data-style="btn-default" data-live-search="true" required="">
+                    <option value="">Select Expected Domain</option>
+                    <?php if(!empty($job_info->job_category)) {
+                            echo $this->job_category_model->selected($job_info->job_category);
+                          } else {
+                            echo $this->job_category_model->selected();
+                          }
+                        ?>
+                  </select>   <?php echo form_error('job_category'); ?>               
+                </div>
+              </div>
+            <div class="col-sm-3 p-m-2">
               <div class="formrow">
                   <label  class="control-label ">Job Role<span class="required"> *</span></label>
                     <select name="job_role" id="job_role" class="form-control col-sm-5" onchange="getSkillsdetails(this.value)" required="">
                        <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
                            ?> 
+                           <option>select job Role</option>
                           <option value="<?php echo $role_value['id']; ?>"<?php if(!empty($job_info)) if($job_info->job_role==$role_value['id']) echo 'selected'; ?>><?php echo $role_value['job_role_title']; ?></option>
                         <?php } ?><?php echo form_error('job_role'); ?>
                     </select>                  
