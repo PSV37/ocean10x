@@ -220,7 +220,7 @@ input{
                        }
                     ?>" autocomplete="off" required> -->
                     <div class="col-md-2">
-                    	<input type="text" name="experience" />
+                    	 <input class="form-control" min="1" type="text" />
                     </div>
                                      
                   </div>    
