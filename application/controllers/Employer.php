@@ -258,6 +258,13 @@ public function job_post()
                     $this->load->view('fontend/employer/job_post', $data);
             }
             else{
+                $sal_from = $this->input->post('sal_from');
+                $sal_to = $this->input->post('sal_to');
+                $salary_range = $sal_from.'-'.$sal_to;
+
+                $exp_from = $this->input->post('exp_from');
+                $exp_to = $this->input->post('exp_to');
+                $experience = $exp_from.'-'.$exp_to;
                     $employer_id  = $this->session->userdata('company_profile_id');
                     $job_deadline = strtolower($this->input->post('job_deadline'));
                     $job_post_id  = $this->input->post('job_post_id');
@@ -268,8 +275,8 @@ public function job_post()
                         'job_desc'           => $this->input->post('job_desc'),
                         'job_category'       => $this->input->post('job_category'),
                         'education'          => $this->input->post('education'),
-                        'benefits'           => $this->input->post('benefits'),
-                        'experience'         => $this->input->post('experience'),
+                        'benefits'           => implode(',', $this->input->post('benefits')),
+                        'experience'         => $experience,
                         
       //                   'job_location'       => $this->input->post('city_id'),
 						// 'state_id'           => $this->input->post('state_id'),
@@ -282,7 +289,7 @@ public function job_post()
                         'skills_required'    => implode(',', $this->input->post('skill_set')), //new added field
 
                         // 'job_level'          => $this->input->post('job_level'),
-                        'salary_range'       => $this->input->post('salary_range'),
+                        'salary_range'      =>$salary_range,
                         // 'job_types'          => $this->input->post('job_types'),
                         "job_deadline"       => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('job_deadline')))),
 
@@ -826,7 +833,7 @@ function getstate(){
 
 
                             <label>
-                                <input type="checkbox"  value='.$skill_row['id'].'  class="btn-default1" checked>
+                                <input type="checkbox" name="skill_set[]"  value='.$skill_row['id'].'  class="btn-default1" checked>
                                 <span>'.$skill_row['skill_name'].'</span>
                             </label>
 

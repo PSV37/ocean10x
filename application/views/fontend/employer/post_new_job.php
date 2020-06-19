@@ -231,11 +231,11 @@ span.options_beni {
                     ?>" autocomplete="off" required> -->
                     <div class="col-md-3 formrow" style="width:80px;margin-left:-14px;">
                    
-                    	 <input class="form-control" min="1" maxlength="2" type="text" />
+                    	 <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from" />
                     </div>
                     
                      <div class="col-md-3 formrow" style="width:80px;margin-left:-19px;">
-                    	 <input class="form-control" min="1" maxlength="2" type="text" />
+                    	 <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to" />
                     </div>    
                                      
                   </div>    
@@ -243,7 +243,7 @@ span.options_beni {
                 <div class="col-md-3 col-sm-12">
                 <div class="formrow">
                     <label class="control-label ">Number of Positions<span class="required"> *</span> </label>
-                    <input class="form-control" min="1" type="number" maxlength="2" name="no_jobs" required value="<?php 
+                    <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2" name="no_jobs" required value="<?php 
                       if(!empty($job_info->no_jobs)){ echo $job_info->no_jobs; } ?>" autocomplete="off">  <?php echo form_error('no_jobs'); ?>                
                   </div>
               </div>
@@ -293,46 +293,38 @@ span.options_beni {
                 
               </div>
 
-               
-             <div class="col-md-2 col-sm-12">
+                <div class="col-md-3 col-sm-12">
                   <div class="formrow">
-                     <label class="control-label ">Salary Range<span class="required"> * </span> </label>
-                   
-                  <input class="form-control" min="1" type="number" maxlength="2" name="salary range" placeholder="" />
-               </div>
-              
-               
-               </div>    
-              To <div class="col-md-2 col-sm-12">
-                <div class="formrow" style="margin-top:37px;">
-
-             <input class="form-control" min="1" type="number" maxlength="2" name="salary range"  placeholder=""/>
-        </div>
-                </div>
-               
-             <div class="col-md-6 col-sm-12">
-                  <div class="formrow">
-                    <label></label>
-                    <input type="radio" name="salary_range">
-
-                   
-                   <!--  <input type="text" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1" autocomplete="off"><?php echo form_error('salary_range'); ?> -->
+                    <label class="control-label ">Salary Range<span class="required"> * </span> </label>
+                   <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2" name="salary range" placeholder="" name="sal_from" />
                   </div>
+                </div>    
+               <div class="col-md-3 col-sm-12">
+                <div class="formrow" style="margin-top:37px;">
+                  <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2" name="salary range" name="sal_to"  placeholder=""/>
                 </div>
-
-           
-             
-              
-
-             
-                      
               </div>
-               <div class="col-sm-6 p-m-2">
+              <div class="col-md-3 col-sm-12">
+                <div class="formrow">
+                  <label class="control-label ">Expected Domain<span class="required"> * </span> </label>
+                  <select name="job_category" class="form-control" data-style="btn-default" data-live-search="true" required="">
+                    <option value="">Select Expected Domain</option>
+                    <?php if(!empty($job_info->job_category)) {
+                            echo $this->job_category_model->selected($job_info->job_category);
+                          } else {
+                            echo $this->job_category_model->selected();
+                          }
+                        ?>
+                  </select>   <?php echo form_error('job_category'); ?>               
+                </div>
+              </div>
+            <div class="col-sm-3 p-m-2">
               <div class="formrow">
                   <label  class="control-label ">Job Role<span class="required"> *</span></label>
                     <select name="job_role" id="job_role" class="form-control col-sm-5" onchange="getSkillsdetails(this.value)" required="">
                        <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
                            ?> 
+                           <option>select job Role</option>
                           <option value="<?php echo $role_value['id']; ?>"<?php if(!empty($job_info)) if($job_info->job_role==$role_value['id']) echo 'selected'; ?>><?php echo $role_value['job_role_title']; ?></option>
                         <?php } ?><?php echo form_error('job_role'); ?>
                     </select>                  
@@ -358,32 +350,7 @@ span.options_beni {
 
             
 
-             <div class="col-md-2 col-sm-12">
-                  <div class="formrow">
-                     <label class="control-label ">Salary Range<span class="required"> * </span> </label>
-                   
-                  <input class="form-control" min="1" type="number" maxlength="2" name="salary range" placeholder="" />
-               </div>
-              
-               
-               </div>    
-               <div class="col-md-2 col-sm-12">
-                <div class="formrow" style="margin-top:37px;">
-
-             <input class="form-control" min="1" type="number" maxlength="2" name="salary range"  placeholder=""/>
-				</div>
-                </div>
-               
-             <div class="col-md-6 col-sm-12">
-                  <div class="formrow">
-                    <label></label>
-                    <input type="radio" name="salary_range">
-
-                   
-                   <!--  <input type="text" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1" autocomplete="off"><?php echo form_error('salary_range'); ?> -->
-                  </div>
-                </div>
-
+            
            
              
               
@@ -394,11 +361,11 @@ span.options_beni {
                <!--     <textarea name="benefits" class="form-control ckeditor" placeholder="Company benefits offered"><?php if(!empty($job_info)) echo $job_info->benefits; ?>--->
                      <div class="form-control benifit-div" style="padding:10px 10px; height:auto;" >
                    			<label>
-                                <input type="checkbox" value="4" class="btn-default1" checked="">
+                                <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
                                 <span>dummy1</span>
                             </label>
                             <label>
-                                <input type="checkbox" value="4" class="btn-default1" checked="">
+                                <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
                                 <span>dummy1</span>
                             </label>
                     
@@ -651,3 +618,12 @@ $('#tokenfield').on('tokenfield:createtoken', function (event) {
  
 </script>
 
+<script>
+  $(".allownumericwithdecimal").on("keypress keyup blur",function (event) {
+            //this.value = this.value.replace(/[^0-9\.]/g,'');
+     $(this).val($(this).val().replace(/[^\d].+/, ""));
+            if ((event.which < 48 || event.which > 57)) {
+                event.preventDefault();
+            }
+        });
+</script> 
