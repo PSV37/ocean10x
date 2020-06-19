@@ -344,7 +344,35 @@ span.options_beni {
           
 
           <section>
+
             
+=======
+             <div class="col-md-2 col-sm-12">
+                  <div class="formrow">
+                     <label class="control-label ">Salary Range<span class="required"> * </span> </label>
+                   
+                  <input class="form-control" min="1" type="number" maxlength="2" name="salary range" placeholder="" />
+               </div>
+              
+               
+               </div>    
+              <p>To</p> <div class="col-md-2 col-sm-12">
+                <div class="formrow" style="margin-top:37px;">
+
+             <input class="form-control" min="1" type="number" maxlength="2" name="salary range"  placeholder=""/>
+				</div>
+                </div>
+               
+             <div class="col-md-6 col-sm-12">
+                  <div class="formrow">
+                    <label></label>
+                    <input type="radio" name="salary_range">
+
+                   
+                   <!--  <input type="text" id="salary_range" name="salary_range" onkeyup="javascript:changeSalary();" class="form-control" min="1" autocomplete="off"><?php echo form_error('salary_range'); ?> -->
+                  </div>
+                </div>
+
            
              
               
@@ -354,9 +382,15 @@ span.options_beni {
                    <label class="control-label">Other Benefits <span class="required"> * </span></label>
                <!--     <textarea name="benefits" class="form-control ckeditor" placeholder="Company benefits offered"><?php if(!empty($job_info)) echo $job_info->benefits; ?>--->
                      <div class="form-control benifit-div" style="padding:10px 10px; height:auto;" >
-                    <span class="options_beni">dummy1</span>
-                     <span class="options_beni">dummy2</span>
-                      <span class="options_beni">dummy3</span>
+                   			<label>
+                                <input type="checkbox" value="4" class="btn-default1" checked="">
+                                <span>dummy1</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" value="4" class="btn-default1" checked="">
+                                <span>dummy1</span>
+                            </label>
+                    
                     
                     </div>
                     
