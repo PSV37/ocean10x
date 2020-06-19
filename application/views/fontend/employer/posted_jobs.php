@@ -296,7 +296,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                                     } ?>
                 
                 <div class="dropdown">
-                  <i class="fas fa-share"></i>
+                 <a href="#" data-toggle="modal" data-target="#rotateModal<?php echo $v_companyjobs->job_post_id; ?>"> <i class="fas fa-share"></i></a>
                   <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fas fa-ellipsis-h"></i>
                   </button>
