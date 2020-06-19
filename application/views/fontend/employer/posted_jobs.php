@@ -286,8 +286,14 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                                    
                                    
                 <button class="detail-btn">details</button>
-                <span class="active-span">Active</span>
-               <!--  -->
+               <?php  if ($v_companyjobs->job_deadline > date('Y-m-d')){
+                                        // echo '<button class="btn btn-success btn-xs">Live <i class="fa fa-check-circle" aria-hidden="true"></i></button>';
+                                        echo '<span class="active-span">Active</span>';
+                                    }
+                                    else {
+                                        // echo'<button class="btn btn-danger btn-xs">Expired <i class="fa fa-times" aria-hidden="true"></i></button> ';
+                                        echo '<span class="pasive-span">Expired</span>';
+                                    } ?>
                 
                 <div class="dropdown">
                  <a href="#" data-toggle="modal" data-target="#rotateModal<?php echo $v_companyjobs->job_post_id; ?>"> <i class="fas fa-share"></i></a>
