@@ -351,8 +351,8 @@ transition:0.9s;color:#fff;}
     transform-style: preserve-3d;
     -webkit-transition: all 600ms;
     transition: all 600ms;
-    border-radius:5px;
-	padding:0px;
+    border-radius:13px !important;
+	padding:0px;    
 	margin-bottom:20px;
 }
 
@@ -363,7 +363,7 @@ transition:0.9s;color:#fff;}
        
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
-        border-radius: 5px;
+        border-radius: 13px;
     }
 
    .card .back {
