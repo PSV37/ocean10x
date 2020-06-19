@@ -474,6 +474,10 @@ li.right-icon-title {
 
     
 /*skills css*/
+#submit {
+   
+    border: none;
+}
 .post-job {
     margin-bottom: 20px;
 }
