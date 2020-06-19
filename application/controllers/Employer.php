@@ -833,7 +833,7 @@ function getstate(){
 
 
                             <label>
-                                <input type="checkbox" name="skill_set[]"  value='.$$skill_row['skill_name'].'  class="btn-default1" checked>
+                                <input type="checkbox" name="skill_set[]"  value='.$skill_row['id'].'  class="btn-default1" checked>
                                 <span>'.$skill_row['skill_name'].'</span>
                             </label>
 
