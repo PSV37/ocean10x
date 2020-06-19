@@ -222,6 +222,9 @@ input{
                     <div class="col-md-2">
                     	 <input class="form-control" min="1" type="text" />
                     </div>
+                     <div class="col-md-2">
+                    	 <input class="form-control" min="1" type="text" />
+                    </div>
                                      
                   </div>    
                 </div>
