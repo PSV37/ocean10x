@@ -200,15 +200,14 @@ div#next {
     /* margin-left: 385px; */
     margin-right: 59px !important;
 }
-:checked + span{background: #18c5bd !important;
+:checked + span{background: #000 !important;
     display: initial;
     width: 100% !important;     
     color: #fff;
     padding: 6px 17px;
     border-radius: 13px;
 	}
-.myfields label{float: left !important;
-    margin-right: 20px !important;}	
+ul.rating-comments label {float:left;margin-right:10px;}
 </style>
 
 
