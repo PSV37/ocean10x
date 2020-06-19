@@ -200,7 +200,7 @@ div#next {
     /* margin-left: 385px; */
     margin-right: 59px !important;
 }
-:checked + span{background: #18c5bd !important;
+:checked + span{background: #000 !important;
     display: initial;
     width: 100% !important;     
     color: #fff;
