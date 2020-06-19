@@ -256,7 +256,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                       </div>
                       <div class="following-info">
                         <li class="left-title"
-                          >Job Roll</li><li class="right-title">&nbsp;: <?php echo $v_companyjobs->job_role_title; ?></li>
+                          >Job Roll</li><li class="right-title">&nbsp;: <?php echo $v_companyjobs->job_role; ?></li>
                           <li class="left-title">Engagement</li><li class="right-title">&nbsp;: <?php echo $v_companyjobs->job_nature_name; ?></li>
                           <li class="left-title">Domain</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->job_category_name; ?></li>
                           <li class="left-title">Role Type </li><li class="right-title">&nbsp;:</li>
@@ -271,7 +271,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                         <li class="left-title">Joining ETA</li><li class="right-title">&nbsp;:30 days</li>
                         <li class="left-title">Benifits</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->benefits; ?> </li>
                         <li class="left-title">Skill sets</li><li class="right-title">&nbsp;: </li>
-                        <!-- <?php echo $v_companyjobs->skills_required; ?> -->
+
                         <div class="clear"></div>
                       </div>
                       <div class="following-info3">
@@ -286,7 +286,15 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                                    
                                    
                 <button class="detail-btn">details</button>
-                <span class="active-span"><?php if ($v_companyjobs->job_deadline > date('Y-m-d')){ echo 'Active'; } else { echo "Expired";} ?></span>
+               <?php  if ($v_companyjobs->job_deadline > date('Y-m-d')){
+                                        // echo '<button class="btn btn-success btn-xs">Live <i class="fa fa-check-circle" aria-hidden="true"></i></button>';
+                                        echo '<span class="active-span">Active</span>';
+                                    }
+                                    else {
+                                        // echo'<button class="btn btn-danger btn-xs">Expired <i class="fa fa-times" aria-hidden="true"></i></button> ';
+                                        echo '<span class="pasive-span">Expired</span>';
+                                    } ?>
+                
                 <div class="dropdown">
                   <i class="fas fa-share"></i>
                   <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
