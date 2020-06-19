@@ -204,7 +204,7 @@ div#next {
 }
 :checked + span{background: #18c5bd !important;
     display: initial;
-    width: 100%;
+    width: 100% !important;     
     color: #fff;
     padding: 6px 17px;
     border-radius: 13px;
