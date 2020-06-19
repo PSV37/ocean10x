@@ -297,9 +297,9 @@ label {
                    
                   <input class="form-control" min="1" type="number" maxlength="2" name="salary range" placeholder="" />
                </div>
-               
+               <div class="formrow">
                <input class="form-control" min="1" type="number" maxlength="2" name="salary range"  placeholder=""/>
-
+				</div>
                 </div>
              <div class="col-md-6 col-sm-12">
                   <div class="formrow">
