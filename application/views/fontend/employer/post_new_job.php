@@ -134,7 +134,10 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
-
+.btn-bottom_3 {
+    float: right;
+    margin-right: 47px;
+}
 /*.btn-default1:input(:checked){
     background-color: red;
 }*/
@@ -294,14 +297,14 @@ section {
           
 
           <section>
-             <div class="col-md-3 col-sm-12">
+             <div class="col-md-2 col-sm-12">
                   <div class="formrow">
                      <label class="control-label ">Salary Range<span class="required"> * </span> </label>
                    
                   <input class="form-control" min="1" type="number" maxlength="2" name="salary range" placeholder="" />
                </div>
-               </div>
-                <div class="col-md-3 col-sm-12">
+               </div>     
+                <div class="col-md-2 col-sm-12">
                <div class="formrow" style="margin-top:37px;">
 
                <input class="form-control" min="1" type="number" maxlength="2" name="salary range"  placeholder=""/>
@@ -328,8 +331,8 @@ section {
                 </div>
                 </div> 
                 
-                <div class="col-md-6 col-sm-4">
-                <div class="formrow">
+                <div class="col-md-12 col-sm-4">
+                <div class="col-md-6 formrow">
                   <label class="control-label">Upload JD <span class="required"> * </span></label>
                   <input type="file" name="">                                  
                 </div>
@@ -346,12 +349,12 @@ section {
             </section>
 
           
-            
+            <div class="btn-bottom_3">
             <div class="button" id="prev">&larr; Previous</div>
             <div class="button" id="next">Next &rarr;</div>
            <div class="button" data-toggle="modal" data-target="#rotateModal" id="preview">preview</div>
             <button type="submit" class="button" id="submit">Post Job</button>
-      
+      	 </div>
         </div>
       </form>
     </div>
