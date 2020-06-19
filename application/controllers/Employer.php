@@ -275,7 +275,7 @@ public function job_post()
                         'job_desc'           => $this->input->post('job_desc'),
                         'job_category'       => $this->input->post('job_category'),
                         'education'          => $this->input->post('education'),
-                        'benefits'           => $this->input->post('benefits'),
+                        'benefits'           => implode(',', $this->input->post('benefits')),
                         'experience'         => $experience,
                         
       //                   'job_location'       => $this->input->post('city_id'),
