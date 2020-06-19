@@ -220,11 +220,11 @@ input{
                     ?>" autocomplete="off" required> -->
                     <div class="col-md-3 formrow" style="width:80px;margin-left:-14px;">
                    
-                    	 <input class="form-control" min="1" type="text" />
+                    	 <input class="form-control" min="1" maxlength="2" type="text" />
                     </div>
                     
                      <div class="col-md-3 formrow" style="width:80px;margin-left:-19px;">
-                    	<span>-</span> <input class="form-control" min="1" type="text" />
+                    	 <input class="form-control" min="1" maxlength="2" type="text" />
                     </div>    
                                      
                   </div>    
@@ -325,13 +325,13 @@ input{
                   <div class="formrow">
                      <label class="control-label ">Salary Range<span class="required"> * </span> </label>
                    
-                  <input class="form-control" min="1" type="number" maxlength="2" name="salary range" placeholder="" />|
+                  <input class="form-control" min="1" type="number" maxlength="2" name="salary range" placeholder="" />
                </div>
                </div>     
                 <div class="col-md-2 col-sm-12">
                <div class="formrow" style="margin-top:37px;">
 
-               <input class="form-control" min="1" type="number" maxlength="2" name="salary range"  placeholder=""/>
+              | <input class="form-control" min="1" type="number" maxlength="2" name="salary range"  placeholder=""/>
 				</div>
                 </div>
                
