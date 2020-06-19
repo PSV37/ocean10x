@@ -214,11 +214,14 @@ div#next {
 
 
 
+</style>
+
+
 
       
 
 
-/*<!---header-->*/
+<!---header-->
 <?php 
 $company_profile_id = $this->session->userdata('company_profile_id');
 
