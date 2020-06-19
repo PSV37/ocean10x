@@ -293,11 +293,11 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                              if (isset($sk) && !empty($sk)) {
                                 $where_sk= "id IN (".$sk.") AND status=1";
                               $select_sk = "skill_name ,id";
-                              $skills = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=false,$start=false, $search=false);
+                              $skills = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=10,$start=false, $search=false);
                               if(!empty($skills)){ 
                                       foreach($skills as $skill_row){
                                         echo $skill_row['skill_name'];
-                                        
+
                                       }
                                     }
                              }
