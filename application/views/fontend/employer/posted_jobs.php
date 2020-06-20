@@ -314,8 +314,8 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                         <div class="clear"></div>
                       </div>
 
-                          <div id="skills">
-                             <span>Skill sets</span>:
+                          <!-- <div id="skills"> -->
+                             <span id="skills">Skill sets</span>:
                              <?php 
                              $sk=$v_companyjobs->skills_required;
                              if (isset($sk) && !empty($sk)) {
@@ -336,8 +336,8 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                             
                               ?>
 
-                            <div class="clear"></div>
-                          </div>         
+                           <!--  <div class="clear"></div>
+                          </div> -->         
                                    
                 <button class="detail-btn">details</button>
                <?php  if ($v_companyjobs->job_deadline > date('Y-m-d')){
