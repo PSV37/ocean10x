@@ -238,7 +238,10 @@ public function job_post()
         $data['title']=$this->input->post('job_title');
         $data['location']=$this->input->post('city_id');
         $data['experience']=$experience;
-        $data['education']=$this->input->post('education');
+        $ed=$this->input->post('education');
+
+        $where_int="education_level_id='$ed'";
+        $data['education'] = $this->Master_model->get_master_row('education_level', $select = FALSE, $where_int, $join = FALSE);
         $data['job_role']=$this->input->post('job_role');
         $data['job_nature']=$this->input->post('job_nature');
         $data['job_desc']=$this->input->post('job_desc');
