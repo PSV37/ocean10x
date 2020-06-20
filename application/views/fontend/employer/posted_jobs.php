@@ -2,7 +2,15 @@
 <style>
 @charset "utf-8";
 /* CSS Document */
-
+.active-job label {
+   
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    display: block;
+    width: 100%;
+     position:relative !important;
+}
+.card{height:auto;}
 .btn_all {
     color: #539617;
     background-color: #fff;
@@ -11,7 +19,7 @@
     border: solid 1px;
     border-radius: 50px;
 }
-	
+.active-job{margin-top:1331px;}	
 .btn_all:hover {
     color: #fff;
     background-color: #a6e026;
@@ -173,9 +181,6 @@ background-color: #81c3f8;
 	padding:0px;
 }	
 /*end*/
-
-.col-md-6.active-job{
-	 margin-top:1525px !important;}
 
 .dropdown.right-arrow {
     position: absolute;
