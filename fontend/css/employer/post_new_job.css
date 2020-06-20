@@ -371,22 +371,22 @@ transition:0.9s;color:#fff;}
 input {
     display: none;
 }
-/*
+/*     
 :checked + .card {
-    transform: rotateX(180deg);
+    transform: rotateX(180deg);   
     -webkit-transform: rotateX(180deg);
 }
 */
     
 .dropdown-menu>li>a{padding:3px 20px;}
-.front{padding:11px;}
+.front{padding:11px;height:260px;}
 .job-info {
     margin-left: 55px;
 	margin-top:-4px;
 	
 }
 li.left-title {
-    list-style-type: none;
+    list-style-type: none;   
     float: left;
 	font-size: 12px;
     font-weight: 100;
@@ -397,7 +397,7 @@ li.right-title {
     list-style-type: none;
 	font-size: 12px;
     font-weight: 100;
-	width:175px;
+	width:179px;
 }
 .icon-info {
     margin-left:60px;
@@ -440,7 +440,7 @@ li.right-icon-title {
 	
 }
 .following-info2 {
-    margin-left:190px;
+    margin-left:170px;
 	line-height:24px;
 }
 .active-span{
