@@ -47,7 +47,7 @@ button#sklbtn {
     display: block;
     width: 100%;
      position:relative !important;
-	 border-top: solid 2px #18c5bd;
+	 
     border-radius: 13px;
 }
 .card{height:auto;display: flow-root;}    
@@ -265,7 +265,11 @@ div#skills {
     padding: 8px 21px -7px 0px;
 }
 
-
+.border-top1{
+	height: 6px;
+    background-color: #16b7b0;
+    border-radius: 13px 13px 0px 0px;
+	margin-bottom:15px;}
 
 </style>
 
@@ -297,6 +301,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                 
                   <div class="card">
                     <div class="front">
+                    <div class="border-top1"></div>
                       <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($company_profile_id);?>" style="height:40px; width:40px;border-radius:5px;float:left" />
                       <div class="job-info">
                         <p class="job_title"><?php echo $v_companyjobs->job_title; ?></p>
