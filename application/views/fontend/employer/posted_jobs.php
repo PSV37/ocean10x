@@ -1,14 +1,24 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css">
 <style>
-button#sklbtn {
-    background-color: #18c5bd;
-    color: white;
-    border-radius: 20px;
-    border: none;
-    padding: 1px 10px;
-    margin-bottom: 7px;
-    font-size: 11px;
+:checked + span {
+    background: #18c5bd !important;
+    display: inline-block;
+    width: 100%;
+    color: #fff;
+	padding: 4px 15px;
+    border-radius: 30px;
+	cursor:pointer;
 }
+.btn-default1:not(:checked) + span {
+	padding: 4px 15px;
+    border-radius: 30px;
+    background: #e4e2e2;
+    /* padding: 8px 0; */
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
 .active-job label {
    
     -webkit-transform-style: preserve-3d;
@@ -314,7 +324,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                         <div class="clear"></div>
                       </div>
 
-                          <div id="skills">
+                          <!-- <div id="skills"> -->
                              <span>Skill sets</span>:
                              <?php 
                              $sk=$v_companyjobs->skills_required;
@@ -336,8 +346,8 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                             
                               ?>
 
-                            <div class="clear"></div>
-                          </div>         
+                           <!--  <div class="clear"></div>
+                          </div> -->         
                                    
                 <button class="detail-btn">details</button>
                <?php  if ($v_companyjobs->job_deadline > date('Y-m-d')){
