@@ -1,5 +1,15 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css">
 <style>
+.pasive-span {
+    position: absolute;
+    top: 12px;
+    left: 405px;
+    background-color: #ff3c3c;
+    padding: 2px 17px;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 11px;
+}
 .front{padding:11px;height:260px;}
 :checked + span {
     background: #18c5bd !important;
