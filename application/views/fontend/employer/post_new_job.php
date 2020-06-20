@@ -326,7 +326,7 @@ span.options_beni {
                        <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
                            ?> 
                            
-                          <option value="<?php echo $role_value['id']; ?>"<?php if($this->session->userdata('jobrole')==$education['education_level_id']){ echo "selected"; } elseif(!empty($job_info)) if($job_info->job_role==$role_value['id']) echo 'selected'; ?>><?php echo $role_value['job_role_title']; ?></option>
+                          <option value="<?php echo $role_value['id']; ?>"<?php if($this->session->userdata('jobrole')==$role_value['id']){ echo "selected"; } elseif(!empty($job_info)) if($job_info->job_role==$role_value['id']) echo 'selected'; ?>><?php echo $role_value['job_role_title']; ?></option>
                         <?php } ?><?php echo form_error('job_role'); ?>
                     </select>                  
                   </div>
@@ -438,6 +438,24 @@ span.options_beni {
             $(this).next().focus();
         }
     });
+
+    var id=document.getElementById('job_role');
+    $.ajax({
+                  url:'<?php echo base_url();?>Employer/getSkillsByRole',
+                  type:'POST',
+                  data:{
+                      role_id:id
+                  },
+                   dataType: "html",  
+                   success: function(data)
+                   {
+                      $('#skills_result').html(data);
+                   } 
+            });
+
+        
+
+
 })
 </script>
 <script>
