@@ -386,7 +386,7 @@ input {
 	
 }
 li.left-title {
-    list-style-type: none;
+    list-style-type: none;   
     float: left;
 	font-size: 12px;
     font-weight: 100;
