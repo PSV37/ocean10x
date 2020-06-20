@@ -196,11 +196,7 @@ background-color: #81c3f8;
 .post-job {
     margin-bottom: 20px;
 }	
-div#next {
-    float: right;
-    /* margin-left: 385px; */
-    margin-right: 59px !important;
-}
+
 :checked + span{background: #18c5bd !important;
 
     display: initial !important;
@@ -211,7 +207,25 @@ div#next {
     border-radius: 13px;
 	}
 
+.btn-default1:not(:checked) + span {
+    background: #e4e2e2;
+    /*padding: 8px 0;*/
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.btn-default1:input(:checked){
+    padding: 17px 10px !important;
+    width: 154px !important;
+    border-radius: 4px !important; 
 
+}
+
+.btn-default1:not(:checked) + span {
+    padding: 17px 10px !important;
+    width: 154px !important;
+    border-radius: 4px !important;
+}
 
 </style>
 
@@ -294,10 +308,14 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                               $select_sk = "skill_name ,id";
                               $skills = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=10,$start=false, $search=false);
                               if(!empty($skills)){ 
-                                      foreach($skills as $skill_row){
-                                        echo $skill_row['skill_name'];
+                                      foreach($skills as $skill_row){ ?>
+                                        // echo $skill_row['skill_name'];
+                                <label>
+                                  <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
+                                  <span><?php echo $skill_row['skill_name']; ?></span>
+                                </label>
 
-                                      }
+                                    <?php  }
                                     }
                              }
                             
