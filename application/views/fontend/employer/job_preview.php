@@ -320,7 +320,7 @@ background-color: #11a59e;
                                <div class="preview_btns">
                                <button type="button" class="back_btn">Back</button>
                                <button type="submit" name="edit" class="edit_btn">Edit</button>
-                               <button type="button" class="Postjob_btn">Post Job</button>
+                               <button type="button" class="Postjob_btn" name="post_preview">Post Job</button>
                                </div>
                             
                             

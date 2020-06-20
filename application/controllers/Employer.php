@@ -231,6 +231,7 @@ public function job_post()
     $employer_id = $this->session->userdata('company_profile_id');
     if (isset($_POST['preview'])) {
         // echo "preview"; die();
+        $data['job_post_id']  = $this->input->post('job_post_id');
         $data['exp_from'] = $this->input->post('exp_from');
         $data['exp_to'] = $this->input->post('exp_to');
         $data['experience'] = $data['exp_from'].'-'.$data['exp_to'];
@@ -280,6 +281,111 @@ public function job_post()
 
 
                     $this->load->view('fontend/employer/post_new_job', $data);
+    }
+    elseif (isset($_POST['post_preview'])) {
+                    $employer_id  = $this->session->userdata('company_profile_id');
+                    $job_deadline = strtolower($this->input->post('job_deadline'));
+                    $job_post_id  = $this->session->userdata('job_post_id');
+                    $job_info     = array(
+                        'company_profile_id' => $employer_id,
+                        'job_title'          => $this->session->userdata('title'),
+                        'job_slugs'          => $this->slug->create_uri($this->session->userdata('title')),
+                        'job_desc'           => $this->session->userdata('job_desc'),
+                        'job_category'       => $this->session->userdata('job_category'),
+                        'education'          => $this->session->userdata('edu'),
+                        'benefits'           => implode(',', $this->session->userdata('benefits')),
+                        'experience'         => $this->session->userdata('experience'),
+                        
+      //                   'job_location'       => $this->session->userdata('city_id'),
+                        // 'state_id'           => $this->session->userdata('state_id'),
+                        'city_id'            => $this->session->userdata('location'),
+                        'job_nature'         => $this->session->userdata('job_nature'),
+                        'job_edu'            => $this->session->userdata('job_edu'),
+                        'no_jobs'            => $this->session->userdata('no_jobs'),
+                        'edu_specialization' => $this->session->userdata('job_edu_special'),   //new added field
+                        'job_role'           => $this->session->userdata('job_role'),   //new added field
+                        'skills_required'    =>$this->session->userdata('skills'), //new added field
+
+                        // 'job_level'          => $this->input->post('job_level'),
+                        'salary_range'      =>$this->session->userdata('salary_range'),
+                        // 'job_types'          => $this->input->post('job_types'),
+                        "job_deadline"       => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('job_deadline')))),
+
+      //                   'preferred_age'      => $this->input->post('preferred_age_from'),
+                        // 'preferred_age_to'   => $this->input->post('preferred_age_to'),
+                        // 'working_hours'      => $this->input->post('working_hours'),
+                        'is_test_required'      => $this->input->post('job_test_requirment'),
+                        
+                    );
+                    if (empty($job_post_id)) {
+                        $this->job_posting_model->insert($job_info);
+                         $company_name=$this->session->userdata('company_name');
+                        $data=array('company'=>$company_name,
+                            'action_taken_for'=>$company_name,
+                            'field_changed' =>'Posted A new Job',
+                            'Action'=>'Posted A new  Job ',
+                            'datetime'=>date('Y-m-d H:i:s'),
+                            'updated_by' =>$company_name);
+
+                    $result=$this->Master_model->master_insert($data,'employer_audit_record');
+                        $this->session->set_flashdata('success',
+                            '<div class="alert alert-success alert-dismissable">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                  Vacancy post is sucessfully created  
+                  </div>');
+                      // redirect('job/show/'.$job_info['job_slugs']);
+                         redirect('employer/active_job');
+                    } else {
+                       
+
+                        $company_profile_id=$this->session->userdata('company_profile_id');
+                            $whereres = "job_post_id='$job_post_id'";
+                            $old_job_details=$this->Master_model->get_master_row('job_posting',$select = FALSE,$whereres);
+                            $old_array_keys=array_keys($old_job_details);
+                            $old_array_values=array_values($old_job_details);
+                            // print_r($old_array_keys);
+                            // print_r($old_array_values);die;
+
+                            $size=sizeof($old_array_keys);
+                            for ($i=0; $i <$size ; $i++) 
+                            { 
+                                $parameter=$old_array_keys[$i];
+                                $old_data=$old_array_values[$i];
+                                $new_data=$job_info[$parameter];
+                                if (isset($new_data) && !empty($new_data)) {
+                                    if (($old_data==$new_data) || ($parameter=='job_slugs') )
+                                    {
+                                        
+                                    }
+                                    else
+                                    {
+                                        $company_name=$this->session->userdata('company_name');
+                                        $action= str_replace("_", ' ', $parameter);
+                                        $data=array('company'=>$company_name,
+                                                   'action_taken_for'=>$company_name,
+                                                    'field_changed' =>$action,
+                                                    'Action'=>'Changed '.$action.' In posted job for ' .$this->input->post('job_title') ,
+                                                    'datetime'=>date('Y-m-d H:i:s'),
+                                                    'updated_by' =>$company_name);
+                                        $result=$this->Master_model->master_insert($data,'employer_audit_record');
+                                        // print_r($this->db->last_query());die;
+
+                                    }
+                                }
+                                
+                            }
+                             $this->job_posting_model->update($job_info, $job_post_id);
+
+                       
+                        $this->session->set_flashdata('update',
+                            '<div class="alert alert-success alert-dismissable">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                   Vacancy post is sucessfully Update;
+                  </div>');
+                        // redirect('job/show/'.$job_info['job_slugs']);
+                         redirect('employer/active_job');
+                    }
+                }
     }
     elseif ($_POST) {
          $this->form_validation->set_rules('job_title', 'job title', 'required');
