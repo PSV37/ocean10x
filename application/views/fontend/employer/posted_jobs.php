@@ -9,7 +9,7 @@
 	padding: 4px 15px;
     border-radius: 30px;
 	cursor:pointer;
-
+}
 button#sklbtn {
    background-color: #afe1de;
     color: #6f6e6e;
