@@ -303,7 +303,7 @@ public function job_post()
                         'job_nature'         => $this->session->userdata('jobnature'),
                         'job_edu'            => $this->session->userdata('edu'),
                         'no_jobs'            => $this->session->userdata('no_jobs'),
-                        'edu_specialization' => $this->session->userdata('job_edu_special'),   //new added field
+                        // 'edu_specialization' => $this->session->userdata('job_edu_special'),   //new added field
                         'job_role'           => $this->session->userdata('jobrole'),   //new added field
                         'skills_required'    =>$this->session->userdata('skills'), //new added field
 
