@@ -239,7 +239,7 @@ background-color: #11a59e;
                      <div class="front">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Rivian_company_logo.jpg" style="height:40px; width:40px;border-radius:5px;float:left" />
                             <div class="job-info">
-                                <p class="job_title"><input type="text" name=""><?php echo $title; ?></p>
+                                <p class="job_title"><input type="text" name="job_title" readonly value="<?php echo $title; ?>" ></p>
                             </div>   
                             <div class="icon-info">
                                 <li class="left-icon-title"><i class="fas fa-map-marker-alt"></i></li><li class="right-icon-title"> &emsp;Mumbai ,pune</li>
