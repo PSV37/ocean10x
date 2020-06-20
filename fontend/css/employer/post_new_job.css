@@ -317,6 +317,15 @@ button.btn-save {
     margin: 30px auto;
 }
 }
+button#sklbtn {
+    background-color: #18c5bd;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    padding: 1px 10px;
+    margin-bottom: 7px;
+    font-size: 11px;
+}
 
 .fade-rotate .modal-dialog{top:45%;}
 .modal-footer{border-top:none;}
