@@ -1,8 +1,8 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css">
 <style>
 button#sklbtn {
-    background-color: #18c5bd;
-    color: white;
+   background-color: #afe1de;
+    color: #6f6e6e;
     border-radius: 20px;
     border: none;
     padding: 1px 10px;
