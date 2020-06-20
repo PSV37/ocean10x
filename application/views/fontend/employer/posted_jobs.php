@@ -304,9 +304,13 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                               $skills = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=10,$start=false, $search=false);
                               if(!empty($skills)){ 
                                       foreach($skills as $skill_row){
-                                        echo $skill_row['skill_name'];
+                                       ?>
 
-                                      }
+                                        
+                                        <lable class="btn-default1"><button><?php echo  $skill_row['skill_name'];?></button></lable>
+
+
+                                     <?php }
                                     }
                              }
                             
