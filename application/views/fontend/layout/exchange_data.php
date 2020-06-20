@@ -41,7 +41,7 @@ input {
     -webkit-transform: rotateX(180deg);
 }
 */
-       
+
 .active-job {
     margin-top:168px;
 }
@@ -217,7 +217,6 @@ background-color: #11a59e;
     text-align: end;
     margin: 20px 0px 0px 0px;
 }
-
 
 </style>
 
