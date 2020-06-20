@@ -340,11 +340,10 @@ transition:0.9s;color:#fff;}
     padding: 0px;
     margin-bottom: 20px;
 }
-
+      
     .card div {
        
-        background: #fff;
-        
+     
        
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
