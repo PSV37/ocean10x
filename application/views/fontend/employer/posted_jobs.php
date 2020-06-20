@@ -9,6 +9,8 @@
     display: block;
     width: 100%;
      position:relative !important;
+	 border-top: solid 2px #18c5bd;
+    border-radius: 13px;
 }
 .card{height:auto;display: flow-root;}
 .btn_all {
