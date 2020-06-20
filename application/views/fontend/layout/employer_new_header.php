@@ -106,7 +106,7 @@
     <ul class="dropdown-menu">
       <li><a href="<?php echo base_url() ?>employer/profile-setting"><i class="fas fa-user"></i>My Profile</a> </li>
       <li><a href="<?php echo base_url(); ?>employer/change-password"><i class="fas fa-lock"></i>Change Password</a></li>
-      <li ><a href="#" onclick="logout();"><i class="fas fa-power-off"></i>Logout</a></li>
+      <li ><a href="#" class="btn-logoff" data-toggle="modal" data-target="#modal_logoff"><i class="fas fa-power-off"></i>Logout</a></li>
     </ul>
   </div>
     </div>
@@ -115,6 +115,24 @@
   </div>
 
 </div>
+<div class="modal fade" id="modal_logoff" role="dialog">
+    <div class="modal-dialog">
+        
+      
+      <div class="modal-content">
+        <div class="modal-header">
+         
+          <h4 class="modal-title">Are you sure want to log off ?</h4>
+        </div>
+       
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default"  data-dismiss="modal"><a href="<?php echo base_url(); ?>employer/logout">Ok</a></button>
+          <button type="button" class="btn btn-default1" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 <script>
   function logout()
   {
