@@ -384,8 +384,8 @@ input {
     -webkit-transform: rotateX(180deg);
 }
 */
-
-.active-job {
+    
+.col-md-6.active-job {
     margin-top:1525px !important;
 }
 .dropdown-menu>li>a{padding:3px 20px;}
