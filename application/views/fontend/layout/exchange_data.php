@@ -46,7 +46,7 @@ input {
     margin-top:168px;
 }
 .dropdown-menu>li>a{padding:3px 20px;}
-.front{padding:11px;}
+.front{padding:11px;height:264px;}
 .job-info {
     margin-left: 55px;
 	margin-top:-4px;
