@@ -315,7 +315,7 @@ public function job_post()
       //                   'preferred_age'      => $this->input->post('preferred_age_from'),
                         // 'preferred_age_to'   => $this->input->post('preferred_age_to'),
                         // 'working_hours'      => $this->input->post('working_hours'),
-                        'is_test_required'      => $this->input->post('job_test_requirment'),
+                        // 'is_test_required'      => $this->input->post('job_test_requirment'),
                         
                     );
                     if (empty($job_post_id)) {
