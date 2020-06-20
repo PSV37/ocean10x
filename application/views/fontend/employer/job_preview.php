@@ -249,7 +249,7 @@ background-color: #11a59e;
                                 <div class="clear"></div>
                             </div>
                             <div class="following-info">
-                                <li class="left-title">Education Level</li><li class="right-title">&nbsp;:<?php echo $education; ?></li>
+                                <li class="left-title">Education Level</li><li class="right-title">&nbsp;:<?php echo $education['education_level_name']; ?></li>
                                    
                                 <li class="left-title">Job Roll</li><li class="right-title">&nbsp;: Java Developer</li> 
                                 <div class="clear"></div>
@@ -263,26 +263,26 @@ background-color: #11a59e;
                              </div>
                             <div class="following-info3">
                                     <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li><li class="right-title">&nbsp;: yes</li>
-                                	 <li class="left-title">CTC</li><li class="right-title">&nbsp;: 500,0000-10,00,000</li>
+                                	 <li class="left-title">CTC</li><li class="right-title">&nbsp;: <?php echo $salary_range; ?></li>
                                       
                                 <div class="clear"></div>
                              </div>
                                    
                             <div class="skils_benifit">
                               <li class="left-title_seperate">skills</li><li class="right-title_seperate">&nbsp;:
-                              
+                             <?php  $sk=$skills;
+                             if (isset($sk) && !empty($sk)) {
+                                $where_sk= "id IN (".$sk.") AND status=1";
+                              $select_sk = "skill_name ,id";
+                              $skills = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=10,$start=false, $search=false);
+                              if(!empty($skills)){ 
+                                      foreach($skills as $skill_row){
+                                       ?>
                                 <label>
                                     <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
-                                    <span>Java1</span>
+                                    <span>$skill_row['skill_name'];</span>
                                 </label>
-                                 <label>
-                                    <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
-                                    <span>Java1</span>
-                                </label>
-                                <label>
-                                    <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
-                                    <span>Java1</span>
-                                </label>
+                                <?php } } ?>
                               </li>
                             </div> 
                                 

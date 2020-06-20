@@ -238,6 +238,9 @@ public function job_post()
         $data['title']=$this->input->post('job_title');
         $data['location']=$this->input->post('city_id');
         $data['experience']=$experience;
+         $sal_from = $this->input->post('sal_from');
+                $sal_to = $this->input->post('sal_to');
+                $data['salary_range'] = $sal_from.'-'.$sal_to;
         $ed=$this->input->post('job_edu');
 
         $where_int="education_level_id='$ed'";
