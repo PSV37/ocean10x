@@ -404,7 +404,7 @@ span.options_beni {
             <div class="btn-bottom_3">
             <div class="button" id="prev">&larr; Previous</div>
             <div class="button" id="next">Next &rarr;</div>
-           <button class="button" type="submit" name="preview"  id="preview">preview</button>>
+           <button class="button" type="submit" name="preview"  id="preview">preview</button>
           <button type="submit" class="button" id="submit">Post Job</button>
       	 </div>
         </div>
