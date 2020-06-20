@@ -358,7 +358,7 @@ transition:0.9s;color:#fff;}
 
     .card div {
        
-        background: #FFF;
+        background: #fff;
         
        
         -webkit-backface-visibility: hidden;
@@ -386,7 +386,7 @@ input {
 */
 
 .active-job {
-    margin-top:1381px;
+    margin-top:1525px !important;
 }
 .dropdown-menu>li>a{padding:3px 20px;}
 .front{padding:11px;height:248px;}
