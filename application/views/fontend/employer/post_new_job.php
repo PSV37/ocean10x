@@ -404,7 +404,7 @@ span.options_beni {
             <div class="btn-bottom_3">
             <div class="button" id="prev">&larr; Previous</div>
             <div class="button" id="next">Next &rarr;</div>
-           <div class="button" data-toggle="modal" data-target="#rotateModal" id="preview">preview</div>
+           <a href="<?php echo base_url() ?>employer/preview_post_job"><div class="button"  id="preview">preview</div></a>
             <button type="submit" class="button" id="submit">Post Job</button>
       	 </div>
         </div>
