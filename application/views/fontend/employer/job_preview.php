@@ -312,7 +312,7 @@ background-color: #11a59e;
                              
                              <hr>
                              <div class="job_dis">
-                             		 <li class="left-title_detail" >Detailed Job Description :</li><li class="right-title_detail">&emsp;</li>
+                             		 <li class="left-title_detail" >Detailed Job Description :</li><li class="right-title_detail">&emsp;<?php echo $job_desc; ?></li>
                              
                              
                              </div>

@@ -294,7 +294,7 @@ public function job_post()
                         'job_desc'           => $this->session->userdata('job_desc'),
                         'job_category'       => $this->session->userdata('job_category'),
                         'education'          => $this->session->userdata('edu'),
-                        'benefits'           => implode(',', $this->session->userdata('benefits')),
+                        'benefits'           => $this->session->userdata('benefits'),
                         'experience'         => $this->session->userdata('experience'),
                         
       //                   'job_location'       => $this->session->userdata('city_id'),
