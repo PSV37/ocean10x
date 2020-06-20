@@ -282,7 +282,8 @@ public function job_post()
 
                     $this->load->view('fontend/employer/post_new_job', $data);
     }
-    elseif (isset($_POST['post_preview'])) {
+    elseif (isset($_POST['post_preview'])) 
+    {
                     $employer_id  = $this->session->userdata('company_profile_id');
                     $job_deadline = strtolower($this->input->post('job_deadline'));
                     $job_post_id  = $this->session->userdata('job_post_id');
@@ -328,11 +329,7 @@ public function job_post()
                             'updated_by' =>$company_name);
 
                     $result=$this->Master_model->master_insert($data,'employer_audit_record');
-                        $this->session->set_flashdata('success',
-                            '<div class="alert alert-success alert-dismissable">
-                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                  Vacancy post is sucessfully created  
-                  </div>');
+                       
                       // redirect('job/show/'.$job_info['job_slugs']);
                          redirect('employer/active_job');
                     } else {
@@ -377,15 +374,11 @@ public function job_post()
                              $this->job_posting_model->update($job_info, $job_post_id);
 
                        
-                        $this->session->set_flashdata('update',
-                            '<div class="alert alert-success alert-dismissable">
-                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                   Vacancy post is sucessfully Update;
-                  </div>');
+                        
                         // redirect('job/show/'.$job_info['job_slugs']);
                          redirect('employer/active_job');
                     }
-                }
+                
     }
     elseif ($_POST) {
          $this->form_validation->set_rules('job_title', 'job title', 'required');
