@@ -225,6 +225,9 @@ background-color: #11a59e;
     text-align: end;
     margin: 20px 0px 0px 0px;
 }
+li.right-title_seperate {
+    margin-left: 58px;
+}
 
 </style>
 
@@ -269,7 +272,7 @@ background-color: #11a59e;
                              </div>
                                    
                             <div class="skils_benifit">
-                              <li class="left-title_seperate">skills</li><li class="right-title_seperate">&nbsp;:
+                              <li class="left-title_seperate">skills :</li><li class="right-title_seperate">
                              <?php  $sk=$skills;
                              if (isset($sk) && !empty($sk)) {
                                 $where_sk= "id IN (".$sk.") AND status=1";
