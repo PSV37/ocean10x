@@ -10,7 +10,7 @@
     width: 100%;
      position:relative !important;
 }
-.card{height:auto;}
+.card{height:auto;display: flow-root;}
 .btn_all {
     color: #539617;
     background-color: #fff;
@@ -396,7 +396,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
 
           <textarea class="form-control" name="message" rows="5" id="comment" required></textarea>
           </div>
-         
+              
          
        
         </div>
