@@ -10,6 +10,7 @@
     width: 100%;
      position:relative !important;
 }
+.card{height:auto;}
 .btn_all {
     color: #539617;
     background-color: #fff;
