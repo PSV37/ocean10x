@@ -245,9 +245,18 @@ public function job_post()
 
         $where_int="education_level_id='$ed'";
         $data['education'] = $this->Master_model->get_master_row('education_level', $select = FALSE, $where_int, $join = FALSE);
-        // print_r($this->db->last_query());die;
-        $data['job_role']=$this->input->post('job_role');
-        $data['job_nature']=$this->input->post('job_nature');
+       
+        $job_role=$this->input->post('job_role');
+        $where_role="id='$job_role'";
+        $data['job_role'] = $this->Master_model->get_master_row('job_role', $select = FALSE, $where_role, $join = FALSE);
+
+        $job_nature=$this->input->post('job_nature');
+        $where_int="job_nature_id='$job_nature'";
+        $data['job_nature'] = $this->Master_model->get_master_row('job_nature', $select = FALSE, $where_int, $join = FALSE);
+
+        $data['no_jobs']=$this->input->post('no_jobs');
+        
+
         $data['job_desc']=$this->input->post('job_desc');
         $data['skills']=implode(',', $this->input->post('skill_set'));
         $data['benefits']=implode(',', $this->input->post('benefits'));

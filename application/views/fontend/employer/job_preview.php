@@ -251,13 +251,13 @@ background-color: #11a59e;
                             <div class="following-info">
                                 <li class="left-title">Education Level</li><li class="right-title">&nbsp;:<?php echo $education['education_level_name']; ?></li>
                                    
-                                <li class="left-title">Job Roll</li><li class="right-title">&nbsp;: Java Developer</li> 
+                                <li class="left-title">Job Roll</li><li class="right-title">&nbsp;: <?php echo $job_role['job_role_title']; ?></li> 
                                 <div class="clear"></div>
                             </div>
                                    
                             <div class="following-info2">
-                                <li class="left-title">Engagement Type</li><li class="right-title">&nbsp;:Full Time</li>
-                                <li class="left-title">Number Of Position</li><li class="right-title">&nbsp;:4</li>
+                                <li class="left-title">Engagement Type</li><li class="right-title">&nbsp;:<?php echo $job_role['job_nature_name']; ?></li>
+                                <li class="left-title">Number Of Position</li><li class="right-title">&nbsp;:<?php echo $no_jobs; ?></li>
 
                                 <div class="clear"></div>
                              </div>
@@ -280,7 +280,7 @@ background-color: #11a59e;
                                        ?>
                                 <label>
                                     <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
-                                    <span>$skill_row['skill_name'];</span>
+                                    <span><?php echo $skill_row['skill_name']; ?></span>
                                 </label>
                                 <?php } }}?>
                               </li>
