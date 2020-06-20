@@ -41,7 +41,7 @@ input {
     -webkit-transform: rotateX(180deg);
 }
 */
-
+       
 .active-job {
     margin-top:168px;
 }
