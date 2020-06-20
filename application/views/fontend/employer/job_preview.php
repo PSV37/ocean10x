@@ -235,7 +235,7 @@ background-color: #11a59e;
             <div class="col-md-9">
             
                 <div class="card">
-                 <form>
+                 <form action="<?php echo base_url() ?>employer/job_post" method="post">
                      <div class="front">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Rivian_company_logo.jpg" style="height:40px; width:40px;border-radius:5px;float:left" />
                             <div class="job-info">
@@ -319,7 +319,7 @@ background-color: #11a59e;
                             	
                                <div class="preview_btns">
                                <button type="button" class="back_btn">Back</button>
-                               <button type="button" class="edit_btn">Edit</button>
+                               <button type="submit" name="edit" class="edit_btn">Edit</button>
                                <button type="button" class="Postjob_btn">Post Job</button>
                                </div>
                             

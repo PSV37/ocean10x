@@ -260,7 +260,22 @@ public function job_post()
         $data['job_desc']=$this->input->post('job_desc');
         $data['skills']=implode(',', $this->input->post('skill_set'));
         $data['benefits']=implode(',', $this->input->post('benefits'));
+         $this->session->set_userdata($data);
        $this->load->view('fontend/employer/job_preview',$data);
+    }
+    elseif(isset($_POST['edit']))
+    {
+        $data['city'] = $this->Master_model->getMaster('city',$where=false);
+                    $data['country'] = $this->Master_model->getMaster('country',$where=false);
+                    $data['state'] = $this->Master_model->getMaster('state',$where=false);
+                    $data['education_level'] = $this->Master_model->getMaster('education_level',$where=false);
+
+                    $where_cn= "status=1";
+                    $select = "job_role_title, skill_set ,id";
+                    $data['job_role_data'] = $this->Master_model->getMaster('job_role',$where_cn,$join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
+
+
+                    $this->load->view('fontend/employer/post_new_job', $data);
     }
     elseif ($_POST) {
          $this->form_validation->set_rules('job_title', 'job title', 'required');
