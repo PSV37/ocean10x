@@ -7,6 +7,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
 
  $this->load->view('fontend/layout/employer_new_header.php');
  
+ // print_r($this->session->userdata());die;
 ?>
 <style>
   .required
@@ -200,7 +201,7 @@ span.options_beni {
 	<div class="container">
     <div class="col-md-12">
       <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
-       <form  action="<?php echo base_url() ?>employer/job_post" method="post">
+       <form id="test" action="<?php echo base_url() ?>employer/job_post" method="post">
         <div class="col-md-9 post-job">
          
             <input type="hidden" name="job_post_id" value="<?php if(!empty($job_info->job_post_id)){echo $job_info->job_post_id;} ?>">
@@ -210,7 +211,7 @@ span.options_beni {
              <div class="col-md-3 col-sm-4">
                 <div class="formrow">
                 <label class="control-label ">Job Title / Designation<span class="required"> * </span> </label>
-                <input type="text" name="job_title" value="<?php if(!empty($job_info->job_title)){
+                <input type="text" name="job_title" value="<?php if(!empty($this->session->userdata('title')) ){echo $this->session->userdata('title'); } elseif(!empty($job_info->job_title)){
                   echo $job_info->job_title;} ?><?php echo set_value('job_title'); ?>" class="form-control" autocomplete="off" required="">
                   <?php echo form_error('job_title'); ?>
                 </div>
@@ -219,7 +220,7 @@ span.options_beni {
                 <div class="formrow">
                   <label class="control-label ">Job Locations<span class="required"> * </span> </label>
                     <input type="text" name="city_id" class="form-control" id="tokenfield" placeholder="Enter Location"
-                        value="" required><?php echo form_error('city_id'); ?>                   
+                        value="<?php if(!empty($this->session->userdata('location')) ){echo $this->session->userdata('location'); } ?>" required><?php echo form_error('city_id'); ?>                   
                   </div>
               </div>
                 <div class="col-md-3 col-sm-12">
@@ -231,11 +232,11 @@ span.options_beni {
                     ?>" autocomplete="off" required> -->
                     <div class="col-md-3 formrow" style="width:80px;margin-left:-14px;">
                    
-                    	 <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from" />
+                    	 <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from"  value="<?php if(!empty($this->session->userdata('exp_from')) ){echo $this->session->userdata('exp_from'); } ?>" />
                     </div>
                     
                      <div class="col-md-3 formrow" style="width:80px;margin-left:-19px;">
-                    	 <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to" />
+                    	 <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to" value="<?php if(!empty($this->session->userdata('exp_to')) ){echo $this->session->userdata('exp_to'); } ?>" />
                     </div>    
                                      
                   </div>    
@@ -243,8 +244,7 @@ span.options_beni {
                 <div class="col-md-3 col-sm-12">
                 <div class="formrow">
                     <label class="control-label ">Number of Positions<span class="required"> *</span> </label>
-                    <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2" name="no_jobs" required value="<?php 
-                      if(!empty($job_info->no_jobs)){ echo $job_info->no_jobs; } ?>" autocomplete="off">  <?php echo form_error('no_jobs'); ?>                
+                    <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2" name="no_jobs" required value="<?php if(!empty($this->session->userdata('no_jobs')) ){echo $this->session->userdata('no_jobs'); }elseif(!empty($job_info->no_jobs)){ echo $job_info->no_jobs; } ?>" autocomplete="off">  <?php echo form_error('no_jobs'); ?>                
                   </div>
               </div>
                <div class="col-md-3 col-sm-12"> 
@@ -253,7 +253,7 @@ span.options_beni {
                     <select name="job_edu" id="job_edu" class="form-control" data-style="btn-default" data-live-search="true" onchange="getEducationSpecial(this.value)" required="">
                       <option value="">Select Level </option>
                       <?php foreach($education_level as $education){?>
-                      <option value="<?php echo $education['education_level_id']; ?>"<?php if($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
+                      <option value="<?php echo $education['education_level_id']; ?>"<?php if($this->session->userdata('edu')==$education['education_level_id']){ echo "selected"; }elseif($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
                       <?php } ?>
                   </select>   <?php echo form_error('job_edu'); ?>                
                 </div>
@@ -296,12 +296,12 @@ span.options_beni {
                 <div class="col-md-3 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Salary Range<span class="required"> * </span> </label>
-                   <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2"  placeholder="" name="sal_from" />
+                   <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2"  placeholder="" name="sal_from" value="<?php if(!empty($this->session->userdata('exp_from')) ){echo $this->session->userdata('sal_from'); } ?>" />
                   </div>
                 </div>    
                <div class="col-md-3 col-sm-12">
                 <div class="formrow" style="margin-top:37px;">
-                  <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2"  name="sal_to"  placeholder=""/>
+                  <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2"  name="sal_to"  placeholder="" value="<?php if(!empty($this->session->userdata('exp_from')) ){echo $this->session->userdata('sal_to'); } ?>" />
                 </div>
               </div>
               <div class="col-md-3 col-sm-12">
@@ -326,7 +326,7 @@ span.options_beni {
                        <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
                            ?> 
                            
-                          <option value="<?php echo $role_value['id']; ?>"<?php if(!empty($job_info)) if($job_info->job_role==$role_value['id']) echo 'selected'; ?>><?php echo $role_value['job_role_title']; ?></option>
+                          <option value="<?php echo $role_value['id']; ?>"<?php if($this->session->userdata('jobrole')==$role_value['id']){ echo "selected"; } elseif(!empty($job_info)) if($job_info->job_role==$role_value['id']) echo 'selected'; ?>><?php echo $role_value['job_role_title']; ?></option>
                         <?php } ?><?php echo form_error('job_role'); ?>
                     </select>                  
                   </div>
@@ -404,8 +404,8 @@ span.options_beni {
             <div class="btn-bottom_3">
             <div class="button" id="prev">&larr; Previous</div>
             <div class="button" id="next">Next &rarr;</div>
-           <a href="<?php echo base_url() ?>employer/preview_post_job"><div class="button"  id="preview">preview</div></a>
-            <button type="submit" class="button" id="submit">Post Job</button>
+           <button class="button" type="submit" name="preview"  id="preview">preview</button>
+          <button type="submit" class="button" id="submit">Post Job</button>
       	 </div>
         </div>
       </form>
@@ -413,45 +413,23 @@ span.options_beni {
   </div>
 </div> 
 
-<div class="modal fade-rotate" id="rotateModal<?php echo $v_companyjobs->job_post_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <input type="hidden" name="company_profile_id" id="company_profile_id" value="<?php echo $this->session->userdata('company_profile_id'); ?>">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h5 style="text-align: center;font-size: 24px;font-weight: 600;color:#fff;">Forward this job post</h5>
-          </div>
-          <form action="<?php echo base_url() ?>employer/job_post" class="sendEmail" method="post" autocomplete="off">
-        <div class="modal-body">
-             <div class="col-md-4 col-sm-4">
-                <div class="formrow">
-                <label class="control-label ">Job Title / Designation<span class="required"> * </span> </label>
-                <input type="text" name="job_title" value="<?php if(!empty($job_info->job_title)){
-                  echo $job_info->job_title;} ?><?php echo set_value('job_title'); ?>" class="form-control" autocomplete="off" required="">
-                  <?php echo form_error('job_title'); ?>
-                </div>
-              </div>
-          </div>
-        
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <label class="mdl-textfield__label" for="sample3">Message</label>
+<!-- <script type="text/javascript">
+  $( '#preview' ).click( function(){
+   var data = new FormData( $( 'form#test' )[ 0 ] );
 
-          <textarea class="form-control" name="message" rows="5" id="comment" required></textarea>
-          </div>
-         
-         
-       
-        </div>
-        <div class="modal-footer">
-                           
-       <button type="submit" class="btn btn-save">Post Job</button>
-         
-      </div>
-      </form>
-    </div>
-  </div>
+   $.ajax( {
+      processData: false,
+      contentType: false,
 
-</div> 
+      data: data,
+      dataType: 'json',
+      type: $( this ).attr( 'method' );
+      url: <?php echo base_url() ?>'employer/preview_post_job',
+      success: function( feedback ){
+         console.log( "the feedback from your API: " + feedback );
+      }
+});
+</script> -->
 <script>
   $(document).ready(function(){
     $('input').keyup(function(){
@@ -460,6 +438,24 @@ span.options_beni {
             $(this).next().focus();
         }
     });
+
+    var id=document.getElementById('job_role');
+    $.ajax({
+                  url:'<?php echo base_url();?>Employer/getSkillsByRole',
+                  type:'POST',
+                  data:{
+                      role_id:id
+                  },
+                   dataType: "html",  
+                   success: function(data)
+                   {
+                      $('#skills_result').html(data);
+                   } 
+            });
+
+        
+
+
 })
 </script>
 <script>
