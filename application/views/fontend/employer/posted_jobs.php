@@ -1,5 +1,6 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css">
 <style>
+
 :checked + span {
     background: #18c5bd !important;
     display: inline-block;
@@ -8,6 +9,16 @@
 	padding: 4px 15px;
     border-radius: 30px;
 	cursor:pointer;
+
+button#sklbtn {
+   background-color: #afe1de;
+    color: #6f6e6e;
+    border-radius: 20px;
+    border: none;
+    padding: 1px 10px;
+    margin-bottom: 7px;
+    font-size: 11px;
+
 }
 .btn-default1:not(:checked) + span {
 	padding: 4px 15px;
