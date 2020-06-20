@@ -225,6 +225,13 @@ div#skills {
     padding: 8px 21px -7px 0px;
 }
 
+button#sklbtn {
+    background-color: #18c5bd;
+    color: white;
+    border-radius: 0;
+    border: none;
+}
+
 </style>
 
 
@@ -311,7 +318,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                                        ?>
 
                                         
-                                        <lable class="btn-default1"><button><?php echo  $skill_row['skill_name'];?></button></lable>
+                                        <lable class="btn-default1"><button id="sklbtn"><?php echo  $skill_row['skill_name'];?></button></lable>
 
 
                                      <?php }
