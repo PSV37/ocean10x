@@ -404,7 +404,7 @@ span.options_beni {
             <div class="btn-bottom_3">
             <div class="button" id="prev">&larr; Previous</div>
             <div class="button" id="next">Next &rarr;</div>
-           <a href="#"><div class="button"  id="preview">preview</div></a>
+           <a href="#"><div class="button" type="submit" name="preview"  id="preview">preview</div></a>
             <button type="submit" class="button" id="submit">Post Job</button>
       	 </div>
         </div>
@@ -413,7 +413,7 @@ span.options_beni {
   </div>
 </div> 
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   $( '#preview' ).click( function(){
    var data = new FormData( $( 'form#test' )[ 0 ] );
 
@@ -429,7 +429,7 @@ span.options_beni {
          console.log( "the feedback from your API: " + feedback );
       }
 });
-</script>
+</script> -->
 <script>
   $(document).ready(function(){
     $('input').keyup(function(){
