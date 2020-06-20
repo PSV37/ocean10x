@@ -230,8 +230,21 @@ public function job_post()
 {
     $employer_id = $this->session->userdata('company_profile_id');
     if (isset($_POST['preview'])) {
-        echo "preview"; die();
-        # code...
+        // echo "preview"; die();
+        $data['exp_from'] = $this->input->post('exp_from');
+        $data['exp_to'] = $this->input->post('exp_to');
+        $data['experience'] = $exp_from.'-'.$exp_to;
+
+        $data['title']=$this->input->post('job_title');
+        $data['location']=$this->input->post('city_id');
+        $data['experience']=$experience;
+        $data['education']=$this->input->post('education');
+        $data['job_role']=$this->input->post('job_role');
+        $data['job_nature']=$this->input->post('job_nature');
+        $data['job_desc']=$this->input->post('job_desc');
+        $data['skills']=implode(',', $this->input->post('skill_set'));
+        $data['benefits']=implode(',', $this->input->post('benefits'));
+       $this->load->view('fontend/employer/job_preview',$data);
     }
     elseif ($_POST) {
          $this->form_validation->set_rules('job_title', 'job title', 'required');

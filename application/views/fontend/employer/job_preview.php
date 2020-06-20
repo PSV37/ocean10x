@@ -235,10 +235,11 @@ background-color: #11a59e;
             <div class="col-md-9">
             
                 <div class="card">
-                    <div class="front">
+                 <form>
+                     <div class="front">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Rivian_company_logo.jpg" style="height:40px; width:40px;border-radius:5px;float:left" />
                             <div class="job-info">
-                                <p class="job_title">Seniour Software Engineer</p>
+                                <p class="job_title"><?php echo $data['title']; ?></p>
                             </div>   
                             <div class="icon-info">
                                 <li class="left-icon-title"><i class="fas fa-map-marker-alt"></i></li><li class="right-icon-title"> &emsp;Mumbai ,pune</li>
@@ -324,7 +325,7 @@ background-color: #11a59e;
                             
                             
                             </div>
-                          
+                          </form>
                             
                         </div>
             
