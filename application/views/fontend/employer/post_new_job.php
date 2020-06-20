@@ -200,7 +200,7 @@ span.options_beni {
 	<div class="container">
     <div class="col-md-12">
       <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
-       <form  action="<?php echo base_url() ?>employer/job_post" method="post">
+       <form id="test" action="<?php echo base_url() ?>employer/job_post" method="post">
         <div class="col-md-9 post-job">
          
             <input type="hidden" name="job_post_id" value="<?php if(!empty($job_info->job_post_id)){echo $job_info->job_post_id;} ?>">
@@ -404,7 +404,7 @@ span.options_beni {
             <div class="btn-bottom_3">
             <div class="button" id="prev">&larr; Previous</div>
             <div class="button" id="next">Next &rarr;</div>
-           <a href="<?php echo base_url() ?>employer/preview_post_job"><div class="button"  id="preview">preview</div></a>
+           <a href="#"><div class="button"  id="preview">preview</div></a>
             <button type="submit" class="button" id="submit">Post Job</button>
       	 </div>
         </div>
@@ -413,45 +413,23 @@ span.options_beni {
   </div>
 </div> 
 
-<div class="modal fade-rotate" id="rotateModal<?php echo $v_companyjobs->job_post_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <input type="hidden" name="company_profile_id" id="company_profile_id" value="<?php echo $this->session->userdata('company_profile_id'); ?>">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h5 style="text-align: center;font-size: 24px;font-weight: 600;color:#fff;">Forward this job post</h5>
-          </div>
-          <form action="<?php echo base_url() ?>employer/job_post" class="sendEmail" method="post" autocomplete="off">
-        <div class="modal-body">
-             <div class="col-md-4 col-sm-4">
-                <div class="formrow">
-                <label class="control-label ">Job Title / Designation<span class="required"> * </span> </label>
-                <input type="text" name="job_title" value="<?php if(!empty($job_info->job_title)){
-                  echo $job_info->job_title;} ?><?php echo set_value('job_title'); ?>" class="form-control" autocomplete="off" required="">
-                  <?php echo form_error('job_title'); ?>
-                </div>
-              </div>
-          </div>
-        
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <label class="mdl-textfield__label" for="sample3">Message</label>
+<script type="text/javascript">
+  $( '#preview' ).click( function(){
+   var data = new FormData( $( 'form#test' )[ 0 ] );
 
-          <textarea class="form-control" name="message" rows="5" id="comment" required></textarea>
-          </div>
-         
-         
-       
-        </div>
-        <div class="modal-footer">
-                           
-       <button type="submit" class="btn btn-save">Post Job</button>
-         
-      </div>
-      </form>
-    </div>
-  </div>
+   $.ajax( {
+      processData: false,
+      contentType: false,
 
-</div> 
+      data: data,
+      dataType: 'json',
+      type: $( this ).attr( 'method' );
+      url: <?php echo base_url() ?>'employer/preview_post_job',
+      success: function( feedback ){
+         console.log( "the feedback from your API: " + feedback );
+      }
+});
+</script>
 <script>
   $(document).ready(function(){
     $('input').keyup(function(){

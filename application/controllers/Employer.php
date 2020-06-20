@@ -3558,7 +3558,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
 function preview_post_job()
 {
-    $this->load->view('fontend/employer/job_preview');
+    print_r($data);
+    // $this->load->view('fontend/employer/job_preview');
 }
     
     
