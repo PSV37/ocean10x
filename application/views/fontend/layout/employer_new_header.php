@@ -128,7 +128,7 @@
         </div>
        
         <div class="modal-footer">
-          <button type="button" class="btn btn-default"  data-dismiss="modal"><a href="<?php echo base_url(); ?>employer/logout"> Ok </a></button>
+          <a href="<?php echo base_url(); ?>employer/logout"><button type="button" class="btn btn-default"  data-dismiss="modal"> Ok </button></a>
           <button type="button" class="btn btn-default1" data-dismiss="modal">Cancel</button>
         </div>
       </div>
