@@ -389,7 +389,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
 
           <textarea class="form-control" name="message" rows="5" id="comment" required></textarea>
           </div>
-         
+              
          
        
         </div>
