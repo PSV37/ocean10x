@@ -242,6 +242,7 @@ public function job_post()
 
         $where_int="education_level_id='$ed'";
         $data['education'] = $this->Master_model->get_master_row('education_level', $select = FALSE, $where_int, $join = FALSE);
+        print_r($this->db->last_query());die;
         $data['job_role']=$this->input->post('job_role');
         $data['job_nature']=$this->input->post('job_nature');
         $data['job_desc']=$this->input->post('job_desc');
