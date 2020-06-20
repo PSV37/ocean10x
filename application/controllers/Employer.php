@@ -233,25 +233,25 @@ public function job_post()
         // echo "preview"; die();
         $data['exp_from'] = $this->input->post('exp_from');
         $data['exp_to'] = $this->input->post('exp_to');
-        $data['experience'] = $exp_from.'-'.$exp_to;
+        $data['experience'] = $data['exp_from'].'-'.$data['exp_to'];
 
         $data['title']=$this->input->post('job_title');
         $data['location']=$this->input->post('city_id');
-        $data['experience']=$experience;
-         $sal_from = $this->input->post('sal_from');
-                $sal_to = $this->input->post('sal_to');
-                $data['salary_range'] = $sal_from.'-'.$sal_to;
-        $ed=$this->input->post('job_edu');
+        // $data['experience']=$experience;
+         $data['sal_from'] = $this->input->post('sal_from');
+         $data['sal_to'] = $this->input->post('sal_to');
+         $data['salary_range'] = $data['sal_from'].'-'.$data['sal_to'];
+        $data['ed']=$this->input->post('job_edu');
 
-        $where_int="education_level_id='$ed'";
+        $where_int="education_level_id='$data['ed']'";
         $data['education'] = $this->Master_model->get_master_row('education_level', $select = FALSE, $where_int, $join = FALSE);
        
-        $job_role=$this->input->post('job_role');
-        $where_role="id='$job_role'";
+        $data['jobrole']=$this->input->post('job_role');
+        $where_role="id='$data['jobrole']'";
         $data['job_role'] = $this->Master_model->get_master_row('job_role', $select = FALSE, $where_role, $join = FALSE);
 
-        $job_nature=$this->input->post('job_nature');
-        $where_int="job_nature_id='$job_nature'";
+        $data['jobnature']=$this->input->post('job_nature');
+        $where_int="job_nature_id='$data['jobnature']'";
         $data['job_nature'] = $this->Master_model->get_master_row('job_nature', $select = FALSE, $where_int, $join = FALSE);
 
         $data['no_jobs']=$this->input->post('no_jobs');

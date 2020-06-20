@@ -220,7 +220,7 @@ span.options_beni {
                 <div class="formrow">
                   <label class="control-label ">Job Locations<span class="required"> * </span> </label>
                     <input type="text" name="city_id" class="form-control" id="tokenfield" placeholder="Enter Location"
-                        value="" required><?php echo form_error('city_id'); ?>                   
+                        value="<?php if(!empty($this->session->userdata('city_id')) ){echo $this->session->userdata('city_id'); } ?>" required><?php echo form_error('city_id'); ?>                   
                   </div>
               </div>
                 <div class="col-md-3 col-sm-12">
@@ -232,11 +232,11 @@ span.options_beni {
                     ?>" autocomplete="off" required> -->
                     <div class="col-md-3 formrow" style="width:80px;margin-left:-14px;">
                    
-                    	 <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from" />
+                    	 <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from"  value="<?php if(!empty($this->session->userdata('exp_from')) ){echo $this->session->userdata('exp_from'); } ?>" />
                     </div>
                     
                      <div class="col-md-3 formrow" style="width:80px;margin-left:-19px;">
-                    	 <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to" />
+                    	 <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to" value="<?php if(!empty($this->session->userdata('exp_to')) ){echo $this->session->userdata('exp_to'); } ?>" />
                     </div>    
                                      
                   </div>    
@@ -244,8 +244,7 @@ span.options_beni {
                 <div class="col-md-3 col-sm-12">
                 <div class="formrow">
                     <label class="control-label ">Number of Positions<span class="required"> *</span> </label>
-                    <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2" name="no_jobs" required value="<?php 
-                      if(!empty($job_info->no_jobs)){ echo $job_info->no_jobs; } ?>" autocomplete="off">  <?php echo form_error('no_jobs'); ?>                
+                    <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2" name="no_jobs" required value="<?php if(!empty($this->session->userdata('no_jobs')) ){echo $this->session->userdata('no_jobs'); }elseif(!empty($job_info->no_jobs)){ echo $job_info->no_jobs; } ?>" autocomplete="off">  <?php echo form_error('no_jobs'); ?>                
                   </div>
               </div>
                <div class="col-md-3 col-sm-12"> 
@@ -254,7 +253,7 @@ span.options_beni {
                     <select name="job_edu" id="job_edu" class="form-control" data-style="btn-default" data-live-search="true" onchange="getEducationSpecial(this.value)" required="">
                       <option value="">Select Level </option>
                       <?php foreach($education_level as $education){?>
-                      <option value="<?php echo $education['education_level_id']; ?>"<?php if($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
+                      <option value="<?php echo $education['education_level_id']; ?>"<?php if($this->session->userdata('ed')==$education['education_level_id']){ echo "selected"; }elseif($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
                       <?php } ?>
                   </select>   <?php echo form_error('job_edu'); ?>                
                 </div>
@@ -297,12 +296,12 @@ span.options_beni {
                 <div class="col-md-3 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Salary Range<span class="required"> * </span> </label>
-                   <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2"  placeholder="" name="sal_from" />
+                   <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2"  placeholder="" name="sal_from" value="<?php if(!empty($this->session->userdata('exp_from')) ){echo $this->session->userdata('sal_from'); } ?>" />
                   </div>
                 </div>    
                <div class="col-md-3 col-sm-12">
                 <div class="formrow" style="margin-top:37px;">
-                  <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2"  name="sal_to"  placeholder=""/>
+                  <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2"  name="sal_to"  placeholder="" value="<?php if(!empty($this->session->userdata('exp_from')) ){echo $this->session->userdata('sal_to'); } ?>" />
                 </div>
               </div>
               <div class="col-md-3 col-sm-12">
@@ -327,7 +326,7 @@ span.options_beni {
                        <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
                            ?> 
                            
-                          <option value="<?php echo $role_value['id']; ?>"<?php if(!empty($job_info)) if($job_info->job_role==$role_value['id']) echo 'selected'; ?>><?php echo $role_value['job_role_title']; ?></option>
+                          <option value="<?php echo $role_value['id']; ?>"<?php if($this->session->userdata('ed')==$education['education_level_id']){ echo "selected"; } elseif(!empty($job_info)) if($job_info->job_role==$role_value['id']) echo 'selected'; ?>><?php echo $role_value['job_role_title']; ?></option>
                         <?php } ?><?php echo form_error('job_role'); ?>
                     </select>                  
                   </div>
