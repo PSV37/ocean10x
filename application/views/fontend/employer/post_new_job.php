@@ -220,7 +220,7 @@ span.options_beni {
                 <div class="formrow">
                   <label class="control-label ">Job Locations<span class="required"> * </span> </label>
                     <input type="text" name="city_id" class="form-control" id="tokenfield" placeholder="Enter Location"
-                        value="<?php if(!empty($this->session->userdata('city_id')) ){echo $this->session->userdata('city_id'); } ?>" required><?php echo form_error('city_id'); ?>                   
+                        value="<?php if(!empty($this->session->userdata('location')) ){echo $this->session->userdata('location'); } ?>" required><?php echo form_error('city_id'); ?>                   
                   </div>
               </div>
                 <div class="col-md-3 col-sm-12">
