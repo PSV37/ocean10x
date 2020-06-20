@@ -253,7 +253,7 @@ span.options_beni {
                     <select name="job_edu" id="job_edu" class="form-control" data-style="btn-default" data-live-search="true" onchange="getEducationSpecial(this.value)" required="">
                       <option value="">Select Level </option>
                       <?php foreach($education_level as $education){?>
-                      <option value="<?php echo $education['education_level_id']; ?>"<?php if($this->session->userdata('ed')==$education['education_level_id']){ echo "selected"; }elseif($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
+                      <option value="<?php echo $education['education_level_id']; ?>"<?php if($this->session->userdata('edu')==$education['education_level_id']){ echo "selected"; }elseif($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
                       <?php } ?>
                   </select>   <?php echo form_error('job_edu'); ?>                
                 </div>
@@ -326,7 +326,7 @@ span.options_beni {
                        <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
                            ?> 
                            
-                          <option value="<?php echo $role_value['id']; ?>"<?php if($this->session->userdata('ed')==$education['education_level_id']){ echo "selected"; } elseif(!empty($job_info)) if($job_info->job_role==$role_value['id']) echo 'selected'; ?>><?php echo $role_value['job_role_title']; ?></option>
+                          <option value="<?php echo $role_value['id']; ?>"<?php if($this->session->userdata('jobrole')==$education['education_level_id']){ echo "selected"; } elseif(!empty($job_info)) if($job_info->job_role==$role_value['id']) echo 'selected'; ?>><?php echo $role_value['job_role_title']; ?></option>
                         <?php } ?><?php echo form_error('job_role'); ?>
                     </select>                  
                   </div>

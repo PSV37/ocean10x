@@ -241,17 +241,21 @@ public function job_post()
          $data['sal_from'] = $this->input->post('sal_from');
          $data['sal_to'] = $this->input->post('sal_to');
          $data['salary_range'] = $data['sal_from'].'-'.$data['sal_to'];
-        $data['ed']=$this->input->post('job_edu');
-
-        $where_int="education_level_id='$data['ed']'";
+        $ed=$this->input->post('job_edu');
+        $data['edu']=$ed;
+        $where_int="education_level_id='$ed'";
         $data['education'] = $this->Master_model->get_master_row('education_level', $select = FALSE, $where_int, $join = FALSE);
        
-        $data['jobrole']=$this->input->post('job_role');
-        $where_role="id='$data['jobrole']'";
+        $job_role=$this->input->post('job_role');
+        $data['jobrole']=$job_role;
+
+        $where_role="id='$job_role'";
         $data['job_role'] = $this->Master_model->get_master_row('job_role', $select = FALSE, $where_role, $join = FALSE);
 
-        $data['jobnature']=$this->input->post('job_nature');
-        $where_int="job_nature_id='$data['jobnature']'";
+        $job_nature=$this->input->post('job_nature');
+        $data['jobnature']=$job_nature;
+
+        $where_int="job_nature_id='$job_nature'";
         $data['job_nature'] = $this->Master_model->get_master_row('job_nature', $select = FALSE, $where_int, $join = FALSE);
 
         $data['no_jobs']=$this->input->post('no_jobs');
