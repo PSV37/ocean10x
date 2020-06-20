@@ -282,7 +282,7 @@ background-color: #11a59e;
                                     <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
                                     <span>$skill_row['skill_name'];</span>
                                 </label>
-                                <?php } } ?>
+                                <?php } }}?>
                               </li>
                             </div> 
                                 
