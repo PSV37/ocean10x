@@ -2,7 +2,14 @@
 <style>
 @charset "utf-8";
 /* CSS Document */
-
+.active-job label {
+   
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    display: block;
+    width: 100%;
+     position:relative !important;
+}
 .btn_all {
     color: #539617;
     background-color: #fff;
