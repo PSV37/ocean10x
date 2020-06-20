@@ -1,7 +1,24 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css">
 <style>
-@charset "utf-8";
-/* CSS Document */
+:checked + span {
+    background: #18c5bd !important;
+    display: inline-block;
+    width: 100%;
+    color: #fff;
+	padding: 4px 15px;
+    border-radius: 30px;
+	cursor:pointer;
+}
+.btn-default1:not(:checked) + span {
+	padding: 4px 15px;
+    border-radius: 30px;
+    background: #e4e2e2;
+    /* padding: 8px 0; */
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
 .active-job label {
    
     -webkit-transform-style: preserve-3d;
