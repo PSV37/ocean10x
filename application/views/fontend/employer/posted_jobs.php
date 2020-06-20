@@ -19,7 +19,7 @@
     border: solid 1px;
     border-radius: 50px;
 }
-	
+.active-job{margin-top:1331px;}	
 .btn_all:hover {
     color: #fff;
     background-color: #a6e026;
