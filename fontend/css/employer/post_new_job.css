@@ -328,13 +328,12 @@ transition:0.9s;color:#fff;}
 /*post new job*/
 
 .active-job label {
-    /* -webkit-perspective: 1000px; */
-    /* perspective: 1000px; */
+   
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     display: block;
     width: 100%;
-    /* position: absolute; */
+     position:relative;
     /* left: 50%; */
     /* top: 50%; */
     /* -webkit-transform: translate(-50%, -50%); */
