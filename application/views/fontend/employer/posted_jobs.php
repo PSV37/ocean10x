@@ -305,7 +305,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                         <div class="clear"></div>
                       </div>
 
-                          <div>
+                          <div id="skills">
                              <span>Skill sets</span>:
                              <?php 
                              $sk=$v_companyjobs->skills_required;
