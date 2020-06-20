@@ -242,14 +242,14 @@ background-color: #11a59e;
                                 <p class="job_title"><?php echo $title; ?></p>
                             </div>   
                             <div class="icon-info">
-                                <li class="left-icon-title"><i class="fas fa-map-marker-alt"></i></li><li class="right-icon-title"> &emsp;Mumbai ,pune</li>
+                                <li class="left-icon-title"><i class="fas fa-map-marker-alt"></i></li><li class="right-icon-title"> &emsp;<?php echo $location; ?></li>
 
-                                <li class="left-icon-title"><i class="fas fa-briefcase"></i></li><li class="right-title" style="width:100%;font-size:14px;"> &emsp;2 years(Expected Experience)</li>
+                                <li class="left-icon-title"><i class="fas fa-briefcase"></i></li><li class="right-title" style="width:100%;font-size:14px;"> &emsp;<?php echo $experience; ?> years(Expected Experience)</li>
 
                                 <div class="clear"></div>
                             </div>
                             <div class="following-info">
-                                <li class="left-title">Education Level</li><li class="right-title">&nbsp;:Masters</li>
+                                <li class="left-title">Education Level</li><li class="right-title">&nbsp;:<?php echo $education; ?></li>
                                    
                                 <li class="left-title">Job Roll</li><li class="right-title">&nbsp;: Java Developer</li> 
                                 <div class="clear"></div>
