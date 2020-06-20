@@ -373,7 +373,7 @@ input {
 }
 /*     
 :checked + .card {
-    transform: rotateX(180deg);
+    transform: rotateX(180deg);   
     -webkit-transform: rotateX(180deg);
 }
 */
