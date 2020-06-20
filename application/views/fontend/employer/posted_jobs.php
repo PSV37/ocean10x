@@ -219,7 +219,11 @@ div#next {
     border-radius: 13px;
 	}
 
-
+div#skills {
+    float: left;
+    margin-bottom: -18px;
+    padding: 8px 21px -7px 0px;
+}
 
 </style>
 
