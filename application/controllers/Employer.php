@@ -292,7 +292,7 @@ public function job_post()
                         'job_title'          => $this->session->userdata('title'),
                         'job_slugs'          => $this->slug->create_uri($this->session->userdata('title')),
                         'job_desc'           => $this->session->userdata('job_desc'),
-                        'job_category'       => $this->session->userdata('job_category'),
+                        // 'job_category'       => $this->session->userdata('job_category'),
                         'education'          => $this->session->userdata('edu'),
                         'benefits'           => $this->session->userdata('benefits'),
                         'experience'         => $this->session->userdata('experience'),
