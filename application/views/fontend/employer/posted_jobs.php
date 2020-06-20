@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css">
 <style>
-
+.front{padding:11px;height:260px;}
 :checked + span {
     background: #18c5bd !important;
     display: inline-block;
