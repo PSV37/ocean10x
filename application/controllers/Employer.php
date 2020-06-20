@@ -300,11 +300,11 @@ public function job_post()
       //                   'job_location'       => $this->session->userdata('city_id'),
                         // 'state_id'           => $this->session->userdata('state_id'),
                         'city_id'            => $this->session->userdata('location'),
-                        'job_nature'         => $this->session->userdata('job_nature'),
-                        'job_edu'            => $this->session->userdata('job_edu'),
+                        'job_nature'         => $this->session->userdata('jobnature'),
+                        'job_edu'            => $this->session->userdata('edu'),
                         'no_jobs'            => $this->session->userdata('no_jobs'),
                         'edu_specialization' => $this->session->userdata('job_edu_special'),   //new added field
-                        'job_role'           => $this->session->userdata('job_role'),   //new added field
+                        'job_role'           => $this->session->userdata('jobrole'),   //new added field
                         'skills_required'    =>$this->session->userdata('skills'), //new added field
 
                         // 'job_level'          => $this->input->post('job_level'),
