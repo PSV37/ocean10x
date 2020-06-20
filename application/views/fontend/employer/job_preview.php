@@ -272,7 +272,7 @@ li.right-title_seperate {
                              </div>
                                    
                             <div class="skils_benifit">
-                              <li class="left-title_seperate">skills :</li><li class="right-title_seperate">
+                              <li class="left-title_seperate">skills&nbsp; :</li><li class="right-title_seperate">
                              <?php  $sk=$skills;
                              if (isset($sk) && !empty($sk)) {
                                 $where_sk= "id IN (".$sk.") AND status=1";
