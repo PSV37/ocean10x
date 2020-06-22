@@ -314,7 +314,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                   
                     <div class="front">
                     
-                      <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($company_profile_id);?>" style="height:50px; width:50px;border-radius:5px;float:left;border:solid 1px #eae9e9b8;" />
+                      <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($company_profile_id);?>" style="height:50px; width:50px;border-radius:5px;float:left;border:solid 1px #eae9e9b8;margin-right:15px;" />
                       <div class="job-info">
                         <p class="job_title"><?php echo $v_companyjobs->job_title; ?></p>
                       </div>   
