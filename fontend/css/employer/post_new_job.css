@@ -415,10 +415,10 @@ li.right-icon-title {
 	font-weight:100;
 }
 .front .dropdown {
-    top: -8px;
+    top: -16px;
     width: 63px;
     position: absolute;
-    right: 0px;
+    right:3px;
 }
 .detail-btn{
     background-color: #fff;
@@ -454,16 +454,6 @@ li.right-icon-title {
     font-size: 11px;
 }
 
-.pasive-span{
-   position: absolute;
-    top: 0px;
-    left: 421px;
-    background-color: red;
-    padding: 1px 17px;
-    border-radius: 9px;    
-    color: #fff;
-    font-size: 11px;
-}
 
 .following-info3 {
     float: right;
