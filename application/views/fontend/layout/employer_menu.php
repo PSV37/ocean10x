@@ -3,6 +3,7 @@
     background-color: aliceblue;
     height: 451px;
 	margin-top: 38px;
+	border-radius: 13px;
 }
 </style>    
 
