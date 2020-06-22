@@ -26,12 +26,13 @@ div#next {
     margin-bottom: 26px;
 }
 
+
 .star-text {
     width: 53%;
-    margin-top: 32px;
+    margin-top: 32px;   
 }
 .post-job{border-radius:13px;}
-
+.button{border:none;}
 
 @media only screen and (max-width: 320px){
 .myfields ul {
