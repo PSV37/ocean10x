@@ -1,3 +1,10 @@
+<style>
+.employer_menu {
+    background-color: aliceblue;
+    height: 540px;
+}
+</style>
+
 <div class="col-md-3">
 <div class="employer_menu">
             
