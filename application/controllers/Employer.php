@@ -1576,7 +1576,9 @@ function getstate(){
         $where_skill= "status=1";
         $data['skill_master'] = $this->Master_model->getMaster('skill_master', $where_skill);
         
-        $this->load->view('fontend/employer/add_new_question', $data);
+        // $this->load->view('fontend/employer/add_new_question', $data);
+        $this->load->view('fontend/employer/add_question', $data);
+        
     }
 
 

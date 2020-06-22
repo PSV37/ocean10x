@@ -188,8 +188,8 @@
               </div>
                     
               <div class="btn-group">
-                <a href="#" class="btn btn-inverse disabled"><i class="far fa-edit icon_backg"></i></a>
-                <a href="#" class="btn btn-inverse disabled"><i class="fas fa-trash-alt icon_backg"></i></a>
+                <a href=" <?php echo btn_edit('employer/edit_questionbank/' . $ct_row['ques_id']); ?>" class="btn btn-inverse disabled"><i class="far fa-edit icon_backg"></i></a>
+                <a href="<?php echo btn_delete('employer/delete_questionbank/' . $ct_row['ques_id']); ?>" class="btn btn-inverse disabled"><i class="fas fa-trash-alt icon_backg"></i></a>
               </div>               
             </div> 
            <?php
