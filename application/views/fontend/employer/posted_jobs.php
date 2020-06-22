@@ -52,7 +52,7 @@ button#sklbtn {
     width: 100%;
     border-radius: 10px;
     cursor: pointer;
-}
+}    
 
 .active-job label {
    
@@ -65,7 +65,7 @@ button#sklbtn {
     border-radius: 13px;
 }
 .card{height:auto;display: flow-root;padding:0px !important;
-border:none;}    
+border:none !important;}    
 .btn_all {
     color: #539617;
     background-color: #fff;
