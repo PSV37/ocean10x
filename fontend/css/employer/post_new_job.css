@@ -414,12 +414,6 @@ li.right-icon-title {
     margin-right: 20px;
 	font-weight:100;
 }
-.front .dropdown {   
-    top: -16px;
-    width: 63px;
-    position: absolute;
-    right:3px;
-}
 .detail-btn{
     background-color: #fff;
     padding: 3px 19px;
@@ -437,11 +431,13 @@ li.right-icon-title {
 .following-info {
     float: left;
 	line-height:24px;
+	margin-top:10px;
 	
 }
 .following-info2 {
     margin-left:170px;
 	line-height:24px;
+	margin-bottom:10px;
 }
 .active-span{
    position: absolute;
@@ -458,7 +454,7 @@ li.right-icon-title {
 .following-info3 {
     float: right;
     margin-top: -144px;
-   
+   margin-bottom:10px;
 	line-height:24px;
 }
 
