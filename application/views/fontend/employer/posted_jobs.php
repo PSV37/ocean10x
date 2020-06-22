@@ -5,26 +5,31 @@
     height: 4px;
     background-color: #16b7b0 !important;
     border-radius: 13px 13px 0px 0px !important;
-	margin-bottom:15px;
+	margin-bottom: 10px;
 }
-.card div{border-radius:none !important;}    
-	
-.pasive-span {
-    position: absolute;     
-    top: 12px;
-    left: 405px;
-    background-color: #ff3c3c;
-    padding: 2px 17px;
-    border-radius: 30px;
+.pasive-span{
+   position: absolute;
+    top: 0px;
+    left: 421px;
+    background-color: red;
+    padding: 1px 17px;
+    border-radius: 9px;    
     color: #fff;
     font-size: 11px;
-}      
-.front{height:260px;padding:0px !important}
+}
+.front .dropdown {   
+    top: -16px;
+    width: 63px;
+    position: absolute;
+    right:3px;
+}
+	
+.front{height:260px;padding:0px 10px 10px 10px;}
 :checked + span {
     background: #18c5bd !important;
     display: inline-block;
     width: 100%;
-    color: #fff;
+    color: #fff;    
 	padding: 4px 15px;
     border-radius: 30px;
 	cursor:pointer;
@@ -273,6 +278,7 @@ div#skills {
     margin-bottom: -18px;
     padding: 8px 21px -7px 0px;
 }
+.card div {border-radius:0px !important;}    
 
 
 </style>
@@ -301,12 +307,14 @@ $company_profile_id = $this->session->userdata('company_profile_id');
             <div class="col-md-6 active-job">
                <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
               <label>
+              <div class="border-top1"></div>
                 <input type="checkbox" />
                 
                   <div class="card">
+                  
                     <div class="front">
-                    <div class="border-top1"></div>
-                      <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($company_profile_id);?>" style="height:40px; width:40px;border-radius:5px;float:left" />
+                    
+                      <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($company_profile_id);?>" style="height:50px; width:50px;border-radius:5px;float:left;border:solid 1px #eae9e9b8;" />
                       <div class="job-info">
                         <p class="job_title"><?php echo $v_companyjobs->job_title; ?></p>
                       </div>   
@@ -367,7 +375,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
 
                                      <?php }
                                     }
-                             }
+                             }   
                             
                               ?>
 
