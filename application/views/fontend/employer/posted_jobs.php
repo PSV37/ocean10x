@@ -17,6 +17,12 @@
     color: #fff;
     font-size: 11px;
 }
+.front .dropdown {   
+    top: -16px;
+    width: 63px;
+    position: absolute;
+    right:3px;
+}
 	
 .front{height:260px;padding:0px 10px 10px 10px;}
 :checked + span {
