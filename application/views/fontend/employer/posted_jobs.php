@@ -1,5 +1,13 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css">
 <style>
+
+.border-top1{
+    height: 4px;
+    background-color: #16b7b0;
+    border-radius: 13px 13px 0px 0px;
+	margin-bottom:15px;
+}
+	
 .pasive-span {
     position: absolute;
     top: 12px;
