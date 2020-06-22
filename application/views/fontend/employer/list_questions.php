@@ -1,3 +1,95 @@
+<<<<<<< HEAD
+=======
+<style>
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}   
+
+.dd-button {
+    display: inline-block;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    padding: 5px 30px 5px 20px;
+    background-color:#cde4f5;
+    cursor: pointer;
+    white-space: nowrap;
+    border-radius: 33px;
+	color:#848484;
+	font-size:12px;
+}
+.dd-button:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #6f6b6b;
+  
+}
+
+.dd-button:hover {
+  background-color: #eeeeee;
+}
+
+
+.dd-input {
+  display: none;
+}
+
+.dd-menu {
+  position: absolute;
+  top: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0;
+  margin: 2px 0 0 0;
+  box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
+  background-color: #ffffff;
+  list-style-type: none;
+}
+
+.dd-input + .dd-menu {
+  display: none;
+} 
+
+.dd-input:checked + .dd-menu {
+  display: block;
+  z-index:999;
+} 
+
+.dd-menu li {
+  padding: 10px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dd-menu li:hover {
+  background-color: #f6f6f6;
+}
+
+.dd-menu li a {
+  display: block;
+  margin: -10px -20px;
+  padding: 10px 20px;
+}
+
+.dd-menu li.divider{
+  padding: 0;
+  border-bottom: 1px solid #cccccc;
+}
+
+.header-bookbank{margin-bottom:12px !important;}   
+
+</style>
+
+
+>>>>>>> db90f6f6b7278958da4af9f1a52401257ebe2071
 <?php $this->load->view('fontend/layout/employer_new_header.php');?> 
 <!---header-->
  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">
