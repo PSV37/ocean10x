@@ -303,7 +303,10 @@ span.options_beni {
                 <div class="col-md-3 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Salary Range<span class="required"> *</span> </label>
-                 
+                 	<div class="col-md-3 formrow" style="width:80px;margin-left:-14px;">
+                   
+                    	 <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from" value="">
+                    </div>
                                      
                   </div>    
                 </div>
