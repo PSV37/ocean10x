@@ -301,10 +301,11 @@ $company_profile_id = $this->session->userdata('company_profile_id');
             <div class="col-md-6 active-job">
                <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
               <label>
+              <div class="border-top1"></div>
                 <input type="checkbox" />
                 
                   <div class="card">
-                  <div class="border-top1"></div>
+                  
                     <div class="front">
                     
                       <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($company_profile_id);?>" style="height:40px; width:40px;border-radius:5px;float:left" />
