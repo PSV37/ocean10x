@@ -2,6 +2,7 @@
 .employer_menu {
     background-color: aliceblue;
     height: 540px;
+	margin-top: 38px;
 }
 </style>
 
