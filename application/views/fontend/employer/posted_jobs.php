@@ -273,11 +273,6 @@ div#skills {
     padding: 8px 21px -7px 0px;
 }
 
-.border-top1{
-	height: 6px;
-    background-color: #16b7b0;
-    border-radius: 13px 13px 0px 0px;
-	margin-bottom:15px;}
 
 </style>
 
