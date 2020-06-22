@@ -109,7 +109,10 @@
         <label for="comment">Option 4:</label>
         <textarea class="form-control" name="option4" id="option4" rows="5" id="comment"><?php if (!empty($edit_questionbank_info)) echo $row['option4'];?></textarea>
       </div>
-    </div>    
+    </div>  
+      <div class="box-body">
+                <input type="hidden" name="is_admin" value="1" class="form-control"> 
+                </div>  
      <div class="row">
         <div class="col-md-4">
           <div class="form-group">
