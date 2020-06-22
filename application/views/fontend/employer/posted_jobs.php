@@ -10,7 +10,7 @@
 .card div{border-radius:none !important;}    
 	
 .pasive-span {
-    position: absolute;
+    position: absolute;     
     top: 12px;
     left: 405px;
     background-color: #ff3c3c;
