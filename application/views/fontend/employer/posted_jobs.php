@@ -3,8 +3,8 @@
 
 .border-top1{
     height: 4px;
-    background-color: #16b7b0;
-    border-radius: 13px 13px 0px 0px;
+    background-color: #16b7b0 !important;
+    border-radius: 13px 13px 0px 0px !important;
 	margin-bottom:15px;
 }
 	
@@ -18,7 +18,7 @@
     color: #fff;
     font-size: 11px;
 }      
-.front{padding:11px;height:260px;}
+.front{height:260px;}
 :checked + span {
     background: #18c5bd !important;
     display: inline-block;
