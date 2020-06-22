@@ -4,7 +4,7 @@
     height: 451px;
 	margin-top: 38px;
 }
-</style>
+</style>    
 
 <div class="col-md-3">
 <div class="employer_menu">
