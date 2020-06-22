@@ -170,7 +170,6 @@
 <script type="text/javascript">
 document.getElementsByClassName('form-control').innerHTML+="<br />";
 </script>
-<!-- <?php $this->load->view("fontend/layout/footer.php"); ?> -->
 
 
 <script>
