@@ -8,16 +8,6 @@
 	margin-bottom: 10px;
 }
 	
-.pasive-span {
-    position: absolute;     
-    top: 12px;
-    left: 405px;
-    background-color: #ff3c3c;
-    padding: 2px 17px;
-    border-radius: 30px;
-    color: #fff;
-    font-size: 11px;
-}      
 .front{height:260px;padding:0px 10px 10px 10px;}
 :checked + span {
     background: #18c5bd !important;
