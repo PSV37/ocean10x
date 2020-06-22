@@ -281,7 +281,7 @@ div#skills {
 .card div {border-radius:0px !important;}    
 .following-info{margin-bottom:10px;}
 .following-info2{margin-bottom:10px;}   
-.following-info3{margin-bottom:10px;}
+.following-info3{margin-bottom:10px; margin-top: -154px;}
 
 
 </style>
