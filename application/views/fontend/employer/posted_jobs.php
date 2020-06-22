@@ -304,8 +304,9 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                 <input type="checkbox" />
                 
                   <div class="card">
+                  <div class="border-top1"></div>
                     <div class="front">
-                    <div class="border-top1"></div>
+                    
                       <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($company_profile_id);?>" style="height:40px; width:40px;border-radius:5px;float:left" />
                       <div class="job-info">
                         <p class="job_title"><?php echo $v_companyjobs->job_title; ?></p>
