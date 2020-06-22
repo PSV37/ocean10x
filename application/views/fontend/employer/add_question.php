@@ -159,7 +159,7 @@
         </div>
         <div class="col-md-4"></div>
           <div class="col-md-4" style="text-align:right;">
-            <button type="submit" class="save_question">Save question</button>
+            <button type="button" class="save_question">Save question</button>
           </div>
       </div>
     </div>
@@ -170,7 +170,36 @@
 <script type="text/javascript">
 document.getElementsByClassName('form-control').innerHTML+="<br />";
 </script>
-<?php $this->load->view("fontend/layout/footer.php"); ?>
+ <script>
+      function getTopic(id){
+        if(id){
+          $.ajax({
+            type:'POST',
+            url:'<?php echo base_url();?>employer/gettopic',
+            data:{id:id},
+            success:function(res){
+              $('#topic_id').html(res);
+            }
+            
+          }); 
+          }
+       }
+
+    function getSubtopic(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>employer/getsubtopic',
+                data:{id:id},
+                success:function(res){
+                    $('#subtopic_id').html(res);
+                }
+                
+            }); 
+          }
+   
+    }
+</script>
 
 
 <script>
@@ -219,20 +248,7 @@ function showCheckboxes() {
 </script> 
 
 <script>
-      function getTopic(id){
-        if(id){
-          $.ajax({
-            type:'POST',
-            url:'<?php echo base_url();?>employer/gettopic',
-            data:{id:id},
-            success:function(res){
-              $('#topic_id').html(res);
-            }
-            
-          }); 
-          }
-       }
-
+      
     $(document).ready(function(){
     
     function getLineitemlevel_load(){
@@ -307,22 +323,6 @@ function showCheckboxes() {
        getTopic_load();
     });
        
-</script>
-     <script>
-    function getSubtopic(id){
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>employer/getsubtopic',
-                data:{id:id},
-                success:function(res){
-                    $('#subtopic_id').html(res);
-                }
-                
-            }); 
-          }
-   
-    }
 </script>
 
 
