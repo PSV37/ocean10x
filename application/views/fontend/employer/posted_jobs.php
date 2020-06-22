@@ -52,19 +52,10 @@ button#sklbtn {
     width: 100%;
     border-radius: 10px;
     cursor: pointer;
-}
+}    
 
-.active-job label {
-   
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    display: block;
-    width: 100%;
-     position:relative !important;
-	 
-    border-radius: 13px;
-}
-.card{height:auto;display: flow-root;padding:0px !important;}    
+.card{height:auto;display: flow-root;padding:0px !important;
+border:none !important;}    
 .btn_all {
     color: #539617;
     background-color: #fff;
@@ -75,7 +66,7 @@ button#sklbtn {
 }
     
 .active-job {
-    margin-top: 209px;
+    margin-top: 231px;
 }
 .btn_all:hover {
     color: #fff;
@@ -282,7 +273,15 @@ div#skills {
 .following-info{margin-bottom:10px;}
 .following-info2{margin-bottom:10px;}   
 .following-info3{margin-bottom:10px; margin-top: -154px;}
-
+.active-job label {
+   
+    transform-style: preserve-3d;
+    display: block;
+    width: 100%;
+    position: relative !important;
+    border-radius: 7px;
+    border: solid 1px #d6d3d3;
+}
 
 </style>
 
@@ -310,11 +309,11 @@ $company_profile_id = $this->session->userdata('company_profile_id');
             <div class="col-md-6 active-job">
                <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
               <label>
-              <div class="border-top1"></div>
+               <div class="border-top1"></div>
                 <input type="checkbox" />
                 
                   <div class="card">
-                  
+                 
                     <div class="front">
                     
                       <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($company_profile_id);?>" style="height:50px; width:50px;border-radius:5px;float:left;border:solid 1px #eae9e9b8;margin-right:15px;" />
