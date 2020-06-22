@@ -293,17 +293,53 @@ span.options_beni {
                 
               </div>
 
+               
+                
+                
+                
+                
+                
+                
                 <div class="col-md-3 col-sm-12">
                   <div class="formrow">
-                    <label class="control-label ">Salary Range<span class="required"> * </span> </label>
-                   <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2"  placeholder="" name="sal_from" value="<?php if(!empty($this->session->userdata('exp_from')) ){echo $this->session->userdata('sal_from'); } ?>" />
-                  </div>
-                </div>    
-               <div class="col-md-3 col-sm-12">
-                <div class="formrow" style="margin-top:37px;">
-                  <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2"  name="sal_to"  placeholder="" value="<?php if(!empty($this->session->userdata('exp_from')) ){echo $this->session->userdata('sal_to'); } ?>" />
+                    <label class="control-label " style="margin-left:-10px;">Salary Range<span class="required"> *</span> </label>
+                 	<div class="col-md-3 formrow" style="width:80px;margin-left:-14px;margin-top:37px;">
+                   
+                    	 <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from" value="">
+                    </div>
+                      <div class="col-md-3 formrow" style="width:80px;margin-left:-19px;">
+                    	 <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to" value="<?php if(!empty($this->session->userdata('exp_to')) ){echo $this->session->userdata('exp_to'); } ?>" />
+                    </div> 
+                                     
+                  </div>    
                 </div>
-              </div>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+              <div class="col-md-3 col-sm-12">
+                <div class="formrow">
+                  <label class="control-label ">Deadline<span class="required"> * </span> </label>
+                  <select name="job_category" class="form-control" data-style="btn-default" data-live-search="true" required="">
+                    <option value="">Select Expected Domain</option>
+                    <?php if(!empty($job_info->job_category)) {
+                            echo $this->job_category_model->selected($job_info->job_category);
+                          } else {
+                            echo $this->job_category_model->selected();
+                          }
+                        ?>
+                  </select>   <?php echo form_error('job_category'); ?>               
+                </div>
+              </div>  
+               
               <div class="col-md-3 col-sm-12">
                 <div class="formrow">
                   <label class="control-label ">Expected Domain<span class="required"> * </span> </label>
