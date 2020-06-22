@@ -159,7 +159,7 @@
         </div>
         <div class="col-md-4"></div>
           <div class="col-md-4" style="text-align:right;">
-            <button type="button" class="save_question">Save question</button>
+            <button type="submit" class="save_question">Save question</button>
           </div>
       </div>
     </div>
