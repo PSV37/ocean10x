@@ -107,9 +107,12 @@
       </div>
        <div class="col-md-12 form-group">
         <label for="comment">Option 4:</label>
-        <textarea class="form-control" name="optio43" id="option4" rows="5" id="comment"><?php if (!empty($edit_questionbank_info)) echo $row['option4'];?></textarea>
+        <textarea class="form-control" name="option4" id="option4" rows="5" id="comment"><?php if (!empty($edit_questionbank_info)) echo $row['option4'];?></textarea>
       </div>
-    </div>    
+    </div>  
+      <div class="box-body">
+                <input type="hidden" name="is_admin" value="1" class="form-control"> 
+                </div>  
      <div class="row">
         <div class="col-md-4">
           <div class="form-group">
@@ -159,7 +162,7 @@
         </div>
         <div class="col-md-4"></div>
           <div class="col-md-4" style="text-align:right;">
-            <button type="button" class="save_question">Save question</button>
+            <button type="Submit" class="save_question">Save question</button>
           </div>
       </div>
     </div>
@@ -170,7 +173,36 @@
 <script type="text/javascript">
 document.getElementsByClassName('form-control').innerHTML+="<br />";
 </script>
-<?php $this->load->view("fontend/layout/footer.php"); ?>
+ <script>
+      function getTopic(id){
+        if(id){
+          $.ajax({
+            type:'POST',
+            url:'<?php echo base_url();?>employer/gettopic',
+            data:{id:id},
+            success:function(res){
+              $('#topic_id').html(res);
+            }
+            
+          }); 
+          }
+       }
+
+    function getSubtopic(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>employer/getsubtopic',
+                data:{id:id},
+                success:function(res){
+                    $('#subtopic_id').html(res);
+                }
+                
+            }); 
+          }
+   
+    }
+</script>
 
 
 <script>
@@ -219,20 +251,7 @@ function showCheckboxes() {
 </script> 
 
 <script>
-      function getTopic(id){
-        if(id){
-          $.ajax({
-            type:'POST',
-            url:'<?php echo base_url();?>employer/gettopic',
-            data:{id:id},
-            success:function(res){
-              $('#topic_id').html(res);
-            }
-            
-          }); 
-          }
-       }
-
+      
     $(document).ready(function(){
     
     function getLineitemlevel_load(){
@@ -307,22 +326,6 @@ function showCheckboxes() {
        getTopic_load();
     });
        
-</script>
-     <script>
-    function getSubtopic(id){
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>employer/getsubtopic',
-                data:{id:id},
-                success:function(res){
-                    $('#subtopic_id').html(res);
-                }
-                
-            }); 
-          }
-   
-    }
 </script>
 
 
