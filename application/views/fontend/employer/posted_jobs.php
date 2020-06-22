@@ -279,6 +279,9 @@ div#skills {
     padding: 8px 21px -7px 0px;
 }
 .card div {border-radius:0px !important;}    
+.following-info{margin-bottom:10px;}
+.following-info2{margin-bottom:10px;}   
+.following-info3{margin-bottom:10px;}
 
 
 </style>
