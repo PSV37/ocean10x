@@ -347,6 +347,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                         <li class="left-title">Joining ETA</li><li class="right-title">&nbsp;:30 days</li>
                         <li class="left-title">Benifits</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->benefits; ?> </li>
                        
+                        <li class="left-title">Dummy3</li><li class="right-title">&nbsp;:value</li>
 
                         <div class="clear"></div>
                       </div>
