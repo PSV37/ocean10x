@@ -153,3 +153,89 @@ bottom:20px;
 right:20px;}
 .add-question{margin-top:58px;
 padding:20px}
+
+button.save_question {
+    background-color: #18c5bd;
+    color: #fff;
+    font-size: 15px;
+    padding: 6px 32px;
+    border-radius: none;
+    border-radius: 30px;
+    border: none;
+	margin-top: 75px;
+}
+button.save_question :hover{
+background-color: #129892;
+    color: #fff;
+    box-shadow: 2px 2px 6px #bbb;
+}
+.logo-subject{
+	height: 50px;
+    width: 50px;
+    box-shadow: 0px 0px 3px #9c9c9ca8;
+    border-radius: 4px;
+	float:left;
+	margin-right: 14px;}
+.a {
+    margin-top: 16px;
+}	
+.panel-heading li{list-style-type:none;}
+:checked + span {
+    background:#099ad2 !important;
+    display: inline-block;
+    width: 100%;
+    color: #fff;
+    padding: 4px 15px;
+    border-radius: 30px;
+    cursor: pointer;
+	font-size: 12px;
+	line-height: 20px;
+	box-shadow: 1px 1px 6px #cccbcb;
+}
+.btn-default1:not(:checked) + span {
+    padding: 4px 15px;
+    border-radius: 30px;
+   background: #d5e9f7;
+    width: 100%;
+    border-radius: 30px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    color: #707171;
+	line-height: 20px;
+	
+}
+input.btn-default1{   
+    position: absolute;
+    display: none;
+}
+.select-option {
+    text-align: end;
+	margin-bottom:13px;
+}
+.icon_backg {
+    background-color: #dad9d9;
+    padding: 12px;
+    border-radius: 34px;
+    color: #000;
+	cursor:pointer;
+}
+.note-editor .note-toolbar {
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #a9a9a9;
+    height: 52px;
+    padding-top: 25px;
+    padding-left: 30px;
+}
+.border-top {
+    height: 4px;
+    background-color: #16b7b0;
+    border-radius: 13px 13px 0px 0px;
+	margin-bottom:15px;
+}
+.optionbox-1 li{list-style-type:none;}
+.optionbox-2 li{list-style-type:none;}
+.panel-body_add {
+    margin-left: -28px;
+	margin-top:15px;
+}
