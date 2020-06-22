@@ -7,7 +7,6 @@
     border-radius: 13px 13px 0px 0px !important;
 	margin-bottom:15px;
 }
-.card div{border-radius:none !important;}    
 	
 .pasive-span {
     position: absolute;     
@@ -273,6 +272,7 @@ div#skills {
     margin-bottom: -18px;
     padding: 8px 21px -7px 0px;
 }
+.card div {border-radius:0px !important;}    
 
 
 </style>
