@@ -17,7 +17,7 @@
             <div class="col-md-4">
               <div class="form-group">                                       
 							 <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
-                <select id="subject" name="technical_id" class="form-control" required="" onchange="getTopic(this.value)">
+                <select id="subject" name="technical_id" class="form-control" required="" onchange="getTopic(this.value);">
                   <option value="">Select Subject</option> 
                     <?php if (!empty($skill_master))
                        foreach($skill_master as $skill) 
@@ -31,7 +31,7 @@
             <div class="col-md-4">
               <div class="form-group">
                 <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
-                <select id="topic_id" name="topic_id" class="form-control" onchange="getSubtopic(this.value)">
+                <select id="topic_id" name="topic_id" class="form-control" onchange="getSubtopic(this.value);">
                   <option value="">Select Topic</option> 
                   <!-- <option value="1">HTML 5</option>  -->
                 </select>
@@ -40,7 +40,7 @@
             <div class="col-md-4">
 							<div class="form-group">
                 <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
-                <select id="subtopic_id" name="subtopic_id" class="form-control" onchange="getLineitem(this.value)">
+                <select id="subtopic_id" name="subtopic_id" class="form-control" onchange="getLineitem(this.value);">
                 </select>
 							</div>
 						</div>               
@@ -49,7 +49,7 @@
             <div class="col-md-4">
 							<div class="form-group">
                 <label for="exampleInputEmail1">Line Item(Level 1)<span class="required">*</span></label>
-                <select id="lineitem_id" name="lineitem_id" class="form-control" onchange="getLineitemlevel(this.value)">
+                <select id="lineitem_id" name="lineitem_id" class="form-control" onchange="getLineitemlevel(this.value);">
                 </select> 
 							</div>
 						</div>
@@ -170,6 +170,7 @@
 <script type="text/javascript">
 document.getElementsByClassName('form-control').innerHTML+="<br />";
 </script>
+<?php $this->load->view("fontend/layout/footer.php"); ?>
 
 
 <script>
