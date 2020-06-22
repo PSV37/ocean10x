@@ -1456,7 +1456,7 @@ function getstate(){
                     $where_delete['question_id']=$q_id;
                     $this->Master_model->master_delete($tablename, $where_delete);
                     $c_answer=$this->input->post('correct_answer');
-                    //var_dump($c_answer); die;
+                    var_dump($c_answer); die;
                     for($i=0;$i<sizeof($c_answer);$i++){
                         $data_answer=array();
                         $data_answer['question_id']=$q_id;
