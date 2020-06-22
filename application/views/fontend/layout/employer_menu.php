@@ -70,7 +70,7 @@
                                   </a>
                                 </li>
                                 <li>
-                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url(); ?>employer/add-question">
+                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url(); ?>employer/all-questions">
                                     <span class="icon-container">
                                       <i class="fas fa-map-signs"></i>
                                     </span>
