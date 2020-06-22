@@ -18,7 +18,7 @@
     color: #fff;
     font-size: 11px;
 }      
-.front{height:260px;}
+.front{height:260px;padding:0px !important}
 :checked + span {
     background: #18c5bd !important;
     display: inline-block;
