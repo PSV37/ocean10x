@@ -296,16 +296,14 @@ span.options_beni {
                 <div class="col-md-3 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Salary Range<span class="required"> * </span> </label>
-                    <div class="col-md-3 formrow" style="width:80px;margin-left:-14px;">
                    <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2"  placeholder="" name="sal_from" value="<?php if(!empty($this->session->userdata('exp_from')) ){echo $this->session->userdata('sal_from'); } ?>" />
-                 </div>
-                 
-                  
-              <div class="col-md-3 formrow" style="width:80px;margin-left:-19px;">
+                  </div>
+                </div>    
+               <div class="col-md-3 col-sm-12">
+                <div class="formrow" style="margin-top:37px;">
                   <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2"  name="sal_to"  placeholder="" value="<?php if(!empty($this->session->userdata('exp_from')) ){echo $this->session->userdata('sal_to'); } ?>" />
                 </div>
               </div>
-            </div>
               <div class="col-md-3 col-sm-12">
                 <div class="formrow">
                   <label class="control-label ">Expected Domain<span class="required"> * </span> </label>
