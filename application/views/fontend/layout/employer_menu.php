@@ -4,7 +4,7 @@
     height: 451px;
 	margin-top: 38px;
 	border-radius: 13px;
-	border: 1px solid #ebf0f6;
+	border: 1px solid #d9dde2;   
 }
 </style>    
 
