@@ -82,6 +82,7 @@
   border-bottom: 1px solid #cccccc;
 }
 
+.header-bookbank{margin-bottom:12px;}   
 
 </style>
 
