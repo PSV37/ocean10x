@@ -17,7 +17,7 @@
     border-radius: 30px;
     color: #fff;
     font-size: 11px;
-}
+}      
 .front{padding:11px;height:260px;}
 :checked + span {
     background: #18c5bd !important;
