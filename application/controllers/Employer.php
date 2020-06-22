@@ -1375,13 +1375,15 @@ function getstate(){
                 'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |left outer',
                 'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |left outer',
                 'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |left outer',
+                 'questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|LEFT OUTER',
             );
         
         $data['questionbank'] = $this->Master_model->getMaster('questionbank',$where_all,$join_emp);
         // echo  $this->db->last_query(); die;
 
+        $this->load->view('fontend/employer/list_questions', $data);
 
-        $this->load->view('fontend/employer/all_questions.php', $data);
+        // $this->load->view('fontend/employer/all_questions.php', $data);
     }
 
 
@@ -1409,11 +1411,16 @@ function getstate(){
         
         $where_lineitemlevel = "lineitemlevel.lineitemlevel_status='1'";
         $data['lineitemlevel'] = $this->Master_model->getMaster('lineitemlevel',$where_lineitemlevel);
-        
-        $data['questionbank'] = $this->Master_model->getMaster('questionbank');
 
-        $this->load->view('fontend/employer/list_questions', $data);
-        // $this->load->view('fontend/employer/add_question', $data);
+        $join = array(
+            'questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|LEFT OUTER',
+            
+        );
+        
+        $data['questionbank'] = $this->Master_model->getMaster('questionbank', $where = FALSE, $join, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+
+        // $this->load->view('fontend/employer/list_questions', $data);
+        $this->load->view('fontend/employer/add_question', $data);
 
     }
 

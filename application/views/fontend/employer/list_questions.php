@@ -3,142 +3,121 @@
  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">
 <div class="container-fluid main-d">
 	<div class="container">
-        <div class="col-md-12">
-        	  <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
-            
-            <div class="col-md-9 question-bank">
-            	<div class="header-bookbank">
-                		Question Bank
-                 </div>
-                	
-                
-                  <div class="select-option">
-                
-                
-        <p style="FONT-SIZE: 12PX;COLOR: #0a5854;margin-bottom:-5px;">Total No. Of Question:10</p>
-        
-        
-                <label class="dropdown">
+    <div class="col-md-12">
+      <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
+        <div class="col-md-9 question-bank">
+          <div class="header-bookbank">
+            Question Bank
+          </div>
+          <div class="select-option">
+            <p style="FONT-SIZE: 12PX;COLOR: #0a5854;margin-bottom:-5px;">Total No. Of Question:10</p>
+            <label class="dropdown">
+              <div class="dd-button">
+                Filter
+              </div>
 
-  <div class="dd-button">
-    Filter
-  </div>
+              <input type="checkbox" class="dd-input" id="test">
 
-  <input type="checkbox" class="dd-input" id="test">
-
-  <ul class="dd-menu">
-    <li>Action</li>
-    <li>Another action</li>
-    <li>Something else here</li>
-    <li class="divider"></li>
-    <li>
-      <a href="http://rane.io">Link to Rane.io</a>
-    </li>
-  </ul>
-  
-</label>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                  <label>
-                    <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
-                   	 <span>Select all</span>
-                  </label>
-                   
-                  </div>  
-                <div class="question-box">
-                	<div class="border-top"></div>
-                	<div class="panel-heading">
-                    <img src="https://blog.oxiane.com/wp-content/uploads/2017/04/java-logo-oracle.png" class="logo-subject" />
-                    
-                   
-                   <li><span style="color:#949694;float:left;width:150px;">Java<span>(Core java)</span></li>
-                    <li><span style="color:#949694;"><span style="color:#949694;">subtopic&nbsp;:Classes and Object</span></li>
-                   
-                   <li><span style="color:#949694;float:left;width:150px;">Java 2.1</span></li>
-                   <li><span style="color:#949694;">dummy</span></li>
-                    <div class="a">      
+              <ul class="dd-menu">
+                <li>Action</li>
+                <li>Another action</li>
+                <li>Something else here</li>
+                <li class="divider"></li>
+                <li>
+                  <a href="http://rane.io">Link to Rane.io</a>
+                </li>
+              </ul>
+            </label>
+            <label>
+              <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
+              <span>Select all</span>
+            </label>
+          </div>  
+          <?php $key = 1; if (!empty($questionbank)): foreach ($questionbank as $ct_row) : ?>
+          <div class="question-box">
+            <div class="border-top"></div>
+              <div class="panel-heading">
+                <img src="https://blog.oxiane.com/wp-content/uploads/2017/04/java-logo-oracle.png" class="logo-subject" />
+                <li><span style="color:#949694;float:left;width:150px;"><?php echo $ct_row['skill_name'] ?><span>(<?php echo $ct_row['topic_name'] ?>)</span></li>
+                <li><span style="color:#949694;"><span style="color:#949694;">subtopic&nbsp;:<?php echo $ct_row['subtopic_name'] ?></span></li>
+                <li><span style="color:#949694;float:left;width:150px;"><?php echo $ct_row['title'] ?></span></li>
+                <li><span style="color:#949694;"><?php echo $ct_row['titles'] ?></span></li>
+                <div class="a">      
                   <p class="question">
-Which among the following statements regarding the Surrogacy (Regulation)
-bill, 2016 is incorrect ?
+                    <?php echo $ct_row['question'] ?>
                   </p>
-                  </div>
-             </div><!--.panel-heading-->
-        
-                    <div class = "panel-body">
-                    <ul class = "list-group">
-                    	<div class="col-md-12" style="margin-left: -27px;">
+                </div>
+              </div><!--.panel-heading-->
+              <div class = "panel-body">
+                <ul class = "list-group">
+                  <div class="col-md-12" style="margin-left: -27px;">
                     <div class="optionbox-1 col-md-3">
-                        <li class = "list-group-item">
-                              <div class="checkbox">
-                                <input type="checkbox" id="checkbox" />
-                                <label for="checkbox">
-                                    1 and 2 only
-                                </label>
-                            </div>
-                        </li>
-                        <li class = "list-group-item" >
-                              <div class="checkbox">
-                                <input type="checkbox" id="checkbox" />
-                                <label for="checkbox">
-                                    2 and 3 only
-                                </label>
-                            </div>
-                        </li>
+                      <li class = "list-group-item">
+                        <div class="checkbox">
+                          <input type="checkbox" id="checkbox" />
+                          <label for="checkbox">
+                             <?php echo $ct_row['option1'] ?>
+                          </label>
                         </div>
-                       <div class="optionbox-2 col-md-3"> 
-                        <li class = "list-group-item">
-                              <div class="checkbox">
-                                <input type="checkbox" id="checkbox" />
-                                <label for="checkbox">
-                                    1 and 3 only
-                                </label>
-                            </div>
-                        </li>
-                        <li class = "list-group-item">
-                              <div class="checkbox">
-                                <input type="checkbox" id="checkbox" />
-                                <label for="checkbox">
-                                    1, 2 and 3
-                                </label>
-                            </div>
-                        </li>
+                      </li>
+                      <li class = "list-group-item" >
+                        <div class="checkbox">
+                          <input type="checkbox" id="checkbox" />
+                          <label for="checkbox">
+                              <?php echo $ct_row['option2'] ?>
+                          </label>
                         </div>
+                      </li>
+                    </div>
+                    <div class="optionbox-2 col-md-3"> 
+                      <li class = "list-group-item">
+                        <div class="checkbox">
+                          <input type="checkbox" id="checkbox" />
+                          <label for="checkbox">
+                              <?php echo $ct_row['option3'] ?>
+                          </label>
                         </div>
-                       </ul>
-                     </div>
-               		
-                    	<p>
-  <a class="toggle btn " href="#example">show answer</a>
-</p>
+                      </li>
+                      <li class = "list-group-item">
+                        <div class="checkbox">
+                          <input type="checkbox" id="checkbox" />
+                          <label for="checkbox">
+                              <?php echo $ct_row['option4'] ?>
+                          </label>
+                        </div>
+                      </li>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+              <p>
+                <a class="toggle btn " href="#example">show answer</a>
+              </p>
 
-<div class="toggle-content" id="example">
-  Here's some text we want to toggle visibility of.
-</div>
+              <div class="toggle-content" id="example">
+               <?php echo $ct_row['answer_id'] ?>
+              </div>
                     
-                     <div class="btn-group">
-      <a href="#" class="btn btn-inverse disabled"><i class="far fa-edit icon_backg"></i></a>
-      <a href="#" class="btn btn-inverse disabled"><i class="fas fa-trash-alt icon_backg"></i></a>
-  </div>               
-  
-  
-  
-               
-				</div> 
-                
-                <div class=""></div> 
+              <div class="btn-group">
+                <a href="#" class="btn btn-inverse disabled"><i class="far fa-edit icon_backg"></i></a>
+                <a href="#" class="btn btn-inverse disabled"><i class="fas fa-trash-alt icon_backg"></i></a>
+              </div>               
+            </div> 
+           <?php
+                      $key++;
+                      endforeach;
+                  ?>
+                  <?php else : ?> 
+                      <div colspan="3">
+                          <strong>There is no record for display</strong>
+                      </div>
+                  <?php
+                    endif; ?>
+              <div class=""></div> 
         </div>
             
-</div>
-</div>
+      </div>
+    </div>
 </div>
 <script>
 
