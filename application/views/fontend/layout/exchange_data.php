@@ -1,3 +1,4 @@
+
 <div class="container-fluid main-d">
 	<div class="container">
         <div class="col-md-12">
@@ -125,302 +126,212 @@
             </div>
                 </aside>
             </div>
-            <div class="col-md-9 add-question">
-            <div class="header-bookbank">
-                		Add Question
+            
+            <div class="col-md-9 question-bank">
+            	<div class="header-bookbank">
+                		Question Bank
                  </div>
-            <div class="row">
-            	<div class="col-md-4">
-                            <div class="form-group">                                       
-							   <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
-                                
-								<select id="subject" name="technical_id" class="form-control" required="" onchange="getTopic(this.value)">
-                                   <option value="">Select Subject</option> 
-                                   
-                                    <option value="1">HTML 5</option> 
-                                   
-                                    <option value="2">PHP 5.5</option> 
-                                   
-                                    <option value="3">Core Java</option> 
-                                   
-                                    <option value="4">Advance Java</option> 
-                                   
-                                    <option value="5">Angular JS</option> 
-                                   
-                                    <option value="6">Bootstrap </option> 
-                                   
-                                    <option value="7">HTML 3</option> 
-                                   
-                                    <option value="8">Java 1.0</option> 
-                                   
-                                    <option value="9">Java 2.0</option> 
-                                   
-                                    <option value="10">Java 2.1</option> 
-                                   
-                                    <option value="11">Java 2.2</option> 
-                                   
-                                    <option value="12">Java 2.3</option> 
-                                   
-                                    <option value="13">Java 2.4</option> 
-                                   
-                                    <option value="14">Java 2.5</option> 
-                                   
-                                    <option value="15">Java 2.6</option> 
-                                   
-                                    <option value="16">Java 2.7</option> 
-                                   
-                                    <option value="17">Java 2.8</option> 
-                                   
-                                    <option value="18">Java 2.9</option> 
-                                   
-                                    <option value="19">Java 2.10</option> 
-                                   
-                                    <option value="20" selected="">Java 2.11</option> 
-                                   
-                                    <option value="21">Java 2.12</option> 
-                                   
-                                    <option value="22">Java 2.13</option> 
-                                   
-                                    <option value="23">Java 2.14</option> 
-                                   
-                                    <option value="24">Java 2.15</option> 
-                                   
-                                    <option value="25">Java 2.16</option> 
-                                   
-                                    <option value="26">Java 2.17</option> 
-                                   
-                                    <option value="27">Java 2.18</option> 
-                                   
-                                    <option value="28">Java 2.19</option> 
-                                   
-                                    <option value="29">Java 2.20</option> 
-                                   
-                                    <option value="30">Java 2.21</option> 
-                                   
-                                    <option value="31">Java 2.22</option> 
-                                   
-                                    <option value="32">Java 2.23</option> 
-                                   
-                                    <option value="33">Java 2.24</option> 
-                                   
-                                    <option value="34">Java 2.25</option> 
-                                   
-                                    <option value="35">Java 2.26</option> 
-                                   
-                                    <option value="36">Java 2.27</option> 
-                                   
-                                    <option value="37">Java 2.28</option> 
-                                   
-                                    <option value="38">Java 2.29</option> 
-                                   
-                                    <option value="39">Java 2.30</option> 
-                                   
-                                    <option value="40">Java 2.31</option> 
-                                   
-                                    <option value="41">Java 2.32</option> 
-                                   
-                                    <option value="42">Java 2.33</option> 
-                                   
-                                    <option value="43">Java 2.34</option> 
-                                   
-                                    <option value="44">Java 2.35</option> 
-                                   
-                                    <option value="45">Java 2.36</option> 
-                                   
-                                    <option value="46">Java 2.37</option> 
-                                   
-                                    <option value="47">Java 2.38</option> 
-                                   
-                                    <option value="48">Java 2.39</option> 
-                                   
-                                    <option value="49">Java 2.40</option> 
-                                   
-                                    <option value="50">Java 2.41</option> 
-                                   
-                                    <option value="51">Java 2.42</option> 
-                                   
-                                    <option value="52">Java 2.43</option> 
-                                   
-                                    <option value="53">Java 2.44</option> 
-                                   
-                                    <option value="54">Java 2.45</option> 
-                                   
-                                    <option value="55">Java 2.46</option> 
-                                   
-                                    <option value="56">Java 2.47</option> 
-                                   
-                                    <option value="57">Java 2.48</option> 
-                                   
-                                    <option value="58">Java 2.49</option> 
-                                                                </select>
-								</div>
-                        </div>
-                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
-                                        <select id="topic_id" name="topic_id" class="form-control" onchange="getSubtopic(this.value)">
-                                          <option value="">Select Subject</option> 
-                                   
-                                    <option value="1">HTML 5</option> 
-                                    
-                                        </select>
-                                    </div>
-                                </div>
-                 <div class="col-md-4">
-								  <div class="form-group">
-                                        <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
-                                     <select id="subtopic_id" name="subtopic_id" class="form-control" onchange="getLineitem(this.value)">
-                                          
-                                        </select>
-										</div>
-									</div>               
-            </div>
-            
-            
-            <div class="row">
-            <div class="col-md-4">
-								  <div class="form-group">
-                                        <label for="exampleInputEmail1">Line Item(Level 1)<span class="required">*</span></label>
-                                     <select id="lineitem_id" name="lineitem_id" class="form-control" onchange="getLineitemlevel(this.value)">
-                                          
-                                        </select> 
-										</div>
-									</div>
-                                    <div class="col-md-4">
-								  <div class="form-group">
-                                        <label for="exampleInputEmail1">Line Item(Level 2)<span class="required">*</span></label>
-                                     <select id="lineitemlevel_id" name="lineitemlevel_id" class="form-control">
-                                           
-                                        </select> 
-										</div>
-									</div>
-                                    <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Level<span class="required">*</span></label>
-                                      <select name="level" class="form-control">
-									                                          
-										<option value="Expert">Expert</option>
-										<option value="Medium" selected="">Medium</option>
-										<option value="Beginner">Beginner</option>
-									 </select>
-									 </div>
-                                </div>
-             </div> 
-             <div class="row">
-             <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
-                                      <select name="" class="form-control" type="text">
-									                                          
-										<option value="Expert">multiple choice</option>
-										<option value="Medium">Subjective</option>
-										<option value="Beginner">Practical</option>
-									 </select>
-									 </div>
-                                </div>
-             
-             </div>
-             
-             
-   <div class="row">
-              
-    <div class="col-md-12 form-group">
-      <label for="comment">Question </label>
-		 <textarea class="form-control" rows="5" id="comment"></textarea>
+                	
+                
+                  <div class="select-option">
+                
+                
+        <p style="FONT-SIZE: 12PX;COLOR: #0a5854;margin-bottom:-5px;">Total No. Of Question:10</p>
+        
+        
+                <label class="dropdown">
 
-    </div>
-    
-     <div class="col-md-12 form-group">
-      <label for="comment">Option 1:
-      </label>
-      <textarea class="form-control" rows="5" id="comment"></textarea>
-    </div>
-    
-     <div class="col-md-12 form-group">
-      <label for="comment">Option 2:</label>
-      <textarea class="form-control" rows="5" id="comment"></textarea>
-    </div>
-     <div class="col-md-12 form-group">
-      <label for="comment">Option 3:</label>
-      <textarea class="form-control" rows="5" id="comment"></textarea>
-    </div>
-     <div class="col-md-12 form-group">
-      <label for="comment">Option 4:</label>
-      <textarea class="form-control" rows="5" id="comment"></textarea>
-    </div>
- 
-             </div>    
-             
-             
-             
-             <div class="row">
-             <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Correct Answer<span class="required">*</span></label>
-            <div class = "panel-body_add">
-                    
-                    	<div class="col-md-12">
-                    <div class="optionbox-1 col-md-6">
+  <div class="dd-button">
+    Filter
+  </div>
+
+  <input type="checkbox" class="dd-input" id="test">
+
+  <ul class="dd-menu">
+    <li>Action</li>
+    <li>Another action</li>
+    <li>Something else here</li>
+    <li class="divider"></li>
+    <li>
+      <a href="http://rane.io">Link to Rane.io</a>
+    </li>
+  </ul>
+  
+</label>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                  <label>
+                    <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
+                   	 <span>Select all</span>
+                  </label>
                    
-                       <li style="position:relative;"><span style="position:absolute;font-weight: 700;">1.</span><div class="checkbox">
-                              
-                               <label>
-                              <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
-                                 <span>option1</span>
-                              </label>
+                  </div>  
+                <div class="question-box">
+                	<div class="border-top"></div>
+                	<div class="panel-heading">
+                    <img src="https://blog.oxiane.com/wp-content/uploads/2017/04/java-logo-oracle.png" class="logo-subject" />
+                    
+                   
+                   <li><span style="color:#949694;float:left;width:150px;">Java<span>(Core java)</span></li>
+                    <li><span style="color:#949694;"><span style="color:#949694;">subtopic&nbsp;:Classes and Object</span></li>
+                   
+                   <li><span style="color:#949694;float:left;width:150px;">Java 2.1</span></li>
+                   <li><span style="color:#949694;">dummy</span></li>
+                    <div class="a">      
+                  <p class="question">
+Which among the following statements regarding the Surrogacy (Regulation)
+bill, 2016 is incorrect ?
+                  </p>
+                  </div>
+             </div><!--.panel-heading-->
+        
+                    <div class = "panel-body">
+                    <ul class = "list-group">
+                    	<div class="col-md-12" style="margin-left: -27px;">
+                    <div class="optionbox-1 col-md-3">
+                        <li class = "list-group-item">
+                              <div class="checkbox">
+                                <input type="checkbox" id="checkbox" />
+                                <label for="checkbox">
+                                    1 and 2 only
+                                </label>
                             </div>
-                            
-                       </li>
-                       
-                        <li style="position:relative;"><span style="position:absolute;font-weight: 700;">3.</span><div class="checkbox">
-                              
-                               <label>
-                              <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
-                                 <span>option1</span>
-                              </label>
+                        </li>
+                        <li class = "list-group-item" >
+                              <div class="checkbox">
+                                <input type="checkbox" id="checkbox" />
+                                <label for="checkbox">
+                                    2 and 3 only
+                                </label>
                             </div>
-                            
-                       </li>
+                        </li>
                         </div>
-                        
-                       <div class="optionbox-2 col-md-6"> 
-                        <li style="position:relative;"><span style="position:absolute;font-weight: 700;">2.</span><div class="checkbox">
-                              
-                               <label>
-                              <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
-                                 <span>option1</span>
-                              </label>
+                       <div class="optionbox-2 col-md-3"> 
+                        <li class = "list-group-item">
+                              <div class="checkbox">
+                                <input type="checkbox" id="checkbox" />
+                                <label for="checkbox">
+                                    1 and 3 only
+                                </label>
                             </div>
-                            
-                       </li>
-                        <li style="position:relative;"><span style="position:absolute;font-weight: 700;">4.</span><div class="checkbox">
-                              
-                               <label>
-                              <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
-                                 <span>option1</span>
-                              </label>
+                        </li>
+                        <li class = "list-group-item">
+                              <div class="checkbox">
+                                <input type="checkbox" id="checkbox" />
+                                <label for="checkbox">
+                                    1, 2 and 3
+                                </label>
                             </div>
-                            
-                       </li>
+                        </li>
                         </div>
                         </div>
                        </ul>
                      </div>
-                                      
-                                      
-                                      
-                                      
-									 </div>
-                                </div>
-             
-             <div class="col-md-4"></div>
-             
-             <div class="col-md-4" style="text-align:right;">
-             	<button type="button" class="save_question">Save question</button>                       
-             </div>
-             </div>
-                               
-            </div>
+               		
+                    	<p>
+  <a class="toggle btn " href="#example">show answer</a>
+</p>
+
+<div class="toggle-content" id="example">
+  Here's some text we want to toggle visibility of.
+</div>
+                    
+                     <div class="btn-group">
+      <a href="#" class="btn btn-inverse disabled"><i class="far fa-edit icon_backg"></i></a>
+      <a href="#" class="btn btn-inverse disabled"><i class="fas fa-trash-alt icon_backg"></i></a>
+  </div>               
+  
+  
+  
+               
+				</div> 
+                
+                <div class=""></div> 
+        </div>
+            
 </div>
 </div>
 </div>
+<script>
+
+// Show an element
+var show = function (elem) {
+
+	// Get the natural height of the element
+	var getHeight = function () {
+		elem.style.display = 'block'; // Make it visible
+		var height = elem.scrollHeight + 'px'; // Get it's height
+		elem.style.display = ''; //  Hide it again
+		return height;
+	};
+
+	var height = getHeight(); // Get the natural height
+	elem.classList.add('is-visible'); // Make the element visible
+	elem.style.height = height; // Update the max-height
+
+	// Once the transition is complete, remove the inline max-height so the content can scale responsively
+	window.setTimeout(function () {
+		elem.style.height = '';
+	}, 350);
+
+};
+
+// Hide an element
+var hide = function (elem) {
+
+	// Give the element a height to change from
+	elem.style.height = elem.scrollHeight + 'px';
+
+	// Set the height back to 0
+	window.setTimeout(function () {
+		elem.style.height = '0';
+	}, 1);
+
+	// When the transition is complete, hide it
+	window.setTimeout(function () {
+		elem.classList.remove('is-visible');
+	}, 350);
+
+};
+
+// Toggle element visibility
+var toggle = function (elem, timing) {
+
+	// If the element is visible, hide it
+	if (elem.classList.contains('is-visible')) {
+		hide(elem);
+		return;
+	}
+
+	// Otherwise, show it
+	show(elem);
+	
+};
+
+// Listen for click events
+document.addEventListener('click', function (event) {
+
+	// Make sure clicked element is our toggle
+	if (!event.target.classList.contains('toggle')) return;
+
+	// Prevent default link behavior
+	event.preventDefault();
+
+	// Get the content
+	var content = document.querySelector(event.target.hash);
+	if (!content) return;
+
+	// Toggle the content
+	toggle(content);
+
+}, false);
+</script>
