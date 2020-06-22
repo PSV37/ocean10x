@@ -7,7 +7,7 @@
     border-radius: 13px 13px 0px 0px !important;
 	margin-bottom:15px;
 }
-.card div{border-radius:0px !important;}    
+.card div{border-radius:none !important;}    
 	
 .pasive-span {
     position: absolute;
