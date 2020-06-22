@@ -443,7 +443,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
             <input type="hidden" name="consultant" value="JobSeeker">  
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <label class="mdl-textfield__label" for="sample3">E-mail</label>
-            <input class="mdl-textfield__input" name="candiate_email"  placeholder="Enter comma seperated Emails" type="text" id="subject" data-required="true" required>
+            <input type="text"  name="candiate_email"  placeholder="Enter comma seperated Emails"  id="subject" data-required="true" required>
           </div>
         
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">

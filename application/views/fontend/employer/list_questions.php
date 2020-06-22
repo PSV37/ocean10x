@@ -195,16 +195,16 @@
               </div>               
             </div> 
            <?php
-                      $key++;
-                      endforeach;
-                  ?>
-                  <?php else : ?> 
-                      <div colspan="3">
-                          <strong>There is no record for display</strong>
-                      </div>
-                  <?php
-                    endif; ?>
-              <div class=""></div> 
+              $key++;
+              endforeach;
+             ?>
+            <?php else : ?> 
+              <div colspan="3">
+                <strong>There is no record for display</strong>
+              </div>
+            <?php
+              endif; ?>
+            <div class=""></div> 
         </div>
             
       </div>
