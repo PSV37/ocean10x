@@ -329,7 +329,7 @@ span.options_beni {
                 <div class="formrow">
                   <label class="control-label ">Deadline<span class="required"> * </span> </label>
                   <select name="job_category" class="form-control" data-style="btn-default" data-live-search="true" required="">
-                    <option value="">Select Expected Domain</option>
+                    <option value=""></option>
                     <?php if(!empty($job_info->job_category)) {
                             echo $this->job_category_model->selected($job_info->job_category);
                           } else {
