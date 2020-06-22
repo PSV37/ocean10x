@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css">
-<style>
+<style>    
 
 .border-top1{
     height: 4px;
