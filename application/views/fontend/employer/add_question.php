@@ -107,7 +107,7 @@
       </div>
        <div class="col-md-12 form-group">
         <label for="comment">Option 4:</label>
-        <textarea class="form-control" name="optio4" id="option4" rows="5" id="comment"><?php if (!empty($edit_questionbank_info)) echo $row['option4'];?></textarea>
+        <textarea class="form-control" name="option4" id="option4" rows="5" id="comment"><?php if (!empty($edit_questionbank_info)) echo $row['option4'];?></textarea>
       </div>
     </div>    
      <div class="row">
