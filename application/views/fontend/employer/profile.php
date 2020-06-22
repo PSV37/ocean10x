@@ -511,7 +511,7 @@ label {
                                         
 
               </div>   
-              <div class="btn-save-profile"><button type="submit">save</button></div>             
+              <button type="submit" class="btn-save-profile">save</button>             
         </div>
       </div>
     </div>
