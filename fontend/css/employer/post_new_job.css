@@ -456,8 +456,8 @@ li.right-icon-title {
 
 .pasive-span{
    position: absolute;
-    top: 12px;
-    left: 405px;
+    top: 0px;
+    left: 421px;
     background-color: red;
     padding: 1px 17px;
     border-radius: 9px;
