@@ -66,7 +66,7 @@ border:none !important;}
 }
     
 .active-job {
-    margin-top: 209px;
+    margin-top: 231px;
 }
 .btn_all:hover {
     color: #fff;
