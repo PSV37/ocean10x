@@ -9,7 +9,7 @@
 <div class="col-md-3">
 <div class="employer_menu">
             
-            <aside id="left-panel" style="margin-top:75px;
+            <aside id="left-panel" style="margin-top:9px;
                  margin-left: 14px;height:auto; border-right: 1px solid rgba(240, 240, 240, 0.3);box-shadow: 2px 2px 4px 0px   #00000033;position: fixed;
             z-index: 999;vertical-align:baseline;">
             <div class="inner-left-pannel">
