@@ -487,7 +487,7 @@ div#next {
 .btn-default1:not(:checked) + span{
  background-color:#CCC;
     display: inline-block;
-    width: 100%;     
+    width: 100%;           
     color: #fff;
     padding: 5px 12px !important;   
     font-size: 11px;
