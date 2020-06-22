@@ -31,7 +31,7 @@ div#next {
     width: 53%;
     margin-top: 32px;   
 }
-.post-job{border-radius:13px;}
+.post-job{border-radius:13px;margin-top:39px;}
 .button{border:none;}
 #svg_form_time {
   height: 15px;
