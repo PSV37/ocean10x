@@ -7,6 +7,16 @@
     border-radius: 13px 13px 0px 0px !important;
 	margin-bottom: 10px;
 }
+.pasive-span{
+   position: absolute;
+    top: 0px;
+    left: 421px;
+    background-color: red;
+    padding: 1px 17px;
+    border-radius: 9px;    
+    color: #fff;
+    font-size: 11px;
+}
 	
 .front{height:260px;padding:0px 10px 10px 10px;}
 :checked + span {
