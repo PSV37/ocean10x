@@ -2,7 +2,7 @@
 <style>    
 
 .border-top1{
-    height: 4px;
+    height: 3px;
     background-color: #16b7b0 !important;
     border-radius: 13px 13px 0px 0px !important;
 	margin-bottom: 10px;
