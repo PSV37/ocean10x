@@ -64,7 +64,8 @@ button#sklbtn {
 	 
     border-radius: 13px;
 }
-.card{height:auto;display: flow-root;padding:0px !important;}    
+.card{height:auto;display: flow-root;padding:0px !important;
+border:none;}    
 .btn_all {
     color: #539617;
     background-color: #fff;
