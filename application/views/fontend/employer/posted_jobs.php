@@ -2,7 +2,7 @@
 <style>    
 
 .border-top1{
-    height: 4px;
+    height: 3px;
     background-color: #16b7b0 !important;
     border-radius: 13px 13px 0px 0px !important;
 	margin-bottom: 10px;
@@ -24,7 +24,7 @@
     right:3px;
 }
 	
-.front{height:278px;padding:0px 10px 10px 10px;}
+.front{height:263px;padding:0px 10px 10px 10px;}
 :checked + span {
     background: #18c5bd !important;
     display: inline-block;
