@@ -303,18 +303,7 @@ span.options_beni {
                 <div class="col-md-3 col-sm-12">
                   <div class="formrow">
                     <label class="control-label ">Salary Range<span class="required"> *</span> </label>
-                 <!--  <input class="form-control" type="text" name="experience" maxlength="2" value="<?php 
-                      if(!empty($job_info->experience)){ echo $job_info->experience;
-                       }
-                    ?>" autocomplete="off" required> -->
-                    <div class="col-md-3 formrow" style="width:80px;margin-left:-14px;">
-                   
-                    	 <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from"  value="<?php if(!empty($this->session->userdata('exp_from')) ){echo $this->session->userdata('exp_from'); } ?>" />
-                    </div>
-                    
-                     <div class="col-md-3 formrow" style="width:80px;margin-left:-19px;">
-                    	 <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to" value="<?php if(!empty($this->session->userdata('exp_to')) ){echo $this->session->userdata('exp_to'); } ?>" />
-                    </div>    
+                 
                                      
                   </div>    
                 </div>
