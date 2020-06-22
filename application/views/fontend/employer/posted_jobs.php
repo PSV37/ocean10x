@@ -24,7 +24,7 @@
     right:3px;
 }
 	
-.front{height:278px;padding:0px 10px 10px 10px;}
+.front{height:262px;padding:0px 10px 10px 10px;}
 :checked + span {
     background: #18c5bd !important;
     display: inline-block;
