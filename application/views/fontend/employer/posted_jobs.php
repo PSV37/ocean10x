@@ -54,16 +54,6 @@ button#sklbtn {
     cursor: pointer;
 }    
 
-.active-job label {
-   
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    display: block;        
-    width: 100%;
-     position:relative !important;
-	 
-    border-radius: 13px;
-}
 .card{height:auto;display: flow-root;padding:0px !important;
 border:none !important;}    
 .btn_all {
@@ -283,7 +273,15 @@ div#skills {
 .following-info{margin-bottom:10px;}
 .following-info2{margin-bottom:10px;}   
 .following-info3{margin-bottom:10px; margin-top: -154px;}
-
+.active-job label {
+   
+    transform-style: preserve-3d;
+    display: block;
+    width: 100%;
+    position: relative !important;
+    border-radius: 7px;
+    border: solid 1px #d6d3d3;
+}
 
 </style>
 
