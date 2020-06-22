@@ -1409,8 +1409,13 @@ function getstate(){
         
         $where_lineitemlevel = "lineitemlevel.lineitemlevel_status='1'";
         $data['lineitemlevel'] = $this->Master_model->getMaster('lineitemlevel',$where_lineitemlevel);
+
+        $join = array(
+            'questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|LEFT OUTER',
+            
+        );
         
-        $data['questionbank'] = $this->Master_model->getMaster('questionbank');
+        $data['questionbank'] = $this->Master_model->getMaster('questionbank', $where = FALSE, $join, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
 
         $this->load->view('fontend/employer/list_questions', $data);
         // $this->load->view('fontend/employer/add_question', $data);
