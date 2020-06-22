@@ -33,6 +33,12 @@ div#next {
 }
 .post-job{border-radius:13px;}
 .button{border:none;}
+#svg_form_time {
+  height: 15px;
+  max-width: 80%;
+  margin: 20px auto 20px;
+  display: block;
+}
 
 @media only screen and (max-width: 320px){
 .myfields ul {
