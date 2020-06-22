@@ -58,7 +58,7 @@ button#sklbtn {
    
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
-    display: block;
+    display: block;   
     width: 100%;
      position:relative !important;
 	 
