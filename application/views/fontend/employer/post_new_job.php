@@ -30,7 +30,7 @@ div#next {
     width: 53%;
     margin-top: 32px;
 }
-
+.post-job{border-radius:13px;}
 
 
 @media only screen and (max-width: 320px){
