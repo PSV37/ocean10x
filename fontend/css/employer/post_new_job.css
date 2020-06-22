@@ -353,7 +353,7 @@ transition:0.9s;color:#fff;}
     .card div {
        
      
-       
+       border-radius:0px !important;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
       
