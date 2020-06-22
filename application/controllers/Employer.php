@@ -1432,7 +1432,7 @@ function getstate(){
                 'option2'           => $this->input->post('option2'),
                 'option3'           => $this->input->post('option3'),
                 'option4'           => $this->input->post('option4'),
-                'option5'           => $this->input->post('option5'),
+                // 'option5'           => $this->input->post('option5'),
                 'is_admin'          => $this->input->post('is_admin')
             );
 

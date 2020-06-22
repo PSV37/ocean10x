@@ -4,10 +4,15 @@
 	<div class="container">
     <div class="col-md-12">
       <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
+      <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>employer/save_questionbank/<?php  if (!empty($edit_questionbank_info)) { foreach($edit_questionbank_info as $row)
+                    echo $row['ques_id'];
+              }
+            ?>" method="post">
         <div class="col-md-9 add-question">
           <div class="header-bookbank">
             Add Question
           </div>
+         
           <div class="row">
             <div class="col-md-4">
               <div class="form-group">                                       
@@ -27,7 +32,7 @@
               <div class="form-group">
                 <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
                 <select id="topic_id" name="topic_id" class="form-control" onchange="getSubtopic(this.value)">
-                  <option value="">Select Subject</option> 
+                  <option value="">Select Topic</option> 
                   <!-- <option value="1">HTML 5</option>  -->
                 </select>
               </div>
@@ -59,9 +64,9 @@
               <div class="form-group">
                 <label for="exampleInputEmail1">Level<span class="required">*</span></label>
                   <select name="level" class="form-control">                                     
-										<option value="Expert">Expert</option>
-										<option value="Medium" selected="">Medium</option>
-										<option value="Beginner">Beginner</option>
+										<option value="Expert"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Expert')echo "selected";?>>Expert</option>
+                    <option value="Medium"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Medium')echo "selected";?>>Medium</option>
+                    <option value="Beginner"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Beginner')echo "selected";?>>Beginner</option>
 									</select>
 							</div>
             </div>
@@ -70,10 +75,10 @@
             <div class="col-md-4">
               <div class="form-group">
                 <label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
-                <select name="" class="form-control" type="text">
-									<option value="Expert">multiple choice</option>
-									<option value="Medium">Subjective</option>
-									<option value="Beginner">Practical</option>
+                <select name="ques_type" class="form-control" type="text">
+									<option value="MCQ"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ')echo "selected";?>>MCQ</option>
+                    <option value="Subjective"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Subjective')echo "selected";?>>Subjective</option>
+                    <option value="Practical"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Practical')echo "selected";?>>Practical</option>
 								</select>
 							</div>
             </div>
@@ -83,26 +88,26 @@
     <div class="row">
        <div class="col-md-12 form-group">
         <label for="comment">Question </label>
-		    <textarea class="form-control" rows="5" id="comment"></textarea>
+		    <textarea class="form-control" name="question" rows="5" id="comment"><?php if (!empty($edit_questionbank_info)) echo $row['question'];?></textarea>
       </div>
     
        <div class="col-md-12 form-group">
         <label for="comment">Option 1:
         </label>
-        <textarea class="form-control" rows="5" id="comment"></textarea>
+        <textarea class="form-control" name="option1" id="option1" rows="5" id="comment"><?php if (!empty($edit_questionbank_info)) echo $row['option1'];?></textarea>
       </div>
     
        <div class="col-md-12 form-group">
         <label for="comment">Option 2:</label>
-        <textarea class="form-control" rows="5" id="comment"></textarea>
+        <textarea name="option2" id="option2" class="form-control" rows="5" id="comment"><?php if (!empty($edit_questionbank_info)) echo $row['option2'];?></textarea>
       </div>
        <div class="col-md-12 form-group">
         <label for="comment">Option 3:</label>
-        <textarea class="form-control" rows="5" id="comment"></textarea>
+        <textarea class="form-control" name="option3" id="option3" rows="5" id="comment"><?php if (!empty($edit_questionbank_info)) echo $row['option3'];?></textarea>
       </div>
        <div class="col-md-12 form-group">
         <label for="comment">Option 4:</label>
-        <textarea class="form-control" rows="5" id="comment"></textarea>
+        <textarea class="form-control" name="optio43" id="option4" rows="5" id="comment"><?php if (!empty($edit_questionbank_info)) echo $row['option4'];?></textarea>
       </div>
     </div>    
      <div class="row">
@@ -115,7 +120,7 @@
                     <li style="position:relative;"><span style="position:absolute;font-weight: 700;">1.</span>
                       <div class="checkbox">
                         <label>
-                          <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
+                          <input type="checkbox" value="4" class="btn-default1" checked="" name="correct_answer[]">
                           <span>option1</span>
                         </label>
                       </div>
@@ -123,7 +128,7 @@
                     <li style="position:relative;"><span style="position:absolute;font-weight: 700;">3.</span>
                       <div class="checkbox">
                         <label>
-                          <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
+                          <input type="checkbox" value="4" class="btn-default1" checked="" name="correct_answer[]">
                           <span>option1</span>
                         </label>
                       </div>
@@ -133,7 +138,7 @@
                     <li style="position:relative;"><span style="position:absolute;font-weight: 700;">2.</span>
                       <div class="checkbox">
                         <label>
-                          <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
+                          <input type="checkbox" value="4" class="btn-default1" checked="" name="correct_answer[]">
                           <span>option1</span>
                         </label>
                       </div>
@@ -141,7 +146,7 @@
                     <li style="position:relative;"><span style="position:absolute;font-weight: 700;">4.</span>
                       <div class="checkbox">
                         <label>
-                        <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
+                        <input type="checkbox" value="4" class="btn-default1" checked="" name="correct_answer[]">
                         <span>option1</span>
                         </label>
                       </div>
@@ -158,6 +163,7 @@
           </div>
       </div>
     </div>
+  </form>
   </div>
 </div>
 <script type="text/javascript" src="<?php echo base_url(); ?>asset/js/tinymce/tinymce.min.js"></script> 
@@ -212,9 +218,7 @@ function showCheckboxes() {
   }
 </script> 
 
-     
-     
-     <script>
+<script>
       function getTopic(id){
         if(id){
           $.ajax({
