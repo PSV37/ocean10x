@@ -16,7 +16,7 @@
     border-radius: 9px;    
     color: #fff;
     font-size: 11px;
-}
+}    
 .front .dropdown {   
     top: -16px;
     width: 63px;
@@ -24,7 +24,7 @@
     right:3px;
 }
 	
-.front{height:260px;padding:0px 10px 10px 10px;}
+.front{height:278px;padding:0px 10px 10px 10px;}
 :checked + span {
     background: #18c5bd !important;
     display: inline-block;
@@ -281,7 +281,7 @@ div#skills {
 .card div {border-radius:0px !important;}    
 .following-info{margin-bottom:10px;}
 .following-info2{margin-bottom:10px;}   
-.following-info3{margin-bottom:10px;}
+.following-info3{margin-bottom:10px; margin-top: -154px;}
 
 
 </style>
@@ -347,6 +347,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                         <li class="left-title">Joining ETA</li><li class="right-title">&nbsp;:30 days</li>
                         <li class="left-title">Benifits</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->benefits; ?> </li>
                        
+                        <li class="left-title">Dummy3</li><li class="right-title">&nbsp;:value</li>
 
                         <div class="clear"></div>
                       </div>
