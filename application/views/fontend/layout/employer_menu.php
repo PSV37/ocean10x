@@ -1,9 +1,10 @@
 <style>
 .employer_menu {
-    background-color: aliceblue;
+    background-color:#fff;   
     height: 451px;
 	margin-top: 38px;
 	border-radius: 13px;
+	border: 1px solid #ebf0f6;
 }
 </style>    
 
