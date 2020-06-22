@@ -1,5 +1,6 @@
-<<<<<<< HEAD
-=======
+<?php $this->load->view('fontend/layout/employer_new_header.php');?> 
+<!---header-->
+ <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">
 <style>
 
 .dropdown {
@@ -88,8 +89,6 @@
 
 </style>
 
-
->>>>>>> db90f6f6b7278958da4af9f1a52401257ebe2071
 <?php $this->load->view('fontend/layout/employer_new_header.php');?> 
 <!---header-->
  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">
