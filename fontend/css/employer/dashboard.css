@@ -532,15 +532,15 @@ nav{overflow:auto;}
 }
 .heading-dash{margin:20px 0px 27px 20px;
 font-size: 19px;
-    text-transform: uppercase;
-    color: #7b7979;}
+   
+    color: #414242;}
 .bg-warning{background-color:#7260c1;}
 .bg-danger{background-color:#046dad;}
 .icon-pro{
 		height:40px;
 		width:40px;
 		border-radius:30px;
-		float:left;
+		float:left;   
 		margin-right:20px;
 		margin-top:5px;}
 .icon-pro i{line-height:37px;
