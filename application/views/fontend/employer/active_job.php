@@ -2,7 +2,6 @@
 <?php 
     $this->load->view('fontend/layout/employer_header.php');
 ?> 
-
 <!-- Page Title start -->
 <div class="pageTitle">
   <div class="container">
