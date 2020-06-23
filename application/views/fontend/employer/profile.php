@@ -90,7 +90,8 @@ label {
    padding: 3px 3PX;
     text-align: center;
     width: 20%;
-   
+   border:none;
+   float:right;
     
     line-height: 30px;
     
@@ -486,7 +487,7 @@ label {
                 <div class="col-md-4 col-sm-4">
                   <div class="formrow">
                     <label class="control-label">Company Country: <span class="required">*</span></label>
-                                          <select name="country_id" id="country_id" class="form-control country select2-hidden-accessible" onchange="getStates(this.value)" tabindex="-1" aria-hidden="true"><?php foreach($country as $key){?>
+                                          <select name="country_id" id="country_id" class="form-control country " onchange="getStates(this.value)" tabindex="-1" aria-hidden="true"><?php foreach($country as $key){?>
                       <option value="<?php echo $key['country_id']; ?>"<?php if($company_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
                       <?php } ?></select>
                   </div>
