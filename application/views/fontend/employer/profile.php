@@ -11,7 +11,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
 .edit-profile{margin-top:41px;
 border-radius:13px;}
 .header-profile {
-    background-color: #f1fffe;
+    background-color: #18c5bd1f;
     /* float: left; */
     padding: 20px;
     box-shadow: -1px 1px 2px #eae8e8;
@@ -69,10 +69,11 @@ border-radius:13px;}
 .img-thumbnail {
     padding: .25rem;
     background-color: #fff;
-    border: 1px solid #dee2e6;
+    border: 3px solid #fff;
     border-radius: .25rem;
     max-width: 100%;
-    height: auto;
+    height: auto;   
+	box-shadow:inset 0px 0px 4px #e4e2e2;
 }
 label {
     display: inline-block;
