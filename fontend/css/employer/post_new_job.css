@@ -204,6 +204,7 @@ width:60px;}
 .location{color: #868383;
 font-size: 12px;
 }
+.close{opacity:1;color:#fff;}
 .alert-dismissable .close, .alert-dismissible .close {
     position: relative;
     top: 0px;
@@ -309,19 +310,19 @@ button.btn-save {
 }
 .sendEmail label{color:#fff;font-size:13px;}
 .sendEmail input{background-color: #f3f7f663;}
-.sendEmail textarea.form-control{background-color:#fbffff80;}
+.sendEmail textarea.form-control{background-color:#fbffff80;border-radius:13px;}
 @media (min-width: 768px){
 .modal-dialog {
-    width: 460px;
-    margin: 100px auto;
+    width: 530px !important;
+    margin: 100px auto;   
 }
 }
 button#sklbtn {
-    background-color: #18c5bd;
+    background-color: #18c5bd;    
     color: white;
     border-radius: 20px;
     border: none;
-    padding: 1px 10px;
+    padding: 1px 10px;    
     margin-bottom: 7px;
     font-size: 11px;
 }
