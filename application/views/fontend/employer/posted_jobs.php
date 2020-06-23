@@ -281,6 +281,7 @@ div#skills {
     position: relative !important;
     border-radius: 7px;
     border: solid 1px #d6d3d3;
+	background-color:#fff;
 }
 input#subject {
     display: block;
