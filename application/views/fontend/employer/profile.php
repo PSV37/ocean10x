@@ -526,7 +526,7 @@ label {
                                         
 
               </div>   
-              <div class="btn-save-profile">save</div>             
+               <button class="btn-save-profile">save</button>             
         </div>
       </div>
     </div>
