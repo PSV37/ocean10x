@@ -3238,7 +3238,7 @@ public function interview_scheduler()
 
             //$data['cv_info'] = $this->Master_model->getMaster('corporate_cv_bank',$where=false);
 
-            $this->load->view('fontend/employer/add_new_cv', $data);
+            $this->load->view('fontend/employer/add_cv', $data);
         }
         
     }
