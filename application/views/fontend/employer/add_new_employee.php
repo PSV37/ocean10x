@@ -73,7 +73,8 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="exampleInputEmail1">Give Acces To User<span class="required">*</span></label>
-              <select class="form-control" name="user_role" id="user_role" onchange="getuseraccess(this.value);" required="">
+               <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc[]" id="user_accc" required>
+                            </select>
               
               </select>
             </div>

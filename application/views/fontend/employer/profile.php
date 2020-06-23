@@ -526,7 +526,15 @@ label {
 <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js"></script>
 <script type="text/javascript" src="validation_reg.js"></script>
 
-
+<script>
+  $(".allownumericwithdecimal").on("keypress keyup blur",function (event) {
+            //this.value = this.value.replace(/[^0-9\.]/g,'');
+     $(this).val($(this).val().replace(/[^\d].+/, ""));
+            if ((event.which < 48 || event.which > 57)) {
+                event.preventDefault();
+            }
+        });
+</script> 
 <script>
 
 $(document).ready(function()
@@ -764,12 +772,3 @@ return this.optional(element) || /^(([2-9]{1})([0-9]{2})([0-9]{3})([0-9]{4}))$/.
 
 
 
-<script>
-  $(".allownumericwithdecimal").on("keypress keyup blur",function (event) {
-            //this.value = this.value.replace(/[^0-9\.]/g,'');
-     $(this).val($(this).val().replace(/[^\d].+/, ""));
-            if ((event.which < 48 || event.which > 57)) {
-                event.preventDefault();
-            }
-        });
-</script> 
