@@ -24,7 +24,7 @@ button.sort-serach {
     background-color: #18c5bd;
 }
 
-input[type="text"] {
+.add_employ input[type="text"] {
     border: solid 1px #dadada;
     padding: 3px;
     border-radius: 0px 20px 20px 0px;
