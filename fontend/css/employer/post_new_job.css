@@ -204,7 +204,7 @@ width:60px;}
 .location{color: #868383;
 font-size: 12px;
 }
-.close{opacity:1;}
+.close{opacity:1;color:#fff;}
 .alert-dismissable .close, .alert-dismissible .close {
     position: relative;
     top: 0px;
