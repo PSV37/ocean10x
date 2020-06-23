@@ -16,9 +16,9 @@
     border-radius: 9px;    
     color: #fff;
     font-size: 11px;
-}    
+}       
 .front .dropdown {   
-    top: -16px;
+    top: -10px;   
     width: 63px;
     position: absolute;
     right:3px;
@@ -66,7 +66,7 @@ border:none !important;}
 }
     
 .active-job {
-    margin-top: 231px;
+    margin-top:40px;
 }
 .btn_all:hover {
     color: #fff;
@@ -281,6 +281,7 @@ div#skills {
     position: relative !important;
     border-radius: 7px;
     border: solid 1px #d6d3d3;
+	background-color:#fff;
 }
 input#subject {
     display: block;
