@@ -208,7 +208,7 @@ i.fas.fa-bell {
 .profile b{color:#eff3eb;}
 .profile {float:right;cursor:pointer;}
 .dropdown {
-    margin-top: 10px;
+    margin-top:2px;
 	cursor:pointer;
 }
 .dropdown-menu li{font-size:11px;padding:8px 0px;cursor:pointer;}
