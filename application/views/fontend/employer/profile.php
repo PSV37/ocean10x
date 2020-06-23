@@ -65,6 +65,7 @@ border-radius:13px;}
 }
 .forms {
     padding: 0px 35px;
+	background-color:#fff;
 } 
 .img-thumbnail-profile {
     padding: .25rem;
