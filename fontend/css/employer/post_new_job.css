@@ -277,14 +277,14 @@ background-color: #81c3f8;
 }
 .fade-rotate.in {
   opacity: 1;
-  transform: rotate(90deg);
+  transform: rotate(0deg);
 }
 .fade-rotate .modal-dialog {
     position: absolute;
     left: 0;
     right: 0;
     top: 50%;
-   
+    transform: translateY(0%) !important;
 }
 
 input{padding:7px 25px;}
