@@ -61,10 +61,11 @@ border-radius:13px;}
     padding-right: 0px;
     border: solid 1px #e8e7e7;
     box-shadow: -1px 2px 4px #e8e6e6;
+	background-color:#fff;
 }
 .forms {
     padding: 0px 35px;
-}
+}     
 label {
     display: inline-block;
     max-width: 100%;
