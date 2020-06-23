@@ -16,9 +16,9 @@
     border-radius: 9px;    
     color: #fff;
     font-size: 11px;
-}    
+}       
 .front .dropdown {   
-    top: -16px;
+    top: -10px;   
     width: 63px;
     position: absolute;
     right:3px;
