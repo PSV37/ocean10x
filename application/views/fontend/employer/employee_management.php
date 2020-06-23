@@ -11,6 +11,7 @@ div#music {
     padding: 25px 25px;
     border-radius: 13px;
     box-shadow: 0px 1px 4px 0px #e9e8e8;
+	background-color:#fff;
 }
 thead {
     background-color: aliceblue;
