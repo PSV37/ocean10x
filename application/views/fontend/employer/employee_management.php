@@ -201,35 +201,41 @@ font-size: 21px;
                   </tr>
                 </thead>
                 <tbody>
+                  <?php $srno=0; foreach($result as $key){ $srno++; 
+                ?>
             		<tr style="background: #fff;">
-                  <td>1</td>
-          				<td>4521</td>
-          				<td>shr9lk6fde@privacy-mail.top</td>
-          				<td>1111111110</td>
-          				<td>Admin</td>	
-          				<td style=""><button class="btn btn-danger" name="status" id="status" value="3">Deactivated</button></td>				
+                  <td><?php echo $key['emp_no']; ?></td>
+          				<td><?php echo $key['emp_name']; ?></td>
+          				<td><?php echo $key['email']; ?></td>
+          				<td><?php echo $key['mobile']; ?></td>
+          				<td><?php echo $key['department_name']; ?></td>	
+                   <?php if($key['emp_status']=='1')
+                 {?>
+          				<td style=""><button class="btn btn-success" name="status" id="status" value="3">Active</button></td>	
+                   <? } elseif($key['emp_status']=='2')
+                  { ?>
+                  <td style=""><button class="btn btn-default" name="status" id="status" value="3">Inactive</button></td>
+                  <? } elseif($key['emp_status']=='0')
+                  { ?>
+                  <td style=""><button class="btn btn-danger" name="status" id="status" value="3">Deactivated</button></td>
+                  <? } elseif($key['emp_status']=='3')
+                  { ?>
+                  <td style=""><button class="btn btn-warning" name="status" id="status" value="3">Suspended</button></td>
+                <?php } ?>
+
             		  <td style="text-align:center;color:#18c5bd;cursor:pointer;" ><i class="fas fa-edit"></i></td>
                 </tr>
-  			        <tr style="background:#fff;">
-                  <td>2</td>
-          				<td>12313</td>
-          				<td>testaudit@gmail.com</td>
-          				<td>4040404040</td>
-          				<td>Super Admin</td>	
-          				<td style=""><button class="btn btn-success" name="status" id="status" value="4">Active</button></td>				
-          		    <td style="text-align:center;color:#18c5bd;cursor:pointer;"><i class="fas fa-edit"></i> </td>
-                </tr>
-                <tr style="background: #fff;">
-                  <td>1</td>
-            			<td>4521</td>
-            			<td>shr9lk6fde@privacy-mail.top</td>
-            			<td>1111111110</td>
-            			<td>Admin</td>	
-            			<td style=""><button class="btn btn-warning" name="status" id="status" value="3">Suspend</button></td>				
-            		 <td style="text-align:center;color:#18c5bd;cursor:pointer;" ><i class="fas fa-edit"></i></td>
+  			       
                 </tbody>
               </table>
             </div>
+          </div>
+           <div class="container-fluid">
+             <div class="col-md-10"></div>
+            <div class="col-md-2">
+            <span><?php echo $links; ?></span>
+            </div>
+               
           </div>
           <div class="col-md-6" style="text-align: left;margin-left: -13px;"><button class="add_btn">Add</button></div>
             <div class="col-md-6" style="text-align: right;margin-left: 492px;float: none;"><button class="save_btn">Save</button></div>   
@@ -251,12 +257,12 @@ font-size: 21px;
                   <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Department<span class="required">*</span></label>
-                      <select name="dept_id" id="dept_id" class="form-control department select2-hidden-accessible" required="" tabindex="-1" aria-hidden="true">
+                      <select name="dept_id" id="dept_id" class="form-control department" required="" tabindex="-1" aria-hidden="true">
                         <option value="">Select Department</option>
                           <?php foreach($department as $key){?>
                           <option value="<?php echo $key['dept_id']; ?>"<?php if($result['dept_id'] == $key['dept_id']){ echo "selected"; }?>><?php echo $key['department_name']; ?></option>
                         <?php } ?>
-                         
+                      </select>
                     </div>
                   </div> 
                   <div class="col-md-3">
