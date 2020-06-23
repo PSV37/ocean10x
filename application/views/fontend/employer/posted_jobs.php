@@ -282,6 +282,9 @@ div#skills {
     border-radius: 7px;
     border: solid 1px #d6d3d3;
 }
+input#subject {
+    display: block;
+}
 
 </style>
 
