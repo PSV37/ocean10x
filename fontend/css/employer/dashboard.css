@@ -181,8 +181,8 @@ i.fas.fa-user-circle {
 	margin-top:10px;
 	cursor:pointer;
 }
-.notification:hover.notification i {color:#14827d;transition: 0.7s;}
-.notification:hover{color:#14827d;transition: 0.7s;}
+.notification:hover.notification i {color:#0a0a0a;transition: 0.7s;}
+.notification:hover{color:#0a0a0a;transition: 0.7s;}
 .bell {
     font-size: 13px;
     color: #fff;
@@ -190,8 +190,8 @@ i.fas.fa-user-circle {
 	margin-top:10px;
 	cursor:pointer;
 }
-.bell:hover.bell i {color:#14827d;transition: 0.7s;}
-.bell:hover{color:#14827d;transition: 0.7s;}
+.bell:hover.bell i {color:#0a0a0a;transition: 0.7s;}
+.bell:hover{color:#0a0a0a;transition: 0.7s;}
 
 .notification i{font-size:15px;color:#fff;}	
 i.fas.fa-bell {
