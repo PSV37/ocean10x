@@ -2299,7 +2299,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $data['city'] = $this->Master_model->getMaster('city',$where=false);
     	$data['roles'] = $this->Master_model->getMaster('user_role',$where=false);
     	//echo $this->db->last_query(); die;
-    	$this->load->view('fontend/employer/edit_employee',$data);
+        $this->load->view('fontend/employer/employee_management',$data);
+    	// $this->load->view('fontend/employer/edit_employee',$data);
     }
 
     public function edit_consultant()
