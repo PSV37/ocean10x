@@ -62,8 +62,6 @@ $company_profile_id = $this->session->userdata('company_profile_id');
 }
 .forms {
     padding: 0px 35px;
-<<<<<<< HEAD
-=======
 	
 } 
 .img-thumbnail-profile {    
@@ -74,7 +72,6 @@ $company_profile_id = $this->session->userdata('company_profile_id');
     max-width: 100%;
     height: auto;   
 	box-shadow:inset 0px 0px 4px #e4e2e2;
->>>>>>> 1f83e858a1f73f73d1cfe29658d356f9af8df4c2
 }
 label {
     display: inline-block;
