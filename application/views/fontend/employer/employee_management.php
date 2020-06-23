@@ -8,7 +8,7 @@ div#music {
    margin-top: 41px;
     margin-bottom: 20px;
     border: solid 1px #eae9e9;
-    padding: 25px 25px;
+    padding: 25px 25px;    
     border-radius: 13px;
     box-shadow: 0px 1px 4px 0px #e9e8e8;
 	background-color:#fff;
