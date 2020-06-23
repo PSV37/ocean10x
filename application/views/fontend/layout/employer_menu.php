@@ -1,13 +1,14 @@
 <style>
 .employer_menu {
     background-color:#fff;   
-   eight: 451px;
-    margin-top: 38px;
+   margin-top: 38px;
     border-radius: 13px;
-    border: 1px solid #d9dde2;
+    /* border: 1px solid #d9dde2; */
     position: fixed;
-    
     width: 20%;
+    border: solid 1px #dedbdb;
+    box-shadow: 1px 0px 3px #e0dddd;
+}
 
 }
 </style>    
