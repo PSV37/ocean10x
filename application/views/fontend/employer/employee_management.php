@@ -241,7 +241,10 @@ div class="container-fluid main-d">
           </div>
           <div class="col-md-6" style="text-align: left;margin-left: -13px;"><button class="add_btn">Add</button></div>
             <div class="col-md-6" style="text-align: right;margin-left: 492px;float: none;"><button class="save_btn">Save</button></div> 
-            <form method="post" action="<?php echo base_url();?>employer/addemployee" enctype="multipart/form-data">  
+            <form method="post" <?php if (isset($result)) { ?>
+             action="<?php  echo base_url();?>employer/postEditData"
+            <?php }else{ ?> action="<?php  echo base_url();?>employer/addemployee" <?php } ?>  enctype="multipart/form-data">  
+               <input type="hidden" name="cid" id="cid" value="<?php echo $result['emp_id'];?>">
             <div class="add_employ">
               <h4>Add Employee</h4>
                 <div class="row">
@@ -358,9 +361,16 @@ div class="container-fluid main-d">
                       <option value="2"<?php if($result['emp_status']=='2'){ echo "selected"; } ?>>Inactive</option>
                    </select>
                 </div>
-                <div class="col-md-6" style="text-align:end;">
-                  <button type="Submit" name="submit_employee" class="btn btn-update">Upadate</button>
+                <?php if(isset($result)) { ?>
+                 <div class="col-md-6" style="text-align:end;">
+                  <button type="Submit"  class="btn btn-update">Upadate</button>
                 </div>
+              <?php  } else { ?>
+                 <div class="col-md-6" style="text-align:end;">
+                  <button type="Submit" name="submit_employee" class="btn btn-update">Add Employee</button>
+                </div>
+              <?php } ?>
+                
               </div>
             </div>
           </form>
