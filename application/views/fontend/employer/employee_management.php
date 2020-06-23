@@ -221,7 +221,7 @@ font-size: 21px;
                 ?>
             		<tr style="background: #fff;">
                   <td><?php echo $key['emp_no']; ?></td>
-          				<td><?php echo $key['emp_name']; ?></td>
+          				<td><?php echo $key['emp_name']; ?></td>   
           				<td><?php echo $key['email']; ?></td>
           				<td><?php echo $key['mobile']; ?></td>
           				<td><?php echo $key['department_name']; ?></td>	
