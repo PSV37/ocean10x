@@ -167,8 +167,7 @@ font-size: 21px;
 </style>
 
 
-<
-div class="container-fluid main-d">
+<div class="container-fluid main-d">
 	<div class="container">
     <div class="col-md-12">
        <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
