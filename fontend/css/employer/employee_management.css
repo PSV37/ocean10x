@@ -89,9 +89,17 @@ button.save_cv {
     float: right;
     margin-top: 25px;
 }
+button.sort-serach {
+    border: none;
+    border-radius: 5px;
+    background-color: #18c5bd;
+}
 
-
-
+input[type="text"] {
+    border: solid 1px #dadada;
+    padding: 3px;
+    border-radius: 0px 20px 20px 0px;
+}
 
 
 
