@@ -284,7 +284,7 @@ background-color: #81c3f8;
     left: 0;
     right: 0;
     top: 50%;
-    transform: translateY(0%) !important;
+    transform: translatex(0%) !important;
 }
 
 input{padding:7px 25px;}
