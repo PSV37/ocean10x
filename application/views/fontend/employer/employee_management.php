@@ -160,11 +160,14 @@ font-size: 21px;
   padding: 0;
   border-bottom: 1px solid #cccccc;
 }
+
+  .bootstrap-select > .dropdown-toggle {
+    display: block;
+}
 </style>
 
 
-<
-div class="container-fluid main-d">
+<div class="container-fluid main-d">
 	<div class="container">
     <div class="col-md-12">
        <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
