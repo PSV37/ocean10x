@@ -290,7 +290,7 @@ background-color: #81c3f8;
 
 input{padding:7px 25px;}
 .modal-footer{text-align: end;
-    margin-right: 47px;}
+    margin-right: 34px;}
 
 .modal-body {
     padding: 0px 65px;
@@ -298,7 +298,7 @@ input{padding:7px 25px;}
 button.btn-save {
     font-size: 12px;
     padding: 10px 25px;
-    background-color: #14a99b;
+    background-color: #14a99b;     
     color: #fff;
     border: none;
 	border-radius:20px;
