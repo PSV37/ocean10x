@@ -486,7 +486,7 @@ nav{overflow:auto;}
 .bg-bluish{background-color:#4ddeca !important;}
 .bg-link{background-color:#2196F3 !important;}
 .bg-green{background-color:#23ab27 !important;}
-.card-lb .card {
+.card {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -499,7 +499,7 @@ nav{overflow:auto;}
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.125);
+    border: 1px solid rgba(0, 0, 0, 0.125);   
     border-radius:10px;
 	padding: 0px 0px 20px 20px;
 	
