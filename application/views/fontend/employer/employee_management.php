@@ -239,7 +239,7 @@ font-size: 21px;
                   <td style=""><button class="btn btn-warning" name="status" id="status" value="3">Suspended</button></td>
                 <?php } ?>
 
-            		  <td style="text-align:center;color:#18c5bd;cursor:pointer;" ><a href="<?php echo base_url();?>employer/addemployee?id=<?php echo $key['emp_id']; ?>"><i class="fas fa-edit"></i></a></td>
+            		  <td style="text-align:center;color:#18c5bd;cursor:pointer;padding-top:25px;" ><a href="<?php echo base_url();?>employer/addemployee?id=<?php echo $key['emp_id']; ?>"><i class="fas fa-edit"></i></a></td>
                 </tr>
   			         <?php } ?>
               
