@@ -65,9 +65,9 @@ border-radius:13px;}
 }
 .forms {
     padding: 0px 35px;
-	background-color:#fff;
+	
 } 
-.img-thumbnail-profile {
+.img-thumbnail-profile {    
     padding: .25rem;
     background-color: #fff;
     border: 3px solid #fff;
@@ -83,8 +83,9 @@ label {
     font-weight: bolder;
     font-size: 12px;
 }
-.form-control{
-    color:#99abaad9;}
+.form-control{   
+    color:#99abaad9;
+	background-color:#fff !important;}
 .btn-save-profile {
     background-color: #14b1aa;
    padding: 3px 3PX;
