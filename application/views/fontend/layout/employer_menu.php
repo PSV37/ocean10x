@@ -87,7 +87,7 @@
                                       <span class="icon-container">
                                         <i class="fas fa-map-signs"></i>
                                       </span>
-                                      <span class="text item">Employee Management</span>
+                                      <span class="text item">OceanChamp</span>
                                   </a>
                                 </li>
                                 <li>
@@ -95,15 +95,15 @@
                                       <span class="icon-container">
                                         <i class="fas fa-map-signs"></i>
                                       </span>
-                                      <span class="text item">Company / Recruiter</span>
-                                  </a>
+                                      <span class="text item">Skill Upgrade</span>
+                                  </a>    
                                 </li>
                                 <li>
                                   <a data-dl-view="true" data-dl-title="Mobility" href="/jobprofile/generate">
                                     <span class="icon-container">
                                        <i class="fas fa-map-signs"></i>
                                     </span>
-                                    <span class="text item">OceanChamp</span>
+                                    <span class="text item"> Company / Recruiter</span>
                                   </a>
                                 </li>
                             </ul>
