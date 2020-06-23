@@ -69,7 +69,7 @@ background-color: #109690;
 button.btn.btn-update {
     background-color: #18c5bd;
     color: #fff;
-    padding: 10px 30px;
+    padding: 6px 30px;
     border-radius: 33px;
     font-weight: 600;
 }
