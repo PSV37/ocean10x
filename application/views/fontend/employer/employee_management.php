@@ -1,5 +1,5 @@
 <?php 
-   <?php $this->load->view('fontend/layout/employer_new_header.php');?>  
+    $this->load->view('fontend/layout/employer_new_header.php');?>  
 <style>
 div#music {
     margin-top: 20px;
