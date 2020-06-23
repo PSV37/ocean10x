@@ -2460,7 +2460,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $this->Master_model->master_update($update_data,'company_profile',$where11);
             
             $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">'.$this->input->post('emp_name').' has been activated !!</div>');
-    		 redirect(base_url().'employer/allemployee');
+    		 redirect(base_url().'employer/addemployee');
             }
 
 		}

@@ -108,7 +108,7 @@
                                 </li>
                                 
                                  <li>
-                                  <a data-dl-view="true" data-dl-title="Mobility" href="/jobprofile/generate">
+                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/addemployee">
                                     <span class="icon-container">
                                        <i class="fas fa-map-signs"></i>
                                     </span>
