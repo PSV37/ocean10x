@@ -134,6 +134,7 @@ a.toggle.btn {
     color: #fff;
     padding: 2px 10px;
 	margin-left:15px;
+	margin-bottom:11px;
 }
 .toggle-content.is-visible {
     display: block;
@@ -155,9 +156,9 @@ a.toggle.btn {
 	position:relative;
 	border-radius:13px;}
 .btn-group{position:absolute;
-bottom:2px;
-right:20px;
-cursor:pointer;}
+bottom:13px;
+right:20px;   
+cursor:pointer;}   
 .add-question{margin-top:58px;
 padding:20px}   
 
