@@ -118,7 +118,7 @@ label {
           <div class="col-md-2">
             <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($company_profile_id);?>" style="height:80px;width:80px;border-radius:50%;" class="img-thumbnail-profile" />
           </div>
-          <div class="col-md-9">
+          <div class="col-md-9" style="margin-left:-30px;">
             <p style="font-size:18px;"><?php echo $this->company_profile_model->company_name($company_profile_id); ?></p>
             <p class="university">Nagpur University </p>
             <div class="progresss">
