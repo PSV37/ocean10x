@@ -262,7 +262,7 @@ font-size: 21px;
                           <?php foreach($department as $key){?>
                           <option value="<?php echo $key['dept_id']; ?>"<?php if($result['dept_id'] == $key['dept_id']){ echo "selected"; }?>><?php echo $key['department_name']; ?></option>
                         <?php } ?>
-                         
+                      </select>
                     </div>
                   </div> 
                   <div class="col-md-3">
