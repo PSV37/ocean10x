@@ -8,7 +8,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
 
 <style>
 
-.edit-profile{margin-top:70px;}
+.edit-profile{margin-top:41px;}
 .header-profile {
     background-color: #18c5bd12;
     /* float: left; */
@@ -22,7 +22,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
     border-radius: 19px;
     margin-top: 30px;
     box-shadow: -1px -1px 4px #dededeb0;
-}
+}   
 .progress-bar {
     float: left;
     width: 0%;
