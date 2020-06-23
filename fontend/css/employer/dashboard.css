@@ -945,16 +945,17 @@ background-color: #81c3f8;
     float: right;
     background-color: #fff;
     padding: 6px 35px;   
-    border: solid 1px #1835bd;
-    color: #3F51B5;
+    background-color:#18c5bd;
+    color: #fff;
     font-weight: 700;
 	font-size:12px;
 	cursor:pointer;
 	border-radius:30px;
-	margin-top:-20px;
+	margin-top:-7px;
 }
 .apply_job_btn:hover{
-	 background-color: #1835bd;
+	 background-color:#13928c;
+	 transition:0.5s;
 	 color: #fff;
 	}
 .bd-2 {
