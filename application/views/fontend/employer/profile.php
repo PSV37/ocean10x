@@ -116,7 +116,7 @@ label {
       <div class="col-md-9 edit-profile">
         <div class="col-md-12 header-profile">
           <div class="col-md-2">
-            <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($company_profile_id);?>" style="height:80px;width:80px;" class="img-thumbnail" />
+            <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($company_profile_id);?>" style="height:80px;width:80px;border-radius:50%;" class="img-thumbnail-profile" />
           </div>
           <div class="col-md-9">
             <p style="font-size:18px;"><?php echo $this->company_profile_model->company_name($company_profile_id); ?></p>
