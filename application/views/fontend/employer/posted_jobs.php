@@ -442,7 +442,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
             <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward this job post</h5>
           </div>
           <form action="<?php echo base_url() ?>employer/forword_job_post" class="sendEmail" method="post" autocomplete="off">
-        <div class="modal-body">
+        <div class="modal-body" style="padding:15px 40px;">
              <input type="hidden" name="job_post_id" value="<?php echo $v_companyjobs->job_post_id; ?>">
             <input type="hidden" name="consultant" value="JobSeeker">  
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
