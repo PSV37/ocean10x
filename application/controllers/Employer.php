@@ -1718,8 +1718,11 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     	    }
     	}
         $c_id = $this->input->get('id');
-        $where = "emp_id='$c_id'";
+        if (isset($c_id) && !empty($c_id)) {
+             $where = "emp_id='$c_id'";
         $data['result'] = $this->Master_model->get_master_row('employee',$select = FALSE,$where);
+        }
+       
        
         $where='employee.org_id="'.$user_id.'" and employee.emp_status!="0" ';
         //$data['result'] = $this->Master_model->getMaster('industry',$where=FALSE);

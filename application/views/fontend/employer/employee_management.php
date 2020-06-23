@@ -361,7 +361,7 @@ div class="container-fluid main-d">
                       <option value="2"<?php if($result['emp_status']=='2'){ echo "selected"; } ?>>Inactive</option>
                    </select>
                 </div>
-                <?php if (isset($result)) { ?>
+                <?php if(isset($result)) { ?>
                  <div class="col-md-6" style="text-align:end;">
                   <button type="Submit"  class="btn btn-update">Upadate</button>
                 </div>
