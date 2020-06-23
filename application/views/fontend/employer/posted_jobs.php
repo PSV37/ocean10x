@@ -405,7 +405,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                   </button>
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
                     <li><a class="dropdown-item" href="#">View post job</a></li>
-                    <li> <a class="dropdown-item" href="#">Edit job post</a></li>
+                    <li> <a class="dropdown-item" href="<?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs->job_post_id ?>">Edit job post</a></li>
                     <li> <a class="dropdown-item" href="#">Edit test topic</a></li>
                   </div>
                 </div>
