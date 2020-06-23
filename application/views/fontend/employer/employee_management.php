@@ -1,6 +1,5 @@
 <?php 
-    $this->load->view('fontend/layout/employer_header.php');
-?>
+   <?php $this->load->view('fontend/layout/employer_new_header.php');?>  
 <style>
 div#music {
     margin-top: 20px;
@@ -166,7 +165,7 @@ font-size: 21px;
 <div class="container-fluid main-d">
 	<div class="container">
     <div class="col-md-12">
-      <?php $this->load->view('fontend/layout/employer_left.php'); ?>
+       <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
         <div class="col-md-9 emplye_n">
           <form action="/action_page.php" style="float: left;margin-right: 25px;">
             <button class="sort-serach" type="submit"><i class="fas fa-search" aria-hidden="true"></i></button>
