@@ -5,7 +5,7 @@ div#music {
     margin-top: 20px;
 }
 .emplye_n {
-   margin-top: 75px;
+   margin-top: 41px;
     margin-bottom: 20px;
     border: solid 1px #eae9e9;
     padding: 25px 25px;
@@ -24,7 +24,7 @@ button#status {
     width: 98px;
     text-align: center;
 }
-.add_btn{
+.add_btn{     
  background-color: #18c5bd;
     border: none;
     padding:4px 27px;
