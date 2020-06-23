@@ -80,7 +80,7 @@ q:before, q:after {
 }
 
 i.fas.fa-user-circle {
-    font-size: 27px;
+    font-size: 35px;
     color: #fff;
 }
 .switch {
@@ -208,7 +208,7 @@ i.fas.fa-bell {
 .profile b{color:#eff3eb;}
 .profile {float:right;cursor:pointer;}
 .dropdown {
-    margin-top: 10px;
+    margin-top:2px;
 	cursor:pointer;
 }
 .dropdown-menu li{font-size:11px;padding:8px 0px;cursor:pointer;}
@@ -218,28 +218,31 @@ i.fas.fa-user {
     float: left;
     margin-right: 20px;
     line-height: 18px;
+	color:#18c5bd;
 }
 i.fas.fa-lock{
 	float: left;
     margin-right: 20px;
     line-height: 18px;
+	color:#18c5bd;
     
 	}
 i.fas.fa-power-off{
 	float: left;
     margin-right: 20px;
     line-height: 18px;
-   
+   color:#18c5bd;
 	}	
-.caret{color:#fff;
-margin-top: -16px;
-    margin-left: -0px;}	
+.caret{color: #fff;
+    margin-top: -3px;
+    margin-left: -5px;}	
 .profile-accoutnt-p{	
-	margin-top: -25px;
-    margin-left: 64px;
+	margin-top: -33px;
+    margin-left: 76px;
     color: #fff;
-    font-size: 12px;
-}
+    font-size: 14px;
+    font-weight: 700;
+	}
 .fixed-navigation #left-panel {
     height: 100%;
     position: fixed;
@@ -1081,4 +1084,13 @@ ul.list-unstyled.quick-links {
 }			
 :focus {
     outline: none !important;
+}
+
+.img-thumbnail {
+    padding: .25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: .25rem;
+    max-width: 100%;
+    height: auto;
 }
