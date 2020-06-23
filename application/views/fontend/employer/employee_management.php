@@ -163,7 +163,8 @@ font-size: 21px;
 </style>
 
 
-<div class="container-fluid main-d">
+<
+div class="container-fluid main-d">
 	<div class="container">
     <div class="col-md-12">
        <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
@@ -225,7 +226,8 @@ font-size: 21px;
 
             		  <td style="text-align:center;color:#18c5bd;cursor:pointer;" ><i class="fas fa-edit"></i></td>
                 </tr>
-  			       
+  			         <?php } ?>
+              
                 </tbody>
               </table>
             </div>
