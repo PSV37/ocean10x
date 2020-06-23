@@ -224,7 +224,7 @@ div class="container-fluid main-d">
                   <td style=""><button class="btn btn-warning" name="status" id="status" value="3">Suspended</button></td>
                 <?php } ?>
 
-            		  <td style="text-align:center;color:#18c5bd;cursor:pointer;" ><i class="fas fa-edit"></i></td>
+            		  <td style="text-align:center;color:#18c5bd;cursor:pointer;" ><a href="<?php echo base_url();?>employer/editemployee?id=<?php echo $key['emp_id']; ?>"><i class="fas fa-edit"></i></a></td>
                 </tr>
   			         <?php } ?>
               
@@ -240,20 +240,21 @@ div class="container-fluid main-d">
                
           </div>
           <div class="col-md-6" style="text-align: left;margin-left: -13px;"><button class="add_btn">Add</button></div>
-            <div class="col-md-6" style="text-align: right;margin-left: 492px;float: none;"><button class="save_btn">Save</button></div>   
+            <div class="col-md-6" style="text-align: right;margin-left: 492px;float: none;"><button class="save_btn">Save</button></div> 
+            <form method="post" action="<?php echo base_url();?>employer/addemployee" enctype="multipart/form-data">  
             <div class="add_employ">
               <h4>Add Employee</h4>
                 <div class="row">
            	      <div class="col-md-3">
                     <div class="form-group">                                       
                      <label for="exampleInputEmail1">Employee ID<span class="required">*</span></label>
-                      <input type="number" min="1" name="emp_no" id="emp_no" class="form-control" value="" required="">                    
+                      <input type="number" min="1" name="emp_no" id="emp_no" class="form-control" value="<?php echo $result['emp_no']; ?>" required=""><?php echo form_error('emp_no'); ?>                    
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Employee Name<span class="required">*</span></label>
-                      <input type="text" name="emp_name" id="emp_name" class="form-control" value="" required="">                      
+                      <input type="text" name="emp_name" id="emp_name" class="form-control" value="<?php echo $result['emp_name']; ?>" required=""><?php echo form_error('emp_name'); ?>                      
                     </div>
                   </div>
                   <div class="col-md-3">
@@ -270,7 +271,7 @@ div class="container-fluid main-d">
                   <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Contact No.<span class="required">*</span></label>
-                      <input type="tel" name="mobile" id="mobile" class="form-control" value="" onkeypress="phoneno()" maxlength="10" required="">                       
+                      <input type="tel" name="mobile" id="mobile" class="form-control" value="<?php echo $result['mobile']; ?>" onkeypress="phoneno()" maxlength="10" required="">     <?php echo form_error('mobile'); ?>                  
                     </div>
                   </div>        
                 </div>
@@ -278,13 +279,13 @@ div class="container-fluid main-d">
            	      <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Email-Id<span class="required">*</span></label>
-                      <input type="email" name="email" id="email" class="form-control" value="" required="">                        
+                      <input type="email" name="email" id="email" class="form-control" value="<?php echo $result['email']; ?>" required><?php echo form_error('email'); ?>
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Password<span class="required">*</span></label>
-                      <input type="Password" name="Password" id="Password" maxlength="15" class="form-control" value="" required="">                       
+                      <input type="Password" name="Password" id="Password" maxlength="15" class="form-control" value="<?php echo $result['Password']; ?>" required ><?php echo form_error('Password'); ?>                     
                     </div>
                   </div>
                   <div class="col-md-3">
@@ -339,25 +340,30 @@ div class="container-fluid main-d">
                  <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1" required="">Pincode<span class="required">*</span></label>
-                      <input type="text" name="pincode" id="pincode" class="form-control" autocomplete="off" value="">                 
+                      <input type="text" name="pincode" id="pincode" class="form-control" autocomplete="off" value="<?php echo $result['pincode']; ?>"><?php echo form_error('pincode'); ?>             
                     </div>
                   </div>    
               </div>
               <div class="row">
                 <div class="col-md-6 form-group">
                   <label for="comment">Address</label>
-    		            <textarea class="form-control" rows="5" id="comment"></textarea>
+    		            <textarea class="form-control" rows="5" name="address" id="comment"><?php echo $result['address']; ?><?php echo form_error('address'); ?></textarea>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6">
-                  <button class="btn btn-warning" name="status" id="status" value="3">Suspend</button>
+                 <select name="emp_status" class="form-control">
+                      <option value="">Select</option>
+                      <option value="1"<?php if($result['emp_status']=='1'){ echo "selected"; } ?>>Active</option>
+                      <option value="2"<?php if($result['emp_status']=='2'){ echo "selected"; } ?>>Inactive</option>
+                   </select>
                 </div>
                 <div class="col-md-6" style="text-align:end;">
                   <button class="btn btn-update">Upadate</button>
                 </div>
               </div>
             </div>
+          </form>
           </div>
         </div>
       </div>
