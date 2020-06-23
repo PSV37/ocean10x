@@ -144,7 +144,7 @@
 <script type="text/javascript">
 document.getElementsByClassName('form-control').innerHTML+="<br />";
 </script>
-
+<script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
 <script>
     function getStates(id){
         if(id){
@@ -298,7 +298,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 
 </script>
 
-<script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
+
 <script>
 $("#dept_id").select2( {
   placeholder: "Select Department",
