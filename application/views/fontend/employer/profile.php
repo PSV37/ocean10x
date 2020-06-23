@@ -11,7 +11,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
 .edit-profile{margin-top:41px;
 border-radius:13px;}
 .header-profile {
-    background-color: #f1fffe;
+    background-color: #18c5bd1f;
     /* float: left; */
     padding: 20px;
     box-shadow: -1px 1px 2px #eae8e8;
