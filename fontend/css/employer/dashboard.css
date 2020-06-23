@@ -901,8 +901,8 @@ color:#fff;}
 .job-voucher{background-color:#fff;border-radius:3px;height:130px;padding: 15px 20px 15px 20px;box-shadow:0px 0px 2px #00000038;
 line-height:20px;}
 .job-voucher:hover{   
-box-shadow:0px 0px 5px #00000038;}
-
+box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)!important;
+}
 .dimen_img-s{height:60px;
 			width:60px;float:left;margin-right: 20px;
 			margin-bottom:20px;}
