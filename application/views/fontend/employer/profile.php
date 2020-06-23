@@ -15,7 +15,8 @@ border-radius:13px;}
     /* float: left; */
     padding: 20px;
     box-shadow: -1px 1px 2px #eae8e8;
-}
+	border-radius:13px 13px 0px 0px;
+	}   
 
 .progresss {
     background-color: #e5edf5;
