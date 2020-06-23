@@ -291,7 +291,7 @@ div class="container-fluid main-d">
                   <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Designation<span class="required">*</span></label>
-                      <select class="form-control" name="user_role" id="user_role" onchange="getuseraccess(this.value);" required="">
+                      <select class="form-control" name="user_role[]" id="user_role[]" onchange="getuseraccess(this.value);" required="">
                         <option value="">Select designation</option>
                           <?php foreach($roles as $key){?>
                           <option value="<?php echo $key['user_role_id']; ?>"<?php if($result['user_role'] == $key['user_role_id']){ echo "selected"; }?>><?php echo $key['user_roles']; ?>
@@ -368,3 +368,231 @@ div class="container-fluid main-d">
         </div>
       </div>
     </div>
+    <script type="text/javascript" src="<?php echo base_url(); ?>asset/js/tinymce/tinymce.min.js"></script> 
+<script type="text/javascript">
+document.getElementsByClassName('form-control').innerHTML+="<br />";
+</script>
+
+<script>
+    function getStates(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>employer/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state_id').html(res);
+                }
+                
+            }); 
+          }
+   
+      }
+
+    function getCitys(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>employer/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city_id').html(res);
+                }
+                
+            }); 
+          }
+   
+       }
+
+      function getuseraccess(id){
+      if(id){
+          
+        
+              $.ajax({
+                  type:'POST',
+                  url:'<?php echo base_url();?>employer/get_access_data',
+                  data:{id:id},
+                  success:function(res){
+                      $('#user_accc').html(res);
+                      $("#user_accc").selectpicker('refresh');
+                  }
+
+          
+              }); 
+            }
+          // $(".empdash .selectpicker").css("display", "block");
+       }
+     
+
+       
+</script>    
+
+ 
+    
+<script>
+  function hideshowfun()
+  {
+  
+      var a = $('#category').val();
+      
+      if(a=='MCQ')
+      {
+          $('#comp_name').hide();
+      }
+     else{
+         $('#comp_name').show();
+     } 
+     
+     if(a=='Subjective' || a=='Practical')
+      {
+          $('#name').hide();
+      }
+     else{
+         $('#name').show();
+     } 
+     
+      
+  }
+</script> 
+
+
+
+<script>
+  
+  $(document).ready(function(){
+    
+
+    function getStates_load(){
+        var id = $('#country_id').val();
+
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Employer/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state_id').html(res);
+                    $('#state_id').val(<?php echo $result['state_id']; ?>);
+                     getCitys_load(<?php echo $result['state_id']; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+    
+    function getCitys_load(id){
+      //var id = $('#state_id').val();
+      // alert(id);
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Employer/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city_id').html(res);
+                    $('#city_id').val(<?php echo $result['city_id']; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+
+       function getuseraccess_load(){
+         var id = $('#user_role').val();
+         alert(id);
+      if(id){
+          
+        
+              $.ajax({
+                  type:'POST',
+                  url:'<?php echo base_url();?>employer/get_access_data',
+                  data:{id:id},
+                  success:function(res){
+                      $('#user_accc').html(res);
+                      $("#user_accc").selectpicker('refresh');
+                  }
+
+          
+              }); 
+            }
+          // $(".empdash .selectpicker").css("display", "block");
+       }
+
+  getCitys_load();
+  getStates_load();
+  getuseraccess_load();
+});
+
+
+</script>
+
+<script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
+<script>
+$("#dept_id").select2( {
+  placeholder: "Select Department",
+  allowClear: true
+  } );
+</script>
+
+<script>        
+  function phoneno(){          
+    $('#mobile').keypress(function(e) {
+        var a = [];
+        var k = e.which;
+
+        for (i = 48; i < 58; i++)
+            a.push(i);
+
+        if (!(a.indexOf(k)>=0))
+            e.preventDefault();
+    });
+  }
+</script>
+     
+     <script>
+  var BASE_URL = "<?php echo base_url(); ?>";
+ 
+ $(document).ready(function() {
+    $( "#pincode" ).autocomplete({
+ 
+        source: function(request, response) {
+            $.ajax({
+            url: BASE_URL + "employer/search",
+            data: {
+                    term : request.term
+             },
+            dataType: "json",
+            success: function(data){
+               var resp = $.map(data,function(obj){
+                var pincode = obj.pincode;
+                var location=  obj.location;
+                var city = obj.city;
+                var state = obj.state;
+                var resData = pincode + ', ' + location + ', ' + city + ', '+ state; 
+                    return resData;
+               }); 
+ 
+               response(resp);
+            }
+        });
+    },
+    minLength: 1
+ });
+});
+</script>
+<script type="text/javascript">
+  $("#user_accc").mousedown(function(e){
+    e.preventDefault();
+    
+    var select = this;
+    var scroll = select.scrollTop;
+    
+    e.target.selected = !e.target.selected;
+    
+    setTimeout(function(){select.scrollTop = scroll;}, 0);
+    
+    $(select).focus();
+}).mousemove(function(e){e.preventDefault()});
+</script>
