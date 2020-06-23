@@ -934,13 +934,14 @@ font-size: 12px;
 .job_dis_btn{padding: 2px 16px;
     border: none;
     margin-left: 79px;
-   
+   border-radius:20px;
 	font-size:12px;}
 .job_dis_btn:hover{
 background-color: #81c3f8;
     color: #fff;
+	transition:0.5s;
 }
-.apply_job_btn {
+.apply_job_btn {   
     float: right;
     background-color: #fff;
     padding: 6px 35px;
