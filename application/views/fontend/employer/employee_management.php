@@ -160,6 +160,10 @@ font-size: 21px;
   padding: 0;
   border-bottom: 1px solid #cccccc;
 }
+
+  .bootstrap-select > .dropdown-toggle {
+    display: block;
+}
 </style>
 
 
