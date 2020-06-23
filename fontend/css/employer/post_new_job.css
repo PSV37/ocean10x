@@ -435,7 +435,7 @@ li.right-icon-title {
 }
 .active-span{
    position: absolute;
-    top: 12px;
+    top: 0px;
     left: 405px;
     background-color: #8BC34A;
     padding: 1px 17px;
