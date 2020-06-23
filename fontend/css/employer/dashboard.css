@@ -250,7 +250,7 @@ i.fas.fa-power-off{
 #left-panel {
     padding-top: 0px;
 }
-#left-panel .inner-left-pannel {
+#left-panel .inner-left-pannel {  
     text-align: center;
     height: 100%;
     overflow-y: auto;
