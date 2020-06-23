@@ -60,7 +60,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
     border: solid 1px #e8e7e7;
     box-shadow: -1px 2px 4px #e8e6e6;
 	background-color:#fff;
-}
+	bor-radius:13px;}
 .forms {
     padding: 0px 35px;
 	background-color:#fff;
