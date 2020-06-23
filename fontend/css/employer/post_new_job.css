@@ -297,12 +297,13 @@ input{padding:7px 25px;}
 }
 button.btn-save {
     font-size: 12px;
-    padding: 10px 52px;
+    padding: 10px 25px;
     background-color: #14a99b;
     color: #fff;
     border: none;
 	border-radius:20px;
 	box-shadow: 2px 2px 6px #a8a4a4;
+	margin-right:-10px;
 
 }
 .modal-content {
