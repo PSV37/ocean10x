@@ -450,7 +450,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
             <input type="text"  name="candiate_email"  placeholder="Enter comma seperated Emails"  id="subject" data-required="true" required>
           </div>
         
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
             <label class="mdl-textfield__label" for="sample3">Message</label>
 
           <textarea class="form-control" name="message" rows="5" id="comment" required></textarea>
