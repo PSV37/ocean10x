@@ -163,7 +163,7 @@ label {
             <div class="col-md-6 col-sm-12">
               <div class="formrow">
                                 <label class="control-label">Country Code:</label>
-                                <select id="country" name="country_code" class="form-control country_code select2-hidden-accessible"  aria-hidden="true">
+                                <select id="country" name="country_code" class="form-control country_code "  aria-hidden="true">
                                     <!-- <option value="">Select Country Code</option> -->
                                     
                                     <option>IN - India (+91)</option>
