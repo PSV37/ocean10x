@@ -194,37 +194,6 @@
 <script type="text/javascript">
 document.getElementsByClassName('form-control').innerHTML+="<br />";
 </script>
-<?php $this->load->view("fontend/layout/footer.php"); ?>
-
-
- 
-    
-<script>
-  function hideshowfun()
-  {
-  
-      var a = $('#category').val();
-      
-      if(a=='MCQ')
-      {
-          $('#comp_name').hide();
-      }
-     else{
-         $('#comp_name').show();
-     } 
-     
-     if(a=='Subjective' || a=='Practical')
-      {
-          $('#name').hide();
-      }
-     else{
-         $('#name').show();
-     } 
-     
-      
-  }
-</script> 
-
 
 <script>
     function getStates(id){
@@ -276,23 +245,40 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
           // $(".empdash .selectpicker").css("display", "block");
        }
      
-// function getaccess(id)
-//       {
-//         if(id){
-//             $.ajax({
-//                 type:'POST',
-//                 url:'<?php echo base_url();?>employer/get_access_specifierss',
-//                 data:{id:id},
-//                 success:function(res){
-//                   console.log(res);
-//                     $('#accessrr').html(res);
-//                 }
-                
-//             }); 
-//           }
-//       }
+
        
 </script>    
+
+ 
+    
+<script>
+  function hideshowfun()
+  {
+  
+      var a = $('#category').val();
+      
+      if(a=='MCQ')
+      {
+          $('#comp_name').hide();
+      }
+     else{
+         $('#comp_name').show();
+     } 
+     
+     if(a=='Subjective' || a=='Practical')
+      {
+          $('#name').hide();
+      }
+     else{
+         $('#name').show();
+     } 
+     
+      
+  }
+</script> 
+
+
+
 <script>
   
   $(document).ready(function(){

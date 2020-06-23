@@ -6,6 +6,7 @@
   <div class="container">
    <div class="col-md-12">
     <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
+      <form method="post" action="<?php echo base_url();?>employer/addemployee" enctype="multipart/form-data">
       <div class="col-md-9 employe_add">
         <div class="col-md-12">
           <h4 class="employee_heading">ADD EMPLOYEE</h4>
@@ -131,10 +132,11 @@
         </div>
         <div class="cl-md-12">
           <div class="col-md-12 employ_btn_div">
-            <button class="employ_btn">Add Employee</button>
+            <button type="Submit" class="employ_btn">Add Employee</button>
           </div>
         </div>
       </div>
+    </form>
     </div>
   </div>
 </div>
@@ -142,37 +144,6 @@
 <script type="text/javascript">
 document.getElementsByClassName('form-control').innerHTML+="<br />";
 </script>
-<?php $this->load->view("fontend/layout/footer.php"); ?>
-
-
- 
-    
-<script>
-  function hideshowfun()
-  {
-  
-      var a = $('#category').val();
-      
-      if(a=='MCQ')
-      {
-          $('#comp_name').hide();
-      }
-     else{
-         $('#comp_name').show();
-     } 
-     
-     if(a=='Subjective' || a=='Practical')
-      {
-          $('#name').hide();
-      }
-     else{
-         $('#name').show();
-     } 
-     
-      
-  }
-</script> 
-
 
 <script>
     function getStates(id){
@@ -223,24 +194,39 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
             }
           // $(".empdash .selectpicker").css("display", "block");
        }
-     
-// function getaccess(id)
-//       {
-//         if(id){
-//             $.ajax({
-//                 type:'POST',
-//                 url:'<?php echo base_url();?>employer/get_access_specifierss',
-//                 data:{id:id},
-//                 success:function(res){
-//                   console.log(res);
-//                     $('#accessrr').html(res);
-//                 }
-                
-//             }); 
-//           }
-//       }
        
-</script>    
+</script>  
+
+ 
+    
+<script>
+  function hideshowfun()
+  {
+  
+      var a = $('#category').val();
+      
+      if(a=='MCQ')
+      {
+          $('#comp_name').hide();
+      }
+     else{
+         $('#comp_name').show();
+     } 
+     
+     if(a=='Subjective' || a=='Practical')
+      {
+          $('#name').hide();
+      }
+     else{
+         $('#name').show();
+     } 
+     
+      
+  }
+</script> 
+
+
+  
 <script>
   
   $(document).ready(function(){
