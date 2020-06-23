@@ -1727,7 +1727,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     
         $res = $this->Master_model->getMaster('employee',$where, $join);
         $config = array();
-            $config["base_url"] = base_url('employer/index');
+            $config["base_url"] = base_url('employer/addemployee');
             $config["total_rows"] = count($res);
             $config['per_page'] =5;
             $config['uri_segment'] = 3;
