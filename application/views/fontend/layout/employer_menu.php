@@ -1,10 +1,14 @@
 <style>
 .employer_menu {
     background-color:#fff;   
-    height: 451px;
-	margin-top: 38px;
-	border-radius: 13px;
-	border: 1px solid #d9dde2;   
+   eight: 451px;
+    margin-top: 38px;
+    border-radius: 13px;
+    border: 1px solid #d9dde2;
+    position: fixed;
+    
+    width: 20%;
+
 }
 </style>    
 
@@ -12,7 +16,7 @@
 <div class="employer_menu">
             
             <aside id="left-panel" style="margin-top:9px;
-                 margin-left: 14px;height:auto; position: fixed;
+                 margin-left: 14px;height:auto; 
             z-index: 999;vertical-align:baseline;">
             <div class="inner-left-pannel">
                 
