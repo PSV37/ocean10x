@@ -8,7 +8,8 @@ $company_profile_id = $this->session->userdata('company_profile_id');
 
 <style>
 
-.edit-profile{margin-top:70px;}
+.edit-profile{margin-top:41px;
+border-radius:13px;}
 .header-profile {
     background-color: #f1fffe;
     /* float: left; */
