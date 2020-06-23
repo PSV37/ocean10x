@@ -277,7 +277,7 @@ background-color: #81c3f8;
 }
 .fade-rotate.in {
   opacity: 1;
- 
+  transform: rotate(90deg);
 }
 .fade-rotate .modal-dialog {
     position: absolute;
