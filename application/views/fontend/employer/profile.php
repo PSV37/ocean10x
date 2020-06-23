@@ -95,7 +95,7 @@ label {
 
 </style>
 
-<form id="form_register">
+
 <div class="container-fluid main-d">
     <div class="container">
     <div class="col-md-12">
@@ -112,7 +112,7 @@ label {
               <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
                       70%
               </div>
-            </div>    
+            </div>
           </div>
         </div>
         <div class="forms">
@@ -120,14 +120,14 @@ label {
             <div class="col-md-6 col-sm-12">   
               <div class="formrow">
                 <label class="control-label">Company Name:</label>
-                <input type="text" required="" name="company_name" class="form-control"  value="<?php if(!empty($company_info->company_name)){ echo $company_info->company_name; } ?>" class="form-control" required    >
+                <input type="text" required="" name="company_name" class="form-control" placeholder="Company Name" value="<?php if(!empty($company_info->company_name)){ echo $company_info->company_name; } ?>" class="form-control" placeholder="Company Name">
               </div>
             </div>
 
             <div class="col-md-6 col-sm-12">
                 <div class="formrow">
                     <label class="control-label">Company Email: </label>
-                <input type="text" readonly="" name="company_email" class="form-control" placeholder="Company Email" value="<?php  if(!empty($company_info->company_email)){ echo $company_info->company_email; } ?>" required >
+                <input type="text" readonly="" name="company_email" class="form-control" placeholder="Company Email" value="<?php  if(!empty($company_info->company_email)){ echo $company_info->company_email; } ?>">
               </div>
             </div>
           </div>
@@ -390,7 +390,7 @@ label {
                             <div class="col-md-6 col-sm-12">
                 <div class="formrow">
                 <label class="control-label">Company Phone:</label>
-                  <input type="tel" required="" name="company_phone"  class="form-control" id="company_phone" class="form-control allownumericwithdecimal" min="10" maxlength="10" required value="<?php 
+                  <input type="tel" required="" name="company_phone"  class="allownumericwithdecimal form-control" maxlength="10" id="company_phone" value="<?php 
                    if(!empty($company_info->company_phone)){ echo $company_info->company_phone; } ?>" onkeypress="phoneno()">   
                 </div>
               </div>
@@ -435,7 +435,7 @@ label {
                             <div class="col-md-6 col-sm-12">
                 <div class="formrow">
                 <label class="control-label">Contact Person Mobile: <span class="required">*</span></label>
-                 <input type="text" name="cont_person_mobile" id="cont_person_mobile" class="form-control" value="<?php  if(!empty($company_info->cont_person_mobile)){ echo $company_info->cont_person_mobile; } ?>" onkeypress="phonenoo()" class="form-control allownumericwithdecimal" min="10" maxlength="10" required  ?>                      
+                 <input type="text" name="cont_person_mobile" id="cont_person_mobile" class="form-control" value="<?php  if(!empty($company_info->cont_person_mobile)){ echo $company_info->cont_person_mobile; } ?>" onkeypress="phonenoo()" maxlength="10" required="">                    
                </div>
               </div>
                                         <!-- <div class="col-md-6 col-sm-6">
@@ -468,7 +468,7 @@ label {
                                                } ?></textarea>        
                 </div>
               </div>
-                    </div>
+             </div>
             <div class="row f-9">
                 <div class="col-md-4 col-sm-4">
                   <div class="formrow">
@@ -511,21 +511,12 @@ label {
                                         
 
               </div>   
-              <div class="btn-save-profile">save</div>             
+              <button class="btn-save-profile">save</button>>             
         </div>
       </div>
     </div>
   </div>
 </div>
-
-</form>
-
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-<!-- jquery validation plugin //-->
-<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js"></script>
-<script type="text/javascript" src="validation_reg.js"></script>
-
 <script>
   $(".allownumericwithdecimal").on("keypress keyup blur",function (event) {
             //this.value = this.value.replace(/[^0-9\.]/g,'');
@@ -535,240 +526,3 @@ label {
             }
         });
 </script> 
-<script>
-
-$(document).ready(function()
-
-{
-
-$("#form_register").validate (  
-
-{
-
-rules:{
-
-'company_phone':{
-
-required: true,
-
-minlength: 10,
-
-maxlength: 10
-//company_phone_regex: true
-
-},
-
-
-'company_name':{
-
-required: true,
-
-company_name_regex: true
-
-},
-
-'contact_name':{
-
-required: true,
-
-minlength: 6,
-
-},
-
-'cont_person_level': {
-
-required: true,
-
-minlength: 6
-
-}, 
-
-'alternate_email_id':{
-
-required: true,
-
-email: true
-
-
-},
-
-'cont_person_email':{
-
-required: true,
-
-email: true
-
-
-},
-
-'cont_person_mobile': {
-        
-  matches: "[0-9]+", 
-        
-  minlength:10,
-        
-  maxlength:10,
-
-  required: true
-},
-
-'company_url':{
-
-required: true,
-
-url: true
-
-},
-
-'date':{
-
-required: true,
-
-date: true
-
-},
-
-'pass1':{
-
-required: true,
-
-minlength: 8
-
-},
-
-'pass2':{
-
-equalTo: '#reg_pass1'
-
-}
-
-},
-
-messages:{
-
-'company_name':{
-
-required: "The name field is mandatory!",
-
-maxlength: "Choose a company name of at least 14 letters!"
-
-},
-
-'cont_person_mobile':{
-
-  required: "The name field is mandatory!",
-
-  matches: "Didn't match!", 
-        
-  minlength: "Minimum length 10 digits!",
-        
-  maxlength: "Maximum length 10 digits!"
-},
-
-'contact_name':{
-
-required: "The name field is mandatory!",
-
-maxlength: "Choose a company name of at least 14 letters!"
-
-},
-
-'cont_person_level':{
-
-required: "The name field is mandatory!",
-
-maxlength: "Choose a company name of at least 14 letters!"
-
-},
-
-'company_phone':{
-
-required: "The username field is mandatory!",
-
-minlength: "Choose a username of at least 4 letters!",
-
-company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
-
-remote: "The username is already in use by another user!"
-
-},
-
-
-'alternate_email_id':{
-
-required: "The Email is required!",
-
-email: "Please enter a valid email address!",
-
-remote: "The email is already in use by another user!"
-
-},
-
-'cont_person_email' :{
-
-required: "The Email is required!",
-
-email: "Please enter a valid email address!",
-
-remote: "The email is already in use by another user!"
-
-},
-
-'company_url':{
-
-required: "The Web Address is required!"
-
-},
-
-'username':{
-
-required: "The username field is mandatory!",
-
-minlength: "Choose a username of at least 4 letters!",
-
-username_regex: "You have used invalid characters. Are permitted only letters numbers!",
-
-remote: "The username is already in use by another user!"
-
-},
-
-'pass1':{
-
-required: "The password field is mandatory!",
-
-minlength: "Please enter a password at least 8 characters!"
-
-},
-
-'pass2':{ 
-
-equalTo: "The two passwords do not match!"
-
-}
-
-}
-
-});
-
-});
-
-</script>
-
-<script >
-  $.validator.addMethod("username_regex", function(value, element) {
-
-return this.optional(element) || /^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$/i.test(value);
-
-}, "Please choise a username with only a-z 0-9.");
-
- 
-  $.validator.addMethod("company_phone_regex", function(value, element) {
-
-return this.optional(element) || /^(([2-9]{1})([0-9]{2})([0-9]{3})([0-9]{4}))$/.test(value);
-
-}, "Please choise a company_phone with only + 0-9.");
-
-</script>
-
-
-

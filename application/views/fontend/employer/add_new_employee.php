@@ -272,7 +272,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 
        function getuseraccess_load(){
          var id = $('#user_role').val();
-         alert(id);
+         // alert(id);
       if(id){
           
         
