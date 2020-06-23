@@ -8,13 +8,15 @@ $company_profile_id = $this->session->userdata('company_profile_id');
 
 <style>
 
-.edit-profile{margin-top:70px;}
+.edit-profile{margin-top:41px;
+border-radius:13px;}
 .header-profile {
     background-color: #f1fffe;
     /* float: left; */
     padding: 20px;
     box-shadow: -1px 1px 2px #eae8e8;
-}
+	border-radius:13px 13px 0px 0px;
+	}   
 
 .progresss {
     background-color: #e5edf5;
@@ -59,9 +61,18 @@ $company_profile_id = $this->session->userdata('company_profile_id');
     padding-right: 0px;
     border: solid 1px #e8e7e7;
     box-shadow: -1px 2px 4px #e8e6e6;
+	background-color:#fff;
 }
 .forms {
     padding: 0px 35px;
+} 
+.img-thumbnail {
+    padding: .25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: .25rem;
+    max-width: 100%;
+    height: auto;
 }
 label {
     display: inline-block;
@@ -102,8 +113,8 @@ label {
       <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
       <div class="col-md-9 edit-profile">
         <div class="col-md-12 header-profile">
-          <div class="col-md-2">
-            <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($company_profile_id);?>" style="height:80px;width:80px;" class="img-thumbnail" />
+          <div class="col-md-2">   
+            <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($company_profile_id);?>" style="height:80px;width:80px;border-radius:50%;" class="img-thumbnail" />
           </div>
           <div class="col-md-9">
             <p style="font-size:18px;"><?php echo $this->company_profile_model->company_name($company_profile_id); ?></p>
