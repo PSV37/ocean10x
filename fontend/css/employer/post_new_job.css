@@ -4,7 +4,7 @@
 #svg_form_time rect {
   fill: #dcdcdc;
 }
-#submit{background-color:rgb(20, 156, 150);}
+
 .button{
     background: rgb(24, 197, 189);
     border-radius: 100px;
@@ -17,6 +17,10 @@
 	margin-left: 60px;
 }
 .button:hover{
+background-color:#13928c;	
+	
+	}
+.button:hover{
 box-shadow: 2px 2px 2px #c9c8c8;
 transition:1s;
 }
@@ -25,7 +29,7 @@ transition:1s;
 }
 label{font-size:12px;}
 section {
-  padding: 30px 45px 25px;
+  padding: 30px 45px 25px;   
   
   
   background:#dcdcdc;
