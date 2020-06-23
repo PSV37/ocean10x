@@ -233,7 +233,7 @@ font-size: 21px;
           <div class="col-md-6" style="text-align: left;margin-left: -13px;"><button class="add_btn">Add</button></div>
             <div class="col-md-6" style="text-align: right;margin-left: 492px;float: none;"><button class="save_btn">Save</button></div>   
             <div class="add_employ">
-              <h4>Add Employe</h4>
+              <h4>Add Employee</h4>
                 <div class="row">
            	      <div class="col-md-3">
                     <div class="form-group">                                       
