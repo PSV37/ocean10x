@@ -101,7 +101,7 @@
             Question Bank
           </div>
           <div class="select-option">
-            <p style="FONT-SIZE: 12PX;COLOR: #0a5854;margin-bottom:-5px;">Total No. Of Question:10</p>
+            <p style="FONT-SIZE: 12PX;COLOR: #0a5854;">Total No. Of Question:10</p>
             <label class="dropdown">
               <div class="dd-button">
                 Filter
