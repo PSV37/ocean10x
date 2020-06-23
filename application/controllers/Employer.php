@@ -1606,6 +1606,7 @@ function getstate(){
 
     public function addemployee(){
     	$user_id = $this->session->userdata('company_profile_id');
+
     	if(isset($_POST['submit_employee'])){
 
            $this->form_validation->set_rules('Password', 'password', 'required|max_length[15]|min_length[8]|regex_match[/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/]');
@@ -1716,6 +1717,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         		redirect(base_url().'employer/allemployee');
     	    }
     	}
+        $c_id = $this->input->get('id');
+        $where = "emp_id='$c_id'";
+        $data['result'] = $this->Master_model->get_master_row('employee',$select = FALSE,$where);
+       
         $where='employee.org_id="'.$user_id.'" and employee.emp_status!="0" ';
         //$data['result'] = $this->Master_model->getMaster('industry',$where=FALSE);
         $join = array(
@@ -1729,7 +1734,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $config = array();
             $config["base_url"] = base_url('employer/addemployee');
             $config["total_rows"] = count($res);
-            $config['per_page'] =5;
+            $config['per_page'] =10;
             $config['uri_segment'] = 3;
               
             $config['full_tag_open'] = '<div class="pagination">';
@@ -1760,8 +1765,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
            $day = date("Y-m-d H:i:s", strtotime('-24 hours', time()));
         
          $where='employee.org_id="'.$user_id.'" AND (employee.emp_status="1" or employee.emp_status="2" or(employee.emp_status="3" and employee.emp_updated_date >"'.$day.'") or (employee.emp_status="1" and employee.emp_updated_date >"'.$day.'") )';
+
+
            
-           $data["result"] = $this->Master_model->getMaster("employee", $where=$where, $join, $order = "ASC", $field = "employee.emp_id", $select = false,$config["per_page"],$page, $search=false, $group_by = FALSE);
+           $data["emptbl"] = $this->Master_model->getMaster("employee", $where=$where, $join, $order = "ASC", $field = "employee.emp_id", $select = false,$config["per_page"],$page, $search=false, $group_by = FALSE);
         $data['department'] = $this->Master_model->getMaster('department',$where=false);  
         // $data['result'] = $this->Master_model->getMaster('department' ,$select=false);
         $data['city'] = $this->Master_model->getMaster('city',$where=false);

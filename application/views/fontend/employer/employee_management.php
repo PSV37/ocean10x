@@ -202,7 +202,7 @@ div class="container-fluid main-d">
                   </tr>
                 </thead>
                 <tbody>
-                  <?php $srno=0; foreach($result as $key){ $srno++; 
+                  <?php $srno=0; foreach($emptbl as $key){ $srno++; 
                 ?>
             		<tr style="background: #fff;">
                   <td><?php echo $key['emp_no']; ?></td>
@@ -224,7 +224,7 @@ div class="container-fluid main-d">
                   <td style=""><button class="btn btn-warning" name="status" id="status" value="3">Suspended</button></td>
                 <?php } ?>
 
-            		  <td style="text-align:center;color:#18c5bd;cursor:pointer;" ><a href="<?php echo base_url();?>employer/editemployee?id=<?php echo $key['emp_id']; ?>"><i class="fas fa-edit"></i></a></td>
+            		  <td style="text-align:center;color:#18c5bd;cursor:pointer;" ><a href="<?php echo base_url();?>employer/addemployee?id=<?php echo $key['emp_id']; ?>"><i class="fas fa-edit"></i></a></td>
                 </tr>
   			         <?php } ?>
               
@@ -359,7 +359,7 @@ div class="container-fluid main-d">
                    </select>
                 </div>
                 <div class="col-md-6" style="text-align:end;">
-                  <button class="btn btn-update">Upadate</button>
+                  <button type="Submit" name="submit_employee" class="btn btn-update">Upadate</button>
                 </div>
               </div>
             </div>
@@ -501,7 +501,7 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
 
        function getuseraccess_load(){
          var id = $('#user_role').val();
-         alert(id);
+         // alert(id);
       if(id){
           
         
