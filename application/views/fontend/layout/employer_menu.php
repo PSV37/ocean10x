@@ -10,7 +10,7 @@
     box-shadow: 1px 0px 3px #e0dddd;
 }
 
-}
+
 </style>    
 
 <div class="col-md-3">
