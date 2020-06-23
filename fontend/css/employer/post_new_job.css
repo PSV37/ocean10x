@@ -312,7 +312,7 @@ button.btn-save {
 .sendEmail textarea.form-control{background-color:#fbffff80;}
 @media (min-width: 768px){
 .modal-dialog {
-    width: 460px;
+    width: 530px;
     margin: 100px auto;
 }
 }
