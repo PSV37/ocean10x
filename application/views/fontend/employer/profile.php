@@ -8,15 +8,13 @@ $company_profile_id = $this->session->userdata('company_profile_id');
 
 <style>
 
-.edit-profile{margin-top:41px;
-border-radius:13px;}
+.edit-profile{margin-top:70px;}
 .header-profile {
-    background-color: #18c5bd1f;
+    background-color: #f1fffe;
     /* float: left; */
     padding: 20px;
     box-shadow: -1px 1px 2px #eae8e8;
-	border-radius:13px 13px 0px 0px;
-	}   
+}
 
 .progresss {
     background-color: #e5edf5;
@@ -61,10 +59,11 @@ border-radius:13px;}
     padding-right: 0px;   
     border: solid 1px #e8e7e7;
     box-shadow: -1px 2px 4px #e8e6e6;
-	background-color:#fff;
 }
 .forms {
     padding: 0px 35px;
+<<<<<<< HEAD
+=======
 	
 } 
 .img-thumbnail-profile {    
@@ -75,6 +74,7 @@ border-radius:13px;}
     max-width: 100%;
     height: auto;   
 	box-shadow:inset 0px 0px 4px #e4e2e2;
+>>>>>>> 1f83e858a1f73f73d1cfe29658d356f9af8df4c2
 }
 label {
     display: inline-block;
@@ -109,24 +109,24 @@ label {
 
 </style>
 
-
+<form id="form_register">
 <div class="container-fluid main-d">
     <div class="container">
     <div class="col-md-12">
       <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
       <div class="col-md-9 edit-profile">
         <div class="col-md-12 header-profile">
-          <div class="col-md-2">   
-            <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($company_profile_id);?>" style="height:80px;width:80px;border-radius:50%;" class="img-thumbnail-profile" />
+          <div class="col-md-2">
+            <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($company_profile_id);?>" style="height:80px;width:80px;" class="img-thumbnail" />
           </div>
-          <div class="col-md-9" style="margin-left:-35px;">   
+          <div class="col-md-9">
             <p style="font-size:18px;"><?php echo $this->company_profile_model->company_name($company_profile_id); ?></p>
             <p class="university">Nagpur University </p>
             <div class="progresss">
               <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
                       70%
               </div>
-            </div>
+            </div>    
           </div>
         </div>
         <div class="forms">
@@ -134,14 +134,14 @@ label {
             <div class="col-md-6 col-sm-12">   
               <div class="formrow">
                 <label class="control-label">Company Name:</label>
-                <input type="text" required="" name="company_name" class="form-control" placeholder="Company Name" value="<?php if(!empty($company_info->company_name)){ echo $company_info->company_name; } ?>" class="form-control" placeholder="Company Name">
+                <input type="text" name="company_name" class="form-control"  value="<?php if(!empty($company_info->company_name)){ echo $company_info->company_name; } ?>" class="form-control" required    >
               </div>
             </div>
 
             <div class="col-md-6 col-sm-12">
                 <div class="formrow">
                     <label class="control-label">Company Email: </label>
-                <input type="text" readonly="" name="company_email" class="form-control" placeholder="Company Email" value="<?php  if(!empty($company_info->company_email)){ echo $company_info->company_email; } ?>">
+                <input type="text" readonly="" name="company_email" class="form-control" placeholder="Company Email" value="<?php  if(!empty($company_info->company_email)){ echo $company_info->company_email; } ?>" required >
               </div>
             </div>
           </div>
@@ -404,7 +404,7 @@ label {
                             <div class="col-md-6 col-sm-12">
                 <div class="formrow">
                 <label class="control-label">Company Phone:</label>
-                  <input type="tel" required="" name="company_phone"  class="allownumericwithdecimal form-control" maxlength="10" id="company_phone" value="<?php 
+                  <input type="text" required="" name="company_phone"  class="form-control" id="company_phone" class="form-control allownumericwithdecimal" min="10" maxlength="10" required value="<?php 
                    if(!empty($company_info->company_phone)){ echo $company_info->company_phone; } ?>" onkeypress="phoneno()">   
                 </div>
               </div>
@@ -426,7 +426,7 @@ label {
               <div class="col-md-6 col-sm-12">
                 <div class="formrow">
                    <label class="control-label">Company Contact Person:<span class="required">*</span></label>  
-                  <input type="text" name="contact_name" required="" class="form-control" id="contact_name" placeholder="Contact Name">
+                  <input type="text" name="contact_name" class="form-control" id="contact_name" placeholder="Contact Name" required="required" >
                 </div>
               </div>
                                    
@@ -449,7 +449,7 @@ label {
                             <div class="col-md-6 col-sm-12">
                 <div class="formrow">
                 <label class="control-label">Contact Person Mobile: <span class="required">*</span></label>
-                 <input type="text" name="cont_person_mobile" id="cont_person_mobile" class="form-control" value="<?php  if(!empty($company_info->cont_person_mobile)){ echo $company_info->cont_person_mobile; } ?>" onkeypress="phonenoo()" maxlength="10" required="">                    
+                 <input type="text" name="cont_person_mobile" id="cont_person_mobile" class="form-control" value="<?php  if(!empty($company_info->cont_person_mobile)){ echo $company_info->cont_person_mobile; } ?>" onkeypress="phonenoo()" class="form-control allownumericwithdecimal" min="10" maxlength="10" required  ?>                      
                </div>
               </div>
                                         <!-- <div class="col-md-6 col-sm-6">
@@ -482,7 +482,7 @@ label {
                                                } ?></textarea>        
                 </div>
               </div>
-             </div>
+                    </div>
             <div class="row f-9">
                 <div class="col-md-4 col-sm-4">
                   <div class="formrow">
@@ -512,7 +512,8 @@ label {
                             <div class="col-md-6 col-sm-6">
                           <div class="formrow">
                  <label class="control-label">Pincode: <span class="required">*</span></label>
-                  <input type="text" name="company_pincode" id="company_pincode" required="" class="form-control ui-autocomplete-input" value="412205, KELEWADI, KELEWADI, MAHARASHTRA" autocomplete="off">                 </div>
+                  <input type="text" name="company_pincode" id="company_pincode"  class="form-control ui-autocomplete-input" value="412205" autocomplete="off" required >   
+                  </div>
                          </div>
                        </div>    
               <div class="row f-11">
@@ -525,12 +526,284 @@ label {
                                         
 
               </div>   
-              <button class="btn-save-profile">save</button>>             
+               <button class="btn-save-profile">save</button>             
         </div>
       </div>
     </div>
   </div>
 </div>
+
+</form>
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<!-- jquery validation plugin //-->
+<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js"></script>
+<script type="text/javascript" src="validation_reg.js"></script>
+<script src="js/jquery.validate.js"></script>
+
+
+<script>
+
+$(document).ready(function()
+
+{
+
+$("#form_register").validate (  
+
+{
+
+rules:{
+
+'company_phone':{
+
+required: true,
+
+minlength: 10,
+
+maxlength: 10
+//company_phone_regex: true
+
+},
+
+
+'company_name':{
+
+required: true,
+
+companyname_regex: true
+
+},
+
+'contact_name':{
+
+required: true,
+
+contactname_regex: true
+
+},
+
+'cont_person_level': {
+
+required: true,
+
+contpersonlevel_regex: true
+
+}, 
+
+'alternate_email_id':{
+
+required: true,
+
+email: true
+
+
+},
+
+'cont_person_email':{
+
+required: true,
+
+email: true
+
+
+},
+
+'cont_person_mobile': {
+                
+  minlength:10,
+        
+  maxlength:10,
+
+  required: true
+},
+
+'company_url':{
+
+required: true,
+
+url: true
+
+},
+
+
+'company_pincode':{
+
+required: true,
+
+companypincode_regex: true
+
+},
+
+
+
+'date':{
+
+required: true,
+
+date: true
+
+},
+
+'pass1':{
+
+required: true,
+
+minlength: 8
+
+},
+
+'pass2':{
+
+equalTo: '#reg_pass1'
+
+}
+
+},
+
+messages:{
+
+'company_name':{
+
+required: "The name field is mandatory!",
+
+maxlength: "Choose a company name of at least 14 letters!"
+
+},
+
+'cont_person_mobile':{
+
+  required: "The name field is mandatory!",
+
+  matches: "Didn't match!", 
+        
+  minlength: "Please Enter 10 digit phone numbers!",
+        
+  maxlength: "Maximum length 10 digits!"
+},
+
+'contact_name':{
+
+required: "The name field is mandatory!",
+
+maxlength: "Choose a company name of at least 14 letters!"
+
+},
+
+'cont_person_level':{
+
+required: "The name field is mandatory!",
+
+maxlength: "Choose a company name of at least 14 letters!"
+
+},
+
+'company_phone':{
+
+required: "The username field is mandatory!",
+
+minlength: "Please Enter 10 digit phone numbers!",
+
+company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+
+remote: "The username is already in use by another user!"
+
+},
+
+
+'alternate_email_id':{
+
+required: "The Email is required!",
+
+email: "Please enter a valid email address!",
+
+remote: "The email is already in use by another user!"
+
+},
+
+'cont_person_email' :{
+
+required: "The Email is required!",
+
+email: "Please enter a valid email address!",
+
+remote: "The email is already in use by another user!"
+
+},
+
+'company_url':{
+
+required: "The Web Address is required!"
+
+},
+
+'username':{
+
+required: "The username field is mandatory!",
+
+minlength: "Choose a username of at least 4 letters!",
+
+username_regex: "You have used invalid characters. Are permitted only letters numbers!",
+
+remote: "The username is already in use by another user!"
+
+},
+
+'pass1':{
+
+required: "The password field is mandatory!",
+
+minlength: "Please enter a password at least 8 characters!"
+
+},
+
+'pass2':{ 
+
+equalTo: "The two passwords do not match!"
+
+}
+
+}
+
+});
+
+});
+
+</script>
+
+<script >
+  $.validator.addMethod("companyname_regex", function(value, element) {
+
+return this.optional(element) || /^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$/i.test(value);
+
+}, "Please choose only alphabets");
+
+ 
+  $.validator.addMethod("contactname_regex", function(value, element) {
+
+return this.optional(element) || /^[a-zA-Z ]+$/.test(value);
+
+}, "Please choose only alphabets");
+
+
+
+  $.validator.addMethod("contpersonlevel_regex", function(value, element) {
+
+return this.optional(element) || /^[a-zA-Z ]+$/.test(value);
+
+}, "Please choose only alphabets");
+
+
+$.validator.addMethod("companypincode_regex", function(value, element) {
+
+return this.optional(element) || /^[1-9][0-9][0-9][0-9][0-9][0-9]$/.test(value);
+
+}, "Please Enter 6 digits Company Pincode");
+
+</script>
+
+
+
 <script>
   $(".allownumericwithdecimal").on("keypress keyup blur",function (event) {
             //this.value = this.value.replace(/[^0-9\.]/g,'');
@@ -540,3 +813,7 @@ label {
             }
         });
 </script> 
+
+<!--script>
+  $("#commentform").validate();
+</script>
