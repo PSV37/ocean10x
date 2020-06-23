@@ -24,8 +24,7 @@ button.sort-serach {
     background-color: #18c5bd;
 }
 
-input#emp_name {
-    border: solid 1px #dadada;
+.search_f input[type="text"]{    border: solid 1px #dadada;
     padding: 3px;
     border-radius: 0px 20px 20px 0px;
 }
@@ -259,7 +258,7 @@ font-size: 21px;
             <form method="post" <?php if (isset($result)) { ?>
              action="<?php  echo base_url();?>employer/postEditData"
             <?php }else{ ?> action="<?php  echo base_url();?>employer/addemployee" <?php } ?>  enctype="multipart/form-data">  
-               <input type="hidden" name="cid" id="cid" value="<?php echo $result['emp_id'];?>">
+               <input type="hidden" name="cid" id="cid" value="<?php echo $result['emp_id'];?>" class="search_f">
             <div class="add_employ">
               <h4>Add Employee</h4>
                 <div class="row">
