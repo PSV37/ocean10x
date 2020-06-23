@@ -231,15 +231,16 @@ i.fas.fa-power-off{
     line-height: 18px;
    
 	}	
-.caret{color:#fff;
-margin-top: -16px;
-    margin-left: -0px;}	
+.caret{color: #fff;
+    margin-top: -3px;
+    margin-left: -5px;}	
 .profile-accoutnt-p{	
-	margin-top: -25px;
-    margin-left: 64px;
+	margin-top: -36px;
+    margin-left: 76px;
     color: #fff;
-    font-size: 12px;
-}
+    font-size: 14px;
+    font-weight: 700;
+	}
 .fixed-navigation #left-panel {
     height: 100%;
     position: fixed;
