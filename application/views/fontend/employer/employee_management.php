@@ -242,7 +242,7 @@ font-size: 21px;
             </div>
                
           </div>
-          <div class="col-md-6" style="text-align: left;margin-left: -13px;"><button class="add_btn">Add</button></div>
+          <div class="col-md-6" style="text-align: left;"><button class="add_btn">Add</button></div>
             <div class="col-md-6" style="text-align: right;margin-left: 492px;float: none;"><button class="save_btn">Save</button></div> 
             <form method="post" <?php if (isset($result)) { ?>
              action="<?php  echo base_url();?>employer/postEditData"
