@@ -69,10 +69,11 @@ border-radius:13px;}
 .img-thumbnail {
     padding: .25rem;
     background-color: #fff;
-    border: 1px solid #dee2e6;
+    border: 3px solid #fff;
     border-radius: .25rem;
     max-width: 100%;
-    height: auto;
+    height: auto;   
+	box-shadow: inset 0px 0px 4px #b5b0b0;
 }
 label {
     display: inline-block;
