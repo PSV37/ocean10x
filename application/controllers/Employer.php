@@ -1724,7 +1724,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $data['roles'] = $this->Master_model->getMaster('user_role',$where=false);
 
         $this->load->view('fontend/employer/employee_management',$data);       
-    	$this->load->view('fontend/employer/add_new_employee',$data);		
+    	// $this->load->view('fontend/employer/add_new_employee',$data);		
     }
 
     public function addconsultant()

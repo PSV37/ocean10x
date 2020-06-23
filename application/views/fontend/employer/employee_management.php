@@ -1,5 +1,5 @@
 <?php 
-   <?php $this->load->view('fontend/layout/employer_new_header.php');?>  
+    $this->load->view('fontend/layout/employer_new_header.php');?>  
 <style>
 div#music {
     margin-top: 20px;
@@ -234,7 +234,7 @@ font-size: 21px;
           <div class="col-md-6" style="text-align: left;margin-left: -13px;"><button class="add_btn">Add</button></div>
             <div class="col-md-6" style="text-align: right;margin-left: 492px;float: none;"><button class="save_btn">Save</button></div>   
             <div class="add_employ">
-              <h4>Add Employe</h4>
+              <h4>Add Employee</h4>
                 <div class="row">
            	      <div class="col-md-3">
                     <div class="form-group">                                       
@@ -256,7 +256,7 @@ font-size: 21px;
                           <?php foreach($department as $key){?>
                           <option value="<?php echo $key['dept_id']; ?>"<?php if($result['dept_id'] == $key['dept_id']){ echo "selected"; }?>><?php echo $key['department_name']; ?></option>
                         <?php } ?>
-                          </select><span class="select2 select2-container select2-container--default select2-container--below select2-container--focus" dir="ltr" style="width: 272px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-dept_id-container"><span class="select2-selection__rendered" id="select2-dept_id-container"><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span></span>
+                         
                     </div>
                   </div> 
                   <div class="col-md-3">
