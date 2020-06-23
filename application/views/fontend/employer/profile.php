@@ -73,7 +73,7 @@ border-radius:13px;}
     border-radius: .25rem;
     max-width: 100%;
     height: auto;   
-	box-shadow: inset 0px 0px 4px #b5b0b0;
+	box-shadow:inset 0px 0px 4px #e4e2e2;
 }
 label {
     display: inline-block;
