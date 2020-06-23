@@ -215,7 +215,7 @@ div class="container-fluid main-d">
           				<td style=""><button class="btn btn-success" name="status" id="status" value="3">Active</button></td>	
                    <? } elseif($key['emp_status']=='2')
                   { ?>
-                  <td style=""><button class="btn btn-default" name="status" id="status" value="3">Inactive</button></td>
+                  <td style=""><button class="btn btn-primary" name="status" id="status" value="3">Inactive</button></td>
                   <? } elseif($key['emp_status']=='0')
                   { ?>
                   <td style=""><button class="btn btn-danger" name="status" id="status" value="3">Deactivated</button></td>
