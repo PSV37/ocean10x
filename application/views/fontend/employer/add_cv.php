@@ -1,56 +1,63 @@
-<div class="col-md-9 employe_add">
+<?php 
+   $this->load->view('fontend/layout/employer_new_header.php');?>
+<div class="container-fluid main-d">
+	<div class="container">
+    	<div class="col-md-12">
+    	<?php $this->load->view('fontend/layout/employer_menu.php'); ?>
+    	<form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>employer/add_new_cv" method="post">
+			<div class="col-md-9 employe_add">
                 <div class="col-md-12">
-                <h4 class="employee_heading">ADD NEW CV</h4>
+                	<h4 class="employee_heading">ADD NEW CV</h4>
                 </div>
                 <div class="col-md-12">
-                <div class="col-md-4">
-                    <div class="form-group">                                       
-					   <label for="exampleInputEmail1">Full Name <span class="required">*</span></label>
-                        <input type="text" name="candidate_name" id="candidate_name" class="form-control" required="">
+                	<div class="col-md-4">
+                    	<div class="form-group">                                       
+						   	<label for="exampleInputEmail1">Full Name <span class="required">*</span></label>
+	                        <input type="text" name="candidate_name" id="candidate_name" class="form-control" required="">
+						</div>
+                	</div>
+                
+                	<div class="col-md-4">
+                    	<div class="form-group">
+	                        <label for="exampleInputEmail1">Email Id <span class="required">*</span></label>
+	                      	<input type="email" name="candidate_email" id="candidate_email" class="form-control ui-autocomplete-input" required="" autocomplete="off">
+                    	</div>
+                	</div>
+                
+                	<div class="col-md-4">
+				  		<div class="form-group">
+		                    <label for="exampleInputEmail1">Phone Number<span class="required">*</span></label>
+		                 	<input type="text" name="candidate_phone" id="candidate_phone" class="form-control" maxlength="10" required="">
+						</div>
 					</div>
                 </div>
                 
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email Id <span class="required">*</span></label>
-                      	<input type="email" name="candidate_email" id="candidate_email" class="form-control ui-autocomplete-input" required="" autocomplete="off">
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-				  	<div class="form-group">
-	                    <label for="exampleInputEmail1">Phone Number<span class="required">*</span></label>
-	                 	<input type="text" name="candidate_phone" id="candidate_phone" class="form-control" maxlength="10" required="">
+                <div class="col-md-12">
+	                <div class="col-md-4">
+					  	<div class="form-group">
+		                    <label for="exampleInputEmail1">Yrs of Experience</label>
+		                 	<input type="text" name="candidate_experiance" id="candidate_experiance" class="form-control">
+						</div>
 					</div>
-				</div>
-                </div>
                 
-                 <div class="col-md-12">
-                <div class="col-md-4">
-				  	<div class="form-group">
-	                    <label for="exampleInputEmail1">Yrs of Experience</label>
-	                 	<input type="text" name="candidate_experiance" id="candidate_experiance" class="form-control">
+	                <div class="col-md-4">
+					  	<div class="form-group">
+		                    <label for="exampleInputEmail1">Notice Period at Current Job</label>
+		                 	<input type="text" name="candidate_notice_period" id="candidate_notice_period" class="form-control">
+						</div>
 					</div>
-				</div>
                 
-                <div class="col-md-4">
-				  	<div class="form-group">
-	                    <label for="exampleInputEmail1">Notice Period at Current Job</label>
-	                 	<input type="text" name="candidate_notice_period" id="candidate_notice_period" class="form-control">
+	                <div class="col-md-4">
+					  	<div class="form-group">
+		                    <label for="exampleInputEmail1">Job Type</label>
+		                 	<select id="job_type" name="job_type" class="form-control">
+		                      <option value="">Select Type</option>
+		                      <option value="Full Time">Full Time</option>
+		                      <option value="Part Time">Part Time</option>
+		                      <option value="Contractual">Contractual</option>	
+		                    </select> 
+						</div>
 					</div>
-				</div>
-                
-                <div class="col-md-4">
-				  	<div class="form-group">
-	                    <label for="exampleInputEmail1">Job Type</label>
-	                 	<select id="job_type" name="job_type" class="form-control">
-	                      <option value="">Select Type</option>
-	                      <option value="Full Time">Full Time</option>
-	                      <option value="Part Time">Part Time</option>
-	                      <option value="Contractual">Contractual</option>	
-	                    </select> 
-					</div>
-				</div>
                 </div>
                 
                 <div class="col-md-12"> 
@@ -103,75 +110,59 @@
                 
                 </div>
                 
-                 <div class="col-md-12"> 
-                
-                
-                <div class="col-md-4">
-				  	<div class="form-group">
-	                    <label for="exampleInputEmail1">Certifications</label>
-	                 	<input type="text" name="candidate_certification" id="candidate_certification" class="form-control">
+                <div class="col-md-12"> 
+	                <div class="col-md-4">
+					  	<div class="form-group">
+		                    <label for="exampleInputEmail1">Certifications</label>
+		                 	<input type="text" name="candidate_certification" id="candidate_certification" class="form-control">
+						</div>
 					</div>
-				</div>
-                
-                <div class="col-md-4">
-				  	<div class="form-group">
-	                    <label for="exampleInputEmail1">Industry</label>
-	                 	<select id="candidate_industry" name="candidate_industry" class="form-control">
-	                      <option value="">Select Industry</option>
-                      	                        	  	<option value="1">HR/ Admin</option>
-                      	                        	  	<option value="2">Accounting/Finance</option>
-                      	                        	  	<option value="3">IT</option>
-                      	                        	  	<option value="4">Education &amp; Training</option>
-                      	                        	  	<option value="5">Marketing &amp; Sales</option>
-                      	                        	  	<option value="6">Customer Support</option>
-                      	                        	  	<option value="8">Engineer</option>
-                      	                        	  	<option value="9">Pharmaceutical</option>
-                      	                        	  	<option value="10">Real Estate</option>
-                      	                        	  	<option value="11">Electrical &amp; Electronics</option>
-                      	                        	  	<option value="14">Freelancer</option>
-                      	                        	  	<option value="15">Chemical</option>
-                      	                        	  	<option value="17">Automobile</option>
-                      	                        	  	<option value="18">Others</option>
-                      	                        	  	<option value="19">Telecom</option>
-                      	  	                    </select> 
+	                
+	                <div class="col-md-4">
+					  	<div class="form-group">
+		                    <label for="exampleInputEmail1">Industry</label>
+		                 	<select id="candidate_industry" name="candidate_industry" class="form-control">
+		                       <option value="">Select Industry</option>
+	                      	  <?php if (!empty($industry_master)): foreach ($industry_master as $ind_row) : ?>
+	                      	  	<option value="<?php echo $ind_row['job_category_id']; ?>"><?php echo $ind_row['job_category_name']; ?></option>
+	                      	  <?php  endforeach; endif; ?>
+	                      	</select> 
+						</div>
 					</div>
-				</div>
-                
-                <div class="col-md-4">
-				  	<div class="form-group">
-	                    <label for="exampleInputEmail1">Role</label>
-	                 	<select id="candidate_role" name="candidate_role" class="form-control">
-	                      <option value="">Select Role</option>
-	                                            	  	<option value="1">PHP Developer</option>
-                      	                        	  	<option value="2">Java Developer</option>
-                      	                        	  	<option value="3">Digital Marketing</option>
-                      	  	                    </select> 
+	                
+	                <div class="col-md-4">
+					  	<div class="form-group">
+		                    <label for="exampleInputEmail1">Role</label>
+		                 	<select id="candidate_role" name="candidate_role" class="form-control">
+		                      <option value="">Select Role</option>
+		                      <?php if (!empty($job_role)): foreach ($job_role as $role_row) : ?>
+	                      	  	<option value="<?php echo $role_row['id']; ?>"><?php echo $role_row['job_role_title']; ?></option>
+	                      	  <?php  endforeach; endif; ?>
+	                      	</select> 
+						</div>
 					</div>
-				</div>
+            	</div>
+                <div class="col-md-12"> 
+                	<div class="col-md-4">
+					  	<div class="form-group">
+		                    <label for="exampleInputEmail1">Expected Salary</label>
+		                 	<input type="text" name="candidate_expected_sal" id="candidate_expected_sal" class="form-control">
+						</div>
+					</div>
+                
+                	<div class="col-md-4">
+					  	<div class="form-group">
+		                    <label for="exampleInputEmail1">Desired Work Location</label>
+		                 	<input type="text" name="desired_wrok_location" id="desired_wrok_location" class="form-control">
+						</div>
+					</div>
+	                <div class="col-md-4">
+                		<button class="save_cv">save cv</button>
+                	</div>
                 </div>
-                
-                
-                
-                 <div class="col-md-12"> 
-                <div class="col-md-4">
-				  	<div class="form-group">
-	                    <label for="exampleInputEmail1">Expected Salary</label>
-	                 	<input type="text" name="candidate_expected_sal" id="candidate_expected_sal" class="form-control">
-					</div>
-				</div>
-                
-                <div class="col-md-4">
-				  	<div class="form-group">
-	                    <label for="exampleInputEmail1">Desired Work Location</label>
-	                 	<input type="text" name="desired_wrok_location" id="desired_wrok_location" class="form-control">
-					</div>
-				</div>
-                
-                
-                <div class="col-md-4">
-                <button class="save_cv">save cv</button>
-                </div>
-                </div>
-                
                 
              </div>
+         	</form>
+         </div>
+     </div>
+ </div>
