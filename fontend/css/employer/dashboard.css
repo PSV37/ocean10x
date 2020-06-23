@@ -456,7 +456,7 @@ nav{overflow:auto;}
     padding: 1px;
     white-space: nowrap;
     margin-bottom: -2px;
-    max-width: 74%;
+    max-width: 74%;   
     font-size: 13px;
 }
 
@@ -465,6 +465,7 @@ nav{overflow:auto;}
     margin-top: 77px;
     box-shadow: 1px 0px 3px #e0dddd;
 	padding: 0px 0px 20px 0px;
+	border-radius:13px;
 }
 .dash-box-w{background-color:#fff;}
 .o-hidden {
