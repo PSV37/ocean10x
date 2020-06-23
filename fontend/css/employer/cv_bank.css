@@ -392,7 +392,7 @@ background-color: #81c3f8;
 	}
 .bd-2 {
     margin-top: 20px;
-	padding:0px;
+	padding:0px;     
 }	
 /*end*/
 
@@ -400,7 +400,7 @@ background-color: #81c3f8;
 #myDIV {
   width: 100%;
  height: 126px;
- padding:10x;
+ padding:10x;   
  background-color:#fff;
   margin-top: 20px;
   display:none;
