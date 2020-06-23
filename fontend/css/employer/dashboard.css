@@ -428,7 +428,7 @@ margin-top: -16px;
 }
 #left-panel .inner-left-pannel .inner-tabs .menu-tab .menu-principal ul li.active span.text {
     font-weight: 500!important;
-    color: #666!important;
+    color: #18c5bd!important;
 }
 #left-panel .inner-left-pannel .inner-tabs .menu-tab .menu-principal ul li span.text {
     margin-left: 10px;
@@ -440,7 +440,7 @@ margin-top: -16px;
     margin-bottom: -2px;
     max-width: 74%;
     font-size: 13px;
-	color:#858787;
+	color:#616363;
 }
 #left-panel .inner-left-pannel .inner-tabs .menu-tab .menu-principal ul li.active span.icon-container i {
     left: 0;
