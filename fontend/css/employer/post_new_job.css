@@ -313,7 +313,7 @@ button.btn-save {
 @media (min-width: 768px){
 .modal-dialog {
     width: 530px;
-    margin: 100px auto;
+    margin: 100px auto;   
 }
 }
 button#sklbtn {
