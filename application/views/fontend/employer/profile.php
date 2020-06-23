@@ -103,7 +103,7 @@ label {
     background-color:#0d807a;
     transition:1s;
 }
-
+     
 </style>
 
 <form id="form_register">
