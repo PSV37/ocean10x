@@ -294,7 +294,7 @@ div class="container-fluid main-d">
                   <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Designation<span class="required">*</span></label>
-                      <select class="form-control" name="user_role[]" id="user_role[]" onchange="getuseraccess(this.value);" required="">
+                      <select class="form-control" name="user_role" id="user_role" onchange="getuseraccess(this.value);" required="">
                         <option value="">Select designation</option>
                           <?php foreach($roles as $key){?>
                           <option value="<?php echo $key['user_role_id']; ?>"<?php if($result['user_role'] == $key['user_role_id']){ echo "selected"; }?>><?php echo $key['user_roles']; ?>
