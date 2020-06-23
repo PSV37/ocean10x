@@ -1072,3 +1072,6 @@ section .section-title {
 ul.list-unstyled.quick-links {
     margin-bottom: 15px;
 }			
+:focus {
+    outline: none !important;
+}
