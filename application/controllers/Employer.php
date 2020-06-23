@@ -1716,7 +1716,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         		redirect(base_url().'employer/allemployee');
     	    }
     	}
-        $where='employee.org_id="'.$employer.'" and employee.emp_status!="0" ';
+        $where='employee.org_id="'.$user_id.'" and employee.emp_status!="0" ';
         //$data['result'] = $this->Master_model->getMaster('industry',$where=FALSE);
         $join = array(
             'department' => 'department.dept_id = employee.dept_id|LEFT OUTER',
@@ -1759,7 +1759,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
            $data["links"] = $this->pagination->create_links();
            $day = date("Y-m-d H:i:s", strtotime('-24 hours', time()));
         
-         $where='employee.org_id="'.$employer.'" AND (employee.emp_status="1" or employee.emp_status="2" or(employee.emp_status="3" and employee.emp_updated_date >"'.$day.'") or (employee.emp_status="1" and employee.emp_updated_date >"'.$day.'") )';
+         $where='employee.org_id="'.$user_id.'" AND (employee.emp_status="1" or employee.emp_status="2" or(employee.emp_status="3" and employee.emp_updated_date >"'.$day.'") or (employee.emp_status="1" and employee.emp_updated_date >"'.$day.'") )';
            
            $data["result"] = $this->Master_model->getMaster("employee", $where=$where, $join, $order = "ASC", $field = "employee.emp_id", $select = false,$config["per_page"],$page, $search=false, $group_by = FALSE);
         $data['department'] = $this->Master_model->getMaster('department',$where=false);  
