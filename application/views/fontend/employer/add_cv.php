@@ -168,7 +168,7 @@
 					</div>
 	                <div class="col-md-4">
 	                	<div class="form-group">
-                		<button  class="save_cv">save cv</button>
+                		<button  class="btn btn-primary save_cv">save cv</button>
                 	</div>
                 	</div>
                 </div>
