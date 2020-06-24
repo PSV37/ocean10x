@@ -197,6 +197,15 @@ i#eyeIcon {
 .newuser {
     margin-top: 12px;
 }
+.field-icon {
+  float: right;
+  margin-right: 8px;
+  margin-top: -27px;
+  position: relative;
+  z-index: 2;
+  cursor:pointer;
+}
+
 </style>
 
 
@@ -208,7 +217,7 @@ i#eyeIcon {
       <label>Username</label>
     </div>
     <div class="user-box">
-      <input type="password" name="password" required>
+      <input type="password" name="password" required><span toggle="#password-field" class="fa fa-lg fa-eye-slash field-icon toggle-password"></span>
       <label>Password </label>
       <i id="eyeIcon" class="fa fa-eye"></i>
 
@@ -228,7 +237,19 @@ i#eyeIcon {
   <div class="newuser"><i class="fa fa-user" aria-hidden="true"></i> Not on Ocean ? <a href="<?php echo base_url(); ?>employer_register">Register Now</a></div>
   </div>
 </div>
+<script type="text/javascript">
+  $(".toggle-password").click(function() {
 
+  $(this).toggleClass("fa-eye fa-eye-slash");
+  var x = document.getElementById("myInput");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  
+});
 
+</script>
 
 
