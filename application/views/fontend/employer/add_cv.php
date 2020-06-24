@@ -11,6 +11,10 @@
     font-size: 15px;
     font-weight: bold;
 }
+.required
+  {
+    color: red;
+  }
  </style>  
 <div class="container-fluid main-d">
 	<div class="container">
@@ -31,14 +35,14 @@
                 
                 	<div class="col-md-4">
                     	<div class="form-group">
-	                        <label for="exampleInputEmail1">Email Id <span class="required">*</span></label>
+	                        <label for="exampleInputEmail1">Email Id <span class="required"> *</span></label>
 	                      	<input type="email" name="candidate_email" id="candidate_email" class="form-control ui-autocomplete-input" required="" autocomplete="off">
                     	</div>
                 	</div>
                 
                 	<div class="col-md-4">
 				  		<div class="form-group">
-		                    <label for="exampleInputEmail1">Phone Number<span class="required">*</span></label>
+		                    <label for="exampleInputEmail1">Phone Number<span class="required"> *</span></label>
 		                 	<input type="text" name="candidate_phone" id="candidate_phone" class="form-control" maxlength="10" required="">
 						</div>
 					</div>
