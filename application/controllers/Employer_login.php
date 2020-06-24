@@ -21,7 +21,7 @@ class Employer_Login extends CI_Controller
     {
         // $data['title'] = 'User Login';
         // $data['subview'] = $this->load->view('login', $data, true);
-        $this->load->view('fontend/employer/login');
+        $this->load->view('fontend/employer/employer_login');
 
     }
 
