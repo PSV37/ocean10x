@@ -122,7 +122,7 @@
 </div>
 <div class="modal fade" id="modal_logoff" role="dialog">
     <div class="modal-dialog">
-        
+       <form method="post" action="<?php echo base_url(); ?>employer/logout" > 
       
       <div class="modal-content">
         <div class="modal-header">
@@ -131,11 +131,11 @@
         </div>
        
         <div class="modal-footer">
-          <a href="<?php echo base_url(); ?>employer/logout"><button type="button" class="btn btn-default"  data-dismiss="modal"> Ok </button></a>
+         <button type="submit" class="btn btn-default"  data-dismiss="modal"> Ok </button>
           <button type="button" class="btn btn-default1" data-dismiss="modal">Cancel</button>
         </div>
       </div>
-      
+      </form>
     </div>
   </div>
 <script>
