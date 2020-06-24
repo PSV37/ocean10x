@@ -3193,7 +3193,7 @@ public function interview_scheduler()
                     'js_mobile'                  => $this->input->post('candidate_phone'),
                     'js_job_type'                => $this->input->post('job_type'),
                     'js_current_designation'     => $this->input->post('current_job_desig'),
-                    'js_current_work_location'   => $this->input->post('current_work_location'),
+                    // 'js_current_work_location'   => $this->input->post('current_work_location'),
                     'js_working_since'           => date('Y-m-d', strtotime($this->input->post('working_current_since'))),
                     'js_current_ctc'             => $this->input->post('current_ctc'),
                     'js_current_notice_period'   => $this->input->post('candidate_notice_period'),
