@@ -189,9 +189,9 @@ section {
     padding: 5px 45px 25px !important;
 }
 input{
-	border-radius: 4px;
+  border-radius: 4px;
     border: 1px solid lightgrey;}
-	
+  
 span.options_beni {
     background: #18c5bd !important;
     display: inline-block;
@@ -199,13 +199,13 @@ span.options_beni {
     color: #fff;
     padding: 5px 12px !important;   
     font-size: 11px;
-	border-radius:13px !important; }
+  border-radius:13px !important; }
 
-	
+  
 </style>
 <!---header--->
 <div class="container-fluid main-d">
-	<div class="container">
+  <div class="container">
     <div class="col-md-12">
       <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
        <form id="test" action="<?php echo base_url() ?>employer/job_post" method="post">
@@ -239,11 +239,11 @@ span.options_beni {
                     ?>" autocomplete="off" required> -->
                     <div class="col-md-3 formrow" style="width:80px;margin-left:-14px;">
                    
-                    	 <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from"  value="<?php if(!empty($this->session->userdata('exp_from')) ){echo $this->session->userdata('exp_from'); } ?>" />
+                       <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from"  value="<?php if(!empty($this->session->userdata('exp_from')) ){echo $this->session->userdata('exp_from'); } ?>" />
                     </div>
                     
                      <div class="col-md-3 formrow" style="width:80px;margin-left:-19px;">
-                    	 <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to" value="<?php if(!empty($this->session->userdata('exp_to')) ){echo $this->session->userdata('exp_to'); } ?>" />
+                       <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to" value="<?php if(!empty($this->session->userdata('exp_to')) ){echo $this->session->userdata('exp_to'); } ?>" />
                     </div>    
                                      
                   </div>    
@@ -310,12 +310,12 @@ span.options_beni {
                 <div class="col-md-3 col-sm-12">
                   <div class="formrow">
                     <label class="control-label " style="margin-left:-162px;">Salary Range<span class="required"> *</span> </label>
-                 	<div class="col-md-3 formrow" style="width:100px;margin-left:-14px;margin-top:37px;">
+                  <div class="col-md-3 formrow" style="width:100px;margin-left:-14px;margin-top:37px;">
                    
-                    	 <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from" value="">
+                       <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from" value="">
                     </div>
                       <div class="col-md-3 formrow" style="width:100px;margin-left:-19px;margin-top: 37px;">
-                    	 <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to" value="<?php if(!empty($this->session->userdata('exp_to')) ){echo $this->session->userdata('exp_to'); } ?>" />
+                       <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to" value="<?php if(!empty($this->session->userdata('exp_to')) ){echo $this->session->userdata('exp_to'); } ?>" />
                     </div> 
                                      
                   </div>    
@@ -383,14 +383,6 @@ span.options_beni {
           
 
           <section>
-
-            
-
-            
-           
-             
-              
-
                  <div class="col-md-12 col-sm-12">
                    <div class="formrow">
                    <label class="control-label">Other Benefits <span class="required"> * </span></label>
@@ -400,7 +392,7 @@ span.options_beni {
                     <!--  <div class="form-control benifit-div" style="padding:10px 10px; height:auto;" > -->
                 <div class="col-md-12 col-sm-12">
                    <div class="formrow">
-                   			<label>
+                        <label>
                                 <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
                                 <span>dummy1</span>
                             </label>
@@ -441,7 +433,7 @@ span.options_beni {
             <div class="button" id="next">Next &rarr;</div>
            <button class="button" type="submit" name="preview"  id="preview">preview</button>
           <button type="submit" class="button" id="submit">Post Job</button>
-      	 </div>
+         </div>
         </div>
       </form>
     </div>

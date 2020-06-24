@@ -198,40 +198,59 @@ i#eyeIcon {
     margin-top: 12px;
 }
 input:-internal-autofill-selected{background-color:#fff;}
+.field-icon {
+  float: right;
+  margin-right: 8px;
+  margin-top: -27px;
+  position: relative;
+  z-index: 2;
+  cursor:pointer;
+}
+
 </style>
 
 
 <div class="login-box">
   <h3>Employer Login</h3>
-  <form>
+  <form class="submit-form customform loginform" action="<?php echo base_url() ?>employer_login/check_login?redirect=<?php echo $this->input->get('redirect'); ?>" method="post">
     <div class="user-box">
-      <input type="text" name="" required>
+      <input type="text" name="email"  required>
       <label>Username</label>
     </div>
     <div class="user-box">
-      <input type="password" name="" required>
+      <input type="password" name="password" required><span toggle="#password-field" class="fa fa-lg fa-eye-slash field-icon toggle-password"></span>
       <label>Password </label>
       <i id="eyeIcon" class="fa fa-eye"></i>
 
     </div>
     <div class="row">
-    <div class="col-md-6" style="margin-top:-20px;">
-                  <input id="checkbox_qu_01" type="checkbox" class="styled" checked="">
-                  <label for="checkbox_qu_01"><small style="color:#7b7a7a;font-weight:100;">Remember me</small></label>
-                </div>
-     </div>           
-                
-                
-   <div class="row" style="text-align:center;">
-   <button class="sign_in">Sign in</button>
-   <p class="forgot" style="color:#7b7a7a;font-size: 12px;margin-top: 9px;">Forgot Password ?</p>
-   </div>
+      <div class="col-md-6" style="margin-top:-20px;">
+        <input id="checkbox_qu_01" type="checkbox" class="styled" checked="">
+        <label for="checkbox_qu_01"><small style="color:#7b7a7a;font-weight:100;">Remember me</small></label>
+      </div>
+    </div>           
+    <div class="row" style="text-align:center;">
+       <button class="sign_in" type="submit">Sign in</button>
+       <a href="<?php echo base_url() . 'employer_login/forgot_pass' ?>"><p class="forgot" style="color:#7b7a7a;font-size: 12px;margin-top: 9px;">Forgot Password ?</p></a>
+    </div>
   </form>
   <div class="row" style="text-align:center;">
-  <div class="newuser"><i class="fa fa-user" aria-hidden="true"></i> Not on Ocean ? <a href="https://www.consultnhire.com/employer_register">Register Now</a></div>
+  <div class="newuser"><i class="fa fa-user" aria-hidden="true"></i> Not on Ocean ? <a href="<?php echo base_url(); ?>employer_register">Register Now</a></div>
   </div>
 </div>
+<script type="text/javascript">
+  $(".toggle-password").click(function() {
 
+  $(this).toggleClass("fa-eye fa-eye-slash");
+  var x = document.getElementById("myInput");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  
+});
 
+</script>
 
 
