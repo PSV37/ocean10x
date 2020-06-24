@@ -8,7 +8,7 @@ div#music {
    margin-top: 41px;
     margin-bottom: 20px;
     border: solid 1px #eae9e9;
-    padding: 25px 25px;
+    padding: 25px 25px;    
     border-radius: 13px;
     box-shadow: 0px 1px 4px 0px #e9e8e8;
 	background-color:#fff;
@@ -18,6 +18,17 @@ thead {
     font-size: 12px;
     color: #149a94;
 }
+button.sort-serach {
+    border: none;
+    border-radius: 5px;
+    background-color: #18c5bd;
+}
+
+.search_f input[type="text"]{    border: solid 1px #dadada;
+    padding: 3px;
+    border-radius: 0px 20px 20px 0px;
+}
+
 .table>tbody>tr>td{line-height:2.428571;
 font-size:12px;}
 button#status {
@@ -57,7 +68,7 @@ background-color: #109690;
 button.btn.btn-update {
     background-color: #18c5bd;
     color: #fff;
-    padding: 10px 30px;
+    padding: 6px 30px;
     border-radius: 33px;
     font-weight: 600;
 }
@@ -209,7 +220,7 @@ font-size: 21px;
                 ?>
             		<tr style="background: #fff;">
                   <td><?php echo $key['emp_no']; ?></td>
-          				<td><?php echo $key['emp_name']; ?></td>
+          				<td><?php echo $key['emp_name']; ?></td>   
           				<td><?php echo $key['email']; ?></td>
           				<td><?php echo $key['mobile']; ?></td>
           				<td><?php echo $key['department_name']; ?></td>	
@@ -227,7 +238,7 @@ font-size: 21px;
                   <td style=""><button class="btn btn-warning" name="status" id="status" value="3">Suspended</button></td>
                 <?php } ?>
 
-            		  <td style="text-align:center;color:#18c5bd;cursor:pointer;" ><a href="<?php echo base_url();?>employer/addemployee?id=<?php echo $key['emp_id']; ?>"><i class="fas fa-edit"></i></a></td>
+            		  <td style="text-align:center;color:#18c5bd;cursor:pointer;padding-top:20px;" ><a href="<?php echo base_url();?>employer/addemployee?id=<?php echo $key['emp_id']; ?>"><i class="fas fa-edit"></i></a></td>
                 </tr>
   			         <?php } ?>
               
@@ -238,16 +249,16 @@ font-size: 21px;
            <div class="container-fluid">
              <div class="col-md-10"></div>
             <div class="col-md-2">
-            <span><?php echo $links; ?></span>
+            <span><?php echo $links; ?></span>   
             </div>
                
           </div>
-          <div class="col-md-6" style="text-align: left;margin-left: -13px;"><button class="add_btn">Add</button></div>
-            <div class="col-md-6" style="text-align: right;margin-left: 492px;float: none;"><button class="save_btn">Save</button></div> 
+          <div class="col-md-6" style="text-align: left;margin-left:-12px;"><button class="add_btn">Add</button></div>
+            <div class="col-md-6" style="text-align: right;margin-left: 473px;float: none;"><button class="save_btn">Save</button></div> 
             <form method="post" <?php if (isset($result)) { ?>
              action="<?php  echo base_url();?>employer/postEditData"
             <?php }else{ ?> action="<?php  echo base_url();?>employer/addemployee" <?php } ?>  enctype="multipart/form-data">  
-               <input type="hidden" name="cid" id="cid" value="<?php echo $result['emp_id'];?>">
+               <input type="hidden" name="cid" id="cid" value="<?php echo $result['emp_id'];?>" class="search_f">
             <div class="add_employ">
               <h4>Add Employee</h4>
                 <div class="row">
