@@ -204,7 +204,7 @@ i#eyeIcon {
   <h3>Employer Login</h3>
   <form class="submit-form customform loginform" action="<?php echo base_url() ?>employer_login/check_login?redirect=<?php echo $this->input->get('redirect'); ?>" method="post">
     <div class="user-box">
-      <input type="text" name="email" placeholder="Enter your Email / Phone Number" required>
+      <input type="text" name="email"  required>
       <label>Username</label>
     </div>
     <div class="user-box">
