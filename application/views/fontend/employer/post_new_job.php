@@ -189,9 +189,9 @@ section {
     padding: 5px 45px 25px !important;
 }
 input{
-	border-radius: 4px;
+  border-radius: 4px;
     border: 1px solid lightgrey;}
-	
+  
 span.options_beni {
     background: #18c5bd !important;
     display: inline-block;
@@ -199,13 +199,16 @@ span.options_beni {
     color: #fff;
     padding: 5px 12px !important;   
     font-size: 11px;
-	border-radius:13px !important; }
+  border-radius:13px !important; }
 
-	
+  
 </style>
 <!---header--->
+
+<form id="form_register">
+
 <div class="container-fluid main-d">
-	<div class="container">
+  <div class="container">
     <div class="col-md-12">
       <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
        <form id="test" action="<?php echo base_url() ?>employer/job_post" method="post">
@@ -239,11 +242,11 @@ span.options_beni {
                     ?>" autocomplete="off" required> -->
                     <div class="col-md-3 formrow" style="width:80px;margin-left:-14px;">
                    
-                    	 <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from"  value="<?php if(!empty($this->session->userdata('exp_from')) ){echo $this->session->userdata('exp_from'); } ?>" />
+                       <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from"  value="<?php if(!empty($this->session->userdata('exp_from')) ){echo $this->session->userdata('exp_from'); } ?>" />
                     </div>
                     
                      <div class="col-md-3 formrow" style="width:80px;margin-left:-19px;">
-                    	 <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to" value="<?php if(!empty($this->session->userdata('exp_to')) ){echo $this->session->userdata('exp_to'); } ?>" />
+                       <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to" value="<?php if(!empty($this->session->userdata('exp_to')) ){echo $this->session->userdata('exp_to'); } ?>" />
                     </div>    
                                      
                   </div>    
@@ -310,12 +313,12 @@ span.options_beni {
                 <div class="col-md-3 col-sm-12">
                   <div class="formrow">
                     <label class="control-label " style="margin-left:-162px;">Salary Range<span class="required"> *</span> </label>
-                 	<div class="col-md-3 formrow" style="width:100px;margin-left:-14px;margin-top:37px;">
+                  <div class="col-md-3 formrow" style="width:100px;margin-left:-14px;margin-top:37px;">
                    
-                    	 <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from" value="">
+                       <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_from" value="">
                     </div>
                       <div class="col-md-3 formrow" style="width:100px;margin-left:-19px;margin-top: 37px;">
-                    	 <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to" value="<?php if(!empty($this->session->userdata('exp_to')) ){echo $this->session->userdata('exp_to'); } ?>" />
+                       <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_to" value="<?php if(!empty($this->session->userdata('exp_to')) ){echo $this->session->userdata('exp_to'); } ?>" />
                     </div> 
                                      
                   </div>    
@@ -400,7 +403,7 @@ span.options_beni {
                     <!--  <div class="form-control benifit-div" style="padding:10px 10px; height:auto;" > -->
                 <div class="col-md-12 col-sm-12">
                    <div class="formrow">
-                   			<label>
+                        <label>
                                 <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
                                 <span>dummy1</span>
                             </label>
@@ -441,13 +444,13 @@ span.options_beni {
             <div class="button" id="next">Next &rarr;</div>
            <button class="button" type="submit" name="preview"  id="preview">preview</button>
           <button type="submit" class="button" id="submit">Post Job</button>
-      	 </div>
+         </div>
         </div>
       </form>
     </div>
   </div>
 </div> 
-
+</form>
 <!-- <script type="text/javascript">
   $( '#preview' ).click( function(){
    var data = new FormData( $( 'form#test' )[ 0 ] );
@@ -652,7 +655,362 @@ $('#tokenfield').on('tokenfield:createtoken', function (event) {
     }
 
 
+</script>
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<!-- jquery validation plugin //-->
+<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js"></script>
+<script type="text/javascript" src="validation_reg.js"></script>
+<script src="js/jquery.validate.js"></script>
+
+
+<script>
+
+$(document).ready(function()
+
+{
+
+$("#form_register").validate (  
+
+{
+
+rules:{
+
+'city_id':{
+
+required: true,
+//minlength: 10,
+
+//maxlength: 10
+//company_phone_regex: true
+
+},
+
+
+'job_title':{
+
+required: true,
+
+jobtitle_regex: true
+
+},
+
+'contact_name':{
+
+required: true,
+
+contactname_regex: true
+
+},
+
+'cont_person_level': {
+
+required: true,
+
+contpersonlevel_regex: true
+
+}, 
+
+'alternate_email_id':{
+
+required: true,
+
+email: true
+
+
+},
+
+'cont_person_email':{
+
+required: true,
+
+email: true
+
+
+},
+
+'exp_from': {
+                
+  //minlength:1,
+        
+ // maxlength:10,
+
+  required: true
+},
+
+'exp_to': {
+                
+  minlength:1,
+        
+ // maxlength:10,
+
+  required: true
+},
+
+
+'no_jobs': {
+                
+  minlength:1,
+        
+ // maxlength:10,
+
+  required: true
+},
+
+'salrange_from': {
+                
+  //minlength:1,
+        
+ // maxlength:10,
+  salrangefrom_regex: true,
+  required: true
+},
+
+'salrange_to': {
+                
+  //minlength:1,
+  salrangeto_regex: true,    
+ // maxlength:10,
+
+  required: true
+},
+
+
+'job_edu':{
+
+required: true,
+
+},
+
+
+'job_nature':{
+
+required: true,
+
+},
+
+'job_edu_special':{
+
+required: true,
+
+},
+
+'job_test_requirment':{
+
+required: true,
+
+},
+
+
+'company_pincode':{
+
+required: true,
+
+companypincode_regex: true
+
+}
+
+'job_desc':{
+
+required: true,
+
+job_desc_regex: true
+
+}
+
+
+
+
+},
+
+messages:{
+
+'job_title':{
+
+required: "The name field is mandatory!",
+
+maxlength: "Choose a company name of at least 14 letters!"
+
+},
+
+'exp_from':{
+
+  required: "The name field is mandatory!",
+
+  matches: "Didn't match!", 
+        
+  minlength: "Please Enter 1 digit number!",
+        
+  maxlength: "Maximum length 10 digits!"
+},
+
+'exp_to':{
+
+  required: "The name field is mandatory!",
+
+  matches: "Didn't match!", 
+        
+  minlength: "Please Enter 1 digit number!",
+        
+  maxlength: "Maximum length 10 digits!"
+},
+
+'no_jobs':{
+
+  required: "The name field is mandatory!",
+
+  matches: "Didn't match!", 
+        
+  minlength: "Please Enter 1 digit number!",
+        
+  maxlength: "Maximum length 10 digits!"
+},
+
+
+'salrange_from':{
+
+  required: "The name field is mandatory!",
+
+  matches: "Didn't match!", 
+        
+  minlength: "Please Enter 1 digit number!",
+        
+  maxlength: "Maximum length 10 digits!"
+},
+
+'salrange_to':{
+
+  required: "The name field is mandatory!",
+
+  matches: "Didn't match!", 
+        
+  minlength: "Please Enter 1 digit number!",
+        
+  maxlength: "Maximum length 10 digits!"
+},
+
+'contact_name':{
+
+required: "The name field is mandatory!",
+
+maxlength: "Choose a company name of at least 14 letters!"
+
+},
+
+'cont_person_level':{
+
+required: "The name field is mandatory!",
+
+maxlength: "Choose a company name of at least 14 letters!"
+
+},
+
+'city_id':{
+
+required: "The city_id field is mandatory!",
+
+//minlength: "Please Enter 10 digit phone numbers!",
+
+//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+
+//remote: "The username is already in use by another user!"
+
+},
+
+'job_desc':{
+
+required: "Please fill Job Description!",
+
+//minlength: "Please Enter 10 digit phone numbers!",
+
+//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+
+//remote: "The username is already in use by another user!"
+
+},
+
+
+'alternate_email_id':{
+
+required: "The Email is required!",
+
+email: "Please enter a valid email address!",
+
+remote: "The email is already in use by another user!"
+
+},
+
+'cont_person_email' :{
+
+required: "The Email is required!",
+
+email: "Please enter a valid email address!",
+
+remote: "The email is already in use by another user!"
+
+},
+
+'company_url':{
+
+required: "The Web Address is required!"
+
+},
+
+'username':{
+
+required: "The username field is mandatory!",
+
+minlength: "Choose a username of at least 4 letters!",
+
+username_regex: "You have used invalid characters. Are permitted only letters numbers!",
+
+remote: "The username is already in use by another user!"
+
+}
+
+}
+
+});
+
+});
+
+</script>
+
+<script >
+  $.validator.addMethod("jobtitle_regex", function(value, element) {
+
+return this.optional(element) || /^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$/i.test(value);
+
+}, "Please choose only alphabets");
+
  
+  $.validator.addMethod("contactname_regex", function(value, element) {
+
+return this.optional(element) || /^[a-zA-Z ]+$/.test(value);
+
+}, "Please choose only alphabets");
+
+
+
+  $.validator.addMethod("salrangefrom_regex", function(value, element) {
+
+return this.optional(element) || /^[a-zA-Z ]+$/.test(value);
+
+}, "Please choose only alphabets");
+
+  $.validator.addMethod("salrangeto_regex", function(value, element) {
+
+return this.optional(element) || /^[a-zA-Z ]+$/.test(value);
+
+}, "Please choose only alphabets");
+
+$.validator.addMethod("companypincode_regex", function(value, element) {
+
+return this.optional(element) || /^[1-9][0-9][0-9][0-9][0-9][0-9]$/.test(value);
+
+}, "Please Enter 6 digits Company Pincode");
+
 </script>
 
 <script>
