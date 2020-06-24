@@ -1,5 +1,15 @@
 <?php 
    $this->load->view('fontend/layout/employer_new_header.php');?>
+ <style type="text/css">
+ 	button.save_cv {
+    margin-top: 29px;
+    margin-left: 84px;
+    background-color: #18c5bd;
+    border: 0px;
+    width: 100px;
+    border-radius: 30px;
+}
+ </style>  
 <div class="container-fluid main-d">
 	<div class="container">
     	<div class="col-md-12">
