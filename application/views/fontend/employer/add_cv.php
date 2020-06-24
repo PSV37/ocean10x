@@ -157,7 +157,9 @@
 						</div>
 					</div>
 	                <div class="col-md-4">
-                		<button class="save_cv">save cv</button>
+	                	<div class="form-group">
+                		<button type="submit" class="save_cv">save cv</button>
+                	</div>
                 	</div>
                 </div>
                 
