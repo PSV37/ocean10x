@@ -8,6 +8,8 @@
     border: 0px;
     width: 100px;
     border-radius: 30px;
+    font-size: 15px;
+    font-weight: bold;
 }
  </style>  
 <div class="container-fluid main-d">
