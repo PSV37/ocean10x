@@ -79,13 +79,13 @@ h3:after {
   display: inline-block;
   padding: 10px 20px;
   color: #03e9f4;
-  font-size: 16px;
+  font-size: 16px;   
   text-decoration: none;
-  text-transform: uppercase;
+  
   overflow: hidden;
   transition: .5s;
-  margin-top: 40px;
-  letter-spacing: 4px
+  margin-top:0PX;
+  letter-spacing: 2px
 }
 .login-box a{color:#18c5ed;}
 .login-box a:hover {
@@ -206,7 +206,7 @@ input:-internal-autofill-selected{background-color:#fff !important;}
   z-index: 2;
   cursor:pointer;
 }
-
+.user-box input:focus{background-color:#fff;}
 </style>
 
 
