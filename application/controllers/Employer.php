@@ -3228,7 +3228,7 @@ public function interview_scheduler()
 
                 $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New CV added sucessfully!</div>');
             }
-                redirect('employer/add_new_cv');
+                redirect('employer/corporate_cv_bank');
           
 
         }else{
