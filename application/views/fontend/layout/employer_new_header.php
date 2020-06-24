@@ -103,7 +103,8 @@
     
     <div class="col-md-2">
     	 <div class="dropdown">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQsitzq2mN_Uf5ul71QQZwBwrCdZHc8_K27gtEKfW6M9Zr-8dzu&usqp=CAU" class="img-thumbnail" style="height:45px; width:45px; border-radius:50%;" />&emsp;<a class=" dropdown-toggle" data-toggle="dropdown">
+              <?php $employer_id = $this->session->userdata('company_profile_id'); ?>
+  <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($employer_id);?>" class="img-thumbnail" style="height:45px; width:45px; border-radius:50%;" />&emsp;<a class=" dropdown-toggle" data-toggle="dropdown">
     
     <span class="caret"></span>
     <p class="profile-accoutnt-p">supriya</p>
