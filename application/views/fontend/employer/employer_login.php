@@ -197,6 +197,7 @@ i#eyeIcon {
 .newuser {
     margin-top: 12px;
 }
+input:-internal-autofill-selected{background-color:#fff;}
 </style>
 
 
