@@ -98,11 +98,11 @@ list-style-type:none;}
 .apply-invi{float: right;
     background-color:#18c5bd;
     padding: 5px 35px;
-   
+   border:none;
     color: #fff;
     font-weight: 700;
     font-size: 12px;       
-    cursor: pointer;
+    cursor: pointer;   
     border-radius: 50px;
     margin-top: -70px;	
 }
