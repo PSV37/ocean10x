@@ -205,7 +205,7 @@ span.options_beni {
 </style>
 <!---header--->
 
-<form id="form_register">
+
 
 <div class="container-fluid main-d">
   <div class="container">
@@ -451,7 +451,7 @@ span.options_beni {
   </div>
 </div> 
 
-</form>
+
 <!-- <script type="text/javascript">
   $( '#preview' ).click( function(){
    var data = new FormData( $( 'form#test' )[ 0 ] );
@@ -672,7 +672,7 @@ $(document).ready(function()
 
 {
 
-$("#form_register").validate (  
+$("#test").validate (  
 
 {
 
@@ -682,7 +682,7 @@ rules:{
 
 required: true,
 
-cityid_regex: true
+// cityid_regex: true
 //minlength: 10,
 
 //maxlength: 10
