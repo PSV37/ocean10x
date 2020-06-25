@@ -1,11 +1,11 @@
 .profile-section{margin:77px 0px 25px 0px;padding:15px 20px;
-border:solid 1px #CCC;background-color:#fdfeff;}
+border:solid 1px #CCC;background-color:#fdfeff;border-radius:13px;}
 
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{background-color:#18c5bd;
 																				color:#fff;border:none;margin-bottom:1px;border-radius: 30px;cursor:pointer;}
 
 .nav-tabs>li{margin-right:20px;}
-
+     
 .nav-tabs>li.active a {
     color: #fff !important;
     border: none;
@@ -48,7 +48,7 @@ border:solid 1px #CCC;background-color:#fdfeff;}
     cursor: default;   
 	 background-color:#18c5bd;
     color: #fff;      
-border-radius: 30px;
+border-radius: 30px;    
   }
 .nav-tabs ul li a{color:#fff;font-size:12px;border-radius: 30px;}  
  .nav-tabs>li>a{border:none;line-height:normal;margin-right:0px !important;} 
