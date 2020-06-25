@@ -1,7 +1,7 @@
 <style>
 .nav-tabs{border-bottom:solid 1px #48827f30 !important;}
-.edit{float: right;font-size:12px;cursor: pointer;margin-right:15px;font-size:14px;font-weight:700;}
-.edit:hover{background-color:#CCC;}
+.edit{float: right;font-size:12px;cursor: pointer;margin-right:15px;font-size:14px;font-weight:700;padding:2px 10px;border-radius:13px;}
+.edit:hover{background-color:#ececec;padding:2px 10px;border-radius:13px;}
 </style>
 <?php 
     $this->load->view('fontend/layout/new_seeker_header.php');
