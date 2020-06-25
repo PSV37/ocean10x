@@ -205,7 +205,7 @@ span.options_beni {
 </style>
 <!---header--->
 
-
+<!--form id="form_register"-->
 
 <div class="container-fluid main-d">
   <div class="container">
@@ -229,7 +229,7 @@ span.options_beni {
              <div class="col-md-3 col-sm-4">
                 <div class="formrow">
                   <label class="control-label ">Job Locations<span class="required"> * </span> </label>
-                    <input class="form-control allowalphabates" type="text" name="city_id" class="form-control" id="tokenfield" placeholder="Enter Location"
+                    <input class="form-control allowalphabatescomma" type="text" name="city_id" class="form-control" id="tokenfield" placeholder="Enter Location"
                         value="<?php if(!empty($this->session->userdata('location')) ){echo $this->session->userdata('location'); } ?>" required><?php echo form_error('city_id'); ?>                   
                   </div>
               </div>
@@ -451,7 +451,7 @@ span.options_beni {
   </div>
 </div> 
 
-
+<!--/form-->
 <!-- <script type="text/javascript">
   $( '#preview' ).click( function(){
    var data = new FormData( $( 'form#test' )[ 0 ] );
@@ -682,7 +682,7 @@ rules:{
 
 required: true,
 
-// cityid_regex: true
+//cityid_regex: true
 //minlength: 10,
 
 //maxlength: 10
@@ -1051,5 +1051,17 @@ return this.optional(element) || /^[1-9][0-9][0-9][0-9][0-9][0-9]$/.test(value);
         }
     }); 
 
+ $(".allowalphabatescomma").keypress(function (e) {
+        var regex = new RegExp("^[a-zA-Z, \s]+$");
+        var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+        if (regex.test(str)) {
+            return true;
+        }
+        else
+        {
+        e.preventDefault();
+        return false;
+        }
+    });
 
 </script> 

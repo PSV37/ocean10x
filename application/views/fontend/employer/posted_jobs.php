@@ -422,12 +422,139 @@ $company_profile_id = $this->session->userdata('company_profile_id');
           <?php endif; ?>
         </div>
         
-			   <div class="col-md-3">
-            <!--future use-->
-          </div>            
-		</div>
-  </div>
-</div>       
+			 <div class="col-md-3">
+          <div class="last_section">
+            <div class="pai_chart">
+              <main>
+                <section>
+                  <div class="pieID pie">
+                  
+                  </div>
+                  <ul class="pieID legend">
+                    <li>
+                      <em>Humans</em>
+                      <span>718</span>
+                    </li>
+                    <li>
+                      <em>Dogs</em>
+                      <span>531</span>
+                    </li>
+                    <li>
+                      <em>Cats</em>
+                      <span>868</span>
+                    </li>
+                    <li>
+                      <em>Slugs</em>
+                      <span>344</span>
+                    </li>
+                    <li>
+                      <em>Aliens</em>
+                      <span>1145</span>
+                    </li>
+                  </ul>
+                </section>
+              </main>
+            </div>
+            <div class="filter1">
+              <div class="panel ">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Location</h3>
+                    <div class="pull-right">
+                      <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+                      <i class="glyphicon glyphicon-filter"></i>
+                      </span>
+                    </div>
+                </div>
+                <div class="panel-body">
+                  <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter location" />
+                  <div class="location_fil">
+                    <div class="alert">
+                      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                      <strong>css</strong>
+                    </div>
+                    <div class="alert">
+                      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                      <strong>css</strong>
+                    </div>
+                    <div class="alert">
+                      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                      <strong>css</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="filter1">
+              <div class="panel ">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Education</h3>
+                    <div class="pull-right">
+                      <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+                      <i class="glyphicon glyphicon-filter"></i>
+                      </span>
+                    </div>
+                </div>
+                <div class="panel-body">
+                  <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter education" />
+                  <div class="location_fil">
+                    <div class="alert">
+                      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                      <strong>css</strong>
+                    </div>
+                    <div class="alert">
+                      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                      <strong>css</strong>
+                    </div>
+                    <div class="alert">
+                      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                      <strong>css</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="filter1">
+              <div class="panel ">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Mandatory</h3>
+                    <div class="pull-right">
+                      <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+                      <i class="glyphicon glyphicon-filter"></i>
+                      </span>
+                    </div>
+                </div>
+                <div class="panel-body">
+                  <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter education" />
+                    <div class="location_fil">
+                      <div class="alert">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                        <strong>css</strong>
+                      </div>
+                      <div class="alert">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                        <strong>css</strong>
+                      </div>
+                      <div class="alert">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                        <strong>css</strong>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="experience">
+              <form class="exp_level">
+                <label for="range1">Experience</label>
+                <input id="range1" type="range" name="range1" min="1" max="10" step="0.1" value="5">
+                <label for="range3">Availability</label>
+                <input id="range3" type="range" name="range3" min="0" max="100" step="1" value="50">
+              </form>
+            </div>
+          </div>
+        </div>            
+		  </div>
+    </div>
+  </div>       
 
    <!-- <div class=" text-center">
       <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#rotateModal">Rotate Modal</button>
