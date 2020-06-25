@@ -13,7 +13,13 @@ padding-left:0px;}
 .main-height{height:286px;
     background-color: #000;
     margin-top: 80px;
-    border-radius: 13px;}
+    border-radius: 13px;
+   
+    position: fixed;
+    width: 20%;
+    border: solid 1px #dedbdb;
+    box-shadow: 1px 0px 3px #e0dddd;
+}}
     
 .gradient_strip{
 	background-color: #18c5bd;
