@@ -1,6 +1,6 @@
 <style>
 .nav-tabs{border-bottom:solid 1px #48827f30 !important;}
-.img-circle{background-image:none;}   
+.img-circle{background-image:none !important;}         
 </style>
 <?php 
     $this->load->view('fontend/layout/new_seeker_header.php');
@@ -1901,10 +1901,12 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
                                
 
 
-                                
+                               <div class="row">
+                               <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#UdpateTraining<?php  echo $v_training->js_training_id; ?>" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil"></i></a></span>
+                               </div> 
 
                               <div class="col-sm-6">
-                                 <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#UdpateTraining<?php  echo $v_training->js_training_id; ?>" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil"></i></a></span>
+                                 
                               
                                   <p  >Training Topic: <span class="salary-info">  <?php echo $v_training->training_topic; ?></span></p>
                                 

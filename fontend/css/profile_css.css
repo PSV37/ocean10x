@@ -155,9 +155,12 @@ li.bullet {
     border-radius: 50% !important;
     width: 150px;
     height: 150px;
-    background-color:#fff;
+    background-color:#fff;   
 }    
-
+i.fas.fa-graduation-cap.edu-i {
+    border: solid 3px #fff;
+    box-shadow: inset 0px 0px 3px #d3d3d3;
+}
 .img-thumbnail {
     padding: 4px;
     line-height: 1.42857143;
