@@ -1,9 +1,15 @@
-
+.profile-accoutnt-p {
+    margin-top: -33px;
+    margin-left: 76px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+}
 
 .invitetion-box {
     background-color: #fff;
     margin-top: 65px;
-    padding: 10px 20px;
+    padding: 10px 20px;   
 }
 .invitation-img{width:70px;height:70px;
 box-shadow: -1px 1px 2px #0000001f;
