@@ -1,5 +1,5 @@
 <style>
-.apply-invi{margin-top:-22px;}
+.apply-invi{margin-top:-22px !important;}    
 </style>
 
 <?php 
