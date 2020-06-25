@@ -4,14 +4,14 @@
 i.fas.fa-graduation-cap.edu-i {
     color: #18c5bd;
 }   
-.edit{float: right;font-size:12px;cursor: pointer;}
+.edit{float: right;font-size:12px;cursor: pointer;color:#000;}
 </style>
 <?php 
     $this->load->view('fontend/layout/new_seeker_header.php');
 
 ?>
 <!---header end--->
-<div class="container-fluid">
+<div class="container-fluid">   
   <div class="container">
         <div class="col-md-12">
     <?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
