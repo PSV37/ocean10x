@@ -283,10 +283,10 @@ box-shadow: -1px 1px 2px #0000001f;
 }
 .location-inv:hover{color:#000;}
 .last-row-invitation {
-    margin-left: 0px;
+    margin-left: 48px;
 	margin-bottom:33px;
 }
-.year-inv {
+.year-inv {           
     width: auto;
     height: 25px;
     background-color:#f1f1f1;
