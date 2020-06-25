@@ -1254,6 +1254,10 @@ q:before, q:after {
  background-image: -webkit-linear-gradient(top, #18c5bd, #12716c);
 
 }
+:focus {    
+    outline: none !important;
+}
+
 i.fas.fa-map-marker-alt {    
     margin-right: 10px;
 }.img-thumbnail {
