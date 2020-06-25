@@ -46,7 +46,7 @@
          
       </div>
                 <div class="row">
-                 <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal50">Edit</a></span> 
+                 <span style="float: right;font-size:12px;cursor: pointer;margin-right:15px;font-size:14px;font-weight:700;"><a href="#" data-toggle="modal" data-target="#myModal50">Edit</a></span> 
                 </div>
            
                  
