@@ -1,5 +1,5 @@
 <style>
-.nav-tabs{border-bottom:solid 1px #48827f30;}
+.nav-tabs{border-bottom:solid 1px #48827f30 !important;}
 </style>
 <?php 
     $this->load->view('fontend/layout/new_seeker_header.php');
