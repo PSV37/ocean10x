@@ -695,7 +695,7 @@ required: true,
 
 required: true,
 
-jobtitle_regex: true
+//jobtitle_regex: true
 
 },
 
@@ -1038,8 +1038,10 @@ return this.optional(element) || /^[1-9][0-9][0-9][0-9][0-9][0-9]$/.test(value);
             }
         });
 
- $(".allowalphabates").keypress(function (e) {
-        var regex = new RegExp("^[a-zA-Z \s]+$");
+//(^[ A-Za-z0-9_@./#&+-]*$)
+
+ $(".allowalphanumeric").keypress(function (e) {
+        var regex = new RegExp("^[A-Za-z0-9_@.,/#&+- \s]*$");
         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
         if (regex.test(str)) {
             return true;
@@ -1063,17 +1065,5 @@ return this.optional(element) || /^[1-9][0-9][0-9][0-9][0-9][0-9]$/.test(value);
         return false;
         }
     });
- $(".allowalphanumeric").keypress(function (e) {
-    var regex = new RegExp("^[ A-Za-z0-9_@./#&+-]*$)");
-    var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
-    if (regex.test(str)) {
-    return true;
-    }
-    else
-    {
-    e.preventDefault();
-    return false;
-    }
-  });
 
 </script> 
