@@ -3,7 +3,7 @@ border:solid 1px #CCC;background-color:#fdfeff;border-radius:13px;}
 
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{background-color:#18c5bd;
 																				color:#fff;border:none;margin-bottom:1px;border-radius: 30px;cursor:pointer;}
-
+   
 .nav-tabs>li{margin-right:20px;}
      
 .nav-tabs>li.active a {
