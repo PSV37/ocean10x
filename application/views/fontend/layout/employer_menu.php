@@ -47,7 +47,7 @@
                                   </a>
                                 </li>
                                 <li>
-                                  <a data-dl-view="true" data-dl-title="My profile" href="<?php echo base_url() ?>employer/add-new-cv">
+                                  <a data-dl-view="true" data-dl-title="My profile" href="<?php echo base_url() ?>employer/corporate-cv-bank">
                                     <span class="icon-container"><i class="fas fa-user-alt"></i></span>
                                     <span class="text item">CV Bank</span>
                                   </a>
