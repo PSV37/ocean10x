@@ -373,7 +373,10 @@ nav{overflow:auto;}
     border: solid 1px #dedbdb;
     margin-top: 77px;
     box-shadow: 1px 0px 3px #e0dddd;
-}
+	margin-top:82px;
+	border-radius:13px;
+	background-color:#fff;   
+	}
 .dash-box-w{background-color:#fff;}
 
 .text-grad span {
