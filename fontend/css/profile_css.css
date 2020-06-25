@@ -75,13 +75,15 @@ border-radius: 30px;
 button.save-apply-btn {
    padding: 7px 45px;
     float: right;
-    border: solid 2px #F44336;
+    border: solid 2px #18c5bd;
     border-radius: 39px;
-    background-color: #f44336;
+    background-color:#18c5bd;
     color: #fff;
     margin-top: 30px;
 }
-
+button.save-apply-btn hover{
+	color:#13928c;
+	transition:0.5s;}
 
 
 
