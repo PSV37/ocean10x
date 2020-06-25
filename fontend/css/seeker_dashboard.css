@@ -14,7 +14,8 @@ padding-left:0px;}
     background-color: #000;
     margin-top: 80px;
     border-radius: 13px;
-   
+   border: solid 1px #dedbdb;
+    box-shadow: 1px 0px 3px #e0dddd;
     
 }
     
