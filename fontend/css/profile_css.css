@@ -43,8 +43,8 @@ border:solid 1px #CCC;background-color:#fdfeff;}
    border-radius: 30px;      
 }
 
-.nav-tabs>li.active{
-	color: #93d643;
+.nav-tabs>li.active{   
+	color: #18c5bd;
     cursor: default;   
 	 background-color:#18c5bd;
     color: #fff;
