@@ -22,8 +22,7 @@ box-shadow: -1px 1px 2px #0000001f;
     line-height: 17px;
 	cursor:pointer;
 	margin-bottom:20px;
-	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}	
+	border-radius:13px;}	    
 
 .location-inv {
     
@@ -109,11 +108,6 @@ list-style-type:none;}
 }
 .apply-invi:hover{ background-color: #3F51B5;
 color:#fff;}
-.invi-div {
-   
-    padding: 15px 10px;
-	box-shadow: 0 0 5px #cac8c8;   
-}
 .head-invi{font-size:18px;cursor: pointer;}
 .head-invi:hover{text-decoration:underline;}
 .box {
@@ -272,13 +266,6 @@ box-shadow: -1px 1px 2px #0000001f;
 }
 .salary-info{font-size:12px;
 			color:#8a8b8c;}
-.invi-div {
-    line-height: 17px;
-	cursor:pointer;
-	margin-bottom:20px;
-	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}	
-
 .location-inv {
     width: 160px;
    
@@ -363,11 +350,6 @@ list-style-type:none;}
 }
 .apply-invi:hover{ background-color: #3F51B5;
 color:#fff;}
-.invi-div {
-   
-    padding: 15px 10px;
-	box-shadow: 0 0 5px #cac8c8;
-}
 .head-invi{font-size:18px;cursor: pointer;}
 .head-invi:hover{text-decoration:underline;}
 .box {
