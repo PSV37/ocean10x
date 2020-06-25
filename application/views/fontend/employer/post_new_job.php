@@ -767,14 +767,14 @@ email: true
   //minlength:1,
         
  // maxlength:10,
-  salrangefrom_regex: true,
+  //salrangefrom_regex: true,
   required: true
 },
 
 'salrange_to': {
                 
   //minlength:1,
-  salrangeto_regex: true,    
+ // salrangeto_regex: true,    
  // maxlength:10,
 
   required: true
@@ -1049,7 +1049,7 @@ return this.optional(element) || /^[1-9][0-9][0-9][0-9][0-9][0-9]$/.test(value);
         e.preventDefault();
         return false;
         }
-    });
+    }); 
 
 
 </script> 
