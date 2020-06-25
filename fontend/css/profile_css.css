@@ -81,7 +81,7 @@ button.save-apply-btn {
     color: #fff;
     margin-top: 30px;
 }
-button.save-apply-btn hover{
+button.save-apply-btn :hover{
 	color:#13928c;
 	transition:0.5s;}
 
