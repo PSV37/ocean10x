@@ -337,7 +337,7 @@ body{background-color:#f7f7f738;}
     text-overflow: ellipsis;
     overflow: hidden;
     display: inline-block;
-    padding: 1px;
+    padding: 1px;    
     white-space: nowrap;
     margin-bottom: -2px;
     max-width: 74%;
