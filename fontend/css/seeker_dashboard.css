@@ -1253,6 +1253,9 @@ q:before, q:after {
  border-radius:20px;
  background-image: -webkit-linear-gradient(top, #18c5bd, #12716c);
 
+}
+i.fas.fa-map-marker-alt {    
+    margin-right: 10px;
 }.img-thumbnail {
     padding: .25rem;
     background-color: #fff;
