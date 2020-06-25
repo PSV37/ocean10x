@@ -158,7 +158,7 @@
           </form>
         </div>  
     </div>
-
+<div id="menu1" class="tab-pane fade in">
       <div class="modal fade" id="myModal50" role="dialog">
     <div class="modal-dialog modal-md">
       <div class="modal-content">
@@ -834,6 +834,7 @@
         
       </div>
     </div>
+  </div>
   </div>
     <div id="menu2" class="tab-pane fade">
     
