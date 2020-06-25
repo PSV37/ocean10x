@@ -1,6 +1,10 @@
 <style>
 .nav-tabs{border-bottom:solid 1px #48827f30 !important;}
 .img-circle{background-image:none !important;}   
+i.fas.fa-graduation-cap.edu-i {
+    color: #18c5bd;
+}   
+.edit{float: right;font-size:12px;cursor: pointer;}
 </style>
 <?php 
     $this->load->view('fontend/layout/new_seeker_header.php');
@@ -44,6 +48,7 @@
         <h6>Upload a different photo...</h6>
         <input type="file" class="text-center center-block file-upload">
          <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal50">Edit</a></span> 
+         
       </div>
                 
            
@@ -1088,7 +1093,7 @@
       </div>
     </div>
   </div>
-                          <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal1">Edit</a></span>  
+                          <span class="edit"><a href="#" data-toggle="modal" data-target="#myModal1">Edit</a></span>  
 
       </li>
        <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
