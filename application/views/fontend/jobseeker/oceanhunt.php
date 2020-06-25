@@ -1,4 +1,6 @@
-
+<style>
+.detail-b{margin-bottom:-22px;}
+</style>
 
 
 <!---header---->
