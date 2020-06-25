@@ -1,9 +1,6 @@
 <style>
-.detail-b{margin-bottom:-22px;}
+.apply-invi{margin-top:-22px !important;}    
 </style>
-
-
-<!---header---->
 
 <?php 
     $this->load->view('fontend/layout/new_seeker_header.php');
