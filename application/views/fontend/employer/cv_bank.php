@@ -8,18 +8,17 @@
 
 <div class="container-fluid main-d">
 	<div class="container">
-        <div class="col-md-12">
-        	<?php $this->load->view('fontend/layout/employer_menu.php'); ?>
-      
-            <div class="col-md-9 cv-bank-section">
-            
-            <form action="/action_page.php">
-                  <button class="sort-serach" type="submit"><i class="fas fa-search"></i></button>
-				  <input type="text" placeholder="Search.." name="search">
+    <div class="col-md-12">
+      <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
+        <div class="col-md-9 cv-bank-section">
+          <form action="/action_page.php">
+            <button class="sort-serach" type="submit"><i class="fas fa-search"></i></button>
+				    <input type="text" placeholder="Search.." name="search">
    		    </form>
             
-           <button class="all-btn sort-active">All</button>
-            <button class="all-btn">sort</button>
+          <button class="all-btn sort-active">All</button>
+          <button class="all-btn">sort</button>
+          <a href="<?php echo base_url() ?>employer/add-new-cv"><button class="btn btn-primary">Add New CV</button></a>
             
             
             
