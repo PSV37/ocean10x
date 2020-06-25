@@ -45,8 +45,8 @@ border:solid 1px #CCC;background-color:#fdfeff;}
 
 .nav-tabs>li.active{
 	color: #93d643;
-    cursor: default;
-	 background-color: #b5ff04;
+    cursor: default;   
+	 background-color:#18c5bd;
     color: #fff;
 border-radius: 30px;
   }
