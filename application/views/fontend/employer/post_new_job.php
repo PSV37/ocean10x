@@ -1064,7 +1064,7 @@ return this.optional(element) || /^[1-9][0-9][0-9][0-9][0-9][0-9]$/.test(value);
         }
     });
  $(".allowalphanumeric").keypress(function (e) {
-    var regex = new RegExp("^[ A-Za-z0-9.+,]*$");
+    var regex = new RegExp("^[ A-Za-z0-9_@./#&+-]*$)");
     var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
     if (regex.test(str)) {
     return true;
