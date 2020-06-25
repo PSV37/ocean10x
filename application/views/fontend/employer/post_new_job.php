@@ -1041,7 +1041,7 @@ return this.optional(element) || /^[1-9][0-9][0-9][0-9][0-9][0-9]$/.test(value);
 //(^[ A-Za-z0-9_@./#&+-]*$)
 
  $(".allowalphanumeric").keypress(function (e) {
-        var regex = new RegExp("^[A-Za-z0-9_@.,/#&+- \s]*$");
+         var regex = new RegExp("^[a-zA-Z!@#.”$%&’()*\+,\/;\[\\\]\^_`{|}~ \s]+$");
         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
         if (regex.test(str)) {
             return true;
