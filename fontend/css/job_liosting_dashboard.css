@@ -255,11 +255,6 @@ cursor: pointer;}
     margin-top: 65px;
     padding: 10px 20px;
 }
-.invitation-img{width:70px;height:70px;
-box-shadow: -1px 1px 2px #0000001f;
-    border-radius: 5px;
-	float:left;margin-right: 20px;
-}
 .salary-info{font-size:12px;
 			color:#8a8b8c;}
 .location-inv {
@@ -325,6 +320,9 @@ list-style-type:none;}
 	box-shadow: 0 0 5px #cac8c8;
 	height:auto;
 	display:flow-root;
+	margin-bottom:15px;
+	border-radius:13px;
+	
 	}         
 .invi-div:hover{
 box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)!important;
