@@ -953,17 +953,20 @@ i.fas.fa-user {
     float: left;
     margin-right: 20px;
     line-height: 18px;
+	color:#18c5bd;
 }
 i.fas.fa-lock{
 	float: left;
     margin-right: 20px;
     line-height: 18px;
+	color:#18c5bd;
     
 	}
 i.fas.fa-power-off{
 	float: left;
     margin-right: 20px;
     line-height: 18px;
+	color:#18c5bd;
    
 	}	
 .caret{color: #fff;
