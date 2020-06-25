@@ -130,6 +130,24 @@
   </div>
 
 </div>
+<div class="modal fade" id="modal_logoff" role="dialog">
+    <div class="modal-dialog">
+       <form method="post" action="<?php echo base_url(); ?>seeker/logout" > 
+      
+      <div class="modal-content">
+        <div class="modal-header">
+         
+          <h4 class="modal-title">Are you sure want to log off ?</h4>
+        </div>
+       
+        <div class="modal-footer">
+         <button type="submit" class="btn btn-default" > Ok </button>
+          <button type="button" class="btn btn-default1 active_modal" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
     
 <!---header end--->
 
