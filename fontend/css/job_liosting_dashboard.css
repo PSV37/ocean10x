@@ -97,22 +97,20 @@ list-style-type:none;}
 	}
 .apply-invi{float: right;
     background-color:#18c5bd;
-    padding: 10px 35px;
+    padding: 5px 35px;
     border: solid 1px #18c5bd;
-    color: #3F51B5;
+    color: #fff;
     font-weight: 700;
-    font-size: 12px;   
+    font-size: 12px;       
     cursor: pointer;
     border-radius: 50px;
-    margin-top: -56px;	
+    margin-top: -70px;	
 }
 .apply-invi:hover{
- background-color:#129e98;    
+ background-color:#18c5bd;    
 }
 
 
-.apply-invi:hover{ background-color: #3F51B5;
-color:#fff;}
 .head-invi{font-size:18px;cursor: pointer;}
 .head-invi:hover{text-decoration:underline;}
 .box {
