@@ -319,21 +319,6 @@ list-style-type:none;}
 	cursor:pointer;
 	}	
 .fulltime-inv:hover{color:#000;}	
-.detail-b {
-    background-color: #ffffff;
-    height: 20px;
-   
-    width: 50px;
-    padding: 2px;
-    line-height: 14px;
-    text-align: center;
-    color: #828282;
-    margin-left: 90px;
-    cursor: pointer;
-    border-radius: 30px;
-    border: solid 1px #bcbcbc;
-    font-size: 11px;
-}
 .detail-b:hover{
 	 background-color:#bcbcbc;
 	 color:#fff;
