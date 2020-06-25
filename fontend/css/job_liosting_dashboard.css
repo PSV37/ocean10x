@@ -86,7 +86,7 @@ list-style-type:none;}
     cursor: pointer;
     border-radius: 30px;
     border: solid 1px #bcbcbc;
-    font-size: 11px;
+    font-size: 11px;   
 }
 .detail-b:hover{
 	 background-color:#bcbcbc;
