@@ -198,10 +198,7 @@ i#eyeIcon {
 .newuser {
     margin-top: 12px;
 }
-<<<<<<< HEAD
 
-
-=======
 input:-internal-autofill-selected{background-color:#fff !important;}
 .field-icon {
   float: right;
@@ -212,7 +209,7 @@ input:-internal-autofill-selected{background-color:#fff !important;}
   cursor:pointer;
 }
 .user-box input:focus{background-color:#fff;}
->>>>>>> 944baa8b9c9f67edb42ec14d52d007cc5b083982
+
 </style>
 
 
