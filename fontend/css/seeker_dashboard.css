@@ -95,7 +95,7 @@ i.fas.fa-search {
     font-size: 13px;
     color: #fff;
     text-align: center;
-	margin-top:10px;
+	margin-top:10px;   
 	cursor:pointer;
 }
 .notification:hover.notification i {color:#0a0a0a;transition: 0.7s;}
