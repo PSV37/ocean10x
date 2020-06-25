@@ -85,7 +85,8 @@ h3:after {
   overflow: hidden;
   transition: .5s;
   margin-top:0PX;
-  letter-spacing: 2px
+  letter-spacing: 2px;
+  margin-bottom:-14px;
 }
 .login-box a{color:#18c5ed;}
 .login-box a:hover {
