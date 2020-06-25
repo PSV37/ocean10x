@@ -192,7 +192,7 @@ i#eyeIcon {
     color: #fff;
     font-weight: 700;
     
-    width: 158px;
+    width: 157px;
 }
 .sign_in:hover{
     background-color:#15a7a0;
