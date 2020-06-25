@@ -320,9 +320,10 @@ list-style-type:none;}
 	}	
 .fulltime-inv:hover{color:#000;}	
 .detail-b:hover{
-	 background-color:#bcbcbc;
+	 background-color:#00BCD4;
 	 color:#fff;
 	}
+.col-md-3.pro-bar{margin-top:20px;}	
 .invi-div {   
    background-color:#fff;
     padding: 15px 10px;

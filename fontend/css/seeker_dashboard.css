@@ -6,7 +6,7 @@
 padding-left:0px;}
 .menu_logo img{       
 	width: 180px;
-    margin-left: 45px;
+       
    
 	    
 }    
@@ -302,11 +302,11 @@ body{background-color:#f5f5f5;}
     width: 30px;
     text-align: center;
     border-radius: 50%;
-    background-color: #95c619;
+    background-color:#18c5bd;   
     border-color: #fff;
     color: #fff;
     position: relative;
-    left: -100%;
+    left: -100%;    
 	line-height:30px;
 }
 .fa {
@@ -366,13 +366,6 @@ nav{overflow:auto;}
 
 
 
-.menu_logo img{   
-	width: 180px;
-    margin-left: 45px;
-    
-	cursor:pointer;
-	
-}
 .bd-1 {
     border: solid 1px #dedbdb;
     margin-top: 77px;
@@ -953,17 +946,20 @@ i.fas.fa-user {
     float: left;
     margin-right: 20px;
     line-height: 18px;
+	color:#18c5bd;
 }
 i.fas.fa-lock{
 	float: left;
     margin-right: 20px;
     line-height: 18px;
+	color:#18c5bd;
     
 	}
 i.fas.fa-power-off{
 	float: left;
     margin-right: 20px;
     line-height: 18px;
+	color:#18c5bd;
    
 	}	
 .caret{color: #fff;
