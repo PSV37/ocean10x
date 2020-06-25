@@ -1437,7 +1437,7 @@ i.fas.fa-graduation-cap.edu-i {
       </ul>
       
     </div>
-    <div id="menu3" class="tab-pane fade">
+    <div id="menu1" class="tab-pane fade">
     <ul>
     <?php  $designation = $this->Master_model->getMaster('designation',$where=false);
 
