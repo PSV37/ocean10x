@@ -597,7 +597,8 @@ label {
                 <div class="col-md-6 col-sm-6">
                     <div class="formrow">
                         <label class="control-label">Pincode: <span class="required">*</span></label>
-                        <input type="text" name="company_pincode" id="company_pincode" required="" class="form-control ui-autocomplete-input" value="412205, KELEWADI, KELEWADI, MAHARASHTRA" autocomplete="off">                
+                        <input type="text" name="company_pincode" id="company_pincode" required="" class="form-control ui-autocomplete-input" value="<?php 
+                            if(!empty($company_info->company_pincode)){ echo $company_info->company_pincode; } ?>">                
                          </div>
                          </div>
                        </div>    
@@ -633,7 +634,37 @@ label {
 <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js"></script>
 <script type="text/javascript" src="validation_reg.js"></script>
 <script src="js/jquery.validate.js"></script>
-
+<script>
+  var BASE_URL = "<?php echo base_url(); ?>";
+ 
+ $(document).ready(function() {
+    $( "#company_pincode" ).autocomplete({
+ 
+        source: function(request, response) {
+            $.ajax({
+            url: BASE_URL + "employer/search",
+            data: {
+                    term : request.term
+             },
+            dataType: "json",
+            success: function(data){
+               var resp = $.map(data,function(obj){
+                var pincode = obj.pincode;
+                var location=  obj.location;
+                var city = obj.city;
+                var state = obj.state;
+                var resData = pincode + ', ' + location + ', ' + city + ', '+ state; 
+                    return resData;
+               }); 
+ 
+               response(resp);
+            }
+        });
+    },
+    minLength: 1
+ });
+});
+</script>
 
 <script>
 
