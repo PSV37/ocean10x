@@ -5,7 +5,105 @@ $company_profile_id = $this->session->userdata('company_profile_id');
  $this->load->view('fontend/layout/employer_new_header.php');
  
 ?>
+<?php $employer_id=$this->session->userdata('company_profile_id'); 
+                $type=$this->session->userdata('comp_type');
 
+                $logo=10;
+                $full_profile=50;
+                $Corporate_docs=40;
+
+                $full_profile_each=$full_profile/12;
+                $Corporate_docs_each=$Corporate_docs/4;
+                $wheres="status='0' AND company_profile_id='$employer_id'";
+                 $branches = $this->Master_model->getMaster('company_branches',$where=$wheres);
+                $company_info = $this->company_profile_model->get($employer_id);
+                // print_r($Corporate_docs_each);die;
+
+                if (isset($company_info->company_logo) && !empty($company_info->company_logo)) {
+                    $logo_total=$logo;
+                }
+
+                if (isset($company_info->company_name) && !empty($company_info->company_name)) {
+                    $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($company_info->company_email) && !empty($company_info->company_email)) {
+                     $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($company_info->company_phone) && !empty($company_info->company_phone)) {
+                     $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($company_info->company_category) && !empty($company_info->company_category)) {
+                    $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($company_info->contact_person_name) && !empty($company_info->contact_person_name)) {
+                    $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($company_info->cont_person_level) && !empty($company_info->cont_person_level)) {
+                     $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($company_info->cont_person_email) && !empty($company_info->cont_person_email)) {
+                     $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($company_info->cont_person_mobile) && !empty($company_info->cont_person_mobile)) {
+                     $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($company_info->company_address) && !empty($company_info->company_address)) {
+                    $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($company_info->country_id) && !empty($company_info->country_id)) {
+                     $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($company_info->state_id) && !empty($company_info->state_id)) {
+                     $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($company_info->city_id) && !empty($company_info->city_id)) {
+                    $profile_details_total += $full_profile_each;
+                }
+
+                if (isset($branches) && !empty($branches)) {
+                    $profile_details_total += $full_profile_each;
+                }
+
+                 $whereres = "company_profile_id='$employer_id' and status!='1'";
+                 // $select='document_type'
+         $documents = $this->Master_model->getMaster('corporate_documents',$whereres,$join = FALSE, $order = false, $field = false, $select = FALSE,$limit=false,$start=false, $search=false);
+          // print_r($documents);
+
+         
+
+                if (isset($documents) && !empty($documents)) {
+                   foreach ($documents as $row) {
+          
+                  if ($row['document_type']=='Incorporation') {
+                      $Corporate_docs_total += $Corporate_docs_each;
+                  }
+                  if ($row['document_type']=='PAN') {
+                      $Corporate_docs_total += $Corporate_docs_each;
+                  }
+                  if ($row['document_type']=='GSTIN') {
+                      $Corporate_docs_total += $Corporate_docs_each;
+                  }
+                  if ($row['document_type']=='Add_proof') {
+                      $Corporate_docs_total += $Corporate_docs_each;
+                  }
+                }
+                    
+                }
+                $profile_total=$Corporate_docs_total+$profile_details_total+$logo;
+
+
+          ?>
 <style>
 
 .edit-profile{margin-top:41px;
@@ -124,7 +222,7 @@ label {
                             <p class="university">Nagpur University </p>
                             <div class="progresss">
                                 <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                                          70%
+                                          <?php echo $profile_total; ?>
                                 </div>
                             </div>
                         </div>
