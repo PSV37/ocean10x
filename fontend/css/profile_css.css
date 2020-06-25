@@ -145,7 +145,14 @@ button.save-apply-btn :hover{
     margin-bottom: 63px;
 }
 li.bullet {
-   
+   margin-bottom: 13px;
+    padding-bottom: 10px;
+    background-color: aliceblue;
+    padding: 20px 10px;
+    list-style-type: none;
+    margin-left: -40px;
+    border-radius: 3px;
+    font-size: 18px;
     margin-bottom: 10px;
     padding-bottom: 10px;
 }
