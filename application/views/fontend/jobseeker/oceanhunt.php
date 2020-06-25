@@ -1,9 +1,4 @@
-<style>
-.detail-b{margin-bottom:-22px;}
-</style>
 
-
-<!---header---->
 
 <?php 
     $this->load->view('fontend/layout/new_seeker_header.php');
