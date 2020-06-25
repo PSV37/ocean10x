@@ -1,12 +1,12 @@
 <style>
 .nav-tabs{border-bottom:solid 1px #48827f30 !important;}
-.img-circle{background-image:none !important;}   
 
 </style>
 <?php 
     $this->load->view('fontend/layout/new_seeker_header.php');
-     
+
 ?>
+<!---header end--->
 <div class="container-fluid">
   <div class="container">
         <div class="col-md-12">
@@ -158,7 +158,7 @@
           </form>
         </div>  
     </div>
-<div id="menu1" class="tab-pane fade in">
+
       <div class="modal fade" id="myModal50" role="dialog">
     <div class="modal-dialog modal-md">
       <div class="modal-content">
@@ -835,8 +835,7 @@
       </div>
     </div>
   </div>
-  </div>
-    <div id="menu2" class="tab-pane fade">
+    <div id="menu1" class="tab-pane fade">
     
       <div class="education_header" style="position:relative;">
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQofjuD4yOHnpJHZSgGYZucvlOH6nukw95LkKub_HxNl3N6cpTL&usqp=CAU" style="width:100%;position:relative;"></img>
