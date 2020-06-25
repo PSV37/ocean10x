@@ -4,7 +4,14 @@
 
 
 <!---header--->
-
+<style type="text/css">
+  button.btn.btn-primary {
+    float: right;
+    background-color: #18c5bd;
+    border: none;
+    border-radius: 35px;
+}
+</style>
 
 <div class="container-fluid main-d">
 	<div class="container">
@@ -18,7 +25,7 @@
             
           <button class="all-btn sort-active">All</button>
           <button class="all-btn">sort</button>
-          <a href="<?php echo base_url() ?>employer/add-new-cv"><button class="btn btn-primary">Add New CV</button></a>
+          <a href="<?php echo base_url() ?>employer/add-new-cv"><button class="btn btn-primary"><i class="fas fa-plus"></i>Add New CV</button></a>
 
            <?php $key = 1; if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) : 
            $on_ocean = $cv_row['ocean_candidate'];
