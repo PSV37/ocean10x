@@ -8,7 +8,6 @@ i.fas.fa-graduation-cap.edu-i {
 </style>
 <?php 
     $this->load->view('fontend/layout/new_seeker_header.php');
-
 ?>
 <!---header end--->
 <div class="container-fluid">   
