@@ -95,21 +95,21 @@
 </div>
 
 <div class="col-md-1">
-	 <div class="notification">
+	 <div class="notification" style="font-size:13px;margin-top:0px;">
     	<i class="fas fa-comment-alt"></i><br>
         Messaging
     </div>    
    
-</div>
+</div>    
 
 <div class="col-md-1">
-	 <div class="bell">
+	 <div class="bell" style="font-size:13px;margin-top:0px;">
     	<i class="fas fa-bell"></i><br>
         Notifications
    	 </div>  
    
 </div>     
-    
+     
     <div class="col-md-2">
     	 <div class="dropdown">
   <i class="fas fa-user-circle"></i>&emsp;<a class=" dropdown-toggle" data-toggle="dropdown">
