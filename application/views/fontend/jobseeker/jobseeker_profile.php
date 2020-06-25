@@ -1,8 +1,7 @@
 <style>
 .nav-tabs{border-bottom:solid 1px #48827f30 !important;}
-.img-circle{background-image:none !important;} 
-.edit{float: right;font-size:12px;cursor: pointer;}        
-</style>  
+.img-circle{background-image:none !important;}   
+</style>
 <?php 
     $this->load->view('fontend/layout/new_seeker_header.php');
 
@@ -44,12 +43,7 @@
        
         <h6>Upload a different photo...</h6>
         <input type="file" class="text-center center-block file-upload">
-        
-        
-        
          <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal50">Edit</a></span> 
-         
-         
       </div>
                 
            
@@ -965,7 +959,7 @@
       </div>
     </div>
   </div>
-                            <span class="edit"><a href="#" data-toggle="modal" value='1' onclick="get_specialization(this.value);"  data-target="#myModal">Edit</a></span> 
+                            <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" value='1' onclick="get_specialization(this.value);"  data-target="#myModal">Edit</a></span> 
 
       </li>
        <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
@@ -1906,7 +1900,7 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
                               </div>
                                
 
-    
+
                                 
 
                               <div class="col-sm-6">
