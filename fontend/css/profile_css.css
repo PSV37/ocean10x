@@ -16,8 +16,9 @@ border:solid 1px #CCC;background-color:#fdfeff;border-radius:13px;}
     text-decoration: none;
     background-color:#18c5bd;
     color: #fff;
-	border-radius: 30px;
+	border-radius: 30px;   
 }
+.apply-invi{margin-bottom:-25px;}
 .nav-tabs>li:hover{  background-color:#18c5bd;border-radius: 30px;}
 .nav-tabs>li:focus{ background-color:#18c5bd;border-radius: 30px;}
 .nav>li>a:focus{
