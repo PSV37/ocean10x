@@ -50,7 +50,7 @@ border:solid 1px #CCC;background-color:#fdfeff;}
     color: #fff;
 border-radius: 30px;
   }
-.nav-tabs{border-bottom:none;} 
+.nav-tabs{border-bottom:solid 1px #18c5bd1f;} 
   
 .nav-tabs ul li a{color:#fff;font-size:12px;border-radius: 30px;}  
  .nav-tabs>li>a{border:none;line-height:normal;margin-right:0px !important;} 
