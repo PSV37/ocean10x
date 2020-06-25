@@ -1,4 +1,6 @@
 
+/*header css  */
+
 .container{max-width:1330px;}
 .container-fluid{padding-right:0px;
 padding-left:0px;}
@@ -124,6 +126,9 @@ i.fas.fa-bell {
 }
 .profile b{color:#eff3eb;}
 .profile {float:right;cursor:pointer;}
+
+/*header css end*/
+
 
 
 
@@ -710,6 +715,9 @@ margin-top: 20px;
     font-size: 11px;
     color: #989a9c;
 }
+
+
+/*<!---footer--->*/
 
 
 

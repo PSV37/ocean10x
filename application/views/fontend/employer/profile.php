@@ -221,7 +221,7 @@ label {
                             <p style="font-size:18px;"><?php echo $this->company_profile_model->company_name($company_profile_id); ?></p>
                             <p class="university">Nagpur University </p>
                             <div class="progresss">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo round($profile_total); ?>%">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
                                           <?php echo round($profile_total); ?>
                                 </div>
                             </div>
