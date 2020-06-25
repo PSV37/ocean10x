@@ -92,13 +92,29 @@ i.fas.fa-search {
     background: #07051a;
     color: white;
 }
-.social-media .notification{float:left;margin-left: 45px;cursor:pointer;}
-.notification i:hover{color:#000;}
+.notification {
+    font-size: 13px;
+    color: #fff;
+    text-align: center;
+	margin-top:10px;
+	cursor:pointer;
+}
+.notification:hover.notification i {color:#0a0a0a;transition: 0.7s;}
+.notification:hover{color:#0a0a0a;transition: 0.7s;}
+.bell {
+    font-size: 13px;
+    color: #fff;
+    text-align: center;
+	margin-top:10px;
+	cursor:pointer;
+}
+.bell:hover.bell i {color:#0a0a0a;transition: 0.7s;}
+.bell:hover{color:#0a0a0a;transition: 0.7s;}
 
-.social-media .bell{float:left;margin-left: 45px;cursor:pointer;}
-.bell i{font-size:15px;color:#fff;}	
-.bell i:hover{color:#000;}
-
+.notification i{font-size:15px;color:#fff;}	
+i.fas.fa-bell {
+    font-size: 16px;
+}
 .profile i {
     font-size: 30px;
     margin-left: 43px;
@@ -109,9 +125,6 @@ i.fas.fa-search {
 }
 .profile b{color:#eff3eb;}
 .profile {float:right;cursor:pointer;}
-
-
-
 <!---header css end--->
 
 
