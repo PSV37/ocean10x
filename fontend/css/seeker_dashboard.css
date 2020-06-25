@@ -5,7 +5,7 @@ padding-left:0px;}
 .menu_logo img{       
 	width: 180px;
     margin-left: 45px;
-    margin-top: 7px;
+   
 	    
 }    
 .main-height{height:383px;}
@@ -19,8 +19,7 @@ padding-left:0px;}
     z-index: 9;
 
 	}     
-.text-grad {
-margin-top:33px;}	
+
 .text-grad span {
     font-size: 28px;
     color: #fff;
@@ -355,7 +354,7 @@ nav{overflow:auto;}
 .menu_logo img{   
 	width: 180px;
     margin-left: 45px;
-    margin-top: 7px;
+    
 	cursor:pointer;
 	
 }
