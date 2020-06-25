@@ -112,15 +112,16 @@
      
     <div class="col-md-2">
     	 <div class="dropdown">
-  <i class="fas fa-user-circle"></i>&emsp;<a class=" dropdown-toggle" data-toggle="dropdown">
+              <?php $employer_id = $this->session->userdata('company_profile_id'); ?>
+  <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($employer_id);?>" class="img-thumbnail" style="height:45px; width:45px; border-radius:50%;" />&emsp;<a class=" dropdown-toggle" data-toggle="dropdown">
     
     <span class="caret"></span>
-    <p class="profile-accoutnt-p"><?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></p>
+    <p class="profile-accoutnt-p">supriya</p>
     </a>
     <ul class="dropdown-menu">
-      <li><a href="#"><i class="fas fa-user"></i>My Profile</a> </li>
-      <li><a href="#"><i class="fas fa-lock"></i>Change Password</a></li>
-      <li><a href="#" onclick="logout();"><i class="fas fa-power-off"> </i>Logout</a></li>
+      <li><a href="<?php echo base_url() ?>employer/profile-setting"><i class="fas fa-user"></i>My Profile</a> </li>
+      <li><a href="<?php echo base_url(); ?>employer/change-password"><i class="fas fa-lock"></i>Change Password</a></li>
+      <li ><a href="#" class="btn-logoff" data-toggle="modal" data-target="#modal_logoff"><i class="fas fa-power-off"></i>Logout</a></li>
     </ul>
   </div>
     </div>
