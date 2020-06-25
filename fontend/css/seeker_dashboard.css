@@ -474,10 +474,9 @@ nav{overflow:auto;}
 .text-white {
     color: #fff !important;
 }
-.heading-dash{margin:20px 0px 27px 20px;
-font-size: 19px;
-    text-transform: uppercase;
-    color: #7b7979;}
+.heading-dash{margin: 20px 0px 27px 20px;
+    font-size: 19px;
+    color: #414242;}     
 .bg-warning{background-color:#7260c1;}
 .bg-danger{background-color:#046dad;}
 .icon-pro{
