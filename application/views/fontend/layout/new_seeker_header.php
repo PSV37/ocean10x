@@ -172,8 +172,10 @@
     	 <div class="dropdown">
          <?php
              if(!empty($this->Job_seeker_photo_model->get_jobseeker_photo($job_seeker))):?>
-  <img src="<?php echo base_url() ?>upload/<?php echo  $this->Job_seeker_photo_model->get_jobseeker_photo($job_seeker);?>" class="img-thumbnail" style="height:45px; width:45px; border-radius:50%;" />&emsp;<a class=" dropdown-toggle" data-toggle="dropdown">
-    
+        <img src="<?php echo base_url() ?>upload/<?php echo  $this->Job_seeker_photo_model->get_jobseeker_photo($job_seeker);?>" class="img-thumbnail" style="height:45px; width:45px; border-radius:50%;" />&emsp;<a class=" dropdown-toggle" data-toggle="dropdown">
+       <?php else: ?>
+        <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" class="img-thumbnail" style="height:45px; width:45px; border-radius:50%;" />&emsp;<a class=" dropdown-toggle" data-toggle="dropdown">
+          <?php endif; ?>
     <span class="caret"></span>
     <p class="profile-accoutnt-p"><?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></p>
     </a>
