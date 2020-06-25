@@ -1,4 +1,6 @@
-
+<style>
+.apply-invi{margin-top:-22px;}
+</style>
 
 <?php 
     $this->load->view('fontend/layout/new_seeker_header.php');
