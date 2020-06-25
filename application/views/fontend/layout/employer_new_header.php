@@ -133,7 +133,7 @@
        
         <div class="modal-footer">
          <button type="submit" class="btn btn-default" > Ok </button>
-          <button type="button" class="btn btn-default1" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-default1 active_modal" data-dismiss="modal">Cancel</button>
         </div>
       </div>
       </form>
