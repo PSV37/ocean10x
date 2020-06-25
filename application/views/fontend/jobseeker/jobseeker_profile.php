@@ -2,6 +2,19 @@
 .nav-tabs{border-bottom:solid 1px #48827f30 !important;}
 .edit{float: right;font-size:12px;cursor: pointer;margin-right:15px;font-size:14px;font-weight:700;padding:2px 10px;border-radius:13px;}
 .edit:hover{background-color:#ececec;padding:2px 10px;border-radius:13px;}
+li.bullet {
+   margin-bottom: 13px;
+    padding-bottom: 10px;
+    background-color: aliceblue;    
+    padding: 20px 10px;
+    list-style-type: none;
+    margin-left: -40px;
+    border-radius: 3px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
 </style>
 <?php 
     $this->load->view('fontend/layout/new_seeker_header.php');
