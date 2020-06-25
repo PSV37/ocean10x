@@ -43,9 +43,11 @@
        
         <h6>Upload a different photo...</h6>
         <input type="file" class="text-center center-block file-upload">
-         <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal50">Edit</a></span> 
+         
       </div>
-                
+                <div class="row">
+                 <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal50">Edit</a></span> 
+                </div>
            
                  
                  
