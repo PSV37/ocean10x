@@ -263,30 +263,18 @@ h4:after {
 
 <div class="login-box">
   <h4>Employer Forgot Password</h4>
-  <form>
-   
-    <div class="user-box">
-      <input type="password" name="" required>
+ <form class="submit-form customform forgotform" action="<?php echo base_url() ?>employer_login/forgot_pass" method="post">
+   <div class="user-box">
+      <input type="password" name="email" placeholder="Email" required>
       <label>Password </label>
       <i id="eyeIcon" class="fa fa-eye"></i>
 
 
-		<div class="row" style="margin-right:0px;margin-left:0px;">
-   <button class="sign_in">Retrieve Password</button>
-   <button class="sign_in">Resend Link</button>
-  </div>
+  		<div class="row" style="margin-right:0px;margin-left:0px;">
+       <button type="submit"  class="sign_in">Retrieve Password</button>
+       <button type="submit"  class="sign_in">Resend Link</button>
+      </div>
     </div>
-        
-                
-                
-   
   </form>
-  
- 
-  
-  
-  
-  
- 
 </div>
 
