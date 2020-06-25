@@ -916,7 +916,7 @@ i.fas.fa-search {
     background-color: #Fff;
 	}
 .dropdown {
-    margin-top: 17px;
+    
     cursor: pointer;
 }	
 i.fas.fa-user-circle{background-color:#fff;
@@ -926,10 +926,6 @@ i.fas.fa-user-circle{background-color:#fff;
     line-height: 30px;
     border-radius: 25px;
 	float:left;
-	cursor:pointer;
-}
-.dropdown {
-    margin-top: 17px;
 	cursor:pointer;
 }
 .dropdown-menu li{font-size:11px;padding:8px;cursor:pointer;}
