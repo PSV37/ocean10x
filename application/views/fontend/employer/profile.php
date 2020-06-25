@@ -222,7 +222,7 @@ label {
                             <p class="university">Nagpur University </p>
                             <div class="progresss">
                                 <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                                          <?php echo $profile_total; ?>
+                                          <?php echo round($profile_total); ?>
                                 </div>
                             </div>
                         </div>
@@ -262,7 +262,7 @@ label {
                     <div class="col-md-6 col-sm-12">
                       <div class="formrow">
                         <label class="control-label">Country Code:</label>
-                        <select id="country" name="country_code" class="form-control country_code select2-hidden-accessible"  aria-hidden="true">
+                        <select id="country" name="country_code" class="form-control"  aria-hidden="true">
                             <option>IN - India (+91)</option>
                             <option value="AD - Andorra (+376)">AD - Andorra (+376)</option>
                             <option value="AE - United Arab Emirates (+971)">AE - United Arab Emirates (+971)</option>
@@ -509,7 +509,7 @@ label {
               <div class="col-md-6 col-sm-12">
                 <div class="formrow">
                  <label class="control-label">Company Services:</label>
-                  <select name="company_category"  class="form-control services select2-hidden-accessible" required="" data-style="btn-default" data-live-search="true" tabindex="-1" aria-hidden="true">
+                  <select name="company_category"  class="form-control " required="" data-style="btn-default" data-live-search="true" tabindex="-1" aria-hidden="true">
                     <option value="">Select Services</option> 
                       <?php if(!empty($company_info->company_category)) {
                       echo $this->job_category_model->selected($company_info->company_category);
@@ -571,7 +571,7 @@ label {
                 <div class="col-md-4 col-sm-4">
                   <div class="formrow">
                     <label class="control-label">Company Country: <span class="required">*</span></label>
-                    <select name="country_id" id="country_id" class="form-control country select2-hidden-accessible" onchange="getStates(this.value)" tabindex="-1" aria-hidden="true"><?php foreach($country as $key){?>
+                    <select name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)" tabindex="-1" aria-hidden="true"><?php foreach($country as $key){?>
                       <option value="<?php echo $key['country_id']; ?>"<?php if($company_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
                       <?php } ?>
                   </select>
