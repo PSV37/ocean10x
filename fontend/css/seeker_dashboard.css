@@ -1,7 +1,7 @@
 
 /*header css  */
 
-.container{max-width:1330px;}
+.container{max-width:1280px;}
 .container-fluid{padding-right:0px;
 padding-left:0px;}
 .menu_logo img{       
@@ -23,7 +23,7 @@ padding-left:0px;}
 	background-color: #18c5bd;
     padding: 10px;
     box-shadow: 2px 2px 4px #d9d9da;
-    width: 100%;
+    width: 100%;   
     position: fixed;
     z-index: 9;
 
