@@ -350,8 +350,8 @@ list-style-type:none;}
 }
 .apply-invi:hover{ background-color: #3F51B5;
 color:#fff;}
-.invi-div {
-   
+.invi-div {   
+   background-color:#fff;
     padding: 15px 10px;
 	box-shadow: 0 0 5px #cac8c8;
 }     
