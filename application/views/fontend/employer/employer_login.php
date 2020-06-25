@@ -198,6 +198,7 @@ i#eyeIcon {
 .newuser {
     margin-top: 12px;
 }
+
 input:-internal-autofill-selected{background-color:#fff !important;}
 .field-icon {
   float: right;
@@ -208,6 +209,7 @@ input:-internal-autofill-selected{background-color:#fff !important;}
   cursor:pointer;
 }
 .user-box input:focus{background-color:#fff;}
+
 </style>
 
 
@@ -219,7 +221,7 @@ input:-internal-autofill-selected{background-color:#fff !important;}
       <label>Username</label>
     </div>
     <div class="user-box">
-      <input type="password" name="password" required><span toggle="#password-field" class="fa fa-lg fa-eye-slash field-icon toggle-password"></span>
+      <input type="password" name="password" required>
       <label>Password </label>
       <i id="eyeIcon" class="fa fa-eye"></i>
 
