@@ -3,14 +3,14 @@
 .img-circle{background-image:none !important;}   
 i.fas.fa-graduation-cap.edu-i {
     color: #18c5bd;
-}   
-.edit{float: right;font-size:12px;cursor: pointer;color:#000;}
+}
 </style>
 <?php 
     $this->load->view('fontend/layout/new_seeker_header.php');
+
 ?>
 <!---header end--->
-<div class="container-fluid">   
+<div class="container-fluid">
   <div class="container">
         <div class="col-md-12">
     <?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
@@ -1087,12 +1087,12 @@ i.fas.fa-graduation-cap.edu-i {
       <button type="submit" class="btn btn-primary">Save</button>
     </div>
   </form></div>
-  </div>    
+  </div>
         
       </div>
     </div>
   </div>
-                          <span class="edit"><a href="#" data-toggle="modal" data-target="#myModal1">Edit</a></span>  
+                          <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal1">Edit</a></span>  
 
       </li>
        <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
