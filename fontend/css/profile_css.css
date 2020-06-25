@@ -29,7 +29,7 @@ border:solid 1px #CCC;background-color:#fdfeff;border-radius:13px;}
 	}
 .nav>li>a:active{
 	 text-decoration: none;
-    background-color: #95ca24;
+    background-color:#18c5bd;
     color: #fff;   
 	border-radius: 30px;
 	}
@@ -75,13 +75,15 @@ border-radius: 30px;
 button.save-apply-btn {
    padding: 7px 45px;
     float: right;
-    border: solid 2px #F44336;
+    border: solid 2px #18c5bd;
     border-radius: 39px;
-    background-color: #f44336;
+    background-color:#18c5bd;
     color: #fff;
     margin-top: 30px;
 }
-
+button.save-apply-btn :hover{
+	color:#13928c;
+	transition:0.5s;}
 
 
 
@@ -148,9 +150,9 @@ li.bullet {
     padding-bottom: 10px;
 }
 .uplode-resume .form-control {
-    background-color: #0868af;
+    background-color: #18c5bd;
     color: #FFF;
-    border: 1px solid #4da8e4;
+    border: 1px solid #18c5bd;
 }.img-circle {
     border-radius: 50% !important;
     width: 150px;
