@@ -89,13 +89,13 @@ i.fas.fa-search {
 
 .search-form:hover .fa{
     background: #07051a;
-    color: white;
+    color: white;    
 }
 .notification {
     font-size: 13px;
-    color: #fff;
+    color: #fff;      
     text-align: center;
-	margin-top:10px;
+	margin-top:10px;   
 	cursor:pointer;
 }
 .notification:hover.notification i {color:#0a0a0a;transition: 0.7s;}
@@ -888,20 +888,6 @@ i.fas.fa-search {
 .social-media {
     margin-top: 17px;       
 }
-.notification {
-    font-size: 11px;
-    color: #fff;
-    text-align: center;
-	margin-top:20px;
-	cursor: pointer;
-}
-.bell {
-    font-size: 11px;
-    color: #fff;
-    text-align: center;
-	margin-top:20px;
-	cursor: pointer;
-}
 .social-media .notification{float:left;margin-left:67px;cursor:pointer;}
 .notification i{font-size:15px;color:#fff;}	
 .notification i:hover{color:#000;}
@@ -909,7 +895,7 @@ i.fas.fa-search {
     font-size: 30px;
     margin-left: 43px;
     margin-top: -3px;
-    color: #fff;
+    color: #fff;   
     float: left;
     margin-right: 10px;
 }
