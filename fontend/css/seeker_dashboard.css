@@ -16,6 +16,8 @@ padding-left:0px;}
     border-radius: 13px;
    border: solid 1px #dedbdb;
     box-shadow: 1px 0px 3px #e0dddd;
+	position:fixed;
+	width:20%;
     
 }
 ul.menu-principal-list {
