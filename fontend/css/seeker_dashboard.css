@@ -888,13 +888,6 @@ i.fas.fa-search {
 .social-media {
     margin-top: 17px;       
 }
-.bell {
-    font-size: 11px;
-    color: #fff;
-    text-align: center;
-	margin-top:20px;
-	cursor: pointer;
-}
 .social-media .notification{float:left;margin-left:67px;cursor:pointer;}
 .notification i{font-size:15px;color:#fff;}	
 .notification i:hover{color:#000;}
@@ -902,7 +895,7 @@ i.fas.fa-search {
     font-size: 30px;
     margin-left: 43px;
     margin-top: -3px;
-    color: #fff;
+    color: #fff;   
     float: left;
     margin-right: 10px;
 }
