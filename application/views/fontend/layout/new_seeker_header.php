@@ -98,7 +98,7 @@
 	 <div class="notification" style="font-size:13px;margin-top:10px;">
     	<i class="fas fa-comment-alt"></i><br>
         Messaging
-        ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu" style="width: 300px;">
+        <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu" style="width: 300px;">
                
                   <?php 
                     $noti = get_notifications($job_seeker);
