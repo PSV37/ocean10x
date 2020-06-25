@@ -9,7 +9,7 @@ border:solid 1px #CCC;background-color:#fdfeff;}
 .nav-tabs>li.active a {
     color: #fff !important;
     border: none;
-    background-color: #95ca24;
+    
 	border-radius: 30px;
 }
 .nav>li>a:hover {
@@ -21,8 +21,8 @@ border:solid 1px #CCC;background-color:#fdfeff;}
 .nav-tabs>li:hover{  background-color:#18c5bd;border-radius: 30px;}
 .nav-tabs>li:focus{ background-color:#18c5bd;border-radius: 30px;}
 .nav>li>a:focus{
-	text-decoration: none;   
-    background-color: #95ca24;
+	text-decoration: none;        
+    background-color:#18c5bd;
     color: #fff;
 	border-radius: 30px;
 	}
