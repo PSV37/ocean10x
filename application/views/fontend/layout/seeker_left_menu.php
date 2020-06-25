@@ -5,7 +5,7 @@
             <div class="inner-left-pannel">
                 
                 
-                <!-- WHAT MOVES START -->    
+                <!-- WHAT MOVES START -->       
                 <div class="my-moving-parts">
                     <div class="my-param-content"></div>
                     <div class="my-normal-content">

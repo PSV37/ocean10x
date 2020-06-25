@@ -921,8 +921,7 @@ i.fas.fa-search {
 	margin-top: 1px;
     
     height: auto;
-    border: 1px solid rgba(152, 153, 154, 0.34);
-    box-shadow: 1px 1px 4px 0px #0000001f;
+     
     position: fixed;
     z-index: 999;
     vertical-align: baseline;
