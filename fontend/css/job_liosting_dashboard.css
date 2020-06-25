@@ -100,6 +100,7 @@ list-style-type:none;}
 }
 .apply-invi:hover{
  background-color:#13928c;
+ transition:0.5s;
    
 }
 
@@ -311,8 +312,9 @@ list-style-type:none;}
 .fulltime-inv:hover{color:#000;}	
 .detail-b:hover{
 	 background-color:#00BCD4;
-	 color:#fff;
+	transition:0.5s;
 	}
+.detail-b:hover .detail-b a{color:#fff;}	
 .col-md-3.pro-bar{margin-top:20px;}	
 .invi-div {   
    background-color:#fff;
