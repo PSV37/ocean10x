@@ -12,9 +12,9 @@
      <?php  $job_seeker=$this->session->userdata('job_seeker_id'); ?>
           
 
-      <div class="col-md-9 profile-section">
+      <div class="col-md-9 profile-section" style="border-radius:13px;">
               <div class="profile-tabs">      
-               
+                   
                 <ul class="nav nav-tabs profile-nav ">
                             <li class="active"><a data-toggle="tab" href="#home">My Profile</a></li>
                             <li><a data-toggle="tab" href="#menu1">Education</a></li>

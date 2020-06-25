@@ -8,13 +8,13 @@
 
 ?> 
     
-<!---header end--->
+<!---header end--->        
 
 <div class="container-fluid">
 	<div class="container">
         <div class="col-md-12" >
         	<?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
-            <div class="col-md-9 ocen-activities" style="border-radius:13px;">
+            <div class="col-md-9 ocen-activities" >
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#activity1">Invitations</a></li>
     <li><a data-toggle="tab" href="#activity2">Applications</a></li>
