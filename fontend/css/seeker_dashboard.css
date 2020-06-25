@@ -6,7 +6,7 @@
 padding-left:0px;}
 .menu_logo img{       
 	width: 180px;
-    margin-left: 45px;
+       
    
 	    
 }    
@@ -366,13 +366,6 @@ nav{overflow:auto;}
 
 
 
-.menu_logo img{   
-	width: 180px;
-    margin-left: 45px;
-    
-	cursor:pointer;
-	
-}
 .bd-1 {
     border: solid 1px #dedbdb;
     margin-top: 77px;
