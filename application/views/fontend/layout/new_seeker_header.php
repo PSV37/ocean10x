@@ -98,6 +98,64 @@
 	 <div class="notification" style="font-size:13px;margin-top:10px;">
     	<i class="fas fa-comment-alt"></i><br>
         Messaging
+        ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu" style="width: 300px;">
+               
+                  <?php 
+                    $noti = get_notifications($job_seeker);
+                      if(!empty($noti)){
+                      foreach($noti as $msg_row)
+                      {
+                        $date = strtotime($msg_row['created_on']);
+                        $dat = date('m/d/y', $date);
+                        $tme = date('H:m:s A',$date);
+                    ?>
+
+
+                    <li <?php if($msg_row['status']==0){?>style="background-color: #ccc;margin: 5px;" <?php }else{?> style="margin: 5px;"<?php } ?> >
+
+                      <a href="<?php echo base_url(); ?>seeker/seeker-profile?seeker_id=<?php echo base64_encode($msg_row['job_seeker_id']); ?>">
+                        <span>
+                          <span><?php echo $msg_row['full_name']; ?></span>
+                          <span class="time">
+                          <?php 
+
+                            $mtime = time_ago_in_php($msg_row['created_on']);
+                            echo $mtime;
+
+                            
+                          ?></span> 
+                        </span>
+                        <span class="message">
+                         <?php 
+                            $message = $msg_row['message_desc'];
+                            if(strlen($message)>30)
+                            {
+                              echo substr($message, 0, 50);
+                             echo '...';  
+                            }else{echo $message; }
+                         ?>
+                        </span>
+                      </a>
+                    </li>
+                  <?php } } else{?>
+                    <li style="background-color: #ccc; margin: 5px;">
+                        <a>
+                        <span>
+                          No any notification found..
+                        </span>
+                      </a>
+                    </li>
+                  <?php } ?>
+              
+                <li>
+                  <div class="text-center">
+                    <a href="<?php echo base_url(); ?>seeker/all-notifications" class="dropdown-item" style="color: #1d1c1c !important;">
+                      <strong>See All Notification</strong>
+                      <i class="fa fa-angle-right"></i>
+                    </a>
+                  </div>
+                </li>
+              </ul>
     </div>    
    
 </div>    
@@ -112,15 +170,16 @@
      
     <div class="col-md-2">
     	 <div class="dropdown">
-              <?php $employer_id = $this->session->userdata('company_profile_id'); ?>
-  <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($employer_id);?>" class="img-thumbnail" style="height:45px; width:45px; border-radius:50%;" />&emsp;<a class=" dropdown-toggle" data-toggle="dropdown">
+         <?php
+             if(!empty($this->Job_seeker_photo_model->get_jobseeker_photo($job_seeker))):?>
+  <img src="<?php echo base_url() ?>upload/<?php echo  $this->Job_seeker_photo_model->get_jobseeker_photo($job_seeker);?>" class="img-thumbnail" style="height:45px; width:45px; border-radius:50%;" />&emsp;<a class=" dropdown-toggle" data-toggle="dropdown">
     
     <span class="caret"></span>
-    <p class="profile-accoutnt-p">supriya</p>
+    <p class="profile-accoutnt-p"><?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></p>
     </a>
     <ul class="dropdown-menu">
-      <li><a href="<?php echo base_url() ?>employer/profile-setting"><i class="fas fa-user"></i>My Profile</a> </li>
-      <li><a href="<?php echo base_url(); ?>employer/change-password"><i class="fas fa-lock"></i>Change Password</a></li>
+      <li><a href="<?php echo base_url(); ?>job_seeker/seeker_info"><i class="fas fa-user"></i>My Profile</a> </li>
+      <li><a href="<?php echo base_url(); ?>job_seeker/change_password"><i class="fas fa-lock"></i>Change Password</a></li>
       <li ><a href="#" class="btn-logoff" data-toggle="modal" data-target="#modal_logoff"><i class="fas fa-power-off"></i>Logout</a></li>
     </ul>
   </div>

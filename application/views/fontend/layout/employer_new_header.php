@@ -107,7 +107,7 @@
   <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($employer_id);?>" class="img-thumbnail" style="height:45px; width:45px; border-radius:50%;" />&emsp;<a class=" dropdown-toggle" data-toggle="dropdown">
     
     <span class="caret"></span>
-    <p class="profile-accoutnt-p">supriya</p>
+    <p class="profile-accoutnt-p"><?php echo $this->company_profile_model->company_name($employer_id); ?></p>
     </a>
     <ul class="dropdown-menu">
       <li><a href="<?php echo base_url() ?>employer/profile-setting"><i class="fas fa-user"></i>My Profile</a> </li>
