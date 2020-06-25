@@ -47,11 +47,9 @@ border:solid 1px #CCC;background-color:#fdfeff;}
 	color: #18c5bd;
     cursor: default;   
 	 background-color:#18c5bd;
-    color: #fff;
+    color: #fff;      
 border-radius: 30px;
   }
-.nav-tabs{border-bottom:solid 1px #18c5bd1f;} 
-  
 .nav-tabs ul li a{color:#fff;font-size:12px;border-radius: 30px;}  
  .nav-tabs>li>a{border:none;line-height:normal;margin-right:0px !important;} 
 .nav-tabs>li.active a{color:#3310bf;border:none;}
