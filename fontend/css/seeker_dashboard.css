@@ -1254,10 +1254,10 @@ q:before, q:after {
 .switch-yellow .switch-selection {
   background-color: #c4bb61;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e0dd94), color-stop(100%, #c4bb61));
- border-radius:50px;
-  background-image: -webkit-linear-gradient(top, #a8e225, #a4df2a);
-}
-.img-thumbnail {
+ border-radius:20px;
+ background-image: -webkit-linear-gradient(top, #18c5bd, #12716c);
+
+}.img-thumbnail {
     padding: .25rem;
     background-color: #fff;
     border: 1px solid #dee2e6;
