@@ -10,7 +10,7 @@ border:solid 1px #CCC;background-color:#fdfeff;border-radius:13px;}
     color: #fff !important;
     border: none;
     
-	border-radius: 30px;
+	border-radius: 30px;   
 }
 .nav>li>a:hover {
     text-decoration: none;
