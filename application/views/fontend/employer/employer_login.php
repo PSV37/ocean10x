@@ -79,13 +79,14 @@ h3:after {
   display: inline-block;
   padding: 10px 20px;
   color: #03e9f4;
-  font-size: 16px;
+  font-size: 16px;   
   text-decoration: none;
-  text-transform: uppercase;
+  
   overflow: hidden;
   transition: .5s;
-  margin-top: 40px;
-  letter-spacing: 4px
+  margin-top:0PX;
+  letter-spacing: 2px;
+  margin-bottom:-14px;
 }
 .login-box a{color:#18c5ed;}
 .login-box a:hover {
@@ -197,8 +198,21 @@ i#eyeIcon {
 .newuser {
     margin-top: 12px;
 }
+<<<<<<< HEAD
 
 
+=======
+input:-internal-autofill-selected{background-color:#fff !important;}
+.field-icon {
+  float: right;
+  margin-right: 8px;
+  margin-top: -27px;
+  position: relative;
+  z-index: 2;
+  cursor:pointer;
+}
+.user-box input:focus{background-color:#fff;}
+>>>>>>> 944baa8b9c9f67edb42ec14d52d007cc5b083982
 </style>
 
 
