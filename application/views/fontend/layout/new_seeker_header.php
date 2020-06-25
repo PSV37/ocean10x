@@ -95,7 +95,7 @@
 </div>
 
 <div class="col-md-1">
-	 <div class="notification" style="font-size:13px;margin-top:0px;">
+	 <div class="notification" style="font-size:13px;margin-top:10px;">
     	<i class="fas fa-comment-alt"></i><br>
         Messaging
     </div>    
@@ -103,7 +103,7 @@
 </div>    
 
 <div class="col-md-1">
-	 <div class="bell" style="font-size:13px;margin-top:0px;">
+	 <div class="bell" style="font-size:13px;margin-top:10px;">
     	<i class="fas fa-bell"></i><br>
         Notifications
    	 </div>  
