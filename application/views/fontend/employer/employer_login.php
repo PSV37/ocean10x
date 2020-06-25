@@ -225,7 +225,7 @@ input:-internal-autofill-selected{background-color:#fff !important;}
     <div class="user-box">
       <input type="password" name="password" required>
       <label>Password </label>
-      <i id="eyeIcon" class="fa fa-eye"></i>
+      <i id="eyeIcon" toggle="#password-field" class="fa fa-lg fa-eye-slash field-icon toggle-password"></i>
 
     </div>
     <div class="row">
