@@ -18,7 +18,9 @@ padding-left:0px;}
     box-shadow: 1px 0px 3px #e0dddd;
     
 }
-    
+ul.menu-principal-list {
+    margin-left: -17px;
+}    
 .gradient_strip{
 	background-color: #18c5bd;
     padding: 10px;
@@ -340,7 +342,7 @@ body{background-color:#f7f7f738;}
     margin-bottom: -2px;
     max-width: 74%;
     font-size: 13px;
-	color:#858787;
+	color:#616363;
 }
 #left-panel .inner-left-pannel .inner-tabs .menu-tab .menu-principal ul li.active span.icon-container i {
     left: 0;
