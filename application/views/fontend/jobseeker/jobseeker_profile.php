@@ -1,5 +1,6 @@
-<!---header---->
-
+<style>
+.nav-tabs{border-bottom:solid 1px #48827f30;}
+</style>
 <?php 
     $this->load->view('fontend/layout/new_seeker_header.php');
 
@@ -12,7 +13,7 @@
      <?php  $job_seeker=$this->session->userdata('job_seeker_id'); ?>
           
 
-      <div class="col-md-9 profile-section" style="border-radius:13px;">
+      <div class="col-md-9 profile-section" style="border-radius:13px;margin-top:83px;">
               <div class="profile-tabs">      
                    
                 <ul class="nav nav-tabs profile-nav ">
