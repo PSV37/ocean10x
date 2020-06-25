@@ -1,15 +1,12 @@
 <style>
 .nav-tabs{border-bottom:solid 1px #48827f30 !important;}
 .img-circle{background-image:none !important;}   
-i.fas.fa-graduation-cap.edu-i {
-    color: #18c5bd;
-}
+
 </style>
 <?php 
     $this->load->view('fontend/layout/new_seeker_header.php');
-
+     
 ?>
-<!---header end--->
 <div class="container-fluid">
   <div class="container">
         <div class="col-md-12">
@@ -46,13 +43,12 @@ i.fas.fa-graduation-cap.edu-i {
        
         <h6>Upload a different photo...</h6>
         <input type="file" class="text-center center-block file-upload">
-         
-         
+         <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal50">Edit</a></span> 
       </div>
                 
-           <div class="row">
-             <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal50">Edit</a></span>     
-                 </div>
+           
+                 
+                 
                 <div class="row">
                     <div class="col-md-6">
                     <ul class="jobinfolist">
@@ -1437,7 +1433,7 @@ i.fas.fa-graduation-cap.edu-i {
       </ul>
       
     </div>
-    <div id="menu1" class="tab-pane fade">
+    <div id="menu3" class="tab-pane fade">
     <ul>
     <?php  $designation = $this->Master_model->getMaster('designation',$where=false);
 
