@@ -863,7 +863,7 @@ input[type="search"] {
     font-size: 1em;
     border-radius: 20px;
     padding: 0 20px;
-    background-color: #18942d;
+    background-color:#fff;
 	color:#FFF;
 }
 .search-form .fa {
