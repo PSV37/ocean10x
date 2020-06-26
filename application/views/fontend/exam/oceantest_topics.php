@@ -55,6 +55,14 @@
    
 	background-color:#d8e8f9;
 }
+button#next {
+    background-color: #18c5bd;
+    border: none;
+    padding: 10px 40px;
+    font-weight: 700;
+    margin-right: 13px;
+    margin-top: -62px;
+}
      </style>
 </head>
    
