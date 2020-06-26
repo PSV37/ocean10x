@@ -7,42 +7,31 @@
 <!---header end--->
 <div class="container-fluid">
   <div class="container">
-        <div class="col-md-12">
-    <?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
-     <?php  $job_seeker=$this->session->userdata('job_seeker_id'); ?>
-          
-
-      <div class="col-md-9 profile-section">
-              <div class="profile-tabs">      
-               
-                <ul class="nav nav-tabs profile-nav ">
-                            <li class="active"><a data-toggle="tab" href="#home">My Profile</a></li>
-                            <li><a data-toggle="tab" href="#menu1">Education</a></li>
-                            <li><a data-toggle="tab" href="#menu2">Skills</a></li>
-                            <li><a data-toggle="tab" href="#menu3">Work Experience</a></li>
-                            <li><a data-toggle="tab" href="#menu4">Certs & Trainning</a></li>
-                 </ul>
-                
-                </div>
+    <div class="col-md-12">
+      <?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
+       <?php  $job_seeker=$this->session->userdata('job_seeker_id'); ?>
+          <div class="col-md-9 profile-section">
+            <div class="profile-tabs">      
+              <ul class="nav nav-tabs profile-nav ">
+                <li class="active"><a data-toggle="tab" href="#home">My Profile</a></li>
+                <li><a data-toggle="tab" href="#menu1">Education</a></li>
+                <li><a data-toggle="tab" href="#menu2">Skills</a></li>
+                <li><a data-toggle="tab" href="#menu3">Work Experience</a></li>
+                <li><a data-toggle="tab" href="#menu4">Certs & Trainning</a></li>
+              </ul>
+            
+            </div>
             
     <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
-       
-
-    <div class="header-p-img" style="position:relative;">
-        
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS-7Q995g-7kjzS1RbQh7zaxf4eBCciNVp8ebwgueosDLSMFkC0&usqp=CAU" style="width:100%; height:140px;position:relative;margin-bottom:140px;"></img>
-
-<!-- </div></div></div> -->
-            
-            
+      <div id="home" class="tab-pane fade in active">
+        <div class="header-p-img" style="position:relative;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS-7Q995g-7kjzS1RbQh7zaxf4eBCciNVp8ebwgueosDLSMFkC0&usqp=CAU" style="width:100%; height:140px;position:relative;margin-bottom:140px;">
         <div class="text-center" style="position:absolute;top:50px;left:-50px;">
-        <img src="<?php echo base_url() ?>upload/<?php if(!empty($job_seeker_photo->photo_path)) { echo $job_seeker_photo->photo_path;} else { echo "image-notfound.png";} ?>" class="avatar img-circle img-thumbnail" alt="avatar">
-       
-        <h6>Upload a different photo...</h6>
-        <input type="file" class="text-center center-block file-upload">
-         <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal50">Edit</a></span> 
-      </div>
+          <img src="<?php echo base_url() ?>upload/<?php if(!empty($job_seeker_photo->photo_path)) { echo $job_seeker_photo->photo_path;} else { echo "image-notfound.png";} ?>" class="avatar img-circle img-thumbnail" alt="avatar">
+           <h6>Upload a different photo...</h6>
+          <input type="file" class="text-center center-block file-upload">
+           <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal50">Edit</a></span> 
+        </div>
                 
            
                  
@@ -157,20 +146,20 @@
         </div>  
     </div>
 
-      <div class="modal fade" id="myModal50" role="dialog">
-    <div class="modal-dialog modal-md">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Personal Information</h4>
-        </div>
+    <div class="modal fade" id="myModal50" role="dialog">
+      <div class="modal-dialog modal-md">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Personal Information</h4>
+          </div>
         <div class="modal-body">
          <form id="UpdateExperience-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_personalinfo');?>" method="post" style="padding: 30px;">
-         <input type="hidden" name="js_experience_id" value="286">
+              <input type="hidden" name="js_experience_id" value="286">
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Name:</label>
                 <div class="col-sm-9">
-                <input type="text" class="form-control" id="edit_company_profile_id" required name="full_name" value="<?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?>">
+                  <input type="text" class="form-control" id="edit_company_profile_id" required name="full_name" value="<?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?>">
 
                 </div>
               </div>
@@ -682,13 +671,6 @@
                 </div>
               </div>
 
-              <!--<div class="form-group">
-                <label class="control-label col-sm-3" for="email">Job Level</label>
-                <div class="col-sm-9">
-                    <select name="job_level" class="form-control" id="job_level" >
-                                             </select>
-                </div>
-              </div>-->
 
               <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Present Address<span class="required">*</span>:</label>
@@ -814,13 +796,6 @@
                          ?>">
                 </div>
               </div>
-
-                <!-- <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">Major Activity</label>
-                <div class="col-sm-9">
-                 <textarea name="major_activity" class="form-control" rows="5" id="major_activity"></textarea>
-                </div>
-              </div>-->
 
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
