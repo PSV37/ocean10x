@@ -826,6 +826,7 @@
       </div>
     </div>
   </div>
+  </div>
     <div id="menu1" class="tab-pane fade">
     
       <div class="education_header" style="position:relative;">
