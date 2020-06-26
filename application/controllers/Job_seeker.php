@@ -76,7 +76,7 @@ class Job_seeker extends MY_Seeker_Controller
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'seeker_info';
          $this->session->set_userdata($data);
-         
+
         $jobseeker_id = $this->session->userdata('job_seeker_id');
 
 			$data['city'] = $this->Master_model->getMaster('city',$where=false);
@@ -699,7 +699,12 @@ exit;*/
 	
     public function oceanhunt_activities()
     {
-         $jobseeker_id    = $this->session->userdata('job_seeker_id');
+
+        $this->session->unset_userdata('activemenu');
+        $data['activemenu'] = 'oceanhunt';
+        $this->session->set_userdata($data);
+
+        $jobseeker_id    = $this->session->userdata('job_seeker_id');
         $applicationlist = $this->job_apply_model->seeker_all_application($jobseeker_id);
 
         $forward_applicationlist = $this->job_apply_model->seeker_all_application_send($jobseeker_id);

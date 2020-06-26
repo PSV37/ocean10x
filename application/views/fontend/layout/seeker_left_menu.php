@@ -49,7 +49,7 @@
                                               </a>
                                        </li>
                                        
-                                      <li class="menu">
+                                      <li class="menu <?php if ($activemenu == 'oceanhunt') { echo 'active';  } ?> ">
                                      <a data-dl-view="true" data-dl-title="Contacts" href="<?php echo base_url(); ?>seeker/oceanhunt"> 
                                        <span class="icon-container">
                                          <i class="fas fa-phone-volume"></i>
@@ -65,7 +65,7 @@
                                         <span class="text item">Skill Upgrade</span>
                                           </a>
                                         </li>
-                                         <li class="menu">
+                                         <li class="menu <?php if ($activemenu == 'oceanchamp') { echo 'active';  } ?> ">
                                             <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url(); ?>seeker/oceanchamp-test">
                                             <span class="icon-container">
                                               <i class="fas fa-map-signs"></i>
