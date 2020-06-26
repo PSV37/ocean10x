@@ -105,8 +105,7 @@
 <div class="container-fluid skills">
 <div class="container">
 	<h5 style="font-size: medium;
-    color: #828282;
-    margin-left: -15px;">Choose your programmig prefered languages</h5>
+    color: #828282;">Choose your programmig prefered languages</h5>
     
     <div class="row">
     
