@@ -1345,9 +1345,9 @@ li.bullet {
     <div id="home" class="tab-pane fade in active">
        
 
-    <div class="header-p-img" style="position:relative;">
+    <div class="header-p-img" style="position:relative;">   
         
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS-7Q995g-7kjzS1RbQh7zaxf4eBCciNVp8ebwgueosDLSMFkC0&usqp=CAU" style="width:100%; height:140px;position:relative;margin-bottom:140px;"></img>
+        <img src="https://www.sassm.in/education/images/blog-header.jpg" style="width:100%; height:140px;position:relative;margin-bottom:140px;"></img>
 
 <!-- </div></div></div> -->
             
