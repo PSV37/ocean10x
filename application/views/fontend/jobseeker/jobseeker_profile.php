@@ -48,11 +48,11 @@ li.bullet {
                    
                 <ul class="nav nav-tabs profile-nav ">
                             <li class="active"><a data-toggle="tab" href="#home">My Profile</a></li>
-                            <li><a data-toggle="tab" href="#menu1">Education</a></li>
+                           <li><a data-toggle="tab" href="#menu5">Education</a></li>
                             <li><a data-toggle="tab" href="#menu2">Skills</a></li>
                             <li><a data-toggle="tab" href="#menu3">Work Experience</a></li>
                             <li><a data-toggle="tab" href="#menu4">Certs & Trainning</a></li>
-                             <li><a data-toggle="tab" href="#menu5">abc</a></li>
+                             
                  </ul>
                 
                 </div>
