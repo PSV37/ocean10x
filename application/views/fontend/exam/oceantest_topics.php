@@ -118,6 +118,9 @@
     <div class="col-md-2">
     <div class="bo-c">
     <span name="skill_names" id="skill_names"  value="<?php echo $svalue['id']; ?>" onclick="gettopic(<?php echo $svalue['id']; ?>);"><?php echo $svalue['skill_name']; ?></span></div>
+    
+    
+     <div class="col-md-2 show-b">Show more</div>
 </div>
                     <?php  } ?>
 
