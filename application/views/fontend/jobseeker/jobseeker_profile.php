@@ -39,7 +39,7 @@
              
                 <div class="row">
                  <span class="edit"><a href="#" data-toggle="modal" data-target="#myModal50">Edit</a></span> 
-                
+                </div>
                  <div class="row">
                     <div class="col-md-6">
                       <ul class="jobinfolist">
