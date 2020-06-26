@@ -161,6 +161,7 @@ function gettopic(value)
 {
     // alert($(this).val());
     // alert(value);
+    $('.bo-c_active').removeClass('bo-c_active');
      var v = document.getElementById("bo-c"+value); 
             v.className += " bo-c_active";
 
