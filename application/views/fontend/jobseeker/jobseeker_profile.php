@@ -877,7 +877,7 @@ li.bullet {
  
     
     
-    
+        
     
       <ul style="margin-top:50px;">
          <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
@@ -1464,7 +1464,7 @@ li.bullet {
       </ul>
       
     </div>
-    <div id="menu3" class="tab-pane fade">
+    <div id="menu2" class="tab-pane fade">
     <ul>
     <?php  $designation = $this->Master_model->getMaster('designation',$where=false);
 
