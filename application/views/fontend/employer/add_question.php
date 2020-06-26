@@ -1,10 +1,10 @@
 <?php $this->load->view('fontend/layout/employer_new_header.php');?> 
 <!---header-->
  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">
-	<div class="container">
+  <div class="container">
     <div class="col-md-12">
       <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
-      <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>employer/save_questionbank/<?php  if (!empty($edit_questionbank_info)) { foreach($edit_questionbank_info as $row)
+      <form id="add-question" role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>employer/save_questionbank/<?php  if (!empty($edit_questionbank_info)) { foreach($edit_questionbank_info as $row)
                     echo $row['ques_id'];
               }
             ?>" method="post">
@@ -16,7 +16,7 @@
           <div class="row">
             <div class="col-md-4">
               <div class="form-group">                                       
-							 <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
+               <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
                 <select id="subject" name="technical_id" class="form-control" required="" onchange="getTopic(this.value)">
                   <option value="">Select Subject</option> 
                     <?php if (!empty($skill_master))
@@ -26,7 +26,7 @@
                         <option value="<?php echo $skill['id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option> 
                     <?php } ?>
                   </select>
-							</div>
+              </div>
             </div>
             <div class="col-md-4">
               <div class="form-group">
@@ -38,37 +38,37 @@
               </div>
             </div>
             <div class="col-md-4">
-							<div class="form-group">
+              <div class="form-group">
                 <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
                 <select id="subtopic_id" name="subtopic_id" class="form-control" onchange="getLineitem(this.value)">
                 </select>
-							</div>
-						</div>               
+              </div>
+            </div>               
           </div>
           <div class="row">
             <div class="col-md-4">
-							<div class="form-group">
+              <div class="form-group">
                 <label for="exampleInputEmail1">Line Item(Level 1)<span class="required">*</span></label>
                 <select id="lineitem_id" name="lineitem_id" class="form-control" onchange="getLineitemlevel(this.value)">
                 </select> 
-							</div>
-						</div>
+              </div>
+            </div>
             <div class="col-md-4">
-							<div class="form-group">
+              <div class="form-group">
                   <label for="exampleInputEmail1">Line Item(Level 2)<span class="required">*</span></label>
                   <select id="lineitemlevel_id" name="lineitemlevel_id" class="form-control">
                   </select> 
-							</div>
-						</div>
+              </div>
+            </div>
             <div class="col-md-4">
               <div class="form-group">
                 <label for="exampleInputEmail1">Level<span class="required">*</span></label>
                   <select name="level" class="form-control">                                     
-										<option value="Expert"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Expert')echo "selected";?>>Expert</option>
+                    <option value="Expert"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Expert')echo "selected";?>>Expert</option>
                     <option value="Medium"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Medium')echo "selected";?>>Medium</option>
                     <option value="Beginner"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Beginner')echo "selected";?>>Beginner</option>
-									</select>
-							</div>
+                  </select>
+              </div>
             </div>
           </div> 
           <div class="row">
@@ -76,11 +76,11 @@
               <div class="form-group">
                 <label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
                 <select name="ques_type" class="form-control" type="text">
-									<option value="MCQ"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ')echo "selected";?>>MCQ</option>
+                  <option value="MCQ"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ')echo "selected";?>>MCQ</option>
                     <option value="Subjective"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Subjective')echo "selected";?>>Subjective</option>
                     <option value="Practical"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Practical')echo "selected";?>>Practical</option>
-								</select>
-							</div>
+                </select>
+              </div>
             </div>
           </div>
              
@@ -88,7 +88,7 @@
     <div class="row">
        <div class="col-md-12 form-group">
         <label for="comment">Question </label>
-		    <textarea class="form-control" name="question" rows="5" id="comment"><?php if (!empty($edit_questionbank_info)) echo $row['question'];?></textarea>
+        <textarea class="form-control" name="question" rows="5" id="comment" ><?php if (!empty($edit_questionbank_info)) echo $row['question'];?></textarea>
       </div>
     
        <div class="col-md-12 form-group">
@@ -365,3 +365,74 @@ function showCheckboxes() {
    
        }
 </script>   
+
+
+
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<!-- jquery validation plugin //-->
+<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js"></script>
+<script type="text/javascript" src="validation_reg.js"></script>
+<script src="js/jquery.validate.js"></script>
+
+
+<script>
+
+$(document).ready(function()
+
+{
+
+$("#add-question").validate (  
+
+{
+
+rules:{
+
+
+
+'question':{
+
+required: true,
+
+//job_desc_regex: true
+
+}
+
+  
+
+
+},
+
+messages:{
+
+
+'question':{
+
+required: "Please fill Job Description!",
+
+//minlength: "Please Enter 10 digit phone numbers!",
+
+//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+
+//remote: "The username is already in use by another user!"
+
+},
+
+
+
+
+}
+
+});
+
+});
+
+</script>
+
+
+
+
+
+
+
