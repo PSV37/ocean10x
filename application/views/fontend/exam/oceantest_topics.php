@@ -122,7 +122,7 @@
     
     
 </div>
- <div class="col-md-2 show-b">Show more</div>
+ 
                     <?php  } ?>
 
                     <div class="col-md-12 col-sm-12">
