@@ -86,14 +86,14 @@ class Job_seeker extends MY_Seeker_Controller
             $data['js_personal_info'] = $this->job_seeker_personal_model->personalinfo_list_by_id($jobseeker_id);
             $data['job_seeker_photo'] = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id);
 
-            $where['edu_level_id'] = '1';
-            $data['phdspecial'] = $this->Master_model->getMaster('education_specialization',$where);
+            // $where['edu_level_id'] = '1';
+            // $data['phdspecial'] = $this->Master_model->getMaster('education_specialization',$where);
 
-            $where['edu_level_id'] = '2';
-            $data['pgdspecial'] = $this->Master_model->getMaster('education_specialization',$where);
+            // $where['edu_level_id'] = '2';
+            // $data['pgdspecial'] = $this->Master_model->getMaster('education_specialization',$where);
 
-            $where['edu_level_id'] = '3';
-            $data['gddspecial'] = $this->Master_model->getMaster('education_specialization',$where);
+            // $where['edu_level_id'] = '3';
+            // $data['gddspecial'] = $this->Master_model->getMaster('education_specialization',$where);
             $data['course'] = $this->Master_model->getMaster('course',$where=false);
             $data['schoolboard'] = $this->Master_model->getMaster('schoolboard',$where=false);
             $data['schoolmedium'] = $this->Master_model->getMaster('schoolmedium',$where=false);
