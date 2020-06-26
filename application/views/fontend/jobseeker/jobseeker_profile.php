@@ -143,14 +143,7 @@
       		</div>
       
 
-
-
-
-
-
-
-
-      <div class="modal fade" id="myModal50" role="dialog">
+ <div class="modal fade" id="myModal50" role="dialog">
     <div class="modal-dialog modal-md">
       <div class="modal-content">
         <div class="modal-header">
@@ -827,64 +820,49 @@
     </div>
   </div>
   
+    
     <div id="menu1" class="tab-pane fade">
     
-      <div class="education_header" style="position:relative;">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQofjuD4yOHnpJHZSgGYZucvlOH6nukw95LkKub_HxNl3N6cpTL&usqp=CAU" style="width:100%;position:relative;"></img>
+    	<div class="education_header" style="position:relative;">
+        	<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQofjuD4yOHnpJHZSgGYZucvlOH6nukw95LkKub_HxNl3N6cpTL&usqp=CAU" style="width:100%;position:relative;"></img>
             <div class="icon-education" style="position:absolute;bottom:23px;right:53%;">
             <i class="fas fa-graduation-cap edu-i"></i>
             </div>
         </div>
- 
+    
     
     
     
     
       <ul style="margin-top:50px;">
-         <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
-                        $seeker_edu_level_id = '1';
-                         $education_data = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id); 
-                        // $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
-                        // print_r($education_data);die;
-                      ?>
-      <li class="bullet"><a href="#" value='1' id="ed" <?php if (isset($education_data) && empty($education_data)) { ?> style="color: red;"
-       
-    <?php  } ?> data-toggle="modal" data-target="#myModal">Ph.d / Doctorate</a>
+      <li class="bullet"><a href="#" data-toggle="modal" data-target="#myModal">Ph.d / Doctorate</a>
       <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog modal-md">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button"   class="close" data-dismiss="modal">&times;</button>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Ph.d / Doctorate</h4>
         </div>
-       
-    
-
         <div class="modal-body education_frm">
-  <form id="Educational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
-         <input type="hidden" name="js_education_id" value="<?php echo $education_data[0]->js_education_id; ?>">
+  <form id="Educational-info" class="form-horizontal" action="http://www.consultnhire.com/job_seeker/update_education" method="post">
+         <input type="hidden" name="js_education_id" value="">
       <div class="form-group">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
           <label class="control-label" for="email">Education<span class="required">*</span></label>
           <select name="education_level_id" id="education_level_id" class="form-control" required="">
-                  <option value="1">Ph.D / Doctorate</option>
-          </select>
+                       <option value="1">Ph.D / Doctorate</option>
+                      </select>
         </div>
         <div class="col-sm-1"></div>
       </div>
             <div class="form-group">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
-          
-                      
           <label class="control-label" for="email">Specialization<span class="required">*</span></label>
           <select name="specialization_id" id="specialization_id" class="form-control" required="">
             <option value="">Select One</option>
-            <?php foreach($phdspecial as $edu_special){?>
-              <option value="<?php echo $edu_special['id']; ?>"<?php if(!empty($education_data)) if($education_data[0]->specialization_id==$edu_special['id']) echo "selected";?>><?php echo $edu_special['education_specialization']; ?></option>
-            <?php } ?>
-                           <!-- <option value="6">Computer SC.</option> -->
+                           <option value="6">Computer SC.</option>
                       </select>
         </div>
         <div class="col-sm-1"></div>
@@ -894,7 +872,7 @@
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
           <label class="control-label" for="email">University / Name of Institution<span class="required">*</span></label>
-          <input type="text" name="js_institute_name" class="form-control" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($education_data)) echo $education_data[0]->js_institute_name; ?>">
+          <input type="text" name="js_institute_name" class="form-control" id="js_institute_name" placeholder="Enter Institute Name" required value="">
         </div>
         <div class="col-sm-1"></div>
       </div>
@@ -903,10 +881,7 @@
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
           <label class="control-label" for="email">Course Type<span class="required">*</b></label>
-                    
-                <?php foreach($course as $courses){?>
-            <input type="radio" name="education_type_id" required id="education_type_id" value="<?php echo $courses['education_type_id']; ?>"<?php if(!empty($education_data)) if($education_data[0]->education_type_id==$courses['education_type_id']) echo "checked";?> style="margin: 0 1px;"> <?php echo $courses['education_type']; ?>
-          <?php } ?>                      
+                      <input type="radio" name="education_type_id" required id="education_type_id" value="1" style="margin: 0 1px;"> <b>Part Time </b><input type="radio" name="education_type_id" required id="education_type_id" value="2" style="margin: 0 1px;"> <b>Full Time                      </b><input type="radio" name="education_type_id" required id="education_type_id" value="3" style="margin: 0 1px;"> <b>Correspondence/Distance learning </b>                  
 
         </div>
         <div class="col-sm-1"></div>
@@ -917,15 +892,88 @@
         <div class="col-sm-10">
           <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
           <select name="js_year_of_passing" id="ddlYear" class="form-control" required="">
-            <?php
-              $currently_selected = date('Y'); 
-              $earliest_year = 1940; 
-              $latest_year = date('Y'); 
-              foreach ( range( $latest_year, $earliest_year ) as $i ) {
-              ?>
-              <option value="<?php echo $i; ?>"<?php if(!empty($education_data)) if($education_data[0]->js_year_of_passing==$i) echo "selected";?>><?php echo $i; ?></option>
-            <?php } ?>
-         
+           <option value="">Select Completion Year</option>
+                          <option value="2020">2020</option>
+                          <option value="2019">2019</option>
+                          <option value="2018">2018</option>
+                          <option value="2017">2017</option>
+                          <option value="2016">2016</option>
+                          <option value="2015">2015</option>
+                          <option value="2014">2014</option>
+                          <option value="2013">2013</option>
+                          <option value="2012">2012</option>
+                          <option value="2011">2011</option>
+                          <option value="2010">2010</option>
+                          <option value="2009">2009</option>
+                          <option value="2008">2008</option>
+                          <option value="2007">2007</option>
+                          <option value="2006">2006</option>
+                          <option value="2005">2005</option>
+                          <option value="2004">2004</option>
+                          <option value="2003">2003</option>
+                          <option value="2002">2002</option>
+                          <option value="2001">2001</option>
+                          <option value="2000">2000</option>
+                          <option value="1999">1999</option>
+                          <option value="1998">1998</option>
+                          <option value="1997">1997</option>
+                          <option value="1996">1996</option>
+                          <option value="1995">1995</option>
+                          <option value="1994">1994</option>
+                          <option value="1993">1993</option>
+                          <option value="1992">1992</option>
+                          <option value="1991">1991</option>
+                          <option value="1990">1990</option>
+                          <option value="1989">1989</option>
+                          <option value="1988">1988</option>
+                          <option value="1987">1987</option>
+                          <option value="1986">1986</option>
+                          <option value="1985">1985</option>
+                          <option value="1984">1984</option>
+                          <option value="1983">1983</option>
+                          <option value="1982">1982</option>
+                          <option value="1981">1981</option>
+                          <option value="1980">1980</option>
+                          <option value="1979">1979</option>
+                          <option value="1978">1978</option>
+                          <option value="1977">1977</option>
+                          <option value="1976">1976</option>
+                          <option value="1975">1975</option>
+                          <option value="1974">1974</option>
+                          <option value="1973">1973</option>
+                          <option value="1972">1972</option>
+                          <option value="1971">1971</option>
+                          <option value="1970">1970</option>
+                          <option value="1969">1969</option>
+                          <option value="1968">1968</option>
+                          <option value="1967">1967</option>
+                          <option value="1966">1966</option>
+                          <option value="1965">1965</option>
+                          <option value="1964">1964</option>
+                          <option value="1963">1963</option>
+                          <option value="1962">1962</option>
+                          <option value="1961">1961</option>
+                          <option value="1960">1960</option>
+                          <option value="1959">1959</option>
+                          <option value="1958">1958</option>
+                          <option value="1957">1957</option>
+                          <option value="1956">1956</option>
+                          <option value="1955">1955</option>
+                          <option value="1954">1954</option>
+                          <option value="1953">1953</option>
+                          <option value="1952">1952</option>
+                          <option value="1951">1951</option>
+                          <option value="1950">1950</option>
+                          <option value="1949">1949</option>
+                          <option value="1948">1948</option>
+                          <option value="1947">1947</option>
+                          <option value="1946">1946</option>
+                          <option value="1945">1945</option>
+                          <option value="1944">1944</option>
+                          <option value="1943">1943</option>
+                          <option value="1942">1942</option>
+                          <option value="1941">1941</option>
+                          <option value="1940">1940</option>
                       </select>
         </div>
         <div class="col-sm-1"></div>
@@ -935,7 +983,7 @@
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
           <label class="control-label" for="email">Score<span class="required">*</span></label>
-          <input type="text" name="js_resut" class="form-control" placeholder="Enter Score" value="<?php if(!empty($education_data)) echo $education_data[0]->js_resut; ?>" onkeypress="javascript:return isNumber1(event)" required>
+          <input type="text" name="js_resut" class="form-control" placeholder="Enter Score" value="" onkeypress="javascript:return isNumber1(event)" required>
         </div>
         <div class="col-sm-1"></div>
       </div>
@@ -951,18 +999,11 @@
       </div>
     </div>
   </div>
-                            <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" value='1' onclick="get_specialization(this.value);"  data-target="#myModal">Edit</a></span> 
+    	                    	<span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal">Edit</a></span>	
 
       </li>
-       <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
-                        $seeker_edu_level_id = '2';
-                         $education_data2 = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id); 
-                        // $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
-                        // print_r($education_data);die;
-                      ?>
-      <li class="bullet"><a href="#" data-toggle="modal" <?php if (isset($education_data2) && empty($education_data2)) { ?> style="color: red;"
-       
-    <?php  } ?>  data-target="#myModal1">Masters / Post-Graduation</a>
+      
+      <li class="bullet"><a href="#" data-toggle="modal" data-target="#myModal1">Masters / Post-Graduation</a>
       <div class="modal fade" id="myModal1" role="dialog">
     <div class="modal-dialog modal-md">
       <div class="modal-content">
@@ -970,13 +1011,10 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Masters / Post-Graduation</h4>
         </div>
-        
-     
-
         <div class="modal-body education_frm">
   <div class="modal-body education_frm">
-  <form id="Educational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
-         <input type="hidden" name="js_education_id" value="<?php echo $education_data2[0]->js_education_id; ?>">
+  <form id="Educational-info" class="form-horizontal" action="http://www.consultnhire.com/job_seeker/update_education" method="post">
+         <input type="hidden" name="js_education_id" value="">
       <div class="form-group">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
@@ -993,9 +1031,8 @@
           <label class="control-label" for="email">Specialization<span class="required">*</span></label>
           <select name="specialization_id" id="specialization_id" class="form-control" required="">
             <option value="">Select One</option>
-                         <?php foreach($pgdspecial as $edu_special){?>
-              <option value="<?php echo $edu_special['id']; ?>"<?php if(!empty($$education_data2)) if($$education_data2[0]->specialization_id==$edu_special['id']) echo "selected";?>><?php echo $edu_special['education_specialization']; ?></option>
-            <?php } ?>
+                           <option value="4">IT</option>
+                          <option value="5">Physics</option>
                       </select>
         </div>
         <div class="col-sm-1"></div>
@@ -1005,7 +1042,7 @@
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
           <label class="control-label" for="email">University / Name of Institution<span class="required">*</span></label>
-          <input type="text" name="js_institute_name" class="form-control" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($education_data)) echo $education_data2[0]->js_institute_name; ?>">
+          <input type="text" name="js_institute_name" class="form-control" id="js_institute_name" placeholder="Enter Institute Name" required value="">
         </div>
         <div class="col-sm-1"></div>
       </div>
@@ -1014,9 +1051,7 @@
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
           <label class="control-label" for="email">Course Type<span class="required">*</span></label>
-                       <?php foreach($course as $courses){?>
-            <input type="radio" name="education_type_id" required id="education_type_id" value="<?php echo $courses['education_type_id']; ?>"<?php if(!empty($education_data2)) if($education_data2[0]->education_type_id==$courses['education_type_id']) echo "checked";?> style="margin: 0 1px;"> <?php echo $courses['education_type']; ?>
-          <?php } ?>                   
+                      <input type="radio" name="education_type_id" required id="education_type_id" value="1" style="margin: 0 1px;"> Part Time                      <input type="radio" name="education_type_id" required id="education_type_id" value="2" style="margin: 0 1px;"> Full Time                      <input type="radio" name="education_type_id" required id="education_type_id" value="3" style="margin: 0 1px;"> Correspondence/Distance learning                   
 
         </div>
         <div class="col-sm-1"></div>
@@ -1028,14 +1063,87 @@
           <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
           <select name="js_year_of_passing" id="ddlYear" class="form-control" required="">
            <option value="">Select Completion Year</option>
-                         <?php
-              $currently_selected = date('Y'); 
-              $earliest_year = 1940; 
-              $latest_year = date('Y'); 
-              foreach ( range( $latest_year, $earliest_year ) as $i ) {
-              ?>
-              <option value="<?php echo $i; ?>"<?php if(!empty($education_data2)) if($education_data2[0]->js_year_of_passing==$i) echo "selected";?>><?php echo $i; ?></option>
-            <?php } ?>
+                          <option value="2020">2020</option>
+                          <option value="2019">2019</option>
+                          <option value="2018">2018</option>
+                          <option value="2017">2017</option>
+                          <option value="2016">2016</option>
+                          <option value="2015">2015</option>
+                          <option value="2014">2014</option>
+                          <option value="2013">2013</option>
+                          <option value="2012">2012</option>
+                          <option value="2011">2011</option>
+                          <option value="2010">2010</option>
+                          <option value="2009">2009</option>
+                          <option value="2008">2008</option>
+                          <option value="2007">2007</option>
+                          <option value="2006">2006</option>
+                          <option value="2005">2005</option>
+                          <option value="2004">2004</option>
+                          <option value="2003">2003</option>
+                          <option value="2002">2002</option>
+                          <option value="2001">2001</option>
+                          <option value="2000">2000</option>
+                          <option value="1999">1999</option>
+                          <option value="1998">1998</option>
+                          <option value="1997">1997</option>
+                          <option value="1996">1996</option>
+                          <option value="1995">1995</option>
+                          <option value="1994">1994</option>
+                          <option value="1993">1993</option>
+                          <option value="1992">1992</option>
+                          <option value="1991">1991</option>
+                          <option value="1990">1990</option>
+                          <option value="1989">1989</option>
+                          <option value="1988">1988</option>
+                          <option value="1987">1987</option>
+                          <option value="1986">1986</option>
+                          <option value="1985">1985</option>
+                          <option value="1984">1984</option>
+                          <option value="1983">1983</option>
+                          <option value="1982">1982</option>
+                          <option value="1981">1981</option>
+                          <option value="1980">1980</option>
+                          <option value="1979">1979</option>
+                          <option value="1978">1978</option>
+                          <option value="1977">1977</option>
+                          <option value="1976">1976</option>
+                          <option value="1975">1975</option>
+                          <option value="1974">1974</option>
+                          <option value="1973">1973</option>
+                          <option value="1972">1972</option>
+                          <option value="1971">1971</option>
+                          <option value="1970">1970</option>
+                          <option value="1969">1969</option>
+                          <option value="1968">1968</option>
+                          <option value="1967">1967</option>
+                          <option value="1966">1966</option>
+                          <option value="1965">1965</option>
+                          <option value="1964">1964</option>
+                          <option value="1963">1963</option>
+                          <option value="1962">1962</option>
+                          <option value="1961">1961</option>
+                          <option value="1960">1960</option>
+                          <option value="1959">1959</option>
+                          <option value="1958">1958</option>
+                          <option value="1957">1957</option>
+                          <option value="1956">1956</option>
+                          <option value="1955">1955</option>
+                          <option value="1954">1954</option>
+                          <option value="1953">1953</option>
+                          <option value="1952">1952</option>
+                          <option value="1951">1951</option>
+                          <option value="1950">1950</option>
+                          <option value="1949">1949</option>
+                          <option value="1948">1948</option>
+                          <option value="1947">1947</option>
+                          <option value="1946">1946</option>
+                          <option value="1945">1945</option>
+                          <option value="1944">1944</option>
+                          <option value="1943">1943</option>
+                          <option value="1942">1942</option>
+                          <option value="1941">1941</option>
+                          <option value="1940">1940</option>
                       </select>
         </div>
         <div class="col-sm-1"></div>
@@ -1062,11 +1170,10 @@
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
           <label class="control-label" for="email">Score<span class="required">*</span></label>
-          <input type="text" name="js_resut" class="form-control" placeholder="Enter Score" value="<?php if(!empty($education_data2)) echo $education_data2[0]->js_resut; ?>" onkeypress="javascript:return isNumber1(event)" required>
+          <input type="text" name="js_resut" class="form-control" placeholder="Enter Score" value="" onkeypress="javascript:return isNumber1(event)" required>
         </div>
         <div class="col-sm-1"></div>
       </div>
-
       
         
 
@@ -1080,18 +1187,10 @@
       </div>
     </div>
   </div>
-                          <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal1">Edit</a></span>  
+  	                    	<span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal1">Edit</a></span>	
 
       </li>
-       <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
-                        $seeker_edu_level_id = '3';
-                         $education_data3 = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id); 
-                        // $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
-                        // print_r($education_data);die;
-                      ?>
-      <li class="bullet"><a href="#" data-toggle="modal" <?php if (isset($education_data3) && empty($education_data3)) { ?> style="color: red;"
-       
-    <?php  } ?> data-target="#myModal2">Graduation / Diploma</a>
+      <li class="bullet"><a href="#" data-toggle="modal" data-target="#myModal2">Graduation / Diploma</a>
       <div class="modal fade" id="myModal2" role="dialog">
     <div class="modal-dialog modal-md">
       <div class="modal-content">
@@ -1099,10 +1198,9 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Graduation / Diploma</h4>
         </div>
-        
         <div class="modal-body education_frm">
-  <form id="Educational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
-         <input type="hidden" name="js_education_id" value="<?php echo $education_data3[0]->js_education_id; ?>">
+  <form id="Educational-info" class="form-horizontal" action="http://www.consultnhire.com/job_seeker/update_education" method="post">
+         <input type="hidden" name="js_education_id" value="">
       <div class="form-group">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
@@ -1119,9 +1217,10 @@
           <label class="control-label" for="email">Specialization<span class="required">*</span></label>
           <select name="specialization_id" id="specialization_id" class="form-control" required="">
             <option value="">Select One</option>
-                         <?php foreach($gddspecial as $edu_special){?>
-              <option value="<?php echo $edu_special['id']; ?>"<?php if(!empty($education_data3)) if($education_data3[0]->specialization_id==$edu_special['id']) echo "selected";?>><?php echo $edu_special['education_specialization']; ?></option>
-            <?php } ?>
+                           <option value="1">BE&emsp;/&emsp;B.Tech (Comp. Engg.)</option>
+                          <option value="2">Diploma (Comp. Engg)</option>
+                          <option value="3">Diploma(Civil Engg)</option>
+                          <option value="7">BE&emsp;/&emsp;B.Tech(Electrical Engineering)</option>
                       </select>
         </div>
         <div class="col-sm-1"></div>
@@ -1131,7 +1230,7 @@
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
           <label class="control-label" for="email">University&emsp;/&emsp;Name of Institution<span class="required">*</span></label>
-         <input type="text" name="js_institute_name" class="form-control" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($education_data3)) echo $education_data3[0]->js_institute_name; ?>">
+          <input type="text" name="js_institute_name" class="form-control" id="js_institute_name" placeholder="Enter Institute Name" required value="">
         </div>
         <div class="col-sm-1"></div>
       </div>
@@ -1140,9 +1239,7 @@
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
           <label class="control-label" for="email">Course Type<span class="required">*</span></label>
-                    <?php foreach($course as $courses){?>
-            <input type="radio" name="education_type_id" required id="education_type_id" value="<?php echo $courses['education_type_id']; ?>"<?php if(!empty($education_data3)) if($education_data3[0]->education_type_id==$courses['education_type_id']) echo "checked";?> style="margin: 0 1px;"> <?php echo $courses['education_type']; ?>
-          <?php } ?>                    
+                      <input type="radio" name="education_type_id" required id="education_type_id" value="1" style="margin: 0 1px;"><b> Part Time   </b>                   <input type="radio" name="education_type_id" required id="education_type_id" value="2" style="margin: 0 1px;"><b> Full Time    </b>                  <input type="radio" name="education_type_id" required id="education_type_id" value="3" style="margin: 0 1px;"> <b>Correspondence/Distance learning   </b>                
 
         </div>
         <div class="col-sm-1"></div>
@@ -1154,14 +1251,87 @@
           <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
           <select name="js_year_of_passing" id="ddlYear" class="form-control" required="">
            <option value="">Select Completion Year</option>
-              <?php
-              $currently_selected = date('Y'); 
-              $earliest_year = 1940; 
-              $latest_year = date('Y'); 
-              foreach ( range( $latest_year, $earliest_year ) as $i ) {
-              ?>
-              <option value="<?php echo $i; ?>"<?php if(!empty($education_data3)) if($education_data3[0]->js_year_of_passing==$i) echo "selected";?>><?php echo $i; ?></option>
-            <?php } ?>
+                          <option value="2020">2020</option>
+                          <option value="2019">2019</option>
+                          <option value="2018">2018</option>
+                          <option value="2017">2017</option>
+                          <option value="2016">2016</option>
+                          <option value="2015">2015</option>
+                          <option value="2014">2014</option>
+                          <option value="2013">2013</option>
+                          <option value="2012">2012</option>
+                          <option value="2011">2011</option>
+                          <option value="2010">2010</option>
+                          <option value="2009">2009</option>
+                          <option value="2008">2008</option>
+                          <option value="2007">2007</option>
+                          <option value="2006">2006</option>
+                          <option value="2005">2005</option>
+                          <option value="2004">2004</option>
+                          <option value="2003">2003</option>
+                          <option value="2002">2002</option>
+                          <option value="2001">2001</option>
+                          <option value="2000">2000</option>
+                          <option value="1999">1999</option>
+                          <option value="1998">1998</option>
+                          <option value="1997">1997</option>
+                          <option value="1996">1996</option>
+                          <option value="1995">1995</option>
+                          <option value="1994">1994</option>
+                          <option value="1993">1993</option>
+                          <option value="1992">1992</option>
+                          <option value="1991">1991</option>
+                          <option value="1990">1990</option>
+                          <option value="1989">1989</option>
+                          <option value="1988">1988</option>
+                          <option value="1987">1987</option>
+                          <option value="1986">1986</option>
+                          <option value="1985">1985</option>
+                          <option value="1984">1984</option>
+                          <option value="1983">1983</option>
+                          <option value="1982">1982</option>
+                          <option value="1981">1981</option>
+                          <option value="1980">1980</option>
+                          <option value="1979">1979</option>
+                          <option value="1978">1978</option>
+                          <option value="1977">1977</option>
+                          <option value="1976">1976</option>
+                          <option value="1975">1975</option>
+                          <option value="1974">1974</option>
+                          <option value="1973">1973</option>
+                          <option value="1972">1972</option>
+                          <option value="1971">1971</option>
+                          <option value="1970">1970</option>
+                          <option value="1969">1969</option>
+                          <option value="1968">1968</option>
+                          <option value="1967">1967</option>
+                          <option value="1966">1966</option>
+                          <option value="1965">1965</option>
+                          <option value="1964">1964</option>
+                          <option value="1963">1963</option>
+                          <option value="1962">1962</option>
+                          <option value="1961">1961</option>
+                          <option value="1960">1960</option>
+                          <option value="1959">1959</option>
+                          <option value="1958">1958</option>
+                          <option value="1957">1957</option>
+                          <option value="1956">1956</option>
+                          <option value="1955">1955</option>
+                          <option value="1954">1954</option>
+                          <option value="1953">1953</option>
+                          <option value="1952">1952</option>
+                          <option value="1951">1951</option>
+                          <option value="1950">1950</option>
+                          <option value="1949">1949</option>
+                          <option value="1948">1948</option>
+                          <option value="1947">1947</option>
+                          <option value="1946">1946</option>
+                          <option value="1945">1945</option>
+                          <option value="1944">1944</option>
+                          <option value="1943">1943</option>
+                          <option value="1942">1942</option>
+                          <option value="1941">1941</option>
+                          <option value="1940">1940</option>
                       </select>
         </div>
         <div class="col-sm-1"></div>
@@ -1188,7 +1358,7 @@
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
           <label class="control-label" for="email">Score<span class="required">*</span></label>
-          <input type="text" name="js_resut" class="form-control" placeholder="Enter Score" value="<?php if(!empty($education_data3)) echo $education_data3[0]->js_resut; ?>" onkeypress="javascript:return isNumber1(event)" required>
+          <input type="text" name="js_resut" class="form-control" placeholder="Enter Score" value="" onkeypress="javascript:return isNumber1(event)" required>
         </div>
         <div class="col-sm-1"></div>
       </div>
@@ -1204,18 +1374,10 @@
       </div>
     </div>
   </div>
-                      <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal2">Edit</a></span>  
+                    	<span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal2">Edit</a></span>	
 
       </li>
-       <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
-                        $seeker_edu_level_id = '4';
-                         $education_data4 = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id); 
-                        // $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
-                        // print_r($education_data);die;
-                      ?>
-      <li class="bullet"><a href="#" data-toggle="modal" <?php if (isset($education_data4) && empty($education_data4)) { ?> style="color: red;"
-       
-    <?php  } ?> data-target="#myModal3">12th</a>
+      <li class="bullet"><a href="#" data-toggle="modal" data-target="#myModal3">12th</a>
       <div class="modal fade" id="myModal3" role="dialog">
     <div class="modal-dialog modal-md">
       <div class="modal-content">
@@ -1223,16 +1385,15 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">12th</h4>
         </div>
-         
         <div class="modal-body education_frm">
-  <form id="Educational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
-         <input type="hidden" name="js_education_id" value="<?php echo $education_data4[0]->js_education_id; ?>">
+  <form id="Educational-info" class="form-horizontal" action="http://www.consultnhire.com/job_seeker/update_education" method="post">
+         <input type="hidden" name="js_education_id" value="">
       <div class="form-group">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
           <label class="control-label" for="email">Education<span class="required">*</span></label>
           <select name="education_level_id" id="education_level_id" class="form-control" required="">
-                       <option value="4">12th</option>
+                       <option value="5">12th</option>
                       </select>
         </div>
         <div class="col-sm-1"></div>
@@ -1244,14 +1405,87 @@
           <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
           <select name="js_year_of_passing" id="ddlYear" class="form-control" required="">
            <option value="">Select Completion Year</option>
-                         <?php
-              $currently_selected = date('Y'); 
-              $earliest_year = 1940; 
-              $latest_year = date('Y'); 
-              foreach ( range( $latest_year, $earliest_year ) as $i ) {
-              ?>
-              <option value="<?php echo $i; ?>"<?php if(!empty($education_data4)) if($education_data4[0]->js_year_of_passing==$i) echo "selected";?>><?php echo $i; ?></option>
-            <?php } ?>
+                          <option value="2020">2020</option>
+                          <option value="2019">2019</option>
+                          <option value="2018">2018</option>
+                          <option value="2017">2017</option>
+                          <option value="2016">2016</option>
+                          <option value="2015">2015</option>
+                          <option value="2014">2014</option>
+                          <option value="2013">2013</option>
+                          <option value="2012">2012</option>
+                          <option value="2011">2011</option>
+                          <option value="2010">2010</option>
+                          <option value="2009">2009</option>
+                          <option value="2008">2008</option>
+                          <option value="2007">2007</option>
+                          <option value="2006">2006</option>
+                          <option value="2005">2005</option>
+                          <option value="2004">2004</option>
+                          <option value="2003">2003</option>
+                          <option value="2002">2002</option>
+                          <option value="2001">2001</option>
+                          <option value="2000">2000</option>
+                          <option value="1999">1999</option>
+                          <option value="1998">1998</option>
+                          <option value="1997">1997</option>
+                          <option value="1996">1996</option>
+                          <option value="1995">1995</option>
+                          <option value="1994">1994</option>
+                          <option value="1993">1993</option>
+                          <option value="1992">1992</option>
+                          <option value="1991">1991</option>
+                          <option value="1990">1990</option>
+                          <option value="1989">1989</option>
+                          <option value="1988">1988</option>
+                          <option value="1987">1987</option>
+                          <option value="1986">1986</option>
+                          <option value="1985">1985</option>
+                          <option value="1984">1984</option>
+                          <option value="1983">1983</option>
+                          <option value="1982">1982</option>
+                          <option value="1981">1981</option>
+                          <option value="1980">1980</option>
+                          <option value="1979">1979</option>
+                          <option value="1978">1978</option>
+                          <option value="1977">1977</option>
+                          <option value="1976">1976</option>
+                          <option value="1975">1975</option>
+                          <option value="1974">1974</option>
+                          <option value="1973">1973</option>
+                          <option value="1972">1972</option>
+                          <option value="1971">1971</option>
+                          <option value="1970">1970</option>
+                          <option value="1969">1969</option>
+                          <option value="1968">1968</option>
+                          <option value="1967">1967</option>
+                          <option value="1966">1966</option>
+                          <option value="1965">1965</option>
+                          <option value="1964">1964</option>
+                          <option value="1963">1963</option>
+                          <option value="1962">1962</option>
+                          <option value="1961">1961</option>
+                          <option value="1960">1960</option>
+                          <option value="1959">1959</option>
+                          <option value="1958">1958</option>
+                          <option value="1957">1957</option>
+                          <option value="1956">1956</option>
+                          <option value="1955">1955</option>
+                          <option value="1954">1954</option>
+                          <option value="1953">1953</option>
+                          <option value="1952">1952</option>
+                          <option value="1951">1951</option>
+                          <option value="1950">1950</option>
+                          <option value="1949">1949</option>
+                          <option value="1948">1948</option>
+                          <option value="1947">1947</option>
+                          <option value="1946">1946</option>
+                          <option value="1945">1945</option>
+                          <option value="1944">1944</option>
+                          <option value="1943">1943</option>
+                          <option value="1942">1942</option>
+                          <option value="1941">1941</option>
+                          <option value="1940">1940</option>
                       </select>
         </div>
         <div class="col-sm-1"></div>
@@ -1265,117 +1499,11 @@
           <label class="control-label" for="email">Board<span class="required">*</span></label>
           <select name="board_id" id="board_id" class="form-control">
             <option value="">Select Board</option>
-                          <!-- <option value="1">CBSE</option>
+                          <option value="1">CBSE</option>
                           <option value="2">CISCE(ICSE/ISC)</option>
                           <option value="3">Diploma</option>
                           <option value="4">National Open School</option>
-                          <option value="7">IB(International Baccalaureate)</option> -->
-              <?php foreach($schoolboard as $boards){?>
-              <option value="<?php echo $boards['schoolboard_id']; ?>"<?php if(!empty($education_data4)) if($education_data4[0]->board_id==$boards['schoolboard_id']) echo "selected";?>><?php echo $boards['schoolboard_name']; ?></option>
-            <?php } ?>
-                      </select>
-        </div>
-        <div class="col-sm-1"></div>
-      </div>
-    
-      <div class="form-group">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-10">
-          <label class="control-label" for="email">School Medium<span class="required">*</span></label>
-          <select name="schoolmedium_id" id="schoolmedium_id" class="form-control">
-             <?php foreach($schoolmedium as $medium){?>
-            <option value="<?php echo $medium['schoolmedium_id']; ?>"<?php if(!empty($education_data4)) if($education_data4[0]->schoolmedium_id==$medium['schoolmedium_id']) echo "selected";?>><?php echo $medium['school_medium']; ?></option>
-            <?php } ?>
-                      </select>
-        </div>
-        <div class="col-sm-1"></div>
-      </div>
-    
-    
-    <div class="form-group">
-      <div class="col-sm-1"></div>
-      <div class="col-sm-10">
-        <label class="control-label" for="email">Total Score<span class="required">*</span></label>
-        <input type="text" name="totalmarks_id" id="totalmarks_id" class="form-control" value="<?php if(!empty($education_data4)) echo $education_data4[0]->totalmarks_id; ?>" placeholder="Enter Total Score" onkeypress="javascript:return isNumber(event)">
-      </div>
-      <div class="col-sm-1"></div>
-    </div>
-      
-
-    <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-      <button type="submit" class="btn btn-primary">Save</button>
-    </div>
-  </form></div>
-        
-      </div>
-    </div>
-  </div>
-                    <span style="float: right;font-size:12px;cursor: pointer;"><a  href="#" data-toggle="modal" data-target="#myModal3">Edit</a></span> 
-
-
-      </li>
-       <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
-                        $seeker_edu_level_id = '5';
-                         $education_data5 = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id); 
-                        // $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
-                        // print_r($education_data);die;
-                      ?>
-      <li class="bullet"><a href="#" data-toggle="modal" <?php if (isset($education_data5) && empty($education_data5)) { ?> style="color: red;"
-       
-    <?php  } ?> data-target="#myModal4">10th</a>
-      <div class="modal fade" id="myModal4" role="dialog">
-    <div class="modal-dialog modal-md">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">10th</h4>
-        </div>
-        
-        <div class="modal-body education_frm">
-  <form id="Educational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
-         <input type="hidden" name="js_education_id" value="<?php echo $education_data5[0]->js_education_id; ?>">
-      <div class="form-group">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-10">
-          <label class="control-label" for="email">Education<span class="required">*</span></label>
-          <select name="education_level_id" id="education_level_id" class="form-control" required="">
-                       <option value="5">10th</option>
-                      </select>
-        </div>
-        <div class="col-sm-1"></div>
-      </div>
-          
-      <div class="form-group">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-10">
-          <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
-          <select name="js_year_of_passing" id="ddlYear" class="form-control" required="">
-           <option value="">Select Completion Year</option>
-                         <?php
-              $currently_selected = date('Y'); 
-              $earliest_year = 1940; 
-              $latest_year = date('Y'); 
-              foreach ( range( $latest_year, $earliest_year ) as $i ) {
-              ?>
-              <option value="<?php echo $i; ?>"<?php if(!empty($education_data5)) if($education_data5[0]->js_year_of_passing==$i) echo "selected";?>><?php echo $i; ?></option>
-            <?php } ?>
-                      </select>
-        </div>
-        <div class="col-sm-1"></div>
-
-      </div>
- 
-
-      <div class="form-group">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-10">
-          <label class="control-label" for="email">Board<span class="required">*</span></label>
-          <select name="board_id" id="board_id" class="form-control">
-            <option value="">Select Board</option>
-                          <?php foreach($schoolboard as $boards){?>
-              <option value="<?php echo $boards['schoolboard_id']; ?>"<?php if(!empty($education_data5)) if($education_data5[0]->board_id==$boards['schoolboard_id']) echo "selected";?>><?php echo $boards['schoolboard_name']; ?></option>
-            <?php } ?>
+                          <option value="7">IB(International Baccalaureate)</option>
                       </select>
         </div>
         <div class="col-sm-1"></div>
@@ -1387,9 +1515,12 @@
           <label class="control-label" for="email">School Medium<span class="required">*</span></label>
           <select name="schoolmedium_id" id="schoolmedium_id" class="form-control">
             <option value="">Select Medium</option>
-               <?php foreach($schoolmedium as $medium){?>
-            <option value="<?php echo $medium['schoolmedium_id']; ?>"<?php if(!empty($education_data5)) if($education_data5[0]->schoolmedium_id==$medium['schoolmedium_id']) echo "selected";?>><?php echo $medium['school_medium']; ?></option>
-            <?php } ?>
+                       <option value="1">Assamese / Asomiya</option>
+                        <option value="2">Bengali / Bangla</option>
+                        <option value="3">English</option>
+                        <option value="4">Gujarati</option>
+                        <option value="5">Hindi</option>
+                        <option value="6">kannada</option>
                       </select>
         </div>
         <div class="col-sm-1"></div>
@@ -1400,7 +1531,180 @@
       <div class="col-sm-1"></div>
       <div class="col-sm-10">
         <label class="control-label" for="email">Total Score<span class="required">*</span></label>
-        <input type="text" name="totalmarks_id" id="totalmarks_id" class="form-control" value="<?php if(!empty($education_data5)) echo $education_data5[0]->totalmarks_id; ?>" placeholder="Enter Total Score" onkeypress="javascript:return isNumber(event)">
+        <input type="text" name="totalmarks_id" id="totalmarks_id" class="form-control" value="" placeholder="Enter Total Score" onkeypress="javascript:return isNumber(event)">
+      </div>
+      <div class="col-sm-1"></div>
+    </div>
+      
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+  </form></div>
+        
+      </div>
+    </div>
+  </div>
+                  	<span style="float: right;font-size:12px;cursor: pointer;"><a  href="#" data-toggle="modal" data-target="#myModal3">Edit</a></span>	
+
+
+      </li>
+      <li class="bullet"><a href="#" data-toggle="modal" data-target="#myModal4">10th</a>
+      <div class="modal fade" id="myModal4" role="dialog">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">10th</h4>
+        </div>
+        <div class="modal-body education_frm">
+  <form id="Educational-info" class="form-horizontal" action="http://www.consultnhire.com/job_seeker/update_education" method="post">
+         <input type="hidden" name="js_education_id" value="">
+      <div class="form-group">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+          <label class="control-label" for="email">Education<span class="required">*</span></label>
+          <select name="education_level_id" id="education_level_id" class="form-control" required="">
+                       <option value="6">10th</option>
+                      </select>
+        </div>
+        <div class="col-sm-1"></div>
+      </div>
+          
+      <div class="form-group">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+          <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
+          <select name="js_year_of_passing" id="ddlYear" class="form-control" required="">
+           <option value="">Select Completion Year</option>
+                          <option value="2020">2020</option>
+                          <option value="2019">2019</option>
+                          <option value="2018">2018</option>
+                          <option value="2017">2017</option>
+                          <option value="2016">2016</option>
+                          <option value="2015">2015</option>
+                          <option value="2014">2014</option>
+                          <option value="2013">2013</option>
+                          <option value="2012">2012</option>
+                          <option value="2011">2011</option>
+                          <option value="2010">2010</option>
+                          <option value="2009">2009</option>
+                          <option value="2008">2008</option>
+                          <option value="2007">2007</option>
+                          <option value="2006">2006</option>
+                          <option value="2005">2005</option>
+                          <option value="2004">2004</option>
+                          <option value="2003">2003</option>
+                          <option value="2002">2002</option>
+                          <option value="2001">2001</option>
+                          <option value="2000">2000</option>
+                          <option value="1999">1999</option>
+                          <option value="1998">1998</option>
+                          <option value="1997">1997</option>
+                          <option value="1996">1996</option>
+                          <option value="1995">1995</option>
+                          <option value="1994">1994</option>
+                          <option value="1993">1993</option>
+                          <option value="1992">1992</option>
+                          <option value="1991">1991</option>
+                          <option value="1990">1990</option>
+                          <option value="1989">1989</option>
+                          <option value="1988">1988</option>
+                          <option value="1987">1987</option>
+                          <option value="1986">1986</option>
+                          <option value="1985">1985</option>
+                          <option value="1984">1984</option>
+                          <option value="1983">1983</option>
+                          <option value="1982">1982</option>
+                          <option value="1981">1981</option>
+                          <option value="1980">1980</option>
+                          <option value="1979">1979</option>
+                          <option value="1978">1978</option>
+                          <option value="1977">1977</option>
+                          <option value="1976">1976</option>
+                          <option value="1975">1975</option>
+                          <option value="1974">1974</option>
+                          <option value="1973">1973</option>
+                          <option value="1972">1972</option>
+                          <option value="1971">1971</option>
+                          <option value="1970">1970</option>
+                          <option value="1969">1969</option>
+                          <option value="1968">1968</option>
+                          <option value="1967">1967</option>
+                          <option value="1966">1966</option>
+                          <option value="1965">1965</option>
+                          <option value="1964">1964</option>
+                          <option value="1963">1963</option>
+                          <option value="1962">1962</option>
+                          <option value="1961">1961</option>
+                          <option value="1960">1960</option>
+                          <option value="1959">1959</option>
+                          <option value="1958">1958</option>
+                          <option value="1957">1957</option>
+                          <option value="1956">1956</option>
+                          <option value="1955">1955</option>
+                          <option value="1954">1954</option>
+                          <option value="1953">1953</option>
+                          <option value="1952">1952</option>
+                          <option value="1951">1951</option>
+                          <option value="1950">1950</option>
+                          <option value="1949">1949</option>
+                          <option value="1948">1948</option>
+                          <option value="1947">1947</option>
+                          <option value="1946">1946</option>
+                          <option value="1945">1945</option>
+                          <option value="1944">1944</option>
+                          <option value="1943">1943</option>
+                          <option value="1942">1942</option>
+                          <option value="1941">1941</option>
+                          <option value="1940">1940</option>
+                      </select>
+        </div>
+        <div class="col-sm-1"></div>
+
+      </div>
+ 
+
+      <div class="form-group">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+          <label class="control-label" for="email">Board<span class="required">*</span></label>
+          <select name="board_id" id="board_id" class="form-control">
+            <option value="">Select Board</option>
+                          <option value="1">CBSE</option>
+                          <option value="2">CISCE(ICSE/ISC)</option>
+                          <option value="3">Diploma</option>
+                          <option value="4">National Open School</option>
+                          <option value="7">IB(International Baccalaureate)</option>
+                      </select>
+        </div>
+        <div class="col-sm-1"></div>
+      </div>
+    
+      <div class="form-group">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+          <label class="control-label" for="email">School Medium<span class="required">*</span></label>
+          <select name="schoolmedium_id" id="schoolmedium_id" class="form-control">
+            <option value="">Select Medium</option>
+                       <option value="1">Assamese / Asomiya</option>
+                        <option value="2">Bengali / Bangla</option>
+                        <option value="3">English</option>
+                        <option value="4">Gujarati</option>
+                        <option value="5">Hindi</option>
+                        <option value="6">kannada</option>
+                      </select>
+        </div>
+        <div class="col-sm-1"></div>
+      </div>
+    
+    
+    <div class="form-group">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-10">
+        <label class="control-label" for="email">Total Score<span class="required">*</span></label>
+        <input type="text" name="totalmarks_id" id="totalmarks_id" class="form-control" value="" placeholder="Enter Total Score" onkeypress="javascript:return isNumber(event)">
       </div>
       <div class="col-sm-1"></div>
     </div>
@@ -1418,13 +1722,25 @@
   
   
   
-                  <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal4">Edit</a></span>  
+                	<span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal4">Edit</a></span>	
 
       </li>
 
       </ul>
       
     </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div id="menu3" class="tab-pane fade">
     <ul>
     <?php  $designation = $this->Master_model->getMaster('designation',$where=false);
