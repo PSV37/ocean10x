@@ -55,6 +55,19 @@
    
 	background-color:#d8e8f9;
 }
+button#next {
+    background-color: #18c5bd;
+    border: none;
+    padding: 10px 40px;
+    font-weight: 700;
+    margin-right: 13px;
+    margin-top: -62px;
+}
+ .bo-c_active{
+    background-color: #0453af;
+    color: #fff;
+    box-shadow: inset 1px -1px 8px 0px #eae8e8;
+}    
      </style>
 </head>
    
@@ -117,8 +130,10 @@
                       <!-- <option value="<?php echo $svalue['id']; ?>"></option> -->
     <div class="col-md-2">
     <div class="bo-c">
+
     <span name="skill_names" id="skill_names<?php echo $svalue['id']; ?>"  value="<?php echo $svalue['id']; ?>" onclick="gettopic(<?php echo $svalue['id']; ?>);"><?php echo $svalue['skill_name']; ?></span></div>
     </div>
+
                     <?php  } ?>
 
                     <div class="col-md-12 col-sm-12">
@@ -130,7 +145,6 @@
     <input type="hidden" id="skill_name" name="skill_name" value="">
    
    
-   <div class="col-md-2 show-b">Show more</div>
     
     <button id="next" type="submit" class="btn btn-primary pull-right">NEXT</button>
     </div>

@@ -19,13 +19,13 @@ li.bullet {
     width: 129px;
     text-align: center;
     border: solid 2px #18c5bd;
-    border-radius: 30px;
+    border-radius: 30px;    
       
 }
 .nav>li>a {
     position: relative;
     display: block;
-    padding:6px 15px;
+    padding:6px 15px !important;
     color: #18c5bd;       
     font-size: 12px;
 }
@@ -846,7 +846,7 @@ li.bullet {
     <div id="menu1" class="tab-pane fade">
     
       <div class="education_header" style="position:relative;">
-          <img src="https://www.jetchill.com/wp-content/uploads/2017/05/blog-header-background.jpg" style="width:100%;position:relative;"></img>
+          <img src="" style="width:100%;position:relative;"></img>
             <div class="icon-education" style="position:absolute;bottom:23px;right:53%;">
             <i class="fas fa-graduation-cap edu-i"></i>
             </div>
