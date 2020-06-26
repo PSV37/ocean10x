@@ -48,13 +48,17 @@
                                     <span class="text item">Dashboard</span>
                                   </a>
                                 </li>
-                                <li>
+                                <li <?php if ($activemenu == 'cv_bank') { ?>
+                                 class="active"
+                                <?php } ?>>
                                   <a data-dl-view="true" data-dl-title="My profile" href="<?php echo base_url() ?>employer/corporate-cv-bank">
                                     <span class="icon-container"><i class="fas fa-user-alt"></i></span>
                                     <span class="text item">CV Bank</span>
                                   </a>
                                 </li>
-                                <li>
+                                <li <?php if ($activemenu == 'job_post') { ?>
+                                 class="active"
+                                <?php } ?> >
                                   <a data-dl-view="true" data-dl-title="Contacts" href="<?php echo base_url(); ?>employer/job_post">
                                     <span class="icon-container">
                                     <i class="fas fa-phone-volume"></i>
@@ -62,7 +66,9 @@
                                     <span class="text item">Post New Job</span>
                                   </a>
                                 </li>
-                                <li>
+                                <li <?php if ($activemenu == 'active_job') { ?>
+                                 class="active"
+                                <?php } ?>>
                                   <a data-dl-view="true" data-dl-title="Recruitments" href="<?php echo base_url() ?>employer/active-job">
                                     <span class="icon-container">
                                     <i class="fas fa-filter"></i></span>
@@ -76,7 +82,9 @@
                                         <span class="text item">Pending Jobs</span>
                                   </a>
                                 </li>
-                                <li>
+                                <li <?php if ($activemenu == 'questionbank') { ?>
+                                 class="active"
+                                <?php } ?> >
                                   <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url(); ?>employer/all-questions">
                                     <span class="icon-container">
                                       <i class="fas fa-map-signs"></i>
@@ -109,7 +117,9 @@
                                   </a>
                                 </li>
                                 
-                                 <li>
+                                 <li <?php if ($activemenu == 'addemployee') { ?>
+                                 class="active"
+                                <?php } ?>>
                                   <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/addemployee">
                                     <span class="icon-container">
                                        <i class="fas fa-map-signs"></i>

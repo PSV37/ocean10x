@@ -44,7 +44,7 @@ class Job_seeker extends MY_Seeker_Controller
             }
             else
             {
-             $recent_all_jobs=$this->job_apply_model->recent_all_jobs();
+              $recent_all_jobs= $this->job_posting_model->recent_all_jobs();
                $data['job_alert']=sizeof($recent_all_jobs);
                 $data['jobs']= $recent_all_jobs;
             }
