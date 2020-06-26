@@ -14,7 +14,14 @@ li.bullet {
     margin-bottom: 10px;
     padding-bottom: 10px;
 }
-
+.nav-tabs>li {
+    margin-right: 20px;
+    width: 129px;
+    text-align: center;
+    border: solid 2px #18c5bd;
+    border-radius: 30px;
+    /* color: aqua; */
+}
 </style>
 <?php 
     $this->load->view('fontend/layout/new_seeker_header.php');
