@@ -1,4 +1,4 @@
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -54,7 +54,7 @@
      </style>
 </head>
    
-<div class="container-fluid header-image">
+  <div class="container-fluid header-image">
 
 <div class="profile-round">
 <img src="https://image.freepik.com/free-vector/woman-profile-cartoon_18591-58480.jpg" class="rounded-circle" alt="Cinque Terre" width="304" height="236"> 
@@ -109,10 +109,13 @@
     margin-left: -15px;">Choose your programmig prefered languages</h5>
     
     <div class="row">
+    <div class="col-md-12">
         <?php if(!empty($skill_data)) foreach ($skill_data as $svalue) { ?>
                       <!-- <option value="<?php echo $svalue['id']; ?>"></option> -->
-    <div class="col-md-2 bo-c"><span name="skill_names" id="skill_names"  value="<?php echo $svalue['id']; ?>" onclick="gettopic(<?php echo $svalue['id']; ?>);"><?php echo $svalue['skill_name']; ?></span></div>
-
+    <div class="col-md-2">
+    <div class="bo-c">
+    <span name="skill_names" id="skill_names"  value="<?php echo $svalue['id']; ?>" onclick="gettopic(<?php echo $svalue['id']; ?>);"><?php echo $svalue['skill_name']; ?></span></div>
+</div>
                     <?php  } ?>
 
                     <div class="col-md-12 col-sm-12">
@@ -123,7 +126,7 @@
     
     <input type="hidden" id="skill_name" name="skill_name" value="">
    
-    
+    </div>
     </div>
     
    <!--  <div class="row">
