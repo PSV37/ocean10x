@@ -140,7 +140,7 @@
                </div>
                <div class="modal fade" id="myModal50" role="dialog">
                   <div class="modal-dialog modal-md">
-                     <div class="modal-content">
+                     <div class="modal-content" >
                         <div class="modal-header">
                            <button type="button" class="close" data-dismiss="modal">&times;</button>
                            <h4 class="modal-title">Personal Information</h4>
@@ -158,7 +158,7 @@
                                  <label class="control-label col-sm-3" for="email">Date of Birth:</label>
                                  <div class="col-sm-9">
                                     <input type="text" class="form-control datepicker" id="edit_company_profile_id" required name="date_of_birth" value="<?php echo date('d-m-Y', strtotime($js_personal_info->date_of_birth)); ?>">
-                                    <input type="checkbox" required name="dobmake_public" value="No"<?php if($js_personal_info->dob_visiblity=='No') {echo 'checked'; }else{}?>  > Birthday not visible to my network
+                                    <input type="checkbox" required name="dobmake_public" value="No"<?php if($js_personal_info->dob_visiblity=='No') {echo 'checked'; }else{} ?>  > Birthday not visible to my network
                                  </div>
                               </div>
                               <div class="form-group">
@@ -540,8 +540,8 @@
                               </div>
                            </form>
                         </div>
+                      </div>
 
-                     </div>
                   </div>
                </div>
                <div id="menu1" class="tab-pane fade">
