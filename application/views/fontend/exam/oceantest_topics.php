@@ -63,6 +63,11 @@ button#next {
     margin-right: 13px;
     margin-top: -62px;
 }
+ .bo-c_active{
+    background-color: #0453af;
+    color: #fff;
+    box-shadow: inset 1px -1px 8px 0px #eae8e8;
+}    
      </style>
 </head>
    
