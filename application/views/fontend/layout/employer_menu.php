@@ -126,10 +126,4 @@
               </aside>
             </div>
             </div>
-            <script type="text/javascript">
-               $('li a').click(function(e) {
-                  e.preventDefault();
-                  $('li').removeClass('active');
-                  $(this).addClass('active');
-              });
-            </script>
+           
