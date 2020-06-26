@@ -138,8 +138,6 @@
                 <button class="save-apply-btn">save</button>
             </div>
           </form>
-        </div>  
-    </div>
       
 
       <div class="modal fade" id="myModal50" role="dialog">
