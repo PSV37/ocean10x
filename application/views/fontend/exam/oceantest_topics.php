@@ -132,26 +132,12 @@
   
     </div>
     
-   <!--  <div class="row">
-    <div class="col-md-2 bo-c"></div>
-    <div class="col-md-2 bo-c"></div>
-    <div class="col-md-2 bo-c"></div>
-    <div class="col-md-2 bo-c"></div>
-    <div class="col-md-2 bo-c"></div>
-   
-    
-    </div>
-    
-     <div class="row">
-    <div class="col-md-2 bo-c"></div>
-    <div class="col-md-2 bo-c"></div>
-    <div class="col-md-2 bo-c"></div>
-    <div class="col-md-2 bo-c"></div>--->
+   <div class="row">
     <div class="col-md-2 show-b">Show more</div>
     
     <button id="next" type="submit" class="btn btn-primary pull-right">NEXT</button>
     </div>
-    
+    </div>
 </div>
 </form>
 </div>
