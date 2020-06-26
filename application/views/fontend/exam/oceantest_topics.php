@@ -162,7 +162,7 @@ function gettopic(value)
     // alert($(this).val());
     // alert(value);
      var v = document.getElementById("bo-c"+value); 
-            v.className += "bo-c_active";
+            v.className += " bo-c_active";
 
     $.ajax({
             url:'<?php echo base_url();?>exam/gettopic',
