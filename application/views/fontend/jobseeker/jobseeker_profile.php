@@ -2105,9 +2105,9 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
   </div> 
 
 <?php  $count++; ?>
-<?php endforeach;?>
+<?php endforeach;?>    
 
-<div id="menu3" class="tab-pane fade">
+<div id="menu2" class="tab-pane fade">
     <ul>
     <?php  $designation = $this->Master_model->getMaster('designation',$where=false);
 
