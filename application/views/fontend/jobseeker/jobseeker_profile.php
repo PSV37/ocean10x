@@ -20,13 +20,13 @@ li.bullet {
     text-align: center;
     border: solid 2px #18c5bd;
     border-radius: 30px;
-    /* color: aqua; */
+      
 }
 .nav>li>a {
     position: relative;
     display: block;
     padding: 6px 15px;
-    color: #18cfbd;
+    color: #18c5bd;   
     font-size: 12px;
 }
 
