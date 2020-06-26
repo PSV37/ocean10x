@@ -51,6 +51,10 @@
     color: white;
 
 }
+.stepwizard-step button[disabled] {
+   
+	background-color:#d8e8f9;
+}
      </style>
 </head>
    
@@ -105,8 +109,7 @@
 <div class="container-fluid skills">
 <div class="container">
 	<h5 style="font-size: medium;
-    color: #828282;
-    margin-left: -15px;">Choose your programmig prefered languages</h5>
+    color: #828282;">Choose your programmig prefered languages</h5>
     
     <div class="row">
     
@@ -143,8 +146,8 @@
     <div class="col-md-2 bo-c"></div>
     <div class="col-md-2 bo-c"></div>
     <div class="col-md-2 bo-c"></div>
-    <div class="col-md-2 bo-c"></div>
-    <div class="col-md-2 show-b">Show more</div> -->
+    <div class="col-md-2 bo-c"></div>--->
+    <div class="col-md-2 show-b">Show more</div>
     
     <button id="next" type="submit" class="btn btn-primary pull-right">NEXT</button>
     </div>
