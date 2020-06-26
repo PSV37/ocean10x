@@ -87,6 +87,11 @@
 
 .header-bookbank{margin-bottom:12px !important;}   
 
+button#question_add {
+    background-color: #18c5bd;
+    border: none;
+    border-radius: 15px;
+}
 </style>
 
 <?php $this->load->view('fontend/layout/employer_new_header.php');?> 
@@ -103,7 +108,7 @@
           </div>
           <div class="select-option">
             <p style="FONT-SIZE: 12PX;COLOR: #0a5854;">Total No. Of Question:10</p>
-            <a style="float: left;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" class="btn btn-primary"><i class="fa fa-plus">Add Question</i></button></a>
+            <a style="float: left;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Add Question</i></button></a>
             <label class="dropdown">
               <div class="dd-button">
                 Filter
