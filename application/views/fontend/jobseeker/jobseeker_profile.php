@@ -1678,11 +1678,31 @@
 <?php $this->load->view("fontend/layout/jobseeker_footer.php"); ?>
 </div>
 <script>
-   $( "#ed" ).on( "click", function( event ) {
-      var value = document.getElementById('education_level_id');
-     console.log(value);
-   })
-     
+  function disableAddDP() {
+    $("#end_date").attr("disabled", $("#chkDisable").is(":checked")).val("Continue");
+   }   
+   
+    function disableDP(i) {
+   //alert($('#resDate_'+i).val());
+      if($('#resDate_'+i).val()==''  || $('#resDate_'+i).val()==null){
+      
+      $('#upChkDisable_'+i).attr("checked","true");
+      $('#resDate_'+i).val('Continue');
+       $('#resDate_'+i).attr('disabled',"disabled");
+    }
+    
+   }  
+    function disableUpperDP(count) {
+      alert(count);
+    
+    $("#resDate_"+count).attr("disabled", $("#upChkDisable_"+count).is(":checked"));
+     if($("#upChkDisable_"+count).is(":checked")){
+       $('#resDate_'+count).val(<?php date('Y-m-d'); ?>);
+     } else {
+       $('#resDate_'+count).val("");
+     }
+   }
+   
 </script>
 <script type="text/javascript">
    // Personal Info
@@ -2309,31 +2329,7 @@
    });
 </script>
 <script>
-   function disableAddDP() {
-    $("#end_date").attr("disabled", $("#chkDisable").is(":checked")).val("Continue");
-   }   
-   
-    function disableDP(i) {
-   //alert($('#resDate_'+i).val());
-      if($('#resDate_'+i).val()==''  || $('#resDate_'+i).val()==null){
-      
-      $('#upChkDisable_'+i).attr("checked","true");
-      $('#resDate_'+i).val('Continue');
-       $('#resDate_'+i).attr('disabled',"disabled");
-    }
-    
-   }  
-    function disableUpperDP(count) {
-      alert(count);
-    
-    $("#resDate_"+count).attr("disabled", $("#upChkDisable_"+count).is(":checked"));
-     if($("#upChkDisable_"+count).is(":checked")){
-       $('#resDate_'+count).val(<?php date('Y-m-d'); ?>);
-     } else {
-       $('#resDate_'+count).val("");
-     }
-   }
-   
+  
    function FillBilling(f) {
     if(f.billingtoo.checked == true) {
       f.parmanent_address.value = f.present_address.value;
