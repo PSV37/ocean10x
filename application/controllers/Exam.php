@@ -278,10 +278,10 @@ class Exam extends MY_Seeker_Controller
     /*OCEAN CHAMP TEST SECTION*/
     public function ocean_champ_test()
     {   
-         $this->session->unset_userdata('activemenu');
+        
         $data['activemenu'] = 'oceanchamp';
         $this->session->set_userdata($data);
-        
+
         $jobseeker_id = $this->session->userdata('job_seeker_id');
 
         if($_POST)
