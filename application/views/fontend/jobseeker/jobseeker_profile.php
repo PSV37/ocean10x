@@ -1087,7 +1087,7 @@
                                        </div>
                                        <div class="form-group">
                                           <label class="control-label col-sm-3" for="email">End Date:</label>
-                                          <div class="col-sm-9"><input id="resDate_<?php echo $count?>" type="date" class="datepicker form-control" required name="end_date" value="" disabled="disabled">
+                                          <div class="col-sm-9"><input id="resDate_<?php echo $count?>" class="datepicker form-control" required name="end_date" value="" disabled="disabled">
                                           </div>
                                        </div>
                                        <div class="form-group">
@@ -1225,7 +1225,7 @@
                               </div>
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="email">End Date:</label>
-                                 <div class="col-sm-9"><input id="resDate_<?php echo $count?>" type="date" class="datepicker form-control" required name="end_date" value="<?php if (!empty($experinece->end_date)) { echo date('d/m/Y',strtotime($experinece->end_date)); }else{ echo "";} ?>" disabled="disabled">
+                                 <div class="col-sm-9"><input id="resDate_<?php echo $count?>"  class="datepicker form-control" required name="end_date" value="<?php if (!empty($experinece->end_date)) { echo date('d/m/Y',strtotime($experinece->end_date)); }else{ echo "";} ?>" disabled="disabled">
                                  </div>
                               </div>
                               <div class="form-group">
@@ -2323,10 +2323,11 @@
     
    }  
     function disableUpperDP(count) {
+      alert(count);
     
     $("#resDate_"+count).attr("disabled", $("#upChkDisable_"+count).is(":checked"));
      if($("#upChkDisable_"+count).is(":checked")){
-       $('#resDate_'+count).val("Continue");
+       $('#resDate_'+count).val(<?php date('Y-m-d'); ?>);
      } else {
        $('#resDate_'+count).val("");
      }
