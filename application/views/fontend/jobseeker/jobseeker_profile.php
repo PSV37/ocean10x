@@ -139,12 +139,16 @@
                 <button class="save-apply-btn">save</button>
             </div>
           </form>
-<<<<<<< HEAD
         </div>  
     </div>
-=======
       
->>>>>>> b947b8e4252bb8347eef79166a3a0c5d4611c77f
+
+
+
+
+
+
+
 
       <div class="modal fade" id="myModal50" role="dialog">
     <div class="modal-dialog modal-md">
