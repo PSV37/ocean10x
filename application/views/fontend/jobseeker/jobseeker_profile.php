@@ -857,8 +857,6 @@
         
       </div>
     </div>
-<<<<<<< HEAD
-=======
 
     <div class="modal fade" id="myModal50" role="dialog">
       <div class="modal-dialog modal-md">
@@ -1130,7 +1128,6 @@
                      <input name="mobile" type="text"  class="form-control" required maxlength="10" id="number" value="<?php if (!empty($js_personal_info->mobile)) {
                            echo $js_personal_info->mobile;}
                        ?>">&nbsp;<span id="errmsg"></span>
-=======
    <div class="container">
       <div class="col-md-12">
          <?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
@@ -1262,7 +1259,6 @@
                            <button class="save-apply-btn">save</button>
                         </div>
                      </form>
->>>>>>> 8647b65211ca32b83f1ffa645defac3d385022d2
                   </div>
                </div>
                <div class="modal fade" id="myModal50" role="dialog">
@@ -1678,8 +1674,7 @@
                         <i class="fas fa-graduation-cap edu-i"></i>
                      </div>
                   </div>
-<<<<<<< HEAD
-                  
+\                  
 
                 </div>
               </div>
@@ -1820,16 +1815,12 @@
         
       </div>
     </div>
->>>>>>> 3cba4837f60b94fbc0e7813d0e1afa62710a5ab9
   </div>
     <div id="menu1" class="tab-pane fade">
     
       <div class="education_header" style="position:relative;">
-<<<<<<< HEAD
           <img src="" style="width:100%;position:relative;"></img>
-=======
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQofjuD4yOHnpJHZSgGYZucvlOH6nukw95LkKub_HxNl3N6cpTL&usqp=CAU" style="width:100%;position:relative;"></img>
->>>>>>> 3cba4837f60b94fbc0e7813d0e1afa62710a5ab9
             <div class="icon-education" style="position:absolute;bottom:23px;right:53%;">
             <i class="fas fa-graduation-cap edu-i"></i>
             </div>
@@ -1841,10 +1832,8 @@
     
       <ul style="margin-top:50px;">
          <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
-=======
                   <ul style="margin-top:50px;">
                      <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
->>>>>>> 8647b65211ca32b83f1ffa645defac3d385022d2
                         $seeker_edu_level_id = '1';
                         $education_data = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id);
                         $where['edu_level_id'] = '1';
@@ -3899,7 +3888,6 @@
            }); 
          }
    
-<<<<<<< HEAD
        }
 
     
@@ -3930,7 +3918,6 @@ function check_other(value)
     x1.value = value;
   }
 }
-=======
     }
       
       $(document).ready(function(){
@@ -4000,7 +3987,6 @@ function check_other(value)
    x1.value = value;
    }
    }
->>>>>>> 8647b65211ca32b83f1ffa645defac3d385022d2
 </script> 
 <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>    
 <script>
