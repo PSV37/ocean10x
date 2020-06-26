@@ -1601,6 +1601,8 @@ li.bullet {
                </div>
                <?php  $count++; ?>
                <?php endforeach;?>
+               
+               
                <div id="menu4" class="tab-pane fade">
                   <ul>
                      <?php 
@@ -1752,6 +1754,9 @@ li.bullet {
                      <?php endif; ?>
                   </div>
                </div>
+               
+               
+               
                <?php foreach($training_list as $v_training): ?>
                <div id="UdpateTraining<?php echo $v_training->js_training_id; ?>" class="modal fade" role="dialog">
                   <div class="modal-dialog modal-md">
@@ -1949,7 +1954,7 @@ li.bullet {
                      </div>
                      <?php endif; ?>
                   </div>
-               </div>
+               
             </div>
             <div id="Updateskills" class="modal fade" role="dialog">
                <div class="modal-dialog modal-md">
