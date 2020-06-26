@@ -231,6 +231,9 @@ class Employer extends MY_Employer_Controller
 
 public function job_post()
 {
+    $this->session->unset_userdata('activemenu');
+        $data['activemenu'] = 'job_post';
+         $this->session->set_userdata($data);
     $employer_id = $this->session->userdata('company_profile_id');
     if (isset($_POST['preview'])) {
         // echo "preview"; die();
@@ -681,6 +684,9 @@ public function job_post()
 
             public function active_job()
             {
+                 $this->session->unset_userdata('activemenu');
+                $data['activemenu'] = 'active_job';
+                 $this->session->set_userdata($data);
                 $employer_id         = $this->session->userdata('company_profile_id');
                 $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
                 $this->load->view('fontend/employer/posted_jobs.php', compact('company_active_jobs', 'employer_id'));
@@ -1354,6 +1360,10 @@ function getstate(){
 
   public function all_questions()
     {
+        $this->session->unset_userdata('activemenu');
+        $data['activemenu'] = 'questionbank';
+        $this->session->set_userdata($data);
+
         $employer_id         = $this->session->userdata('company_profile_id');
 
         $where_cn= "status=1";
@@ -1608,6 +1618,11 @@ function getstate(){
 /*Add Employee*/
 
     public function addemployee(){
+
+        $this->session->unset_userdata('activemenu');
+        $data['activemenu'] = 'addemployee';
+        $this->session->set_userdata($data);
+
     	$user_id = $this->session->userdata('company_profile_id');
 
     	if(isset($_POST['submit_employee'])){
@@ -3158,6 +3173,9 @@ public function interview_scheduler()
 
     public function corporate_cv_bank()
     {
+        $this->session->unset_userdata('activemenu');
+        $data['activemenu'] = 'cv_bank';
+         $this->session->set_userdata($data);
         $company_id = $this->session->userdata('company_profile_id');
 
         $where_c['company_id'] = $company_id;
