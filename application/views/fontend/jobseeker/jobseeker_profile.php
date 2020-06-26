@@ -63,11 +63,11 @@ li.bullet {
        
 
     	  <div class="education_header" style="position:relative;">
-          <img src="https://www.sassm.in/education/images/blog-header.jpg" style="width:100%;position:relative;"></img>
+          <img src="https://www.sassm.in/education/images/blog-header.jpg" style="width:100%;position:relative;height:65px;"></img>
             <div class="icon-education" style="position:absolute;bottom:23px;right:53%;">
             <i class="fas fa-graduation-cap edu-i"></i>
             </div>
-        </div>
+        </div>    
  
     
     
