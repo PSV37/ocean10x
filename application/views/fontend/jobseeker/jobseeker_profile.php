@@ -22,6 +22,14 @@ li.bullet {
     border-radius: 30px;
     /* color: aqua; */
 }
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 6px 15px;
+    color: #18cfbd;
+    font-size: 12px;
+}
+
 </style>
 <?php 
     $this->load->view('fontend/layout/new_seeker_header.php');
