@@ -51,6 +51,10 @@
     color: white;
 
 }
+.stepwizard-step button[disabled] {
+   
+	background-color:#d8e8f9;
+}
      </style>
 </head>
    
