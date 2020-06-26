@@ -109,7 +109,7 @@
     margin-left: -15px;">Choose your programmig prefered languages</h5>
     
     <div class="row">
-    <div class="col-md-12">
+    
         <?php if(!empty($skill_data)) foreach ($skill_data as $svalue) { ?>
                       <!-- <option value="<?php echo $svalue['id']; ?>"></option> -->
     <div class="col-md-2">
@@ -126,7 +126,7 @@
     
     <input type="hidden" id="skill_name" name="skill_name" value="">
    
-    </div>
+  
     </div>
     
    <!--  <div class="row">
