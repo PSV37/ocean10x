@@ -88,26 +88,26 @@
     <div class="row">
        <div class="col-md-12 form-group">
         <label for="comment">Question </label>
-        <textarea class="form-control" name="question" rows="5" id="comment" ><?php if (!empty($edit_questionbank_info)) echo $row['question'];?></textarea>
+        <textarea class="form-control" name="question" rows="5" id="comment"  required ><?php if (!empty($edit_questionbank_info)) echo $row['question'];?></textarea>
       </div>
     
        <div class="col-md-12 form-group">
         <label for="comment">Option 1:
         </label>
-        <textarea class="form-control" name="option1" id="option1" rows="5" id="comment"><?php if (!empty($edit_questionbank_info)) echo $row['option1'];?></textarea>
+        <textarea class="form-control" name="option1" id="option1" rows="5" id="comment" required ><?php if (!empty($edit_questionbank_info)) echo $row['option1'];?></textarea>
       </div>
     
        <div class="col-md-12 form-group">
         <label for="comment">Option 2:</label>
-        <textarea name="option2" id="option2" class="form-control" rows="5" id="comment"><?php if (!empty($edit_questionbank_info)) echo $row['option2'];?></textarea>
+        <textarea name="option2" id="option2" class="form-control" rows="5" id="comment" required ><?php if (!empty($edit_questionbank_info)) echo $row['option2'];?></textarea>
       </div>
        <div class="col-md-12 form-group">
         <label for="comment">Option 3:</label>
-        <textarea class="form-control" name="option3" id="option3" rows="5" id="comment"><?php if (!empty($edit_questionbank_info)) echo $row['option3'];?></textarea>
+        <textarea class="form-control" name="option3" id="option3" rows="5" id="comment" required ><?php if (!empty($edit_questionbank_info)) echo $row['option3'];?></textarea>
       </div>
        <div class="col-md-12 form-group">
         <label for="comment">Option 4:</label>
-        <textarea class="form-control" name="option4" id="option4" rows="5" id="comment"><?php if (!empty($edit_questionbank_info)) echo $row['option4'];?></textarea>
+        <textarea class="form-control" name="option4" id="option4" rows="5" id="comment" required ><?php if (!empty($edit_questionbank_info)) echo $row['option4'];?></textarea>
       </div>
     </div>  
       <div class="box-body">
