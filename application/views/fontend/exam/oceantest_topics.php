@@ -154,7 +154,6 @@ button#next {
    
 </div>
 </form>
-</div>
 <script type="text/javascript">
 
 function gettopic(value)
