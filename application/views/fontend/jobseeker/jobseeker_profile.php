@@ -1,41 +1,9 @@
-<style>
-.nav-tabs{border-bottom:solid 1px #48827f30 !important;}
-.edit{float: right;font-size:12px;cursor: pointer;margin-right:15px;font-size:14px;font-weight:700;padding:2px 10px;border-radius:13px;}
-.edit:hover{background-color:#ececec;padding:2px 10px;border-radius:13px;}
-li.bullet {
-   margin-bottom: 13px;
-    padding-bottom: 10px;
-    background-color: aliceblue;    
-    padding: 20px 10px;
-    list-style-type: none;
-    margin-left: -40px;
-    border-radius: 3px;
-    font-size: 18px;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-}
-.nav-tabs>li {
-    margin-right: 20px;
-    width: 129px;
-    text-align: center;
-    border: solid 2px #18c5bd;
-    border-radius: 30px;    
-      
-}
-.nav>li>a {
-    position: relative;
-    display: block;
-    padding:6px 15px !important;
-    color: #18c5bd;       
-    font-size: 12px;
-}
 
-</style>
 <?php 
     $this->load->view('fontend/layout/new_seeker_header.php');
 
 ?>
-<!---header end--->
+<!---header end--->      
 <div class="container-fluid">
   <div class="container">
         <div class="col-md-12">
@@ -72,11 +40,9 @@ li.bullet {
        
         <h6>Upload a different photo...</h6>
         <input type="file" class="text-center center-block file-upload">
-         
+         <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal50">Edit</a></span> 
       </div>
-                <div class="row">
-                 <span class="edit"><a href="#" data-toggle="modal" data-target="#myModal50">Edit</a></span> 
-                </div>
+                
            
                  
                  
@@ -188,7 +154,7 @@ li.bullet {
             </div>
           </form>
         </div>  
-    </div>     
+    </div>
 
       <div class="modal fade" id="myModal50" role="dialog">
     <div class="modal-dialog modal-md">
@@ -869,7 +835,7 @@ li.bullet {
     <div id="menu1" class="tab-pane fade">
     
       <div class="education_header" style="position:relative;">
-          <img src="" style="width:100%;position:relative;"></img>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQofjuD4yOHnpJHZSgGYZucvlOH6nukw95LkKub_HxNl3N6cpTL&usqp=CAU" style="width:100%;position:relative;"></img>
             <div class="icon-education" style="position:absolute;bottom:23px;right:53%;">
             <i class="fas fa-graduation-cap edu-i"></i>
             </div>
