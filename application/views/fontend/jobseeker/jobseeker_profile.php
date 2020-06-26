@@ -25,8 +25,8 @@ li.bullet {
 .nav>li>a {
     position: relative;
     display: block;
-    padding: 6px 15px;
-    color: #18c5bd;   
+    padding:6px 15px;
+    color: #18c5bd;       
     font-size: 12px;
 }
 
