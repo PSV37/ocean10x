@@ -28,25 +28,19 @@
                 <div class="text-center" style="position:absolute;top:50px;left:-50px;">
                   <img src="<?php echo base_url() ?>upload/<?php if(!empty($job_seeker_photo->photo_path)) { echo $job_seeker_photo->photo_path;} else { echo "image-notfound.png";} ?>" class="avatar img-circle img-thumbnail" alt="avatar">
        
-<<<<<<< HEAD
         <h6>Upload a different photo...</h6>
         <input type="file" class="text-center center-block file-upload">
          <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal50">Edit</a></span> 
       </div>
                 
            
+                    
                  
-                 
-                <div class="row">
-=======
-                  <h6>Upload a different photo...</h6>
-                  <input type="file" class="text-center center-block file-upload">
-                </div>
+             
                 <div class="row">
                  <span class="edit"><a href="#" data-toggle="modal" data-target="#myModal50">Edit</a></span> 
                 </div>
                  <div class="row">
->>>>>>> b947b8e4252bb8347eef79166a3a0c5d4611c77f
                     <div class="col-md-6">
                       <ul class="jobinfolist">
                         <li>
