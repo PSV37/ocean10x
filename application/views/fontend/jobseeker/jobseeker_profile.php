@@ -8,7 +8,7 @@ li.bullet {
     background-color: aliceblue;    
     padding: 20px 10px;
     list-style-type: none;
-    margin-left: -40px;
+    margin-left: -40px;     
     border-radius: 3px;
     font-size: 18px;
     margin-bottom: 10px;
@@ -57,6 +57,143 @@ li.bullet {
                 </div>
             
     <div class="tab-content">
+    <div id="menu2" class="tab-pane fade">
+    <ul>
+    
+     <li class="bullet"><a href="#" data-toggle="modal" data-target="#myModal5">Work Experience</a>
+    
+      <div class="modal fade" id="myModal5" role="dialog">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Work Experience</h4>
+        </div>
+        <div class="modal-body">
+         <form id="UpdateExperience-info" class="form-horizontal" action="http://www.consultnhire.com/job_seeker/update_experience" method="post" style="padding: 30px;">
+         <input type="hidden" name="js_experience_id" value="286">
+              <div class="form-group">
+                <label class="control-label col-sm-3" for="email">Company Name:</label>
+                <div class="col-sm-9">
+                <input type="text" class="form-control" id="edit_company_profile_id" required name="company_profile_id" value="pp">
+
+                </div>
+              </div>
+
+        <div class="form-group">
+                <label class="control-label col-sm-3" for="email">Designation:</label>
+                <div class="col-sm-9">
+                  <select name="designation_id" class="form-control">
+					<option value="">Select Desigantion</option>
+										<option value="1" selected="">PHP Developer</option>
+										<option value="2">Java Developer</option>
+										<option value="3">.net Developer</option>
+										<option value="4">UI/UX Developer</option>
+										<option value="5">Phython Developer</option>
+										<option value="6">AI Developer</option>
+										<option value="7">Database Administration</option>
+										<option value="8">test</option>
+										<option value="9">Test</option>
+										<option value="10">Software Developer</option>
+									  </select>
+
+                </div>
+              </div>
+
+              <!--<div class="form-group">
+                <label class="control-label col-sm-3" for="email">Job Level</label>
+                <div class="col-sm-9">
+                    <select name="job_level" class="form-control" id="job_level" >
+                                             </select>
+                </div>
+              </div>-->
+
+              <div class="form-group">
+                <label class="control-label col-sm-3" for="email">Department:</label>
+                <div class="col-sm-9">
+				 <select name="dept_id" class="form-control">
+					<option value="">Select Department</option>
+										<option value="1">Banking / Insurance</option>
+										<option value="2" selected="">IT / Software</option>
+									  </select>
+                </div>
+              </div>
+
+
+   <div class="form-group">
+                <label class="control-label col-sm-3" for="email">Start Date:</label>
+                <div class="col-sm-9"><input class="datepicker form-control" required name="start_date" value="01-09-2019">
+ <label><input type="checkbox" id="upChkDisable_1" onclick="disableUpperDP('1')" checked="checked">  Current Job</label>
+
+                </div>
+              </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-sm-3" for="email">End Date:</label>
+                <div class="col-sm-9"><input id="resDate_1" class="datepicker form-control" required name="end_date" value="" disabled="disabled">
+                 
+                </div>
+              </div>
+
+ 
+            <div class="form-group">
+                <label class="control-label col-sm-3" for="pwd">Job Location</label>
+                <div class="col-sm-9">
+                 <input type="text" name="address" class="form-control" id="job_area" value="kalyani nagar,pune">
+                </div>
+              </div>
+				<div class="form-group">
+                <label class="control-label col-sm-3" for="email">Salary:</label>
+                <div class="col-sm-9">
+                  <input type="text" name="js_career_salary" class="form-control" id="js_career_salary" placeholder="Salary" value="25,000">
+                </div>
+              </div>
+			  
+			   <div class="form-group">
+                <label class="control-label col-sm-3" for="pwd">My Responsibilities</label>
+                <div class="col-sm-9">
+                 <textarea name="responsibilities" class="form-control" rows="5" id="responsibilities">kjkj</textarea>
+                </div>
+              </div>
+			  
+				<div class="form-group">
+                <label class="control-label col-sm-3" for="pwd">My Achievement  </label>
+                <div class="col-sm-9">
+                 <textarea name="achievement" class="form-control" rows="5" id="achievement">kj</textarea>
+                </div>
+              </div>
+
+                <!-- <div class="form-group">
+                <label class="control-label col-sm-3" for="pwd">Major Activity</label>
+                <div class="col-sm-9">
+                 <textarea name="major_activity" class="form-control" rows="5" id="major_activity"></textarea>
+                </div>
+              </div>-->
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              
+            </form>
+      </div>
+        
+      </div>
+    </div>
+  </div>
+          	<span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal5">Edit</a></span>	
+
+      </li>
+
+     </ul>
+    
+    
+    
+    
+    
+    
+    </div>
     <div id="home" class="tab-pane fade in active">
        
 
