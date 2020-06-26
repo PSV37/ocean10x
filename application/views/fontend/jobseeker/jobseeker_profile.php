@@ -37,6 +37,7 @@ li.bullet {
 ?>
 <!---header end--->
 <div class="container-fluid">
+
   <div class="container">
         <div class="col-md-12">
     <?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
@@ -1927,255 +1928,1066 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
                                 <p >Duration: <span class="salary-info"> <?php echo $v_training->duration; ?></span></p>
                                  
 
+                      </div>
 
+                  </div>
+               </div>
+               <div id="menu1" class="tab-pane fade">
+                  <div class="education_header" style="position:relative;">
+                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQofjuD4yOHnpJHZSgGYZucvlOH6nukw95LkKub_HxNl3N6cpTL&usqp=CAU" style="width:100%;position:relative;">
+                     <div class="icon-education" style="position:absolute;bottom:23px;right:53%;">
+                        <i class="fas fa-graduation-cap edu-i"></i>
+                     </div>
+                  </div>
+                  <ul style="margin-top:50px;">
+                     <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
+                        $seeker_edu_level_id = '1';
+                        $education_data = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id);
+                        $where['edu_level_id'] = '1';
+                          $phdspecial = $this->Master_model->getMaster('education_specialization',$where);?>
+                     <li class="bullet">
+                        <a href="#" value='1' id="ed" <?php if (isset($education_data) && empty($education_data)) { ?> style="color: red;" <?php  } ?> data-toggle="modal" data-target="#myModal">Ph.d / Doctorate</a>
+                        <div class="modal fade" id="myModal" role="dialog">
+                           <div class="modal-dialog modal-md">
+                              <div class="modal-content">
+                                 <div class="modal-header">
+                                    <button type="button"   class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Ph.d / Doctorate</h4>
+                                 </div>
+                                 <div class="modal-body education_frm">
+                                    <form id="Educational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
+                                       <input type="hidden" name="js_education_id" value="<?php echo $education_data[0]->js_education_id; ?>">
+                                       <div class="form-group">
+                                          <div class="col-sm-1"></div>
+                                          <div class="col-sm-10">
+                                             <label class="control-label" for="email">Education<span class="required">*</span></label>
+                                             <select name="education_level_id" id="education_level_id" class="form-control" required="">
+                                                <option value="1">Ph.D / Doctorate</option>
+                                             </select>
+                                          </div>
+                                          <div class="col-sm-1"></div>
+                                       </div>
+                                       <div class="form-group">
+                                          <div class="col-sm-1"></div>
+                                          <div class="col-sm-10">
+                                             <label class="control-label" for="email">Specialization<span class="required">*</span></label>
+                                             <select name="specialization_id" id="specialization_id" class="form-control" required="">
+                                                <option value="">Select One</option>
+                                                <?php foreach($phdspecial as $edu_special){?>
+                                                <option value="<?php echo $edu_special['id']; ?>"<?php if(!empty($education_data)) if($education_data[0]->specialization_id==$edu_special['id']) echo "selected";?>><?php echo $edu_special['education_specialization']; ?></option>
+                                                <?php } ?>
+                                                <!-- <option value="6">Computer SC.</option> -->
+                                             </select>
+                                          </div>
+                                          <div class="col-sm-1"></div>
+                                       </div>
+                                       <div class="form-group">
+                                          <div class="col-sm-1"></div>
+                                          <div class="col-sm-10">
+                                             <label class="control-label" for="email">University / Name of Institution<span class="required">*</span></label>
+                                             <input type="text" name="js_institute_name" class="form-control" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($education_data)) echo $education_data[0]->js_institute_name; ?>">
+                                          </div>
+                                          <div class="col-sm-1"></div>
+                                       </div>
+                                       <div class="form-group">
+                                          <div class="col-sm-1"></div>
+                                          <div class="col-sm-10">
+                                             <label class="control-label" for="email">Course Type<span class="required"> *</span></label>
+                                             <?php foreach($course as $courses){?>
+                                             <input type="radio" name="education_type_id" required id="education_type_id" value="<?php echo $courses['education_type_id']; ?>"<?php if(!empty($education_data)){ if($education_data[0]->education_type_id==$courses['education_type_id']) { echo "checked";} } ?> style="margin: 0 1px;"> <?php echo $courses['education_type']; ?>
+                                             <?php } ?>                      
+                                          </div>
+                                          <div class="col-sm-1"></div>
+                                       </div>
+                                       <div class="form-group">
+                                          <div class="col-sm-1"></div>
+                                          <div class="col-sm-10">
+                                             <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
+                                             <select name="js_year_of_passing" id="ddlYear" class="form-control" required="">
+                                                <?php
+                                                   $currently_selected = date('Y'); 
+                                                   $earliest_year = 1940; 
+                                                   $latest_year = date('Y'); 
+                                                   foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                                   ?>
+                                                <option value="<?php echo $i; ?>"<?php if(!empty($education_data)) if($education_data[0]->js_year_of_passing==$i) echo "selected";?>><?php echo $i; ?></option>
+                                                <?php } ?>
+                                             </select>
+                                          </div>
+                                          <div class="col-sm-1"></div>
+                                       </div>
+                                       <div class="form-group">
+                                          <div class="col-sm-1"></div>
+                                          <div class="col-sm-10">
+                                             <label class="control-label" for="email">Score<span class="required">*</span></label>
+                                             <input type="text" name="js_resut" class="form-control" placeholder="Enter Score" value="<?php if(!empty($education_data)) echo $education_data[0]->js_resut; ?>" onkeypress="javascript:return isNumber1(event)" required>
+                                          </div>
+                                          <div class="col-sm-1"></div>
+                                       </div>
+                                       <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                          <button type="submit" class="btn btn-primary">Save</button>
+                                       </div>
+                                    </form>
+                                 </div>
                               </div>
+                           </div>
+                        </div>
+                        <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" value='1' onclick="get_specialization(this.value);"  data-target="#myModal">Edit</a></span> 
+                     </li>
+                     <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
+                        $seeker_edu_level_id = '2';
+                         $education_data2 = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id);
+                        $where['edu_level_id'] = '2';
+                        $pgdspecial = $this->Master_model->getMaster('education_specialization',$where); 
+                        // $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
+                        // print_r($education_data);die;
+                        ?>
+                     <li class="bullet">
+                        <a href="#" data-toggle="modal" <?php if (isset($education_data2) && empty($education_data2)) { ?> style="color: red;"
+                           <?php  } ?>  data-target="#myModal1">Masters / Post-Graduation</a>
+                        <div class="modal fade" id="myModal1" role="dialog">
+                           <div class="modal-dialog modal-md">
+                              <div class="modal-content">
+                                 <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Masters / Post-Graduation</h4>
+                                 </div>
+                                 <div class="modal-body education_frm">
+                                    <div class="modal-body education_frm">
+                                       <form id="Educational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
+                                          <input type="hidden" name="js_education_id" value="<?php echo $education_data2[0]->js_education_id; ?>">
+                                          <div class="form-group">
+                                             <div class="col-sm-1"></div>
+                                             <div class="col-sm-10">
+                                                <label class="control-label" for="email">Education<span class="required">*</span></label>
+                                                <select name="education_level_id" id="education_level_id" class="form-control" required="">
+                                                   <option value="2">Masters/Post-Graduation</option>
+                                                </select>
+                                             </div>
+                                             <div class="col-sm-1"></div>
+                                          </div>
+                                          <div class="form-group">
+                                             <div class="col-sm-1"></div>
+                                             <div class="col-sm-10">
+                                                <label class="control-label" for="email">Specialization<span class="required">*</span></label>
+                                                <select name="specialization_id" id="specialization_id" class="form-control" required="">
+                                                   <option value="">Select One</option>
+                                                   <?php foreach($pgdspecial as $edu_special){?>
+                                                   <option value="<?php echo $edu_special['id']; ?>"<?php if(!empty($$education_data2)) if($$education_data2[0]->specialization_id==$edu_special['id']) echo "selected";?>><?php echo $edu_special['education_specialization']; ?></option>
+                                                   <?php } ?>
+                                                </select>
+                                             </div>
+                                             <div class="col-sm-1"></div>
+                                          </div>
+                                          <div class="form-group">
+                                             <div class="col-sm-1"></div>
+                                             <div class="col-sm-10">
+                                                <label class="control-label" for="email">University / Name of Institution<span class="required">*</span></label>
+                                                <input type="text" name="js_institute_name" class="form-control" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($education_data)) echo $education_data2[0]->js_institute_name; ?>">
+                                             </div>
+                                             <div class="col-sm-1"></div>
+                                          </div>
+                                          <div class="form-group">
+                                             <div class="col-sm-1"></div>
+                                             <div class="col-sm-10">
+                                                <label class="control-label" for="email">Course Type<span class="required">*</span></label>
+                                                <?php foreach($course as $courses){?>
+                                                <input type="radio" name="education_type_id" required id="education_type_id" value="<?php echo $courses['education_type_id']; ?>"<?php if(!empty($education_data2)) if($education_data2[0]->education_type_id==$courses['education_type_id']) echo "checked";?> style="margin: 0 1px;"> <?php echo $courses['education_type']; ?>
+                                                <?php } ?>                   
+                                             </div>
+                                             <div class="col-sm-1"></div>
+                                          </div>
+                                          <div class="form-group">
+                                             <div class="col-sm-1"></div>
+                                             <div class="col-sm-10">
+                                                <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
+                                                <select name="js_year_of_passing" id="ddlYear" class="form-control" required="">
+                                                   <option value="">Select Completion Year</option>
+                                                   <?php
+                                                      $currently_selected = date('Y'); 
+                                                      $earliest_year = 1940; 
+                                                      $latest_year = date('Y'); 
+                                                      foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                                      ?>
+                                                   <option value="<?php echo $i; ?>"<?php if(!empty($education_data2)) if($education_data2[0]->js_year_of_passing==$i) echo "selected";?>><?php echo $i; ?></option>
+                                                   <?php } ?>
+                                                </select>
+                                             </div>
+                                             <div class="col-sm-1"></div>
+                                          </div>
+                                          <div class="form-group">
+                                             <div class="col-sm-1"></div>
+                                             <div class="col-sm-10">
+                                                <label class="control-label" for="email">Score<span class="required">*</span></label>
+                                                <input type="text" name="js_resut" class="form-control" placeholder="Enter Score" value="<?php if(!empty($education_data2)) echo $education_data2[0]->js_resut; ?>" onkeypress="javascript:return isNumber1(event)" required>
+                                             </div>
+                                             <div class="col-sm-1"></div>
+                                          </div>
+                                          <div class="modal-footer">
+                                             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                             <button type="submit" class="btn btn-primary">Save</button>
+                                          </div>
+                                       </form>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal1">Edit</a></span> 
+                     </li>
+                     <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
+                        $seeker_edu_level_id = '3';
+                        $education_data3 = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id);
+                         $where['edu_level_id'] = '3';
+                         $gddspecial = $this->Master_model->getMaster('education_specialization',$where); 
+                        
+                        ?>
+                     <li class="bullet">
+                        <a href="#" data-toggle="modal" <?php if (isset($education_data3) && empty($education_data3)) { ?> style="color: red;"
+                           <?php  } ?> data-target="#myModal2">Graduation / Diploma</a>
+                        <div class="modal fade" id="myModal2" role="dialog">
+                           <div class="modal-dialog modal-md">
+                              <div class="modal-content">
+                                 <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Graduation / Diploma</h4>
+                                 </div>
+                                 <div class="modal-body education_frm">
+                                    <form id="Educational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
+                                       <input type="hidden" name="js_education_id" value="<?php echo $education_data3[0]->js_education_id; ?>">
+                                       <div class="form-group">
+                                          <div class="col-sm-1"></div>
+                                          <div class="col-sm-10">
+                                             <label class="control-label" for="email">Education<span class="required">*</span></label>
+                                             <select name="education_level_id" id="education_level_id" class="form-control" required="">
+                                                <option value="3">Graduation/Diploma</option>
+                                             </select>
+                                          </div>
+                                          <div class="col-sm-1"></div>
+                                       </div>
+                                       <div class="form-group">
+                                          <div class="col-sm-1"></div>
+                                          <div class="col-sm-10">
+                                             <label class="control-label" for="email">Specialization<span class="required">*</span></label>
+                                             <select name="specialization_id" id="specialization_id" class="form-control" required="">
+                                                <option value="">Select One</option>
+                                                <?php foreach($gddspecial as $edu_special){?>
+                                                <option value="<?php echo $edu_special['id']; ?>"<?php if(!empty($education_data3)) if($education_data3[0]->specialization_id==$edu_special['id']) echo "selected";?>><?php echo $edu_special['education_specialization']; ?></option>
+                                                <?php } ?>
+                                             </select>
+                                          </div>
+                                          <div class="col-sm-1"></div>
+                                       </div>
+                                       <div class="form-group">
+                                          <div class="col-sm-1"></div>
+                                          <div class="col-sm-10">
+                                             <label class="control-label" for="email">University&emsp;/&emsp;Name of Institution<span class="required">*</span></label>
+                                             <input type="text" name="js_institute_name" class="form-control" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($education_data3)) echo $education_data3[0]->js_institute_name; ?>">
+                                          </div>
+                                          <div class="col-sm-1"></div>
+                                       </div>
+                                       <div class="form-group">
+                                          <div class="col-sm-1"></div>
+                                          <div class="col-sm-10">
+                                             <label class="control-label" for="email">Course Type<span class="required">*</span></label>
+                                             <?php foreach($course as $courses){?>
+                                             <input type="radio" name="education_type_id" required id="education_type_id" value="<?php echo $courses['education_type_id']; ?>"<?php if(!empty($education_data3)) if($education_data3[0]->education_type_id==$courses['education_type_id']) echo "checked";?> style="margin: 0 1px;"> <?php echo $courses['education_type']; ?>
+                                             <?php } ?>                    
+                                          </div>
+                                          <div class="col-sm-1"></div>
+                                       </div>
+                                       <div class="form-group">
+                                          <div class="col-sm-1"></div>
+                                          <div class="col-sm-10">
+                                             <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
+                                             <select name="js_year_of_passing" id="ddlYear" class="form-control" required="">
+                                                <option value="">Select Completion Year</option>
+                                                <?php
+                                                   $currently_selected = date('Y'); 
+                                                   $earliest_year = 1940; 
+                                                   $latest_year = date('Y'); 
+                                                   foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                                   ?>
+                                                <option value="<?php echo $i; ?>"<?php if(!empty($education_data3)) if($education_data3[0]->js_year_of_passing==$i) echo "selected";?>><?php echo $i; ?></option>
+                                                <?php } ?>
+                                             </select>
+                                          </div>
+                                          <div class="col-sm-1"></div>
+                                       </div>
+                                       <div class="form-group">
+                                          <div class="col-sm-1"></div>
+                                          <div class="col-sm-10">
+                                             <label class="control-label" for="email">Score<span class="required">*</span></label>
+                                             <input type="text" name="js_resut" class="form-control" placeholder="Enter Score" value="<?php if(!empty($education_data3)) echo $education_data3[0]->js_resut; ?>" onkeypress="javascript:return isNumber1(event)" required>
+                                          </div>
+                                          <div class="col-sm-1"></div>
+                                       </div>
+                                       <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                          <button type="submit" class="btn btn-primary">Save</button>
+                                       </div>
+                                    </form>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal2">Edit</a></span>  
+                     </li>
+                     <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
+                        $seeker_edu_level_id = '4';
+                         $education_data4 = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id); 
+                        // $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
+                        // print_r($education_data);die;
+                        ?>
+                     <li class="bullet">
+                        <a href="#" data-toggle="modal" <?php if (isset($education_data4) && empty($education_data4)) { ?> style="color: red;"
+                           <?php  } ?> data-target="#myModal3">12th</a>
+                        <div class="modal fade" id="myModal3" role="dialog">
+                           <div class="modal-dialog modal-md">
+                              <div class="modal-content">
+                                 <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">12th</h4>
+                                 </div>
+                                 <div class="modal-body education_frm">
+                                    <form id="Educational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
+                                       <input type="hidden" name="js_education_id" value="<?php echo $education_data4[0]->js_education_id; ?>">
+                                       <div class="form-group">
+                                          <div class="col-sm-1"></div>
+                                          <div class="col-sm-10">
+                                             <label class="control-label" for="email">Education<span class="required">*</span></label>
+                                             <select name="education_level_id" id="education_level_id" class="form-control" required="">
+                                                <option value="4">12th</option>
+                                             </select>
+                                          </div>
+                                          <div class="col-sm-1"></div>
+                                       </div>
+                                       <div class="form-group">
+                                          <div class="col-sm-1"></div>
+                                          <div class="col-sm-10">
+                                             <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
+                                             <select name="js_year_of_passing" id="ddlYear" class="form-control" required="">
+                                                <option value="">Select Completion Year</option>
+                                                <?php
+                                                   $currently_selected = date('Y'); 
+                                                   $earliest_year = 1940; 
+                                                   $latest_year = date('Y'); 
+                                                   foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                                   ?>
+                                                <option value="<?php echo $i; ?>"<?php if(!empty($education_data4)) if($education_data4[0]->js_year_of_passing==$i) echo "selected";?>><?php echo $i; ?></option>
+                                                <?php } ?>
+                                             </select>
+                                          </div>
+                                          <div class="col-sm-1"></div>
+                                       </div>
+                                       <div class="form-group">
+                                          <div class="col-sm-1"></div>
+                                          <div class="col-sm-10">
+                                             <label class="control-label" for="email">Board<span class="required">*</span></label>
+                                             <select name="board_id" id="board_id" class="form-control">
+                                                <option value="">Select Board</option>
+                                                <!-- <option value="1">CBSE</option>
+                                                   <option value="2">CISCE(ICSE/ISC)</option>
+                                                   <option value="3">Diploma</option>
+                                                   <option value="4">National Open School</option>
+                                                   <option value="7">IB(International Baccalaureate)</option> -->
+                                                <?php foreach($schoolboard as $boards){?>
+                                                <option value="<?php echo $boards['schoolboard_id']; ?>"<?php if(!empty($education_data4)) if($education_data4[0]->board_id==$boards['schoolboard_id']) echo "selected";?>><?php echo $boards['schoolboard_name']; ?></option>
+                                                <?php } ?>
+                                             </select>
+                                          </div>
+                                          <div class="col-sm-1"></div>
+                                       </div>
+                                       <div class="form-group">
+                                          <div class="col-sm-1"></div>
+                                          <div class="col-sm-10">
+                                             <label class="control-label" for="email">School Medium<span class="required">*</span></label>
+                                             <select name="schoolmedium_id" id="schoolmedium_id" class="form-control">
+                                                <?php foreach($schoolmedium as $medium){?>
+                                                <option value="<?php echo $medium['schoolmedium_id']; ?>"<?php if(!empty($education_data4)) if($education_data4[0]->schoolmedium_id==$medium['schoolmedium_id']) echo "selected";?>><?php echo $medium['school_medium']; ?></option>
+                                                <?php } ?>
+                                             </select>
+                                          </div>
+                                          <div class="col-sm-1"></div>
+                                       </div>
+                                       <div class="form-group">
+                                          <div class="col-sm-1"></div>
+                                          <div class="col-sm-10">
+                                             <label class="control-label" for="email">Total Score<span class="required">*</span></label>
+                                             <input type="text" name="totalmarks_id" id="totalmarks_id" class="form-control" value="<?php if(!empty($education_data4)) echo $education_data4[0]->totalmarks_id; ?>" placeholder="Enter Total Score" onkeypress="javascript:return isNumber(event)">
+                                          </div>
+                                          <div class="col-sm-1"></div>
+                                       </div>
+                                       <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                          <button type="submit" class="btn btn-primary">Save</button>
+                                       </div>
+                                    </form>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <span style="float: right;font-size:12px;cursor: pointer;"><a  href="#" data-toggle="modal" data-target="#myModal3">Edit</a></span> 
+                     </li>
+                     <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
+                        $seeker_edu_level_id = '5';
+                         $education_data5 = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id); 
+                        // $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
+                        // print_r($education_data);die;
+                        ?>
+                     <li class="bullet">
+                        <a href="#" data-toggle="modal" <?php if (isset($education_data5) && empty($education_data5)) { ?> style="color: red;"
+                           <?php  } ?> data-target="#myModal4">10th</a>
+                        <div class="modal fade" id="myModal4" role="dialog">
+                           <div class="modal-dialog modal-md">
+                              <div class="modal-content">
+                                 <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">10th</h4>
+                                 </div>
+                                 <div class="modal-body education_frm">
+                                    <form id="Educational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
+                                       <input type="hidden" name="js_education_id" value="<?php echo $education_data5[0]->js_education_id; ?>">
+                                       <div class="form-group">
+                                          <div class="col-sm-1"></div>
+                                          <div class="col-sm-10">
+                                             <label class="control-label" for="email">Education<span class="required">*</span></label>
+                                             <select name="education_level_id" id="education_level_id" class="form-control" required="">
+                                                <option value="5">10th</option>
+                                             </select>
+                                          </div>
+                                          <div class="col-sm-1"></div>
+                                       </div>
+                                       <div class="form-group">
+                                          <div class="col-sm-1"></div>
+                                          <div class="col-sm-10">
+                                             <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
+                                             <select name="js_year_of_passing" id="ddlYear" class="form-control" required="">
+                                                <option value="">Select Completion Year</option>
+                                                <?php
+                                                   $currently_selected = date('Y'); 
+                                                   $earliest_year = 1940; 
+                                                   $latest_year = date('Y'); 
+                                                   foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                                   ?>
+                                                <option value="<?php echo $i; ?>"<?php if(!empty($education_data5)) if($education_data5[0]->js_year_of_passing==$i) echo "selected";?>><?php echo $i; ?></option>
+                                                <?php } ?>
+                                             </select>
+                                          </div>
+                                          <div class="col-sm-1"></div>
+                                       </div>
+                                       <div class="form-group">
+                                          <div class="col-sm-1"></div>
+                                          <div class="col-sm-10">
+                                             <label class="control-label" for="email">Board<span class="required">*</span></label>
+                                             <select name="board_id" id="board_id" class="form-control">
+                                                <option value="">Select Board</option>
+                                                <?php foreach($schoolboard as $boards){?>
+                                                <option value="<?php echo $boards['schoolboard_id']; ?>"<?php if(!empty($education_data5)) if($education_data5[0]->board_id==$boards['schoolboard_id']) echo "selected";?>><?php echo $boards['schoolboard_name']; ?></option>
+                                                <?php } ?>
+                                             </select>
+                                          </div>
+                                          <div class="col-sm-1"></div>
+                                       </div>
+                                       <div class="form-group">
+                                          <div class="col-sm-1"></div>
+                                          <div class="col-sm-10">
+                                             <label class="control-label" for="email">School Medium<span class="required">*</span></label>
+                                             <select name="schoolmedium_id" id="schoolmedium_id" class="form-control">
+                                                <option value="">Select Medium</option>
+                                                <?php foreach($schoolmedium as $medium){?>
+                                                <option value="<?php echo $medium['schoolmedium_id']; ?>"<?php if(!empty($education_data5)) if($education_data5[0]->schoolmedium_id==$medium['schoolmedium_id']) echo "selected";?>><?php echo $medium['school_medium']; ?></option>
+                                                <?php } ?>
+                                             </select>
+                                          </div>
+                                          <div class="col-sm-1"></div>
+                                       </div>
+                                       <div class="form-group">
+                                          <div class="col-sm-1"></div>
+                                          <div class="col-sm-10">
+                                             <label class="control-label" for="email">Total Score<span class="required">*</span></label>
+                                             <input type="text" name="totalmarks_id" id="totalmarks_id" class="form-control" value="<?php if(!empty($education_data5)) echo $education_data5[0]->totalmarks_id; ?>" placeholder="Enter Total Score" onkeypress="javascript:return isNumber(event)">
+                                          </div>
+                                          <div class="col-sm-1"></div>
+                                       </div>
+                                       <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                          <button type="submit" class="btn btn-primary">Save</button>
+                                       </div>
+                                    </form>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal4">Edit</a></span>  
+                     </li>
+                  </ul>
+               </div>
+               <div id="menu3" class="tab-pane fade">
+                  <ul>
+                     <?php  $designation = $this->Master_model->getMaster('designation',$where=false);
+                        $department = $this->Master_model->getMaster('department',$where=false); ?>
+                     <li class="bullet">
+                        <a href="#" data-toggle="modal" data-target="#myModal5">Work Experience</a>
+                        <div class="modal fade" id="myModal5" role="dialog">
+                           <div class="modal-dialog modal-md">
+                              <div class="modal-content">
+                                 <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Work Experience</h4>
+                                 </div>
+                                 <div class="modal-body">
+                                    <form id="UpdateExperience-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_experience');?>" method="post" style="padding: 30px;">
+                                       <!-- <input type="hidden" name="js_experience_id" value="286"> -->
+                                       <div class="form-group">
+                                          <label class="control-label col-sm-3" for="email">Company Name:</label>
+                                          <div class="col-sm-9">
+                                             <input type="text" class="form-control" id="edit_company_profile_id" required name="company_profile_id" value="">
+                                          </div>
+                                       </div>
+                                       <div class="form-group">
+                                          <label class="control-label col-sm-3" for="email">Designation:</label>
+                                          <div class="col-sm-9">
+                                             <select name="designation_id" class="form-control">
+                                                <?php foreach($designation as $keys){?>
+                                                <option value="<?php echo $keys['designation_id']; ?>"><?php echo $keys['designation_name']; ?></option>
+                                                <?php } ?>
+                                             </select>
+                                          </div>
+                                       </div>
+                                       <div class="form-group">
+                                          <label class="control-label col-sm-3" for="email">Department:</label>
+                                          <div class="col-sm-9">
+                                             <select name="dept_id" class="form-control">
+                                                <option value="">Select Department</option>
+                                                <?php foreach($department as $dept){?>
+                                                <option value="<?php echo $dept['dept_id']; ?>"<?php if($experinece->dept_id==$dept['dept_id']){ echo "selected"; }?>><?php echo $dept['department_name']; ?></option>
+                                                <?php } ?>
+                                             </select>
+                                          </div>
+                                       </div>
+                                       <div class="form-group">
+                                          <label class="control-label col-sm-3" for="email">Start Date:</label>
+                                          <div class="col-sm-9"><input type="date" class="datepicker form-control" required name="start_date" value="">
+                                             <label><input type="checkbox" id="upChkDisable_1" onclick="disableUpperDP('1')">  Current Job</label>
+                                          </div>
+                                       </div>
+                                       <div class="form-group">
+                                          <label class="control-label col-sm-3" for="email">End Date:</label>
+                                          <div class="col-sm-9"><input id="resDate_<?php echo $count?>" class="datepicker form-control" required name="end_date" value="" disabled="disabled">
+                                          </div>
+                                       </div>
+                                       <div class="form-group">
+                                          <label class="control-label col-sm-3" for="pwd">Job Location</label>
+                                          <div class="col-sm-9">
+                                             <input type="text" name="address" class="form-control" id="job_area" value="">
+                                          </div>
+                                       </div>
+                                       <div class="form-group">
+                                          <label class="control-label col-sm-3" for="email">Salary:</label>
+                                          <div class="col-sm-9">
+                                             <input type="text" name="js_career_salary" class="form-control" id="js_career_salary" placeholder="Salary" value="25,000">
+                                          </div>
+                                       </div>
+                                       <div class="form-group">
+                                          <label class="control-label col-sm-3" for="pwd">My Responsibilities</label>
+                                          <div class="col-sm-9">
+                                             <textarea name="responsibilities" class="form-control" rows="5" id="responsibilities"></textarea>
+                                          </div>
+                                       </div>
+                                       <div class="form-group">
+                                          <label class="control-label col-sm-3" for="pwd">My Achievement  </label>
+                                          <div class="col-sm-9">
+                                             <textarea name="achievement" class="form-control" rows="5" id="achievement"></textarea>
+                                          </div>
+                                       </div>
+                                       <!-- <div class="form-group">
+                                          <label class="control-label col-sm-3" for="pwd">Major Activity</label>
+                                          <div class="col-sm-9">
+                                           <textarea name="major_activity" class="form-control" rows="5" id="major_activity"></textarea>
+                                          </div>
+                                          </div>-->
+                                       <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                          <button type="submit" class="btn btn-primary">Submit</button>
+                                       </div>
+                                    </form>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal5"><i class="fa fa-plus" aria-hidden="true"></i></a></span>  
+                     </li>
+                  </ul>
+                  <div class="col-md-12 bd-2">
+                     <?php 
+                        $experinece_list = $this->Job_seeker_experience_model->experience_list_by_id($jobseeker_id);
+                        // print_r($experinece_list);
+                                $sr_no=0;
+                            if (!empty($experinece_list)): foreach ($experinece_list as $v_experience) :
+                        
+                                // print_r($applicaiton);
+                                // for ($i=0; $i <sizeof($v_experience) ; $i++) { 
+                                    # code...
                                
-
-
-                                
-
+                            ?>
+                     <div class="invi-div">
+                        <img src="<?php echo base_url()?>upload/<?php echo $this->company_profile_model->company_logoby_id($applicaiton[$i]->company_profile_id); ?>" class="invitation-img"/> 
+                        <div class="info-invitation">
+                           <p class="head-invi">Compnay Name:<?php echo $v_experience->company_profile_id; ?></p>
+                           <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#EditExperience<?php echo $v_experience->js_experience_id; ?>" onclick="javascript:disableDP('<?php echo $key ?>')"class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></span>
+                           <span class="salary-info">Designation: <?php echo $this->job_posting_model->job_salary_by_id($applicaiton[$i]->job_post_id); ?><span>
+                           <p>Department: <?php echo $v_experience->department_name; ?></p>
+                           <p>Duration: <?php $today=date("Y-m-d"); if($v_experience->end_date=="2017-08-30") {
+                              echo date_calculate($v_experience->start_date,$today);
+                              }else { echo date_calculate($v_experience->start_date,$v_experience->end_date); }?></p>
+                           <p>My Responsibilities: <?php echo $v_experience->responsibilities ; ?></p>
+                           <p>My Achievement: <?php echo $v_experience->achievement; ?></p>
+                           <!-- <button class="apply-invi">Apply Now</button> -->
+                        </div>
+                        <div class="clear"></div>
+                     </div>
+                     <?php
+                        // $sr_no++;
+                         // }
+                        endforeach;
+                        ?>
+                     <?php else : ?> 
+                     <div>
+                        <strong>There is no data to display</strong>
+                     </div>
+                     <?php endif; ?>
+                  </div>
+               </div>
+               <?php $count=1; foreach ($experinece_list as $v_experience): ?>
+               <div id="EditExperience<?php echo $v_experience->js_experience_id; ?>" class="modal fade" role="dialog">
+                  <div class="modal-dialog modal-md">
+                     <?php
+                        $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experience_id);
+                                   
+                        
+                        ?>
+                     <!--  <div class="modal fade" id="myModal5" role="dialog">
+                        <div class="modal-dialog modal-md"> -->
+                     <div class="modal-content">
+                        <div class="modal-header">
+                           <button type="button" class="close" data-dismiss="modal">&times;</button>
+                           <h4 class="modal-title">Work Experience</h4>
+                        </div>
+                        <div class="modal-body">
+                           <form id="UpdateExperience-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_experience');?>" method="post" style="padding: 30px;">
+                              <input type="hidden" name="js_experience_id" value="<?php echo $v_experience->js_experience_id; ?>">
+                              <div class="form-group">
+                                 <label class="control-label col-sm-3" for="email">Company Name:</label>
+                                 <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="edit_company_profile_id" required name="company_profile_id" value="<?php if (!empty($experinece->company_profile_id)) { echo $experinece->company_profile_id;} ?>">
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <label class="control-label col-sm-3" for="email">Designation:</label>
+                                 <div class="col-sm-9">
+                                    <select name="designation_id" class="form-control">
+                                       <?php foreach($designation as $keys){?>
+                                       <option value="<?php echo $keys['designation_id']; ?>"<?php if($experinece->designation_id==$keys['designation_id']){ echo "selected"; }?>><?php echo $keys['designation_name']; ?></option>
+                                       <?php } ?>
+                                    </select>
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <label class="control-label col-sm-3" for="email">Department:</label>
+                                 <div class="col-sm-9">
+                                    <select name="dept_id" class="form-control">
+                                       <option value="">Select Department</option>
+                                       <?php foreach($department as $dept){?>
+                                       <option value="<?php echo $dept['dept_id']; ?>"<?php if($experinece->dept_id==$dept['dept_id']){ echo "selected"; }?>><?php echo $dept['department_name']; ?></option>
+                                       <?php } ?>
+                                    </select>
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <label class="control-label col-sm-3" for="email">Start Date:</label>
+                                 <div class="col-sm-9"><input type="date" class="datepicker form-control" required name="start_date" value="<?php if (!empty($experinece->start_date)) { echo date('d-m-Y',strtotime($experinece->start_date)); } ?>">
+                                    <label><input type="checkbox" id="upChkDisable_<?php echo $count?>" onclick="disableUpperDP('<?php echo $count?>')">  Current Job</label>
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <label class="control-label col-sm-3" for="email">End Date:</label>
+                                 <div class="col-sm-9"><input id="resDate_<?php echo $count?>"  class="datepicker form-control" required name="end_date" value="<?php if (!empty($experinece->end_date)) { echo date('d/m/Y',strtotime($experinece->end_date)); }else{ echo "";} ?>" disabled="disabled">
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <label class="control-label col-sm-3" for="pwd">Job Location</label>
+                                 <div class="col-sm-9">
+                                    <input type="text" name="address" class="form-control" id="job_area" value="<?php 
+                                       if (!empty($experinece->address)) {
+                                         echo $experinece->address;
+                                         }
+                                       ?>">
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <label class="control-label col-sm-3" for="email">Salary:</label>
+                                 <div class="col-sm-9">
+                                    <input type="text" name="js_career_salary" class="form-control" id="js_career_salary" placeholder="Salary" value="<?php if (!empty($experinece->js_career_salary)) {
+                                       echo $experinece->js_career_salary;
+                                       }
+                                       ?>">
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <label class="control-label col-sm-3" for="pwd">My Responsibilities</label>
+                                 <div class="col-sm-9">
+                                    <textarea name="responsibilities" class="form-control" rows="5" id="responsibilities"><?php 
+                                       if (!empty($experinece->responsibilities)) {
+                                         echo $experinece->responsibilities;
+                                         } ?></textarea>
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <label class="control-label col-sm-3" for="pwd">My Achievement  </label>
+                                 <div class="col-sm-9">
+                                    <textarea name="achievement" class="form-control" rows="5" id="achievement"><?php
+                                       if (!empty($experinece->achievement )) {
+                                         echo $experinece->achievement ;
+                                         }
+                                       ?></textarea>
+                                 </div>
+                              </div>
+                              <!-- <div class="form-group">
+                                 <label class="control-label col-sm-3" for="pwd">Major Activity</label>
+                                 <div class="col-sm-9">
+                                  <textarea name="major_activity" class="form-control" rows="5" id="major_activity"></textarea>
+                                 </div>
+                                 </div>-->
+                              <div class="modal-footer">
+                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                 <button type="submit" class="btn btn-primary">Submit</button>
+                              </div>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <?php  $count++; ?>
+               <?php endforeach;?>
+               <div id="menu4" class="tab-pane fade">
+                  <ul>
+                     <?php 
+                        $jobseeker_id = $this->session->userdata('job_seeker_id');
+                        $training_list = $this->Job_training_model->training_list_by_id($jobseeker_id);
+                        $passingyear = $this->Master_model->getMaster('passingyear',$where=false);
+                        ?>
+                     <li class="bullet">
+                        <a href="#" data-toggle="modal" data-target="#myModal7">My Trannings</a>
+                        <div class="modal fade" id="myModal7" role="dialog">
+                           <div class="modal-dialog modal-md">
+                              <div class="modal-content">
+                                 <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">My Trainnings</h4>
+                                 </div>
+                                 <div class="modal-body">
+                                    <form id="UpdateEducational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_training');?>" method="post" style="padding: 30px;">
+                                       <div class="form-group">
+                                          <input type="hidden" value="155" name="job_training_id">
+                                          <label class="control-label col-sm-3" for="email">Training Title</label>
+                                          <div class="col-sm-9">
+                                             <select name="training_title" id="training_title" class="form-control" onchange="check_other(this.value)">
+                                                <option value="">Select Training title</option>
+                                                <?php foreach($training as $key){?>
+                                                <option value="<?php echo $key['name']; ?>"<?php if($training_list->training_title==$key['name']){ echo "selected"; }?>><?php echo $key['name']; ?></option>
+                                                <?php } ?>
+                                                <option value="other">Other</option>
+                                             </select>
+                                             <input type="hidden" name="training_title" class="form-control" id="training_title1" placeholder="Training Title" value="CCNA1"> 
+                                          </div>
+                                       </div>
+                                       <div class="form-group">
+                                          <label class="control-label col-sm-3" for="email">Training Topic:</label>
+                                          <div class="col-sm-9">
+                                             <input type="text" name="training_topic" class="form-control" id="training_topic" placeholder="Training Topic" value="CCNA">
+                                          </div>
+                                       </div>
+                                       <div class="form-group">
+                                          <label class="control-label col-sm-3" for="email">Institute:</label>
+                                          <div class="col-sm-9">
+                                             <input type="text" name="institute" class="form-control" id="institute" placeholder="Institiute Name" value="CCNA">
+                                          </div>
+                                       </div>
+                                       <div class="form-group">
+                                          <label class="control-label col-sm-3" for="email">Country:</label>
+                                          <div class="col-sm-9">
+                                             <select name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
+                                                <option value="">Select Country</option>
+                                                <?php foreach($country as $key){?>
+                                                <option value="<?php echo $key['country_id']; ?>"<?php if($training_list->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
+                                                <?php } ?>
+                                             </select>
+                                          </div>
+                                       </div>
+                                       <div class="form-group">
+                                          <label class="control-label col-sm-3" for="email">State:</label>
+                                          <div class="col-sm-9">
+                                             <select name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+                                                <option value="">Select Country First</option>
+                                                <!--   <?php foreach($state as $val){?>
+                                                   <option value="<?php echo $val['state_id']; ?>"<?php if($training_list->state_id==$val['state_id']){ echo "selected"; }?>><?php echo $val['state_name']; ?></option>
+                                                   <?php } ?> -->
+                                             </select>
+                                          </div>
+                                       </div>
+                                       <div class="form-group">
+                                          <label class="control-label col-sm-3" for="email">City:</label>
+                                          <div class="col-sm-9">
+                                             <select name="city_id" id="city_id" class="form-control">
+                                                <option value="">Select State First</option>
+                                                <!--      <?php foreach($city as $valu){?>
+                                                   <option value="<?php echo $valu['id']; ?>"<?php if($training_list->city_id==$valu['id']){ echo "selected"; }?>><?php echo $valu['city_name']; ?></option>
+                                                   <?php } ?> -->
+                                             </select>
+                                          </div>
+                                       </div>
+                                       <div class="form-group">
+                                          <label class="control-label col-sm-3" for="pwd">Duration:</label>
+                                          <div class="col-sm-9">
+                                             <input name="duration" type="text" class="form-control" id="duration" placeholder=" 1 years 2 month" value="">
+                                          </div>
+                                       </div>
+                                       <div class="form-group">
+                                          <label class="control-label col-sm-3" for="pwd">Training Years:</label>
+                                          <div class="col-sm-9">
+                                             <select name="training_year" id="training_year" class="form-control">
+                                                <?php foreach($passingyear as $traning){?>
+                                                <option value="<?php echo $traning['passing_id']; ?>"<?php if($training_list->training_year==$traning['passing_id']){ echo "selected"; }?>><?php echo $traning['passing_year']; ?></option>
+                                                <?php } ?>
+                                             </select>
+                                          </div>
+                                       </div>
+                                       <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                          <button type="submit" class="btn btn-primary">Submit</button>
+                                       </div>
+                                    </form>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal7"><i class="fa fa-plus"></i></a></span>  
+                     </li>
+                  </ul>
+                  <div class="col-md-12 bd-2">
+                     <?php 
+                        // print_r($experinece_list);
+                                $sr_no=0;
+                            if (!empty($training_list)): foreach ($training_list as $v_training) : 
+                        
+                             // print_r($training_list);
+                                    # code...
+                               
+                            ?>
+                     <div class="invi-div">
+                        <!-- <img src="<?php echo base_url()?>upload/<?php echo $this->company_profile_model->company_logoby_id($applicaiton[$i]->company_profile_id); ?>" class="invitation-img"/> -->
+                        <div class="info-invitation">
+                           <div class="row">
+                              <div class="col-sm-6">
+                                 <p></p>
+                                 <p >Training Title: <span class="salary-info"> <?php echo $v_training->training_title; ?></span></p>
+                                 <p >Training Institute:<span class="salary-info">  <?php echo $v_training->institute; ?></span> </p>
+                                 <p >State: <span class="salary-info">  <?php echo $v_experience->achievement; ?></span></p>
+                                 <p >Duration: <span class="salary-info"> <?php echo $v_training->duration; ?></span></p>
+                              </div>
                               <div class="col-sm-6">
                                  <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#UdpateTraining<?php  echo $v_training->js_training_id; ?>" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil"></i></a></span>
-                              
-                                  <p  >Training Topic: <span class="salary-info">  <?php echo $v_training->training_topic; ?></span></p>
-                                
-                                <p >Country: <span class="salary-info">  <?php echo $v_training->country_name; ?></span></p>
-
-                                <p >City:  <span class="salary-info"> <?php echo $v_training->city_name; ?></span></p>
-                                <p >Year:  <span class="salary-info"> <?php echo $v_training->passing_year; ?></span></p>
-
+                                 <p  >Training Topic: <span class="salary-info">  <?php echo $v_training->training_topic; ?></span></p>
+                                 <p >Country: <span class="salary-info">  <?php echo $v_training->country_name; ?></span></p>
+                                 <p >City:  <span class="salary-info"> <?php echo $v_training->city_name; ?></span></p>
+                                 <p >Year:  <span class="salary-info"> <?php echo $v_training->passing_year; ?></span></p>
                               </div>
-
-                              </div>
-                              
-                            
-                            
-                                <!-- <button class="apply-invi">Apply Now</button> -->
-                            </div>
-                            <div class="clear"></div>   
+                           </div>
+                           <!-- <button class="apply-invi">Apply Now</button> -->
                         </div>
-            <!--  -->
-                 <?php
-                  // $sr_no++;
-                   // }
-              endforeach;
-            ?>
-            <?php else : ?> 
-            
-                <div>
-                    <strong>There is no data to display</strong>
-                  
-                </div>
-             
-              
-            <?php endif; ?>
-             </div>
-    
-    
-    </div>
-
-      <?php foreach($training_list as $v_training): ?>
-<div id="UdpateTraining<?php echo $v_training->js_training_id; ?>" class="modal fade" role="dialog">
-  <div class="modal-dialog modal-md">
-   <?php
-    $training_list=$this->Job_training_model->get($v_training->js_training_id); 
-    
-   ?>    
-            
-        <!-- <div class="modal fade" id="myModal7" role="dialog"> -->
-    
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">My Trainings</h4>
-        </div>
-        <div class="modal-body">
-         <form id="UpdateEducational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_training');?>" method="post" style="padding: 30px;">
-              <div class="form-group">
-              <input type="hidden" value="155" name="job_training_id">
-                <label class="control-label col-sm-3" for="email">Training Title</label>
-                <div class="col-sm-9">
-                   <select name="training_title" id="training_title" class="form-control" onchange="check_other(this.value)">
-                    <option value="">Select Training title</option>
-
-                    <?php foreach($training as $key){?>
-                      <option value="<?php echo $key['name']; ?>"<?php if($training_list->training_title==$key['name']){ echo "selected"; }?>><?php echo $key['name']; ?></option>
-                    <?php } ?>
-                    <option value="other">Other</option>
-                  <input type="hidden" name="training_title" class="form-control" id="training_title1" placeholder="Training Title"
-                   value="<?php
-                         if (!empty($training_list->training_title)) {
-                           echo $training_list->training_title;
-                           }
-                       ?>"> 
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Training Topic:</label>
-                <div class="col-sm-9">
-                  <input type="text" name="training_topic" class="form-control" id="training_topic" placeholder="Training Topic" value="<?php
-                         if (!empty($training_list->training_topic)) {
-                           echo $training_list->training_topic;
-                           }
-                       ?>">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Institute:</label>
-                <div class="col-sm-9">
-                  <input type="text" name="institute" class="form-control" id="institute" placeholder="Institiute Name" value="<?php
-                         if (!empty($training_list->institute)) {
-                           echo $training_list->institute;
-                           }
-                       ?>">
-                </div>
-              </div>
-
-               <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Country:</label>
-                <div class="col-sm-9">
-                  <select name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
-                    <option value="">Select Country</option>
-                                         <?php foreach($country as $key){?>
-                      <option value="<?php echo $key['country_id']; ?>"<?php if($training_list->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
-                    <?php } ?>
-                  </select>
-                </div> 
-              </div>
-
-              <div class="form-group">
-                <label class="control-label col-sm-3" for="email">State:</label>
-                <div class="col-sm-9">
-                 <select name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
-                    <option value="">Select Country First</option>
-                     <?php foreach($state as $val){?>
-                      <option value="<?php echo $val['state_id']; ?>"<?php if($training_list->state_id==$val['state_id']){ echo "selected"; }?>><?php echo $val['state_name']; ?></option>
-                      <?php } ?>
-                    </select>
-                </div>
-              </div>
-
-               <div class="form-group">
-                <label class="control-label col-sm-3" for="email">City:</label>
-                <div class="col-sm-9">
-                 <select name="city_id" id="city_id" class="form-control">
-                   <option value="">Select State First</option>
+                        <div class="clear"></div>
+                     </div>
+                     <!--  -->
+                     <?php
+                        // $sr_no++;
+                         // }
+                        endforeach;
+                        ?>
+                     <?php else : ?> 
+                     <div>
+                        <strong>There is no data to display</strong>
+                     </div>
+                     <?php endif; ?>
+                  </div>
+               </div>
+               <?php foreach($training_list as $v_training): ?>
+               <div id="UdpateTraining<?php echo $v_training->js_training_id; ?>" class="modal fade" role="dialog">
+                  <div class="modal-dialog modal-md">
+                     <?php
+                        $training_list=$this->Job_training_model->get($v_training->js_training_id); 
+                        
+                        ?>    
+                     <!-- <div class="modal fade" id="myModal7" role="dialog"> -->
+                     <div class="modal-content">
+                        <div class="modal-header">
+                           <button type="button" class="close" data-dismiss="modal">&times;</button>
+                           <h4 class="modal-title">My Trainings</h4>
+                        </div>
+                        <div class="modal-body">
+                           <form id="UpdateEducational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_training');?>" method="post" style="padding: 30px;">
+                              <div class="form-group">
+                                 <input type="hidden" value="155" name="job_training_id">
+                                 <label class="control-label col-sm-3" for="email">Training Title</label>
+                                 <div class="col-sm-9">
+                                    <select name="training_title" id="training_title" class="form-control" onchange="check_other(this.value)">
+                                       <option value="">Select Training title</option>
+                                       <?php foreach($training as $key){?>
+                                       <option value="<?php echo $key['name']; ?>"<?php if($training_list->training_title==$key['name']){ echo "selected"; }?>><?php echo $key['name']; ?></option>
+                                       <?php } ?>
+                                       <option value="other">Other</option>
+                                       <input type="hidden" name="training_title" class="form-control" id="training_title1" placeholder="Training Title"
+                                          value="<?php
+                                             if (!empty($training_list->training_title)) {
+                                               echo $training_list->training_title;
+                                               }
+                                             ?>"> 
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                              <label class="control-label col-sm-3" for="email">Training Topic:</label>
+                              <div class="col-sm-9">
+                              <input type="text" name="training_topic" class="form-control" id="training_topic" placeholder="Training Topic" value="<?php
+                                 if (!empty($training_list->training_topic)) {
+                                   echo $training_list->training_topic;
+                                   }
+                                 ?>">
+                              </div>
+                              </div>
+                              <div class="form-group">
+                              <label class="control-label col-sm-3" for="email">Institute:</label>
+                              <div class="col-sm-9">
+                              <input type="text" name="institute" class="form-control" id="institute" placeholder="Institiute Name" value="<?php
+                                 if (!empty($training_list->institute)) {
+                                   echo $training_list->institute;
+                                   }
+                                 ?>">
+                              </div>
+                              </div>
+                              <div class="form-group">
+                              <label class="control-label col-sm-3" for="email">Country:</label>
+                              <div class="col-sm-9">
+                              <select name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
+                              <option value="">Select Country</option>
+                              <?php foreach($country as $key){?>
+                              <option value="<?php echo $key['country_id']; ?>"<?php if($training_list->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
+                              <?php } ?>
+                              </select>
+                              </div> 
+                              </div>
+                              <div class="form-group">
+                                 <label class="control-label col-sm-3" for="email">State:</label>
+                                 <div class="col-sm-9">
+                                    <select name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+                                       <option value="">Select Country First</option>
+                                       <?php foreach($state as $val){?>
+                                       <option value="<?php echo $val['state_id']; ?>"<?php if($training_list->state_id==$val['state_id']){ echo "selected"; }?>><?php echo $val['state_name']; ?></option>
+                                       <?php } ?>
+                                    </select>
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <label class="control-label col-sm-3" for="email">City:</label>
+                                 <div class="col-sm-9">
+                                    <select name="city_id" id="city_id" class="form-control">
+                                       <option value="">Select State First</option>
                                        <?php foreach($city as $valu){?>
-                    <option value="<?php echo $valu['id']; ?>"<?php if($training_list->city_id==$valu['id']){ echo "selected"; }?>><?php echo $valu['city_name']; ?></option>
-                    <?php } ?>
-                                      </select>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">Duration:</label>
-                <div class="col-sm-9">
-                  <input name="duration" type="text" class="form-control" id="duration" placeholder=" 1 years 2 month" value="<?php
-                         if (!empty($training_list->duration)) {
-                           echo $training_list->duration;
-                           }
-                       ?>">
-                </div>
-              </div>
-
-                 <div class="form-group">
-                <label class="control-label col-sm-3" for="pwd">Training Years:</label>
-                <div class="col-sm-9">
-              <select name="training_year" id="training_year" class="form-control">
-                  <?php foreach($passingyear as $traning){?>
-          <option value="<?php echo $traning['passing_id']; ?>"<?php if($training_list->training_year==$traning['passing_id']){ echo "selected"; }?>><?php echo $traning['passing_year']; ?></option>
-          <?php } ?>
-                   </select>
-                </div>
-              </div>
-
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                 <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
-
-                    
-            </form>
-      </div>
-        
-      </div>
-    </div>
-  </div> 
-
-<?php  $count++; ?>
-<?php endforeach;?>
-
-<div id="menu2" class="tab-pane fade">
-    <ul>
-    <?php  $designation = $this->Master_model->getMaster('designation',$where=false);
-
-            $department = $this->Master_model->getMaster('department',$where=false); ?>
-     <li class="bullet"><a href="#" data-toggle="modal" data-target="#myModal25">skills</a>
-    
-      <div class="modal fade" id="myModal25" role="dialog">
-    <div class="modal-dialog modal-md">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Skiils</h4>
-        </div>
-        <div class="modal-body">
-         <form id="Updateskill-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_skills');?>" method="post" style="padding: 30px;">
-         
-
-              <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Skills:</label>
-                <div class="col-sm-9">
-               
-                  <input type="text" name="skills" class="form-control" id="tokenfield" placeholder="Enter Your Skills"
-                   value="<?php  
-
-              if(!empty($js_skills)){
-                $skill="";
-                for($i=0;$i<sizeof($js_skills);$i++){
-                  if($i==0){
-                  $skill=$skill.$js_skills[$i]['skills'];
-                  }else{
-                    $skill=$skill.','.$js_skills[$i]['skills'];
-                  }
-                }
-                echo $skill;
-              }
-                           ?>">
-
-                </div>
-              </div>
-
-       
-
-
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-              
-            </form>
-      </div>
-        
-      </div>
-    </div>
-  </div>
-            <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal25"><i class="fa fa-plus" aria-hidden="true"></i></a></span>  
-
-      </li>
-
-     </ul>
-     <div class="col-md-12 bd-2">
-                <?php 
-      $js_skills = $this->Master_model->getMaster('job_seeker_skills',$where_skill);
-       
-
-              if (!empty($js_skills)):
-            
-            ?>
-            <div class="invi-div">
+                                       <option value="<?php echo $valu['id']; ?>"<?php if($training_list->city_id==$valu['id']){ echo "selected"; }?>><?php echo $valu['city_name']; ?></option>
+                                       <?php } ?>
+                                    </select>
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <label class="control-label col-sm-3" for="pwd">Duration:</label>
+                                 <div class="col-sm-9">
+                                    <input name="duration" type="text" class="form-control" id="duration" placeholder=" 1 years 2 month" value="<?php
+                                       if (!empty($training_list->duration)) {
+                                         echo $training_list->duration;
+                                         }
+                                       ?>">
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <label class="control-label col-sm-3" for="pwd">Training Years:</label>
+                                 <div class="col-sm-9">
+                                    <select name="training_year" id="training_year" class="form-control">
+                                       <?php foreach($passingyear as $traning){?>
+                                       <option value="<?php echo $traning['passing_id']; ?>"<?php if($training_list->training_year==$traning['passing_id']){ echo "selected"; }?>><?php echo $traning['passing_year']; ?></option>
+                                       <?php } ?>
+                                    </select>
+                                 </div>
+                              </div>
+                              <div class="modal-footer">
+                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                 <button type="submit" class="btn btn-primary">Submit</button>
+                              </div>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <?php  $count++; ?>
+               <?php endforeach;?>
+               <div id="menu2" class="tab-pane fade">
+                  <ul>
+                     <?php  $designation = $this->Master_model->getMaster('designation',$where=false);
+                        $department = $this->Master_model->getMaster('department',$where=false); ?>
+                     <li class="bullet">
+                        <a href="#" data-toggle="modal" data-target="#myModal25">skills</a>
+                        <div class="modal fade" id="myModal25" role="dialog">
+                           <div class="modal-dialog modal-md">
+                              <div class="modal-content">
+                                 <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Skiils</h4>
+                                 </div>
+                                 <div class="modal-body">
+                                    <form id="Updateskill-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_skills');?>" method="post" style="padding: 30px;">
+                                       <div class="form-group">
+                                          <label class="control-label col-sm-3" for="email">Skills:</label>
+                                          <div class="col-sm-9">
+                                             <input type="text" name="skills" class="form-control" id="tokenfield" placeholder="Enter Your Skills"
+                                                value="<?php  
+                                                   if(!empty($js_skills)){
+                                                     $skill="";
+                                                     for($i=0;$i<sizeof($js_skills);$i++){
+                                                       if($i==0){
+                                                       $skill=$skill.$js_skills[$i]['skills'];
+                                                       }else{
+                                                         $skill=$skill.','.$js_skills[$i]['skills'];
+                                                       }
+                                                     }
+                                                     echo $skill;
+                                                   }
+                                                                ?>">
+                                          </div>
+                                       </div>
+                                       <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                          <button type="submit" class="btn btn-primary">Submit</button>
+                                       </div>
+                                    </form>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal25"><i class="fa fa-plus" aria-hidden="true"></i></a></span>  
+                     </li>
+                  </ul>
+                  <div class="col-md-12 bd-2">
+                     <?php 
+                        $js_skills = $this->Master_model->getMaster('job_seeker_skills',$where_skill);
                          
                             <div class="info-invitation">
                              
@@ -2954,6 +3766,47 @@ function FillBilling(f) {
   f.pincode1.value = '';
   }
 }
+   function disableAddDP() {
+    $("#end_date").attr("disabled", $("#chkDisable").is(":checked")).val("Continue");
+   }   
+   
+    function disableDP(i) {
+   //alert($('#resDate_'+i).val());
+      if($('#resDate_'+i).val()==''  || $('#resDate_'+i).val()==null){
+      
+      $('#upChkDisable_'+i).attr("checked","true");
+      $('#resDate_'+i).val('Continue');
+       $('#resDate_'+i).attr('disabled',"disabled");
+    }
+    
+   }  
+    function disableUpperDP(count) {
+      alert(count);
+    
+    $("#resDate_"+count).attr("disabled", $("#upChkDisable_"+count).is(":checked"));
+     if($("#upChkDisable_"+count).is(":checked")){
+       $('#resDate_'+count).val(<?php date('Y-m-d'); ?>);
+     } else {
+       $('#resDate_'+count).val("");
+     }
+   }
+   
+   function FillBilling(f) {
+    if(f.billingtoo.checked == true) {
+      f.parmanent_address.value = f.present_address.value;
+    f.country1_id.value = f.country_id.value;
+      f.state1_id.value = f.state_id.value;
+    f.city1_id.value = f.city_id.value;
+    f.pincode1.value = f.pincode.value;
+    }else{
+   
+      f.parmanent_address.value = '';
+    f.country1_id.value = '';
+      f.state1_id.value ='';
+    f.city1_id.value = '';
+    f.pincode1.value = '';
+    }
+   }
 </script>    
 
 <script>
@@ -3293,6 +4146,75 @@ function check_other(value)
     x1.value = value;
   }
 }
+    }
+      
+      $(document).ready(function(){
+   
+   function getStates_load(){
+       var id = $('#country_id').val();
+   
+       if(id){
+           $.ajax({
+               type:'POST',
+               url:'<?php echo base_url();?>Job_seeker/getstate',
+               data:{id:id},
+               success:function(res){
+                   $('#state_id').html(res);
+                   $('#state_id').val(<?php echo $training_list->state_id; ?>);
+                    getCitys_load(<?php echo $training_list->state_id; ?>);
+               }
+               
+           }); 
+         }
+   
+      }
+   
+   function getCitys_load(id){
+     //var id = $('#state_id').val();
+     // alert(id);
+       if(id){
+           $.ajax({
+               type:'POST',
+               url:'<?php echo base_url();?>Job_seeker/getcity',
+               data:{id:id},
+               success:function(res){
+                   $('#city_id').html(res);
+                   $('#city_id').val(<?php echo $training_list->city_id; ?>);
+               }
+               
+           }); 
+         }
+   
+      }
+   
+   
+   
+   
+   getCitys_load();
+   getStates_load();
+   });
+   
+   function check_other(value)
+   {
+   
+   var x1 = document.getElementById("training_title1");
+   var x = document.getElementById("training_title");
+   if (value=='other') 
+   {
+   if (x1.type === "hidden") {
+     x1.type = "text";
+     // x.type = "hidden";
+   } else {
+     x1.type = "hidden";
+   
+   }
+   }
+   else
+   {
+   x1.type = "hidden";
+   x1.value = value;
+   }
+   }       
 </script> 
 <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>    
 <script>
