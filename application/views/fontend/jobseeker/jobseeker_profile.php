@@ -1873,7 +1873,7 @@ li.bullet {
                   </div>
                </div>
                <?php  $count++; ?>
-               <?php endforeach;?>
+               <?php endforeach;?>   
                <div id="menu2" class="tab-pane fade">
                   <ul>
                      <?php  $designation = $this->Master_model->getMaster('designation',$where=false);
@@ -2998,7 +2998,7 @@ li.bullet {
    }
 </script> 
 <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>    
-<script>
+<script>      
    $(document).ready(function(){
    
    // Initialize select2
