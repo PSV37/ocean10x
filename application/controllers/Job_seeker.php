@@ -20,6 +20,10 @@ class Job_seeker extends MY_Seeker_Controller
     
     public function my_dashboard()
     {
+        $this->session->unset_userdata('activemenu');
+        $data['activemenu'] = 'dashboard';
+         $this->session->set_userdata($data);
+
         $jobseeker_id = $this->session->userdata('job_seeker_id');
         $where_int="job_seeker_id='$jobseeker_id'";
         $data['intro_data'] = $this->Master_model->get_master_row("js_info", $select= FALSE, $where_int, $join = FALSE);
@@ -68,6 +72,11 @@ class Job_seeker extends MY_Seeker_Controller
 	
 	public function seeker_info()
     {
+
+        $this->session->unset_userdata('activemenu');
+        $data['activemenu'] = 'seeker_info';
+         $this->session->set_userdata($data);
+         
         $jobseeker_id = $this->session->userdata('job_seeker_id');
 
 			$data['city'] = $this->Master_model->getMaster('city',$where=false);
