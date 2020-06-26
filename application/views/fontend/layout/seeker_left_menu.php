@@ -31,7 +31,8 @@
                                 <nav class="menu-principal">
                                 
                                     <ul class="menu-principal-list" style="">
-                                         <li class="menu active">
+                                         <li class="menu <?php if ($activemenu == 'dashboard') { 
+                                              echo 'active'; } ?>">
                                              <a data-dl-view="true" data-dl-title="Dashboard" href="<?php echo base_url(); ?>seeker/dashboard">
                                             <span class="icon-container">
                                                  <i class="fas fa-tachometer-alt"></i>
@@ -39,7 +40,7 @@
                                             <span class="text item">Dashboard</span>
                                             </a>
                                         </li>
-                                        <li class="menu">
+                                        <li class="menu <?php if ($activemenu == 'seeker_info') { echo 'active';  } ?> ">
                                              <a data-dl-view="true" data-dl-title="My profile" href="<?php echo base_url() ?>job_seeker/seeker_info">
                                             <span class="icon-container">
                                                 <i class="fas fa-user-alt"></i>
