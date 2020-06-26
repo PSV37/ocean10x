@@ -12,7 +12,7 @@
 
 
 </style>    
-
+<?php $activemenu = $this->session->userdata('activemenu'); ?>
 <div class="col-md-3">
 <div class="employer_menu">
             
@@ -38,7 +38,9 @@
                           <div class="menu-tab">
                             <nav class="menu-principal">
                               <ul class="menu-principal-list" style="">
-                                <li class="active">
+                                <li <?php if ($activemenu == 'dashboard') { ?>
+                                 class="active"
+                                <?php } ?> >
                                   <a data-dl-view="true" data-dl-title="Dashboard" href="<?php echo base_url(); ?>employer">
                                     <span class="icon-container">
                                       <i class="fas fa-tachometer-alt"></i>
