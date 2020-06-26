@@ -22,6 +22,14 @@ li.bullet {
     border-radius: 30px;
     /* color: aqua; */
 }
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 6px 15px;
+    color: #18cfbd;
+    font-size: 12px;
+}
+
 </style>
 <?php 
     $this->load->view('fontend/layout/new_seeker_header.php');
@@ -861,7 +869,7 @@ li.bullet {
     <div id="menu1" class="tab-pane fade">
     
       <div class="education_header" style="position:relative;">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQofjuD4yOHnpJHZSgGYZucvlOH6nukw95LkKub_HxNl3N6cpTL&usqp=CAU" style="width:100%;position:relative;"></img>
+          <img src="https://www.jetchill.com/wp-content/uploads/2017/05/blog-header-background.jpg" style="width:100%;position:relative;"></img>
             <div class="icon-education" style="position:absolute;bottom:23px;right:53%;">
             <i class="fas fa-graduation-cap edu-i"></i>
             </div>
