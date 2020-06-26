@@ -6,121 +6,106 @@
 <!---header end--->      
 <div class="container-fluid">
   <div class="container">
-        <div class="col-md-12">
-    <?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
-     <?php  $job_seeker=$this->session->userdata('job_seeker_id'); ?>
-          
-
-      <div class="col-md-9 profile-section" style="border-radius:13px;margin-top:83px;">
-              <div class="profile-tabs">      
-                   
-                <ul class="nav nav-tabs profile-nav ">
-                            <li class="active"><a data-toggle="tab" href="#home">My Profile</a></li>
-                            <li><a data-toggle="tab" href="#menu1">Education</a></li>
-                            <li><a data-toggle="tab" href="#menu2">Skills</a></li>
-                            <li><a data-toggle="tab" href="#menu3">Work Experience</a></li>
-                            <li><a data-toggle="tab" href="#menu4">Certs & Trainning</a></li>
-                 </ul>
+    <div class="col-md-12">
+      <?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
+      <?php  $job_seeker=$this->session->userdata('job_seeker_id'); ?>
+        <div class="col-md-9 profile-section" style="border-radius:13px;margin-top:83px;">
+          <div class="profile-tabs">      
+            <ul class="nav nav-tabs profile-nav ">
+              <li class="active"><a data-toggle="tab" href="#home">My Profile</a></li>
+              <li><a data-toggle="tab" href="#menu1">Education</a></li>
+              <li><a data-toggle="tab" href="#menu2">Skills</a></li>
+              <li><a data-toggle="tab" href="#menu3">Work Experience</a></li>
+              <li><a data-toggle="tab" href="#menu4">Certs & Trainning</a></li>
+            </ul>
+          </div>
+            
+          <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+              <div class="header-p-img" style="position:relative;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS-7Q995g-7kjzS1RbQh7zaxf4eBCciNVp8ebwgueosDLSMFkC0&usqp=CAU" style="width:100%; height:140px;position:relative;margin-bottom:140px;"></img>
                 
-                </div>
-            
-    <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
+                <div class="text-center" style="position:absolute;top:50px;left:-50px;">
+                  <img src="<?php echo base_url() ?>upload/<?php if(!empty($job_seeker_photo->photo_path)) { echo $job_seeker_photo->photo_path;} else { echo "image-notfound.png";} ?>" class="avatar img-circle img-thumbnail" alt="avatar">
        
-
-    <div class="header-p-img" style="position:relative;">
-        
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS-7Q995g-7kjzS1RbQh7zaxf4eBCciNVp8ebwgueosDLSMFkC0&usqp=CAU" style="width:100%; height:140px;position:relative;margin-bottom:140px;"></img>
-
-<!-- </div></div></div> -->
-            
-            
-        <div class="text-center" style="position:absolute;top:50px;left:-50px;">
-        <img src="<?php echo base_url() ?>upload/<?php if(!empty($job_seeker_photo->photo_path)) { echo $job_seeker_photo->photo_path;} else { echo "image-notfound.png";} ?>" class="avatar img-circle img-thumbnail" alt="avatar">
-       
-        <h6>Upload a different photo...</h6>
-        <input type="file" class="text-center center-block file-upload">
-         <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal50">Edit</a></span> 
-      </div>
                 
            
                  
                  
                 <div class="row">
+                  <h6>Upload a different photo...</h6>
+                  <input type="file" class="text-center center-block file-upload">
+                </div>
+                <div class="row">
+                 <span class="edit"><a href="#" data-toggle="modal" data-target="#myModal50">Edit</a></span> 
+                </div>
+                 <div class="row">
                     <div class="col-md-6">
-                    <ul class="jobinfolist">
-                      <li>
-                        <h4>First Name | Last name</h4>
-                        <strong>: <?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></strong></li>
-                      <li>
-                        <h4>Date of birth</h4>
-                        <strong>: <?php if($js_personal_info->date_of_birth=="0000-00-00") {
-                    echo "";
-                  } else {
-                        echo date('j M Y',strtotime($js_personal_info->date_of_birth)); 
-                        if($js_personal_info->dob_visiblity=="Yes") {
-                          echo "  (Birthday not visible to my network)";
-                        }else{
-                          echo "  (Birthday visible to my network)";
-                        }
-                  }
-                 ?></strong></li>
-                      <li>
-                        <h4>Primary phone no</h4>
-                        <strong>: <?php echo $js_personal_info->country_code.'- '.$js_personal_info->mobile; ?></strong></li>
-                      <li>
-                        <h4>Alternate phone no</h4>
-                        <strong>: <?php echo $js_personal_info->alternatecountry_code.'- '.$js_personal_info->alternatemobile; ?></strong></li>
-                      <li>
-                        <h4>Present Address</h4>
-                        <strong>: <?php echo $js_personal_info->present_address; ?></strong></li>
-                     <li>
-
-                        <h4>Address</h4>
-                        <strong>: <?php echo $js_personal_info->present_address; ?></strong></li>
-                     <li>   <h4>City</h4>
-                        <strong>: <?php echo $js_personal_info->city_name; ?></strong></li>
-                       
-                                                                                           
-                                                        
-                        
-                      
-                    </ul>
-                  </div>
-                  <div class="col-md-6">
-                    <ul class="jobinfolist">
-                      <li>
-                        <h4>State</h4>
-                        <strong>: <?php echo $js_personal_info->state_name; ?></strong></li>
-                      <li>
-                        <h4>Country</h4>
-                        <strong>: <?php echo $js_personal_info->country_name; ?></strong></li>
-                      <li>
-                        <h4>Marital Status</h4>
-                        <strong>: <?php if(!empty($js_personal_info->marital_status))
-                  echo $js_personal_info->marital_status; ?></strong></li>
-                      <li>
-                        <h4>Work premit for USA</h4>
-                        <strong>: <?php if(!empty($js_personal_info->work_permit_usa))
-                  echo $js_personal_info->work_permit_usa; ?></strong></li>
-                      <li>
-                        <h4>Work premit for Other Country</h4>
-                        <strong>: <?php if(!empty($js_personal_info->work_permit_countries))
-                  echo $js_personal_info->work_permit_countries; ?></strong></li>
-                     <li>
-                        <h4>Website</h4>
-                        <strong>: <?php if(!empty($js_personal_info->website))
-                  echo $js_personal_info->website; ?></strong></li>
+                      <ul class="jobinfolist">
                         <li>
-                        <h4>My Tagline</h4>
-                        <strong>: <?php if(!empty($js_personal_info->resume_title))
-                  echo $js_personal_info->resume_title; ?></strong></li>
-                                                                                           
-                                                        
-                        
-                      
-                    </ul>
-                  </div>
+                          <h4>First Name | Last name</h4>
+                          <strong>: <?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></strong></li>
+                        <li>
+                          <h4>Date of birth</h4>
+                          <strong>: <?php if($js_personal_info->date_of_birth=="0000-00-00") {
+                            echo "";
+                            } else {
+                            echo date('j M Y',strtotime($js_personal_info->date_of_birth)); 
+                            if($js_personal_info->dob_visiblity=="Yes") {
+                              echo "  (Birthday not visible to my network)";
+                            }else{
+                              echo "  (Birthday visible to my network)";
+                            } } ?>
+                              
+                          </strong>
+                        </li>
+                        <li>
+                          <h4>Primary phone no</h4>
+                          <strong>: <?php echo $js_personal_info->country_code.'- '.$js_personal_info->mobile; ?></strong></li>
+                        <li>
+                          <h4>Alternate phone no</h4>
+                          <strong>: <?php echo $js_personal_info->alternatecountry_code.'- '.$js_personal_info->alternatemobile; ?></strong></li>
+                        <li>
+                          <h4>Present Address</h4>
+                          <strong>: <?php echo $js_personal_info->present_address; ?></strong></li>
+                       <li>
+
+                          <h4>Address</h4>
+                          <strong>: <?php echo $js_personal_info->present_address; ?></strong></li>
+                       <li>   <h4>City</h4>
+                          <strong>: <?php echo $js_personal_info->city_name; ?></strong></li>
+                      </ul>
+                    </div>
+                    <div class="col-md-6">
+                      <ul class="jobinfolist">
+                        <li>
+                          <h4>State</h4>
+                          <strong>: <?php echo $js_personal_info->state_name; ?></strong></li>
+                        <li>
+                          <h4>Country</h4>
+                          <strong>: <?php echo $js_personal_info->country_name; ?></strong></li>
+                        <li>
+                          <h4>Marital Status</h4>
+                          <strong>: <?php if(!empty($js_personal_info->marital_status))
+                    echo $js_personal_info->marital_status; ?></strong></li>
+                        <li>
+                          <h4>Work premit for USA</h4>
+                          <strong>: <?php if(!empty($js_personal_info->work_permit_usa))
+                    echo $js_personal_info->work_permit_usa; ?></strong></li>
+                        <li>
+                          <h4>Work premit for Other Country</h4>
+                          <strong>: <?php if(!empty($js_personal_info->work_permit_countries))
+                    echo $js_personal_info->work_permit_countries; ?></strong></li>
+                       <li>
+                          <h4>Website</h4>
+                          <strong>: <?php if(!empty($js_personal_info->website))
+                    echo $js_personal_info->website; ?></strong></li>
+                          <li>
+                          <h4>My Tagline</h4>
+                          <strong>: <?php if(!empty($js_personal_info->resume_title))
+                    echo $js_personal_info->resume_title; ?></strong></li>
+                      </ul>
+                    </div>
                 </div>
             
          <form id="UpdateExperience-info" class="form-horizontal" action="<?php echo base_url('job_seeker/save_profile_details');?>" method="post" style="padding: 30px;">    
@@ -153,8 +138,12 @@
                 <button class="save-apply-btn">save</button>
             </div>
           </form>
+<<<<<<< HEAD
         </div>  
     </div>
+=======
+      
+>>>>>>> b947b8e4252bb8347eef79166a3a0c5d4611c77f
 
       <div class="modal fade" id="myModal50" role="dialog">
     <div class="modal-dialog modal-md">
