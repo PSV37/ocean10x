@@ -99,6 +99,7 @@
         <div class="col-md-9 question-bank">
           <div class="header-bookbank">
             Question Bank
+            <a href="<?php echo base_url(); ?>employer/add-question"><button type="button" class="btn btn-primary"><i class="fa fa-plus">Add Question</i></button></a>
           </div>
           <div class="select-option">
             <p style="FONT-SIZE: 12PX;COLOR: #0a5854;">Total No. Of Question:10</p>
