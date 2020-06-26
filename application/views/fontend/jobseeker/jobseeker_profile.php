@@ -941,7 +941,7 @@ li.bullet {
       <div class="form-group">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
-          <label class="control-label" for="email">Course Type<span class="required">*</b></label>
+          <label class="control-label" for="email">Course Type<span class="required">*</span></label>
                     
                 <?php foreach($course as $courses){?>
             <input type="radio" name="education_type_id" required id="education_type_id" value="<?php echo $courses['education_type_id']; ?>"<?php if(!empty($education_data)) if($education_data[0]->education_type_id==$courses['education_type_id']) echo "checked";?> style="margin: 0 1px;"> <?php echo $courses['education_type']; ?>
