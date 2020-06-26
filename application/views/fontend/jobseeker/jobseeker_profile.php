@@ -1087,7 +1087,8 @@
                                        </div>
                                        <div class="form-group">
                                           <label class="control-label col-sm-3" for="email">End Date:</label>
-                                          <div class="col-sm-9"><input id="resDate_<?php echo $count?>" class="datepicker form-control" required name="end_date" value="" disabled="disabled">
+                                          <div class="col-sm-9"><input id="resDate_
+                                            ?>" class="datepicker form-control" required name="end_date" value="" disabled="disabled">
                                           </div>
                                        </div>
                                        <div class="form-group">
@@ -1220,12 +1221,12 @@
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="email">Start Date:</label>
                                  <div class="col-sm-9"><input type="date" class="datepicker form-control" required name="start_date" value="<?php if (!empty($experinece->start_date)) { echo date('d-m-Y',strtotime($experinece->start_date)); } ?>">
-                                    <label><input type="checkbox" id="upChkDisable_<?php echo $count?>" onclick="disableUpperDP('<?php echo $count?>')">  Current Job</label>
+                                    <label><input type="checkbox" id="upChkDisable_<?php echo $count ?>" onclick="disableUpperDP('<?php echo $count ?>')">  Current Job</label>
                                  </div>
                               </div>
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="email">End Date:</label>
-                                 <div class="col-sm-9"><input id="resDate_<?php echo $count?>"  class="datepicker form-control" required name="end_date" value="<?php if (!empty($experinece->end_date)) { echo date('d/m/Y',strtotime($experinece->end_date)); }else{ echo "";} ?>" disabled="disabled">
+                                 <div class="col-sm-9"><input id="resDate_<?php echo $count ?>"  class="datepicker form-control" required name="end_date" value="<?php if (!empty($experinece->end_date)) { echo date('d/m/Y',strtotime($experinece->end_date)); }else{ echo "";} ?>" disabled="disabled">
                                  </div>
                               </div>
                               <div class="form-group">
