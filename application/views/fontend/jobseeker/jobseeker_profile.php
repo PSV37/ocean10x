@@ -1462,9 +1462,9 @@ li.bullet {
       </li>
 
       </ul>
-      
+           
     </div>
-    <div id="menu2" class="tab-pane fade">
+    <div id="menu3" class="tab-pane fade">
     <ul>
     <?php  $designation = $this->Master_model->getMaster('designation',$where=false);
 
@@ -2107,7 +2107,7 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
 <?php  $count++; ?>
 <?php endforeach;?>
 
-<div id="menu2" class="tab-pane fade">
+<div id="menu3" class="tab-pane fade">
     <ul>
     <?php  $designation = $this->Master_model->getMaster('designation',$where=false);
 
