@@ -576,7 +576,9 @@
          <ul style="margin-top:50px;">
          <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
           $seeker_edu_level_id = '1';
-          $education_data = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id); ?>
+          $education_data = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id);
+          $where['edu_level_id'] = '1';
+            $phdspecial = $this->Master_model->getMaster('education_specialization',$where);?>
 
               <li class="bullet"><a href="#" value='1' id="ed" <?php if (isset($education_data) && empty($education_data)) { ?> style="color: red;" <?php  } ?> data-toggle="modal" data-target="#myModal">Ph.d / Doctorate</a>
 
@@ -683,7 +685,9 @@
       </li>
        <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
                         $seeker_edu_level_id = '2';
-                         $education_data2 = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id); 
+                         $education_data2 = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id);
+             $where['edu_level_id'] = '2';
+            $pgdspecial = $this->Master_model->getMaster('education_specialization',$where); 
                         // $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
                         // print_r($education_data);die;
                       ?>
@@ -789,7 +793,11 @@
   <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal1">Edit</a></span> </li>
   <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
    $seeker_edu_level_id = '3';
-   $education_data3 = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id); ?>
+   $education_data3 = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id);
+    $where['edu_level_id'] = '3';
+    $gddspecial = $this->Master_model->getMaster('education_specialization',$where); 
+
+   ?>
       <li class="bullet"><a href="#" data-toggle="modal" <?php if (isset($education_data3) && empty($education_data3)) { ?> style="color: red;"
        
     <?php  } ?> data-target="#myModal2">Graduation / Diploma</a>
@@ -1096,7 +1104,8 @@
       <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
       <button type="submit" class="btn btn-primary">Save</button>
     </div>
-  </form></div>
+  </form>
+</div>
         
       </div>
     </div>
@@ -1110,7 +1119,7 @@
 
       </ul>
       
-    </div>
+  </div>
     <div id="menu3" class="tab-pane fade">
       <ul>
       <?php  $designation = $this->Master_model->getMaster('designation',$where=false);
@@ -2583,7 +2592,20 @@ $( "#ed" ).on( "click", function( event ) {
    });
 });</script>
 <script>
+ function disableAddDP() {
+  $("#end_date").attr("disabled", $("#chkDisable").is(":checked")).val("Continue");
+}   
 
+  function disableDP(i) {
+//alert($('#resDate_'+i).val());
+    if($('#resDate_'+i).val()==''  || $('#resDate_'+i).val()==null){
+    
+    $('#upChkDisable_'+i).attr("checked","true");
+    $('#resDate_'+i).val('Continue');
+     $('#resDate_'+i).attr('disabled',"disabled");
+  }
+  
+}  
   function disableUpperDP(count) {
   
   $("#resDate_"+count).attr("disabled", $("#upChkDisable_"+count).is(":checked"));
