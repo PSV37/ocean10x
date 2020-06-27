@@ -139,6 +139,43 @@
                      <?php endif; ?>
                   </div>
                </div>
+               <div id="Updateskills" class="modal fade" role="dialog">
+               <div class="modal-dialog modal-md">
+                  <div class="modal-content">
+                     <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Update Skills</h4>
+                     </div>
+                     <div class="modal-body">
+                        <form id="Updateskill-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_skills');?>" method="post" style="padding: 30px;">
+                           <div class="form-group">
+                              <label class="control-label col-sm-3" for="email">Skills:</label>
+                              <div class="col-sm-9">
+                                 <input type="text" name="skills" class="form-control" id="tokenfield" placeholder="Enter Your Skills"
+                                    value="<?php  
+                                       if(!empty($js_skills)){
+                                         $skill="";
+                                         for($i=0;$i<sizeof($js_skills);$i++){
+                                           if($i==0){
+                                           $skill=$skill.$js_skills[$i]['skills'];
+                                           }else{
+                                             $skill=$skill.','.$js_skills[$i]['skills'];
+                                           }
+                                         }
+                                         echo $skill;
+                                       }
+                                                    ?>">
+                              </div>
+                           </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-primary">Submit</button>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
                <div id="menu5" class="tab-pane fade">
                   <div class="education_header" style="position:relative;">
                     <img src="https://www.sassm.in/education/images/blog-header.jpg" style="width:100%;position:relative;height:65px;">
@@ -2488,43 +2525,7 @@
           </div>
         </div>
       </div>
-      <div id="Updateskills" class="modal fade" role="dialog">
-               <div class="modal-dialog modal-md">
-                  <div class="modal-content">
-                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Update Skills</h4>
-                     </div>
-                     <div class="modal-body">
-                        <form id="Updateskill-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_skills');?>" method="post" style="padding: 30px;">
-                           <div class="form-group">
-                              <label class="control-label col-sm-3" for="email">Skills:</label>
-                              <div class="col-sm-9">
-                                 <input type="text" name="skills" class="form-control" id="tokenfield" placeholder="Enter Your Skills"
-                                    value="<?php  
-                                       if(!empty($js_skills)){
-                                         $skill="";
-                                         for($i=0;$i<sizeof($js_skills);$i++){
-                                           if($i==0){
-                                           $skill=$skill.$js_skills[$i]['skills'];
-                                           }else{
-                                             $skill=$skill.','.$js_skills[$i]['skills'];
-                                           }
-                                         }
-                                         echo $skill;
-                                       }
-                                                    ?>">
-                              </div>
-                           </div>
-                           <div class="modal-footer">
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                              <button type="submit" class="btn btn-primary">Submit</button>
-                           </div>
-                        </form>
-                     </div>
-                  </div>
-               </div>
-            </div>
+      
         
 <?php $this->load->view("fontend/layout/jobseeker_footer.php"); ?>
 </div>
