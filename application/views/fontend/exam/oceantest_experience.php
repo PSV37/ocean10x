@@ -88,7 +88,7 @@
     <input type="hidden" name="level" id="level" value="">
     
     <div class="col-md-12 row rexp">
-    <div class="col-md-1 exp-box" onclick="getval('Beginner');"><span name="levels" id="levels"  value="Beginner">1</span></div>
+    <div class="col-md-1 exp-box" id="1" onclick="getval('Beginner','1');"><span name="levels" id="levels"  value="Beginner">1</span></div>
     <div class="col-md-1 exp-box" onclick="getval('Beginner');"><span name="levels" id="levels"   value="Beginner">2</span></div>
     <div class="col-md-1 exp-box" onclick="getval('Medium');"><span name="levels" id="levels"  value="Medium">3</span></div>
     <div class="col-md-1 exp-box" onclick="getval('Medium');"><span name="levels" id="levels"  value="Medium">4</span></div>
@@ -105,10 +105,10 @@
 </div>
 </form>
 <script type="text/javascript">
-function getval(value)
+function getval(value,id)
 {
      $('.exp-box_active').removeClass('exp-box_active');
-     var v = document.getElementById("bo-c"+value); 
+     var v = document.getElementById(id); 
         v.className += " exp-box_active";
     
                $('#level').val(value);
