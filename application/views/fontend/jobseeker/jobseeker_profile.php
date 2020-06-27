@@ -38,12 +38,16 @@
    <div class="container">
       <div class="col-md-12">
          <?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
-         <?php  $job_seeker=$this->session->userdata('job_seeker_id'); ?>
+         <?php  $job_seeker=$this->session->userdata('job_seeker_id'); 
+               $activetab = $this->session->userdata('activetab');
+         ?>
+
          <div class="col-md-9 profile-section" style="border-radius:13px;margin-top:83px;">
             <div class="profile-tabs">
                <ul class="nav nav-tabs profile-nav ">
-                  <li class="active"><a data-toggle="tab" href="#home">My Profile</a></li>
-                  <li <?php if ($this->session->userdata('activetab') == '#menu5') {
+                  <li <?php if ($activetab == 'update_personalinfo') {
+                     ?> class="active"><a data-toggle="tab" href="#home">My Profile</a></li>
+                  <li <?php if ($activetab == 'update_skills') {
                      ?> class="active" <?php
                   } ?> ><a data-toggle="tab" href="#menu5">Education</a></li>
                   <li><a data-toggle="tab" href="#menu2">Skills</a></li>

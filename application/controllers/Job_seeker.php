@@ -77,6 +77,10 @@ class Job_seeker extends MY_Seeker_Controller
         $data['activemenu'] = 'seeker_info';
          $this->session->set_userdata($data);
 
+          $this->session->unset_userdata('activetab');
+        $data['activetab'] = 'update_personalinfo';
+         $this->session->set_userdata($data);
+
         $jobseeker_id = $this->session->userdata('job_seeker_id');
 
 			$data['city'] = $this->Master_model->getMaster('city',$where=false);
@@ -111,6 +115,11 @@ class Job_seeker extends MY_Seeker_Controller
     {
 
         if ($_POST) {
+
+             $this->session->unset_userdata('activetab');
+        $data['activetab'] = 'update_personalinfo';
+         $this->session->set_userdata($data); 
+
             $jobseeker_id     = $this->session->userdata('job_seeker_id');
             $personal_info_id = $this->input->post('js_personal_info_id');
            
@@ -655,6 +664,11 @@ exit;*/
 	public function update_skills()
     {
         if ($_POST) {
+
+            $this->session->unset_userdata('activetab');
+        $data['activetab'] = 'update_skills';
+         $this->session->set_userdata($data);
+
             $jobseeker_id = $this->session->userdata('job_seeker_id');
             $js_skills = $this->input->post('skills');
 			
