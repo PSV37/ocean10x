@@ -43,7 +43,9 @@
             <div class="profile-tabs">
                <ul class="nav nav-tabs profile-nav ">
                   <li class="active"><a data-toggle="tab" href="#home">My Profile</a></li>
-                  <li><a data-toggle="tab" href="#menu5">Education</a></li>
+                  <li <?php if ($this->session->userdata('activetab') == '#menu5') {
+                     ?> class="active" <?php
+                  } ?> ><a data-toggle="tab" href="#menu5">Education</a></li>
                   <li><a data-toggle="tab" href="#menu2">Skills</a></li>
                   <li><a data-toggle="tab" href="#menu3">Work Experience</a></li>
                   <li><a data-toggle="tab" href="#menu4">Certs & Trainning</a></li>
@@ -2529,6 +2531,8 @@
   $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
   var target = $(e.target).attr("href") // activated tab
   alert(target);
+  <?php $data['activetab'] = ?> target;
+     <?php  $this->session->set_userdata($data); ?>
 });
      
 </script>
