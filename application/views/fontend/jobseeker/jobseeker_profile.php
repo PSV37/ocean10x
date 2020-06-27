@@ -50,7 +50,7 @@
                </ul>
             </div>
             <div class="tab-content">
-               <div id="menu5" class="tab-pane fade in active">
+               <div id="menu5" class="tab-pane fade">
                   <div class="education_header" style="position:relative;">
                      <img src="https://www.sassm.in/education/images/blog-header.jpg" style="width:100%;position:relative;height:65px;">
                      <div class="icon-education" style="position:absolute;bottom:23px;right:53%;">
