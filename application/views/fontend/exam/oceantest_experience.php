@@ -1,10 +1,4 @@
 
-<style>
-.exp-box_active{
-    box-shadow: -1px 1px 10px #bfbdbd;
-}
-</style>
-
 
 <head>
     <meta charset="utf-8">
@@ -62,6 +56,9 @@
     color: white;
 
 }
+.exp-box_active{
+    box-shadow: -1px 1px 10px #bfbdbd;
+}
      </style>
 </head>
   <form action="<?php echo base_url(); ?>exam/oceanchamp_additional_exam" method="post">
@@ -89,15 +86,15 @@
     
     <div class="col-md-12 row rexp">
     <div class="col-md-1 exp-box" id="1" onclick="getval('Beginner','1');"><span name="levels" id="levels"  value="Beginner">1</span></div>
-    <div class="col-md-1 exp-box" onclick="getval('Beginner');"><span name="levels" id="levels"   value="Beginner">2</span></div>
-    <div class="col-md-1 exp-box" onclick="getval('Medium');"><span name="levels" id="levels"  value="Medium">3</span></div>
-    <div class="col-md-1 exp-box" onclick="getval('Medium');"><span name="levels" id="levels"  value="Medium">4</span></div>
-    <div class="col-md-1 exp-box" onclick="getval('Medium');"><span name="levels" id="levels"  value="Medium">5</span></div>
-    <div class="col-md-1 exp-box" onclick="getval('Expert');"><span name="levels" id="levels"  value="Expert">6</span></div>
-    <div class="col-md-1 exp-box" onclick="getval('Expert');"><span name="levels" id="levels"  value="Expert">7</span></div>
-    <div class="col-md-1 exp-box" onclick="getval('Expert');"><span name="levels" id="levels"  value="Expert">8</span></div>
-    <div class="col-md-1 exp-box" onclick="getval('Expert');"><span name="levels" id="levels"  value="Expert">9</span></div>
-    <div class="col-md-1 exp-box" onclick="getval('Expert');"><span name="levels"  id="levels"  value="Expert">10+</span></div>
+    <div class="col-md-1 exp-box" id="2" onclick="getval('Beginner','2');"><span name="levels" id="levels"   value="Beginner">2</span></div>
+    <div class="col-md-1 exp-box" id="3" onclick="getval('Medium','3');"><span name="levels" id="levels"  value="Medium">3</span></div>
+    <div class="col-md-1 exp-box" id="4" onclick="getval('Medium',,'4');"><span name="levels" id="levels"  value="Medium">4</span></div>
+    <div class="col-md-1 exp-box" id="5" onclick="getval('Medium','5');"><span name="levels" id="levels"  value="Medium">5</span></div>
+    <div class="col-md-1 exp-box" id="6" onclick="getval('Expert','6');"><span name="levels" id="levels"  value="Expert">6</span></div>
+    <div class="col-md-1 exp-box" id="7" onclick="getval('Expert','7');"><span name="levels" id="levels"  value="Expert">7</span></div>
+    <div class="col-md-1 exp-box" id="8" onclick="getval('Expert','8');"><span name="levels" id="levels"  value="Expert">8</span></div>
+    <div class="col-md-1 exp-box" id="9" onclick="getval('Expert','9');"><span name="levels" id="levels"  value="Expert">9</span></div>
+    <div class="col-md-1 exp-box" id="10" onclick="getval('Expert','10');"><span name="levels"  id="levels"  value="Expert">10+</span></div>
     </div>
         <button type="submit" class="pro-btn">Proceed to dashboard</button>
 
