@@ -88,7 +88,7 @@
     <div class="col-md-1 exp-box" id="1" onclick="getval('Beginner','1');"><span name="levels" id="levels"  value="Beginner">1</span></div>
     <div class="col-md-1 exp-box" id="2" onclick="getval('Beginner','2');"><span name="levels" id="levels"   value="Beginner">2</span></div>
     <div class="col-md-1 exp-box" id="3" onclick="getval('Medium','3');"><span name="levels" id="levels"  value="Medium">3</span></div>
-    <div class="col-md-1 exp-box" id="4" onclick="getval('Medium',,'4');"><span name="levels" id="levels"  value="Medium">4</span></div>
+    <div class="col-md-1 exp-box" id="4" onclick="getval('Medium','4');"><span name="levels" id="levels"  value="Medium">4</span></div>
     <div class="col-md-1 exp-box" id="5" onclick="getval('Medium','5');"><span name="levels" id="levels"  value="Medium">5</span></div>
     <div class="col-md-1 exp-box" id="6" onclick="getval('Expert','6');"><span name="levels" id="levels"  value="Expert">6</span></div>
     <div class="col-md-1 exp-box" id="7" onclick="getval('Expert','7');"><span name="levels" id="levels"  value="Expert">7</span></div>
