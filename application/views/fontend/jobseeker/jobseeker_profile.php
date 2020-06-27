@@ -2305,6 +2305,7 @@
                                                echo $training_list->training_title;
                                                }
                                              ?>"> 
+                                           </select>
                                  </div>
                               </div>
                               <div class="form-group">
@@ -2393,7 +2394,7 @@
                <?php endforeach;?>
                <div id="menu2" class="tab-pane fade">
                   <div class="education_header" style="position:relative;">
-                     <img src="https://www.sassm.in/education/images/blog-header.jpg" style="width:100%;position:relative;height:65px;"></img>
+                     <img src="https://www.sassm.in/education/images/blog-header.jpg" style="width:100%;position:relative;height:65px;">
                      <div class="icon-education" style="position:absolute;bottom:23px;right:53%;">
                         <i class="fas fa-graduation-cap edu-i"></i>
                      </div>
@@ -2478,8 +2479,12 @@
                      <?php endif; ?>
                   </div>
                </div>
+             </div>
             </div>
-            <div id="Updateskills" class="modal fade" role="dialog">
+          </div>
+        </div>
+      </div>
+      <div id="Updateskills" class="modal fade" role="dialog">
                <div class="modal-dialog modal-md">
                   <div class="modal-content">
                      <div class="modal-header">
@@ -2516,10 +2521,7 @@
                   </div>
                </div>
             </div>
-         </div>
-      </div>
-   </div>
-</div>
+        
 <?php $this->load->view("fontend/layout/jobseeker_footer.php"); ?>
 </div>
 <script>
