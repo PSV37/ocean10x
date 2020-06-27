@@ -107,8 +107,9 @@
 <script type="text/javascript">
 function getval(value)
 {
-    // alert($(this).val());
-    // alert(value);
+     $('.exp-box_active').removeClass('exp-box_active');
+     var v = document.getElementById("bo-c"+value); 
+        v.className += " exp-box_active";
     
                $('#level').val(value);
       
