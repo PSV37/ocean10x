@@ -2526,10 +2526,10 @@
 <?php $this->load->view("fontend/layout/jobseeker_footer.php"); ?>
 </div>
 <script>
-   $( "#ed" ).on( "click", function( event ) {
-      var value = document.getElementById('education_level_id');
-     console.log(value);
-   })
+  $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+  var target = $(e.target).attr("href") // activated tab
+  alert(target);
+});
      
 </script>
 <script type="text/javascript">
