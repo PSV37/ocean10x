@@ -150,8 +150,8 @@
                      <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
                         $seeker_edu_level_id = '1';
                          $education_data = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id); 
-                        // $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
-                        // print_r($education_data);die;
+                        $where['edu_level_id'] = '1';
+                        $phdspecial = $this->Master_model->getMaster('education_specialization',$where);
                         ?>
                      <li class="bullet">
                         <a href="#" value='1' id="ed" <?php if (isset($education_data) && empty($education_data)) { ?> style="color: red;"
@@ -247,8 +247,8 @@
                      <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
                         $seeker_edu_level_id = '2';
                          $education_data2 = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id); 
-                        // $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
-                        // print_r($education_data);die;
+                        $where['edu_level_id'] = '2';
+                        $pgdspecial = $this->Master_model->getMaster('education_specialization',$where);
                         ?>
                      <li class="bullet">
                         <a href="#" data-toggle="modal" <?php if (isset($education_data2) && empty($education_data2)) { ?> style="color: red;"
@@ -361,8 +361,8 @@
                      <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
                         $seeker_edu_level_id = '3';
                          $education_data3 = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id); 
-                        // $education_data = geSeekerEducationByid($jobseeker_id,$seeker_edu_id);
-                        // print_r($education_data);die;
+                          $where['edu_level_id'] = '3';
+                        $gddspecial = $this->Master_model->getMaster('education_specialization',$where);
                         ?>
                      <li class="bullet">
                         <a href="#" data-toggle="modal" <?php if (isset($education_data3) && empty($education_data3)) { ?> style="color: red;"
@@ -665,6 +665,7 @@
                   <div class="header-p-img" style="position:relative;">
                      <img src="https://www.sassm.in/education/images/blog-header.jpg" style="width:100%; height:140px;position:relative;margin-bottom:140px;">
                      <!-- </div></div></div> -->
+                     <?php  $job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id); ?>
                      <div class="text-center" style="position:absolute;top:50px;left:-50px;">
                         <img src="<?php echo base_url() ?>upload/<?php if(!empty($job_seeker_photo->photo_path)) { echo $job_seeker_photo->photo_path;} else { echo "image-notfound.png";} ?>" class="avatar img-circle img-thumbnail" alt="avatar">
                         <h6>Upload a different photo...</h6>
