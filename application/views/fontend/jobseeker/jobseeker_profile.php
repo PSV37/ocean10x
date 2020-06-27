@@ -50,6 +50,93 @@
                </ul>
             </div>
             <div class="tab-content">
+               <div id="menu2" class="tab-pane fade">
+                  <div class="education_header" style="position:relative;">
+                     <img src="https://www.sassm.in/education/images/blog-header.jpg" style="width:100%;position:relative;height:65px;">
+                     <div class="icon-education" style="position:absolute;bottom:23px;right:53%;">
+                        <i class="fas fa-graduation-cap edu-i"></i>
+                     </div>
+                  </div>
+                  <ul>
+                     <?php  $designation = $this->Master_model->getMaster('designation',$where=false);
+                        $department = $this->Master_model->getMaster('department',$where=false); ?>
+                     <li class="bullet">
+                        <a href="#" data-toggle="modal" data-target="#myModal25">skills</a>
+                        <div class="modal fade" id="myModal25" role="dialog">
+                           <div class="modal-dialog modal-md">
+                              <div class="modal-content">
+                                 <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Skiils</h4>
+                                 </div>
+                                 <div class="modal-body">
+                                    <form id="Updateskill-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_skills');?>" method="post" style="padding: 30px;">
+                                       <div class="form-group">
+                                          <label class="control-label col-sm-3" for="email">Skills:</label>
+                                          <div class="col-sm-9">
+                                             <input type="text" name="skills" class="form-control" id="tokenfield" placeholder="Enter Your Skills"
+                                                value="<?php  
+                                                   if(!empty($js_skills)){
+                                                     $skill="";
+                                                     for($i=0;$i<sizeof($js_skills);$i++){
+                                                       if($i==0){
+                                                       $skill=$skill.$js_skills[$i]['skills'];
+                                                       }else{
+                                                         $skill=$skill.','.$js_skills[$i]['skills'];
+                                                       }
+                                                     }
+                                                     echo $skill;
+                                                   }
+                                                                ?>">
+                                          </div>
+                                       </div>
+                                       <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                          <button type="submit" class="btn btn-primary">Submit</button>
+                                       </div>
+                                    </form>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal25"><i class="fa fa-plus" aria-hidden="true"></i></a></span>  
+                     </li>
+                  </ul>
+                  <div class="col-md-12 bd-2">
+                     <?php 
+                        $js_skills = $this->Master_model->getMaster('job_seeker_skills',$where_skill);
+                         
+                        
+                                if (!empty($js_skills)):
+                              
+                              ?>
+                     <div class="invi-div">
+                        <div class="info-invitation">
+                           <span style="float: right;font-size:12px;cursor: pointer;"> <a href="#" data-toggle="modal" data-target="#Updateskills" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> </span>
+                           <p>Skills: <?php  
+                              if(!empty($js_skills)){
+                                $skill="";
+                                for($i=0;$i<sizeof($js_skills);$i++){
+                                  if($i==0){
+                                  $skill=$skill.$js_skills[$i]['skills'];
+                                  }else{
+                                    $skill=$skill.','.$js_skills[$i]['skills'];
+                                  }
+                                }
+                                echo $skill;
+                              }
+                              ?></p>
+                           <!-- <button class="apply-invi">Apply Now</button> -->
+                        </div>
+                        <div class="clear"></div>
+                     </div>
+                     <?php else : ?> 
+                     <div>
+                        <strong>There is no data to display</strong>
+                     </div>
+                     <?php endif; ?>
+                  </div>
+               </div>
                <div id="menu5" class="tab-pane fade">
                   <div class="education_header" style="position:relative;">
                     <img src="https://www.sassm.in/education/images/blog-header.jpg" style="width:100%;position:relative;height:65px;">
@@ -2392,93 +2479,7 @@
                </div>
                <?php  $count++; ?>
                <?php endforeach;?>
-               <div id="menu2" class="tab-pane fade">
-                  <div class="education_header" style="position:relative;">
-                     <img src="https://www.sassm.in/education/images/blog-header.jpg" style="width:100%;position:relative;height:65px;">
-                     <div class="icon-education" style="position:absolute;bottom:23px;right:53%;">
-                        <i class="fas fa-graduation-cap edu-i"></i>
-                     </div>
-                  </div>
-                  <ul>
-                     <?php  $designation = $this->Master_model->getMaster('designation',$where=false);
-                        $department = $this->Master_model->getMaster('department',$where=false); ?>
-                     <li class="bullet">
-                        <a href="#" data-toggle="modal" data-target="#myModal25">skills</a>
-                        <div class="modal fade" id="myModal25" role="dialog">
-                           <div class="modal-dialog modal-md">
-                              <div class="modal-content">
-                                 <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Skiils</h4>
-                                 </div>
-                                 <div class="modal-body">
-                                    <form id="Updateskill-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_skills');?>" method="post" style="padding: 30px;">
-                                       <div class="form-group">
-                                          <label class="control-label col-sm-3" for="email">Skills:</label>
-                                          <div class="col-sm-9">
-                                             <input type="text" name="skills" class="form-control" id="tokenfield" placeholder="Enter Your Skills"
-                                                value="<?php  
-                                                   if(!empty($js_skills)){
-                                                     $skill="";
-                                                     for($i=0;$i<sizeof($js_skills);$i++){
-                                                       if($i==0){
-                                                       $skill=$skill.$js_skills[$i]['skills'];
-                                                       }else{
-                                                         $skill=$skill.','.$js_skills[$i]['skills'];
-                                                       }
-                                                     }
-                                                     echo $skill;
-                                                   }
-                                                                ?>">
-                                          </div>
-                                       </div>
-                                       <div class="modal-footer">
-                                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                          <button type="submit" class="btn btn-primary">Submit</button>
-                                       </div>
-                                    </form>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" data-target="#myModal25"><i class="fa fa-plus" aria-hidden="true"></i></a></span>  
-                     </li>
-                  </ul>
-                  <div class="col-md-12 bd-2">
-                     <?php 
-                        $js_skills = $this->Master_model->getMaster('job_seeker_skills',$where_skill);
-                         
-                        
-                                if (!empty($js_skills)):
-                              
-                              ?>
-                     <div class="invi-div">
-                        <div class="info-invitation">
-                           <span style="float: right;font-size:12px;cursor: pointer;"> <a href="#" data-toggle="modal" data-target="#Updateskills" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> </span>
-                           <p>Skills: <?php  
-                              if(!empty($js_skills)){
-                                $skill="";
-                                for($i=0;$i<sizeof($js_skills);$i++){
-                                  if($i==0){
-                                  $skill=$skill.$js_skills[$i]['skills'];
-                                  }else{
-                                    $skill=$skill.','.$js_skills[$i]['skills'];
-                                  }
-                                }
-                                echo $skill;
-                              }
-                              ?></p>
-                           <!-- <button class="apply-invi">Apply Now</button> -->
-                        </div>
-                        <div class="clear"></div>
-                     </div>
-                     <?php else : ?> 
-                     <div>
-                        <strong>There is no data to display</strong>
-                     </div>
-                     <?php endif; ?>
-                  </div>
-               </div>
+               
              </div>
             </div>
           </div>
