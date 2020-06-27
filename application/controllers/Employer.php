@@ -3637,6 +3637,33 @@ public function interview_scheduler()
 
     }
 
+    public function get_profile()
+    {
+       
+        $email_id =$this->input->post('email');
+        $where1 = "js_info.email = '$email_id' AND js_experience.end_date IS NULL";
+        $join = array( 
+            "js_career_info"=>"js_career_info.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
+            "js_experience"=>"js_experience.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
+            "job_role"=>"job_role.id=js_experience.designation_id | LEFT OUTER",
+            "job_seeker_skills"=>"job_seeker_skills.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
+            "js_education"=>"js_education.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
+            "js_training"=>"js_training.job_seeker_id=js_info.job_seeker_id | LEFT OUTER",
+            "industry_master"=>"industry_master.id=js_career_info.industry_id | LEFT OUTER",
+
+
+        );
+      
+        $select ="js_career_info.notice_period,js_career_info.serving_notice_period,js_career_info.immediate_join,js_career_info.desired_industry,js_career_info.job_area,js_career_info.js_career_salary,js_career_info.avaliable,js_career_info.skills,js_career_info.job_role,js_career_info.industry_id,js_career_info.last_salary_hike,js_info.full_name,js_info.mobile_no,js_info.job_seeker_id,job_role.job_role_title,js_experience.company_profile_id,js_experience.js_career_salary,js_experience.designation_id,js_experience.start_date,js_experience.address,min(js_education.education_level_id) as edu_high,job_seeker_skills.skills,js_career_info.js_career_exp,js_training.training_title,industry_master.industry_name";
+
+        $result = $this->Master_model->getMaster('js_info', $where1, $join, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
+
+          echo json_encode($result);
+
+       
+
+    }
+
     public function audit()
     {
         $company=$this->session->userdata('company_name');

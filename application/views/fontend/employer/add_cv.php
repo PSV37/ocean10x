@@ -203,8 +203,8 @@
       function getcandidateinfo(candidate_email){
 
     $.ajax({
-              url:'<?php echo site_url('employer/getocean_profile') ?>',
-              type:'get',
+              url:'<?php echo site_url('employer/get_profile') ?>',
+              type:'post',
              
                dataType: "JSON",  
                 data:{
