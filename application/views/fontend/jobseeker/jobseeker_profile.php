@@ -46,7 +46,7 @@
             <div class="profile-tabs">
                <ul class="nav nav-tabs profile-nav ">
                   <li <?php if ($activetab == 'update_personalinfo') {
-                     ?> class="active"><a data-toggle="tab" href="#home">My Profile</a></li>
+                     ?> class="active" <?php } ?> ><a data-toggle="tab" href="#home">My Profile</a></li>
                   <li <?php if ($activetab == 'update_skills') {
                      ?> class="active" <?php
                   } ?> ><a data-toggle="tab" href="#menu5">Education</a></li>
