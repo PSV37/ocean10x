@@ -220,18 +220,18 @@
                      $('#candidate_phone').val(value.mobile_no);
                      $('#candidate_experiance').val(value.js_career_exp);
                      $('#candidate_notice_period').val(value.notice_period);
-                     $('#job_type').val(value.job_area);
+                     // $('#job_type').val(value.job_area);
                      // $('#current_job_desig').val(value.contact_name);
                      // $('#working_current_since').val(value.cont_person_email);
                      $('#current_ctc').val(value.js_career_salary);
                      $('#last_salary_hike').val(value.last_salary_hike);
                      $('#top_education').val(value.edu_high);
                      $('#candidate_skills').val(value.skills);
-                     // $('#candidate_certification').val(value.country_id);
+                     $('#candidate_certification').val(value.training_title);
                      $('#candidate_industry').val(value.industry_name);
-                     $('#candidate_role').val(value.job_role_title);
+                     $('#candidate_role').val(value.job_role);
                      // $('#candidate_expected_sal').val(value.company_pincode);
-                     // $('#desired_wrok_location').val(value.comp_gstn_no);
+                     $('#desired_wrok_location').val(value.job_area);
                     
                      // getStates(value.country_id);
                      // getCitys(value.state_id);
