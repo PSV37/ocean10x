@@ -875,7 +875,7 @@
                            <p id="my-progress-completion" class="js-my-progress-completion sr-only" aria-live="polite">0% complete</p>
                         </div>
                         <div class="quizBox">
-                          <form id="nextques" class="submit-form" action="<?php echo base_url();?>exam/insert_ocean_data" method="post">
+                          <form id="nextques" class="submit-form" action="<?php echo base_url();?>employer/insert_ocean_data" method="post">
       <!-- <?php print_r($questions); ?> -->
 
                           <input type="hidden" name="skill_id" id="skill_id" value="<?php if(!empty($skill_id))echo base64_encode($skill_id); ?>">
@@ -1437,6 +1437,8 @@
                   
                   function onTimesUp() {
                     clearInterval(timerInterval);
+                    $("#next").click();
+
                   }
                   
                   function startTimer() {
