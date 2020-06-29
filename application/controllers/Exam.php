@@ -403,7 +403,7 @@ class Exam extends MY_Seeker_Controller
         }else{
             $result .='<p>Topics not available</p>';
         }
-        echo $result;
+        echo $result;die();
     }
 
 
