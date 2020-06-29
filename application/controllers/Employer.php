@@ -4094,5 +4094,23 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
     }
     
+    function gettopic()
+    {
+          $topic_id = $this->input->post('id');
+        $where['technical_id'] = $topic_id;
+        $topics = $this->Master_model->getMaster('topic',$where);
+        $result = '';
+        if(!empty($topics)){ 
+            // $result .='<option value="">Select Topic</option>';
+            foreach($topics as $key){
+             // $result .='<option value="'.$key['topic_id'].'">'.$key['topic_name'].'</option>';
+              
+              $result .="<input type='checkbox' name='topics[]' style='height:15px; width:20px;' id='topics' value=".$key['topic_id']." checked> ".$key['topic_name']."";
+            }
+        }else{
+            $result .='<p>Topics not available</p>';
+        }
+        echo $result;
+    }
     
 } // end class
