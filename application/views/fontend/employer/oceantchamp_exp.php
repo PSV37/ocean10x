@@ -157,7 +157,7 @@
         
       
           $.ajax({
-                  url:'<?php echo base_url();?>employer/gettopic',
+                  url:'<?php echo base_url();?>employer/gettopics',
                   type: "POST",
                   data:{id:value},
                   success: function(data)
