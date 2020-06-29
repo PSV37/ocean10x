@@ -883,7 +883,7 @@
                            <div class="question"> </div>
                            <div class="answerOptions"></div>
                            <div class="buttonArea">
-                              <button id="next" class="hidden" type="submit">Next</button>
+                              <button id="next"  type="submit">Next</button>
                               <button id="submit"  class="hidden">Submit</button>
                            </div>
                         </div>
@@ -929,7 +929,7 @@
                         </div>
                      </div>
                   </div>
-                  <button class="skip">skip question</button>
+                  <button class="skip" onclick="next();">skip question</button>
                </div>
                <script>
                   var $progressValue = 0;
@@ -944,6 +944,12 @@
                           category:1
                         }
                       ];
+
+                      function next()
+                      {
+                         $("#next").click();
+
+                      }
                   /** Random shuffle questions **/
                   function shuffleArray(question){
                      var shuffled=question.sort(function() {
