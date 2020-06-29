@@ -3859,7 +3859,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $data['activemenu'] = 'oceanchamp';
         $this->session->set_userdata($data);
         
-         $jobseeker_id = $this->session->userdata('job_seeker_id');
+         $company_profile_id = $this->session->userdata('company_profile_id');
 
         if($_POST)
         {
@@ -3874,7 +3874,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $skill = $this->input->post('skill_name');
                 $level = $this->input->post('level');
 
-                $where_time = "skill_id='$skill' AND job_seeker_id='$jobseeker_id' AND topic_id IN (".$all_topics.")";
+                $where_time = "skill_id='$skill' AND job_seeker_id='$company_profile_id' AND topic_id IN (".$all_topics.")";
                 $exists = $this->Master_model->get_master_row('js_ocean_exam_topics', $select =FALSE , $where_time, $join = FALSE);
 
 
