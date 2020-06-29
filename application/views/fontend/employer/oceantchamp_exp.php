@@ -1,6 +1,7 @@
 <!---header-->
 <?php  $this->load->view('fontend/layout/employer_new_header.php'); ?>
 <!---header--->
+<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/oceanchamp_exp.css">
 <style>
    .employ_tab {
    margin-top: 55px;
