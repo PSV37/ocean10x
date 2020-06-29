@@ -153,7 +153,7 @@
       function gettopic(value)
       {
           // alert($(this).val());
-          // alert(value);
+          alert(value);
         
       
           $.ajax({
