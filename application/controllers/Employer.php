@@ -3853,6 +3853,91 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         
         
     }
+    public function ocean_champ_test()
+    {   
+        
+        $data['activemenu'] = 'oceanchamp';
+        $this->session->set_userdata($data);
+
+        $company_profile_id = $this->session->userdata('company_profile_id');
+
+        if($_POST)
+        {
+            $created_on = date('Y-m-d H:i:s');
+            $cenvertedTime = date('Y-m-d H:i:s',strtotime('+5 hour +30 minutes',strtotime($created_on)));
+
+            $topics = $this->input->post('topics');
+            $temp_array= array();
+            if(!empty($topics))
+            {
+                $all_topics = implode(',', $this->input->post('topics'));
+                $skill = $this->input->post('skill_name');
+                $level = $this->input->post('level');
+
+                // $where_time = "skill_id='$skill' AND job_seeker_id='$company_profile_id' AND topic_id IN (".$all_topics.")";
+                // $exists = $this->Master_model->get_master_row('js_ocean_exam_topics', $select =FALSE , $where_time, $join = FALSE);
+                // // print_r($this->db->last_query());die;
+                // if($exists)
+                // {   
+                //     $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">You have already given test for this skill</div>');                
+                //     redirect('exam/ocean_champ_test');
+
+                // }else{
+                //     $data_array = array(
+                //         'job_seeker_id' => $company_profile_id,
+                //         'topic_id'      => implode(',', $this->input->post('topics')),
+                //         'level'         => $this->input->post('level'),
+                //         'skill_id'      => $this->input->post('skill_name'),
+                //         'created_on'    => $cenvertedTime,
+                //         'created_by'    => $company_profile_id,
+                //     );
+
+                    // $last_id = $this->Master_model->master_insert($data_array, 'js_ocean_exam_topics');
+
+                    $where_req_skill="topic_id IN (".$all_topics.") AND level='$level'";
+                    $exam_question = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit=NUMBER_QUESTIONS,$start=false, $search=false);
+                  
+                   // check for answers
+                    for($n1=0;$n1<sizeof($exam_question);$n1++)
+                    {
+                        $individual_question=array();
+                        $question_id = $exam_question[$n1]['ques_id']; 
+                        $wherechks = "question_id='$question_id'";
+                        $answer = $this->Master_model->getMaster('questionbank_answer',$wherechks);
+
+                        $exam_question[$n1]['answer']=$answer;
+                      
+                        $individual_question[]=$exam_question[$n1];
+                          
+                        array_push($temp_array, $exam_question[$n1]);
+                    }
+
+                    $fp = fopen('./exam_questions/'.$skill.'_'.$company_profile_id.'.json', 'w');
+                    fwrite($fp, json_encode($temp_array));
+                                  
+                    $data['skill'] =  $skill;
+
+                    $this->load->view('fontend/employer/oceantest_test',$data);
+                }
+             
+               
+            // }
+            // else{
+            //     $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">Please select topic</div>');                
+            //     redirect('exam/ocean_champ_test');
+            // }
+
+
+        }else{
+            
+            // $data['skill_data']  = $temp_array2;
+            $selectadd = "id,skill_name";
+            $data['skill_data'] = $this->Master_model->getMaster('skill_master',$whereadd = FALSE, $join = FALSE, $order = false, $field = false, $selectadd, $limit=false, $start=false, $search=false);
+
+            $this->load->view('fontend/employer/oceantest_experience',$data);
+        }
+    }
+
     
     public function oceanchamp()
     {
@@ -3926,7 +4011,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
      public function insert_ocean_data()
     {
-        $jobseeker_id = $this->session->userdata('company_profile_id');
+        $company_profile_id = $this->session->userdata('company_profile_id');
        
         $jid= $this->input->post('skill_id');
         $skill_id = base64_decode($jid);
@@ -3934,7 +4019,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $question_id = $this->input->post('question_id');
         $option = $this->input->post('optRdBtn');
         $status = array();
-        $str = file_get_contents('./exam_questions/'.$skill_id.'_'.$jobseeker_id.'.json');
+        $str = file_get_contents('./exam_questions/'.$skill_id.'_'.$company_profile_id.'.json');
 
         $json = json_decode($str, true);
         $created_on = date('Y-m-d H:i:s');
@@ -3976,7 +4061,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
       
         // $exam_array = array(
         //     'skill_id'          => $skill_id,
-        //     'job_seeker_id'     => $jobseeker_id,  
+        //     'job_seeker_id'     => $company_profile_id,  
         //     'question_id'       => $question_id,
         //     'marks'             => $mark,
         //     'correct_status'    => $cstatus,
@@ -3987,10 +4072,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         // {
             array_shift($json); // remove completed element from json array
            // update json file with remaining questions
-           $fp = fopen('./exam_questions/'.$skill_id.'_'.$jobseeker_id.'.json', 'w');
+           $fp = fopen('./exam_questions/'.$skill_id.'_'.$company_profile_id.'.json', 'w');
            fwrite($fp, json_encode($json));
 
-            $new_str = file_get_contents('./exam_questions/'.$skill_id.'_'.$jobseeker_id.'.json');
+            $new_str = file_get_contents('./exam_questions/'.$skill_id.'_'.$company_profile_id.'.json');
             $data['new_json'] = json_decode($new_str, true);
 
             foreach ($data['new_json']  as $value) {
@@ -4001,7 +4086,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             {
                 $this->load->view('fontend/employer/oceanchamp_test',$data);
             }else{
-                unlink('./exam_questions/'.$skill_id.'_'.$jobseeker_id.'.json');
+                unlink('./exam_questions/'.$skill_id.'_'.$company_profile_id.'.json');
              
                 $this->load->view('fontend/exam/exam_success');
             }
