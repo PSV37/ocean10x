@@ -392,6 +392,7 @@ class Exam extends MY_Seeker_Controller
         $topic_id = $this->input->post('id');
         $where['technical_id'] = $topic_id;
         $topics = $this->Master_model->getMaster('topic',$where);
+        print_r($this->db->last_query());die;
         $result = '';
         if(!empty($topics)){ 
             // $result .='<option value="">Select Topic</option>';
@@ -403,7 +404,7 @@ class Exam extends MY_Seeker_Controller
         }else{
             $result .='<p>Topics not available</p>';
         }
-        echo $result;die();
+        echo $result;
     }
 
 
