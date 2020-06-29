@@ -3917,15 +3917,17 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                   
                     $data['skill'] =  $skill;
 
-                    $this->load->view('fontend/employer/oceanchamp_test',$data);
+                    $this->load->view('fontend/employer/oceantchamp_instructions.',$data);
                 }
              
                
             // }
-            // else{
-            //     $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">Please select topic</div>');                
-            //     redirect('exam/ocean_champ_test');
-            // }
+            else{
+                $selectadd = "id,skill_name";
+                $data['skill_data'] = $this->Master_model->getMaster('skill_master',$whereadd = FALSE, $join = FALSE, $order = false, $field = false, $selectadd, $limit=false, $start=false, $search=false);
+
+            $this->load->view('fontend/employer/oceantchamp_exp',$data);
+            }
 
 
         }else{
