@@ -152,17 +152,14 @@
    <script type="text/javascript">
       function gettopic(value)
       {
-          // alert($(this).val());
-          alert(value);
-        
-      
+         
           $.ajax({
                   url:'<?php echo base_url();?>employer/gettopics',
                   type: "POST",
                   data:{id:value},
                   success: function(data)
                   {
-                    alert(data);
+                    // alert(data);
                     $('#topic').html(data);
                      $('#skill_name').val(value);
                   }
@@ -173,7 +170,7 @@
         function getval(value,id)
       {
           
-                     $('#level').val(value);
+          $('#level').val(value);
             
       
       }

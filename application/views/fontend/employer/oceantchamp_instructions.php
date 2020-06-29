@@ -6,6 +6,7 @@
       <div class="container">
          <div class="col-md-12">
             <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
+            <form id="submit" class="submit-form" action="<?php echo base_url(); ?>employer/oceanchamp_test/<?php if(!empty($skill))echo base64_encode($skill); ?>" method="post">
             <div class="col-md-9 instruction_text">
                <h4 style="margin-bottom:20px;font-size:22px;color:#14a9a2;">Before You Start The Test Carefully Read The Instructions Below !</h4>
                <li>This is a FREE online test. DO NOT pay money to anyone to attend this test.</li>
