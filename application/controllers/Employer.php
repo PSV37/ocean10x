@@ -3861,8 +3861,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         
          $company_profile_id = $this->session->userdata('company_profile_id');
 
-        if($_POST)
-        {
+        // if($_POST)
+        // {
             $created_on = date('Y-m-d H:i:s');
             $cenvertedTime = date('Y-m-d H:i:s',strtotime('+5 hour +30 minutes',strtotime($created_on)));
 
@@ -3929,10 +3929,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             }
             else{
                 $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">Please select topic</div>');                
-                redirect('exam/ocean_champ_test');
+                redirect('fontend/employer/oceanchamp_test');
             }
         
-    }
+    // }
 }
     
     
