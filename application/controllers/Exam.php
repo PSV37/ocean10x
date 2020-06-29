@@ -390,8 +390,8 @@ class Exam extends MY_Seeker_Controller
 
     function gettopic(){
         $topic_id = $this->input->post('id');
-        
-        echo $topic_id;
+
+        echo' $topic_id';
     }
 
 
