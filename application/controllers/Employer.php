@@ -3934,7 +3934,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $selectadd = "id,skill_name";
             $data['skill_data'] = $this->Master_model->getMaster('skill_master',$whereadd = FALSE, $join = FALSE, $order = false, $field = false, $selectadd, $limit=false, $start=false, $search=false);
 
-            $this->load->view('fontend/employer/oceantest_experience',$data);
+            $this->load->view('fontend/employer/oceantchamp_exp',$data);
         }
     }
 
