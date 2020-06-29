@@ -878,7 +878,7 @@
                            <div class="question"> </div>
                            <div class="answerOptions"></div>
                            <div class="buttonArea">
-                              <button id="next"  class="hidden">Next</button>
+                              <button id="next" type="submit">Next</button>
                               <button id="submit"  class="hidden">Submit</button>
                            </div>
                         </div>
