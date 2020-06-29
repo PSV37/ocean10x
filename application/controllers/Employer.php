@@ -3862,6 +3862,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $all_topics = implode(',',$skil_topics );
         $skill = '30';
         $level = 'Beginner';
+         $temp_array = array();
 
         $company_profile_id = $this->session->userdata('company_profile_id');
         $where_req_skill="topic_id IN (".$all_topics.") AND level='$level'";
