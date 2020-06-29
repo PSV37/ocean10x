@@ -3888,7 +3888,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     fwrite($fp, json_encode($temp_array));
                                   
                     $data['skill'] =  $skill;
-                    redirect('employer/oceanchamp_test')
+                    redirect('employer/oceanchamp_test');
 
                     // $this->load->view('fontend/employer/oceanchamp_test',$data);
                     // $this->load->view('fontend/exam/oceantest_take_test',$data);
