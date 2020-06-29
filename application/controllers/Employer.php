@@ -3858,8 +3858,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     {
         $data['activemenu'] = 'oceanchamp';
         $this->session->set_userdata($data);
-        
-        $all_topics = implode(',', '2,11');
+        $skil_topics=array('2,11');
+        $all_topics = implode(',',$skil_topics );
         $skill = '30';
         $level = 'Beginner';
 
