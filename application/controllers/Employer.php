@@ -3898,7 +3898,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     public function oceanchamp_test($skill_id=null)
     {
         $company_profile_id = $this->session->userdata('company_profile_id');
-        $skill_id = base64_decode($skill_id);
+        $skill_id = '30';
 
         if (!empty($skill_id)) {
                  
