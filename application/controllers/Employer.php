@@ -4101,7 +4101,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $topics                = $this->Master_model->getMaster('topic', $where);
         $result                = '';
         if (!empty($topics)) {
-            $result .= '<option value="">Select Topic</option>';
+            // $result .= '<option value="">Select Topic</option>';
             foreach ($topics as $key) {
                $result .="<input type='checkbox' name='topics[]' style='height:15px; width:20px;' id='topics' value=".$key['topic_id']." checked> ".$key['topic_name']."";
             }
