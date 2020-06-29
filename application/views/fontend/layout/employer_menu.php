@@ -92,8 +92,10 @@
                                     <span class="text item">Question Bank</span>
                                   </a>
                                 </li>
-                                <li>
-                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/addemployee">
+                                <li <?php if ($activemenu == 'oceanchamp') { ?>
+                                 class="active"
+                                <?php } ?> >
+                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/oceanchamp">
                                       <span class="icon-container">
                                         <i class="fas fa-map-signs"></i>
                                       </span>
