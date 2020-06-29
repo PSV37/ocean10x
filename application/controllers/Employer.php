@@ -3829,7 +3829,7 @@ public function oceanchamp()
     $data['activemenu'] = 'oceanchamp';
         $this->session->set_userdata($data);
 
-    $this->load->view('employer/oceanchamp_test');
+    $this->load->view('fontend/employer/oceanchamp_test');
 }
     
     
