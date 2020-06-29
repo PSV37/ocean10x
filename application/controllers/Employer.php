@@ -3917,7 +3917,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                   
                     $data['skill'] =  $skill;
 
-                    $this->load->view('fontend/employer/oceantest_test',$data);
+                    $this->load->view('fontend/employer/oceanchamp_test',$data);
                 }
              
                
