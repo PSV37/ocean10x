@@ -3939,47 +3939,47 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     }
 
     
-    public function oceanchamp()
-    {
-        $data['activemenu'] = 'oceanchamp';
-        $this->session->set_userdata($data);
-        $skil_topics=array('2,11');
-        $all_topics = implode(',',$skil_topics );
-        $skill = '30';
-        $level = 'Beginner';
-         $temp_array = array();
+//     public function oceanchamp()
+//     {
+//         $data['activemenu'] = 'oceanchamp';
+//         $this->session->set_userdata($data);
+//         $skil_topics=array('2,11');
+//         $all_topics = implode(',',$skil_topics );
+//         $skill = '30';
+//         $level = 'Beginner';
+//          $temp_array = array();
 
-        $company_profile_id = $this->session->userdata('company_profile_id');
-        $where_req_skill="topic_id IN (".$all_topics.") AND level='$level'";
-        $exam_question = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit=NUMBER_QUESTIONS,$start=false, $search=false);
+//         $company_profile_id = $this->session->userdata('company_profile_id');
+//         $where_req_skill="topic_id IN (".$all_topics.") AND level='$level'";
+//         $exam_question = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit=NUMBER_QUESTIONS,$start=false, $search=false);
 
-                    // print_r($this->db->last_query());die;
+//                     // print_r($this->db->last_query());die;
                   
-                   // check for answers
-                    for($n1=0;$n1<sizeof($exam_question);$n1++)
-                    {
-                        $individual_question=array();
-                        $question_id = $exam_question[$n1]['ques_id']; 
-                        $wherechks = "question_id='$question_id'";
-                        $answer = $this->Master_model->getMaster('questionbank_answer',$wherechks);
+//                    // check for answers
+//                     for($n1=0;$n1<sizeof($exam_question);$n1++)
+//                     {
+//                         $individual_question=array();
+//                         $question_id = $exam_question[$n1]['ques_id']; 
+//                         $wherechks = "question_id='$question_id'";
+//                         $answer = $this->Master_model->getMaster('questionbank_answer',$wherechks);
 
-                        $exam_question[$n1]['answer']=$answer;
+//                         $exam_question[$n1]['answer']=$answer;
                       
-                        $individual_question[]=$exam_question[$n1];
+//                         $individual_question[]=$exam_question[$n1];
                           
-                        array_push($temp_array, $exam_question[$n1]);
-                    }
+//                         array_push($temp_array, $exam_question[$n1]);
+//                     }
 
-                    $fp = fopen('./exam_questions/'.$skill.'_'.$company_profile_id.'.json', 'w');
-                    fwrite($fp, json_encode($temp_array));
+//                     $fp = fopen('./exam_questions/'.$skill.'_'.$company_profile_id.'.json', 'w');
+//                     fwrite($fp, json_encode($temp_array));
                                   
-                    $data['skill'] =  $skill;
-                    redirect('employer/oceanchamp_test');
+//                     $data['skill'] =  $skill;
+//                     redirect('employer/oceanchamp_test');
 
-                    // $this->load->view('fontend/employer/oceanchamp_test',$data);
-                    // $this->load->view('fontend/exam/oceantest_take_test',$data);
+//                     // $this->load->view('fontend/employer/oceanchamp_test',$data);
+//                     // $this->load->view('fontend/exam/oceantest_take_test',$data);
                
-}
+// }
     public function oceanchamp_test($skill_id=null)
     {
         $company_profile_id = $this->session->userdata('company_profile_id');
