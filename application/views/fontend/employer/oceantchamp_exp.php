@@ -160,7 +160,7 @@
                   success: function(data)
                   {
                     // alert(data);
-                    $('#topic').html(data);
+                     $('#topic').html(data);
                      $('#skill_name').val(value);
                   }
               });//end ajax
