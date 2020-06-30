@@ -108,7 +108,7 @@
    }
    .card {
    position: relative;
-   height: 100%;
+   height: auto;
    width: 100%;
    -webkit-transform-style: preserve-3d;  
    transform-style: preserve-3d;
