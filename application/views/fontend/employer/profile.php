@@ -768,7 +768,7 @@ messages:{
 
 'company_name':{
 
-required: "The name field is mandatory!",
+// required: "The name field is mandatory!",
 
 maxlength: "Choose a company name of at least 14 letters!"
 
