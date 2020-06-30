@@ -169,9 +169,9 @@
       
         function getval(value,id)
       {
-           $('.exp-box_active').removeClass('exp-box_active');
+           $('.exp-box-active').removeClass('exp-box-active');
            var v = document.getElementById(id); 
-         v.className += " exp-box_active";
+         v.className += " exp-box-active";
           $('#level').val(value);
             
       
