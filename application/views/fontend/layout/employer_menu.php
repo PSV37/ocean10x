@@ -110,8 +110,10 @@
                                       <span class="text item">Skill Upgrade</span>
                                   </a>    
                                 </li>
-                                <li>
-                                  <a data-dl-view="true" data-dl-title="Mobility" href="/jobprofile/generate">
+                                <li <?php if ($activemenu == 'Recruiter') { ?>
+                                 class="active"
+                                <?php } ?>>
+                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/Recruiter">
                                     <span class="icon-container">
                                        <i class="fas fa-map-signs"></i>
                                     </span>
@@ -121,7 +123,7 @@
                                 
                                  <li <?php if ($activemenu == 'addemployee') { ?>
                                  class="active"
-                                <?php } ?>>
+                                <?php } ?> >
                                   <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/addemployee">
                                     <span class="icon-container">
                                        <i class="fas fa-map-signs"></i>
