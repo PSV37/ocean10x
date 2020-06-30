@@ -690,13 +690,13 @@ maxlength: 10
 },
 
 
-'company_name':{
+// 'company_name':{
 
-required: true,
+// // required: true,
 
-companyname_regex: true
+// companyname_regex: true
 
-},
+// },
 
 'contact_name':{
 
