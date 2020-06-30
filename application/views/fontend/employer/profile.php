@@ -754,7 +754,7 @@ url: true
 
 required: true,
 
-companypincode_regex: true
+// /companypincode_regex: true
 
 }
 
