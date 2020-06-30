@@ -400,7 +400,7 @@ class Employer extends MY_Employer_Controller
                 $data['job_role_data'] = $this->Master_model->getMaster('job_role', $where_cn, $join = FALSE, $order = false, $field = false, $select, $limit = false, $start = false, $search = false);
                 
                 
-                $this->load->view('fontend/employer/job_post', $data);
+                $this->load->view('fontend/employer/post_new_job', $data);
             } else {
                 $sal_from     = $this->input->post('sal_from');
                 $sal_to       = $this->input->post('sal_to');
