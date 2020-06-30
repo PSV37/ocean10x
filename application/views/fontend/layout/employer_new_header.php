@@ -57,7 +57,7 @@
 <div class="col-md-12">
 	<div class="col-md-3">
    <div class="menu_logo">
-      <img src="http://www.tele-kinetics.com/assets/img/logo.png" />
+      <img src="<?php echo base_url() ?>fontend/images/tele-logo.png" />
    </div> 
    </div>
    
