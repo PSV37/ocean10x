@@ -61,7 +61,7 @@ class Employer extends MY_Employer_Controller
                 $branches     = $this->Master_model->getMaster('company_branches', $where = $wheres);
                 $company_info = $this->company_profile_model->get($employer_id);
                 $country      = $this->Master_model->getMaster('country', $where = false);
-                $this->load->view('fontend/employer/dashboard', compact('company_info', 'country', 'branches'));
+                $this->load->view('fontend/employer/profile', compact('company_info', 'country', 'branches'));
             } else {
                 $company_profile_id  = $this->session->userdata('company_profile_id');
                 $whereres            = "company_profile_id='$company_profile_id'";
