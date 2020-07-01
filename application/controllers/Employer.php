@@ -514,6 +514,7 @@ class Employer extends MY_Employer_Controller
             $data['city']            = $this->Master_model->getMaster('city', $where = false);
             $data['country']         = $this->Master_model->getMaster('country', $where = false);
             $data['state']           = $this->Master_model->getMaster('state', $where = false);
+            $data['benefits']           = $this->Master_model->getMaster('common_company_benifits', $where = false);
             $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
             
             $where_cn              = "status=1";

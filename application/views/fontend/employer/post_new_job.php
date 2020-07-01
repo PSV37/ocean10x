@@ -403,14 +403,16 @@ span.options_beni {
                     <!--  <div class="form-control benifit-div" style="padding:10px 10px; height:auto;" > -->
                 <div class="col-md-12 col-sm-12">
                    <div class="formrow">
+                     <?php foreach($benefits as $benefit){?>
                         <label>
+                                <input type="checkbox" value="<?php echo $benefit['id']; ?>" class="btn-default1" checked="" name="benefits[]">
+                                <span><?php echo $benefit['benifit']; ?></span>
+                            </label>
+                             <?php } ?>
+                          <!--   <label>
                                 <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
                                 <span>dummy1</span>
-                            </label>
-                            <label>
-                                <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
-                                <span>dummy1</span>
-                            </label>
+                            </label> -->
                     
                     
                     </div>
