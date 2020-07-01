@@ -694,6 +694,8 @@
     background-color: #18c5bd;
     border: none;
     border-radius: 35px;
+    margin-top: 40px;
+    font-size: 12px;
 }
 </style>
 <div class="container-fluid main-d">
