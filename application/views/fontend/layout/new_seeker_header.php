@@ -199,7 +199,7 @@
       <div class="modal-content">
         <div class="modal-header">
          
-          <h4 class="modal-title">Are you sure want to log off ?</h4>
+          <h4 class="modal-title">Are you sure You Want to log off ?</h4>
         </div>
        
         <div class="modal-footer">
@@ -260,7 +260,7 @@
         
             });
     }
-
+     
 </script>
 
 
