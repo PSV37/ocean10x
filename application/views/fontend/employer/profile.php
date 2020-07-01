@@ -690,13 +690,13 @@ maxlength: 10
 },
 
 
-'company_name':{
+// 'company_name':{
 
-required: true,
+// // required: true,
 
-companyname_regex: true
+// companyname_regex: true
 
-},
+// },
 
 'contact_name':{
 
@@ -754,7 +754,7 @@ url: true
 
 required: true,
 
-companypincode_regex: true
+// /companypincode_regex: true
 
 }
 
@@ -768,7 +768,7 @@ messages:{
 
 'company_name':{
 
-required: "The name field is mandatory!",
+// required: "The name field is mandatory!",
 
 maxlength: "Choose a company name of at least 14 letters!"
 

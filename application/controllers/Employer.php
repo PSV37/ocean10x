@@ -61,7 +61,7 @@ class Employer extends MY_Employer_Controller
                 $branches     = $this->Master_model->getMaster('company_branches', $where = $wheres);
                 $company_info = $this->company_profile_model->get($employer_id);
                 $country      = $this->Master_model->getMaster('country', $where = false);
-                $this->load->view('fontend/employer/dashboard', compact('company_info', 'country', 'branches'));
+                $this->load->view('fontend/employer/profile', compact('company_info', 'country', 'branches'));
             } else {
                 $company_profile_id  = $this->session->userdata('company_profile_id');
                 $whereres            = "company_profile_id='$company_profile_id'";
@@ -400,7 +400,7 @@ class Employer extends MY_Employer_Controller
                 $data['job_role_data'] = $this->Master_model->getMaster('job_role', $where_cn, $join = FALSE, $order = false, $field = false, $select, $limit = false, $start = false, $search = false);
                 
                 
-                $this->load->view('fontend/employer/job_post', $data);
+                $this->load->view('fontend/employer/post_new_job', $data);
             } else {
                 $sal_from     = $this->input->post('sal_from');
                 $sal_to       = $this->input->post('sal_to');
@@ -3943,7 +3943,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     public function oceanchamp_test($skill_id=null)
     {
         $company_profile_id = $this->session->userdata('company_profile_id');
-        $skill_id = '30';
+        $skill_id = base64_decode($skill_id);
 
         if (!empty($skill_id)) {
                  
