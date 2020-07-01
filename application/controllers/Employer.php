@@ -4049,7 +4049,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             }else{
                 unlink('./exam_questions/'.$skill_id.'_'.$company_profile_id.'.json');
              
-                $this->load->view('fontend/exam/exam_success');
+                $this->load->view('fontend/employer/result_page');
             }
         }
 
