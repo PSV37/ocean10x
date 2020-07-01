@@ -266,7 +266,7 @@ h4:after {
  <form class="submit-form customform forgotform" action="<?php echo base_url() ?>employer_login/forgot_pass" method="post">
    <div class="user-box">
       <input type="text" name="email"  required>
-      <label>Password </label>
+      <label>Email </label>
       <i id="eyeIcon" class="fa fa-eye"></i>
 
 
