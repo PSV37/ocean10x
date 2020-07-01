@@ -178,7 +178,7 @@
         <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" class="img-thumbnail" style="height:45px; width:45px; border-radius:50%;" />&emsp;<a class=" dropdown-toggle" data-toggle="dropdown">
           <?php endif; ?>
     <span class="caret"></span>
-    <p class="profile-accoutnt-p"><?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></p>
+    <p class="profile-accoutnt-p" data-toggle="tooltip" title="Hooray!" ><?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></p>
     </a>
     <ul class="dropdown-menu">
       <li><a href="<?php echo base_url(); ?>job_seeker/seeker_info"><i class="fas fa-user"></i>My Profile</a> </li>
@@ -285,3 +285,8 @@
             });
         });
     </script>
+    <script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
