@@ -240,8 +240,10 @@ i.fas.fa-power-off{
 	margin-top: -33px;
     margin-left: 76px;
     color: #fff;
-    font-size: 14px;
     font-weight: 700;
+    width: auto;   
+    height: 20px;
+    overflow: hidden;   
 	}
 .fixed-navigation #left-panel {
     height: 100%;
