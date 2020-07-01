@@ -244,7 +244,8 @@ i.fas.fa-power-off{
     width: auto;   
     height: 20px;
     overflow: hidden;   
-	}
+	}   
+.profile-accoutnt-p:hover{text-decoration:none;}	
 .fixed-navigation #left-panel {
     height: 100%;
     position: fixed;
