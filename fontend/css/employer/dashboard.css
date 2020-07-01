@@ -238,14 +238,14 @@ i.fas.fa-power-off{
     margin-left: -5px;}	
 .profile-accoutnt-p{	
 	margin-top: -33px;
-    margin-left: 76px;
+    margin-left: 76px;   
     color: #fff;
     font-weight: 700;   
     width: auto;   
     height: 20px;
     overflow: hidden;   
 	}   
-.profile-accoutnt-p:hover{text-decoration:none;}	
+.profile-accoutnt-p:hover{text-decoration:none !important;}	
 .fixed-navigation #left-panel {
     height: 100%;
     position: fixed;
