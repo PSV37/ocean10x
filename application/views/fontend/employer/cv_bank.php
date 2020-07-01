@@ -688,6 +688,15 @@
    }
    .input-group-btn:last-child>.btn{background-color:#18c5bd;
    color:#fff;}
+
+    button.btn.btn-primary {
+    float: right;
+    background-color: #18c5bd;
+    border: none;
+    border-radius: 35px;
+    margin-top: 40px;
+    font-size: 12px;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -739,7 +748,11 @@
                   <div class="placeholder_cmmn" id="auto_loc_wrap_srp">    
                      <input type="text" class="form-control rounded" tabindex="3" monstab="3" placeholder="Type The Job Post That You Want To Forward to the Below CV'S" onfocus="if(this.value==&quot;&quot;)this.value=&quot;&quot;" onblur="if(this.value=='')this.value=''" id="lmy_header" name="lmy">
                      <button class="send">send</button>
+                    
                   </div>
+               </div>
+               <div class="col-md-3">
+                   <a href="<?php echo base_url() ?>employer/add-new-cv"><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New CV</button></a>
                </div>
             </div>
             <div class="box">
