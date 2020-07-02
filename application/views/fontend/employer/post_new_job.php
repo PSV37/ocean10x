@@ -224,7 +224,7 @@
                            <option value="<?php echo $education['education_level_id']; ?>"<?php if($this->session->userdata('edu')==$education['education_level_id']){ echo "selected"; }elseif($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
                            <?php } ?>
                         </select>
-                        <input type="hidden" name="training_title" class="form-control" id="training_title1" placeholder="Training Title"
+                        <input type="hidden" name="training_title" class="form-control" id="training_title1" placeholder="ex.B.E"
                    value=""> 
                         <?php echo form_error('job_edu'); ?>                
                      </div>
