@@ -188,23 +188,29 @@
                   </div>
                   <div class="col-md-3 col-sm-12">
                      <div class="formrow">
-                        <label class="control-label ">Expected Experience<span class="required"> *</span> </label>
-                        <!--  <input class="form-control" type="text" name="experience" maxlength="2" value="<?php 
-                           if(!empty($job_info->experience)){ echo $job_info->experience;
-                            }
-                           ?>" autocomplete="off" required> -->
-                        <div class="col-md-3 formrow" style="width:80px;margin-left:-14px;">
-                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from"  value="<?php if(!empty($this->session->userdata('exp_from')) ){echo $this->session->userdata('exp_from'); } ?>" />
-                        </div>
-                        <div class="col-md-3 formrow" style="width:80px;margin-left:-19px;">
-                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to" value="<?php if(!empty($this->session->userdata('exp_to')) ){echo $this->session->userdata('exp_to'); } ?>" />
-                        </div>
+                        <label class="control-label ">Expected Domain<span class="required"> * </span> </label>
+                        <select name="job_category" class="form-control" data-style="btn-default" data-live-search="true" required="">
+                           <option value="">Select Expected Domain</option>
+                           <?php if(!empty($job_info->job_category)) {
+                              echo $this->job_category_model->selected($job_info->job_category);
+                              } else {
+                              echo $this->job_category_model->selected();
+                              }
+                              ?>
+                        </select>
+                        <?php echo form_error('job_category'); ?>               
                      </div>
                   </div>
-                  <div class="col-md-3 col-sm-12">
+                  <div class="col-sm-3 p-m-2">
                      <div class="formrow">
-                        <label class="control-label ">Number of Positions<span class="required"> *</span> </label>
-                        <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2" name="no_jobs" required value="<?php if(!empty($this->session->userdata('no_jobs')) ){echo $this->session->userdata('no_jobs'); }elseif(!empty($job_info->no_jobs)){ echo $job_info->no_jobs; } ?>" autocomplete="off">  <?php echo form_error('no_jobs'); ?>                
+                        <label  class="control-label ">Job Role<span class="required"> *</span></label>
+                        <select name="job_role" id="job_role" class="form-control col-sm-5" onchange="getSkillsdetails(this.value)" required="">
+                           <option>select job Role</option>
+                           <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
+                              ?> 
+                           <option value="<?php echo $role_value['id']; ?>"<?php if($this->session->userdata('jobrole')==$role_value['id']){ echo "selected"; } elseif(!empty($job_info)) if($job_info->job_role==$role_value['id']) echo 'selected'; ?>><?php echo $role_value['job_role_title']; ?></option>
+                           <?php } ?><?php echo form_error('job_role'); ?>
+                        </select>
                      </div>
                   </div>
                   <div class="col-md-3 col-sm-12">
@@ -232,6 +238,27 @@
                               ?>
                         </select>
                         <?php echo form_error('job_nature'); ?>               
+                     </div>
+                  </div>
+                  <div class="col-md-3 col-sm-12">
+                     <div class="formrow">
+                        <label class="control-label ">Expected Experience<span class="required"> *</span> </label>
+                        <!--  <input class="form-control" type="text" name="experience" maxlength="2" value="<?php 
+                           if(!empty($job_info->experience)){ echo $job_info->experience;
+                            }
+                           ?>" autocomplete="off" required> -->
+                        <div class="col-md-3 formrow" style="width:80px;margin-left:-14px;">
+                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from"  value="<?php if(!empty($this->session->userdata('exp_from')) ){echo $this->session->userdata('exp_from'); } ?>" />
+                        </div>
+                        <div class="col-md-3 formrow" style="width:80px;margin-left:-19px;">
+                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to" value="<?php if(!empty($this->session->userdata('exp_to')) ){echo $this->session->userdata('exp_to'); } ?>" />
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-3 col-sm-12">
+                     <div class="formrow">
+                        <label class="control-label ">Number of Positions<span class="required"> *</span> </label>
+                        <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2" name="no_jobs" required value="<?php if(!empty($this->session->userdata('no_jobs')) ){echo $this->session->userdata('no_jobs'); }elseif(!empty($job_info->no_jobs)){ echo $job_info->no_jobs; } ?>" autocomplete="off">  <?php echo form_error('no_jobs'); ?>                
                      </div>
                   </div>
                   <div class="col-md-3 col-sm-12" id="spectial">
@@ -269,33 +296,7 @@
                         <input type="date" name="job_deadline" class="form-control datepicker" id="job_deadline_day" min="<?php echo date('Y-m-d'); ?>" required value="" autocomplete="off"><?php echo form_error('job_deadline'); ?>         
                      </div>
                   </div>
-                  <div class="col-md-3 col-sm-12">
-                     <div class="formrow">
-                        <label class="control-label ">Expected Domain<span class="required"> * </span> </label>
-                        <select name="job_category" class="form-control" data-style="btn-default" data-live-search="true" required="">
-                           <option value="">Select Expected Domain</option>
-                           <?php if(!empty($job_info->job_category)) {
-                              echo $this->job_category_model->selected($job_info->job_category);
-                              } else {
-                              echo $this->job_category_model->selected();
-                              }
-                              ?>
-                        </select>
-                        <?php echo form_error('job_category'); ?>               
-                     </div>
-                  </div>
-                  <div class="col-sm-3 p-m-2">
-                     <div class="formrow">
-                        <label  class="control-label ">Job Role<span class="required"> *</span></label>
-                        <select name="job_role" id="job_role" class="form-control col-sm-5" onchange="getSkillsdetails(this.value)" required="">
-                           <option>select job Role</option>
-                           <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
-                              ?> 
-                           <option value="<?php echo $role_value['id']; ?>"<?php if($this->session->userdata('jobrole')==$role_value['id']){ echo "selected"; } elseif(!empty($job_info)) if($job_info->job_role==$role_value['id']) echo 'selected'; ?>><?php echo $role_value['job_role_title']; ?></option>
-                           <?php } ?><?php echo form_error('job_role'); ?>
-                        </select>
-                     </div>
-                  </div>
+                  
                   <div class="col-sm-12 p-m-2">
                      <div class="formrow">
                         <!-- donain is nothing but industry -->
@@ -319,10 +320,10 @@
                         <span><?php echo $benefit['benifit']; ?></span>
                         </label>
                         <?php } ?>
-                        <!--   <label>
+                          <label>
                            <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
-                           <span>dummy1</span>
-                           </label> -->
+                           <span><i class="fa fa-plus"></i> Other</span>
+                           </label>
                      </div>
                   </div>
                   <!-- </textarea><?php echo form_error('benefits'); ?>                                  -->
