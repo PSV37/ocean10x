@@ -371,7 +371,7 @@
   function check_other(value)
 {
   
-  if (value==other) 
+  if (value=='other') 
   {
      // $('#job_edu').hide();
       $('#other_terxtbx').show();
@@ -406,7 +406,7 @@
    $(document).ready(function(){
 
       $('#other_terxtbx').hide();
-    
+
      $('input').keyup(function(){
        // alert('input');
          if($(this).val().length==$(this).attr("maxlength")){
