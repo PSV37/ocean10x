@@ -213,7 +213,7 @@
                         </select>
                      </div>
                   </div>
-                  <div class="col-md-3 col-sm-12">
+                  <div class="col-md-3 col-sm-12" id="job_education">
                      <div class="formrow">
                         <label class="control-label">Education Level<span class="required"> * </span></label>
                         <select name="job_edu" id="job_edu" class="form-control" data-style="btn-default" data-live-search="true" onchange="getEducationSpecial(this.value)" required="">
@@ -224,11 +224,17 @@
                            <option value="<?php echo $education['education_level_id']; ?>"<?php if($this->session->userdata('edu')==$education['education_level_id']){ echo "selected"; }elseif($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
                            <?php } ?>
                         </select>
-                        <input type="hidden" name="training_title" class="form-control" id="training_title1" placeholder="ex.B.E"
-                   value=""> 
+                        
                         <?php echo form_error('job_edu'); ?>                
                      </div>
                   </div>
+                   <div class="col-md-3 col-sm-12" id="training_title1">
+                     <div class="formrow">
+                        <label class="control-label">Education Level<span class="required"> * </span></label>
+                          <input type="text" name="other_edu" class="form-control" id="other_edu" placeholder="ex.B.E"
+                           value=""> 
+                         </div>
+                      </div>
                   <div class="col-md-3 col-sm-12">
                      <div class="formrow">
                         <label class="control-label ">Engagement Model<span class="required"> * </span> </label>
@@ -457,20 +463,25 @@
    function getEducationSpecial(id){
 
     var x1 = document.getElementById("training_title1");
-    var x = document.getElementById("job_edu");
+    var x = document.getElementById("job_education");
     if (id=='other') 
   {
     if (x1.type === "hidden") {
       x1.type = "text";
       $('#job_edu').hide();
+      $('#job_education').show();
     } else {
       x1.type = "hidden";
+      $('#job_education').hide();
+      
 
     }
   }
   else
   {
     x1.type = "hidden";
+      $('#job_education').hide();
+    
     x1.value = value;
   }
     
