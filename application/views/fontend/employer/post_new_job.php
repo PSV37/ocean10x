@@ -331,11 +331,11 @@
                         </label>
                         <?php } ?>
                           <label>
-                           <input type="button" value="4" class="btn-default1" checked="" name="benefits[]">
-                           <span><i class="fa fa-plus"></i> Other</span>
+                           <button type="button" value="other" class="btn-default1" checked="" name="benefits[]" onclick="check_other(value);">
+                           <span><i class="fa fa-plus"></i> Other</span></button>
                            </label>
-                           <label>
-                           <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
+                           <label id="other_terxtbx">
+                           <input type="text" value="4" class="btn-default1" checked="" name="benefits[]">
                            <span></span>
                            </label>
                      </div>
@@ -371,6 +371,16 @@
   function check_other(value)
 {
   
+  if (value==other) 
+  {
+     // $('#job_edu').hide();
+      $('#other_terxtbx').show();
+  }
+  else
+  {
+      $('#other_terxtbx').hide();
+
+  }
     
 }
 </script>
@@ -394,6 +404,9 @@
    </script> -->
 <script>
    $(document).ready(function(){
+
+      $('#other_terxtbx').hide();
+    
      $('input').keyup(function(){
        // alert('input');
          if($(this).val().length==$(this).attr("maxlength")){
@@ -473,7 +486,7 @@
     } else {
       x1.type = "hidden";
       $('#job_education').hide();
-      
+
 
     }
   }
@@ -481,7 +494,7 @@
   {
     x1.type = "hidden";
       $('#job_education').hide();
-    
+
     x1.value = value;
   }
     
