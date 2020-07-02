@@ -368,7 +368,7 @@
       </div>
    </div>
 </div>
-<script type="text/javascript">
+<script>
   function check_other(value)
 {
   
