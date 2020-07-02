@@ -332,7 +332,7 @@
                         </label>
                         <?php } ?>
                           <label>
-                           <button type="button" value="other" class="btn-default1" checked="" name="benefits[]" onclick="check_other(value);">
+                           <button type="button" value="other" class="btn-default1" checked="" name="benefits[]" onclick="check_other(this.value);">
                            <span><i class="fa fa-plus"></i> Other</span></button>
                            </label>
                            <label id="other_terxtbx">
