@@ -190,7 +190,7 @@
                      <div class="formrow">
                         <label class="control-label ">Expected Domain<span class="required"> * </span> </label>
                         <select name="job_category" class="form-control" data-style="btn-default" data-live-search="true" required="">
-                           <option value="">Select Expected Domain</option>
+                           <!-- <option value="">Select Expected Domain</option> -->
                            <?php if(!empty($job_info->job_category)) {
                               echo $this->job_category_model->selected($job_info->job_category);
                               } else {
@@ -332,7 +332,7 @@
                         </label>
                         <?php } ?>
                           <label>
-                           <button type="button" value="other" class="btn-default1" checked="" name="benefits[]" onclick="check_other(this.value);">
+                           <button type="button" value="other" class="btn-default1" checked="" name="benefits[]" onclick="check_other(value);">
                            <span><i class="fa fa-plus"></i> Other</span></button>
                            </label>
                            <label id="other_terxtbx">
@@ -407,7 +407,6 @@
    $(document).ready(function(){
 
       $('#other_terxtbx').hide();
-      $('#job_education').hide();
 
      $('input').keyup(function(){
        // alert('input');
@@ -481,24 +480,19 @@
     var x = document.getElementById("job_education");
     if (id=='other') 
   {
-    if (x1.type === "hidden") {
-      x1.type = "text";
+    
       $('#job_edu').hide();
       $('#job_education').show();
     } else {
-      x1.type = "hidden";
+     
       $('#job_education').hide();
+      $('#job_edu').show();
+
 
 
     }
-  }
-  else
-  {
-    x1.type = "hidden";
-      $('#job_education').hide();
-
-    x1.value = value;
-  }
+  
+ 
     
    if(id==5 || id==6){
     $('#spectial').hide();
