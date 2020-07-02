@@ -462,7 +462,7 @@
   {
     if (x1.type === "hidden") {
       x1.type = "text";
-      // x.type = "hidden";
+      $('#job_edu').hide();
     } else {
       x1.type = "hidden";
 
