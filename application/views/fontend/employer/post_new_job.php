@@ -335,10 +335,10 @@
                            <button type="button" value="other" class="btn-default1" checked="" name="benefits[]" onclick="check_other(value);">
                            <span><i class="fa fa-plus"></i> Other</span></button>
                            </label>
-                           <label id="other_terxtbx">
+                         <!--   <label id="other_terxtbx"> -->
                            <input type="text" value="4"  name="benefits[]">
-                           <span></span>
-                           </label>
+                           <!-- <span></span> -->
+                           <!-- </label> -->
                      </div>
                   </div>
                   <!-- </textarea><?php echo form_error('benefits'); ?>                                  -->
@@ -406,7 +406,7 @@
 <script>
    $(document).ready(function(){
 
-      $('#other_terxtbx').hide();
+      // $('#other_terxtbx').hide();
       $('#job_education').hide();
 
      $('input').keyup(function(){
