@@ -439,8 +439,7 @@
      showAutocompleteOnFocus: true,
    
    });
-  var id = document.getElementById("job_role");
-     getSkillsdetails(id);
+ 
    
    
    })
