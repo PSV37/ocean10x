@@ -205,7 +205,7 @@
                      <div class="formrow">
                         <label  class="control-label ">Job Role<span class="required"> *</span></label>
                         <select name="job_role" id="job_role" class="form-control col-sm-5" onchange="getSkillsdetails(this.value)" required="">
-                           <option>select job Role</option>
+                           <!-- <option>select job Role</option> -->
                            <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
                               ?> 
                            <option value="<?php echo $role_value['id']; ?>"<?php if($this->session->userdata('jobrole')==$role_value['id']){ echo "selected"; } elseif(!empty($job_info)) if($job_info->job_role==$role_value['id']) echo 'selected'; ?>><?php echo $role_value['job_role_title']; ?></option>
@@ -217,11 +217,12 @@
                      <div class="formrow">
                         <label class="control-label">Education Level<span class="required"> * </span></label>
                         <select name="job_edu" id="job_edu" class="form-control" data-style="btn-default" data-live-search="true" onchange="getEducationSpecial(this.value)" required="">
-                           <option value="">Select Level </option>
-                           <option value="other">Other </option>
-                           <option value="other">None </option>
+                           <!-- <option value="">Select Level </option> -->
+                           
                            <?php foreach($education_level as $education){?>
                            <option value="<?php echo $education['education_level_id']; ?>"<?php if($this->session->userdata('edu')==$education['education_level_id']){ echo "selected"; }elseif($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
+                           <option value="other">Other </option>
+                           <option value="other">None </option>
                            <?php } ?>
                         </select>
                         
@@ -239,7 +240,7 @@
                      <div class="formrow">
                         <label class="control-label ">Engagement Model<span class="required"> * </span> </label>
                         <select name="job_nature" class="form-control" data-style="btn-default" data-live-search="true" required="">
-                           <option value="">Select Engagement Model</option>
+                           <!-- <option value="">Select Engagement Model</option> -->
                            <?php if(!empty($job_info->job_nature)) {
                               echo $this->job_nature_model->selected($job_info->job_nature);
                               } else {
@@ -438,6 +439,9 @@
      showAutocompleteOnFocus: true,
    
    });
+  var id = document.getElementById("job_role");
+     getSkillsdetails(id);
+   
    
    })
 </script>
