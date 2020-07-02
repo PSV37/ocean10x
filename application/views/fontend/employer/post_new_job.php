@@ -321,8 +321,12 @@
                         </label>
                         <?php } ?>
                           <label>
-                           <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
+                           <input type="button" value="4" class="btn-default1" checked="" name="benefits[]">
                            <span><i class="fa fa-plus"></i> Other</span>
+                           </label>
+                           <label>
+                           <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
+                           <span></span>
                            </label>
                      </div>
                   </div>
