@@ -170,7 +170,7 @@
             <div class="col-md-9 post-job">
                <input type="hidden" name="job_post_id" value="<?php if(!empty($job_info->job_post_id)){echo $job_info->job_post_id;} ?>">
                <div id="svg_wrap"></div>
-               <section>
+               <!-- <section> -->
                   <div class="col-md-3 col-sm-4">
                      <div class="formrow">
                         <label class="control-label ">Job Title / Designation<span class="required"> * </span> </label>
@@ -340,12 +340,12 @@
                         <textarea name="job_desc" class="form-control ckeditor" placeholder="Job Description"><?php if(!empty($job_info)) echo $job_info->job_desc; ?></textarea><?php echo form_error('job_desc'); ?>                                  
                      </div>
                   </div>
-               </section>
+               <!-- </section> -->
                <div class="btn-bottom_3">
-                  <div class="button" id="prev">&larr; Previous</div>
-                  <div class="button" id="next">Next &rarr;</div>
-                  <button class="button" type="submit" name="preview"  id="preview">preview</button>
-                  <button type="submit" class="button" id="submit">Post Job</button>
+                  <!-- <div class="button" id="prev">&larr; Previous</div> -->
+                  <!-- <div class="button" id="next">Next &rarr;</div> -->
+                  <button class="button" type="submit" name="preview">preview</button>
+                  <button type="submit" class="button">Post Job</button>
                </div>
             </div>
          </form>
