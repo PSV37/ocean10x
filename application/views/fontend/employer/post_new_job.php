@@ -394,13 +394,7 @@
              });
    
          
-   
-   
-   })
-</script>
-
-<script>
-   $('#tokenfield').tokenfield({
+    $('#tokenfield').tokenfield({
      autocomplete: {
        source: "<?php echo base_url('Employer/search_city'); ?>",
        delay: 100
@@ -409,6 +403,12 @@
      showAutocompleteOnFocus: true,
    
    });
+   
+   })
+</script>
+
+<script>
+  
    // to avoid duplications
    
    $('#tokenfield').on('tokenfield:createtoken', function (event) {
