@@ -335,7 +335,7 @@
                            <span><i class="fa fa-plus"></i> Other</span></button>
                            </label>
                            <label id="other_terxtbx">
-                           <input type="text" value="4" class="btn-default1" checked="" name="benefits[]">
+                           <input type="text" value="4"  name="benefits[]">
                            <span></span>
                            </label>
                      </div>
