@@ -407,6 +407,7 @@
    $(document).ready(function(){
 
       $('#other_terxtbx').hide();
+      $('#job_education').hide();
 
      $('input').keyup(function(){
        // alert('input');
