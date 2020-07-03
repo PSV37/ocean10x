@@ -169,6 +169,9 @@
     z-index: 1;
     /*display: block;*/
 }
+i.fa.fa-check {
+    margin-left: -32px;
+}
 </style>
 <!---header--->
 <!--form id="form_register"-->
@@ -356,7 +359,7 @@
                            <span><i class="fa fa-plus"></i> Other</span></button>
                            </label>
 
-                           <div id="other_terxtbx"><input type="text"  name="benefits[]"  style="display: inline-block; width: 50%" ><span><i class="fa fa-check"></i></span></div>
+                           <div id="other_terxtbx"><input type="text"  name="benefits[]"  style="display: inline-block; width: 50%" ><button onclick="save_benifit(this.value);"><span><i class="fa fa-check"></i></span></button></div>
                        
                 
                        
@@ -432,7 +435,10 @@
             });
         });
 
-        
+        function save_benifit(value)
+        {
+         alert(value);
+        }
     </script>
     
  
