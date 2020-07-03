@@ -483,12 +483,12 @@
     if (id=='other') 
   {
     
-      $('#job_edu').hide();
-      $('#job_education').show();
+      $('#training_title1').show();
+      $('#job_education').hide();
     } else {
      
-      $('#job_education').hide();
-      $('#job_edu').show();
+      $('#job_education').show();
+      $('#training_title1').hide();
 
 
 
