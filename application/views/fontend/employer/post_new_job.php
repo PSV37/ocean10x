@@ -303,13 +303,14 @@
                   </div>
                   <div class="col-md-3 col-sm-12">
                      <div class="formrow">
-                        <label class="control-label ">Deadline<span class="required"> * </span> </label>
+                        <label class="control-label" for="datepicker">Deadline<span class="required"> * </span> </label>
                        <?php
                           $old_date = date('Y-m-d');
                           $next_due_date = date('Y-m-d', strtotime($old_date. ' +30 days'));
                           
                         ?>
-                        <input type="date" name="job_deadline" class="form-control datepicker" id="job_deadline_day" min="<?php echo date('Y-m-d'); ?>" required value="<?php echo $next_due_date; ?>" autocomplete="off"><?php echo form_error('job_deadline'); ?>         
+                        <input type="text" class="form-control" id="datepicker">
+                        <!-- <input type="date" name="job_deadline" class="form-control datepicker" id="job_deadline_day" min="<?php echo date('Y-m-d'); ?>" required value="<?php echo $next_due_date; ?>" autocomplete="off"><?php echo form_error('job_deadline'); ?>    -->      
                      </div>
                   </div>
                   
@@ -374,7 +375,13 @@
       </div>
    </div>
 </div>
-
+<script type="text/javascript" language="javascript" src="datetimepicker/js/bootstrap-datetimepicker.js"></script>
+<script>
+  // Date picker only
+  $('#datepicker').datetimepicker({
+    format: 'DD-MM-YYYY'
+  });
+</script>
 
 <script>
   function check_other(value)
