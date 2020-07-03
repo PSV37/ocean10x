@@ -24,7 +24,9 @@
 
 <!-- Token field css -->
     
-
+<link rel="stylesheet" href="<?php echo base_url(); ?>asset/tokenjs/css/tokenfield-typeahead.css" type="text/css" />
+    <link rel="stylesheet" href="<?php echo base_url(); ?>asset/tokenjs/bootstrap-tokenfield.min.js" />
+    <link rel="stylesheet" href="<?php echo base_url(); ?>asset/tokenjs/css/bootstrap-tokenfield.css" type="text/css" />
     <!-- multiselect css -->
    
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
