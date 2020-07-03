@@ -177,6 +177,7 @@
 			  .heading_first{font-size: 22px;
     margin-bottom: 20px;
     margin-top: 15px;
+	text-align:center;
 			 }              
 			 .anchor_link {
     
