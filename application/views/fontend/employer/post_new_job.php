@@ -332,14 +332,14 @@
                         </label>
                         <?php } ?>
                           <label>
-                           <button type="button" value="other" class="btn-default1" checked="" name="benefits[]" onclick="check_other(value);">
+                           <button type="button" value="other" class="btn-default1" checked="" name="benefits[]" onclick="check_other(this.value);">
                            <span><i class="fa fa-plus"></i> Other</span></button>
                            </label>
 
-                          <label>
-                        <input type="text" value="<?php echo $benefit['id']; ?>" class="btn-default1" checked="" name="benefits[]">
-                        <span><?php echo $benefit['benifit']; ?></span>
-                        </label>
+                          
+                        <input type="hidden"  name="benefits[]" id="other_terxtbx">
+                
+                       
                      </div>
                   </div>
                   <!-- </textarea><?php echo form_error('benefits'); ?>                                  -->
@@ -372,15 +372,19 @@
 <script>
   function check_other(value)
 {
+   var x1 = document.getElementById("other_terxtbx");
   
   if (value=='other') 
   {
      // $('#job_edu').hide();
-      $('#other_terxtbx').show();
+      // $('#other_terxtbx').show();
+      x1.type ='text';
   }
   else
   {
-      $('#other_terxtbx').hide();
+      // $('#other_terxtbx').hide();
+      x1.type ='hidden';
+
 
   }
     
@@ -406,7 +410,7 @@
    </script> -->
 <script>
    $(document).ready(function(){
-
+ 
       // $('#other_terxtbx').hide();
       $('#training_title1').hide();
 
