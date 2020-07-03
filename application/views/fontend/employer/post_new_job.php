@@ -173,6 +173,14 @@ button#check-btn {
     margin-left: 0px;
     height: 34px;
 }
+.btn-default1 {
+    color: #fff;
+    background-color: #18c5bd;
+    border: none;
+    border-radius: 13px;
+    width: 75px;
+    height: 21px;
+}
 </style>
 <!---header--->
 <!--form id="form_register"-->
@@ -355,12 +363,13 @@ button#check-btn {
                         </label>
                         <?php } ?>
 
-                          <label>
+                          
+
+                        </div>
+                        <label>
                            <button type="button" value="other" class="btn-default1" checked="" name="benefits[]" onclick="check_other(this.value);">
                            <span><i class="fa fa-plus"></i> Other</span></button>
                            </label>
-
-                        </div>
                         <div id="other_terxtbx"><input type="text"  name="benefits[]" id="other_benifit"  style="display: inline-block; width: 30%" ><button type="button" id="check-btn" onclick="save_benifit();"><i class="fa fa-check"></i></button></div>
                   </div>
                   <!-- </textarea><?php echo form_error('benefits'); ?>                                  -->
