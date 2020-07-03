@@ -186,7 +186,7 @@
     
     margin: 0 auto;
     width: min-content;
-}
+}         
 .heading2{
 	font-size:20px;}
 		 }
