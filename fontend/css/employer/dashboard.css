@@ -1151,14 +1151,14 @@ ul.list-unstyled.quick-links {
     box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.05)
 }
 .tree li {
-    list-style-type:none;
+    list-style-type:none;  
     margin:0;
-    padding:10px 5px 0 5px;
+    padding:10px 5px 0 0px;
     position:relative
 }
 .tree li::before, .tree li::after {
     content:'';
-    left:-20px;
+    left:-28px;
     position:absolute;
     right:auto
 }
