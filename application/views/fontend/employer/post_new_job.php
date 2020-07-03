@@ -347,7 +347,7 @@ button#check-btn {
                   <!--     <textarea name="benefits" class="form-control ckeditor" placeholder="Company benefits offered"><?php if(!empty($job_info)) echo $job_info->benefits; ?>--->
                   <!--  <div class="form-control benifit-div" style="padding:10px 10px; height:auto;" > -->
                   <div class="col-md-12 col-sm-12">
-                     <div class="formrow">
+                     <div class="formrow" id="benifit">
                         <?php foreach($benefits as $benefit){?>
                         <label>
                         <input type="checkbox" value="<?php echo $benefit['id']; ?>" class="btn-default1" checked="" name="benefits[]">
@@ -439,8 +439,9 @@ button#check-btn {
         function save_benifit()
         {
          var othr_benifit = document.getElementById('other_benifit').value;
+         $('#benifit').append('<input type="checkbox" value="'+othr_benifit+'" class="btn-default1" checked="" name="benefits[]"><span>'+othr_benifit+'</span></label>')
+         // alert(othr_benifit);
 
-         alert(othr_benifit);
         }
     </script>
     
