@@ -228,8 +228,9 @@ transform: inherit;
 	.login-box .user-box{height:180px;}
 .login-box .user-box label{  
 font-size:42px;}
-    
-.login-box .user-box input{   
+        
+.login-box .user-box input{ 
+font-size:43px;  
 	padding:54px 0px;}
 .check label{font-size:42px;}
 .sign_in {
@@ -248,13 +249,15 @@ font-size:42px;}
     border-radius: 65px;
     
     font-size: 44px;
-}	
+}	     
 .forgot{
-font-size: 32px;
-    margin-top: 26px;   
-}       
+font-size: 32px !important;
+    margin-top: 26px !important;   
+}      
+.newuser{font-size:37px;}
+.login-box .user-box input:focus ~ label, .login-box .user-box input:valid ~ label{font-size:32px;} 
 }
-    
+         
 </style>
 
 
