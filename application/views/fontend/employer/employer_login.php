@@ -209,15 +209,22 @@ input:-internal-autofill-selected{background-color:#fff !important;}
   margin-top: -27px;
   position: relative;
   z-index: 2;
-  cursor:pointer;
-}
+  cursor:pointer;    
+}   
 .user-box input:focus{background-color:#fff;}
 
-@media screen and (min-width: 480px){
-.login-box{height:-webkit-fill-available;
-width:-webkit-fill-available;
-}	
+@media screen and (min-width:480px){
+.login-box{top:0px;   
+left:0px;
+width:100%;   
+height: 100vh;
+transform: inherit;
 }
+.login-box h3{
+	font-size:63px;
+	}
+	.login-box .user-box{height:180px;}
+}    
     
 </style>
 
