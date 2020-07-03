@@ -161,6 +161,14 @@
    padding: 5px 12px !important;   
    font-size: 11px;
    border-radius:13px !important; }
+
+   div#ui-datepicker-div {
+    position: absolute;
+    top: 333px;
+    left: 1017.75px;
+    z-index: 1;
+    display: block;
+}
 </style>
 <!---header--->
 <!--form id="form_register"-->
