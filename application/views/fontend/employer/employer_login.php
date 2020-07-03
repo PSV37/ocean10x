@@ -224,6 +224,7 @@ transform: inherit;
 	font-size:63px;
 	margin-bottom: 135px;
 	margin-top:60px;
+	font-weight: 400;
 	}    
 	.login-box .user-box{height:180px;}
 .login-box .user-box label{  
@@ -231,11 +232,11 @@ font-size:42px;}
         
 .login-box .user-box input{ 
 font-size:43px;  
-	padding:54px 0px;}
+	padding:28px 0px;}
 .check label{font-size:42px;}
 .sign_in {
     background-color: #18c5bd;
-    border: none;
+    border: none;     
     padding: 32px 316px;
     color: #fff;
     font-weight: 700;
