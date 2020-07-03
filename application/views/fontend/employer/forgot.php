@@ -16,11 +16,11 @@ margin-top:20px;
 box-shadow:none !important;  
 } 
 .login-box h4{font-size:18px;}  
-
+.sign_in{width:max-content;}
 }
 
 html {     
-  height: 100%;
+  height: 100%;    
 }
 body {
   margin:0;
