@@ -192,8 +192,9 @@
                   <div class="col-md-3 col-sm-4">
                      <div class="formrow">
                         <label class="control-label ">Job Locations<span class="required"> * </span> </label>
-                        <input class="form-control allowalphabatescomma" type="text" name="city_id" class="form-control" id="tokenfield" placeholder="Enter Location"
-                           value="<?php if(!empty($this->session->userdata('location')) ){echo $this->session->userdata('location'); } ?>" required><?php echo form_error('city_id'); ?>                   
+                       <!--  <input class="form-control allowalphabatescomma" type="text" name="city_id" class="form-control" id="tokenfield" placeholder="Enter Location"
+                           value="<?php if(!empty($this->session->userdata('location')) ){echo $this->session->userdata('location'); } ?>" required><?php echo form_error('city_id'); ?>   -->  
+                           <input type="text" class="form-control" id="tokenfield" value="" >               
                      </div>
                   </div>
                   <div class="col-md-3 col-sm-12">
@@ -302,7 +303,7 @@
                   </div>
                   <div class="col-md-3 col-sm-12">
                      <div class="formrow">
-                        <label class="control-label " style="margin-left:-162px;">Salary Range(INR)<span class="required"> *</span> </label>
+                        <label class="control-label " style="margin-left:-162px;">Salary Range (INR)<span class="required"> *</span> </label>
                         <div class="col-md-3 formrow" style="width:100px;margin-left:-14px;margin-top:37px;">
                            <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_from" value="">
                         </div>
@@ -385,7 +386,19 @@
       </div>
    </div>
 </div>
-
+<script>
+  $(document).ready(function() {   
+    $('#tokenfield').tokenfield({
+      autocomplete: {
+        source: ['red','blue','green','yellow','violet','brown','purple','black','white'],
+        delay: 100
+      },
+      showAutocompleteOnFocus: true
+    });
+    
+   
+});
+</script>
 
  
   <script src= 
