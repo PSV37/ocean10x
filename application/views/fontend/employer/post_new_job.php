@@ -350,12 +350,13 @@
                         <span><?php echo $benefit['benifit']; ?></span>
                         </label>
                         <?php } ?>
+
                           <label>
                            <button type="button" value="other" class="btn-default1" checked="" name="benefits[]" onclick="check_other(this.value);">
                            <span><i class="fa fa-plus"></i> Other</span></button>
                            </label>
 
-                           <input type="hidden"  name="benefits[]" id="other_terxtbx" style="display: inline-block;">
+                           <div id="other_terxtbx"><input type="text"  name="benefits[]"  style="display: inline-block; width: 50%" ><span><i class="fa fa-check"></i></span></div>
                        
                 
                        
@@ -458,17 +459,17 @@
     // var x = document.getElementById("training_title");
     if (value=='other') 
   {
-    if (x1.type === "hidden") {
-      x1.type = "text";
+    
+      // x1.type = "text";
+      $('#other_terxtbx').show();
       // x.type = "hidden";
-    } else {
-      x1.type = "hidden";
-
-    }
+   
   }
   else
   {
-    x1.type = "hidden";
+      $('#other_terxtbx').hide();
+
+    // x1.type = "hidden";
     x1.value = value;
   }
     
