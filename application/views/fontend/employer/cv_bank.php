@@ -834,8 +834,8 @@
                </label>
                <?php
                   $key++;
-                    endforeach;
-                  ?>
+                    endforeach;  
+                  ?>     
                <?php else : ?> 
                <li colspan="3">
                   <strong>There is no record for display</strong>
@@ -844,7 +844,7 @@
             </div>
          </div>
          <div class="col-md-3 right_side">
-         <div class="row" style="text-align:center;">
+         <div class="row" style="text-align: justify;margin: 10 auto;width: fit-content;">
         <button class="folder_popup" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Create&emsp;<i class="fas fa-folder-open"></i></button>
   
 
