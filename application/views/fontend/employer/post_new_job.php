@@ -359,7 +359,7 @@ i.fa.fa-check {
                            <span><i class="fa fa-plus"></i> Other</span></button>
                            </label>
 
-                           <div id="other_terxtbx"><input type="text"  name="benefits[]"  style="display: inline-block; width: 50%" ><button onclick="save_benifit(this.value);"><span><i class="fa fa-check"></i></span></button></div>
+                           <div id="other_terxtbx"><input type="text"  name="benefits[]"  style="display: inline-block; width: 50%" ><button type="button" id="check-btn" onclick="save_benifit(this.value);"><i class="fa fa-check"></i></button></div>
                        
                 
                        
