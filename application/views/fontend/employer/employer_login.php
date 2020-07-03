@@ -213,13 +213,13 @@ input:-internal-autofill-selected{background-color:#fff !important;}
 }   
 .user-box input:focus{background-color:#fff;}
 
-@media screen and (max-width:480px){
+@media screen and (min-width:480px){
 .login-box{top:0px;
 left:0px;
-width:auto;
+width:auto;   
 height: 100vh;
 transform: inherit;}
-}	
+
 }    
     
 </style>
