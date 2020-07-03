@@ -336,11 +336,10 @@
                            <span><i class="fa fa-plus"></i> Other</span></button>
                            </label>
 
-                           <input type="text" value="4"  name="benefits[]">
-                         <!--   <label id="other_terxtbx"> -->
-                           
-                           <!-- <span></span> -->
-                           <!-- </label> -->
+                          <label>
+                        <input type="text" value="<?php echo $benefit['id']; ?>" class="btn-default1" checked="" name="benefits[]">
+                        <span><?php echo $benefit['benifit']; ?></span>
+                        </label>
                      </div>
                   </div>
                   <!-- </textarea><?php echo form_error('benefits'); ?>                                  -->
