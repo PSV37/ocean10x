@@ -177,7 +177,7 @@
 			  .heading_first{font-size: 22px;
     margin-bottom: 20px;
     margin-top: 15px;
-			 }      
+			 }              
 			 
       </style>    
 
@@ -208,7 +208,7 @@
       </div>
     </nav>
   </div>      
-
+      
 <ul class="sidenav" id="mobile-navbar">
     <li><a href="#">MENÚ</a></li>
     <hr />
