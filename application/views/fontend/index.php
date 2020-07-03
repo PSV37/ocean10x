@@ -174,6 +174,21 @@
 		 .heading2{
 			 font-size: 29px; margin-bottom: 50px;
 			 }
+			 nav .sidenav-trigger {
+    float: left;
+    position: relative;       
+    z-index: 1;
+    height: 56px;
+    margin: -15px -23px;
+}
+@media only screen and (max-width: 992px)
+nav .brand-logo {
+    left: 66%;
+    -webkit-transform: translateX(-50%);
+    /* transform: translateX(-50%); */
+    ): ;
+    width: -webkit-fill-available;
+}
 		 @media screen and (max-width:400px){
 			 .lan-img{width:100%;}
 			  .top-sec{padding:10px 0px;}
