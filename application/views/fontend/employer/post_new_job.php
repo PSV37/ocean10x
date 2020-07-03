@@ -369,15 +369,8 @@
       </div>
    </div>
 </div>
-<script>
-  $(document).ready(function(){
-    $('input').keyup(function(){
-        if($(this).val().length==$(this).attr("maxlength")){
-            $(this).next().focus();
-        }
-    });
-});
-  </script>
+
+
 <script>
   function check_other(value)
 {
@@ -398,36 +391,14 @@
     
 }
 </script>
-<!--/form-->
-<!-- <script type="text/javascript">
-   $( '#preview' ).click( function(){
-    var data = new FormData( $( 'form#test' )[ 0 ] );
-   
-    $.ajax( {
-       processData: false,
-       contentType: false,
-   
-       data: data,
-       dataType: 'json',
-       type: $( this ).attr( 'method' );
-       url: <?php echo base_url() ?>'employer/preview_post_job',
-       success: function( feedback ){
-          console.log( "the feedback from your API: " + feedback );
-       }
-   });
-   </script> -->
+
 <script>
    $(document).ready(function(){
  
       // $('#other_terxtbx').hide();
       $('#training_title1').hide();
 
-     $('input').keyup(function(){
-       // alert('input');
-         if($(this).val().length==$(this).attr("maxlength")){
-             $(this).next().focus();
-         }
-     });
+    
    
      var id=document.getElementById('job_role');
      $.ajax({
@@ -444,7 +415,15 @@
              });
    
          
-    $('#tokenfield').tokenfield({
+  
+   
+   })
+</script>
+
+<script>
+  
+   // to avoid duplications
+     $('#tokenfield').tokenfield({
      autocomplete: {
        source: "<?php echo base_url('Employer/search_city'); ?>",
        delay: 100
@@ -453,13 +432,6 @@
      showAutocompleteOnFocus: true,
    
    });
-   
-   })
-</script>
-
-<script>
-  
-   // to avoid duplications
    
    $('#tokenfield').on('tokenfield:createtoken', function (event) {
      var existingTokens = $(this).tokenfield('getTokens');
