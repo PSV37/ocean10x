@@ -1199,15 +1199,6 @@ ul.list-unstyled.quick-links {
     color:#87a4a2;
 }
 
-.folder_popup{
-background-color: #18c5bdb5;
-    border: none;
-    padding: 5px 20px;
-    border-radius: 6px;
-    color: #fff;
-    font-weight: 600;
-    float: right;
-}
 .well{border-top:none !important;
 -webkit-box-shadow:none;
 padding:4px 17px;
