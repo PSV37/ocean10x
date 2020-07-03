@@ -14,10 +14,9 @@
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
- 
 
 
-</head>
+
 <style>
 .container{max-width:1260px !important;}
 .@media only screen and (min-width: 601px){
@@ -171,8 +170,10 @@ transition:0.5s;
     border-radius: 5px;
   margin-bottom:18px;
 } 
-</style>
-<body>   
+</style>     
+</head>
+
+<body>         
   <div class="navbar-fixed">
     <nav class="nav-wrapper indigo">
       <div class="container">
@@ -197,7 +198,7 @@ transition:0.5s;
       </div>
     </nav>
   </div>
-
+     
   <ul class="sidenav" id="mobile-navbar">
     <li><a href="#">MENÚ</a></li>
     <hr />
@@ -410,7 +411,7 @@ transition:0.5s;
 </div>
 </div>
 
-</div>
+</div>    
 <div class="container">
 <p class="copyright" style="text-align:center;font-size:12px;">Copyright © 2020 ConsultnHire. All rights reserved.</p>
 
