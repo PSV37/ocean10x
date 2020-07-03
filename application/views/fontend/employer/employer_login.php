@@ -262,6 +262,10 @@ margin-top: 10px;
     margin-bottom: 20px;
 }
 .remb{margin-top:20px;}
+input#checkbox_qu_01 {
+    width: 82px;
+    height: 30px;
+}
 }
          
 </style>
