@@ -254,9 +254,10 @@ font-size:43px;
 font-size: 32px !important;
     margin-top: 26px !important;   
 }      
-.newuser{font-size:37px;} 
+.newuser{font-size:37px;}
+.login-box .user-box input:focus ~ label, .login-box .user-box input:valid ~ label{font-size:32px;} 
 }
-    
+         
 </style>
 
 
