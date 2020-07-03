@@ -844,7 +844,7 @@
             </div>
          </div>
          <div class="col-md-3 right_side">
-         <div class="row">
+         <div class="row" style="text-align:center;">
         <button class="folder_popup" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Create&emsp;<i class="fas fa-folder-open"></i></button>
   
 
