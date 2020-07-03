@@ -228,8 +228,9 @@ transform: inherit;
 	.login-box .user-box{height:180px;}
 .login-box .user-box label{  
 font-size:42px;}
-    
-.login-box .user-box input{   
+        
+.login-box .user-box input{ 
+font-size:43px;  
 	padding:54px 0px;}
 .check label{font-size:42px;}
 .sign_in {
