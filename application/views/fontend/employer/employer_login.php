@@ -213,10 +213,10 @@ input:-internal-autofill-selected{background-color:#fff !important;}
 }   
 .user-box input:focus{background-color:#fff;}
 
-@media screen and (min-width: 480px){
+@media screen and (max-width:480px){
 
 }	
-}
+}    
     
 </style>
 
