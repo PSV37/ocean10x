@@ -467,12 +467,9 @@ $("#job_category").change(function () {
 
         }
        $("select").on("click", function () {
-    debugger;
-    var sVal = $(this).val();
-    $(this).css("background-color", "red");
-    $(this).find("option").css("background", "white");
-    $(this).find('option:selected').css("background-color", "red");
-    $("input").val($(this).val());
+    
+    $(this).next().focus();
+    // $("input").val($(this).val());
 });
     </script>
     
