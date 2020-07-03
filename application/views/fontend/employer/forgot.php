@@ -16,15 +16,12 @@ margin-top:20px;
 box-shadow:none !important;  
 } 
 .login-box h4{font-size:18px;}  
-.sign_in{width:auto !important;
-padding:8px 29px !important;     
-}    
 }    
 html {                            
   height: 100%;    
 }
 body {
-  margin:0;
+  margin:0;   
   padding:0;
   font-family: sans-serif;
   background: #fff;
