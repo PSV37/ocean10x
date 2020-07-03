@@ -835,7 +835,7 @@
                <?php
                   $key++;
                     endforeach;  
-                  ?>
+                  ?>     
                <?php else : ?> 
                <li colspan="3">
                   <strong>There is no record for display</strong>
