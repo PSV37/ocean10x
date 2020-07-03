@@ -216,6 +216,14 @@ input:-internal-autofill-selected{background-color:#fff !important;}
     outline: none !important;
 }
 @media screen and (min-width:480px){
+	h3:after {
+   
+    width: 118px;
+    height: 8px;
+    
+    margin-top: 29px;
+  
+	}
 .login-box{top:0px;   
 left:0px;
 width:100%;   
