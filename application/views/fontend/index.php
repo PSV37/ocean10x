@@ -171,7 +171,7 @@
          } 
 		 .top-sec{padding:50px 0px;}
 		 .heading_first{font-size: 29px; margin-bottom: 50px;margin-top:60px;}
-		 .heading{
+		 .heading2{
 			 font-size: 29px; margin-bottom: 50px;
 			 }
 		 @media screen and (max-width:400px){
@@ -187,7 +187,7 @@
     margin: 0 auto;
     width: min-content;
 }
-.heading{
+.heading2{
 	font-size:20px;}
 		 }
       </style>    
