@@ -169,15 +169,20 @@
          border-radius: 5px;     
          margin-bottom:18px;
          } 
+		 
+		 @media screen and (max-width:400px){
+		.lan_img {width:100% !important;}
+			 }
+		 
       </style>    
 
-</head>      
+</head>          
 <body>
 <div class="container_fluid">
 <div class="navbar-fixed">
     <nav class="nav-wrapper indigo">
       <div class="container">
-        <a href="#" class="brand-logo"><img src="http://www.tele-kinetics.com/assets/img/logo.png" style="width:152px;margin-top:-4px;"></a>
+        <a href="#" class="brand-logo"><img src="http://www.tele-kinetics.com/assets/img/logo.png" class="lan_img" style="width:152px;margin-top:-4px;"></a>
         <a href="#" class="sidenav-trigger" data-target="mobile-navbar">
           <i class="material-icons">menu</i>  
         </a>
