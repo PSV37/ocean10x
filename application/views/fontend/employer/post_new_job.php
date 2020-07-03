@@ -190,7 +190,15 @@ button#check-btn {
          border: 1px solid #ccc !important; 
      border-radius: 0px !important; 
 }
-
+input.select2-search__field {
+    display: inline-block;
+    border-radius: 0px;
+    margin-top: 0px;
+    color: black;
+}
+ul#select2-job_category-results {
+    margin-top: 27px;
+}
 </style>
 
 
