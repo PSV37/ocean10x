@@ -50,7 +50,7 @@
               <input type="checkbox" onclick="myFunction()">Show Password
             </div>
             <div class="formrow">
-              <div class="row">
+              <div class="row check">
                 <div class="col-md-6">
                   <input id="checkbox_qu_01" type="checkbox" class="styled" checked="">
                   <label for="checkbox_qu_01"><small>Remember me</small></label>

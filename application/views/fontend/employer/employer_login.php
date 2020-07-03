@@ -218,12 +218,17 @@ input:-internal-autofill-selected{background-color:#fff !important;}
 left:0px;
 width:100%;   
 height: 100vh;
-transform: inherit;
+transform: inherit;   
 }
 .login-box h3{
 	font-size:63px;
+	margin-bottom: 135px;
+	margin-top:60px;
 	}
 	.login-box .user-box{height:180px;}
+.login-box .user-box input{padding:36px 0px;
+font-size:42px;}
+.check label{font-size:42px;}	   
 }    
     
 </style>
