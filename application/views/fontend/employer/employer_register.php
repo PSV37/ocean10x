@@ -171,7 +171,7 @@
          } 
       </style>    
 
-</head>  
+</head>      
 <body>
 <div class="container_fluid">
 <div class="navbar-fixed">
