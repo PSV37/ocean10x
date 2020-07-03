@@ -197,7 +197,7 @@
         </ul>
       </div>
     </nav>
-  </div>
+  </div>      
 
 <ul class="sidenav" id="mobile-navbar">
     <li><a href="#">MENÚ</a></li>
