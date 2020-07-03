@@ -19,6 +19,10 @@ box-shadow:none !important;
 .sign_in{width:auto !important;
 padding:8px 33px;}    
 }    
+@media screen and (max-width:500px){
+	.sign_in{width:auto !important;
+padding:8px 33px;} 
+}
    
 html {           
   height: 100%;    
