@@ -209,7 +209,7 @@
     <li><a href="#" class="btn white indigo-text">Inciar sesión</a></li>
   </ul>
 </div>       
-    
+          
  
 <div class="container">
 <div class="col-sm-6" style="padding:50px 0px;">
