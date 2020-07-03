@@ -174,7 +174,7 @@
 			 .lan-img{width:100%;}
 			  .top-sec{padding:10px 0px;}
 			 }   
-			 
+			 .heading_first{font-size: 29px; margin-bottom: 50px;margin-top:60px;}
       </style>    
 
 </head>  
@@ -213,13 +213,13 @@
     <li><a href="#">Acerca de mí</a></li>
     <li><a href="#">Contacto</a></li>
     <li><a href="#" class="btn white indigo-text">Inciar sesión</a></li>
-  </ul>
+  </ul>    
 </div>  
     
  
 <div class="container">
 <div class="col-sm-6 top-sec">
-<h1 style="font-size: 29px; margin-bottom: 50px;margin-top:60px;">Welcome to the ocean opportunities !</h1>
+<h1 class="heading_first">Welcome to the ocean opportunities !</h1>
 <div class="anchor_link">
 <ul>
 <li>
