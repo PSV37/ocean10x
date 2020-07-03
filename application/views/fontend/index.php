@@ -211,6 +211,151 @@
 </div>  
     
  
+<div class="container">
+<div class="col-sm-6" style="padding:50px 0px;">
+<h1 style="font-size: 29px; margin-bottom: 50px;margin-top:60px;">Welcome to the ocean opportunities !</h1>
+<div class="anchor_link">
+<ul>
+<li>
+<div class="m_icon">
+<i class="fas fa-users"></i>
+</div>
+<p class="small_t">People Search</p>
+</li>
+<li>
+<div class="m_icon">
+<i class="fas fa-book-reader"></i>
+</div>
+<p class="small_t">Search Skills</p>
+
+</li>
+<li>
+<div class="m_icon">
+<i class="fas fa-briefcase"></i>
+</div>
+<p class="small_t">Job Search</p>
+
+</li>
+</ul>
+
+</div>
+
+
+
+</div>
+<div class="col-sm-6" style="padding:50px 0px;">
+<img src="https://image.freepik.com/free-vector/recruit-agent-analyzing-candidates_74855-4565.jpg" />
+
+</div>
+
+</div>
+ 
+ 
+ <div class="container-fluid back_com">
+<div class="container">
+<div class="col-md-2 ">
+<div class="head">
+<p style="margin-top:20px;color:#000;">IT</p>
+<ul>
+<li>It Divine</li>
+<li>It Divine</li>
+<li>It Divine</li>
+<li>It Divine</li>
+<li>It Divine</li>
+
+</ul>
+</div>
+</div>
+<div class="col-md-2 ">
+<div class="head">
+<p style="margin-top:20px;color:#000;">Manufacturing</p>
+<ul>
+<li>It Divine</li>
+<li>It Divine</li>
+<li>It Divine</li>
+<li>It Divine</li>
+<li>It Divine</li>
+
+</ul>
+</div>
+</div>
+<div class="col-md-2 ">
+<div class="head">
+<p style="margin-top:20px;color:#000;">Retail</p>
+<ul>
+<li>It Divine</li>
+<li>It Divine</li>
+<li>It Divine</li>
+<li>It Divine</li>
+<li>It Divine</li>
+
+</ul>
+
+</div>
+</div>
+<div class="col-md-2 ">
+<div class="head">
+<p style="margin-top:20px;color:#000;">Automobile</p>
+<ul>
+<li>It Divine</li>
+<li>It Divine</li>
+<li>It Divine</li>
+<li>It Divine</li>
+<li>It Divine</li>
+
+</ul>
+</div>
+</div>
+<div class="col-md-2 ">
+<div class="head">
+<p style="margin-top:20px;color:#000;">IT</p>
+<ul>
+<li>It Divine</li>
+<li>It Divine</li>
+<li>It Divine</li>
+<li>It Divine</li>
+<li>It Divine</li>
+
+</ul>
+</div>
+</div>
+<div class="col-md-2 ">
+<div class="head">
+<p style="margin-top:20px;color:#000;">Reatail</p>
+<ul>
+<li>It Divine</li>
+<li>It Divine</li>
+<li>It Divine</li>
+<li>It Divine</li>
+<li>It Divine</li>
+
+</ul>
+</div>
+</div>
+
+</div>
+</div>
+ 
+ <div class="container">
+<div class="col-md-6">
+<img src="https://image.freepik.com/free-vector/illustrated-corporatebusiness-people_53876-28562.jpg"/>
+</div>
+<div class="col-md-6">
+<p style="margin-top:60px;color:#18c5bd;">LMS</p>
+<h1 style="font-size: 29px; margin-bottom: 50px;">Enhance Your Skills On The Ocean Of Content !</h1>
+</div>
+</div>   
+
+
+<div class="container" style="border-top:solid 1px #f2f2f2ba;">
+<div class="col-md-6">
+<h1 style="font-size: 21px; margin-bottom:25px;margin-top:50px;">Looking For Professionals ??</h1>
+<button class="your_job">Post Your Job</button>
+</div>
+<div class="col-md-6">
+<img src="https://image.freepik.com/free-vector/email-messaging-email-marketing-campaign_183665-8.jpg" style="width:400px;margin-left:180px;"/>
+</div>
+</div>
     
   
   
