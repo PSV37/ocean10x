@@ -11,8 +11,8 @@
             
 	}      
 .login-box{top:0px;   
-left:0px;
-width:100%;   
+left:0px;    
+width:100% !important;   
 height: 100vh;
 transform: inherit;   
 }
