@@ -1,16 +1,22 @@
 <!DOCTYPE html>
-<html>     
-   <head>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-      <meta name="author" content="">
-      <!--Import Google Icon Font-->    
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!-- Compiled and minified CSS -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-      <script src="<?php echo base_url() ?>fontend/js/bootstrap.min.js "></script>
-      <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/bootstrap.min.css">
+<html lang="en">
+<head>
+ 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  
+  
+   <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="index-css.css" rel="stylesheet" type="text/css" />
+
       <style>
          .container{max-width:1260px !important;}
          .@media only screen and (min-width: 601px){
@@ -156,10 +162,10 @@
          display: block;
          width: 71px;
          height: 2px;
-         background: #18c5bd;
+         background: #18c5bd;    
          margin: 0 auto;
          margin-top: 4px;   
-         border-radius: 5px;
+         border-radius: 5px;     
          margin-bottom:18px;
          } 
       </style>
