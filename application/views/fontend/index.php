@@ -164,11 +164,14 @@
          width: 71px;
          height: 2px;
          background: #18c5bd;    
-         margin: 0 auto;
+         margin: 0 auto;   
          margin-top: 4px;   
          border-radius: 5px;     
          margin-bottom:18px;
          } 
+		 @media screen and (max-width:400px){
+			 .lan-img{width:100%;}
+			 }
       </style>    
 
 </head>  
@@ -244,7 +247,7 @@
 
 </div>
 <div class="col-sm-6" style="padding:50px 0px;">
-<img src="https://image.freepik.com/free-vector/recruit-agent-analyzing-candidates_74855-4565.jpg" />
+<img src="https://image.freepik.com/free-vector/recruit-agent-analyzing-candidates_74855-4565.jpg" class="lan-img" />
 
 </div>
 
