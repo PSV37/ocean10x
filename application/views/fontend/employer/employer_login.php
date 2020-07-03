@@ -210,12 +210,21 @@ input:-internal-autofill-selected{background-color:#fff !important;}
   position: relative;
   z-index: 2;
   cursor:pointer;
-}
+}   
 .user-box input:focus{background-color:#fff;}
 
 @media screen and (min-width: 480px){
-.login-box{height:-webkit-fill-available;
-width:-webkit-fill-available;
+.login-box{
+	margin: 20px 60px;
+    display: grid;
+    height: 100vh;
+    -webkit-box-orient: inherit;
+    -webkit-box-direction: initial;
+    -ms-flex-direction: column;
+    flex-direction: inherit;
+    margin-bottom: 0;
+    width: 100%;
+}
 }	
 }
     
