@@ -292,7 +292,7 @@
                   </div>
                   <div class="col-md-3 col-sm-12">
                      <div class="formrow">
-                        <label class="control-label " style="margin-left:-162px;">Salary Range<span class="required"> *</span> </label>
+                        <label class="control-label " style="margin-left:-162px;">Salary Range(INR)<span class="required"> *</span> </label>
                         <div class="col-md-3 formrow" style="width:100px;margin-left:-14px;margin-top:37px;">
                            <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_from" value="">
                         </div>
@@ -377,13 +377,23 @@
 </div>
 
 
+  <link href= 
+'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css'
+    rel='stylesheet'> 
   
+  <script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" > 
+  </script> 
+  
+  <script src= 
+"https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" > 
+  </script> 
   
   <script> 
     $(document).ready(function() { 
     
       $(function() { 
-        $( "#my_date_picker" ).datepicker(); 
+        $("#my_date_picker").datepicker(); 
       }); 
     }) 
   </script> 
