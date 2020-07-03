@@ -13,12 +13,13 @@ height: 100vh;
 transform: inherit;     
 border-radius:0px;
 margin-top:20px;
-box-shadow:none;  
-}   
+box-shadow:none !important;  
+} 
+.login-box h4{font-size:18px;}  
 
 }
 
-html {
+html {     
   height: 100%;
 }
 body {
