@@ -1,5 +1,5 @@
 <!---header-->
-<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css">
+
 <?php 
    $company_profile_id = $this->session->userdata('company_profile_id');
    
@@ -7,6 +7,8 @@
     
     // print_r($this->session->userdata());die;
    ?>
+   <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/calender.css">
 <style>
    .required
    {
@@ -159,6 +161,14 @@
    padding: 5px 12px !important;   
    font-size: 11px;
    border-radius:13px !important; }
+
+   div#ui-datepicker-div {
+    position: absolute;
+    top: 333px;
+    left: 1017.75px;
+    z-index: 1;
+    /*display: block;*/
+}
 </style>
 <!---header--->
 <!--form id="form_register"-->
@@ -292,7 +302,7 @@
                   </div>
                   <div class="col-md-3 col-sm-12">
                      <div class="formrow">
-                        <label class="control-label " style="margin-left:-162px;">Salary Range<span class="required"> *</span> </label>
+                        <label class="control-label " style="margin-left:-162px;">Salary Range(INR)<span class="required"> *</span> </label>
                         <div class="col-md-3 formrow" style="width:100px;margin-left:-14px;margin-top:37px;">
                            <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_from" value="">
                         </div>
@@ -309,7 +319,8 @@
                           $next_due_date = date('Y-m-d', strtotime($old_date. ' +30 days'));
                           
                         ?>
-                        <input type="date" name="job_deadline" class="form-control datepicker" id="job_deadline_day" min="<?php echo date('Y-m-d'); ?>" required value="<?php echo $next_due_date; ?>" autocomplete="off"><?php echo form_error('job_deadline'); ?>         
+                        <!-- <input type="date" name="job_deadline" class="form-control datepicker" id="job_deadline_day" min="<?php echo date('Y-m-d'); ?>" required value="<?php echo $next_due_date; ?>" autocomplete="off">  -->    
+                        <input type="text" id="my_date_picker" name="job_deadline" style="display: inline-block;" class="form-control datepicker" id="job_deadline_day" min="<?php echo date('Y-m-d'); ?>" required value="<?php echo $next_due_date; ?>" autocomplete="off">     <?php echo form_error('job_deadline'); ?>
                      </div>
                   </div>
                   
@@ -376,6 +387,23 @@
 </div>
 
 
+ 
+  <script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" > 
+  </script> 
+  
+  <script src= 
+"https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" > 
+  </script> 
+  
+  <script> 
+    $(document).ready(function() { 
+    
+      $(function() { 
+        $("#my_date_picker").datepicker(); 
+      }); 
+    }) 
+  </script> 
 <script>
   function check_other(value)
 {
