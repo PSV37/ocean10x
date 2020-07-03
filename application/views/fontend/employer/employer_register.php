@@ -168,7 +168,7 @@
          margin-top: 4px;   
          border-radius: 5px;     
          margin-bottom:18px;
-         } 
+         }     
 		.lan_img{width:100%;} 
 		
 		       
