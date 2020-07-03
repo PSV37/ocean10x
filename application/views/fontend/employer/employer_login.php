@@ -228,11 +228,32 @@ transform: inherit;
 	.login-box .user-box{height:180px;}
 .login-box .user-box label{  
 font-size:42px;}
-
+    
 .login-box .user-box input{   
 	padding:54px 0px;}
-.check label{font-size:42px;}	   
-}    
+.check label{font-size:42px;}
+.sign_in {
+    background-color: #18c5bd;
+    border: none;
+    padding: 32px 316px;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 65px;
+    margin-top: 20px;
+    font-size: 44px;
+}.sign_in {
+   
+    padding: 32px 316px;
+   
+    border-radius: 65px;
+    
+    font-size: 44px;
+}	
+.forgot{
+font-size: 32px;
+    margin-top: 26px;   
+}       
+}
     
 </style>
 
