@@ -167,7 +167,7 @@
     top: 333px;
     left: 1017.75px;
     z-index: 1;
-    display: block;
+    /*display: block;*/
 }
 </style>
 <!---header--->
