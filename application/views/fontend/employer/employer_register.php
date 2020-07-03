@@ -171,7 +171,7 @@
          } 
       </style>    
 
-</head>  
+</head>      
 <body>
 <div class="container_fluid">
 <div class="navbar-fixed">
@@ -354,7 +354,7 @@
 </div>
 <div class="col-md-6">
 <img src="https://image.freepik.com/free-vector/email-messaging-email-marketing-campaign_183665-8.jpg" style="width:400px;margin-left:180px;"/>
-</div>       
+</div>
 </div>
 
   
