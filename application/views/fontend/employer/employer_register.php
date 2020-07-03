@@ -38,7 +38,7 @@
          width: 100%;   
          }
          }
-		 body{background-color:#fff;}
+		 
          .indigo{background-color:#18c5bd !important;
          box-shadow: 2px 2px 2px #dedddd !important;
          padding:14px 0px;}
@@ -176,7 +176,7 @@
       </style>    
           
 </head>          
-<body>
+<body>       
 <div class="container_fluid">
 <div class="navbar-fixed">
     <nav class="nav-wrapper indigo">
