@@ -225,17 +225,17 @@ button#check-btn {
                   </div>
                   <div class="col-md-3 col-sm-12">
                      <div class="formrow">
-                        <label class="control-label ">Expected Domain<span class="required"> * </span> </label>
-                        <select name="job_category" id="job_category" class="form-control select2" data-style="btn-default" data-live-search="true" required="">
-                           <!-- <option value="">Select Expected Domain</option> -->
-                           <?php if(!empty($job_info->job_category)) {
-                              echo $this->job_category_model->selected($job_info->job_category);
-                              } else {
-                              echo $this->job_category_model->selected();
-                              }
-                              ?>
-                        </select>
-                        <?php echo form_error('job_category'); ?>               
+                        
+           <label>Select</label>
+           <select class="form-control select2">
+              <option>Select</option> 
+              <option>Car</option> 
+              <option>Bike</option> 
+              <option>Scooter</option> 
+              <option>Cycle</option> 
+              <option>Horse</option> 
+           </select>
+                               
                      </div>
                   </div>
                   <div class="col-sm-3 p-m-2">
@@ -412,14 +412,10 @@ button#check-btn {
    </div>
 </div>
 
-
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-
 <script>
-$("#job_category").select2( {
- placeholder: "Select domain",
- allowClear: true
- } );
+    $('.select2').select2();
 </script>
 <script src="<?php echo base_url(); ?>asset/src/jquery.tokeninput.js"></script>
 <script src="<?php echo base_url() ?>asset/js/jquery-ui.js"></script>
