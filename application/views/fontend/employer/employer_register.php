@@ -169,6 +169,7 @@
          border-radius: 5px;     
          margin-bottom:18px;
          } 
+		 img{width:100%;}
       </style>    
 
 </head>      
