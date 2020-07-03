@@ -1,4 +1,5 @@
-<script src="https://kit.fontawesome.com/a076d05399.js"></script><head>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
@@ -13,7 +14,7 @@ height: 100vh;
 transform: inherit;     
 border-radius:0px;
 margin-top:20px;
-box-shadow:none;  
+box-shadow:none !important;  
 }   
 
 }
@@ -47,6 +48,7 @@ body {
   padding: 0;
   color: #000;
   text-align: center;
+  font-weight: 100;
 }
 h3:after {
    content: '';
