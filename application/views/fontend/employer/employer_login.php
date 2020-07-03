@@ -214,23 +214,7 @@ input:-internal-autofill-selected{background-color:#fff !important;}
 .user-box input:focus{background-color:#fff;}
 
 @media screen and (min-width: 480px){
-.login-box{
-	margin: 20px 60px;
-    display: grid;
-    height: 100vh;
-    -webkit-box-orient: inherit;
-    -webkit-box-direction: initial;
-    -ms-flex-direction: column;
-    flex-direction: inherit;
-    margin-bottom: 0;
-    width: 100%;
-}
-.login-box{left: 0;  
-    right: 0;
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-}
+
 }	
 }
     
