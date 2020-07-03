@@ -336,8 +336,8 @@
                            <span><i class="fa fa-plus"></i> Other</span></button>
                            </label>
 
-                          
-                        <input type="hidden"  name="benefits[]" id="other_terxtbx">
+                           <input type="hidden"  name="benefits[]" id="other_terxtbx">
+                       
                 
                        
                      </div>
@@ -375,6 +375,7 @@
   function check_other(value)
 {
    var x1 = document.getElementById("other_terxtbx");
+   alert(value);
   
   if (value=='other') 
   {
