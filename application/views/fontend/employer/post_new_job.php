@@ -360,11 +360,8 @@ button#check-btn {
                            <span><i class="fa fa-plus"></i> Other</span></button>
                            </label>
 
-                           <div id="other_terxtbx"><input type="text"  name="benefits[]" id="other_benifit"  style="display: inline-block; width: 50%" ><button type="button" id="check-btn" onclick="save_benifit();"><i class="fa fa-check"></i></button></div>
-                       
-                
-                       
-                     </div>
+                        </div>
+                        <div id="other_terxtbx"><input type="text"  name="benefits[]" id="other_benifit"  style="display: inline-block; width: 30%" ><button type="button" id="check-btn" onclick="save_benifit();"><i class="fa fa-check"></i></button></div>
                   </div>
                   <!-- </textarea><?php echo form_error('benefits'); ?>                                  -->
                   <!-- </div>
@@ -439,7 +436,7 @@ button#check-btn {
         function save_benifit()
         {
          var othr_benifit = document.getElementById('other_benifit').value;
-         $('#benifit').append('<input type="checkbox" value="'+othr_benifit+'" class="btn-default1" checked="" name="benefits[]"><span>'+othr_benifit+'</span></label>')
+         $('#benifit').append('<label><input type="checkbox" value="'+othr_benifit+'" class="btn-default1" checked="" name="benefits[]"><span>'+othr_benifit+'</span></label>')
          // alert(othr_benifit);
 
         }
