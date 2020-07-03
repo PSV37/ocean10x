@@ -19,12 +19,12 @@ box-shadow:none !important;
 .sign_in{width:auto !important;
 }    
 }    
-@media screen and (min-width:300) and (max-width:500px)
+@media screen and (min-width:300) and (max-width:516px)
 {
 	.sign_in{width:auto !important;
 padding:8px 33px;}  
 	}   
-html {               
+html {                   
   height: 100%;    
 }
 body {
