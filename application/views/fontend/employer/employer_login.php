@@ -218,7 +218,7 @@ input:-internal-autofill-selected{background-color:#fff !important;}
 left:0px;
 width:100%;   
 height: 100vh;
-transform: inherit;
+transform: inherit;   
 }
 .login-box h3{
 	font-size:63px;
