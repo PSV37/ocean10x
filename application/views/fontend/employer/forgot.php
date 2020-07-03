@@ -16,6 +16,18 @@ margin-top:20px;
 box-shadow:none !important;  
 } 
 .login-box h4{font-size:18px;}  
+.sign_in {
+    background-color: #18c5bd;
+    border: none;
+    padding: 8px 7px;
+    color: #fff;
+    font-weight: 700;
+    width: 124px;
+    font-size: x-small;
+}
+.btn_regi{
+width: max-content;
+}
 }    
 html {                            
   height: 100%;    
@@ -288,7 +300,7 @@ h4:after {
       <i id="eyeIcon" class="fa fa-eye"></i>
 
 
-  		<div class="row" style="margin-right:0px;margin-left:0px;">
+  		<div class="row btn_regi" style="margin-right:0px;margin-left:0px;">
        <button type="submit"  class="sign_in">Retrieve Password</button>
        <button type="submit"  class="sign_in">Resend Link</button>
       </div>
