@@ -169,8 +169,9 @@
     z-index: 1;
     /*display: block;*/
 }
-i.fa.fa-check {
-    margin-left: -32px;
+button#check-btn {
+    margin-left: 0px;
+    height: 34px;
 }
 </style>
 <!---header--->
@@ -359,7 +360,7 @@ i.fa.fa-check {
                            <span><i class="fa fa-plus"></i> Other</span></button>
                            </label>
 
-                           <div id="other_terxtbx"><input type="text"  name="benefits[]"  style="display: inline-block; width: 50%" ><button type="button" id="check-btn" onclick="save_benifit(this.value);"><i class="fa fa-check"></i></button></div>
+                           <div id="other_terxtbx"><input type="text"  name="benefits[]" id="other_benifit"  style="display: inline-block; width: 50%" ><button type="button" id="check-btn" onclick="save_benifit();"><i class="fa fa-check"></i></button></div>
                        
                 
                        
@@ -435,9 +436,11 @@ i.fa.fa-check {
             });
         });
 
-        function save_benifit(value)
+        function save_benifit()
         {
-         alert(value);
+         var othr_benifit = document.getElementById('other_benifit').value();
+
+         alert(othr_benifit);
         }
     </script>
     
@@ -453,6 +456,8 @@ i.fa.fa-check {
   <script> 
     $(document).ready(function() { 
     
+      $('#other_terxtbx').hide();
+
       $(function() { 
         $("#my_date_picker").datepicker(); 
       }); 
