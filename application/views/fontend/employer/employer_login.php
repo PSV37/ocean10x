@@ -215,9 +215,9 @@ input:-internal-autofill-selected{background-color:#fff !important;}
 :focus {
     outline: none !important;
 }
-@media screen and (max-width:480px){
+@media only screen and (max-width: 600px) and (min-width: 400px) {
 	h3:after {
-   
+        
     width: 118px;    
     height: 8px;
     
@@ -273,7 +273,7 @@ margin-top: 10px;
     margin-bottom: 20px;
 }
 .remb{margin-top:20px;}
-input#checkbox_qu_01 {
+input#checkbox_qu_01 {    
     width: 82px;
     height: 30px;
 }
