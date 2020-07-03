@@ -17,10 +17,10 @@ box-shadow:none !important;
 } 
 .login-box h4{font-size:18px;}  
 .sign_in{width:auto !important;
-padding:8px 33px;     
+padding:8px 29px;     
 }    
 }    
-html {                   
+html {                       
   height: 100%;    
 }
 body {
