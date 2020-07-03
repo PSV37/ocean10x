@@ -178,7 +178,12 @@
     margin-bottom: 20px;
     margin-top: 15px;
 			 }              
-			 
+			 .anchor_link {
+    
+    margin: 0 auto;
+    width: min-content;
+}
+		 }
       </style>    
 
 </head>  
