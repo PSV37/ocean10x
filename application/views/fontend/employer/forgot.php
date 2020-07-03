@@ -16,7 +16,7 @@ margin-top:20px;
 box-shadow:none !important;  
 } 
 .login-box h4{font-size:18px;}  
-.sign_in{width:max-content;}
+.sign_in{width:auto;}    
 }
 
 html {     
