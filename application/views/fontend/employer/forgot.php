@@ -1,4 +1,23 @@
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
 <style>
+@media screen and (max-width:400px){
+	
+.login-box{top:0px;   
+left:0px;    
+width:100% !important;   
+height: 100vh;
+transform: inherit;     
+border-radius:0px;
+margin-top:20px;
+box-shadow:none;  
+}   
+
+}
+
 html {
   height: 100%;
 }
