@@ -163,7 +163,7 @@
          display: block;
          width: 71px;
          height: 2px;
-         background: #18c5bd;    
+         background: #18c5bd;        
          margin: 0 auto;
          margin-top: 4px;   
          border-radius: 5px;     
