@@ -195,6 +195,7 @@
                       
                            <input type="text" name="city_id" class="form-control allowalphabatescomma" id="tokenfield" placeholder="Enter Location"
                         value="<?php if(!empty($this->session->userdata('location')) ){echo $this->session->userdata('location'); } ?>" required><?php echo form_error('city_id'); ?>
+                        <!-- <input type="text" name=""> -->
                                      
                      </div>
                   </div>
