@@ -1,6 +1,5 @@
 <!---header-->
-<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css">
-<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/calender.css">
+
 <?php 
    $company_profile_id = $this->session->userdata('company_profile_id');
    
@@ -8,6 +7,8 @@
     
     // print_r($this->session->userdata());die;
    ?>
+   <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/calender.css">
 <style>
    .required
    {
