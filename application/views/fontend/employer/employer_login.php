@@ -10,7 +10,7 @@
 left:0px;    
 width:100% !important;   
 height: 100vh;
-transform: inherit;
+transform: inherit;     
 border-radius:0px;  
 }   
 
