@@ -476,11 +476,11 @@ $("#job_category").change(function () {
 
         }
        $("select").on("change", function () {
-         alert('test');
-       $(this).next().css({ 
-                "color": "black", 
-                "border": "2px solid green" 
-            });
+         // alert('test');
+       // $(this).next().css({ 
+       //          "color": "black", 
+       //          "border": "2px solid green" 
+       //      });
    
 
     // $("input").val($(this).val());
