@@ -169,7 +169,11 @@
          border-radius: 5px;     
          margin-bottom:18px;
          } 
-		 img{width:100%;}
+		 
+		 @media screen and (max-width:400px){
+			 img{width:100% !important;}
+			 }
+		 
       </style>    
 
 </head>          
