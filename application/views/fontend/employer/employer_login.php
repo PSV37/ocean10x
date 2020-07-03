@@ -22,7 +22,7 @@ body {
     box-sizing: border-box;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.32);
     border-radius: 10px;
-	background-color:#666;
+	
 }
 
 .login-box h3 {
