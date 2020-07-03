@@ -216,13 +216,14 @@ input:-internal-autofill-selected{background-color:#fff !important;}
 @media screen and (min-width:480px){
 .login-box{top:0px;   
 left:0px;
-width:100%;
+width:100%;   
 height: 100vh;
 transform: inherit;
 }
 .login-box h3{
 	font-size:63px;
 	}
+	.login-box .user-box{height:180px;}
 }    
     
 </style>
