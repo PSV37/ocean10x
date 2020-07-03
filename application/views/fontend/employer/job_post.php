@@ -201,38 +201,9 @@
                   </div>
                 </div>
 
-            <!--     <div class="col-md-4 col-sm-12">
-                  <div class="formrow">
-                    <label class="control-label ">Job Types<span class="required">*</span></label>
-                    <select name="job_types" required class="form-control" data-style="btn-default" data-live-search="true">
-                      <?php echo $this->job_types_model->selected_types(); ?>
-                    </select>
-                  </div>
-                </div> -->
+            
               </div>
-              <!-- end row -->
-
-              <!-- <div class="row"> -->
-<!-- 
-                <div class="col-md-4 col-sm-12">
-                  <div class="formrow">
-                    <label class="control-label ">Preferred Age(From)</label>
-               		   <input class="form-control" required name="preferred_age_from"  value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>" type="number" autocomplete="off">
-                  </div>
-                </div>
-        				<div class="col-md-4 col-sm-12">
-                  <div class="formrow">
-                    <label class="control-label ">Preferred Age(To)</label>
-               		  <input class="form-control" required name="preferred_age_to" value="<?php if(!empty($job_info)) echo $job_info->preferred_age; ?>" type="number" autocomplete="off">
-                  </div>
-        				</div> -->
-               
-              <!-- </div> -->
-              <!-- end row -->
-              
-              <!-- <hr class="invis"> -->
-
-              <!-- <hr class="invis"> -->
+           
               <div class="row">
                
                 <div class="col-md-4 col-sm-12"> 
@@ -306,12 +277,19 @@
 </div>
 <!-- end section --> 
 
-<script type="text/javascript" src="<?php echo base_url(); ?>asset/js/tinymce/tinymce.min.js"></script> 
-<script type="text/javascript">
-document.getElementsByClassName('form-control').innerHTML+="<br />";
-</script>
-<?php $this->load->view("fontend/layout/footer.php"); ?>
+<script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>assets/js/bootstrap.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>asset/js/jquery-ui.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
 
+            $("#tokenfield").autocomplete({
+              
+              source: "<?php echo base_url();?>job_seeker/search_job",
+             
+            });
+        });
+      </script>
 <script>
 
 
