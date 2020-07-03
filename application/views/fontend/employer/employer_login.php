@@ -261,7 +261,7 @@ margin-top: 10px;
     font-size: 37px;
     margin-bottom: 20px;
 }
-
+.remb{margin-top:20px;}
 }
          
 </style>
@@ -281,7 +281,7 @@ margin-top: 10px;
 
     </div>
     <div class="row">
-      <div class="col-md-6" style="margin-top:-20px;">
+      <div class="col-md-6 remb" style="margin-top:-20px;">
         <input id="checkbox_qu_01" type="checkbox" class="styled" checked="">
         <label for="checkbox_qu_01"><small class="remember" style="color:#7b7a7a;font-weight:100;">Remember me</small></label>
       </div>
