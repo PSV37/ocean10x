@@ -17,9 +17,9 @@ box-shadow:none !important;
 } 
 .login-box h4{font-size:18px;}  
 .sign_in {
-    width: 125px;
+    width: 125px !important;
     font-size: x-small;    
-}
+}     
 .btn_regi{
 width: max-content;
 }
