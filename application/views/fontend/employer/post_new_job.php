@@ -181,6 +181,15 @@ button#check-btn {
     width: 75px;
     height: 21px;
 }
+
+.select2-container .select2-selection--single{
+    height:34px !important;
+}
+.select2-container--default .select2-selection--single{
+         border: 1px solid #ccc !important; 
+     border-radius: 0px !important; 
+}
+
 </style>
 <!---header--->
 <!--form id="form_register"-->
@@ -214,7 +223,7 @@ button#check-btn {
                   <div class="col-md-3 col-sm-12">
                      <div class="formrow">
                         <label class="control-label ">Expected Domain<span class="required"> * </span> </label>
-                        <select name="job_category" class="form-control" data-style="btn-default" data-live-search="true" required="">
+                        <select name="job_category" class="form-control select2" data-style="btn-default" data-live-search="true" required="">
                            <!-- <option value="">Select Expected Domain</option> -->
                            <?php if(!empty($job_info->job_category)) {
                               echo $this->job_category_model->selected($job_info->job_category);
@@ -399,6 +408,9 @@ button#check-btn {
       </div>
    </div>
 </div>
+<script>
+    $('.select2').select2();
+</script>
 <script src="<?php echo base_url(); ?>asset/src/jquery.tokeninput.js"></script>
 <script src="<?php echo base_url() ?>asset/js/jquery-ui.js"></script>
 <script src="<?php echo base_url() ?>asset/tokenjs/bootstrap-tokenfield.js"></script>
@@ -449,6 +461,14 @@ button#check-btn {
          // alert(othr_benifit);
 
         }
+       $("select").on("click", function () {
+    debugger;
+    var sVal = $(this).val();
+    $(this).css("background-color", "red");
+    $(this).find("option").css("background", "white");
+    $(this).find('option:selected').css("background-color", "red");
+    $("input").val($(this).val());
+});
     </script>
     
  
