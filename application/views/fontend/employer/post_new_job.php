@@ -438,7 +438,7 @@ button#check-btn {
 
         function save_benifit()
         {
-         var othr_benifit = document.getElementById('other_benifit').value();
+         var othr_benifit = document.getElementById('other_benifit').value;
 
          alert(othr_benifit);
         }
