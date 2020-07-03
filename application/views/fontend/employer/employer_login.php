@@ -248,7 +248,7 @@ font-size:43px;
    
     border-radius: 65px;
     
-    font-size: 44px;
+    font-size: 44px;   
 }	     
 .forgot{
 font-size: 32px !important;
