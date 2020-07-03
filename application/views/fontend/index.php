@@ -341,7 +341,7 @@
  
  <div class="container">
 <div class="col-md-6">
-<img src="https://image.freepik.com/free-vector/illustrated-corporatebusiness-people_53876-28562.jpg"/>
+<img src="https://image.freepik.com/free-vector/illustrated-corporatebusiness-people_53876-28562.jpg" class="lan-img"/>
 </div>
 <div class="col-md-6">
 <p style="margin-top:60px;color:#18c5bd;">LMS</p>
@@ -356,7 +356,7 @@
 <button class="your_job">Post Your Job</button>
 </div>
 <div class="col-md-6">
-<img src="https://image.freepik.com/free-vector/email-messaging-email-marketing-campaign_183665-8.jpg" style="width:400px;margin-left:180px;"/>
+<img src="https://image.freepik.com/free-vector/email-messaging-email-marketing-campaign_183665-8.jpg" class="lan-img" style="width:400px;margin-left:180px;"/>
 </div>
 </div>
     
