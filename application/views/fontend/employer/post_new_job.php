@@ -192,9 +192,10 @@
                   <div class="col-md-3 col-sm-4">
                      <div class="formrow">
                         <label class="control-label ">Job Locations<span class="required"> * </span> </label>
-                       <!--  <input class="form-control allowalphabatescomma" type="text" name="city_id" class="form-control" id="tokenfield" placeholder="Enter Location"
-                           value="<?php if(!empty($this->session->userdata('location')) ){echo $this->session->userdata('location'); } ?>" required><?php echo form_error('city_id'); ?>   -->  
-                           <input type="text" class="form-control" id="tokenfield" value="" >               
+                      
+                           <input type="text" name="city_id" class="form-control allowalphabatescomma" id="tokenfield" placeholder="Enter Location"
+                        value="<?php if(!empty($this->session->userdata('location')) ){echo $this->session->userdata('location'); } ?>" required><?php echo form_error('city_id'); ?>
+                                     
                      </div>
                   </div>
                   <div class="col-md-3 col-sm-12">
@@ -386,20 +387,36 @@
       </div>
    </div>
 </div>
+<script type="text/javascript" src="<?php echo base_url(); ?>asset/js/tinymce/tinymce.min.js"></script> 
+<script type="text/javascript">
+document.getElementsByClassName('form-control').innerHTML+="<br />";
+</script>
+<?php $this->load->view("fontend/layout/footer.php"); ?>
 
 <script>
-  $(document).ready(function() {   
+
+
+
     $('#tokenfield').tokenfield({
       autocomplete: {
-        source: ['red','blue','green','yellow','violet','brown','purple','black','white'],
+        source: "<?php echo base_url('Employer/search_city'); ?>",
         delay: 100
       },
-      showAutocompleteOnFocus: true
+
+      showAutocompleteOnFocus: true,
+
     });
-    
-   
-});
+    // to avoid duplications
+ $('#tokenfield').on('tokenfield:createtoken', function (event) {
+      var existingTokens = $(this).tokenfield('getTokens');
+      $.each(existingTokens, function(index, token) {
+          if (token.value === event.attrs.value)
+              event.preventDefault();
+
+      });
+  });
 </script>
+
 <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>assets/js/bootstrap.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>asset/js/jquery-ui.js" type="text/javascript"></script>
@@ -486,26 +503,7 @@
 </script>
 
 <script>
-  
-   // to avoid duplications
-     $('#tokenfield').tokenfield({
-     autocomplete: {
-       source: "<?php echo base_url('Employer/search_city'); ?>",
-       delay: 100
-     },
-   
-     showAutocompleteOnFocus: true,
-   
-   });
-   
-   $('#tokenfield').on('tokenfield:createtoken', function (event) {
-     var existingTokens = $(this).tokenfield('getTokens');
-     $.each(existingTokens, function(index, token) {
-         if (token.value === event.attrs.value)
-             event.preventDefault();
-   
-     });
-   });
+ 
    function getSkillsdetails(id)
    {
      if(id){
