@@ -375,19 +375,21 @@
   function check_other(value)
 {
    var x1 = document.getElementById("other_terxtbx");
-   alert(value);
-  
-  if (value=='other') 
+    // var x = document.getElementById("training_title");
+    if (value=='other') 
   {
-    
-      x1.type ='text';
+    if (x1.type === "hidden") {
+      x1.type = "text";
+      // x.type = "hidden";
+    } else {
+      x1.type = "hidden";
+
+    }
   }
   else
   {
-      // $('#other_terxtbx').hide();
-      x1.type ='hidden';
-
-
+    x1.type = "hidden";
+    x1.value = value;
   }
     
 }
