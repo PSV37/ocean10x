@@ -1,5 +1,6 @@
 <!---header-->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/calender.css">
 <?php 
    $company_profile_id = $this->session->userdata('company_profile_id');
    
@@ -377,10 +378,7 @@
 </div>
 
 
-  <link href= 
-'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css'
-    rel='stylesheet'> 
-  
+ 
   <script src= 
 "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" > 
   </script> 
