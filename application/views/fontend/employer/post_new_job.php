@@ -403,14 +403,14 @@
 
     });
     // to avoid duplications
- $('#tokenfield').on('tokenfield:createtoken', function (event) {
-      var existingTokens = $(this).tokenfield('getTokens');
-      $.each(existingTokens, function(index, token) {
-          if (token.value === event.attrs.value)
-              event.preventDefault();
+ // $('#tokenfield').on('tokenfield:createtoken', function (event) {
+ //      var existingTokens = $(this).tokenfield('getTokens');
+ //      $.each(existingTokens, function(index, token) {
+ //          if (token.value === event.attrs.value)
+ //              event.preventDefault();
 
-      });
-  });
+ //      });
+ //  });
 </script>
 
 <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.js" type="text/javascript"></script>
@@ -419,7 +419,7 @@
     <script type="text/javascript">
         $(document).ready(function(){
 
-            $("#city_id").autocomplete({
+            $("#tokenfield").autocomplete({
               
               source: "<?php echo base_url('Employer/search_city'); ?>",
              
