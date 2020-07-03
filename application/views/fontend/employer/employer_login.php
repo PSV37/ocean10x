@@ -1,11 +1,11 @@
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 <style>
-@media screen and (max-width:400px){
+@media screen and (max-width:600px) {
 	h3:after {
-        
+            
     width: 118px;    
-    height: 8px;           
+    height: 8px;                
        
     margin-top: 29px;   
             
