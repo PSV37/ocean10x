@@ -11,8 +11,8 @@ left:0px;
 width:100% !important;   
 height: 100vh;
 transform: inherit;     
-border-radius:0px;
-margin-top:20px;
+border-radius:0px;   
+margin-top:30px;
 box-shadow:none !important;  
 } 
 .login-box h4{font-size:18px;}  
