@@ -17,13 +17,9 @@ box-shadow:none !important;
 } 
 .login-box h4{font-size:18px;}  
 .sign_in{width:auto !important;
+padding:8px 33px;     
 }    
 }    
-@media screen and (min-width:300) and (max-width:516px)
-{
-	.sign_in{width:auto !important;
-padding:8px 33px;}  
-	}   
 html {                   
   height: 100%;    
 }
