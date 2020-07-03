@@ -411,7 +411,7 @@ transition:0.5s;
 </div>
 </div>
 
-</div>
+</div>    
 <div class="container">
 <p class="copyright" style="text-align:center;font-size:12px;">Copyright © 2020 ConsultnHire. All rights reserved.</p>
 
