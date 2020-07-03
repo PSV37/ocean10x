@@ -35,9 +35,10 @@
          }
          @media only screen and (min-width: 993px){
          .container {
-         width: 100%;
+         width: 100%;   
          }
          }
+		 body{background-color:#fff;}
          .indigo{background-color:#18c5bd !important;
          box-shadow: 2px 2px 2px #dedddd !important;
          padding:14px 0px;}
@@ -169,7 +170,7 @@
          border-radius: 5px;     
          margin-bottom:18px;
          }     
-		.lan_img{width:100%;} 
+		      
 		
 		       
       </style>    
