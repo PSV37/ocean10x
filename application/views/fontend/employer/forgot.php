@@ -17,13 +17,8 @@ box-shadow:none !important;
 } 
 .login-box h4{font-size:18px;}  
 .sign_in {
-    background-color: #18c5bd;
-    border: none;
-    padding: 8px 7px;
-    color: #fff;
-    font-weight: 700;
-    width: 124px;
-    font-size: x-small;
+    width: 125px;
+    font-size: x-small;    
 }
 .btn_regi{
 width: max-content;
