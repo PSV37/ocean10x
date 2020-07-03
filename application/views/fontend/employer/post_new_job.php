@@ -467,10 +467,12 @@ $("#job_category").change(function () {
 
         }
        $("select").on("click", function () {
-    
-    $(this).next().focus();
-    alert($(this).next());
-    
+       $(this).next().css({ 
+                "color": "black", 
+                "border": "2px solid green" 
+            });
+   
+
     // $("input").val($(this).val());
 });
     </script>
