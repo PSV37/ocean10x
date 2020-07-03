@@ -22,7 +22,7 @@ box-shadow:none !important;
 }     
 .btn_regi{
 width: max-content;
-}
+}   
 }    
 html {                            
   height: 100%;    
