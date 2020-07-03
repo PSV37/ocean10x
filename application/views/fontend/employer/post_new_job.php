@@ -214,9 +214,9 @@ button#check-btn {
                      <div class="formrow">
                         <label class="control-label ">Job Locations<span class="required"> * </span> </label>
                       
-                           <!-- <input type="text" name="city_id" class="form-control allowalphabatescomma" id="tokenfield" placeholder="Enter Location"
-                        value="<?php if(!empty($this->session->userdata('location')) ){echo $this->session->userdata('location'); } ?>" required><?php echo form_error('city_id'); ?> -->
-                        <input type="text" name="" id="tokenfield"  class="form-control allowalphabatescomma">
+                           <input type="text" name="city_id" class="form-control allowalphabatescomma" id="tokenfield" placeholder="Enter Location"
+                        value="<?php if(!empty($this->session->userdata('location')) ){echo $this->session->userdata('location'); } ?>" required><?php echo form_error('city_id'); ?>
+                       
                                      
                      </div>
                   </div>
@@ -467,12 +467,13 @@ $("#job_category").change(function () {
 
         }
        $("select").on("click", function () {
-    debugger;
-    var sVal = $(this).val();
-    $(this).css("background-color", "red");
-    $(this).find("option").css("background", "white");
-    $(this).find('option:selected').css("background-color", "red");
-    $("input").val($(this).val());
+       $(this).next().css({ 
+                "color": "black", 
+                "border": "2px solid green" 
+            });
+   
+
+    // $("input").val($(this).val());
 });
     </script>
     
