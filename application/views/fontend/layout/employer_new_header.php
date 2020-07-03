@@ -29,8 +29,8 @@
    <link rel="stylesheet" href="<?php echo base_url(); ?>asset/tokenjs/css/bootstrap-tokenfield.css" type="text/css" />
     <!-- <link rel="stylesheet" href="<?php echo base_url(); ?>asset/tokenjs/bootstrap-tokenfield.min.js" /> -->
     <!-- multiselect css -->
-   
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+   <!--  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
      <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script src= 

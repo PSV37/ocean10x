@@ -191,11 +191,9 @@ button#check-btn {
 }
 
 </style>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-<script>
-    $('.select2').select2();
-</script>
+
+
+
 <!---header--->
 <!--form id="form_register"-->
 <div class="container-fluid main-d">
@@ -413,7 +411,17 @@ button#check-btn {
       </div>
    </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+<script>
+$("#job_category").select2( {
+ placeholder: "Select domain",
+ allowClear: true
+ } );
+</script>
 <script src="<?php echo base_url(); ?>asset/src/jquery.tokeninput.js"></script>
 <script src="<?php echo base_url() ?>asset/js/jquery-ui.js"></script>
 <script src="<?php echo base_url() ?>asset/tokenjs/bootstrap-tokenfield.js"></script>
