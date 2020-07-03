@@ -55,7 +55,7 @@
                   <input id="checkbox_qu_01" type="checkbox" class="styled" checked="">
                   <label for="checkbox_qu_01"><small>Remember me</small></label>
                 </div>
-                <div class="col-md-6" align="right"><a href="<?php echo base_url() . 'employer_login/forgot_pass' ?>">Forgot Password?</a></div>
+                <div class="col-md-6" align="right"><a class="forgot" href="<?php echo base_url() . 'employer_login/forgot_pass' ?>">Forgot Password?</a></div>
               </div>
               
             </div>
