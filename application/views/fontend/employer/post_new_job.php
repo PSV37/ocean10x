@@ -154,9 +154,7 @@
    }
    input{
    border-radius: 4px;
-   border: 1px solid lightgrey;
-   display: inline-block;
-}
+   border: 1px solid lightgrey;}
    span.options_beni {
    background: #18c5bd !important;
    display: inline-block;
@@ -229,16 +227,17 @@ button#check-btn {
                   <div class="col-md-3 col-sm-12">
                      <div class="formrow">
 
-           <label>Select</label>
-           <select class="form-control select2">
-              <option>Select</option> 
-              <option>Car</option> 
-              <option>Bike</option> 
-              <option>Scooter</option> 
-              <option>Cycle</option> 
-              <option>Horse</option> 
-           </select>
-                               
+                        <label class="control-label ">Expected Domain<span class="required"> * </span> </label>
+                        <select name="job_category" id="job_category" class="form-control select2" data-style="btn-default" data-live-search="true" required="">
+                           <!-- <option value="">Select Expected Domain</option> -->
+                           <?php if(!empty($job_info->job_category)) {
+                              echo $this->job_category_model->selected($job_info->job_category);
+                              } else {
+                              echo $this->job_category_model->selected();
+                              }
+                              ?>
+                        </select>
+                        <?php echo form_error('job_category'); ?>               
                      </div>
                   </div>
                   <div class="col-sm-3 p-m-2">
