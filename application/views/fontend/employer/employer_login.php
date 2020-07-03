@@ -1,13 +1,13 @@
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 <style>
-@media screen and (max-width:600px) {
+@media screen and (max-width:600px){
 	h3:after {
             
-    width: 118px;    
+    width: 118px;         
     height: 8px;                
        
-    margin-top: 29px;   
+    margin-top: 29px;       
             
 	}      
 .login-box{top:0px;   
@@ -76,7 +76,7 @@ html {
   height: 100%;
 }
 body {
-  margin:0;
+  margin:0;     
   padding:0;
   font-family: sans-serif;
   background: #fff;
