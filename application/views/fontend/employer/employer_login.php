@@ -279,9 +279,9 @@ margin-top: 10px;
       <label>Password </label>
       <i id="eyeIcon" class="fa fa-eye-slash toggle-password"></i>
 
-    </div>
+    </div>    
     <div class="row">
-      <div class="col-md-6 remb" style="margin-top:-20px;">
+      <div class="col-md-6 remb">
         <input id="checkbox_qu_01" type="checkbox" class="styled" checked="">
         <label for="checkbox_qu_01"><small class="remember" style="color:#7b7a7a;font-weight:100;">Remember me</small></label>
       </div>
