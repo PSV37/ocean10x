@@ -355,7 +355,7 @@
                            <span><i class="fa fa-plus"></i> Other</span></button>
                            </label>
 
-                           <input type="hidden"  name="benefits[]" id="other_terxtbx">
+                           <input type="hidden"  name="benefits[]" id="other_terxtbx" style="display: inline-block;">
                        
                 
                        
