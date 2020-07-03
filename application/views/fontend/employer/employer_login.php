@@ -215,12 +215,12 @@ input:-internal-autofill-selected{background-color:#fff !important;}
 :focus {
     outline: none !important;
 }
-@media only screen and (max-width: 600px) and (min-width: 400px) {
+@media only screen and (min-width: 600px) and (max-width: 400px) {
 	h3:after {
         
     width: 118px;    
     height: 8px;
-    
+       
     margin-top: 29px;
          
 	}
