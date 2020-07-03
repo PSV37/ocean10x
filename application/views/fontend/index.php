@@ -158,9 +158,9 @@
          float: left;
          line-height: 17px;
          text-align: center;}
-         .copyright:before {
+         .copyright:before {      
          content: '';
-         display: block;
+         display: block;    
          width: 71px;
          height: 2px;
          background: #18c5bd;        
