@@ -212,7 +212,9 @@ input:-internal-autofill-selected{background-color:#fff !important;}
   cursor:pointer;    
 }   
 .user-box input:focus{background-color:#fff;}
-
+:focus {
+    outline: none !important;
+}
 @media screen and (min-width:480px){
 .login-box{top:0px;   
 left:0px;
@@ -274,6 +276,8 @@ i#eyeIcon {
   
     font-size: 33px;
 }    
+}
+
          
 </style>
 
