@@ -224,10 +224,13 @@ transform: inherit;
 	font-size:63px;
 	margin-bottom: 135px;
 	margin-top:60px;
-	}
+	}    
 	.login-box .user-box{height:180px;}
-.login-box .user-box input{padding:36px 0px;
+.login-box .user-box label{  
 font-size:42px;}
+
+.login-box .user-box input{   
+	padding:54px 0px;}
 .check label{font-size:42px;}	   
 }    
     
