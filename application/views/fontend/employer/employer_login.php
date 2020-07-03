@@ -11,7 +11,9 @@ left:0px;
 width:100% !important;   
 height: 100vh;
 transform: inherit;     
-border-radius:0px;  
+border-radius:0px;
+margin-top:20px;
+box-shadow:none;  
 }   
 
 }
