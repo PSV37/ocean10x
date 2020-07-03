@@ -1,14 +1,14 @@
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 <style>
-@media (max-width:400px){
+@media screen and (max-width:400px){
 	h3:after {
         
     width: 118px;    
     height: 8px;           
        
     margin-top: 29px;   
-         
+            
 	}      
 .login-box{top:0px;   
 left:0px;
