@@ -209,12 +209,16 @@ input:-internal-autofill-selected{background-color:#fff !important;}
   margin-top: -27px;
   position: relative;
   z-index: 2;
-  cursor:pointer;
+  cursor:pointer;    
 }   
 .user-box input:focus{background-color:#fff;}
 
 @media screen and (max-width:480px){
-
+.login-box{top:0px;
+left:0px;
+width:auto;
+height: 100vh;
+transform: inherit;}
 }	
 }    
     
