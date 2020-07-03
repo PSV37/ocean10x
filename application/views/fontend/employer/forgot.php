@@ -6,7 +6,7 @@
 <style>
 @media screen and (max-width:400px){
 	
-.login-box{top:0px;   
+.login-box{top:0px;       
 left:0px;    
 width:100% !important;   
 height: 100vh;
@@ -16,11 +16,12 @@ margin-top:20px;
 box-shadow:none !important;  
 } 
 .login-box h4{font-size:18px;}  
-
-}
-
-html {     
-  height: 100%;
+.sign_in{width:auto !important;
+padding:8px 29px !important;     
+}    
+}    
+html {                            
+  height: 100%;    
 }
 body {
   margin:0;
