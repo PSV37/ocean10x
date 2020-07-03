@@ -214,24 +214,34 @@ button#check-btn {
                      <div class="formrow">
                         <label class="control-label ">Job Locations<span class="required"> * </span> </label>
                       
-                           <!-- <input type="text" name="city_id" class="form-control allowalphabatescomma" id="tokenfield" placeholder="Enter Location"
-                        value="<?php if(!empty($this->session->userdata('location')) ){echo $this->session->userdata('location'); } ?>" required><?php echo form_error('city_id'); ?> -->
-                        <input type="text" name="" id="tokenfield"  class="form-control allowalphabatescomma">
+                           <input type="text" name="city_id" class="form-control allowalphabatescomma" id="tokenfield" placeholder="Enter Location"
+                        value="<?php if(!empty($this->session->userdata('location')) ){echo $this->session->userdata('location'); } ?>" required><?php echo form_error('city_id'); ?>
+                       
                                      
                      </div>
                   </div>
                   <div class="col-md-3 col-sm-12">
                      <div class="formrow">
                         <label class="control-label ">Expected Domain<span class="required"> * </span> </label>
-                        <select name="job_category" id="job_category" class="form-control select2" data-style="btn-default" data-live-search="true" required="">
-                           <!-- <option value="">Select Expected Domain</option> -->
+                        <!-- <select name="job_category" id="job_category" class="form-control select2" data-style="btn-default" data-live-search="true" required="">
+                         
+                           <input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" role="textbox">
                            <?php if(!empty($job_info->job_category)) {
                               echo $this->job_category_model->selected($job_info->job_category);
                               } else {
                               echo $this->job_category_model->selected();
                               }
                               ?>
-                        </select>
+                        </select> -->
+                        <select style="background-color:#fff;cursor:default; width: 100%;" name="txtCityName" id="txtCityName" class="form-control form-group-lg selectpicker" placeholder="Enter City...." aria-describedby="sizing-addon2" data-live-search="true" required>
+ <?php if(!empty($job_info->job_category)) {
+                              echo $this->job_category_model->selected($job_info->job_category);
+                              } else {
+                              echo $this->job_category_model->selected();
+                              }
+                              ?>
+
+</select>
                         <?php echo form_error('job_category'); ?>               
                      </div>
                   </div>
