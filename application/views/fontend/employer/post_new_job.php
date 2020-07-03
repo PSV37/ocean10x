@@ -153,7 +153,9 @@
    }
    input{
    border-radius: 4px;
-   border: 1px solid lightgrey;}
+   border: 1px solid lightgrey;
+   display: inline-block;
+}
    span.options_beni {
    background: #18c5bd !important;
    display: inline-block;
@@ -225,7 +227,7 @@ button#check-btn {
                   </div>
                   <div class="col-md-3 col-sm-12">
                      <div class="formrow">
-                        
+
            <label>Select</label>
            <select class="form-control select2">
               <option>Select</option> 
