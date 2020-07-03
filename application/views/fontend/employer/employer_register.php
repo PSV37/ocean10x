@@ -170,10 +170,10 @@
          margin-bottom:18px;
          } 
 		 
-		 @media screen and (max-width:400px){
+		@media only screen and (mix-width:400px){
 		.lan_img {width:100% !important;}
 			 }
-		 
+		       
       </style>    
           
 </head>          
