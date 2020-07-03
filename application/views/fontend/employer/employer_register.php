@@ -169,10 +169,8 @@
          border-radius: 5px;     
          margin-bottom:18px;
          } 
-		 
-		@media only screen and (mix-width:400px){
-		.lan_img {width:100% !important;}
-			 }
+		.lan_img{width:100%;} 
+		
 		       
       </style>    
           
