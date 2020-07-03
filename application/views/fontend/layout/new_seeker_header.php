@@ -35,12 +35,15 @@
 <!-- Token field css -->
    <link rel="stylesheet" href="<?php echo base_url(); ?>asset/tokenjs/css/tokenfield-typeahead.css" type="text/css" />
     <link rel="stylesheet" href="<?php echo base_url(); ?>asset/tokenjs/css/bootstrap-tokenfield.css" type="text/css" />
+      <link  href="<?php echo base_url(); ?>asset/tokenjs/bootstrap-tokenfield.js">
+      <link  href="<?php echo base_url(); ?>asset/tokenjs/typeahead.bundle.min.js">
 
     <!-- multiselect css -->
     <link href="<?php echo base_url(); ?>asset/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+     <script src="<?php echo base_url(); ?>asset/js/jquery-ui.js" type="text/javascript"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
      <style type="text/css">
        .box:-moz-placeholder {

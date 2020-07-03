@@ -387,11 +387,7 @@
       </div>
    </div>
 </div>
-<script type="text/javascript" src="<?php echo base_url(); ?>asset/js/tinymce/tinymce.min.js"></script> 
-<script type="text/javascript">
-document.getElementsByClassName('form-control').innerHTML+="<br />";
-</script>
-<?php $this->load->view("fontend/layout/footer.php"); ?>
+<script src="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" ></script>
 
 <script>
 
