@@ -191,6 +191,11 @@ button#check-btn {
 }
 
 </style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script>
+    $('.select2').select2();
+</script>
 <!---header--->
 <!--form id="form_register"-->
 <div class="container-fluid main-d">
@@ -408,11 +413,7 @@ button#check-btn {
       </div>
    </div>
 </div>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-<script>
-    $('.select2').select2();
-</script>
+
 <script src="<?php echo base_url(); ?>asset/src/jquery.tokeninput.js"></script>
 <script src="<?php echo base_url() ?>asset/js/jquery-ui.js"></script>
 <script src="<?php echo base_url() ?>asset/tokenjs/bootstrap-tokenfield.js"></script>
@@ -466,7 +467,8 @@ $("#job_category").change(function () {
          // alert(othr_benifit);
 
         }
-       $("select").on("click", function () {
+       $("select").on("change", function () {
+         alert('test');
        $(this).next().css({ 
                 "color": "black", 
                 "border": "2px solid green" 
