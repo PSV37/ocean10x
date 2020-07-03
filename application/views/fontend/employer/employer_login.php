@@ -212,8 +212,18 @@ input:-internal-autofill-selected{background-color:#fff !important;}
   cursor:pointer;    
 }   
 .user-box input:focus{background-color:#fff;}
-
-@media screen and (min-width:480px){
+:focus {
+    outline: none !important;
+}
+@media screen and (max-width:480px){
+	h3:after {
+   
+    width: 118px;    
+    height: 8px;
+    
+    margin-top: 29px;
+         
+	}
 .login-box{top:0px;   
 left:0px;
 width:100%;   
@@ -224,6 +234,7 @@ transform: inherit;
 	font-size:63px;
 	margin-bottom: 135px;
 	margin-top:60px;
+	font-weight: 400;
 	}    
 	.login-box .user-box{height:180px;}
 .login-box .user-box label{  
@@ -231,11 +242,11 @@ font-size:42px;}
         
 .login-box .user-box input{ 
 font-size:43px;  
-	padding:54px 0px;}
+	padding:28px 0px;}     
 .check label{font-size:42px;}
 .sign_in {
     background-color: #18c5bd;
-    border: none;
+    border: none;     
     padding: 32px 316px;
     color: #fff;
     font-weight: 700;
@@ -266,7 +277,15 @@ input#checkbox_qu_01 {
     width: 82px;
     height: 30px;
 }
+i#eyeIcon {
+   
+    
+    top: 32px;
+  
+    font-size: 33px;
+}    
 }
+
          
 </style>
 
