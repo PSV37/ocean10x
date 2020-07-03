@@ -377,7 +377,54 @@
 <img src="https://image.freepik.com/free-vector/email-messaging-email-marketing-campaign_183665-8.jpg" class="lan-img" style="width:400px;margin-left:180px;"/>
 </div>
 </div>
-    
+ <div class="container" style="padding:55px 0px;">
+
+<div class="col-md-3">  
+<div class="footer1">
+<h5 style="font-weight: 600;">About ConsultnHire</h5>
+<p style="color: #6d6c6c;font-size: 12px;letter-spacing: 1px;text-align: justify;line-height:2;">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+</div>
+</div>
+<div class="col-md-3">
+<div class="footer1">
+<h5 style="font-weight: 600;">Quick Links</h5>
+<li>Home</li>
+<li>Search Job</li>
+<li>View All Job</li>
+<li>Contact Us</li>
+<li>Report a bug/Abuse</li>
+</div>
+</div>
+<div class="col-md-3">
+<div class="footer1">
+<h5 style="font-weight: 600;">Quick Links</h5>
+<li>About Company</li>
+<li>My Account</li>
+<li>Help</li>
+<li>Terms Of Use</li>
+<li>Privercy Commitment</li>
+</div>
+</div>
+
+
+
+<div class="col-md-3">
+<div class="footer1 icons_w">   
+<h5 style="font-weight: 600;">Contact Info</h5>
+<li><span><i class="fab fa-linkedin-in"></i></span>Linked</li>
+<li><span><i class="far fa-paper-plane"></i></span>info@Consultnhire.com</li>
+<li><span><i class="fas fa-mobile-alt"></i></span>7865342789</li>
+<li><span><i class="fab fa-linkedin-in"></i></span>Contact Us</li>
+<li><span><i class="fab fa-facebook-f"></i></span>Facebook</li>
+</div>
+</div>
+
+</div>
+<div class="container">
+<p class="copyright" style="text-align:center;font-size:12px;">Copyright © 2020 ConsultnHire. All rights reserved.</p>
+
+</div>
+   
   
   
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
