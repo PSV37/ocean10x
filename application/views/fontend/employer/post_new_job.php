@@ -355,7 +355,7 @@
                            <span><i class="fa fa-plus"></i> Other</span></button>
                            </label>
 
-                           <input type="hidden"  name="benefits[]" id="other_terxtbx">
+                           <input type="hidden"  name="benefits[]" id="other_terxtbx" style="display: inline-block;">
                        
                 
                        
@@ -392,6 +392,8 @@
 <script src="<?php echo base_url() ?>asset/js/jquery-ui.js"></script>
 <script src="<?php echo base_url() ?>asset/tokenjs/bootstrap-tokenfield.js"></script>
 <script src="<?php echo base_url() ?>asset/tokenjs/typeahead.bundle.min.js"></script>
+<script src="<?php echo base_url() ?>asset/js/search.js"></script>
+<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/jquery-ui.css"  type="text/css" />
 
 
 
