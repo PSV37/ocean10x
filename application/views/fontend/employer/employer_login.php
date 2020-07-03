@@ -225,6 +225,12 @@ input:-internal-autofill-selected{background-color:#fff !important;}
     margin-bottom: 0;
     width: 100%;
 }
+.login-box{left: 0;  
+    right: 0;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
 }	
 }
     
