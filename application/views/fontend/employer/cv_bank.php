@@ -709,7 +709,7 @@
                      <div class="input-group add-on" style="width:100%;margin-left:-15px;">
                         <input class="form-control" placeholder="Search based oh Name, Email id, Phone no." name="srch-term" id="srch-term" type="text">
                         <div class="input-group-btn">
-                           <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                           <button class="btn " type="submit"><i class="glyphicon glyphicon-search"></i></button>
                         </div>
                      </div>
                   </form>
