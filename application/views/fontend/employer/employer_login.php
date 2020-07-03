@@ -1,7 +1,7 @@
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 <style>
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width:400px){
 	h3:after {
         
     width: 118px;    
@@ -9,7 +9,7 @@
        
     margin-top: 29px;
          
-	}
+	}      
 .login-box{top:0px;   
 left:0px;
 width:100%;   
