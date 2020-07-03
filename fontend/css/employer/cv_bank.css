@@ -471,3 +471,13 @@ background-color:#18c5bd;
 	color:#fff;
 	transition:0.4s;
 	}		
+.folder_popup{
+background-color: #18c5bdb5;
+    border: none;
+    padding: 5px 20px;
+    border-radius: 6px;   
+    color: #fff;
+    font-weight: 600;
+    float: right;
+}
+	
