@@ -232,7 +232,7 @@ font-size:42px;}
         
 .login-box .user-box input{ 
 font-size:43px;  
-	padding:28px 0px;}
+	padding:28px 0px;}     
 .check label{font-size:42px;}
 .sign_in {
     background-color: #18c5bd;
