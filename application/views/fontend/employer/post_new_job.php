@@ -174,7 +174,7 @@
                   <div class="col-md-3 col-sm-4">
                      <div class="formrow">
                         <label class="control-label ">Job Title / Designation<span class="required"> * </span> </label>
-                        <input class="form-control allowalphanumeric" type="text" name="job_title" value="<?php if(!empty($this->session->userdata('title')) ){echo $this->session->userdata('title'); } elseif(!empty($job_info->job_title)){
+                        <input class="form-control allowalphanumeric" type="text" maxlength="10" name="job_title" value="<?php if(!empty($this->session->userdata('title')) ){echo $this->session->userdata('title'); } elseif(!empty($job_info->job_title)){
                            echo $job_info->job_title;} ?><?php echo set_value('job_title'); ?>" class="form-control" autocomplete="off" required="">
                         <?php echo form_error('job_title'); ?>
                      </div>
@@ -332,14 +332,14 @@
                         </label>
                         <?php } ?>
                           <label>
-                           <button type="button" value="other" class="btn-default1" checked="" name="benefits[]" onclick="check_other(value);">
+                           <button type="button" value="other" class="btn-default1" checked="" name="benefits[]" onclick="check_other(this.value);">
                            <span><i class="fa fa-plus"></i> Other</span></button>
                            </label>
 
-                          <label>
-                        <input type="text" value="<?php echo $benefit['id']; ?>" class="btn-default1" checked="" name="benefits[]">
-                        <span><?php echo $benefit['benifit']; ?></span>
-                        </label>
+                          
+                        <input type="hidden"  name="benefits[]" id="other_terxtbx">
+                
+                       
                      </div>
                   </div>
                   <!-- </textarea><?php echo form_error('benefits'); ?>                                  -->
@@ -369,53 +369,36 @@
       </div>
    </div>
 </div>
+
+
 <script>
   function check_other(value)
 {
+   var x1 = document.getElementById("other_terxtbx");
   
   if (value=='other') 
   {
-     // $('#job_edu').hide();
-      $('#other_terxtbx').show();
+    
+      x1.type ='text';
   }
   else
   {
-      $('#other_terxtbx').hide();
+      // $('#other_terxtbx').hide();
+      x1.type ='hidden';
+
 
   }
     
 }
 </script>
-<!--/form-->
-<!-- <script type="text/javascript">
-   $( '#preview' ).click( function(){
-    var data = new FormData( $( 'form#test' )[ 0 ] );
-   
-    $.ajax( {
-       processData: false,
-       contentType: false,
-   
-       data: data,
-       dataType: 'json',
-       type: $( this ).attr( 'method' );
-       url: <?php echo base_url() ?>'employer/preview_post_job',
-       success: function( feedback ){
-          console.log( "the feedback from your API: " + feedback );
-       }
-   });
-   </script> -->
+
 <script>
    $(document).ready(function(){
-
+ 
       // $('#other_terxtbx').hide();
       $('#training_title1').hide();
 
-     $('input').keyup(function(){
-       // alert('input');
-         if($(this).val().length==$(this).attr("maxlength")){
-             $(this).next().focus();
-         }
-     });
+    
    
      var id=document.getElementById('job_role');
      $.ajax({
@@ -432,7 +415,15 @@
              });
    
          
-    $('#tokenfield').tokenfield({
+  
+   
+   })
+</script>
+
+<script>
+  
+   // to avoid duplications
+     $('#tokenfield').tokenfield({
      autocomplete: {
        source: "<?php echo base_url('Employer/search_city'); ?>",
        delay: 100
@@ -441,13 +432,6 @@
      showAutocompleteOnFocus: true,
    
    });
-   
-   })
-</script>
-
-<script>
-  
-   // to avoid duplications
    
    $('#tokenfield').on('tokenfield:createtoken', function (event) {
      var existingTokens = $(this).tokenfield('getTokens');
