@@ -1,75 +1,19 @@
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script><head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
 
 <style>
-@media screen and (min-width:300px) and (max-width:600px){
-	h3:after {
-            
-    width: 118px;         
-    height: 8px;                     
-       
-    margin-top: 29px;       
-            
-	}      
+@media screen and (max-width:400px){
+	
 .login-box{top:0px;   
 left:0px;    
 width:100% !important;   
 height: 100vh;
-transform: inherit;   
-}
-.login-box h3{
-	font-size:63px;
-	margin-bottom: 135px;
-	margin-top:60px;
-	font-weight: 400;
-	}    
-	.login-box .user-box{height:180px;}
-.login-box .user-box label{  
-font-size:42px;}
-        
-.login-box .user-box input{ 
-font-size:43px;  
-	padding:28px 0px;}     
-.check label{font-size:42px;}
-.sign_in {
-    background-color: #18c5bd;
-    border: none;     
-    padding: 32px 316px;
-    color: #fff;
-    font-weight: 700;
-    border-radius: 65px;
-    margin-top: 20px;
-    font-size: 44px;
-}.sign_in {
-   
-    padding: 32px 316px;     
-   
-    border-radius: 65px;
-    margin-top:50px;
-    font-size: 44px;   
-}	     
-.forgot{
-font-size: 32px !important;
-    margin-top: 26px !important;   
-}      
-.newuser{font-size:37px;}
-.login-box .user-box input:focus ~ label, .login-box .user-box input:valid ~ label{font-size:32px;} 
-.remember{     
-margin-top: 10px;
-    font-size: 37px;
-    margin-bottom: 20px;
-}
-.remb{margin-top:20px;}   
-input#checkbox_qu_01 {    
-    width: 82px;
-    height: 30px;
-}
-i#eyeIcon {
-   
-    
-    top: 32px;
-  
-    font-size: 33px;
-}    
+transform: inherit;     
+border-radius:0px;  
+}   
+
 }
 
 html {
@@ -94,7 +38,7 @@ body {
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.32);
     border-radius: 10px;
 	
-}
+}    
 
 .login-box h3 {
   margin: 0 0 30px;
