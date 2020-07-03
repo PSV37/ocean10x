@@ -356,7 +356,7 @@
 <img src="https://image.freepik.com/free-vector/email-messaging-email-marketing-campaign_183665-8.jpg" style="width:400px;margin-left:180px;"/>
 </div>
 </div>
-
+    
   
   
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
