@@ -256,6 +256,12 @@ font-size: 32px !important;
 }      
 .newuser{font-size:37px;}
 .login-box .user-box input:focus ~ label, .login-box .user-box input:valid ~ label{font-size:32px;} 
+.remember{
+margin-top: 10px;
+    font-size: 37px;
+    margin-bottom: 20px;
+}
+
 }
          
 </style>
@@ -277,7 +283,7 @@ font-size: 32px !important;
     <div class="row">
       <div class="col-md-6" style="margin-top:-20px;">
         <input id="checkbox_qu_01" type="checkbox" class="styled" checked="">
-        <label for="checkbox_qu_01"><small style="color:#7b7a7a;font-weight:100;">Remember me</small></label>
+        <label for="checkbox_qu_01"><small class="remember" style="color:#7b7a7a;font-weight:100;">Remember me</small></label>
       </div>
     </div>           
     <div class="row" style="text-align:center;">
