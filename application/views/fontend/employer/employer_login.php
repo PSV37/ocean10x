@@ -244,10 +244,10 @@ font-size:43px;
     font-size: 44px;
 }.sign_in {
    
-    padding: 32px 316px;
+    padding: 32px 316px;     
    
     border-radius: 65px;
-    
+    margin-top:50px;
     font-size: 44px;   
 }	     
 .forgot{
