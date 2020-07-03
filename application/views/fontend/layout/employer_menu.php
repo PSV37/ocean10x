@@ -55,6 +55,37 @@
                                     <span class="icon-container"><i class="fas fa-user-alt"></i></span>
                                     <span class="text item">CV Bank</span>
                                   </a>
+                                  <div class="row tree well">
+                                                 
+                                                     <ul>
+                                            <li>
+                                                <span><i class="fas fa-folder-open"></i> Parent</span>
+                                                <ul>
+                                                    <li>
+                                                        <span><i class="fas fa-folder-open"></i> Child</span> 
+                                                        <ul>
+                                                            <li>
+                                                                <span><i class="fas fa-folder-open"></i>Grand Child</span>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <span><i class="fas fa-folder-open"></i> Child</span> 
+                                                        <ul>
+                                                            <li>
+                                                                <span><i class="fas fa-folder-open"></i> Grand Child</span> 
+                                                            </li>
+                                                            
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                                
+                                            </li>
+                                            
+                                        </ul>  
+                                                   
+                                                     
+                                                    </div>
                                 </li>
                                 <li <?php if ($activemenu == 'job_post') { ?>
                                  class="active"
