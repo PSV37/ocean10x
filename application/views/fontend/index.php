@@ -170,11 +170,15 @@
          margin-bottom:18px;
          } 
 		 .top-sec{padding:50px 0px;}
+		 .heading_first{font-size: 29px; margin-bottom: 50px;margin-top:60px;}
 		 @media screen and (max-width:400px){
 			 .lan-img{width:100%;}
 			  .top-sec{padding:10px 0px;}
-			 }   
-			 .heading_first{font-size: 29px; margin-bottom: 50px;margin-top:60px;}
+			  .heading_first{font-size: 22px;
+    margin-bottom: 20px;
+    margin-top: 15px;
+			 }      
+			 
       </style>    
 
 </head>  
