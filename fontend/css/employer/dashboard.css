@@ -1153,8 +1153,8 @@ ul.list-unstyled.quick-links {
 .tree li {    
     list-style-type:none;  
     margin:0;
-    padding:10px 5px 0 0px;
-    position:relative
+    padding:10px 5px 0px 0px !important;
+    position:relative;
 }
 .tree li::before, .tree li::after {
     content:'';
