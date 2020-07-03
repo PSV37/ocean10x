@@ -252,7 +252,8 @@ font-size:42px;}
 .forgot{
 font-size: 32px !important;
     margin-top: 26px !important;   
-}       
+}      
+.newuser{font-size:37px;} 
 }
     
 </style>
