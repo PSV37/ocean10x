@@ -181,15 +181,15 @@
     height: 56px;
     margin: -15px -23px;
 }
-@media only screen and (max-width: 992px)
-nav .brand-logo {
+		 @media screen and (max-width:400px){
+			 nav .brand-logo {
     left: 66%;
     -webkit-transform: translateX(-50%);
     /* transform: translateX(-50%); */
     ): ;
     width: -webkit-fill-available;
 }
-		 @media screen and (max-width:400px){
+
 			 .lan-img{width:100%;}
 			  .top-sec{padding:10px 0px;}
 			  .heading_first{font-size: 22px;
