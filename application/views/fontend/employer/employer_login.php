@@ -1,9 +1,12 @@
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
+</head>
 <style>
-@media screen and (min-width:300px) and (max-width:600px){
+@media screen and (max-width:400px){
 	h3:after {
-            
+               
     width: 118px;         
     height: 8px;                     
        
