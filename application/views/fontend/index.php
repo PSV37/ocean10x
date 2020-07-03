@@ -170,7 +170,7 @@ transition:0.5s;
     border-radius: 5px;
   margin-bottom:18px;
 } 
-</style>
+</style>     
 </head>
 
 <body>         
