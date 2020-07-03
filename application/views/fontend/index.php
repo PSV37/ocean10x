@@ -171,6 +171,9 @@
          } 
 		 .top-sec{padding:50px 0px;}
 		 .heading_first{font-size: 29px; margin-bottom: 50px;margin-top:60px;}
+		 .heading{
+			 font-size: 29px; margin-bottom: 50px;
+			 }
 		 @media screen and (max-width:400px){
 			 .lan-img{width:100%;}
 			  .top-sec{padding:10px 0px;}
@@ -184,6 +187,8 @@
     margin: 0 auto;
     width: min-content;
 }
+.heading{
+	font-size:20px;}
 		 }
       </style>    
 
@@ -214,7 +219,7 @@
       </div>
     </nav>
   </div>      
-      
+          
 <ul class="sidenav" id="mobile-navbar">
     <li><a href="#">MENÚ</a></li>
     <hr />
@@ -259,7 +264,7 @@
 
 
 </div>
-<div class="col-sm-6" style="padding:50px 0px;">
+<div class="col-sm-6 " style="padding:50px 0px;">
 <img src="https://image.freepik.com/free-vector/recruit-agent-analyzing-candidates_74855-4565.jpg" class="lan-img" />
 
 </div>
@@ -358,7 +363,7 @@
 </div>
 <div class="col-md-6">
 <p style="margin-top:60px;color:#18c5bd;">LMS</p>
-<h1 style="font-size: 29px; margin-bottom: 50px;">Enhance Your Skills On The Ocean Of Content !</h1>
+<h1 class="heading2">Enhance Your Skills On The Ocean Of Content !</h1>
 </div>
 </div>   
 
