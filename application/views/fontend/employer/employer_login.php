@@ -1,11 +1,17 @@
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<head>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script><head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
+
 <style>
 @media screen and (max-width:400px){
 	
+.login-box{top:0px;   
+left:0px;    
+width:100% !important;   
+height: 100vh;
+transform: inherit;   
+}
 }
 
 html {
@@ -22,7 +28,7 @@ body {
   position: absolute;
     top: 50%;
     left: 50%;
-    width: 400px;   
+    width: 400px;
     padding: 40px;
     transform: translate(-50%, -50%);
     background: #fff;
@@ -30,7 +36,7 @@ body {
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.32);
     border-radius: 10px;
 	
-}
+}    
 
 .login-box h3 {
   margin: 0 0 30px;
