@@ -256,7 +256,7 @@ font-size: 32px !important;
 }      
 .newuser{font-size:37px;}
 .login-box .user-box input:focus ~ label, .login-box .user-box input:valid ~ label{font-size:32px;} 
-.remember{
+.remember{     
 margin-top: 10px;
     font-size: 37px;
     margin-bottom: 20px;
