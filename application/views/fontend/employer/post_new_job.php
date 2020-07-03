@@ -387,7 +387,7 @@
    </div>
 </div>
 <link rel="stylesheet" href="<?php echo base_url(); ?>asset/tokenjs/css/tokenfield-typeahead.css" type="text/css" />
-    <link rel="stylesheet" href="<?php echo base_url(); ?>asset/tokenjs/bootstrap-tokenfield.min.js" type="text/css" />
+    <link  href="<?php echo base_url(); ?>asset/tokenjs/bootstrap-tokenfield.min.js" />
     <link rel="stylesheet" href="<?php echo base_url(); ?>asset/tokenjs/css/bootstrap-tokenfield.css" type="text/css" />
 <script>
   $(document).ready(function() {   
