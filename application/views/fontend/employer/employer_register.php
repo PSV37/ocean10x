@@ -173,7 +173,7 @@
 		      
 		
 		       
-      </style>    
+      </style>             
           
 </head>          
 <body>       
@@ -196,8 +196,8 @@
         <li class="yellow" style="border-radius: 20px 0px 0px 20px;margin-left:60px;"><a href="https://www.consultnhire.com/employer_login">Employer Login</a></li>
        <li class="yellow2" style="border-radius: 0px 20px 20px 0px;"><a href="https://www.consultnhire.com/employer_login">Candidate Login</a></li>
 
-                  
-            
+                       
+                
         </ul>
       </div>
     </nav>
