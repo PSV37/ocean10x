@@ -267,7 +267,13 @@ input#checkbox_qu_01 {
     width: 82px;
     height: 30px;
 }
-}
+i#eyeIcon {
+   
+    
+    top: 32px;
+  
+    font-size: 33px;
+}    
          
 </style>
 
