@@ -248,10 +248,10 @@ font-size:42px;}
     border-radius: 65px;
     
     font-size: 44px;
-}	
+}	     
 .forgot{
-font-size: 32px;
-    margin-top: 26px;   
+font-size: 32px !important;
+    margin-top: 26px !important;   
 }       
 }
     
