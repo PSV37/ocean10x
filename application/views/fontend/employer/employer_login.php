@@ -22,6 +22,7 @@ body {
     box-sizing: border-box;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.32);
     border-radius: 10px;
+	
 }
 
 .login-box h3 {
@@ -212,6 +213,12 @@ input:-internal-autofill-selected{background-color:#fff !important;}
 }
 .user-box input:focus{background-color:#fff;}
 
+@media screen and (min-width: 480px){
+.login-box{height:-webkit-fill-available;
+width:-webkit-fill-available;
+}	
+}
+    
 </style>
 
 
