@@ -13,28 +13,20 @@
     
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/dashboard.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>asset/jc/css/jquery.Jcrop.css">
-    <!-- Data Table  CSS -->
+   
+
     <script src="<?php echo base_url() ?>fontend/js/bootstrap.min.js "></script>
     <link href="<?php echo base_url(); ?>asset/css/plugins/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
 
-<!--Token-Input CSS-->
-  
     <link rel="stylesheet" href="<?php echo base_url(); ?>asset/styles/token-input.css" type="text/css" />
     <link rel="stylesheet" href="<?php echo base_url(); ?>asset/styles/token-input-facebook.css" type="text/css" />
-   <!--  <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"> -->
-
-<!-- Token field css -->
-    
-    <link rel="stylesheet" href="<?php echo base_url(); ?>asset/tokenjs/css/tokenfield-typeahead.css" type="text/css" />
+   <link rel="stylesheet" href="<?php echo base_url(); ?>asset/tokenjs/css/tokenfield-typeahead.css" type="text/css" />
    <link rel="stylesheet" href="<?php echo base_url(); ?>asset/tokenjs/css/bootstrap-tokenfield.css" type="text/css" />
-    <!-- <link rel="stylesheet" href="<?php echo base_url(); ?>asset/tokenjs/bootstrap-tokenfield.min.js" /> -->
-    <!-- multiselect css -->
    
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<script src= 
-"https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" > 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src= "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" > 
   </script> 
  <link href="<?php echo base_url(); ?>asset/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
 
