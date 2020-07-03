@@ -146,8 +146,8 @@
                   <div class="col-md-4 col-sm-4">
                     <div class="formrow">
                       <label class="control-label ">Job Locations<span class="required">*</span> </label>
-                       <input type="text" name="city_id" class="form-control" id="tokenfield" placeholder="Enter Location"
-                        value=""><?php echo form_error('city_id'); ?>
+                       <input class="form-control allowalphabatescomma" type="text" name="city_id" class="form-control" id="tokenfield" placeholder="Enter Location"
+                           value="<?php if(!empty($this->session->userdata('location')) ){echo $this->session->userdata('location'); } ?>" required><?php echo form_error('city_id'); ?>   
                     </div>
                   </div>
 
