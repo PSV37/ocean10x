@@ -191,7 +191,6 @@ button#check-btn {
 }
 
 </style>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet" />
 <!---header--->
 <!--form id="form_register"-->
 <div class="container-fluid main-d">
@@ -224,25 +223,15 @@ button#check-btn {
                   <div class="col-md-3 col-sm-12">
                      <div class="formrow">
                         <label class="control-label ">Expected Domain<span class="required"> * </span> </label>
-                        <!-- <select name="job_category" id="job_category" class="form-control select2" data-style="btn-default" data-live-search="true" required="">
-                         
-                           <input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" role="textbox">
+                        <select name="job_category" id="job_category" class="form-control select2" data-style="btn-default" data-live-search="true" required="">
+                           <!-- <option value="">Select Expected Domain</option> -->
                            <?php if(!empty($job_info->job_category)) {
                               echo $this->job_category_model->selected($job_info->job_category);
                               } else {
                               echo $this->job_category_model->selected();
                               }
                               ?>
-                        </select> -->
-                        <select style="background-color:#fff;cursor:default; width: 100%;" name="txtCityName" id="txtCityName" class="form-control form-group-lg selectpicker" placeholder="Enter City...." aria-describedby="sizing-addon2" data-live-search="true" required>
- <?php if(!empty($job_info->job_category)) {
-                              echo $this->job_category_model->selected($job_info->job_category);
-                              } else {
-                              echo $this->job_category_model->selected();
-                              }
-                              ?>
-
-</select>
+                        </select>
                         <?php echo form_error('job_category'); ?>               
                      </div>
                   </div>
@@ -480,6 +469,8 @@ $("#job_category").change(function () {
        $("select").on("click", function () {
     
     $(this).next().focus();
+    alert($(this).next());
+    
     // $("input").val($(this).val());
 });
     </script>

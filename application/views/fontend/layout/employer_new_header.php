@@ -55,8 +55,7 @@
 
 }
      </style>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
-
+     
 </head>
 
 <div class="container-fluid gradient_strip" >
