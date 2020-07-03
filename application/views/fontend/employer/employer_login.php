@@ -244,10 +244,10 @@ font-size:43px;
     font-size: 44px;
 }.sign_in {
    
-    padding: 32px 316px;
+    padding: 32px 316px;     
    
     border-radius: 65px;
-    
+    margin-top:50px;
     font-size: 44px;   
 }	     
 .forgot{
@@ -256,12 +256,16 @@ font-size: 32px !important;
 }      
 .newuser{font-size:37px;}
 .login-box .user-box input:focus ~ label, .login-box .user-box input:valid ~ label{font-size:32px;} 
-.remember{
+.remember{     
 margin-top: 10px;
     font-size: 37px;
     margin-bottom: 20px;
 }
 .remb{margin-top:20px;}
+input#checkbox_qu_01 {
+    width: 82px;
+    height: 30px;
+}
 }
          
 </style>
