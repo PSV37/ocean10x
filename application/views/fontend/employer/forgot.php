@@ -17,13 +17,13 @@ box-shadow:none !important;
 } 
 .login-box h4{font-size:18px;}  
 .sign_in{width:auto !important;
-padding:8px 33px;}    
 }    
-@media screen and (max-width:500px){
+}    
+@media screen and (min-width:300) and (max-width:500px)
+{
 	.sign_in{width:auto !important;
-padding:8px 20px;} 
-}
-   
+padding:8px 33px;}  
+	}   
 html {               
   height: 100%;    
 }
