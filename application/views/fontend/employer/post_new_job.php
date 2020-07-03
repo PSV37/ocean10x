@@ -223,8 +223,9 @@ button#check-btn {
                   <div class="col-md-3 col-sm-12">
                      <div class="formrow">
                         <label class="control-label ">Expected Domain<span class="required"> * </span> </label>
-                        <select name="job_category" class="form-control select2" data-style="btn-default" data-live-search="true" required="">
+                        <!-- <select name="job_category" class="form-control select2" data-style="btn-default" data-live-search="true" required=""> -->
                            <!-- <option value="">Select Expected Domain</option> -->
+                           <select class="form-control select2">
                            <?php if(!empty($job_info->job_category)) {
                               echo $this->job_category_model->selected($job_info->job_category);
                               } else {
