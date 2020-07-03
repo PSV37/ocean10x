@@ -9,6 +9,7 @@
    ?>
    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/calender.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 <style>
    .required
    {
@@ -189,8 +190,19 @@ button#check-btn {
          border: 1px solid #ccc !important; 
      border-radius: 0px !important; 
 }
-
+input.select2-search__field {
+    display: inline-block;
+    border-radius: 0px;
+    margin-top: 0px;
+    color: black;
+}
+ul#select2-job_category-results {
+    margin-top: 27px;
+}
 </style>
+
+
+
 <!---header--->
 <!--form id="form_register"-->
 <div class="container-fluid main-d">
@@ -222,6 +234,7 @@ button#check-btn {
                   </div>
                   <div class="col-md-3 col-sm-12">
                      <div class="formrow">
+
                         <label class="control-label ">Expected Domain<span class="required"> * </span> </label>
                         <select name="job_category" id="job_category" class="form-control select2" data-style="btn-default" data-live-search="true" required="">
                            <!-- <option value="">Select Expected Domain</option> -->
@@ -408,7 +421,8 @@ button#check-btn {
       </div>
    </div>
 </div>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 <script>
     $('.select2').select2();
@@ -466,11 +480,12 @@ $("#job_category").change(function () {
          // alert(othr_benifit);
 
         }
-       $("select").on("click", function () {
-       $(this).next().css({ 
-                "color": "black", 
-                "border": "2px solid green" 
-            });
+       $("select").on("change", function () {
+         // alert('test');
+       // $(this).next().css({ 
+       //          "color": "black", 
+       //          "border": "2px solid green" 
+       //      });
    
 
     // $("input").val($(this).val());
