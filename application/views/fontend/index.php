@@ -169,9 +169,12 @@
          border-radius: 5px;     
          margin-bottom:18px;
          } 
+		 .top-sec{padding:50px 0px;}
 		 @media screen and (max-width:400px){
 			 .lan-img{width:100%;}
-			 }
+			  .top-sec{padding:10px 0px;}
+			 }   
+			 
       </style>    
 
 </head>  
@@ -215,7 +218,7 @@
     
  
 <div class="container">
-<div class="col-sm-6" style="padding:50px 0px;">
+<div class="col-sm-6 top-sec">
 <h1 style="font-size: 29px; margin-bottom: 50px;margin-top:60px;">Welcome to the ocean opportunities !</h1>
 <div class="anchor_link">
 <ul>
