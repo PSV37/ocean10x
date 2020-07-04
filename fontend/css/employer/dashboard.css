@@ -1207,3 +1207,10 @@ background-color:#fff;
 margin-bottom:-15px;
 }
  .well ul{margin-left:-10px;}
+@media screen and  (max-width:1200px){
+.employer_menu{position:unset;
+width:auto;}
+.pro-bar{position:inherit;
+right:0px;}	
+	
+	}
