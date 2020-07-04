@@ -1213,7 +1213,6 @@ margin-bottom:-15px;
 width:auto !important;}
 .pro-bar{position:inherit !important;
 right:0px !important;}	         
-	
 	}        
 	       
 @media screen and (max-width:1190px){    
@@ -1228,4 +1227,9 @@ right:0px !important;}
 }    
 .notification{position:absolute;
 top:-90px;right:82px;}
+.switch{left:32%
+top: -50px;
+    position: absolute !important;
+}	      
+
 }
