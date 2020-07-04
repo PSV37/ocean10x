@@ -16,7 +16,7 @@
   position: fixed;
   z-index: 9999;
   top: 0;
-  left: 0;
+  left: 0;    
   background-color:#fff;
   overflow-x: hidden;
   transition: 0.5s;  
@@ -366,7 +366,7 @@ $(function () {
             $(this).attr('title', 'Collapse this branch').find(' > i').addClass('icon-minus-sign').removeClass('icon-plus-sign');
         }
         e.stopPropagation();
-    });
+    });    
 });
 </script>
 <script>

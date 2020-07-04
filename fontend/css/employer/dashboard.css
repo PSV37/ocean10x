@@ -1202,22 +1202,35 @@ ul.list-unstyled.quick-links {
 .well{border-top:none !important;
 -webkit-box-shadow:none;
 padding:4px 17px;
-margin-bottom:0px;
+margin-bottom:0px;     
 background-color:#fff;       
 margin-bottom:-15px;
-}         
- .well ul{margin-left:-10px;}
- .open_sidebar{display:none;}
+} 
+ .well ul{margin-left:-10px;}       
+ .open_sidebar{display:none;}   
 @media screen and (max-width:1200px){    
 .employer_menu{position:unset !important;
 width:auto !important;}
 .pro-bar{position:inherit !important;
 right:0px !important;}	         
-	
 	}        
 	       
 @media screen and (max-width:1190px){    
 .open_sidebar{display:block;}
 .employer_menu{display:none;}     
 .menu_logo img{display:none;}
+}
+@media screen and (max-width:800px){
+	.bell{position:absolute;
+	top: -90px;   
+    right: 0px;
+}    
+.notification{position:absolute;
+top:-90px;right:82px;}
+.switch{left:32%;
+top: -50px;
+    position: absolute !important;
+}    
+.dropdown{display:none;}	      
+
 }
