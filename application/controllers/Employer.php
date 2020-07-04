@@ -998,6 +998,7 @@ class Employer extends MY_Employer_Controller
                      </div>';
                     
                 }
+                $result .='<button value="other_skill" onclick="check_other(this.value);"  style="font-size:28px;color:#18c5bd">  <i class="fa fa-plus-circle"  ></i></button>';
             } else {
                 $result .= 'Skills Not Found ';
             }

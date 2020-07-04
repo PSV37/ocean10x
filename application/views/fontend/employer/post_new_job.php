@@ -390,7 +390,7 @@ textarea#jd {
                         <div id="skills_result">Please Select Job Role.</div>
                      </div>
                    
-                           <i class="fa fa-plus-circle"  value="other_skill" onclick="check_other(this.value);"  style="font-size:48px;color:#18c5bd"></i>
+                         <!-- <button value="other_skill" onclick="check_other(this.value);"  style="font-size:28px;color:#18c5bd">  <i class="fa fa-plus-circle"  ></i></button> -->
                            
                      <div id="other_skills"><input type="text"  name="benefits[]" id="other_skill"  style="display: inline-block; width: 30%" ><button type="button" id="check-btn" onclick="save_skill();"><i class="fa fa-check"></i></button></div>
                   </div>
@@ -534,7 +534,7 @@ $("#job_category").change(function () {
     
       $('#other_terxtbx').hide();
       $('#other_skills').hide();
-      
+
 
       $(function() { 
         $("#my_date_picker").datepicker(); 
