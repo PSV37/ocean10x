@@ -2634,6 +2634,20 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             }
         }
     }
+
+    function search_title()
+    {
+        if (isset($_GET['term'])) {
+            
+            $result = $this->job_posting_model->search_job_title($_GET['term']);
+            
+            if (count($result) > 0) {
+                foreach ($result as $row)
+                    $arr_result[] = $row->name;
+                echo json_encode($arr_result);
+            }
+        }
+    }
     
     /*import question*/
     

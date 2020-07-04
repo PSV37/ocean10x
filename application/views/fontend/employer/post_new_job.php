@@ -239,7 +239,7 @@ textarea#jd {
                   <div class="col-md-3 col-sm-4" tabindex="0">
                      <div class="formrow">
                         <label class="control-label ">Job Title / Designation<span class="required"> * </span> </label>
-                        <input class="form-control allowalphanumeric" type="text" maxlength="10" name="job_title"  value="<?php if(!empty($this->session->userdata('title')) ){echo $this->session->userdata('title'); } elseif(!empty($job_info->job_title)){
+                        <input class="form-control allowalphanumeric" type="text" maxlength="10" name="job_title"  id="job_title" value="<?php if(!empty($this->session->userdata('title')) ){echo $this->session->userdata('title'); } elseif(!empty($job_info->job_title)){
                            echo $job_info->job_title;} ?><?php echo set_value('job_title'); ?>" class="form-control" autocomplete="off" required="">
                         <?php echo form_error('job_title'); ?>
                      </div>
@@ -506,6 +506,12 @@ $("#job_category").change(function () {
             $("#tokenfield").autocomplete({
               
               source: "<?php echo base_url('Employer/search_city'); ?>",
+             
+            });
+
+            $("#job_title").autocomplete({
+              
+              source: "<?php echo base_url();?>Employer/search_title",
              
             });
 
