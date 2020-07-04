@@ -234,6 +234,12 @@ a.ui-state-default.ui-state-highlight {
     background: #18c5bd;
     color: black;
 }
+.ui-autocomplete {
+    max-height: 100px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+  }
 </style>
 
 
