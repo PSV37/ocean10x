@@ -1202,11 +1202,10 @@ ul.list-unstyled.quick-links {
 .well{border-top:none !important;
 -webkit-box-shadow:none;
 padding:4px 17px;
-margin-bottom:0px;
+margin-bottom:0px;     
 background-color:#fff;       
 margin-bottom:-15px;
 } 
-.profile-accoutnt-p:hover.dropdown-menu{display:block;}        
  .well ul{margin-left:-10px;}       
  .open_sidebar{display:none;}   
 @media screen and (max-width:1200px){    
