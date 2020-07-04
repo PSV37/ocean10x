@@ -45,7 +45,7 @@
 }      
 .open_sidebar{font-size: 30px;
     cursor: pointer;
-    z-index: 2;
+    z-index: 999;
     position: absolute;
     top: -30px;}
 @media screen and (max-height: 450px) {
