@@ -1231,7 +1231,7 @@ top:-50px;right:82px;}
 top: -50px;
     position: absolute !important;
 }    
-.dropdown{display:none;}	      
+.dropdown{display:none;}	           
 
 }
 @media screen and (max-width:600px){
@@ -1239,14 +1239,17 @@ top: -50px;
 	top: -40px;      
     right: 0px;
 	font-size:0px;     
-} 
+}     
 .notification{position:absolute;
 top:-40px;right:32px;font-size:0px;}
-      .switch {
+      .switch {     
     left: 22%;
 	  }   
 	  .job_title{font-size:12px;}
-	  .job-voucher{display:table;}
-	  .apply_job_btn{margin-top:0px ;   
-	  padding:3px 35px;}
+	  .job-voucher{display:table;}        
+	  .apply_job_btn{     
+	  padding:3px 35px;
+	  margin-top:0px;}
+	  .location{margin-bottom:10px;}
+	  .dimen_img-s{margin-bottom:27px;}
 }
