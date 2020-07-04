@@ -1223,7 +1223,9 @@ right:0px !important;}
 }
 @media screen and (max-width:800px){
 	.bell{position:absolute;
-	top: -123px;
+	top: -90px;   
     right: 0px;
 }
+.notification{position:absolute;
+top:-90px;right:70px;}
 }
