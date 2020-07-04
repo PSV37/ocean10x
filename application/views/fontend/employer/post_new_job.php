@@ -154,7 +154,9 @@
    }
    input{
    border-radius: 4px;
-   border: 1px solid lightgrey;}
+   border: 1px solid lightgrey;
+   display: inline-block;
+}
    span.options_beni {
    background: #18c5bd !important;
    display: inline-block;
