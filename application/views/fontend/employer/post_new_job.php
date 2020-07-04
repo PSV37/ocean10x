@@ -250,6 +250,10 @@ a.ui-state-default.ui-state-highlight {
  span.select2-results {
     margin-top: 30px;
 }
+span.select2-selection.select2-selection--single {
+   
+    border-radius: 4px;
+}
 </style>
 
 
@@ -332,7 +336,7 @@ a.ui-state-default.ui-state-highlight {
                      <div class="formrow">
                         <label class="control-label">Education Level<span class="required"> * </span></label>
                           <input type="text" name="other_edu" class="form-control" id="other_edu" placeholder="ex.B.E"
-                           value=""> 
+                           value=""> <i class="fa fa-times" aria-hidden="true"></i>
                          </div>
                       </div>
                   <div class="col-md-3 col-sm-12" tabindex="6">
