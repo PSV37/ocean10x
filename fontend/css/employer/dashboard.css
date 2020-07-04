@@ -1213,4 +1213,7 @@ width:auto !important;}
 .pro-bar{position:inherit !important;
 right:0px !important;}	      
 	
-	}
+	}   
+@media screen and (max-width:400px){
+.employer_menu{display:none;}	
+	}	
