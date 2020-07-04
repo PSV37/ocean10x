@@ -209,23 +209,17 @@ a.ui-state-default.ui-state-highlight.ui-state-active {
 }
 textarea#jd {
    width:100%;
-    direction:rtl;
+    
    display:block;
    max-width:100%;
    line-height:1.5;
    padding:15px 15px 30px;
    border-radius:3px;
-   border:1px solid #F7E98D;
+  
    font:13px Tahoma, cursive;
    transition:box-shadow 0.5s ease;
-   box-shadow:0 4px 6px rgba(0,0,0,0.1);
-   font-smoothing:subpixel-antialiased;
-   background:linear-gradient(#F9EFAF, #F7E98D);
-   background:-o-linear-gradient(#F9EFAF, #F7E98D);
-   background:-ms-linear-gradient(#F9EFAF, #F7E98D);
-   background:-moz-linear-gradient(#F9EFAF, #F7E98D);
-   background:-webkit-linear-gradient(#F9EFAF, #F7E98D);
-    height:100%;
+  
+    height:30%;
 }
 </style>
 
@@ -466,6 +460,13 @@ textarea#jd {
 
 
 <script>
+$("#job_category").mouseover(function () {
+    $("#job_category").slideDown('slow');
+});
+
+$("#job_category").mouseleave(function () {
+    $("#job_category").slideUp('slow');
+});
 
 $("#job_category").change(function () {
                 // alert($(this).val());
@@ -501,14 +502,7 @@ $("#job_category").change(function () {
              
             });
 
-            $("#job_category").mouseover(function(){
-               alert(1);
-                 $(this)[0].size=$(this).find("option").length;
-               });
-               $("#job_category").click(function(){
-                  $(this)[0].size=0;
-               });
-        });
+           
 
         function save_benifit()
         {
