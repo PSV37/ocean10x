@@ -504,3 +504,10 @@ ul.rating-comments {
     box-shadow: 2px 2px 4px #bbbaba;
   
 }
+@media only screen and (max-width: 600px){
+:checked + span {
+    padding: 6px 13px !important;
+    border-radius: 63px !important;   
+}
+}
+   
