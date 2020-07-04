@@ -477,13 +477,13 @@ background-color: #18c5bdb5;
     padding: 5px 20px;
     border-radius: 6px;   
     color: #fff;
-    font-weight: 600;
+    font-weight: 600;   
     float: right;
 }
-@media screen and (max-width:600px){
-	label {
-    display: flex;
-}    
-.following-info{float:none;}
-.following-info2{margin-left:23px;}
-	}	    
+@media screen and (max-width:400px){
+	.box .check {
+    
+    z-index: 999;    
+    margin-top: 20px;
+	}
+	}    
