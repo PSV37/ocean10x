@@ -412,7 +412,7 @@ class Employer extends MY_Employer_Controller
                 $employer_id  = $this->session->userdata('company_profile_id');
                 $job_deadline = strtolower($this->input->post('job_deadline'));
                 $job_post_id  = $this->input->post('job_post_id');
-                $skills=implode(',', $this->input->post('skill_set'));
+                $skills= $this->input->post('skill_set');
 
                 foreach ($skills as $row) {
                     if(is_numeric($row)==1)
