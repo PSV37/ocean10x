@@ -1239,7 +1239,7 @@ top: -50px;
 	top: -40px;      
     right: 0px;
 	font-size:0px;     
-}     
+}         
 .notification{position:absolute;
 top:-40px;right:32px;font-size:0px;}
       .switch {     
@@ -1264,7 +1264,10 @@ top:-40px;right:32px;font-size:0px;}
 	.box .check {
     
     z-index: 999;    
-    margin-top: 20px;
+    margin-top: 20px;   
+	}
+	label {    
+	inline-table !important;
 	}
 	}    
      
