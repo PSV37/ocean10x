@@ -181,12 +181,11 @@
   </div> 
   
   
- <span class="open_sidebar"  onclick="openNav()">&#9776; open</span>   
 </div>
            
                       
            
-           <script>
+           <script>   
 $(function () {
     $('.tree li:has(ul)').addClass('parent_li').find(' > span').attr('title', 'Collapse this branch');
     $('.tree li.parent_li > span').on('click', function (e) {
@@ -201,14 +200,5 @@ $(function () {
         e.stopPropagation();
     });    
 });
-</script>
-<script>
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-}
-
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-}
 </script>
    
