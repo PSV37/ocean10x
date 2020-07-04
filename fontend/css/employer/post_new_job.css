@@ -484,7 +484,7 @@ div#next {
     font-size: 11px;
 	border-radius:13px !important;
 	color: #333; }	
-	     
+	         
 	
 :checked + span {   
     background: #18c5bd !important;
@@ -496,7 +496,7 @@ div#next {
 	border-radius:13px !important; }
 ul.rating-comments label {float:left;
 margin-right: 10px;
-    margin-bottom: 10px;}    
+    margin-bottom: 10px;}           
 ul.rating-comments {    
     margin-left: -40px;
 }
