@@ -221,6 +221,19 @@ textarea#jd {
   
     height:30%;
 }
+
+div#ui-datepicker-div {
+    margin-left: -22px;
+}
+
+a.ui-state-default.ui-state-active {
+    background: #70ece7;
+    color: black;
+}
+a.ui-state-default.ui-state-highlight {
+    background: #18c5bd;
+    color: black;
+}
 </style>
 
 
@@ -285,7 +298,7 @@ textarea#jd {
                   <div class="col-md-3 col-sm-12" id="job_education" tabindex="4">
                      <div class="formrow">
                         <label class="control-label">Education Level<span class="required"> * </span></label>
-                        <select name="job_edu" id="job_edu" class="form-control" data-style="btn-default" data-live-search="true" onchange="getEducationSpecial(this.value)" required="">
+                        <select name="job_edu" id="job_edu" class="form-control select2" data-style="btn-default" data-live-search="true" onchange="getEducationSpecial(this.value)" required="">
                            <!-- <option value="">Select Level </option> -->
                            
                            <?php foreach($education_level as $education){?>
@@ -309,7 +322,7 @@ textarea#jd {
                   <div class="col-md-3 col-sm-12" tabindex="6">
                      <div class="formrow">
                         <label class="control-label ">Engagement Model<span class="required"> * </span> </label>
-                        <select name="job_nature" class="form-control" data-style="btn-default" data-live-search="true" required="">
+                        <select name="job_nature" class="form-control select2" data-style="btn-default" data-live-search="true" required="">
                            <!-- <option value="">Select Engagement Model</option> -->
                            <?php if(!empty($job_info->job_nature)) {
                               echo $this->job_nature_model->selected($job_info->job_nature);
@@ -345,7 +358,7 @@ textarea#jd {
                   <div class="col-md-3 col-sm-12" id="spectial" tabindex="9">
                      <div class="formrow">
                         <label class="control-label ">Certifications Preferred <span class="required"> * </span></label>
-                        <select name="job_edu_special" id="job_edu_special" class="form-control" data-style="btn-default" data-live-search="true">
+                        <select name="job_edu_special" id="job_edu_special" class="form-control select2" data-style="btn-default" data-live-search="true">
                            <option value="">Select Certifications </option>
                         </select>
                      </div>
@@ -506,6 +519,7 @@ $("#job_category").change(function () {
             $("#tokenfield").autocomplete({
               
               source: "<?php echo base_url('Employer/search_city'); ?>",
+              maxShowItems: 5,
              
             });
 
