@@ -248,7 +248,7 @@
     
  
 <div class="container">
-<div class="col-sm-6 top-sec">
+<div class="col-md-6 top-sec">
 <h1 class="heading_first">Welcome to the ocean opportunities !</h1>
 <div class="anchor_link">
 <ul>
@@ -279,9 +279,9 @@
 
 
 </div>
-<div class="col-sm-6 " style="padding:50px 0px;">
-<img src="https://image.freepik.com/free-vector/recruit-agent-analyzing-candidates_74855-4565.jpg" class="lan-img" />
-
+<div class="col-md-6 " style="padding:50px 0px;">
+<img src="https://image.freepik.com/free-vector/recruit-agent-analyzing-candidates_74855-4565.jpg" style="width:100%"class="lan-img" />
+    
 </div>
 
 </div>
@@ -289,7 +289,7 @@
  
  <div class="container-fluid back_com">
 <div class="container">
-<div class="col-md-2 ">
+<div class="col-sm-2 ">
 <div class="head">
 <p style="margin-top:20px;color:#000;">IT</p>
 <ul>
@@ -302,7 +302,7 @@
 </ul>
 </div>
 </div>
-<div class="col-md-2 ">
+<div class="col-sm-2 ">
 <div class="head">
 <p style="margin-top:20px;color:#000;">Manufacturing</p>
 <ul>
@@ -315,7 +315,7 @@
 </ul>
 </div>
 </div>
-<div class="col-md-2 ">
+<div class="col-sm-2 ">
 <div class="head">
 <p style="margin-top:20px;color:#000;">Retail</p>
 <ul>
@@ -329,7 +329,7 @@
 
 </div>
 </div>
-<div class="col-md-2 ">
+<div class="col-sm-2 ">
 <div class="head">
 <p style="margin-top:20px;color:#000;">Automobile</p>
 <ul>
@@ -342,7 +342,7 @@
 </ul>
 </div>
 </div>
-<div class="col-md-2 ">
+<div class="col-sm-2 ">
 <div class="head">
 <p style="margin-top:20px;color:#000;">IT</p>
 <ul>
@@ -352,29 +352,29 @@
 <li>It Divine</li>
 <li>It Divine</li>
 
-</ul>
+</ul>    
 </div>
 </div>
-<div class="col-md-2 ">
+<div class="col-sm-2 ">
 <div class="head">
 <p style="margin-top:20px;color:#000;">Reatail</p>
 <ul>
 <li>It Divine</li>
 <li>It Divine</li>
-<li>It Divine</li>
+<li>It Divine</li>   
 <li>It Divine</li>
 <li>It Divine</li>
 
 </ul>
 </div>
 </div>
-
+    
 </div>
 </div>
- 
+      
  <div class="container">
 <div class="col-md-6">
-<img src="https://image.freepik.com/free-vector/illustrated-corporatebusiness-people_53876-28562.jpg" class="lan-img"/>
+<img src="https://image.freepik.com/free-vector/illustrated-corporatebusiness-people_53876-28562.jpg" style="width:100%;" class="lan-img"/>
 </div>
 <div class="col-md-6">
 <p style="margin-top:60px;color:#18c5bd;">LMS</p>
