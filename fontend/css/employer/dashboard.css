@@ -1246,7 +1246,8 @@ top:-40px;right:32px;font-size:0px;}
     left: 22%;
 	  }   
 	  .job_title{font-size:12px;}
-	  .job-voucher{display:table;}
+	  .job-voucher{display:table;}    
 	  .apply_job_btn{     
 	  padding:3px 35px;}
+	  .location{margin-bottom:10px;}
 }
