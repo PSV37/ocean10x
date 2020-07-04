@@ -553,7 +553,7 @@ $("#job_category").change(function () {
             $("#tokenfield").autocomplete({
 
               delay: 500;
-              minlength: 3;
+              minLength: 3;
               source: "<?php echo base_url('Employer/search_city'); ?>",
            
              
