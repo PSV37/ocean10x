@@ -1,8 +1,8 @@
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<head>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script><head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
+
 
 <style>
 @media screen and (max-width:400px){
@@ -48,7 +48,7 @@ body {
   padding: 0;
   color: #000;
   text-align: center;
-  font-weight: 100;
+  font-weight:500;    
 }
 h3:after {
    content: '';
