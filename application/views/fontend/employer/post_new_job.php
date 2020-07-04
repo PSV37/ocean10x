@@ -389,10 +389,14 @@ textarea#jd {
                         <label class="control-label ">Skill Set<span class="required"> * </span> </label>
                         <div id="skills_result">Please Select Job Role.</div>
                      </div>
+                   
+                           <i class="fa fa-plus-circle"  value="other_skill" onclick="check_other(this.value);"  style="font-size:48px;color:#18c5bd"></i>
+                           
+                     <div id="other_skills"><input type="text"  name="benefits[]" id="other_skill"  style="display: inline-block; width: 30%" ><button type="button" id="check-btn" onclick="save_skill();"><i class="fa fa-check"></i></button></div>
                   </div>
              
                   <div class="col-md-12 col-sm-12" tabindex="14">
-                     <div class="formrow">
+                     <div class="formrow" >
                         <label class="control-label">Other Benefits <span class="required"> * </span></label>
                      </div>
                   </div>
@@ -402,7 +406,7 @@ textarea#jd {
                      <div class="formrow" id="benifit">
                         <?php foreach($benefits as $benefit){?>
                         <label>
-                        <input type="checkbox" value="<?php echo $benefit['id']; ?>" class="btn-default1" checked="" name="benefits[]">
+                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" checked="" name="benefits[]">
                         <span><?php echo $benefit['benifit']; ?></span>
                         </label>
                         <?php } ?>
@@ -466,8 +470,6 @@ $(function(){
 <script src="<?php echo base_url() ?>asset/js/search.js"></script>
 <link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/jquery-ui.css"  type="text/css" />
 
-
-
 <script>
 
 $("#job_category").change(function () {
@@ -504,7 +506,7 @@ $("#job_category").change(function () {
              
             });
 
-           
+           });
 
         function save_benifit()
         {
@@ -513,27 +515,20 @@ $("#job_category").change(function () {
          // alert(othr_benifit);
 
         }
-       $("select").on("change", function () {
-         // alert('test');
-       // $(this).next().css({ 
-       //          "color": "black", 
-       //          "border": "2px solid green" 
-       //      });
-   
 
-    // $("input").val($(this).val());
-});
+         function save_skill()
+        {
+         var othr_skill = document.getElementById('other_skill').value;
+         $('#skills_result').append('<div  id="myfields" class="myfields" ><ul class="rating-comments" > <label> <input type="checkbox" name="skill_set[]"  value=' +othr_skill+'  class="btn-default1" checked> <span>'+othr_skill+'</span> </label> </ul> </div>')
+         // alert(othr_benifit);
+
+        }
+      
+
+      
+
     </script>
-    
- 
-  <script src= 
-"https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" > 
-  </script> 
-  
-  <script src= 
-"https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" > 
-  </script> 
-  
+
   <script> 
     $(document).ready(function() { 
     
@@ -551,17 +546,13 @@ $("#job_category").change(function () {
     // var x = document.getElementById("training_title");
     if (value=='other') 
   {
-    
-      // x1.type = "text";
-      $('#other_terxtbx').show();
-      // x.type = "hidden";
-   
-  }
+         $('#other_terxtbx').show();
+}
+else if(value == 'other_skill' )
   else
   {
       $('#other_terxtbx').hide();
 
-    // x1.type = "hidden";
     x1.value = value;
   }
     
@@ -571,10 +562,8 @@ $("#job_category").change(function () {
 <script>
    $(document).ready(function(){
  
-      // $('#other_terxtbx').hide();
+   
       $('#training_title1').hide();
-
-    
    
      var id=document.getElementById('job_role');
      $.ajax({
