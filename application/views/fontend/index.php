@@ -183,7 +183,7 @@
 }
 		 @media screen and (max-width:400px){
 			 nav .brand-logo {
-    left: 66%;
+    left: 80%;
     -webkit-transform: translateX(-50%);
     /* transform: translateX(-50%); */
     ): ;
