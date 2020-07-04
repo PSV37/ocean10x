@@ -218,19 +218,19 @@ a.ui-state-default.ui-state-highlight.ui-state-active {
                <input type="hidden" name="job_post_id" value="<?php if(!empty($job_info->job_post_id)){echo $job_info->job_post_id;} ?>">
                <div id="svg_wrap"></div>
                <!-- <section> -->
-                  <div class="col-md-3 col-sm-4">
+                  <div class="col-md-3 col-sm-4" tabindex="0">
                      <div class="formrow">
                         <label class="control-label ">Job Title / Designation<span class="required"> * </span> </label>
-                        <input class="form-control allowalphanumeric" type="text" maxlength="10" name="job_title" tabindex="0" value="<?php if(!empty($this->session->userdata('title')) ){echo $this->session->userdata('title'); } elseif(!empty($job_info->job_title)){
+                        <input class="form-control allowalphanumeric" type="text" maxlength="10" name="job_title"  value="<?php if(!empty($this->session->userdata('title')) ){echo $this->session->userdata('title'); } elseif(!empty($job_info->job_title)){
                            echo $job_info->job_title;} ?><?php echo set_value('job_title'); ?>" class="form-control" autocomplete="off" required="">
                         <?php echo form_error('job_title'); ?>
                      </div>
                   </div>
-                  <div class="col-md-3 col-sm-4">
+                  <div class="col-md-3 col-sm-4" tabindex="1">
                      <div class="formrow">
                         <label class="control-label ">Job Locations<span class="required"> * </span> </label>
                       
-                           <input type="text" name="city_id" class="form-control allowalphabatescomma" id="tokenfield" tabindex="1" placeholder="Enter Location"
+                           <input type="text" name="city_id" class="form-control allowalphabatescomma" id="tokenfield"  placeholder="Enter Location"
                         value="<?php if(!empty($this->session->userdata('location')) ){echo $this->session->userdata('location'); } ?>" required><?php echo form_error('city_id'); ?>
                        
                                      
