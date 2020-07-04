@@ -384,11 +384,12 @@
 
 <div class="container-fluid">
 <div class="container" style="border-top:solid 1px #f2f2f2ba;">
-<h1 style="font-size: 21px; margin-bottom:25px;margin-top:50px;">Looking For Professionals ??</h1>
+<h1 style="font-size: 21px; margin-bottom:25px;margin-top:50px;text-align:center;">Looking For Professionals ??</h1>\
+<div class="row" style="text-align:center;">
 <button class="your_job">Post Your Job</button>
-
 </div>
 </div>
+</div>    
  <div class="container" style="padding:55px 0px;">
 
 <div class="col-md-3">  
