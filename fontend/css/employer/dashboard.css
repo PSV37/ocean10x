@@ -1236,11 +1236,17 @@ top: -50px;
 }
 @media screen and (max-width:600px){
 	.bell{position:absolute;
-	top: -40px;   
+	top: -40px;      
     right: 0px;
 	font-size:0px;     
 } 
 .notification{position:absolute;
-top:-40px;right:82px;font-size:0px;}
-      
+top:-40px;right:32px;font-size:0px;}
+      .switch {
+    left: 22%;
+	  }   
+	  .job_title{font-size:12px;}
+	  .job-voucher{display:table;}
+	  .apply_job_btn{margin-top:0px ;   
+	  padding:3px 35px;}
 }
