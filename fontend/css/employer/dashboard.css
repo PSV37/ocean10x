@@ -1223,7 +1223,7 @@ right:0px !important;}
 @media screen and (max-width:800px){
 	.bell{position:absolute;
 	top: -50px;   
-    right: 0px;
+    right: 0px;     
 }               
 .notification{position:absolute;
 top:-50px;right:82px;}
