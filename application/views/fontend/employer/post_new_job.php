@@ -267,12 +267,21 @@ div#other_skills {
 }
 </style>
 
-
+    
 
 <!---header--->
 <!--form id="form_register"-->
 <div class="container-fluid main-d">
    <div class="container">
+    <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">HTML</a></li>
+      <li><a href="#">CSS</a></li>
+      <li><a href="#">JavaScript</a></li>
+    </ul>
+  </div>
       <div class="col-md-12">
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
          <form id="test" action="<?php echo base_url() ?>employer/job_post" method="post">
