@@ -1259,4 +1259,9 @@ top:-40px;right:32px;font-size:0px;}
 }    
 .following-info{float:none !important;}
 .following-info2{margin-left:23px !important;}
-	}	    
+	}	
+@media screen and (max-width:400px){	    
+	label {
+    display: inline-table;    
+}
+}
