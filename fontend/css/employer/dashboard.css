@@ -1262,6 +1262,6 @@ top:-40px;right:32px;font-size:0px;}
 	}	
 @media screen and (max-width:400px){	    
 	label {
-    display: inline-table;    
-}
+    display: inline-table !important;    
+}      
 }
