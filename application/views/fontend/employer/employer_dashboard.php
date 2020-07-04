@@ -9,8 +9,8 @@
         <div class="col-md-12">
         	<?php $this->load->view('fontend/layout/employer_menu.php'); ?>
             
-            <div class="col-md-6 mid-section">
-            <div class="row">    
+            <div class="col-lg-6 mid-section">
+            <div class="row">           
             <div class="col-md-12 bd-1">
                    
             <div class="dash-box-w">
