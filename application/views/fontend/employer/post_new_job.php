@@ -431,17 +431,7 @@ a.ui-state-default.ui-state-highlight.ui-state-active {
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.min.js"></script>
 <script>
-    $(function(){
-    $(".chosen-select").chosen();
-        $(".chosen-container-single").hover(function(){
-            $(this).addClass("chosen-with-drop");
-            $(this).addClass("chosen-container-active");
-            $('.chosen-select').trigger("chosen:open");
-        },function(){
-            $(this).removeClass("chosen-with-drop");
-            $(this).removeClass("chosen-container-active");
-        });
-    });
+   
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 <script>
@@ -491,6 +481,18 @@ $("#job_category").change(function () {
               source: "<?php echo base_url('Employer/search_city'); ?>",
              
             });
+
+             $(function(){
+             $(".chosen-select").chosen();
+                 $(".chosen-container-single").hover(function(){
+                     $(this).addClass("chosen-with-drop");
+                     $(this).addClass("chosen-container-active");
+                     $('.chosen-select').trigger("chosen:open");
+                 },function(){
+                     $(this).removeClass("chosen-with-drop");
+                     $(this).removeClass("chosen-container-active");
+                 });
+             });
         });
 
         function save_benifit()
