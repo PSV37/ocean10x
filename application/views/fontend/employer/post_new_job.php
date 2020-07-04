@@ -552,10 +552,8 @@ $("#job_category").change(function () {
 
             $("#tokenfield").autocomplete({
 
-              var x = document.getElementById("tokenfield").length;
-
-              alert(x)
-              
+              delay: 500;
+              minlength: 3;
               source: "<?php echo base_url('Employer/search_city'); ?>",
            
              

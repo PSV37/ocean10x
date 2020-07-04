@@ -696,7 +696,7 @@ public function get_all_company_by_banksbook()
     }
 
     function search_city($title){
-        $this->db->like('city_name', $title , 'both');
+        $this->db->like('city_name', $title , 'after');
         $this->db->order_by('city_name', 'ASC');
         // $this->db->limit('10');
         return $this->db->get('city')->result();
