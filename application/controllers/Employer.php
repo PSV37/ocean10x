@@ -240,6 +240,7 @@ class Employer extends MY_Employer_Controller
             $data['location']     = $this->input->post('city_id');
             // $data['experience']=$experience;
             $data['sal_from']     = $this->input->post('sal_from');
+            $data['preffered_certificates']     = $this->input->post('preffered_certificates');
             $data['sal_to']       = $this->input->post('sal_to');
             $data['salary_range'] = $data['sal_from'] . '-' . $data['sal_to'];
             $ed                   = $this->input->post('job_edu');
@@ -312,13 +313,9 @@ class Employer extends MY_Employer_Controller
                 'job_title' => $this->session->userdata('title'),
                 'job_slugs' => $this->slug->create_uri($this->session->userdata('title')),
                 'job_desc' => $this->session->userdata('job_desc'),
-                // 'job_category'       => $this->session->userdata('job_category'),
                 'education' => $this->session->userdata('edu'),
                 'benefits' => $this->session->userdata('benefits'),
                 'experience' => $this->session->userdata('experience'),
-                
-                //                   'job_location'       => $this->session->userdata('city_id'),
-                // 'state_id'           => $this->session->userdata('state_id'),
                 'city_id' => $this->session->userdata('location'),
                 'job_nature' => $this->session->userdata('jobnature'),
                 'job_edu' => $this->session->userdata('edu'),
@@ -332,11 +329,7 @@ class Employer extends MY_Employer_Controller
                 // 'job_types'          => $this->input->post('job_types'),
                 "job_deadline" => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('job_deadline'))))
                 
-                //                   'preferred_age'      => $this->input->post('preferred_age_from'),
-                // 'preferred_age_to'   => $this->input->post('preferred_age_to'),
-                // 'working_hours'      => $this->input->post('working_hours'),
-                // 'is_test_required'      => $this->input->post('job_test_requirment'),
-                
+               
             );
             if (empty($job_post_id)) {
                 $this->job_posting_model->insert($job_info);
@@ -351,8 +344,8 @@ class Employer extends MY_Employer_Controller
                 );
                 
                 $result = $this->Master_model->master_insert($data, 'employer_audit_record');
-                
-                // redirect('job/show/'.$job_info['job_slugs']);
+                // redirect('job/show/'.$job_info['job_slugs']);.
+                $this->session->unset_userdata('title','job_desc','edu','benefits','experience','location','jobnature','no_jobs','jobrole','skills','salary_range');
                 redirect('employer/active_job');
             } else {
                 
@@ -562,6 +555,7 @@ class Employer extends MY_Employer_Controller
                 }
             }
         } else {
+            $this->session->unset_userdata('title','job_desc','edu','benefits','experience','location','jobnature','no_jobs','jobrole','skills','salary_range');
             $data['city']            = $this->Master_model->getMaster('city', $where = false);
             $data['country']         = $this->Master_model->getMaster('country', $where = false);
             $data['state']           = $this->Master_model->getMaster('state', $where = false);
