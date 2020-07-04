@@ -230,7 +230,7 @@
 
                   
             
-        </ul>
+        </ul>    
       </div>
     </nav>
   </div>      
@@ -238,11 +238,11 @@
 <ul class="sidenav" id="mobile-navbar">
     <li><a href="#">MENÚ</a></li>
     <hr />
-    <li><a href="#">Inicio</a></li>
-    <li><a href="#">Portafolio</a></li>
-    <li><a href="#">Acerca de mí</a></li>
-    <li><a href="#">Contacto</a></li>
-    <li><a href="#" class="btn white indigo-text">Inciar sesión</a></li>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">Training</a></li>
+    <li><a href="#">Post Resume</a></li>
+    <li><a href="#" class="btn white indigo-text">Contact Us</a></li>
   </ul>    
 </div>  
     
