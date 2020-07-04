@@ -412,19 +412,30 @@ class Employer extends MY_Employer_Controller
                 $employer_id  = $this->session->userdata('company_profile_id');
                 $job_deadline = strtolower($this->input->post('job_deadline'));
                 $job_post_id  = $this->input->post('job_post_id');
-                $skills=implode(',', $this->input->post('skill_set'));
+                $skills= $this->input->post('skill_set');
 
                 foreach ($skills as $row) {
                     if(is_numeric($row)==1)
                     {
-                        echo "numeric";
+                       
                     }
                     else
                     {
-                        echo "string";
+                        $where_sk  = "skill_name = '$row' and status=1";
+                        $select_sk = "skill_name ,id";
+                        $skills    = $this->Master_model->getMaster('skill_master', $where_sk, $join = FALSE, $order = false, $field = false, $select_sk, $limit = false, $start = false, $search = false);
+                        if (empty($skills)) {
+                            
+                            $skill=array('skill_name' => $row);
+                    $result = $this->Master_model->master_insert($skill, 'skill_master');
+                    if (isset($result) && ! empty($result)) {
+                        array_push($skills, $result);
+                    }
+
+                        }
                     }
                     # code...
-                }die;
+                }
 
                 $job_info     = array(
                     'company_profile_id' => $employer_id,
@@ -444,7 +455,7 @@ class Employer extends MY_Employer_Controller
                     'no_jobs' => $this->input->post('no_jobs'),
                     'edu_specialization' => $this->input->post('job_edu_special'), //new added field
                     'job_role' => $this->input->post('job_role'), //new added field
-                    'skills_required' => implode(',', $this->input->post('skill_set')), //new added field
+                    'skills_required' => implode(',', $skills), //new added field
                     
                     // 'job_level'          => $this->input->post('job_level'),
                     'salary_range' => $salary_range,
