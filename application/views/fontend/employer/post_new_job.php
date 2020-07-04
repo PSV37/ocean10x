@@ -201,9 +201,9 @@ input.select2-search__field {
     margin-top: 0px;
     color: black;
 }
-ul#select2-job_category-results {
+/*ul#select2-job_category-results {
     margin-top: 27px;
-}
+}*/
 a.ui-state-default.ui-state-highlight.ui-state-active {
     background: #18c5bd;
     color: black;
@@ -247,6 +247,9 @@ a.ui-state-default.ui-state-highlight {
  * html .ui-autocomplete {
      height: 100px;
  }
+ span.select2-results {
+    margin-top: 30px;
+}
 </style>
 
 
