@@ -240,7 +240,7 @@ a.ui-state-default.ui-state-highlight.ui-state-active {
                      <div class="formrow">
 
                         <label class="control-label ">Expected Domain<span class="required"> * </span> </label>
-                        <select name="job_category" id="job_category" class="form-control select2" data-style="btn-default" data-live-search="true" required="">
+                        <select name="job_category" id="job_category" class="form-control select2 chosen-select" data-style="btn-default" data-live-search="true" required="">
                            <!-- <option value="">Select Expected Domain</option> -->
                            <?php if(!empty($job_info->job_category)) {
                               echo $this->job_category_model->selected($job_info->job_category);
@@ -425,8 +425,21 @@ a.ui-state-default.ui-state-highlight.ui-state-active {
       </div>
    </div>
 </div>
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.min.css">
+<script>
+    $(function(){
+    $(".chosen-select").chosen();
+        $(".chosen-container-single").hover(function(){
+            $(this).addClass("chosen-with-drop");
+            $(this).addClass("chosen-container-active");
+            $('.chosen-select').trigger("chosen:open");
+        },function(){
+            $(this).removeClass("chosen-with-drop");
+            $(this).removeClass("chosen-container-active");
+        });
+    });
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 <script>
     $('.select2').select2();
