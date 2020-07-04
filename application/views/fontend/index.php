@@ -280,8 +280,8 @@
 
 </div>
 <div class="col-sm-6 " style="padding:50px 0px;">
-<img src="https://image.freepik.com/free-vector/recruit-agent-analyzing-candidates_74855-4565.jpg" class="lan-img" />
-
+<img src="https://image.freepik.com/free-vector/recruit-agent-analyzing-candidates_74855-4565.jpg" style="width:100%"class="lan-img" />
+    
 </div>
 
 </div>
