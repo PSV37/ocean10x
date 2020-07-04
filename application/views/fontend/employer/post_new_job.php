@@ -10,6 +10,8 @@
    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/calender.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.min.css">
+
 <style>
    .required
    {
@@ -154,7 +156,9 @@
    }
    input{
    border-radius: 4px;
-   border: 1px solid lightgrey;}
+   border: 1px solid lightgrey;
+   display: inline-block;
+}
    span.options_beni {
    background: #18c5bd !important;
    display: inline-block;
@@ -426,7 +430,6 @@ a.ui-state-default.ui-state-highlight.ui-state-active {
    </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.min.css">
 <script>
     $(function(){
     $(".chosen-select").chosen();
