@@ -221,7 +221,7 @@
  <span class="open_sidebar"  onclick="openNav()">&#9776; open</span>   
 </div>
            
-               
+                      
            
            <script>
 $(function () {
