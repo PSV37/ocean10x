@@ -519,6 +519,7 @@ $("#job_category").change(function () {
             $("#tokenfield").autocomplete({
               
               source: "<?php echo base_url('Employer/search_city'); ?>",
+              maxShowItems: 5,
              
             });
 
