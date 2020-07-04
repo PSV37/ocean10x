@@ -203,8 +203,9 @@
     width: min-content;
 }         
 .heading2{
-	font-size:20px;}
+	font-size:20px;}    
 		 }
+.heading_first{margin-top:0px;}		 
       </style>    
 
 </head>  
