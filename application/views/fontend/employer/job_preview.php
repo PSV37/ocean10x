@@ -315,7 +315,7 @@ li.right-title_seperate {
                              
                              <hr>
                              <div class="job_dis">
-                             		 <li class="left-title_detail" >Detailed Job Description :</li><li class="right-title_detail">&emsp;<?php echo $job_desc; ?></li>
+                             		 <li class="left-title_detail" >Detailed Job Description :</li><p class="right-title_detail">&emsp;<?php echo $job_desc; ?></p>
                              
                              
                              </div>
