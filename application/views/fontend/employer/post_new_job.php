@@ -548,12 +548,16 @@ $("#job_category").change(function () {
 </script>
 
     <script type="text/javascript">
-        $(document).ready(function(){
+        // $(document).ready(function(){
 
             $("#tokenfield").autocomplete({
+
+              var x = document.getElementById("tokenfield").length;
+
+              alert(x)
               
               source: "<?php echo base_url('Employer/search_city'); ?>",
-              maxShowItems: 5,
+           
              
             });
 
@@ -563,7 +567,7 @@ $("#job_category").change(function () {
              
             });
 
-           });
+           // });
 
         function save_benifit()
         {
