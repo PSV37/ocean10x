@@ -14,7 +14,11 @@
     border-radius: 63px !important;   
 }
 }
-         
+ @media screen and (max-width:600px){
+.btn-bottom_3{display: grid;
+	}
+	button{margin-left:0px;}   
+ }
 </style>
 <!-- Page Title start -->
 
