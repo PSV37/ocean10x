@@ -389,8 +389,10 @@ textarea#jd {
                         <label class="control-label ">Skill Set<span class="required"> * </span> </label>
                         <div id="skills_result">Please Select Job Role.</div>
                      </div>
-                   
-                       <button type="button" id="skl_btn" value="other_skill" onclick="check_other(this.value);"  style="font-size:28px;color:#18c5bd;border: none; background: none;">  <i class="fa fa-plus-circle"  ></i></button>
+                   <div id="skl_btn">
+                      <button type="button"  value="other_skill" onclick="check_other(this.value);"  style="font-size:28px;color:#18c5bd;border: none; background: none;">  <i class="fa fa-plus-circle"  ></i></button>
+                   </div>
+                       
                            
                      <div id="other_skills"><input type="text"  name="benefits[]" id="other_skill"  style="display: inline-block; width: 30%" ><button type="button" id="check-btn" onclick="save_skill();"><i class="fa fa-check"></i></button></div>
                   </div>
@@ -610,7 +612,7 @@ else if(value == 'other_skill' )
                   {
                      $('#skills_result').html(data);
                         $('#skl_btn').show();
-                     
+
                   } 
            });
    
