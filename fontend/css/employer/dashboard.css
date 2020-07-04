@@ -7,7 +7,7 @@ background-color:#f5f5f5 !important;}
 				position:fixed;
 				z-index:9;
 }
-.container-fluid.main-d {    
+.container-fluid.main-d {
     padding-top: 45px;
 }
 .container{max-width:1280px;}
@@ -471,9 +471,9 @@ nav{overflow:auto;}
     margin-top:39px;
     box-shadow: 1px 0px 3px #e0dddd;
 	padding: 0px 0px 20px 0px;   
-	border-radius:13px;     
-	background-color:#fff;    
-}    
+	border-radius:13px;
+	background-color:#fff;
+}
 .dash-box-w{background-color:#fff;}  
 .o-hidden {
     overflow: hidden !important;
@@ -1202,75 +1202,9 @@ ul.list-unstyled.quick-links {
 .well{border-top:none !important;
 -webkit-box-shadow:none;
 padding:4px 17px;
-margin-bottom:0px;     
+margin-bottom:0px;
 background-color:#fff;       
 margin-bottom:-15px;
-} 
- .well ul{margin-left:-10px;}       
- .open_sidebar{display:none;}   
-
-@media screen and (max-width:1200px){    
-.employer_menu{position:unset !important;
-width:auto !important;}
-.pro-bar{position:inherit !important;
-right:0px !important;}	         
-	}            
-	       
-@media screen and (max-width:1190px){    
-.open_sidebar{display:block;}
-.employer_menu{display:none;}     
-.menu_logo img{display:none;}
-}
-@media screen and (max-width:800px){
-	.bell{position:absolute;
-	top: -50px;   
-    right: 0px;     
-}               
-.notification{position:absolute;
-top:-50px;right:82px;}       
-.switch{left:32%;
-top: -50px;
-    position: absolute !important;
-}    
-	           
-
-}
-@media screen and (max-width:600px){
-	.bell{position:absolute;
-	top: -40px;      
-    right: 0px;
-	font-size:0px;     
 }         
-.notification{position:absolute;
-top:-40px;right:32px;font-size:0px;}
-      .switch {     
-    left: 22%;
-	  }   
-	  .job_title{font-size:12px;}
-	  .job-voucher{display:table;}        
-	  .apply_job_btn{     
-	  padding:3px 35px;
-	  margin-top:0px;}
-	  .location{margin-bottom:10px;}
-	  .dimen_img-s{margin-bottom:27px;}
-}
-@media screen and (max-width:600px){
-	label {       
-    display: flex;
-}    
-.following-info{float:none !important;}
-.following-info2{margin-left:23px !important;}
-li.left-title {font-weight:500 !important;}        
-li.right-title {font-weight:500 !important;}
-	}	
-@media screen and (max-width:400px){
-	.box .check {
-    
-    z-index: 999;    
-    margin-top: 20px;      
-	}
-	label {    
-	display:inline-table !important;
-	}
-	}    
-     
+ .well ul{margin-left:-10px;}
+ .open_sidebar{display:none;}
