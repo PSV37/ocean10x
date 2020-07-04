@@ -216,7 +216,16 @@
   
   <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  
+  <li <?php if ($activemenu == 'dashboard') { ?>
+                                 class="active"
+                                <?php } ?> >
+                                  <a data-dl-view="true" data-dl-title="Dashboard" href="<?php echo base_url(); ?>employer">
+                                    <span class="icon-container">
+                                      <i class="fas fa-tachometer-alt"></i>
+                                    </span>
+                                    <span class="text item">Dashboard</span>
+                                  </a>
+                                </li>
      
   
   
