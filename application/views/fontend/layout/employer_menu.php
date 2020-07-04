@@ -1,3 +1,4 @@
+
 <style>
 .employer_menu {
     background-color:#fff;   
@@ -8,6 +9,44 @@
     width: 20%;
     border: solid 1px #dedbdb;
     box-shadow: 1px 0px 3px #e0dddd;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
 
 
@@ -171,10 +210,145 @@
                 <!-- WHAT MOVES END -->
                 </div>
               </aside>
-            </div>   
-            </div>
+              
+             
+  </div> 
+  
+  <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <li <?php if ($activemenu == 'dashboard') { ?>
+                                 class="active"
+                                <?php } ?> >
+                                  <a data-dl-view="true" data-dl-title="Dashboard" href="<?php echo base_url(); ?>employer">
+                                    <span class="icon-container">
+                                      <i class="fas fa-tachometer-alt"></i>
+                                    </span>
+                                    <span class="text item">Dashboard</span>
+                                  </a>
+                                </li>
+   <li <?php if ($activemenu == 'cv_bank') { ?>
+                                 class="active"
+                                <?php } ?>>
+                                  <a data-dl-view="true" data-dl-title="My profile" href="<?php echo base_url() ?>employer/corporate-cv-bank">
+                                    <span class="icon-container"><i class="fas fa-user-alt"></i></span>
+                                    <span class="text item">CV Bank</span>
+                                  </a>
+                                  <div class="row tree well">
+                                                 
+                                                     <ul>
+                                            <li>
+                                                <span><i class="fas fa-folder-open"></i> Parent</span>
+                                                <ul>
+                                                    <li>
+                                                        <span><i class="fas fa-folder-open"></i> Child</span> 
+                                                        <ul>
+                                                            <li>
+                                                                <span><i class="fas fa-folder-open"></i>Grand Child</span>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <span><i class="fas fa-folder-open"></i> Child</span> 
+                                                        <ul>
+                                                            <li>
+                                                                <span><i class="fas fa-folder-open"></i> Grand Child</span> 
+                                                            </li>
+                                                            
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                                
+                                            </li>
+                                            
+                                        </ul>  
+                                                   
+                                                     
+                                                    </div>
+                                </li>
+                                <li <?php if ($activemenu == 'job_post') { ?>
+                                 class="active"
+                                <?php } ?> >
+                                  <a data-dl-view="true" data-dl-title="Contacts" href="<?php echo base_url(); ?>employer/job_post">
+                                    <span class="icon-container">
+                                    <i class="fas fa-phone-volume"></i>
+                                    </span>
+                                    <span class="text item">Post New Job</span>
+                                  </a>
+                                </li>
+                                <li <?php if ($activemenu == 'active_job') { ?>
+                                 class="active"
+                                <?php } ?>>
+                                  <a data-dl-view="true" data-dl-title="Recruitments" href="<?php echo base_url() ?>employer/active-job">
+                                    <span class="icon-container">
+                                    <i class="fas fa-filter"></i></span>
+                                      <span class="text item">Active Job Post</span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a data-dl-view="true" data-dl-title="Mobility" href="/jobprofile/generate">
+                                    <span class="icon-container">
+                                      <i class="fas fa-map-signs"></i></span>
+                                        <span class="text item">Pending Jobs</span>
+                                  </a>
+                                </li>
+                                <li <?php if ($activemenu == 'questionbank') { ?>
+                                 class="active"
+                                <?php } ?> >
+                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url(); ?>employer/all-questions">
+                                    <span class="icon-container">
+                                      <i class="fas fa-map-signs"></i>
+                                    </span>
+                                    <span class="text item">Question Bank</span>
+                                  </a>
+                                </li>
+                                <li <?php if ($activemenu == 'oceanchamp') { ?>
+                                 class="active"
+                                <?php } ?> >
+                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/ocean_champ_test">
+                                      <span class="icon-container">
+                                        <i class="fas fa-map-signs"></i>
+                                      </span>
+                                      <span class="text item">OceanChamp</span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/Employee">
+                                      <span class="icon-container">
+                                        <i class="fas fa-map-signs"></i>
+                                      </span>
+                                      <span class="text item">Skill Upgrade</span>
+                                  </a>    
+                                </li>
+                                <li <?php if ($activemenu == 'Recruiter') { ?>
+                                 class="active"
+                                <?php } ?>>
+                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/Recruiter">
+                                    <span class="icon-container">
+                                       <i class="fas fa-map-signs"></i>
+                                    </span>
+                                    <span class="text item"> Company / Recruiter</span>
+                                  </a>
+                                </li>
+                                
+                                 <li <?php if ($activemenu == 'addemployee') { ?>
+                                 class="active"
+                                <?php } ?> >
+                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/addemployee">
+                                    <span class="icon-container">
+                                       <i class="fas fa-map-signs"></i>
+                                    </span>
+                                    <span class="text item">Employee Management</span>
+                                  </a>
+                                </li>    
+  
+  
+  
+  
+</div>
+ <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>   
+</div>
            
-           
+               
            
            <script>
 $(function () {
@@ -192,3 +366,13 @@ $(function () {
     });
 });
 </script>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+   
