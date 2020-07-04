@@ -207,6 +207,26 @@ a.ui-state-default.ui-state-highlight.ui-state-active {
     background: #18c5bd;
     color: black;
 }
+textarea#jd {
+   width:100%;
+    direction:rtl;
+   display:block;
+   max-width:100%;
+   line-height:1.5;
+   padding:15px 15px 30px;
+   border-radius:3px;
+   border:1px solid #F7E98D;
+   font:13px Tahoma, cursive;
+   transition:box-shadow 0.5s ease;
+   box-shadow:0 4px 6px rgba(0,0,0,0.1);
+   font-smoothing:subpixel-antialiased;
+   background:linear-gradient(#F9EFAF, #F7E98D);
+   background:-o-linear-gradient(#F9EFAF, #F7E98D);
+   background:-ms-linear-gradient(#F9EFAF, #F7E98D);
+   background:-moz-linear-gradient(#F9EFAF, #F7E98D);
+   background:-webkit-linear-gradient(#F9EFAF, #F7E98D);
+    height:100%;
+}
 </style>
 
 
@@ -414,7 +434,7 @@ a.ui-state-default.ui-state-highlight.ui-state-active {
                   <div class="col-md-12 col-sm-4" tabindex="17">
                      <div class="formrow">
                         <label class="control-label">Job Description <span class="required"> * </span></label>
-                        <textarea name="job_desc" class="form-control ckeditor" placeholder="Job Description"><?php if(!empty($job_info)) echo $job_info->job_desc; ?></textarea><?php echo form_error('job_desc'); ?>                                  
+                        <textarea name="job_desc" id="jd" class="form-control ckeditor" placeholder="Job Description"><?php if(!empty($job_info)) echo $job_info->job_desc; ?></textarea><?php echo form_error('job_desc'); ?>                                  
                      </div>
                   </div>
                <!-- </section> -->
@@ -429,8 +449,7 @@ a.ui-state-default.ui-state-highlight.ui-state-active {
       </div>
    </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.min.js"></script>
-<script>
+
    
 </script>
 
