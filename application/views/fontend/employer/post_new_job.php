@@ -255,7 +255,7 @@ a.ui-state-default.ui-state-highlight.ui-state-active {
                   <div class="col-sm-3 p-m-2">
                      <div class="formrow">
                         <label  class="control-label ">Job Role<span class="required"> *</span></label>
-                        <select name="job_role" id="job_role" class="form-control col-sm-5" onchange="getSkillsdetails(this.value)" required="">
+                        <select name="job_role" id="job_role" class="form-control col-sm-5 select2" onchange="getSkillsdetails(this.value)" required="">
                            <!-- <option>select job Role</option> -->
                            <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
                               ?> 
