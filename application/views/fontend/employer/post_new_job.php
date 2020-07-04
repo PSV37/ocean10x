@@ -533,6 +533,8 @@ $("#job_category").change(function () {
     $(document).ready(function() { 
     
       $('#other_terxtbx').hide();
+      $('#other_skills').hide();
+      
 
       $(function() { 
         $("#my_date_picker").datepicker(); 
@@ -549,9 +551,13 @@ $("#job_category").change(function () {
          $('#other_terxtbx').show();
 }
 else if(value == 'other_skill' )
+{
+   $('#other_skills').show();
+}
   else
   {
       $('#other_terxtbx').hide();
+      $('#other_skills').hide();
 
     x1.value = value;
   }
