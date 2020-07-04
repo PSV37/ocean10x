@@ -290,9 +290,10 @@ textarea#jd {
                            
                            <?php foreach($education_level as $education){?>
                            <option value="<?php echo $education['education_level_id']; ?>"<?php if($this->session->userdata('edu')==$education['education_level_id']){ echo "selected"; }elseif($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
+                           
+                           <?php } ?>
                            <option value="other">Other </option>
                            <option value="other">None </option>
-                           <?php } ?>
                         </select>
                         
                         <?php echo form_error('job_edu'); ?>                
@@ -513,7 +514,8 @@ $("#job_category").change(function () {
         function save_benifit()
         {
          var othr_benifit = document.getElementById('other_benifit').value;
-         $('#benifit').append('<label><input type="checkbox" value="'+othr_benifit+'" class="btn-default1" checked="" name="benefits[]"><span>'+othr_benifit+'</span></label>')
+         $('#benifit').append('<label><input type="checkbox" value="'+othr_benifit+'" class="btn-default1" checked="" name="benefits[]"><span>'+othr_benifit+'</span></label>');
+         document.getElementById('other_benifit').value = '';
          // alert(othr_benifit);
 
         }
@@ -521,7 +523,9 @@ $("#job_category").change(function () {
          function save_skill()
         {
          var othr_skill = document.getElementById('other_skill').value;
-         $('#skills_result').append('<div  id="myfields" class="myfields" ><ul class="rating-comments" > <label> <input type="checkbox" name="skill_set[]"  value=' +othr_skill+'  class="btn-default1" checked> <span>'+othr_skill+'</span> </label> </ul> </div>')
+         $('#skills_result').append('<div  id="myfields" class="myfields" ><ul class="rating-comments" > <label> <input type="checkbox" name="skill_set[]"  value=' +othr_skill+'  class="btn-default1" checked> <span>'+othr_skill+'</span> </label> </ul> </div>');
+
+         document.getElementById('other_skill').value = '';
          // alert(othr_benifit);
 
         }
