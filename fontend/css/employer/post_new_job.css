@@ -391,20 +391,20 @@ input {
 	
 }
 li.left-title {
-    list-style-type: none;      
+    list-style-type: none;   
     float: left;
 	font-size: 12px;
-    font-weight: 500;
+    font-weight: 100;
 	width:83px;
 	height:15px;
 }
 li.right-title {
     list-style-type: none;
 	font-size: 12px;
-    font-weight: 500;
+    font-weight: 100;
 	width:179px;
 }
-.icon-info {     
+.icon-info {
     margin-left:60px;
 	margin-bottom:10px;
 }
@@ -486,7 +486,7 @@ div#next {
 	color: #333; }	
 	     
 	
-:checked + span {   
+:checked + span {
     background: #18c5bd !important;
     display: inline-block;
     width: 100%;
