@@ -1208,6 +1208,7 @@ margin-bottom:-15px;
 } 
  .well ul{margin-left:-10px;}       
  .open_sidebar{display:none;}   
+
 @media screen and (max-width:1200px){    
 .employer_menu{position:unset !important;
 width:auto !important;}
@@ -1259,6 +1260,8 @@ top:-40px;right:32px;font-size:0px;}
 }    
 .following-info{float:none !important;}
 .following-info2{margin-left:23px !important;}
+li.left-title {font-weight:500;}    
+li.right-title {font-weight:500;}
 	}	
 @media screen and (max-width:400px){
 	.box .check {
