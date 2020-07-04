@@ -701,6 +701,13 @@ public function get_all_company_by_banksbook()
         return $this->db->get('city')->result();
     }
 
+    function search_job_title($title)
+    {
+        $this->db->like('name', $title , 'both');
+        $this->db->order_by('name', 'ASC');
+        return $this->db->get('job_designation')->result();
+    }
+
     function search_job_keywords($title){
         $this->db->like('job_title', $title , 'both');
         $this->db->order_by('job_title', 'ASC');
