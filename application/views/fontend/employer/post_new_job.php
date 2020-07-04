@@ -191,10 +191,10 @@ button#check-btn {
 .select2-container .select2-selection--single{
     height:34px !important;
 }
-.select2-container--default .select2-selection--single{
+/*.select2-container--default .select2-selection--single{
          border: 1px solid #ccc !important; 
      border-radius: 0px !important; 
-}
+}*/
 input.select2-search__field {
     display: inline-block;
     border-radius: 0px;
