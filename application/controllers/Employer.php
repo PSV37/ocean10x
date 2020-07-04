@@ -421,7 +421,7 @@ class Employer extends MY_Employer_Controller
                     }
                     else
                     {
-                        $where_sk  = "skill_name = $row and status=1";
+                        $where_sk  = "skill_name = '$row' and status=1";
                         $select_sk = "skill_name ,id";
                         $skills    = $this->Master_model->getMaster('skill_master', $where_sk, $join = FALSE, $order = false, $field = false, $select_sk, $limit = false, $start = false, $search = false);
                         if (empty($skills)) {
