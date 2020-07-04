@@ -382,14 +382,11 @@
 </div>
 </div>   
 
-
+<div class="container-fluid">
 <div class="container" style="border-top:solid 1px #f2f2f2ba;">
-<div class="col-md-6">
 <h1 style="font-size: 21px; margin-bottom:25px;margin-top:50px;">Looking For Professionals ??</h1>
 <button class="your_job">Post Your Job</button>
-</div>
-<div class="col-md-6">
-<img src="https://image.freepik.com/free-vector/email-messaging-email-marketing-campaign_183665-8.jpg" class="lan-img" style="width:400px;margin-left:180px;"/>
+
 </div>
 </div>
  <div class="container" style="padding:55px 0px;">
