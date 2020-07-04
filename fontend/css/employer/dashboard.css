@@ -1253,3 +1253,10 @@ top:-40px;right:32px;font-size:0px;}
 	  .location{margin-bottom:10px;}
 	  .dimen_img-s{margin-bottom:27px;}
 }
+@media screen and (max-width:600px){
+	label {    
+    display: flex;
+}    
+.following-info{float:none;}
+.following-info2{margin-left:23px;}
+	}	    
