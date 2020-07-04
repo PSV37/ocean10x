@@ -255,8 +255,8 @@ span.select2-selection.select2-selection--single {
     border-radius: 4px;
 }
 #edu_txt {
-    margin-left: 171px;
-    margin-bottom: 21px;
+    margin-left:  160px;
+ 
     margin-top: -30px;
     background: none;
     border: none;
