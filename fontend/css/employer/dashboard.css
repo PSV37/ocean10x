@@ -1254,9 +1254,9 @@ top:-40px;right:32px;font-size:0px;}
 	  .dimen_img-s{margin-bottom:27px;}
 }
 @media screen and (max-width:600px){
-	label {    
+	label {       
     display: flex;
 }    
-.following-info{float:none;}
-.following-info2{margin-left:23px;}
+.following-info{float:none !important;}
+.following-info2{margin-left:23px !important;}
 	}	    
