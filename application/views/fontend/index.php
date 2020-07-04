@@ -289,7 +289,7 @@
  
  <div class="container-fluid back_com">
 <div class="container">
-<div class="col-md-2 ">
+<div class="col-sm-2 ">
 <div class="head">
 <p style="margin-top:20px;color:#000;">IT</p>
 <ul>
@@ -302,7 +302,7 @@
 </ul>
 </div>
 </div>
-<div class="col-md-2 ">
+<div class="col-sm-2 ">
 <div class="head">
 <p style="margin-top:20px;color:#000;">Manufacturing</p>
 <ul>
@@ -315,7 +315,7 @@
 </ul>
 </div>
 </div>
-<div class="col-md-2 ">
+<div class="col-sm-2 ">
 <div class="head">
 <p style="margin-top:20px;color:#000;">Retail</p>
 <ul>
@@ -329,7 +329,7 @@
 
 </div>
 </div>
-<div class="col-md-2 ">
+<div class="col-sm-2 ">
 <div class="head">
 <p style="margin-top:20px;color:#000;">Automobile</p>
 <ul>
@@ -342,7 +342,7 @@
 </ul>
 </div>
 </div>
-<div class="col-md-2 ">
+<div class="col-sm-2 ">
 <div class="head">
 <p style="margin-top:20px;color:#000;">IT</p>
 <ul>
@@ -352,16 +352,16 @@
 <li>It Divine</li>
 <li>It Divine</li>
 
-</ul>
+</ul>    
 </div>
 </div>
-<div class="col-md-2 ">
+<div class="col-sm-2 ">
 <div class="head">
 <p style="margin-top:20px;color:#000;">Reatail</p>
 <ul>
 <li>It Divine</li>
 <li>It Divine</li>
-<li>It Divine</li>
+<li>It Divine</li>   
 <li>It Divine</li>
 <li>It Divine</li>
 
