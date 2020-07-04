@@ -481,9 +481,9 @@ background-color: #18c5bdb5;
     float: right;
 }
 @media screen and (max-width:400px){
-	.check {
-    right: -35px;
-    z-index: 999;
-    margin-top: 33px;
+	.box .check {
+    
+    z-index: 999;    
+    margin-top: 20px;
 	}
-	}
+	}    
