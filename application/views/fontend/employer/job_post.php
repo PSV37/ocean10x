@@ -17,9 +17,15 @@
  @media screen and (max-width:600px){
 .btn-bottom_3{display: grid;
 float: inherit;
-	}
+	}    
 	button{margin-left:0px;}   
  }
+ @media screen and (max-width:400px){	    
+	label {
+    display: inline-table !important;     
+	margin-left: -30px;    
+}      
+}
 </style>
 <!-- Page Title start -->
 
