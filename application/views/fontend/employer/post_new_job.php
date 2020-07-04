@@ -446,7 +446,16 @@ textarea#jd {
 
    
 </script>
-
+<script>
+$(function(){
+    $('#job_category').hover(function() {
+        $(this).attr('size', $('option').length);
+    },
+    function() {
+        $(this).attr('size', 1);
+    });
+});
+</script>
 <script>
     $('.select2').select2();
 </script>
@@ -460,13 +469,6 @@ textarea#jd {
 
 
 <script>
-$("#job_category").mouseover(function () {
-    $("#job_category").slideDown('slow');
-});
-
-$("#job_category").mouseleave(function () {
-    $("#job_category").slideUp('slow');
-});
 
 $("#job_category").change(function () {
                 // alert($(this).val());
