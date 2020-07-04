@@ -8,6 +8,13 @@
     margin-bottom: 5px;
     font-weight: bold;
 }
+@media only screen and (max-width: 600px){
+:checked + span {
+    padding: 6px 13px !important;
+    border-radius: 63px !important;   
+}
+}
+         
 </style>
 <!-- Page Title start -->
 

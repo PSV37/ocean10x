@@ -486,7 +486,7 @@ div#next {
 	color: #333; }	
 	     
 	
-:checked + span {
+:checked + span {   
     background: #18c5bd !important;
     display: inline-block;
     width: 100%;
