@@ -10,7 +10,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
 
 .card {
     position: relative;
-    height: 100%;
+    height: auto;
     width: 100%;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
@@ -230,6 +230,9 @@ li.right-title_seperate {
 }
 span.select2-results {
     margin-top: 30px;
+}
+p.right-title_detail {
+    white-space: pre-wrap;
 }
 </style>
 
