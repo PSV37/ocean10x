@@ -199,6 +199,10 @@ input.select2-search__field {
 ul#select2-job_category-results {
     margin-top: 27px;
 }
+a.ui-state-default.ui-state-highlight.ui-state-active {
+    background: #18c5bd;
+    color: black;
+}
 </style>
 
 
@@ -217,7 +221,7 @@ ul#select2-job_category-results {
                   <div class="col-md-3 col-sm-4">
                      <div class="formrow">
                         <label class="control-label ">Job Title / Designation<span class="required"> * </span> </label>
-                        <input class="form-control allowalphanumeric" type="text" maxlength="10" name="job_title" value="<?php if(!empty($this->session->userdata('title')) ){echo $this->session->userdata('title'); } elseif(!empty($job_info->job_title)){
+                        <input class="form-control allowalphanumeric" type="text" maxlength="10" name="job_title" tabindex="0" value="<?php if(!empty($this->session->userdata('title')) ){echo $this->session->userdata('title'); } elseif(!empty($job_info->job_title)){
                            echo $job_info->job_title;} ?><?php echo set_value('job_title'); ?>" class="form-control" autocomplete="off" required="">
                         <?php echo form_error('job_title'); ?>
                      </div>
@@ -226,7 +230,7 @@ ul#select2-job_category-results {
                      <div class="formrow">
                         <label class="control-label ">Job Locations<span class="required"> * </span> </label>
                       
-                           <input type="text" name="city_id" class="form-control allowalphabatescomma" id="tokenfield" placeholder="Enter Location"
+                           <input type="text" name="city_id" class="form-control allowalphabatescomma" id="tokenfield" tabindex="1" placeholder="Enter Location"
                         value="<?php if(!empty($this->session->userdata('location')) ){echo $this->session->userdata('location'); } ?>" required><?php echo form_error('city_id'); ?>
                        
                                      
