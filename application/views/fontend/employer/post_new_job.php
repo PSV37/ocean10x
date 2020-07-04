@@ -255,11 +255,15 @@ span.select2-selection.select2-selection--single {
     border-radius: 4px;
 }
 #edu_txt {
-    margin-left: 171px;
-    margin-bottom: 21px;
+    margin-left:  160px;
+ 
     margin-top: -30px;
     background: none;
     border: none;
+}
+
+div#other_skills {
+    margin-top: 10;
 }
 </style>
 
@@ -385,8 +389,11 @@ span.select2-selection.select2-selection--single {
                   <div class="col-md-3 col-sm-12" id="spectial" tabindex="9">
                      <div class="formrow">
                         <label class="control-label ">Certifications Preferred <span class="required"> * </span></label>
-                        <select name="job_edu_special" id="job_edu_special" class="form-control select2" data-style="btn-default" data-live-search="true">
-                           <option value="">Select Certifications </option>
+                        <select name="preffered_certificates" id="preffered_certificates" class="form-control select2" data-style="btn-default" data-live-search="true">
+                           <?php foreach($certificates as $certificate){?>
+                           <option value="<?php echo $certificate['certificate_id']; ?>"<?php if($this->session->userdata('edu')==$certificate['certificate_id']){ echo "selected"; }elseif($job_info->job_edu==$certificate['certificate_id']){ echo "selected"; }?>><?php echo $certificate['certificate_name']; ?></option>
+                           
+                           <?php } ?>
                         </select>
                      </div>
                   </div>
