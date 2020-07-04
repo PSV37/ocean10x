@@ -42,8 +42,12 @@
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
-}
-
+}      
+.open_sidebar{font-size: 30px;
+    cursor: pointer;
+    z-index: 2;
+    position: absolute;
+    top: -30px;}
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
@@ -345,7 +349,7 @@
   
   
 </div>
- <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>   
+ <span class="open_sidebar"  onclick="openNav()">&#9776; open</span>   
 </div>
            
                
