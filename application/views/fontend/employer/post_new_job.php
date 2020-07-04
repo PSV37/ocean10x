@@ -250,6 +250,17 @@ a.ui-state-default.ui-state-highlight {
  span.select2-results {
     margin-top: 30px;
 }
+span.select2-selection.select2-selection--single {
+   
+    border-radius: 4px;
+}
+#edu_txt {
+    margin-left: 171px;
+    margin-bottom: 21px;
+    margin-top: -30px;
+    background: none;
+    border: none;
+}
 </style>
 
 
@@ -332,7 +343,7 @@ a.ui-state-default.ui-state-highlight {
                      <div class="formrow">
                         <label class="control-label">Education Level<span class="required"> * </span></label>
                           <input type="text" name="other_edu" class="form-control" id="other_edu" placeholder="ex.B.E"
-                           value=""> 
+                           value=""> <button type="button" id="edu_txt" onclick="education_list();"><i class="fa fa-undo" aria-hidden="true"></i></button>
                          </div>
                       </div>
                   <div class="col-md-3 col-sm-12" tabindex="6">
@@ -483,14 +494,15 @@ a.ui-state-default.ui-state-highlight {
    
 </script>
 <script>
-$(function(){
-    $('#job_category').hover(function() {
-        $(this).attr('size', $('option').length);
-    },
-    function() {
-        $(this).attr('size', 1);
-    });
-});
+function education_list()
+{
+   var x1 = document.getElementById("training_title1");
+    var x = document.getElementById("job_education");
+    
+      $('#job_education').show();
+      $('#training_title1').hide();
+
+}
 </script>
 <script>
     $('.select2').select2();
