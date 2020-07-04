@@ -230,7 +230,7 @@ a.ui-state-default.ui-state-highlight.ui-state-active {
                      <div class="formrow">
                         <label class="control-label ">Job Locations<span class="required"> * </span> </label>
                       
-                           <input type="text" name="city_id" class="form-control allowalphabatescomma" id="tokenfield"  placeholder="Enter Location"
+                           <input type="text" name="city_id" class="form-control allowalphabatescomma" id="tokenfield" style="display: inline-block;"  placeholder="Enter Location"
                         value="<?php if(!empty($this->session->userdata('location')) ){echo $this->session->userdata('location'); } ?>" required><?php echo form_error('city_id'); ?>
                        
                                      
