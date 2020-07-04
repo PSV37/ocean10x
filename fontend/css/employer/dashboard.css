@@ -1221,3 +1221,7 @@ right:0px !important;}
 .employer_menu{display:none;}     
 .menu_logo img{display:none;}
 }
+@media screen and (max-width:800px){
+	.bell{position:absolute;
+	top:-80px;}
+	}
