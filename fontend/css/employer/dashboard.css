@@ -1203,7 +1203,14 @@ ul.list-unstyled.quick-links {
 -webkit-box-shadow:none;
 padding:4px 17px;
 margin-bottom:0px;
-background-color:#fff;   
+background-color:#fff;       
 margin-bottom:-15px;
-}
+}     
  .well ul{margin-left:-10px;}
+@media screen and (max-width:1200px){    
+.employer_menu{position:unset;
+width:auto;}
+.pro-bar{position:inherit;
+right:0px;}	
+	
+	}
