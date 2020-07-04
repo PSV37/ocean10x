@@ -382,9 +382,9 @@
 </div>
 </div>   
 
-<div class="container-fluid">
+<div class="container-fluid" style="background-color: aliceblue;">
 <div class="container" style="border-top:solid 1px #f2f2f2ba;">
-<h1 style="font-size: 21px; margin-bottom:25px;margin-top:50px;text-align:center;">Looking For Professionals ??</h1>\
+<h1 style="font-size: 21px; margin-bottom:18px;margin-top:50px;text-align:center;">Looking For Professionals ??</h1>\
 <div class="row" style="text-align:center;">
 <button class="your_job">Post Your Job</button>
 </div>
