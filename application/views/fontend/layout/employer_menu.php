@@ -14,13 +14,12 @@
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 9999;
   top: 0;
   left: 0;
   background-color:#fff;
   overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
+  transition: 0.5s;  
 }
 
 .sidenav a {
@@ -41,9 +40,13 @@
   top: 0;
   right: 25px;
   font-size: 36px;
-  margin-left: 50px;
-}
-
+  margin-left: 50px;   
+}      
+.open_sidebar{font-size: 30px;
+    cursor: pointer;
+    z-index: 999;
+    position: absolute;
+    top: -30px;}
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
@@ -345,7 +348,7 @@
   
   
 </div>
- <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>   
+ <span class="open_sidebar"  onclick="openNav()">&#9776; open</span>   
 </div>
            
                
