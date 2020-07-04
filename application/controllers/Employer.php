@@ -296,7 +296,7 @@ class Employer extends MY_Employer_Controller
             $data['country']         = $this->Master_model->getMaster('country', $where = false);
             $data['state']           = $this->Master_model->getMaster('state', $where = false);
             $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
-            
+            $data['benefits']           = $this->Master_model->getMaster('common_company_benifits', $where = false);
             $where_cn              = "status=1";
             $select                = "job_role_title, skill_set ,id";
             $data['job_role_data'] = $this->Master_model->getMaster('job_role', $where_cn, $join = FALSE, $order = false, $field = false, $select, $limit = false, $start = false, $search = false);
@@ -477,7 +477,7 @@ class Employer extends MY_Employer_Controller
                     'job_nature' => $this->input->post('job_nature'),
                     'job_edu' => $this->input->post('job_edu'),
                     'no_jobs' => $this->input->post('no_jobs'),
-                    'edu_specialization' => $this->input->post('job_edu_special'),
+                    // 'edu_specialization' => $this->input->post('job_edu_special'),
                      //new added field
                     'preffered_certificates' => $this->input->post('preffered_certificates'),
                     'job_role' => $this->input->post('job_role'), //new added field
