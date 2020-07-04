@@ -10,6 +10,48 @@
     border: solid 1px #dedbdb;
     box-shadow: 1px 0px 3px #e0dddd;
 }
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;    
+  background-color:#fff;
+  overflow-x: hidden;
+  transition: 0.5s;  
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;    
+  text-decoration: none;
+  font-size: 15px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;   
+}      
+.open_sidebar{font-size: 30px;
+    cursor: pointer;
+    z-index: 999;
+    position: absolute;
+    top: -30px;}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
 
 </style>    
 <?php $activemenu = $this->session->userdata('activemenu'); ?>
