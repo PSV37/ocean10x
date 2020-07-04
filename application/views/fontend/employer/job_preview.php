@@ -29,6 +29,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         border-radius: 13px;
+        height: auto;
     }
 
    .card .back {
