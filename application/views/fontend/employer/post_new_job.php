@@ -261,6 +261,10 @@ span.select2-selection.select2-selection--single {
     background: none;
     border: none;
 }
+
+div#other_skills {
+    margin-top: 10;
+}
 </style>
 
 
