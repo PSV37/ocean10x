@@ -480,4 +480,10 @@ background-color: #18c5bdb5;
     font-weight: 600;
     float: right;
 }
-	
+@media screen and (max-width:600px){
+	label {
+    display: flex;
+}    
+.following-info{float:none;}
+.following-info2{margin-left:23px;}
+	}	
