@@ -263,7 +263,31 @@ class Employer extends MY_Employer_Controller
             
             
             $data['job_desc'] = $this->input->post('job_desc');
-            $data['skills']   = implode(',', $this->input->post('skill_set'));
+              $skills= $this->input->post('skill_set');
+
+                foreach ($skills as $row) {
+                    if(is_numeric($row)==1)
+                    {
+                       
+                    }
+                    else
+                    {
+                        $where_sk  = "skill_name = '$row' and status=1";
+                        $select_sk = "skill_name ,id";
+                        $skills    = $this->Master_model->getMaster('skill_master', $where_sk, $join = FALSE, $order = false, $field = false, $select_sk, $limit = false, $start = false, $search = false);
+                        if (empty($skills)) {
+                            
+                            $skill=array('skill_name' => $row);
+                    $result = $this->Master_model->master_insert($skill, 'skill_master');
+                    if (isset($result) && ! empty($result)) {
+                        array_push($skills, $result);
+                    }
+
+                        }
+                    }
+                    # code...
+                }
+            $data['skills']   = implode(',', $skills);
             $data['benefits'] = implode(',', $this->input->post('benefits'));
             $this->session->set_userdata($data);
             $this->load->view('fontend/employer/job_preview', $data);
