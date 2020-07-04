@@ -483,6 +483,7 @@ $("#job_category").change(function () {
             });
 
             $("#job_category").mouseover(function(){
+               alert(1);
                  $(this)[0].size=$(this).find("option").length;
                });
                $("#job_category").click(function(){
