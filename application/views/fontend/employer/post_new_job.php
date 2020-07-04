@@ -10,7 +10,8 @@
    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/calender.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.min.css">
+<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/jquery-ui.css"  type="text/css" />
+
 
 <style>
    .required
@@ -200,9 +201,9 @@ input.select2-search__field {
     margin-top: 0px;
     color: black;
 }
-ul#select2-job_category-results {
+/*ul#select2-job_category-results {
     margin-top: 27px;
-}
+}*/
 a.ui-state-default.ui-state-highlight.ui-state-active {
     background: #18c5bd;
     color: black;
@@ -233,6 +234,21 @@ a.ui-state-default.ui-state-active {
 a.ui-state-default.ui-state-highlight {
     background: #18c5bd;
     color: black;
+}
+ .ui-autocomplete {
+     max-height: 100px;
+     overflow-y: auto;
+     /* prevent horizontal scrollbar */
+     overflow-x: hidden;
+ }
+ /* IE 6 doesn't support max-height
+* we use height instead, but this forces the menu to always be this tall
+*/
+ * html .ui-autocomplete {
+     height: 100px;
+ }
+ span.select2-results {
+    margin-top: 30px;
 }
 </style>
 
@@ -484,7 +500,6 @@ $(function(){
 <script src="<?php echo base_url() ?>asset/tokenjs/bootstrap-tokenfield.js"></script>
 <script src="<?php echo base_url() ?>asset/tokenjs/typeahead.bundle.min.js"></script>
 <script src="<?php echo base_url() ?>asset/js/search.js"></script>
-<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/jquery-ui.css"  type="text/css" />
 
 <script>
 

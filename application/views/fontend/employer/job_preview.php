@@ -228,7 +228,9 @@ background-color: #11a59e;
 li.right-title_seperate {
     margin-left: 58px;
 }
-
+span.select2-results {
+    margin-top: 30px;
+}
 </style>
 
 <div class="container-fluid main-d">
