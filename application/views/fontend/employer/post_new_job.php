@@ -221,6 +221,19 @@ textarea#jd {
   
     height:30%;
 }
+
+div#ui-datepicker-div {
+    margin-left: -22px;
+}
+
+a.ui-state-default.ui-state-active {
+    background: #70ece7;
+    color: black;
+}
+a.ui-state-default.ui-state-highlight {
+    background: #18c5bd;
+    color: black;
+}
 </style>
 
 
