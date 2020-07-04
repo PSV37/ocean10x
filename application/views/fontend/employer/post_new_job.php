@@ -240,11 +240,11 @@ a.ui-state-default.ui-state-highlight.ui-state-active {
                                      
                      </div>
                   </div>
-                  <div class="col-md-3 col-sm-12">
+                  <div class="col-md-3 col-sm-12" tabindex="2">
                      <div class="formrow">
 
                         <label class="control-label ">Expected Domain<span class="required"> * </span> </label>
-                        <select name="job_category" id="job_category" class="form-control select2 chosen-select" data-style="btn-default" data-live-search="true" required="">
+                        <select name="job_category" id="job_category" class="form-control select2 limiter-options" data-role="limiter" data-style="btn-default" data-live-search="true" required="">
                            <!-- <option value="">Select Expected Domain</option> -->
                            <?php if(!empty($job_info->job_category)) {
                               echo $this->job_category_model->selected($job_info->job_category);
@@ -256,7 +256,7 @@ a.ui-state-default.ui-state-highlight.ui-state-active {
                         <?php echo form_error('job_category'); ?>               
                      </div>
                   </div>
-                  <div class="col-sm-3 p-m-2">
+                  <div class="col-sm-3 p-m-2" tabindex="3">
                      <div class="formrow">
                         <label  class="control-label ">Job Role<span class="required"> *</span></label>
                         <select name="job_role" id="job_role" class="form-control col-sm-5 select2" onchange="getSkillsdetails(this.value)" required="">
@@ -268,7 +268,7 @@ a.ui-state-default.ui-state-highlight.ui-state-active {
                         </select>
                      </div>
                   </div>
-                  <div class="col-md-3 col-sm-12" id="job_education">
+                  <div class="col-md-3 col-sm-12" id="job_education" tabindex="4">
                      <div class="formrow">
                         <label class="control-label">Education Level<span class="required"> * </span></label>
                         <select name="job_edu" id="job_edu" class="form-control" data-style="btn-default" data-live-search="true" onchange="getEducationSpecial(this.value)" required="">
@@ -284,14 +284,14 @@ a.ui-state-default.ui-state-highlight.ui-state-active {
                         <?php echo form_error('job_edu'); ?>                
                      </div>
                   </div>
-                   <div class="col-md-3 col-sm-12" id="training_title1">
+                   <div class="col-md-3 col-sm-12" id="training_title1" tabindex="5">
                      <div class="formrow">
                         <label class="control-label">Education Level<span class="required"> * </span></label>
                           <input type="text" name="other_edu" class="form-control" id="other_edu" placeholder="ex.B.E"
                            value=""> 
                          </div>
                       </div>
-                  <div class="col-md-3 col-sm-12">
+                  <div class="col-md-3 col-sm-12" tabindex="6">
                      <div class="formrow">
                         <label class="control-label ">Engagement Model<span class="required"> * </span> </label>
                         <select name="job_nature" class="form-control" data-style="btn-default" data-live-search="true" required="">
@@ -306,7 +306,7 @@ a.ui-state-default.ui-state-highlight.ui-state-active {
                         <?php echo form_error('job_nature'); ?>               
                      </div>
                   </div>
-                  <div class="col-md-3 col-sm-12">
+                  <div class="col-md-3 col-sm-12" tabindex="7">
                      <div class="formrow">
                         <label class="control-label ">Expected Experience(in years)<span class="required"> *</span> </label>
                         <!--  <input class="form-control" type="text" name="experience" maxlength="2" value="<?php 
@@ -321,13 +321,13 @@ a.ui-state-default.ui-state-highlight.ui-state-active {
                         </div>
                      </div>
                   </div>
-                  <div class="col-md-3 col-sm-12">
+                  <div class="col-md-3 col-sm-12" tabindex="8">
                      <div class="formrow">
                         <label class="control-label ">Number of Positions<span class="required"> *</span> </label>
                         <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2" name="no_jobs" placeholder="ex.02" required value="<?php if(!empty($this->session->userdata('no_jobs')) ){echo $this->session->userdata('no_jobs'); }elseif(!empty($job_info->no_jobs)){ echo $job_info->no_jobs; } ?>" autocomplete="off">  <?php echo form_error('no_jobs'); ?>                
                      </div>
                   </div>
-                  <div class="col-md-3 col-sm-12" id="spectial">
+                  <div class="col-md-3 col-sm-12" id="spectial" tabindex="9">
                      <div class="formrow">
                         <label class="control-label ">Certifications Preferred <span class="required"> * </span></label>
                         <select name="job_edu_special" id="job_edu_special" class="form-control" data-style="btn-default" data-live-search="true">
@@ -335,7 +335,7 @@ a.ui-state-default.ui-state-highlight.ui-state-active {
                         </select>
                      </div>
                   </div>
-                  <div class="col-md-3 col-sm-12">
+                  <div class="col-md-3 col-sm-12" tabindex="10">
                      <div class="formrow">
                         <label class="control-label ">Ocean Test Required <span class="required">*</span></label>
                         <select name="job_test_requirment" id="job_test_requirment" class="form-control" data-style="btn-default" data-live-search="true" required="">
@@ -345,7 +345,7 @@ a.ui-state-default.ui-state-highlight.ui-state-active {
                         <?php echo form_error('job_test_requirment'); ?>             
                      </div>
                   </div>
-                  <div class="col-md-3 col-sm-12">
+                  <div class="col-md-3 col-sm-12" tabindex="11">
                      <div class="formrow">
                         <label class="control-label " style="margin-left:-162px;">Salary Range (INR)<span class="required"> *</span> </label>
                         <div class="col-md-3 formrow" style="width:100px;margin-left:-14px;margin-top:37px;">
@@ -356,7 +356,7 @@ a.ui-state-default.ui-state-highlight.ui-state-active {
                         </div>
                      </div>
                   </div>
-                  <div class="col-md-3 col-sm-12">
+                  <div class="col-md-3 col-sm-12" tabindex="12">
                      <div class="formrow">
                         <label class="control-label">Deadline<span class="required"> * </span> </label>
                        <?php
@@ -369,7 +369,7 @@ a.ui-state-default.ui-state-highlight.ui-state-active {
                      </div>
                   </div>
                   
-                  <div class="col-sm-12 p-m-2">
+                  <div class="col-sm-12 p-m-2" tabindex="13">
                      <div class="formrow">
                         <!-- donain is nothing but industry -->
                         <label class="control-label ">Skill Set<span class="required"> * </span> </label>
@@ -377,14 +377,14 @@ a.ui-state-default.ui-state-highlight.ui-state-active {
                      </div>
                   </div>
              
-                  <div class="col-md-12 col-sm-12">
+                  <div class="col-md-12 col-sm-12" tabindex="14">
                      <div class="formrow">
                         <label class="control-label">Other Benefits <span class="required"> * </span></label>
                      </div>
                   </div>
                   <!--     <textarea name="benefits" class="form-control ckeditor" placeholder="Company benefits offered"><?php if(!empty($job_info)) echo $job_info->benefits; ?>--->
                   <!--  <div class="form-control benifit-div" style="padding:10px 10px; height:auto;" > -->
-                  <div class="col-md-12 col-sm-12">
+                  <div class="col-md-12 col-sm-12" tabindex="15">
                      <div class="formrow" id="benifit">
                         <?php foreach($benefits as $benefit){?>
                         <label>
@@ -405,13 +405,13 @@ a.ui-state-default.ui-state-highlight.ui-state-active {
                   <!-- </textarea><?php echo form_error('benefits'); ?>                                  -->
                   <!-- </div>
                      </div>  -->
-                  <div class="col-md-6 col-sm-12">
+                  <div class="col-md-6 col-sm-12" tabindex="16" >
                      <div class=" formrow">
                         <label class="control-label">Upload JD <span class="required"> * </span></label>
                         <input type="file" name="">                                  
                      </div>
                   </div>
-                  <div class="col-md-12 col-sm-4">
+                  <div class="col-md-12 col-sm-4" tabindex="17">
                      <div class="formrow">
                         <label class="control-label">Job Description <span class="required"> * </span></label>
                         <textarea name="job_desc" class="form-control ckeditor" placeholder="Job Description"><?php if(!empty($job_info)) echo $job_info->job_desc; ?></textarea><?php echo form_error('job_desc'); ?>                                  
@@ -421,8 +421,8 @@ a.ui-state-default.ui-state-highlight.ui-state-active {
                <div class="btn-bottom_3">
                   <!-- <div class="button" id="prev">&larr; Previous</div> -->
                   <!-- <div class="button" id="next">Next &rarr;</div> -->
-                  <button class="button" type="submit" name="preview">preview</button>
-                  <button type="submit" class="button">Post Job</button>
+                  <button tabindex="18" class="button" type="submit" name="preview">preview</button>
+                  <button tabindex="19" type="submit" class="button">Post Job</button>
                </div>
             </div>
          </form>
@@ -433,7 +433,7 @@ a.ui-state-default.ui-state-highlight.ui-state-active {
 <script>
    
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
 <script>
     $('.select2').select2();
 </script>
@@ -482,17 +482,12 @@ $("#job_category").change(function () {
              
             });
 
-             $(function(){
-             $(".chosen-select").chosen();
-                 $(".chosen-container-single").hover(function(){
-                     $(this).addClass("chosen-with-drop");
-                     $(this).addClass("chosen-container-active");
-                     $('.chosen-select').trigger("chosen:open");
-                 },function(){
-                     $(this).removeClass("chosen-with-drop");
-                     $(this).removeClass("chosen-container-active");
-                 });
-             });
+            $("#job_category").mouseover(function(){
+                 $(this)[0].size=$(this).find("option").length;
+               });
+               $("#job_category").click(function(){
+                  $(this)[0].size=0;
+               });
         });
 
         function save_benifit()
