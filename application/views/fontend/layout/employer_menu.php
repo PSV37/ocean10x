@@ -17,16 +17,16 @@
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color:#fff;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
 }
 
 .sidenav a {
-  padding: 8px 8px 8px 32px;
+  padding: 8px 8px 8px 32px;    
   text-decoration: none;
-  font-size: 25px;
+  font-size: 15px;
   color: #818181;
   display: block;
   transition: 0.3s;
