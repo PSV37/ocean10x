@@ -539,7 +539,8 @@ $("#job_category").change(function () {
     $('#tokenfield').tokenfield({
       autocomplete: {
         source: "<?php echo base_url('Employer/search_city'); ?>",
-        delay: 100
+        delay: 100,
+        minLength: 3;
       },
 
       showAutocompleteOnFocus: true,
@@ -554,27 +555,13 @@ $("#job_category").change(function () {
 
  //      });
  //  });
-</script>
-
-    <script type="text/javascript">
-        $(document).ready(function(){
-
-            $("#tokenfield").autocomplete({
-
-              delay: 500;
-              minLength: 3;
-              source: "<?php echo base_url('Employer/search_city'); ?>",
-           
-             
-            });
-
-            $("#job_title").autocomplete({
+$("#job_title").autocomplete({
               
               source: "<?php echo base_url();?>Employer/search_title",
              
             });
 
-           });
+   
 
         function save_benifit()
         {
