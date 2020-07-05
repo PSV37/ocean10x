@@ -540,7 +540,7 @@ $("#job_category").change(function () {
       autocomplete: {
         source: "<?php echo base_url('Employer/search_city'); ?>",
         delay: 100,
-        minLength: 3
+        minLength: 2
       },
 
       showAutocompleteOnFocus: true,
@@ -558,6 +558,7 @@ $("#job_category").change(function () {
 $("#job_title").autocomplete({
               
               source: "<?php echo base_url();?>Employer/search_title",
+              minLength: 2
              
             });
 
