@@ -557,7 +557,7 @@ $("#job_category").change(function () {
 </script>
 
     <script type="text/javascript">
-        // $(document).ready(function(){
+        $(document).ready(function(){
 
             $("#tokenfield").autocomplete({
 
@@ -574,7 +574,7 @@ $("#job_category").change(function () {
              
             });
 
-           // });
+           });
 
         function save_benifit()
         {
