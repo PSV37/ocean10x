@@ -293,7 +293,7 @@ class Employer extends MY_Employer_Controller
             $this->session->set_userdata($data);
             $this->load->view('fontend/employer/job_preview', $data);
         } elseif (isset($_POST['edit'])) {
-            $data['city']            = $this->Master_model->getMaster('city', $where = false);
+          
             $data['country']         = $this->Master_model->getMaster('country', $where = false);
             $data['state']           = $this->Master_model->getMaster('state', $where = false);
             $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
@@ -407,7 +407,7 @@ class Employer extends MY_Employer_Controller
             // $this->form_validation->set_message('required', 'You must provide this field');
             $this->form_validation->set_message('required', 'You must provide this field');
             if ($this->form_validation->run() == FALSE) {
-                $data['city']            = $this->Master_model->getMaster('city', $where = false);
+               
                 $data['country']         = $this->Master_model->getMaster('country', $where = false);
                 $data['state']           = $this->Master_model->getMaster('state', $where = false);
                 $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
@@ -556,7 +556,7 @@ class Employer extends MY_Employer_Controller
             }
         } else {
             $this->session->unset_userdata('title','job_desc','edu','benefits','experience','location','jobnature','no_jobs','jobrole','skills','salary_range');
-            $data['city']            = $this->Master_model->getMaster('city', $where = false);
+           
             $data['country']         = $this->Master_model->getMaster('country', $where = false);
             $data['state']           = $this->Master_model->getMaster('state', $where = false);
             $data['benefits']           = $this->Master_model->getMaster('common_company_benifits', $where = false);
