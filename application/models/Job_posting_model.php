@@ -709,6 +709,13 @@ public function get_all_company_by_banksbook()
         return $this->db->get('job_designation')->result();
     }
 
+    function search_skills($title)
+    {
+        $this->db->like('skill_name', $title , 'both');
+        $this->db->order_by('skill_name', 'ASC');
+        return $this->db->get('skill_master')->result();
+    }
+
     function search_job_keywords($title){
         $this->db->like('job_title', $title , 'both');
         $this->db->order_by('job_title', 'ASC');

@@ -549,17 +549,24 @@ $("#job_category").change(function () {
 
     });
     // to avoid duplications
- // $('#tokenfield').on('tokenfield:createtoken', function (event) {
- //      var existingTokens = $(this).tokenfield('getTokens');
- //      $.each(existingTokens, function(index, token) {
- //          if (token.value === event.attrs.value)
- //              event.preventDefault();
+ $('#tokenfield').on('tokenfield:createtoken', function (event) {
+      var existingTokens = $(this).tokenfield('getTokens');
+      $.each(existingTokens, function(index, token) {
+          if (token.value === event.attrs.value)
+              event.preventDefault();
 
- //      });
- //  });
+      });
+  });
 $("#job_title").autocomplete({
               
               source: "<?php echo base_url();?>Employer/search_title",
+              minLength: 2
+             
+            });
+
+$("#other_skill").autocomplete({
+              
+              source: "<?php echo base_url();?>Employer/search_skill",
               minLength: 2
              
             });
