@@ -437,7 +437,7 @@ class Employer extends MY_Employer_Controller
                 $skills= $this->input->post('skill_set');
 
                 $job_description = isset($_FILES['job_description']['name']) ? $_FILES['job_description']['name'] : null;
-                print_r($$_FILES);
+                print_r($_FILES);
               
                     if (!empty($job_description)) {
                         
