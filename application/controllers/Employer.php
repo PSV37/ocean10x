@@ -266,11 +266,12 @@ class Employer extends MY_Employer_Controller
             $data['job_desc'] = $this->input->post('job_desc');
               $skills= $this->input->post('skill_set');
                  print_r($skills);
+                 $all_skills=array();
 
                 foreach ($skills as $row) {
                     if(is_numeric($row)==1)
                     {
-                       
+                        array_push($all_skills, $row);
                     }
                     else
                     {
@@ -284,15 +285,15 @@ class Employer extends MY_Employer_Controller
                             $result = $this->Master_model->master_insert($skill, 'skill_master');
                             print_r($result);
                             if (isset($result) && ! empty($result)) {
-                                array_push($skills, $result);
+                                array_push($all_skills, $result);
                             }
 
                         }
                     }
                     # code...
                 }
-                 print_r($skills);
-            $data['skills']   = implode(',', $skills);
+                 print_r($all_skills);
+            $data['skills']   = implode(',', $all_skills);
             $data['benefits'] = implode(',', $this->input->post('benefits'));
             $this->session->set_userdata($data);
             $this->load->view('fontend/employer/job_preview', $data);
@@ -435,6 +436,34 @@ class Employer extends MY_Employer_Controller
                 $job_post_id  = $this->input->post('job_post_id');
                 $skills= $this->input->post('skill_set');
 
+                $job_description = isset($_FILES['job_description']['name']) ? $_FILES['job_description']['name'] : null;
+                
+                if (!empty($employer_id) || !empty($job_description)) {
+                    if (!empty($job_description)) {
+                        
+                        $config['upload_path']   = 'upload/job_description';
+                        $config['allowed_types'] = '*';
+                        $config['encrypt_name']  = true;
+                        $config['max_size']      = 1000;
+                        $config['max_width']     = 300;
+                        $config['max_height']    = 300;
+                        
+                        $this->load->library('upload', $config);
+                        $result_upload                   = $this->upload->do_upload('company_logo');
+                        $upload_data                     = $this->upload->data();
+                        $jd_file                    = $upload_data['file_name'];
+                        $job_info['jd_file'] = $jd_file;
+                        
+                        if (!$result_upload == true) {
+                            $error = array(
+                                'error' => $this->upload->display_errors()
+                            );
+                            $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">Please Upload a Valid Logo Size Max size 300*300</div>');
+                            redirect('employer/profile-setting');
+                        }
+                    }
+                }
+
                 foreach ($skills as $row) {
                     if(is_numeric($row)==1)
                     {
@@ -463,26 +492,19 @@ class Employer extends MY_Employer_Controller
                     'job_title' => $this->input->post('job_title'),
                     'job_slugs' => $this->slug->create_uri($this->input->post('job_title')),
                     'job_desc' => $this->input->post('job_desc'),
+
                     'job_category' => $this->input->post('job_category'),
                     'education' => $this->input->post('education'),
                     'benefits' => implode(',', $this->input->post('benefits')),
                     'experience' => $experience,
-                    
-                    //                   'job_location'       => $this->input->post('city_id'),
-                    // 'state_id'           => $this->input->post('state_id'),
                     'city_id' => $this->input->post('city_id'),
                     'job_nature' => $this->input->post('job_nature'),
                     'job_edu' => $this->input->post('job_edu'),
                     'no_jobs' => $this->input->post('no_jobs'),
-                    // 'edu_specialization' => $this->input->post('job_edu_special'),
-                     //new added field
                     'preffered_certificates' => $this->input->post('preffered_certificates'),
                     'job_role' => $this->input->post('job_role'), //new added field
                     'skills_required' => implode(',', $skills), //new added field
-                    
-                    // 'job_level'          => $this->input->post('job_level'),
                     'salary_range' => $salary_range,
-                    // 'job_types'          => $this->input->post('job_types'),
                     "job_deadline" => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('job_deadline')))),
                     
                     //                   'preferred_age'      => $this->input->post('preferred_age_from'),
