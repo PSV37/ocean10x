@@ -596,6 +596,8 @@ $("#job_title").autocomplete({
       $('#other_terxtbx').hide();
       $('#skl_btn').hide();
       $('#other_skills').hide();
+       var id=document.getElementById('job_role').value;
+       alert(id);
 
 
       $(function() { 
