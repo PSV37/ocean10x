@@ -265,6 +265,7 @@ class Employer extends MY_Employer_Controller
             
             $data['job_desc'] = $this->input->post('job_desc');
               $skills= $this->input->post('skill_set');
+                 print_r($skills);
 
                 foreach ($skills as $row) {
                     if(is_numeric($row)==1)
