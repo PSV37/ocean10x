@@ -40,17 +40,20 @@ class Employer extends MY_Employer_Controller
         
         if ($_POST) {
             
-            $this->form_validation->set_rules('company_name', 'company name', 'required');
-            $this->form_validation->set_rules('company_email', 'company email', 'required');
-            $this->form_validation->set_rules('alternate_email_id', 'alternate email', 'required');
-            $this->form_validation->set_rules('company_phone', 'company phone', 'required');
-            $this->form_validation->set_rules('company_email', 'company email', 'required');
-            $this->form_validation->set_rules('contact_name', 'contact name', 'required');
-            $this->form_validation->set_rules('cont_person_level', 'contact level', 'required');
-            $this->form_validation->set_rules('cont_person_email', 'contact email', 'required');
-            $this->form_validation->set_rules('cont_person_mobile', 'contact mobile', 'required');
-            $this->form_validation->set_rules('company_address', 'company address', 'required');
-            $this->form_validation->set_rules('company_email', 'company email', 'required');
+               $this->form_validation->set_rules('company_name', 'Company Name', 'required|regex_match[/^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$/i]');
+       
+        $this->form_validation->set_rules('company_email',   'Company Email', 'required');
+        $this->form_validation->set_rules('alternate_email_id', 'Alternate Email Id','required|valid_email');
+        $this->form_validation->set_rules('company_url', 'Company URL','required|valid_url');
+        $this->form_validation->set_rules('country_code','Country Code','required');
+        $this->form_validation->set_rules('company_phone','Company Phone', 'required|min_length[10]|integer');
+        $this->form_validation->set_rules('company_category','Company Services', 'required');
+        $this->form_validation->set_rules('contact_name','Company Contact Person','required');
+        $this->form_validation->set_rules('cont_person_level','Contact Person Level', 'required|regex_match[/^[a-zA-Z ]+$/]|alpha');
+        $this->form_validation->set_rules('cont_person_email','Contact Person Email', 'required|valid_email');
+        $this->form_validation->set_rules('cont_person_mobile','Contact Person Mobile', 'required|min_length[10]|integer');
+        $this->form_validation->set_rules('company_address1','Company Address 1', 'required');
+        $this->form_validation->set_rules('company_address2','Company Address 2', 'required');
             
             
             
@@ -3312,6 +3315,40 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $company_id = $this->session->userdata('company_profile_id');
         
         if ($_POST) {
+
+             $this->form_validation->set_rules('candidate_name', 'Full Name', 'required|alpha');
+        $this->form_validation->set_rules('candidate_email', 'Email Id', 'required|valid_email');
+        $this->form_validation->set_rules('candidate_phone', 'Phone Number','required|integer|max_length[10]');
+        $this->form_validation->set_rules('candidate_experiance', 'Candidate Experiance','required|integer|max_length[2]');
+        $this->form_validation->set_rules('candidate_notice_period','Notice Period at Current Job','required|integer|max_length[2]');
+        $this->form_validation->set_rules('job_type','Job Type', 'required');
+        $this->form_validation->set_rules('current_job_desig','Company Job Designation', 'required|alpha');
+        //$this->form_validation->set_rules('current_work_location','Current Work Location', 'required');
+        $this->form_validation->set_rules('candidate_skills','skills', 'required');
+        $this->form_validation->set_rules('current_ctc','Current CTC', 'required|integer|max_length[2]');
+        $this->form_validation->set_rules('last_salary_hike','Last Salary Hike', 'required|integer|max_length[6]');
+        $this->form_validation->set_rules('top_education','Top Education', 'required|alpha');
+                $this->form_validation->set_rules('candidate_skills','Skills', 'required|alpha_numeric_spaces');
+
+        $this->form_validation->set_rules('candidate_certification','Certifications', 'required|alpha_numeric_spaces');
+        $this->form_validation->set_rules('candidate_industry','Industry', 'required');
+        $this->form_validation->set_rules('candidate_role','Role', 'required');
+        $this->form_validation->set_rules('candidate_expected_sal','Expected Salary', 'required|integer|max_length[6]');
+        $this->form_validation->set_rules('desired_wrok_location','Desired Work Location', 'required|alpha');
+
+         if ($this->form_validation->run() == FALSE) {
+
+          $data['industry_master'] = $this->Master_model->getMaster('job_category', $where = false);
+            $data['department']      = $this->Master_model->getMaster('department', $where = false);
+            $data['job_role']        = $this->Master_model->getMaster('job_role', $where = false);
+            
+            //$data['cv_info'] = $this->Master_model->getMaster('corporate_cv_bank',$where=false);
+            
+            $this->load->view('fontend/employer/add_cv', $data);
+    
+                
+        }else
+        {
             $email      = $this->input->post('candidate_email');
             $where_find = "js_email= '$email'";
             $exists     = $this->Master_model->get_master_row('corporate_cv_bank', $select = FALSE, $where_find, $join = FALSE);
@@ -3372,7 +3409,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New CV added sucessfully!</div>');
             }
             redirect('employer/corporate_cv_bank');
-            
+            }
             
         } else {
             $data['industry_master'] = $this->Master_model->getMaster('job_category', $where = false);
