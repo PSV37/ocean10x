@@ -487,13 +487,17 @@ div#other_skills {
                   <div class="col-md-6 col-sm-12" tabindex="16" >
                      <div class=" formrow">
                         <label class="control-label">Upload JD <span class="required"> * </span></label>
-                        <input type="file" name="job_description" class="form-control">                                  
+                        <input type="file" name="job_description" class="form-control">          <?php if (isset($this->session->userdata('jd_file')) ) { ?>
+                         <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/job_description/<?php echo $this->session->userdata('jd_file'); ?>" download>Jobe_description</a>
+                        } ?>                        
                      </div>
                   </div>
                   <div class="col-md-12 col-sm-4" tabindex="17">
                      <div class="formrow">
                         <label class="control-label">Job Description <span class="required"> * </span></label>
-                        <textarea name="job_desc" id="jd" class="form-control ckeditor" placeholder="Job Description"><?php if(!empty($job_info)) echo $job_info->job_desc; ?></textarea><?php echo form_error('job_desc'); ?>                                  
+                        <textarea name="job_desc" id="jd" class="form-control ckeditor" placeholder="Job Description"><?php if (isset($this->session->userdata('job_desc')) ) {
+                          echo $this->session->userdata('job_desc');
+                        } elseif(!empty($job_info)) echo $job_info->job_desc; ?></textarea><?php echo form_error('job_desc'); ?>                                  
                      </div>
                   </div>
                <!-- </section> -->

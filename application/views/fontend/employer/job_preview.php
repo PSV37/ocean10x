@@ -272,8 +272,9 @@ p.right-title_detail {
                              </div>
                             <div class="following-info3">
                                     <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li><li class="right-title">&nbsp;: <?php if (isset($jd_file) && !empty($jd_file)) {
-                                        echo "Yes"; ?><a href="<?php echo base_url() ?>upload/job_description/<?php echo $jd_file; ?>" target="_blank"><i class="fa fa-file" aria-hidden="true"></i></a>
-                                        <a href="<?php echo base_url() ?>upload/job_description/<?php echo $jd_file; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a>
+                                        echo "Yes"; ?>
+                                        <!-- <a href="<?php echo base_url() ?>upload/job_description/<?php echo $jd_file; ?>" target="_blank"><i class="fa fa-file" aria-hidden="true"></i></a> -->
+                                        <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/job_description/<?php echo $jd_file; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a>
                                   <?php   }else{
                                         echo "No";
                                     } ?> </li>
@@ -283,7 +284,7 @@ p.right-title_detail {
                              </div>
                                    
                             <div class="skils_benifit">
-                              <li class="left-title_seperate">skills&nbsp;&nbsp;: :</li><li class="right-title_seperate">
+                              <li class="left-title_seperate">skills&nbsp;&nbsp; </li><li class="right-title_seperate">:
                              <?php  $sk=$skills;
                              
                              if (isset($sk) && !empty($sk)) {
@@ -305,19 +306,21 @@ p.right-title_detail {
                               
                               <div class="skils_benifit">
                               <li class="left-title_seperate">Benefit</li><li class="right-title_seperate">&nbsp;:
-                              
-                              <label>
+                              <?php foreach ($benefits as $row) { ?>
+                                 <label>
+                                <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
+                                <span><?php echo $row; ?></span>
+                            </label>
+                             <?php } ?>
+                             
+                             <!-- <label>
                                 <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
                                 <span>Insurance</span>
                             </label>
                              <label>
                                 <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
                                 <span>Insurance</span>
-                            </label>
-                             <label>
-                                <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
-                                <span>Insurance</span>
-                            </label>
+                            </label> -->
                             
                             
                             </li>
@@ -335,7 +338,7 @@ p.right-title_detail {
                                <div class="preview_btns">
                                <button type="button" class="back_btn">Back</button>
                                <button type="submit" name="edit" class="edit_btn">Edit</button>
-                               <button type="button" class="Postjob_btn" name="post_preview">Post Job</button>
+                               <button type="submit" class="Postjob_btn" name="post_preview">Post Job</button>
                                </div>
                             
                             
