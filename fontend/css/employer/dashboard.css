@@ -1264,7 +1264,7 @@ li.left-title {font-weight:500 !important;}
 li.right-title {font-weight:500 !important;}
 .pasive-span{right: 0px;left: auto;}
 .active-span{right: 0px;left: auto;}     
-.col-md-6.active-job {
+.col-md-6.active-job {    
     margin-right: -25px;
     margin-left: -25px;
 } 
