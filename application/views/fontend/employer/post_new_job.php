@@ -400,7 +400,7 @@ div#other_skills {
                         <label class="control-label ">Certifications Preferred <span class="required"> * </span></label>
                         <select name="preffered_certificates" id="preffered_certificates" class="form-control select2" data-style="btn-default" data-live-search="true">
                            <?php foreach($certificates as $certificate){?>
-                           <option value="<?php echo $certificate['certificate_id']; ?>"<?php if($this->session->userdata('edu')==$certificate['certificate_id']){ echo "selected"; }elseif($job_info->job_edu==$certificate['certificate_id']){ echo "selected"; }?>><?php echo $certificate['certificate_name']; ?></option>
+                           <option value="<?php echo $certificate['certificate_id']; ?>"<?php if($this->session->userdata('preffered_certificates')==$certificate['certificate_id']){ echo "selected"; }elseif($job_info->job_edu==$certificate['certificate_id']){ echo "selected"; }?>><?php echo $certificate['certificate_name']; ?></option>
                            
                            <?php } ?>
                         </select>

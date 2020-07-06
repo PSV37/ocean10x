@@ -238,6 +238,7 @@ class Employer extends MY_Employer_Controller
             
             $data['title']                  = $this->input->post('job_title');
             $data['location']               = $this->input->post('city_id');
+            $data['preffered_certificates']               = $this->input->post('preffered_certificates');
             // $data['experience']=$experience;
             $data['salrange_from']               = $this->input->post('salrange_from');
             $data['preffered_certificates'] = $this->input->post('preffered_certificates');
@@ -350,6 +351,8 @@ class Employer extends MY_Employer_Controller
                 $result = $this->Master_model->master_insert($data, 'employer_audit_record');
                 // redirect('job/show/'.$job_info['job_slugs']);.
                 $this->session->unset_userdata('title', 'job_desc', 'edu', 'benefits', 'experience', 'location', 'jobnature', 'no_jobs', 'jobrole', 'skills', 'salary_range');
+                $array_items = array('title' , 'job_desc', 'edu', 'benefits' , 'experience','location','jobnature','no_jobs','jobrole','skills','salary_range');
+                $this->session->unset_userdata($array_items);
                 redirect('employer/active_job');
             } else {
                 
@@ -596,7 +599,8 @@ class Employer extends MY_Employer_Controller
                 }
             }
         } else {
-           
+           $array_items = array('title' , 'job_desc', 'edu', 'benefits' , 'experience','location','jobnature','no_jobs','jobrole','skills','salary_range');
+                $this->session->unset_userdata($array_items);
             
             $data['country']         = $this->Master_model->getMaster('country', $where = false);
             $data['state']           = $this->Master_model->getMaster('state', $where = false);
