@@ -495,7 +495,7 @@ div#other_skills {
                   <div class="col-md-12 col-sm-4" tabindex="17">
                      <div class="formrow">
                         <label class="control-label">Job Description <span class="required"> * </span></label>
-                        <textarea name="job_desc" id="jd" class="form-control ckeditor" placeholder="Job Description"><?php if (isset($this->session->userdata('job_desc')) ) {
+                        <textarea name="job_desc" id="jd" class="form-control ckeditor" placeholder="Job Description"><?php if (!empty($this->session->userdata('job_desc')) ) {
                           echo $this->session->userdata('job_desc');
                         } elseif(!empty($job_info)) echo $job_info->job_desc; ?></textarea><?php echo form_error('job_desc'); ?>                                  
                      </div>
