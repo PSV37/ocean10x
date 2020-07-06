@@ -327,7 +327,7 @@ class Employer extends MY_Employer_Controller
             }
             
             $data['skills']   = implode(',', $all_skills);
-            $data['benefits'] = implode(',', $this->input->post('benefits'));
+            $data['benefits'] = $this->input->post('benefits');
             $this->session->set_userdata($data);
             $this->load->view('fontend/employer/job_preview', $data);
         } elseif (isset($_POST['edit'])) {
