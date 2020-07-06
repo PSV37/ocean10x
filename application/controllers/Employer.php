@@ -280,6 +280,7 @@ class Employer extends MY_Employer_Controller
                             
                             $skill=array('skill_name' => $row);
                     $result = $this->Master_model->master_insert($skill, 'skill_master');
+                    print_r($result);
                     if (isset($result) && ! empty($result)) {
                         array_push($skills, $result);
                     }
@@ -288,6 +289,7 @@ class Employer extends MY_Employer_Controller
                     }
                     # code...
                 }
+                 print_r($skills);
             $data['skills']   = implode(',', $skills);
             $data['benefits'] = implode(',', $this->input->post('benefits'));
             $this->session->set_userdata($data);
