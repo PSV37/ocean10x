@@ -536,12 +536,12 @@ function education_list()
 <script src="<?php echo base_url() ?>asset/js/search.js"></script>
 
 <script>
-
+$(document).ready(function() {  
 // $('#tokenfield').on('keypress keydown keyup', function(e){
 //   alert(e.keyCode);
 //        if(e.keyCode == 13) { e.preventDefault(); }
 //     });
- 
+
 
     $('#tokenfield').tokenfield({
       autocomplete: {
@@ -562,6 +562,7 @@ function education_list()
 
       });
   });
+});
  
 $("#job_title").autocomplete({
               
