@@ -306,6 +306,7 @@ p.right-title_detail {
                               
                               <div class="skils_benifit">
                               <li class="left-title_seperate">Benefit</li><li class="right-title_seperate">&nbsp;:
+                                print_r($benefits);
                               <?php foreach ($benefits as $row) { ?>
                                  <label>
                                 <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">

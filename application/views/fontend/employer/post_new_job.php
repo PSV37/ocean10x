@@ -541,7 +541,11 @@ $("#job_category").change(function () {
                 // alert($(this).val());
                 document.getElementById("job_role").focus();
             });
-
+$('#tokenfield').on('keyup', function(e) {
+  if(e.which === 13) {
+    e.preventDefault();
+  }
+});
     $('#tokenfield').tokenfield({
       autocomplete: {
         source: "<?php echo base_url('Employer/search_city'); ?>",
@@ -561,11 +565,7 @@ $("#job_category").change(function () {
 
       });
   });
- $('#tokenfield').on('keyup', function(e) {
-  if(e.which === 13) {
-    e.preventDefault();
-  }
-});
+ 
 $("#job_title").autocomplete({
               
               source: "<?php echo base_url();?>Employer/search_title",
