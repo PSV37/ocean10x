@@ -58,7 +58,7 @@ class Employer extends MY_Employer_Controller
             
             
             
-            $this->form_validation->set_message('required', 'You must provide this field');
+            $this->form_validation->set_message('required', 'This field is mandatory');
             if ($this->form_validation->run() == FALSE) {
                 $wheres       = "status='0' AND company_profile_id='$employer_id'";
                 $branches     = $this->Master_model->getMaster('company_branches', $where = $wheres);
@@ -3335,6 +3335,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $this->form_validation->set_rules('candidate_role','Role', 'required');
         $this->form_validation->set_rules('candidate_expected_sal','Expected Salary', 'required|integer|max_length[6]');
         $this->form_validation->set_rules('desired_wrok_location','Desired Work Location', 'required|alpha');
+
+            $this->form_validation->set_message('required', 'This field is mandatory');
+        
 
          if ($this->form_validation->run() == FALSE) {
 
