@@ -399,17 +399,7 @@ class Employer extends MY_Employer_Controller
             
         } elseif ($_POST) {
             $this->form_validation->set_rules('job_title', 'job title', 'required');
-            // $this->form_validation->set_rules('company_email', 'company email', 'required');
-            // $this->form_validation->set_rules('alternate_email_id','alternate email','required');
-            // $this->form_validation->set_rules('company_phone', 'company phone', 'required');
-            // $this->form_validation->set_rules('company_email', 'company email', 'required');
-            // $this->form_validation->set_rules('contact_name', 'contact name', 'required');
-            // $this->form_validation->set_rules('cont_person_level','contact level', 'required');
-            // $this->form_validation->set_rules('cont_person_email','contact email', 'required');
-            // $this->form_validation->set_rules('cont_person_mobile','contact mobile','required');
-            // $this->form_validation->set_rules('company_address','company address', 'required');
-            // $this->form_validation->set_rules('company_email', 'company email', 'required');
-            // $this->form_validation->set_message('required', 'You must provide this field');
+            
             $this->form_validation->set_message('required', 'You must provide this field');
             if ($this->form_validation->run() == FALSE) {
                
@@ -437,7 +427,7 @@ class Employer extends MY_Employer_Controller
                 $skills= $this->input->post('skill_set');
 
                 $job_description = isset($_FILES['job_description']['name']) ? $_FILES['job_description']['name'] : null;
-                print_r($_FILES);die;
+                // print_r($_FILES);die;
               
                     if (!empty($job_description)) {
                         
