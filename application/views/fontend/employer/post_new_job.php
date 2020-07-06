@@ -541,11 +541,10 @@ $("#job_category").change(function () {
                 // alert($(this).val());
                 document.getElementById("job_role").focus();
             });
-$('#tokenfield').keypress(function(e){
-    // if ( e.which == 13 ) return false;
-    // //or...
-    if ( e.which == 13 ) e.preventDefault();
-});
+ $('#tokenfield').bind('keypress keydown keyup', function(e){
+       if(e.keyCode == 13) { e.preventDefault(); }
+    });
+
     $('#tokenfield').tokenfield({
       autocomplete: {
         source: "<?php echo base_url('Employer/search_city'); ?>",
