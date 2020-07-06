@@ -597,7 +597,7 @@ $("#job_title").autocomplete({
       $('#skl_btn').hide();
       $('#other_skills').hide();
        var id=document.getElementById('job_role').value;
-       alert(id);
+       // alert(id);
        getSkillsdetails(id);
 
 
