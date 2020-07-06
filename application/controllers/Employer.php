@@ -265,6 +265,7 @@ class Employer extends MY_Employer_Controller
             
             $data['job_desc'] = $this->input->post('job_desc');
               $skills= $this->input->post('skill_set');
+                 print_r($skills);
 
                 foreach ($skills as $row) {
                     if(is_numeric($row)==1)
@@ -280,6 +281,7 @@ class Employer extends MY_Employer_Controller
                             
                             $skill=array('skill_name' => $row);
                     $result = $this->Master_model->master_insert($skill, 'skill_master');
+                    print_r($result);
                     if (isset($result) && ! empty($result)) {
                         array_push($skills, $result);
                     }
@@ -288,12 +290,13 @@ class Employer extends MY_Employer_Controller
                     }
                     # code...
                 }
+                 print_r($skills);
             $data['skills']   = implode(',', $skills);
             $data['benefits'] = implode(',', $this->input->post('benefits'));
             $this->session->set_userdata($data);
             $this->load->view('fontend/employer/job_preview', $data);
         } elseif (isset($_POST['edit'])) {
-            $data['city']            = $this->Master_model->getMaster('city', $where = false);
+          
             $data['country']         = $this->Master_model->getMaster('country', $where = false);
             $data['state']           = $this->Master_model->getMaster('state', $where = false);
             $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
@@ -407,7 +410,7 @@ class Employer extends MY_Employer_Controller
             // $this->form_validation->set_message('required', 'You must provide this field');
             $this->form_validation->set_message('required', 'You must provide this field');
             if ($this->form_validation->run() == FALSE) {
-                $data['city']            = $this->Master_model->getMaster('city', $where = false);
+               
                 $data['country']         = $this->Master_model->getMaster('country', $where = false);
                 $data['state']           = $this->Master_model->getMaster('state', $where = false);
                 $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
@@ -556,7 +559,7 @@ class Employer extends MY_Employer_Controller
             }
         } else {
             $this->session->unset_userdata('title','job_desc','edu','benefits','experience','location','jobnature','no_jobs','jobrole','skills','salary_range');
-            $data['city']            = $this->Master_model->getMaster('city', $where = false);
+           
             $data['country']         = $this->Master_model->getMaster('country', $where = false);
             $data['state']           = $this->Master_model->getMaster('state', $where = false);
             $data['benefits']           = $this->Master_model->getMaster('common_company_benifits', $where = false);
