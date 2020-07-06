@@ -236,17 +236,17 @@ class Employer extends MY_Employer_Controller
             $data['exp_to']      = $this->input->post('exp_to');
             $data['experience']  = $data['exp_from'] . '-' . $data['exp_to'];
             
-            $data['title']        = $this->input->post('job_title');
-            $data['location']     = $this->input->post('city_id');
+            $data['title']                  = $this->input->post('job_title');
+            $data['location']               = $this->input->post('city_id');
             // $data['experience']=$experience;
-            $data['sal_from']     = $this->input->post('sal_from');
-            $data['preffered_certificates']     = $this->input->post('preffered_certificates');
-            $data['sal_to']       = $this->input->post('sal_to');
-            $data['salary_range'] = $data['sal_from'] . '-' . $data['sal_to'];
-            $ed                   = $this->input->post('job_edu');
-            $data['edu']          = $ed;
-            $where_int            = "education_level_id='$ed'";
-            $data['education']    = $this->Master_model->get_master_row('education_level', $select = FALSE, $where_int, $join = FALSE);
+            $data['sal_from']               = $this->input->post('sal_from');
+            $data['preffered_certificates'] = $this->input->post('preffered_certificates');
+            $data['sal_to']                 = $this->input->post('sal_to');
+            $data['salary_range']           = $data['sal_from'] . '-' . $data['sal_to'];
+            $ed                             = $this->input->post('job_edu');
+            $data['edu']                    = $ed;
+            $where_int                      = "education_level_id='$ed'";
+            $data['education']              = $this->Master_model->get_master_row('education_level', $select = FALSE, $where_int, $join = FALSE);
             
             $job_role        = $this->input->post('job_role');
             $data['jobrole'] = $job_role;
@@ -264,48 +264,47 @@ class Employer extends MY_Employer_Controller
             
             
             $data['job_desc'] = $this->input->post('job_desc');
-              $skills= $this->input->post('skill_set');
-                
-                 $all_skills=array();
-
-                foreach ($skills as $row) {
-                    if(is_numeric($row)==1)
-                    {
-                        array_push($all_skills, $row);
-                    }
-                    else
-                    {
-                        $where_sk  = "skill_name = '$row' and status=1";
-                        $select_sk = "skill_name ,id";
-                        $skills_data    = $this->Master_model->getMaster('skill_master', $where_sk, $join = FALSE, $order = false, $field = false, $select_sk, $limit = false, $start = false, $search = false);
-                     
-                        if (empty($skills_data)) {
-                            
-                            $skill=array('skill_name' => $row);
-                            $result = $this->Master_model->master_insert($skill, 'skill_master');
-                          
-                            if (isset($result) && ! empty($result)) {
-                                array_push($all_skills, $result);
-                            }
-
+            $skills           = $this->input->post('skill_set');
+            
+            $all_skills = array();
+            
+            foreach ($skills as $row) {
+                if (is_numeric($row) == 1) {
+                    array_push($all_skills, $row);
+                } else {
+                    $where_sk    = "skill_name = '$row' and status=1";
+                    $select_sk   = "skill_name ,id";
+                    $skills_data = $this->Master_model->getMaster('skill_master', $where_sk, $join = FALSE, $order = false, $field = false, $select_sk, $limit = false, $start = false, $search = false);
+                    
+                    if (empty($skills_data)) {
+                        
+                        $skill  = array(
+                            'skill_name' => $row
+                        );
+                        $result = $this->Master_model->master_insert($skill, 'skill_master');
+                        
+                        if (isset($result) && !empty($result)) {
+                            array_push($all_skills, $result);
                         }
+                        
                     }
-                    # code...
                 }
-               
+                # code...
+            }
+            
             $data['skills']   = implode(',', $all_skills);
             $data['benefits'] = implode(',', $this->input->post('benefits'));
             $this->session->set_userdata($data);
             $this->load->view('fontend/employer/job_preview', $data);
         } elseif (isset($_POST['edit'])) {
-          
+            
             $data['country']         = $this->Master_model->getMaster('country', $where = false);
             $data['state']           = $this->Master_model->getMaster('state', $where = false);
             $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
-            $data['benefits']           = $this->Master_model->getMaster('common_company_benifits', $where = false);
-            $where_cn              = "status=1";
-            $select                = "job_role_title, skill_set ,id";
-            $data['job_role_data'] = $this->Master_model->getMaster('job_role', $where_cn, $join = FALSE, $order = false, $field = false, $select, $limit = false, $start = false, $search = false);
+            $data['benefits']        = $this->Master_model->getMaster('common_company_benifits', $where = false);
+            $where_cn                = "status=1";
+            $select                  = "job_role_title, skill_set ,id";
+            $data['job_role_data']   = $this->Master_model->getMaster('job_role', $where_cn, $join = FALSE, $order = false, $field = false, $select, $limit = false, $start = false, $search = false);
             
             
             $this->load->view('fontend/employer/post_new_job', $data);
@@ -334,7 +333,7 @@ class Employer extends MY_Employer_Controller
                 // 'job_types'          => $this->input->post('job_types'),
                 "job_deadline" => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('job_deadline'))))
                 
-               
+                
             );
             if (empty($job_post_id)) {
                 $this->job_posting_model->insert($job_info);
@@ -350,7 +349,7 @@ class Employer extends MY_Employer_Controller
                 
                 $result = $this->Master_model->master_insert($data, 'employer_audit_record');
                 // redirect('job/show/'.$job_info['job_slugs']);.
-                $this->session->unset_userdata('title','job_desc','edu','benefits','experience','location','jobnature','no_jobs','jobrole','skills','salary_range');
+                $this->session->unset_userdata('title', 'job_desc', 'edu', 'benefits', 'experience', 'location', 'jobnature', 'no_jobs', 'jobrole', 'skills', 'salary_range');
                 redirect('employer/active_job');
             } else {
                 
@@ -399,13 +398,27 @@ class Employer extends MY_Employer_Controller
             
         } elseif ($_POST) {
             $this->form_validation->set_rules('job_title', 'job title', 'required');
-            
+           
+            $this->form_validation->set_rules('city_id', 'Job Location', 'required');
+            $this->form_validation->set_rules('exp_from', 'Experience From', 'required|max_length[2]');
+            $this->form_validation->set_rules('exp_to', 'Experience To', 'required|max_length[2]');
+            $this->form_validation->set_rules('no_jobs', 'Number of Positions', 'required|integer');
+            $this->form_validation->set_rules('job_edu', 'Education Level', 'required');
+            $this->form_validation->set_rules('job_nature', 'Engagement Model', 'required');
+            $this->form_validation->set_rules('job_edu_special', 'Certification Preferred', 'required');
+            $this->form_validation->set_rules('job_test_requirment', 'Ocean Test Required', 'required');
+            $this->form_validation->set_rules('salrange_from', 'Salary Range From', 'required|max_length[2]');
+            $this->form_validation->set_rules('salrange_to', 'Salary Range To', 'required|max_length[2]');
+            $this->form_validation->set_rules('job_desc', 'Job Description', 'required');
             $this->form_validation->set_message('required', 'You must provide this field');
             if ($this->form_validation->run() == FALSE) {
-               
+                
                 $data['country']         = $this->Master_model->getMaster('country', $where = false);
                 $data['state']           = $this->Master_model->getMaster('state', $where = false);
-                $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
+                  $data['benefits']        = $this->Master_model->getMaster('common_company_benifits', $where = false);
+            $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
+            
+            $data['certificates'] = $this->Master_model->getMaster('certification_master', $where = false);
                 
                 $where_cn              = "status=1";
                 $select                = "job_role_title, skill_set ,id";
@@ -424,65 +437,64 @@ class Employer extends MY_Employer_Controller
                 $employer_id  = $this->session->userdata('company_profile_id');
                 $job_deadline = strtolower($this->input->post('job_deadline'));
                 $job_post_id  = $this->input->post('job_post_id');
-                $skills= $this->input->post('skill_set');
-
+                $skills       = $this->input->post('skill_set');
+                
                 $job_description = isset($_FILES['job_description']['name']) ? $_FILES['job_description']['name'] : null;
                 // print_r($_FILES);die;
-              
-                    if (!empty($job_description)) {
-                        
-                        $config['upload_path']   = 'upload/job_description';
-                        $config['allowed_types'] = '*';
-                        $config['encrypt_name']  = true;
-                        $config['max_size']      = 1000;
-                        $config['max_width']     = 300;
-                        $config['max_height']    = 300;
-                        
-                        $this->load->library('upload', $config);
-                        $result_upload                   = $this->upload->do_upload('job_description');
-                        $upload_data                     = $this->upload->data();
-                        $jd_file                    = $upload_data['file_name'];
-                        $job_desc_file = $jd_file;
-                        
-                        if (!$result_upload == true) {
-                            $error = array(
-                                'error' => $this->upload->display_errors()
-                            );
-                            $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">Please Upload a Valid Logo Size Max size 300*300</div>');
-                            redirect('employer/profile-setting');
-                        }
+                
+                if (!empty($job_description)) {
+                    
+                    $config['upload_path']   = 'upload/job_description/';
+                    $config['allowed_types'] = '*';
+                    $config['encrypt_name']  = true;
+                    $config['max_size']      = 1000;
+                    $config['max_width']     = 300;
+                    $config['max_height']    = 300;
+                    
+                    $this->load->library('upload', $config);
+                    $result_upload = $this->upload->do_upload('job_description');
+                    $upload_data   = $this->upload->data();
+                    $jd_file       = $upload_data['file_name'];
+                    $job_desc_file = $jd_file;
+                    
+                    if (!$result_upload == true) {
+                        $error = array(
+                            'error' => $this->upload->display_errors()
+                        );
+                        $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">Please Upload a Valid Logo Size Max size 300*300</div>');
+                        redirect('employer/profile-setting');
                     }
-            
-
+                }
+                $all_skills = array();
+                
                 foreach ($skills as $row) {
-                    if(is_numeric($row)==1)
-                    {
-                       
-                    }
-                    else
-                    {
-                        $where_sk  = "skill_name = '$row' and status=1";
-                        $select_sk = "skill_name ,id";
-                        $skills    = $this->Master_model->getMaster('skill_master', $where_sk, $join = FALSE, $order = false, $field = false, $select_sk, $limit = false, $start = false, $search = false);
-                        if (empty($skills)) {
+                    if (is_numeric($row) == 1) {
+                        array_push($all_skills, $row);
+                    } else {
+                        $where_sk    = "skill_name = '$row' and status=1";
+                        $select_sk   = "skill_name ,id";
+                        $skills_data = $this->Master_model->getMaster('skill_master', $where_sk, $join = FALSE, $order = false, $field = false, $select_sk, $limit = false, $start = false, $search = false);
+                        if (empty($skills_data)) {
                             
-                            $skill=array('skill_name' => $row);
-                    $result = $this->Master_model->master_insert($skill, 'skill_master');
-                    if (isset($result) && ! empty($result)) {
-                        array_push($skills, $result);
-                    }
-
+                            $skill  = array(
+                                'skill_name' => $row
+                            );
+                            $result = $this->Master_model->master_insert($skill, 'skill_master');
+                            if (isset($result) && !empty($result)) {
+                                array_push($all_skills, $result);
+                            }
+                            
                         }
                     }
                     # code...
                 }
-
-                $job_info     = array(
+                
+                $job_info = array(
                     'company_profile_id' => $employer_id,
                     'job_title' => $this->input->post('job_title'),
                     'job_slugs' => $this->slug->create_uri($this->input->post('job_title')),
                     'job_desc' => $this->input->post('job_desc'),
-
+                    
                     'job_category' => $this->input->post('job_category'),
                     'education' => $this->input->post('education'),
                     'benefits' => implode(',', $this->input->post('benefits')),
@@ -503,10 +515,10 @@ class Employer extends MY_Employer_Controller
                     'is_test_required' => $this->input->post('job_test_requirment')
                     
                 );
-                if (isset($job_desc_file) && ! empty($job_desc_file)) {
-                     $job_info['jd_file'] = $job_desc_file;
+                if (isset($job_desc_file) && !empty($job_desc_file)) {
+                    $job_info['jd_file'] = $job_desc_file;
                 }
-
+                
                 // print_r($job_info);
                 if (empty($job_post_id)) {
                     $this->job_posting_model->insert($job_info);
@@ -576,13 +588,13 @@ class Employer extends MY_Employer_Controller
                 }
             }
         } else {
-            $this->session->unset_userdata('title','job_desc','edu','benefits','experience','location','jobnature','no_jobs','jobrole','skills','salary_range');
-           
+            $this->session->unset_userdata('title', 'job_desc', 'edu', 'benefits', 'experience', 'location', 'jobnature', 'no_jobs', 'jobrole', 'skills', 'salary_range');
+            
             $data['country']         = $this->Master_model->getMaster('country', $where = false);
             $data['state']           = $this->Master_model->getMaster('state', $where = false);
-            $data['benefits']           = $this->Master_model->getMaster('common_company_benifits', $where = false);
+            $data['benefits']        = $this->Master_model->getMaster('common_company_benifits', $where = false);
             $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
-
+            
             $data['certificates'] = $this->Master_model->getMaster('certification_master', $where = false);
             
             $where_cn              = "status=1";
@@ -1066,8 +1078,8 @@ class Employer extends MY_Employer_Controller
                      </div>';
                     
                 }
-    //             $result .='<button type="button" value="other_skill" onclick="check_other(this.value);"  style="font-size:28px;color:#18c5bd;border: none;
-    // background: none;">  <i class="fa fa-plus-circle"  ></i></button>';
+                //             $result .='<button type="button" value="other_skill" onclick="check_other(this.value);"  style="font-size:28px;color:#18c5bd;border: none;
+                // background: none;">  <i class="fa fa-plus-circle"  ></i></button>';
             } else {
                 $result .= 'Skills Not Found ';
             }
@@ -2677,7 +2689,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             }
         }
     }
-
+    
     function search_title()
     {
         if (isset($_GET['term'])) {
@@ -3939,34 +3951,32 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         
     }
     public function ocean_champ_test()
-    {   
+    {
         
         $data['activemenu'] = 'oceanchamp';
         $this->session->set_userdata($data);
-
+        
         $company_profile_id = $this->session->userdata('company_profile_id');
-
-        if($_POST)
-        {
-            $created_on = date('Y-m-d H:i:s');
-            $cenvertedTime = date('Y-m-d H:i:s',strtotime('+5 hour +30 minutes',strtotime($created_on)));
-
-            $topics = $this->input->post('topics');
-            $temp_array= array();
-            if(!empty($topics))
-            {
+        
+        if ($_POST) {
+            $created_on    = date('Y-m-d H:i:s');
+            $cenvertedTime = date('Y-m-d H:i:s', strtotime('+5 hour +30 minutes', strtotime($created_on)));
+            
+            $topics     = $this->input->post('topics');
+            $temp_array = array();
+            if (!empty($topics)) {
                 $all_topics = implode(',', $this->input->post('topics'));
-                $skill = $this->input->post('skill_name');
-                $level = $this->input->post('level');
-
+                $skill      = $this->input->post('skill_name');
+                $level      = $this->input->post('level');
+                
                 // $where_time = "skill_id='$skill' AND job_seeker_id='$company_profile_id' AND topic_id IN (".$all_topics.")";
                 // $exists = $this->Master_model->get_master_row('js_ocean_exam_topics', $select =FALSE , $where_time, $join = FALSE);
                 // // print_r($this->db->last_query());die;
                 // if($exists)
-                // {   
+                // {  
                 //     $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">You have already given test for this skill</div>');                
                 //     redirect('exam/ocean_champ_test');
-
+                
                 // }else{
                 //     $data_array = array(
                 //         'job_seeker_id' => $company_profile_id,
@@ -3976,167 +3986,161 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 //         'created_on'    => $cenvertedTime,
                 //         'created_by'    => $company_profile_id,
                 //     );
-
-                    // $last_id = $this->Master_model->master_insert($data_array, 'js_ocean_exam_topics');
-
-                    $where_req_skill="topic_id IN (".$all_topics.") AND level='$level'";
-                    $exam_question = $this->Master_model->getMaster('questionbank',$where_req_skill,$join = FALSE, $order = false, $field = false, $select = false,$limit=NUMBER_QUESTIONS,$start=false, $search=false);
-                  
-                   // check for answers
-                    for($n1=0;$n1<sizeof($exam_question);$n1++)
-                    {
-                        $individual_question=array();
-                        $question_id = $exam_question[$n1]['ques_id']; 
-                        $wherechks = "question_id='$question_id'";
-                        $answer = $this->Master_model->getMaster('questionbank_answer',$wherechks);
-
-                        $exam_question[$n1]['answer']=$answer;
-                      
-                        $individual_question[]=$exam_question[$n1];
-                          
-                        array_push($temp_array, $exam_question[$n1]);
-                    }
-
-                    $fp = fopen('./exam_questions/'.$skill.'_'.$company_profile_id.'.json', 'w');
-                    fwrite($fp, json_encode($temp_array));
-                                  
-                    $data['skill'] =  $skill;
-
-                    $this->load->view('fontend/employer/oceantchamp_instructions',$data);
+                
+                // $last_id = $this->Master_model->master_insert($data_array, 'js_ocean_exam_topics');
+                
+                $where_req_skill = "topic_id IN (" . $all_topics . ") AND level='$level'";
+                $exam_question   = $this->Master_model->getMaster('questionbank', $where_req_skill, $join = FALSE, $order = false, $field = false, $select = false, $limit = NUMBER_QUESTIONS, $start = false, $search = false);
+                
+                // check for answers
+                for ($n1 = 0; $n1 < sizeof($exam_question); $n1++) {
+                    $individual_question = array();
+                    $question_id         = $exam_question[$n1]['ques_id'];
+                    $wherechks           = "question_id='$question_id'";
+                    $answer              = $this->Master_model->getMaster('questionbank_answer', $wherechks);
+                    
+                    $exam_question[$n1]['answer'] = $answer;
+                    
+                    $individual_question[] = $exam_question[$n1];
+                    
+                    array_push($temp_array, $exam_question[$n1]);
                 }
-             
-               
-            // }
-            else{
-                $selectadd = "id,skill_name";
-                $data['skill_data'] = $this->Master_model->getMaster('skill_master',$whereadd = FALSE, $join = FALSE, $order = false, $field = false, $selectadd, $limit=false, $start=false, $search=false);
-
-            $this->load->view('fontend/employer/oceantchamp_exp',$data);
+                
+                $fp = fopen('./exam_questions/' . $skill . '_' . $company_profile_id . '.json', 'w');
+                fwrite($fp, json_encode($temp_array));
+                
+                $data['skill'] = $skill;
+                
+                $this->load->view('fontend/employer/oceantchamp_instructions', $data);
             }
-
-
-        }else{
+            
+            
+            // }
+            else {
+                $selectadd          = "id,skill_name";
+                $data['skill_data'] = $this->Master_model->getMaster('skill_master', $whereadd = FALSE, $join = FALSE, $order = false, $field = false, $selectadd, $limit = false, $start = false, $search = false);
+                
+                $this->load->view('fontend/employer/oceantchamp_exp', $data);
+            }
+            
+            
+        } else {
             
             // $data['skill_data']  = $temp_array2;
-            $selectadd = "id,skill_name";
-            $data['skill_data'] = $this->Master_model->getMaster('skill_master',$whereadd = FALSE, $join = FALSE, $order = false, $field = false, $selectadd, $limit=false, $start=false, $search=false);
-
-            $this->load->view('fontend/employer/oceantchamp_exp',$data);
+            $selectadd          = "id,skill_name";
+            $data['skill_data'] = $this->Master_model->getMaster('skill_master', $whereadd = FALSE, $join = FALSE, $order = false, $field = false, $selectadd, $limit = false, $start = false, $search = false);
+            
+            $this->load->view('fontend/employer/oceantchamp_exp', $data);
         }
     }
-
-    public function oceanchamp_test($skill_id=null)
+    
+    public function oceanchamp_test($skill_id = null)
     {
         $company_profile_id = $this->session->userdata('company_profile_id');
-        $skill_id = base64_decode($skill_id);
-
+        $skill_id           = base64_decode($skill_id);
+        
         if (!empty($skill_id)) {
-                 
-            $data['title'] = 'Exam Start';
-            $data['skill_id'] = $skill_id;
-    
-            $str = file_get_contents('./exam_questions/'.$skill_id.'_'.$company_profile_id.'.json');
-            $json = json_decode($str, true);
-
-            foreach ($json  as $value) {
-               $data['questions'] = $value;
-               break;
-            }
-
-            // print_r($data['questions']);die;
-
             
-                    $this->load->view('fontend/employer/oceanchamp_test',$data);
+            $data['title']    = 'Exam Start';
+            $data['skill_id'] = $skill_id;
+            
+            $str  = file_get_contents('./exam_questions/' . $skill_id . '_' . $company_profile_id . '.json');
+            $json = json_decode($str, true);
+            
+            foreach ($json as $value) {
+                $data['questions'] = $value;
+                break;
+            }
+            
+            // print_r($data['questions']);die;
+            
+            
+            $this->load->view('fontend/employer/oceanchamp_test', $data);
             // $this->load->view('fontend/exam/oceantest_test',$data);
-
+            
         } else {
             redirect('exam');
         }
     }
-
-     public function insert_ocean_data()
+    
+    public function insert_ocean_data()
     {
         $company_profile_id = $this->session->userdata('company_profile_id');
-       
-        $jid= $this->input->post('skill_id');
-        $skill_id = base64_decode($jid);
+        
+        $jid              = $this->input->post('skill_id');
+        $skill_id         = base64_decode($jid);
         $data['skill_id'] = $skill_id;
-        $question_id = $this->input->post('question_id');
-        $option = $this->input->post('optRdBtn');
-        $status = array();
-        $str = file_get_contents('./exam_questions/'.$skill_id.'_'.$company_profile_id.'.json');
-
-        $json = json_decode($str, true);
-        $created_on = date('Y-m-d H:i:s');
-        $cenvertedTime = date('Y-m-d H:i:s',strtotime('+5 hour +30 minutes',strtotime($created_on)));
-
-        foreach ($json  as $value) {
-           $data['questions'] = $value;
-           break;
+        $question_id      = $this->input->post('question_id');
+        $option           = $this->input->post('optRdBtn');
+        $status           = array();
+        $str              = file_get_contents('./exam_questions/' . $skill_id . '_' . $company_profile_id . '.json');
+        
+        $json          = json_decode($str, true);
+        $created_on    = date('Y-m-d H:i:s');
+        $cenvertedTime = date('Y-m-d H:i:s', strtotime('+5 hour +30 minutes', strtotime($created_on)));
+        
+        foreach ($json as $value) {
+            $data['questions'] = $value;
+            break;
         }
-
+        
         // print_r($option);
         // print_r($data['questions']['answer']);die;
-       
-        for($q=0;$q<sizeof($data['questions']['answer']);$q++)
-        {
+        
+        for ($q = 0; $q < sizeof($data['questions']['answer']); $q++) {
             $answer_id = $data['questions']['answer'][$q]['answer_id'];
             // print_r($answer_id);
             // print_r($option);die;
             
-            for($i=0;$i<sizeof($option);$i++)
-            {   
-                if($answer_id == $option[$i])
-                {
-
-                     $status[]= 'Yes';
-                }else{
-                     $status[]= 'No';
+            for ($i = 0; $i < sizeof($option); $i++) {
+                if ($answer_id == $option[$i]) {
+                    
+                    $status[] = 'Yes';
+                } else {
+                    $status[] = 'No';
                 }
             }
             
         }
         if (count(array_unique($status)) === 1 && end($status) === 'Yes') {
-            $mark=1;
+            $mark    = 1;
             $cstatus = 'Yes';
-        }else {
-            $mark =0;
+        } else {
+            $mark    = 0;
             $cstatus = 'No';
-        } 
-      
+        }
+        
         $exam_array = array(
-            'skill_id'          => $skill_id,
-            'employee_id'     => $company_profile_id,  
-            'question_id'       => $question_id,
-            'marks'             => $mark,
-            'correct_status'    => $cstatus,
-            'date_time'         => $cenvertedTime,
+            'skill_id' => $skill_id,
+            'employee_id' => $company_profile_id,
+            'question_id' => $question_id,
+            'marks' => $mark,
+            'correct_status' => $cstatus,
+            'date_time' => $cenvertedTime
         );
-        $last_id = $this->Master_model->master_insert($exam_array, 'employee_ocean_exam_result');
-        if($last_id)
-        {
+        $last_id    = $this->Master_model->master_insert($exam_array, 'employee_ocean_exam_result');
+        if ($last_id) {
             array_shift($json); // remove completed element from json array
-           // update json file with remaining questions
-           $fp = fopen('./exam_questions/'.$skill_id.'_'.$company_profile_id.'.json', 'w');
-           fwrite($fp, json_encode($json));
-
-            $new_str = file_get_contents('./exam_questions/'.$skill_id.'_'.$company_profile_id.'.json');
+            // update json file with remaining questions
+            $fp = fopen('./exam_questions/' . $skill_id . '_' . $company_profile_id . '.json', 'w');
+            fwrite($fp, json_encode($json));
+            
+            $new_str          = file_get_contents('./exam_questions/' . $skill_id . '_' . $company_profile_id . '.json');
             $data['new_json'] = json_decode($new_str, true);
-
-            foreach ($data['new_json']  as $value) {
-               $data['questions'] = $value;
-               break;
+            
+            foreach ($data['new_json'] as $value) {
+                $data['questions'] = $value;
+                break;
             }
-            if(count($data['new_json']) >= 1 )
-            {
-                $this->load->view('fontend/employer/oceanchamp_test',$data);
-            }else{
-                unlink('./exam_questions/'.$skill_id.'_'.$company_profile_id.'.json');
-             
+            if (count($data['new_json']) >= 1) {
+                $this->load->view('fontend/employer/oceanchamp_test', $data);
+            } else {
+                unlink('./exam_questions/' . $skill_id . '_' . $company_profile_id . '.json');
+                
                 $this->load->view('fontend/employer/result_page');
             }
         }
-
+        
     }
     
     function gettopics()
@@ -4148,22 +4152,22 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         if (!empty($topics)) {
             // $result .= '<option value="">Select Topic</option>';
             foreach ($topics as $key) {
-               $result .="<input type='checkbox' name='topics[]' style='height:15px; width:20px;' id='topics' value=".$key['topic_id']." checked> ".$key['topic_name']."";
+                $result .= "<input type='checkbox' name='topics[]' style='height:15px; width:20px;' id='topics' value=" . $key['topic_id'] . " checked> " . $key['topic_name'] . "";
             }
         } else {
             $result .= '<p value="">Topic not available</p>';
         }
         echo $result;
     }
-
+    
     public function Recruiter()
     {
-
+        
         $data['activemenu'] = 'Recruiter';
         $this->session->set_userdata($data);
-
+        
         $this->load->view('fontend/employer/ocean_history');
-
+        
     }
     
 } // end class
