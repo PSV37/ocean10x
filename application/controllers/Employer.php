@@ -239,10 +239,10 @@ class Employer extends MY_Employer_Controller
             $data['title']                  = $this->input->post('job_title');
             $data['location']               = $this->input->post('city_id');
             // $data['experience']=$experience;
-            $data['sal_from']               = $this->input->post('sal_from');
+            $data['salrange_from']               = $this->input->post('salrange_from');
             $data['preffered_certificates'] = $this->input->post('preffered_certificates');
-            $data['sal_to']                 = $this->input->post('sal_to');
-            $data['salary_range']           = $data['sal_from'] . '-' . $data['sal_to'];
+            $data['salrange_to']                 = $this->input->post('salrange_to');
+            $data['salary_range']           = $data['salrange_from'] . '-' . $data['salrange_to'];
             $ed                             = $this->input->post('job_edu');
             $data['edu']                    = $ed;
             $where_int                      = "education_level_id='$ed'";
@@ -435,9 +435,9 @@ class Employer extends MY_Employer_Controller
                 
                 $this->load->view('fontend/employer/post_new_job', $data);
             } else {
-                $sal_from     = $this->input->post('sal_from');
-                $sal_to       = $this->input->post('sal_to');
-                $salary_range = $sal_from . '-' . $sal_to;
+                $salrange_from     = $this->input->post('salrange_from');
+                $salrange_to       = $this->input->post('salrange_to');
+                $salary_range = $salrange_from . '-' . $salrange_to;
                 
                 $exp_from     = $this->input->post('exp_from');
                 $exp_to       = $this->input->post('exp_to');
@@ -596,7 +596,7 @@ class Employer extends MY_Employer_Controller
                 }
             }
         } else {
-            $this->session->unset_userdata('title', 'job_desc', 'edu', 'benefits', 'experience', 'location', 'jobnature', 'no_jobs', 'jobrole', 'skills', 'salary_range');
+           
             
             $data['country']         = $this->Master_model->getMaster('country', $where = false);
             $data['state']           = $this->Master_model->getMaster('state', $where = false);
