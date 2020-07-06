@@ -449,7 +449,7 @@ class Employer extends MY_Employer_Controller
                         $config['max_height']    = 300;
                         
                         $this->load->library('upload', $config);
-                        $result_upload                   = $this->upload->do_upload('company_logo');
+                        $result_upload                   = $this->upload->do_upload('job_description');
                         $upload_data                     = $this->upload->data();
                         $jd_file                    = $upload_data['file_name'];
                         $job_desc_file = $jd_file;
