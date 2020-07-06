@@ -156,7 +156,7 @@ a.dropdown-toggle {
   left: 0;          
   width: 100%;
   height: 100%;
-  border-radius: 120px;
+  border-radius: 120px;      
   border: none;
   background: rgba(255,255,255,0);
   padding: 0 68px 0 68px;
