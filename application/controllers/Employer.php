@@ -1526,6 +1526,49 @@ class Employer extends MY_Employer_Controller
     
     public function save_questionbank($id = null)
     {
+
+         $this->form_validation->set_rules('technical_id', 'Subject', 'required|');
+        $this->form_validation->set_rules('topic_id', 'Main Topic', 'required');
+        $this->form_validation->set_rules('subtopic_id', 'Sub Topic','required');
+        $this->form_validation->set_rules('lineitem_id', 'Line Item Level 1','required');
+        $this->form_validation->set_rules('lineitemlevel_id','Line Item Level 2','required');
+        $this->form_validation->set_rules('ques_type','Question Type', 'required');
+        $this->form_validation->set_rules('question','Question', 'required');
+        $this->form_validation->set_rules('option1','Option 1', 'required');
+        $this->form_validation->set_rules('option2','Option 2', 'required');
+        $this->form_validation->set_rules('option3','Option 3', 'required');
+        $this->form_validation->set_rules('option4','Option 4', 'required');
+        $this->form_validation->set_rules('correct_answer[]','Correct Answer', 'required');
+    $this->form_validation->set_message('required', 'This field is mandatory');
+        if ($this->form_validation->run() == FALSE) 
+        {
+            $where_skill = "status=1";
+        
+        $data['skill_master'] = $this->Master_model->getMaster('skill_master', $where_skill);
+        
+        //$where_opt= "options.status=1";
+        $data['options'] = $this->Master_model->getMaster('options');
+        
+        $where_topic   = "topic.topic_status=1";
+        $data['topic'] = $this->Master_model->getMaster('topic', $where_topic);
+        
+        $where_subtopic   = "subtopic.subtopic_status='1'";
+        $data['subtopic'] = $this->Master_model->getMaster('subtopic', $where_subtopic);
+        
+        $where_lineitem   = "lineitem.lineitem_status='1'";
+        $data['lineitem'] = $this->Master_model->getMaster('lineitem', $where_lineitem);
+        
+        $where_lineitemlevel   = "lineitemlevel.lineitemlevel_status='1'";
+        $data['lineitemlevel'] = $this->Master_model->getMaster('lineitemlevel', $where_lineitemlevel);
+        
+        $join = array(
+            'questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|LEFT OUTER'
+            
+        );
+        
+        $data['questionbank'] = $this->Master_model->getMaster('questionbank', $where = FALSE, $join, $order = false, $field = false, $select = false, $limit = false, $start = false, $search = false);
+        $this->load->view('fontend/employer/add_question'); //die;
+        }else {
         
         $user_id = $this->session->userdata('company_profile_id');
         
@@ -1656,6 +1699,7 @@ class Employer extends MY_Employer_Controller
             redirect('employer/all_questions');
         }
     }
+}
     
     public function edit_questionbank($id)
     {
@@ -3337,7 +3381,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $this->form_validation->set_rules('desired_wrok_location','Desired Work Location', 'required|alpha');
 
             $this->form_validation->set_message('required', 'This field is mandatory');
-        
+
 
          if ($this->form_validation->run() == FALSE) {
 
