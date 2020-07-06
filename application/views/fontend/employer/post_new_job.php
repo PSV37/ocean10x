@@ -284,7 +284,7 @@ div#other_skills {
   </div>
       <div class="col-md-12">
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
-         <form id="test" action="<?php echo base_url() ?>employer/job_post" method="post">
+         <form id="test" action="<?php echo base_url() ?>employer/job_post" method="post" enctype="multipart/form-data">
             <div class="col-md-9 post-job">
                <input type="hidden" name="job_post_id" value="<?php if(!empty($job_info->job_post_id)){echo $job_info->job_post_id;} ?>">
                <div id="svg_wrap"></div>
@@ -487,7 +487,7 @@ div#other_skills {
                   <div class="col-md-6 col-sm-12" tabindex="16" >
                      <div class=" formrow">
                         <label class="control-label">Upload JD <span class="required"> * </span></label>
-                        <input type="file" name="job_description">                                  
+                        <input type="file" name="job_description" class="form-control">                                  
                      </div>
                   </div>
                   <div class="col-md-12 col-sm-4" tabindex="17">
@@ -596,6 +596,9 @@ $("#job_title").autocomplete({
       $('#other_terxtbx').hide();
       $('#skl_btn').hide();
       $('#other_skills').hide();
+       var id=document.getElementById('job_role').value;
+       alert(id);
+       getSkillsdetails(id);
 
 
       $(function() { 
