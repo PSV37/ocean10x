@@ -438,7 +438,7 @@ class Employer extends MY_Employer_Controller
 
                 $job_description = isset($_FILES['job_description']['name']) ? $_FILES['job_description']['name'] : null;
                 
-                if (!empty($employer_id) || !empty($job_description)) {
+              
                     if (!empty($job_description)) {
                         
                         $config['upload_path']   = 'upload/job_description';
@@ -462,8 +462,7 @@ class Employer extends MY_Employer_Controller
                             redirect('employer/profile-setting');
                         }
                     }
-                }
-                print_r($job_desc_file);
+            
 
                 foreach ($skills as $row) {
                     if(is_numeric($row)==1)
