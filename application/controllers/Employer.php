@@ -463,6 +463,7 @@ class Employer extends MY_Employer_Controller
                         }
                     }
                 }
+                print_r($job_desc_file);
 
                 foreach ($skills as $row) {
                     if(is_numeric($row)==1)
@@ -516,6 +517,8 @@ class Employer extends MY_Employer_Controller
                 if (isset($job_desc_file) && ! empty($job_desc_file)) {
                      $job_info['jd_file'] = $job_desc_file;
                 }
+
+                print_r($job_info);
                 if (empty($job_post_id)) {
                     $this->job_posting_model->insert($job_info);
                     $company_name = $this->session->userdata('company_name');
