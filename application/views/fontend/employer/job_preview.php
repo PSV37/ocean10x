@@ -280,6 +280,7 @@ p.right-title_detail {
                             <div class="skils_benifit">
                               <li class="left-title_seperate">skills&nbsp; :</li><li class="right-title_seperate">
                              <?php  $sk=$skills;
+                             
                              if (isset($sk) && !empty($sk)) {
                                 $where_sk= "id IN (".$sk.") AND status=1";
                               $select_sk = "skill_name ,id";

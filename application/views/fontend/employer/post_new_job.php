@@ -485,7 +485,7 @@ div#other_skills {
                   <div class="col-md-6 col-sm-12" tabindex="16" >
                      <div class=" formrow">
                         <label class="control-label">Upload JD <span class="required"> * </span></label>
-                        <input type="file" name="">                                  
+                        <input type="file" name="job_description">                                  
                      </div>
                   </div>
                   <div class="col-md-12 col-sm-4" tabindex="17">
