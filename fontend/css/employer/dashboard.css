@@ -1245,7 +1245,7 @@ top: -50px;
 top:-40px;right:32px;font-size:0px;}
       .switch {     
     left: 22%;
-	  }   
+	  }      
 	  .job_title{font-size:12px;}
 	  .job-voucher{display:table;}        
 	  .apply_job_btn{     
@@ -1263,3 +1263,14 @@ top:-40px;right:32px;font-size:0px;}
 li.left-title {font-weight:500 !important;}        
 li.right-title {font-weight:500 !important;}
 	}	
+@media screen and (max-width:400px){
+	.box .check {
+    
+    z-index: 999;    
+    margin-top: 20px;      
+	}
+	label {    
+	display:inline-table !important;
+	}
+	}    
+     
