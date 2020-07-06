@@ -283,7 +283,7 @@ p.right-title_detail {
                              </div>
                                    
                             <div class="skils_benifit">
-                              <li class="left-title_seperate">skills&nbsp; :</li><li class="right-title_seperate">
+                              <li class="left-title_seperate">skills&nbsp;&nbsp;: :</li><li class="right-title_seperate">
                              <?php  $sk=$skills;
                              
                              if (isset($sk) && !empty($sk)) {
