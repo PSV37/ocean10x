@@ -284,7 +284,7 @@ div#other_skills {
   </div>
       <div class="col-md-12">
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
-         <form id="test" action="<?php echo base_url() ?>employer/job_post" method="post">
+         <form id="test" action="<?php echo base_url() ?>employer/job_post" method="post" enctype="multipart/form-data">
             <div class="col-md-9 post-job">
                <input type="hidden" name="job_post_id" value="<?php if(!empty($job_info->job_post_id)){echo $job_info->job_post_id;} ?>">
                <div id="svg_wrap"></div>
