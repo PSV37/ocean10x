@@ -557,6 +557,11 @@ $("#job_category").change(function () {
 
       });
   });
+ $('#tokenfield').on('keyup', function(e) {
+  if(e.which === 13) {
+    e.preventDefault();
+  }
+});
 $("#job_title").autocomplete({
               
               source: "<?php echo base_url();?>Employer/search_title",
