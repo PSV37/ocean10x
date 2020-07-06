@@ -265,7 +265,7 @@ class Employer extends MY_Employer_Controller
             
             $data['job_desc'] = $this->input->post('job_desc');
               $skills= $this->input->post('skill_set');
-                 print_r($skills);
+                
                  $all_skills=array();
 
                 foreach ($skills as $row) {
@@ -278,12 +278,12 @@ class Employer extends MY_Employer_Controller
                         $where_sk  = "skill_name = '$row' and status=1";
                         $select_sk = "skill_name ,id";
                         $skills_data    = $this->Master_model->getMaster('skill_master', $where_sk, $join = FALSE, $order = false, $field = false, $select_sk, $limit = false, $start = false, $search = false);
-                        print_r($skills_data);
+                     
                         if (empty($skills_data)) {
                             
                             $skill=array('skill_name' => $row);
                             $result = $this->Master_model->master_insert($skill, 'skill_master');
-                            print_r($result);
+                          
                             if (isset($result) && ! empty($result)) {
                                 array_push($all_skills, $result);
                             }
@@ -292,7 +292,7 @@ class Employer extends MY_Employer_Controller
                     }
                     # code...
                 }
-                 print_r($all_skills);
+               
             $data['skills']   = implode(',', $all_skills);
             $data['benefits'] = implode(',', $this->input->post('benefits'));
             $this->session->set_userdata($data);
@@ -452,7 +452,7 @@ class Employer extends MY_Employer_Controller
                         $result_upload                   = $this->upload->do_upload('company_logo');
                         $upload_data                     = $this->upload->data();
                         $jd_file                    = $upload_data['file_name'];
-                        $job_info['jd_file'] = $jd_file;
+                        $job_desc_file = $jd_file;
                         
                         if (!$result_upload == true) {
                             $error = array(
@@ -513,6 +513,9 @@ class Employer extends MY_Employer_Controller
                     'is_test_required' => $this->input->post('job_test_requirment')
                     
                 );
+                if (isset($job_desc_file) && ! empty($job_desc_file)) {
+                     $job_info['jd_file'] = $job_desc_file;
+                }
                 if (empty($job_post_id)) {
                     $this->job_posting_model->insert($job_info);
                     $company_name = $this->session->userdata('company_name');
