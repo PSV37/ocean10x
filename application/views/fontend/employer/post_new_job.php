@@ -541,10 +541,10 @@ $("#job_category").change(function () {
                 // alert($(this).val());
                 document.getElementById("job_role").focus();
             });
-$('#tokenfield').on('keyup', function(e) {
-  if(e.which === 13) {
-    e.preventDefault();
-  }
+$('#tokenfield').keypress(function(e){
+    // if ( e.which == 13 ) return false;
+    // //or...
+    if ( e.which == 13 ) e.preventDefault();
 });
     $('#tokenfield').tokenfield({
       autocomplete: {
