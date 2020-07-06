@@ -1267,7 +1267,8 @@ li.right-title {font-weight:500 !important;}
 .col-md-6.active-job {
     margin-right: -25px;
     margin-left: -25px;
-}   
+} 
+.front{height:auto;}       
 	}	
 	
 @media screen and (max-width:400px){
