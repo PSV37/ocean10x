@@ -489,7 +489,7 @@ div#other_skills {
                         <label class="control-label">Upload JD <span class="required"> * </span></label>
                         <input type="file" name="job_description" class="form-control">          <?php if (!empty($this->session->userdata('jd_file')) ) { ?>
                          <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/job_description/<?php echo $this->session->userdata('jd_file'); ?>" download>Jobe_description</a>
-                        } ?>                        
+                     <?php   } ?>                        
                      </div>
                   </div>
                   <div class="col-md-12 col-sm-4" tabindex="17">
