@@ -504,8 +504,8 @@ ul.rating-comments {
     box-shadow: 2px 2px 4px #bbbaba;    
   
 }
-@media screen and (max-width:600px){
+@media screen and (max-width:600px){     
 .following-info2 {
-    margin-left: 23px !important;
+    margin-left: 0px !important;
 }
 }
