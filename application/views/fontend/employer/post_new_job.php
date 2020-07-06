@@ -541,7 +541,8 @@ $("#job_category").change(function () {
                 // alert($(this).val());
                 document.getElementById("job_role").focus();
             });
- $('#tokenfield-tokenfield').bind('keypress keydown keyup', function(e){
+ $('#tokenfield').on('keypress keydown keyup', function(e){
+  alert(e.keyCode);
        if(e.keyCode == 13) { e.preventDefault(); }
     });
 
