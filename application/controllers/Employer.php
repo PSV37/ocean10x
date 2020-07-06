@@ -437,7 +437,7 @@ class Employer extends MY_Employer_Controller
                 $skills= $this->input->post('skill_set');
 
                 $job_description = isset($_FILES['job_description']['name']) ? $_FILES['job_description']['name'] : null;
-                print_r($job_description);
+                print_r($$_FILES);
               
                     if (!empty($job_description)) {
                         
@@ -517,9 +517,9 @@ class Employer extends MY_Employer_Controller
                      $job_info['jd_file'] = $job_desc_file;
                 }
 
-                print_r($job_info);
+                // print_r($job_info);
                 if (empty($job_post_id)) {
-                    $this->job_posting_model->insert($job_info);
+                    // $this->job_posting_model->insert($job_info);
                     $company_name = $this->session->userdata('company_name');
                     $data         = array(
                         'company' => $company_name,
