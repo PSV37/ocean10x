@@ -485,3 +485,14 @@ label {
     display: inline-table;
 }       
 }
+@media screen and (max-width:400px){
+	.box .check {
+    
+    z-index: 999;    
+    margin-top: 20px;      
+	}
+	label {    
+	display:inline-table !important;
+	}
+	}    
+     
