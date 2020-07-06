@@ -25,7 +25,7 @@
                     ?>   
                         <option value="<?php echo $skill['id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option> 
                     <?php } ?>
-                  </select>
+                  </select> <?php echo form_error('technical_id'); ?>   
               </div>
             </div>
             <div class="col-md-4">
@@ -34,14 +34,14 @@
                 <select id="topic_id" name="topic_id" class="form-control" onchange="getSubtopic(this.value)">
                   <option value="">Select Topic</option> 
                   <!-- <option value="1">HTML 5</option>  -->
-                </select>
+                </select> <?php echo form_error('topic_id'); ?>   
               </div>
             </div>
             <div class="col-md-4">
               <div class="form-group">
                 <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
                 <select id="subtopic_id" name="subtopic_id" class="form-control" onchange="getLineitem(this.value)">
-                </select>
+                </select> <?php echo form_error('subtopic_id'); ?>   
               </div>
             </div>               
           </div>
@@ -50,14 +50,14 @@
               <div class="form-group">
                 <label for="exampleInputEmail1">Line Item(Level 1)<span class="required">*</span></label>
                 <select id="lineitem_id" name="lineitem_id" class="form-control" onchange="getLineitemlevel(this.value)">
-                </select> 
+                </select>  <?php echo form_error('lineitem_id'); ?>   
               </div>
             </div>
             <div class="col-md-4">
               <div class="form-group">
                   <label for="exampleInputEmail1">Line Item(Level 2)<span class="required">*</span></label>
                   <select id="lineitemlevel_id" name="lineitemlevel_id" class="form-control">
-                  </select> 
+                  </select>  <?php echo form_error('lineitemlevel_id'); ?>   
               </div>
             </div>
             <div class="col-md-4">
@@ -67,7 +67,7 @@
                     <option value="Expert"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Expert')echo "selected";?>>Expert</option>
                     <option value="Medium"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Medium')echo "selected";?>>Medium</option>
                     <option value="Beginner"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Beginner')echo "selected";?>>Beginner</option>
-                  </select>
+                  </select> <?php echo form_error('level'); ?>   
               </div>
             </div>
           </div> 
@@ -79,7 +79,7 @@
                   <option value="MCQ"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ')echo "selected";?>>MCQ</option>
                     <option value="Subjective"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Subjective')echo "selected";?>>Subjective</option>
                     <option value="Practical"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Practical')echo "selected";?>>Practical</option>
-                </select>
+                </select> <?php echo form_error('ques_type'); ?>   
               </div>
             </div>
           </div>
@@ -88,26 +88,26 @@
     <div class="row">
        <div class="col-md-12 form-group">
         <label for="comment">Question </label>
-        <textarea class="form-control" name="question" rows="5" id="comment"  required ><?php if (!empty($edit_questionbank_info)) echo $row['question'];?></textarea>
+        <textarea class="form-control" name="question" rows="5" id="comment"  required ><?php if (!empty($edit_questionbank_info)) echo $row['question'];?></textarea> <?php echo form_error('question'); ?>   
       </div>
     
        <div class="col-md-12 form-group">
         <label for="comment">Option 1:
         </label>
-        <textarea class="form-control" name="option1" id="option1" rows="5" id="comment" required ><?php if (!empty($edit_questionbank_info)) echo $row['option1'];?></textarea>
+        <textarea class="form-control" name="option1" id="option1" rows="5" id="comment" required ><?php if (!empty($edit_questionbank_info)) echo $row['option1'];?></textarea> <?php echo form_error('option1'); ?>   
       </div>
     
        <div class="col-md-12 form-group">
         <label for="comment">Option 2:</label>
-        <textarea name="option2" id="option2" class="form-control" rows="5" id="comment" required ><?php if (!empty($edit_questionbank_info)) echo $row['option2'];?></textarea>
+        <textarea name="option2" id="option2" class="form-control" rows="5" id="comment" required ><?php if (!empty($edit_questionbank_info)) echo $row['option2'];?></textarea> <?php echo form_error('option2'); ?>   
       </div>
        <div class="col-md-12 form-group">
         <label for="comment">Option 3:</label>
-        <textarea class="form-control" name="option3" id="option3" rows="5" id="comment" required ><?php if (!empty($edit_questionbank_info)) echo $row['option3'];?></textarea>
+        <textarea class="form-control" name="option3" id="option3" rows="5" id="comment" required ><?php if (!empty($edit_questionbank_info)) echo $row['option3'];?></textarea> <?php echo form_error('option3'); ?>   
       </div>
        <div class="col-md-12 form-group">
         <label for="comment">Option 4:</label>
-        <textarea class="form-control" name="option4" id="option4" rows="5" id="comment" required ><?php if (!empty($edit_questionbank_info)) echo $row['option4'];?></textarea>
+        <textarea class="form-control" name="option4" id="option4" rows="5" id="comment" required ><?php if (!empty($edit_questionbank_info)) echo $row['option4'];?></textarea> <?php echo form_error('option4'); ?>   
       </div>
     </div>  
       <div class="box-body">
