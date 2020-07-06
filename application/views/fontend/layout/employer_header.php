@@ -77,14 +77,6 @@
 /*end*/
 
 
-
-
-
-
-
-
-
-
 		</style>
         <style>
           
@@ -223,18 +215,6 @@
   <!-- /.modal-dialog --> 
   
 </div>
-
-       
-
-
-
-
-
-        
-        
-
-
-
 
 <script>
   function logout()
