@@ -509,7 +509,7 @@ class Employer extends MY_Employer_Controller
 
                 // print_r($job_info);
                 if (empty($job_post_id)) {
-                    // $this->job_posting_model->insert($job_info);
+                    $this->job_posting_model->insert($job_info);
                     $company_name = $this->session->userdata('company_name');
                     $data         = array(
                         'company' => $company_name,
