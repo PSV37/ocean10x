@@ -399,7 +399,7 @@ class Employer extends MY_Employer_Controller
         } elseif ($_POST) {
             $this->form_validation->set_rules('job_title', 'job title', 'required');
            
-            
+            $this->form_validation->set_rules('city_id', 'Job Location', 'required');
            
 
             // $this->form_validation->set_rules('job_desc', 'job description', 'trim|callback_contactVerify[job_description]|xss_clean');
