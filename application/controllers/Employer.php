@@ -398,8 +398,8 @@ class Employer extends MY_Employer_Controller
             
         } elseif ($_POST) {
             $this->form_validation->set_rules('job_title', 'job title', 'required');
-            $this->form_validation->set_rules('job_title', 'Job Title', 'required|regex_match[^[a-zA-Z!@#.”$%&’()*\+,\/;\[\\\]\^_`{|}~ \s]+$]');
-            $this->form_validation->set_rules('city_id', 'Job Location', 'required|');
+           
+            $this->form_validation->set_rules('city_id', 'Job Location', 'required');
             $this->form_validation->set_rules('exp_from', 'Experience From', 'required|max_length[2]');
             $this->form_validation->set_rules('exp_to', 'Experience To', 'required|max_length[2]');
             $this->form_validation->set_rules('no_jobs', 'Number of Positions', 'required|integer');
