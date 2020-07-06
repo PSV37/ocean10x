@@ -277,14 +277,15 @@ class Employer extends MY_Employer_Controller
                         $where_sk  = "skill_name = '$row' and status=1";
                         $select_sk = "skill_name ,id";
                         $skills_data    = $this->Master_model->getMaster('skill_master', $where_sk, $join = FALSE, $order = false, $field = false, $select_sk, $limit = false, $start = false, $search = false);
+                        print_r($skills_data);
                         if (empty($skills_data)) {
                             
                             $skill=array('skill_name' => $row);
-                    $result = $this->Master_model->master_insert($skill, 'skill_master');
-                    print_r($result);
-                    if (isset($result) && ! empty($result)) {
-                        array_push($skills, $result);
-                    }
+                            $result = $this->Master_model->master_insert($skill, 'skill_master');
+                            print_r($result);
+                            if (isset($result) && ! empty($result)) {
+                                array_push($skills, $result);
+                            }
 
                         }
                     }
