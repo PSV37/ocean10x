@@ -451,7 +451,7 @@ div#other_skills {
                    </div>
                        
                            
-                     <div id="other_skills"><input type="text"  name="benefits[]" id="other_skill"  style="display: inline-block; width: 30%" ><button type="button" id="check-btn" onclick="save_skill();"><i class="fa fa-check"></i></button></div>
+                     <div id="other_skills"><input type="text"  name="otr_skl" id="other_skill"  style="display: inline-block; width: 30%" ><button type="button" id="check-btn" onclick="save_skill();"><i class="fa fa-check"></i></button></div>
                   </div>
              
                   <div class="col-md-12 col-sm-12" tabindex="14">
@@ -479,7 +479,7 @@ div#other_skills {
                            <span><i class="fa fa-plus"></i> Other</span></button>
 
                            </label> -->
-                        <div id="other_terxtbx"><input type="text"  name="benefits[]" id="other_benifit"  style="display: inline-block; width: 30%" ><button type="button" id="check-btn" onclick="save_benifit();"><i class="fa fa-check"></i></button></div>
+                        <div id="other_terxtbx"><input type="text"  name="othe_benf" id="other_benifit"  style="display: inline-block; width: 30%" ><button type="button" id="check-btn" onclick="save_benifit();"><i class="fa fa-check"></i></button></div>
                   </div>
                   <!-- </textarea><?php echo form_error('benefits'); ?>                                  -->
                   <!-- </div>
