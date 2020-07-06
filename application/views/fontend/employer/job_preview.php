@@ -271,7 +271,12 @@ p.right-title_detail {
                                 <div class="clear"></div>
                              </div>
                             <div class="following-info3">
-                                    <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li><li class="right-title">&nbsp;: yes</li>
+                                    <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li><li class="right-title">&nbsp;: <?php if (isset($jd_file) && !empty($jd_file)) {
+                                        echo "Yes"; ?><a href="<?php echo base_url() ?>upload/job_description/<?php echo $jd_file; ?>" target="_blank"><i class="fa fa-file" aria-hidden="true"></i></a>
+                                        <a href="<?php echo base_url() ?>upload/job_description/<?php echo $jd_file; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a>
+                                  <?php   }else{
+                                        echo "No";
+                                    } ?> </li>
                                 	 <li class="left-title">CTC</li><li class="right-title">&nbsp;: <?php echo $salary_range; ?></li>
                                       
                                 <div class="clear"></div>

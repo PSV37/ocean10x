@@ -234,6 +234,34 @@ class Employer extends MY_Employer_Controller
         $employer_id = $this->session->userdata('company_profile_id');
         if (isset($_POST['preview'])) {
             // echo "preview"; die();
+
+            $job_description = isset($_FILES['job_description']['name']) ? $_FILES['job_description']['name'] : null;
+                // print_r($_FILES);die;
+                
+                if (!empty($job_description)) {
+                    
+                    $config['upload_path']   = 'upload/job_description/';
+                    $config['allowed_types'] = '*';
+                    $config['encrypt_name']  = true;
+                    $config['max_size']      = 1000;
+                    $config['max_width']     = 300;
+                    $config['max_height']    = 300;
+                    
+                    $this->load->library('upload', $config);
+                    $result_upload = $this->upload->do_upload('job_description');
+                    $upload_data   = $this->upload->data();
+                    $jd_file       = $upload_data['file_name'];
+                    $job_desc_file = $jd_file;
+                    
+                    if (!$result_upload == true) {
+                        $error = array(
+                            'error' => $this->upload->display_errors()
+                        );
+                        $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">Please Upload a Valid Logo Size Max size 300*300</div>');
+                        redirect('employer/profile-setting');
+                    }
+                }
+                $data['jd_file']=$job_desc_file;
             $data['job_post_id'] = $this->input->post('job_post_id');
             $data['exp_from']    = $this->input->post('exp_from');
             $data['exp_to']      = $this->input->post('exp_to');
