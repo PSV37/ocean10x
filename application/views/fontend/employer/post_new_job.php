@@ -537,14 +537,11 @@ function education_list()
 
 <script>
 
-$("#job_category").change(function () {
-                // alert($(this).val());
-                document.getElementById("job_role").focus();
-            });
- $('#tokenfield').on('keypress keydown keyup', function(e){
-  alert(e.keyCode);
-       if(e.keyCode == 13) { e.preventDefault(); }
-    });
+// $('#tokenfield').on('keypress keydown keyup', function(e){
+//   alert(e.keyCode);
+//        if(e.keyCode == 13) { e.preventDefault(); }
+//     });
+ 
 
     $('#tokenfield').tokenfield({
       autocomplete: {
