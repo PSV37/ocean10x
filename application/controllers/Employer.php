@@ -451,10 +451,10 @@ class Employer extends MY_Employer_Controller
             $this->form_validation->set_rules('salrange_to', 'Salary Range To', 'required|max_length[2]');
            
 
-            // $this->form_validation->set_rules('job_desc', 'job description', 'trim|callback_contactVerify[job_description]|xss_clean');
-            // $this->form_validation->set_rules('job_description', 'job description file', 'trim|callback_contactVerify[job_desc]|xss_clean');
+            $this->form_validation->set_rules('job_desc', 'job description', 'trim|callback_contactVerify');
+            $this->form_validation->set_rules('job_description', 'job description file', 'trim|callback_contactVerify');
 
-            //     $this->form_validation->set_message('contactVerify', 'Either Phone or Email is required');
+                $this->form_validation->set_message('contactVerify', 'Either Phone or Email is required');
 
             $this->form_validation->set_message('required', 'This field is mandatory');
              $this->form_validation->set_message('max_length', 'max_length');
@@ -657,8 +657,13 @@ class Employer extends MY_Employer_Controller
         }
     }
      public function contactVerify($contact, $otherField) {
-                  return ($contact != '' || $this->input->post($otherField) != '');
-                }
+        if($this->input->post('job_desc') || $_FILES['job_description'] ){
+        return TRUE;
+    }else{
+        $this->form_validation->set_message('contactVerify', 'Please enter atleast one of Job Description or Upload JD');
+        return FALSE;
+    }
+}
     public function manage_job()
     {
         $employer_id      = $this->session->userdata('company_profile_id');
