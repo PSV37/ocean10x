@@ -269,105 +269,66 @@ class Employer extends MY_Employer_Controller
                 
                 $this->load->view('fontend/employer/post_new_job', $data);
             } else {
-                if (empty($this->input->post('jd_session'))) {
-                  $this->session->unset_userdata('jd_file');
-                }
-               
-            $job_description = isset($_FILES['job_description']['name']) ? $_FILES['job_description']['name'] : null;
-                // print_r($_FILES);die;
+                $all_skills = array();
                 
-                if (!empty($job_description)) {
-                    
-                    $config['upload_path']   = 'upload/job_description/';
-                    $config['allowed_types'] = '*';
-                    $config['encrypt_name']  = false;
-                    $config['max_size']      = 1000;
-                    $config['max_width']     = 300;
-                    $config['max_height']    = 300;
-                    
-                    $this->load->library('upload', $config);
-                    $result_upload = $this->upload->do_upload('job_description');
-                    $upload_data   = $this->upload->data();
-                    $jd_file       = $upload_data['file_name'];
-                    $job_desc_file = $jd_file;
-                    
-                    if (!$result_upload == true) {
-                        $error = array(
-                            'error' => $this->upload->display_errors()
-                        );
-                        $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">Please Upload a Valid Logo Size Max size 300*300</div>');
-                        redirect('employer/profile-setting');
-                    }
-                }
-                $data['jd_file']=$job_desc_file;
-            $data['job_post_id'] = $this->input->post('job_post_id');
-            $data['exp_from']    = $this->input->post('exp_from');
-            $data['exp_to']      = $this->input->post('exp_to');
-            $data['experience']  = $data['exp_from'] . '-' . $data['exp_to'];
-            
-            $data['title']                  = $this->input->post('job_title');
-            $data['location']               = $this->input->post('city_id');
-            $data['preffered_certificates']               = $this->input->post('preffered_certificates');
-            // $data['experience']=$experience;
-            $data['salrange_from']               = $this->input->post('salrange_from');
-            $data['preffered_certificates'] = $this->input->post('preffered_certificates');
-            $data['salrange_to']                 = $this->input->post('salrange_to');
-            $data['salary_range']           = $data['salrange_from'] . '-' . $data['salrange_to'];
-            $ed                             = $this->input->post('job_edu');
-            $data['edu']                    = $ed;
-            $where_int                      = "education_level_id='$ed'";
-            $data['education']              = $this->Master_model->get_master_row('education_level', $select = FALSE, $where_int, $join = FALSE);
-            
-            $job_role        = $this->input->post('job_role');
-            $data['jobrole'] = $job_role;
-            
-            $where_role       = "id='$job_role'";
-            $data['job_role'] = $this->Master_model->get_master_row('job_role', $select = FALSE, $where_role, $join = FALSE);
-            
-            $job_nature        = $this->input->post('job_nature');
-            $data['jobnature'] = $job_nature;
-            
-            $where_int          = "job_nature_id='$job_nature'";
-            $data['job_nature'] = $this->Master_model->get_master_row('job_nature', $select = FALSE, $where_int, $join = FALSE);
-            
-            $data['no_jobs'] = $this->input->post('no_jobs');
-            
-            
-            $data['job_desc'] = $this->input->post('job_desc');
-            $data['job_category'] = $this->input->post('job_category');
-            $skills           = $this->input->post('skill_set');
-            
-            $all_skills = array();
-            
-            foreach ($skills as $row) {
-                if (is_numeric($row) == 1) {
-                    array_push($all_skills, $row);
-                } else {
-                    $where_sk    = "skill_name = '$row' and status=1";
-                    $select_sk   = "skill_name ,id";
-                    $skills_data = $this->Master_model->getMaster('skill_master', $where_sk, $join = FALSE, $order = false, $field = false, $select_sk, $limit = false, $start = false, $search = false);
-                    
-                    if (empty($skills_data)) {
-                        
-                        $skill  = array(
+                foreach ($skills as $row) {
+                    if (is_numeric($row) == 1) {
+                        array_push($all_skills, $row);
+                    } else {
+                        $where_sk    = "skill_name = '$row' and status=1";
+                        $select_sk   = "skill_name ,id";
+                        $skills_data = $this->Master_model->getMaster('skill_master', $where_sk, $join = FALSE, $order = false, $field = false, $select_sk, $limit = false, $start = false, $search = false);
+                        if (empty($skills_data)) {
+                            
+                            $skill  = array(
                             'skill_name' => $row,
                             'created_by' => $employer_id,
                             'created_on' => date('Y-m-d')
                         );
-                        $result = $this->Master_model->master_insert($skill, 'skill_master');
-                        
-                        if (isset($result) && !empty($result)) {
-                            array_push($all_skills, $result);
+                            $result = $this->Master_model->master_insert($skill, 'skill_master');
+                            if (isset($result) && !empty($result)) {
+                                array_push($all_skills, $result);
+                            }
+                            
                         }
-                        
                     }
+                    # code...
                 }
-                # code...
-            }
-            
-            $data['skills']   = implode(',', $all_skills);
-            $data['benefits'] = $this->input->post('benefits');
-            $this->session->set_userdata($data);
+                
+                $job_info = array(
+                    'company_profile_id' => $employer_id,
+                    'job_title' => $this->input->post('job_title'),
+                    'job_slugs' => $this->slug->create_uri($this->input->post('job_title')),
+                    'job_desc' => $this->input->post('job_desc'),
+                    
+                    'job_category' => $this->input->post('job_category'),
+                    'education' => $this->input->post('education'),
+                    'benefits' => implode(',', $this->input->post('benefits')),
+                    'experience' => $experience,
+                    'city_id' => $this->input->post('city_id'),
+                    'job_nature' => $this->input->post('job_nature'),
+                    'job_edu' => $this->input->post('job_edu'),
+                    'no_jobs' => $this->input->post('no_jobs'),
+                    'preffered_certificates' => $this->input->post('preffered_certificates'),
+                    'job_role' => $this->input->post('job_role'), //new added field
+                    'skills_required' => implode(',', $skills), //new added field
+                    'salary_range' => $salary_range,
+                    "job_deadline" => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('job_deadline')))),
+                    "status" => '0'
+                    
+                    //                   'preferred_age'      => $this->input->post('preferred_age_from'),
+                    // 'preferred_age_to'   => $this->input->post('preferred_age_to'),
+                    // 'working_hours'      => $this->input->post('working_hours'),
+                    'is_test_required' => $this->input->post('job_test_requirment')
+                    
+                );
+                if (isset($job_desc_file) && !empty($job_desc_file)) {
+                    $job_info['jd_file'] = $job_desc_file;
+                }
+                
+                // print_r($job_info);
+                // if (empty($job_post_id)) {
+                    $this->job_posting_model->insert($job_info);
             $this->load->view('fontend/employer/job_preview', $data);
         }
         } elseif (isset($_POST['edit'])) {
