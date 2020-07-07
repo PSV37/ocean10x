@@ -312,7 +312,7 @@ p#or {
                      <div class="formrow">
                         <label class="control-label ">Job Locations<span class="required"> * </span> </label>
                       
-                           <input type="text" name="city_id" class="form-control allowalphabatescomma" id="tokenfield" style="display: inline-block;"  placeholder="Enter Location"
+                           <input type="text" name="city_id" class="allowalphanumeric form-control" id="tokenfield" style="display: inline-block;"  placeholder="Enter Location"
                         value="<?php if(!empty($this->session->userdata('location')) ){echo $this->session->userdata('location'); } ?><?php echo set_value('city_id'); ?>"><?php echo form_error('city_id'); ?>
                        
                                      
@@ -538,7 +538,7 @@ p#or {
                   <div class="col-md-6 col-sm-12" tabindex="16" >
                      <div id="errorbox"></div>
                      <div class=" formrow">
-                        <label class="control-label">Upload JD <span class="required"> * </span></label>  <?php if (!empty($this->session->userdata('jd_file')) ) { ?>  <a id="jd_file"   style="margin-left: 10px;" href="<?php echo base_url() ?>upload/job_description/<?php echo $this->session->userdata('jd_file'); ?>" download>Job_description</a><span style="margin-left: 15px" onclick="cancel_jd();" ><i class="fa fa-times" aria-hidden="true"></i></span> <?php   } ?> 
+                        <label class="control-label">Upload JD <span class="required"> * </span></label>  <?php if (!empty($this->session->userdata('jd_file')) ) { ?>  <a id="jd_file"   style="margin-left: 10px;" href="<?php echo base_url() ?>upload/job_description/<?php echo $this->session->userdata('jd_file'); ?>" download>Job_description</a><span style="margin-left: 15px" onclick="cancel_jd();" id="cross_btn" ><i class="fa fa-times" aria-hidden="true"></i></span> <?php   } ?> 
 
                         <input type="file"  name="job_description" id="job_description" class="form-control"  > 
 
@@ -614,7 +614,7 @@ function education_list()
 function cancel_jd()
 {
   // alert('jd');
-  <?php  ?>
+  $('#cross_btn').hide();
   $('#jd_file').hide();
   $('#jd_session').val("");
 }
