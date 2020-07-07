@@ -475,26 +475,23 @@ div#errorbox {
                   <div class="col-md-12 col-sm-12" tabindex="15">
                      <div class="formrow" id="benifit">
 
+                     <?php if(isset($benefits_session))
+                     { 
 
-                        <?php 
-                        if(isset($benefits_session)) {
-                          
-                        
-                       
-                        foreach($benefits as $benefit){
-                          foreach ($benefits_session as $row) { ?>
-                        <label>
-                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" <?php if($benefit['id'] == $row) { echo "checked"; } ?> name="benefits[]">
-                        <span><?php echo $benefit['benifit']; ?></span>
-                        </label>
-                        <?php } } 
-                      }else{
-                          foreach($benefits as $benefit){ ?>
+                       foreach($benefits as $benefit){?>
                         <label>
                         <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" checked="" name="benefits[]">
                         <span><?php echo $benefit['benifit']; ?></span>
                         </label>
-                        } } ?>
+
+                   <?php  } }
+                     else{
+                      foreach($benefits as $benefit){?>
+                        <label>
+                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" checked="" name="benefits[]">
+                        <span><?php echo $benefit['benifit']; ?></span>
+                        </label>
+                        <?php } } ?>
 
                           
 
