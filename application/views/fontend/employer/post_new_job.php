@@ -474,7 +474,11 @@ div#errorbox {
                   <!--  <div class="form-control benifit-div" style="padding:10px 10px; height:auto;" > -->
                   <div class="col-md-12 col-sm-12" tabindex="15">
                      <div class="formrow" id="benifit">
-                        <?php foreach($benefits as $benefit){?>
+
+
+                        <?php 
+                        print_r($benifits);
+                        foreach($benefits as $benefit){?>
                         <label>
                         <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" checked="" name="benefits[]">
                         <span><?php echo $benefit['benifit']; ?></span>
