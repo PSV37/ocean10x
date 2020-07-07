@@ -727,7 +727,7 @@ else if(value == 'other_skill' )
     // If both fields are empty stop the form from submitting
     if( phone === 0 && email === 0 ) {
       event.preventDefault();
-       $("#errorbox").html("enter Upload JD or fill Job Description");
+       $("#errorbox").html("Either Upload JD or fill Job Description");
       // alert('please fille Upload JD or Job Description');
     }
   }, false);
