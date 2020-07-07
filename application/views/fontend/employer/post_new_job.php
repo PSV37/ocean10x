@@ -830,13 +830,13 @@ jquery validation plugin //-->
    },
    
    
-   // 'job_title':{
+   'job_title':{
    
-   // // required: true,
+   required: true,
    
-   // //jobtitle_regex: true
+   //jobtitle_regex: true
    
-   // },
+   },
    
    
    'contact_name':{
