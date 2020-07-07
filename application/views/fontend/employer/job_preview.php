@@ -265,7 +265,7 @@ p.right-title_detail {
                             </div>
                                    
                             <div class="following-info2">
-                                <li class="left-title">Engagement Type</li><li class="right-title">&nbsp;:<?php echo $job_role['job_nature_name']; ?></li>
+                                <li class="left-title">Engagement Type</li><li class="right-title">&nbsp;:<?php echo $job_nature['job_nature_name']; ?></li>
                                 <li class="left-title">Number Of Position</li><li class="right-title">&nbsp;:<?php echo $no_jobs; ?></li>
 
                                 <div class="clear"></div>

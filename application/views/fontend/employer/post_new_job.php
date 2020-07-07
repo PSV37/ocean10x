@@ -380,7 +380,8 @@ p#or {
                         <label class="control-label ">Engagement Model<span class="required"> * </span> </label>
                         <select name="job_nature" class="form-control select2" data-style="btn-default" data-live-search="true" required="">
                            <!-- <option value="">Select Engagement Model</option> -->
-                           <?php if(!empty($job_info->job_nature)) {
+                           <?php if (!empty($this->session->userdata('job_category'))) {
+                             echo $this->job_category_model->selected($this->session->userdata('jobnature')); } else  if(!empty($job_info->job_nature)) {
                               echo $this->job_nature_model->selected($job_info->job_nature);
                               } else {
                               echo $this->job_nature_model->selected();
