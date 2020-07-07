@@ -253,7 +253,7 @@ p.right-title_detail {
                             <div class="icon-info">
                                 <li class="left-icon-title"><i class="fas fa-map-marker-alt"></i></li><li class="right-icon-title"> &emsp;<?php echo $location; ?></li>
 
-                                <li class="left-icon-title"><i class="fas fa-briefcase"></i></li><li class="right-title" style="width:100%;font-size:14px;"> &emsp;<?php echo $experience; ?> years(Expected Experience)</li>
+                                <li class="left-icon-title"><i class="fas fa-briefcase"></i></li><li class="right-title" style="width:100%;font-size:14px;"> &emsp;<?php echo $experience; ?> years(Desired Experience)</li>
 
                                 <div class="clear"></div>
                             </div>
@@ -278,7 +278,7 @@ p.right-title_detail {
                                   <?php   }else{
                                         echo "No";
                                     } ?> </li>
-                                	 <li class="left-title">CTC</li><li class="right-title">&nbsp;: <?php echo $salary_range; ?></li>
+                                	 <li class="left-title">CTC (LPA)</li><li class="right-title">&nbsp;: <?php echo $salary_range; ?></li>
                                       
                                 <div class="clear"></div>
                              </div>
