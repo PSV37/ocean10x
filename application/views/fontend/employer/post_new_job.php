@@ -782,7 +782,7 @@ else if(value == 'other_skill' )
     var jd = document.getElementById('jd').value.length;
     var jd_session = document.getElementById('jd_session').value.length;
      var   job_description = document.getElementById('job_description').value.length;
-alert(document.getElementById('job_description').value);
+
     // If both fields are empty stop the form from submitting
     if( jd === 0 && job_description === 0 && jd_session ===0 ) {
       event.preventDefault();
