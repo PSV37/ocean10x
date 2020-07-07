@@ -616,7 +616,7 @@ function cancel_jd()
   // alert('jd');
   <?php  ?>
   $('#jd_file').hide();
-  $('#jd_session').val="";
+  $('#jd_session').val("");
 }
 </script>
 <script>
