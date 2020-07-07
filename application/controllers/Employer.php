@@ -269,7 +269,10 @@ class Employer extends MY_Employer_Controller
                 
                 $this->load->view('fontend/employer/post_new_job', $data);
             } else {
-                $this->session->unset_userdata('jd_file');
+                if (empty($this->input->post('jd_session'))) {
+                  $this->session->unset_userdata('jd_file');
+                }
+               
             $job_description = isset($_FILES['job_description']['name']) ? $_FILES['job_description']['name'] : null;
                 // print_r($_FILES);die;
                 
@@ -1248,7 +1251,7 @@ class Employer extends MY_Employer_Controller
         } else {
             $result .= 'Skills Not Found ';
         }
-        
+
    
         echo $result;
     }
