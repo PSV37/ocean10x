@@ -656,7 +656,7 @@ class Employer extends MY_Employer_Controller
             // $this->load->view('fontend/employer/job_post', $data);
         }
     }
-     public function contactVerify($contact, $otherField) {
+     public function contactVerify() {
         if($this->input->post('job_desc') || $_FILES['job_description'] ){
         return TRUE;
     }else{
