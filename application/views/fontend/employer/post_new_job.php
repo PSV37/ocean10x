@@ -543,8 +543,9 @@ div#errorbox {
                      </div>
                      <?php   } ?> 
 
-                     <p>OR</p>                       
+                                      
                   <div class="col-md-12 col-sm-4" tabindex="17">
+                     <p>OR</p>     
                      <div class="formrow">
                         <label class="control-label">Job Description <span class="required"> * </span></label>
                         <textarea name="job_desc" id="jd" class="form-control ckeditor" placeholder="Job Description"><?php if (!empty($this->session->userdata('job_desc')) ) {
