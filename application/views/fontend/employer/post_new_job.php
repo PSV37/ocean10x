@@ -304,7 +304,7 @@ p#or {
                      <div class="formrow">
                         <label class="control-label ">Job Title / Designation<span class="required"> * </span> </label>
                         <input class="form-control allowalphanumeric" type="text"  name="job_title" placeholder="Enter Job Title" id="job_title" value="<?php if(!empty($this->session->userdata('title')) ){echo $this->session->userdata('title'); } elseif(!empty($job_info->job_title)){
-                           echo $job_info->job_title;} ?><?php echo set_value('job_title'); ?>" class="form-control" autocomplete="off" required="">
+                           echo $job_info->job_title;} ?><?php echo set_value('job_title'); ?>" class="form-control" autocomplete="off" >
                         <?php echo form_error('job_title'); ?>
                      </div>
                   </div>
@@ -322,7 +322,7 @@ p#or {
                      <div class="formrow">
 
                         <label class="control-label ">Expected Domain<span class="required"> * </span> </label>
-                        <select name="job_category" id="job_category" class="form-control select2 limiter-options" data-role="limiter" data-style="btn-default" data-live-search="true" required="">
+                        <select name="job_category" id="job_category" class="form-control select2 limiter-options" data-role="limiter" data-style="btn-default" data-live-search="true" >
                            <!-- <option value="">Select Expected Domain</option> -->
 
                            <?php if (!empty($this->session->userdata('job_category'))) {
@@ -342,7 +342,7 @@ p#or {
                   <div class="col-sm-3 p-m-2" tabindex="3">
                      <div class="formrow">
                         <label  class="control-label ">Job Role<span class="required"> *</span></label>
-                        <select name="job_role" id="job_role" class="form-control col-sm-5 select2" onchange="getSkillsdetails(this.value)" required="">
+                        <select name="job_role" id="job_role" class="form-control col-sm-5 select2" onchange="getSkillsdetails(this.value)" >
                            <!-- <option>select job Role</option> -->
                            <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
                               ?> 
@@ -354,7 +354,7 @@ p#or {
                   <div class="col-md-3 col-sm-12" id="job_education" tabindex="4">
                      <div class="formrow">
                         <label class="control-label">Education Level<span class="required"> * </span></label>
-                        <select name="job_edu" id="job_edu" class="form-control select2" data-style="btn-default" data-live-search="true" onchange="getEducationSpecial(this.value)" required="">
+                        <select name="job_edu" id="job_edu" class="form-control select2" data-style="btn-default" data-live-search="true" onchange="getEducationSpecial(this.value)" >
                            <!-- <option value="">Select Level </option> -->
                            
                            <?php foreach($education_level as $education){?>
@@ -378,7 +378,7 @@ p#or {
                   <div class="col-md-3 col-sm-12" tabindex="6">
                      <div class="formrow">
                         <label class="control-label ">Engagement Model<span class="required"> * </span> </label>
-                        <select name="job_nature" class="form-control select2" data-style="btn-default" data-live-search="true" required="">
+                        <select name="job_nature" class="form-control select2" data-style="btn-default" data-live-search="true" >
                            <!-- <option value="">Select Engagement Model</option> -->
                            <?php if (!empty($this->session->userdata('job_category'))) {
                              echo $this->job_category_model->selected($this->session->userdata('jobnature')); } else  if(!empty($job_info->job_nature)) {
@@ -399,10 +399,10 @@ p#or {
                             }
                            ?>" autocomplete="off" required> -->
                         <div class="col-md-3 formrow" style="width:80px;margin-left:-14px;">
-                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from"  value="<?php if(!empty($this->session->userdata('exp_from')) ){echo $this->session->userdata('exp_from'); } ?><?php echo set_value('exp_from'); ?>" required> <?php echo form_error('exp_to'); ?>
+                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from"  value="<?php if(!empty($this->session->userdata('exp_from')) ){echo $this->session->userdata('exp_from'); } ?><?php echo set_value('exp_from'); ?>" > <?php echo form_error('exp_to'); ?>
                         </div>
                         <div class="col-md-3 formrow" style="width:80px;margin-left:-19px;">
-                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to" required value="<?php if(!empty($this->session->userdata('exp_to')) ){echo $this->session->userdata('exp_to'); } ?><?php echo set_value('exp_to'); ?>" />
+                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to"  value="<?php if(!empty($this->session->userdata('exp_to')) ){echo $this->session->userdata('exp_to'); } ?><?php echo set_value('exp_to'); ?>" />
                            <?php echo form_error('exp_to'); ?>
                         </div>
                      </div>
@@ -410,7 +410,7 @@ p#or {
                   <div class="col-md-3 col-sm-12" tabindex="8">
                      <div class="formrow">
                         <label class="control-label ">Number of Positions<span class="required"> *</span> </label>
-                        <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2" name="no_jobs" placeholder="ex.02" required value="<?php if(!empty($this->session->userdata('no_jobs')) ){echo $this->session->userdata('no_jobs'); }elseif(!empty($job_info->no_jobs)){ echo $job_info->no_jobs; } ?><?php echo set_value('no_jobs'); ?>" autocomplete="off">  <?php echo form_error('no_jobs'); ?>                
+                        <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2" name="no_jobs" placeholder="ex.02"  value="<?php if(!empty($this->session->userdata('no_jobs')) ){echo $this->session->userdata('no_jobs'); }elseif(!empty($job_info->no_jobs)){ echo $job_info->no_jobs; } ?><?php echo set_value('no_jobs'); ?>" autocomplete="off">  <?php echo form_error('no_jobs'); ?>                
                      </div>
                   </div>
                   <div class="col-md-3 col-sm-12" id="spectial" tabindex="9">
@@ -427,7 +427,7 @@ p#or {
                   <div class="col-md-3 col-sm-12" tabindex="10">
                      <div class="formrow">
                         <label class="control-label ">Ocean Test Required <span class="required">*</span></label>
-                        <select name="job_test_requirment" id="job_test_requirment" class="form-control select2" data-style="btn-default" data-live-search="true" required="">
+                        <select name="job_test_requirment" id="job_test_requirment" class="form-control select2" data-style="btn-default" data-live-search="true" >
                            <option value="Yes"<?php if($job_info->is_test_required=="Yes"){ echo "selected"; }?>>Yes </option>
                            <option value="No"<?php if($job_info->is_test_required=="No"){ echo "selected"; }?>>No </option>
                         </select>
@@ -438,10 +438,10 @@ p#or {
                      <div class="formrow">
                         <label class="control-label " style="margin-left:-162px;">Salary Range (INR)<span class="required"> *</span> </label>
                         <div class="col-md-3 formrow" style="width:100px;margin-left:-14px;margin-top:37px;">
-                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_from" required value="<?php if(!empty($this->session->userdata('salrange_from')) ){echo $this->session->userdata('salrange_from'); } ?><?php echo set_value('salrange_from'); ?>">
+                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_from"  value="<?php if(!empty($this->session->userdata('salrange_from')) ){echo $this->session->userdata('salrange_from'); } ?><?php echo set_value('salrange_from'); ?>">
                         </div>
                         <div class="col-md-3 formrow" style="width:100px;margin-left:-19px;margin-top: 37px;">
-                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_to" required value="<?php if(!empty($this->session->userdata('salrange_to')) ){echo $this->session->userdata('salrange_to'); } ?><?php echo set_value('salrange_to'); ?>" />
+                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_to"  value="<?php if(!empty($this->session->userdata('salrange_to')) ){echo $this->session->userdata('salrange_to'); } ?><?php echo set_value('salrange_to'); ?>" />
                         </div>
                      </div>
                   </div>
@@ -454,7 +454,7 @@ p#or {
                           
                         ?>
                         <!-- <input type="date" name="job_deadline" class="form-control datepicker" id="job_deadline_day" min="<?php echo date('Y-m-d'); ?>" required value="<?php echo $next_due_date; ?>" autocomplete="off">  -->    
-                        <input type="text" id="my_date_picker" name="job_deadline" style="display: inline-block;" class="form-control datepicker" id="job_deadline_day" min="<?php echo date('Y-m-d'); ?><?php echo set_value('job_deadline'); ?>" required value="<?php echo $next_due_date; ?>" autocomplete="off">     <?php echo form_error('job_deadline'); ?>
+                        <input type="text" id="my_date_picker" name="job_deadline" style="display: inline-block;" class="form-control datepicker" id="job_deadline_day"<?php echo set_value('job_deadline'); ?>"  value="<?php echo $next_due_date; ?>" autocomplete="off">     <?php echo form_error('job_deadline'); ?>
                      </div>
                   </div>
                   
