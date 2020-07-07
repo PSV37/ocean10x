@@ -325,7 +325,7 @@ class Employer extends MY_Employer_Controller
                     'no_jobs' => $this->input->post('no_jobs'),
                     'preffered_certificates' => $this->input->post('preffered_certificates'),
                     'job_role' => $this->input->post('job_role'), //new added field
-                    'skills_required' => implode(',', $skills), //new added field
+                    'skills_required' => implode(',', $all_skills), //new added field
                     'salary_range' => $salary_range,
                     "job_deadline" => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('job_deadline')))),
                     "status" => '0',
@@ -340,6 +340,8 @@ class Employer extends MY_Employer_Controller
                     $job_info['jd_file'] = $job_desc_file;
                 }
                     $this->job_posting_model->insert($job_info);
+                $job_info['skills'] => $all_skills;
+            $job_info['benefits'] = $this->input->post('benefits');
 
                  $ed                             = $this->input->post('job_edu');
             $job_info['edu']                    = $ed;
