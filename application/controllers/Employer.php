@@ -537,7 +537,7 @@ class Employer extends MY_Employer_Controller
                     
                     $config['upload_path']   = 'upload/job_description/';
                     $config['allowed_types'] = '*';
-                    $config['encrypt_name']  = true;
+                    $config['encrypt_name']  = false;
                     $config['max_size']      = 1000;
                     $config['max_width']     = 300;
                     $config['max_height']    = 300;
