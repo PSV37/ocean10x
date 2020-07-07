@@ -329,7 +329,7 @@ class Employer extends MY_Employer_Controller
                 // print_r($job_info);
                 // if (empty($job_post_id)) {
                     $this->job_posting_model->insert($job_info);
-            $this->load->view('fontend/employer/job_preview', $data);
+            $this->load->view('fontend/employer/job_preview', $job_info);
         }
         } elseif (isset($_POST['edit'])) {
             
