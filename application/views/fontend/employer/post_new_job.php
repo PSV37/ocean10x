@@ -477,7 +477,9 @@ div#errorbox {
 
                      <?php if(isset($benefits_session))
                      { 
-                       foreach($benefits_session as $row){ ?>
+                       foreach($benefits_session as $row){ 
+                          
+                        ?>
                         <label>
                         <input type="checkbox" value="<?php echo $row; ?>" class="btn-default1" checked
                         name="benefits[]">
@@ -488,7 +490,20 @@ div#errorbox {
                          
                         
 
-                   <?php   } }
+                   <?php   } 
+
+                   foreach($benifits as $benefit){ 
+                    if (!in_array($benefit['benifit'], $benefits_session)) {
+                          
+                        ?>
+                        <label>
+                        <input type="checkbox" value="<?php echo $row; ?>" class="btn-default1" 
+                        name="benefits[]">
+                        <span><?php echo $row; ?></span>
+                        </label>
+
+
+               <?  } } }
                      else{
                       foreach($benefits as $benefit){?>
                         <label>
