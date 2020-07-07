@@ -454,7 +454,7 @@ class Employer extends MY_Employer_Controller
 
             //     $this->form_validation->set_message('contactVerify', 'Either Phone or Email is required');
 
-            $this->form_validation->set_message('required', 'You must provide this field');
+            $this->form_validation->set_message('required', 'This field is mandatory');
              $this->form_validation->set_message('max_length', 'max_length');
             if ($this->form_validation->run() == FALSE) {
                 
