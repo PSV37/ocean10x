@@ -40,7 +40,7 @@ class Employer extends MY_Employer_Controller
         
         if ($_POST) {
             
-               $this->form_validation->set_rules('company_name', 'Company Name', 'required|regex_match[/^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$/i]');
+        $this->form_validation->set_rules('company_name', 'Company Name', 'required|regex_match[/^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$/i]');
        
         $this->form_validation->set_rules('company_email',   'Company Email', 'required');
         $this->form_validation->set_rules('alternate_email_id', 'Alternate Email Id','required|valid_email');
@@ -269,7 +269,7 @@ class Employer extends MY_Employer_Controller
                 
                 $this->load->view('fontend/employer/post_new_job', $data);
             } else {
-
+                $this->session->unset_userdata('jd_file');
             $job_description = isset($_FILES['job_description']['name']) ? $_FILES['job_description']['name'] : null;
                 // print_r($_FILES);die;
                 

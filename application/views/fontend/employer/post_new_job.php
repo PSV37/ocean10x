@@ -530,17 +530,20 @@ div#errorbox {
                   <div class="col-md-6 col-sm-12" tabindex="16" >
                      <div id="errorbox"></div>
                      <div class=" formrow">
-                        <label class="control-label">Upload JD <span class="required"> * </span></label>
+                        <label class="control-label">Upload JD <span class="required"> * </span></label>  <a  href="<?php echo base_url() ?>upload/job_description/<?php echo $this->session->userdata('jd_file'); ?>" download>Job_description</a><span style="margin-left: 15px" onclick="cancel_jd();" ><i class="fa fa-times" aria-hidden="true"></i></span>
                         <input type="file"  name="job_description" id="job_description" class="form-control"> 
                      </div>
                   </div>
+
                   <?php if (!empty($this->session->userdata('jd_file')) ) { ?>
                       <div class="col-md-6 col-sm-12" tabindex="16" style=" margin-top: 45px;" id="jd_file" >
                      <div class=" formrow">
-                         <a  href="<?php echo base_url() ?>upload/job_description/<?php echo $this->session->userdata('jd_file'); ?>" download>Job_description</a><span style="margin-left: 15px" onclick="cancel_jd();" ><i class="fa fa-times" aria-hidden="true"></i></span>
+                        
                        </div>
                      </div>
-                     <?php   } ?>                        
+                     <?php   } ?> 
+
+                     <p>OR</p>                       
                   <div class="col-md-12 col-sm-4" tabindex="17">
                      <div class="formrow">
                         <label class="control-label">Job Description <span class="required"> * </span></label>
@@ -593,7 +596,7 @@ function education_list()
 function cancel_jd()
 {
   // alert('jd');
-  <?php $this->session->unset_userdata('jd_file'); ?>
+  <?php  ?>
   $('#jd_file').hide();
 }
 </script>
