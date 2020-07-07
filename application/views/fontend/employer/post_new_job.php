@@ -328,7 +328,7 @@ p#or {
                            <?php
                            $value =  set_value('job_category');
                            if (!empty($value)) {
-                             echo $this->job_category_model->selected($this->session->userdata($value));
+                             echo $this->job_category_model->selected($value);
                            }
                             if (!empty($this->session->userdata('job_category'))) {
                              echo $this->job_category_model->selected($this->session->userdata('job_category'));
