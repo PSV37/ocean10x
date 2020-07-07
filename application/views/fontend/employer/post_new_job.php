@@ -539,7 +539,7 @@ p#or {
                      <div id="errorbox"></div>
                      <div class=" formrow">
                         <label class="control-label">Upload JD <span class="required"> * </span></label>  <?php if (!empty($this->session->userdata('jd_file')) ) { ?>  <a id="jd_file"   style="margin-left: 10px;" href="<?php echo base_url() ?>upload/job_description/<?php echo $this->session->userdata('jd_file'); ?>" download>Job_description</a><span style="margin-left: 15px" onclick="cancel_jd();" ><i class="fa fa-times" aria-hidden="true"></i></span> <?php   } ?> 
-                        <input type="file"  name="job_description" id="job_description" class="form-control" value=" <?php if (!empty($this->session->userdata('jd_file')) ) { echo $this->session->userdata('jd_file'); ?>" > 
+                        <input type="file"  name="job_description" id="job_description" class="form-control" value=" <?php if (!empty($this->session->userdata('jd_file')) ) { echo $this->session->userdata('jd_file'); } ?>" > 
                      </div>
                   </div>
 
