@@ -265,6 +265,11 @@ span.select2-selection.select2-selection--single {
 div#other_skills {
     margin-top: 10;
 }
+div#errorbox {
+    margin-top: 25px;
+    font-weight: bold;
+    color: red;
+}
 </style>
 
     
