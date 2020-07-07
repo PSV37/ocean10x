@@ -376,7 +376,7 @@ div#other_skills {
                   </div>
                   <div class="col-md-3 col-sm-12" tabindex="7">
                      <div class="formrow">
-                        <label class="control-label ">Expected Experience(in years)<span class="required"> *</span> </label>
+                        <label class="control-label ">Expected Experience (in years)<span class="required"> *</span> </label>
                         <!--  <input class="form-control" type="text" name="experience" maxlength="2" value="<?php 
                            if(!empty($job_info->experience)){ echo $job_info->experience;
                             }
