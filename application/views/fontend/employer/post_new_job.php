@@ -386,7 +386,7 @@ div#other_skills {
                         </div>
                         <div class="col-md-3 formrow" style="width:80px;margin-left:-19px;">
                            <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to" required value="<?php if(!empty($this->session->userdata('exp_to')) ){echo $this->session->userdata('exp_to'); } ?><?php echo set_value('exp_to'); ?>" />
-                           <?php echo set_value('exp_to'); ?>" />
+                           <?php echo set_value('exp_to'); ?>"
                         </div>
                      </div>
                   </div>
@@ -485,14 +485,19 @@ div#other_skills {
                   <!-- </textarea><?php echo form_error('benefits'); ?>                                  -->
                   <!-- </div>
                      </div>  -->
-                  <div class="col-md-12 col-sm-12" tabindex="16" >
+                  <div class="col-md-6 col-sm-12" tabindex="16" >
                      <div class=" formrow">
                         <label class="control-label">Upload JD <span class="required"> * </span></label>
-                        <input type="file" style="width: 50%" name="job_description" class="form-control">          <?php if (!empty($this->session->userdata('jd_file')) ) { ?>
-                         <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/job_description/<?php echo $this->session->userdata('jd_file'); ?>" download>Job_description</a><i class="fa fa-times" onclick="cancel_jd()'" aria-hidden="true"></i>
-                     <?php   } ?>                        
+                        <input type="file" style="width: 50%" name="job_description" class="form-control"> 
                      </div>
                   </div>
+                  <?php if (!empty($this->session->userdata('jd_file')) ) { ?>
+                      <div class="col-md-6 col-sm-12" tabindex="16" >
+                     <div class=" formrow">
+                         <a  href="<?php echo base_url() ?>upload/job_description/<?php echo $this->session->userdata('jd_file'); ?>" download>Job_description</a><span style="margin-left: 15px" onclick="cancel_jd();" ><i class="fa fa-times" aria-hidden="true"></i></span>
+                       </div>
+                     </div>
+                     <?php   } ?>                        
                   <div class="col-md-12 col-sm-4" tabindex="17">
                      <div class="formrow">
                         <label class="control-label">Job Description <span class="required"> * </span></label>
