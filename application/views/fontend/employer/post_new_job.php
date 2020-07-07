@@ -492,7 +492,7 @@ div#other_skills {
                      </div>
                   </div>
                   <?php if (!empty($this->session->userdata('jd_file')) ) { ?>
-                      <div class="col-md-6 col-sm-12" tabindex="16" >
+                      <div class="col-md-6 col-sm-12" tabindex="16" style=" margin-top: 45px;" id="jd_file" >
                      <div class=" formrow">
                          <a  href="<?php echo base_url() ?>upload/job_description/<?php echo $this->session->userdata('jd_file'); ?>" download>Job_description</a><span style="margin-left: 15px" onclick="cancel_jd();" ><i class="fa fa-times" aria-hidden="true"></i></span>
                        </div>
@@ -533,7 +533,9 @@ function education_list()
 }
 function cancel_jd()
 {
-  alert('jd');
+  // alert('jd');
+  <?php $this->session->unset_userdata('jd_file'); ?>
+  $('#jd_file').hide();
 }
 </script>
 <script>
