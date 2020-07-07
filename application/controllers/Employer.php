@@ -1248,7 +1248,7 @@ class Employer extends MY_Employer_Controller
         } else {
             $result .= 'Skills Not Found ';
         }
-    }
+        
    
         echo $result;
     }
