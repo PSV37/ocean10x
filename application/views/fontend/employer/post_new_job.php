@@ -717,7 +717,19 @@ else if(value == 'other_skill' )
    
    }
    
-   
+   (function () {
+  document.getElementById('test').addEventListener('submit', function(event){
+    // Get the length of the values of each input
+    var phone = document.getElementById('job_desc').value.length,
+        email = document.getElementById('job_description').value.length;
+
+    // If both fields are empty stop the form from submitting
+    if( phone === 0 && email === 0 ) {
+      event.preventDefault();
+      alert('please fille Upload JD or Job Description');
+    }
+  }, false);
+})();
 </script>
 <!-- <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
