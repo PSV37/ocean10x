@@ -339,12 +339,27 @@ class Employer extends MY_Employer_Controller
                 if (isset($job_desc_file) && !empty($job_desc_file)) {
                     $job_info['jd_file'] = $job_desc_file;
                 }
-                $ed = $job_info['job_edu']
-                 $where_int                      = "education_level_id='$ed'";
-            $data['education']              = $this->Master_model->get_master_row('education_level', $select = FALSE, $where_int, $join = FALSE);
+                    $this->job_posting_model->insert($job_info);
+
+                 $ed                             = $this->input->post('job_edu');
+            $job_info['edu']                    = $ed;
+            $where_int                      = "education_level_id='$ed'";
+            $job_info['education']              = $this->Master_model->get_master_row('education_level', $select = FALSE, $where_int, $join = FALSE);
+            
+            $job_role        = $this->input->post('job_role');
+            $job_info['jobrole'] = $job_role;
+            
+            $where_role       = "id='$job_role'";
+            $job_info['job_role'] = $this->Master_model->get_master_row('job_role', $select = FALSE, $where_role, $join = FALSE);
+            
+            $job_nature        = $this->input->post('job_nature');
+            $job_info['jobnature'] = $job_nature;
+            
+            $where_int          = "job_nature_id='$job_nature'";
+            $job_info['job_nature'] = $this->Master_model->get_master_row('job_nature', $select = FALSE, $where_int, $join = FALSE);
+            
                 // print_r($job_info);
                 // if (empty($job_post_id)) {
-                    $this->job_posting_model->insert($job_info);
             $this->load->view('fontend/employer/job_preview', $job_info);
         }
         } elseif (isset($_POST['edit'])) {
