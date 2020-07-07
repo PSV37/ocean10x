@@ -451,9 +451,10 @@ class Employer extends MY_Employer_Controller
             $this->form_validation->set_rules('salrange_to', 'Salary Range To', 'required|max_length[2]');
            
 
-            $this->form_validation->set_rules('job_desc', 'job description', 'contactVerify');
-            $this->form_validation->set_rules('job_description', 'job description file', 'contactVerify');
-             if(empty($this->input->post('job_desc')) || empty($_FILES['job_description'] )){
+           
+            // $this->form_validation->set_rules('job_description', 'job description file', 'contactVerify');
+             if(empty($this->input->post('job_desc')) && empty($_FILES['job_description'] )){
+                 $this->form_validation->set_rules('job_desc', 'job description', 'required');
                     $this->form_validation->set_message('contactVerify', 'Please enter atleast one of Job Description or Upload JD');
                 }
 
