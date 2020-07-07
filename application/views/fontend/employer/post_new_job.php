@@ -492,7 +492,7 @@ div#errorbox {
 
                    <?php   } 
 
-                   foreach($benifits as $benefit){ 
+                   foreach($benefits as $benefit){ 
                     if (!in_array($benefit['benifit'], $benefits_session)) {
                           
                         ?>
