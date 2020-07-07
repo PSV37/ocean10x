@@ -1152,7 +1152,30 @@ class Employer extends MY_Employer_Controller
             $skills    = $this->Master_model->getMaster('skill_master', $where_sk, $join = FALSE, $order = false, $field = false, $select_sk, $limit = false, $start = false, $search = false);
             
             $result = '';
-            if (!empty($skills)) {
+
+            if (!empty($this->session->userdata('skills'))) {
+
+                $session_skills=$this->session->userdata('skills');
+                foreach ($session_skills as $row) {
+                    $result .= '
+                          <div  id="myfields" class="myfields" >
+                          <ul class="rating-comments" >
+
+
+                            <label>
+                                <input type="checkbox" name="skill_set[]"  value=' . $row['id'] . '  class="btn-default1" checked>
+                                <span>' . $row['skill_name'] . '</span>
+                            </label>
+
+                        
+                         </ul>
+                      
+                     </div>';
+                }
+               
+            }
+            else {
+                if (!empty($skills)) {
                 foreach ($skills as $skill_row) {
                     // $result .="<input type='checkbox' name='skill_set[]' style='height:15px; width:20px;' id='skill_set' value=".$skill_row['id']." checked> ".$skill_row['skill_name']."";
                     $result .= '
@@ -1171,11 +1194,13 @@ class Employer extends MY_Employer_Controller
                      </div>';
                     
                 }
+
                 //             $result .='<button type="button" value="other_skill" onclick="check_other(this.value);"  style="font-size:28px;color:#18c5bd;border: none;
                 // background: none;">  <i class="fa fa-plus-circle"  ></i></button>';
             } else {
                 $result .= 'Skills Not Found ';
             }
+        }
             
         } else {
             $result .= 'Skills Not Found ';

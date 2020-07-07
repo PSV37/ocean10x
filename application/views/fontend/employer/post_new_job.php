@@ -270,6 +270,12 @@ div#errorbox {
     font-weight: bold;
     color: red;
 }
+p#or {
+    /* margin-left: 141px; */
+    margin-top: 15px;
+    font-weight: bold;
+    /* text-align: center; */
+}
 </style>
 
     
@@ -456,6 +462,8 @@ div#errorbox {
                         <!-- donain is nothing but industry -->
                         <label class="control-label ">Skill Set<span class="required"> * </span> </label>
                         <div id="skills_result">Please Select Job Role.</div>
+
+                       
                      </div>
                    <div id="skl_btn">
                       <button type="button"  value="other_skill" onclick="check_other(this.value);"  style="font-size:28px;color:#18c5bd;border: none; background: none;">  <i class="fa fa-plus-circle"  ></i></button>
@@ -545,7 +553,7 @@ div#errorbox {
 
                                       
                   <div class="col-md-12 col-sm-4" tabindex="17">
-                     <p>OR</p>     
+                     <p id="or">OR</p>     
                      <div class="formrow">
                         <label class="control-label">Job Description <span class="required"> * </span></label>
                         <textarea name="job_desc" id="jd" class="form-control ckeditor" placeholder="Job Description"><?php if (!empty($this->session->userdata('job_desc')) ) {
