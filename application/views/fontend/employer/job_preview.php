@@ -248,7 +248,7 @@ p.right-title_detail {
                      <div class="front">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Rivian_company_logo.jpg" style="height:40px; width:40px;border-radius:5px;float:left" />
                             <div class="job-info">
-                                <p class="job_title"><?php echo $title; ?></p>
+                                <p class="job_title"><?php echo $job_title; ?></p>
                             </div>   
                             <div class="icon-info">
                                 <li class="left-icon-title"><i class="fas fa-map-marker-alt"></i></li><li class="right-icon-title"> &emsp;<?php echo $location; ?></li>
@@ -285,7 +285,7 @@ p.right-title_detail {
                                    
                             <div class="skils_benifit">
                               <li class="left-title_seperate">skills&nbsp;&nbsp; </li><li class="right-title_seperate">:
-                             <?php  $sk=$skills;
+                             <?php  $sk=$skills_required;
                              
                              if (isset($sk) && !empty($sk)) {
                                 $where_sk= "id IN (".$sk.") AND status=1";

@@ -340,7 +340,7 @@ class Employer extends MY_Employer_Controller
                     $job_info['jd_file'] = $job_desc_file;
                 }
                     $this->job_posting_model->insert($job_info);
-                $job_info['skills'] = $all_skills;
+                // $job_info['skills'] = $all_skills;
             $job_info['benefits'] = $this->input->post('benefits');
 
                  $ed                             = $this->input->post('job_edu');
