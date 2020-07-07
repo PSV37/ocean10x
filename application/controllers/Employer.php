@@ -234,6 +234,41 @@ class Employer extends MY_Employer_Controller
         $employer_id = $this->session->userdata('company_profile_id');
         if (isset($_POST['preview'])) {
             // echo "preview"; die();
+            $this->form_validation->set_rules('job_title', 'job title', 'required');
+           
+            $this->form_validation->set_rules('city_id', 'Job Location', 'required');
+
+            $this->form_validation->set_rules('exp_from', 'Experience To', 'required|max_length[2]');
+
+            $this->form_validation->set_rules('exp_to', 'Experience To', 'required|max_length[2]');
+
+             $this->form_validation->set_rules('no_jobs', 'Number of Positions', 'required');
+            $this->form_validation->set_rules('job_edu', 'Education Level', 'required');
+            $this->form_validation->set_rules('job_nature', 'Engagement Model', 'required');
+            $this->form_validation->set_rules('preffered_certificates', 'Certification Preferred', 'required');
+            $this->form_validation->set_rules('job_test_requirment', 'Ocean Test Required', 'required');
+            $this->form_validation->set_rules('salrange_from', 'Salary Range From', 'required|max_length[2]');
+            $this->form_validation->set_rules('salrange_to', 'Salary Range To', 'required|max_length[2]');
+         
+
+            $this->form_validation->set_message('required', 'This field is mandatory');
+             $this->form_validation->set_message('max_length', 'max_length');
+            if ($this->form_validation->run() == FALSE) {
+                
+                $data['country']         = $this->Master_model->getMaster('country', $where = false);
+                $data['state']           = $this->Master_model->getMaster('state', $where = false);
+                  $data['benefits']        = $this->Master_model->getMaster('common_company_benifits', $where = false);
+            $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
+            
+            $data['certificates'] = $this->Master_model->getMaster('certification_master', $where = false);
+                
+                $where_cn              = "status=1";
+                $select                = "job_role_title, skill_set ,id";
+                $data['job_role_data'] = $this->Master_model->getMaster('job_role', $where_cn, $join = FALSE, $order = false, $field = false, $select, $limit = false, $start = false, $search = false);
+                
+                
+                $this->load->view('fontend/employer/post_new_job', $data);
+            } else {
 
             $job_description = isset($_FILES['job_description']['name']) ? $_FILES['job_description']['name'] : null;
                 // print_r($_FILES);die;
@@ -330,6 +365,7 @@ class Employer extends MY_Employer_Controller
             $data['benefits'] = $this->input->post('benefits');
             $this->session->set_userdata($data);
             $this->load->view('fontend/employer/job_preview', $data);
+        }
         } elseif (isset($_POST['edit'])) {
             
             $data['country']         = $this->Master_model->getMaster('country', $where = false);
