@@ -382,10 +382,11 @@ div#other_skills {
                             }
                            ?>" autocomplete="off" required> -->
                         <div class="col-md-3 formrow" style="width:80px;margin-left:-14px;">
-                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from"  value="<?php if(!empty($this->session->userdata('exp_from')) ){echo $this->session->userdata('exp_from'); } ?><?php echo set_value('exp_from'); ?>" />
+                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from"  value="<?php if(!empty($this->session->userdata('exp_from')) ){echo $this->session->userdata('exp_from'); } ?><?php echo set_value('exp_from'); ?>" required>
                         </div>
                         <div class="col-md-3 formrow" style="width:80px;margin-left:-19px;">
-                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to" value="<?php if(!empty($this->session->userdata('exp_to')) ){echo $this->session->userdata('exp_to'); } ?><?php echo set_value('exp_to'); ?>" />
+                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to" required value="<?php if(!empty($this->session->userdata('exp_to')) ){echo $this->session->userdata('exp_to'); } ?><?php echo set_value('exp_to'); ?>" />
+                           <?php echo set_value('exp_to'); ?>" />
                         </div>
                      </div>
                   </div>
@@ -420,10 +421,10 @@ div#other_skills {
                      <div class="formrow">
                         <label class="control-label " style="margin-left:-162px;">Salary Range (INR)<span class="required"> *</span> </label>
                         <div class="col-md-3 formrow" style="width:100px;margin-left:-14px;margin-top:37px;">
-                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_from" value="<?php if(!empty($this->session->userdata('salrange_from')) ){echo $this->session->userdata('salrange_from'); } ?><?php echo set_value('salrange_from'); ?>">
+                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_from" required value="<?php if(!empty($this->session->userdata('salrange_from')) ){echo $this->session->userdata('salrange_from'); } ?><?php echo set_value('salrange_from'); ?>">
                         </div>
                         <div class="col-md-3 formrow" style="width:100px;margin-left:-19px;margin-top: 37px;">
-                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_to" value="<?php if(!empty($this->session->userdata('salrange_to')) ){echo $this->session->userdata('salrange_to'); } ?><?php echo set_value('salrange_to'); ?>" />
+                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_to" required value="<?php if(!empty($this->session->userdata('salrange_to')) ){echo $this->session->userdata('salrange_to'); } ?><?php echo set_value('salrange_to'); ?>" />
                         </div>
                      </div>
                   </div>
@@ -512,9 +513,7 @@ div#other_skills {
       </div>
    </div>
 </div>
-<script type="text/javascript">
-window.addEventListener('keydown',function(e){if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){if(e.target.nodeName=='INPUT'&&e.target.type=='text'){alert('enter'); e.preventDefault();return false;}}},true);
-</script>
+
    
 </script>
 <script>
@@ -538,11 +537,7 @@ function education_list()
 <script src="<?php echo base_url() ?>asset/js/search.js"></script>
 
 <script>
-$(document).ready(function() {  
-$('#tokenfield').on('keypress keydown keyup', function(e){
-  alert(e.keyCode);
-       if(e.keyCode == 13) { e.preventDefault(); }
-    });
+
 
 
     $('#tokenfield').tokenfield({
@@ -561,13 +556,12 @@ $('#tokenfield').on('keypress keydown keyup', function(e){
 
       $.each(existingTokens, function(index, token) {
         
-
-          if (token.value.toLowerCase() === event.attrs.value.toLowerCase())
+        if (token.value.toLowerCase() === event.attrs.value.toLowerCase())
               event.preventDefault();
 
       });
   });
-});
+
  
 $("#job_title").autocomplete({
               

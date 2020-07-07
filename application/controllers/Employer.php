@@ -438,6 +438,8 @@ class Employer extends MY_Employer_Controller
            
             $this->form_validation->set_rules('city_id', 'Job Location', 'required');
 
+            $this->form_validation->set_rules('exp_from', 'Experience To', 'required|max_length[2]');
+
             $this->form_validation->set_rules('exp_to', 'Experience To', 'required|max_length[2]');
 
              $this->form_validation->set_rules('no_jobs', 'Number of Positions', 'required');
