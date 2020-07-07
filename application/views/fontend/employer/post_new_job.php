@@ -520,7 +520,23 @@ div#other_skills {
 </div>
 
    
-</script>
+ <script> 
+    $(document).ready(function() { 
+    
+      $('#other_terxtbx').hide();
+      $('#skl_btn').hide();
+      $('#other_skills').hide();
+       $('#training_title1').hide();
+       var id=document.getElementById('job_role').value;
+       // alert(id);
+       getSkillsdetails(id);
+
+
+      $(function() { 
+        $("#my_date_picker").datepicker(); 
+      }); 
+    }) 
+  </script> 
 <script>
 function education_list()
 {
@@ -614,22 +630,7 @@ $("#other_skill").autocomplete({
 
     </script>
 
-  <script> 
-    $(document).ready(function() { 
-    
-      $('#other_terxtbx').hide();
-      $('#skl_btn').hide();
-      $('#other_skills').hide();
-       var id=document.getElementById('job_role').value;
-       // alert(id);
-       getSkillsdetails(id);
-
-
-      $(function() { 
-        $("#my_date_picker").datepicker(); 
-      }); 
-    }) 
-  </script> 
+ 
 <script>
   function check_other(value)
 {
@@ -654,33 +655,6 @@ else if(value == 'other_skill' )
 }
 </script>
 
-<script>
-   $(document).ready(function(){
- 
-   
-      $('#training_title1').hide();
-   
-     var id=document.getElementById('job_role');
-     $.ajax({
-                   url:'<?php echo base_url();?>Employer/getSkillsByRole',
-                   type:'POST',
-                   data:{
-                       role_id:id
-                   },
-                    dataType: "html",  
-                    success: function(data)
-                    {
-                       $('#skills_result').html(data);
-                        $('#skl_btn').show();
-
-                    } 
-             });
-   
-         
-  
-   
-   })
-</script>
 
 <script>
  
