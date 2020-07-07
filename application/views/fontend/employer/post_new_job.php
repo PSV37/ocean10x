@@ -479,10 +479,10 @@ div#errorbox {
                      { 
 
                        foreach($benefits as $benefit){ 
-                         foreach ($benefits as $row) { ?>
-                        ?>
+                         foreach ($benefits_session as $row) { ?>
+                        
                         <label>
-                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" <?php if ($benefit['benifit'] == $row) {
+                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" <?php if ($benefit['id'] == $row) {
                          echo "checked";
                         } ?> name="benefits[]">
                         <span><?php echo $benefit['benifit']; ?></span>
