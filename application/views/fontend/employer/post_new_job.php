@@ -488,7 +488,7 @@ div#other_skills {
                   <div class="col-md-6 col-sm-12" tabindex="16" >
                      <div class=" formrow">
                         <label class="control-label">Upload JD <span class="required"> * </span></label>
-                        <input type="file"  name="job_description" class="form-control"> 
+                        <input type="file"  name="job_description" id="job_description" class="form-control"> 
                      </div>
                   </div>
                   <?php if (!empty($this->session->userdata('jd_file')) ) { ?>
@@ -720,7 +720,7 @@ else if(value == 'other_skill' )
    (function () {
   document.getElementById('test').addEventListener('submit', function(event){
     // Get the length of the values of each input
-    var phone = document.getElementById('job_desc').value.length,
+    var phone = document.getElementById('jd').value.length,
         email = document.getElementById('job_description').value.length;
 
     // If both fields are empty stop the form from submitting
