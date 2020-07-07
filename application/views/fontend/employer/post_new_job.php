@@ -302,7 +302,7 @@ div#other_skills {
                         <label class="control-label ">Job Locations<span class="required"> * </span> </label>
                       
                            <input type="text" name="city_id" class="form-control allowalphabatescomma" id="tokenfield" style="display: inline-block;"  placeholder="Enter Location"
-                        value="<?php if(!empty($this->session->userdata('location')) ){echo $this->session->userdata('location'); } ?>"><?php echo form_error('city_id'); ?>
+                        value="<?php if(!empty($this->session->userdata('location')) ){echo $this->session->userdata('location'); } ?><?php echo set_value('city_id'); ?>"><?php echo form_error('city_id'); ?>
                        
                                      
                      </div>
@@ -382,17 +382,17 @@ div#other_skills {
                             }
                            ?>" autocomplete="off" required> -->
                         <div class="col-md-3 formrow" style="width:80px;margin-left:-14px;">
-                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from"  value="<?php if(!empty($this->session->userdata('exp_from')) ){echo $this->session->userdata('exp_from'); } ?>" />
+                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from"  value="<?php if(!empty($this->session->userdata('exp_from')) ){echo $this->session->userdata('exp_from'); } ?><?php echo set_value('exp_from'); ?>" />
                         </div>
                         <div class="col-md-3 formrow" style="width:80px;margin-left:-19px;">
-                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to" value="<?php if(!empty($this->session->userdata('exp_to')) ){echo $this->session->userdata('exp_to'); } ?>" />
+                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to" value="<?php if(!empty($this->session->userdata('exp_to')) ){echo $this->session->userdata('exp_to'); } ?><?php echo set_value('exp_to'); ?>" />
                         </div>
                      </div>
                   </div>
                   <div class="col-md-3 col-sm-12" tabindex="8">
                      <div class="formrow">
                         <label class="control-label ">Number of Positions<span class="required"> *</span> </label>
-                        <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2" name="no_jobs" placeholder="ex.02" required value="<?php if(!empty($this->session->userdata('no_jobs')) ){echo $this->session->userdata('no_jobs'); }elseif(!empty($job_info->no_jobs)){ echo $job_info->no_jobs; } ?>" autocomplete="off">  <?php echo form_error('no_jobs'); ?>                
+                        <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2" name="no_jobs" placeholder="ex.02" required value="<?php if(!empty($this->session->userdata('no_jobs')) ){echo $this->session->userdata('no_jobs'); }elseif(!empty($job_info->no_jobs)){ echo $job_info->no_jobs; } ?><?php echo set_value('no_jobs'); ?>" autocomplete="off">  <?php echo form_error('no_jobs'); ?>                
                      </div>
                   </div>
                   <div class="col-md-3 col-sm-12" id="spectial" tabindex="9">
@@ -420,10 +420,10 @@ div#other_skills {
                      <div class="formrow">
                         <label class="control-label " style="margin-left:-162px;">Salary Range (INR)<span class="required"> *</span> </label>
                         <div class="col-md-3 formrow" style="width:100px;margin-left:-14px;margin-top:37px;">
-                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_from" value="<?php if(!empty($this->session->userdata('salrange_from')) ){echo $this->session->userdata('salrange_from'); } ?>">
+                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_from" value="<?php if(!empty($this->session->userdata('salrange_from')) ){echo $this->session->userdata('salrange_from'); } ?><?php echo set_value('salrange_from'); ?>">
                         </div>
                         <div class="col-md-3 formrow" style="width:100px;margin-left:-19px;margin-top: 37px;">
-                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_to" value="<?php if(!empty($this->session->userdata('salrange_to')) ){echo $this->session->userdata('salrange_to'); } ?>" />
+                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_to" value="<?php if(!empty($this->session->userdata('salrange_to')) ){echo $this->session->userdata('salrange_to'); } ?><?php echo set_value('salrange_to'); ?>" />
                         </div>
                      </div>
                   </div>
@@ -436,7 +436,7 @@ div#other_skills {
                           
                         ?>
                         <!-- <input type="date" name="job_deadline" class="form-control datepicker" id="job_deadline_day" min="<?php echo date('Y-m-d'); ?>" required value="<?php echo $next_due_date; ?>" autocomplete="off">  -->    
-                        <input type="text" id="my_date_picker" name="job_deadline" style="display: inline-block;" class="form-control datepicker" id="job_deadline_day" min="<?php echo date('Y-m-d'); ?>" required value="<?php echo $next_due_date; ?>" autocomplete="off">     <?php echo form_error('job_deadline'); ?>
+                        <input type="text" id="my_date_picker" name="job_deadline" style="display: inline-block;" class="form-control datepicker" id="job_deadline_day" min="<?php echo date('Y-m-d'); ?><?php echo set_value('job_deadline'); ?>" required value="<?php echo $next_due_date; ?>" autocomplete="off">     <?php echo form_error('job_deadline'); ?>
                      </div>
                   </div>
                   
@@ -560,10 +560,9 @@ $('#tokenfield').on('keypress keydown keyup', function(e){
       var existingTokens = $(this).tokenfield('getTokens');
 
       $.each(existingTokens, function(index, token) {
-        alert(token.value);
-        alert(event.attrs.value);
         
-          if (token.value === event.attrs.value)
+
+          if (token.value.toLowerCase() === event.attrs.value.toLowerCase())
               event.preventDefault();
 
       });
