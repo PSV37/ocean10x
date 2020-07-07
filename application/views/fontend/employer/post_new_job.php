@@ -477,17 +477,17 @@ div#errorbox {
 
 
                         <?php 
-                        if (isset($benefits_session)) {
+                        if(isset($benefits_session)) {
                           
                         
                        
                         foreach($benefits as $benefit){
                           foreach ($benefits_session as $row) { ?>
                         <label>
-                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" <?php if ($benefit['id'] == $row){echo "checked";} ?>name="benefits[]">
+                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" <?php if($benefit['id'] == $row) { echo "checked"; } ?> name="benefits[]">
                         <span><?php echo $benefit['benifit']; ?></span>
                         </label>
-                        <?php }} 
+                        <?php } } 
                       }else{
                           foreach($benefits as $benefit){?>
                         <label>
