@@ -488,7 +488,7 @@ div#other_skills {
                   <div class="col-md-6 col-sm-12" tabindex="16" >
                      <div class=" formrow">
                         <label class="control-label">Upload JD <span class="required"> * </span></label>
-                        <input type="file" style="width: 50%" name="job_description" class="form-control"> 
+                        <input type="file"  name="job_description" class="form-control"> 
                      </div>
                   </div>
                   <?php if (!empty($this->session->userdata('jd_file')) ) { ?>
