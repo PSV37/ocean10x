@@ -339,7 +339,9 @@ class Employer extends MY_Employer_Controller
                 if (isset($job_desc_file) && !empty($job_desc_file)) {
                     $job_info['jd_file'] = $job_desc_file;
                 }
-                
+                $ed = $job_info['job_edu']
+                 $where_int                      = "education_level_id='$ed'";
+            $data['education']              = $this->Master_model->get_master_row('education_level', $select = FALSE, $where_int, $join = FALSE);
                 // print_r($job_info);
                 // if (empty($job_post_id)) {
                     $this->job_posting_model->insert($job_info);
