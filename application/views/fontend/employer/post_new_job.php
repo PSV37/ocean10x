@@ -312,7 +312,7 @@ p#or {
                      <div class="formrow">
                         <label class="control-label ">Job Locations<span class="required"> * </span> </label>
                       
-                           <input type="text" name="city_id" class="allowalphanumeric form-control" id="tokenfield" style="display: inline-block;"  placeholder="Enter Location"
+                           <input type="text" name="city_id" class="allowalphanumeric form-control" id="tokenfield" style="display: inline-block;"  placeholder="Enter Location" onkeydown="check_key();"
                         value="<?php if(!empty($this->session->userdata('location')) ){echo $this->session->userdata('location'); } ?><?php echo set_value('city_id'); ?>"><?php echo form_error('city_id'); ?>
                        
                                      
@@ -589,8 +589,9 @@ p#or {
        // alert(id);
        getSkillsdetails(id);
     
-    $("#tokenfield-tokenfield").keypress(function(event){
+    $("#tokenfield").keypress(function(event){
           var inputValue = event.charCode;
+          alert(inputValue);
           if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
               event.preventDefault();
           }
