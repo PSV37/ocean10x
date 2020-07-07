@@ -353,7 +353,7 @@ class Employer extends MY_Employer_Controller
                 'job_slugs' => $this->slug->create_uri($this->session->userdata('title')),
                 'job_desc' => $this->session->userdata('job_desc'),
                 'education' => $this->session->userdata('edu'),
-                'benefits' => $this->session->userdata('benefits'),
+                'benefits' => implode(',',$this->session->userdata('benefits')),
                 'experience' => $this->session->userdata('experience'),
                 'city_id' => $this->session->userdata('location'),
                 'job_nature' => $this->session->userdata('jobnature'),
