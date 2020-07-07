@@ -589,7 +589,7 @@ p#or {
        // alert(id);
        getSkillsdetails(id);
     
-    $("#tokenfield").keypress(function(event){
+    $("#tokenfield-tokenfield").keypress(function(event){
           var inputValue = event.charCode;
           if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
               event.preventDefault();
