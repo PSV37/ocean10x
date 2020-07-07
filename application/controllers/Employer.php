@@ -371,7 +371,8 @@ class Employer extends MY_Employer_Controller
             $data['country']         = $this->Master_model->getMaster('country', $where = false);
             $data['state']           = $this->Master_model->getMaster('state', $where = false);
             $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
-            $data['benefits']        = $this->Master_model->getMaster('common_company_benifits', $where = false);
+            $data['benefits'] = $this->session->userdata('benefits');
+            // $data['benefits']        = $this->Master_model->getMaster('common_company_benifits', $where = false);
                $data['certificates'] = $this->Master_model->getMaster('certification_master', $where = false);
             $where_cn                = "status=1";
             $select                  = "job_role_title, skill_set ,id";
