@@ -325,7 +325,12 @@ p#or {
                         <select name="job_category" id="job_category" class="form-control select2 limiter-options" data-role="limiter" data-style="btn-default" data-live-search="true" >
                            <!-- <option value="">Select Expected Domain</option> -->
 
-                           <?php if (!empty($this->session->userdata('job_category'))) {
+                           <?php
+                           $value = echo set_value('job_category');
+                           if (!empty($value)) {
+                             echo $this->job_category_model->selected($this->session->userdata($value));
+                           }
+                            if (!empty($this->session->userdata('job_category'))) {
                              echo $this->job_category_model->selected($this->session->userdata('job_category'));
                            } else if(!empty($job_info->job_category)) {
                               echo $this->job_category_model->selected($job_info->job_category);
@@ -830,13 +835,13 @@ jquery validation plugin //-->
    },
    
    
-   'job_title':{
+   // 'job_title':{
    
-   required: true,
+   // required: true,
    
-   //jobtitle_regex: true
+   // //jobtitle_regex: true
    
-   },
+   // },
    
    
    'contact_name':{
@@ -1063,17 +1068,17 @@ jquery validation plugin //-->
    
    },
    
-   'job_desc':{
+   // 'job_desc':{
    
-   required: "Please fill Job Description!",
+   // required: "Please fill Job Description!",
    
-   //minlength: "Please Enter 10 digit phone numbers!",
+   // //minlength: "Please Enter 10 digit phone numbers!",
    
-   //company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+   // //company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
    
-   //remote: "The username is already in use by another user!"
+   // //remote: "The username is already in use by another user!"
    
-   },
+   // },
    
    
    'alternate_email_id':{
