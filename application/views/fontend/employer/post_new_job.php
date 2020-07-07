@@ -485,11 +485,11 @@ div#other_skills {
                   <!-- </textarea><?php echo form_error('benefits'); ?>                                  -->
                   <!-- </div>
                      </div>  -->
-                  <div class="col-md-6 col-sm-12" tabindex="16" >
+                  <div class="col-md-12 col-sm-12" tabindex="16" >
                      <div class=" formrow">
                         <label class="control-label">Upload JD <span class="required"> * </span></label>
-                        <input type="file" name="job_description" class="form-control">          <?php if (!empty($this->session->userdata('jd_file')) ) { ?>
-                         <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/job_description/<?php echo $this->session->userdata('jd_file'); ?>" download>Job_description</a>
+                        <input type="file" style="width: 50%" name="job_description" class="form-control">          <?php if (!empty($this->session->userdata('jd_file')) ) { ?>
+                         <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/job_description/<?php echo $this->session->userdata('jd_file'); ?>" download>Job_description</a><i class="fa fa-times" onclick="cancel_jd()'" aria-hidden="true"></i>
                      <?php   } ?>                        
                      </div>
                   </div>
@@ -525,6 +525,10 @@ function education_list()
       $('#job_education').show();
       $('#training_title1').hide();
 
+}
+function cancel_jd()
+{
+  alert('jd');
 }
 </script>
 <script>
