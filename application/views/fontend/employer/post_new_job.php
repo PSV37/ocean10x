@@ -512,7 +512,9 @@ div#other_skills {
       </div>
    </div>
 </div>
-
+<script type="text/javascript">
+window.addEventListener('keydown',function(e){if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){if(e.target.nodeName=='INPUT'&&e.target.type=='text'){e.preventDefault();return false;}}},true);
+</script>
    
 </script>
 <script>
@@ -537,10 +539,10 @@ function education_list()
 
 <script>
 $(document).ready(function() {  
-// $('#tokenfield').on('keypress keydown keyup', function(e){
-//   alert(e.keyCode);
-//        if(e.keyCode == 13) { e.preventDefault(); }
-//     });
+$('#tokenfield').on('keypress keydown keyup', function(e){
+  alert(e.keyCode);
+       if(e.keyCode == 13) { e.preventDefault(); }
+    });
 
 
     $('#tokenfield').tokenfield({
