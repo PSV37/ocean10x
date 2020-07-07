@@ -331,6 +331,7 @@ class Employer extends MY_Employer_Controller
             
             
             $data['job_desc'] = $this->input->post('job_desc');
+            $data['job_category'] = $this->input->post('job_category');
             $skills           = $this->input->post('skill_set');
             
             $all_skills = array();

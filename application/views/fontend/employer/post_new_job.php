@@ -318,9 +318,14 @@ div#errorbox {
                         <label class="control-label ">Expected Domain<span class="required"> * </span> </label>
                         <select name="job_category" id="job_category" class="form-control select2 limiter-options" data-role="limiter" data-style="btn-default" data-live-search="true" required="">
                            <!-- <option value="">Select Expected Domain</option> -->
-                           <?php if(!empty($job_info->job_category)) {
+
+                           <?php if (!empty($this->session->userdata('job_category'))) {
+                             echo $this->job_category_model->selected($this->session->userdata('job_category'));
+                           } else if(!empty($job_info->job_category)) {
                               echo $this->job_category_model->selected($job_info->job_category);
-                              } else {
+                              }
+
+                               else {
                               echo $this->job_category_model->selected();
                               }
                               ?>
