@@ -172,7 +172,7 @@ width: 152px;
     font-size: 13px;
     list-style-type: none;
     float:left;
-    height:100px;
+    height:auto;
 }
 .right-title_detail{width:100%;list-style-type:none;}
 
@@ -333,7 +333,7 @@ p.right-title_detail {
                              
                              <hr>
                              <div class="job_dis">
-                             		 <li class="left-title_detail" >Detailed Job Description :</li><p class="right-title_detail">&emsp;<?php echo $job_desc; ?></p>
+                             		 <li class="left-title_detail" >Detailed Job Description :</li><br><p class="right-title_detail"><?php echo $job_desc; ?></p>
                              
                              
                              </div>
