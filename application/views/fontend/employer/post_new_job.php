@@ -302,7 +302,7 @@ div#other_skills {
                         <label class="control-label ">Job Locations<span class="required"> * </span> </label>
                       
                            <input type="text" name="city_id" class="form-control allowalphabatescomma" id="tokenfield" style="display: inline-block;"  placeholder="Enter Location"
-                        value="<?php if(!empty($this->session->userdata('location')) ){echo $this->session->userdata('location'); } ?>" required><?php echo form_error('city_id'); ?>
+                        value="<?php if(!empty($this->session->userdata('location')) ){echo $this->session->userdata('location'); } ?>"><?php echo form_error('city_id'); ?>
                        
                                      
                      </div>
@@ -513,7 +513,7 @@ div#other_skills {
    </div>
 </div>
 <script type="text/javascript">
-window.addEventListener('keydown',function(e){if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){if(e.target.nodeName=='INPUT'&&e.target.type=='text'){e.preventDefault();return false;}}},true);
+window.addEventListener('keydown',function(e){if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){if(e.target.nodeName=='INPUT'&&e.target.type=='text'){alert('enter'); e.preventDefault();return false;}}},true);
 </script>
    
 </script>
