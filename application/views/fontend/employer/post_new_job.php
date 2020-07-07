@@ -492,7 +492,7 @@ div#errorbox {
                         </label>
                          <?php } else {?>
                           <label>
-                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" checked
+                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" 
                         name="benefits[]">
                         <span><?php echo $benefit['benifit']; ?></span>
                         </label>
