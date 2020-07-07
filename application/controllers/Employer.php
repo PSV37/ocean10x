@@ -427,7 +427,7 @@ class Employer extends MY_Employer_Controller
                 $result = $this->Master_model->master_insert($data, 'employer_audit_record');
                 // redirect('job/show/'.$job_info['job_slugs']);.
                
-                $array_items = array('title' , 'job_desc', 'edu', 'benefits' , 'experience','location','jobnature','no_jobs','jobrole','skills','salary_range','jd_file','exp_from','exp_to','salrange_to','salrange_from');
+                $array_items = array('title' , 'job_desc', 'edu', 'benefits' , 'experience','location','jobnature','no_jobs','jobrole','skills','salary_range','jd_file','exp_from','exp_to','salrange_to','salrange_from','job_category');
                 $this->session->unset_userdata($array_items);
                 redirect('employer/active_job');
             } else {
@@ -681,7 +681,7 @@ class Employer extends MY_Employer_Controller
                 }
             }
         } else {
-           $array_items = array('title' , 'job_desc', 'edu', 'benefits' , 'experience','location','jobnature','no_jobs','jobrole','skills','salary_range','jd_file','exp_from','exp_to','salrange_to','salrange_from');
+           $array_items = array('title' , 'job_desc', 'edu', 'benefits' , 'experience','location','jobnature','no_jobs','jobrole','skills','salary_range','jd_file','exp_from','exp_to','salrange_to','salrange_from','job_category');
                 $this->session->unset_userdata($array_items);
             
             $data['country']         = $this->Master_model->getMaster('country', $where = false);
