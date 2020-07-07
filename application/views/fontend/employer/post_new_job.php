@@ -558,6 +558,7 @@ $('#tokenfield').on('keypress keydown keyup', function(e){
     // to avoid duplications
  $('#tokenfield').on('tokenfield:createtoken', function (event) {
       var existingTokens = $(this).tokenfield('getTokens');
+      alert(existingTokens);
       $.each(existingTokens, function(index, token) {
           if (token.value === event.attrs.value)
               event.preventDefault();
