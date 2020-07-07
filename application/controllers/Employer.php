@@ -269,6 +269,18 @@ class Employer extends MY_Employer_Controller
                 
                 $this->load->view('fontend/employer/post_new_job', $data);
             } else {
+
+                $salrange_from     = $this->input->post('salrange_from');
+                $salrange_to       = $this->input->post('salrange_to');
+                $salary_range = $salrange_from . '-' . $salrange_to;
+                
+                $exp_from     = $this->input->post('exp_from');
+                $exp_to       = $this->input->post('exp_to');
+                $experience   = $exp_from . '-' . $exp_to;
+                $employer_id  = $this->session->userdata('company_profile_id');
+                $job_deadline = strtolower($this->input->post('job_deadline'));
+                $job_post_id  = $this->input->post('job_post_id');
+                
                 $all_skills = array();
 
                 $skills=$this->input->post('skill_set');
