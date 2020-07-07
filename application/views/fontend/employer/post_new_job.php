@@ -588,7 +588,13 @@ p#or {
        var id=document.getElementById('job_role').value;
        // alert(id);
        getSkillsdetails(id);
-
+    
+    $("#tokenfield").keypress(function(event){
+          var inputValue = event.charCode;
+          if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
+              event.preventDefault();
+          }
+      });
 
       $(function() { 
         $("#my_date_picker").datepicker(); 
