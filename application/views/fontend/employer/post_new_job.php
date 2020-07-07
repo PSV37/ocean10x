@@ -485,6 +485,7 @@ div#other_skills {
                   <!-- </textarea><?php echo form_error('benefits'); ?>                                  -->
                   <!-- </div>
                      </div>  -->
+                  <div id="errorbox"></div>
                   <div class="col-md-6 col-sm-12" tabindex="16" >
                      <div class=" formrow">
                         <label class="control-label">Upload JD <span class="required"> * </span></label>
@@ -726,7 +727,8 @@ else if(value == 'other_skill' )
     // If both fields are empty stop the form from submitting
     if( phone === 0 && email === 0 ) {
       event.preventDefault();
-      alert('please fille Upload JD or Job Description');
+       $("#errorbox").html("please fille Upload JD or Job Description");
+      // alert('please fille Upload JD or Job Description');
     }
   }, false);
 })();
