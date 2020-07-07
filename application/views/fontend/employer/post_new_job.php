@@ -477,9 +477,9 @@ div#errorbox {
 
                      <?php if(isset($benefits_session))
                      { 
-
-                       foreach($benefits as $benefit){ 
-                         foreach ($benefits_session as $row) { ?>
+                      foreach ($benefits_session as $row) { 
+                       foreach($benefits as $benefit){ ?>
+                        
                         
                         <label>
                         <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" <?php if ($benefit['id'] == $row) {
