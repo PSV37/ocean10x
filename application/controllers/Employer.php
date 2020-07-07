@@ -1143,39 +1143,57 @@ class Employer extends MY_Employer_Controller
         $id        = $this->input->post('role_id');
         $whereres  = "id='$id'";
         $role_data = $this->Master_model->get_master_row('job_role', $select = FALSE, $whereres);
-        
         $sk = $role_data['skill_set'];
         
         if ($sk) {
             $where_sk  = "id IN (" . $sk . ") AND status=1";
             $select_sk = "skill_name ,id";
             $skills    = $this->Master_model->getMaster('skill_master', $where_sk, $join = FALSE, $order = false, $field = false, $select_sk, $limit = false, $start = false, $search = false);
+
+            
+        if (!empty($this->session->userdata('skills'))) {
+            $sesseion_sk = $this->session->userdata('skills');
+            if ($sesseion_sk) {
+            $where_sk  = "id IN (" . $sesseion_sk . ") AND status=1";
+            $select_sk = "skill_name ,id";
+            $sesseion_skills    = $this->Master_model->getMaster('skill_master', $where_sk, $join = FALSE, $order = false, $field = false, $select_sk, $limit = false, $start = false, $search = false);
             
             $result = '';
-
-            if (!empty($this->session->userdata('skills'))) {
-
-                $session_skills=$this->session->userdata('skills');
-                foreach ($session_skills as $row) {
+            if (!empty($sesseion_skills)) {
+                foreach ($sesseion_skills as $skill_row) {
+                  
                     $result .= '
                           <div  id="myfields" class="myfields" >
                           <ul class="rating-comments" >
 
 
                             <label>
-                                <input type="checkbox" name="skill_set[]"  value=' . $row['id'] . '  class="btn-default1" checked>
-                                <span>' . $row['skill_name'] . '</span>
+                                <input type="checkbox" name="skill_set[]"  value=' . $skill_row['id'] . '  class="btn-default1" checked>
+                                <span>' . $skill_row['skill_name'] . '</span>
                             </label>
 
                         
                          </ul>
                       
                      </div>';
+                    
                 }
-               
+                //             $result .='<button type="button" value="other_skill" 
+            } else {
+                $result .= 'Skills Not Found ';
             }
-            else {
-                if (!empty($skills)) {
+            
+        } else {
+            $result .= 'Skills Not Found ';
+        }
+            }
+            else
+            {
+        
+        
+            
+            $result = '';
+            if (!empty($skills)) {
                 foreach ($skills as $skill_row) {
                     // $result .="<input type='checkbox' name='skill_set[]' style='height:15px; width:20px;' id='skill_set' value=".$skill_row['id']." checked> ".$skill_row['skill_name']."";
                     $result .= '
@@ -1194,17 +1212,16 @@ class Employer extends MY_Employer_Controller
                      </div>';
                     
                 }
-
                 //             $result .='<button type="button" value="other_skill" onclick="check_other(this.value);"  style="font-size:28px;color:#18c5bd;border: none;
                 // background: none;">  <i class="fa fa-plus-circle"  ></i></button>';
             } else {
                 $result .= 'Skills Not Found ';
             }
-        }
             
         } else {
             $result .= 'Skills Not Found ';
         }
+    }
         echo $result;
     }
     
