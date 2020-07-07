@@ -386,7 +386,7 @@ div#other_skills {
                         </div>
                         <div class="col-md-3 formrow" style="width:80px;margin-left:-19px;">
                            <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to" required value="<?php if(!empty($this->session->userdata('exp_to')) ){echo $this->session->userdata('exp_to'); } ?><?php echo set_value('exp_to'); ?>" />
-                           <?php echo set_value('exp_to'); ?>"
+                           <?php echo set_value('exp_to'); ?>
                         </div>
                      </div>
                   </div>
