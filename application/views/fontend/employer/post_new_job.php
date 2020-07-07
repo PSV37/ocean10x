@@ -463,7 +463,7 @@ p#or {
                         <label class="control-label ">Skill Set<span class="required"> * </span> </label>
                         <div id="skills_result">Please Select Job Role.</div>
 
-                       
+
                      </div>
                    <div id="skl_btn">
                       <button type="button"  value="other_skill" onclick="check_other(this.value);"  style="font-size:28px;color:#18c5bd;border: none; background: none;">  <i class="fa fa-plus-circle"  ></i></button>
@@ -538,13 +538,13 @@ p#or {
                   <div class="col-md-6 col-sm-12" tabindex="16" >
                      <div id="errorbox"></div>
                      <div class=" formrow">
-                        <label class="control-label">Upload JD <span class="required"> * </span></label>  <?php if (!empty($this->session->userdata('jd_file')) ) { ?>  <a  style="margin-left: 10px;" href="<?php echo base_url() ?>upload/job_description/<?php echo $this->session->userdata('jd_file'); ?>" download>Job_description</a><span style="margin-left: 15px" onclick="cancel_jd();" ><i class="fa fa-times" aria-hidden="true"></i></span> <?php   } ?> 
-                        <input type="file"  name="job_description" id="job_description" class="form-control"> 
+                        <label class="control-label">Upload JD <span class="required"> * </span></label>  <?php if (!empty($this->session->userdata('jd_file')) ) { ?>  <a id="jd_file"   style="margin-left: 10px;" href="<?php echo base_url() ?>upload/job_description/<?php echo $this->session->userdata('jd_file'); ?>" download>Job_description</a><span style="margin-left: 15px" onclick="cancel_jd();" ><i class="fa fa-times" aria-hidden="true"></i></span> <?php   } ?> 
+                        <input type="file"  name="job_description" id="job_description" class="form-control" value=" <?php if (!empty($this->session->userdata('jd_file')) ) { echo $this->session->userdata('jd_file'); ?>" > 
                      </div>
                   </div>
 
                   <?php if (!empty($this->session->userdata('jd_file')) ) { ?>
-                      <div class="col-md-6 col-sm-12" tabindex="16" style=" margin-top: 45px;" id="jd_file" >
+                      <div class="col-md-6 col-sm-12" tabindex="16" style=" margin-top: 45px;" >
                      <div class=" formrow">
                         
                        </div>
@@ -606,6 +606,7 @@ function cancel_jd()
 {
   // alert('jd');
   <?php  ?>
+  $('#jd_file').hide();
   $('#jd_file').hide();
 }
 </script>
@@ -775,11 +776,12 @@ else if(value == 'other_skill' )
    (function () {
   document.getElementById('test').addEventListener('submit', function(event){
     // Get the length of the values of each input
-    var phone = document.getElementById('jd').value.length,
-        email = document.getElementById('job_description').value.length;
+    var jd = document.getElementById('jd').value.length,
+    var jd_file = document.getElementById('jd_file').value.length,
+     var   job_description = document.getElementById('job_description').value.length;
 
     // If both fields are empty stop the form from submitting
-    if( phone === 0 && email === 0 ) {
+    if( jd === 0 && job_description === 0 && jd_file === 0  ) {
       event.preventDefault();
        $("#errorbox").html("Either Upload JD or fill Job Description");
       // alert('please fille Upload JD or Job Description');
