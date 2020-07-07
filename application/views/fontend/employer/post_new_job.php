@@ -485,8 +485,9 @@ div#other_skills {
                   <!-- </textarea><?php echo form_error('benefits'); ?>                                  -->
                   <!-- </div>
                      </div>  -->
-                  <div id="errorbox"></div>
+                 
                   <div class="col-md-6 col-sm-12" tabindex="16" >
+                     <div id="errorbox"></div>
                      <div class=" formrow">
                         <label class="control-label">Upload JD <span class="required"> * </span></label>
                         <input type="file"  name="job_description" id="job_description" class="form-control"> 
