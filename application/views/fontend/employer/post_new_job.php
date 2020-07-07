@@ -326,7 +326,7 @@ p#or {
                            <!-- <option value="">Select Expected Domain</option> -->
 
                            <?php
-                           $value = echo set_value('job_category');
+                           $value =  set_value('job_category');
                            if (!empty($value)) {
                              echo $this->job_category_model->selected($this->session->userdata($value));
                            }
