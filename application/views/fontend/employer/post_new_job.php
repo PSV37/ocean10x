@@ -777,11 +777,11 @@ else if(value == 'other_skill' )
   document.getElementById('test').addEventListener('submit', function(event){
     // Get the length of the values of each input
     var jd = document.getElementById('jd').value.length,
-    var jd_file = document.getElementById('jd_file').value.length,
+    // var jd_file = document.getElementById('jd_file').value.length,
      var   job_description = document.getElementById('job_description').value.length;
 
     // If both fields are empty stop the form from submitting
-    if( jd === 0 && job_description === 0 && jd_file === 0  ) {
+    if( jd === 0 && job_description === 0 ) {
       event.preventDefault();
        $("#errorbox").html("Either Upload JD or fill Job Description");
       // alert('please fille Upload JD or Job Description');
