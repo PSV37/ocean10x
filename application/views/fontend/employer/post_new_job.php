@@ -647,10 +647,7 @@ p#or {
     'benefits[]': { required: true, minlength: 1 },
       
       
-    'job_desc': {
-            required: "#job_description:blank",
-               
-          },
+   
 
     'job_description': {
              required: "#jd:blank",
@@ -660,6 +657,10 @@ p#or {
              required: "#job_desc:blank",
                 
        },
+        'job_desc': {
+            required: "#job_description:blank",
+               
+          },
 
     'city_id':{
      
