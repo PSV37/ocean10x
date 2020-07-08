@@ -633,8 +633,20 @@ p#or {
         $("#my_date_picker").datepicker(); 
       }); 
 
+
       $("#test").validate ({
   rules:{
+    "benifit[": { 
+            //required: true,
+            //minlength: 1
+            required: function(elem)
+            {
+                return $("input.select:checked").length > 0;
+            }
+             
+          },
+      
+      
     'jd': {
             required: "#job_description:blank",
                
@@ -729,7 +741,12 @@ p#or {
    required: true,
    
    },
-          }
+          },
+          messages: { 
+            
+            "benifit": "You must check at least 1 box",
+
+        }
     }) ;
     });
   </script> 
