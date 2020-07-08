@@ -562,18 +562,18 @@ p#or {
                      
                         <div id="other_terxtbx"><input type="text"  name="othe_benf" id="other_benifit"  style="display: inline-block; width: 30%" ><button type="button" id="check-btn" onclick="save_benifit();"><i class="fa fa-check"></i></button></div>
                   </div>
-                <?php echo form_error('benefits'); ?>                                  
+                <?php echo form_error('benefits[]'); ?>                                  
                   <!-- </div>
                      </div>  -->
                  
                   <div class="col-md-6 col-sm-12" tabindex="16" >
                      <div id="errorbox"></div>
                      <div class=" formrow">
-                        <label class="control-label">Upload JD <span class="required"> * </span></label>  <?php if (!empty($job_info->jd_files)) { ?>  <a id="jd_file"   style="margin-left: 10px;" href="<?php echo base_url() ?>upload/job_description/<?php echo $job_info->jd_file; ?>" download><?php echo $job_info->jd_file; ?></a><span style="margin-left: 15px" onclick="cancel_jd();" id="cross_btn" ><i class="fa fa-times" aria-hidden="true"></i></span> <?php   } ?> 
+                        <label class="control-label">Upload JD <span class="required"> * </span></label>  <?php if (!empty($job_info->jd_file)) { ?>  <a id="jd_file"   style="margin-left: 10px;" href="<?php echo base_url() ?>upload/job_description/<?php echo $job_info->jd_file; ?>" download name="jd_file"><?php echo $job_info->jd_file; ?></a><span style="margin-left: 15px" onclick="cancel_jd();" id="cross_btn"  ><i class="fa fa-times" aria-hidden="true"></i></span> <?php   } ?> 
 
                         <input type="file"  name="job_description" id="job_description" class="form-control my_checkbox_group"  > 
 
-                        <input type="hidden" name="jd" id="jd" class="my_checkbox_group" value=" <?php if (!empty($job_info->jd_file) ) { $job_info->jd_file; } ?>">
+                        <input type="hidden" name="jd" id="jd" class="my_checkbox_group" value=" <?php if (!empty($job_info->jd_file) ) { echo $job_info->jd_file; } ?>">
                      </div>
                   </div>
 
@@ -686,7 +686,7 @@ p#or {
     
      'exp_from': {
                    
-     minlength:2,
+     // minlength:2,
            
     // maxlength:10,
    
