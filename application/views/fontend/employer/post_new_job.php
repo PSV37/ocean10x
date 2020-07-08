@@ -835,7 +835,7 @@ else if(value == 'other_skill' )
 jquery validation plugin //-->
 <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js"></script>
 <script type="text/javascript" src="validation_reg.js"></script>
-<script src="js/jquery.validate.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 <script>
    $(document).ready(function()
    
