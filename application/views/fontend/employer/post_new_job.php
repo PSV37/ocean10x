@@ -643,11 +643,8 @@ p#or {
        
           errorPlacement: function(error, element) {
               if (element.attr("name") == "city_id" )
-                  error.insertAfter(".some-class");
-              else if  (element.attr("name") == "phone" )
-                  error.insertAfter(".some-other-class");
-              else
-                  error.insertAfter(element);
+                  error.insertAfter(".tokenfield ");
+             
           }
         rules: {
             'job_description': {
