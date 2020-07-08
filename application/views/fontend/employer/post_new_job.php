@@ -504,7 +504,7 @@ p#or {
                   <div class="col-md-12 col-sm-12" tabindex="15">
                      <div class="formrow" id="benifit">
 
-                     <?php $benefits_session=explode(',', $job_info->benefits);  if(isset($benefits_session))
+                     <?php $benefits_session=explode(',', $job_info->benefits);  if(isset($benefits_session) && !empty($benefits_session) )
                      { 
                        foreach($benefits_session as $row){ 
                           
