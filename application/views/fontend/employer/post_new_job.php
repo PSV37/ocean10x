@@ -413,10 +413,10 @@ p#or {
                        <?php $exp=explode('-', $job_info->experience);  ?>
 
                         <div class="col-md-3 formrow" style="width:80px;margin-left:-14px;">
-                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from"  value="<?php $exp['0'] ?><?php echo set_value('exp_from'); ?>" > <?php echo form_error('exp_to'); ?>
+                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from"  value="<?php echo $exp['0'] ?><?php echo set_value('exp_from'); ?>" > <?php echo form_error('exp_to'); ?>
                         </div>
                         <div class="col-md-3 formrow" style="width:80px;margin-left:-19px;">
-                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to"  value="<?php $exp['1']  ?><?php echo set_value('exp_to'); ?>" />
+                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to"  value="<?php echo $exp['1']  ?><?php echo set_value('exp_to'); ?>" />
                            <?php echo form_error('exp_to'); ?>
                         </div>
                      </div>
@@ -452,10 +452,12 @@ p#or {
                      <div class="formrow">
                         <label class="control-label " style="margin-left:-162px;">Salary Range (INR)<span class="required"> *</span> </label>
                         <div class="col-md-3 formrow" style="width:100px;margin-left:-14px;margin-top:37px;">
-                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_from"  value="<?php if(!empty($this->session->userdata('salrange_from')) ){echo $this->session->userdata('salrange_from'); } ?><?php echo set_value('salrange_from'); ?>">
+                           <?php $sal=explode('-', $job_info->salary_range);  ?>
+
+                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_from"  value="<?php echo $sal[0]; } ?><?php echo set_value('salrange_from'); ?>">
                         </div>
                         <div class="col-md-3 formrow" style="width:100px;margin-left:-19px;margin-top: 37px;">
-                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_to"  value="<?php if(!empty($this->session->userdata('salrange_to')) ){echo $this->session->userdata('salrange_to'); } ?><?php echo set_value('salrange_to'); ?>" />
+                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_to"  value="<?php echo $sal[1]; ?><?php echo set_value('salrange_to'); ?>" />
                         </div>
                      </div>
                   </div>
