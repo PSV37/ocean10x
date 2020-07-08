@@ -608,87 +608,57 @@ p#or {
    </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
-<script>
-   $(document).ready(function()
-   
-   {
-   
-   $("#test").validate (  
-   
-   {
 
 
-   
-   rules:{
-    'jd': {
-                required: "#job_description:blank",
-               
-            },
-            'job_description': {
-                required: "#jd:blank",
-                
-            }
+ <script> 
+    $(document).ready(function() { 
+    
+      $('#other_terxtbx').hide();
+      $('#skl_btn').hide();
+      $('#other_skills').hide();
+       $('#training_title1').hide();
+       var id=document.getElementById('job_role').value;
+       // alert(id);
+       getSkillsdetails(id);
+    
+    $("#tokenfield").keypress(function(event){
+          var inputValue = event.charCode;
+          alert(inputValue);
+          if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
+              event.preventDefault();
           }
-   'city_id':{
-   
-   required: true,
-   
-   cityid_regex: true
-   //minlength: 10,
-   
-   //maxlength: 10
-   //company_phone_regex: true
-   
-   },
-   
-   
-   // 'job_title':{
-   
-   // required: true,
-   
-   // //jobtitle_regex: true
-   
-   // },
-   
-   'benifit' :{
-    required:true,
-   }
-   
-   'contact_name':{
-   
-   required: true,
-   
-   contactname_regex: true
-   
-   },
-   
-   'cont_person_level': {
-   
-   required: true,
-   
-   contpersonlevel_regex: true
-   
-   }, 
-   
-   'alternate_email_id':{
-   
-   required: true,
-   
-   email: true
-   
-   
-   },
-   
-   'cont_person_email':{
-   
-   required: true,
-   
-   email: true
-   
-   
-   },
-   
-   'exp_from': {
+      });
+
+      $(function() { 
+        $("#my_date_picker").datepicker(); 
+      }); 
+
+      $("#test").validate ({
+  rules:{
+    'jd': {
+            required: "#job_description:blank",
+               
+          },
+    'job_description': {
+             required: "#jd:blank",
+                
+            },
+
+    'city_id':{
+     
+           required: true,
+          },
+
+    'job_title':{
+     
+            required: true,
+      },
+     
+     'benifit' :{
+
+            required:true,
+          },
+     'exp_from': {
                    
      //minlength:1,
            
@@ -759,116 +729,11 @@ p#or {
    required: true,
    
    },
-   
-   
-   
-   
-     
-   
-   
-   },
-   
-   messages:{
-   
-   'job_title':{
-   
-   required: "This field is mandatory!",
-   
-   maxlength: "Choose a company name of at least 14 letters!"
-   
-   },
-   
-   
-   'city_id':{
-   
-   required: "This field is mandatory!",
-   
-   //minlength: "Please Enter 10 digit phone numbers!",
-   
-   //company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
-   
-   //remote: "The username is already in use by another user!"
-   
-   },
-   
-   
-   'exp_from':{
-   
-     required: "This field is mandatory!",
-   
-     matches: "Didn't match!", 
-           
-     minlength: "Please Enter 1 digit number!",
-           
-     maxlength: "Maximum length 10 digits!"
-   },
-   
-   'exp_to':{
-   
-     required: "This field is mandatory!",
-   
-     matches: "Didn't match!", 
-           
-     minlength: "Please Enter 1 digit number!",
-           
-     maxlength: "Maximum length 10 digits!"
-   },
-   
-   'no_jobs':{
-   
-     required: "This field is mandatory!",
-   
-     matches: "Didn't match!", 
-           
-     minlength: "Please Enter 1 digit number!",
-           
-     maxlength: "Maximum length 10 digits!"
-   },
-   
-   
-   'salrange_from':{
-   
-     required: "This field is mandatory!",
-   
-     matches: "Didn't match!", 
-           
-     minlength: "Please Enter 1 digit number!",
-           
-     maxlength: "Maximum length 10 digits!"
-   },
-   
-   'salrange_to':{
-   
-     required: "This field is mandatory!",
-   
-     matches: "Didn't match!", 
-           
-     minlength: "Please Enter 1 digit number!",
-           
-     maxlength: "Maximum length 10 digits!"
-   },
-
-   'benifit':{
-   
-     required: "This field is mandatory!",
-   
-     matches: "Didn't match!", 
-           
-     minlength: "Please Enter 1 digit number!",
-           
-     maxlength: "Maximum length 10 digits!"
-   },
-   
-   
-   
-   }
-   
-   });
-   
-
-   
-</script>
-<script >
+          }
+    }) ;
+    });
+  </script> 
+  <script >
    $.validator.addMethod("jobtitle_regex", function(value, element) {
    
    return this.optional(element) || /^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$/i.test(value);
@@ -950,43 +815,6 @@ p#or {
    
 </script>
    
- <script> 
-    $(document).ready(function() { 
-    
-      $('#other_terxtbx').hide();
-      $('#skl_btn').hide();
-      $('#other_skills').hide();
-       $('#training_title1').hide();
-       var id=document.getElementById('job_role').value;
-       // alert(id);
-       getSkillsdetails(id);
-    
-    $("#tokenfield").keypress(function(event){
-          var inputValue = event.charCode;
-          alert(inputValue);
-          if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
-              event.preventDefault();
-          }
-      });
-
-      $(function() { 
-        $("#my_date_picker").datepicker(); 
-      }); 
-
-      $("#test").validate ({
-  rules:{
-    'jd': {
-                required: "#job_description:blank",
-               
-            },
-            'job_description': {
-                required: "#jd:blank",
-                
-            }
-          }
-    }) ;
-    });
-  </script> 
 <script>
 function education_list()
 {
