@@ -528,7 +528,7 @@ p#or {
                           
                         ?>
                         <label>
-                        <input type="checkbox" value="<?php echo $row; ?>"  class="btn-default1" id="benifit[]" checked
+                        <input type="checkbox" value="<?php echo $row; ?>"  class="btn-default1 selectone" id="benifit[]" checked
                         name="benefits[]">
                         <span><?php echo $row; ?></span>
                         </label>
@@ -540,7 +540,7 @@ p#or {
                           
                         ?>
                         <label>
-                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" id="benifit[]" 
+                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1 selectone" id="benifit[]" 
                         name="benefits[]">
                         <span><?php echo $benefit['benifit']; ?></span>
                         </label>
@@ -550,7 +550,7 @@ p#or {
                      else{
                       foreach($benefits as $benefit){?>
                         <label>
-                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" id="benifit[]" checked="" name="benefits[]">
+                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1 selectone" id="benifit[]" checked="" name="benefits[]">
                         <span><?php echo $benefit['benifit']; ?></span>
                         </label>
                         <?php } } ?>
@@ -635,14 +635,17 @@ p#or {
 
 
       $("#test").validate ({
-        groups: {
-            name: "benefits[]"
-        },
-        rules: {
-            'my_checkbox_1[]': {
-                require_from_group: [1, ".my_checkbox_group"]
-            },
-            
+        submitHandler: function(form) {
+            // see if selectone is even being used
+            var boxes = $('.selectone:checkbox');
+            if(boxes.length > 0) {
+                if( $('.selectone:checkbox:checked').length < 1) {
+                    alert('Please select at least one checkbox');
+                    boxes[0].focus();
+                    return false;
+                }
+            }
+            form.submit();
   
     'benefits[]': { required: true, minlength: 1 },
       
