@@ -645,7 +645,9 @@ p#or {
               if (element.attr("name") == "city_id" )
                   error.insertAfter(".tokenfield ");
              
-          },
+          }else
+        error.insertAfter(element);
+        },
         rules: {
             'job_description': {
                 require_from_group: [1, ".my_checkbox_group"]
