@@ -489,7 +489,7 @@ p#or {
                         }
                         elseif(!empty(set_value('skill_set')))
                         {
-                           $data['skills'] = set_value('skill_set');
+                           $data['skills'] = implode(',', set_value('skill_set')) ;
                         }
                          $this->session->set_userdata($data); ?>
 
