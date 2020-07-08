@@ -198,6 +198,7 @@ order by RAND() limit 3");
         $this->db->select('*');
         $this->db->from('job_posting');
         $this->db->where('company_profile_id', $company_id);
+        $this->db->where('status', "!0");
         $this->db->where('job_status',"1")->order_by($this->_order_by);
         $this->db->join('job_nature','job_nature.job_nature_id=job_posting.job_nature');
         $this->db->join('job_category','job_category.job_category_id=job_posting.job_category');
