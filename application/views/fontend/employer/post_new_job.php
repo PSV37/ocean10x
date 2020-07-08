@@ -612,28 +612,10 @@ p#or {
    $(document).ready(function()
    
    {
-
-    $('#other_terxtbx').hide();
-      $('#skl_btn').hide();
-      $('#other_skills').hide();
-       $('#training_title1').hide();
-       var id=document.getElementById('job_role').value;
-       // alert(id);
-       getSkillsdetails(id);
-    
-    $("#tokenfield").keypress(function(event){
-          var inputValue = event.charCode;
-          alert(inputValue);
-          if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
-              event.preventDefault();
-          }
-      });
-
-      $(function() { 
-        $("#my_date_picker").datepicker(); 
-      });
    
-   $("#test").validate ({
+   $("#test").validate (  
+   
+   {
 
 
    
@@ -780,6 +762,12 @@ p#or {
    
    
    
+   
+     
+   
+   
+   },
+   
    messages:{
    
    'job_title':{
@@ -876,9 +864,8 @@ p#or {
    }
    
    });
- });
    
-  
+
    
 </script>
 <script >
@@ -966,8 +953,39 @@ p#or {
  <script> 
     $(document).ready(function() { 
     
-       
-    }) 
+      $('#other_terxtbx').hide();
+      $('#skl_btn').hide();
+      $('#other_skills').hide();
+       $('#training_title1').hide();
+       var id=document.getElementById('job_role').value;
+       // alert(id);
+       getSkillsdetails(id);
+    
+    $("#tokenfield").keypress(function(event){
+          var inputValue = event.charCode;
+          alert(inputValue);
+          if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
+              event.preventDefault();
+          }
+      });
+
+      $(function() { 
+        $("#my_date_picker").datepicker(); 
+      }); 
+
+      $("#test").validate ({
+  rules:{
+    'jd': {
+                required: "#job_description:blank",
+               
+            },
+            'job_description': {
+                required: "#jd:blank",
+                
+            }
+          }
+    }) ;
+    });
   </script> 
 <script>
 function education_list()
