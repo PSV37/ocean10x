@@ -647,7 +647,7 @@ p#or {
              
           else
         error.insertAfter(element);
-      <?php $jd_db_file  ?> = document.getElementById('jd_session').val();
+      var val = document.getElementById('jd_session').val();
 
         },
         rules: {
@@ -664,7 +664,7 @@ p#or {
    
 
    
-     print_r($jd_file_val); 
+  echo $jd_file_val = "<script>document.write(val)</script>";
     if (empty($jd_file_val)) { ?>
         
         'job_description': {
