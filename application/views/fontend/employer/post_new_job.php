@@ -482,8 +482,17 @@ p#or {
 
                         <?php  
                         $this->session->unset_userdata('skills');
-                        $data['skills'] = $job_info->skills_required;
+                        if (!empty($job_info->skills_required)) {
+                          
+                          $data['skills'] = $job_info->skills_required;
+                          # code...
+                        }
+                        elseif(!empty(set_value('skill_set')))
+                        {
+                           $data['skills'] = set_value('skill_set');
+                        }
                          $this->session->set_userdata($data); ?>
+
 
                      </div>
                    <div id="skl_btn">
@@ -505,7 +514,7 @@ p#or {
                      <div class="formrow" id="benifit">
 
                      <?php 
-                     print_r(set_value('benefits'));
+                     // print_r(set_value('benefits'));
                      if((isset($job_info) && !empty($job_info)) || ( !empty(set_value('benefits')))  )
                      { 
                       if (!empty($job_info)) {
