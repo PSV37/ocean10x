@@ -648,10 +648,10 @@ p#or {
       
       
     'jd': {
-            required: "#job_description:blank",
+            required: "#job_desc:blank",
                
           },
-    'job_description': {
+    'job_desc': {
              required: "#jd:blank",
                 
             },
