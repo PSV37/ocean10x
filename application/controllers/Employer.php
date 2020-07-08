@@ -407,7 +407,7 @@ class Employer extends MY_Employer_Controller
                         
                     }
                     $this->job_posting_model->update($job_info, $job_post_id);
-                    $job_info['job_id']=$job_post_id
+                    $job_info['job_id']=$job_post_id;
                       
                 }else
                 {
