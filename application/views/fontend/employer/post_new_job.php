@@ -647,7 +647,7 @@ p#or {
              
           else
         error.insertAfter(element);
-      var p1 = "success";
+      <?php $jd_db_file = ?> document.getElementById('jd_session').val();
 
         },
         rules: {
@@ -662,10 +662,10 @@ p#or {
 
     <?php 
    
-$jd= "<script>document.writeln(p1);</script>";
-echo $jd;
+
    
-    if (empty($jd_file_val)) { ?>
+    if print_r($jd_file_val); 
+     (empty($jd_file_val)) { ?>
         
         'job_description': {
              required: "#job_desc:blank",
