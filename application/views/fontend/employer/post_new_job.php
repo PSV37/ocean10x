@@ -608,6 +608,7 @@ p#or {
    </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/additional-methods.js"></script>
 
 
  <script> 
@@ -635,18 +636,7 @@ p#or {
 
 
       $("#test").validate ({
-        submitHandler: function(form) {
-            // see if selectone is even being used
-            var boxes = $('.selectone:checkbox');
-            if(boxes.length > 0) {
-                if( $('.selectone:checkbox:checked').length < 1) {
-                    alert('Please select at least one checkbox');
-                    boxes[0].focus();
-                    return false;
-                }
-            }
-            form.submit();
-          },
+
   
     'benefits[]': { required: true, minlength: 1 },
       
