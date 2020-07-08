@@ -573,7 +573,7 @@ p#or {
 
                         <input type="file"  name="job_description" id="job_description" class="form-control"  > 
 
-                        <input type="hidden" name="jd_session" id="jd_session" value=" <?php if (!empty($this->session->userdata('jd_file')) ) { echo $this->session->userdata('jd_file'); } ?>">
+                        <input type="hidden" name="jd" id="jd" value=" <?php if (!empty($job_info->jd_file) ) { $job_info->jd_file; } ?>">
                      </div>
                   </div>
 
