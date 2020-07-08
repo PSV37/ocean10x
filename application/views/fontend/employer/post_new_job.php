@@ -647,7 +647,7 @@ p#or {
              
           else
         error.insertAfter(element);
-      <?php $jd_db_file = ?> document.getElementById('jd_session').val();
+      <?php $jd_db_file  ?> = document.getElementById('jd_session').val();
 
         },
         rules: {
