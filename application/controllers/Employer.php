@@ -444,7 +444,7 @@ class Employer extends MY_Employer_Controller
                 
                 // redirect('job/show/'.$job_info['job_slugs']);
                 redirect('employer/active_job');
-            }
+            
             
         } elseif ($_POST) {
             $this->form_validation->set_rules('job_title', 'job title', 'required');
