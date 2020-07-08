@@ -660,6 +660,8 @@ p#or {
 
     <?php 
     $jd_file_val="<script>var n=document.getElementById('jd_session').val; document.write(n);</script>";
+
+    print_r($jd_file_val);
     if (empty($jd_db_file) && empty($jd_file_val)) { ?>
         
         'job_description': {
