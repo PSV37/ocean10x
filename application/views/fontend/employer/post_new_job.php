@@ -664,7 +664,7 @@ p#or {
    
 
    
-  echo $jd_file_val = "<script>document.write(val)</script>";
+ 
     if (empty($jd_file_val)) { ?>
         
         'job_description': {
