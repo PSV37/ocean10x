@@ -837,7 +837,7 @@ jquery validation plugin //-->
    
    required: true,
    
-   //cityid_regex: true
+   cityid_regex: true
    //minlength: 10,
    
    //maxlength: 10
@@ -981,7 +981,7 @@ jquery validation plugin //-->
    
    'job_title':{
    
-   required: "The name field is mandatory!",
+   required: "This field is mandatory!",
    
    maxlength: "Choose a company name of at least 14 letters!"
    
@@ -990,7 +990,7 @@ jquery validation plugin //-->
    
    'city_id':{
    
-   required: "Please enter the Job Location!",
+   required: "This field is mandatory!",
    
    //minlength: "Please Enter 10 digit phone numbers!",
    
@@ -1003,7 +1003,7 @@ jquery validation plugin //-->
    
    'exp_from':{
    
-     required: "The name field is mandatory!",
+     required: "This field is mandatory!",
    
      matches: "Didn't match!", 
            
@@ -1014,7 +1014,7 @@ jquery validation plugin //-->
    
    'exp_to':{
    
-     required: "The name field is mandatory!",
+     required: "This field is mandatory!",
    
      matches: "Didn't match!", 
            
@@ -1025,7 +1025,7 @@ jquery validation plugin //-->
    
    'no_jobs':{
    
-     required: "The name field is mandatory!",
+     required: "This field is mandatory!",
    
      matches: "Didn't match!", 
            
@@ -1037,7 +1037,7 @@ jquery validation plugin //-->
    
    'salrange_from':{
    
-     required: "The name field is mandatory!",
+     required: "This field is mandatory!",
    
      matches: "Didn't match!", 
            
@@ -1048,7 +1048,7 @@ jquery validation plugin //-->
    
    'salrange_to':{
    
-     required: "The name field is mandatory!",
+     required: "This field is mandatory!",
    
      matches: "Didn't match!", 
            
@@ -1057,72 +1057,6 @@ jquery validation plugin //-->
      maxlength: "Maximum length 10 digits!"
    },
    
-   'contact_name':{
-   
-   required: "The name field is mandatory!",
-   
-   maxlength: "Choose a company name of at least 14 letters!"
-   
-   },
-   
-   'cont_person_level':{
-   
-   required: "The name field is mandatory!",
-   
-   maxlength: "Choose a company name of at least 14 letters!"
-   
-   },
-   
-   // 'job_desc':{
-   
-   // required: "Please fill Job Description!",
-   
-   // //minlength: "Please Enter 10 digit phone numbers!",
-   
-   // //company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
-   
-   // //remote: "The username is already in use by another user!"
-   
-   // },
-   
-   
-   'alternate_email_id':{
-   
-   required: "The Email is required!",
-   
-   email: "Please enter a valid email address!",
-   
-   remote: "The email is already in use by another user!"
-   
-   },
-   
-   'cont_person_email' :{
-   
-   required: "The Email is required!",
-   
-   email: "Please enter a valid email address!",
-   
-   remote: "The email is already in use by another user!"
-   
-   },
-   
-   'company_url':{
-   
-   required: "The Web Address is required!"
-   
-   },
-   
-   'username':{
-   
-   required: "The username field is mandatory!",
-   
-   minlength: "Choose a username of at least 4 letters!",
-   
-   username_regex: "You have used invalid characters. Are permitted only letters numbers!",
-   
-   remote: "The username is already in use by another user!"
-   
-   }
    
    
    }
