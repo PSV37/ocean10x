@@ -505,7 +505,7 @@ p#or {
                      <div class="formrow" id="benifit">
 
                      <?php 
-
+                     print_r(set_value('benefit'));
                      if(isset($job_info) && !empty($job_info) )
                      { 
 
@@ -549,14 +549,10 @@ p#or {
 
                         </div>
                         <button type="button"  value="other" onclick="check_other(this.value);"  style="font-size:28px;color:#18c5bd;border: none; background: none;">  <i class="fa fa-plus-circle"  ></i></button>
-                        <!-- <label>
-                           <button type="button" value="other" class="btn-default1" checked="" name="benefits[]" onclick="check_other(this.value);">
-                           <span><i class="fa fa-plus"></i> Other</span></button>
-
-                           </label> -->
+                     
                         <div id="other_terxtbx"><input type="text"  name="othe_benf" id="other_benifit"  style="display: inline-block; width: 30%" ><button type="button" id="check-btn" onclick="save_benifit();"><i class="fa fa-check"></i></button></div>
                   </div>
-                  <!-- </textarea><?php echo form_error('benefits'); ?>                                  -->
+                <?php echo form_error('benefits'); ?>                                  
                   <!-- </div>
                      </div>  -->
                  
