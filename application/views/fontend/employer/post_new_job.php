@@ -480,6 +480,10 @@ p#or {
                         <label class="control-label ">Skill Set<span class="required"> * </span> </label>
                         <div id="skills_result">Please Select Job Role.</div>
 
+                        <?php  
+                        $this->session->unset_userdata('skills');
+                        $data['skills'] = $job_info->skills_required;
+                         $this->session->set_userdata($data); ?>
 
                      </div>
                    <div id="skl_btn">
