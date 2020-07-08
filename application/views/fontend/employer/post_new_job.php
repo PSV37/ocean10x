@@ -636,15 +636,7 @@ p#or {
 
       $("#test").validate ({
   rules:{
-    "benifit[": { 
-            //required: true,
-            //minlength: 1
-            required: function(elem)
-            {
-                return $("input.select:checked").length > 0;
-            }
-             
-          },
+    'benefits[]': { required: true, minlength: 1 }
       
       
     'jd': {
