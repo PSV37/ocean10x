@@ -684,6 +684,7 @@ p#or {
     'city_id':{
      
            required: true,
+           cityid_regex: true
           },
 
     'job_title':{
