@@ -647,12 +647,12 @@ p#or {
     'benifit[]': { required: true, minlength: 1 },
       
       
-    'jd': {
-            required: "#job_desc:blank",
+    'job_desc': {
+            required: "#job_description:blank",
                
           },
-    'job_desc': {
-             required: "#jd:blank",
+    'job_description': {
+             required: "#job_desc:blank",
                 
             },
 
