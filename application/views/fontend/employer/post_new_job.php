@@ -814,7 +814,20 @@ else if(value == 'other_skill' )
    
    }
    
-   (function () {
+
+</script>
+<!-- <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+jquery validation plugin //-->
+<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js"></script>
+<script type="text/javascript" src="validation_reg.js"></script>
+<script src="js/jquery.validate.js"></script> 
+<script>
+   $(document).ready(function()
+   
+   {
+
+       (function () {
   document.getElementById('test').addEventListener('submit', function(event){
     // Get the length of the values of each input
     var jd = document.getElementById('jd').value.length;
@@ -829,21 +842,12 @@ else if(value == 'other_skill' )
     }
   }, false);
 })();
-</script>
-<!-- <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-jquery validation plugin //-->
-<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js"></script>
-<script type="text/javascript" src="validation_reg.js"></script>
-<script src="js/jquery.validate.js"></script> 
-<script>
-   $(document).ready(function()
-   
-   {
    
    $("#test").validate (  
    
    {
+
+
    
    rules:{
    
