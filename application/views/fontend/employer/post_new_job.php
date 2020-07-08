@@ -664,8 +664,8 @@ p#or {
    
 
    
-    if print_r($jd_file_val); 
-     (empty($jd_file_val)) { ?>
+     print_r($jd_file_val); 
+    if (empty($jd_file_val)) { ?>
         
         'job_description': {
              required: "#job_desc:blank",
