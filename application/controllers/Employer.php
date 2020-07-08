@@ -250,7 +250,7 @@ class Employer extends MY_Employer_Controller
             $this->form_validation->set_rules('salrange_from', 'Salary Range From', 'required|max_length[2]');
             $this->form_validation->set_rules('salrange_to', 'Salary Range To', 'required|max_length[2]');
 
-           
+
          
 
             $this->form_validation->set_message('required', 'This field is mandatory');
@@ -407,6 +407,7 @@ class Employer extends MY_Employer_Controller
                         
                     }
                     $this->job_posting_model->update($job_info, $job_post_id);
+                    $job_info['job_id']=$job_post_id
                       
                 }else
                 {
@@ -440,6 +441,7 @@ class Employer extends MY_Employer_Controller
         } elseif (isset($_POST['edit'])) {
              $company_id = $this->session->userdata('company_profile_id');
              $job_id = $this->input->post('job_id');
+             print_r($this->job_posting_model->check_jobid_and_post_id($job_id, $company_id));
             if ($this->job_posting_model->check_jobid_and_post_id($job_id, $company_id) == true) {
                 $data['job_info']        = $this->job_posting_model->get($job_id);
               
@@ -454,11 +456,12 @@ class Employer extends MY_Employer_Controller
                 $select                           = "job_role_title, skill_set ,id";
                 $data['job_role_data']            = $this->Master_model->getMaster('job_role', $where_cn, $join = FALSE, $order = false, $field = false, $select, $limit = false, $start = false, $search = false);
                 $data['education_specialization'] = $this->Master_model->getMaster('education_specialization', $where = false);
-                $this->load->view('fontend/employer/post_new_job', $data);
-            
+                
+             $this->load->view('fontend/employer/post_new_job', $data);
             
            
         } 
+       
     }elseif (isset($_POST['post_preview'])) {
            
                 $job_post_id = $this->input->post('job_id');
