@@ -528,7 +528,7 @@ p#or {
                           
                         ?>
                         <label>
-                        <input type="checkbox" value="<?php echo $row; ?>"  class="btn-default1" id="benifit" checked
+                        <input type="checkbox" value="<?php echo $row; ?>"  class="btn-default1" id="benifit[]" checked
                         name="benefits[]">
                         <span><?php echo $row; ?></span>
                         </label>
@@ -540,7 +540,7 @@ p#or {
                           
                         ?>
                         <label>
-                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" id="benifit" 
+                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" id="benifit[]" 
                         name="benefits[]">
                         <span><?php echo $benefit['benifit']; ?></span>
                         </label>
@@ -550,7 +550,7 @@ p#or {
                      else{
                       foreach($benefits as $benefit){?>
                         <label>
-                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" id="benifit" checked="" name="benefits[]">
+                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" id="benifit[]" checked="" name="benefits[]">
                         <span><?php echo $benefit['benifit']; ?></span>
                         </label>
                         <?php } } ?>
@@ -636,7 +636,7 @@ p#or {
 
       $("#test").validate ({
   rules:{
-    'benefits[]': { required: true, minlength: 1 },
+    'benifit[]': { required: true, minlength: 1 },
       
       
     'jd': {
@@ -734,11 +734,100 @@ p#or {
    
    },
           },
-          messages: { 
-            
-            "benifit": "You must check at least 1 box",
+          messages:{
+   
+   'job_title':{
+   
+   required: "This field is mandatory!",
+   
+   maxlength: "Choose a company name of at least 14 letters!"
+   
+   },
+   
+   
+   'city_id':{
+   
+   required: "This field is mandatory!",
+   
+   //minlength: "Please Enter 10 digit phone numbers!",
+   
+   //company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+   
+   //remote: "The username is already in use by another user!"
+   
+   },
+   
+   
+   'exp_from':{
+   
+     required: "This field is mandatory!",
+   
+     matches: "Didn't match!", 
+           
+     minlength: "Please Enter 1 digit number!",
+           
+     maxlength: "Maximum length 10 digits!"
+   },
+   
+   'exp_to':{
+   
+     required: "This field is mandatory!",
+   
+     matches: "Didn't match!", 
+           
+     minlength: "Please Enter 1 digit number!",
+           
+     maxlength: "Maximum length 10 digits!"
+   },
+   
+   'no_jobs':{
+   
+     required: "This field is mandatory!",
+   
+     matches: "Didn't match!", 
+           
+     minlength: "Please Enter 1 digit number!",
+           
+     maxlength: "Maximum length 10 digits!"
+   },
+   
+   
+   'salrange_from':{
+   
+     required: "This field is mandatory!",
+   
+     matches: "Didn't match!", 
+           
+     minlength: "Please Enter 1 digit number!",
+           
+     maxlength: "Maximum length 10 digits!"
+   },
+   
+   'salrange_to':{
+   
+     required: "This field is mandatory!",
+   
+     matches: "Didn't match!", 
+           
+     minlength: "Please Enter 1 digit number!",
+           
+     maxlength: "Maximum length 10 digits!"
+   },
 
-        }
+   'benifit[]':{
+   
+     required: "This field is mandatory!",
+   
+     matches: "Didn't match!", 
+           
+     minlength: "Please select atleast one benifit!",
+           
+     maxlength: "Maximum length 10 digits!"
+   },
+   
+   
+   
+   }
     }) ;
     });
   </script> 
