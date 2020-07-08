@@ -306,6 +306,8 @@ class Employer extends MY_Employer_Controller
                             
                         }else
                         {
+                            print_r($skills_data);
+                            print_r($skills_data['id']); die;
                             if (isset($skills_data['id']) && !empty($skills_data['id'])) {
                                 array_push($all_skills, $skills_data['id']);
                             }
