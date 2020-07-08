@@ -329,17 +329,14 @@ class Employer extends MY_Employer_Controller
                     'salary_range' => $salary_range,
                     "job_deadline" => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('job_deadline')))),
                     "status" => '0',
-                    
-                    //                   'preferred_age'      => $this->input->post('preferred_age_from'),
-                    // 'preferred_age_to'   => $this->input->post('preferred_age_to'),
-                    // 'working_hours'      => $this->input->post('working_hours'),
+                   
                     'is_test_required' => $this->input->post('job_test_requirment')
                     
                 );
                 if (isset($job_desc_file) && !empty($job_desc_file)) {
                     $job_info['jd_file'] = $job_desc_file;
                 }
-                    $this->job_posting_model->insert($job_info);
+                   $job_info['job_id']= $this->job_posting_model->insert($job_info);
                 // $job_info['skills'] = $all_skills;
             $job_info['benefits'] = $this->input->post('benefits');
 
@@ -365,20 +362,26 @@ class Employer extends MY_Employer_Controller
             $this->load->view('fontend/employer/job_preview', $job_info);
         }
         } elseif (isset($_POST['edit'])) {
+             $company_id = $this->session->userdata('company_profile_id');
+             $job_id = $this->input->post('job_id');
+            if ($this->job_posting_model->check_jobid_and_post_id($job_id, $company_id) == true) {
+                $data['job_info']        = $this->job_posting_model->get($job_id);
+              
+                $data['country']         = $this->Master_model->getMaster('country', $where = false);
+                $data['state']           = $this->Master_model->getMaster('state', $where = false);
+                $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
+                $data['skill_master']    = $this->Master_model->getMaster('skill_master', $where = false);
+                 $data['benefits']        = $this->Master_model->getMaster('common_company_benifits', $where = false);
+                  $data['certificates'] = $this->Master_model->getMaster('certification_master', $where = false);
+                
+                $where_cn                         = "status=1";
+                $select                           = "job_role_title, skill_set ,id";
+                $data['job_role_data']            = $this->Master_model->getMaster('job_role', $where_cn, $join = FALSE, $order = false, $field = false, $select, $limit = false, $start = false, $search = false);
+                $data['education_specialization'] = $this->Master_model->getMaster('education_specialization', $where = false);
+                $this->load->view('fontend/employer/post_new_job', $data);
             
-            $data['country']         = $this->Master_model->getMaster('country', $where = false);
-            $data['state']           = $this->Master_model->getMaster('state', $where = false);
-            $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
-            $data['benefits_session'] = $this->session->userdata('benefits');
-            $data['skills_session'] = $this->session->userdata('skills');
-            $data['benefits']        = $this->Master_model->getMaster('common_company_benifits', $where = false);
-               $data['certificates'] = $this->Master_model->getMaster('certification_master', $where = false);
-            $where_cn                = "status=1";
-            $select                  = "job_role_title, skill_set ,id";
-            $data['job_role_data']   = $this->Master_model->getMaster('job_role', $where_cn, $join = FALSE, $order = false, $field = false, $select, $limit = false, $start = false, $search = false);
             
-            
-            $this->load->view('fontend/employer/post_new_job', $data);
+           
         } elseif (isset($_POST['post_preview'])) {
             $employer_id  = $this->session->userdata('company_profile_id');
             $job_deadline = strtolower($this->input->post('job_deadline'));
