@@ -645,7 +645,7 @@ p#or {
               if (element.attr("name") == "city_id" )
                   error.insertAfter(".tokenfield ");
              
-          }else
+          else
         error.insertAfter(element);
         },
         rules: {
