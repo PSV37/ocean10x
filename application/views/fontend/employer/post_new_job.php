@@ -658,7 +658,7 @@ p#or {
       
 
 
-    <?php print_r($jd_db_file); if (empty($jd_db_file)) { ?>
+    <?php if (empty($jd_db_file)) { ?>
         
         'job_description': {
              required: "#job_desc:blank",
