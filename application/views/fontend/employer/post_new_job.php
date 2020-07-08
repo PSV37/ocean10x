@@ -506,7 +506,7 @@ p#or {
 
                      <?php 
                      print_r(set_value('benefits'));
-                     if((isset($job_info) && !empty($job_info)) || (isset(set_value('benefits')) && !empty(set_value('benefits')))  )
+                     if((isset($job_info) && !empty($job_info)) || ( !empty(set_value('benefits')))  )
                      { 
                       if (!empty($job_info) {
                          $benefits_session=explode(',', $job_info->benefits); 
