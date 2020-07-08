@@ -660,23 +660,7 @@ p#or {
       
 
 
-   //  <?php 
    
-
-   
- 
-   //  if (empty($jd_file_val)) { ?>
-        
-   //      'job_description': {
-   //           required: "#job_desc:blank",
-                
-   //     },
-   //      'job_desc': {
-   //          required: "#job_description:blank",
-               
-   //        },
-
-   // <?php } ?>
      
 
     'city_id':{
