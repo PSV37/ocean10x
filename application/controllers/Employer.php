@@ -382,7 +382,8 @@ class Employer extends MY_Employer_Controller
             
             
            
-        } elseif (isset($_POST['post_preview'])) {
+        } 
+    }elseif (isset($_POST['post_preview'])) {
             $employer_id  = $this->session->userdata('company_profile_id');
             $job_deadline = strtolower($this->input->post('job_deadline'));
             $job_post_id  = $this->session->userdata('job_post_id');
@@ -697,9 +698,7 @@ class Employer extends MY_Employer_Controller
             // $this->load->view('fontend/employer/job_post', $data);
         }
     }
-     public function contactVerify() {
-       
-}
+     
     public function manage_job()
     {
         $employer_id      = $this->session->userdata('company_profile_id');
