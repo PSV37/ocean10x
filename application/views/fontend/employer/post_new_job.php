@@ -970,13 +970,7 @@ jquery validation plugin //-->
    
    },
    
-   'job_desc':{
    
-   required: true,
-   
-   job_desc_regex: true
-   
-   }
    
      
    
