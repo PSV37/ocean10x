@@ -327,7 +327,7 @@ class Employer extends MY_Employer_Controller
                             $skill  = array(
                             'skill_name' => $row,
                             'created_by' => $employer_id,
-                            'created_on' => date('Y-m-d')
+                            'created_date' => date('Y-m-d')
                         );
                             $result = $this->Master_model->master_insert($skill, 'skill_master');
                             if (isset($result) && !empty($result)) {
@@ -576,7 +576,7 @@ class Employer extends MY_Employer_Controller
                             $skill  = array(
                             'skill_name' => $row,
                             'created_by' => $employer_id,
-                            'created_on' => date('Y-m-d')
+                            'created_date' => date('Y-m-d')
                         );
                             $result = $this->Master_model->master_insert($skill, 'skill_master');
                             if (isset($result) && !empty($result)) {
