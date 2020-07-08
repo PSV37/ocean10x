@@ -658,7 +658,9 @@ p#or {
       
 
 
-    <?php if (empty($jd_db_file)) { ?>
+    <?php 
+    $jd_file_val="<script>var n=document.getElementById('jd_session').val; document.write(n);</script>";
+    if (empty($jd_db_file) && empty($jd_file_val)) { ?>
         
         'job_description': {
              required: "#job_desc:blank",
