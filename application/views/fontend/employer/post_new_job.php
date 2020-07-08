@@ -577,7 +577,7 @@ p#or {
 
                         <input type="file"  name="job_description" id="job_description" class="form-control my_checkbox_group"  > 
 
-                        <input type="hidden" name="jd_session" id="jd_session" class="my_checkbox_group" value="">
+                        <input type="hidden" name="jd_session" id="jd_session" class="my_checkbox_group" value="<?php echo $job_info->jd_file; ?>">
                      </div>
                   </div>
 

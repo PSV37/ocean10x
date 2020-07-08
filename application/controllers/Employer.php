@@ -377,7 +377,7 @@ class Employer extends MY_Employer_Controller
                     $job_info['jd_file'] = $job_desc_file;
                 }
 
-               elseif (!empty($this->input->post('jd_session'))) {
+               elseif (empty($this->input->post('jd_session'))) {
                   $job_info['jd_file']="";
                }
                else{
