@@ -577,7 +577,7 @@ p#or {
 
                         <input type="file"  name="job_description" id="job_description" class="form-control my_checkbox_group"  > 
 
-                        <input type="hidden" name="jd_session" id="jd_session" class="my_checkbox_group" value="<?php echo $job_info->jd_file; ?>">
+                        <input type="hidden" name="jd_session" id="jd_session" class="my_checkbox_group" value="<?php $jd_db_file = $job_info->jd_file echo $jd_db_file; ?>">
                      </div>
                   </div>
 
@@ -594,8 +594,8 @@ p#or {
                      <p id="or">OR</p>     
                      <div class="formrow">
                         <label class="control-label">Job Description <span class="required"> * </span></label>
-                        <textarea name="job_desc" id="jd" class="form-control my_checkbox_group" placeholder="Job Description"><?php if (!empty($this->session->userdata('job_desc')) ) {
-                          echo $this->session->userdata('job_desc');
+                        <textarea name="job_desc" id="jd" class="form-control my_checkbox_group" placeholder="Job Description"><?php if (!empty($job_info->job_desc) ) {
+                          echo $job_info->job_desc;
                         } elseif(!empty($job_info)){ echo $job_info->job_desc; }  ?><?php echo set_value('job_desc'); ?></textarea><?php echo form_error('job_desc'); ?>                                  
                      </div>
                   </div>
@@ -649,15 +649,7 @@ p#or {
         error.insertAfter(element);
         },
         rules: {
-            'job_description': {
-                require_from_group: [1, ".my_checkbox_group"]
-            },
-            'jd': {
-                require_from_group: [1, ".my_checkbox_group"]
-            },
-            'job_desc': {
-                require_from_group: [1, ".my_checkbox_group"]
-            },
+            
         
                     
   
@@ -666,7 +658,7 @@ p#or {
       
 
 
-    <?php if (empty($job_info->jd_file)) { ?>
+    <?php if (empty($jd_db_file)) { ?>
         
         'job_description': {
              required: "#job_desc:blank",
@@ -959,6 +951,7 @@ function cancel_jd()
   $('#cross_btn').hide();
   $('#jd_file').hide();
   $('#jd_session').val("");
+  <?php $jd_db_file = ""; ?>
 }
 </script>
 <script>
