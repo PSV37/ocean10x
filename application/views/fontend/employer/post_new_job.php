@@ -646,6 +646,7 @@ p#or {
                 }
             }
             form.submit();
+          },
   
     'benefits[]': { required: true, minlength: 1 },
       
