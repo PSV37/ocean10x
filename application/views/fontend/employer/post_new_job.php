@@ -636,7 +636,7 @@ p#or {
 
       $("#test").validate ({
   rules:{
-    'benefits[]': { required: true, minlength: 1 }
+    'benefits[]': { required: true, minlength: 1 },
       
       
     'jd': {
