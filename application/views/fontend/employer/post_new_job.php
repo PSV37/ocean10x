@@ -505,10 +505,11 @@ p#or {
                      <div class="formrow" id="benifit">
 
                      <?php 
-                     print_r($job_info->benefits);
-                     $benefits_session=explode(',', $job_info->benefits);  
-                     if(isset($benefits_session) && !empty($benefits_session) )
+
+                     if(isset($job_info) && !empty($job_info) )
                      { 
+
+                     $benefits_session=explode(',', $job_info->benefits); 
                        foreach($benefits_session as $row){ 
                           
                         ?>
