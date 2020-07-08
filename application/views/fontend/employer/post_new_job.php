@@ -607,12 +607,13 @@ p#or {
       </div>
    </div>
 </div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+<script>
+   $(document).ready(function()
    
- <script> 
-    $(document).ready(function() { 
-    
-      $('#other_terxtbx').hide();
+   {
+
+    $('#other_terxtbx').hide();
       $('#skl_btn').hide();
       $('#other_skills').hide();
        $('#training_title1').hide();
@@ -630,7 +631,342 @@ p#or {
 
       $(function() { 
         $("#my_date_picker").datepicker(); 
-      }); 
+      });
+   
+   $("#test").validate ({
+
+
+   
+   rules:{
+    'jd': {
+                required: "#job_description:blank",
+               
+            },
+            'job_description': {
+                required: "#jd:blank",
+                
+            }
+          }
+   'city_id':{
+   
+   required: true,
+   
+   cityid_regex: true
+   //minlength: 10,
+   
+   //maxlength: 10
+   //company_phone_regex: true
+   
+   },
+   
+   
+   // 'job_title':{
+   
+   // required: true,
+   
+   // //jobtitle_regex: true
+   
+   // },
+   
+   'benifit' :{
+    required:true,
+   }
+   
+   'contact_name':{
+   
+   required: true,
+   
+   contactname_regex: true
+   
+   },
+   
+   'cont_person_level': {
+   
+   required: true,
+   
+   contpersonlevel_regex: true
+   
+   }, 
+   
+   'alternate_email_id':{
+   
+   required: true,
+   
+   email: true
+   
+   
+   },
+   
+   'cont_person_email':{
+   
+   required: true,
+   
+   email: true
+   
+   
+   },
+   
+   'exp_from': {
+                   
+     //minlength:1,
+           
+    // maxlength:10,
+   
+     required: true
+   },
+   
+   'exp_to': {
+                   
+     minlength:1,
+           
+    // maxlength:10,
+   
+     required: true
+   },
+   
+   
+   'no_jobs': {
+                   
+     minlength:1,
+           
+    // maxlength:10,
+   
+     required: true
+   },
+   
+   'salrange_from': {
+                   
+     //minlength:1,
+           
+    // maxlength:10,
+     //salrangefrom_regex: true,
+     required: true
+   },
+   
+   'salrange_to': {
+                   
+     //minlength:1,
+    // salrangeto_regex: true,    
+    // maxlength:10,
+   
+     required: true
+   },
+   
+   
+   'job_edu':{
+   
+   required: true,
+   
+   },
+   
+   
+   'job_nature':{
+   
+   required: true,
+   
+   },
+   
+   'job_edu_special':{
+   
+   required: true,
+   
+   },
+   
+   'job_test_requirment':{
+   
+   required: true,
+   
+   },
+   
+   
+   
+   messages:{
+   
+   'job_title':{
+   
+   required: "This field is mandatory!",
+   
+   maxlength: "Choose a company name of at least 14 letters!"
+   
+   },
+   
+   
+   'city_id':{
+   
+   required: "This field is mandatory!",
+   
+   //minlength: "Please Enter 10 digit phone numbers!",
+   
+   //company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+   
+   //remote: "The username is already in use by another user!"
+   
+   },
+   
+   
+   'exp_from':{
+   
+     required: "This field is mandatory!",
+   
+     matches: "Didn't match!", 
+           
+     minlength: "Please Enter 1 digit number!",
+           
+     maxlength: "Maximum length 10 digits!"
+   },
+   
+   'exp_to':{
+   
+     required: "This field is mandatory!",
+   
+     matches: "Didn't match!", 
+           
+     minlength: "Please Enter 1 digit number!",
+           
+     maxlength: "Maximum length 10 digits!"
+   },
+   
+   'no_jobs':{
+   
+     required: "This field is mandatory!",
+   
+     matches: "Didn't match!", 
+           
+     minlength: "Please Enter 1 digit number!",
+           
+     maxlength: "Maximum length 10 digits!"
+   },
+   
+   
+   'salrange_from':{
+   
+     required: "This field is mandatory!",
+   
+     matches: "Didn't match!", 
+           
+     minlength: "Please Enter 1 digit number!",
+           
+     maxlength: "Maximum length 10 digits!"
+   },
+   
+   'salrange_to':{
+   
+     required: "This field is mandatory!",
+   
+     matches: "Didn't match!", 
+           
+     minlength: "Please Enter 1 digit number!",
+           
+     maxlength: "Maximum length 10 digits!"
+   },
+
+   'benifit':{
+   
+     required: "This field is mandatory!",
+   
+     matches: "Didn't match!", 
+           
+     minlength: "Please Enter 1 digit number!",
+           
+     maxlength: "Maximum length 10 digits!"
+   },
+   
+   
+   
+   }
+   
+   });
+ });
+   
+  
+   
+</script>
+<script >
+   $.validator.addMethod("jobtitle_regex", function(value, element) {
+   
+   return this.optional(element) || /^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$/i.test(value);
+   
+   }, "Please choose only alphabets");
+   
+   
+   $.validator.addMethod("cityid_regex", function(value, element) {
+   
+   return this.optional(element) || /^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$/i.test(value);
+   
+   }, "Please choose only alphabets");
+   
+   $.validator.addMethod("contactname_regex", function(value, element) {
+   
+   return this.optional(element) || /^[a-zA-Z ]+$/.test(value);
+   
+   }, "Please choose only alphabets");
+   
+   
+   
+   $.validator.addMethod("salrangefrom_regex", function(value, element) {
+   
+   return this.optional(element) || /^[a-zA-Z ]+$/.test(value);
+   
+   }, "Please choose only alphabets");
+   
+   
+   $.validator.addMethod("salrangeto_regex", function(value, element) {
+   
+   return this.optional(element) || /^[a-zA-Z ]+$/.test(value);
+   
+   }, "Please choose only alphabets");
+   
+   
+   $.validator.addMethod("companypincode_regex", function(value, element) {
+   
+   return this.optional(element) || /^[1-9][0-9][0-9][0-9][0-9][0-9]$/.test(value);
+   
+   }, "Please Enter 6 digits Company Pincode");
+   
+</script>
+<script>
+   $(".allownumericwithdecimal").on("keypress keyup blur",function (event) {
+             //this.value = this.value.replace(/[^0-9\.]/g,'');
+      $(this).val($(this).val().replace(/[^\d].+/, ""));
+             if ((event.which < 48 || event.which > 57)) {
+                 event.preventDefault();
+             }
+         });
+   
+   //(^[ A-Za-z0-9_@./#&+-]*$)
+   
+   $(".allowalphanumeric").keypress(function (e) {
+          var regex = new RegExp("^[a-zA-Z!@#.”$%&’()*\+,\/;\[\\\]\^_`{|}~ \s]+$");
+         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+         if (regex.test(str)) {
+             return true;
+         }
+         else
+         {
+         e.preventDefault();
+         return false;
+         }
+     }); 
+   
+   $(".allowalphabatescomma").keypress(function (e) {
+         var regex = new RegExp("^[a-zA-Z, \s]+$");
+         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+         if (regex.test(str)) {
+             return true;
+         }
+         else
+         {
+         e.preventDefault();
+         return false;
+         }
+     });
+   
+</script>
+   
+ <script> 
+    $(document).ready(function() { 
+    
+       
     }) 
   </script> 
 <script>
@@ -830,350 +1166,8 @@ else if(value == 'other_skill' )
   }, false);
 })();
 </script>
-<!-- <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-jquery validation plugin //-->
-<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js"></script>
-<script type="text/javascript" src="validation_reg.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
-<script>
-   $(document).ready(function()
-   
-   {
-   
-   $("#test").validate (  
-   
-   {
-
-
-   
-   rules:{
-    'jd': {
-                required: "#job_description:blank",
-               
-            },
-            'job_description': {
-                required: "#jd:blank",
-                
-            }
-          }
-   'city_id':{
-   
-   required: true,
-   
-   cityid_regex: true
-   //minlength: 10,
-   
-   //maxlength: 10
-   //company_phone_regex: true
-   
-   },
-   
-   
-   // 'job_title':{
-   
-   // required: true,
-   
-   // //jobtitle_regex: true
-   
-   // },
-   
-   'benifit' :{
-    required:true,
-   }
-   
-   'contact_name':{
-   
-   required: true,
-   
-   contactname_regex: true
-   
-   },
-   
-   'cont_person_level': {
-   
-   required: true,
-   
-   contpersonlevel_regex: true
-   
-   }, 
-   
-   'alternate_email_id':{
-   
-   required: true,
-   
-   email: true
-   
-   
-   },
-   
-   'cont_person_email':{
-   
-   required: true,
-   
-   email: true
-   
-   
-   },
-   
-   'exp_from': {
-                   
-     //minlength:1,
-           
-    // maxlength:10,
-   
-     required: true
-   },
-   
-   'exp_to': {
-                   
-     minlength:1,
-           
-    // maxlength:10,
-   
-     required: true
-   },
-   
-   
-   'no_jobs': {
-                   
-     minlength:1,
-           
-    // maxlength:10,
-   
-     required: true
-   },
-   
-   'salrange_from': {
-                   
-     //minlength:1,
-           
-    // maxlength:10,
-     //salrangefrom_regex: true,
-     required: true
-   },
-   
-   'salrange_to': {
-                   
-     //minlength:1,
-    // salrangeto_regex: true,    
-    // maxlength:10,
-   
-     required: true
-   },
-   
-   
-   'job_edu':{
-   
-   required: true,
-   
-   },
-   
-   
-   'job_nature':{
-   
-   required: true,
-   
-   },
-   
-   'job_edu_special':{
-   
-   required: true,
-   
-   },
-   
-   'job_test_requirment':{
-   
-   required: true,
-   
-   },
-   
-   
-   
-   
-     
-   
-   
-   },
-   
-   messages:{
-   
-   'job_title':{
-   
-   required: "This field is mandatory!",
-   
-   maxlength: "Choose a company name of at least 14 letters!"
-   
-   },
-   
-   
-   'city_id':{
-   
-   required: "This field is mandatory!",
-   
-   //minlength: "Please Enter 10 digit phone numbers!",
-   
-   //company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
-   
-   //remote: "The username is already in use by another user!"
-   
-   },
-   
-   
-   'exp_from':{
-   
-     required: "This field is mandatory!",
-   
-     matches: "Didn't match!", 
-           
-     minlength: "Please Enter 1 digit number!",
-           
-     maxlength: "Maximum length 10 digits!"
-   },
-   
-   'exp_to':{
-   
-     required: "This field is mandatory!",
-   
-     matches: "Didn't match!", 
-           
-     minlength: "Please Enter 1 digit number!",
-           
-     maxlength: "Maximum length 10 digits!"
-   },
-   
-   'no_jobs':{
-   
-     required: "This field is mandatory!",
-   
-     matches: "Didn't match!", 
-           
-     minlength: "Please Enter 1 digit number!",
-           
-     maxlength: "Maximum length 10 digits!"
-   },
-   
-   
-   'salrange_from':{
-   
-     required: "This field is mandatory!",
-   
-     matches: "Didn't match!", 
-           
-     minlength: "Please Enter 1 digit number!",
-           
-     maxlength: "Maximum length 10 digits!"
-   },
-   
-   'salrange_to':{
-   
-     required: "This field is mandatory!",
-   
-     matches: "Didn't match!", 
-           
-     minlength: "Please Enter 1 digit number!",
-           
-     maxlength: "Maximum length 10 digits!"
-   },
-
-   'benifit':{
-   
-     required: "This field is mandatory!",
-   
-     matches: "Didn't match!", 
-           
-     minlength: "Please Enter 1 digit number!",
-           
-     maxlength: "Maximum length 10 digits!"
-   },
-   
-   
-   
-   }
-   
-   });
-   
-   });
-   
-</script>
-<script >
-   $.validator.addMethod("jobtitle_regex", function(value, element) {
-   
-   return this.optional(element) || /^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$/i.test(value);
-   
-   }, "Please choose only alphabets");
-   
-   
-   $.validator.addMethod("cityid_regex", function(value, element) {
-   
-   return this.optional(element) || /^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$/i.test(value);
-   
-   }, "Please choose only alphabets");
-   
-   $.validator.addMethod("contactname_regex", function(value, element) {
-   
-   return this.optional(element) || /^[a-zA-Z ]+$/.test(value);
-   
-   }, "Please choose only alphabets");
-   
-   
-   
-   $.validator.addMethod("salrangefrom_regex", function(value, element) {
-   
-   return this.optional(element) || /^[a-zA-Z ]+$/.test(value);
-   
-   }, "Please choose only alphabets");
-   
-   
-   $.validator.addMethod("salrangeto_regex", function(value, element) {
-   
-   return this.optional(element) || /^[a-zA-Z ]+$/.test(value);
-   
-   }, "Please choose only alphabets");
-   
-   
-   $.validator.addMethod("companypincode_regex", function(value, element) {
-   
-   return this.optional(element) || /^[1-9][0-9][0-9][0-9][0-9][0-9]$/.test(value);
-   
-   }, "Please Enter 6 digits Company Pincode");
-   
-</script>
-<script>
-   $(".allownumericwithdecimal").on("keypress keyup blur",function (event) {
-             //this.value = this.value.replace(/[^0-9\.]/g,'');
-      $(this).val($(this).val().replace(/[^\d].+/, ""));
-             if ((event.which < 48 || event.which > 57)) {
-                 event.preventDefault();
-             }
-         });
-   
-   //(^[ A-Za-z0-9_@./#&+-]*$)
-   
-   $(".allowalphanumeric").keypress(function (e) {
-          var regex = new RegExp("^[a-zA-Z!@#.”$%&’()*\+,\/;\[\\\]\^_`{|}~ \s]+$");
-         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
-         if (regex.test(str)) {
-             return true;
-         }
-         else
-         {
-         e.preventDefault();
-         return false;
-         }
-     }); 
-   
-   $(".allowalphabatescomma").keypress(function (e) {
-         var regex = new RegExp("^[a-zA-Z, \s]+$");
-         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
-         if (regex.test(str)) {
-             return true;
-         }
-         else
-         {
-         e.preventDefault();
-         return false;
-         }
-     });
-   
-</script>
+<!--  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script> -->
+<!-- jquery validation plugin  -->
+<!-- <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js"></script>
+<script type="text/javascript" src="validation_reg.js"></script> -->
