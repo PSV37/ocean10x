@@ -550,13 +550,7 @@ p#or {
 
 
                <?  } } }
-               elseif (empty(set_value('benefits[]')) && isset(set_value('benefits[]'))) {
-                foreach($benefits as $benefit){ ?>
-                        <label>
-                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" id="benifit[]"  name="benefits[]">
-                        <span><?php echo $benefit['benifit']; ?></span>
-                        </label>
-             <?php   } }
+             //  
                      else{
                       foreach($benefits as $benefit){?>
                         <label>
@@ -647,11 +641,14 @@ p#or {
 
       $("#test").validate ({
        
-           errorLabelContainer: ".form_errors",
-        wrapper: "li",
-        groups: {
-            names: "job_description jd job_desc"
-        },
+          errorPlacement: function(error, element) {
+              if (element.attr("name") == "city_id" )
+                  error.insertAfter(".some-class");
+              else if  (element.attr("name") == "phone" )
+                  error.insertAfter(".some-other-class");
+              else
+                  error.insertAfter(element);
+          }
         rules: {
             'job_description': {
                 require_from_group: [1, ".my_checkbox_group"]
