@@ -501,6 +501,7 @@ p#or {
                        
                            
                      <div id="other_skills"><input type="text"  name="otr_skl" id="other_skill"  style="display: inline-block; width: 30%" ><button type="button" id="check-btn" onclick="save_skill();"><i class="fa fa-check"></i></button></div>
+                <?php echo form_error('skill_set[]'); ?>                                  
                   </div>
              
                   <div class="col-md-12 col-sm-12" tabindex="14">
@@ -514,7 +515,7 @@ p#or {
 
                      <?php 
                      // print_r(set_value('benefits'));
-                     if((isset($job_info) && !empty($job_info)) || ( !empty(set_value('benefits')))  )
+                     if((isset($job_info) && !empty($job_info)) || ( !empty(set_value('benefits[]')))  )
                      { 
                       if (!empty($job_info)) {
                          $benefits_session=explode(',', $job_info->benefits); 
@@ -547,6 +548,13 @@ p#or {
 
 
                <?  } } }
+               elseif (empty(set_value('benefits[]'))) {
+                foreach($benefits as $benefit){?>
+                        <label>
+                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" id="benifit[]"  name="benefits[]">
+                        <span><?php echo $benefit['benifit']; ?></span>
+                        </label>
+             <?php   }
                      else{
                       foreach($benefits as $benefit){?>
                         <label>
