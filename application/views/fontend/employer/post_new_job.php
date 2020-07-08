@@ -314,9 +314,11 @@ p#or {
                       
                            <input type="text" name="city_id" class="allowalphanumeric form-control" id="tokenfield" style="display: inline-block;"  placeholder="Enter Location" onkeydown="check_key();"
                         value="<?php if(!empty($job_info->city_id) ){echo $job_info->city_id; } ?><?php echo set_value('city_id'); ?>"><?php echo form_error('city_id'); ?>
+
                        
                                      
                      </div>
+                     <label for="tokenfield" generated="true" class="error"></label>
                   </div>
                   <div class="col-md-3 col-sm-12" tabindex="2">
                      <div class="formrow">
