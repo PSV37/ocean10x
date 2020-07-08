@@ -470,7 +470,7 @@ p#or {
                           
                         ?>
                         <!-- <input type="date" name="job_deadline" class="form-control datepicker" id="job_deadline_day" min="<?php echo date('Y-m-d'); ?>" required value="<?php echo $next_due_date; ?>" autocomplete="off">  -->    
-                        <input type="text" id="my_date_picker" name="job_deadline" style="display: inline-block;" class="form-control datepicker" id="job_deadline_day"<?php echo set_value('job_deadline'); ?>"  value="<?php echo $next_due_date; ?>" autocomplete="off">     <?php echo form_error('job_deadline'); ?>
+                        <input type="text" id="my_date_picker" name="job_deadline" style="display: inline-block;" class="form-control datepicker" id="job_deadline_day"  value="<?php echo $next_due_date; ?><?php echo set_value('job_deadline'); ?>" autocomplete="off">     <?php echo form_error('job_deadline'); ?>
                      </div>
                   </div>
                   
@@ -505,7 +505,7 @@ p#or {
                      <div class="formrow" id="benifit">
 
                      <?php 
-                     print_r(set_value('benefit'));
+                     print_r(set_value('benefits'));
                      if(isset($job_info) && !empty($job_info) )
                      { 
 
