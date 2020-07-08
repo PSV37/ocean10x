@@ -309,6 +309,7 @@ class Employer extends MY_Employer_Controller
                         redirect('employer/profile-setting');
                     }
                 }
+
                 
                 $all_skills = array();
 
@@ -371,6 +372,10 @@ class Employer extends MY_Employer_Controller
                 );
                 if (isset($job_desc_file) && !empty($job_desc_file)) {
                     $job_info['jd_file'] = $job_desc_file;
+                }
+                else
+                {
+                     $job_info['jd_file']="";
                 }
                 if (isset($job_post_id) && !empty($job_post_id)) {
                      $whereres           = "job_post_id='$job_post_id'";
