@@ -647,7 +647,7 @@ p#or {
              
           else
         error.insertAfter(element);
-      var val = document.getElementById('jd_session').val();
+     
 
         },
         rules: {
