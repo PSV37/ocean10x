@@ -410,13 +410,13 @@ p#or {
                   <div class="col-md-3 col-sm-12" tabindex="7">
                      <div class="formrow">
                         <label class="control-label ">Expected Experience (in years)<span class="required"> *</span> </label>
-                       <?php $exp=explode('-', $job_info->experience); print_r($exp); ?>
+                       <?php $exp=explode('-', $job_info->experience);  ?>
 
                         <div class="col-md-3 formrow" style="width:80px;margin-left:-14px;">
-                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from"  value="<?php if(!empty($job_info->experience) ){echo $this->session->userdata('exp_from'); } ?><?php echo set_value('exp_from'); ?>" > <?php echo form_error('exp_to'); ?>
+                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from"  value="<?php $exp['0'] ?><?php echo set_value('exp_from'); ?>" > <?php echo form_error('exp_to'); ?>
                         </div>
                         <div class="col-md-3 formrow" style="width:80px;margin-left:-19px;">
-                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to"  value="<?php if(!empty($this->session->userdata('exp_to')) ){echo $this->session->userdata('exp_to'); } ?><?php echo set_value('exp_to'); ?>" />
+                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to"  value="<?php $exp['1']  ?><?php echo set_value('exp_to'); ?>" />
                            <?php echo form_error('exp_to'); ?>
                         </div>
                      </div>
