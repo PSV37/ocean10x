@@ -307,7 +307,7 @@ class Employer extends MY_Employer_Controller
                         }else
                         {
                             // print_r($skills_data);/
-                            $skill_id=$skills_data[0]['id']);
+                            $skill_id=$skills_data[0]['id'];
                             if (isset($skill_id) && !empty($skill_id)) {
                                 array_push($all_skills, $skill_id);
                             }
@@ -585,7 +585,7 @@ class Employer extends MY_Employer_Controller
                         }else
                         {
                             // print_r($skills_data);/
-                            $skill_id=$skills_data[0]['id']);
+                            $skill_id=$skills_data[0]['id'];
                             if (isset($skill_id) && !empty($skill_id)) {
                                 array_push($all_skills, $skill_id);
                             }
