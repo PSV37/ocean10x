@@ -487,9 +487,9 @@ p#or {
                           $data['skills'] = $job_info->skills_required;
                           # code...
                         }
-                        elseif(!empty(set_value('skill_set')))
+                        elseif(!empty(set_value('skill_set[]')))
                         {
-                           $data['skills'] = implode(',', set_value('skill_set')) ;
+                           $data['skills'] = implode(',', set_value('skill_set[]')) ;
                         }
                          $this->session->set_userdata($data); ?>
 
@@ -521,7 +521,7 @@ p#or {
                       }
                       else
                       {
-                          $benefits_session=set_value('benefits'); 
+                          $benefits_session=set_value('benefits[]'); 
                       }
                    
                        foreach($benefits_session as $row){ 
