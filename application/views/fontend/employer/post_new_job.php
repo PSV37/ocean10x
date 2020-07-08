@@ -267,8 +267,8 @@ div#other_skills {
 }
 div#errorbox {
     margin-top: 25px;
-    font-weight: bold;
-    color: red;
+   /* font-weight: bold;
+    color: red;*/
 }
 p#or {
     /* margin-left: 141px; */
@@ -647,6 +647,7 @@ p#or {
              
           else
         error.insertAfter(element);
+      var p1 = "success";
 
         },
         rules: {
@@ -661,7 +662,8 @@ p#or {
 
     <?php 
    
-
+$jd= "<script>document.writeln(p1);</script>";
+echo $jd;
    
     if (empty($jd_file_val)) { ?>
         
