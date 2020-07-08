@@ -644,17 +644,22 @@ p#or {
             },
             
   
-    'benifit[]': { required: true, minlength: 1 },
+    'benefits[]': { required: true, minlength: 1 },
       
       
     'job_desc': {
             required: "#job_description:blank",
                
           },
+
     'job_description': {
-             required: "#job_desc:blank",
+             required: "#jd:blank",
                 
             },
+      'job_description': {
+             required: "#job_desc:blank",
+                
+       },
 
     'city_id':{
      
@@ -666,10 +671,7 @@ p#or {
             required: true,
       },
      
-     'benifit' :{
-
-            required:true,
-          },
+    
      'exp_from': {
                    
      minlength:2,
@@ -822,7 +824,7 @@ p#or {
      maxlength: "Maximum length 10 digits!"
    },
 
-   'benifit[]':{
+   'benefits[]':{
    
      required: "This field is mandatory!",
    
