@@ -365,7 +365,7 @@ class Employer extends MY_Employer_Controller
                     'skills_required' => implode(',', $all_skills), //new added field
                     'salary_range' => $salary_range,
                     "job_deadline" => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('job_deadline')))),
-                    "status" => '0',
+                    "job_status" => '0',
                    
                     'is_test_required' => $this->input->post('job_test_requirment')
                     
@@ -472,7 +472,7 @@ class Employer extends MY_Employer_Controller
                 $job_post_id = $this->input->post('job_id');
                 $company_profile_id = $this->session->userdata('company_profile_id');
                 $whereres           = "job_post_id='$job_post_id'";
-               $job_info['status'] = '1';
+               $job_info['job_status'] = '1';
                 $this->job_posting_model->update($job_info, $job_post_id);
                 
                 
