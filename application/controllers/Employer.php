@@ -590,7 +590,7 @@ class Employer extends MY_Employer_Controller
                                 array_push($all_skills, $skill_id);
                             }
                         }
-                    # code...
+                 }
                 }
                 
                 $job_info = array(
