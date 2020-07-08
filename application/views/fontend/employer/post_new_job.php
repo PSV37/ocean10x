@@ -514,7 +514,7 @@ p#or {
                           
                         ?>
                         <label>
-                        <input type="checkbox" value="<?php echo $row; ?>" class="btn-default1" checked
+                        <input type="checkbox" value="<?php echo $row; ?>"  class="btn-default1" id="benifit" checked
                         name="benefits[]">
                         <span><?php echo $row; ?></span>
                         </label>
@@ -530,7 +530,7 @@ p#or {
                           
                         ?>
                         <label>
-                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" 
+                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" id="benifit" 
                         name="benefits[]">
                         <span><?php echo $benefit['benifit']; ?></span>
                         </label>
@@ -540,7 +540,7 @@ p#or {
                      else{
                       foreach($benefits as $benefit){?>
                         <label>
-                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" checked="" name="benefits[]">
+                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" id="benifit" checked="" name="benefits[]">
                         <span><?php echo $benefit['benifit']; ?></span>
                         </label>
                         <?php } } ?>
@@ -858,6 +858,9 @@ jquery validation plugin //-->
    
    // },
    
+   'benifit' :{
+    required:true,
+   }
    
    'contact_name':{
    
@@ -966,14 +969,6 @@ jquery validation plugin //-->
    },
    
    
-   'company_pincode':{
-   
-   required: true,
-   
-   companypincode_regex: true
-   
-   },
-   
    
    
      
@@ -1051,6 +1046,17 @@ jquery validation plugin //-->
    },
    
    'salrange_to':{
+   
+     required: "This field is mandatory!",
+   
+     matches: "Didn't match!", 
+           
+     minlength: "Please Enter 1 digit number!",
+           
+     maxlength: "Maximum length 10 digits!"
+   },
+
+   'benifit':{
    
      required: "This field is mandatory!",
    
