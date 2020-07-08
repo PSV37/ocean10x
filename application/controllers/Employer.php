@@ -283,7 +283,32 @@ class Employer extends MY_Employer_Controller
                 $job_deadline = strtolower($this->input->post('job_deadline'));
                 $job_post_id  = $this->input->post('job_post_id');
 
-
+                 $job_description = isset($_FILES['job_description']['name']) ? $_FILES['job_description']['name'] : null;
+                // print_r($_FILES);die;
+                
+                if (!empty($job_description)) {
+                    
+                    $config['upload_path']   = 'upload/job_description/';
+                    $config['allowed_types'] = '*';
+                    $config['encrypt_name']  = false;
+                    $config['max_size']      = 1000;
+                    $config['max_width']     = 300;
+                    $config['max_height']    = 300;
+                    
+                    $this->load->library('upload', $config);
+                    $result_upload = $this->upload->do_upload('job_description');
+                    $upload_data   = $this->upload->data();
+                    $jd_file       = $upload_data['file_name'];
+                    $job_desc_file = $jd_file;
+                    
+                    if (!$result_upload == true) {
+                        $error = array(
+                            'error' => $this->upload->display_errors()
+                        );
+                        $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">Please Upload a Valid Logo Size Max size 300*300</div>');
+                        redirect('employer/profile-setting');
+                    }
+                }
                 
                 $all_skills = array();
 
