@@ -528,7 +528,7 @@ p#or {
                           
                         ?>
                         <label>
-                        <input type="checkbox" value="<?php echo $row; ?>"  class="btn-default1 selectone" id="benifit[]" checked
+                        <input type="checkbox" value="<?php echo $row; ?>"  class="btn-default1" id="benifit[]" checked
                         name="benefits[]">
                         <span><?php echo $row; ?></span>
                         </label>
@@ -540,7 +540,7 @@ p#or {
                           
                         ?>
                         <label>
-                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1 selectone" id="benifit[]" 
+                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" id="benifit[]" 
                         name="benefits[]">
                         <span><?php echo $benefit['benifit']; ?></span>
                         </label>
@@ -550,7 +550,7 @@ p#or {
                      else{
                       foreach($benefits as $benefit){?>
                         <label>
-                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1 selectone" id="benifit[]" checked="" name="benefits[]">
+                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" id="benifit[]" checked="" name="benefits[]">
                         <span><?php echo $benefit['benifit']; ?></span>
                         </label>
                         <?php } } ?>
@@ -569,7 +569,7 @@ p#or {
                   <div class="col-md-6 col-sm-12" tabindex="16" >
                      <div id="errorbox"></div>
                      <div class=" formrow">
-                        <label class="control-label">Upload JD <span class="required"> * </span></label>  <?php if (!empty($job_info->jd_files)) { ?>  <a id="jd_file"   style="margin-left: 10px;" href="<?php echo base_url() ?>upload/job_description/<?php echo $job_info->jd_file; ?>" download><?php echo $job_info->jd_file; ?></a><span style="margin-left: 15px" onclick="cancel_jd();" id="cross_btn" ><i class="fa fa-times" aria-hidden="true"></i></span> <?php   } ?> 
+                        <label class="control-label">Upload JD <span class="required"> * </span></label>  <?php if (!empty($job_info->jd_file)) { ?>  <a id="jd_file"   style="margin-left: 10px;" href="<?php echo base_url() ?>upload/job_description/<?php echo $job_info->jd_file; ?>" download><?php echo $job_info->jd_file; ?></a><span style="margin-left: 15px" onclick="cancel_jd();" id="cross_btn" ><i class="fa fa-times" aria-hidden="true"></i></span> <?php   } ?> 
 
                         <input type="file"  name="job_description" id="job_description" class="form-control"  > 
 
@@ -608,7 +608,7 @@ p#or {
    </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
-
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/additional-methods.js"></script>
 
 
  <script> 
@@ -636,7 +636,11 @@ p#or {
 
 
       $("#test").validate ({
-
+        groups: {
+            name: "benefits[]"
+        },
+        rules: {
+                    
   
     'benefits[]': { required: true, minlength: 1 },
       
