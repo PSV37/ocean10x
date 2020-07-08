@@ -664,7 +664,7 @@ p#or {
     'benefits[]': { required: true, minlength: 1 },
       
       
-   var elmId = $("#jd_session").val;
+
 
     <?php if (empty($job_info->jd_file)) { ?>
         
