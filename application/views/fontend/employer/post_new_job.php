@@ -313,7 +313,7 @@ p#or {
                         <label class="control-label ">Job Locations<span class="required"> * </span> </label>
                       
                            <input type="text" name="city_id" class="allowalphanumeric form-control" id="tokenfield" style="display: inline-block;"  placeholder="Enter Location" onkeydown="check_key();"
-                        value="<?php if(!empty($this->session->userdata('location')) ){echo $this->session->userdata('location'); } ?><?php echo set_value('city_id'); ?>"><?php echo form_error('city_id'); ?>
+                        value="<?php if(!empty($job_info->city_id) ){echo $job_info->city_id; } ?><?php echo set_value('city_id'); ?>"><?php echo form_error('city_id'); ?>
                        
                                      
                      </div>
@@ -410,12 +410,10 @@ p#or {
                   <div class="col-md-3 col-sm-12" tabindex="7">
                      <div class="formrow">
                         <label class="control-label ">Expected Experience (in years)<span class="required"> *</span> </label>
-                        <!--  <input class="form-control" type="text" name="experience" maxlength="2" value="<?php 
-                           if(!empty($job_info->experience)){ echo $job_info->experience;
-                            }
-                           ?>" autocomplete="off" required> -->
+                       <?php $exp=explode('-', $job_info->experience); print_r($exp); ?>
+
                         <div class="col-md-3 formrow" style="width:80px;margin-left:-14px;">
-                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from"  value="<?php if(!empty($this->session->userdata('exp_from')) ){echo $this->session->userdata('exp_from'); } ?><?php echo set_value('exp_from'); ?>" > <?php echo form_error('exp_to'); ?>
+                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from"  value="<?php if(!empty($job_info->experience) ){echo $this->session->userdata('exp_from'); } ?><?php echo set_value('exp_from'); ?>" > <?php echo form_error('exp_to'); ?>
                         </div>
                         <div class="col-md-3 formrow" style="width:80px;margin-left:-19px;">
                            <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to"  value="<?php if(!empty($this->session->userdata('exp_to')) ){echo $this->session->userdata('exp_to'); } ?><?php echo set_value('exp_to'); ?>" />
