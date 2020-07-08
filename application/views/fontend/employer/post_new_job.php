@@ -349,9 +349,18 @@ p#or {
                         <label  class="control-label ">Job Role<span class="required"> *</span></label>
                         <select name="job_role" id="job_role" class="form-control col-sm-5 select2" onchange="getSkillsdetails(this.value)" >
                            <!-- <option>select job Role</option> -->
-                           <?php if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
+
+                           <?php 
+                            $jrole_value =  set_value('job_role');
+
+                           if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
                               ?> 
-                           <option value="<?php echo $role_value['id']; ?>"<?php if($this->session->userdata('jobrole')==$role_value['id']){ echo "selected"; } elseif(!empty($job_info)) if($job_info->job_role==$role_value['id']) echo 'selected'; ?>><?php echo $role_value['job_role_title']; ?></option>
+                           <option value="<?php echo $role_value['id']; ?>"<?php 
+                           
+                           if (!empty($jrole_value) && $jrole_value == $role_value['id'] ) {
+                             echo 'selected';
+                           }
+                           elseif(!empty($job_info)) if($job_info->job_role==$role_value['id']) echo 'selected'; ?>><?php echo $role_value['job_role_title']; ?></option>
                            <?php } ?><?php echo form_error('job_role'); ?>
                         </select>
                      </div>
@@ -362,8 +371,8 @@ p#or {
                         <select name="job_edu" id="job_edu" class="form-control select2" data-style="btn-default" data-live-search="true" onchange="getEducationSpecial(this.value)" >
                            <!-- <option value="">Select Level </option> -->
                            
-                           <?php foreach($education_level as $education){?>
-                           <option value="<?php echo $education['education_level_id']; ?>"<?php if($this->session->userdata('edu')==$education['education_level_id']){ echo "selected"; }elseif($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
+                           <?php  $edu_value =  set_value('job_edu'); foreach($education_level as $education){?>
+                           <option value="<?php echo $education['education_level_id']; ?>"<?php if($edu_value==$education['education_level_id']){ echo "selected"; }elseif($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
                            
                            <?php } ?>
                            <option value="other">Other </option>
@@ -385,8 +394,10 @@ p#or {
                         <label class="control-label ">Engagement Model<span class="required"> * </span> </label>
                         <select name="job_nature" class="form-control select2" data-style="btn-default" data-live-search="true" >
                            <!-- <option value="">Select Engagement Model</option> -->
-                           <?php if (!empty($this->session->userdata('job_category'))) {
-                             echo $this->job_category_model->selected($this->session->userdata('jobnature')); } else  if(!empty($job_info->job_nature)) {
+                           <?php 
+                           $job_nature_value =  set_value('job_nature');
+                           if (!empty($job_nature_value)) {
+                             echo $this->job_category_model->selected($job_nature_value); } else  if(!empty($job_info->job_nature)) {
                               echo $this->job_nature_model->selected($job_info->job_nature);
                               } else {
                               echo $this->job_nature_model->selected();
@@ -422,8 +433,8 @@ p#or {
                      <div class="formrow">
                         <label class="control-label ">Certifications Preferred <span class="required"> * </span></label>
                         <select name="preffered_certificates" id="preffered_certificates" class="form-control select2" data-style="btn-default" data-live-search="true">
-                           <?php foreach($certificates as $certificate){?>
-                           <option value="<?php echo $certificate['certificate_id']; ?>"<?php if($this->session->userdata('preffered_certificates')==$certificate['certificate_id']){ echo "selected"; }elseif($job_info->job_edu==$certificate['certificate_id']){ echo "selected"; }?>><?php echo $certificate['certificate_name']; ?></option>
+                           <?php $cret_value = set_value('preffered_certificates'); foreach($certificates as $certificate){?>
+                           <option value="<?php echo $certificate['certificate_id']; ?>"<?php if($cret_value==$certificate['certificate_id']){ echo "selected"; }elseif($job_info->job_edu==$certificate['certificate_id']){ echo "selected"; }?>><?php echo $certificate['certificate_name']; ?></option>
                            
                            <?php } ?>
                         </select>
