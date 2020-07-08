@@ -376,8 +376,14 @@ class Employer extends MY_Employer_Controller
                 if (isset($job_desc_file) && !empty($job_desc_file)) {
                     $job_info['jd_file'] = $job_desc_file;
                 }
+
                if (!empty($this->input->post('jd_session'))) {
                   $job_info['jd_file']="";
+               }
+               else{
+                  $whereres           = "job_post_id='$job_post_id'";
+                    $old_job_details    = $this->Master_model->get_master_row('job_posting', $select = FALSE, $whereres);
+                    $job_info['jd_file']=$old_job_details['jd_file'];
                }
                 
                      

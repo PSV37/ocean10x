@@ -550,7 +550,7 @@ p#or {
 
 
                <?  } } }
-               elseif (empty(set_value('benefits[]'))) {
+               elseif (empty(set_value('benefits[]')) && isset(set_value('benefits[]'))) {
                 foreach($benefits as $benefit){ ?>
                         <label>
                         <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" id="benifit[]"  name="benefits[]">
