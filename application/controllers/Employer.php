@@ -441,7 +441,7 @@ class Employer extends MY_Employer_Controller
         } elseif (isset($_POST['edit'])) {
              $company_id = $this->session->userdata('company_profile_id');
              $job_id = $this->input->post('job_id');
-             print_r($this->job_posting_model->check_jobid_and_post_id($job_id, $company_id));
+            
             if ($this->job_posting_model->check_jobid_and_post_id($job_id, $company_id) == true) {
                 $data['job_info']        = $this->job_posting_model->get($job_id);
               
