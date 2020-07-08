@@ -664,7 +664,7 @@ p#or {
           },
      'exp_from': {
                    
-     //minlength:1,
+     minlength:2,
            
     // maxlength:10,
    
