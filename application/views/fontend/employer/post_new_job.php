@@ -584,7 +584,7 @@
    
      $(function() { 
        $("#my_date_picker").datepicker(); 
-       dateFormat: 'yyyy-mm-dd'
+       dateFormat: 'yy-mm-dd'
      }); 
    
    
