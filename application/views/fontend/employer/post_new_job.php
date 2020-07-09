@@ -590,7 +590,9 @@
    
    
      $("#test").validate ({
-      
+       groups: {
+        DateofBirth: "exp_from exp_to"
+    },
          errorPlacement: function(error, element) {
              if (element.attr("name") == "city_id" )
                  error.insertAfter(".tokenfield ");
