@@ -635,7 +635,10 @@
           required: true,
         
          }, 
-   
+   'job_deadline':{
+
+      required: true,
+   }
    
    'job_role':{
     
