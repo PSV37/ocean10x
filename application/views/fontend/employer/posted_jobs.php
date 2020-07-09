@@ -692,7 +692,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                           <li class="left-title">Domain</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->job_category_name; ?></li>
                          <!--  <li class="left-title">Role Type </li><li class="right-title">&nbsp;:</li> -->
                           <li class="left-title">Dummy1</li><li class="right-title">&nbsp;:</li>
-                          <li class="left-title">Dummy2</li><li class="right-title">&nbsp;:</li>
+                         <!--  <li class="left-title">Dummy2</li><li class="right-title">&nbsp;:</li> -->
                          
                           <div class="clear"></div>
                       </div>
