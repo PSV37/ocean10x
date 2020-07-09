@@ -1044,30 +1044,41 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                           <li class="left-title">Engagement</li>
                           <li class="right-title">&nbsp;: <?php echo $v_companyjobs->job_nature_name; ?></li>
                           <li class="left-title">Domain</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->job_category_name; ?></li>
+                        
                          <!--  <li class="left-title">Role Type </li><li class="right-title">&nbsp;:</li> -->
-                          <li class="left-title">Dummy1</li><li class="right-title">&nbsp;:</li>
+                         <!--  <li class="left-title">Dummy1</li><li class="right-title">&nbsp;:</li> -->
+
+
                          <!--  <li class="left-title">Dummy2</li><li class="right-title">&nbsp;:</li> -->
                          
                           <div class="clear"></div>
                       </div>
                       <div class="following-info2">
                         <li class="left-title">Education</li><li class="right-title">&nbsp;: <?php echo $v_companyjobs->education_level_name; ?></li>
-                        <!-- <li class="left-title">Specialization</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->education_specialization; ?></li> -->
+                      
                         <li class="left-title">experience</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->experience; ?></li>
-                        <li class="left-title">Joining ETA</li><li class="right-title">&nbsp;:30 days</li>
-                        <li class="left-title">CTC</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->salary_range; ?></li>
+
+                         <li class="left-title">CTC</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->salary_range; ?></li>
+
+                          <li class="left-title">Vacancies</li><li class="right-title">&nbsp;: <?php echo $v_companyjobs->no_jobs; ?></li>
+                          <!-- <li class="left-title">Specialization</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->education_specialization; ?></li> -->
+                       <!--  <li class="left-title">Joining ETA</li><li class="right-title">&nbsp;:30 days</li> -->
+                       
                        <!--  <li class="left-title">Benifits</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->benefits; ?> </li> -->
                        
-                        <li class="left-title">Dummy3</li><li class="right-title">&nbsp;:value</li>
+                      <!--   <li class="left-title">Dummy3</li><li class="right-title">&nbsp;:value</li> -->
 
                         <div class="clear"></div>
                       </div>
                       <div class="following-info3">
                         <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li><li class="right-title">&nbsp;: <?php if (isset($v_companyjobs->jd_file) && !empty($v_companyjobs->jd_file)) { echo "Yes"; ?>  <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/job_description/<?php echo $v_companyjobs->jd_file; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a> <?php } else { echo "No";} ?></li>
                         
-                        <li class="left-title">Vacancies</li><li class="right-title">&nbsp;: <?php echo $v_companyjobs->no_jobs; ?></li>
+                       
+
                         <li class="left-title">Ocean Test</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->is_test_required; ?></li>
+
                         <li class="left-title">Published on</li><li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs->created_at)) { echo date('M j Y',strtotime($v_companyjobs->created_at)); } ?></li>
+
                         <li class="left-title">Job expiry</li><li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs->job_deadline)) { echo date('M j Y',strtotime($v_companyjobs->job_deadline)); } ?></li>
                         <div class="clear"></div>
                       </div>
