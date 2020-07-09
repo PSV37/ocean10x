@@ -877,6 +877,7 @@ class Employer extends MY_Employer_Controller
         $this->session->set_userdata($data);
         $employer_id         = $this->session->userdata('company_profile_id');
         $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
+        
         $this->load->view('fontend/employer/posted_jobs.php', compact('company_active_jobs', 'employer_id'));
     }
     
