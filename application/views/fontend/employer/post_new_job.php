@@ -584,8 +584,8 @@
      });
    
      $(function() { 
-       $("#my_date_picker").datepicker(); 
-       dateFormat: 'yy-mm-dd'
+     
+     $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd' });
      }); 
    
    
