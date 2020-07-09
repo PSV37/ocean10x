@@ -737,9 +737,10 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                              $benefits=explode(',', $v_companyjobs->benefits);
                             
                               if(!empty($benefits)){ 
+                                $i=0;
                                 foreach($benefits as $benefit){ ?>
-                                <lable class="btn-default1"><button id="sklbtn"><?php echo  $benefits;?></button></lable>
-                                          <?php }
+                                <lable class="btn-default1"><button id="sklbtn"><?php echo  $benefits[$i];?></button></lable>
+                                          <?php $i++; }
                                     }    ?>
 
                            <!--  <div class="clear"></div>
