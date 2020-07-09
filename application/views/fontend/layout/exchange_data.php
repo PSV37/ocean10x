@@ -1,266 +1,736 @@
 <style>
-.report{margin-top:70px;
-    border: solid 1px #e4e4e4;
-    border-radius: 13px;
-	padding:20px;}
-.q1 li{list-style-type:none;
-    font-size: 14px;
-    font-weight: 700;
-    color: #777777;}
-.left_q{float:left;}
-.q1{line-height:35px;}   
-li.left_q {
-    width: 150px;
+	
+	
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+@keyframes bake-pie {
+  from {
+    transform: rotate(0deg) translate3d(0,0,0);
+  }
 }
-</style>
-<!---header-->
-<div class="container-fluid gradient_strip" >
-<div class="container">
-<div class="col-md-12">
-	<div class="col-md-3">
-   <div class="menu_logo">
-      <img src="http://www.tele-kinetics.com/assets/img/logo.png" />
-   </div> 
-   </div>
-   
-		
-   <div class="col-md-2">
+
+main {
  
+  margin: 30px auto;
+}
 
-   <div class="sear-bar">
-   <form class="search-form">
-  <input type="search">
- <i class="fas fa-search"></i>
-</form>
-     </div>          
+.pieID {
+  display: inline-block;
+  vertical-align: top;
+}
+.pie {
+  height: 200px;
+  width: 200px;
+  position: relative;
+  margin:0 30px 30px -23px;
+}
+.pie::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 1;
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  border-radius: 50%;
+  top: 50px;
+  left: 50px;
+}
+.pie::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 2px;
+  background: rgba(0,0,0,0.1);
+  border-radius: 50%;
+  box-shadow: 0 0 3px 4px rgba(0,0,0,0.1);
+  margin: 220px auto;
+  
+}
+section {
+    padding: 0px 45px 25px;
+}
+.slice {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  clip: rect(0px, 200px, 200px, 100px);
+  animation: bake-pie 1s;
+}
+.slice span {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  clip: rect(0px, 200px, 200px, 100px);
+}
+.legend {
+	margin-left:8px !important;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background: #FFF;
+  padding: 15px;
+  font-size: 13px;
+  box-shadow: 1px 1px 0 #DDD,
+              2px 2px 0 #BBB;
+}
+.last_section{border:solid 1px #e8e4e4;margin-top: 77px;padding:0px 10px;}
+.panel-title {
+    font-size: 13px;
+    color: #18c5bd;
+}
+.panel{background-color:#fbfbfb;}
+i.glyphicon.glyphicon-filter {
+    color: #18c5bd;
+}
+.legend li {
+  width: 110px;
+  height: 1.25em;
+  margin-bottom: 0.7em;
+  padding-left: 0.5em;
+  border-left: 1.25em solid black;
+}
+.legend em {
+  font-style: normal;
+}
+.legend span {
+  float: right;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-size: 13px;
+  background: #DDD;
+  padding: 5px 10px;
+  margin: 5px;
+}
 
-	</div>
+.fade-rotate {
+  transform: rotate(180deg);
+  opacity: 0;
+  -webkit-transition: all .25s linear;
+  -o-transition: all .25s linear;
+  transition: all .25s linear;
+}
+.fade-rotate.in {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+.fade-rotate .modal-dialog {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) !important;
+}
 
-<div class="col-md-3">
+input{padding:7px 25px;}
+.modal-footer{text-align:center;}
 
-	 <div class="switch switch-yellow">
-      <input type="radio" class="switch-input" name="view3" value="week3" id="week3" checked>
-      <label for="week3" class="switch-label switch-label-off">Job Search</label>
-      <input type="radio" class="switch-input" name="view3" value="month3" id="month3">
-      <label for="month3" class="switch-label switch-label-on">People Search</label>
-      <span class="switch-selection"></span>
+.modal-body {
+    padding: 0px 65px;
+}
+button.btn-save {
+    font-size: 12px;
+    padding: 10px 52px;
+    background-color: #14a99b;
+    color: #fff;
+    border: none;
+	border-radius:20px;
+	box-shadow: 2px 2px 6px #a8a4a4;
+
+}
+.modal-content {
+    background-image: linear-gradient(#18c5bd, #d4efec);
+}
+.sendEmail label{color:#fff;font-size:13px;}
+.sendEmail input{background-color: #f3f7f663;}
+.sendEmail textarea.form-control{background-color:#fbffff80;}
+@media (min-width: 768px){
+.modal-dialog {
+    width: 460px;
+    margin: 30px auto;
+}
+}
+
+.fade-rotate .modal-dialog{top:45%;}
+.modal-footer{border-top:none;}
+.modal-header{border-bottom:none;}
+button.btn-save:hover{background-color:#0e776d;
+transition:0.9s;color:#fff;}
+
+
+		.clickable{
+		    cursor: pointer;   
+		}
+
+		.panel-heading div {
+			margin-top: -18px;
+			font-size: 15px;
+		}
+		.panel-heading div span{
+			margin-left:5px;
+		}
+		.panel-body{
+			display: none;
+		}
+	.alert {
+    padding: 8px;
+    background-color: #18c5bd;
+    color: white;
+    width: fit-content;
+    height: 13px;
+    border-radius: 20px;
+    line-height: 0px;
+    margin-right: 7px;
+    float: left;
+	}
+
+.closebtn {
+    margin-top: -9px;
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+
+
+
+
+:root {
+	--bg: #e3e4e8;
+	--fg: #17181c;
+	--bs1: #ffffff;
+	--bs2: #c1c2c5;
+	--tick: #454954;
+	--transDur: 0.1s;
+	font-size: calc(20px + (40 - 20)*(100vw - 320px)/(2560 - 320));
+}
+.exp_level input {
+	color: var(--fg);
+	font: 1em/1.5 Muli, sans-serif;
+}
+
+.range__ticks {
+	display: flex;
+}
+.exp_level {
+	margin: auto;
+	max-width:20em;
+	padding: 0 -0.5em;
+	width: 100%;
+}
+.exp_level label {
+	display: block;
+	font-weight: bold;
+}
+.exp_level input[type=range], label {
+	-webkit-tap-highlight-color: transparent;
+}
+.exp_level input[type=range], .range {
+	border-radius: 0.75em;
+	overflow: hidden;
+	margin-bottom: 1.5em;
+}
+.range input{margin:0px;}
+.exp_level input[type=range] {
+	background-color: #d4efec;
+	box-shadow:
+		0.3em 0.3em 0.4em var(--bs2) inset,
+		-0.3em -0.3em 0.4em var(--bs1) inset;
+	display: block;
+	padding: 0 0.1em;
+	width: 100%;
+	height: 1.5em;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.exp_level input[type=range]:focus {
+	outline: transparent;
+}
+.exp_level input[type=range]::-webkit-slider-thumb {
+	background-color: #255ff4;
+	border: 0;
+	border-radius: 50%;
+	box-shadow:
+		-0.3em -0.3em 0.5em #0937aa inset,
+		0 -0.2em 0.2em 0 #0004,
+		0.3em 0.9em 0.8em #0007;
+	cursor: pointer;
+	position: relative;
+	width: 1.3em;
+	height: 1.3em;
+	transition: all var(--transDur) linear;
+	z-index: 1;
+	-webkit-appearance: none;
+	appearance: none;
+}
+.exp_level input[type=range]:focus::-webkit-slider-thumb {
+	background-color: #5583f6;
+	box-shadow:
+		-0.3em -0.3em 0.5em #0b46da inset,
+		0 -0.2em 0.2em 0 #0004,
+		0.3em 0.9em 0.8em #0007;
+}
+.exp_level input[type=range]::-moz-range-thumb {
+	background-color: #255ff4;
+	border: 0;
+	border-radius: 50%;
+	box-shadow:
+		-0.3em -0.3em 0.5em #0937aa inset,
+		0 -0.2em 0.2em 0 #0004,
+		0.3em 0.9em 0.8em #0007;
+	cursor: pointer;
+	position: relative;
+	width: 1.3em;
+	height: 1.3em;
+	transform: translateZ(1px);
+	transition: all var(--transDur) linear;
+	z-index: 1;
+	-moz-appearance: none;
+	appearance: none;
+}
+.exp_level input[type=range]:focus::-moz-range-thumb {
+	background-color: #5583f6;
+	box-shadow:
+		-0.3em -0.3em 0.5em #0b46da inset,
+		0 -0.2em 0.2em 0 #0004,
+		0.3em 0.9em 0.8em #0007;
+}
+.exp_level input[type=range]::-moz-focus-outer {
+	border: 0;
+}
+.range {
+	position: relative;
+	height: 1.5em;
+}
+.range__ticks {
+	justify-content: space-between;
+	align-items: center;
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	left: 0.75em;
+	width: calc(100% - 1.5em);
+	height: 100%;
+}
+.range__tick, .range__tick-text {
+	display: inline-block;
+}
+.range__tick {
+	color: var(--tick);
+	font-size:9px;
+	text-align: center;
+	width: 0;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+.range__tick-text {
+	transform: translateX(-50%);
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: #2e3138;
+		--fg: #e3e4e8;
+		--bs1: #3c4049;
+		--bs2: #202227;
+		--tick: #c7cad1;
+	}
+}
+
+</style>
+<div class="col-md-3 ">
+        		<div class="last_section">
+              		  <div class="pai_chart">
+  			<main>
+ 
+  <section>
+    <div class="pieID pie">
+      
     </div>
-</div>
-
-<div class="col-md-1">
-	 <div class="notification">
-    	<i class="fas fa-comment-alt"></i><br>
-        Messaging
-    </div>    
-   
-</div>
-
-<div class="col-md-1">
-	 <div class="bell">
-    	<i class="fas fa-bell"></i><br>
-        Notifications
-   	 </div>  
-   
-</div>     
-    
-    <div class="col-md-2">
-    	 <div class="dropdown">
-  <i class="fas fa-user-circle"></i>&emsp;<a class=" dropdown-toggle" data-toggle="dropdown">
-    
-    <span class="caret"></span>
-    <p class="profile-accoutnt-p">supriya</p>
-    </a>
-    <ul class="dropdown-menu">
-      <li><a href="#"><i class="fas fa-user"></i></a> My Profile</li>
-      <li><a href="#"><i class="fas fa-lock"></i></a>Change Password</li>
-      <li><a href="#"><i class="fas fa-power-off"></i></a>Logout</li>
+    <ul class="pieID legend">
+      <li>
+        <em>Humans</em>
+        <span>718</span>
+      </li>
+      <li>
+        <em>Dogs</em>
+        <span>531</span>
+      </li>
+      <li>
+        <em>Cats</em>
+        <span>868</span>
+      </li>
+      <li>
+        <em>Slugs</em>
+        <span>344</span>
+      </li>
+      <li>
+        <em>Aliens</em>
+        <span>1145</span>
+      </li>
     </ul>
-  </div>
-    </div>
-    
-    </div>
-  </div>
-
+  </section>
+ 
+</main>
 </div>
-<!---header--->
-
-
-<div class="container-fluid main-d">
-	<div class="container">
-        <div class="col-md-12">
-        	<div class="col-md-3">
-            
-            <aside id="left-panel" style="margin-top:75px;
-                 margin-left: 14px;height:auto; border-right: 1px solid rgba(240, 240, 240, 0.3);box-shadow: 2px 2px 4px 0px   #00000033;position: fixed;
-            z-index: 999;vertical-align:baseline;">
-            <div class="inner-left-pannel">
-                
-                
-                <!-- WHAT MOVES START -->
-                <div class="my-moving-parts">
-                    <div class="my-param-content"></div>
-                    <div class="my-normal-content">
-                       <div class="inner-tabs-navigation" data-active="menu">
-                        </div>
-                        <div class="inner-tabs">
-                            <div class="account-tab">
-                                <div class="language-selection" title="Change language">
-                                                <div class="btn-header transparent pull-right dropdown" style="margin-top: -1px;">
-                                                    <span><a href="#" class="dropdown-toggle locale" data-toggle="dropdown">
-                                                      <i class="flag flag-us"></i> 
-                                                         </a>
-                                                     </span>
-                                                </div>
-                                </div>
-                            </div>
-                            
-                            <div class="menu-tab">
-                               
-                                
-                                
-                                <nav class="menu-principal">
-                                
-                                    <ul class="menu-principal-list" style="">
-
-                                         <li class="active">
-                                             <a data-dl-view="true" data-dl-title="Dashboard" href="#">
-                                            <span class="icon-container">
-                                                 <i class="fas fa-tachometer-alt"></i>
-                                            </span>
-                                            <span class="text item">Dashboard</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                             <a data-dl-view="true" data-dl-title="My profile" href="/candidate/detail">
-                                            <span class="icon-container">
-                                                <i class="fas fa-user-alt"></i>
-                                           </span>
-                                        <span class="text item">CV Bank</span>
-                                              </a>
-                                       </li>
-                                       
-                                      <li>
-                                     <a data-dl-view="true" data-dl-title="Contacts" href="/candidate">
-                                       <span class="icon-container">
-                                         <i class="fas fa-phone-volume"></i>
-                                     </span>
-                                        <span class="text item">Post New Job</span>
-                                     </a>
-                                      </li>
-                                         <li>
-                                         <a data-dl-view="true" data-dl-title="Recruitments" href="/campaign">
-                                            <span class="icon-container">
-                                              <i class="fas fa-filter"></i>
-                                              </span>
-                                        <span class="text item">Active Job Post</span>
-
-                                          </a>
-                                        </li>
-                                         <li>
-                                            <a data-dl-view="true" data-dl-title="Mobility" href="/jobprofile/generate">
-                                            <span class="icon-container">
-                                              <i class="fas fa-map-signs"></i>
-                                              </span>
-                                        <span class="text item">Pending Jobs</span>
-                                              </a>
-                                         </li>
-                                            
-                                          
-                                         <li>
-                                            <a data-dl-view="true" data-dl-title="Mobility" href="/jobprofile/generate">
-                                            <span class="icon-container">
-                                              <i class="fas fa-map-signs"></i>
-                                              </span>
-                                        <span class="text item">Question Bank</span>
-                                              </a>
-                                         </li>
-                                         
-                                          <li>
-                                            <a data-dl-view="true" data-dl-title="Mobility" href="/jobprofile/generate">
-                                            <span class="icon-container">
-                                              <i class="fas fa-map-signs"></i>
-                                              </span>
-                                        <span class="text item">Employee Management</span>
-                                              </a>
-                                         </li>
-                                         
-                                          <li>
-                                            <a data-dl-view="true" data-dl-title="Mobility" href="/jobprofile/generate">
-                                            <span class="icon-container">
-                                              <i class="fas fa-map-signs"></i>
-                                              </span>
-                                        <span class="text item">Company / Recruiter</span>
-                                              </a>
-                                         </li>
-                                         
-                                         <li>
-                                            <a data-dl-view="true" data-dl-title="Mobility" href="/jobprofile/generate">
-                                            <span class="icon-container">
-                                              <i class="fas fa-map-signs"></i>
-                                              </span>
-                                        <span class="text item">OceanChamp</span>
-                                              </a>
-                                         </li>
-                                         
-                                         
-                                     </ul>
-                                </nav>
-                            </div>
-                        </div>
+           
+           			<div class="filter1">
+           <div class="panel ">
+					<div class="panel-heading">
+						<h3 class="panel-title">Location</h3>
+						<div class="pull-right">
+							<span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+								<i class="glyphicon glyphicon-filter"></i>
+							</span>
+						</div>
+					</div>
+					<div class="panel-body">
+						<input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter location" />
+					
+					
+                    
+                    <div class="location_fil">
+                    	<div class="alert">
+                             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                           		<strong>css</strong>
+                         </div>
+                    	
+                        <div class="alert">
+                             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                           		<strong>css</strong>
+                         </div>
+                         
+                         <div class="alert">
+                             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                           		<strong>css</strong>
+                         </div>
                     </div>
-                </div>
-                <!-- WHAT MOVES END -->
+                    </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+				</div>
+                
+                
+                	<div class="filter1">
+           <div class="panel ">
+					<div class="panel-heading">
+						<h3 class="panel-title">Education</h3>
+						<div class="pull-right">
+							<span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+								<i class="glyphicon glyphicon-filter"></i>
+							</span>
+						</div>
+					</div>
+					<div class="panel-body">
+						<input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter education" />
+					
+					
+                    
+                    <div class="location_fil">
+                    	<div class="alert">
+                             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                           		<strong>css</strong>
+                         </div>
+                    	
+                        <div class="alert">
+                             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                           		<strong>css</strong>
+                         </div>
+                         
+                         <div class="alert">
+                             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                           		<strong>css</strong>
+                         </div>
+                    </div>
+                    </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+				</div>
+                
+                	<div class="filter1">
+           <div class="panel ">
+					<div class="panel-heading">
+						<h3 class="panel-title">Mandatory</h3>
+						<div class="pull-right">
+							<span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+								<i class="glyphicon glyphicon-filter"></i>
+							</span>
+						</div>
+					</div>
+					<div class="panel-body">
+						<input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter education" />
+					
+					
+                    
+                    <div class="location_fil">
+                    	<div class="alert">
+                             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                           		<strong>css</strong>
+                         </div>
+                    	
+                        <div class="alert">
+                             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                           		<strong>css</strong>
+                         </div>
+                         
+                         <div class="alert">
+                             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                           		<strong>css</strong>
+                         </div>
+                    </div>
+                    </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+				</div>
+                
+                
+                	<div class="experience">
+                    <form class="exp_level">
+	<label for="range1">Experience</label>
+	<input id="range1" type="range" name="range1" min="1" max="10" step="0.1" value="5">
+    <label for="range3">Availability</label>
+		<input id="range3" type="range" name="range3" min="0" max="100" step="1" value="50">
+
+	
+	</form>
+                    
+                    </div>
+                
+           		</div>
             </div>
-                </aside>
-            </div>
-			<div class="col-md-6 report">
-            	<h5 style="text-align:center;font-size:25px;margin-bottom:30px;color:#18c5bd;font-weight:700;">Your Report Card !</h5>
-                <div class="a" style="margin-left:190px;">
-                <div class="q1">
-               
-                	<li class="left_q">Total Questions&nbsp;</li><li class="right_q">:&emsp;40</li>
-                  
-                </div>
-                
-                <div class="q1">
-               
-                	<li class="left_q">Questions Attempt&nbsp;</li><li class="right_q">:&emsp;35</li>
-                   
-                </div>
-                
-                <div class="q1">
-               
-                	<li class="left_q">Questioned Skipped&nbsp;</li><li class="right_q">:&emsp;5</li>
-                   
-                </div>
-                
-                <div class="q1">
-               
-                	<li class="left_q">Correct Answer&nbsp;</li><li class="right_q">:&emsp;30</li>
-                   
-                </div>
-                 <div class="q1">
-               
-                	<li class="left_q">Wrong Answer&nbsp;</li><li class="right_q">:&emsp;20</li>
-                   
-                </div>
-                <div class="q1" style="margin-top:20px;">
-               
-                	<li class="left_q" style="color:#000;font-size:16px;">Overall Result&nbsp;</li><li class="right_q" style="color:#000;">:&emsp;<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-width="100" height="100"
-viewBox="0 0 172 172"
-style=" fill:#000000;height: 30px;
-    width: 23px;
-    margin-top: -12px;
-    padding-top: 6px;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#1abc9c"><path d="M132.80693,20.22147c-5.63587,0.91733 -9.54027,6.21493 -9.54027,11.92533v37.2724l-10.50347,-29.61267l-22.8932,-22.8932c-4.27707,-4.27707 -11.20293,-4.27707 -15.48,0l-0.73387,0.73387c-4.27707,4.27707 -4.27707,11.20293 0,15.48l18.8684,18.8684l11.18,30.71347l-24.91133,-29.67573l-26.82627,-12.90573c-5.27467,-2.4596 -11.54693,-0.172 -14.00653,5.10267l-0.77973,1.67413c-2.4596,5.2804 -0.17773,11.55267 5.10267,14.01227l22.2396,10.7844l9.59187,11.43227h-26.0924l-19.68253,19.58507c-4.03627,4.03627 -5.0224,10.5436 -1.6856,15.17613c4.25413,5.90533 12.54453,6.3984 17.46947,1.47347l13.30707,-13.30707h16.3056l7.8604,21.59747l-9.94733,9.9416h-7.39027l-8.1012,-8.1012c-6.82267,-6.82267 -17.888,-6.82267 -24.7164,0l-4.9536,4.9536l25.53053,25.58213c2.15,2.15573 5.06827,3.36547 8.1184,3.36547h51.66307c19.00027,0 34.4,-15.39973 34.4,-34.4v-97.46667c0,-6.966 -6.2092,-12.47573 -13.39307,-11.31187z"></path><path d="M111.8,166.26667h-51.6688c-3.77827,0 -7.47627,-1.53653 -10.148,-4.20253l-27.5544,-27.606l6.9832,-6.9832c0.8772,-0.88293 1.82893,-1.67413 2.83227,-2.36787c-3.15333,-0.84853 -5.92827,-2.76347 -7.92347,-5.53267c-4.03053,-5.59573 -3.182,-13.71413 1.98373,-18.87987l20.5368,-20.42787h21.12733l-5.246,-6.25507l-21.68347,-10.51493c-3.21067,-1.50213 -5.67027,-4.18533 -6.8972,-7.5508c-1.22693,-3.36547 -1.07213,-7.00613 0.44147,-10.2512l0.77973,-1.6684c3.02147,-6.49587 11.28893,-9.53453 17.81347,-6.49587l27.8124,13.66253l14.45373,17.22293l-5.4008,-14.83787l-18.41547,-18.4212c-2.60867,-2.60293 -4.04773,-6.07733 -4.04773,-9.76387c0,-3.68653 1.43907,-7.16093 4.04773,-9.7696l0.73387,-0.73387c5.21733,-5.21733 14.3276,-5.21733 19.53347,0l23.56973,23.96533l4.9364,13.90907v-20.6228c0,-7.29853 5.13707,-13.6396 11.94827,-14.74613c8.95547,-1.46773 16.7184,5.44667 16.7184,14.1384v97.46667c0,20.54827 -16.7184,37.26667 -37.26667,37.26667zM30.54147,134.4524l23.50667,23.55253c1.5996,1.61107 3.8184,2.5284 6.08307,2.5284h51.6688c17.38347,0 31.53333,-14.14987 31.53333,-31.53333v-97.46667c0,-5.22307 -4.644,-9.33387 -10.06773,-8.4796c-4.06493,0.66507 -7.13227,4.56947 -7.13227,9.08733v53.93347l-15.8584,-44.7028l-22.43453,-22.43453c-3.0616,-3.0616 -8.3764,-3.05013 -11.42653,0l-0.73387,0.7396c-1.5308,1.5308 -2.36787,3.55467 -2.36787,5.71613c0,2.15573 0.83707,4.1796 2.36787,5.7104l19.52773,19.9176l16.74133,45.9928l-34.9504,-41.66413l-26.27013,-12.642c-3.6292,-1.67987 -8.43947,0.02867 -10.17093,3.73813l-0.77973,1.6684c-0.86573,1.86333 -0.95747,3.94453 -0.25227,5.87093c0.7052,1.9264 2.10987,3.46293 3.96747,4.3344l23.22573,11.5412l13.54213,16.13933h-31.05747l-18.84547,18.75373c-3.19347,3.1992 -3.784,8.12987 -1.376,11.4724c3.0272,4.20253 9.50587,4.73 13.11213,1.118l14.14413,-14.14413h19.49333l9.17907,25.198l-12.0744,12.06867h-9.75813l-8.944,-8.944c-5.5212,-5.5212 -15.14747,-5.51547 -20.66293,0zM65.45173,134.73333h5.01093l7.80307,-7.80307l-6.54173,-17.99693h-13.11213l-12.46427,12.46427c-0.07453,0.08027 -0.14907,0.14907 -0.22933,0.2236c4.63827,0.47587 8.93827,2.5112 12.27507,5.85373z"></path><rect x="15.542" y="15" transform="scale(5.73333,5.73333)" width="7.458" height="2.333"></rect></g></g></svg>Good</li>
-                   
-                </div>
-                </div>
-                
-                
-                
-                
-            </div>
-        </div>
-    </div>
-</div>           
+            
+<script>
+function sliceSize(dataNum, dataTotal) {
+  return (dataNum / dataTotal) * 360;
+}
+function addSlice(sliceSize, pieElement, offset, sliceID, color) {
+  $(pieElement).append("<div class='slice "+sliceID+"'><span></span></div>");
+  var offset = offset - 1;
+  var sizeRotation = -179 + sliceSize;
+  $("."+sliceID).css({
+    "transform": "rotate("+offset+"deg) translate3d(0,0,0)"
+  });
+  $("."+sliceID+" span").css({
+    "transform"       : "rotate("+sizeRotation+"deg) translate3d(0,0,0)",
+    "background-color": color
+  });
+}
+function iterateSlices(sliceSize, pieElement, offset, dataCount, sliceCount, color) {
+  var sliceID = "s"+dataCount+"-"+sliceCount;
+  var maxSize = 179;
+  if(sliceSize<=maxSize) {
+    addSlice(sliceSize, pieElement, offset, sliceID, color);
+  } else {
+    addSlice(maxSize, pieElement, offset, sliceID, color);
+    iterateSlices(sliceSize-maxSize, pieElement, offset+maxSize, dataCount, sliceCount+1, color);
+  }
+}
+function createPie(dataElement, pieElement) {
+  var listData = [];
+  $(dataElement+" span").each(function() {
+    listData.push(Number($(this).html()));
+  });
+  var listTotal = 0;
+  for(var i=0; i<listData.length; i++) {
+    listTotal += listData[i];
+  }
+  var offset = 0;
+  var color = [
+    "cornflowerblue", 
+    "olivedrab", 
+    "orange", 
+    "tomato", 
+    "crimson", 
+    "purple", 
+    "turquoise", 
+    "forestgreen", 
+    "navy", 
+    "gray"
+  ];
+  for(var i=0; i<listData.length; i++) {
+    var size = sliceSize(listData[i], listTotal);
+    iterateSlices(size, pieElement, offset, i, 0, color[i]);
+    $(dataElement+" li:nth-child("+(i+1)+")").css("border-color", color[i]);
+    offset += size;
+  }
+}
+createPie(".pieID.legend", ".pieID.pie");
+
+</script>
+
+ <script>
+	/**
+*   I don't recommend using this plugin on large tables, I just wrote it to make the demo useable. It will work fine for smaller tables 
+*   but will likely encounter performance issues on larger tables.
+*
+*		<input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter Developers" />
+*		$(input-element).filterTable()
+*		
+*	The important attributes are 'data-action="filter"' and 'data-filters="#table-selector"'
+*/
+(function(){
+    'use strict';
+	var $ = jQuery;
+	$.fn.extend({
+		filterTable: function(){
+			return this.each(function(){
+				$(this).on('keyup', function(e){
+					$('.filterTable_no_results').remove();
+					var $this = $(this), 
+                        search = $this.val().toLowerCase(), 
+                        target = $this.attr('data-filters'), 
+                        $target = $(target), 
+                        $rows = $target.find('tbody tr');
+                        
+					if(search == '') {
+						$rows.show(); 
+					} else {
+						$rows.each(function(){
+							var $this = $(this);
+							$this.text().toLowerCase().indexOf(search) === -1 ? $this.hide() : $this.show();
+						})
+						if($target.find('tbody tr:visible').size() === 0) {
+							var col_count = $target.find('tr').first().find('td').size();
+							var no_results = $('<tr class="filterTable_no_results"><td colspan="'+col_count+'">No results found</td></tr>')
+							$target.find('tbody').append(no_results);
+						}
+					}
+				});
+			});
+		}
+	});
+	$('[data-action="filter"]').filterTable();
+})(jQuery);
+
+$(function(){
+    // attach table filter plugin to inputs
+	$('[data-action="filter"]').filterTable();
+	
+	$('.container').on('click', '.panel-heading span.filter', function(e){
+		var $this = $(this), 
+			$panel = $this.parents('.panel');
+		
+		$panel.find('.panel-body').slideToggle();
+		if($this.css('display') != 'none') {
+			$panel.find('.panel-body input').focus();
+		}
+	});
+	$('[data-toggle="tooltip"]').tooltip();
+})
+	</script>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.min.js"></script>
+    <script>
+      // Basic Slider
+      var slider = new Slider("#basic", {
+        tooltip: 'always'
+      });
+      
+      // Vertical Slider
+      var slider = new Slider("#vertical", {
+        orientation: 'vertical',
+        tooltip: 'always'
+      });
+      
+      // Range Slider
+      var slider = new Slider("#range", {
+        min: 0,
+        max: 100,
+        value: [50, 80],
+        range: true,
+        tooltip: 'always'
+      });
+    </script> 
+    
+    <script>
+window.addEventListener("DOMContentLoaded",() => {
+	let range1 = new NeumorphicRange({
+			element: "#range1",
+			tick: 1
+		}),
+		
+		range3 = new NeumorphicRange({
+			element:"#range3",
+			tick: 10
+		});
+});
+
+class NeumorphicRange {
+	constructor(args) {
+		this.el = document.querySelector(args.element);
+		this.min = +this.el.min || 0;
+		this.max = +this.el.max || 100;
+		this.step = +this.el.step || 1;
+		this.tick = args.tick || this.step;
+		this.addTicks();
+	}
+	addTicks() {
+		// div to contain everything
+		let wrap = document.createElement("div");
+		wrap.className = "range";
+		this.el.parentElement.insertBefore(wrap,this.el);
+		wrap.appendChild(this.el);
+
+		// div to contain the ticks
+		let ticks = document.createElement("div");
+		ticks.className = "range__ticks";
+		wrap.appendChild(ticks);
+
+		// draw the ticks
+		for (let t = this.min; t <= this.max; t += this.tick) {
+			// zero-width span to allow proper space between each tick
+			let tick = document.createElement("span");
+			tick.className = "range__tick";
+			ticks.appendChild(tick);
+
+			let tickText = document.createElement("span");
+			tickText.className = "range__tick-text";
+			tick.appendChild(tickText);
+			tickText.textContent = t;
+		}
+	}
+}
+</script>
+            
