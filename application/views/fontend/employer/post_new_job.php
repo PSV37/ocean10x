@@ -305,7 +305,7 @@
                   <label for="tokenfield" generated="true" class="error"></label>
                </div>
                <div class="col-md-3 col-sm-12" tabindex="2">
-                  <div class="formrow">
+                  <div class="formrow exp_domain">
                      <label class="control-label ">Expected Domain<span class="required"> * </span> </label>
                      <select name="job_category" id="job_category" class="form-control select2 limiter-options" data-role="limiter" data-style="btn-default" data-live-search="true" >
                         <option value=""></option>
@@ -329,7 +329,7 @@
                   </div>
                </div>
                <div class="col-sm-3 p-m-2" tabindex="3">
-                  <div class="formrow">
+                  <div class="formrow job_role">
                      <label  class="control-label ">Job Role<span class="required"> *</span></label>
                      <select name="job_role" id="job_role" class="form-control col-sm-5 select2" onchange="getSkillsdetails(this.value)" >
                         <option></option>
@@ -348,7 +348,7 @@
                   </div>
                </div>
                <div class="col-md-3 col-sm-12" id="job_education" tabindex="4">
-                  <div class="formrow">
+                  <div class="formrow job_edu">
                      <label class="control-label">Education Level<span class="required"> * </span></label>
                      <select name="job_edu" id="job_edu" class="form-control select2" data-style="btn-default" data-live-search="true" onchange="getEducationSpecial(this.value)" >
                         <option value=""> </option>
@@ -369,7 +369,7 @@
                   </div>
                </div>
                <div class="col-md-3 col-sm-12" tabindex="6">
-                  <div class="formrow">
+                  <div class="formrow job_nature">
                      <label class="control-label ">Engagement Model<span class="required"> * </span> </label>
                      <select name="job_nature" class="form-control select2" data-style="btn-default" data-live-search="true" >
                         <option value=""></option>
@@ -406,7 +406,7 @@
                   </div>
                </div>
                <div class="col-md-3 col-sm-12" id="spectial" tabindex="9">
-                  <div class="formrow">
+                  <div class="formrow" preffered_certificates>
                      <label class="control-label ">Certifications Preferred <span class="required"> * </span></label>
                      <select name="preffered_certificates" id="preffered_certificates" class="form-control select2" data-style="btn-default" data-live-search="true">
                       <option></option>
@@ -598,9 +598,25 @@
              if (element.attr("name") == "city_id" )
                  error.insertAfter(".tokenfield ");
                else if (element.attr("name") == "exp_from" || element.attr("name") == "exp_to" ) 
-        error.insertAfter(".exp_experience");
-      else if (element.attr("name") == "salrange_from" || element.attr("name") == "salrange_to" ) 
-        error.insertAfter(".salrange");
+                 error.insertAfter(".exp_experience");
+
+               else if (element.attr("name") == "salrange_from" || element.attr("name") == "salrange_to" ) 
+                 error.insertAfter(".salrange");
+
+               else if (element.attr("name") == "job_category" ) 
+                 error.insertAfter(".exp_domain");
+
+               else if (element.attr("name") == "job_role" ) 
+                 error.insertAfter(".job_role");
+
+              else if (element.attr("name") == "job_edu" ) 
+                 error.insertAfter(".job_edu");
+
+              else if (element.attr("name") == "preffered_certificates" ) 
+                 error.insertAfter(".preffered_certificates");
+
+              else if (element.attr("name") == "job_nature" ) 
+                 error.insertAfter(".job_nature");
             
          else
        error.insertAfter(element);
@@ -698,11 +714,11 @@
    
    },
    
-   'job_edu_special':{
+   // 'job_edu_special':{
    
-   required: true,
+   // required: true,
    
-   },
+   // },
    
    'job_test_requirment':{
    
