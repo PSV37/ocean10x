@@ -427,7 +427,7 @@
                   </div>
                </div>
                <div class="col-md-3 col-sm-12" tabindex="11">
-                  <div class="formrow">
+                  <div class="formrow salrange" >
                      <label class="control-label " style="margin-left:-162px;">Salary Range (INR)<span class="required"> *</span> </label>
                      <div class="col-md-3 formrow" style="width:100px;margin-left:-14px;margin-top:37px;">
                         <?php $sal=explode('-', $job_info->salary_range);  ?>
@@ -591,13 +591,16 @@
    
      $("#test").validate ({
        groups: {
-        DateofBirth: "exp_from exp_to"
+        DateofBirth: "exp_from exp_to",
+        salary_range: "salrange_from salrange_to"
     },
          errorPlacement: function(error, element) {
              if (element.attr("name") == "city_id" )
                  error.insertAfter(".tokenfield ");
                else if (element.attr("name") == "exp_from" || element.attr("name") == "exp_to" ) 
         error.insertAfter(".exp_experience");
+      else if (element.attr("name") == "salrange_from" || element.attr("name") == "salrange_to" ) 
+        error.insertAfter(".salrange");
             
          else
        error.insertAfter(element);
@@ -611,11 +614,25 @@
    
    'benefits[]': { required: true, minlength: 1 },
      
-     
-   
-   
-   
+    'job_category':{
     
+          required: true,
+        
+         }, 
+   
+   
+   'job_role':{
+    
+          required: true,
+          
+         },
+
+   'preffered_certificates':{
+    
+          required: true,
+          
+         },
+        
    
    'city_id':{
     
@@ -630,10 +647,7 @@
     
    
     'exp_from': {
-                  
-    // minlength:2,
-          
-   // maxlength:10,
+ 
    
     required: true
    },
@@ -659,19 +673,13 @@
    
 
    'salrange_from': {
-                  
-    //minlength:1,
-          
-   // maxlength:10,
-    //salrangefrom_regex: true,
+  
     required: true
    },
    
    'salrange_to': {
                   
-    //minlength:1,
-   // salrangeto_regex: true,    
-   // maxlength:10,
+   
    
     required: true
    },
@@ -705,6 +713,28 @@
          messages:{
    
    'job_title':{
+   
+   required: "This field is mandatory!",
+   
+   maxlength: "Choose a company name of at least 14 letters!"
+   
+   },
+
+   'job_category':{
+   
+   required: "This field is mandatory!",
+   
+   maxlength: "Choose a company name of at least 14 letters!"
+   
+   },
+   'job_role':{
+   
+   required: "This field is mandatory!",
+   
+   maxlength: "Choose a company name of at least 14 letters!"
+   
+   },
+   'preffered_certificates':{
    
    required: "This field is mandatory!",
    
