@@ -387,7 +387,7 @@
                   </div>
                </div>
                <div class="col-md-3 col-sm-12" tabindex="7">
-                  <div class="formrow">
+                  <div class="formrow exp_experience" >
                      <label class="control-label ">Expected Experience (in years)<span class="required"> *</span> </label>
                      <?php $exp=explode('-', $job_info->experience);  ?>
                      <div class="col-md-3 formrow" style="width:80px;margin-left:-14px;">
@@ -584,7 +584,7 @@
    
      $(function() { 
        $("#my_date_picker").datepicker(); 
-       format: 'yyyy-mm-dd'
+       dateFormat: 'yyyy-mm-dd'
      }); 
    
    
@@ -593,6 +593,8 @@
          errorPlacement: function(error, element) {
              if (element.attr("name") == "city_id" )
                  error.insertAfter(".tokenfield ");
+               else if (element.attr("name") == "exp_from" || element.attr("name") == "exp_to" ) 
+        error.insertAfter(".exp_experience");
             
          else
        error.insertAfter(element);
