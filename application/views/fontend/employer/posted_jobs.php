@@ -732,6 +732,16 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                                           <?php }
                                     } }   ?>
 
+                          <span>Benefits</span>:
+                             <?php 
+                             $benefits=$v_companyjobs->benefits;
+                            
+                              if(!empty($benefits)){ 
+                                foreach($benefits as $benefit){ ?>
+                                <lable class="btn-default1"><button id="sklbtn"><?php echo  $benefits;?></button></lable>
+                                          <?php }
+                                    }    ?>
+
                            <!--  <div class="clear"></div>
                           </div> -->         
                                    
