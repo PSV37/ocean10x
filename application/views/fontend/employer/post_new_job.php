@@ -1,4 +1,4 @@
-<!---header-->
+-header-->
 <?php 
    $company_profile_id = $this->session->userdata('company_profile_id');
    
@@ -332,7 +332,7 @@
                   <div class="formrow">
                      <label  class="control-label ">Job Role<span class="required"> *</span></label>
                      <select name="job_role" id="job_role" class="form-control col-sm-5 select2" onchange="getSkillsdetails(this.value)" >
-                        <!-- <option>select job Role</option> -->
+                        <option></option>
                         <?php 
                            $jrole_value =  set_value('job_role');
                            
@@ -351,7 +351,7 @@
                   <div class="formrow">
                      <label class="control-label">Education Level<span class="required"> * </span></label>
                      <select name="job_edu" id="job_edu" class="form-control select2" data-style="btn-default" data-live-search="true" onchange="getEducationSpecial(this.value)" >
-                        <!-- <option value="">Select Level </option> -->
+                        <option value=""> </option>
                         <?php  $edu_value =  set_value('job_edu'); foreach($education_level as $education){?>
                         <option value="<?php echo $education['education_level_id']; ?>"<?php if($edu_value==$education['education_level_id']){ echo "selected"; }elseif($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
                         <?php } ?>
@@ -372,7 +372,7 @@
                   <div class="formrow">
                      <label class="control-label ">Engagement Model<span class="required"> * </span> </label>
                      <select name="job_nature" class="form-control select2" data-style="btn-default" data-live-search="true" >
-                        <!-- <option value="">Select Engagement Model</option> -->
+                        <option value=""></option>
                         <?php 
                            $job_nature_value =  set_value('job_nature');
                            if (!empty($job_nature_value)) {
@@ -409,6 +409,7 @@
                   <div class="formrow">
                      <label class="control-label ">Certifications Preferred <span class="required"> * </span></label>
                      <select name="preffered_certificates" id="preffered_certificates" class="form-control select2" data-style="btn-default" data-live-search="true">
+                      <option></option>
                         <?php $cret_value = set_value('preffered_certificates'); foreach($certificates as $certificate){?>
                         <option value="<?php echo $certificate['certificate_id']; ?>"<?php if($cret_value==$certificate['certificate_id']){ echo "selected"; }elseif($job_info->job_edu==$certificate['certificate_id']){ echo "selected"; }?>><?php echo $certificate['certificate_name']; ?></option>
                         <?php } ?>
@@ -1070,4 +1071,4 @@
    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script> -->
 <!-- jquery validation plugin  -->
 <!-- <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js"></script>
-   <script type="text/javascript" src="validation_reg.js"></script> -->
+   <script type="text/javascript" src="validation_reg.js"></script> 
