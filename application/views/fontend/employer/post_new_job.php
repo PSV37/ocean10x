@@ -603,8 +603,10 @@
         error.insertAfter(".salrange");
             
          else
-       error.insertAfter(".formrow");
-    },
+       error.insertAfter(element);
+    
+   
+       },
        rules: {
            
      
