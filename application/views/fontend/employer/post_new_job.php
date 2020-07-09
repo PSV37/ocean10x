@@ -1,5 +1,4 @@
 <!---header-->
-
 <?php 
    $company_profile_id = $this->session->userdata('company_profile_id');
    
@@ -7,12 +6,10 @@
     
     // print_r($this->session->userdata());die;
    ?>
-   <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/calender.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/jquery-ui.css"  type="text/css" />
-
-
 <style>
    .required
    {
@@ -159,7 +156,7 @@
    border-radius: 4px;
    border: 1px solid lightgrey;
    display: inline-block;
-}
+   }
    span.options_beni {
    background: #18c5bd !important;
    display: inline-block;
@@ -167,132 +164,123 @@
    padding: 5px 12px !important;   
    font-size: 11px;
    border-radius:13px !important; }
-
    div#ui-datepicker-div {
-    position: absolute;
-    top: 333px;
-    left: 1017.75px;
-    z-index: 1;
-    /*display: block;*/
-}
-button#check-btn {
-    margin-left: 0px;
-    height: 34px;
-}
-.btn-default1 {
-    color: #fff;
-    background-color: #18c5bd;
-    border: none;
-    border-radius: 13px;
-    width: 75px;
-    height: 21px;
-}
-
-.select2-container .select2-selection--single{
-    height:34px !important;
-}
-/*.select2-container--default .select2-selection--single{
-         border: 1px solid #ccc !important; 
-     border-radius: 0px !important; 
-}*/
-input.select2-search__field {
-    display: inline-block;
-    border-radius: 0px;
-    margin-top: 0px;
-    color: black;
-}
-/*ul#select2-job_category-results {
-    margin-top: 27px;
-}*/
-a.ui-state-default.ui-state-highlight.ui-state-active {
-    background: #18c5bd;
-    color: black;
-}
-textarea#jd {
+   position: absolute;
+   top: 333px;
+   left: 1017.75px;
+   z-index: 1;
+   /*display: block;*/
+   }
+   button#check-btn {
+   margin-left: 0px;
+   height: 34px;
+   }
+   .btn-default1 {
+   color: #fff;
+   background-color: #18c5bd;
+   border: none;
+   border-radius: 13px;
+   width: 75px;
+   height: 21px;
+   }
+   .select2-container .select2-selection--single{
+   height:34px !important;
+   }
+   /*.select2-container--default .select2-selection--single{
+   border: 1px solid #ccc !important; 
+   border-radius: 0px !important; 
+   }*/
+   input.select2-search__field {
+   display: inline-block;
+   border-radius: 0px;
+   margin-top: 0px;
+   color: black;
+   }
+   /*ul#select2-job_category-results {
+   margin-top: 27px;
+   }*/
+   a.ui-state-default.ui-state-highlight.ui-state-active {
+   background: #18c5bd;
+   color: black;
+   }
+   textarea#jd {
    width:100%;
-    
    display:block;
    max-width:100%;
    line-height:1.5;
    padding:15px 15px 30px;
    border-radius:3px;
-  
    font:13px Tahoma, cursive;
    transition:box-shadow 0.5s ease;
-  
-    height:30%;
-}
-
-div#ui-datepicker-div {
-    margin-left: -22px;
-}
-
-a.ui-state-default.ui-state-active {
-    background: #70ece7;
-    color: black;
-}
-a.ui-state-default.ui-state-highlight {
-    background: #18c5bd;
-    color: black;
-}
- .ui-autocomplete {
-     max-height: 100px;
-     overflow-y: auto;
-     /* prevent horizontal scrollbar */
-     overflow-x: hidden;
- }
- /* IE 6 doesn't support max-height
-* we use height instead, but this forces the menu to always be this tall
-*/
- * html .ui-autocomplete {
-     height: 100px;
- }
- span.select2-results {
-    margin-top: 30px;
-}
-span.select2-selection.select2-selection--single {
-   
-    border-radius: 4px;
-}
-#edu_txt {
-    margin-left:  160px;
- 
-    margin-top: -30px;
-    background: none;
-    border: none;
-}
-
-div#other_skills {
-    margin-top: 10;
-}
-div#errorbox {
-    margin-top: 25px;
-   /* font-weight: bold;
-    color: red;*/
-}
-p#or {
-    /* margin-left: 141px; */
-    margin-top: 15px;
-    font-weight: bold;
-    /* text-align: center; */
-}
+   height:30%;
+   }
+   div#ui-datepicker-div {
+   margin-left: -22px;
+   }
+   a.ui-state-default.ui-state-active {
+   background: #70ece7;
+   color: black;
+   }
+   a.ui-state-default.ui-state-highlight {
+   background: #18c5bd;
+   color: black;
+   }
+   .ui-autocomplete {
+   max-height: 100px;
+   overflow-y: auto;
+   /* prevent horizontal scrollbar */
+   overflow-x: hidden;
+   }
+   /* IE 6 doesn't support max-height
+   * we use height instead, but this forces the menu to always be this tall
+   */
+   * html .ui-autocomplete {
+   height: 100px;
+   }
+   span.select2-results {
+   margin-top: 30px;
+   }
+   span.select2-selection.select2-selection--single {
+   border-radius: 4px;
+   }
+   #edu_txt {
+   margin-left:  160px;
+   margin-top: -30px;
+   background: none;
+   border: none;
+   }
+   div#other_skills {
+   margin-top: 10;
+   }
+   div#errorbox {
+   margin-top: 25px;
+    /*font-weight: bold;*/
+   color: red;
+   }
+   p#or {
+   /* margin-left: 141px; */
+   margin-top: 15px;
+   font-weight: bold;
+   /* text-align: center; */
+   }
+   .error {
+      color: red;
+      /*background-color: #acf;*/
+   }
 </style>
-
-    
-
 <!---header--->
 <!--form id="form_register"-->
 <div class="container-fluid main-d">
    <div class="container">
-    <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#">HTML</a></li>
-      <li><a href="#">CSS</a></li>
-      <li><a href="#">JavaScript</a></li>
-    </ul>
-  </div>
+      <div class="dropdown">
+         <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+         <span class="caret"></span></button>
+         <ul class="dropdown-menu">
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">JavaScript</a></li>
+         </ul>
+      </div>
       <div class="col-md-12">
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
          <form id="test" action="<?php echo base_url() ?>employer/job_post" method="post" enctype="multipart/form-data">
@@ -300,34 +288,28 @@ p#or {
                <input type="hidden" name="job_post_id" value="<?php if(!empty($job_info->job_post_id)){echo $job_info->job_post_id;} ?>">
                <div id="svg_wrap"></div>
                <!-- <section> -->
-                  <div class="col-md-3 col-sm-4" tabindex="0">
-                     <div class="formrow">
-                        <label class="control-label ">Job Title / Designation<span class="required"> * </span> </label>
-                        <input class="form-control allowalphanumeric" type="text"  name="job_title" placeholder="Enter Job Title" id="job_title" value="<?php if(!empty($this->session->userdata('title')) ){echo $this->session->userdata('title'); } elseif(!empty($job_info->job_title)){
-                           echo $job_info->job_title;} ?><?php echo set_value('job_title'); ?>" class="form-control" autocomplete="off" >
-                        <?php echo form_error('job_title'); ?>
-                     </div>
+               <div class="col-md-3 col-sm-4" tabindex="0">
+                  <div class="formrow">
+                     <label class="control-label ">Job Title / Designation<span class="required"> * </span> </label>
+                     <input class="form-control allowalphanumeric" type="text"  name="job_title" placeholder="Enter Job Title" id="job_title" value="<?php if(!empty($this->session->userdata('title')) ){echo $this->session->userdata('title'); } elseif(!empty($job_info->job_title)){
+                        echo $job_info->job_title;} ?><?php echo set_value('job_title'); ?>" class="form-control" autocomplete="off" >
+                     <?php echo form_error('job_title'); ?>
                   </div>
-                  <div class="col-md-3 col-sm-4" tabindex="1">
-                     <div class="formrow">
-                        <label class="control-label ">Job Locations<span class="required"> * </span> </label>
-                      
-                           <input type="text" name="city_id" class="allowalphanumeric form-control" id="tokenfield" style="display: inline-block;"  placeholder="Enter Location" onkeydown="check_key();"
+               </div>
+               <div class="col-md-3 col-sm-4" tabindex="1">
+                  <div class="formrow">
+                     <label class="control-label ">Job Locations<span class="required"> * </span> </label>
+                     <input type="text" name="city_id" class="allowalphanumeric form-control" id="tokenfield" style="display: inline-block;"  placeholder="Enter Location" onkeydown="check_key();"
                         value="<?php if(!empty($job_info->city_id) ){echo $job_info->city_id; } ?><?php echo set_value('city_id'); ?>"><?php echo form_error('city_id'); ?>
-
-                       
-                                     
-                     </div>
-                     <label for="tokenfield" generated="true" class="error"></label>
                   </div>
-                  <div class="col-md-3 col-sm-12" tabindex="2">
-                     <div class="formrow">
-
-                        <label class="control-label ">Expected Domain<span class="required"> * </span> </label>
-                        <select name="job_category" id="job_category" class="form-control select2 limiter-options" data-role="limiter" data-style="btn-default" data-live-search="true" >
-                           <!-- <option value="">Select Expected Domain</option> -->
-
-                           <?php
+                  <label for="tokenfield" generated="true" class="error"></label>
+               </div>
+               <div class="col-md-3 col-sm-12" tabindex="2">
+                  <div class="formrow">
+                     <label class="control-label ">Expected Domain<span class="required"> * </span> </label>
+                     <select name="job_category" id="job_category" class="form-control select2 limiter-options" data-role="limiter" data-style="btn-default" data-live-search="true" >
+                        <!-- <option value="">Select Expected Domain</option> -->
+                        <?php
                            $value =  set_value('job_category');
                            if (!empty($value)) {
                              echo $this->job_category_model->selected($value);
@@ -337,66 +319,61 @@ p#or {
                            } else if(!empty($job_info->job_category)) {
                               echo $this->job_category_model->selected($job_info->job_category);
                               }
-
+                           
                                else {
                               echo $this->job_category_model->selected();
                               }
                               ?>
-                        </select>
-                        <?php echo form_error('job_category'); ?>               
-                     </div>
+                     </select>
+                     <?php echo form_error('job_category'); ?>               
                   </div>
-                  <div class="col-sm-3 p-m-2" tabindex="3">
-                     <div class="formrow">
-                        <label  class="control-label ">Job Role<span class="required"> *</span></label>
-                        <select name="job_role" id="job_role" class="form-control col-sm-5 select2" onchange="getSkillsdetails(this.value)" >
-                           <!-- <option>select job Role</option> -->
-
-                           <?php 
-                            $jrole_value =  set_value('job_role');
-
-                           if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
-                              ?> 
-                           <option value="<?php echo $role_value['id']; ?>"<?php 
+               </div>
+               <div class="col-sm-3 p-m-2" tabindex="3">
+                  <div class="formrow">
+                     <label  class="control-label ">Job Role<span class="required"> *</span></label>
+                     <select name="job_role" id="job_role" class="form-control col-sm-5 select2" onchange="getSkillsdetails(this.value)" >
+                        <!-- <option>select job Role</option> -->
+                        <?php 
+                           $jrole_value =  set_value('job_role');
                            
+                           if(!empty($job_role_data)) foreach ($job_role_data as $role_value) {
+                             ?> 
+                        <option value="<?php echo $role_value['id']; ?>"<?php 
                            if (!empty($jrole_value) && $jrole_value == $role_value['id'] ) {
                              echo 'selected';
                            }
                            elseif(!empty($job_info)) if($job_info->job_role==$role_value['id']) echo 'selected'; ?>><?php echo $role_value['job_role_title']; ?></option>
-                           <?php } ?><?php echo form_error('job_role'); ?>
-                        </select>
-                     </div>
+                        <?php } ?><?php echo form_error('job_role'); ?>
+                     </select>
                   </div>
-                  <div class="col-md-3 col-sm-12" id="job_education" tabindex="4">
-                     <div class="formrow">
-                        <label class="control-label">Education Level<span class="required"> * </span></label>
-                        <select name="job_edu" id="job_edu" class="form-control select2" data-style="btn-default" data-live-search="true" onchange="getEducationSpecial(this.value)" >
-                           <!-- <option value="">Select Level </option> -->
-                           
-                           <?php  $edu_value =  set_value('job_edu'); foreach($education_level as $education){?>
-                           <option value="<?php echo $education['education_level_id']; ?>"<?php if($edu_value==$education['education_level_id']){ echo "selected"; }elseif($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
-                           
-                           <?php } ?>
-                           <option value="other">Other </option>
-                           <option value="other">None </option>
-                        </select>
-                        
-                        <?php echo form_error('job_edu'); ?>                
-                     </div>
+               </div>
+               <div class="col-md-3 col-sm-12" id="job_education" tabindex="4">
+                  <div class="formrow">
+                     <label class="control-label">Education Level<span class="required"> * </span></label>
+                     <select name="job_edu" id="job_edu" class="form-control select2" data-style="btn-default" data-live-search="true" onchange="getEducationSpecial(this.value)" >
+                        <!-- <option value="">Select Level </option> -->
+                        <?php  $edu_value =  set_value('job_edu'); foreach($education_level as $education){?>
+                        <option value="<?php echo $education['education_level_id']; ?>"<?php if($edu_value==$education['education_level_id']){ echo "selected"; }elseif($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
+                        <?php } ?>
+                        <option value="other">Other </option>
+                        <option value="other">None </option>
+                     </select>
+                     <?php echo form_error('job_edu'); ?>                
                   </div>
-                   <div class="col-md-3 col-sm-12" id="training_title1" tabindex="5">
-                     <div class="formrow">
-                        <label class="control-label">Education Level<span class="required"> * </span></label>
-                          <input type="text" name="other_edu" class="form-control" id="other_edu" placeholder="ex.B.E"
-                           value=""> <button type="button" id="edu_txt" onclick="education_list();"><i class="fa fa-undo" aria-hidden="true"></i></button>
-                         </div>
-                      </div>
-                  <div class="col-md-3 col-sm-12" tabindex="6">
-                     <div class="formrow">
-                        <label class="control-label ">Engagement Model<span class="required"> * </span> </label>
-                        <select name="job_nature" class="form-control select2" data-style="btn-default" data-live-search="true" >
-                           <!-- <option value="">Select Engagement Model</option> -->
-                           <?php 
+               </div>
+               <div class="col-md-3 col-sm-12" id="training_title1" tabindex="5">
+                  <div class="formrow">
+                     <label class="control-label">Education Level<span class="required"> * </span></label>
+                     <input type="text" name="other_edu" class="form-control" id="other_edu" placeholder="ex.B.E"
+                        value=""> <button type="button" id="edu_txt" onclick="education_list();"><i class="fa fa-undo" aria-hidden="true"></i></button>
+                  </div>
+               </div>
+               <div class="col-md-3 col-sm-12" tabindex="6">
+                  <div class="formrow">
+                     <label class="control-label ">Engagement Model<span class="required"> * </span> </label>
+                     <select name="job_nature" class="form-control select2" data-style="btn-default" data-live-search="true" >
+                        <!-- <option value="">Select Engagement Model</option> -->
+                        <?php 
                            $job_nature_value =  set_value('job_nature');
                            if (!empty($job_nature_value)) {
                              echo $this->job_category_model->selected($job_nature_value); } else  if(!empty($job_info->job_nature)) {
@@ -405,84 +382,79 @@ p#or {
                               echo $this->job_nature_model->selected();
                               }
                               ?>
-                        </select>
-                        <?php echo form_error('job_nature'); ?>               
+                     </select>
+                     <?php echo form_error('job_nature'); ?>               
+                  </div>
+               </div>
+               <div class="col-md-3 col-sm-12" tabindex="7">
+                  <div class="formrow">
+                     <label class="control-label ">Expected Experience (in years)<span class="required"> *</span> </label>
+                     <?php $exp=explode('-', $job_info->experience);  ?>
+                     <div class="col-md-3 formrow" style="width:80px;margin-left:-14px;">
+                        <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from"  value="<?php echo $exp['0']; ?><?php echo set_value('exp_from'); ?>" > <?php echo form_error('exp_to'); ?>
+                     </div>
+                     <div class="col-md-3 formrow" style="width:80px;margin-left:-19px;">
+                        <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to"  value="<?php echo $exp['1'];  ?><?php echo set_value('exp_to'); ?>" />
+                        <?php echo form_error('exp_to'); ?>
                      </div>
                   </div>
-                  <div class="col-md-3 col-sm-12" tabindex="7">
-                     <div class="formrow">
-                        <label class="control-label ">Expected Experience (in years)<span class="required"> *</span> </label>
-                       <?php $exp=explode('-', $job_info->experience);  ?>
-
-                        <div class="col-md-3 formrow" style="width:80px;margin-left:-14px;">
-                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_from"  value="<?php echo $exp['0']; ?><?php echo set_value('exp_from'); ?>" > <?php echo form_error('exp_to'); ?>
-                        </div>
-                        <div class="col-md-3 formrow" style="width:80px;margin-left:-19px;">
-                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="exp_to"  value="<?php echo $exp['1'];  ?><?php echo set_value('exp_to'); ?>" />
-                           <?php echo form_error('exp_to'); ?>
-                        </div>
+               </div>
+               <div class="col-md-3 col-sm-12" tabindex="8">
+                  <div class="formrow">
+                     <label class="control-label ">Number of Positions<span class="required"> *</span> </label>
+                     <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2" name="no_jobs" placeholder="ex.02"  value="<?php if(!empty($this->session->userdata('no_jobs')) ){echo $this->session->userdata('no_jobs'); }elseif(!empty($job_info->no_jobs)){ echo $job_info->no_jobs; } ?><?php echo set_value('no_jobs'); ?>" autocomplete="off">  <?php echo form_error('no_jobs'); ?>                
+                  </div>
+               </div>
+               <div class="col-md-3 col-sm-12" id="spectial" tabindex="9">
+                  <div class="formrow">
+                     <label class="control-label ">Certifications Preferred <span class="required"> * </span></label>
+                     <select name="preffered_certificates" id="preffered_certificates" class="form-control select2" data-style="btn-default" data-live-search="true">
+                        <?php $cret_value = set_value('preffered_certificates'); foreach($certificates as $certificate){?>
+                        <option value="<?php echo $certificate['certificate_id']; ?>"<?php if($cret_value==$certificate['certificate_id']){ echo "selected"; }elseif($job_info->job_edu==$certificate['certificate_id']){ echo "selected"; }?>><?php echo $certificate['certificate_name']; ?></option>
+                        <?php } ?>
+                     </select>
+                  </div>
+               </div>
+               <div class="col-md-3 col-sm-12" tabindex="10">
+                  <div class="formrow">
+                     <label class="control-label ">Ocean Test Required <span class="required">*</span></label>
+                     <select name="job_test_requirment" id="job_test_requirment" class="form-control select2" data-style="btn-default" data-live-search="true" >
+                        <option value="Yes"<?php $test_value= set_value('job_test_requirment'); if($job_info->is_test_required=="Yes" || $test_value == "Yes"){ echo "selected"; }?>>Yes </option>
+                        <option value="No"<?php if($job_info->is_test_required=="No" || $test_value == 'No'){ echo "selected"; }?>>No </option>
+                     </select>
+                     <?php echo form_error('job_test_requirment'); ?>             
+                  </div>
+               </div>
+               <div class="col-md-3 col-sm-12" tabindex="11">
+                  <div class="formrow">
+                     <label class="control-label " style="margin-left:-162px;">Salary Range (INR)<span class="required"> *</span> </label>
+                     <div class="col-md-3 formrow" style="width:100px;margin-left:-14px;margin-top:37px;">
+                        <?php $sal=explode('-', $job_info->salary_range);  ?>
+                        <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_from"  value="<?php echo $sal[0]; ?><?php echo set_value('salrange_from'); ?>">
+                     </div>
+                     <div class="col-md-3 formrow" style="width:100px;margin-left:-19px;margin-top: 37px;">
+                        <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_to"  value="<?php echo $sal[1]; ?><?php echo set_value('salrange_to'); ?>" />
                      </div>
                   </div>
-                  <div class="col-md-3 col-sm-12" tabindex="8">
-                     <div class="formrow">
-                        <label class="control-label ">Number of Positions<span class="required"> *</span> </label>
-                        <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2" name="no_jobs" placeholder="ex.02"  value="<?php if(!empty($this->session->userdata('no_jobs')) ){echo $this->session->userdata('no_jobs'); }elseif(!empty($job_info->no_jobs)){ echo $job_info->no_jobs; } ?><?php echo set_value('no_jobs'); ?>" autocomplete="off">  <?php echo form_error('no_jobs'); ?>                
-                     </div>
-                  </div>
-                  <div class="col-md-3 col-sm-12" id="spectial" tabindex="9">
-                     <div class="formrow">
-                        <label class="control-label ">Certifications Preferred <span class="required"> * </span></label>
-                        <select name="preffered_certificates" id="preffered_certificates" class="form-control select2" data-style="btn-default" data-live-search="true">
-                           <?php $cret_value = set_value('preffered_certificates'); foreach($certificates as $certificate){?>
-                           <option value="<?php echo $certificate['certificate_id']; ?>"<?php if($cret_value==$certificate['certificate_id']){ echo "selected"; }elseif($job_info->job_edu==$certificate['certificate_id']){ echo "selected"; }?>><?php echo $certificate['certificate_name']; ?></option>
-                           
-                           <?php } ?>
-                        </select>
-                     </div>
-                  </div>
-                  <div class="col-md-3 col-sm-12" tabindex="10">
-                     <div class="formrow">
-                        <label class="control-label ">Ocean Test Required <span class="required">*</span></label>
-                        <select name="job_test_requirment" id="job_test_requirment" class="form-control select2" data-style="btn-default" data-live-search="true" >
-                           <option value="Yes"<?php $test_value= set_value('job_test_requirment'); if($job_info->is_test_required=="Yes" || $test_value == "Yes"){ echo "selected"; }?>>Yes </option>
-                           <option value="No"<?php if($job_info->is_test_required=="No" || $test_value == 'No'){ echo "selected"; }?>>No </option>
-                        </select>
-                        <?php echo form_error('job_test_requirment'); ?>             
-                     </div>
-                  </div>
-                  <div class="col-md-3 col-sm-12" tabindex="11">
-                     <div class="formrow">
-                        <label class="control-label " style="margin-left:-162px;">Salary Range (INR)<span class="required"> *</span> </label>
-                        <div class="col-md-3 formrow" style="width:100px;margin-left:-14px;margin-top:37px;">
-                           <?php $sal=explode('-', $job_info->salary_range);  ?>
-
-                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_from"  value="<?php echo $sal[0]; ?><?php echo set_value('salrange_from'); ?>">
-                        </div>
-                        <div class="col-md-3 formrow" style="width:100px;margin-left:-19px;margin-top: 37px;">
-                           <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_to"  value="<?php echo $sal[1]; ?><?php echo set_value('salrange_to'); ?>" />
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-3 col-sm-12" tabindex="12">
-                     <div class="formrow">
-                        <label class="control-label">Deadline<span class="required"> * </span> </label>
-                       <?php
-                          $old_date = date('Y-m-d');
-                          $next_due_date = date('Y-m-d', strtotime($old_date. ' +30 days'));
-                          
+               </div>
+               <div class="col-md-3 col-sm-12" tabindex="12">
+                  <div class="formrow">
+                     <label class="control-label">Deadline<span class="required"> * </span> </label>
+                     <?php
+                        $old_date = date('Y-m-d');
+                        $next_due_date = date('Y-m-d', strtotime($old_date. ' +30 days'));
+                        
                         ?>
-                        <!-- <input type="date" name="job_deadline" class="form-control datepicker" id="job_deadline_day" min="<?php echo date('Y-m-d'); ?>" required value="<?php echo $next_due_date; ?>" autocomplete="off">  -->    
-                        <input type="text" id="my_date_picker" name="job_deadline" style="display: inline-block;" class="form-control datepicker" id="job_deadline_day"  value="<?php $jb_deadline=set_value('job_deadline'); if(!empty($jb_deadline)){ echo $jb_deadline;} else{ echo $next_due_date; } ?>" autocomplete="off">     <?php echo form_error('job_deadline'); ?>
-                     </div>
+                     <!-- <input type="date" name="job_deadline" class="form-control datepicker" id="job_deadline_day" min="<?php echo date('Y-m-d'); ?>" required value="<?php echo $next_due_date; ?>" autocomplete="off">  -->    
+                     <input type="text" id="my_date_picker" name="job_deadline" style="display: inline-block;" class="form-control datepicker" id="job_deadline_day"  value="<?php $jb_deadline=set_value('job_deadline'); if(!empty($jb_deadline)){ echo $jb_deadline;} else{ echo $next_due_date; } ?>" autocomplete="off">     <?php echo form_error('job_deadline'); ?>
                   </div>
-                  
-                  <div class="col-sm-12 p-m-2" tabindex="13">
-                     <div class="formrow">
-                        <!-- donain is nothing but industry -->
-                        <label class="control-label ">Skill Set<span class="required"> * </span> </label>
-                        <div id="skills_result">Please Select Job Role.</div>
-
-                        <?php  
+               </div>
+               <div class="col-sm-12 p-m-2" tabindex="13">
+                  <div class="formrow">
+                     <!-- donain is nothing but industry -->
+                     <label class="control-label ">Skill Set<span class="required"> * </span> </label>
+                     <div id="skills_result">Please Select Job Role.</div>
+                     <?php  
                         $this->session->unset_userdata('skills');
                         if (!empty($job_info->skills_required)) {
                           
@@ -494,111 +466,89 @@ p#or {
                            $data['skills'] = implode(',', set_value('skill_set[]')) ;
                         }
                          $this->session->set_userdata($data); ?>
-
-
-                     </div>
-                   <div id="skl_btn">
-                      <button type="button"  value="other_skill" onclick="check_other(this.value);"  style="font-size:28px;color:#18c5bd;border: none; background: none;">  <i class="fa fa-plus-circle"  ></i></button>
-                   </div>
-                       
-                           
-                     <div id="other_skills"><input type="text"  name="otr_skl" id="other_skill"  style="display: inline-block; width: 30%" ><button type="button" id="check-btn" onclick="save_skill();"><i class="fa fa-check"></i></button></div>
-                <?php echo form_error('skill_set[]'); ?>                                  
                   </div>
-             
-                  <div class="col-md-12 col-sm-12" tabindex="14">
-                     <div class="formrow" >
-                        <label class="control-label">Other Benefits <span class="required"> * </span></label>
-                     </div>
+                  <div id="skl_btn">
+                     <button type="button"  value="other_skill" onclick="check_other(this.value);"  style="font-size:28px;color:#18c5bd;border: none; background: none;">  <i class="fa fa-plus-circle"  ></i></button>
                   </div>
-                  
-                  <div class="col-md-12 col-sm-12" tabindex="15">
-                     <div class="formrow" id="benifit">
-
+                  <div id="other_skills"><input type="text"  name="otr_skl" id="other_skill"  style="display: inline-block; width: 30%" ><button type="button" id="check-btn" onclick="save_skill();"><i class="fa fa-check"></i></button></div>
+                  <?php echo form_error('skill_set[]'); ?>                                  
+               </div>
+               <div class="col-md-12 col-sm-12" tabindex="14">
+                  <div class="formrow" >
+                     <label class="control-label">Other Benefits <span class="required"> * </span></label>
+                  </div>
+               </div>
+               <div class="col-md-12 col-sm-12" tabindex="15">
+                  <div class="formrow" id="benifit">
                      <?php 
-                     // print_r(set_value('benefits'));
-                     if((isset($job_info) && !empty($job_info)) || ( !empty(set_value('benefits[]')))  )
-                     { 
-                      if (!empty($job_info)) {
-                         $benefits_session=explode(',', $job_info->benefits); 
-                      }
-                      else
-                      {
-                          $benefits_session=set_value('benefits[]'); 
-                      }
-                   
-                       foreach($benefits_session as $row){ 
-                          
-                        ?>
-                        <label>
-                        <input type="checkbox" value="<?php echo $row; ?>"  class="btn-default1" id="benifit[]" checked
-                        name="benefits[]">
-                        <span><?php echo $row; ?></span>
-                        </label>
-
-                   <?php   } 
-
-                   foreach($benefits as $benefit){ 
-                    if (!in_array($benefit['benifit'], $benefits_session)) {
-                          
-                        ?>
-                        <label>
-                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" id="benifit[]" 
-                        name="benefits[]">
-                        <span><?php echo $benefit['benifit']; ?></span>
-                        </label>
-
-
-               <?  } } }
-             //  
-                     else{
-                      foreach($benefits as $benefit){?>
-                        <label>
-                        <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" id="benifit[]" checked="" name="benefits[]">
-                        <span><?php echo $benefit['benifit']; ?></span>
-                        </label>
-                        <?php } } ?>
-
-                          
-
-                        </div>
-                        <button type="button"  value="other" onclick="check_other(this.value);"  style="font-size:28px;color:#18c5bd;border: none; background: none;">  <i class="fa fa-plus-circle"  ></i></button>
-                     
-                        <div id="other_terxtbx"><input type="text"  name="othe_benf" id="other_benifit"  style="display: inline-block; width: 30%" ><button type="button" id="check-btn" onclick="save_benifit();"><i class="fa fa-check"></i></button></div>
-                  </div>
-                <?php echo form_error('benefits[]'); ?>                                  
-                  <!-- </div>
-                     </div>  -->
-                 
-                  <div class="col-md-6 col-sm-12" tabindex="16" >
-                     <div id="errorbox"></div>
-                     <div class=" formrow">
-                        <label class="control-label">Upload JD <span class="required"> * </span></label>  <?php if (!empty($job_info->jd_file)) { ?>  <a id="jd_file"   style="margin-left: 10px;" href="<?php echo base_url() ?>upload/job_description/<?php echo $job_info->jd_file; ?>" download name="jd_file"><?php echo $job_info->jd_file; ?></a><span style="margin-left: 15px" onclick="cancel_jd();" id="cross_btn"  ><i class="fa fa-times" aria-hidden="true"></i></span> <?php   } ?> 
-
-                        <input type="file"  name="job_description" id="job_description" class="form-control my_checkbox_group"  > 
-
-                        <input type="hidden" name="jd_session" id="jd_session" class="my_checkbox_group" value="<?php $jd_db_file = $job_info->jd_file; echo $jd_db_file; ?>">
-                     </div>
-                  </div>
-
-                  <?php if (!empty($this->session->userdata('jd_file')) ) { ?>
-                      <div class="col-md-6 col-sm-12" tabindex="16" style=" margin-top: 45px;" >
-                     <div class=" formrow">
+                        // print_r(set_value('benefits'));
+                        if((isset($job_info) && !empty($job_info)) || ( !empty(set_value('benefits[]')))  )
+                        { 
+                         if (!empty($job_info)) {
+                            $benefits_session=explode(',', $job_info->benefits); 
+                         }
+                         else
+                         {
+                             $benefits_session=set_value('benefits[]'); 
+                         }
                         
-                       </div>
-                     </div>
-                     <?php   } ?> 
-
-                                      
-                  <div class="col-md-12 col-sm-4" tabindex="17">
-                     <p id="or">OR</p>     
-                     <div class="formrow">
-                        <label class="control-label">Job Description <span class="required"> * </span></label>
-                        <textarea name="job_desc" id="jd" class="form-control my_checkbox_group" placeholder="Job Description"><?php if (!empty($job_info->job_desc) ) {
-                          echo $job_info->job_desc;
-                        } elseif(!empty($job_info)){ echo $job_info->job_desc; }  ?><?php echo set_value('job_desc'); ?></textarea><?php echo form_error('job_desc'); ?>                                  
-                     </div>
+                          foreach($benefits_session as $row){ 
+                             
+                           ?>
+                     <label>
+                     <input type="checkbox" value="<?php echo $row; ?>"  class="btn-default1" id="benifit[]" checked
+                        name="benefits[]">
+                     <span><?php echo $row; ?></span>
+                     </label>
+                     <?php   } 
+                        foreach($benefits as $benefit){ 
+                         if (!in_array($benefit['benifit'], $benefits_session)) {
+                               
+                             ?>
+                     <label>
+                     <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" id="benifit[]" 
+                        name="benefits[]">
+                     <span><?php echo $benefit['benifit']; ?></span>
+                     </label>
+                     <?  } } }
+                        //  
+                                else{
+                                 foreach($benefits as $benefit){?>
+                     <label>
+                     <input type="checkbox" value="<?php echo $benefit['benifit']; ?>" class="btn-default1" id="benifit[]" checked="" name="benefits[]">
+                     <span><?php echo $benefit['benifit']; ?></span>
+                     </label>
+                     <?php } } ?>
                   </div>
+                  <button type="button"  value="other" onclick="check_other(this.value);"  style="font-size:28px;color:#18c5bd;border: none; background: none;">  <i class="fa fa-plus-circle"  ></i></button>
+                  <div id="other_terxtbx"><input type="text"  name="othe_benf" id="other_benifit"  style="display: inline-block; width: 30%" ><button type="button" id="check-btn" onclick="save_benifit();"><i class="fa fa-check"></i></button></div>
+               </div>
+               <?php echo form_error('benefits[]'); ?>                                  
+               <!-- </div>
+                  </div>  -->
+               <div class="col-md-6 col-sm-12" tabindex="16" >
+                  <div id="errorbox"></div>
+                  <div class=" formrow">
+                     <label class="control-label">Upload JD <span class="required"> * </span></label>  <?php if (!empty($job_info->jd_file)) { ?>  <a id="jd_file"   style="margin-left: 10px;" href="<?php echo base_url() ?>upload/job_description/<?php echo $job_info->jd_file; ?>" download name="jd_file"><?php echo $job_info->jd_file; ?></a><span style="margin-left: 15px" onclick="cancel_jd();" id="cross_btn"  ><i class="fa fa-times" aria-hidden="true"></i></span> <?php   } ?> 
+                     <input type="file"  name="job_description" id="job_description" class="form-control my_checkbox_group"  > 
+                     <input type="hidden" name="jd_session" id="jd_session" class="my_checkbox_group" value="<?php $jd_db_file = $job_info->jd_file; echo $jd_db_file; ?>">
+                  </div>
+               </div>
+               <?php if (!empty($this->session->userdata('jd_file')) ) { ?>
+               <div class="col-md-6 col-sm-12" tabindex="16" style=" margin-top: 45px;" >
+                  <div class=" formrow">
+                  </div>
+               </div>
+               <?php   } ?> 
+               <div class="col-md-12 col-sm-4" tabindex="17">
+                  <p id="or">OR</p>
+                  <div class="formrow">
+                     <label class="control-label">Job Description <span class="required"> * </span></label>
+                     <textarea name="job_desc" id="jd" class="form-control my_checkbox_group" placeholder="Job Description"><?php if (!empty($job_info->job_desc) ) {
+                        echo $job_info->job_desc;
+                        } elseif(!empty($job_info)){ echo $job_info->job_desc; }  ?><?php echo set_value('job_desc'); ?></textarea><?php echo form_error('job_desc'); ?>                                  
+                  </div>
+               </div>
                <!-- </section> -->
                <div class="btn-bottom_3">
                   <!-- <div class="button" id="prev">&larr; Previous</div> -->
@@ -613,112 +563,124 @@ p#or {
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/additional-methods.js"></script>
-
-
- <script> 
-    $(document).ready(function() { 
-    
-      $('#other_terxtbx').hide();
-      $('#skl_btn').hide();
-      $('#other_skills').hide();
-       $('#training_title1').hide();
-       var id=document.getElementById('job_role').value;
-       // alert(id);
-       getSkillsdetails(id);
-    
-    $("#tokenfield").keypress(function(event){
-          var inputValue = event.charCode;
-          alert(inputValue);
-          if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
-              event.preventDefault();
-          }
-      });
-
-      $(function() { 
-        $("#my_date_picker").datepicker(); 
-      }); 
-
-
-      $("#test").validate ({
-       
-          errorPlacement: function(error, element) {
-              if (element.attr("name") == "city_id" )
-                  error.insertAfter(".tokenfield ");
-             
-          else
-        error.insertAfter(element);
-     
-
-        },
-        rules: {
+<script> 
+   $(document).ready(function() { 
+   
+     $('#other_terxtbx').hide();
+     $('#skl_btn').hide();
+     $('#other_skills').hide();
+      $('#training_title1').hide();
+      var id=document.getElementById('job_role').value;
+      // alert(id);
+      getSkillsdetails(id);
+   
+   $("#tokenfield").keypress(function(event){
+         var inputValue = event.charCode;
+         alert(inputValue);
+         if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
+             event.preventDefault();
+         }
+     });
+   
+     $(function() { 
+       $("#my_date_picker").datepicker(); 
+       format: 'yyyy-mm-dd'
+     }); 
+   
+   
+     $("#test").validate ({
+      
+         errorPlacement: function(error, element) {
+             if (element.attr("name") == "city_id" )
+                 error.insertAfter(".tokenfield ");
             
-        
-                    
-  
-    'benefits[]': { required: true, minlength: 1 },
-      
-      
-
-
-   
-     
-
-    'city_id':{
-     
-           required: true,
-           cityid_regex: true
-          },
-
-    'job_title':{
-     
-            required: true,
-      },
-     
+         else
+       error.insertAfter(element);
     
-     'exp_from': {
-                   
-     // minlength:2,
-           
-    // maxlength:10,
    
-     required: true
+       },
+       rules: {
+           
+       //  <?php 
+      //  if (empty($jd_file_val)) { ?>
+       
+   //      'job_description': {
+   //           required: "#job_desc:blank",
+               
+   //     },
+   //      'job_desc': {
+   //          required: "#job_description:blank",
+              
+   //        },
+   
+   // <?php } ?>
+                   
+   
+   'benefits[]': { required: true, minlength: 1 },
+     
+     
+   
+   
+   
+    
+   
+   'city_id':{
+    
+          required: true,
+          cityid_regex: true
+         },
+   
+   'job_title':{
+    
+           required: true,
+     },
+    
+   
+    'exp_from': {
+                  
+    // minlength:2,
+          
+   // maxlength:10,
+   
+    required: true
    },
    
    'exp_to': {
-                   
-     minlength:1,
-           
-    // maxlength:10,
+                  
+    minlength:1,
+          
+   // maxlength:10,
    
-     required: true
+    required: true
    },
    
    
    'no_jobs': {
-                   
-     minlength:1,
-           
-    // maxlength:10,
+                  
+    minlength:1,
+          
+   // maxlength:10,
    
-     required: true
+    required: true
    },
    
+
    'salrange_from': {
-                   
-     //minlength:1,
-           
-    // maxlength:10,
-     //salrangefrom_regex: true,
-     required: true
+                  
+    //minlength:1,
+          
+   // maxlength:10,
+    //salrangefrom_regex: true,
+    required: true
    },
    
    'salrange_to': {
-                   
-     //minlength:1,
-    // salrangeto_regex: true,    
-    // maxlength:10,
+                  
+    //minlength:1,
+   // salrangeto_regex: true,    
+   // maxlength:10,
    
-     required: true
+    required: true
    },
    
    
@@ -746,8 +708,8 @@ p#or {
    required: true,
    
    },
-          },
-          messages:{
+         },
+         messages:{
    
    'job_title':{
    
@@ -773,78 +735,78 @@ p#or {
    
    'exp_from':{
    
-     required: "This field is mandatory!",
+    required: "This field is mandatory!",
    
-     matches: "Didn't match!", 
-           
-     minlength: "Please Enter 1 digit number!",
-           
-     maxlength: "Maximum length 10 digits!"
+    matches: "Didn't match!", 
+          
+    minlength: "Please Enter 1 digit number!",
+          
+    maxlength: "Maximum length 10 digits!"
    },
    
    'exp_to':{
    
-     required: "This field is mandatory!",
+    required: "This field is mandatory!",
    
-     matches: "Didn't match!", 
-           
-     minlength: "Please Enter 1 digit number!",
-           
-     maxlength: "Maximum length 10 digits!"
+    matches: "Didn't match!", 
+          
+    minlength: "Please Enter 1 digit number!",
+          
+    maxlength: "Maximum length 10 digits!"
    },
    
    'no_jobs':{
    
-     required: "This field is mandatory!",
+    required: "This field is mandatory!",
    
-     matches: "Didn't match!", 
-           
-     minlength: "Please Enter 1 digit number!",
-           
-     maxlength: "Maximum length 10 digits!"
+    matches: "Didn't match!", 
+          
+    minlength: "Please Enter 1 digit number!",
+          
+    maxlength: "Maximum length 10 digits!"
    },
    
    
    'salrange_from':{
    
-     required: "This field is mandatory!",
+    required: "This field is mandatory!",
    
-     matches: "Didn't match!", 
-           
-     minlength: "Please Enter 1 digit number!",
-           
-     maxlength: "Maximum length 10 digits!"
+    matches: "Didn't match!", 
+          
+    minlength: "Please Enter 1 digit number!",
+          
+    maxlength: "Maximum length 10 digits!"
    },
    
    'salrange_to':{
    
-     required: "This field is mandatory!",
+    required: "This field is mandatory!",
    
-     matches: "Didn't match!", 
-           
-     minlength: "Please Enter 1 digit number!",
-           
-     maxlength: "Maximum length 10 digits!"
+    matches: "Didn't match!", 
+          
+    minlength: "Please Enter 1 digit number!",
+          
+    maxlength: "Maximum length 10 digits!"
    },
-
+   
    'benefits[]':{
    
-     required: "This field is mandatory!",
+    required: "This field is mandatory!",
    
-     matches: "Didn't match!", 
-           
-     minlength: "Please select atleast one benifit!",
-           
-     maxlength: "Maximum length 10 digits!"
+    matches: "Didn't match!", 
+          
+    minlength: "Please select atleast one benifit!",
+          
+    maxlength: "Maximum length 10 digits!"
    },
    
    
    
    }
-    }) ;
-    });
-  </script> 
-  <script >
+   }) ;
+   });
+</script> 
+<script >
    $.validator.addMethod("jobtitle_regex", function(value, element) {
    
    return this.optional(element) || /^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$/i.test(value);
@@ -925,130 +887,120 @@ p#or {
      });
    
 </script>
-   
 <script>
-function education_list()
-{
-   var x1 = document.getElementById("training_title1");
-    var x = document.getElementById("job_education");
-    
-      $('#job_education').show();
-      $('#training_title1').hide();
-
-}
-function cancel_jd()
-{
-  // alert('jd');
-  $('#cross_btn').hide();
-  $('#jd_file').hide();
-  $('#jd_session').val("");
-  <?php $jd_db_file = ""; ?>
-}
+   function education_list()
+   {
+      var x1 = document.getElementById("training_title1");
+       var x = document.getElementById("job_education");
+       
+         $('#job_education').show();
+         $('#training_title1').hide();
+   
+   }
+   function cancel_jd()
+   {
+     // alert('jd');
+     $('#cross_btn').hide();
+     $('#jd_file').hide();
+     $('#jd_session').val("");
+     <?php $jd_db_file = ""; ?>
+   }
 </script>
 <script>
-    $('.select2').select2();
+   $('.select2').select2();
 </script>
 <script src="<?php echo base_url(); ?>asset/src/jquery.tokeninput.js"></script>
 <script src="<?php echo base_url() ?>asset/js/jquery-ui.js"></script>
 <script src="<?php echo base_url() ?>asset/tokenjs/bootstrap-tokenfield.js"></script>
 <script src="<?php echo base_url() ?>asset/tokenjs/typeahead.bundle.min.js"></script>
 <script src="<?php echo base_url() ?>asset/js/search.js"></script>
-
 <script>
-
-
-
-    $('#tokenfield').tokenfield({
-      autocomplete: {
-        source: "<?php echo base_url('Employer/search_city'); ?>",
-        delay: 100,
-        minLength: 2
-      },
-
-      showAutocompleteOnFocus: true,
-
-    });
-    // to avoid duplications
- $('#tokenfield').on('tokenfield:createtoken', function (event) {
-      var existingTokens = $(this).tokenfield('getTokens');
-
-      $.each(existingTokens, function(index, token) {
-        
-        if (token.value.toLowerCase() === event.attrs.value.toLowerCase())
-              event.preventDefault();
-
-      });
-  });
-
- 
-$("#job_title").autocomplete({
-              
-              source: "<?php echo base_url();?>Employer/search_title",
-              minLength: 2
-             
-            });
-
-$("#other_skill").autocomplete({
-              
-              source: "<?php echo base_url();?>Employer/search_skill",
-              minLength: 2
-             
-            });
-
+   $('#tokenfield').tokenfield({
+     autocomplete: {
+       source: "<?php echo base_url('Employer/search_city'); ?>",
+       delay: 100,
+       minLength: 2
+     },
    
-
-        function save_benifit()
-        {
-         var othr_benifit = document.getElementById('other_benifit').value;
-         $('#benifit').append('<label><input type="checkbox" value="'+othr_benifit+'" class="btn-default1" checked="" name="benefits[]"><span>'+othr_benifit+'</span></label>');
-         document.getElementById('other_benifit').value = '';
-         // alert(othr_benifit);
-
-        }
-
-         function save_skill()
-        {
-         var othr_skill = document.getElementById('other_skill').value;
-         $('#skills_result').append('<div  id="myfields" class="myfields" ><ul class="rating-comments" > <label> <input type="checkbox" name="skill_set[]"  value=' +othr_skill+'  class="btn-default1" checked> <span>'+othr_skill+'</span> </label> </ul> </div>');
-
-         document.getElementById('other_skill').value = '';
-         // alert(othr_benifit);
-
-        }
-      
-
-      
-
-    </script>
-
- 
-<script>
-  function check_other(value)
-{
-   var x1 = document.getElementById("other_terxtbx");
-    // var x = document.getElementById("training_title");
-    if (value=='other') 
-  {
-         $('#other_terxtbx').show();
-}
-else if(value == 'other_skill' )
-{
-   $('#other_skills').show();
-}
-  else
-  {
-      $('#other_terxtbx').hide();
-      $('#other_skills').hide();
-
-    x1.value = value;
-  }
-    
-}
+     showAutocompleteOnFocus: true,
+   
+   });
+   // to avoid duplications
+   $('#tokenfield').on('tokenfield:createtoken', function (event) {
+     var existingTokens = $(this).tokenfield('getTokens');
+   
+     $.each(existingTokens, function(index, token) {
+       
+       if (token.value.toLowerCase() === event.attrs.value.toLowerCase())
+             event.preventDefault();
+   
+     });
+   });
+   
+   
+   $("#job_title").autocomplete({
+             
+             source: "<?php echo base_url();?>Employer/search_title",
+             minLength: 2
+            
+           });
+   
+   $("#other_skill").autocomplete({
+             
+             source: "<?php echo base_url();?>Employer/search_skill",
+             minLength: 2
+            
+           });
+   
+   
+   
+       function save_benifit()
+       {
+        var othr_benifit = document.getElementById('other_benifit').value;
+        $('#benifit').append('<label><input type="checkbox" value="'+othr_benifit+'" class="btn-default1" checked="" name="benefits[]"><span>'+othr_benifit+'</span></label>');
+        document.getElementById('other_benifit').value = '';
+        // alert(othr_benifit);
+   
+       }
+   
+        function save_skill()
+       {
+        var othr_skill = document.getElementById('other_skill').value;
+        $('#skills_result').append('<div  id="myfields" class="myfields" ><ul class="rating-comments" > <label> <input type="checkbox" name="skill_set[]"  value=' +othr_skill+'  class="btn-default1" checked> <span>'+othr_skill+'</span> </label> </ul> </div>');
+   
+        document.getElementById('other_skill').value = '';
+        // alert(othr_benifit);
+   
+       }
+     
+   
+     
+   
 </script>
-
-
 <script>
- 
+   function check_other(value)
+   {
+    var x1 = document.getElementById("other_terxtbx");
+     // var x = document.getElementById("training_title");
+     if (value=='other') 
+   {
+          $('#other_terxtbx').show();
+   }
+   else if(value == 'other_skill' )
+   {
+    $('#other_skills').show();
+   }
+   else
+   {
+       $('#other_terxtbx').hide();
+       $('#other_skills').hide();
+   
+     x1.value = value;
+   }
+     
+   }
+</script>
+<script>
    function getSkillsdetails(id)
    {
      if(id){
@@ -1063,7 +1015,7 @@ else if(value == 'other_skill' )
                   {
                      $('#skills_result').html(data);
                         $('#skl_btn').show();
-
+   
                   } 
            });
    
@@ -1071,11 +1023,11 @@ else if(value == 'other_skill' )
    }
    
    function getEducationSpecial(id){
-
+   
     var x1 = document.getElementById("training_title1");
     var x = document.getElementById("job_education");
     if (id=='other') 
-  {
+   {
     
       $('#training_title1').show();
       $('#job_education').hide();
@@ -1083,12 +1035,12 @@ else if(value == 'other_skill' )
      
       $('#job_education').show();
       $('#training_title1').hide();
-
-
-
+   
+   
+   
     }
-  
- 
+   
+   
     
    if(id==5 || id==6){
     $('#spectial').hide();
@@ -1108,24 +1060,24 @@ else if(value == 'other_skill' )
    
    }
    (function () {
-  document.getElementById('test').addEventListener('submit', function(event){
+   document.getElementById('test').addEventListener('submit', function(event){
     // Get the length of the values of each input
     var jd = document.getElementById('jd').value.length;
     var jd_session = document.getElementById('jd_session').value.length;
      var   job_description = document.getElementById('job_description').value.length;
-
+   
     // If both fields are empty stop the form from submitting
     if( jd === 0 && job_description === 0 && jd_session ===0 ) {
       event.preventDefault();
        $("#errorbox").html("Either Upload JD or fill Job Description");
       // alert('please fille Upload JD or Job Description');
     }
-  }, false);
-})();
-  
+   }, false);
+   })();
+   
 </script>
 <!--  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script> -->
+   <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script> -->
 <!-- jquery validation plugin  -->
 <!-- <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js"></script>
-<script type="text/javascript" src="validation_reg.js"></script> -->
+   <script type="text/javascript" src="validation_reg.js"></script> -->
