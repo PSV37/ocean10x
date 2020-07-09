@@ -308,7 +308,7 @@
                   <div class="formrow">
                      <label class="control-label ">Expected Domain<span class="required"> * </span> </label>
                      <select name="job_category" id="job_category" class="form-control select2 limiter-options" data-role="limiter" data-style="btn-default" data-live-search="true" >
-                        <!-- <option value="">Select Expected Domain</option> -->
+                        <option value=""></option>
                         <?php
                            $value =  set_value('job_category');
                            if (!empty($value)) {
