@@ -638,7 +638,7 @@
    'job_deadline':{
 
       required: true,
-   }
+   },
    
    'job_role':{
     
@@ -763,7 +763,7 @@
     'job_deadline':{
 
      required: "This field is mandatory!",
-   }
+   },
    
    'city_id':{
    
