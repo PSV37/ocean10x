@@ -731,6 +731,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                                 <lable class=""><button id="sklbtn"><?php echo  $skill_row['skill_name'];?></button></lable>
                                           <?php }
                                     } }   ?>
+                                    <br>
 
                           <span>Benefits</span>:
                              <?php 
