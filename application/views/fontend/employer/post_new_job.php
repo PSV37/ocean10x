@@ -406,7 +406,7 @@
                   </div>
                </div>
                <div class="col-md-3 col-sm-12" id="spectial" tabindex="9">
-                  <div class="formrow" preffered_certificates>
+                  <div class="formrow preffered_certificates" >
                      <label class="control-label ">Certifications Preferred <span class="required"> * </span></label>
                      <select name="preffered_certificates" id="preffered_certificates" class="form-control select2" data-style="btn-default" data-live-search="true">
                       <option></option>
