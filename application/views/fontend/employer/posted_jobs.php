@@ -1037,8 +1037,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                         <li class="left-icon-title"><i class="fas fa-briefcase"></i></li>
                         <li class="right-title" style="width:100%;"> &emsp;<?php echo $v_companyjobs->experience; ?>(experience)</li>
 
-                        <li class="left-icon-title"><i class="fas fa-briefcase"></i></li>
-                        <li class="right-title" style="width:100%;"> &emsp;<?php echo $v_companyjobs->salary_range; ?>(LPA)</li>
+                        
                         <div class="clear"></div>
                       </div>
                       <div class="following-info">
