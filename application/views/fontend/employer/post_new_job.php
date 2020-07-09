@@ -760,7 +760,10 @@
    maxlength: "Choose a company name of at least 14 letters!"
    
    },
-   
+    'job_deadline':{
+
+     required: "This field is mandatory!",
+   }
    
    'city_id':{
    
