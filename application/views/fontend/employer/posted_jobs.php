@@ -728,7 +728,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                               $skills = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=10,$start=false, $search=false);
                               if(!empty($skills)){ 
                                 foreach($skills as $skill_row){ ?>
-                                <lable class="btn-default1"><button id="sklbtn"><?php echo  $skill_row['skill_name'];?></button></lable>
+                                <lable class=""><button id="sklbtn"><?php echo  $skill_row['skill_name'];?></button></lable>
                                           <?php }
                                     } }   ?>
 
@@ -739,7 +739,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                               if(!empty($benefits)){ 
                                 $i=0;
                                 foreach($benefits as $benefit){ ?>
-                                <lable class="btn-default1"><button id="sklbtn"><?php echo  $benefits[$i];?></button></lable>
+                                <lable class=""><button id="sklbtn"><?php echo  $benefits[$i];?></button></lable>
                                           <?php $i++; }
                                     }    ?>
 
