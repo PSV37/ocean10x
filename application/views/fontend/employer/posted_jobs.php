@@ -686,11 +686,11 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                       </div>
                       <div class="following-info">
                         <li class="left-title"
-                          >Job Roll</li><li class="right-title">&nbsp;: <?php echo $v_companyjobs->job_role; ?></li>
+                          >Job Roll</li><li class="right-title">&nbsp;: <?php echo $v_companyjobs->job_role_title; ?></li>
                           <li class="left-title">Engagement</li>
                           <li class="right-title">&nbsp;: <?php echo $v_companyjobs->job_nature_name; ?></li>
                           <li class="left-title">Domain</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->job_category_name; ?></li>
-                          <li class="left-title">Role Type </li><li class="right-title">&nbsp;:</li>
+                         <!--  <li class="left-title">Role Type </li><li class="right-title">&nbsp;:</li> -->
                           <li class="left-title">Dummy1</li><li class="right-title">&nbsp;:</li>
                           <li class="left-title">Dummy2</li><li class="right-title">&nbsp;:</li>
                          
@@ -698,10 +698,11 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                       </div>
                       <div class="following-info2">
                         <li class="left-title">Education</li><li class="right-title">&nbsp;: <?php echo $v_companyjobs->education_level_name; ?></li>
-                        <li class="left-title">Specialization</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->education_specialization; ?></li>
+                        <!-- <li class="left-title">Specialization</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->education_specialization; ?></li> -->
                         <li class="left-title">experience</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->experience; ?></li>
                         <li class="left-title">Joining ETA</li><li class="right-title">&nbsp;:30 days</li>
-                        <li class="left-title">Benifits</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->benefits; ?> </li>
+                        <li class="left-title">CTC</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->salary_range; ?></li>
+                       <!--  <li class="left-title">Benifits</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->benefits; ?> </li> -->
                        
                         <li class="left-title">Dummy3</li><li class="right-title">&nbsp;:value</li>
 
@@ -709,7 +710,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                       </div>
                       <div class="following-info3">
                         <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li><li class="right-title">&nbsp;: yes</li>
-                        <li class="left-title">CTC</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->salary_range; ?></li>
+                        
                         <li class="left-title">Vacancies</li><li class="right-title">&nbsp;: <?php echo $v_companyjobs->no_jobs; ?></li>
                         <li class="left-title">Ocean Test</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->is_test_required; ?></li>
                         <li class="left-title">Published on</li><li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs->created_at)) { echo date('M j Y',strtotime($v_companyjobs->created_at)); } ?></li>
@@ -726,18 +727,10 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                               $select_sk = "skill_name ,id";
                               $skills = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=10,$start=false, $search=false);
                               if(!empty($skills)){ 
-                                      foreach($skills as $skill_row){
-                                       ?>
-
-                                        
-                                        <lable class="btn-default1"><button id="sklbtn"><?php echo  $skill_row['skill_name'];?></button></lable>
-
-
-                                     <?php }
-                                    }
-                             }   
-                            
-                              ?>
+                                foreach($skills as $skill_row){ ?>
+                                <lable class="btn-default1"><button id="sklbtn"><?php echo  $skill_row['skill_name'];?></button></lable>
+                                          <?php }
+                                    } }   ?>
 
                            <!--  <div class="clear"></div>
                           </div> -->         
