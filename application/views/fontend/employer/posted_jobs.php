@@ -1043,12 +1043,13 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                       <div class="following-info">
                         <li class="left-title"
                           >Job Roll</li><li class="right-title">&nbsp;: <?php echo $v_companyjobs->job_role_title; ?></li>
-                          <li class="left-title">Engagement</li>
-                          <li class="right-title">&nbsp;: <?php echo $v_companyjobs->job_nature_name; ?></li>
+
+                          <li class="left-title">Engagement</li><li class="right-title">&nbsp;: <?php echo $v_companyjobs->job_nature_name; ?></li>
+
                           <li class="left-title">Domain</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->job_category_name; ?></li>
                         
                          <!--  <li class="left-title">Role Type </li><li class="right-title">&nbsp;:</li> -->
-                         <!--  <li class="left-title">Dummy1</li><li class="right-title">&nbsp;:</li> -->
+                          <li class="left-title">Dummy1</li><li class="right-title">&nbsp;:</li>
 
 
                          <!--  <li class="left-title">Dummy2</li><li class="right-title">&nbsp;:</li> -->
@@ -1063,6 +1064,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                          <li class="left-title">CTC</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->salary_range; ?></li>
 
                           <li class="left-title">Vacancies</li><li class="right-title">&nbsp;: <?php echo $v_companyjobs->no_jobs; ?></li>
+                          
                           <!-- <li class="left-title">Specialization</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->education_specialization; ?></li> -->
                        <!--  <li class="left-title">Joining ETA</li><li class="right-title">&nbsp;:30 days</li> -->
                        
