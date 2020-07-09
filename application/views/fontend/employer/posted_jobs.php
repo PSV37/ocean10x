@@ -1063,7 +1063,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
                         <div class="clear"></div>
                       </div>
                       <div class="following-info3">
-                        <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li><li class="right-title">&nbsp;: yes</li>
+                        <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li><li class="right-title">&nbsp;: <?php if (isset($v_companyjobs->jd_file)) { echo "Yes"; ?>  <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/job_description/<?php echo $v_companyjobs->jd_file; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a> <?php } else { echo "No";} ?></li>
                         
                         <li class="left-title">Vacancies</li><li class="right-title">&nbsp;: <?php echo $v_companyjobs->no_jobs; ?></li>
                         <li class="left-title">Ocean Test</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->is_test_required; ?></li>
