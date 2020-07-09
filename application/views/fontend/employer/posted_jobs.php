@@ -734,7 +734,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
 
                           <span>Benefits</span>:
                              <?php 
-                             $benefits=$v_companyjobs->benefits;
+                             $benefits=explode(',', $v_companyjobs->benefits);
                             
                               if(!empty($benefits)){ 
                                 foreach($benefits as $benefit){ ?>
