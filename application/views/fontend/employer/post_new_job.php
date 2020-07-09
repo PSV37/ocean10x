@@ -604,9 +604,7 @@
             
          else
        error.insertAfter(".formrow");
-    
-   
-       },
+    },
        rules: {
            
      
