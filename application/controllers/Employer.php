@@ -1405,6 +1405,24 @@ class Employer extends MY_Employer_Controller
                         'updated_on' => date('Y-m-d')
                     );
                     $apply       = $this->Master_model->master_insert($apply_array, 'job_apply');
+
+                      if ($apply) {
+                        $email_name = explode('@', $email[$i]);
+                        
+                        $subject = 'Job | Urgent requirement for ' . $require['job_title'];
+                        
+                 
+                        $send = sendEmail_JobRequest($email[$i], $message, $subject);
+                        //echo $send;
+                        // echo $message;
+                        
+                        
+                        
+                    $company_name = $this->session->userdata('company_name');
+                       
+                        
+                    
+                }
                      
             }
         }
