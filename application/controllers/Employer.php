@@ -1378,7 +1378,7 @@ class Employer extends MY_Employer_Controller
             $select_skill      = "skill_master.skill_name";
             $req_skill_details = $this->Master_model->getMaster('skill_master', $where_req_skill, $join = false, $order = false, $field = false, $select_skill, $limit = false, $start = false, $search = false);
             // echo $this->db->last_query(); die;
-            // print_r(sizeof($email));
+            print_r($email);
             for ($i = 0; $i < sizeof($email); $i++) {
 
                 print_r([$i]);
