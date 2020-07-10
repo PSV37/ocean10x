@@ -1468,6 +1468,28 @@ class Employer extends MY_Employer_Controller
                         
                         $seeker_id = $this->Master_model->master_insert($new_JS_array, 'js_info');
                     }
+
+                     $where_can = "email='$email[$i]'";
+                    
+                    $can_data = $this->Master_model->getMaster('js_info', $where_can);
+
+                    $where_cv = "email='$email[$i]' and company_id='$employer_id'";
+                     $cv_data = $this->Master_model->getMaster('corporate_cv_bank', $where_cv);
+
+                     if (empty($cv_data)) {
+
+                         $cv_array = array(
+                        'job_seeker_id' => $seeker_id,
+                        'js_name' => $can_data[0]['full_name'],
+                        'js_email' => $can_data[0]['email'],
+                        'js_mobile' => $can_data[0]['mobile_no'],
+                      
+                        'created_on' => date('Y-m-d'),
+                        'created_by' => $employer_id
+                      
+                    );
+                    $add_cv  = $this->Master_model->master_insert($cv_array, 'corporate_cv_bank');
+                     }
                     
                     $apply_array = array(
                         'job_seeker_id' => $seeker_id,
