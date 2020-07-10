@@ -799,6 +799,11 @@ div#bulk {
             
               
             </div>
+            <div class="row">
+               <div class="col-md-12">
+                  <input type="checkbox" name="">
+               </div>
+            </div>
 
             <div class="box">
                <?php $key = 1; if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) : 
