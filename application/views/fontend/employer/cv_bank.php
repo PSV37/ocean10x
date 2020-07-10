@@ -697,6 +697,30 @@
     margin-top: 40px;
     font-size: 12px;
 }
+/* Styles for wrapping the search box */
+
+.main {
+    width: 50%;
+    margin: 50px auto;
+}
+
+/* Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -705,13 +729,18 @@
          <div class="col-md-6 cv_bank">
             <div class="row">
                <div class="col-md-4">
+                  
                   <form class="navbar-form" role="search">
-                     <div class="input-group add-on" style="width:100%;margin-left:-15px;">
+                     <div class="form-group has-search">
+                         <span class="fa fa-search form-control-feedback"></span>
+                         <input type="text" class="form-control" placeholder="Search">
+                     </div>
+                    <!--  <div class="input-group add-on" style="width:100%;margin-left:-15px;">
                         <input class="form-control" placeholder="Search based oh Name, Email id, Phone no." name="srch-term" id="srch-term" type="text">
                         <div class="input-group-btn">
                            <button class="btn " type="submit"><i class="glyphicon glyphicon-search"></i></button>
                         </div>
-                     </div>
+                     </div> -->
                   </form>
                   <div class="clear"></div>
                </div>
