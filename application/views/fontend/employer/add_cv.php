@@ -283,7 +283,7 @@
                 </div>
                 <div class="col-md-12">
                  
-                     <div class="form-group">
+                     <div class="form-group" id="candidate_skills">
                        <label class="control-label">Skills: <span class="required"> * </span></label><br>
                        <?php if (!empty($skills)) {
                         foreach($skills as $row){ ?>
