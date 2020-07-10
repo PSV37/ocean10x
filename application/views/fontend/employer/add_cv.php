@@ -372,7 +372,7 @@
     function save_benifit()
        {
         var othr_benifit = document.getElementById('other_benifit').value;
-        $('#benifit').append('<label><input type="checkbox" value="'+othr_benifit+'" class="btn-default1" checked="" name="candidate_skills[]"><span>'+othr_benifit+'</span></label>');
+        $('#candidate_skills').append('<label><input type="checkbox" value="'+othr_benifit+'" class="btn-default1" checked="" name="candidate_skills[]"><span>'+othr_benifit+'</span></label>');
         document.getElementById('other_benifit').value = '';
         // alert(othr_benifit);
    
