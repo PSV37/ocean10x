@@ -801,7 +801,7 @@ div#bulk {
             </div>
             <div class="row">
                <div class="col-md-12">
-                  <input type="checkbox" name="" style="float: right; margin-right: 21px;">
+                  <input type="checkbox" id="select-all" name="" style="float: right; margin-right: 21px;">
                </div>
             </div>
 
@@ -1030,6 +1030,16 @@ div#bulk {
       </div>
    </div>
 </div>
+<script>
+   $(document).ready(function() {
+  $('#select-all').click(function() {
+    var checked = this.checked;
+    $('input[type="checkbox"]').each(function() {
+      this.checked = checked;
+    });
+  })
+});
+</script>
 <script>
    function sliceSize(dataNum, dataTotal) {
      return (dataNum / dataTotal) * 360;
