@@ -256,7 +256,7 @@
 
                            <option value=""></option>
                            <?php $value= set_value('candidate_role'); if (!empty($job_role)): foreach ($job_role as $role_row) : ?>
-                           <option value="<?php echo $role_row['id']; ?>" <?php if (isset( $value) &&  $value==$role_row['id'];) { echo "selected";
+                           <option value="<?php echo $role_row['id']; ?>" <?php if (isset( $value) &&  $value==$role_row['id']) { echo "selected";
                              # code...
                            } ?> ><?php echo $role_row['job_role_title']; ?></option>
                            <?php  endforeach; endif; ?>
