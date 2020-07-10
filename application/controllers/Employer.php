@@ -1406,8 +1406,32 @@ class Employer extends MY_Employer_Controller
                         'forword_job_status' => 1,
                         'updated_on' => date('Y-m-d')
                     );
-                    $apply       = $this->Master_model->master_insert($apply_array, 'job_apply');
-          
+                    $apply  = $this->Master_model->master_insert($apply_array, 'job_apply');
+                     if ($apply) {
+                        $email_name = explode('@', $email[$i]);
+                        
+                        $subject = 'Job | Urgent requirement for ' . $require['job_title'];
+                        
+                 
+                        // $send = sendEmail_JobRequest($email[$i], $message, $subject);
+                        //echo $send;
+                        // echo $message;
+                        
+                        
+                        
+                        $company_name = $this->session->userdata('company_name');
+                        $data         = array(
+                            'company' => $company_name,
+                            'action_taken_for' => $email[$i],
+                            'field_changed' => 'Forwarded Job ',
+                            'Action' => $company_name . ' Forwarded job for the position of ' . $require['job_title'],
+                            'datetime' => date('Y-m-d H:i:s'),
+                            'updated_by' => $company_name
+                        );
+                        redirect('employer/active_job');
+                        
+                    }
+                    
 
             }
         }
