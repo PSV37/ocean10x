@@ -79,8 +79,8 @@
    height: 100px;
    }
    span.select2-results {
-   margin-top: 30px;
-   }
+    margin-top: 15px;
+}
    span.select2-selection.select2-selection--single {
    border-radius: 4px;
    }
@@ -322,6 +322,7 @@
    	$(function() { 
      
      $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd' });
+     $("#last_salary_hike").datepicker({ dateFormat: 'yy-mm-dd' });
      });
    	$("#js").validate (  
 
