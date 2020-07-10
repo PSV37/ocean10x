@@ -84,12 +84,16 @@
    span.select2-selection.select2-selection--single {
    border-radius: 4px;
    }
+   .error {
+      color: red;
+      /*background-color: #acf;*/
+   }
 </style>
 <div class="container-fluid main-d">
    <div class="container">
       <div class="col-md-12">
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
-         <form role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>employer/add_new_cv" method="post">
+         <form role="form" id="js" enctype="multipart/form-data" action="<?php echo base_url(); ?>employer/add_new_cv" method="post">
             <div class="col-md-9 employe_add">
                <div class="col-md-12">
                   <h4 class="employee_heading">ADD NEW CV</h4>
@@ -98,7 +102,7 @@
                   <div class="col-md-4">
                      <div class="form-group">                                       
                         <label for="exampleInputEmail1">Full Name <span class="required">*</span></label>
-                        <input type="text" name="candidate_name" id="candidate_name" class="form-control" required=""> <?php echo form_error('candidate_name'); ?>
+                        <input type="text" name="candidate_name" id="candidate_name" class="form-control"> <?php echo form_error('candidate_name'); ?>
                      </div>
                   </div>
                   <div class="col-md-4">
@@ -319,6 +323,244 @@
      
      $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd' });
      });
+   	$("#js").validate (  
+
+{
+
+rules:{
+
+'candidate_name':{
+
+required: true
+},
+
+'candidate_email':{
+
+required: true,
+
+contactname_regex: true
+
+},
+
+'candidate_phone': {
+
+required: true,
+
+contpersonlevel_regex: true
+
+}, 
+
+'candidate_experiance':{
+
+required: true,
+
+email: true
+},
+
+'candidate_notice_period':{
+required: true,
+email: true
+},
+
+'job_type': {
+                
+  minlength:10,
+        
+  maxlength:10,
+
+  required: true
+},
+
+'current_job_desig':{
+
+required: true,
+
+url: true
+
+},
+
+
+'current_work_location':{
+
+required: true
+
+// /companypincode_regex: true
+
+},
+
+'working_current_since':{
+
+required: true
+
+// /companypincode_regex: true
+
+},
+
+'current_ctc':{
+
+required: true
+
+// /companypincode_regex: true
+
+},
+
+'last_salary_hike':{
+
+required: true
+
+// /companypincode_regex: true
+
+},
+
+'top_education':{
+
+required: true
+
+// /companypincode_regex: true
+
+},
+
+'candidate_skills':{
+
+required: true
+
+// /companypincode_regex: true
+
+},
+
+'candidate_certification':{
+
+required: true
+
+// /companypincode_regex: true
+
+},
+
+'candidate_industry':{
+
+required: true
+
+// /companypincode_regex: true
+
+},
+
+'candidate_role':{
+
+required: true
+
+// /companypincode_regex: true
+
+},
+
+'candidate_expected_sal':{
+
+required: true
+
+// /companypincode_regex: true
+
+} , 
+
+'desired_wrok_location':{
+
+required: true
+
+// /companypincode_regex: true
+
+}
+
+},
+
+messages:{
+
+'candidate_name':{
+
+required: "The name field is mandatory!",
+
+maxlength: "Choose a company name of at least 14 letters!",
+
+},
+
+'cont_person_mobile':{
+
+  required: "The name field is mandatory!",
+
+  matches: "Didn't match!", 
+        
+  minlength: "Please Enter 10 digit phone numbers!",
+        
+  maxlength: "Maximum length 10 digits!"
+},
+
+'contact_name':{
+
+required: "The name field is mandatory!",
+
+maxlength: "Choose a company name of at least 14 letters!"
+
+},
+
+'cont_person_level':{
+
+required: "The name field is mandatory!",
+
+maxlength: "Choose a company name of at least 14 letters!"
+
+},
+
+'company_phone':{
+
+required: "The username field is mandatory!",
+
+minlength: "Please Enter 10 digit phone numbers!",
+
+company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+
+remote: "The username is already in use by another user!"
+
+},
+
+
+'alternate_email_id':{
+
+required: "The Email is required!",
+
+email: "Please enter a valid email address!",
+
+remote: "The email is already in use by another user!"
+
+},
+
+'cont_person_email' :{
+
+required: "The Email is required!",
+
+email: "Please enter a valid email address!",
+
+remote: "The email is already in use by another user!"
+
+},
+
+'company_url':{
+
+required: "The Web Address is required!"
+
+},
+
+'username':{
+
+required: "The username field is mandatory!",
+
+minlength: "Choose a username of at least 4 letters!",
+
+username_regex: "You have used invalid characters. Are permitted only letters numbers!",
+
+remote: "The username is already in use by another user!"
+
+}
+
+}
+
+});
    });
    
 </script>
