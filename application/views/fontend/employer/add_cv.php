@@ -262,7 +262,7 @@
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Desired Work Location</label>
-                        <input type="text" name="desired_wrok_location" id="desired_wrok_location" class="form-control">  <?php echo form_error('desired_wrok_location'); ?>
+                        <input type="text" name="desired_wrok_location" id="tokenfield" class="form-control" style="display: inline-block;">   <?php echo form_error('desired_wrok_location'); ?>
                      </div>
                   </div>
                   <div class="col-md-4">
@@ -278,7 +278,37 @@
 </div>
 <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>assets/js/bootstrap.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>asset/js/jquery-ui.js" type="text/javascript"></script>
+
+
+<script src="<?php echo base_url(); ?>asset/src/jquery.tokeninput.js"></script>
+<script src="<?php echo base_url() ?>asset/js/jquery-ui.js"></script>
+<script src="<?php echo base_url() ?>asset/tokenjs/bootstrap-tokenfield.js"></script>
+<script src="<?php echo base_url() ?>asset/tokenjs/typeahead.bundle.min.js"></script>
+<script src="<?php echo base_url() ?>asset/js/search.js"></script>
+<script>
+   $('#tokenfield').tokenfield({
+     autocomplete: {
+       source: "<?php echo base_url('Employer/search_city'); ?>",
+       delay: 100,
+       minLength: 2
+     },
+   
+     showAutocompleteOnFocus: true,
+   
+   });
+   // to avoid duplications
+   $('#tokenfield').on('tokenfield:createtoken', function (event) {
+     var existingTokens = $(this).tokenfield('getTokens');
+   
+     $.each(existingTokens, function(index, token) {
+       
+       if (token.value.toLowerCase() === event.attrs.value.toLowerCase())
+             event.preventDefault();
+   
+     });
+   });
+   
+  </script> 
 <script>
    $('.select2').select2();
 </script>
@@ -289,6 +319,7 @@
      
      $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd' });
      });
+   });
    
 </script>
 <script type="text/javascript">
