@@ -728,6 +728,9 @@
     border-right: 5px solid transparent;
     border-top: 5px solid #7a7c7c;
 }
+div#bulk {
+    margin-top: 20px;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -769,15 +772,17 @@
                </div>
             </div>
            
-            <div class="row">
-               <div class="col-md-8">
+            <div class="row" id="bulk">
+               <div class="col-md-6">
                   <div class="placeholder_cmmn" id="auto_loc_wrap_srp">    
                      <input type="text" class="form-control rounded" tabindex="3" monstab="3" placeholder="Type The Job Post That You Want To Forward to the Below CV'S" onfocus="if(this.value==&quot;&quot;)this.value=&quot;&quot;" onblur="if(this.value=='')this.value=''" id="lmy_header" name="lmy">
-                     <button class="send">send</button>
+                     
                     
                   </div>
                </div>
-
+               <div class="col-md-2">
+                  <button class="send">send</button>
+               </div>
                <div class="col-md-4">
                   <label class="dropdown">
                      <div class="dd-button" style="background-color: #f3f3f3;color: #aeadad;">
