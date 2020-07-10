@@ -26,6 +26,7 @@
     width: 100%;
     white-space: nowrap;
     border-radius: 33px;
+    margin-right: 15px;
     margin-top: 10px;
     color: #fff;
     margin-left: 13px;
@@ -36,7 +37,7 @@
    .dd-button:hover {
    background-color:#18c5bd;
    }
-   .rounded{border-radius:20px;}
+   .rounded{border-radius:10px;}
    .dd-input {
    display: none;
    }
