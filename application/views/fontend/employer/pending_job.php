@@ -994,6 +994,17 @@ transition:0.9s;color:#fff;}
     --tick: #c7cad1;
   }
 }
+
+.pending-span{
+   position: absolute;
+    top: 0px;
+    left: 405px;
+    background-color: #ffa500;
+    padding: 1px 17px;
+    border-radius: 9px;
+    color: #fff;
+    font-size: 11px;
+}
 </style>
 
 
