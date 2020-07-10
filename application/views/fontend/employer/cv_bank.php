@@ -16,30 +16,23 @@
    display: inline-block;
    position: relative;
    }
-   .dd-button {
-   display: inline-block;
-   border: 1px solid #dedede;
-   border-radius: 4px;
-   padding: 5px 30px 5px 20px;
-   background-color:#18c5bd;
-   cursor: pointer;
-   white-space: nowrap;
-   border-radius: 33px;
-   color:#fff;
-   font-size:12px;
-   }
-   .dd-button:after {
-   content: '';
-   position: absolute;
-   top: 50%;
-   right: 15px;
-   transform: translateY(-50%);
-   width: 0; 
-   height: 0; 
-   border-left: 5px solid transparent;
-   border-right: 5px solid transparent;
-   border-top: 5px solid #7a7c7c;
-   }
+  .dd-button {
+    display: inline-block;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    padding: 5px 30px 5px 20px;
+    background-color: #18c5bd;
+    cursor: pointer;
+    width: 100%;
+    white-space: nowrap;
+    border-radius: 33px;
+    margin-top: 10px;
+    color: #fff;
+    margin-left: 13px;
+    font-size: 12px;
+    text-align: center;
+}
+   
    .dd-button:hover {
    background-color:#18c5bd;
    }
@@ -689,12 +682,12 @@
    .input-group-btn:last-child>.btn{background-color:#18c5bd;
    color:#fff;}
 
-    button.btn.btn-primary {
+  button.btn.btn-primary {
     float: right;
     background-color: #18c5bd;
     border: none;
     border-radius: 35px;
-    margin-top: 40px;
+    margin-top: 13px;
     font-size: 12px;
 }
 /* Styles for wrapping the search box */
@@ -720,6 +713,20 @@
     text-align: center;
     pointer-events: none;
     color: #aaa;
+    margin-right: 146px;
+    margin-top: 15px;
+}
+.dd-button:after {
+    content: '';
+    position: absolute;
+    top: 58%;
+    right: 8px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #7a7c7c;
 }
 </style>
 <div class="container-fluid main-d">
@@ -761,7 +768,16 @@
                   <a href="<?php echo base_url() ?>employer/add-new-cv"><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New CV</button></a>
                </div>
             </div>
-            <div class="row" style="margin-top:20px;">
+           
+            <div class="row">
+               <div class="col-md-8">
+                  <div class="placeholder_cmmn" id="auto_loc_wrap_srp">    
+                     <input type="text" class="form-control rounded" tabindex="3" monstab="3" placeholder="Type The Job Post That You Want To Forward to the Below CV'S" onfocus="if(this.value==&quot;&quot;)this.value=&quot;&quot;" onblur="if(this.value=='')this.value=''" id="lmy_header" name="lmy">
+                     <button class="send">send</button>
+                    
+                  </div>
+               </div>
+
                <div class="col-md-4">
                   <label class="dropdown">
                      <div class="dd-button" style="background-color: #f3f3f3;color: #aeadad;">
@@ -774,17 +790,10 @@
                      </ul>
                   </label>
                </div>
-            </div>
-            <div class="row">
-               <div class="col-md-9">
-                  <div class="placeholder_cmmn" id="auto_loc_wrap_srp">    
-                     <input type="text" class="form-control rounded" tabindex="3" monstab="3" placeholder="Type The Job Post That You Want To Forward to the Below CV'S" onfocus="if(this.value==&quot;&quot;)this.value=&quot;&quot;" onblur="if(this.value=='')this.value=''" id="lmy_header" name="lmy">
-                     <button class="send">send</button>
-                    
-                  </div>
-               </div>
+            
               
             </div>
+
             <div class="box">
                <?php $key = 1; if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) : 
                   $on_ocean = $cv_row['ocean_candidate'];
