@@ -1386,9 +1386,7 @@ class Employer extends MY_Employer_Controller
              print_r($email[$i]);
                $where_can = "email='$email[$i]'";
                     
-                    $can_data = $this->Master_model->getMaster('js_info', $where_can);
-                    
-                    if ($can_data) {
+                      if ($can_data) {
                         $seeker_id = $can_data[0]['job_seeker_id'];
                     } else {
                         $new_JS_array = array(
@@ -1399,19 +1397,8 @@ class Employer extends MY_Employer_Controller
                         
                         $seeker_id = $this->Master_model->master_insert($new_JS_array, 'js_info');
                     }
-                     $apply_array = array(
-                        'job_seeker_id' => $seeker_id,
-                        'company_id' => $employer_id,
-                        'job_post_id' => $job_post_id,
-                        'forword_job_status' => 1,
-                        'updated_on' => date('Y-m-d')
-                    );
-                    $apply  = $this->Master_model->master_insert($apply_array, 'job_apply');
-                     if ($apply) {
-                      
-                    }
-                    
-
+                        $apply_job = array( 'job_seeker_id' => $seeker_id,'company_id' => $employer_id,'job_post_id' => $job_post_id );
+                     
             }
         }
     }
