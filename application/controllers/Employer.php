@@ -1381,10 +1381,25 @@ class Employer extends MY_Employer_Controller
             print_r($email);
             $size = sizeof($email);
 
-            for ($i=0; $i <  sizeof($email)  ; $i++) { 
+            for ($i=0; $i <  $size  ; $i++) { 
              print_r($i);
              print_r($email[$i]);
-             
+               $where_can = "email='$email[$i]'";
+                    
+                    $can_data = $this->Master_model->getMaster('js_info', $where_can);
+                    
+                    if ($can_data) {
+                        $seeker_id = $can_data[0]['job_seeker_id'];
+                    } else {
+                        $new_JS_array = array(
+                            'email' => $email[$i],
+                            'js_token' => md5($email[$i]),
+                            'create_at' => date('Y-m-d H:i:s')
+                        );
+                        
+                        $seeker_id = $this->Master_model->master_insert($new_JS_array, 'js_info');
+                    }
+
             }
         }
     }
