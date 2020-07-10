@@ -1,6 +1,8 @@
 <?php 
    $this->load->view('fontend/layout/employer_new_header.php');?>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/calender.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/jquery-ui.css"  type="text/css" />
 <style type="text/css">
    button.save_cv {
    margin-top: 29px;
@@ -16,6 +18,12 @@
    {
    color: red;
    }
+   .col-md-9.employe_add {
+    background-color: white;
+    margin-top: 40px;
+    border-radius: 14;
+    border-radius: 31;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -82,7 +90,9 @@
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Working at Current Job Since</label>
-                        <input type="text" name="working_current_since" id="working_current_since" class="form-control datepicker">  <?php echo form_error('current_work_location'); ?>   
+
+                         <input type="text" id="my_date_picker" name="working_current_since" style="display: inline-block;" class="form-control datepicker"   value="">  
+                       <!--  <input type="text" name="working_current_since" id="working_current_since" class="form-control datepicker">  <?php echo form_error('current_work_location'); ?>    -->
                      </div>
                   </div>
                   <div class="col-md-4">
