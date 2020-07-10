@@ -1,7 +1,7 @@
 <?php 
    $this->load->view('fontend/layout/employer_new_header.php');?>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/calender.css">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" /> -->
 <link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/jquery-ui.css"  type="text/css" />
 <style type="text/css">
    button.save_cv {
@@ -24,6 +24,66 @@
     border-radius: 14;
     border-radius: 31;
 }
+ .select2-container .select2-selection--single{
+   height:34px !important;
+   }
+   /*.select2-container--default .select2-selection--single{
+   border: 1px solid #ccc !important; 
+   border-radius: 0px !important; 
+   }*/
+   input.select2-search__field {
+   display: inline-block;
+   border-radius: 0px;
+   margin-top: 0px;
+   color: black;
+   }
+   /*ul#select2-job_category-results {
+   margin-top: 27px;
+   }*/
+   a.ui-state-default.ui-state-highlight.ui-state-active {
+   background: #18c5bd;
+   color: black;
+   }
+   textarea#jd {
+   width:100%;
+   display:block;
+   max-width:100%;
+   line-height:1.5;
+   padding:15px 15px 30px;
+   border-radius:3px;
+   font:13px Tahoma, cursive;
+   transition:box-shadow 0.5s ease;
+   height:30%;
+   }
+   div#ui-datepicker-div {
+   margin-left: -22px;
+   }
+   a.ui-state-default.ui-state-active {
+   background: #70ece7;
+   color: black;
+   }
+   a.ui-state-default.ui-state-highlight {
+   background: #18c5bd;
+   color: black;
+   }
+   .ui-autocomplete {
+   max-height: 100px;
+   overflow-y: auto;
+   /* prevent horizontal scrollbar */
+   overflow-x: hidden;
+   }
+   /* IE 6 doesn't support max-height
+   * we use height instead, but this forces the menu to always be this tall
+   */
+   * html .ui-autocomplete {
+   height: 100px;
+   }
+   span.select2-results {
+   margin-top: 30px;
+   }
+   span.select2-selection.select2-selection--single {
+   border-radius: 4px;
+   }
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -70,11 +130,17 @@
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Job Type</label>
-                        <select id="job_type" name="job_type select2" class="form-control">
-                           <option value="">Select Type</option>
-                           <option value="Full Time">Full Time</option>
-                           <option value="Part Time">Part Time</option>
-                           <option value="Contractual">Contractual</option>
+                        <select id="job_type" name="job_type " class="form-control select2">
+                          <option value=""></option>
+                        <?php 
+                           $job_nature_value =  set_value('job_nature');
+                           if (!empty($job_nature_value)) {
+                             echo $this->job_category_model->selected($job_nature_value); } else  if(!empty($job_info->job_nature)) {
+                              echo $this->job_nature_model->selected($job_info->job_nature);
+                              } else {
+                              echo $this->job_nature_model->selected();
+                              }
+                              ?>
                         </select>
                         <?php echo form_error('job_type'); ?>  
                      </div>
@@ -112,29 +178,45 @@
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Top Education</label>
-                        <input type="text" name="top_education" id="top_education" class="form-control">       <?php echo form_error('top_education'); ?>   
+                        <!-- <input type="text" name="top_education" id="top_education" class="form-control">       <?php echo form_error('top_education'); ?> -->
+                          <select name="top_education" id="top_education" class="form-control select2" data-style="btn-default" data-live-search="true" >
+                        <option value=""> </option>
+                        <?php  $edu_value =  set_value('top_education'); foreach($education_level as $education){?>
+                        <option value="<?php echo $education['education_level_id']; ?>"<?php if($edu_value==$education['education_level_id']){ echo "selected"; }elseif($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
+                        <?php } ?>
+                        <option value="other">Other </option>
+                        <option value="other">None </option>
+                     </select>
+                     <?php echo form_error('top_education'); ?>      
                      </div>
                   </div>
-                  <div class="col-md-4">
+                  <!-- <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Skills</label>
                         <div class="tokenfield form-control"><input type="text" name="candidate_skills" id="tokenfield" class="skill form-control" value="" tabindex="-1" style="position: absolute; left: -10000px;"><input type="text" tabindex="-1" style="position: absolute; left: -10000px;"></div>
                         <?php echo form_error('skills'); ?>   
                      </div>
-                  </div>
-               </div>
-               <div class="col-md-12">
+                  </div> -->
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Certifications</label>
-                        <input type="text" name="candidate_certification" id="candidate_certification" class="form-control"> <?php echo form_error('candidate_certification'); ?>
+                       <!--  <input type="text" name="candidate_certification" id="candidate_certification" class="form-control"> <?php echo form_error('candidate_certification'); ?> -->
+                         <select name="candidate_certification" id="preffered_certificates" class="form-control select2" data-style="btn-default" data-live-search="true">
+                      <option></option>
+                        <?php $cret_value = set_value('candidate_certification'); foreach($certificates as $certificate){?>
+                        <option value="<?php echo $certificate['certificate_id']; ?>"<?php if($cret_value==$certificate['certificate_id']){ echo "selected"; }elseif($job_info->job_edu==$certificate['certificate_id']){ echo "selected"; }?>><?php echo $certificate['certificate_name']; ?></option>
+                        <?php } ?>
+                     </select>
                      </div>
                   </div>
+               </div>
+               <div class="col-md-12">
+                  
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Industry</label>
                        
-                          <select name="candidate_industry" id="candidate_industry" class="form-control select2 limiter-options" data-role="limiter" data-style="btn-default" data-live-search="true" >
+                          <select name="candidate_industry" id="candidate_industry" class="form-control select2" data-role="limiter" data-style="btn-default" data-live-search="true" >
                         <option value=""></option>
                         <?php
                            $value =  set_value('job_category');
@@ -167,14 +249,16 @@
                         <?php echo form_error('candidate_role'); ?>
                      </div>
                   </div>
-               </div>
-               <div class="col-md-12">
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Expected Salary</label>
                         <input type="text" name="candidate_expected_sal" id="candidate_expected_sal" class="form-control">   <?php echo form_error('candidate_expected_sal'); ?>
+
                      </div>
                   </div>
+               </div>
+               <div class="col-md-12">
+                  
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Desired Work Location</label>
@@ -195,6 +279,9 @@
 <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>assets/js/bootstrap.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>asset/js/jquery-ui.js" type="text/javascript"></script>
+<script>
+   $('.select2').select2();
+</script>
 <script> 
    $(document).ready(function() { 
    

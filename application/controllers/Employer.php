@@ -260,8 +260,8 @@ class Employer extends MY_Employer_Controller
              $this->form_validation->set_message('max_length', 'max_length');
             if ($this->form_validation->run() == FALSE) {
                 
-                $data['country']         = $this->Master_model->getMaster('country', $where = false);
-                $data['state']           = $this->Master_model->getMaster('state', $where = false);
+                // $data['country']         = $this->Master_model->getMaster('country', $where = false);
+                // $data['state']           = $this->Master_model->getMaster('state', $where = false);
                   $data['benefits']        = $this->Master_model->getMaster('common_company_benifits', $where = false);
             $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
             
@@ -461,8 +461,8 @@ class Employer extends MY_Employer_Controller
             if ($this->job_posting_model->check_jobid_and_post_id($job_id, $company_id) == true) {
                 $data['job_info']        = $this->job_posting_model->get($job_id);
               
-                $data['country']         = $this->Master_model->getMaster('country', $where = false);
-                $data['state']           = $this->Master_model->getMaster('state', $where = false);
+                // $data['country']         = $this->Master_model->getMaster('country', $where = false);
+                // $data['state']           = $this->Master_model->getMaster('state', $where = false);
                 $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
                 $data['skill_master']    = $this->Master_model->getMaster('skill_master', $where = false);
                  $data['benefits']        = $this->Master_model->getMaster('common_company_benifits', $where = false);
@@ -524,8 +524,8 @@ class Employer extends MY_Employer_Controller
              $this->form_validation->set_message('max_length', 'max_length');
             if ($this->form_validation->run() == FALSE) {
                 
-                $data['country']         = $this->Master_model->getMaster('country', $where = false);
-                $data['state']           = $this->Master_model->getMaster('state', $where = false);
+                // $data['country']         = $this->Master_model->getMaster('country', $where = false);
+                // $data['state']           = $this->Master_model->getMaster('state', $where = false);
                   $data['benefits']        = $this->Master_model->getMaster('common_company_benifits', $where = false);
             $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
             
@@ -3602,7 +3602,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
           $data['industry_master'] = $this->Master_model->getMaster('job_category', $where = false);
             $data['department']      = $this->Master_model->getMaster('department', $where = false);
             $data['job_role']        = $this->Master_model->getMaster('job_role', $where = false);
+             $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
             
+            $data['certificates'] = $this->Master_model->getMaster('certification_master', $where = false);
             //$data['cv_info'] = $this->Master_model->getMaster('corporate_cv_bank',$where=false);
             
             $this->load->view('fontend/employer/add_cv', $data);
