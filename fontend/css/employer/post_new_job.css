@@ -455,6 +455,17 @@ li.right-icon-title {
     font-size: 11px;
 }
 
+.pending-span{
+   position: absolute;
+    top: 0px;
+    left: 405px;
+    background-color: #ffa500;
+    padding: 1px 17px;
+    border-radius: 9px;
+    color: #fff;
+    font-size: 11px;
+}
+
 
 .following-info3 {
     float: right;
