@@ -1346,6 +1346,8 @@ class Employer extends MY_Employer_Controller
             $job_desc       = $this->input->post('message');
             
             $email = explode(',', $candiate_email);
+
+            print_r($email);
             
             $where_req   = "job_post_id= '$job_post_id'";
             $join_req    = array(

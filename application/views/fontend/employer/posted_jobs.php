@@ -1342,29 +1342,48 @@ $company_profile_id = $this->session->userdata('company_profile_id');
         <div class="modal-content">    
           <div class="modal-header" style="border-bottom:none;">    
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward this job post</h5>
+            <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Job Post</h5>
           </div>
           <form action="<?php echo base_url() ?>employer/forword_job_post" class="sendEmail" method="post" autocomplete="off">
         <div class="modal-body" style="padding:15px 40px;">
              <input type="hidden" name="job_post_id" value="<?php echo $v_companyjobs->job_post_id; ?>">
             <input type="hidden" name="consultant" value="JobSeeker">  
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <label class="mdl-textfield__label" for="sample3">E-mail</label>
-            <input type="email"  name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;" required>
+              <label class="mdl-textfield__label" for="sample3">E-mail:</label>
+              <input type="email"  name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;" required>
           </div>
         
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-            <label class="mdl-textfield__label" for="sample3">Message</label>
+            <label class="mdl-textfield__label" for="sample3">Message:</label>
 
           <textarea class="form-control" name="message" rows="5" id="comment" required></textarea>
           </div>
+
+
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
+            <label class="mdl-textfield__label" for="sample3">Mandatory Info:</label>
+            <label>
+              <input type="checkbox" value="current_ctc" class="btn-default1" id="benifit[]" checked="" name="benefits[]">
+              <span>Current CTC (Yr)</span>
+            </label>
+            <label>
+              <input type="checkbox" value="expected_ctc" class="btn-default1" id="benifit[]" checked="" name="benefits[]">
+              <span>Expected CTC (Yr)</span>
+            </label>
+            <label>
+              <input type="checkbox" value="Notice_period" class="btn-default1" id="benifit[]" checked="" name="benefits[]">
+              <span>Notice (days)</span>
+            </label>
+         
+          </div>
+              
               
          
        
         </div>
         <div class="modal-footer">
                            
-       <button type="submit" class="btn btn-save">Forward Job Post</button>
+       <button type="submit" class="btn btn-save">Send</button>
          
       </div>
       </form>
