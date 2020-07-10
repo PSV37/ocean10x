@@ -1397,7 +1397,14 @@ class Employer extends MY_Employer_Controller
                         
                         $seeker_id = $this->Master_model->master_insert($new_JS_array, 'js_info');
                     }
-                        $apply_job = array( 'job_seeker_id' => $seeker_id,'company_id' => $employer_id,'job_post_id' => $job_post_id );
+                        $a $apply_array = array(
+                        'job_seeker_id' => $seeker_id,
+                        'company_id' => $employer_id,
+                        'job_post_id' => $job_post_id,
+                        'forword_job_status' => 1,
+                        'updated_on' => date('Y-m-d')
+                    );
+                    $apply       = $this->Master_model->master_insert($apply_array, 'job_apply');
                      
             }
         }
