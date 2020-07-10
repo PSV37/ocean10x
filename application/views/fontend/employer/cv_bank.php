@@ -786,12 +786,12 @@ div#bulk {
                </div>
                <div class="col-md-4">
                   <label class="dropdown">
-                     <div class="dd-button" style="background-color: #f3f3f3;color: #aeadad;">
+                     <div class="dd-button" style="background-color: #18c5bd;color: #ffffff;">
                         Bulk Downlode
                      </div>
                      <input type="checkbox" class="dd-input" id="test">
                      <ul class="dd-menu">
-                        <li>Bulk Downlode</li>
+                        <li>Bulk Download</li>
                         <li>Bulk Forward</li>
                      </ul>
                   </label>
