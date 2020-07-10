@@ -1,5 +1,6 @@
 <?php 
    $this->load->view('fontend/layout/employer_new_header.php');?>
+   <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/calender.css">
 <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" /> -->
 <link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/jquery-ui.css"  type="text/css" />
@@ -404,7 +405,7 @@ div#ui-datepicker-div {
                      <div class="form-group">
                        <label class="control-label">Skills: <span class="required"> * </span></label>
                        <?php if (!empty($skills)) {
-                        foreach($skills as $row){?>
+                        foreach($skills as $row){ ?>
                      <label>
                      <input type="checkbox" value="<?php echo $row['skill_name']; ?>" class="btn-default1" id="candidate_skills" checked="" name="candidate_skills[]">
                      <span><?php echo $row['skill_name']; ?></span>
