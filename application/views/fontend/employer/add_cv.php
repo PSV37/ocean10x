@@ -284,7 +284,7 @@
                 <div class="col-md-12">
                  
                      <div class="form-group">
-                       <label class="control-label">Skills: <span class="required"> * </span></label>
+                       <label class="control-label">Skills: <span class="required"> * </span></label><br>
                        <?php if (!empty($skills)) {
                         foreach($skills as $row){ ?>
                      <label>
@@ -292,7 +292,8 @@
                      <span><?php echo $row['skill_name']; ?></span>
                      </label>
                      <?php }  }  ?>
-                      
+                      <button type="button"  value="other" onclick="check_other(this.value);"  style="font-size:28px;color:#18c5bd;border: none; background: none;">  <i class="fa fa-plus-circle"  ></i></button>
+                  <div id="other_terxtbx"><input type="text"  name="othe_benf" id="other_benifit"  style="display: inline-block; width: 30%" ><button type="button" id="check-btn" onclick="save_benifit();"><i class="fa fa-check"></i></button></div>
                    
                   </div>
                </div>
@@ -344,10 +345,32 @@
 <script>
    $('.select2').select2();
 </script>
+<script>
+   function check_other(value)
+   {
+    var x1 = document.getElementById("other_terxtbx");
+     // var x = document.getElementById("training_title");
+     if (value=='other') 
+   {
+          $('#other_terxtbx').show();
+   }
+ 
+   else
+   {
+       $('#other_terxtbx').hide();
+      
+   
+     // x1.value = value;
+   }
+     
+   }
+</script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/additional-methods.js"></script>
 <script> 
    $(document).ready(function() { 
+       $('#other_terxtbx').hide();
    
    	$(function() { 
      
