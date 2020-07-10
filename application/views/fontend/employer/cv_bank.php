@@ -801,7 +801,7 @@ div#bulk {
             </div>
             <div class="row">
                <div class="col-md-12">
-                  <input type="checkbox" name="">
+                  <input type="checkbox" name="" style="float: right; margin-right: 21px;">
                </div>
             </div>
 
