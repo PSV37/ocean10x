@@ -93,7 +93,9 @@
     margin-left: 9px;
 }
    
-
+input[type="text"] {
+    display: inline-block;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
