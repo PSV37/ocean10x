@@ -1018,7 +1018,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
        <!-- <div class="panel-body"></div> -->
        
             <div class="col-md-6 active-job">
-               <?php if (!empty($company_pending_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
+               <?php if (!empty($company_pending_jobs)): foreach ($company_pending_jobs as $v_companyjobs) : ?>
               <label>
                <div class="border-top1"></div>
                 <input type="checkbox" />
