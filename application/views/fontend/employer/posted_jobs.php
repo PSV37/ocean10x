@@ -44,25 +44,6 @@ button#sklbtn {
     font-size: 11px;
 
 }
-.btn-default1:not(:checked) + span {
-	padding: 4px 15px;
-    border-radius: 30px;
-    background: #e4e2e2;
-    /* padding: 8px 0; */
-    width: 100%;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.btn-default1:checked + span { 
-  padding: 4px 15px;
-    border-radius: 30px;
-    background: #18c5bd;
-    /* padding: 8px 0; */
-    width: 100%;
-    border-radius: 10px;
-    cursor: pointer;
-}    
 
 .card{height:auto;display: flow-root;padding:0px !important;
 border:none !important;}    
