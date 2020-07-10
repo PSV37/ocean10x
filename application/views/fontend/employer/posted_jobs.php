@@ -247,7 +247,7 @@
    margin-right: 59px !important;
    }
    :checked + span{background: #18c5bd !important;
-   display: initial !important;
+   display: inline-block;
    width: 100% !important;     
    color: #fff;
    padding: 6px 17px !important;

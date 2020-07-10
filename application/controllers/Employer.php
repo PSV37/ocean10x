@@ -1347,7 +1347,7 @@ class Employer extends MY_Employer_Controller
             
             $email = explode(',', $candiate_email);
 
-            print_r($email);
+            // print_r($email);
             
             $where_req   = "job_post_id= '$job_post_id'";
             $join_req    = array(
@@ -1380,7 +1380,7 @@ class Employer extends MY_Employer_Controller
             $select_skill      = "skill_master.skill_name";
             $req_skill_details = $this->Master_model->getMaster('skill_master', $where_req_skill, $join = false, $order = false, $field = false, $select_skill, $limit = false, $start = false, $search = false);
             // echo $this->db->last_query(); die;
-            for ($i = 0; $i < sizeof($email); $i++) {
+            for ($i = 0; $i <= sizeof($email); $i++) {
                 
                 if ($send_to == "consultant") {
                     $where_cndn = "company_email='$email[$i]'";
