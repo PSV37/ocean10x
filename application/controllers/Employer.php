@@ -1379,71 +1379,78 @@ class Employer extends MY_Employer_Controller
             $req_skill_details = $this->Master_model->getMaster('skill_master', $where_req_skill, $join = false, $order = false, $field = false, $select_skill, $limit = false, $start = false, $search = false);
             // echo $this->db->last_query(); die;
             print_r($email);
-            for ($i = 0; $i <= sizeof($email); $i++) {
+            $size = sizeof($email);
 
-                print_r($i);
-                
+            for ($i=0; $i <  $size  ; $i++) { 
+             print_r($i);
              print_r($email[$i]);
-                    $where_can = "email='$email[$i]'";
+             
+            }
+        }
+    }
+            // for ($i = 0; $i <= sizeof($email); $i++) {
+
+            //     print_r($i);
+                
+            //  print_r($email[$i]);
+            //         $where_can = "email='$email[$i]'";
                     
-                    $can_data = $this->Master_model->getMaster('js_info', $where_can);
+            //         $can_data = $this->Master_model->getMaster('js_info', $where_can);
                     
-                    if ($can_data) {
-                        $seeker_id = $can_data[0]['job_seeker_id'];
-                    } else {
-                        $new_JS_array = array(
-                            'email' => $email[$i],
-                            'js_token' => md5($email[$i]),
-                            'create_at' => date('Y-m-d H:i:s')
-                        );
+            //         if ($can_data) {
+            //             $seeker_id = $can_data[0]['job_seeker_id'];
+            //         } else {
+            //             $new_JS_array = array(
+            //                 'email' => $email[$i],
+            //                 'js_token' => md5($email[$i]),
+            //                 'create_at' => date('Y-m-d H:i:s')
+            //             );
                         
-                        $seeker_id = $this->Master_model->master_insert($new_JS_array, 'js_info');
-                    }
+            //             $seeker_id = $this->Master_model->master_insert($new_JS_array, 'js_info');
+            //         }
                     
-                    $apply_array = array(
-                        'job_seeker_id' => $seeker_id,
-                        'company_id' => $employer_id,
-                        'job_post_id' => $job_post_id,
-                        'forword_job_status' => 1,
-                        'updated_on' => date('Y-m-d')
-                    );
-                    $apply       = $this->Master_model->master_insert($apply_array, 'job_apply');
+            //         $apply_array = array(
+            //             'job_seeker_id' => $seeker_id,
+            //             'company_id' => $employer_id,
+            //             'job_post_id' => $job_post_id,
+            //             'forword_job_status' => 1,
+            //             'updated_on' => date('Y-m-d')
+            //         );
+            //         $apply       = $this->Master_model->master_insert($apply_array, 'job_apply');
                     
-                    if ($apply) {
-                        $email_name = explode('@', $email[$i]);
+            //         if ($apply) {
+            //             $email_name = explode('@', $email[$i]);
                         
-                        $subject = 'Job | Urgent requirement for ' . $require['job_title'];
+            //             $subject = 'Job | Urgent requirement for ' . $require['job_title'];
                         
                  
-                        // $send = sendEmail_JobRequest($email[$i], $message, $subject);
-                        //echo $send;
-                        // echo $message;
+            //             // $send = sendEmail_JobRequest($email[$i], $message, $subject);
+            //             //echo $send;
+            //             // echo $message;
                         
                         
                         
-                        $company_name = $this->session->userdata('company_name');
-                        $data         = array(
-                            'company' => $company_name,
-                            'action_taken_for' => $email[$i],
-                            'field_changed' => 'Forwarded Job ',
-                            'Action' => $company_name . ' Forwarded job for the position of ' . $require['job_title'],
-                            'datetime' => date('Y-m-d H:i:s'),
-                            'updated_by' => $company_name
-                        );
-                        redirect('employer/active_job');
+            //             $company_name = $this->session->userdata('company_name');
+            //             $data         = array(
+            //                 'company' => $company_name,
+            //                 'action_taken_for' => $email[$i],
+            //                 'field_changed' => 'Forwarded Job ',
+            //                 'Action' => $company_name . ' Forwarded job for the position of ' . $require['job_title'],
+            //                 'datetime' => date('Y-m-d H:i:s'),
+            //                 'updated_by' => $company_name
+            //             );
+            //             redirect('employer/active_job');
                         
                     
-                    // else{
-                    //     redirect('employer/active_job');
-                    // }
-                }
+            //         // else{
+            //         //     redirect('employer/active_job');
+            //         // }
+            //     }
                 
-            }
+            // }
             
             
-        }
         
-    }
     
     
     
