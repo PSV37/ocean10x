@@ -180,7 +180,9 @@ div#ui-datepicker-div {
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Last Salary Hike</label>
-                        <input type="text" name="last_salary_hike" id="last_salary_hike" class="form-control datepicker"><span><i class="fa fa-calendar" aria-hidden="true"></i></span>  <?php echo form_error('last_salary_hike'); ?>     
+                        <input type="text" name="last_salary_hike" id="last_salary_hike" class="form-control datepicker">
+                       <!--  <span><i class="fa fa-calendar" aria-hidden="true"></i></span> -->  
+                        <?php echo form_error('last_salary_hike'); ?>     
                      </div>
                   </div>
                   <div class="col-md-4">
@@ -273,6 +275,29 @@ div#ui-datepicker-div {
                         <input type="text" name="desired_wrok_location" id="tokenfield" class="form-control" style="display: inline-block;">   <?php echo form_error('desired_wrok_location'); ?>
                      </div>
                   </div>
+                  <div class="col-md-4">
+                     <div class="form-group">
+                        <label for="exampleInputEmail1">Upload Resume</label>
+                        <input type="file" name="candidate_resume" id="candidate_resume" class="form-control" style="display: inline-block;">   <?php echo form_error('candidate_resume'); ?>
+                     </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="col-md-4">
+                     <div class="form-group">
+                       <label class="control-label">Skills: <span class="required"> * </span></label>
+                       <?php if (!empty($skills)) {
+                        foreach($skills as $row){?>
+                     <label>
+                     <input type="checkbox" value="<?php echo $row['skill_name']; ?>" class="btn-default1" id="candidate_skills" checked="" name="candidate_skills[]">
+                     <span><?php echo $row['skill_name']; ?></span>
+                     </label>
+                     <?php }  }  ?>
+                      
+                     </div>
+                  </div>
+               </div>
+                <div class="col-md-12">
                   <div class="col-md-4">
                      <div class="form-group">
                         <button  class="btn btn-primary save_cv">save cv</button>

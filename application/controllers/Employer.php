@@ -3574,27 +3574,27 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         
         if ($_POST) {
 
-             $this->form_validation->set_rules('candidate_name', 'Full Name', 'required|alpha');
+        $this->form_validation->set_rules('candidate_name', 'Full Name', 'required|alpha');
         $this->form_validation->set_rules('candidate_email', 'Email Id', 'required|valid_email');
         $this->form_validation->set_rules('candidate_phone', 'Phone Number','required|integer|max_length[10]');
-        $this->form_validation->set_rules('candidate_experiance', 'Candidate Experiance','required|integer|max_length[2]');
-        $this->form_validation->set_rules('candidate_notice_period','Notice Period at Current Job','required|integer|max_length[2]');
-        $this->form_validation->set_rules('job_type','Job Type', 'required');
-        $this->form_validation->set_rules('current_job_desig','Company Job Designation', 'required|alpha');
-        //$this->form_validation->set_rules('current_work_location','Current Work Location', 'required');
-        $this->form_validation->set_rules('candidate_skills','skills', 'required');
-        $this->form_validation->set_rules('current_ctc','Current CTC', 'required|integer|max_length[2]');
-        $this->form_validation->set_rules('last_salary_hike','Last Salary Hike', 'required|integer|max_length[6]');
-        $this->form_validation->set_rules('top_education','Top Education', 'required|alpha');
-                $this->form_validation->set_rules('candidate_skills','Skills', 'required|alpha_numeric_spaces');
+        // $this->form_validation->set_rules('candidate_experiance', 'Candidate Experiance','required|integer|max_length[2]');
+        // $this->form_validation->set_rules('candidate_notice_period','Notice Period at Current Job','required|integer|max_length[2]');
+        // $this->form_validation->set_rules('job_type','Job Type', 'required');
+        // $this->form_validation->set_rules('current_job_desig','Company Job Designation', 'required|alpha');
+        // //$this->form_validation->set_rules('current_work_location','Current Work Location', 'required');
+        // $this->form_validation->set_rules('candidate_skills','skills', 'required');
+        // $this->form_validation->set_rules('current_ctc','Current CTC', 'required|integer|max_length[2]');
+        // $this->form_validation->set_rules('last_salary_hike','Last Salary Hike', 'required|integer|max_length[6]');
+        // $this->form_validation->set_rules('top_education','Top Education', 'required|alpha');
+        //         $this->form_validation->set_rules('candidate_skills','Skills', 'required|alpha_numeric_spaces');
 
-        $this->form_validation->set_rules('candidate_certification','Certifications', 'required|alpha_numeric_spaces');
-        $this->form_validation->set_rules('candidate_industry','Industry', 'required');
-        $this->form_validation->set_rules('candidate_role','Role', 'required');
-        $this->form_validation->set_rules('candidate_expected_sal','Expected Salary', 'required|integer|max_length[6]');
-        $this->form_validation->set_rules('desired_wrok_location','Desired Work Location', 'required|alpha');
+        // $this->form_validation->set_rules('candidate_certification','Certifications', 'required|alpha_numeric_spaces');
+        // $this->form_validation->set_rules('candidate_industry','Industry', 'required');
+        // $this->form_validation->set_rules('candidate_role','Role', 'required');
+        // $this->form_validation->set_rules('candidate_expected_sal','Expected Salary', 'required|integer|max_length[6]');
+        // $this->form_validation->set_rules('desired_wrok_location','Desired Work Location', 'required|alpha');
 
-            $this->form_validation->set_message('required', 'This field is mandatory');
+            $this->form_validation->set_message('required', 'This field is mandatory!');
 
 
          if ($this->form_validation->run() == FALSE) {
@@ -3618,6 +3618,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             
             $where_finds = "email= '$email'";
             $on_ocean    = $this->Master_model->get_master_row('js_info', $select = FALSE, $where_finds, $join = FALSE);
+
             if ($on_ocean == true) {
                 $ocean_candidate = 'Yes';
             } else {
@@ -3627,6 +3628,33 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             if ($exists == true) {
                 $this->session->set_flashdata('success', '<div class="alert alert-warning text-center">This CV already exists!</div>');
             } else {
+
+                $candidate_resume = isset($_FILES['candidate_resume']['name']) ? $_FILES['candidate_resume']['name'] : null;
+                // print_r($_FILES);die;
+                
+                if (!empty($candidate_resume)) {
+                    
+                    $config['upload_path']   = 'upload/Resumes/';
+                    $config['allowed_types'] = '*';
+                    $config['encrypt_name']  = false;
+                    $config['max_size']      = 1000;
+                    $config['max_width']     = 300;
+                    $config['max_height']    = 300;
+                    
+                    $this->load->library('upload', $config);
+                    $result_upload = $this->upload->do_upload('candidate_resume');
+                    $upload_data   = $this->upload->data();
+                    $resume       = $upload_data['file_name'];
+                    $cand_resume = $resume;
+                    
+                    if (!$result_upload == true) {
+                        $error = array(
+                            'error' => $this->upload->display_errors()
+                        );
+                        $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">Please Upload a Valid Logo Size Max size 300*300</div>');
+                        redirect('employer/profile-setting');
+                    }
+                }
                 $cv_data = array(
                     'company_id' => $company_id,
                     'js_name' => $this->input->post('candidate_name'),
@@ -3642,13 +3670,14 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     'js_last_salary_hike' => date('Y-m-d', strtotime($this->input->post('last_salary_hike'))),
                     'js_top_education' => $this->input->post('top_education'),
                     // 'js_edu_special'             => $this->input->post('education_specialization'),
-                    'js_skill_set' => $this->input->post('candidate_skills'),
+                    'js_skill_set' =>implode(',', $this->input->post('candidate_skills') ),
                     'js_certifications' => $this->input->post('candidate_certification'),
                     'js_industry' => $this->input->post('candidate_industry'),
                     'js_role' => $this->input->post('candidate_role'),
                     'js_expected_salary' => $this->input->post('candidate_expected_sal'),
                     'js_desired_work_location' => $this->input->post('desired_wrok_location'),
-                    'ocean_candidate' => $ocean_candidate
+                    'ocean_candidate' => $ocean_candidate,
+                    'js_resume' => $cand_resume,
                 );
                 
                 $cv_data['created_on'] = date('Y-m-d H:i:s');
@@ -3681,6 +3710,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
             
             $data['certificates'] = $this->Master_model->getMaster('certification_master', $where = false);
+
+             $data['skills'] = $this->Master_model->getMaster('skill_master', $where = false);
             //$data['cv_info'] = $this->Master_model->getMaster('corporate_cv_bank',$where=false);
             
             $this->load->view('fontend/employer/add_cv', $data);
