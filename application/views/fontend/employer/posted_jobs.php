@@ -1220,15 +1220,15 @@
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
                   <label class="mdl-textfield__label" for="sample3">Mandatory Info:</label><br>
                   <label>
-                  <input type="checkbox" value="current_ctc" class="btn-default1" id="benifit[]" checked="" name="benefits[]">
+                  <input type="checkbox" value="current_ctc" class="btn-default1" id="benifit[]" checked="" name="mandatory[]">
                   <span>Current CTC (Yr)</span>
                   </label>
                   <label>
-                  <input type="checkbox" value="expected_ctc" class="btn-default1" id="benifit[]" checked="" name="benefits[]">
+                  <input type="checkbox" value="expected_ctc" class="btn-default1" id="benifit[]" checked="" name="mandatory[]">
                   <span>Expected CTC (Yr)</span>
                   </label>
                   <label>
-                  <input type="checkbox" value="Notice_period" class="btn-default1" id="benifit[]" checked="" name="benefits[]">
+                  <input type="checkbox" value="Notice_period" class="btn-default1" id="benifit[]" checked="" name="mandatory[]">
                   <span>Notice (days)</span>
                   </label>
                </div>

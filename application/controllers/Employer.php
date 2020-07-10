@@ -1344,6 +1344,7 @@ class Employer extends MY_Employer_Controller
             $candiate_email = $this->input->post('candiate_email');
             $job_post_id    = $this->input->post('job_post_id');
             $job_desc       = $this->input->post('message');
+            $mandatory       = $this->input->post('mandatory');
             
             $email = explode(',', $candiate_email);
             
@@ -1473,7 +1474,8 @@ class Employer extends MY_Employer_Controller
                         'company_id' => $employer_id,
                         'job_post_id' => $job_post_id,
                         'forword_job_status' => 1,
-                        'updated_on' => date('Y-m-d')
+                        'updated_on' => date('Y-m-d'),
+                        'mandatory_parameters' => implode(',', $mandatory_parameters)
                     );
                     $apply       = $this->Master_model->master_insert($apply_array, 'job_apply');
                     
