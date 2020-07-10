@@ -1361,7 +1361,7 @@ $company_profile_id = $this->session->userdata('company_profile_id');
 
 
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-            <label class="mdl-textfield__label" for="sample3">Mandatory Info:</label>
+            <label class="mdl-textfield__label" for="sample3">Mandatory Info:</label><br>
             <label>
               <input type="checkbox" value="current_ctc" class="btn-default1" id="benifit[]" checked="" name="benefits[]">
               <span>Current CTC (Yr)</span>
