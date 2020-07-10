@@ -369,6 +369,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/additional-methods.js"></script>
 <script> 
+    function save_benifit()
+       {
+        var othr_benifit = document.getElementById('other_benifit').value;
+        $('#benifit').append('<label><input type="checkbox" value="'+othr_benifit+'" class="btn-default1" checked="" name="candidate_skills[]"><span>'+othr_benifit+'</span></label>');
+        document.getElementById('other_benifit').value = '';
+        // alert(othr_benifit);
+   
+       }
    $(document).ready(function() { 
        $('#other_terxtbx').hide();
    
