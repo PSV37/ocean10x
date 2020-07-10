@@ -1381,7 +1381,7 @@ class Employer extends MY_Employer_Controller
             print_r($email);
             for ($i = 0; $i < sizeof($email); $i++) {
 
-                print_r([$i]);
+                print_r($i);
                 
              print_r($email[$i]);
                     $where_can = "email='$email[$i]'";
