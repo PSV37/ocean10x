@@ -89,6 +89,9 @@
       color: red;
       /*background-color: #acf;*/
    }
+   div#ui-datepicker-div {
+    margin-left: 9px;
+}
    
 
 </style>
@@ -105,19 +108,19 @@
                   <div class="col-md-4">
                      <div class="form-group">                                       
                         <label for="exampleInputEmail1">Full Name <span class="required">*</span></label>
-                        <input type="text" name="candidate_name" id="candidate_name" class="form-control"> <?php echo form_error('candidate_name'); ?>
+                        <input type="text" name="candidate_name" id="candidate_name" class="form-control" value="<?php echo  set_value('candidate_name'); ?>"> <?php echo form_error('candidate_name'); ?>
                      </div>
                   </div>
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Email Id <span class="required"> *</span></label>
-                        <input type="email" name="candidate_email" id="candidate_email" class="form-control ui-autocomplete-input"  autocomplete="off"> <?php echo form_error('candidate_email'); ?>
+                        <input type="email" name="candidate_email" id="candidate_email" class="form-control ui-autocomplete-input" value="<?php echo  set_value('candidate_email'); ?>"  autocomplete="off"> <?php echo form_error('candidate_email'); ?>
                      </div>
                   </div>
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Phone Number<span class="required"> *</span></label>
-                        <input type="text" name="candidate_phone" id="candidate_phone" class="form-control" maxlength="10" >   <?php echo form_error('candidate_phone'); ?>          
+                        <input type="text" name="candidate_phone" id="candidate_phone" class="form-control" maxlength="10" value="<?php echo  set_value('candidate_phone'); ?>" >   <?php echo form_error('candidate_phone'); ?>          
                      </div>
                   </div>
                </div>
@@ -125,13 +128,13 @@
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Yrs of Experience</label>
-                        <input type="text" name="candidate_experiance" id="candidate_experiance" class="form-control"><?php echo form_error('candidate_experiance'); ?>
+                        <input type="text" name="candidate_experiance" id="candidate_experiance" value="<?php echo  set_value('candidate_experiance'); ?>" class="form-control"><?php echo form_error('candidate_experiance'); ?>
                      </div>
                   </div>
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Notice Period at Current Job</label>
-                        <input type="text" name="candidate_notice_period" id="candidate_notice_period" class="form-control">  <?php echo form_error('candidate_notice_period'); ?> 
+                        <input type="text" name="candidate_notice_period" id="candidate_notice_period" value="<?php echo  set_value('candidate_notice_period'); ?>" class="form-control">  <?php echo form_error('candidate_notice_period'); ?> 
                      </div>
                   </div>
                   <div class="col-md-4">
@@ -157,21 +160,21 @@
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Current Job Designation</label>
-                        <input type="text" name="current_job_desig" id="current_job_desig" class="form-control">    <?php echo form_error('current_job_desig'); ?> 
+                        <input type="text" name="current_job_desig" id="current_job_desig" class="form-control" value="<?php echo  set_value('current_job_desig'); ?>">    <?php echo form_error('current_job_desig'); ?> 
                      </div>
                   </div>
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Working at Current Job Since</label>
 
-                         <input type="text" id="my_date_picker" name="working_current_since" style="display: inline-block;" class="form-control datepicker"   value="">  
+                         <input type="text" id="my_date_picker" name="working_current_since" style="display: inline-block;" class="form-control datepicker"   value="<?php echo  set_value('current_work_location'); ?>">  
                        <!--  <input type="text" name="working_current_since" id="working_current_since" class="form-control datepicker">  <?php echo form_error('current_work_location'); ?>    -->
                      </div>
                   </div>
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Current CTC</label>
-                        <input type="text" name="current_ctc" id="current_ctc" class="form-control">   <?php echo form_error('current_ctc'); ?>
+                        <input type="text" name="current_ctc" id="current_ctc" class="form-control" value="<?php echo  set_value('current_ctc'); ?>">   <?php echo form_error('current_ctc'); ?>
                      </div>
                   </div>
                </div>
@@ -179,7 +182,7 @@
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Last Salary Hike</label>
-                        <input type="text" name="last_salary_hike" id="last_salary_hike" class="form-control datepicker">
+                        <input type="text" name="last_salary_hike" id="last_salary_hike" class="form-control datepicker" value="<?php echo  set_value('last_salary_hike'); ?>">
                        <!--  <span><i class="fa fa-calendar" aria-hidden="true"></i></span> -->  
                         <?php echo form_error('last_salary_hike'); ?>     
                      </div>
@@ -228,7 +231,7 @@
                           <select name="candidate_industry" id="candidate_industry" class="form-control select2" data-role="limiter" data-style="btn-default" data-live-search="true" >
                         <option value=""></option>
                         <?php
-                           $value =  set_value('job_category');
+                           $value =  set_value('candidate_industry');
                            if (!empty($value)) {
                              echo $this->job_category_model->selected($value);
                            }
@@ -250,9 +253,12 @@
                      <div class="form-group">
                         <label for="exampleInputEmail1">Role</label>
                         <select id="candidate_role" name="candidate_role" class="form-control select2">
-                           <option value="">Select Role</option>
-                           <?php if (!empty($job_role)): foreach ($job_role as $role_row) : ?>
-                           <option value="<?php echo $role_row['id']; ?>"><?php echo $role_row['job_role_title']; ?></option>
+
+                           <option value=""></option>
+                           <?php $value= set_value('candidate_role'); if (!empty($job_role)): foreach ($job_role as $role_row) : ?>
+                           <option value="<?php echo $role_row['id']; ?>" <?php if (isset( $value) &&  $value==$role_row['id'];) { echo "selected";
+                             # code...
+                           } ?> ><?php echo $role_row['job_role_title']; ?></option>
                            <?php  endforeach; endif; ?>
                         </select>
                         <?php echo form_error('candidate_role'); ?>
@@ -261,7 +267,7 @@
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Expected Salary</label>
-                        <input type="text" name="candidate_expected_sal" id="candidate_expected_sal" class="form-control">   <?php echo form_error('candidate_expected_sal'); ?>
+                        <input type="text" name="candidate_expected_sal" id="candidate_expected_sal" class="form-control" value="<?php echo  set_value('candidate_expected_sal'); ?>">   <?php echo form_error('candidate_expected_sal'); ?>
 
                      </div>
                   </div>
@@ -271,7 +277,7 @@
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Desired Work Location</label>
-                        <input type="text" name="desired_wrok_location" id="tokenfield" class="form-control" style="display: inline-block;">   <?php echo form_error('desired_wrok_location'); ?>
+                        <input type="text" name="desired_wrok_location" id="tokenfield" class="form-control" style="display: inline-block;" value="<?php echo  set_value('desired_wrok_location'); ?>">   <?php echo form_error('desired_wrok_location'); ?>
                      </div>
                   </div>
                   <div class="col-md-4">
