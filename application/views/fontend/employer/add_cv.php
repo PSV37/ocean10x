@@ -93,7 +93,16 @@
 div#ui-datepicker-div {
     margin-left: 9px;
 }
- 
+ .btn-default1:not(:checked) + span {
+   padding: 17px 10px !important;
+   width: 154px !important;
+   border-radius: 4px !important;
+   }
+   .btn-default1:input(:checked){
+   padding: 17px 10px !important;
+   width: 154px !important;
+   border-radius: 4px !important; 
+   }
    .btn-default1:not(:checked) + span {
    background: #e4e2e2;
    /*padding: 8px 0;*/
