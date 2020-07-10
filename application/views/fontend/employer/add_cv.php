@@ -70,7 +70,7 @@
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Job Type</label>
-                        <select id="job_type" name="job_type" class="form-control">
+                        <select id="job_type" name="job_type select2" class="form-control">
                            <option value="">Select Type</option>
                            <option value="Full Time">Full Time</option>
                            <option value="Part Time">Part Time</option>
@@ -133,12 +133,25 @@
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Industry</label>
-                        <select id="candidate_industry" name="candidate_industry" class="form-control">
-                           <option value="">Select Industry</option>
-                           <?php if (!empty($industry_master)): foreach ($industry_master as $ind_row) : ?>
-                           <option value="<?php echo $ind_row['job_category_id']; ?>"><?php echo $ind_row['job_category_name']; ?></option>
-                           <?php  endforeach; endif; ?>
-                        </select>
+                       
+                          <select name="candidate_industry" id="candidate_industry" class="form-control select2 limiter-options" data-role="limiter" data-style="btn-default" data-live-search="true" >
+                        <option value=""></option>
+                        <?php
+                           $value =  set_value('job_category');
+                           if (!empty($value)) {
+                             echo $this->job_category_model->selected($value);
+                           }
+                            if (!empty($this->session->userdata('job_category'))) {
+                             echo $this->job_category_model->selected($this->session->userdata('job_category'));
+                           } else if(!empty($job_info->job_category)) {
+                              echo $this->job_category_model->selected($job_info->job_category);
+                              }
+                           
+                               else {
+                              echo $this->job_category_model->selected();
+                              }
+                              ?>
+                     </select>
                         <?php echo form_error('candidate_industry'); ?>
                      </div>
                   </div>
@@ -187,7 +200,7 @@
    
    	$(function() { 
      
-     $("#working_current_since").datepicker({ dateFormat: 'yy-mm-dd' });
+     $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd' });
      });
    
 </script>
