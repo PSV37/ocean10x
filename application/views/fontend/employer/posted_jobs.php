@@ -54,7 +54,7 @@ button#sklbtn {
     cursor: pointer;
 }
 
-.btn-default1:checked + span { {
+.btn-default1:checked + span { 
   padding: 4px 15px;
     border-radius: 30px;
     background: #18c5bd;
@@ -993,7 +993,9 @@ transition:0.9s;color:#fff;}
 .range__tick-text {
   transform: translateX(-50%);
 }
-
+.modal-footer {
+    background: none;
+}
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
