@@ -1475,7 +1475,7 @@ class Employer extends MY_Employer_Controller
                         'job_post_id' => $job_post_id,
                         'forword_job_status' => 1,
                         'updated_on' => date('Y-m-d'),
-                        'mandatory_parameters' => implode(',', $mandatory_parameters)
+                        'mandatory_parameters' => implode(',', $mandatory)
                     );
                     $apply       = $this->Master_model->master_insert($apply_array, 'job_apply');
                     
