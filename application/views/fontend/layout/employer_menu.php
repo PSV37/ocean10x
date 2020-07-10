@@ -156,7 +156,7 @@
                                   </a>
                                 </li>
                                 <li>
-                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/employer/pending-job">
+                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/pending-job">
                                     <span class="icon-container">
                                       <i class="fas fa-map-signs"></i></span>
                                         <span class="text item">Pending Jobs</span>
