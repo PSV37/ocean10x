@@ -3678,7 +3678,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $data['industry_master'] = $this->Master_model->getMaster('job_category', $where = false);
             $data['department']      = $this->Master_model->getMaster('department', $where = false);
             $data['job_role']        = $this->Master_model->getMaster('job_role', $where = false);
+                $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
             
+            $data['certificates'] = $this->Master_model->getMaster('certification_master', $where = false);
             //$data['cv_info'] = $this->Master_model->getMaster('corporate_cv_bank',$where=false);
             
             $this->load->view('fontend/employer/add_cv', $data);
