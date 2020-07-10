@@ -1473,7 +1473,7 @@ class Employer extends MY_Employer_Controller
                     
                     $can_data = $this->Master_model->getMaster('js_info', $where_can);
 
-                    $where_cv = "email='$email[$i]' and company_id='$employer_id'";
+                    $where_cv = "js_email='$email[$i]' and company_id='$employer_id'";
                      $cv_data = $this->Master_model->getMaster('corporate_cv_bank', $where_cv);
 
                      if (empty($cv_data)) {
