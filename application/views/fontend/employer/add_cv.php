@@ -92,6 +92,31 @@
 div#ui-datepicker-div {
     margin-left: 9px;
 }
+ .btn-default1:not(:checked) + span {
+   padding: 17px 10px !important;
+   width: 154px !important;
+   border-radius: 4px !important;
+   }
+   .btn-default1:input(:checked){
+   padding: 17px 10px !important;
+   width: 154px !important;
+   border-radius: 4px !important; 
+   }
+   .btn-default1:not(:checked) + span {
+   background: #e4e2e2;
+   /*padding: 8px 0;*/
+   width: 100%;
+   border-radius: 10px;
+   cursor: pointer;
+   }
+    .btn-default1 {
+   color: #fff;
+   background-color: #18c5bd;
+   border: none;
+   border-radius: 13px;
+   width: 75px;
+   height: 21px;
+   }
 </style>
 <div class="container-fluid main-d">
    <div class="container">
