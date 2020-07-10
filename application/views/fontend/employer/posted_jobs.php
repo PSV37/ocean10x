@@ -408,6 +408,7 @@
    border: none;
    border-radius:20px;
    box-shadow: 2px 2px 6px #a8a4a4;
+   float: right;
    }
    .modal-content {
    background-image: linear-gradient(#18c5bd, #d4efec);
@@ -939,6 +940,9 @@
    --tick: #c7cad1;
    }
    }
+   .modal-footer {
+    background: none;
+}
 </style>
 
 <div class="container-fluid main-d">
