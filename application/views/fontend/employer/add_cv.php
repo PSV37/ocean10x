@@ -410,7 +410,7 @@ required: true
 
 required: true,
 
-contactname_regex: true
+
 
 },
 
@@ -418,7 +418,7 @@ contactname_regex: true
 
 required: true,
 
-contpersonlevel_regex: true
+
 
 }, 
 
