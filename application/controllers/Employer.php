@@ -1479,7 +1479,7 @@ class Employer extends MY_Employer_Controller
                      if (empty($cv_data)) {
 
                          $cv_array = array(
-                        'job_seeker_id' => $seeker_id,
+                      
                         'js_name' => $can_data[0]['full_name'],
                         'js_email' => $can_data[0]['email'],
                         'js_mobile' => $can_data[0]['mobile_no'],
