@@ -88,6 +88,10 @@
       color: red;
       /*background-color: #acf;*/
    }
+   }
+div#ui-datepicker-div {
+    margin-left: 9px;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -108,13 +112,13 @@
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Email Id <span class="required"> *</span></label>
-                        <input type="email" name="candidate_email" id="candidate_email" class="form-control ui-autocomplete-input" required="" autocomplete="off"> <?php echo form_error('candidate_email'); ?>
+                        <input type="email" name="candidate_email" id="candidate_email" class="form-control ui-autocomplete-input"  autocomplete="off"> <?php echo form_error('candidate_email'); ?>
                      </div>
                   </div>
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Phone Number<span class="required"> *</span></label>
-                        <input type="text" name="candidate_phone" id="candidate_phone" class="form-control" maxlength="10" required="">   <?php echo form_error('candidate_phone'); ?>          
+                        <input type="text" name="candidate_phone" id="candidate_phone" class="form-control" maxlength="10" >   <?php echo form_error('candidate_phone'); ?>          
                      </div>
                   </div>
                </div>
@@ -176,7 +180,7 @@
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Last Salary Hike</label>
-                        <input type="text" name="last_salary_hike" id="last_salary_hike" class="form-control datepicker">  <?php echo form_error('last_salary_hike'); ?>     
+                        <input type="text" name="last_salary_hike" id="last_salary_hike" class="form-control datepicker"><span><i class="fa fa-calendar" aria-hidden="true"></i></span>  <?php echo form_error('last_salary_hike'); ?>     
                      </div>
                   </div>
                   <div class="col-md-4">
@@ -204,7 +208,7 @@
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Certifications</label>
-                       <!--  <input type="text" name="candidate_certification" id="candidate_certification" class="form-control"> <?php echo form_error('candidate_certification'); ?> -->
+                     
                          <select name="candidate_certification" id="preffered_certificates" class="form-control select2" data-style="btn-default" data-live-search="true">
                       <option></option>
                         <?php $cret_value = set_value('candidate_certification'); foreach($certificates as $certificate){?>
@@ -244,7 +248,7 @@
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Role</label>
-                        <select id="candidate_role" name="candidate_role" class="form-control">
+                        <select id="candidate_role" name="candidate_role" class="form-control select2">
                            <option value="">Select Role</option>
                            <?php if (!empty($job_role)): foreach ($job_role as $role_row) : ?>
                            <option value="<?php echo $role_row['id']; ?>"><?php echo $role_row['job_role_title']; ?></option>
@@ -324,6 +328,7 @@
      $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd' });
      $("#last_salary_hike").datepicker({ dateFormat: 'yy-mm-dd' });
      });
+
    	$("#js").validate (  
 
 {
@@ -351,123 +356,123 @@ contpersonlevel_regex: true
 
 }, 
 
-'candidate_experiance':{
+// 'candidate_experiance':{
 
-required: true,
+// required: true,
 
-email: true
-},
+// email: true
+// },
 
-'candidate_notice_period':{
-required: true,
-email: true
-},
+// 'candidate_notice_period':{
+// required: true,
+// email: true
+// },
 
-'job_type': {
+// 'job_type': {
                 
-  minlength:10,
+//   minlength:10,
         
-  maxlength:10,
+//   maxlength:10,
 
-  required: true
-},
+//   required: true
+// },
 
-'current_job_desig':{
+// 'current_job_desig':{
 
-required: true,
+// required: true,
 
-url: true
+// url: true
 
-},
+// },
 
 
-'current_work_location':{
+// 'current_work_location':{
 
-required: true
+// required: true
 
-// /companypincode_regex: true
+// // /companypincode_regex: true
 
-},
+// },
 
-'working_current_since':{
+// 'working_current_since':{
 
-required: true
+// required: true
 
-// /companypincode_regex: true
+// // /companypincode_regex: true
 
-},
+// },
 
-'current_ctc':{
+// 'current_ctc':{
 
-required: true
+// required: true
 
-// /companypincode_regex: true
+// // /companypincode_regex: true
 
-},
+// },
 
-'last_salary_hike':{
+// 'last_salary_hike':{
 
-required: true
+// required: true
 
-// /companypincode_regex: true
+// // /companypincode_regex: true
 
-},
+// },
 
-'top_education':{
+// 'top_education':{
 
-required: true
+// required: true
 
-// /companypincode_regex: true
+// // /companypincode_regex: true
 
-},
+// },
 
-'candidate_skills':{
+// 'candidate_skills':{
 
-required: true
+// required: true
 
-// /companypincode_regex: true
+// // /companypincode_regex: true
 
-},
+// },
 
-'candidate_certification':{
+// 'candidate_certification':{
 
-required: true
+// required: true
 
-// /companypincode_regex: true
+// // /companypincode_regex: true
 
-},
+// },
 
-'candidate_industry':{
+// 'candidate_industry':{
 
-required: true
+// required: true
 
-// /companypincode_regex: true
+// // /companypincode_regex: true
 
-},
+// },
 
-'candidate_role':{
+// 'candidate_role':{
 
-required: true
+// required: true
 
-// /companypincode_regex: true
+// // /companypincode_regex: true
 
-},
+// },
 
-'candidate_expected_sal':{
+// 'candidate_expected_sal':{
 
-required: true
+// required: true
 
-// /companypincode_regex: true
+// // /companypincode_regex: true
 
-} , 
+// } , 
 
-'desired_wrok_location':{
+// 'desired_wrok_location':{
 
-required: true
+// required: true
 
-// /companypincode_regex: true
+// // /companypincode_regex: true
 
-}
+// }
 
 },
 
@@ -480,84 +485,22 @@ required: "The name field is mandatory!",
 maxlength: "Choose a company name of at least 14 letters!",
 
 },
-
-'cont_person_mobile':{
-
-  required: "The name field is mandatory!",
-
-  matches: "Didn't match!", 
-        
-  minlength: "Please Enter 10 digit phone numbers!",
-        
-  maxlength: "Maximum length 10 digits!"
-},
-
-'contact_name':{
+'candidate_email':{
 
 required: "The name field is mandatory!",
 
-maxlength: "Choose a company name of at least 14 letters!"
+maxlength: "Choose a company name of at least 14 letters!",
 
 },
-
-'cont_person_level':{
+'candidate_phone':{
 
 required: "The name field is mandatory!",
 
-maxlength: "Choose a company name of at least 14 letters!"
-
-},
-
-'company_phone':{
-
-required: "The username field is mandatory!",
-
-minlength: "Please Enter 10 digit phone numbers!",
-
-company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
-
-remote: "The username is already in use by another user!"
+maxlength: "Choose a company name of at least 14 letters!",
 
 },
 
 
-'alternate_email_id':{
-
-required: "The Email is required!",
-
-email: "Please enter a valid email address!",
-
-remote: "The email is already in use by another user!"
-
-},
-
-'cont_person_email' :{
-
-required: "The Email is required!",
-
-email: "Please enter a valid email address!",
-
-remote: "The email is already in use by another user!"
-
-},
-
-'company_url':{
-
-required: "The Web Address is required!"
-
-},
-
-'username':{
-
-required: "The username field is mandatory!",
-
-minlength: "Choose a username of at least 4 letters!",
-
-username_regex: "You have used invalid characters. Are permitted only letters numbers!",
-
-remote: "The username is already in use by another user!"
-
-}
 
 }
 
