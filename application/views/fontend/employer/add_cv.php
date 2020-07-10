@@ -90,126 +90,7 @@
       /*background-color: #acf;*/
    }
    
-div#ui-datepicker-div {
-    margin-left: 9px;
-}
- .btn-default1:not(:checked) + span {
-   padding: 17px 10px !important;
-   width: 154px !important;
-   border-radius: 4px !important;
-   }
-   .btn-default1:input(:checked){
-   padding: 17px 10px !important;
-   width: 154px !important;
-   border-radius: 4px !important; 
-   }
-   .btn-default1:not(:checked) + span {
-   background: #e4e2e2;
-   /*padding: 8px 0;*/
-   width: 100%;
-   border-radius: 10px;
-   cursor: pointer;
-   }
-    .btn-default1 {
-   color: #fff;
-   background-color: #18c5bd;
-   border: none;
-   border-radius: 13px;
-   width: 75px;
-   height: 21px;
-   }
-   .btn-default1:not(:checked) + span{
- background-color:#CCC;
-    display: inline-block;
-    width: 100%;           
-    color: #fff;    
-    padding: 5px 12px !important;   
-    font-size: 11px;
-  border-radius:13px !important;
-  color: #333; }  
-           
-  
-:checked + span {   
-    background: #18c5bd !important;
-    display: inline-block;
-    width: 100%;
-    color: #fff;
-    padding: 5px 12px !important;   
-    font-size: 11px;
-  border-radius:13px !important; }
-  [type="checkbox"] + span {
-   padding: 10px 7px !important;
-   }
-   .myfields ul {
-   float: left !important;
-   width: 167px; 
-   }
-   .btn-default1:not(:checked) + span {
-   padding: 17px 10px !important;
-   width: 154px !important;
-   border-radius: 4px !important;
-   }
-   .btn-default1:input(:checked){
-   padding: 17px 10px !important;
-   width: 154px !important;
-   border-radius: 4px !important; 
-   }
-  
-   :checked + span {
-   padding: 17px 10px !important;
-   width: 154px !important;
-   border-radius: 4px !important; 
-   }
-   }
-  
-   input[type="checkbox"] {
-   margin: 4px 0 0;
-   margin-top: 1px \9;
-   line-height: normal;
-   display: none;
-   }
-   .btn-default1:not(:checked) + span {
-   background: #e4e2e2;
-   /*padding: 8px 0;*/
-   width: 100%;
-   border-radius: 10px;
-   cursor: pointer;
-   }
-   .btn-bottom_3 {
-   float: right;
-   margin-right: 47px;
-   }
-   /*.btn-default1:input(:checked){
-   background-color: red;
-   }*/
-   .star-rating .fa-star{color: green;}
-   }
-   /*example*/
-   label {
-   position:relative;   
-   cursor:pointer;
-   }
-   /*label [type="checkbox"] {
-   display:none;
-   }*/
-   [type="checkbox"] + span {
-   display:inline-block;
-   padding:1em;
-   border-radius: 10px;
-   cursor: pointer;
-   }
-   /*.btn-default1:not(:checked) + span:hover {
-   background-color: #2ea148 !important;
-   }*/
-   :checked + span {
-   background:#18c5bd !important;
-   display:inline-block; 
-   width: 100%;
-   color: #fff;   
-   }
-   [type="checkbox"][disabled] + span {
-   background:#f00;  
-   }
+
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -401,7 +282,7 @@ div#ui-datepicker-div {
                   </div>
                 </div>
                 <div class="col-md-12">
-                  <div class="col-md-4">
+                 
                      <div class="form-group">
                        <label class="control-label">Skills: <span class="required"> * </span></label>
                        <?php if (!empty($skills)) {
@@ -412,7 +293,7 @@ div#ui-datepicker-div {
                      </label>
                      <?php }  }  ?>
                       
-                     </div>
+                   
                   </div>
                </div>
                 <div class="col-md-12">
