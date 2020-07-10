@@ -704,7 +704,7 @@
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
          <div class="col-md-6 cv_bank">
             <div class="row">
-               <div class="col-md-8">
+               <div class="col-md-4">
                   <form class="navbar-form" role="search">
                      <div class="input-group add-on" style="width:100%;margin-left:-15px;">
                         <input class="form-control" placeholder="Search based oh Name, Email id, Phone no." name="srch-term" id="srch-term" type="text">
@@ -727,6 +727,9 @@
                         <li>Education</li>
                      </ul>
                   </label>
+               </div>
+               <div class="col-md-4">
+                  <a href="<?php echo base_url() ?>employer/add-new-cv"><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New CV</button></a>
                </div>
             </div>
             <div class="row" style="margin-top:20px;">
@@ -751,9 +754,7 @@
                     
                   </div>
                </div>
-               <div class="col-md-3">
-                   <a href="<?php echo base_url() ?>employer/add-new-cv"><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New CV</button></a>
-               </div>
+              
             </div>
             <div class="box">
                <?php $key = 1; if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) : 
