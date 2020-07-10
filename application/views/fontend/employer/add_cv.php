@@ -292,10 +292,11 @@
                      <span><?php echo $row['skill_name']; ?></span>
                      </label>
                      <?php }  }  ?>
+                      </div>
                       <button type="button"  value="other" onclick="check_other(this.value);"  style="font-size:28px;color:#18c5bd;border: none; background: none;">  <i class="fa fa-plus-circle"  ></i></button>
                   <div id="other_terxtbx"><input type="text"  name="othe_benf" id="other_benifit"  style="display: inline-block; width: 30%" ><button type="button" id="check-btn" onclick="save_benifit();"><i class="fa fa-check"></i></button></div>
                    
-                  </div>
+                 
                </div>
                 <div class="col-md-12">
                   <div class="col-md-4">
