@@ -732,6 +732,92 @@
 div#bulk {
     margin-top: 20px;
 }
+  .fade-rotate .modal-dialog {
+   position: absolute;
+   left: 0;
+   right: 0;
+   top: 50%;
+   transform: translateY(-50%) !important;
+   }
+   input{padding:7px 25px;}
+   .modal-footer{text-align:center;}
+   .modal-body {
+   padding: 0px 65px;
+   }
+   button.btn-save {
+   font-size: 12px;
+   padding: 10px 52px;
+   background-color: #14a99b;
+   color: #fff;
+   border: none;
+   border-radius:20px;
+   box-shadow: 2px 2px 6px #a8a4a4;
+   float: right;
+   }
+   .modal-content {
+   background-image: linear-gradient(#18c5bd, #d4efec);
+   }
+   .sendEmail label{color:#fff;font-size:13px;}
+   .sendEmail input{background-color: #f3f7f663;}
+   .sendEmail textarea.form-control{background-color:#fbffff80;}
+   @media (min-width: 768px){
+   .modal-dialog {
+   width: 460px;
+   margin: 30px auto;
+   }
+   }
+   .fade-rotate .modal-dialog{top:45%;}
+   .modal-footer{border-top:none;}
+   .modal-header{border-bottom:none;}
+   button.btn-save:hover{background-color:#0e776d;
+   transition:0.9s;color:#fff;}
+   .clickable{
+   cursor: pointer;   
+   }
+   .panel-heading div {
+   margin-top: -18px;
+   font-size: 15px;
+   }
+   .panel-heading div span{
+   margin-left:5px;
+   }
+   .panel-body{
+   display: none;
+   }
+   .alert {
+   padding: 8px;
+   background-color: #18c5bd;
+   color: white;
+   width: fit-content;
+   height: 13px;
+   border-radius: 20px;
+   line-height: 0px;
+   margin-right: 7px;
+   float: left;
+   }
+   .closebtn {
+   margin-top: -9px;
+   margin-left: 15px;
+   color: white;
+   font-weight: bold;
+   float: right;
+   font-size: 22px;
+   line-height: 20px;
+   cursor: pointer;
+   transition: 0.3s;
+   }
+   .closebtn:hover {
+   color: black;
+   }
+   :root {
+   --bg: #e3e4e8;
+   --fg: #17181c;
+   --bs1: #ffffff;
+   --bs2: #c1c2c5;
+   --tick: #454954;
+   --transDur: 0.1s;
+   font-size: calc(20px + (40 - 20)*(100vw - 320px)/(2560 - 320));
+   }
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -806,7 +892,7 @@ div#bulk {
                </div>
             </div>
 
-            <div class="box" id="myDIV">
+            <div class="box" >
                <?php $key = 1; if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) : 
                   $on_ocean = $cv_row['ocean_candidate'];
                         if($on_ocean == 'Yes')
@@ -832,7 +918,7 @@ div#bulk {
                   <div class="check">
                      <input type="checkbox" class="chkbx" />
                   </div>
-                  <div class="card">
+                  <div class="card" id="myDIV">
                      <div class="front">
                         <?php
                            if($on_ocean == 'Yes')
