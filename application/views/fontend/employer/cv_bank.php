@@ -1265,7 +1265,7 @@ $("#job_titles").autocomplete({
                // prevent autocomplete from updating the textbox
                event.preventDefault();
                // manually update the textbox
-               alert(ui.item);
+               alert(source;
                $(this).val(ui.item.label);
             },
             select: function(event, ui) {

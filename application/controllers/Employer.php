@@ -3016,9 +3016,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $result = $this->job_posting_model->search_job_keywords($_GET['term'],$employer_id);
             
             if (count($result) > 0) {
+                $i=0;
                 foreach ($result as $row)
-                    $arr_result[$row->job_post_id] = $row->job_title;
-                    // $arr_result['value'] = $row->job_post_id;
+
+                    $arr_result[$i]['label'] = $row->job_title;
+                    $arr_result[$i]['value'] = $row->job_post_id;
+                    $i++;
                 echo json_encode($arr_result);
             }
         }
