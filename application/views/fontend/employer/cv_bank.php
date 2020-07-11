@@ -876,8 +876,9 @@ div#bulk {
                        
                      </ul>
 
-                     <input id="sizevalue" size="15" name="size" type="text" />
+                     
                   </label>
+                  <input id="sizevalue" size="15" name="size" type="hidden" />
                </div>
                <div class="col-md-3">
                   <a href="<?php echo base_url() ?>employer/add-new-cv"><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New CV</button></a>
