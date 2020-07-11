@@ -1156,7 +1156,14 @@ div#bulk {
    <script>
       $("#checkAll").click(function () {
          alert('hdd');
-     $('input:checkbox').not(this).prop('checked', this.checked);
+         if ($('.chkbx').is(':checked')){
+            $('.chkbx').prop('checked', true).attr('checked', 'checked');
+         }
+         else {
+            $('.chkbx').prop('checked', false).removeAttr('checked');
+         }
+         $('.chkbx')..prop('checked', true).attr('checked', 'checked');
+     // $('input:checkbox').not(this).prop('checked', this.checked);
  });
    </script>
 <script>
@@ -1173,12 +1180,12 @@ div#bulk {
   $('.content:contains("'+text+'")').show();
  
  });
-  $('#chk-all').click(function() {
-    var checked = this.checked;
-    $('input[type="checkbox"]').each(function() {
-      this.checked = checked;
-    });
-  })
+  // $('#chk-all').click(function() {
+  //   var checked = this.checked;
+  //   $('input[type="checkbox"]').each(function() {
+  //     this.checked = checked;
+  //   });
+  // })
 });
 $.expr[":"].contains = $.expr.createPseudo(function(arg) {
   return function( elem ) {
@@ -1199,7 +1206,6 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
    $(document).on(' change','input[name="check_all"]',function() {
             $('.chkbx').prop("checked" , this.checked);
     });
-
 
   
 //    $(".select-all").on("click", function() {
