@@ -1157,19 +1157,24 @@ div#bulk {
  $('#myInput').keyup(function(){
  
   // Search text
-  var text = $(this).val();
- // var text = text1.toLowerCase();
- var result = $('.content').filter(function() {
-   return $(this).text().match(text);
-});
+  var text1 = $(this).val();
+ var text = text1.toUpperCase();
+//  var result = $('.content').filter(function() {
+//    return $(this).text().match(text);
+// });
  alert(result);
-  // Hide all content class element
-  // $('.content').hide();
+  Hide all content class element
+  $('.content').hide();
 
-  // // Search and show
-  // $('.content:contains("'+text+'")').show();
+  // Search and show
+  $('.content:contains("'+text+'")').show();
  
  });
+});
+$.expr[":"].contains = $.expr.createPseudo(function(arg) {
+  return function( elem ) {
+   return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+  };
 });
 
 // $(document).ready(function(){
