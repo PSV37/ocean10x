@@ -1194,7 +1194,7 @@ div#bulk {
                   
                </div>
 
-               <input type="hidden" name="forward_job_emails" id="forward_job_emails" value="<?php echo $cv_row['js_email']; ?>">
+               <input type="hidden" name="forward_job_emails" id="forward_job_emails" value="">
             </div>
             <div class="modal-footer">
                <button type="submit" class="btn btn-save">Send</button>
