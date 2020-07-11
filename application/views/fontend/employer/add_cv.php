@@ -109,7 +109,7 @@ input[type="text"] {
                   <div class="col-md-4">
                      <div class="form-group">                                       
                         <label for="exampleInputEmail1">Full Name <span class="required">*</span></label>
-                        <input type="text" name="candidate_name" id="candidate_name" class="form-control" value="<?php echo  set_value('candidate_name'); ?>"> <?php echo form_error('candidate_name'); ?>
+                        <input type="text" name="candidate_name" id="candidate_name" class="form-control allowalphabatesspace" value="<?php echo  set_value('candidate_name'); ?>"> <?php echo form_error('candidate_name'); ?>
                      </div>
                   </div>
                   <div class="col-md-4">
@@ -121,7 +121,7 @@ input[type="text"] {
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Phone Number<span class="required"> *</span></label>
-                        <input type="text" name="candidate_phone" id="candidate_phone" class="form-control" maxlength="10" value="<?php echo  set_value('candidate_phone'); ?>" >   <?php echo form_error('candidate_phone'); ?>          
+                        <input type="text" name="candidate_phone" id="candidate_phone" class="form-control allownumericwithdecimal" maxlength="10" value="<?php echo  set_value('candidate_phone'); ?>" >   <?php echo form_error('candidate_phone'); ?>          
                      </div>
                   </div>
                </div>
@@ -129,13 +129,13 @@ input[type="text"] {
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Yrs of Experience</label>
-                        <input type="text" name="candidate_experiance" id="candidate_experiance" value="<?php echo  set_value('candidate_experiance'); ?>" class="form-control"><?php echo form_error('candidate_experiance'); ?>
+                        <input type="text" name="candidate_experiance" id="candidate_experiance" value="<?php echo  set_value('candidate_experiance'); ?>" class="form-control allownumericwithdecimal"><?php echo form_error('candidate_experiance'); ?>
                      </div>
                   </div>
                   <div class="col-md-4">
                      <div class="form-group">
-                        <label for="exampleInputEmail1">Notice Period at Current Job</label>
-                        <input type="text" name="candidate_notice_period" id="candidate_notice_period" value="<?php echo  set_value('candidate_notice_period'); ?>" class="form-control">  <?php echo form_error('candidate_notice_period'); ?> 
+                        <label for="exampleInputEmail1">Notice Period at Current Job (Days)</label>
+                        <input type="text" name="candidate_notice_period" id="candidate_notice_period allownumericwithdecimal" value="<?php echo  set_value('candidate_notice_period'); ?>" class="form-control">  <?php echo form_error('candidate_notice_period'); ?> 
                      </div>
                   </div>
                   <div class="col-md-4">
@@ -161,14 +161,14 @@ input[type="text"] {
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Current Job Designation</label>
-                        <input type="text" name="current_job_desig" id="current_job_desig" class="form-control" value="<?php echo  set_value('current_job_desig'); ?>">    <?php echo form_error('current_job_desig'); ?> 
+                        <input type="text" name="current_job_desig" id="current_job_desig" class="form-control allowalphabatesspace" value="<?php echo  set_value('current_job_desig'); ?>">    <?php echo form_error('current_job_desig'); ?> 
                      </div>
                   </div>
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Working at Current Job Since</label>
 
-                         <input type="text" id="my_date_picker" name="working_current_since" style="display: inline-block;" class="form-control datepicker"   value="<?php echo  set_value('working_current_since'); ?>">  
+                         <input type="text" id="my_date_picker" name="working_current_since" style="display: inline-block;" class="form-control datepicker "   value="<?php echo  set_value('working_current_since'); ?>">  
                        <!--  <input type="text" name="working_current_since" id="working_current_since" class="form-control datepicker">  <?php echo form_error('working_current_since'); ?>    -->
                      </div>
                   </div>
@@ -268,7 +268,7 @@ input[type="text"] {
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Expected Salary</label>
-                        <input type="text" name="candidate_expected_sal" id="candidate_expected_sal" class="form-control" value="<?php echo  set_value('candidate_expected_sal'); ?>">   <?php echo form_error('candidate_expected_sal'); ?>
+                        <input type="text" name="candidate_expected_sal" id="candidate_expected_sal" class="form-control allownumericwithdecimal" value="<?php echo  set_value('candidate_expected_sal'); ?>">   <?php echo form_error('candidate_expected_sal'); ?>
 
                      </div>
                   </div>
@@ -394,7 +394,7 @@ input[type="text"] {
      $("#last_salary_hike").datepicker({ dateFormat: 'yy-mm-dd' });
      });
 
-   	$("#js").validate (  
+ $("#js").validate (  
 
 {
 
@@ -410,22 +410,19 @@ namespace_regex: true
 'candidate_email':{
 
 required: true,
-email: true,
-remote:{
-url: "validatorAJAX.php",
-type: "post"
-}
+email_regex: true
+
+},
 
 
 //contactname_regex: true
 
-},
+
 
 'candidate_phone':{
 
 required: true,
-minlength: true,
-maxlength: true,
+
 phonenumber_regex: true
 
 }, 
@@ -456,7 +453,7 @@ twodigit_regex: true
 
 
 
-current_job_desig_regex: true
+namespace_regex: true
 
 //url: true
 
@@ -480,8 +477,7 @@ twodecimal_regex: true
 },
 
 'current_ctc':{
-
-twodigit_regex: true
+twodecimal_regex: true
 // /companypincode_regex: true
 
 },
@@ -636,9 +632,17 @@ remote: "The useername is already in use by another user!"
 
   $.validator.addMethod("namespace_regex", function(value, element) {
 
-return this.optional(element) || /^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$/.test(value);
+return this.optional(element) || /^[a-zA-Z ]*$/.test(value);
     
 }, "Please choose only alphabets");
+
+
+
+  $.validator.addMethod("email_regex", function(value, element) {
+
+return this.optional(element) || /^\w.+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(value);
+    
+}, "Please type valid Email");
 
 
 $.validator.addMethod("current_job_desig_regex", function(value, element) {
@@ -658,9 +662,9 @@ return this.optional(element) || /^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$
 
   $.validator.addMethod("phonenumber_regex", function(value, element) {
 
-return this.optional(element) || /^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/.test(value);
+return this.optional(element) || /^[1-9]{1}[0-9]{9}$/.test(value);
     
-}, "Please choose only numerics");
+}, "Please type 10 digit mobile number");
 
 
     $.validator.addMethod("twodigit_regex", function(value, element) {
@@ -762,6 +766,14 @@ return this.optional(element) || /^[1-9][0-9][0-9][0-9][0-9][0-9]$/.test(value);
          return false;
          }
      });
+
+   $(".allownumericwithdecimal").on("keypress keyup blur",function (event) {
+             //this.value = this.value.replace(/[^0-9\.]/g,'');
+      $(this).val($(this).val().replace(/[^\d].+/, ""));
+             if ((event.which < 48 || event.which > 57)) {
+                 event.preventDefault();
+             }
+         });
    
    $(".allowalphabatesspace").keypress(function (e) {
          var regex = new RegExp("^[a-zA-Z ]*$");
@@ -776,6 +788,12 @@ return this.optional(element) || /^[1-9][0-9][0-9][0-9][0-9][0-9]$/.test(value);
          }
      });
 </script>
+
+<script>
+   function validateEmail(email) { 
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+} 
 <script type="text/javascript">
    $(function() {
    $("#candidate_email").autocomplete({

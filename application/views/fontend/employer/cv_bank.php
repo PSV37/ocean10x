@@ -1254,7 +1254,9 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
                var elements = emails.split(',').length;
                $('#no_of_cvs').html(elements);
                $('#forward_job_emails').val(checkedVals.join(","));
-               $('#rotateModal').modal('show');
+               setTimeout(function(){
+               $('#rotateModal').modal('show'); }, 500);
+             
             }
 
     });

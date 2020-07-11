@@ -1480,7 +1480,12 @@ class Employer extends MY_Employer_Controller
                     //     redirect('employer/active_job');
                     // }
                 }
+                $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Job Forwarded Successfully</div>');
+                  redirect('employer/corporate_cv_bank');
               }
+                redirect('employer/corporate_cv_bank');
+
+
     }
     public function forword_job_post()
     {
