@@ -832,8 +832,8 @@ div#bulk {
 }
 .ui-autocomplete {
     z-index: 5000;
-    background: white;
-    width: 50%;
+    background: #b3ebe8;;
+    width: 0%;
 }
 </style>
 <div class="container-fluid main-d">
@@ -1190,6 +1190,7 @@ div#bulk {
                   <label class="mdl-textfield__label" for="sample3">job Title:</label>
                   <input type="text"  name="job_titles"  id="job_titles" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
                </div>
+               <input id="autocomplete2-value" type="text" name="code">
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
                   <label class="mdl-textfield__label" for="sample3">Message:</label>
                   <textarea class="form-control" name="message" rows="5" id="comment" required></textarea>
@@ -1257,9 +1258,23 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
     });
 $("#job_titles").autocomplete({
              
-             source: "<?php echo base_url();?>Employer/search_title",
+             source: "<?php echo base_url();?>Employer/search_job_keywords",
              minLength: 2,
               append: "#rotateModal",
+              focus: function(event, ui) {
+               // prevent autocomplete from updating the textbox
+               event.preventDefault();
+               // manually update the textbox
+               // alert()
+               $(this).val(ui.item.label);
+            },
+            select: function(event, ui) {
+               // prevent autocomplete from updating the textbox
+               event.preventDefault();
+               // manually update the textbox and hidden field
+               $(this).val(ui.item.label);
+               $("#autocomplete2-value").val(ui.item.value);
+            }
     
             
            });
