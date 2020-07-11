@@ -887,7 +887,7 @@ div#bulk {
                    <!--   <div class="dd-button" style="background-color: #18c5bd;color: #ffffff;">
                         Bulk Download
                      </div> -->
-                     <a onclick="get_values();" class="dropdown-item" href="#" data-toggle="modal" data-target="#rotateModal"><input type="checkbox" name="bulk_forward" id="checkAll">Bulk Forward</a>
+                     <input type="checkbox" name="bulk_forward" id="checkAll" onclick="get_values();" class="dropdown-item" href="#" data-toggle="modal" data-target="#rotateModal">&nbsp; Bulk Forward
                      <!-- <input type="checkbox" class="dd-input" id="test"> -->
                      <!-- <ul class="dd-menu">
                          <li><a id="checkAll">Bulk Forward></a></li>
