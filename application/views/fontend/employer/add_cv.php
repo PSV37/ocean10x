@@ -306,11 +306,11 @@ input[type="text"] {
                  
                </div>
                 <div class="col-md-12">
-                  <div class="col-md-4">
+                  <!-- <div class="col-md-4"> -->
                      <div class="form-group">
-                        <button  class="btn btn-primary save_cv">save cv</button>
+                        <button  style="float: right;" class="btn btn-primary save_cv">save cv</button>
                      </div>
-                  </div>
+                  <!-- </div> -->
                </div>
             </div>
          </form>
