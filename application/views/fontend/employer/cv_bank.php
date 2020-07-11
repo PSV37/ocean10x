@@ -1183,7 +1183,7 @@ div#bulk {
                <input type="hidden" name="consultant" value="JobSeeker">  
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <label class="mdl-textfield__label" for="sample3">job Title:</label>
-                  <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
+                  <input type="text"  name="job_titles"  id="job_titles" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
                </div>
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
                   <label class="mdl-textfield__label" for="sample3">Message:</label>
@@ -1250,7 +1250,7 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
             }
 
     });
-$("#job_title").autocomplete({
+$("#job_titles").autocomplete({
              
              source: "<?php echo base_url();?>Employer/search_title",
              minLength: 2
