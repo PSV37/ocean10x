@@ -877,7 +877,7 @@ div#bulk {
                      </div>
                      <input type="checkbox" class="dd-input" id="test">
                      <ul class="dd-menu">
-                         <a  onclick="check_all();"><li id="chk-all">Bulk Forward</li></a>
+                         <li id="chk-all">Bulk Forward</li>
                         <li>Bulk Download</li>
                        
                      </ul>
@@ -916,7 +916,8 @@ div#bulk {
                        ?>
                <label>
                   <div class="check">
-                     <input type="checkbox" class="chkbx" />
+                    
+                     <input type="checkbox" value="<?php echo $cv_row['cv_id']; ?>" class="chkbx" />
                   </div>
                   <div class="card content">
                      <div class="front">
