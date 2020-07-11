@@ -832,6 +832,7 @@ div#bulk {
 }
 .ui-autocomplete {
     z-index: 5000;
+    background: white;
 }
 </style>
 <div class="container-fluid main-d">
