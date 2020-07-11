@@ -743,8 +743,8 @@ div#bulk {
                   
                   <form class="navbar-form" role="search">
                      <!-- <div class="form-group has-search"> -->
-                         <span class="fa fa-search form-control-feedback"></span>
-                         <input type="text" class="form-control" placeholder="Search">
+                         <!-- <span class="fa fa-search form-control-feedback"></span> -->
+                         <input type="text" class="form-control" placeholder="Search" style="width: 100%">
                      <!-- </div> -->
                     <!--  <div class="input-group add-on" style="width:100%;margin-left:-15px;">
                         <input class="form-control" placeholder="Search based oh Name, Email id, Phone no." name="srch-term" id="srch-term" type="text">
@@ -830,7 +830,7 @@ div#bulk {
                        ?>
                <label>
                   <div class="check">
-                     <input type="checkbox" />
+                     <input type="checkbox" class="chkbx" />
                   </div>
                   <div class="card">
                      <div class="front">
@@ -1033,12 +1033,20 @@ div#bulk {
 </div>
 <script>
    $(document).ready(function() {
-  $('#select-all').click(function() {
-    var checked = this.checked;
-    $('.chk_bx').each(function() {
-      this.checked = checked;
-    });
-  })
+       $('#select-all').toggle(
+        function() {
+            $('.check .chkbx').prop('checked', true);
+        },
+        function() {
+            $('.check .chkbx').prop('checked', false);
+        }
+    );
+  // $('#select-all').click(function() {
+  //   var checked = this.checked;
+  //   $('input[type="checkbox"]').each(function() {
+  //     this.checked = checked;
+  //   });
+  // })
 });
 </script>
 <script>
