@@ -864,11 +864,19 @@ div#bulk {
                         Sort by
                      </div>
                      <input type="checkbox" class="dd-input" id="test">
-                     <ul class="dd-menu" id="test">
-                        <li>Name</li>
-                        <li>Experience</li>
-                        <li>Education</li>
+                     <!-- <ul class="dd-menu" id="test"> -->
+                        <!-- <li>Name</li> -->
+                        <!-- /<li>Experience</li> -->
+                        <!-- <li value="edu">Education</li> -->
+                     <!-- </ul> -->
+                     <ul id="sizelist" class="dd-menu">
+                       <li data-value="Name" ><a href="#">Name</a></li>
+                       <li data-value="Experience"><a href="#">Experience</a></li>
+                       <li data-value="Education"><a href="#">Education</a></li>
+                       
                      </ul>
+
+                     <input id="sizevalue" size="15" name="size" type="text" />
                   </label>
                </div>
                <div class="col-md-3">
@@ -1220,16 +1228,14 @@ div#bulk {
    $(this).attr('placeholder',$(this).data('placeholder'));
 });
 
-function getEventTarget(e) {
-    e = e || window.event;
-    return e.target || e.srcElement; 
-}
+$("#sizelist").on("click", "a", function(e){
+    e.preventDefault();
+    var $this = $(this).parent();
+    $this.addClass("select").siblings().removeClass("select");
+    $("#sizevalue").val($this.data("value"));
+})
 
-var ul = document.getElementById('test');
-ul.onclick = function(event) {
-    var target = event.target;
-    alert(event.target.innerHTML);
-}; 
+
    </script>
 <script>
    $(document).ready(function(){
