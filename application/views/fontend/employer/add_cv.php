@@ -175,7 +175,7 @@ input[type="text"] {
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Current CTC</label>
-                        <input type="text" name="current_ctc" id="current_ctc" class="form-control" value="<?php echo  set_value('current_ctc'); ?>">   <?php echo form_error('current_ctc'); ?>
+                        <input type="text" name="current_ctc" id="current_ctc" class="form-control allownumericwithdecimal" value="<?php echo  set_value('current_ctc'); ?>">   <?php echo form_error('current_ctc'); ?>
                      </div>
                   </div>
                </div>
