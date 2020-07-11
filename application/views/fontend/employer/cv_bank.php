@@ -1162,8 +1162,8 @@ div#bulk {
 //  var result = $('.content').filter(function() {
 //    return $(this).text().match(text);
 // });
- alert(result);
-  Hide all content class element
+ // alert(result);
+  // Hide all content class element
   $('.content').hide();
 
   // Search and show
