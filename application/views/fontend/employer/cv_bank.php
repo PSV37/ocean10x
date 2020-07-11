@@ -743,8 +743,8 @@ div#bulk {
                   
                   <form class="navbar-form" role="search">
                      <!-- <div class="form-group has-search"> -->
-                         <span class="fa fa-search"></span>
-                         <input type="text" class="form-control" placeholder="Search" style="width: 100%">
+                         <span class="fa fa-search form-control-feedback"></span>
+                         <input type="text" class="form-control" placeholder="Search">
                      <!-- </div> -->
                     <!--  <div class="input-group add-on" style="width:100%;margin-left:-15px;">
                         <input class="form-control" placeholder="Search based oh Name, Email id, Phone no." name="srch-term" id="srch-term" type="text">
@@ -774,26 +774,25 @@ div#bulk {
             </div>
            
             <div class="row" id="bulk">
-              <!--  <div class="col-md-6">
+               <div class="col-md-6">
                   <div class="placeholder_cmmn" id="auto_loc_wrap_srp">    
                      <input type="text" class="form-control rounded" tabindex="3" monstab="3" placeholder="Type The Job Post That You Want To Forward to the Below CV'S" onfocus="if(this.value==&quot;&quot;)this.value=&quot;&quot;" onblur="if(this.value=='')this.value=''" id="lmy_header" name="lmy">
                      
                     
                   </div>
-               </div> -->
-              <!--  <div class="col-md-2">
+               </div>
+               <div class="col-md-2">
                   <button class="send">send</button>
-               </div> -->
+               </div>
                <div class="col-md-4">
                   <label class="dropdown">
                      <div class="dd-button" style="background-color: #18c5bd;color: #ffffff;">
                         Bulk Downlode
                      </div>
-                     <!-- <input type="checkbox" class="dd-input" id="test"> -->
+                     <input type="checkbox" class="dd-input" id="test">
                      <ul class="dd-menu">
-                         <li id="select-all">Bulk Forward</li>
                         <li>Bulk Download</li>
-                       
+                        <li>Bulk Forward</li>
                      </ul>
                   </label>
                </div>
@@ -830,7 +829,7 @@ div#bulk {
                        ?>
                <label>
                   <div class="check">
-                     <input class="select_ckbx" type="checkbox" />
+                     <input type="checkbox" />
                   </div>
                   <div class="card">
                      <div class="front">
@@ -1035,16 +1034,9 @@ div#bulk {
    $(document).ready(function() {
   $('#select-all').click(function() {
     var checked = this.checked;
-    $("input[type=checkbox]").each(function() {
+    $('input[type="checkbox"]').each(function() {
       this.checked = checked;
     });
-     //  var checkboxes = $('.select_ckbx');
-     // if ($(this).is(':checked')) {
-     //        checkboxes.prop("checked" , true);
-     //    } else {
-     //        checkboxes.prop( "checked" , false );
-     //    }
-      // $('select_ckbx').prop('checked',true);
   })
 });
 </script>
