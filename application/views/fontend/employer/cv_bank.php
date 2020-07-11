@@ -739,7 +739,7 @@ div#bulk {
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
          <div class="col-md-6 cv_bank">
             <div class="row">
-               <div class="col-md-6">
+               <div class="col-md-8">
                   
                   <form class="navbar-form" role="search">
                      <div class="form-group has-search">
@@ -755,7 +755,7 @@ div#bulk {
                   </form>
                   <div class="clear"></div>
                </div>
-               <div class="col-md-3">
+               <div class="col-md-2">
                   <label class="dropdown" style="float:right;">
                      <div class="dd-button">
                         Sort by
@@ -768,7 +768,7 @@ div#bulk {
                      </ul>
                   </label>
                </div>
-               <div class="col-md-3">
+               <div class="col-md-2">
                   <a href="<?php echo base_url() ?>employer/add-new-cv"><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New CV</button></a>
                </div>
             </div>
