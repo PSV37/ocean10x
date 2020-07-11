@@ -769,11 +769,20 @@
    
    required: "This field is mandatory!",
    
-   //minlength: "Please Enter 10 digit phone numbers!",
    
-   //company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
    
-   //remote: "The username is already in use by another user!"
+   },
+    'job_edu':{
+   
+   required: "This field is mandatory!",
+   
+ 
+   
+   },
+    'job_nature':{
+   
+   required: "This field is mandatory!",
+ 
    
    },
    

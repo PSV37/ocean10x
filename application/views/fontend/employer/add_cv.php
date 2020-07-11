@@ -403,142 +403,154 @@ rules:{
 
 'candidate_name':{
 
-required: true
+required: true,
+minlength: 3,
+namespace_regex: true
 },
 
 'candidate_email':{
 
 required: true,
+email: true,
+remote:{
+url: "validatorAJAX.php",
+type: "post"
+}
 
 
+//contactname_regex: true
 
 },
 
-'candidate_phone': {
+'candidate_phone':{
 
 required: true,
-
-
+phonenumber_regex: true
 
 }, 
 
-// 'candidate_experiance':{
+'candidate_experiance':{
 
-// required: true,
+required: true,
+twodigit_regex: true
 
-// email: true
-// },
+//email: true
+},
 
-// 'candidate_notice_period':{
-// required: true,
-// email: true
-// },
+'candidate_notice_period':{
+required: true,
+onedigit_regex: true
+//email: true
+},
 
-// 'job_type': {
+'job_type':{
                 
-//   minlength:10,
+  //minlength:10,
         
-//   maxlength:10,
+  //maxlength:10,
 
-//   required: true
-// },
+  required: true
+},
 
-// 'current_job_desig':{
+'current_job_desig':{
 
-// required: true,
+required: true,
 
-// url: true
+current_job_desig_regex: true
 
-// },
+//url: true
+
+},
 
 
-// 'current_work_location':{
+'current_work_location':{
 
-// required: true
+required: true;
+current_work_location_regex: true
 
-// // /companypincode_regex: true
+// /companypincode_regex: true
 
-// },
+},
 
-// 'working_current_since':{
+'working_current_since':{
 
-// required: true
+required: true
 
-// // /companypincode_regex: true
+// /companypincode_regex: true
 
-// },
+},
 
-// 'current_ctc':{
+'current_ctc':{
 
-// required: true
+required: true
 
-// // /companypincode_regex: true
+// /companypincode_regex: true
 
-// },
+},
 
-// 'last_salary_hike':{
+'last_salary_hike':{
 
-// required: true
+required: true
 
-// // /companypincode_regex: true
+// /companypincode_regex: true
 
-// },
+},
 
-// 'top_education':{
+'top_education':{
 
-// required: true
+required: true
 
-// // /companypincode_regex: true
+// /companypincode_regex: true
 
-// },
+},
 
-// 'candidate_skills':{
+'candidate_skills':{
 
-// required: true
+required: true
 
-// // /companypincode_regex: true
+// /companypincode_regex: true
 
-// },
+},
 
-// 'candidate_certification':{
+'candidate_certification':{
 
-// required: true
+required: true
 
-// // /companypincode_regex: true
+// /companypincode_regex: true
 
-// },
+},
 
-// 'candidate_industry':{
+'candidate_industry':{
 
-// required: true
+required: true
 
-// // /companypincode_regex: true
+// /companypincode_regex: true
 
-// },
+},
 
-// 'candidate_role':{
+'candidate_role':{
 
-// required: true
+required: true
 
-// // /companypincode_regex: true
+// /companypincode_regex: true
 
-// },
+},
 
-// 'candidate_expected_sal':{
+'candidate_expected_sal':{
 
-// required: true
+required: true
 
-// // /companypincode_regex: true
+// /companypincode_regex: true
 
-// } , 
+} , 
 
-// 'desired_wrok_location':{
+'desired_wrok_location':{
 
-// required: true
+required: true
 
-// // /companypincode_regex: true
+// /companypincode_regex: true
 
-// }
+}
 
 },
 
@@ -548,32 +560,241 @@ messages:{
 
 required: "The name field is mandatory!",
 
-maxlength: "Choose a company name of at least 14 letters!",
+maxlength: "Choose a company name of at least 14 letters!"
 
 },
-'candidate_email':{
+
+'cont_person_mobile':{
+
+  required: "The name field is mandatory!",
+
+  matches: "Didn't match!", 
+        
+  minlength: "Please Enter 10 digit phone numbers!",
+        
+  maxlength: "Maximum length 10 digits!"
+},
+
+'contact_name':{
 
 required: "The name field is mandatory!",
 
-maxlength: "Choose a company name of at least 14 letters!",
+maxlength: "Choose a company name of at least 14 letters!"
 
 },
-'candidate_phone':{
+
+'cont_person_level':{
 
 required: "The name field is mandatory!",
 
-maxlength: "Choose a company name of at least 14 letters!",
+maxlength: "Choose a company name of at least 14 letters!"
+
+},
+
+'company_phone':{
+
+required: "The username field is mandatory!",
+
+minlength: "Please Enter 10 digit phone numbers!",
+
+company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+
+remote: "The username is already in use by another user!"
 
 },
 
 
+'alternate_email_id':{
+
+required: "The Email is required!",
+
+email: "Please enter a valid email address!",
+
+remote: "The email is already in use by another user!"
+
+},
+
+'cont_person_email' :{
+
+required: "The Email is required!",
+
+email: "Please enter a valid email address!",
+
+remote: "The email is already in use by another user!"
+
+},
+
+'company_url':{
+
+required: "The Web Address is required!"
+
+},
+
+'username':{
+
+required: "The username field is mandatory!",
+
+minlength: "Choose a username of at least 4 letters!",
+
+username_regex: "You have used invalid characters. Are permitted only letters numbers!",
+
+remote: "The username is already in use by another user!"
+
+}
 
 }
 
 });
-   });
-   
+
+});
+
 </script>
+
+<script >
+
+  $.validator.addMethod("namespace_regex", function(value, element) {
+
+return this.optional(element) || /^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$/.test(value);
+    
+}, "Please choose only alphabets");
+
+
+$.validator.addMethod("current_job_desig_regex", function(value, element) {
+
+return this.optional(element) || /^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$/.test(value);
+    
+}, "Please choose only alphabets");
+
+
+
+$.validator.addMethod("current_work_location_regex", function(value, element) {
+
+return this.optional(element) || /^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$/.test(value);
+    
+}, "Please choose only alphabets");
+
+
+  $.validator.addMethod("phonenumber_regex", function(value, element) {
+
+return this.optional(element) || /^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/.test(value);
+    
+}, "Please choose only numerics");
+
+
+    $.validator.addMethod("twodigit_regex", function(value, element) {
+
+return this.optional(element) || /^[0-9]{1,2}$/.test(value);
+    
+}, "Please type only two numbers");
+
+
+
+  $.validator.addMethod("onedigit_regex", function(value, element) {
+
+return this.optional(element) || /^[0-9]{1,2}[:.,-]?$/.test(value);
+    
+}, "Please type only one numbers");
+
+
+
+  $.validator.addMethod("2decimal_regex", function(value, element) {
+
+return this.optional(element) || /^\d{1,3}(\.\d{0,2})?$/.test(value);
+    
+}, "Please type only two decimal numbers");
+
+
+
+  $.validator.addMethod("companyname_regex", function(value, element) {
+
+return this.optional(element) || /^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$/i.test(value);
+
+}, "Please choose only alphabets");
+
+ 
+  $.validator.addMethod("contactname_regex", function(value, element) {
+
+return this.optional(element) || /^[a-zA-Z ]+$/.test(value);
+    
+}, "Please choose only alphabets");
+
+
+
+  $.validator.addMethod("contpersonlevel_regex", function(value, element) {
+
+return this.optional(element) || /^[a-zA-Z ]+$/.test(value);
+
+}, "Please choose only alphabets");
+
+
+$.validator.addMethod("companypincode_regex", function(value, element) {
+
+return this.optional(element) || /^[1-9][0-9][0-9][0-9][0-9][0-9]$/.test(value);
+
+}, "Please Enter 6 digits Company Pincode");
+
+</script>
+
+<script>
+
+   $(".allowphonenumber").on("keypress keyup blur",function (event) {
+             //this.value = this.value.replace(/[^0-9\.]/g,'');
+      $(this).val($(this).val().replace("^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"));
+             if ((event.which < 48 || event.which > 57)) {
+                 event.preventDefault();
+             }
+         });
+
+   $(".allownumericwithdecimal").on("keypress keyup blur",function (event) {
+             //this.value = this.value.replace(/[^0-9\.]/g,'');
+      $(this).val($(this).val().replace(/[^\d].+/, ""));
+             if ((event.which < 48 || event.which > 57)) {
+                 event.preventDefault();
+             }
+         });
+   
+   //(^[ A-Za-z0-9_@./#&+-]*$)
+   
+   $(".allowalphanumeric").keypress(function (e) {
+          var regex = new RegExp("^[a-zA-Z!@#.”$%&’()*\+,\/;\[\\\]\^_`{|}~ \s]+$");
+         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+         if (regex.test(str)) {
+             return true;
+         }
+         else
+         {
+         e.preventDefault();
+         return false;
+         }
+     }); 
+   
+   $(".allowalphabatescomma").keypress(function (e) {
+         var regex = new RegExp("^[a-zA-Z, \s]+$");
+         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+         if (regex.test(str)) {
+             return true;
+         }
+         else
+         {
+         e.preventDefault();
+         return false;
+         }
+     });
+   
+   $(".allowalphabatesspace").keypress(function (e) {
+         var regex = new RegExp("^[a-zA-Z ]*$");
+         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+         if (regex.test(str)) {
+             return true;
+         }
+         else
+         {
+         e.preventDefault();
+         return false;
+         }
+     });
+</script>
+
 <script type="text/javascript">
    $(function() {
    $("#candidate_email").autocomplete({
