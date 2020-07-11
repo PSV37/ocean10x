@@ -1227,9 +1227,9 @@ function getEventTarget(e) {
 
 var ul = document.getElementById('test');
 ul.onclick = function(event) {
-    var target = getEventTarget(event);
-    alert(target.innerHTML);
-};
+    var target = event.target;
+    alert(event.target.innerHTML);
+}; 
    </script>
 <script>
    $(document).ready(function(){
