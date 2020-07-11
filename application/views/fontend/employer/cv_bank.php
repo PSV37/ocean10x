@@ -917,7 +917,7 @@ div#bulk {
                <label>
                   <div class="check">
                     
-                     <input type="checkbox" value="<?php echo $cv_row['cv_id']; ?>" class="chkbx" />
+                     <input type="checkbox" value="<?php echo $cv_row['js_email']; ?>" class="chkbx" />
                   </div>
                   <div class="card content">
                      <div class="front">
@@ -963,7 +963,7 @@ div#bulk {
                         <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
-                           <li><a onclick="get_values();" class="dropdown-item" href="#" data-toggle="modal" data-target="#rotateModal<?php echo $cv_row['js_email']; ?>">Forward Job Post</a></li>
+                           <li><a onclick="get_values();" class="dropdown-item" href="#" data-toggle="modal" data-target="#rotateModal<?php echo $cv_row['cv_id']; ?>">Forward Job Post</a></li>
                            <li> <a class="dropdown-item" href="#">Downlode this cv</a></li>
                            <li> <a class="dropdown-item" href="#">Dummy 1</a></li>
                         </div>
