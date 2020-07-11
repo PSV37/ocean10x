@@ -802,7 +802,7 @@ div#bulk {
             </div>
             <div class="row">
                <div class="col-md-12">
-                  <input type="checkbox" id="select-all" name="" style="float: right; margin-right: 21px;">
+                  <input type="checkbox" id="select-all" name="check_all" style="float: right; margin-right: 21px; display: inline-block;">
                </div>
             </div>
 
@@ -1032,22 +1032,25 @@ div#bulk {
    </div>
 </div>
 <script>
-   $(document).ready(function() {
-       $('#select-all').toggle(
-        function() {
-            $('.check .chkbx').prop('checked', true);
-        },
-        function() {
-            $('.check .chkbx').prop('checked', false);
-        }
-    );
+   $(document).on(' change','input[name="check_all"]',function() {
+            $('.chkbx').prop("checked" , this.checked);
+    });
+   // $(document).ready(function() {
+   //     $('#select-all').toggle(
+   //      function() {
+   //          $('.check .chkbx').prop('checked', true);
+   //      },
+   //      function() {
+   //          $('.check .chkbx').prop('checked', false);
+   //      }
+   //  );
   // $('#select-all').click(function() {
   //   var checked = this.checked;
   //   $('input[type="checkbox"]').each(function() {
   //     this.checked = checked;
   //   });
   // })
-});
+// });
 </script>
 <script>
    function sliceSize(dataNum, dataTotal) {
