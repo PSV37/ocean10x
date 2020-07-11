@@ -744,7 +744,7 @@ div#bulk {
                   <form class="navbar-form" role="search">
                      <!-- <div class="form-group has-search"> -->
                          <!-- <span class="fa fa-search form-control-feedback"></span> -->
-                         <input type="text" class="form-control" placeholder="Search" style="width: 100%">
+                         <input type="text" id="myInput" class="form-control" placeholder="Search" style="width: 100%">
                      <!-- </div> -->
                     <!--  <div class="input-group add-on" style="width:100%;margin-left:-15px;">
                         <input class="form-control" placeholder="Search based oh Name, Email id, Phone no." name="srch-term" id="srch-term" type="text">
@@ -806,7 +806,7 @@ div#bulk {
                </div>
             </div>
 
-            <div class="box">
+            <div class="box" id="myDIV">
                <?php $key = 1; if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) : 
                   $on_ocean = $cv_row['ocean_candidate'];
                         if($on_ocean == 'Yes')
@@ -1032,7 +1032,7 @@ div#bulk {
    </div>
 </div>
 <?php if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) : ?>
-<div class="modal" id="rotateModal<?php echo $v_companyjobs->job_post_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal" id="rotateModal<?php echo $cv_row['cv_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
    <input type="hidden" name="cv_id" id="cv_id" value="<?php $cv_row['cv_id']; ?>">
    <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -1066,6 +1066,16 @@ div#bulk {
 </div>
 <?php
    endforeach;endif;?>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myDIV *").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
 <script>
    $(document).on(' change','input[name="check_all"]',function() {
             $('.chkbx').prop("checked" , this.checked);
