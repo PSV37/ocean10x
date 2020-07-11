@@ -887,7 +887,7 @@ div#bulk {
                    <!--   <div class="dd-button" style="background-color: #18c5bd;color: #ffffff;">
                         Bulk Download
                      </div> -->
-                     <input type="checkbox" name="bulk_forward" id="checkAll" onclick="get_values();" >&nbsp; Bulk Forward
+                     <input type="checkbox" name="bulk_forward" id="checkAll">&nbsp; Bulk Forward
                      <!-- <input type="checkbox" class="dd-input" id="test"> -->
                      <!-- <ul class="dd-menu">
                          <li><a id="checkAll">Bulk Forward></a></li>
@@ -1251,6 +1251,16 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
    $(document).on(' change','input[name="bulk_forward"]',function() {
             $('.chkbx').prop("checked" , this.checked);
             alert(this.checked);
+            if (this.checked == 'true' ) 
+            {
+                var checkedVals = $('.chkbx:checkbox:checked').map(function() {
+                   return this.value;
+               }).get();
+               var emails= (checkedVals.join(","));
+               alert(emails);
+               $('#forward_job_emails').val(checkedVals.join(","));
+               $('#rotateModal').modal('show');
+            }
 
     });
 $("#job_title").autocomplete({
