@@ -121,7 +121,7 @@ input[type="text"] {
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Phone Number<span class="required"> *</span></label>
-                        <input type="text" name="candidate_phone" id="candidate_phone" class="form-control allownumericwithdecimal" maxlength="10" value="<?php echo  set_value('candidate_phone'); ?>" >   <?php echo form_error('candidate_phone'); ?>          
+                        <input type="text" name="candidate_phone" id="candidate_phone" class="form-control allownumericwithoutdecimal" maxlength="10" value="<?php echo  set_value('candidate_phone'); ?>" >   <?php echo form_error('candidate_phone'); ?>          
                      </div>
                   </div>
                </div>
@@ -129,13 +129,13 @@ input[type="text"] {
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Yrs of Experience</label>
-                        <input type="text" name="candidate_experiance" id="candidate_experiance" value="<?php echo  set_value('candidate_experiance'); ?>" class="form-control allownumericwithdecimal"><?php echo form_error('candidate_experiance'); ?>
+                        <input type="text" name="candidate_experiance" id="candidate_experiance" value="<?php echo  set_value('candidate_experiance'); ?>" maxlength="2"  class="form-control allownumericwithoutdecimal"><?php echo form_error('candidate_experiance'); ?>
                      </div>
                   </div>
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Notice Period at Current Job (Days)</label>
-                        <input type="text" name="candidate_notice_period" id="candidate_notice_period allownumericwithdecimal" value="<?php echo  set_value('candidate_notice_period'); ?>" class="form-control">  <?php echo form_error('candidate_notice_period'); ?> 
+                        <input type="text" name="candidate_notice_period" id="candidate_notice_period allownumericwithoutdecimal" maxlength="3"  value="<?php echo  set_value('candidate_notice_period'); ?>" class="form-control">  <?php echo form_error('candidate_notice_period'); ?> 
                      </div>
                   </div>
                   <div class="col-md-4">
@@ -183,7 +183,7 @@ input[type="text"] {
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Last Salary Hike</label>
-                        <input type="text" name="last_salary_hike" id="last_salary_hike" class="form-control datepicker" value="<?php echo  set_value('last_salary_hike'); ?>">
+                        <input type="text" name="last_salary_hike" id="last_salary_hike" class="form-control datepicker" max="<?php echo date('Y-m-d'); ?>"> value="<?php echo  set_value('last_salary_hike'); ?>">
                        <!--  <span><i class="fa fa-calendar" aria-hidden="true"></i></span> -->  
                         <?php echo form_error('last_salary_hike'); ?>     
                      </div>
@@ -436,7 +436,7 @@ twodigit_regex: true
 
 'candidate_notice_period':{
 
-twodigit_regex: true
+maxlength:3
 //email: true
 },
 
@@ -741,18 +741,12 @@ return this.optional(element) || /^[1-9][0-9][0-9][0-9][0-9][0-9]$/.test(value);
    
    //(^[ A-Za-z0-9_@./#&+-]*$)
    
-   $(".allowalphanumeric").keypress(function (e) {
-          var regex = new RegExp("^[a-zA-Z!@#.”$%&’()*\+,\/;\[\\\]\^_`{|}~ \s]+$");
-         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
-         if (regex.test(str)) {
-             return true;
-         }
-         else
-         {
-         e.preventDefault();
-         return false;
-         }
-     }); 
+   $(".allownumericwithoutdecimal").on("keypress keyup blur",function (event) {    
+           $(this).val($(this).val().replace(/[^\d].+/, ""));
+            if ((event.which < 48 || event.which > 57)) {
+                event.preventDefault();
+            }
+        });
    
    $(".allowalphabatescomma").keypress(function (e) {
          var regex = new RegExp("^[a-zA-Z, \s]+$");
@@ -767,13 +761,13 @@ return this.optional(element) || /^[1-9][0-9][0-9][0-9][0-9][0-9]$/.test(value);
          }
      });
 
-   $(".allownumericwithdecimal").on("keypress keyup blur",function (event) {
-             //this.value = this.value.replace(/[^0-9\.]/g,'');
-      $(this).val($(this).val().replace(/[^\d].+/, ""));
-             if ((event.which < 48 || event.which > 57)) {
-                 event.preventDefault();
-             }
-         });
+    $(".allownumericwithdecimal").on("keypress keyup blur",function (event) {
+            //this.value = this.value.replace(/[^0-9\.]/g,'');
+     $(this).val($(this).val().replace(/[^0-9\.]/g,''));
+            if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+                event.preventDefault();
+            }
+        });
    
    $(".allowalphabatesspace").keypress(function (e) {
          var regex = new RegExp("^[a-zA-Z ]*$");
