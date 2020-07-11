@@ -1038,7 +1038,7 @@ div#bulk {
     // $("input.select_ckbx[type=checkbox]").each(function() {
     //   this.checked = checked;
     // });
-      $('input.select_ckbx').prop('checked',true);
+      $('.select_ckbx').prop('checked',true);
   })
 });
 </script>
