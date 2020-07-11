@@ -1147,12 +1147,14 @@ div#bulk {
          </div>
          <form action="<?php echo base_url() ?>employer/forward_posted_job" class="sendEmail" method="post" autocomplete="off">
             <div class="modal-body" style="padding:15px 40px;">
-               <input type="hidden" name="job_post_id" value="<?php echo $v_companyjobs->job_post_id; ?>">
+             
                <input type="hidden" name="consultant" value="JobSeeker">  
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <label class="mdl-textfield__label" for="sample3">job Title:</label>
                   <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
                </div>
+               <input type="hidden" name="job_post_id" value="" id="auto-value">
+
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
                   <label class="mdl-textfield__label" for="sample3">Message:</label>
                   <textarea class="form-control" name="message" rows="5" id="comment" required></textarea>
@@ -1278,6 +1280,28 @@ $("#job_titles").autocomplete({
                // manually update the textbox and hidden field
                $(this).val(ui.item.label);
                $("#autocomplete2-value").val(ui.item.value);
+            }
+    
+            
+           });
+$("#job_title").autocomplete({
+             
+             source: "<?php echo base_url();?>Employer/search_job_keywords",
+             minLength: 2,
+              // append: "#rotateModal",
+              focus: function(event, ui) {
+               // prevent autocomplete from updating the textbox
+               event.preventDefault();
+               // manually update the textbox
+               // alert(source);
+               $(this).val(ui.item.label);
+            },
+            select: function(event, ui) {
+               // prevent autocomplete from updating the textbox
+               event.preventDefault();
+               // manually update the textbox and hidden field
+               $(this).val(ui.item.label);
+               $("#auto-value").val(ui.item.value);
             }
     
             
