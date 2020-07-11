@@ -3017,8 +3017,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             
             if (count($result) > 0) {
                 foreach ($result as $row)
-                    $arr_result['label'] = $row->job_title;
-                    $arr_result['value'] = $row->job_post_id;
+                    $arr_result[$row->job_post_id] = $row->job_title;
+                    // $arr_result['value'] = $row->job_post_id;
                 echo json_encode($arr_result);
             }
         }
