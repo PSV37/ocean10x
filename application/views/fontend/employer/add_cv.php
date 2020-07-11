@@ -14,6 +14,7 @@
    border-radius: 30px;
    font-size: 15px;
    font-weight: bold;
+   height: 35px;
    }
    .required
    {
