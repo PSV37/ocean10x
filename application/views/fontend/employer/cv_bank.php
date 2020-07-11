@@ -918,7 +918,7 @@ div#bulk {
                   <div class="check">
                      <input type="checkbox" class="chkbx" />
                   </div>
-                  <div class="card" id="myDIV">
+                  <div class="card content">
                      <div class="front">
                         <?php
                            if($on_ocean == 'Yes')
@@ -1153,14 +1153,29 @@ div#bulk {
 <?php
    endforeach;endif;?>
 <script>
-$(document).ready(function(){
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myDIV *").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
+   $(document).ready(function(){
+ $('#myInput').keyup(function(){
+ 
+  // Search text
+  var text = $(this).val();
+ 
+  // Hide all content class element
+  $('.content').hide();
+
+  // Search and show
+  $('.content:contains("'+text+'")').show();
+ 
+ });
 });
+
+// $(document).ready(function(){
+//   $("#myInput").on("keyup", function() {
+//     var value = $(this).val().toLowerCase();
+//     $("#myDIV *").filter(function() {
+//       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+//     });
+//   });
+// });
 </script>
 <script>
    $(document).on(' change','input[name="check_all"]',function() {
