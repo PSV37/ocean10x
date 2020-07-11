@@ -1332,50 +1332,156 @@ class Employer extends MY_Employer_Controller
         
     }
 
-    // public function forward_posted_job()
-    // {
-    //     $employer_id = $this->session->userdata('company_profile_id');
-    //       if ($_POST) {
-    //         $employer_id    = $this->session->userdata('company_profile_id');
-    //         $candiate_email = $this->input->post('candiate_email');
-    //         $job_post_id    = $this->input->post('job_post_id');
-    //         $job_desc       = $this->input->post('message');
-    //         $mandatory       = $this->input->post('mandatory');
+    public function forward_posted_job()
+    {
+        $employer_id = $this->session->userdata('company_profile_id');
+          if ($_POST) {
+            if (isset($this->input->post('forward_job_emails')) && !empty($this->input->post('forward_job_emails'))) {
+                $candiate_email = $this->input->post('forward_job_emails');
+            }
+            elseif (isset($this->input->post('forward_job_email')) && !empty($this->input->post('forward_job_email'))) {
+                $candiate_email = $this->input->post('forward_job_email');
+                # code...
+            }
+          
+            $job_post_id    = $this->input->post('job_post_id');
+            $job_desc       = $this->input->post('message');
+            // $mandatory       = $this->input->post('mandatory');
             
-    //         $email = explode(',', $candiate_email);
+            $email = explode(',', $candiate_email);
             
-    //         $where_req   = "job_post_id= '$job_post_id'";
-    //         $join_req    = array(
-    //             'job_types' => 'job_types.job_types_id = job_posting.job_types|LEFT OUTER',
-    //             'company_profile' => 'company_profile.company_profile_id = job_posting.company_profile_id|LEFT OUTER',
-    //             'city' => 'city.id = job_posting.city_id|LEFT OUTER',
-    //             'country' => 'country.country_id = job_posting.job_location|LEFT OUTER',
-    //             'state' => 'state.state_id = job_posting.state_id|LEFT OUTER',
-    //             'job_category' => 'job_category.job_category_id = job_posting.job_category|LEFT OUTER',
-    //             'job_nature' => 'job_nature.job_nature_id = job_posting.job_nature|LEFT OUTER',
-    //             'job_level' => 'job_level.job_level_id = job_posting.job_level|LEFT OUTER',
-    //             'job_role' => 'job_role.id = job_posting.job_role|LEFT OUTER',
-    //             'education_level' => 'education_level.education_level_id = job_posting.job_edu|LEFT OUTER',
-    //             'education_specialization' => 'education_specialization.id = job_posting.edu_specialization|LEFT OUTER'
+            $where_req   = "job_post_id= '$job_post_id'";
+            $join_req    = array(
+                'job_types' => 'job_types.job_types_id = job_posting.job_types|LEFT OUTER',
+                'company_profile' => 'company_profile.company_profile_id = job_posting.company_profile_id|LEFT OUTER',
+                'city' => 'city.id = job_posting.city_id|LEFT OUTER',
+                'country' => 'country.country_id = job_posting.job_location|LEFT OUTER',
+                'state' => 'state.state_id = job_posting.state_id|LEFT OUTER',
+                'job_category' => 'job_category.job_category_id = job_posting.job_category|LEFT OUTER',
+                'job_nature' => 'job_nature.job_nature_id = job_posting.job_nature|LEFT OUTER',
+                'job_level' => 'job_level.job_level_id = job_posting.job_level|LEFT OUTER',
+                'job_role' => 'job_role.id = job_posting.job_role|LEFT OUTER',
+                'education_level' => 'education_level.education_level_id = job_posting.job_edu|LEFT OUTER',
+                'education_specialization' => 'education_specialization.id = job_posting.edu_specialization|LEFT OUTER'
                 
-    //         );
-    //         $select_job  = "job_role.job_role_title,education_specialization.education_specialization,education_level.education_level_name,job_level.job_level_name,job_nature.job_nature_name,job_category.job_category_name,state.state_name,country.country_name,city.city_name,company_profile.company_name,company_profile.company_logo,job_types.job_types_name,job_posting.job_title,job_posting.job_position,job_posting.job_desc,job_posting.education,job_posting.salary_range,job_posting.job_deadline,job_posting.preferred_age,job_posting.preferred_age_to,job_posting.working_hours,job_posting.no_jobs,job_posting.benefits,job_posting.experience,job_posting.skills_required";
-    //         $req_details = $this->Master_model->getMaster('job_posting', $where_req, $join_req, $order = false, $field = false, $select_job, $limit = false, $start = false, $search = false);
+            );
+            $select_job  = "job_role.job_role_title,education_specialization.education_specialization,education_level.education_level_name,job_level.job_level_name,job_nature.job_nature_name,job_category.job_category_name,state.state_name,country.country_name,city.city_name,company_profile.company_name,company_profile.company_logo,job_types.job_types_name,job_posting.job_title,job_posting.job_position,job_posting.job_desc,job_posting.education,job_posting.salary_range,job_posting.job_deadline,job_posting.preferred_age,job_posting.preferred_age_to,job_posting.working_hours,job_posting.no_jobs,job_posting.benefits,job_posting.experience,job_posting.skills_required";
+            $req_details = $this->Master_model->getMaster('job_posting', $where_req, $join_req, $order = false, $field = false, $select_job, $limit = false, $start = false, $search = false);
             
-    //         // print_r($this->db->last_query());die;
+            // print_r($this->db->last_query());die;
             
-    //         if ($req_details) {
-    //             foreach ($req_details as $require) {
-    //             }
+            if ($req_details) {
+                foreach ($req_details as $require) {
+                }
                 
-    //         }
-    //         $skill_id = $require['skills_required'];
+            }
+            $skill_id = $require['skills_required'];
             
-    //         $where_req_skill   = "skill_master.id IN (" . $skill_id . ")";
-    //         $select_skill      = "skill_master.skill_name";
-    //         $req_skill_details = $this->Master_model->getMaster('skill_master', $where_req_skill, $join = false, $order = false, $field = false, $select_skill, $limit = false, $start = false, $search = false);
-    // }
-    // }
+            $where_req_skill   = "skill_master.id IN (" . $skill_id . ")";
+            $select_skill      = "skill_master.skill_name";
+            $req_skill_details = $this->Master_model->getMaster('skill_master', $where_req_skill, $join = false, $order = false, $field = false, $select_skill, $limit = false, $start = false, $search = false); }
+              for ($i = 0; $i < sizeof($email); $i++) {
+                $where_can = "email='$email[$i]'";
+                    
+                    $can_data = $this->Master_model->getMaster('js_info', $where_can);
+                    
+                    if ($can_data) {
+                        $seeker_id = $can_data[0]['job_seeker_id'];
+                    } else {
+                        $new_JS_array = array(
+                            'email' => $email[$i],
+                            'js_token' => md5($email[$i]),
+                            'create_at' => date('Y-m-d H:i:s')
+                        );
+                        
+                        $seeker_id = $this->Master_model->master_insert($new_JS_array, 'js_info');
+                    }
+
+                     $where_can = "email='$email[$i]'";
+                    
+                    $can_data = $this->Master_model->getMaster('js_info', $where_can);
+
+                    $where_cv = "js_email='$email[$i]' and company_id='$employer_id'";
+                     $cv_data = $this->Master_model->getMaster('corporate_cv_bank', $where_cv);
+
+                     if (empty($cv_data)) {
+
+                         $cv_array = array(
+                       'company_id' => $employer_id,
+                        'js_name' => $can_data[0]['full_name'],
+                        'js_email' => $can_data[0]['email'],
+                        'js_mobile' => $can_data[0]['mobile_no'],
+                      
+                        'created_on' => date('Y-m-d'),
+                        'created_by' => $employer_id
+                      
+                    );
+                    $add_cv  = $this->Master_model->master_insert($cv_array, 'corporate_cv_bank');
+                     }
+                    
+                    $apply_array = array(
+                        'job_seeker_id' => $seeker_id,
+                        'company_id' => $employer_id,
+                        'job_post_id' => $job_post_id,
+                        'forword_job_status' => 1,
+                        'updated_on' => date('Y-m-d'),
+                        'mandatory_parameters' => implode(',', $mandatory)
+                    );
+                    $apply       = $this->Master_model->master_insert($apply_array, 'job_apply');
+                    
+                    if ($apply) {
+                        $email_name = explode('@', $email[$i]);
+                        
+                        $subject = 'Job | Urgent requirement for ' . $require['job_title'];
+                        
+                        $message = '
+                                <style>
+                                    .btn-primary{
+                                        width: 232px;
+                                        color: #fff;
+                                        text-align: center;
+                                        margin: 0 0 0 5%;
+                                        background-color: #6495ED;
+                                        padding: 5px;
+                                        text-decoration: none;
+                                    }
+                                
+                                </style>
+                            <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+                            <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+                            <a href="#"><img src="' . base_url() . 'upload/' . $require['company_logo'] . '" style="height: 50px;"> </a>
+                            <br><br>Hi ' . $email_name[0] . ',<br>' . $job_desc . '<br/><br/><em><b>Now Hiring!!</b></em> <br/><br/><b>Company Name:</b>' . $require['company_name'] . '<br/><br/> <b>Job Profile:</b><br/> <b>Job Title: </b> ' . $require['job_title'] . '<br/> <b>Experience: </b> ' . $require['experience'] . '<br/><b>Salary Offered: </b> ' . $require['salary_range'] . '<br/><b>Vacancies: </b> ' . $require['no_jobs'] . '<br/><b>Job Location: </b> ' . $require['city_name'] . '-' . $require['state_name'] . ',' . $require['country_name'] . '<br/><b>Job Role: </b> ' . $require['job_role_title'] . '<br/><b>Job Type: </b> ' . $require['job_types_name'] . '<br/><b>Job Nature: </b> ' . $require['job_nature_name'] . '<br/><b>Wrking Hrs: </b> ' . $require['working_hours'] . '<br/><b>Job Deadline: </b> ' . $require['job_deadline'] . '<br/><b>Education Required: </b> ' . $require['education_level_name'] . '(' . $require['education_specialization'] . ')' . '<br/><b>Preferred Age: </b> ' . $require['preferred_age'] . '-' . $require['preferred_age_to'] . '<br/><b>Required Skills: </b> ';
+                        for ($j = 0; $j < sizeof($req_skill_details); $j++) {
+                            $message .= ' <br>' . $req_skill_details[$j]['skill_name'];
+                        }
+                        
+                        $message .= '<br/><b>Job Description: </b> ' . $require['job_desc'] . '<br/><b>Job Benefits: </b> ' . $require['benefits'] . '<br/><b>Other Job Description: </b> ' . $require['education'] . '<br><br><a href="' . base_url() . 'job_forword_seeker/apply_forworded_job?apply_id=' . base64_encode($email[$i]) . '&job_id=' . base64_encode($apply) . '" class="btn btn-primary" value="Apply Now" align="center" target="_blank">Apply Now</a> <br><br><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><small>Enjoy personalized job searching experience<br>Goa a Question? Check out how works and our support team are ready to help.<br><br>You have received this mail because your e-mail ID is registered with Consultnhire.com. This is a system-generated e-mail regarding your Consultnhire account preferences, please do not reply to this message. The jobs sent in this mail have been posted by the clients of Consultnhire.com. And we have enabled auto-login for your convenience, you are strongly advised not to forward this email to protect your account from unauthorized access. IEIL has taken all reasonable steps to ensure that the information in this mailer is authentic. Users are advised to research bonafides of advertisers independently. Please do not pay any money to anyone who promises to find you a job. IEIL shall not have any responsibility in this regard. We recommend that you visit our Terms & Conditions and the Security Advice for more comprehensive information.</small><br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+                        
+                        
+                        $send = sendEmail_JobRequest($email[$i], $message, $subject);
+                        //echo $send;
+                        // echo $message;
+                        
+                        
+                        
+                        $company_name = $this->session->userdata('company_name');
+                        $data         = array(
+                            'company' => $company_name,
+                            'action_taken_for' => $email[$i],
+                            'field_changed' => 'Forwarded Job ',
+                            'Action' => $company_name . ' Forwarded job for the position of ' . $require['job_title'],
+                            'datetime' => date('Y-m-d H:i:s'),
+                            'updated_by' => $company_name
+                        );
+                       
+                        
+                    }
+                    // else{
+                    //     redirect('employer/active_job');
+                    // }
+                }
+              }
+    }
     public function forword_job_post()
     {
         $employer_id = $this->session->userdata('company_profile_id');

@@ -1190,7 +1190,8 @@ div#bulk {
                   <label class="mdl-textfield__label" for="sample3">job Title:</label>
                   <input type="text"  name="job_titles"  id="job_titles" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
                </div>
-               <input id="autocomplete2-value" type="text" name="code">
+               <input type="hidden" name="job_post_id" value="" id="autocomplete2-value">
+               <!-- <input id="" type="text" name="code"> -->
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
                   <label class="mdl-textfield__label" for="sample3">Message:</label>
                   <textarea class="form-control" name="message" rows="5" id="comment" required></textarea>
@@ -1265,7 +1266,7 @@ $("#job_titles").autocomplete({
                // prevent autocomplete from updating the textbox
                event.preventDefault();
                // manually update the textbox
-               alert(source);
+               // alert(source);
                $(this).val(ui.item.label);
             },
             select: function(event, ui) {
