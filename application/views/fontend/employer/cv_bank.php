@@ -1260,12 +1260,12 @@ $("#job_titles").autocomplete({
              
              source: "<?php echo base_url();?>Employer/search_job_keywords",
              minLength: 2,
-              append: "#rotateModal",
+              // append: "#rotateModal",
               focus: function(event, ui) {
                // prevent autocomplete from updating the textbox
                event.preventDefault();
                // manually update the textbox
-               // alert()
+               alert(ui.item);
                $(this).val(ui.item.label);
             },
             select: function(event, ui) {
