@@ -1165,7 +1165,8 @@ div#bulk {
           return this.value;
       }).get();
       var emails= (checkedVals.join(","));
-      $('#forward_job_emails').val(emails);
+      alert(emails);
+      $('#forward_job_emails').val(checkedVals.join(","));
       }
      
    </script>
