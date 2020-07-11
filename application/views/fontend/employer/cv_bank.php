@@ -1158,7 +1158,7 @@ div#bulk {
                   <textarea class="form-control" name="message" rows="5" id="comment" required></textarea>
                </div>
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-                  <label class="mdl-textfield__label" for="sample3">Number of cvs:</label><br>
+                  <label class="mdl-textfield__label" for="sample3">Number of cvs: 1</label><br>
                   
                </div>
 
@@ -1197,7 +1197,7 @@ div#bulk {
                   <textarea class="form-control" name="message" rows="5" id="comment" required></textarea>
                </div>
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-                  <label class="mdl-textfield__label" for="sample3">Number of cvs:</label><br>
+                  <label class="mdl-textfield__label" for="sample3">Number of cvs:<span id="no_of_cvs"></span></label><br>
                   
                </div>
 
@@ -1251,7 +1251,8 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
                    return this.value;
                }).get();
                var emails= (checkedVals.join(","));
-               // alert(emails);
+               var elements = emails.split(',').length;
+               $('#no_of_cvs').html(elements);
                $('#forward_job_emails').val(checkedVals.join(","));
                $('#rotateModal').modal('show');
             }
