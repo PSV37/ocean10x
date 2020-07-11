@@ -1193,7 +1193,7 @@ div#bulk {
    //          $('.check .chkbx').prop('checked', false);
    //      }
    //  );
-  $('#chk-all').click(function() {
+  $('.chk-all').click(function() {
     var checked = this.checked;
     $('input[type="checkbox"]').each(function() {
       this.checked = checked;
