@@ -876,7 +876,7 @@ div#bulk {
                         <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
-                           <li><a class="dropdown-item" href="#">Forward Job Post</a></li>
+                           <li><a class="dropdown-item" href="#" data-toggle="modal" data-target="#rotateModal<?php echo $cv_row['cv_id']; ?>">Forward Job Post</a></li>
                            <li> <a class="dropdown-item" href="#">Downlode this cv</a></li>
                            <li> <a class="dropdown-item" href="#">Dummy 1</a></li>
                         </div>
@@ -1031,13 +1031,48 @@ div#bulk {
       </div>
    </div>
 </div>
+<?php if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) : ?>
+<div class="modal" id="rotateModal<?php echo $v_companyjobs->job_post_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <input type="hidden" name="cv_id" id="cv_id" value="<?php $cv_row['cv_id']; ?>">
+   <div class="modal-dialog" role="document">
+      <div class="modal-content">
+         <div class="modal-header" style="border-bottom:none;">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Job Post</h5>
+         </div>
+         <form action="<?php echo base_url() ?>employer/forword_job_post" class="sendEmail" method="post" autocomplete="off">
+            <div class="modal-body" style="padding:15px 40px;">
+               <input type="hidden" name="job_post_id" value="<?php echo $v_companyjobs->job_post_id; ?>">
+               <input type="hidden" name="consultant" value="JobSeeker">  
+               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <label class="mdl-textfield__label" for="sample3">select job:</label>
+                  <input type="email"  name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;" required>
+               </div>
+               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
+                  <label class="mdl-textfield__label" for="sample3">Message:</label>
+                  <textarea class="form-control" name="message" rows="5" id="comment" required></textarea>
+               </div>
+               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
+                  <label class="mdl-textfield__label" for="sample3">Number of cvs:</label><br>
+                  
+               </div>
+            </div>
+            <div class="modal-footer">
+               <button type="submit" class="btn btn-save">Send</button>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>
+<?php
+   endforeach;endif;
 <script>
    $(document).on(' change','input[name="check_all"]',function() {
             $('.chkbx').prop("checked" , this.checked);
     });
-   $(".select-all").on("click", function() {
-    $(".chkbx").prop("checked", $(this).prop("checked"));
-});
+//    $(".select-all").on("click", function() {
+//     $(".chkbx").prop("checked", $(this).prop("checked"));
+// });
    // $(document).ready(function() {
    //     $('#select-all').toggle(
    //      function() {
@@ -1047,12 +1082,12 @@ div#bulk {
    //          $('.check .chkbx').prop('checked', false);
    //      }
    //  );
-  // $('#select-all').click(function() {
-  //   var checked = this.checked;
-  //   $('input[type="checkbox"]').each(function() {
-  //     this.checked = checked;
-  //   });
-  // })
+  $('#select-all').click(function() {
+    var checked = this.checked;
+    $('input[type="checkbox"]').each(function() {
+      this.checked = checked;
+    });
+  })
 // });
 </script>
 <script>
