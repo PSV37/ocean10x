@@ -774,16 +774,16 @@ div#bulk {
             </div>
            
             <div class="row" id="bulk">
-               <div class="col-md-6">
+               <!-- <div class="col-md-6">
                   <div class="placeholder_cmmn" id="auto_loc_wrap_srp">    
                      <input type="text" class="form-control rounded" tabindex="3" monstab="3" placeholder="Type The Job Post That You Want To Forward to the Below CV'S" onfocus="if(this.value==&quot;&quot;)this.value=&quot;&quot;" onblur="if(this.value=='')this.value=''" id="lmy_header" name="lmy">
                      
                     
                   </div>
-               </div>
-               <div class="col-md-2">
+               </div> -->
+               <!-- <div class="col-md-2">
                   <button class="send">send</button>
-               </div>
+               </div> -->
                <div class="col-md-4">
                   <label class="dropdown">
                      <div class="dd-button" style="background-color: #18c5bd;color: #ffffff;">
@@ -791,8 +791,9 @@ div#bulk {
                      </div>
                      <input type="checkbox" class="dd-input" id="test">
                      <ul class="dd-menu">
+                         <li>Bulk Forward</li>
                         <li>Bulk Download</li>
-                        <li>Bulk Forward</li>
+                       
                      </ul>
                   </label>
                </div>
@@ -1034,7 +1035,7 @@ div#bulk {
    $(document).ready(function() {
   $('#select-all').click(function() {
     var checked = this.checked;
-    $('input[type="checkbox"]').each(function() {
+    $('.chk_bx').each(function() {
       this.checked = checked;
     });
   })
