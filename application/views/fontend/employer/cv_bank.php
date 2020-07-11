@@ -1158,12 +1158,16 @@ div#bulk {
  
   // Search text
   var text = $(this).val();
- 
+ // var text = text1.toLowerCase();
+ var result = $('.content').filter(function() {
+   return $(this).text().match(text);
+});
+ alert(result);
   // Hide all content class element
-  $('.content').hide();
+  // $('.content').hide();
 
-  // Search and show
-  $('.content:contains("'+text+'")').show();
+  // // Search and show
+  // $('.content:contains("'+text+'")').show();
  
  });
 });
