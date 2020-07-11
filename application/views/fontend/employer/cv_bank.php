@@ -830,6 +830,9 @@ div#bulk {
   z-index: 1511;
   position: relative;
 }
+.ui-autocomplete {
+    z-index: 5000;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -1254,7 +1257,8 @@ $("#job_titles").autocomplete({
              
              source: "<?php echo base_url();?>Employer/search_title",
              minLength: 2,
-              appendTo: "#job_titles"
+              append: "#rotateModal"
+    }
             
            });
 </script>
