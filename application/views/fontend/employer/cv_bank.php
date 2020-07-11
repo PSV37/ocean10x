@@ -873,11 +873,11 @@ div#bulk {
                <div class="col-md-4">
                   <label class="dropdown">
                      <div class="dd-button" style="background-color: #18c5bd;color: #ffffff;">
-                        Bulk Downlode
+                        Bulk Download
                      </div>
                      <input type="checkbox" class="dd-input" id="test">
                      <ul class="dd-menu">
-                         <li class="chk-all">Bulk Forward</li>
+                         <li class="chk-all" onclick="check_all();">Bulk Forward</li>
                         <li>Bulk Download</li>
                        
                      </ul>
@@ -1190,6 +1190,11 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
    $(document).on(' change','input[name="check_all"]',function() {
             $('.chkbx').prop("checked" , this.checked);
     });
+
+   function check_all()
+   {
+      $('.chkbx').prop("checked" , this.checked);
+   }
 //    $(".select-all").on("click", function() {
 //     $(".chkbx").prop("checked", $(this).prop("checked"));
 // });
