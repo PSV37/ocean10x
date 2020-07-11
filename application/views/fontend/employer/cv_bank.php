@@ -877,7 +877,7 @@ div#bulk {
                      </div>
                      <input type="checkbox" class="dd-input" id="test">
                      <ul class="dd-menu">
-                         <a  onclick="check_all();"><li class="chk-all">Bulk Forward</li></a>
+                         <a  onclick="check_all();"><li id="chk-all">Bulk Forward</li></a>
                         <li>Bulk Download</li>
                        
                      </ul>
@@ -1170,6 +1170,12 @@ div#bulk {
   $('.content:contains("'+text+'")').show();
  
  });
+  $('#chk-all').click(function() {
+    var checked = this.checked;
+    $('input[type="checkbox"]').each(function() {
+      this.checked = checked;
+    });
+  })
 });
 $.expr[":"].contains = $.expr.createPseudo(function(arg) {
   return function( elem ) {
@@ -1191,11 +1197,8 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
             $('.chkbx').prop("checked" , this.checked);
     });
 
-   function check_all()
-   {
-      alert('ff');
-      $('.chkbx').prop("checked" , this.checked);
-   }
+
+  
 //    $(".select-all").on("click", function() {
 //     $(".chkbx").prop("checked", $(this).prop("checked"));
 // });
@@ -1208,12 +1211,7 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
    //          $('.check .chkbx').prop('checked', false);
    //      }
    //  );
-  $('.chk-all').click(function() {
-    var checked = this.checked;
-    $('input[type="checkbox"]').each(function() {
-      this.checked = checked;
-    });
-  })
+ 
 // });
 </script>
 <script>
