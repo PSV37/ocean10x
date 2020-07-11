@@ -976,7 +976,7 @@ div#bulk {
                         <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
-                           <li><a onclick="get_values();" class="dropdown-item" href="#" data-toggle="modal" data-target="#rotateModal<?php echo $cv_row['cv_id']; ?>">Forward Job Post</a></li>
+                           <li><a class="dropdown-item" href="#" data-toggle="modal" data-target="#rotateModal<?php echo $cv_row['cv_id']; ?>">Forward Job Post</a></li>
                            <li> <a class="dropdown-item" href="#">Downlode this cv</a></li>
                            <li> <a class="dropdown-item" href="#">Dummy 1</a></li>
                         </div>
@@ -1204,19 +1204,6 @@ div#bulk {
    </div>
 </div>
    <script>
-      function get_values(){
-       //   $('input:checkbox.chkbx').each(function () {
-       // var sThisVal = (this.checked ? $(this).val() : "");
-       // alert(sThisVal);
-  // });
-        var checkedVals = $('.chkbx:checkbox:checked').map(function() {
-          return this.value;
-      }).get();
-      var emails= (checkedVals.join(","));
-      alert(emails);
-      $('#forward_job_emails').val(checkedVals.join(","));
-      $('#myModal').modal('show');
-      }
      
    </script>
 <script>
@@ -1250,14 +1237,14 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
     });
    $(document).on(' change','input[name="bulk_forward"]',function() {
             $('.chkbx').prop("checked" , this.checked);
-            alert(this.checked);
+            // alert(this.checked);
             if (this.checked) 
             {
                 var checkedVals = $('.chkbx:checkbox:checked').map(function() {
                    return this.value;
                }).get();
                var emails= (checkedVals.join(","));
-               alert(emails);
+               // alert(emails);
                $('#forward_job_emails').val(checkedVals.join(","));
                $('#rotateModal').modal('show');
             }
