@@ -85,10 +85,9 @@
    span.select2-selection.select2-selection--single {
    border-radius: 4px;
    }
-   .error {
-      color: red;
-      /*background-color: #acf;*/
-   }
+   label.error {
+    color: red;
+}
    div#ui-datepicker-div {
     margin-left: 9px;
 }
