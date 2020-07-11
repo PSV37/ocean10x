@@ -864,10 +864,10 @@ div#bulk {
                         Sort by
                      </div>
                      <input type="checkbox" class="dd-input" id="test">
-                     <ul class="dd-menu">
-                        <li>Name</li>
-                        <li>Experience</li>
-                        <li>Education</li>
+                     <ul class="dd-menu" id="test">
+                        <li value="name">Name</li>
+                        <li value="exp">Experience</li>
+                        <li value="edu">Education</li>
                      </ul>
                   </label>
                </div>
@@ -1219,6 +1219,17 @@ div#bulk {
 }).blur(function(){
    $(this).attr('placeholder',$(this).data('placeholder'));
 });
+
+function getEventTarget(e) {
+    e = e || window.event;
+    return e.target || e.srcElement; 
+}
+
+var ul = document.getElementById('test');
+ul.onclick = function(event) {
+    var target = getEventTarget(event);
+    alert(target.innerHTML);
+};
    </script>
 <script>
    $(document).ready(function(){
