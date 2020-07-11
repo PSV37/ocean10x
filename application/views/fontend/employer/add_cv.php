@@ -731,13 +731,6 @@ return this.optional(element) || /^[1-9][0-9][0-9][0-9][0-9][0-9]$/.test(value);
              }
          });
 
-   $(".allownumericwithdecimal").on("keypress keyup blur",function (event) {
-             //this.value = this.value.replace(/[^0-9\.]/g,'');
-      $(this).val($(this).val().replace(/[^\d].+/, ""));
-             if ((event.which < 48 || event.which > 57)) {
-                 event.preventDefault();
-             }
-         });
    
    //(^[ A-Za-z0-9_@./#&+-]*$)
    
