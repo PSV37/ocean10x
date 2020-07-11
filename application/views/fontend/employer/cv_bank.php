@@ -963,7 +963,7 @@ div#bulk {
                         <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
-                           <li><a class="dropdown-item" href="#" data-toggle="modal" data-target="#rotateModal<?php echo $cv_row['cv_id']; ?>">Forward Job Post</a></li>
+                           <li><a onclick="get_values();" class="dropdown-item" href="#" data-toggle="modal" data-target="#rotateModal<?php echo $cv_row['cv_id']; ?>">Forward Job Post</a></li>
                            <li> <a class="dropdown-item" href="#">Downlode this cv</a></li>
                            <li> <a class="dropdown-item" href="#">Dummy 1</a></li>
                         </div>
@@ -1156,10 +1156,13 @@ div#bulk {
 <?php
    endforeach;endif;?>
    <script>
-     $('input:checkbox.chkbx').each(function () {
+      function get_values(){
+         $('input:checkbox.chkbx').each(function () {
        var sThisVal = (this.checked ? $(this).val() : "");
        alert(sThisVal);
   });
+      }
+     
    </script>
 <script>
    $(document).ready(function(){
