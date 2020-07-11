@@ -847,7 +847,7 @@ div#bulk {
                   <form class="navbar-form" role="search">
                      <!-- <div class="form-group has-search"> -->
                          <!-- <span class="fa fa-search form-control-feedback"></span> -->
-                         <input type="text" id="myInput" class="form-control" placeholder="Search" style="width: 100%">
+                         <input type="text" id="myInput" class="form-control" placeholder="Search with Email or Name or Number" style="width: 100%">
                      <!-- </div> -->
                     <!--  <div class="input-group add-on" style="width:100%;margin-left:-15px;">
                         <input class="form-control" placeholder="Search based oh Name, Email id, Phone no." name="srch-term" id="srch-term" type="text">
@@ -1213,7 +1213,12 @@ div#bulk {
    </div>
 </div>
    <script>
-     
+     $('#myInput').focus(function(){
+   $(this).data('placeholder',$(this).attr('placeholder'))
+          .attr('placeholder','');
+}).blur(function(){
+   $(this).attr('placeholder',$(this).data('placeholder'));
+});
    </script>
 <script>
    $(document).ready(function(){
