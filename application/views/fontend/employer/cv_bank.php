@@ -877,7 +877,7 @@ div#bulk {
                      </div>
                      <input type="checkbox" class="dd-input" id="test">
                      <ul class="dd-menu">
-                         <li id="chk-all">Bulk Forward</li>
+                         <li><a id="checkAll">Bulk Forward></a></li>
                         <li>Bulk Download</li>
                        
                      </ul>
@@ -1153,6 +1153,12 @@ div#bulk {
 </div>
 <?php
    endforeach;endif;?>
+   <script>
+      $("#checkAll").click(function () {
+         alert('hdd');
+     $('input:checkbox').not(this).prop('checked', this.checked);
+ });
+   </script>
 <script>
    $(document).ready(function(){
  $('#myInput').keyup(function(){
@@ -1160,11 +1166,7 @@ div#bulk {
   // Search text
   var text1 = $(this).val();
  var text = text1.toUpperCase();
-//  var result = $('.content').filter(function() {
-//    return $(this).text().match(text);
-// });
- // alert(result);
-  // Hide all content class element
+
   $('.content').hide();
 
   // Search and show
