@@ -884,15 +884,16 @@ div#bulk {
                </div> -->
                <div class="col-md-4">
                   <label class="dropdown">
-                     <div class="dd-button" style="background-color: #18c5bd;color: #ffffff;">
+                   <!--   <div class="dd-button" style="background-color: #18c5bd;color: #ffffff;">
                         Bulk Download
-                     </div>
-                     <input type="checkbox" class="dd-input" id="test">
-                     <ul class="dd-menu">
+                     </div> -->
+                     <input type="checkbox" name="bulk_forward" id="checkAll"><span>Bulk Forward</span>
+                     <!-- <input type="checkbox" class="dd-input" id="test"> -->
+                     <!-- <ul class="dd-menu">
                          <li><a id="checkAll">Bulk Forward></a></li>
                         <li>Bulk Download</li>
                        
-                     </ul>
+                     </ul> -->
                   </label>
                </div>
             
@@ -1209,6 +1210,9 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
 </script>
 <script>
    $(document).on(' change','input[name="check_all"]',function() {
+            $('.chkbx').prop("checked" , this.checked);
+    });
+   $(document).on(' change','input[name="bulk_forward"]',function() {
             $('.chkbx').prop("checked" , this.checked);
     });
 $("#job_title").autocomplete({
