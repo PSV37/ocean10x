@@ -743,8 +743,8 @@ div#bulk {
                   
                   <form class="navbar-form" role="search">
                      <div class="form-group has-search">
-                         <span class="fa fa-search form-control-feedback"></span>
-                         <input type="text" class="form-control" placeholder="Search">
+                         <span class="fa fa-search"></span>
+                         <input type="text" class="form-control" placeholder="Search" style="width: 100%">
                      </div>
                     <!--  <div class="input-group add-on" style="width:100%;margin-left:-15px;">
                         <input class="form-control" placeholder="Search based oh Name, Email id, Phone no." name="srch-term" id="srch-term" type="text">
@@ -1035,16 +1035,16 @@ div#bulk {
    $(document).ready(function() {
   $('#select-all').click(function() {
     var checked = this.checked;
-    // $("input.select_ckbx[type=checkbox]").each(function() {
-    //   this.checked = checked;
-    // });
-      var checkboxes = $('.select_ckbx');
-     if ($(this).is(':checked')) {
-            checkboxes.prop("checked" , true);
-        } else {
-            checkboxes.prop( "checked" , false );
-        }
-      // $('').prop('checked',true);
+    $("input.select_ckbx").each(function() {
+      this.checked = checked;
+    });
+     //  var checkboxes = $('.select_ckbx');
+     // if ($(this).is(':checked')) {
+     //        checkboxes.prop("checked" , true);
+     //    } else {
+     //        checkboxes.prop( "checked" , false );
+     //    }
+      // $('select_ckbx').prop('checked',true);
   })
 });
 </script>
