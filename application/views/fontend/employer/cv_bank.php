@@ -1035,9 +1035,10 @@ div#bulk {
    $(document).ready(function() {
   $('#select-all').click(function() {
     var checked = this.checked;
-    $("input.select_ckbx[type=checkbox]").each(function() {
-      this.checked = checked;
-    });
+    // $("input.select_ckbx[type=checkbox]").each(function() {
+    //   this.checked = checked;
+    // });
+      $('input.select_ckbx').prop('checked',true);
   })
 });
 </script>
