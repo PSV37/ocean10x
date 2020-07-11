@@ -887,7 +887,7 @@ div#bulk {
                    <!--   <div class="dd-button" style="background-color: #18c5bd;color: #ffffff;">
                         Bulk Download
                      </div> -->
-                     <input type="checkbox" name="bulk_forward" id="checkAll"><a onclick="get_values();" class="dropdown-item" href="#" data-toggle="modal" data-target="#rotateModal<?php echo $cv_row['cv_id']; ?>">Bulk Forward</a>
+                     <a onclick="get_values();" class="dropdown-item" href="#" data-toggle="modal" data-target="#rotateModal"><input type="checkbox" name="bulk_forward" id="checkAll">Bulk Forward</a>
                      <!-- <input type="checkbox" class="dd-input" id="test"> -->
                      <!-- <ul class="dd-menu">
                          <li><a id="checkAll">Bulk Forward></a></li>
@@ -1157,7 +1157,7 @@ div#bulk {
                   
                </div>
 
-               <input type="hidden" name="forward_job_emails" id="forward_job_emails" value="">
+               <input type="hidden" name="forward_job_emails" id="forward_job_emails" value="<?php echo $cv_row['js_email']; ?>">
             </div>
             <div class="modal-footer">
                <button type="submit" class="btn btn-save">Send</button>
@@ -1168,6 +1168,41 @@ div#bulk {
 </div>
 <?php
    endforeach;endif;?>
+
+   <div class="modal" id="rotateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <input type="hidden" name="cv_id" id="cv_id" value="<?php $cv_row['cv_id']; ?>">
+   <div class="modal-dialog" role="document">
+      <div class="modal-content">
+         <div class="modal-header" style="border-bottom:none;">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Job Post</h5>
+         </div>
+         <form action="<?php echo base_url() ?>employer/forward_posted_job" class="sendEmail" method="post" autocomplete="off">
+            <div class="modal-body" style="padding:15px 40px;">
+               <input type="hidden" name="job_post_id" value="<?php echo $v_companyjobs->job_post_id; ?>">
+               <input type="hidden" name="consultant" value="JobSeeker">  
+               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <label class="mdl-textfield__label" for="sample3">job Title:</label>
+                  <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
+               </div>
+               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
+                  <label class="mdl-textfield__label" for="sample3">Message:</label>
+                  <textarea class="form-control" name="message" rows="5" id="comment" required></textarea>
+               </div>
+               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
+                  <label class="mdl-textfield__label" for="sample3">Number of cvs:</label><br>
+                  
+               </div>
+
+               <input type="hidden" name="forward_job_emails" id="forward_job_emails" value="<?php echo $cv_row['js_email']; ?>">
+            </div>
+            <div class="modal-footer">
+               <button type="submit" class="btn btn-save">Send</button>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>
    <script>
       function get_values(){
        //   $('input:checkbox.chkbx').each(function () {
