@@ -1253,7 +1253,8 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
 $("#job_titles").autocomplete({
              
              source: "<?php echo base_url();?>Employer/search_title",
-             minLength: 2
+             minLength: 2,
+              appendTo: "#job_titles"
             
            });
 </script>
