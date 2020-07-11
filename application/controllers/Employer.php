@@ -1336,10 +1336,10 @@ class Employer extends MY_Employer_Controller
     {
         $employer_id = $this->session->userdata('company_profile_id');
           if ($_POST) {
-            if (isset($this->input->post('forward_job_emails')) && !empty($this->input->post('forward_job_emails'))) {
+            if (!empty($this->input->post('forward_job_emails'))) {
                 $candiate_email = $this->input->post('forward_job_emails');
             }
-            elseif (isset($this->input->post('forward_job_email')) && !empty($this->input->post('forward_job_email'))) {
+            elseif ( !empty($this->input->post('forward_job_email'))) {
                 $candiate_email = $this->input->post('forward_job_email');
                 # code...
             }
