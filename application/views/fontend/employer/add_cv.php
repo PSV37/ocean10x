@@ -183,7 +183,7 @@ input[type="text"] {
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Last Salary Hike</label>
-                        <input type="text" name="last_salary_hike" id="last_salary_hike" class="form-control datepicker" max="<?php echo date('Y-m-d'); ?>"> value="<?php echo  set_value('last_salary_hike'); ?>">
+                        <input type="text" name="last_salary_hike" id="last_salary_hike" class="form-control datepicker" max="<?php echo date('Y-m-d'); ?>" value="<?php echo  set_value('last_salary_hike'); ?>">
                        <!--  <span><i class="fa fa-calendar" aria-hidden="true"></i></span> -->  
                         <?php echo form_error('last_salary_hike'); ?>     
                      </div>
