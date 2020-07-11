@@ -130,7 +130,7 @@ input[type="text"] {
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Yrs of Experience</label>
-                        <input type="text" name="candidate_experiance" id="candidate_experiance" value="<?php echo  set_value('candidate_experiance'); ?>" maxlength="2"  class="form-control allownumericwithoutdecimal"><?php echo form_error('candidate_experiance'); ?>
+                        <input type="text" name="candidate_experiance" id="candidate_experiance" value="<?php echo  set_value('candidate_experiance'); ?>" maxlength="2"  class="form-control allownumericwithdecimal"><?php echo form_error('candidate_experiance'); ?>
                      </div>
                   </div>
                   <div class="col-md-4">
