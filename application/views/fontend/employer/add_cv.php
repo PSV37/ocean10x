@@ -169,8 +169,8 @@ input[type="text"] {
                      <div class="form-group">
                         <label for="exampleInputEmail1">Working at Current Job Since</label>
 
-                         <input type="text" id="my_date_picker" name="working_current_since" style="display: inline-block;" class="form-control datepicker"   value="<?php echo  set_value('current_work_location'); ?>">  
-                       <!--  <input type="text" name="working_current_since" id="working_current_since" class="form-control datepicker">  <?php echo form_error('current_work_location'); ?>    -->
+                         <input type="text" id="my_date_picker" name="working_current_since" style="display: inline-block;" class="form-control datepicker"   value="<?php echo  set_value('working_current_since'); ?>">  
+                       <!--  <input type="text" name="working_current_since" id="working_current_since" class="form-control datepicker">  <?php echo form_error('working_current_since'); ?>    -->
                      </div>
                   </div>
                   <div class="col-md-4">
@@ -463,14 +463,6 @@ current_job_desig_regex: true
 },
 
 
-'current_work_location':{
-
-required: true;
-current_work_location_regex: true
-
-// /companypincode_regex: true
-
-},
 
 'working_current_since':{
 
