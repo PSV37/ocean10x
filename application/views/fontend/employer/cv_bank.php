@@ -791,7 +791,7 @@ div#bulk {
                      </div>
                      <input type="checkbox" class="dd-input" id="test">
                      <ul class="dd-menu">
-                         <li name="forward_all">Bulk Forward</li>
+                         <li class="select-all">Bulk Forward</li>
                         <li>Bulk Download</li>
                        
                      </ul>
@@ -1035,9 +1035,9 @@ div#bulk {
    $(document).on(' change','input[name="check_all"]',function() {
             $('.chkbx').prop("checked" , this.checked);
     });
-    $(document).on(' change','li[name="forward_all"]',function() {
-            $('.chkbx').prop("checked" , this.checked);
-    });
+   $(".select-all").on("click", function() {
+    $(".chkbx").prop("checked", $(this).prop("checked"));
+});
    // $(document).ready(function() {
    //     $('#select-all').toggle(
    //      function() {
