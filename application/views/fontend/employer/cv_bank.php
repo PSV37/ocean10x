@@ -865,9 +865,9 @@ div#bulk {
                      </div>
                      <input type="checkbox" class="dd-input" id="test">
                      <ul class="dd-menu" id="test">
-                        <li value="name">Name</li>
-                        <li value="exp">Experience</li>
-                        <li value="edu">Education</li>
+                        <li>Name</li>
+                        <li>Experience</li>
+                        <li>Education</li>
                      </ul>
                   </label>
                </div>
