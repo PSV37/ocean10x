@@ -1038,7 +1038,13 @@ div#bulk {
     // $("input.select_ckbx[type=checkbox]").each(function() {
     //   this.checked = checked;
     // });
-      $('.select_ckbx').prop('checked',true);
+      var checkboxes = $('.select_ckbx');
+     if ($(this).is(':checked')) {
+            checkboxes.prop("checked" , true);
+        } else {
+            checkboxes.prop( "checked" , false );
+        }
+      // $('').prop('checked',true);
   })
 });
 </script>
