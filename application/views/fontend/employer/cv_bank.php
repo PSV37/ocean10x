@@ -818,6 +818,18 @@ div#bulk {
    --transDur: 0.1s;
    font-size: calc(20px + (40 - 20)*(100vw - 320px)/(2560 - 320));
    }
+   .ui-autocomplete-input {
+  border: none; 
+  font-size: 14px;
+  width: 300px;
+  height: 24px;
+  margin-bottom: 5px;
+  padding-top: 2px;
+  border: 1px solid #DDD !important;
+  padding-top: 0px !important;
+  z-index: 1511;
+  position: relative;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -1127,7 +1139,7 @@ div#bulk {
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Job Post</h5>
          </div>
-         <form action="<?php echo base_url() ?>employer/forword_job_post" class="sendEmail" method="post" autocomplete="off">
+         <form action="<?php echo base_url() ?>employer/forward_posted_job" class="sendEmail" method="post" autocomplete="off">
             <div class="modal-body" style="padding:15px 40px;">
                <input type="hidden" name="job_post_id" value="<?php echo $v_companyjobs->job_post_id; ?>">
                <input type="hidden" name="consultant" value="JobSeeker">  
