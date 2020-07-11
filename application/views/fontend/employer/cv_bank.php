@@ -1065,7 +1065,7 @@ div#bulk {
    </div>
 </div>
 <?php
-   endforeach;endif;
+   endforeach;endif;?>
 <script>
    $(document).on(' change','input[name="check_all"]',function() {
             $('.chkbx').prop("checked" , this.checked);
