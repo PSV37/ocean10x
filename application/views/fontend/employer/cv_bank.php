@@ -739,13 +739,13 @@ div#bulk {
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
          <div class="col-md-6 cv_bank">
             <div class="row">
-               <div class="col-md-8">
+               <div class="col-md-6">
                   
                   <form class="navbar-form" role="search">
-                     <div class="form-group has-search">
+                     <!-- <div class="form-group has-search"> -->
                          <span class="fa fa-search"></span>
                          <input type="text" class="form-control" placeholder="Search" style="width: 100%">
-                     </div>
+                     <!-- </div> -->
                     <!--  <div class="input-group add-on" style="width:100%;margin-left:-15px;">
                         <input class="form-control" placeholder="Search based oh Name, Email id, Phone no." name="srch-term" id="srch-term" type="text">
                         <div class="input-group-btn">
@@ -755,7 +755,7 @@ div#bulk {
                   </form>
                   <div class="clear"></div>
                </div>
-               <div class="col-md-2">
+               <div class="col-md-3">
                   <label class="dropdown" style="float:right;">
                      <div class="dd-button">
                         Sort by
@@ -768,7 +768,7 @@ div#bulk {
                      </ul>
                   </label>
                </div>
-               <div class="col-md-2">
+               <div class="col-md-3">
                   <a href="<?php echo base_url() ?>employer/add-new-cv"><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New CV</button></a>
                </div>
             </div>
@@ -789,7 +789,7 @@ div#bulk {
                      <div class="dd-button" style="background-color: #18c5bd;color: #ffffff;">
                         Bulk Downlode
                      </div>
-                     <input type="checkbox" class="dd-input" id="test">
+                     <!-- <input type="checkbox" class="dd-input" id="test"> -->
                      <ul class="dd-menu">
                          <li id="select-all">Bulk Forward</li>
                         <li>Bulk Download</li>
@@ -1035,7 +1035,7 @@ div#bulk {
    $(document).ready(function() {
   $('#select-all').click(function() {
     var checked = this.checked;
-    $("input.select_ckbx").each(function() {
+    $("input[type=checkbox]").each(function() {
       this.checked = checked;
     });
      //  var checkboxes = $('.select_ckbx');
