@@ -1132,8 +1132,8 @@ div#bulk {
                <input type="hidden" name="job_post_id" value="<?php echo $v_companyjobs->job_post_id; ?>">
                <input type="hidden" name="consultant" value="JobSeeker">  
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <label class="mdl-textfield__label" for="sample3">select job:</label>
-                  <input type="email"  name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;" required>
+                  <label class="mdl-textfield__label" for="sample3">job Title:</label>
+                  <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
                </div>
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
                   <label class="mdl-textfield__label" for="sample3">Message:</label>
@@ -1143,6 +1143,8 @@ div#bulk {
                   <label class="mdl-textfield__label" for="sample3">Number of cvs:</label><br>
                   
                </div>
+
+               <input type="hidden" name="forward_job_emails" id="forward_job_emails" value="">
             </div>
             <div class="modal-footer">
                <button type="submit" class="btn btn-save">Send</button>
@@ -1154,38 +1156,27 @@ div#bulk {
 <?php
    endforeach;endif;?>
    <script>
-      $("#checkAll").click(function () {
-         alert('hdd');
-         if ($('.chkbx').is(':checked')){
-            $('.chkbx').prop('checked', true).attr('checked', 'checked');
-         }
-         else {
-            $('.chkbx').prop('checked', false).removeAttr('checked');
-         }
-         $('.chkbx')..prop('checked', true).attr('checked', 'checked');
-     // $('input:checkbox').not(this).prop('checked', this.checked);
- });
+     $('input:checkbox.chkbx').each(function () {
+       var sThisVal = (this.checked ? $(this).val() : "");
+       alert(sThisVal);
+  });
    </script>
 <script>
    $(document).ready(function(){
- $('#myInput').keyup(function(){
- 
-  // Search text
-  var text1 = $(this).val();
- var text = text1.toUpperCase();
 
-  $('.content').hide();
+    $('#myInput').keyup(function(){
+    
+     // Search text
+     var text1 = $(this).val();
+    var text = text1.toUpperCase();
 
-  // Search and show
-  $('.content:contains("'+text+'")').show();
+     $('.content').hide();
+
+     // Search and show
+     $('.content:contains("'+text+'")').show();
+    
+    });
  
- });
-  // $('#chk-all').click(function() {
-  //   var checked = this.checked;
-  //   $('input[type="checkbox"]').each(function() {
-  //     this.checked = checked;
-  //   });
-  // })
 });
 $.expr[":"].contains = $.expr.createPseudo(function(arg) {
   return function( elem ) {
@@ -1193,35 +1184,18 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
   };
 });
 
-// $(document).ready(function(){
-//   $("#myInput").on("keyup", function() {
-//     var value = $(this).val().toLowerCase();
-//     $("#myDIV *").filter(function() {
-//       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-//     });
-//   });
-// });
+
 </script>
 <script>
    $(document).on(' change','input[name="check_all"]',function() {
             $('.chkbx').prop("checked" , this.checked);
     });
-
-  
-//    $(".select-all").on("click", function() {
-//     $(".chkbx").prop("checked", $(this).prop("checked"));
-// });
-   // $(document).ready(function() {
-   //     $('#select-all').toggle(
-   //      function() {
-   //          $('.check .chkbx').prop('checked', true);
-   //      },
-   //      function() {
-   //          $('.check .chkbx').prop('checked', false);
-   //      }
-   //  );
- 
-// });
+$("#job_title").autocomplete({
+             
+             source: "<?php echo base_url();?>Employer/search_title",
+             minLength: 2
+            
+           });
 </script>
 <script>
    function sliceSize(dataNum, dataTotal) {
