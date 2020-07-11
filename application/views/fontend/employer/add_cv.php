@@ -399,7 +399,7 @@ input[type="text"] {
 
 {
 
-rules:{
+ules:{
 
 'candidate_name':{
 
@@ -425,21 +425,22 @@ type: "post"
 'candidate_phone':{
 
 required: true,
+minlength: true,
+maxlength: true,
 phonenumber_regex: true
 
 }, 
 
 'candidate_experiance':{
 
-required: true,
 twodigit_regex: true
 
 //email: true
 },
 
 'candidate_notice_period':{
-required: true,
-onedigit_regex: true
+
+twodigit_regex: true
 //email: true
 },
 
@@ -449,12 +450,12 @@ onedigit_regex: true
         
   //maxlength:10,
 
-  required: true
+  
 },
 
 'current_job_desig':{
 
-required: true,
+
 
 current_job_desig_regex: true
 
@@ -463,10 +464,17 @@ current_job_desig_regex: true
 },
 
 
+'current_work_location':{
+
+current_work_location_regex: true
+
+// /companypincode_regex: true
+
+},
 
 'working_current_since':{
 
-required: true
+twodecimal_regex: true
 
 // /companypincode_regex: true
 
@@ -474,39 +482,35 @@ required: true
 
 'current_ctc':{
 
-required: true
-
+twodigit_regex: true
 // /companypincode_regex: true
 
 },
 
 'last_salary_hike':{
 
-required: true
-
+twodecimal_regex: true
 // /companypincode_regex: true
 
 },
 
 'top_education':{
 
-required: true
+current_work_location_regex: true
 
 // /companypincode_regex: true
 
 },
 
 'candidate_skills':{
-
 required: true
-
 // /companypincode_regex: true
 
 },
 
 'candidate_certification':{
 
-required: true
+
 
 // /companypincode_regex: true
 
@@ -514,7 +518,6 @@ required: true
 
 'candidate_industry':{
 
-required: true
 
 // /companypincode_regex: true
 
@@ -522,7 +525,7 @@ required: true
 
 'candidate_role':{
 
-required: true
+
 
 // /companypincode_regex: true
 
@@ -530,15 +533,15 @@ required: true
 
 'candidate_expected_sal':{
 
-required: true
+twodecimal_regex: true
 
 // /companypincode_regex: true
 
 } , 
 
 'desired_wrok_location':{
+namespace_regex: true
 
-required: true
 
 // /companypincode_regex: true
 
@@ -550,15 +553,15 @@ messages:{
 
 'candidate_name':{
 
-required: "The name field is mandatory!",
+required: "This field is mandatory!",
 
-maxlength: "Choose a company name of at least 14 letters!"
+minlength: "Please type atleast 3 characters!"
 
 },
 
-'cont_person_mobile':{
+'candidate_email':{
 
-  required: "The name field is mandatory!",
+  required: "This field is mandatory!",
 
   matches: "Didn't match!", 
         
@@ -567,27 +570,22 @@ maxlength: "Choose a company name of at least 14 letters!"
   maxlength: "Maximum length 10 digits!"
 },
 
-'contact_name':{
+'candidate_phone':{
 
-required: "The name field is mandatory!",
+required: "This field is mandatory!",
+
+minlength: "Please type atleast 10 digits",
+maxlength: "Please type atleast 10 digits"
+
+},
+
+'candidate_experiance':{
 
 maxlength: "Choose a company name of at least 14 letters!"
 
 },
 
-'cont_person_level':{
-
-required: "The name field is mandatory!",
-
-maxlength: "Choose a company name of at least 14 letters!"
-
-},
-
-'company_phone':{
-
-required: "The username field is mandatory!",
-
-minlength: "Please Enter 10 digit phone numbers!",
+'candidate_notice_period':{
 
 company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
 
@@ -596,9 +594,7 @@ remote: "The username is already in use by another user!"
 },
 
 
-'alternate_email_id':{
-
-required: "The Email is required!",
+'job_type':{
 
 email: "Please enter a valid email address!",
 
@@ -606,9 +602,7 @@ remote: "The email is already in use by another user!"
 
 },
 
-'cont_person_email' :{
-
-required: "The Email is required!",
+'current_job_desig' :{
 
 email: "Please enter a valid email address!",
 
@@ -616,21 +610,18 @@ remote: "The email is already in use by another user!"
 
 },
 
-'company_url':{
-
-required: "The Web Address is required!"
+'current_work_location':{
 
 },
 
-'username':{
+'working_current_since':{
 
-required: "The username field is mandatory!",
-
+required: "This field is mandatory!",
 minlength: "Choose a username of at least 4 letters!",
 
 username_regex: "You have used invalid characters. Are permitted only letters numbers!",
 
-remote: "The username is already in use by another user!"
+remote: "The useername is already in use by another user!"
 
 }
 
@@ -685,11 +676,11 @@ return this.optional(element) || /^[0-9]{1,2}$/.test(value);
 
 return this.optional(element) || /^[0-9]{1,2}[:.,-]?$/.test(value);
     
-}, "Please type only one numbers");
+}, "Please type only one number");
 
 
 
-  $.validator.addMethod("2decimal_regex", function(value, element) {
+  $.validator.addMethod("twodecimal_regex", function(value, element) {
 
 return this.optional(element) || /^\d{1,3}(\.\d{0,2})?$/.test(value);
     
@@ -786,7 +777,6 @@ return this.optional(element) || /^[1-9][0-9][0-9][0-9][0-9][0-9]$/.test(value);
          }
      });
 </script>
-
 <script type="text/javascript">
    $(function() {
    $("#candidate_email").autocomplete({
