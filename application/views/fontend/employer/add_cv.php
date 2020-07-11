@@ -399,7 +399,7 @@ input[type="text"] {
 
 {
 
-ules:{
+rules:{
 
 'candidate_name':{
 

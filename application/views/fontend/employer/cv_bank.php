@@ -1157,10 +1157,14 @@ div#bulk {
    endforeach;endif;?>
    <script>
       function get_values(){
-         $('input:checkbox.chkbx').each(function () {
-       var sThisVal = (this.checked ? $(this).val() : "");
-       alert(sThisVal);
-  });
+       //   $('input:checkbox.chkbx').each(function () {
+       // var sThisVal = (this.checked ? $(this).val() : "");
+       // alert(sThisVal);
+  // });
+        var checkedVals = $('.chkbx:checkbox:checked').map(function() {
+          return this.value;
+      }).get();
+      alert(checkedVals.join(","));
       }
      
    </script>
