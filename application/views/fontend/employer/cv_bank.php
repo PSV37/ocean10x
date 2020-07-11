@@ -1257,8 +1257,8 @@ $("#job_titles").autocomplete({
              
              source: "<?php echo base_url();?>Employer/search_title",
              minLength: 2,
-              append: "#rotateModal"
-    }
+              append: "#rotateModal",
+    
             
            });
 </script>
