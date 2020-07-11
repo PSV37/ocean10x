@@ -1251,7 +1251,7 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
    $(document).on(' change','input[name="bulk_forward"]',function() {
             $('.chkbx').prop("checked" , this.checked);
             alert(this.checked);
-            if (this.checked == 'true' ) 
+            if (this.checked) 
             {
                 var checkedVals = $('.chkbx:checkbox:checked').map(function() {
                    return this.value;
