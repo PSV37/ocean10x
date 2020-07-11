@@ -1424,7 +1424,7 @@ class Employer extends MY_Employer_Controller
                         'company_id' => $employer_id,
                         'job_post_id' => $job_post_id,
                         'forword_job_status' => 1,
-                        'updated_on' => date("Y-m-d H:i:s", strtotime('+5 hours +30 minutes')).,
+                        'updated_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),
                         // 'mandatory_parameters' => implode(',', $mandatory)
                     );
                     $apply       = $this->Master_model->master_insert($apply_array, 'job_apply');
