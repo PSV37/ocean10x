@@ -4741,8 +4741,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $name = $this->input->post('folder_name');
         $parent = $this->input->post('parent');
          $whereres  = "company_profile_id='$employer_id' and folder_name = '$name'";
-                $folder_data = $this->Master_model->get_master_row('company_profile', $select = FALSE, $whereres);
-          if (!empty($folder_data)) {
+                $folder_dbdata = $this->Master_model->get_master_row('company_profile', $select = FALSE, $whereres);
+          if (empty($folder_dbdata)) {
                     $folder_data['folder_name'] = $name;
                     $folder_data['company_id'] = $name;
                     $folder_data['parent_id'] = $parent;
