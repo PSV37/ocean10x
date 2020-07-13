@@ -4752,10 +4752,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                      $result       = $this->Master_model->master_insert($folder_data, 'cv_folder');
 
                      $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Succesfully added</div>');
+                     redirect('employer/corporate_cv_bank');
                 } 
                 else
                 {
                      $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">already exists</div>');
+                     redirect('employer/corporate_cv_bank');
+                     
                 }     
       
     }
