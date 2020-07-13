@@ -920,6 +920,21 @@ button#frwd_btn {
                      </ul> -->
                   </label>
                </div>
+               <div class="col-md-6">
+                  <label class="dropdown">
+                   <!--   <div class="dd-button" style="background-color: #18c5bd;color: #ffffff;">
+                        Bulk Download
+                     </div> -->
+                     <input type="checkbox" name="bulk_download" id="checkAll">&nbsp; Bulk Download
+                     <button type="button" id="dwnld_btn" class="btn btn-primary" onclick="frwd_post();">Farward Job</button>
+                     <!-- <input type="checkbox" class="dd-input" id="test"> -->
+                     <!-- <ul class="dd-menu">
+                         <li><a id="checkAll">Bulk Forward></a></li>
+                        <li>Bulk Download</li>
+                       
+                     </ul> -->
+                  </label>
+               </div>
             
               
             </div>
@@ -1302,10 +1317,11 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
                    return this.value;
                }).get();
                var emails= (checkedVals.join(","));
-               alert(emails.length);
-               var elements = emails.split(',').length;
-               if (elements > 0) 
+               // alert(emails.length);
+                 if (emails.length > 0) 
                {
+               var elements = emails.split(',').length;
+             
                   $('#no_of_cvs').html(elements);
                   $('#forward_job_emails').val(checkedVals.join(","));
                   setTimeout(function(){
