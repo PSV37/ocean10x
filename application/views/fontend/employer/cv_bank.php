@@ -835,6 +835,10 @@ div#bulk {
     background: #b3ebe8;;
     width: 0%;
 }
+button#frwd_btn {
+    margin-top: -2px;
+    margin-left: 10px;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -842,7 +846,7 @@ div#bulk {
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
          <div class="col-md-6 cv_bank">
             <div class="row">
-               <div class="col-md-6">
+               <div class="col-md-12">
                     <button class="folder_popup" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="float: right;">Create&emsp;<i class="fas fa-folder-open"></i></button>
                </div>
             </div>
@@ -901,13 +905,13 @@ div#bulk {
                <!-- <div class="col-md-2">
                   <button class="send">send</button>
                </div> -->
-               <div class="col-md-4">
+               <div class="col-md-6">
                   <label class="dropdown">
                    <!--   <div class="dd-button" style="background-color: #18c5bd;color: #ffffff;">
                         Bulk Download
                      </div> -->
                      <input type="checkbox" name="bulk_forward" id="checkAll">&nbsp; Bulk Forward
-                     <button type="button" class="btn btn-primary" onclick="frwd_post();">Farward Job</button>
+                     <button type="button" id="frwd_btn" class="btn btn-primary" onclick="frwd_post();">Farward Job</button>
                      <!-- <input type="checkbox" class="dd-input" id="test"> -->
                      <!-- <ul class="dd-menu">
                          <li><a id="checkAll">Bulk Forward></a></li>
@@ -1298,6 +1302,7 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
                    return this.value;
                }).get();
                var emails= (checkedVals.join(","));
+               alert(emails);
                var elements = emails.split(',').length;
                if (elements > 0) 
                {
