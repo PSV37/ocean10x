@@ -1259,7 +1259,7 @@ $("#sizelist").on("click", "a", function(e){
     var $this = $(this).parent();
     $this.addClass("select").siblings().removeClass("select");
     $("#sizevalue").val($this.data("value"));
-    var sort_value= document.getElementsById('#sizevalue');
+    var sort_value= document.getElementById('#sizevalue');
     if (sort_value == 'Experience') 
     {
       var $divs = $("div.left-title");
