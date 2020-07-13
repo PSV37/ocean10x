@@ -1090,7 +1090,7 @@ button.btn.btn-default {
          <!--  <p>This is a small modal.</p> -->
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-default" data-dismiss="modal">Add</button>
+          <button type="submit" class="btn btn-default">Add</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
          </form>
