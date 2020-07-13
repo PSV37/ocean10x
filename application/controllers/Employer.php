@@ -4712,5 +4712,34 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $this->load->view('fontend/employer/ocean_history');
         
     }
+
+    function create_zip()
+    {
+        $zip = new ZipArchive();
+            $filename = "archive/myzipfile.zip";
+
+            if ($zip->open($filename, ZipArchive::CREATE)!==TRUE) {
+              exit("cannot open <$filename>\n");
+            }
+            // if (!file_exists('upload/includes')) {
+            //     mkdir('path/includes', 0777, true);
+            // }
+            // $dir = 'upload/Resumes';
+
+            $files= $this->input->post('myArray');
+            foreach ($files as $row) {
+                $zip->addFile($row);
+            }
+               
+
+            
+
+           
+            
+
+            $zip->close();
+
+            echo $filename;
+    }
     
 } // end class

@@ -1380,6 +1380,7 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
                                   a.href = url;
                                   // the filename you want
                                   a.download = myNameArray[i];
+
                                   document.body.appendChild(a);
                                   a.click();
                                   window.URL.revokeObjectURL(url);
@@ -1388,6 +1389,14 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
                         
               }
                // var elements = cvs.split(',').length;
+                $.ajax({
+                 url:"<?php echo base_url();?>Employer/create_zip",
+                 data: {myArray:myArray},
+                 type: 'post',
+                 success: function(response){
+                   window.location = response;
+                 }
+               });
 
    }
 }
