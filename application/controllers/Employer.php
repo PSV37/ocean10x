@@ -4728,7 +4728,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             foreach ($files as $row) {
                 // print_r($row);
                 $zip->addFile('upload/Resumes/'.$row,$row);
-                $zip->close();
+                // $zip->close();
                 // echo 'ok';
             } 
         }
@@ -4743,7 +4743,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
            
             
 
-            // $zip->close();
+            $zip->close();
             // $file= echo base_url()./
              echo base_url().$filename;
     }
