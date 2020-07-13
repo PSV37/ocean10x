@@ -4718,18 +4718,21 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $zip = new ZipArchive();
             $filename = "upload/Resumes/myzipfile.zip";
 
-            if ($zip->open($filename, ZipArchive::CREATE)!==TRUE) {
-              exit("cannot open <$filename>\n");
-            }
-            // if (!file_exists('upload/includes')) {
-            //     mkdir('path/includes', 0777, true);
+            // if ($zip->open($filename, ZipArchive::CREATE)!==TRUE) {
+            //   exit("cannot open <$filename>\n");
             // }
-            // $dir = 'upload/Resumes';
-
-            $files= $this->input->post('myArray');
-            foreach ($files as $row) {
-                $zip->addFile('https://www.consultnhire.com/upload/Resumes/LT_E-Bill1.pdf');
+         if ($zip->open('upload/Resumes/myzipfile.zip') === TRUE) {
+                $zip->addFile('https://www.consultnhire.com/upload/Resumes/LT_E-Bill1.pdf', 'newname.txt');
+                $zip->close();
+                echo 'ok';
+            } else {
+                echo 'failed';
             }
+
+            // $files= $this->input->post('myArray');
+            // foreach ($files as $row) {
+            //     $zip->addFile('https://www.consultnhire.com/upload/Resumes/LT_E-Bill1.pdf');
+            // }
                
 
             
@@ -4737,7 +4740,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
            
             
 
-            $zip->close();
+            // $zip->close();
             // $file= echo base_url()./
              echo base_url().$filename;
     }
