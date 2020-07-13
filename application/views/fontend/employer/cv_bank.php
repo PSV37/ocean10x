@@ -1361,6 +1361,7 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
                // var elements = cvs.split(',').length;
 
    }
+}
 $("#job_titles").autocomplete({
              
              source: "<?php echo base_url();?>Employer/search_job_keywords",
