@@ -4718,14 +4718,14 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
         $zip = new ZipArchive();
 
-            $DelFilePath="first.zip";
+            $DelFilePath="upload/Resumes/first.zip";
 
-            if(file_exists("upload/Resumes/myzipfile.zip".$DelFilePath)) {
+            if(file_exists("upload/Resumes/".$DelFilePath)) {
 
-                    unlink ("upload/Resumes/myzipfile.zip".$DelFilePath); 
+                    unlink ("upload/Resumes/".$DelFilePath); 
 
             }
-            if ($zip->open("upload/Resumes/myzipfile.zip".$DelFilePath, ZIPARCHIVE::CREATE) != TRUE) {
+            if ($zip->open("upload/Resumes/".$DelFilePath, ZIPARCHIVE::CREATE) != TRUE) {
                     die ("Could not open archive");
             }
                  $files= $this->input->post('myArray');
