@@ -1190,7 +1190,7 @@ button#frwd_btn {
              
                <input type="hidden" name="consultant" value="JobSeeker">  
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <label class="mdl-textfield__label" for="sample3">job Title:</label>
+                  <label class="mdl-textfield__label" for="sample3">job Post:</label>
                   <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
                </div>
                <input type="hidden" name="job_post_id" value="" id="auto-value">
@@ -1229,7 +1229,7 @@ button#frwd_btn {
                <input type="hidden" name="job_post_id" value="<?php echo $v_companyjobs->job_post_id; ?>">
                <input type="hidden" name="consultant" value="JobSeeker">  
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <label class="mdl-textfield__label" for="sample3">job Title:</label>
+                  <label class="mdl-textfield__label" for="sample3">job Post:</label>
                   <input type="text"  name="job_titles"  id="job_titles" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
                </div>
                <input type="hidden" name="job_post_id" value="" id="autocomplete2-value">
@@ -1331,7 +1331,7 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
             else
             {
                 $("#div_frwrd").show();
-               
+
             }
 
     });
