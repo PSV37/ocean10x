@@ -391,7 +391,7 @@ input[type="text"] {
    
    	$(function() { 
      
-     $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd'});
+     $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd' });
      $("#last_salary_hike").datepicker({ dateFormat: 'yy-mm-dd' });
      });
 
@@ -469,13 +469,7 @@ current_work_location_regex: true
 
 },
 
-// 'working_current_since':{
 
-// twodecimal_regex: true
-
-// // /companypincode_regex: true
-
-// },
 
 'current_ctc':{
 twodecimal_regex: true
@@ -483,12 +477,6 @@ twodecimal_regex: true
 
 },
 
-// 'last_salary_hike':{
-
-// twodecimal_regex: true
-// // /companypincode_regex: true
-
-// },
 
 'top_education':{
 
