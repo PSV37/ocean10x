@@ -1366,7 +1366,16 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
                               }
                               else
                               {
-                                  window.open(myArray[i]);
+                                  // window.open(myArray[i]);
+                                  const url =myArray[i];
+                                  const a = document.createElement('a');
+                                  a.style.display = 'none';
+                                  a.href = url;
+                                  // the filename you want
+                                  a.download = 'todo-1.json';
+                                  document.body.appendChild(a);
+                                  a.click();
+                                  window.URL.revokeObjectURL(url);
                               }
                              
                         
