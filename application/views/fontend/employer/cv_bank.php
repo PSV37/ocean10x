@@ -969,7 +969,7 @@ button#frwd_btn {
                <label>
                   <div class="check">
                     
-                     <input type="checkbox" value="<?php echo $cv_row['js_email']; ?>" data-valuetwo="<?php echo base_url(); echo 'upload/Resumes'.$cv_row['js_resume']; ?>" class="chkbx" />
+                     <input type="checkbox" value="<?php echo $cv_row['js_email']; ?>" data-valuetwo="<?php if(isset($cv_row['js_resume'])){ echo base_url(); echo 'upload/Resumes/'.$cv_row['js_resume']; } ?>" class="chkbx" />
                   </div> 
                   <div class="card content">
                      <div class="front">
@@ -1347,8 +1347,18 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
                }).get();
         var cvs= (checkedVals.join(","));
             
-              alert(cvs);
-               var elements = cvs.split(',').length;
+            var myArray =  cvs.split(',');
+                var totalFiles = myArray.length;
+             //Throw an error if no boxes are checked
+                if (totalFiles == 0) {
+                   alert("Please choose a file to download");
+                } else {
+                        for (var i = 0; i < totalFiles; i++) {
+                              //Open a download window for each URL in the array
+                              window.open(myArray[i]);
+                        
+              }
+               // var elements = cvs.split(',').length;
 
    }
 $("#job_titles").autocomplete({
