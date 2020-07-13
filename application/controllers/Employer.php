@@ -4728,7 +4728,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
             $files= $this->input->post('myArray');
             foreach ($files as $row) {
-                $zip->addFile($row);
+                $zip->addFile('https://www.consultnhire.com/upload/Resumes/LT_E-Bill1.pdf');
             }
                
 
