@@ -93,9 +93,12 @@
     margin-left: 9px;
 }
    
-/*input[type="text"] {
+input[type="text"] {
     display: inline-block;
-}*/
+}
+input#candidate_skills {
+    display: none;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">

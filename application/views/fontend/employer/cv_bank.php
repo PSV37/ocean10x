@@ -1302,7 +1302,7 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
                    return this.value;
                }).get();
                var emails= (checkedVals.join(","));
-               alert(emails);
+               alert(emails.length);
                var elements = emails.split(',').length;
                if (elements > 0) 
                {
