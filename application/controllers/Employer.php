@@ -4715,22 +4715,49 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
     function create_zip()
     {
+
         $zip = new ZipArchive();
-            $filename = "upload/Resumes/myzipfile.zip";
 
-            // if ($zip->open($filename, ZipArchive::CREATE)!==TRUE) {
-            //   exit("cannot open <$filename>\n");
-            // }
+            $DelFilePath="first.zip";
 
-         if ($zip->open('upload/Resumes/myzipfile.zip') === TRUE) {
-              $files= $this->input->post('myArray');
+            if(file_exists("upload/Resumes/myzipfile.zip".$DelFilePath)) {
+
+                    unlink ("upload/Resumes/myzipfile.zip".$DelFilePath); 
+
+            }
+            if ($zip->open("upload/Resumes/myzipfile.zip".$DelFilePath, ZIPARCHIVE::CREATE) != TRUE) {
+                    die ("Could not open archive");
+            }
+                 $files= $this->input->post('myArray');
             foreach ($files as $row) {
                 // print_r($row);
                 $zip->addFile('upload/Resumes/'.$row,$row);
                 $zip->close();
                 // echo 'ok';
             } 
-        }
+        // }
+
+            // close and save archive
+
+            $zip->close(); 
+
+
+        // $zip = new ZipArchive();
+        //     $filename = "upload/Resumes/myzipfile.zip";
+
+        //     // if ($zip->open($filename, ZipArchive::CREATE)!==TRUE) {
+        //     //   exit("cannot open <$filename>\n");
+        //     // }
+
+        //  if ($zip->open('upload/Resumes/myzipfile.zip') === TRUE) {
+        //       $files= $this->input->post('myArray');
+        //     foreach ($files as $row) {
+        //         // print_r($row);
+        //         $zip->addFile('upload/Resumes/'.$row,$row);
+        //         $zip->close();
+        //         // echo 'ok';
+        //     } 
+        // }
             // $files= $this->input->post('myArray');
             // foreach ($files as $row) {
             //     $zip->addFile($row);
