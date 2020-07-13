@@ -4725,8 +4725,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
          if ($zip->open('upload/Resumes/myzipfile.zip') === TRUE) {
               $files= $this->input->post('myArray');
             foreach ($files as $row) {
-                print_r($row);
-                $zip->addFile('upload/Resumes/'.$row,'test.pdf');
+                // print_r($row);
+                $zip->addFile('upload/Resumes/'.$row,$row);
                 $zip->close();
                 // echo 'ok';
             } 

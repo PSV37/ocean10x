@@ -1061,10 +1061,28 @@ button#frwd_btn {
                </div>
                </div>
             </div>
+            <div class="col-md-12">
+               <div class="row">
+                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <label class="mdl-textfield__label" for="sample3">parent Folder</label>
+                  <!-- <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required> -->
+                  <?php $wheres  = "status='1' AND company_id='$employer_id' ";
+                     $folders     = $this->Master_model->getMaster('cv_folder', $where = $wheres); ?>
+                     <option value="0">None</option>
+                  <select class="form-control select2">
+                     <?php foreach ($folders as $row) { ?>
+                      <option value="<?php echo $row['id'] ?>"><?php echo $row['folder_name'] ?></option>
+                     <? } ?>
+                    
+                  </select>
+               </div>
+               </div>
+            </div>
          </form>
          <!--  <p>This is a small modal.</p> -->
         </div>
         <div class="modal-footer">
+          <button type="submit" class="btn btn-default" data-dismiss="modal">Add</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
