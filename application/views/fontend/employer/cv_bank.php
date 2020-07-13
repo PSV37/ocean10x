@@ -1353,7 +1353,7 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
             
             var myArray =  cvs.split(',');
                 var totalFiles = myArray.length;
-                alert(totalFiles);
+                // alert(totalFiles);
              //Throw an error if no boxes are checked
                 if (cvs.length == 0) {
                    alert("Please choose a file to download");
