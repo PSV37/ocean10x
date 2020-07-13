@@ -4718,7 +4718,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
         $zip = new ZipArchive();
 
-            $DelFilePath="upload/Resumes/first.zip";
+            $DelFilePath="upload/Resumes/myzipfile.zip";
 
             if(file_exists("upload/Resumes/".$DelFilePath)) {
 
@@ -4732,7 +4732,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             foreach ($files as $row) {
                 // print_r($row);
                 $zip->addFile('upload/Resumes/'.$row,$row);
-                $zip->close();
+                // $zip->close();
                 // echo 'ok';
             } 
         // }
