@@ -1309,6 +1309,11 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
 
              
             }
+            else
+            {
+                $("#div_download").show();
+
+            }
 
     });
    $(document).on(' change','input[name="bulk_forward"]',function() {
@@ -1322,6 +1327,11 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
                 $("#div_download").show();
 
              
+            }
+            else
+            {
+                $("#div_frwrd").show();
+               
             }
 
     });
