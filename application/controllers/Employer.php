@@ -3736,7 +3736,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $company_id = $this->session->userdata('company_profile_id');
 
         if (isset($_POST)) {
-            $sort_val = $this->input->post('sort_val')
+            $sort_val = $this->input->post('sort_val');
            if (isset($sort_val) && ! empty($sort_val) ) {
                $where_c['company_id'] = $company_id;
                 $data['cv_bank_data']  = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join = false, $order = 'asc', $field = $sort_val, $select = false, $limit = false, $start = false, $search = false);
