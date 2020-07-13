@@ -4721,17 +4721,19 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             // if ($zip->open($filename, ZipArchive::CREATE)!==TRUE) {
             //   exit("cannot open <$filename>\n");
             // }
+
          if ($zip->open('upload/Resumes/myzipfile.zip') === TRUE) {
-                $zip->addFile('/upload/Resumes/LT_E-Bill1.pdf', 'newname.txt');
+              $files= $this->input->post('myArray');
+            foreach ($files as $row) {
+                print_r($row);
+                $zip->addFile('upload/Resumes/'.$row,'test.pdf');
                 $zip->close();
                 // echo 'ok';
-            } else {
-                // echo 'failed';
-            }
-
+            } 
+        }
             // $files= $this->input->post('myArray');
             // foreach ($files as $row) {
-            //     $zip->addFile('https://www.consultnhire.com/upload/Resumes/LT_E-Bill1.pdf');
+            //     $zip->addFile($row);
             // }
                
 
