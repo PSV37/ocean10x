@@ -889,7 +889,7 @@ button#frwd_btn {
                      
                   </label>
                   <input id="sizevalue" size="15" name="sort_val" type="hidden" />
-                  <button type="submit" class="hidden" id="sort_btn"></button>
+                  <button type="submit" name="sort" class="hidden" id="sort_btn"></button>
                   </form>
                </div>
                <div class="col-md-3">
