@@ -985,7 +985,7 @@ button#frwd_btn {
                         <?php } ?>
                         <div class="job-info">
                            <div class="a">
-                              <li class="right-title" style="font-size:19px;margin-top:-4px;" ><?php echo $cv_row['js_name']; ?></li>
+                              <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $cv_row['js_name']; ?></li>
                            </div>
                         </div>
                         <div class="following-info">
@@ -997,7 +997,7 @@ button#frwd_btn {
                            <li class="left-title">SkillSet</li>
                            <li class="right-title">&nbsp;: <?php echo $cv_row['js_skill_set']; ?></li>
                            <li class="left-title">Work Experince</li>
-                           <li class="right-title">&nbsp;: <?php echo $cv_row['js_experience']; ?></li>
+                           <li class="right-title"  data-sort-op="<?php echo $cv_row['js_experience']?>">&nbsp;: <?php echo $cv_row['js_experience']; ?></li>
                            <div class="clear"></div>
                         </div>
                         <div class="following-info2">
@@ -1259,8 +1259,25 @@ $("#sizelist").on("click", "a", function(e){
     var $this = $(this).parent();
     $this.addClass("select").siblings().removeClass("select");
     $("#sizevalue").val($this.data("value"));
-})
+    var sort_value= document.getElementsById('#sizevalue');
+    if (sort_value == 'Experience') 
+    {
+      var $divs = $("div.left-title");
+      var opOrder = $divs.sort(function (a, b) {
+        return $(a).data('sort-op') < $(b).data('sort-op') ? -1 : 1;
+    });
+    $("#content").html(opOrder);
 
+    }
+
+})
+// var $divs = $("div.left-title");
+// $('#opBnt').on('click', function () {
+//     var opOrder = $divs.sort(function (a, b) {
+//         return $(a).data('sort-op') < $(b).data('sort-op') ? -1 : 1;
+//     });
+//     $("#collapsible").html(opOrder);
+// });
 
    </script>
 <script>
@@ -1356,7 +1373,7 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
                 } else {
                         for (var i = 0; i < totalFiles; i++) {
                               //Open a download window for each URL in the array
-                              alert(myArray[i]);
+                              // alert(myArray[i]);
                               if(myArray[i] === ''){ // do stuff 
                                  
                               }
