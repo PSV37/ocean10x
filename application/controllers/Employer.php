@@ -4724,9 +4724,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
          if ($zip->open('upload/Resumes/myzipfile.zip') === TRUE) {
                 $zip->addFile('https://www.consultnhire.com/upload/Resumes/LT_E-Bill1.pdf', 'newname.txt');
                 $zip->close();
-                echo 'ok';
+                // echo 'ok';
             } else {
-                echo 'failed';
+                // echo 'failed';
             }
 
             // $files= $this->input->post('myArray');
