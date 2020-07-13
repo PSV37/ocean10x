@@ -845,6 +845,8 @@ div#bulk {
                <div class="col-md-6">
                     <button class="folder_popup" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="float: right;">Create&emsp;<i class="fas fa-folder-open"></i></button>
                </div>
+            </div>
+              <div class="row">
                <div class="col-md-6">
                   
                   <form class="navbar-form" role="search">
