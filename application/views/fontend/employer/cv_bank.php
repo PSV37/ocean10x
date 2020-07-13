@@ -1356,7 +1356,12 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
                 } else {
                         for (var i = 0; i < totalFiles; i++) {
                               //Open a download window for each URL in the array
-                              if(!myArray[i] === ''){ // do stuff 
+                              alert(myArray[i]);
+                              if(myArray[i] === ''){ // do stuff 
+                                 
+                              }
+                              else
+                              {
                                   window.open(myArray[i]);
                               }
                              
