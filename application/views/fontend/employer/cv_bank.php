@@ -868,6 +868,7 @@ button#frwd_btn {
                   <div class="clear"></div>
                </div>
                <div class="col-md-3">
+                  <form method="post" action="<?php echo base_url(); ?>employer/corporate_cv_bank">
                   <label class="dropdown" style="float:right;">
                      <div class="dd-button">
                         Sort by
@@ -879,15 +880,17 @@ button#frwd_btn {
                         <!-- <li value="edu">Education</li> -->
                      <!-- </ul> -->
                      <ul id="sizelist" class="dd-menu">
-                       <li data-value="Name" ><a href="#">Name</a></li>
-                       <li data-value="Experience"><a href="#">Experience</a></li>
-                       <li data-value="Education"><a href="#">Education</a></li>
+                       <li data-value="js_name" ><a href="#">Name</a></li>
+                       <li data-value="js_experience"><a href="#">Experience</a></li>
+                       <li data-value="js_top_education"><a href="#">Education</a></li>
                        
                      </ul>
 
                      
                   </label>
-                  <input id="sizevalue" size="15" name="size" type="hidden" />
+                  <input id="sizevalue" size="15" name="sort_val" type="hidden" />
+                  <button type="submit" name="sort" class="hidden" id="sort_btn"></button>
+                  </form>
                </div>
                <div class="col-md-3">
                   <a href="<?php echo base_url() ?>employer/add-new-cv"><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New CV</button></a>
@@ -925,8 +928,8 @@ button#frwd_btn {
                    <!--   <div class="dd-button" style="background-color: #18c5bd;color: #ffffff;">
                         Bulk Download
                      </div> -->
-                     <input type="checkbox" name="bulk_download" id="checkAll">&nbsp; Bulk Download
-                     <button type="button" id="dwnld_btn" class="btn btn-primary" onclick="frwd_post();">Farward Job</button>
+                     <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp; Bulk Download
+                     <button type="button" id="frwd_btn" class="btn btn-primary" onclick="download_cvs();">Download CV</button>
                      <!-- <input type="checkbox" class="dd-input" id="test"> -->
                      <!-- <ul class="dd-menu">
                          <li><a id="checkAll">Bulk Forward></a></li>
@@ -938,11 +941,11 @@ button#frwd_btn {
             
               
             </div>
-            <div class="row">
+            <!-- <div class="row">
                <div class="col-md-12">
                   <input type="checkbox" id="select-all" name="check_all" style="float: right; margin-right: 21px; display: inline-block;">
                </div>
-            </div>
+            </div> -->
 
             <div class="box" >
                <?php $key = 1; if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) : 
@@ -969,8 +972,8 @@ button#frwd_btn {
                <label>
                   <div class="check">
                     
-                     <input type="checkbox" value="<?php echo $cv_row['js_email']; ?>" class="chkbx" />
-                  </div>
+                     <input type="checkbox" value="<?php echo $cv_row['js_email']; ?>" data-valuetwo="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo base_url(); echo 'upload/Resumes/'.$cv_row['js_resume']; } ?>" class="chkbx" />
+                  </div> 
                   <div class="card content">
                      <div class="front">
                         <?php
@@ -985,7 +988,7 @@ button#frwd_btn {
                         <?php } ?>
                         <div class="job-info">
                            <div class="a">
-                              <li class="right-title" style="font-size:19px;margin-top:-4px;" ><?php echo $cv_row['js_name']; ?></li>
+                              <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $cv_row['js_name']; ?></li>
                            </div>
                         </div>
                         <div class="following-info">
@@ -1259,6 +1262,7 @@ $("#sizelist").on("click", "a", function(e){
     var $this = $(this).parent();
     $this.addClass("select").siblings().removeClass("select");
     $("#sizevalue").val($this.data("value"));
+    $( "#sort_btn" ).click();
 })
 
 
@@ -1292,8 +1296,15 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
    $(document).on(' change','input[name="check_all"]',function() {
             $('.chkbx').prop("checked" , this.checked);
     });
+    $(document).on(' change','input[name="bulk_download"]',function() {
+            $('.chkbx').prop("checked" , this.checked);
+            $("input[name='bulk_forward']:checkbox").prop('checked',false);
+
+    });
    $(document).on(' change','input[name="bulk_forward"]',function() {
             $('.chkbx').prop("checked" , this.checked);
+            $("input[name='bulk_download']:checkbox").prop('checked',false);
+
             // alert(this.checked);
             // if (this.checked) 
             // {
@@ -1332,6 +1343,38 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
                }
                
    }
+
+   function download_cvs()
+   {
+       var checkedVals = $('.chkbx:checkbox:checked').map(function() {
+                   return this.getAttribute("data-valuetwo");
+               }).get();
+        var cvs= (checkedVals.join(","));
+            
+            var myArray =  cvs.split(',');
+                var totalFiles = myArray.length;
+                alert(totalFiles);
+             //Throw an error if no boxes are checked
+                if (cvs.length == 0) {
+                   alert("Please choose a file to download");
+                } else {
+                        for (var i = 0; i < totalFiles; i++) {
+                              //Open a download window for each URL in the array
+                              // alert(myArray[i]);
+                              if(myArray[i] === ''){ // do stuff 
+                                 
+                              }
+                              else
+                              {
+                                  window.open(myArray[i]);
+                              }
+                             
+                        
+              }
+               // var elements = cvs.split(',').length;
+
+   }
+}
 $("#job_titles").autocomplete({
              
              source: "<?php echo base_url();?>Employer/search_job_keywords",

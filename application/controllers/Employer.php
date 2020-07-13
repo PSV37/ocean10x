@@ -3730,15 +3730,35 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     
     public function corporate_cv_bank()
     {
-        $this->session->unset_userdata('activemenu');
+         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'cv_bank';
         $this->session->set_userdata($data);
         $company_id = $this->session->userdata('company_profile_id');
+
+        if (isset($_POST['sort'])) {
+            $sort_val = $this->input->post('sort_val');
+           if (isset($sort_val) && ! empty($sort_val) ) {
+               $where_c['company_id'] = $company_id;
+                $data['cv_bank_data']  = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join = false, $order = 'asc', $field = $sort_val, $select = false, $limit = false, $start = false, $search = false);
+                    $this->load->view('fontend/employer/cv_bank', $data);
+
+            } 
+        }
+        else
+        {
+            $where_c['company_id'] = $company_id;
+             $data['cv_bank_data']  = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join = false, $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
+                   $this->load->view('fontend/employer/cv_bank', $data);
+        }
         
-        $where_c['company_id'] = $company_id;
-        $data['cv_bank_data']  = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join = false, $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
+             
+
+
+       
+       
         
-        $this->load->view('fontend/employer/cv_bank', $data);
+       
+        
         // $this->load->view('fontend/employer/corporate_cv_bank',$data);
     }
     
