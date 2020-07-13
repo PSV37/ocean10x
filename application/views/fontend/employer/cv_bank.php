@@ -1351,12 +1351,15 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
                 var totalFiles = myArray.length;
                 alert(totalFiles);
              //Throw an error if no boxes are checked
-                if (totalFiles == 0) {
+                if (cvs.length == 0) {
                    alert("Please choose a file to download");
                 } else {
                         for (var i = 0; i < totalFiles; i++) {
                               //Open a download window for each URL in the array
-                              window.open(myArray[i]);
+                              if(!myArray[i] === ''){ // do stuff 
+                                  window.open(myArray[i]);
+                              }
+                             
                         
               }
                // var elements = cvs.split(',').length;
