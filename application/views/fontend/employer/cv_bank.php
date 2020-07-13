@@ -1365,6 +1365,7 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
                 if (cvs.length == 0) {
                    alert("Please choose a file to download");
                 } else {
+                  var newArray = myArray.filter(value => Object.keys(value).length !== 0);
               //           for (var i = 0; i < totalFiles; i++) {
               //                 //Open a download window for each URL in the array
               //                 // alert(myArray[i]);
@@ -1391,7 +1392,7 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
                // var elements = cvs.split(',').length;
                 $.ajax({
                  url:"<?php echo base_url();?>Employer/create_zip",
-                 data: {myArray:myArray},
+                 data: {myArray:newArray},
                  type: 'post',
                  success: function(response){
                    // window.location = response;
