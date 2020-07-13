@@ -1397,7 +1397,7 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
                  success: function(response){
                    // window.location = response;
                    alert(response);
-                   const url =response;
+                   const url = <?php echo base_url();?> response;
                                   const a = document.createElement('a');
                                   a.style.display = 'none';
                                   a.href = url;
