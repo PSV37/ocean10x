@@ -108,38 +108,42 @@ $employer_id = $this->session->userdata('company_profile_id');
                                   </a>
                                   <div class="row tree well">
                                                  
-                                                   
+                                          <ul>        
                                       <?php $wheres       = "status='1' AND company_id='$employer_id' and parent_id = '0'";
                                       $folders     = $this->Master_model->getMaster('cv_folder', $where = $wheres); 
                                         if (!empty($folders)) { 
                                         foreach ($folders as $row) { ?>
-                                        <ul>
+                                        
                                           <li>
                                             <span><i class="fas fa-folder-open"></i> <?php echo $row['folder_name']; ?></span>
+                                             <ul>
                                             <?php 
                                             $parent_id = $row['id']; 
                                             $where_child  = "status='1' AND company_id='$employer_id' and parent_id = '$parent_id'";
                                             $child_folders  = $this->Master_model->getMaster('cv_folder', $where = $where_child); 
                                               if (!empty($child_folders)) { 
                                               foreach ($child_folders as $row1) { ?>
-                                              <ul>
+                                             
                                                 <li>
                                                   <span><i class="fas fa-folder-open"></i> <?php echo $row1['folder_name']; ?></span> 
+                                                  <ul>
                                                     <?php $cparent_id = $row1['id']; 
                                                     $where_child  = "status='1' AND company_id='$employer_id' and parent_id = '$cparent_id'";
                                                     $grand_child_folders  = $this->Master_model->getMaster('cv_folder', $where = $where_child); 
                                                     if (!empty($grand_child_folders)) { 
                                                     foreach ($grand_child_folders as $row2) { ?>
-                                                    <ul>
+                                                    
                                                       <li>
                                                         <span><i class="fas fa-folder-open"></i><?php echo $row2['folder_name']; ?></span>
                                                       </li>
+                                                    <?php } } ?>
                                                     </ul>
                                                 </li>
+                                                  <?php } } ?>
                                               </ul>
                                             </li>
-                                          </ul>     
-                              <?php } } } }}} ?>
+                               <?php } } ?>
+                               </ul> 
 
                                             <!-- <li>
                                                 <span><i class="fas fa-folder-open"></i> Parent</span>
