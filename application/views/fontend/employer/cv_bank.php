@@ -839,6 +839,10 @@ button#frwd_btn {
     margin-top: -2px;
     margin-left: 10px;
 }
+button.btn.btn-default {
+    margin-left: 5px;
+    margin-top: 20px;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -1053,7 +1057,7 @@ button#frwd_btn {
         </div>
         <div class="modal-body">
          <form>
-            <div class="col-md-12">
+            <div class="col-md-12" style="margin-top: 20px;">
                <div class="row">
                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <label class="mdl-textfield__label" for="sample3">Folder Name:</label>
@@ -1066,10 +1070,13 @@ button#frwd_btn {
                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <label class="mdl-textfield__label" for="sample3">parent Folder</label>
                   <!-- <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required> -->
-                  <?php $wheres  = "status='1' AND company_id='$employer_id' ";
+                  <?php 
+                  $employer_id = $this->session->userdata('company_profile_id');
+                  $wheres  = "status='1' AND company_id='$employer_id' ";
                      $folders     = $this->Master_model->getMaster('cv_folder', $where = $wheres); ?>
-                     <option value="0">None</option>
                   <select class="form-control select2">
+                     <option value="0">None</option>
+
                      <?php foreach ($folders as $row) { ?>
                       <option value="<?php echo $row['id'] ?>"><?php echo $row['folder_name'] ?></option>
                      <? } ?>
