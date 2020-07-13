@@ -391,7 +391,7 @@ input[type="text"] {
    
    	$(function() { 
      
-     $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd');
+     $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd'});
      $("#last_salary_hike").datepicker({ dateFormat: 'yy-mm-dd' });
      });
 
