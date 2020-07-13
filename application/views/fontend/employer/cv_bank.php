@@ -843,6 +843,9 @@ div#bulk {
          <div class="col-md-6 cv_bank">
             <div class="row">
                <div class="col-md-6">
+                    <button class="folder_popup" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="float: right;">Create&emsp;<i class="fas fa-folder-open"></i></button>
+               </div>
+               <div class="col-md-6">
                   
                   <form class="navbar-form" role="search">
                      <!-- <div class="form-group has-search"> -->
@@ -902,6 +905,7 @@ div#bulk {
                         Bulk Download
                      </div> -->
                      <input type="checkbox" name="bulk_forward" id="checkAll">&nbsp; Bulk Forward
+                     <button type="button" class="btn btn-primary" onclick="frwd_post();">Farward Job</button>
                      <!-- <input type="checkbox" class="dd-input" id="test"> -->
                      <!-- <ul class="dd-menu">
                          <li><a id="checkAll">Bulk Forward></a></li>
@@ -1285,6 +1289,26 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
             }
 
     });
+
+   function frwd_post()
+   {
+      var checkedVals = $('.chkbx:checkbox:checked').map(function() {
+                   return this.value;
+               }).get();
+               var emails= (checkedVals.join(","));
+               var elements = emails.split(',').length;
+               if (elements > 0) 
+               {
+                  $('#no_of_cvs').html(elements);
+                  $('#forward_job_emails').val(checkedVals.join(","));
+                  setTimeout(function(){
+                  $('#rotateModal').modal('show'); }, 500);
+               }else
+               {
+                  alert('Please select atleast one cv to forward the job!')
+               }
+               
+   }
 $("#job_titles").autocomplete({
              
              source: "<?php echo base_url();?>Employer/search_job_keywords",
