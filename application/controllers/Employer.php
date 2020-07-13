@@ -4744,7 +4744,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $folder_dbdata = $this->Master_model->get_master_row('company_profile', $select = FALSE, $whereres);
           if (empty($folder_dbdata)) {
                     $folder_data['folder_name'] = $name;
-                    $folder_data['company_id'] = $name;
+                    $folder_data['company_id'] = $employer_id;
                     $folder_data['parent_id'] = $parent;
                     $folder_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
                     $folder_data['created_by'] = $employer_id;
