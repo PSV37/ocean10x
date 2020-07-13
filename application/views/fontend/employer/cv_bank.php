@@ -918,7 +918,7 @@ button.btn.btn-default {
                         Bulk Download
                      </div> -->
                      <input type="checkbox" name="bulk_forward" id="checkAll">&nbsp; Bulk Forward
-                     <button type="button" id="frwd_btn" class="btn btn-primary" onclick="frwd_post();">Farward Job</button>
+                     <button type="button" id="frwd_btn" class="btn btn-primary" onclick="frwd_post();">Forward Job</button>
                      <!-- <input type="checkbox" class="dd-input" id="test"> -->
                      <!-- <ul class="dd-menu">
                          <li><a id="checkAll">Bulk Forward></a></li>
@@ -1024,7 +1024,7 @@ button.btn.btn-default {
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
                            <li id="div_frwrd"><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal<?php echo $cv_row['cv_id']; ?>" >Forward Job Post</a></li>
                         <?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ ?>
-                           <li id="div_download"> <a class="dropdown-item"  href="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo base_url(); echo 'upload/Resumes/'.$cv_row['js_resume']; } ?>" download >Downlode this cv</a></li>
+                           <li id="div_download"> <a class="dropdown-item"  href="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo base_url(); echo 'upload/Resumes/'.$cv_row['js_resume']; } ?>" download >Download this cv</a></li>
                            <?php } ?>
 
                            <li> <a class="dropdown-item" href="#">Dummy 1</a></li>
@@ -1061,7 +1061,7 @@ button.btn.btn-default {
                <div class="row">
                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <label class="mdl-textfield__label" for="sample3">Folder Name:</label>
-                  <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
+                  <input type="text"  name="folder_name"  id="folder_name" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
                </div>
                </div>
             </div>
@@ -1074,7 +1074,7 @@ button.btn.btn-default {
                   $employer_id = $this->session->userdata('company_profile_id');
                   $wheres  = "status='1' AND company_id='$employer_id' ";
                      $folders     = $this->Master_model->getMaster('cv_folder', $where = $wheres); ?>
-                  <select class="form-control select2">
+                  <select class="form-control select2" name="parent">
                      <option value="0">None</option>
 
                      <?php foreach ($folders as $row) { ?>

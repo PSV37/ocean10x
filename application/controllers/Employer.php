@@ -4719,33 +4719,43 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $filename = "upload/Resumes/test.zip";
              unlink($filename);
 
-            // if ($zip->open($filename, ZipArchive::CREATE)!==TRUE) {
-            //   exit("cannot open <$filename>\n");
-            // }
 
          if ($zip->open($filename, ZipArchive::CREATE) === TRUE) {
               $files= $this->input->post('myArray');
             foreach ($files as $row) {
                 // print_r($row);
                 $zip->addFile('upload/Resumes/'.$row,$row);
-                // $zip->close();
-                // echo 'ok';
+              
             } 
         }
-            // $files= $this->input->post('myArray');
-            // foreach ($files as $row) {
-            //     $zip->addFile($row);
-            // }
-               
-
-            
-
            
-            
-
             $zip->close();
-            // $file= echo base_url()./
+          
              echo base_url().$filename;
+    }
+
+
+    public function add_cv_folder()
+    {
+        $employer_id = $this->session->userdata('company_profile_id');
+        $name = $this->input->post('folder_name');
+        $parent = $this->input->post('parent');
+         $whereres  = "company_profile_id='$employer_id' and folder_name = '$name'";
+                $folder_data = $this->Master_model->get_master_row('company_profile', $select = FALSE, $whereres);
+          if (!empty($folder_data)) {
+                    $folder_data['folder_name'] = $name;
+                    $folder_data['company_id'] = $name;
+                    $folder_data['parent_id'] = $parent;
+                    $folder_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),
+                    $folder_data['created_by'] = $employer_id;
+                     $result       = $this->Master_model->master_insert($folder_data, 'cv_folder');
+                     $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Succesfully added</div>');
+                } 
+                else
+                {
+                     $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">already exists</div>');
+                }     
+      
     }
     
 } // end class
