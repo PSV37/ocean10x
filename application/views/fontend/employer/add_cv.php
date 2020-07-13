@@ -133,7 +133,7 @@ input#candidate_skills {
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Yrs of Experience</label>
-                        <input type="text" name="candidate_experiance" id="candidate_experiance" value="<?php echo  set_value('candidate_experiance'); ?>" maxlength="2"  class="form-control allownumericwithdecimal"><?php echo form_error('candidate_experiance'); ?>
+                        <input type="text" name="candidate_experiance" id="candidate_experiance" value="<?php echo  set_value('candidate_experiance'); ?>" maxlength="3"  class="form-control allownumericwithdecimal"><?php echo form_error('candidate_experiance'); ?>
                      </div>
                   </div>
                   <div class="col-md-4">
@@ -179,7 +179,7 @@ input#candidate_skills {
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Current CTC</label>
-                        <input type="text" name="current_ctc" id="current_ctc" class="form-control allownumericwithdecimal" value="<?php echo  set_value('current_ctc'); ?>">   <?php echo form_error('current_ctc'); ?>
+                        <input type="text" name="current_ctc" id="current_ctc" class="form-control allownumericwithdecimal" maxlength="3" value="<?php echo  set_value('current_ctc'); ?>">   <?php echo form_error('current_ctc'); ?>
                      </div>
                   </div>
                </div>
@@ -272,7 +272,7 @@ input#candidate_skills {
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Expected Salary</label>
-                        <input type="text" name="candidate_expected_sal" id="candidate_expected_sal" class="form-control allownumericwithdecimal" value="<?php echo  set_value('candidate_expected_sal'); ?>">   <?php echo form_error('candidate_expected_sal'); ?>
+                        <input type="text" name="candidate_expected_sal" id="candidate_expected_sal" class="form-control allownumericwithdecimal"  maxlength="3" value="<?php echo  set_value('candidate_expected_sal'); ?>">   <?php echo form_error('candidate_expected_sal'); ?>
 
                      </div>
                   </div>
@@ -321,6 +321,7 @@ input#candidate_skills {
       </div>
    </div>
 </div>
+
 <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>assets/js/bootstrap.js" type="text/javascript"></script>
 
@@ -433,7 +434,7 @@ phonenumber_regex: true
 
 'candidate_experiance':{
 
-twodigit_regex: true
+//twodigit_regex: true
 
 //email: true
 },
@@ -483,7 +484,7 @@ twodecimal_regex: true
 
 'top_education':{
 
-current_work_location_regex: true
+//current_work_location_regex: true
 
 // /companypincode_regex: true
 
@@ -520,13 +521,13 @@ required: true
 
 'candidate_expected_sal':{
 
-twodecimal_regex: true
+//twodecimal_regex: true
 
 // /companypincode_regex: true
 
 } , 
 
-'desired_wrok_location':{
+'desired_wrok_location': {
 namespace_regex: true
 
 
@@ -766,6 +767,8 @@ return this.optional(element) || /^[1-9][0-9][0-9][0-9][0-9][0-9]$/.test(value);
          return false;
          }
      });
+
+
 </script>
 
 <script>
