@@ -1056,7 +1056,7 @@ button.btn.btn-default {
           <h4 class="modal-title">Add folder</h4>
         </div>
         <div class="modal-body">
-         <form>
+         <form method="post" action="<?php echo base_url(); ?>employer/add_cv_folder">
             <div class="col-md-12" style="margin-top: 20px;">
                <div class="row">
                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
