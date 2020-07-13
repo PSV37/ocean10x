@@ -1394,7 +1394,8 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
                  data: {myArray:myArray},
                  type: 'post',
                  success: function(response){
-                   window.location = response;
+                   // window.location = response;
+                   alert(response);
                  }
                });
 
