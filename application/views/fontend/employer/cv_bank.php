@@ -969,7 +969,7 @@ button#frwd_btn {
                <label>
                   <div class="check">
                     
-                     <input type="checkbox" value="<?php echo $cv_row['js_email']; ?>" data-valuetwo="<?php echo base_url(); echo $cv_row['js_resume']; ?>" class="chkbx" />
+                     <input type="checkbox" value="<?php echo $cv_row['js_email']; ?>" data-valuetwo="<?php echo base_url(); echo 'upload/Resumes'.$cv_row['js_resume']; ?>" class="chkbx" />
                   </div> 
                   <div class="card content">
                      <div class="front">
@@ -1338,6 +1338,18 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
                   alert('Please select atleast one cv to forward the job!')
                }
                
+   }
+
+   function download_cvs()
+   {
+       var checkedVals = $('.chkbx:checkbox:checked').map(function() {
+                   return this.getAttribute("data-valuetwo");
+               }).get();
+        var cvs= (checkedVals.join(","));
+            
+              alert(cvs);
+               var elements = cvs.split(',').length;
+
    }
 $("#job_titles").autocomplete({
              
