@@ -1019,8 +1019,9 @@ button#frwd_btn {
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
                            <li><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal<?php echo $cv_row['cv_id']; ?>" >Forward Job Post</a></li>
-
+                        <?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ ?>
                            <li> <a class="dropdown-item" id="div_download" href="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo base_url(); echo 'upload/Resumes/'.$cv_row['js_resume']; } ?>" download >Downlode this cv</a></li>
+                           <?php } ?>
 
                            <li> <a class="dropdown-item" href="#">Dummy 1</a></li>
                         </div>
