@@ -1018,8 +1018,10 @@ button#frwd_btn {
                         <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
-                           <li><a class="dropdown-item" href="#" data-toggle="modal" data-target="#rotateModal<?php echo $cv_row['cv_id']; ?>">Forward Job Post</a></li>
-                           <li> <a class="dropdown-item" href="#">Downlode this cv</a></li>
+                           <li><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal<?php echo $cv_row['cv_id']; ?>" >Forward Job Post</a></li>
+
+                           <li> <a class="dropdown-item" id="div_download" href="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo base_url(); echo 'upload/Resumes/'.$cv_row['js_resume']; } ?>" download >Downlode this cv</a></li>
+
                            <li> <a class="dropdown-item" href="#">Dummy 1</a></li>
                         </div>
                      </div>
@@ -1299,6 +1301,11 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
     $(document).on(' change','input[name="bulk_download"]',function() {
             $('.chkbx').prop("checked" , this.checked);
             $("input[name='bulk_forward']:checkbox").prop('checked',false);
+             if (this.checked) 
+            {
+                $("#div_download").attr("disabled", "disabled");
+             
+            }
 
     });
    $(document).on(' change','input[name="bulk_forward"]',function() {
@@ -1306,19 +1313,11 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
             $("input[name='bulk_download']:checkbox").prop('checked',false);
 
             // alert(this.checked);
-            // if (this.checked) 
-            // {
-            //     var checkedVals = $('.chkbx:checkbox:checked').map(function() {
-            //        return this.value;
-            //    }).get();
-            //    var emails= (checkedVals.join(","));
-            //    var elements = emails.split(',').length;
-            //    $('#no_of_cvs').html(elements);
-            //    $('#forward_job_emails').val(checkedVals.join(","));
-            //    setTimeout(function(){
-            //    $('#rotateModal').modal('show'); }, 500);
+            if (this.checked) 
+            {
+                $("#div_frwrd").attr("disabled", "disabled");
              
-            // }
+            }
 
     });
 
@@ -1352,7 +1351,7 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
         var cvs_name= (checkedValsofname.join(","));
             
             var myNameArray =  cvs_name.split(',');
-                var totalFiles = myArray.length;
+                // var totalFiles = myArray.length;
 
        var checkedVals = $('.chkbx:checkbox:checked').map(function() {
                    return this.getAttribute("data-valuetwo");
