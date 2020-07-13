@@ -392,7 +392,7 @@ input#candidate_skills {
    $(document).ready(function() { 
        $('#other_terxtbx').hide();
    
-   	$(function() { 
+      $(function() { 
      
      $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd',maxDate: '0' });
      $("#last_salary_hike").datepicker({ dateFormat: 'yy-mm-dd',maxDate: '0' });
@@ -632,7 +632,7 @@ return this.optional(element) || /^[a-zA-Z ]*$/.test(value);
 
   $.validator.addMethod("email_regex", function(value, element) {
 
-return this.optional(element) || /^\w.+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(value);
+return this.optional(element) || /^\w.+@[a-z-A-Z_]+?\.[a-zA-Z\-][\w-]{2,3}$/.test(value);
     
 }, "Please type valid Email");
 
