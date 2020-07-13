@@ -1276,19 +1276,19 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
    $(document).on(' change','input[name="bulk_forward"]',function() {
             $('.chkbx').prop("checked" , this.checked);
             // alert(this.checked);
-            if (this.checked) 
-            {
-                var checkedVals = $('.chkbx:checkbox:checked').map(function() {
-                   return this.value;
-               }).get();
-               var emails= (checkedVals.join(","));
-               var elements = emails.split(',').length;
-               $('#no_of_cvs').html(elements);
-               $('#forward_job_emails').val(checkedVals.join(","));
-               setTimeout(function(){
-               $('#rotateModal').modal('show'); }, 500);
+            // if (this.checked) 
+            // {
+            //     var checkedVals = $('.chkbx:checkbox:checked').map(function() {
+            //        return this.value;
+            //    }).get();
+            //    var emails= (checkedVals.join(","));
+            //    var elements = emails.split(',').length;
+            //    $('#no_of_cvs').html(elements);
+            //    $('#forward_job_emails').val(checkedVals.join(","));
+            //    setTimeout(function(){
+            //    $('#rotateModal').modal('show'); }, 500);
              
-            }
+            // }
 
     });
 
