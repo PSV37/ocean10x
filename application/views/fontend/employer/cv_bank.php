@@ -1303,6 +1303,7 @@ $("#sizelist").on("click", "a", function(e){
     $this.addClass("select").siblings().removeClass("select");
     $("#sizevalue").val($this.data("value"));
     $( "#sort_btn" ).click();
+    $( "#test" ).click();
 })
 
 
