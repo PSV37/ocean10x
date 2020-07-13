@@ -972,7 +972,7 @@ button#frwd_btn {
                <label>
                   <div class="check">
                     
-                     <input type="checkbox" value="<?php echo $cv_row['js_email']; ?>" data-valuetwo="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo base_url(); echo 'upload/Resumes/'.$cv_row['js_resume']; } ?>" class="chkbx" />
+                     <input type="checkbox" value="<?php echo $cv_row['js_email']; ?>" data-valuetwo="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo base_url(); echo 'upload/Resumes/'.$cv_row['js_resume']; } ?>" data-valueone="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo $cv_row['js_resume']; } ?>" class="chkbx" />
                   </div> 
                   <div class="card content">
                      <div class="front">
@@ -1346,6 +1346,14 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
 
    function download_cvs()
    {
+      var checkedValsofname = $('.chkbx:checkbox:checked').map(function() {
+                   return this.getAttribute("data-valueone");
+               }).get();
+        var cvs_name= (checkedValsofname.join(","));
+            
+            var myNameArray =  cvs_name.split(',');
+                var totalFiles = myArray.length;
+
        var checkedVals = $('.chkbx:checkbox:checked').map(function() {
                    return this.getAttribute("data-valuetwo");
                }).get();
@@ -1372,7 +1380,7 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
                                   a.style.display = 'none';
                                   a.href = url;
                                   // the filename you want
-                                  a.download = 'todo-1.json';
+                                  a.download = myNameArray[i];
                                   document.body.appendChild(a);
                                   a.click();
                                   window.URL.revokeObjectURL(url);
