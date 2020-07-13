@@ -868,6 +868,7 @@ button#frwd_btn {
                   <div class="clear"></div>
                </div>
                <div class="col-md-3">
+                  <form method="post" action="<?php echo base_url(); ?>employer/corporate_cv_bank">
                   <label class="dropdown" style="float:right;">
                      <div class="dd-button">
                         Sort by
@@ -879,15 +880,16 @@ button#frwd_btn {
                         <!-- <li value="edu">Education</li> -->
                      <!-- </ul> -->
                      <ul id="sizelist" class="dd-menu">
-                       <li data-value="Name" ><a href="#">Name</a></li>
-                       <li data-value="Experience"><a href="#">Experience</a></li>
-                       <li data-value="Education"><a href="#">Education</a></li>
+                       <li data-value="js_name" ><a href="#">Name</a></li>
+                       <li data-value="js_experience"><a href="#">Experience</a></li>
+                       <li data-value="js_top_education"><a href="#">Education</a></li>
                        
                      </ul>
 
                      
                   </label>
-                  <input id="sizevalue" size="15" name="size" type="hidden" />
+                  <input id="sizevalue" size="15" name="sort_val" type="hidden" />
+                  </form>
                </div>
                <div class="col-md-3">
                   <a href="<?php echo base_url() ?>employer/add-new-cv"><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New CV</button></a>
@@ -997,7 +999,7 @@ button#frwd_btn {
                            <li class="left-title">SkillSet</li>
                            <li class="right-title">&nbsp;: <?php echo $cv_row['js_skill_set']; ?></li>
                            <li class="left-title">Work Experince</li>
-                           <li class="right-title"  data-sort-op="<?php echo $cv_row['js_experience']?>">&nbsp;: <?php echo $cv_row['js_experience']; ?></li>
+                           <li class="right-title">&nbsp;: <?php echo $cv_row['js_experience']; ?></li>
                            <div class="clear"></div>
                         </div>
                         <div class="following-info2">
@@ -1259,25 +1261,8 @@ $("#sizelist").on("click", "a", function(e){
     var $this = $(this).parent();
     $this.addClass("select").siblings().removeClass("select");
     $("#sizevalue").val($this.data("value"));
-    var sort_value= document.getElementById('#sizevalue');
-    if (sort_value == 'Experience') 
-    {
-      var $divs = $("div.left-title");
-      var opOrder = $divs.sort(function (a, b) {
-        return $(a).data('sort-op') < $(b).data('sort-op') ? -1 : 1;
-    });
-    $("#content").html(opOrder);
-
-    }
-
 })
-// var $divs = $("div.left-title");
-// $('#opBnt').on('click', function () {
-//     var opOrder = $divs.sort(function (a, b) {
-//         return $(a).data('sort-op') < $(b).data('sort-op') ? -1 : 1;
-//     });
-//     $("#collapsible").html(opOrder);
-// });
+
 
    </script>
 <script>
