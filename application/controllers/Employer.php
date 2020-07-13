@@ -4740,15 +4740,17 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $employer_id = $this->session->userdata('company_profile_id');
         $name = $this->input->post('folder_name');
         $parent = $this->input->post('parent');
-         $whereres  = "company_profile_id='$employer_id' and folder_name = '$name'";
-                $folder_dbdata = $this->Master_model->get_master_row('company_profile', $select = FALSE, $whereres);
+         $whereres  = "company_id='$employer_id' and folder_name = '$name'";
+                $folder_dbdata = $this->Master_model->get_master_row('cv_folder', $select = FALSE, $whereres);
           if (empty($folder_dbdata)) {
                     $folder_data['folder_name'] = $name;
                     $folder_data['company_id'] = $employer_id;
                     $folder_data['parent_id'] = $parent;
                     $folder_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
                     $folder_data['created_by'] = $employer_id;
+
                      $result       = $this->Master_model->master_insert($folder_data, 'cv_folder');
+
                      $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Succesfully added</div>');
                 } 
                 else
