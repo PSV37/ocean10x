@@ -4716,7 +4716,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     function create_zip()
     {
         $zip = new ZipArchive();
-            $filename = "archive/myzipfile.zip";
+            $filename = "upload/Resumes/myzipfile.zip";
 
             if ($zip->open($filename, ZipArchive::CREATE)!==TRUE) {
               exit("cannot open <$filename>\n");
