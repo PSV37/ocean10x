@@ -925,8 +925,8 @@ button#frwd_btn {
                    <!--   <div class="dd-button" style="background-color: #18c5bd;color: #ffffff;">
                         Bulk Download
                      </div> -->
-                     <input type="checkbox" name="bulk_download" id="checkAll">&nbsp; Bulk Download
-                     <button type="button" id="dwnld_btn" class="btn btn-primary" onclick="frwd_post();">Farward Job</button>
+                     <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp; Bulk Download
+                     <button type="button" id="frwd_btn" class="btn btn-primary" onclick="download_cvs();">Download CV</button>
                      <!-- <input type="checkbox" class="dd-input" id="test"> -->
                      <!-- <ul class="dd-menu">
                          <li><a id="checkAll">Bulk Forward></a></li>
@@ -938,11 +938,11 @@ button#frwd_btn {
             
               
             </div>
-            <div class="row">
+            <!-- <div class="row">
                <div class="col-md-12">
                   <input type="checkbox" id="select-all" name="check_all" style="float: right; margin-right: 21px; display: inline-block;">
                </div>
-            </div>
+            </div> -->
 
             <div class="box" >
                <?php $key = 1; if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) : 
@@ -1292,8 +1292,15 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
    $(document).on(' change','input[name="check_all"]',function() {
             $('.chkbx').prop("checked" , this.checked);
     });
+    $(document).on(' change','input[name="bulk_download"]',function() {
+            $('.chkbx').prop("checked" , this.checked);
+            $("input[name='bulk_forward']:checkbox").prop('checked',false);
+            
+    });
    $(document).on(' change','input[name="bulk_forward"]',function() {
             $('.chkbx').prop("checked" , this.checked);
+            $("input[name='bulk_download']:checkbox").prop('checked',false);
+
             // alert(this.checked);
             // if (this.checked) 
             // {
