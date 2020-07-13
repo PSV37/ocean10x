@@ -4717,6 +4717,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     {
         $zip = new ZipArchive();
             $filename = "upload/Resumes/test.zip";
+             unlink($filename);
 
             // if ($zip->open($filename, ZipArchive::CREATE)!==TRUE) {
             //   exit("cannot open <$filename>\n");
