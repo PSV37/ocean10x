@@ -969,8 +969,8 @@ button#frwd_btn {
                <label>
                   <div class="check">
                     
-                     <input type="checkbox" value="<?php echo $cv_row['js_email']; ?>" class="chkbx" />
-                  </div>
+                     <input type="checkbox" value="<?php echo $cv_row['js_email']; ?>" data-valuetwo="<?php echo base_url(); echo $cv_row['js_resume']; ?>" class="chkbx" />
+                  </div> 
                   <div class="card content">
                      <div class="front">
                         <?php
@@ -1295,7 +1295,7 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
     $(document).on(' change','input[name="bulk_download"]',function() {
             $('.chkbx').prop("checked" , this.checked);
             $("input[name='bulk_forward']:checkbox").prop('checked',false);
-            
+
     });
    $(document).on(' change','input[name="bulk_forward"]',function() {
             $('.chkbx').prop("checked" , this.checked);
