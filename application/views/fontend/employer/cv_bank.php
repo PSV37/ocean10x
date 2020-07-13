@@ -1048,11 +1048,21 @@ button#frwd_btn {
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+          <h4 class="modal-title">Add folder</h4>
         </div>
         <div class="modal-body">
-          <p>This is a small modal.</p>
+         <form>
+            <div class="col-md-12">
+               <div class="row">
+                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <label class="mdl-textfield__label" for="sample3">Folder Name:</label>
+                  <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
+               </div>
+               </div>
+            </div>
+         </form>
+         <!--  <p>This is a small modal.</p> -->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
