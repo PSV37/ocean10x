@@ -1365,29 +1365,29 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
                 if (cvs.length == 0) {
                    alert("Please choose a file to download");
                 } else {
-                        for (var i = 0; i < totalFiles; i++) {
-                              //Open a download window for each URL in the array
-                              // alert(myArray[i]);
-                              if(myArray[i] === ''){ // do stuff 
+              //           for (var i = 0; i < totalFiles; i++) {
+              //                 //Open a download window for each URL in the array
+              //                 // alert(myArray[i]);
+              //                 if(myArray[i] === ''){ // do stuff 
                                  
-                              }
-                              else
-                              {
-                                  // window.open(myArray[i]);
-                                  const url =myArray[i];
-                                  const a = document.createElement('a');
-                                  a.style.display = 'none';
-                                  a.href = url;
-                                  // the filename you want
-                                  a.download = myNameArray[i];
+              //                 }
+              //                 else
+              //                 {
+              //                     // window.open(myArray[i]);
+              //                     const url =myArray[i];
+              //                     const a = document.createElement('a');
+              //                     a.style.display = 'none';
+              //                     a.href = url;
+              //                     // the filename you want
+              //                     a.download = myNameArray[i];
 
-                                  document.body.appendChild(a);
-                                  a.click();
-                                  window.URL.revokeObjectURL(url);
-                              }
+              //                     document.body.appendChild(a);
+              //                     a.click();
+              //                     window.URL.revokeObjectURL(url);
+              //                 }
                              
                         
-              }
+              // }
                // var elements = cvs.split(',').length;
                 $.ajax({
                  url:"<?php echo base_url();?>Employer/create_zip",
