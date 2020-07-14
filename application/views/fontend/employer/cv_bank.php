@@ -843,6 +843,18 @@ button.btn.btn-default {
     margin-left: 5px;
     margin-top: 20px;
 }
+input.select2-search__field {
+    /* margin-top: 40px; */
+    display: inline-block;
+    border-radius: 0;
+}
+ul#select2-folder_id-y3-results {
+    margin-top: 27px;
+}
+span.select2-selection.select2-selection--single {
+    width: 264px;
+    text-align: center;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
