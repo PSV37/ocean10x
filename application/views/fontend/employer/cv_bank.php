@@ -1125,7 +1125,7 @@ span.select2-selection.select2-selection--single {
       <div class="modal fade" id="bulkupload" role="dialog">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
-          <form method="post" action="<?php echo base_url(); ?>employer/add_cv_folder">
+          <form method="post" action="<?php echo base_url();?>employer/bulk_upload_cvs">
         <div class="modal-header">
           <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
           <h4 class="modal-title">Add folder</h4>
@@ -1136,36 +1136,14 @@ span.select2-selection.select2-selection--single {
                <div class="row">
                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <label class="mdl-textfield__label" for="sample3">Folder Name:</label>
-                  <input type="text"  name="folder_name"  id="folder_name" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
+                  <small>To Import CV's Download CSV Format <a href="<?php echo base_url(); ?>cv_bank_excel/bulk_upload_cv_format.csv" download><strong>Click here To Download</strong></a></small>
                </div>
                </div>
             </div>
             <div class="col-md-12">
                <div class="row">
                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <label class="mdl-textfield__label" for="sample3">parent Folder</label>
-                  <!-- <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required> -->
-                  <?php 
-
-                  $employer_id = $this->session->userdata('company_profile_id');
-                  $wheres  = "status='1' AND company_id='$employer_id' ";
-                     $folders     = $this->Master_model->getMaster('cv_folder', $where = $wheres); ?>
-                  <select class="form-control select2" name="parent">
-                     <option value="0">None</option>
-
-                     <?php  $i=0; foreach ($folders as $row) { 
-                        // $id= $folders[$i]['id'];
-
-                        // $p1 = $this->Employer_Login_model->cv_folder($id);
-                        // $p2 = $this->Employer_Login_model->cv_folder($p1->parent_id); 
-                        // if ($p2 == '0') { 
-                           ?>
-                           <option value="<?php echo $row['id']; ?>"><?php echo $row['folder_name'] ?></option>
-                       
-                     
-                     <?    $i++; } ?>
-                    
-                  </select>
+                  <button type="submit" name='upload' class="btn btn-info btn-sm pull-right">Upload Now</button>
                </div>
                </div>
             </div>
