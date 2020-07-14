@@ -3742,7 +3742,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             'corporate_cv_bank' => 'corporate_cv_bank.cv_id = cv_folder_relation.cv_id|Left outer'
         );
                 $data['cv_bank_data']  = $this->Master_model->getMaster('cv_folder_relation', $where_c, $ $join_cond, $order = 'asc', $field = $sort_val, $select = false, $limit = false, $start = false, $search = false);
-                    $this->load->view('fontend/employer/cv_bank', $data);.
+                    $this->load->view('fontend/employer/cv_bank', $data);
        }
 
         elseif (isset($_POST['sort'])) {
