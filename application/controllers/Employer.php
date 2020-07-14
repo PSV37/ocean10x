@@ -3730,7 +3730,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     
     public function corporate_cv_bank($fid = null)
     {
-         $this->session->unset_userdata('activemenu');
+        $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'cv_bank';
         $this->session->set_userdata($data);
         $company_id = $this->session->userdata('company_profile_id');
@@ -4792,7 +4792,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                      $result  = $this->Master_model->master_insert($folder_data, 'cv_folder_relation');
 
                      $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Succesfully added</div>');
-                     redirect('employer/corporate_cv_bank');
+                     redirect('employer/corporate_cv_bank/'.$folder_id);
                 } 
                 else
                 {

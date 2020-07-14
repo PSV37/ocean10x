@@ -125,7 +125,7 @@ $employer_id = $this->session->userdata('company_profile_id');
                                               foreach ($child_folders as $row1) { ?>
                                              
                                                 <li>
-                                                  <span><i class="fas fa-folder-open"></i> <?php echo $row1['folder_name']; ?></span> 
+                                                  <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row1['id'] ?>"><span><i class="fas fa-folder-open"></i> <?php echo $row1['folder_name']; ?></span> </a>
                                                   <ul>
                                                     <?php $cparent_id = $row1['id']; 
                                                     $where_child  = "status='1' AND company_id='$employer_id' and parent_id = '$cparent_id'";
@@ -134,7 +134,7 @@ $employer_id = $this->session->userdata('company_profile_id');
                                                     foreach ($grand_child_folders as $row2) { ?>
                                                     
                                                       <li>
-                                                        <span><i class="fas fa-folder-open"></i><?php echo $row2['folder_name']; ?></span>
+                                                       <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row2['id'] ?>"><span><i class="fas fa-folder-open"></i><?php echo $row2['folder_name']; ?></span></a> 
                                                       </li>
                                                     <?php } } ?>
                                                     </ul>
