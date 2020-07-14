@@ -462,10 +462,19 @@ $(document).bind("mousedown", function (e) {
         // Hide it
         $(".custom-menu").hide(100);
     }
+    else
+    {
+      alert(e.target);
+    }
 });
 
 function check(value)
 {
+   // if ($(e.target).parents(".custom-menu").length > 0) {
+        
+   //      // Hide it
+   //      $("#submenu").hide(100);
+   //  }
   // alert(value);
   // $('#fid').val(value);
 }
