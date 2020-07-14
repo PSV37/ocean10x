@@ -136,13 +136,13 @@ public function check_forgot_user_info($email)
     {
        
          
-                $this->db->select('cv.parent_id')
+                $this->db->select('cv.parent_id');
                 // ->select('cv.*')
-                $this->db->from('cv_folder cv')
-               $this->db ->join('cv_folder cvp ','cvp.parent_id = cv.id','left')
+                $this->db->from('cv_folder cv');
+               $this->db ->join('cv_folder cvp ','cvp.parent_id = cv.id','left');
                 // ->join('at_shops as','as.shop_id = ao.shop_id','left')
-                $this->db->where('cv.id',$id)
-                $this->db->get()
+                $this->db->where('cv.id',$id);
+                $this->db->get();
             return $this->db->row();
     }     
     
