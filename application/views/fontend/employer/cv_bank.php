@@ -1136,9 +1136,9 @@ span.select2-selection.select2-selection--single {
                      <option value="0">None</option>
 
                      <?php  $i=0; foreach ($folders as $row) { 
-                        echo $folders[$i]['id'];
+                        $id= $folders[$i]['id'];
 
-                        $p1 = $this->Employer_Login_model->cv_folder($folders[$i]['id']);
+                        $p1 = $this->Employer_Login_model->cv_folder($id);
                         // $p2 = $this->Employer_Login_model->cv_folder($p1->parent_id); 
                         // if ($p2 == '0') { 
                            ?>
