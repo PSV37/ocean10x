@@ -456,16 +456,17 @@ $(document).bind("mousedown", function (e) {
     
     // If the clicked element is not the menu
      console.log($(this).parent('li').index());
+      if ($(e.target).parents(".custom-menu").length > 0) 
+    {
+      alert(e.target);
+    }
 
     if (!$(e.target).parents(".custom-menu").length > 0) {
         
         // Hide it
         $(".custom-menu").hide(100);
     }
-    else
-    {
-      alert(e.target);
-    }
+    
 });
 
 function check(value)
