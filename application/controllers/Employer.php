@@ -11,6 +11,8 @@ class Employer extends MY_Employer_Controller
     {
         
         parent::__construct();
+              $this->load->model('employer_login_model');
+        
         // $this->load->model('dashboard_model');
         //$this->load->model('global_model');
         $config = array(
@@ -3728,14 +3730,30 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     }
     
     
-    public function corporate_cv_bank()
+    public function corporate_cv_bank($fid = null)
     {
-         $this->session->unset_userdata('activemenu');
+        $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'cv_bank';
         $this->session->set_userdata($data);
         $company_id = $this->session->userdata('company_profile_id');
 
-        if (isset($_POST['sort'])) {
+       if (isset($fid) && !empty($fid)) {
+
+        $this->session->unset_userdata('activesubmenu');
+        $data['activesubmenu'] = $fid;
+        $this->session->set_userdata($data);
+
+            $where_c['cv_folder_id'] = $fid;
+            $where_c['status'] = 1;
+             $join_cond  = array(
+            'corporate_cv_bank' => 'corporate_cv_bank.cv_id = cv_folder_relation.cv_id|Left outer'
+        );
+                $data['cv_bank_data']  = $this->Master_model->getMaster('cv_folder_relation', $where_c, $join_cond, $order = 'desc', $field = 'relation_id', $select = false, $limit = false, $start = false, $search = false);
+                // print_r($this->db->last_query());die;
+                    $this->load->view('fontend/employer/cv_bank', $data);
+       }
+
+        elseif (isset($_POST['sort'])) {
             $sort_val = $this->input->post('sort_val');
            if (isset($sort_val) && ! empty($sort_val) ) {
                $where_c['company_id'] = $company_id;
@@ -4711,6 +4729,84 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         
         $this->load->view('fontend/employer/ocean_history');
         
+    }
+
+    function create_zip()
+    {
+        $zip = new ZipArchive();
+            $filename = "upload/Resumes/test.zip";
+             unlink($filename);
+
+
+         if ($zip->open($filename, ZipArchive::CREATE) === TRUE) {
+              $files= $this->input->post('myArray');
+            foreach ($files as $row) {
+                // print_r($row);
+                $zip->addFile('upload/Resumes/'.$row,$row);
+              
+            } 
+        }
+           
+            $zip->close();
+          
+             echo base_url().$filename;
+    }
+
+
+    public function add_cv_folder()
+    {
+        $employer_id = $this->session->userdata('company_profile_id');
+        $name = $this->input->post('folder_name');
+        $parent = $this->input->post('parent');
+         $whereres  = "company_id='$employer_id' and folder_name = '$name'";
+                $folder_dbdata = $this->Master_model->get_master_row('cv_folder', $select = FALSE, $whereres);
+          if (empty($folder_dbdata)) {
+                    $folder_data['folder_name'] = $name;
+                    $folder_data['company_id'] = $employer_id;
+                    $folder_data['parent_id'] = $parent;
+                    $folder_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
+                    $folder_data['created_by'] = $employer_id;
+
+                     $result       = $this->Master_model->master_insert($folder_data, 'cv_folder');
+
+                     $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Succesfully added</div>');
+                     redirect('employer/corporate_cv_bank');
+                } 
+                else
+                {
+                     $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">already exists</div>');
+                     redirect('employer/corporate_cv_bank');
+                     
+                }     
+      
+    }
+
+    public function move_cvto_folder()
+    {
+         $employer_id = $this->session->userdata('company_profile_id');
+        $cv_id = $this->input->post('cv_id');
+        $folder_id = $this->input->post('folder_id');
+        $whereres  = "cv_folder_id='$folder_id' and cv_id = '$cv_id'";
+        $folder_dbdata = $this->Master_model->get_master_row('cv_folder_relation', $select = FALSE, $whereres);
+
+          if (empty($folder_dbdata)) {
+                    $folder_data['cv_folder_id'] = $folder_id;
+                    $folder_data['cv_id'] = $cv_id;
+                    $folder_data['status'] = '1';
+
+                   
+
+                     $result  = $this->Master_model->master_insert($folder_data, 'cv_folder_relation');
+
+                     $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Succesfully added</div>');
+                     redirect('employer/corporate_cv_bank/'.$folder_id);
+                } 
+                else
+                {
+                     $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">already exists</div>');
+                     redirect('employer/corporate_cv_bank');
+                     
+                }     
     }
     
 } // end class

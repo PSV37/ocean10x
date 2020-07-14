@@ -54,7 +54,9 @@
 
 
 </style>    
-<?php $activemenu = $this->session->userdata('activemenu'); ?>
+<?php $activemenu = $this->session->userdata('activemenu'); 
+$employer_id = $this->session->userdata('company_profile_id');
+?>
 <div class="col-md-3">
 <div class="employer_menu">
 
@@ -106,8 +108,51 @@
                                   </a>
                                   <div class="row tree well">
                                                  
-                                                     <ul>
-                                            <li>
+                                    <ul>        
+                                      <?php 
+                                       $activesubmenu = $this->session->userdata('activesubmenu'); 
+
+                                      $wheres       = "status='1' AND company_id='$employer_id' and parent_id = '0'";
+                                      $folders     = $this->Master_model->getMaster('cv_folder', $where = $wheres); 
+                                        if (!empty($folders)) { 
+                                        foreach ($folders as $row) { ?>
+                                        
+                                          <li <?php if ($activesubmenu ==  $row['id']) { ?>
+                                 class="active"
+                                <?php } ?>>
+                                           <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row['id'] ?>" > <span><i class="fas fa-folder-open"></i> <?php echo $row['folder_name']; ?></span></a>
+                                             <ul>
+                                            <?php 
+                                            $parent_id = $row['id']; 
+                                            $where_child  = "status='1' AND company_id='$employer_id' and parent_id = '$parent_id'";
+                                            $child_folders  = $this->Master_model->getMaster('cv_folder', $where = $where_child); 
+                                              if (!empty($child_folders)) { 
+                                              foreach ($child_folders as $row1) { ?>
+                                             
+                                                <li <?php if ($activesubmenu ==  $row1['id']) { ?> class="active" <?php } ?>>
+                                                  <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row1['id'] ?>"><span><i class="fas fa-folder-open"></i></span>
+                                                    <span> <?php echo $row1['folder_name']; ?></span> </a>
+                                                  <ul>
+                                                    <?php $cparent_id = $row1['id']; 
+                                                    $where_child  = "status='1' AND company_id='$employer_id' and parent_id = '$cparent_id'";
+                                                    $grand_child_folders  = $this->Master_model->getMaster('cv_folder', $where = $where_child); 
+                                                    if (!empty($grand_child_folders)) { 
+                                                    foreach ($grand_child_folders as $row2) { ?>
+                                                    
+                                                      <li <?php if ($activesubmenu ==  $row2['id']) { ?>  class="active" <?php } ?>>
+                                                       <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row2['id'] ?>"><span><i class="fas fa-folder-open"></i></span>
+                                                        <span><?php echo $row2['folder_name']; ?></span></a> 
+                                                      </li>
+                                                    <?php } } ?>
+                                                    </ul>
+                                                </li>
+                                                  <?php } } ?>
+                                              </ul>
+                                            </li>
+                               <?php } } ?>
+                               </ul> 
+
+                                            <!-- <li>
                                                 <span><i class="fas fa-folder-open"></i> Parent</span>
                                                 <ul>
                                                     <li>
@@ -128,10 +173,10 @@
                                                         </ul>
                                                     </li>
                                                 </ul>
-                                                
-                                            </li>
+                                                 -->
+                                            <!-- </li>
                                             
-                                        </ul>  
+                                        </ul>  --> 
                                                    
                                                      
                                                     </div>

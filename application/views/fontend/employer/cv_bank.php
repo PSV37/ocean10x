@@ -839,6 +839,22 @@ button#frwd_btn {
     margin-top: -2px;
     margin-left: 10px;
 }
+button.btn.btn-default {
+    margin-left: 5px;
+    margin-top: 20px;
+}
+input.select2-search__field {
+    /* margin-top: 40px; */
+    display: inline-block;
+    border-radius: 0;
+}
+ul#select2-folder_id-y3-results {
+    margin-top: 27px;
+}
+span.select2-selection.select2-selection--single {
+    width: 264px;
+    text-align: center;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -914,7 +930,7 @@ button#frwd_btn {
                         Bulk Download
                      </div> -->
                      <input type="checkbox" name="bulk_forward" id="checkAll">&nbsp; Bulk Forward
-                     <button type="button" id="frwd_btn" class="btn btn-primary" onclick="frwd_post();">Farward Job</button>
+                     <button type="button" id="frwd_btn" class="btn btn-primary" onclick="frwd_post();">Forward Job</button>
                      <!-- <input type="checkbox" class="dd-input" id="test"> -->
                      <!-- <ul class="dd-menu">
                          <li><a id="checkAll">Bulk Forward></a></li>
@@ -972,7 +988,7 @@ button#frwd_btn {
                <label>
                   <div class="check">
                     
-                     <input type="checkbox" value="<?php echo $cv_row['js_email']; ?>" data-valuetwo="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo base_url(); echo 'upload/Resumes/'.$cv_row['js_resume']; } ?>" class="chkbx" />
+                     <input type="checkbox" value="<?php echo $cv_row['js_email']; ?>" data-valuetwo="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo base_url(); echo 'upload/Resumes/'.$cv_row['js_resume']; } ?>" data-valueone="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo $cv_row['js_resume']; } ?>" class="chkbx" />
                   </div> 
                   <div class="card content">
                      <div class="front">
@@ -1018,9 +1034,12 @@ button#frwd_btn {
                         <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
-                           <li><a class="dropdown-item" href="#" data-toggle="modal" data-target="#rotateModal<?php echo $cv_row['cv_id']; ?>">Forward Job Post</a></li>
-                           <li> <a class="dropdown-item" href="#">Downlode this cv</a></li>
-                           <li> <a class="dropdown-item" href="#">Dummy 1</a></li>
+                           <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal<?php echo $cv_row['cv_id']; ?>" >Forward Job Post</a></li>
+                        <?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ ?>
+                           <li id="div_download"> <a class="dropdown-item"  href="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo base_url(); echo 'upload/Resumes/'.$cv_row['js_resume']; } ?>" download >Download this cv</a></li>
+                           <?php } ?>
+
+                           <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-target="#move_cv<?php echo $cv_row['cv_id']; ?>" href="#">Move this CV</a></li>
                         </div>
                      </div>
                   </div>
@@ -1039,21 +1058,108 @@ button#frwd_btn {
          <div class="col-md-3 right_side">
          <div class="row" style="text-align: justify;margin: 10 auto;width: fit-content;">
       
-  
+<?php foreach ($cv_bank_data as $cv_row) :  ?>
+<div class="modal fade" id="move_cv<?php echo $cv_row['cv_id']; ?>" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+          <form method="post" action="<?php echo base_url(); ?>employer/move_cvto_folder">
+        <div class="modal-header">
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+          <h4 class="modal-title">Move CV to folder</h4>
+        </div>
+        <div class="modal-body">
+        <input type="hidden" name="cv_id" value="<?php echo $cv_row['cv_id']; ?>">
+            
+            <div class="col-md-12" style="margin-top: 20px;">
+               <div class="row">
+                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <label class="mdl-textfield__label" for="sample3">Choose Folder</label>
+                  <!-- <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required> -->
+                  <?php 
+                  $employer_id = $this->session->userdata('company_profile_id');
+                  $wheres  = "status='1' AND company_id='$employer_id' ";
+                     $folders     = $this->Master_model->getMaster('cv_folder', $where = $wheres); ?>
+                  <select class="form-control select2" name="folder_id">
+                     <option value="0">None</option>
 
+                     <?php foreach ($folders as $row) { ?>
+                      <option value="<?php echo $row['id'] ?>"><?php echo $row['folder_name'] ?></option>
+                     <? } ?>
+                    
+                  </select>
+               </div>
+               </div>
+            </div>
+        
+         <!--  <p>This is a small modal.</p> -->
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-default">Add</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+         </form>
+      </div>
+    </div>
+  </div>
+  <?php
+                  $key++;
+                    endforeach;  
+                  ?>
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
+          <form method="post" action="<?php echo base_url(); ?>employer/add_cv_folder">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+          <h4 class="modal-title">Add folder</h4>
         </div>
         <div class="modal-body">
-          <p>This is a small modal.</p>
+        
+            <div class="col-md-12" style="margin-top: 20px;">
+               <div class="row">
+                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <label class="mdl-textfield__label" for="sample3">Folder Name:</label>
+                  <input type="text"  name="folder_name"  id="folder_name" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
+               </div>
+               </div>
+            </div>
+            <div class="col-md-12">
+               <div class="row">
+                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <label class="mdl-textfield__label" for="sample3">parent Folder</label>
+                  <!-- <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required> -->
+                  <?php 
+
+                  $employer_id = $this->session->userdata('company_profile_id');
+                  $wheres  = "status='1' AND company_id='$employer_id' ";
+                     $folders     = $this->Master_model->getMaster('cv_folder', $where = $wheres); ?>
+                  <select class="form-control select2" name="parent">
+                     <option value="0">None</option>
+
+                     <?php  $i=0; foreach ($folders as $row) { 
+                        // $id= $folders[$i]['id'];
+
+                        // $p1 = $this->Employer_Login_model->cv_folder($id);
+                        // $p2 = $this->Employer_Login_model->cv_folder($p1->parent_id); 
+                        // if ($p2 == '0') { 
+                           ?>
+                           <option value="<?php echo $row['id']; ?>"><?php echo $row['folder_name'] ?></option>
+                       
+                     
+                     <?    $i++; } ?>
+                    
+                  </select>
+               </div>
+               </div>
+            </div>
+        
+         <!--  <p>This is a small modal.</p> -->
         </div>
         <div class="modal-footer">
+          <button type="submit" class="btn btn-default">Add</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
+         </form>
       </div>
     </div>
   </div>
@@ -1187,7 +1293,7 @@ button#frwd_btn {
              
                <input type="hidden" name="consultant" value="JobSeeker">  
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <label class="mdl-textfield__label" for="sample3">job Title:</label>
+                  <label class="mdl-textfield__label" for="sample3">job Post:</label>
                   <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
                </div>
                <input type="hidden" name="job_post_id" value="" id="auto-value">
@@ -1226,7 +1332,7 @@ button#frwd_btn {
                <input type="hidden" name="job_post_id" value="<?php echo $v_companyjobs->job_post_id; ?>">
                <input type="hidden" name="consultant" value="JobSeeker">  
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <label class="mdl-textfield__label" for="sample3">job Title:</label>
+                  <label class="mdl-textfield__label" for="sample3">job Post:</label>
                   <input type="text"  name="job_titles"  id="job_titles" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
                </div>
                <input type="hidden" name="job_post_id" value="" id="autocomplete2-value">
@@ -1249,6 +1355,9 @@ button#frwd_btn {
       </div>
    </div>
 </div>
+<script>
+   $('.select2').select2();
+</script>
    <script>
      $('#myInput').focus(function(){
    $(this).data('placeholder',$(this).attr('placeholder'))
@@ -1263,6 +1372,7 @@ $("#sizelist").on("click", "a", function(e){
     $this.addClass("select").siblings().removeClass("select");
     $("#sizevalue").val($this.data("value"));
     $( "#sort_btn" ).click();
+    $( "#test" ).click();
 })
 
 
@@ -1299,6 +1409,18 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
     $(document).on(' change','input[name="bulk_download"]',function() {
             $('.chkbx').prop("checked" , this.checked);
             $("input[name='bulk_forward']:checkbox").prop('checked',false);
+             if (this.checked) 
+            {
+                $("#gedf-drop1").hide();
+               
+
+             
+            }
+            else
+            {
+                $("#gedf-drop1").show();
+
+            }
 
     });
    $(document).on(' change','input[name="bulk_forward"]',function() {
@@ -1306,19 +1428,18 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
             $("input[name='bulk_download']:checkbox").prop('checked',false);
 
             // alert(this.checked);
-            // if (this.checked) 
-            // {
-            //     var checkedVals = $('.chkbx:checkbox:checked').map(function() {
-            //        return this.value;
-            //    }).get();
-            //    var emails= (checkedVals.join(","));
-            //    var elements = emails.split(',').length;
-            //    $('#no_of_cvs').html(elements);
-            //    $('#forward_job_emails').val(checkedVals.join(","));
-            //    setTimeout(function(){
-            //    $('#rotateModal').modal('show'); }, 500);
+            if (this.checked) 
+            {
+                $("#gedf-drop1").hide();
+              
+
              
-            // }
+            }
+            else
+            {
+                $("#gedf-drop1").show();
+
+            }
 
     });
 
@@ -1346,6 +1467,14 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
 
    function download_cvs()
    {
+      var checkedValsofname = $('.chkbx:checkbox:checked').map(function() {
+                   return this.getAttribute("data-valueone");
+               }).get();
+        var cvs_name= (checkedValsofname.join(","));
+            
+            var myNameArray =  cvs_name.split(',');
+                // var totalFiles = myArray.length;
+
        var checkedVals = $('.chkbx:checkbox:checked').map(function() {
                    return this.getAttribute("data-valuetwo");
                }).get();
@@ -1353,25 +1482,55 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
             
             var myArray =  cvs.split(',');
                 var totalFiles = myArray.length;
-                alert(totalFiles);
+                // alert(totalFiles);
              //Throw an error if no boxes are checked
                 if (cvs.length == 0) {
                    alert("Please choose a file to download");
                 } else {
-                        for (var i = 0; i < totalFiles; i++) {
-                              //Open a download window for each URL in the array
-                              // alert(myArray[i]);
-                              if(myArray[i] === ''){ // do stuff 
+                  var newArray = myNameArray.filter(value => Object.keys(value).length !== 0);
+              //           for (var i = 0; i < totalFiles; i++) {
+              //                 //Open a download window for each URL in the array
+              //                 // alert(myArray[i]);
+              //                 if(myArray[i] === ''){ // do stuff 
                                  
-                              }
-                              else
-                              {
-                                  window.open(myArray[i]);
-                              }
+              //                 }
+              //                 else
+              //                 {
+              //                     // window.open(myArray[i]);
+              //                     const url =myArray[i];
+              //                     const a = document.createElement('a');
+              //                     a.style.display = 'none';
+              //                     a.href = url;
+              //                     // the filename you want
+              //                     a.download = myNameArray[i];
+
+              //                     document.body.appendChild(a);
+              //                     a.click();
+              //                     window.URL.revokeObjectURL(url);
+              //                 }
                              
                         
-              }
+              // }
                // var elements = cvs.split(',').length;
+                $.ajax({
+                 url:"<?php echo base_url();?>Employer/create_zip",
+                 data: {myArray:newArray},
+                 type: 'post',
+                 success: function(response){
+                   // window.location = response;
+                   alert(response);
+                   const url =  response;
+                                  const a = document.createElement('a');
+                                  a.style.display = 'none';
+                                  a.href = url;
+                                  // the filename you want
+                                  a.download = 'Resumes.zip';
+
+                                  document.body.appendChild(a);
+                                  a.click();
+                                  window.URL.revokeObjectURL(url);
+                 }
+               });
 
    }
 }
