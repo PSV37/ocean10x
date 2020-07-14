@@ -435,8 +435,7 @@ $employer_id = $this->session->userdata('company_profile_id');
 $('#submenu').bind("contextmenu", function (event) {
     
     // Avoid the real one
-      var id = $(this).attr('data-action');
-      alert(id);
+    
     event.preventDefault();
     
     // Show contextmenu
@@ -478,13 +477,16 @@ $(".right_click li").mousedown(function(event) {
     //     default:
     //         alert('Nothing');
     // }
-    switch($(this).attr("data-action")) {
+    alert('dd');
+    var id = $(this).attr('data-action');
+      alert(id);
+    // {
         
-        // A case for each action. Your actions here
-        case "1": alert("first"); break;
-        case "2": alert("second"); break;
-        case "3": alert("third"); break;
-    }
+    //     // A case for each action. Your actions here
+    //     case "1": alert("first"); break;
+    //     case "2": alert("second"); break;
+    //     case "3": alert("third"); break;
+    // }
   
     // Hide it AFTER the action was triggered
     // $(".custom-menu").hide(100);
