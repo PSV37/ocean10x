@@ -115,7 +115,7 @@ $employer_id = $this->session->userdata('company_profile_id');
                                         foreach ($folders as $row) { ?>
                                         
                                           <li>
-                                           <a href="<?php echo base_url() ?>employer/corporate-cv-bank/<?php echo $row['id'] ?>" > <span><i class="fas fa-folder-open"></i> <?php echo $row['folder_name']; ?></span></a>
+                                           <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row['id'] ?>" > <span><i class="fas fa-folder-open"></i> <?php echo $row['folder_name']; ?></span></a>
                                              <ul>
                                             <?php 
                                             $parent_id = $row['id']; 
