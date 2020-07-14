@@ -132,6 +132,20 @@ public function check_forgot_user_info($email)
         return $this->db->affected_rows();
     }	    
     
+    public function cv_folder($id)
+    {
+       
+        return $this->db
+                ->select('cv.*')
+                // ->select('cv.*')
+                ->from('cv_folder cv')
+                ->join('cv_folder cvp ','cvp.parent_id = cv.id','left')
+                // ->join('at_shops as','as.shop_id = ao.shop_id','left')
+                ->where('cv.id',$id)
+                ->get()
+                ->result_array();
+    }     
+    
     
 
     }
