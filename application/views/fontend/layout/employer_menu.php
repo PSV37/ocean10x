@@ -51,7 +51,27 @@
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+.custom-menu {
+    display: none;
+    z-index: 1000;
+    position: absolute;
+    overflow: hidden;
+    border: 1px solid #CCC;
+    white-space: nowrap;
+    font-family: sans-serif;
+    background: #FFF;
+    color: #333;
+    border-radius: 5px;
+}
 
+.custom-menu li {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.custom-menu li:hover {
+    background-color: #DEF;
+}
 
 </style>    
 <?php $activemenu = $this->session->userdata('activemenu'); 
@@ -117,9 +137,9 @@ $employer_id = $this->session->userdata('company_profile_id');
                                         if (!empty($folders)) { 
                                         foreach ($folders as $row) { ?>
                                         
-                                          <li <?php if ($activesubmenu ==  $row['id']) { ?>
+                                          <li onclick="check();" <?php if ($activesubmenu ==  $row['id']) { ?>
                                  class="active"
-                                <?php } ?>>
+                                <?php } ?>  >
                                            <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row['id'] ?>" > <span><i class="fas fa-folder-open"></i> <?php echo $row['folder_name']; ?></span></a>
                                              <ul>
                                             <?php 
@@ -427,6 +447,10 @@ $('.right_click li').bind("contextmenu", function (event) {
     });
 });
 
+function check()
+{
+  alert('works');
+}
 
 // If the document is clicked somewhere
 $(document).bind("mousedown", function (e) {
