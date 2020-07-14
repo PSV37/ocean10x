@@ -1050,15 +1050,15 @@ button.btn.btn-default {
 <div class="modal fade" id="move_cv<?php echo $cv_row['cv_id']; ?>" role="dialog">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
-          <form method="post" action="<?php echo base_url(); ?>employer/add_cv_folder">
+          <form method="post" action="<?php echo base_url(); ?>employer/move_cvto_folder">
         <div class="modal-header">
           <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-          <h4 class="modal-title">Add folder</h4>
+          <h4 class="modal-title">Move CV to folder</h4>
         </div>
         <div class="modal-body">
-        
+        <input type="hidden" name="cv_id" value="<?php echo $cv_row['cv_id']; ?>">
             
-            <div class="col-md-12">
+            <div class="col-md-12" style="margin-top: 20px;">
                <div class="row">
                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <label class="mdl-textfield__label" for="sample3">Choose Folder</label>

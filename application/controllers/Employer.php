@@ -4762,5 +4762,31 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 }     
       
     }
+
+    public function move_cvto_folder()
+    {
+         $employer_id = $this->session->userdata('company_profile_id');
+        $cv_id = $this->input->post('cv_id');
+        $folder_id = $this->input->post('folder_id');
+        $whereres  = "cv_folder_id='$folder_id' and cv_id = '$cv_id'";
+        $folder_dbdata = $this->Master_model->get_master_row('cv_folder_relation', $select = FALSE, $whereres);
+
+          if (empty($folder_dbdata)) {
+                    $folder_data['cv_folder_id'] = $folder_id;
+                    $folder_data['cv_id'] = $cv_id;
+                   
+
+                     $result  = $this->Master_model->master_insert($folder_data, 'cv_folder_relation');
+
+                     $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Succesfully added</div>');
+                     redirect('employer/corporate_cv_bank');
+                } 
+                else
+                {
+                     $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">already exists</div>');
+                     redirect('employer/corporate_cv_bank');
+                     
+                }     
+    }
     
 } // end class
