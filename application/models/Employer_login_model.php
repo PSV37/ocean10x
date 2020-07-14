@@ -135,7 +135,7 @@ public function check_forgot_user_info($email)
     public function cv_folder($id)
     {
        
-         $this->db
+         
                 $this->db->select('cv.parent_id')
                 // ->select('cv.*')
                 $this->db->from('cv_folder cv')
