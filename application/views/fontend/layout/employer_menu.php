@@ -437,9 +437,10 @@ $('.contxt li').bind("contextmenu", function (event) {
     
     // Avoid the real one
      var data_val = $(this).attr('data-action');
-     alert(data_val);
-     $('#sub_value').val(data_val);
+     
     event.preventDefault();
+    // alert(data_val);
+     $('#sub_value').val(data_val);
     
     // Show contextmenu
     $(".custom-menu").finish().toggle(100).
