@@ -463,9 +463,22 @@ $(document).bind("mousedown", function (e) {
     }
 });
 
-$(".right_click li").click(function(){
+$(".right_click li").mousedown(function(event) {
     
     // This is the triggered action name
+    switch (event.which) {
+        case 1:
+            alert('Left mouse button is pressed');
+            break;
+        case 2:
+            alert('Middle mouse button is pressed');
+            break;
+        case 3:
+            alert('Right mouse button is pressed');
+            break;
+        default:
+            alert('Nothing');
+    }
     switch($(this).attr("data-action")) {
         
         // A case for each action. Your actions here
