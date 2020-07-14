@@ -1142,7 +1142,7 @@ span.select2-selection.select2-selection--single {
                            <option value="<?php echo $row['id']; ?>"><?php echo $row['folder_name'] ?></option>
                        
                      
-                     <?  } } ?>
+                     <?   } ?>
                     
                   </select>
                </div>
