@@ -129,7 +129,7 @@ $employer_id = $this->session->userdata('company_profile_id');
                                   <input type="hidden" name="" id="sub_value">
                                   <div class="row tree well">
                                                  
-                                    <ul>        
+                                    <ul class-right>        
                                       <?php 
                                        $activesubmenu = $this->session->userdata('activesubmenu'); 
 
@@ -433,10 +433,12 @@ $employer_id = $this->session->userdata('company_profile_id');
 </div>
  <script>
    // Trigger action when the contexmenu is about to be shown
-$('ul li').bind("contextmenu", function (event) {
+$('.class-right li').bind("contextmenu", function (event) {
     
     // Avoid the real one
-     var data_val = $(this).attr('data-action');
+      var test = $(this).find("#submenu").text();
+    console.log(test);
+     // var data_val = $(this).attr('data-action');
      alert(data_val);
      // $('#sub_value').val(data_val);
     event.preventDefault();
