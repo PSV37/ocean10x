@@ -11,7 +11,7 @@ class Employer extends MY_Employer_Controller
     {
         
         parent::__construct();
-                  $this->load->model('Employer_Login_model');
+              $this->load->model('employer_login_model');
         
         // $this->load->model('dashboard_model');
         //$this->load->model('global_model');

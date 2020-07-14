@@ -9,7 +9,7 @@ class Employer_Login extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('employer_Login_model');
+        $this->load->model('employer_login_model');
         $company_profile_id = $this->session->userdata('company_profile_id');
         if ($company_profile_id != null) {
             redirect('employer', 'refresh');
