@@ -1135,17 +1135,17 @@ span.select2-selection.select2-selection--single {
                   <select class="form-control select2" name="parent">
                      <option value="0">None</option>
 
-                     <?php foreach ($folders as $row) { 
-                        echo $row['id'];
+                     <?php  $i=0; foreach ($folders as $row) { 
+                        echo $folders[$i]['id'];
 
-                        // $p1 = $this->Employer_Login_model->cv_folder($row['id']);
+                        $p1 = $this->Employer_Login_model->cv_folder($folders[$i]['id']);
                         // $p2 = $this->Employer_Login_model->cv_folder($p1->parent_id); 
                         // if ($p2 == '0') { 
                            ?>
                            <option value="<?php echo $row['id']; ?>"><?php echo $row['folder_name'] ?></option>
                        
                      
-                     <?   } ?>
+                     <?    $i++; } ?>
                     
                   </select>
                </div>
