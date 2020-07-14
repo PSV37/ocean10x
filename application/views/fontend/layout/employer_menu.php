@@ -449,10 +449,7 @@ $('#submenu').bind("contextmenu", function (event) {
     });
 });
 
-function check()
-{
-  alert('works');
-}
+
 
 // If the document is clicked somewhere
 $(document).bind("mousedown", function (e) {
@@ -468,19 +465,19 @@ $(document).bind("mousedown", function (e) {
 $(".right_click li").mousedown(function(event) {
     
     // This is the triggered action name
-    switch (event.which) {
-        case 1:
-            alert('Left mouse button is pressed');
-            break;
-        case 2:
-            alert('Middle mouse button is pressed');
-            break;
-        case 3:
-            alert('Right mouse button is pressed');
-            break;
-        default:
-            alert('Nothing');
-    }
+    // switch (event.which) {
+    //     case 1:
+    //         alert('Left mouse button is pressed');
+    //         break;
+    //     case 2:
+    //         alert('Middle mouse button is pressed');
+    //         break;
+    //     case 3:
+    //         alert('Right mouse button is pressed');
+    //         break;
+    //     default:
+    //         alert('Nothing');
+    // }
     switch($(this).attr("data-action")) {
         
         // A case for each action. Your actions here
