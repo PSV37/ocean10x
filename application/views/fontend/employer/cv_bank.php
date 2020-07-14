@@ -1121,7 +1121,7 @@ span.select2-selection.select2-selection--single {
                   $key++;
                     endforeach;  
                   ?>
-                  
+
       <div class="modal fade" id="bulkupload" role="dialog">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
@@ -1143,7 +1143,9 @@ span.select2-selection.select2-selection--single {
             <div class="col-md-12">
                <div class="row">
                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <button type="submit" name='upload' class="btn btn-info btn-sm pull-right">Upload Now</button>
+                  <input type='file' name='file' required class="form-control">
+                  
+                  
                </div>
                </div>
             </div>
@@ -1151,7 +1153,7 @@ span.select2-selection.select2-selection--single {
          <!--  <p>This is a small modal.</p> -->
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-default">Add</button>
+         <button type="submit" name='upload' class="btn btn-info btn-sm pull-right">Upload Now</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
          </form>
