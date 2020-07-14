@@ -467,7 +467,7 @@ $(document).bind("mousedown", function (e) {
 function check(value)
 {
   // alert(value);/
-  $('$fid').val(value);
+  $('#fid').val(value);
 }
 
 $(".right_click li").mousedown(function(event) {
@@ -505,12 +505,35 @@ $(".right_click li").mousedown(function(event) {
 // If the menu element is clicked
 $(".custom-menu li").click(function(){
     
-
+var value = document.getElementById('fid').value;
     // This is the triggered action name
     switch($(this).attr("data-action")) {
         
         // A case for each action. Your actions here
-        case "first": alert("first"); break;
+        case "first": 
+        alert("first"); 
+          $.ajax({
+                 url:"<?php echo base_url();?>Employer/delete_folder"+value,
+                 // data: {myArray:newArray},
+                 // type: 'post',
+                 success: function(response){
+                   // window.location = response;
+                   alert(response);
+                 //   const url =  response;
+                 //                  const a = document.createElement('a');
+                 //                  a.style.display = 'none';
+                 //                  a.href = url;
+                 //                  // the filename you want
+                 //                  a.download = 'Resumes.zip';
+
+                 //                  document.body.appendChild(a);
+                 //                  a.click();
+                 //                  window.URL.revokeObjectURL(url);
+                 // }
+               });
+
+
+        break;
         case "second": alert("second"); break;
         case "third": alert("third"); break;
     }
