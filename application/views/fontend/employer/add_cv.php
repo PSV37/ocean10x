@@ -528,10 +528,8 @@ required: true
 } , 
 
 'desired_wrok_location': {
-namespace_regex: true
-
-
-// /companypincode_regex: true
+//namespace_regex: true
+// companypincode_regex: true
 
 }
 
