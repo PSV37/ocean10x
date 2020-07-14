@@ -1067,7 +1067,7 @@ button.btn.btn-default {
                   $employer_id = $this->session->userdata('company_profile_id');
                   $wheres  = "status='1' AND company_id='$employer_id' ";
                      $folders     = $this->Master_model->getMaster('cv_folder', $where = $wheres); ?>
-                  <select class="form-control select2" name="parent">
+                  <select class="form-control select2" name="folder_id">
                      <option value="0">None</option>
 
                      <?php foreach ($folders as $row) { ?>
@@ -1334,6 +1334,9 @@ button.btn.btn-default {
       </div>
    </div>
 </div>
+<script>
+   $('.select2').select2();
+</script>
    <script>
      $('#myInput').focus(function(){
    $(this).data('placeholder',$(this).attr('placeholder'))
