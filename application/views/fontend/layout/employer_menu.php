@@ -129,7 +129,7 @@ $employer_id = $this->session->userdata('company_profile_id');
                                   <input type="hidden" name="" id="sub_value">
                                   <div class="row tree well">
                                                  
-                                    <ul class="contxt">        
+                                    <ul>        
                                       <?php 
                                        $activesubmenu = $this->session->userdata('activesubmenu'); 
 
@@ -138,7 +138,7 @@ $employer_id = $this->session->userdata('company_profile_id');
                                         if (!empty($folders)) { 
                                         foreach ($folders as $row) { ?>
                                         
-                                          <li id="submenu<?php echo $row['id']; ?>" <?php if ($activesubmenu ==  $row['id']) { ?>
+                                          <li id="submenu" <?php if ($activesubmenu ==  $row['id']) { ?>
                                  class="active"
                                 <?php } ?>  data-action = "<?php echo $row['id']; ?>"  >
                                            <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row['id'] ?>" > <span><i class="fas fa-folder-open"></i> <?php echo $row['folder_name']; ?></span></a>
@@ -150,7 +150,7 @@ $employer_id = $this->session->userdata('company_profile_id');
                                               if (!empty($child_folders)) { 
                                               foreach ($child_folders as $row1) { ?>
                                              
-                                                <li id="submenu<?php echo $row1['id']; ?>" <?php if ($activesubmenu ==  $row1['id']) { ?> class="active" <?php } ?> data-action = "<?php echo $row1['id']; ?>">
+                                                <li id="submenu" <?php if ($activesubmenu ==  $row1['id']) { ?> class="active" <?php } ?> data-action = "<?php echo $row1['id']; ?>">
                                                   <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row1['id'] ?>"><span><i class="fas fa-folder-open"></i></span>
                                                     <span> <?php echo $row1['folder_name']; ?></span> </a>
                                                   <ul>
@@ -160,7 +160,7 @@ $employer_id = $this->session->userdata('company_profile_id');
                                                     if (!empty($grand_child_folders)) { 
                                                     foreach ($grand_child_folders as $row2) { ?>
                                                     
-                                                      <li id="submenu<?php echo $row2['id']; ?>" <?php if ($activesubmenu ==  $row2['id']) { ?>  class="active" <?php } ?> data-action = "<?php echo $row2['id']; ?>">
+                                                      <li id="submenu" <?php if ($activesubmenu ==  $row2['id']) { ?>  class="active" <?php } ?> data-action = "<?php echo $row2['id']; ?>">
                                                        <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row2['id'] ?>"><span><i class="fas fa-folder-open"></i></span>
                                                         <span><?php echo $row2['folder_name']; ?></span></a> 
                                                       </li>
@@ -433,16 +433,13 @@ $employer_id = $this->session->userdata('company_profile_id');
 </div>
  <script>
    // Trigger action when the contexmenu is about to be shown
-$('.contxt li').bind("contextmenu", function (event) {
+$('#submenu').bind("contextmenu", function (event) {
     
     // Avoid the real one
-     var dval = $(this).attr('id');
-     alert(dval);
-     var data_val = $('#'+dval).attr('data-action');
-     
+     var data_val = $(this).attr('data-action');
+     alert(data_val);
+     // $('#sub_value').val(data_val);
     event.preventDefault();
-    // alert(data_val);
-     $('#sub_value').val(data_val);
     
     // Show contextmenu
     $(".custom-menu").finish().toggle(100).
