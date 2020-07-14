@@ -438,7 +438,7 @@ $('.contxt li').bind("contextmenu", function (event) {
     // Avoid the real one
      var dval = $(this).attr('id');
      alert(dval);
-     var data_val = $(dval).attr('data-action');
+     var data_val = $('#'+dval).attr('data-action');
      
     event.preventDefault();
     // alert(data_val);
