@@ -137,7 +137,7 @@ $employer_id = $this->session->userdata('company_profile_id');
                                         if (!empty($folders)) { 
                                         foreach ($folders as $row) { ?>
                                         
-                                          <li <?php if ($activesubmenu ==  $row['id']) { ?>
+                                          <li id="submenu" <?php if ($activesubmenu ==  $row['id']) { ?>
                                  class="active"
                                 <?php } ?>>
                                            <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row['id'] ?>" > <span><i class="fas fa-folder-open"></i> <?php echo $row['folder_name']; ?></span></a>
@@ -149,7 +149,7 @@ $employer_id = $this->session->userdata('company_profile_id');
                                               if (!empty($child_folders)) { 
                                               foreach ($child_folders as $row1) { ?>
                                              
-                                                <li <?php if ($activesubmenu ==  $row1['id']) { ?> class="active" <?php } ?>>
+                                                <li id="submenu" <?php if ($activesubmenu ==  $row1['id']) { ?> class="active" <?php } ?>>
                                                   <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row1['id'] ?>"><span><i class="fas fa-folder-open"></i></span>
                                                     <span> <?php echo $row1['folder_name']; ?></span> </a>
                                                   <ul>
@@ -159,7 +159,7 @@ $employer_id = $this->session->userdata('company_profile_id');
                                                     if (!empty($grand_child_folders)) { 
                                                     foreach ($grand_child_folders as $row2) { ?>
                                                     
-                                                      <li <?php if ($activesubmenu ==  $row2['id']) { ?>  class="active" <?php } ?>>
+                                                      <li id="submenu" <?php if ($activesubmenu ==  $row2['id']) { ?>  class="active" <?php } ?>>
                                                        <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row2['id'] ?>"><span><i class="fas fa-folder-open"></i></span>
                                                         <span><?php echo $row2['folder_name']; ?></span></a> 
                                                       </li>
@@ -432,7 +432,7 @@ $employer_id = $this->session->userdata('company_profile_id');
 </div>
  <script>
    // Trigger action when the contexmenu is about to be shown
-$('.parent_li').bind("contextmenu", function (event) {
+$('#submenu').bind("contextmenu", function (event) {
     
     // Avoid the real one
     event.preventDefault();
@@ -449,7 +449,7 @@ $('.parent_li').bind("contextmenu", function (event) {
 
 
 // If the document is clicked somewhere
-$('.parent_li').bind("mousedown", function (e) {
+$(document).bind("mousedown", function (e) {
     
     // If the clicked element is not the menu
     if (!$(e.target).parents(".custom-menu").length > 0) {
