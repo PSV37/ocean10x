@@ -454,8 +454,7 @@ $('#submenu').bind("contextmenu", function (event) {
 $(document).bind("mousedown", function (e) {
     
     // If the clicked element is not the menu
-    var name = e.target.getAttribute('data-action');
-    alert(name);
+   
     if (!$(e.target).parents(".custom-menu").length > 0) {
         
         // Hide it
