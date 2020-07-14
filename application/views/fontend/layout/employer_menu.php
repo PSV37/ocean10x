@@ -435,6 +435,8 @@ $employer_id = $this->session->userdata('company_profile_id');
 $('#submenu').bind("contextmenu", function (event) {
     
     // Avoid the real one
+      var id = $(event.target).attr('id');
+      alert(id);
     event.preventDefault();
     
     // Show contextmenu
