@@ -3768,7 +3768,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         
         if ($_POST) {
 
-        $this->form_validation->set_rules('candidate_name', 'Full Name', 'required|alpha');
+        $this->form_validation->set_rules('candidate_name', 'Full Name', 'required');
         $this->form_validation->set_rules('candidate_email', 'Email Id', 'required|valid_email');
         $this->form_validation->set_rules('candidate_phone', 'Phone Number','required|integer|max_length[10]');
         // $this->form_validation->set_rules('candidate_experiance', 'Candidate Experiance','required|integer|max_length[2]');

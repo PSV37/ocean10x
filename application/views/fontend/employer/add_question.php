@@ -315,15 +315,18 @@ required: true
 },
 
 
-'correct_answer[]':{
-  required: true
-}
+'correct_answer[]': {required: true}
 
-  
+
+
 },
 
 
 messages:{
+
+  "correct_answer[]":"Please select at least one audience",
+
+
 
 
 'technical_id':{
@@ -372,17 +375,15 @@ required: "This field is mandatory!"
 
 
 
-'correct_answer[]':{
-
-required: "This field is mandatory!"
 
 }
 
-}
+
 
 });
 
 });
+
 
 
 </script>
@@ -390,19 +391,23 @@ required: "This field is mandatory!"
 
 
 
-<script>
-    $(document).ready(function(){
-     $("#js").validate({
-      rules: {
-        'correct_answer[]': {
-                required: "#checkboxjs:checked",
-                minlength: 1
-              }  
-      },
-      messages: {
-        'correct_answer[]': "Please select at least 1 country"
-      },
-     debug: true
-    });
-});
+<script type="text/javascript">
+ function validChk() {
+    var chkBox = document.getElementsByName('chkBooks[]');
+    var lenChkBox = chkBox.length;
+    //alert(lenChkBox)
+    var valid=0;
+    for(var i=0;i<lenChkBox;i++) {
+      if(chkBox[i].checked==true) {
+        valid=1;
+        break;
+      }
+    }
+    if(valid==0) {
+      msg='Please select atleast one book';
+      alert(msg);
+      return false;
+    }
+    return true;
+  }
 </script>

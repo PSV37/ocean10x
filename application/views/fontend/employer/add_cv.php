@@ -113,7 +113,7 @@ input#candidate_skills {
                   <div class="col-md-4">
                      <div class="form-group">                                       
                         <label for="exampleInputEmail1">Full Name <span class="required">*</span></label>
-                        <input type="text" name="candidate_name" id="candidate_name" class="form-control allowalphabatesspace" value="<?php echo  set_value('candidate_name'); ?>"> <?php echo form_error('candidate_name'); ?>
+                        <input type="text" name="candidate_name" id="candidate_name" class="form-control " value="<?php echo  set_value('candidate_name'); ?>"> <?php echo form_error('candidate_name'); ?>
                      </div>
                   </div>
                   <div class="col-md-4">
@@ -139,7 +139,7 @@ input#candidate_skills {
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Notice Period at Current Job (Days)</label>
-                        <input type="text" name="candidate_notice_period" id="candidate_notice_period allownumericwithoutdecimal" maxlength="3"  value="<?php echo  set_value('candidate_notice_period'); ?>" class="form-control">  <?php echo form_error('candidate_notice_period'); ?> 
+                        <input type="text" name="candidate_notice_period" id="candidate_notice_period " maxlength="3"  value="<?php echo  set_value('candidate_notice_period'); ?>" class="form-control allownumericwithoutdecimal">  <?php echo form_error('candidate_notice_period'); ?> 
                      </div>
                   </div>
                   <div class="col-md-4">
@@ -543,7 +543,9 @@ messages:{
 
 required: "This field is mandatory!",
 
-minlength: "Please type atleast 3 characters!"
+minlength: "Please type atleast 3 characters!",
+
+namespace_regex: "Please type only alphabets"
 
 },
 
@@ -575,9 +577,9 @@ maxlength: "Choose a company name of at least 14 letters!"
 
 'candidate_notice_period':{
 
-company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
 
-remote: "The username is already in use by another user!"
+//remote: "The username is already in use by another user!"
 
 },
 
@@ -727,12 +729,18 @@ return this.optional(element) || /^[1-9][0-9][0-9][0-9][0-9][0-9]$/.test(value);
    
    //(^[ A-Za-z0-9_@./#&+-]*$)
    
-   $(".allownumericwithoutdecimal").on("keypress keyup blur",function (event) {    
-           $(this).val($(this).val().replace(/[^\d].+/, ""));
-            if ((event.which < 48 || event.which > 57)) {
-                event.preventDefault();
-            }
-        });
+ 
+
+   $(".allownumericwithoutdecimal").on("input", function(evt) {
+    var self = $(this);
+    self.val(self.val().replace(/[^\d]+/, ""));
+    if ((evt.which < 48 || evt.which > 57)) 
+     {
+     evt.preventDefault();
+     }
+ });
+
+
    
    $(".allowalphabatescomma").keypress(function (e) {
          var regex = new RegExp("^[a-zA-Z, \s]+$");
@@ -756,6 +764,18 @@ return this.optional(element) || /^[1-9][0-9][0-9][0-9][0-9][0-9]$/.test(value);
         });
    
    $(".allowalphabatesspace").keypress(function (e) {
+         var regex = new RegExp("^[a-zA-Z ]*$");
+         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+         if (regex.test(str)) {
+             return true;
+         }
+         else
+         {
+         e.preventDefault();
+         return false;
+         }
+     });
+$(".allowalphabates").keypress(function (e) {
          var regex = new RegExp("^[a-zA-Z ]*$");
          var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
          if (regex.test(str)) {
