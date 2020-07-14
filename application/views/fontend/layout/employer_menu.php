@@ -141,6 +141,8 @@ $employer_id = $this->session->userdata('company_profile_id');
                                           <li id="submenu" onmousedown="check(<?php echo $row['id'] ?>);" data-action=" <?php echo $row['id'] ?>"<?php if ($activesubmenu ==  $row['id']) { ?>
                                  class="active"
                                 <?php } ?>  >
+                                <div class="hitarea collapsable-hitarea">
+        </div>
                                            <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row['id'] ?>" > <span><i class="fas fa-folder-open"></i> <?php echo $row['folder_name']; ?></span></a>
                                              <ul>
                                             <?php 
@@ -151,6 +153,8 @@ $employer_id = $this->session->userdata('company_profile_id');
                                               foreach ($child_folders as $row1) { ?>
                                              
                                                 <li id="submenu" onmousedown="check(<?php echo $row1['id'] ?>);" <?php if ($activesubmenu ==  $row1['id']) { ?> class="active" <?php } ?> data-action=" <?php echo $row1['id'] ?>">
+                                                  <div class="hitarea collapsable-hitarea">
+        </div>
                                                   <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row1['id'] ?>"><span><i class="fas fa-folder-open"></i></span>
                                                     <span> <?php echo $row1['folder_name']; ?></span> </a>
                                                   <ul>
@@ -161,6 +165,8 @@ $employer_id = $this->session->userdata('company_profile_id');
                                                     foreach ($grand_child_folders as $row2) { ?>
                                                     
                                                       <li id="submenu" onmousedown="check(<?php echo $row2['id'] ?>);" data-action=" <?php echo $row2['id'] ?>" <?php if ($activesubmenu ==  $row2['id']) { ?>  class="active" <?php } ?>>
+                                                        <div class="hitarea collapsable-hitarea">
+        </div>
                                                        <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row2['id'] ?>"><span><i class="fas fa-folder-open"></i></span>
                                                         <span><?php echo $row2['folder_name']; ?></span></a> 
                                                       </li>
@@ -450,12 +456,11 @@ $('#submenu').bind("contextmenu", function (event) {
     });
 });
 
-$(function() {
-    $('ul').on('contextmenu', 'li', function(e) {
-        e.preventDefault();
-        alert(this.id);
-    });
+$('li').on("contextmenu", function (e) {
+    alert(this.id);
+    e.preventDefault();
 });
+
 // If the document is clicked somewhere
 $(document).bind("mousedown", function (e) {
     
