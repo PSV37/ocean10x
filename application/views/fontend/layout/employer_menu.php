@@ -432,7 +432,7 @@ $employer_id = $this->session->userdata('company_profile_id');
 </div>
  <script>
    // Trigger action when the contexmenu is about to be shown
-$(document).bind("contextmenu", function (event) {
+$('.parent_li').bind("contextmenu", function (event) {
     
     // Avoid the real one
     event.preventDefault();
@@ -449,7 +449,7 @@ $(document).bind("contextmenu", function (event) {
 
 
 // If the document is clicked somewhere
-$(document).bind("mousedown", function (e) {
+$('.parent_li').bind("mousedown", function (e) {
     
     // If the clicked element is not the menu
     if (!$(e.target).parents(".custom-menu").length > 0) {
