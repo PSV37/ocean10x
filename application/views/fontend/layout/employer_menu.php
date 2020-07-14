@@ -51,7 +51,27 @@
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+.custom-menu {
+    display: none;
+    z-index: 1000;
+    position: absolute;
+    overflow: hidden;
+    border: 1px solid #CCC;
+    white-space: nowrap;
+    font-family: sans-serif;
+    background: #FFF;
+    color: #333;
+    border-radius: 5px;
+}
 
+.custom-menu li {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.custom-menu li:hover {
+    background-color: #DEF;
+}
 
 </style>    
 <?php $activemenu = $this->session->userdata('activemenu'); 
@@ -412,7 +432,7 @@ $employer_id = $this->session->userdata('company_profile_id');
 </div>
  <script>
    // Trigger action when the contexmenu is about to be shown
-$('.parent_li').bind("contextmenu", function (event) {
+$(document).bind("contextmenu", function (event) {
     
     // Avoid the real one
     event.preventDefault();
@@ -429,7 +449,7 @@ $('.parent_li').bind("contextmenu", function (event) {
 
 
 // If the document is clicked somewhere
-$('.parent_li').bind("mousedown", function (e) {
+$(document).bind("mousedown", function (e) {
     
     // If the clicked element is not the menu
     if (!$(e.target).parents(".custom-menu").length > 0) {
