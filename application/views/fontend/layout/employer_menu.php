@@ -466,8 +466,8 @@ $(document).bind("mousedown", function (e) {
 
 function check(value)
 {
-  alert(value);
-  $('#fid').val(value);
+  // alert(value);
+  // $('#fid').val(value);
 }
 
 $(".right_click li").mousedown(function(event) {
