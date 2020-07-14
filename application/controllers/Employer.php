@@ -4808,5 +4808,21 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                      
                 }     
     }
+
+    public function delete_folder($folder_id = NULL)
+    {
+        if (isset($folder_id) && !empty($folder_id)) {
+            $update_data = array(
+                'status' => '0');
+            $where11['id'] = $folder_id;
+            $this->Master_model->master_update($update_data, 'cv_folder', $where11);
+
+            $update_relation = array(
+                'status' => '0');
+            $where11['cv_folder_id'] = $folder_id;
+            $this->Master_model->master_update($update_relation, 'cv_folder_relation', $where11);
+        }
+        }
+    }
     
 } // end class
