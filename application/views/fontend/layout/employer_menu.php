@@ -439,6 +439,7 @@ $('#submenu').bind("contextmenu", function (event) {
     
     event.preventDefault();
     
+    
     // Show contextmenu
     $(".custom-menu").finish().toggle(100).
     
@@ -449,19 +450,22 @@ $('#submenu').bind("contextmenu", function (event) {
     });
 });
 
-
+$('li').on("contextmenu", function (e) {
+    alert(this.id);
+    e.preventDefault();
+});
 
 // If the document is clicked somewhere
 $(document).bind("mousedown", function (e) {
     
     // If the clicked element is not the menu
-     alert(e.target);
+    
     
 
     if (!$(e.target).parents(".custom-menu").length > 0) {
         
         // Hide it
-        alert(e.target).parents()
+        // alert(e.target).parents()
         $(".custom-menu").hide(100);
     }
     

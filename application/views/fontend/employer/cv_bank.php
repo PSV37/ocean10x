@@ -961,7 +961,7 @@ span.select2-selection.select2-selection--single {
                         Bulk Download
                      </div> -->
                      <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp; Bulk Upload
-                     <button type="button" id="frwd_btn" class="btn btn-primary" data-toggle="modal" data-target="#bulkupload" onclick="upload_cvs();">Bulk Upload</button>
+                     <button type="button" id="frwd_btn" class="btn btn-primary" data-toggle="modal" data-target="#bulkupload">Bulk Upload</button>
                      <!-- <input type="checkbox" class="dd-input" id="test"> -->
                      <!-- <ul class="dd-menu">
                          <li><a id="checkAll">Bulk Forward></a></li>
@@ -1144,7 +1144,7 @@ span.select2-selection.select2-selection--single {
                <div class="row">
                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <input type='file' name='file' required class="form-control">
-                  
+
                   
                </div>
                </div>
@@ -1153,7 +1153,7 @@ span.select2-selection.select2-selection--single {
          <!--  <p>This is a small modal.</p> -->
         </div>
         <div class="modal-footer">
-         <button type="submit" name='upload' class="btn btn-info btn-sm pull-right">Upload Now</button>
+          <button type="submit" class="btn btn-default">Upload Now</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
          </form>
