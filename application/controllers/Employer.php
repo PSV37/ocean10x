@@ -3737,12 +3737,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
        if (isset($fid) && !empty($fid)) {
             $where_c['cv_folder_id'] = $fid;
-            $where_c['status'] = '1';
+            $where_c['status'] = 1;
              $join_cond  = array(
             'corporate_cv_bank' => 'corporate_cv_bank.cv_id = cv_folder_relation.cv_id|Left outer'
         );
                 $data['cv_bank_data']  = $this->Master_model->getMaster('cv_folder_relation', $where_c, $join_cond, $order = 'asc', $field = $sort_val, $select = false, $limit = false, $start = false, $search = false);
-                print_r($this->db->last_query());die;
+                // print_r($this->db->last_query());die;
                     $this->load->view('fontend/employer/cv_bank', $data);
        }
 
