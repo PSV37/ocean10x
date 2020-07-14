@@ -4823,6 +4823,6 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $this->Master_model->master_update($update_relation, 'cv_folder_relation', $where11);
         }
         }
-    }
+    
     
 } // end class
