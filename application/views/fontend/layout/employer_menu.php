@@ -51,27 +51,7 @@
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-.custom-menu {
-    display: none;
-    z-index: 1000;
-    position: absolute;
-    overflow: hidden;
-    border: 1px solid #CCC;
-    white-space: nowrap;
-    font-family: sans-serif;
-    background: #FFF;
-    color: #333;
-    border-radius: 5px;
-}
 
-.custom-menu li {
-    padding: 8px 12px;
-    cursor: pointer;
-}
-
-.custom-menu li:hover {
-    background-color: #DEF;
-}
 
 </style>    
 <?php $activemenu = $this->session->userdata('activemenu'); 
@@ -126,10 +106,9 @@ $employer_id = $this->session->userdata('company_profile_id');
                                     <span class="icon-container"><i class="fas fa-university"></i></span>
                                     <span class="text item">CV Bank</span>
                                   </a>
-                                  <input type="hidden" name="" id="sub_value">
                                   <div class="row tree well">
                                                  
-                                    <ul class-right>        
+                                    <ul class="right_click">        
                                       <?php 
                                        $activesubmenu = $this->session->userdata('activesubmenu'); 
 
@@ -138,9 +117,9 @@ $employer_id = $this->session->userdata('company_profile_id');
                                         if (!empty($folders)) { 
                                         foreach ($folders as $row) { ?>
                                         
-                                          <li id="submenu" <?php if ($activesubmenu ==  $row['id']) { ?>
+                                          <li <?php if ($activesubmenu ==  $row['id']) { ?>
                                  class="active"
-                                <?php } ?>  data-action = "<?php echo $row['id']; ?>"  >
+                                <?php } ?>>
                                            <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row['id'] ?>" > <span><i class="fas fa-folder-open"></i> <?php echo $row['folder_name']; ?></span></a>
                                              <ul>
                                             <?php 
@@ -150,7 +129,7 @@ $employer_id = $this->session->userdata('company_profile_id');
                                               if (!empty($child_folders)) { 
                                               foreach ($child_folders as $row1) { ?>
                                              
-                                                <li id="submenu" <?php if ($activesubmenu ==  $row1['id']) { ?> class="active" <?php } ?> data-action = "<?php echo $row1['id']; ?>">
+                                                <li <?php if ($activesubmenu ==  $row1['id']) { ?> class="active" <?php } ?>>
                                                   <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row1['id'] ?>"><span><i class="fas fa-folder-open"></i></span>
                                                     <span> <?php echo $row1['folder_name']; ?></span> </a>
                                                   <ul>
@@ -160,7 +139,7 @@ $employer_id = $this->session->userdata('company_profile_id');
                                                     if (!empty($grand_child_folders)) { 
                                                     foreach ($grand_child_folders as $row2) { ?>
                                                     
-                                                      <li id="submenu" <?php if ($activesubmenu ==  $row2['id']) { ?>  class="active" <?php } ?> data-action = "<?php echo $row2['id']; ?>">
+                                                      <li <?php if ($activesubmenu ==  $row2['id']) { ?>  class="active" <?php } ?>>
                                                        <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row2['id'] ?>"><span><i class="fas fa-folder-open"></i></span>
                                                         <span><?php echo $row2['folder_name']; ?></span></a> 
                                                       </li>
@@ -293,8 +272,8 @@ $employer_id = $this->session->userdata('company_profile_id');
   </div> 
 
   <ul class='custom-menu'>
-  <li data-action = "add">First thing</li>
-  <li data-action = "delete">Second thing</li>
+  <li data-action = "first">First thing</li>
+  <li data-action = "second">Second thing</li>
   <li data-action = "third">Third thing</li>
 </ul>
   
@@ -433,14 +412,9 @@ $employer_id = $this->session->userdata('company_profile_id');
 </div>
  <script>
    // Trigger action when the contexmenu is about to be shown
-$('.class-right li').bind("contextmenu", function (event) {
+$('.right_click li').bind("contextmenu", function (event) {
     
     // Avoid the real one
-      var test = $(this).find("#submenu").text();
-    console.log(test);
-     // var data_val = $(this).attr('data-action');
-     alert(data_val);
-     // $('#sub_value').val(data_val);
     event.preventDefault();
     
     // Show contextmenu
