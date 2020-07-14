@@ -924,7 +924,7 @@ span.select2-selection.select2-selection--single {
                <!-- <div class="col-md-2">
                   <button class="send">send</button>
                </div> -->
-               <div class="col-md-6">
+               <div class="col-md-4">
                   <label class="dropdown">
                    <!--   <div class="dd-button" style="background-color: #18c5bd;color: #ffffff;">
                         Bulk Download
@@ -939,13 +939,29 @@ span.select2-selection.select2-selection--single {
                      </ul> -->
                   </label>
                </div>
-               <div class="col-md-6">
+               <div class="col-md-4">
                   <label class="dropdown">
                    <!--   <div class="dd-button" style="background-color: #18c5bd;color: #ffffff;">
                         Bulk Download
                      </div> -->
                      <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp; Bulk Download
                      <button type="button" id="frwd_btn" class="btn btn-primary" onclick="download_cvs();">Download CV</button>
+                     <!-- <input type="checkbox" class="dd-input" id="test"> -->
+                     <!-- <ul class="dd-menu">
+                         <li><a id="checkAll">Bulk Forward></a></li>
+                        <li>Bulk Download</li>
+                       
+                     </ul> -->
+                  </label>
+               </div>
+
+               <div class="col-md-4">
+                  <label class="dropdown">
+                   <!--   <div class="dd-button" style="background-color: #18c5bd;color: #ffffff;">
+                        Bulk Download
+                     </div> -->
+                     <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp; Bulk Upload
+                     <button type="button" id="frwd_btn" class="btn btn-primary" data-toggle="modal" data-target="#bulkupload" onclick="upload_cvs();">Bulk Upload</button>
                      <!-- <input type="checkbox" class="dd-input" id="test"> -->
                      <!-- <ul class="dd-menu">
                          <li><a id="checkAll">Bulk Forward></a></li>
@@ -1105,6 +1121,32 @@ span.select2-selection.select2-selection--single {
                   $key++;
                     endforeach;  
                   ?>
+                  
+      <div class="modal fade" id="bulkupload" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+         <form method='post' action="<?php echo base_url();?>employer/bulk_upload_cvs" enctype="multipart/form-data">
+               <div class="panel-body">
+                <div class="col-md-6">
+                  <small>To Import CV's Download CSV Format <a href="<?php echo base_url(); ?>cv_bank_excel/bulk_upload_cv_format.csv" download><strong>Click here To Download</strong></a></small>
+                </div>
+
+                <div class="col-md-6">
+                  <input type='file' name='file' required class="form-control">
+
+                  <div class="panel-body"></div>
+                  <button type="submit" name='upload' class="btn btn-info btn-sm pull-right">Upload Now</button>
+                </div>
+               </div>
+                <!-- <input type='submit' value='Import' name='upload' class="btn btn-info btn-sm pull-right"> -->
+
+             
+            </form>
+      </div>
+    </div>
+  </div>
+
+
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">

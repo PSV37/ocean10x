@@ -480,19 +480,22 @@ $(".right_click li").mousedown(function(event) {
     alert('dd');
     var id = $(this).attr('data-action');
       alert(id);
+      event.preventDefault();
+      switch($(this).attr("data-action")) {
     // {
         
     //     // A case for each action. Your actions here
     //     case "1": alert("first"); break;
     //     case "2": alert("second"); break;
     //     case "3": alert("third"); break;
-    // }
+    }
   
     // Hide it AFTER the action was triggered
     // $(".custom-menu").hide(100);
   });
 // If the menu element is clicked
 $(".custom-menu li").click(function(){
+    
     
     // This is the triggered action name
     switch($(this).attr("data-action")) {
