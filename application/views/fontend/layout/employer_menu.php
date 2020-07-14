@@ -477,10 +477,10 @@ $(".right_click li").mousedown(function(event) {
     //     default:
     //         alert('Nothing');
     // }
-    alert('dd');
-    var id = $(this).attr('data-action');
-      alert(id);
-      event.preventDefault();
+    // alert('dd');
+    // var id = $(this).attr('data-action');
+    //   alert(id);
+    //   event.preventDefault();
       switch($(this).attr("data-action")) {
     // {
         
