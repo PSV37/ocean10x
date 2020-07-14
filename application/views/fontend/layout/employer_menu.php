@@ -433,7 +433,7 @@ $employer_id = $this->session->userdata('company_profile_id');
 </div>
  <script>
    // Trigger action when the contexmenu is about to be shown
-$('contxt li').bind("contextmenu", function (event) {
+$('.contxt li').bind("contextmenu", function (event) {
     
     // Avoid the real one
      var data_val = $(this).attr('data-action');
