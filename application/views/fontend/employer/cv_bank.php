@@ -1129,7 +1129,6 @@ span.select2-selection.select2-selection--single {
                   <label class="mdl-textfield__label" for="sample3">parent Folder</label>
                   <!-- <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required> -->
                   <?php 
-                  $this->load->model('Employer_Login_model');
 
                   $employer_id = $this->session->userdata('company_profile_id');
                   $wheres  = "status='1' AND company_id='$employer_id' ";
