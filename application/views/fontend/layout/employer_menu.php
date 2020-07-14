@@ -108,14 +108,14 @@ $employer_id = $this->session->userdata('company_profile_id');
                                   </a>
                                   <div class="row tree well">
                                                  
-                                          <ul>        
+                                    <ul>        
                                       <?php $wheres       = "status='1' AND company_id='$employer_id' and parent_id = '0'";
                                       $folders     = $this->Master_model->getMaster('cv_folder', $where = $wheres); 
                                         if (!empty($folders)) { 
                                         foreach ($folders as $row) { ?>
                                         
                                           <li>
-                                            <span><i class="fas fa-folder-open"></i> <?php echo $row['folder_name']; ?></span>
+                                           <a href="<?php echo base_url() ?>employer/corporate-cv-bank/"<?php echo $row['id'] ?> > <span><i class="fas fa-folder-open"></i> <?php echo $row['folder_name']; ?></span></a>
                                              <ul>
                                             <?php 
                                             $parent_id = $row['id']; 
