@@ -455,15 +455,13 @@ $('#submenu').bind("contextmenu", function (event) {
 $(document).bind("mousedown", function (e) {
     
     // If the clicked element is not the menu
-     console.log($(this).parent('li').index());
-      if ($(e.target).parents(".custom-menu").length > 0) 
-    {
-      alert(e.target);
-    }
+     alert(e.target);
+    
 
     if (!$(e.target).parents(".custom-menu").length > 0) {
         
         // Hide it
+        alert(e.target).parents()
         $(".custom-menu").hide(100);
     }
     
