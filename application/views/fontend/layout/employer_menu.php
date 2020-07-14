@@ -466,7 +466,7 @@ $(document).bind("mousedown", function (e) {
 
 function check(value)
 {
-  // alert(value);/
+  alert(value);
   $('#fid').val(value);
 }
 
