@@ -322,8 +322,8 @@ input#candidate_skills {
    </div>
 </div>
 
-<script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>assets/js/bootstrap.js" type="text/javascript"></script>
+<!-- <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>assets/js/bootstrap.js" type="text/javascript"></script> -->
 
 
 <script src="<?php echo base_url(); ?>asset/src/jquery.tokeninput.js"></script>
