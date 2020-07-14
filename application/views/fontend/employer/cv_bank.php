@@ -961,7 +961,7 @@ span.select2-selection.select2-selection--single {
                         Bulk Download
                      </div> -->
                      <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp; Bulk Upload
-                     <button type="button" id="frwd_btn" class="btn btn-primary" data-toggle="modal" data-target="#bulkupload" onclick="upload_cvs();">Bulk Upload</button>
+                     <button type="button" id="frwd_btn" class="btn btn-primary" data-toggle="modal" data-target="#bulkupload" >Bulk Upload</button>
                      <!-- <input type="checkbox" class="dd-input" id="test"> -->
                      <!-- <ul class="dd-menu">
                          <li><a id="checkAll">Bulk Forward></a></li>
@@ -1121,7 +1121,7 @@ span.select2-selection.select2-selection--single {
                   $key++;
                     endforeach;  
                   ?>
-                  
+
       <div class="modal fade" id="bulkupload" role="dialog">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">

@@ -292,8 +292,8 @@ $employer_id = $this->session->userdata('company_profile_id');
   </div> 
 
   <ul class='custom-menu'>
-  <li data-action = "first">First thing</li>
-  <li data-action = "second">Second thing</li>
+  <li data-action = "first">Add Folder</li>
+  <li data-action = "second">Delete Folder</li>
   <li data-action = "third">Third thing</li>
 </ul>
   
@@ -454,7 +454,7 @@ $('#submenu').bind("contextmenu", function (event) {
 $(document).bind("mousedown", function (e) {
     
     // If the clicked element is not the menu
-   
+
     if (!$(e.target).parents(".custom-menu").length > 0) {
         
         // Hide it
