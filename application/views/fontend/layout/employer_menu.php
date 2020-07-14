@@ -138,7 +138,7 @@ $employer_id = $this->session->userdata('company_profile_id');
                                         if (!empty($folders)) { 
                                         foreach ($folders as $row) { ?>
                                         
-                                          <li id="submenu" <?php if ($activesubmenu ==  $row['id']) { ?>
+                                          <li id="submenu<?php echo $row['id']; ?>" <?php if ($activesubmenu ==  $row['id']) { ?>
                                  class="active"
                                 <?php } ?>  data-action = "<?php echo $row['id']; ?>"  >
                                            <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row['id'] ?>" > <span><i class="fas fa-folder-open"></i> <?php echo $row['folder_name']; ?></span></a>
@@ -436,7 +436,9 @@ $employer_id = $this->session->userdata('company_profile_id');
 $('.contxt li').bind("contextmenu", function (event) {
     
     // Avoid the real one
-     var data_val = $(this).attr('data-action');
+     var dval = $(this).attr('id');
+     alert(dval);
+     var data_val = $(dval).attr('data-action');
      
     event.preventDefault();
     // alert(data_val);
