@@ -529,7 +529,7 @@ var value = document.getElementById('fid').value;
                  //                  document.body.appendChild(a);
                  //                  a.click();
                  //                  window.URL.revokeObjectURL(url);
-                 // }
+                 }
                });
 
 
