@@ -3742,7 +3742,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             'corporate_cv_bank' => 'corporate_cv_bank.cv_id = cv_folder_relation.cv_id|Left outer'
         );
                 $data['cv_bank_data']  = $this->Master_model->getMaster('cv_folder_relation', $where_c, $join_cond, $order = 'asc', $field = $sort_val, $select = false, $limit = false, $start = false, $search = false);
-                print_r($this->db->last_query());die;
+                // print_r($this->db->last_query());die;
                     $this->load->view('fontend/employer/cv_bank', $data);
        }
 
@@ -4785,6 +4785,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
           if (empty($folder_dbdata)) {
                     $folder_data['cv_folder_id'] = $folder_id;
                     $folder_data['cv_id'] = $cv_id;
+                    $folder_data['status'] = '1';
+
                    
 
                      $result  = $this->Master_model->master_insert($folder_data, 'cv_folder_relation');
