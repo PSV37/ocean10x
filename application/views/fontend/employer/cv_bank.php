@@ -1231,13 +1231,15 @@ span.select2-selection.select2-selection--single {
                   $employer_id = $this->session->userdata('company_profile_id');
                   $wheres  = "status='1' AND company_id='$employer_id' ";
                      $folders     = $this->Master_model->getMaster('cv_folder', $where = $wheres); ?>
+
+                     
                   <select class="form-control select2" name="parent">
                      <option value="0">None</option>
 
                      <?php  $i=0; foreach ($folders as $row) { 
-                        // $id= $folders[$i]['id'];
+                        $id= $folders[$i]['id'];
 
-                        // $p1 = $this->Employer_Login_model->cv_folder($id);
+                        $p1 = $this->Employer_Login_model->cv_folder($id);
                         // $p2 = $this->Employer_Login_model->cv_folder($p1->parent_id); 
                         // if ($p2 == '0') { 
                            ?>
