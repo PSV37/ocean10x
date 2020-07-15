@@ -142,7 +142,7 @@ $employer_id = $this->session->userdata('company_profile_id');
                                  class="active"
                                 <?php } ?>  >
 
-                                           <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row['id'] ?>" > <span  id="r<?php echo $row['id']; ?>" data-action=" <?php echo $row['id'] ?>"><i class="fas fa-folder-open"></i> <?php echo $row['folder_name']; ?></span></a>
+                                    <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row['id'] ?>" > <span   data-action=" <?php echo $row['id'] ?>"><i class="fas fa-folder-open"></i></span><span id="r<?php echo $row['id']; ?>"> <?php echo $row['folder_name']; ?></span></a>
 
                                            <input type="text" id="<?php echo $row['id']; ?>" class="edit" style="display:none"/ value="<?php echo $row['folder_name']; ?>">
 
@@ -544,21 +544,32 @@ var valueee = document.getElementById('fid').value;
            
          break;
         case "third": alert("third"); 
+        (function() {
+
+            "use strict";
+
+            var taskItems = document.querySelectorAll(".right_click");
+
+            for ( var i = 0, len = taskItems.length; i < len; i++ ) {
+              var taskItem = taskItems[i];
+              contextMenuListener(taskItem);
+            }
 
             function contextMenuListener(el) {
-          el.addEventListener( "contextmenu", function(e) {
-            console.log(e, el);
-        
-            var name = $(e.target).data('action');
-            // console.log(e.target.getAttribute('data-action'));
-            console.log(name);
-            $('#fid').val(name);
+              el.addEventListener( "contextmenu", function(e) {
+                console.log(e, el);
+            
+                var name = $(e.target).data('action');
+                // console.log(e.target.getAttribute('data-action'));
+                console.log(name);
+                $('#fid').val(name);
+                 $(e.target).attr('contentEditable',true);
 
-          });
-        }
+              });
+            }
 
-
-
+          })();
+         
         break;
     }
   
