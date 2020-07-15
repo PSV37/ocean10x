@@ -504,7 +504,7 @@ $employer_id = $this->session->userdata('company_profile_id');
   </div>
  <script>
    // Trigger action when the contexmenu is about to be shown
-$('#submenu').bind("contextmenu", function (event) {
+$('.right_click').bind("contextmenu", function (event) {
    
     event.preventDefault();
 
