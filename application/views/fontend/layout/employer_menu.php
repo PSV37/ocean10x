@@ -514,7 +514,7 @@ var value = document.getElementById('fid').value;
         break;
         case "second": alert("second");
            $.ajax({
-                 url:"<?php echo base_url();?>Employer/delete_folder/"+value,
+                 url:"<?php echo base_url();?>Employer/delete_folder/"value,
                  // data: {myArray:newArray},
                  // type: 'post',
                  success: function(response){
