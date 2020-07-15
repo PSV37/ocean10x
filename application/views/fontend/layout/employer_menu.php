@@ -433,39 +433,39 @@ $employer_id = $this->session->userdata('company_profile_id');
 </div>
  <script>
    // Trigger action when the contexmenu is about to be shown
-// $('#submenu').bind("contextmenu", function (event) {
+$('#submenu').bind("contextmenu", function (event) {
     
-//     // Avoid the real one
+    // Avoid the real one
     
-//     event.preventDefault();
+    event.preventDefault();
 
     
-//     // Show contextmenu
-//     $(".custom-menu").finish().toggle(100).
+    // Show contextmenu
+    $(".custom-menu").finish().toggle(100).
     
-//     // In the right position (the mouse)
-//     css({
-//         top: event.pageY + "px",
-//         left: event.pageX + "px"
-//     });
-// });
+    // In the right position (the mouse)
+    css({
+        top: event.pageY + "px",
+        left: event.pageX + "px"
+    });
+});
 
 
-// If the document is clicked somewhere
-// $(document).bind("mousedown", function (e) {
+If the document is clicked somewhere
+$(document).bind("mousedown", function (e) {
     
-//     // If the clicked element is not the menu
+    // If the clicked element is not the menu
     
-//      console.log(this.id);
+     console.log(this.id);
 
-//     if (!$(e.target).parents(".custom-menu").length > 0) {
+    if (!$(e.target).parents(".custom-menu").length > 0) {
         
-//         // Hide it
-//         // alert(e.target).parents()
-//         $(".custom-menu").hide(100);
-//     }
+        // Hide it
+        // alert(e.target).parents()
+        $(".custom-menu").hide(100);
+    }
     
-// });
+});
 
 (function() {
 
@@ -482,7 +482,7 @@ $employer_id = $this->session->userdata('company_profile_id');
     el.addEventListener( "contextmenu", function(e) {
       console.log(e, el);
   
-      // var name = $(e.target).data('action');
+      var name = $(e.target).data('action');
       // console.log(e.target.getAttribute('data-action'));
       console.log(name);
       $('#fid').val(name);
