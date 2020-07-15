@@ -1254,7 +1254,7 @@ span.select2-selection.select2-selection--single {
                           array_push($new_array, $row);
                         }
                        
-                           $i++;  } ?>
+                           $i++;  } print_r($new_array); ?>
                      <?php foreach ($new_array as $row1) { ?>
                     <option value="<?php echo $row1->id; ?>"><?php echo $row1->folder_name; ?></option>
                        
