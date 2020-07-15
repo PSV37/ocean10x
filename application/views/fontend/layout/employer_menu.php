@@ -557,7 +557,7 @@ var valueee = document.getElementById('fid').value;
        {
         var fidval=$('#fid').val();
         console.log(fidval);
-        $('#'+fidval).attr('contentEditable',true);
+        $('#r'+ fidval).attr('contentEditable',true);
           // console.log($("#"+idval));
 
        }
