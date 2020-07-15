@@ -1,7 +1,7 @@
 <?php 
     $this->load->view('fontend/layout/employer_new_header.php');?>  
 
-<<<<<<< HEAD
+
 <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css"> -->
 
 
@@ -192,6 +192,10 @@ font-size: 21px;
 
   .bootstrap-select > .dropdown-toggle {
     display: block;
+}
+textarea#comment {
+    max-width: 865px;
+    max-height: 150px;
 }
 </style>
 
