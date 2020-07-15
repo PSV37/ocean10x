@@ -437,6 +437,36 @@ $employer_id = $this->session->userdata('company_profile_id');
 </div>
  <span class="open_sidebar"  onclick="openNav()">&#9776; open</span>   
 </div>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+          <form method="post" action="<?php echo base_url(); ?>employer/add_cv_folder">
+        <div class="modal-header">
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+          <h4 class="modal-title">Rename folder</h4>
+        </div>
+        <div class="modal-body">
+        
+            <div class="col-md-12" style="margin-top: 20px;">
+               <div class="row">
+                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <label class="mdl-textfield__label" for="sample3">Folder Name:</label>
+                  <input type="text"  name="folder_name"  id="folder_name" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
+               </div>
+               </div>
+            </div>
+            <input type="hidden" name="folder_id" id="folder_id">
+        
+         <!--  <p>This is a small modal.</p> -->
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-default">Add</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+         </form>
+      </div>
+    </div>
+  </div>
  <script>
    // Trigger action when the contexmenu is about to be shown
 $('#submenu').bind("contextmenu", function (event) {
@@ -490,6 +520,7 @@ $(document).bind("mousedown", function (e) {
       // console.log(e.target.getAttribute('data-action'));
       console.log(name);
       $('#fid').val(name);
+      $('#folder_id').val(name);
 
     });
   }
@@ -544,7 +575,7 @@ var valueee = document.getElementById('fid').value;
         case "third": alert("third"); 
         // $("#"+ valueee).attr("contentEditable", true);
           // $('#').attr('contentEditable',true);
-          rename();
+            $('#myModal').modal('show');
         break;
     }
   
@@ -552,16 +583,7 @@ var valueee = document.getElementById('fid').value;
     $(".custom-menu").hide(100);
   });
  </script>          
-     <script>
-       function rename()
-       {
-        var fidval=$('#fid').val();
-        console.log(fidval);
-        $('#r'+ fidval).hide();
-          console.log('#r'+fidval);
-
-       }
-     </script>          
+              
            
            <script>
 $(function () {
