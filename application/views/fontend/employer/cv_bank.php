@@ -1239,7 +1239,7 @@ span.select2-selection.select2-selection--single {
                      <?php  $i=0; foreach ($folders as $row) { 
                         $id = $folders[$i]['id'];
                         echo $id;
-                        $p1 = $this->Employer_Login_model->cv_folder($id);
+                        $p1 = $this->job_posting_model->cv_folder($id);
                         // $p2 = $this->Employer_Login_model->cv_folder($p1->parent_id); 
                         // if ($p2 == '0') { 
                            ?>
