@@ -138,7 +138,7 @@ $employer_id = $this->session->userdata('company_profile_id');
                                         if (!empty($folders)) { 
                                         foreach ($folders as $row) { ?>
                                         
-                                          <li id="submenu" onmousedown="check();" data-action=" <?php echo $row['id'] ?>"<?php if ($activesubmenu ==  $row['id']) { ?>
+                                          <li id="submenu" onmousedown="check(<?php echo $row['id'] ?>);" data-action=" <?php echo $row['id'] ?>"<?php if ($activesubmenu ==  $row['id']) { ?>
                                  class="active"
                                 <?php } ?>  >
                                            <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row['id'] ?>" > <span><i class="fas fa-folder-open"></i> <?php echo $row['folder_name']; ?></span></a>
@@ -150,7 +150,7 @@ $employer_id = $this->session->userdata('company_profile_id');
                                               if (!empty($child_folders)) { 
                                               foreach ($child_folders as $row1) { ?>
                                              
-                                                <li id="submenu" onmousedown="check();" <?php if ($activesubmenu ==  $row1['id']) { ?> class="active" <?php } ?> data-action=" <?php echo $row1['id'] ?>">
+                                                <li id="submenu" onmousedown="check(<?php echo $row1['id'] ?>);" <?php if ($activesubmenu ==  $row1['id']) { ?> class="active" <?php } ?> data-action=" <?php echo $row1['id'] ?>">
                                                   <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row1['id'] ?>"><span><i class="fas fa-folder-open"></i></span>
                                                     <span> <?php echo $row1['folder_name']; ?></span> </a>
                                                   <ul>
@@ -160,7 +160,7 @@ $employer_id = $this->session->userdata('company_profile_id');
                                                     if (!empty($grand_child_folders)) { 
                                                     foreach ($grand_child_folders as $row2) { ?>
                                                     
-                                                      <li id="submenu" onmousedown="check();" data-action=" <?php echo $row2['id'] ?>" <?php if ($activesubmenu ==  $row2['id']) { ?>  class="active" <?php } ?>>
+                                                      <li id="submenu" onmousedown="check(<?php echo $row2['id'] ?>);" data-action=" <?php echo $row2['id'] ?>" <?php if ($activesubmenu ==  $row2['id']) { ?>  class="active" <?php } ?>>
                                                        <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row2['id'] ?>"><span><i class="fas fa-folder-open"></i></span>
                                                         <span><?php echo $row2['folder_name']; ?></span></a> 
                                                       </li>
@@ -432,52 +432,45 @@ $employer_id = $this->session->userdata('company_profile_id');
  <span class="open_sidebar"  onclick="openNav()">&#9776; open</span>   
 </div>
  <script>
-
-  var check = function (e){
-    if(e.button === left){
-       // do onClick stuff and return
-    }
-    else if(e.button === right){
-       // show your context menu
-       alert(this.id);
-    }
-};
    // Trigger action when the contexmenu is about to be shown
-$('#submenu').bind("contextmenu", function (event) {
+// $('#submenu').bind("contextmenu", function (event) {
     
-    // Avoid the real one
+//     // Avoid the real one
     
-    event.preventDefault();
+//     event.preventDefault();
 
     
-    // Show contextmenu
-    $(".custom-menu").finish().toggle(100).
+//     // Show contextmenu
+//     $(".custom-menu").finish().toggle(100).
     
-    // In the right position (the mouse)
-    css({
-        top: event.pageY + "px",
-        left: event.pageX + "px"
-    });
-});
+//     // In the right position (the mouse)
+//     css({
+//         top: event.pageY + "px",
+//         left: event.pageX + "px"
+//     });
+// });
 
 
 // If the document is clicked somewhere
-$(document).bind("mousedown", function (e) {
+// $(document).bind("mousedown", function (e) {
     
-    // If the clicked element is not the menu
+//     // If the clicked element is not the menu
     
-     console.log(this.id);
+//      console.log(this.id);
 
-    if (!$(e.target).parents(".custom-menu").length > 0) {
+//     if (!$(e.target).parents(".custom-menu").length > 0) {
         
-        // Hide it
-        // alert(e.target).parents()
-        $(".custom-menu").hide(100);
-    }
+//         // Hide it
+//         // alert(e.target).parents()
+//         $(".custom-menu").hide(100);
+//     }
     
-});
+// });
 
-
+function check(value)
+{
+  alert(value);
+}
 
 
 // If the menu element is clicked
