@@ -4759,7 +4759,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
          $parent = $this->input->post('parent');
         $name = $this->input->post('folder_name');
         if (empty($name)) {
-            $date=date('Y-m-d');
+            $date=date('H:i:s');
            $name = 'new Folder'.$date;
         }
        

@@ -451,8 +451,8 @@ $('#submenu').bind("contextmenu", function (event) {
     
     // In the right position (the mouse)
     css({
-        top: event.screenY + "px",
-        left: event.screenX + "px"
+        top: event.pageT + "px",
+        left: event.pageX + "px"
     });
 });
 
@@ -556,7 +556,7 @@ var valueee = document.getElementById('fid').value;
 
           });
         }
-      
+
 
 
         break;
