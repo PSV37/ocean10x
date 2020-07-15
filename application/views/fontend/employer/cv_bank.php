@@ -1240,16 +1240,19 @@ span.select2-selection.select2-selection--single {
                         $id = $folders[$i]['id'];
                         // echo $id;
                         $p1 = $this->job_posting_model->cv_folder($id);
-                        print_r($this->db->last_query()); 
-                        // $p2 =$this->job_posting_model->cv_folder($p1->parent_id);
+                        // print_r($this->db->last_query()); .
+                        print_r($p1);
+                        $p2 =$this->job_posting_model->cv_folder($p1->parent_id);
                         // echo $p2;
+                        print_r($p2);
 
-                        if ($p2 == '0') { 
+
+                        // if ($p2 == '0') {
                            ?>
                            <option value="<?php echo $row['id']; ?>"><?php echo $row['folder_name'] ?></option>
                        
                      
-                     <?    $i++; } } ?>
+                     <?    $i++;  } ?>
                     
                   </select>
                </div>
@@ -1403,7 +1406,23 @@ span.select2-selection.select2-selection--single {
 
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
                   <label class="mdl-textfield__label" for="sample3">Message:</label>
-                  <textarea class="form-control" name="message" rows="5" id="comment" required></textarea>
+                  <textarea class="form-control" name="message" rows="5" id="comment" value="Dear Candidate,
+
+Greetings from (HRC/Corporate HR) Team !!
+
+We have a job post on “Ocean” whose requirements can be met with a candidate of your skill sets. We would appreciate, if you could apply on this job post, by clicking on the URL provided below
+
+####job post url################
+
+
+Your application will then be reviewed by the recruitment team, who will contact you regarding next steps should you clear the initial screening required for this position. Please be aware this may take a few days.
+
+
+Should you wish to update your coordinates/CV on Ocean, you can login into Ocean and visit the Profile section, to carry out the necessary changes.
+
+
+Best Regards,
+HRC/Corporate HR Team" required></textarea>
                </div>
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
                   <label class="mdl-textfield__label" for="sample3">Number of cvs: 1</label><br>
