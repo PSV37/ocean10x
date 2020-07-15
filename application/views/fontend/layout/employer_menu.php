@@ -141,7 +141,11 @@ $employer_id = $this->session->userdata('company_profile_id');
                                           <li id="submenu" data-action=" <?php echo $row['id'] ?>"<?php if ($activesubmenu ==  $row['id']) { ?>
                                  class="active"
                                 <?php } ?>  >
-                                           <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row['id'] ?>" > <span  data-action=" <?php echo $row['id'] ?>"><i class="fas fa-folder-open"></i> <?php echo $row['folder_name']; ?></span></a>
+
+                                           <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row['id'] ?>" > <span  id="r1<?php echo $row['id']; ?>" data-action=" <?php echo $row['id'] ?>"><i class="fas fa-folder-open"></i> <?php echo $row['folder_name']; ?></span></a>
+
+                                           <input type="text" id="ri1<?php echo $row['id']; ?>" class="edit" style="display:none"/ value="<?php echo $row['folder_name']; ?>">
+
                                              <ul>
                                             <?php 
                                             $parent_id = $row['id']; 
@@ -153,6 +157,7 @@ $employer_id = $this->session->userdata('company_profile_id');
                                                 <li id="submenu"  <?php if ($activesubmenu ==  $row1['id']) { ?> class="active" <?php } ?> data-action=" <?php echo $row1['id'] ?>">
                                                   <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row1['id'] ?>"><span><i class="fas fa-folder-open"></i></span>
                                                     <span  data-action=" <?php echo $row1['id'] ?>"> <?php echo $row1['folder_name']; ?></span> </a>
+                                                    <input type="text" class="edit" style="display:none"/ value="<?php echo $row1['folder_name']; ?>">
                                                   <ul>
                                                     <?php $cparent_id = $row1['id']; 
                                                     $where_child  = "status='1' AND company_id='$employer_id' and parent_id = '$cparent_id'";
@@ -162,7 +167,8 @@ $employer_id = $this->session->userdata('company_profile_id');
                                                     
                                                       <li id="submenu"  data-action=" <?php echo $row2['id'] ?>" <?php if ($activesubmenu ==  $row2['id']) { ?>  class="active" <?php } ?>>
                                                        <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row2['id'] ?>"><span><i class="fas fa-folder-open"></i></span>
-                                                        <span  data-action=" <?php echo $row2['id'] ?>"><?php echo $row2['folder_name']; ?></span></a> 
+                                                        <span class="display"  data-action=" <?php echo $row2['id'] ?>"><?php echo $row2['folder_name']; ?></span></a> 
+                                                        <input type="text" class="edit" style="display:none"/ value="<?php echo $row2['folder_name']; ?>">
                                                       </li>
                                                     <?php } } ?>
                                                     </ul>
@@ -529,7 +535,14 @@ var value = document.getElementById('fid').value;
           }
            
          break;
-        case "third": alert("third"); break;
+        case "third": alert("third"); 
+
+        ('#r1'+value).hide();
+        ('#ri1'+value).show();
+
+
+
+        break;
     }
   
     // Hide it AFTER the action was triggered

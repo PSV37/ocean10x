@@ -918,7 +918,7 @@ span.select2-selection.select2-selection--single {
                <div class="col-md-4">
                   <label class="dropdown">
                   
-                     <input type="checkbox" name="bulk_forward" id="checkAll" style="font-weight:500">&nbsp; Bulk Forward
+                     <input type="checkbox" name="bulk_forward" id="checkAll" style="font-weight:500">&nbsp;Forward
                      <button type="button" id="frwd_btn" class="btn btn-primary" onclick="frwd_post();">Forward Job</button>
                      
                   </label>
@@ -926,7 +926,7 @@ span.select2-selection.select2-selection--single {
                <div class="col-md-4">
                   <label class="dropdown">
                 
-                     <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp; Bulk Move
+                     <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp;  Move
                      <button type="button" id="frwd_btn" class="btn btn-primary" onclick="move_cvs();">Move CV</button>
                    
                   </label>
@@ -935,7 +935,7 @@ span.select2-selection.select2-selection--single {
                <div class="col-md-4">
                   <label class="dropdown">
                 
-                     <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp; Bulk Download
+                     <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp; Download
                      <button type="button" id="frwd_btn" class="btn btn-primary" onclick="download_cvs();">Download CV</button>
                    
                   </label>
@@ -951,7 +951,7 @@ span.select2-selection.select2-selection--single {
                <div class="col-md-6">
                   <label class="dropdown">
                   
-                     <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp; Bulk Upload
+                     <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp;  Upload
                      <button type="button" id="frwd_btn" class="btn btn-primary" data-toggle="modal" data-target="#bulkupload">Bulk Upload</button>
                     
                   </label>
