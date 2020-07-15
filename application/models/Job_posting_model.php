@@ -736,8 +736,8 @@ public function get_all_company_by_banksbook()
                $this->db ->join('cv_folder cvp ','cvp.parent_id = cv.id','left');
                 // ->join('at_shops as','as.shop_id = ao.shop_id','left')
                 $this->db->where('cv.id',$id);
-                $this->db->get();
-            return $this->db->row();
+                $query = $this->db->get();
+            return $query->row();
     }  
 
 }
