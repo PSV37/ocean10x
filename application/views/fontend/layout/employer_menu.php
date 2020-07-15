@@ -144,7 +144,7 @@ $employer_id = $this->session->userdata('company_profile_id');
 
                                     <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row['id'] ?>" > <span   data-action=" <?php echo $row['id'] ?>"><i class="fas fa-folder-open"></i></span><span id="<?php echo $row['id']; ?>"> <?php echo $row['folder_name']; ?></span></a>
 
-                                           <input type="text" id="<?php echo $row['id']; ?>" class="edit" style="display:none"/ value="<?php echo $row['folder_name']; ?>">
+                                          <!--  <input type="text" id="<?php echo $row['id']; ?>" class="edit" style="display:none"/ value="<?php echo $row['folder_name']; ?>"> -->
 
                                              <ul>
                                             <?php 
@@ -544,8 +544,9 @@ var valueee = document.getElementById('fid').value;
            
          break;
         case "third": alert("third"); 
-        $("#"+ valueee).attr("contentEditable", true);
+        // $("#"+ valueee).attr("contentEditable", true);
           // $('#').attr('contentEditable',true);
+          console.log($("#"+valueee));
         break;
     }
   
