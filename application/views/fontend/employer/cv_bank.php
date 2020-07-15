@@ -852,7 +852,7 @@ ul#select2-folder_id-y3-results {
     margin-top: 27px;
 }
 span.select2-selection.select2-selection--single {
-    width: 264px;
+    width: 330px;
     text-align: center;
 }
 </style>

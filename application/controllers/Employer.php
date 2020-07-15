@@ -4839,7 +4839,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
      public function rename_folder()
     {
 
-        $folder_id=$this->input->post('folder_id');
+        $folder_id=str_replace(' ', '', $this->input->post('folder_id'));
         $folder_name=$this->input->post('folder_name');
         if (isset($folder_id) && !empty($folder_id) && !empty( $folder_name)) {
             $update_data = array(
