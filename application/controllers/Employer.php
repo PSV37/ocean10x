@@ -4821,8 +4821,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
             $update_relation = array(
                 'status' => '0');
-            $where11['cv_folder_id'] = $folder_id;
-            $this->Master_model->master_update($update_relation, 'cv_folder_relation', $where11);
+            $where_rel;['cv_folder_id'] = $folder_id;
+            $this->Master_model->master_update($update_relation, 'cv_folder_relation', $where_rel);
         }
         }
     
