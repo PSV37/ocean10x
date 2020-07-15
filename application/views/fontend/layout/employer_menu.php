@@ -546,7 +546,7 @@ var valueee = document.getElementById('fid').value;
         case "third": alert("third"); 
         // $("#"+ valueee).attr("contentEditable", true);
           // $('#').attr('contentEditable',true);
-          console.log($("#"+valueee));
+          rename(valueee);
         break;
     }
   
@@ -554,7 +554,14 @@ var valueee = document.getElementById('fid').value;
     $(".custom-menu").hide(100);
   });
  </script>          
-               
+     <script>
+       function rename(idval)
+       {
+        console.log(idval);
+          console.log($("#"+idval));
+
+       }
+     </script>          
            
            <script>
 $(function () {
