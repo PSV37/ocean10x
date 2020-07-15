@@ -495,8 +495,8 @@ $employer_id = $this->session->userdata('company_profile_id');
          <!--  <p>This is a small modal.</p> -->
         </div>
         <div class="modal-footer">
-          <button type="submit" style="width: 100%" class="btn btn-default">Rename</button>
-          <button type="button" style="width: 100%" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="submit" style="width: 100px" class="btn btn-default">Rename</button>
+          <button type="button" style="width: 100px" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
          </form>
       </div>
