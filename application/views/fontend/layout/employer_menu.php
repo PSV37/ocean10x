@@ -481,7 +481,7 @@ $employer_id = $this->session->userdata('company_profile_id');
   function contextMenuListener(el) {
     el.addEventListener( "contextmenu", function(e) {
       console.log(e, el);
-      console.log(e.target).getAttribute('data-action');
+      console.log(e.target);
 
     });
   }
