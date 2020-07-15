@@ -4849,6 +4849,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
           
         }
+      redirect('employer/corporate_cv_bank/'.$folder_id);
+        
     }
     
     
