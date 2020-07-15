@@ -1240,7 +1240,7 @@ span.select2-selection.select2-selection--single {
                         $id = $folders[$i]['id'];
                         // echo $id;
                         $p1 = $this->job_posting_model->cv_folder($id);
-                        print_r($p1); 
+                        print_r($this->db->last_query()); 
                         // $p2 =$this->job_posting_model->cv_folder($p1->parent_id);
                         // echo $p2;
 
