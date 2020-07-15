@@ -486,10 +486,10 @@ $employer_id = $this->session->userdata('company_profile_id');
 
 })();
 
-function check(value)
-{
-  alert(value);
-}
+// function check(value)
+// {
+//   alert(value);
+// }
 
 
 // If the menu element is clicked
