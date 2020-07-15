@@ -506,7 +506,13 @@ $employer_id = $this->session->userdata('company_profile_id');
   </div>
 
   <script>
-    // $('.menu-principal-list ul').hide();
+    <?php if ($activemenu == 'cv_bank') { ?>
+      $('.menu-principal-list ul').show();
+  <?php  }else { ?>
+      $('.menu-principal-list ul').hide();
+
+ <?php } ?>
+    //
 
 $('.cv').click(function() {
     $(this).find('ul').slideToggle();
