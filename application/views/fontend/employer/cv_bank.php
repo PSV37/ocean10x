@@ -1241,7 +1241,7 @@ span.select2-selection.select2-selection--single {
                         // echo $id;
                         $p1 = $this->job_posting_model->cv_folder($id);
                         // print_r($this->db->last_query()); .
-                        print_r($p1);
+                        // print_r($p1);
                         $p2 =$this->job_posting_model->cv_folder($p1->parent_id);
                         // echo $p2;
                         print_r($p2);
