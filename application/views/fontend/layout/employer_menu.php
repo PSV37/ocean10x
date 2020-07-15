@@ -141,7 +141,11 @@ $employer_id = $this->session->userdata('company_profile_id');
                                           <li id="submenu" data-action=" <?php echo $row['id'] ?>"<?php if ($activesubmenu ==  $row['id']) { ?>
                                  class="active"
                                 <?php } ?>  >
-                                           <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row['id'] ?>" > <span  data-action=" <?php echo $row['id'] ?>"><i class="fas fa-folder-open"></i> <?php echo $row['folder_name']; ?></span></a>
+
+                                    <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row['id'] ?>" > <span   ><i class="fas fa-folder-open"></i></span><span data-action=" <?php echo $row['id'] ?>" id="r<?php echo $row['id']; ?>"> <?php echo $row['folder_name']; ?></span></a>
+
+                                          <!--  <input type="text" id="<?php echo $row['id']; ?>" class="edit" style="display:none"/ value="<?php echo $row['folder_name']; ?>"> -->
+
                                              <ul>
                                             <?php 
                                             $parent_id = $row['id']; 
@@ -153,6 +157,7 @@ $employer_id = $this->session->userdata('company_profile_id');
                                                 <li id="submenu"  <?php if ($activesubmenu ==  $row1['id']) { ?> class="active" <?php } ?> data-action=" <?php echo $row1['id'] ?>">
                                                   <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row1['id'] ?>"><span><i class="fas fa-folder-open"></i></span>
                                                     <span  data-action=" <?php echo $row1['id'] ?>"> <?php echo $row1['folder_name']; ?></span> </a>
+                                                    <input type="text" class="edit" style="display:none"/ value="<?php echo $row1['folder_name']; ?>">
                                                   <ul>
                                                     <?php $cparent_id = $row1['id']; 
                                                     $where_child  = "status='1' AND company_id='$employer_id' and parent_id = '$cparent_id'";
@@ -162,7 +167,8 @@ $employer_id = $this->session->userdata('company_profile_id');
                                                     
                                                       <li id="submenu"  data-action=" <?php echo $row2['id'] ?>" <?php if ($activesubmenu ==  $row2['id']) { ?>  class="active" <?php } ?>>
                                                        <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row2['id'] ?>"><span><i class="fas fa-folder-open"></i></span>
-                                                        <span  data-action=" <?php echo $row2['id'] ?>"><?php echo $row2['folder_name']; ?></span></a> 
+                                                        <span class="display"  data-action=" <?php echo $row2['id'] ?>"><?php echo $row2['folder_name']; ?></span></a> 
+                                                        <input type="text" class="edit" style="display:none"/ value="<?php echo $row2['folder_name']; ?>">
                                                       </li>
                                                     <?php } } ?>
                                                     </ul>
@@ -433,39 +439,37 @@ $employer_id = $this->session->userdata('company_profile_id');
 </div>
  <script>
    // Trigger action when the contexmenu is about to be shown
-// $('#submenu').bind("contextmenu", function (event) {
+$('#submenu').bind("contextmenu", function (event) {
     
-//     // Avoid the real one
+    // Avoid the real one
     
-//     event.preventDefault();
+    event.preventDefault();
 
     
-//     // Show contextmenu
-//     $(".custom-menu").finish().toggle(100).
+    // Show contextmenu
+    $(".custom-menu").finish().toggle(100).
     
-//     // In the right position (the mouse)
-//     css({
-//         top: event.pageY + "px",
-//         left: event.pageX + "px"
-//     });
-// });
+    // In the right position (the mouse)
+    css({
+        top: event.pageY + "px",
+        left: event.pageX + "px"
+    });
+});
 
 
 // If the document is clicked somewhere
-// $(document).bind("mousedown", function (e) {
+$(document).bind("mousedown", function (e) {
     
-//     // If the clicked element is not the menu
+    // If the clicked element is not the menu
     
-//      console.log(this.id);
-
-//     if (!$(e.target).parents(".custom-menu").length > 0) {
+    if (!$(e.target).parents(".custom-menu").length > 0) {
         
-//         // Hide it
-//         // alert(e.target).parents()
-//         $(".custom-menu").hide(100);
-//     }
+        // Hide it
+        // alert(e.target).parents()
+        $(".custom-menu").hide(100);
+    }
     
-// });
+});
 
 (function() {
 
@@ -481,8 +485,11 @@ $employer_id = $this->session->userdata('company_profile_id');
   function contextMenuListener(el) {
     el.addEventListener( "contextmenu", function(e) {
       console.log(e, el);
-      console.log(el.target);
-      console.log(e.target).data('action');
+  
+      var name = $(e.target).data('action');
+      // console.log(e.target.getAttribute('data-action'));
+      console.log(name);
+      $('#fid').val(name);
 
     });
   }
@@ -498,7 +505,7 @@ $employer_id = $this->session->userdata('company_profile_id');
 // If the menu element is clicked
 $(".custom-menu li").click(function(){
     
-var value = document.getElementById('fid').value;
+var valueee = document.getElementById('fid').value;
     // This is the triggered action name
     switch($(this).attr("data-action")) {
         
@@ -506,36 +513,55 @@ var value = document.getElementById('fid').value;
         case "first": 
         alert("first"); 
           $.ajax({
-                 url:"<?php echo base_url();?>Employer/delete_folder"+value,
-                 // data: {myArray:newArray},
-                 // type: 'post',
+                 url:"<?php echo base_url();?>Employer/add_cv_folder",
+                 data: {parent:valueee},
+                 type: 'post',
                  success: function(response){
-                   // window.location = response;
-                   alert(response);
-                 //   const url =  response;
-                 //                  const a = document.createElement('a');
-                 //                  a.style.display = 'none';
-                 //                  a.href = url;
-                 //                  // the filename you want
-                 //                  a.download = 'Resumes.zip';
-
-                 //                  document.body.appendChild(a);
-                 //                  a.click();
-                 //                  window.URL.revokeObjectURL(url);
+                   
+                   window.location.reload();
                  }
                });
 
 
         break;
-        case "second": alert("second"); break;
-        case "third": alert("third"); break;
+        case "second": 
+           if (confirm("By deleting this folder all the content of this folder will get deleted!!")) {
+            $.ajax({
+                 url:"<?php echo base_url();?>Employer/delete_folder",
+                 data: {id:valueee},
+                 type: 'post',
+                 success: function(response){
+                   
+                   window.location.reload();
+                 }
+               });
+
+          } else {
+            txt = "You pressed Cancel!";
+          }
+           
+         break;
+        case "third": alert("third"); 
+        // $("#"+ valueee).attr("contentEditable", true);
+          // $('#').attr('contentEditable',true);
+          rename();
+        break;
     }
   
     // Hide it AFTER the action was triggered
     $(".custom-menu").hide(100);
   });
  </script>          
-               
+     <script>
+       function rename()
+       {
+        var fidval=$('#fid').val();
+        console.log(fidval);
+        $('#r'+ fidval).attr('contentEditable',true);
+          console.log($('#r'+ fidval));
+
+       }
+     </script>          
            
            <script>
 $(function () {
