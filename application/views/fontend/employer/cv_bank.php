@@ -1236,23 +1236,29 @@ span.select2-selection.select2-selection--single {
                   <select class="form-control select2" name="parent">
                      <option value="0">None</option>
 
-                     <?php  $i=0; foreach ($folders as $row) { 
+                     <?php $new_array=array(); $i=0; foreach ($folders as $row) { 
                         $id = $folders[$i]['id'];
                         // echo $id;
                         $p1 = $this->job_posting_model->cv_folder($id);
                         // print_r($this->db->last_query()); .
                         // print_r($p1);
-                        $p2 =$this->job_posting_model->cv_folder($p1->parent_id);
-                        // echo $p2;
-                        print_r($p2);
+                        if ($p1->parent_id == 0) {
+                          array_push($new_array, $p1->parent_id)
+                        }
+                        else
+                        {
+                        $p2 =$this->job_posting_model->cv_folder();
 
-
-                        if ($p2->parent_id == '0') {
-                           ?>
-                           <option value="<?php echo $row['id']; ?>"><?php echo $row['folder_name'] ?></option>
+                        }
+                        if ($p2->parent_id == 0) {
+                          array_push($new_array, $p2->parent_id)
+                        }
                        
-                     
-                     <?   } $i++;  } ?>
+                           $i++;  } ?>
+                     <?php foreach ($new_array as $row1) { ?>
+                    <option value="<?php echo $row1['id']; ?>"><?php echo $row1['folder_name'] ?></option>
+                       
+                   <?  } ?>
                     
                   </select>
                </div>

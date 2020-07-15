@@ -730,7 +730,7 @@ public function get_all_company_by_banksbook()
     {
        
          
-                $this->db->select('cv.parent_id');
+                $this->db->select('cv.*');
                 // ->select('cv.*')
                 $this->db->from('cv_folder cv');
                $this->db ->join('cv_folder cvp ','cvp.parent_id = cv.id','left');
