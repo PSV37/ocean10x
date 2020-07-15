@@ -1,5 +1,21 @@
 <?php 
     $this->load->view('fontend/layout/employer_new_header.php');?>  
+
+<!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css"> -->
+
+<style type="text/css">
+   
+   .required
+   {
+   color: red;
+   }
+   
+   label.error {
+    color: red;
+}
+   
+</style>
+
 <style>
 div#music {
     margin-top: 20px;
@@ -184,8 +200,14 @@ font-size: 21px;
        <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
         <div class="col-md-9 emplye_n">
           <form action="/action_page.php" style="float: left;margin-right: 25px;">
-            <button class="sort-serach" type="submit"><i class="fas fa-search" aria-hidden="true"></i></button>
-				    <input type="text" placeholder="Search.." name="search">
+            <div class="col-md-12">
+              <div class="row">
+                <button class="sort-serach" type="submit"><i class="fas fa-search" aria-hidden="true"></i></button>
+                <input type="text" placeholder="Search.." name="search">
+              </div>
+              
+            </div>
+            
    		    </form>
           <label class="dropdown">
 
@@ -255,7 +277,7 @@ font-size: 21px;
           </div>
           <div class="col-md-6" style="text-align: left;margin-left:-12px;"><button class="add_btn">Add</button></div>
             <div class="col-md-6" style="text-align: right;margin-left: 473px;float: none;"><button class="save_btn">Save</button></div> 
-            <form method="post" <?php if (isset($result)) { ?>
+            <form id="js" method="post" <?php if (isset($result)) { ?>
              action="<?php  echo base_url();?>employer/postEditData"
             <?php }else{ ?> action="<?php  echo base_url();?>employer/addemployee" <?php } ?>  enctype="multipart/form-data">  
                <input type="hidden" name="cid" id="cid" value="<?php echo $result['emp_id'];?>" class="search_f">
@@ -265,19 +287,19 @@ font-size: 21px;
            	      <div class="col-md-3">
                     <div class="form-group">                                       
                      <label for="exampleInputEmail1">Employee ID<span class="required">*</span></label>
-                      <input type="number" min="1" name="emp_no" id="emp_no" class="form-control" value="<?php echo $result['emp_no']; ?>" required=""><?php echo form_error('emp_no'); ?>                    
+                      <input type="number" min="1" name="emp_no" id="emp_no" class="form-control" value="<?php echo $result['emp_no']; ?>" ><?php echo form_error('emp_no'); ?>                    
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Employee Name<span class="required">*</span></label>
-                      <input type="text" name="emp_name" id="emp_name" class="form-control" value="<?php echo $result['emp_name']; ?>" required=""><?php echo form_error('emp_name'); ?>                      
+                      <input type="text" name="emp_name" id="emp_name" class="form-control allowalphabates" value="<?php echo $result['emp_name']; ?>" ><?php echo form_error('emp_name'); ?>                      
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Department<span class="required">*</span></label>
-                      <select name="dept_id" id="dept_id" class="form-control department" required="" tabindex="-1" aria-hidden="true">
+                      <select name="dept_id" id="dept_id" class="form-control department" tabindex="-1" aria-hidden="true">
                         <option value="">Select Department</option>
                           <?php foreach($department as $key){?>
                           <option value="<?php echo $key['dept_id']; ?>"<?php if($result['dept_id'] == $key['dept_id']){ echo "selected"; }?>><?php echo $key['department_name']; ?></option>
@@ -288,7 +310,7 @@ font-size: 21px;
                   <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Contact No.<span class="required">*</span></label>
-                      <input type="tel" name="mobile" id="mobile" class="form-control" value="<?php echo $result['mobile']; ?>" onkeypress="phoneno()" maxlength="10" required="">     <?php echo form_error('mobile'); ?>                  
+                      <input type="tel" name="mobile" id="mobile" class="form-control allowphonenumber" value="<?php echo $result['mobile']; ?>" onkeypress="phoneno()" maxlength="10" >     <?php echo form_error('mobile'); ?>                  
                     </div>
                   </div>        
                 </div>
@@ -296,19 +318,19 @@ font-size: 21px;
            	      <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Email-Id<span class="required">*</span></label>
-                      <input type="email" name="email" id="email" class="form-control" value="<?php echo $result['email']; ?>" required><?php echo form_error('email'); ?>
+                      <input type="email" name="email" id="email" class="form-control" value="<?php echo $result['email']; ?>" ><?php echo form_error('email'); ?>
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Password<span class="required">*</span></label>
-                      <input type="Password" name="Password" id="Password" maxlength="15" class="form-control" value="<?php echo $result['Password']; ?>" required ><?php echo form_error('Password'); ?>                     
+                      <input type="Password" name="Password" id="Password" maxlength="15" class="form-control" value="<?php echo $result['Password']; ?>"  ><?php echo form_error('Password'); ?>                     
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Designation<span class="required">*</span></label>
-                      <select class="form-control" name="user_role" id="user_role" onchange="getuseraccess(this.value);" required="">
+                      <select class="form-control" name="user_role" id="user_role" onchange="getuseraccess(this.value);" >
                         <option value="">Select designation</option>
                           <?php foreach($roles as $key){?>
                           <option value="<?php echo $key['user_role_id']; ?>"<?php if($result['user_role'] == $key['user_role_id']){ echo "selected"; }?>><?php echo $key['user_roles']; ?>
@@ -321,7 +343,7 @@ font-size: 21px;
                     <div class="form-group">
                       <label for="exampleInputEmail1">Give Acces To User<span class="required">*</span></label>
                      
-                      <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc[]" id="user_accc" required>
+                      <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc[]" id="user_accc" >
                       </select>
                     </div>
                   </div>                      
@@ -330,7 +352,7 @@ font-size: 21px;
                 <div class="col-md-3">
                   <div class="formrow">
                     <label class="control-label">Country: <span class="required">*</span></label>
-                    <select name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)" required="">
+                    <select name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)" >
                       <option value="">Select Country</option>
                         <?php foreach($country as $key){?>
                         <option value="<?php echo $key['country_id']; ?>"<?php if($result['country_id']==$key['country_id']){ echo "selected"; } elseif ($key['country_name']=='India') {echo "selected";}?>><?php echo $key['country_name']; ?></option>
@@ -349,7 +371,7 @@ font-size: 21px;
                 <div class="col-md-3">
                   <div class="formrow">
                     <label class="control-label">City: <span class="required">*</span></label>
-                    <select name="city_id" id="city_id" class="form-control" required="">
+                    <select name="city_id" id="city_id" class="form-control" >
                       <option value="">Select City</option>
                     </select>
                   </div>
@@ -357,7 +379,7 @@ font-size: 21px;
                  <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1" required="">Pincode<span class="required">*</span></label>
-                      <input type="text" name="pincode" id="pincode" class="form-control" autocomplete="off" value="<?php echo $result['pincode']; ?>"><?php echo form_error('pincode'); ?>             
+                      <input type="text" maxlength="6" name="pincode" id="pincode" class="form-control allownumericwithoutdecimal" autocomplete="off" value="<?php echo $result['pincode']; ?>"><?php echo form_error('pincode'); ?>             
                     </div>
                   </div>    
               </div>
@@ -619,4 +641,351 @@ $("#dept_id").select2( {
     
     $(select).focus();
 }).mousemove(function(e){e.preventDefault()});
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/additional-methods.js"></script>
+<script> 
+    function save_benifit()
+       {
+        var othr_benifit = document.getElementById('other_benifit').value;
+        $('#candidate_skills').append('<label><input type="checkbox" value="'+othr_benifit+'" class="btn-default1" checked="" name="candidate_skills[]"><span>'+othr_benifit+'</span></label>');
+        document.getElementById('other_benifit').value = '';
+        // alert(othr_benifit);
+   
+       }
+   $(document).ready(function() { 
+       $('#other_terxtbx').hide();
+   
+      $(function() { 
+     
+     $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd',maxDate: '0' });
+     $("#last_salary_hike").datepicker({ dateFormat: 'yy-mm-dd',maxDate: '0' });
+     });
+
+
+ $("#js").validate (  
+
+{
+
+rules:{
+
+
+
+'emp_no':{
+
+required: true
+
+},
+
+'emp_name':{
+
+required: true,
+minlength: 3,
+namespace_regex: true
+
+},
+
+'dept_id':{
+
+required: true
+
+},
+
+'mobile':{
+
+required: true,
+phonenumber_regex: true
+
+},
+
+'email':{
+
+required: true,
+email_regex: true
+
+},
+
+'Password':{
+
+required: true,
+password_regex: true
+
+},
+
+'user_role':{
+
+required: true
+
+},
+
+
+'user_acc[]': {
+
+  required: true
+},
+
+'country_id':{
+
+required: true
+
+},
+
+'state_id':{
+
+required: true
+
+},
+
+'city_id':{
+
+required: true
+
+},
+
+'user_role':{
+
+required: true
+
+},
+
+'pincode':{
+
+required: true
+
+},
+
+'address':{
+
+required: true
+
+}
+
+},
+
+
+messages:{
+
+
+
+'emp_no':{
+
+required: "This field is mandatory!"
+
+},
+
+'emp_name':{
+
+required: "This field is mandatory!"
+
+},
+
+
+'dept_id':{
+
+required: "This field is mandatory!"
+
+},
+
+'mobile':{
+
+required: "This field is mandatory!"
+
+},
+
+'email':{
+
+required: "This field is mandatory!"
+
+},
+
+'Password':{
+
+required: "This field is mandatory!"
+
+},
+
+'user_acc[]':{
+
+required: "This field is mandatory!"
+
+},
+
+'country_id':{
+
+required: "This field is mandatory!"
+
+},
+
+'state_id':{
+
+required: "This field is mandatory!"
+
+},
+
+'city_id':{
+
+required: "This field is mandatory!"
+
+},
+
+'pincode':{
+
+required: "This field is mandatory!",
+
+pincode_regex: true
+
+},
+
+'address':{
+
+required: "This field is mandatory!"
+
+}
+
+
+
+}
+
+
+
+});
+
+});
+
+</script>
+
+<script >
+
+  $.validator.addMethod("namespace_regex", function(value, element) {
+
+return this.optional(element) || /^[a-zA-Z ]*$/.test(value);
+    
+}, "Please choose only alphabets");
+
+  $.validator.addMethod("phonenumber_regex", function(value, element) {
+
+return this.optional(element) || /^[1-9]{1}[0-9]{9}$/.test(value);
+    
+}, "Please type 10 digit mobile number");
+
+  $.validator.addMethod("email_regex", function(value, element) {
+
+return this.optional(element) || /^\w.+@[a-z-A-Z_]+?\.[a-zA-Z\-][\w-]{2,3}$/.test(value);
+    
+}, "Please type valid Email");
+
+  $.validator.addMethod("password_regex", function(value, element) {
+
+return this.optional(element) || /(?=^.{8,15}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$/.test(value);
+    
+}, "Please type valid Password");
+
+
+  $.validator.addMethod("pincode_regex", function(value, element) {
+
+return this.optional(element) || /^[1-9][0-9][0-9][0-9][0-9][0-9]$/.test(value);
+
+}, "Please Enter 6 digits Company Pincode");
+
+
+
+</script>
+
+<script>
+
+   $(".allowphonenumber").on("keypress keyup blur",function (event) {
+             //this.value = this.value.replace(/[^0-9\.]/g,'');
+      $(this).val($(this).val().replace("^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"));
+             if ((event.which < 48 || event.which > 57)) {
+                 event.preventDefault();
+             }
+         });
+
+   
+   //(^[ A-Za-z0-9_@./#&+-]*$)
+   
+ 
+
+   $(".allownumericwithoutdecimal").on("input", function(evt) {
+    var self = $(this);
+    self.val(self.val().replace(/[^\d]+/, ""));
+    if ((evt.which < 48 || evt.which > 57)) 
+     {
+     evt.preventDefault();
+     }
+ });
+
+
+   
+   $(".allowalphabatescomma").keypress(function (e) {
+         var regex = new RegExp("^[a-zA-Z, \s]+$");
+         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+         if (regex.test(str)) {
+             return true;
+         }
+         else
+         {
+         e.preventDefault();
+         return false;
+         }
+     });
+
+    $(".allownumericwithdecimal").on("keypress keyup blur",function (event) {
+            //this.value = this.value.replace(/[^0-9\.]/g,'');
+     $(this).val($(this).val().replace(/[^0-9\.]/g,''));
+            if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+                event.preventDefault();
+            }
+        });
+   
+   $(".allowalphabatesspace").keypress(function (e) {
+         var regex = new RegExp("^[a-zA-Z ]*$");
+         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+         if (regex.test(str)) {
+             return true;
+         }
+         else
+         {
+         e.preventDefault();
+         return false;
+         }
+     });
+$(".allowalphabates").keypress(function (e) {
+         var regex = new RegExp("^[a-zA-Z ]*$");
+         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+         if (regex.test(str)) {
+             return true;
+         }
+         else
+         {
+         e.preventDefault();
+         return false;
+         }
+     });
+
+
+</script>
+
+
+
+<script type="text/javascript">
+ function validChk() {
+    var chkBox = document.getElementsByName('correct_answer[]');
+    var lenChkBox = chkBox.length;
+    //alert(lenChkBox)
+    var valid=0;
+    for(var i=0;i<lenChkBox;i++) {
+      if(chkBox[i].checked==true) {
+        valid=1;
+        break;
+      }
+    }
+    if(valid==0) {
+      msg='Please select atleast one book';
+      alert(msg);
+      return false;
+    }
+    return true;
+  }
 </script>
