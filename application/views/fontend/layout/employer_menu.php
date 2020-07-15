@@ -482,9 +482,10 @@ $employer_id = $this->session->userdata('company_profile_id');
     el.addEventListener( "contextmenu", function(e) {
       console.log(e, el);
   
-      var name = $(e.target).data('action');
-      console.log(e.target.getAttribute('data-action'));
+      // var name = $(e.target).data('action');
+      // console.log(e.target.getAttribute('data-action'));
       console.log(name);
+      $('#fid').val(name);
 
     });
   }
@@ -507,7 +508,12 @@ var value = document.getElementById('fid').value;
         // A case for each action. Your actions here
         case "first": 
         alert("first"); 
-          $.ajax({
+         
+
+
+        break;
+        case "second": alert("second");
+           $.ajax({
                  url:"<?php echo base_url();?>Employer/delete_folder"+value,
                  // data: {myArray:newArray},
                  // type: 'post',
@@ -527,9 +533,7 @@ var value = document.getElementById('fid').value;
                  }
                });
 
-
-        break;
-        case "second": alert("second"); break;
+         break;
         case "third": alert("third"); break;
     }
   
