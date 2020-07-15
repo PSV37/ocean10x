@@ -334,7 +334,7 @@ $employer_id = $this->session->userdata('company_profile_id');
   <li data-action = "third">Rename Folder</li>
 </ul>
 
- <ul class='custom-menu-1'>
+ <ul class='custom-menu1'>
   <li data-action = "first">Add Folder</li>
   
 </ul>
