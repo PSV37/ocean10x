@@ -507,7 +507,7 @@ $(document).bind("mousedown", function (e) {
 // If the menu element is clicked
 $(".custom-menu li").click(function(){
     
-var value = document.getElementById('fid').value;
+var valueee = document.getElementById('fid').value;
     // This is the triggered action name
     switch($(this).attr("data-action")) {
         
@@ -522,7 +522,7 @@ var value = document.getElementById('fid').value;
            if (confirm("By deleting this folder all the content of this folder will get deleted!!")) {
             $.ajax({
                  url:"<?php echo base_url();?>Employer/delete_folder",
-                 data: {id:value},
+                 data: {id:valueee},
                  type: 'post',
                  success: function(response){
                    
@@ -537,8 +537,8 @@ var value = document.getElementById('fid').value;
          break;
         case "third": alert("third"); 
 
-        ('#r1'+value).hide();
-        ('#ri1'+value).show();
+        ('#r1'valueee).hide();
+        ('#ri1'valueee).show();
 
 
 
