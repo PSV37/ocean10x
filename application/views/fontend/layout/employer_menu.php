@@ -62,6 +62,7 @@
     background: #FFF;
     color: #333;
     border-radius: 5px;
+    margin-left: -70px;
 }
 
 .custom-menu li {
@@ -84,6 +85,7 @@
     background: #FFF;
     color: #333;
     border-radius: 5px;
+    margin-left: -70px;
 }
 
 .custom-menu1 li {
