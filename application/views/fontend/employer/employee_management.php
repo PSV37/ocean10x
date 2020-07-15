@@ -1,7 +1,9 @@
 <?php 
     $this->load->view('fontend/layout/employer_new_header.php');?>  
 
-<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css">
+
+<!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css"> -->
+
 
 <style type="text/css">
    
@@ -191,6 +193,10 @@ font-size: 21px;
   .bootstrap-select > .dropdown-toggle {
     display: block;
 }
+textarea#comment {
+    max-width: 865px;
+    max-height: 150px;
+}
 </style>
 
 
@@ -200,8 +206,14 @@ font-size: 21px;
        <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
         <div class="col-md-9 emplye_n">
           <form action="/action_page.php" style="float: left;margin-right: 25px;">
-            <button class="sort-serach" type="submit"><i class="fas fa-search" aria-hidden="true"></i></button>
-				    <input type="text" placeholder="Search.." name="search">
+            <div class="col-md-12">
+              <div class="row">
+                <button class="sort-serach" type="submit"><i class="fas fa-search" aria-hidden="true"></i></button>
+                <input type="text" placeholder="Search.." name="search">
+              </div>
+              
+            </div>
+            
    		    </form>
           <label class="dropdown">
 
