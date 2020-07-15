@@ -1247,7 +1247,7 @@ span.select2-selection.select2-selection--single {
                         }
                         else
                         {
-                        $p2 =$this->job_posting_model->cv_folder();
+                        $p2 =$this->job_posting_model->cv_folder($p1->parent_id);
 
                         }
                         if ($p2->parent_id == 0) {
