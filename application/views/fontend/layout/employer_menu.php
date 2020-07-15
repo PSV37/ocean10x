@@ -76,6 +76,11 @@ button.btn.btn-default {
     width: 100px;
 }
 
+button.btn.btn-default:hover {
+    width: 100px;
+    background-color: yellow;
+}
+
 </style>    
 <?php $activemenu = $this->session->userdata('activemenu'); 
 $employer_id = $this->session->userdata('company_profile_id');
