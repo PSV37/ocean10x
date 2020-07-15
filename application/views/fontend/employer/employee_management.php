@@ -200,8 +200,14 @@ font-size: 21px;
        <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
         <div class="col-md-9 emplye_n">
           <form action="/action_page.php" style="float: left;margin-right: 25px;">
-            <button class="sort-serach" type="submit"><i class="fas fa-search" aria-hidden="true"></i></button>
-				    <input type="text" placeholder="Search.." name="search">
+            <div class="col-md-12">
+              <div class="row">
+                <button class="sort-serach" type="submit"><i class="fas fa-search" aria-hidden="true"></i></button>
+                <input type="text" placeholder="Search.." name="search">
+              </div>
+              
+            </div>
+            
    		    </form>
           <label class="dropdown">
 
