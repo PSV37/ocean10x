@@ -4809,8 +4809,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 }     
     }
 
-    public function delete_folder($folder_id = NULL)
+    public function delete_folder()
     {
+
+        $folder_id=$this->input->post('id');
         if (isset($folder_id) && !empty($folder_id)) {
             $update_data = array(
                 'status' => '0');
