@@ -537,8 +537,8 @@ var valueee = document.getElementById('fid').value;
          break;
         case "third": alert("third"); 
 
-        ('#r1'+valueee).hide();
-        ('#ri1'+valueee).show();
+        alert('ri1'+valueee);
+        // ('#ri1'+valueee).show();
 
 
 
