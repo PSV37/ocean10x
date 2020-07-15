@@ -72,6 +72,9 @@
 .custom-menu li:hover {
     background-color: #DEF;
 }
+button.btn.btn-default {
+    width: 65px;
+}
 
 </style>    
 <?php $activemenu = $this->session->userdata('activemenu'); 
@@ -440,7 +443,7 @@ $employer_id = $this->session->userdata('company_profile_id');
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
-          <form method="post" action="<?php echo base_url(); ?>employer/add_cv_folder">
+          <form method="post" action="<?php echo base_url(); ?>employer/rename_folder">
         <div class="modal-header">
           <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
           <h4 class="modal-title">Rename folder</h4>
@@ -460,7 +463,7 @@ $employer_id = $this->session->userdata('company_profile_id');
          <!--  <p>This is a small modal.</p> -->
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-default">Add</button>
+          <button type="submit" class="btn btn-default">Rename</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
          </form>
