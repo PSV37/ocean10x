@@ -4756,8 +4756,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     public function add_cv_folder()
     {
         $employer_id = $this->session->userdata('company_profile_id');
+         $parent = $this->input->post('parent');
         $name = $this->input->post('folder_name');
-        $parent = $this->input->post('parent');
+        if (empty($name)) {
+            $date=date('Y-m-d';)
+           $name = 'new Folder'.$date;
+        }
+       
          $whereres  = "company_id='$employer_id' and folder_name = '$name'";
                 $folder_dbdata = $this->Master_model->get_master_row('cv_folder', $select = FALSE, $whereres);
           if (empty($folder_dbdata)) {

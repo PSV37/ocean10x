@@ -514,7 +514,15 @@ var valueee = document.getElementById('fid').value;
         // A case for each action. Your actions here
         case "first": 
         alert("first"); 
-         
+          $.ajax({
+                 url:"<?php echo base_url();?>Employer/add_cv_folder",
+                 data: {parent:valueee},
+                 type: 'post',
+                 success: function(response){
+                   
+                   window.location.reload();
+                 }
+               });
 
 
         break;
