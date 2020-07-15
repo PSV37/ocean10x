@@ -546,7 +546,7 @@ var valueee = document.getElementById('fid').value;
         case "third": alert("third"); 
         // $("#"+ valueee).attr("contentEditable", true);
           // $('#').attr('contentEditable',true);
-          rename(valueee);
+          rename();
         break;
     }
   
@@ -555,10 +555,10 @@ var valueee = document.getElementById('fid').value;
   });
  </script>          
      <script>
-       function rename(idval)
+       function rename()
        {
-        console.log(idval);
-          console.log($("#"+idval));
+        console.log(document.getElementById('fid').value);
+          // console.log($("#"+idval));
 
        }
      </script>          
