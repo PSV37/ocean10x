@@ -558,7 +558,7 @@ var valueee = document.getElementById('fid').value;
         var fidval=$('#fid').val();
         console.log(fidval);
         $('#r'+ fidval).hide();
-          console.log($('#r'+ fidval));
+          console.log('#r'+ fidval);
 
        }
      </script>          
