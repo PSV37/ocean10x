@@ -1243,7 +1243,7 @@ span.select2-selection.select2-selection--single {
                         // print_r($this->db->last_query()); .
                         // print_r($p1);
                         if ($p1->parent_id == 0) {
-                          array_push($new_array, $p1);
+                          array_push($new_array, $row);
                         }
                         else
                         {
@@ -1251,7 +1251,7 @@ span.select2-selection.select2-selection--single {
 
                         }
                         if ($p2->parent_id == 0) {
-                          array_push($new_array, $p2);
+                          array_push($new_array, $row);
                         }
                        
                            $i++;  } ?>
