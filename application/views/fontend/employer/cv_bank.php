@@ -1575,7 +1575,7 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
 
                 // alert(totalFiles);
              //Throw an error if no boxes are checked
-                if (cvs.length == 0) {
+                if (myNameArray.length == 0) {
                    alert("Please choose a file to download");
                 } else {
                   var newArray = myNameArray.filter(value => Object.keys(value).length !== 0);
