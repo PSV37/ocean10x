@@ -915,7 +915,7 @@ span.select2-selection.select2-selection--single {
            
             <div class="row" id="bulk">
                
-               <div class="col-md-6">
+               <div class="col-md-4">
                   <label class="dropdown">
                   
                      <input type="checkbox" name="bulk_forward" id="checkAll">&nbsp; Bulk Forward
@@ -923,7 +923,7 @@ span.select2-selection.select2-selection--single {
                      
                   </label>
                </div>
-               <div class="col-md-6">
+               <div class="col-md-4">
                   <label class="dropdown">
                 
                      <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp; Bulk Move
@@ -932,22 +932,7 @@ span.select2-selection.select2-selection--single {
                   </label>
                </div>
 
-              
-
-            
-              
-            </div>
-           <div class="row" id="bulk">
-               
-               <div class="col-md-6">
-                  <label class="dropdown">
-                  
-                     <input type="checkbox" name="bulk_forward" id="checkAll">&nbsp; Bulk Forward
-                     <button type="button" id="frwd_btn" class="btn btn-primary" onclick="frwd_post();">Forward Job</button>
-                     
-                  </label>
-               </div>
-               <div class="col-md-6">
+               <div class="col-md-4">
                   <label class="dropdown">
                 
                      <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp; Bulk Download
@@ -955,6 +940,13 @@ span.select2-selection.select2-selection--single {
                    
                   </label>
                </div>
+
+            
+              
+            </div>
+           <div class="row" id="bulk">
+               
+             
 
                <div class="col-md-6">
                   <label class="dropdown">
@@ -1153,7 +1145,7 @@ span.select2-selection.select2-selection--single {
             <div class="col-md-12">
                <div class="row">
              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-                  <label class="mdl-textfield__label" for="sample3">Number of cvs: 1</label><br>
+                  <label class="mdl-textfield__label" id="no_of_cvs_move" for="sample3">Number of cvs: 1</label><br>
                   
                </div>
             </div>
@@ -1625,10 +1617,10 @@ function move_cvs()
                {
                var elements = cvs_name.split(',').length;
              
-                  $('#no_of_cvs').html(elements);
+                  $('#no_of_cvs_move').html(elements);
                   $('#cv_id').val(cvs_name);
                   setTimeout(function(){
-                  $('#rotateModal').modal('show'); }, 500);
+                  $('#bulkmove_cv').modal('show'); }, 500);
                }else
                {
                   alert('Please select atleast one cv move!')
