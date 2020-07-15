@@ -564,7 +564,7 @@ $(document).bind("mousedown", function (e) {
 
   function contextMenuListener(el) {
     el.addEventListener( "contextmenu", function(e) {
-      // console.log(e, el);
+      console.log(e, el);
   
       var name = $(e.target).data('action');
       // console.log(e.target.getAttribute('data-action'));
