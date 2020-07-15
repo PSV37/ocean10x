@@ -537,9 +537,18 @@ var valueee = document.getElementById('fid').value;
          break;
         case "third": alert("third"); 
 
-        alert('ri'+valueee);
-        ('#'+valueee).show();
+            function contextMenuListener(el) {
+          el.addEventListener( "contextmenu", function(e) {
+            console.log(e, el);
+        
+            var name = $(e.target).data('action');
+            // console.log(e.target.getAttribute('data-action'));
+            console.log(name);
+            $('#fid').val(name);
 
+          });
+        }
+      
 
 
         break;
