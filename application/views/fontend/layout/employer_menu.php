@@ -537,8 +537,17 @@ $(document).bind("mousedown", function (e) {
         // Hide it
         // alert(e.target).parents()
         $(".custom-menu").hide(100);
-        $(".custom-menu1").hide(100);
+        // $(".custom-menu1").hide(100);
     }
+
+    if (!$(e.target).parents(".custom-menu1").length > 0) {
+        
+        // Hide it
+        // alert(e.target).parents()
+        $(".custom-menu1").hide(100);
+        // $(".custom-menu1").hide(100);
+    }
+    
     
 });
 
