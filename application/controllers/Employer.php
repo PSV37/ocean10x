@@ -4756,8 +4756,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     public function add_cv_folder()
     {
         $employer_id = $this->session->userdata('company_profile_id');
+         $parent = $this->input->post('parent');
         $name = $this->input->post('folder_name');
-        $parent = $this->input->post('parent');
+        if (empty($name)) {
+            $date=date('H:i:s');
+           $name = 'new Folder'.$date;
+        }
+       
          $whereres  = "company_id='$employer_id' and folder_name = '$name'";
                 $folder_dbdata = $this->Master_model->get_master_row('cv_folder', $select = FALSE, $whereres);
           if (empty($folder_dbdata)) {
@@ -4784,14 +4789,21 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     public function move_cvto_folder()
     {
          $employer_id = $this->session->userdata('company_profile_id');
-        $cv_id = $this->input->post('cv_id');
         $folder_id = $this->input->post('folder_id');
-        $whereres  = "cv_folder_id='$folder_id' and cv_id = '$cv_id'";
+
+        $cv_idS = $this->input->post('cv_id');
+          $cv=explode(',', $cv_idS);
+
+          foreach ($cv as $row) {
+
+        $whereres  = "cv_folder_id='$folder_id' and cv_id = '$row'";
         $folder_dbdata = $this->Master_model->get_master_row('cv_folder_relation', $select = FALSE, $whereres);
+          
+
 
           if (empty($folder_dbdata)) {
                     $folder_data['cv_folder_id'] = $folder_id;
-                    $folder_data['cv_id'] = $cv_id;
+                    $folder_data['cv_id'] = $row;
                     $folder_data['status'] = '1';
 
                    
@@ -4799,18 +4811,18 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                      $result  = $this->Master_model->master_insert($folder_data, 'cv_folder_relation');
 
                      $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Succesfully added</div>');
-                     redirect('employer/corporate_cv_bank/'.$folder_id);
-                } 
-                else
-                {
-                     $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">already exists</div>');
-                     redirect('employer/corporate_cv_bank');
                      
-                }     
+                } 
+                 
+          }
+
+      redirect('employer/corporate_cv_bank/'.$folder_id);
     }
 
-    public function delete_folder($folder_id = NULL)
+    public function delete_folder()
     {
+
+        $folder_id=$this->input->post('id');
         if (isset($folder_id) && !empty($folder_id)) {
             $update_data = array(
                 'status' => '0');
@@ -4819,10 +4831,27 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
             $update_relation = array(
                 'status' => '0');
-            $where11['cv_folder_id'] = $folder_id;
-            $this->Master_model->master_update($update_relation, 'cv_folder_relation', $where11);
+            $where_rel['cv_folder_id'] = $folder_id;
+            $this->Master_model->master_update($update_relation, 'cv_folder_relation', $where_rel);
         }
+    }
+
+     public function rename_folder()
+    {
+
+        $folder_id=$this->input->post('folder_id');
+        $folder_name=$this->input->post('folder_name');
+        if (isset($folder_id) && !empty($folder_id) && !empty( $folder_name)) {
+            $update_data = array(
+                'folder_name' => $folder_name);
+            $where11['id'] = $folder_id;
+            $this->Master_model->master_update($update_data, 'cv_folder', $where11);
+
+          
         }
+      redirect('employer/corporate_cv_bank/'.$folder_id);
+
+    }
     
     
 } // end class

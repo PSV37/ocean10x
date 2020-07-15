@@ -914,70 +914,51 @@ span.select2-selection.select2-selection--single {
             </div>
            
             <div class="row" id="bulk">
-               <!-- <div class="col-md-6">
-                  <div class="placeholder_cmmn" id="auto_loc_wrap_srp">    
-                     <input type="text" class="form-control rounded" tabindex="3" monstab="3" placeholder="Type The Job Post That You Want To Forward to the Below CV'S" onfocus="if(this.value==&quot;&quot;)this.value=&quot;&quot;" onblur="if(this.value=='')this.value=''" id="lmy_header" name="lmy">
-                     
-                    
-                  </div>
-               </div> -->
-               <!-- <div class="col-md-2">
-                  <button class="send">send</button>
-               </div> -->
+               
                <div class="col-md-4">
                   <label class="dropdown">
-                   <!--   <div class="dd-button" style="background-color: #18c5bd;color: #ffffff;">
-                        Bulk Download
-                     </div> -->
-                     <input type="checkbox" name="bulk_forward" id="checkAll">&nbsp; Bulk Forward
+                  
+                     <input type="checkbox" name="bulk_forward" id="checkAll" style="font-weight:500">&nbsp;Forward
                      <button type="button" id="frwd_btn" class="btn btn-primary" onclick="frwd_post();">Forward Job</button>
-                     <!-- <input type="checkbox" class="dd-input" id="test"> -->
-                     <!-- <ul class="dd-menu">
-                         <li><a id="checkAll">Bulk Forward></a></li>
-                        <li>Bulk Download</li>
-                       
-                     </ul> -->
+                     
                   </label>
                </div>
                <div class="col-md-4">
                   <label class="dropdown">
-                   <!--   <div class="dd-button" style="background-color: #18c5bd;color: #ffffff;">
-                        Bulk Download
-                     </div> -->
-                     <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp; Bulk Download
-                     <button type="button" id="frwd_btn" class="btn btn-primary" onclick="download_cvs();">Download CV</button>
-                     <!-- <input type="checkbox" class="dd-input" id="test"> -->
-                     <!-- <ul class="dd-menu">
-                         <li><a id="checkAll">Bulk Forward></a></li>
-                        <li>Bulk Download</li>
-                       
-                     </ul> -->
+                
+                     <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp;  Move
+                     <button type="button" id="frwd_btn" class="btn btn-primary" onclick="move_cvs();">Move CV</button>
+                   
                   </label>
                </div>
 
                <div class="col-md-4">
                   <label class="dropdown">
-                   <!--   <div class="dd-button" style="background-color: #18c5bd;color: #ffffff;">
-                        Bulk Download
-                     </div> -->
-                     <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp; Bulk Upload
+                
+                     <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp; Download
+                     <button type="button" id="frwd_btn" class="btn btn-primary" onclick="download_cvs();">Download CV</button>
+                   
+                  </label>
+               </div>
+
+            
+              
+            </div>
+           <div class="row" id="bulk">
+               
+             
+
+               <div class="col-md-6">
+                  <label class="dropdown">
+                  
+                     <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp;  Upload
                      <button type="button" id="frwd_btn" class="btn btn-primary" data-toggle="modal" data-target="#bulkupload">Bulk Upload</button>
-                     <!-- <input type="checkbox" class="dd-input" id="test"> -->
-                     <!-- <ul class="dd-menu">
-                         <li><a id="checkAll">Bulk Forward></a></li>
-                        <li>Bulk Download</li>
-                       
-                     </ul> -->
+                    
                   </label>
                </div>
             
               
             </div>
-            <!-- <div class="row">
-               <div class="col-md-12">
-                  <input type="checkbox" id="select-all" name="check_all" style="float: right; margin-right: 21px; display: inline-block;">
-               </div>
-            </div> -->
 
             <div class="box" >
                <?php $key = 1; if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) : 
@@ -1004,7 +985,7 @@ span.select2-selection.select2-selection--single {
                <label>
                   <div class="check">
                     
-                     <input type="checkbox" value="<?php echo $cv_row['js_email']; ?>" data-valuetwo="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo base_url(); echo 'upload/Resumes/'.$cv_row['js_resume']; } ?>" data-valueone="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo $cv_row['js_resume']; } ?>" class="chkbx" />
+                     <input type="checkbox" value="<?php echo $cv_row['js_email']; ?>" data-valuetwo="<?php echo $cv_row['cv_id'];  ?>" data-valueone="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo $cv_row['js_resume']; } ?>" class="chkbx" />
                   </div> 
                   <div class="card content">
                      <div class="front">
@@ -1106,6 +1087,15 @@ span.select2-selection.select2-selection--single {
                </div>
                </div>
             </div>
+            <div class="col-md-12">
+               <div class="row">
+             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
+                  <label class="mdl-textfield__label" for="sample3">Number of cvs: 1</label><br>
+                  
+               </div>
+            </div>
+         </div>
+
         
          <!--  <p>This is a small modal.</p> -->
         </div>
@@ -1121,6 +1111,57 @@ span.select2-selection.select2-selection--single {
                   $key++;
                     endforeach;  
                   ?>
+<div class="modal fade" id="bulkmove_cv" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+          <form method="post" action="<?php echo base_url(); ?>employer/move_cvto_folder">
+        <div class="modal-header">
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+          <h4 class="modal-title">Move CV to folder</h4>
+        </div>
+        <div class="modal-body">
+        <input type="hidden" name="cv_id" id="cv_id" value="">
+            
+            <div class="col-md-12" style="margin-top: 20px;">
+               <div class="row">
+                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <label class="mdl-textfield__label" for="sample3">Choose Folder</label>
+                  <!-- <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required> -->
+                  <?php 
+                  $employer_id = $this->session->userdata('company_profile_id');
+                  $wheres  = "status='1' AND company_id='$employer_id' ";
+                     $folders     = $this->Master_model->getMaster('cv_folder', $where = $wheres); ?>
+                  <select class="form-control select2" name="folder_id">
+                     <option value="0">None</option>
+
+                     <?php foreach ($folders as $row) { ?>
+                      <option value="<?php echo $row['id'] ?>"><?php echo $row['folder_name'] ?></option>
+                     <? } ?>
+                    
+                  </select>
+               </div>
+               </div>
+            </div>
+            <div class="col-md-12">
+               <div class="row">
+             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
+                  <label class="mdl-textfield__label" id="no_of_cvs_move" for="sample3">Number of cvs: 1</label><br>
+                  
+               </div>
+            </div>
+         </div>
+
+        
+         <!--  <p>This is a small modal.</p> -->
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-default">Add</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+         </form>
+      </div>
+    </div>
+  </div>
 
       <div class="modal fade" id="bulkupload" role="dialog">
     <div class="modal-dialog modal-sm">
@@ -1489,8 +1530,6 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
             {
                 $("#gedf-drop1").hide();
               
-
-             
             }
             else
             {
@@ -1532,50 +1571,22 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
             var myNameArray =  cvs_name.split(',');
                 // var totalFiles = myArray.length;
 
-       var checkedVals = $('.chkbx:checkbox:checked').map(function() {
-                   return this.getAttribute("data-valuetwo");
-               }).get();
-        var cvs= (checkedVals.join(","));
-            
-            var myArray =  cvs.split(',');
-                var totalFiles = myArray.length;
+    
+
                 // alert(totalFiles);
              //Throw an error if no boxes are checked
-                if (cvs.length == 0) {
+                if (myNameArray.length == 0) {
                    alert("Please choose a file to download");
                 } else {
                   var newArray = myNameArray.filter(value => Object.keys(value).length !== 0);
-              //           for (var i = 0; i < totalFiles; i++) {
-              //                 //Open a download window for each URL in the array
-              //                 // alert(myArray[i]);
-              //                 if(myArray[i] === ''){ // do stuff 
-                                 
-              //                 }
-              //                 else
-              //                 {
-              //                     // window.open(myArray[i]);
-              //                     const url =myArray[i];
-              //                     const a = document.createElement('a');
-              //                     a.style.display = 'none';
-              //                     a.href = url;
-              //                     // the filename you want
-              //                     a.download = myNameArray[i];
-
-              //                     document.body.appendChild(a);
-              //                     a.click();
-              //                     window.URL.revokeObjectURL(url);
-              //                 }
-                             
-                        
-              // }
-               // var elements = cvs.split(',').length;
+              //          
                 $.ajax({
                  url:"<?php echo base_url();?>Employer/create_zip",
                  data: {myArray:newArray},
                  type: 'post',
                  success: function(response){
                    // window.location = response;
-                   alert(response);
+                   // alert(response);
                    const url =  response;
                                   const a = document.createElement('a');
                                   a.style.display = 'none';
@@ -1590,6 +1601,30 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
                });
 
    }
+}
+
+function move_cvs()
+{
+   var checkedValsofname = $('.chkbx:checkbox:checked').map(function() {
+                   return this.getAttribute("data-valuetwo");
+               }).get();
+        var cvs_name= (checkedValsofname.join(","));
+            
+            
+
+               // alert(emails.length);
+                 if (cvs_name.length > 0) 
+               {
+               var elements = cvs_name.split(',').length;
+             
+                  $('#no_of_cvs_move').html(elements);
+                  $('#cv_id').val(cvs_name);
+                  setTimeout(function(){
+                  $('#bulkmove_cv').modal('show'); }, 500);
+               }else
+               {
+                  alert('Please select atleast one cv move!')
+               }
 }
 $("#job_titles").autocomplete({
              
