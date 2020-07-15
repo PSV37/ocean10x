@@ -506,7 +506,7 @@ $employer_id = $this->session->userdata('company_profile_id');
   </div>
 
   <script>
-    $('.right_click ul').hide();
+    // $('.menu-principal-list ul').hide();
 
 $('.cv').click(function() {
     $(this).find('ul').slideToggle();
@@ -540,23 +540,17 @@ $('.cv').bind("contextmenu", function (event) {
 
 // If the document is clicked somewhere
 $(document).bind("mousedown", function (e) {
-    
-    // If the clicked element is not the menu
-    
+   
     if (!$(e.target).parents(".custom-menu").length > 0) {
-        
-        // Hide it
-        // alert(e.target).parents()
+     
         $(".custom-menu").hide(100);
-        // $(".custom-menu1").hide(100);
+       
     }
 
     if (!$(e.target).parents(".custom-menu1").length > 0) {
-        
-        // Hide it
-        // alert(e.target).parents()
+      
         $(".custom-menu1").hide(100);
-        // $(".custom-menu1").hide(100);
+     
     }
     
     
