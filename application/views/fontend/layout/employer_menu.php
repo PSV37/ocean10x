@@ -445,8 +445,8 @@ $('#submenu').bind("contextmenu", function (event) {
     
     // In the right position (the mouse)
     css({
-        top: event.pageY + "px",
-        left: event.pageX + "px"
+        top: event.screenY + "px",
+        left: event.screenX + "px"
     });
 });
 
@@ -519,18 +519,8 @@ var value = document.getElementById('fid').value;
                  data: {id:value},
                  type: 'post',
                  success: function(response){
-                   // window.location = response;
-                   alert(response);
-                 //   const url =  response;
-                 //                  const a = document.createElement('a');
-                 //                  a.style.display = 'none';
-                 //                  a.href = url;
-                 //                  // the filename you want
-                 //                  a.download = 'Resumes.zip';
-
-                 //                  document.body.appendChild(a);
-                 //                  a.click();
-                 //                  window.URL.revokeObjectURL(url);
+                   
+                   window.location.reload();
                  }
                });
 
