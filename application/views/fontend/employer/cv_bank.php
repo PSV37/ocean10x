@@ -918,7 +918,7 @@ span.select2-selection.select2-selection--single {
                <div class="col-md-4">
                   <label class="dropdown">
                   
-                     <input type="checkbox" name="bulk_forward" id="checkAll">&nbsp; Bulk Forward
+                     <input type="checkbox" name="bulk_forward" id="checkAll" style="font-weight:500">&nbsp; Bulk Forward
                      <button type="button" id="frwd_btn" class="btn btn-primary" onclick="frwd_post();">Forward Job</button>
                      
                   </label>
