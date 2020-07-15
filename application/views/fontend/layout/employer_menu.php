@@ -309,7 +309,7 @@ $employer_id = $this->session->userdata('company_profile_id');
   <ul class='custom-menu'>
   <li data-action = "first">Add Folder</li>
   <li data-action = "second">Delete Folder</li>
-  <li data-action = "third">Third thing</li>
+  <li data-action = "third">Rename Folder</li>
 </ul>
   
   <div id="mySidenav" class="sidenav">
@@ -522,11 +522,11 @@ $(document).bind("mousedown", function (e) {
 
   function contextMenuListener(el) {
     el.addEventListener( "contextmenu", function(e) {
-      console.log(e, el);
+      // console.log(e, el);
   
       var name = $(e.target).data('action');
       // console.log(e.target.getAttribute('data-action'));
-      console.log(name);
+      // console.log(name);
       $('#fid').val(name);
       $('#folder_id').val(name);
 
@@ -535,10 +535,6 @@ $(document).bind("mousedown", function (e) {
 
 })();
 
-// function check(value)
-// {
-//   alert(value);
-// }
 
 
 // If the menu element is clicked
@@ -550,7 +546,7 @@ var valueee = document.getElementById('fid').value;
         
         // A case for each action. Your actions here
         case "first": 
-        alert("first"); 
+        // alert("first"); 
           $.ajax({
                  url:"<?php echo base_url();?>Employer/add_cv_folder",
                  data: {parent:valueee},
@@ -580,7 +576,7 @@ var valueee = document.getElementById('fid').value;
           }
            
          break;
-        case "third": alert("third"); 
+        case "third": 
         // $("#"+ valueee).attr("contentEditable", true);
           // $('#').attr('contentEditable',true);
             $('#myModal').modal('show');
