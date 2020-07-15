@@ -1248,14 +1248,16 @@ span.select2-selection.select2-selection--single {
                         else
                         {
                         $p2 =$this->job_posting_model->cv_folder($p1->parent_id);
-
-                        }
                         if ($p2->parent_id == 0) {
                           array_push($new_array, $row);
                         }
+
+                        }
+                        
                        
-                           $i++;  } print_r($new_array); ?>
-                     <?php foreach ($new_array as $row1) { ?>
+                           $i++;  }  ?>
+                     <?php foreach ($new_array as $row1) {
+                     print_r($row1); ?>
                     <option value="<?php echo $row1->id; ?>"><?php echo $row1->folder_name; ?></option>
                        
                    <?  } ?>
