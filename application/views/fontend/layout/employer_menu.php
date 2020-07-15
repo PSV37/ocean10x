@@ -142,7 +142,7 @@ $employer_id = $this->session->userdata('company_profile_id');
                                  class="active"
                                 <?php } ?>  >
 
-                                    <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row['id'] ?>" > <span   data-action=" <?php echo $row['id'] ?>"><i class="fas fa-folder-open"></i></span><span id="<?php echo $row['id']; ?>"> <?php echo $row['folder_name']; ?></span></a>
+                                    <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row['id'] ?>" > <span   ><i class="fas fa-folder-open"></i></span><span data-action=" <?php echo $row['id'] ?>" id="<?php echo $row['id']; ?>"> <?php echo $row['folder_name']; ?></span></a>
 
                                           <!--  <input type="text" id="<?php echo $row['id']; ?>" class="edit" style="display:none"/ value="<?php echo $row['folder_name']; ?>"> -->
 
@@ -462,8 +462,6 @@ $(document).bind("mousedown", function (e) {
     
     // If the clicked element is not the menu
     
-     console.log(this.id);
-
     if (!$(e.target).parents(".custom-menu").length > 0) {
         
         // Hide it
@@ -557,7 +555,8 @@ var valueee = document.getElementById('fid').value;
      <script>
        function rename()
        {
-        console.log(document.getElementById('fid').value);
+        var fidval=$('#fid').val();
+        console.log(fidval);
           // console.log($("#"+idval));
 
        }
