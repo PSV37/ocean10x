@@ -456,7 +456,7 @@ $(document).bind("mousedown", function (e) {
     
     // If the clicked element is not the menu
     
-    
+     console.log(this.id);
 
     if (!$(e.target).parents(".custom-menu").length > 0) {
         
@@ -478,11 +478,7 @@ function check(value)
   // $('#fid').val(value);
 }
 
-$(document)
-    .on('contextmenu', 'li', function(e) {
-        e.preventDefault();
-        console.log(this.id);
-    });
+
 // If the menu element is clicked
 $(".custom-menu li").click(function(){
     
