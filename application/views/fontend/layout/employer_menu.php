@@ -512,8 +512,9 @@ var value = document.getElementById('fid').value;
 
 
         break;
-        case "second": alert("second");
-           $.ajax({
+        case "second": 
+           if (confirm("By deleting this folder all the content of this folder will get deleted!!")) {
+            $.ajax({
                  url:"<?php echo base_url();?>Employer/delete_folder",
                  data: {id:value},
                  type: 'post',
@@ -533,6 +534,10 @@ var value = document.getElementById('fid').value;
                  }
                });
 
+          } else {
+            txt = "You pressed Cancel!";
+          }
+           
          break;
         case "third": alert("third"); break;
     }
