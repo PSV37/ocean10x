@@ -4841,7 +4841,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
         $folder_id=$this->input->post('folder_id');
         $folder_name=$this->input->post('folder_name');
-        if (isset($folder_id) && !empty($folder_id)) {
+        if (isset($folder_id) && !empty($folder_id) && !empty( $folder_name)) {
             $update_data = array(
                 'folder_name' => $folder_name);
             $where11['id'] = $folder_id;
@@ -4850,7 +4850,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
           
         }
       redirect('employer/corporate_cv_bank/'.$folder_id);
-        
+
     }
     
     

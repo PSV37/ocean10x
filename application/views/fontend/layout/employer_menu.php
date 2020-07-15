@@ -73,7 +73,7 @@
     background-color: #DEF;
 }
 button.btn.btn-default {
-    width: 65px;
+    width: 100px;
 }
 
 </style>    
