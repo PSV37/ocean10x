@@ -142,9 +142,9 @@ $employer_id = $this->session->userdata('company_profile_id');
                                  class="active"
                                 <?php } ?>  >
 
-                                           <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row['id'] ?>" > <span  id="r1<?php echo $row['id']; ?>" data-action=" <?php echo $row['id'] ?>"><i class="fas fa-folder-open"></i> <?php echo $row['folder_name']; ?></span></a>
+                                           <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row['id'] ?>" > <span  id="r<?php echo $row['id']; ?>" data-action=" <?php echo $row['id'] ?>"><i class="fas fa-folder-open"></i> <?php echo $row['folder_name']; ?></span></a>
 
-                                           <input type="text" id="ri1<?php echo $row['id']; ?>" class="edit" style="display:none"/ value="<?php echo $row['folder_name']; ?>">
+                                           <input type="text" id="<?php echo $row['id']; ?>" class="edit" style="display:none"/ value="<?php echo $row['folder_name']; ?>">
 
                                              <ul>
                                             <?php 
@@ -537,8 +537,8 @@ var valueee = document.getElementById('fid').value;
          break;
         case "third": alert("third"); 
 
-        alert('ri1'+valueee);
-        // ('#ri1'+valueee).show();
+        alert('ri'+valueee);
+        ('#'+valueee).show();
 
 
 
