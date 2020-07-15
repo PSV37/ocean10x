@@ -504,6 +504,15 @@ $employer_id = $this->session->userdata('company_profile_id');
       </div>
     </div>
   </div>
+
+  <script>
+    $('.right_click ul').hide();
+
+$('.cv').click(function() {
+    $(this).find('ul').slideToggle();
+});
+
+  </script>
  <script>
    // Trigger action when the contexmenu is about to be shown
 $('.right_click').bind("contextmenu", function (event) {
