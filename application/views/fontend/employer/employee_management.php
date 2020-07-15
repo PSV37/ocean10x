@@ -293,7 +293,7 @@ textarea#comment {
            	      <div class="col-md-3">
                     <div class="form-group">                                       
                      <label for="exampleInputEmail1">Employee ID<span class="required">*</span></label>
-                      <input type="number" min="1" name="emp_no" id="emp_no" class="form-control" value="<?php echo $result['emp_no']; ?>" ><?php echo form_error('emp_no'); ?>                    
+                      <input type="text" min="1" name="emp_no" id="emp_no" class="form-control allownumericwithoutdecimal" value="<?php echo $result['emp_no']; ?>" ><?php echo form_error('emp_no'); ?>                    
                     </div>
                   </div>
                   <div class="col-md-3">
@@ -306,7 +306,8 @@ textarea#comment {
                     <div class="form-group">
                       <label for="exampleInputEmail1">Department<span class="required">*</span></label>
                       <select name="dept_id" id="dept_id" class="form-control department" tabindex="-1" aria-hidden="true">
-                        <option value="">Select Department</option>
+                        <option value="">Select</option>
+                        
                           <?php foreach($department as $key){?>
                           <option value="<?php echo $key['dept_id']; ?>"<?php if($result['dept_id'] == $key['dept_id']){ echo "selected"; }?>><?php echo $key['department_name']; ?></option>
                         <?php } ?>
