@@ -72,6 +72,28 @@
 .custom-menu li:hover {
     background-color: #DEF;
 }
+
+.custom-menu1 {
+    display: none;
+    z-index: 1000;
+    position: absolute;
+    overflow: hidden;
+    border: 1px solid #CCC;
+    white-space: nowrap;
+    font-family: sans-serif;
+    background: #FFF;
+    color: #333;
+    border-radius: 5px;
+}
+
+.custom-menu1 li {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.custom-menu1 li:hover {
+    background-color: #DEF;
+}
 button.btn.btn-default {
     width: 100px;
 }
@@ -600,7 +622,7 @@ var valueee = document.getElementById('fid').value;
 
 $(".custom-menu1 li").click(function(){
     
-var valueee = document.getElementById('fid').value;
+var valueee = 0;
     // This is the triggered action name
     switch($(this).attr("data-action")) {
         
