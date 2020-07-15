@@ -132,7 +132,7 @@ $employer_id = $this->session->userdata('company_profile_id');
                                 <?php } ?>>
                                   <a data-dl-view="true" data-dl-title="My profile" href="<?php echo base_url() ?>employer/corporate-cv-bank">
                                     <span class="icon-container"><i class="fas fa-university"></i></span>
-                                    <span class="text item">CV Bank</span>
+                                    <span class="text item cv">CV Bank</span>
                                   </a>
                                   <input type="hidden" name="fid" id="fid">
                                   <div class="row tree well">
@@ -311,6 +311,11 @@ $employer_id = $this->session->userdata('company_profile_id');
   <li data-action = "second">Delete Folder</li>
   <li data-action = "third">Rename Folder</li>
 </ul>
+
+ <ul class='custom-menu-1'>
+  <li data-action = "first">Add Folder</li>
+  
+</ul>
   
   <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -478,22 +483,27 @@ $employer_id = $this->session->userdata('company_profile_id');
  <script>
    // Trigger action when the contexmenu is about to be shown
 $('#submenu').bind("contextmenu", function (event) {
-    
-    // Avoid the real one
-    
+   
     event.preventDefault();
 
-    
-    // Show contextmenu
     $(".custom-menu").finish().toggle(100).
     
-    // In the right position (the mouse)
     css({
         top: event.pageY + "px",
         left: event.pageX + "px"
     });
 });
+$('.cv').bind("contextmenu", function (event) {
+   
+    event.preventDefault();
 
+    $(".custom-menu1").finish().toggle(100).
+    
+    css({
+        top: event.pageY + "px",
+        left: event.pageX + "px"
+    });
+});
 
 // If the document is clicked somewhere
 $(document).bind("mousedown", function (e) {
@@ -505,6 +515,7 @@ $(document).bind("mousedown", function (e) {
         // Hide it
         // alert(e.target).parents()
         $(".custom-menu").hide(100);
+        $(".custom-menu1").hide(100);
     }
     
 });
@@ -586,6 +597,35 @@ var valueee = document.getElementById('fid').value;
     // Hide it AFTER the action was triggered
     $(".custom-menu").hide(100);
   });
+
+$(".custom-menu1 li").click(function(){
+    
+var valueee = document.getElementById('fid').value;
+    // This is the triggered action name
+    switch($(this).attr("data-action")) {
+        
+        // A case for each action. Your actions here
+        case "first": 
+        // alert("first"); 
+          $.ajax({
+                 url:"<?php echo base_url();?>Employer/add_cv_folder",
+                 data: {parent:valueee},
+                 type: 'post',
+                 success: function(response){
+                   
+                   window.location.reload();
+                 }
+               });
+
+
+        break;
+       
+    }
+  
+    // Hide it AFTER the action was triggered
+    $(".custom-menu1").hide(100);
+  });
+ </script> 
  </script>          
               
            
