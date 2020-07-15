@@ -451,7 +451,7 @@ $('#submenu').bind("contextmenu", function (event) {
 });
 
 
-If the document is clicked somewhere
+// If the document is clicked somewhere
 $(document).bind("mousedown", function (e) {
     
     // If the clicked element is not the menu
