@@ -1,5 +1,5 @@
 <!-- <div class="box" > -->
-               <?php print_r($forwarded_job_tracking); $key = 1; if (!empty($forwarded_job_tracking)): foreach ($forwarded_job_tracking as $job_row) : ?>
+               <?php $key = 1; if (!empty($forwarded_job_tracking)): foreach ($forwarded_job_tracking as $job_row) : ?>
                  
                <label>
                   <!-- <div class="check">
