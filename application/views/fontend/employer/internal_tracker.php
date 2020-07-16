@@ -860,7 +860,7 @@ span.select2-selection.select2-selection--single {
    <div class="container">
       <div class="col-md-12">
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
-         <div class="col-md-6 cv_bank">
+         <div class="col-md-9 cv_bank">
             
               <div class="row">
               <!--  <div class="col-md-3">
@@ -940,129 +940,7 @@ span.select2-selection.select2-selection--single {
                
             </div>
          </div>
-         <div class="col-md-3 right_side">
-         <div class="row" style="text-align: justify;margin: 10 auto;width: fit-content;">
-      
-
-
-
-      
-
-
-
- </div>
          
-         
-            <div class="pai_chart">
-               <main>
-                  <section>
-                     <div class="pieID pie">
-                     </div>
-                     <ul class="pieID legend">
-                        <li>
-                           <em>Total cv</em>
-                           <span>5000</span>
-                        </li>
-                        <li>
-                           <em>Active cv</em>
-                           <span>4500</span>
-                        </li>
-                        <li>
-                           <em>Own cv's</em>
-                           <span>3500</span>
-                        </li>
-                        <li>
-                           <em>Consultant cv's</em>
-                           <span>344</span>
-                        </li>
-                     </ul>
-                  </section>
-               </main>
-            </div>
-            <div class="filter1">
-               <p style="font-size:18px;">Domain</p>
-               <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" tabindex="-98">
-                  <optgroup label="Driver Groups">
-                     <option>BEC</option>
-                     <option>VMA</option>
-                  </optgroup>
-                  <optgroup label="Drivers">
-                     <option>Stan</option>
-                     <option>Fanny</option>
-                     <option>Rudy</option>
-                     <option>Ahmed</option>
-                  </optgroup>
-               </select>
-            </div>
-            <div class="filter1">
-               <p style="font-size:18px;margin-top:15px;">Experience</p>
-               <div class="range-wrap">
-                  <input type="range" class="range" min="0" max="20">
-                  <output class="bubble"></output>
-               </div>
-            </div>
-            <div class="filter1">
-               <p style="font-size:18px;margin-top:15px;">Education</p>
-               <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" tabindex="-98">
-                  <optgroup label="Driver Groups">
-                     <option>BEC</option>
-                     <option>VMA</option>
-                  </optgroup>
-                  <optgroup label="Drivers">
-                     <option>Stan</option>
-                     <option>Fanny</option>
-                     <option>Rudy</option>
-                     <option>Ahmed</option>
-                  </optgroup>
-               </select>
-            </div>
-            <div class="filter1">
-               <p style="font-size:18px;margin-top:15px;">Availability</p>
-               <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" tabindex="-98">
-                  <optgroup label="Driver Groups">
-                     <option>BEC</option>
-                     <option>VMA</option>
-                  </optgroup>
-                  <optgroup label="Drivers">
-                     <option>Stan</option>
-                     <option>Fanny</option>
-                     <option>Rudy</option>
-                     <option>Ahmed</option>
-                  </optgroup>
-               </select>
-            </div>
-            <div class="filter1">
-               <p style="font-size:18px;margin-top:15px;">Current CTC</p>
-               <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" tabindex="-98">
-                  <optgroup label="Driver Groups">
-                     <option>BEC</option>
-                     <option>VMA</option>
-                  </optgroup>
-                  <optgroup label="Drivers">
-                     <option>Stan</option>
-                     <option>Fanny</option>
-                     <option>Rudy</option>
-                     <option>Ahmed</option>
-                  </optgroup>
-               </select>
-            </div>
-            <div class="filter1">
-               <p style="font-size:18px;margin-top:15px;">Stability Filter</p>
-               <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" tabindex="-98">
-                  <optgroup label="Driver Groups">
-                     <option>BEC</option>
-                     <option>VMA</option>
-                  </optgroup>
-                  <optgroup label="Drivers">
-                     <option>Stan</option>
-                     <option>Fanny</option>
-                     <option>Rudy</option>
-                     <option>Ahmed</option>
-                  </optgroup>
-               </select>
-            </div>
-            <button class="reset_filter">Reset Filter</button>
-         </div>
       </div>
    </div>
 </div>
