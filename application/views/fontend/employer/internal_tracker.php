@@ -128,6 +128,11 @@
    -webkit-transform: rotateX(180deg);
    }
    */
+   .card
+   {
+    overflow-x: scroll;
+}
+
    .active-job {
    margin-top:168px;
    }
