@@ -923,7 +923,7 @@ span.select2-selection.select2-selection--single {
            
             <div class="row" id="bulk">
                <div class="col-md-6"></div>
-               <div class="col-md-4">
+               <div class="col-md-6">
                   <label class="dropdown">
                     <a style="float: right;" href="<?php echo base_url() ?>employer/add-new-cv"><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New Candidate</button></a>
                      
