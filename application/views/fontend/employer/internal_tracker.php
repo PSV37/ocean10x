@@ -489,7 +489,7 @@ input {
 
 
 });
-   function editrow(id)
+   function editRow(id)
    {
       alert(id);
    }
