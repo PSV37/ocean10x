@@ -4,7 +4,7 @@
                <label>
                   <!-- <div class="check">
                     
-                     <input type="checkbox" value="<?php echo $job_row['js_email']; ?>" data-valuetwo="<?php echo $job_row['cv_id'];  ?>" data-valueone="<?php if(isset($job_row['js_resume']) && !empty($job_row['js_resume'])){ echo $job_row['js_resume']; } ?>" class="chkbx" />
+                     
                   </div>  -->
                   <div class="card content">
                      <div class="front">
