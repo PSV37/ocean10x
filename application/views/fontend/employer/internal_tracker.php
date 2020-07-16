@@ -473,7 +473,8 @@ li.right-title {
       </div>
    </div>
 </div>
-
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
+<script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 <script>
    $('.select2').select2();
 </script>
@@ -484,6 +485,7 @@ li.right-title {
 
 
 });
+   
     var myTable = $('#myTable').DataTable();
  
 $('#myTable').on( 'click', 'tbody tr', function () {
