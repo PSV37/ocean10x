@@ -33,8 +33,7 @@
 
                            <li class="left-title">Current Sal</li>
                            <li class="right-title">&nbsp;:<?php echo $job_row->js_career_salary; ?></li>
-                         <!--   <li class="left-title">SkillSet</li>
-                           <li class="right-title">&nbsp;: <?php echo $job_row['js_skill_set']; ?></li> -->
+                         
                           
                            <div class="clear"></div>
                         </div>
@@ -58,14 +57,8 @@
                         <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                         </button>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
-                           <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal<?php echo $job_row['cv_id']; ?>" >Forward Job Post</a></li>
-                        <?php if(isset($job_row['js_resume']) && !empty($job_row['js_resume'])){ ?>
-                           <li id="div_download"> <a class="dropdown-item"  href="<?php if(isset($job_row['js_resume']) && !empty($job_row['js_resume'])){ echo base_url(); echo 'upload/Resumes/'.$job_row['js_resume']; } ?>" download >Download this cv</a></li>
-                           <?php } ?>
-
-                           <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-target="#move_cv<?php echo $job_row['cv_id']; ?>" href="#">Move this CV</a></li>
-                        </div>
+                        
+                        
                      </div>
                   </div>
                </label>
