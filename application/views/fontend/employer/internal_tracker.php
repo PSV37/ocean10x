@@ -492,7 +492,7 @@ input {
    function editRow(id)
    {
        $("#email"+id).attr("readonly", false); 
-      alert(id);
+      alert("#email"+id);
    }
 
     function tracker_card(job_id)

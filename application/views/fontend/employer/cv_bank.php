@@ -1542,8 +1542,6 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
              if (this.checked) 
             {
                 $("#gedf-drop1").hide();
-               
-
              
             }
             else
