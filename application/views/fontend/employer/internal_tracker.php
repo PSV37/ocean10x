@@ -482,9 +482,12 @@ li.right-title {
      var job_id = $('#job_select').val();
      tracker_card(job_id);
 
-      $('.editbtn').click(function () {
+
+});
+    $(document).ready(function () {
+          $('.editbtn').click(function () {
               var currentTD = $(this).parents('tr').find('td');
-              alert (currentTD);
+              alert(currentTD);
               if ($(this).html() == 'Edit') {
                   currentTD = $(this).parents('tr').find('td');
                   $.each(currentTD, function () {
@@ -500,7 +503,7 @@ li.right-title {
     
           });
     
-});
+      });
     function tracker_card(job_id)
   {
      
