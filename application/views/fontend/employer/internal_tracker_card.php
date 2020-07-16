@@ -41,17 +41,17 @@
                             </thead>
                             <tbody>
                               <tr>
-                                <td id="email<?php echo $job_row->job_seeker_id; ?>"><input type="text" name="email" value="<?php echo $job_row->js_email; ?>" ></td>
+                                <td ><input id="email<?php echo $job_row->job_seeker_id; ?>" type="text" name="email" value="<?php echo $job_row->js_email; ?>" ></td>
 
-                                <td id="mobile<?php echo $job_row->job_seeker_id; ?>"><input type="text" name="mobile" value="<?php echo $job_row->js_mobile; ?>" ></td>
+                                <td ><input id="mobile<?php echo $job_row->job_seeker_id; ?>" type="text" name="mobile" value="<?php echo $job_row->js_mobile; ?>" ></td>
 
-                                <td id="ctc<?php echo $job_row->job_seeker_id; ?>"><input type="text" name="ctc" value="<?php echo $job_row->js_current_ctc; ?>" ></td>
+                                <td ><input id="ctc<?php echo $job_row->job_seeker_id; ?>" type="text" name="ctc" value="<?php echo $job_row->js_current_ctc; ?>" ></td>
 
-                                <td id="exp<?php echo $job_row->job_seeker_id; ?>"><input type="text" name="exp" value="<?php echo $job_row->js_experience; ?>" ></td>
+                                <td ><input id="exp<?php echo $job_row->job_seeker_id; ?>" type="text" name="exp" value="<?php echo $job_row->js_experience; ?>" ></td>
 
-                                <td id="notice<?php echo $job_row->job_seeker_id; ?>"><input type="text" name="notice" value="<?php echo $job_row->js_current_notice_period; ?>" ></td>
+                                <td ><input id="notice<?php echo $job_row->job_seeker_id; ?>" type="text" name="notice" value="<?php echo $job_row->js_current_notice_period; ?>" ></td>
 
-                                <td id="edu<?php echo $job_row->job_seeker_id; ?>"><input type="text" name="edu" value="<?php echo $job_row->education_level_name; ?>" ></td>
+                                <td ><input id="edu<?php echo $job_row->job_seeker_id; ?>" type="text" name="edu" value="<?php echo $job_row->education_level_name; ?>" ></td>
 
                                 <td><input type="text" name="email" value="<?php echo $job_row->cv_id; ?>" ></td>
                                 <td ><a></a></td>
