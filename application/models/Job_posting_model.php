@@ -214,16 +214,14 @@ order by RAND() limit 3");
     public function get_job_forwarded_candidate($job_id)
     {
         $this->db->select('*');
-        $this->db->from('job_apply');
-        $this->db->where('job_apply.job_post_id', $job_id);
+        $this->db->from('forwarded_jobs_cv');
+        $this->db->where('forwarded_jobs_cv.job_post_id', $job_id);
         $this->db->where('forword_job_status',"1");
-        $this->db->join('job_posting','job_posting.job_post_id=job_apply.job_post_id');
-        $this->db->join('js_info','js_info.job_seeker_id=job_apply.job_seeker_id','left');
-        $this->db->join('js_career_info','js_career_info.job_seeker_id=job_apply.job_seeker_id','left');
-        $this->db->join('js_education','js_education.job_seeker_id=job_apply.job_seeker_id','left');
-        $this->db->join('education_level','education_level.education_level_id=js_education.education_level_id','left');
-        $this->db->order_by('job_apply.updated_on','desc');
-        $this->db->group_by('job_apply.job_seeker_id');
+        $this->db->join('corporate_cv_bank','corporate_cv_bank.cv_id=forwarded_jobs_cv.cv_id');
+        
+        $this->db->join('education_level','education_level.education_level_id=corporate_cv_bank.js_top_education','left');
+        $this->db->order_by('forwarded_jobs_cv.id','desc');
+        // $this->db->group_by('job_apply.job_seeker_id');
        
         // $job_types = array('1', '3', '4','5','6');
         // $this->db->where_in('job_types',$job_types);

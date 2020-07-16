@@ -20,7 +20,7 @@
                         <?php } ?>
                         <div class="job-info">
                            <div class="a">
-                              <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $job_row->full_name; ?></li>
+                              <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $job_row->js_name; ?></li>
                            </div>
                         </div>
                         <div class="following-info">
@@ -41,15 +41,15 @@
                             </thead>
                             <tbody>
                               <tr>
-                                <td id="email<?php echo $job_row->job_seeker_id; ?>"><input type="text" name="email" value="<?php echo $job_row->email; ?>" ></td>
-                                <td><?php echo $job_row->mobile_no; ?></td>
-                                <td><?php echo $job_row->js_career_salary; ?></td>
-                                <td><?php echo $job_row->js_career_exp; ?></td>
-                                <td><?php echo $job_row->notice_period; ?></td>
+                                <td id="email<?php echo $job_row->job_seeker_id; ?>"><input type="text" name="email" value="<?php echo $job_row->js_email; ?>" ></td>
+                                <td><?php echo $job_row->js_mobile; ?></td>
+                                <td><?php echo $job_row->js_current_ctc; ?></td>
+                                <td><?php echo $job_row->js_experience; ?></td>
+                                <td><?php echo $job_row->js_current_notice_period; ?></td>
                                 <td><?php echo $job_row->education_level_name; ?></td>
-                                <td><?php echo $job_row->apply_status; ?></td>
-                                <td onclick="saveRow(<?php echo $job_row->job_seeker_id; ?>);"><a>save</a></td>
-                                <td onclick="editRow(<?php echo $job_row->job_seeker_id; ?>);"><a>Edit</a></td>
+                                <td><?php echo $job_row->cv_id; ?></td>
+                                <td onclick="saveRow(<?php echo $job_row->cv_id; ?>);"><a>save</a></td>
+                                <td onclick="editRow(<?php echo $job_row->cv_id; ?>);"><a>Edit</a></td>
 
 
                               </tr>
