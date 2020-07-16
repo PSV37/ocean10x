@@ -487,7 +487,10 @@ li.right-title {
 </script>
 <script>
    
-
+function check()
+{
+   alert('check');
+}
 
           $('.editbtn').click(function() {
             alert('gg');

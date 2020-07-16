@@ -46,7 +46,7 @@
                                 <td><?php echo $job_row->notice_period; ?></td>
                                 <td><?php echo $job_row->education_level_name; ?></td>
                                 <td><?php echo $job_row->apply_status; ?></td>
-                                 <td><button class="editbtn">Edit</button></td>
+                                 <td><button class="editbtn" onclick="check();">Edit</button></td>
                               </tr>
                             
                             </tbody>
