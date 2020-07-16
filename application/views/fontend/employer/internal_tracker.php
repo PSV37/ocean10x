@@ -852,7 +852,7 @@ ul#select2-folder_id-y3-results {
     margin-top: 27px;
 }
 span.select2-selection.select2-selection--single {
-    width: 330px;
+    /*width: 330px;*/
     text-align: center;
 }
 </style>
@@ -865,9 +865,9 @@ span.select2-selection.select2-selection--single {
               <div class="row">
               <!--  <div class="col-md-3">
                   
-                  <form clas -->s="navbar-form" role="search">
+                  <form clas s="navbar-form" role="search">
                      
-                   <!--  <input type="text" id="myInput" class="form-control" placeholder="Search with Email or Name or Number" style="width: 100%"> -->
+                    <input type="text" id="myInput" class="form-control" placeholder="Search with Email or Name or Number" style="width: 100%"> -->
                   <!--  <p>Job Post Activity</p>
                  
 
@@ -922,10 +922,10 @@ span.select2-selection.select2-selection--single {
             </div>
            
             <div class="row" id="bulk">
-               
+               <div class="col-md-6"></div>
                <div class="col-md-4">
                   <label class="dropdown">
-                    <a href="<?php echo base_url() ?>employer/add-new-cv"><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New Candidate</button></a>
+                    <a style="float: right;" href="<?php echo base_url() ?>employer/add-new-cv"><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New Candidate</button></a>
                      
                   </label>
                </div>
