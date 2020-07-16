@@ -14,6 +14,8 @@
    
    label.error {
     color: red;
+    font-weight: normal !important;
+    font-style: italic;
 }
    
 </style>
@@ -325,7 +327,7 @@ textarea#comment {
            	      <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Email-Id<span class="required">*</span></label>
-                      <input type="email" name="email" id="email" class="form-control select2" value="<?php echo $result['email']; ?>" ><?php echo form_error('email'); ?>
+                      <input type="email" name="email" id="email" class="form-control" value="<?php echo $result['email']; ?>" ><?php echo form_error('email'); ?>
                     </div>
                   </div>
                   <div class="col-md-3">
@@ -337,8 +339,9 @@ textarea#comment {
                   <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Designation<span class="required">*</span></label>
-                      <select class="form-control" name="user_role" id="user_role" onchange="getuseraccess(this.value);" >
-                        <option value="">Select designation</option>
+                      <select class="form-control department select2" name="user_role" id="user_role" onchange="getuseraccess(this.value);" >
+                        <option value="">Select</option>
+                        
                           <?php foreach($roles as $key){?>
                           <option value="<?php echo $key['user_role_id']; ?>"<?php if($result['user_role'] == $key['user_role_id']){ echo "selected"; }?>><?php echo $key['user_roles']; ?>
                           </option>
@@ -359,8 +362,8 @@ textarea#comment {
                 <div class="col-md-3">
                   <div class="formrow">
                     <label class="control-label">Country: <span class="required">*</span></label>
-                    <select name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)" >
-                      <option value="">Select Country</option>
+                    <select name="country_id " id="country_id" class="form-control department select2" >
+                      <option value="">Select</option>
                         <?php foreach($country as $key){?>
                         <option value="<?php echo $key['country_id']; ?>"<?php if($result['country_id']==$key['country_id']){ echo "selected"; } elseif ($key['country_name']=='India') {echo "selected";}?>><?php echo $key['country_name']; ?></option>
                         <?php } ?>
@@ -370,16 +373,16 @@ textarea#comment {
                 <div class="col-md-3">
                   <div class="formrow">
                     <label class="control-label">State: <span class="required">*</span></label>
-                    <select name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)" required="">
-                      <option value="">Select State</option>
+                    <select name="state_id" id="state_id" class="form-control department select2" >
+                      <option value="">Select</option>
                     </select>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="formrow">
                     <label class="control-label">City: <span class="required">*</span></label>
-                    <select name="city_id" id="city_id" class="form-control" >
-                      <option value="">Select City</option>
+                    <select name="city_id" id="city_id" class="form-control department select2" >
+                      <option value="">Select</option>
                     </select>
                   </div>
                 </div>  
@@ -398,7 +401,7 @@ textarea#comment {
               </div>
               <div class="row">
                 <div class="col-md-6">
-                 <select name="emp_status" class="form-control">
+                 <select name="emp_status" class="form-control select2">
                       <option value="">Select</option>
                       <option value="1"<?php if($result['emp_status']=='1'){ echo "selected"; } ?>>Active</option>
                       <option value="2"<?php if($result['emp_status']=='2'){ echo "selected"; } ?>>Inactive</option>
@@ -406,7 +409,7 @@ textarea#comment {
                 </div>
                 <?php if(isset($result)) { ?>
                  <div class="col-md-6" style="text-align:end;">
-                  <button type="Submit"  class="btn btn-update">Upadate</button>
+                  <button type="Submit"  class="btn btn-update">Update</button>
                 </div>
               <?php  } else { ?>
                  <div class="col-md-6" style="text-align:end;">
@@ -750,11 +753,6 @@ required: true
 
 },
 
-'user_role':{
-
-required: true
-
-},
 
 'pincode':{
 
@@ -762,11 +760,7 @@ required: true
 
 },
 
-'address':{
 
-required: true
-
-}
 
 },
 
@@ -812,6 +806,12 @@ required: "This field is mandatory!"
 
 },
 
+'user_role':{
+
+required: "This field is mandatory!"
+
+},
+
 'user_acc[]':{
 
 required: "This field is mandatory!"
@@ -844,11 +844,7 @@ pincode_regex: true
 
 },
 
-'address':{
 
-required: "This field is mandatory!"
-
-}
 
 
 
