@@ -874,7 +874,7 @@ span.select2-selection.select2-selection--single {
                      <select class="form-control select2">
                      <?php if (isset($company_active_jobs) && !empty($company_active_jobs)) {
                         foreach ($company_active_jobs as $row) { ?>
-                          <option value="<?php echo $row['job_post_id']; ?>"><?php echo $row['job_title']; ?></option>
+                          <option value="<?php echo $row->job_post_id; ?>"><?php echo $row->job_title; ?></option>
                      <?php   }
                      } ?>
                      </select>
