@@ -16,7 +16,7 @@
    display: inline-block;
    position: relative;
    }
-  .dd-button {
+ .dd-button {
     display: inline-block;
     border: 1px solid #dedede;
     border-radius: 4px;
@@ -27,7 +27,7 @@
     white-space: nowrap;
     border-radius: 33px;
     margin-right: 15px;
-    margin-top: 10px;
+    margin-top: 0px;
     color: #fff;
     margin-left: 13px;
     font-size: 12px;
@@ -390,6 +390,11 @@ span.select2-selection.select2-selection--single {
 }
 ul#select2-job_select-results {
     margin-top: 30px;
+}
+button.btn.btn-primary {
+    background-color: #18c5bd;
+    border: none;
+    border-radius: 30px;
 }
 </style>
 <div class="container-fluid main-d">
