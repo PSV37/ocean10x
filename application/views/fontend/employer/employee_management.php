@@ -197,6 +197,13 @@ textarea#comment {
     max-width: 865px;
     max-height: 150px;
 }
+ul#select2-dept_id-results {
+    margin-top: 30px;
+}
+input.select2-search__field {
+    display: inline-block;
+    border-radius: 0px;
+}
 </style>
 
 
