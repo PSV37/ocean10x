@@ -34,7 +34,6 @@
                                 <th scope="col">Notice (days)</th>
                                 <th scope="col">Education</th>
                                 <th scope="col">Status</th>
-                                <th scope="col">Action</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -46,7 +45,7 @@
                                 <td><?php echo $job_row->notice_period; ?></td>
                                 <td><?php echo $job_row->education_level_name; ?></td>
                                 <td><?php echo $job_row->apply_status; ?></td>
-                                 <td><button class="editbtn" onclick="check();">Edit</button></td>
+
                               </tr>
                             
                             </tbody>
@@ -87,7 +86,7 @@
                         <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
-                           <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal>" >Edit</a></li>
+                           <li ><a class="dropdown-item" href="#" id="edit"  >Edit</a></li>
                        
 
                            <li id="div_download"> <a class="dropdown-item"  href="" download >Delete</a></li>

@@ -484,48 +484,10 @@ li.right-title {
 
 
 });
-</script>
-<script>
-   
-function check()
-{
-   alert('check');
-   var currentTD = $(this).parents('tr').find('td');
-              alert(currentTD);
-              if ($(this).html() == 'Edit') {
-                  currentTD = $(this).parents('tr').find('td');
-                  $.each(currentTD, function () {
-                      $(this).prop('contenteditable', true)
-                  });
-              } else {
-                 $.each(currentTD, function () {
-                      $(this).prop('contenteditable', false)
-                  });
-              }
-    
-              $(this).html($(this).html() == 'Edit' ? 'Save' : 'Edit')
-}
+    $('#edit').click(function () {
+      alert('edit');
+    }
 
-         $( "table" ).delegate( ".editbtn", "click", function() {
-            alert('gg');
-              var currentTD = $(this).parents('tr').find('td');
-              alert(currentTD);
-              if ($(this).html() == 'Edit') {
-                  currentTD = $(this).parents('tr').find('td');
-                  $.each(currentTD, function () {
-                      $(this).prop('contenteditable', true)
-                  });
-              } else {
-                 $.each(currentTD, function () {
-                      $(this).prop('contenteditable', false)
-                  });
-              }
-    
-              $(this).html($(this).html() == 'Edit' ? 'Save' : 'Edit')
-    
-          });
-    
-  
     function tracker_card(job_id)
   {
      
