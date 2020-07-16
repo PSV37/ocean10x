@@ -217,12 +217,12 @@ order by RAND() limit 3");
         $this->db->from('job_apply');
         $this->db->where('job_apply.job_post_id', $job_id);
         $this->db->where('forword_job_status',"1");
-        $this->db->order_by('desc','job_apply.updated_on');
         $this->db->join('job_posting','job_posting.job_post_id=job_apply.job_post_id');
         $this->db->join('js_info','js_info.job_seeker_id=job_apply.job_seeker_id','left');
         $this->db->join('js_career_info','js_career_info.job_seeker_id=job_apply.job_seeker_id','left');
         $this->db->join('js_education','js_education.job_seeker_id=job_apply.job_seeker_id','left');
         $this->db->join('education_level','education_level.education_level_id=js_education.education_level_id','left');
+        $this->db->order_by('desc','updated_on');
        
         // $job_types = array('1', '3', '4','5','6');
         // $this->db->where_in('job_types',$job_types);
