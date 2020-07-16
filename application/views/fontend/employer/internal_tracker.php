@@ -861,13 +861,20 @@ span.select2-selection.select2-selection--single {
       <div class="col-md-12">
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
          <div class="col-md-6 cv_bank">
-            <div class="row">
-               <div class="col-md-12">
-                    <button class="folder_popup" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal_add" style="float: right;">Create&emsp;<i class="fas fa-folder-open"></i></button>
-               </div>
-            </div>
+            
               <div class="row">
-               <div class="col-md-6">
+               <div class="col-md-3">
+                  
+                  <form class="navbar-form" role="search">
+                     
+                   <!--  <input type="text" id="myInput" class="form-control" placeholder="Search with Email or Name or Number" style="width: 100%"> -->
+                   <p>Job Post Activity</p>
+                 
+
+                  </form>
+                  <div class="clear"></div>
+               </div>
+               <div class="col-md-3">
                   
                   <form class="navbar-form" role="search">
                      
@@ -878,7 +885,7 @@ span.select2-selection.select2-selection--single {
                      <?php   }
                      } ?>
                      </select>
-                         <input type="text" id="myInput" class="form-control" placeholder="Search with Email or Name or Number" style="width: 100%">
+                       
                  
 
                   </form>
@@ -888,7 +895,7 @@ span.select2-selection.select2-selection--single {
                   <form method="post" action="<?php echo base_url(); ?>employer/corporate_cv_bank">
                   <label class="dropdown" style="float:right;">
                      <div class="dd-button">
-                        Sort by
+                        Active Job
                      </div>
                      <input type="checkbox" class="dd-input" id="test">
                      <!-- <ul class="dd-menu" id="test"> -->
@@ -897,9 +904,9 @@ span.select2-selection.select2-selection--single {
                         <!-- <li value="edu">Education</li> -->
                      <!-- </ul> -->
                      <ul id="sizelist" class="dd-menu">
-                       <li data-value="js_name" ><a href="#">Name</a></li>
-                       <li data-value="js_experience"><a href="#">Experience</a></li>
-                       <li data-value="js_top_education"><a href="#">Education</a></li>
+                       <li data-value="js_name" ><a href="#">Active Job</a></li>
+                       <li data-value="js_experience"><a href="#">Expired Jobs</a></li>
+                     
                        
                      </ul>
 
@@ -910,7 +917,7 @@ span.select2-selection.select2-selection--single {
                   </form>
                </div>
                <div class="col-md-3">
-                  <a href="<?php echo base_url() ?>employer/add-new-cv"><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New CV</button></a>
+                <p>Posted On:</p>
                </div>
             </div>
            
@@ -918,48 +925,16 @@ span.select2-selection.select2-selection--single {
                
                <div class="col-md-4">
                   <label class="dropdown">
-                  
-                     <input type="checkbox" name="bulk_forward" id="checkAll" style="font-weight:500">&nbsp;Forward
-                     <button type="button" id="frwd_btn" class="btn btn-primary" onclick="frwd_post();">Forward Job</button>
+                    <a href="<?php echo base_url() ?>employer/add-new-cv"><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New Candidate</button></a>
                      
                   </label>
                </div>
-               <div class="col-md-4">
-                  <label class="dropdown">
-                
-                     <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp;  Move
-                     <button type="button" id="frwd_btn" class="btn btn-primary" onclick="move_cvs();">Move CV</button>
-                   
-                  </label>
-               </div>
-
-               <div class="col-md-4">
-                  <label class="dropdown">
-                
-                     <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp; Download
-                     <button type="button" id="frwd_btn" class="btn btn-primary" onclick="download_cvs();">Download CV</button>
-                   
-                  </label>
-               </div>
-
+              
             
               
             </div>
-           <div class="row" id="bulk">
-               
-             
+         
 
-               <div class="col-md-6">
-                  <label class="dropdown">
-                  
-                     <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp;  Upload
-                     <button type="button" id="frwd_btn" class="btn btn-primary" data-toggle="modal" data-target="#bulkupload">Bulk Upload</button>
-                    
-                  </label>
-               </div>
-            
-              
-            </div>
 
             <div class="box" >
                <?php $key = 1; if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) : 
