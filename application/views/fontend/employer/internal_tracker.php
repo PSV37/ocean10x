@@ -506,7 +506,7 @@ function check()
               $(this).html($(this).html() == 'Edit' ? 'Save' : 'Edit')
 }
 
-          $('.editbtn').click(function() {
+         $( "table" ).delegate( ".editbtn", "click", function() {{
             alert('gg');
               var currentTD = $(this).parents('tr').find('td');
               alert(currentTD);
