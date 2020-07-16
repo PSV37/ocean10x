@@ -1657,7 +1657,7 @@ class Employer extends MY_Employer_Controller
                         'updated_on' => date('Y-m-d'),
                         'mandatory_parameters' => implode(',', $mandatory)
                     );
-                    $whereres  = "job_seeker_id='$seeker_id' and company_id = '$employer_id' and job_post_id = '$job_post_id";
+                    $whereres  = "job_seeker_id='$seeker_id' and company_id = '$employer_id' and job_post_id = '$job_post_id'";
                     $job_apply_data = $this->Master_model->get_master_row('job_apply', $select = FALSE, $whereres);
                     if (empty($job_apply_data)) {
                          $apply       = $this->Master_model->master_insert($apply_array, 'job_apply');
