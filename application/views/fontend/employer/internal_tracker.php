@@ -492,6 +492,18 @@ function check()
    alert('check');
    var currentTD = $(this).parents('tr').find('td');
               alert(currentTD);
+              if ($(this).html() == 'Edit') {
+                  currentTD = $(this).parents('tr').find('td');
+                  $.each(currentTD, function () {
+                      $(this).prop('contenteditable', true)
+                  });
+              } else {
+                 $.each(currentTD, function () {
+                      $(this).prop('contenteditable', false)
+                  });
+              }
+    
+              $(this).html($(this).html() == 'Edit' ? 'Save' : 'Edit')
 }
 
           $('.editbtn').click(function() {
