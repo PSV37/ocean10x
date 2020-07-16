@@ -45,7 +45,7 @@
                           
 
                            <li class="left-title">Notice Period </li>
-                           <li class="right-title">&nbsp;:<?php echo $job_row->notice_period; ?></li>
+                           <li class="right-title">&nbsp;:<?php echo $job_row->job_seeker_id; ?></li>
 
                            <li class="left-title">Education</li>
                            <li class="right-title">&nbsp;:<?php echo $job_row->education_level_name; ?></li>
@@ -58,7 +58,7 @@
                         <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                         </button>
                         
-                        
+
                      </div>
                   </div>
                </label>
