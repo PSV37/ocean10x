@@ -4853,5 +4853,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
     }
     
-    
+    public function internal_tracker()
+    {
+
+        $this->session->unset_userdata('activemenu');
+        $data['activemenu'] = 'internal_tracker';
+        $this->session->set_userdata($data);
+        $employer_id = $this->session->userdata('company_profile_id');
+        $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
+        $this->load->view('fontend/employer/internal_tracker.php', compact('company_active_jobs', 'employer_id'));
 } // end class
