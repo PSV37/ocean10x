@@ -36,6 +36,7 @@
                                 <th scope="col">Status</th>
                                 <th scope="col">Comments</th>
                                 <th scope="col">Updated By</th>
+                                <th scope="col">Action</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -47,10 +48,10 @@
                                 <td><?php echo $job_row->notice_period; ?></td>
                                 <td><?php echo $job_row->education_level_name; ?></td>
                                 <td><?php echo $job_row->apply_status; ?></td>
-                                <td onclick="editRow(<?php echo $job_row->job_seeker_id; ?>);"><a>Edit</a></td>
+                                <td onclick="saveRow(<?php echo $job_row->job_seeker_id; ?>);"><a>save</a></td>
                                 <td onclick="editRow(<?php echo $job_row->job_seeker_id; ?>);"><a>Edit</a></td>
 
-                                
+
                               </tr>
                             
                             </tbody>

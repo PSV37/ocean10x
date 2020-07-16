@@ -1634,6 +1634,7 @@ class Employer extends MY_Employer_Controller
                     $where_cv = "js_email='$email[$i]' and company_id='$employer_id'";
                      $cv_data = $this->Master_model->getMaster('corporate_cv_bank', $where_cv);
 
+
                      if (empty($cv_data)) {
 
                          $cv_array = array(
@@ -1647,6 +1648,12 @@ class Employer extends MY_Employer_Controller
                       
                     );
                     $add_cv  = $this->Master_model->master_insert($cv_array, 'corporate_cv_bank');
+                        $cv_id=$add_cv;
+                     }
+                     else
+                     {
+                        $cv_id=$cv_data[0]['cv_id'];
+
                      }
                     
                     $apply_array = array(
@@ -1658,9 +1665,21 @@ class Employer extends MY_Employer_Controller
                         'mandatory_parameters' => implode(',', $mandatory)
                     );
                     $whereres  = "job_seeker_id='$seeker_id' and company_id = '$employer_id' and job_post_id = '$job_post_id'";
-                    $job_apply_data = $this->Master_model->get_master_row('job_apply', $select = FALSE, $whereres);
+                    $job_apply_data = $this->Master_model->get_master_row('
+                        job_apply', $select = FALSE, $whereres);
                     if (empty($job_apply_data)) {
                          $apply       = $this->Master_model->master_insert($apply_array, 'job_apply');
+
+                           $frwd_array = array(
+                        'cv_id' => $cv_id,
+                        'company_id' => $employer_id,
+                        'job_post_id' => $job_post_id,
+                        'apply_id' => $apply,
+                        'status' => 1,
+                       
+                    );
+                        $frwd = $this->Master_model->master_insert($frwd_array, 'forwarded_jobs_cv');
+
                     }
                    
                     
