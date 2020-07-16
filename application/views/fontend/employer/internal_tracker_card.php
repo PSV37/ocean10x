@@ -38,7 +38,7 @@
                             </thead>
                             <tbody>
                               <tr>
-                                <td id="email<?php echo $job_row->job_seeker_id; ?>"><input type="text" name="email" readonly value="<?php echo $job_row->email; ?>" ></td>
+                                <td id="email<?php echo $job_row->job_seeker_id; ?>"><input type="text" name="email" value="<?php echo $job_row->email; ?>" ></td>
                                 <td><?php echo $job_row->mobile_no; ?></td>
                                 <td><?php echo $job_row->js_career_salary; ?></td>
                                 <td><?php echo $job_row->js_career_exp; ?></td>
