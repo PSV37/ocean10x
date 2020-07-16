@@ -484,6 +484,7 @@ li.right-title {
 
       $('.editbtn').click(function () {
               var currentTD = $(this).parents('tr').find('td');
+              alert (currentTD);
               if ($(this).html() == 'Edit') {
                   currentTD = $(this).parents('tr').find('td');
                   $.each(currentTD, function () {
