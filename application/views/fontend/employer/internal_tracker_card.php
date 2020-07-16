@@ -89,7 +89,7 @@
                        
 
                            <li id="div_download"> <a class="dropdown-item"  href="" download >Delete</a></li>
-                           <?php } ?>
+                           <?php ?>
 
                         </div>
 
