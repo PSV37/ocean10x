@@ -38,14 +38,14 @@
                             </thead>
                             <tbody>
                               <tr>
-                                <td><?php echo $job_row->email; ?></td>
+                                <td><input type="text" name="" value="<?php echo $job_row->email; ?>"></td>
                                 <td><?php echo $job_row->mobile_no; ?></td>
                                 <td><?php echo $job_row->js_career_salary; ?></td>
                                 <td><?php echo $job_row->js_career_exp; ?></td>
                                 <td><?php echo $job_row->notice_period; ?></td>
                                 <td><?php echo $job_row->education_level_name; ?></td>
                                 <td><?php echo $job_row->apply_status; ?></td>
-
+                                <td onclick="editRow(this.row)"><a>Edit</a></td>
                               </tr>
                             
                             </tbody>

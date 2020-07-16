@@ -477,6 +477,7 @@ li.right-title {
 <script>
    $('.select2').select2();
 </script>
+
 <script>
    $( document ).ready(function() {
      var job_id = $('#job_select').val();
@@ -488,6 +489,7 @@ li.right-title {
       alert('edit');
     });
 
+   
     function tracker_card(job_id)
   {
      
