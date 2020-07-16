@@ -4897,16 +4897,15 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
              $this->load->view('fontend/employer/internal_tracker_card.php', compact('forwarded_job_tracking', 'employer_id'));
         }
     }
-
-    function update_cv()
+ function update_cv()
     {
-        $update_cv['email'] = $this->db->input->post('email');
-        $update_cv['mobile'] = $this->db->input->post('mobile');
-        $update_cv['ctc'] = $this->db->input->post('ctc');
-        $update_cv['exp'] = $this->db->input->post('exp');
-        $update_cv['notice'] = $this->db->input->post('notice');
-        $update_cv['edu'] = $this->db->input->post('edu');
-        $where_cv['cv_id'] = $this->db->input->post('id');
+        $update_cv['email'] = $this->input->post('email');
+        $update_cv['mobile'] = $this->input->post('mobile');
+        $update_cv['ctc'] = $this->input->post('ctc');
+        $update_cv['exp'] = $this->input->post('exp');
+        $update_cv['notice'] = $this->input->post('notice');
+        $update_cv['edu'] = $this->input->post('edu');
+        $where_cv['cv_id'] = $this->input->post('id');
         $this->Master_model->master_update($update_cv, 'corporate_cv_bank', $where_cv);
     }
 } // end class
