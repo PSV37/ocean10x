@@ -490,6 +490,8 @@ li.right-title {
 function check()
 {
    alert('check');
+   var currentTD = $(this).parents('tr').find('td');
+              alert(currentTD);
 }
 
           $('.editbtn').click(function() {
