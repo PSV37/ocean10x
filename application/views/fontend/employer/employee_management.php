@@ -305,7 +305,7 @@ textarea#comment {
                   <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Department<span class="required">*</span></label>
-                      <select name="dept_id" id="dept_id" class="form-control department" tabindex="-1" aria-hidden="true">
+                      <select name="dept_id" id="dept_id" class="form-control department select2" tabindex="-1" aria-hidden="true">
                         <option value="">Select</option>
                         
                           <?php foreach($department as $key){?>
@@ -325,7 +325,7 @@ textarea#comment {
            	      <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Email-Id<span class="required">*</span></label>
-                      <input type="email" name="email" id="email" class="form-control" value="<?php echo $result['email']; ?>" ><?php echo form_error('email'); ?>
+                      <input type="email" name="email" id="email" class="form-control select2" value="<?php echo $result['email']; ?>" ><?php echo form_error('email'); ?>
                     </div>
                   </div>
                   <div class="col-md-3">
@@ -898,6 +898,17 @@ return this.optional(element) || /^[1-9][0-9][0-9][0-9][0-9][0-9]$/.test(value);
 
 
 </script>
+
+<script>
+   $('.select2').select2();
+</script>
+<script src="<?php echo base_url(); ?>asset/src/jquery.tokeninput.js"></script>
+<script src="<?php echo base_url() ?>asset/js/jquery-ui.js"></script>
+<script src="<?php echo base_url() ?>asset/tokenjs/bootstrap-tokenfield.js"></script>
+<script src="<?php echo base_url() ?>asset/tokenjs/typeahead.bundle.min.js"></script>
+<script src="<?php echo base_url() ?>asset/js/search.js"></script>
+
+
 
 <script>
 
