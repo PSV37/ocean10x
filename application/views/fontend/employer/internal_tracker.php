@@ -478,14 +478,9 @@ li.right-title {
    $('.select2').select2();
 </script>
 <script>
-   $( document ).ready(function() {
-     var job_id = $('#job_select').val();
-     tracker_card(job_id);
-
-
-});
-    $(document).ready(function () {
+  $(document).ready(function () {
           $('.editbtn').click(function () {
+            alert('gg');
               var currentTD = $(this).parents('tr').find('td');
               alert(currentTD);
               if ($(this).html() == 'Edit') {
@@ -502,6 +497,9 @@ li.right-title {
               $(this).html($(this).html() == 'Edit' ? 'Save' : 'Edit')
     
           });
+
+           var job_id = $('#job_select').val();
+     tracker_card(job_id);
     
       });
     function tracker_card(job_id)
