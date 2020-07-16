@@ -402,6 +402,10 @@ button.btn.btn-primary {
 li.right-title {
     list-style: none;
 }
+input {
+    padding: 7px 25px;
+    border: none;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -485,11 +489,11 @@ li.right-title {
 
 
 });
-    $('#edit').click(function () {
-      alert('edit');
-    });
+   function editrow(id)
+   {
+      alert(id);
+   }
 
-   
     function tracker_card(job_id)
   {
      
