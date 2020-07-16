@@ -486,7 +486,7 @@ li.right-title {
 });
     $('#edit').click(function () {
       alert('edit');
-    }
+    });
 
     function tracker_card(job_id)
   {
