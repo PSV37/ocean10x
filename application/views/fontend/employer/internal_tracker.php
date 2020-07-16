@@ -876,9 +876,9 @@ span.select2-selection.select2-selection--single {
                </div> -->
                <div class="col-md-6">
                   
-                  <form class="navbar-form" role="search">
+                  <!-- <form class="navbar-form" role="search"> -->
                      
-                     <select class="form-control select2">
+                     <select class="form-control select2" id="job_select">
                      <?php if (isset($company_active_jobs) && !empty($company_active_jobs)) {
                         foreach ($company_active_jobs as $row) { ?>
                           <option value="<?php echo $row->job_post_id; ?>"><?php echo $row->job_title; ?></option>
@@ -888,7 +888,7 @@ span.select2-selection.select2-selection--single {
                        
                  
 
-                  </form>
+                  <!-- </form> -->
                   <div class="clear"></div>
                </div>
                <div class="col-md-3">
@@ -1069,6 +1069,27 @@ span.select2-selection.select2-selection--single {
 
 <script>
    $('.select2').select2();
+</script>
+<script>
+    $('#job_select').change(function(e)
+  {
+      e.preventDefault();
+      var job_id = $('#job_select').val();
+    
+    $.ajax({
+              url: "<?php echo base_url();?>employer/get_tracker_card",
+              type: "POST",
+              data: {job_id:job_id},
+              // contentType:false,
+              // processData:false,
+               // dataType: "json",
+              success: function(data)
+              {
+                $('.box').html(data);
+              }
+        });
+       
+  }); 
 </script>
    <script>
      $('#myInput').focus(function(){
