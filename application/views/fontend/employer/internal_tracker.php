@@ -491,6 +491,7 @@ input {
 });
    function editRow(id)
    {
+       $("#email"+id).attr("readonly", false); 
       alert(id);
    }
 
