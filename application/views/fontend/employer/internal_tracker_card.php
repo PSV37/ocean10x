@@ -24,6 +24,33 @@
                            </div>
                         </div>
                         <div class="following-info">
+                         <table class="table table-borderless">
+                            <thead>
+                              <tr>
+                                <th scope="col">Email</th>
+                                <th scope="col">Mobile</th>
+                                <th scope="col">Sal</th>
+                                <th scope="col">Work Exp</th>
+                                <th scope="col">Notice (days)</th>
+                                <th scope="col">Education</th>
+                                <th scope="col">Status</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row"><?php echo $job_row->email; ?></th>
+                                <td><?php echo $job_row->mobile_no; ?></td>
+                                <td><?php echo $job_row->js_career_salary; ?></td>
+                                <td><?php echo $job_row->js_career_exp; ?></td>
+                                <td><?php echo $job_row->notice_period; ?></td>
+                                <td><?php echo $job_row->education_level_name; ?></td>
+                                <td><?php echo $job_row->apply_status; ?></td>
+                              </tr>
+                            
+                            </tbody>
+                          </table>
+                        </div>
+                      <!--   <div class="following-info">
                            <li class="left-title"
                               >Email</li>
                            <li class="right-title">&nbsp;:<?php echo $job_row->email; ?></li>
@@ -36,8 +63,8 @@
                          
                           
                            <div class="clear"></div>
-                        </div>
-                        <div class="following-info2">
+                        </div> -->
+                       <!--  <div class="following-info2">
 
                            <li class="left-title">Work Experince</li>
                            <li class="right-title">&nbsp;: <?php echo $job_row->js_career_exp; ?></li>
@@ -53,7 +80,7 @@
                            <li class="left-title">status</li>
                            <li class="right-title">&nbsp;:</li>
                            <div class="clear"></div>
-                        </div>
+                        </div> -->
                         <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                         </button>

@@ -855,6 +855,9 @@ span.select2-selection.select2-selection--single {
     /*width: 330px;*/
     text-align: center;
 }
+ul#select2-job_select-results {
+    margin-top: 30px;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
