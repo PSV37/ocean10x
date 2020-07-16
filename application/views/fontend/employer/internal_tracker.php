@@ -484,9 +484,11 @@ li.right-title {
 
 
 });
-    $('#edit').click(function () {
-      alert('edit');
-    });
+    var myTable = $('#myTable').DataTable();
+ 
+$('#myTable').on( 'click', 'tbody tr', function () {
+    myTable.row( this ).edit();
+} );
 
     function tracker_card(job_id)
   {

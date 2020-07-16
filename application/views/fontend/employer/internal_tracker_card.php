@@ -24,7 +24,7 @@
                            </div>
                         </div>
                         <div class="following-info">
-                         <table class="table table-borderless">
+                         <table class="table table-borderless" id="myTable">
                             <thead>
                               <tr>
                                 <th scope="col">Email</th>
