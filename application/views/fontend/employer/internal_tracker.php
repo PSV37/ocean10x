@@ -408,7 +408,7 @@ li.right-title {
     list-style: none;
 }
 input {
-    padding: 7px 25px;
+       padding: 0px 0px;
     border: none;
 }
 </style>
@@ -500,11 +500,31 @@ input {
       alert("#email"+id);
    }
 
+function saveRow(id)
+{
+  var email = $("#email"+id).val();
+  var mobile = $("#mobile"+id).val();
+  var ctc = $("#ctc"+id).val();
+  var exp = $("#exp"+id).val();
+  var notice = $("#notice"+id).val();
+  var edu = $("#edu"+id).val();
+  alert(email);
+   $.ajax({
+              url: "<?php echo base_url();?>employer/update_cv",
+              type: "POST",
+              data: {email:email,mobile:mobile,ctc:ctc,exp:exp,notice:notice,edu:edu,id:id},
+              // contentType:false,
+              // processData:false,
+               // dataType: "json",
+              success: function(data)
+              {
+                window.reload();
+              }
+        });
+}
     function tracker_card(job_id)
   {
      
-      // var job_id = $('#job_select').val();
-    
     $.ajax({
               url: "<?php echo base_url();?>employer/get_tracker_card",
               type: "POST",

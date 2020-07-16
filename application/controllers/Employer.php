@@ -4897,4 +4897,15 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
              $this->load->view('fontend/employer/internal_tracker_card.php', compact('forwarded_job_tracking', 'employer_id'));
         }
     }
+ function update_cv()
+    {
+        $update_cv['js_email'] = $this->input->post('email');
+        $update_cv['js_mobile'] = $this->input->post('mobile');
+        $update_cv['js_current_ctc'] = $this->input->post('ctc');
+        $update_cv['js_experience'] = $this->input->post('exp');
+        $update_cv['js_current_notice_period'] = $this->input->post('notice');
+        $update_cv['js_top_education'] = $this->input->post('js_top_education');
+        $where_cv['cv_id'] = $this->input->post('id');
+        $this->Master_model->master_update($update_cv, 'corporate_cv_bank', $where_cv);
+    }
 } // end class
