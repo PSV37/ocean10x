@@ -874,7 +874,7 @@ span.select2-selection.select2-selection--single {
                   </form>
                   <div class="clear"></div>
                </div> -->
-               <div class="col-md-6">
+               <div class="col-md-4">
                   
                   <!-- <form class="navbar-form" role="search"> -->
                      
@@ -917,22 +917,14 @@ span.select2-selection.select2-selection--single {
                   </form>
                </div>
                <div class="col-md-3">
-                <p>Posted On:</p>
-               </div>
-            </div>
-           
-            <div class="row" id="bulk">
-               <div class="col-md-6"></div>
-               <div class="col-md-6">
-                  <label>
+               <label>
                     <a style="float: right;" href="<?php echo base_url() ?>employer/add-new-cv"><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New Candidate</button></a>
                      
                   </label>
                </div>
-              
-            
-              
             </div>
+           
+            
          
 
 
