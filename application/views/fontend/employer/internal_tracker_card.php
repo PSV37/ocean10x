@@ -84,7 +84,14 @@
                         <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                         </button>
-                        
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
+                           <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal>" >Edit</a></li>
+                       
+
+                           <li id="div_download"> <a class="dropdown-item"  href="" download >Delete</a></li>
+                           <?php } ?>
+
+                        </div>
 
                      </div>
                   </div>

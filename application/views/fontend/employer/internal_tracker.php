@@ -396,6 +396,12 @@ button.btn.btn-primary {
     border: none;
     border-radius: 30px;
 }
+.box {
+    margin-top: 40px;
+}
+li.right-title {
+    list-style: none;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -404,20 +410,10 @@ button.btn.btn-primary {
          <div class="col-md-9 cv_bank">
             
               <div class="row">
-              <!--  <div class="col-md-3">
-                  
-                  <form clas s="navbar-form" role="search">
-                     
-                    <input type="text" id="myInput" class="form-control" placeholder="Search with Email or Name or Number" style="width: 100%"> -->
-                  <!--  <p>Job Post Activity</p>
-                 
-
-                  </form>
-                  <div class="clear"></div>
-               </div> -->
+             
                <div class="col-md-4">
                   
-                  <!-- <form class="navbar-form" role="search"> -->
+            
                      
                      <select class="form-control select2" id="job_select" onchange="tracker_card(this.value);">
                      <?php if (isset($company_active_jobs) && !empty($company_active_jobs)) {
@@ -429,7 +425,7 @@ button.btn.btn-primary {
                        
                  
 
-                  <!-- </form> -->
+                
                   <div class="clear"></div>
                </div>
                <div class="col-md-3">
