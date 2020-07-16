@@ -38,7 +38,7 @@
                             </thead>
                             <tbody>
                               <tr>
-                                <th scope="row"><?php echo $job_row->email; ?></th>
+                                <td><?php echo $job_row->email; ?></td>
                                 <td><?php echo $job_row->mobile_no; ?></td>
                                 <td><?php echo $job_row->js_career_salary; ?></td>
                                 <td><?php echo $job_row->js_career_exp; ?></td>
