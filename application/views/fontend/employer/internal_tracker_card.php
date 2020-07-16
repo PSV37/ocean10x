@@ -2,10 +2,10 @@
                <?php $key = 1; if (!empty($forwarded_job_tracking)): foreach ($forwarded_job_tracking as $job_row) : ?>
                  
                <label>
-                  <div class="check">
+                  <!-- <div class="check">
                     
                      <input type="checkbox" value="<?php echo $job_row['js_email']; ?>" data-valuetwo="<?php echo $job_row['cv_id'];  ?>" data-valueone="<?php if(isset($job_row['js_resume']) && !empty($job_row['js_resume'])){ echo $job_row['js_resume']; } ?>" class="chkbx" />
-                  </div> 
+                  </div>  -->
                   <div class="card content">
                      <div class="front">
                         <?php
@@ -20,19 +20,19 @@
                         <?php } ?>
                         <div class="job-info">
                            <div class="a">
-                              <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $job_row['full_name']; ?></li>
+                              <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $job_row->full_name; ?></li>
                            </div>
                         </div>
                         <div class="following-info">
                            <li class="left-title"
                               >Email</li>
-                           <li class="right-title">&nbsp;:<?php echo $job_row['email']; ?></li>
+                           <li class="right-title">&nbsp;:<?php echo $job_row->email; ?></li>
                             <li class="left-title"
                               >Mobile</li>
-                           <li class="right-title">&nbsp;:<?php echo $job_row['mobile_no']; ?></li>
+                           <li class="right-title">&nbsp;:<?php echo $job_row->mobile_no; ?></li>
 
                            <li class="left-title">Current Sal</li>
-                           <li class="right-title">&nbsp;:<?php echo $job_row['js_career_salary']; ?></li>
+                           <li class="right-title">&nbsp;:<?php echo $job_row->js_career_salary; ?></li>
                          <!--   <li class="left-title">SkillSet</li>
                            <li class="right-title">&nbsp;: <?php echo $job_row['js_skill_set']; ?></li> -->
                           
@@ -41,15 +41,15 @@
                         <div class="following-info2">
 
                            <li class="left-title">Work Experince</li>
-                           <li class="right-title">&nbsp;: <?php echo $job_row['js_career_exp']; ?></li>
+                           <li class="right-title">&nbsp;: <?php echo $job_row->js_career_exp; ?></li>
 
                           
 
                            <li class="left-title">Notice Period </li>
-                           <li class="right-title">&nbsp;:<?php echo $job_row['notice_period']; ?></li>
+                           <li class="right-title">&nbsp;:<?php echo $job_row->notice_period; ?></li>
 
                            <li class="left-title">Education</li>
-                           <li class="right-title">&nbsp;:<?php echo $job_row['education_level_name']; ?></li>
+                           <li class="right-title">&nbsp;:<?php echo $job_row->education_level_name; ?></li>
 
                            <li class="left-title">status</li>
                            <li class="right-title">&nbsp;:</li>
