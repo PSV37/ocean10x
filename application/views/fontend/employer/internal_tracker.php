@@ -604,7 +604,7 @@ function saveRow(id)
                // dataType: "json",
               success: function(data)
               {
-                $('.box').html(data);
+                $('.tbody').html(data);
               }
         });
        
