@@ -410,7 +410,9 @@ li.right-title {
 input {
        padding: 0px 0px;
     border: none;
+     max-width: 100px;
 }
+
 </style>
 <div class="container-fluid main-d">
    <div class="container">
