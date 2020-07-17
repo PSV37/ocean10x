@@ -21,7 +21,7 @@
 
                                 <td ><input id="notice<?php echo $job_row->cv_id; ?>" type="text" name="notice" value="<?php echo $job_row->js_current_notice_period; ?>" ></td>
 
-                                <td > <select name="edu" class="email" id="edu<?php echo $job_row->cv_id; ?>" class="form-control select2" data-style="btn-default" data-live-search="true"  >
+                                <td > <select name="edu"  id="edu<?php echo $job_row->cv_id; ?>" class="form-control select2 email" data-style="btn-default" data-live-search="true"  >
                                   <option value=""> </option>
                                   <?php   foreach($education_level as $education){?>
                                   <option value="<?php echo $job_row->js_top_education; ?>"<?php if($job_row->js_top_education==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
@@ -31,7 +31,7 @@
                                </select></td>
                     <!--  <input id="edu<?php echo $job_row->cv_id; ?>" type="text" name="edu" value="<?php echo $job_row->education_level_name; ?>" ></td> -->
 
-                                <td><select name="status" class="email" id="status<?php echo $job_row->cv_id; ?>" class="form-control select2" data-style="btn-default" data-live-search="true"  >
+                                <td><select name="status"  id="status<?php echo $job_row->cv_id; ?>" class="form-control select2 email" data-style="btn-default" data-live-search="true"  >
                                   <option value=""> </option>
                                   <?php   foreach($tracker_status as $status){?>
                                   <option value="<?php echo $job_row->tracking_status; ?>"<?php if($job_row->tracking_status==$status['status_id']){ echo "selected"; }?>><?php echo $status['status_name']; ?></option>
