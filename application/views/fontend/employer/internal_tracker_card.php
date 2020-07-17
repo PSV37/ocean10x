@@ -21,8 +21,8 @@
                         <div class="job-info">
                           <div class="col-md-12">
                             <div class="row">
-                               <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $job_row->js_name; ?></li>
-                                <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $job_row->js_name; ?></li>
+                               <p class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $job_row->js_name; ?></p>
+                                <p class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $job_row->js_name; ?></p>
                             </div>
                             
                           </div>
