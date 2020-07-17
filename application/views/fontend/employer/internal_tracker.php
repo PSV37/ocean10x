@@ -520,7 +520,7 @@ function saveRow(id)
   var exp = $("#exp"+id).val();
   var notice = $("#notice"+id).val();
   var edu = $("#edu"+id).val();
-  alert(email);
+  // alert(email);
    $.ajax({
               url: "<?php echo base_url();?>employer/update_cv",
               type: "POST",
