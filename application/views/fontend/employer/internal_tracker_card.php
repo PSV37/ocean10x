@@ -24,7 +24,7 @@
                                 <td > <select name="edu" style="min-width: 200px; border: none;"  id="edu<?php echo $job_row->cv_id; ?>" class="form-control select2 email" data-style="btn-default" data-live-search="true"  >
                                   <option value=""> </option>
                                   <?php   foreach($education_level as $education){?>
-                                  <option value="<?php echo $job_row->js_top_education; ?>"<?php if($job_row->js_top_education==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
+                                  <option value="<?php echo $education['education_level_id']; ?>"<?php if($job_row->js_top_education==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
                                   <?php } ?>
                                   <option value="other">Other </option>
                                   <option value="other">None </option>
