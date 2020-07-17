@@ -551,13 +551,13 @@ input#email21 {
 
 function saveRow(id)
 {
-  // var email = $("#email"+id).val();
-  // var mobile = $("#mobile"+id).val();
+   var email = $("#email"+id).val();
+   var mobile = $("#mobile"+id).val();
   var ctc = $("#ctc"+id).val();
   var exp = $("#exp"+id).val();
   var notice = $("#notice"+id).val();
   var edu = $("#edu"+id).val();
-  // alert(email);
+  // alert(edu);
    $.ajax({
               url: "<?php echo base_url();?>employer/update_cv",
               type: "POST",
