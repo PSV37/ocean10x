@@ -524,7 +524,7 @@ function saveRow(id)
    $.ajax({
               url: "<?php echo base_url();?>employer/update_cv",
               type: "POST",
-              data: {email:email,mobile:mobile,ctc:ctc,exp:exp,notice:notice,edu:edu,id:id},
+              data: {ctc:ctc,exp:exp,notice:notice,edu:edu,id:id},
               // contentType:false,
               // processData:false,
                // dataType: "json",
