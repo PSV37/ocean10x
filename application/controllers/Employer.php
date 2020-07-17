@@ -5030,6 +5030,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
  function update_cv()
     {
         $update_cv['js_email'] = $this->input->post('email');
+        $update_cv['js_name'] = $this->input->post('name');
         $update_cv['js_mobile'] = $this->input->post('mobile');
         $update_cv['js_current_ctc'] = $this->input->post('ctc');
         $update_cv['js_experience'] = $this->input->post('exp');
@@ -5042,7 +5043,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
         $frwrd_update_cv['tracking_status'] = $this->input->post('status');
         $frwrd_update_cv['comments'] = $this->input->post('comment');
-        
+
         $where_frwdcv['cv_id'] = $this->input->post('id');
         $update= $this->Master_model->master_update($frwrd_update_cv, 'forwarded_jobs_cv', $where_frwdcv);
         echo json_encode($update);

@@ -11,6 +11,8 @@
                         
                             <!-- <tbody> -->
                               <tr>
+                                 <td ><input class="email" id="name<?php echo $job_row->cv_id; ?>" type="text" name="email" value="<?php echo $job_row->js_name; ?>" ></td>
+
                                 <td ><input class="email" id="email<?php echo $job_row->cv_id; ?>" type="text" name="email" value="<?php echo $job_row->js_email; ?>" ></td>
 
                                 <td ><input id="mobile<?php echo $job_row->cv_id; ?>" type="text" name="mobile" value="<?php echo $job_row->js_mobile; ?>" maxlength='10' ></td>

@@ -502,6 +502,7 @@ input.email {
                          <table class="table table-borderless" id="myTable">
                             <thead>
                               <tr>
+                                <th scope="col">Name</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Mobile</th>
                                 <th scope="col">Sal</th>
@@ -560,11 +561,12 @@ function saveRow(id)
   var edu = $("#edu"+id).val();
   var status = $("#status"+id).val();
   var comment = $("#comment"+id).val();
+  var name = $("#name"+id).val();
   // alert(edu);
    $.ajax({
               url: "<?php echo base_url();?>employer/update_cv",
               type: "POST",
-              data: {email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,id:id,comment:comment},
+              data: {name:name,email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,id:id,comment:comment},
               // contentType:false,
               // processData:false,
                // dataType: "json",
