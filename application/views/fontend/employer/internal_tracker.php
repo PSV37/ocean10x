@@ -512,7 +512,7 @@ input#email21 {
      var job_id = $('#job_select').val();
      tracker_card(job_id);
     var url = '<?php echo base_url(); ?>employer/add_new_cv/'+job_id;
-    alert (url);
+    // alert (url);
     $('#add_cv').attr('href',url);
 
 
