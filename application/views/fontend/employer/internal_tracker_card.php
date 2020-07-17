@@ -2,11 +2,11 @@
                <?php $key = 1; if (!empty($forwarded_job_tracking)): foreach ($forwarded_job_tracking as $job_row) : ?>
                  
                
-                  <!-- <div class="check">
+                  <!-- <div class="check"> -->
                     
                      
-                  </div>  -->
-                  <div class="card content">
+                  <!-- </div>  -->
+                  <!-- <div class="card content"> -->
                      <!-- <div class="front"> -->
                         
                             <!-- <tbody> -->
@@ -43,7 +43,7 @@
                           
 
                         <!-- </div> -->
-                      </div>
+                      <!-- </div> -->
 
                  
                <?php
