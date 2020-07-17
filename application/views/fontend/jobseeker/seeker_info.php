@@ -1,7 +1,7 @@
 
 <style>
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{background-color:#88b820;
-																				color:#fff;border:none;margin-bottom:1px;border-radius: 3px 3px 0px 0px;}
+color:#fff;border:none;margin-bottom:1px;border-radius: 3px 3px 0px 0px;}
 
 
 

@@ -2533,15 +2533,7 @@
         
 <?php $this->load->view("fontend/layout/jobseeker_footer.php"); ?>
 </div>
-<script>
-  $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-  var target = $(e.target).attr("href") // activated tab
-  alert(target);
-  <?php $data['activetab'] ?> = target;
-     <?php  $this->session->set_userdata($data); ?>
-});
-     
-</script>
+
 <script type="text/javascript">
    // Personal Info
      $( document ).ready( function () {
