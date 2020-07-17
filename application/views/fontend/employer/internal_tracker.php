@@ -426,6 +426,9 @@ select::-ms-expand {
 input.select2-search__field {
     min-width: 100%;
 }
+input#email21 {
+    min-width: 200px;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
