@@ -7,7 +7,7 @@
                      
                   </div>  -->
                   <div class="card content">
-                     <div class="front">
+                     <!-- <div class="front"> -->
                         
                             <tbody>
                               <tr>
@@ -42,7 +42,7 @@
                             </tbody>
                           
 
-                        </div>
+                        <!-- </div> -->
                       </div>
 
                  
