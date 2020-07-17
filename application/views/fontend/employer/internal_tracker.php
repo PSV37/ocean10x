@@ -496,7 +496,7 @@ input#email21 {
 
             <div class="box" >
                <div class="card content">
-                     <div class="front">
+                     <!-- <div class="front"> -->
                       <div class="following-info">
                          <table class="table table-borderless" id="myTable">
                             <thead>
@@ -518,7 +518,7 @@ input#email21 {
                             </tbody>
                           </table>
                         </div>
-                     </div>
+                     <!-- </div> -->
                    </div>
                
             </div>
