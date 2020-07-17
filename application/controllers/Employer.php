@@ -3963,20 +3963,20 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     
                     $can_data = $this->Master_model->getMaster('js_info', $where_can);
 
-                    $where_cv = "js_email='$email' and company_id='$employer_id'";
+                    $where_cv = "js_email='$email' and company_id='$company_id'";
                      $cv_data = $this->Master_model->getMaster('corporate_cv_bank', $where_cv);
 
 
                      if (empty($cv_data)) {
 
                          $cv_array = array(
-                       'company_id' => $employer_id,
+                       'company_id' => $company_id,
                         'js_name' => $can_data[0]['full_name'],
                         'js_email' => $can_data[0]['email'],
                         'js_mobile' => $can_data[0]['mobile_no'],
                       
                         'created_on' => date('Y-m-d'),
-                        'created_by' => $employer_id
+                        'created_by' => $company_id
                       
                     );
                     $add_cv  = $this->Master_model->master_insert($cv_array, 'corporate_cv_bank');
@@ -3990,13 +3990,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     
                     $apply_array = array(
                         'job_seeker_id' => $seeker_id,
-                        'company_id' => $employer_id,
+                        'company_id' => $company_id,
                         'job_post_id' => $job_post_id,
                         'forword_job_status' => 1,
                         'updated_on' => date('Y-m-d'),
                         'mandatory_parameters' => implode(',', $mandatory)
                     );
-                    $whereres  = "job_seeker_id='$seeker_id' and company_id = '$employer_id' and job_post_id = '$job_post_id'";
+                    $whereres  = "job_seeker_id='$seeker_id' and company_id = '$company_id' and job_post_id = '$job_post_id'";
                     $job_apply_data = $this->Master_model->get_master_row('
                         job_apply', $select = FALSE, $whereres);
                     if (empty($job_apply_data)) {
