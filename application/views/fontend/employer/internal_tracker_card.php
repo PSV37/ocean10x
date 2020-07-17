@@ -25,10 +25,10 @@
                                 <span style="font-size:16px;margin-top:-4px;"  ><?php echo $job_row->js_name; ?></span>
                               </div>
                               <div class="col-md-4">
-                                <span style="font-size:16px;margin-top:-4px;margin-left: -89px;"  ><input id="email<?php echo $job_row->cv_id; ?>" type="text" name="email" value="<?php echo $job_row->js_email; ?>" ></span>
+                                <span style="font-size:16px;margin-top:-4px;"  ><input id="email<?php echo $job_row->cv_id; ?>" type="text" name="email" value="<?php echo $job_row->js_email; ?>" ></span>
                               </div>
                                <div class="col-md-2">
-                                <span style="font-size:16px;margin-top:-4px;margin-left: -146px;"  ><input id="mobile<?php echo $job_row->cv_id; ?>" type="text" name="mobile" value="<?php echo $job_row->js_mobile; ?>" maxlength='10' ></span>
+                                <span style="font-size:16px;margin-top:-4px;"  ><input id="mobile<?php echo $job_row->cv_id; ?>" type="text" name="mobile" value="<?php echo $job_row->js_mobile; ?>" maxlength='10' ></span>
                               </div>
                               
                             </div>

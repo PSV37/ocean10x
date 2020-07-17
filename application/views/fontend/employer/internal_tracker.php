@@ -418,7 +418,9 @@ select {
   /* for Chrome */
   -webkit-appearance: none;
 }
-
+input.email {
+    min-width: 200px;
+}
 /* For IE10 */
 select::-ms-expand {
   display: none;
