@@ -1,4 +1,4 @@
-<!-- <div class="box" > -->
+<div class="box" > -->
                <?php $key = 1; if (!empty($forwarded_job_tracking)): foreach ($forwarded_job_tracking as $job_row) : ?>
                  
                <label>
@@ -19,9 +19,16 @@
                         <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" style="height:25px; width:25px;border-radius:5px;float:left" />
                         <?php } ?>
                         <div class="job-info">
-                           <div class="a">
-                              <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $job_row->js_name; ?></li>
-                           </div>
+                          <div class="col-md-12">
+                            <div class="row">
+                               <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $job_row->js_name; ?></li>
+                                <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $job_row->js_name; ?></li>
+                            </div>
+                            
+                          </div>
+                          <!--  <div class="a">
+                             
+                           </div> -->
                         </div>
                         <div class="following-info">
                          <table class="table table-borderless" id="myTable">
@@ -127,4 +134,4 @@
                   <strong>There is no record for display</strong>
                </li>
                <?php endif; ?>
-            <!-- </div> -->
+            <!-- </div>
