@@ -501,8 +501,8 @@ input#email21 {
                          <table class="table table-borderless" id="myTable">
                             <thead>
                               <tr>
-                                <!-- <th scope="col">Email</th>
-                                <th scope="col">Mobile</th> -->
+                                <th scope="col">Email</th>
+                                <th scope="col">Mobile</th>
                                 <th scope="col">Sal</th>
                                 <th scope="col">Work Exp</th>
                                 <th scope="col">Notice (days)</th>
