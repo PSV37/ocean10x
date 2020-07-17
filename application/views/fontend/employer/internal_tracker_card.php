@@ -11,7 +11,7 @@
                         
                             <!-- <tbody> -->
                               <tr>
-                                <td ><input id="email<?php echo $job_row->cv_id; ?>" type="text" name="email" value="<?php echo $job_row->js_email; ?>" ></td>
+                                <td ><input class="email" id="email<?php echo $job_row->cv_id; ?>" type="text" name="email" value="<?php echo $job_row->js_email; ?>" ></td>
 
                                 <td ><input id="mobile<?php echo $job_row->cv_id; ?>" type="text" name="mobile" value="<?php echo $job_row->js_mobile; ?>" maxlength='10' ></td>
 
@@ -31,7 +31,14 @@
                                </select></td>
                     <!--  <input id="edu<?php echo $job_row->cv_id; ?>" type="text" name="edu" value="<?php echo $job_row->education_level_name; ?>" ></td> -->
 
-                                <td><input type="text" name="email" value="<?php echo $job_row->cv_id; ?>" ></td>
+                                <td><select name="status" id="status<?php echo $job_row->cv_id; ?>" class="form-control select2" data-style="btn-default" data-live-search="true"  >
+                                  <option value=""> </option>
+                                  <?php   foreach($tracker_status as $status){?>
+                                  <option value="<?php echo $job_row->tracking_status; ?>"<?php if($job_row->tracking_status==$status['status_id']){ echo "selected"; }?>><?php echo $status['status_name']; ?></option>
+                                  <?php } ?>
+                                 
+                                 
+                               </select></td>
                                 <td ><input type="text" name="email" value="<?php echo $job_row->cv_id; ?>" ></td>
                                 <td ><input type="text" name="email" value="<?php echo $job_row->cv_id; ?>" ></td>
                                  <td onclick="saveRow(<?php echo $job_row->cv_id; ?>);"><a>save</a></td>

@@ -428,7 +428,7 @@ select::-ms-expand {
 input.select2-search__field {
     min-width: 100%;
 }
-input#email21 {
+input.email {
     min-width: 200px;
 }
 </style>
@@ -557,11 +557,12 @@ function saveRow(id)
   var exp = $("#exp"+id).val();
   var notice = $("#notice"+id).val();
   var edu = $("#edu"+id).val();
+  var status = $("#status"+id).val();
   // alert(edu);
    $.ajax({
               url: "<?php echo base_url();?>employer/update_cv",
               type: "POST",
-              data: {ctc:ctc,exp:exp,notice:notice,edu:edu,id:id},
+              data: {email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,id:id},
               // contentType:false,
               // processData:false,
                // dataType: "json",

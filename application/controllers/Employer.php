@@ -5023,7 +5023,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         if(!empty($job_id)) {
              $forwarded_job_tracking = $this->job_posting_model->get_job_forwarded_candidate($job_id);
               $education_level = $this->Master_model->getMaster('education_level', $where = false);
-             $this->load->view('fontend/employer/internal_tracker_card.php', compact('forwarded_job_tracking', 'employer_id','education_level'));
+                $tracker_status = $this->Master_model->getMaster('tracker_status_master', $where = false);
+             $this->load->view('fontend/employer/internal_tracker_card.php', compact('forwarded_job_tracking', 'employer_id','education_level','tracker_status'));
         }
     }
  function update_cv()
@@ -5034,8 +5035,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $update_cv['js_experience'] = $this->input->post('exp');
         $update_cv['js_current_notice_period'] = $this->input->post('notice');
         $update_cv['js_top_education'] = $this->input->post('edu');
+      
         $where_cv['cv_id'] = $this->input->post('id');
         $update= $this->Master_model->master_update($update_cv, 'corporate_cv_bank', $where_cv);
+
+        $frwrd_update_cv['tracking_status'] = $this->input->post('status');
+        $where_frwdcv['cv_id'] = $this->input->post('id');
+        $update= $this->Master_model->master_update($frwrd_update_cv, 'forwarded_jobs_cv', $where_frwdcv);
         echo json_encode($update);
     }
 
