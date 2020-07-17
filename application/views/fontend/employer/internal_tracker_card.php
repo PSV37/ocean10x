@@ -28,7 +28,7 @@
                                   <?php } ?>
                                   <option value="other">Other </option>
                                   <option value="other">None </option>
-                               </select>
+                               </select></td>
                     <!--  <input id="edu<?php echo $job_row->cv_id; ?>" type="text" name="edu" value="<?php echo $job_row->education_level_name; ?>" ></td> -->
 
                                 <td><input type="text" name="email" value="<?php echo $job_row->cv_id; ?>" ></td>
@@ -43,6 +43,7 @@
                           
 
                         </div>
+                      </div>
 
                  
                <?php
