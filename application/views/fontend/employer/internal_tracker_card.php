@@ -25,9 +25,11 @@
                                 <span style="font-size:19px;margin-top:-4px;"  ><?php echo $job_row->js_name; ?></span>
                               </div>
                               <div class="col-md-2">
-                                <span style="font-size:19px;margin-top:-4px;"  ><?php echo $job_row->js_name; ?></span>
+                                <span style="font-size:19px;margin-top:-4px;"  ><?php echo $job_row->js_email; ?></span>
                               </div>
-                               
+                               <div class="col-md-2">
+                                <span style="font-size:19px;margin-top:-4px;"  ><?php echo $job_row->js_mobile; ?></span>
+                              </div>
                               
                             </div>
                             
@@ -40,8 +42,8 @@
                          <table class="table table-borderless" id="myTable">
                             <thead>
                               <tr>
-                                <th scope="col">Email</th>
-                                <th scope="col">Mobile</th>
+                                <!-- <th scope="col">Email</th>
+                                <th scope="col">Mobile</th> -->
                                 <th scope="col">Sal</th>
                                 <th scope="col">Work Exp</th>
                                 <th scope="col">Notice (days)</th>
@@ -54,9 +56,9 @@
                             </thead>
                             <tbody>
                               <tr>
-                                <td ><input id="email<?php echo $job_row->cv_id; ?>" type="text" name="email" value="<?php echo $job_row->js_email; ?>" ></td>
+                               <!--  <td ><input id="email<?php echo $job_row->cv_id; ?>" type="text" name="email" value="<?php echo $job_row->js_email; ?>" ></td>
 
-                                <td ><input id="mobile<?php echo $job_row->cv_id; ?>" type="text" name="mobile" value="<?php echo $job_row->js_mobile; ?>" maxlength='10' ></td>
+                                <td ><input id="mobile<?php echo $job_row->cv_id; ?>" type="text" name="mobile" value="<?php echo $job_row->js_mobile; ?>" maxlength='10' ></td> -->
 
                                 <td ><input id="ctc<?php echo $job_row->cv_id; ?>" type="text" name="ctc" value="<?php echo $job_row->js_current_ctc; ?>" maxlength='3' ></td>
 
