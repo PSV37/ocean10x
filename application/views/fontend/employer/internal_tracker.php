@@ -495,6 +495,31 @@ input#email21 {
 
 
             <div class="box" >
+               <div class="card content">
+                     <div class="front">
+                      <div class="following-info">
+                         <table class="table table-borderless" id="myTable">
+                            <thead>
+                              <tr>
+                                <!-- <th scope="col">Email</th>
+                                <th scope="col">Mobile</th> -->
+                                <th scope="col">Sal</th>
+                                <th scope="col">Work Exp</th>
+                                <th scope="col">Notice (days)</th>
+                                <th scope="col">Education</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Comments</th>
+                                <th scope="col">Updated By</th>
+                                <th scope="col">Action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                             
+                            </tbody>
+                          </table>
+                        </div>
+                     </div>
+                   </div>
                
             </div>
          </div>
@@ -558,7 +583,7 @@ function saveRow(id)
                // dataType: "json",
               success: function(data)
               {
-                $('.box').html(data);
+                $('tbody').html(data);
               }
         });
        
