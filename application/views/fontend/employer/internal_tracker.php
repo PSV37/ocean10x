@@ -412,7 +412,17 @@ input {
     border: none;
      max-width: 100px;
 }
+select {
+  /* for Firefox */
+  -moz-appearance: none;
+  /* for Chrome */
+  -webkit-appearance: none;
+}
 
+/* For IE10 */
+select::-ms-expand {
+  display: none;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -504,8 +514,8 @@ input {
 
 function saveRow(id)
 {
-  var email = $("#email"+id).val();
-  var mobile = $("#mobile"+id).val();
+  // var email = $("#email"+id).val();
+  // var mobile = $("#mobile"+id).val();
   var ctc = $("#ctc"+id).val();
   var exp = $("#exp"+id).val();
   var notice = $("#notice"+id).val();

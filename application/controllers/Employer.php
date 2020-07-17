@@ -4900,8 +4900,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     }
  function update_cv()
     {
-        $update_cv['js_email'] = $this->input->post('email');
-        $update_cv['js_mobile'] = $this->input->post('mobile');
+        // $update_cv['js_email'] = $this->input->post('email');
+        // $update_cv['js_mobile'] = $this->input->post('mobile');
         $update_cv['js_current_ctc'] = $this->input->post('ctc');
         $update_cv['js_experience'] = $this->input->post('exp');
         $update_cv['js_current_notice_period'] = $this->input->post('notice');
