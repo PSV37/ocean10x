@@ -105,6 +105,7 @@ input#candidate_skills {
       <div class="col-md-12">
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
          <form role="form" id="js" enctype="multipart/form-data" action="<?php echo base_url(); ?>employer/add_new_cv" method="post">
+          
             <div class="col-md-9 employe_add">
                <div class="col-md-12">
                   <h4 class="employee_heading">ADD NEW CV</h4>

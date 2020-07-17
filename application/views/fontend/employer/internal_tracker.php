@@ -423,6 +423,9 @@ select {
 select::-ms-expand {
   display: none;
 }
+input.select2-search__field {
+    min-width: 100%;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -476,7 +479,7 @@ select::-ms-expand {
                </div>
                <div class="col-md-3">
                <label>
-                    <a style="float: right;" href="<?php echo base_url() ?>employer/add-new-cv"><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New Candidate</button></a>
+                    <a style="float: right;" href="<?php echo base_url() ?>employer/add_new_cv/1"><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New Candidate</button></a>
                      
                   </label>
                </div>

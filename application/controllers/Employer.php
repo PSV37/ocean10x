@@ -3805,8 +3805,11 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         // $this->load->view('fontend/employer/corporate_cv_bank',$data);
     }
     
-    public function add_new_cv()
+    public function add_new_cv($id=Null)
     {
+        if (isset($id) && !empty($id)) {
+            $data['id'] = $id;
+        }
         $company_id = $this->session->userdata('company_profile_id');
         
         if ($_POST) {
@@ -4910,4 +4913,6 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $update= $this->Master_model->master_update($update_cv, 'corporate_cv_bank', $where_cv);
         echo json_encode($update);
     }
+
+
 } // end class
