@@ -3987,14 +3987,14 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         $cv_id=$cv_data[0]['cv_id'];
 
                      }
-                    
+                    print_r($seeker_id);
                     $apply_array = array(
                         'job_seeker_id' => $seeker_id,
                         'company_id' => $company_id,
                         'job_post_id' => $job_post_id,
                         'forword_job_status' => 1,
                         'updated_on' => date('Y-m-d'),
-                        'mandatory_parameters' => implode(',', $mandatory)
+                        // 'mandatory_parameters' => implode(',', $mandatory)
                     );
                     $whereres  = "job_seeker_id='$seeker_id' and company_id = '$company_id' and job_post_id = '$job_post_id'";
                     $job_apply_data = $this->Master_model->get_master_row('
