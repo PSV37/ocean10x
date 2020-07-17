@@ -73,10 +73,10 @@
                   $key++;
                     endforeach;  
                   ?>     
-               <?php else : ?> 
+              <!--  <?php else : ?> 
                <li colspan="3">
                   <strong>There is no record for display</strong>
-               </li>
+               </li> -->
                <?php endif; ?>
                       <!--   <div class="following-info">
                            <li class="left-title"
