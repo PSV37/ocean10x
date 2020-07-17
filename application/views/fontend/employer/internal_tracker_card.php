@@ -21,8 +21,14 @@
                         <div class="job-info">
                           <div class="col-md-12">
                             <div class="row">
-                               <p class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $job_row->js_name; ?></p>
-                                <p class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $job_row->js_name; ?></p>
+                              <div class="col-md-2">
+                                <span style="font-size:19px;margin-top:-4px;"  ><?php echo $job_row->js_name; ?></span>
+                              </div>
+                              <div class="col-md-2">
+                                <span style="font-size:19px;margin-top:-4px;"  ><?php echo $job_row->js_name; ?></span>
+                              </div>
+                               
+                              
                             </div>
                             
                           </div>
