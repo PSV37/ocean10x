@@ -530,6 +530,9 @@ input.email {
    </div>
 </div>
 
+<script>
+   $('.select2').select2();
+</script>
 
 
 <script>
