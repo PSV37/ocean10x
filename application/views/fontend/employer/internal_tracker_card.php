@@ -41,7 +41,7 @@
                                </select></td>
                                 <td ><input type="text" class="email" id="comment<?php echo $job_row->cv_id; ?>" name="comment" value="<?php echo $job_row->comments; ?>" ></td>
 
-                                <td ><input type="text" name="email" value="<?php echo $job_row->updated_on; ?>" ></td>
+                                <td ><?php echo $job_row->updated_on; ?></td>
                                  <td onclick="saveRow(<?php echo $job_row->cv_id; ?>);"><a>save</a></td>
 
 
