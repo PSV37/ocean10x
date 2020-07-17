@@ -530,9 +530,7 @@ input.email {
    </div>
 </div>
 
-<script>
-   $('.select2').select2();
-</script>
+
 
 <script>
    $( document ).ready(function() {
@@ -578,6 +576,9 @@ function saveRow(id)
 }
     function tracker_card(job_id)
   {
+    var url = '<?php echo base_url(); ?>employer/add_new_cv/'+job_id;
+    $('#add_cv').attr('href',url);
+    
      
     $.ajax({
               url: "<?php echo base_url();?>employer/get_tracker_card",
