@@ -495,55 +495,9 @@ input#email21 {
 
 
             <div class="box" >
-                <div class="card content">
-                  <?php
-                           if($on_ocean == 'Yes')
-                             {
-                           if(!empty($photo)){ ?>
-                        <img src="<?php echo  base_url(); ?>upload/<?php if(!empty($photo[0]['photo_path'])){echo $photo[0]['photo_path'];} ?>" style="height:25px; width:25px;border-radius:5px;float:left" />
-                        <?php }else{ ?>
-                        <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" style="height:25px; width:25px;border-radius:5px;float:left" />
-                       <?php } }else{ ?>
-                        <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" style="height:25px; width:25px;border-radius:5px;float:left" />
-                        <?php } ?>
-
-                         <div class="following-info">
-                         <table class="table table-borderless" id="myTable">
-                            <thead>
-                              <tr>
-                                <th scope="col">Email</th>
-                                <th scope="col">Mobile</th>
-                                <th scope="col">Sal</th>
-                                <th scope="col">Work Exp</th>
-                                <th scope="col">Notice (days)</th>
-                                <th scope="col">Education</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Comments</th>
-                                <th scope="col">Updated By</th>
-                                <th scope="col">Action</th>
-                              </tr>
-                            </thead>
-                             <tbody>
-                             </tbody>
-                          </table>
-                        </div>
-                        <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
-                           <li ><a class="dropdown-item" href="#" id="edit"  >Edit</a></li>
-                       
-
-                           <li id="div_download"> <a class="dropdown-item"  href="" download >Delete</a></li>
-                           <?php ?>
-
-                        </div>
-
-                     </div>
-                  </div>
                
-              
-              
+            </div>
+         </div>
          
       </div>
    </div>
@@ -604,7 +558,7 @@ function saveRow(id)
                // dataType: "json",
               success: function(data)
               {
-                $('.tbody').html(data);
+                $('.box').html(data);
               }
         });
        

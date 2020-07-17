@@ -1,12 +1,12 @@
 <!-- <div class="box" >  -->
                <?php $key = 1; if (!empty($forwarded_job_tracking)): foreach ($forwarded_job_tracking as $job_row) : ?>
                  
-               <!-- <label> -->
+               <label>
                   <!-- <div class="check">
                     
                      
                   </div>  -->
-                  <!-- <div class="card content">
+                  <div class="card content">
                      <div class="front">
                         <?php
                            if($on_ocean == 'Yes')
@@ -17,9 +17,9 @@
                         <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" style="height:25px; width:25px;border-radius:5px;float:left" />
                        <?php } }else{ ?>
                         <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" style="height:25px; width:25px;border-radius:5px;float:left" />
-                        <?php } ?> -->
-                        <!-- <div class="job-info"> -->
-                          <!-- <div class="col-md-12">
+                        <?php } ?>
+                        <div class="job-info">
+                          <div class="col-md-12">
                             <div class="row">
                               <div class="col-md-2">
                                 <span style="font-size:16px;margin-top:-4px;"  ><?php echo $job_row->js_name; ?></span>
@@ -33,17 +33,32 @@
                               
                             </div>
                             
-                          </div> -->
+                          </div>
                           <!--  <div class="a">
                              
                            </div> -->
-                        <!-- </div> -->
-                       
-                           
+                        </div>
+                        <div class="following-info">
+                         <table class="table table-borderless" id="myTable">
+                            <thead>
                               <tr>
-                                <td ><input id="email<?php echo $job_row->cv_id; ?>" type="text" name="email" value="<?php echo $job_row->js_email; ?>" ></td>
+                                <!-- <th scope="col">Email</th>
+                                <th scope="col">Mobile</th> -->
+                                <th scope="col">Sal</th>
+                                <th scope="col">Work Exp</th>
+                                <th scope="col">Notice (days)</th>
+                                <th scope="col">Education</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Comments</th>
+                                <th scope="col">Updated By</th>
+                                <th scope="col">Action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                               <!--  <td ><input id="email<?php echo $job_row->cv_id; ?>" type="text" name="email" value="<?php echo $job_row->js_email; ?>" ></td>
 
-                                <td ><input id="mobile<?php echo $job_row->cv_id; ?>" type="text" name="mobile" value="<?php echo $job_row->js_mobile; ?>" maxlength='10' ></td>
+                                <td ><input id="mobile<?php echo $job_row->cv_id; ?>" type="text" name="mobile" value="<?php echo $job_row->js_mobile; ?>" maxlength='10' ></td> -->
 
                                 <td ><input id="ctc<?php echo $job_row->cv_id; ?>" type="text" name="ctc" value="<?php echo $job_row->js_current_ctc; ?>" maxlength='3' ></td>
 
@@ -69,15 +84,9 @@
 
                               </tr>
                             
-                             <?php
-                  $key++;
-                    endforeach;  
-                  ?>     
-              <!--  <?php else : ?> 
-               <li colspan="3">
-                  <strong>There is no record for display</strong>
-               </li> -->
-               <?php endif; ?>
+                            </tbody>
+                          </table>
+                        </div>
                       <!--   <div class="following-info">
                            <li class="left-title"
                               >Email</li>
@@ -109,5 +118,28 @@
                            <li class="right-title">&nbsp;:</li>
                            <div class="clear"></div>
                         </div> -->
-                        
+                        <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
+                           <li ><a class="dropdown-item" href="#" id="edit"  >Edit</a></li>
+                       
+
+                           <li id="div_download"> <a class="dropdown-item"  href="" download >Delete</a></li>
+                           <?php ?>
+
+                        </div>
+
+                     </div>
+                  </div>
+               </label>
+               <?php
+                  $key++;
+                    endforeach;  
+                  ?>     
+               <?php else : ?> 
+               <li colspan="3">
+                  <strong>There is no record for display</strong>
+               </li>
+               <?php endif; ?>
             <!-- </div>
