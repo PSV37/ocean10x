@@ -34,7 +34,7 @@
                                 <td><select name="status" style="min-width: 200px; border: none;" id="status<?php echo $job_row->cv_id; ?>" class="form-control select2" data-style="btn-default" data-live-search="true"  >
                                   <option value=""> </option>
                                   <?php   foreach($tracker_status as $status){?>
-                                  <option value="<?php echo $job_row->tracking_status; ?>"<?php if($job_row->tracking_status==$status['status_id']){ echo "selected"; }?>><?php echo $status['status_name']; ?></option>
+                                  <option value="<?php echo $status['status_id']; ?>"<?php if($job_row->tracking_status==$status['status_id']){ echo "selected"; }?>><?php echo $status['status_name']; ?></option>
                                   <?php } ?>
                                  
 
