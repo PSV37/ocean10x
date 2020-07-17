@@ -558,11 +558,12 @@ function saveRow(id)
   var notice = $("#notice"+id).val();
   var edu = $("#edu"+id).val();
   var status = $("#status"+id).val();
+  var comment = $("#comment"+id).val();
   // alert(edu);
    $.ajax({
               url: "<?php echo base_url();?>employer/update_cv",
               type: "POST",
-              data: {email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,id:id},
+              data: {email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,id:id,comment:comment},
               // contentType:false,
               // processData:false,
                // dataType: "json",
