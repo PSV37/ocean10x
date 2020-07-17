@@ -482,7 +482,7 @@ input#email21 {
                </div>
                <div class="col-md-3">
                <label>
-                    <a style="float: right;" href="<?php echo base_url() ?>employer/add_new_cv/1"><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New Candidate</button></a>
+                    <a style="float: right;" id="add_cv" href=""><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New Candidate</button></a>
                      
                   </label>
                </div>
@@ -511,6 +511,7 @@ input#email21 {
      tracker_card(job_id);
     var url = '<?php echo base_url(); ?>employer/add_new_cv/'+job_id;
     alert (url);
+    $('#add_cv').attr('href',url);
 
 
 
