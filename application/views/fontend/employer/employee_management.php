@@ -204,6 +204,7 @@ input.select2-search__field {
     display: inline-block;
     border-radius: 0px;
 }
+
 </style>
 
 
