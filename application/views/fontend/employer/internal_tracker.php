@@ -430,6 +430,7 @@ input.select2-search__field {
 }
 input.email {
     min-width: 200px;
+    border: none;
 }
 </style>
 <div class="container-fluid main-d">

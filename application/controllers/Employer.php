@@ -5035,13 +5035,14 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $update_cv['js_experience'] = $this->input->post('exp');
         $update_cv['js_current_notice_period'] = $this->input->post('notice');
         $update_cv['js_top_education'] = $this->input->post('edu');
-        $update_cv['comments'] = $this->input->post('comment');
         $update_cv['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
       
         $where_cv['cv_id'] = $this->input->post('id');
         $update= $this->Master_model->master_update($update_cv, 'corporate_cv_bank', $where_cv);
 
         $frwrd_update_cv['tracking_status'] = $this->input->post('status');
+        $frwrd_update_cv['comments'] = $this->input->post('comment');
+        
         $where_frwdcv['cv_id'] = $this->input->post('id');
         $update= $this->Master_model->master_update($frwrd_update_cv, 'forwarded_jobs_cv', $where_frwdcv);
         echo json_encode($update);
