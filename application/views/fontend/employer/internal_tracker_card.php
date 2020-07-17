@@ -65,4 +65,9 @@
                   <strong>There is no record for display</strong>
                </li>
                <?php endif; ?>
-            <!-- </div>
+            <!-- </div> -->
+              
+                <script>
+   $('.select2').select2();
+</script>
+              
