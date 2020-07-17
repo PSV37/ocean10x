@@ -1,4 +1,4 @@
-<div class="box" > -->
+<!-- <div class="box" >  -->
                <?php $key = 1; if (!empty($forwarded_job_tracking)): foreach ($forwarded_job_tracking as $job_row) : ?>
                  
                <label>
@@ -24,7 +24,7 @@
                               <div class="col-md-2">
                                 <span style="font-size:19px;margin-top:-4px;"  ><?php echo $job_row->js_name; ?></span>
                               </div>
-                              <div class="col-md-2">
+                              <div class="col-md-4">
                                 <span style="font-size:19px;margin-top:-4px;"  ><?php echo $job_row->js_email; ?></span>
                               </div>
                                <div class="col-md-2">
