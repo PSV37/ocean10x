@@ -530,7 +530,7 @@ function saveRow(id)
                // dataType: "json",
               success: function(data)
               {
-                window.reload();
+                window.location.reload();
               }
         });
 }
