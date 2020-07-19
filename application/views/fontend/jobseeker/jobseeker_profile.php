@@ -1,3 +1,19 @@
+<style type="text/css">
+   
+   .required
+   {
+   color: red;
+   }
+   
+   label.error {
+    color: red;
+    font-weight: normal !important;
+    font-style: italic;
+}
+   
+
+</style>
+
 <style>
    .nav-tabs{border-bottom:solid 1px #48827f30 !important;}
    .edit{float: right;font-size:12px;cursor: pointer;margin-right:15px;font-size:14px;font-weight:700;padding:2px 10px;border-radius:13px;}
@@ -28,6 +44,16 @@
    color: #18c5bd;       
    font-size: 12px;
    }
+
+ul#select2-dept_id-results {
+    margin-top: 30px;
+}
+input.select2-search__field {
+    display: inline-block;
+    border-radius: 0px;
+}
+
+
 </style>
 <?php 
    $this->load->view('fontend/layout/new_seeker_header.php');
@@ -76,7 +102,7 @@
                                     <h4 class="modal-title">Skiils</h4>
                                  </div>
                                  <div class="modal-body">
-                                    <form id="Updateskill-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_skills');?>" method="post" style="padding: 30px;">
+                                    <form id="Updateskill-info" class="form-horizontal allowalphabates" action="<?php echo base_url('job_seeker/update_skills');?>" method="post" style="padding: 30px;">
                                        <div class="form-group">
                                           <label class="control-label col-sm-3" for="email">Skills:</label>
                                           <div class="col-sm-9">
@@ -221,7 +247,8 @@
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">Specialization<span class="required">*</span></label>
-                                             <select name="specialization_id" id="specialization_id" class="form-control" required="">
+                                             <select name="specialization_id" id="specialization_id" class="form-control  department select2">
+                                              <option value="">Select</option>
                                                 <option value="">Select One</option>
                                                 <?php foreach($phdspecial as $edu_special){?>
                                                 <option value="<?php echo $edu_special['id']; ?>"<?php if(!empty($education_data)) if($education_data[0]->specialization_id==$edu_special['id']) echo "selected";?>><?php echo $edu_special['education_specialization']; ?></option>
@@ -235,7 +262,7 @@
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">University / Name of Institution<span class="required">*</span></label>
-                                             <input type="text" name="js_institute_name" class="form-control" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($education_data)) echo $education_data[0]->js_institute_name; ?>">
+                                             <input type="text" name="js_institute_name" class="form-control allowalphabates" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($education_data)) echo $education_data[0]->js_institute_name; ?>">
                                           </div>
                                           <div class="col-sm-1"></div>
                                        </div>
@@ -270,7 +297,7 @@
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">Score<span class="required">*</span></label>
-                                             <input type="text" name="js_resut" class="form-control" placeholder="Enter Score" value="<?php if(!empty($education_data)) echo $education_data[0]->js_resut; ?>" onkeypress="javascript:return isNumber1(event)" required>
+                                             <input type="text" name="js_resut" class="form-control allownumericwithoutdecimal" placeholder="Enter Score" value="<?php if(!empty($education_data)) echo $education_data[0]->js_resut; ?>" onkeypress="javascript:return isNumber1(event)" required>
                                           </div>
                                           <div class="col-sm-1"></div>
                                        </div>
@@ -303,7 +330,7 @@
                                  </div>
                                  <div class="modal-body education_frm">
                                     <div class="modal-body education_frm">
-                                       <form id="Educational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
+                                       <form id="Masters" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
                                           <input type="hidden" name="js_education_id" value="<?php echo $education_data2[0]->js_education_id; ?>">
                                           <div class="form-group">
                                              <div class="col-sm-1"></div>
@@ -319,7 +346,8 @@
                                              <div class="col-sm-1"></div>
                                              <div class="col-sm-10">
                                                 <label class="control-label" for="email">Specialization<span class="required">*</span></label>
-                                                <select name="specialization_id" id="specialization_id" class="form-control" required="">
+                                                <select name="specialization_id" id="specialization_id" class="form-control department select2" >
+                                                  <option value="">Select</option>
                                                    <option value="">Select One</option>
                                                    <?php foreach($pgdspecial as $edu_special){?>
                                                    <option value="<?php echo $edu_special['id']; ?>"<?php if(!empty($$education_data2)) if($$education_data2[0]->specialization_id==$edu_special['id']) echo "selected";?>><?php echo $edu_special['education_specialization']; ?></option>
@@ -332,7 +360,7 @@
                                              <div class="col-sm-1"></div>
                                              <div class="col-sm-10">
                                                 <label class="control-label" for="email">University / Name of Institution<span class="required">*</span></label>
-                                                <input type="text" name="js_institute_name" class="form-control" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($education_data)) echo $education_data2[0]->js_institute_name; ?>">
+                                                <input type="text" name="js_institute_name" class="form-control allowalphabates" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($education_data)) echo $education_data2[0]->js_institute_name; ?>">
                                              </div>
                                              <div class="col-sm-1"></div>
                                           </div>
@@ -350,7 +378,7 @@
                                              <div class="col-sm-1"></div>
                                              <div class="col-sm-10">
                                                 <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
-                                                <select name="js_year_of_passing" id="ddlYear" class="form-control" required="">
+                                                <select name="js_year_of_passing" id="ddlYear" class="form-control department select2" required="">                                               
                                                    <option value="">Select Completion Year</option>
                                                    <?php
                                                       $currently_selected = date('Y'); 
@@ -383,7 +411,7 @@
                                              <div class="col-sm-1"></div>
                                              <div class="col-sm-10">
                                                 <label class="control-label" for="email">Score<span class="required">*</span></label>
-                                                <input type="text" name="js_resut" class="form-control" placeholder="Enter Score" value="<?php if(!empty($education_data2)) echo $education_data2[0]->js_resut; ?>" onkeypress="javascript:return isNumber1(event)" required>
+                                                <input type="text" name="js_resut" class="form-control allownumericwithoutdecimal" placeholder="Enter Score" value="<?php if(!empty($education_data2)) echo $education_data2[0]->js_resut; ?>" onkeypress="javascript:return isNumber1(event)" required>
                                              </div>
                                              <div class="col-sm-1"></div>
                                           </div>
@@ -416,7 +444,7 @@
                                     <h4 class="modal-title">Graduation / Diploma</h4>
                                  </div>
                                  <div class="modal-body education_frm">
-                                    <form id="Educational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
+                                    <form id="Graduation" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
                                        <input type="hidden" name="js_education_id" value="<?php echo $education_data3[0]->js_education_id; ?>">
                                        <div class="form-group">
                                           <div class="col-sm-1"></div>
@@ -432,7 +460,8 @@
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">Specialization<span class="required">*</span></label>
-                                             <select name="specialization_id" id="specialization_id" class="form-control" required="">
+                                             <select name="specialization_id" id="specialization_id" class="form-control department select2">
+                                              <option value="">Select</option>
                                                 <option value="">Select One</option>
                                                 <?php foreach($gddspecial as $edu_special){?>
                                                 <option value="<?php echo $edu_special['id']; ?>"<?php if(!empty($education_data3)) if($education_data3[0]->specialization_id==$edu_special['id']) echo "selected";?>><?php echo $edu_special['education_specialization']; ?></option>
@@ -445,7 +474,7 @@
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">University&emsp;/&emsp;Name of Institution<span class="required">*</span></label>
-                                             <input type="text" name="js_institute_name" class="form-control" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($education_data3)) echo $education_data3[0]->js_institute_name; ?>">
+                                             <input type="text" name="js_institute_name" class="form-control allowalphabates" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($education_data3)) echo $education_data3[0]->js_institute_name; ?>">
                                           </div>
                                           <div class="col-sm-1"></div>
                                        </div>
@@ -463,7 +492,7 @@
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
-                                             <select name="js_year_of_passing" id="ddlYear" class="form-control" required="">
+                                             <select name="js_year_of_passing" id="ddlYear" class="form-control department select2" required="">
                                                 <option value="">Select Completion Year</option>
                                                 <?php
                                                    $currently_selected = date('Y'); 
@@ -496,7 +525,7 @@
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">Score<span class="required">*</span></label>
-                                             <input type="text" name="js_resut" class="form-control" placeholder="Enter Score" value="<?php if(!empty($education_data3)) echo $education_data3[0]->js_resut; ?>" onkeypress="javascript:return isNumber1(event)" required>
+                                             <input type="text" name="js_resut" class="form-control allownumericwithoutdecimal" placeholder="Enter Score" value="<?php if(!empty($education_data3)) echo $education_data3[0]->js_resut; ?>" onkeypress="javascript:return isNumber1(event)" required>
                                           </div>
                                           <div class="col-sm-1"></div>
                                        </div>
@@ -528,7 +557,7 @@
                                     <h4 class="modal-title">12th</h4>
                                  </div>
                                  <div class="modal-body education_frm">
-                                    <form id="Educational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
+                                    <form id="twelfth" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
                                        <input type="hidden" name="js_education_id" value="<?php echo $education_data4[0]->js_education_id; ?>">
                                        <div class="form-group">
                                           <div class="col-sm-1"></div>
@@ -544,7 +573,7 @@
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
-                                             <select name="js_year_of_passing" id="ddlYear" class="form-control" required="">
+                                             <select name="js_year_of_passing" id="ddlYear" class="form-control department select2" required="">
                                                 <option value="">Select Completion Year</option>
                                                 <?php
                                                    $currently_selected = date('Y'); 
@@ -624,7 +653,7 @@
                                     <h4 class="modal-title">10th</h4>
                                  </div>
                                  <div class="modal-body education_frm">
-                                    <form id="Educational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
+                                    <form id="tenth" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
                                        <input type="hidden" name="js_education_id" value="<?php echo $education_data5[0]->js_education_id; ?>">
                                        <div class="form-group">
                                           <div class="col-sm-1"></div>
@@ -640,7 +669,7 @@
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
-                                             <select name="js_year_of_passing" id="ddlYear" class="form-control" required="">
+                                             <select name="js_year_of_passing" id="ddlYear" class="form-control department select2" required="">
                                                 <option value="">Select Completion Year</option>
                                                 <?php
                                                    $currently_selected = date('Y'); 
@@ -827,23 +856,23 @@
                   </div>
                </div>
                <div class="modal fade" id="myModal50" role="dialog">
-                  <div class="modal-dialog modal-md">
+                  <div class="modal-dialog modal-md">     
                      <div class="modal-content">
                         <div class="modal-header">
                            <button type="button" class="close" data-dismiss="modal">&times;</button>
                            <h4 class="modal-title">Personal Information</h4>
                         </div>
                         <div class="modal-body">
-                           <form id="UpdateExperience-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_personalinfo');?>" method="post" style="padding: 30px;">
-                              <input type="hidden" name="js_experience_id" value="286">
+                           <form id="js" class="form-horizontal " action="<?php echo base_url('job_seeker/update_personalinfo');?>" method="post" style="padding: 30px;">
+                              <input type="hidden"  name="js_experience_id" value="286">
                               <div class="form-group">
-                                 <label class="control-label col-sm-3" for="email">Name:</label>
+                            <label class="control-label col-sm-3" for="email">Name:</label>
                                  <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="edit_company_profile_id" required name="full_name" value="<?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?>">
+                                    <input type="text" class="form-control allowalphabates" id="edit_company_profile_id"  name="full_name" value="<?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?>"  >
                                  </div>
                               </div>
                               <div class="form-group">
-                                 <label class="control-label col-sm-3" for="email">Date of Birth:</label>
+                                 <label class="control-label col-sm-3" for="email">Date of Birth:<span class="required">*</span></label>
                                  <div class="col-sm-9">
                                     <input type="text" class="form-control datepicker" id="edit_company_profile_id" required name="date_of_birth" value="<?php echo date('d-m-Y', strtotime($js_personal_info->date_of_birth)); ?>">
                                     <input type="checkbox" required name="dobmake_public" value="No"<?php if($js_personal_info->dob_visiblity=='No') {echo 'checked'; }else{}?>  > Birthday not visible to my network
@@ -853,7 +882,8 @@
                                  <label class="control-label col-sm-3" for="email">Country Code:</label>
                                  <div class="col-sm-9">
                                     <div class="col-sm-3">
-                                       <select id="country" name="country_code" class="form-control" required>
+                                       <select id="country" name="country_code" class="form-control department select2" tabindex="-1" aria-hidden="true">
+                                        <option value="">Select</option>
                                           <option><?php echo $js_personal_info->country_code?></option>
                                           <option value="AD - Andorra (+376)">AD - Andorra (+376)</option>
                                           <option value="AE - United Arab Emirates (+971)">AE - United Arab Emirates (+971)</option>
@@ -1089,7 +1119,7 @@
                                     </div>
                                     <label class="control-label col-sm-3" for="email">Primary Phone No:</label>
                                     <div class="col-sm-6">
-                                       <input name="mobile" type="text"  class="form-control" required maxlength="10" id="number" value="<?php if (!empty($js_personal_info->mobile)) {
+                                       <input name="mobile" type="text"  class="form-control allowphonenumber" required maxlength="10" id="number" value="<?php if (!empty($js_personal_info->mobile)) {
                                           echo $js_personal_info->mobile;}
                                           ?>">&nbsp;<span id="errmsg"></span>
                                     </div>
@@ -1099,7 +1129,7 @@
                                  <label class="control-label col-sm-3" for="email">Country Code:</label>
                                  <div class="col-sm-9">
                                     <div class="col-sm-3">
-                                       <select id="country" name="alternatecountry_code" class="form-control" required>
+                                       <select id="country" name="alternatecountry_code" class="form-control department select2" >
                                           <option><?php echo $js_personal_info->country_code?></option>
                                           <option value="AD - Andorra (+376)">AD - Andorra (+376)</option>
                                           <option value="AE - United Arab Emirates (+971)">AE - United Arab Emirates (+971)</option>
@@ -1335,7 +1365,7 @@
                                     </div>
                                     <label class="control-label col-sm-3" for="email">Alternate Phone No:</label>
                                     <div class="col-sm-6">
-                                       <input name="alternatemobile" type="text"  class="form-control" required maxlength="10" id="number" value="<?php if (!empty($js_personal_info->mobile)) {
+                                       <input name="alternatemobile" type="text"  class="form-control allowphonenumber" required maxlength="10" id="number" value="<?php if (!empty($js_personal_info->mobile)) {
                                           echo $js_personal_info->mobile;}
                                           ?>">&nbsp;<span id="errmsg"></span>
                                     </div>
@@ -1351,7 +1381,7 @@
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="email">Present Address<span class="required">*</span>:</label>
                                  <div class="col-sm-9">
-                                    <textarea name="present_address" class="form-control ckeditor" rows="5" id="comment" required><?php 
+                                    <textarea name="present_address" class="form-control ckeditor" rows="5" id="comment" ><?php 
                                        if (!empty($js_personal_info->present_address)) {
                                          echo $js_personal_info->present_address;
                                          }
@@ -1359,9 +1389,9 @@
                                  </div>
                               </div>
                               <div class="form-group">
-                                 <label class="control-label col-sm-3" for="email">Country:<span class="required">*</span></label>
+                                 <label class="control-label col-sm-3" for="email">Country<span class="required">*</span></label>
                                  <div class="col-sm-9">
-                                    <select name="country_id" class="form-control" onchange="getStates(this.value)">
+                                    <select name="country_id" class="form-control" onchange="getStates(this.value)" required="">
                                        <option value="">Select Country</option>
                                        <?php foreach($country as $key){?>
                                        <option value="<?php echo $key['country_id']; ?>"<?php if($js_personal_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
@@ -1394,7 +1424,7 @@
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="email">Pincode:</label>
                                  <div class="col-sm-9">
-                                    <input type="text" name="pincode" id="seeker_pincode" class="form-control" maxlength="6"  value="<?php
+                                    <input type="text" name="pincode" id="seeker_pincode" class="form-control allownumericwithoutdecimal" maxlength="6"  value="<?php
                                        if (!empty($js_personal_info->pincode)) {
                                          echo $js_personal_info->pincode;
                                          }
@@ -1515,7 +1545,8 @@
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">Specialization<span class="required">*</span></label>
-                                             <select name="specialization_id" id="specialization_id" class="form-control" required="">
+                                             <select name="specialization_id" id="specialization_id" class="form-control  department select2">
+                                              <option value="">Select</option>
                                                 <option value="">Select One</option>
                                                 <?php foreach($phdspecial as $edu_special){?>
                                                 <option value="<?php echo $edu_special['id']; ?>"<?php if(!empty($education_data)) if($education_data[0]->specialization_id==$edu_special['id']) echo "selected";?>><?php echo $edu_special['education_specialization']; ?></option>
@@ -1529,7 +1560,7 @@
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">University / Name of Institution<span class="required">*</span></label>
-                                             <input type="text" name="js_institute_name" class="form-control" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($education_data)) echo $education_data[0]->js_institute_name; ?>">
+                                             <input type="text" name="js_institute_name" class="form-control allowalphabates" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($education_data)) echo $education_data[0]->js_institute_name; ?>">
                                           </div>
                                           <div class="col-sm-1"></div>
                                        </div>
@@ -1547,7 +1578,7 @@
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
-                                             <select name="js_year_of_passing" id="ddlYear" class="form-control" required="">
+                                             <select name="js_year_of_passing" id="ddlYear" class="form-control department select2" required="">
                                                 <?php
                                                    $currently_selected = date('Y'); 
                                                    $earliest_year = 1940; 
@@ -1564,7 +1595,7 @@
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">Score<span class="required">*</span></label>
-                                             <input type="text" name="js_resut" class="form-control" placeholder="Enter Score" value="<?php if(!empty($education_data)) echo $education_data[0]->js_resut; ?>" onkeypress="javascript:return isNumber1(event)" required>
+                                             <input type="text" name="js_resut" class="form-control allownumericwithoutdecimal" placeholder="Enter Score" value="<?php if(!empty($education_data)) echo $education_data[0]->js_resut; ?>" onkeypress="javascript:return isNumber1(event)" required>
                                           </div>
                                           <div class="col-sm-1"></div>
                                        </div>
@@ -1597,7 +1628,7 @@
                                  </div>
                                  <div class="modal-body education_frm">
                                     <div class="modal-body education_frm">
-                                       <form id="Educational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
+                                       <form id="Masters" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
                                           <input type="hidden" name="js_education_id" value="<?php echo $education_data2[0]->js_education_id; ?>">
                                           <div class="form-group">
                                              <div class="col-sm-1"></div>
@@ -1613,7 +1644,8 @@
                                              <div class="col-sm-1"></div>
                                              <div class="col-sm-10">
                                                 <label class="control-label" for="email">Specialization<span class="required">*</span></label>
-                                                <select name="specialization_id" id="specialization_id" class="form-control" required="">
+                                                <select name="specialization_id" id="specialization_id" class="form-control department select2">
+                                                  <option value="">Select</option>
                                                    <option value="">Select One</option>
                                                    <?php foreach($pgdspecial as $edu_special){?>
                                                    <option value="<?php echo $edu_special['id']; ?>"<?php if(!empty($$education_data2)) if($$education_data2[0]->specialization_id==$edu_special['id']) echo "selected";?>><?php echo $edu_special['education_specialization']; ?></option>
@@ -1626,7 +1658,7 @@
                                              <div class="col-sm-1"></div>
                                              <div class="col-sm-10">
                                                 <label class="control-label" for="email">University / Name of Institution<span class="required">*</span></label>
-                                                <input type="text" name="js_institute_name" class="form-control" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($education_data)) echo $education_data2[0]->js_institute_name; ?>">
+                                                <input type="text" name="js_institute_name" class="form-control allowalphabates" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($education_data)) echo $education_data2[0]->js_institute_name; ?>">
                                              </div>
                                              <div class="col-sm-1"></div>
                                           </div>
@@ -1644,7 +1676,7 @@
                                              <div class="col-sm-1"></div>
                                              <div class="col-sm-10">
                                                 <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
-                                                <select name="js_year_of_passing" id="ddlYear" class="form-control" required="">
+                                                <select name="js_year_of_passing" id="ddlYear" class="form-control department select2" required="">
                                                    <option value="">Select Completion Year</option>
                                                    <?php
                                                       $currently_selected = date('Y'); 
@@ -1677,7 +1709,7 @@
                                              <div class="col-sm-1"></div>
                                              <div class="col-sm-10">
                                                 <label class="control-label" for="email">Score<span class="required">*</span></label>
-                                                <input type="text" name="js_resut" class="form-control" placeholder="Enter Score" value="<?php if(!empty($education_data2)) echo $education_data2[0]->js_resut; ?>" onkeypress="javascript:return isNumber1(event)" required>
+                                                <input type="text" name="js_resut" class="form-control allownumericwithoutdecimal" placeholder="Enter Score" value="<?php if(!empty($education_data2)) echo $education_data2[0]->js_resut; ?>" onkeypress="javascript:return isNumber1(event)" required>
                                              </div>
                                              <div class="col-sm-1"></div>
                                           </div>
@@ -1710,13 +1742,14 @@
                                     <h4 class="modal-title">Graduation / Diploma</h4>
                                  </div>
                                  <div class="modal-body education_frm">
-                                    <form id="Educational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
+                                    <form id="Graduation" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
                                        <input type="hidden" name="js_education_id" value="<?php echo $education_data3[0]->js_education_id; ?>">
                                        <div class="form-group">
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">Education<span class="required">*</span></label>
-                                             <select name="education_level_id" id="education_level_id" class="form-control" required="">
+                                             <select name="education_level_id" id="education_level_id" class="form-control  department select2" >
+                                              <option value="">Select</option>
                                                 <option value="3">Graduation/Diploma</option>
                                              </select>
                                           </div>
@@ -1726,7 +1759,8 @@
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">Specialization<span class="required">*</span></label>
-                                             <select name="specialization_id" id="specialization_id" class="form-control" required="">
+                                             <select name="specialization_id" id="specialization_id" class="form-control department select2">
+                                              <option value="">Select</option>
                                                 <option value="">Select One</option>
                                                 <?php foreach($gddspecial as $edu_special){?>
                                                 <option value="<?php echo $edu_special['id']; ?>"<?php if(!empty($education_data3)) if($education_data3[0]->specialization_id==$edu_special['id']) echo "selected";?>><?php echo $edu_special['education_specialization']; ?></option>
@@ -1739,7 +1773,7 @@
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">University&emsp;/&emsp;Name of Institution<span class="required">*</span></label>
-                                             <input type="text" name="js_institute_name" class="form-control" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($education_data3)) echo $education_data3[0]->js_institute_name; ?>">
+                                             <input type="text" name="js_institute_name" class="form-control allowalphabates" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($education_data3)) echo $education_data3[0]->js_institute_name; ?>">
                                           </div>
                                           <div class="col-sm-1"></div>
                                        </div>
@@ -1757,7 +1791,7 @@
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
-                                             <select name="js_year_of_passing" id="ddlYear" class="form-control" required="">
+                                             <select name="js_year_of_passing" id="ddlYear" class="form-control department select2" required="">
                                                 <option value="">Select Completion Year</option>
                                                 <?php
                                                    $currently_selected = date('Y'); 
@@ -1790,7 +1824,7 @@
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">Score<span class="required">*</span></label>
-                                             <input type="text" name="js_resut" class="form-control" placeholder="Enter Score" value="<?php if(!empty($education_data3)) echo $education_data3[0]->js_resut; ?>" onkeypress="javascript:return isNumber1(event)" required>
+                                             <input type="text" name="js_resut" class="form-control allownumericwithoutdecimal" placeholder="Enter Score" value="<?php if(!empty($education_data3)) echo $education_data3[0]->js_resut; ?>" onkeypress="javascript:return isNumber1(event)" required>
                                           </div>
                                           <div class="col-sm-1"></div>
                                        </div>
@@ -1822,13 +1856,14 @@
                                     <h4 class="modal-title">12th</h4>
                                  </div>
                                  <div class="modal-body education_frm">
-                                    <form id="Educational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
+                                    <form id="twelfth" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
                                        <input type="hidden" name="js_education_id" value="<?php echo $education_data4[0]->js_education_id; ?>">
                                        <div class="form-group">
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">Education<span class="required">*</span></label>
-                                             <select name="education_level_id" id="education_level_id" class="form-control" required="">
+                                             <select name="education_level_id" id="education_level_id" class="form-control department select2">
+                                              <option value="">Select</option>
                                                 <option value="4">12th</option>
                                              </select>
                                           </div>
@@ -1838,7 +1873,7 @@
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
-                                             <select name="js_year_of_passing" id="ddlYear" class="form-control" required="">
+                                             <select name="js_year_of_passing" id="ddlYear" class="form-control department select2" required="">
                                                 <option value="">Select Completion Year</option>
                                                 <?php
                                                    $currently_selected = date('Y'); 
@@ -1924,7 +1959,8 @@
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">Education<span class="required">*</span></label>
-                                             <select name="education_level_id" id="education_level_id" class="form-control" required="">
+                                             <select name="education_level_id" id="education_level_id" class="form-control department select2">
+                                              <option value="">Select</option>
                                                 <option value="5">10th</option>
                                              </select>
                                           </div>
@@ -1934,7 +1970,7 @@
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
-                                             <select name="js_year_of_passing" id="ddlYear" class="form-control" required="">
+                                             <select name="js_year_of_passing" id="ddlYear" class="form-control department select2" required="">
                                                 <option value="">Select Completion Year</option>
                                                 <?php
                                                    $currently_selected = date('Y'); 
@@ -2015,18 +2051,19 @@
                                     <h4 class="modal-title">Work Experience</h4>
                                  </div>
                                  <div class="modal-body">
-                                    <form id="UpdateExperience-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_experience');?>" method="post" style="padding: 30px;">
+                                    <form id="work_experience" class="form-horizontal" action="<?php echo base_url('job_seeker/update_experience');?>" method="post" style="padding: 30px;">
                                        <!-- <input type="hidden" name="js_experience_id" value="286"> -->
                                        <div class="form-group">
                                           <label class="control-label col-sm-3" for="email">Company Name:</label>
                                           <div class="col-sm-9">
-                                             <input type="text" class="form-control" id="edit_company_profile_id" required name="company_profile_id" value="">
+                                             <input type="text" class="form-control allowalphabates" id="edit_company_profile_id" required name="company_profile_id" value="">
                                           </div>
                                        </div>
                                        <div class="form-group">
                                           <label class="control-label col-sm-3" for="email">Designation:</label>
                                           <div class="col-sm-9">
-                                             <select name="designation_id" class="form-control">
+                                             <select name="designation_id" class="form-control department select2">
+                                              <option value="">Select</option>
                                                 <?php foreach($designation as $keys){?>
                                                 <option value="<?php echo $keys['designation_id']; ?>"><?php echo $keys['designation_name']; ?></option>
                                                 <?php } ?>
@@ -2036,7 +2073,7 @@
                                        <div class="form-group">
                                           <label class="control-label col-sm-3" for="email">Department:</label>
                                           <div class="col-sm-9">
-                                             <select name="dept_id" class="form-control">
+                                             <select name="dept_id" class="form-control department select2">
                                                 <option value="">Select Department</option>
                                                 <?php foreach($department as $dept){?>
                                                 <option value="<?php echo $dept['dept_id']; ?>"<?php if($experinece->dept_id==$dept['dept_id']){ echo "selected"; }?>><?php echo $dept['department_name']; ?></option>
@@ -2058,13 +2095,13 @@
                                        <div class="form-group">
                                           <label class="control-label col-sm-3" for="pwd">Job Location</label>
                                           <div class="col-sm-9">
-                                             <input type="text" name="address" class="form-control" id="job_area" value="">
+                                             <input type="text" name="address" class="form-control allowalphabates" id="job_area" value="">
                                           </div>
                                        </div>
                                        <div class="form-group">
                                           <label class="control-label col-sm-3" for="email">Salary:</label>
                                           <div class="col-sm-9">
-                                             <input type="text" name="js_career_salary" class="form-control" id="js_career_salary" placeholder="Salary" value="25,000">
+                                             <input type="text" name="js_career_salary" class="form-control allownumericwithoutdecimal" id="js_career_salary" placeholder="Salary" value="25,000">
                                           </div>
                                        </div>
                                        <div class="form-group">
@@ -2271,12 +2308,12 @@
                                     <h4 class="modal-title">My Trainnings</h4>
                                  </div>
                                  <div class="modal-body">
-                                    <form id="UpdateEducational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_training');?>" method="post" style="padding: 30px;">
+                                    <form id="my-trainings" class="form-horizontal" action="<?php echo base_url('job_seeker/update_training');?>" method="post" style="padding: 30px;">
                                        <div class="form-group">
                                           <input type="hidden" value="155" name="job_training_id">
                                           <label class="control-label col-sm-3" for="email">Training Title</label>
                                           <div class="col-sm-9">
-                                             <select name="training_title" id="training_title" class="form-control" onchange="check_other(this.value)">
+                                             <select name="training_title" id="training_title" class="form-control department select2" onchange="check_other(this.value)">
                                                 <option value="">Select Training title</option>
                                                 <?php foreach($training as $key){?>
                                                 <option value="<?php echo $key['name']; ?>"<?php if($training_list->training_title==$key['name']){ echo "selected"; }?>><?php echo $key['name']; ?></option>
@@ -2289,19 +2326,19 @@
                                        <div class="form-group">
                                           <label class="control-label col-sm-3" for="email">Training Topic:</label>
                                           <div class="col-sm-9">
-                                             <input type="text" name="training_topic" class="form-control" id="training_topic" placeholder="Training Topic" value="CCNA">
+                                             <input type="text" name="training_topic" class="form-control allowalphabates" id="training_topic" placeholder="Training Topic" value="CCNA">
                                           </div>
                                        </div>
                                        <div class="form-group">
                                           <label class="control-label col-sm-3" for="email">Institute:</label>
                                           <div class="col-sm-9">
-                                             <input type="text" name="institute" class="form-control" id="institute" placeholder="Institiute Name" value="CCNA">
+                                             <input type="text" name="institute" class="form-control allowalphabates" id="institute" placeholder="Institiute Name" value="CCNA">
                                           </div>
                                        </div>
                                        <div class="form-group">
                                           <label class="control-label col-sm-3" for="email">Country:</label>
                                           <div class="col-sm-9">
-                                             <select name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)">
+                                             <select name="country_id" id="country_id" class="form-control department select2" onchange="getStates(this.value)">
                                                 <option value="">Select Country</option>
                                                 <?php foreach($country as $key){?>
                                                 <option value="<?php echo $key['country_id']; ?>"<?php if($training_list->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
@@ -2312,7 +2349,7 @@
                                        <div class="form-group">
                                           <label class="control-label col-sm-3" for="email">State:</label>
                                           <div class="col-sm-9">
-                                             <select name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)">
+                                             <select name="state_id" id="state_id" class="form-control department select2" onchange="getCitys(this.value)">
                                                 <option value="">Select Country First</option>
                                                 <!--   <?php foreach($state as $val){?>
                                                    <option value="<?php echo $val['state_id']; ?>"<?php if($training_list->state_id==$val['state_id']){ echo "selected"; }?>><?php echo $val['state_name']; ?></option>
@@ -2323,7 +2360,7 @@
                                        <div class="form-group">
                                           <label class="control-label col-sm-3" for="email">City:</label>
                                           <div class="col-sm-9">
-                                             <select name="city_id" id="city_id" class="form-control">
+                                             <select name="city_id" id="city_id" class="form-control department select2">
                                                 <option value="">Select State First</option>
                                                 <!--      <?php foreach($city as $valu){?>
                                                    <option value="<?php echo $valu['id']; ?>"<?php if($training_list->city_id==$valu['id']){ echo "selected"; }?>><?php echo $valu['city_name']; ?></option>
@@ -2334,13 +2371,14 @@
                                        <div class="form-group">
                                           <label class="control-label col-sm-3" for="pwd">Duration:</label>
                                           <div class="col-sm-9">
-                                             <input name="duration" type="text" class="form-control" id="duration" placeholder=" 1 years 2 month" value="">
+                                             <input name="duration" type="text" class="form-control allownumericwithdecimal" id="duration" placeholder=" 1 years 2 month" value="">
                                           </div>
                                        </div>
                                        <div class="form-group">
                                           <label class="control-label col-sm-3" for="pwd">Training Years:</label>
                                           <div class="col-sm-9">
-                                             <select name="training_year" id="training_year" class="form-control">
+                                             <select name="training_year" id="training_year" class="form-control department select2">
+                                              <option value="">Select</option>
                                                 <?php foreach($passingyear as $traning){?>
                                                 <option value="<?php echo $traning['passing_id']; ?>"<?php if($training_list->training_year==$traning['passing_id']){ echo "selected"; }?>><?php echo $traning['passing_year']; ?></option>
                                                 <?php } ?>
@@ -2533,985 +2571,1184 @@
         
 <?php $this->load->view("fontend/layout/jobseeker_footer.php"); ?>
 </div>
+<script src="<?php echo base_url(); ?>asset/src/jquery.tokeninput.js"></script>
+<script src="<?php echo base_url() ?>asset/js/jquery-ui.js"></script>
+<script src="<?php echo base_url() ?>asset/tokenjs/bootstrap-tokenfield.js"></script>
+<script src="<?php echo base_url() ?>asset/tokenjs/typeahead.bundle.min.js"></script>
+<script src="<?php echo base_url() ?>asset/js/search.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/additional-methods.js"></script>
+
+
 
 <script type="text/javascript">
    // Personal Info
-     $( document ).ready( function () {
-             $( "#Personal-info" ).validate( {
-                 rules: {
-   
-                     resume_title: {
-                         required: true,
-                     },
-   
-                     father_name: {
-                         required: true,
-                     },
-   
-                     mother_name: {
-                         required: true,
-                     },
-   
-                     date_of_birth: {
-                         required: true,
-                     },
-                     matrial_status: {
-                         required: true,
-                     },
-                     nationality: {
-                         required: true,
-                     },
-   
-                     mobile: {
-                         required: true,
-                         minlength:10,
-                     },
-   
-                     present_address: {
-                         required: true,
-                     },
-                      parmanent_address : {
-                         required: true,
-                     },
-                      country_id: {
-                         required: true,
-                     },
-                     state_id: {
-                         required: true,
-                     },
-                     city_id: {
-                         required: true,
-                     },
-   
-   
-                 },
-                 messages: {
-                     email: "Please enter a valid email address",
-                     father_name: "Please enter your father name ",
-                     mother_name: "Please enter your mother name",
-                     date_of_birth: "Please enter your birthday",
-                     matrial_status: "Please select your matarial",
-                     nationality: "Please select your nationality" ,
-                     present_address: "Please enter your present address ",
-                     parmanent_address: "Please enter your parmanent address ",
-                     country_id: "Please select country ",
-                     state_id: "Please select state ",
-                     city_id: "Please select city ",
-   
-                 },
-                 errorElement: "em",
-                 errorPlacement: function ( error, element ) {
-                     // Add the `help-block` class to the error element
-                     error.addClass( "help-block" );
-   
-                     if ( element.prop( "type" ) === "checkbox" ) {
-                         error.insertAfter( element.parent( "label" ) );
-                     } else {
-                         error.insertAfter( element );
-                     }
-                 },
-                 highlight: function ( element, errorClass, validClass ) {
-                     $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
-                 },
-                 unhighlight: function (element, errorClass, validClass) {
-                     $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
-                 }
-             } );
-   
-   
-         });
-   
-   // Experience
-   $( document ).ready( function () {
-                // Education Add form Valiaton
-         $( "#addExperience-info" ).validate( {
-                 rules: {
-   
-                     company_name: {
-                         required: true,
-                     },
-   
-                     designation: {
-                         required: true,
-                     },
-   
-                     job_level: {
-                         required: true,
-                     },
-   
-                     job_nature: {
-                         required: true,
-                     },
-                     department: {
-                         required: true,
-                     },
-                       duration: {
-                         required: true,
-                     },
-   
-                 },
-                 messages: {
-                     company_name: "Please enter company name",
-                     designation: "Please designation name ",
-                     job_level: "Please select job level",
-                     job_nature: "Please select job nature",
-                     department: "Please enter your department",
-                     duration: "Please enter your duration",
-                 },
-                 errorElement: "em",
-                 errorPlacement: function ( error, element ) {
-                     // Add the `help-block` class to the error element
-                     error.addClass( "help-block" );
-   
-                     if ( element.prop( "type" ) === "checkbox" ) {
-                         error.insertAfter( element.parent( "label" ) );
-                     } else {
-                         error.insertAfter( element );
-                     }
-                 },
-                 highlight: function ( element, errorClass, validClass ) {
-                     $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
-                 },
-                 unhighlight: function (element, errorClass, validClass) {
-                     $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
-                 }
-             } );
-       $( "#UpdateExperience-info" ).validate( {
-                 rules: {
-   
-                     company_name: {
-                         required: true,
-                     },
-   
-                     designation: {
-                         required: true,
-                     },
-   
-                     job_level: {
-                         required: true,
-                     },
-   
-                     job_nature: {
-                         required: true,
-                     },
-                     department: {
-                         required: true,
-                     },
-                       duration: {
-                         required: true,
-                     },
-   
-                 },
-               messages: {
-                     company_name: "Please enter company name",
-                     designation: "Please designation name ",
-                     job_level: "Please select job level",
-                     job_nature: "Please select job nature",
-                     department: "Please enter your department",
-                     duration: "Please enter your duration",
-                 },
-                 errorElement: "em",
-                 errorPlacement: function ( error, element ) {
-                     // Add the `help-block` class to the error element
-                     error.addClass( "help-block" );
-   
-                     if ( element.prop( "type" ) === "checkbox" ) {
-                         error.insertAfter( element.parent( "label" ) );
-                     } else {
-                         error.insertAfter( element );
-                     }
-                 },
-                 highlight: function ( element, errorClass, validClass ) {
-                     $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
-                 },
-                 unhighlight: function (element, errorClass, validClass) {
-                     $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
-                 }
-             } );
-   
-   
-         });
-   
-   // Reference
-     $( document ).ready( function () {
-                
-         $( "#Reference-info" ).validate( {
-                 rules: {
-   
-                     name: {
-                         required: true,
-                         minlength: 5
-                     },
-   
-                     org_name: {
-                         required: true,
-                     },
-   
-                     mobile: {
-                         required: true,
-                     },
-   
-                     designation: {
-                         required: true,
-                     },
-                     email: {
-                         required: true,
-                     },
-                 realtion: {
-                         required: true,
-                     },
-   
-                 },
-                 messages: {
-                     name: "Please enter a full name",
-                     org_name: "Please enter organization name ",
-                     mobile: "Please enter  mobile number",
-                     designation: "Please enter designation ",
-                     email: "Please enter email",
-                 },
-                 errorElement: "em",
-                 errorPlacement: function ( error, element ) {
-                     // Add the `help-block` class to the error element
-                     error.addClass( "help-block" );
-   
-                     if ( element.prop( "type" ) === "checkbox" ) {
-                         error.insertAfter( element.parent( "label" ) );
-                     } else {
-                         error.insertAfter( element );
-                     }
-                 },
-                 highlight: function ( element, errorClass, validClass ) {
-                     $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
-                 },
-                 unhighlight: function (element, errorClass, validClass) {
-                     $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
-                 }
-             } );
-       $( "#UpdateEducational-info" ).validate( {
-                 rules: {
-   
-                     name: {
-                         required: true,
-                         minlength: 5
-                     },
-   
-                     org_name: {
-                         required: true,
-                     },
-   
-                     mobile: {
-                         required: true,
-                     },
-   
-                     designation: {
-                         required: true,
-                     },
-                     email: {
-                         required: true,
-                     },
-   
-                 },
-                 messages: {
-                     name: "Please enter a full name",
-                     org_name: "Please enter organization name ",
-                     mobile: "Please enter  mobile number",
-                     designation: "Please enter designation ",
-                     email: "Please enter email",
-                 },
-                 errorElement: "em",
-                 errorPlacement: function ( error, element ) {
-                     // Add the `help-block` class to the error element
-                     error.addClass( "help-block" );
-   
-                     if ( element.prop( "type" ) === "checkbox" ) {
-                         error.insertAfter( element.parent( "label" ) );
-                     } else {
-                         error.insertAfter( element );
-                     }
-                 },
-                 highlight: function ( element, errorClass, validClass ) {
-                     $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
-                 },
-                 unhighlight: function (element, errorClass, validClass) {
-                     $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
-                 }
-             } );
-   
-   
-         });
-     
-   // Career Info
-   $( document ).ready( function () {
-             $( "#Career-info" ).validate( {
-                 rules: {
-   
-                     js_career_obj: {
-                         required: true,
-                     },
-   
-                     js_career_sum: {
-                         required: true,
-                     },
-   
-                     js_career_salary: {
-                         required: true,
-                     },
-   
-                     avaliable: {
-                         required: true,
-                     },
-                },
-                 messages: {
-   
-                 },
-                 errorElement: "em",
-                 errorPlacement: function ( error, element ) {
-                     // Add the `help-block` class to the error element
-                     error.addClass( "help-block" );
-   
-                     if ( element.prop( "type" ) === "checkbox" ) {
-                         error.insertAfter( element.parent( "label" ) );
-                     } else {
-                         error.insertAfter( element );
-                     }
-                 },
-                 highlight: function ( element, errorClass, validClass ) {
-                     $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
-                 },
-                 unhighlight: function (element, errorClass, validClass) {
-                     $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
-                 }
-             } );
-   
-   
-         });
-   
-   //
-   $( document ).ready( function () {
-             $( "#addLanguage-info" ).validate( {
-                 rules: {
-   
-                     language: {
-                         required: true,
-                     },
-   
-                     reading: {
-                         required: true,
-                     },
-   
-                     writing: {
-                         required: true,
-                     },
-   
-                     speaking: {
-                         required: true,
-                     },
-                },
-                 messages: {
-   
-                 },
-                 errorElement: "em",
-                 errorPlacement: function ( error, element ) {
-                     // Add the `help-block` class to the error element
-                     error.addClass( "help-block" );
-   
-                     if ( element.prop( "type" ) === "checkbox" ) {
-                         error.insertAfter( element.parent( "label" ) );
-                     } else {
-                         error.insertAfter( element );
-                     }
-                 },
-                 highlight: function ( element, errorClass, validClass ) {
-                     $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
-                 },
-                 unhighlight: function (element, errorClass, validClass) {
-                     $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
-                 }
-             } );
-   
-   
-         });
-   
-   // Education
-   $( document ).ready( function () {
-                // Education Add form Valiaton
-         $( "#Educational-info" ).validate( {
-                 rules: {
-   
-                     js_degree: {
-                         required: true,
-                     },
-   
-                     js_group: {
-                         required: true,
-                     },
-   
-                     js_resut: {
-                         required: true,
-                     },
-   
-                     js_institute_name: {
-                         required: true,
-                     },
-                     js_year_of_passing: {
-                         required: true,
-                     },
-   
-                 },
-                 messages: {
-                     js_degree: "Please your degree",
-                     js_group: "Please enter your group name ",
-                     js_resut: "Please enter your result",
-                     js_institute_name: "Please institute name",
-                     js_year_of_passing: "Please your passing years",
-                 },
-                 errorElement: "em",
-                 errorPlacement: function ( error, element ) {
-                     // Add the `help-block` class to the error element
-                     error.addClass( "help-block" );
-   
-                     if ( element.prop( "type" ) === "checkbox" ) {
-                         error.insertAfter( element.parent( "label" ) );
-                     } else {
-                         error.insertAfter( element );
-                     }
-                 },
-                 highlight: function ( element, errorClass, validClass ) {
-                     $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
-                 },
-                 unhighlight: function (element, errorClass, validClass) {
-                     $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
-                 }
-             } );
-       $( "#UpdateEducational-info" ).validate( {
-                 rules: {
-   
-                     js_degree: {
-                         required: true,
-                     },
-   
-                     js_group: {
-                         required: true,
-                     },
-   
-                     js_resut: {
-                         required: true,
-                     },
-   
-                     js_institute_name: {
-                         required: true,
-                     },
-                     js_year_of_passing: {
-                         required: true,
-                     },
-   
-                 },
-                 messages: {
-                     js_degree: "Please your degree",
-                     js_group: "Please enter your group name ",
-                     js_resut: "Please enter your result",
-                     js_institute_name: "Please institute name",
-                     js_year_of_passing: "Please your passing years",
-                 },
-                 errorElement: "em",
-                 errorPlacement: function ( error, element ) {
-                     // Add the `help-block` class to the error element
-                     error.addClass( "help-block" );
-   
-                     if ( element.prop( "type" ) === "checkbox" ) {
-                         error.insertAfter( element.parent( "label" ) );
-                     } else {
-                         error.insertAfter( element );
-                     }
-                 },
-                 highlight: function ( element, errorClass, validClass ) {
-                     $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
-                 },
-                 unhighlight: function (element, errorClass, validClass) {
-                     $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
-                 }
-             } );
-   
-   
-         });
-   
-   // Training
-   $( document ).ready( function () {
-                // Education Add form Valiaton
-         $( "#Training-info").validate( {
-                 rules: {
-   
-                     training_title: {
-                         required: true,
-                         minlength: 5
-                     },
-                     country: {
-                         required: true,
-                     },
-   
-                     institute: {
-                         required: true,
-                     },
-                     location: {
-                         required: true,
-                     },
-                     duration: {
-                       required: true,
-                     },
-                      training_year: {
-                       required: true,
-                     },
-   
-                 },
-                 messages: {
-                     training_title: "Please enter a valid Title",
-                     country: "Please enter your country name",
-                     institute: "Please enter your institue",
-                     location: "Please enter your location",
-                     duration: "Please enter your duration",
-                     training_year: "Please enter training year",
-                 },
-                 errorElement: "em",
-                 errorPlacement: function ( error, element ) {
-                     // Add the `help-block` class to the error element
-                     error.addClass( "help-block" );
-   
-                     if ( element.prop( "type" ) === "checkbox" ) {
-                         error.insertAfter( element.parent( "label" ) );
-                     } else {
-                         error.insertAfter( element );
-                     }
-                 },
-                 highlight: function ( element, errorClass, validClass ) {
-                     $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
-                 },
-                 unhighlight: function (element, errorClass, validClass) {
-                     $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
-                 }
-             } );
-       $( "#UpdateEducational-info" ).validate( {
-                 rules: {
-   
-                     training_title: {
-                         required: true,
-                         minlength: 5
-                     },
-                     country: {
-                         required: true,
-                     },
-   
-                     institute: {
-                         required: true,
-                     },
-                     location: {
-                         required: true,
-                     },
-                     duration: {
-                       required: true,
-                     },     
-                      training_year: {
-                       required: true,
-                     },
-   
-                 },
-                 messages: {
-                     training_title: "Please enter a valid Title",
-                     country: "Please enter your country name",
-                     institute: "Please enter your institue",
-                     location: "Please enter your location",
-                     duration: "Please enter your duration",
-                     training_year: "Please enter training year",
-                 },
-                 errorElement: "em",
-                 errorPlacement: function ( error, element ) {
-                     // Add the `help-block` class to the error element
-                     error.addClass( "help-block" );
-   
-                     if ( element.prop( "type" ) === "checkbox" ) {
-                         error.insertAfter( element.parent( "label" ) );
-                     } else {
-                         error.insertAfter( element );
-                     }
-                 },
-                 highlight: function ( element, errorClass, validClass ) {
-                     $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
-                 },
-                 unhighlight: function (element, errorClass, validClass) {
-                     $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
-                 }
-             } );
-   
-   
-         });
-     
-   
+$( document ).ready( function () {
+
+$("#js").validate (  
+
+{
+
+rules:{
+
+'full_name':{
+minlength: 3,
+namespace_regex: true
+},
+
+'date_of_birth':{
+  required: true
+//email_regex: true
+},
+
+
+'country_code':{
+//phonenumber_regex: true
+}, 
+
+'mobile':{
+  maxlength:10
+//phonenumber_regex: true
+}, 
+
+'alternatecountry_code':{
+//twodigit_regex: true
+//email: true
+},
+
+
+'alternatemobile':{
+maxlength:10
+//email: true
+},
+
+'present_address':{ 
+   required:true               
+  //minlength:10,        
+  //maxlength:10,
+},
+
+
+'country_id':{
+  //required:true
+//namespace_regex: true 
+//url: true
+},
+
+
+'state_id':{
+  required:true
+//current_work_location_regex: true
+// /companypincode_regex: true
+
+},
+
+
+
+'city_id':{
+  required:true
+//twodecimal_regex: true
+// /companypincode_regex: true
+
+},
+
+
+'pincode':{
+companypincode_regex: true,
+maxlength:6
+//current_work_location_regex: true
+// /companypincode_regex: true
+},
+
+'tagline':{
+//required: true
+// /companypincode_regex: true
+},  
+
+'matrial_status':{
+// /companypincode_regex: true
+},
+
+'work_permit_usa':{
+// /companypincode_regex: true
+},
+
+'other_country_work_permit':{
+// /companypincode_regex: true
+},
+
+'website':{
+//twodecimal_regex: true
+// /companypincode_regex: true
+}
+
+},
+
+messages:{
+
+'full_name':{
+//required: "This field is mandatory!",
+minlength: "Please type atleast 3 characters!",
+namespace_regex: "Please type only alphabets"
+},
+
+'date_of_birth':{
+  required: "This field is mandatory!",
+  matches: "Didn't match!",      
+  minlength: "Please Enter 10 digit phone numbers!",        
+  maxlength: "Maximum length 10 digits!"
+},
+
+'country_code':{
+required: "This field is mandatory!",
+minlength: "Please type atleast 10 digits",
+maxlength: "Please type atleast 10 digits"
+},
+
+'mobile':{
+maxlength: "Choose a company name of at least 14 letters!"
+},
+
+'alternatecountry_code':{
+//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+//remote: "The username is already in use by another user!"
+},
+
+
+'alternatemobile':{
+email: "Please enter a valid email address!",
+remote: "The email is already in use by another user!"
+},
+
+'present_address' :{
+  required: "This field is mandatory!"
+//email: "Please enter a valid email address!",
+//remote: "The email is already in use by another user!"
+},
+
+'country_id':{
+},
+
+'state_id':{
+required: "This field is mandatory!",
+minlength: "Choose a username of at least 4 letters!",
+username_regex: "You have used invalid characters. Are permitted only letters numbers!",
+remote: "The useername is already in use by another user!"
+},
+
+'mobile':{
+maxlength: "Choose a company name of at least 14 letters!"
+},
+
+'alternatecountry_code':{
+//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+//remote: "The username is already in use by another user!"
+},
+
+
+'alternatemobile':{
+email: "Please enter a valid email address!",
+remote: "The email is already in use by another user!"
+},
+
+'present_address' :{
+email: "Please enter a valid email address!",
+remote: "The email is already in use by another user!"
+},
+
+'country_id':{
+  required: "This field is mandatory!",
+},
+
+'state_id':{
+required: "This field is mandatory!",
+minlength: "Choose a username of at least 4 letters!",
+username_regex: "You have used invalid characters. Are permitted only letters numbers!",
+remote: "The useername is already in use by another user!"
+},
+
+'city_id' :{
+  required: "This field is mandatory!",
+email: "Please enter a valid email address!",
+remote: "The email is already in use by another user!"
+},
+
+'pincode':{
+},
+
+'tagline':{
+required: "This field is mandatory!",
+minlength: "Choose a username of at least 4 letters!",
+username_regex: "You have used invalid characters. Are permitted only letters numbers!",
+remote: "The useername is already in use by another user!"
+},
+
+'matrial_status':{
+maxlength: "Choose a company name of at least 14 letters!"
+},
+
+'work_permit_usa':{
+//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+//remote: "The username is already in use by another user!"
+},
+
+
+'other_country_work_permit':{
+email: "Please enter a valid email address!",
+remote: "The email is already in use by another user!"
+},
+
+'website' :{
+email: "Please enter a valid email address!",
+remote: "The email is already in use by another user!"
+}
+
+
+}
+
+});
+
+});
+
+$( document ).ready( function () {
+
+$("#Educational-info").validate (  
+
+{
+
+rules:{
+
+'education_level_id':{
+minlength: 3,
+namespace_regex: true
+},
+
+'specialization_id':{
+email_regex: true
+},  
+
+
+'js_institute_name':{
+phonenumber_regex: true
+}, 
+
+'education_type_id':{
+//twodigit_regex: true
+//email: true
+},
+
+
+'js_year_of_passing':{
+maxlength:3
+//email: true
+},
+
+'js_resut':{                
+  //minlength:10,        
+  //maxlength:10,
+},
+
+},
+
+messages:{
+
+'education_level_id':{
+required: "This field is mandatory!",
+minlength: "Please type atleast 3 characters!",
+namespace_regex: "Please type only alphabets"
+},
+
+'specialization_id':{
+  required: "This field is mandatory!",
+  matches: "Didn't match!",      
+  minlength: "Please Enter 10 digit phone numbers!",        
+  maxlength: "Maximum length 10 digits!"
+},
+
+'education_type_id':{
+required: "This field is mandatory!",
+minlength: "Please type atleast 10 digits",
+maxlength: "Please type atleast 10 digits"
+},
+
+'js_year_of_passing':{
+maxlength: "Choose a company name of at least 14 letters!"
+},
+
+'js_resut':{
+//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+//remote: "The username is already in use by another user!"
+},
+
+
+
+'alternatemobile':{
+email: "Please enter a valid email address!",
+remote: "The email is already in use by another user!"
+},
+
+'present_address' :{
+email: "Please enter a valid email address!",
+remote: "The email is already in use by another user!"
+},
+
+'country_id':{
+},
+
+'state_id':{
+required: "This field is mandatory!",
+minlength: "Choose a username of at least 4 letters!",
+username_regex: "You have used invalid characters. Are permitted only letters numbers!",
+remote: "The useername is already in use by another user!"
+},
+
+'city_id' :{
+email: "Please enter a valid email address!",
+remote: "The email is already in use by another user!"
+},
+
+'pincode':{},
+
+'tagline':{
+required: "This field is mandatory!",
+minlength: "Choose a username of at least 4 letters!",
+username_regex: "You have used invalid characters. Are permitted only letters numbers!",
+remote: "The useername is already in use by another user!"
+},
+
+'matrial_status':{
+maxlength: "Choose a company name of at least 14 letters!"
+},
+
+'work_permit_usa':{
+//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+//remote: "The username is already in use by another user!"
+},
+
+
+'other_country_work_permit':{
+email: "Please enter a valid email address!",
+remote: "The email is already in use by another user!"
+},
+
+'website' :{
+email: "Please enter a valid email address!",
+remote: "The email is already in use by another user!"
+}
+
+
+}
+
+});
+
+});
+
+
+$( document ).ready( function () {
+
+$("#Educational-info").validate (  
+
+{
+
+rules:{
+
+'education_level_id':{
+  required:true
+//namespace_regex: true
+},
+
+'specialization_id':{
+//email_regex: true
+required:true
+},
+
+
+'js_institute_name':{
+  required:true
+//phonenumber_regex: true
+}, 
+
+'education_type_id':{
+  required:true
+//twodigit_regex: true
+//email: true
+},
+
+
+'js_year_of_passing':{
+  required:true
+//maxlength:3
+//email: true
+},
+
+'js_resut':{   
+required:true             
+  //minlength:10,        
+  //maxlength:10,
+},
+
+},
+
+messages:{
+
+'education_level_id':{
+required: "This field is mandatory!"
+},
+
+'specialization_id':{
+  required: "This field is mandatory!"
+},
+
+'education_type_id':{
+required: "This field is mandatory!"
+},
+
+'js_year_of_passing':{
+  required: "This field is mandatory!"
+},
+
+'js_resut':{
+  required: "This field is mandatory!"
+//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+//remote: "The username is already in use by another user!"
+},
+
+
+}
+
+});
+
+});
+
+
+$( document ).ready( function () {
+
+$("#Masters").validate (  
+
+{
+
+rules:{
+
+'education_level_id':{
+minlength: 3,
+namespace_regex: true
+},
+
+'specialization_id':{
+email_regex: true
+},
+
+
+'js_institute_name':{
+phonenumber_regex: true
+}, 
+
+'education_type_id':{
+//twodigit_regex: true
+//email: true
+},
+
+
+'js_year_of_passing':{
+maxlength:3
+//email: true
+},
+
+'js_resut':{                
+  //minlength:10,        
+  //maxlength:10,
+},
+
+},
+
+messages:{
+
+'education_level_id':{
+required: "This field is mandatory!",
+minlength: "Please type atleast 3 characters!",
+namespace_regex: "Please type only alphabets"
+},
+
+'specialization_id':{
+  required: "This field is mandatory!",
+  matches: "Didn't match!",      
+  minlength: "Please Enter 10 digit phone numbers!",        
+  maxlength: "Maximum length 10 digits!"
+},
+
+'education_type_id':{
+required: "This field is mandatory!",
+minlength: "Please type atleast 10 digits",
+maxlength: "Please type atleast 10 digits"
+},
+
+'js_year_of_passing':{
+maxlength: "Choose a company name of at least 14 letters!"
+},
+
+'js_resut':{
+//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+//remote: "The username is already in use by another user!"
+},
+
+
+}
+
+});
+
+});
+
+$( document ).ready( function () {
+
+$("#Graduation").validate (  
+
+{
+
+rules:{
+
+'education_level_id':{
+minlength: 3,
+namespace_regex: true
+},
+
+'specialization_id':{
+email_regex: true
+},
+
+
+'js_institute_name':{
+phonenumber_regex: true
+}, 
+
+'education_type_id':{
+//twodigit_regex: true
+//email: true
+},
+
+
+'js_year_of_passing':{
+maxlength:3
+//email: true
+},
+
+'js_resut':{                
+  //minlength:10,        
+  //maxlength:10,
+},
+
+},
+
+messages:{
+
+'education_level_id':{
+required: "This field is mandatory!",
+minlength: "Please type atleast 3 characters!",
+namespace_regex: "Please type only alphabets"
+},
+
+'specialization_id':{
+  required: "This field is mandatory!",
+  matches: "Didn't match!",      
+  minlength: "Please Enter 10 digit phone numbers!",        
+  maxlength: "Maximum length 10 digits!"
+},
+
+'education_type_id':{
+required: "This field is mandatory!",
+minlength: "Please type atleast 10 digits",
+maxlength: "Please type atleast 10 digits"
+},
+
+'js_year_of_passing':{
+maxlength: "Choose a company name of at least 14 letters!"
+},
+
+'js_resut':{
+//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+//remote: "The username is already in use by another user!"
+},
+
+
+}
+
+});
+
+});
+
+$( document ).ready( function () {
+
+$("#twelfth").validate (  
+
+{
+
+rules:{
+
+'education_level_id':{
+minlength: 3,
+namespace_regex: true
+},
+
+'specialization_id':{
+email_regex: true
+},
+
+
+'js_institute_name':{
+phonenumber_regex: true
+}, 
+
+'education_type_id':{
+//twodigit_regex: true
+//email: true
+},
+
+
+'js_year_of_passing':{
+maxlength:3
+//email: true
+},
+
+'js_resut':{                
+  //minlength:10,        
+  //maxlength:10,
+},
+
+},
+
+messages:{
+
+'education_level_id':{
+required: "This field is mandatory!",
+minlength: "Please type atleast 3 characters!",
+namespace_regex: "Please type only alphabets"
+},
+
+'specialization_id':{
+  required: "This field is mandatory!",
+  matches: "Didn't match!",      
+  minlength: "Please Enter 10 digit phone numbers!",        
+  maxlength: "Maximum length 10 digits!"
+},
+
+'education_type_id':{
+required: "This field is mandatory!",
+minlength: "Please type atleast 10 digits",
+maxlength: "Please type atleast 10 digits"
+},
+
+'js_year_of_passing':{
+maxlength: "Choose a company name of at least 14 letters!"
+},
+
+'js_resut':{
+//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+//remote: "The username is already in use by another user!"
+},
+
+
+}
+
+});
+
+});
+
+
+$( document ).ready( function () {
+
+$("#tenth").validate (  
+
+{
+
+rules:{
+
+'education_level_id':{
+minlength: 3,
+namespace_regex: true
+},
+
+'specialization_id':{
+email_regex: true
+},
+
+
+'js_institute_name':{
+phonenumber_regex: true
+}, 
+
+'education_type_id':{
+//twodigit_regex: true
+//email: true
+},
+
+
+'js_year_of_passing':{
+maxlength:3
+//email: true
+},
+
+'js_resut':{                
+  //minlength:10,        
+  //maxlength:10,
+},
+
+},
+
+messages:{
+
+'education_level_id':{
+required: "This field is mandatory!",
+minlength: "Please type atleast 3 characters!",
+namespace_regex: "Please type only alphabets"
+},
+
+'specialization_id':{
+  required: "This field is mandatory!",
+  matches: "Didn't match!",      
+  minlength: "Please Enter 10 digit phone numbers!",        
+  maxlength: "Maximum length 10 digits!"
+},
+
+'education_type_id':{
+required: "This field is mandatory!",
+minlength: "Please type atleast 10 digits",
+maxlength: "Please type atleast 10 digits"
+},
+
+'js_year_of_passing':{
+maxlength: "Choose a company name of at least 14 letters!"
+},
+
+'js_resut':{
+//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+//remote: "The username is already in use by another user!"
+},
+
+
+}
+
+});
+
+});
+
+
+$( document ).ready( function () {
+
+$("#Updateskill-info").validate (  
+
+{
+
+rules:{
+
+'skills':{
+  required: true,
+minlength: 3,
+namespace_regex: true
+},
+
+},
+
+messages:{
+
+'skills':{
+required: "This field is mandatory!",
+minlength: "Please type atleast 3 characters!",
+namespace_regex: "Please type only alphabets"
+},
+
+}
+
+});
+
+});
+
+
+$( document ).ready( function () {
+
+$("#work_experience").validate (  
+
+{
+
+rules:{
+
+'company_profile_id':{
+minlength: 3,
+namespace_regex: true
+},
+
+'designation_id':{
+email_regex: true
+},
+
+
+'dept_id':{
+phonenumber_regex: true
+}, 
+
+'start_date':{
+//twodigit_regex: true
+//email: true
+},
+
+
+'end_date':{
+maxlength:3
+//email: true
+},
+
+'js_career_salary':{                
+  //minlength:10,        
+  //maxlength:10,
+},
+
+'responsibilities':{                
+  //minlength:10,        
+  //maxlength:10,
+},
+
+'achievement':{                
+  //minlength:10,        
+  //maxlength:10,
+},
+
+},
+
+messages:{
+
+'company_profile_id':{
+required: "This field is mandatory!",
+minlength: "Please type atleast 3 characters!",
+namespace_regex: "Please type only alphabets"
+},
+
+'designation_id':{
+  required: "This field is mandatory!",
+  matches: "Didn't match!",      
+  minlength: "Please Enter 10 digit phone numbers!",        
+  maxlength: "Maximum length 10 digits!"
+},
+
+'dept_id':{
+required: "This field is mandatory!",
+minlength: "Please type atleast 10 digits",
+maxlength: "Please type atleast 10 digits"
+},
+
+'start_date':{
+maxlength: "Choose a company name of at least 14 letters!"
+},
+
+'end_date':{
+//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+//remote: "The username is already in use by another user!"
+},
+
+'js_career_salary':{
+required: "This field is mandatory!",
+minlength: "Please type atleast 10 digits",
+maxlength: "Please type atleast 10 digits"
+},
+
+'responsibilities':{
+maxlength: "Choose a company name of at least 14 letters!"
+},
+
+'achievement':{
+//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+//remote: "The username is already in use by another user!"
+},
+
+
+}
+
+});
+
+});
+
+
+$( document ).ready( function () {
+
+$("#my-trainings").validate (  
+
+{
+
+rules:{
+
+'training_title':{
+minlength: 3,
+namespace_regex: true
+},
+
+'training_topic':{
+email_regex: true
+},
+
+
+'institute':{
+phonenumber_regex: true
+}, 
+
+'country_id':{
+//twodigit_regex: true
+//email: true
+},
+
+
+'state_id':{
+maxlength:3
+//email: true
+},
+
+'city_id':{                
+  //minlength:10,        
+  //maxlength:10,
+},
+
+'duration':{                
+  //minlength:10,        
+  //maxlength:10,
+},
+
+'training_year':{                
+  //minlength:10,        
+  //maxlength:10,
+},
+
+},
+
+messages:{
+
+'training_title':{
+required: "This field is mandatory!",
+minlength: "Please type atleast 3 characters!",
+namespace_regex: "Please type only alphabets"
+},
+
+'training_topic':{
+  required: "This field is mandatory!",
+  matches: "Didn't match!",      
+  minlength: "Please Enter 10 digit phone numbers!",        
+  maxlength: "Maximum length 10 digits!"
+},
+
+'institute':{
+required: "This field is mandatory!",
+minlength: "Please type atleast 10 digits",
+maxlength: "Please type atleast 10 digits"
+},
+
+'country_id':{
+maxlength: "Choose a company name of at least 14 letters!"
+},
+
+'state_id':{
+//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+//remote: "The username is already in use by another user!"
+},
+
+'city_id':{
+required: "This field is mandatory!",
+minlength: "Please type atleast 10 digits",
+maxlength: "Please type atleast 10 digits"
+},
+
+'duration':{
+maxlength: "Choose a company name of at least 14 letters!"
+},
+
+'training_year':{
+//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+//remote: "The username is already in use by another user!"
+},
+
+
+}
+
+});
+
+});
+
 </script>
-<script>$(document).ready(function () {
-   //called when key is pressed in textbox
-   $("#number").keypress(function (e) {
-      //if the letter is not digit then display error and don't type anything
-      if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-         //display error message
-         $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-     }
-    });
-   });
-</script>
-<script>
-   function FillBilling(f) {
-     if(f.billingtoo.checked == true) {
-       f.parmanent_address.value = f.present_address.value;
-     f.country1_id.value = f.country_id.value;
-       f.state1_id.value = f.state_id.value;
-     f.city1_id.value = f.city_id.value;
-     f.pincode1.value = f.pincode.value;
-     }else{
-   
-       f.parmanent_address.value = '';
-     f.country1_id.value = '';
-       f.state1_id.value ='';
-     f.city1_id.value = '';
-     f.pincode1.value = '';
-     }
-   }
-</script>    
-<script>
-   function getStates(id){
-   if(id){
-           $.ajax({
-               type:'POST',
-               url:'<?php echo base_url();?>Job_seeker/getstate',
-               data:{id:id},
-               success:function(res){
-                   $('#state_id').html(res);
-               }
-       
-           }); 
-         }
-   
-    }
-   
-   function getCitys(id){
-   if(id){
-           $.ajax({
-               type:'POST',
-               url:'<?php echo base_url();?>Job_seeker/getcity',
-               data:{id:id},
-               success:function(res){
-                   $('#city_id').html(res);
-               }
-       
-           }); 
-         }
-   
-    }
+
+<script >
+
+  $.validator.addMethod("namespace_regex", function(value, element) {
+  return this.optional(element) || /^[a-zA-Z ]*$/.test(value);  
+}, "Please choose only alphabets");
+
+
+
+  $.validator.addMethod("email_regex", function(value, element) {
+return this.optional(element) || /^\w.+@[a-z-A-Z_]+?\.[a-zA-Z\-][\w-]{2,3}$/.test(value);
+}, "Please type valid Email");
+
+
+$.validator.addMethod("current_job_desig_regex", function(value, element) {
+return this.optional(element) || /^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$/.test(value);
+}, "Please choose only alphabets");
+
+
+
+$.validator.addMethod("current_work_location_regex", function(value, element) {
+
+return this.optional(element) || /^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$/.test(value);
     
-   
-   $(document).ready(function(){
-   
-   function getStates_load(){
-       var id = $('#country_id').val();
-   
-       if(id){
-           $.ajax({
-               type:'POST',
-               url:'<?php echo base_url();?>Job_seeker/getstate',
-               data:{id:id},
-               success:function(res){
-                   $('#state_id').html(res);
-                   $('#state_id').val(<?php echo $js_personal_info->state_id; ?>);
-                    getCitys_load(<?php echo $js_personal_info->state_id; ?>);
-               }
-               
-           }); 
-         }
-   
-      }
-   
-   function getCitys_load(id){
-     //var id = $('#state_id').val();
-     // alert(id);
-       if(id){
-           $.ajax({
-               type:'POST',
-               url:'<?php echo base_url();?>Job_seeker/getcity',
-               data:{id:id},
-               success:function(res){
-                   $('#city_id').html(res);
-                   $('#city_id').val(<?php echo $js_personal_info->city_id; ?>);
-               }
-               
-           }); 
-         }
-   
-      }
-   
-   
-   
-   getCitys_load();
-   getStates_load();
-   // getCitys_load_permant();
-   // getStates_load_permant();
-   });
-   
-</script>        
-<style>
-   .datepicker{z-index:1151 !important;}
-</style>
-<script>        
-   function phoneno(){          
-    $('#pincode').keypress(function(e) {
-        var a = [];
-        var k = e.which;
-   
-        for (i = 48; i < 58; i++)
-            a.push(i);
-   
-        if (!(a.indexOf(k)>=0))
-            e.preventDefault();
-    });
-   }
+}, "Please choose only alphabets");
+
+
+  $.validator.addMethod("phonenumber_regex", function(value, element) {
+
+return this.optional(element) || /^[1-9]{1}[0-9]{9}$/.test(value);
+    
+}, "Please type 10 digit mobile number");
+
+
+    $.validator.addMethod("twodigit_regex", function(value, element) {
+
+return this.optional(element) || /^[0-9]{1,2}$/.test(value);
+    
+}, "Please type only two numbers");
+
+
+
+  $.validator.addMethod("onedigit_regex", function(value, element) {
+
+return this.optional(element) || /^[0-9]{1,2}[:.,-]?$/.test(value);
+    
+}, "Please type only one number");
+
+
+
+  $.validator.addMethod("twodecimal_regex", function(value, element) {
+
+return this.optional(element) || /^\d{1,3}(\.\d{0,2})?$/.test(value);
+    
+}, "Please type only two decimal numbers");
+
+
+
+  $.validator.addMethod("companyname_regex", function(value, element) {
+
+return this.optional(element) || /^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$/i.test(value);
+
+}, "Please choose only alphabets");
+
+ 
+  $.validator.addMethod("contactname_regex", function(value, element) {
+
+return this.optional(element) || /^[a-zA-Z ]+$/.test(value);
+    
+}, "Please choose only alphabets");
+
+
+
+  $.validator.addMethod("contpersonlevel_regex", function(value, element) {
+
+return this.optional(element) || /^[a-zA-Z ]+$/.test(value);
+
+}, "Please choose only alphabets");
+
+
+$.validator.addMethod("companypincode_regex", function(value, element) {
+
+return this.optional(element) || /^[1-9][0-9][0-9][0-9][0-9][0-9]$/.test(value);
+
+}, "Please Enter 6 digits Company Pincode");
+
 </script>
-<script>        
-   function phoneno(){          
-    $('#pincode1').keypress(function(e) {
-        var a = [];
-        var k = e.which;
-   
-        for (i = 48; i < 58; i++)
-            a.push(i);
-   
-        if (!(a.indexOf(k)>=0))
-            e.preventDefault();
-    });
-   }
-</script>
-<!--Only Numbers are allowed validation-->
+
 <script>
-   function isNumber(evt) {
-       evt = (evt) ? evt : window.event;
-       var charCode = (evt.which) ? evt.which : evt.keyCode;
-       if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-           return false;
-       }
-       return true;
-   }
+   $('.select2').select2();
 </script>
-<!--Only Character and Space are allowed validation-->
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
-<script type="text/javascript">
-   $(document).ready(function() {
-            $('.name-valid').on('keypress', function(e) {
-             var regex = new RegExp("^[a-zA-Z ]*$");
-             var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
-             if (regex.test(str)) {
-                return true;
-             }
-             e.preventDefault();
-             return false;
-            });
-           });
-</script>
+
+<script src="<?php echo base_url(); ?>asset/src/jquery.tokeninput.js"></script>
+<script src="<?php echo base_url() ?>asset/js/jquery-ui.js"></script>
+<script src="<?php echo base_url() ?>asset/tokenjs/bootstrap-tokenfield.js"></script>
+<script src="<?php echo base_url() ?>asset/tokenjs/typeahead.bundle.min.js"></script>
+<script src="<?php echo base_url() ?>asset/js/search.js"></script>
+
+<script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
 <script>
-   var BASE_URL = "<?php echo base_url(); ?>";
-   
-   $(document).ready(function() {
-     $( "#job_area" ).autocomplete({
-   
-         source: function(request, response) {
-             $.ajax({
-             url: BASE_URL + "job_seeker/search",
-             data: {
-                     term : request.term
-              },
-             dataType: "json",
-             success: function(data){
-                var resp = $.map(data,function(obj){
-                     return obj.city_name;
-                }); 
-   
-                response(resp);
+$("#dept_id").select2( {
+  placeholder: "Select Department",
+  allowClear: true
+  } );
+</script>
+
+
+<script>
+
+   $(".allowphonenumber").on("keypress keyup blur",function (event) {
+             //this.value = this.value.replace(/[^0-9\.]/g,'');
+      $(this).val($(this).val().replace("^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"));
+             if ((event.which < 48 || event.which > 57)) {
+                 event.preventDefault();
              }
          });
-     },
-     minLength: 1
-   });
-   });
+
    
+   //(^[ A-Za-z0-9_@./#&+-]*$)
+   
+ 
+
+   $(".allownumericwithoutdecimal").on("input", function(evt) {
+    var self = $(this);
+    self.val(self.val().replace(/[^\d]+/, ""));
+    if ((evt.which < 48 || evt.which > 57)) 
+     {
+     evt.preventDefault();
+     }
+ });
+
+
+   
+   $(".allowalphabatescomma").keypress(function (e) {
+         var regex = new RegExp("^[a-zA-Z, \s]+$");
+         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+         if (regex.test(str)) {
+             return true;
+         }
+         else
+         {
+         e.preventDefault();
+         return false;
+         }
+     });
+
+    $(".allownumericwithdecimal").on("keypress keyup blur",function (event) {
+            //this.value = this.value.replace(/[^0-9\.]/g,'');
+     $(this).val($(this).val().replace(/[^0-9\.]/g,''));
+            if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+                event.preventDefault();
+            }
+        });
+   
+   $(".allowalphabatesspace").keypress(function (e) {
+         var regex = new RegExp("^[a-zA-Z ]*$");
+         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+         if (regex.test(str)) {
+             return true;
+         }
+         else
+         {
+         e.preventDefault();
+         return false;
+         }
+     });
+$(".allowalphabates").keypress(function (e) {
+         var regex = new RegExp("^[a-zA-Z ]*$");
+         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+         if (regex.test(str)) {
+             return true;
+         }
+         else
+         {
+         e.preventDefault();
+         return false;
+         }
+     });
+
+
 </script>
-<script type="text/javascript">
-   function getlanguage_data(lan_id)
-   {
-    // alert(lan_id);
-   
-     $.ajax({
-              url:'<?php echo base_url()?>job_seeker/edit_language',
-              type: 'post',
-             
-              data: {language_id:lan_id},
-               dataType: 'json',
-              // content_type:'application/json',
-              success: function(data){
-                
-                console.log(data);
-                $.each(data, function(index, value) 
-               {
-                 
-                   $('#lang_id').val(value.id);
-   
-                   $('#language').val(value.language);
-                   $('#proficiency').val(value.proficiency);
-   
-                   var read = value.lang_read;
-                   var write = value.lang_write;
-                   var speak = value.lang_speak;
-                   if(read == 'Yes')
-                   {
-                     $('#lang_read').prop('checked', true);
-   
-                   }else{
-                     $('#lang_read').prop('checked', false);
-   
-                   }
-                   if(write == 'Yes')
-                   {
-                     $('#lang_write').prop('checked', true);
-   
-                   }else{
-                     $('#lang_write').prop('checked', false);
-   
-                   } 
-                   if(speak == 'Yes')
-                   {
-                     $('#lang_speak').prop('checked', true);
-   
-                   }else{
-                     $('#lang_speak').prop('checked', false);
-   
-                   }
-                 
-               });
-               
-                 // $('#candiate_email').val(emails);
-                      
-               
-              }
-         });
-   }
-</script>
-<style>
-   ul.ui-autocomplete {
-   z-index: 1100;
-   }
-</style>
-<script>
-   function getStates(id){
-   if(id){
-           $.ajax({
-               type:'POST',
-               url:'<?php echo base_url();?>Job_seeker/getstate',
-               data:{id:id},
-               success:function(res){
-                   $('#state_id').html(res);
-               }
-       
-           }); 
-         }
-   
-    }
-   
-   function getCitys(id){
-   if(id){
-           $.ajax({
-               type:'POST',
-               url:'<?php echo base_url();?>Job_seeker/getcity',
-               data:{id:id},
-               success:function(res){
-                   $('#city_id').html(res);
-               }
-       
-           }); 
-         }
-   
-    }
-      
-      $(document).ready(function(){
-   
-   function getStates_load(){
-       var id = $('#country_id').val();
-   
-       if(id){
-           $.ajax({
-               type:'POST',
-               url:'<?php echo base_url();?>Job_seeker/getstate',
-               data:{id:id},
-               success:function(res){
-                   $('#state_id').html(res);
-                   $('#state_id').val(<?php echo $training_list->state_id; ?>);
-                    getCitys_load(<?php echo $training_list->state_id; ?>);
-               }
-               
-           }); 
-         }
-   
-      }
-   
-   function getCitys_load(id){
-     //var id = $('#state_id').val();
-     // alert(id);
-       if(id){
-           $.ajax({
-               type:'POST',
-               url:'<?php echo base_url();?>Job_seeker/getcity',
-               data:{id:id},
-               success:function(res){
-                   $('#city_id').html(res);
-                   $('#city_id').val(<?php echo $training_list->city_id; ?>);
-               }
-               
-           }); 
-         }
-   
-      }
-   
-   
-   
-   
-   getCitys_load();
-   getStates_load();
-   });
-   
-   function check_other(value)
-   {
-   
-   var x1 = document.getElementById("training_title1");
-   var x = document.getElementById("training_title");
-   if (value=='other') 
-   {
-   if (x1.type === "hidden") {
-     x1.type = "text";
-     // x.type = "hidden";
-   } else {
-     x1.type = "hidden";
-   
-   }
-   }
-   else
-   {
-   x1.type = "hidden";
-   x1.value = value;
-   }
-   }
-</script> 
-<script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>    
-<script>
-   $(document).ready(function(){
-   
-   // Initialize select2
-   $("#training_title").select2({
-     placeholder: "Select Training",
-   allowClear: true
-   });
-   });
-</script>
+

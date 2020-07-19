@@ -728,8 +728,9 @@
    required: true,
    
    },
-         },
-         messages:{
+   },
+
+   messages:{
    
    'job_title':{
    

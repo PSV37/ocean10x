@@ -264,7 +264,7 @@
      $("#last_salary_hike").datepicker({ dateFormat: 'yy-mm-dd',maxDate: '0' });
      });
 
- $("#js").validate (  
+ $("#UpdateExperience-info").validate (  
 
 {
 
