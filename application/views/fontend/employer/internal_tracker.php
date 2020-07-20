@@ -561,7 +561,7 @@ input.email {
                 var comment = $("#comment", b).val();
                 var comment = $("#action", b).val();
                 var comment = $("#reminder", b).val();
-                ary.push({name:name,email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,id:id,comment:comment,value:value});
+                ary.push({name:name,email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,comment:comment,value:value});
                
             });
             // alert(JSON.stringify( ary));
