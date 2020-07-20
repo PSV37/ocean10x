@@ -549,12 +549,23 @@ input.email {
    var ary = [];
         $(function () {
             $('.table-borderless tr').each(function (a, b) {
-                 var name = $("#name" , b).val();
-                var value = $('.attrValue', b).text();
-                ary.push({ Name: name, Value: value });
+                var value = $('#cv_id', b).text();
+                var name = $("#name" , b).val();
+                var email = $("#email", b).val();
+                var mobile = $("#mobile", b).val();
+                var ctc = $("#ctc", b).val();
+                var exp = $("#exp", b).val();
+                var notice = $("#notice", b).val();
+                var edu = $("#edu", b).val();
+                var status = $("#status", b).val();
+                var comment = $("#comment", b).val();
+                var comment = $("#action", b).val();
+                var comment = $("#reminder", b).val();
+                ary.push({name:name,email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,id:id,comment:comment,value:value});
                
             });
-            alert(JSON.stringify( ary));
+            // alert(JSON.stringify( ary));
+            alert(ary);
         });
 });
 </script>
