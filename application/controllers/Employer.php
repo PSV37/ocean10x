@@ -3996,7 +3996,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         'updated_on' => date('Y-m-d'),
                         // 'mandatory_parameters' => implode(',', $mandatory)
                     );
-                    $whereres  = "job_seeker_id='$seeker_id' and company_id = '$company_id' and job_post_id = '$job_post_id'";
+                    $whereres  = "job_seeker_id='$seeker_id' and company_id = '$company_id' and job_post_id = '$id'";
                     $job_apply_data = $this->Master_model->get_master_row('
                         job_apply', $select = FALSE, $whereres);
                     if (empty($job_apply_data)) {

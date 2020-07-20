@@ -490,7 +490,14 @@ input.email {
                   </label>
                </div>
             </div>
-           
+           <div class="row">
+            <div col-md-12>
+               <button style="float: right;" type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-floppy-save"></span> Save
+        </button>
+            </div>
+             
+           </div>
             
          
 
@@ -510,7 +517,9 @@ input.email {
                                 <th scope="col">Notice (days)</th>
                                 <th scope="col">Education</th>
                                 <th scope="col">Status</th>
-                                <th scope="col">Comments</th>
+                                <th scope="col">Action Items</th>
+                                <th scope="col">Notes</th>
+                                <th scope="col">Reminders</th>
                                 <th scope="col">Updated By</th>
                                 <th scope="col">Action</th>
                               </tr>
