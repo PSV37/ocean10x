@@ -5067,7 +5067,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     {
 
                 // file name 
-           echo $job_id;
+           echo $job_id; die;
             if(!empty($job_id)) {
              $forwarded_job_tracking = $this->job_posting_model->get_job_forwarded_candidate($job_id);
                    
@@ -5119,7 +5119,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
                         $rowCount = 3;
                         foreach ($forwarded_job_tracking as $row) {
-                            // print_r($row);
+                            print_r($row);
                           
                             // print_r($this->db->last_query());die;
 
