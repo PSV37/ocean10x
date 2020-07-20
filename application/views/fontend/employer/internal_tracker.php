@@ -564,7 +564,7 @@ input.email {
                 ary.push({name:name,email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,comment:comment,value:value});
                
             });
-            // alert(JSON.stringify( ary));
+            alert(JSON.stringify( ary));
             alert(ary);
         });
 });
