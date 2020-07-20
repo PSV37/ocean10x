@@ -5067,7 +5067,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     {
 
                 // file name 
-           echo $job_id; 
+           // echo $job_id; 
             // if(!empty($job_id)) {
             $forwarded_job_tracking = $this->job_posting_model->get_job_forwarded_candidate($job_id);
                    
@@ -5125,6 +5125,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                               // echo $this->db->last_query();die;
                              $alpha='A';
                             $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->datecreation);$alpha++;
+                             $rowCount++;
                             foreach ($forwarded_job_tracking_date as $row) {
                           
                             // print_r($this->db->last_query());die;
