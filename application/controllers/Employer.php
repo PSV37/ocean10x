@@ -5047,6 +5047,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
             $frwrd_update_cv['tracking_status'] = $row->status;
             $frwrd_update_cv['comments'] = $row->comment;
+            $frwrd_update_cv['action_item'] = $row->action;
+            $frwrd_update_cv['reminder'] = $row->reminder;
 
             $where_frwdcv['cv_id'] = $row->value;
             $update= $this->Master_model->master_update($frwrd_update_cv, 'forwarded_jobs_cv', $where_frwdcv);

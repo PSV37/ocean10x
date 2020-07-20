@@ -521,7 +521,7 @@ input.email {
                                 <th scope="col">Notes</th>
                                 <th scope="col">Reminders</th>
                                 <th scope="col">Updated By</th>
-                                <th scope="col">Action</th>
+                               
                               </tr>
                             </thead>
                             <tbody>
@@ -544,6 +544,7 @@ input.email {
 </script>
 <script>
   $(".save").click(function() {
+     var job_id = $('#job_select').val();
 //    var id = $(".table table-borderless").closest("tr");
 // alert (id); // Find the text
    var ary = [];
@@ -559,9 +560,9 @@ input.email {
                 var edu = $("#edu", b).val();
                 var status = $("#status", b).val();
                 var comment = $("#comment", b).val();
-                var comment = $("#action", b).val();
-                var comment = $("#reminder", b).val();
-                ary.push({name:name,email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,comment:comment,value:value});
+                var action = $("#action", b).val();
+                var reminder = $("#reminder", b).val();
+                ary.push({name:name,email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,comment:comment,value:value,action:action,reminder:reminder});
                
             });
             alert(JSON.stringify( ary));
@@ -575,8 +576,8 @@ input.email {
                // dataType: "json",
               success: function(data)
               {
-                alert(data);
-                // window.location.reload();
+                // alert(data);
+                window.location.reload();
               }
         });
             // alert(ary);
@@ -601,32 +602,32 @@ input.email {
       alert("#email"+id);
    }
 
-function saveRow(id)
-{
-   var email = $("#email"+id).val();
-   var mobile = $("#mobile"+id).val();
-  var ctc = $("#ctc"+id).val();
-  var exp = $("#exp"+id).val();
-  var notice = $("#notice"+id).val();
-  var edu = $("#edu"+id).val();
-  var status = $("#status"+id).val();
-  var comment = $("#comment"+id).val();
-  var name = $("#name"+id).val();
-  // alert(edu);
-   $.ajax({
-              url: "<?php echo base_url();?>employer/update_cv",
-              type: "POST",
-              data: {name:name,email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,id:id,comment:comment},
-              // contentType:false,
-              // processData:false,
-               // dataType: "json",
-              success: function(data)
-              {
-                window.location.reload();
-              }
-        });
-}
-    function tracker_card(job_id)
+// function saveRow(id)
+// {
+//    var email = $("#email"+id).val();
+//    var mobile = $("#mobile"+id).val();
+//   var ctc = $("#ctc"+id).val();
+//   var exp = $("#exp"+id).val();
+//   var notice = $("#notice"+id).val();
+//   var edu = $("#edu"+id).val();
+//   var status = $("#status"+id).val();
+//   var comment = $("#comment"+id).val();
+//   var name = $("#name"+id).val();
+//   // alert(edu);
+//    $.ajax({
+//               url: "<?php echo base_url();?>employer/update_cv",
+//               type: "POST",
+//               data: {name:name,email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,id:id,comment:comment},
+//               // contentType:false,
+//               // processData:false,
+//                // dataType: "json",
+//               success: function(data)
+//               {
+//                 window.location.reload();
+//               }
+//         });
+// }   
+ function tracker_card(job_id)
   {
     var url = '<?php echo base_url(); ?>employer/add_new_cv/'+job_id;
     $('#add_cv').attr('href',url);
