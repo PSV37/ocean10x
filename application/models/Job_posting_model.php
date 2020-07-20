@@ -213,7 +213,7 @@ order by RAND() limit 3");
 
     public function get_job_forwarded_candidate($job_id)
     {
-        $this->db->select('forwarded_jobs_cv.*,corporate_cv_bank.*,education_level.*,DATE_FORMAT(forwarded_jobs_cv.created_on,"%y-%m-%d")as datecreation');
+        $this->db->select('DATE_FORMAT(forwarded_jobs_cv.created_on,"%y-%m-%d")as datecreation');
         $this->db->from('forwarded_jobs_cv');
         $this->db->where('forwarded_jobs_cv.job_post_id', $job_id);
         // $this->db->where('forword_job_status',"1");
