@@ -1676,6 +1676,7 @@ class Employer extends MY_Employer_Controller
                         'job_post_id' => $job_post_id,
                         'apply_id' => $apply,
                         'status' => 1,
+                        'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),
                        
                     );
                         $frwd = $this->Master_model->master_insert($frwd_array, 'forwarded_jobs_cv');
@@ -3996,7 +3997,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         'updated_on' => date('Y-m-d'),
                         // 'mandatory_parameters' => implode(',', $mandatory)
                     );
-                    $whereres  = "job_seeker_id='$seeker_id' and company_id = '$company_id' and job_post_id = '$job_post_id'";
+                    $whereres  = "job_seeker_id='$seeker_id' and company_id = '$company_id' and job_post_id = '$id'";
                     $job_apply_data = $this->Master_model->get_master_row('
                         job_apply', $select = FALSE, $whereres);
                     if (empty($job_apply_data)) {
@@ -4008,6 +4009,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         'job_post_id' => $job_post_id,
                         'apply_id' => $apply,
                         'status' => 1,
+                         'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),
                        
                     );
                         $frwd = $this->Master_model->master_insert($frwd_array, 'forwarded_jobs_cv');
@@ -5029,25 +5031,172 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     }
  function update_cv()
     {
-        $update_cv['js_email'] = $this->input->post('email');
-        $update_cv['js_name'] = $this->input->post('name');
-        $update_cv['js_mobile'] = $this->input->post('mobile');
-        $update_cv['js_current_ctc'] = $this->input->post('ctc');
-        $update_cv['js_experience'] = $this->input->post('exp');
-        $update_cv['js_current_notice_period'] = $this->input->post('notice');
-        $update_cv['js_top_education'] = $this->input->post('edu');
-        $update_cv['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
+        // print_r( ); die();
+
+        $up_date=json_decode($this->input->post('data_arr'));
+        foreach ($up_date as $row) {
+            $update_cv['js_email'] = $row->email;
+            $update_cv['js_name'] = $row->name;
+            $update_cv['js_mobile'] = $row->mobile;
+            $update_cv['js_current_ctc'] = $row->ctc;
+            $update_cv['js_experience'] = $row->exp;
+            $update_cv['js_current_notice_period'] = $row->notice;
+            $update_cv['js_top_education'] = $row->edu;
+            $update_cv['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
+
+            $where_cv['cv_id'] = $row->value;
+            $update= $this->Master_model->master_update($update_cv, 'corporate_cv_bank', $where_cv);
+            $value = $row->name;
+            $fname =  strtok($value, " "); // Test
+            $frwrd_update_cv['tracking_status'] = $row->status;
+            $frwrd_update_cv['comments'] = $fname.' : '.$row->comment;
+            $frwrd_update_cv['action_item'] = $row->action;
+            $frwrd_update_cv['reminder'] = $row->reminder;
+            $frwrd_update_cv['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
+
+            $where_frwdcv['cv_id'] = $row->value;
+            $update= $this->Master_model->master_update($frwrd_update_cv, 'forwarded_jobs_cv', $where_frwdcv);
+        }
+       
       
-        $where_cv['cv_id'] = $this->input->post('id');
-        $update= $this->Master_model->master_update($update_cv, 'corporate_cv_bank', $where_cv);
-
-        $frwrd_update_cv['tracking_status'] = $this->input->post('status');
-        $frwrd_update_cv['comments'] = $this->input->post('comment');
-
-        $where_frwdcv['cv_id'] = $this->input->post('id');
-        $update= $this->Master_model->master_update($frwrd_update_cv, 'forwarded_jobs_cv', $where_frwdcv);
+       
         echo json_encode($update);
     }
+
+    public function export_internal_tracker($job_id = NULL)
+    {
+
+                // file name 
+           // echo $job_id; die;
+            if(!empty($job_id)) {
+             $forwarded_job_tracking = $this->job_posting_model->get_job_forwarded_candidate($job_id);
+                   
+
+            
+
+                        // create file name
+                        $today = date("d.m.y");
+                        $fileName = 'data-'.$today.'.xlsx';  
+                        // load excel library
+                        $this->load->library('excel');
+                        $objPHPExcel = new PHPExcel();
+                        $objPHPExcel->setActiveSheetIndex(0);
+
+                       
+                            $alpha='A';
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Name');$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Email');$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Mobile');$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Salary');$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Work Experience');$alpha++;
+
+                             $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Notice (days)');$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Education');$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Status');$alpha++;
+
+                            
+                             $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Action Items');$alpha++;
+                           
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Notes');$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Reminders');$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Updated On');
+                                $alpha++;
+
+                           
+
+                        // TABLE DATA START HERE
+                        // set Row
+                        // set Row
+
+                        $rowCount = 3;
+                        foreach ($forwarded_job_tracking as $row) {
+                            print_r($row);
+                          
+                            // print_r($this->db->last_query());die;
+
+                            
+
+                            
+
+                            $delivery_slot = date('Y-m-d H:i:s',strtotime($row['delivery_slot']));
+                            
+                            $alpha='A';
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['js_name']);$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['js_email']);$alpha++;
+                            
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['js_mobile']);$alpha++;
+
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['js_current_ctc']);$alpha++;
+
+                            
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['js_experience']);$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['js_current_notice_period']);$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['education_level_name']);$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['status_name']);$alpha++;
+
+
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['action_item']);$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['comments']);$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['reminder']);$alpha++;
+
+                            
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['updated_on']);$alpha++;
+
+                            
+                          
+
+                            
+
+                            // $objPHPExcel->getActiveSheet()->SetCellValue('Q' . $rowCount, $distributor_data[$i]['hsn_codes']);
+
+                            // $objPHPExcel->getActiveSheet()->SetCellValue('E' . $rowCount, $sku_qty);
+
+                           
+                        }
+                        // foreach ($skus as $element) {
+                        $objPHPExcel->getActiveSheet()->getStyle('A1')->applyFromArray(
+                            array(
+                                'fill' => array(
+                                    'type' => PHPExcel_Style_Fill::FILL_SOLID,
+                                    'color' => array('rgb' => '00ffff00')
+                                )
+                            )
+
+                    );
+                    
+                        $filename = "internal_tracker.". date("jS F Y").".csv";
+
+                  // 
+
+                        header('Content-Type: application/vnd.ms-excel'); 
+                        header('Content-Disposition: attachment;filename="'.$filename.'"');
+                        header('Cache-Control: max-age=0'); 
+                        $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'CSV');  
+                        $objWriter->save('php://output'); 
+                    
+
+
+                }
+                redirect('employer/internal_tracker');
+            }
+    
 
 
 } // end class

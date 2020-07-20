@@ -1507,6 +1507,7 @@ input.select2-search__field {
                      </div>
                   </div>
                </div>
+<<<<<<< HEAD
                <div id="menu1" class="tab-pane fade">
                   <div class="education_header" style="position:relative;">
                      <img src="" style="width:100%;position:relative;">
@@ -1782,6 +1783,9 @@ input.select2-search__field {
                      </li>
                   </ul>
                </div>
+=======
+             
+>>>>>>> ea90a99821ee837faa1ad919f6db69411d2d3a07
                <div id="menu3" class="tab-pane fade">
                   <div class="education_header" style="position:relative;">
                      <img src="https://www.sassm.in/education/images/blog-header.jpg" style="width:100%;position:relative;height:65px;">

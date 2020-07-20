@@ -432,6 +432,11 @@ input.email {
     min-width: 200px;
     border: none;
 }
+textarea#comment {
+    border: none;
+    text-decoration: none;
+    resize: none;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -490,7 +495,14 @@ input.email {
                   </label>
                </div>
             </div>
-           
+           <div class="row">
+            <div col-md-12>
+               <button style="float: right;" type="button" class="btn btn-default btn-sm save">
+          <span class="glyphicon glyphicon-floppy-save"></span> Save
+        </button>
+            </div>
+             
+           </div>
             
          
 
@@ -510,9 +522,11 @@ input.email {
                                 <th scope="col">Notice (days)</th>
                                 <th scope="col">Education</th>
                                 <th scope="col">Status</th>
-                                <th scope="col">Comments</th>
-                                <th scope="col">Updated By</th>
-                                <th scope="col">Action</th>
+                                <th scope="col">Action Items</th>
+                                <th scope="col">Notes</th>
+                                <th scope="col">Reminders</th>
+                                <th scope="col">Updated On</th>
+                               
                               </tr>
                             </thead>
                             <tbody>
@@ -524,6 +538,16 @@ input.email {
                    </div>
                
             </div>
+            <div class="row">
+            <div col-md-12>
+              <a id="export" href=""><button style="float: right;margin-bottom: 50px;" type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-export"></span> Export
+              </button></a>
+            </div>
+             
+           </div>
+             </div>
+           
          </div>
          
       </div>
@@ -533,15 +557,59 @@ input.email {
 <script>
    $('.select2').select2();
 </script>
-
+<script>
+  $(".save").click(function() {
+     var job_id = $('#job_select').val();
+//    var id = $(".table table-borderless").closest("tr");
+// alert (id); // Find the text
+   var ary = [];
+        $(function () {
+            $('.table-borderless tr').each(function (a, b) {
+                var value = $('#cv_id', b).val();
+                var name = $("#name" , b).val();
+                var email = $("#email", b).val();
+                var mobile = $("#mobile", b).val();
+                var ctc = $("#ctc", b).val();
+                var exp = $("#exp", b).val();
+                var notice = $("#notice", b).val();
+                var edu = $("#edu", b).val();
+                var status = $("#status", b).val();
+                var comment = $("#comment", b).val();
+                var action = $("#action", b).val();
+                var reminder = $("#reminder", b).val();
+                ary.push({name:name,email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,comment:comment,value:value,action:action,reminder:reminder});
+               
+            });
+            // alert(JSON.stringify( ary));
+           var data_arr = JSON.stringify(ary);
+            $.ajax({
+              url: "<?php echo base_url();?>employer/update_cv",
+              type: "POST",
+              data: {data_arr:data_arr},
+              // contentType:false,
+              // processData:false,
+               // dataType: "json",
+              success: function(data)
+              {
+                // alert(data);
+                window.location.reload();
+              }
+        });
+            // alert(ary);
+        });
+});
+</script>
 
 <script>
    $( document ).ready(function() {
      var job_id = $('#job_select').val();
      tracker_card(job_id);
     var url = '<?php echo base_url(); ?>employer/add_new_cv/'+job_id;
+    var export_url = '<?php echo base_url(); ?>employer/export_internal_tracker/'+job_id;
     // alert (url);
     $('#add_cv').attr('href',url);
+ 
+    $('#export').attr('href',export_url);
 
 
 
@@ -552,32 +620,32 @@ input.email {
       alert("#email"+id);
    }
 
-function saveRow(id)
-{
-   var email = $("#email"+id).val();
-   var mobile = $("#mobile"+id).val();
-  var ctc = $("#ctc"+id).val();
-  var exp = $("#exp"+id).val();
-  var notice = $("#notice"+id).val();
-  var edu = $("#edu"+id).val();
-  var status = $("#status"+id).val();
-  var comment = $("#comment"+id).val();
-  var name = $("#name"+id).val();
-  // alert(edu);
-   $.ajax({
-              url: "<?php echo base_url();?>employer/update_cv",
-              type: "POST",
-              data: {name:name,email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,id:id,comment:comment},
-              // contentType:false,
-              // processData:false,
-               // dataType: "json",
-              success: function(data)
-              {
-                window.location.reload();
-              }
-        });
-}
-    function tracker_card(job_id)
+// function saveRow(id)
+// {
+//    var email = $("#email"+id).val();
+//    var mobile = $("#mobile"+id).val();
+//   var ctc = $("#ctc"+id).val();
+//   var exp = $("#exp"+id).val();
+//   var notice = $("#notice"+id).val();
+//   var edu = $("#edu"+id).val();
+//   var status = $("#status"+id).val();
+//   var comment = $("#comment"+id).val();
+//   var name = $("#name"+id).val();
+//   // alert(edu);
+//    $.ajax({
+//               url: "<?php echo base_url();?>employer/update_cv",
+//               type: "POST",
+//               data: {name:name,email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,id:id,comment:comment},
+//               // contentType:false,
+//               // processData:false,
+//                // dataType: "json",
+//               success: function(data)
+//               {
+//                 window.location.reload();
+//               }
+//         });
+// }   
+ function tracker_card(job_id)
   {
     var url = '<?php echo base_url(); ?>employer/add_new_cv/'+job_id;
     $('#add_cv').attr('href',url);
