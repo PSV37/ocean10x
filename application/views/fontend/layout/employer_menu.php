@@ -266,6 +266,16 @@ $employer_id = $this->session->userdata('company_profile_id');
                                         <span class="text item">Pending Jobs</span>
                                   </a>
                                 </li>
+                                <li <?php if ($activemenu == 'internal_tracker') { ?>
+                                 class="active"
+                                <?php } ?> >
+                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/internal_tracker">
+                                    <span class="icon-container">
+                                       <i class="fas fa-map-signs"></i>
+                                    </span>
+                                    <span class="text item">Internal Tracker</span>
+                                  </a>
+                                </li> 
                                 <li <?php if ($activemenu == 'questionbank') { ?>
                                  class="active"
                                 <?php } ?> >
@@ -276,16 +286,7 @@ $employer_id = $this->session->userdata('company_profile_id');
                                     <span class="text item">Question Bank</span>
                                   </a>
                                 </li>
-                                   <li <?php if ($activemenu == 'internal_tracker') { ?>
-                                 class="active"
-                                <?php } ?> >
-                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/internal_tracker">
-                                    <span class="icon-container">
-                                       <i class="fas fa-map-signs"></i>
-                                    </span>
-                                    <span class="text item">Internal Tracker</span>
-                                  </a>
-                                </li>  
+                                    
                                 <li <?php if ($activemenu == 'oceanchamp') { ?>
 
 
