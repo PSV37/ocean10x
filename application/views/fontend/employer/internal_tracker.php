@@ -575,7 +575,8 @@ input.email {
                // dataType: "json",
               success: function(data)
               {
-                window.location.reload();
+                alert(data);
+                // window.location.reload();
               }
         });
             // alert(ary);
