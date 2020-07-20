@@ -549,7 +549,7 @@ input.email {
    var ary = [];
         $(function () {
             $('.table-borderless tr').each(function (a, b) {
-                 var name = $("#name"+id).val();
+                 var name = $("#name" , b).val();
                 var value = $('.attrValue', b).text();
                 ary.push({ Name: name, Value: value });
                
