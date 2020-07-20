@@ -237,7 +237,8 @@ input.select2-search__field {
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">Education<span class="required">*</span></label>
-                                             <select name="education_level_id" id="education_level_id" class="form-control" required="">
+                                             <select name="education_level_id" id="education_level_id" class="form-control department select2" >
+                                              <option value="">Select</option>
                                                 <option value="1">Ph.D / Doctorate</option>
                                              </select>
                                           </div>
@@ -248,8 +249,7 @@ input.select2-search__field {
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">Specialization<span class="required">*</span></label>
                                              <select name="specialization_id" id="specialization_id" class="form-control  department select2">
-                                              <option value="">Select</option>
-                                                <option value="">Select One</option>
+                                              <option value="">Select</option>                                          
                                                 <?php foreach($phdspecial as $edu_special){?>
                                                 <option value="<?php echo $edu_special['id']; ?>"<?php if(!empty($education_data)) if($education_data[0]->specialization_id==$edu_special['id']) echo "selected";?>><?php echo $edu_special['education_specialization']; ?></option>
                                                 <?php } ?>
@@ -336,7 +336,8 @@ input.select2-search__field {
                                              <div class="col-sm-1"></div>
                                              <div class="col-sm-10">
                                                 <label class="control-label" for="email">Education<span class="required">*</span></label>
-                                                <select name="education_level_id" id="education_level_id" class="form-control" required="">
+                                                <select name="education_level_id" id="education_level_id" class="form-control department select2" >
+                                                  <option value="">Select</option>
                                                    <option value="2">Masters/Post-Graduation</option>
                                                 </select>
                                              </div>
@@ -462,7 +463,7 @@ input.select2-search__field {
                                              <label class="control-label" for="email">Specialization<span class="required">*</span></label>
                                              <select name="specialization_id" id="specialization_id" class="form-control department select2">
                                               <option value="">Select</option>
-                                                <option value="">Select One</option>
+                                                
                                                 <?php foreach($gddspecial as $edu_special){?>
                                                 <option value="<?php echo $edu_special['id']; ?>"<?php if(!empty($education_data3)) if($education_data3[0]->specialization_id==$edu_special['id']) echo "selected";?>><?php echo $edu_special['education_specialization']; ?></option>
                                                 <?php } ?>
@@ -563,7 +564,8 @@ input.select2-search__field {
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">Education<span class="required">*</span></label>
-                                             <select name="education_level_id" id="education_level_id" class="form-control" required="">
+                                             <select name="education_level_id" id="education_level_id" class="form-control department select2" >
+                                              <option value="">Select</option>
                                                 <option value="4">12th</option>
                                              </select>
                                           </div>
@@ -700,7 +702,8 @@ input.select2-search__field {
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">School Medium<span class="required">*</span></label>
-                                             <select name="schoolmedium_id" id="schoolmedium_id" class="form-control">
+                                             <select name="schoolmedium_id" id="schoolmedium_id" class="form-control department select2">
+                                              <option value="">Select</option>
                                                 <option value="">Select Medium</option>
                                                 <?php foreach($schoolmedium as $medium){?>
                                                 <option value="<?php echo $medium['schoolmedium_id']; ?>"<?php if(!empty($education_data5)) if($education_data5[0]->schoolmedium_id==$medium['schoolmedium_id']) echo "selected";?>><?php echo $medium['school_medium']; ?></option>
@@ -1529,81 +1532,7 @@ input.select2-search__field {
                                     <h4 class="modal-title">Ph.d / Doctorate</h4>
                                  </div>
                                  <div class="modal-body education_frm">
-                                    <form id="Educational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
-                                       <input type="hidden" name="js_education_id" value="<?php echo $education_data[0]->js_education_id; ?>">
-                                       <div class="form-group">
-                                          <div class="col-sm-1"></div>
-                                          <div class="col-sm-10">
-                                             <label class="control-label" for="email">Education<span class="required">*</span></label>
-                                             <select name="education_level_id" id="education_level_id" class="form-control" required="">
-                                                <option value="1">Ph.D / Doctorate</option>
-                                             </select>
-                                          </div>
-                                          <div class="col-sm-1"></div>
-                                       </div>
-                                       <div class="form-group">
-                                          <div class="col-sm-1"></div>
-                                          <div class="col-sm-10">
-                                             <label class="control-label" for="email">Specialization<span class="required">*</span></label>
-                                             <select name="specialization_id" id="specialization_id" class="form-control  department select2">
-                                              <option value="">Select</option>
-                                                <option value="">Select One</option>
-                                                <?php foreach($phdspecial as $edu_special){?>
-                                                <option value="<?php echo $edu_special['id']; ?>"<?php if(!empty($education_data)) if($education_data[0]->specialization_id==$edu_special['id']) echo "selected";?>><?php echo $edu_special['education_specialization']; ?></option>
-                                                <?php } ?>
-                                                <!-- <option value="6">Computer SC.</option> -->
-                                             </select>
-                                          </div>
-                                          <div class="col-sm-1"></div>
-                                       </div>
-                                       <div class="form-group">
-                                          <div class="col-sm-1"></div>
-                                          <div class="col-sm-10">
-                                             <label class="control-label" for="email">University / Name of Institution<span class="required">*</span></label>
-                                             <input type="text" name="js_institute_name" class="form-control allowalphabates" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($education_data)) echo $education_data[0]->js_institute_name; ?>">
-                                          </div>
-                                          <div class="col-sm-1"></div>
-                                       </div>
-                                       <div class="form-group">
-                                          <div class="col-sm-1"></div>
-                                          <div class="col-sm-10">
-                                             <label class="control-label" for="email">Course Type<span class="required">*</span></label>
-                                             <?php foreach($course as $courses){?>
-                                             <input type="radio" name="education_type_id" required id="education_type_id" value="<?php echo $courses['education_type_id']; ?>"<?php if(!empty($education_data)) if($education_data[0]->education_type_id==$courses['education_type_id']) echo "checked";?> style="margin: 0 1px;"> <?php echo $courses['education_type']; ?>
-                                             <?php } ?>                      
-                                          </div>
-                                          <div class="col-sm-1"></div>
-                                       </div>
-                                       <div class="form-group">
-                                          <div class="col-sm-1"></div>
-                                          <div class="col-sm-10">
-                                             <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
-                                             <select name="js_year_of_passing" id="ddlYear" class="form-control department select2" required="">
-                                                <?php
-                                                   $currently_selected = date('Y'); 
-                                                   $earliest_year = 1940; 
-                                                   $latest_year = date('Y'); 
-                                                   foreach ( range( $latest_year, $earliest_year ) as $i ) {
-                                                   ?>
-                                                <option value="<?php echo $i; ?>"<?php if(!empty($education_data)) if($education_data[0]->js_year_of_passing==$i) echo "selected";?>><?php echo $i; ?></option>
-                                                <?php } ?>
-                                             </select>
-                                          </div>
-                                          <div class="col-sm-1"></div>
-                                       </div>
-                                       <div class="form-group">
-                                          <div class="col-sm-1"></div>
-                                          <div class="col-sm-10">
-                                             <label class="control-label" for="email">Score<span class="required">*</span></label>
-                                             <input type="text" name="js_resut" class="form-control allownumericwithoutdecimal" placeholder="Enter Score" value="<?php if(!empty($education_data)) echo $education_data[0]->js_resut; ?>" onkeypress="javascript:return isNumber1(event)" required>
-                                          </div>
-                                          <div class="col-sm-1"></div>
-                                       </div>
-                                       <div class="modal-footer">
-                                          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                          <button type="submit" class="btn btn-primary">Save</button>
-                                       </div>
-                                    </form>
+                                    
                                  </div>
                               </div>
                            </div>
@@ -1628,96 +1557,7 @@ input.select2-search__field {
                                  </div>
                                  <div class="modal-body education_frm">
                                     <div class="modal-body education_frm">
-                                       <form id="Masters" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
-                                          <input type="hidden" name="js_education_id" value="<?php echo $education_data2[0]->js_education_id; ?>">
-                                          <div class="form-group">
-                                             <div class="col-sm-1"></div>
-                                             <div class="col-sm-10">
-                                                <label class="control-label" for="email">Education<span class="required">*</span></label>
-                                                <select name="education_level_id" id="education_level_id" class="form-control" required="">
-                                                   <option value="2">Masters/Post-Graduation</option>
-                                                </select>
-                                             </div>
-                                             <div class="col-sm-1"></div>
-                                          </div>
-                                          <div class="form-group">
-                                             <div class="col-sm-1"></div>
-                                             <div class="col-sm-10">
-                                                <label class="control-label" for="email">Specialization<span class="required">*</span></label>
-                                                <select name="specialization_id" id="specialization_id" class="form-control department select2">
-                                                  <option value="">Select</option>
-                                                   <option value="">Select One</option>
-                                                   <?php foreach($pgdspecial as $edu_special){?>
-                                                   <option value="<?php echo $edu_special['id']; ?>"<?php if(!empty($$education_data2)) if($$education_data2[0]->specialization_id==$edu_special['id']) echo "selected";?>><?php echo $edu_special['education_specialization']; ?></option>
-                                                   <?php } ?>
-                                                </select>
-                                             </div>
-                                             <div class="col-sm-1"></div>
-                                          </div>
-                                          <div class="form-group">
-                                             <div class="col-sm-1"></div>
-                                             <div class="col-sm-10">
-                                                <label class="control-label" for="email">University / Name of Institution<span class="required">*</span></label>
-                                                <input type="text" name="js_institute_name" class="form-control allowalphabates" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($education_data)) echo $education_data2[0]->js_institute_name; ?>">
-                                             </div>
-                                             <div class="col-sm-1"></div>
-                                          </div>
-                                          <div class="form-group">
-                                             <div class="col-sm-1"></div>
-                                             <div class="col-sm-10">
-                                                <label class="control-label" for="email">Course Type<span class="required">*</span></label>
-                                                <?php foreach($course as $courses){?>
-                                                <input type="radio" name="education_type_id" required id="education_type_id" value="<?php echo $courses['education_type_id']; ?>"<?php if(!empty($education_data2)) if($education_data2[0]->education_type_id==$courses['education_type_id']) echo "checked";?> style="margin: 0 1px;"> <?php echo $courses['education_type']; ?>
-                                                <?php } ?>                   
-                                             </div>
-                                             <div class="col-sm-1"></div>
-                                          </div>
-                                          <div class="form-group">
-                                             <div class="col-sm-1"></div>
-                                             <div class="col-sm-10">
-                                                <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
-                                                <select name="js_year_of_passing" id="ddlYear" class="form-control department select2" required="">
-                                                   <option value="">Select Completion Year</option>
-                                                   <?php
-                                                      $currently_selected = date('Y'); 
-                                                      $earliest_year = 1940; 
-                                                      $latest_year = date('Y'); 
-                                                      foreach ( range( $latest_year, $earliest_year ) as $i ) {
-                                                      ?>
-                                                   <option value="<?php echo $i; ?>"<?php if(!empty($education_data2)) if($education_data2[0]->js_year_of_passing==$i) echo "selected";?>><?php echo $i; ?></option>
-                                                   <?php } ?>
-                                                </select>
-                                             </div>
-                                             <div class="col-sm-1"></div>
-                                          </div>
-                                          <!--  <div class="form-group">
-                                             <div class="col-sm-1"></div>
-                                             <div class="col-sm-10">
-                                             <label class="control-label" for="email">Grading System</label>
-                                              <select  name="gradding"  class="form-control" id="category" onchange='hideshowfun()'>
-                                                <option value="">Select Grading System</option>
-                                                <option value="Scale 10 Grading System">Scale 10 Grading System</option>
-                                                <option value="Scale 4 Grading System">Scale 4 Grading System</option>
-                                                <option value="% Marks of 100 Maximum">% Marks of 100 Maximum</option>
-                                                <option value="Course Requires a Pass">Course Requires a Pass</option>
-                                              </select>
-                                             </div>
-                                             <div class="col-sm-1"></div>
-                                             </div> -->
-                                          <!-- <div class="form-group" id="comp_name" style="display:none;"> -->
-                                          <div class="form-group">
-                                             <div class="col-sm-1"></div>
-                                             <div class="col-sm-10">
-                                                <label class="control-label" for="email">Score<span class="required">*</span></label>
-                                                <input type="text" name="js_resut" class="form-control allownumericwithoutdecimal" placeholder="Enter Score" value="<?php if(!empty($education_data2)) echo $education_data2[0]->js_resut; ?>" onkeypress="javascript:return isNumber1(event)" required>
-                                             </div>
-                                             <div class="col-sm-1"></div>
-                                          </div>
-                                          <div class="modal-footer">
-                                             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                             <button type="submit" class="btn btn-primary">Save</button>
-                                          </div>
-                                       </form>
+                                       
                                     </div>
                                  </div>
                               </div>
@@ -1742,97 +1582,8 @@ input.select2-search__field {
                                     <h4 class="modal-title">Graduation / Diploma</h4>
                                  </div>
                                  <div class="modal-body education_frm">
-                                    <form id="Graduation" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
-                                       <input type="hidden" name="js_education_id" value="<?php echo $education_data3[0]->js_education_id; ?>">
-                                       <div class="form-group">
-                                          <div class="col-sm-1"></div>
-                                          <div class="col-sm-10">
-                                             <label class="control-label" for="email">Education<span class="required">*</span></label>
-                                             <select name="education_level_id" id="education_level_id" class="form-control  department select2" >
-                                              <option value="">Select</option>
-                                                <option value="3">Graduation/Diploma</option>
-                                             </select>
-                                          </div>
-                                          <div class="col-sm-1"></div>
-                                       </div>
-                                       <div class="form-group">
-                                          <div class="col-sm-1"></div>
-                                          <div class="col-sm-10">
-                                             <label class="control-label" for="email">Specialization<span class="required">*</span></label>
-                                             <select name="specialization_id" id="specialization_id" class="form-control department select2">
-                                              <option value="">Select</option>
-                                                <option value="">Select One</option>
-                                                <?php foreach($gddspecial as $edu_special){?>
-                                                <option value="<?php echo $edu_special['id']; ?>"<?php if(!empty($education_data3)) if($education_data3[0]->specialization_id==$edu_special['id']) echo "selected";?>><?php echo $edu_special['education_specialization']; ?></option>
-                                                <?php } ?>
-                                             </select>
-                                          </div>
-                                          <div class="col-sm-1"></div>
-                                       </div>
-                                       <div class="form-group">
-                                          <div class="col-sm-1"></div>
-                                          <div class="col-sm-10">
-                                             <label class="control-label" for="email">University&emsp;/&emsp;Name of Institution<span class="required">*</span></label>
-                                             <input type="text" name="js_institute_name" class="form-control allowalphabates" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($education_data3)) echo $education_data3[0]->js_institute_name; ?>">
-                                          </div>
-                                          <div class="col-sm-1"></div>
-                                       </div>
-                                       <div class="form-group">
-                                          <div class="col-sm-1"></div>
-                                          <div class="col-sm-10">
-                                             <label class="control-label" for="email">Course Type<span class="required">*</span></label>
-                                             <?php foreach($course as $courses){?>
-                                             <input type="radio" name="education_type_id" required id="education_type_id" value="<?php echo $courses['education_type_id']; ?>"<?php if(!empty($education_data3)) if($education_data3[0]->education_type_id==$courses['education_type_id']) echo "checked";?> style="margin: 0 1px;"> <?php echo $courses['education_type']; ?>
-                                             <?php } ?>                    
-                                          </div>
-                                          <div class="col-sm-1"></div>
-                                       </div>
-                                       <div class="form-group">
-                                          <div class="col-sm-1"></div>
-                                          <div class="col-sm-10">
-                                             <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
-                                             <select name="js_year_of_passing" id="ddlYear" class="form-control department select2" required="">
-                                                <option value="">Select Completion Year</option>
-                                                <?php
-                                                   $currently_selected = date('Y'); 
-                                                   $earliest_year = 1940; 
-                                                   $latest_year = date('Y'); 
-                                                   foreach ( range( $latest_year, $earliest_year ) as $i ) {
-                                                   ?>
-                                                <option value="<?php echo $i; ?>"<?php if(!empty($education_data3)) if($education_data3[0]->js_year_of_passing==$i) echo "selected";?>><?php echo $i; ?></option>
-                                                <?php } ?>
-                                             </select>
-                                          </div>
-                                          <div class="col-sm-1"></div>
-                                       </div>
-                                       <!--  <div class="form-group">
-                                          <div class="col-sm-1"></div>
-                                          <div class="col-sm-10">
-                                          <label class="control-label" for="email">Grading System</label>
-                                           <select  name="gradding"  class="form-control" id="category" onchange='hideshowfun()'>
                                              <option value="">Select Grading System</option>
-                                             <option value="Scale 10 Grading System">Scale 10 Grading System</option>
-                                             <option value="Scale 4 Grading System">Scale 4 Grading System</option>
-                                             <option value="% Marks of 100 Maximum">% Marks of 100 Maximum</option>
-                                             <option value="Course Requires a Pass">Course Requires a Pass</option>
-                                           </select>
-                                          </div>
-                                          <div class="col-sm-1"></div>
-                                          </div> -->
-                                       <!-- <div class="form-group" id="comp_name" style="display:none;"> -->
-                                       <div class="form-group">
-                                          <div class="col-sm-1"></div>
-                                          <div class="col-sm-10">
-                                             <label class="control-label" for="email">Score<span class="required">*</span></label>
-                                             <input type="text" name="js_resut" class="form-control allownumericwithoutdecimal" placeholder="Enter Score" value="<?php if(!empty($education_data3)) echo $education_data3[0]->js_resut; ?>" onkeypress="javascript:return isNumber1(event)" required>
-                                          </div>
-                                          <div class="col-sm-1"></div>
-                                       </div>
-                                       <div class="modal-footer">
-                                          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                          <button type="submit" class="btn btn-primary">Save</button>
-                                       </div>
-                                    </form>
+                                    
                                  </div>
                               </div>
                            </div>
@@ -1953,7 +1704,7 @@ input.select2-search__field {
                                     <h4 class="modal-title">10th</h4>
                                  </div>
                                  <div class="modal-body education_frm">
-                                    <form id="Educational-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
+                                    <form id="tenth" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
                                        <input type="hidden" name="js_education_id" value="<?php echo $education_data5[0]->js_education_id; ?>">
                                        <div class="form-group">
                                           <div class="col-sm-1"></div>
@@ -2599,7 +2350,8 @@ namespace_regex: true
 },
 
 'date_of_birth':{
-  required: true
+  dateFormat: true
+  //required: true
 //email_regex: true
 },
 
@@ -2812,138 +2564,6 @@ remote: "The email is already in use by another user!"
 
 });
 
-$( document ).ready( function () {
-
-$("#Educational-info").validate (  
-
-{
-
-rules:{
-
-'education_level_id':{
-minlength: 3,
-namespace_regex: true
-},
-
-'specialization_id':{
-email_regex: true
-},  
-
-
-'js_institute_name':{
-phonenumber_regex: true
-}, 
-
-'education_type_id':{
-//twodigit_regex: true
-//email: true
-},
-
-
-'js_year_of_passing':{
-maxlength:3
-//email: true
-},
-
-'js_resut':{                
-  //minlength:10,        
-  //maxlength:10,
-},
-
-},
-
-messages:{
-
-'education_level_id':{
-required: "This field is mandatory!",
-minlength: "Please type atleast 3 characters!",
-namespace_regex: "Please type only alphabets"
-},
-
-'specialization_id':{
-  required: "This field is mandatory!",
-  matches: "Didn't match!",      
-  minlength: "Please Enter 10 digit phone numbers!",        
-  maxlength: "Maximum length 10 digits!"
-},
-
-'education_type_id':{
-required: "This field is mandatory!",
-minlength: "Please type atleast 10 digits",
-maxlength: "Please type atleast 10 digits"
-},
-
-'js_year_of_passing':{
-maxlength: "Choose a company name of at least 14 letters!"
-},
-
-'js_resut':{
-//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
-//remote: "The username is already in use by another user!"
-},
-
-
-
-'alternatemobile':{
-email: "Please enter a valid email address!",
-remote: "The email is already in use by another user!"
-},
-
-'present_address' :{
-email: "Please enter a valid email address!",
-remote: "The email is already in use by another user!"
-},
-
-'country_id':{
-},
-
-'state_id':{
-required: "This field is mandatory!",
-minlength: "Choose a username of at least 4 letters!",
-username_regex: "You have used invalid characters. Are permitted only letters numbers!",
-remote: "The useername is already in use by another user!"
-},
-
-'city_id' :{
-email: "Please enter a valid email address!",
-remote: "The email is already in use by another user!"
-},
-
-'pincode':{},
-
-'tagline':{
-required: "This field is mandatory!",
-minlength: "Choose a username of at least 4 letters!",
-username_regex: "You have used invalid characters. Are permitted only letters numbers!",
-remote: "The useername is already in use by another user!"
-},
-
-'matrial_status':{
-maxlength: "Choose a company name of at least 14 letters!"
-},
-
-'work_permit_usa':{
-//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
-//remote: "The username is already in use by another user!"
-},
-
-
-'other_country_work_permit':{
-email: "Please enter a valid email address!",
-remote: "The email is already in use by another user!"
-},
-
-'website' :{
-email: "Please enter a valid email address!",
-remote: "The email is already in use by another user!"
-}
-
-
-}
-
-});
-
-});
 
 
 $( document ).ready( function () {
@@ -2994,10 +2614,15 @@ required:true
 messages:{
 
 'education_level_id':{
+
 required: "This field is mandatory!"
 },
 
 'specialization_id':{
+  required: "This field is mandatory!"
+},
+
+'js_institute_name':{
   required: "This field is mandatory!"
 },
 
@@ -3032,31 +2657,37 @@ $("#Masters").validate (
 rules:{
 
 'education_level_id':{
-minlength: 3,
-namespace_regex: true
+  required:true
+//minlength: 3,
+//namespace_regex: true
 },
 
 'specialization_id':{
-email_regex: true
+  required:true
+//email_regex: true
 },
 
 
 'js_institute_name':{
-phonenumber_regex: true
+  required: true
+//phonenumber_regex: true
 }, 
 
 'education_type_id':{
+  required: true
 //twodigit_regex: true
 //email: true
 },
 
 
 'js_year_of_passing':{
-maxlength:3
+  required: true
+//maxlength:3
 //email: true
 },
 
-'js_resut':{                
+'js_resut':{            
+required: true    
   //minlength:10,        
   //maxlength:10,
 },
@@ -3066,31 +2697,25 @@ maxlength:3
 messages:{
 
 'education_level_id':{
-required: "This field is mandatory!",
-minlength: "Please type atleast 3 characters!",
-namespace_regex: "Please type only alphabets"
+required: "This field is mandatory!"
 },
 
 'specialization_id':{
-  required: "This field is mandatory!",
-  matches: "Didn't match!",      
-  minlength: "Please Enter 10 digit phone numbers!",        
-  maxlength: "Maximum length 10 digits!"
+  required: "This field is mandatory!"
+  
 },
 
 'education_type_id':{
-required: "This field is mandatory!",
-minlength: "Please type atleast 10 digits",
-maxlength: "Please type atleast 10 digits"
+required: "This field is mandatory!"
+
 },
 
 'js_year_of_passing':{
-maxlength: "Choose a company name of at least 14 letters!"
+  required: "This field is mandatory!"
 },
 
 'js_resut':{
-//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
-//remote: "The username is already in use by another user!"
+  required: "This field is mandatory!"
 },
 
 
@@ -3108,51 +2733,37 @@ $("#Graduation").validate (
 
 rules:{
 
-'education_level_id':{
-minlength: 3,
-namespace_regex: true
-},
-
 'specialization_id':{
-email_regex: true
+required: true
 },
-
 
 'js_institute_name':{
-phonenumber_regex: true
-}, 
+required: true
+},
+
 
 'education_type_id':{
-//twodigit_regex: true
-//email: true
-},
+required: true
+}, 
 
 
 'js_year_of_passing':{
-maxlength:3
-//email: true
+required: true//email: true
 },
 
-'js_resut':{                
-  //minlength:10,        
-  //maxlength:10,
+'js_resut':{ 
+required: true               
+  
 },
 
 },
 
 messages:{
 
-'education_level_id':{
-required: "This field is mandatory!",
-minlength: "Please type atleast 3 characters!",
-namespace_regex: "Please type only alphabets"
-},
 
 'specialization_id':{
   required: "This field is mandatory!",
-  matches: "Didn't match!",      
-  minlength: "Please Enter 10 digit phone numbers!",        
-  maxlength: "Maximum length 10 digits!"
+ 
 },
 
 'education_type_id':{
@@ -3186,65 +2797,51 @@ $("#twelfth").validate (
 rules:{
 
 'education_level_id':{
-minlength: 3,
-namespace_regex: true
+required: true
 },
-
-'specialization_id':{
-email_regex: true
-},
-
-
-'js_institute_name':{
-phonenumber_regex: true
-}, 
-
-'education_type_id':{
-//twodigit_regex: true
-//email: true
-},
-
 
 'js_year_of_passing':{
-maxlength:3
-//email: true
+required: true
 },
 
-'js_resut':{                
-  //minlength:10,        
-  //maxlength:10,
+
+'board_id':{
+required: true
+}, 
+
+'schoolmedium_id':{
+required: true
 },
+
+
+'totalmarks_id':{
+required:true
+},
+
+
 
 },
 
 messages:{
 
 'education_level_id':{
-required: "This field is mandatory!",
-minlength: "Please type atleast 3 characters!",
-namespace_regex: "Please type only alphabets"
-},
-
-'specialization_id':{
-  required: "This field is mandatory!",
-  matches: "Didn't match!",      
-  minlength: "Please Enter 10 digit phone numbers!",        
-  maxlength: "Maximum length 10 digits!"
-},
-
-'education_type_id':{
-required: "This field is mandatory!",
-minlength: "Please type atleast 10 digits",
-maxlength: "Please type atleast 10 digits"
+required: "This field is mandatory!"
 },
 
 'js_year_of_passing':{
-maxlength: "Choose a company name of at least 14 letters!"
+  required: "This field is mandatory!"
 },
 
-'js_resut':{
-//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
-//remote: "The username is already in use by another user!"
+'board_id':{
+required: "This field is mandatory!"
+},
+
+'schoolmedium_id':{
+  required: "This field is mandatory!"
+},
+
+'totalmarks_id':{
+  required: "This field is mandatory!"
 },
 
 
@@ -3655,6 +3252,12 @@ $.validator.addMethod("companypincode_regex", function(value, element) {
 return this.optional(element) || /^[1-9][0-9][0-9][0-9][0-9][0-9]$/.test(value);
 
 }, "Please Enter 6 digits Company Pincode");
+
+$.validator.addMethod("dateFormat",
+    function(value, element) {
+        return value.match(/^dd?-dd?-dd$/);
+    },
+    "Please enter a date in the format dd-mm-yyyy.");
 
 </script>
 
