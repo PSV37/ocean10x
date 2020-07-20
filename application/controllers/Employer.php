@@ -5072,7 +5072,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $forwarded_job_tracking = $this->job_posting_model->get_job_forwarded_candidate($job_id);
                    
 
-            
+               
+                                # code...
+                              
 
                         // create file name
                         $today = date("d.m.y");
@@ -5118,10 +5120,15 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         // set Row
 
                         $rowCount = 3;
-                        foreach ($forwarded_job_tracking as $row) {
-                            // print_r($row);
+                        foreach ($forwarded_job_tracking as $row1) {
+                             $forwarded_job_tracking_date = $this->job_posting_model->get_job_forwarded_candidate_by_date($job_id,$1row1->datecreation);
+                              // echo $this->db->last_query();die;
+                             $alpha='A';
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->datecreation);$alpha++;
+                            foreach ($forwarded_job_tracking_date as $row) {
                           
                             // print_r($this->db->last_query());die;
+                            
 
                              $alpha='A';
                             $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->js_name);$alpha++;
@@ -5157,6 +5164,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                               $rowCount++;
                            
                         }
+                    }
                         // foreach ($skus as $element) {
                        
                         $filename = "internal_tracker.". date("jS F Y").".csv";
