@@ -5044,9 +5044,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
             $where_cv['cv_id'] = $row->value;
             $update= $this->Master_model->master_update($update_cv, 'corporate_cv_bank', $where_cv);
-
+            $value = $row->name;
+            $fname =  strtok($value, " "); // Test
             $frwrd_update_cv['tracking_status'] = $row->status;
-            $frwrd_update_cv['comments'] = $row->comment;
+            $frwrd_update_cv['comments'] = $fname.':'.$row->comment;
             $frwrd_update_cv['action_item'] = $row->action;
             $frwrd_update_cv['reminder'] = $row->reminder;
 
