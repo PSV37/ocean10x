@@ -5067,7 +5067,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     {
 
                 // file name 
-           // echo $job_id; die;
+           echo $job_id;
             if(!empty($job_id)) {
              $forwarded_job_tracking = $this->job_posting_model->get_job_forwarded_candidate($job_id);
                    
