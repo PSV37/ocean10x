@@ -5029,6 +5029,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     }
  function update_cv()
     {
+        print_r( $this->input->post('data_arr')); die();
         $update_cv['js_email'] = $this->input->post('email');
         $update_cv['js_name'] = $this->input->post('name');
         $update_cv['js_mobile'] = $this->input->post('mobile');

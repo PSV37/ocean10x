@@ -549,7 +549,7 @@ input.email {
    var ary = [];
         $(function () {
             $('.table-borderless tr').each(function (a, b) {
-                var value = $('#cv_id', b).text();
+                var value = $('#cv_id', b).val();
                 var name = $("#name" , b).val();
                 var email = $("#email", b).val();
                 var mobile = $("#mobile", b).val();
@@ -565,7 +565,20 @@ input.email {
                
             });
             alert(JSON.stringify( ary));
-            alert(ary);
+           var data_arr = JSON.stringify(ary);
+            $.ajax({
+              url: "<?php echo base_url();?>employer/update_cv",
+              type: "POST",
+              data: {data_arr:data_arr},
+              // contentType:false,
+              // processData:false,
+               // dataType: "json",
+              success: function(data)
+              {
+                window.location.reload();
+              }
+        });
+            // alert(ary);
         });
 });
 </script>
