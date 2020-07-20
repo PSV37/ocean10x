@@ -217,12 +217,12 @@ order by RAND() limit 3");
         $this->db->from('forwarded_jobs_cv');
         $this->db->where('forwarded_jobs_cv.job_post_id', $job_id);
         // $this->db->where('forword_job_status',"1");
-        $this->db->join('corporate_cv_bank','corporate_cv_bank.cv_id=forwarded_jobs_cv.cv_id');
+        // $this->db->join('corporate_cv_bank','corporate_cv_bank.cv_id=forwarded_jobs_cv.cv_id');
         
-        $this->db->join('education_level','education_level.education_level_id=corporate_cv_bank.js_top_education','left');
-        $this->db->join('tracker_status_master','tracker_status_master.status_id=forwarded_jobs_cv.tracking_status','left');
+        // $this->db->join('education_level','education_level.education_level_id=corporate_cv_bank.js_top_education','left');
+        // $this->db->join('tracker_status_master','tracker_status_master.status_id=forwarded_jobs_cv.tracking_status','left');
         $this->db->order_by('forwarded_jobs_cv.id','created_on');
-        // $this->db->group_by('job_apply.job_seeker_id');
+        $this->db->group_by('forwarded_jobs_cv.DATE_FORMAT(forwarded_jobs_cv.created_on,"%y-%m-%d")');
        
         // $job_types = array('1', '3', '4','5','6');
         // $this->db->where_in('job_types',$job_types);
