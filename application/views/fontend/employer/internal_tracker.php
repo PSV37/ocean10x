@@ -540,7 +540,7 @@ textarea#comment {
             </div>
             <div class="row">
             <div col-md-12>
-              <a id="export" href=""><button style="float: right;" type="button" class="btn btn-default btn-sm">
+              <a id="export" href=""><button style="float: right;margin-bottom: 50px;" type="button" class="btn btn-default btn-sm">
                 <span class="glyphicon glyphicon-export"></span> Export
               </button></a>
             </div>
