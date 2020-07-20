@@ -5161,7 +5161,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                             // $objPHPExcel->getActiveSheet()->SetCellValue('Q' . $rowCount, $distributor_data[$i]['hsn_codes']);
 
                             // $objPHPExcel->getActiveSheet()->SetCellValue('E' . $rowCount, $sku_qty);
-
+                              $rowCount++;
                            
                         }
                         // foreach ($skus as $element) {
