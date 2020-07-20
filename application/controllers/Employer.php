@@ -5124,7 +5124,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                              $forwarded_job_tracking_date = $this->job_posting_model->get_job_forwarded_candidate_by_date($job_id,$row1->datecreation);
                               // echo $this->db->last_query();die;
                              $alpha='A';
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->datecreation);$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row1->datecreation);$alpha++;
                              $rowCount++;
                             foreach ($forwarded_job_tracking_date as $row) {
                           
