@@ -432,6 +432,11 @@ input.email {
     min-width: 200px;
     border: none;
 }
+textarea#comment {
+    border: none;
+    text-decoration: none;
+    resize: none;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">

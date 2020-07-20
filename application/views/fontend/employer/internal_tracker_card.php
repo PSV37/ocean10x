@@ -46,7 +46,7 @@
 
                                   <td ><textarea class="email" id="comment" name="comment" value="<?php echo $job_row->comments; ?>"></textarea></td>
 
-                                    <td ><input type="text" class="email" id="reminder" name="comment" value="<?php echo $job_row->comments; ?>" ></td>
+                                    <td ><input type="text" class="email" id="reminder" name="comment" ><?php echo $job_row->comments; ?></td>
 
                                 <td style="min-width: 150px;"><?php echo $job_row->updated_on; ?></td>
                              
