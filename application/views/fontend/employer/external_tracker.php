@@ -500,10 +500,6 @@ textarea#comment {
                <button style="float: right;" type="button" class="btn btn-default btn-sm save">
           <span class="glyphicon glyphicon-floppy-save"></span> Save
         </button>
-         <label class="btn btn-primary">
-          check all
-          <input type="checkbox" name="check_all" id="jevattend_id" value="1">
-        </label>
             </div>
              
            </div>
@@ -557,11 +553,7 @@ textarea#comment {
       </div>
    </div>
 </div>
-<script>
-   $(document).on(' change','input[name="check_all"]',function() {
-            $('.chkbx').prop("checked" , this.checked);
-    });
-  </script>
+
 <script>
    $('.select2').select2();
 </script>
@@ -614,7 +606,7 @@ textarea#comment {
      var job_id = $('#job_select').val();
      tracker_card(job_id);
     var url = '<?php echo base_url(); ?>employer/add_new_cv/'+job_id;
-    var export_url = '<?php echo base_url(); ?>employer/export_internal_tracker/'+job_id;
+    var export_url = '<?php echo base_url(); ?>employer/export_external_tracker/'+job_id;
     // alert (url);
     $('#add_cv').attr('href',url);
  
@@ -629,13 +621,13 @@ textarea#comment {
     var url = '<?php echo base_url(); ?>employer/add_new_cv/'+job_id;
     $('#add_cv').attr('href',url);
 
-    var export_url = '<?php echo base_url(); ?>employer/export_internal_tracker/'+job_id;
+    var export_url = '<?php echo base_url(); ?>employer/export_external_tracker/'+job_id;
     $('#export').attr('href',export_url);
 
     
      
     $.ajax({
-              url: "<?php echo base_url();?>employer/get_tracker_card",
+              url: "<?php echo base_url();?>employer/get_extracker_card",
               type: "POST",
               data: {job_id:job_id},
               // contentType:false,

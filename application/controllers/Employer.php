@@ -5019,6 +5019,25 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $this->load->view('fontend/employer/internal_tracker.php', compact('company_active_jobs', 'employer_id'));
     }
 
+    public function external_tracker()
+    {
+
+        $this->session->unset_userdata('activemenu');
+        $data['activemenu'] = 'external_tracker';
+        $this->session->set_userdata($data);
+        $employer_id = $this->session->userdata('company_profile_id');
+        $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
+        $this->load->view('fontend/employer/external_tracker.php', compact('company_active_jobs', 'employer_id'));
+    }
+    public function get_extracker_card()
+    {
+        $job_id = $this->input->post('job_id');
+            if(!empty($job_id)) {
+                 $forwarded_job_tracking = $this->job_posting_model->get_job_forwarded_candidate($job_id);
+                  $education_level = $this->Master_model->getMaster('education_level', $where = false);
+                    $tracker_status = $this->Master_model->getMaster('tracker_status_master', $where = false);
+                 $this->load->view('fontend/employer/internal_tracker_card.php', compact('forwarded_job_tracking', 'employer_id','education_level','tracker_status','job_id'));
+    }
     public function get_tracker_card()
     {
         $job_id = $this->input->post('job_id');
@@ -5046,7 +5065,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
             $where_cv['cv_id'] = $row->value;
             $update= $this->Master_model->master_update($update_cv, 'corporate_cv_bank', $where_cv);
-            $value = $row->name;
+            $value = $this->session->userdata('company_name');
             $fname =  strtok($value, " "); // Test
             if (!empty($row->comment)) {
                   $frwrd_update_cv['comments'] = $fname.' : '.$row->comment;
@@ -5080,10 +5099,6 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             // if(!empty($job_id)) {
             $forwarded_job_tracking = $this->job_posting_model->get_job_forwarded_candidate($job_id);
                    
-
-               
-                                # code...
-                              
 
                         // create file name
                         $today = date("d.m.y");
