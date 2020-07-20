@@ -591,7 +591,7 @@ textarea#comment {
                // dataType: "json",
               success: function(data)
               {
-                // alert(data);
+                alert('Updated Successfully');
                 // window.location.reload();
                  tracker_card(job_id);
               }
