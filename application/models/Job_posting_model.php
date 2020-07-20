@@ -221,8 +221,8 @@ order by RAND() limit 3");
         
         // $this->db->join('education_level','education_level.education_level_id=corporate_cv_bank.js_top_education','left');
         // $this->db->join('tracker_status_master','tracker_status_master.status_id=forwarded_jobs_cv.tracking_status','left');
-        $this->db->order_by('DATE_FORMAT(forwarded_jobs_cv.created_on,"%y-%m-%d")','desc');
-        $this->db->group_by('DATE_FORMAT(forwarded_jobs_cv.created_on,"%y-%m-%d")');
+        $this->db->order_by('datecreation','desc');
+        $this->db->group_by('datecreation');
        
         // $job_types = array('1', '3', '4','5','6');
         // $this->db->where_in('job_types',$job_types);
