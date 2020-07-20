@@ -525,7 +525,7 @@ textarea#comment {
                                 <th scope="col">Action Items</th>
                                 <th scope="col">Notes</th>
                                 <th scope="col">Reminders</th>
-                                <th scope="col">Updated By</th>
+                                <th scope="col">Updated On</th>
                                
                               </tr>
                             </thead>
@@ -540,9 +540,9 @@ textarea#comment {
             </div>
             <div class="row">
             <div col-md-12>
-              <button style="float: right;" type="button" class="btn btn-default btn-sm">
+              <a id="export" href=""><button style="float: right;" type="button" class="btn btn-default btn-sm">
                 <span class="glyphicon glyphicon-export"></span> Export
-              </button>
+              </button></a>
             </div>
              
            </div>
@@ -580,7 +580,7 @@ textarea#comment {
                 ary.push({name:name,email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,comment:comment,value:value,action:action,reminder:reminder});
                
             });
-            alert(JSON.stringify( ary));
+            // alert(JSON.stringify( ary));
            var data_arr = JSON.stringify(ary);
             $.ajax({
               url: "<?php echo base_url();?>employer/update_cv",
@@ -605,8 +605,11 @@ textarea#comment {
      var job_id = $('#job_select').val();
      tracker_card(job_id);
     var url = '<?php echo base_url(); ?>employer/add_new_cv/'+job_id;
+    var export_url = '<?php echo base_url(); ?>employer/export_internal_tracker/'+job_id;
     // alert (url);
     $('#add_cv').attr('href',url);
+ 
+    $('#export').attr('href',export_url);
 
 
 
