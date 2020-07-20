@@ -538,8 +538,7 @@ textarea#comment {
                    </div>
                
             </div>
-             </div>
-           <div class="row">
+            <div class="row">
             <div col-md-12>
               <button style="float: right;" type="button" class="btn btn-default btn-sm">
                 <span class="glyphicon glyphicon-export"></span> Export
@@ -547,6 +546,8 @@ textarea#comment {
             </div>
              
            </div>
+             </div>
+           
          </div>
          
       </div>
