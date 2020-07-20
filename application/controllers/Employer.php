@@ -5047,7 +5047,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $value = $row->name;
             $fname =  strtok($value, " "); // Test
             $frwrd_update_cv['tracking_status'] = $row->status;
-            $frwrd_update_cv['comments'] = $fname.':'.$row->comment;
+            $frwrd_update_cv['comments'] = $fname.' : '.$row->comment;
             $frwrd_update_cv['action_item'] = $row->action;
             $frwrd_update_cv['reminder'] = $row->reminder;
 
