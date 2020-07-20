@@ -500,7 +500,7 @@ textarea#comment {
                <button style="float: right;" type="button" class="btn btn-default btn-sm save">
           <span class="glyphicon glyphicon-floppy-save"></span> Save
         </button>
-        <span style="float: right;"> 
+        <span style="float: right; margin-top: 20px;"> 
           <input  type="checkbox" name="check_all" id="checkAllchk">&nbsp; all
                      <button type="button" id="frwd_btn" class="btn btn-primary" onclick="move_cvs();">update external</button></span>
         
