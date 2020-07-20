@@ -5048,10 +5048,19 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $update= $this->Master_model->master_update($update_cv, 'corporate_cv_bank', $where_cv);
             $value = $row->name;
             $fname =  strtok($value, " "); // Test
+            if (!empty($row->comment)) {
+                  $frwrd_update_cv['comments'] = $fname.' : '.$row->comment;
+            }
+            if (!empty($row->action)) {
+                  $frwrd_update_cv['action_item'] = $row->action;
+            }
+            if (!empty($row->reminder)) {
+                   $frwrd_update_cv['reminder'] = $row->reminder;
+            }
             $frwrd_update_cv['tracking_status'] = $row->status;
-            $frwrd_update_cv['comments'] = $fname.' : '.$row->comment;
-            $frwrd_update_cv['action_item'] = $row->action;
-            $frwrd_update_cv['reminder'] = $row->reminder;
+          
+            
+           
             $frwrd_update_cv['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
 
             $where_frwdcv['cv_id'] = $row->value;
@@ -5086,31 +5095,31 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
                        
                             $alpha='A';
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Name');$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Name');$alpha++;
 
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Email');$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Email');$alpha++;
 
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Mobile');$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Mobile');$alpha++;
 
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Salary');$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Salary');$alpha++;
 
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Work Experience');$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Work Experience');$alpha++;
 
-                             $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Notice (days)');$alpha++;
+                             $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Notice (days)');$alpha++;
 
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Education');$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Education');$alpha++;
 
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Status');$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Status');$alpha++;
 
                             
-                             $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Action Items');$alpha++;
+                             $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Action Items');$alpha++;
                            
 
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Notes');$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Notes');$alpha++;
 
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Reminders');$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Reminders');$alpha++;
 
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Updated On');
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Updated On');
                                 $alpha++;
 
                            
@@ -5119,7 +5128,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         // set Row
                         // set Row
 
-                        $rowCount = 3;
+                        $rowCount = 2;
                         foreach ($forwarded_job_tracking as $row1) {
                              $forwarded_job_tracking_date = $this->job_posting_model->get_job_forwarded_candidate_by_date($job_id,$row1->datecreation);
                               // echo $this->db->last_query();die;
