@@ -591,8 +591,9 @@ textarea#comment {
                // dataType: "json",
               success: function(data)
               {
-                // alert(data);
-                window.location.reload();
+                alert('Updated Successfully');
+                // window.location.reload();
+                 tracker_card(job_id);
               }
         });
             // alert(ary);
@@ -614,41 +615,15 @@ textarea#comment {
 
 
 });
-   function editRow(id)
-   {
-       $("#email"+id).attr("readonly", false); 
-      alert("#email"+id);
-   }
-
-// function saveRow(id)
-// {
-//    var email = $("#email"+id).val();
-//    var mobile = $("#mobile"+id).val();
-//   var ctc = $("#ctc"+id).val();
-//   var exp = $("#exp"+id).val();
-//   var notice = $("#notice"+id).val();
-//   var edu = $("#edu"+id).val();
-//   var status = $("#status"+id).val();
-//   var comment = $("#comment"+id).val();
-//   var name = $("#name"+id).val();
-//   // alert(edu);
-//    $.ajax({
-//               url: "<?php echo base_url();?>employer/update_cv",
-//               type: "POST",
-//               data: {name:name,email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,id:id,comment:comment},
-//               // contentType:false,
-//               // processData:false,
-//                // dataType: "json",
-//               success: function(data)
-//               {
-//                 window.location.reload();
-//               }
-//         });
-// }   
+     
  function tracker_card(job_id)
   {
     var url = '<?php echo base_url(); ?>employer/add_new_cv/'+job_id;
     $('#add_cv').attr('href',url);
+
+    var export_url = '<?php echo base_url(); ?>employer/export_internal_tracker/'+job_id;
+    $('#export').attr('href',export_url);
+
     
      
     $.ajax({

@@ -213,10 +213,29 @@ order by RAND() limit 3");
 
     public function get_job_forwarded_candidate($job_id)
     {
-        $this->db->select('forwarded_jobs_cv.*,corporate_cv_bank.*,education_level.*,forwarded_jobs_cv.created_on as datecreation');
+        $this->db->select('DATE_FORMAT(forwarded_jobs_cv.created_on,"%y-%m-%d")as datecreation');
         $this->db->from('forwarded_jobs_cv');
         $this->db->where('forwarded_jobs_cv.job_post_id', $job_id);
         // $this->db->where('forword_job_status',"1");
+        // $this->db->join('corporate_cv_bank','corporate_cv_bank.cv_id=forwarded_jobs_cv.cv_id');
+        
+        // $this->db->join('education_level','education_level.education_level_id=corporate_cv_bank.js_top_education','left');
+        // $this->db->join('tracker_status_master','tracker_status_master.status_id=forwarded_jobs_cv.tracking_status','left');
+        $this->db->order_by('datecreation','desc');
+        $this->db->group_by('datecreation');
+       
+        // $job_types = array('1', '3', '4','5','6');
+        // $this->db->where_in('job_types',$job_types);
+        $query = $this->db->get()->result();
+        return $query;
+    }
+
+    public function get_job_forwarded_candidate_by_date($job_id,$date)
+    {
+        $this->db->select('forwarded_jobs_cv.*,corporate_cv_bank.*,education_level.*,DATE_FORMAT(forwarded_jobs_cv.created_on,"%y-%m-%d")as datecreation');
+        $this->db->from('forwarded_jobs_cv');
+        $this->db->where('forwarded_jobs_cv.job_post_id', $job_id);
+        $this->db->where('DATE_FORMAT(forwarded_jobs_cv.created_on,"%y-%m-%d")',$date);
         $this->db->join('corporate_cv_bank','corporate_cv_bank.cv_id=forwarded_jobs_cv.cv_id');
         
         $this->db->join('education_level','education_level.education_level_id=corporate_cv_bank.js_top_education','left');

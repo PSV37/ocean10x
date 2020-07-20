@@ -1,5 +1,5 @@
 <!-- <div class="box" >  -->
-               <?php $key = 1; if (!empty($forwarded_job_tracking)): foreach ($forwarded_job_tracking as $job_row) : ?>
+               <?php $key = 1; if (!empty($forwarded_job_tracking)): foreach ($forwarded_job_tracking as $job_row1) : ?>
                  
                
                   <!-- <div class="check"> -->
@@ -10,7 +10,14 @@
                      <!-- <div class="front"> -->
                         
                             <!-- <tbody> -->
-                              <p><?php echo $job_row->datecreation; ?></p><br>
+                              <p style="    font-weight: 700;"><?php echo $job_row1->datecreation; ?></p><br>
+                              <?php $forwarded_job_tracking_date = $this->job_posting_model->get_job_forwarded_candidate_by_date($job_id,$job_row1->datecreation);
+                              // echo $this->db->last_query();die;
+
+                               foreach ($forwarded_job_tracking_date as $job_row) {
+                                # code...
+                              ?>
+
                               <tr>
                                 <input class="attrValue" type="hidden" name="" id="cv_id" value="<?php echo $job_row->cv_id; ?>">
                                  <td ><input class="email" id="name" type="text" name="email" value="<?php echo $job_row->js_name; ?>" ></td>
@@ -54,7 +61,7 @@
 
 
                               </tr>
-                            
+                            <?php } ?>
                             <!-- </tbody> -->
                           
 

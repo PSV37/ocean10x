@@ -5026,7 +5026,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
              $forwarded_job_tracking = $this->job_posting_model->get_job_forwarded_candidate($job_id);
               $education_level = $this->Master_model->getMaster('education_level', $where = false);
                 $tracker_status = $this->Master_model->getMaster('tracker_status_master', $where = false);
-             $this->load->view('fontend/employer/internal_tracker_card.php', compact('forwarded_job_tracking', 'employer_id','education_level','tracker_status'));
+             $this->load->view('fontend/employer/internal_tracker_card.php', compact('forwarded_job_tracking', 'employer_id','education_level','tracker_status','job_id'));
         }
     }
  function update_cv()
@@ -5048,10 +5048,19 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $update= $this->Master_model->master_update($update_cv, 'corporate_cv_bank', $where_cv);
             $value = $row->name;
             $fname =  strtok($value, " "); // Test
+            if (!empty($row->comment)) {
+                  $frwrd_update_cv['comments'] = $fname.' : '.$row->comment;
+            }
+            if (!empty($row->action)) {
+                  $frwrd_update_cv['action_item'] = $row->action;
+            }
+            if (!empty($row->reminder)) {
+                   $frwrd_update_cv['reminder'] = $row->reminder;
+            }
             $frwrd_update_cv['tracking_status'] = $row->status;
-            $frwrd_update_cv['comments'] = $fname.' : '.$row->comment;
-            $frwrd_update_cv['action_item'] = $row->action;
-            $frwrd_update_cv['reminder'] = $row->reminder;
+          
+            
+           
             $frwrd_update_cv['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
 
             $where_frwdcv['cv_id'] = $row->value;
@@ -5067,12 +5076,14 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     {
 
                 // file name 
-           // echo $job_id; die;
-            if(!empty($job_id)) {
-             $forwarded_job_tracking = $this->job_posting_model->get_job_forwarded_candidate($job_id);
+           // echo $job_id; 
+            // if(!empty($job_id)) {
+            $forwarded_job_tracking = $this->job_posting_model->get_job_forwarded_candidate($job_id);
                    
 
-            
+               
+                                # code...
+                              
 
                         // create file name
                         $today = date("d.m.y");
@@ -5084,31 +5095,31 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
                        
                             $alpha='A';
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Name');$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Name');$alpha++;
 
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Email');$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Email');$alpha++;
 
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Mobile');$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Mobile');$alpha++;
 
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Salary');$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Salary');$alpha++;
 
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Work Experience');$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Work Experience');$alpha++;
 
-                             $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Notice (days)');$alpha++;
+                             $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Notice (days)');$alpha++;
 
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Education');$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Education');$alpha++;
 
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Status');$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Status');$alpha++;
 
                             
-                             $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Action Items');$alpha++;
+                             $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Action Items');$alpha++;
                            
 
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Notes');$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Notes');$alpha++;
 
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Reminders');$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Reminders');$alpha++;
 
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Updated On');
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Updated On');
                                 $alpha++;
 
                            
@@ -5117,70 +5128,55 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         // set Row
                         // set Row
 
-                        $rowCount = 3;
-                        foreach ($forwarded_job_tracking as $row) {
-                            print_r($row);
+                        $rowCount = 2;
+                        foreach ($forwarded_job_tracking as $row1) {
+                             $forwarded_job_tracking_date = $this->job_posting_model->get_job_forwarded_candidate_by_date($job_id,$row1->datecreation);
+                              // echo $this->db->last_query();die;
+                             $alpha='A';
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row1->datecreation);$alpha++;
+                             $rowCount++;
+                            foreach ($forwarded_job_tracking_date as $row) {
                           
                             // print_r($this->db->last_query());die;
-
                             
 
+                             $alpha='A';
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->js_name);$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->js_email);$alpha++;
                             
-
-                            $delivery_slot = date('Y-m-d H:i:s',strtotime($row['delivery_slot']));
-                            
-                            $alpha='A';
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['js_name']);$alpha++;
-
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['js_email']);$alpha++;
-                            
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['js_mobile']);$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->js_mobile);$alpha++;
 
 
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['js_current_ctc']);$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->js_current_ctc);$alpha++;
 
                             
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['js_experience']);$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->js_experience);$alpha++;
 
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['js_current_notice_period']);$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->js_current_notice_period);$alpha++;
 
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['education_level_name']);$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->education_level_name);$alpha++;
 
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['status_name']);$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->status_name);$alpha++;
 
 
 
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['action_item']);$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->action_item);$alpha++;
 
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['comments']);$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->comments);$alpha++;
 
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['reminder']);$alpha++;
-
-                            
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['updated_on']);$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->reminder);$alpha++;
 
                             
-                          
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->updated_on);$alpha++;
 
                             
-
-                            // $objPHPExcel->getActiveSheet()->SetCellValue('Q' . $rowCount, $distributor_data[$i]['hsn_codes']);
-
-                            // $objPHPExcel->getActiveSheet()->SetCellValue('E' . $rowCount, $sku_qty);
-
+                              $rowCount++;
                            
                         }
+                    }
                         // foreach ($skus as $element) {
-                        $objPHPExcel->getActiveSheet()->getStyle('A1')->applyFromArray(
-                            array(
-                                'fill' => array(
-                                    'type' => PHPExcel_Style_Fill::FILL_SOLID,
-                                    'color' => array('rgb' => '00ffff00')
-                                )
-                            )
-
-                    );
-                    
+                       
                         $filename = "internal_tracker.". date("jS F Y").".csv";
 
                   // 
@@ -5190,11 +5186,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         header('Cache-Control: max-age=0'); 
                         $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'CSV');  
                         $objWriter->save('php://output'); 
+                        // print_r($objWriter); die();
                     
 
 
-                }
-                redirect('employer/internal_tracker');
+                // }
+               // redirect(base_url().'?url=login','refresh');
             }
     
 
