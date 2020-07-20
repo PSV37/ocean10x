@@ -651,7 +651,7 @@ textarea#comment {
                // dataType: "json",
               success: function(data)
               {
-                $('.tbd').append(data);
+                $('.tbd').html(data);
               }
         });
        
