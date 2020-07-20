@@ -56,7 +56,7 @@
 
                                     <td ><input type="text" class="email" id="reminder" name="comment" value="<?php echo $job_row->reminder; ?>" ></td>
 
-                                <td style="min-width: 150px;"><input type="checkbox" class="chkbx" name=""></td>
+                                <td style="min-width: 150px;"><input type="checkbox" class="chkbx" checked name=""></td>
                              
 
 
