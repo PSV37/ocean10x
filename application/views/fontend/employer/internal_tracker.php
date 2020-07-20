@@ -529,9 +529,9 @@ textarea#comment {
                                
                               </tr>
                             </thead>
-                            <tbody>
+                            <!-- <tbody> -->
                              
-                            </tbody>
+                            <!-- </tbody> -->
                           </table>
                         </div>
                      <!-- </div> -->
@@ -647,7 +647,7 @@ textarea#comment {
                // dataType: "json",
               success: function(data)
               {
-                $('tbody').html(data);
+                $('thead').append(data);
               }
         });
        
