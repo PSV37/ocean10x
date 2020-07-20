@@ -5067,9 +5067,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     {
 
                 // file name 
-           echo $job_id; die;
+           echo $job_id; 
             if(!empty($job_id)) {
-             $forwarded_job_tracking = $this->job_posting_model->get_job_forwarded_candidate($job_id);
+            $forwarded_job_tracking = $this->job_posting_model->get_job_forwarded_candidate($job_id);
                    
 
             
@@ -5123,12 +5123,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                           
                             // print_r($this->db->last_query());die;
 
-                            
-
-                            
-
-                            
-                            $alpha='A';
+                             $alpha='A';
                             $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->js_name);$alpha++;
 
                             $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->js_email);$alpha++;
@@ -5170,16 +5165,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                            
                         }
                         // foreach ($skus as $element) {
-                        $objPHPExcel->getActiveSheet()->getStyle('A1')->applyFromArray(
-                            array(
-                                'fill' => array(
-                                    'type' => PHPExcel_Style_Fill::FILL_SOLID,
-                                    'color' => array('rgb' => '00ffff00')
-                                )
-                            )
-
-                    );
-                    
+                       
                         $filename = "internal_tracker.". date("jS F Y").".csv";
 
                   // 
