@@ -538,6 +538,15 @@ textarea#comment {
                    </div>
                
             </div>
+             </div>
+           <div class="row">
+            <div col-md-12>
+              <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-export"></span> Export
+              </button>
+            </div>
+             
+           </div>
          </div>
          
       </div>
