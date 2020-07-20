@@ -11,7 +11,8 @@
                         
                             <!-- <tbody> -->
                               <tr>
-                                 <td ><input class="email" id="name<?php echo $job_row->cv_id; ?>" type="text" name="email" value="<?php echo $job_row->js_name; ?>" ></td>
+                                <input class="attrValue" type="hidden" name="" id="cv_id" value="<?php echo $job_row->cv_id; ?>">
+                                 <td ><input class="email" id="name" type="text" name="email" value="<?php echo $job_row->js_name; ?>" ></td>
 
                                 <td ><input class="email" id="email<?php echo $job_row->cv_id; ?>" type="text" name="email" value="<?php echo $job_row->js_email; ?>" ></td>
 
@@ -44,7 +45,7 @@
                                 <td ><input type="text" class="email" id="comment<?php echo $job_row->cv_id; ?>" name="comment" value="<?php echo $job_row->comments; ?>" ></td>
 
                                   <td ><input type="text" class="email" id="comment<?php echo $job_row->cv_id; ?>" name="comment" value="<?php echo $job_row->comments; ?>" ></td>
-                                  
+
                                     <td ><input type="text" class="email" id="comment<?php echo $job_row->cv_id; ?>" name="comment" value="<?php echo $job_row->comments; ?>" ></td>
 
                                 <td style="min-width: 150px;"><?php echo $job_row->updated_on; ?></td>

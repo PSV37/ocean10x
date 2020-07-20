@@ -544,11 +544,18 @@ input.email {
 </script>
 <script>
   $(".save").click(function() {
-   var id = $(".table table-borderless").closest("tr");
-alert (id); // Find the text
-    
-    // Let's test it out
-    alert($text);
+//    var id = $(".table table-borderless").closest("tr");
+// alert (id); // Find the text
+   var ary = [];
+        $(function () {
+            $('.table-borderless tr').each(function (a, b) {
+                 var name = $("#name"+id).val();
+                var value = $('.attrValue', b).text();
+                ary.push({ Name: name, Value: value });
+               
+            });
+            alert(JSON.stringify( ary));
+        });
 });
 </script>
 
