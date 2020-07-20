@@ -10,7 +10,7 @@
                      <!-- <div class="front"> -->
                         
                             <!-- <tbody> -->
-                              <p><?php echo $job_row->datecreation; ?></p><br>
+                              <!-- <p><?php echo $job_row->datecreation; ?></p><br> -->
                               <tr>
                                 <input class="attrValue" type="hidden" name="" id="cv_id" value="<?php echo $job_row->cv_id; ?>">
                                  <td ><input class="email" id="name" type="text" name="email" value="<?php echo $job_row->js_name; ?>" ></td>
