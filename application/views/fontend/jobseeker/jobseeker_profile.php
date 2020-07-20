@@ -45,6 +45,18 @@
    font-size: 12px;
    }
 
+   div#ui-datepicker-div {
+   position: absolute;
+   top: 333px;
+   left: 1017.75px;
+   z-index: 1;
+   /*display: block;*/
+   }
+
+   div#ui-datepicker-div {
+   margin-left: -22px;
+   }
+
 ul#select2-dept_id-results {
     margin-top: 30px;
 }
@@ -484,7 +496,7 @@ input.select2-search__field {
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">Course Type<span class="required">*</span></label>
                                              <?php foreach($course as $courses){?>
-                                             <input type="radio" name="education_type_id" required id="education_type_id" value="<?php echo $courses['education_type_id']; ?>"<?php if(!empty($education_data3)) if($education_data3[0]->education_type_id==$courses['education_type_id']) echo "checked";?> style="margin: 0 1px;"> <?php echo $courses['education_type']; ?>
+                                             <input type="radio" name="education_type_id" id="education_type_id" value="<?php echo $courses['education_type_id']; ?>"<?php if(!empty($education_data3)) if($education_data3[0]->education_type_id==$courses['education_type_id']) echo "checked";?> style="margin: 0 1px;"> <?php echo $courses['education_type']; ?>
                                              <?php } ?>                    
                                           </div>
                                           <div class="col-sm-1"></div>
@@ -611,7 +623,8 @@ input.select2-search__field {
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">School Medium<span class="required">*</span></label>
-                                             <select name="schoolmedium_id" id="schoolmedium_id" class="form-control">
+                                             <select name="schoolmedium_id" id="schoolmedium_id" class="form-control department select2">
+                                              <option value="">Select</option>
                                                 <?php foreach($schoolmedium as $medium){?>
                                                 <option value="<?php echo $medium['schoolmedium_id']; ?>"<?php if(!empty($education_data4)) if($education_data4[0]->schoolmedium_id==$medium['schoolmedium_id']) echo "selected";?>><?php echo $medium['school_medium']; ?></option>
                                                 <?php } ?>
@@ -623,7 +636,7 @@ input.select2-search__field {
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">Total Score<span class="required">*</span></label>
-                                             <input type="text" name="totalmarks_id" id="totalmarks_id" class="form-control" value="<?php if(!empty($education_data4)) echo $education_data4[0]->totalmarks_id; ?>" placeholder="Enter Total Score" onkeypress="javascript:return isNumber(event)">
+                                             <input type="text" name="totalmarks_id" id="totalmarks_id" class="form-control allownumericwithoutdecimal" value="<?php if(!empty($education_data4)) echo $education_data4[0]->totalmarks_id; ?>" placeholder="Enter Total Score" onkeypress="javascript:return isNumber(event)">
                                           </div>
                                           <div class="col-sm-1"></div>
                                        </div>
@@ -661,7 +674,8 @@ input.select2-search__field {
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">Education<span class="required">*</span></label>
-                                             <select name="education_level_id" id="education_level_id" class="form-control" required="">
+                                             <select name="education_level_id" id="education_level_id" class="form-control department select2" >
+                                              <option value="">Select</option>
                                                 <option value="5">10th</option>
                                              </select>
                                           </div>
@@ -716,7 +730,7 @@ input.select2-search__field {
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">Total Score<span class="required">*</span></label>
-                                             <input type="text" name="totalmarks_id" id="totalmarks_id" class="form-control" value="<?php if(!empty($education_data5)) echo $education_data5[0]->totalmarks_id; ?>" placeholder="Enter Total Score" onkeypress="javascript:return isNumber(event)">
+                                             <input type="text" name="totalmarks_id" id="totalmarks_id" class="form-control allownumericwithoutdecimal" value="<?php if(!empty($education_data5)) echo $education_data5[0]->totalmarks_id; ?>" placeholder="Enter Total Score" onkeypress="javascript:return isNumber(event)">
                                           </div>
                                           <div class="col-sm-1"></div>
                                        </div>
@@ -877,8 +891,10 @@ input.select2-search__field {
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="email">Date of Birth:<span class="required">*</span></label>
                                  <div class="col-sm-9">
-                                    <input type="text" class="form-control datepicker" id="edit_company_profile_id" required name="date_of_birth" value="<?php echo date('d-m-Y', strtotime($js_personal_info->date_of_birth)); ?>">
-                                    <input type="checkbox" required name="dobmake_public" value="No"<?php if($js_personal_info->dob_visiblity=='No') {echo 'checked'; }else{}?>  > Birthday not visible to my network
+                                    <input type="text" class="form-control datepicker" id="edit_company_profile_id"  name="date_of_birth" value="<?php echo date('d-m-Y', strtotime($js_personal_info->date_of_birth)); ?>">
+                                    <input type="checkbox"  name="dobmake_public" value="No"<?php if($js_personal_info->dob_visiblity=='No') {echo 'checked'; }else{}?>  > Birthday not visible to my network
+
+
                                  </div>
                               </div>
                               <div class="form-group">
@@ -1122,7 +1138,7 @@ input.select2-search__field {
                                     </div>
                                     <label class="control-label col-sm-3" for="email">Primary Phone No:</label>
                                     <div class="col-sm-6">
-                                       <input name="mobile" type="text"  class="form-control allowphonenumber" required maxlength="10" id="number" value="<?php if (!empty($js_personal_info->mobile)) {
+                                       <input name="mobile" type="text"  class="form-control allowphonenumber"  maxlength="10" id="number" value="<?php if (!empty($js_personal_info->mobile)) {
                                           echo $js_personal_info->mobile;}
                                           ?>">&nbsp;<span id="errmsg"></span>
                                     </div>
@@ -1368,7 +1384,7 @@ input.select2-search__field {
                                     </div>
                                     <label class="control-label col-sm-3" for="email">Alternate Phone No:</label>
                                     <div class="col-sm-6">
-                                       <input name="alternatemobile" type="text"  class="form-control allowphonenumber" required maxlength="10" id="number" value="<?php if (!empty($js_personal_info->mobile)) {
+                                       <input name="alternatemobile" type="text"  class="form-control allowphonenumber"  maxlength="10" id="number" value="<?php if (!empty($js_personal_info->mobile)) {
                                           echo $js_personal_info->mobile;}
                                           ?>">&nbsp;<span id="errmsg"></span>
                                     </div>
@@ -1394,7 +1410,7 @@ input.select2-search__field {
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="email">Country<span class="required">*</span></label>
                                  <div class="col-sm-9">
-                                    <select name="country_id" class="form-control" onchange="getStates(this.value)" required="">
+                                    <select name="country_id" class="form-control" onchange="getStates(this.value)" >
                                        <option value="">Select Country</option>
                                        <?php foreach($country as $key){?>
                                        <option value="<?php echo $key['country_id']; ?>"<?php if($js_personal_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
@@ -1507,7 +1523,7 @@ input.select2-search__field {
                      </div>
                   </div>
                </div>
-<<<<<<< HEAD
+
                <div id="menu1" class="tab-pane fade">
                   <div class="education_header" style="position:relative;">
                      <img src="" style="width:100%;position:relative;">
@@ -1722,7 +1738,7 @@ input.select2-search__field {
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
-                                             <select name="js_year_of_passing" id="ddlYear" class="form-control department select2" required="">
+                                             <select name="js_year_of_passing" id="ddlYear" class="form-control department select2" >
                                                 <option value="">Select Completion Year</option>
                                                 <?php
                                                    $currently_selected = date('Y'); 
@@ -1783,9 +1799,7 @@ input.select2-search__field {
                      </li>
                   </ul>
                </div>
-=======
-             
->>>>>>> ea90a99821ee837faa1ad919f6db69411d2d3a07
+
                <div id="menu3" class="tab-pane fade">
                   <div class="education_header" style="position:relative;">
                      <img src="https://www.sassm.in/education/images/blog-header.jpg" style="width:100%;position:relative;height:65px;">
@@ -2338,6 +2352,8 @@ input.select2-search__field {
 
 
 
+
+
 <script type="text/javascript">
    // Personal Info
 $( document ).ready( function () {
@@ -2365,7 +2381,7 @@ namespace_regex: true
 }, 
 
 'mobile':{
-  maxlength:10
+  phonenumber_regex: true
 //phonenumber_regex: true
 }, 
 
@@ -2376,7 +2392,7 @@ namespace_regex: true
 
 
 'alternatemobile':{
-maxlength:10
+phonenumber_regex: true
 //email: true
 },
 
@@ -2445,16 +2461,12 @@ maxlength:6
 messages:{
 
 'full_name':{
-//required: "This field is mandatory!",
-minlength: "Please type atleast 3 characters!",
-namespace_regex: "Please type only alphabets"
+  minlength: "Please type atleast more than 3 characters"
+
 },
 
 'date_of_birth':{
-  required: "This field is mandatory!",
-  matches: "Didn't match!",      
-  minlength: "Please Enter 10 digit phone numbers!",        
-  maxlength: "Maximum length 10 digits!"
+  dateFormat: 'Please type as per the date format'
 },
 
 'country_code':{
@@ -2464,7 +2476,7 @@ maxlength: "Please type atleast 10 digits"
 },
 
 'mobile':{
-maxlength: "Choose a company name of at least 14 letters!"
+maxlength: "Please type atleast 10 digits"
 },
 
 'alternatecountry_code':{
@@ -2474,8 +2486,8 @@ maxlength: "Choose a company name of at least 14 letters!"
 
 
 'alternatemobile':{
-email: "Please enter a valid email address!",
-remote: "The email is already in use by another user!"
+  maxlength: "Please type atleast 10 digits"
+
 },
 
 'present_address' :{
@@ -2865,65 +2877,50 @@ $("#tenth").validate (
 rules:{
 
 'education_level_id':{
-minlength: 3,
-namespace_regex: true
+required: true
 },
-
-'specialization_id':{
-email_regex: true
-},
-
-
-'js_institute_name':{
-phonenumber_regex: true
-}, 
-
-'education_type_id':{
-//twodigit_regex: true
-//email: true
-},
-
 
 'js_year_of_passing':{
-maxlength:3
-//email: true
+required: true
 },
 
-'js_resut':{                
-  //minlength:10,        
-  //maxlength:10,
+
+'board_id':{
+required: true
+}, 
+
+'schoolmedium_id':{
+  required: true
 },
+
+
+'totalmarks_id':{
+required: true
+},
+
 
 },
 
 messages:{
 
 'education_level_id':{
-required: "This field is mandatory!",
-minlength: "Please type atleast 3 characters!",
-namespace_regex: "Please type only alphabets"
-},
-
-'specialization_id':{
-  required: "This field is mandatory!",
-  matches: "Didn't match!",      
-  minlength: "Please Enter 10 digit phone numbers!",        
-  maxlength: "Maximum length 10 digits!"
-},
-
-'education_type_id':{
-required: "This field is mandatory!",
-minlength: "Please type atleast 10 digits",
-maxlength: "Please type atleast 10 digits"
+required: "This field is mandatory!"
 },
 
 'js_year_of_passing':{
-maxlength: "Choose a company name of at least 14 letters!"
+  required: "This field is mandatory!"
 },
 
-'js_resut':{
-//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
-//remote: "The username is already in use by another user!"
+'board_id':{
+required: "This field is mandatory!"
+},
+
+'schoolmedium_id':{
+required: "This field is mandatory!"
+},
+
+'totalmarks_id':{
+required: "This field is mandatory!"
 },
 
 
@@ -3077,17 +3074,15 @@ $("#my-trainings").validate (
 rules:{
 
 'training_title':{
-minlength: 3,
-namespace_regex: true
 },
 
 'training_topic':{
-email_regex: true
+
 },
 
 
 'institute':{
-phonenumber_regex: true
+
 }, 
 
 'country_id':{
@@ -3097,8 +3092,7 @@ phonenumber_regex: true
 
 
 'state_id':{
-maxlength:3
-//email: true
+
 },
 
 'city_id':{                
@@ -3121,46 +3115,30 @@ maxlength:3
 messages:{
 
 'training_title':{
-required: "This field is mandatory!",
-minlength: "Please type atleast 3 characters!",
-namespace_regex: "Please type only alphabets"
 },
 
 'training_topic':{
-  required: "This field is mandatory!",
-  matches: "Didn't match!",      
-  minlength: "Please Enter 10 digit phone numbers!",        
-  maxlength: "Maximum length 10 digits!"
 },
 
 'institute':{
-required: "This field is mandatory!",
-minlength: "Please type atleast 10 digits",
-maxlength: "Please type atleast 10 digits"
 },
 
 'country_id':{
-maxlength: "Choose a company name of at least 14 letters!"
 },
 
 'state_id':{
-//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
-//remote: "The username is already in use by another user!"
 },
 
 'city_id':{
-required: "This field is mandatory!",
-minlength: "Please type atleast 10 digits",
-maxlength: "Please type atleast 10 digits"
+
 },
 
 'duration':{
-maxlength: "Choose a company name of at least 14 letters!"
+
 },
 
 'training_year':{
-//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
-//remote: "The username is already in use by another user!"
+
 },
 
 
@@ -3356,6 +3334,10 @@ $(".allowalphabates").keypress(function (e) {
          }
      });
 
+$(function() { 
+     
+     $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd' });
+     }); 
 
 </script>
 
