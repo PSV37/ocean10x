@@ -5119,7 +5119,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
                         $rowCount = 3;
                         foreach ($forwarded_job_tracking as $row) {
-                            print_r($row);
+                            // print_r($row);
                           
                             // print_r($this->db->last_query());die;
 
@@ -5127,37 +5127,36 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
                             
 
-                            $delivery_slot = date('Y-m-d H:i:s',strtotime($row['delivery_slot']));
                             
                             $alpha='A';
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['js_name']);$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->js_name);$alpha++;
 
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['js_email']);$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->js_email);$alpha++;
                             
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['js_mobile']);$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->js_mobile);$alpha++;
 
 
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['js_current_ctc']);$alpha++;
-
-                            
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['js_experience']);$alpha++;
-
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['js_current_notice_period']);$alpha++;
-
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['education_level_name']);$alpha++;
-
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['status_name']);$alpha++;
-
-
-
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['action_item']);$alpha++;
-
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['comments']);$alpha++;
-
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['reminder']);$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->js_current_ctc);$alpha++;
 
                             
-                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row['updated_on']);$alpha++;
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->js_experience);$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->js_current_notice_period);$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->education_level_name);$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->status_name);$alpha++;
+
+
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->action_item);$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->comments);$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->reminder);$alpha++;
+
+                            
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->updated_on);$alpha++;
 
                             
                           
