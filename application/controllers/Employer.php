@@ -5119,7 +5119,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
                         $rowCount = 3;
                         foreach ($forwarded_job_tracking as $row) {
-                            print_r($row);
+                            // print_r($row);
                           
                             // print_r($this->db->last_query());die;
 
@@ -5175,6 +5175,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         header('Cache-Control: max-age=0'); 
                         $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'CSV');  
                         $objWriter->save('php://output'); 
+                        echo $objWriter;
                     
 
 
