@@ -647,7 +647,7 @@ textarea#comment {
                // dataType: "json",
               success: function(data)
               {
-                $('thead').append(data);
+                $('tbody').html(data);
               }
         });
        
