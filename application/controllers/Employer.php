@@ -5033,22 +5033,22 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
         $up_date=json_decode($this->input->post('data_arr'));
         foreach ($up_date as $row) {
-            $update_cv['js_email'] = $row['email'];
-            $update_cv['js_name'] = $row['name'];
-            $update_cv['js_mobile'] = $row['mobile'];
-            $update_cv['js_current_ctc'] = $row['ctc'];
-            $update_cv['js_experience'] = $row['exp'];
-            $update_cv['js_current_notice_period'] = $row['notice'];
-            $update_cv['js_top_education'] = $row['edu'];
+            $update_cv['js_email'] = $row->email;
+            $update_cv['js_name'] = $row->name;
+            $update_cv['js_mobile'] = $row->mobile;
+            $update_cv['js_current_ctc'] = $row->ctc;
+            $update_cv['js_experience'] = $row->exp;
+            $update_cv['js_current_notice_period'] = $row->notice;
+            $update_cv['js_top_education'] = $row->edu;
             $update_cv['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
 
-            $where_cv['cv_id'] = $row['value'];
+            $where_cv['cv_id'] = $row->value;
             $update= $this->Master_model->master_update($update_cv, 'corporate_cv_bank', $where_cv);
 
-            $frwrd_update_cv['tracking_status'] = $row['status'];
-            $frwrd_update_cv['comments'] = $row['comment'];
+            $frwrd_update_cv['tracking_status'] = $row->status;
+            $frwrd_update_cv['comments'] = $row->comment;
 
-            $where_frwdcv['cv_id'] = $row['value'];
+            $where_frwdcv['cv_id'] = $row->value;
             $update= $this->Master_model->master_update($frwrd_update_cv, 'forwarded_jobs_cv', $where_frwdcv);
         }
        
