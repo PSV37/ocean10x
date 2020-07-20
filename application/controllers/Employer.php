@@ -5175,7 +5175,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         header('Cache-Control: max-age=0'); 
                         $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'CSV');  
                         $objWriter->save('php://output'); 
-                        echo $objWriter; die();
+                        print_r($objWriter); die();
                     
 
 
