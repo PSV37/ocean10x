@@ -5068,7 +5068,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
                 // file name 
            echo $job_id; 
-            if(!empty($job_id)) {
+            // if(!empty($job_id)) {
             $forwarded_job_tracking = $this->job_posting_model->get_job_forwarded_candidate($job_id);
                    
 
@@ -5175,12 +5175,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         header('Cache-Control: max-age=0'); 
                         $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'CSV');  
                         $objWriter->save('php://output'); 
-                        print_r($objWriter); die();
+                        // print_r($objWriter); die();
                     
 
 
-                }
-                redirect('employer/internal_tracker');
+                // }
+               // redirect(base_url().'?url=login','refresh');
             }
     
 
