@@ -312,13 +312,8 @@ input.select2-search__field {
                         </div>
                         <span style="float: right;font-size:12px;cursor: pointer;"><a href="#" data-toggle="modal" value='1' onclick="get_specialization(this.value);"  data-target="#myModal">Edit</a></span> 
                      </li>
-                     <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
-                        $seeker_edu_level_id = '2';
-                         $education_data2 = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id); 
-                        $where['edu_level_id'] = '2';
-                        $pgdspecial = $this->Master_model->getMaster('education_specialization',$where);
-                        ?>
                      
+                    
                      <?php  $jobseeker_id = $this->session->userdata('job_seeker_id'); 
                         $seeker_edu_level_id = '3';
                          $education_data3 = $this->Job_seeker_education_model->education_list_by_levelid($jobseeker_id,$seeker_edu_level_id); 

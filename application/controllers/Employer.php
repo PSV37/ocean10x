@@ -5067,7 +5067,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     {
 
                 // file name 
-            $job_id = $this->input->get('job_id');
+           echo $job_id; die;
             if(!empty($job_id)) {
              $forwarded_job_tracking = $this->job_posting_model->get_job_forwarded_candidate($job_id);
                    
@@ -5082,17 +5082,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         $objPHPExcel = new PHPExcel();
                         $objPHPExcel->setActiveSheetIndex(0);
 
-                        $newDate = date("jS F Y", strtotime($search_from));  
-                        $newDate1 = date("jS F Y", strtotime($search_to));  
-
-                     
-                        // set Header
-                            // $alpha='A';
-                            // $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Date');$alpha++;
-
-                            // $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', $newDate.' - '.$newDate1);$alpha++;
-
-
+                       
                             $alpha='A';
                             $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'2', 'Name');$alpha++;
 
