@@ -9,7 +9,7 @@
                   <!-- <div class="card content"> -->
                      <!-- <div class="front"> -->
                         
-                            <!-- <tbody> -->
+                            <tbody>
                               <tr>
                                 <input class="attrValue" type="hidden" name="" id="cv_id" value="<?php echo $job_row->cv_id; ?>">
                                  <td ><input class="email" id="name" type="text" name="email" value="<?php echo $job_row->js_name; ?>" ></td>
@@ -54,7 +54,7 @@
 
                               </tr>
                             
-                            <!-- </tbody> -->
+                            </tbody>
                           
 
                         <!-- </div> -->

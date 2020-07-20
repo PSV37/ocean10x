@@ -528,10 +528,14 @@ textarea#comment {
                                 <th scope="col">Updated By</th>
                                
                               </tr>
-                            </thead>
-                            <!-- <tbody> -->
+                              </thead>
+                              <div class="tbd">
+                                 <!-- <tbody> -->
                              
                             <!-- </tbody> -->
+                              </div>
+                            
+                           
                           </table>
                         </div>
                      <!-- </div> -->
@@ -647,7 +651,7 @@ textarea#comment {
                // dataType: "json",
               success: function(data)
               {
-                $('tbody').html(data);
+                $('.tbd').append(data);
               }
         });
        
