@@ -500,7 +500,7 @@ textarea#comment {
                <button style="float: right;" type="button" class="btn btn-default btn-sm save">
           <span class="glyphicon glyphicon-floppy-save"></span> Save
         </button>
-         <label class="btn btn-primary">
+         <label style="float: right;" class="btn btn-default">
           check all
           <input type="checkbox" name="check_all" id="jevattend_id" value="1">
         </label>
