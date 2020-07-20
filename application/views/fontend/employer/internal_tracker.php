@@ -492,7 +492,7 @@ input.email {
             </div>
            <div class="row">
             <div col-md-12>
-               <button style="float: right;" type="button" class="btn btn-default btn-sm">
+               <button style="float: right;" type="button" class="btn btn-default btn-sm save">
           <span class="glyphicon glyphicon-floppy-save"></span> Save
         </button>
             </div>
@@ -542,7 +542,15 @@ input.email {
 <script>
    $('.select2').select2();
 </script>
-
+<script>
+  $(".save").click(function() {
+   var id = $(".table table-borderless").closest("tr");
+alert (id); // Find the text
+    
+    // Let's test it out
+    alert($text);
+});
+</script>
 
 <script>
    $( document ).ready(function() {
