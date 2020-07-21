@@ -659,12 +659,19 @@ $('#frwd_btn').click(function() {
     $('input:checkbox:checked', '.table-borderless tr').each(function (a, b) {
         // result.push($(this).parent().next().text());
         var value = $('#cv_id', b).val();
-        var name = $("#name" , b).val();
+        var name = $("#name").val();
         var email = $("#email", b).val();
         ary.push({name:name,email:email});
     });
-     alert(ary);
+     alert(JSON.stringify( ary));
 });
+
+// $('#frwd_btn').click(function() {
+//     var checkedValues = $("input:checkbox:checked", "#mytable").map(function() {
+//         return $(this).val();
+//     }).get();
+//     alert(checkedValues.join(','));
+// });
 
 
 </script>
