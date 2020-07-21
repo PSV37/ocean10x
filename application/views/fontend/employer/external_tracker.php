@@ -490,7 +490,7 @@ textarea#comment {
                </div>
                <div class="col-md-3">
                <label>
-                    <a style="float: right;" id="add_cv" href=""><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New Candidate</button></a>
+                     <a href="#" data-toggle="modal" data-target="#rotateModal"> <i class="fas fa-share"></i></a>
                      
                   </label>
                </div>
@@ -535,15 +535,8 @@ textarea#comment {
                           </table>
                         </div>
                      <!-- </div> -->
-                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
-                           <li ><a class="dropdown-item" href="#" >Forward Job Post</a></li>
-                        
-                           <li id="div_download"> <a class="dropdown-item" >Download this cv</a></li>
-                       
+                    
 
-                           <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-target="#move_cv<?php echo $cv_row['cv_id']; ?>" href="#">Move this CV</a></li>
-                        </div>
-                   </div>
                
             </div>
             <div class="row">
@@ -561,7 +554,52 @@ textarea#comment {
       </div>
    </div>
 </div>
-
+<!-- <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?> -->
+<div class="modal" id="rotateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <input type="hidden" name="company_profile_id" id="company_profile_id" value="<?php echo $this->session->userdata('company_profile_id'); ?>">
+   <div class="modal-dialog" role="document">
+      <div class="modal-content">
+         <div class="modal-header" style="border-bottom:none;">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Job Post</h5>
+         </div>
+         <form action="<?php echo base_url() ?>employer/forword_job_post" class="sendEmail" method="post" autocomplete="off">
+            <div class="modal-body" style="padding:15px 40px;">
+               <input type="hidden" name="job_post_id" value="<?php echo $v_companyjobs->job_post_id; ?>">
+               <input type="hidden" name="consultant" value="JobSeeker">  
+               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <label class="mdl-textfield__label" for="sample3">E-mail:</label>
+                  <input type="email"  name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;" required>
+               </div>
+               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
+                  <label class="mdl-textfield__label" for="sample3">Message:</label>
+                  <textarea class="form-control" name="message" rows="5" id="comment" required></textarea>
+               </div>
+               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
+                  <label class="mdl-textfield__label" for="sample3">Mandatory Info:</label><br>
+                  <label>
+                  <input type="checkbox" value="current_ctc" class="btn-default1" id="benifit[]" checked="" name="mandatory[]">
+                  <span>Current CTC (Yr)</span>
+                  </label>
+                  <label>
+                  <input type="checkbox" value="expected_ctc" class="btn-default1" id="benifit[]" checked="" name="mandatory[]">
+                  <span>Expected CTC (Yr)</span>
+                  </label>
+                  <label>
+                  <input type="checkbox" value="Notice_period" class="btn-default1" id="benifit[]" checked="" name="mandatory[]">
+                  <span>Notice (days)</span>
+                  </label>
+               </div>
+            </div>
+            <div class="modal-footer">
+               <button type="submit" class="btn btn-save">Send</button>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>
+<?php
+   endforeach;endif; ?>
 <script>
    $('.select2').select2();
 </script>
