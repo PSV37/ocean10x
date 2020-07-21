@@ -5157,7 +5157,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         tracker_consultant_mapping', $select = FALSE, $whereres);
                 if (empty($tracking_data)) 
                 {
-                    $tracking_mapping = array('tracking_id' => $tracking_id,
+                    $tracking_mapping = array('tracking_id' => $row,
                             'consultant_id' => $comp_id );
                             $map_id = $this->Master_model->master_insert($tracking_mapping, 'tracker_consultant_mapping');
                 }
