@@ -656,10 +656,10 @@ textarea#comment {
 var tableControl = document.getElementById('mytable');
 $('#frwd_btn').click(function() {
     var ary = []
-    $('input:checkbox:checked', tableControl).each(function (a, b) {
+    $('input:checkbox:checked', '.table-borderless tr').each(function (a, b) {
         // result.push($(this).parent().next().text());
         var value = $('#cv_id', b).val();
-        var name = $("#name").val();
+        var name = $("#name" , b).val();
         var email = $("#email", b).val();
         ary.push({name:name,email:email});
     });
