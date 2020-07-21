@@ -5084,7 +5084,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     'company_email' => $email[$i],
                     'token' => md5($email[$i]),
                     'create_at' => date('Y-m-d H:i:s'),
-                    'comp_type' => "HR Consultant"
+                    'comp_type' => "HR Consultant",
                     'company_password' => md5($randomNumber),
 
                     );
