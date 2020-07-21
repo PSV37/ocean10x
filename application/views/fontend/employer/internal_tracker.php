@@ -615,32 +615,32 @@ textarea#comment {
 });
   $(function(){
   $("#frwd_btn").on("click", function() {
-    var data = [];
-    $("table > tbody > tr").each(function () {
-      var $tr = $(this);
-      if ($tr.find(".chkbx").is(":checked")) {
-        data.push({
-          value: $tr.find("#cv_id").val(),
-          name: $tr.find("#name").val(),
-          email: $tr.find("#email").val(),
-          mobile: $tr.find("#mobile").val(),
-          ctc: $tr.find("#ctc").val(),
-          exp: $tr.find("#exp").val(),
-          notice: $tr.find("#notice").val(),
-          edu: $tr.find("#edu").val(),
-          status: $tr.find("#status").val(),
-          action: $tr.find("#action").val(),
-          comment: $tr.find("#comment").val(),
-          reminder: $tr.find("#reminder").val(),
-          // comment: $tr.find("#comment").val(),
-        });
-      }
-    });
-    console.clear();
-    console.log(JSON.stringify(data));
-    var data_arr = JSON.stringify(data);
-
-    $.ajax({
+    if (confirm("Selected Rows will be updated in external tracker!!")) {
+            var data = [];
+            $("table > tbody > tr").each(function () {
+              var $tr = $(this);
+              if ($tr.find(".chkbx").is(":checked")) {
+                data.push({
+                  value: $tr.find("#cv_id").val(),
+                  name: $tr.find("#name").val(),
+                  email: $tr.find("#email").val(),
+                  mobile: $tr.find("#mobile").val(),
+                  ctc: $tr.find("#ctc").val(),
+                  exp: $tr.find("#exp").val(),
+                  notice: $tr.find("#notice").val(),
+                  edu: $tr.find("#edu").val(),
+                  status: $tr.find("#status").val(),
+                  action: $tr.find("#action").val(),
+                  comment: $tr.find("#comment").val(),
+                  reminder: $tr.find("#reminder").val(),
+                  // comment: $tr.find("#comment").val(),
+                });
+              }
+            });
+            console.clear();
+            console.log(JSON.stringify(data));
+            var data_arr = JSON.stringify(data);
+            $.ajax({
               url: "<?php echo base_url();?>employer/update_external",
               type: "POST",
               data: {data_arr:data_arr},
@@ -654,6 +654,13 @@ textarea#comment {
                  tracker_card(job_id);
               }
         });
+
+          } else {
+            txt = "You pressed Cancel!";
+          }
+    
+
+    
   });
 });
 //    $("#frwd_btn").click(function() {
