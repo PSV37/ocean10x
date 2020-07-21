@@ -682,22 +682,23 @@ textarea#comment {
                 ary.push({name:name,email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,comment:comment,value:value,action:action,reminder:reminder});
                
             });
-            alert(ary.join(","));
            var data_arr = JSON.stringify(ary);
-            $.ajax({
-              url: "<?php echo base_url();?>employer/update_external",
-              type: "POST",
-              data: {data_arr:data_arr},
-              // contentType:false,
-              // processData:false,
-               // dataType: "json",
-              success: function(data)
-              {
-                alert('Updated Successfully');
-                // window.location.reload();
-                 tracker_card(job_id);
-              }
-        });
+            alert(data_arr.join(","));
+
+        //     $.ajax({
+        //       url: "<?php echo base_url();?>employer/update_external",
+        //       type: "POST",
+        //       data: {data_arr:data_arr},
+        //       // contentType:false,
+        //       // processData:false,
+        //        // dataType: "json",
+        //       success: function(data)
+        //       {
+        //         alert('Updated Successfully');
+        //         // window.location.reload();
+        //          tracker_card(job_id);
+        //       }
+        // });
             // alert(ary);
         });
 });
