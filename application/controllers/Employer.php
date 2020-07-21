@@ -4004,7 +4004,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         $cv_id=$cv_data[0]['cv_id'];
 
                      }
-                    print_r($seeker_id);
+                    // print_r($seeker_id);
                     $apply_array = array(
                         'job_seeker_id' => $seeker_id,
                         'company_id' => $company_id,
@@ -4016,6 +4016,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     $whereres  = "job_seeker_id='$seeker_id' and company_id = '$company_id' and job_post_id = '$id'";
                     $job_apply_data = $this->Master_model->get_master_row('
                         job_apply', $select = FALSE, $whereres);
+                    print_r($this->db->last_query());die;
                     if (empty($job_apply_data)) {
                          $apply       = $this->Master_model->master_insert($apply_array, 'job_apply');
 
