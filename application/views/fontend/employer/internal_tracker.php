@@ -611,7 +611,7 @@ textarea#comment {
             // alert(ary);
         });
 });
-   $(".frwd_btn").click(function() {
+   $("#frwd_btn").click(function() {
      var job_id = $('#job_select').val();
 //    var id = $(".table table-borderless").closest("tr");
 // alert (id); // Find the text
