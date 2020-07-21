@@ -633,7 +633,7 @@ textarea#comment {
                   action: $tr.find("#action").val(),
                   comment: $tr.find("#comment").val(),
                   reminder: $tr.find("#reminder").val(),
-                  // comment: $tr.find("#comment").val(),
+                  update: $tr.find("#update").val(),
                 });
               }
             });
