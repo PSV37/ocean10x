@@ -611,31 +611,31 @@ textarea#comment {
             // alert(ary);
         });
 });
-//    $("#frwd_btn").click(function() {
-//      var job_id = $('#job_select').val();
-// //    var id = $(".table table-borderless").closest("tr");
-// // alert (id); // Find the text
-//    var ary = [];
-//         $(function () {
-//             $('input:checkbox:checked','.table-borderless tr').each(function (a, b) {
-//                 var value = $('#cv_id', b).val();
-//                 var name = $("#name" , b).val();
-//                 var email = $("#email", b).val();
-//                 var mobile = $("#mobile", b).val();
-//                 var ctc = $("#ctc", b).val();
-//                 var exp = $("#exp", b).val();
-//                 var notice = $("#notice", b).val();
-//                 var edu = $("#edu", b).val();
-//                 var status = $("#status", b).val();
-//                 var comment = $("#comment", b).val();
-//                 var action = $("#action", b).val();
-//                 var reminder = $("#reminder", b).val();
-//                 var update = $("#update", b).val();
-//                 ary.push({name:name,email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,comment:comment,value:value,action:action,reminder:reminder,update:update});
+   $("#frwd_btn").click(function() {
+     var job_id = $('#job_select').val();
+//    var id = $(".table table-borderless").closest("tr");
+// alert (id); // Find the text
+   var ary = [];
+        $(function () {
+            $('input:checkbox:checked').each(function (a, b) {
+                var value = $('#cv_id', b).val();
+                var name = $("#name" , b).val();
+                var email = $("#email", b).val();
+                var mobile = $("#mobile", b).val();
+                var ctc = $("#ctc", b).val();
+                var exp = $("#exp", b).val();
+                var notice = $("#notice", b).val();
+                var edu = $("#edu", b).val();
+                var status = $("#status", b).val();
+                var comment = $("#comment", b).val();
+                var action = $("#action", b).val();
+                var reminder = $("#reminder", b).val();
+                var update = $("#update", b).val();
+                ary.push({name:name,email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,comment:comment,value:value,action:action,reminder:reminder,update:update});
                
-//             });
-//             alert(JSON.stringify( ary));
-//            var data_arr = JSON.stringify(ary);
+            });
+            alert(JSON.stringify( ary));
+        //    var data_arr = JSON.stringify(ary);
         //     $.ajax({
         //       url: "<?php echo base_url();?>employer/update_external",
         //       type: "POST",
@@ -651,27 +651,9 @@ textarea#comment {
         //       }
         // });
             // alert(ary);
-        // });
-// });
-var tableControl = document.getElementById('mytable');
-$('#frwd_btn').click(function() {
-    var ary = []
-    $('input:checkbox:checked').each(function (a, b) {
-        // result.push($(this).parent().next().text());
-        var value = $('#cv_id', b).val();
-        var name = $("#name" , b).val();
-        var email = $("#email", b).val();
-        ary.push({name:name,email:email});
-    });
-     alert(JSON.stringify( ary));
+        });
 });
 
-// $('#frwd_btn').click(function() {
-//     var checkedValues = $("input:checkbox:checked", "#mytable").map(function() {
-//         return $(this).val();
-//     }).get();
-//     alert(checkedValues.join(','));
-// });
 
 
 </script>
