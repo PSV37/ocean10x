@@ -13,7 +13,6 @@
    
 
 </style>
-
 <style>
    .nav-tabs{border-bottom:solid 1px #48827f30 !important;}
    .edit{float: right;font-size:12px;cursor: pointer;margin-right:15px;font-size:14px;font-weight:700;padding:2px 10px;border-radius:13px;}
@@ -67,6 +66,8 @@ input.select2-search__field {
 
 
 </style>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/calender.css">
+
 <?php 
    $this->load->view('fontend/layout/new_seeker_header.php');
    
@@ -891,7 +892,7 @@ input.select2-search__field {
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="email">Date of Birth:<span class="required">*</span></label>
                                  <div class="col-sm-9">
-                                    <input type="text" class="form-control datepicker" id="edit_company_profile_id"  name="date_of_birth" value="<?php echo date('d-m-Y', strtotime($js_personal_info->date_of_birth)); ?>">
+                                    <input type="text" class="form-control datepicker" id="my_date_picker"  name="date_of_birth" value="<?php echo date('d-m-Y', strtotime($js_personal_info->date_of_birth)); ?>">
                                     <input type="checkbox"  name="dobmake_public" value="No"<?php if($js_personal_info->dob_visiblity=='No') {echo 'checked'; }else{}?>  > Birthday not visible to my network
 
 
@@ -1851,9 +1852,14 @@ input.select2-search__field {
                                           </div>
                                        </div>
                                        <div class="form-group">
+
                                           <label class="control-label col-sm-3" for="email">Start Date:</label>
-                                          <div class="col-sm-9"><input class="datepicker form-control" required name="start_date" value="">
-                                             <label><input type="checkbox" id="upChkDisable_1" onclick="disableUpperDP('1')" checked="checked">  Current Job</label>
+                                          <div class="col-sm-9"><input type="text" id="start_date_picker" class="form-control datepicker" required name="start_date" value="">
+                                             <label><input type="checkbox"   onclick="disableUpperDP('1')" checked="checked">  Current Job
+                                             </label>
+
+
+
                                           </div>
                                        </div>
                                        <div class="form-group">
@@ -3254,6 +3260,12 @@ $.validator.addMethod("dateFormat",
 <script src="<?php echo base_url() ?>asset/js/search.js"></script>
 
 <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
 <script>
 $("#dept_id").select2( {
   placeholder: "Select Department",
@@ -3334,10 +3346,20 @@ $(".allowalphabates").keypress(function (e) {
          }
      });
 
-$(function() { 
-     
-     $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd' });
-     }); 
+
 
 </script>
 
+<script>
+  $(function() { 
+     
+     $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd' });
+     }); 
+</script>
+
+<script> 
+  $(function(){
+ $("#start_date_picker").datepicker({ dateFormat: 'yy-mm-dd' });
+     }); 
+
+</script>
