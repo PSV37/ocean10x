@@ -4036,7 +4036,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         'job_post_id' => $job_post_id,
                         'apply_id' => $apply,
                         'status' => 1,
-                        'company_id' => $employer_id,
+                        'company_id' => $company_id,
                         'name' => $can_data[0]['full_name'],
                         'email' => $can_data[0]['email'],
                         'mobile' => $can_data[0]['mobile_no'],
