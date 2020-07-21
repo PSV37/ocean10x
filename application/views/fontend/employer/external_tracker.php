@@ -563,13 +563,13 @@ textarea#comment {
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Job Post</h5>
          </div>
-         <form action="<?php echo base_url() ?>employer/forword_job_post" class="sendEmail" method="post" autocomplete="off">
+         <form action="<?php echo base_url() ?>employer/forword_external_tracker" class="sendEmail" method="post" autocomplete="off">
             <div class="modal-body" style="padding:15px 40px;">
                <input type="hidden" name="cv" id="tracking_id" value="">
                <input type="hidden" name="consultant" value="JobSeeker">  
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <label class="mdl-textfield__label" for="sample3">E-mail:</label>
-                  <input type="email"  name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%" required>
+                  <input onfocusout="myFunction();" type="email"  name="consultant_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%" required>
                </div>
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
                   <label class="mdl-textfield__label" for="sample3">Message:</label>
@@ -592,6 +592,25 @@ textarea#comment {
   $('#rotateModal').modal('show');
 
  }
+ function myFunction() {
+  var x = document.getElementById("fname");
+  x.value = x.value.toUpperCase();
+  $.ajax({
+              url: "<?php echo base_url();?>employer/update_external",
+              type: "POST",
+              data: {data_arr:data_arr},
+              // contentType:false,
+              // processData:false,
+               // dataType: "json",
+              success: function(data)
+              {
+                alert('Updated Successfully');
+                // window.location.reload();
+                 tracker_card(job_id);
+              }
+        });
+}
+
 </script>
 <script>
    $('.select2').select2();
