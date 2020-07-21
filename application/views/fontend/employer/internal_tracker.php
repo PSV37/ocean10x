@@ -617,7 +617,7 @@ textarea#comment {
 // alert (id); // Find the text
    var ary = [];
         $(function () {
-            $('.table table-borderless input:checkbox:checked').each(function (a, b) {
+            $('.table table-borderless tr input:checkbox:checked').each(function (a, b) {
                 var value = $('#cv_id', b).val();
                 var name = $("#name" , b).val();
                 var email = $("#email", b).val();
