@@ -682,8 +682,10 @@ textarea#comment {
                 ary.push({name:name,email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,comment:comment,value:value,action:action,reminder:reminder});
                
             });
-           var data_arr = JSON.stringify(ary);
-            alert(data_arr.join(","));
+            console.log(ary);
+           // var data_arr = JSON.stringify(ary);
+            // alert(ary.join(","));
+            // alert(data_arr.join(","));
 
         //     $.ajax({
         //       url: "<?php echo base_url();?>employer/update_external",
