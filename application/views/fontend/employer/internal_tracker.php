@@ -453,7 +453,7 @@ textarea#comment {
                      <select class="form-control select2" id="job_select" onchange="tracker_card(this.value);">
                      <?php  if (isset($company_active_jobs) && !empty($company_active_jobs)) {
                         foreach ($company_active_jobs as $row) { ?>
-                          <option <?php if ($this->session->userdata('job_id')) == $row->job_post_id;   {
+                          <option <?php if ($this->session->userdata('job_id') == $row->job_post_id)   {
                        echo "selected"; 
                      } ?> value="<?php echo $row->job_post_id; ?>"><?php echo $row->job_title; ?></option>
                      <?php   }
