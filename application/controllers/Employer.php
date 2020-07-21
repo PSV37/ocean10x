@@ -5276,7 +5276,19 @@ function update_external()
     {
         $up_date=json_decode($this->input->post('data_arr'));
         foreach ($up_date as $row) {
-
+            if (isset($row->update) && !empty($row->update)) {
+                $value = $this->session->userdata('company_name');
+                $fname =  strtok($value, " "); // Test
+                if (!empty($row->comment)) {
+                      $update_external['comments'] = $fname.' : '.$row->comment;
+                }
+                if (!empty($row->action)) {
+                      $update_external['action_item'] = $row->action;
+                }
+                if (!empty($row->reminder)) {
+                       $update_external['reminder'] = $row->reminder;
+                }
+            }
             $update_external['email'] = $row->email;
             $update_external['name'] = $row->name;
             $update_external['mobile'] = $row->mobile;
@@ -5287,17 +5299,7 @@ function update_external()
             $update_external['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
 
            
-            $value = $this->session->userdata('company_name');
-            $fname =  strtok($value, " "); // Test
-            if (!empty($row->comment)) {
-                  $update_external['comments'] = $fname.' : '.$row->comment;
-            }
-            if (!empty($row->action)) {
-                  $update_external['action_item'] = $row->action;
-            }
-            if (!empty($row->reminder)) {
-                   $update_external['reminder'] = $row->reminder;
-            }
+            
             $update_external['tracking_status'] = $row->status;
           
             

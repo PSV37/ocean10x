@@ -614,6 +614,7 @@ textarea#comment {
         });
 });
   $(function(){
+      var job_id = $('#job_select').val();
   $("#frwd_btn").on("click", function() {
     if (confirm("Selected Rows will be updated in external tracker!!")) {
             var data = [];
