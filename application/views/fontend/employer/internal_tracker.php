@@ -663,7 +663,7 @@ $('#frwd_btn').click(function() {
         var email = $("#email", b).val();
         ary.push({name:name,email:email});
     });
-     alert(JSON.stringify( ary));
+     alert(ary);
 });
 
 
