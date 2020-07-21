@@ -56,10 +56,13 @@
 
                                     <td ><input type="text" class="email" id="reminder" name="comment" value="<?php echo $job_row->reminder; ?>" ></td>
 
-                                <td style="min-width: 150px;" id="share"> 
+
+                                    <input type="hidden" class="email" id="tracking_id" name="comment" value="<?php echo $job_row->id; ?>" >
+
+                               <!--  <td style="min-width: 150px;" id="share"> 
 
                                   <a href="#" onclick="get_value(<?php echo $job_row->id; ?>)"  > <i class="fas fa-share"></i></a>
-                                </td>
+                                </td> -->
                              
 
 

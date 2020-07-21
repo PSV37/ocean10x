@@ -528,7 +528,7 @@ textarea#comment {
                                 <th scope="col">Action Items</th>
                                 <th scope="col">Notes</th>
                                 <th scope="col">Reminders</th>
-                                <th scope="col">share</th>
+                                <!-- <th scope="col">share</th> -->
                                
                               </tr>
                             </thead>
@@ -667,22 +667,18 @@ textarea#comment {
    var ary = [];
         $(function () {
             $('.table-borderless tr').each(function (a, b) {
-                var value = $('#cv_id', b).val();
-                var name = $("#name" , b).val();
-                var email = $("#email", b).val();
-                var mobile = $("#mobile", b).val();
-                var ctc = $("#ctc", b).val();
-                var exp = $("#exp", b).val();
-                var notice = $("#notice", b).val();
-                var edu = $("#edu", b).val();
-                var status = $("#status", b).val();
-                var comment = $("#comment", b).val();
-                var action = $("#action", b).val();
-                var reminder = $("#reminder", b).val();
-                ary.push({name:name,email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,comment:comment,value:value,action:action,reminder:reminder});
+                var value = $('#tracking_id', b).val();
+                
+
+                ary.push({value:value});
                
             });
             console.log(ary);
+            var result = ary.map(function(val) {
+              return val.value;
+            }).join(',');
+
+console.log(result)
            // var data_arr = JSON.stringify(ary);
             // alert(ary.join(","));
             // alert(data_arr.join(","));
