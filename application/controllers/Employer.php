@@ -3957,7 +3957,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $result = $this->Master_model->master_insert($data, 'employer_audit_record');
 
                 if(isset($id) && !empty($id)) 
-                // { print_r($id);
+                { print_r($id);
                     $email = $this->input->post('candidate_email');
                     $job_post_id = $id;
                     $where_can = "email='$email'";
@@ -4030,6 +4030,21 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                        
                     );
                         $frwd = $this->Master_model->master_insert($frwd_array, 'forwarded_jobs_cv');
+                         $external_array = array(
+                        'cv_id' => $cv_id,
+                        'company_id' => $employer_id,
+                        'job_post_id' => $job_post_id,
+                        'apply_id' => $apply,
+                        'status' => 1,
+                        'company_id' => $employer_id,
+                        'name' => $can_data[0]['full_name'],
+                        'email' => $can_data[0]['email'],
+                        'mobile' => $can_data[0]['mobile_no'],
+                      'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),
+                       
+                    );
+                    $frwd = $this->Master_model->master_insert($external_array, 'external_tracker');
+
 
                     }
                      if ($apply) {
@@ -4088,7 +4103,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             }
             redirect('employer/corporate_cv_bank');
            
-        
+        }
         } else {
             $data['industry_master'] = $this->Master_model->getMaster('job_category', $where = false);
             $data['department']      = $this->Master_model->getMaster('department', $where = false);
