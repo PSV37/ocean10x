@@ -5210,6 +5210,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $job_id = $this->input->post('job_id');
             if(!empty($job_id)) {
                  $forwarded_job_tracking = $this->job_posting_model->get_job_forwarded_candidate($job_id);
+                 print_r($this->db->last_query());die;
                   $education_level = $this->Master_model->getMaster('education_level', $where = false);
                     $tracker_status = $this->Master_model->getMaster('tracker_status_master', $where = false);
                  $this->load->view('fontend/employer/internal_tracker_card.php', compact('forwarded_job_tracking', 'employer_id','education_level','tracker_status','job_id'));
