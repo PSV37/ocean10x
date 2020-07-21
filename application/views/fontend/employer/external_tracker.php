@@ -587,7 +587,7 @@ textarea#comment {
 
 <script>
  var tableControl = document.getElementById('mytable');
-$('#share').click(function() {
+$('#share11').click(function() {
     var result = []
     $('.table-borderless tr').each(function() {
         result.push($(this).parent().next().text());

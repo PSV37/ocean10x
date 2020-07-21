@@ -57,7 +57,7 @@
                                     <td ><input type="text" class="email" id="reminder" name="comment" value="<?php echo $job_row->reminder; ?>" ></td>
 
                                 <td style="min-width: 150px;" id="share"> 
-                                  <button id="share">Get values</button>
+                                  <button id="share11">Get values</button>
                                   <!-- <a href="#" data-toggle="modal" data-target="#rotateModal"  > <i class="fas fa-share"></i></a> -->
                                 </td>
                              
