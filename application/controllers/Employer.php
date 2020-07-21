@@ -5045,7 +5045,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
         $this->load->view('fontend/employer/external_tracker.php', compact('company_active_jobs', 'employer_id'));
     }
-    public function get_extracker_card()
+    public function get_tracker_card()
     {
         $job_id = $this->input->post('job_id');
             if(!empty($job_id)) {
@@ -5055,7 +5055,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                  $this->load->view('fontend/employer/internal_tracker_card.php', compact('forwarded_job_tracking', 'employer_id','education_level','tracker_status','job_id'));
     }
 }
-    public function get_tracker_card()
+    public function get_extracker_card()
     {
         $job_id = $this->input->post('job_id');
         if(!empty($job_id)) {
