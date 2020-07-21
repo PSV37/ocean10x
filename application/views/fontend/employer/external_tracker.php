@@ -535,6 +535,14 @@ textarea#comment {
                           </table>
                         </div>
                      <!-- </div> -->
+                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
+                           <li ><a class="dropdown-item" href="#" >Forward Job Post</a></li>
+                        
+                           <li id="div_download"> <a class="dropdown-item" >Download this cv</a></li>
+                       
+
+                           <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-target="#move_cv<?php echo $cv_row['cv_id']; ?>" href="#">Move this CV</a></li>
+                        </div>
                    </div>
                
             </div>
