@@ -586,7 +586,7 @@ textarea#comment {
 </div>
 
 <script>
-  $('#myTable').on('click', '#share', function() {
+  $('#share').on('click', 'tr', function() {
     var first = $(this).find('td:eq(0)').text();
     var second = $(this).find('td:eq(1)').text();
 
