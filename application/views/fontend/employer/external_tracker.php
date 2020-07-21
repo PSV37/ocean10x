@@ -490,7 +490,7 @@ textarea#comment {
                </div>
                <div class="col-md-3">
                <label>
-                     <a href="#" data-toggle="modal" data-target="#rotateModal"> <i class="fas fa-share"></i></a>
+                    
                      
                   </label>
                </div>
@@ -525,7 +525,7 @@ textarea#comment {
                                 <th scope="col">Action Items</th>
                                 <th scope="col">Notes</th>
                                 <th scope="col">Reminders</th>
-                                <!-- <th scope="col">Updated On</th> -->
+                                <th scope="col">share</th>
                                
                               </tr>
                             </thead>
@@ -569,27 +569,13 @@ textarea#comment {
                <input type="hidden" name="consultant" value="JobSeeker">  
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <label class="mdl-textfield__label" for="sample3">E-mail:</label>
-                  <input type="email"  name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;" required>
+                  <input type="email"  name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%" required>
                </div>
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
                   <label class="mdl-textfield__label" for="sample3">Message:</label>
                   <textarea class="form-control" name="message" rows="5" id="comment" required></textarea>
                </div>
-               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-                  <label class="mdl-textfield__label" for="sample3">Mandatory Info:</label><br>
-                  <label>
-                  <input type="checkbox" value="current_ctc" class="btn-default1" id="benifit[]" checked="" name="mandatory[]">
-                  <span>Current CTC (Yr)</span>
-                  </label>
-                  <label>
-                  <input type="checkbox" value="expected_ctc" class="btn-default1" id="benifit[]" checked="" name="mandatory[]">
-                  <span>Expected CTC (Yr)</span>
-                  </label>
-                  <label>
-                  <input type="checkbox" value="Notice_period" class="btn-default1" id="benifit[]" checked="" name="mandatory[]">
-                  <span>Notice (days)</span>
-                  </label>
-               </div>
+               
             </div>
             <div class="modal-footer">
                <button type="submit" class="btn btn-save">Send</button>
