@@ -655,11 +655,15 @@ textarea#comment {
 // });
 var tableControl = document.getElementById('mytable');
 $('#frwd_btn').click(function() {
-    var result = []
+    var ary = []
     $('input:checkbox:checked', tableControl).each(function() {
-        result.push($(this).parent().next().text());
+        // result.push($(this).parent().next().text());
+        var value = $('#cv_id', b).val();
+        var name = $("#name" , b).val();
+        var email = $("#email", b).val();
+        ary.push({name:name,email:email,mobile:mobile});
     });
-    alert(result);
+     alert(JSON.stringify( ary));
 });
 
 
