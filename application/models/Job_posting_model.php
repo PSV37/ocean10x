@@ -216,16 +216,23 @@ order by RAND() limit 3");
         $this->db->select('DATE_FORMAT(forwarded_jobs_cv.created_on,"%y-%m-%d")as datecreation');
         $this->db->from('forwarded_jobs_cv');
         $this->db->where('forwarded_jobs_cv.job_post_id', $job_id);
-        // $this->db->where('forword_job_status',"1");
-        // $this->db->join('corporate_cv_bank','corporate_cv_bank.cv_id=forwarded_jobs_cv.cv_id');
-        
-        // $this->db->join('education_level','education_level.education_level_id=corporate_cv_bank.js_top_education','left');
-        // $this->db->join('tracker_status_master','tracker_status_master.status_id=forwarded_jobs_cv.tracking_status','left');
+       
         $this->db->order_by('datecreation','desc');
         $this->db->group_by('datecreation');
        
-        // $job_types = array('1', '3', '4','5','6');
-        // $this->db->where_in('job_types',$job_types);
+        $query = $this->db->get()->result();
+        return $query;
+    }
+
+    public function get_external_tracker($job_id)
+    {
+        $this->db->select('DATE_FORMAT(external_tracker.created_on,"%y-%m-%d")as datecreation');
+        $this->db->from('external_tracker');
+        $this->db->where('external_tracker.job_post_id', $job_id);
+       
+        $this->db->order_by('datecreation','desc');
+        $this->db->group_by('datecreation');
+       
         $query = $this->db->get()->result();
         return $query;
     }
@@ -241,6 +248,25 @@ order by RAND() limit 3");
         $this->db->join('education_level','education_level.education_level_id=corporate_cv_bank.js_top_education','left');
         $this->db->join('tracker_status_master','tracker_status_master.status_id=forwarded_jobs_cv.tracking_status','left');
         $this->db->order_by('forwarded_jobs_cv.id','created_on');
+        // $this->db->group_by('job_apply.job_seeker_id');
+       
+        // $job_types = array('1', '3', '4','5','6');
+        // $this->db->where_in('job_types',$job_types);
+        $query = $this->db->get()->result();
+        return $query;
+    }
+
+     public function get_external_tracker_date($job_id,$date)
+    {
+        $this->db->select('external_tracker.*,education_level.*,DATE_FORMAT(external_tracker.created_on,"%y-%m-%d")as datecreation');
+        $this->db->from('external_tracker');
+        $this->db->where('external_tracker.job_post_id', $job_id);
+        $this->db->where('DATE_FORMAT(external_tracker.created_on,"%y-%m-%d")',$date);
+      
+        
+        $this->db->join('education_level','education_level.education_level_id=external_tracker.education','left');
+        $this->db->join('tracker_status_master','tracker_status_master.status_id=external_tracker.tracking_status','left');
+        $this->db->order_by('external_tracker.id','created_on');
         // $this->db->group_by('job_apply.job_seeker_id');
        
         // $job_types = array('1', '3', '4','5','6');

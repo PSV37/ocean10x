@@ -1670,16 +1670,32 @@ class Employer extends MY_Employer_Controller
                     if (empty($job_apply_data)) {
                          $apply       = $this->Master_model->master_insert($apply_array, 'job_apply');
 
-                           $frwd_array = array(
+                        $external_array = array(
+                        'cv_id' => $cv_id,
+                        'company_id' => $employer_id,
+                        'job_post_id' => $job_post_id,
+                        'apply_id' => $apply,
+                        'status' => 1,
+                        'company_id' => $employer_id,
+                        'name' => $can_data[0]['full_name'],
+                        'email' => $can_data[0]['email'],
+                        'mobile' => $can_data[0]['mobile_no'],
+                      'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),
+                       
+                    );
+                    $frwd = $this->Master_model->master_insert($external_array, 'external_tracker');
+
+                        $frwd_array = array(
                         'cv_id' => $cv_id,
                         'company_id' => $employer_id,
                         'job_post_id' => $job_post_id,
                         'apply_id' => $apply,
                         'status' => 1,
                         'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),
-                       
                     );
-                        $frwd = $this->Master_model->master_insert($frwd_array, 'forwarded_jobs_cv');
+
+                         $frwd = $this->Master_model->master_insert($frwd_array, 'forwarded_jobs_cv');
+
 
                     }
                    
@@ -5043,10 +5059,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     {
         $job_id = $this->input->post('job_id');
         if(!empty($job_id)) {
-             $forwarded_job_tracking = $this->job_posting_model->get_job_forwarded_candidate($job_id);
-              $education_level = $this->Master_model->getMaster('education_level', $where = false);
-                $tracker_status = $this->Master_model->getMaster('tracker_status_master', $where = false);
-             $this->load->view('fontend/employer/internal_tracker_card.php', compact('forwarded_job_tracking', 'employer_id','education_level','tracker_status','job_id'));
+            $get_external_tracker = $this->job_posting_model->get_external_tracker($job_id);
+            $education_level = $this->Master_model->getMaster('education_level', $where = false);
+            $tracker_status = $this->Master_model->getMaster('tracker_status_master', $where = false);
+             $this->load->view('fontend/employer/external_tracker_card.php', compact('get_external_tracker', 'employer_id','education_level','tracker_status','job_id'));
         }
     }
  function update_cv()
