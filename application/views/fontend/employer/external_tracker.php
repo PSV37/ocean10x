@@ -583,7 +583,7 @@ textarea#comment {
             // alert(JSON.stringify( ary));
            var data_arr = JSON.stringify(ary);
             $.ajax({
-              url: "<?php echo base_url();?>employer/update_cv",
+              url: "<?php echo base_url();?>employer/update_external",
               type: "POST",
               data: {data_arr:data_arr},
               // contentType:false,
