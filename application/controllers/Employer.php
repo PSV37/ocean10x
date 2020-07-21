@@ -4037,9 +4037,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         'apply_id' => $apply,
                         'status' => 1,
                         'company_id' => $company_id,
-                        'name' => $this->input->post('candidate_name'),,
-                        'email' => $$this->input->post('candidate_email'),,
-                        'mobile' => $this->input->post('candidate_phone'),,
+                        'name' => $this->input->post('candidate_name'),
+                        'email' => $$this->input->post('candidate_email'),
+                        'mobile' => $this->input->post('candidate_phone'),
                       'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),
                        
                     );
