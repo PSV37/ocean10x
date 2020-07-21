@@ -554,7 +554,7 @@ textarea#comment {
       </div>
    </div>
 </div>
-<!-- <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?> -->
+
 <div class="modal" id="rotateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
    <input type="hidden" name="company_profile_id" id="company_profile_id" value="<?php echo $this->session->userdata('company_profile_id'); ?>">
    <div class="modal-dialog" role="document">
@@ -584,8 +584,16 @@ textarea#comment {
       </div>
    </div>
 </div>
-<?php
-   endforeach;endif; ?>
+
+<script>
+  $('#data-table').on('click', '#share', function() {
+    var first = $(this).find('td:eq(0)').text();
+    var second = $(this).find('td:eq(1)').text();
+
+    alert(first);
+    alert(second);
+});
+</script>
 <script>
    $('.select2').select2();
 </script>
