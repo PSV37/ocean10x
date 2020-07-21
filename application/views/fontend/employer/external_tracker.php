@@ -586,13 +586,8 @@ textarea#comment {
 </div>
 
 <script>
-  $('#share').on('click', 'tr', function() {
-    var first = $(this).find('td:eq(0)').text();
-    var second = $(this).find('td:eq(1)').text();
-
-    alert(first);
-    alert(second);
-});
+ var id = $(".table table-borderless").closest("tr");
+alert (id);
 </script>
 <script>
    $('.select2').select2();
