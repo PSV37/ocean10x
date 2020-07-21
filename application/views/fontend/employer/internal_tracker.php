@@ -620,11 +620,38 @@ textarea#comment {
         data.push({
           value: $tr.find("#cv_id").val(),
           name: $tr.find("#name").val(),
+          email: $tr.find("#email").val(),
+          mobile: $tr.find("#mobile").val(),
+          ctc: $tr.find("#ctc").val(),
+          exp: $tr.find("#exp").val(),
+          notice: $tr.find("#notice").val(),
+          edu: $tr.find("#edu").val(),
+          status: $tr.find("#status").val(),
+          action: $tr.find("#action").val(),
+          comment: $tr.find("#comment").val(),
+          reminder: $tr.find("#reminder").val(),
+          // comment: $tr.find("#comment").val(),
         });
       }
     });
     console.clear();
     console.log(JSON.stringify(data));
+    var data_arr = JSON.stringify(data);
+
+    $.ajax({
+              url: "<?php echo base_url();?>employer/update_external",
+              type: "POST",
+              data: {data_arr:data_arr},
+              // contentType:false,
+              // processData:false,
+               // dataType: "json",
+              success: function(data)
+              {
+                alert('Updated Successfully');
+                // window.location.reload();
+                 tracker_card(job_id);
+              }
+        });
   });
 });
 //    $("#frwd_btn").click(function() {
