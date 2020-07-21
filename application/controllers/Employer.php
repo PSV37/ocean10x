@@ -5148,7 +5148,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         $send = sendEmail_JobRequest($email[$i], $message, $subject);
                         // echo $comp_id;
             }
-            foreach ($tracking_id as $row) 
+                $tracking_ids = explode(',', $tracking_id);
+
+            foreach ($tracking_ids as $row) 
             {
                 $whereres  = "tracking_id='$row' and consultant_id = '$comp_id' ";
                 $tracking_data = $this->Master_model->get_master_row('
