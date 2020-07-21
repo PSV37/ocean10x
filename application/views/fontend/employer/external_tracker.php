@@ -595,24 +595,24 @@ textarea#comment {
   $('#rotateModal').modal('show');
 
  }
- function myFunction() {
-  var x = document.getElementById("fname");
-  x.value = x.value.toUpperCase();
-  $.ajax({
-              url: "<?php echo base_url();?>employer/update_external",
-              type: "POST",
-              data: {data_arr:data_arr},
-              // contentType:false,
-              // processData:false,
-               // dataType: "json",
-              success: function(data)
-              {
-                alert('Updated Successfully');
-                // window.location.reload();
-                 tracker_card(job_id);
-              }
-        });
-}
+//  function myFunction() {
+//   var x = document.getElementById("fname");
+//   x.value = x.value.toUpperCase();
+//   $.ajax({
+//               url: "<?php echo base_url();?>employer/update_external",
+//               type: "POST",
+//               data: {data_arr:data_arr},
+//               // contentType:false,
+//               // processData:false,
+//                // dataType: "json",
+//               success: function(data)
+//               {
+//                 alert('Updated Successfully');
+//                 // window.location.reload();
+//                  tracker_card(job_id);
+//               }
+//         });
+// }
 
 </script>
 <script>
@@ -679,7 +679,7 @@ textarea#comment {
             }).join(',');
 
 console.log(result);
-$('#tracking_id').val(tracking_id);
+$('#tracking_id').val(result);
   $('#rotateModal').modal('show');
            
         });
