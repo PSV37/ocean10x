@@ -4025,6 +4025,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                        
                         
                     }
+                    $data['job_id'] = $id;
+        $this->session->set_userdata($data);
                    redirect('employer/internal_tracker');
                    
                 }
@@ -4238,6 +4240,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                        
                         
                     }
+                    $data['job_id'] = $id;
+        $this->session->set_userdata($data);
                    redirect('employer/internal_tracker');
                    
                 }
