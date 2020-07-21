@@ -500,6 +500,9 @@ textarea#comment {
                <button style="float: right;" type="button" class="btn btn-default btn-sm save">
           <span class="glyphicon glyphicon-floppy-save"></span> Save
         </button>
+        <button style="float: right;" type="button" class="btn btn-default btn-sm save">
+          <span><i class="fas fa-share"></i></span> Share
+        </button>
             </div>
              
            </div>

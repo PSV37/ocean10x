@@ -5110,7 +5110,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                             <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
                             <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
                             <a href="#"><img src="' . base_url() . 'upload/' . $require['company_logo'] . '" style="height: 50px;"> </a>
-                            <br><br>Hi ' . $email_name[0] . '<br>'.$this->session->userdata("company_name").'</b></em> <br/>Foarwarded You the tracking sheet<br/><b></b> please login to ypur account to explore more.. <br><b>Your username:</b>'.$email[$i].'<br><b>Your password:</b>'.$randomNumber.'</b><a href="https://www.consultnhire.com/employer_login"><button>Login</button></a> ';
+                            <br><br>Hi ' . $email_name[0] . '<br>'.$this->session->userdata("company_name").'</b></em> <br/>Foarwarded You the tracking sheet<br/><b></b> please login to your account to explore more.. <br><b>Your username:</b>'.$email[$i].'<br><b>Your password:</b>'.$randomNumber.'</b><a href="https://www.consultnhire.com/employer_login"><button>Login</button></a> ';
                       
 
                         
