@@ -586,14 +586,12 @@ textarea#comment {
 </div>
 
 <script>
- var tableControl = document.getElementById('mytable');
-$('#share11').click(function() {
-    var result = []
-    $('.table-borderless tr').each(function() {
-        result.push($(this).parent().next().text());
-    });
-    alert(result);
-});
+ function get_value(tracking_id)
+ {
+  $('#tracking_id').val(tracking_id);
+  $('#rotateModal').modal('show');
+
+ }
 </script>
 <script>
    $('.select2').select2();
