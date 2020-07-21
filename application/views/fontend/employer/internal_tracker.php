@@ -661,7 +661,7 @@ $('#frwd_btn').click(function() {
         var value = $('#cv_id', b).val();
         var name = $("#name" , b).val();
         var email = $("#email", b).val();
-        ary.push({name:name,email:email,mobile:mobile});
+        ary.push({name:name,email:email});
     });
      alert(JSON.stringify( ary));
 });
