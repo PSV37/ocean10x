@@ -565,7 +565,7 @@ textarea#comment {
          </div>
          <form action="<?php echo base_url() ?>employer/forword_external_tracker" class="sendEmail" method="post" autocomplete="off">
             <div class="modal-body" style="padding:15px 40px;">
-               <input type="hidden" name="cv" id="tracking_id" value="">
+               <input type="hidden" name="tracking_id" id="tracking_id" value="">
                <input type="hidden" name="consultant" value="JobSeeker">  
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <label class="mdl-textfield__label" for="sample3">E-mail:</label>
