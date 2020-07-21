@@ -57,7 +57,7 @@
                                     <td ><input type="text" class="email" id="reminder" name="comment" value="<?php echo $job_row->reminder; ?>" ></td>
 
 
-                                    <input type="hidden" class="email" id="tracking_id" name="comment" value="<?php echo $job_row->id; ?>" >
+                                    <input type="hidden" class="email" id="tracking_id_val" name="comment" value="<?php echo $job_row->id; ?>" >
 
                                <!--  <td style="min-width: 150px;" id="share"> 
 

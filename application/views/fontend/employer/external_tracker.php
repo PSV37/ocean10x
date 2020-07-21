@@ -667,7 +667,7 @@ textarea#comment {
    var ary = [];
         $(function () {
             $('.table-borderless tr').each(function (a, b) {
-                var value = $('#tracking_id', b).val();
+                var value = $('#tracking_id_val', b).val();
                 
 
                 ary.push({value:value});
