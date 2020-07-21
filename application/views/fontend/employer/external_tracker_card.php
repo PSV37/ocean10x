@@ -1,5 +1,5 @@
 <!-- <div class="box" >  -->
-               <?php $key = 1; if (!empty($forwarded_job_tracking)): foreach ($forwarded_job_tracking as $job_row1) : ?>
+               <?php $key = 1; if (!empty($get_external_tracker)): foreach ($get_external_tracker as $job_row1) : ?>
                  
                
                   <!-- <div class="check"> -->
@@ -11,31 +11,31 @@
                         
                             <!-- <tbody> -->
                               <p style="    font-weight: 700;"><?php echo $job_row1->datecreation; ?></p><br>
-                              <?php $forwarded_job_tracking_date = $this->job_posting_model->get_job_forwarded_candidate_by_date($job_id,$job_row1->datecreation);
+                              <?php $external_tracking_date = $this->job_posting_model->get_external_tracker_date($job_id,$job_row1->datecreation);
                               // echo $this->db->last_query();die;
 
-                               foreach ($forwarded_job_tracking_date as $job_row) {
+                               foreach ($external_tracking_date as $job_row) {
                                 # code...
                               ?>
 
                               <tr>
                                 <input class="attrValue" type="hidden" name="" id="cv_id" value="<?php echo $job_row->cv_id; ?>">
-                                 <td ><input class="email" id="name" type="text" name="email" value="<?php echo $job_row->js_name; ?>" ></td>
+                                 <td ><input class="email" id="name" type="text" name="email" value="<?php echo $job_row->name; ?>" ></td>
 
-                                <td ><input class="email" id="email" type="text" name="email" value="<?php echo $job_row->js_email; ?>" ></td>
+                                <td ><input class="email" id="email" type="text" name="email" value="<?php echo $job_row->email; ?>" ></td>
 
-                                <td ><input id="mobile" type="text" name="mobile" value="<?php echo $job_row->js_mobile; ?>" maxlength='10' ></td>
+                                <td ><input id="mobile" type="text" name="mobile" value="<?php echo $job_row->mobile; ?>" maxlength='10' ></td>
 
-                                <td ><input id="ctc" type="text" name="ctc" value="<?php echo $job_row->js_current_ctc; ?>" maxlength='3' ></td>
+                                <td ><input id="ctc" type="text" name="ctc" value="<?php echo $job_row->salary; ?>" maxlength='3' ></td>
 
-                                <td ><input id="exp" type="text" name="exp" value="<?php echo $job_row->js_experience; ?>" ></td>
+                                <td ><input id="exp" type="text" name="exp" value="<?php echo $job_row->work_exp; ?>" ></td>
 
-                                <td ><input id="notice" type="text" name="notice" value="<?php echo $job_row->js_current_notice_period; ?>" ></td>
+                                <td ><input id="notice" type="text" name="notice" value="<?php echo $job_row->notice_period; ?>" ></td>
 
                                 <td > <select name="edu" style="min-width: 200px; border: none;"  id="edu" class="form-control select2 email" data-style="btn-default" data-live-search="true"  >
                                   <option value=""> </option>
                                   <?php   foreach($education_level as $education){?>
-                                  <option value="<?php echo $education['education_level_id']; ?>"<?php if($job_row->js_top_education==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
+                                  <option value="<?php echo $education['education_level_id']; ?>"<?php if($job_row->education==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
                                   <?php } ?>
                                   <option value="other">Other </option>
                                   <option value="other">None </option>
@@ -55,8 +55,8 @@
                                   <td ><textarea class="email" id="comment" name="comment" value=""><?php echo $job_row->comments; ?></textarea></td>
 
                                     <td ><input type="text" class="email" id="reminder" name="comment" value="<?php echo $job_row->reminder; ?>" ></td>
-
-                                <td style="min-width: 150px;"><input type="checkbox" id="update" class="chkbx" checked name=""></td>
+<!-- 
+                                <td style="min-width: 150px;"><input type="checkbox" class="chkbx" value="1" checked name=""></td> -->
                              
 
 

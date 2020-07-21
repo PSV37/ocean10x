@@ -451,13 +451,11 @@ textarea#comment {
             
                      
                      <select class="form-control select2" id="job_select" onchange="tracker_card(this.value);">
-                     <?php  if (isset($company_active_jobs) && !empty($company_active_jobs)) {
+                     <?php if (isset($company_active_jobs) && !empty($company_active_jobs)) {
                         foreach ($company_active_jobs as $row) { ?>
-                          <option <?php if ($this->session->userdata('job_id') == $row->job_post_id)   {
-                       echo "selected"; 
-                     } ?> value="<?php echo $row->job_post_id; ?>"><?php echo $row->job_title; ?></option>
+                          <option value="<?php echo $row->job_post_id; ?>"><?php echo $row->job_title; ?></option>
                      <?php   }
-                     } $this->session->unset_userdata('job_id'); ?>
+                     } ?>
                      </select>
                        
                  
@@ -502,14 +500,6 @@ textarea#comment {
                <button style="float: right;" type="button" class="btn btn-default btn-sm save">
           <span class="glyphicon glyphicon-floppy-save"></span> Save
         </button>
-        <span style="float: right; margin-top: 20px;"> 
-          <input  type="checkbox" name="check_all" id="checkAllchk">&nbsp; all
-                     <button type="button" id="frwd_btn" class="btn btn-primary">update external</button></span>
-        
-        <!--  <label style="float: right;margin-top: 17px;" class="btn btn-default">
-          check all
-          <input type="checkbox" name="check_all" id="jevattend_id" value="1">
-        </label> -->
             </div>
              
            </div>
@@ -535,7 +525,7 @@ textarea#comment {
                                 <th scope="col">Action Items</th>
                                 <th scope="col">Notes</th>
                                 <th scope="col">Reminders</th>
-                                <th scope="col">Updated On</th>
+                                <!-- <th scope="col">Updated On</th> -->
                                
                               </tr>
                             </thead>
@@ -545,6 +535,14 @@ textarea#comment {
                           </table>
                         </div>
                      <!-- </div> -->
+                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
+                           <li ><a class="dropdown-item" href="#" >Forward Job Post</a></li>
+                        
+                           <li id="div_download"> <a class="dropdown-item" >Download this cv</a></li>
+                       
+
+                           <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-target="#move_cv<?php echo $cv_row['cv_id']; ?>" href="#">Move this CV</a></li>
+                        </div>
                    </div>
                
             </div>
@@ -563,11 +561,7 @@ textarea#comment {
       </div>
    </div>
 </div>
-<script>
-   $(document).on(' change','input[name="check_all"]',function() {
-            $('.chkbx').prop("checked" , this.checked);
-    });
-  </script>
+
 <script>
    $('.select2').select2();
 </script>
@@ -597,7 +591,7 @@ textarea#comment {
             // alert(JSON.stringify( ary));
            var data_arr = JSON.stringify(ary);
             $.ajax({
-              url: "<?php echo base_url();?>employer/update_cv",
+              url: "<?php echo base_url();?>employer/update_external",
               type: "POST",
               data: {data_arr:data_arr},
               // contentType:false,
@@ -613,102 +607,6 @@ textarea#comment {
             // alert(ary);
         });
 });
-  $(function(){
-      var job_id = $('#job_select').val();
-  $("#frwd_btn").on("click", function() {
-    if (confirm("Selected Rows will be updated in external tracker!!")) {
-            var data = [];
-            $("table > tbody > tr").each(function () {
-              var $tr = $(this);
-              if ($tr.find(".chkbx").is(":checked")) {
-                data.push({
-                  value: $tr.find("#cv_id").val(),
-                  name: $tr.find("#name").val(),
-                  email: $tr.find("#email").val(),
-                  mobile: $tr.find("#mobile").val(),
-                  ctc: $tr.find("#ctc").val(),
-                  exp: $tr.find("#exp").val(),
-                  notice: $tr.find("#notice").val(),
-                  edu: $tr.find("#edu").val(),
-                  status: $tr.find("#status").val(),
-                  action: $tr.find("#action").val(),
-                  comment: $tr.find("#comment").val(),
-                  reminder: $tr.find("#reminder").val(),
-                  update: $tr.find("#update").val(),
-                });
-              }
-            });
-            console.clear();
-            console.log(JSON.stringify(data));
-            var data_arr = JSON.stringify(data);
-            $.ajax({
-              url: "<?php echo base_url();?>employer/update_external",
-              type: "POST",
-              data: {data_arr:data_arr},
-              // contentType:false,
-              // processData:false,
-               // dataType: "json",
-              success: function(data)
-              {
-                alert('Updated Successfully');
-                // window.location.reload();
-                 tracker_card(job_id);
-              }
-        });
-
-          } else {
-            txt = "You pressed Cancel!";
-          }
-    
-
-    
-  });
-});
-//    $("#frwd_btn").click(function() {
-//      var job_id = $('#job_select').val();
-// //    var id = $(".table table-borderless").closest("tr");
-// // alert (id); // Find the text
-//    var ary = [];
-//         $(function () {
-//             $('.table-borderless tr').each(function (a, b) {
-//                 var value = $('#cv_id', b).val();
-//                 var name = $("#name" , b).val();
-//                 var email = $("#email", b).val();
-//                 var mobile = $("#mobile", b).val();
-//                 var ctc = $("#ctc", b).val();
-//                 var exp = $("#exp", b).val();
-//                 var notice = $("#notice", b).val();
-//                 var edu = $("#edu", b).val();
-//                 var status = $("#status", b).val();
-//                 var comment = $("#comment", b).val();
-//                 var action = $("#action", b).val();
-//                 var reminder = $("#reminder", b).val();
-//                 var update = $("#update", b).val();
-//                 ary.push({name:name,email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,comment:comment,value:value,action:action,reminder:reminder,update:update});
-               
-//             });
-//             alert(JSON.stringify( ary));
-//         //    var data_arr = JSON.stringify(ary);
-//         //     $.ajax({
-//         //       url: "<?php echo base_url();?>employer/update_external",
-//         //       type: "POST",
-//         //       data: {data_arr:data_arr},
-//         //       // contentType:false,
-//         //       // processData:false,
-//         //        // dataType: "json",
-//         //       success: function(data)
-//         //       {
-//         //         alert('Updated Successfully');
-//         //         // window.location.reload();
-//         //          tracker_card(job_id);
-//         //       }
-//         // });
-//             // alert(ary);
-//         });
-// });
-
-
-
 </script>
 
 <script>
@@ -716,7 +614,7 @@ textarea#comment {
      var job_id = $('#job_select').val();
      tracker_card(job_id);
     var url = '<?php echo base_url(); ?>employer/add_new_cv/'+job_id;
-    var export_url = '<?php echo base_url(); ?>employer/export_internal_tracker/'+job_id;
+    var export_url = '<?php echo base_url(); ?>employer/export_external_tracker/'+job_id;
     // alert (url);
     $('#add_cv').attr('href',url);
  
@@ -731,13 +629,13 @@ textarea#comment {
     var url = '<?php echo base_url(); ?>employer/add_new_cv/'+job_id;
     $('#add_cv').attr('href',url);
 
-    var export_url = '<?php echo base_url(); ?>employer/export_internal_tracker/'+job_id;
+    var export_url = '<?php echo base_url(); ?>employer/export_external_tracker/'+job_id;
     $('#export').attr('href',export_url);
 
     
      
     $.ajax({
-              url: "<?php echo base_url();?>employer/get_tracker_card",
+              url: "<?php echo base_url();?>employer/get_extracker_card",
               type: "POST",
               data: {job_id:job_id},
               // contentType:false,

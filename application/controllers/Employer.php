@@ -1670,16 +1670,32 @@ class Employer extends MY_Employer_Controller
                     if (empty($job_apply_data)) {
                          $apply       = $this->Master_model->master_insert($apply_array, 'job_apply');
 
-                           $frwd_array = array(
+                        $external_array = array(
+                        'cv_id' => $cv_id,
+                        'company_id' => $employer_id,
+                        'job_post_id' => $job_post_id,
+                        'apply_id' => $apply,
+                        'status' => 1,
+                        'company_id' => $employer_id,
+                        'name' => $can_data[0]['full_name'],
+                        'email' => $can_data[0]['email'],
+                        'mobile' => $can_data[0]['mobile_no'],
+                      'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),
+                       
+                    );
+                    $frwd = $this->Master_model->master_insert($external_array, 'external_tracker');
+
+                        $frwd_array = array(
                         'cv_id' => $cv_id,
                         'company_id' => $employer_id,
                         'job_post_id' => $job_post_id,
                         'apply_id' => $apply,
                         'status' => 1,
                         'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),
-                       
                     );
-                        $frwd = $this->Master_model->master_insert($frwd_array, 'forwarded_jobs_cv');
+
+                         $frwd = $this->Master_model->master_insert($frwd_array, 'forwarded_jobs_cv');
+
 
                     }
                    
@@ -3810,6 +3826,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     {
         if (isset($id) && !empty($id)) {
             $data['id'] = $id;
+
         }
         $company_id = $this->session->userdata('company_profile_id');
         
@@ -3869,6 +3886,150 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             }
             
             if ($exists == true) {
+                 if(isset($id) && !empty($id)) 
+                { 
+                    print_r($id);
+                    $email = $this->input->post('candidate_email');
+                    $job_post_id = $id;
+                    $where_can = "email='$email'";
+                    
+                    $can_data = $this->Master_model->getMaster('js_info', $where_can);
+                    
+                    if ($can_data) {
+                        $seeker_id = $can_data[0]['job_seeker_id'];
+                    } else {
+                        $new_JS_array = array(
+                            'email' => $email,
+                            'js_token' => md5($email),
+                            'create_at' => date('Y-m-d H:i:s')
+                        );
+                        
+                        $seeker_id = $this->Master_model->master_insert($new_JS_array, 'js_info');
+                    }
+
+                     $where_can = "email='$email'";
+                    
+                    $can_data = $this->Master_model->getMaster('js_info', $where_can);
+
+                    $where_cv = "js_email='$email' and company_id='$company_id'";
+                     $cv_data = $this->Master_model->getMaster('corporate_cv_bank', $where_cv);
+
+
+                     if (empty($cv_data)) {
+
+                         $cv_array = array(
+                       'company_id' => $company_id,
+                        'js_name' => $can_data[0]['full_name'],
+                        'js_email' => $can_data[0]['email'],
+                        'js_mobile' => $can_data[0]['mobile_no'],
+                      
+                        'created_on' => date('Y-m-d'),
+                        'created_by' => $company_id
+                      
+                    );
+                    $add_cv  = $this->Master_model->master_insert($cv_array, 'corporate_cv_bank');
+                        $cv_id=$add_cv;
+                     }
+                     else
+                     {
+                        $cv_id=$cv_data[0]['cv_id'];
+
+                     }
+                    // print_r($seeker_id);
+                    $apply_array = array(
+                        'job_seeker_id' => $seeker_id,
+                        'company_id' => $company_id,
+                        'job_post_id' => $job_post_id,
+                        'forword_job_status' => 1,
+                        'updated_on' => date('Y-m-d'),
+                        // 'mandatory_parameters' => implode(',', $mandatory)
+                    );
+                    $whereres  = "job_seeker_id='$seeker_id' and company_id = '$company_id' and job_post_id = '$id'";
+                    $job_apply_data = $this->Master_model->get_master_row('
+                        job_apply', $select = FALSE, $whereres);
+                    // print_r($this->db->last_query());die;
+                    if (empty($job_apply_data)) {
+                         $apply       = $this->Master_model->master_insert($apply_array, 'job_apply');
+
+                           $frwd_array = array(
+                        'cv_id' => $cv_id,
+                        'company_id' => $company_id,
+                        'job_post_id' => $job_post_id,
+                        'apply_id' => $apply,
+                        'status' => 1,
+                         'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),
+                       
+                    );
+                        $frwd = $this->Master_model->master_insert($frwd_array, 'forwarded_jobs_cv');
+                         $external_array = array(
+                        'cv_id' => $cv_id,
+                        'company_id' => $employer_id,
+                        'job_post_id' => $job_post_id,
+                        'apply_id' => $apply,
+                        'status' => 1,
+                        'company_id' => $company_id,
+                        'name' => $this->input->post('candidate_name'),
+                        'email' => $this->input->post('candidate_email'),
+                        'mobile' => $this->input->post('candidate_phone'),
+                      'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),
+                       
+                    );
+                    $frwd = $this->Master_model->master_insert($external_array, 'external_tracker');
+
+
+                    }
+                     if ($apply) {
+                        $email_name = explode('@', $email);
+                        
+                        $subject = 'Job | Urgent requirement for ' . $require['job_title'];
+                        
+                        $message = '
+                                <style>
+                                    .btn-primary{
+                                        width: 232px;
+                                        color: #fff;
+                                        text-align: center;
+                                        margin: 0 0 0 5%;
+                                        background-color: #6495ED;
+                                        padding: 5px;
+                                        text-decoration: none;
+                                    }
+                                
+                                </style>
+                            <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+                            <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+                            <a href="#"><img src="' . base_url() . 'upload/' . $require['company_logo'] . '" style="height: 50px;"> </a>
+                            <br><br>Hi ' . $email_name[0] . ',<br>' . $job_desc . '<br/><br/><em><b>Now Hiring!!</b></em> <br/><br/><b>Company Name:</b>' . $require['company_name'] . '<br/><br/> <b>Job Profile:</b><br/> <b>Job Title: </b> ' . $require['job_title'] . '<br/> <b>Experience: </b> ' . $require['experience'] . '<br/><b>Salary Offered: </b> ' . $require['salary_range'] . '<br/><b>Vacancies: </b> ' . $require['no_jobs'] . '<br/><b>Job Location: </b> ' . $require['city_name'] . '-' . $require['state_name'] . ',' . $require['country_name'] . '<br/><b>Job Role: </b> ' . $require['job_role_title'] . '<br/><b>Job Type: </b> ' . $require['job_types_name'] . '<br/><b>Job Nature: </b> ' . $require['job_nature_name'] . '<br/><b>Wrking Hrs: </b> ' . $require['working_hours'] . '<br/><b>Job Deadline: </b> ' . $require['job_deadline'] . '<br/><b>Education Required: </b> ' . $require['education_level_name'] . '(' . $require['education_specialization'] . ')' . '<br/><b>Preferred Age: </b> ' . $require['preferred_age'] . '-' . $require['preferred_age_to'] . '<br/><b>Required Skills: </b> ';
+                        for ($j = 0; $j < sizeof($req_skill_details); $j++) {
+                            $message .= ' <br>' . $req_skill_details[$j]['skill_name'];
+                        }
+                        
+                        $message .= '<br/><b>Job Description: </b> ' . $require['job_desc'] . '<br/><b>Job Benefits: </b> ' . $require['benefits'] . '<br/><b>Other Job Description: </b> ' . $require['education'] . '<br><br><a href="' . base_url() . 'job_forword_seeker/apply_forworded_job?apply_id=' . base64_encode($email) . '&job_id=' . base64_encode($apply) . '" class="btn btn-primary" value="Apply Now" align="center" target="_blank">Apply Now</a> <br><br><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><small>Enjoy personalized job searching experience<br>Goa a Question? Check out how works and our support team are ready to help.<br><br>You have received this mail because your e-mail ID is registered with Consultnhire.com. This is a system-generated e-mail regarding your Consultnhire account preferences, please do not reply to this message. The jobs sent in this mail have been posted by the clients of Consultnhire.com. And we have enabled auto-login for your convenience, you are strongly advised not to forward this email to protect your account from unauthorized access. IEIL has taken all reasonable steps to ensure that the information in this mailer is authentic. Users are advised to research bonafides of advertisers independently. Please do not pay any money to anyone who promises to find you a job. IEIL shall not have any responsibility in this regard. We recommend that you visit our Terms & Conditions and the Security Advice for more comprehensive information.</small><br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+                        
+                        
+                        $send = sendEmail_JobRequest($email, $message, $subject);
+                        //echo $send;
+                        // echo $message;
+                        
+                        
+                        
+                        $company_name = $this->session->userdata('company_name');
+                        $data         = array(
+                            'company' => $company_name,
+                            'action_taken_for' => $email,
+                            'field_changed' => 'Forwarded Job ',
+                            'Action' => $company_name . ' Forwarded job for the position of ' . $require['job_title'],
+                            'datetime' => date('Y-m-d H:i:s'),
+                            'updated_by' => $company_name
+                        );
+                       
+                        
+                    }
+                    $data['job_id'] = $id;
+        $this->session->set_userdata($data);
+                   redirect('employer/internal_tracker');
+                   
+                }
                 $this->session->set_flashdata('success', '<div class="alert alert-warning text-center">This CV already exists!</div>');
             } else {
 
@@ -3940,8 +4101,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 
                 $result = $this->Master_model->master_insert($data, 'employer_audit_record');
 
-                if (isset($id) && !empty($id)) 
-                {
+                if(isset($id) && !empty($id)) 
+                { 
+                    print_r($id);
                     $email = $this->input->post('candidate_email');
                     $job_post_id = $id;
                     $where_can = "email='$email'";
@@ -3988,7 +4150,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         $cv_id=$cv_data[0]['cv_id'];
 
                      }
-                    print_r($seeker_id);
+                    // print_r($seeker_id);
                     $apply_array = array(
                         'job_seeker_id' => $seeker_id,
                         'company_id' => $company_id,
@@ -4000,6 +4162,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     $whereres  = "job_seeker_id='$seeker_id' and company_id = '$company_id' and job_post_id = '$id'";
                     $job_apply_data = $this->Master_model->get_master_row('
                         job_apply', $select = FALSE, $whereres);
+                    // print_r($this->db->last_query());die;
                     if (empty($job_apply_data)) {
                          $apply       = $this->Master_model->master_insert($apply_array, 'job_apply');
 
@@ -4013,6 +4176,21 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                        
                     );
                         $frwd = $this->Master_model->master_insert($frwd_array, 'forwarded_jobs_cv');
+                         $external_array = array(
+                        'cv_id' => $cv_id,
+                        'company_id' => $employer_id,
+                        'job_post_id' => $job_post_id,
+                        'apply_id' => $apply,
+                        'status' => 1,
+                        'company_id' => $company_id,
+                        'name' => $this->input->post('candidate_name'),
+                        'email' => $this->input->post('candidate_email'),
+                        'mobile' => $this->input->post('candidate_phone'),
+                      'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),
+                       
+                    );
+                    $frwd = $this->Master_model->master_insert($external_array, 'external_tracker');
+
 
                     }
                      if ($apply) {
@@ -4062,6 +4240,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                        
                         
                     }
+                    $data['job_id'] = $id;
+        $this->session->set_userdata($data);
                    redirect('employer/internal_tracker');
                    
                 }
@@ -4070,8 +4250,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New CV added sucessfully!</div>');
             }
             redirect('employer/corporate_cv_bank');
-            }
-            
+           
+        }
         } else {
             $data['industry_master'] = $this->Master_model->getMaster('job_category', $where = false);
             $data['department']      = $this->Master_model->getMaster('department', $where = false);
@@ -5019,14 +5199,34 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $this->load->view('fontend/employer/internal_tracker.php', compact('company_active_jobs', 'employer_id'));
     }
 
+    public function external_tracker()
+    {
+
+        $this->session->unset_userdata('activemenu');
+        $data['activemenu'] = 'external_tracker';
+        $this->session->set_userdata($data);
+        $employer_id = $this->session->userdata('company_profile_id');
+        $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
+        $this->load->view('fontend/employer/external_tracker.php', compact('company_active_jobs', 'employer_id'));
+    }
     public function get_tracker_card()
     {
         $job_id = $this->input->post('job_id');
+            if(!empty($job_id)) {
+                 $forwarded_job_tracking = $this->job_posting_model->get_job_forwarded_candidate($job_id);
+                  $education_level = $this->Master_model->getMaster('education_level', $where = false);
+                    $tracker_status = $this->Master_model->getMaster('tracker_status_master', $where = false);
+                 $this->load->view('fontend/employer/internal_tracker_card.php', compact('forwarded_job_tracking', 'employer_id','education_level','tracker_status','job_id'));
+    }
+}
+    public function get_extracker_card()
+    {
+        $job_id = $this->input->post('job_id');
         if(!empty($job_id)) {
-             $forwarded_job_tracking = $this->job_posting_model->get_job_forwarded_candidate($job_id);
-              $education_level = $this->Master_model->getMaster('education_level', $where = false);
-                $tracker_status = $this->Master_model->getMaster('tracker_status_master', $where = false);
-             $this->load->view('fontend/employer/internal_tracker_card.php', compact('forwarded_job_tracking', 'employer_id','education_level','tracker_status','job_id'));
+            $get_external_tracker = $this->job_posting_model->get_external_tracker($job_id);
+            $education_level = $this->Master_model->getMaster('education_level', $where = false);
+            $tracker_status = $this->Master_model->getMaster('tracker_status_master', $where = false);
+             $this->load->view('fontend/employer/external_tracker_card.php', compact('get_external_tracker', 'employer_id','education_level','tracker_status','job_id'));
         }
     }
  function update_cv()
@@ -5046,7 +5246,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
             $where_cv['cv_id'] = $row->value;
             $update= $this->Master_model->master_update($update_cv, 'corporate_cv_bank', $where_cv);
-            $value = $row->name;
+            $value = $this->session->userdata('company_name');
             $fname =  strtok($value, " "); // Test
             if (!empty($row->comment)) {
                   $frwrd_update_cv['comments'] = $fname.' : '.$row->comment;
@@ -5072,6 +5272,49 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         echo json_encode($update);
     }
 
+function update_external()
+    {
+        $up_date=json_decode($this->input->post('data_arr'));
+        foreach ($up_date as $row) {
+            if (isset($row->update) && !empty($row->update)) {
+                $value = $this->session->userdata('company_name');
+                $fname =  strtok($value, " "); // Test
+                if (!empty($row->comment)) {
+                      $update_external['comments'] = $fname.' : '.$row->comment;
+                }
+                if (!empty($row->action)) {
+                      $update_external['action_item'] = $row->action;
+                }
+                if (!empty($row->reminder)) {
+                       $update_external['reminder'] = $row->reminder;
+                }
+            }
+            $update_external['email'] = $row->email;
+            $update_external['name'] = $row->name;
+            $update_external['mobile'] = $row->mobile;
+            $update_external['salary'] = $row->ctc;
+            $update_external['work_exp'] = $row->exp;
+            $update_external['notice_period'] = $row->notice;
+            $update_external['education'] = $row->edu;
+            $update_external['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
+
+           
+            
+            $update_external['tracking_status'] = $row->status;
+          
+            
+           
+            $update_external['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
+
+            $where_frwdcv['cv_id'] = $row->value;
+            $update= $this->Master_model->master_update($update_external, 'external_tracker', $where_frwdcv);
+        }
+       
+      
+       
+        echo json_encode($update);
+    }
+
     public function export_internal_tracker($job_id = NULL)
     {
 
@@ -5080,10 +5323,6 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             // if(!empty($job_id)) {
             $forwarded_job_tracking = $this->job_posting_model->get_job_forwarded_candidate($job_id);
                    
-
-               
-                                # code...
-                              
 
                         // create file name
                         $today = date("d.m.y");
@@ -5154,6 +5393,124 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                             $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->js_experience);$alpha++;
 
                             $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->js_current_notice_period);$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->education_level_name);$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->status_name);$alpha++;
+
+
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->action_item);$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->comments);$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->reminder);$alpha++;
+
+                            
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->updated_on);$alpha++;
+
+                            
+                              $rowCount++;
+                           
+                        }
+                    }
+                        // foreach ($skus as $element) {
+                       
+                        $filename = "internal_tracker.". date("jS F Y").".csv";
+
+                  // 
+
+                        header('Content-Type: application/vnd.ms-excel'); 
+                        header('Content-Disposition: attachment;filename="'.$filename.'"');
+                        header('Cache-Control: max-age=0'); 
+                        $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'CSV');  
+                        $objWriter->save('php://output'); 
+                        // print_r($objWriter); die();
+                    
+
+
+                // }
+               // redirect(base_url().'?url=login','refresh');
+            }
+
+            public function export_external_tracker($job_id = NULL)
+    {
+
+                // file name 
+           // echo $job_id; 
+            // if(!empty($job_id)) {
+            $forwarded_job_tracking = $this->job_posting_model->get_external_tracker($job_id);
+                   
+
+                        // create file name
+                        $today = date("d.m.y");
+                        $fileName = 'data-'.$today.'.xlsx';  
+                        // load excel library
+                        $this->load->library('excel');
+                        $objPHPExcel = new PHPExcel();
+                        $objPHPExcel->setActiveSheetIndex(0);
+
+                       
+                            $alpha='A';
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Name');$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Email');$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Mobile');$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Salary');$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Work Experience');$alpha++;
+
+                             $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Notice (days)');$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Education');$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Status');$alpha++;
+
+                            
+                             $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Action Items');$alpha++;
+                           
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Notes');$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Reminders');$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Updated On');
+                                $alpha++;
+
+                           
+
+                        // TABLE DATA START HERE
+                        // set Row
+                        // set Row
+
+                        $rowCount = 2;
+                        foreach ($forwarded_job_tracking as $row1) {
+                             $forwarded_job_tracking_date = $this->job_posting_model->get_external_tracker_date($job_id,$row1->datecreation);
+                              // echo $this->db->last_query();die;
+                             $alpha='A';
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row1->datecreation);$alpha++;
+                             $rowCount++;
+                            foreach ($forwarded_job_tracking_date as $row) {
+                          
+                            // print_r($this->db->last_query());die;
+                            
+
+                             $alpha='A';
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->name);$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->email);$alpha++;
+                            
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->mobile);$alpha++;
+
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->salary);$alpha++;
+
+                            
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->work_exp);$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->notice_period);$alpha++;
 
                             $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->education_level_name);$alpha++;
 
