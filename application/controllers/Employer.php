@@ -4087,8 +4087,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New CV added sucessfully!</div>');
             }
             redirect('employer/corporate_cv_bank');
-            }
-            
+           
+        
         } else {
             $data['industry_master'] = $this->Master_model->getMaster('job_category', $where = false);
             $data['department']      = $this->Master_model->getMaster('department', $where = false);
@@ -5113,7 +5113,7 @@ function update_external()
     {
         $up_date=json_decode($this->input->post('data_arr'));
         foreach ($up_date as $row) {
-            
+
             $update_external['email'] = $row->email;
             $update_external['name'] = $row->name;
             $update_external['mobile'] = $row->mobile;
