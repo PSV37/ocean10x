@@ -586,8 +586,14 @@ textarea#comment {
 </div>
 
 <script>
- var id = $(".table table-borderless").closest("tr");
-alert (id);
+ var tableControl = document.getElementById('mytable');
+$('#share').click(function() {
+    var result = []
+    $('.table-borderless tr').each(function() {
+        result.push($(this).parent().next().text());
+    });
+    alert(result);
+});
 </script>
 <script>
    $('.select2').select2();
