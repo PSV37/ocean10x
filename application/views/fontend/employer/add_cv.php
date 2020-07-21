@@ -114,7 +114,7 @@ input#candidate_skills {
                   <div class="col-md-4">
                      <div class="form-group">                                       
                         <label for="exampleInputEmail1">Full Name <span class="required">*</span></label>
-                        <input type="text" name="candidate_name" id="candidate_name" class="form-control " value="<?php echo  set_value('candidate_name'); ?>"> <?php echo form_error('candidate_name'); ?>
+                        <input type="text" name="candidate_name" id="candidate_name" class="form-control allowalphabates " value="<?php echo  set_value('candidate_name'); ?>"> <?php echo form_error('candidate_name'); ?>
                      </div>
                   </div>
                   <div class="col-md-4">
