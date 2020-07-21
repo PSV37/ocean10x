@@ -611,6 +611,48 @@ textarea#comment {
             // alert(ary);
         });
 });
+   $(".frwd_btn").click(function() {
+     var job_id = $('#job_select').val();
+//    var id = $(".table table-borderless").closest("tr");
+// alert (id); // Find the text
+   var ary = [];
+        $(function () {
+            $('.table-borderless tr').each(function (a, b) {
+                var value = $('#cv_id', b).val();
+                var name = $("#name" , b).val();
+                var email = $("#email", b).val();
+                var mobile = $("#mobile", b).val();
+                var ctc = $("#ctc", b).val();
+                var exp = $("#exp", b).val();
+                var notice = $("#notice", b).val();
+                var edu = $("#edu", b).val();
+                var status = $("#status", b).val();
+                var comment = $("#comment", b).val();
+                var action = $("#action", b).val();
+                var reminder = $("#reminder", b).val();
+                var update = $("#update", b).val();
+                ary.push({name:name,email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,comment:comment,value:value,action:action,reminder:reminder,update:update});
+               
+            });
+            // alert(JSON.stringify( ary));
+           var data_arr = JSON.stringify(ary);
+            $.ajax({
+              url: "<?php echo base_url();?>employer/update_external",
+              type: "POST",
+              data: {data_arr:data_arr},
+              // contentType:false,
+              // processData:false,
+               // dataType: "json",
+              success: function(data)
+              {
+                alert('Updated Successfully');
+                // window.location.reload();
+                 tracker_card(job_id);
+              }
+        });
+            // alert(ary);
+        });
+});
 </script>
 
 <script>

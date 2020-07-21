@@ -3956,8 +3956,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 
                 $result = $this->Master_model->master_insert($data, 'employer_audit_record');
 
-                if (isset($id) && !empty($id)) 
-                {
+                if(isset($id) && !empty($id)) 
+                // { print_r($id);
                     $email = $this->input->post('candidate_email');
                     $job_post_id = $id;
                     $where_can = "email='$email'";
@@ -4016,7 +4016,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     $whereres  = "job_seeker_id='$seeker_id' and company_id = '$company_id' and job_post_id = '$id'";
                     $job_apply_data = $this->Master_model->get_master_row('
                         job_apply', $select = FALSE, $whereres);
-                    print_r($this->db->last_query());die;
+                    // print_r($this->db->last_query());die;
                     if (empty($job_apply_data)) {
                          $apply       = $this->Master_model->master_insert($apply_array, 'job_apply');
 
@@ -5102,6 +5102,47 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
             $where_frwdcv['cv_id'] = $row->value;
             $update= $this->Master_model->master_update($frwrd_update_cv, 'forwarded_jobs_cv', $where_frwdcv);
+        }
+       
+      
+       
+        echo json_encode($update);
+    }
+
+function update_external()
+    {
+        $up_date=json_decode($this->input->post('data_arr'));
+        foreach ($up_date as $row) {
+            
+            $update_external['email'] = $row->email;
+            $update_external['name'] = $row->name;
+            $update_external['mobile'] = $row->mobile;
+            $update_external['salary'] = $row->ctc;
+            $update_external['work_exp'] = $row->exp;
+            $update_external['notice_period'] = $row->notice;
+            $update_external['education'] = $row->edu;
+            $update_external['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
+
+           
+            $value = $this->session->userdata('company_name');
+            $fname =  strtok($value, " "); // Test
+            if (!empty($row->comment)) {
+                  $update_external['comments'] = $fname.' : '.$row->comment;
+            }
+            if (!empty($row->action)) {
+                  $update_external['action_item'] = $row->action;
+            }
+            if (!empty($row->reminder)) {
+                   $update_external['reminder'] = $row->reminder;
+            }
+            $update_external['tracking_status'] = $row->status;
+          
+            
+           
+            $update_external['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
+
+            $where_frwdcv['cv_id'] = $row->value;
+            $update= $this->Master_model->master_update($update_external, 'external_tracker', $where_frwdcv);
         }
        
       
