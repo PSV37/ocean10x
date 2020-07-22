@@ -18,7 +18,7 @@
                                 
 
                               <tr>
-                                 if($job_row ->updated_on == date('Y-m-d'))
+                               <?php  if($job_row ->updated_on == date('Y-m-d'))
                                 { ?> <span class="required"> * </span>
 
                                <?php } ?>
