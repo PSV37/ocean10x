@@ -370,7 +370,7 @@ class Employer extends MY_Employer_Controller
                     'skills_required' => implode(',', $all_skills), //new added field
                     'salary_range' => $salary_range,
                     "job_deadline" => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('job_deadline')))),
-                    "job_status" => '0',
+                    "job_status" => '1',
                    
                     'is_test_required' => $this->input->post('job_test_requirment')
                     
@@ -5614,6 +5614,124 @@ function update_external()
                         $rowCount = 2;
                         foreach ($forwarded_job_tracking as $row1) {
                              $forwarded_job_tracking_date = $this->job_posting_model->get_external_tracker_date($job_id,$row1->datecreation);
+                              // echo $this->db->last_query();die;
+                             $alpha='A';
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row1->datecreation);$alpha++;
+                             $rowCount++;
+                            foreach ($forwarded_job_tracking_date as $row) {
+                          
+                            // print_r($this->db->last_query());die;
+                            
+
+                             $alpha='A';
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->name);$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->email);$alpha++;
+                            
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->mobile);$alpha++;
+
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->salary);$alpha++;
+
+                            
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->work_exp);$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->notice_period);$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->education_level_name);$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->status_name);$alpha++;
+
+
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->action_item);$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->comments);$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->reminder);$alpha++;
+
+                            
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row->updated_on);$alpha++;
+
+                            
+                              $rowCount++;
+                           
+                        }
+                    }
+                        // foreach ($skus as $element) {
+                       
+                        $filename = "internal_tracker.". date("jS F Y").".csv";
+
+                  // 
+
+                        header('Content-Type: application/vnd.ms-excel'); 
+                        header('Content-Disposition: attachment;filename="'.$filename.'"');
+                        header('Cache-Control: max-age=0'); 
+                        $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'CSV');  
+                        $objWriter->save('php://output'); 
+                        // print_r($objWriter); die();
+                    
+
+
+                // }
+               // redirect(base_url().'?url=login','refresh');
+            }
+
+             public function export_shared_tracker($job_id = NULL)
+    {
+
+                // file name 
+           // echo $job_id; 
+            // if(!empty($job_id)) {
+            $forwarded_job_tracking = $this->job_posting_model->get_shared_tracker($job_id);
+                   
+
+                        // create file name
+                        $today = date("d.m.y");
+                        $fileName = 'data-'.$today.'.xlsx';  
+                        // load excel library
+                        $this->load->library('excel');
+                        $objPHPExcel = new PHPExcel();
+                        $objPHPExcel->setActiveSheetIndex(0);
+
+                       
+                            $alpha='A';
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Name');$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Email');$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Mobile');$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Salary');$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Work Experience');$alpha++;
+
+                             $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Notice (days)');$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Education');$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Status');$alpha++;
+
+                            
+                             $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Action Items');$alpha++;
+                           
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Notes');$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Reminders');$alpha++;
+
+                            $objPHPExcel->getActiveSheet()->SetCellValue($alpha.'1', 'Updated On');
+                                $alpha++;
+
+                           
+
+                        // TABLE DATA START HERE
+                        // set Row
+                        // set Row
+
+                        $rowCount = 2;
+                        foreach ($forwarded_job_tracking as $row1) {
+                             $forwarded_job_tracking_date = $this->job_posting_model->get_shared_tracker_date($job_id,$job_row1->datecreation);
                               // echo $this->db->last_query();die;
                              $alpha='A';
                             $objPHPExcel->getActiveSheet()->SetCellValue($alpha. $rowCount, $row1->datecreation);$alpha++;

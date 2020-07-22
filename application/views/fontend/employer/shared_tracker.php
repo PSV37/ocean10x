@@ -663,7 +663,7 @@ $('#tracking_id').val(result);
      var job_id = $('#job_select').val();
      tracker_card(job_id);
     var url = '<?php echo base_url(); ?>employer/add_new_cv/'+job_id;
-    var export_url = '<?php echo base_url(); ?>employer/export_external_tracker/'+job_id;
+    var export_url = '<?php echo base_url(); ?>employer/export_shared_tracker/'+job_id;
     // alert (url);
     $('#add_cv').attr('href',url);
  
@@ -678,7 +678,7 @@ $('#tracking_id').val(result);
     var url = '<?php echo base_url(); ?>employer/add_new_cv/'+job_id;
     $('#add_cv').attr('href',url);
 
-    var export_url = '<?php echo base_url(); ?>employer/export_external_tracker/'+job_id;
+    var export_url = '<?php echo base_url(); ?>employer/export_shared_tracker/'+job_id;
     $('#export').attr('href',export_url);
 
     
