@@ -500,9 +500,9 @@ textarea#comment {
                <button style="float: right;" type="button" class="btn btn-default btn-sm save">
           <span class="glyphicon glyphicon-floppy-save"></span> Save
         </button>
-        <button style="float: right;" type="button" class="btn btn-default btn-sm share">
+        <!-- <button style="float: right;" type="button" class="btn btn-default btn-sm share">
           <span><i class="fas fa-share"></i></span> Share
-        </button>
+        </button> -->
             </div>
              
            </div>
@@ -558,35 +558,7 @@ textarea#comment {
    </div>
 </div>
 
-<div class="modal" id="rotateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-   <input type="hidden" name="company_profile_id" id="company_profile_id" value="<?php echo $this->session->userdata('company_profile_id'); ?>">
-   <div class="modal-dialog" role="document">
-      <div class="modal-content">
-         <div class="modal-header" style="border-bottom:none;">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Job Post</h5>
-         </div>
-         <form action="<?php echo base_url() ?>employer/forword_external_tracker" class="sendEmail" method="post" autocomplete="off">
-            <div class="modal-body" style="padding:15px 40px;">
-               <input type="hidden" name="tracking_id" id="tracking_id" value="">
-               <input type="hidden" name="consultant" value="JobSeeker">  
-               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <label class="mdl-textfield__label" for="sample3">E-mail:</label>
-                  <input onfocusout="myFunction();" type="email"  name="consultant_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%" required>
-               </div>
-               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-                  <label class="mdl-textfield__label" for="sample3">Message:</label>
-                  <textarea class="form-control" name="message" rows="5" id="comment" required></textarea>
-               </div>
-               
-            </div>
-            <div class="modal-footer">
-               <button type="submit" class="btn btn-save">Send</button>
-            </div>
-         </form>
-      </div>
-   </div>
-</div>
+
 
 <script>
  function get_value(tracking_id)
