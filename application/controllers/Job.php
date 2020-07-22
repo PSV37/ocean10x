@@ -164,10 +164,6 @@ class Job extends MY_Fontend_Controller
                 $where_update1['job_apply_id'] = $job_apply_id;
                 $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
 
-                $status['tracking_status'] = '2';
-
-                $where_update['apply_id'] = $job_apply_id;
-                $this->Master_model->master_update($status, 'external_tracker', $where_update);
 
                 $wherejob = "job_post_id='$job_post_id' AND company_profile_id='$company_id'";
                 $select_test = "is_test_required,job_post_id,company_profile_id";
