@@ -75,6 +75,12 @@ class Job_forword_seeker extends CI_Controller {
                                 );
                                 $where_update1['job_apply_id'] = $job_id;
                                 $status = $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
+
+
+                                    $status_update['tracking_status'] = '2';
+
+                                    $where_update['apply_id'] = $job_id;
+                                    $this->Master_model->master_update($status_update, 'forwarded_jobs_cv', $where_update);
                                 if($status==true)
                                 {
                                     $wherejob = "job_post_id='$job_post_id' AND company_profile_id='$company_id'";
@@ -103,6 +109,11 @@ class Job_forword_seeker extends CI_Controller {
                             );
                             $where_update1['job_apply_id'] = $job_id;
                             $status = $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
+
+                            $status_update['tracking_status'] = '2';
+
+                                    $where_update['apply_id'] = $job_id;
+                                    $this->Master_model->master_update($status_update, 'forwarded_jobs_cv', $where_update);
                             if($status==true)
                             {
                                 $wherejob = "job_post_id='$job_post_id' AND company_profile_id='$company_id'";
@@ -123,6 +134,10 @@ class Job_forword_seeker extends CI_Controller {
                         );
                         $where_update1['job_apply_id'] = $job_id;
                         $status = $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
+                        $status_update['tracking_status'] = '2';
+
+                                    $where_update['apply_id'] = $job_id;
+                                    $this->Master_model->master_update($status_update, 'forwarded_jobs_cv', $where_update);
                         if($status==true)
                         {
     	                    $data['job_seeker_id'] = $job_seeker_id;

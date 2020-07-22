@@ -1,5 +1,5 @@
 <!-- <div class="box" >  -->
-               <?php $key = 1; if (!empty($get_external_tracker)): foreach ($get_external_tracker as $job_row1) : ?>
+               <?php $key = 1; if (!empty($shared)): foreach ($shared as $job_row1) : ?>
                  
                
                   <!-- <div class="check"> -->
@@ -11,7 +11,7 @@
                         
                             <!-- <tbody> -->
                               <p style="    font-weight: 700;"><?php echo $job_row1->datecreation; ?></p><br>
-                              <?php $external_tracking_date = $this->job_posting_model->get_external_tracker_date($job_id,$job_row1->datecreation);
+                              <?php $external_tracking_date = $this->job_posting_model->get_shared_tracker_date($job_id,$job_row1->datecreation);
                               // echo $this->db->last_query();die;
 
                                foreach ($external_tracking_date as $job_row) {

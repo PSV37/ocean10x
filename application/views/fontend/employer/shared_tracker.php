@@ -500,9 +500,9 @@ textarea#comment {
                <button style="float: right;" type="button" class="btn btn-default btn-sm save">
           <span class="glyphicon glyphicon-floppy-save"></span> Save
         </button>
-        <button style="float: right;" type="button" class="btn btn-default btn-sm share">
+        <!-- <button style="float: right;" type="button" class="btn btn-default btn-sm share">
           <span><i class="fas fa-share"></i></span> Share
-        </button>
+        </button> -->
             </div>
              
            </div>
@@ -558,39 +558,7 @@ textarea#comment {
    </div>
 </div>
 
-<div class="modal" id="rotateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-   <input type="hidden" name="company_profile_id" id="company_profile_id" value="<?php echo $this->session->userdata('company_profile_id'); ?>">
-   <div class="modal-dialog" role="document">
-      <div class="modal-content">
-         <div class="modal-header" style="border-bottom:none;">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Job Post</h5>
-         </div>
-         <form action="<?php echo base_url() ?>employer/forword_external_tracker" class="sendEmail" method="post" autocomplete="off">
-            <div class="modal-body" style="padding:15px 40px;">
-               <input type="hidden" name="tracking_id" id="tracking_id" value="">
-               <input type="hidden" name="consultant" value="JobSeeker">  
-               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <label class="mdl-textfield__label" for="sample3">E-mail:</label>
-<<<<<<< HEAD
-                  <input type="email"  name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block; min-width: 100%" required>
-=======
-                  <input onfocusout="myFunction();" type="email"  name="consultant_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%;min-height: 12%;" required>
->>>>>>> 81305464f7ddd0006cf6c2c7dfc1f16db748c724
-               </div>
-               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-                  <label class="mdl-textfield__label" for="sample3">Message:</label>
-                  <textarea class="form-control" name="message" rows="5" id="comment" required></textarea>
-               </div>
-               
-            </div>
-            <div class="modal-footer">
-               <button type="submit" class="btn btn-save">Send</button>
-            </div>
-         </form>
-      </div>
-   </div>
-</div>
+
 
 <script>
  function get_value(tracking_id)
@@ -695,7 +663,7 @@ $('#tracking_id').val(result);
      var job_id = $('#job_select').val();
      tracker_card(job_id);
     var url = '<?php echo base_url(); ?>employer/add_new_cv/'+job_id;
-    var export_url = '<?php echo base_url(); ?>employer/export_external_tracker/'+job_id;
+    var export_url = '<?php echo base_url(); ?>employer/export_shared_tracker/'+job_id;
     // alert (url);
     $('#add_cv').attr('href',url);
  
@@ -710,13 +678,13 @@ $('#tracking_id').val(result);
     var url = '<?php echo base_url(); ?>employer/add_new_cv/'+job_id;
     $('#add_cv').attr('href',url);
 
-    var export_url = '<?php echo base_url(); ?>employer/export_external_tracker/'+job_id;
+    var export_url = '<?php echo base_url(); ?>employer/export_shared_tracker/'+job_id;
     $('#export').attr('href',export_url);
 
     
      
     $.ajax({
-              url: "<?php echo base_url();?>employer/get_extracker_card",
+              url: "<?php echo base_url();?>employer/get_shared_tracker_card",
               type: "POST",
               data: {job_id:job_id},
               // contentType:false,
@@ -730,102 +698,3 @@ $('#tracking_id').val(result);
        
   }
 </script>
-
-
-<script src="<?php echo base_url(); ?>asset/src/jquery.tokeninput.js"></script>
-<script src="<?php echo base_url() ?>asset/js/jquery-ui.js"></script>
-<script src="<?php echo base_url() ?>asset/tokenjs/bootstrap-tokenfield.js"></script>
-<script src="<?php echo base_url() ?>asset/tokenjs/typeahead.bundle.min.js"></script>
-<script src="<?php echo base_url() ?>asset/js/search.js"></script>
-
-<script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
-
-
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-
-<script>
-$("#dept_id").select2( {
-  placeholder: "Select Department",
-  allowClear: true
-  } );
-</script>
-
-
-<script>
-
-   $(".allowphonenumber").on("keypress keyup blur",function (event) {
-             //this.value = this.value.replace(/[^0-9\.]/g,'');
-      $(this).val($(this).val().replace("^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"));
-             if ((event.which < 48 || event.which > 57)) {
-                 event.preventDefault();
-             }
-         });
-
-   
-   //(^[ A-Za-z0-9_@./#&+-]*$)
-   
- 
-
-   $(".allownumericwithoutdecimal").on("input", function(evt) {
-    var self = $(this);
-    self.val(self.val().replace(/[^\d]+/, ""));
-    if ((evt.which < 48 || evt.which > 57)) 
-     {
-     evt.preventDefault();
-     }
- });
-
-
-   
-   $(".allowalphabatescomma").keypress(function (e) {
-         var regex = new RegExp("^[a-zA-Z, \s]+$");
-         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
-         if (regex.test(str)) {
-             return true;
-         }
-         else
-         {
-         e.preventDefault();
-         return false;
-         }
-     });
-
-    $(".allownumericwithdecimal").on("keypress keyup blur",function (event) {
-            //this.value = this.value.replace(/[^0-9\.]/g,'');
-     $(this).val($(this).val().replace(/[^0-9\.]/g,''));
-            if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
-                event.preventDefault();
-            }
-        });
-   
-   $(".allowalphabatesspace").keypress(function (e) {
-         var regex = new RegExp("^[a-zA-Z ]*$");
-         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
-         if (regex.test(str)) {
-             return true;
-         }
-         else
-         {
-         e.preventDefault();
-         return false;
-         }
-     });
-$(".allowalphabates").keypress(function (e) {
-         var regex = new RegExp("^[a-zA-Z ]*$");
-         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
-         if (regex.test(str)) {
-             return true;
-         }
-         else
-         {
-         e.preventDefault();
-         return false;
-         }
-     });
-
-
-
-</script>
-

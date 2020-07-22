@@ -535,7 +535,7 @@ textarea#comment {
                                 <th scope="col">Action Items</th>
                                 <th scope="col">Notes</th>
                                 <th scope="col">Reminders</th>
-                                <th scope="col">Updated On</th>
+                                <th scope="col">Update external</th>
                                
                               </tr>
                             </thead>

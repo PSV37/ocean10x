@@ -211,6 +211,27 @@ order by RAND() limit 3");
         return $query;
     }
 
+    public function get_shared_jobs($company_id)
+    {
+        $this->db->select('*');
+        $this->db->from('tracker_consultant_mapping');
+        $this->db->where('consultant_id', $company_id);
+        $this->db->where('job_status',"1");
+        $this->db->order_by('job_posting.job_post_id','desc');
+         $this->db->join('external_tracker','external_tracker.id=tracker_consultant_mapping.tracking_id','left');
+        $this->db->join('job_posting','job_posting.job_post_id=external_tracker.job_post_id');
+        $this->db->join('job_nature','job_nature.job_nature_id=job_posting.job_nature');
+        $this->db->join('job_category','job_category.job_category_id=job_posting.job_category');
+        // $this->db->join('education_specialization','education_specialization.id=job_posting.edu_specialization');
+        $this->db->join('job_role','job_role.id=job_posting.job_role');
+        $this->db->join('education_level','education_level.education_level_id=job_posting.job_edu');
+       
+        // $job_types = array('1', '3', '4','5','6');
+        // $this->db->where_in('job_types',$job_types);
+        $query = $this->db->get()->result();
+        return $query;
+    }
+
     public function get_job_forwarded_candidate($job_id)
     {
         $this->db->select('DATE_FORMAT(forwarded_jobs_cv.created_on,"%y-%m-%d")as datecreation');
@@ -230,6 +251,21 @@ order by RAND() limit 3");
         $this->db->from('external_tracker');
         $this->db->where('external_tracker.job_post_id', $job_id);
        
+        $this->db->order_by('datecreation','desc');
+        $this->db->group_by('datecreation');
+       
+        $query = $this->db->get()->result();
+        return $query;
+    }
+
+     public function get_shared_tracker($job_id)
+    {
+        $employer_id = $this->session->userdata('company_profile_id');
+        $this->db->select('DATE_FORMAT(external_tracker.created_on,"%y-%m-%d")as datecreation');
+        $this->db->from('tracker_consultant_mapping');
+        $this->db->where('external_tracker.job_post_id', $job_id);
+        $this->db->where('tracker_consultant_mapping.consultant_id', $employer_id);
+        $this->db->join('external_tracker','external_tracker.id=tracker_consultant_mapping.tracking_id','left');
         $this->db->order_by('datecreation','desc');
         $this->db->group_by('datecreation');
        
@@ -264,6 +300,27 @@ order by RAND() limit 3");
         $this->db->where('DATE_FORMAT(external_tracker.created_on,"%y-%m-%d")',$date);
       
         
+        $this->db->join('education_level','education_level.education_level_id=external_tracker.education','left');
+        $this->db->join('tracker_status_master','tracker_status_master.status_id=external_tracker.tracking_status','left');
+        $this->db->order_by('external_tracker.id','created_on');
+        // $this->db->group_by('job_apply.job_seeker_id');
+       
+        // $job_types = array('1', '3', '4','5','6');
+        // $this->db->where_in('job_types',$job_types);
+        $query = $this->db->get()->result();
+        return $query;
+    }
+
+    public function get_shared_tracker_date($job_id,$date)
+    {
+         $employer_id = $this->session->userdata('company_profile_id');
+        $this->db->select('external_tracker.*,education_level.*,DATE_FORMAT(external_tracker.created_on,"%y-%m-%d")as datecreation');
+        $this->db->from('tracker_consultant_mapping');
+        $this->db->where('external_tracker.job_post_id', $job_id);
+        $this->db->where('DATE_FORMAT(external_tracker.created_on,"%y-%m-%d")',$date);
+         $this->db->where('tracker_consultant_mapping.consultant_id', $employer_id);
+      
+         $this->db->join('external_tracker','external_tracker.id=tracker_consultant_mapping.tracking_id','left');
         $this->db->join('education_level','education_level.education_level_id=external_tracker.education','left');
         $this->db->join('tracker_status_master','tracker_status_master.status_id=external_tracker.tracking_status','left');
         $this->db->order_by('external_tracker.id','created_on');
