@@ -543,11 +543,12 @@ $employer_id = $this->session->userdata('company_profile_id');
        $('input').change(function() { 
             somethingChanged = true; 
        }); 
-       alert(somethingChanged);
+
     // })
 
    $('ul.menu-principal-list li').click(function(e) 
     { 
+      alert(somethingChanged);
      if (confirm('All the changes you made will get overwritten?')) {
         // myForm.submit();
     } else {
