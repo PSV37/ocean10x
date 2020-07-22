@@ -18,14 +18,19 @@
                                 
 
                               <tr>
-                               <?php $today = date('Y-m-d');  if($job_row->updated_on == $today)
+                              
+                                <input class="attrValue" type="hidden" name="" id="cv_id" value="<?php echo $job_row->cv_id; ?>">
+                                 <td >
+
+                                   <?php $today = date('Y-m-d');  if($job_row->updated_on == $today)
                                 { ?> <span class="required"> * </span>
 
                                <?php } ?>
-                                <input class="attrValue" type="hidden" name="" id="cv_id" value="<?php echo $job_row->updated_on; ?>">
-                                 <td ><input class="email" id="name" type="text" name="email" value="<?php echo $job_row->js_name; ?>" ></td>
 
-                                <td ><input class="email" id="email" type="text" name="email" value="<?php echo $today; ?>" ></td>
+
+                                  <input class="email" id="name" type="text" name="email" value="<?php echo $job_row->js_name; ?>" ></td>
+
+                                <td ><input class="email" id="email" type="text" name="email" value="<?php echo $job_row->js_email; ?>" ></td>
 
                                 <td ><input id="mobile" type="text" name="mobile" value="<?php echo $job_row->js_mobile; ?>" maxlength='10' ></td>
 
