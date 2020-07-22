@@ -1,5 +1,5 @@
 <!-- <div class="box" >  -->
-               <?php $key = 1; if (!empty($get_external_tracker)): foreach ($get_external_tracker as $job_row1) : ?>
+               <?php $key = 1; if (!empty($shared)): foreach ($shared as $job_row1) : ?>
                  
                
                   <!-- <div class="check"> -->
