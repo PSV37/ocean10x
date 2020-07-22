@@ -240,7 +240,7 @@ order by RAND() limit 3");
      public function get_shared_tracker($job_id)
     {
         $employer_id = $this->session->userdata('company_profile_id');
-        $this->db->select('external_tracker.DATE_FORMAT(external_tracker.created_on,"%y-%m-%d")as datecreation');
+        $this->db->select('DATE_FORMAT(external_tracker.created_on,"%y-%m-%d")as datecreation');
         $this->db->from('tracker_consultant_mapping');
         $this->db->where('external_tracker.job_post_id', $job_id);
         $this->db->where('tracker_consultant_mapping.consultant_id', $employer_id);
