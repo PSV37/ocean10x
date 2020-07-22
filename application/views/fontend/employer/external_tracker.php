@@ -572,11 +572,11 @@ textarea#comment {
                <input type="hidden" name="consultant" value="JobSeeker">  
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <label class="mdl-textfield__label" for="sample3">E-mail:</label>
-<<<<<<< HEAD
-                  <input type="email"  name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block; min-width: 100%" required>
-=======
+
+                 
+
                   <input onfocusout="myFunction();" type="email"  name="consultant_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%;min-height: 12%;" required>
->>>>>>> 81305464f7ddd0006cf6c2c7dfc1f16db748c724
+
                </div>
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
                   <label class="mdl-textfield__label" for="sample3">Message:</label>
