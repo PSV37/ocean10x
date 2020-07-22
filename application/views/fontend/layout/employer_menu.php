@@ -546,10 +546,12 @@ $employer_id = $this->session->userdata('company_profile_id');
 
    $('ul.menu-principal-list li').click(function(e) 
     { 
-      $('.table').on('keyup change paste', 'input, select, textarea', function(){
-    somethingChanged = true;
+     $("input").keypress(function(){
     alert('in');
-      })
+      
+  //this code executes when the keypress event occurs.
+});
+      
       alert(somethingChanged);
      if (confirm('All the changes you made will get overwritten?')) {
         // myForm.submit();
