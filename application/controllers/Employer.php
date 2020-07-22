@@ -5338,8 +5338,10 @@ public function get_shared_tracker_card()
         $job_id = $this->input->post('job_id');
             if(!empty($job_id)) {
                  $shared = $this->job_posting_model->get_shared_tracker($job_id);
+                  echo $this->db->last_query();die;
                   $education_level = $this->Master_model->getMaster('education_level', $where = false);
                     $tracker_status = $this->Master_model->getMaster('tracker_status_master', $where = false);
+
                  $this->load->view('fontend/employer/shared_tracker_card.php', compact('shared', 'employer_id','education_level','tracker_status','job_id'));
     }
 }
