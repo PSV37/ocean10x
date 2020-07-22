@@ -275,7 +275,7 @@ input.select2-search__field {
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">University / Name of Institution<span class="required">*</span></label>
-                                             <input type="text" name="js_institute_name" class="form-control allowalphabates" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($education_data)) echo $education_data[0]->js_institute_name; ?>">
+                                             <input type="text" name="js_institute_name" class="form-control allowalphabates" id="js_institute_name" placeholder="Enter Institute Name"  value="<?php if(!empty($education_data)) echo $education_data[0]->js_institute_name; ?>">
                                           </div>
                                           <div class="col-sm-1"></div>
                                        </div>
@@ -284,7 +284,7 @@ input.select2-search__field {
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">Course Type<span class="required">*</span></label>
                                              <?php foreach($course as $courses){?>
-                                             <input type="radio" name="education_type_id" required id="education_type_id" value="<?php echo $courses['education_type_id']; ?>"<?php if(!empty($education_data)) if($education_data[0]->education_type_id==$courses['education_type_id']) echo "checked";?> style="margin: 0 1px;"> <?php echo $courses['education_type']; ?>
+                                             <input type="radio" name="education_type_id"  id="education_type_id" value="<?php echo $courses['education_type_id']; ?>"<?php if(!empty($education_data)) if($education_data[0]->education_type_id==$courses['education_type_id']) ;?> style="margin: 0 1px;"> <?php echo $courses['education_type']; ?>
                                              <?php } ?>                    
                                           </div>
                                           <div class="col-sm-1"></div>
@@ -383,7 +383,7 @@ input.select2-search__field {
                                              <div class="col-sm-10">
                                                 <label class="control-label" for="email">Course Type<span class="required">*</span></label>
                                                 <?php foreach($course as $courses){?>
-                                                <input type="radio" name="education_type_id" required id="education_type_id" value="<?php echo $courses['education_type_id']; ?>"<?php if(!empty($education_data2)) if($education_data2[0]->education_type_id==$courses['education_type_id']) echo "checked";?> style="margin: 0 1px;"> <?php echo $courses['education_type']; ?>
+                                                <input type="radio" name="education_type_id" required id="education_type_id" value="<?php echo $courses['education_type_id']; ?>"<?php if(!empty($education_data2)) if($education_data2[0]->education_type_id==$courses['education_type_id']) ;?> style="margin: 0 1px;"> <?php echo $courses['education_type']; ?>
                                                 <?php } ?>                   
                                              </div>
                                              <div class="col-sm-1"></div>
@@ -843,11 +843,11 @@ input.select2-search__field {
                            </ul>
                         </div>
                      </div>
-                     <form id="UpdateExperience-info" class="form-horizontal" action="<?php echo base_url('job_seeker/save_profile_details');?>" method="post" style="padding: 30px;">
+                     <form id="profile" class="form-horizontal" action="<?php echo base_url('job_seeker/save_profile_details');?>" method="post" style="padding: 30px;">
                         <div class="col-md-12">
                            <div class="uplode-resume">
-                              <label for="avatarInput">Upload Resume<span class="required">*</span></label>
-                              <input type="file" class="form-control" id="txt_resume" name="txt_resume" required="">
+                              <label for="avatarInput">Upload Resume</label>
+                              <input type="file" class="form-control" id="txt_resume" name="txt_resume" >
                               <input type="hidden" class="form-control" id="" name="oldresume" value="<?php if(!empty($job_seeker_resume['resume'])){echo $job_seeker_resume['resume'];} ?>">
                            </div>
                            <div class="Profile-summery">
@@ -866,7 +866,7 @@ input.select2-search__field {
                            </div>
                            <div class="col-md-6">
                               <label for="avatarInput">Media Link</label>
-                              <input type="text" class="form-control" id="txt_link" name="txt_link" value="">
+                              <input type="text" class="form-control" required="" id="txt_link" name="txt_link" value="">
                            </div>
                            <button class="save-apply-btn">save</button>
                         </div>
@@ -1970,7 +1970,7 @@ input.select2-search__field {
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="email">Company Name:</label>
                                  <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="edit_company_profile_id" required name="company_profile_id" value="<?php if (!empty($experinece->company_profile_id)) { echo $experinece->company_profile_id;} ?>">
+                                    <input type="text" class="form-control allowalphabates" id="edit_company_profile_id" required name="company_profile_id" value="<?php if (!empty($experinece->company_profile_id)) { echo $experinece->company_profile_id;} ?>">
                                  </div>
                               </div>
                               <div class="form-group">
@@ -1996,7 +1996,7 @@ input.select2-search__field {
                               </div>
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="email">Start Date:</label>
-                                 <div class="col-sm-9"><input class="datepicker form-control" required name="start_date" value="<?php if (!empty($experinece->start_date)) { echo date('d-m-Y',strtotime($experinece->start_date)); } ?>">
+                                 <div class="col-sm-9"><input id="start_date_picker1" class="datepicker form-control" required name="start_date" value="<?php if (!empty($experinece->start_date)) { echo date('d-m-Y',strtotime($experinece->start_date)); } ?>">
                                     <label><input type="checkbox" id="upChkDisable_1" onclick="disableUpperDP('1')" checked="checked">  Current Job</label>
                                  </div>
                               </div>
@@ -2008,7 +2008,7 @@ input.select2-search__field {
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="pwd">Job Location</label>
                                  <div class="col-sm-9">
-                                    <input type="text" name="address" class="form-control" id="job_area" value="<?php 
+                                    <input type="text" name="address" class="form-control allowalphabates" id="job_area" value="<?php 
                                        if (!empty($experinece->address)) {
                                          echo $experinece->address;
                                          }
@@ -2018,7 +2018,7 @@ input.select2-search__field {
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="email">Salary:</label>
                                  <div class="col-sm-9">
-                                    <input type="text" name="js_career_salary" class="form-control" id="js_career_salary" placeholder="Salary" value="<?php if (!empty($experinece->js_career_salary)) {
+                                    <input type="text" name="js_career_salary" class="form-control allownumericwithoutdecimal" id="js_career_salary" placeholder="Salary" value="<?php if (!empty($experinece->js_career_salary)) {
                                        echo $experinece->js_career_salary;
                                        }
                                        ?>">
@@ -2351,17 +2351,63 @@ input.select2-search__field {
 <script src="<?php echo base_url() ?>asset/tokenjs/bootstrap-tokenfield.js"></script>
 <script src="<?php echo base_url() ?>asset/tokenjs/typeahead.bundle.min.js"></script>
 <script src="<?php echo base_url() ?>asset/js/search.js"></script>
-
+<script src="<?php echo base_url(); ?>asset/js/utils.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/additional-methods.js"></script>
 
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js"></script>
+<script type="text/javascript" src="validation_reg.js"></script>
 
 
 
 
 <script type="text/javascript">
    // Personal Info
+
+$( document ).ready( function () {
+
+$("#profile").validate (  
+
+{
+
+rules:{
+
+'txt_link':{
+  required: true,
+url: true
+},
+
+'date_of_birth':  {
+  dateFormat: true
+  //required: true
+//email_regex: true
+}
+
+
+},
+
+messages:{
+
+'txt_link':{
+  url: "Please type valid url"
+
+},
+
+'date_of_birth':{
+  dateFormat: 'Please type as per the date format'
+
+
+}
+
+});
+
+});
+
+
+
 $( document ).ready( function () {
 
 $("#js").validate (  
@@ -2727,6 +2773,10 @@ required: "This field is mandatory!"
   
 },
 
+'js_institute_name':{
+  required: "This field is mandatory!"
+  
+},
 'education_type_id':{
 required: "This field is mandatory!"
 
@@ -3360,6 +3410,13 @@ $(".allowalphabates").keypress(function (e) {
 <script> 
   $(function(){
  $("#start_date_picker").datepicker({ dateFormat: 'yy-mm-dd' });
+     }); 
+
+</script>
+
+<script> 
+  $(function(){
+ $("#start_date_picker1").datepicker({ dateFormat: 'yy-mm-dd' });
      }); 
 
 </script>
