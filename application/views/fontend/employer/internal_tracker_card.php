@@ -14,17 +14,14 @@
                               <?php $forwarded_job_tracking_date = $this->job_posting_model->get_job_forwarded_candidate_by_date($job_id,$job_row1->datecreation);
                               // echo $this->db->last_query();die;
 
-                               foreach ($forwarded_job_tracking_date as $job_row) {
-                                if($job_row ->updated_on == date('Y-m-d'))
-                                { ?> <span class="required"> * </span>
-
-                                }
-                              ?>
+                               foreach ($forwarded_job_tracking_date as $job_row) { ?>
+                                
 
                               <tr>
-                                 <?php if (condition) {
-                                  # code...
-                                } ?>
+                                 if($job_row ->updated_on == date('Y-m-d'))
+                                { ?> <span class="required"> * </span>
+
+                               <?php } ?>
                                 <input class="attrValue" type="hidden" name="" id="cv_id" value="<?php echo $job_row->cv_id; ?>">
                                  <td ><input class="email" id="name" type="text" name="email" value="<?php echo $job_row->js_name; ?>" ></td>
 
