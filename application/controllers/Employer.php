@@ -5312,6 +5312,17 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
         $this->load->view('fontend/employer/external_tracker.php', compact('company_active_jobs', 'employer_id'));
     }
+
+    public function shared_tracker()
+    {
+
+        $this->session->unset_userdata('activemenu');
+        $data['activemenu'] = 'shared_tracker';
+        $this->session->set_userdata($data);
+        $employer_id = $this->session->userdata('company_profile_id');
+        $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
+        $this->load->view('fontend/employer/shared_tracker.php', compact('company_active_jobs', 'employer_id'));
+    }
     public function get_tracker_card()
     {
         $job_id = $this->input->post('job_id');
@@ -5320,6 +5331,16 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                   $education_level = $this->Master_model->getMaster('education_level', $where = false);
                     $tracker_status = $this->Master_model->getMaster('tracker_status_master', $where = false);
                  $this->load->view('fontend/employer/internal_tracker_card.php', compact('forwarded_job_tracking', 'employer_id','education_level','tracker_status','job_id'));
+    }
+}
+public function get_shared_tracker_card()
+    {
+        $job_id = $this->input->post('job_id');
+            if(!empty($job_id)) {
+                 $forwarded_job_tracking = $this->job_posting_model->get_shared_tracker($job_id);
+                  $education_level = $this->Master_model->getMaster('education_level', $where = false);
+                    $tracker_status = $this->Master_model->getMaster('tracker_status_master', $where = false);
+                 $this->load->view('fontend/employer/shared_tracker_card.php', compact('forwarded_job_tracking', 'employer_id','education_level','tracker_status','job_id'));
     }
 }
     public function get_extracker_card()
@@ -5379,7 +5400,7 @@ function update_external()
     {
         $up_date=json_decode($this->input->post('data_arr'));
         foreach ($up_date as $row) {
-            if (isset($row->update) && !empty($row->update)) {
+            if (empty($row->update)) {
                 $value = $this->session->userdata('company_name');
                 $fname =  strtok($value, " "); // Test
                 if (!empty($row->comment)) {

@@ -286,6 +286,16 @@ $employer_id = $this->session->userdata('company_profile_id');
                                     <span class="text item">External Tracker</span>
                                   </a>
                                 </li> 
+                                 <li <?php if ($activemenu == 'shared_tracker') { ?>
+                                 class="active"
+                                <?php } ?> >
+                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/shared_tracker">
+                                    <span class="icon-container">
+                                       <i class="fas fa-map-signs"></i>
+                                    </span>
+                                    <span class="text item">Shared Tracker</span>
+                                  </a>
+                                </li> 
                                 <li <?php if ($activemenu == 'questionbank') { ?>
                                  class="active"
                                 <?php } ?> >
