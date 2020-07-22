@@ -5320,7 +5320,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $data['activemenu'] = 'shared_tracker';
         $this->session->set_userdata($data);
         $employer_id = $this->session->userdata('company_profile_id');
-        $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
+        $company_active_jobs = $this->job_posting_model->get_shared_jobs($employer_id);
         $this->load->view('fontend/employer/shared_tracker.php', compact('company_active_jobs', 'employer_id'));
     }
     public function get_tracker_card()
