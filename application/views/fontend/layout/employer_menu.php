@@ -540,14 +540,15 @@ $employer_id = $this->session->userdata('company_profile_id');
    <?php if ($activemenu == 'internal_tracker') { ?>
     var somethingChanged = false;
     // $(document).ready(function() { 
-       $('input').change(function() { 
-            somethingChanged = true; 
-       }); 
+        
 
     // })
 
    $('ul.menu-principal-list li').click(function(e) 
     { 
+      $('.table tr input').on('keyup change paste', 'input, select, textarea', function(){
+    somethingChanged = true;
+      })
       alert(somethingChanged);
      if (confirm('All the changes you made will get overwritten?')) {
         // myForm.submit();
