@@ -540,7 +540,7 @@ $employer_id = $this->session->userdata('company_profile_id');
    <?php if ($activemenu == 'internal_tracker') { ?>
    $('ul.menu-principal-list li').click(function(e) 
     { 
-     alert('clicked');
+     confirm('clicked');
     });
  <?php } ?>
 </script>
