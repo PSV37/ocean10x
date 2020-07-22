@@ -540,7 +540,12 @@ $employer_id = $this->session->userdata('company_profile_id');
    <?php if ($activemenu == 'internal_tracker') { ?>
    $('ul.menu-principal-list li').click(function(e) 
     { 
-     confirm('clicked');
+     if (confirm('All the changes you made will get overwritten ?')) {
+        // myForm.submit();
+    } else {
+        e.preventDefault();
+        // window.location = 'http://google.com'; // redirect to your own URL here
+    }
     });
  <?php } ?>
 </script>
