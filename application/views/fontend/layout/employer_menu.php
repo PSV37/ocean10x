@@ -548,7 +548,7 @@ $employer_id = $this->session->userdata('company_profile_id');
     { 
      $("input").keypress(function(){
     alert('in');
-    somethingChanged = true;
+    // somethingChanged = true;
 
   //this code executes when the keypress event occurs.
 });
