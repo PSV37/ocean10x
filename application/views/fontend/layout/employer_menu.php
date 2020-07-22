@@ -546,8 +546,9 @@ $employer_id = $this->session->userdata('company_profile_id');
 
    $('ul.menu-principal-list li').click(function(e) 
     { 
-      $('.table tr input').on('keyup change paste', 'input, select, textarea', function(){
+      $('.table').on('keyup change paste', 'input, select, textarea', function(){
     somethingChanged = true;
+    alert('in');
       })
       alert(somethingChanged);
      if (confirm('All the changes you made will get overwritten?')) {
