@@ -211,6 +211,26 @@ order by RAND() limit 3");
         return $query;
     }
 
+    public function get_shared_jobs($company_id)
+    {
+        $this->db->select('*');
+        $this->db->from('tracker_consultant_mapping');
+        $this->db->where('consultant_id', $company_id);
+        $this->db->where('job_status',"1")->order_by($this->_order_by);
+         $this->db->join('external_tracker','external_tracker.id=tracker_consultant_mapping.tracking_id','left');
+        $this->db->join('job_posting','job_posting.job_post_id=external_tracker.job_post_id');
+        $this->db->join('job_nature','job_nature.job_nature_id=job_posting.job_nature');
+        $this->db->join('job_category','job_category.job_category_id=job_posting.job_category');
+        // $this->db->join('education_specialization','education_specialization.id=job_posting.edu_specialization');
+        $this->db->join('job_role','job_role.id=job_posting.job_role');
+        $this->db->join('education_level','education_level.education_level_id=job_posting.job_edu');
+       
+        // $job_types = array('1', '3', '4','5','6');
+        // $this->db->where_in('job_types',$job_types);
+        $query = $this->db->get()->result();
+        return $query;
+    }
+
     public function get_job_forwarded_candidate($job_id)
     {
         $this->db->select('DATE_FORMAT(forwarded_jobs_cv.created_on,"%y-%m-%d")as datecreation');
