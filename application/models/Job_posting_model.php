@@ -216,7 +216,8 @@ order by RAND() limit 3");
         $this->db->select('*');
         $this->db->from('tracker_consultant_mapping');
         $this->db->where('consultant_id', $company_id);
-        $this->db->where('job_status',"1")->order_by($this->_order_by);
+        $this->db->where('job_status',"1"),
+        $this->db->->order_by('job_posting.job_post_id','desc');
          $this->db->join('external_tracker','external_tracker.id=tracker_consultant_mapping.tracking_id','left');
         $this->db->join('job_posting','job_posting.job_post_id=external_tracker.job_post_id');
         $this->db->join('job_nature','job_nature.job_nature_id=job_posting.job_nature');
