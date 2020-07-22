@@ -15,10 +15,16 @@
                               // echo $this->db->last_query();die;
 
                                foreach ($forwarded_job_tracking_date as $job_row) {
-                                # code...
+                                if($job_row ->updated_on == date('Y-m-d'))
+                                { ?> <span class="required"> * </span>
+
+                                }
                               ?>
 
                               <tr>
+                                 <?php if (condition) {
+                                  # code...
+                                } ?>
                                 <input class="attrValue" type="hidden" name="" id="cv_id" value="<?php echo $job_row->cv_id; ?>">
                                  <td ><input class="email" id="name" type="text" name="email" value="<?php echo $job_row->js_name; ?>" ></td>
 

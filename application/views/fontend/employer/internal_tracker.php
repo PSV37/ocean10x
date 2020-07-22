@@ -437,6 +437,10 @@ textarea#comment {
     text-decoration: none;
     resize: none;
 }
+.required
+   {
+   color: red;
+   }
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -524,6 +528,7 @@ textarea#comment {
                          <table class="table table-borderless" id="myTable">
                             <thead>
                               <tr>
+
                                 <th scope="col">Name</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Mobile</th>

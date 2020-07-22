@@ -78,6 +78,7 @@ class Job_forword_seeker extends CI_Controller {
 
 
                                     $status_update['tracking_status'] = '2';
+                                    $status_update['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
 
                                     $where_update['apply_id'] = $job_id;
                                     $this->Master_model->master_update($status_update, 'forwarded_jobs_cv', $where_update);
@@ -111,6 +112,7 @@ class Job_forword_seeker extends CI_Controller {
                             $status = $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
 
                             $status_update['tracking_status'] = '2';
+                            $status_update['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
 
                                     $where_update['apply_id'] = $job_id;
                                     $this->Master_model->master_update($status_update, 'forwarded_jobs_cv', $where_update);
@@ -135,6 +137,7 @@ class Job_forword_seeker extends CI_Controller {
                         $where_update1['job_apply_id'] = $job_id;
                         $status = $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
                         $status_update['tracking_status'] = '2';
+                        $status_update['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
 
                                     $where_update['apply_id'] = $job_id;
                                     $this->Master_model->master_update($status_update, 'forwarded_jobs_cv', $where_update);
