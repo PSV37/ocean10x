@@ -536,7 +536,12 @@ $employer_id = $this->session->userdata('company_profile_id');
       </div>
     </div>
   </div>
-
+<script>
+   $('ul.menu-principal-list li').click(function(e) 
+    { 
+     alert('clicked');
+    });
+</script>
   <script>
     <?php if ($activemenu == 'cv_bank') { ?>
       $('.menu-principal-list ul').show();
