@@ -1966,6 +1966,7 @@ class Employer extends MY_Employer_Controller
     
     public function get_test_questions()
     {
+        $employer_id = $this->session->userdata('company_profile_id');
         $subject = $this->input->post('subject');
         $topic_id = $this->input->post('topic_id');
         $subtopic_id = $this->input->post('subtopic_id');
@@ -1984,7 +1985,7 @@ class Employer extends MY_Employer_Controller
         );
             $data['questionbank'] = $this->Master_model->getMaster('questionbank', $where_all, $join_emp);
           
-          print_r($this->db->last_query());die;
+          // print_r($this->db->last_query());die;
              $this->load->view('fontend/employer/qb_test_card.php',$data);
         }
     }
