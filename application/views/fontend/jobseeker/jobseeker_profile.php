@@ -375,7 +375,7 @@ input.select2-search__field {
                                              <div class="col-sm-10">
                                                 <label class="control-label" for="email">Course Type<span class="required">*</span></label>
                                                 <?php foreach($course as $courses){?>
-                                                <input type="radio" name="education_type_id" required id="education_type_id" value="<?php echo $courses['education_type_id']; ?>"<?php if(!empty($education_data2)) if($education_data2[0]->education_type_id==$courses['education_type_id']) echo "checked";?> style="margin: 0 1px;"> <?php echo $courses['education_type']; ?>
+                                                <input type="radio" name="education_type_id" required id="education_type_id" value="<?php echo $courses['education_type_id']; ?>"<?php if(!empty($education_data2)) if($education_data2[0]->education_type_id==$courses['education_type_id']) ;?> style="margin: 0 1px;"> <?php echo $courses['education_type']; ?>
                                                 <?php } ?>                   
                                              </div>
                                              <div class="col-sm-1"></div>
@@ -456,7 +456,8 @@ input.select2-search__field {
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">Education<span class="required">*</span></label>
-                                             <select name="education_level_id" id="education_level_id" class="form-control" required="">
+                                             <select name="education_level_id" id="education_level_id" class="form-control department select2" required="">
+                                              <option value="">Select</option>
                                                 <option value="3">Graduation/Diploma</option>
                                              </select>
                                           </div>
@@ -616,7 +617,8 @@ input.select2-search__field {
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">School Medium<span class="required">*</span></label>
-                                             <select name="schoolmedium_id" id="schoolmedium_id" class="form-control">
+                                             <select name="schoolmedium_id" id="schoolmedium_id" class="form-control department select2">
+                                              <option value="">Select</option>
                                                 <?php foreach($schoolmedium as $medium){?>
                                                 <option value="<?php echo $medium['schoolmedium_id']; ?>"<?php if(!empty($education_data4)) if($education_data4[0]->schoolmedium_id==$medium['schoolmedium_id']) echo "selected";?>><?php echo $medium['school_medium']; ?></option>
                                                 <?php } ?>
@@ -628,7 +630,7 @@ input.select2-search__field {
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">Total Score<span class="required">*</span></label>
-                                             <input type="text" name="totalmarks_id" id="totalmarks_id" class="form-control" value="<?php if(!empty($education_data4)) echo $education_data4[0]->totalmarks_id; ?>" placeholder="Enter Total Score" onkeypress="javascript:return isNumber(event)">
+                                             <input type="text" name="totalmarks_id" id="totalmarks_id" class="form-control allownumericwithoutdecimal" value="<?php if(!empty($education_data4)) echo $education_data4[0]->totalmarks_id; ?>" placeholder="Enter Total Score" onkeypress="javascript:return isNumber(event)">
                                           </div>
                                           <div class="col-sm-1"></div>
                                        </div>
@@ -666,7 +668,8 @@ input.select2-search__field {
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">Education<span class="required">*</span></label>
-                                             <select name="education_level_id" id="education_level_id" class="form-control" required="">
+                                             <select name="education_level_id" id="education_level_id" class="form-control department select2" required="">
+                                              <option value="">Select</option>
                                                 <option value="5">10th</option>
                                              </select>
                                           </div>
@@ -694,7 +697,7 @@ input.select2-search__field {
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">Board<span class="required">*</span></label>
-                                             <select name="board_id" id="board_id" class="form-control">
+                                             <select name="board_id" id="board_id" class="form-control department select2">
                                                 <option value="">Select Board</option>
                                                 <?php foreach($schoolboard as $boards){?>
                                                 <option value="<?php echo $boards['schoolboard_id']; ?>"<?php if(!empty($education_data5)) if($education_data5[0]->board_id==$boards['schoolboard_id']) echo "selected";?>><?php echo $boards['schoolboard_name']; ?></option>
@@ -708,7 +711,7 @@ input.select2-search__field {
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">School Medium<span class="required">*</span></label>
                                              <select name="schoolmedium_id" id="schoolmedium_id" class="form-control department select2">
-                                              <option value="">Select</option>
+                                              
                                                 <option value="">Select Medium</option>
                                                 <?php foreach($schoolmedium as $medium){?>
                                                 <option value="<?php echo $medium['schoolmedium_id']; ?>"<?php if(!empty($education_data5)) if($education_data5[0]->schoolmedium_id==$medium['schoolmedium_id']) echo "selected";?>><?php echo $medium['school_medium']; ?></option>
@@ -721,7 +724,7 @@ input.select2-search__field {
                                           <div class="col-sm-1"></div>
                                           <div class="col-sm-10">
                                              <label class="control-label" for="email">Total Score<span class="required">*</span></label>
-                                             <input type="text" name="totalmarks_id" id="totalmarks_id" class="form-control" value="<?php if(!empty($education_data5)) echo $education_data5[0]->totalmarks_id; ?>" placeholder="Enter Total Score" onkeypress="javascript:return isNumber(event)">
+                                             <input type="text" name="totalmarks_id" id="totalmarks_id" class="form-control allownumericwithoutdecimal" value="<?php if(!empty($education_data5)) echo $education_data5[0]->totalmarks_id; ?>" placeholder="Enter Total Score" onkeypress="javascript:return isNumber(event)">
                                           </div>
                                           <div class="col-sm-1"></div>
                                        </div>
@@ -1842,7 +1845,7 @@ input.select2-search__field {
                                        </div>
                                        <div class="form-group">
                                           <label class="control-label col-sm-3" for="email">Start Date:</label>
-                                          <div class="col-sm-9"><input class="datepicker form-control" required name="start_date" value="">
+                                          <div class="col-sm-9"><input class="datepicker form-control" id="start_date_picker" required name="start_date" value="">
                                              <label><input type="checkbox" id="upChkDisable_1" onclick="disableUpperDP('1')" checked="checked">  Current Job</label>
                                           </div>
                                        </div>
@@ -1980,7 +1983,7 @@ input.select2-search__field {
                               </div>
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="email">Start Date:</label>
-                                 <div class="col-sm-9"><input class="datepicker form-control" required name="start_date" value="<?php if (!empty($experinece->start_date)) { echo date('d-m-Y',strtotime($experinece->start_date)); } ?>">
+                                 <div class="col-sm-9"><input class="datepicker form-control" id="start_date_picker1" required name="start_date" value="<?php if (!empty($experinece->start_date)) { echo date('d-m-Y',strtotime($experinece->start_date)); } ?>">
                                     <label><input type="checkbox" id="upChkDisable_1" onclick="disableUpperDP('1')" checked="checked">  Current Job</label>
                                  </div>
                               </div>
@@ -2775,12 +2778,20 @@ required: true
 
 messages:{
 
+'education_level_id':{
+  required: "Must Fill !",
+ 
+},
 
 'specialization_id':{
   required: "Must Fill !",
  
 },
 
+'js_institute_name':{
+  required: "Must Fill !",
+ 
+},
 'education_type_id':{
 required: "Must Fill !",
 minlength: "Please type atleast 10 digits",
@@ -2788,10 +2799,12 @@ maxlength: "Please type atleast 10 digits"
 },
 
 'js_year_of_passing':{
+  required: "Must Fill !",
 maxlength: "Choose a company name of at least 14 letters!"
 },
 
 'js_resut':{
+  required: "Must Fill !"
 //company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
 //remote: "The username is already in use by another user!"
 },
@@ -2876,34 +2889,32 @@ $("#tenth").validate (
 rules:{
 
 'education_level_id':{
-minlength: 3,
-namespace_regex: true
+required: true
 },
 
-'specialization_id':{
-email_regex: true
+'js_year_of_passing':{
+required: true
 },
 
 
-'js_institute_name':{
-phonenumber_regex: true
+'board_id':{
+required: true
 }, 
 
-'education_type_id':{
+'schoolmedium_id':{
+  required: true
 //twodigit_regex: true
 //email: true
 },
 
 
-'js_year_of_passing':{
-maxlength:3
+'totalmarks_id':{
+  required: true
+
 //email: true
 },
 
-'js_resut':{                
-  //minlength:10,        
-  //maxlength:10,
-},
+
 
 },
 
@@ -2915,24 +2926,26 @@ minlength: "Please type atleast 3 characters!",
 namespace_regex: "Please type only alphabets"
 },
 
-'specialization_id':{
+'js_year_of_passing':{
   required: "Must Fill !",
   matches: "Didn't match!",      
   minlength: "Please Enter 10 digit phone numbers!",        
   maxlength: "Maximum length 10 digits!"
 },
 
-'education_type_id':{
+'board_id':{
 required: "Must Fill !",
 minlength: "Please type atleast 10 digits",
 maxlength: "Please type atleast 10 digits"
 },
 
-'js_year_of_passing':{
+'schoolmedium_id':{
+  required: "Must Fill !",
 maxlength: "Choose a company name of at least 14 letters!"
 },
 
-'js_resut':{
+'totalmarks_id':{
+  required: "Must Fill !"
 //company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
 //remote: "The username is already in use by another user!"
 },
@@ -3427,7 +3440,7 @@ $(function() {
      }); 
 
 </script>
-
+    
 <script> 
   $(function(){
  $("#start_date_picker1").datepicker({ dateFormat: 'yy-mm-dd' });
