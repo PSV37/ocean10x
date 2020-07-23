@@ -53,7 +53,7 @@ button#frwd_btn {
         <div class="col-md-9 add-question">
           <div class="header-bookbank">
            Create Test
-            <a style="float: left;" href="<?php echo base_url(); ?>employer/show_saved_tests"><button type="button" id="question_add" class="btn btn-default"><i class="fa fa-plus">Show Saved Tests</i></button></a>
+            <a style="float: right;" href="<?php echo base_url(); ?>employer/show_saved_tests"><button type="button" id="question_add" class="btn btn-default"><i class="fa fa-plus">Show Saved Tests</i></button></a>
           </div>
          
           <div class="row">

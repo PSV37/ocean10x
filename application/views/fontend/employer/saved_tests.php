@@ -459,7 +459,7 @@ textarea#comment {
                         foreach ($oceanchamp_tests as $row) { ?>
                           <option <?php if ($this->session->userdata('job_id') == $row->job_post_id)   {
                        echo "selected"; 
-                     } ?> value="<?php echo $row->test_id; ?>"><?php echo $row->test_name; ?></option>
+                     } ?> value="<?php echo $row->test_id; ?>"><?php echo $row['test_name']; ?></option>
                      <?php   }
                      } $this->session->unset_userdata('job_id'); ?>
                      </select>
