@@ -1993,14 +1993,31 @@ class Employer extends MY_Employer_Controller
     public function add_to_test()
     {
         $test_name = $this->input->post('test_name');
-        $up_date=json_decode($this->input->post('data_arr'));
+        $test_id = $this->input->post('test_id');
+        $up_date = $this->input->post('data_arr');
+        $employer_id = $this->session->userdata('company_profile_id');
+        if (isset($test_name)) {
+           $test_data['test_name'] = $test_name;
+           $test_data['company_id'] = $employer_id;
+           $test_data['questions'] = $up_date[0]->value;
+           $test_data['created_by'] = $this->session->userdata('company_profile_id');
+           $test_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
 
-       $test_data['test_name'] = $test_name;
-       $test_data['questions'] = $up_date[0]->value;
-       $test_data['created_by'] = $this->session->userdata('company_profile_id');
-       $test_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
+           $this->Master_model->master_insert($test_data, 'oceanchamp_tests');
+        }
+        elseif (isset($test_id) && !empty($test_id)) {
+            $where['test_id']   = $test_id;
+            $old_question_data  = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where);
+            $old_questions = explode('.', $old_question_data['questions']);
+            $ques = explode(',', $up_date);
+            array_merge($old_questions,$ques);
+            $test_data['questions'] = implode(',', $old_questions);
+            $this->Master_model->master_update($test_data, 'oceanchamp_tests');
 
-       $this->Master_model->master_insert($test_data, 'oceanchamp_tests');
+        }
+        
+
+      
         $this->load->view('fontend/employer/create_test', $data);
 
 

@@ -13,6 +13,12 @@
    label.error {
     color: red;
 }
+button#frwd_btn {
+    min-height: 30;
+    min-width: 60px;
+    background-color: #18c5bd;
+    border: none;
+}
    
 </style>
 
@@ -87,12 +93,7 @@
               </div>
             </div>
 
-             <div class="col-md-4">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Test name<span class="required">*</span></label>
-               <input type="text" class="form-control" id="test_name" name="">
-              </div>
-            </div>
+             
          </div>
              
              
@@ -126,12 +127,66 @@
       </div>
        <span style="float: right; margin-top: 20px;"> 
           <!-- <input  type="checkbox" name="check_all" id="checkAllchk">&nbsp; all -->
-            <button type="button" id="frwd_btn" class="btn btn-primary">Add </button>
+           <button type="button" id="frwd_btn" class="btn btn-primary">Add To </button>
         </span>
     </div>
   </form>
   </div>
 </div>
+
+<div class="modal fade" id="add_test" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+          <form method="post" action="<?php echo base_url(); ?>employer/add_to_test">
+        <div class="modal-header">
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+          <h4 class="modal-title">Add To</h4>
+        </div>
+        <div class="modal-body">
+        <input type="hidden" id="question_id" name="data_arr" value="">
+             <div class="col-md-12">
+               <div class="row">
+             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
+                  <label class="mdl-textfield__label" for="sample3">Test name</label><br>
+                 
+               <input type="text" class="form-control" id="test_name" name="test_name">
+               </div>
+            </div>
+         </div>
+         <span>OR</span>
+            <div class="col-md-12" style="margin-top: 20px;">
+               <div class="row">
+                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <label class="mdl-textfield__label" for="sample3">Choose Test</label>
+                  <!-- <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required> -->
+                  <?php 
+                  $employer_id = $this->session->userdata('company_profile_id');
+                  $wheres  = "status='1' AND company_id='$employer_id' ";
+                     $folders     = $this->Master_model->getMaster('oceanchamp_tests', $where = $wheres); ?>
+                  <select class="form-control select2" name="test_id">
+                     <option value="0">None</option>
+
+                     <?php foreach ($folders as $row) { ?>
+                      <option value="<?php echo $row['test_id'] ?>"><?php echo $row['test_name'] ?></option>
+                     <? } ?>
+                    
+                  </select>
+               </div>
+               </div>
+            </div>
+           
+
+        
+         <!--  <p>This is a small modal.</p> -->
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-default">Add</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+         </form>
+      </div>
+    </div>
+  </div>
 <script>
   function get_questuions(job_id)
   {
@@ -202,21 +257,23 @@
                    return this.value;
                }).get();
                var data_arr= (checkedVals.join(","));
+               $('#question_id').val(data_arr);
+                $('#add_test').modal('show');
 
-            $.ajax({
-              url: "<?php echo base_url();?>employer/add_to_test",
-              type: "POST",
-              data: {data_arr:data_arr,test_name:test_name},
-              // contentType:false,
-              // processData:false,
-               // dataType: "json",
-              success: function(data)
-              {
-                alert('test added Successfully');
-                // window.location.reload();
-                 // tracker_card(job_id);
-              }
-        });
+        //     $.ajax({
+        //       url: "<?php echo base_url();?>employer/add_to_test",
+        //       type: "POST",
+        //       data: {data_arr:data_arr,test_name:test_name},
+        //       // contentType:false,
+        //       // processData:false,
+        //        // dataType: "json",
+        //       success: function(data)
+        //       {
+        //         alert('test added Successfully');
+        //         // window.location.reload();
+        //          // tracker_card(job_id);
+        //       }
+        // });
 
           // } else {
           //   txt = "You pressed Cancel!";
