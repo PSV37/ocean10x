@@ -539,20 +539,10 @@ $employer_id = $this->session->userdata('company_profile_id');
 <script>
    <?php if ($activemenu == 'internal_tracker') { ?>
     var somethingChanged = false;
-    // $(document).ready(function() { 
-        
-
-    // })
-
+    
    $('ul.menu-principal-list li').click(function(e) 
     { 
-     $("input").keypress(function(){
-    alert('in');
-      
-  //this code executes when the keypress event occurs.
-});
-      
-      alert(somethingChanged);
+     
      if (confirm('All the changes you made will get overwritten?')) {
         // myForm.submit();
     } else {
