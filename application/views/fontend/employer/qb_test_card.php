@@ -5,7 +5,7 @@
                                 <input class="attrValue" type="hidden" name="" id="cv_id" value="<?php echo $job_row->cv_id; ?>">
                                  <td ><?php echo $key; ?></td>
 
-                                <td ><?php echo $question->title; ?></td>
+                                <td ><?php echo $question['title']; ?></td>
 
                                 <td ><?php echo $question->titles; ?></td>
 
