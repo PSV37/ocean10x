@@ -2011,7 +2011,11 @@ class Employer extends MY_Employer_Controller
             $old_questions = explode('.', $old_question_data['questions']);
             $ques = explode(',', $up_date);
             array_merge($old_questions,$ques);
+            print_r($old_questions);
+            print_r($ques); die;
+            // print_r($ques);
             $test_data['questions'] = implode(',', $old_questions);
+            $test_data['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
             $this->Master_model->master_update($test_data, 'oceanchamp_tests',$where);
 
         }
