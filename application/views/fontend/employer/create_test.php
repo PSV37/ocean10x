@@ -201,34 +201,22 @@
             var checkedVals = $('.chkbx:checkbox:checked').map(function() {
                    return this.value;
                }).get();
-               var emails= (checkedVals.join(","));
-            // $("table > tbody > tr").each(function () {
-            //   var $tr = $(this);
-            //   if ($tr.find(".chkbx").is(":checked")) {
-            //     data.push({
-            //       value: $tr.find("#ques_id").val(),
-                  
-            //     });
-            //   }
-            // });
-            alert(emails);
-        //     console.clear();
-        //     console.log(JSON.stringify(data));
-        //     var data_arr = JSON.stringify(data);
-        //     $.ajax({
-        //       url: "<?php echo base_url();?>employer/add_to_test",
-        //       type: "POST",
-        //       data: {data_arr:data_arr,test_name:test_name},
-        //       // contentType:false,
-        //       // processData:false,
-        //        // dataType: "json",
-        //       success: function(data)
-        //       {
-        //         alert('Updated Successfully');
-        //         // window.location.reload();
-        //          // tracker_card(job_id);
-        //       }
-        // });
+               var data_arr= (checkedVals.join(","));
+
+            $.ajax({
+              url: "<?php echo base_url();?>employer/add_to_test",
+              type: "POST",
+              data: {data_arr:data_arr,test_name:test_name},
+              // contentType:false,
+              // processData:false,
+               // dataType: "json",
+              success: function(data)
+              {
+                alert('test added Successfully');
+                // window.location.reload();
+                 // tracker_card(job_id);
+              }
+        });
 
           // } else {
           //   txt = "You pressed Cancel!";
