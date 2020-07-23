@@ -1984,6 +1984,7 @@ class Employer extends MY_Employer_Controller
         );
             $data['questionbank'] = $this->Master_model->getMaster('questionbank', $where_all, $join_emp);
           
+          print_r($this->db->last_query());die;
              $this->load->view('fontend/employer/qb_test_card.php',$data);
         }
     }
