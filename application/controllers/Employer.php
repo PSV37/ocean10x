@@ -1995,7 +1995,14 @@ class Employer extends MY_Employer_Controller
         $test_name = $this->input->post('test_name');
         $up_date=json_decode($this->input->post('data_arr'));
 
-        print_r($up_date);
+       $test_data['test_name'] = $test_name;
+       $test_data['questions'] = $up_date[0]['value'];
+       $test_data['created_by'] = $this->session->userdata('company_profile_id');
+       $test_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
+
+       $this->Master_model->master_insert($test_data, 'oceanchamp_tests');
+        $this->load->view('fontend/employer/create_test', $data);
+       
 
     }
     public function save_questionbank($id = null)

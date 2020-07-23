@@ -125,7 +125,7 @@
             </div>
       </div>
        <span style="float: right; margin-top: 20px;"> 
-          <input  type="checkbox" name="check_all" id="checkAllchk">&nbsp; all
+          <!-- <input  type="checkbox" name="check_all" id="checkAllchk">&nbsp; all -->
             <button type="button" id="frwd_btn" class="btn btn-primary">Add </button>
         </span>
     </div>
