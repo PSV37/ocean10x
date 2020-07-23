@@ -1997,8 +1997,8 @@ class Employer extends MY_Employer_Controller
         $up_date = $this->input->post('data_arr');
         $employer_id = $this->session->userdata('company_profile_id');
         if (isset($test_name) && !empty($test_name)) {
-            $where['test_name']   = $test_name;
-            $old_question_data  = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where);
+            $where_all = "oceanchamp_tests.test_name='$test_name'";
+            $old_question_data  = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where_all);
             if (empty($$old_question_data)) {
                  $test_data['test_name'] = $test_name;
                    $test_data['company_id'] = $employer_id;
