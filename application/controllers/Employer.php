@@ -1964,6 +1964,29 @@ class Employer extends MY_Employer_Controller
 
     }
     
+    public function get_test_questions()
+    {
+        $subject = $this->input->post('subject');
+        $topic_id = $this->input->post('topic_id');
+        $subtopic_id = $this->input->post('subtopic_id');
+        $ques_type = $this->input->post('ques_type');
+        $level = $this->input->post('level');
+        if(!empty($subject) && !empty($topic_id) && !empty($subtopic_id) && !empty($ques_type) && !empty($level)) {
+
+            $where_all = "questionbank.ques_status='1' AND ques_created_by='$employer_id' and technical_id = '$subject' and topic_id = '$topic_id' and subtopic_id  = '$subtopic_id' and ques_type = '$ques_type' and level = '$level' ";
+        $join_emp  = array(
+            'skill_master' => 'skill_master.id=questionbank.technical_id |left outer',
+            'topic' => 'topic.topic_id=questionbank.topic_id |left outer',
+            'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |left outer',
+            'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |left outer',
+            'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |left outer',
+            'questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|LEFT OUTER'
+        );
+            $data['questionbank'] = $this->Master_model->getMaster('questionbank', $where_all, $join_emp);
+          
+             $this->load->view('fontend/employer/qb_test_card.php',$data);
+        }
+    }
     public function save_questionbank($id = null)
     {
 

@@ -33,7 +33,7 @@
             <div class="col-md-4">
               <div class="form-group">                                       
                <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
-                <select id="subject" name="technical_id" class="form-control"  onchange="getTopic(this.value)">
+                <select id="subject" name="technical_id" class="form-control select2"  onchange="getTopic(this.value)">
                   <option value="">Select Subject</option> 
                     <?php if (!empty($skill_master))
                        foreach($skill_master as $skill) 
@@ -47,7 +47,7 @@
             <div class="col-md-4">
               <div class="form-group">
                 <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
-                <select id="topic_id" name="topic_id" class="form-control" onchange="getSubtopic(this.value)">
+                <select id="topic_id" name="topic_id" class="form-control select2" onchange="getSubtopic(this.value)">
                   <option value="">Select Topic</option> 
                   <!-- <option value="1">HTML 5</option>  -->
                 </select> <?php echo form_error('topic_id'); ?>   
@@ -56,136 +56,94 @@
             <div class="col-md-4">
               <div class="form-group">
                 <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
-                <select id="subtopic_id" name="subtopic_id" class="form-control" onchange="getLineitem(this.value)">
+                <select id="subtopic_id" name="subtopic_id" class="form-control select2" >
                 </select> <?php echo form_error('subtopic_id'); ?>   
               </div>
             </div>               
           </div>
           <div class="row">
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Line Item(Level 1)<span class="required">*</span></label>
-                <select id="lineitem_id" name="lineitem_id" class="form-control" onchange="getLineitemlevel(this.value)">
-                </select>  <?php echo form_error('lineitem_id'); ?>   
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                  <label for="exampleInputEmail1">Line Item(Level 2)<span class="required">*</span></label>
-                  <select id="lineitemlevel_id" name="lineitemlevel_id" class="form-control">
-                  </select>  <?php echo form_error('lineitemlevel_id'); ?>   
-              </div>
-            </div>
+           
+            
             <div class="col-md-4">
               <div class="form-group">
                 <label for="exampleInputEmail1">Level<span class="required">*</span></label>
-                  <select name="level" class="form-control">                                     
+                  <select name="level" id="level" class="form-control select2">                                     
                     <option value="Expert"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Expert')echo "selected";?>>Expert</option>
                     <option value="Medium"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Medium')echo "selected";?>>Medium</option>
                     <option value="Beginner"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Beginner')echo "selected";?>>Beginner</option>
                   </select> <?php echo form_error('level'); ?>   
               </div>
             </div>
-          </div> 
-          <div class="row">
+          
+          
             <div class="col-md-4">
               <div class="form-group">
                 <label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
-                <select name="ques_type" class="form-control" type="text">
+                <select name="ques_type" id="ques_type" class="form-control select2" type="text" onchange="get_questuions()";>
                   <option value="MCQ"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ')echo "selected";?>>MCQ</option>
                     <option value="Subjective"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Subjective')echo "selected";?>>Subjective</option>
                     <option value="Practical"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Practical')echo "selected";?>>Practical</option>
                 </select> <?php echo form_error('ques_type'); ?>   
               </div>
             </div>
-          </div>
+         </div>
              
              
-    <div class="row">
-       <div class="col-md-12 form-group">
-        <label for="comment">Question </label>
-        <textarea class="form-control" name="question" rows="5" id="comment"   ><?php if (!empty($edit_questionbank_info)) echo $row['question'];?></textarea> <?php echo form_error('question'); ?>   
-      </div>
-    
-       <div class="col-md-12 form-group">
-        <label for="comment">Option 1:
-        </label>
-        <textarea class="form-control" name="option1" id="option1" rows="5" id="comment"  ><?php if (!empty($edit_questionbank_info)) echo $row['option1'];?></textarea> <?php echo form_error('option1'); ?>   
-      </div>
-    
-       <div class="col-md-12 form-group">
-        <label for="comment">Option 2:</label>
-        <textarea name="option2" id="option2" class="form-control" rows="5" id="comment"  ><?php if (!empty($edit_questionbank_info)) echo $row['option2'];?></textarea> <?php echo form_error('option2'); ?>   
-      </div>
-       <div class="col-md-12 form-group">
-        <label for="comment">Option 3:</label>
-        <textarea class="form-control" name="option3" id="option3" rows="5" id="comment"  ><?php if (!empty($edit_questionbank_info)) echo $row['option3'];?></textarea> <?php echo form_error('option3'); ?>   
-      </div>
-       <div class="col-md-12 form-group">
-        <label for="comment">Option 4:</label>
-        <textarea class="form-control" name="option4" id="option4" rows="5" id="comment"  ><?php if (!empty($edit_questionbank_info)) echo $row['option4'];?></textarea> <?php echo form_error('option4'); ?>   
-      </div>
-    </div>  
+     
       <div class="box-body">
-                <input type="hidden" name="is_admin" value="1" class="form-control" id="checkboxjs"> 
-                </div>  
-     <div class="row">
-        <div class="col-md-4">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Correct Answer<span class="required">*</span></label>
-              <div class = "panel-body_add">
-                <div class="col-md-12">
-                  <div class="optionbox-1 col-md-6">
-                    <li style="position:relative;"><span style="position:absolute;font-weight: 700;">1.</span>
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox" value="1" class="btn-default1"  name="correct_answer[]">
-                          <span>option1</span>
-                        </label>
-                      </div>
-                    </li>
-                    <li style="position:relative;"><span style="position:absolute;font-weight: 700;">3.</span>
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox" value="3" class="btn-default1"  name="correct_answer[]">
-                          <span>option3</span>
-                        </label>
-                      </div>
-                    </li>
-                  </div>
-                  <div class="optionbox-2 col-md-6"> 
-                    <li style="position:relative;"><span style="position:absolute;font-weight: 700;">2.</span>
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox" value="2" class="btn-default1"   name="correct_answer[]">
-                          <span>option2</span>
-                        </label>
-                      </div>
-                    </li>
-                    <li style="position:relative;"><span style="position:absolute;font-weight: 700;">4.</span>
-                      <div class="checkbox">
-                        <label>
-                        <input type="checkbox" value="4" class="btn-default1"  name="correct_answer[]">
-                        <span>option4</span>
-                        </label>
-                      </div>
-                    </li>
-                  </div>
-                </div>
-              <!-- </ul> -->
-              </div>
-          </div>
-        </div>
-        <div class="col-md-4"></div>
-          <div class="col-md-4" style="text-align:right;">
-            <button id="submit" type="Submit" class="save_question">Save question</button>
-          </div>
+        <div class="box" >
+               <div class="card content">
+                     <!-- <div class="front"> -->
+                      <div class="following-info">
+                         <table class="table table-borderless" id="myTable">
+                            <thead>
+                              <tr>
+
+                                <th scope="col">Sr No</th>
+                                <th scope="col">Line Item 1</th>
+                                <th scope="col">Line Item 2</th>
+                                <th scope="col">Question</th>
+                                <th scope="col">Action</th>
+                               
+                              </tr>
+                            </thead>
+                            <tbody>
+                             
+                            </tbody>
+                          </table>
+                        </div>
+                     <!-- </div> -->
+                   </div>
+               
+            </div>
       </div>
     </div>
   </form>
   </div>
 </div>
-
+<script>
+  function get_questuions(job_id)
+  {
+   var subject = $('#subject').val();
+   var topic_id = $('#topic_id').val();
+   var subtopic_id = $('#subtopic_id').val();
+   var ques_type = $('#ques_type').val();
+   var level = $('#level').val();
+    $.ajax({
+              url: "<?php echo base_url();?>employer/get_test_questions",
+              type: "POST",
+              data: {subject:subject,topic_id:topic_id,subtopic_id:subtopic_id,ques_type:ques_type,level:level},
+              // contentType:false,
+              // processData:false,
+               // dataType: "json",
+              success: function(data)
+              {
+                $('tbody').html(data);
+              }
+        });
+       
+  }
+</script>
 
 <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>assets/js/bootstrap.js" type="text/javascript"></script>
