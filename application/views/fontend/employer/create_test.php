@@ -155,28 +155,33 @@
 <script src="<?php echo base_url() ?>asset/tokenjs/typeahead.bundle.min.js"></script>
 <script src="<?php echo base_url() ?>asset/js/search.js"></script>
 <script>
-   $('#tokenfield').tokenfield({
-     autocomplete: {
-       source: "<?php echo base_url('Employer/search_city'); ?>",
-       delay: 100,
-       minLength: 2
-     },
+ function getTopic(id){
+        if(id){
+          $.ajax({
+            type:'POST',
+            url:'<?php echo base_url();?>employer/gettopic',
+            data:{id:id},
+            success:function(res){
+              $('#topic_id').html(res);
+            }
+            
+          }); 
+          }
+       }
+       function getSubtopic(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>employer/getsubtopic',
+                data:{id:id},
+                success:function(res){
+                    $('#subtopic_id').html(res);
+                }
+                
+            }); 
+          }
    
-     showAutocompleteOnFocus: true,
-   
-   });
-   // to avoid duplications
-   $('#tokenfield').on('tokenfield:createtoken', function (event) {
-     var existingTokens = $(this).tokenfield('getTokens');
-   
-     $.each(existingTokens, function(index, token) {
-       
-       if (token.value.toLowerCase() === event.attrs.value.toLowerCase())
-             event.preventDefault();
-   
-     });
-   });
-   
+    }
   </script> 
 <script>
    $('.select2').select2();
