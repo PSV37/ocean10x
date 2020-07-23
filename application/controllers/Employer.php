@@ -1996,7 +1996,7 @@ class Employer extends MY_Employer_Controller
         $test_id = $this->input->post('test_id');
         $up_date = $this->input->post('data_arr');
         $employer_id = $this->session->userdata('company_profile_id');
-        if (isset($test_name)) {
+        if (isset($test_name) && !empty($test_name)) {
            $test_data['test_name'] = $test_name;
            $test_data['company_id'] = $employer_id;
            $test_data['questions'] = $up_date;
