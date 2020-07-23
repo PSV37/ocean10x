@@ -1921,6 +1921,48 @@ class Employer extends MY_Employer_Controller
         $this->load->view('fontend/employer/add_question', $data);
         
     }
+
+    public function create_test()
+    {
+          $this->session->unset_userdata('activemenu');
+        $data['activemenu'] = 'questionbank';
+        $this->session->set_userdata($data);
+        
+        $employer_id = $this->session->userdata('company_profile_id');
+        
+        $where_cn             = "status=1";
+        $data['skill_master'] = $this->Master_model->getMaster('skill_master', $where_cn);
+        
+        //$where_opt= "options.status=1";
+        $data['options'] = $this->Master_model->getMaster('options');
+        
+        $where_state   = "topic.topic_status=1";
+        $data['topic'] = $this->Master_model->getMaster('topic', $where_state);
+        
+        $where_subtopic   = "subtopic.subtopic_status='1'";
+        $data['subtopic'] = $this->Master_model->getMaster('subtopic', $where_subtopic);
+        
+        $where_lineitem   = "lineitem.lineitem_status='1'";
+        $data['lineitem'] = $this->Master_model->getMaster('lineitem', $where_lineitem);
+
+        $where_lineitemlevel   = "lineitemlevel.lineitemlevel_status='1'";
+        $data['lineitemlevel'] = $this->Master_model->getMaster('lineitemlevel', $where_lineitemlevel);
+        
+        $where_all = "questionbank.ques_status='1' AND ques_created_by='$employer_id'";
+        $join_emp  = array(
+            'skill_master' => 'skill_master.id=questionbank.technical_id |left outer',
+            'topic' => 'topic.topic_id=questionbank.topic_id |left outer',
+            'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |left outer',
+            'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |left outer',
+            'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |left outer',
+            'questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|LEFT OUTER'
+        );
+        
+        $data['questionbank'] = $this->Master_model->getMaster('questionbank', $where_all, $join_emp);
+
+        $this->load->view('fontend/employer/create_test', $data);
+
+    }
     
     public function save_questionbank($id = null)
     {
