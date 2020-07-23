@@ -3,6 +3,7 @@
                  
                 $questions = explode(',',$question['questions']);
                 foreach ($questions as $row) {
+                  print_r($row);die;
                   $where['ques_id']   = $row;
                    $join_emp  = array(
                   'skill_master' => 'skill_master.id=questionbank.technical_id |left outer',
@@ -30,7 +31,7 @@
                                 <td ><?php echo $question_data['level']; ?></td>
 
                                
-                               
+
                                    
                              
 
