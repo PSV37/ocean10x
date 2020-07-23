@@ -454,7 +454,7 @@ textarea#comment {
                   
             
                      
-                     <select class="form-control select2" id="job_select" onchange="get_card(this.value);">
+                     <select class="form-control select2" id="test_id" onchange="get_card(this.value);">
                      <?php  if (isset($oceanchamp_tests) && !empty($oceanchamp_tests)) {
                         foreach ($oceanchamp_tests as $row) { ?>
                           <option value="<?php echo $row['test_id']; ?>"><?php echo $row['test_name']; ?></option>
@@ -529,113 +529,13 @@ textarea#comment {
 <script>
    $('.select2').select2();
 </script>
-<script>
-  $(".save").click(function() {
-     var job_id = $('#job_select').val();
-//    var id = $(".table table-borderless").closest("tr");
-// alert (id); // Find the text
-   var ary = [];
-        $(function () {
-            $('.table-borderless tr').each(function (a, b) {
-                var value = $('#cv_id', b).val();
-                var name = $("#name" , b).val();
-                var email = $("#email", b).val();
-                var mobile = $("#mobile", b).val();
-                var ctc = $("#ctc", b).val();
-                var exp = $("#exp", b).val();
-                var notice = $("#notice", b).val();
-                var edu = $("#edu", b).val();
-                var status = $("#status", b).val();
-                var comment = $("#comment", b).val();
-                var action = $("#action", b).val();
-                var reminder = $("#reminder", b).val();
-                ary.push({name:name,email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,comment:comment,value:value,action:action,reminder:reminder});
-               
-            });
-            // alert(JSON.stringify( ary));
-           var data_arr = JSON.stringify(ary);
-            $.ajax({
-              url: "<?php echo base_url();?>employer/update_cv",
-              type: "POST",
-              data: {data_arr:data_arr},
-              // contentType:false,
-              // processData:false,
-               // dataType: "json",
-              success: function(data)
-              {
-                alert('Updated Successfully');
-                // window.location.reload();
-                 tracker_card(job_id);
-              }
-        });
-            // alert(ary);
-        });
-});
-  $(function(){
-      var job_id = $('#job_select').val();
-  $("#frwd_btn").on("click", function() {
-    if (confirm("Selected Rows will be updated in external tracker!!")) {
-            var data = [];
-            $("table > tbody > tr").each(function () {
-              var $tr = $(this);
-              if ($tr.find(".chkbx").is(":checked")) {
-                data.push({
-                  value: $tr.find("#cv_id").val(),
-                  name: $tr.find("#name").val(),
-                  email: $tr.find("#email").val(),
-                  mobile: $tr.find("#mobile").val(),
-                  ctc: $tr.find("#ctc").val(),
-                  exp: $tr.find("#exp").val(),
-                  notice: $tr.find("#notice").val(),
-                  edu: $tr.find("#edu").val(),
-                  status: $tr.find("#status").val(),
-                  action: $tr.find("#action").val(),
-                  comment: $tr.find("#comment").val(),
-                  reminder: $tr.find("#reminder").val(),
-                  update: $tr.find("#update").val(),
-                });
-              }
-            });
-            console.clear();
-            console.log(JSON.stringify(data));
-            var data_arr = JSON.stringify(data);
-            $.ajax({
-              url: "<?php echo base_url();?>employer/update_external",
-              type: "POST",
-              data: {data_arr:data_arr},
-              // contentType:false,
-              // processData:false,
-               // dataType: "json",
-              success: function(data)
-              {
-                alert('Updated Successfully');
-                // window.location.reload();
-                 tracker_card(job_id);
-              }
-        });
 
-          } else {
-            txt = "You pressed Cancel!";
-          }
-    
-
-    
-  });
-});
-
-</script>
 
 <script>
    $( document ).ready(function() {
-     var job_id = $('#job_select').val();
-     tracker_card(job_id);
-    var url = '<?php echo base_url(); ?>employer/add_new_cv/'+job_id;
-    var export_url = '<?php echo base_url(); ?>employer/export_internal_tracker/'+job_id;
-    // alert (url);
-    $('#add_cv').attr('href',url);
- 
-    $('#export').attr('href',export_url);
-
+     var test_id = $('#test_id').val();
+     get_card(test_id);
+    
 
 
 });
