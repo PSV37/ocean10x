@@ -11,7 +11,7 @@
 
                                 <td ><?php echo $question['question']; ?></td>
 
-                                <td><input type="checkbox" id="update" class="chkbx" name=""></td>
+                                <td><input type="checkbox" id="update" value="<?php echo $question['ques_id']; ?>" class="chkbx" name=""></td>
                                 
                                    
                              

@@ -196,38 +196,43 @@
      $(function(){
       var test_name = $('#test_name').val();
   $("#frwd_btn").on("click", function() {
-    if (confirm("Selected Rows will be updated in external tracker!!")) {
-            var data = [];
-            $("table > tbody > tr").each(function () {
-              var $tr = $(this);
-              if ($tr.find(".chkbx").is(":checked")) {
-                data.push({
-                  value: $tr.find("#ques_id").val(),
+    // if (confirm("Selected Rows will be updated in external tracker!!")) {
+    //         var data = [];
+            var checkedVals = $('.chkbx:checkbox:checked').map(function() {
+                   return this.value;
+               }).get();
+               var emails= (checkedVals.join(","));
+            // $("table > tbody > tr").each(function () {
+            //   var $tr = $(this);
+            //   if ($tr.find(".chkbx").is(":checked")) {
+            //     data.push({
+            //       value: $tr.find("#ques_id").val(),
                   
-                });
-              }
-            });
-            console.clear();
-            console.log(JSON.stringify(data));
-            var data_arr = JSON.stringify(data);
-            $.ajax({
-              url: "<?php echo base_url();?>employer/add_to_test",
-              type: "POST",
-              data: {data_arr:data_arr,test_name:test_name},
-              // contentType:false,
-              // processData:false,
-               // dataType: "json",
-              success: function(data)
-              {
-                alert('Updated Successfully');
-                // window.location.reload();
-                 tracker_card(job_id);
-              }
-        });
+            //     });
+            //   }
+            // });
+            alert(emails);
+        //     console.clear();
+        //     console.log(JSON.stringify(data));
+        //     var data_arr = JSON.stringify(data);
+        //     $.ajax({
+        //       url: "<?php echo base_url();?>employer/add_to_test",
+        //       type: "POST",
+        //       data: {data_arr:data_arr,test_name:test_name},
+        //       // contentType:false,
+        //       // processData:false,
+        //        // dataType: "json",
+        //       success: function(data)
+        //       {
+        //         alert('Updated Successfully');
+        //         // window.location.reload();
+        //          // tracker_card(job_id);
+        //       }
+        // });
 
-          } else {
-            txt = "You pressed Cancel!";
-          }
+          // } else {
+          //   txt = "You pressed Cancel!";
+          // }
     
 
     
