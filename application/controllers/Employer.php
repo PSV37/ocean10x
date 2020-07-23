@@ -1997,13 +1997,18 @@ class Employer extends MY_Employer_Controller
         $up_date = $this->input->post('data_arr');
         $employer_id = $this->session->userdata('company_profile_id');
         if (isset($test_name) && !empty($test_name)) {
-           $test_data['test_name'] = $test_name;
-           $test_data['company_id'] = $employer_id;
-           $test_data['questions'] = $up_date;
-           $test_data['created_by'] = $this->session->userdata('company_profile_id');
-           $test_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
+            $where['test_name']   = $test_name;
+            $old_question_data  = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where);
+            if (empty($$old_question_data)) {
+                 $test_data['test_name'] = $test_name;
+                   $test_data['company_id'] = $employer_id;
+                   $test_data['questions'] = $up_date;
+                   $test_data['created_by'] = $this->session->userdata('company_profile_id');
+                   $test_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
 
-           $this->Master_model->master_insert($test_data, 'oceanchamp_tests');
+                $this->Master_model->master_insert($test_data, 'oceanchamp_tests');
+            }
+          
         }
         elseif (isset($test_id) && !empty($test_id)) {
             $where['test_id']   = $test_id;
@@ -2026,10 +2031,35 @@ class Employer extends MY_Employer_Controller
 
 
     }
+
+    public function show_saved_tests()
+    {
+        $employer_id = $this->session->userdata('company_profile_id');
+         $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id'";
+
+            $data['oceanchamp_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where_all);
+            $this->load->view('employer/saved_tests',$data)
+    }
+
+    public function get_test_card()
+    {
+        $employer_id = $this->session->userdata('company_profile_id');
+        $test_id = $this->input->post('test_id');
+       
+        if(!empty($test_id)) {
+
+            $where_all = "oceanchamp_tests.status='1' AND oceanchamp_test.company_id='$employer_id' and oceanchamp_tests.test_id = '$test_id'";
+        
+            $data['test_questions'] = $this->Master_model->getMaster('questionbank', $where_all);
+          
+          // print_r($this->db->last_query());die;
+             $this->load->view('fontend/employer/test_card.php',$data);
+        }
+    }
     public function save_questionbank($id = null)
     {
 
-         $this->form_validation->set_rules('technical_id', 'Subject', 'required|');
+        $this->form_validation->set_rules('technical_id', 'Subject', 'required|');
         $this->form_validation->set_rules('topic_id', 'Main Topic', 'required');
         $this->form_validation->set_rules('subtopic_id', 'Sub Topic','required');
         $this->form_validation->set_rules('lineitem_id', 'Line Item Level 1','required');
