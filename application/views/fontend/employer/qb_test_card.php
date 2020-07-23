@@ -2,7 +2,7 @@
                <?php $key = 1; if (!empty($questionbank)): foreach ($questionbank as $question) : ?>
                  
                               <tr>
-                                <input class="attrValue" type="hidden" name="" id="cv_id" value="<?php echo $job_row->cv_id; ?>">
+                                <input class="attrValue" type="hidden" name="" id="ques_id" value="<?php echo $question['ques_id']; ?>">
                                  <td ><?php echo $key; ?></td>
 
                                 <td ><?php echo $question['title']; ?></td>

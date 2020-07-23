@@ -1989,6 +1989,15 @@ class Employer extends MY_Employer_Controller
              $this->load->view('fontend/employer/qb_test_card.php',$data);
         }
     }
+
+    public function add_to_test()
+    {
+        $test_name = $this->input->post('test_name');
+        $up_date=json_decode($this->input->post('data_arr'));
+
+        print_r($up_date);
+
+    }
     public function save_questionbank($id = null)
     {
 

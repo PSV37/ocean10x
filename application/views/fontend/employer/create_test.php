@@ -86,6 +86,13 @@
                 </select> <?php echo form_error('ques_type'); ?>   
               </div>
             </div>
+
+             <div class="col-md-4">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Test name<span class="required">*</span></label>
+               <input type="text" class="form-control" id="test_name" name="">
+              </div>
+            </div>
          </div>
              
              
@@ -117,6 +124,10 @@
                
             </div>
       </div>
+       <span style="float: right; margin-top: 20px;"> 
+          <input  type="checkbox" name="check_all" id="checkAllchk">&nbsp; all
+            <button type="button" id="frwd_btn" class="btn btn-primary">Add </button>
+        </span>
     </div>
   </form>
   </div>
@@ -145,7 +156,7 @@
   }
 </script>
 
-<script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.js" type="text/javascript"></script>
+<!-- <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>assets/js/bootstrap.js" type="text/javascript"></script>
 
 
@@ -153,7 +164,7 @@
 <script src="<?php echo base_url() ?>asset/js/jquery-ui.js"></script>
 <script src="<?php echo base_url() ?>asset/tokenjs/bootstrap-tokenfield.js"></script>
 <script src="<?php echo base_url() ?>asset/tokenjs/typeahead.bundle.min.js"></script>
-<script src="<?php echo base_url() ?>asset/js/search.js"></script>
+<script src="<?php echo base_url() ?>asset/js/search.js"></script> -->
 <script>
  function getTopic(id){
         if(id){
@@ -182,30 +193,51 @@
           }
    
     }
+     $(function(){
+      var test_name = $('#test_name').val();
+  $("#frwd_btn").on("click", function() {
+    if (confirm("Selected Rows will be updated in external tracker!!")) {
+            var data = [];
+            $("table > tbody > tr").each(function () {
+              var $tr = $(this);
+              if ($tr.find(".chkbx").is(":checked")) {
+                data.push({
+                  value: $tr.find("#ques_id").val(),
+                  
+                });
+              }
+            });
+            console.clear();
+            console.log(JSON.stringify(data));
+            var data_arr = JSON.stringify(data);
+            $.ajax({
+              url: "<?php echo base_url();?>employer/add_to_test",
+              type: "POST",
+              data: {data_arr:data_arr,test_name:test_name},
+              // contentType:false,
+              // processData:false,
+               // dataType: "json",
+              success: function(data)
+              {
+                alert('Updated Successfully');
+                // window.location.reload();
+                 tracker_card(job_id);
+              }
+        });
+
+          } else {
+            txt = "You pressed Cancel!";
+          }
+    
+
+    
+  });
+});
   </script> 
 <script>
    $('.select2').select2();
 </script>
-<script>
-   function check_other(value)
-   {
-    var x1 = document.getElementById("other_terxtbx");
-     // var x = document.getElementById("training_title");
-     if (value=='other') 
-   {
-          $('#other_terxtbx').show();
-   }
- 
-   else
-   {
-       $('#other_terxtbx').hide();
-      
-   
-     // x1.value = value;
-   }
-     
-   }
-</script>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/additional-methods.js"></script>
