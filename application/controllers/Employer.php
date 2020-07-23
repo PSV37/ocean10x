@@ -1999,7 +1999,7 @@ class Employer extends MY_Employer_Controller
         if (isset($test_name)) {
            $test_data['test_name'] = $test_name;
            $test_data['company_id'] = $employer_id;
-           $test_data['questions'] = $up_date[0]->value;
+           $test_data['questions'] = $up_date;
            $test_data['created_by'] = $this->session->userdata('company_profile_id');
            $test_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
 
