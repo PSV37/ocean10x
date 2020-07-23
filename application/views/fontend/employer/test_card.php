@@ -3,9 +3,10 @@
                  
                 $questions = explode(',',$question['questions']);
                 print_r($questions);
+                // $i=0;
                 foreach ($questions as $row) {
-                  print_r($row);die;
-                  $where['ques_id']   = $row;
+                  // print_r($row);die;
+                  $where['ques_id']   = $row[$i];
                    $join_emp  = array(
                   'skill_master' => 'skill_master.id=questionbank.technical_id |left outer',
                   'topic' => 'topic.topic_id=questionbank.topic_id |left outer',
@@ -38,7 +39,7 @@
 
                            
                <?php
-
+                  $i++;
                   $key++;
                 }
                     endforeach;  
