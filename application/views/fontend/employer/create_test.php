@@ -19,7 +19,27 @@ button#frwd_btn {
     background-color: #18c5bd;
     border: none;
 }
-   
+.modal-footer {
+    /* max-height: 13px; */
+    /* background-color: #c4ebe8; */
+    margin-top: 75px;
+    margin-left: 40px;
+}
+   button.btn.btn-default {
+    width: 100px;
+}
+.btn-default {
+    border: none;
+    font-size: 20px;
+}
+.btn {
+    padding: 0px;
+}
+.btn-default {
+    color: #fff;
+    background-color: #18c5bd;
+    border: none;
+}
 </style>
 
  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">
