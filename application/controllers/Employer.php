@@ -2012,7 +2012,7 @@ class Employer extends MY_Employer_Controller
             $ques = explode(',', $up_date);
             array_merge($old_questions,$ques);
             $test_data['questions'] = implode(',', $old_questions);
-            $this->Master_model->master_update($test_data, 'oceanchamp_tests');
+            $this->Master_model->master_update($test_data, 'oceanchamp_tests',$where);
 
         }
         
