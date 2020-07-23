@@ -2010,10 +2010,10 @@ class Employer extends MY_Employer_Controller
             $old_question_data  = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where);
             $old_questions = explode('.', $old_question_data['questions']);
             $ques = explode(',', $up_date);
-            $new_arr = array_merge($old_questions,$ques);
+            $new_arr = array_unique (array_merge($old_questions,$ques));
             print_r($old_questions);
             print_r($ques); 
-            print_r($new_arr);die;
+            // print_r($new_arr);die
             $test_data['questions'] = implode(',', $$new_arr);
             $test_data['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
             $this->Master_model->master_update($test_data, 'oceanchamp_tests',$where);
@@ -2022,7 +2022,7 @@ class Employer extends MY_Employer_Controller
         
 
       
-        $this->load->view('fontend/employer/create_test', $data);
+        redirect('employer/create_test');
 
 
     }
