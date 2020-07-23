@@ -457,11 +457,9 @@ textarea#comment {
                      <select class="form-control select2" id="job_select" onchange="get_card(this.value);">
                      <?php  if (isset($oceanchamp_tests) && !empty($oceanchamp_tests)) {
                         foreach ($oceanchamp_tests as $row) { ?>
-                          <option <?php if ($this->session->userdata('job_id') == $row->job_post_id)   {
-                       echo "selected"; 
-                     } ?> value="<?php echo $row['test_id']; ?>"><?php echo $row['test_name']; ?></option>
+                          <option value="<?php echo $row['test_id']; ?>"><?php echo $row['test_name']; ?></option>
                      <?php   }
-                     } $this->session->unset_userdata('job_id'); ?>
+                     } ?>
                      </select>
                        
                  
