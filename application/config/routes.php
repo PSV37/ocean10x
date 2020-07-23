@@ -136,6 +136,7 @@ $route['employer/non-selected-job']="employer/non_selected_job";
 $route['employer/profile-setting']="employer/profile_setting";
 $route['employer/all-questions']="employer/all_questions";
 $route['employer/add-question']="employer/add_new_question";
+$route['employer/create-test']="employer/create_test";
 $route['employer/deactivated-employee']="employer/deactivated_employees";
 $route['employer/suspended-employee']="employer/suspended_employees";
  $route['employer/superadmin']="employer/superadmin";

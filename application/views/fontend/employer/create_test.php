@@ -26,7 +26,7 @@
             ?>" method="post|get">
         <div class="col-md-9 add-question">
           <div class="header-bookbank">
-            Add Question
+           Create Test
           </div>
          
           <div class="row">
