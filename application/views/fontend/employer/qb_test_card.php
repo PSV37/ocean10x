@@ -7,9 +7,9 @@
 
                                 <td ><?php echo $question['title']; ?></td>
 
-                                <td ><?php echo $question->titles; ?></td>
+                                <td ><?php echo $question['titles']; ?></td>
 
-                                <td ><?php echo $question->question; ?></td>
+                                <td ><?php echo $question['question']; ?></td>
 
                                 <td><input type="checkbox" id="update" class="chkbx" name=""></td>
                                 
