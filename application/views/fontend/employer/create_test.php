@@ -47,13 +47,18 @@ button#question_add {
     border-radius: 55px;
     background-color: #18c5bd;
     border: none;
-    margin-top: -41px;
+    margin-top: -50px;
 }
 .radio-inline input[type=radio] {
     position: absolute;
     margin-top: 4px\9;
     margin-left: -46px;
     /* margin-bottom: -59px; */
+}
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-top: 15px;
 }
 </style>
 
