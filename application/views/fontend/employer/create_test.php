@@ -333,26 +333,7 @@ button#question_add {
                $('#question_id').val(data_arr);
                 $('#add_test').modal('show');
 
-        //     $.ajax({
-        //       url: "<?php echo base_url();?>employer/add_to_test",
-        //       type: "POST",
-        //       data: {data_arr:data_arr,test_name:test_name},
-        //       // contentType:false,
-        //       // processData:false,
-        //        // dataType: "json",
-        //       success: function(data)
-        //       {
-        //         alert('test added Successfully');
-        //         // window.location.reload();
-        //          // tracker_card(job_id);
-        //       }
-        // });
-
-          // } else {
-          //   txt = "You pressed Cancel!";
-          // }
-    
-
+      
     
   });
 });

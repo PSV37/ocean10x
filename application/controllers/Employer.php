@@ -1974,7 +1974,7 @@ class Employer extends MY_Employer_Controller
         $level = $this->input->post('level');
         if(!empty($subject) && !empty($topic_id) && !empty($subtopic_id) && !empty($ques_type) && !empty($level)) {
 
-            $where_all = "questionbank.ques_status='1' AND ques_created_by='$employer_id' and questionbank.technical_id = '$subject' and questionbank.topic_id = '$topic_id' and questionbank.subtopic_id  = '$subtopic_id' and questionbank.ques_type = '$ques_type' and questionbank.level = '$level' ";
+            $where_all = "questionbank.ques_status='1' AND ques_created_by='$employer_id' and questionbank.technical_id = '$subject' and questionbank.topic_id = '$topic_id' and questionbank.subtopic_id  = '$subtopic_id' and questionbank.ques_type = '$ques_type' and questionbank.level = '$level' AND time_for_question != '' ";
         $join_emp  = array(
             'skill_master' => 'skill_master.id=questionbank.technical_id |left outer',
             'topic' => 'topic.topic_id=questionbank.topic_id |left outer',
