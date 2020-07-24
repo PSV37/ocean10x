@@ -6,6 +6,7 @@
                 $i=0;
                 foreach ($questions as $row) {
                   print_r($row);
+                  print_r($i);
                   $where['ques_id']   = $row[$i];
                    $join_emp  = array(
                   'skill_master' => 'skill_master.id=questionbank.technical_id |left outer',
