@@ -21,7 +21,7 @@ button#frwd_btn {
 }
 .modal-footer {
     /* max-height: 13px; */
-    /* background-color: #c4ebe8; */
+     background-color: #c4ebe8; 
     margin-top: 75px;
     margin-left: 40px;
 }
@@ -97,13 +97,13 @@ button#question_add {
             <div class="col-md-4">
 
               <label class="radio-inline">
-                <input type="radio" name="optradio">Option 2
+                <input type="radio" data-toggle="modal" data-target="#exampleModalCenter2" name="optradio">Option 2
               </label>
             </div>
                <div class="col-md-4">
 
               <label class="radio-inline">
-                <input type="radio" name="optradio">Option 3
+                <input type="radio" data-toggle="modal" data-target="#exampleModalCenter3" name="optradio">Option 3
               </label>
            </div>
            
@@ -247,7 +247,15 @@ button#question_add {
                </div>
                </div>
             </div>
-           
+           <div class="col-md-12">
+               <div class="row">
+             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
+                  <label class="mdl-textfield__label" for="sample3">Total Time For the Test:</label><br>
+                 
+               <input type="text" class="form-control" readonly style="border: none;" id="test_time" name="test_time">
+               </div>
+            </div>
+         </div>
 
         
          <!--  <p>This is a small modal.</p> -->
@@ -397,8 +405,16 @@ button#question_add {
                }).get();
       
             alert(checkedValsofname);
-            // var myNameArray =  cvs_name.split(',');
+            var myNameArray =  checkedValsofname.split(',');
+
+            $.each(myNameArray, function (a, b) {
+                sum = sum + b;
+            });
+
+            alert(sum);
+             $('#test_time').val(sum);
                 $('#add_test').modal('show');
+               
 
       
     
