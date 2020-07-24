@@ -2,7 +2,7 @@
                <?php $key = 1; if (!empty($test_questions)): foreach ($test_questions as $question) : 
                  
                 $questions = explode(',',$question['questions']);
-                print_r($questions);
+                // print_r($questions);
                 $i=0;
                 foreach ($questions as $row) {
                   // print_r($row);
