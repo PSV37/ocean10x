@@ -106,7 +106,7 @@ input.select2-search__field {
              <div class="col-md-4">
               <div class="form-group">
                 <label for="exampleInputEmail1">Time For the question (sec)<span class="required">*</span></label>
-                <input type="number" max="60" min="1" class="form-control" name="time">
+                <input type="number" max="60" min="1" class="form-control" maxlength="2" name="time">
               </div>
             </div>
           </div>
