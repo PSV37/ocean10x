@@ -118,7 +118,7 @@ input.select2-search__field {
          </div>
           <div class="row">
             <div class="col-md-4">
-              <div class="form-group">                                       
+              <div class="form-group technical_id">                                       
                <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
                 <select id="subject" name="technical_id" class="form-control select2"  onchange="getTopic(this.value)">
                   <option value="">Select Subject</option> 
@@ -132,7 +132,7 @@ input.select2-search__field {
               </div>
             </div>
             <div class="col-md-4">
-              <div class="form-group">
+              <div class="form-group topic_id">
                 <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
                 <select id="topic_id" name="topic_id" class="form-control select2" onchange="getSubtopic(this.value)">
                   <option value="">Select Topic</option> 
@@ -141,7 +141,7 @@ input.select2-search__field {
               </div>
             </div>
             <div class="col-md-4">
-              <div class="form-group">
+              <div class="form-group subtopic_id">
                 <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
                 <select id="subtopic_id" name="subtopic_id" class="form-control select2" onchange="get_questuions();" >
                 </select> <?php echo form_error('subtopic_id'); ?>   
@@ -152,7 +152,7 @@ input.select2-search__field {
            
             
             <div class="col-md-4">
-              <div class="form-group">
+              <div class="form-group level">
                 <label for="exampleInputEmail1">Level<span class="required">*</span></label>
                   <select name="level" onchange="get_questuions();" id="level" class="form-control select2">                                     
                     <option value="Expert"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Expert')echo "selected";?>>Expert</option>
@@ -164,7 +164,7 @@ input.select2-search__field {
           
           
             <div class="col-md-4">
-              <div class="form-group">
+              <div class="form-group ques_type">
                 <label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
                 <select name="ques_type" id="ques_type" class="form-control select2" type="text" onchange="get_questuions();">
                   <option value="MCQ"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ')echo "selected";?>>MCQ</option>
@@ -472,7 +472,34 @@ function sum(input){
  $("#js").validate (  
 
 {
+ errorPlacement: function(error, element) {
+             if (element.attr("name") == "technical_id" )
+                 error.insertAfter(".technical_id ");
+               else if (element.attr("name") == "topic_id" ) 
+                 error.insertAfter(".topic_id");
 
+               else if (element.attr("name") == "subtopic_id"  ) 
+                 error.insertAfter(".subtopic_id");
+
+               else if (element.attr("name") == "lineitem_id" ) 
+                 error.insertAfter(".lineitem_id");
+
+               else if (element.attr("name") == "lineitemlevel_id" ) 
+                 error.insertAfter(".lineitemlevel_id");
+
+              else if (element.attr("name") == "level" ) 
+                 error.insertAfter(".level");
+
+              else if (element.attr("name") == "ques_type" ) 
+                 error.insertAfter(".ques_type");
+
+              
+            
+         else
+       error.insertAfter(element);
+    
+   
+       },
 rules:{
 
 
@@ -518,6 +545,9 @@ required: true
 required: true
 
 },
+
+
+
 
 
 'correct_answer[]': {required: true}
