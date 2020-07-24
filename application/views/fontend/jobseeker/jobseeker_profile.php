@@ -1393,7 +1393,7 @@ input.select2-search__field {
                                  </div>
                                  </div>-->
                               <div class="form-group">
-                                 <label class="control-label col-sm-3" for="email">Present Address<span class="required">*</span>:</label>
+                                 <label class="control-label col-sm-3" for="email">Present Address:</label>
                                  <div class="col-sm-9">
                                     <textarea name="present_address" class="form-control ckeditor" rows="5" id="comment" ><?php 
                                        if (!empty($js_personal_info->present_address)) {
@@ -1436,7 +1436,7 @@ input.select2-search__field {
                                  </div>
                               </div>
                               <div class="form-group">
-                                 <label class="control-label col-sm-3" for="email">Pincode:</label>
+                                 <label class="control-label col-sm-3" for="email">Pincode:<span class="required">*</span></label>
                                  <div class="col-sm-9">
                                     <input type="text" name="pincode" id="seeker_pincode" class="form-control allownumericwithoutdecimal" maxlength="6"  value="<?php
                                        if (!empty($js_personal_info->pincode)) {
@@ -1451,7 +1451,8 @@ input.select2-search__field {
                                     if (!empty($js_personal_info->resume_title)) {
                                       echo $js_personal_info->resume_title;
                                       }
-                                    ?>" disabled="disabled">
+                                    ?>" >
+                                    <!--disabled="disabled" -->
                                  </div>
                               </div>
                               <div class="form-group">
@@ -1846,12 +1847,12 @@ input.select2-search__field {
                                        <div class="form-group">
                                           <label class="control-label col-sm-3" for="email">Start Date:</label>
                                           <div class="col-sm-9"><input class="datepicker form-control" id="start_date_picker" required name="start_date" value="">
-                                             <label><input type="checkbox" id="upChkDisable_1" onclick="disableUpperDP('1')" checked="checked">  Current Job</label>
+                                             <label><input type="checkbox" id="upChkDisable_1" >  Current Job</label>
                                           </div>
                                        </div>
                                        <div class="form-group">
                                           <label class="control-label col-sm-3" for="email">End Date:</label>
-                                          <div class="col-sm-9"><input id="resDate_1" class="datepicker form-control" required name="end_date" value="" disabled="disabled">
+                                          <div class="col-sm-9"> <input id="resDate_1" class="datepicker form-control"  name="end_date" value="" disabled="disabled">
                                           </div>
                                        </div>
                                        <div class="form-group">
@@ -2390,7 +2391,7 @@ maxlength:10
 },
 
 'present_address':{ 
-   required:true               
+   //required:true               
   //minlength:10,        
   //maxlength:10,
 },
@@ -2421,6 +2422,7 @@ maxlength:10
 
 
 'pincode':{
+  required:true,
 companypincode_regex: true,
 maxlength:6
 //current_work_location_regex: true
@@ -2488,7 +2490,7 @@ remote: "The email is already in use by another user!"
 },
 
 'present_address' :{
-  required: "Must Fill !"
+ // required: "Must Fill !"
 //email: "Please enter a valid email address!",
 //remote: "The email is already in use by another user!"
 },
@@ -2541,6 +2543,7 @@ remote: "The email is already in use by another user!"
 },
 
 'pincode':{
+  required: "Must Fill !"
 },
 
 'tagline':{
@@ -3318,7 +3321,7 @@ $.validator.addMethod("companypincode_regex", function(value, element) {
 
 return this.optional(element) || /^[1-9][0-9][0-9][0-9][0-9][0-9]$/.test(value);
 
-}, "Please Enter 6 digits Company Pincode");
+}, "Please Enter 6 digits Pincode");
 
 $.validator.addMethod("dateFormat",
     function(value, element) {
@@ -3447,8 +3450,19 @@ $(function() {
      }); 
 
 </script>
-
-
+<!---script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script-->
+<script type="text/javascript">
+    $(function () {
+        $("#upChkDisable_1").click(function () {
+            if ($(this).is(":checked")) {
+                $("#resDate_1").removeAttr("disabled");
+                $("#resDate_1").focus();
+            } else {
+                $("#resDate_1").attr("disabled", "disabled");
+            }
+        });
+    });
+</script>
 
 
 
