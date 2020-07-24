@@ -13,6 +13,11 @@
    label.error {
     color: red;
 }
+input.select2-search__field {
+    display: inline;
+    border-radius: 0px;
+    margin-top: 0px;
+}
    
 </style>
 
@@ -31,9 +36,9 @@
          
           <div class="row">
             <div class="col-md-4">
-              <div class="form-group">                                       
+              <div class="form-group technical_id">                                       
                <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
-                <select id="subject" name="technical_id" class="form-control"  onchange="getTopic(this.value)">
+                <select id="subject" name="technical_id" class="form-control select2"  onchange="getTopic(this.value)">
                   <option value="">Select Subject</option> 
                     <?php if (!empty($skill_master))
                        foreach($skill_master as $skill) 
@@ -45,41 +50,41 @@
               </div>
             </div>
             <div class="col-md-4">
-              <div class="form-group">
+              <div class="form-group topic_id ">
                 <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
-                <select id="topic_id" name="topic_id" class="form-control" onchange="getSubtopic(this.value)">
+                <select id="topic_id" name="topic_id" class="form-control select2" onchange="getSubtopic(this.value)">
                   <option value="">Select Topic</option> 
                   <!-- <option value="1">HTML 5</option>  -->
                 </select> <?php echo form_error('topic_id'); ?>   
               </div>
             </div>
             <div class="col-md-4">
-              <div class="form-group">
+              <div class="form-group subtopic_id">
                 <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
-                <select id="subtopic_id" name="subtopic_id" class="form-control" onchange="getLineitem(this.value)">
+                <select id="subtopic_id" name="subtopic_id" class="form-control select2" onchange="getLineitem(this.value)">
                 </select> <?php echo form_error('subtopic_id'); ?>   
               </div>
             </div>               
           </div>
           <div class="row">
             <div class="col-md-4">
-              <div class="form-group">
+              <div class="form-group lineitem_id ">
                 <label for="exampleInputEmail1">Line Item(Level 1)<span class="required">*</span></label>
-                <select id="lineitem_id" name="lineitem_id" class="form-control" onchange="getLineitemlevel(this.value)">
+                <select id="lineitem_id" name="lineitem_id" class="form-control select2" onchange="getLineitemlevel(this.value)">
                 </select>  <?php echo form_error('lineitem_id'); ?>   
               </div>
             </div>
             <div class="col-md-4">
-              <div class="form-group">
+              <div class="form-group lineitemlevel_id">
                   <label for="exampleInputEmail1">Line Item(Level 2)<span class="required">*</span></label>
-                  <select id="lineitemlevel_id" name="lineitemlevel_id" class="form-control">
+                  <select id="lineitemlevel_id" name="lineitemlevel_id" class="form-control select2">
                   </select>  <?php echo form_error('lineitemlevel_id'); ?>   
               </div>
             </div>
             <div class="col-md-4">
-              <div class="form-group">
+              <div class="form-group level">
                 <label for="exampleInputEmail1">Level<span class="required">*</span></label>
-                  <select name="level" class="form-control">                                     
+                  <select name="level" class="form-control select2">                                     
                     <option value="Expert"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Expert')echo "selected";?>>Expert</option>
                     <option value="Medium"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Medium')echo "selected";?>>Medium</option>
                     <option value="Beginner"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Beginner')echo "selected";?>>Beginner</option>
@@ -89,9 +94,9 @@
           </div> 
           <div class="row">
             <div class="col-md-4">
-              <div class="form-group">
+              <div class="form-group ques_type">
                 <label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
-                <select name="ques_type" class="form-control" type="text">
+                <select name="ques_type" class="form-control select2" type="text">
                   <option value="MCQ"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ')echo "selected";?>>MCQ</option>
                     <option value="Subjective"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Subjective')echo "selected";?>>Subjective</option>
                     <option value="Practical"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Practical')echo "selected";?>>Practical</option>
@@ -100,8 +105,8 @@
             </div>
              <div class="col-md-4">
               <div class="form-group">
-                <label for="exampleInputEmail1">Time For the question<span class="required">*</span></label>
-                <input type="text" class="form-control" name="time">
+                <label for="exampleInputEmail1">Time For the question (sec)<span class="required">*</span></label>
+                <input type="number" max="60" min="1" class="form-control" maxlength="2" name="time">
               </div>
             </div>
           </div>
@@ -326,10 +331,38 @@
      $("#last_salary_hike").datepicker({ dateFormat: 'yy-mm-dd',maxDate: '0' });
      });
 
- $("#UpdateExperience-info").validate (  
+ $("#js").validate (  
 
 {
 
+errorPlacement: function(error, element) {
+             if (element.attr("name") == "technical_id" )
+                 error.insertAfter(".technical_id ");
+               else if (element.attr("name") == "topic_id" ) 
+                 error.insertAfter(".topic_id");
+
+               else if (element.attr("name") == "subtopic_id"  ) 
+                 error.insertAfter(".subtopic_id");
+
+               else if (element.attr("name") == "lineitem_id" ) 
+                 error.insertAfter(".lineitem_id");
+
+               else if (element.attr("name") == "lineitemlevel_id" ) 
+                 error.insertAfter(".lineitemlevel_id");
+
+              else if (element.attr("name") == "level" ) 
+                 error.insertAfter(".level");
+
+              else if (element.attr("name") == "ques_type" ) 
+                 error.insertAfter(".ques_type");
+
+              
+            
+         else
+       error.insertAfter(element);
+    
+   
+       },
 rules:{
 
 

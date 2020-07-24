@@ -21,7 +21,7 @@ button#frwd_btn {
 }
 .modal-footer {
     /* max-height: 13px; */
-    /* background-color: #c4ebe8; */
+     background-color: #c4ebe8; 
     margin-top: 75px;
     margin-left: 40px;
 }
@@ -60,6 +60,14 @@ button#question_add {
     margin-left: -15px;
     margin-top: 15px;
 }
+span#select2-test_id-s7-container {
+    min-width: 300px;
+}
+input.select2-search__field {
+    display: inline;
+    border-radius: 0px;
+    margin-top: 0px;
+}
 </style>
 
  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">
@@ -83,7 +91,7 @@ button#question_add {
                <a style="float: right;" href="<?php echo base_url(); ?>employer/show_saved_tests"><button type="button" id="question_add" class="btn btn-default"><i class="fa fa-plus">Show Saved Tests</i></button></a>
            </div>
             <div class="col-md-4">
-              <a style="float: right;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Add Question</i></button></a>
+              <a style="float: right;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-default"><i class="fa fa-plus"> Add Question</i></button></a>
            </div>
 
          </div>
@@ -91,28 +99,28 @@ button#question_add {
            <div class="col-md-4">
 
              <label class="radio-inline">
-                <input type="radio" name="optradio" checked>Option 1
+                <input type="radio" name="optradio" data-toggle="modal" data-target="#exampleModalCenter">Option 1
               </label>
             </div>
             <div class="col-md-4">
 
               <label class="radio-inline">
-                <input type="radio" name="optradio">Option 2
+                <input type="radio" data-toggle="modal" data-target="#exampleModalCenter1" name="optradio">Option 2
               </label>
             </div>
                <div class="col-md-4">
 
               <label class="radio-inline">
-                <input type="radio" name="optradio">Option 3
+                <input type="radio" data-toggle="modal" data-target="#exampleModalCenter2" name="optradio">Option 3
               </label>
            </div>
            
          </div>
           <div class="row">
             <div class="col-md-4">
-              <div class="form-group">                                       
+              <div class="form-group technical_id">                                       
                <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
-                <select id="subject" name="technical_id" class="form-control select2"  onchange="getTopic(this.value)">
+                <select id="subject" name="technical_id" required class="form-control select2"  onchange="getTopic(this.value)">
                   <option value="">Select Subject</option> 
                     <?php if (!empty($skill_master))
                        foreach($skill_master as $skill) 
@@ -124,7 +132,7 @@ button#question_add {
               </div>
             </div>
             <div class="col-md-4">
-              <div class="form-group">
+              <div class="form-group topic_id">
                 <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
                 <select id="topic_id" name="topic_id" class="form-control select2" onchange="getSubtopic(this.value)">
                   <option value="">Select Topic</option> 
@@ -133,7 +141,7 @@ button#question_add {
               </div>
             </div>
             <div class="col-md-4">
-              <div class="form-group">
+              <div class="form-group subtopic_id">
                 <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
                 <select id="subtopic_id" name="subtopic_id" class="form-control select2" onchange="get_questuions();" >
                 </select> <?php echo form_error('subtopic_id'); ?>   
@@ -144,7 +152,7 @@ button#question_add {
            
             
             <div class="col-md-4">
-              <div class="form-group">
+              <div class="form-group level">
                 <label for="exampleInputEmail1">Level<span class="required">*</span></label>
                   <select name="level" onchange="get_questuions();" id="level" class="form-control select2">                                     
                     <option value="Expert"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Expert')echo "selected";?>>Expert</option>
@@ -156,7 +164,7 @@ button#question_add {
           
           
             <div class="col-md-4">
-              <div class="form-group">
+              <div class="form-group ques_type">
                 <label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
                 <select name="ques_type" id="ques_type" class="form-control select2" type="text" onchange="get_questuions();">
                   <option value="MCQ"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ')echo "selected";?>>MCQ</option>
@@ -200,7 +208,7 @@ button#question_add {
       </div>
        <span style="float: right; margin-top: 20px;"> 
           <!-- <input  type="checkbox" name="check_all" id="checkAllchk">&nbsp; all -->
-           <button type="button" id="frwd_btn" class="btn btn-primary">Add To </button>
+           <button type="button" id="frwd_btn" class="btn btn-default">Add To </button>
         </span>
     </div>
   </form>
@@ -230,7 +238,7 @@ button#question_add {
             <div class="col-md-12" style="margin-top: 20px;">
                <div class="row">
                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <label class="mdl-textfield__label" for="sample3">Choose Test</label>
+                  <label class="mdl-textfield__label" for="sample3">Choose Test</label><br>
                   <!-- <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required> -->
                   <?php 
                   $employer_id = $this->session->userdata('company_profile_id');
@@ -247,7 +255,15 @@ button#question_add {
                </div>
                </div>
             </div>
-           
+           <div class="col-md-12">
+               <div class="row">
+             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
+                  <label class="mdl-textfield__label" for="sample3">Total Time For the Test:</label><br>
+                 
+               <input type="text" class="form-control" readonly style="border: none;" id="test_time" name="test_time"> seconds
+               </div>
+            </div>
+         </div>
 
         
          <!--  <p>This is a small modal.</p> -->
@@ -260,6 +276,66 @@ button#question_add {
       </div>
     </div>
   </div>
+
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 <script>
   function get_questuions(job_id)
   {
@@ -331,42 +407,53 @@ button#question_add {
                }).get();
                var data_arr= (checkedVals.join(","));
                $('#question_id').val(data_arr);
-                $('#add_test').modal('show');
 
+               var checkedValsofname = $('.chkbx:checkbox:checked').map(function() {
+                   return this.getAttribute("data-valueone");
+               }).get();
+               var data_arr1= (checkedValsofname.join(","));
       
-    
-  });
-});
-  </script> 
-<script>
-   $('.select2').select2();
-</script>
+            // alert();
+            var myNameArray =  data_arr1.split(',');
+              // var sum = 0;
+          var total_time = sum(myNameArray);
 
+            // alert(sum);
+             $('#test_time').val(total_time);
+                $('#add_test').modal('show');
+               
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/additional-methods.js"></script>
-<script> 
-    function save_benifit()
-       {
-        var othr_benifit = document.getElementById('other_benifit').value;
-        $('#candidate_skills').append('<label><input type="checkbox" value="'+othr_benifit+'" class="btn-default1" checked="" name="candidate_skills[]"><span>'+othr_benifit+'</span></label>');
-        document.getElementById('other_benifit').value = '';
-        // alert(othr_benifit);
-   
-       }
-   $(document).ready(function() { 
-       $('#other_terxtbx').hide();
-   
-      $(function() { 
-     
-     $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd',maxDate: '0' });
-     $("#last_salary_hike").datepicker({ dateFormat: 'yy-mm-dd',maxDate: '0' });
-     });
-
- $("#UpdateExperience-info").validate (  
+                 $("#js").validate (  
 
 {
+ errorPlacement: function(error, element) {
+             if (element.attr("name") == "technical_id" )
+                 error.insertAfter(".technical_id ");
+               else if (element.attr("name") == "topic_id" ) 
+                 error.insertAfter(".topic_id");
 
+               else if (element.attr("name") == "subtopic_id"  ) 
+                 error.insertAfter(".subtopic_id");
+
+               else if (element.attr("name") == "lineitem_id" ) 
+                 error.insertAfter(".lineitem_id");
+
+               else if (element.attr("name") == "lineitemlevel_id" ) 
+                 error.insertAfter(".lineitemlevel_id");
+
+              else if (element.attr("name") == "level" ) 
+                 error.insertAfter(".level");
+
+              else if (element.attr("name") == "ques_type" ) 
+                 error.insertAfter(".ques_type");
+
+              
+            
+         else
+       error.insertAfter(element);
+    
+   
+       },
 rules:{
 
 
@@ -412,6 +499,9 @@ required: true
 required: true
 
 },
+
+
+
 
 
 'correct_answer[]': {required: true}
@@ -480,6 +570,53 @@ required: "This field is mandatory!"
 
 
 });
+      
+    
+  });
+});
+function sum(input){
+             
+ if (toString.call(input) !== "[object Array]")
+    return false;
+      
+            var total =  0;
+            for(var i=0;i<input.length;i++)
+              {                  
+                if(isNaN(input[i])){
+                continue;
+                 }
+                  total += Number(input[i]);
+               }
+             return total;
+            }
+
+  </script> 
+<script>
+   $('.select2').select2();
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/additional-methods.js"></script>
+<script> 
+    function save_benifit()
+       {
+        var othr_benifit = document.getElementById('other_benifit').value;
+        $('#candidate_skills').append('<label><input type="checkbox" value="'+othr_benifit+'" class="btn-default1" checked="" name="candidate_skills[]"><span>'+othr_benifit+'</span></label>');
+        document.getElementById('other_benifit').value = '';
+        // alert(othr_benifit);
+   
+       }
+   $(document).ready(function() { 
+       $('#other_terxtbx').hide();
+   
+      $(function() { 
+     
+     $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd',maxDate: '0' });
+     $("#last_salary_hike").datepicker({ dateFormat: 'yy-mm-dd',maxDate: '0' });
+     });
+// $('#btn').on('click', function() {
+
 
 });
 
