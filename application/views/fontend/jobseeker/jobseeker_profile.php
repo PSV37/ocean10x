@@ -45,16 +45,7 @@ input.select2-search__field {
     display: inline-block;
     border-radius: 0px;
 }
- .required
-   {
-   color: red;
-   }
-   
-   label.error {
-    color: red;
-    font-weight: 100;
-    
-}
+
 
 </style>
 
