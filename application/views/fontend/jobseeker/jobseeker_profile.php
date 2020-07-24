@@ -3485,8 +3485,8 @@ $(".allowalphabates").keypress(function (e) {
 <script>
 $(function() { 
      
-     $("#my_date_picker").datepicker({ yearRange: '1900:'+ curr_year, changeMonth:true, changeYear:true, maxDate: '-1d'});
-    });    
+    //  $("#my_date_picker").datepicker({ yearRange: '1900:'+ curr_year, changeMonth:true, changeYear:true, maxDate: '-1d'});
+    // });    
 
       
 </script>
