@@ -441,6 +441,14 @@ textarea#comment {
    {
    color: red;
    }
+   input.select2-search__field {
+    display: inline;
+    border-radius: 0px;
+    margin-top: 0px;
+}
+ul.select2-results__options {
+    margin-top: 30px;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
