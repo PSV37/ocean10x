@@ -2332,7 +2332,11 @@ input.select2-search__field {
         </div>
       </div>
       
-   <script>
+      
+<?php $this->load->view("fontend/layout/jobseeker_footer.php"); ?>
+</div>
+
+ <script>
     function disableUpperDP(count) {
   
   $("#resDate_"+count).attr("disabled", $("#upChkDisable_"+count).is(":checked"));
@@ -2343,9 +2347,7 @@ input.select2-search__field {
    }
 }
 
-   </script>     
-<?php $this->load->view("fontend/layout/jobseeker_footer.php"); ?>
-</div>
+   </script> 
 <script src="<?php echo base_url(); ?>asset/src/jquery.tokeninput.js"></script>
 <script src="<?php echo base_url() ?>asset/js/jquery-ui.js"></script>
 <script src="<?php echo base_url() ?>asset/tokenjs/bootstrap-tokenfield.js"></script>
