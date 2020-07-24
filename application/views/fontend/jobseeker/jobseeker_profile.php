@@ -2337,6 +2337,17 @@ input.select2-search__field {
 </div>
 
  <script>
+
+  function disableDP(i) {
+//alert($('#resDate_'+i).val());
+    if($('#resDate_'+i).val()==''  || $('#resDate_'+i).val()==null){
+    
+    $('#upChkDisable_'+i).attr("checked","true");
+    $('#resDate_'+i).val('Continue');
+     $('#resDate_'+i).attr('disabled',"disabled");
+  }
+  
+} 
     function disableUpperDP(count) {
   
   $("#resDate_"+count).attr("disabled", $("#upChkDisable_"+count).is(":checked"));
