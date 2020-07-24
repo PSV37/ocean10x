@@ -2059,7 +2059,7 @@ class Employer extends MY_Employer_Controller
     public function save_questionbank($id = null)
     {
 
-        $this->form_validation->set_rules('technical_id', 'Subject', 'required|');
+        $this->form_validation->set_rules('technical_id', 'Subject', 'required');
         $this->form_validation->set_rules('topic_id', 'Main Topic', 'required');
         $this->form_validation->set_rules('subtopic_id', 'Sub Topic','required');
         $this->form_validation->set_rules('lineitem_id', 'Line Item Level 1','required');
@@ -2070,7 +2070,7 @@ class Employer extends MY_Employer_Controller
         $this->form_validation->set_rules('option2','Option 2', 'required');
         $this->form_validation->set_rules('option3','Option 3', 'required');
         $this->form_validation->set_rules('option4','Option 4', 'required');
-        // $this->form_validation->set_rules('correct_answer[]','Correct Answer', 'required');
+        $this->form_validation->set_rules('correct_answer[]','Correct Answer', 'required');
     $this->form_validation->set_message('required', 'This field is mandatory');
         if ($this->form_validation->run() == FALSE) 
         {
