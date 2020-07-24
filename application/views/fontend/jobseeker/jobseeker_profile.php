@@ -4,25 +4,6 @@
    ?>
 
 
-<<<<<<< HEAD
-<style type="text/css">
-   
-   .required
-   {
-   color: red;
-   }
-   
-   label.error {
-    font-size: 100%;
-    color: red;
-    font-weight: lighter; 
-    font-style: italic;
-}
-   
-
-</style>
-=======
->>>>>>> f4228f7699bff6e113c9ba299a9768b802e708f2
 
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/calender.css">
 
@@ -3456,7 +3437,7 @@ $(".allowalphabates").keypress(function (e) {
 <script>
 $(function() { 
      
-     $("#my_date_picker").datepicker({{ yearRange: '1900:'+ curr_year, changeMonth:true, changeYear:true, maxDate: '-1d'});
+     $("#my_date_picker").datepicker({ yearRange: '1900:'+ curr_year, changeMonth:true, changeYear:true, maxDate: '-1d'});
     });    
 
       
@@ -3530,7 +3511,7 @@ $(document).ready(function () {
 });
   
 
-  <!-- bootstrap datepicker plugin -->
+  // <!-- bootstrap datepicker plugin -->
   
      $(document).ready(function(){
          var date_input=$('input[name="dob"]'); //our date input has the name "date"
@@ -3548,7 +3529,7 @@ $(document).ready(function () {
          date_input.datepicker(options);
      });
        
-<!-- Form validation code - depends on jquery.validate plugin -->
+// <!-- Form validation code - depends on jquery.validate plugin -->
 
     //$.validator.setDefaults( {
       //submitHandler: function () {
