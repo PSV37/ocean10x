@@ -7,7 +7,7 @@
                 foreach ($questions as $row) {
                   print_r($row[$i]);
                   print_r($i);
-                  $where['ques_id']   = $row[$i];
+                  $where['ques_id']   = $row;
                    $join_emp  = array(
                   'skill_master' => 'skill_master.id=questionbank.technical_id |left outer',
                   'topic' => 'topic.topic_id=questionbank.topic_id |left outer',
