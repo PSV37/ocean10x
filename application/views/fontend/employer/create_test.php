@@ -53,9 +53,32 @@ button#frwd_btn {
         <div class="col-md-9 add-question">
           <div class="header-bookbank">
            Create Test
-            <a style="float: right;" href="<?php echo base_url(); ?>employer/show_saved_tests"><button type="button" id="question_add" class="btn btn-default"><i class="fa fa-plus">Show Saved Tests</i></button></a>
+          
           </div>
-         
+         <div class="row">
+           <div class="col-md-4">
+             
+           </div>
+           <div class="col-md-4">
+               <a style="float: right;" href="<?php echo base_url(); ?>employer/show_saved_tests"><button type="button" id="question_add" class="btn btn-default"><i class="fa fa-plus">Show Saved Tests</i></button></a>
+           </div>
+            <div class="col-md-4">
+              <a style="float: right;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Add Question</i></button></a>
+           </div>
+
+         </div>
+           <div class="row">
+           <div class="col-md-4">
+             <input type="radio" name="question_type">MCQ
+           </div>
+           <div class="col-md-4">
+               <input type="radio" name="question_type">Rapid Fire
+           </div>
+            <div class="col-md-4">
+              <input type="radio" name="question_type">Coding
+           </div>
+           
+         </div>
           <div class="row">
             <div class="col-md-4">
               <div class="form-group">                                       
