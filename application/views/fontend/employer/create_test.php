@@ -74,10 +74,7 @@ input.select2-search__field {
   <div class="container">
     <div class="col-md-12">
       <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
-      <form id="js" role="form" enctype="multipart/form-data" action="<?php echo base_url(); ?>employer/save_questionbank/<?php  if (!empty($edit_questionbank_info)) { foreach($edit_questionbank_info as $row)
-                    echo $row['ques_id'];
-              }
-            ?>" method="post|get">
+      <form id="js">
         <div class="col-md-9 add-question">
           <div class="header-bookbank">
            Create Test
@@ -422,8 +419,54 @@ input.select2-search__field {
             // alert(sum);
              $('#test_time').val(total_time+' seconds');
               
-               
+                       $('#js').valid();
 
+
+        $('#add_test').modal('show');
+    
+  });
+});
+function sum(input){
+             
+ if (toString.call(input) !== "[object Array]")
+    return false;
+      
+            var total =  0;
+            for(var i=0;i<input.length;i++)
+              {                  
+                if(isNaN(input[i])){
+                continue;
+                 }
+                  total += Number(input[i]);
+               }
+             return total;
+            }
+
+  </script> 
+<script>
+   $('.select2').select2();
+</script>
+
+
+
+<script> 
+    function save_benifit()
+       {
+        var othr_benifit = document.getElementById('other_benifit').value;
+        $('#candidate_skills').append('<label><input type="checkbox" value="'+othr_benifit+'" class="btn-default1" checked="" name="candidate_skills[]"><span>'+othr_benifit+'</span></label>');
+        document.getElementById('other_benifit').value = '';
+        // alert(othr_benifit);
+   
+       }
+   $(document).ready(function() { 
+       $('#other_terxtbx').hide();
+   
+      $(function() { 
+     
+     $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd',maxDate: '0' });
+     $("#last_salary_hike").datepicker({ dateFormat: 'yy-mm-dd',maxDate: '0' });
+     });
+// $('#btn').on('click', function() {
 $("#js").validate (  
 
 {
@@ -571,52 +614,6 @@ required: "This field is mandatory!"
 
 
 });
-        $('#add_test').modal('show');
-    
-  });
-});
-function sum(input){
-             
- if (toString.call(input) !== "[object Array]")
-    return false;
-      
-            var total =  0;
-            for(var i=0;i<input.length;i++)
-              {                  
-                if(isNaN(input[i])){
-                continue;
-                 }
-                  total += Number(input[i]);
-               }
-             return total;
-            }
-
-  </script> 
-<script>
-   $('.select2').select2();
-</script>
-
-
-
-<script> 
-    function save_benifit()
-       {
-        var othr_benifit = document.getElementById('other_benifit').value;
-        $('#candidate_skills').append('<label><input type="checkbox" value="'+othr_benifit+'" class="btn-default1" checked="" name="candidate_skills[]"><span>'+othr_benifit+'</span></label>');
-        document.getElementById('other_benifit').value = '';
-        // alert(othr_benifit);
-   
-       }
-   $(document).ready(function() { 
-       $('#other_terxtbx').hide();
-   
-      $(function() { 
-     
-     $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd',maxDate: '0' });
-     $("#last_salary_hike").datepicker({ dateFormat: 'yy-mm-dd',maxDate: '0' });
-     });
-// $('#btn').on('click', function() {
-
 
 });
 
