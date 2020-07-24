@@ -2015,7 +2015,7 @@ class Employer extends MY_Employer_Controller
         elseif (isset($test_id) && !empty($test_id)) {
             $where['test_id']   = $test_id;
             $old_question_data  = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where);
-            $old_questions = explode('.', $old_question_data['questions']);
+            $old_questions = explode(',', $old_question_data['questions']);
             $ques = explode(',', $up_date);
             $new_arr = array_unique (array_merge($old_questions,$ques));
             print_r($old_questions);
