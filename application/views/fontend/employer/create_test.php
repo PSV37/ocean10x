@@ -120,7 +120,7 @@ input.select2-search__field {
             <div class="col-md-4">
               <div class="form-group technical_id">                                       
                <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
-                <select id="subject" name="technical_id" class="form-control select2"  onchange="getTopic(this.value)">
+                <select id="subject" name="technical_id" required class="form-control select2"  onchange="getTopic(this.value)">
                   <option value="">Select Subject</option> 
                     <?php if (!empty($skill_master))
                        foreach($skill_master as $skill) 
