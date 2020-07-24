@@ -56,6 +56,18 @@
     color: white;
 
 }
+
+.required
+   {
+   color: red;
+   }
+   
+   label.error {
+    color: red;
+    font-weight: normal !important;
+    font-style: italic;
+}
+
      </style>
 </head>
 

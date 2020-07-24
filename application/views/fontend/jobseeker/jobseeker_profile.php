@@ -1,3 +1,9 @@
+<?php 
+   $this->load->view('fontend/layout/new_seeker_header.php');
+   
+   ?>
+
+
 <style type="text/css">
    
    .required
@@ -7,10 +13,9 @@
    
    label.error {
     color: red;
-    font-weight: normal !important;
-    font-style: italic;
+    font-weight: 100;
+    
 }
-   
 
 </style>
 
@@ -57,10 +62,7 @@ input.select2-search__field {
 
 
 </style>
-<?php 
-   $this->load->view('fontend/layout/new_seeker_header.php');
-   
-   ?>
+
 
 
 <!---header end--->
@@ -1447,7 +1449,7 @@ input.select2-search__field {
                               </div>
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="email">My Tagline:</label>
-                                 <div class="col-sm-9"><input id="resDate_1" class="datepicker form-control" required name="tagline" placeholder="Enter Your Tagline" value="<?php 
+                                 <div class="col-sm-9"><input id="resDate_1" class="datepicker form-control"  name="tagline" placeholder="Enter Your Tagline" value="<?php 
                                     if (!empty($js_personal_info->resume_title)) {
                                       echo $js_personal_info->resume_title;
                                       }
@@ -1984,7 +1986,7 @@ input.select2-search__field {
                               </div>
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="email">Start Date:</label>
-                                 <div class="col-sm-9"><input class="datepicker form-control" id="start_date_picker1" required name="start_date" value="<?php if (!empty($experinece->start_date)) { echo date('d-m-Y',strtotime($experinece->start_date)); } ?>">
+                                 <div class="col-sm-9"><input class="datepicker1 form-control" id="start_date_picker1" required name="start_date" value="<?php if (!empty($experinece->start_date)) { echo date('d-m-Y',strtotime($experinece->start_date)); } ?>">
                                     <label><input type="checkbox" id="upChkDisable_1" onclick="disableUpperDP('1')" checked="checked">  Current Job</label>
                                  </div>
                               </div>
@@ -2365,10 +2367,13 @@ namespace_regex: true
 
 'date_of_birth':{
   required:true
-  //required: true
-//email_regex: true
+  
 },
 
+'dobmake_public':{
+  required:true
+  
+},
 
 'country_code':{
 //phonenumber_regex: true
@@ -2468,6 +2473,10 @@ namespace_regex: "Please type only alphabets"
   maxlength: "Maximum length 10 digits!"
 },
 
+'dobmake_public':{
+required: "Must Fill !",
+},
+
 'country_code':{
 required: "Must Fill !",
 minlength: "Please type atleast 10 digits",
@@ -2547,7 +2556,7 @@ remote: "The email is already in use by another user!"
 },
 
 'tagline':{
-required: "Must Fill !",
+//required: "Must Fill !",
 minlength: "Choose a username of at least 4 letters!",
 username_regex: "You have used invalid characters. Are permitted only letters numbers!",
 remote: "The useername is already in use by another user!"
@@ -3210,7 +3219,8 @@ rules:{
 url: true
 },
 
-'date_of_birth':  {
+'dob':  {
+  required: true,
   dateFormat: true
   //required: true
 //email_regex: true
@@ -3226,7 +3236,8 @@ messages:{
 
 },
 
-'date_of_birth':{
+'dob':{
+  required: "Must Fill !",
   dateFormat: 'Please type as per the date format'
 },
 
@@ -3438,13 +3449,54 @@ $(function() {
 </script>
 
 <script> 
-  $(function(){
- $("#start_date_picker").datepicker({ dateFormat: 'yy-mm-dd' });
-     }); 
+  //$(function(){
+ //$("#start_date_picker").datepicker({ dateFormat: 'yy-mm-dd' });
+   //  }); 
+$(document).ready(function () {
+        var today = new Date();
+        $('.datepicker').datepicker({
+            format: 'mm-dd-yyyy',
+            autoclose:true,
+            endDate: "today",
+            maxDate: today
+        }).on('changeDate', function (ev) {
+                $(this).datepicker('hide');
+            });
 
+
+        $('.datepicker').keyup(function () {
+            if (this.value.match(/[^0-9]/g)) {
+                this.value = this.value.replace(/[^0-9^-]/g, '');
+            }
+        });
+    });
 </script>
     
 <script> 
+  //$(function(){
+ //$("#start_date_picker").datepicker({ dateFormat: 'yy-mm-dd' });
+   //  }); 
+$(document).ready(function () {
+        var today = new Date();
+        $('.datepicker1').datepicker({
+            format: 'mm-dd-yyyy',
+            autoclose:true,
+            endDate: "today",
+            maxDate: today
+        }).on('changeDate', function (ev) {
+                $(this).datepicker1('hide');
+            });
+
+
+        $('.datepicker1').keyup(function () {
+            if (this.value.match(/[^0-9]/g)) {
+                this.value = this.value.replace(/[^0-9^-]/g, '');
+            }
+        });
+    });
+</script>
+
+<script>  
   $(function(){
  $("#start_date_picker1").datepicker({ dateFormat: 'yy-mm-dd' });
      }); 
@@ -3508,11 +3560,11 @@ $(function() {
        
 <!-- Form validation code - depends on jquery.validate plugin -->
 
-    $.validator.setDefaults( {
-      submitHandler: function () {
-        alert( "submitted!" );
-      }
-    } );
+    //$.validator.setDefaults( {
+      //submitHandler: function () {
+        //alert( "submitted!" );
+     // }
+   // } );
 
     $.validator.addMethod( "pattern", function( value, element, param ) {
         if ( this.optional( element ) ) {
