@@ -1844,12 +1844,12 @@ input.select2-search__field {
                                        <div class="form-group">
                                           <label class="control-label col-sm-3" for="email">Start Date:</label>
                                           <div class="col-sm-9"><input class="datepicker form-control" id="start_date_picker" required name="start_date" value="">
-                                             <label><input type="checkbox" id="upChkDisable_1" >  Current Job</label>
+                                             <label><input type="checkbox" id="upChkDisable_2" onclick="disableUpperDP('2')" >  Current Job</label>
                                           </div>
                                        </div>
                                        <div class="form-group">
                                           <label class="control-label col-sm-3" for="email">End Date:</label>
-                                          <div class="col-sm-9"> <input id="resDate_1" class="datepicker form-control"  name="end_date" value="" disabled="disabled">
+                                          <div class="col-sm-9"> <input id="resDate_2" class="datepicker form-control"  name="end_date" value="" disabled="disabled">
                                           </div>
                                        </div>
                                        <div class="form-group">
@@ -2376,6 +2376,7 @@ for(var i =1; i < max_experience; i++){
 
   function disableUpperDP(count) {
   
+  alert($("#upChkDisable_"+count).is(":checked"));
   $("#resDate_"+count).attr("disabled", $("#upChkDisable_"+count).is(":checked"));
    if($("#upChkDisable_"+count).is(":checked")){
      $('#resDate_'+count).val("Continue");
@@ -3528,18 +3529,7 @@ $(document).ready(function () {
 
 </script>
 <!---script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script-->
-<script type="text/javascript">
-    $(function () {
-        $("#upChkDisable_1").click(function () {
-            if ($(this).is(":checked")) {
-                $("#resDate_1").removeAttr("disabled");
-                $("#resDate_1").focus();
-            } else {
-                $("#resDate_1").attr("disabled", "disabled");
-            }
-        });
-    });
-</script>
+
 
 
 
