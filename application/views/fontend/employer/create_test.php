@@ -419,11 +419,11 @@ input.select2-search__field {
           var total_time = sum(myNameArray);
 
             // alert(sum);
-             $('#test_time').val(total_time);
+             $('#test_time').val(total_time+' seconds');
               
                
 
-                 $("#js").validate (  
+$("#js").validate (  
 
 {
  errorPlacement: function(error, element) {
