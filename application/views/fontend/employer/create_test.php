@@ -22,7 +22,7 @@ button#frwd_btn {
 .modal-footer {
     /* max-height: 13px; */
      background-color: #c4ebe8; 
-    margin-top: 75px;
+    margin-top: 200px;
     margin-left: 40px;
 }
    button.btn.btn-default {
@@ -70,6 +70,9 @@ input.select2-search__field {
 }
 ul.select2-results__options {
     margin-top: 30px;
+}
+span.select2.select2-container.select2-container--default {
+    width: 100%;
 }
 </style>
 
