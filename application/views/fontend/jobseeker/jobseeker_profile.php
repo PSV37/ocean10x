@@ -4,6 +4,7 @@
    ?>
 
 
+<<<<<<< HEAD
 <style type="text/css">
    
    .required
@@ -20,6 +21,8 @@
    
 
 </style>
+=======
+>>>>>>> f4228f7699bff6e113c9ba299a9768b802e708f2
 
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/calender.css">
 
@@ -61,7 +64,16 @@ input.select2-search__field {
     display: inline-block;
     border-radius: 0px;
 }
-
+ .required
+   {
+   color: red;
+   }
+   
+   label.error {
+    color: red;
+    font-weight: 100;
+    
+}
 
 </style>
 
