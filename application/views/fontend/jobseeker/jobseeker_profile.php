@@ -1975,12 +1975,12 @@ label {
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="email">Start Date:</label>
                                  <div class="col-sm-9"><input class="datepicker form-control" id="start_date_picker1" required name="start_date" value="<?php if (!empty($experinece->start_date)) { echo date('d-m-Y',strtotime($experinece->start_date)); } ?>">
-                                    <label><input type="checkbox" id="upChkDisable_1" onclick="disableUpperDP('1')">  Current Job</label>
+                                    <label><input type="checkbox" id="upChkDisable_3" onclick="disableUpperDP('3')">  Current Job</label>
                                  </div>
                               </div>
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="email">End Date:</label>
-                                 <div class="col-sm-9"><input id="resDate_1" class="datepicker form-control" required name="end_date" value="<?php if (!empty($experinece->end_date)) { echo date('d/m/Y',strtotime($experinece->end_date)); }else{ echo "";} ?>" disabled="disabled">
+                                 <div class="col-sm-9"><input id="resDate_3" class="datepicker form-control" required name="end_date" value="<?php if (!empty($experinece->end_date)) { echo date('d/m/Y',strtotime($experinece->end_date)); }else{ echo "";} ?>" disabled="disabled">
                                  </div>
                               </div>
                               <div class="form-group">
