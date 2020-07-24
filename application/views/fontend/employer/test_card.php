@@ -5,8 +5,8 @@
                 print_r($questions);
                 $i=0;
                 foreach ($questions as $row) {
-                  print_r($row[$i]);
-                  print_r($i);
+                  print_r($row);
+                  // print_r($i);
                   $where['ques_id']   = $row;
                    $join_emp  = array(
                   'skill_master' => 'skill_master.id=questionbank.technical_id |left outer',
@@ -18,7 +18,7 @@
               );
                   $question_data  = $this->Master_model->get_master_row('questionbank', $select = FALSE, $where, $join = $join_emp)
                 
-                              ?><!-- <tr>
+                              ?><tr>
 
                                 <input class="attrValue" type="hidden" name="" id="ques_id" value="<?php echo $question['ques_id']; ?>">
                                  <td ><?php echo $key; ?></td>
@@ -33,7 +33,7 @@
                                 <td ><?php echo $question_data['question']; ?></td>
                                 <td ><?php echo $question_data['level']; ?></td>
                               </tr>
- -->
+
                                
 
                                    
