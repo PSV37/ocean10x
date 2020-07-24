@@ -294,7 +294,7 @@ span.select2.select2-container.select2-container--default {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-default">Save changes</button>
+        <button type="button" class="btn btn-default">Save</button>
       </div>
     </div>
   </div>
@@ -314,7 +314,7 @@ span.select2.select2-container.select2-container--default {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-default">Save changes</button>
+        <button type="button" class="btn btn-default">Save</button>
       </div>
     </div>
   </div>
@@ -334,7 +334,7 @@ span.select2.select2-container.select2-container--default {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-default">Save changes</button>
+        <button type="button" class="btn btn-default">Save</button>
       </div>
     </div>
   </div>
