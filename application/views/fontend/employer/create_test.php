@@ -60,6 +60,9 @@ button#question_add {
     margin-left: -15px;
     margin-top: 15px;
 }
+span#select2-test_id-s7-container {
+    min-width: 300px;
+}
 </style>
 
  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">
@@ -230,7 +233,7 @@ button#question_add {
             <div class="col-md-12" style="margin-top: 20px;">
                <div class="row">
                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <label class="mdl-textfield__label" for="sample3">Choose Test</label>
+                  <label class="mdl-textfield__label" for="sample3">Choose Test</label><br>
                   <!-- <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required> -->
                   <?php 
                   $employer_id = $this->session->userdata('company_profile_id');
