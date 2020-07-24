@@ -2029,7 +2029,7 @@ class Employer extends MY_Employer_Controller
         
 
       
-        redirect('employer/create_test');
+        redirect('employer/show_saved_tests');
 
 
     }
