@@ -40,6 +40,15 @@ button#frwd_btn {
     background-color: #18c5bd;
     border: none;
 }
+button#question_add {
+    min-width: 180px;
+    min-height: 30px;
+    font-size: 15px;
+    border-radius: 55px;
+    background-color: #18c5bd;
+    border: none;
+    margin-top: -41px;
+}
 </style>
 
  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">
@@ -68,14 +77,16 @@ button#frwd_btn {
 
          </div>
            <div class="row">
-           <div class="col-md-4">
-             <input type="radio" name="question_type">MCQ
-           </div>
-           <div class="col-md-4">
-               <input type="radio" name="question_type">Rapid Fire
-           </div>
-            <div class="col-md-4">
-              <input type="radio" name="question_type">Coding
+           <div class="col-md-12">
+             <label class="radio-inline">
+                <input type="radio" name="optradio" checked>Option 1
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="optradio">Option 2
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="optradio">Option 3
+              </label>
            </div>
            
          </div>
