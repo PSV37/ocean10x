@@ -464,7 +464,7 @@ function sum(input){
      $("#last_salary_hike").datepicker({ dateFormat: 'yy-mm-dd',maxDate: '0' });
      });
 
- $("#UpdateExperience-info").validate (  
+ $("#js").validate (  
 
 {
 
