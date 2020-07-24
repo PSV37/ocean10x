@@ -290,7 +290,17 @@ span.select2.select2-container.select2-container--default {
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <h6 style="margin-top:135px;font-size:20px;
+    margin-bottom: 20px;">Follow few instructions.</h6>
+    <ul>
+    <li>This is a FREE online test. DO NOT pay money to anyone to attend this test.</li>
+    <li>All Questions are compulsory.</li>
+    <li>Total number of questions : 10.</li>
+    <li>Time alloted : 30 minutes.</li>
+    <li>Each question carry 1 mark, no negative marks.</li>
+    <li>DO NOT refresh the page.</li>
+    <li>All the best.</li>
+    </ul>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -310,7 +320,17 @@ span.select2.select2-container.select2-container--default {
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <h6 style="margin-top:135px;font-size:20px;
+    margin-bottom: 20px;">Follow few instructions.</h6>
+    <ul>
+    <li>This is a FREE online test. DO NOT pay money to anyone to attend this test.</li>
+    <li>All Questions are compulsory.</li>
+    <li>Total number of questions : 10.</li>
+    <li>Time alloted : 30 minutes.</li>
+    <li>Each question carry 1 mark, no negative marks.</li>
+    <li>DO NOT refresh the page.</li>
+    <li>All the best.</li>
+    </ul>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -330,7 +350,17 @@ span.select2.select2-container.select2-container--default {
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <h6 style="margin-top:135px;font-size:20px;
+    margin-bottom: 20px;">Follow few instructions.</h6>
+    <ul>
+    <li>This is a FREE online test. DO NOT pay money to anyone to attend this test.</li>
+    <li>All Questions are compulsory.</li>
+    <li>Total number of questions : 10.</li>
+    <li>Time alloted : 30 minutes.</li>
+    <li>Each question carry 1 mark, no negative marks.</li>
+    <li>DO NOT refresh the page.</li>
+    <li>All the best.</li>
+    </ul>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
