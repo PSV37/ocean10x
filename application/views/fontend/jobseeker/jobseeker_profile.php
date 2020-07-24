@@ -2332,6 +2332,60 @@ input.select2-search__field {
         
 <?php $this->load->view("fontend/layout/jobseeker_footer.php"); ?>
 </div>
+
+<script>
+    $(function() {
+
+  // $('#date').datepicker({
+  //   dateFormat: 'dd-mm-yy',
+  //   altField: '#thealtdate',
+  //   altFormat: 'dd-mm-yyyy',
+  //   defaultDate: null
+  // });
+/*var max_experience = $("#max_experience").val();
+
+for(var i =1; i < max_experience; i++){
+  if($('#resDate_'+i).val()==''  || $('#resDate_+'+i).val()==null){
+    
+    $('#upChkDisable_'+i).attr("checked","true");
+    $('#resDate_'+i).val('Continue');
+     $('#resDate_'+i).attr('disabled',"disabled");
+  }
+  else{
+     alert('error');
+  }
+}*/
+
+});
+  function disableAddDP() {
+  $("#end_date").attr("disabled", $("#chkDisable").is(":checked")).val("Continue");
+}   
+
+  function disableDP(i) {
+//alert($('#resDate_'+i).val());
+    if($('#resDate_'+i).val()==''  || $('#resDate_'+i).val()==null){
+    
+    $('#upChkDisable_'+i).attr("checked","true");
+    $('#resDate_'+i).val('Continue');
+     $('#resDate_'+i).attr('disabled',"disabled");
+  }
+  
+}  
+
+
+
+  function disableUpperDP(count) {
+  
+  $("#resDate_"+count).attr("disabled", $("#upChkDisable_"+count).is(":checked"));
+   if($("#upChkDisable_"+count).is(":checked")){
+     $('#resDate_'+count).val("Continue");
+   } else {
+     $('#resDate_'+count).val("");
+   }
+}
+
+
+</script>
 <script src="<?php echo base_url(); ?>asset/src/jquery.tokeninput.js"></script>
 <script src="<?php echo base_url() ?>asset/js/jquery-ui.js"></script>
 <script src="<?php echo base_url() ?>asset/tokenjs/bootstrap-tokenfield.js"></script>
