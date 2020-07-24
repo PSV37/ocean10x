@@ -419,10 +419,14 @@ input.select2-search__field {
             // alert(sum);
              $('#test_time').val(total_time+' seconds');
               
-                       $('#js').valid();
+                      if($('#js').valid()) 
+                      {
+                          $('#add_test').modal('show');
 
 
-        $('#add_test').modal('show');
+                      }
+
+
     
   });
 });
