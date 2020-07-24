@@ -408,10 +408,10 @@ button#question_add {
             // alert();
             var myNameArray =  data_arr1.split(',');
               // var sum = 0;
-          console.log(sum(myNameArray));
+          var total_time = sum(myNameArray);
 
             // alert(sum);
-             $('#test_time').val(sum);
+             $('#test_time').val(total_time);
                 $('#add_test').modal('show');
                
 
