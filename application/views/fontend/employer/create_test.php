@@ -407,12 +407,10 @@ button#question_add {
       
             // alert();
             var myNameArray =  data_arr1.split(',');
-              var sum = 0;
-            $.each(myNameArray, function (a, b) {
-                sum = sum + b;
-            });
+              // var sum = 0;
+          console.log(sum(myNameArray));
 
-            alert(sum);
+            // alert(sum);
              $('#test_time').val(sum);
                 $('#add_test').modal('show');
                
@@ -421,7 +419,21 @@ button#question_add {
     
   });
 });
-
+function sum(input){
+             
+ if (toString.call(input) !== "[object Array]")
+    return false;
+      
+            var total =  0;
+            for(var i=0;i<input.length;i++)
+              {                  
+                if(isNaN(input[i])){
+                continue;
+                 }
+                  total += Number(input[i]);
+               }
+             return total;
+            }
 
   </script> 
 <script>
