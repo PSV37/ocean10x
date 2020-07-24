@@ -420,7 +420,7 @@ input.select2-search__field {
 
             // alert(sum);
              $('#test_time').val(total_time);
-                $('#add_test').modal('show');
+              
                
 
                  $("#js").validate (  
@@ -570,7 +570,7 @@ required: "This field is mandatory!"
 
 
 });
-      
+        $('#add_test').modal('show');
     
   });
 });
