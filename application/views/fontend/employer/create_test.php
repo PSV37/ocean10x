@@ -570,7 +570,7 @@ required: "This field is mandatory!"
 
 
 });
-        $('#add_test').modal('show');
+        // $('#add_test').modal('show');
     
   });
 });
