@@ -221,7 +221,7 @@ span.select2.select2-container.select2-container--default {
 <div class="modal fade" id="add_test" role="dialog">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
-          <form method="post" id="js">
+          <form method="post" action="<?php echo base_url(); ?>employer/add_to_test">
         <div class="modal-header">
           <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
           <h4 class="modal-title">Add To</h4>
