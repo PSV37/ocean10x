@@ -260,7 +260,7 @@ input.select2-search__field {
              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
                   <label class="mdl-textfield__label" for="sample3">Total Time For the Test:</label><br>
                  
-               <input type="text" class="form-control" readonly style="border: none;" id="test_time" name="test_time"> seconds
+               <input type="text" class="form-control" readonly style="border: none;" id="test_time" name="test_time">
                </div>
             </div>
          </div>
