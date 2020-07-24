@@ -219,6 +219,34 @@
           }
    
     }
+     function getLineitem(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>employer/getlineitem',
+                data:{id:id},
+                success:function(res){
+                    $('#lineitem_id').html(res);
+                }
+                
+            }); 
+          }
+   
+    }
+    function getLineitemlevel(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>employer/getlineitemlevel',
+                data:{id:id},
+                success:function(res){
+                    $('#lineitemlevel_id').html(res);
+                }
+                
+            }); 
+          }
+   
+       }
 </script>
 
 <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.js" type="text/javascript"></script>
