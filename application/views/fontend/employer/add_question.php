@@ -191,7 +191,35 @@
   </form>
   </div>
 </div>
-
+<script>
+  function getTopic(id){
+        if(id){
+          $.ajax({
+            type:'POST',
+            url:'<?php echo base_url();?>employer/gettopic',
+            data:{id:id},
+            success:function(res){
+              $('#topic_id').html(res);
+            }
+            
+          }); 
+          }
+       }
+       function getSubtopic(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>employer/getsubtopic',
+                data:{id:id},
+                success:function(res){
+                    $('#subtopic_id').html(res);
+                }
+                
+            }); 
+          }
+   
+    }
+</script>
 
 <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>assets/js/bootstrap.js" type="text/javascript"></script>
