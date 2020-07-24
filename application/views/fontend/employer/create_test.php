@@ -49,6 +49,12 @@ button#question_add {
     border: none;
     margin-top: -41px;
 }
+.radio-inline input[type=radio] {
+    position: absolute;
+    margin-top: 4px\9;
+    margin-left: -46px;
+    /* margin-bottom: -59px; */
+}
 </style>
 
  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">
@@ -77,13 +83,20 @@ button#question_add {
 
          </div>
            <div class="row">
-           <div class="col-md-12">
+           <div class="col-md-4">
+
              <label class="radio-inline">
                 <input type="radio" name="optradio" checked>Option 1
               </label>
+            </div>
+            <div class="col-md-4">
+
               <label class="radio-inline">
                 <input type="radio" name="optradio">Option 2
               </label>
+            </div>
+               <div class="col-md-4">
+
               <label class="radio-inline">
                 <input type="radio" name="optradio">Option 3
               </label>
