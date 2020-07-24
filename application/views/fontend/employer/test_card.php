@@ -5,7 +5,7 @@
                 print_r($questions);
                 $i=0;
                 foreach ($questions as $row) {
-                  print_r($row);
+                  // print_r($row);
                   // print_r($i);
                   $where['ques_id']   = $row;
                    $join_emp  = array(
