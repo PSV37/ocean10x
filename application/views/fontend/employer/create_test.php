@@ -290,8 +290,7 @@ span.select2.select2-container.select2-container--default {
         </button>
       </div>
       <div class="modal-body">
-        <h6 style="margin-top:135px;font-size:20px;
-    margin-bottom: 20px;">Follow few instructions.</h6>
+        <h6>Follow few instructions.</h6>
     <ul>
     <li>This is a FREE online test. DO NOT pay money to anyone to attend this test.</li>
     <li>All Questions are compulsory.</li>
@@ -320,8 +319,7 @@ span.select2.select2-container.select2-container--default {
         </button>
       </div>
       <div class="modal-body">
-        <h6 style="margin-top:135px;font-size:20px;
-    margin-bottom: 20px;">Follow few instructions.</h6>
+        <h6>Follow few instructions.</h6>
     <ul>
     <li>This is a FREE online test. DO NOT pay money to anyone to attend this test.</li>
     <li>All Questions are compulsory.</li>
@@ -350,8 +348,7 @@ span.select2.select2-container.select2-container--default {
         </button>
       </div>
       <div class="modal-body">
-        <h6 style="margin-top:135px;font-size:20px;
-    margin-bottom: 20px;">Follow few instructions.</h6>
+        <h6>Follow few instructions.</h6>
     <ul>
     <li>This is a FREE online test. DO NOT pay money to anyone to attend this test.</li>
     <li>All Questions are compulsory.</li>
