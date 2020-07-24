@@ -331,12 +331,21 @@ button#question_add {
                }).get();
                var data_arr= (checkedVals.join(","));
                $('#question_id').val(data_arr);
+
+               var checkedValsofname = $('.chkbx:checkbox:checked').map(function() {
+                   return this.getAttribute("data-valueone");
+               }).get();
+      
+            alert(checkedValsofname);
+            // var myNameArray =  cvs_name.split(',');
                 $('#add_test').modal('show');
 
       
     
   });
 });
+
+
   </script> 
 <script>
    $('.select2').select2();
