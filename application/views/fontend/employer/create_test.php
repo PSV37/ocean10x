@@ -83,7 +83,7 @@ button#question_add {
                <a style="float: right;" href="<?php echo base_url(); ?>employer/show_saved_tests"><button type="button" id="question_add" class="btn btn-default"><i class="fa fa-plus">Show Saved Tests</i></button></a>
            </div>
             <div class="col-md-4">
-              <a style="float: right;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Add Question</i></button></a>
+              <a style="float: right;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-default"><i class="fa fa-plus"> Add Question</i></button></a>
            </div>
 
          </div>
@@ -200,7 +200,7 @@ button#question_add {
       </div>
        <span style="float: right; margin-top: 20px;"> 
           <!-- <input  type="checkbox" name="check_all" id="checkAllchk">&nbsp; all -->
-           <button type="button" id="frwd_btn" class="btn btn-primary">Add To </button>
+           <button type="button" id="frwd_btn" class="btn btn-default">Add To </button>
         </span>
     </div>
   </form>
@@ -282,8 +282,8 @@ button#question_add {
         ...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default">Save changes</button>
       </div>
     </div>
   </div>
@@ -302,8 +302,8 @@ button#question_add {
         ...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default">Save changes</button>
       </div>
     </div>
   </div>
@@ -322,8 +322,8 @@ button#question_add {
         ...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default">Save changes</button>
       </div>
     </div>
   </div>
