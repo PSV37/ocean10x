@@ -63,6 +63,11 @@ button#question_add {
 span#select2-test_id-s7-container {
     min-width: 300px;
 }
+input.select2-search__field {
+    display: inline;
+    border-radius: 0px;
+    margin-top: 0px;
+}
 </style>
 
  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">
@@ -255,7 +260,7 @@ span#select2-test_id-s7-container {
              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
                   <label class="mdl-textfield__label" for="sample3">Total Time For the Test:</label><br>
                  
-               <input type="text" class="form-control" readonly style="border: none;" id="test_time" name="test_time">
+               <input type="text" class="form-control" readonly style="border: none;" id="test_time" name="test_time"> seconds
                </div>
             </div>
          </div>

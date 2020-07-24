@@ -13,6 +13,11 @@
    label.error {
     color: red;
 }
+input.select2-search__field {
+    display: inline;
+    border-radius: 0px;
+    margin-top: 0px;
+}
    
 </style>
 
@@ -100,8 +105,8 @@
             </div>
              <div class="col-md-4">
               <div class="form-group">
-                <label for="exampleInputEmail1">Time For the question<span class="required">*</span></label>
-                <input type="text" class="form-control" name="time">
+                <label for="exampleInputEmail1">Time For the question (sec)<span class="required">*</span></label>
+                <input type="number" max="60" min="1" class="form-control" name="time">
               </div>
             </div>
           </div>
