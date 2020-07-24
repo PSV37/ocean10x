@@ -97,13 +97,13 @@ button#question_add {
             <div class="col-md-4">
 
               <label class="radio-inline">
-                <input type="radio" data-toggle="modal" data-target="#exampleModalCenter2" name="optradio">Option 2
+                <input type="radio" data-toggle="modal" data-target="#exampleModalCenter1" name="optradio">Option 2
               </label>
             </div>
                <div class="col-md-4">
 
               <label class="radio-inline">
-                <input type="radio" data-toggle="modal" data-target="#exampleModalCenter3" name="optradio">Option 3
+                <input type="radio" data-toggle="modal" data-target="#exampleModalCenter2" name="optradio">Option 3
               </label>
            </div>
            
@@ -403,9 +403,10 @@ button#question_add {
                var checkedValsofname = $('.chkbx:checkbox:checked').map(function() {
                    return this.getAttribute("data-valueone");
                }).get();
+               var data_arr1= (checkedValsofname.join(","));
       
-            alert(checkedValsofname);
-            var myNameArray =  checkedValsofname.split(',');
+            // alert();
+            var myNameArray =  data_arr1.split(',');
 
             $.each(myNameArray, function (a, b) {
                 sum = sum + b;
