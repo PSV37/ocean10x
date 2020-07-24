@@ -1847,7 +1847,7 @@ input.select2-search__field {
                                        <div class="form-group">
                                           <label class="control-label col-sm-3" for="email">Start Date:</label>
                                           <div class="col-sm-9"><input class="datepicker form-control" id="start_date_picker" required name="start_date" value="">
-                                             <label><input type="checkbox" id="upChkDisable_1" >  Current Job</label>
+                                             <label><input type="checkbox" id="upChkDisable_1" onclick="disableUpperDP('1')" >  Current Job</label>
                                           </div>
                                        </div>
                                        <div class="form-group">
@@ -2332,7 +2332,18 @@ input.select2-search__field {
         </div>
       </div>
       
-        
+   <script>
+    function disableUpperDP(count) {
+  
+  $("#resDate_"+count).attr("disabled", $("#upChkDisable_"+count).is(":checked"));
+   if($("#upChkDisable_"+count).is(":checked")){
+     $('#resDate_'+count).val("Continue");
+   } else {
+     $('#resDate_'+count).val("");
+   }
+}
+
+   </script>     
 <?php $this->load->view("fontend/layout/jobseeker_footer.php"); ?>
 </div>
 <script src="<?php echo base_url(); ?>asset/src/jquery.tokeninput.js"></script>
