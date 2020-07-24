@@ -45,7 +45,9 @@ input.select2-search__field {
     display: inline-block;
     border-radius: 0px;
 }
-
+label {
+    font-weight: 100;
+}
 
 </style>
 
