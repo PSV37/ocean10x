@@ -1849,7 +1849,7 @@ input.select2-search__field {
                                        <div class="form-group">
                                           <label class="control-label col-sm-3" for="email">Start Date:</label>
                                           <div class="col-sm-9"><input class="datepicker form-control" id="start_date_picker" required name="start_date" value="">
-                                             <label><input type="checkbox" id="upChkDisable_1" >  Current Job</label>
+                                             <label><input type="checkbox" id="upChkDisable_1" onclick="disableUpperDP('1')" >  Current Job</label>
                                           </div>
                                        </div>
                                        <div class="form-group">
@@ -1986,13 +1986,18 @@ input.select2-search__field {
                               </div>
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="email">Start Date:</label>
+<<<<<<< HEAD
                                  <div class="col-sm-9"><input class="datepicker1 form-control" id="start_date_picker1" required name="start_date" value="<?php if (!empty($experinece->start_date)) { echo date('d-m-Y',strtotime($experinece->start_date)); } ?>">
                                     <label><input type="checkbox" id="upChkDisable_1" onclick="disableUpperDP('1')" checked="checked">  Current Job</label>
+=======
+                                 <div class="col-sm-9"><input class="datepicker form-control" id="start_date_picker1" required name="start_date" value="<?php if (!empty($experinece->start_date)) { echo date('d-m-Y',strtotime($experinece->start_date)); } ?>">
+                                    <label><input type="checkbox" id="upChkDisable_1" onclick="disableUpperDP('2')" checked="checked">  Current Job</label>
+>>>>>>> 1a7d8c4f49eb2d620daf26206c2b615f26383545
                                  </div>
                               </div>
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="email">End Date:</label>
-                                 <div class="col-sm-9"><input id="resDate_1" class="datepicker form-control" required name="end_date" value="<?php if (!empty($experinece->end_date)) { echo date('d/m/Y',strtotime($experinece->end_date)); }else{ echo "";} ?>" disabled="disabled">
+                                 <div class="col-sm-9"><input id="resDate_2" class="datepicker form-control" required name="end_date" value="<?php if (!empty($experinece->end_date)) { echo date('d/m/Y',strtotime($experinece->end_date)); }else{ echo "";} ?>" disabled="disabled">
                                  </div>
                               </div>
                               <div class="form-group">
@@ -2334,9 +2339,33 @@ input.select2-search__field {
         </div>
       </div>
       
-        
+      
 <?php $this->load->view("fontend/layout/jobseeker_footer.php"); ?>
 </div>
+
+ <script>
+
+  function disableDP(i) {
+//alert($('#resDate_'+i).val());
+    if($('#resDate_'+i).val()==''  || $('#resDate_'+i).val()==null){
+    
+    $('#upChkDisable_'+i).attr("checked","true");
+    $('#resDate_'+i).val('Continue');
+     $('#resDate_'+i).attr('disabled',"disabled");
+  }
+  
+} 
+    function disableUpperDP(count) {
+  
+  $("#resDate_"+count).attr("disabled", $("#upChkDisable_"+count).is(":checked"));
+   if($("#upChkDisable_"+count).is(":checked")){
+     $('#resDate_'+count).val("Continue");
+   } else {
+     $('#resDate_'+count).val("");
+   }
+}
+
+   </script> 
 <script src="<?php echo base_url(); ?>asset/src/jquery.tokeninput.js"></script>
 <script src="<?php echo base_url() ?>asset/js/jquery-ui.js"></script>
 <script src="<?php echo base_url() ?>asset/tokenjs/bootstrap-tokenfield.js"></script>
@@ -3442,7 +3471,7 @@ $(".allowalphabates").keypress(function (e) {
 <script>
 $(function() { 
      
-     $("#my_date_picker").datepicker({{ yearRange: '1900:'+ curr_year, changeMonth:true, changeYear:true, maxDate: '-1d'});
+     $("#my_date_picker").datepicker({ yearRange: '1900:'+ curr_year, changeMonth:true, changeYear:true, maxDate: '-1d'});
     });    
 
       

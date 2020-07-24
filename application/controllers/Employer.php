@@ -2117,7 +2117,7 @@ class Employer extends MY_Employer_Controller
             'option2' => $this->input->post('option2'),
             'option3' => $this->input->post('option3'),
             'option4' => $this->input->post('option4'),
-            // 'option5'           => $this->input->post('option5'),
+            'time_for_question'           => $this->input->post('time'),
             'is_admin' => $this->input->post('is_admin')
         );
         

@@ -98,6 +98,12 @@
                 </select> <?php echo form_error('ques_type'); ?>   
               </div>
             </div>
+             <div class="col-md-4">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Time For the question<span class="required">*</span></label>
+                <input type="text" class="form-control" name="time">
+              </div>
+            </div>
           </div>
              
              
@@ -185,7 +191,63 @@
   </form>
   </div>
 </div>
-
+<script>
+  function getTopic(id){
+        if(id){
+          $.ajax({
+            type:'POST',
+            url:'<?php echo base_url();?>employer/gettopic',
+            data:{id:id},
+            success:function(res){
+              $('#topic_id').html(res);
+            }
+            
+          }); 
+          }
+       }
+       function getSubtopic(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>employer/getsubtopic',
+                data:{id:id},
+                success:function(res){
+                    $('#subtopic_id').html(res);
+                }
+                
+            }); 
+          }
+   
+    }
+     function getLineitem(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>employer/getlineitem',
+                data:{id:id},
+                success:function(res){
+                    $('#lineitem_id').html(res);
+                }
+                
+            }); 
+          }
+   
+    }
+    function getLineitemlevel(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>employer/getlineitemlevel',
+                data:{id:id},
+                success:function(res){
+                    $('#lineitemlevel_id').html(res);
+                }
+                
+            }); 
+          }
+   
+       }
+</script>
 
 <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>assets/js/bootstrap.js" type="text/javascript"></script>
