@@ -2070,7 +2070,7 @@ class Employer extends MY_Employer_Controller
         $this->form_validation->set_rules('option2','Option 2', 'required');
         $this->form_validation->set_rules('option3','Option 3', 'required');
         $this->form_validation->set_rules('option4','Option 4', 'required');
-        $this->form_validation->set_rules('correct_answer[]','Correct Answer', 'required');
+        // $this->form_validation->set_rules('correct_answer[]','Correct Answer', 'required');
     $this->form_validation->set_message('required', 'This field is mandatory');
         if ($this->form_validation->run() == FALSE) 
         {
@@ -2117,7 +2117,7 @@ class Employer extends MY_Employer_Controller
             'option2' => $this->input->post('option2'),
             'option3' => $this->input->post('option3'),
             'option4' => $this->input->post('option4'),
-            'time_for_question'           => $this->input->post('time'),
+            'time_for_question' => $this->input->post('time'),
             'is_admin' => $this->input->post('is_admin')
         );
         
