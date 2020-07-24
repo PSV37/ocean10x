@@ -407,7 +407,7 @@ button#question_add {
       
             // alert();
             var myNameArray =  data_arr1.split(',');
-
+              var sum = 0;
             $.each(myNameArray, function (a, b) {
                 sum = sum + b;
             });
