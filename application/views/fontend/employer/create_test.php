@@ -22,7 +22,7 @@ button#frwd_btn {
 .modal-footer {
     /* max-height: 13px; */
      background-color: #c4ebe8; 
-    margin-top: 200px;
+    /*margin-top: 200px;*/
     margin-left: 40px;
 }
    button.btn.btn-default {
@@ -271,7 +271,7 @@ span.select2.select2-container.select2-container--default {
         
          <!--  <p>This is a small modal.</p> -->
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer" style="margin-top: 200px">
           <button type="submit" class="btn btn-default">Add</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
