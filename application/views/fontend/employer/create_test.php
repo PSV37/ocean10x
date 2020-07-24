@@ -423,53 +423,7 @@ input.select2-search__field {
                 $('#add_test').modal('show');
                
 
-      
-    
-  });
-});
-function sum(input){
-             
- if (toString.call(input) !== "[object Array]")
-    return false;
-      
-            var total =  0;
-            for(var i=0;i<input.length;i++)
-              {                  
-                if(isNaN(input[i])){
-                continue;
-                 }
-                  total += Number(input[i]);
-               }
-             return total;
-            }
-
-  </script> 
-<script>
-   $('.select2').select2();
-</script>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/additional-methods.js"></script>
-<script> 
-    function save_benifit()
-       {
-        var othr_benifit = document.getElementById('other_benifit').value;
-        $('#candidate_skills').append('<label><input type="checkbox" value="'+othr_benifit+'" class="btn-default1" checked="" name="candidate_skills[]"><span>'+othr_benifit+'</span></label>');
-        document.getElementById('other_benifit').value = '';
-        // alert(othr_benifit);
-   
-       }
-   $(document).ready(function() { 
-       $('#other_terxtbx').hide();
-   
-      $(function() { 
-     
-     $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd',maxDate: '0' });
-     $("#last_salary_hike").datepicker({ dateFormat: 'yy-mm-dd',maxDate: '0' });
-     });
-
- $("#js").validate (  
+                 $("#js").validate (  
 
 {
  errorPlacement: function(error, element) {
@@ -616,6 +570,53 @@ required: "This field is mandatory!"
 
 
 });
+      
+    
+  });
+});
+function sum(input){
+             
+ if (toString.call(input) !== "[object Array]")
+    return false;
+      
+            var total =  0;
+            for(var i=0;i<input.length;i++)
+              {                  
+                if(isNaN(input[i])){
+                continue;
+                 }
+                  total += Number(input[i]);
+               }
+             return total;
+            }
+
+  </script> 
+<script>
+   $('.select2').select2();
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/additional-methods.js"></script>
+<script> 
+    function save_benifit()
+       {
+        var othr_benifit = document.getElementById('other_benifit').value;
+        $('#candidate_skills').append('<label><input type="checkbox" value="'+othr_benifit+'" class="btn-default1" checked="" name="candidate_skills[]"><span>'+othr_benifit+'</span></label>');
+        document.getElementById('other_benifit').value = '';
+        // alert(othr_benifit);
+   
+       }
+   $(document).ready(function() { 
+       $('#other_terxtbx').hide();
+   
+      $(function() { 
+     
+     $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd',maxDate: '0' });
+     $("#last_salary_hike").datepicker({ dateFormat: 'yy-mm-dd',maxDate: '0' });
+     });
+// $('#btn').on('click', function() {
+
 
 });
 
