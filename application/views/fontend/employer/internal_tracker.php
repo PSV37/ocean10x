@@ -587,7 +587,7 @@ textarea#comment {
             $('.table-borderless tr').each(function (a, b) {
                 var value = $('#cv_id', b).val();
                 var name = $("#name" , b).val();
-                var email = $("#email", b).val();
+                var email = $("#email1", b).val();
                 var mobile = $("#mobile", b).val();
                 var ctc = $("#ctc", b).val();
                 var exp = $("#exp", b).val();
