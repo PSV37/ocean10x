@@ -18,9 +18,10 @@
                <li>DO NOT refresh the page.</li>
                <li>All the best.</li>
                <div class="row" style="text-align:end;">
-                  <button class="lets-start">Lets Start</button>
+                  <button type="submit">Lets Start</button>
                </div>
             </div>
+         </form>
          </div>
       </div>
    </div>
