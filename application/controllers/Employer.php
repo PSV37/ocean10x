@@ -2013,7 +2013,7 @@ class Employer extends MY_Employer_Controller
                    $test_data['total_questions'] = sizeof(implode(',', $up_date));
                    $test_data['test_duration'] = $test_time;
                    $test_data['level'] = $level_data;
-                   $test_data['Topics'] = $subject_data;
+                   $test_data['topics'] = $subject_data;
                    $test_data['created_by'] = $this->session->userdata('company_profile_id');
                    $test_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
 
@@ -2037,13 +2037,22 @@ class Employer extends MY_Employer_Controller
             $ques_level = explode(',', $level_data);
             $new_arr_level = array_unique (array_merge($old_level,$ques_level));
 
+            $old_topic = explode(',', $old_question_data['topic']);
+            $ques_topic = explode(',', $topic);
+            $new_arr_topic = array_unique (array_merge($old_topic,$ques_topic));
+
+            $old_test_duration = explode(',', $old_question_data['test_duration']);
+            $ques_test_duration = explode(',', $test_time);
+            $new_arr_test_duration =array_merge($old_test_duration,$ques_test_duration);
+
 
            
             $test_data['questions'] = implode(',',$new_arr);
             $test_data['type'] = implode(',',$new_arr_type);
             $test_data['level'] = implode(',',$new_arr_level);
+            $test_data['topic'] = implode(',',$new_arr_topic);
             $test_data['total_questions'] = sizeof($new_arr);
-            $test_data['test_duration'] = $test_time;
+            $test_data['test_duration'] = array_sum($new_arr_test_duration);
 
             $test_data['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
             $this->Master_model->master_update($test_data, 'oceanchamp_tests',$where);

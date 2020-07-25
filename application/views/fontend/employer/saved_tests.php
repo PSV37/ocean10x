@@ -582,7 +582,11 @@ ul.select2-results__options {
               success: function(data)
               {
                 console.log(data);
-                $('$type').val(data[0]['type'])
+                $('#type').val(data[0]['type']);
+                $('#questions_total').val(data[0]['total_questions']);
+                $('#test_duartion').val(data[0]['test_duration']);
+                $('#level').val(data[0]['level']);
+                $('#topics').val(data[0]['topics']);
               }
         });
 
