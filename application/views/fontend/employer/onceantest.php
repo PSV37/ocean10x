@@ -158,8 +158,8 @@ var json = {
                             "choices": [
                             <?php foreach($oceanchamp_tests as $row) { ?>
                                 {
-                                    "value": "<?php echo $row->test_id ?>",
-                                    "text": "<?php echo $row->test_name ?>"
+                                    "value": "<?php echo $row['test_id'] ?>",
+                                    "text": "<?php echo $row['test_name'] ?>"
                                 },
 
 
