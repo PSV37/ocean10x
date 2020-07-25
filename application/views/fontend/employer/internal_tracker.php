@@ -587,7 +587,7 @@ textarea#comment {
             $('.table-borderless tr').each(function (a, b) {
                 var value = $('#cv_id', b).val();
                 var name = $("#name" , b).val();
-                var email = $("#email1", b).val();
+                var email = $("#email", b).val();
                 var mobile = $("#mobile", b).val();
                 var ctc = $("#ctc", b).val();
                 var exp = $("#exp", b).val();
@@ -769,7 +769,7 @@ textarea#comment {
 
 <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
-
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/additional-methods.js"></script>
 
 <script>
 $("#dept_id").select2( {
@@ -1020,9 +1020,8 @@ equalTo: "The two passwords do not match!"
 </script>
 
 <script>
- 
-   $(document).on("keypress keyup blur", ".allowphonenumber").on("keypress keyup blur",function (event) {
-          alert('keypress keyup blur');
+
+   $(".allowphonenumber").on("keypress keyup blur",function (event) {
              //this.value = this.value.replace(/[^0-9\.]/g,'');
       $(this).val($(this).val().replace("^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"));
              if ((event.which < 48 || event.which > 57)) {
@@ -1046,7 +1045,7 @@ equalTo: "The two passwords do not match!"
 
 
    
-   $(document).on("keypress keyup blur",".allowalphabatescomma").keypress(function (e) {
+   $(".allowalphabatescomma").keypress(function (e) {
          var regex = new RegExp("^[a-zA-Z, \s]+$");
          var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
          if (regex.test(str)) {
@@ -1066,19 +1065,8 @@ equalTo: "The two passwords do not match!"
                 event.preventDefault();
             }
         });
-   $(".allowalphabatesspace", function(e){
-   var regex = new RegExp("^[a-zA-Z ]*$");
-         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
-         if (regex.test(str)) {
-             return true;
-         }
-         else
-         {
-         e.preventDefault();
-         return false;
-         }
-});
-   $(".allowalphabatesspace").keypress(function (e) {
+   
+   $(document).on("keypress keyup blur", ".allowalphabatesspace",function (e){
          var regex = new RegExp("^[a-zA-Z ]*$");
          var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
          if (regex.test(str)) {
@@ -1090,6 +1078,7 @@ equalTo: "The two passwords do not match!"
          return false;
          }
      });
+
 $(".allowalphabates").keypress(function (e) {
          var regex = new RegExp("^[a-zA-Z ]*$");
          var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
