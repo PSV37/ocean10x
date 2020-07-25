@@ -435,8 +435,7 @@ span.select2.select2-container.select2-container--default {
           }
    
     }
-    $(function() {
-  $('#update').on("click", function(){
+  function get_total(){
     // if ($('#checkbox').is(':checked')) {
       alert('ff');
       var checkedValsofname = $('.chkbx:checkbox:checked').map(function() {
@@ -450,11 +449,11 @@ span.select2.select2-container.select2-container--default {
           var total_time = sum(myNameArray);
 
              $('#total_time').html(total_time+' seconds');
+  }
 
 
    
-  });
-});
+  
      $(function(){
       var test_name = $('#test_name').val();
   $("#frwd_btn").on("click", function() {
