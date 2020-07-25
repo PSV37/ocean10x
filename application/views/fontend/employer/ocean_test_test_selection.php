@@ -85,7 +85,7 @@
                      </div>
                      </div>
                      <?php  } ?>
-                     <input type="hidden" name="test_name" id="test_name">
+                     <input type="hidden" name="test_name" id="test_name" value="">
                      </div>
                      <div class="row col-md-12">
                      <span class="show_more">Show more..</span>

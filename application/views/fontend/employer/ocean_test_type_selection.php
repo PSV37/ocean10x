@@ -84,7 +84,7 @@
                      </div>
                      </div>
                      <?php  } ?>
-                       <input type="hidden" name="test_type" id="test_type">
+                       <input type="hidden" name="test_type" id="test_type" value="">
                      </div>
                      
                      <div class="row" style="text-align:center;">
