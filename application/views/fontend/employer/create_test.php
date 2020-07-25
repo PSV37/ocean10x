@@ -184,7 +184,7 @@ span.select2.select2-container.select2-container--default {
      
       <div class="box-body">
         <div class="box" >
-          <p style="float: right;"><b>Total Time Duration:</b><span id="total_time"></span></p>
+          <p style="float: right;margin-right: 80px"><b>Total Time Duration:</b><span id="total_time"></span></p>
                <div class="card content">
                      <!-- <div class="front"> -->
                       <div class="following-info">
