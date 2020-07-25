@@ -581,8 +581,9 @@ ul.select2-results__options {
                // dataType: "json",
               success: function(data)
               {
+                var obj = jQuery.parseJSON(data);
                 console.log(data);
-                console.log(data['type']);
+                console.log(obj.type);
                 $('#type').val(data[0]['type']);
                 $('#questions_total').val(data[0]['total_questions']);
                 $('#test_duartion').val(data[0]['test_duration']);
