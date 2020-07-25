@@ -136,10 +136,10 @@ button#question_add {
             <div class="border-top"></div>
               <div class="panel-heading">
                 <img src="https://blog.oxiane.com/wp-content/uploads/2017/04/java-logo-oracle.png" class="logo-subject" />
-                <li><span style="color:#949694;float:left;width:150px;"><?php echo $ct_row['skill_name'] ?><span>(<?php echo $ct_row['topic_name'] ?>)</span></li>
-                <li><span style="color:#949694;"><span style="color:#949694;">subtopic&nbsp;:<?php echo $ct_row['subtopic_name'] ?></span></li>
+                <li><span style="color:#949694;float:left;width:150px;"><?php echo $ct_row['skill_name'] ?>(<?php echo $ct_row['topic_name'] ?>)</span></li>
+                <li><span style="color:#949694;">subtopic&nbsp;:<?php echo $ct_row['subtopic_name'] ?></span></li>
 
-                <li><span style="color:#949694;"><span style="color:#949694;">Time&nbsp;:<?php echo $ct_row['subtopic_name'] ?></span></li>
+                <li style="float: right;"><span style="color:#949694;"><b>Time</b>&nbsp;:<?php echo $ct_row['subtopic_name'] ?></span></li>
 
                 <li><span style="color:#949694;float:left;width:150px;"><?php echo $ct_row['title'] ?></span></li>
                 <li><span style="color:#949694;"><?php echo $ct_row['titles'] ?></span></li>
