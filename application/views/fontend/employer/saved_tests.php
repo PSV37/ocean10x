@@ -476,11 +476,31 @@ ul.select2-results__options {
                   <div class="clear"></div>
                </div>
               
-
-              
-
             </div>
-         
+          <div class="row">
+             <div class="col-md-2">
+               <span>Type:<span id="right_side">Rapid Fire</span></span>
+                  <div class="clear"></div>
+               </div>
+
+               <div class="col-md-2">
+               <span>Type:<span id="right_side">Rapid Fire</span></span>
+                  <div class="clear"></div>
+               </div>
+               <div class="col-md-2">
+               <span>Type:<span id="right_side">Rapid Fire</span></span>
+                  <div class="clear"></div>
+               </div>
+               <div class="col-md-2">
+               <span>Type:<span id="right_side">Rapid Fire</span></span>
+                  <div class="clear"></div>
+               </div>
+               <div class="col-md-2">
+               <span>Type:<span id="right_side">Rapid Fire</span></span>
+                  <div class="clear"></div>
+               </div>
+              
+            </div>
             
          
 
@@ -500,7 +520,7 @@ ul.select2-results__options {
                                 <th scope="col">Line Item 1</th>
                                 <th scope="col">Line Item 2</th>
                                 <th scope="col">Question</th>
-                                <th scope="col">Level</th>
+                                <th scope="col">Time</th>
                                 <!-- <th scope="col">Action</th> -->
                                
                               </tr>
