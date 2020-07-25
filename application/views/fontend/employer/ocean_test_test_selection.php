@@ -79,7 +79,9 @@
                      <?php if(!empty($oceanchamp_tests)) foreach ($oceanchamp_tests as $svalue) { ?>
                      <div class="col-md-2 ">
                      <div class="box box-active">
-                     <span name="test_name" id="test_name"  value="<?php echo $svalue['id']; ?>"><?php echo $svalue['test_name']; ?></span>
+                     <span name="name" id="name" onclick="get_value(<?php echo $svalue['test_id']; ?>)"  value="<?php echo $svalue['test_id']; ?>"><?php echo $svalue['test_name']; ?></span>
+                     <input type="hidden" name="test_name" id="test_name">
+
                      </div>
                      </div>
                      <?php  } ?>
@@ -128,12 +130,10 @@
       
       }
       
-        function getval(value,id)
+        function get_value(value)
       {
-           $('.exp-box-active').removeClass('exp-box-active');
-           var v = document.getElementById(id); 
-         v.className += " exp-box-active";
-          $('#level').val(value);
+         
+          $('#test_name').val(value);
             
       
       }
