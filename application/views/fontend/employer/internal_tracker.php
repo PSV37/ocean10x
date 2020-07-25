@@ -768,6 +768,9 @@ textarea#comment {
 <script src="<?php echo base_url() ?>asset/js/search.js"></script>
 
 <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/additional-methods.js"></script>
+
 <script>
 $("#dept_id").select2( {
   placeholder: "Select Department",
