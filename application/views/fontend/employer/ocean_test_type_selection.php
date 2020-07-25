@@ -65,12 +65,12 @@
                      <div class="row note">
                         <span>No Tests Have Been Given By You !</span>
                      </div>
-                     <form method="post" action="<?php echo base_url(); ?>employer/ocean_test_instructions">
+                     <form method="post" action="<?php echo base_url(); ?>employer/ocean_test_choose_test">
                        
 
                      <div class="subjects">
                         <h5 style="color:#159993;">Become an OceanChamp !</h5>
-                        <h4 style="margin-bottom:20px;">Select the Skillset You Want To Become a Champ !</h4>
+                        <h4 style="margin-bottom:20px;">Select the type of a test !</h4>
                      <form action="/action_page.php">
                      <button class="sort-serach" type="submit"><i class="fas fa-search"></i></button>
                      <input type="text" placeholder="Search.." name="search">
@@ -79,13 +79,10 @@
                      <?php if(!empty($oceanchamp_tests)) foreach ($oceanchamp_tests as $svalue) { ?>
                      <div class="col-md-2 ">
                      <div class="box box-active">
-                     <span name="test_name" id="test_name"  value="<?php echo $svalue['id']; ?>"><?php echo $svalue['test_name']; ?></span>
+                     <span name="test_type" id="test_type"  value="<?php echo $svalue['id']; ?>"><?php echo $svalue['type']; ?></span>
                      </div>
                      </div>
                      <?php  } ?>
-                     </div>
-                     <div class="row col-md-12">
-                     <span class="show_more">Show more..</span>
                      </div>
                      
                      <div class="row" style="text-align:center;">

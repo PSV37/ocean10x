@@ -135,7 +135,7 @@ var json = {
         {
             "name": "page1",
             "navigationTitle": "Test",
-            // "navigationDescription": "Collector's info",
+            "navigationDescription": "Test selection",
             "elements": [
                 // {
                 //     "type": "image",

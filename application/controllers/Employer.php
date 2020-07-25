@@ -5986,7 +5986,54 @@ function update_external()
          $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id'";
 
             $data['oceanchamp_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where_all);
-        $this->load->view('fontend/employer/onceantest',$data);
+        $this->load->view('fontend/employer/ocean_test_type_selection',$data);
+    }
+
+    public function ocean_test_choose_test()
+    {
+        $test_type = $this->input->post('test_type');
+        $employer_id = $this->session->userdata('company_profile_id');
+         $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' AND type = '$test_type'";
+
+            $data['oceanchamp_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where_all);
+        $this->load->view('fontend/employer/ocean_test_test_selection',$data);
+
+    }
+
+    public function ocean_test_instructions()
+    {
+        $data['test_id'] = $this->input->post('test_name');
+        $this->load->view('fontend/employer/ocean_test_instructions',$data);
+
+    }
+
+    public function ocean_test_start($test_id = null)
+    {
+        $company_profile_id = $this->session->userdata('company_profile_id');
+        $test_id           = base64_decode($test_id);
+        
+        if (!empty($skill_id)) {
+            
+            $data['title']    = 'Exam Start';
+            $data['skill_id'] = $skill_id;
+            
+            $str  = file_get_contents('./exam_questions/' . $skill_id . '_' . $company_profile_id . '.json');
+            $json = json_decode($str, true);
+            
+            foreach ($json as $value) {
+                $data['questions'] = $value;
+                break;
+            }
+            
+            // print_r($data['questions']);die;
+            
+            
+            $this->load->view('fontend/employer/oceanchamp_test', $data);
+            // $this->load->view('fontend/exam/oceantest_test',$data);
+            
+        } else {
+            redirect('exam');
+        }
     }
 
 
