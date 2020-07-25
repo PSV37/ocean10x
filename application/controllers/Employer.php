@@ -6010,25 +6010,19 @@ function update_external()
     public function ocean_test_start($test_id = null)
     {
         $company_profile_id = $this->session->userdata('company_profile_id');
-        $skill_id           = base64_decode($test_id);
+        $test_id           = base64_decode($test_id);
         
-        if (!empty($skill_id)) {
+        if (!empty($test_id)) {
             
-            $data['title']    = 'Exam Start';
-            $data['skill_id'] = $skill_id;
-            
-            $str  = file_get_contents('./exam_questions/' . $skill_id . '_' . $company_profile_id . '.json');
-            $json = json_decode($str, true);
-            
-            foreach ($json as $value) {
-                $data['questions'] = $value;
-                break;
-            }
+            $employer_id = $this->session->userdata('company_profile_id');
+         $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' AND test_id = '$test_id'";
+
+            $data['oceanchamp_tests'] = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where = $where_all, $join = FALSE)
             
             // print_r($data['questions']);die;
             
-            
-            $this->load->view('fontend/employer/oceanchamp_test', $data);
+            $data['limit_id'] = 0;
+            $this->load->view('fontend/employer/ocean_test_questions', $data);
             // $this->load->view('fontend/exam/oceantest_test',$data);
             
         } else {
