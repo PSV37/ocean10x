@@ -867,7 +867,7 @@ url: true
 
 messages:{
 
-'company_name':{
+'email1':{
 
 required: "The name field is mandatory!",
 
