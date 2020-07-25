@@ -485,24 +485,24 @@ ul.select2-results__options {
             <div class="box" >
                <div class="row">
                  <div class="col-md-2">
-                   <span><b>Type:</b><span id="type">Rapid Fire</span></span>
+                   <span><b>Type:</b><span id="type"></span></span>
                       <div class="clear"></div>
                    </div>
 
                    <div class="col-md-2">
-                   <span><b>Questions:</b><span id="questions_total">Rapid Fire</span></span>
+                   <span><b>Questions:</b><span id="questions_total"></span></span>
                       <div class="clear"></div>
                    </div>
                    <div class="col-md-2">
-                   <span><b>Test Duration:</b><span id="test_duartion">Rapid Fire</span></span>
+                   <span><b>Test Duration:</b><span id="test_duartion"></span></span>
                       <div class="clear"></div>
                    </div>
                    <div class="col-md-2">
-                   <span><b>Level:</b><span id="level">Rapid Fire</span></span>
+                   <span><b>Level:</b><span id="level"></span></span>
                       <div class="clear"></div>
                    </div>
                    <div class="col-md-2">
-                   <span><b>Topics:</b><span id="topics">Rapid Fire</span></span>
+                   <span><b>Topics:</b><span id="topics"></span></span>
                       <div class="clear"></div>
                    </div>
                   

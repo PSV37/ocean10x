@@ -2050,7 +2050,7 @@ class Employer extends MY_Employer_Controller
             $test_data['questions'] = implode(',',$new_arr);
             $test_data['type'] = implode(',',$new_arr_type);
             $test_data['level'] = implode(',',$new_arr_level);
-            $test_data['topic'] = implode(',',$new_arr_topic);
+            $test_data['topics'] = implode(',',$new_arr_topic);
             $test_data['total_questions'] = sizeof($new_arr);
             $test_data['test_duration'] = array_sum($new_arr_test_duration);
 
