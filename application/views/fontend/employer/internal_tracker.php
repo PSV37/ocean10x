@@ -1021,7 +1021,7 @@ equalTo: "The two passwords do not match!"
 
 <script>
  
-   $(".allowphonenumber").on("keypress keyup blur",function (event) {
+   $(document).on("keypress keyup blur", ".allowphonenumber").on("keypress keyup blur",function (event) {
           alert('keypress keyup blur');
              //this.value = this.value.replace(/[^0-9\.]/g,'');
       $(this).val($(this).val().replace("^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"));
@@ -1046,7 +1046,7 @@ equalTo: "The two passwords do not match!"
 
 
    
-   $(".allowalphabatescomma").keypress(function (e) {
+   $(document).on("keypress keyup blur",".allowalphabatescomma").keypress(function (e) {
          var regex = new RegExp("^[a-zA-Z, \s]+$");
          var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
          if (regex.test(str)) {
