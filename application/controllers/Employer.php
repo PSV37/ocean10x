@@ -6010,7 +6010,7 @@ function update_external()
     public function ocean_test_start($test_id = null)
     {
         $company_profile_id = $this->session->userdata('company_profile_id');
-        $test_id           = base64_decode($test_id);
+        $skill_id           = base64_decode($test_id);
         
         if (!empty($skill_id)) {
             
