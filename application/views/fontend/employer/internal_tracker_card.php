@@ -30,7 +30,7 @@
 
                                   <input class="email allownumericwithoutdecimal" id="name" type="text" name="email" value="<?php echo $job_row->js_name; ?>" ></td>
 
-                                <td ><input class="email" id="email" type="text" name="email" value="<?php echo $job_row->js_email; ?>" ></td>
+                                <td ><input class="email" id="email" type="text" name="email1" value="<?php echo $job_row->js_email; ?>" ></td>
 
                                 <td ><input id="mobile" type="text" name="mobile" value="<?php echo $job_row->js_mobile; ?>" maxlength='10' ></td>
 
@@ -88,4 +88,6 @@
                <?php endif; ?>
             <!-- </div>
               xcccc-->
+
+
 

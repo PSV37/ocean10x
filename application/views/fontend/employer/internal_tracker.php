@@ -791,13 +791,11 @@ $("#int_track").validate (
 
 rules:{
 
-'email':{
+'email1':{
 
-email: true,
+email: true
 
-minlength: 10,
 
-maxlength: 10
 //company_phone_regex: true
 
 },
