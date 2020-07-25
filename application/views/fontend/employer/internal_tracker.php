@@ -1020,8 +1020,11 @@ equalTo: "The two passwords do not match!"
 </script>
 
 <script>
-
+$(document).on("keypress keyup blur", ".allowphonenumber", function(){
+    alert("The button is clicked in Ajax content!!");
+}); 
    $(".allowphonenumber").on("keypress keyup blur",function (event) {
+          alert('keypress keyup blur');
              //this.value = this.value.replace(/[^0-9\.]/g,'');
       $(this).val($(this).val().replace("^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"));
              if ((event.which < 48 || event.which > 57)) {
