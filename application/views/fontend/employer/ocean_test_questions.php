@@ -921,7 +921,7 @@
                 
                   ?> 
                        {
-                          question:"<?php echo $questions['question']; ?>",
+                          question:"<?php echo $questions; ?>",
                           options:["<?php echo $questions['option1'];?>", "<?php echo $questions['option2'];?>", "<?php echo $questions['option3'];?>", "<?php echo $questions['option4'];?>"],
                           answer:"Shrewd",
                           category:1
