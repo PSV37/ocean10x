@@ -582,7 +582,7 @@ ul.select2-results__options {
               success: function(data)
               {
                 var obj = jQuery.parseJSON(data);
-                console.log(obj);
+                console.log(obj[0]['type']);
                 console.log(obj.type);
                 $('#type').val(data[0]['type']);
                 $('#questions_total').val(data[0]['total_questions']);
