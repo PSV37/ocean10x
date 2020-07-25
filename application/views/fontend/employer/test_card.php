@@ -31,7 +31,7 @@
                                 <td ><?php echo $question_data['title']; ?></td>
                                 <td ><?php echo $question_data['titles']; ?></td>
                                 <td ><?php echo $question_data['question']; ?></td>
-                                <td ><?php echo $question_data['time_for_question']; ?></td>
+                                <td ><?php echo $question_data['time_for_question']; ?> sec</td>
                               </tr>
 
                                
