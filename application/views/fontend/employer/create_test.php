@@ -196,6 +196,7 @@ span.select2.select2-container.select2-container--default {
                                 <th scope="col">Line Item 1</th>
                                 <th scope="col">Line Item 2</th>
                                 <th scope="col">Question</th>
+                                <th scope="col">time</th>
                                 <th scope="col">Action</th>
                                
                               </tr>
