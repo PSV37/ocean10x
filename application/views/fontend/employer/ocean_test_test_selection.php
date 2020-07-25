@@ -80,11 +80,12 @@
                      <div class="col-md-2 ">
                      <div class="box box-active">
                      <span name="name" id="name" onclick="get_value(<?php echo $svalue['test_id']; ?>)"  value="<?php echo $svalue['test_id']; ?>"><?php echo $svalue['test_name']; ?></span>
-                     <input type="hidden" name="test_name" id="test_name">
+                     
 
                      </div>
                      </div>
                      <?php  } ?>
+                     <input type="hidden" name="test_name" id="test_name">
                      </div>
                      <div class="row col-md-12">
                      <span class="show_more">Show more..</span>
