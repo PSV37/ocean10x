@@ -32,7 +32,7 @@
 
                                 <td ><input class="email" id="email" type="text" name="email1" value="<?php echo $job_row->js_email; ?>" ></td>
 
-                                <td ><input class="allowphonenumber" id="mobile" type="text" name="mobile" value="<?php echo $job_row->js_mobile; ?>" maxlength='10' ></td>
+                                <td ><input class="email allowphonenumber" id="mobile" type="text" name="mobile" value="<?php echo $job_row->js_mobile; ?>" maxlength='10' ></td>
 
                                 <td ><input id="ctc" type="text" name="ctc" value="<?php echo $job_row->js_current_ctc; ?>" maxlength='3' ></td>
 
