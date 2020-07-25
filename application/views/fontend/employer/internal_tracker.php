@@ -470,7 +470,7 @@ textarea#comment {
                   <div class="clear"></div>
                </div>
                <div class="col-md-3">
-                  <form method="post" action="<?php echo base_url(); ?>employer/corporate_cv_bank">
+                  <form id="int_track" method="post" action="<?php echo base_url(); ?>employer/corporate_cv_bank">
                   <label class="dropdown" style="float:right;">
                      <div class="dd-button">
                         Active Job
@@ -568,6 +568,7 @@ textarea#comment {
       </div>
    </div>
 </div>
+
 <script>
    $(document).on(' change','input[name="check_all"]',function() {
             $('.chkbx').prop("checked" , this.checked);
@@ -669,6 +670,8 @@ textarea#comment {
     
   });
 });
+
+  
 //    $("#frwd_btn").click(function() {
 //      var job_id = $('#job_select').val();
 // //    var id = $(".table table-borderless").closest("tr");
@@ -758,3 +761,334 @@ textarea#comment {
 </script>
 
 
+<script src="<?php echo base_url(); ?>asset/src/jquery.tokeninput.js"></script>
+<script src="<?php echo base_url() ?>asset/js/jquery-ui.js"></script>
+<script src="<?php echo base_url() ?>asset/tokenjs/bootstrap-tokenfield.js"></script>
+<script src="<?php echo base_url() ?>asset/tokenjs/typeahead.bundle.min.js"></script>
+<script src="<?php echo base_url() ?>asset/js/search.js"></script>
+
+<script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
+<script>
+$("#dept_id").select2( {
+  placeholder: "Select Department",
+  allowClear: true
+  } );
+</script>
+
+
+<script>
+
+$(document).ready(function()
+
+{
+
+$("#int_track").validate (  
+
+{
+
+rules:{
+
+'email':{
+
+email: true,
+
+minlength: 10,
+
+maxlength: 10
+//company_phone_regex: true
+
+},
+
+
+'mobile':{
+
+required: true,
+
+companyname_regex: true
+
+},
+
+'ctc':{
+
+required: true,
+
+contactname_regex: true
+
+},
+
+'exp': {
+
+required: true,
+
+contpersonlevel_regex: true
+
+}, 
+
+'notice':{
+
+required: true,
+
+email: true
+
+
+},
+
+'edu':{
+
+required: true,
+
+email: true
+
+
+},
+
+'status': {
+        
+  matches: "[0-9]+", 
+        
+  minlength:10,
+        
+  maxlength:10,
+
+  required: true
+},
+
+'comment':{
+
+required: true,
+
+url: true
+
+}
+
+
+},
+
+messages:{
+
+'company_name':{
+
+required: "The name field is mandatory!",
+
+maxlength: "Choose a company name of at least 14 letters!"
+
+},
+
+'cont_person_mobile':{
+
+  required: "The name field is mandatory!",
+
+  matches: "Didn't match!", 
+        
+  minlength: "Minimum length 10 digits!",
+        
+  maxlength: "Maximum length 10 digits!"
+},
+
+'contact_name':{
+
+required: "The name field is mandatory!",
+
+maxlength: "Choose a company name of at least 14 letters!"
+
+},
+
+'cont_person_level':{
+
+required: "The name field is mandatory!",
+
+maxlength: "Choose a company name of at least 14 letters!"
+
+},
+
+'company_phone':{
+
+required: "The username field is mandatory!",
+
+minlength: "Choose a username of at least 4 letters!",
+
+company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+
+remote: "The username is already in use by another user!"
+
+},
+
+
+'alternate_email_id':{
+
+required: "The Email is required!",
+
+email: "Please enter a valid email address!",
+
+remote: "The email is already in use by another user!"
+
+},
+
+'cont_person_email' :{
+
+required: "The Email is required!",
+
+email: "Please enter a valid email address!",
+
+remote: "The email is already in use by another user!"
+
+},
+
+'company_url':{
+
+required: "The Web Address is required!"
+
+},
+
+'username':{
+
+required: "The username field is mandatory!",
+
+minlength: "Choose a username of at least 4 letters!",
+
+username_regex: "You have used invalid characters. Are permitted only letters numbers!",
+
+remote: "The username is already in use by another user!"
+
+},
+
+'pass1':{
+
+required: "The password field is mandatory!",
+
+minlength: "Please enter a password at least 8 characters!"
+
+},
+
+'pass2':{ 
+
+equalTo: "The two passwords do not match!"
+
+}
+
+}
+
+});
+
+});
+
+</script>
+
+<script >
+   $.validator.addMethod("jobtitle_regex", function(value, element) {
+   
+   return this.optional(element) || /^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$/i.test(value);
+   
+   }, "Please choose only alphabets");
+   
+   
+   $.validator.addMethod("cityid_regex", function(value, element) {
+   
+   return this.optional(element) || /^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$/i.test(value);
+   
+   }, "Please choose only alphabets");
+   
+   $.validator.addMethod("contactname_regex", function(value, element) {
+   
+   return this.optional(element) || /^[a-zA-Z ]+$/.test(value);
+   
+   }, "Please choose only alphabets");
+   
+   
+   
+   $.validator.addMethod("salrangefrom_regex", function(value, element) {
+   
+   return this.optional(element) || /^[a-zA-Z ]+$/.test(value);
+   
+   }, "Please choose only alphabets");
+   
+   
+   $.validator.addMethod("salrangeto_regex", function(value, element) {
+   
+   return this.optional(element) || /^[a-zA-Z ]+$/.test(value);
+   
+   }, "Please choose only alphabets");
+   
+   
+   $.validator.addMethod("companypincode_regex", function(value, element) {
+   
+   return this.optional(element) || /^[1-9][0-9][0-9][0-9][0-9][0-9]$/.test(value);
+   
+   }, "Please Enter 6 digits Company Pincode");
+   
+</script>
+
+<script>
+
+   $(".allowphonenumber").on("keypress keyup blur",function (event) {
+             //this.value = this.value.replace(/[^0-9\.]/g,'');
+      $(this).val($(this).val().replace("^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"));
+             if ((event.which < 48 || event.which > 57)) {
+                 event.preventDefault();
+             }
+         });
+
+   
+   //(^[ A-Za-z0-9_@./#&+-]*$)
+   
+ 
+
+   $(".allownumericwithoutdecimal").on("input", function(evt) {
+    var self = $(this);
+    self.val(self.val().replace(/[^\d]+/, ""));
+    if ((evt.which < 48 || evt.which > 57)) 
+     {
+     evt.preventDefault();
+     }
+ });
+
+
+   
+   $(".allowalphabatescomma").keypress(function (e) {
+         var regex = new RegExp("^[a-zA-Z, \s]+$");
+         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+         if (regex.test(str)) {
+             return true;
+         }
+         else
+         {
+         e.preventDefault();
+         return false;
+         }
+     });
+
+    $(".allownumericwithdecimal").on("keypress keyup blur",function (event) {
+            //this.value = this.value.replace(/[^0-9\.]/g,'');
+     $(this).val($(this).val().replace(/[^0-9\.]/g,''));
+            if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+                event.preventDefault();
+            }
+        });
+   
+   $(".allowalphabatesspace").keypress(function (e) {
+         var regex = new RegExp("^[a-zA-Z ]*$");
+         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+         if (regex.test(str)) {
+             return true;
+         }
+         else
+         {
+         e.preventDefault();
+         return false;
+         }
+     });
+$(".allowalphabates").keypress(function (e) {
+         var regex = new RegExp("^[a-zA-Z ]*$");
+         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+         if (regex.test(str)) {
+             return true;
+         }
+         else
+         {
+         e.preventDefault();
+         return false;
+         }
+     });
+
+
+</script>
