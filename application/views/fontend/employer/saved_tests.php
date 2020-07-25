@@ -583,12 +583,12 @@ ul.select2-results__options {
               {
                 var obj = jQuery.parseJSON(data);
                 console.log(obj[0]['type']);
-                console.log(obj.type);
-                $('#type').val(obj[0]['type']);
-                $('#questions_total').val(obj[0]['total_questions']);
-                $('#test_duartion').val(obj[0]['test_duration']);
-                $('#level').val(obj[0]['level']);
-                $('#topics').val(obj[0]['topics']);
+                
+                $('#type').html(obj[0]['type']);
+                $('#questions_total').html(obj[0]['total_questions']);
+                $('#test_duartion').html(obj[0]['test_duration']);
+                $('#level').html(obj[0]['level']);
+                $('#topics').html(obj[0]['topics']);
               }
         });
 
