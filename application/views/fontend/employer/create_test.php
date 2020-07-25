@@ -435,6 +435,25 @@ span.select2.select2-container.select2-container--default {
           }
    
     }
+    $(function() {
+  $('.chkbx').click(function() {
+    // if ($('#checkbox').is(':checked')) {
+      var checkedValsofname = $('.chkbx:checkbox:checked').map(function() {
+                   return this.getAttribute("data-valueone");
+               }).get();
+               var data_arr1= (checkedValsofname.join(","));
+      
+            // alert();
+            var myNameArray =  data_arr1.split(',');
+              // var sum = 0;
+          var total_time = sum(myNameArray);
+
+             $('#total_time').html(total_time+' seconds');
+
+
+   
+  });
+});
      $(function(){
       var test_name = $('#test_name').val();
   $("#frwd_btn").on("click", function() {
