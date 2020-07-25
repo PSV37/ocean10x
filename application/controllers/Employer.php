@@ -5982,7 +5982,7 @@ function update_external()
             }
     public function oceantest()
     {
-        $this->load->view('fontend/employer/onceantest')
+        $this->load->view('fontend/employer/onceantest');
     }
 
 
