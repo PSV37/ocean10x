@@ -200,6 +200,81 @@ ul.select2-results__options {
   </div>
 </div>
 <script>
+  $(document).ready(function(){
+    
+    function getLineitemlevel_load(){
+      var id = $('#lineitem_id').val();
+      if(id){
+        $.ajax({
+          type:'POST',
+          url:'<?php echo base_url();?>employer/getlineitemlevel',
+          data:{id:id},
+          success:function(res){
+            $('#lineitemlevel_id').html(res);
+            $('#lineitemlevel_id').val(<?php echo $row['lineitemlevel_id']; ?>);
+          }
+        }); 
+        }
+        }
+    
+    function getLineitem_load(){
+      var id = $('#subtopic_id').val();
+
+      if(id){
+        $.ajax({
+          type:'POST',
+          url:'<?php echo base_url();?>employer/getlineitem',
+          data:{id:id},
+          success:function(res){
+            $('#lineitem_id').html(res);
+            $('#lineitem_id').val(<?php echo $row['lineitem_id']; ?>);
+             getLineitemlevel_load();
+          }
+          
+        }); 
+        }
+   
+        }
+    
+    function getSubtopic_load(){
+        var id = $('#topic_id').val();
+
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>employer/getsubtopic',
+                data:{id:id},
+                success:function(res){
+                    $('#subtopic_id').html(res);
+                    $('#subtopic_id').val(<?php echo $row['subtopic_id']; ?>);
+          getLineitem_load();
+                }
+                
+            }); 
+          }
+   
+       }
+    
+    function getTopic_load(){
+      var id = $('#subject').val();
+      if(id){
+        $.ajax({
+          type:'POST',
+          url:'<?php echo base_url();?>employer/gettopic',
+          data:{id:id},
+          success:function(res){
+            $('#topic_id').html(res);
+            $('#topic_id').val(<?php echo $row['topic_id']; ?>);
+            getSubtopic_load();
+          }
+          
+        }); 
+      }
+       }
+       getTopic_load();
+    });
+</script>
+<script>
   function getTopic(id){
         if(id){
           $.ajax({
