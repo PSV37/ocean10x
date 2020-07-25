@@ -437,6 +437,7 @@ span.select2.select2-container.select2-container--default {
     }
     
   $('.chkbx').click(function() {
+    alert('dd');
     // if ($('#checkbox').is(':checked')) {
       var checkedValsofname = $('.chkbx:checkbox:checked').map(function() {
                    return this.getAttribute("data-valueone");
