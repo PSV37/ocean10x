@@ -1876,7 +1876,7 @@ class Employer extends MY_Employer_Controller
             'questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|LEFT OUTER'
         );
         
-        $data['questionbank'] = $this->Master_model->getMaster('questionbank', $where_all, $join_emp);
+        $data['questionbank'] = $this->Master_model->getMaster('questionbank', $where_all, $join_emp, $order = 'desc', $field = 'ques_id', $select = false,$limit=false,$start=false, $search=false);
         // echo  $this->db->last_query(); die;
         
         $this->load->view('fontend/employer/list_questions', $data);
