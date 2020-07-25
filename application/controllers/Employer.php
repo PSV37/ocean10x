@@ -2074,10 +2074,10 @@ function get_test_details()
 
             $where_all = "oceanchamp_tests.status ='1' AND oceanchamp_tests.company_id='$employer_id' and oceanchamp_tests.test_id = '$test_id'";
         
-            $data['test_questions'] = $this->Master_model->getMaster('oceanchamp_tests', $where_all);
+            $data = $this->Master_model->getMaster('oceanchamp_tests', $where_all);
           
           // print_r($this->db->last_query());die;
-             $this->load->view('fontend/employer/test_card.php',$data);
+             // $this->load->view('fontend/employer/test_card.php',$data);
         }
 
         echo json_encode($data);

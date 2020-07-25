@@ -582,6 +582,7 @@ ul.select2-results__options {
               success: function(data)
               {
                 console.log(data);
+                $('$type').val(data[0]['type'])
               }
         });
 
