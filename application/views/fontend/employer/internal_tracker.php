@@ -1020,9 +1020,7 @@ equalTo: "The two passwords do not match!"
 </script>
 
 <script>
-$(document).on("keypress keyup blur", ".allowphonenumber", function(){
-    alert("The button is clicked in Ajax content!!");
-}); 
+ 
    $(".allowphonenumber").on("keypress keyup blur",function (event) {
           alert('keypress keyup blur');
              //this.value = this.value.replace(/[^0-9\.]/g,'');
@@ -1068,7 +1066,18 @@ $(document).on("keypress keyup blur", ".allowphonenumber", function(){
                 event.preventDefault();
             }
         });
-   
+   $(document).on("keypress keyup blur", ".allowalphabatesspace", function(e){
+   var regex = new RegExp("^[a-zA-Z ]*$");
+         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+         if (regex.test(str)) {
+             return true;
+         }
+         else
+         {
+         e.preventDefault();
+         return false;
+         }
+});
    $(".allowalphabatesspace").keypress(function (e) {
          var regex = new RegExp("^[a-zA-Z ]*$");
          var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);

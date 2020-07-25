@@ -28,7 +28,7 @@
                                <?php } ?>
 
 
-                                  <input class="email allownumericwithoutdecimal" id="name" type="text" name="email" value="<?php echo $job_row->js_name; ?>" ></td>
+                                  <input class="email allowalphabatesspace" id="name" type="text" name="email" value="<?php echo $job_row->js_name; ?>" ></td>
 
                                 <td ><input class="email" id="email" type="text" name="email1" value="<?php echo $job_row->js_email; ?>" ></td>
 
