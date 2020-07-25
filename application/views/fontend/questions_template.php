@@ -128,53 +128,33 @@ Survey
         isLocalizable: true
     });
 
-
 var json = {
     "title": "Minimum data reporting form – for suspected and probable cases of COVID-19",
     "pages": [
         {
             "name": "page1",
-            "navigationTitle": "Test",
-            // "navigationDescription": "Collector's info",
+            "navigationTitle": "Collector",
+            "navigationDescription": "Collector's info",
             "elements": [
-                // {
-                //     "type": "image",
-                //     "name": "first_page_image",
-                //     "imageLink": "/Content/Images/examples/covid/01.png",
-                //     "imageFit": "none",
-                //     "imageHeight": 726,
-                //     "imageWidth": 500,
-                //     "width": "600px"
-                // }, 
                 {
+                    "type": "image",
+                    "name": "first_page_image",
+                    "imageLink": "/Content/Images/examples/covid/01.png",
+                    "imageFit": "none",
+                    "imageHeight": 726,
+                    "imageWidth": 500,
+                    "width": "600px"
+                }, {
                     "type": "panel",
                     "name": "first_page_container_panel",
                     "elements": [
                         {
-                            "type": "radiogroup",
-                            "name": "case_identifier_information_sex",
+                            "type": "text",
+                            "name": "unique_case_id_textbox",
                             "startWithNewLine": false,
-                            "title": "Choose Test",
-                            "choices": [
-                            <?php foreach($oceanchamp_tests as $row) { ?>
-                                {
-                                    "value": "<?php echo $row->test_id ?>",
-                                    "text": "<?php echo $row->test_name ?>"
-                                },
-
-
-
-
-                         <?php   } ?>
-                                //  {
-                                //     "value": "item2",
-                                //     "text": "Female"
-                                // }, {
-                                //     "value": "item3",
-                                //     "text": "Not known"
-                                // }
-                            ],
-                            // "colCount": 3
+                            "title": "Unique Case ID / Cluster Number (if applicable):",
+                            "inputType": "number",
+                            "hideNumber": true
                         }, {
                             "type": "panel",
                             "name": "current_status_panel",

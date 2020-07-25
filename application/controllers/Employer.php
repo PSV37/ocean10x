@@ -5982,7 +5982,11 @@ function update_external()
             }
     public function oceantest()
     {
-        $this->load->view('fontend/employer/onceantest');
+         $employer_id = $this->session->userdata('company_profile_id');
+         $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id'";
+
+            $data['oceanchamp_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where_all);
+        $this->load->view('fontend/employer/onceantest',$data);
     }
 
 
