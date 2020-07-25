@@ -1021,7 +1021,9 @@ equalTo: "The two passwords do not match!"
 
 <script>
 
-   $(".allowphonenumber").on("keypress keyup blur",function (event) {
+  
+
+$(".document").on("keypress keyup blur", ".allowphonenumber", function (event) {
              //this.value = this.value.replace(/[^0-9\.]/g,'');
       $(this).val($(this).val().replace("^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"));
              if ((event.which < 48 || event.which > 57)) {
@@ -1066,7 +1068,7 @@ equalTo: "The two passwords do not match!"
             }
         });
    
-   $(document).on("keypress keyup blur", ".allowalphabatesspace",function (e){
+   $(document).on("keypress keyup blur", ".allowalphabatesspace", function (e){
          var regex = new RegExp("^[a-zA-Z ]*$");
          var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
          if (regex.test(str)) {
@@ -1078,6 +1080,19 @@ equalTo: "The two passwords do not match!"
          return false;
          }
      });
+
+   $(document).on("keypress keyup blur", ".allowalphabatesspace",.function (e){
+         var regex = new RegExp("^[a-zA-Z ]*$");
+         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+         if (regex.test(str)) {
+             return true;
+         }
+         else
+         {
+         e.preventDefault();
+         return false;
+         }
+    });
 
 $(".allowalphabates").keypress(function (e) {
          var regex = new RegExp("^[a-zA-Z ]*$");
