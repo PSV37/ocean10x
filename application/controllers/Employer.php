@@ -5980,7 +5980,10 @@ function update_external()
                 // }
                // redirect(base_url().'?url=login','refresh');
             }
-    
+    public function oceantest()
+    {
+        $this->load->view('fontend/employer/onceantest')
+    }
 
 
 } // end class
