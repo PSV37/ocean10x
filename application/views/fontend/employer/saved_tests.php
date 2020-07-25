@@ -584,11 +584,11 @@ ul.select2-results__options {
                 var obj = jQuery.parseJSON(data);
                 console.log(obj[0]['type']);
                 console.log(obj.type);
-                $('#type').val(data[0]['type']);
-                $('#questions_total').val(data[0]['total_questions']);
-                $('#test_duartion').val(data[0]['test_duration']);
-                $('#level').val(data[0]['level']);
-                $('#topics').val(data[0]['topics']);
+                $('#type').val(obj[0]['type']);
+                $('#questions_total').val(obj[0]['total_questions']);
+                $('#test_duartion').val(obj[0]['test_duration']);
+                $('#level').val(obj[0]['level']);
+                $('#topics').val(obj[0]['topics']);
               }
         });
 
