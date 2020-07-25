@@ -581,7 +581,7 @@ ul.select2-results__options {
                // dataType: "json",
               success: function(data)
               {
-                // console.log(data[0]['type']);
+                console.log(data.type);
                 console.log(data[0]);
                 $('#type').val(data[0]['type']);
                 $('#questions_total').val(data[0]['total_questions']);
