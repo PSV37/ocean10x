@@ -109,7 +109,7 @@ ul.select2-results__options {
              <div class="col-md-4">
               <div class="form-group">
                 <label for="exampleInputEmail1">Time For the question (sec)<span class="required">*</span></label>
-                <input type="number" max="60" min="1" class="form-control" maxlength="2" name="time">
+                <input type="number" max="60" min="1" value="<?php if (!empty($edit_questionbank_info)) echo $row['time_for_question'];?>" class="form-control" maxlength="2" name="time" id="time">
               </div>
             </div>
           </div>
@@ -488,11 +488,20 @@ required: true
 },
 
 
-'correct_answer[]': {required: true}
+'correct_answer[]': {required: true},
+
+'time': {required: true},
+'question': {required: true},
+'option1': {required: true},
+'option2': {required: true},
+'option3': {required: true},
+'option4': {required: true}
+
 
 
 
 },
+
 
 
 messages:{
