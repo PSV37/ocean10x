@@ -1995,6 +1995,10 @@ class Employer extends MY_Employer_Controller
         $test_name = $this->input->post('test_name');
         $test_id = $this->input->post('test_id');
         $up_date = $this->input->post('data_arr');
+        $test_time = $this->input->post('test_time');
+        $level_data = $this->input->post('level_data');
+        $subject_data = $this->input->post('subject_data');
+        $type = $this->input->post('type');
         // echo  $test_id; 
         // echo  $test_name; die;
         $employer_id = $this->session->userdata('company_profile_id');
@@ -2005,6 +2009,11 @@ class Employer extends MY_Employer_Controller
                  $test_data['test_name'] = $test_name;
                    $test_data['company_id'] = $employer_id;
                    $test_data['questions'] = $up_date;
+                   $test_data['type'] = $type;
+                   $test_data['total_questions'] = sizeof(implode(',', $up_date));
+                   $test_data['test_duration'] = $test_time;
+                   $test_data['level'] = $level_data;
+                   $test_data['Topics'] = $subject_data;
                    $test_data['created_by'] = $this->session->userdata('company_profile_id');
                    $test_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
 
@@ -2015,13 +2024,27 @@ class Employer extends MY_Employer_Controller
         elseif (isset($test_id) && !empty($test_id)) {
             $where['test_id']   = $test_id;
             $old_question_data  = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where);
+
             $old_questions = explode(',', $old_question_data['questions']);
             $ques = explode(',', $up_date);
             $new_arr = array_unique (array_merge($old_questions,$ques));
-            // print_r($old_questions);
-            // print_r($ques); 
-            // print_r(implode(',',$new_arr));die;
+
+            $old_type = explode(',', $old_question_data['type']);
+            $ques_type = explode(',', $type);
+            $new_arr_type = array_unique (array_merge($old_type,$ques_type));
+
+            $old_level = explode(',', $old_question_data['level']);
+            $ques_level = explode(',', $level_data);
+            $new_arr_level = array_unique (array_merge($old_level,$ques_level));
+
+
+           
             $test_data['questions'] = implode(',',$new_arr);
+            $test_data['type'] = implode(',',$new_arr_type);
+            $test_data['level'] = implode(',',$new_arr_level);
+            $test_data['total_questions'] = sizeof($new_arr);
+            $test_data['test_duration'] = $test_time;
+
             $test_data['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
             $this->Master_model->master_update($test_data, 'oceanchamp_tests',$where);
 
@@ -2042,7 +2065,23 @@ class Employer extends MY_Employer_Controller
             $data['oceanchamp_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where_all);
             $this->load->view('fontend/employer/saved_tests',$data);
     }
+function get_test_details()
+{
+    $employer_id = $this->session->userdata('company_profile_id');
+        $test_id = $this->input->post('test_id');
+       
+        if(!empty($test_id)) {
 
+            $where_all = "oceanchamp_tests.status ='1' AND oceanchamp_tests.company_id='$employer_id' and oceanchamp_tests.test_id = '$test_id'";
+        
+            $data['test_questions'] = $this->Master_model->getMaster('oceanchamp_tests', $where_all);
+          
+          // print_r($this->db->last_query());die;
+             $this->load->view('fontend/employer/test_card.php',$data);
+        }
+
+        echo json_encode($data);
+}
     public function get_test_card()
     {
         $employer_id = $this->session->userdata('company_profile_id');
@@ -2058,6 +2097,8 @@ class Employer extends MY_Employer_Controller
              $this->load->view('fontend/employer/test_card.php',$data);
         }
     }
+
+
     public function save_questionbank($id = null)
     {
 

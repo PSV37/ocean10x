@@ -264,6 +264,12 @@ span.select2.select2-container.select2-container--default {
                   <label class="mdl-textfield__label" for="sample3">Total Time For the Test:</label><br>
                  
                <input type="text" class="form-control" readonly style="border: none;" id="test_time" name="test_time">
+
+               <input type="hidden" class="form-control" readonly style="border: none;" id="level_data" name="level_data">
+
+               <input type="hidden" class="form-control" readonly style="border: none;" id="subject_data" name="subject_data">
+
+                <input type="hidden" class="form-control" readonly style="border: none;" id="type" name="type">
                </div>
             </div>
          </div>
@@ -449,8 +455,11 @@ span.select2.select2-container.select2-container--default {
               // var sum = 0;
           var total_time = sum(myNameArray);
 
-            // alert(sum);
+            var level_val = $('')
              $('#test_time').val(total_time+' seconds');
+             $('#level_data').val($('#level').val());
+             $('#subject_data').val($('#subject').val());
+             $('#type').val($('#ques_type').val());
               
                       if($('#js').valid()) 
                       {

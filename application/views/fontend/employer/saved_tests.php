@@ -477,35 +477,36 @@ ul.select2-results__options {
                </div>
               
             </div>
-          <div class="row">
-             <div class="col-md-2">
-               <span>Type:<span id="right_side">Rapid Fire</span></span>
-                  <div class="clear"></div>
-               </div>
 
-               <div class="col-md-2">
-               <span>Type:<span id="right_side">Rapid Fire</span></span>
-                  <div class="clear"></div>
-               </div>
-               <div class="col-md-2">
-               <span>Type:<span id="right_side">Rapid Fire</span></span>
-                  <div class="clear"></div>
-               </div>
-               <div class="col-md-2">
-               <span>Type:<span id="right_side">Rapid Fire</span></span>
-                  <div class="clear"></div>
-               </div>
-               <div class="col-md-2">
-               <span>Type:<span id="right_side">Rapid Fire</span></span>
-                  <div class="clear"></div>
-               </div>
-              
-            </div>
             
          
 
 
             <div class="box" >
+               <div class="row">
+                 <div class="col-md-2">
+                   <span><b>Type:</b><span id="type">Rapid Fire</span></span>
+                      <div class="clear"></div>
+                   </div>
+
+                   <div class="col-md-2">
+                   <span><b>Questions:</b><span id="questions_total">Rapid Fire</span></span>
+                      <div class="clear"></div>
+                   </div>
+                   <div class="col-md-2">
+                   <span><b>Test Duration:</b><span id="test_duartion">Rapid Fire</span></span>
+                      <div class="clear"></div>
+                   </div>
+                   <div class="col-md-2">
+                   <span><b>Level:</b><span id="level">Rapid Fire</span></span>
+                      <div class="clear"></div>
+                   </div>
+                   <div class="col-md-2">
+                   <span><b>Topics:</b><span id="topics">Rapid Fire</span></span>
+                      <div class="clear"></div>
+                   </div>
+                  
+                </div>
                <div class="card content">
                      <!-- <div class="front"> -->
                       <div class="following-info">
@@ -571,6 +572,19 @@ ul.select2-results__options {
  function get_card(test_id)
   {
    
+   $.ajax({
+              url: "<?php echo base_url();?>employer/get_test_details",
+              type: "POST",
+              data: {test_id:test_id},
+              // contentType:false,
+              // processData:false,
+               // dataType: "json",
+              success: function(data)
+              {
+                console.log(data);
+              }
+        });
+
     $.ajax({
               url: "<?php echo base_url();?>employer/get_test_card",
               type: "POST",
