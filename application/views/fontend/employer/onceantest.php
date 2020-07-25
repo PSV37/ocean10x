@@ -1,4 +1,13 @@
-<style>
+<body>
+   <!---header-->
+   <?php  $this->load->view('fontend/layout/employer_new_header.php'); ?>
+   <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/oceanchamp_exp.css">
+   <script src="https://unpkg.com/jquery"></script>
+        <script src="https://surveyjs.azureedge.net/1.7.23/survey.jquery.js"></script>
+        <link href="https://surveyjs.azureedge.net/1.7.23/modern.css" type="text/css" rel="stylesheet"/>
+        <link rel="stylesheet" href="./index.css">
+   <!---header--->
+   <style>
     .navigationContainer {
     width: 100%;
     height: 110px;
@@ -83,29 +92,24 @@
     background-color: white;
 }
 </style>
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>, jQuery Survey Library Example</title>
+   <div class="container-fluid main-d">
+      <div class="container">
+         <div class="col-md-12">
+            <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
+           
 
-        <meta name="viewport" content="width=device-width"/>
-        <script src="https://unpkg.com/jquery"></script>
-        <script src="https://surveyjs.azureedge.net/1.7.23/survey.jquery.js"></script>
-        <link href="https://surveyjs.azureedge.net/1.7.23/modern.css" type="text/css" rel="stylesheet"/>
-        <link rel="stylesheet" href="./index.css">
+            <div class="col-md-9 instruction_text">
+               <div id="surveyNavigationTop"></div>
+                <div id="surveyElement" style="display:inline-block;width:100%;"></div>
+                <div id="surveyResult"></div>
 
-    </head>
-    <body>
+                <script type="text/javascript" src="./index.js"></script>
 
-        <div id="surveyNavigationTop"></div>
-        <div id="surveyElement" style="display:inline-block;width:100%;"></div>
-        <div id="surveyResult"></div>
-
-        <script type="text/javascript" src="./index.js"></script>
-
-    </body>
-</html>
-<script>
+            </div>
+         </div>
+      </div>
+   </div>
+   <script>
     
 Survey
     .StylesManager
