@@ -320,7 +320,7 @@ $employer_id = $this->session->userdata('company_profile_id');
                                   </a>
                                 </li>
                                 <li>
-                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/Employee">
+                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/oceantest">
                                       <span class="icon-container">
                                         <i class="fas fa-map-signs"></i>
                                       </span>
