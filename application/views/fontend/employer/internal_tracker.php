@@ -1066,7 +1066,7 @@ equalTo: "The two passwords do not match!"
                 event.preventDefault();
             }
         });
-   $(document).on("keypress keyup blur", ".allowalphabatesspace", function(e){
+   $(".allowalphabatesspace", function(e){
    var regex = new RegExp("^[a-zA-Z ]*$");
          var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
          if (regex.test(str)) {
