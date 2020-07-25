@@ -436,7 +436,7 @@ span.select2.select2-container.select2-container--default {
    
     }
     $(function() {
-  $(checkbox).click(function() {
+  $('#update').on("click", function(){
     // if ($('#checkbox').is(':checked')) {
       alert('ff');
       var checkedValsofname = $('.chkbx:checkbox:checked').map(function() {
