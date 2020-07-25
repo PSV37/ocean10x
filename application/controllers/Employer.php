@@ -6017,7 +6017,7 @@ function update_external()
             $employer_id = $this->session->userdata('company_profile_id');
          $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' AND test_id = '$test_id'";
 
-            $data['oceanchamp_tests'] = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where = $where_all, $join = FALSE)
+            $data['oceanchamp_tests'] = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where = $where_all, $join = FALSE);
             
             // print_r($data['questions']);die;
             
