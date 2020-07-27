@@ -6032,10 +6032,14 @@ function update_external()
                   $where = "questionbank.ques_id='$row'";
             
                   $question_data  = $this->Master_model->get_master_row('questionbank', $select = 'questionbank.question,JSON_OBJECT("a",questionbank.option1,"b",questionbank.option2,"c",questionbank.option3,"d",questionbank.option4 ) as answers', $where, $join = false);
+                  while ($row = mysqli_fetch_assoc($question_data)) {
+                    $row['answers'] = json_decode( $row['answers'], true ); // <----
+                    $resultArray[] = $row;
+            }
 
                    // $answer_data  = $this->Master_model->get_master_row('questionbank', $select = 'questionbank.option 1 as a', $where, $join = false);
                 
-                  array_push($all_questions, $question_data);
+                  array_push($all_questions, $resultArray);
               }
         
             $data['all_questions'] = $all_questions;
