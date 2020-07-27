@@ -6029,7 +6029,7 @@ function update_external()
              //    $i=0;
                 foreach ($questions as $row) {
              //     
-                  $where = "questionbank.ques_id='$row'"
+                  $where = "questionbank.ques_id='$row'";
             
                   $question_data  = $this->Master_model->get_master_row('questionbank', $select = FALSE, $where, $join = false);
                 
