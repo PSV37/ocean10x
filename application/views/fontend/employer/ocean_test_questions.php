@@ -981,18 +981,19 @@ input[type="radio"] {
     }
     else{
       previousButton.style.display = 'inline-block';
-      previousButton.css("margin-top").replace("px", "70");
+     $('#previous').css('margin-top',70);
     }
     if(currentSlide === slides.length-1){
       nextButton.style.display = 'none';
       submitButton.style.display = 'inline-block';
-      submitButton.css("margin-top").replace("px", "70");
+     $('#submit').css('margin-top',70);
+     
 
     }
     else{
       nextButton.style.display = 'inline-block';
-      nextButton.css("margin-top").replace("px", "70");
-
+     $('#next').css('margin-top',70);
+     
       submitButton.style.display = 'none';
     }
   }
