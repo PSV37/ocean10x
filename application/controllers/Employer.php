@@ -6019,13 +6019,13 @@ function update_external()
             $oceanchamp_tests = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where = $where_all, $join = FALSE);
 
             $all_questions = array();
-           foreach ($oceanchamp_tests as $question) {
+           // foreach ($oceanchamp_tests as $question) {
                 # code...
-                print_r($question);
 
              
                  
-                $questions = explode(',',$question->questions);
+                $questions = explode(',',$oceanchamp_tests['questions']);
+                print_r($questions);
              //    $i=0;
              //    foreach ($questions as $row) {
              //      // print_r($row);
@@ -6043,7 +6043,7 @@ function update_external()
                 
              //      array_push($all_questions, $question_data);
               // }
-          }
+          // }
              //    endforeach;  
              //    endif;               
             
