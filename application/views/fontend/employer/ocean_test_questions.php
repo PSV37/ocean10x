@@ -1161,8 +1161,10 @@ input[type="radio"] {
                     )}</span>
                   </div>
                   `;
+
                   
                   startTimer();
+            }
     );
                   
                   
