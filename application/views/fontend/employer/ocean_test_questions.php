@@ -1073,7 +1073,7 @@ button:hover{
   const quizContainer = document.getElementById('quiz');
   const resultsContainer = document.getElementById('results');
   const submitButton = document.getElementById('submit');
-      const myQuestions = [
+const myQuestions = [
   <?php $key = 1; if (!empty($test_questions)): foreach ($test_questions as $question) :
  $questions = explode(',',$question['questions']);
      $i=0;
@@ -1087,7 +1087,7 @@ button:hover{
       'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |left outer',
       'questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|LEFT OUTER'
               );
-      $question_data  = $this->Master_model->get_master_row('questionbank', $select = FALSE, $where, $join = $join_emp) ?>
+      $question_data  = $this->Master_model->get_master_row('questionbank', $select = FALSE, $where, $join = $join_emp);  print_r($question_data['question'];)  ?>
             {
                   question: <?php echo $question_data['question']; ?>,
                   answers: {
