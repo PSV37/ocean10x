@@ -128,9 +128,7 @@
       font-weight: 600;
       font-size: 20px;
       }
-     /* #question input[type=radio] {
-      display: none;
-      }*/
+   
       #question label {
       display: inline-block;
       margin: 4px;
@@ -144,10 +142,7 @@
       #question label:hover {
       background: #EBBB67;
       }
-      #question input[type=radio]:checked + label {
-      background: #CB8306;
-      color: #FAFAFA;
-      }
+     
       #quiz-results {
       display: flex;
       flex-direction: column;
@@ -571,21 +566,7 @@
       box-sizing: border-box;
       border-radius: 50%;
       }
-      input[type="radio"] {
-      opacity: 0;
-      -webkit-appearance: none;
-      display: inline-block;
-      vertical-align: middle;
-      z-index: 100;
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 30px;
-      position: absolute;
-      left: 0;
-      top: calc(50% - 15px);
-      cursor: pointer;
-      }
+     
       .bullet {
       position: relative;
       width: 25px;
@@ -596,14 +577,7 @@
       opacity: 0;
       border-radius: 50%;
       }
-      input[type="radio"]:checked ~ .bullet {
-      position:absolute;
-      opacity: 1;
-      animation-name: explode;
-      animation-duration: 0.350s;
-      margin-top:-5px;
-      margin-left:5px;
-      }
+      
       .line {
       position: absolute;
       width: 10px;
@@ -655,54 +629,7 @@
       width: 2px;
       height: 10px;
       }
-      input[type="radio"]:checked ~ .bullet .line.zero{
-      animation-name:drop-zero;
-      animation-delay: 0.100s;
-      animation-duration: 0.9s;   
-      animation-fill-mode: forwards;
-      }
-      input[type="radio"]:checked ~ .bullet .line.one{
-      animation-name:drop-one;
-      animation-delay: 0.100s;
-      animation-duration: 0.9s;
-      animation-fill-mode: forwards;
-      }
-      input[type="radio"]:checked ~ .bullet .line.two{
-      animation-name:drop-two;
-      animation-delay: 0.100s;
-      animation-duration: 0.9s;
-      animation-fill-mode: forwards;
-      }
-      input[type="radio"]:checked ~ .bullet .line.three{
-      animation-name:drop-three;
-      animation-delay: 0.100s;
-      animation-duration: 0.9s;
-      animation-fill-mode: forwards;
-      }
-      input[type="radio"]:checked ~ .bullet .line.four{
-      animation-name:drop-four;
-      animation-delay: 0.100s;
-      animation-duration: 0.9s;
-      animation-fill-mode: forwards;
-      }
-      input[type="radio"]:checked ~ .bullet .line.five{
-      animation-name:drop-five;
-      animation-delay: 0.100s;
-      animation-duration: 0.9s;
-      animation-fill-mode: forwards;
-      }
-      input[type="radio"]:checked ~ .bullet .line.six{
-      animation-name:drop-six;
-      animation-delay: 0.100s;
-      animation-duration: 0.9s;
-      animation-fill-mode: forwards;
-      }
-      input[type="radio"]:checked ~ .bullet .line.seven{
-      animation-name:drop-seven;
-      animation-delay: 0.100s;
-      animation-duration: 0.9s;
-      animation-fill-mode: forwards;
-      }
+     
       @keyframes explode {
       0%{
       opacity: 0;
