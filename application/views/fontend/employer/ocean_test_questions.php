@@ -981,13 +981,18 @@ input[type="radio"] {
     }
     else{
       previousButton.style.display = 'inline-block';
+      previousButton.style.margin-top = '70px';
     }
     if(currentSlide === slides.length-1){
       nextButton.style.display = 'none';
       submitButton.style.display = 'inline-block';
+      submitButton.style.margin-top = '70px';
+
     }
     else{
       nextButton.style.display = 'inline-block';
+      nextButton.style.margin-top = '70px';
+
       submitButton.style.display = 'none';
     }
   }
@@ -1099,7 +1104,7 @@ input[type="radio"] {
                     var timeinterval = setInterval(updateClock, 1000);
                   }
                   
-                  var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
+                  var deadline = new Date(Date.parse(new Date()) + 0 * 0 * <?php echo $test_duration; ?> * 60 * 1000);
                   initializeClock('clockdiv', deadline);
                </script>
                <script>
