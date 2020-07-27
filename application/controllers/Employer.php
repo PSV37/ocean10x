@@ -6053,5 +6053,10 @@ function update_external()
         }
     }
 
+    public function insert_test_data()
+    {
+        print_r($_POST);
+    }
+
 
 } // end class

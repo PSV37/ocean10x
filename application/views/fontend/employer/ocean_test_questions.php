@@ -945,7 +945,7 @@ button:hover{
                            <p id="my-progress-completion" class="js-my-progress-completion sr-only" aria-live="polite">0% complete</p>
                         </div>
                         <div class="quizBox">
-                          <form id="nextques" class="submit-form" action="<?php echo base_url();?>employer/insert_ocean_data" method="post">
+                          <form id="nextques" class="submit-form" action="<?php echo base_url();?>employer/insert_test_data" method="post">
 
                                   
                               <h1>Quiz on Important Facts</h1>
@@ -989,7 +989,17 @@ button:hover{
               <input type="radio" name="question${questionNumber}" value="${letter}">
               ${letter} :
               ${currentQuestion.answers[letter]}
-            </label>`
+            </label> '<div class="bullet">'+
+                        '<div class="line zero"></div>'+
+                        '<div class="line one"></div>'+
+                        '<div class="line two"></div>'+
+                        '<div class="line three"></div>'+
+                        '<div class="line four"></div>'+
+                        '<div class="line five"></div>'+
+                        '<div class="line six"></div>'+
+                        '<div class="line seven"></div>'+
+                      '</div>'+
+                    '</li>';`
           );
         }
 
