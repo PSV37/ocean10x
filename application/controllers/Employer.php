@@ -6035,9 +6035,9 @@ function update_external()
                   'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |left outer',
                   'questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|LEFT OUTER'
               );
-                  $question_data  = $this->Master_model->get_master_row('questionbank', $select = FALSE, $where, $join = $join_emp)
+                  $question_data  = $this->Master_model->get_master_row('questionbank', $select = FALSE, $where, $join = $join_emp);
                 
-                  array_push($all_questions, $question_data)
+                  array_push($all_questions, $question_data);
                 endforeach;  
                 endif;               
             
