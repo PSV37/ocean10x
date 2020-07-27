@@ -1108,7 +1108,8 @@ input[type="radio"] {
                   
                   var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
                   initializeClock('clockdiv', deadline);
-             
+               </script>
+               <script>
                   // Credit: Mateusz Rybczonec
                   
                   const FULL_DASH_ARRAY = 283;
@@ -1128,6 +1129,7 @@ input[type="radio"] {
                       threshold: ALERT_THRESHOLD
                     }
                   };
+                  var myQuestions = <?php echo json_encode($all_questions); ?>;
                  myQuestions.forEach(
       (currentQuestion, questionNumber) => {
 
