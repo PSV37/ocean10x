@@ -6024,7 +6024,7 @@ function update_external()
 
             $data['oceanchamp_tests'] = $this->Master_model->get_master_row('oceanchamp_tests', $select = 'oceanchamp_tests.*,group_concat(questionbank.question)', $where = $where_all, $join =  $join_emp);
             
-            print_r($this->db->last_query());die;
+            // print_r($this->db->last_query());die;
             
             $data['limit_id'] = 0;
             $this->load->view('fontend/employer/ocean_test_questions', $data);
