@@ -981,17 +981,17 @@ input[type="radio"] {
     }
     else{
       previousButton.style.display = 'inline-block';
-      previousButton.style.margin-top = '70px';
+      previousButton.css("margin-top").replace("px", "70");
     }
     if(currentSlide === slides.length-1){
       nextButton.style.display = 'none';
       submitButton.style.display = 'inline-block';
-      submitButton.style.margin-top = '70px';
+      submitButton.css("margin-top").replace("px", "70");
 
     }
     else{
       nextButton.style.display = 'inline-block';
-      nextButton.style.margin-top = '70px';
+      nextButton.css("margin-top").replace("px", "70");
 
       submitButton.style.display = 'none';
     }
