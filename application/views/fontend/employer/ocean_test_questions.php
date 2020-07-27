@@ -1077,6 +1077,7 @@ button:hover{
  
       // ];
 // 
+<?php print_r($oceanchamp_tests);die; ?>
   const myQuestions = [
     {
       question: "Who invented JavaScript?",
