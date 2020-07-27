@@ -1079,7 +1079,7 @@ button:hover{
 $.each(arrayFromPHP, function (i, elem) {
     console.log(elem.question);
     {
-      question: elem.question,
+      question: elem.question
      
     },
 });
