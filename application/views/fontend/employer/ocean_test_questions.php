@@ -1139,7 +1139,7 @@ input[type="radio"] {
                     }
                   };
                    var myQuestions = <?php echo json_encode($all_questions); ?>;
-                  const TIME_LIMIT = 0;
+                  const TIME_LIMIT;
 
                    myQuestions.forEach(
                         (currentQuestion, questionNumber) => {
