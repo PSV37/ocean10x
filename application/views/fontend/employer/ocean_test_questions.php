@@ -128,9 +128,9 @@
       font-weight: 600;
       font-size: 20px;
       }
-      #question input[type=radio] {
+     /* #question input[type=radio] {
       display: none;
-      }
+      }*/
       #question label {
       display: inline-block;
       margin: 4px;
@@ -1077,14 +1077,7 @@ button:hover{
  var myQuestions = <?php echo json_encode($all_questions); ?>;
 // console.log(JSON.parse(myQuestions));
  console.log(myQuestions);
- // const myQuestions = [
-// $.each(arrayFromPHP, function (i, elem) {
-//     console.log(elem.question);
-//     {
-//       question: elem.question
-     
-//     }
-// })
+
 // ];
   // const myQuestions = [
   //   {
