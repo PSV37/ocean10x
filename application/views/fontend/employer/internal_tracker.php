@@ -771,8 +771,10 @@ textarea#comment {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/additional-methods.js"></script>
 
+
 <script src="js/jquery.validate.min.js"></script>
 <script src="js/additional-methods.js"></script>
+
 
 
 <script>
@@ -1085,18 +1087,7 @@ $(".document").on("keypress keyup blur", ".allowphonenumber", function (event) {
          }
      });
 
-   $(document).on("keypress keyup blur", ".allowalphabatesspace",.function (e){
-         var regex = new RegExp("^[a-zA-Z ]*$");
-         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
-         if (regex.test(str)) {
-             return true;
-         }
-         else
-         {
-         e.preventDefault();
-         return false;
-         }
-    });
+   
 
 $(".allowalphabates").keypress(function (e) {
          var regex = new RegExp("^[a-zA-Z ]*$");
