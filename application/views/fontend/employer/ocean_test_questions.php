@@ -1074,8 +1074,8 @@ button:hover{
   const quizContainer = document.getElementById('quiz');
   const resultsContainer = document.getElementById('results');
   const submitButton = document.getElementById('submit');
- var myQuestions = <?php echo json_encode($all_questions) ?>;
- 
+ var myQuestions = <?php echo $all_questions; ?>;
+
  console.log(myQuestions);
  // const myQuestions = [
 // $.each(arrayFromPHP, function (i, elem) {
