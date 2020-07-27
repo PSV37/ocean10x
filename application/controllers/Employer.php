@@ -5999,7 +5999,6 @@ function update_external()
         $this->load->view('fontend/employer/ocean_test_test_selection',$data);
 
     }
-
     public function ocean_test_instructions()
     {
         $data['test_id'] = $this->input->post('test_name');
