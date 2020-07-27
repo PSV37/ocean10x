@@ -947,7 +947,7 @@ input[type="radio"] {
 
     // for each question...
     myQuestions.forEach( (currentQuestion, questionNumber) => {
-       const TIME_LIMIT = currentQuestion.time_for_question;
+      
       // find selected answer
       const answerContainer = answerContainers[questionNumber];
       const selector = `input[name=question${questionNumber}]:checked`;
@@ -1127,8 +1127,8 @@ input[type="radio"] {
                     }
                   };
                   var myQuestions = <?php echo json_encode($all_questions); ?>;
-                 // myQuestions.forEach(
-      // (currentQuestion, questionNumber) => {
+                 myQuestions.forEach(
+      (currentQuestion, questionNumber) => {
 
        
      
@@ -1164,9 +1164,9 @@ input[type="radio"] {
                   
                   startTimer();
             
-    //            }
+               }
 
-    // );    
+    );    
                   
                   function onTimesUp() {
                     clearInterval(timerInterval);
