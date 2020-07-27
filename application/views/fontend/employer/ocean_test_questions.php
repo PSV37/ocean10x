@@ -1138,8 +1138,18 @@ input[type="radio"] {
                       threshold: ALERT_THRESHOLD
                     }
                   };
-                  
+                  const TIME_LIMIT = 0;
+                   myQuestions.forEach(
+                        (currentQuestion, questionNumber) => {
+
+                          // variable to store the list of possible answers
                   const TIME_LIMIT = currentQuestion.time_for_question;
+                         
+
+                          
+                        }
+                      );
+                 
                   let timePassed = 0;
                   let timeLeft = TIME_LIMIT;
                   let timerInterval = null;
@@ -1238,7 +1248,7 @@ input[type="radio"] {
                       .setAttribute("stroke-dasharray", circleDasharray);
                   }
                 
-                
+
 
                </script>
             </div>
