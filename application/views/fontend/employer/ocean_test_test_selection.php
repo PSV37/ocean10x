@@ -77,9 +77,9 @@
                      </form>
                      <div class="row">
                      <?php if(!empty($oceanchamp_tests)) foreach ($oceanchamp_tests as $svalue) { ?>
-                     <div class="col-md-2 ">
+                     <div class="col-md-2" onclick="get_value('<?php echo $svalue['test_id']; ?>')">
                      <div class="box box-active">
-                     <span name="name" id="name" onclick="get_value('<?php echo $svalue['test_id']; ?>')"  value="<?php echo $svalue['test_id']; ?>"><?php echo $svalue['test_name']; ?></span>
+                     <span name="name" id="name"   value="<?php echo $svalue['test_id']; ?>"><?php echo $svalue['test_name']; ?></span>
                      
 
                      </div>
