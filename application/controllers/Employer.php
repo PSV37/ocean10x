@@ -6038,6 +6038,7 @@ function update_external()
                   $question_data  = $this->Master_model->get_master_row('questionbank', $select = FALSE, $where, $join = $join_emp);
                 
                   array_push($all_questions, $question_data);
+              }
                 endforeach;  
                 endif;               
             
