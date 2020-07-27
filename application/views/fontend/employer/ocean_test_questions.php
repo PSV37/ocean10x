@@ -1077,7 +1077,7 @@ button:hover{
  var arrayFromPHP = <?php echo json_encode($all_questions) ?>;
  const myQuestions = [
 $.each(arrayFromPHP, function (i, elem) {
-    console.log(elem);
+    console.log(elem.question);
     {
       question: elem.question,
       answers: {
@@ -1088,7 +1088,7 @@ $.each(arrayFromPHP, function (i, elem) {
       },
       correctAnswer: "c"
     },
-}),
+});
 ];
   // const myQuestions = [
   //   {
