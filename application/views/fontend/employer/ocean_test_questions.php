@@ -1096,6 +1096,7 @@ input[type="radio"] {
                   
                       if (t.total <= 0) {
                         clearInterval(timeinterval);
+                        alert('kf');
                         $("#submit").click();
                       }
                     }
@@ -1104,7 +1105,7 @@ input[type="radio"] {
                     var timeinterval = setInterval(updateClock, 1000);
                   }
                   
-                  var deadline = new Date(Date.parse(new Date()) + <?php echo $test_duration; ?> );
+                  var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
                   initializeClock('clockdiv', deadline);
                </script>
                <script>
