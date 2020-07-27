@@ -1,7 +1,8 @@
 <!-- <div class="box" >  -->
                <?php $key = 1; if (!empty($forwarded_job_tracking)): foreach ($forwarded_job_tracking as $job_row1) : ?>
                  
-               
+               <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
                   <!-- <div class="check"> -->
                     
                      
