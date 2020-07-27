@@ -1130,7 +1130,7 @@ input[type="radio"] {
                  myQuestions.forEach(
       (currentQuestion, questionNumber) => {
 
-       
+        const TIME_LIMIT = currentQuestion.time_for_question;
      
                   let timePassed = 0;
                   let timeLeft = TIME_LIMIT;
