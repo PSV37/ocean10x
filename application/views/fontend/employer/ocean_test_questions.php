@@ -1074,16 +1074,18 @@ button:hover{
   const quizContainer = document.getElementById('quiz');
   const resultsContainer = document.getElementById('results');
   const submitButton = document.getElementById('submit');
- var arrayFromPHP = <?php echo json_encode($all_questions) ?>;
- const myQuestions = [
-$.each(arrayFromPHP, function (i, elem) {
-    console.log(elem.question);
-    {
-      question: elem.question
+ var myQuestions = <?php echo json_encode($all_questions) ?>;
+ 
+ console.log(myQuestions);
+ // const myQuestions = [
+// $.each(arrayFromPHP, function (i, elem) {
+//     console.log(elem.question);
+//     {
+//       question: elem.question
      
-    },
-});
-];
+//     }
+// })
+// ];
   // const myQuestions = [
   //   {
   //     question: "Who invented JavaScript?",
