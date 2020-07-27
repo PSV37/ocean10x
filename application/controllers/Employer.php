@@ -6022,7 +6022,7 @@ function update_external()
              $key = 1; if (!empty($oceanchamp_tests)): foreach ($oceanchamp_tests as $question) : 
                  
                 $questions = explode(',',$question['questions']);
-                print_r($questions);
+                // print_r($questions);
                 $i=0;
                 foreach ($questions as $row) {
                   // print_r($row);
