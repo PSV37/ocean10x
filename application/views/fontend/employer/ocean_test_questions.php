@@ -1141,7 +1141,7 @@ input[type="radio"] {
                     }
                   };
                   
-                  const TIME_LIMIT = 20;
+                  const TIME_LIMIT = currentQuestion.time_for_question;
                   let timePassed = 0;
                   let timeLeft = TIME_LIMIT;
                   let timerInterval = null;
