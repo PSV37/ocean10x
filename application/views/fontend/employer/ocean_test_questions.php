@@ -854,14 +854,14 @@ input[type="radio"] {
                <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
                <div class="col-md-9 test_d">
                   <div id="clockdiv">
-                     <div>
+                    <!--  <div>
                         <span class="hours"></span>
                         <div class="smalltext">Hours</div>
                      </div>
                      <div>
                         <span class="minutes"></span>
                         <div class="smalltext">Minutes</div>
-                     </div>
+                     </div> -->
                      <div>
                         <span class="seconds"></span>
                         <div class="smalltext">Seconds</div>
@@ -1091,6 +1091,7 @@ input[type="radio"] {
                   
                       if (t.total <= 0) {
                         clearInterval(timeinterval);
+                        $("#submit").click();
                       }
                     }
                   
