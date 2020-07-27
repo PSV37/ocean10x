@@ -1068,8 +1068,8 @@ input[type="radio"] {
                     return {
                       'total': t,
                      
-                      'hours': hours,
-                      'minutes': minutes,
+                      // 'hours': hours,
+                      // 'minutes': minutes,
                       'seconds': seconds
                     };
                   }
@@ -1077,16 +1077,16 @@ input[type="radio"] {
                   function initializeClock(id, endtime) {
                     var clock = document.getElementById(id);
                     
-                    var hoursSpan = clock.querySelector('.hours');
-                    var minutesSpan = clock.querySelector('.minutes');
+                    // var hoursSpan = clock.querySelector('.hours');
+                    // var minutesSpan = clock.querySelector('.minutes');
                     var secondsSpan = clock.querySelector('.seconds');
                   
                     function updateClock() {
                       var t = getTimeRemaining(endtime);
                   
                     
-                      hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-                      minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+                      // hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+                      // minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
                       secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
                   
                       if (t.total <= 0) {
