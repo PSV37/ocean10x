@@ -6022,7 +6022,7 @@ function update_external()
              
               );
 
-            $data['oceanchamp_tests'] = $this->Master_model->get_master_row('oceanchamp_tests', $select = 'oceanchamp_tests.*,group_concat(questions.question)', $where = $where_all, $join = FALSE);
+            $data['oceanchamp_tests'] = $this->Master_model->get_master_row('oceanchamp_tests', $select = 'oceanchamp_tests.*,group_concat(questionbank.question)', $where = $where_all, $join = FALSE);
             
             print_r($data['questions']);die;
             
