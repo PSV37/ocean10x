@@ -1077,18 +1077,12 @@ button:hover{
  var arrayFromPHP = <?php echo json_encode($all_questions) ?>;
  const myQuestions = [
 $.each(arrayFromPHP, function (i, elem) {
-    console.log(elem);
+    console.log(elem.question);
     {
-      question: elem.question,
-      answers: {
-        a: elem.option1,
-        b: elem.option2,
-        c: elem.option3,
-        d: elem.option4
-      },
-      correctAnswer: "c"
+      question: elem.question
+     
     },
-}),
+});
 ];
   // const myQuestions = [
   //   {
