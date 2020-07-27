@@ -1123,6 +1123,7 @@ input[type="radio"] {
                   var myQuestions = <?php echo json_encode($all_questions); ?>;
                   myQuestions.forEach(
       (currentQuestion, questionNumber) => {
+            alert(currentQuestion);
                   const FULL_DASH_ARRAY = 283;
                   const WARNING_THRESHOLD = 10;
                   const ALERT_THRESHOLD = 5;
