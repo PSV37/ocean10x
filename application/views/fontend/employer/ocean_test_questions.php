@@ -909,6 +909,7 @@ input[type="radio"] {
 
         // variable to store the list of possible answers
         const answers = [];
+        const time = [];
 
         // and for each available answer...
         for(letter in currentQuestion.answers){
@@ -922,6 +923,14 @@ input[type="radio"] {
             </label>`
           );
         }
+
+        time.push(
+            `<label>
+              <input type="hidden" name="time${questionNumber}" value="${currentQuestion.time_for_question}">
+              ${letter} :
+              ${currentQuestion.answers[letter]}
+            </label>`
+          );
 
         // add this question and its answers to the output
         output.push(
@@ -947,7 +956,7 @@ input[type="radio"] {
 
     // for each question...
     myQuestions.forEach( (currentQuestion, questionNumber) => {
-      
+
       // find selected answer
       const answerContainer = answerContainers[questionNumber];
       const selector = `input[name=question${questionNumber}]:checked`;
@@ -1064,6 +1073,8 @@ input[type="radio"] {
   nextButton.addEventListener("click", showNextSlide);
 })();
 
+              </script>
+              <script>
                   function getTimeRemaining(endtime) {
                     var t = Date.parse(endtime) - Date.parse(new Date());
                     var seconds = Math.floor((t / 1000) % <?php echo $test_duration; ?>);
@@ -1106,9 +1117,12 @@ input[type="radio"] {
                   
                   var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
                   initializeClock('clockdiv', deadline);
-          
+               </script>
+               <script>
                   // Credit: Mateusz Rybczonec
-                  
+                  var myQuestions = <?php echo json_encode($all_questions); ?>;
+                  myQuestions.forEach(
+      (currentQuestion, questionNumber) => {
                   const FULL_DASH_ARRAY = 283;
                   const WARNING_THRESHOLD = 10;
                   const ALERT_THRESHOLD = 5;
@@ -1126,12 +1140,8 @@ input[type="radio"] {
                       threshold: ALERT_THRESHOLD
                     }
                   };
-                  var myQuestions = <?php echo json_encode($all_questions); ?>;
-                 myQuestions.forEach(
-      (currentQuestion, questionNumber) => {
-
-        const TIME_LIMIT = currentQuestion.time_for_question;
-     
+                  
+                  const TIME_LIMIT = 20;
                   let timePassed = 0;
                   let timeLeft = TIME_LIMIT;
                   let timerInterval = null;
@@ -1160,13 +1170,8 @@ input[type="radio"] {
                     )}</span>
                   </div>
                   `;
-
                   
                   startTimer();
-            
-               }
-
-    );    
                   
                   function onTimesUp() {
                     clearInterval(timerInterval);
@@ -1234,6 +1239,9 @@ input[type="radio"] {
                       .getElementById("base-timer-path-remaining")
                       .setAttribute("stroke-dasharray", circleDasharray);
                   }
+                  }
+    );
+
                </script>
             </div>
          </div>
