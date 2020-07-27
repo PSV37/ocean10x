@@ -6031,7 +6031,7 @@ function update_external()
              //     
                   $where = "questionbank.ques_id='$row'";
             
-                  $question_data  = $this->Master_model->get_master_row('questionbank', $select = 'questionbank.question,CONCAT('"'questionbank.option1 '"', questionbank.option2  ,questionbank.option2 , questionbank.option4) AS answers', $where, $join = false);
+                  $question_data  = $this->Master_model->get_master_row('questionbank', $select = 'questionbank.question,CONCAT(QUOTE(questionbank.option1) , QUOTE(questionbank.option2 ) ,QUOTE(questionbank.option3) , QUOTE(questionbank.option4)) AS answers', $where, $join = false);
                 
                   array_push($all_questions, $question_data);
               }
