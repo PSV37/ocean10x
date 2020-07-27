@@ -947,7 +947,7 @@ button:hover{
                         <div class="quizBox">
                           <form id="nextques" class="submit-form" action="<?php echo base_url();?>employer/insert_test_data" method="post">
 
-                                  
+                                  <input type="hidden" name="test_id" value="<?php echo($test_id); ?>">
                             
                               <div class="quiz-container">
                                 <div id="quiz"></div>

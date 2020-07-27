@@ -6044,7 +6044,7 @@ function update_external()
         
             $data['all_questions'] = $all_questions;
             
-            $data['limit_id'] = 0;
+            $data['test_id'] = $test_id;
             $this->load->view('fontend/employer/ocean_test_questions', $data);
             // $this->load->view('fontend/exam/oceantest_test',$data);
             
@@ -6055,7 +6055,65 @@ function update_external()
 
     public function insert_test_data()
     {
+        if (!empty($_POST)) {
+            # code...
+      
         print_r($_POST);
+      
+        
+        $test_id              = $this->input->post('test_id');
+        $employer_id = $this->session->userdata('company_profile_id');
+        $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' AND test_id = '$test_id'";
+
+        $oceanchamp_tests = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where = $where_all, $join = FALSE);
+        $questions = explode(',',$oceanchamp_tests['questions']);
+        $i=0;
+         $created_on    = date('Y-m-d H:i:s');
+        $cenvertedTime = date('Y-m-d H:i:s', strtotime('+5 hour +30 minutes', strtotime($created_on)));
+        foreach ($questions as $row) {
+            if ($_POST['question'.$i] == 'a') {
+                $option = '1';
+            }
+            elseif ($_POST['question'.$i] == 'b') {
+                $option = '2';
+            }
+            elseif ($_POST['question'.$i] == 'c') {
+                $option = '3';
+            }
+            elseif ($_POST['question'.$i] == 'd') {
+                $option = '4';
+            }
+
+            $question_id      = $row;
+            $option           = $option;
+
+            $where_all = "questionbank_answer.question_id='$row' ";
+
+            $oceanchamp_tests = $this->Master_model->get_master_row('questionbank_answer', $select = FALSE, $where = $where_all, $join = FALSE);
+
+             if ($option == $oceanchamp_tests['answer_id']) {
+                     $mark    = 1;
+                    $status = 'Yes';
+                } 
+                else {
+                    $status = 'No';
+                     $mark    = 0;
+                }
+
+            $exam_array = array(
+            'test_id' => $test_id,
+            'employee_id' => $employer_id,
+            'question_id' => $row,
+            'marks' => $mark,
+            'correct_status' => $status,
+            'date_time' => $cenvertedTime
+        );
+        $last_id    = $this->Master_model->master_insert($exam_array, 'emp_test_result');
+        }
+      
+            $this->load->view('fontend/employer/result_page');
+          
+        }
     }
 
 
