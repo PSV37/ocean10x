@@ -819,7 +819,10 @@ button:hover{
       background-color: #38a;
 }
 
-
+input[type="radio"] {
+    margin-top: 1px;
+    margin-left: -25px;
+}
 
 
 
