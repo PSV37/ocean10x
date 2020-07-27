@@ -1075,40 +1075,51 @@ button:hover{
   const resultsContainer = document.getElementById('results');
   const submitButton = document.getElementById('submit');
  var arrayFromPHP = <?php echo json_encode($all_questions) ?>;
-
+ const myQuestions = [
 $.each(arrayFromPHP, function (i, elem) {
     console.log(elem);
-});
-  const myQuestions = [
     {
-      question: "Who invented JavaScript?",
+      question: elem.question,
       answers: {
-        a: "Douglas Crockford",
-        b: "Sheryl Sandberg",
-        c: "Brendan Eich"
+        a: elem.option1,
+        b: elem.option2,
+        c: elem.option3,
+        d: elem.option4
       },
       correctAnswer: "c"
     },
-    {
-      question: "Which one of these is a JavaScript package manager?",
-      answers: {
-        a: "Node.js",
-        b: "TypeScript",
-        c: "npm"
-      },
-      correctAnswer: "c"
-    },
-    {
-      question: "Which tool can you use to ensure code quality?",
-      answers: {
-        a: "Angular",
-        b: "jQuery",
-        c: "RequireJS",
-        d: "ESLint"
-      },
-      correctAnswer: "d"
-    }
-  ];
+}),
+];
+  // const myQuestions = [
+  //   {
+  //     question: "Who invented JavaScript?",
+  //     answers: {
+  //       a: "Douglas Crockford",
+  //       b: "Sheryl Sandberg",
+  //       c: "Brendan Eich"
+  //     },
+  //     correctAnswer: "c"
+  //   },
+  //   {
+  //     question: "Which one of these is a JavaScript package manager?",
+  //     answers: {
+  //       a: "Node.js",
+  //       b: "TypeScript",
+  //       c: "npm"
+  //     },
+  //     correctAnswer: "c"
+  //   },
+  //   {
+  //     question: "Which tool can you use to ensure code quality?",
+  //     answers: {
+  //       a: "Angular",
+  //       b: "jQuery",
+  //       c: "RequireJS",
+  //       d: "ESLint"
+  //     },
+  //     correctAnswer: "d"
+  //   }
+  // ];
 
   // Kick things off
   buildQuiz();
