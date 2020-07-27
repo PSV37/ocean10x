@@ -1138,7 +1138,9 @@ input[type="radio"] {
                       threshold: ALERT_THRESHOLD
                     }
                   };
+                   var myQuestions = <?php echo json_encode($all_questions); ?>;
                   const TIME_LIMIT = 0;
+
                    myQuestions.forEach(
                         (currentQuestion, questionNumber) => {
 
