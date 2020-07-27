@@ -1040,9 +1040,10 @@ $(document).on("keypress keyup blur", ".allowphonenumber", function (event) {
    
    //(^[ A-Za-z0-9_@./#&+-]*$)
    
- 
+ $(document).on("keypress keyup blur", ".allownumericwithoutdecimal", function (event) {
 
-   $(".allownumericwithoutdecimal").on("input", function(evt) {
+
+   //$(".allownumericwithoutdecimal").on("input", function(evt) {
     var self = $(this);
     self.val(self.val().replace(/[^\d]+/, ""));
     if ((evt.which < 48 || evt.which > 57)) 
@@ -1051,6 +1052,20 @@ $(document).on("keypress keyup blur", ".allowphonenumber", function (event) {
      }
  });
 
+ $(document).on("keypress keyup blur", ".validateEmail", function (event) {
+//function validateEmail(email) {
+    var chrbeforAt = email.substr(0, email.indexOf('@'));
+    if (!($.trim(email).length > 127)) {
+        if (chrbeforAt.length >= 2) {
+            var re = /^(([^<>()[\]{}'^?\\.,!|//#%*-+=&;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+            return re.test(email);
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
+}
 
    
    $(".allowalphabatescomma").keypress(function (e) {
