@@ -846,6 +846,75 @@
       color: #fff;
       border-radius: 3px;}
       .rexp{padding-left:100px;margin-bottom:70px;}
+      @import url(https://fonts.googleapis.com/css?family=Work+Sans:300,600);
+
+body{
+      font-size: 20px;
+      font-family: 'Work Sans', sans-serif;
+      color: #333;
+  font-weight: 300;
+  text-align: center;
+  background-color: #f8f6f0;
+}
+h1{
+  font-weight: 300;
+  margin: 0px;
+  padding: 10px;
+  font-size: 20px;
+  background-color: #444;
+  color: #fff;
+}
+.question{
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.answers {
+  margin-bottom: 20px;
+  text-align: left;
+  display: inline-block;
+}
+.answers label{
+  display: block;
+  margin-bottom: 10px;
+}
+button{
+  font-family: 'Work Sans', sans-serif;
+      font-size: 22px;
+      background-color: #279;
+      color: #fff;
+      border: 0px;
+      border-radius: 3px;
+      padding: 20px;
+      cursor: pointer;
+      margin-bottom: 20px;
+}
+button:hover{
+      background-color: #38a;
+}
+
+
+
+
+
+.slide{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.active-slide{
+  opacity: 1;
+  z-index: 2;
+}
+.quiz-container{
+  position: relative;
+  height: 200px;
+  margin-top: 40px;
+}
+
    </style>
    <body>
     
@@ -877,19 +946,15 @@
                         </div>
                         <div class="quizBox">
                           <form id="nextques" class="submit-form" action="<?php echo base_url();?>employer/insert_ocean_data" method="post">
-    
-External navigation:
-        <span id="surveyProgress"></span>
-        <a id="surveyPrev" href="#" onclick="survey.prevPage();">Prev</a>
-        <a id="surveyNext" href="#" onclick="survey.nextPage();">Next</a>
-        <a id="surveyComplete" href="#" onclick="survey.completeLastPage();">Complete</a>
-        <br/>
-        Go to page directly without validation:
-        <select id="pageSelector" onchange="survey.currentPageNo = this.value"></select>
-
-        <hr/>
-        <div id="surveyElement" style="display:inline-block;width:100%;"></div>
-        <div id="surveyResult"></div>
+                                  
+                              <h1>Quiz on Important Facts</h1>
+                              <div class="quiz-container">
+                                <div id="quiz"></div>
+                              </div>
+                              <button id="previous">Previous Question</button>
+                              <button id="next">Next Question</button>
+                              <button id="submit">Submit Quiz</button>
+                              <div id="results"></div>
                      </form>
                         </div>
                      </div>
@@ -901,144 +966,162 @@ External navigation:
                </div>
               <script>
                     
-Survey
-    .StylesManager
-    .applyTheme("modern");
+(function(){
+  // Functions
+  function buildQuiz(){
+    // variable to store the HTML output
+    const output = [];
 
-function doOnCurrentPageChanged(survey) {
-    document
-        .getElementById('pageSelector')
-        .value = survey.currentPageNo;
-    document
-        .getElementById('surveyPrev')
-        .style
-        .display = !survey.isFirstPage
-            ? "inline"
-            : "none";
-    document
-        .getElementById('surveyNext')
-        .style
-        .display = !survey.isLastPage
-            ? "inline"
-            : "none";
-    document
-        .getElementById('surveyComplete')
-        .style
-        .display = survey.isLastPage
-            ? "inline"
-            : "none";
-    document
-        .getElementById('surveyProgress')
-        .innerText = "Page " + (
-    survey.currentPageNo + 1) + " of " + survey.visiblePageCount + ".";
-    if (document.getElementById('surveyPageNo')) 
-        document
-            .getElementById('surveyPageNo')
-            .value = survey.currentPageNo;
-    }
-function setupPageSelector(survey) {
-    var selector = document.getElementById('pageSelector');
-    for (var i = 0; i < survey.visiblePages.length; i++) {
-        var option = document.createElement("option");
-        option.value = i;
-        option.text = "Page " + (
-        i + 1);
-        selector.add(option);
-    }
-}
+    // for each question...
+    myQuestions.forEach(
+      (currentQuestion, questionNumber) => {
 
-var json = {
-    title: "Software developer survey.",
-    pages: [
-        {
-            title: "What operating system do you use?",
-            questions: [
-                {
-                    type: "checkbox",
-                    name: "opSystem",
-                    title: "OS",
-                    hasOther: true,
-                    isRequired: true,
-                    choices: ["Windows", "Linux", "Macintosh OSX"]
-                }
-            ]
-        }, {
-            title: "What language(s) are you currently using?",
-            questions: [
-                {
-                    type: "checkbox",
-                    name: "langs",
-                    title: "Please select from the list",
-                    colCount: 4,
-                    isRequired: true,
-                    choices: [
-                        "Javascript",
-                        "Java",
-                        "Python",
-                        "CSS",
-                        "PHP",
-                        "Ruby",
-                        "C++",
-                        "C",
-                        "Shell",
-                        "C#",
-                        "Objective-C",
-                        "R",
-                        "VimL",
-                        "Go",
-                        "Perl",
-                        "CoffeeScript",
-                        "TeX",
-                        "Swift",
-                        "Scala",
-                        "Emacs Lisp",
-                        "Haskell",
-                        "Lua",
-                        "Clojure",
-                        "Matlab",
-                        "Arduino",
-                        "Makefile",
-                        "Groovy",
-                        "Puppet",
-                        "Rust",
-                        "PowerShell"
-                    ]
-                }
-            ]
-        }, {
-            title: "Please enter your name and e-mail",
-            questions: [
-                {
-                    type: "text",
-                    name: "name",
-                    title: "Name:"
-                }, {
-                    type: "text",
-                    name: "email",
-                    title: "Your e-mail"
-                }
-            ]
+        // variable to store the list of possible answers
+        const answers = [];
+
+        // and for each available answer...
+        for(letter in currentQuestion.answers){
+
+          // ...add an HTML radio button
+          answers.push(
+            `<label>
+              <input type="radio" name="question${questionNumber}" value="${letter}">
+              ${letter} :
+              ${currentQuestion.answers[letter]}
+            </label>`
+          );
         }
-    ]
-};
 
-window.survey = new Survey.Model(json);
+        // add this question and its answers to the output
+        output.push(
+          `<div class="slide">
+            <div class="question"> ${currentQuestion.question} </div>
+            <div class="answers"> ${answers.join("")} </div>
+          </div>`
+        );
+      }
+    );
 
-survey
-    .onComplete
-    .add(function (result) {
-        document
-            .querySelector('#surveyResult')
-            .textContent = "Result JSON:\n" + JSON.stringify(result.data, null, 3);
+    // finally combine our output list into one string of HTML and put it on the page
+    quizContainer.innerHTML = output.join('');
+  }
+
+  function showResults(){
+
+    // gather answer containers from our quiz
+    const answerContainers = quizContainer.querySelectorAll('.answers');
+
+    // keep track of user's answers
+    let numCorrect = 0;
+
+    // for each question...
+    myQuestions.forEach( (currentQuestion, questionNumber) => {
+
+      // find selected answer
+      const answerContainer = answerContainers[questionNumber];
+      const selector = `input[name=question${questionNumber}]:checked`;
+      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+      // if answer is correct
+      if(userAnswer === currentQuestion.correctAnswer){
+        // add to the number of correct answers
+        numCorrect++;
+
+        // color the answers green
+        answerContainers[questionNumber].style.color = 'lightgreen';
+      }
+      // if answer is wrong or blank
+      else{
+        // color the answers red
+        answerContainers[questionNumber].style.color = 'red';
+      }
     });
 
-survey.showTitle = false;
+    // show number of correct answers out of total
+    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+  }
 
-$("#surveyElement").Survey({model: survey, onCurrentPageChanged: doOnCurrentPageChanged});
+  function showSlide(n) {
+    slides[currentSlide].classList.remove('active-slide');
+    slides[n].classList.add('active-slide');
+    currentSlide = n;
+    if(currentSlide === 0){
+      previousButton.style.display = 'none';
+    }
+    else{
+      previousButton.style.display = 'inline-block';
+    }
+    if(currentSlide === slides.length-1){
+      nextButton.style.display = 'none';
+      submitButton.style.display = 'inline-block';
+    }
+    else{
+      nextButton.style.display = 'inline-block';
+      submitButton.style.display = 'none';
+    }
+  }
 
-setupPageSelector(survey);
-doOnCurrentPageChanged(survey);
-survey.showTitle = false;
+  function showNextSlide() {
+    showSlide(currentSlide + 1);
+  }
+
+  function showPreviousSlide() {
+    showSlide(currentSlide - 1);
+  }
+
+  // Variables
+  const quizContainer = document.getElementById('quiz');
+  const resultsContainer = document.getElementById('results');
+  const submitButton = document.getElementById('submit');
+  const myQuestions = [
+    {
+      question: "Who invented JavaScript?",
+      answers: {
+        a: "Douglas Crockford",
+        b: "Sheryl Sandberg",
+        c: "Brendan Eich"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "Which one of these is a JavaScript package manager?",
+      answers: {
+        a: "Node.js",
+        b: "TypeScript",
+        c: "npm"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "Which tool can you use to ensure code quality?",
+      answers: {
+        a: "Angular",
+        b: "jQuery",
+        c: "RequireJS",
+        d: "ESLint"
+      },
+      correctAnswer: "d"
+    }
+  ];
+
+  // Kick things off
+  buildQuiz();
+
+  // Pagination
+  const previousButton = document.getElementById("previous");
+  const nextButton = document.getElementById("next");
+  const slides = document.querySelectorAll(".slide");
+  let currentSlide = 0;
+
+  // Show the first slide
+  showSlide(currentSlide);
+
+  // Event listeners
+  submitButton.addEventListener('click', showResults);
+  previousButton.addEventListener("click", showPreviousSlide);
+  nextButton.addEventListener("click", showNextSlide);
+})();
+
               </script>
             </div>
          </div>
