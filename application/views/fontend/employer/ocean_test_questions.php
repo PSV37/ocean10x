@@ -1076,7 +1076,7 @@ button:hover{
   const submitButton = document.getElementById('submit');
  var myQuestions = <?php echo json_encode($all_questions); ?>;
 
- // console.log(jsonmyQuestions);
+ console.log(myQuestions);
  // const myQuestions = [
 // $.each(arrayFromPHP, function (i, elem) {
 //     console.log(elem.question);
