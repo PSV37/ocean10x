@@ -1073,72 +1073,40 @@ button:hover{
   const quizContainer = document.getElementById('quiz');
   const resultsContainer = document.getElementById('results');
   const submitButton = document.getElementById('submit');
-const myQuestions = [
-  <?php $key = 1; if (!empty($test_questions)): foreach ($test_questions as $question) :
- $questions = explode(',',$question['questions']);
-     $i=0;
-     foreach ($questions as $row) {
-      $where['ques_id']   = $row;
-      $join_emp  = array(
-      'skill_master' => 'skill_master.id=questionbank.technical_id |left outer',
-      'topic' => 'topic.topic_id=questionbank.topic_id |left outer',
-      'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |left outer',
-      'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |left outer',
-      'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |left outer',
-      'questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|LEFT OUTER'
-              );
-      $question_data  = $this->Master_model->get_master_row('questionbank', $select = FALSE, $where, $join = $join_emp);  print_r($question_data['question']);  ?>
-            {
-                  question: <?php echo $question_data['question']; ?>,
-                  answers: {
-                    a: "Douglas Crockford",
-                    b: "Sheryl Sandberg",
-                    c: "Brendan Eich"
-                  },
-                  correctAnswer: "c"
-            },
-
-              <?php
-                  $i++;
-                  $key++;
-                }
-                    endforeach;  
-              endif;
-                    ?>
-      ];
-// $.each(arrayFromPHP, function (i, elem) {
-//     // do your stuff
-// });
-  // const myQuestions = [
-  //   {
-  //     question: "Who invented JavaScript?",
-  //     answers: {
-  //       a: "Douglas Crockford",
-  //       b: "Sheryl Sandberg",
-  //       c: "Brendan Eich"
-  //     },
-  //     correctAnswer: "c"
-  //   },
-  //   {
-  //     question: "Which one of these is a JavaScript package manager?",
-  //     answers: {
-  //       a: "Node.js",
-  //       b: "TypeScript",
-  //       c: "npm"
-  //     },
-  //     correctAnswer: "c"
-  //   },
-  //   {
-  //     question: "Which tool can you use to ensure code quality?",
-  //     answers: {
-  //       a: "Angular",
-  //       b: "jQuery",
-  //       c: "RequireJS",
-  //       d: "ESLint"
-  //     },
-  //     correctAnswer: "d"
-  //   }
-  // ];
+  // const myQuestions = [ ]
+ 
+      // ];
+// 
+  const myQuestions = [
+    {
+      question: "Who invented JavaScript?",
+      answers: {
+        a: "Douglas Crockford",
+        b: "Sheryl Sandberg",
+        c: "Brendan Eich"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "Which one of these is a JavaScript package manager?",
+      answers: {
+        a: "Node.js",
+        b: "TypeScript",
+        c: "npm"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "Which tool can you use to ensure code quality?",
+      answers: {
+        a: "Angular",
+        b: "jQuery",
+        c: "RequireJS",
+        d: "ESLint"
+      },
+      correctAnswer: "d"
+    }
+  ];
 
   // Kick things off
   buildQuiz();

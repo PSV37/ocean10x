@@ -5995,6 +5995,7 @@ function update_external()
         $employer_id = $this->session->userdata('company_profile_id');
          $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' AND type = '$test_type'";
 
+
             $data['oceanchamp_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where_all);
         $this->load->view('fontend/employer/ocean_test_test_selection',$data);
 
@@ -6014,11 +6015,16 @@ function update_external()
         if (!empty($test_id)) {
             
             $employer_id = $this->session->userdata('company_profile_id');
-         $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' AND test_id = '$test_id'";
+            $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' AND test_id = '$test_id'";
+            $join_emp  = array(
+                'questionbank' => 'find_in_set(questionbank.ques_id, oceanchamp_tests.questions)'
+             
+             
+              );
 
-            $data['oceanchamp_tests'] = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where = $where_all, $join = FALSE);
+            $data['oceanchamp_tests'] = $this->Master_model->get_master_row('oceanchamp_tests', $select = 'oceantest.*,group_concat(questions.question)', $where = $where_all, $join = FALSE);
             
-            // print_r($data['questions']);die;
+            print_r($data['questions']);die;
             
             $data['limit_id'] = 0;
             $this->load->view('fontend/employer/ocean_test_questions', $data);
