@@ -1082,7 +1082,7 @@ input[type="radio"] {
                   
                   function initializeClock(id, endtime) {
                     var clock = document.getElementById(id);
-                    alert(endtime);
+                    // alert(endtime);
                     // var hoursSpan = clock.querySelector('.hours');
                     // var minutesSpan = clock.querySelector('.minutes');
                     var secondsSpan = clock.querySelector('.seconds');
