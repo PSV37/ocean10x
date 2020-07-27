@@ -1165,6 +1165,7 @@ input[type="radio"] {
                   function onTimesUp() {
                     clearInterval(timerInterval);
                     $("#next").click();
+                    startTimer();
 
                   }
                   
