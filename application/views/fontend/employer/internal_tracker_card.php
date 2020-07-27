@@ -28,9 +28,9 @@
                                <?php } ?>
 
 
-                                  <input class="email allowalphabatesspace"  id="name" type="text" name="email" value="<?php echo $job_row->js_name; ?>" ></td>
+                                  <input class="email "  id="name" type="text" name="email" value="<?php echo $job_row->js_name; ?>" ></td>
 
-                                <td ><input class="email" required=""> id="email" type="text" name="email1" value="<?php echo $job_row->js_email; ?>" ></td>
+                                <td ><input class="email allowalphabatesspace" id="email" type="text" name="email1" value="<?php echo $job_row->js_email; ?>" ></td>
 
                                 <td ><input class="email allowphonenumber" id="mobile" type="text" name="mobile" value="<?php echo $job_row->js_mobile; ?>" maxlength='10' ></td>
 
