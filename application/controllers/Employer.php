@@ -6021,10 +6021,11 @@ function update_external()
             $all_questions = array();
            foreach ($oceanchamp_tests as $question) {
                 # code...
+                print_r($question);
+
              
                  
-                $questions = explode(',',$question['questions']);
-                print_r($questions);
+                $questions = explode(',',$question->questions);
              //    $i=0;
              //    foreach ($questions as $row) {
              //      // print_r($row);
