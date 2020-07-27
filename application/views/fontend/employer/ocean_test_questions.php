@@ -1120,10 +1120,7 @@ input[type="radio"] {
                </script>
                <script>
                   // Credit: Mateusz Rybczonec
-                  var myQuestions = <?php echo json_encode($all_questions); ?>;
-                  myQuestions.forEach(
-      (currentQuestion, questionNumber) => {
-            alert(currentQuestion);
+
                   const FULL_DASH_ARRAY = 283;
                   const WARNING_THRESHOLD = 10;
                   const ALERT_THRESHOLD = 5;
@@ -1240,8 +1237,8 @@ input[type="radio"] {
                       .getElementById("base-timer-path-remaining")
                       .setAttribute("stroke-dasharray", circleDasharray);
                   }
-                  }
-    );
+                
+                
 
                </script>
             </div>
