@@ -1103,6 +1103,7 @@ button:hover{
                   $key++;
                 }
                     endforeach;  
+              endif;
                     ?>
       ];
 // $.each(arrayFromPHP, function (i, elem) {
