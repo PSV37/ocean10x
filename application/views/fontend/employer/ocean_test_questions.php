@@ -946,7 +946,7 @@ button:hover{
                         </div>
                         <div class="quizBox">
                           <form id="nextques" class="submit-form" action="<?php echo base_url();?>employer/insert_ocean_data" method="post">
-<?php print_r($all_questions);die; ?>
+
                                   
                               <h1>Quiz on Important Facts</h1>
                               <div class="quiz-container">
@@ -1074,10 +1074,11 @@ button:hover{
   const quizContainer = document.getElementById('quiz');
   const resultsContainer = document.getElementById('results');
   const submitButton = document.getElementById('submit');
-  // const myQuestions = [ ]
- 
-      // ];
-// 
+ var arrayFromPHP = <?php echo json_encode($all_questions) ?>;
+
+$.each(arrayFromPHP, function (i, elem) {
+    console.log(elem);
+});
   const myQuestions = [
     {
       question: "Who invented JavaScript?",
