@@ -6031,7 +6031,7 @@ function update_external()
              //     
                   $where = "questionbank.ques_id='$row'";
             
-                  $question_data  = $this->Master_model->get_master_row('questionbank', $select = FALSE, $where, $join = false);
+                  $question_data  = $this->Master_model->get_master_row('questionbank', $select = 'questionbank.question', $where, $join = false);
                 
                   array_push($all_questions, $question_data);
               }
