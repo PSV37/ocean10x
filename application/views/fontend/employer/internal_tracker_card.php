@@ -28,9 +28,9 @@
                                <?php } ?>
 
 
-                                  <input class="email allowalphabatesspace" id="name" type="text" name="email" value="<?php echo $job_row->js_name; ?>" ></td>
+                                  <input class="email allowalphabatesspace"  id="name" type="text" name="email" value="<?php echo $job_row->js_name; ?>" ></td>
 
-                                <td ><input class="email" id="email" type="text" name="email1" value="<?php echo $job_row->js_email; ?>" ></td>
+                                <td ><input class="email" required=""> id="email" type="text" name="email1" value="<?php echo $job_row->js_email; ?>" ></td>
 
                                 <td ><input class="email allowphonenumber" id="mobile" type="text" name="mobile" value="<?php echo $job_row->js_mobile; ?>" maxlength='10' ></td>
 
@@ -58,7 +58,7 @@
                                  
 
                                </select></td>
-                                <td ><input type="text" class="email" id="action" name="comment" value="<?php echo $job_row->action_item; ?>" ></td>
+                                <td ><input type="text" class="email allowalphabatesspace" id="action" name="comment" value="<?php echo $job_row->action_item; ?>" ></td>
 
                                   <td ><textarea class="email" id="comment" name="comment" value=""><?php echo $job_row->comments; ?></textarea></td>
 
