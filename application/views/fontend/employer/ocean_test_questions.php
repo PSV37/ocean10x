@@ -946,7 +946,7 @@ button:hover{
                         </div>
                         <div class="quizBox">
                           <form id="nextques" class="submit-form" action="<?php echo base_url();?>employer/insert_ocean_data" method="post">
-<?php print_r($oceanchamp_tests);die; ?>
+<?php print_r($all_questions);die; ?>
                                   
                               <h1>Quiz on Important Facts</h1>
                               <div class="quiz-container">

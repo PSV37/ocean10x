@@ -5995,7 +5995,6 @@ function update_external()
         $employer_id = $this->session->userdata('company_profile_id');
          $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' AND type = '$test_type'";
 
-
             $data['oceanchamp_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where_all);
         $this->load->view('fontend/employer/ocean_test_test_selection',$data);
 
@@ -6016,15 +6015,33 @@ function update_external()
             
             $employer_id = $this->session->userdata('company_profile_id');
             $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' AND test_id = '$test_id'";
-            $join_emp  = array(
-                'questionbank' => 'find_in_set(questionbank.ques_id, oceanchamp_tests.questions)'
-             
 
+            $oceanchamp_tests = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where = $where_all, $join = FALSE);
+            $all_questions = array();
+             $key = 1; if (!empty($oceanchamp_tests)): foreach ($oceanchamp_tests as $question) : 
+                 
+                $questions = explode(',',$question['questions']);
+                // print_r($questions);
+                $i=0;
+                foreach ($questions as $row) {
+                  // print_r($row);
+                  // print_r($i);
+                  $where['ques_id']   = $row;
+                   $join_emp  = array(
+                  'skill_master' => 'skill_master.id=questionbank.technical_id |left outer',
+                  'topic' => 'topic.topic_id=questionbank.topic_id |left outer',
+                  'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |left outer',
+                  'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |left outer',
+                  'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |left outer',
+                  'questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|LEFT OUTER'
               );
-
-            $data['oceanchamp_tests'] = $this->Master_model->get_master_row('oceanchamp_tests', $select = 'oceanchamp_tests.*,group_concat(questionbank.question,questionbank.option1)', $where = $where_all, $join =  $join_emp);
+                  $question_data  = $this->Master_model->get_master_row('questionbank', $select = FALSE, $where, $join = $join_emp)
+                
+                  array_push($all_questions, $question_data)
+                endforeach;  
+                endif;               
             
-            // print_r($data['oceanchamp_tests']);die;
+            $data['all_questions'] = $all_questions;
             
             $data['limit_id'] = 0;
             $this->load->view('fontend/employer/ocean_test_questions', $data);
