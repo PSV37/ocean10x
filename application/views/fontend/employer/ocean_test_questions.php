@@ -1087,7 +1087,7 @@ const myQuestions = [
       'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |left outer',
       'questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|LEFT OUTER'
               );
-      $question_data  = $this->Master_model->get_master_row('questionbank', $select = FALSE, $where, $join = $join_emp);  print_r($question_data['question'];)  ?>
+      $question_data  = $this->Master_model->get_master_row('questionbank', $select = FALSE, $where, $join = $join_emp);  print_r($question_data['question']);  ?>
             {
                   question: <?php echo $question_data['question']; ?>,
                   answers: {
