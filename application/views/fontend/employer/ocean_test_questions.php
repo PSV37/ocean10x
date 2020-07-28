@@ -925,7 +925,7 @@ input[type="radio"] {
           // ...add an HTML radio button
           answers.push(
             `<label>
-              <input type="radio" onclick="get_checked(${currentQuestion});" style="display:block;" name="question${questionNumber}" value="${letter}">
+              <input type="radio" onclick="get_checked(${questionNumber});" style="display:block;" name="question${questionNumber}" value="${letter}">
               ${letter} :
               ${currentQuestion.answers[letter]}
             </label>`
@@ -1211,7 +1211,7 @@ input[type="radio"] {
  // console.log(obj[currentSlide]);
  function get_checked(n)
 {
-      alert(n);
+alert(n);
 }
 
 })();
