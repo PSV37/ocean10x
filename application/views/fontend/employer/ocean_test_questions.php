@@ -1302,7 +1302,7 @@ function set_time(n)
                   
                   function setCircleDasharray(timePassed,TIME_LIMIT) {
                     const circleDasharray = `${(
-                      calculateTimeFraction(timePassed,TIME_LIMIT) * FULL_DASH_ARRAY
+                      calculateTimeFraction(timePassed,TIME_LIMIT) * 283
                     ).toFixed(0)} 283`;
                     document
                       .getElementById("base-timer-path-remaining")
