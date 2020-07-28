@@ -38,7 +38,7 @@
 
                                 <td ><input class="email allownumericwithdecimal" id="exp" type="text" name="exp" value="<?php echo $job_row->js_experience; ?>" ></td>
 
-                                <td ><input id="notice" class="allownumericwithoutdecimal" type="text" name="notice"  value="<?php echo $job_row->js_current_notice_period; ?>" ></td>
+                                <td ><input id="notice" class="allownumericwithoutdecimal" type="text" name="notice" maxlength='3' value="<?php echo $job_row->js_current_notice_period; ?>" ></td>
 
                                 <td > <select name="edu" style="min-width: 200px; border: none;"  id="edu" class="form-control select2 email" data-style="btn-default" data-live-search="true"  >
                                   <option value=""> </option>
