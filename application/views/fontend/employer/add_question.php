@@ -509,7 +509,8 @@ required: true
 
 messages:{
 
-  "correct_answer[]":"Please select at least one audience",
+ 
+
 
 
 
@@ -559,7 +560,7 @@ required: "This field is mandatory!"
 
 'correct_answer':{
 
-required: "This field is mandatory!"
+required: "This field is mandatory!",
 maxlength: "Choose atleast One"
 
 },
