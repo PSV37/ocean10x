@@ -213,7 +213,7 @@
       }
       button {
       height: 4em;
-      width:130px;
+      width:140px;
       padding: 1.5em auto;
       margin: 1em auto;
       background-color:#f1f2ec;
@@ -857,15 +857,16 @@ input[type="radio"] {
                     <!--  <div>
                         <span class="hours"></span>
                         <div class="smalltext">Hours</div>
-                     </div>
-                     <div>
-                        <span class="minutes"></span>
-                        <div class="smalltext">Minutes</div>
                      </div> -->
+                     
                      <div>
                         <span class="seconds"></span>
                         <div class="smalltext">Seconds</div>
                      </div>
+                     <!-- <div>
+                        <span class="minutes"></span>
+                        <div class="smalltext">Minutes</div>
+                     </div> -->
                   </div>
                   <div class="quizArea">
                      <div class="multipleChoiceQues">
@@ -1123,7 +1124,7 @@ input[type="radio"] {
                   var myQuestions = <?php echo json_encode($all_questions); ?>;
                 myQuestions.forEach( (currentQuestion, questionNumber) => {
 
-                  alert(currentQuestion.time_for_question);
+                  alert(questionNumber);
 
                   
                   const FULL_DASH_ARRAY = 283;
