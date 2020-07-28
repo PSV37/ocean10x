@@ -853,7 +853,7 @@ input[type="radio"] {
          <div class="container">
             <div class="col-md-12">
                <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
-               <div class="col-md-9 test_d slide">
+               <div class="col-md-9 test_d">
                   <div id="clockdiv">
                     <!--  <div>
                         <span class="hours"></span>
@@ -1068,15 +1068,15 @@ input[type="radio"] {
   
         // add this question and its answers to the output
         output.push(
-          `
+          `<div class="slide">
             <div class="question"> ${currentQuestion.question} </div>
             <div class="answers"> ${answers.join("")} </div>
              <div class="time"> ${currentQuestion.time_for_question}</div>
-          `
+          </div>`
         );
         timer.push(
-      // `<div class="slide">
-          `<div class="base-timer">
+      `<div class="slide1">
+          <div class="base-timer">
                     <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                       <g class="base-timer__circle">
                         <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
@@ -1096,12 +1096,12 @@ input[type="radio"] {
                     <span id="base-timer-label" class="base-timer__label">${formatTime(
                       timeLeft
                     )}</span>
+                  </div>
                   </div>`
-                  // </div>
                     );
          startTimer();
 
-              skip.push(`<button class="skip" onclick="next(${questionNumber});">skip question</button>`
+              skip.push(`<div class="slide2"><button class="skip" onclick="next(${questionNumber});">skip question</button></div>`
                   );
 
       
@@ -1156,6 +1156,12 @@ input[type="radio"] {
       // alert(n);
     slides[currentSlide].classList.remove('active-slide');
     slides[n].classList.add('active-slide');
+
+    slides1[currentSlide].classList.remove('active-slide');
+    slides1[n].classList.add('active-slide');
+
+    slides2[currentSlide].classList.remove('active-slide');
+    slides2[n].classList.add('active-slide');
     currentSlide = n;
 
     if(currentSlide === 0){
@@ -1235,6 +1241,8 @@ input[type="radio"] {
   const previousButton = document.getElementById("previous");
   const nextButton = document.getElementById("next");
   const slides = document.querySelectorAll(".slide");
+  const slides1 = document.querySelectorAll(".slide1");
+  const slides2 = document.querySelectorAll(".slide2");
   let currentSlide = 0;
 
   // Show the first slide
