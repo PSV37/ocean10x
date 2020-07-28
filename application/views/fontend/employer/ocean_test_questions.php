@@ -1003,7 +1003,7 @@ input[type="radio"] {
                     )}</span>
                   </div>
                   `;
-                  
+
                   startTimer();
 
 
@@ -1207,13 +1207,14 @@ input[type="radio"] {
  // console.log(myQuestions);
  //  var obj = JSON.parse(myQuestions);
  // console.log(obj[currentSlide]);
-
-})();
-
-function get_checked(n)
+ function get_checked(n)
 {
       alert(n);
 }
+
+})();
+
+
 
               </script>
               <script>
