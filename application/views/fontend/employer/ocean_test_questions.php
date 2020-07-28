@@ -851,7 +851,7 @@ input[type="radio"] {
 .slide2{
   position: absolute;
      left: 265px;
-    top: 230px;
+    top: 15px;
   width: 100%;
   z-index: 1;
   opacity: 0;
@@ -920,7 +920,7 @@ input[type="radio"] {
                         
                   </div>
                   
-                  <div class="row" style="margin-top: 150px">
+                  <div class="row" style="margin-top: 260px">
                         <?php $i=1; foreach ($all_questions as $row) { ?>
                               <div class="col-md-2 exp-box" id="status<?php echo $i; ?>" onclick="getval('Beginner','2');"><span name="levels" id="levels"   value="Beginner"><?php echo $i; ?></span></div>
                       <? $i++; } ?>
