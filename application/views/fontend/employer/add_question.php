@@ -21,7 +21,11 @@ input.select2-search__field {
 ul.select2-results__options {
     margin-top: 30px;
 }
-   
+   div#errorbox {
+   margin-top: 25px;
+    /*font-weight: bold;*/
+   color: red;
+   }
 </style>
 
  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">
@@ -190,6 +194,7 @@ ul.select2-results__options {
               </div>
           </div>
         </div>
+         <div id="errorbox"></div>
         <div class="col-md-4"></div>
           <div class="col-md-4" style="text-align:right;">
             <button id="submit" type="Submit" class="save_question">Save question</button>
@@ -408,6 +413,14 @@ ul.select2-results__options {
      $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd',maxDate: '0' });
      $("#last_salary_hike").datepicker({ dateFormat: 'yy-mm-dd',maxDate: '0' });
      });
+
+      $("#js").submit(function(){
+    var checked = $(".checkbox input:checked").length > 0;
+    if (!checked){
+       $("#errorbox").html("Either Upload JD or fill Job Description");
+        return false;
+    }
+})
 
  $("#js").validate (  
 
