@@ -925,20 +925,20 @@ input[type="radio"] {
           // ...add an HTML radio button
           answers.push(
             `<label>
-              <input type="radio" style="display:block;" name="question${questionNumber}" value="${letter}">
+              <input type="radio" onclick="get_checked(currentQuestion);" style="display:block;" name="question${questionNumber}" value="${letter}">
               ${letter} :
               ${currentQuestion.answers[letter]}
             </label>`
           );
         }
 
-        time.push(
-            `<label>
-              <input type="text" name="time${questionNumber}" value="${currentQuestion.time_for_question}">
-              ${letter} :
-              ${currentQuestion.answers[letter]}
-            </label>`
-          );
+        // time.push(
+        //     `<label>
+        //       <input type="text" name="time${questionNumber}" value="${currentQuestion.time_for_question}">
+        //       ${letter} :
+        //       ${currentQuestion.answers[letter]}
+        //     </label>`
+        //   );
 
         // add this question and its answers to the output
         output.push(
@@ -991,7 +991,7 @@ input[type="radio"] {
   }
 
   function showSlide(n) {
-      alert(n);
+      // alert(n);
     slides[currentSlide].classList.remove('active-slide');
     slides[n].classList.add('active-slide');
     currentSlide = n;
@@ -1088,6 +1088,11 @@ input[type="radio"] {
  // console.log(obj[currentSlide]);
 
 })();
+
+function get_checked(n)
+{
+      alert(n);
+}
 
               </script>
               <script>
