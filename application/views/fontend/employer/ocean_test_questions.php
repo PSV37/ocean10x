@@ -1248,7 +1248,7 @@ function set_time(n)
 
                   }
                   
-                   function startTimer(timePassed,TIME_LIMIT);
+                   function startTimer(timePassed,TIME_LIMIT)
                   {
                     timerInterval = setInterval(() => {
                       timePassed = timePassed += 1;
