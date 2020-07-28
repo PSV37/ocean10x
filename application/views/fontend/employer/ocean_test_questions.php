@@ -1147,6 +1147,9 @@ input[type="radio"] {
   // Kick things off
   buildQuiz();
 let currentSlide = 0;
+function set_time(n)
+{
+
 
       const FULL_DASH_ARRAY = 283;
                   const WARNING_THRESHOLD = 10;
@@ -1196,9 +1199,9 @@ let currentSlide = 0;
                   </div>
                   `;
                   
-                  startTimer();
+                  startTimer(timePassed,TIME_LIMIT);
 
-
+}
     
   // Pagination
   const previousButton = document.getElementById("previous");
@@ -1245,14 +1248,15 @@ let currentSlide = 0;
 
                   }
                   
-                  function startTimer() {
+                   function startTimer(timePassed,TIME_LIMIT);
+                  {
                     timerInterval = setInterval(() => {
                       timePassed = timePassed += 1;
                       timeLeft = TIME_LIMIT - timePassed;
                       document.getElementById("base-timer-label").innerHTML = formatTime(
                         timeLeft
                       );
-                      setCircleDasharray();
+                      setCircleDasharray(timePassed,TIME_LIMIT);
                       setRemainingPathColor(timeLeft);
                   
                       if (timeLeft === 0) {
@@ -1291,14 +1295,14 @@ let currentSlide = 0;
                     }
                   }
                   
-                  function calculateTimeFraction() {
+                  function calculateTimeFraction(timePassed,TIME_LIMIT) {
                     const rawTimeFraction = timeLeft / TIME_LIMIT;
                     return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
                   }
                   
-                  function setCircleDasharray() {
+                  function setCircleDasharray(timePassed,TIME_LIMIT) {
                     const circleDasharray = `${(
-                      calculateTimeFraction() * FULL_DASH_ARRAY
+                      calculateTimeFraction(timePassed,TIME_LIMIT) * FULL_DASH_ARRAY
                     ).toFixed(0)} 283`;
                     document
                       .getElementById("base-timer-path-remaining")
