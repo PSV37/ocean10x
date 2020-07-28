@@ -490,7 +490,7 @@ required: true
 "correct_answer[]": { 
                     required: true, 
                     minlength: 1 
-            } 
+            }, 
 
 
 'time': {required: true},
