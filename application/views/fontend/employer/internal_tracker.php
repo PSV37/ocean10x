@@ -768,15 +768,6 @@ textarea#comment {
 <script src="<?php echo base_url() ?>asset/js/search.js"></script>
 
 <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/additional-methods.js"></script>
-
-
-<script src="js/jquery.validate.min.js"></script>
-<script src="js/additional-methods.js"></script>
-
-
-
 <script>
 $("#dept_id").select2( {
   placeholder: "Select Department",
@@ -797,11 +788,13 @@ $("#int_track").validate (
 
 rules:{
 
-'email1':{
+'email':{
 
-email: true
+email: true,
 
+minlength: 10,
 
+maxlength: 10
 //company_phone_regex: true
 
 },
@@ -873,7 +866,7 @@ url: true
 
 messages:{
 
-'email1':{
+'company_name':{
 
 required: "The name field is mandatory!",
 
@@ -1027,9 +1020,7 @@ equalTo: "The two passwords do not match!"
 
 <script>
 
-  
-
-$(document).on("keypress keyup blur", ".allowphonenumber", function (event) {
+   $(".allowphonenumber").on("keypress keyup blur",function (event) {
              //this.value = this.value.replace(/[^0-9\.]/g,'');
       $(this).val($(this).val().replace("^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"));
              if ((event.which < 48 || event.which > 57)) {
@@ -1040,10 +1031,9 @@ $(document).on("keypress keyup blur", ".allowphonenumber", function (event) {
    
    //(^[ A-Za-z0-9_@./#&+-]*$)
    
- $(document).on("keypress keyup blur", ".allownumericwithoutdecimal", function (event) {
+ 
 
-
-   //$(".allownumericwithoutdecimal").on("input", function(evt) {
+   $(".allownumericwithoutdecimal").on("input", function(evt) {
     var self = $(this);
     self.val(self.val().replace(/[^\d]+/, ""));
     if ((evt.which < 48 || evt.which > 57)) 
@@ -1051,23 +1041,6 @@ $(document).on("keypress keyup blur", ".allowphonenumber", function (event) {
      evt.preventDefault();
      }
  });
-
-
- $(document).on("keypress keyup blur", ".validateEmail", function (event) {
-//function validateEmail(email) {
-    var chrbeforAt = email.substr(0, email.indexOf('@'));
-    if (!($.trim(email).length > 127)) {
-        if (chrbeforAt.length >= 2) {
-            var re = /^(([^<>()[\]{}'^?\\.,!|//#%*-+=&;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-            return re.test(email);
-        } else {
-            return false;
-        }
-    } else {
-        return false;
-    }
-}
-
 
 
    
@@ -1092,7 +1065,7 @@ $(document).on("keypress keyup blur", ".allowphonenumber", function (event) {
             }
         });
    
-   $(document).on("keypress keyup blur", ".allowalphabatesspace", function (e){
+   $(".allowalphabatesspace").keypress(function (e) {
          var regex = new RegExp("^[a-zA-Z ]*$");
          var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
          if (regex.test(str)) {
@@ -1104,10 +1077,7 @@ $(document).on("keypress keyup blur", ".allowphonenumber", function (event) {
          return false;
          }
      });
-
-   
-   $(document).on("keypress keyup blur", ".allowalphabates", function (e){
-
+$(".allowalphabates").keypress(function (e) {
          var regex = new RegExp("^[a-zA-Z ]*$");
          var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
          if (regex.test(str)) {
