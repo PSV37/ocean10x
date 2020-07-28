@@ -201,6 +201,7 @@
       border-radius: 13px;
       padding: 20px;
       float:left;
+      margin-right: 25px;
       }
       .quizBox
       {
@@ -837,20 +838,20 @@ input[type="radio"] {
   transition: opacity 0.5s;
 }
 
-.slide1{
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 0.5s;
+.slide1 {
+    position: absolute;
+    left: -150px;
+    top: 21px;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s;
 }
 
 .slide2{
   position: absolute;
-  left: 0px;
-  top: 0px;
+     left: 265px;
+    top: 230px;
   width: 100%;
   z-index: 1;
   opacity: 0;
