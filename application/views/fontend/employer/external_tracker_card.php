@@ -52,12 +52,12 @@
                                </select></td>
                                 <td ><input type="text" class="email" id="action" name="comment" value="<?php echo $job_row->action_item; ?>" ></td>
 
-                                  <td ><textarea class="email" id="comment" name="comment" value=""><?php echo $job_row->comments; ?></textarea></td>
+                                  <td ><textarea class="email allowalphabates" id="comment" name="comment" value=""><?php echo $job_row->comments; ?></textarea></td>
 
                                     <td ><input type="text" class="email allowalphabates" id="reminder" name="comment" value="<?php echo $job_row->reminder; ?>" ></td>
 
 
-                                    <input type="hidden" class="email" id="tracking_id_val" name="comment" value="<?php echo $job_row->id; ?>" >
+                                    <input type="hidden" class="email allowalphabates" id="tracking_id_val" name="comment" value="<?php echo $job_row->id; ?>" >
 
                                <!--  <td style="min-width: 150px;" id="share"> 
 
