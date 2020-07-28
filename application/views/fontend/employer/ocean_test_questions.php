@@ -1276,7 +1276,7 @@ function set_time(n)
                     return `${minutes}:${seconds}`;
                   }
                   
-                  function setRemainingPathColor(timeLeft) {
+                  function setRemainingPathColor(timeLeft,COLOR_CODES) {
                     const { alert, warning, info } = COLOR_CODES;
                     if (timeLeft <= alert.threshold) {
                       document
