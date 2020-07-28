@@ -1303,7 +1303,7 @@ function getval(value)
       qid = value - 1;
      alert(qid);
 
-     var id = $(".slide .active-slide .question").attr("id");
+     var id = $(".slide.active-slide.question").attr("id");
      alert(id);
 }
               </script>
