@@ -1122,7 +1122,7 @@ input[type="radio"] {
                     );
          startTimer();
 
-              skip.push(`<div class="slide2"><button class="skip1" onclick="next(${questionNumber});">skip question</button></div>`
+              skip.push(`<div class="slide2"><button class="skip skp1" onclick="next(${questionNumber});">skip question</button></div>`
                   );
 
       
