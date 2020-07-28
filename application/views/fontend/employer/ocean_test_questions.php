@@ -1301,18 +1301,11 @@ function getval(value)
       // alert(value);
 
       qid = value - 1;
+     alert(currentSlide);
      // alert(qid);
 
-     var id = $(".slide.active-slide").attr("id");
-     if (quid < id) 
-     {
-      for (i = 0; i < qui; i++) {
-             $("#previous").click();
-            }
-     }
-
+    showSlide(qid);
      
-     alert(currentSlide);
 }
               </script>
               <script>
