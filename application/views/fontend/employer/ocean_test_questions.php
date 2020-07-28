@@ -929,7 +929,7 @@ input[type="radio"] {
                </div>
               <script>
                     
-(function(){
+// (function(){
   // Functions
   function buildQuiz(){
     // variable to store the HTML output
@@ -1279,7 +1279,7 @@ input[type="radio"] {
  // console.log(obj[currentSlide]);
  
 
-})();
+// })();
 
 function get_checked(n)
 {
@@ -1298,10 +1298,10 @@ function next(n)
 
 function getval(value)
 {
-      alert(value);
+      // alert(value);
 
       qid = value - 1;
-     alert(qid);
+     // alert(qid);
 
      var id = $(".slide.active-slide").attr("id");
      if (quid < id) 
@@ -1312,7 +1312,7 @@ function getval(value)
      }
 
      
-     alert(id);
+     alert(currentSlide);
 }
               </script>
               <script>
