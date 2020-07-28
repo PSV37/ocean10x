@@ -1258,7 +1258,7 @@ function get_checked(n)
                   var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
                   initializeClock('clockdiv', deadline);
                </script>
-               <script>
+              <!--  <script>
                   // Credit: Mateusz Rybczonec
              
                   
@@ -1390,7 +1390,7 @@ function get_checked(n)
                 
   
 
-               </script>
+               </script> -->
             </div>
          </div>
       </div>
