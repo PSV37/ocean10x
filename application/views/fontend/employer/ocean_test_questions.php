@@ -1120,7 +1120,11 @@ input[type="radio"] {
                </script>
                <script>
                   // Credit: Mateusz Rybczonec
+                  var myQuestions = <?php echo json_encode($all_questions); ?>;
+                
 
+                   myQuestions.forEach(
+                        (currentQuestion, questionNumber) => {
                   const FULL_DASH_ARRAY = 283;
                   const WARNING_THRESHOLD = 10;
                   const ALERT_THRESHOLD = 5;
@@ -1138,20 +1142,14 @@ input[type="radio"] {
                       threshold: ALERT_THRESHOLD
                     }
                   };
-                   var myQuestions = <?php echo json_encode($all_questions); ?>;
-                
-
-                   myQuestions.forEach(
-                        (currentQuestion, questionNumber) => {
+                   
 
                           // variable to store the list of possible answers
                   const TIME_LIMIT = currentQuestion.time_for_question;
                          
 
-                          
-                        }
-                      );
-                 const TIME_LIMIT = 20;
+                       
+                 // const TIME_LIMIT = 20;
                   let timePassed = 0;
                   let timeLeft = TIME_LIMIT;
                   let timerInterval = null;
@@ -1181,7 +1179,11 @@ input[type="radio"] {
                   </div>
                   `;
                   
-                  // startTimer();
+                  startTimer();
+
+                     
+                        }
+                      );
                   
                   function onTimesUp() {
                     clearInterval(timerInterval);
