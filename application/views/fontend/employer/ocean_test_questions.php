@@ -958,23 +958,7 @@ input[type="radio"] {
           );
         }
 
-         const FULL_DASH_ARRAY = 283;
-                  const WARNING_THRESHOLD = 10;
-                  const ALERT_THRESHOLD = 5;
-                  
-                  const COLOR_CODES = {
-                    info: {
-                      color: "green"
-                    },
-                    warning: {
-                      color: "orange",
-                      threshold: WARNING_THRESHOLD
-                    },
-                    alert: {
-                      color: "red",
-                      threshold: ALERT_THRESHOLD
-                    }
-                  };
+        
                    
 
                           // variable to store the list of possible answers
@@ -1151,6 +1135,24 @@ input[type="radio"] {
   const quizContainer = document.getElementById('quiz');
   const resultsContainer = document.getElementById('results');
   const submitButton = document.getElementById('submit');
+
+   const FULL_DASH_ARRAY = 283;
+                  const WARNING_THRESHOLD = 10;
+                  const ALERT_THRESHOLD = 5;
+                  
+                  const COLOR_CODES = {
+                    info: {
+                      color: "green"
+                    },
+                    warning: {
+                      color: "orange",
+                      threshold: WARNING_THRESHOLD
+                    },
+                    alert: {
+                      color: "red",
+                      threshold: ALERT_THRESHOLD
+                    }
+                  };
   const TIME_LIMIT = 5;
   let timePassed = 0;
   let timeLeft = TIME_LIMIT;
