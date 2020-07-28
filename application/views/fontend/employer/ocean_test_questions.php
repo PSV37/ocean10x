@@ -982,12 +982,12 @@ input[type="radio"] {
 
                        
                  // const TIME_LIMIT = currentQuestion.;
-                 const TIME_LIMIT = currentQuestion.time_for_question;
-                  // const TIME_LIMIT = 5;
-                    let timePassed = 0;
-                    let timeLeft = TIME_LIMIT;
-                    let timerInterval = null;
-                    let remainingPathColor = COLOR_CODES.info.color;
+                 // const TIME_LIMIT = currentQuestion.time_for_question;
+                 //  // const TIME_LIMIT = 5;
+                 //    let timePassed = 0;
+                 //    let timeLeft = TIME_LIMIT;
+                 //    let timerInterval = null;
+                 //    let remainingPathColor = COLOR_CODES.info.color;
 
                  
 
@@ -1129,7 +1129,47 @@ input[type="radio"] {
   const quizContainer = document.getElementById('quiz');
   const resultsContainer = document.getElementById('results');
   const submitButton = document.getElementById('submit');
- let currentSlide = 0;
+ 
+  
+ var myQuestions = <?php echo json_encode($all_questions); ?>;
+// console.log(JSON.parse(myQuestions));
+ console.log(myQuestions);
+
+// ];
+  // const myQuestions = [
+  //   {
+  //     question: "Who invented JavaScript?",
+  //     answers: {
+  //       a: "Douglas Crockford",
+  //       b: "Sheryl Sandberg",
+  //       c: "Brendan Eich"
+  //     },
+  //     correctAnswer: "c"
+  //   },
+  //   {
+  //     question: "Which one of these is a JavaScript package manager?",
+  //     answers: {
+  //       a: "Node.js",
+  //       b: "TypeScript",
+  //       c: "npm"
+  //     },
+  //     correctAnswer: "c"
+  //   },
+  //   {
+  //     question: "Which tool can you use to ensure code quality?",
+  //     answers: {
+  //       a: "Angular",
+  //       b: "jQuery",
+  //       c: "RequireJS",
+  //       d: "ESLint"
+  //     },
+  //     correctAnswer: "d"
+  //   }
+  // ];
+
+  // Kick things off
+  buildQuiz();
+let currentSlide = 0;
 
     const FULL_DASH_ARRAY = 283;
                   const WARNING_THRESHOLD = 10;
@@ -1180,46 +1220,6 @@ input[type="radio"] {
                   `;
                   
                   startTimer();
-  
- var myQuestions = <?php echo json_encode($all_questions); ?>;
-// console.log(JSON.parse(myQuestions));
- console.log(myQuestions);
-
-// ];
-  // const myQuestions = [
-  //   {
-  //     question: "Who invented JavaScript?",
-  //     answers: {
-  //       a: "Douglas Crockford",
-  //       b: "Sheryl Sandberg",
-  //       c: "Brendan Eich"
-  //     },
-  //     correctAnswer: "c"
-  //   },
-  //   {
-  //     question: "Which one of these is a JavaScript package manager?",
-  //     answers: {
-  //       a: "Node.js",
-  //       b: "TypeScript",
-  //       c: "npm"
-  //     },
-  //     correctAnswer: "c"
-  //   },
-  //   {
-  //     question: "Which tool can you use to ensure code quality?",
-  //     answers: {
-  //       a: "Angular",
-  //       b: "jQuery",
-  //       c: "RequireJS",
-  //       d: "ESLint"
-  //     },
-  //     correctAnswer: "d"
-  //   }
-  // ];
-
-  // Kick things off
-  buildQuiz();
-
   // Pagination
   const previousButton = document.getElementById("previous");
   const nextButton = document.getElementById("next");
