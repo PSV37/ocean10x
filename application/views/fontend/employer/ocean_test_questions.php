@@ -1070,6 +1070,7 @@ input[type="radio"] {
     slides2[n].classList.add('active-slide');
     currentSlide = n;
 
+
     if(currentSlide === 0){
       previousButton.style.display = 'none';
     }
@@ -1090,6 +1091,7 @@ input[type="radio"] {
      
       submitButton.style.display = 'none';
     }
+    set_time(currentSlide);
   }
 
   function showNextSlide() {
@@ -1145,8 +1147,9 @@ input[type="radio"] {
   // Kick things off
   buildQuiz();
 let currentSlide = 0;
-
-    const FULL_DASH_ARRAY = 283;
+function set_time(n)
+{
+      const FULL_DASH_ARRAY = 283;
                   const WARNING_THRESHOLD = 10;
                   const ALERT_THRESHOLD = 5;
                   
@@ -1164,7 +1167,7 @@ let currentSlide = 0;
                     }
                   };
 
-      const TIME_LIMIT = document.getElementById('timer'+currentSlide).value;
+      const TIME_LIMIT = document.getElementById('timer'+n).value;
       alert(TIME_LIMIT);
                     let timePassed = 0;
                     let timeLeft = TIME_LIMIT;
@@ -1195,6 +1198,9 @@ let currentSlide = 0;
                   `;
                   
                   startTimer();
+}
+
+    
   // Pagination
   const previousButton = document.getElementById("previous");
   const nextButton = document.getElementById("next");
