@@ -1193,7 +1193,7 @@ function set_time(n)
                         ></path>
                       </g>
                     </svg>
-                    <span id="base-timer-label${n}" class="base-timer__label">${formatTime(
+                    <span id="base-timer-label" class="base-timer__label">${formatTime(
                       timeLeft
                     )}</span>
                   </div>
@@ -1254,7 +1254,7 @@ function set_time(n)
                     timerInterval = setInterval(() => {
                       timePassed = timePassed += 1;
                       timeLeft = TIME_LIMIT - timePassed;
-                      document.getElementById('base-timer-label'+n).innerHTML = formatTime(
+                      document.getElementById('base-timer-label').innerHTML = formatTime(
                         timeLeft
                       );
                       setCircleDasharray(timePassed,TIME_LIMIT);
