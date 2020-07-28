@@ -1002,7 +1002,7 @@ input[type="radio"] {
           `<div class="slide"  id="${questionNumber}">
             <div class="question" id="${questionNumber}"> ${currentQuestion.question} </div>
             <div class="answers"> ${answers.join("")} </div>
-         
+          <input type = "hidden" id="timer${questionNumber}" value="${currentQuestion.time_for_question}"
           </div>`
         );
         
@@ -1070,7 +1070,6 @@ input[type="radio"] {
     slides2[n].classList.add('active-slide');
     currentSlide = n;
 
-
     if(currentSlide === 0){
       previousButton.style.display = 'none';
     }
@@ -1091,7 +1090,6 @@ input[type="radio"] {
      
       submitButton.style.display = 'none';
     }
-    // set_time(currentSlide);
   }
 
   function showNextSlide() {
@@ -1146,22 +1144,13 @@ input[type="radio"] {
 
   // Kick things off
   buildQuiz();
-  const previousButton = document.getElementById("previous");
-  const nextButton = document.getElementById("next");
-  const slides = document.querySelectorAll(".slide");
-  const slides1 = document.querySelectorAll(".slide1");
-  const slides2 = document.querySelectorAll(".slide2");
-  
-
 let currentSlide = 0;
-
-  // Show the first slide
-  showSlide(currentSlide);
-function set_time(n)
+function set_time()
 {
+      
+}
 
-
-      const FULL_DASH_ARRAY = 283;
+    const FULL_DASH_ARRAY = 283;
                   const WARNING_THRESHOLD = 10;
                   const ALERT_THRESHOLD = 5;
                   
@@ -1177,9 +1166,9 @@ function set_time(n)
                       color: "red",
                       threshold: ALERT_THRESHOLD
                     }
-                  }
+                  };
 
-      const TIME_LIMIT = document.getElementById('timer'+n).value;
+      const TIME_LIMIT = document.getElementById('timer'+currentSlide).value;
       alert(TIME_LIMIT);
                     let timePassed = 0;
                     let timeLeft = TIME_LIMIT;
@@ -1209,12 +1198,18 @@ function set_time(n)
                   </div>
                   `;
                   
-                  startTimer(timePassed,TIME_LIMIT,COLOR_CODES,n);
-
-}
-    
+                  startTimer();
   // Pagination
+  const previousButton = document.getElementById("previous");
+  const nextButton = document.getElementById("next");
+  const slides = document.querySelectorAll(".slide");
+  const slides1 = document.querySelectorAll(".slide1");
+  const slides2 = document.querySelectorAll(".slide2");
   
+
+
+  // Show the first slide
+  showSlide(currentSlide);
 
   // Event listeners
   submitButton.addEventListener('click', showResults);
@@ -1249,16 +1244,15 @@ function set_time(n)
 
                   }
                   
-                   function startTimer(timePassed,TIME_LIMIT,COLOR_CODES,n)
-                  {
+                  function startTimer() {
                     timerInterval = setInterval(() => {
                       timePassed = timePassed += 1;
                       timeLeft = TIME_LIMIT - timePassed;
                       document.getElementById("base-timer-label").innerHTML = formatTime(
                         timeLeft
                       );
-                      setCircleDasharray(timePassed,TIME_LIMIT);
-                      setRemainingPathColor(timeLeft,COLOR_CODES);
+                      setCircleDasharray();
+                      setRemainingPathColor(timeLeft);
                   
                       if (timeLeft === 0) {
                         onTimesUp();
@@ -1277,7 +1271,7 @@ function set_time(n)
                     return `${minutes}:${seconds}`;
                   }
                   
-                  function setRemainingPathColor(timeLeft,COLOR_CODES) {
+                  function setRemainingPathColor(timeLeft) {
                     const { alert, warning, info } = COLOR_CODES;
                     if (timeLeft <= alert.threshold) {
                       document
@@ -1296,14 +1290,14 @@ function set_time(n)
                     }
                   }
                   
-                  function calculateTimeFraction(timePassed,TIME_LIMIT) {
+                  function calculateTimeFraction() {
                     const rawTimeFraction = timeLeft / TIME_LIMIT;
                     return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
                   }
                   
-                  function setCircleDasharray(timePassed,TIME_LIMIT) {
+                  function setCircleDasharray() {
                     const circleDasharray = `${(
-                      calculateTimeFraction(timePassed,TIME_LIMIT) * 283
+                      calculateTimeFraction() * FULL_DASH_ARRAY
                     ).toFixed(0)} 283`;
                     document
                       .getElementById("base-timer-path-remaining")
