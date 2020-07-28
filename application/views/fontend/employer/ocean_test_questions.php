@@ -1147,8 +1147,7 @@ input[type="radio"] {
   // Kick things off
   buildQuiz();
 let currentSlide = 0;
-function set_time(n)
-{
+
       const FULL_DASH_ARRAY = 283;
                   const WARNING_THRESHOLD = 10;
                   const ALERT_THRESHOLD = 5;
@@ -1165,7 +1164,7 @@ function set_time(n)
                       color: "red",
                       threshold: ALERT_THRESHOLD
                     }
-                  };
+                  }
 
       const TIME_LIMIT = document.getElementById('timer'+n).value;
       alert(TIME_LIMIT);
@@ -1197,8 +1196,8 @@ function set_time(n)
                   </div>
                   `;
                   
-                  startTimer(timePassed);
-}
+                  startTimer();
+
 
     
   // Pagination
@@ -1246,7 +1245,7 @@ function set_time(n)
 
                   }
                   
-                  function startTimer(timePassed) {
+                  function startTimer() {
                     timerInterval = setInterval(() => {
                       timePassed = timePassed += 1;
                       timeLeft = TIME_LIMIT - timePassed;
