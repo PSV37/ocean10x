@@ -1027,15 +1027,7 @@ equalTo: "The two passwords do not match!"
    
  
 
-   $(".allownumericwithoutdecimal").on("input", function(evt) {
-    var self = $(this);
-    self.val(self.val().replace(/[^\d]+/, ""));
-    if ((evt.which < 48 || evt.which > 57)) 
-     {
-     evt.preventDefault();
-     }
- });
-
+   
 
    
    $(".allowalphabatescomma").keypress(function (e) {
@@ -1093,6 +1085,16 @@ $(this).val($(this).val().replace("^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?
                  event.preventDefault();
              }
          });
+
+
+$(document).on("keypress keyup blur", ".allownumericwithoutdecimal", function (e){
+    var self = $(this);
+    self.val(self.val().replace(/[^\d]+/, ""));
+    if ((evt.which < 48 || evt.which > 57)) 
+     {
+     evt.preventDefault();
+     }
+ });
 
 
 </script>
