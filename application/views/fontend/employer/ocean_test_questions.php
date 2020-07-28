@@ -982,259 +982,39 @@ input[type="radio"] {
 
                        
                  // const TIME_LIMIT = currentQuestion.;
-                 // const TIME_LIMIT = currentQuestion.time_for_question;
-                 //  // const TIME_LIMIT = 5;
-                 //    let timePassed = 0;
-                 //    let timeLeft = TIME_LIMIT;
-                 //    let timerInterval = null;
-                 //    let remainingPathColor = COLOR_CODES.info.color;
+                 const TIME_LIMIT = currentQuestion.time_for_question;
 
-                 
-
-
-
+                 // alert(currentQuestion.question);
+                  let timePassed = 0;
+                  let timeLeft = TIME_LIMIT;
+                  let timerInterval = null;
+                  let remainingPathColor = COLOR_CODES.info.color;
                   
-                 
-                  
-  
-        // add this question and its answers to the output
-        output.push(
-          `<div class="slide"  id="${questionNumber}">
-            <div class="question" id="${questionNumber}"> ${currentQuestion.question} </div>
-            <div class="answers"> ${answers.join("")} </div>
-          <input type = "hidden" id="timer${questionNumber}" value="${currentQuestion.time_for_question}"
-          </div>`
-        );
-        
+                  // document.getElementById("app").innerHTML = `
+                  // <div class="base-timer">
+                  //   <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                  //     <g class="base-timer__circle">
+                  //       <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+                  //       <path
+                  //         id="base-timer-path-remaining"
+                  //         stroke-dasharray="283"
+                  //         class="base-timer__path-remaining ${remainingPathColor}"
+                  //         d="
+                  //           M 50, 50
+                  //           m -45, 0
+                  //           a 45,45 0 1,0 90,0
+                  //           a 45,45 0 1,0 -90,0
+                  //         "
+                  //       ></path>
+                  //     </g>
+                  //   </svg>
+                  //   <span id="base-timer-label" class="base-timer__label">${formatTime(
+                  //     timeLeft
+                  //   )}</span>
+                  // </div>
+                  // `;
 
-              skip.push(`<div class="slide2"><button class="skip skp" id="${questionNumber}" onclick="next(${questionNumber});">skip question</button></div>`
-                  );
-
-      
-      }
-    );
-
-    // finally combine our output list into one string of HTML and put it on the page
-    quizContainer.innerHTML = output.join('');
-     // document.getElementById("app").innerHTML = timer;
-     document.getElementById("skip").innerHTML = skip;
-
-     
-                
-  }
-
-  function showResults(){
-
-    // gather answer containers from our quiz
-    const answerContainers = quizContainer.querySelectorAll('.answers');
-
-    // keep track of user's answers
-    let numCorrect = 0;
-
-    // for each question...
-    myQuestions.forEach( (currentQuestion, questionNumber) => {
-
-      // find selected answer
-      const answerContainer = answerContainers[questionNumber];
-      const selector = `input[name=question${questionNumber}]:checked`;
-      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-
-      // if answer is correct
-      if(userAnswer === currentQuestion.correctAnswer){
-        // add to the number of correct answers
-        numCorrect++;
-
-        // color the answers green
-        answerContainers[questionNumber].style.color = 'lightgreen';
-      }
-      // if answer is wrong or blank
-      else{
-        // color the answers red
-        answerContainers[questionNumber].style.color = 'red';
-      }
-    });
-
-    // show number of correct answers out of total
-    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-  }
-
-  function showSlide(n) {
-      // alert(n);
-    slides[currentSlide].classList.remove('active-slide');
-    slides[n].classList.add('active-slide');
-
-    // slides1[currentSlide].classList.remove('active-slide');
-    // slides1[n].classList.add('active-slide');
-
-    slides2[currentSlide].classList.remove('active-slide');
-    slides2[n].classList.add('active-slide');
-    currentSlide = n;
-
-    if(currentSlide === 0){
-      previousButton.style.display = 'none';
-    }
-    else{
-      previousButton.style.display = 'inline-block';
-     $('#previous').css('margin-top',70);
-    }
-    if(currentSlide === slides.length-1){
-      nextButton.style.display = 'none';
-      submitButton.style.display = 'inline-block';
-     $('#submit').css('margin-top',70);
-     
-
-    }
-    else{
-      nextButton.style.display = 'inline-block';
-     $('#next').css('margin-top',70);
-     
-      submitButton.style.display = 'none';
-    }
-  }
-
-  function showNextSlide() {
-    showSlide(currentSlide + 1);
-  }
-
-  function showPreviousSlide() {
-    showSlide(currentSlide - 1);
-  }
-
-  // Variables
-  const quizContainer = document.getElementById('quiz');
-  const resultsContainer = document.getElementById('results');
-  const submitButton = document.getElementById('submit');
-
-  
- var myQuestions = <?php echo json_encode($all_questions); ?>;
-// console.log(JSON.parse(myQuestions));
- console.log(myQuestions);
-
-// ];
-  // const myQuestions = [
-  //   {
-  //     question: "Who invented JavaScript?",
-  //     answers: {
-  //       a: "Douglas Crockford",
-  //       b: "Sheryl Sandberg",
-  //       c: "Brendan Eich"
-  //     },
-  //     correctAnswer: "c"
-  //   },
-  //   {
-  //     question: "Which one of these is a JavaScript package manager?",
-  //     answers: {
-  //       a: "Node.js",
-  //       b: "TypeScript",
-  //       c: "npm"
-  //     },
-  //     correctAnswer: "c"
-  //   },
-  //   {
-  //     question: "Which tool can you use to ensure code quality?",
-  //     answers: {
-  //       a: "Angular",
-  //       b: "jQuery",
-  //       c: "RequireJS",
-  //       d: "ESLint"
-  //     },
-  //     correctAnswer: "d"
-  //   }
-  // ];
-
-  // Kick things off
-  buildQuiz();
-let currentSlide = 0;
-function set_time()
-{
-      
-}
-
-    const FULL_DASH_ARRAY = 283;
-                  const WARNING_THRESHOLD = 10;
-                  const ALERT_THRESHOLD = 5;
-                  
-                  const COLOR_CODES = {
-                    info: {
-                      color: "green"
-                    },
-                    warning: {
-                      color: "orange",
-                      threshold: WARNING_THRESHOLD
-                    },
-                    alert: {
-                      color: "red",
-                      threshold: ALERT_THRESHOLD
-                    }
-                  };
-
-      const TIME_LIMIT = document.getElementById('timer'+currentSlide).value;
-      alert(TIME_LIMIT);
-                    let timePassed = 0;
-                    let timeLeft = TIME_LIMIT;
-                    let timerInterval = null;
-                    let remainingPathColor = COLOR_CODES.info.color;
- document.getElementById("app").innerHTML = `
-                  <div class="base-timer">
-                    <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                      <g class="base-timer__circle">
-                        <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
-                        <path
-                          id="base-timer-path-remaining"
-                          stroke-dasharray="283"
-                          class="base-timer__path-remaining ${remainingPathColor}"
-                          d="
-                            M 50, 50
-                            m -45, 0
-                            a 45,45 0 1,0 90,0
-                            a 45,45 0 1,0 -90,0
-                          "
-                        ></path>
-                      </g>
-                    </svg>
-                    <span id="base-timer-label" class="base-timer__label">${formatTime(
-                      timeLeft
-                    )}</span>
-                  </div>
-                  `;
-                  
-                  startTimer();
-  // Pagination
-  const previousButton = document.getElementById("previous");
-  const nextButton = document.getElementById("next");
-  const slides = document.querySelectorAll(".slide");
-  const slides1 = document.querySelectorAll(".slide1");
-  const slides2 = document.querySelectorAll(".slide2");
-  
-
-
-  // Show the first slide
-  showSlide(currentSlide);
-
-  // Event listeners
-  submitButton.addEventListener('click', showResults);
-  previousButton.addEventListener("click", showPreviousSlide);
-  nextButton.addEventListener("click", showNextSlide);
-
-
-
-  // Credit: Mateusz Rybczonec
-             
-                  
-                
-                   
-
-                          // variable to store the list of possible answers
-                         
-
-                       
-                 // const TIME_LIMIT = currentQuestion.;
-                 // const TIME_LIMIT = 20;
-                  
-                  
-                  
-                  
-                  
+                  // startTimer();
 
 
                   function onTimesUp() {
@@ -1303,6 +1083,196 @@ function set_time()
                       .getElementById("base-timer-path-remaining")
                       .setAttribute("stroke-dasharray", circleDasharray);
                   }
+                  
+                 
+                  
+  
+        // add this question and its answers to the output
+        output.push(
+          `<div class="slide"  id="${questionNumber}">
+            <div class="question" id="${questionNumber}"> ${currentQuestion.question} </div>
+            <div class="answers"> ${answers.join("")} </div>
+          
+          </div>`
+        );
+        timer.push(
+      `<div class="slide1">
+          <div class="base-timer">
+                    <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                      <g class="base-timer__circle">
+                        <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+                        <path
+                          id="base-timer-path-remaining"
+                          stroke-dasharray="283"
+                          class="base-timer__path-remaining ${remainingPathColor}"
+                          d="
+                            M 50, 50
+                            m -45, 0
+                            a 45,45 0 1,0 90,0
+                            a 45,45 0 1,0 -90,0
+                          "
+                        ></path>
+                      </g>
+                    </svg>
+                    <span id="base-timer-label" class="base-timer__label">${formatTime(
+                      timeLeft
+                    )}</span>
+                  </div>
+                  </div>`
+                    );
+         startTimer();
+
+              skip.push(`<div class="slide2"><button class="skip skp" id="${questionNumber}" onclick="next(${questionNumber});">skip question</button></div>`
+                  );
+
+      
+      }
+    );
+
+    // finally combine our output list into one string of HTML and put it on the page
+    quizContainer.innerHTML = output.join('');
+     document.getElementById("app").innerHTML = timer;
+     document.getElementById("skip").innerHTML = skip;
+
+     
+                
+  }
+
+  function showResults(){
+
+    // gather answer containers from our quiz
+    const answerContainers = quizContainer.querySelectorAll('.answers');
+
+    // keep track of user's answers
+    let numCorrect = 0;
+
+    // for each question...
+    myQuestions.forEach( (currentQuestion, questionNumber) => {
+
+      // find selected answer
+      const answerContainer = answerContainers[questionNumber];
+      const selector = `input[name=question${questionNumber}]:checked`;
+      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+      // if answer is correct
+      if(userAnswer === currentQuestion.correctAnswer){
+        // add to the number of correct answers
+        numCorrect++;
+
+        // color the answers green
+        answerContainers[questionNumber].style.color = 'lightgreen';
+      }
+      // if answer is wrong or blank
+      else{
+        // color the answers red
+        answerContainers[questionNumber].style.color = 'red';
+      }
+    });
+
+    // show number of correct answers out of total
+    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+  }
+
+  function showSlide(n) {
+      // alert(n);
+    slides[currentSlide].classList.remove('active-slide');
+    slides[n].classList.add('active-slide');
+
+    slides1[currentSlide].classList.remove('active-slide');
+    slides1[n].classList.add('active-slide');
+
+    slides2[currentSlide].classList.remove('active-slide');
+    slides2[n].classList.add('active-slide');
+    currentSlide = n;
+
+    if(currentSlide === 0){
+      previousButton.style.display = 'none';
+    }
+    else{
+      previousButton.style.display = 'inline-block';
+     $('#previous').css('margin-top',70);
+    }
+    if(currentSlide === slides.length-1){
+      nextButton.style.display = 'none';
+      submitButton.style.display = 'inline-block';
+     $('#submit').css('margin-top',70);
+     
+
+    }
+    else{
+      nextButton.style.display = 'inline-block';
+     $('#next').css('margin-top',70);
+     
+      submitButton.style.display = 'none';
+    }
+  }
+
+  function showNextSlide() {
+    showSlide(currentSlide + 1);
+  }
+
+  function showPreviousSlide() {
+    showSlide(currentSlide - 1);
+  }
+
+  // Variables
+  const quizContainer = document.getElementById('quiz');
+  const resultsContainer = document.getElementById('results');
+  const submitButton = document.getElementById('submit');
+ var myQuestions = <?php echo json_encode($all_questions); ?>;
+// console.log(JSON.parse(myQuestions));
+ console.log(myQuestions);
+
+// ];
+  // const myQuestions = [
+  //   {
+  //     question: "Who invented JavaScript?",
+  //     answers: {
+  //       a: "Douglas Crockford",
+  //       b: "Sheryl Sandberg",
+  //       c: "Brendan Eich"
+  //     },
+  //     correctAnswer: "c"
+  //   },
+  //   {
+  //     question: "Which one of these is a JavaScript package manager?",
+  //     answers: {
+  //       a: "Node.js",
+  //       b: "TypeScript",
+  //       c: "npm"
+  //     },
+  //     correctAnswer: "c"
+  //   },
+  //   {
+  //     question: "Which tool can you use to ensure code quality?",
+  //     answers: {
+  //       a: "Angular",
+  //       b: "jQuery",
+  //       c: "RequireJS",
+  //       d: "ESLint"
+  //     },
+  //     correctAnswer: "d"
+  //   }
+  // ];
+
+  // Kick things off
+  buildQuiz();
+
+  // Pagination
+  const previousButton = document.getElementById("previous");
+  const nextButton = document.getElementById("next");
+  const slides = document.querySelectorAll(".slide");
+  const slides1 = document.querySelectorAll(".slide1");
+  const slides2 = document.querySelectorAll(".slide2");
+  let currentSlide = 0;
+
+  // Show the first slide
+  showSlide(currentSlide);
+
+  // Event listeners
+  submitButton.addEventListener('click', showResults);
+  previousButton.addEventListener("click", showPreviousSlide);
+  nextButton.addEventListener("click", showNextSlide);
 
  // console.log(myQuestions);
  //  var obj = JSON.parse(myQuestions);
