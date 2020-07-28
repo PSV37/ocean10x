@@ -1088,8 +1088,8 @@ input[type="radio"] {
     slides[currentSlide].classList.remove('active-slide');
     slides[n].classList.add('active-slide');
 
-    slides1[currentSlide].classList.remove('active-slide');
-    slides1[n].classList.add('active-slide');
+    // slides1[currentSlide].classList.remove('active-slide');
+    // slides1[n].classList.add('active-slide');
 
     slides2[currentSlide].classList.remove('active-slide');
     slides2[n].classList.add('active-slide');
@@ -1149,7 +1149,8 @@ input[type="radio"] {
                     }
                   };
 
-                  const TIME_LIMIT = document.getElementById('timer'+currentSlide);
+      const TIME_LIMIT = document.getElementById('timer'+currentSlide).value;
+      alert(TIME_LIMIT);
                     let timePassed = 0;
                     let timeLeft = TIME_LIMIT;
                     let timerInterval = null;
@@ -1226,7 +1227,7 @@ input[type="radio"] {
   const slides1 = document.querySelectorAll(".slide1");
   const slides2 = document.querySelectorAll(".slide2");
   
-  
+
 
   // Show the first slide
   showSlide(currentSlide);
