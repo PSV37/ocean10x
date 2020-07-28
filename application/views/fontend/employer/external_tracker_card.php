@@ -20,11 +20,11 @@
 
                               <tr>
                                 <input class="attrValue" type="hidden" name="" id="cv_id" value="<?php echo $job_row->cv_id; ?>">
-                                 <td ><input class="email" id="name" type="text" name="email" value="<?php echo $job_row->name; ?>" ></td>
+                                 <td ><input class="email allowalphabates" id="name" type="text" name="email" value="<?php echo $job_row->name; ?>" ></td>
 
                                 <td ><input class="email" id="email" type="text" name="email" value="<?php echo $job_row->email; ?>" ></td>
 
-                                <td ><input id="mobile" type="text" name="mobile" value="<?php echo $job_row->mobile; ?>" maxlength='10' ></td>
+                                <td ><input class="allowphonenumber"> id="mobile" type="text" name="mobile" value="<?php echo $job_row->mobile; ?>" maxlength='10' ></td>
 
                                 <td ><input id="ctc" type="text" name="ctc" value="<?php echo $job_row->salary; ?>" maxlength='3' ></td>
 
