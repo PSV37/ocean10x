@@ -190,11 +190,12 @@ ul.select2-results__options {
                     </li>
                   </div>
                 </div>
+                <div id="errorbox"></div>
               <!-- </ul> -->
               </div>
           </div>
         </div>
-         <div id="errorbox"></div>
+
         <div class="col-md-4"></div>
           <div class="col-md-4" style="text-align:right;">
             <button id="submit" type="Submit" class="save_question">Save question</button>
@@ -417,7 +418,7 @@ ul.select2-results__options {
       $("#js").submit(function(){
     var checked = $(".checkbox input:checked").length > 0;
     if (!checked){
-       $("#errorbox").html("Either Upload JD or fill Job Description");
+       $("#errorbox").html("Select atleast one Answer");
         return false;
     }
 })
