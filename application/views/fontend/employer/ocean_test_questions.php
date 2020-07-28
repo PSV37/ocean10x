@@ -1298,7 +1298,10 @@ function next(n)
 
 function getval(value)
 {
-      alert(currentSlide)
+      alert(value);
+
+      qid = value - 1;
+     alert(qid);
 }
               </script>
               <script>
