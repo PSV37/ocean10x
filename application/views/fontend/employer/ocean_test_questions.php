@@ -1153,10 +1153,10 @@ input[type="radio"] {
   const slides2 = document.querySelectorAll(".slide2");
   
 
+let currentSlide = 0;
 
   // Show the first slide
   showSlide(currentSlide);
-let currentSlide = 0;
 function set_time(n)
 {
 
