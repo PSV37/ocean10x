@@ -1052,6 +1052,7 @@ $(document).on("keypress keyup blur", ".allowphonenumber", function (event) {
      }
  });
 
+
  $(document).on("keypress keyup blur", ".validateEmail", function (event) {
 //function validateEmail(email) {
     var chrbeforAt = email.substr(0, email.indexOf('@'));
@@ -1066,6 +1067,8 @@ $(document).on("keypress keyup blur", ".allowphonenumber", function (event) {
         return false;
     }
 }
+
+
 
    
    $(".allowalphabatescomma").keypress(function (e) {

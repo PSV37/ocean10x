@@ -38,16 +38,19 @@
 
                                 <td ><input id="exp" type="text" name="exp" value="<?php echo $job_row->js_experience; ?>" ></td>
 
-                                <td ><input id="notice" class="allownumericwithoutdecimal"> type="text" name="notice"  value="<?php echo $job_row->js_current_notice_period; ?>" ></td>
+                                <td ><input id="notice" class="email allownumericwithoutdecimal" type="text" name="notice"  value="<?php echo $job_row->js_current_notice_period; ?>" ></td>
 
                                 <td > <select name="edu" style="min-width: 200px; border: none;"  id="edu" class="form-control select2 email" data-style="btn-default" data-live-search="true"  >
                                   <option value=""> </option>
+
                                   <?php   foreach($education_level as $education){?>
                                   <option value="<?php echo $education['education_level_id']; ?>"<?php if($job_row->js_top_education==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
                                   <?php } ?>
+
                                   <option value="other">Other </option>
                                   <option value="other">None </option>
                                </select></td>
+
                     <!--  <input id="edu" type="text" name="edu" value="<?php echo $job_row->education_level_name; ?>" ></td> -->
 
                                 <td><select name="status" style="min-width: 200px; border: none;" id="status" class="form-control select2" data-style="btn-default" data-live-search="true"  >
