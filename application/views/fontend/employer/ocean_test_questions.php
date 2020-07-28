@@ -922,7 +922,7 @@ input[type="radio"] {
                   
                   <div class="row" style="margin-top: 260px">
                         <?php $i=1; foreach ($all_questions as $row) { ?>
-                              <div class="col-md-2 exp-box" id="status<?php echo $i; ?>" onclick="getval('Beginner','2');"><span name="levels" id="levels"   value="Beginner"><?php echo $i; ?></span></div>
+                              <div class="col-md-2 exp-box" id="status<?php echo $i; ?>" onclick="getval(<?php echo $i; ?>);"><span name="levels" id="levels"   value="Beginner"><?php echo $i; ?></span></div>
                       <? $i++; } ?>
                         
                   </div>
@@ -1122,7 +1122,7 @@ input[type="radio"] {
                     );
          startTimer();
 
-              skip.push(`<div class="slide2"><button class="skip" onclick="next(${questionNumber});">skip question</button></div>`
+              skip.push(`<div class="slide2"><button class="skip1" onclick="next(${questionNumber});">skip question</button></div>`
                   );
 
       
@@ -1283,7 +1283,7 @@ input[type="radio"] {
 
 function get_checked(n)
 {
-      alert(n);
+      // alert(n);
       var j = n + 1;
       $('#status'+j).css('background-color', '#94f36d');
 
@@ -1294,6 +1294,11 @@ function next(n)
     var j = n + 1;
       $('#status'+j).css('background-color', 'gray');
 
+}
+
+function getval(value)
+{
+      alert(currentSlide)
 }
               </script>
               <script>
