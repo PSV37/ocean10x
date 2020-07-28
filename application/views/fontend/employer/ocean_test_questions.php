@@ -860,7 +860,7 @@ input[type="radio"] {
                         <div class="smalltext">Hours</div>
                      </div> -->
                      
-                     <div>
+                     <div style="margin-right: 90px;">
                         <span class="seconds"></span>
                         <div class="smalltext">Seconds</div>
                      </div>
@@ -898,7 +898,7 @@ input[type="radio"] {
                   <button class="skip" onclick="next();">skip question</button>
                   <div class="row">
                         <?php $i=1; foreach ($all_questions as $row) { ?>
-                              <div class="col-md-2 exp-box" id="2" onclick="getval('Beginner','2');"><span name="levels" id="levels"   value="Beginner"><?php echo $i; ?></span></div>
+                              <div class="col-md-2 exp-box" id="status<?php echo $i; ?>" onclick="getval('Beginner','2');"><span name="levels" id="levels"   value="Beginner"><?php echo $i; ?></span></div>
                       <? $i++; } ?>
                         
                   </div>
@@ -990,6 +990,7 @@ input[type="radio"] {
   }
 
   function showSlide(n) {
+      alert(n);
     slides[currentSlide].classList.remove('active-slide');
     slides[n].classList.add('active-slide');
     currentSlide = n;
@@ -1196,7 +1197,7 @@ input[type="radio"] {
                   function onTimesUp() {
                     clearInterval(timerInterval);
                     $("#next").click();
-                    startTimer();
+                    // startTimer();
 
                   }
                   
