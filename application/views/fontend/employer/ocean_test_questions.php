@@ -964,7 +964,23 @@ input[type="radio"] {
                   
                   
                   
-                  document.getElementById("app").innerHTML = `
+                 
+                  
+  
+        // add this question and its answers to the output
+        output.push(
+          `<div class="slide">
+            <div class="question"> ${currentQuestion.question} </div>
+            <div class="answers"> ${answers.join("")} </div>
+             <div class="time"> ${currentQuestion.time_for_question}</div>
+          </div>`
+        );
+      }
+    );
+
+    // finally combine our output list into one string of HTML and put it on the page
+    quizContainer.innerHTML = output.join('');
+     document.getElementById("app").innerHTML = `
                   <div class="base-timer">
                     <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                       <g class="base-timer__circle">
@@ -1058,20 +1074,6 @@ input[type="radio"] {
                       .setAttribute("stroke-dasharray", circleDasharray);
                   }
                 
-  
-        // add this question and its answers to the output
-        output.push(
-          `<div class="slide">
-            <div class="question"> ${currentQuestion.question} </div>
-            <div class="answers"> ${answers.join("")} </div>
-             <div class="time"> ${currentQuestion.time_for_question}</div>
-          </div>`
-        );
-      }
-    );
-
-    // finally combine our output list into one string of HTML and put it on the page
-    quizContainer.innerHTML = output.join('');
   }
 
   function showResults(){
