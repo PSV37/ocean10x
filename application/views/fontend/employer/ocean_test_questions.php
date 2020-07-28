@@ -1002,7 +1002,7 @@ input[type="radio"] {
           `<div class="slide"  id="${questionNumber}">
             <div class="question" id="${questionNumber}"> ${currentQuestion.question} </div>
             <div class="answers"> ${answers.join("")} </div>
-          <input type = "hidden" id="timer${questionNumber}" value="${currentQuestion.time_for_question}"
+         
           </div>`
         );
         
