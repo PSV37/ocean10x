@@ -34,7 +34,7 @@
 
                                 <td ><input class="email allowphonenumber" id="mobile" type="text" name="mobile" value="<?php echo $job_row->js_mobile; ?>" maxlength='10' ></td>
 
-                                <td ><input id="ctc" class="allownumericwithoutdecimal" type="text" name="ctc" value="<?php echo $job_row->js_current_ctc; ?>" maxlength='3' ></td>
+                                <td ><input class="email allownumericwithoutdecimal" id="ctc" type="text" name="ctc" value="<?php echo $job_row->js_current_ctc; ?>" maxlength='3' ></td>
 
                                 <td ><input id="exp" type="text" name="exp" value="<?php echo $job_row->js_experience; ?>" ></td>
 
