@@ -487,8 +487,11 @@ required: true
 
 },
 
+"correct_answer[]": { 
+                    required: true, 
+                    minlength: 1 
+            } 
 
-'correct_answer[]': {required: true},
 
 'time': {required: true},
 'question': {required: true},
