@@ -1146,6 +1146,16 @@ input[type="radio"] {
 
   // Kick things off
   buildQuiz();
+  const previousButton = document.getElementById("previous");
+  const nextButton = document.getElementById("next");
+  const slides = document.querySelectorAll(".slide");
+  const slides1 = document.querySelectorAll(".slide1");
+  const slides2 = document.querySelectorAll(".slide2");
+  
+
+
+  // Show the first slide
+  showSlide(currentSlide);
 let currentSlide = 0;
 function set_time(n)
 {
@@ -1204,16 +1214,7 @@ function set_time(n)
 }
     
   // Pagination
-  const previousButton = document.getElementById("previous");
-  const nextButton = document.getElementById("next");
-  const slides = document.querySelectorAll(".slide");
-  const slides1 = document.querySelectorAll(".slide1");
-  const slides2 = document.querySelectorAll(".slide2");
   
-
-
-  // Show the first slide
-  showSlide(currentSlide);
 
   // Event listeners
   submitButton.addEventListener('click', showResults);
