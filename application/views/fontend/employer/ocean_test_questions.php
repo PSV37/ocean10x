@@ -928,6 +928,28 @@ input[type="radio"] {
                   </div>
                </div>
               <script>
+                    const FULL_DASH_ARRAY = 283;
+                  const WARNING_THRESHOLD = 10;
+                  const ALERT_THRESHOLD = 5;
+                  
+                  const COLOR_CODES = {
+                    info: {
+                      color: "green"
+                    },
+                    warning: {
+                      color: "orange",
+                      threshold: WARNING_THRESHOLD
+                    },
+                    alert: {
+                      color: "red",
+                      threshold: ALERT_THRESHOLD
+                    }
+                  };
+  const TIME_LIMIT = 5;
+  let timePassed = 0;
+  let timeLeft = TIME_LIMIT;
+  let timerInterval = null;
+  let remainingPathColor = COLOR_CODES.info.color;
                     
 // (function(){
   // Functions
@@ -1136,28 +1158,7 @@ input[type="radio"] {
   const resultsContainer = document.getElementById('results');
   const submitButton = document.getElementById('submit');
 
-   const FULL_DASH_ARRAY = 283;
-                  const WARNING_THRESHOLD = 10;
-                  const ALERT_THRESHOLD = 5;
-                  
-                  const COLOR_CODES = {
-                    info: {
-                      color: "green"
-                    },
-                    warning: {
-                      color: "orange",
-                      threshold: WARNING_THRESHOLD
-                    },
-                    alert: {
-                      color: "red",
-                      threshold: ALERT_THRESHOLD
-                    }
-                  };
-  const TIME_LIMIT = 5;
-  let timePassed = 0;
-  let timeLeft = TIME_LIMIT;
-  let timerInterval = null;
-  let remainingPathColor = COLOR_CODES.info.color;
+
                   function onTimesUp() {
                     clearInterval(timerInterval);
                     $("#next").click();
