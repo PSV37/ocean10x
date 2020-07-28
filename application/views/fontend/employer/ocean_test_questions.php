@@ -895,7 +895,10 @@ input[type="radio"] {
 
 
                   </div>
-                  <button class="skip" onclick="next();">skip question</button>
+                  <div id="skip">
+                        
+                  </div>
+                  
                   <div class="row">
                         <?php $i=1; foreach ($all_questions as $row) { ?>
                               <div class="col-md-2 exp-box" id="status<?php echo $i; ?>" onclick="getval('Beginner','2');"><span name="levels" id="levels"   value="Beginner"><?php echo $i; ?></span></div>
@@ -911,6 +914,7 @@ input[type="radio"] {
     // variable to store the HTML output
     const output = [];
     const timer = [];
+    const skip = [];
 
     // for each question...
     myQuestions.forEach(
@@ -1094,16 +1098,22 @@ input[type="radio"] {
                     )}</span>
                   </div>
                   </div>
-                  `
 
-        );
+                  `
+                    );
          startTimer();
+
+              skip.push(`<button class="skip" onclick="next(${questionNumber});">skip question</button>`
+                  );
+
+      
       }
     );
 
     // finally combine our output list into one string of HTML and put it on the page
     quizContainer.innerHTML = output.join('');
      document.getElementById("app").innerHTML = timer;
+     document.getElementById("skip").innerHTML = skip;
 
      
                 
@@ -1251,9 +1261,11 @@ function get_checked(n)
       $('#status'+j).css('background-color', '#94f36d');
 
 }
-function next()
+function next(n)
 {
    $("#next").click();
+    var j = n + 1;
+      $('#status'+j).css('background-color', 'gray');
 
 }
               </script>
