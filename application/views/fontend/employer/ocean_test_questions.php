@@ -920,7 +920,7 @@ input[type="radio"] {
                         
                   </div>
                   
-                  <div class="row">
+                  <div class="row" style="margin-top: 150px">
                         <?php $i=1; foreach ($all_questions as $row) { ?>
                               <div class="col-md-2 exp-box" id="status<?php echo $i; ?>" onclick="getval('Beginner','2');"><span name="levels" id="levels"   value="Beginner"><?php echo $i; ?></span></div>
                       <? $i++; } ?>
@@ -1092,7 +1092,7 @@ input[type="radio"] {
           `<div class="slide">
             <div class="question"> ${currentQuestion.question} </div>
             <div class="answers"> ${answers.join("")} </div>
-             <div class="time"> ${currentQuestion.time_for_question}</div>
+          
           </div>`
         );
         timer.push(
