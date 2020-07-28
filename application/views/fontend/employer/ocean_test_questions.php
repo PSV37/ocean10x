@@ -1177,22 +1177,10 @@ input[type="radio"] {
   const slides = document.querySelectorAll(".slide");
   const slides1 = document.querySelectorAll(".slide1");
   const slides2 = document.querySelectorAll(".slide2");
+  
   let currentSlide = 0;
 
-  // Show the first slide
-  showSlide(currentSlide);
-
-  // Event listeners
-  submitButton.addEventListener('click', showResults);
-  previousButton.addEventListener("click", showPreviousSlide);
-  nextButton.addEventListener("click", showNextSlide);
-
-   const TIME_LIMIT = document.getElementById('timer'+currentSlide);
-
-  // Credit: Mateusz Rybczonec
-             
-                  
-                  const FULL_DASH_ARRAY = 283;
+    const FULL_DASH_ARRAY = 283;
                   const WARNING_THRESHOLD = 10;
                   const ALERT_THRESHOLD = 5;
                   
@@ -1209,6 +1197,27 @@ input[type="radio"] {
                       threshold: ALERT_THRESHOLD
                     }
                   };
+
+                  const TIME_LIMIT = document.getElementById('timer'+currentSlide);
+                    let timePassed = 0;
+                    let timeLeft = TIME_LIMIT;
+                    let timerInterval = null;
+                    let remainingPathColor = COLOR_CODES.info.color;
+
+  // Show the first slide
+  showSlide(currentSlide);
+
+  // Event listeners
+  submitButton.addEventListener('click', showResults);
+  previousButton.addEventListener("click", showPreviousSlide);
+  nextButton.addEventListener("click", showNextSlide);
+
+
+
+  // Credit: Mateusz Rybczonec
+             
+                  
+                
                    
 
                           // variable to store the list of possible answers
@@ -1217,10 +1226,7 @@ input[type="radio"] {
                        
                  // const TIME_LIMIT = currentQuestion.;
                  // const TIME_LIMIT = 20;
-                  let timePassed = 0;
-                  let timeLeft = TIME_LIMIT;
-                  let timerInterval = null;
-                  let remainingPathColor = COLOR_CODES.info.color;
+                  
                   
                   
                   
