@@ -1304,6 +1304,14 @@ function getval(value)
      alert(qid);
 
      var id = $(".slide.active-slide").attr("id");
+     if (quid < id) 
+     {
+      for (i = 0; i < qui; i++) {
+             $("#previous").click();
+            }
+     }
+
+     
      alert(id);
 }
               </script>
