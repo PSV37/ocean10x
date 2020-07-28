@@ -221,7 +221,7 @@
       border-radius: 3px;
       color: #7aa4a9;
       text-transform: uppercase;
-      letter-spacing: 0.5em;
+      letter-spacing: 0.1em;
       transition: all 0.2s cubic-bezier(.4,0,.2,1); 
       }
       #next:hover,
@@ -230,7 +230,7 @@
       .viewchart:hover,
       .backBtn:hover,
       .replay:hover {
-      letter-spacing: 0.8em;
+      letter-spacing: 0.2em;
       }
       .viewanswer,
       .viewchart,
@@ -249,7 +249,7 @@
       .viewchart:active,
       .backBtn:active,
       .replay:active  {
-      letter-spacing: 0.3em;
+      letter-spacing: 0.2em;
       }
       .resultArea{
       display: none;
@@ -811,7 +811,7 @@ button{
       color: #fff;
       border: 0px;
       border-radius: 3px;
-      padding: 20px;
+      /*padding: 20px;*/
       cursor: pointer;
       margin-bottom: 20px;
 }
@@ -1123,6 +1123,8 @@ input[type="radio"] {
                   var myQuestions = <?php echo json_encode($all_questions); ?>;
                 myQuestions.forEach( (currentQuestion, questionNumber) => {
 
+                  alert(currentQuestion.time_for_question);
+
                   
                   const FULL_DASH_ARRAY = 283;
                   const WARNING_THRESHOLD = 10;
@@ -1148,12 +1150,13 @@ input[type="radio"] {
 
                        
                  // const TIME_LIMIT = currentQuestion.;
+                 const TIME_LIMIT = currentQuestion.time_for_question;
                   let timePassed = 0;
                   let timeLeft = TIME_LIMIT;
                   let timerInterval = null;
                   let remainingPathColor = COLOR_CODES.info.color;
                   
-                  const TIME_LIMIT = currentQuestion.time_for_question;
+                  
                   
                   document.getElementById("app").innerHTML = `
                   <div class="base-timer">
