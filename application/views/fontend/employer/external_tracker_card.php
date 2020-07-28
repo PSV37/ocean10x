@@ -26,11 +26,11 @@
 
                                 <td ><input class="allowphonenumber"> id="mobile" type="text" name="mobile" value="<?php echo $job_row->mobile; ?>" maxlength='10' ></td>
 
-                                <td ><input id="ctc" type="text" name="ctc" value="<?php echo $job_row->salary; ?>" maxlength='3' ></td>
+                                <td ><input class="allownumericwithoutdecimal"> id="ctc" type="text" name="ctc" value="<?php echo $job_row->salary; ?>" maxlength='3' ></td>
 
-                                <td ><input id="exp" type="text" name="exp" value="<?php echo $job_row->work_exp; ?>" ></td>
+                                <td ><input class="allownumericwithdecimal"> id="exp" type="text" name="exp" value="<?php echo $job_row->work_exp; ?>" ></td>
 
-                                <td ><input id="notice" type="text" name="notice" value="<?php echo $job_row->notice_period; ?>" ></td>
+                                <td ><input class="allownumericwithoutdecimal"> id="notice" type="text" name="notice" value="<?php echo $job_row->notice_period; ?>" ></td>
 
                                 <td > <select name="edu" style="min-width: 200px; border: none;"  id="edu" class="form-control select2 email" data-style="btn-default" data-live-search="true"  >
                                   <option value=""> </option>
