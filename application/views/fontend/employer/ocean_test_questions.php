@@ -1091,7 +1091,7 @@ input[type="radio"] {
      
       submitButton.style.display = 'none';
     }
-    set_time(currentSlide);
+    // set_time(currentSlide);
   }
 
   function showNextSlide() {
