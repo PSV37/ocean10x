@@ -557,6 +557,13 @@ required: "This field is mandatory!"
 
 },
 
+'correct_answer':{
+
+required: "This field is mandatory!"
+maxlength: "Choose atleast One"
+
+},
+
 
 
 

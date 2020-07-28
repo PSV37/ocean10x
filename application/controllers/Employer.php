@@ -6003,7 +6003,7 @@ function update_external()
     {
         $data['test_id'] = $this->input->post('test_name');
          $employer_id = $this->session->userdata('company_profile_id');
-            $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' AND test_id = '$test_id'";
+            $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' AND test_id = '$data['test_id']'";
 
             $data['oceanchamp_tests'] = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where = $where_all, $join = FALSE);
         $this->load->view('fontend/employer/ocean_test_instructions',$data);
