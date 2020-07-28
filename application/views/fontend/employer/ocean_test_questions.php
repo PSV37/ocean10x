@@ -853,7 +853,7 @@ input[type="radio"] {
          <div class="container">
             <div class="col-md-12">
                <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
-               <div class="col-md-9 test_d">
+               <div class="col-md-9 test_d slide">
                   <div id="clockdiv">
                     <!--  <div>
                         <span class="hours"></span>
@@ -963,7 +963,7 @@ input[type="radio"] {
                  // const TIME_LIMIT = currentQuestion.;
                  const TIME_LIMIT = currentQuestion.time_for_question;
 
-                 alert(currentQuestion.question);
+                 // alert(currentQuestion.question);
                   let timePassed = 0;
                   let timeLeft = TIME_LIMIT;
                   let timerInterval = null;
@@ -1068,15 +1068,15 @@ input[type="radio"] {
   
         // add this question and its answers to the output
         output.push(
-          `<div class="slide">
+          `
             <div class="question"> ${currentQuestion.question} </div>
             <div class="answers"> ${answers.join("")} </div>
              <div class="time"> ${currentQuestion.time_for_question}</div>
-          </div>`
+          `
         );
         timer.push(
-      `<div class="slide">
-          <div class="base-timer">
+      // `<div class="slide">
+          `<div class="base-timer">
                     <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                       <g class="base-timer__circle">
                         <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
@@ -1096,10 +1096,8 @@ input[type="radio"] {
                     <span id="base-timer-label" class="base-timer__label">${formatTime(
                       timeLeft
                     )}</span>
-                  </div>
-                  </div>
-
-                  `
+                  </div>`
+                  // </div>
                     );
          startTimer();
 
