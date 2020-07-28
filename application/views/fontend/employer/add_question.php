@@ -153,7 +153,7 @@ ul.select2-results__options {
                     <li style="position:relative;"><span style="position:absolute;font-weight: 700;">1.</span>
                       <div class="checkbox">
                         <label>
-                          <input type="checkbox" value="1" class="btn-default1"  name="correct_answer[]">
+                          <input type="checkbox" value="1" class="btn-default1 checkbox"  name="correct_answer[]">
                           <span>option1</span>
                         </label>
                       </div>
@@ -161,7 +161,7 @@ ul.select2-results__options {
                     <li style="position:relative;"><span style="position:absolute;font-weight: 700;">3.</span>
                       <div class="checkbox">
                         <label>
-                          <input type="checkbox" value="3" class="btn-default1"  name="correct_answer[]">
+                          <input type="checkbox" value="3" class="btn-default1 checkbox"  name="correct_answer[]">
                           <span>option3</span>
                         </label>
                       </div>
@@ -171,7 +171,7 @@ ul.select2-results__options {
                     <li style="position:relative;"><span style="position:absolute;font-weight: 700;">2.</span>
                       <div class="checkbox">
                         <label>
-                          <input type="checkbox" value="2" class="btn-default1"   name="correct_answer[]">
+                          <input type="checkbox" value="2" class="btn-default1 checkbox"   name="correct_answer[]">
                           <span>option2</span>
                         </label>
                       </div>
@@ -179,7 +179,7 @@ ul.select2-results__options {
                     <li style="position:relative;"><span style="position:absolute;font-weight: 700;">4.</span>
                       <div class="checkbox">
                         <label>
-                        <input type="checkbox" value="4" class="btn-default1"  name="correct_answer[]">
+                        <input type="checkbox" value="4" class="btn-default1 checkbox"  name="correct_answer[]">
                         <span>option4</span>
                         </label>
                       </div>
@@ -488,7 +488,13 @@ required: true
 },
 
 "correct_answer[]": { 
-                    required: true, 
+                    required: function (element) {
+                var boxes = $('.checkbox');
+                if (boxes.filter(':checked').length == 0) {
+                    return true;
+                }
+                return false;
+            }, 
                     minlength: 1 
             }, 
 
