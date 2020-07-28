@@ -1120,7 +1120,7 @@ input[type="radio"] {
                </script>
                <script>
                   // Credit: Mateusz Rybczonec
-                  var myQuestions = <?php echo json_encode($all_questions); ?>;
+                  // var myQuestions = <?php echo json_encode($all_questions); ?>;
                 
 
                   
@@ -1147,13 +1147,12 @@ input[type="radio"] {
                          
 
                        
-                 const TIME_LIMIT = 0;
+                 const TIME_LIMIT = 20;
                   let timePassed = 0;
                   let timeLeft = TIME_LIMIT;
                   let timerInterval = null;
                   let remainingPathColor = COLOR_CODES.info.color;
-                   myQuestions.forEach(
-                        (currentQuestion, questionNumber) => {
+                  
                   const TIME_LIMIT = currentQuestion.time_for_question;
                   
                   document.getElementById("app").innerHTML = `
@@ -1183,9 +1182,6 @@ input[type="radio"] {
                   startTimer();
 
 
-                        }
-                      );
-                  
                   function onTimesUp() {
                     clearInterval(timerInterval);
                     $("#next").click();
