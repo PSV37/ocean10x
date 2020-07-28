@@ -36,7 +36,7 @@
 
                                 <td ><input class="email allownumericwithoutdecimal" id="ctc" type="text" name="ctc" value="<?php echo $job_row->js_current_ctc; ?>" maxlength='3' ></td>
 
-                                <td ><input class="email allownumericwithdecimal" id="exp" type="text" name="exp" value="<?php echo $job_row->js_experience; ?>" ></td>
+                                <td ><input class="email allownumericwithdecimal" id="exp" type="text" name="exp" value="<?php echo $job_row->js_experience; ?>" maxlength='3'></td>
 
                                 <td ><input id="notice" class="allownumericwithoutdecimal" type="text" name="notice"  value="<?php echo $job_row->js_current_notice_period; ?>" maxlength='3' ></td>
 
