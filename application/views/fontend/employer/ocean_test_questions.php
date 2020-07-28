@@ -994,6 +994,7 @@ input[type="radio"] {
     slides[currentSlide].classList.remove('active-slide');
     slides[n].classList.add('active-slide');
     currentSlide = n;
+
     if(currentSlide === 0){
       previousButton.style.display = 'none';
     }
@@ -1080,6 +1081,11 @@ input[type="radio"] {
   submitButton.addEventListener('click', showResults);
   previousButton.addEventListener("click", showPreviousSlide);
   nextButton.addEventListener("click", showNextSlide);
+
+ console.log(myQuestions);
+  var obj = JSON.parse(myQuestions);
+ console.log(obj[currentSlide]);
+
 })();
 
               </script>
@@ -1115,7 +1121,7 @@ input[type="radio"] {
                   
                       if (t.total <= 0) {
                         clearInterval(timeinterval);
-                        alert('kf');
+                        // alert('kf');
                         $("#submit").click();
                       }
                     }
@@ -1129,11 +1135,7 @@ input[type="radio"] {
                </script>
                <script>
                   // Credit: Mateusz Rybczonec
-                  var myQuestions = <?php echo json_encode($all_questions); ?>;
-                myQuestions.forEach( (currentQuestion, questionNumber) => {
-
-                  alert(questionNumber);
-
+             
                   
                   const FULL_DASH_ARRAY = 283;
                   const WARNING_THRESHOLD = 10;
@@ -1159,7 +1161,7 @@ input[type="radio"] {
 
                        
                  // const TIME_LIMIT = currentQuestion.;
-                 const TIME_LIMIT = currentQuestion.time_for_question;
+                 const TIME_LIMIT = 20;
                   let timePassed = 0;
                   let timeLeft = TIME_LIMIT;
                   let timerInterval = null;
@@ -1261,7 +1263,7 @@ input[type="radio"] {
                       .setAttribute("stroke-dasharray", circleDasharray);
                   }
                 
-  });
+  
 
                </script>
             </div>
