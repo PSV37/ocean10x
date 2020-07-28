@@ -1129,7 +1129,31 @@ input[type="radio"] {
   const quizContainer = document.getElementById('quiz');
   const resultsContainer = document.getElementById('results');
   const submitButton = document.getElementById('submit');
- 
+ let currentSlide = 0;
+
+    const FULL_DASH_ARRAY = 283;
+                  const WARNING_THRESHOLD = 10;
+                  const ALERT_THRESHOLD = 5;
+                  
+                  const COLOR_CODES = {
+                    info: {
+                      color: "green"
+                    },
+                    warning: {
+                      color: "orange",
+                      threshold: WARNING_THRESHOLD
+                    },
+                    alert: {
+                      color: "red",
+                      threshold: ALERT_THRESHOLD
+                    }
+                  };
+
+                  const TIME_LIMIT = document.getElementById('timer'+currentSlide);
+                    let timePassed = 0;
+                    let timeLeft = TIME_LIMIT;
+                    let timerInterval = null;
+                    let remainingPathColor = COLOR_CODES.info.color;
  
   
  var myQuestions = <?php echo json_encode($all_questions); ?>;
@@ -1178,31 +1202,7 @@ input[type="radio"] {
   const slides1 = document.querySelectorAll(".slide1");
   const slides2 = document.querySelectorAll(".slide2");
   
-  let currentSlide = 0;
-
-    const FULL_DASH_ARRAY = 283;
-                  const WARNING_THRESHOLD = 10;
-                  const ALERT_THRESHOLD = 5;
-                  
-                  const COLOR_CODES = {
-                    info: {
-                      color: "green"
-                    },
-                    warning: {
-                      color: "orange",
-                      threshold: WARNING_THRESHOLD
-                    },
-                    alert: {
-                      color: "red",
-                      threshold: ALERT_THRESHOLD
-                    }
-                  };
-
-                  const TIME_LIMIT = document.getElementById('timer'+currentSlide);
-                    let timePassed = 0;
-                    let timeLeft = TIME_LIMIT;
-                    let timerInterval = null;
-                    let remainingPathColor = COLOR_CODES.info.color;
+  
 
   // Show the first slide
   showSlide(currentSlide);
