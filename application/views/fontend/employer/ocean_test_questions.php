@@ -1129,7 +1129,65 @@ input[type="radio"] {
   const quizContainer = document.getElementById('quiz');
   const resultsContainer = document.getElementById('results');
   const submitButton = document.getElementById('submit');
-  const TIME_LIMIT = document.getElementById('timer'+currentSlide);
+ 
+ 
+  
+ var myQuestions = <?php echo json_encode($all_questions); ?>;
+// console.log(JSON.parse(myQuestions));
+ console.log(myQuestions);
+
+// ];
+  // const myQuestions = [
+  //   {
+  //     question: "Who invented JavaScript?",
+  //     answers: {
+  //       a: "Douglas Crockford",
+  //       b: "Sheryl Sandberg",
+  //       c: "Brendan Eich"
+  //     },
+  //     correctAnswer: "c"
+  //   },
+  //   {
+  //     question: "Which one of these is a JavaScript package manager?",
+  //     answers: {
+  //       a: "Node.js",
+  //       b: "TypeScript",
+  //       c: "npm"
+  //     },
+  //     correctAnswer: "c"
+  //   },
+  //   {
+  //     question: "Which tool can you use to ensure code quality?",
+  //     answers: {
+  //       a: "Angular",
+  //       b: "jQuery",
+  //       c: "RequireJS",
+  //       d: "ESLint"
+  //     },
+  //     correctAnswer: "d"
+  //   }
+  // ];
+
+  // Kick things off
+  buildQuiz();
+
+  // Pagination
+  const previousButton = document.getElementById("previous");
+  const nextButton = document.getElementById("next");
+  const slides = document.querySelectorAll(".slide");
+  const slides1 = document.querySelectorAll(".slide1");
+  const slides2 = document.querySelectorAll(".slide2");
+  let currentSlide = 0;
+
+  // Show the first slide
+  showSlide(currentSlide);
+
+  // Event listeners
+  submitButton.addEventListener('click', showResults);
+  previousButton.addEventListener("click", showPreviousSlide);
+  nextButton.addEventListener("click", showNextSlide);
+
+   const TIME_LIMIT = document.getElementById('timer'+currentSlide);
 
   // Credit: Mateusz Rybczonec
              
@@ -1259,62 +1317,6 @@ input[type="radio"] {
                       .getElementById("base-timer-path-remaining")
                       .setAttribute("stroke-dasharray", circleDasharray);
                   }
- 
-  
- var myQuestions = <?php echo json_encode($all_questions); ?>;
-// console.log(JSON.parse(myQuestions));
- console.log(myQuestions);
-
-// ];
-  // const myQuestions = [
-  //   {
-  //     question: "Who invented JavaScript?",
-  //     answers: {
-  //       a: "Douglas Crockford",
-  //       b: "Sheryl Sandberg",
-  //       c: "Brendan Eich"
-  //     },
-  //     correctAnswer: "c"
-  //   },
-  //   {
-  //     question: "Which one of these is a JavaScript package manager?",
-  //     answers: {
-  //       a: "Node.js",
-  //       b: "TypeScript",
-  //       c: "npm"
-  //     },
-  //     correctAnswer: "c"
-  //   },
-  //   {
-  //     question: "Which tool can you use to ensure code quality?",
-  //     answers: {
-  //       a: "Angular",
-  //       b: "jQuery",
-  //       c: "RequireJS",
-  //       d: "ESLint"
-  //     },
-  //     correctAnswer: "d"
-  //   }
-  // ];
-
-  // Kick things off
-  buildQuiz();
-
-  // Pagination
-  const previousButton = document.getElementById("previous");
-  const nextButton = document.getElementById("next");
-  const slides = document.querySelectorAll(".slide");
-  const slides1 = document.querySelectorAll(".slide1");
-  const slides2 = document.querySelectorAll(".slide2");
-  let currentSlide = 0;
-
-  // Show the first slide
-  showSlide(currentSlide);
-
-  // Event listeners
-  submitButton.addEventListener('click', showResults);
-  previousButton.addEventListener("click", showPreviousSlide);
-  nextButton.addEventListener("click", showNextSlide);
 
  // console.log(myQuestions);
  //  var obj = JSON.parse(myQuestions);
