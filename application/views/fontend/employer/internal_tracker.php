@@ -1042,28 +1042,8 @@ equalTo: "The two passwords do not match!"
          return false;
          }
      });
-
-    $(".allownumericwithdecimal").on("keypress keyup blur",function (event) {
-            //this.value = this.value.replace(/[^0-9\.]/g,'');
-     $(this).val($(this).val().replace(/[^0-9\.]/g,''));
-            if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
-                event.preventDefault();
-            }
-        });
    
    
-$(".allowalphabates").keypress(function (e) {
-         var regex = new RegExp("^[a-zA-Z ]*$");
-         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
-         if (regex.test(str)) {
-             return true;
-         }
-         else
-         {
-         e.preventDefault();
-         return false;
-         }
-     });
 
 
 $(document).on("keypress keyup blur", ".allowalphabatesspace", function (e){
@@ -1096,5 +1076,29 @@ $(document).on("keypress keyup blur", ".allownumericwithoutdecimal", function (e
      }
  });
 
+$(document).on("keypress keyup blur", ".allowalphabates", function (e){
+
+//$(".allowalphabates").keypress(function (e) {
+         var regex = new RegExp("^[a-zA-Z ]*$");
+         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+         if (regex.test(str)) {
+             return true;
+         }
+         else
+         {
+         e.preventDefault();
+         return false;
+         }
+     });
+
+$(document).on("keypress keyup blur", ".allownumericwithdecimal", function (e){
+
+//$(".allownumericwithdecimal").on("keypress keyup blur",function (event) {
+            //this.value = this.value.replace(/[^0-9\.]/g,'');
+     $(this).val($(this).val().replace(/[^0-9\.]/g,''));
+            if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+                event.preventDefault();
+            }
+        });
 
 </script>
