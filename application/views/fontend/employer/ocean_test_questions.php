@@ -1181,7 +1181,7 @@ input[type="radio"] {
                   </div>
                   `;
                   
-                  startTimer();
+                  // startTimer();
                   
                   function onTimesUp() {
                     clearInterval(timerInterval);
