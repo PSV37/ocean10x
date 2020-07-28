@@ -928,28 +928,6 @@ input[type="radio"] {
                   </div>
                </div>
               <script>
-                    const FULL_DASH_ARRAY = 283;
-                  const WARNING_THRESHOLD = 10;
-                  const ALERT_THRESHOLD = 5;
-                  
-                  const COLOR_CODES = {
-                    info: {
-                      color: "green"
-                    },
-                    warning: {
-                      color: "orange",
-                      threshold: WARNING_THRESHOLD
-                    },
-                    alert: {
-                      color: "red",
-                      threshold: ALERT_THRESHOLD
-                    }
-                  };
-  // const TIME_LIMIT = 5;
-  let timePassed = 0;
-  let timeLeft = TIME_LIMIT;
-  let timerInterval = null;
-  let remainingPathColor = COLOR_CODES.info.color;
                     
 // (function(){
   // Functions
@@ -980,7 +958,23 @@ input[type="radio"] {
           );
         }
 
-        
+         const FULL_DASH_ARRAY = 283;
+                  const WARNING_THRESHOLD = 10;
+                  const ALERT_THRESHOLD = 5;
+                  
+                  const COLOR_CODES = {
+                    info: {
+                      color: "green"
+                    },
+                    warning: {
+                      color: "orange",
+                      threshold: WARNING_THRESHOLD
+                    },
+                    alert: {
+                      color: "red",
+                      threshold: ALERT_THRESHOLD
+                    }
+                  };
                    
 
                           // variable to store the list of possible answers
@@ -989,6 +983,11 @@ input[type="radio"] {
                        
                  // const TIME_LIMIT = currentQuestion.;
                  const TIME_LIMIT = currentQuestion.time_for_question;
+                  const TIME_LIMIT = 5;
+  let timePassed = 0;
+  let timeLeft = TIME_LIMIT;
+  let timerInterval = null;
+  let remainingPathColor = COLOR_CODES.info.color;
 
                  // alert(currentQuestion.question);
                   
@@ -1142,7 +1141,6 @@ input[type="radio"] {
      
       submitButton.style.display = 'none';
     }
-    startTimer();
   }
 
   function showNextSlide() {
@@ -1157,9 +1155,8 @@ input[type="radio"] {
   const quizContainer = document.getElementById('quiz');
   const resultsContainer = document.getElementById('results');
   const submitButton = document.getElementById('submit');
-
-
-                  function onTimesUp() {
+ 
+  function onTimesUp() {
                     clearInterval(timerInterval);
                     $("#next").click();
                     // startTimer();
