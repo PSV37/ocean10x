@@ -1120,8 +1120,8 @@ input[type="radio"] {
                </script>
                <script>
                   // Credit: Mateusz Rybczonec
-                  // var myQuestions = <?php echo json_encode($all_questions); ?>;
-                
+                  var myQuestions = <?php echo json_encode($all_questions); ?>;
+                myQuestions.forEach( (currentQuestion, questionNumber) => {
 
                   
                   const FULL_DASH_ARRAY = 283;
@@ -1147,7 +1147,7 @@ input[type="radio"] {
                          
 
                        
-                 const TIME_LIMIT = 20;
+                 // const TIME_LIMIT = currentQuestion.;
                   let timePassed = 0;
                   let timeLeft = TIME_LIMIT;
                   let timerInterval = null;
@@ -1249,7 +1249,7 @@ input[type="radio"] {
                       .setAttribute("stroke-dasharray", circleDasharray);
                   }
                 
-
+  });
 
                </script>
             </div>

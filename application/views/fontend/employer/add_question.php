@@ -21,7 +21,11 @@ input.select2-search__field {
 ul.select2-results__options {
     margin-top: 30px;
 }
-   
+   div#errorbox {
+   margin-top: 25px;
+    /*font-weight: bold;*/
+   color: red;
+   }
 </style>
 
  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">
@@ -153,7 +157,7 @@ ul.select2-results__options {
                     <li style="position:relative;"><span style="position:absolute;font-weight: 700;">1.</span>
                       <div class="checkbox">
                         <label>
-                          <input type="checkbox" value="1" class="btn-default1"  name="correct_answer[]">
+                          <input type="checkbox" value="1" class="btn-default1 checkbox"  name="correct_answer[]">
                           <span>option1</span>
                         </label>
                       </div>
@@ -161,7 +165,7 @@ ul.select2-results__options {
                     <li style="position:relative;"><span style="position:absolute;font-weight: 700;">3.</span>
                       <div class="checkbox">
                         <label>
-                          <input type="checkbox" value="3" class="btn-default1"  name="correct_answer[]">
+                          <input type="checkbox" value="3" class="btn-default1 checkbox"  name="correct_answer[]">
                           <span>option3</span>
                         </label>
                       </div>
@@ -171,7 +175,7 @@ ul.select2-results__options {
                     <li style="position:relative;"><span style="position:absolute;font-weight: 700;">2.</span>
                       <div class="checkbox">
                         <label>
-                          <input type="checkbox" value="2" class="btn-default1"   name="correct_answer[]">
+                          <input type="checkbox" value="2" class="btn-default1 checkbox"   name="correct_answer[]">
                           <span>option2</span>
                         </label>
                       </div>
@@ -179,17 +183,19 @@ ul.select2-results__options {
                     <li style="position:relative;"><span style="position:absolute;font-weight: 700;">4.</span>
                       <div class="checkbox">
                         <label>
-                        <input type="checkbox" value="4" class="btn-default1"  name="correct_answer[]">
+                        <input type="checkbox" value="4" class="btn-default1 checkbox"  name="correct_answer[]">
                         <span>option4</span>
                         </label>
                       </div>
                     </li>
                   </div>
                 </div>
+                <div id="errorbox"></div>
               <!-- </ul> -->
               </div>
           </div>
         </div>
+
         <div class="col-md-4"></div>
           <div class="col-md-4" style="text-align:right;">
             <button id="submit" type="Submit" class="save_question">Save question</button>
@@ -409,6 +415,14 @@ ul.select2-results__options {
      $("#last_salary_hike").datepicker({ dateFormat: 'yy-mm-dd',maxDate: '0' });
      });
 
+      $("#js").submit(function(){
+    var checked = $(".checkbox input:checked").length > 0;
+    if (!checked){
+       $("#errorbox").html("Select atleast one Answer");
+        return false;
+    }
+})
+
  $("#js").validate (  
 
 {
@@ -488,7 +502,13 @@ required: true
 },
 
 "correct_answer[]": { 
-                    required: true, 
+                    required: function (element) {
+                var boxes = $('.checkbox');
+                if (boxes.filter(':checked').length == 0) {
+                    return true;
+                }
+                return false;
+            }, 
                     minlength: 1 
             }, 
 
