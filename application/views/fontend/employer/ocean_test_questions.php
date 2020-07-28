@@ -1071,7 +1071,7 @@ input[type="radio"] {
           </div>`
         );
         timer.push(
-            `<div class="slide">
+      `<div class="slide">
           <div class="base-timer">
                     <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                       <g class="base-timer__circle">
@@ -1095,14 +1095,16 @@ input[type="radio"] {
                   </div>
                   </div>
                   `
+
         );
+         startTimer();
       }
     );
 
     // finally combine our output list into one string of HTML and put it on the page
     quizContainer.innerHTML = output.join('');
      document.getElementById("app").innerHTML = timer;
-      startTimer();
+
      
                 
   }
