@@ -1123,8 +1123,7 @@ input[type="radio"] {
                   var myQuestions = <?php echo json_encode($all_questions); ?>;
                 
 
-                   myQuestions.forEach(
-                        (currentQuestion, questionNumber) => {
+                  
                   const FULL_DASH_ARRAY = 283;
                   const WARNING_THRESHOLD = 10;
                   const ALERT_THRESHOLD = 5;
@@ -1145,15 +1144,17 @@ input[type="radio"] {
                    
 
                           // variable to store the list of possible answers
-                  const TIME_LIMIT = currentQuestion.time_for_question;
                          
 
                        
-                 // const TIME_LIMIT = 20;
+                 const TIME_LIMIT = 0;
                   let timePassed = 0;
                   let timeLeft = TIME_LIMIT;
                   let timerInterval = null;
                   let remainingPathColor = COLOR_CODES.info.color;
+                   myQuestions.forEach(
+                        (currentQuestion, questionNumber) => {
+                  const TIME_LIMIT = currentQuestion.time_for_question;
                   
                   document.getElementById("app").innerHTML = `
                   <div class="base-timer">
@@ -1181,7 +1182,7 @@ input[type="radio"] {
                   
                   startTimer();
 
-                     
+
                         }
                       );
                   
