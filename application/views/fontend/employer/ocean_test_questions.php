@@ -1,6 +1,7 @@
   <!---header-->
       <?php  $this->load->view('fontend/layout/employer_new_header.php'); ?>
       <!---header--->
+      <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/oceanchamp_exp.css">
    <style>
       /*small*/
       .base-timer {
@@ -878,7 +879,7 @@ input[type="radio"] {
                         <div class="quizBox">
                           <form id="nextques" class="submit-form" action="<?php echo base_url();?>employer/insert_test_data" method="post">
 
-                                  <input type="hidden" name="test_id" value="<?php echo($test_id); ?>">
+                              <input type="hidden" name="test_id" value="<?php echo($test_id); ?>">
                             
                               <div class="quiz-container">
                                 <div id="quiz"></div>
@@ -895,6 +896,12 @@ input[type="radio"] {
 
                   </div>
                   <button class="skip" onclick="next();">skip question</button>
+                  <div class="row">
+                        <?php $i=1; foreach ($all_questions as $row) { ?>
+                              <div class="col-md-2 exp-box" id="2" onclick="getval('Beginner','2');"><span name="levels" id="levels"   value="Beginner"><?php echo $i; ?></span></div>
+                      <? $i++; } ?>
+                        
+                  </div>
                </div>
               <script>
                     
