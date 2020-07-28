@@ -732,3 +732,105 @@ $('#tracking_id').val(result);
 </script>
 
 
+
+<script src="<?php echo base_url(); ?>asset/src/jquery.tokeninput.js"></script>
+<script src="<?php echo base_url() ?>asset/js/jquery-ui.js"></script>
+<script src="<?php echo base_url() ?>asset/tokenjs/bootstrap-tokenfield.js"></script>
+<script src="<?php echo base_url() ?>asset/tokenjs/typeahead.bundle.min.js"></script>
+<script src="<?php echo base_url() ?>asset/js/search.js"></script>
+
+<script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
+
+
+<script>
+
+  
+
+   
+   //(^[ A-Za-z0-9_@./#&+-]*$)
+   
+ 
+
+   
+
+   
+   $(".allowalphabatescomma").keypress(function (e) {
+         var regex = new RegExp("^[a-zA-Z, \s]+$");
+         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+         if (regex.test(str)) {
+             return true;
+         }
+         else
+         {
+         e.preventDefault();
+         return false;
+         }
+     });
+   
+   
+
+
+$(document).on("keypress keyup blur", ".allowalphabatesspace", function (e){
+         var regex = new RegExp("^[a-zA-Z ]*$");
+         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+         if (regex.test(str)) {
+             return true;
+         }
+         else
+         {
+         e.preventDefault();
+         return false;
+         }
+     });
+
+//$(document).on("keypress keyup blur", ".allowphonenumber", function (e){
+//$(this).val($(this).val().replace("^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"));
+  //           if ((event.which < 48 || event.which > 57)) {
+    //             event.preventDefault();
+      //       }
+        // });
+
+$(document).on("keypress keyup blur", ".allowphonenumber", function (event) {
+             //this.value = this.value.replace(/[^0-9\.]/g,'');
+       $(this).val($(this).val().replace("^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"));
+             if ((event.which < 48 || event.which > 57)) {
+                 event.preventDefault();
+             }
+         });
+
+
+$(document).on("keypress keyup blur", ".allownumericwithoutdecimal", function (e){
+    var self = $(this);
+    self.val(self.val().replace(/[^\d]+/, ""));
+    if ((evt.which < 48 || evt.which > 57)) 
+     {
+     evt.preventDefault();
+     }
+ });
+
+$(document).on("keypress keyup blur", ".allowalphabates", function (e){
+
+//$(".allowalphabates").keypress(function (e) {
+         var regex = new RegExp("^[a-zA-Z ]*$");
+         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+         if (regex.test(str)) {
+             return true;
+         }
+         else
+         {
+         e.preventDefault();
+         return false;
+         }
+     });
+
+$(document).on("keypress keyup blur", ".allownumericwithdecimal", function (e){
+
+//$(".allownumericwithdecimal").on("keypress keyup blur",function (event) {
+            //this.value = this.value.replace(/[^0-9\.]/g,'');
+     $(this).val($(this).val().replace(/[^0-9\.]/g,''));
+            if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+                event.preventDefault();
+            }
+        });
+
+</script>
