@@ -30,7 +30,7 @@
 
                                   <input class="email allowalphabatesspace"  id="name" type="text" name="email" value="<?php echo $job_row->js_name; ?>" ></td>
 
-                                <td ><input class="email validateEmail " id="email" type="text" name="email1" value="<?php echo $job_row->js_email; ?>" ></td>
+                                <td ><input class="email " id="email" type="text" name="email1" value="<?php echo $job_row->js_email; ?>" required ></td>
 
                                 <td ><input class="email allowphonenumber" id="mobile" type="text" name="mobile" value="<?php echo $job_row->js_mobile; ?>" maxlength='10' ></td>
 
@@ -38,7 +38,7 @@
 
                                 <td ><input id="exp" type="text" name="exp" value="<?php echo $job_row->js_experience; ?>" ></td>
 
-                                <td ><input id="notice" class="allownumericwithoutdecimal"> type="text" name="notice" value="<?php echo $job_row->js_current_notice_period; ?>" ></td>
+                                <td ><input id="notice" class="allownumericwithoutdecimal"> type="text" name="notice"  value="<?php echo $job_row->js_current_notice_period; ?>" ></td>
 
                                 <td > <select name="edu" style="min-width: 200px; border: none;"  id="edu" class="form-control select2 email" data-style="btn-default" data-live-search="true"  >
                                   <option value=""> </option>
