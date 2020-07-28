@@ -20,17 +20,17 @@
 
                               <tr>
                                 <input class="attrValue" type="hidden" name="" id="cv_id" value="<?php echo $job_row->cv_id; ?>">
-                                 <td ><input class="email" id="name" type="text" name="email" value="<?php echo $job_row->name; ?>" ></td>
+                                 <td ><input class="email allowalphabates" id="name" type="text" name="email" value="<?php echo $job_row->name; ?>" ></td>
 
                                 <td ><input class="email" id="email" type="text" name="email" value="<?php echo $job_row->email; ?>" ></td>
 
-                                <td ><input id="mobile" type="text" name="mobile" value="<?php echo $job_row->mobile; ?>" maxlength='10' ></td>
+                                <td ><input class="allowphonenumber" id="mobile" type="text" name="mobile" value="<?php echo $job_row->mobile; ?>" maxlength='10' ></td>
 
-                                <td ><input id="ctc" type="text" name="ctc" value="<?php echo $job_row->salary; ?>" maxlength='3' ></td>
+                                <td ><input class="allownumericwithoutdecimal" id="ctc" type="text" name="ctc" value="<?php echo $job_row->salary; ?>" maxlength='3' ></td>
 
-                                <td ><input id="exp" type="text" name="exp" value="<?php echo $job_row->work_exp; ?>" ></td>
+                                <td ><input class="allownumericwithdecimal" id="exp" type="text" name="exp" value="<?php echo $job_row->work_exp; ?>" ></td>
 
-                                <td ><input id="notice" type="text" name="notice" value="<?php echo $job_row->notice_period; ?>" ></td>
+                                <td ><input class="allownumericwithoutdecimal" id="notice" type="text" name="notice" value="<?php echo $job_row->notice_period; ?>" ></td>
 
                                 <td > <select name="edu" style="min-width: 200px; border: none;"  id="edu" class="form-control select2 email" data-style="btn-default" data-live-search="true"  >
                                   <option value=""> </option>
@@ -50,11 +50,11 @@
                                  
 
                                </select></td>
-                                <td ><input type="text" class="email" id="action" name="comment" value="<?php echo $job_row->action_item; ?>" ></td>
+                                <td ><input type="text" class="email allowalphabatesspace" id="action" name="comment" value="<?php echo $job_row->action_item; ?>" ></td>
 
-                                  <td ><textarea class="email" id="comment" name="comment" value=""><?php echo $job_row->comments; ?></textarea></td>
+                                  <td ><textarea class="email allowalphabates" id="comment" name="comment" value=""><?php echo $job_row->comments; ?></textarea></td>
 
-                                    <td ><input type="text" class="email" id="reminder" name="comment" value="<?php echo $job_row->reminder; ?>" ></td>
+                                    <td ><input type="text" class="email allowalphabates" id="reminder" name="comment" value="<?php echo $job_row->reminder; ?>" ></td>
 
 
                                     <input type="hidden" class="email" id="tracking_id_val" name="comment" value="<?php echo $job_row->id; ?>" >
