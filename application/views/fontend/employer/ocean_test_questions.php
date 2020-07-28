@@ -959,7 +959,7 @@ input[type="radio"] {
                  // const TIME_LIMIT = currentQuestion.;
                  const TIME_LIMIT = currentQuestion.time_for_question;
 
-                 // alert(TIME_LIMIT);
+                 alert(currentQuestion.question);
                   let timePassed = 0;
                   let timeLeft = TIME_LIMIT;
                   let timerInterval = null;
@@ -1241,7 +1241,10 @@ input[type="radio"] {
 
 function get_checked(n)
 {
-alert(n);
+      alert(n);
+      var j = n + 1;
+      $('#status'+j).css('background-color', '#94f36d');
+
 }
 
               </script>
