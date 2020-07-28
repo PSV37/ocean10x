@@ -1250,7 +1250,7 @@ function set_time(n)
                   
                    function startTimer(timePassed,TIME_LIMIT,COLOR_CODES,n)
                   {
-                        alert(n);
+                        alert('base-timer-label'+n);
                     timerInterval = setInterval(() => {
                       timePassed = timePassed += 1;
                       timeLeft = TIME_LIMIT - timePassed;
