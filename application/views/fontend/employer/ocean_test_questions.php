@@ -1090,7 +1090,7 @@ input[type="radio"] {
         // add this question and its answers to the output
         output.push(
           `<div class="slide">
-            <div class="question"> ${currentQuestion.question} </div>
+            <div class="question" id="${questionNumber}"> ${currentQuestion.question} </div>
             <div class="answers"> ${answers.join("")} </div>
           
           </div>`
@@ -1122,7 +1122,7 @@ input[type="radio"] {
                     );
          startTimer();
 
-              skip.push(`<div class="slide2"><button class="skip skp1" onclick="next(${questionNumber});">skip question</button></div>`
+              skip.push(`<div class="slide2"><button class="skip skp" id="${questionNumber}" onclick="next(${questionNumber});">skip question</button></div>`
                   );
 
       
@@ -1302,6 +1302,9 @@ function getval(value)
 
       qid = value - 1;
      alert(qid);
+
+     var id = $(".slide .active-slide .question").attr("id");
+     alert(id);
 }
               </script>
               <script>
