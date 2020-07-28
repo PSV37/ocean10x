@@ -1250,10 +1250,11 @@ function set_time(n)
                   
                    function startTimer(timePassed,TIME_LIMIT,COLOR_CODES,n)
                   {
+                        alert(n);
                     timerInterval = setInterval(() => {
                       timePassed = timePassed += 1;
                       timeLeft = TIME_LIMIT - timePassed;
-                      document.getElementById("base-timer-label"+n).innerHTML = formatTime(
+                      document.getElementById('base-timer-label'+n).innerHTML = formatTime(
                         timeLeft
                       );
                       setCircleDasharray(timePassed,TIME_LIMIT);
