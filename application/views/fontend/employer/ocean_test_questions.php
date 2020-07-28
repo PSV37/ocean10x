@@ -1251,7 +1251,11 @@ function get_checked(n)
       $('#status'+j).css('background-color', '#94f36d');
 
 }
+function next()
+{
+   $("#next").click();
 
+}
               </script>
               <script>
                   function getTimeRemaining(endtime) {
