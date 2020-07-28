@@ -836,6 +836,26 @@ input[type="radio"] {
   opacity: 0;
   transition: opacity 0.5s;
 }
+
+.slide1{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.slide2{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
 .active-slide{
   opacity: 1;
   z-index: 2;
