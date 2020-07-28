@@ -1089,7 +1089,7 @@ input[type="radio"] {
   
         // add this question and its answers to the output
         output.push(
-          `<div class="slide">
+          `<div class="slide"  id="${questionNumber}">
             <div class="question" id="${questionNumber}"> ${currentQuestion.question} </div>
             <div class="answers"> ${answers.join("")} </div>
           
@@ -1303,7 +1303,7 @@ function getval(value)
       qid = value - 1;
      alert(qid);
 
-     var id = $(".slide.active-slide.question").attr("id");
+     var id = $(".slide.active-slide").attr("id");
      alert(id);
 }
               </script>
