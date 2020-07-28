@@ -945,7 +945,7 @@ input[type="radio"] {
                       threshold: ALERT_THRESHOLD
                     }
                   };
-  const TIME_LIMIT = 5;
+  // const TIME_LIMIT = 5;
   let timePassed = 0;
   let timeLeft = TIME_LIMIT;
   let timerInterval = null;
