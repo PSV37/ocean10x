@@ -1068,11 +1068,12 @@ $(document).on("keypress keyup blur", ".allowalphabatesspace", function (e){
 
 $(document).on("keypress keyup blur", ".allowphonenumber", function (event) {
              //this.value = this.value.replace(/[^0-9\.]/g,'');
-      $(this).val($(this).val().replace("^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"));
+       $(this).val($(this).val().replace("^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"));
              if ((event.which < 48 || event.which > 57)) {
                  event.preventDefault();
              }
          });
+
 
 $(document).on("keypress keyup blur", ".allownumericwithoutdecimal", function (e){
     var self = $(this);
