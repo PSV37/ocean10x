@@ -934,7 +934,7 @@ input[type="radio"] {
 
         time.push(
             `<label>
-              <input type="hidden" name="time${questionNumber}" value="${currentQuestion.time_for_question}">
+              <input type="text" name="time${questionNumber}" value="${currentQuestion.time_for_question}">
               ${letter} :
               ${currentQuestion.answers[letter]}
             </label>`
@@ -945,6 +945,7 @@ input[type="radio"] {
           `<div class="slide">
             <div class="question"> ${currentQuestion.question} </div>
             <div class="answers"> ${answers.join("")} </div>
+             <div class="time"> ${currentQuestion.time_for_question}</div>
           </div>`
         );
       }
@@ -1082,9 +1083,9 @@ input[type="radio"] {
   previousButton.addEventListener("click", showPreviousSlide);
   nextButton.addEventListener("click", showNextSlide);
 
- console.log(myQuestions);
-  var obj = JSON.parse(myQuestions);
- console.log(obj[currentSlide]);
+ // console.log(myQuestions);
+ //  var obj = JSON.parse(myQuestions);
+ // console.log(obj[currentSlide]);
 
 })();
 
