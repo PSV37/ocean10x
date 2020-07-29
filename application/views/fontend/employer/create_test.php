@@ -587,11 +587,11 @@ span.select2.select2-container.select2-container--default {
              $('#type').val($('#ques_type').val());
 
              $('#timer_data').val($('input[name=timer]').val());
-             $('#previous_option_option').val($('input[name=previous_option]').val());
-             $('#review_option_option').val($('input[name=review_option]').val());
-             $('#negative_option').val($('input[name=negative]').val());
-             $('#each_question_ans_option').val($('input[name=each_question_ans]').val());
-             $('#display_result_option').val($('input[name=display_result]').val());
+             $('#previous_option_data').val($('input[name=previous_option]').val());
+             $('#review_option_data').val($('input[name=review_option]').val());
+             $('#negative_data').val($('input[name=negative]').val());
+             $('#each_question_ans_data').val($('input[name=each_question_ans]').val());
+             $('#display_result_data').val($('input[name=display_result]').val());
               
                       if($('#js').valid()) 
                       {
