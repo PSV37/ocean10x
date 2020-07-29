@@ -586,12 +586,12 @@ span.select2.select2-container.select2-container--default {
              $('#subject_data').val($('#subject').val());
              $('#type').val($('#ques_type').val());
 
-             $('#timer_data').val($('input[name=timer]').val());
-             $('#previous_option_data').val($('input[name=previous_option]').val());
-             $('#review_option_data').val($('input[name=review_option]').val());
-             $('#negative_data').val($('input[name=negative]').val());
-             $('#each_question_ans_data').val($('input[name=each_question_ans]').val());
-             $('#display_result_data').val($('input[name=display_result]').val());
+             $('#timer_data').val($('input[name=timer]:checked').val());
+             $('#previous_option_data').val($('input[name=previous_option]:checked').val());
+             $('#review_option_data').val($('input[name=review_option]:checked').val());
+             $('#negative_data').val($('input[name=negative]:checked').val());
+             $('#each_question_ans_data').val($('input[name=each_question_ans]:checked').val());
+             $('#display_result_data').val($('input[name=display_result]:checked').val());
               
                       if($('#js').valid()) 
                       {
