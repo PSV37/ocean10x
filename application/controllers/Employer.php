@@ -2001,16 +2001,17 @@ class Employer extends MY_Employer_Controller
         $type = $this->input->post('type');
         // echo  $test_id; 
         // echo  $test_name; die;
+        print_r($_POST);
         $employer_id = $this->session->userdata('company_profile_id');
         if (isset($test_name) && !empty($test_name)) {
             $where_all = "oceanchamp_tests.test_name='$test_name'";
             $old_question_data  = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where_all);
-            if (empty($$old_question_data)) {
+            if (empty($old_question_data)) {
                  $test_data['test_name'] = $test_name;
                    $test_data['company_id'] = $employer_id;
                    $test_data['questions'] = $up_date;
                    $test_data['type'] = $type;
-                   $test_data['total_questions'] = sizeof(implode(',', $up_date));
+                   $test_data['total_questions'] = sizeof(explode(',', $up_date));
                    $test_data['test_duration'] = $test_time;
                    $test_data['level'] = $level_data;
                    $test_data['topics'] = $subject_data;
