@@ -1157,8 +1157,8 @@ input[type="radio"] {
     slides[currentSlide].classList.remove('active-slide');
     slides[n].classList.add('active-slide');
 
-    // slides1[currentSlide].classList.remove('active-slide');
-    // slides1[n].classList.add('active-slide');
+    slides1[currentSlide].classList.remove('active-slide');
+    slides1[n].classList.add('active-slide');
 
     slides2[currentSlide].classList.remove('active-slide');
     slides2[n].classList.add('active-slide');
@@ -1185,7 +1185,9 @@ input[type="radio"] {
       submitButton.style.display = 'none';
     }
     
-    set_timer(currentSlide);
+    // set_timer(currentSlide);
+  console.log('set_timer'+currentSlide);
+    
   }
 
   function showNextSlide() {
@@ -1249,6 +1251,7 @@ input[type="radio"] {
 
   // Show the first slide
   showSlide(currentSlide);
+  console.log('currentSlide'+currentSlide);
 
   // Event listeners
   submitButton.addEventListener('click', showResults);
@@ -1285,7 +1288,7 @@ function getval(value)
      
 }
 
-function set_timer(n)
+function set_timer()
 {
        const FULL_DASH_ARRAY = 283;
                   const WARNING_THRESHOLD = 10;
